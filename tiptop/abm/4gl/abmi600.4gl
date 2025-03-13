@@ -1854,8 +1854,12 @@ DEFINE
 
         BEFORE FIELD bma01
             IF p_cmd = 'u' AND g_chkey matches'[Nn]' THEN
-               -- NEXT FIELD bma04 #darcy:2025/03/13 mark
+            #darcy:2025/03/13 add s---
+               call cl_set_comp_entry('bma01',false)
+               NEXT FIELD bmaud03 
             END IF
+               call cl_set_comp_entry('bma01',true)
+            #darcy:2025/03/13 add e---
      IF g_sma.sma60 = 'Y'  # 若須分段輸入
         THEN CALL s_inp5(6,11,g_bma.bma01) RETURNING g_bma.bma01
              DISPLAY BY NAME g_bma.bma01
