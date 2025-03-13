@@ -1,0 +1,47 @@
+# Prog. Version..: '5.20.01-12.01.17(00001)'     #
+# Pattern name...: sartt624.global
+# Descriptions...: 押金收取/返還單需要用到的參數 
+# Date & Author..: FUN-870100 09/09/27 By Cockroach
+# Modify.........: FUN-9B0025 09/12/09 By cockroach PASS NO. 
+# Modify.........: TQC-A10085 10/01/20 By cockroach 增加參數定義
+# Modify.........: TQC-B20065 11/02/16 By elva 增加參數定義
+# Modify.........: FUN-BB0117 11/11/24 By fanbj 將t615替換為t624
+
+DATABASE ds
+
+GLOBALS
+DEFINE g_rxr   RECORD LIKE rxr_file.*
+DEFINE g_rxr_t RECORD LIKE rxr_file.*
+DEFINE g_rxr00    LIKE rxr_file.rxr00
+DEFINE g_rxr00_t  LIKE rxr_file.rxr00
+DEFINE g_rxr00_o  LIKE rxr_file.rxr00
+DEFINE g_rxr01    LIKE rxr_file.rxr01
+DEFINE g_rxr01_t  LIKE rxr_file.rxr01
+DEFINE g_rxr01_o  LIKE rxr_file.rxr01
+
+DEFINE  g_sql   STRING,
+        g_wc    STRING,
+        g_wc2   STRING,
+        g_rec_b LIKE type_file.num5,
+        l_ac    LIKE type_file.num5
+DEFINE  p_row,p_col          LIKE type_file.num5
+DEFINE  g_forupd_sql         STRING
+DEFINE  g_before_input_done  LIKE type_file.num5
+DEFINE  g_chr                LIKE type_file.chr1
+DEFINE  g_cnt                LIKE type_file.num10
+DEFINE  g_msg                LIKE ze_file.ze03
+DEFINE  g_row_count          LIKE type_file.num10
+DEFINE  g_curs_index         LIKE type_file.num10
+DEFINE  g_jump               LIKE type_file.num10
+DEFINE  mi_no_ask            LIKE type_file.num5
+DEFINE  g_argv1              LIKE ruq_file.ruq01  #TQC-A10085 ADD 接收商品借出/還入單號
+DEFINE  g_argv2              LIKE rxr_file.rxr01  #TQC-B20065
+DEFINE  p_rxr02              LIKE rxr_file.rxr02  #TQC-A10085 ADD 接收商品借出/還入單號
+
+DEFINE  li_result            LIKE type_file.num5
+DEFINE  g_t1     LIKE oay_file.oayslip
+DEFINE  l_allow_insert  LIKE type_file.num5
+DEFINE  l_allow_delete  LIKE type_file.num5
+END GLOBALS
+#FUN-9B0025
+#FUN-BB0117

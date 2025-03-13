@@ -1,0 +1,193 @@
+# Prog. Version..: '5.20.02-12.08.13(00005)'     #
+#
+# Pattern name...: axmt650.global
+# Descriptions...: axmt650.4gl需用到的全域變數
+# Date & Author..: No:FUN-B10004 11/01/04 By Mandy 
+# Modify.........: No:FUN-B10016 11/01/07 By Lilan 與CRM整合
+# Modify.........: No:FUN-B80178 11/08/26 By jason 新增ICD相關功能
+# Modify.........: No:FUN-C30289 12/04/05 By bart 增加End User欄位
+# Modify.........: No.FUN-C50097 12/06/09 By SunLM 新增ogb50,51欄位
+
+DATABASE ds
+
+GLOBALS
+#模組變數(Module Variables)
+DEFINE
+    g_oga   RECORD LIKE oga_file.*,
+    g_oga_t RECORD LIKE oga_file.*,
+    g_oga_o RECORD LIKE oga_file.*,
+    b_ogb   RECORD LIKE ogb_file.*,
+    b_ogbi  RECORD LIKE ogbi_file.*,   #FUN-B80178
+    g_ima86  LIKE ima_file.ima86,
+    g_ogb           DYNAMIC ARRAY OF RECORD    #程式變數(Program Variables)
+                    ogb03     LIKE ogb_file.ogb03,
+                    ogb04     LIKE ogb_file.ogb04,
+                    ogb06     LIKE ogb_file.ogb06,
+                    ima021    LIKE ima_file.ima021,
+                    ogb092    LIKE ogb_file.ogb092,
+                    ogb1001   LIKE ogb_file.ogb1001,   #No.FUN-660073
+                    ogb17     LIKE ogb_file.ogb17,
+                    ogb09     LIKE ogb_file.ogb09,
+                    ogb091    LIKE ogb_file.ogb091,
+                    ogb05     LIKE ogb_file.ogb05,
+                    ogb12     LIKE ogb_file.ogb12,
+                    ogb913    LIKE ogb_file.ogb913,
+                    ogb914    LIKE ogb_file.ogb914,
+                    ogb915    LIKE ogb_file.ogb915,
+                    ogb910    LIKE ogb_file.ogb910,
+                    ogb911    LIKE ogb_file.ogb911,
+                    ogb912    LIKE ogb_file.ogb912,
+                    ogb916    LIKE ogb_file.ogb916,
+                    ogb917    LIKE ogb_file.ogb917,
+                    ogb50     LIKE ogb_file.ogb50,  #FUN-C50097 ADD
+                    ogb51     LIKE ogb_file.ogb51,  #FUN-C50097 ADD                    
+                    ogb41     LIKE ogb_file.ogb41,
+                    ogb42     LIKE ogb_file.ogb42,
+                    ogb43     LIKE ogb_file.ogb43,
+                    ogb37     LIKE ogb_file.ogb37,#FUN-AB0061 
+                    ogb13     LIKE ogb_file.ogb13,
+                    ogb14     LIKE ogb_file.ogb14,
+                    ogb14t    LIKE ogb_file.ogb14t,
+                    ogb930    LIKE ogb_file.ogb930, #FUN-670063
+                    gem02c    LIKE gem_file.gem02 , #FUN-670063
+                    ogb908    LIKE ogb_file.ogb908,  #no.A050
+                    ogbud01 LIKE ogb_file.ogbud01,
+                    ogbud02 LIKE ogb_file.ogbud02,
+                    ogbud03 LIKE ogb_file.ogbud03,
+                    ogbud04 LIKE ogb_file.ogbud04,
+                    ogbud05 LIKE ogb_file.ogbud05,
+                    ogbud06 LIKE ogb_file.ogbud06,
+                    ogbud07 LIKE ogb_file.ogbud07,
+                    ogbud08 LIKE ogb_file.ogbud08,
+                    ogbud09 LIKE ogb_file.ogbud09,
+                    ogbud10 LIKE ogb_file.ogbud10,
+                    ogbud11 LIKE ogb_file.ogbud11,
+                    ogbud12 LIKE ogb_file.ogbud12,
+                    ogbud13 LIKE ogb_file.ogbud13,
+                    ogbud14 LIKE ogb_file.ogbud14,
+                    ogbud15 LIKE ogb_file.ogbud15,
+                    ogbiicd02  LIKE ogbi_file.ogbiicd02,   #FUN-B80178
+                    ogbiicd03  LIKE ogbi_file.ogbiicd03,   #FUN-B80178
+                    ogbiicd04  LIKE ogbi_file.ogbiicd04,   #FUN-B80178
+                    ogbiicd028 LIKE ogbi_file.ogbiicd028,  #FUN-B80178
+                    ogbiicd029 LIKE ogbi_file.ogbiicd029,  #FUN-B80178  
+                    ogbiicd07  LIKE ogbi_file.ogbiicd07    #FUN-C30289
+                    END RECORD,
+    g_ogb_t         RECORD
+                    ogb03     LIKE ogb_file.ogb03,
+                    ogb04     LIKE ogb_file.ogb04,
+                    ogb06     LIKE ogb_file.ogb06,
+                    ima021    LIKE ima_file.ima021,
+                    ogb092    LIKE ogb_file.ogb092,
+                    ogb1001   LIKE ogb_file.ogb1001,   #No.FUN-660073
+                    ogb17     LIKE ogb_file.ogb17,
+                    ogb09     LIKE ogb_file.ogb09,
+                    ogb091    LIKE ogb_file.ogb091,
+                    ogb05     LIKE ogb_file.ogb05,
+                    ogb12     LIKE ogb_file.ogb12,
+                    ogb913    LIKE ogb_file.ogb913,
+                    ogb914    LIKE ogb_file.ogb914,
+                    ogb915    LIKE ogb_file.ogb915,
+                    ogb910    LIKE ogb_file.ogb910,
+                    ogb911    LIKE ogb_file.ogb911,
+                    ogb912    LIKE ogb_file.ogb912,
+                    ogb916    LIKE ogb_file.ogb916,
+                    ogb917    LIKE ogb_file.ogb917,
+                    ogb50     LIKE ogb_file.ogb50,  #FUN-C50097 ADD
+                    ogb51     LIKE ogb_file.ogb51,  #FUN-C50097 ADD                    
+                    ogb41     LIKE ogb_file.ogb41,
+                    ogb42     LIKE ogb_file.ogb42,
+                    ogb43     LIKE ogb_file.ogb43,
+                    ogb37     LIKE ogb_file.ogb37, #FUN-AB0061 
+                    ogb13     LIKE ogb_file.ogb13,
+                    ogb14     LIKE ogb_file.ogb14,
+                    ogb14t    LIKE ogb_file.ogb14t,
+                    ogb930    LIKE ogb_file.ogb930, #FUN-670063
+                    gem02c    LIKE gem_file.gem02 , #FUN-670063
+                    ogb908    LIKE ogb_file.ogb908,  #no.A050
+                    ogbud01 LIKE ogb_file.ogbud01,
+                    ogbud02 LIKE ogb_file.ogbud02,
+                    ogbud03 LIKE ogb_file.ogbud03,
+                    ogbud04 LIKE ogb_file.ogbud04,
+                    ogbud05 LIKE ogb_file.ogbud05,
+                    ogbud06 LIKE ogb_file.ogbud06,
+                    ogbud07 LIKE ogb_file.ogbud07,
+                    ogbud08 LIKE ogb_file.ogbud08,
+                    ogbud09 LIKE ogb_file.ogbud09,
+                    ogbud10 LIKE ogb_file.ogbud10,
+                    ogbud11 LIKE ogb_file.ogbud11,
+                    ogbud12 LIKE ogb_file.ogbud12,
+                    ogbud13 LIKE ogb_file.ogbud13,
+                    ogbud14 LIKE ogb_file.ogbud14,
+                    ogbud15 LIKE ogb_file.ogbud15,
+                    ogbiicd02  LIKE ogbi_file.ogbiicd02,   #FUN-B80178
+                    ogbiicd03  LIKE ogbi_file.ogbiicd03,   #FUN-B80178
+                    ogbiicd04  LIKE ogbi_file.ogbiicd04,   #FUN-B80178
+                    ogbiicd028 LIKE ogbi_file.ogbiicd028,  #FUN-B80178
+                    ogbiicd029 LIKE ogbi_file.ogbiicd029,  #FUN-B80178    
+                    ogbiicd07  LIKE ogbi_file.ogbiicd07    #FUN-C30289                
+                    END RECORD,
+    g_imgg10_1          LIKE imgg_file.imgg10,
+    g_imgg10_2          LIKE imgg_file.imgg10,
+    g_yes               LIKE type_file.chr1,    #No.FUN-680137 VARCHAR(01)
+    g_change            LIKE type_file.chr1,    #No.FUN-680137 VARCHAR(01)
+    g_ima25             LIKE ima_file.ima25,
+    g_ima31             LIKE ima_file.ima31,
+    g_ima905            LIKE ima_file.ima905,
+    g_ima906            LIKE ima_file.ima906,
+    g_ima907            LIKE ima_file.ima907,
+    g_ima908            LIKE ima_file.ima908,
+    g_img09             LIKE img_file.img09,
+    g_img10             LIKE img_file.img10,
+    g_imgg00            LIKE imgg_file.imgg00,
+    g_imgg10            LIKE imgg_file.imgg10,
+    g_sw                LIKE type_file.num5,    #No.FUN-680137 SMALLINT
+    g_factor            LIKE img_file.img21,
+    g_tot               LIKE img_file.img10,
+    g_qty               LIKE img_file.img10,
+    g_flag              LIKE type_file.chr1,    #No.FUN-680137 VARCHAR(1)
+    g_oea   RECORD LIKE oea_file.*,
+    g_oeb   RECORD LIKE oeb_file.*,
+    g_wc,g_wc2,g_sql    string,  #No.FUN-580092 HCN
+    g_t1                LIKE oay_file.oayslip,           #No.FUN-550052  #No.FUN-680137 VARCHAR(5)
+    g_buf,g_buf1        LIKE type_file.chr1000, #No.FUN-680137 VARCHAR(30)
+    tot1            LIKE ogc_file.ogc16,
+    exT             LIKE type_file.chr1,    #No.FUN-680137 VARCHAR(01),
+    g_chr           LIKE type_file.chr1,    #No.FUN-680137 VARCHAR(1)
+    g_no            LIKE oga_file.oga01,   #MOD-5B0276
+    g_rec_b         LIKE type_file.num5,                #單身筆數  #No.FUN-680137 SMALLINT
+    l_ac            LIKE type_file.num5                 #目前處理的ARRAY CNT  #No.FUN-680137 SMALLINT
+ 
+DEFINE g_forupd_sql STRING   #SELECT ... FOR UPDATE SQL
+DEFINE g_before_input_done  LIKE type_file.num5    #No.FUN-680137 SMALLINT
+ 
+DEFINE g_cnt           LIKE type_file.num10   #No.FUN-680137 INTEGER
+DEFINE g_i             LIKE type_file.num5     #count/index for any purpose  #No.FUN-680137 SMALLINT
+DEFINE g_msg           LIKE type_file.chr1000 #No.FUN-680137 VARCHAR(72)
+DEFINE g_row_count     LIKE type_file.num10   #No.FUN-680137 INTEGER
+DEFINE g_curs_index    LIKE type_file.num10   #No.FUN-680137 INTEGER
+DEFINE g_jump          LIKE type_file.num10   #No.FUN-680137 INTEGER
+DEFINE mi_no_ask       LIKE type_file.num5    #No.FUN-680137 SMALLINT
+DEFINE g_imm01         LIKE imm_file.imm01      #No.FUN-610090
+DEFINE g_unit_arr      DYNAMIC ARRAY OF RECORD  #No.FUN-610090
+                          unit   LIKE ima_file.ima25,
+                          fac    LIKE img_file.img21,
+                          qty    LIKE img_file.img10
+                       END RECORD
+DEFINE g_argv1  LIKE oga_file.oga01  #No.FUN-680137 VARCHAR(16)    #No.TQC-630066
+DEFINE g_argv2  STRING              #No.TQC-630066
+DEFINE g_dbs2          LIKE type_file.chr30    #TQC-680074
+DEFINE g_bookno1       LIKE aza_file.aza81     #No.FUN-730057                                                                
+DEFINE g_bookno2       LIKE aza_file.aza82     #No.FUN-730057                                                                
+DEFINE g_exdate        LIKE oga_file.oga021    #MOD-780067 add
+DEFINE g_ima918  LIKE ima_file.ima918  #No.FUN-810036
+DEFINE g_ima921  LIKE ima_file.ima921  #No.FUN-810036
+DEFINE l_r       LIKE type_file.chr1   #No.FUN-860045
+DEFINE g_plant2  LIKE type_file.chr10  #FUN-980020
+DEFINE g_crmStatus    LIKE type_file.num10    #FUN-B10016 add
+DEFINE g_crmDesc      STRING                  #FUN-B10016 add
+DEFINE g_dies         LIKE idd_file.idd18     #FUN-B80178
+DEFINE g_ica          RECORD LIKE ica_file.*  #FUN-B80178
+
+END GLOBALS
+#FUN-B10004 add

@@ -1,0 +1,192 @@
+# Prog. Version..: '3.50.01-10.09.10(00002)'     #
+# Pattern name...: sapmt580.global
+# Descriptions...: sapmt580系列.4gl需用到的全域變數
+# Date & Author..: 07/03/29 By kim (FUN-730068)
+# Modify.........: No:CHI-7B0023/CHI-7B0039 07/11/16 By kim 移除GP5.0行業別功能的所有程式段
+# Modify.........: No:FUN-810017 08/03/21 By jan
+# Modify.........: No:TQC-840068 08/04/29 By claire FUN-840048 補單
+# Modify.........: No.FUN-960007 09/06/03 By chenmoyan 該global檔內不可定義rowid變量
+# Modify.........: No.FUN-A80001 10/08/02 By destiny 增加截止日期pon19 
+DATABASE ds
+
+GLOBALS
+
+DEFINE #FUN-730068
+   g_pom01t         LIKE  oay_file.oayslip,       #NO.FUN-680136 CHAR(5) #單別(temp)    No.FUN-540027
+   g_pom            RECORD LIKE pom_file.*,
+   g_pon_o          RECORD LIKE pon_file.*,       #採購單 (舊值)
+   g_pon2           RECORD LIKE pon_file.*,       #採購單 (舊值)
+   g_pom_t          RECORD LIKE pom_file.*,
+   g_pom_o          RECORD LIKE pom_file.*,
+   g_sfb            RECORD LIKE sfb_file.*,
+   g_poni           RECORD LIKE poni_file.*,      #No;FUN-810017
+   g_pom01_t        LIKE pom_file.pom01,
+   g_pom03_t        LIKE pom_file.pom03,
+  #g_pmw03          LIKE pmw_file.pmw03,  #FUN-650191 remark
+   g_t1             LIKE oay_file.oayslip,   #No.FUN-540027  #No.FUN-680136 CHAR(05)
+   g_sw             LIKE type_file.chr1,     #NO.FUN-680136 CHAR(01)
+   g_cmd            LIKE type_file.chr1000,  #No.FUN-680136 CHAR(200)
+   g_sheet          LIKE  oay_file.oayslip,  #NO.FUN-680136 CHAR(5) #單別    (沿用)No.FUN-540027
+   g_ydate          LIKE type_file.dat,      #NO.FUN-680136 DATE  #單據日期(沿用)
+#  g_pom_rowid      LIKE type_file.chr18,   #No.FUN-680136 INT    #No.FUN-960007
+    g_wc,g_wc2,g_sql string,  #No:FUN-580092 HCN
+   g_argv1          LIKE pom_file.pom01,      #ARG_1 採購單號
+   g_argv2          LIKE type_file.chr1,     #NO.FUN-680136 CHAR(1)    #0:一般 1:已核淮 2:已發出
+   g_argv3          LIKE pom_file.pom02,      # 單據性質
+   g_argv11         STRING,                   #No:FUN-630010 執行功能
+   l_pon40          LIKE pon_file.pon40,
+   l_pon10          LIKE pon_file.pon10,
+   l_pon23          LIKE pon_file.pon23,
+   l_pon03          LIKE pon_file.pon03,
+   l_pon06          LIKE pon_file.pon06,
+   l_pon13          LIKE pon_file.pon13,
+   l_pon14          LIKE pon_file.pon14,
+   l_pon15          LIKE pon_file.pon15,
+   l_pon18          LIKE pon_file.pon18,
+   l_pon30          LIKE pon_file.pon30,
+   l_pon32          LIKE pon_file.pon32,
+   l_pon43          LIKE pon_file.pon43,
+   l_pon431         LIKE pon_file.pon431,
+   l_pon61          LIKE pon_file.pon61,
+   l_pon62          LIKE pon_file.pon62,
+   l_pon52          LIKE pon_file.pon52,
+   l_pon54          LIKE pon_file.pon54,
+   l_pon56          LIKE pon_file.pon56,
+   l_pon46          LIKE pon_file.pon46,
+   g_sta            LIKE ze_file.ze03,      #NO.FUN-680136 CHAR(10)
+   l_tmp            RECORD
+        prt         LIKE type_file.chr1,    #NO.FUN-680136 CHAR(01)  #是否馬上列印驗收單
+        prtsw       LIKE type_file.chr1     #NO.FUN-680136 CHAR(01)  #是否已更新待印驗收單
+                END RECORD,
+   g_pon  DYNAMIC ARRAY OF RECORD
+          pon02    LIKE pon_file.pon02,  #項次
+          ponislk01  LIKE poni_file.ponislk01, #制單號 #No:FUN-810017
+          pon04    LIKE pon_file.pon04,  #料件編號
+          pon041   LIKE pon_file.pon041, #料件品名
+          ima021   LIKE ima_file.ima021, #規格
+          pon07    LIKE pon_file.pon07,  #單位
+          pon19    LIKE pon_file.pon19,  #NO.FUN-A80001
+          pon20    LIKE pon_file.pon20,  #採購量
+          #No.FUN-550098  --begin
+          pon83     LIKE pon_file.pon83,
+          pon84     LIKE pon_file.pon84,
+          pon85     LIKE pon_file.pon85,
+          pon80     LIKE pon_file.pon80,
+          pon81     LIKE pon_file.pon81,
+          pon82     LIKE pon_file.pon82,
+          pon86     LIKE pon_file.pon86,
+          pon87     LIKE pon_file.pon87,
+          #No.FUN-550098  --end
+          pon21    LIKE pon_file.pon21,  #已轉數量
+          diff     LIKE pon_file.pon21,  #未轉數量
+          pon31    LIKE pon_file.pon31,  #單價
+          pon31t   LIKE pon_file.pon31t, #含稅單價   No:FUN-550089
+          pon06    LIKE pon_file.pon06,    #備註
+          #FUN-840042 --start---
+          ponud01  LIKE pon_file.ponud01,
+          ponud02  LIKE pon_file.ponud02,
+          ponud03  LIKE pon_file.ponud03,
+          ponud04  LIKE pon_file.ponud04,
+          ponud05  LIKE pon_file.ponud05,
+          ponud06  LIKE pon_file.ponud06,
+          ponud07  LIKE pon_file.ponud07,
+          ponud08  LIKE pon_file.ponud08,
+          ponud09  LIKE pon_file.ponud09,
+          ponud10  LIKE pon_file.ponud10,
+          ponud11  LIKE pon_file.ponud11,
+          ponud12  LIKE pon_file.ponud12,
+          ponud13  LIKE pon_file.ponud13,
+          ponud14  LIKE pon_file.ponud14,
+          ponud15  LIKE pon_file.ponud15
+          #FUN-840042 --end--
+     				END RECORD,
+    g_pon_t         RECORD                 #程式變數 (舊值)
+          pon02    LIKE pon_file.pon02,  #項次
+          ponislk01  LIKE poni_file.ponislk01, #制單號 #No:FUN-810017
+          pon04    LIKE pon_file.pon04,  #料件編號
+          pon041   LIKE pon_file.pon041, #料件品名
+          ima021   LIKE ima_file.ima021, #規格
+          pon07    LIKE pon_file.pon07,  #單位
+          pon19    LIKE pon_file.pon19,  #NO.FUN-A80001
+          pon20    LIKE pon_file.pon20,  #採購量
+          #No.FUN-550098  --begin
+          pon83     LIKE pon_file.pon83,
+          pon84     LIKE pon_file.pon84,
+          pon85     LIKE pon_file.pon85,
+          pon80     LIKE pon_file.pon80,
+          pon81     LIKE pon_file.pon81,
+          pon82     LIKE pon_file.pon82,
+          pon86     LIKE pon_file.pon86,
+          pon87     LIKE pon_file.pon87,
+          #No.FUN-550098  --end
+          pon21    LIKE pon_file.pon21,  #已轉數量
+          diff     LIKE pon_file.pon21,  #未轉數量
+          pon31    LIKE pon_file.pon31,  #單價
+          pon31t   LIKE pon_file.pon31t, #含稅單價   No:FUN-550089
+          pon06    LIKE pon_file.pon06,  #備註
+          #FUN-840042 --start---
+          ponud01  LIKE pon_file.ponud01,
+          ponud02  LIKE pon_file.ponud02,
+          ponud03  LIKE pon_file.ponud03,
+          ponud04  LIKE pon_file.ponud04,
+          ponud05  LIKE pon_file.ponud05,
+          ponud06  LIKE pon_file.ponud06,
+          ponud07  LIKE pon_file.ponud07,
+          ponud08  LIKE pon_file.ponud08,
+          ponud09  LIKE pon_file.ponud09,
+          ponud10  LIKE pon_file.ponud10,
+          ponud11  LIKE pon_file.ponud11,
+          ponud12  LIKE pon_file.ponud12,
+          ponud13  LIKE pon_file.ponud13,
+          ponud14  LIKE pon_file.ponud14,
+          ponud15  LIKE pon_file.ponud15
+          #FUN-840042 --end--
+                    END RECORD,
+   l_ac,l_sl       LIKE type_file.num5,     #No.FUN-680136 SMALLINT
+   #No.FUN-550098  --begin
+   g_img09             LIKE img_file.img09,
+   g_ima44             LIKE ima_file.ima44, #FUN-560194
+   g_ima906            LIKE ima_file.ima906,
+   g_ima907            LIKE ima_file.ima907,
+   g_ima908            LIKE ima_file.ima908,
+   g_factor            LIKE pon_file.pon09,
+   g_tot               LIKE img_file.img10,
+   g_qty               LIKE img_file.img10,
+   g_flag              LIKE type_file.chr1,    #No.FUN-680136 CHAR(1)
+   g_buf               LIKE gfe_file.gfe02,
+   #No.FUN-550098  --end
+#  g_rowid         LIKE type_file.chr18,       #ROWID  #No.FUN-680136 INT   #No.FUN-960007
+   g_rec_b         LIKE type_file.num5,       #No.FUN-610018  #No.FUN-680136 SMALLINT
+   g_no            LIKE gfe_file.gfe01,   #NO.FUN-680136 CHAR(04),
+   g_ima49         LIKE ima_file.ima49,
+   g_ima491        LIKE ima_file.ima491,
+   g_ima02         LIKE ima_file.ima02,
+ #No.CHI-6A0004-------begin---
+#  g_azi03_1 LIKE azi_file.azi03,
+#  g_azi04_1 LIKE azi_file.azi04,
+#  g_azi05_1 LIKE azi_file.azi05,
+ #No.CHI-6A0004------end-----
+   g_ima37         LIKE ima_file.ima37,
+   g_ima99         LIKE ima_file.ima99,
+   g_gec07         LIKE gec_file.gec07,                 #No:FUN-550089
+   g_flag2          LIKE type_file.chr1,    #No.FUN-680136 CHAR(1)
+   g_statu          LIKE type_file.chr1,     #NO.FUN-680136 CHAR(1)
+   p_row,p_col      LIKE type_file.num5    #No.FUN-680136 SMALLINT
+
+DEFINE   g_before_input_done LIKE type_file.num5    #No.FUN-680136 SMALLINT
+DEFINE g_forupd_sql STRING   #SELECT ... FOR UPDATE SQL
+DEFINE   g_chr           LIKE type_file.chr1    #No.FUN-680136 CHAR(1)
+DEFINE   g_chr2          LIKE type_file.chr1    #No.FUN-680136 CHAR(1)
+DEFINE   g_chr3          LIKE type_file.chr1    #No.FUN-680136 CHAR(1)
+DEFINE   g_cnt           LIKE type_file.num10   #No.FUN-680136 INTEGER
+DEFINE   g_i             LIKE type_file.num5     #count/index for any purpose  #No.FUN-680136 SMALLINT
+DEFINE   g_msg           LIKE type_file.chr1000 #No.FUN-680136 CHAR(72)
+DEFINE   g_row_count    LIKE type_file.num10   #No.FUN-680136 INTEGER
+DEFINE   g_curs_index   LIKE type_file.num10   #No.FUN-680136 INTEGER
+DEFINE   g_jump         LIKE type_file.num10   #No.FUN-680136 INTEGER
+DEFINE   mi_no_ask       LIKE type_file.num5    #No.FUN-680136 SMALLINT
+DEFINE   g_bookno1       LIKE aza_file.aza81      #No.FUN-730033
+DEFINE   g_bookno2       LIKE aza_file.aza82      #No.FUN-730033
+END GLOBALS
+#CHI-7B0023/CHI-7B0039
+#TQC-840068

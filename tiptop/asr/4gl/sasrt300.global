@@ -1,0 +1,149 @@
+# Prog. Version..: '3.50.01-12.02.08(00003)'     #
+# Pattern name...: sasrt300.global
+# Descriptions...: sasrt300系列.4gl需用到的全域變數
+# Date & Author..: 07/03/29 By kim (FUN-730075)
+# Modify.........: No:CHI-7B0023/CHI-7B0039 07/11/16 By kim 移除GP5.0行業別功能的所有程式段
+# Modify.........: No:FUN-840148 08/06/12 By Sherry 可轉拆件入庫功能修改
+# Modify.........: No:FUN-910076 09/02/02 By jan 增加srg19欄位
+# Modify.........: No.FUN-960007 09/06/03 By chenmoyan 該global檔內不可定義rowid變量
+# Modify.........: No.TQC-B60090 11/06/17 By lixh1 新增全局變量
+# Modify.........: NO.FUN-BC0104 12/01/11 By xianghui 新增tm裏面的choice3
+
+DATABASE ds
+GLOBALS
+DEFINE  #FUN-730075
+    g_srf            RECORD LIKE srf_file.*,
+    g_srf_t          RECORD LIKE srf_file.*,
+    g_srf_o          RECORD LIKE srf_file.*,
+#   g_srf_rowid      LIKE type_file.chr18,             #ROWID #No.FUN-680130 INT      #No.FUN-960007
+    g_srg            DYNAMIC ARRAY OF RECORD           #程式變數(Program Variables)
+                       srg02      LIKE srg_file.srg02,
+                       srg16      LIKE srg_file.srg16,
+                       srg03      LIKE srg_file.srg03,
+                       ima02      LIKE ima_file.ima02,
+                       ima021     LIKE ima_file.ima021,
+                       srg04      LIKE srg_file.srg04,
+                       srg15      LIKE srg_file.srg15,
+                       srg05      LIKE srg_file.srg05,
+                       srg06      LIKE srg_file.srg06,
+                       srg07      LIKE srg_file.srg07,
+                       srg08      LIKE srg_file.srg08,
+                       srg09      LIKE srg_file.srg09,
+                       srg10      LIKE srg_file.srg10,
+                       srg19      LIKE srg_file.srg19,   #FUN-910076
+                       srg11      LIKE srg_file.srg11,
+                       srg17      LIKE srg_file.srg17,
+                       srg12      LIKE srg_file.srg12,
+                       srg18      LIKE srg_file.srg18,
+                       srg13      LIKE srg_file.srg13,
+                       srg14      LIKE srg_file.srg14,
+                       srg930     LIKE srg_file.srg930, #FUN-670103
+                       gem02c     LIKE gem_file.gem02,   #FUN-670103
+                       #FUN-840042 --start---
+                       srgud01    LIKE srg_file.srgud01,
+                       srgud02    LIKE srg_file.srgud02,
+                       srgud03    LIKE srg_file.srgud03,
+                       srgud04    LIKE srg_file.srgud04,
+                       srgud05    LIKE srg_file.srgud05,
+                       srgud06    LIKE srg_file.srgud06,
+                       srgud07    LIKE srg_file.srgud07,
+                       srgud08    LIKE srg_file.srgud08,
+                       srgud09    LIKE srg_file.srgud09,
+                       srgud10    LIKE srg_file.srgud10,
+                       srgud11    LIKE srg_file.srgud11,
+                       srgud12    LIKE srg_file.srgud12,
+                       srgud13    LIKE srg_file.srgud13,
+                       srgud14    LIKE srg_file.srgud14,
+                       srgud15    LIKE srg_file.srgud15
+                       #FUN-840042 --end--
+                     END RECORD,
+    g_srg_t          RECORD
+                       srg02      LIKE srg_file.srg02,
+                       srg16      LIKE srg_file.srg16,
+                       srg03      LIKE srg_file.srg03,
+                       ima02      LIKE ima_file.ima02,
+                       ima021     LIKE ima_file.ima021,
+                       srg04      LIKE srg_file.srg04,
+                       srg15      LIKE srg_file.srg15,
+                       srg05      LIKE srg_file.srg05,
+                       srg06      LIKE srg_file.srg06,
+                       srg07      LIKE srg_file.srg07,
+                       srg08      LIKE srg_file.srg08,
+                       srg09      LIKE srg_file.srg09,
+                       srg10      LIKE srg_file.srg10,
+                       srg19      LIKE srg_file.srg19,   #FUN-910076
+                       srg11      LIKE srg_file.srg11,
+                       srg17      LIKE srg_file.srg17,
+                       srg12      LIKE srg_file.srg12,
+                       srg18      LIKE srg_file.srg18,
+                       srg13      LIKE srg_file.srg13,
+                       srg14      LIKE srg_file.srg14,
+                       srg930     LIKE srg_file.srg930, #FUN-670103
+                       gem02c     LIKE gem_file.gem02,  #FUN-670103
+                       #FUN-840042 --start---
+                       srgud01    LIKE srg_file.srgud01,
+                       srgud02    LIKE srg_file.srgud02,
+                       srgud03    LIKE srg_file.srgud03,
+                       srgud04    LIKE srg_file.srgud04,
+                       srgud05    LIKE srg_file.srgud05,
+                       srgud06    LIKE srg_file.srgud06,
+                       srgud07    LIKE srg_file.srgud07,
+                       srgud08    LIKE srg_file.srgud08,
+                       srgud09    LIKE srg_file.srgud09,
+                       srgud10    LIKE srg_file.srgud10,
+                       srgud11    LIKE srg_file.srgud11,
+                       srgud12    LIKE srg_file.srgud12,
+                       srgud13    LIKE srg_file.srgud13,
+                       srgud14    LIKE srg_file.srgud14,
+                       srgud15    LIKE srg_file.srgud15
+                       #FUN-840042 --end--
+                     END RECORD,
+    g_srf01_t        LIKE srf_file.srf01,
+    g_srf03_t        LIKE srf_file.srf03,
+    g_srg06          LIKE srg_file.srg06,
+#   g_wc,g_wc2,g_sql LIKE type_file.chr1000,#No.FUN-680130 CHAR(300)   #NO.TQC-630166 MARK
+    g_wc,g_wc2,g_sql STRING,                #NO.TQC-630166 
+    g_t1             LIKE qcf_file.qcf01,   #No.FUN-680130 CHAR(5) 
+    g_buf            LIKE type_file.chr1000,#No.FUN-680130 CHAR(30) 
+    g_rec_b          LIKE type_file.num5,   #單身筆數   #No.FUN-680130 SMALLINT           
+    l_ac             LIKE type_file.num5    #No.FUN-680130 SMALLINT              
+DEFINE g_argv1 	     LIKE type_file.chr1    #No.FUN-680130 CHAR(1)
+DEFINE g_argv2 	     LIKE srf_file.srf01
+DEFINE g_argv3       STRING
+DEFINE g_laststage   LIKE type_file.chr1    #No.FUN-680130 CHAR(1)
+DEFINE g_forupd_sql  STRING                 #SELECT ... FOR UPDATE SQL
+DEFINE g_before_input_done   LIKE type_file.num5    #No.FUN-680130 SMALLINT
+DEFINE g_chr         LIKE type_file.chr1    #No.FUN-680130 CHAR(1)
+DEFINE g_chr2        LIKE type_file.chr1    #No.FUN-680130 CHAR(1)
+DEFINE g_cnt         LIKE type_file.num10   #No.FUN-680130 INTEGER
+DEFINE g_i           LIKE type_file.num5    #count/index for any purpose #No.FUN-680130 SMALLINT   
+DEFINE g_msg         LIKE type_file.chr1000 #No.FUN-680130 CHAR(72)
+DEFINE g_row_count   LIKE type_file.num10   #No.FUN-680130 INTEGER
+DEFINE g_curs_index  LIKE type_file.num10   #No.FUN-680130 INTEGER
+DEFINE g_jump        LIKE type_file.num10   #No.FUN-680130 INTEGER
+DEFINE mi_no_ask     LIKE type_file.num5    #No.FUN-680130 SMALLINT
+DEFINE tm            RECORD
+                       choice1 LIKE type_file.chr1,   #No.FUN-680130 CHAR(1) 
+                       qcf01   LIKE qcf_file.qcf01,
+                       dt1     LIKE type_file.dat,    #No.FUN-680130 DATE 
+                       emp     LIKE gen_file.gen01,
+                       gen02   LIKE gen_file.gen02,
+                       choice2 LIKE type_file.chr1,   #No.FUN-680130 CHAR(1) 
+                       choice3 LIKE type_file.chr1,   #FUN-BC0104 CHAR(1)
+                       slip    LIKE sfu_file.sfu01,
+                       slip2   LIKE sfu_file.sfu01, #FUN-840148
+                       dt2     LIKE type_file.dat,    #No.FUN-680130 DATE 
+                       wh1     LIKE img_file.img02,
+                       wh2     LIKE img_file.img03,
+                       wh3     LIKE img_file.img04
+                     END RECORD
+DEFINE g_sfp01       LIKE sfp_file.sfp01    #領料單號
+DEFINE b_srg RECORD LIKE srg_file.*  #FUN-730075
+#TQC-B60090 -----------Begin------------
+DEFINE g_cnt1         LIKE type_file.num5
+DEFINE g_qc_cnt       LIKE type_file.num5
+DEFINE g_cnt2         LIKE type_file.num5
+DEFINE g_stockin_cnt  LIKE type_file.num5
+#TQC-B60090 -----------End--------------
+END GLOBALS
+#CHI-7B0023/CHI-7B0039

@@ -1,0 +1,82 @@
+# Prog. Version..: '3.50.01-10.01.11(00001)'     #
+# Pattern name...: sartt212.global
+# Descriptions...: 
+# Date & Author..: NO.FUN-870006 08/10/07 By Sunyanchun
+# Modify.........: NO.FUN-9C0128 09/12/22 By Cockroach 過單
+
+DATABASE ds
+
+GLOBALS
+		
+DEFINE g_argv1  LIKE rvu_file.rvu00,
+       g_argv2  LIKE rvu_file.rvu02,
+       g_argv3  LIKE rvu_file.rvu08,
+       g_argv4  STRING,
+			 g_ruw         RECORD LIKE ruw_file.*,
+       g_ruw_t       RECORD LIKE ruw_file.*,
+       g_ruw_o       RECORD LIKE ruw_file.*,
+       g_ruw00_t     LIKE ruw_file.ruw00,
+       g_ruw01_t     LIKE ruw_file.ruw01,
+       g_ruwplant_t    LIKE ruw_file.ruwplant,
+       g_t1          LIKE oay_file.oayslip,
+       g_rux         DYNAMIC ARRAY OF RECORD
+           rux02          LIKE rux_file.rux02,
+           rux03          LIKE rux_file.rux03,
+           rux03_desc     LIKE ima_file.ima02,
+           rux04          LIKE rux_file.rux04,
+           rux04_desc     LIKE gfe_file.gfe02,
+           rux05          LIKE rux_file.rux05,
+           rux06          LIKE rux_file.rux06,
+           rux07          LIKE rux_file.rux07,
+           rux08          LIKE rux_file.rux08,
+           rux09          LIKE rux_file.rux09           
+                     END RECORD,
+       g_rux_t       RECORD
+           rux02          LIKE rux_file.rux02,
+           rux03          LIKE rux_file.rux03,
+           rux03_desc     LIKE ima_file.ima02,
+           rux04          LIKE rux_file.rux04,
+           rux04_desc     LIKE gfe_file.gfe02,
+           rux05          LIKE rux_file.rux05,
+           rux06          LIKE rux_file.rux06,
+           rux07          LIKE rux_file.rux07,
+           rux08          LIKE rux_file.rux08,
+           rux09          LIKE rux_file.rux09
+                     END RECORD,
+       g_rux_o       RECORD 
+           rux02          LIKE rux_file.rux02,
+           rux03          LIKE rux_file.rux03,
+           rux03_desc     LIKE ima_file.ima02,
+           rux04          LIKE rux_file.rux04,
+           rux04_desc     LIKE gfe_file.gfe02,
+           rux05          LIKE rux_file.rux05,
+           rux06          LIKE rux_file.rux06,
+           rux07          LIKE rux_file.rux07,
+           rux08          LIKE rux_file.rux08,
+           rux09          LIKE rux_file.rux09
+                     END RECORD,
+       g_sql         STRING,
+       g_wc          STRING,
+       g_wc2         STRING,
+       g_rec_b       LIKE type_file.num5,
+       l_ac          LIKE type_file.num5
+
+DEFINE p_row,p_col         LIKE type_file.num5
+DEFINE g_gec07             LIKE gec_file.gec07
+DEFINE g_forupd_sql        STRING
+DEFINE g_before_input_done LIKE type_file.num5
+DEFINE g_chr               LIKE type_file.chr1
+DEFINE g_cnt               LIKE type_file.num10
+DEFINE g_i                 LIKE type_file.num5
+DEFINE g_msg               LIKE ze_file.ze03
+DEFINE g_curs_index        LIKE type_file.num10
+DEFINE g_row_count         LIKE type_file.num10
+DEFINE g_jump              LIKE type_file.num10
+DEFINE mi_no_ask           LIKE type_file.num5
+DEFINE g_sort                DYNAMIC ARRAY OF LIKE ima_file.ima01
+DEFINE g_sign                DYNAMIC ARRAY OF LIKE ima_file.ima01
+DEFINE g_factory             DYNAMIC ARRAY OF LIKE ima_file.ima01
+DEFINE g_no                  DYNAMIC ARRAY OF LIKE ima_file.ima01
+DEFINE g_result              DYNAMIC ARRAY OF LIKE ima_file.ima01
+END GLOBALS
+#No.FUN-9C0128 ADD PASS NO.

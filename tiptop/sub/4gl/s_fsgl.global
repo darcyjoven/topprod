@@ -1,0 +1,78 @@
+# Prog. Version..: '5.00.12-09.10.20(00001)'      #                                                                                  
+# Pattern name...: s_fsgl.global                                                                                                   
+# Descriptions...: s_fsgl.4gl需用到的全域變數                                                                                  
+# Date & Author..: 09/04/27 By ve007(FUN-8C0050)                                                                                     
+# Modify.........: NO.MOD-950165 09/05/18 By lilingyu 調整g_npq RECORD里的欄位順序和4fd檔里的s_npq欄位順序一樣
+                                                                                                                                    
+DATABASE ds                                                                                                                         
+                                                                                                                                    
+GLOBALS
+DEFINE
+     g_npq           DYNAMIC ARRAY of RECORD      #程式變數(Program Variables)
+                    npq02     LIKE npq_file.npq02,
+                    npq03     LIKE npq_file.npq03,
+                    aag02     LIKE aag_file.aag02,
+                    npq05     LIKE npq_file.npq05,
+                    npq05_d   LIKE gem_file.gem02,   
+                    npq06     LIKE npq_file.npq06,
+                    npq24     LIKE npq_file.npq24,
+                    npq25     LIKE npq_file.npq25,
+                    npq07f    LIKE npq_file.npq07f,
+                    npq07     LIKE npq_file.npq07,
+                    npq21     LIKE npq_file.npq21,
+                    npq22     LIKE npq_file.npq22,
+                    npq23     LIKE npq_file.npq23,
+#                   npq15     LIKE npq_file.npq15,
+                    npq08     LIKE npq_file.npq08,
+                    npq35     LIKE npq_file.npq35,  #異動碼9  #MOD-950165
+                    npq36     LIKE npq_file.npq36,  #異動碼10 #MOD-950165                    
+                    npq11     LIKE npq_file.npq11,
+                    npq12     LIKE npq_file.npq12,
+                    npq13     LIKE npq_file.npq13,
+                    npq14     LIKE npq_file.npq14,
+                    npq31     LIKE npq_file.npq31,  #異動碼5
+                    npq32     LIKE npq_file.npq32,  #異動碼6
+                    npq33     LIKE npq_file.npq33,  #異動碼7
+                    npq34     LIKE npq_file.npq34,  #異動碼8
+#                   npq35     LIKE npq_file.npq35,  #異動碼9  #MOD-950165
+#                   npq36     LIKE npq_file.npq36,  #異動碼10 #MOD-950165
+                    npq37     LIKE npq_file.npq37,  #關係人異動碼
+                    npq04     LIKE npq_file.npq04
+                    END RECORD,
+    g_npq_t         RECORD
+                   npq02     LIKE npq_file.npq02,
+                    npq03     LIKE npq_file.npq03,
+                    aag02     LIKE aag_file.aag02,
+                    npq05     LIKE npq_file.npq05,
+                    npq05_d   LIKE gem_file.gem02,   
+                    npq06     LIKE npq_file.npq06,
+                    npq24     LIKE npq_file.npq24,
+                    npq25     LIKE npq_file.npq25,
+                    npq07f    LIKE npq_file.npq07f,
+                    npq07     LIKE npq_file.npq07,
+                    npq21     LIKE npq_file.npq21,
+                    npq22     LIKE npq_file.npq22,
+                    npq23     LIKE npq_file.npq23,
+#                   npq15     LIKE npq_file.npq15,
+                    npq08     LIKE npq_file.npq08,
+                    npq35     LIKE npq_file.npq35,  #異動碼9  #MOD-950165
+                    npq36     LIKE npq_file.npq36,  #異動碼10 #MOD-950165                    
+                    npq11     LIKE npq_file.npq11,
+                    npq12     LIKE npq_file.npq12,
+                    npq13     LIKE npq_file.npq13,
+                    npq14     LIKE npq_file.npq14,
+                    npq31     LIKE npq_file.npq31,  #異動碼5
+                    npq32     LIKE npq_file.npq32,  #異動碼6
+                    npq33     LIKE npq_file.npq33,  #異動碼7
+                    npq34     LIKE npq_file.npq34,  #異動碼8
+#                   npq35     LIKE npq_file.npq35,  #異動碼9  #MOD-950165
+#                   npq36     LIKE npq_file.npq36,  #異動碼10 #MOD-950165
+                    npq37     LIKE npq_file.npq37,  #關係人異動碼
+                    npq04     LIKE npq_file.npq04
+                    END RECORD
+DEFINE g_rec_b               LIKE type_file.num5,   
+       l_ac                  LIKE type_file.num5   
+DEFINE   g_curs_index        LIKE type_file.num10    
+DEFINE   g_row_count         LIKE type_file.num10
+END GLOBALS
+#No.FUN-8C0050

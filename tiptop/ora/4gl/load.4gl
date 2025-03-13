@@ -1,0 +1,29 @@
+DATABASE ds
+
+MAIN
+DEFINE l_db     VARCHAR(40)
+DEFINE l_file   VARCHAR(40)
+DEFINE l_table  VARCHAR(40)
+DEFINE l_sql    VARCHAR(60)
+DEFINE l_msg    STRING
+
+WHENEVER ERROR CONTINUE
+
+LET l_db=ARG_VAL(1)
+LET l_file=ARG_VAL(2)
+LET l_table=ARG_VAL(3)
+
+LET l_sql="INSERT INTO ",l_table
+IF fgl_getenv('JAVACLIENT') != 'Y' THEN
+   DISPLAY "LOAD FROM ",l_file," ",l_sql
+END IF
+
+DATABASE l_db
+LOAD FROM l_file l_sql
+#DISPLAY SQLERRMESSAGE
+IF SQLCA.SQLCODE THEN
+   LET l_msg=SQLCA.SQLERRD[2]
+   DISPLAY l_msg
+END IF
+
+END MAIN

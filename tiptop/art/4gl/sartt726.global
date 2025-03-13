@@ -1,0 +1,83 @@
+# Prog. Version..: '5.20.01-10.03.08(00002)'     #
+# Pattern name...: sartt726.global
+# Descriptions...: 
+# Date & Author..: FUN-9B0025 09/11/11 By Cockroach
+# Modify.........: FUN-9B0025 09/12/09 By cockroach PASS NO.
+# Modify.........: FUN-A10047 10/01/18 By destiny 将商品条码栏位提取.
+
+DATABASE ds
+
+GLOBALS
+DEFINE g_rum RECORD LIKE rum_file.*
+DEFINE g_rum_t RECORD LIKE rum_file.*
+DEFINE g_run DYNAMIC ARRAY OF RECORD
+       run02 LIKE run_file.run02,
+       run05 LIKE run_file.run05,        #NO.FUN-A10047
+       run03 LIKE run_file.run03,
+       run03_desc LIKE ima_file.ima02,
+       run04 LIKE run_file.run04,
+       run04_desc LIKE gfe_file.gfe02,
+#       run05 LIKE run_file.run05,       #NO.FUN-A10047
+       run06 LIKE run_file.run06,
+       run06_desc LIKE gfe_file.gfe02,
+       run07 LIKE run_file.run07,
+       run08 LIKE run_file.run08,
+       run09 LIKE run_file.run09,
+       run10 LIKE run_file.run10,
+       run11 LIKE run_file.run11,
+       run12 LIKE run_file.run12,
+       run13 LIKE run_file.run13
+       END RECORD
+DEFINE g_run_t RECORD
+       run02 LIKE run_file.run02,
+       run05 LIKE run_file.run05,        #NO.FUN-A10047
+       run03 LIKE run_file.run03,
+       run03_desc LIKE ima_file.ima02,
+       run04 LIKE run_file.run04,
+       run04_desc LIKE gfe_file.gfe02,
+#       run05 LIKE run_file.run05,        #NO.FUN-A10047
+       run06 LIKE run_file.run06,
+       run06_desc LIKE gfe_file.gfe02,
+       run07 LIKE run_file.run07,
+       run08 LIKE run_file.run08,
+       run09 LIKE run_file.run09,
+       run10 LIKE run_file.run10,
+       run11 LIKE run_file.run11,
+       run12 LIKE run_file.run12,
+       run13 LIKE run_file.run13
+       END RECORD       
+DEFINE  g_sql   STRING,
+        g_wc    STRING,
+        g_wc2   STRING,
+        g_void  LIKE type_file.chr1,        
+        g_rec_b LIKE type_file.num5,
+        b_run   RECORD      LIKE run_file.*,
+        g_cmd               LIKE type_file.chr1000,
+        g_ima906            LIKE ima_file.ima906,
+        g_ima907            LIKE ima_file.ima907,
+        g_imgg00            LIKE imgg_file.imgg00,
+        g_imgg10            LIKE imgg_file.imgg10,
+        g_yy,g_mm           LIKE type_file.num5,
+        g_debit,g_credit    LIKE img_file.img26,
+        g_ima25,g_ima25_2   LIKE ima_file.ima25,
+        g_img10,g_img10_2   LIKE img_file.img10,
+        l_ac                LIKE type_file.num5
+DEFINE  p_row,p_col          LIKE type_file.num5
+DEFINE  g_forupd_sql         STRING
+DEFINE  g_before_input_done  LIKE type_file.num5
+DEFINE l_qcs091             LIKE qcs_file.qcs091
+DEFINE  g_chr                LIKE type_file.chr1
+DEFINE  g_cnt                LIKE type_file.num10
+DEFINE  g_msg                LIKE ze_file.ze03
+DEFINE  g_row_count          LIKE type_file.num10
+DEFINE  g_curs_index         LIKE type_file.num10
+DEFINE  g_jump               LIKE type_file.num10
+DEFINE  mi_no_ask            LIKE type_file.num5
+DEFINE g_count               LIKE type_file.num5 
+DEFINE  g_rum00              LIKE rum_file.rum00
+DEFINE  li_result            LIKE type_file.num5
+DEFINE  g_t1     LIKE oay_file.oayslip
+DEFINE  l_allow_insert  LIKE type_file.num5
+DEFINE  l_allow_delete  LIKE type_file.num5
+END GLOBALS
+#FUN-9B0025

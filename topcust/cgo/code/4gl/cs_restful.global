@@ -1,0 +1,57 @@
+IMPORT JAVA com.fourjs.fgl.lang.FglRecord
+
+database ds
+globals
+
+type request record
+    -- ???
+    Header dynamic array of record
+        key string,
+        value string
+    end record,
+    Body com.fourjs.fgl.lang.FglRecord,
+    Bodys dynamic array with dimension 2 of com.fourjs.fgl.lang.FglRecord,
+    BodyNames dynamic array of string
+end record
+
+type response record
+    Header string,
+    Body string
+end record
+
+type rest record
+    rest01 varchar(40),
+    rest02 varchar(200),
+    rest03 varchar(200),
+    rest04 varchar(4000),
+    rest05 varchar(4000),
+    rest06 datetime year to fraction(5),
+    rest07 varchar(20),
+    rest08 varchar(20),
+    rest09 varchar(20),
+    rest10 varchar(4000),
+    rest11 varchar(20),
+    rest12 varchar(4000),
+    rest13 datetime year to fraction(5),
+    rest14 varchar(4000),
+    rest15 varchar(20),
+    rest16 varchar(20),
+    rest17 varchar(20),
+    rest18 varchar(20),
+    rest19 decimal(15,3),
+    rest20 decimal(15,3),
+    rest21 decimal(15,3),
+    rest22 decimal(15,3),
+    rest23 date,
+    rest24 date,
+    rest25 date
+end record
+
+define RESTful_Address string
+define RESTful_Url string
+define RESTful_Action varchar(20)
+
+define RESTful_request request
+define RESTful_response response
+
+end globals

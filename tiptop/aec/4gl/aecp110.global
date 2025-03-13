@@ -1,0 +1,30 @@
+# Prog. Version..: '5.20.01-10.06.24(00001)'     #
+# Pattern name...: aecp110.global
+# Descriptions...: aecp110.4gl aimi100.src.4gl
+# Date & Author..: FUN-A50100 10/06/02 By lilingy 
+
+DATABASE ds
+
+GLOBALS           #FUN-A50100 
+
+DEFINE g_ecu      RECORD LIKE ecu_file.*   
+
+DEFINE g_ecu01          LIKE ecu_file.ecu01
+DEFINE g_ecu02          LIKE ecu_file.ecu02
+DEFINE g_wc_p110             STRING
+DEFINE g_max            LIKE type_file.num5  
+DEFINE g_max_level      LIKE type_file.num5
+DEFINE g_i_p110              LIKE type_file.num5 
+DEFINE g_cnt_p110            LIKE type_file.num5
+DEFINE g_chr_p110            LIKE type_file.chr1 
+DEFINE g_arg1           LIKE ecu_file.ecu01
+DEFINE g_arg2           LIKE ecu_file.ecu02
+DEFINE g_arg3           LIKE type_file.num5
+DEFINE g_change_lang_p110    LIKE type_file.chr1
+DEFINE l_ecu_p110            RECORD LIKE ecu_file.*
+DEFINE g_ecu012_a        ARRAY[100] OF LIKE ecu_file.ecu012
+DEFINE l_flag_p110           LIKE type_file.chr1 
+DEFINE g_flag_p110           LIKE type_file.chr1
+DEFINE g_confirm_p110        LIKE type_file.chr1 
+                  
+END GLOBALS                   

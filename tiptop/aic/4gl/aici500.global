@@ -1,0 +1,156 @@
+# Prog. Version..: '5.30.04-12.12.20(00001)'     #
+# Pattern name...: aici500.global
+# Descriptions...: aici500系列.4gl需用到的全域變數
+# Date & Author..: 12/10/15 By bart (FUN-CA0022)
+
+DATABASE ds
+
+GLOBALS
+#模組變數(Module Variables)
+DEFINE g_idu   RECORD LIKE idu_file.*,
+       g_idu_t RECORD LIKE idu_file.*,
+       g_idu_o RECORD LIKE idu_file.*,
+       g_sfb   RECORD LIKE sfb_file.*,   #工單單頭
+       g_sfbi  RECORD LIKE sfbi_file.*,  #工單單頭
+       g_sfa   RECORD LIKE sfa_file.*,   #工單單身
+       g_sfai  RECORD LIKE sfai_file.*,  #工單單身
+       g_sfp   RECORD LIKE sfp_file.*,   #發料單頭
+       g_sfq   RECORD LIKE sfq_file.*,   #發料單身
+       g_sfs   RECORD LIKE sfs_file.*   #發料單身
+
+       
+DEFINE 
+    g_fac_tot       LIKE ico_file.ico04,
+    g_rec_b         LIKE type_file.num5,                     #單身筆數
+    g_rec_b2        LIKE type_file.num5,                     #單身筆數
+    g_rec_b3        LIKE type_file.num5,                     #單身筆數
+    l_ac            LIKE type_file.num5,                     #目前處理的ARRAY CNT
+    l_ac2           LIKE type_file.num5,                     #目前處理的ARRAY CNT
+    l_ac3           LIKE type_file.num5,                     #目前處理的ARRAY CNT
+    l_table         STRING,
+    g_cnt           LIKE type_file.num10,
+    g_msg           LIKE occ_file.occ1012,
+    g_pmm22         LIKE pmm_file.pmm22,      #幣別
+    g_pmm42         LIKE pmm_file.pmm42,      #匯率
+    g_sfp03         LIKE sfp_file.sfp03,      #扣帳日期
+    g_yy            LIKE type_file.num10,
+    g_mm            LIKE type_file.num10
+
+DEFINE g_data          DYNAMIC ARRAY OF RECORD    #程式變數(Program Variables)
+                         sel        LIKE type_file.chr1,         #挑選
+                         rvv01      LIKE rvv_file.rvv01,         #入庫單號
+                         rvv02      LIKE rvv_file.rvv02,         #項次
+                         rvv31      LIKE rvv_file.rvv31,         #料件編號
+                         rvv031     LIKE rvv_file.rvv031,        #品名
+                         imaicd04   LIKE imaicd_file.imaicd04,   #料件狀態
+                         rvv32      LIKE rvv_file.rvv32,         #倉庫
+                         rvv33      LIKE rvv_file.rvv33,         #儲位
+                         rvv34      LIKE rvv_file.rvv34,         #批號
+                         pmn63      LIKE pmn_file.pmn63,         #急件
+                         sfbiicd10  LIKE sfbi_file.sfbiicd10,    #multi die
+                         pmniicd12  LIKE pmni_file.pmniicd12,    #廠別
+                         sfbiicd07  LIKE sfbi_file.sfbiicd07,    #Date Code
+                         rvv17      LIKE rvv_file.rvv17,         #入庫數量
+                         rvv85      LIKE rvv_file.rvv85,         #入庫數量
+                         imaicd14   LIKE imaicd_file.imaicd14,   #FUN-B30192
+                         sfbiicd14  LIKE sfbi_file.sfbiicd14,    #母體料號
+                         sfbiicd09  LIKE sfbi_file.sfbiicd09,    #作業編號
+                         sfb05      LIKE sfb_file.sfb05,         #完成料號
+                         sfb27      LIKE sfb_file.sfb27,
+                         sfb271     LIKE sfb_file.sfb271,
+                         sfbiicd08  LIKE sfbi_file.sfbiicd08,    #產品型號
+                         sfb82      LIKE sfb_file.sfb82,         #廠商編號
+                         pmc03_1    LIKE pmc_file.pmc03,         #廠商簡稱
+                         sfb08      LIKE sfb_file.sfb08,         #生產料號
+                         sfbiicd06  LIKE sfbi_file.sfbiicd06,    #生產參考數量
+                         sfb15      LIKE sfb_file.sfb15,         #預定交貨日期
+                         sfbiicd02  LIKE sfbi_file.sfbiicd02,    #wafer廠商
+                         sfbiicd03  LIKE sfbi_file.sfbiicd03,    #wafer site
+                         sfb06      LIKE sfb_file.sfb06,         #製程編號
+                         sfbiicd01  LIKE sfbi_file.sfbiicd01,    #下階段廠商
+                         pmc03_2    LIKE pmc_file.pmc03,         #廠商簡稱
+                         sfbiicd13  LIKE sfbi_file.sfbiicd13,    #回貨批號
+                         meno       LIKE occ_file.occ1012,       #備註
+                         icb05      like icb_file.icb05
+                       END RECORD,                       
+       g_process       DYNAMIC ARRAY OF RECORD    #程式變數(Program Variables)
+                         sel        LIKE type_file.chr1,         #挑選
+                         rvv01      LIKE rvv_file.rvv01,         #入庫單號
+                         rvv02      LIKE rvv_file.rvv02,         #項次
+                         rvv31      LIKE rvv_file.rvv31,         #料件編號
+                         rvv031     LIKE rvv_file.rvv031,        #品名
+                         imaicd04   LIKE imaicd_file.imaicd04,   #料件狀態
+                         rvv32      LIKE rvv_file.rvv32,         #倉庫
+                         rvv33      LIKE rvv_file.rvv33,         #儲位
+                         rvv34      LIKE rvv_file.rvv34,         #批號
+                         pmn63      LIKE pmn_file.pmn63,         #急件
+                         sfbiicd10  LIKE sfbi_file.sfbiicd10,    #multi die
+                         pmniicd12  LIKE pmni_file.pmniicd12,    #廠別
+                         sfbiicd07  LIKE sfbi_file.sfbiicd07,    #Date Code
+                         rvv17      LIKE rvv_file.rvv17,         #入庫數量
+                         rvv85      LIKE rvv_file.rvv85,         #入庫數量
+                         imaicd14   LIKE imaicd_file.imaicd14,   #FUN-B30192
+                         sfbiicd14  LIKE sfbi_file.sfbiicd14,    #母體料號
+                         sfbiicd09  LIKE sfbi_file.sfbiicd09,    #作業編號
+                         sfb05      LIKE sfb_file.sfb05,         #完成料號
+                         sfb27      LIKE sfb_file.sfb27,
+                         sfb271     LIKE sfb_file.sfb271,
+                         sfbiicd08  LIKE sfbi_file.sfbiicd08,    #產品型號
+                         sfb82      LIKE sfb_file.sfb82,         #廠商編號
+                         pmc03_1    LIKE pmc_file.pmc03,         #廠商簡稱
+                         sfb08      LIKE sfb_file.sfb08,         #生產料號
+                         sfbiicd06  LIKE sfbi_file.sfbiicd06,    #生產參考數量
+                         sfb15      LIKE sfb_file.sfb15,         #預定交貨日期
+                         sfbiicd02  LIKE sfbi_file.sfbiicd02,    #wafer廠商
+                         sfbiicd03  LIKE sfbi_file.sfbiicd03,    #wafer site
+                         sfb06      LIKE sfb_file.sfb06,         #製程編號
+                         sfbiicd01  LIKE sfbi_file.sfbiicd01,    #下階段廠商
+                         pmc03_2    LIKE pmc_file.pmc03,         #廠商簡稱
+                         sfbiicd13  LIKE sfbi_file.sfbiicd13,    #回貨批號
+                         meno       LIKE occ_file.occ1012,       #備註
+                         icb05      like icb_file.icb05
+                       END RECORD, 
+       g_process_msg   DYNAMIC ARRAY OF RECORD    #處理資訊
+                          rvv01    LIKE rvv_file.rvv01,              #入庫單號
+                          rvv02    LIKE rvv_file.rvv02,              #入庫項次
+                          rvv_msg  LIKE occ_file.occ1012,            #入庫資訊
+                          success  LIKE type_file.chr1,  #FUN-A30027
+                          sfb01    DYNAMIC ARRAY OF LIKE sfb_file.sfb01,  #工單單號
+                          pmm01    DYNAMIC ARRAY OF LIKE pmm_file.pmm01,  #採購單號
+                          sfp01    DYNAMIC ARRAY OF LIKE sfp_file.sfp01   #發料單號
+                       END RECORD,
+       g_idc   DYNAMIC ARRAY OF RECORD  
+                         sel2         LIKE type_file.chr1,         #勾選
+                         item         LIKE type_file.num10,        #項次
+                         idc05        LIKE idc_file.idc05,         #刻號
+                         idc06        LIKE idc_file.idc06,         #BIN值
+                         icf03        LIKE icf_file.icf03,         #BIN值名稱
+                         icf05        LIKE icf_file.icf05,         #BIN值屬性
+                         qty1         LIKE idc_file.idc08,         #未備置量
+                         qty2         LIKE idc_file.idc08,         #未備置量(die)
+                         ima01        LIKE ima_file.ima01,         #料號
+                         ima02        LIKE ima_file.ima02,         #品名
+                         sfbiicd08_b  LIKE sfbi_file.sfbiicd08,    #產品型號
+                         chk          LIKE type_file.chr1
+               END RECORD,
+       g_idc_t      RECORD                   #程式變數備份(Program Variables)
+                         sel2         LIKE type_file.chr1,         #勾選
+                         item         LIKE type_file.num10,        #項次
+                         idc05        LIKE idc_file.idc05,         #刻號
+                         idc06        LIKE idc_file.idc06,         #BIN值
+                         icf03        LIKE icf_file.icf03,         #BIN值名稱
+                         icf05        LIKE icf_file.icf05,         #BIN值屬性
+                         qty1         LIKE idc_file.idc08,         #未備置量
+                         qty2         LIKE idc_file.idc08,         #未備置量(die)
+                         ima01        LIKE ima_file.ima01,         #料號
+                         ima02        LIKE ima_file.ima02,         #品名
+                         sfbiicd08_b  LIKE sfbi_file.sfbiicd08, #產品型號
+                         chk          LIKE type_file.chr1
+                       END RECORD,
+       g_fac           DYNAMIC ARRAY OF RECORD    #程式變數(Program Variables)
+                         ima01      LIKE ima_file.ima01,
+                         fac        LIKE ico_file.ico04
+                       END RECORD  
+                       
+END GLOBALS
+#FUN-CA0022

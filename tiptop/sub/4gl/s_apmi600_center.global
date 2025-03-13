@@ -1,0 +1,61 @@
+# Prog. Version..: '3.50.02-07.01.03(00000)'     #                                                                                  
+# Pattern name...: s_apmi600_center.global                                                                                             
+# Descriptions...: 定義apmi610的全局變數
+# Date & Author..: 08/03/05 By lilingyu 
+# Modify.........: NO.FUN-820028 08/03/21 By lilingyu                                                                                                                                     
+                                                                                                                                    
+DATABASE ds                                                                                                                         
+#NO.FUN-820028  --Begin--                                                                                                                                    
+GLOBALS 
+DEFINE
+#  g_argv1        LIKE type_file.chr1,                  # CHAR(1) #1.採購廠商(由採購部門維護)
+#                                                       #          (廠商編號循編號原則)
+#                                                       #          (維護程式:apmi6101)
+#                                                       #2.雜項廠商(由請款人員維護)(僅用於AP系統)
+#                                                       #          (廠商編號建議使用統一編號)
+#                                                       #          (維護程式:apmi6102)
+#                                                       #3.員工    (由人事系統轉入或臨時輸入)
+#                                                       #          (廠商編號建議使用員工編號)
+#                                                       #          (維護程式:apmi6103)
+#   g_argv2       LIKE pmca_file.pmcano, #申請單號
+    g_argv1       LIKE pmca_file.pmcano, #申請單號
+    tm1            ARRAY[20] of RECORD
+                       a      LIKE type_file.chr1,     
+                       azp01  LIKE azp_file.azp01,
+                       plant  LIKE azp_file.azp02,
+                       dbs    LIKE azp_file.azp03,
+                       exist  LIKE type_file.chr1     
+                  END RECORD,
+   g_pmca         RECORD LIKE pmca_file.*,
+   g_pmca_t       RECORD LIKE pmca_file.*,
+   g_pmca_o       RECORD LIKE pmca_file.*,
+   g_pmca01_t     LIKE pmca_file.pmca01,  #供應廠商編號
+   g_pmcano_t     LIKE pmca_file.pmcano,   
+   g_pmca24_t     LIKE pmca_file.pmca24,  #供應廠商統一編號
+#  g_pmca_rowid   LIKE type_file.num10,
+   g_choice	  LIKE type_file.chr1, 
+#   g_wc,g_sql    LIKE type_file.chr1000, 
+   g_wc,g_sql     STRING,                
+   l_buf          LIKE type_file.chr1000
+
+DEFINE   p_row,p_col           LIKE type_file.num5  
+DEFINE   g_forupd_sql          STRING                 #SELECT ... FOR UPDATE SQL
+DEFINE   g_before_input_done   LIKE type_file.num5 
+DEFINE   g_tmp_prog            STRING
+DEFINE   g_cnt                 LIKE type_file.num10
+DEFINE   g_i                   LIKE type_file.num5 
+DEFINE   g_msg_i600            LIKE ze_file.ze03     #NO.FUN-820028 
+DEFINE   g_row_count           LIKE type_file.num10
+DEFINE   g_curs_index          LIKE type_file.num10 
+DEFINE   g_jump                LIKE type_file.num10  
+DEFINE   g_on_change           LIKE type_file.num5 
+DEFINE   mi_no_ask             LIKE type_file.num5  
+DEFINE   g_laststage           LIKE type_file.chr1   
+DEFINE   g_t1                  LIKE oay_file.oayslip  
+DEFINE   g_chr                 LIKE type_file.chr1 
+DEFINE   g_chr1                LIKE type_file.chr1 
+DEFINE   g_chr2                LIKE type_file.chr1 
+DEFINE   g_chr3                LIKE type_file.chr1 
+DEFINE   g_str           STRING                    
+END GLOBALS         
+#NO.FUN-820028  --End

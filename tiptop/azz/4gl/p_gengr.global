@@ -1,0 +1,73 @@
+# Prog. Version..: '5.25.01-13.02.25(00002)'     #
+#
+# Pattern name...: p_gengr.global
+# Date & Author..: 12/06/26 By janet
+# Descriptions...: GR產生器公用變數
+# Modify.........: No.FUN-C60097 12/06/26 By janet 產生GRE的程式碼附加於r類程式後
+# Modify.........: No.EXT-D20130 13/02/25 By odyliao g_sr增加lang,fontname變數
+
+DATABASE ds
+
+GLOBALS
+    TYPE field_t RECORD
+        fldid       LIKE gaq_file.gaq01,
+        alias       LIKE gaq_file.gaq03,
+        fieldattr   STRING
+    END RECORD
+
+    DEFINE g_flddef DYNAMIC ARRAY OF RECORD
+        recno       LIKE type_file.num5,
+        field_name  LIKE gac_file.gac06,
+        table_name  LIKE gac_file.gac05,
+        column_name LIKE gac_file.gac06,
+        datatype    LIKE type_file.chr20,
+        length      LIKE type_file.chr20
+    END RECORD
+
+    DEFINE g_sr RECORD
+        prog        LIKE zz_file.zz01,
+        progname    LIKE gaz_file.gaz03,
+        grprog      LIKE zz_file.zz01,
+        reporttype  LIKE zz_file.zz14,
+        papersize   LIKE zaw_file.zaw14,
+        sets        LIKE type_file.chr1,
+        paperori    LIKE type_file.chr1
+      #EXT-D20130 ---(S)
+       ,lang        LIKE gay_file.gay01
+       ,fontname    LIKE type_file.chr100
+      #EXT-D20130 ---(E)
+    END RECORD
+
+    DEFINE g_ord DYNAMIC ARRAY OF RECORD
+        no1         LIKE type_file.num5,
+        fid1        LIKE gaq_file.gaq01,
+        fname1      LIKE gaq_file.gaq03,
+        grup1       LIKE type_file.chr1,
+        order1      LIKE type_file.chr1,
+        nextpage1   LIKE type_file.chr1
+    END RECORD
+  #FUN-C60097
+    DEFINE g_comp DYNAMIC ARRAY OF RECORD
+        no2         LIKE type_file.num5,
+        fid2        LIKE gaq_file.gaq01,
+        fname2      LIKE gaq_file.gaq03,
+        aggr2       LIKE type_file.chr1,
+        disp2       LIKE type_file.chr1
+
+    END RECORD
+
+    #DEFINE g_module     LIKE zz_file.zz011              #模組
+    DEFINE g_zz011	LIKE zz_file.zz011
+    DEFINE g_table1     DYNAMIC ARRAY OF field_t
+    DEFINE g_table2     DYNAMIC ARRAY OF field_t
+    DEFINE g_table3     DYNAMIC ARRAY OF field_t
+    DEFINE g_table4     DYNAMIC ARRAY OF field_t
+    DEFINE g_table5     DYNAMIC ARRAY OF field_t
+    DEFINE g_table6     DYNAMIC ARRAY OF field_t
+    DEFINE g_paper_ori  LIKE type_file.chr1
+    
+    DEFINE g_aggr_vars DYNAMIC ARRAY OF RECORD
+        g_var_name STRING,  #Group Aggr. Var. Name
+        t_var_name STRING   #Total Aggr. Var. Name
+    END RECORD
+END GLOBALS

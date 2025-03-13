@@ -1,0 +1,17 @@
+# Prog. Version..: '5.20.01-11.05.25(00002)'     #
+# Pattern name...: sapcp200.global
+# Descriptions...: NO.TQC-B20181 POS報錯信息Global變數
+# Modify.........: No:TQC-B50134 11/05/24 By wangxin g_sfno
+
+DATABASE ds
+
+GLOBALS
+
+DEFINE  g_trans_no      LIKE ryy_file.ryy01       # 傳輸編號 
+DEFINE  g_msg1          LIKE type_file.chr1000    # 其他錯誤信息
+DEFINE  g_msg           LIKE type_file.chr1000    # 錯誤訊息
+DEFINE  g_fno1          LIKE oga_file.oga01       # 單號
+DEFINE  g_sfno          LIKE oga_file.oga01       # 來源單號     #TQC-B50134 add
+
+END GLOBALS
+#TQC-B20181

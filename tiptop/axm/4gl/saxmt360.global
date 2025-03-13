@@ -1,0 +1,125 @@
+# Prog. Version..: '3.50.01-10.09.21(00002)'     #
+# Pattern name...: saxmt360.global
+# Descriptions...: saxmt360系列.4gl需用到的全域變數
+# Date & Author..: 07/03/26 By kim (FUN-730018)
+# Modify.........: No:CHI-7B0023/CHI-7B0039 07/11/14 By kim 移除GP5.0行業別功能的所有程式段
+# Modify.........: No:FUN-840042 08/04/10 By TSD.Wind 自定欄位功能修改
+# Modify.........: No.FUN-960007 09/06/03 By chenmoyan 該global檔內不可定義rowid變量
+# Modify.........: No:FUN-A80056 10/08/14 By destiny 增加税别等字段
+DATABASE ds
+
+GLOBALS #FUN-730018 全部模組變數改為全域變數
+
+#模組變數(Module Variables)
+DEFINE
+    g_oqt           RECORD LIKE oqt_file.*,
+    g_oqt_t         RECORD LIKE oqt_file.*,
+    g_oqt_o         RECORD LIKE oqt_file.*,
+    g_occ           RECORD LIKE occ_file.*,
+#   g_oqt_rowid     LIKE type_file.chr18,                #ROWID        #No.FUN-680137 INT #No.FUN-960007
+    g_oqt01_t       LIKE oqt_file.oqt01,
+    g_oqu           DYNAMIC ARRAY OF RECORD    #程式變數(Program Variables)
+                    oqu02     LIKE oqu_file.oqu02,
+                    oqu03     LIKE oqu_file.oqu03,
+                    oqu04     LIKE oqu_file.oqu04,
+                    oqu031    LIKE oqu_file.oqu031,
+                    oqu032    LIKE oqu_file.oqu032,
+                    oqu09     LIKE oqu_file.oqu09,
+                    oqu10     LIKE oqu_file.oqu10,
+                    oqu14     LIKE oqu_file.oqu14,   #FUN-610041
+                    oqu08     LIKE oqu_file.oqu08,
+                    oqw02     LIKE oqw_file.oqw02,  ##No:FUN-650197
+                    oqu05     LIKE oqu_file.oqu05,
+                    ima908    LIKE ima_file.ima908, #FUN-560193
+                    oqu06     LIKE oqu_file.oqu06,
+                    oqu07     LIKE oqu_file.oqu07,
+                    oqu11     LIKE oqu_file.oqu11,
+                    oqu12     LIKE oqu_file.oqu12,
+                    oqu13     LIKE oqu_file.oqu13,
+                    #No:FUN-840042 --start--
+                    oquud01   LIKE oqu_file.oquud01,
+                    oquud02   LIKE oqu_file.oquud02,
+                    oquud03   LIKE oqu_file.oquud03,
+                    oquud04   LIKE oqu_file.oquud04,
+                    oquud05   LIKE oqu_file.oquud05,
+                    oquud06   LIKE oqu_file.oquud06,
+                    oquud07   LIKE oqu_file.oquud07,
+                    oquud08   LIKE oqu_file.oquud08,
+                    oquud09   LIKE oqu_file.oquud09,
+                    oquud10   LIKE oqu_file.oquud10,
+                    oquud11   LIKE oqu_file.oquud11,
+                    oquud12   LIKE oqu_file.oquud12,
+                    oquud13   LIKE oqu_file.oquud13,
+                    oquud14   LIKE oqu_file.oquud14,
+                    oquud15   LIKE oqu_file.oquud15
+                    #No:FUN-840042 ---end---
+
+                    END RECORD,
+    g_oqu_t         RECORD
+                    oqu02     LIKE oqu_file.oqu02,
+                    oqu03     LIKE oqu_file.oqu03,
+                    oqu04     LIKE oqu_file.oqu04,
+                    oqu031    LIKE oqu_file.oqu031,
+                    oqu032    LIKE oqu_file.oqu032,
+                    oqu09     LIKE oqu_file.oqu09,
+                    oqu10     LIKE oqu_file.oqu10,
+                    oqu14     LIKE oqu_file.oqu14,   #FUN-610041
+                    oqu08     LIKE oqu_file.oqu08,
+                    oqw02     LIKE oqw_file.oqw02,  ##No:FUN-650197
+                    oqu05     LIKE oqu_file.oqu05,
+                    ima908    LIKE ima_file.ima908, #FUN-560193
+                    oqu06     LIKE oqu_file.oqu06,
+                    oqu07     LIKE oqu_file.oqu07,
+                    oqu11     LIKE oqu_file.oqu11,
+                    oqu12     LIKE oqu_file.oqu12,
+                    oqu13     LIKE oqu_file.oqu13,
+                    #No:FUN-840042 --start--
+                    oquud01   LIKE oqu_file.oquud01,
+                    oquud02   LIKE oqu_file.oquud02,
+                    oquud03   LIKE oqu_file.oquud03,
+                    oquud04   LIKE oqu_file.oquud04,
+                    oquud05   LIKE oqu_file.oquud05,
+                    oquud06   LIKE oqu_file.oquud06,
+                    oquud07   LIKE oqu_file.oquud07,
+                    oquud08   LIKE oqu_file.oquud08,
+                    oquud09   LIKE oqu_file.oquud09,
+                    oquud10   LIKE oqu_file.oquud10,
+                    oquud11   LIKE oqu_file.oquud11,
+                    oquud12   LIKE oqu_file.oquud12,
+                    oquud13   LIKE oqu_file.oquud13,
+                    oquud14   LIKE oqu_file.oquud14,
+                    oquud15   LIKE oqu_file.oquud15
+                    #No:FUN-840042 ---end---
+                    END RECORD,
+     g_wc,g_wc2,g_sql     string, #No:FUN-580092 HCN
+    g_buf           LIKE type_file.chr1000,       #No.FUN-680137 CHAR(30)
+    g_flag          LIKE type_file.chr1,          #No.FUN-680137 CHAR(1)
+    g_tot           LIKE type_file.num5,     # No:FUN-680137 SMALLINT
+    g_t1            LIKE oay_file.oayslip,              #No.FUN-550070        #No.FUN-680137  CHAR(05)
+    g_rec_b         LIKE type_file.num5,                #單身筆數        #No.FUN-680137 SMALLINT
+    l_oayslip       LIKE oay_file.oayslip,   # No:FUN-680137   CHAR(05)     #No.FUN-550070
+    l_oayapr        LIKE type_file.chr1,    # No:FUN-680137 CHAR(01)
+    g_sta           LIKE type_file.chr20,    # No:FUN-680137 CHAR(20)
+    l_n             LIKE type_file.num5,                #        #No.FUN-680137 SMALLINT
+    l_ac            LIKE type_file.num5                 #目前處理的ARRAY CNT        #No.FUN-680137 SMALLINT
+DEFINE g_argv1      LIKE oqt_file.oqt01    #FUN-580113
+DEFINE g_laststage  LIKE type_file.chr1     # No:FUN-680137  CHAR(1)   #FUN-580113
+DEFINE p_row,p_col  LIKE type_file.num5          #No.FUN-680137 SMALLINT
+DEFINE g_forupd_sql STRING  #SELECT ... FOR UPDATE SQL
+DEFINE g_before_input_done  LIKE type_file.num5          #No.FUN-680137 SMALLINT
+
+DEFINE   g_chr           LIKE type_file.chr1          #No.FUN-680137 CHAR(1)
+DEFINE   g_cnt           LIKE type_file.num10         #No.FUN-680137 INTEGER
+DEFINE   g_i             LIKE type_file.num5     #count/index for any purpose        #No.FUN-680137 SMALLINT
+DEFINE   g_msg           LIKE type_file.chr1000       #No.FUN-680137  CHAR(72)
+
+DEFINE   g_row_count    LIKE type_file.num10         #No.FUN-680137 INTEGER
+DEFINE   g_curs_index   LIKE type_file.num10         #No.FUN-680137 INTEGER
+DEFINE   g_jump         LIKE type_file.num10         #No.FUN-680137 INTEGER
+DEFINE   mi_no_ask       LIKE type_file.num5          #No.FUN-680137 SMALLINT
+DEFINE   g_chr2          LIKE type_file.chr1          #No.FUN-680137 CHAR(1)
+DEFINE   g_argv2         STRING     #No:FUN-630010
+DEFINE   b_oqu           RECORD LIKE oqu_file.*  #FUN-730018
+DEFINE   g_wc3           STRING     #NO.FUN-A80056
+END GLOBALS
+#CHI-7B0023/CHI-7B0039

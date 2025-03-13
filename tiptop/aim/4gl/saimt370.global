@@ -1,0 +1,305 @@
+# Prog. Version..: '3.50.01-13.04.22(00009)'     #
+# Pattern name...: saxmt370.global
+# Descriptions...: saxmt370系列.4gl需用到的全域變數
+# Date & Author..: 07/02/02 By kim (FUN-720002)
+# Modify.........: No:FUN-730061 07/03/28 By kim 行業別架構
+# Modify.........: No:CHI-7B0023/CHI-7B0039 07/11/14 By kim 移除GP5.0行業別功能的所有程式段
+# Modify.........: No:FUN-810045 08/01/23 By rainy 項目管理新增inb41/inb42/inb43
+# Modify.........: No:FUN-830056 08/03/17 By bnlent ICD庫存過帳修改 
+# Modify.........: No:FUN-840042 08/04/11 By TSD.liquor 自定欄位功能修改
+# Modify.........: No:FUN-870040 08/07/14 By sherry 增加申請量(inb16)
+# Modify.........: No:TQC-950057 09/05/11 By xiaofeizhu 修改inb15的定義，使只可以輸入4位
+# Modify.........: No.FUN-960007 09/06/02 By chenmoyan 該global檔內不可定義rowid變量
+# Modify.........: No:MOD-960311 09/11/27 By sabrina 理有碼欄位應loke inb15
+# Modify.........: No:TQC-9C0011 09/12/07 By jan 过单
+# Modify.........: No:FUN-B30187 11/06/15 By jason 增加DATECODE、母批
+# Modify.........: No.FUN-BC0104 12/01/12 By xianghui 增加QC單號、項次，檢驗批號，判定結果編碼、結果說明、判定結果項次
+# Modify.........: No.FUN-BC0062 12/03/05 By lilingyu 使用移動加權平均成本時，需維護單價,在審核時也需check一次
+# Modify.........: No.MOD-C30560 12/03/14 By xianghui 更改inb45的數據類型
+# Modify.........: No.DEV-D30026 13/03/19 By Nina GP5.3 追版:DEV-D10001為GP5.25 的單號
+
+DATABASE ds
+
+#FUN-720002
+GLOBALS
+#模組變數(Module Variables)
+DEFINE
+    g_ina               RECORD LIKE ina_file.*,
+    g_ina_t             RECORD LIKE ina_file.*,
+    g_ina_o             RECORD LIKE ina_file.*,
+#   g_ina_rowid         LIKE type_file.chr18,    #ROWID  #No.FUN-690026 INT  #No.FUN-960007
+    g_yy,g_mm	          LIKE type_file.num5,     #No.FUN-690026 SMALLINT
+    b_inb               RECORD LIKE inb_file.*,
+    b_inbi              RECORD LIKE inbi_file.*, #FUN-B30187
+   #g_ima86             LIKE ima_file.ima86,     #FUN-560183
+    g_img09             LIKE img_file.img09,
+    g_img10             LIKE img_file.img10,
+    g_inb               DYNAMIC ARRAY OF RECORD  #程式變數(Prinram Variables)
+                        inb03     LIKE inb_file.inb03,
+                        #FUN-6A0007...............begin
+                        inb911 LIKE inb_file.inb911,
+                        inb912 LIKE inb_file.inb912,
+                        #FUN-6A0007...............end
+#FUN-BC0104----------add--------------str------------------
+                        inb44     LIKE inb_file.inb44,
+                       #inb45     LIKE inb_file.inb44,    #MOD-C30560 mark
+                        inb45     LIKE inb_file.inb45,    #MOD-C30560
+                        inb48     LIKE inb_file.inb48,
+                        inb46     LIKE inb_file.inb46,
+                        qcl02     LIKE qcl_file.qcl02,
+                        inb47     LIKE inb_file.inb47,
+#FUN-BC0104----------add--------------end------------------
+                        inb04     LIKE inb_file.inb04,
+#No.TQC-650115--start
+                        att00     LIKE imx_file.imx00,  
+                        att01     LIKE imx_file.imx01,  #No.FUN-690026 CHAR(10)
+                        att01_c   LIKE imx_file.imx01,  #No.FUN-690026 CHAR(10)
+                        att02     LIKE imx_file.imx02,  #No.FUN-690026 CHAR(10)
+                        att02_c   LIKE imx_file.imx02,  #No.FUN-690026 CHAR(10)
+                        att03     LIKE imx_file.imx03,  #No.FUN-690026 CHAR(10)
+                        att03_c   LIKE imx_file.imx03,  #No.FUN-690026 CHAR(10)
+                        att04     LIKE imx_file.imx04,  #No.FUN-690026 CHAR(10)
+                        att04_c   LIKE imx_file.imx04,  #No.FUN-690026 CHAR(10)
+                        att05     LIKE imx_file.imx05,  #No.FUN-690026 CHAR(10)
+                        att05_c   LIKE imx_file.imx05,  #No.FUN-690026 CHAR(10)
+                        att06     LIKE imx_file.imx06,  #No.FUN-690026 CHAR(10)
+                        att06_c   LIKE imx_file.imx06,  #No.FUN-690026 CHAR(10)
+                        att07     LIKE imx_file.imx07,  #No.FUN-690026 CHAR(10)
+                        att07_c   LIKE imx_file.imx07,  #No.FUN-690026 CHAR(10)
+                        att08     LIKE imx_file.imx08,  #No.FUN-690026 CHAR(10)
+                        att08_c   LIKE imx_file.imx08,  #No.FUN-690026 CHAR(10)
+                        att09     LIKE imx_file.imx09,  #No.FUN-690026 CHAR(10)
+                        att09_c   LIKE imx_file.imx09,  #No.FUN-690026 CHAR(10)
+                        att10     LIKE imx_file.imx10,  #No.FUN-690026 CHAR(10)
+                        att10_c   LIKE imx_file.imx10,  #No.FUN-690026 CHAR(10)
+#No.TQC-650115--end
+                        ima02     LIKE ima_file.ima02,   #No:MOD-480181
+                        ima021    LIKE ima_file.ima021,  #No:MOD-480181
+                        inb05     LIKE inb_file.inb05,
+                        inb06     LIKE inb_file.inb06,
+                        inb07     LIKE inb_file.inb07,   #FUN-5C0085
+                        inb08     LIKE inb_file.inb08,
+                        inb08_fac LIKE inb_file.inb08_fac,
+                        #FUN-870040
+                        inb16     LIKE inb_file.inb16,
+                        inb925    LIKE inb_file.inb925,
+                        inb926    LIKE inb_file.inb926,
+                        inb927    LIKE inb_file.inb927,
+                        inb922    LIKE inb_file.inb922,
+                        inb923    LIKE inb_file.inb923,
+                        inb924    LIKE inb_file.inb924,
+                        #--
+                        #FUN-540025  --end
+                        inb09     LIKE inb_file.inb09,
+                        l_img10   LIKE img_file.img10, #str---add by huanglf160808
+                        #FUN-540025  --begin
+                        inb905    LIKE inb_file.inb905,
+                        inb906    LIKE inb_file.inb906,
+                        inb907    LIKE inb_file.inb907,
+                        inb902    LIKE inb_file.inb902,
+                        inb903    LIKE inb_file.inb903,
+                        inb904    LIKE inb_file.inb904,
+                        #FUN-540025  --end
+                        inb15     LIKE inb_file.inb15, #TQC-950057 Mark  #MOD-960311 取消mark                                                            
+                       #inb15     LIKE type_file.chr4, #TQC-950057       #MOD-960311 mark
+                        azf03     LIKE azf_file.azf03, #MOD-570299
+                        inb13     LIKE inb_file.inb13, #FUN-BC0062
+                        inb14     LIKE inb_file.inb14, #FUN-BC0062
+                       #FUN-810045 add
+                        inb41     LIKE inb_file.inb41,
+                        inb42     LIKE inb_file.inb42,
+                        inb43     LIKE inb_file.inb43,
+                       #FUN-810045 end
+                        inb11     LIKE inb_file.inb11,
+                        inb12     LIKE inb_file.inb12,
+                        inb901    LIKE inb_file.inb901,  #A050
+                        inb10     LIKE inb_file.inb10,    #No.FUN-5C0077
+                        inb930    LIKE inb_file.inb930,  #FUN-670093
+                        gem02c    LIKE gem_file.gem02,     #FUN-670093
+                        #FUN-840042 --start---
+                        inbud01 LIKE inb_file.inbud01,
+                        inbud02 LIKE inb_file.inbud02,
+                        inbud03 LIKE inb_file.inbud03,
+                        inbud04 LIKE inb_file.inbud04,
+                        inbud05 LIKE inb_file.inbud05,
+                        inbud06 LIKE inb_file.inbud06,
+                        inbud07 LIKE inb_file.inbud07,
+                        inbud08 LIKE inb_file.inbud08,
+                        inbud09 LIKE inb_file.inbud09,
+                        inbud10 LIKE inb_file.inbud10,
+                        inbud11 LIKE inb_file.inbud11,
+                        inbud12 LIKE inb_file.inbud12,
+                        inbud13 LIKE inb_file.inbud13,
+                        inbud14 LIKE inb_file.inbud14,
+                        inbud15 LIKE inb_file.inbud15,
+                        inbiicd028 LIKE inbi_file.inbiicd028,   #FUN-B30187
+                        inbiicd029 LIKE inbi_file.inbiicd029    #FUN-B30187
+                        #FUN-840042 --end--
+                        END RECORD,
+    g_inb_t             RECORD
+                        inb03     LIKE inb_file.inb03,
+                        #FUN-6A0007...............begin
+                        inb911 LIKE inb_file.inb911,
+                        inb912 LIKE inb_file.inb912,
+                        #FUN-6A0007...............end
+#FUN-BC0104----------add--------------str------------------
+                        inb44     LIKE inb_file.inb44,
+                       #inb45     LIKE inb_file.inb44,    #MOD-C30560 mark
+                        inb45     LIKE inb_file.inb45,    #MOD-C30560
+                        inb48     LIKE inb_file.inb48,
+                        inb46     LIKE inb_file.inb46,
+                        qcl02     LIKE qcl_file.qcl02,
+                        inb47     LIKE inb_file.inb47,
+#FUN-BC0104----------add--------------end------------------
+                        inb04     LIKE inb_file.inb04,
+#No.TQC-650115--start
+                        att00     LIKE imx_file.imx00,  
+                        att01     LIKE imx_file.imx01,  #No.FUN-690026 CHAR(10)
+                        att01_c   LIKE imx_file.imx01,  #No.FUN-690026 CHAR(10)
+                        att02     LIKE imx_file.imx02,  #No.FUN-690026 CHAR(10)
+                        att02_c   LIKE imx_file.imx02,  #No.FUN-690026 CHAR(10)
+                        att03     LIKE imx_file.imx03,  #No.FUN-690026 CHAR(10)
+                        att03_c   LIKE imx_file.imx03,  #No.FUN-690026 CHAR(10)
+                        att04     LIKE imx_file.imx04,  #No.FUN-690026 CHAR(10)
+                        att04_c   LIKE imx_file.imx04,  #No.FUN-690026 CHAR(10)
+                        att05     LIKE imx_file.imx05,  #No.FUN-690026 CHAR(10)
+                        att05_c   LIKE imx_file.imx05,  #No.FUN-690026 CHAR(10)
+                        att06     LIKE imx_file.imx06,  #No.FUN-690026 CHAR(10)
+                        att06_c   LIKE imx_file.imx06,  #No.FUN-690026 CHAR(10)
+                        att07     LIKE imx_file.imx07,  #No.FUN-690026 CHAR(10)
+                        att07_c   LIKE imx_file.imx07,  #No.FUN-690026 CHAR(10)
+                        att08     LIKE imx_file.imx08,  #No.FUN-690026 CHAR(10)
+                        att08_c   LIKE imx_file.imx08,  #No.FUN-690026 CHAR(10)
+                        att09     LIKE imx_file.imx09,  #No.FUN-690026 CHAR(10)
+                        att09_c   LIKE imx_file.imx09,  #No.FUN-690026 CHAR(10)
+                        att10     LIKE imx_file.imx10,  #No.FUN-690026 CHAR(10)
+                        att10_c   LIKE imx_file.imx10,  #No.FUN-690026 CHAR(10)
+#No.TQC-650115--end
+                        ima02     LIKE ima_file.ima02,   #No:MOD-480181
+                        ima021    LIKE ima_file.ima021,  #No:MOD-480181
+                        inb05     LIKE inb_file.inb05,
+                        inb06     LIKE inb_file.inb06,
+                        inb07     LIKE inb_file.inb07,   #FUN-5C0085
+                        inb08     LIKE inb_file.inb08,
+                        inb08_fac LIKE inb_file.inb08_fac,
+                        #FUN-870040
+                        inb16     LIKE inb_file.inb16,
+                        inb925    LIKE inb_file.inb925,
+                        inb926    LIKE inb_file.inb926,
+                        inb927    LIKE inb_file.inb927,
+                        inb922    LIKE inb_file.inb922,
+                        inb923    LIKE inb_file.inb923,
+                        inb924    LIKE inb_file.inb924,
+                        #--
+                        inb09     LIKE inb_file.inb09,
+                        l_img10   LIKE img_file.img10, #str---add by huanglf160808
+                        #FUN-540025  --begin
+                        inb905    LIKE inb_file.inb905,
+                        inb906    LIKE inb_file.inb906,
+                        inb907    LIKE inb_file.inb907,
+                        inb902    LIKE inb_file.inb902,
+                        inb903    LIKE inb_file.inb903,
+                        inb904    LIKE inb_file.inb904,
+                        #FUN-540025  --end
+                        inb15     LIKE inb_file.inb15, #TQC-950057 Mark   #MOD-960311 取消mark                                                         
+                       #inb15     LIKE type_file.chr4, #TQC-950057        #MOD-960311 mark
+                        azf03     LIKE azf_file.azf03, #MOD-570299
+                        inb13     LIKE inb_file.inb13, #FUN-BC0062
+                        inb14     LIKE inb_file.inb14, #FUN-BC0062
+                       #FUN-810045 add
+                        inb41     LIKE inb_file.inb41,
+                        inb42     LIKE inb_file.inb42,
+                        inb43     LIKE inb_file.inb43,
+                       #FUN-810045 end
+                        inb11     LIKE inb_file.inb11,
+                        inb12     LIKE inb_file.inb12,
+                        inb901    LIKE inb_file.inb901, #A050
+                        inb10     LIKE inb_file.inb10 ,  #No.FUN-5C0077
+                        inb930    LIKE inb_file.inb930,  #FUN-670093
+                        gem02c    LIKE gem_file.gem02,     #FUN-670093
+                        #FUN-840042 --start---
+                        inbud01 LIKE inb_file.inbud01,
+                        inbud02 LIKE inb_file.inbud02,
+                        inbud03 LIKE inb_file.inbud03,
+                        inbud04 LIKE inb_file.inbud04,
+                        inbud05 LIKE inb_file.inbud05,
+                        inbud06 LIKE inb_file.inbud06,
+                        inbud07 LIKE inb_file.inbud07,
+                        inbud08 LIKE inb_file.inbud08,
+                        inbud09 LIKE inb_file.inbud09,
+                        inbud10 LIKE inb_file.inbud10,
+                        inbud11 LIKE inb_file.inbud11,
+                        inbud12 LIKE inb_file.inbud12,
+                        inbud13 LIKE inb_file.inbud13,
+                        inbud14 LIKE inb_file.inbud14,
+                        inbud15 LIKE inb_file.inbud15,
+                        inbiicd028 LIKE inbi_file.inbiicd028,   #FUN-B30187
+                        inbiicd029 LIKE inbi_file.inbiicd029    #FUN-B30187
+                        #FUN-840042 --end--                        
+                        END RECORD,
+    #FUN-540025  --begin
+    g_unit_arr          DYNAMIC ARRAY OF RECORD  #FUN-570036
+                        unit   LIKE ima_file.ima25,
+                        fac    LIKE img_file.img21,
+                        qty    LIKE img_file.img10
+                        END RECORD,
+    g_yes               LIKE type_file.chr1,    #No.FUN-690026 CHAR(1)
+    g_imgg10_2          LIKE img_file.img10,
+    g_imgg10_1          LIKE img_file.img10,
+    g_change            LIKE type_file.chr1,    #No.FUN-690026 CHAR(1)
+    g_ima906            LIKE ima_file.ima906,
+    g_ima907            LIKE ima_file.ima907,
+    g_imgg00            LIKE imgg_file.imgg00,
+    g_imgg10            LIKE imgg_file.imgg10,
+    g_sw                LIKE type_file.num5,    #No.FUN-690026 SMALLINT
+    g_factor            LIKE inb_file.inb08_fac,
+    g_tot               LIKE img_file.img10,
+    g_qty               LIKE img_file.img10,
+    g_flag              LIKE type_file.chr1,    #No.FUN-690026 CHAR(1)
+    #FUN-540025  --end
+    g_wc,g_wc2,g_sql    string,                 #No:FUN-580092 HCN
+    g_t1                LIKE smy_file.smyslip,  #No:FUN-550029 #No.FUN-690026 CHAR(5)
+    #g_buf              CHAR(40),               #MOD-5C0022 20->40  #FUN-660078 remark
+   # g_buf               LIKE azf_file.azf03,    #FUN-660078
+    g_buf               LIKE type_file.chr1000,
+    g_chr               LIKE type_file.chr1,    #No.FUN-690026 CHAR(1)
+    g_chr2              LIKE type_file.chr1,    #FUN-550047 #TQC-5A0134 VAR CHAR-->CHAR  #No.FUN-690026 CHAR(1)
+    g_rec_b             LIKE type_file.num5,    #單身筆數  #No.FUN-690026 SMALLINT
+    g_void              LIKE type_file.chr1,    #No.FUN-690026 CHAR(1)
+    g_imd10             LIKE imd_file.imd10,
+    l_ac                LIKE type_file.num5     #目前處理的ARRAY CNT  #No.FUN-690026 SMALLINT
+
+DEFINE g_argv1               LIKE ina_file.ina00  # 11/12/13 #No.FUN-690026 CHAR(2)
+#DEFINE g_argv2               LIKE ina_file.ina01  #FUN-580120
+DEFINE g_argv2               STRING
+DEFINE g_argv3               STRING               #FUN-640245
+DEFINE g_argv4               STRING               #DEV-D30026 add
+DEFINE g_forupd_sql          STRING               #SELECT ... FOR UPDATE SQL
+DEFINE g_before_input_done   LIKE type_file.num5    #No.FUN-690026 SMALLINT
+DEFINE g_laststage           LIKE type_file.chr1    #FUN-580120  #No.FUN-690026 CHAR(1)
+DEFINE g_cnt                 LIKE type_file.num10   #No.FUN-690026 INTEGER
+DEFINE g_i                   LIKE type_file.num5    #count/index for any purpose  #No.FUN-690026 SMALLINT
+DEFINE g_msg                 LIKE type_file.chr1000 #No.FUN-690026 CHAR(72)
+DEFINE g_row_count           LIKE type_file.num10   #No.FUN-690026 INTEGER
+DEFINE g_curs_index          LIKE type_file.num10   #No.FUN-690026 INTEGER
+DEFINE g_jump                LIKE type_file.num10   #No.FUN-690026 INTEGER
+DEFINE mi_no_ask              LIKE type_file.num5    #No.FUN-690026 SMALLINT    #No.FUN-6A0061
+#NO.TQC-650115--start
+DEFINE  arr_detail           DYNAMIC ARRAY OF RECORD
+          imx00              LIKE imx_file.imx00,
+          imx                ARRAY[10] OF LIKE imx_file.imx01 
+        END RECORD
+DEFINE  lr_agc               DYNAMIC ARRAY OF RECORD LIKE agc_file.*
+DEFINE  lg_smy62             LIKE smy_file.smy62 #在smy_file中定義的與當前單別關聯的組別   
+DEFINE  lg_group             LIKE smy_file.smy62 #當前單身中采用的組別
+DEFINE  g_value              LIKE ima_file.ima01  
+DEFINE  g_inb04              LIKE inb_file.inb04 
+DEFINE  g_chr3               LIKE type_file.chr1                #No.FUN-690026 CHAR(1)
+DEFINE  g_chr4               LIKE type_file.chr1     #No.FUN-690026 CHAR(1)
+#No.TQC-650115--end
+
+DEFINE  g_imm01        LIKE imm_file.imm01   #No:FUN-610090
+DEFINE  g_dies         LIKE ida_file.ida17   #No.FUN-830056
+END GLOBALS
+#CHI-7B0023/CHI-7B0039
+#TQC-9C0011

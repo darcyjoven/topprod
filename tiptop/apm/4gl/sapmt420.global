@@ -1,0 +1,311 @@
+# Prog. Version..: '3.50.01-12.03.29(00006)'     #
+# Pattern name...: sapmt420.global
+# Descriptions...: sapmt420系列.4gl需用到的全域變數
+# Date & Author..: 07/03/29 By kim (FUN-730068)
+# Modify.........: No:CHI-7B0023/CHI-7B0039 07/11/14 By kim 移除GP5.0行業別功能的所有程式段
+# Modify.........: No:FUN-810017 By jan 新增服飾作業字段
+# Modify.........: No:FUN-810045 By rainy 項目管理新增欄位
+# Modify.........: No:FUN-830161 08/04/01 By Carrier 去掉預算編號pml66
+# Modify.........: No.FUN-840042 08/04/15 by TSD.zeak 自訂欄位功能修改 
+# Modify.........: No:FUN-920183 09/03/18 By shiwuying ADD pml91
+# Modify.........: No.FUN-960007 09/06/02 By chenmoyan 該global檔內不可定義rowid變量
+# Modify.........: No.FUN-950088 09/06/29 By hongmei add pml123,mse02
+# Modify.........: No.FUN-870007 09/07/16 By Zhangyajun 流通零售系統功能修改
+# Modify.........: No.FUN-990080 09/09/25 By mike add pml16  
+# Modify.........: No:FUN-9A0065 09/11/03 By baofei add pml92,pml93
+# Modify.........: No:FUN-A80150 10/09/21 By sabrina 新增pml919欄位 
+# Modify.........: No:FUN-B80167 11/09/21 By Abby add pml05
+
+DATABASE ds
+
+GLOBALS
+
+DEFINE #FUN-730068
+    g_pmk01t         LIKE oay_file.oayslip,    #No.FUN-680136 CHAR(5)    #單別(temp)
+    g_pmk   RECORD LIKE pmk_file.*,
+    g_pmk_t RECORD LIKE pmk_file.*,
+    g_pmk_o RECORD LIKE pmk_file.*,
+    g_pmk01_t LIKE pmk_file.pmk01,
+    g_t1               LIKE type_file.chr5,     #No.FUN-680136 CHAR(05)  #No:MOD-540182
+    g_cmd              LIKE type_file.chr1000,  #No.FUN-680136 CHAR(200)
+    g_sheet            LIKE oay_file.oayslip,   #No.FUN-680136 CHAR(5)  #單別    (沿用)       #No:MOD-540182
+    g_ydate            LIKE type_file.dat,      #No.FUN-680136  DATE     #單據日期(沿用)
+#   g_pmk_rowid        LIKE type_file.chr18,    #No.FUN-680136  INT      #No.FUN-960007
+    g_wc,g_wc2,g_sql    string,  #No:FUN-580092 HCN
+#   g_rowid         LIKE type_file.chr18,    #No.FUN-680136 INT  
+   #g_pmw03         LIKE pmw_file.pmw03,   #FUN-650191 remark
+    g_pmx12         LIKE pmx_file.pmx12,   #FUN-650191
+    g_no            LIKE type_file.chr4,     #No.FUN-680136 CHAR(04)
+    g_pml_o         RECORD LIKE pml_file.*,
+    g_pml2          RECORD LIKE pml_file.*,
+    g_pml  DYNAMIC ARRAY OF RECORD
+           pml02    LIKE pml_file.pml02,  #項次
+           pml24    LIKE pml_file.pml24,  #來源單號   #NO.FUN-670007
+           pml25    LIKE pml_file.pml25,  #來源項次   #NO.FUN-670007
+           pmlislk01 LIKE pmli_file.pmlislk01, #制單號 #No:FUN-810017
+           pml47     LIKE pml_file.pml47,  #商品條碼 #No.FUN-870007
+           pml04    LIKE pml_file.pml04,  #料件編號
+           #No.TQC-650108--begin
+           att00     LIKE imx_file.imx00,  #FUN-640013 Add
+           att01     LIKE imx_file.imx01,  #No.FUN-680136 CHAR(10)
+           att01_c   LIKE imx_file.imx01,  #No.FUN-680136 CHAR(10)
+           att02     LIKE imx_file.imx02,  #No.FUN-680136 CHAR(10)
+           att02_c   LIKE imx_file.imx02,  #No.FUN-680136 CHAR(10)
+           att03     LIKE imx_file.imx03,  #No.FUN-680136 CHAR(10)
+           att03_c   LIKE imx_file.imx03,  #No.FUN-680136 CHAR(10)
+           att04     LIKE imx_file.imx04,  #No.FUN-680136 CHAR(10)
+           att04_c   LIKE imx_file.imx04,  #No.FUN-680136 CHAR(10)
+           att05     LIKE imx_file.imx05,  #No.FUN-680136 CHAR(10)
+           att05_c   LIKE imx_file.imx05,  #No.FUN-680136 CHAR(10)
+           att06     LIKE imx_file.imx06,  #No.FUN-680136 CHAR(10)
+           att06_c   LIKE imx_file.imx06,  #No.FUN-680136 CHAR(10)
+           att07     LIKE imx_file.imx07,  #No.FUN-680136 CHAR(10)
+           att07_c   LIKE imx_file.imx07,  #No.FUN-680136 CHAR(10)
+           att08     LIKE imx_file.imx08,  #No.FUN-680136 CHAR(10)
+           att08_c   LIKE imx_file.imx08,  #No.FUN-680136 CHAR(10)
+           att09     LIKE imx_file.imx09,  #No.FUN-680136 CHAR(10)
+           att09_c   LIKE imx_file.imx09,  #No.FUN-680136 CHAR(10)
+           att10     LIKE imx_file.imx10,  #No.FUN-680136 CHAR(10)
+           att10_c   LIKE imx_file.imx10,  #No.FUN-680136 CHAR(10)
+           #No.TQC-650108--end  
+           pml041   LIKE pml_file.pml041, #品名
+           ima021   LIKE ima_file.ima021, #規格
+           pml07    LIKE pml_file.pml07,  #單位
+           pml48    LIKE pml_file.pml48,  #供應商代碼 #No.FUN-870007
+           pml48_desc LIKE pmc_file.pmc03,#供應商名稱 #No.FUN-870007  
+           pml49    LIKE pml_file.pml49,  #經營方式   #No.FUN-870007  
+           pml50    LIKE pml_file.pml50,  #采購類型   #No.FUN-870007  
+           pml51    LIKE pml_file.pml51,  #源頭機構   #No.FUN-870007  
+           pml52    LIKE pml_file.pml52,  #源頭單號   #No.FUN-870007  
+           pml53    LIKE pml_file.pml53,  #源頭項次   #No.FUN-870007
+           pml54    LIKE pml_file.pml54,  #需求類型   #No:FUN-870007
+           pml20    LIKE pml_file.pml20,  #請購量
+           #No.FUN-540027  --begin
+           pml83    LIKE pml_file.pml83,  #單位二
+           pml84    LIKE pml_file.pml84,  #轉換率二
+           pml85    LIKE pml_file.pml85,  #單位二數量
+           pml80    LIKE pml_file.pml80,  #單位一
+           pml81    LIKE pml_file.pml81,  #轉換率一
+           pml82    LIKE pml_file.pml82,  #單位一數量
+           pml86    LIKE pml_file.pml86,  #計價單位
+           pml87    LIKE pml_file.pml87,  #計價數量
+           #No.FUN-540027  --end
+           pml21    LIKE pml_file.pml21,  #轉購量
+           pml35    LIKE pml_file.pml35,  #入庫日期   #FUN-570106   #No:TQC-640132
+           pml34    LIKE pml_file.pml34,  #到廠日期   #FUN-570106   #No:TQC-640132
+           pml33    LIKE pml_file.pml33,  #交貨日期   #No:TQC-640132
+           pmlud02 LIKE pml_file.pmlud02, #add by jixf 160804
+           pml919   LIKE pml_file.pml919, #計畫批號   #FUN-A80150 add
+           pml55    LIKE pml_file.pml55,  #交貨時間   #No:FUN-870007
+           pml41    LIKE pml_file.pml41,  #PLT-NO
+           pml190   LIKE pml_file.pml190, #No:FUN-630040 
+           pml191   LIKE pml_file.pml191, #No:FUN-630040
+           pml192   LIKE pml_file.pml192, #No:FUN-630040
+           pml92    LIKE pml_file.pml92,  #FUN-9A0065
+           pml93    LIKE pml_file.pml93,  #FUN-9A0065
+           pml12    LIKE pml_file.pml12,  #專案代號
+           pml121   LIKE pml_file.pml121, #WBS編號  #FUN-810045 #專案代號-順序
+           pml122   LIKE pml_file.pml122, #活動編號 #FUN-810045 #專案代號-項次
+          #FUN-810045 begin
+           pml67    LIKE pml_file.pml67,  #部門代號
+           pml90   LIKE pml_file.pml90, #費用原因
+           pml40    LIKE pml_file.pml40,  #科目一
+           pml401   LIKE pml_file.pml401, #科目二
+          #pml66    LIKE pml_file.pml66,  #預算編號  #No.FUN-830161
+           pml31    LIKE pml_file.pml31,  #未稅單價
+           pml31t   LIKE pml_file.pml31t, #含稅單價
+          #FUN-810045 end
+           pml930   LIKE pml_file.pml930, #成本中心 #FUN-670051
+           gem02a   LIKE gem_file.gem02,  #成本中心簡稱 #FUN-670051
+           pml06    LIKE pml_file.pml06,  #備註
+           pml38    LIKE pml_file.pml38,  #可用/不可用   #FUN-690047 add
+           pml16    LIKE pml_file.pml16,  #结案码        #FUN-990080     
+           pml11    LIKE pml_file.pml11,  #凍結碼`  #FUN-570078 add
+           pml56    LIKE pml_file.pml56,  #轉出狀態 #No:FUN-870007
+           pml123   LIKE pml_file.pml123, #廠牌    #FUN-950088 add              
+           mse02    LIKE mse_file.mse02   #廠牌名稱#FUN-950088 add
+           ,pml91    LIKE pml_file.pml91  #急料否   #No.FUN-920183 add
+           ,pml05    LIKE pml_file.pml05  #APS單據編號   #No.FUN-B80167 add
+           #FUN-840042 --start---
+           ,pmlud01 LIKE pml_file.pmlud01,
+           #pmlud02 LIKE pml_file.pmlud02,   #mark by jixf 160804
+           pmlud03 LIKE pml_file.pmlud03,
+           pmlud04 LIKE pml_file.pmlud04,
+           pmlud05 LIKE pml_file.pmlud05,
+           pmlud06 LIKE pml_file.pmlud06,
+           pmlud07 LIKE pml_file.pmlud07,
+           pmlud08 LIKE pml_file.pmlud08,
+           pmlud09 LIKE pml_file.pmlud09,
+           pmlud10 LIKE pml_file.pmlud10,
+           pmlud11 LIKE pml_file.pmlud11,
+           pmlud12 LIKE pml_file.pmlud12,
+           pmlud13 LIKE pml_file.pmlud13,
+           pmlud14 LIKE pml_file.pmlud14,
+           pmlud15 LIKE pml_file.pmlud15
+           #FUN-840042 --end--
+      END RECORD,
+    g_pml_t         RECORD                 #程式變數 (舊值)
+           pml02    LIKE pml_file.pml02,  #項次
+	   pml24    LIKE pml_file.pml24,  #來源單號   #NO.FUN-670007
+	   pml25    LIKE pml_file.pml25,  #來源項次   #NO.FUN-670007
+           pmlislk01 LIKE pmli_file.pmlislk01, #制單號 #No:FUN-810017
+           pml47     LIKE pml_file.pml47,  #商品條碼 #No.FUN-870007
+           pml04    LIKE pml_file.pml04,  #料件編號
+           #No.TQC-650108--begin
+           att00     LIKE imx_file.imx00,  #FUN-640013 Add
+           att01     LIKE imx_file.imx01,  #No.FUN-680136 CHAR(10)
+           att01_c   LIKE imx_file.imx01,  #No.FUN-680136 CHAR(10)
+           att02     LIKE imx_file.imx02,  #No.FUN-680136 CHAR(10)
+           att02_c   LIKE imx_file.imx02,  #No.FUN-680136 CHAR(10)
+           att03     LIKE imx_file.imx03,  #No.FUN-680136 CHAR(10)
+           att03_c   LIKE imx_file.imx03,  #No.FUN-680136 CHAR(10)
+           att04     LIKE imx_file.imx04,  #No.FUN-680136 CHAR(10)
+           att04_c   LIKE imx_file.imx04,  #No.FUN-680136 CHAR(10)
+           att05     LIKE imx_file.imx05,  #No.FUN-680136 CHAR(10)
+           att05_c   LIKE imx_file.imx05,  #No.FUN-680136 CHAR(10)
+           att06     LIKE imx_file.imx06,  #No.FUN-680136 CHAR(10)
+           att06_c   LIKE imx_file.imx06,  #No.FUN-680136 CHAR(10)
+           att07     LIKE imx_file.imx07,  #No.FUN-680136 CHAR(10)
+           att07_c   LIKE imx_file.imx07,  #No.FUN-680136 CHAR(10)
+           att08     LIKE imx_file.imx08,  #No.FUN-680136 CHAR(10)
+           att08_c   LIKE imx_file.imx08,  #No.FUN-680136 CHAR(10)
+           att09     LIKE imx_file.imx09,  #No.FUN-680136 CHAR(10)
+           att09_c   LIKE imx_file.imx09,  #No.FUN-680136 CHAR(10)
+           att10     LIKE imx_file.imx10,  #No.FUN-680136 CHAR(10)
+           att10_c   LIKE imx_file.imx10,  #No.FUN-680136 CHAR(10)
+           #No.TQC-650108--end  
+           pml041   LIKE pml_file.pml041, #品名
+           ima021   LIKE ima_file.ima021, #規格
+           pml07    LIKE pml_file.pml07,  #單位
+           pml48    LIKE pml_file.pml48,  #供應商代碼 #No.FUN-870007
+           pml48_desc LIKE pmc_file.pmc03,#供應商名稱 #No.FUN-870007  
+           pml49    LIKE pml_file.pml49,  #經營方式   #No.FUN-870007  
+           pml50    LIKE pml_file.pml50,  #采購類型   #No.FUN-870007  
+           pml51    LIKE pml_file.pml51,  #源頭機構   #No.FUN-870007  
+           pml52    LIKE pml_file.pml52,  #源頭單號   #No.FUN-870007  
+           pml53    LIKE pml_file.pml53,  #源頭項次   #No.FUN-870007
+           pml54    LIKE pml_file.pml54,  #需求類型   #No:FUN-870007
+           pml20    LIKE pml_file.pml20,  #請購量
+           #No.FUN-540027  --begin
+           pml83    LIKE pml_file.pml83,  #單位二
+           pml84    LIKE pml_file.pml84,  #轉換率二
+           pml85    LIKE pml_file.pml85,  #單位二數量
+           pml80    LIKE pml_file.pml80,  #單位一
+           pml81    LIKE pml_file.pml81,  #轉換率一
+           pml82    LIKE pml_file.pml82,  #單位一數量
+           pml86    LIKE pml_file.pml86,  #計價單位
+           pml87    LIKE pml_file.pml87,  #計價數量
+           #No.FUN-540027  --end
+           pml21    LIKE pml_file.pml21,  #轉購量
+           pml35    LIKE pml_file.pml35,  #入庫日期   #FUN-570106   #No:TQC-640132
+           pml34    LIKE pml_file.pml34,  #到廠日期   #FUN-570106   #No:TQC-640132
+           pml33    LIKE pml_file.pml33,  #交貨日期   #No:TQC-640132
+           pmlud02 LIKE pml_file.pmlud02, #add by jixf 160804
+           pml919   LIKE pml_file.pml919, #計畫批號   #FUN-A80150 add
+           pml55    LIKE pml_file.pml55,  #交貨時間   #No:FUN-870007
+           pml41    LIKE pml_file.pml41,  #PLT-NO
+           pml190   LIKE pml_file.pml190, #No:FUN-630040 
+           pml191   LIKE pml_file.pml191, #No:FUN-630040
+           pml192   LIKE pml_file.pml192, #No:FUN-630040
+           pml92    LIKE pml_file.pml92,  #FUN-9A0065
+           pml93    LIKE pml_file.pml93,  #FUN-9A0065
+           pml12    LIKE pml_file.pml12,  #專案代號
+           pml121   LIKE pml_file.pml121, #WBS編號  #FUN-810045 #專案代號-順序
+           pml122   LIKE pml_file.pml122, #活動編號 #FUN-810045 #專案代號-項次
+          #FUN-810045 begin
+           pml67    LIKE pml_file.pml67,  #部門代號
+           pml90   LIKE pml_file.pml90, #費用原因
+           pml40    LIKE pml_file.pml40,  #科目一
+           pml401   LIKE pml_file.pml401, #科目二
+          #pml66    LIKE pml_file.pml66,  #預算編號  #No.FUN-830161
+           pml31    LIKE pml_file.pml31,  #未稅單價
+           pml31t   LIKE pml_file.pml31t, #含稅單價
+          #FUN-810045 end
+           pml930   LIKE pml_file.pml930, #成本中心 #FUN-670051
+           gem02a   LIKE gem_file.gem02,  #成本中心簡稱 #FUN-670051
+           pml06    LIKE pml_file.pml06,  #備註
+           pml38    LIKE pml_file.pml38,  #可用/不可用   #FUN-690047 add
+           pml16    LIKE pml_file.pml16,  #结案码        #FUN-990080     
+           pml11    LIKE pml_file.pml11,  #凍結碼   FUN-570078 add
+           pml56    LIKE pml_file.pml56,  #轉出狀態 #No:FUN-870007
+           pml123   LIKE pml_file.pml123, #廠牌     #FUN-950088 add             
+           mse02    LIKE mse_file.mse02   #廠牌名稱 #FUN-950088 add
+           ,pml91    LIKE pml_file.pml91  #急料否   #No.FUN-920183 add
+           ,pml05    LIKE pml_file.pml05  #APS單據編號   #No.FUN-B80167 add
+           #FUN-840042 --start---
+           ,pmlud01 LIKE pml_file.pmlud01,
+           #pmlud02 LIKE pml_file.pmlud02,  #mark by jixf 160804
+           pmlud03 LIKE pml_file.pmlud03,
+           pmlud04 LIKE pml_file.pmlud04,
+           pmlud05 LIKE pml_file.pmlud05,
+           pmlud06 LIKE pml_file.pmlud06,
+           pmlud07 LIKE pml_file.pmlud07,
+           pmlud08 LIKE pml_file.pmlud08,
+           pmlud09 LIKE pml_file.pmlud09,
+           pmlud10 LIKE pml_file.pmlud10,
+           pmlud11 LIKE pml_file.pmlud11,
+           pmlud12 LIKE pml_file.pmlud12,
+           pmlud13 LIKE pml_file.pmlud13,
+           pmlud14 LIKE pml_file.pmlud14,
+           pmlud15 LIKE pml_file.pmlud15
+           #FUN-840042 --end--
+      END RECORD,
+    #FUN-540027  --begin
+    g_change            LIKE type_file.chr1,   #No:FUN-680136 CHAR(01)
+    g_pml04_y           LIKE pml_file.pml04,
+    g_pml20_t           LIKE pml_file.pml20,
+    g_ima25             LIKE ima_file.ima25,
+    g_ima44             LIKE ima_file.ima44,
+    g_ima906            LIKE ima_file.ima906,
+    g_ima907            LIKE ima_file.ima907,
+    g_ima908            LIKE ima_file.ima908,
+    g_sw                LIKE type_file.num5,   #No:FUN-680136 SMALLINT
+    g_factor            LIKE img_file.img21,
+    g_tot               LIKE img_file.img10,
+    g_qty               LIKE img_file.img10,
+    #FUN-540027  --end
+    g_ima49         LIKE ima_file.ima49,
+    g_ima491        LIKE ima_file.ima491,
+    g_azi03_l LIKE azi_file.azi03,
+    g_azi04_l LIKE azi_file.azi04,
+    g_azi05_l LIKE azi_file.azi05,
+    g_ima37         LIKE ima_file.ima37,
+    g_ima99         LIKE ima_file.ima99,
+    g_gec07         LIKE gec_file.gec07,          #No:FUN-550019
+    l_ac,g_rec_b        LIKE type_file.num5,      #No:FUN-680136 SMALLINT
+    g_argv1             LIKE pmk_file.pmk01,      #ARG_1 請購單號
+    g_argv2             LIKE pmk_file.pmk25,      #No:FUN-680136 CHAR(1)         #狀況碼
+    g_argv3             LIKE pmk_file.pmk02,      #單據性質
+    g_argv4             STRING,                   #No:FUN-630010 執行功能
+    g_sta               LIKE ze_file.ze03,        #No:FUN-680136 CHAR(10)
+    g_statu             LIKE type_file.chr1,      #No:FUN-680136 CHAR(01)
+    p_row,p_col         LIKE type_file.num5,      #No:FUN-680136 SMALLINT 
+    g_laststage         LIKE type_file.chr1       #No:FUN-680136 CHAR(1)         #是否為簽核最後一站 flag #FUN-580011
+DEFINE   g_before_input_done LIKE type_file.num5      #No:FUN-680136 SMALLINT
+DEFINE g_forupd_sql STRING   #SELECT ... FOR UPDATE SQL
+DEFINE   g_chr           LIKE type_file.chr1      #No:FUN-680136 CHAR(1)
+DEFINE   g_chr2          LIKE type_file.chr1      #No:FUN-680136 CHAR(1)
+DEFINE   g_chr3          LIKE type_file.chr1      #No:FUN-680136 CHAR(1)
+DEFINE   g_cnt           LIKE type_file.num10     #No:FUN-680136 INTEGER
+DEFINE   g_i             LIKE type_file.num5      #No:FUN-680136 SMALLINT   #count/index for any purpose
+DEFINE   g_msg           LIKE ze_file.ze03    #No:FUN-680136  CHAR(72)
+
+DEFINE   g_row_count    LIKE type_file.num10     #No:FUN-680136 INTEGER
+DEFINE   g_curs_index   LIKE type_file.num10     #No:FUN-680136 INTEGER
+DEFINE   g_jump         LIKE type_file.num10     #No:FUN-680136 INTEGER
+DEFINE   mi_no_ask      LIKE type_file.num5      #No:FUN-680136 SMALLINT
+DEFINE   g_message      LIKE ze_file.ze03 #MOD-530058 add
+#No.TQC-650108--begin    
+DEFINE   l_check       LIKE type_file.chr1      #No:FUN-680136 CHAR(1)
+DEFINE   g_value       LIKE type_file.chr1000   #No:FUN-680136 CHAR(1000)
+DEFINE   arr_detail    DYNAMIC ARRAY OF RECORD
+         imx00      LIKE imx_file.imx00,
+         imx        ARRAY[10] OF LIKE imx_file.imx01 
+         END RECORD
+DEFINE   lr_agc        DYNAMIC ARRAY OF RECORD LIKE agc_file.*
+DEFINE   lg_smy62      LIKE smy_file.smy62   #在smy_file中定義的與當前單別關聯的組別   
+DEFINE   lg_group      LIKE smy_file.smy62   #當前單身中采用的組別    
+DEFINE   g_pmli        RECORD LIKE pmli_file.* #No:FUN-810017
+#No.TQC-650108--end      
+END GLOBALS
+#CHI-7B0023/CHI-7B0039

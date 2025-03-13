@@ -1,0 +1,96 @@
+# Prog. Version..: '5.20.01-10.01.11(00001)'     #
+# Pattern name...: sartt262.global
+# Descriptions...: 商品借出/還入單需要用到的全部參數 
+# Date & Author..: FUN-870100 09/10/21 By Cockroach
+# Modify.........: FUN-9B0025 09/12/09 By cockroach PASS NO.
+
+DATABASE ds
+
+GLOBALS
+DEFINE g_ruq RECORD LIKE ruq_file.*
+DEFINE g_ruq_t RECORD LIKE ruq_file.*
+DEFINE g_rur DYNAMIC ARRAY OF RECORD
+       rur02 LIKE rur_file.rur02,
+       rur03 LIKE rur_file.rur03,
+       rur03_desc LIKE ima_file.ima02,
+       rur04 LIKE rur_file.rur04,
+       rur04_desc LIKE gfe_file.gfe02,
+       rur05 LIKE rur_file.rur05,
+       rur06 LIKE rur_file.rur06,
+       rur06_desc LIKE gfe_file.gfe02,
+       rur07 LIKE rur_file.rur07,
+       rur08 LIKE rur_file.rur08,
+       rur09 LIKE rur_file.rur09,
+       rur10 LIKE rur_file.rur10,
+       rur11 LIKE rur_file.rur11,
+       rur12 LIKE rur_file.rur12,
+       rur13 LIKE rur_file.rur13, 
+       rur14 LIKE rur_file.rur14,  
+       rur15 LIKE rur_file.rur15,
+       rur16 LIKE rur_file.rur16,
+       rur17 LIKE rur_file.rur17,
+       rur18 LIKE rur_file.rur18,
+       rur19 LIKE rur_file.rur19,
+       rur20 LIKE rur_file.rur20,
+       rur21 LIKE rur_file.rur21
+       END RECORD
+DEFINE g_rur_t RECORD
+       rur02 LIKE rur_file.rur02,
+       rur03 LIKE rur_file.rur03,
+       rur03_desc LIKE ima_file.ima02,
+       rur04 LIKE rur_file.rur04,
+       rur04_desc LIKE gfe_file.gfe02,
+       rur05 LIKE rur_file.rur05,
+       rur06 LIKE rur_file.rur06,
+       rur06_desc LIKE gfe_file.gfe02,
+       rur07 LIKE rur_file.rur07,
+       rur08 LIKE rur_file.rur08,
+       rur09 LIKE rur_file.rur09,
+       rur10 LIKE rur_file.rur10,
+       rur11 LIKE rur_file.rur11,
+       rur12 LIKE rur_file.rur12,
+       rur13 LIKE rur_file.rur13, 
+       rur14 LIKE rur_file.rur14, 
+       rur15 LIKE rur_file.rur15,
+       rur16 LIKE rur_file.rur16,
+       rur17 LIKE rur_file.rur17,
+       rur18 LIKE rur_file.rur18,
+       rur19 LIKE rur_file.rur19,
+       rur20 LIKE rur_file.rur20,
+       rur21 LIKE rur_file.rur21
+       END RECORD       
+DEFINE  g_sql   STRING,
+        g_wc    STRING,
+        g_wc2   STRING,
+        g_void  LIKE type_file.chr1,        
+        g_rec_b LIKE type_file.num5,
+        b_rur   RECORD      LIKE rur_file.*,
+        g_cmd               LIKE type_file.chr1000,
+        g_ima906            LIKE ima_file.ima906,
+        g_ima907            LIKE ima_file.ima907,
+        g_imgg00            LIKE imgg_file.imgg00,
+        g_imgg10            LIKE imgg_file.imgg10,
+        g_yy,g_mm           LIKE type_file.num5,
+        g_debit,g_credit    LIKE img_file.img26,
+        g_ima25,g_ima25_2   LIKE ima_file.ima25,
+        g_img10,g_img10_2   LIKE img_file.img10,
+        l_ac                LIKE type_file.num5
+DEFINE  p_row,p_col          LIKE type_file.num5
+DEFINE  g_forupd_sql         STRING
+DEFINE  g_before_input_done  LIKE type_file.num5
+DEFINE l_qcs091             LIKE qcs_file.qcs091
+DEFINE  g_chr                LIKE type_file.chr1
+DEFINE  g_cnt                LIKE type_file.num10
+DEFINE  g_msg                LIKE ze_file.ze03
+DEFINE  g_row_count          LIKE type_file.num10
+DEFINE  g_curs_index         LIKE type_file.num10
+DEFINE  g_jump               LIKE type_file.num10
+DEFINE  mi_no_ask            LIKE type_file.num5
+DEFINE g_count               LIKE type_file.num5 
+DEFINE  g_ruq00              LIKE ruq_file.ruq00
+DEFINE  li_result            LIKE type_file.num5
+DEFINE  g_t1     LIKE oay_file.oayslip
+DEFINE  l_allow_insert  LIKE type_file.num5
+DEFINE  l_allow_delete  LIKE type_file.num5
+END GLOBALS
+#FUN-9B0025

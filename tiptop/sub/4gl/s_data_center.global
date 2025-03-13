@@ -1,0 +1,25 @@
+# Prog. Version..: '3.50.02-10.01.15(00001)'     #
+# Pattern name...: s_data_center.global
+# Descriptions...: 資料中心拋轉DB時用到的全域變數
+# Date & Author..: 08/01/30 By Carrier (FUN-7C0010)
+# Modify.........: 09/10/30 By baofei FUN-9A0092 增加字段plant
+
+DATABASE ds
+
+GLOBALS #FUN-7C0010
+DEFINE g_azp      DYNAMIC ARRAY OF RECORD         #程式變數(Program Variables)
+                  sel      LIKE type_file.chr1,
+                  azp01    LIKE azp_file.azp01,
+                  azp02    LIKE azp_file.azp02,
+                  azp03    LIKE azp_file.azp03
+                  END RECORD
+DEFINE g_azp1     DYNAMIC ARRAY OF RECORD         #程式變數(Program Variables)
+                  sel      LIKE type_file.chr1,
+                  azp01    LIKE azp_file.azp01,
+                  azp02    LIKE azp_file.azp02,
+                  azp03    LIKE azp_file.azp03,
+                  plant    LIKE type_file.chr1000, #FUN-9A0092 
+                  exist    LIKE type_file.chr1
+                  END RECORD
+DEFINE g_rec_dc   LIKE type_file.num10
+END GLOBALS

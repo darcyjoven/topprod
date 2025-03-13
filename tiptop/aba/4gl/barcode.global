@@ -1,0 +1,31 @@
+# PROG. VERSION..: '5.25.04-13.04.22(00001)'     #
+#       
+# PATTERN NAME...: barcode.global
+# DESCRIPTIONS...: 提供條碼使用GLOBAL
+# DATE & AUTHOR..: No:DEV-CA0011 2012/10/29 By TSD.JIE
+# Modify.........: No.DEV-D20003 2013/02/19 By Mandy 新增變數g_ibj
+# Modify.........: No.DEV-D30025 2013/03/12 By Nina---GP5.3 追版:以上為GP5.25 的單號---
+
+DATABASE ds
+
+GLOBALS
+   #參數設定變數
+   DEFINE g_smyb   RECORD LIKE smyb_file.*   #條碼相關資料檔 #DEV-CA0011--add
+  #DEFINE g_sba    RECORD LIKE sba_file.*    #条码参数档     #DEV-CB0008--mark
+   DEFINE g_ibd    RECORD LIKE ibd_file.*    #条码参数档     #DEV-CB0008--add
+   DEFINE g_tlfb   RECORD LIKE tlfb_file.*   #条码异动档
+   DEFINE g_ibj    RECORD LIKE ibj_file.*    #條碼掃描紀錄暫存檔 #DEV-D20003
+   DEFINE m_iba    RECORD LIKE iba_file.*    #条码档
+   DEFINE m_imgb   RECORD LIKE imgb_file.*   #条码库存档
+  #DEFINE m_imkb   RECORD LIKE imkb_file.*   #条码月结档
+   #机器信息
+   DEFINE g_machine   RECORD               
+            m_name  LIKE type_file.chr100,   #机器名
+            m_ip    LIKE type_file.chr50,    #IP地址
+            m_mac   LIKE type_file.chr50,    #MAC地址
+            m_info  LIKE type_file.chr500    #其它信息
+            END   RECORD
+END GLOBALS
+#DEV-CA0011--add
+#DEV-D30025--add
+

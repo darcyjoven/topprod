@@ -1,0 +1,312 @@
+# Prog. Version..: '3.50.01-13.02.21(00010)'     #
+# Pattern name...: sasfi501.global
+# Descriptions...: sasfi501系列.4gl需用到的全域變數
+# Date & Author..: 07/03/29 By kim (FUN-730075)
+# Modify.........: No.FUN-740187 07/04/27 By kim 過帳段移到_sub.4gl
+# Modify.........: No:CHI-6C0005 07/06/08 By jamie 修改套數應詢問是否重新產生單身資料
+# Modify.........: No:CHI-7B0023/CHI-7B0039 07/11/16 By kim 移除GP5.0行業別功能的所有程式段
+# Modify.........: No:FUN-870097 08/07/24 By sherry 增加可修改 特性代碼(sre051)
+# Modify.........: No:FUN-870117 08/08/28 by ve007 增加倉管員拆分發料單功能                                                         
+                                                  #發料方式按制單批號進行生成
+# Modify.........: No:TQC-890051 08/09/24 by sherry 過區only
+# Modify.........: No:FUN-940039 09/04/08 By dongbg GP5.2發料改善,第二單身顯示欠料量,顯示sfs27
+# Modify.........: No.FUN-960007 09/06/03 By chenmoyan 該global檔內不可定義rowid變量
+# Modify.........: No:FUN-950088 09/07/01 By hongmei add sfa36,mse02
+# Modify.........: No.FUN-A20048 10/03/17 By liuxqa add gen_all,sel_all,l_ac1,g_sib_1 
+# Modify.........: No.FUN-A40023 10/04/08 By chenmoyan 過單
+# Modify.........: NO.FUN-A40053 10/04/22 By liuxqa add g_flag_sie01 
+# Modify.........: No:MOD-A50110 10/05/17 By Sarah 增加g_wc5,記錄g_wc3轉換成sfe_file欄位的條件
+# Modify.........: No:FUN-A60028 10/06/09 By lilingyu 平行工藝
+# Modify.........: No:FUN-B20095 11/06/28 By lixh1 add sfq012,ecm014
+# Modify.........: No:FUN-B70061 11/07/27 By jason add sfsiicd028,sfsiicd029
+# Modify.........: No:CHI-BC0040 12/01/02 By ck2yuan g_sfs增加sfs28, sfs27搬到sfs04前面
+# Modify.........: No:FUN-B80143 12/01/17 By jason 補過單
+# Modify.........: No:FUN-C70014 12/08/20 By suncx 新增RunCard發料
+# Modify.........: No.FUN-CB0087 12/12/14 By fengrui 倉庫單據理由碼改善
+
+DATABASE ds
+
+GLOBALS
+DEFINE  #FUN-730075 #FUN-740187 #TQC-890051 #FUN-B80143
+    tm RECORD
+      #from_w     CHAR(10), #撥出倉庫
+      #from_loc   CHAR(10), #撥出倉庫
+      #from_lot   CHAR(10), #
+      #to_w       CHAR(10), #撥入倉庫
+      #to_loc     CHAR(10), #撥入倉庫
+      #to_lot     CHAR(10), #
+      #tr_no      CHAR(10), #調撥單號
+       from_w     LIKE img_file.img02, #撥出倉庫 #MOD-580001
+       from_loc   LIKE img_file.img03, #撥出倉庫 #MOD-580001
+       from_lot   LIKE img_file.img04, ##MOD-580001
+       to_w       LIKE img_file.img02, #撥入倉庫 #MOD-580001
+       to_loc     LIKE img_file.img03, #撥入倉庫 #MOD-580001
+       to_lot     LIKE img_file.img04, ##MOD-580001
+       tr_no      LIKE sfp_file.sfp01, #調撥單號 #MOD-580001
+       tr_date    LIKE type_file.dat     #No.FUN-680121 DATE      #調撥日期
+    END RECORD,
+    g_sfp   RECORD LIKE sfp_file.*,
+    g_sfp_t RECORD LIKE sfp_file.*,
+    g_sfp_o RECORD LIKE sfp_file.*,
+#   g_sfp_rowid     LIKE type_file.chr18,   #ROWID  #No.FUN-680121 INT  #No.FUN-960007
+    g_yy,g_mm	    LIKE type_file.num5,    #No.FUN-680121	SMALLINT,              #
+    b_sfq   RECORD LIKE sfq_file.*,
+    b_sfs   RECORD LIKE sfs_file.*,
+    b_sfsi  RECORD LIKE sfsi_file.*,   #FUN-B70061
+    b_sfe   RECORD LIKE sfe_file.*,
+    g_sfa   RECORD LIKE sfa_file.*,
+    g_sfa2  RECORD LIKE sfa_file.*,
+    g_sfb   RECORD LIKE sfb_file.*,
+    g_img   RECORD LIKE img_file.*,
+   #g_ima86  LIKE ima_file.ima86,  #FUN-740187 沒用到mark掉
+    g_ima108 LIKE ima_file.ima108,
+    g_img09  LIKE img_file.img09,
+    g_img10  LIKE img_file.img10,
+    g_sfq           DYNAMIC ARRAY OF RECORD    #程式變數(Prinram Variables)
+                    sfq014    LIKE sfq_file.sfq014,    #FUN-C70014
+                    sfq02     LIKE sfq_file.sfq02,
+                    sfq012    LIKE sfq_file.sfq012,    #FUN-B20095 
+                    ecm014    LIKE ecm_file.ecm014,    #FUN-B20095
+                    sfq04     LIKE sfq_file.sfq04,
+                    sfb05     LIKE sfb_file.sfb05,
+                    ima02_a   LIKE ima_file.ima02,
+                    ima021_a   LIKE ima_file.ima021,
+                    sfq05     LIKE sfq_file.sfq05, #FUN-5C0114
+                    sfq07     LIKE sfq_file.sfq07, #FUN-870097
+                    sfq08     LIKE sfq_file.sfq08, #FUN-940039
+                    sfq03     LIKE sfq_file.sfq03
+                    #FUN-840042 --start---
+                    ,sfqud01 LIKE sfq_file.sfqud01,
+                    sfqud02 LIKE sfq_file.sfqud02,
+                    sfqud03 LIKE sfq_file.sfqud03,
+                    sfqud04 LIKE sfq_file.sfqud04,
+                    sfqud05 LIKE sfq_file.sfqud05,
+                    sfqud06 LIKE sfq_file.sfqud06,
+                    sfqud07 LIKE sfq_file.sfqud07,
+                    sfqud08 LIKE sfq_file.sfqud08,
+                    sfqud09 LIKE sfq_file.sfqud09,
+                    sfqud10 LIKE sfq_file.sfqud10,
+                    sfqud11 LIKE sfq_file.sfqud11,
+                    sfqud12 LIKE sfq_file.sfqud12,
+                    sfqud13 LIKE sfq_file.sfqud13,
+                    sfqud14 LIKE sfq_file.sfqud14,
+                    sfqud15 LIKE sfq_file.sfqud15
+                    #FUN-840042 --end--
+                    END RECORD,
+    g_sfs           DYNAMIC ARRAY OF RECORD    #程式變數(Prinram Variables)
+                    sfs02     LIKE sfs_file.sfs02,
+                    sfs26     LIKE sfs_file.sfs26,
+                    sfs28     LIKE sfs_file.sfs28,     #CHI-BC0040 add
+                    sfs014    LIKE sfs_file.sfs014,    #FUN-C70014 add
+                    sfs03     LIKE sfs_file.sfs03,
+                    sfs27     LIKE sfs_file.sfs27,     #CHI-BC0040 add
+                    sfs04     LIKE sfs_file.sfs04,
+                   #sfs27     LIKE sfs_file.sfs27,     #FUN-940039 add    #CHI-BC0040 mark
+                    ima02     LIKE ima_file.ima02,
+                    ima021    LIKE ima_file.ima021,
+#FUN-A60028 --begin--
+                    sfs012    LIKE sfs_file.sfs012,
+                    ecu014    LIKE ecu_file.ecu014,
+                    sfs013    LIKE sfs_file.sfs013,
+#FUN-A60028 --end--                    
+                    sfs06     LIKE sfs_file.sfs06,
+                    sfs10     LIKE sfs_file.sfs10,
+                    sfa05     LIKE sfa_file.sfa05,                    
+                    sfa06     LIKE sfa_file.sfa06,
+                    short_qty LIKE sfa_file.sfa07,     #FUN-940039 add
+                    sfs07     LIKE sfs_file.sfs07,
+                    sfs08     LIKE sfs_file.sfs08,
+                    sfs09     LIKE sfs_file.sfs09,
+                    sfs05     LIKE sfs_file.sfs05,
+                    #FUN-560016 --begin
+                    sfs33     LIKE sfs_file.sfs33,
+                    sfs34     LIKE sfs_file.sfs34,
+                    sfs35     LIKE sfs_file.sfs35,
+                    sfs30     LIKE sfs_file.sfs30,
+                    sfs31     LIKE sfs_file.sfs31,
+                    sfs32     LIKE sfs_file.sfs32,
+                    #FUN-560016 --end
+                    sfs21     LIKE sfs_file.sfs21,
+                    img10     LIKE img_file.img10,
+                    img10_alo LIKE img_file.img10,
+                    sfs930    LIKE sfs_file.sfs930, #FUN-670103
+                    gem02c    LIKE gem_file.gem02,  #FUN-670103
+                    sfs36     LIKE sfs_file.sfs36,  #FUN-950088 add
+                    mse02     LIKE mse_file.mse02,  #FUN-950088 add
+                    sfs37     LIKE sfs_file.sfs37,  #FUN-CB0087 add
+                    azf03_1   LIKE azf_file.azf03   #FUN-CB0087 add
+                    #FUN-840042 --start---
+                    ,sfsud01 LIKE sfs_file.sfsud01,
+                    sfsud02 LIKE sfs_file.sfsud02,
+                    sfsud03 LIKE sfs_file.sfsud03,
+                    sfsud04 LIKE sfs_file.sfsud04,
+                    sfsud05 LIKE sfs_file.sfsud05,
+                    sfsud06 LIKE sfs_file.sfsud06,
+                    sfsud07 LIKE sfs_file.sfsud07,
+                    sfsud08 LIKE sfs_file.sfsud08,
+                    sfsud09 LIKE sfs_file.sfsud09,
+                    sfsud10 LIKE sfs_file.sfsud10,
+                    sfsud11 LIKE sfs_file.sfsud11,
+                    sfsud12 LIKE sfs_file.sfsud12,
+                    sfsud13 LIKE sfs_file.sfsud13,
+                    sfsud14 LIKE sfs_file.sfsud14,
+                    sfsud15 LIKE sfs_file.sfsud15
+                    #FUN-840042 --end--
+                   ,sfsiicd028 LIKE sfsi_file.sfsiicd028   #FUN-B70061
+                   ,sfsiicd029 LIKE sfsi_file.sfsiicd029   #FUN-B70061
+                    END RECORD,
+    g_sfs_t         RECORD
+                    sfs02     LIKE sfs_file.sfs02,
+                    sfs26     LIKE sfs_file.sfs26,
+                    sfs28     LIKE sfs_file.sfs28,     #CHI-BC0040 add
+                    sfs014    LIKE sfs_file.sfs014,    #FUN-C70014 add
+                    sfs03     LIKE sfs_file.sfs03,
+                    sfs27     LIKE sfs_file.sfs27,     #CHI-BC0040 add
+                    sfs04     LIKE sfs_file.sfs04,
+                   #sfs27     LIKE sfs_file.sfs27,     #FUN-940039 add    #CHI-BC0040 mark
+                    ima02     LIKE ima_file.ima02,
+                    ima021    LIKE ima_file.ima021,
+#FUN-A60028 --begin--
+                    sfs012    LIKE sfs_file.sfs012,
+                    ecu014    LIKE ecu_file.ecu014,
+                    sfs013    LIKE sfs_file.sfs013,
+#FUN-A60028 --end--                       
+                    sfs06     LIKE sfs_file.sfs06,
+                    sfs10     LIKE sfs_file.sfs10,
+                    sfa05     LIKE sfa_file.sfa05,
+                    sfa06     LIKE sfa_file.sfa06,
+                    short_qty LIKE sfa_file.sfa07,     #FUN-940039 add
+                    sfs07     LIKE sfs_file.sfs07,
+                    sfs08     LIKE sfs_file.sfs08,
+                    sfs09     LIKE sfs_file.sfs09,
+                    sfs05     LIKE sfs_file.sfs05,
+                    #FUN-560016 --begin
+                    sfs33     LIKE sfs_file.sfs33,
+                    sfs34     LIKE sfs_file.sfs34,
+                    sfs35     LIKE sfs_file.sfs35,
+                    sfs30     LIKE sfs_file.sfs30,
+                    sfs31     LIKE sfs_file.sfs31,
+                    sfs32     LIKE sfs_file.sfs32,
+                    #FUN-560016 --end
+                    sfs21     LIKE sfs_file.sfs21,
+                    img10     LIKE img_file.img10,
+                    img10_alo LIKE img_file.img10,
+                    sfs930    LIKE sfs_file.sfs930, #FUN-670103
+                    gem02c    LIKE gem_file.gem02,  #FUN-670103
+                    sfs36     LIKE sfs_file.sfs36,  #FUN-950088 add
+                    mse02     LIKE mse_file.mse02,  #FUN-950088 add
+                    sfs37     LIKE sfs_file.sfs37,  #FUN-CB0087 add
+                    azf03_1   LIKE azf_file.azf03   #FUN-CB0087 add
+                    #FUN-840042 --start---
+                    ,sfsud01 LIKE sfs_file.sfsud01,
+                    sfsud02 LIKE sfs_file.sfsud02,
+                    sfsud03 LIKE sfs_file.sfsud03,
+                    sfsud04 LIKE sfs_file.sfsud04,
+                    sfsud05 LIKE sfs_file.sfsud05,
+                    sfsud06 LIKE sfs_file.sfsud06,
+                    sfsud07 LIKE sfs_file.sfsud07,
+                    sfsud08 LIKE sfs_file.sfsud08,
+                    sfsud09 LIKE sfs_file.sfsud09,
+                    sfsud10 LIKE sfs_file.sfsud10,
+                    sfsud11 LIKE sfs_file.sfsud11,
+                    sfsud12 LIKE sfs_file.sfsud12,
+                    sfsud13 LIKE sfs_file.sfsud13,
+                    sfsud14 LIKE sfs_file.sfsud14,
+                    sfsud15 LIKE sfs_file.sfsud15
+                   ,sfsiicd028 LIKE sfsi_file.sfsiicd028   #FUN-B70061
+                   ,sfsiicd029 LIKE sfsi_file.sfsiicd029   #FUN-B70061
+                    #FUN-840042 --end--
+                    END RECORD,
+    g_sib_1         DYNAMIC ARRAY OF RECORD    #FUN-A20048 add
+                    chk     LIKE type_file.chr1,
+                    sib02   LIKE sib_file.sib02  
+                    END RECORD,
+    g_sib_t         RECORD 
+                    chk     LIKE type_file.chr1,
+                    sib02   LIKE sib_file.sib02 
+                    END RECORD,                #FUN-A20048 add 
+    #FUN-560016  --begin
+    g_imgg10_2          LIKE img_file.img10,
+    g_imgg10_1          LIKE img_file.img10,
+    g_ima906            LIKE ima_file.ima906,
+    g_ima907            LIKE ima_file.ima907,
+    g_imgg00            LIKE imgg_file.imgg00,
+    g_imgg10            LIKE imgg_file.imgg10,
+    g_sw                LIKE type_file.num5,    #No.FUN-680121 SMALLINT,
+    g_factor            LIKE sfs_file.sfs31,
+    g_tot               LIKE img_file.img10,
+    g_qty               LIKE img_file.img10,
+    g_flag              LIKE type_file.chr1,    #No.FUN-680121 CHAR(1)
+    g_ima55             LIKE ima_file.ima55,
+    g_ima31             LIKE ima_file.ima31,
+    #FUN-560016  --end
+    #FUN-940039  --begin
+    #g_sfa07		LIKE sfa_file.sfa07,    #No.FUN-680121 DEC(15,3),
+    g_short_qty         LIKE sfa_file.sfa07,
+    #FUN-940039  --end 
+   #g_sfa26		CHAR(1),
+    g_sfa26		LIKE sfa_file.sfa26,    #MOD-580001
+    g_ask_post          LIKE type_file.chr1,    #No.FUN-680121 CHAR(1), #扣帳時,是否詢問使用者(for asfp510)
+     g_wc,g_wc2,g_wc3	string,  #No:FUN-580092 HCN
+     g_wc4              STRING,  #FUN-940039 add
+     g_wc5              STRING,                 #MOD-A50110 add
+     gen_no             LIKE gen_file.gen01,    #FUN-940039 add
+     g_sql    		string,  #No:FUN-580092 HCN
+#   g_t1                CHAR(3),
+    g_t1                LIKE oay_file.oayslip,           #No.FUN-550052  #No.FUN-680121 CHAR(05)
+    g_t2                like oay_file.oayslip,           #No.FUN-870117
+    g_buf               LIKE type_file.chr1000, #No.FUN-680121 CHAR(20)
+    tot1,tot2,tot3      LIKE ima_file.ima26,    #No.FUN-680121 DECIMAL(12,3),
+    issue_type          LIKE type_file.chr1,    #No.FUN-680121 CHAR(1),
+    short_data          LIKE type_file.chr1,    #No.FUN-680121 CHAR(1),
+   #b_part,e_part       CHAR(20),
+    b_part,e_part       LIKE ima_file.ima01, #MOD-580001
+    part_type           LIKE type_file.chr1,    #No.FUN-680121 CHAR(1),
+    noqty               LIKE type_file.chr1,    #No.FUN-680121 CHAR(1),#庫存不足時,是否產生
+    gen_all             LIKE type_file.chr1,    #NO.FUN-A20048 
+    sel_all             LIKE type_file.chr1,    #No.FUN-A20048 add
+    issue_qty,issue_qty1,issue_qty2  LIKE sfb_file.sfb08,  #No.FUN-680121 DEC(15,3),
+    img_qty             LIKE sfb_file.sfb08,  #No.FUN-680121 DEC(15,3),
+    qty_alo             LIKE sfb_file.sfb08,  #No.FUN-680121 DEC(15,3),
+   #ware_no, loc_no, lot_no CHAR(20),
+    ware_no             LIKE img_file.img02, #MOD-580001
+    loc_no              LIKE img_file.img03, #MOD-580001
+    lot_no              LIKE img_file.img04, #MOD-580001
+    g_rec_d             LIKE type_file.num5,              #No.FUN-680121 SMALLINT,#單頭array筆數
+    g_rec_b             LIKE type_file.num5,              #單身筆數  #No.FUN-680121 SMALLINT
+    g_rec_b1            LIKE type_file.num5,              #單身筆數  #No.FUN-A20048 SMALLINT
+    l_ecm               record like ecm_file.*,     #No.FUN-870117
+    l_ac                LIKE type_file.num5,              #目前處理的ARRAY CNT  #No.FUN-680121 SMALLINT
+    l_ac1               LIKE type_file.num5,              #目前處理的ARRAY CNT  #No.FUN-A20048 add
+    g_pno               LIKE type_file.num5               #No.FUN-680121 SMALLINT #print page
+DEFINE g_argv1          LIKE type_file.chr1    #No.FUN-680121 CHAR(1)              #1.發料 2.退料
+DEFINE g_argv2          LIKE type_file.chr1    #No.FUN-680121 CHAR(1)              #1:成套發料 2:超領 3:補料   4.領料
+                                             #6:成套退料        8:一般退 9.耗材退
+DEFINE g_argv3          LIKE sfp_file.sfp01  #發料單號 #MOD-580252
+DEFINE g_argv4          STRING               #功能 No:FUN-660166
+DEFINE g_forupd_sql STRING   #SELECT ... FOR UPDATE SQL
+DEFINE g_before_input_done  LIKE type_file.num5    #No.FUN-680121 SMALLINT
+DEFINE g_chr           LIKE type_file.chr1    #No.FUN-680121 CHAR(1)
+DEFINE g_cnt           LIKE type_file.num10   #No.FUN-680121 INTEGER
+DEFINE g_dash_1        LIKE type_file.chr1000  #No.FUN-680121 CHAR(400)   #Dash line
+DEFINE g_i             LIKE type_file.num5     #count/index for any purpose  #No.FUN-680121 SMALLINT
+#DEFINE   g_msg         LIKE type_file.chr1000 #TQC-630013  #No.FUN-680121 CHAR(72)
+DEFINE g_msg           LIKE type_file.chr1000 #No.FUN-680121 CHAR(120)  #TQC-630013
+DEFINE g_row_count     LIKE type_file.num10   #No.FUN-680121 INTEGER
+DEFINE g_curs_index    LIKE type_file.num10   #No.FUN-680121 INTEGER
+DEFINE g_jump          LIKE type_file.num10   #No.FUN-680121 INTEGER
+DEFINE mi_no_ask       LIKE type_file.num5    #No.FUN-680121 SMALLINT
+DEFINE g_confirm       LIKE type_file.chr1    #No.FUN-680121 CHAR(1)
+DEFINE g_approve       LIKE type_file.chr1    #No.FUN-680121 CHAR(1)
+DEFINE g_post          LIKE type_file.chr1    #No.FUN-680121 CHAR(1)
+DEFINE g_close         LIKE type_file.chr1    #No.FUN-680121 CHAR(1)
+DEFINE g_void          LIKE type_file.chr1    #No.FUN-680121 CHAR(1)
+DEFINE g_valid         LIKE type_file.chr1    #No.FUN-680121 CHAR(1)
+DEFINE g_cmd           LIKE type_file.chr1000  #FUN-610042  #No.FUN-680121 CHAR(100)
+DEFINE b_sfq           RECORD LIKE sfq_file.*  #FUN-730075
+DEFINE g_flag_sfq03    LIKE type_file.chr1    #CHI-6C0005 add#No.FUN-680121 CHAR(1)
+define g_eno,g_bno     LIKE type_file.chr20   #No.FUN-870117
+DEFINE g_flag_sie01    LIKE type_file.chr1    #No.FUN-A40053 add
+END GLOBALS
+#CHI-7B0023/CHI-7B0039
+#No.FUN-A40023

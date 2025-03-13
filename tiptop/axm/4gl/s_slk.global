@@ -1,0 +1,83 @@
+# program vision.: '5.30.01-11.07.23(00000)' 
+# Pattern name...: s_slk.global
+# Date & Author..: 011/09/02  #FUN-B90104 by huangrh
+# Modify.........: No.TQC-C10128 12/01/31 By bart 補過單
+# Modify.........: No.FUN-C20101 By qiaozy 增加g_inb_slk和g_inbi_slk变量
+# Modify.........: No:FUN-C30057 12/04/12 By linlin 服飾二維開發 增加g_pon_slk,g_poni_slk
+
+DATABASE ds
+#TQC-C10128
+GLOBALS
+
+DEFINE g_keyvalue1        LIKE type_file.chr20
+DEFINE g_keyvalue2        LIKE type_file.chr20
+
+DEFINE g_oeb_slk   RECORD LIKE oeb_file.*
+DEFINE g_ogb_slk   RECORD LIKE ogb_file.*
+DEFINE g_pml_slk   RECORD LIKE pml_file.*
+DEFINE g_ohb_slk   RECORD LIKE ohb_file.*
+DEFINE g_pmn_slk   RECORD LIKE pmn_file.*
+DEFINE g_rvb_slk   RECORD LIKE rvb_file.*
+DEFINE g_rux_slk   RECORD LIKE rux_file.*
+DEFINE g_rup_slk   RECORD LIKE rup_file.*
+DEFINE g_rvv_slk   RECORD LIKE rvv_file.*
+DEFINE g_oebi_slk  RECORD LIKE oebi_file.*
+DEFINE g_ogbi_slk  RECORD LIKE ogbi_file.*
+DEFINE g_pmli_slk  RECORD LIKE pmli_file.*
+DEFINE g_ohbi_slk  RECORD LIKE ohbi_file.*
+DEFINE g_pmni_slk  RECORD LIKE pmni_file.*
+DEFINE g_rvbi_slk  RECORD LIKE rvbi_file.*
+DEFINE g_rvvi_slk  RECORD LIKE rvvi_file.*
+#FUN-C20101----ADD---STR----
+DEFINE g_inb_slk   RECORD LIKE inb_file.*
+DEFINE g_inbi_slk  RECORD LIKE inbi_file.*
+#FUN-C20101----ADD---END----
+DEFINE g_pon_slk   RECORD LIKE pon_file.*      #FUN-C30057---- add--
+DEFINE g_poni_slk   RECORD LIKE poni_file.*    #FUN-C30057---- add---
+DEFINE g_imxtext DYNAMIC ARRAY OF RECORD
+          color     LIKE type_file.chr50,
+          detail    DYNAMIC ARRAY OF RECORD
+            size   LIKE type_file.chr50
+             END RECORD
+       END RECORD
+
+DEFINE  g_imx  DYNAMIC ARRAY OF RECORD
+               color    LIKE type_file.chr20,
+               imx01    LIKE type_file.num10,
+               imx02    LIKE type_file.num10,
+               imx03    LIKE type_file.num10,
+               imx04    LIKE type_file.num10,
+               imx05    LIKE type_file.num10,
+               imx06    LIKE type_file.num10,
+               imx07    LIKE type_file.num10,
+               imx08    LIKE type_file.num10,
+               imx09    LIKE type_file.num10,
+               imx10    LIKE type_file.num10,
+               imx11    LIKE type_file.num10,
+               imx12    LIKE type_file.num10,
+               imx13    LIKE type_file.num10,
+               imx14    LIKE type_file.num10,
+               imx15    LIKE type_file.num10
+               END RECORD
+
+DEFINE  g_imx_t  RECORD
+               color    LIKE type_file.chr20,
+               imx01    LIKE type_file.num10,
+               imx02    LIKE type_file.num10,
+               imx03    LIKE type_file.num10,
+               imx04    LIKE type_file.num10,
+               imx05    LIKE type_file.num10,
+               imx06    LIKE type_file.num10,
+               imx07    LIKE type_file.num10,
+               imx08    LIKE type_file.num10,
+               imx09    LIKE type_file.num10,
+               imx10    LIKE type_file.num10,
+               imx11    LIKE type_file.num10,
+               imx12    LIKE type_file.num10,
+               imx13    LIKE type_file.num10,
+               imx14    LIKE type_file.num10,
+               imx15    LIKE type_file.num10
+               END RECORD
+
+END GLOBALS
+#FUN-B90104

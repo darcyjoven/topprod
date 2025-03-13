@@ -1,0 +1,385 @@
+# Prog. Version..: '3.50.01-12.11.27(00010)'     #
+# Pattern name...: sapmt720.global
+# Descriptions...: sapmt720系列.4gl需用到的全域變數
+# Date & Author..: 07/03/29 By kim (FUN-730068)
+# Modify.........: No:FUN-740046 07/04/17 By rainy 單身採購單序號後加採購單資料來源，來源單號，來源序號
+# Modify.........: No:MOD-740475 07/04/25 By rainy 拋轉出貨單show單號
+# Modify.........: No:CHI-7B0023/CHI-7B0039 07/11/16 By kim 移除GP5.0行業別功能的所有程式段
+# Modify.........: No.FUN-7C0017 08/01/08 By bnlent 增加行業別規範化修改
+# Modify.........: No.FUN-960007 09/06/03 By chenmoyan 該global檔內不可定義rowid變量
+# Modify.........: No.FUN-940083 09/06/03 By Sunyanchun 增加有關VMI的變量
+# Modify.........: No.FUN-960130 09/07/21 By Sunyanchun 增加有關流通零售變量 
+# Modify.........: No.FUN-9A0068 09/10/28 By douzh VMI测试结果反馈及相关调整
+# Modify.........: No.FUN-9B0016 09/11/08 By Sunyanchun post no
+# Modify.........: No.FUN-A80150 10/09/08 By sabrina 新增rvv919欄位
+# Modify.........: No.FUN-A60009 11/02/18 By Lilan EF整合:是否為簽核最後一關、參數新增
+# Modify.........: No.FUN-B40083 11/06/10 By guoch
+# Modify.........: No.FUN-BC0104 12/01/11 By xujing 在 收貨項次（rvv05)後面加上『分批順序、判定結果編碼、結果說明、項次』這四個欄位 
+# Modify.........: No:FUN-C30140 12/03/16 By Mandy 圖示錯誤,N:未確認,1:已核准 未show"核"
+# Modify.........: No.FUN-CB0014 12/11/09 By fengrui 增加資料清單
+
+DATABASE ds
+
+GLOBALS
+
+DEFINE #FUN-730068
+    begin_no,end_no     LIKE oga_file.oga01,   #MOD-740475
+    g_rvu           RECORD LIKE rvu_file.*,
+    g_rvu_t         RECORD LIKE rvu_file.*,
+    g_rvu_o         RECORD LIKE rvu_file.*,
+    b_rvv           RECORD LIKE rvv_file.*,
+    b_rvvi          RECORD LIKE rvvi_file.*,#No.FUN-7C0017
+    g_poz           RECORD LIKE poz_file.*,
+    g_yy,g_mm       LIKE type_file.num5,    #No.FUN-680136 SMALLINT
+    l_str           LIKE ze_file.ze03,      #No.FUN-680136 CHAR(10)
+    g_cmd           LIKE type_file.chr1000, #No.FUN-680136 CHAR(100)
+    g_pmn38         LIKE pmn_file.pmn38,    #可用/不可用
+    g_imf04         LIKE imf_file.imf04,    #最高存量限制
+    g_imf05         LIKE imf_file.imf05,    #庫存單位
+    g_rvv17         LIKE rvv_file.rvv17,    #異動數量
+    g_rvv39         LIKE rvv_file.rvv39,
+    g_rvv39t        LIKE rvv_file.rvv39t,   #No.FUN-610018
+    l_rvb07         LIKE rvb_file.rvb07,
+    l_rvb30         LIKE rvb_file.rvb30,
+    l_rvb30_2       LIKE rvb_file.rvb30,
+    l_rvb31         LIKE rvb_file.rvb31,
+    g_rva06         LIKE rva_file.rva06,
+    l_pmn53         LIKE pmn_file.pmn53,
+    l_pmn51         LIKE pmn_file.pmn51,
+    l_fac           LIKE rvv_file.rvv35_fac,
+    g_rvu01_t       LIKE rvu_file.rvu01,
+    g_rvu03_t       LIKE rvu_file.rvu03,
+    g_rvu01         LIKE rvu_file.rvu01,
+    g_inqty         LIKE rvv_file.rvv17,   #可入庫量
+    g_outqty        LIKE rvv_file.rvv17,   #可退貨量
+    g_flag          LIKE type_file.chr1,    #No.FUN-680136 CHAR(1)
+    g_img07  LIKE img_file.img07,          #採購單位
+    g_img09  LIKE img_file.img09,          #庫存單位
+    g_img10  LIKE img_file.img10,          #庫存數量
+    l_ima25  LIKE ima_file.ima25,          #
+    l_ima39  LIKE ima_file.ima39,          #
+    l_img10  LIKE img_file.img10,          #
+    l_img26  LIKE img_file.img26,          #
+    l_azf03  LIKE azf_file.azf03,          #碼別說明
+    g_sfb    RECORD LIKE sfb_file.*,
+    g_argv1  LIKE rvu_file.rvu00,
+    g_argv2  LIKE rvu_file.rvu02,
+    g_argv3  LIKE rvu_file.rvu08,
+    g_argv4  STRING,                       #No:FUN-630010 執行功能
+    g_argv5  LIKE rvu_file.rvu01,          #FUN-A60009 add
+    g_ima86  LIKE ima_file.ima86,          #成本單位
+    g_ima25  LIKE ima_file.ima25,          #庫存單位
+    g_slip   LIKE oay_file.oayslip,  #FUN-6C0050
+    g_ogb930 LIKE ogb_file.ogb930,   #FUN-6C0050
+#   l_azi04  LIKE azi_file.azi04,    #No.+090 add(原幣)  #No.CHI-6A0004
+    g_min_set  LIKE sfb_file.sfb08,
+    g_rvv         DYNAMIC ARRAY OF RECORD    #程式變數(Prinram Variables)
+                  rvv02     LIKE rvv_file.rvv02,      #序號
+                  rvv05     LIKE rvv_file.rvv05,      #驗收單項次
+                  #FUN-BC0104---add---str
+                  rvv45     LIKE rvv_file.rvv45,      #分批順序 
+                  rvv46     LIKE rvv_file.rvv46,      #判定結果編碼
+                  qcl02     LIKE qcl_file.qcl02,      #結果說明
+                  rvv47     LIKE rvv_file.rvv47,      #項次
+                  #FUN-BC0104---add---end
+                  rvv31     LIKE rvv_file.rvv31,    
+                  #No.TQC-650108  --begin--
+                  att00           LIKE imx_file.imx00,
+                  att01           LIKE imx_file.imx01,    #No.FUN-680136 CHAR(10)
+                  att01_c         LIKE imx_file.imx01,    #No.FUN-680136 CHAR(10)
+                  att02           LIKE imx_file.imx02,    #No.FUN-680136 CHAR(10)
+                  att02_c         LIKE imx_file.imx02,    #No.FUN-680136 CHAR(10)
+                  att03           LIKE imx_file.imx03,    #No.FUN-680136 CHAR(10)
+                  att03_c         LIKE imx_file.imx03,    #No.FUN-680136 CHAR(10)
+                  att04           LIKE imx_file.imx04,    #No.FUN-680136 CHAR(10)
+                  att04_c         LIKE imx_file.imx04,    #No.FUN-680136 CHAR(10)
+                  att05           LIKE imx_file.imx05,    #No.FUN-680136 CHAR(10)
+                  att05_c         LIKE imx_file.imx05,    #No.FUN-680136 CHAR(10)
+                  att06           LIKE imx_file.imx06,    #No.FUN-680136 CHAR(10)
+                  att06_c         LIKE imx_file.imx06,    #No.FUN-680136 CHAR(10)
+                  att07           LIKE imx_file.imx07,    #No.FUN-680136 CHAR(10)
+                  att07_c         LIKE imx_file.imx07,    #No.FUN-680136 CHAR(10)
+                  att08           LIKE imx_file.imx08,    #No.FUN-680136 CHAR(10)
+                  att08_c         LIKE imx_file.imx08,    #No.FUN-680136 CHAR(10)
+                  att09           LIKE imx_file.imx09,    #No.FUN-680136 CHAR(10)
+                  att09_c         LIKE imx_file.imx09,    #No.FUN-680136 CHAR(10)
+                  att10           LIKE imx_file.imx10,    #No.FUN-680136 CHAR(10)
+                  att10_c         LIKE imx_file.imx10,    #No.FUN-680136 CHAR(10)
+                  #No.TQC-650108  --end--
+                  rvv031    LIKE rvv_file.rvv031,     #品名
+                  ima021    LIKE ima_file.ima021,     #規格
+		              #No.FUN-7C0017  ...begin
+		              rvviicd03 LIKE rvvi_file.rvviicd03,
+		              rvviicd03_desc LIKE ima_file.ima02,
+		              rvviicd04 LIKE rvvi_file.rvviicd04,
+		              rvviicd04_desc LIKE ima_file.ima02,
+		              #No.FUN-7C0017  ...end
+                  rvv35     LIKE rvv_file.rvv35,      #單位
+                  rvv35_fac LIKE rvv_file.rvv35_fac,  #轉換率
+                  rvv10     LIKE rvv_file.rvv10,      #NO.FUN-960130  #NO.FUN-9B0016
+                  rvv11     LIKE rvv_file.rvv11,      #NO.FUN-960130
+                  rvv12     LIKE rvv_file.rvv12,      #NO.FUN-960130
+                  rvv13     LIKE rvv_file.rvv13,      #NO.FUN-960130
+                  rvv18     LIKE rvv_file.rvv18,      #工單編號
+                  rvv36     LIKE rvv_file.rvv36,      #採購單號
+                  rvv37     LIKE rvv_file.rvv37,      #序號
+                  rvv919    LIKE rvv_file.rvv919,     #計畫批號     #FUN-A80150 add
+                  pmm909    LIKE pmm_file.pmm909,     #FUN-740046
+                  pmn24     LIKE pmn_file.pmn24,      #FUN-740046
+                  pmn25     LIKE pmn_file.pmn25,      #FUN-740046
+                  rvv25     LIKE rvv_file.rvv25,      #樣品否
+                  rvv89     LIKE rvv_file.rvv89,      #NO.FUN-9A0068
+                  rvv17     LIKE rvv_file.rvv17,      #數量
+                  #No.FUN-540027  --begin
+                  rvv32     LIKE rvv_file.rvv32,      #倉庫
+                  rvv33     LIKE rvv_file.rvv33,      #存放位置
+                  rvv34     LIKE rvv_file.rvv34,      #批號
+		              #No.FUN-7C0017  ...begin
+		              rvviicd05 LIKE rvvi_file.rvviicd05,
+		              rvviicd01 LIKE rvvi_file.rvviicd01,
+		              ecd02     LIKE ecd_file.ecd02,
+		              rvviicd02 LIKE rvvi_file.rvviicd02,
+		              rvviicd06 LIKE rvvi_file.rvviicd06,
+		              #No.FUN-7C0017  ...end
+                  rvv83     LIKE rvv_file.rvv83,
+                  rvv84     LIKE rvv_file.rvv84,
+                  rvv85     LIKE rvv_file.rvv85,
+                  rvv80     LIKE rvv_file.rvv80,
+                  rvv81     LIKE rvv_file.rvv81,
+                  rvv82     LIKE rvv_file.rvv82,
+                  rvv86     LIKE rvv_file.rvv86,
+                  rvv87     LIKE rvv_file.rvv87,
+                  #No.FUN-540027  --end
+                  rvv38     LIKE rvv_file.rvv38,      #U/P
+                  rvv38t    LIKE rvv_file.rvv38t,     #U/P FUN-610018
+                  rvv39     LIKE rvv_file.rvv39,      #AMT
+                  rvv39t    LIKE rvv_file.rvv39t,     #FUN-610018
+                  rvv26     LIKE rvv_file.rvv26,      #理由
+                  azf03     LIKE azf_file.azf03,      #理由說明
+                  rvv41     LIKE rvv_file.rvv41,      #手冊編號 no.A050
+                  pmm21     LIKE pmm_file.pmm21,      #No.FUN-610018
+                  pmm43     LIKE pmm_file.pmm43,      #No.FUN-610018
+           #FUN-B40083 --begin
+                  pmn123    LIKE pmn_file.pmn123,
+		  mse02     LIKE mse_file.mse02,
+           #FUN-B40083 --end
+                  rvv930    LIKE rvv_file.rvv930, #成本中心 #FUN-670051
+                  gem02a    LIKE gem_file.gem02,  #成本中心名稱 #FUN-670051
+                  #FUN-840042 --start---
+                  rvvud01   LIKE rvv_file.rvvud01,
+                  rvvud02   LIKE rvv_file.rvvud02,
+                  rvvud03   LIKE rvv_file.rvvud03,
+                  rvvud04   LIKE rvv_file.rvvud04,
+                  rvvud05   LIKE rvv_file.rvvud05,
+                  rvvud06   LIKE rvv_file.rvvud06,
+                  rvvud07   LIKE rvv_file.rvvud07,
+                  rvvud08   LIKE rvv_file.rvvud08,
+                  rvvud09   LIKE rvv_file.rvvud09,
+                  rvvud10   LIKE rvv_file.rvvud10,
+                  rvvud11   LIKE rvv_file.rvvud11,
+                  rvvud12   LIKE rvv_file.rvvud12,
+                  rvvud13   LIKE rvv_file.rvvud13,
+                  rvvud14   LIKE rvv_file.rvvud14,
+                  rvvud15   LIKE rvv_file.rvvud15,
+                  ecd02_1     LIKE ecd_file.ecd02       #tianry add 161207
+#                 rvv89     LIKE rvv_file.rvv89       #NO.FUN-940083  #FUN-9A0068 mark
+                  #FUN-840042 --end--
+                  END RECORD,
+    g_rvv_t       RECORD
+                  rvv02     LIKE rvv_file.rvv02,      #序號
+                  rvv05     LIKE rvv_file.rvv05,      #驗收單項次
+                  #FUN-BC0104---add---str
+                  rvv45     LIKE rvv_file.rvv45,      #分批順序
+                  rvv46     LIKE rvv_file.rvv46,      #判定結果編碼
+                  qcl02     LIKE qcl_file.qcl02,      #結果說明
+                  rvv47     LIKE rvv_file.rvv47,      #項次
+                  #FUN-BC0104---add---end
+                  rvv31     LIKE rvv_file.rvv31,      #料號 
+                  #No.TQC-650108  --begin--
+                  att00           LIKE imx_file.imx00,
+                  att01           LIKE imx_file.imx01,    #No.FUN-680136 CHAR(10)
+                  att01_c         LIKE imx_file.imx01,    #No.FUN-680136 CHAR(10)
+                  att02           LIKE imx_file.imx02,    #No.FUN-680136 CHAR(10)
+                  att02_c         LIKE imx_file.imx02,    #No.FUN-680136 CHAR(10)
+                  att03           LIKE imx_file.imx03,    #No.FUN-680136 CHAR(10)
+                  att03_c         LIKE imx_file.imx03,    #No.FUN-680136 CHAR(10)
+                  att04           LIKE imx_file.imx04,    #No.FUN-680136 CHAR(10)
+                  att04_c         LIKE imx_file.imx04,    #No.FUN-680136 CHAR(10)
+                  att05           LIKE imx_file.imx05,    #No.FUN-680136 CHAR(10)
+                  att05_c         LIKE imx_file.imx05,    #No.FUN-680136 CHAR(10)
+                  att06           LIKE imx_file.imx06,    #No.FUN-680136 CHAR(10)
+                  att06_c         LIKE imx_file.imx06,    #No.FUN-680136 CHAR(10)
+                  att07           LIKE imx_file.imx07,    #No.FUN-680136 CHAR(10)
+                  att07_c         LIKE imx_file.imx07,    #No.FUN-680136 CHAR(10)
+                  att08           LIKE imx_file.imx08,    #No.FUN-680136 CHAR(10)
+                  att08_c         LIKE imx_file.imx08,    #No.FUN-680136 CHAR(10)
+                  att09           LIKE imx_file.imx09,    #No.FUN-680136 CHAR(10)
+                  att09_c         LIKE imx_file.imx09,    #No.FUN-680136 CHAR(10)
+                  att10           LIKE imx_file.imx10,    #No.FUN-680136 CHAR(10)
+                  att10_c         LIKE imx_file.imx10,    #No.FUN-680136 CHAR(10)
+                  #No.TQC-650108  --end--
+                  rvv031    LIKE rvv_file.rvv031,     #品名  
+                  ima021    LIKE ima_file.ima021,     #規格
+		              #No.FUN-7C0017  ...begin
+		              rvviicd03 LIKE rvvi_file.rvviicd03,
+		              rvviicd03_desc LIKE ima_file.ima02,
+		              rvviicd04 LIKE rvvi_file.rvviicd04,
+		              rvviicd04_desc LIKE ima_file.ima02,
+		              #No.FUN-7C0017  ...end
+                  rvv35     LIKE rvv_file.rvv35,      #單位
+                  rvv35_fac LIKE rvv_file.rvv35_fac,  #轉換率
+                  rvv10     LIKE rvv_file.rvv10,      #NO.FUN-960130
+                  rvv11     LIKE rvv_file.rvv11,      #NO.FUN-960130
+                  rvv12     LIKE rvv_file.rvv12,      #NO.FUN-960130
+                  rvv13     LIKE rvv_file.rvv13,      #NO.FUN-960130
+                  rvv18     LIKE rvv_file.rvv18,      #工單編號
+                  rvv36     LIKE rvv_file.rvv36,      #採購單號
+                  rvv37     LIKE rvv_file.rvv37,      #序號
+                  rvv919    LIKE rvv_file.rvv919,     #計畫批號     #FUN-A80150 add
+                  pmm909    LIKE pmm_file.pmm909,     #FUN-740046
+                  pmn24     LIKE pmn_file.pmn24,      #FUN-740046
+                  pmn25     LIKE pmn_file.pmn25,      #FUN-740046
+                  rvv25     LIKE rvv_file.rvv25,      #樣品否
+                  rvv89     LIKE rvv_file.rvv89,      #FUN-9A0068 mark
+                  rvv17     LIKE rvv_file.rvv17,      #數量
+                  #No.FUN-540027  --begin
+                  rvv32     LIKE rvv_file.rvv32,      #倉庫
+                  rvv33     LIKE rvv_file.rvv33,      #存放位置
+                  rvv34     LIKE rvv_file.rvv34,      #批號
+		              #No.FUN-7C0017  ...begin
+		              rvviicd05 LIKE rvvi_file.rvviicd05,
+		              rvviicd01 LIKE rvvi_file.rvviicd01,
+		              ecd02     LIKE ecd_file.ecd02,
+		              rvviicd02 LIKE rvvi_file.rvviicd02,
+		              rvviicd06 LIKE rvvi_file.rvviicd06,
+		              #No.FUN-7C0017  ...end
+                  rvv83     LIKE rvv_file.rvv83,
+                  rvv84     LIKE rvv_file.rvv84,
+                  rvv85     LIKE rvv_file.rvv85,
+                  rvv80     LIKE rvv_file.rvv80,
+                  rvv81     LIKE rvv_file.rvv81,
+                  rvv82     LIKE rvv_file.rvv82,
+                  rvv86     LIKE rvv_file.rvv86,
+                  rvv87     LIKE rvv_file.rvv87,
+                  #No.FUN-540027  --end
+                  rvv38     LIKE rvv_file.rvv38,      #U/P
+                  rvv38t    LIKE rvv_file.rvv38t,     #U/P FUN-610018
+                  rvv39     LIKE rvv_file.rvv39,      #AMT
+                  rvv39t    LIKE rvv_file.rvv39t,     #FUN-610018
+                  rvv26     LIKE rvv_file.rvv26,      #理由
+                  azf03     LIKE azf_file.azf03,      #理由說明
+                  rvv41     LIKE rvv_file.rvv41,      #手冊編號 no.A050
+                  pmm21     LIKE pmm_file.pmm21,      #No.FUN-610018
+                  pmm43     LIKE pmm_file.pmm43,      #No.FUN-610018
+	   #FUN-B40083 --begin
+                  pmn123    LIKE pmn_file.pmn123,
+		  mse02     LIKE mse_file.mse02,
+           #FUN-B40083 --end
+                  rvv930    LIKE rvv_file.rvv930, #成本中心 #FUN-670051
+                  gem02a    LIKE gem_file.gem02,   #成本中心名稱 #FUN-670051
+                  #FUN-840042 --start---
+                  rvvud01   LIKE rvv_file.rvvud01,
+                  rvvud02   LIKE rvv_file.rvvud02,
+                  rvvud03   LIKE rvv_file.rvvud03,
+                  rvvud04   LIKE rvv_file.rvvud04,
+                  rvvud05   LIKE rvv_file.rvvud05,
+                  rvvud06   LIKE rvv_file.rvvud06,
+                  rvvud07   LIKE rvv_file.rvvud07,
+                  rvvud08   LIKE rvv_file.rvvud08,
+                  rvvud09   LIKE rvv_file.rvvud09,
+                  rvvud10   LIKE rvv_file.rvvud10,
+                  rvvud11   LIKE rvv_file.rvvud11,
+                  rvvud12   LIKE rvv_file.rvvud12,
+                  rvvud13   LIKE rvv_file.rvvud13,
+                  rvvud14   LIKE rvv_file.rvvud14,
+                  rvvud15   LIKE rvv_file.rvvud15,
+                  ecd02_1     LIKE ecd_file.ecd02      #tianry add 161207
+#                 rvv89     LIKE rvv_file.rvv89     #FUN-940083  #FUN-9A0068 mark
+                  #FUN-840042 --end--
+                  END RECORD,
+    #No.FUN-540027  --begin
+    g_change        LIKE type_file.chr1,   #No.FUN-680136 CHAR(1)
+    g_ima44         LIKE ima_file.ima44,
+    g_tot           LIKE img_file.img10,
+    g_rvb05_t       LIKE rvb_file.rvb05,
+    g_ima906        LIKE ima_file.ima906,
+    g_ima907        LIKE ima_file.ima907,
+    g_ima908        LIKE ima_file.ima908,
+    g_imgg00        LIKE imgg_file.imgg00,
+    g_imgg10        LIKE imgg_file.imgg10,
+    g_unit          LIKE imgg_file.imgg09,
+    g_factor        LIKE pmn_file.pmn09,
+    #No.FUN-540027  --end
+    g_wc,g_wc2,g_sql    string,  #No:FUN-580092 HCN
+    g_icq               LIKE type_file.chr1,      #No.FUN-680136 CHAR(1)
+    g_t1                LIKE oay_file.oayslip,    #No.FUN-550060  #No.FUN-680136 CHAR(5)
+    g_buf           LIKE pmc_file.pmc03,   #NO:MOD-4A0115
+    g_qty           LIKE ima_file.ima26,    #No.FUN-680136 DEC(12,3)
+    tot1,tot2,tot3  LIKE ima_file.ima26,    #No.FUN-680136 DECIMAL(12,3)
+    g_rec_b         LIKE type_file.num5,    #單身筆數  #No.FUN-680136 SMALLINT
+    l_ac            LIKE type_file.num5,    #目前處理的ARRAY CNT  #No.FUN-680136 SMALLINT
+#   p_row,p_col     LIKE type_file.num5,   #No.FUN-680136 SMALLINT#No.FUN-960007
+    p_row,p_col     LIKE type_file.num5    #No.FUN-680136 SMALLINT#No.FUN-960007
+#   g_rowid         LIKE type_file.chr18   #No.FUN-680136 INT #No.FUN-960007
+
+#DEFINE g_rvu_rowid     LIKE type_file.chr18    #ROWID  #No.FUN-680136 INT   #No.FUN-960007
+DEFINE g_before_input_done LIKE type_file.num5    #No.FUN-680136 SMALLINT
+DEFINE g_forupd_sql STRING   #SELECT ... FOR UPDATE SQL
+DEFINE g_chr           LIKE type_file.chr1    #No.FUN-680136 CHAR(1)
+DEFINE g_chr2          LIKE type_file.chr1    #No.FUN-C30140 add
+DEFINE g_cnt           LIKE type_file.num10   #No.FUN-680136 INTEGER
+DEFINE g_i             LIKE type_file.num5     #count/index for any purpose  #No.FUN-680136 SMALLINT
+DEFINE g_msg           LIKE ze_file.ze03      #No.FUN-680136 CHAR(72)
+DEFINE g_n             LIKE type_file.num5    #No.FUN-680136 SMALLINT   #No.FUN-590133
+DEFINE g_row_count     LIKE type_file.num10   #No.FUN-680136 INTEGER
+DEFINE g_curs_index    LIKE type_file.num10   #No.FUN-680136 INTEGER
+DEFINE g_jump          LIKE type_file.num10   #No.FUN-680136 INTEGER
+DEFINE mi_no_ask       LIKE type_file.num5    #No.FUN-680136 SMALLINT
+DEFINE g_imm01         LIKE imm_file.imm01      #No.FUN-610090
+DEFINE g_unit_arr      DYNAMIC ARRAY OF RECORD  #No:FUN-610090
+                          unit   LIKE ima_file.ima25,
+                          fac    LIKE img_file.img21,
+                          qty    LIKE img_file.img10
+                       END RECORD
+DEFINE   g_laststage   LIKE type_file.chr1    #是否為簽核最後一關 #FUN-A60009 CHAR(1)
+#No:TQC-650108  --begin--
+DEFINE   arr_detail    DYNAMIC ARRAY OF RECORD
+         imx00         LIKE imx_file.imx00,
+         imx           ARRAY[10] OF LIKE imx_file.imx01
+         END RECORD
+DEFINE   lr_agc        DYNAMIC ARRAY OF RECORD LIKE agc_file.*
+DEFINE   lg_smy62      LIKE smy_file.smy62    #在smy_file中定義的與當前單別關聯的組別
+DEFINE   lg_smy621     LIKE smy_file.smy62
+DEFINE   lg_group      LIKE smy_file.smy62    #當前單身中采用的組別
+DEFINE   l_t1          LIKE oay_file.oayslip  #No.FUN-680136 CHAR(05)
+#No:TQC-650108  --end--
+
+#FUN-CB0014---add---str---
+DEFINE g_rvu_l DYNAMIC ARRAY OF RECORD
+       rvu00   LIKE rvu_file.rvu00,
+       rvu02   LIKE rvu_file.rvu02,
+       rvu03   LIKE rvu_file.rvu03,
+       rvu01   LIKE rvu_file.rvu01,
+       rvu04   LIKE rvu_file.rvu04,
+       rvu05   LIKE rvu_file.rvu05,
+       rvu08   LIKE rvu_file.rvu08,
+       rvu06   LIKE rvu_file.rvu06,
+       gem02   LIKE gem_file.gem02,
+       rvu07   LIKE rvu_file.rvu07,
+       gen02   LIKE gen_file.gen02,
+       rvu20   LIKE rvu_file.rvu20,
+       rvuconf LIKE rvu_file.rvuconf,
+       rvumksg LIKE rvu_file.rvumksg,
+       rvu17   LIKE rvu_file.rvu17,
+       rvu900  LIKE rvu_file.rvu900
+               END RECORD
+DEFINE l_ac2    LIKE type_file.num5
+DEFINE g_rec_b2 LIKE type_file.num5  
+DEFINE g_action_flag   STRING
+DEFINE w        ui.Window
+DEFINE f        ui.Form
+DEFINE page     om.DomNode
+#FUN-CB0014---add---end---
+
+END GLOBALS
+#CHI-7B0023/CHI-7B0039

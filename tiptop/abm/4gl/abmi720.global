@@ -1,0 +1,207 @@
+# Prog. Version..: '3.50.02-13.02.06(00004)'     #
+#
+# Pattern name...: abmi720.global
+# Descriptions...: abmi720系列.4gl需用到的全域變數
+# Date & Author..: 2011/07/05 By Mandy (FUN-AC0060)
+# Modify.........: No.FUN-BB0075 12/11/05 By bart 增加bmy36
+# Modify.........: No:FUN-D10093 13/01/23 By Abby PLM BOM項次一致問題:單身新增欄位-PLM BOM項次[bmy361]/PLM KEY[bmy37]欄位
+# Modify.........: No:CHI-CA0035 12/01/28 By Elise 調整參數避免串查錯誤,g_argv1:固定參數 g_argv2:單號 g_argv3:執行功能
+
+DATABASE ds
+
+GLOBALS #FUN-AC0060 全部模組變數改為全域變數
+DEFINE
+    g_bmx   RECORD LIKE bmx_file.*,
+    g_bmx_t RECORD LIKE bmx_file.*,
+    g_bmx_o RECORD LIKE bmx_file.*,
+    g_bmx01     LIKE bmx_file.bmx01,     
+    g_level     LIKE type_file.num5,      #No.FUN-680096 SMALLINT,
+    b_bmy   RECORD LIKE bmy_file.*,
+    #CHI-A70013 add --start--
+    b_bmf   RECORD LIKE bmf_file.*,
+    g_bmf_t         RECORD    #程式變數(Prinram Variables)
+			bmf03    LIKE bmf_file.bmf03,
+			bmf04    LIKE bmf_file.bmf04
+                    END RECORD,
+    #CHI-A70013 add --end--
+    g_bmy   DYNAMIC ARRAY OF RECORD    #程式變數(Prinram Variables)
+			bmy02	LIKE bmy_file.bmy02,
+			bmy03	LIKE bmy_file.bmy03,
+			bmy19	LIKE bmy_file.bmy19,
+			bmy04	LIKE bmy_file.bmy04,
+			bmy14	LIKE bmy_file.bmy14,
+			ima02d	LIKE ima_file.ima02,
+			ima021d	LIKE ima_file.ima021,
+			bmy011  LIKE bmy_file.bmy011,   #No.FUN-A60031
+			bmy012  LIKE bmy_file.bmy012,   #No.FUN-A60031
+			bmy013  LIKE bmy_file.bmy013,   #No.FUN-A60031
+			bmy171  LIKE bmy_file.bmy171,  #bugno:6845 add
+			bmy17	LIKE bmy_file.bmy17,
+			bmy29	LIKE bmy_file.bmy29, #FUN-550014 add bmy29
+			bmy05	LIKE bmy_file.bmy05,
+			ima02	LIKE ima_file.ima02,
+			ima021	LIKE ima_file.ima021,
+			bmy27	LIKE bmy_file.bmy27,   #bugno:6845 add
+			ima02n	LIKE ima_file.ima02,   #bugno:6845 add
+			ima021n	LIKE ima_file.ima021,  #bugno:6845 add
+			bmy16	LIKE bmy_file.bmy16,
+			bmy35	LIKE bmy_file.bmy35, #CHI-A60028 add
+			bmy30	LIKE bmy_file.bmy30, #FUN-550014 add bmy30
+			bmy06	LIKE bmy_file.bmy06,
+			bmy07	LIKE bmy_file.bmy07,
+            ta_bmy01 LIKE bmy_file.ta_bmy01,   #add by chenkun160815
+            ta_bmy02 LIKE bmy_file.ta_bmy02,   #add by huanglf160927
+            ta_bmy03 LIKE bmy_file.ta_bmy03,   #add by huanglf161018
+            ta_bmy04 LIKE bmy_file.ta_bmy04,   #add by huanglf161018
+            ta_bmy05 LIKE bmy_file.ta_bmy05,
+                        bmy34 LIKE bmy_file.bmy34,  #no.MOD-840426 
+                        bmy36	LIKE bmy_file.bmy36, #FUN-BB0075
+                        bmy361  LIKE bmy_file.bmy361, #FUN-D10093 add
+                        bmy37   LIKE bmy_file.bmy37,  #FUN-D10093 add
+			bmy22	LIKE bmy_file.bmy22
+                    END RECORD,
+    g_bmy_t         RECORD
+			bmy02	LIKE bmy_file.bmy02,
+			bmy03	LIKE bmy_file.bmy03,
+			bmy19	LIKE bmy_file.bmy19,
+			bmy04	LIKE bmy_file.bmy04,
+			bmy14	LIKE bmy_file.bmy14,
+			ima02d	LIKE ima_file.ima02,
+			ima021d	LIKE ima_file.ima021,
+			bmy011  LIKE bmy_file.bmy011,   #No.FUN-A60031
+			bmy012  LIKE bmy_file.bmy012,   #No.FUN-A60031
+			bmy013  LIKE bmy_file.bmy013,   #No.FUN-A60031			
+			bmy171  LIKE bmy_file.bmy171,  #bugno:6845 add
+			bmy17	LIKE bmy_file.bmy17,
+			bmy29	LIKE bmy_file.bmy29, #FUN-550014 add bmy29
+			bmy05	LIKE bmy_file.bmy05,
+			ima02	LIKE ima_file.ima02,
+			ima021	LIKE ima_file.ima021,
+			bmy27	LIKE bmy_file.bmy27,   #bugno:6845 add
+			ima02n	LIKE ima_file.ima02,   #bugno:6845 add
+			ima021n	LIKE ima_file.ima021,   #bugno:6845 add
+			bmy16	LIKE bmy_file.bmy16,
+			bmy35	LIKE bmy_file.bmy35, #CHI-A60028 add
+			bmy30	LIKE bmy_file.bmy30, #FUN-550014 add bmy30
+			bmy06	LIKE bmy_file.bmy06,
+			bmy07	LIKE bmy_file.bmy07,
+            ta_bmy01 LIKE bmy_file.ta_bmy01,   #add by chenkun160815
+            ta_bmy02 LIKE bmy_file.ta_bmy02,   #add by huanglf160927
+            ta_bmy03 LIKE bmy_file.ta_bmy03,   #add by huanglf161018
+            ta_bmy04 LIKE bmy_file.ta_bmy04,   #add by huanglf161018
+            ta_bmy05 LIKE bmy_file.ta_bmy05,
+      bmy34 LIKE bmy_file.bmy34,  #no.MOD-840426 
+      bmy36	LIKE bmy_file.bmy36, #FUN-BB0075
+                        bmy361  LIKE bmy_file.bmy361, #FUN-D10093 add
+                        bmy37   LIKE bmy_file.bmy37,  #FUN-D10093 add
+			bmy22	LIKE bmy_file.bmy22
+                    END RECORD,
+    g_bmw           DYNAMIC ARRAY OF RECORD    #程式變數(Prinram Variables)
+			bmw04	LIKE bmw_file.bmw04,
+			bmw05	LIKE bmw_file.bmw05
+                    END RECORD,
+    g_bmw_t         RECORD    #程式變數(Prinram Variables)
+			bmw04	LIKE bmw_file.bmw04,
+			bmw05	LIKE bmw_file.bmw05
+                    END RECORD,
+    g_ima           DYNAMIC ARRAY OF RECORD    #程式變數(Prinram Variables)
+			choice  LIKE type_file.chr1,   #No.FUN-680096 VARCHAR(01),
+			ima01	LIKE ima_file.ima01,
+			ima02	LIKE ima_file.ima02,
+			ima021	LIKE ima_file.ima021,
+			bma05	LIKE bma_file.bma05
+                    END RECORD,
+    b_bmb           DYNAMIC ARRAY OF RECORD    #程式變數(Prinram Variables)
+			bmb01	LIKE bmb_file.bmb01,
+			bmb29 LIKE bmb_file.bmb29                #TQC-920056 Add 
+                    END RECORD,
+    #CHI-A70013 add --start--
+    g_bmf           DYNAMIC ARRAY OF RECORD    #程式變數(Prinram Variables)
+                        bmf03    LIKE bmf_file.bmf03,
+                        bmf04    LIKE bmf_file.bmf04
+                    END RECORD,
+    #CHI-A70013 add --end--
+    b_bmw	    RECORD LIKE bmw_file.*,
+    b_bmt	    RECORD LIKE bmt_file.*,      #No.FUN-870127
+    g_last_seq      LIKE type_file.num10,  #No.FUN-680096 INTEGER,               #
+    g_bmb           RECORD LIKE bmb_file.*,
+    g_bmy05_t       LIKE bmy_file.bmy05,
+    g_bmd           RECORD LIKE bmd_file.*,
+    g_bma01         LIKE bma_file.bma01,
+    g_bma05         LIKE bma_file.bma05,
+    g_bma06         LIKE bma_file.bma06,       #TQC-920056
+    g_wc,g_wc3,g_sql  string,  #No.FUN-580092 HCN
+    g_t1            LIKE oay_file.oayslip, #No.FUN-550032  #No.FUN-680096 VARCHAR(1)
+    g_sw_chr1       LIKE type_file.chr1,   #No.FUN-680096 CHAR(1),
+    g_ima107	    LIKE ima_file.ima107,  #No.FUN-680096 VARCHAR(1),
+    g_flag	    LIKE ima_file.ima107,  #MOD-910205 add
+    g_ima147	    LIKE ima_file.ima147,  #No.FUN-680096 VARCHAR(1),  #MOD-490449
+    g_buf           LIKE type_file.chr20,  #No.FUN-680096 VARCHAR(20)
+    g_rec_d         LIKE type_file.num5,   #No.FUN-680096 SMALLINT, #單身筆數
+    g_rec_b         LIKE type_file.num5,   #單身筆數    #No.FUN-680096 SMALLIN
+    g_void          LIKE type_file.chr1,   #No.FUN-680096 VARCHAR(1),
+    g_approve       LIKE type_file.chr1,   #No.FUN-680096 VARCHAR(1),
+    g_confirm       LIKE type_file.chr1,   #No.FUN-680096 VARCHAR(1),
+    g_rec_t         LIKE type_file.num5,   #No.FUN-680096 SMALLINT,   #單身筆數(插件位置)
+    g_rec_e         LIKE type_file.num5,   #單身筆數  #CHI-A70013 add
+    l_ac            LIKE type_file.num5,   #目前處理的ARRAY CNT   #No.FUN-680096 SMALLINT
+    l_sl            LIKE type_file.chr1,   #No.FUN-680096 SMALLINT,  #目前處理的SCREEN LINE
+    g_argv2         LIKE bmx_file.bmx01,   #ECN No.   #CHI-CA0035 mod g_argv1->g_argv2
+    g_argv3_str     STRING,                #執行功能  #CHI-CA0035 mod g_argv2->g_argv3
+    g_before_input_done  LIKE type_file.num5,     #No.FUN-680096 SMALLINT
+    tm              RECORD
+             wc     LIKE type_file.chr1000,#No.FUN-680096 VARCHAR(600),
+             a      LIKE type_file.chr1,   #No.FUN-680096 VARCHAR(01),
+             c      LIKE type_file.chr1,   #No.FUN-680096 VARCHAR(01),
+             bmy05  LIKE bmy_file.bmy05,
+             bmy06  LIKE bmy_file.bmy06,
+             bmy07  LIKE bmy_file.bmy07,
+             bmy27  LIKE bmy_file.bmy27
+                    END RECORD
+DEFINE g_forupd_sql STRING                 #SELECT ... FOR UPDATE SQL
+DEFINE g_laststage  LIKE type_file.chr1    #No.FUN-680096 VARCHAR(1)    #FUN-580161
+DEFINE   g_chr           LIKE type_file.chr1     #No.FUN-680096 VARCHAR(1)
+DEFINE   g_chr2          LIKE type_file.chr1     #FUN-580161        #No.FUN-680096 VARCHAR(1)
+DEFINE   g_chr3          LIKE type_file.chr1     #FUN-580161        #No.FUN-680096 VARCHAR(1)
+DEFINE   g_cnt           LIKE type_file.num10    #No.FUN-680096 INTEGER
+DEFINE   g_cnt1          LIKE type_file.num20_6  #NO.FUN-870127
+DEFINE   g_i             LIKE type_file.num5     #count/index for any purpose    #No.FUN-680096 SMALLINT
+DEFINE   g_msg           LIKE type_file.chr1000  #No.FUN-680096 VARCHAR(120)   #TQC-630177
+DEFINE   g_row_count    LIKE type_file.num10     #No.FUN-680096 INTEGER
+DEFINE   g_curs_index   LIKE type_file.num10     #No.FUN-680096 INTEGER
+DEFINE   g_jump         LIKE type_file.num10     #No.FUN-680096 INTEGER
+DEFINE   g_no_ask      LIKE type_file.num5      #No.FUN-680096 SMALLINT
+DEFINE g_bmx_l        DYNAMIC ARRAY OF RECORD   #程式變數(Program Variables)                                                        
+         bmx01        LIKE bmx_file.bmx01,                                                                                          
+         bmx07        LIKE bmx_file.bmx07,                                                                                          
+         bmx10        LIKE bmx_file.bmx10,                                                                                          
+         bmx13        LIKE bmx_file.bmx13,     #No.CHI-9C0054 add
+         bmx05        LIKE bmx_file.bmx05,                                                                                          
+         bmg03        LIKE bmg_file.bmg03,                                                                                          
+         bmx11        LIKE bmx_file.bmx11                                                                                           
+                      END RECORD                                                                                                    
+DEFINE  g_bmxx        DYNAMIC ARRAY OF RECORD   #程式變數(Program Variables)                                                        
+          sel         LIKE type_file.chr1,                                                                                          
+          bmx01       LIKE bmx_file.bmx01                                                                                           
+                      END RECORD                                                                                                    
+DEFINE g_gev04        LIKE gev_file.gev04                                                                                           
+DEFINE l_ac1          LIKE type_file.num10                                                                                          
+DEFINE g_rec_b1       LIKE type_file.num10                                                                                          
+DEFINE g_bp_flag      LIKE type_file.chr10                                                                                          
+DEFINE g_flag2        LIKE type_file.chr1                                                                                           
+DEFINE g_gew06        LIKE gew_file.gew06                                                                                           
+DEFINE g_gew07        LIKE gew_file.gew07  
+DEFINE g_chk1         LIKE type_file.chr1     #No.FUN-870117                                                                                         
+DEFINE l_bma06        LIKE bma_file.bma06     #TQC-920056
+DEFINE g_argv1_str    LIKE type_file.chr1     #No.FUN-A60031  #CHI-CA0035 mod g_argv3->g_argv1
+DEFINE g_brb          RECORD LIKE brb_file.*  #No.FUN-A60008
+DEFINE g_bra014       LIKE bra_file.bra014    #No.FUN-A60008
+DEFINE cb             ui.ComboBox             #No.FUN-A60083
+DEFINE g_ecb06        LIKE ecb_file.ecb06     #No.FUN-A60083
+DEFINE g_dbs_sep      LIKE type_file.chr50
+DEFINE g_bmb01        LIKE bmb_file.bmb01 #FUN-AC0060 add
+DEFINE g_bmb02        LIKE bmb_file.bmb02 #FUN-AC0060 add
+DEFINE g_bmb03        LIKE bmb_file.bmb03 #FUN-AC0060 add
+DEFINE g_bmb04        LIKE bmb_file.bmb04 #FUN-AC0060 add
+DEFINE g_bmb29        LIKE bmb_file.bmb29 #FUN-AC0060 add
+END GLOBALS

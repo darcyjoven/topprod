@@ -1,0 +1,86 @@
+# Prog. Version..: '5.20.01-09.09.21(00000)'     #
+# Pattern name...: sapcp100.global
+# Descriptions...: POS下傳處理
+# Modify.........: No.TQC-B20181 11/03/07 By wangxin 添加g_msg，g_msg1兩個global變量
+
+DATABASE ds
+
+GLOBALS
+
+DEFINE g_flag RECORD 
+       rxwflag LIKE type_file.chr1,      # 聯盟卡種資料
+       lpxflag LIKE type_file.chr1,      # 券類型資料
+       lpzflag LIKE type_file.chr1,      # 券作廢資料
+       rxwflag LIKE type_file.chr1,      # 聯盟卡種資料
+       lpxflag LIKE type_file.chr1,      # 券類型資料
+       lpzflag LIKE type_file.chr1,      # 券作廢資料
+       smcflag LIKE type_file.chr1,      # 單位換算率
+       rtzflag LIKE type_file.chr1,      # 門店信息
+       imdflag LIKE type_file.chr1,      # 倉庫資訊
+       gfeflag LIKE type_file.chr1,      # 單位
+       azfflag LIKE type_file.chr1,      # 理由碼
+       obaflag LIKE type_file.chr1,      # 產品分類
+       rteflag LIKE type_file.chr1,      # 商品策略
+       rtaflag LIKE type_file.chr1,      # 商品條碼
+       rtgflag LIKE type_file.chr1,      # 價格策略
+       rthflag LIKE type_file.chr1,      # 自定價維護
+       smdflag LIKE type_file.chr1,      # 商品單位換算率
+       rwfflag LIKE type_file.chr1,      # 組合促銷主檔
+       rwgflag LIKE type_file.chr1,      # 組合促銷明細檔
+       rwcflag LIKE type_file.chr1,      # 商品特價
+       rwdflag LIKE type_file.chr1,      # 分類促銷
+       rwkflag LIKE type_file.chr1,      # 搭贈加價購資料檔
+       rtbflag LIKE type_file.chr1,      # 商品結構主檔
+       rtcflag LIKE type_file.chr1,      # 商品結構明細檔
+       genflag LIKE type_file.chr1,      # 員工資料維護
+       lpjflag LIKE type_file.chr1,      # 會員資料維護
+       occflag LIKE type_file.chr1,      # 客戶資料
+       rykflag LIKE type_file.chr1,      # 交易授權碼檔
+       pmmflag LIKE type_file.chr1,      # 採購單主檔
+       pmnflag LIKE type_file.chr1,      # 採購單明細檔
+       ruoflag LIKE type_file.chr1,      # 調撥單主檔
+       rujflag LIKE type_file.chr1,      # 調撥單明細檔
+       rusflag LIKE type_file.chr1,      # 盤點計畫維護
+       ryvflag LIKE type_file.chr1,      # 公告欄維護
+       oomflag LIKE type_file.chr1       # 發票薄主檔維護
+       END RECORD
+
+DEFINE  g_posstr     STRING                    #被選擇的xxx_file的連接字串
+DEFINE  g_msg1       LIKE type_file.chr1000    #TQC-B20181 add 其他錯誤信息
+DEFINE  g_msg        LIKE type_file.chr1000    #TQC-B20181 add 錯誤訊息
+DEFINE  g_trans_no   LIKE ryy_file.ryy01       #TQC-B20181 add 
+
+#DEFINE  g_sql   STRING,
+#        g_wc    STRING,
+#        g_wc2   STRING,
+#        g_void  LIKE type_file.chr1,        
+#        g_rec_b LIKE type_file.num5,
+#        b_rur   RECORD      LIKE rur_file.*,
+#        g_cmd               LIKE type_file.chr1000,
+#        g_ima906            LIKE ima_file.ima906,
+#        g_ima907            LIKE ima_file.ima907,
+#        g_imgg00            LIKE imgg_file.imgg00,
+#        g_imgg10            LIKE imgg_file.imgg10,
+#        g_yy,g_mm           LIKE type_file.num5,
+#        g_debit,g_credit    LIKE img_file.img26,
+#        g_ima25,g_ima25_2   LIKE ima_file.ima25,
+#        g_img10,g_img10_2   LIKE img_file.img10,
+#        l_ac                LIKE type_file.num5
+#DEFINE  p_row,p_col          LIKE type_file.num5
+#DEFINE  g_forupd_sql         STRING
+#DEFINE  g_before_input_done  LIKE type_file.num5
+#DEFINE l_qcs091             LIKE qcs_file.qcs091
+#DEFINE  g_chr                LIKE type_file.chr1
+#DEFINE  g_cnt                LIKE type_file.num10
+#DEFINE  g_msg                LIKE ze_file.ze03
+#DEFINE  g_row_count          LIKE type_file.num10
+#DEFINE  g_curs_index         LIKE type_file.num10
+#DEFINE  g_jump               LIKE type_file.num10
+#DEFINE  mi_no_ask            LIKE type_file.num5
+#DEFINE g_count               LIKE type_file.num5 
+#DEFINE  g_ruq00              LIKE ruq_file.ruq00
+#DEFINE  li_result            LIKE type_file.num5
+#DEFINE  g_t1     LIKE oay_file.oayslip
+#DEFINE  l_allow_insert  LIKE type_file.num5
+#DEFINE  l_allow_delete  LIKE type_file.num5
+END GLOBALS

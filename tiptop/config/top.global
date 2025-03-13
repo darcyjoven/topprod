@@ -1,0 +1,388 @@
+DATABASE ds
+
+GLOBALS
+   #參數設定變數
+   #DEFINE aps_saz   RECORD LIKE aps_saz.*    #aps   #MOD-8C0288 MARK
+   #DEFINE aps_saz   RECORD LIKE aps_saz.*    #aps   #FUN-980055 #TQC-910039 add
+   DEFINE g_aaz     RECORD LIKE aaz_file.*   #aap,abg,afa,agl,ggl,s_part.4gl
+   DEFINE g_apz     RECORD LIKE apz_file.*   #aap,amd,axc,axr,aap,std
+   DEFINE g_aza     RECORD LIKE aza_file.*   #各模組
+   DEFINE g_azz     RECORD LIKE azz_file.*   #各模組  #FUN-BC0055  
+   DEFINE g_bgz     RECORD LIKE bgz_file.*   #abg
+   DEFINE g_bxz     RECORD LIKE bxz_file.*   #abx
+   DEFINE g_ccz     RECORD LIKE ccz_file.*   #apm,asd,axc
+   #DEFINE g_cpa     RECORD LIKE cpa_file.*   #apy,gpy,s_gettpr.4gl   #TQC-B90211
+   DEFINE g_faa     RECORD LIKE faa_file.*   #abg,afa,s_afamxno.4gl
+   DEFINE g_mmd     RECORD LIKE mmd_file.*   #amm
+   DEFINE g_nmz     RECORD LIKE nmz_file.*   #anm
+   DEFINE g_oaz     RECORD LIKE oaz_file.*   #adm,apm,axm,axs,gis
+   DEFINE g_oax     RECORD LIKE oax_file.*   #atm,axm  #NO.FUN-670007
+   DEFINE g_pod     RECORD LIKE pod_file.*   #apm  #NO.FUN-670007
+   DEFINE g_isf     RECORD LIKE isf_file.*   #gis No.MOD-590069
+   DEFINE g_ooz     RECORD LIKE ooz_file.*   #abx,afa,amd,axr,gxr
+   DEFINE g_qcz     RECORD LIKE qcz_file.*   #apm,aqc
+   DEFINE g_rmz     RECORD LIKE rmz_file.*   #arm
+   DEFINE g_sma     RECORD LIKE sma_file.*   #各模組
+   DEFINE g_gas     RECORD LIKE gas_file.*   #Genero UI設定
+   DEFINE g_adz     RECORD LIKE adz_file.*   #axd            
+   DEFINE g_coz     RECORD LIKE coz_file.*   #aco           #No:BUG-490398
+   DEFINE g_cez     RECORD LIKE cez_file.*   #aco           #FUN-930151 add
+   DEFINE g_azm     RECORD LIKE azm_file.*   #財務模組      #TQC-620021
+   DEFINE g_azw     RECORD LIKE azw_file.*   #Gp5.2         #FUN-960141
+#  DEFINE g_auth    LIKE type_file.chr1000   #FUN-960141    #MOD-A80198
+   DEFINE g_auth    STRING                                  #MOD-A80198
+   
+   #非參數設定變數
+   DEFINE g_apy     RECORD LIKE apy_file.*   #aap,s_apyslip.4gl
+   DEFINE g_bna     RECORD LIKE bna_file.*   #abx,s_abxslip.4gl
+   DEFINE g_coy     RECORD LIKE coy_file.*   #aco
+   #DEFINE g_cpl     RECORD LIKE cpl_file.*   #apy,gpyt070.4gl,s_cplslip.4gl   #TQC-B90211
+   #DEFINE g_cpr     RECORD LIKE cpr_file.*   #apy   #TQC-B90211
+   DEFINE g_mpz     RECORD LIKE mpz_file.*   #ams,axm
+   DEFINE g_nmy     RECORD LIKE nmy_file.*   #anm
+   DEFINE g_oay     RECORD LIKE oay_file.*   #arm,axm,axr
+   DEFINE g_ooy     RECORD LIKE ooy_file.*   #axr
+   DEFINE g_lrk     RECORD LIKE lrk_file.*   #alm  #FUN-960140
+   DEFINE g_smy     RECORD LIKE smy_file.*   #各模組
+   DEFINE g_tlf     RECORD LIKE tlf_file.*   #aim,apm,asf,asm,axc,axm,std,s_tlf(1,2).4gl:Transaction log
+   DEFINE g_tlff    RECORD LIKE tlff_file.*  #aim,apm,asf,asm,axc,axm,std,s_tlf(1,2).4gl:Transaction log  #FUN-540022
+   DEFINE g_fjh     RECORD LIKE fjh_file.*   #aem  #No.BUG-530629,axm,std,s_tlf(1,2).4gl:Transaction log  #FUN-540022
+   DEFINE g_osy     RECORD LIKE osy_file.*   #axsi100,s_axsauno.4gl,s_axsslip.4gl
+   DEFINE g_ibe     RECORD LIKE ibe_file.*   #abai010 #No:DEV-D30026--add
+
+   DEFINE g_prog       LIKE type_file.chr20  #程式代號
+   DEFINE g_gui_type   LIKE type_file.num5   #GUI Type
+   DEFINE g_user       LIKE type_file.chr10  #使用者登入名稱
+   DEFINE g_grup       LIKE type_file.chr10  #使用者部門代號	#MOD-990030 chr6 -> chr10
+   DEFINE g_clas       LIKE type_file.chr10  #使用者權限類別
+   DEFINE g_data_owner LIKE type_file.chr10  #使用者資料權限
+   DEFINE g_data_group LIKE type_file.chr10  #部門資料權限      #CHI-A10004 chr6 -> chr10
+   DEFINE g_data_plant LIKE type_file.chr10  #營運中心資料權限
+   DEFINE g_lang       LIKE type_file.chr1   #使用語言別
+   DEFINE g_company    VARCHAR(72)           #Company name
+   DEFINE g_sys        LIKE type_file.chr5   #系統別
+   DEFINE g_time       LIKE type_file.chr8   #Execution time
+   DEFINE g_today      LIKE type_file.dat    #系統日期
+   DEFINE g_version    LIKE type_file.chr20  #版本
+   DEFINE g_chkey      LIKE type_file.chr1   #是否允許更改KEY
+   DEFINE g_query      LIKE type_file.chr1   #是否顯示合乎條件筆數
+   DEFINE g_max_rec    LIKE type_file.num5   #Table最大顯示/輸入筆數 
+   DEFINE g_multpl     LIKE type_file.chr1   #是否為多工廠環境
+   DEFINE g_lastdat    LIKE type_file.dat    #世@界末日
+   DEFINE g_dbs        LIKE type_file.chr21  #Local database name
+   DEFINE g_dbs_new    LIKE type_file.chr21  #New database name
+   DEFINE g_dbs_tra    LIKE type_file.chr21  #FUN-980014 存放 TRANSACTION DB
+
+   DEFINE g_pos        LIKE type_file.chr21  #FUN-980021
+   DEFINE g_gl_dbs     LIKE type_file.chr21  #GL database name
+   DEFINE g_nm_dbs     LIKE type_file.chr21  #NM database name
+   DEFINE g_legal      LIKE type_file.chr10  #法人代碼  #FUN-980014 add
+   DEFINE g_plant      LIKE type_file.chr10  #Local plant name
+   DEFINE g_plant_new  LIKE type_file.chr10  #New plant name
+   DEFINE g_from_plant LIKE azp_file.azp01   #多角抛转时来源资料所在的plant
+   DEFINE g_trace      LIKE type_file.chr1   #判斷是否要顯現除錯資訊的變數.
+   DEFINE g_success    LIKE type_file.chr1   #sub判斷是否執行成功
+   DEFINE g_work       DYNAMIC ARRAY OF LIKE type_file.dat #DATE #s_wdays,s_wdays2有需要.
+   DEFINE g_mind       LIKE type_file.dat    
+   DEFINE g_maxd       LIKE type_file.dat    
+   DEFINE g_errno      LIKE type_file.chr10  #錯誤訊息代碼
+
+   DEFINE g_priv1      LIKE zy_file.zy03     #使用者執行權限  FUN-560097
+   DEFINE g_priv2      LIKE zy_file.zy04     #使用者資料權限
+   DEFINE g_priv3      LIKE zy_file.zy05     #使用部門資料權限
+   DEFINE g_priv4      LIKE zy_file.zy06     #使用者印表權限
+   DEFINE g_priv5      LIKE zy_file.zy07     #使用者單身權限
+
+   DEFINE g_azi03      LIKE azi_file.azi03   #本幣單價小數位數   
+   DEFINE g_azi04      LIKE azi_file.azi04   #本幣金額小數位數   
+   DEFINE g_azi05      LIKE azi_file.azi05   #本幣合計小數位數
+   DEFINE g_azi07      LIKE azi_file.azi07   #本幣匯率小數位數
+   DEFINE t_azi03      LIKE azi_file.azi03   #原幣單價小數位數
+   DEFINE t_azi04      LIKE azi_file.azi04   #原幣金額小數位數
+   DEFINE t_azi05      LIKE azi_file.azi05   #原幣合計小數位數
+   DEFINE t_azi07      LIKE azi_file.azi07   #原幣匯率小數位數
+
+   DEFINE g_confirm    LIKE type_file.chr1   #for s_sizechk 用來判斷是否詢問提示訊息   #CHI-B60077 add
+                                             #null或0 : 表示需開窗詢問是否使用建議數量
+                                             #1       : 表示「是否使用建議數量」選「是」
+                                             #2       : 表示「是否使用建議數量」選「否」
+   
+   #報表列印參數設定.
+   DEFINE g_pdate      LIKE type_file.dat    #報表列印參數設定.Print date
+   DEFINE g_towhom     VARCHAR(15)           #報表列印參數設定.To whom
+   DEFINE g_rlang      LIKE type_file.chr1   #報表列印參數設定.Language type
+   DEFINE g_bgjob      LIKE type_file.chr1   #報表列印參數設定.Background job
+   DEFINE g_prtway     LIKE type_file.chr1   #報表列印參數設定.Print way
+   DEFINE g_copies     LIKE type_file.chr1   #報表列印參數設定.Report copies you want
+   DEFINE g_xml_rep    VARCHAR(24)           #For XML file name
+   DEFINE g_len        LIKE type_file.num5   #Report length
+   DEFINE g_line       LIKE type_file.num10  #Report pagelength
+   DEFINE g_page_line  LIKE type_file.num5   #Report lines for each page
+   DEFINE g_dash1      STRING
+   DEFINE g_dash       LIKE type_file.chr1000 
+   DEFINE g_dash2      LIKE type_file.chr1000
+   DEFINE g_zz05       LIKE type_file.chr1   #Print tm.wc ?(Y/N)
+   DEFINE g_pageno     LIKE type_file.num5   #Report page no
+   DEFINE g_head       STRING                #Report str
+   DEFINE pageno_total STRING                #Total page number
+   DEFINE g_line_seq   LIKE type_file.num5   #Line seq. 
+   DEFINE g_memo       STRING                #備註第二行內容
+   DEFINE g_zaa        DYNAMIC ARRAY OF RECORD
+            zaa05      LIKE zaa_file.zaa05, #寬度
+            zaa06      LIKE zaa_file.zaa06, #隱藏否
+            zaa07      LIKE zaa_file.zaa07, #欄位順序
+            zaa08      LIKE zaa_file.zaa08, #欄位內容
+            zaa15      LIKE zaa_file.zaa15, #行序
+            zaa14      LIKE zaa_file.zaa14  #欄位屬性
+                       END RECORD
+   DEFINE g_x          DYNAMIC ARRAY OF STRING                  #Report field desc
+   DEFINE g_c          DYNAMIC ARRAY OF LIKE type_file.num5     #Report column 定位點
+   DEFINE g_w          DYNAMIC ARRAY OF LIKE type_file.num5     #Report column 定位點(累計)
+   DEFINE g_zaa_dyn    DYNAMIC ARRAY WITH DIMENSION 2 OF STRING #存放每頁單身title的內容 #TQC-5B0170
+   DEFINE g_memo_pagetrailer   LIKE type_file.num5              #判斷是頁尾或表尾列印 
+   DEFINE g_left_margin        LIKE type_file.num5              #報表左邊界
+   DEFINE g_top_margin         LIKE type_file.num5              #報表上邊界 #No.FUN-6C0048
+   DEFINE g_bottom_margin      LIKE type_file.num5              #報表下邊界 #No.FUN-6C0048
+   DEFINE tm2          RECORD
+          s1,s2,s3,s4,s5,s6,s7 LIKE type_file.chr20,
+          t1,t2,t3,t4,t5,t6    LIKE type_file.chr1, 
+          u1,u2,u3,u4,u5,u6    LIKE type_file.chr1
+                  END RECORD
+
+   DEFINE   g_cr_db_str STRING  
+   DEFINE   g_takdate   DYNAMIC ARRAY OF RECORD
+            ecb03       LIKE ecb_file.ecb03,   #operation seq
+            ecb06       LIKE ecb_file.ecb06,   #operation no
+            ecb08       LIKE ecb_file.ecb08,   #work center
+            ecb012      LIKE ecb_file.ecb012,  #process session no  FUN-A60027 add
+            srtdt       LIKE type_file.dat,    #start date
+            duedt       LIKE type_file.dat,    #due date
+            esrtdt      LIKE type_file.dat,    #earlest start date
+            lsrtdt      LIKE type_file.dat,    #lastest start date
+            eduedt      LIKE type_file.dat,    #earlest due date
+            lduedt      LIKE type_file.dat,    #endlest due date
+            flt         DECIMAL(12,3),         #fixed lead time
+            ult         DECIMAL(12,3)          #unit  lead time
+                        END RECORD
+
+   DEFINE   g_takhur    DYNAMIC ARRAY OF RECORD
+            ecb03       LIKE ecb_file.ecb03,   #operation seq
+            ecb06       LIKE ecb_file.ecb06,   #operation no
+            ecb08       LIKE ecb_file.ecb08,   #work center
+            takhur      DECIMAL(7,2)           #尚需工時
+                        END RECORD
+
+   #cl_jmail.4gl專用變數
+   DEFINE   g_xml       RECORD
+            file        LIKE type_file.chr50,     #XML檔名(不含路徑,檔案產生在$TEMPDIR底下)
+            mailserver  LIKE type_file.chr30,     #MAIL SERVER IP
+            serverport  LIKE type_file.chr5,      #MAIL SERVER Port
+            user        LIKE type_file.chr10,     #MAIL SERVER User
+            passwd      LIKE type_file.chr10,     #MAIL SERVER User Password
+            subject     VARCHAR(300),             #信件主旨
+            body        VARCHAR(100),             #信件本文內容
+            attach      LIKE type_file.chr1000,   #信件附件檔路徑
+            recipient   LIKE type_file.chr1000,   #收件者
+            cc          VARCHAR(500),             #副本
+            bcc         VARCHAR(500),             #密件副本
+            sender      LIKE type_file.chr50      #寄件者
+                        END RECORD
+
+   DEFINE   gs_config_path    STRING                #config資料夾的路徑.
+   DEFINE   gs_4st_path       STRING                #4st檔案預設路徑
+   DEFINE   gs_4ad_path       STRING                #4ad檔案預設路徑
+   DEFINE   gs_4sm_path       STRING                #4sm檔案預設路徑
+   DEFINE   gs_4tb_path       STRING                #4tb檔案預設路徑
+   DEFINE   gs_4tm_path       STRING                #4tm檔案預設路徑
+   DEFINE   g_action_choice   STRING                #ON ACTION的名稱
+   DEFINE   g_need_err_log    LIKE type_file.chr1   #是否需要將錯誤訊息寫入log檔.
+   DEFINE   g_idle_seconds    LIKE type_file.num5   #INPUT or INPUT ARRAY 時允許Idle的秒數
+   DEFINE   g_show_item_value LIKE type_file.num5   #是否顯現COMBOBOX,RADIOGROUP的項目儲
+   DEFINE   g_head_disable    LIKE type_file.num5   #TQC-690071 單頭目前是否隱藏
+   DEFINE   g_chk_usr_grp_as  LIKE gbd_file.gbd01   #權限檢查比對項目 (cl_prich3)
+   DEFINE   g_win_style       LIKE zz_file.zz27     #OPEN WINDOW的Style變數.
+
+   #cl_createqry.4gl專用變數.
+   DEFINE   g_qryparam        RECORD
+            state             LIKE type_file.chr1,  #程式的狀態(i→INPUT，c→CONSTRUCT，預設為i)
+            form              LIKE type_file.chr20, #畫面代號(一@定要輸入，並且要存在於gac_file.gac01)
+            construct         LIKE type_file.chr1,  #是否需要CONSTRUCT(Y→需要，N→不需要，預設為Y)
+            where             STRING,               #查詢資料的條件(一@般是從gab_file.gab02來設定)
+            pagecount         STRING,               #每頁最大瀏覽筆數
+            default1          STRING,               #開窗欄位的預設值
+            default2          STRING,               #開窗之相關欄位一@的預設值
+            default3          STRING,               #開窗之相關欄位二的預設值
+            default4          STRING,               #開窗之相關欄位三的預設值
+            default5          STRING,               #開窗之相關欄位四的預設值
+            arg1              STRING,               #查詢資料的條件替換值一@
+            arg2              STRING,               #查詢資料的條件替換值二
+            arg3              STRING,               #查詢資料的條件替換值三
+            arg4              STRING,               #查詢資料的條件替換值四
+            arg5              STRING,               #查詢資料的條件替換值五
+            arg6              STRING,               #查詢資料的條件替換值六
+            arg7              STRING,               #查詢資料的條件替換值七
+            arg8              STRING,               #查詢資料的條件替換值八
+            arg9              STRING,               #查詢資料的條件替換值九
+            multiret_index    LIKE type_file.num5,  #多選資料所要回傳的欄位索引值(預設為1)
+            multiret          STRING,               #多選資料的回傳值暫存器
+            ordercons         STRING,               #ORDER BY的順序(遞減DESC)
+            plant             LIKE type_file.chr10  #FUN-980030:指定跨Plant查詢資料
+                              END RECORD
+
+   #cl_batch_proc.4gl專用變數
+   DEFINE ga_batch        DYNAMIC ARRAY OF RECORD
+            c_check       LIKE type_file.chr1,   #VARCHAR(1),
+            c_item01      VARCHAR(100), 
+            c_item02      VARCHAR(100),
+            c_item03      VARCHAR(100),
+            c_item04      VARCHAR(100),
+            c_item05      VARCHAR(100),
+            c_item06      VARCHAR(100),
+            c_item07      VARCHAR(100),
+            c_item08      VARCHAR(100),
+            c_item09      VARCHAR(100), 
+            c_item10      VARCHAR(100)
+                          END RECORD
+   #cl_doc 變數
+   DEFINE g_doc           RECORD
+            column1       LIKE type_file.chr10,  
+            column2       LIKE type_file.chr10,  
+            column3       LIKE type_file.chr10,  
+            column4       LIKE type_file.chr10,  
+            column5       LIKE type_file.chr10,  
+            value1        LIKE type_file.chr50,     #MOD-960236 modify 
+            value2        LIKE type_file.chr50,     #MOD-960236 modify 
+            value3        LIKE type_file.chr50,     #MOD-960236 modify 
+            value4        LIKE type_file.chr50,     #MOD-960236 modify 
+            value5        LIKE type_file.chr50      #MOD-960236 modify 
+                          END RECORD
+   #cl_set_focus_form
+   DEFINE g_fld_name      LIKE type_file.chr20
+   DEFINE g_frm_name      LIKE type_file.chr20 
+
+   #單據編號
+   DEFINE g_doc_len       LIKE type_file.num5   #單據編號中單別的長度
+   DEFINE g_no_sp         LIKE type_file.num5   #單據編號中單號的起始位置
+                          #Ex.AAA-12345678, 1的位置"5"就是起始位置
+   DEFINE g_no_ep         LIKE type_file.num5   #單據編號的結束位置
+                          #Ex.AAA-12345678, 8的位置"12"就是結束位置
+   DEFINE g_sn_sp         LIKE type_file.num5   #單據編號流水號起始位置 FUN-A30020
+                          #Ex.AAA-PPPPP12345678, 1的位置"10"就是流水號起始位置
+                          #無PlantCode編入, 則g_no_sp = g_sn_sp
+   #多語轉換系統參數
+   DEFINE g_zx14          LIKE zx_file.zx14     #此使用者是否使用多語自動開窗功能
+   DEFINE g_dyloc2sfld    LIKE type_file.chr1   #確認是否為動態切換語言別所觸發 FUN-560086
+   DEFINE g_cuelang       LIKE type_file.num5   #FUN-580026
+   DEFINE g_bgjob_msgfile STRING                #批次作@業背景執行 FUN-610104
+   DEFINE g_ui_setting    LIKE gav_file.gav11   #自定義欄位功能FUN-710055 
+
+   #統整錯誤訊息
+   DEFINE g_showmsg       STRING                #統整錯誤訊息
+   DEFINE g_bgerr         LIKE type_file.num5   #是否啟用統整錯誤訊息的旗標
+   DEFINE g_totsuccess    LIKE type_file.chr1   #統整錯誤訊息用來記錄g_success的旗標
+   DEFINE g_err_msg       DYNAMIC ARRAY OF RECORD
+            fld1           STRING,
+            fld2           STRING,
+            fld3           STRING,
+            fld4           STRING,
+            fld5           STRING 
+                           END RECORD
+   #CR報表背景作@業功能
+   DEFINE g_template      LIKE zaa_file.zaa11   #報表背景執行需選擇樣板
+   DEFINE g_rep_user      LIKE zaa_file.zaa04   #報表背景執行需選擇使用者
+   DEFINE g_rep_clas      LIKE zaa_file.zaa17   #報表背景執行需選擇權限類別
+   DEFINE g_bgrpt         STRING                #CR背景作@業產生的報表名稱
+   DEFINE g_rpt_name      LIKE zaw_file.zaw08   #背景作@業時選擇的CR樣板名稱
+
+   #cl_prt.4gl專用
+   #報表簽核專用變數
+   DEFINE  g_cr_table        STRING                   #報表temp table名稱
+   DEFINE  g_cr_gcx01        LIKE gcx_file.gcx01      #單別維護程式
+   DEFINE  g_cr_apr_key_f    STRING                   #報表主鍵欄位名稱，用"|"隔開
+   #報表主鍵值(表頭主鍵用來分辨單據)，順序與g_cr_apr_key_f對應,組成EasyFlow簽核的wsc_file.wsc01，
+   #  update CR temptable時,相同的主鍵(g_cr_apr_key)會有相同的簽核圖
+   #  v1~vn，若增加主鍵，cl_prt_cs3要改CASE判斷式
+   DEFINE  g_cr_apr_key      DYNAMIC ARRAY OF RECORD  
+              v1          STRING,
+              v2          STRING,
+              v3          STRING,
+              v4          STRING,
+              v5          STRING
+              END RECORD
+  DEFINE  g_b_confirm     LIKE type_file.chr1   #MOD-9B0157
+
+  #FUN-B40095 --start--
+  #定義Genero Report頁首變數 
+  DEFINE g_grPageHeader    RECORD
+         title1            STRING,                 #報表標題1
+         title2            STRING,                 #報表標題2
+         title3            STRING,                 #報表標題3
+         title4            STRING,                 #報表標題4
+         co_adr            LIKE zo_file.zo041,     #公司地址
+         co_tel            LIKE zo_file.zo05,      #公司電話
+         co_fax            LIKE zo_file.zo09,      #公司傳真
+         logo              STRING,                 #公司logo圖檔
+         logoPos           LIKE aza_file.aza24,   #logo圖檔位置
+         g_apr_loc         STRING,                 #列印簽核位置
+         g_apr_str         LIKE type_file.chr1000  #簽核字串
+         END RECORD
+  #FUN-B40095 --end--
+
+  #FUN-B70118 --start--
+  DEFINE g_user_name       LIKE zx_file.zx02       #使用者名稱
+  DEFINE g_ptime           LIKE type_file.chr8     #製表日期時間欄
+  #FUN-B70118 --end--
+
+   #FUN-C30012 ---start---
+   #DEFINE g_apr_loc   STRING                   #列印簽核位置
+   #DEFINE g_apr_str   LIKE type_file.chr1000   #簽核字串     
+   #FUN-C30012 --- end ---
+
+  #FUN-A70106---add-----str---
+   #FUN-AC0026---add----str---
+   DEFINE g_dc_tabname    LIKE type_file.chr50
+   DEFINE g_dc_hist_tab   LIKE type_file.chr50
+   #FUN-AC0026---add----end---
+   DEFINE g_dc_tabname_bma    LIKE type_file.chr50  #FUN-B20003 add
+   DEFINE g_dc_tabname_bmx    LIKE type_file.chr50  #FUN-B20003 add
+  #FUN-A70106---add-----end---
+  #DEV-D30026 add str---------
+   DEFINE g_barcode_packing  LIKE   ibb_file.ibb05   #產生條碼時的包號
+   DEFINE g_barcode_no       LIKE   pmn_file.pmn01   #產生條碼時的單據單號
+   DEFINE g_barcode_ln       LIKE   pmn_file.pmn02   #產生條碼時的單據項次
+  #DEV-D30026 add end---------
+
+   #######Web 系統共用變數#######
+   #參數設定變數
+   DEFINE   g_err            STRING                  #WEB-D20006
+   DEFINE   g_wtoparea       STRING   #GWC執行區域   #FUN-C10034
+
+   
+   #定義 XtraGrid 共用變數
+   DEFINE g_xgrid RECORD
+                   title1            STRING,                 #報表標題1
+                   title2            STRING,                 #報表標題2
+                   prog              LIKE type_file.chr20,   #報表代號
+                   template          LIKE type_file.chr20,   #報表樣板
+                   grup_field        LIKE type_file.chr1000, #群組欄位
+                   order_field       LIKE type_file.chr1000, #排序欄位
+                   skippage_field    LIKE type_file.chr1000, #要跳頁的欄位
+                   grup_sum_field    LIKE type_file.chr1000, #要在群組尾顯示小計的欄位
+                   table             LIKE type_file.chr1000, #報表TEMP TABLE
+                   condition         LIKE type_file.chr1000, #報表尾資訊(列印條件)
+                   headerinfo1       LIKE type_file.chr1000, #報表首其它資訊(1)
+                   headerinfo2       LIKE type_file.chr1000, #報表首其它資訊(2)
+                   headerinfo3       LIKE type_file.chr1000, #報表首其它資訊(3)
+                   headerinfo4       LIKE type_file.chr1000, #報表首其它資訊(4)
+                   headerinfo5       LIKE type_file.chr1000, #報表首其它資訊(5)
+                   footerinfo1       LIKE type_file.chr1000, #報表尾其它資訊(1)
+                   footerinfo2       LIKE type_file.chr1000, #報表尾其它資訊(2)
+                   footerinfo3       LIKE type_file.chr1000, #報表尾其它資訊(3)
+                   footerinfo4       LIKE type_file.chr1000, #報表尾其它資訊(4)
+                   footerinfo5       LIKE type_file.chr1000, #報表尾其它資訊(5)
+                   sql               STRING,
+                   dynamic_title     LIKE type_file.chr1000,  #動態標題
+                   visible_column  LIKE type_file.chr300   #隱藏欄位
+                  END RECORD
+   DEFINE g_rep_choice    LIKE type_file.num5
+END GLOBALS

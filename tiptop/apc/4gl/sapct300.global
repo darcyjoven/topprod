@@ -1,0 +1,97 @@
+# Prog. Version..: '5.20.01-13.02.27(00002)'     #
+# Pattern name...: sapct300.global
+# Descriptions...:  POS ws 差異调整Global變數
+# Date & Author..: No.FUN-C70116 12/08/08 By suncx
+# Modify.........: No.FUN-C70116 12/08/08 By suncx 新增程序
+# Modify.........: No.TQC-C80123 12/08/22 By suncx 補過程序
+# Modify.........: No.FUN-CC0135 13/01/07 By xumm 增加异动单号栏位
+
+DATABASE ds
+
+GLOBALS
+
+DEFINE  g_posdbs       LIKE ryg_file.ryg00,
+        g_db_links     LIKE ryg_file.ryg02
+DEFINE g_request_root om.DomNode
+DEFINE g_rxs   RECORD LIKE rxs_file.*
+DEFINE g_rxs_t RECORD LIKE rxs_file.*
+DEFINE g_rxs_o RECORD LIKE rxs_file.*
+DEFINE g_rxt   DYNAMIC ARRAY OF RECORD
+               rxt02  LIKE rxt_file.rxt02,
+               rxt03  LIKE rxt_file.rxt03,
+               rxt04  LIKE rxt_file.rxt04,
+               rxt05  LIKE rxt_file.rxt05,
+               rxt06  LIKE rxt_file.rxt06,
+               rxt16  LIKE rxt_file.rxt16,
+               rxt07  LIKE rxt_file.rxt07,
+               rxt08  LIKE rxt_file.rxt08,
+               rxt09  LIKE rxt_file.rxt09,
+               rxt10  LIKE rxt_file.rxt10,
+               rxt11  LIKE rxt_file.rxt11,
+               rxt12  LIKE rxt_file.rxt12,
+               rxt13  LIKE rxt_file.rxt13,
+               rxt18  LIKE rxt_file.rxt18,    #FUN-CC0135 add
+               rxt14  LIKE rxt_file.rxt14,
+               rxt15  LIKE rxt_file.rxt15,
+               rxt17  LIKE rxt_file.rxt17
+               END RECORD, 
+      g_rxt_t  RECORD
+               rxt02  LIKE rxt_file.rxt02,
+               rxt03  LIKE rxt_file.rxt03,
+               rxt04  LIKE rxt_file.rxt04,
+               rxt05  LIKE rxt_file.rxt05,
+               rxt06  LIKE rxt_file.rxt06,
+               rxt16  LIKE rxt_file.rxt16,
+               rxt07  LIKE rxt_file.rxt07,
+               rxt08  LIKE rxt_file.rxt08,
+               rxt09  LIKE rxt_file.rxt09,
+               rxt10  LIKE rxt_file.rxt10,
+               rxt11  LIKE rxt_file.rxt11,
+               rxt12  LIKE rxt_file.rxt12,
+               rxt13  LIKE rxt_file.rxt13,
+               rxt18  LIKE rxt_file.rxt18,    #FUN-CC0135 add
+               rxt14  LIKE rxt_file.rxt14,
+               rxt15  LIKE rxt_file.rxt15,
+               rxt17  LIKE rxt_file.rxt17
+               END RECORD,
+      g_rxt_o  RECORD
+               rxt02  LIKE rxt_file.rxt02,
+               rxt03  LIKE rxt_file.rxt03,
+               rxt04  LIKE rxt_file.rxt04,
+               rxt05  LIKE rxt_file.rxt05,
+               rxt06  LIKE rxt_file.rxt06,
+               rxt16  LIKE rxt_file.rxt16,
+               rxt07  LIKE rxt_file.rxt07,
+               rxt08  LIKE rxt_file.rxt08,
+               rxt09  LIKE rxt_file.rxt09,
+               rxt10  LIKE rxt_file.rxt10,
+               rxt11  LIKE rxt_file.rxt11,
+               rxt12  LIKE rxt_file.rxt12,
+               rxt13  LIKE rxt_file.rxt13,
+               rxt18  LIKE rxt_file.rxt18,    #FUN-CC0135 add
+               rxt14  LIKE rxt_file.rxt14,
+               rxt15  LIKE rxt_file.rxt15,
+               rxt17  LIKE rxt_file.rxt17
+               END RECORD
+DEFINE  g_sql                STRING,
+        g_wc                 STRING,
+        g_wc2                STRING,
+        g_rec_b              LIKE type_file.num5,
+        l_ac                 LIKE type_file.num5
+DEFINE  g_cnt                LIKE type_file.num10
+DEFINE  g_forupd_sql         STRING
+DEFINE  g_before_input_done  LIKE type_file.num5
+DEFINE  g_row_count          LIKE type_file.num10
+DEFINE  g_curs_index         LIKE type_file.num10
+DEFINE  g_jump               LIKE type_file.num10
+DEFINE  g_no_ask             LIKE type_file.num5
+DEFINE  g_msg                LIKE ze_file.ze03
+DEFINE  g_chr          LIKE type_file.chr1    
+DEFINE  g_chr2         LIKE type_file.chr1
+DEFINE  g_chr3         LIKE type_file.chr1
+DEFINE  g_showmsg      STRING
+DEFINE  g_wap02        LIKE wap_file.wap02
+DEFINE  g_wc_plant     STRING 
+
+END GLOBALS
+#TQC-C80123

@@ -1,0 +1,60 @@
+# Prog. Version..: '5.20.01-10.01.11(00002)'     #
+# Pattern name...: sartt600.global
+# Descriptions...: sartt600系列.4gl需用到的全域變數
+# Date & Author..: FUN-870007 09/09/21 By Zhangyajun
+# Modify.........: No:FUN-9B0034 09/11/05 By Cockroach PASS NO. 
+# Modify.........: No:FUN-870007 09/12/09 By Cockroach PASS NO.
+
+DATABASE ds
+
+GLOBALS
+DEFINE g_rxp RECORD LIKE rxp_file.*
+DEFINE g_rxp_t RECORD LIKE rxp_file.*
+DEFINE g_rxq DYNAMIC ARRAY OF RECORD
+       rxq02 LIKE rxq_file.rxq02,
+       rxq03 LIKE rxq_file.rxq03,
+       rxq04 LIKE rxq_file.rxq04,
+       rxq05 LIKE rxq_file.rxq05,
+       rxq06 LIKE rxq_file.rxq06,
+       rxq06_desc LIKE gfe_file.gfe02,
+       rxq07 LIKE rxq_file.rxq07,
+       rxq08 LIKE rxq_file.rxq08,
+       rxq09 LIKE rxq_file.rxq09,
+       rxq10 LIKE rxq_file.rxq10
+       END RECORD
+DEFINE g_rxq_t RECORD
+       rxq02 LIKE rxq_file.rxq02,
+       rxq03 LIKE rxq_file.rxq03,
+       rxq04 LIKE rxq_file.rxq04,
+       rxq05 LIKE rxq_file.rxq05,
+       rxq06 LIKE rxq_file.rxq06,
+       rxq06_desc LIKE gfe_file.gfe02,
+       rxq07 LIKE rxq_file.rxq07,
+       rxq08 LIKE rxq_file.rxq08,
+       rxq09 LIKE rxq_file.rxq09,
+       rxq10 LIKE rxq_file.rxq10
+       END RECORD       
+DEFINE  g_sql   STRING,
+        g_wc    STRING,
+        g_wc2   STRING,
+        g_rec_b LIKE type_file.num5,
+        l_ac    LIKE type_file.num5
+DEFINE  p_row,p_col          LIKE type_file.num5
+DEFINE  g_forupd_sql         STRING
+DEFINE  g_before_input_done  LIKE type_file.num5
+DEFINE  g_chr                LIKE type_file.chr1
+DEFINE  g_cnt                LIKE type_file.num10
+DEFINE  g_msg                LIKE ze_file.ze03
+DEFINE  g_row_count          LIKE type_file.num10
+DEFINE  g_curs_index         LIKE type_file.num10
+DEFINE  g_jump               LIKE type_file.num10
+DEFINE  mi_no_ask            LIKE type_file.num5
+DEFINE  g_rxp00              LIKE rxp_file.rxp00
+DEFINE  li_result            LIKE type_file.num5
+DEFINE  g_t1     LIKE oay_file.oayslip
+DEFINE  l_allow_insert  LIKE type_file.num5
+DEFINE  l_allow_delete  LIKE type_file.num5
+END GLOBALS
+
+#FUN-9B0034
+#FUN-870007

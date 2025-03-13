@@ -1,0 +1,107 @@
+# Prog. Version..: '3.50.02-12.05.26(00002)'     #
+# Pattern name...: aimi100.global
+# Descriptions...: aimi100系列.4gl需用到的全域變數
+# Date & Author..: 07/01/03 By kim (FUN-6C0006)
+# Modify.........: No:FUN-810038 08/01/15 By kim GP5.1 ICD
+# Modify.........: No.FUN-7C0010 08/01/28 By Carrier 
+# Modify.........: No.FUN-870101 08/09/09 By jamie MES整合 
+# Modify.........: No.FUN-960007 09/06/02 By chenmoyan 該global檔內不可定義rowid變量
+# Modify.........: No.MOD-C50129 12/05/17 By ck2yuan 資料來源應該是ima916，但型態宣告為ima906
+
+DATABASE ds
+
+GLOBALS #FUN-6C0006 全部模組變數改為全域變數
+
+DEFINE tm          RECORD
+                   #FUN-660078 --start
+                   # plant   ARRAY[20] OF CHAR(10),
+                   # dbs     ARRAY[20] OF CHAR(21)
+                   plant     ARRAY[20] OF LIKE azp_file.azp01,
+                   dbs       ARRAY[20] OF LIKE azp_file.azp03
+                   #FUN-660078 --end
+                   END RECORD,
+       g_ima       RECORD LIKE ima_file.*,
+       g_ima_t     RECORD LIKE ima_file.*,
+       g_ima_o     RECORD LIKE ima_file.*,
+       g_imaicd    RECORD LIKE imaicd_file.*, #FUN-810038
+       g_imaicd_t  RECORD LIKE imaicd_file.*, #FUN-810038
+       g_imaicd_o  RECORD LIKE imaicd_file.*, #FUN-810038
+       g_ima01_t   LIKE ima_file.ima01,
+       g_rec_b             LIKE type_file.num10,   #No.FUN-690026 INTEGER
+       g_d2                LIKE ima_file.ima26,
+#      g_ima_rowid         LIKE type_file.chr18,   #No.FUN-690026 INT     #No.FUN-960007
+       g_cmd               LIKE type_file.chr1000, #No.FUN-690026 CHAR(70)
+       #g_sta              CHAR(10),               #補貨策略碼的說明 #FUN-660078
+#      g_wc                LIKE type_file.chr1000, #No.FUN-690026 CHAR(300)
+#      g_wc2               LIKE type_file.chr1000, #No.FUN-690026 CHAR(300)
+       g_wc                STRING,                 #TQC-630166
+       g_wc2               STRING,                 #TQC-630166
+       g_wc3               STRING,                 #TQC-680159
+       g_sql               STRING,
+       g_flag              LIKE type_file.chr1,    #No.FUN-690026 CHAR(1)
+       g_flag1             LIKE type_file.chr1,    #No.FUN-690026 CHAR(1)
+       g_ima906            LIKE ima_file.ima906,   #FUN-540025
+       g_ima907            LIKE ima_file.ima907,   #FUN-540025
+       g_ima908            LIKE ima_file.ima908,   #FUN-540025
+       l_azp03             LIKE azp_file.azp03,
+       l_zx07              LIKE zx_file.zx07,
+       g_argv1             LIKE ima_file.ima01,
+       l_zx09              LIKE zx_file.zx09,
+       g_s                 LIKE type_file.chr1,                         #料件處理狀況  #No.FUN-690026 CHAR(1)
+       g_sw                LIKE type_file.num5    #No.FUN-690026 SMALLINT
+#No.FUN-7C0010  --Begin
+DEFINE g_ima_l             DYNAMIC ARRAY OF RECORD
+                           ima01_l    LIKE ima_file.ima01,
+                           ima02_l    LIKE ima_file.ima02,
+                           ima021_l   LIKE ima_file.ima021,
+                           ima06_l    LIKE ima_file.ima06,
+                           ima08_l    LIKE ima_file.ima08,
+                           ima130_l   LIKE ima_file.ima130,
+                           ima109_l   LIKE ima_file.ima109,
+                           ima25_l    LIKE ima_file.ima25,
+                           ima37_l    LIKE ima_file.ima37,
+                           ima1010_l  LIKE ima_file.ima1010,
+                           imaacti_l  LIKE ima_file.imaacti,
+                          #ima906_l   LIKE ima_file.ima906   #MOD-C50129 mark
+                           ima916_l   LIKE ima_file.ima916   #MOD-C50129 add
+                           END RECORD
+DEFINE  g_imax             DYNAMIC ARRAY OF RECORD   #程式變數(Program Variables)
+                           sel        LIKE type_file.chr1,
+                           ima01      LIKE ima_file.ima01
+                           END RECORD
+DEFINE g_rec_b1            LIKE type_file.num10                           
+DEFINE g_flag2             LIKE type_file.chr1
+DEFINE l_ac1               LIKE type_file.num10                           
+DEFINE g_bp_flag           LIKE type_file.chr10
+DEFINE g_gev04             LIKE gev_file.gev04
+#No.FUN-7C0010  --End
+DEFINE p_row,p_col         LIKE type_file.num5    #No.FUN-690026 SMALLINT
+DEFINE g_chr,g_chr1        LIKE type_file.chr1    #No.FUN-690026 CHAR(1)
+DEFINE g_chr2              LIKE type_file.chr1    #No.FUN-610013   #No.FUN-690026 CHAR(1)
+DEFINE g_cnt               LIKE type_file.num10   #No.FUN-690026 INTEGER
+DEFINE g_forupd_sql        STRING
+DEFINE g_i                 LIKE type_file.num5    #count/index for any purpose  #No.FUN-690026 SMALLINT
+DEFINE g_msg               LIKE type_file.chr1000 #No.FUN-690026 CHAR(72)
+DEFINE g_before_input_done LIKE type_file.num5    #No.FUN-690026 SMALLINT
+DEFINE g_curs_index        LIKE type_file.num10   #No.FUN-690026 INTEGER
+DEFINE g_row_count         LIKE type_file.num10   #No.FUN-690026 INTEGER
+DEFINE g_jump              LIKE type_file.num10,  #No.FUN-690026 INTEGER
+       mi_no_ask            LIKE type_file.num5    #No.FUN-690026 SMALLINT     #No.FUN-6A0061
+DEFINE g_gen02             LIKE gen_file.gen02    #MOD-4A0326
+DEFINE g_on_change_02      LIKE type_file.num5    #FUN-550077  #No.FUN-690026 SMALLINT
+DEFINE g_on_change_021     LIKE type_file.num5    #FUN-550077  #No.FUN-690026 SMALLINT
+DEFINE g_db_type           LIKE type_file.chr21   #FUN-5A0027
+DEFINE g_dbase             LIKE type_file.chr21   #FUN-5A0027
+DEFINE g_dbstring          LIKE type_file.chr21   #FUN-5A0027
+DEFINE g_errary            DYNAMIC ARRAY OF RECORD #FUN-5A0027
+                              db     LIKE type_file.chr21, 
+                              value  STRING,
+                              field  LIKE ztb_file.ztb03,
+                              fname  LIKE gae_file.gae04,
+                              errno  LIKE ze_file.ze01,
+                              ename  LIKE ze_file.ze03                              
+                           END RECORD
+DEFINE g_ans               LIKE type_file.chr1   #TQC-690074
+DEFINE g_upd_ima_sql       STRING                #update 資料拋轉ima_file的專用SQL變數,請勿挪作他用   #FUN-6C0006
+DEFINE g_u_flag            LIKE type_file.chr1   #FUN-870101 add 
+END GLOBALS

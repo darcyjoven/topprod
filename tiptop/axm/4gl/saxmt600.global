@@ -1,0 +1,495 @@
+# Prog. Version..: '3.50.01-13.02.21(00010)'     #
+# Pattern name...: saxmt600.global
+# Descriptions...: saxmt600系列.4gl需用到的全域變數
+# Date & Author..: 07/01/10 By kim (FUN-710016)
+# Modify.........: No:MOD-6C0118 07/01/29 By Claire 多角出貨時要考慮參數一單到底(oaz105)的勾選,一律改取多序號
+# Modify.........: No:FUN-730012 07/03/06 By kim mark掉不用的變數
+# Modify.........: No:FUN-730018 07/03/28 By kim 行業別架構
+# Modify.........: No:MOD-780068 07/08/09 By claire 匯率基準日取結關日,當空白時取單據日
+# Modify.........: No:CHI-7B0023/CHI-7B0039 07/11/14 By kim 移除GP5.0行業別功能的所有程式段
+# Modify.........: No.FUN-7C0017/FUN-7B0014 07/12/06 By bnlent 增加行業別規範化修改 
+# Modify.........: No:FUN-810045 08/03/01 By rainy 項目管理，單身新增專案代號ogb41/WBS代號ogb42/活動代號ogb43
+# Modify.........: No.FUN-840042 08/04/10 by TSD.liquor 自訂欄位功能修改
+# Modify.........: NO:MOD-890080 08/09/11 By claire 多角出貨單切換DB後, 按扣帳還原應再確認目前DB一次
+# Modify.........: No:CHI-920012 09/02/03 By Smapmin 增加一flag以記錄--新增段,修改單身時按放棄
+# Modify.........: No.FUN-960007 09/06/03 By chenmoyan 該global檔內不可定義rowid變量
+# Modify.........: No.FUN-870007 09/07/29 By Zhangyajun 流通零售功能修改
+# Modify.........: No.FUN-980020 09/09/18 By douzh GP5.2架構重整，修改sub相關傳參
+# Modify.........: No.FUN-A90040 10/10/08 By shenyang 新增ogb48,ogb49,ogb50欄位
+# Modify.........: No.FUN-AB0061 10/11/16 By shenyang 新增ogb37欄位
+# Modify.........: No.FUN-AA0057 10/12/22 By shenyang 新增oga57欄位除去ogb50欄位 
+# Modify.........: No:FUN-B50054 11/05/12 By shiwuying 单身增加抽成代号ogb40
+# Modify.........: No:FUN-B30187 11/07/12 By jason 新增ogbiicd028、ogbiicd029
+# Modify.........: No:MOD-BB0033 11/12/03 By Vampire begin_no/end_no的型態改為LIKE oga_file.oga16
+# Modify.........: No:MOD-B90214 12/02/08 By Summer 增加g_ogb_o判斷新舊值 
+# Modify.........: No:FUN-C30289 12/04/03 By bart 增加ogbiicd07
+# Modify.........: No.FUN-C50097 12/05/31 By SunLM 新增ogb50,51,52欄位
+# Modify.........: No.FUN-CB0087 12/12/24 By fengrui 倉庫單據理由碼改善
+
+DATABASE ds
+
+GLOBALS #FUN-6C0006 全部模組變數改為全域變數
+#模組變數(Module Variables)
+DEFINE g_poz            RECORD LIKE poz_file.*,        #多角流程代碼(單頭) No.7992
+       g_flow           LIKE type_file.chr8,    #No.FUN-680137 CHAR(8)  #多角流程代碼       No.7992
+       g_b_flag         STRING,                        #No.TQC-640123
+       g_oga            RECORD LIKE oga_file.*,
+       g_oga_t          RECORD LIKE oga_file.*,
+       g_oga_o          RECORD LIKE oga_file.*,
+       g_ogb_o          RECORD LIKE ogb_file.*, #MOD-B90214 add
+       g_oga_u          RECORD LIKE oga_file.*,
+#      g_oga_rowid      LIKE type_file.chr18,                #ROWID  #No.FUN-680137 INT    #No.FUN-960007
+       b_ogb            RECORD LIKE ogb_file.*,
+       b_ogbi           RECORD LIKE ogbi_file.*,       #No.FUN-7C0017
+      #g_ima86          LIKE ima_file.ima86,  #FUN-730018 此變數停用 改由各FUN個別抓取
+      #No.TQC-640123--begin
+       g_ogb            DYNAMIC ARRAY OF RECORD    #程式變數(Program Variables)
+                           ogb03     LIKE ogb_file.ogb03,
+                           ogb1005   LIKE ogb_file.ogb1005,
+                           ogb31     LIKE ogb_file.ogb31,
+                           ogb32     LIKE ogb_file.ogb32,
+      #No.FUN-A90040 --begin
+                    ogb48    LIKE ogb_file.ogb48,
+                    ogb49    LIKE ogb_file.ogb49,
+                 #  ogb50    LIKE ogb_file.ogb50, #FUN-AA0057
+      #No.FUN-A90040 --end                     
+                           ogb04     LIKE ogb_file.ogb04,
+      #No.TQC-650088--begin
+                           att00     LIKE imx_file.imx00,  
+                           att01     LIKE imx_file.imx03,  #No.FUN-680137 CHAR(10)                                                                                             
+                           att01_c   LIKE imx_file.imx03,  #No.FUN-680137 CHAR(10)                                                                                             
+                           att02     LIKE imx_file.imx03,  #No.FUN-680137 CHAR(10)                                                                                             
+                           att02_c   LIKE imx_file.imx03,  #No.FUN-680137 CHAR(10)                                                                                             
+                           att03     LIKE imx_file.imx03,  #No.FUN-680137 CHAR(10)                                                                                             
+                           att03_c   LIKE imx_file.imx03,  #No.FUN-680137 CHAR(10)                                                                                             
+                           att04     LIKE imx_file.imx03,  #No.FUN-680137 CHAR(10)                                                                                             
+                           att04_c   LIKE imx_file.imx03,  #No.FUN-680137 CHAR(10)                                                                                             
+                           att05     LIKE imx_file.imx03,  #No.FUN-680137 CHAR(10)                                                                                             
+                           att05_c   LIKE imx_file.imx03,  #No.FUN-680137 CHAR(10)                                                                                             
+                           att06     LIKE imx_file.imx03,  #No.FUN-680137 CHAR(10)                                                                                             
+                           att06_c   LIKE imx_file.imx03,  #No.FUN-680137 CHAR(10)                                                                                             
+                           att07     LIKE imx_file.imx03,  #No.FUN-680137 CHAR(10)                                                                                             
+                           att07_c   LIKE imx_file.imx03,  #No.FUN-680137 CHAR(10)                                                                                             
+                           att08     LIKE imx_file.imx03,  #No.FUN-680137 CHAR(10)                                                                                             
+                           att08_c   LIKE imx_file.imx03,  #No.FUN-680137 CHAR(10)                                                                                             
+                           att09     LIKE imx_file.imx03,  #No.FUN-680137 CHAR(10)                                                                                             
+                           att09_c   LIKE imx_file.imx03,  #No.FUN-680137 CHAR(10)                                                                                             
+                           att10     LIKE imx_file.imx03,  #No.FUN-680137 CHAR(10)                                                                                             
+                           att10_c   LIKE imx_file.imx03,  #No.FUN-680137 CHAR(10)  
+#No.TQC-650088--end
+                           ogb06     LIKE ogb_file.ogb06,
+                           ima021    LIKE ima_file.ima021,
+                           ima1002   LIKE ima_file.ima1002,
+                           ima135    LIKE ima_file.ima135, 
+                           ogb11     LIKE ogb_file.ogb11,  
+                           #ogb1001   LIKE ogb_file.ogb1001, #FUN-CB0087 MARK
+                           ogb40     LIKE ogb_file.ogb40,   #FUN-B50054
+                           ogb1012   LIKE ogb_file.ogb1012,
+                           ogb17     LIKE ogb_file.ogb17,
+                           ogb09     LIKE ogb_file.ogb09,
+                           ogb091    LIKE ogb_file.ogb091,
+                           ogb092    LIKE ogb_file.ogb092, 
+                           ogb1001   LIKE ogb_file.ogb1001, #FUN-CB0087 ADD
+                           azf03_1   LIKE azf_file.azf03,   #FUN-CB0087 ADD
+                           ogb1003   LIKE ogb_file.ogb1003,      
+                           ogb19     LIKE ogb_file.ogb19,  
+                           ogb05     LIKE ogb_file.ogb05,
+                           ogb12     LIKE ogb_file.ogb12,
+                           l_goods   LIKE type_file.num15_3, #str---add by huanglf160805
+                           ogb913    LIKE ogb_file.ogb913,
+                           ogb914    LIKE ogb_file.ogb914,
+                           ogb915    LIKE ogb_file.ogb915,
+                           ogb910    LIKE ogb_file.ogb910,
+                           ogb911    LIKE ogb_file.ogb911,
+                           ogb912    LIKE ogb_file.ogb912,
+                           ogb916    LIKE ogb_file.ogb916,
+                           ogb917    LIKE ogb_file.ogb917,
+                           ogb52     LIKE ogb_file.ogb52,  #FUN-C50097 ADD
+                           ogb50     LIKE ogb_file.ogb50,  #FUN-C50097 ADD
+                           ogb51     LIKE ogb_file.ogb51,  #FUN-C50097 ADD  
+                           ogb54     LIKE ogb_file.ogb54,  #FUN-C50097 ADD
+                           ogb53     LIKE ogb_file.ogb53,  #FUN-C50097 ADD
+                           ogb55     LIKE ogb_file.ogb55,  #FUN-C50097 ADD                                                     
+                           ogb12b    LIKE ogb_file.ogb12,
+                           ogb915b   LIKE ogb_file.ogb915,
+                           ogb912b   LIKE ogb_file.ogb912,
+                           ogb65     LIKE ogb_file.ogb65,
+                           azf03_2   LIKE azf_file.azf03,  #FUN-CB0087 ADD
+                           ogb01a    LIKE ogb_file.ogb01,
+                           ogb01b    LIKE ogb_file.ogb01,
+                         #FUN-810045 begin
+                           ogb41     LIKE ogb_file.ogb41,
+                           ogb42     LIKE ogb_file.ogb42,
+                           ogb43     LIKE ogb_file.ogb43,
+                         #FUN-810045 end
+                           ogb1004   LIKE ogb_file.ogb1004,
+                           ogb1002   LIKE ogb_file.ogb1002,
+                           ogb37     LIKE ogb_file.ogb37,  #FUN-AB0061
+                           ogb13     LIKE ogb_file.ogb13,  
+                           ogb1006   LIKE ogb_file.ogb1006,
+                           ogb14     LIKE ogb_file.ogb14,  
+                           ogb14t    LIKE ogb_file.ogb14t,
+                           ogb930    LIKE ogb_file.ogb930, #FUN-670063
+                           gem02c    LIKE gem_file.gem02 , #FUN-670063
+                           ogb908    LIKE ogb_file.ogb908,
+                           #No.FUN-7C0017 --Begin
+                           ogbiicd01 LIKE ogbi_file.ogbiicd01,
+                           ogbiicd02 LIKE ogbi_file.ogbiicd02,
+                           ogbiicd03 LIKE ogbi_file.ogbiicd03,
+                           ogbiicd04 LIKE ogbi_file.ogbiicd04,
+                           #No.FUN-7C0017 --End
+                           #FUN-840042 --start---
+                           ogbud01 LIKE ogb_file.ogbud01,
+                           ogbud02 LIKE ogb_file.ogbud02,
+                           ogbud03 LIKE ogb_file.ogbud03,
+                           ogbud04 LIKE ogb_file.ogbud04,
+                           ogbud05 LIKE ogb_file.ogbud05,
+                           ogbud06 LIKE ogb_file.ogbud06,
+                           ogbud07 LIKE ogb_file.ogbud07,
+                           ogbud08 LIKE ogb_file.ogbud08,
+                           ogbud09 LIKE ogb_file.ogbud09,
+                           ogbud10 LIKE ogb_file.ogbud10,
+                           ogbud11 LIKE ogb_file.ogbud11,
+                           ogbud12 LIKE ogb_file.ogbud12,
+                           ogbud13 LIKE ogb_file.ogbud13,
+                           ogbud14 LIKE ogb_file.ogbud14,
+                           ogbud15 LIKE ogb_file.ogbud15,
+                           #FUN-840042 --end--
+                           ogb44   LIKE ogb_file.ogb44,  #No.FUN-870007
+                           ogb45   LIKE ogb_file.ogb45,  #No.FUN-870007
+                           ogb46   LIKE ogb_file.ogb46,  #No.FUN-870007
+                           ogb47   LIKE ogb_file.ogb47   #No.FUN-870007
+                           ,ogbiicd028 LIKE ogbi_file.ogbiicd028   #FUN-B30187
+                           ,ogbiicd029 LIKE ogbi_file.ogbiicd029   #FUN-B30187
+                           ,ogbiicd07  LIKE ogbi_file.ogbiicd07    #FUN-C30289
+                        END RECORD,
+       g_ogb_t           RECORD    #備份舊值 
+                           ogb03     LIKE ogb_file.ogb03,
+                           ogb1005   LIKE ogb_file.ogb1005,
+                           ogb31     LIKE ogb_file.ogb31,
+                           ogb32     LIKE ogb_file.ogb32,
+             #No.FUN-A90040 --begin
+                           ogb48    LIKE ogb_file.ogb48,
+                           ogb49    LIKE ogb_file.ogb49,
+                     #     ogb50    LIKE ogb_file.ogb50,    #FUN-AA0057
+             #No.FUN-A90040 --end 
+                           ogb04     LIKE ogb_file.ogb04,
+#No.TQC-650088--begin
+                           att00     LIKE imx_file.imx00,  
+                           att01     LIKE imx_file.imx03,  #No.FUN-680137 CHAR(10)                                                                                             
+                           att01_c   LIKE imx_file.imx03,  #No.FUN-680137 CHAR(10)                                                                                             
+                           att02     LIKE imx_file.imx03,  #No.FUN-680137 CHAR(10)                                                                                             
+                           att02_c   LIKE imx_file.imx03,  #No.FUN-680137 CHAR(10)                                                                                             
+                           att03     LIKE imx_file.imx03,  #No.FUN-680137 CHAR(10)                                                                                             
+                           att03_c   LIKE imx_file.imx03,  #No.FUN-680137 CHAR(10)                                                                                             
+                           att04     LIKE imx_file.imx03,  #No.FUN-680137 CHAR(10)                                                                                             
+                           att04_c   LIKE imx_file.imx03,  #No.FUN-680137 CHAR(10)                                                                                             
+                           att05     LIKE imx_file.imx03,  #No.FUN-680137 CHAR(10)                                                                                             
+                           att05_c   LIKE imx_file.imx03,  #No.FUN-680137 CHAR(10)                                                                                             
+                           att06     LIKE imx_file.imx03,  #No.FUN-680137 CHAR(10)                                                                                             
+                           att06_c   LIKE imx_file.imx03,  #No.FUN-680137 CHAR(10)                                                                                             
+                           att07     LIKE imx_file.imx03,  #No.FUN-680137 CHAR(10)                                                                                             
+                           att07_c   LIKE imx_file.imx03,  #No.FUN-680137 CHAR(10)                                                                                             
+                           att08     LIKE imx_file.imx03,  #No.FUN-680137 CHAR(10)                                                                                             
+                           att08_c   LIKE imx_file.imx03,  #No.FUN-680137 CHAR(10)                                                                                             
+                           att09     LIKE imx_file.imx03,  #No.FUN-680137 CHAR(10)                                                                                             
+                           att09_c   LIKE imx_file.imx03,  #No.FUN-680137 CHAR(10)                                                                                             
+                           att10     LIKE imx_file.imx03,  #No.FUN-680137 CHAR(10)                                                                                             
+                           att10_c   LIKE imx_file.imx03,  #No.FUN-680137 CHAR(10)  
+#No.TQC-650088--end
+                           ogb06     LIKE ogb_file.ogb06,
+                           ima021    LIKE ima_file.ima021,
+                           ima1002   LIKE ima_file.ima1002,
+                           ima135    LIKE ima_file.ima135, 
+                           ogb11     LIKE ogb_file.ogb11,  
+                           #ogb1001   LIKE ogb_file.ogb1001, #FUN-CB0087 MARK 
+                           ogb40     LIKE ogb_file.ogb40,   #FUN-B50054
+                           ogb1012   LIKE ogb_file.ogb1012,
+                           ogb17     LIKE ogb_file.ogb17,
+                           ogb09     LIKE ogb_file.ogb09,
+                           ogb091    LIKE ogb_file.ogb091,
+                           ogb092    LIKE ogb_file.ogb092, 
+                           ogb1001   LIKE ogb_file.ogb1001, #FUN-CB0087 ADD
+                           azf03_1   LIKE azf_file.azf03,   #FUN-CB0087 ADD
+                           ogb1003   LIKE ogb_file.ogb1003,      
+                           ogb19     LIKE ogb_file.ogb19,  
+                           ogb05     LIKE ogb_file.ogb05,
+                           ogb12     LIKE ogb_file.ogb12,
+                           l_goods   LIKE type_file.num15_3, #str---add by huanglf160805
+                           ogb913    LIKE ogb_file.ogb913,
+                           ogb914    LIKE ogb_file.ogb914,
+                           ogb915    LIKE ogb_file.ogb915,
+                           ogb910    LIKE ogb_file.ogb910,
+                           ogb911    LIKE ogb_file.ogb911,
+                           ogb912    LIKE ogb_file.ogb912,
+                           ogb916    LIKE ogb_file.ogb916,
+                           ogb917    LIKE ogb_file.ogb917,
+                           ogb52     LIKE ogb_file.ogb52,  #FUN-C50097 ADD
+                           ogb50     LIKE ogb_file.ogb50,  #FUN-C50097 ADD
+                           ogb51     LIKE ogb_file.ogb51,  #FUN-C50097 ADD 
+                           ogb54     LIKE ogb_file.ogb54,  #FUN-C50097 ADD
+                           ogb53     LIKE ogb_file.ogb53,  #FUN-C50097 ADD
+                           ogb55     LIKE ogb_file.ogb55,  #FUN-C50097 ADD                                                     
+                           ogb12b    LIKE ogb_file.ogb12,
+                           ogb915b   LIKE ogb_file.ogb915,
+                           ogb912b   LIKE ogb_file.ogb912,
+                           ogb65     LIKE ogb_file.ogb65,
+                           azf03_2   LIKE azf_file.azf03,  #FUN-CB0087 ADD
+                           ogb01a    LIKE ogb_file.ogb01,
+                           ogb01b    LIKE ogb_file.ogb01,
+                         #FUN-810045 begin
+                           ogb41     LIKE ogb_file.ogb41,
+                           ogb42     LIKE ogb_file.ogb42,
+                           ogb43     LIKE ogb_file.ogb43,
+                         #FUN-810045 end
+                           ogb1004   LIKE ogb_file.ogb1004,
+                           ogb1002   LIKE ogb_file.ogb1002,
+                           ogb37     LIKE ogb_file.ogb37,  #FUN-AB0061
+                           ogb13     LIKE ogb_file.ogb13,  
+                           ogb1006   LIKE ogb_file.ogb1006,
+                           ogb14     LIKE ogb_file.ogb14,  
+                           ogb14t    LIKE ogb_file.ogb14t, 
+                           ogb930    LIKE ogb_file.ogb930, #FUN-670063
+                           gem02c    LIKE gem_file.gem02 , #FUN-670063
+                           ogb908    LIKE ogb_file.ogb908,
+                           #No.FUN-7C0017 --Begin
+                           ogbiicd01 LIKE ogbi_file.ogbiicd01,
+                           ogbiicd02 LIKE ogbi_file.ogbiicd02,
+                           ogbiicd03 LIKE ogbi_file.ogbiicd03,
+                           ogbiicd04 LIKE ogbi_file.ogbiicd04,
+                           #No.FUN-7C0017 --End
+                           #FUN-840042 --start---
+                           ogbud01 LIKE ogb_file.ogbud01,
+                           ogbud02 LIKE ogb_file.ogbud02,
+                           ogbud03 LIKE ogb_file.ogbud03,
+                           ogbud04 LIKE ogb_file.ogbud04,
+                           ogbud05 LIKE ogb_file.ogbud05,
+                           ogbud06 LIKE ogb_file.ogbud06,
+                           ogbud07 LIKE ogb_file.ogbud07,
+                           ogbud08 LIKE ogb_file.ogbud08,
+                           ogbud09 LIKE ogb_file.ogbud09,
+                           ogbud10 LIKE ogb_file.ogbud10,
+                           ogbud11 LIKE ogb_file.ogbud11,
+                           ogbud12 LIKE ogb_file.ogbud12,
+                           ogbud13 LIKE ogb_file.ogbud13,
+                           ogbud14 LIKE ogb_file.ogbud14,
+                           ogbud15 LIKE ogb_file.ogbud15,
+                           #FUN-840042 --end--
+                           ogb44   LIKE ogb_file.ogb44,  #No.FUN-870007
+                           ogb45   LIKE ogb_file.ogb45,  #No.FUN-870007
+                           ogb46   LIKE ogb_file.ogb46,  #No.FUN-870007
+                           ogb47   LIKE ogb_file.ogb47   #No.FUN-870007
+                           ,ogbiicd028 LIKE ogbi_file.ogbiicd028   #FUN-B30187
+                           ,ogbiicd029 LIKE ogbi_file.ogbiicd029   #FUN-B30187
+                           ,ogbiicd07  LIKE ogbi_file.ogbiicd07    #FUN-C30289
+                        END RECORD,
+       g_b2             DYNAMIC ARRAY OF RECORD    #程式變數(Program Variables)
+                           ogb03     LIKE ogb_file.ogb03,
+                           ogb1005   LIKE ogb_file.ogb1005,
+                           ogb31     LIKE ogb_file.ogb31,
+                           ogb32     LIKE ogb_file.ogb32,
+                           ogb1007   LIKE ogb_file.ogb1007,
+                           tqw16     LIKE tqw_file.tqw16,  
+                           tqw08     LIKE tqw_file.tqw08,  
+                           tqw081    LIKE tqw_file.tqw081, 
+                           ogb1008   LIKE ogb_file.ogb1008,
+                           ogb1009   LIKE ogb_file.ogb1009,
+                           ogb1010   LIKE ogb_file.ogb1010,
+                           ogb1011   LIKE ogb_file.ogb1011,
+                           ogb1001   LIKE ogb_file.ogb1001,
+                           ogb14     LIKE ogb_file.ogb14,        
+                           ogb14t    LIKE ogb_file.ogb14t      
+                        END RECORD,
+       g_b2_t           RECORD    #備份舊值 
+                           ogb03     LIKE ogb_file.ogb03,
+                           ogb1005   LIKE ogb_file.ogb1005,
+                           ogb31     LIKE ogb_file.ogb31,
+                           ogb32     LIKE ogb_file.ogb32,
+                           ogb1007   LIKE ogb_file.ogb1007,
+                           tqw16     LIKE tqw_file.tqw16,  
+                           tqw08     LIKE tqw_file.tqw08,  
+                           tqw081    LIKE tqw_file.tqw081, 
+                           ogb1008   LIKE ogb_file.ogb1008,
+                           ogb1009   LIKE ogb_file.ogb1009,
+                           ogb1010   LIKE ogb_file.ogb1010,
+                           ogb1011   LIKE ogb_file.ogb1011,
+                           ogb1001   LIKE ogb_file.ogb1001,
+                           ogb14     LIKE ogb_file.ogb14,        
+                           ogb14t    LIKE ogb_file.ogb14t      
+                        END RECORD,
+      #start FUN-630102 add   #配送單單身
+       g_oga_t321       RECORD
+                           oga1016   LIKE oga_file.oga1016,
+                           oga02     LIKE oga_file.oga02,
+                           ogaconf   LIKE oga_file.ogaconf,
+                           ogapost   LIKE oga_file.ogapost
+                        END RECORD,
+       g_oga_t321_t     RECORD
+                           oga1016   LIKE oga_file.oga1016,
+                           oga02     LIKE oga_file.oga02,
+                           ogaconf   LIKE oga_file.ogaconf,
+                           ogapost   LIKE oga_file.ogapost
+                        END RECORD,
+       g_oga_b          DYNAMIC ARRAY OF RECORD    #程式變數(Program Variables)
+                           oga03_b   LIKE oga_file.oga03,    #客戶
+                           oga032_b  LIKE oga_file.oga032,   #簡稱
+                           oga04_b   LIKE oga_file.oga04,    #送貨客戶
+                           occ02_b   LIKE occ_file.occ02,    #簡稱
+                           oga00_b   LIKE oga_file.oga00,    #出貨別
+                           oga01_b   LIKE oga_file.oga01,    #出貨單號
+                           oga02_b   LIKE oga_file.oga02,    #出貨日期
+                           oga16_b   LIKE oga_file.oga16,    #訂單編號
+                           oea02_b   LIKE oea_file.oea02,    #訂單日期
+                           oea10_b   LIKE oea_file.oea10,    #客戶訂單編號
+                           ogaconf_b LIKE oga_file.ogaconf,  #確認碼
+                           ogapost_b LIKE oga_file.ogapost   #過帳碼
+                        END RECORD,
+       #start FUN-640050 add
+       g_oga_b_t        RECORD    #程式變數(Program Variables)
+                           oga03_b   LIKE oga_file.oga03,    #客戶
+                           oga032_b  LIKE oga_file.oga032,   #簡稱
+                           oga04_b   LIKE oga_file.oga04,    #送貨客戶
+                           occ02_b   LIKE occ_file.occ02,    #簡稱
+                           oga00_b   LIKE oga_file.oga00,    #出貨別
+                           oga01_b   LIKE oga_file.oga01,    #出貨單號
+                           oga02_b   LIKE oga_file.oga02,    #出貨日期
+                           oga16_b   LIKE oga_file.oga16,    #訂單編號
+                           oea02_b   LIKE oea_file.oea02,    #訂單日期
+                           oea10_b   LIKE oea_file.oea10,    #客戶訂單編號
+                           ogaconf_b LIKE oga_file.ogaconf,  #確認碼
+                           ogapost_b LIKE oga_file.ogapost   #過帳碼
+                        END RECORD,
+       #end FUN-640050 add
+       g_ogb_c          DYNAMIC ARRAY OF RECORD    #程式變數(Program Variables)
+                           ogb03_c   LIKE ogb_file.ogb03,    #項次
+                           ogb04_c   LIKE ogb_file.ogb04,    #料件編號
+                           ogb06_c   LIKE ogb_file.ogb06,    #品名
+                           ima021_c  LIKE ima_file.ima021,   #規格
+                           oeb15_c   LIKE oeb_file.oeb15,    #約定交貨日
+                           oeb16_c   LIKE oeb_file.oeb16,    #排定交貨日
+                           ogb05_c   LIKE ogb_file.ogb05,    #單位
+                           ogb12_c   LIKE ogb_file.ogb12     #配送數量
+                        END RECORD,
+      #end FUN-630102 add
+#No.TQC-640123--end
+       #FUN-540049  -----begin
+       g_imgg10_1       LIKE imgg_file.imgg10,
+       g_imgg10_2       LIKE imgg_file.imgg10,
+       g_yes            LIKE type_file.chr1,    #No.FUN-680137 CHAR(01)
+       g_change         LIKE type_file.chr1,    #No.FUN-680137 CHAR(01)
+       g_ima25          LIKE ima_file.ima25,
+       g_ima31          LIKE ima_file.ima31,
+       g_ima905         LIKE ima_file.ima905,
+       g_ima906         LIKE ima_file.ima906,
+       g_ima907         LIKE ima_file.ima907,
+       g_ima908         LIKE ima_file.ima908,
+       g_img09          LIKE img_file.img09,
+       g_img10          LIKE img_file.img10,
+       g_imgg00         LIKE imgg_file.imgg00,
+       g_imgg10         LIKE imgg_file.imgg10,
+      #g_oea01          LIKE oea_file.oea01,            #MOD-5A0264 #FUN-730012 以不使用(MOD-6C0118調整)
+      #g_oea99          LIKE oea_file.oea99,            #MOD-6C0118 #FUN-730012 移至saxmt600_sub.4gl
+       g_sw             LIKE type_file.num5,    #No.FUN-680137 SMALLINT
+       g_factor         LIKE img_file.img21, 
+       g_tot            LIKE img_file.img10,
+       g_qty            LIKE img_file.img10,
+      #g_flag           LIKE type_file.chr1,    #No.FUN-680137 CHAR(1)
+      #FUN-540049  -----end
+       g_ogb12_sum      LIKE ogb_file.ogb12,   #No.FUN-630061
+       g_ogb915_sum     LIKE ogb_file.ogb12,   #No.FUN-630061
+       g_ogb912_sum     LIKE ogb_file.ogb12,   #No.FUN-630061
+       g_oea            RECORD LIKE oea_file.*,
+       g_oeb            RECORD LIKE oeb_file.*,
+       g_oebi           RECORD LIKE oebi_file.*,                #No.FUN-7C0017
+       g_ofa            RECORD LIKE ofa_file.*,                 #No.7992
+       l_oha            RECORD LIKE oha_file.*,                 #No.FUN-610064
+       l_ohb            RECORD LIKE ohb_file.*,                 #No.FUN-610064
+       g_oea18          LIKE oea_file.oea18,
+       g_oea18_yn       LIKE oea_file.oea18,  #MOD-640570 add     
+       g_oea23          LIKE oea_file.oea23,
+       g_oea24          LIKE oea_file.oea24,
+       l_oma00          LIKE oma_file.oma00,
+      #l_oayslip        LIKE oay_file.oayslip,  #No.FUN-680137 CHAR(5)   #No.FUN-550052 #FUN-730012 此變數停用,改以g_t1來替代
+       g_num            LIKE type_file.num5,    #No.FUN-680137 SMALLINT
+       g_pno             LIKE ima_file.ima01,       #FUN-5C0075
+       #g_wc,g_wc2,g_sql LIKE type_file.chr1000,  #NO.TQC-630166 mark  #No.FUN-680137 CHAR(2000)
+       g_wc,g_wc2,g_wc3,g_sql  STRING,  #No.TQC-640123
+       g_t1              LIKE oay_file.oayslip,                    #No.FUN-550052  #No.FUN-680137 CHAR(5)
+       g_buf,g_buf1      LIKE type_file.chr1000, #No.FUN-680137 CHAR(30)
+      #g_credit          LIKE type_file.chr1,    #No.FUN-680137 CHAR(1) #FUN-730012 此變數停用,,改以g_success來判斷
+      #g_start,g_end     CHAR(10),
+       exT               LIKE type_file.chr1,    #No.FUN-680137 CHAR(01)
+       tot1,tot2,tot3    LIKE ogb_file.ogb12,
+       g_rec_b           LIKE type_file.num5,                #單身筆數     #No.FUN-680137 SMALLINT
+       g_rec_b1          LIKE type_file.num10,                #單身筆數   #No.TQC-640123  #No.FUN-680137 SMALLINT
+       g_rec_b2          LIKE type_file.num10,                #單身筆數   #No.TQC-640123  #No.FUN-680137 SMALLINT
+       g_rec_b3          LIKE type_file.num5,                #修改扣率按鈕的單身筆數 No:FUN-870007
+       g_flag            LIKE type_file.chr1,    #No.FUN-680137 CHAR(1)
+       g_flag2           LIKE type_file.chr1,    #CHI-920012
+       #g_flag1          LIKE type_file.chr1,     #No:MOD-590210用於t600sub_y_upd(),t600_s()內控制transtion請勿做為其他用途  #No.FUN-680137 CHAR(1) #FUN-730012 此變數停用,過帳段另外傳參數來決定是否執行begin work
+       l_ac              LIKE type_file.num5                 #目前處理的ARRAY CNT  #No.FUN-680137 SMALLINT
+DEFINE g_argv0           LIKE type_file.chr1     #No.FUN-680137 CHAR(1)   # 1.出貨通知單 2.出貨單
+                                           # 4.三角貿易出貨單 5.三角貿易通知單
+                                           # 6.代採買三角貿易
+DEFINE g_argv1           LIKE oga_file.oga16 #No.FUN-680137 CHAR(16)  # 單號   #No.FUN-560060
+DEFINE g_argv2           STRING              # No:FUN-4A0081 指定執行的功能
+DEFINE g_laststage       LIKE type_file.chr1    #No.FUN-680137 CHAR(1)   #FUN-580113
+#DEFINE begin_no,end_no   LIKE oga_file.oga06  #No.FUN-680137 CHAR(16)     # 單號          #No.FUN-560060   ##MOD-BB0033 mark
+DEFINE begin_no,end_no   LIKE oga_file.oga16  #MOD-BB0033 add
+DEFINE g_ocf             RECORD LIKE ocf_file.*
+DEFINE p_row,p_col       LIKE type_file.num5    #No.FUN-680137 SMALLINT
+DEFINE g_forupd_sql      STRING   #SELECT ... FOR UPDATE SQL
+DEFINE g_before_input_done LIKE type_file.num5    #No.FUN-680137 SMALLINT
+DEFINE g_chr             LIKE type_file.chr1    #No.FUN-680137 CHAR(1)
+DEFINE g_chr1            LIKE type_file.chr1       #No.FUN-640074                                                                                   #No.FUN-680137 CHAR(1)
+DEFINE g_chr2            LIKE type_file.chr1       #No.FUN-640074   #No.FUN-680137 CHAR(1)
+DEFINE g_cnt             LIKE type_file.num10      #No.FUN-680137 INTEGER
+DEFINE g_i               LIKE type_file.num5     #count/index for any purpose  #No.FUN-680137 SMALLINT
+DEFINE g_msg             LIKE type_file.chr1000 #No.FUN-680137 CHAR(600)  #MOD-650039 CHAR(72) 
+DEFINE j                 LIKE type_file.num5    #No.FUN-680137 SMALLINT
+DEFINE g_row_count       LIKE type_file.num10   #No.FUN-680137 INTEGER
+DEFINE g_curs_index      LIKE type_file.num10   #No.FUN-680137 INTEGER
+DEFINE g_jump            LIKE type_file.num10   #No.FUN-680137 INTEGER
+DEFINE mi_no_ask         LIKE type_file.num5    #No.FUN-680137 SMALLINT
+DEFINE g_oee083     LIKE oee_file.oee083   #No:FUN-630006
+#No.TQC-650088--begin
+DEFINE   arr_detail    DYNAMIC ARRAY OF RECORD                                                                                      
+         imx00      LIKE imx_file.imx00,                                                                                            
+         imx        ARRAY[10] OF LIKE imx_file.imx01                                                                                
+         END RECORD                                                                                                                 
+DEFINE   lr_agc        DYNAMIC ARRAY OF RECORD LIKE agc_file.*                                                                      
+DEFINE   lg_oay22      LIKE oay_file.oay22   #在oay_file中定義的與當前單別關聯的                                                    
+DEFINE   lg_group      LIKE oay_file.oay22   #當前單身中采用的組別  
+DEFINE   g_value       LIKE ima_file.ima01                                                                       
+DEFINE   g_chr3        LIKE type_file.chr1                  #No.FUN-680137 CHAR(1)
+DEFINE   g_ogb04       LIKE ogb_file.ogb04  
+DEFINE   l_oay22_oga   LIKE oay_file.oay22  
+DEFINE   l_oay22_oea   LIKE oay_file.oay22  
+#No.TQC-650088--end
+DEFINE   g_dbs2        LIKE type_file.chr30   #TQC-680074
+DEFINE   g_plant2      LIKE type_file.chr10   #FUN-980020
+DEFINE g_type	LIKE type_file.chr1    #No.FUN-680137 CHAR(1) #FUN-710016 t600global_g_b2() 拆出
+DEFINE   g_exdate      LIKE oga_file.oga021  #MOD-780068 add
+DEFINE   g_dies        LIKE idd_file.idd18     #No.FUN-7C0017
+DEFINE   g_ina         RECORD LIKE ina_file.*  #No.FUN-7C0017
+DEFINE   g_ica         RECORD LIKE ica_file.*  #No.FUN-7B0014
+DEFINE   g_inb         RECORD LIKE inb_file.*  #No.FUN-7B0014
+DEFINE   g_msg1        LIKE type_file.chr1000  #No.FUN-7B0014
+DEFINE   g_msg2        LIKE type_file.chr1000  #No.FUN-7B0014
+DEFINE   g_msg3        LIKE type_file.chr1000  #No.FUN-7B0014
+DEFINE   l_dbsnew      LIKE azp_file.azp03   #MOD-890080 add
+DEFINE   l_dbsold      LIKE azp_file.azp03   #MOD-890080 add
+#NO.FUN-870007-start-
+DEFINE   g_oeb7        DYNAMIC ARRAY OF RECORD
+             status        LIKE type_file.chr1,
+             oeb03         LIKE oeb_file.oeb03,
+             oeb04         LIKE oeb_file.oeb04,
+             oeb06         LIKE oeb_file.oeb06,
+             ima021        LIKE ima_file.ima021,
+             oeb05         LIKE oeb_file.oeb05,
+             oeb12         LIKE oeb_file.oeb12,
+             oeb47         LIKE oeb_file.oeb47
+          END RECORD
+#NO.FUN-870006--end--
+END GLOBALS
+#CHI-7B0023/CHI-7B0039
