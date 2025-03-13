@@ -399,6 +399,15 @@ FUNCTION s_cbmp600_cnf_chk(p_bma01,p_bma06)
             CONTINUE FOREACH
         END IF
 
+        #darcy:2025/03/13 add s---
+        # 油墨单位检查
+        if l_bmb.bmb03 matches 'M.IN*' and l_bmb.bmb10 <> 'G' then
+            call s_errmsg('bmb01,bmb03,bmb10',p_bma01||","||l_bmb.bmb03||","||l_bmb.bmb10,'i600:','cbm-042',1)
+            let g_success = 'N'
+            continue foreach
+        end if
+        #darcy:2025/03/13 add e---
+
         if not (g_prog = "asft730" or g_prog = 'cbmp100') then #darcy:2024/07/04
 
         IF l_bmb.bmb03 NOT MATCHES '*-*' AND l_bmb.bmb19 <>'1' and l_bmb.bmb03 NOT MATCHES '*T' THEN  #darcy:2024/06/17 排除下线料号

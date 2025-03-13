@@ -202,10 +202,20 @@ FUNCTION i100sub_y_upd(p_ima01)
    END IF
    CLOSE i100sub_cl
    
+   #darcy:2025/03/13 ads s---
+   -- 油墨M.IN 料件生产单位必须为g ，imz55
+   if l_ima.ima06 == 'M.IN' then
+      select imz55,imz63 into l_ima.ima55,l_ima.ima63 from imz_file where imz01 = 'M.IN'
+   end if 
+   #darcy:2025/03/13 ads e---
    UPDATE ima_file
       SET ima1010 = '1', #'1':確認
           imaacti = 'Y', #'Y':確認
           imadate = g_today  #FUN-C30315 add
+          #darcy:2025/03/13 add s---
+          ,ima55 = l_ima.ima55 
+          ,ima63 = l_ima.ima63 
+          #darcy:2025/03/13 add e--- 
     WHERE ima01 = p_ima01
    IF SQLCA.sqlcode THEN
        CALL cl_err3("upd","ima_file",l_ima.ima01,"",SQLCA.sqlcode,"",

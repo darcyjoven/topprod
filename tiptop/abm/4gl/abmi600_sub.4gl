@@ -155,6 +155,15 @@ FUNCTION i600sub_y_chk(p_bma01,p_bma06)
          continue foreach
       end if
       #darcy:2023/07/15 add e---
+
+      #darcy:2025/03/13 add s---
+      # 油墨单位检查
+      if l_bmb.bmb03 matches 'M.IN*' and l_bmb.bmb10 <> 'G' then
+         call s_errmsg('bmb01,bmb03,bmb10',p_bma01||","||l_bmb.bmb03||","||l_bmb.bmb10,'i600:','cbm-042',1)
+         let g_success = 'N'
+         continue foreach
+      end if
+      #darcy:2025/03/13 add e---
         
       #add by darcy2022-03-10 16:59:57 s---
       CALL s_umfchk(l_bmb.bmb03,l_bmb.bmb10,l_bmb.ima25)
