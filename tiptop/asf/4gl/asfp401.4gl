@@ -97,6 +97,8 @@ DEFINE g_sfk02   LIKE sfk_file.sfk02     #No.MOD-920098  #報廢日期
 DEFINE g_closeday     LIKE type_file.dat           #CHI-CB0053 add
 DEFINE g_f       BOOLEAN    #MOD-DB0150
 
+define g_str   string #darcy:2025/03/13
+
 MAIN
       DEFINE   l_sl,p_row,p_col   LIKE type_file.num5       #No.FUN-680121 SMALLINT #No.FUN-6A0090
 
@@ -240,6 +242,8 @@ DEFINE
          EXIT WHILE
       END IF
 
+      call p401_log(sfmt('\n\n --------- \n user:%1',g_user)) #darcy:2025/03/13 add
+
       LET l_sql = "SELECT ",                      #組合查詢句子
                   "' ', sfb01,sfb05,ima02,ima021,sfb08,sfb09,sfb02,sfb04,sfb28,sfb15,sfb82",        #No.FUN-940103 add ima02,ima021  #FUN-D10046 add sfb82
                   #"  FROM sfb_file,ima_file,pmc_file ",                                                #No.FUN-940103  #FUN-D10046 add pmc_file  #MOD-D40119
@@ -258,6 +262,8 @@ DEFINE
           #LET l_sql = l_sql CLIPPED," AND sfb09 >= sfb08 "
           LET l_sql = l_sql CLIPPED," AND sfb09+sfb12 >= sfb08 "   #chg by donghy 161214 报废+入库=生产即可结案
       END IF
+
+      call p401_log(sfmt('是否完工+报废大于等于生产数量 %1',g_flag)) #darcy:2025/03/13 add
       #MOD-AC0372 ---------add start-----------------
       IF g_sma.sma72 = 'Y' THEN
          LET l_sql = l_sql CLIPPED," AND (sfb04 != '8' OR (sfb04 ='8' AND sfb28 != '3' AND sfb28 != '2' OR sfb28 IS NULL))"
@@ -265,6 +271,8 @@ DEFINE
          LET l_sql = l_sql CLIPPED," AND (sfb04 != '8' OR (sfb04 ='8' AND sfb28 != '3' OR sfb28 IS NULL))"
       END IF
       #MOD-AC0372----------add end------------------
+
+      call p401_log(sfmt('SQL:%1',l_sql)) #darcy:2025/03/13 add
       PREPARE p401_prepare FROM l_sql      #預備之
       IF SQLCA.sqlcode THEN                          #有問題了
          CALL cl_err('PREPARE:',SQLCA.sqlcode,1)
@@ -290,12 +298,13 @@ DEFINE
       LET g_rec_b = 0
       LET l_cnt=0                                      #MOD-890185 add
       DELETE FROM csfr013_table #darcy:2022/05/12
+
+      let g_str = '' #darcy:2025/03/13 add
       FOREACH p401_curs INTO l_sfb[g_cnt].*            #逐筆抓出
          IF SQLCA.sqlcode THEN                         #有問題
             CALL cl_err('FOREACH:',SQLCA.sqlcode,1)
             EXIT FOREACH
          END IF
-
          
          
         IF l_sfb[g_cnt].sfb04 = '8' THEN CONTINUE FOREACH END IF #add by cathree 20210813
@@ -341,6 +350,8 @@ DEFINE
              
          
          ###yang  update  210706 update end----------------- 
+
+         let g_str = g_str,sfmt('no:%1 chk:%2 , ',l_sfb[g_cnt].sfb01,l_sfb[g_cnt].sure) #darcy:2025/03/13 
          
          #darcy:2022/05/12 s---
          INSERT INTO csfr013_table VALUES (l_sfb[g_cnt].sfb01)
@@ -351,6 +362,11 @@ DEFINE
             EXIT FOREACH
          END IF
       END FOREACH
+
+      #darcy:2025/03/13 s---
+      call p401_log("查询明细：\n")
+      call p401_log(g_str)
+      #darcy:2025/03/13 e---
       IF g_cnt=1 THEN                                 #沒有抓到
          CALL cl_err('','mfg5052',0)                 #顯示錯誤, 並回去
          CONTINUE WHILE
@@ -412,7 +428,9 @@ DEFINE
          END IF                                                       #FUN-CC0122 add
       END IF
      #FUN-9A0095 add end-----
-      IF g_success = 'Y' THEN
+
+     call p401_log(sfmt('结案成功：%1',g_success)) #darcy:2025/03/13 add
+      IF g_success = 'Y' THEN 
          COMMIT WORK
          CALL cl_end2(1) RETURNING l_flag        #批次作業正確結束
       ELSE
@@ -1165,6 +1183,7 @@ FUNCTION p401_doc_chk()
       EXIT PROGRAM
    END IF
    #若發料單、退料單、完工入庫單有單據未過帳，則出報表
+   let g_str = ' ' #darcy:2025/03/13 add
    FOR l_i = 1 TO g_cnt
        IF g_success='N' THEN
           LET g_totsuccess='N'
@@ -1172,6 +1191,7 @@ FUNCTION p401_doc_chk()
        END IF
 
       IF g_chk[l_i].sure = 'Y' THEN
+         let g_str = g_str, sfmt('no:%1 chk:%2 , ',g_chk[l_i].sfb01,g_chk[l_i].sure) #darcy:2025/03/13 add
          #發料單
          LET l_cnt = 0
          DECLARE p401_chk_c1 CURSOR FOR
@@ -1352,6 +1372,10 @@ FUNCTION p401_doc_chk()
          LET g_chk[l_i].flag = 'N'
       END IF
    END FOR
+   #darcy:2025/03/13 add s---
+   call p401_log("结案明细：\n")
+   call p401_log(g_str)
+   #darcy:2025/03/13 add e---
    IF g_totsuccess="N" THEN
       LET g_success="N"
    END IF
@@ -1570,4 +1594,17 @@ function p401_mrp_close()
       rollback work
    end if
 
+end function
+
+
+function p401_log(p_str)
+   define p_str   string
+   define l_file string
+
+   let p_str = sfmt('time:%1 content:%2', current year to second,p_str)
+   let l_file = FGL_GETENV('TEMPDIR'),'/asfp401.log'
+
+
+   run "echo '"||p_str||"' >> "||l_file
+   
 end function
