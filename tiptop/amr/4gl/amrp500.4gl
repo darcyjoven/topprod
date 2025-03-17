@@ -5281,9 +5281,10 @@ function amrp500_pre_sfa_tmp()
    end record
    define l_sfa06c like sfa_file.sfa06
 
+   drop table sfa_tmp
 
    let l_sql = " select sfa_file.* from sfa_file,sfb_file",
-               " where sfa01=sfb01 and sfb04 <>'8' and sfb87 ='Y'",
+               " where sfa01=sfb01 and sfb04 <>'8' and ( sfb87 ='Y' or sfb01 like 'TEW%' )", #darcy:2025/03/17 mod sfa01 like 'TEW%' 
                " and sfb08 > sfb09 + sfb12 + nvl(sfbud12,0) " #darcy:2024/08/01 mark into temp sfa_tmp
    #darcy:2024/08/01 add s---
    # 工单MRP结案状态不计算
@@ -5430,8 +5431,8 @@ FUNCTION p500_mss042_new()  # 彙總 受訂量
     LET l_sql = l_sql CLIPPED,
               " where oeb04 = partno AND tc_oeb12 > tc_oeb24 AND tc_oeb70='N' ",
               "   and tc_oeb01 = oeb01 and tc_oeb03 = oeb03 and tc_oeb04 = oeb04 ",
-              "   AND tc_oeb16 <= '",edate,"' AND oeb01 = oea01 AND oeaconf='Y'",
-              "   AND oea00 = '0'"
+              "   AND tc_oeb16 <= '",edate,"' AND oeb01 = oea01 AND oeaconf='Y'"
+            --   , "   AND oea00 = '0'"  #darcy:2025/03/17 mark 
     if not cl_null(g_sql5) then
         let l_sql = l_sql clipped,
                     "   and oeb01 like oayslip || '-%'",
