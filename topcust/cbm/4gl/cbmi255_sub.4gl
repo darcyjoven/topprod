@@ -229,7 +229,7 @@ FUNCTION i255sub_y_upd(l_tc_bmi01,p_action_choice,l_tc_bmj12)
       IF STATUS THEN EXIT FOREACH END IF
       #darcy:2025/02/21 add s---
       -- 组装良率不得降低
-      if l_tc_bmj.tc_bmj04[7,7] matches '[ABC]' then
+      if l_tc_bmj.tc_bmj04[7,7] matches '[ABC]' and l_tc_bmj.tc_bmj11 ='1' then
          if l_tc_bmj.tc_bmj07 < l_tc_bmj.tc_bmj06 then
             let g_action_choice = 'confirm_vip'
             if not cl_chk_act_auth() then
