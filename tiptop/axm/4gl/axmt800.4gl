@@ -4285,7 +4285,8 @@ DEFINE l_ima130        LIKE ima_file.ima130      #MOD-D20152 add
                END IF
             END IF
             IF NOT cl_null(g_oeq[l_ac].oeq04a) AND
-               (g_oeq[l_ac].oeq04a <> l_oeq04a_o OR cl_null(l_oeq04a_o))
+               (g_oeq[l_ac].oeq04a <> l_oeq04a_o OR cl_null(l_oeq04a_o) OR (g_oeq[l_ac].oeq04a <> g_oeq[l_ac].oeq04b))
+               # darcy:2025/03/24 add g_oeq[l_ac].oeq04a <> g_oeq[l_ac].oeq04b
                THEN
                SELECT oeb1004 INTO l_oeb1004 FROM oeb_file
                 WHERE oeb01=g_oep.oep01 AND oeb03=g_oeq[l_ac].oeq03
@@ -4303,7 +4304,8 @@ DEFINE l_ima130        LIKE ima_file.ima130      #MOD-D20152 add
 #                                     g_oep.oep07b,g_oep.oep01,g_oeq[l_ac].oeq03,        #MOD-AC0117    
                                       g_oep07,g_oep.oep01,g_oeq[l_ac].oeq03,             #MOD-AC0117    
                                      #g_oeq[l_ac].oeq12a,l_oeb1004,p_cmd)  #FUN-B10014
-                                      g_oeq[l_ac].oeq12a,l_oeb1004,'b')    #FUN-B10014
+                                      iif(g_oeq[l_ac].oeq12a==0 or cl_null(g_oeq[l_ac].oeq12a), g_oeq[l_ac].oeq12b,g_oeq[l_ac].oeq12a),l_oeb1004,'b')    #FUN-B10014
+                                      # darcy:2025/03/24 g_oeq[l_ac].oeq12a 0值判断
                        #RETURNING g_oeq[l_ac].oeq13a                    #FUN-AB0082
                         RETURNING g_oeq[l_ac].oeq13a,g_oeq[l_ac].oeq37a #FUN-AB0082
               #FUN-B70087 mod
