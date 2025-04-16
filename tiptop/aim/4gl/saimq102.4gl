@@ -1079,8 +1079,12 @@ FUNCTION q102_show2()
          
       END IF          #tianry mark  161201
       #darcy:2022/07/13 s---
-      select tc_sfaa02 into l_tc_sfaa02 from tc_sfaa_file 
-         where tc_sfaa01 = lr_sfa.sfa01
+      #darcy:2025/04/16 mod s---
+      -- 排除作废工单结案工单
+      select tc_sfaa02 into l_tc_sfaa02 from tc_sfaa_file,sfb_file 
+         where tc_sfaa01 = lr_sfa.sfa01 and sfb01 = tc_sfaa01
+           and sfb87 = 'Y' and sfb04 <> '8'
+      #darcy:2025/04/16 mod e---
       if cl_null(l_tc_sfaa02) then 
          let l_tc_sfaa02 = 0
       end if
