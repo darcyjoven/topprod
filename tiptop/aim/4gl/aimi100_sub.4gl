@@ -103,10 +103,11 @@ FUNCTION i100sub_y_chk(p_ima01)
       select count(*) into l_cnt from ima_file
       where ima02 = l_ima.ima02 and ima1010 ='1'
       if l_cnt > 0 then
-         call cl_err(l_ima.ima02,"cim-093",1)
-         LET g_errno = 'cim-093'
-         LET g_success = 'N'
-         RETURN
+         if not cl_confirm("cim-093") then
+            LET g_errno = 'cim-093'
+            LET g_success = 'N'
+            RETURN
+         end if
       end if
    end if
    #darcy:2024/03/15 add e---
@@ -689,10 +690,10 @@ function p100sub_cre_set(p_ima01,p_smd04)
 
    let l_cnt = 0
    select 1 into l_cnt from smd_file
-    where smd01 = p_ima01 and smd02 = 'SET' and smd03='PNL'
-   if l_cnt = 0 then
+    where smd01 = p_ima01 and smd02 = 'PCS' and smd03='SET'
+   if l_cnt = 0 and not cl_null(p_smd04)  then
       insert into smd_file values (
-         p_ima01,'SET','PNL',p_smd04,1,'','Y',1,g_today
+         p_ima01,'PCS','SET',p_smd04,1,'','Y',1,g_today
       )
       if status then
          call cl_err("ins smd",status,1)
@@ -702,8 +703,8 @@ function p100sub_cre_set(p_ima01,p_smd04)
         if cl_null(p_smd04) or p_smd04 = 0 then
             delete from smd_file
              where smd01 = p_ima01
-                and smd02 = 'SET' 
-                and smd03='PNL'
+                and smd02 = 'PCS' 
+                and smd03 = 'SET'
         else
             update smd_file
                 set smd04 = p_smd04,
@@ -711,8 +712,8 @@ function p100sub_cre_set(p_ima01,p_smd04)
                     smdacti = 'Y',
                     smddate = g_today
             where smd01 = p_ima01
-                and smd02 = 'SET' 
-                and smd03='PNL'
+                and smd02 = 'PCS' 
+                and smd03 = 'SET'
         end if
       
       if status then

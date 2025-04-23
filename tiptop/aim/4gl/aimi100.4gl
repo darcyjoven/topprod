@@ -1728,7 +1728,7 @@ FUNCTION i100_i(p_cmd)
                if l_cnt > 0 then
                   if not cl_confirm("cim-093") then
                   	next field ima02
-	          end if
+	               end if
                end if
            end if
            #darcy:2024/03/15 add e---
@@ -3461,7 +3461,9 @@ FUNCTION i100_show()
 #No.FUN-A50011 -----begin-----
 #No.FUN-A50011 -----end-----
    #darcy:2022/11/18 add s---
-   call s_umfchk(g_ima.ima01,'PNL','SET') returning g_success,g_smd.smd04
+   # darcy:2025/04/23 mod 
+   # 修复单位错误
+   call s_umfchk(g_ima.ima01,'SET','PCS') returning g_success,g_smd.smd04
    display g_smd.smd04 to smd04
    let g_smd_t.smd04 = g_smd.smd04
    #darcy:2022/11/18 add e---
