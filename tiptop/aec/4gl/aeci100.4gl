@@ -6483,6 +6483,7 @@ function i100_copy_y(p_ecu01,p_ecu02)
                      --   ecb21=0, -- mark darcy:2022-1-11
                        ecb02=necu02
                       ,ecb012 =necu012  #FUN-A50081
+                      ,ecb08 = (select ecd07 from ecd_file where ecd01 = ecb06) #darcy:2025/04/21 addd
    # darcy:2022/06/06 add s---
    if LENGTH(old_no) >=10 and LENGTH(new_no)>=10 then 
       IF old_no[10,11]='S' OR new_no[10,11]='S' THEN 
