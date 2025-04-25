@@ -914,6 +914,11 @@ DEFINE  g_oebtmp  DYNAMIC ARRAY OF RECORD
 DEFINE g_i      LIKE type_file.chr1
 #end----add by guanyao160723
 
+#darcy:2025/04/24 add s---
+define g_oebs dynamic array of type_oebs
+define g_oebs_t type_oebs
+#darcy:2025/04/24 add e---
+
 FUNCTION t400(p_argv1,p_oea901,p_argv2,p_argv3)
    DEFINE p_argv1      LIKE type_file.chr1    #No.FUN-680137 VARCHAR(1)   # 0.合約 1.訂單/換貨訂單
    DEFINE p_oea901     LIKE type_file.chr1    #No.FUN-680137 VARCHAR(1)   # 多角貿易否 No.7946
@@ -3829,6 +3834,12 @@ FUNCTION t400_menu()
             if cl_chk_act_auth() then
                call t400_ef2()
             end if
+         #darcy:2025/04/24 add s---
+         when 'auto_split'
+            if cl_chk_act_auth() then
+               call t400_auto_split()
+            end if
+         #darcy:2025/04/24 add e---
 
          WHEN "other_data"
             IF cl_chk_act_auth() THEN
@@ -9996,6 +10007,12 @@ FUNCTION t400_bp(p_ud)
       call cl_set_act_visible("ef2",true)
    end if
    #darcy:2023/05/19 add e---
+   #darcy:2025/04/24 add s---
+   call cl_set_act_visible("auto_split",false)
+   if g_user = 'tiptop' then
+      call cl_set_act_visible("auto_split",true)
+   end if
+   #darcy:2025/04/24 add e---
    IF g_prog[1,7] = 'axmt410' AND (g_sma.sma128 MATCHES '[Yy]' AND g_sma.sma115 NOT MATCHES '[Yy]') THEN
       CALL cl_set_act_visible("mixed_wrap",TRUE)
    ELSE
@@ -10385,6 +10402,13 @@ FUNCTION t400_bp(p_ud)
          let g_action_choice= 'ef2'
          exit dialog
       #darcy:2023/05/19 add e---
+
+      #darcy:2025/04/24 add s---
+      # 自动拆分
+      on action auto_split
+         let g_action_choice= 'auto_split'
+         exit dialog
+      #darcy:2025/04/24 add e---
 
 #@    ON ACTION 確認
       ON ACTION confirm
@@ -34480,6 +34504,7 @@ function saxmt500_copy_pre()
    end if
    let g_tc_oeb[l_ac].ima021_1 = g_tc_oeb[l_ac - 1].ima021_1
    let g_tc_oeb_t.* = g_tc_oeb[l_ac].*
+   -- if saxmt400_details_ins() then end if
 end function
 
 # 订单数量修改后同步异动单身数量
@@ -34619,3 +34644,184 @@ function saxmt400_tc_oeb12_change(p_oea01,p_oeb03,p_oeb12,p_tran)
    return g_success = "Y"
 end function
 #darcy:2024/08/21 add e---
+
+#darcy:2025/04/24 add s---
+#自动拆分明细
+function t400_auto_split()
+
+   select * into g_oea.* from oea_file where oea01= g_oea.oea01
+   let g_oea49 = g_oea.oea49
+   if g_oea.oea01 is null then return end if
+   #if g_oea.oeaconf = 'Y' then call cl_err('',9023,0) return end if
+   if g_oea.oeaconf = 'X' then call cl_err('',9024,0) return end if
+
+   open window t400_split at 1,1 with form "axm/42f/axmt400s"
+         attribute (style = g_win_style clipped)
+   call cl_ui_init() 
+   call t400_split_init()
+
+   call t400_split_b_fill() -- 查询单身
+
+   if t400_split_input() then
+      call t400_split_do()
+   end if
+
+   close window t400_split
+   call t400_b_fill(g_wc2,' 1=1')
+end function
+function t400_split_init()
+   call cl_set_comp_att_text("num01","每批数量")
+   call cl_set_comp_att_text("num02","间隔数量")
+   call cl_set_comp_att_text("comb01","间隔单位")
+   call cl_set_combo_items("comb01",'day,week,month','天,周,30天')
+   call cl_set_comp_visible("chk,oeb01s,oeb03s,oeb04s,oeb06s,ima021s,oeb12s,oeb15s,num01,num02,comb01",true)
+   call cl_set_comp_entry("chk,oeb15s,num01,num02,comb01",true)
+   call cl_set_comp_required("chk,oeb15s,num01,num02,comb01",true)
+end function
+function t400_split_b_fill()
+   define l_sql      string
+
+   let l_sql = "select 'Y',oeb01,oeb03,oeb04,oeb05,oeb06,ima021,oeb12,oeb15 ",
+               "  from oeb_file , ima_file ",
+               " where oeb04 = ima01 and oeb01 ='",g_oea.oea01,"'"
+   prepare t400_split_p from l_sql
+   declare t400_split_cur cursor for t400_split_p
+
+   let g_cnt = 1
+   call g_oebs.clear()
+   foreach t400_split_cur into g_oebs[g_cnt].*
+      if sqlca.sqlcode then
+         call cl_err("t400_split_cur",sqlca.sqlcode,1)
+         exit foreach
+      end if
+      let g_oebs[g_cnt].num01 = g_oebs[g_cnt].oeb12s
+      let g_oebs[g_cnt].num02 = 1
+      let g_oebs[g_cnt].comb01 = 'day'
+      let g_cnt = g_cnt + 1
+   end foreach
+   call g_oebs.deleteElement(g_cnt)
+   let g_cnt = g_cnt - 1
+
+end function
+function t400_split_input()
+   input array g_oebs without defaults from s_oebs.* 
+         attribute(count=g_cnt,maxcount=g_max_rec,unbuffered,
+                   insert row=false,delete row=false,append row=false)
+      
+      before row 
+         let l_ac = arr_curr()
+
+      after field oeb15s
+         if not cl_null(g_oebs[l_ac].oeb15s) then
+            if g_oebs[l_ac].oeb15s < g_oea.oea02 then
+               call cl_err(g_oebs[l_ac].oeb15s,'axm-330',1)
+               next field oeb15s
+            end if
+         end if
+
+      after field num01
+         if not cl_null(g_oebs[l_ac].num01) then
+            if g_oebs[l_ac].num01 > g_oebs[l_ac].oeb12s or g_oebs[l_ac].num01 <= 0  then
+               call cl_err(g_oebs[l_ac].num01,'cxm-055',1)
+               next field num01
+            end if
+         end if
+
+      on action accept
+         exit input
+      on action cancel
+         exit input
+      on action exit
+         exit input
+   end input
+
+   if int_flag then
+      let int_flag = false
+      return false
+   else
+      return true
+   end if
+end function
+
+function t400_split_do()
+   define i,j,k      integer
+   define l_oeb12    like oeb_file.oeb12
+   define l_tc_oeb   tc_oeb
+   define l_days     integer
+
+   begin work
+   let g_success = 'Y' 
+
+   for i = 1 to g_oebs.getlength()
+      if cl_null(g_oebs[i].chk) or g_oebs[i].chk = 'N' then continue for end if
+      -- 1 删除原来资料
+      delete from tc_oeb_file where tc_oeb01 = g_oea.oea01 and tc_oeb03 = g_oebs[i].oeb03s
+
+      -- 2 开始拆分
+      -- 要拆分的数量
+      let l_oeb12 = g_oebs[i].oeb12s
+      initialize l_tc_oeb.* to null
+      case g_oebs[i].comb01
+         when 'day'
+            let l_days = g_oebs[i].num02
+         when 'week'
+            let l_days = g_oebs[i].num02 * 7
+         when 'month'
+            let l_days = g_oebs[i].num02 * 30
+      end case 
+      let j = 1
+      while l_oeb12 > 0 
+         -- 日期
+         if cl_null(l_tc_oeb.tc_oeb16) then
+         -- 初始化
+            let l_tc_oeb.tc_oeb03 = g_oebs[i].oeb03s
+            let l_tc_oeb.tc_oeb031 = 1
+            let l_tc_oeb.tc_oeb04 = g_oebs[i].oeb04s
+            let l_tc_oeb.tc_oeb05 = g_oebs[i].oeb05s
+            let l_tc_oeb.tc_oeb06 = g_oebs[i].oeb06s
+            let l_tc_oeb.tc_oeb12 = iif(l_oeb12 > g_oebs[i].num01,g_oebs[i].num01,l_oeb12)
+            let l_oeb12 = l_oeb12 - l_tc_oeb.tc_oeb12
+            let l_tc_oeb.tc_oeb16 = g_oebs[i].oeb15s
+            let l_tc_oeb.tc_oeb22 = 0
+            let l_tc_oeb.tc_oeb23 = 0
+            let l_tc_oeb.tc_oeb24 = 0
+            let l_tc_oeb.tc_oeb25 = 0
+            let l_tc_oeb.tc_oeb26 = 0
+            let l_tc_oeb.tc_oeb70 = 'N'
+            let l_tc_oeb.tc_oeb70d = null
+         else
+            -- 项次
+            let l_tc_oeb.tc_oeb031 = l_tc_oeb.tc_oeb031 + 1
+            -- 数量
+            let l_tc_oeb.tc_oeb12 = iif(l_oeb12 > g_oebs[i].num01,g_oebs[i].num01,l_oeb12)
+            let l_oeb12 = l_oeb12 - l_tc_oeb.tc_oeb12 
+            -- 日期
+            let l_tc_oeb.tc_oeb16 = l_tc_oeb.tc_oeb16 + l_days
+         end if
+         insert into tc_oeb_file 
+            (tc_oeb01,tc_oeb03,tc_oeb031,tc_oeb04,tc_oeb05,tc_oeb06,tc_oeb12,
+             tc_oeb16,tc_oeb22,tc_oeb23,tc_oeb24,tc_oeb25,tc_oeb26,tc_oeb70,
+             tc_oeb70d,tc_oebplant,tc_oeblegal)
+         values(g_oea.oea01,l_tc_oeb.tc_oeb03,l_tc_oeb.tc_oeb031,l_tc_oeb.tc_oeb04,l_tc_oeb.tc_oeb05,
+                l_tc_oeb.tc_oeb06,l_tc_oeb.tc_oeb12,l_tc_oeb.tc_oeb16,l_tc_oeb.tc_oeb22,
+                l_tc_oeb.tc_oeb23,l_tc_oeb.tc_oeb24,l_tc_oeb.tc_oeb25,l_tc_oeb.tc_oeb26,
+                l_tc_oeb.tc_oeb70,l_tc_oeb.tc_oeb70d,g_plant,g_legal )
+         if sqlca.sqlcode then
+            call cl_err("ins tc_oeb",sqlca.sqlcode,1)
+            let g_success = 'N'
+            exit while
+         end if
+
+         let j = j + 1
+      end while
+   end for
+
+   if g_success = 'Y' then
+      commit work
+      message '自动拆分完成'
+   else
+      rollback work 
+      message '自动拆分失败'
+   end if
+end function
+#darcy:2025/04/24 add e---

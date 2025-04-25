@@ -53,6 +53,40 @@ type tc_oeb record
   tc_oeb70d       like tc_oeb_file.tc_oeb70d
 end record
 #darcy:2024/08/21 add e---
+#darcy:2025/04/24 add s---
+type type_oebs record
+  chk            varchar(1),
+  oeb01s         like oeb_file.oeb01,
+  oeb03s         like oeb_file.oeb03,
+  oeb04s         like oeb_file.oeb04,
+  oeb05s         like oeb_file.oeb05,
+  oeb06s         like oeb_file.oeb06,
+  ima021s        like ima_file.ima021,
+  oeb12s         like oeb_file.oeb12,
+  oeb15s         like oeb_file.oeb15,
+  str01          varchar(1000),
+  str02          varchar(1000),
+  str03          varchar(1000),
+  str04          varchar(1000),
+  num01          like type_file.num15_3,
+  num02          like type_file.num15_3,
+  num03          like type_file.num15_3,
+  num04          like type_file.num15_3,
+  num05          like type_file.num15_3,
+  num06          like type_file.num15_3,
+  num07          like type_file.num15_3,
+  num08          like type_file.num15_3,
+  dat01          like type_file.dat,
+  dat02          like type_file.dat,
+  dat03          like type_file.dat,
+  dat04          like type_file.dat,
+  chk01          varchar(1),
+  chk02          varchar(1),
+  chk03          varchar(1),
+  comb01         varchar(10),
+  comb02         varchar(10)
+end record
+#darcy:2025/04/24 add e---
 DEFINE
     g_slip  LIKE oay_file.oayslip, #No.FUN-680137 CHAR(5)     #No.FUN-550052   #FUN-A70146
     g_poz   RECORD LIKE poz_file.*,        #多角流程代碼(單頭) No.7946
