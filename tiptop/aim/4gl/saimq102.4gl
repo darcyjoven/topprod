@@ -970,7 +970,6 @@ FUNCTION q102_show()
    END IF
    CALL q102_b_fill() #單身
    CALL q102_show2()
-   MESSAGE ''
     CALL cl_show_fld_cont()                   #No.FUN-550037 hmf
 END FUNCTION
  
@@ -1006,7 +1005,7 @@ FUNCTION q102_show2()
    define l_ima27         like ima_file.ima27   #darcy:2023/04/03 add 
     
    #-->受訂量
-   MESSAGE " (1)Wait..."
+   MESSAGE sfmt(" (1) %1:Wait...",g_ima.ima01)
    SELECT SUM((oeb12-oeb24+oeb25-oeb26)*oeb05_fac) INTO g_ima.oeb_q   #FUN-570017 modify oeb12-oeb24 => oeb12-oeb24+oeb25-oeb26 
           FROM oeb_file, oea_file
           WHERE oeb04 = g_ima.ima01 AND oeb01 = oea01 AND oea00<>'0'  #
@@ -1016,7 +1015,7 @@ FUNCTION q102_show2()
    DISPLAY BY NAME g_ima.oeb_q
  
    #-->工單備料量 & 工單缺料量
-   MESSAGE " (2)Wait..."
+   MESSAGE sfmt(" (2) %1:Wait...",g_ima.ima01)
    LET g_ima.sfa_q1 = 0          #TQC-A40009 
    LET g_ima.sfa_q2=0            #MOD-B50011
    let g_ima.sfa_xiaban = 0  #darcy:2022/05/30
@@ -1151,7 +1150,7 @@ FUNCTION q102_show2()
    display by name g_ima.ima27 #darcy:2023/04/03 add
    display by name g_ima.rpc13 #darcy:2023/06/15 add
    #-->請購量
-   MESSAGE " (3)Wait..."
+   MESSAGE sfmt(" (3) %1:Wait...",g_ima.ima01)
    SELECT SUM((pml20-pml21)*pml09) INTO g_ima.pml_q
          FROM pml_file, pmk_file
         WHERE pml04 = g_ima.ima01 AND pml01 = pmk01
@@ -1170,7 +1169,7 @@ FUNCTION q102_show2()
 #FUN-A20048 --end 
  
    #-->採購量
-   MESSAGE " (4)Wait..."
+   MESSAGE sfmt(" (4) %1:Wait...",g_ima.ima01)
    SELECT SUM((pmn20-pmn50+pmn55+pmn58)*pmn09) INTO g_ima.pmn_q       #NO:2897  #No.FUN-940083
          FROM pmn_file, pmm_file
         WHERE pmn04 = g_ima.ima01 AND pmn01 = pmm01
@@ -1184,7 +1183,7 @@ FUNCTION q102_show2()
    DISPLAY BY NAME g_ima.pmn_q
  
    #-->工單在製量
-   MESSAGE " (5)Wait..."
+   MESSAGE sfmt(" (5) %1:Wait...",g_ima.ima01)
    SELECT SUM((sfb08-sfb09-sfb10-sfb11-sfb12)*ima55_fac)
      INTO g_ima.sfb_q1
      FROM sfb_file,ima_file
@@ -1249,7 +1248,7 @@ FUNCTION q102_show2()
    DISPLAY BY NAME g_ima.rvb_q2
  
    #-->IQC 在驗量
-   MESSAGE " (6)Wait..."
+   MESSAGE sfmt(" (6) %1:Wait...",g_ima.ima01)
    SELECT SUM((rvb07-rvb29-rvb30)*pmn09) INTO g_ima.rvb_q   #MOD-A70029   #MOD-AA0075 取消mark
   #SELECT SUM(rvb31*pmn09) INTO g_ima.rvb_q   #MOD-A70029   #MOD-AA0075 mark
          FROM rvb_file, rva_file, pmn_file
@@ -1262,7 +1261,7 @@ FUNCTION q102_show2()
    DISPLAY BY NAME g_ima.rvb_q
  
    #-->FQC 在驗量
-   MESSAGE " (7)Wait..."
+   MESSAGE sfmt(" (7) %1:Wait...",g_ima.ima01)
   #MOD-A90098 mod --start--
   #SELECT SUM(sfb11) INTO g_ima.qcf_q
   #  FROM sfb_file
@@ -1281,7 +1280,7 @@ FUNCTION q102_show2()
    DISPLAY BY NAME g_ima.qcf_q
 
   #-->超领未扣帐数量
-  MESSAGE " (8)Wait..." 
+  MESSAGE sfmt(" (8) %1:Wait...",g_ima.ima01)
   
    #darcy:2023/06/16 add s---
    # 杂发，超领已审核未过账使用 改回产生独立需求单据
