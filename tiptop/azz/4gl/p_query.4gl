@@ -5379,8 +5379,7 @@ DEFINE l_cnt      LIKE type_file.num10
    DISPLAY BY NAME g_zap.zap02,g_zap.zap03,g_zap.zap04,g_zap.zap05,g_zap.zap06,
                    g_zai.zaimodu,g_zai.zaidate        #TQC-810053
 END FUNCTION
- 
-FUNCTION p_query_parse_sql(p_cmd)
+FUNCTION p_query_parse_sql_old(p_cmd)
     DEFINE p_cmd       LIKE type_file.chr1    # a:輸入 u:更改 #No.FUN-680135 VARCHAR(1)
     DEFINE l_text      STRING
     DEFINE l_str       STRING
@@ -9564,3 +9563,212 @@ FUNCTION p_query_init()
    LET g_wc8 =' 1=1'
 END FUNCTION 
 #CHI-A60010--end------------------------
+
+
+#darcy:2025/04/27 add s---
+function p_query_parse_sql(p_cmd)
+   define p_cmd      varchar(1)
+   define l_sql,l_str,l_temp    string 
+   define i,j,k,l integer
+   define l_col      dynamic array of record
+      col_idx        integer,
+      col_name       varchar(2000),
+      col_type       varchar(200),
+      col_length     integer,
+      col_desc       like zal_file.zal05
+   end record
+   define l_zal   record
+      zal02    like zal_file.zal02,
+      zal03    like zal_file.zal03,
+      zal04    like zal_file.zal04,
+      zal05    like zal_file.zal05,
+      zal06    like zal_file.zal06,
+      zal07    like zal_file.zal07,
+      zal08    like zal_file.zal08,
+      zal09    like zal_file.zal09
+   end record
+   define l_del,l_mod,l_ins      boolean
+
+   -- g_zak.zak02
+   -- 将arg1~arg50 替换为1=1
+   let l_sql = g_zak.zak02
+   for i = 50 to 1 step -1     #chi-960099
+      let l_temp = "arg",i using '<<<<<' 
+      if l_sql.getindexof(l_temp,1) > 0 then
+         call cl_replace_str(l_sql, l_temp, '1=1') returning l_sql     #chi-960099 
+      end if
+   end for
+   begin work
+   -- 得到l_col
+   execute immediate "begin  parse_sql_query(q'["||l_sql||"]'); END;"
+   if sqlca.sqlcode then
+      -- 回退为原函数
+      call p_query_parse_sql_old(p_cmd)
+      return
+   end if
+
+   let l_sql = "select col_idx,lower(col_name),col_type,col_length from col_analysis"
+   prepare p_query_col_desc_p from l_sql
+   declare p_query_col_desc_cur cursor for p_query_col_desc_p
+
+   let i = 1
+   call l_col.clear()
+   foreach p_query_col_desc_cur into l_col[i].*
+      if sqlca.sqlcode then
+         call cl_err('p_query_col_desc_cur',sqlca.sqlcode,1)
+         exit foreach
+      end if
+      if l_col[i].col_length < 8 then
+         let l_col[i].col_length = 8
+      end if
+      select gaq03 into l_col[i].col_desc from gaq_file 
+       where gaq01 = l_col[i].col_name and gaq02 = '2'
+      let i = i + 1
+   end foreach
+   call l_col.deleteElement(i)
+   let i = i - 1
+   rollback work
+
+   -- 新增的时候，删除并插入zal即可
+   if p_cmd = 'a' then
+      delete from zal_file where zal01 = g_zai.zai01
+      for j = 1 to i  
+         insert into zal_file(zal01,zal02,zal03,zal04,zal05,zal06,zal07,zal08,zal09)
+         values(g_zai.zai01,j,'2',l_col[j].col_name,l_col[j].col_desc,'',g_zai.zai05,l_col[j].col_length,'G')
+         if sqlca.sqlcode then
+            call cl_err('ins zal_file',sqlca.sqlcode,1)
+            exit for
+         end if
+      end for
+   else
+      begin work
+      let g_success = 'Y'
+      for j = 1 to l_col.getLength()
+         initialize l_zal.* to null
+         select zal02,zal03,zal04,zal05,zal06,zal07,zal08,zal09 into l_zal.*
+           from zal_file where zal01 = g_zai.zai01 and zal02 = j and zal03 = '2'
+         if sqlca.sqlcode then
+            -- 找不到的项次，直接插入
+            let l_ins = true
+            insert into zal_file(zal01,zal02,zal03,zal04,zal05,zal06,zal07,zal08,zal09)
+            values(g_zai.zai01,j,'2',l_col[j].col_name,l_col[j].col_desc,'',g_zai.zai05,l_col[j].col_length,'G')
+            if sqlca.sqlcode then
+               call cl_err('ins zal_file',sqlca.sqlcode,1)
+               let g_success = 'N'
+               exit for
+            end if
+         end if
+         -- 如果字段名称不同，插入当前资料，并将后续项次都 + 1
+         if l_zal.zal04 <> l_col[j].col_name then
+            let l_mod = true
+            update zal_file set zal02 = zal02 + 1 
+             where zal01 = g_zai.zai01 and zal02 >= j
+            if sqlca.sqlcode then
+               call cl_err('upd zal_file',sqlca.sqlcode,1)
+               let g_success = 'N'
+               exit for
+            end if
+            let l_ins = true
+            insert into zal_file(zal01,zal02,zal03,zal04,zal05,zal06,zal07,zal08,zal09)
+            values(g_zai.zai01,j,'2',l_col[j].col_name,l_col[j].col_desc,'',g_zai.zai05,l_col[j].col_length,'G')
+            if sqlca.sqlcode then
+               call cl_err('ins zal_file',sqlca.sqlcode,1)
+               let g_success = 'N'
+               exit for
+            end if
+         end if
+      end for
+      -- 删除大于j项次的资料
+      let l_sql = " select zal02,zal04 from  zal_file ",
+                  " where zal01 = '",g_zai.zai01,"' and zal02 >  " , j-1
+      prepare p_query_del_zai_p from l_sql
+      declare p_query_del_zai_cur cursor for p_query_del_zai_p
+      foreach p_query_del_zai_cur into l_zal.zal02,l_zal.zal04
+         if sqlca.sqlcode then
+            call cl_err('upd zal_file',sqlca.sqlcode,1)
+            let g_success = 'N'
+            exit foreach
+         end if
+         let l_del = true
+         delete from zal_file where zal01 = g_zai.zai01
+            and zal02 = l_zal.zal02
+         if sqlca.sqlcode then
+            call cl_err('del zal_file',sqlca.sqlcode,1)
+            let g_success = 'N'
+            exit foreach
+         end if
+         call p_quert_del_zai(l_zal.zal02,l_zal.zal04)
+         if g_success = 'N' then
+            exit foreach
+         end if
+      end foreach
+      if g_success = 'Y' then
+         commit work
+      else
+         rollback work
+      end if
+   end if
+end function
+
+function p_quert_del_zai(p_zal02,p_zal04)
+   define p_zal02       like zal_file.zal02
+   define p_zal04       like zal_file.zal04
+
+   delete from zal_file
+     where zal01 = g_zai.zai01 and zal02 = p_zal02
+       and zal07 = g_zai.zai05
+   if sqlca.sqlcode then
+      call cl_err3("del","zal_file",g_zai.zai01,p_zal02,sqlca.sqlcode,"","",0)
+      let g_success = 'N'
+      return
+   end if
+
+   delete from zat_file
+     where zat01 = g_zai.zai01 and zat02 = p_zal02
+       and zat10 = g_zai.zai05
+   if sqlca.sqlcode then
+      call cl_err3("del","zat_file",g_zai.zai01,p_zal02,sqlca.sqlcode,"","",0)
+      let g_success = 'N'
+      return
+   end if
+
+   delete from zav_file
+     where zav01 = '2' and zav02 = g_zai.zai01 
+       and zav03 = p_zal04
+       and zav04 = g_zai.zai05                      #fun-750084
+       and zav05 = 'default'
+   if sqlca.sqlcode then
+      call cl_err3("del","zav_file",g_zai.zai01,p_zal04,sqlca.sqlcode,"","",0)    #no.fun-660081
+      let g_success = 'N'
+      return
+   end if
+
+   delete from zay_file
+   where zay01 = g_zai.zai01 and zay02 = p_zal02
+      and zay03 = g_zai.zai05                      #fun-750084
+   if sqlca.sqlcode then
+      call cl_err3("del","zay_file",g_zai.zai01,p_zal02,sqlca.sqlcode,"","",0)    #no.fun-660081
+      let g_success = 'N'
+      return
+   end if
+
+   delete from zam_file
+     where zam01 = g_zai.zai01 and zam02 = p_zal02
+       and zam09 = g_zai.zai05                         #fun-750084
+   if sqlca.sqlcode then
+      call cl_err3("del","zam_file",g_zai.zai01,p_zal02,sqlca.sqlcode,"","",0)    #no.fun-660081
+      let g_success = 'N'
+      return
+   end if
+
+   delete from zan_file
+     where zan01 = g_zai.zai01 and zan02 = p_zal02
+       and zan08 = g_zai.zai05                         #fun-750084 
+   if sqlca.sqlcode then
+      call cl_err3("del","zan_file",g_zai.zai01,p_zal02,sqlca.sqlcode,"","",0)    #no.fun-660081
+      let g_success = 'N'
+      return
+   end if
+
+end function
+#darcy:2025/04/27 add e---
