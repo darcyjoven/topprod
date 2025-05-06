@@ -3840,6 +3840,12 @@ FUNCTION t400_menu()
                call t400_auto_split()
             end if
          #darcy:2025/04/24 add e---
+         #darcy:2025/04/27 add s---
+         when 'fpc_copy'
+            if cl_chk_act_auth() then
+               call t400_fpc_copy()
+            end if
+         #darcy:2025/04/27 add e---
 
          WHEN "other_data"
             IF cl_chk_act_auth() THEN
@@ -10008,10 +10014,10 @@ FUNCTION t400_bp(p_ud)
    end if
    #darcy:2023/05/19 add e---
    #darcy:2025/04/24 add s---
-   call cl_set_act_visible("auto_split",false)
-   if g_user = 'tiptop' then
-      call cl_set_act_visible("auto_split",true)
-   end if
+   -- call cl_set_act_visible("fpc_copy",false)
+   -- if g_user = 'tiptop' then
+   --    call cl_set_act_visible("fpc_copy",true)
+   -- end if
    #darcy:2025/04/24 add e---
    IF g_prog[1,7] = 'axmt410' AND (g_sma.sma128 MATCHES '[Yy]' AND g_sma.sma115 NOT MATCHES '[Yy]') THEN
       CALL cl_set_act_visible("mixed_wrap",TRUE)
@@ -10409,6 +10415,12 @@ FUNCTION t400_bp(p_ud)
          let g_action_choice= 'auto_split'
          exit dialog
       #darcy:2025/04/24 add e---
+      #darcy:2025/04/27 add s---
+      # 光板复制为组装订单
+      on action fpc_copy
+         let g_action_choice= 'fpc_copy'
+         exit dialog
+      #darcy:2025/04/27 add e---
 
 #@    ON ACTION 確認
       ON ACTION confirm
@@ -34825,3 +34837,326 @@ function t400_split_do()
    end if
 end function
 #darcy:2025/04/24 add e---
+#darcy:2025/04/27 add s---
+function t400_fpc_copy()
+
+   select * into g_oea.* from oea_file where oea01= g_oea.oea01
+   let g_oea49 = g_oea.oea49
+   if g_oea.oea01 is null then return end if
+   #if g_oea.oeaconf = 'Y' then call cl_err('',9023,0) return end if
+   if g_oea.oeaconf = 'X' then call cl_err('',9024,0) return end if
+   if g_oea.oea00 <> '0' then return end if
+
+   let g_success = 'Y'
+
+   open window t400_fpc_copy_w at 1,1 with form "axm/42f/axmt400s"
+         attribute (style = g_win_style clipped)
+   call cl_ui_init() 
+   call t400_fpc_copy_init()
+
+   call t400_fpc_copy_b_fill() 
+
+   if t400_fpc_copy_input() then
+      call t400_fpc_copy_do()
+   end if
+
+   close window t400_fpc_copy_w
+   # 打开复制好的单据  
+end function
+function t400_fpc_copy_init()
+   call cl_set_comp_att_text("str01","组装料件编号")
+   call cl_set_comp_att_text("dat01","组装开始日期")
+   call cl_set_comp_att_text("num01","组装订单数量")
+   call cl_set_comp_att_text("num02","拆分数量")
+   call cl_set_comp_att_text("num03","间隔数量")
+   call cl_set_comp_att_text("comb01","间隔单位") 
+   call cl_set_combo_items("comb01",'day,week,month','天,周,30天')
+   call cl_set_comp_visible("chk,oeb01s,oeb03s,oeb04s,oeb06s,ima021s,oeb12s,oeb15s,num01,num02,num03,comb01,dat01,str01",true)
+   call cl_set_comp_entry("chk,str01,dat01,num01,num02,num03,comb01",true)
+   call cl_set_comp_required("chk,str01,dat01,num01,num02,num03,comb01",true)
+end function
+function t400_fpc_copy_input()
+   define l_cnt   integer
+   define l_tc_oeb16    like tc_oeb_file.tc_oeb16
+
+   input array g_oebs without defaults from s_oebs.* 
+         attribute(count=g_cnt,maxcount=g_max_rec,unbuffered,
+                   insert row=false,delete row=false,append row=false)
+      
+      before row 
+         let l_ac = arr_curr()
+
+      after field str01
+         -- 料号检查
+         if not cl_null(g_oebs[l_ac].str01) then
+            select count(*) into l_cnt from ima_file where ima01 = g_oebs[l_ac].str01
+            if l_cnt = 0 then 
+               call cl_err(g_oebs[l_ac].str01,'arm-006',1)
+               next field str01
+            end if
+            -- 检查是否是组装成品料号
+            if g_oebs[l_ac].str01[7,7] not matches '[ABC]' or LENGTH(g_oebs[l_ac].str01) <> 10 then
+               call cl_err(g_oebs[l_ac].str01,'cxm-056',1)
+               next field str01
+            end if
+         end if
+      
+      after field dat01
+         -- 默认日期
+         -- 不能早于光板第一批日期
+         if not cl_null(g_oebs[l_ac].dat01) then
+            select min(tc_oeb16) into l_tc_oeb16 from tc_oeb_file
+             where tc_oeb01 = g_oebs[l_ac].oeb01s and tc_oeb03 = g_oebs[l_ac].oeb03s
+            if sqlca.sqlcode or cl_null(l_tc_oeb16) then
+            else
+               if g_oebs[l_ac].dat01 < l_tc_oeb16 then
+                  call cl_err(sfmt('%1不得早于光板最早交货日期%2',g_oebs[l_ac].dat01,l_tc_oeb16),'!',1)
+                  next field dat01
+               end if
+               if g_oebs[l_ac].dat01 < g_today then
+                  call cl_err(sfmt('%1不得早于今天%2',g_oebs[l_ac].dat01,g_today),'!',1)
+                  next field dat01
+               end if
+            end if
+         end if
+
+      after field num01
+         -- 数量检查
+         -- 不能大于光板数量
+         if not cl_null(g_oebs[l_ac].num01) then
+            if g_oebs[l_ac].num01 < 0 or g_oebs[l_ac].num01 > g_oebs[l_ac].oeb12s then
+               call cl_err(sfmt('%1必须在0与光板数量%2之间',g_oebs[l_ac].num01,g_oebs[l_ac].oeb12s),'!',1)
+               next field num01
+            end if
+         end if
+
+      on action accept
+         exit input
+      on action cancel
+         let int_flag = true
+         exit input
+      on action exit
+         let int_flag = true
+         exit input
+   end input
+
+   if int_flag then
+      let int_flag = false
+      return false
+   else
+      return true
+   end if
+end function
+-- 开始复制
+function t400_fpc_copy_do()
+   define li_result       LIKE type_file.num5
+   define new_no          like oea_file.oea01
+   define i,j,k           integer
+   define l_oeb12         like oeb_file.oeb12
+   define l_oeb12c        like oeb_file.oeb12
+   define l_sql           string
+   define l_ima02         like ima_file.ima02
+   define l_ima25         like ima_file.ima25
+   define l_ima59         like ima_file.ima59
+   define l_tc_oeb031     like tc_oeb_file.tc_oeb031,
+          l_tc_oeb12      like tc_oeb_file.tc_oeb12,
+          l_tc_oeb16      like tc_oeb_file.tc_oeb16
+   define l_days           integer
+   define l_dat            date
+
+   let l_sql = "merge into tc_oeb_file a ",
+               "using (select tc_oeb01, tc_oeb03, tc_oeb031,tc_oeb16, rownum nnum, rowid idd ",
+               "         from tc_oeb_file ",
+               "      where tc_oeb01 = ?  and tc_oeb03 = ? ",
+               "      order by tc_oeb031 desc) b ",
+               "on (a.rowid = b.idd) ",
+               "when matched then ",
+               "update set a.tc_oeb031 = b.nnum"
+   prepare t400_fpc_copy_tc_oeb031 from l_sql
+
+   -- 复制单头单据
+   select * from oea_file where oea01 = g_oea.oea01 into temp x
+   select * from oeb_file where oeb01 = g_oea.oea01 into temp y
+
+   begin work
+   let g_success = 'Y'
+   let new_no = g_oea.oea01[1,3]
+   call s_check_no('axm',new_no,"","20","oea_file","oea01","") returning li_result,new_no
+   CALL s_auto_assign_no("axm",new_no,g_today,'20',"oea_file","oea01","","","")
+        RETURNING li_result,new_no
+
+   UPDATE x
+        SET oea01=new_no,
+            oea02=g_today,
+            oea06=0,
+            oea62=0,
+            oea63=0,
+            oea40=NULL,
+            oea10=NULL,
+            oea49='0',
+            oea905='N',
+            oea99 =NULL,
+            oeaconf='N',
+            oeahold=NULL,
+            oeaprsw=0,
+            oeauser=g_user,
+            oeagrup=g_grup,
+            oeaoriu=g_user,
+            oeaorig=g_grup,
+            oeamodu=NULL,
+            oeadate=g_today,
+            oeaconu=NULL,
+            oeacont=NULL,
+            oea72=NULL
+   insert into oea_file select * from x
+   if sqlca.sqlcode then
+
+      call cl_err("ins oea_file",sqlca.sqlcode,1)
+      let g_success = 'N'
+      goto _commit
+   end if
+
+   -- 单身处理
+   for i = 1 to g_oebs.getLength()
+      if g_oebs[i].chk = 'N' then
+         continue for
+         delete from y where oeb03 = g_oebs[i].oeb03s
+         if sqlca.sqlcode then
+            call cl_err("del y",sqlca.sqlcode,1)
+            let g_success = 'N'
+            goto _commit
+         end if
+      end if
+      select ima02,ima25 into l_ima02,l_ima25 from ima_file where ima01 = g_oebs[i].oeb04s
+      UPDATE y SET oeb01=new_no,
+                 oeb12=g_oebs[i].num01,
+                 oeb04=g_oebs[i].str01,
+                 oeb06=l_ima02,
+                 oeb23=0, 
+                 oeb24=0, 
+                 oeb25=0, 
+                 oeb26=0, 
+                 oeb70='N',
+                 oeb70d=NULL,
+                 oeb15 = g_oebs[i].dat01,
+                 oeb16=g_oebs[i].dat01,  
+                 oeb27='',oeb28=0,   
+                 oeb920 = 0,
+                 oeb19='N', oeb905=0,
+                 oebud07 = 0 ,oebud09 = g_oebs[i].num01
+      where oeb03 = g_oebs[i].oeb03s
+      if sqlca.sqlcode then
+         call cl_err("upd y",sqlca.sqlcode,1)
+         let g_success = 'N'
+         goto _commit
+      end if
+      -- 天数
+      case g_oebs[i].comb01
+         when 'day'
+            let l_days = g_oebs[i].num03
+         when 'week'
+            let l_days = g_oebs[i].num03 * 7
+         when 'month'
+            let l_days = g_oebs[i].num03 * 30
+      end case 
+      # 拆分明细
+      let l_oeb12 = g_oebs[i].num01
+      let l_dat = g_oebs[i].dat01 - l_days
+      let j = 1
+      while l_oeb12 > 0
+         -- 本次数量
+         if l_oeb12 <= g_oebs[i].num02 then
+            let l_oeb12c = l_oeb12
+         else
+            let l_oeb12c = g_oebs[i].num02
+         end if
+         let l_oeb12 = l_oeb12 - l_oeb12c
+         let l_dat = l_dat + l_days
+         insert into tc_oeb_file(tc_oeb01,tc_oeb03,tc_oeb031,tc_oeb04,tc_oeb05,tc_oeb06,tc_oeb12,
+                                  tc_oeb16,tc_oeb22,tc_oeb23,tc_oeb24,tc_oeb25,tc_oeb26,tc_oeb70,
+                                  tc_oeb70d,tc_oebplant,tc_oeblegal)
+         values(new_no,g_oebs[i].oeb03s,j,g_oebs[i].str01,l_ima25,
+               l_ima02,l_oeb12c,l_dat, '',
+               0,0,0,0,'N',null,g_plant,g_legal)
+         if sqlca.sqlcode then
+            call cl_err("ins tc_oeb_file",sqlca.sqlcode,1)
+            let g_success = 'N'
+            goto _commit
+         end if
+         let j = j + 1
+      end while
+   end for
+   insert into oeb_file select * from y
+
+   label _commit:
+   if g_success = 'Y' then
+      commit work
+      call cl_cmdrun_wait(sfmt("axmt400 '%1' 'query' ",new_no))
+   else
+      rollback work
+   end if
+   drop table x
+   drop table y
+end function
+function t400_fpc_copy_b_fill()
+   define l_sql      string
+   define l_bma01    varchar(10)
+   define l_ima59    like ima_file.ima59
+   define l_tc_oeb16 like tc_oeb_file.tc_oeb16
+   define l_tc_oeb031 like tc_oeb_file.tc_oeb031
+   define l_cnt       integer
+
+   let l_sql = "select 'Y',oeb01,oeb03,oeb04,oeb05,oeb06,ima021,oeb12,oeb15 ",
+               "  from oeb_file , ima_file ",
+               " where oeb04 = ima01 and oeb01 ='",g_oea.oea01,"'"
+   prepare t400_fpc_copy_p from l_sql
+   declare t400_fpc_copy_cur cursor for t400_fpc_copy_p
+
+   let g_cnt = 1
+   call g_oebs.clear()
+   foreach t400_fpc_copy_cur into g_oebs[g_cnt].*
+      if sqlca.sqlcode then
+         call cl_err("t400_fpc_copy_cur",sqlca.sqlcode,1)
+         exit foreach
+      end if
+      -- TODO 拆分数量 
+      -- 如果项次大于1，数量为第一个项次数量
+      -- 否则取全部数量 
+      select min(tc_oeb031) into l_tc_oeb031 from tc_oeb_file 
+        where tc_oeb01 = g_oea.oea01 and tc_oeb03 = g_oebs[g_cnt].oeb03s
+      if sqlca.sqlcode = 100 then
+         call cl_err(sfmt('%1:%2',g_oea.oea01,g_oebs[g_cnt].oeb03s),'cxm-057',1)
+         let g_oebs[g_cnt].chk = 'N'
+         continue foreach
+      end if
+      select tc_oeb16,tc_oeb12 into g_oebs[g_cnt].dat01,g_oebs[g_cnt].num02
+       from tc_oeb_file where tc_oeb01 = g_oea.oea01 and tc_oeb03 = g_oebs[g_cnt].oeb03s
+        and tc_oeb031 = l_tc_oeb031
+      -- 新料号
+      -- 找光板料号对应的组装料号
+      let l_bma01 = g_oebs[g_cnt].oeb04s
+      let l_bma01 = l_bma01[1,6],'%',l_bma01[8,10]
+      select ima01 into g_oebs[g_cnt].str01 from ima_file
+       where ima01 like l_bma01 and ima01[7,7] in ('A','B','C')
+      -- 日期
+      if cl_null( g_oebs[g_cnt].dat01) then
+         let g_oebs[g_cnt].dat01 = g_oebs[g_cnt].oeb15s
+      end if
+      if not cl_null(g_oebs[g_cnt].str01) then
+         select ima59 into l_ima59 from ima_file
+          where ima01 = g_oebs[g_cnt].str01
+         if not cl_null(l_ima59) then
+            -- 加上生产前置日期
+            let g_oebs[g_cnt].dat01 = g_oebs[g_cnt].dat01 + l_ima59
+         end if
+      end if
+      -- 数量
+      let g_oebs[g_cnt].num01 = g_oebs[g_cnt].oeb12s
+      let g_oebs[g_cnt].comb01 = 'day'
+      let g_oebs[g_cnt].num03 = 1
+      let g_cnt = g_cnt + 1
+   end foreach
+   call g_oebs.deleteElement(g_cnt)
+   let g_cnt = g_cnt - 1
+end function
+#darcy:2025/04/27 add e---
