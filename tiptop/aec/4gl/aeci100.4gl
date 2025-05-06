@@ -684,7 +684,6 @@ DEFINE l_ecb06  LIKE ecb_file.ecb06
 DEFINE l_ecu01  LIKE type_file.chr50
 DEFINE l_date LIKE type_file.chr50
 #add by zhangzs 201208 ------e----
-
 define l_cnt integer #darcy:2023/04/12 add
    WHILE TRUE
       CALL i100_bp("G")
@@ -1054,27 +1053,37 @@ define l_cnt integer #darcy:2023/04/12 add
                 CALL cl_err("",'atm-365',1)
                 RETURN
             ELSE
-                IF cl_confirm('aap-224') THEN
-                 BEGIN WORK
-                 UPDATE ecu_file
-                   SET ecuud02="N",ecudate = g_today     #FUN-D10063 add ecudate = g_today
-                 WHERE ecu01=g_ecu.ecu01
-                   AND ecu02=g_ecu.ecu02
-                   AND ecu012 = g_ecu.ecu012   #FUN-A50081 add
-                IF SQLCA.sqlcode THEN
-                  CALL cl_err3("upd","ecu_file",g_ecu.ecu01,g_ecu.ecu02,SQLCA.sqlcode,"","ecuud02",1)
-                  ROLLBACK WORK
-                ELSE
-                  COMMIT WORK
-                  LET g_ecu.ecuud02="N"
-                  DISPLAY g_ecu.ecuud02 TO FORMONLY.ecu10
-                  #add by zhangzs 201208   记录审核状态到中间表 ect_file   ----s------
-                  LET L_ecu01 = g_ecu.ecu01,g_ecu.ecu02  
-                  SELECT TO_CHAR(SYSDATE, 'YY-MM-DD,HH24:MM:SS') INTO l_date FROM DUAL  #日期+时间
-                  CALL cl_ect('aeci100',l_ecu01,g_user,'2',g_today,TIME)
-                  #add by zhangzs 201208   记录审核状态到中间表 ect_file   ----e------
-                END IF
-                END IF
+               #darcy:2025/04/28 add s---
+               # 已开立工单不得取消
+               select count(*) into l_cnt from sfb_file
+               where sfb05 = g_ecu.ecu01 and sfb06 = g_ecu.ecu02
+                  and sfb87 <> 'X'
+               if l_cnt > 0 then
+                  call cl_err(g_ecu.ecu01||"|"||g_ecu.ecu02,'cec-062',1) 
+               else
+               #darcy:2025/04/28 add e---
+                  IF cl_confirm('aap-224') THEN
+                     BEGIN WORK
+                     UPDATE ecu_file
+                        SET ecuud02="N",ecudate = g_today     #FUN-D10063 add ecudate = g_today
+                     WHERE ecu01=g_ecu.ecu01
+                        AND ecu02=g_ecu.ecu02
+                        AND ecu012 = g_ecu.ecu012   #FUN-A50081 add
+                     IF SQLCA.sqlcode THEN
+                        CALL cl_err3("upd","ecu_file",g_ecu.ecu01,g_ecu.ecu02,SQLCA.sqlcode,"","ecuud02",1)
+                        ROLLBACK WORK
+                     ELSE
+                        COMMIT WORK
+                        LET g_ecu.ecuud02="N"
+                        DISPLAY g_ecu.ecuud02 TO FORMONLY.ecu10
+                        #add by zhangzs 201208   记录审核状态到中间表 ect_file   ----s------
+                        LET L_ecu01 = g_ecu.ecu01,g_ecu.ecu02  
+                        SELECT TO_CHAR(SYSDATE, 'YY-MM-DD,HH24:MM:SS') INTO l_date FROM DUAL  #日期+时间
+                        CALL cl_ect('aeci100',l_ecu01,g_user,'2',g_today,TIME)
+                        #add by zhangzs 201208   记录审核状态到中间表 ect_file   ----e------
+                     END IF
+                  END IF
+                end if #darcy:2025/04/28 add
             END IF
           CALL i100_show()
        END IF
@@ -2527,10 +2536,23 @@ DEFINE l_msg              STRING #FUN-A50100
 END FUNCTION
 
 FUNCTION i100_notconfirm()
+   define l_cnt   integer #darcy:2025/04/28 add s---
+
     IF cl_null(g_ecu.ecu01) OR g_ecu.ecu02 IS NULL AND g_ecu.ecu012 IS NULL THEN  #FUN-A50081 add ecu012
        CALL cl_err('',-400,0)
        RETURN
     END IF
+
+    #darcy:2025/04/28 add s---
+    # 已开立工单不得取消
+    select count(*) into l_cnt from sfb_file
+     where sfb05 = g_ecu.ecu01 and sfb06 = g_ecu.ecu02
+       and sfb87 <> 'X'
+    if l_cnt > 0 then
+       call cl_err(g_ecu.ecu01||"|"||g_ecu.ecu02,'cec-062',1)
+       return
+    end if
+    #darcy:2025/04/28 add e---
     IF g_ecu.ecu11 >= 1 THEN
        CALL cl_err('','aec-128',0)
        #RETURN
