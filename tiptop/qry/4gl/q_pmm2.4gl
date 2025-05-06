@@ -57,9 +57,9 @@ FUNCTION q_pmm2(pi_multi_sel,pi_need_cons,ps_default1,p_sta)
  
    WHENEVER ERROR CALL cl_err_msg_log
  
-   OPEN WINDOW w_qry WITH FORM "qry/42f/q_pmm2" ATTRIBUTE(STYLE="create_qry") #No.FUN-660161
+   OPEN WINDOW w_qry WITH FORM "qry/42f/q_pmm4" ATTRIBUTE(STYLE="create_qry") #No.FUN-660161
  
-   CALL cl_ui_locale("q_pmm2")
+   CALL cl_ui_locale("q_pmm4")
  
    LET mi_multi_sel = pi_multi_sel
    LET mi_need_cons = pi_need_cons
