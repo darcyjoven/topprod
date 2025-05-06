@@ -788,6 +788,16 @@ define l_msg        string #darcy:2024/11/29
                         DISPLAY g_tc_sma[l_ac].tc_sma02 TO tc_sma02
                         NEXT FIELD tc_sma02
                     #darcy:2025/02/21 add e---
+                    #darcy:2025/04/21 add s---
+                    when 'csmi113'
+                        CALL cl_init_qry_var()
+                        LET g_qryparam.form = "cq_tc_sma02"
+                        LET g_qryparam.arg1 = g_lang
+                        LET g_qryparam.default1 = g_tc_sma[l_ac].tc_sma02
+                        CALL cl_create_qry() RETURNING g_tc_sma[l_ac].tc_sma02
+                        DISPLAY g_tc_sma[l_ac].tc_sma02 TO tc_sma02
+                        NEXT FIELD tc_sma02
+                    #darcy:2025/04/21 add e---
                         
                 end case
               
@@ -1121,7 +1131,7 @@ FUNCTION i100_set_dny_combo()
     define l_gaz03      like gaz_file.gaz03
 
     let ps_values = "csmi100,csmi101,csmi102,csmi103,csmi104,csmi105,csmi106,csmi107,csmi108,csmi109,csmi110,csmi111,",
-                    "csmi112"
+                    "csmi112,csmi113"
 
     LET tok = base.StringTokenizer.create(ps_values,",")
     let l_ze01 = tok.nextToken()
@@ -1162,6 +1172,8 @@ FUNCTION i100_set_dny_combo()
             display "此作业维护收件人群组，方便发送邮件通知" to lb_msg
         when 'csmi112'
             display '全局参数设置'
+        when 'csmi113'
+            display '光板样品下料规则'
     end case
 
     call i100_set_visiable()
@@ -1195,6 +1207,10 @@ function i100_get_tc_sma_desc(p_tc_sma01,p_tc_sma02)
         when 'csmi112'
             select gaz03 into l_tc_sma02_desc from gaz_file
              where gaz01 = p_tc_sma02 and gaz02 = '2'
+        when 'csmi113'
+            select tc_sma06 into l_tc_sma02_desc from tc_sma_file
+             where tc_sma01 = 'csmi102' and tc_sma02 = 'aimi100'
+               and tc_sma03 = p_tc_sma02
         otherwise
             let l_tc_sma02_desc = null
     end case
@@ -1325,10 +1341,31 @@ function i100_set_visiable()
             call cl_set_comp_att_text("tc_sma10","参数名称") 
             call cl_set_comp_att_text("tc_sma12","说明") 
             call cl_set_comp_att_text("tc_sma13","参数值")
-            call cl_set_comp_visible("tc_sma03,tc_sma04,tc_sma05,tc_sma06,tc_sma07,tc_sma08,tc_sma09,tc_sma11,tc_sma14,tc_sma15,tc_sma16,tc_sma17,tc_sma19,tc_sma18",false)
+            call cl_set_comp_visible("tc_sma03,tc_sma04,tc_sma05,tc_sma06,tc_sma07,tc_sma08,tc_sma09,tc_sma11,tc_sma13,tc_sma14,tc_sma15,tc_sma16,tc_sma17,tc_sma19,tc_sma18",false)
             call cl_set_comp_entry("tc_sma02,tc_sma10,tc_sma12,tc_sma13",true)
 
         #darcy:2025/02/21 add e---
+        #darcy:2025/04/21 add s---
+        when 'csmi113'
+            call cl_set_comp_att_text("tc_sma02","市场类型")
+            call cl_set_comp_att_text("tc_sma02_desc","说明")
+            call cl_set_comp_att_text("tc_sma03","项次")
+            call cl_set_comp_att_text("tc_sma04","宽幅")
+            call cl_set_comp_att_text("tc_sma05","包含以上层数")
+            call cl_set_comp_att_text("tc_sma07","层数layer")
+            call cl_set_comp_att_text("tc_sma09","料号")
+            call cl_set_comp_att_text("tc_sma10","下料良率%")
+            call cl_set_comp_att_text("tc_sma12","出货资料数PCS")
+            call cl_set_comp_att_text("tc_sma13","最低投料数PNL")
+            call cl_set_comp_att_text("tc_sma15","首件损耗")
+            call cl_set_comp_att_text("tc_sma16","有阻抗产品")
+            call cl_set_comp_att_text("tc_sma18","卷料生产")
+            call cl_set_comp_att_text("tc_sma19","辅料生产")
+            call cl_set_comp_visible("tc_sma06,tc_sma08,tc_sma11,tc_sma14,tc_sma17",false)
+            call cl_set_comp_entry("tc_sma02,tc_sma03,tc_sma04,tc_sma05,tc_sma07,tc_sma09,tc_sma10,tc_sma12,tc_sma13,tc_sma15,tc_sma16,tc_sma18,tc_sma19",true)
+            call cl_set_combo_items("tc_sma04",'0,1,2,3','LCM*250,LCM&500,汽车板<600mm,汽车板>=600mm')
+            call cl_set_comp_required('tc_sma04',false)
+        #darcy:2025/04/21 add e---
     end case
     
 end function
