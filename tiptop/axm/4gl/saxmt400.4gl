@@ -34963,6 +34963,21 @@ function t400_fpc_copy_do()
           l_tc_oeb16      like tc_oeb_file.tc_oeb16
    define l_days           integer
    define l_dat            date
+   define l_oeb      record
+      oeb04       like oeb_file.oeb04,
+      oeb49       like oeb_file.oeb49,
+      oeb05       like oeb_file.oeb05,
+      oeb03       like oeb_file.oeb03,
+      oeb12       like oeb_file.oeb12,
+      oeb1004     like oeb_file.oeb1004,
+      oeb917      like oeb_file.oeb917
+   end record
+   define l_oeb13    like oeb_file.oeb13,
+          l_oeb37    like oeb_file.oeb37
+   define l_oebud05  like oeb_file.oebud05
+   define l_oeb14    like oeb_file.oeb14,
+          l_oeb14t   like oeb_file.oeb14t     
+   define l_tmp_no   varchar(40)    
 
    let l_sql = "merge into tc_oeb_file a ",
                "using (select tc_oeb01, tc_oeb03, tc_oeb031,tc_oeb16, rownum nnum, rowid idd ",
@@ -35087,6 +35102,47 @@ function t400_fpc_copy_do()
       end while
    end for
    insert into oeb_file select * from y
+
+   # darcy:2025/05/07 add s---
+   # 更新料件单价和最新版本
+   let l_sql = "select oeb04,oeb49,oeb05,oeb03,oeb12,oeb1004,oeb917 from oeb_file",
+               " where oeb01 = '",new_no,"'"
+   prepare t400_fpc_copt_new_oeb from l_sql
+   declare t400_fpc_copt_new_oeb_c cursor for t400_fpc_copt_new_oeb
+   foreach t400_fpc_copt_new_oeb_c into l_oeb.*
+      if sqlca.sqlcode then
+         call cl_err('t400_fpc_copt_new_oeb_c',sqlca.sqlcode,1)
+         let g_success = 'N'
+         goto _commit
+      end if
+      -- 获取单价
+      CALL cs_fetch_price_new(g_oea.oea03,l_oeb.oeb04,l_oeb.oeb49,l_oeb.oeb05,       #FUN-BC0071
+                           g_today,'1',g_oea.oeaplant,g_oea.oea23,g_oea.oea31,
+                           g_oea.oea32,g_oea.oea01,l_oeb.oeb03,l_oeb.oeb12,l_oeb.oeb1004,'a',g_oea.oea21)  #add by guanyao160712
+      RETURNING l_oeb13,l_oeb37
+      let l_oeb14 = l_oeb.oeb917 * l_oeb13
+      call cl_digcut(l_oeb14,t_azi04) returning l_oeb14
+      let l_oeb14t=l_oeb14*(1+g_oea.oea211/100)
+      call cl_digcut(l_oeb14t,t_azi04) returning l_oeb14t
+      -- 获取最新版本
+      select max(ecb02) into l_oebud05 from ecb_file,ecu_file 
+       where ecb01 = ecu01 and ecb02 = ecu02 and ecu10 = 'Y'
+         and ecb01= l_oeb.oeb04
+
+      update oeb_file set oeb13 = l_oeb13,oeb37 = l_oeb37,oebud05=l_oebud05,
+                          oeb14 = l_oeb14,oeb14t = l_oeb14t
+       where oeb01 = new_no and oeb03 = l_oeb.oeb03
+      if sqlca.sqlcode then
+         call cl_err('upd oeb_file',sqlca.sqlcode,1)
+         let g_success = 'N'
+         goto _commit
+      end if
+   end foreach
+   let g_oea.oea01 = new_no
+   let l_tmp_no = g_oea.oea01
+   CALL t400_oea_sum()
+   let g_oea.oea01 = l_tmp_no
+   # darcy:2025/05/07 add e---
 
    label _commit:
    if g_success = 'Y' then
