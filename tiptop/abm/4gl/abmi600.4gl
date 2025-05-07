@@ -1227,7 +1227,7 @@ FUNCTION i600_menu()
          #darcy:2025/02/12 add s---
          when 'xlsx_import'
             if cl_chk_act_auth() then
-               message iif(scbmmp600_imp_fromxlsx(),'导入成功','导入失败')
+               message iif(scbmp600_imp_fromxlsx(),'导入成功','导入失败')
             end if
          #darcy:2025/02/12 add e---
          WHEN "reproducep"

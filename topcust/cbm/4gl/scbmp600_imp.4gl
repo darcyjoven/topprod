@@ -16,7 +16,7 @@ define g_result dynamic array of record
     end record
 
 -- 从xlsx导入bom资料
-function scbmmp600_imp_fromxlsx()
+function scbmp600_imp_fromxlsx()
     define l_file string
     define l_data dynamic array with dimension 2 of string
     define i,j,k,l integer
@@ -27,6 +27,12 @@ function scbmmp600_imp_fromxlsx()
     define l_ima25  like ima_file.ima25,
            l_ima86  like ima_file.ima86 
     define l_ima02  like ima_file.ima02
+    # darcy:2025/05/07 add s---
+    define l_tok    base.stringTokenizer
+    define l_bmd    record like bmd_file.*
+    # darcy:2025/05/07 add e---
+
+    whenever error continue
 
     -- 选择文件
     let l_file = cl_import_open_file()
@@ -165,6 +171,62 @@ function scbmmp600_imp_fromxlsx()
                     call scbmp600_imp_result(l_bma.bma01,j,5,sfmt('%1 bmb插入失败',l_bmb.bmb03 ),'warn')
                     let g_success = 'N'
                 end if
+                # darcy:2025/05/07 add s---
+                # 加入替代料
+                -- 主键料号:l_bmb.bmb01 元件料号:l_bmb.bmb03
+                -- l_data[j][4]
+                if not cl_null(l_data[j][4]) then
+                    let l_tok = base.StringTokenizer.create(l_data[j][4],',')
+                    initialize l_bmd.* to null
+                    let l_bmd.bmd01 = l_bmb.bmb03
+                    let l_bmd.bmd08 = l_bmb.bmb01
+                    let l_bmd.bmd02 = '2'
+                    select max(bmd03) into l_bmd.bmd03 from bmd_file
+                    where bmd01 = l_bmd.bmd01 and l_bmd.bmd08 = l_bmd.bmd08
+                    if cl_null(l_bmd.bmd03) then
+                        let l_bmd.bmd03 = 0 
+                    end if
+                    let l_bmd.bmd05 = g_today
+                    let l_bmd.bmd07 = 1
+                    let l_bmd.bmd09 = g_today
+                    let l_bmd.bmdacti = 'Y'
+                    let l_bmd.bmddate = g_today
+                    let l_bmd.bmdgrup = g_grup
+                    let l_bmd.bmduser = g_user
+                    let l_bmd.bmdmodu = g_user
+                    let l_bmd.bmdoriu = g_grup
+                    let l_bmd.bmd11 = 'N'
+                    while l_tok.hasMoreTokens()
+                        let l_bmd.bmd04 = l_tok.nextToken()
+                        -- 检查是否存在料号
+                        if not cl_null(l_bmd.bmd04) then
+                            select count(*) into l_cnt from ima_file
+                             where ima01 = l_bmd.bmd04 and ima140 = 'N'
+                             and (imaud32 is null or imaud32 <> '1' ) and imaacti = 'Y'
+                            if l_cnt <= 0 then
+                                call s_errmsg('ima01',l_bmd.bmd04,'料号不存在，或已停用，不能建立取替代资料','!',1)
+                                call scbmp600_imp_result(l_bma.bma01,j,4,sfmt('%1 料件不存在，或已停用，不能建立取替代资料',l_bmd.bmd04),'warn')
+                                let g_success = 'N'
+                            end if
+                        end if
+                        -- 检查是否已经存在替代料，存在就跳过不报错
+                        select count(*) into l_cnt from bmd_file
+                         where bmd01 = l_bmd.bmd01 and l_bmd.bmd08 = l_bmd.bmd08
+                           and bmd04 = l_bmd.bmd04 and bmd05 <= g_today
+                           and (bmd06 is null or bmd06 > g_today)
+                        if l_cnt > 0 then
+                           continue while
+                        end if
+                        let l_bmd.bmd03 = l_bmd.bmd03 + 1
+                        insert into bmd_file values (l_bmd.*)
+                        if sqlca.sqlcode or sqlca.sqlerrd[3]==0 then
+                            call s_errmsg('bmd08,bmd01,bmd04',sfmt("主件:%1 元件:%2 替代料件:%3 ",l_bmb.bmb01,l_bmb.bmb03,l_bmd.bmd04),'bmd插入失败',sqlca.sqlcode,1)
+                            call scbmp600_imp_result(l_bma.bma01,j,4,sfmt('%1 bmd插入失败',l_bmd.bmd04 ),'warn')
+                            let g_success = 'N'
+                        end if
+                    end while
+                end if
+                # darcy:2025/05/07 add e---
             end if
         end for
     end for
