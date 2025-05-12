@@ -1775,7 +1775,7 @@ DEFINE
 		   	#darcy:2024/08/22 add s---
 			# 转付的时候,不能存在未审核资料
 			# 增加票贴和转付逻辑一致
-			if g_npn.npn03 matches '[45]' then
+			if g_npn.npn03 matches '[458]' then #darcy:2025/05/08 add 增加兑现
 				select count(*) into g_cnt from npn_file,npo_file
 				where npn01 = npo01 and npnconf = 'N' and npo03 = g_npo[l_ac].npo03
 				  and npn01 != g_npn.npn01
@@ -2228,7 +2228,7 @@ FUNCTION t250_nmh(p_nmh01)
        #TQC-B70197  restore  --end
        WHEN g_npn.npn03 matches '[6]' AND l_nmh24 NOT MATCHES '[1234]'    #MOD-580071
          LET g_errno = 'anm-143'
-      WHEN g_npn.npn03 matches '[8]' AND l_nmh24 NOT MATCHES '[23]'
+      WHEN g_npn.npn03 matches '[8]' AND l_nmh24 NOT MATCHES '[2348]' #darcy:2025/05/08 mod add 4
          LET g_errno = 'anm-145'
      #WHEN g_npn.npn03 matches '[7]' AND l_nmh24 NOT MATCHES '[348]'   #MOD-AB0172 mark
       WHEN g_npn.npn03 matches '[7]' AND l_nmh24 NOT MATCHES '[2348]'  #MOD-AB0172
@@ -2246,7 +2246,7 @@ FUNCTION t250_nmh(p_nmh01)
          LET g_errno = 'anm-319'
       #FUN-C70129--add--end
 	  #darcy:2024/08/22 add s---
-	  when g_npn.npn03 == '5' or g_npn.npn03 == '4'
+	  when g_npn.npn03 == '5' or g_npn.npn03 == '4' or g_npn.npn03 == '8' #darcy:2025/05/08 add 8
 	  	# 1.转付的时候，要计算转付后的金额
 		# 暂时不考虑外币情况
 		# 2.票贴和转付逻辑一致,因为票贴可能是转付后才票贴
@@ -3375,7 +3375,7 @@ DEFINE l_nma21    LIKE nma_file.nma21
          END IF
       END IF
       IF g_npn.npn03 MATCHES '[8]' THEN
-         IF g_nmh.nmh24 NOT MATCHES '[23]' THEN
+         IF g_nmh.nmh24 NOT MATCHES '[2348]' THEN #darcy:2025/05/08 add 4
             CALL s_errmsg('npo03',m_npo.npo03,m_npo.npo03,'anm-228',1)
             LET g_success='N'
             CONTINUE FOREACH 
@@ -5644,7 +5644,7 @@ END FUNCTION
 #darcy:2024/08/22 add s---
 function anmt250_set_entry_b(p_cmd)
 	define p_cmd      like type_file.chr1
-	if g_npn.npn03 == '5' then
+	if g_npn.npn03 matches '[58]' then
 		# 转付的时候，允许修改原币和本币
 		call cl_set_comp_entry("npo04",true)
 		call cl_set_comp_required("npo04",true)
@@ -5652,7 +5652,7 @@ function anmt250_set_entry_b(p_cmd)
 end function
 function anmt250_no_set_entry_b(p_cmd)
    	define p_cmd      like type_file.chr1
-	if g_npn.npn03 != '5' then
+	if g_npn.npn03 not matches '[58]' then
 		# 不是转付的时候，不允许修改原币和本币
 		call cl_set_comp_entry("npo04",false)
 	end if

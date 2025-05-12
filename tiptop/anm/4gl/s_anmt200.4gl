@@ -34,7 +34,7 @@ function sanmt200_undo_chk(p_nmh01,p_no)
             # 这是anmt250单据异动
             select npn02,npn03 into l_npn02,l_npn03 from npn_file
              where npn01 = p_no
-            if l_npn03 matches '[58]' then #darcy:2025/05/08 add 8
+            if l_npn03 matches '[58]' then
                 # 要还原的是转付
                 # 1.检查单据后面序号是否还有转付记录
                 select max(nmi03) into l_nmi03 from nmi_file 
@@ -45,9 +45,9 @@ function sanmt200_undo_chk(p_nmh01,p_no)
                     goto _error
                 end if
 
-                declare sanmt200_nmi_5 cursor for 
+                declare sanmt200_nmi_5 cursor for
                     select nmi02,nmi10 from nmi_file
-                     where nmi01 = p_nmh01 and nmi06 in ('5','8') #darcy:2025/05/08 add 8
+                     where nmi01 = p_nmh01 and nmi06 in ('5','8')
                        and to_number(nmi03) > l_nmi03
                 foreach sanmt200_nmi_5 into l_nmi.*
                     if sqlca.sqlcode then
@@ -93,9 +93,6 @@ function sanmt200_chk_amt(p_npn01)
     
     prepare sanmt200_has_amt_p from 
         "select sum(npo04),sum(npo05) from npo_file,npn_file where npo01 <> ? and npo03 = ?  and npn01 = npo01  and npnconf = 'Y' "
-    
-    prepare sanmt200_nmh_p from
-        "select nmh02,nm"
 
     initialize l_npo.* to null
     foreach sanmt200_chk_amt_cur into l_npo.*
