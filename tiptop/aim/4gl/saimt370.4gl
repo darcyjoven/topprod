@@ -362,6 +362,15 @@
 # Modify.........: No:160705     16/07/05 By guanyao 由试产工单生成的杂发单不能改项目编号
 # Modify.........: No:2021112401 21/11/24 By jc 自动扣账若已审核则直接扣账
 # Modify.........: No.2022032401 22/03/24 By jc SCM抛转单据限定日期后不可修改
+# [ ] 每周领用限制，只限制作业aimt301
+{
+   1. 新增栏位：inbud10当前库存 weekamt本周领用、remaind剩余可领用
+   2. 每周开始时间为周日
+   3. 录入时必须录入当前库存
+   4. 本周领用为本部门当周未作废的领用数量
+   5. 剩余可领用 = 每周限制值 - 本周领用 ，值为负数的时候，不允许保存录入
+}
+
 
 DATABASE ds
  
@@ -2503,6 +2512,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
        l_tc_zsa03   LIKE type_file.chr10
 #2022032401 add----end----
 define l_imaud30     like ima_file.imaud30 #darcy:2024/06/04 add
+define l_tc_imh04    like tc_imh_file.tc_imh04 #darcy:2025/03/24 add
 
   IF g_action_choice = "warahouse_modify" THEN
      LET g_wm = 'Y'
@@ -2812,6 +2822,24 @@ define l_imaud30     like ima_file.imaud30 #darcy:2024/06/04 add
 	       CANCEL INSERT
                NEXT FIELD inb03
             END IF
+
+            #darcy:2025/03/24 add s---
+            # [x] 管控每周领用 是否可以保存
+            if g_prog = 'aimt301' and (g_user = '59396' ) then
+               # 数量小于等于0，表示此料号还未管控
+               # 重新查询一下可以领用数量
+               call t370_weekamt(g_ina.ina04,g_inb[l_ac].inb04,g_ina.ina03,g_inb[l_ac].inb08,g_inb[l_ac].inb03)
+                  returning g_inb[l_ac].weekamt,l_tc_imh04
+               if l_tc_imh04 > 0 then
+                  let g_inb[l_ac].remaind = l_tc_imh04 - g_inb[l_ac].weekamt  
+                  if g_inb[l_ac].remaind < g_inb[l_ac].inb09 then
+                     call cl_err(sfmt(cl_getmsg('cim-039',2),g_inb[l_ac].weekamt,g_inb[l_ac].remaind,g_inb[l_ac].inb09),'!',1) 
+                     --next field inb16
+                     CANCEL INSERT
+                  end if
+               end if
+            end if
+            #darcy:2025/03/24 add e---
  
             IF NOT t370_b_ins() THEN
                CANCEL INSERT
@@ -2996,7 +3024,7 @@ define l_imaud30     like ima_file.imaud30 #darcy:2024/06/04 add
                      next field inb04
                   end if
                end if
-               #darcy:2024/06/04 add e---
+               #darcy:2024/06/04 add e--- 
             END IF
 #FUN-AA0059 ---------------------end-------------------------------
            IF NOT t370_chk_inb04_1() THEN
@@ -3310,6 +3338,20 @@ define l_imaud30     like ima_file.imaud30 #darcy:2024/06/04 add
                  NEXT FIELD inb08_fac
               END IF
            END IF
+         
+         #darcy:2025/03/24 add s---
+         before field inb16 
+            # 每周领用限制
+            # [x] 输入数量前检查，因为料号不带出单位
+            if g_prog = 'aimt301' then
+               let l_tc_imh04 = 0
+               call t370_weekamt(g_ina.ina04,g_inb[l_ac].inb04,g_ina.ina03,g_inb[l_ac].inb08,g_inb[l_ac].inb03)
+                  returning g_inb[l_ac].weekamt,l_tc_imh04
+               if l_tc_imh04 > 0 then
+                  let g_inb[l_ac].remaind = l_tc_imh04 - g_inb[l_ac].weekamt
+               end if
+            end if
+         #darcy:2025/03/24 add e---
  
         AFTER FIELD inb16
             IF NOT t370_chk_inb16(p_cmd) THEN
@@ -4498,6 +4540,7 @@ END FUNCTION
  
 FUNCTION t370_wm_b()
 DEFINE l_n   LIKE type_file.num5
+define l_tc_imh04 like tc_imh_file.tc_imh04 #darcy:2025/03/24 
  
   IF cl_null(g_ina.ina01) THEN RETURN END IF
   SELECT COUNT(*) INTO l_n FROM inb_file WHERE inb01 = g_ina.ina01
@@ -4517,6 +4560,7 @@ END FUNCTION
 FUNCTION t370_b_fill(p_wc2)              #BODY FILL UP
 DEFINE p_wc2           LIKE type_file.chr1000 #No.FUN-690026 VARCHAR(400)
 DEFINE l_ima15         LIKE ima_file.ima15    #No.CHI-950013       
+define l_tc_imh04       like tc_imh_file.tc_imh04 #darcy:2025/03/24 add
    IF cl_null(p_wc2) THEN
       LET p_wc2 = " 1=1"
    END IF 
@@ -4530,7 +4574,7 @@ DEFINE l_ima15         LIKE ima_file.ima15    #No.CHI-950013
        "       inb15,' ',inb13,inb14,inb41,inb42,inb43,inb11,inb12,inb901,inb10,inb930,'', ",  #FUN-810045 add inb41-43
                                 #FUN-BC0062 add inb13,inb14
        "       inbud01,inbud02,inbud03,inbud04,inbud05,",
-       "       inbud06,inbud07,inbud08,inbud09,inbud10,",
+       "       inbud06,inbud07,inbud08,inbud09,inbud10,'','',", #darcy:2025/03/24 add '',''
        "       inbud11,inbud12,inbud13,inbud14,inbud15", 
        "       ,'',''",   #FUN-B30187 
        " FROM inb_file, OUTER ima_file ",
@@ -4593,6 +4637,18 @@ DEFINE l_ima15         LIKE ima_file.ima15    #No.CHI-950013
          LET g_inb[g_cnt].att10_c = g_inb[g_cnt].att10
       END IF
       LET g_inb[g_cnt].gem02c=s_costcenter_desc(g_inb[g_cnt].inb930) #FUN-670093
+      #darcy:2025/03/24 add s---
+      # [x] 查询显示weekamt 和remaind 数量
+      if g_prog = 'aimt301' then
+         call t370_weekamt(
+            g_ina.ina04, g_inb[g_cnt].inb04,
+            iif(g_ina.inapost=='Y',g_ina.ina02,g_ina.ina03),
+            g_inb[g_cnt].inb08,g_inb[g_cnt].inb03 ) returning g_inb[g_cnt].weekamt,l_tc_imh04
+         if l_tc_imh04 > 0 then
+            let g_inb[g_cnt].remaind = l_tc_imh04 - g_inb[g_cnt].weekamt
+         end if
+      end if
+      #darcy:2025/03/24 add e---
       LET g_cnt = g_cnt + 1
       IF g_cnt > g_max_rec THEN
          CALL cl_err( '', 9035, 0 )
@@ -5731,6 +5787,15 @@ FUNCTION t370_set_required()
       call cl_set_comp_visible("inbud13",true)
   end if
   #darcy:2024/01/05 add e---
+  #darcy:2025/05/07 add s---
+   if g_prog = 'aimt301' and (g_user = '59396' ) then
+      call cl_set_comp_visible("inbud10",true)
+      call cl_set_comp_required("inbud10",true)
+   else
+      call cl_set_comp_required("inbud10",false)
+      call cl_set_comp_visible("inbud10",false)
+   end if
+  #darcy:2025/05/07 add e---
 END FUNCTION
  
 FUNCTION t370_set_no_required()
@@ -13041,3 +13106,74 @@ function saimt370_upd_inbud02(p_ina01,p_inTran)
 end function
 #darcy:2023/07/03 add e---
 
+#darcy:2025/03/24 add s---
+# [ ] t370_weekamt 回本周已领用数量和限制值
+function t370_weekamt(p_partno,p_item,p_day,p_unit,p_inb03)
+   define p_partno like gem_file.gem01
+   define p_item   like ima_file.ima01
+   define p_day    date
+   define p_unit   like inb_file.inb08
+   define p_inb03  like inb_file.inb03
+
+   define l_weekamt,l_tc_imh04  like type_file.num15_3
+   define l_begin,l_end    date
+   define l_inb08,l_tc_imh03  like inb_file.inb08
+   define l_inb09  like inb_file.inb09
+   define l_ima25  like ima_file.ima25
+   define l_sql    string
+
+   define l_ok      varchar(1)
+   define l_flag    like ima_file.ima17_fac
+
+   # 每周限制值
+   select tc_imh03,tc_imh04 into l_tc_imh03,l_tc_imh04 from tc_imh_file,eca_file
+    where eca03 = p_partno and eca01 =  tc_imh02
+      and tc_imh01 = p_item
+   if l_tc_imh03 != p_unit then
+      call s_umfchk(p_item,l_tc_imh03,p_unit) returning l_flag,l_fac
+      if (l_flag = 1) then
+         let l_fac = 1
+      end if
+      let l_tc_imh04 = s_digqty(l_tc_imh04 * l_ac,p_unit)
+   end if
+   
+   # 获取日期所属周的周日和周六两个日期
+   let l_sql = "select min(azn01), max(azn01)  ",
+               "  from azn_file where (azn02, azn05) in",
+               " (select azn02, azn05 from azn_file where azn01 = '",p_day,"')"
+   prepare t370_azn from l_sql
+   execute t370_azn into l_begin,l_end
+
+   # 本周领用值
+   declare t370_weekamt cursor for
+   select inb08,inb09
+     from ina_file,inb_file where ina01 = inb01
+      and inaconf <> 'X' and ina00 = '1'
+      and inb04 = p_item and ina04 = p_partno
+      and (
+         (inapost ='Y' and ina02 between l_begin and l_end)
+         or (inapost !='Y' and ina03 between l_begin and l_end)
+      )
+      and inb01||inb03 != g_ina.ina01||p_inb03
+
+   let l_weekamt = 0
+   foreach t370_weekamt into l_inb08,l_inb09
+      if sqlca.sqlcode then
+         call cl_err('t370_weekamt',sqlca.sqlcode,1)
+         exit foreach
+      end if
+
+      if l_inb08!=p_unit then
+         call s_umfchk(p_item,l_inb08,p_unit) returning l_flag,l_fac
+         if l_flag = 1 then
+            let l_fac = 1
+         end if
+      else
+         let l_fac = 1
+      end if
+      let l_weekamt = s_digqty(l_weekamt + l_inb09 * l_fac , p_unit)
+   end foreach
+
+   return l_weekamt,l_tc_imh04
+end function 
+#darcy:2025/03/24 add e---
