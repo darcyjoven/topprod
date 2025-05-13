@@ -31,6 +31,7 @@ function scbmp600_imp_fromxlsx()
     define l_tok    base.stringTokenizer
     define l_bmd    record like bmd_file.*
     # darcy:2025/05/07 add e---
+    define l_sub    boolean #darcy:2025/05/12 add
 
     whenever error continue
 
@@ -188,7 +189,7 @@ function scbmp600_imp_fromxlsx()
                     end if
                     let l_bmd.bmd05 = g_today
                     let l_bmd.bmd07 = 1
-                    let l_bmd.bmd09 = g_today
+                    -- let l_bmd.bmd09 = g_today
                     let l_bmd.bmdacti = 'Y'
                     let l_bmd.bmddate = g_today
                     let l_bmd.bmdgrup = g_grup
@@ -196,6 +197,7 @@ function scbmp600_imp_fromxlsx()
                     let l_bmd.bmdmodu = g_user
                     let l_bmd.bmdoriu = g_grup
                     let l_bmd.bmd11 = 'N'
+                    let l_sub = false #darcy:2025/05/12 add
                     while l_tok.hasMoreTokens()
                         let l_bmd.bmd04 = l_tok.nextToken()
                         -- 检查是否存在料号
@@ -223,8 +225,16 @@ function scbmp600_imp_fromxlsx()
                             call s_errmsg('bmd08,bmd01,bmd04',sfmt("主件:%1 元件:%2 替代料件:%3 ",l_bmb.bmb01,l_bmb.bmb03,l_bmd.bmd04),'bmd插入失败',sqlca.sqlcode,1)
                             call scbmp600_imp_result(l_bma.bma01,j,4,sfmt('%1 bmd插入失败',l_bmd.bmd04 ),'warn')
                             let g_success = 'N'
+                        else
+                            let l_sub = true #darcy:2025/05/12 add
                         end if
                     end while
+                    # darcy:2025/05/12 add s---
+                    if l_sub then
+                        update bmb_file set bmb16 = '2'
+                         where bmb01 = l_bmb.bmb01 and bmb03 = l_bmb.bmb03
+                    end if
+                    # darcy:2025/05/12 add e---
                 end if
                 # darcy:2025/05/07 add e---
             end if
