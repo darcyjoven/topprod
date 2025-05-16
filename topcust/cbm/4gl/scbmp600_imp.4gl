@@ -213,7 +213,7 @@ function scbmp600_imp_fromxlsx()
                         end if
                         -- 检查是否已经存在替代料，存在就跳过不报错
                         select count(*) into l_cnt from bmd_file
-                         where bmd01 = l_bmd.bmd01 and l_bmd.bmd08 = l_bmd.bmd08
+                         where bmd01 = l_bmd.bmd01 and bmd08 = l_bmd.bmd08
                            and bmd04 = l_bmd.bmd04 and bmd05 <= g_today
                            and (bmd06 is null or bmd06 > g_today)
                         if l_cnt > 0 then
