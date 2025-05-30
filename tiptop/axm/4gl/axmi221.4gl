@@ -1233,7 +1233,8 @@ DEFINE   l_occ02        LIKE occ_file.occ02     #MOD-960248
     #LET g_occ.occpos  ='N'        #FUN-870100
     LET g_occ.occpos  ='1'        #FUN-B50023
     DISPLAY g_occ.occpos TO occpos #FUN-870100
-    LET g_occ.occ73 = 'N'         #FUN-990031 add
+    LET g_occ.occ73 = 'N'         #FUN-990031 add 
+    LET g_occ.occud03 = 'N'       #darcy:2025/05/26
     LET g_occ_t.*=g_occ.*
     LET g_occ01_t = NULL
     CALL cl_opmsg('a')
@@ -7831,6 +7832,7 @@ FUNCTION i221_copy()
    LET l_occ.occ172 = NULL   #MOD-A40187
    LET l_occ.occ173 = NULL   #MOD-A40187
    LET l_occ.occ174 = NULL   #MOD-A40187
+   LET l_occ.occud03 = 'N'   #darcy:2025/05/26
 #FUN-C50136---add---str---
 #  IF g_oaz.oaz96 = 'Y' THEN
 #     LET l_occ.occ61 = ''
