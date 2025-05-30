@@ -27775,7 +27775,7 @@ FUNCTION t110_firm1_chk()
    DEFINE l_sumamt             LIKE apa_file.apa34   #MOD-B60066
    DEFINE l_pmc913             LIKE pmc_file.pmc913  #MOD-D70065
    #darcy:2024/03/06 add s---
-   define l_apc14 like apc_file.apc14
+   define l_apc14 like apc_file.apc14 
    #darcy:2024/03/06 add e---
    SELECT * INTO g_apa.* FROM apa_file WHERE apa01 = g_apa.apa01   #FUN-640231
  
@@ -27825,8 +27825,8 @@ FUNCTION t110_firm1_chk()
    # darcy:2024/03/06 add s---
    # 直接冲账时候，检查预付款冲账是否有小数尾差
    # 有小数尾差时候，弹窗提醒
-   let l_acp08 = 0 
-   let l_acp14 = 0
+   let l_apc08 = 0 
+   let l_apc14 = 0
    select sum(apc08),sum(apc14) into l_apc08,l_apc14 from apc_file
     where apc01 = g_apa.apa01
    if l_apc08 - l_apc14 > 0 and l_apc08 - l_apc14 < 1 then
