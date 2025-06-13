@@ -1,9 +1,5 @@
-# Prog. Version..: '5.30.06-13.04.22(00010)'     #
-#
-# Pattern name...: cxmt520.4gl
 # Descriptions...: 產品價格維護作業
-# Date & Author..: 16/06/12 By huanglf
-# Modify.........: 160613 16/06/13 By guanyao录入退出的时候报错，审核不能录入
+`     ~"# Modify.........: 160613 16/06/13 By guanyao录入退出的时候报错，审核不能录入
 # Modify.........: 160614 16/06/14 By guanyao审核的时候生成产品价格，如果有数据，单身的数据是当天的额是则更新，如果不是则新增，没有取消审核
 # Modify.........: 160715 16/07/15 By guanyao增加税前单价
 
