@@ -1482,7 +1482,7 @@ FUNCTION p500_c_part_tmp()                      # 找出需 MRP 的料號
                           "   AND oeb70='N'",
                           "   AND oeb01=oea01 AND oeaconf='Y'",
                           "   AND oeb04=ima01 AND ima37 ='2'",  #MOD-6B0010 
-                          "   AND oea00<>'0'"   #FUN-6A0012 add
+                          "   AND oea00 = '0'"   #FUN-6A0012 add #darcy:2025/04/14 mod oea00 = 0
                 #darcy:2024/08/01 add s---
                 # MRP结案状态
                 if msr16 = 'Y' then
@@ -1519,7 +1519,7 @@ FUNCTION p500_c_part_tmp()                      # 找出需 MRP 的料號
                       "   AND oeb70='N'",
                       "   AND oeb01=oea01 AND oeaconf='Y'",
                       "   AND oeb04=ima01 AND ima37 ='2'",  #MOD-6B0010 
-                      "   AND oea00<>'0'"   #FUN-6A0012 add
+                      "   AND oea00='0'"   #FUN-6A0012 add
             #darcy:2024/08/01 add s---
             # MRP结案状态
             if msr16 = 'Y' then
@@ -1680,7 +1680,7 @@ FUNCTION p500_c_part_tmp()                      # 找出需 MRP 的料號
                           "   AND oeb70='N'",
                           "   AND oeb01=oea01 AND oeaconf='Y'",
                           "   AND oeb04=ima01 AND ima37 ='2'",
-                          "   AND oea00<>'0'"
+                          "   AND oea00='0'"
                 #darcy:2024/08/01 add s---
                 # MRP结案状态
                 if msr16 = 'Y' then
@@ -1719,7 +1719,7 @@ FUNCTION p500_c_part_tmp()                      # 找出需 MRP 的料號
                       "   AND oeb70='N'",
                       "   AND oeb01=oea01 AND oeaconf='Y'",
                       "   AND oeb04=ima01 AND ima37 ='2'",
-                      "   AND oea00<>'0'"
+                      "   AND oea00='0'"
             #darcy:2024/08/01 add s---
             # MRP结案状态
             if msr16 = 'Y' then
@@ -1812,7 +1812,7 @@ FUNCTION p500_ins_part_tmp(p_sql)
    let l_sql = " SELECT oeo04 FROM part_tmp,ima_file,oeb_file,oea_file,oeo_file,oay_file",
                " WHERE oea01=oeb01 AND oeb01=oeo01 AND oeb03=oeo03",
                "    AND oeo08='2' AND oeaconf='Y' AND oeb04 = partno",
-               "    AND oea00<>'0' ",
+               "    AND oea00='0' ",
                "    AND oeb12>oeb24 AND oeb15 <= '",edate,"' AND oeb70='N' ",
                "    AND oeo04=ima01 AND oeb01 like oayslip || '-%' ",
                "    AND (oaytype <> '33' AND oaytype <> '34')",
@@ -2157,6 +2157,7 @@ FUNCTION p500_mss041()  # 彙總 獨立需求量
    LET l_sql = l_sql CLIPPED,
                "  WHERE rpc01=partno AND rpc13>rpc131 AND rpc12 <= '",edate,    #TQC-C20273 '
                "'  AND rpc18 = 'Y' AND rpc19 <> 'Y'"                            #TQC-C20273 '
+               ,"   and ta_rpc06 = '1' "  #darcy:2025/04/17 add 
    IF NOT cl_null(g_sql1) THEN
       LET l_sql = l_sql CLIPPED, "   AND rpc02 like smyslip || '-%'",g_sql1 CLIPPED
     END IF
@@ -2250,7 +2251,7 @@ FUNCTION p500_mss042()  # 彙總 受訂量
               " WHERE oeb04=partno AND oeb12>oeb24 AND oeb70='N' ",
              #"   AND oeb72 <= '",edate,"' AND oeb01=oea01 AND oeaconf='Y'", #FUN-B20060_3 oeb15->oeb72 #MOD-BC0133
               "   AND oeb15 <= '",edate,"' AND oeb01=oea01 AND oeaconf='Y'", #MOD-BC0133
-              "   AND oea00<>'0'"   #FUN-6A0012 add
+              "   AND oea00='0'"   #FUN-6A0012 add
   IF NOT cl_null(g_sql5) THEN
     LET l_sql = l_sql CLIPPED,
               "   AND oeb01 like oayslip || '-%'",   #No.FUN-550055
@@ -2741,6 +2742,8 @@ FUNCTION p500_mss044_bom(p_sw,p_level,p_key,p_key2,p_qty)  #FUN-550110
           l_msg       LIKE type_file.chr1000, #NO.FUN-680082  VARCHAR(40)
           l_sql       LIKE type_file.chr1000  #NO.FUN-680082  VARCHAR(1000)
     DEFINE l_ima910    DYNAMIC ARRAY OF LIKE ima_file.ima910          #No.FUN-8B0035 
+
+    if p_key matches '*-*' then return end if#darcy:2025/06/17 add 半成品不要展开
  
     IF p_level > 20 THEN CALL cl_err('','mfg2733',1) 
       CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211 
@@ -2809,7 +2812,9 @@ FUNCTION p500_mss044_bom(p_sw,p_level,p_key,p_key2,p_qty)  #FUN-550110
          continue for
        end if
        # darcy:2025/01/23 add e---
-       IF sr[i].ima08='X' THEN   #CHI-D40027 remark                 
+       IF sr[i].ima08='X' 
+          and sr[i].bmb03 not matches '*-*' # darcy:2025/06/17 add 半成品不要继续展开
+       THEN   #CHI-D40027 remark                 
       #IF sr[i].ima08='X' OR (sr[i].ima08='M' AND sr[i].bmb19='3') THEN  #Mod FUN-B20060_4  #CHI-D40027 mark
            #No.FUN-A70034  --Begin
            #CALL p500_mss044_bom(p_sw,p_level,sr[i].bmb03,l_ima910[i],sr[i].bmb06)  #FUN-550110#FUN-8B0035
@@ -2921,7 +2926,7 @@ FUNCTION p500_mss046()  # 彙總 備品
              #"   AND oeb72 <= '",edate,"' AND oeb01=oea01 AND oeaconf='Y'", #FUN-B20060_3 oeb15->oeb72 #MOD-BC0133
               "   AND oeb15 <= '",edate,"' AND oeb01=oea01 AND oeaconf='Y'", #MOD-BC0133 
               "   AND oeo04=ima01",
-              "   AND oea00<>'0'"   #FUN-6A0012 add
+              "   AND oea00='0'"   #FUN-6A0012 add
   IF NOT cl_null(g_sql5) THEN
     LET l_sql = l_sql CLIPPED, "   AND oeb01 like oayslip || '-%'",  #No.FUN-550055
                                g_sql5 CLIPPED
@@ -4118,14 +4123,13 @@ REPORT p500_rep(p_mss_v,p_mss01,p_mss02,p_mss03, mss,l_chr)     #No.MOD-880201 a
         IF cl_null(l_ima910) THEN LET l_ima910=' ' END IF
         IF l_chr = 'Y' THEN  #No.MOD-880201  
            #darcy:2025/01/24 add s---
-           # 如果是光板料号，不继续展开
-           if mss.mss01 matches '*.*' or mss.mss01 matches '*-*' or mss.mss01[7,7] matches '[ABCDS]' then
+         --   if mss.mss01 matches '*.*' or mss.mss01 matches '*-*' or mss.mss01[7,7] matches '[ABCDS]' then
            #darcy:2025/01/24 add e---
            IF sss[i].mss09>0 AND (l_ima08='M' OR l_ima08='S' OR l_ima08='T') THEN
               CALL p500_mss045(sss[i].mss00,sss[i].mss01,
                                sss[i].mss11,needdate,sss[i].mss09,l_ima910,0)       #No.MOD-6A0141 modify  #No.MOD-8B0259 add 0
            END IF
-           end if #darcy:2025/01/24 add
+         --   end if #darcy:2025/01/24 add
         END IF               #No.MOD-880201    
         LET bal=sss[i].mss08+sss[i].mss09
         EXECUTE p500_p_upd_mss using sss[i].*,rrr[i].*
@@ -4382,7 +4386,7 @@ FUNCTION p500_mss045(p_mss00,p_ima01,p_opendate,p_needdate,p_qty,p_key2,p_n)    
       LET sr[i].qty = qty1
       #No.FUN-A70034  --End  
       # darcy:2025/01/23 add s---
-       if sr[i].bmb.bmb03 not matches '*.*' and sr[i].bmb.bmb03 not matches '*-*' then
+      if sr[i].bmb.bmb03 not matches '*.*' and sr[i].bmb.bmb03 not matches '*-*' then
       --  不是辅料的半成品 即光板料号，不再进行展开BOM
          continue for
        end if
@@ -5304,10 +5308,11 @@ function amrp500_pre_sfa_tmp()
    end if
 
    # 处理下版数量
-   let l_sql = " select sfb01, sfb12 + nvl(sfbud12, 0) sfb12, ",
+   let l_sql = " select sfb01, sfb12 + nvl(sfbud12, 0) + nvl(tc_sfaa02,0) sfb12, ",
                "       sfa03,sfa27,sfa08,sfa12,sfa05,sfa06,sfa161,sfa26,",
-               "             ceil(sfa161 * (sfb12 + nvl(sfbud12, 0)) *1000)/1000 sfa06_",
+               "             ceil(sfa161 * (sfb12 + nvl(sfbud12, 0) + nvl(tc_sfaa02,0) ) *1000)/1000 sfa06_",
                " from sfa_tmp, sfb_file",
+               " left join tc_sfaa_file on tc_sfaa01 = sfb01 and tc_sfaa06 = '1' ", #darcy:2025/05/19 add
                " where sfa01 = sfb01",
                "    and sfb04 <> '8'",
                "    and sfb87 = 'Y'",
@@ -5339,7 +5344,7 @@ function amrp500_pre_sfa_tmp()
    let l_sql = "select sfb01, sfb12 + nvl(sfbud12, 0) sfb12, ",
                "       sfa03,sfa27,sfa08,sfa12,sfa05,sfa06,sfa161,sfa26,",
                "             ceil(sfa161 * (sfb12 + nvl(sfbud12, 0)) *1000)/1000 sfa06_",
-               " from sfa_tmp, sfb_file",
+               " from sfa_tmp, sfb_file ",
                " where sfa01 = sfb01",
                "    and sfb04 <> '8'",
                "    and sfb87 = 'Y'",
@@ -5423,7 +5428,7 @@ FUNCTION p500_mss042_new()  # 彙總 受訂量
   ## 限定倉別 010710
   ## 限定出至境外倉訂單不納入
   # g_sql 限定倉別(imd_file), g_sql5 限定單據(oay_file)
-    let l_sql = "select oeb01,oeb03,tc_oeb031,oeb04,tc_oeb16,(tc_oeb12-tc_oeb24)*oeb05_fac,oea65 ",
+    let l_sql = "select oeb01,oeb03,tc_oeb031,oeb04,tc_oeb16,(tc_oeb12-nvl(tc_oeb24,0))*oeb05_fac,oea65 ",
                 "  from oeb_file,oea_file,tc_oeb_file,part_tmp "
     if not cl_null(g_sql5) then
         let l_sql = l_sql clipped , ",oay_file"
@@ -5432,7 +5437,7 @@ FUNCTION p500_mss042_new()  # 彙總 受訂量
               " where oeb04 = partno AND tc_oeb12 > tc_oeb24 AND tc_oeb70='N' ",
               "   and tc_oeb01 = oeb01 and tc_oeb03 = oeb03 and tc_oeb04 = oeb04 ",
               "   AND tc_oeb16 <= '",edate,"' AND oeb01 = oea01 AND oeaconf='Y'"
-            --   , "   AND oea00 = '0'"  #darcy:2025/03/17 mark 
+              , "   AND oea00 = '0'"  #darcy:2025/03/17 mark 
     if not cl_null(g_sql5) then
         let l_sql = l_sql clipped,
                     "   and oeb01 like oayslip || '-%'",
