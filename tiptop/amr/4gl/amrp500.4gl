@@ -1393,7 +1393,7 @@ FUNCTION p500_c_part_tmp()                      # 找出需 MRP 的料號
                     LET g_c_sql = g_c_sql CLIPPED,')'
                 END IF
                 LET g_c_sql = g_c_sql CLIPPED,
-                          "   AND sfb04 < '8' AND sfb87 <> 'X'",
+                          "   AND sfb04 < '8' AND (sfb87 <> 'X'  or sfb01 like  'MTT%' )",
                           "   AND sfb05=ima01 AND ima37 ='2'",  #MOD-6B0010 
                           "   AND sfb02!='15'"   #FUN-660110 add
                 PREPARE p500_sw_p3 FROM g_c_sql
@@ -1412,7 +1412,7 @@ FUNCTION p500_c_part_tmp()                      # 找出需 MRP 的料號
                         LET g_c_sql = g_c_sql CLIPPED,')'
                     END IF
                     LET g_c_sql = g_c_sql CLIPPED,
-                                "   AND sfa05 IS NOT NULL AND sfb87 <> 'X'",
+                                "   AND sfa05 IS NOT NULL AND (sfb87 <> 'X'  or sfb01 like  'MTT%' )",
                                 "   AND sfa01=sfb01 AND sfa05>sfa06 AND sfb04 <'8'",
                                 "   AND sfa03=ima01 AND ima37 ='2'",  #MOD-6B0010 
                                 "   AND sfb02!='15'"   #FUN-660110 add
@@ -1442,7 +1442,7 @@ FUNCTION p500_c_part_tmp()                      # 找出需 MRP 的料號
                 LET l_sql = l_sql CLIPPED,')'
             END IF
             LET l_sql = l_sql CLIPPED,
-                      "   AND sfb04 < '8' AND sfb87 <> 'X'",
+                      "   AND sfb04 < '8' AND (sfb87 <> 'X'  or sfb01 like  'MTT%' )",
                       "   AND sfb05=ima01 AND ima37 ='2'",  #MOD-6B0010 
                       "   AND sfb02!='15'"   #FUN-660110 add
            #CALL p500_ins_part_tmp(l_sql)                                                         #MOD-C80133 mark  
@@ -1459,7 +1459,7 @@ FUNCTION p500_c_part_tmp()                      # 找出需 MRP 的料號
                    LET l_sql = l_sql CLIPPED,')'
                END IF
                LET l_sql = l_sql CLIPPED,
-                         "   AND sfa05 IS NOT NULL AND sfb87 <> 'X'",
+                         "   AND sfa05 IS NOT NULL AND (sfb87 <> 'X'  or sfb01 like  'MTT%' )",
                          "   AND sfa01=sfb01 AND sfa05>sfa06 AND sfb04 < '8'",
                          "   AND sfa03=ima01 AND ima37 ='2'",  #MOD-6B0010 
                          "   AND sfb02!='15'"   #FUN-660110 add
@@ -1583,7 +1583,7 @@ FUNCTION p500_c_part_tmp()                      # 找出需 MRP 的料號
                     LET g_c_sql = g_c_sql CLIPPED,')'
                 END IF
                 LET g_c_sql = g_c_sql CLIPPED,
-                          "   AND sfb04 < '8' AND sfb87 <> 'X'",
+                          "   AND sfb04 < '8' AND (sfb87 <> 'X'  or sfb01 like  'MTT%' )",
                           "   AND sfb05=ima01 AND ima37 = '2'",   #MOD-6B0010
                           "   AND sfb02!='15'"   #FUN-660110 add
                 PREPARE p500_sw_p7 FROM g_c_sql
@@ -1604,7 +1604,7 @@ FUNCTION p500_c_part_tmp()                      # 找出需 MRP 的料號
                         LET g_c_sql = g_c_sql CLIPPED,')'
                     END IF
                     LET g_c_sql = g_c_sql CLIPPED,
-                              "   AND sfa05 IS NOT NULL AND sfb87 <> 'X'",
+                              "   AND sfa05 IS NOT NULL AND (sfb87 <> 'X'  or sfb01 like  'MTT%' )",
                               "   AND sfa01=sfb01 AND sfa05>sfa06 AND sfb04 < '8'",
                               "   AND sfa03=ima01 AND ima37 = '2'",  #MOD-6B0010 mark
                               "   AND sfb02!='15'"   #FUN-660110 add
@@ -1635,7 +1635,7 @@ FUNCTION p500_c_part_tmp()                      # 找出需 MRP 的料號
                 LET l_sql = l_sql CLIPPED,')'
             END IF
             LET l_sql = l_sql CLIPPED,
-                      "   AND sfb04 < '8' AND sfb87 <> 'X'",
+                      "   AND sfb04 < '8' AND (sfb87 <> 'X'  or sfb01 like  'MTT%' )",
                       "   AND sfb05=ima01 AND ima37 = '2'",   #MOD-6B0010 
                       "   AND sfb02!='15'"   #FUN-660110 add
            #CALL p500_ins_part_tmp(l_sql)                         #MOD-C80133 mark 
@@ -1654,7 +1654,7 @@ FUNCTION p500_c_part_tmp()                      # 找出需 MRP 的料號
                    LET l_sql = l_sql CLIPPED,')'
                END IF
                LET l_sql = l_sql CLIPPED,
-                         "   AND sfa05 IS NOT NULL AND sfb87 <> 'X'",
+                         "   AND sfa05 IS NOT NULL AND (sfb87 <> 'X'  or sfb01 like  'MTT%' )",
                          "   AND sfa01=sfb01 AND sfa05>sfa06 AND sfb04 < '8'",
                          "   AND sfa03=ima01 AND ima37 = '2'",  #MOD-6B0010 
                          "   AND sfb02!='15'"   #FUN-660110 add
@@ -2022,7 +2022,7 @@ DEFINE l_sfa03     LIKE sfa_file.sfa03
                " WHERE sfb01=sfa01 ",
                "   AND sfb04 < '8'",
                "   AND sfb13<='",edate,"'",
-               "   AND sfb23='Y' AND sfb87 <> 'X'",  #已備料工單 (取備料檔)
+               "   AND sfb23='Y' AND (sfb87 <> 'X'  or sfb01 like  'MTT%' )",  #已備料工單 (取備料檔)
                "   AND sfb02!='15'",
                "   AND sfb05='", p_key,"' "
 
@@ -2510,12 +2510,12 @@ FUNCTION p500_mss043()  # 彙總 計劃量 (MPS計劃 下階料)
  
      SELECT SUM(sfb08) INTO l_sfb08 FROM sfb_file
       WHERE sfb22=msb.msb01 AND sfb221=msb.msb02
-        AND sfb04 != '8' AND sfb87!='X'  #未結案者, 以開工量為準
+        AND sfb04 != '8' AND (sfb87 <> 'X'  or sfb01 like  'MTT%' )  #未結案者, 以開工量為準
         AND sfb02 != '15'   #FUN-660110 add
      IF l_sfb08 IS NULL THEN LET l_sfb08=0 END IF
      SELECT SUM(sfb09) INTO l_sfb09 FROM sfb_file
       WHERE sfb22=msb.msb01 AND sfb221=msb.msb02
-        AND sfb04  = '8' AND sfb87!='X'   #已結案者, 以完工量為準
+        AND sfb04  = '8' AND (sfb87 <> 'X'  or sfb01 like  'MTT%' )   #已結案者, 以完工量為準
         AND sfb02 != '15'   #FUN-660110 add
      IF l_sfb09 IS NULL THEN LET l_sfb09=0 END IF
      LET g_qty = l_sfb08 + l_sfb09
@@ -2626,7 +2626,7 @@ FUNCTION p500_mss044()  # 彙總 備料量
                  " WHERE sfb01=sfa01 AND sfa03=partno ",
                  "   AND sfb04 < '8'",
                  "   AND sfb13<='",edate,"' AND sfa05>sfa06+sfa065-sfa063 ",  #No:8021
-                 "   AND sfb23='Y' AND sfb87 <> 'X'",  #已備料工單 (取備料檔)
+                 "   AND sfb23='Y' AND (sfb87 <> 'X'  or sfb01 like  'MTT%' )",  #已備料工單 (取備料檔)
                  "   AND sfb02!='15'"   #FUN-660110 add
      IF NOT cl_null(g_sql1) THEN
 #       LET l_sql = l_sql CLIPPED, "   AND sfb01[1,3]=smyslip",
@@ -2648,6 +2648,14 @@ FUNCTION p500_mss044()  # 彙總 備料量
      FOREACH p500_sfa_c1 INTO g_sfa01,mss.mss01,mss.mss02,g_sfb13,mss.mss044,l_sfa12,   #CHI-970070
                               g_sfb05,l_sfa29,l_sfa28,bmb.bmb18                   #No.MOD-580099 add sfa28   #MOD-970079 bmb.bmb18
        IF STATUS THEN CALL err('p500_sfa_c1',STATUS,1) RETURN END IF
+
+       #darcy:2025/06/20 add s---
+       # 光板只计算订单量，不计算工单备料
+       if mss.mss01 not matches '*-*' and mss.mss01 not matches '*.*'
+         and mss.mss01[7,7] not matches '[ABC]' then
+         continue foreach
+       end if
+       #darcy:2025/06/20 add e---
        LET l_ima25 = ''
        SELECT ima25 INTO l_ima25 FROM ima_file WHERE ima01=mss.mss01
        CALL s_umfchk(mss.mss01,l_sfa12,l_ima25) RETURNING l_cnt, l_factor
@@ -2679,7 +2687,7 @@ FUNCTION p500_mss044()  # 彙總 備料量
      END IF
      LET l_sql = l_sql CLIPPED,
                  " WHERE sfb04 < '8' AND sfb13<='",edate,"' AND sfb23='N'",   #MOD-970079
-                 "   AND sfb87 <> 'X'",
+                 "   AND (sfb87 <> 'X'  or sfb01 like  'MTT%' )",
                  "   AND sfb02!='15'"   #FUN-660110 add
      IF NOT cl_null(g_sql1) THEN
        LET l_sql = l_sql CLIPPED, "AND sfb01 like smyslip || '-%'",  #No.FUN-550055
@@ -2808,35 +2816,58 @@ FUNCTION p500_mss044_bom(p_sw,p_level,p_key,p_key2,p_qty)  #FUN-550110
        #No.FUN-A70034 --End  
        # darcy:2025/01/23 add s---
        if sr[i].bmb03 not matches '*.*' and sr[i].bmb03 not matches '*-*' then
-      --  不是辅料的半成品 即光板料号，不再进行展开BOM
+       --  不是辅料的半成品 即光板料号，不再进行展开BOM
+         if p_sw='43' then
+            -- 如果是计划备料，要算总计划产生，和计划备料重建
+
+         end if
          continue for
        end if
        # darcy:2025/01/23 add e---
-       IF sr[i].ima08='X' 
-          and sr[i].bmb03 not matches '*-*' # darcy:2025/06/17 add 半成品不要继续展开
-       THEN   #CHI-D40027 remark                 
-      #IF sr[i].ima08='X' OR (sr[i].ima08='M' AND sr[i].bmb19='3') THEN  #Mod FUN-B20060_4  #CHI-D40027 mark
-           #No.FUN-A70034  --Begin
-           #CALL p500_mss044_bom(p_sw,p_level,sr[i].bmb03,l_ima910[i],sr[i].bmb06)  #FUN-550110#FUN-8B0035
-           CALL p500_mss044_bom(p_sw,p_level,sr[i].bmb03,l_ima910[i],sr[i].bmb06)
-           #No.FUN-A70034  --End  
-       ELSE
-           SELECT partno FROM part_tmp WHERE partno=sr[i].bmb03
-           IF STATUS THEN CONTINUE FOR END IF
-           LET mss.mss01=sr[i].bmb03
-           LET mss.mss02=sr[i].bml04
-           LET bmb.bmb18=sr[i].bmb18
-           IF cl_null(sr[i].bmb10_fac) THEN  LET sr[i].bmb10_fac=1 END IF
-           IF p_sw='43' THEN
+
+       # darcy:2025/06/20 mark s---
+       # 任何情况下都不展开，半成品和光板都不展开
+       --  IF sr[i].ima08='X' 
+       --     and sr[i].bmb03 not matches '*-*' # darcy:2025/06/17 add 半成品不要继续展开
+       --  THEN   #CHI-D40027 remark                 
+       -- #IF sr[i].ima08='X' OR (sr[i].ima08='M' AND sr[i].bmb19='3') THEN  #Mod FUN-B20060_4  #CHI-D40027 mark
+       --      #No.FUN-A70034  --Begin
+       --      #CALL p500_mss044_bom(p_sw,p_level,sr[i].bmb03,l_ima910[i],sr[i].bmb06)  #FUN-550110#FUN-8B0035
+       --      CALL p500_mss044_bom(p_sw,p_level,sr[i].bmb03,l_ima910[i],sr[i].bmb06)
+       --      #No.FUN-A70034  --End  
+       --  ELSE
+       # darcy:2025/06/20 mark s---
+      SELECT partno FROM part_tmp WHERE partno=sr[i].bmb03
+      IF STATUS THEN CONTINUE FOR END IF
+      LET mss.mss01=sr[i].bmb03
+      LET mss.mss02=sr[i].bml04
+      LET bmb.bmb18=sr[i].bmb18
+      IF cl_null(sr[i].bmb10_fac) THEN  LET sr[i].bmb10_fac=1 END IF
+      IF p_sw='43' THEN
+         #darcy:2025/06/20 add s---
+         # 光板要算作计划产量来扣减光板的受定量
+         if sr[i].bmb03 not matches '*.*' and sr[i].bmb03 not matches '*-*' then
+            -- TODO
+            LET mss.mss065=sr[i].bmb06 * sr[i].bmb10_fac
+            CALL p500_mss065_ins(p_key) 
+            continue for
+         end if
+         #darcy:2025/06/20 add e---
 ## No:2423  modify 1998/09/04 -(統一單位為庫存單位)-------
-              LET mss.mss043=sr[i].bmb06 * sr[i].bmb10_fac
-              CALL p500_mss043_ins(p_key)   #No.MOD-880201 add p_key  
-           ELSE
+         LET mss.mss043=sr[i].bmb06 * sr[i].bmb10_fac
+         CALL p500_mss043_ins(p_key)   #No.MOD-880201 add p_key  
+      ELSE
 ## No:2423  modify 1998/09/04 -(統一單位為庫存單位)-------
-              LET mss.mss044=sr[i].bmb06 * sr[i].bmb10_fac
-              CALL p500_mss044_ins(p_key)   #No.MOD-880201 add p_key
-           END IF
-       END IF
+         #darcy:2025/06/20 add s---
+         # 光板不计算计划备料，由订单需求计算
+         if sr[i].bmb03 not matches '*.*' and sr[i].bmb03 not matches '*-*' then
+            continue for
+         end if
+         #darcy:2025/06/20 add e---
+         LET mss.mss044=sr[i].bmb06 * sr[i].bmb10_fac
+         CALL p500_mss044_ins(p_key)   #No.MOD-880201 add p_key
+      END IF
+      --  END IF # darcy:2025/06/20 mark
     END FOR
 END FUNCTION
  
@@ -3636,8 +3667,8 @@ FUNCTION p500_mss064()  # 彙總 在製量
 #TQC-9A0127-Add-End
   LET l_sql = l_sql CLIPPED,
               " WHERE sfb05=partno AND sfb08>sfb09 AND sfb04 < '8'",
-#             "   AND sfb15<='",edate,"' AND ima_file.ima01=sfb_file.sfb05 AND sfb87 <> 'X'",             #TQC-9A0127 Mark
-              "   AND sfb15<='",edate,"' AND sfb87 <> 'X'",                                               #TQC-9A0127 Add
+#             "   AND sfb15<='",edate,"' AND ima_file.ima01=sfb_file.sfb05 AND (sfb87 <> 'X'  or sfb01 like  'MTT%' )",             #TQC-9A0127 Mark
+              "   AND sfb15<='",edate,"' AND (sfb87 <> 'X'  or sfb01 like  'MTT%' )",                                               #TQC-9A0127 Add
              #"   AND sfb02!='15'"   #FUN-660110 add  #MOD-D80141 mark
               "   AND sfb02 NOT IN('11','15')"  #MOD-D80141 add  
   IF NOT cl_null(g_sql1) THEN
@@ -3750,13 +3781,13 @@ FUNCTION p500_mss065()  # 彙總 計劃產出量
  
      SELECT SUM(sfb08) INTO l_sfb08 FROM sfb_file
       WHERE sfb22=msb.msb01 AND sfb221=msb.msb02
-        AND sfb04 != '8' AND sfb87!='X'  #未結案者, 以開工量為準
+        AND sfb04 != '8' AND (sfb87 <> 'X'  or sfb01 like  'MTT%' )  #未結案者, 以開工量為準
         AND sfb02 NOT IN ('11','15')     #MOD-CA0138 add 11   
      IF l_sfb08 IS NULL THEN LET l_sfb08=0 END IF
  
      SELECT SUM(sfb09) INTO l_sfb09 FROM sfb_file
       WHERE sfb22=msb.msb01 AND sfb221=msb.msb02
-        AND sfb04  = '8' AND sfb87!='X'   #已結案者, 以完工量為準
+        AND sfb04  = '8' AND (sfb87 <> 'X'  or sfb01 like  'MTT%' )   #已結案者, 以完工量為準
         AND sfb02 NOT IN ('11','15')      #MOD-CA0138 add 11   
      IF l_sfb09 IS NULL THEN LET l_sfb09=0 END IF
  
@@ -3819,6 +3850,60 @@ FUNCTION p500_mss065()  # 彙總 計劃產出量
         EXIT PROGRAM END IF
   END FOREACH
   IF STATUS THEN CALL cl_err('msb_c4:',STATUS,1) RETURN END IF
+END FUNCTION
+
+FUNCTION p500_mss065_ins(p_bmb01)   #No.MOD-880201 add p_bmb01
+   DEFINE   p_bmb01      LIKE bmb_file.bmb01  #No.MOD-880201
+       IF cl_null(mss.mss02) THEN LET mss.mss02='-' END IF
+       IF qvl_flag <> 'Y' THEN LET mss.mss02 = '-' END IF
+       LET mss.mss03=past_date
+       IF bmb.bmb18 IS NULL THEN LET bmb.bmb18 = 0 END IF
+      #LET needdate=g_sfb13 + bmb.bmb18           #MOD-A40010 mark 
+       LET needdate=s_aday(g_sfb13,1,bmb.bmb18)   #MOD-A40010
+       IF needdate >= list_date THEN  #FUN-B20060_5 bdate->list_date
+          SELECT plan_date INTO mss.mss03 FROM buk_tmp WHERE real_date=needdate
+          IF STATUS THEN RETURN END IF
+       END IF
+       LET mss.mssplant=g_plant   #FUN-980004 add
+       LET mss.msslegal=g_legal   #FUN-980004 add
+
+#TQC-C20053 --begin--
+    IF cl_null(mss.mss13) THEN
+      LET mss.mss13 = 'N'
+    END IF
+#TQC-C20053 --begin--
+
+       INSERT INTO mss_file VALUES(mss.*)
+       IF SQLCA.SQLCODE AND ( NOT cl_sql_dup_value(SQLCA.SQLCODE) ) THEN 
+           CALL cl_err('ins mss:',SQLCA.SQLCODE,1) 
+       END IF
+       IF cl_sql_dup_value(SQLCA.SQLCODE) THEN  #TQC-790091 mod
+
+        EXECUTE p500_p_upd_mss065 using mss.mss065,mss.mss_v,mss.mss01,
+                                                mss.mss02,mss.mss03
+        IF STATUS THEN CALL cl_err('upd mss:',STATUS,1) END IF
+       END IF
+       LET mst.mst_v=mss.mss_v  # 版本
+       LET mst.mst01=mss.mss01  # 料號
+       LET mst.mst02=mss.mss02  # 廠商
+       LET mst.mst03=mss.mss03  # 日期
+       LET mst.mst04=needdate   # 日期
+       LET mst.mst05='65'       # 供需類別
+       LET mst.mst06=g_sfa01    # 單號
+       LET mst.mst061=NULL      # 項次
+       LET mst.mst06_fz=NULL    # 凍結否
+       LET mst.mst07=p_bmb01    # 追索料號(上階半/成品)   #No.MOD-880201 
+       LET mst.mst08=mss.mss044 # 數量
+       LET mst.mstplant=g_plant   #FUN-980004 add
+       LET mst.mstlegal=g_legal   #FUN-980004 add
+     IF cl_null(mst.mst07) THEN
+        LET mst.mst07=' '
+     END IF
+     IF cl_null(mst.mst09) THEN LET mst.mst09=' ' END IF  #TQC-C20222
+     PUT p500_c_ins_mst FROM mst.*
+     IF STATUS THEN CALL err('ins mst',STATUS,1) 
+        CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211
+        EXIT PROGRAM END IF
 END FUNCTION
  
 FUNCTION p500_plan()    # M.R.P. (M.R.P. By Lot)
