@@ -34,7 +34,7 @@ function sanmt200_undo_chk(p_nmh01,p_no)
             # 这是anmt250单据异动
             select npn02,npn03 into l_npn02,l_npn03 from npn_file
              where npn01 = p_no
-            if l_npn03 matches '[58]' then
+            if l_npn03 matches '[458]' then
                 # 要还原的是转付
                 # 1.检查单据后面序号是否还有转付记录
                 select max(nmi03) into l_nmi03 from nmi_file 
@@ -47,7 +47,7 @@ function sanmt200_undo_chk(p_nmh01,p_no)
 
                 declare sanmt200_nmi_5 cursor for
                     select nmi02,nmi10 from nmi_file
-                     where nmi01 = p_nmh01 and nmi06 in ('5','8')
+                     where nmi01 = p_nmh01 and nmi06 in ('4','5','8')
                        and to_number(nmi03) > l_nmi03
                 foreach sanmt200_nmi_5 into l_nmi.*
                     if sqlca.sqlcode then

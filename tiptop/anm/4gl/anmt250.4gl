@@ -1033,13 +1033,23 @@ FUNCTION t250_g_b1()                       #由應付票據產生單身
 
    #FUN-C80083--ADD---STR
    IF g_npn.npn03 ='4' THEN
-      LET g_sql=g_sql CLIPPED," AND nmh24 = 2 "
+      #darcy:2025/06/27 mod s---
+      -- LET g_sql=g_sql CLIPPED," AND nmh24 = 2 "
+      -- 托收 票贴 转服 兑现后 都可以做 票贴
+      let g_sql = g_sql clipped ," and nmh24 in ('2','4','5','8') ",
+                  " and nmh02 > nvl((select sum(npo04) from npo_file,npn_file where npo01 = npn01 and npnconf <> 'X' and npo03 = nmh01),0)"
+      #darcy:2025/06/27 mod e---
    END IF
    #FUN-C80083--ADD---END
   #-----------------MOD-C90252---------------(S)
    IF g_npn.npn03 ='5' THEN
-      LET g_sql = g_sql CLIPPED," AND nmh24 = 1 AND nmh05 >= '",g_npn.npn02,"'"
-      let g_sql = g_sql , " or ( nmh24 = '5' and nmh02 > (select sum(npo04) from npo_file,npn_file where npo01 = npn01 and npnconf <> 'X' and npo03 = nmh01) ) "#darcy:2024/09/04 add
+      # darcy:2025/06/27 mod s---
+      -- 票贴 转付 兑现  后 都可以转付
+      -- LET g_sql = g_sql CLIPPED," AND nmh24 = 1 AND nmh05 >= '",g_npn.npn02,"'"
+      -- let g_sql = g_sql , " or ( nmh24 = '5' and nmh02 > (select sum(npo04) from npo_file,npn_file where npo01 = npn01 and npnconf <> 'X' and npo03 = nmh01) ) "#darcy:2024/09/04 add
+      let g_sql = g_sql clipped," and ( (nmh24 = 1 and nmh05 >= '",g_npn.npn02,"' ) ",
+                  "or ( nmh24 in ('4','5','6') and nmh02 > nvl((select sum(npo04) from npo_file,npn_file where npo01 = npn01 and npnconf <> 'X' and npo03 = nmh01),0) )  )"
+      # darcy:2025/06/27 mod e---
    END IF
   #-----------------MOD-C90252---------------(E)
 
@@ -1048,7 +1058,9 @@ FUNCTION t250_g_b1()                       #由應付票據產生單身
    END IF
    IF g_npn.npn03 MATCHES '[8]' THEN
      #LET g_sql=g_sql CLIPPED," AND nmh24 IN ('2','3') "            #MOD-B80268 mark
-      LET g_sql=g_sql CLIPPED," AND nmh24 IN ('2','3') AND nmh05 <= '",g_npn.npn02,"'" #MOD-B80268 
+      LET g_sql=g_sql CLIPPED," AND nmh24 IN ('2','3','4','5') AND nmh05 <= '",g_npn.npn02,"'" #MOD-B80268  
+                ," and nmh02 > nvl((select sum(npo04) from npo_file,npn_file where npo01 = npn01 and npnconf <> 'X' and npo03 = nmh01),0) "# darcy:2025/06/27 add
+      # darcy:2025/06/27 mod add 4,5 票贴 和 转付 后也可以兑现
    END IF
    IF g_npn.npn03 MATCHES '[7]' THEN
      #LET g_sql=g_sql CLIPPED," AND nmh24 IN ('3','4','8') "        #MOD-AB0172 mark
@@ -1081,10 +1093,10 @@ FUNCTION t250_g_b1()                       #由應付票據產生單身
       LET b_npo.npo03=g_nmh.nmh01
       #darcy:2024/09/04 add s---
       # 票据金额去掉已转付金额
-      if g_npn.npn03 MATCHES '[45]' then 
+      if g_npn.npn03 MATCHES '[458]' then  #darcy:2025/06/27 增加兑现
          select sum(npo04),sum(npo05) into l_npo04,l_npo05
            from npo_file,npn_file where npn01 = npo01
-            and npnconf <> 'X' and npn03 = '5' and npo03 = g_nmh.nmh01 
+            and npnconf <> 'X' and npn03 in ('4','5','8') and npo03 = g_nmh.nmh01 #darcy:2025/06/27 add 4,8
          if cl_null(l_npo04) then let l_npo04 = 0 end if
          if cl_null(l_npo05) then let l_npo05 = 0 end if
          let g_nmh.nmh02 = g_nmh.nmh02 - l_npo04
@@ -1764,7 +1776,7 @@ DEFINE
 			IF g_npn.npn03='4' THEN
 				SELECT nmh24 INTO l_nmh24 FROM nmh_file
 				WHERE nmh01=g_npo[l_ac].npo03
-				IF g_aza.aza26 = '2' THEN
+				IF g_aza.aza26 not matches  '[2458]' THEN #darcy:2025/06/27 add 458
 				IF l_nmh24 <> 2 THEN
 					CALL cl_err('','anm-347',0)
 					NEXT FIELD npo03
@@ -2010,7 +2022,8 @@ DEFINE
                                              # " AND nmh05 >='",g_npn.npn02,"'"             #TQC-C50107 add #MOD-C80059 mark
                        #FUN-C80083---ADD---STR
                        IF g_npn.npn03 = '4' AND g_aza.aza26 = '2' THEN
-                          LET g_qryparam.where = " nmh24 = 2 AND nmh03 ='",g_npn.npn04,"'"
+                          LET g_qryparam.where = " nmh24  in('2','4','5','8') AND nmh03 ='",g_npn.npn04,"'" #darcy:2025/06/27 add 4,5,8
+                                                 ," and nmh02 > nvl((select sum(npo04) from npo_file,npn_file where npn01 = npo01 and npnconf !='X' and npo03 = nmh01 ),0)" #darcy:2025/06/27 add
                        END IF
                        #FUN-C80083--ADD--END
                        CALL cl_create_qry() RETURNING g_npo[l_ac].npo03
@@ -2030,7 +2043,8 @@ DEFINE
                        LET g_qryparam.default1 = g_npo[l_ac].npo03
                       #LET g_qryparam.where = " nmh24 MATCHES '[23]' AND nmh03 ='",g_npn.npn04,"'"      #MOD-640036 #MOD-C10010 mark
                       #LET g_qryparam.where = " nmh24 IN '[23]' AND nmh03 ='",g_npn.npn04,"'"           #MOD-C10010 add #MOD-CB0070 mark
-                      LET g_qryparam.where = " nmh24 IN ('2','3') AND nmh03 ='",g_npn.npn04,"'"  #MOD-CB0070
+                      LET g_qryparam.where = " nmh24 IN ('2','3','4','5','8') AND nmh03 ='",g_npn.npn04,"'"  #MOD-CB0070 # darcy:2025/06/27 add
+                                             ," and nmh02 > nvl((select sum(npo04) from npo_file,npn_file where npn01 = npo01 and npnconf !='X' and npo03 = nmh01 ),0)" #darcy:2025/06/27 add
                                              #"  AND nmh05 >='",g_npn.npn02,"'"                         #TQC-C50107 add #MOD-C80059 mark
                        CALL cl_create_qry() RETURNING g_npo[l_ac].npo03
                      #FUN-C70129-add--str
@@ -2058,7 +2072,7 @@ DEFINE
                        CALL cl_init_qry_var()
                        LET g_qryparam.form = "q_nmh"
                        LET g_qryparam.default1 = g_npo[l_ac].npo03
-                       LET g_qryparam.where = " nmh24 in ('1','5') and nmh42 < nmh32  AND nmh03 ='",g_npn.npn04,"'", #darcy:2024/08/23 add 
+                       LET g_qryparam.where = " nmh24 in ('1','4','5','8') and nmh42 < nmh32  AND nmh03 ='",g_npn.npn04,"'", #darcy:2024/08/23 add #darcy:2025/06/27 add 4,8
                                               " AND nmh05 >='",g_npn.npn02,"'",
                                               " and nmh02 > nvl((select sum(npo04) from npo_file,npn_file where npn01 = npo01 and npnconf !='X' and npo03 = nmh01 ),0)" #darcy:2024/08/27 add
                        CALL cl_create_qry() RETURNING g_npo[l_ac].npo03
@@ -2216,7 +2230,7 @@ FUNCTION t250_nmh(p_nmh01)
          LET g_errno = 'anm-142'
 
        #FUN-C80083--ADD--STR
-       WHEN g_npn.npn03 matches '[4]' AND  l_nmh24 <> 2 AND g_aza.aza26='2' 
+       WHEN g_npn.npn03 matches '[4]' AND  l_nmh24 not matches '[2458]' AND g_aza.aza26='2' #darcy:2025/06/27 mod matched 2458
          LET g_errno = 'anm-183'
        #FUN-C80083--ADD--END
 
@@ -2228,7 +2242,7 @@ FUNCTION t250_nmh(p_nmh01)
        #TQC-B70197  restore  --end
        WHEN g_npn.npn03 matches '[6]' AND l_nmh24 NOT MATCHES '[1234]'    #MOD-580071
          LET g_errno = 'anm-143'
-      WHEN g_npn.npn03 matches '[8]' AND l_nmh24 NOT MATCHES '[2348]' #darcy:2025/05/08 mod add 4
+      WHEN g_npn.npn03 matches '[8]' AND l_nmh24 NOT MATCHES '[23458]' #darcy:2025/05/08 mod add 4,5
          LET g_errno = 'anm-145'
      #WHEN g_npn.npn03 matches '[7]' AND l_nmh24 NOT MATCHES '[348]'   #MOD-AB0172 mark
       WHEN g_npn.npn03 matches '[7]' AND l_nmh24 NOT MATCHES '[2348]'  #MOD-AB0172
@@ -2246,7 +2260,7 @@ FUNCTION t250_nmh(p_nmh01)
          LET g_errno = 'anm-319'
       #FUN-C70129--add--end
 	  #darcy:2024/08/22 add s---
-	  when g_npn.npn03 == '5' or g_npn.npn03 == '4' or g_npn.npn03 == '8' #darcy:2025/05/08 add 8
+	  when g_npn.npn03 matches '[458]' #darcy:2025/05/08 add 8 #darcy:2025/06/27 简化语句
 	  	# 1.转付的时候，要计算转付后的金额
 		# 暂时不考虑外币情况
 		# 2.票贴和转付逻辑一致,因为票贴可能是转付后才票贴
@@ -3342,24 +3356,24 @@ DEFINE l_nma21    LIKE nma_file.nma21
       IF g_npn.npn03 MATCHES '[235]' THEN         #NO.FUN-B40003 Delete 2 #TQC-B70197 add 2 #FUN-C80083 del--4
          IF g_nmh.nmh24 <> '1' THEN
 		 	#darcy:2024/08/22 mod s---
-			if g_npn.npn03 != '5' then  
-				CALL s_errmsg('npo03',m_npo.npo03,m_npo.npo03,'anm-228',1)
-				LET g_success='N'
-				CONTINUE FOREACH 
-			else
-				if g_nmh.nmh24 not matches '[15]' then
-					CALL s_errmsg('npo03',m_npo.npo03,m_npo.npo03,'anm-228',1)
-					LET g_success='N'
-					CONTINUE FOREACH 
-				end if
-			end if
-		 	#darcy:2024/08/22 mod e---
+            if g_npn.npn03 != '5' then  
+               CALL s_errmsg('npo03',m_npo.npo03,m_npo.npo03,'anm-228',1)
+               LET g_success='N'
+               CONTINUE FOREACH 
+            else
+               if g_nmh.nmh24 not matches '[1458]' then #darcy add 4 , 8
+                  CALL s_errmsg('npo03',m_npo.npo03,m_npo.npo03,'anm-228',1)
+                  LET g_success='N'
+                  CONTINUE FOREACH 
+               end if
+            end if
+            #darcy:2024/08/22 mod e---
          END IF
       END IF
 
       #FUN-C80083--ADD---STR
       IF g_npn.npn03 MATCHES '[4]' THEN
-         IF g_nmh.nmh24 NOT MATCHES '[2]' THEN
+         IF g_nmh.nmh24 NOT MATCHES '[2458]' THEN #darcy:2025/06/27 add 3,5,8
             CALL s_errmsg('npo03',m_npo.npo03,m_npo.npo03,'anm-228',1)
             LET g_success='N'
             CONTINUE FOREACH
@@ -3375,7 +3389,7 @@ DEFINE l_nma21    LIKE nma_file.nma21
          END IF
       END IF
       IF g_npn.npn03 MATCHES '[8]' THEN
-         IF g_nmh.nmh24 NOT MATCHES '[2348]' THEN #darcy:2025/05/08 add 4
+         IF g_nmh.nmh24 NOT MATCHES '[23458]' THEN #darcy:2025/05/08 add 4  darcy:2025/06/27 add 5
             CALL s_errmsg('npo03',m_npo.npo03,m_npo.npo03,'anm-228',1)
             LET g_success='N'
             CONTINUE FOREACH 
@@ -3592,7 +3606,7 @@ FUNCTION t250_z1()
    #darcy:2024/08/27 add s---
    define l_aph05f   like aph_file.aph05f
    define l_npo04    like npo_file.npo04
-   #darcy:2024/08/27 add e---
+   #darcy:2024/08/27 add e--- 
  
    DECLARE t250_dcs2 CURSOR  WITH HOLD FOR
         SELECT npo_file.*, nmh24
@@ -4123,7 +4137,7 @@ FUNCTION t250_upd_nmh(p_sw)
                WHERE nmh01=m_npo.npo03
         #FUN-C80083--ADD--STR
          WHEN g_npn.npn03 MATCHES '[4]' AND g_aza.aza26='2'
-               UPDATE nmh_file SET nmh24='2',nmh19='2'
+               UPDATE nmh_file SET nmh24=m_npo.npo07,nmh19='2' # darcy:2025/06/27 mod '2'=> m_npo.npo07
                WHERE nmh01=m_npo.npo03
          #FUN-C80083--ADD--EnD
     
@@ -5644,7 +5658,7 @@ END FUNCTION
 #darcy:2024/08/22 add s---
 function anmt250_set_entry_b(p_cmd)
 	define p_cmd      like type_file.chr1
-	if g_npn.npn03 matches '[58]' then
+	if g_npn.npn03 matches '[458]' then #darcy:2025/06/27 add 4
 		# 转付的时候，允许修改原币和本币
 		call cl_set_comp_entry("npo04",true)
 		call cl_set_comp_required("npo04",true)
@@ -5652,7 +5666,7 @@ function anmt250_set_entry_b(p_cmd)
 end function
 function anmt250_no_set_entry_b(p_cmd)
    	define p_cmd      like type_file.chr1
-	if g_npn.npn03 not matches '[58]' then
+	if g_npn.npn03 not matches '[458]' then #darcy:2025/06/27 add 4
 		# 不是转付的时候，不允许修改原币和本币
 		call cl_set_comp_entry("npo04",false)
 	end if

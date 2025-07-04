@@ -446,11 +446,20 @@ FUNCTION q202_b_fill()                         #BODY FILL UP
         END IF
          #darcy:2024/08/22 add s---
          # 转付,需要标记转付金额明细
-         if g_nmi[g_cnt].nmi06 = '5' then
+         if g_nmi[g_cnt].nmi06 matches '[458]' then
             select sum(npo04),sum(npo05) into l_npo04,l_npo05 from npo_file,npn_file
              where npo01 = npn01 and npn01 = g_nmi[g_cnt].nmi10 and npo03 = g_nmh.nmh01
             if not cl_null(l_npo04) and not cl_null(l_npo05) then
-               let g_nmi[g_cnt].remark = sfmt("转付,原币金额:%1,本币金额:%2",l_npo04 using '<<<<<<<<<<<<<<.##',l_npo05 using '<<<<<<<<<<<<<<.##')
+               case g_nmi[g_cnt].nmi06
+                  when '4'
+                     let g_nmi[g_cnt].remark = "票贴"
+                  when '5'
+                     let g_nmi[g_cnt].remark = "转付"
+                  when '8'
+                     let g_nmi[g_cnt].remark = "兑现"
+               end case
+               let g_nmi[g_cnt].remark = g_nmi[g_cnt].remark,
+               sfmt("原币金额:%1,本币金额:%2",l_npo04 using '<<<<<<<<<<<<<<.##',l_npo05 using '<<<<<<<<<<<<<<.##')
             end if
          end if
          #darcy:2024/08/22 add e---
