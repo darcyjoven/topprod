@@ -1,5 +1,9 @@
+# Prog. Version..: '5.30.06-13.04.22(00010)'     #
+#
+# Pattern name...: cxmt520.4gl
 # Descriptions...: 產品價格維護作業
-`     ~"# Modify.........: 160613 16/06/13 By guanyao录入退出的时候报错，审核不能录入
+# Date & Author..: 16/06/12 By huanglf
+# Modify.........: 160613 16/06/13 By guanyao录入退出的时候报错，审核不能录入
 # Modify.........: 160614 16/06/14 By guanyao审核的时候生成产品价格，如果有数据，单身的数据是当天的额是则更新，如果不是则新增，没有取消审核
 # Modify.........: 160715 16/07/15 By guanyao增加税前单价
 
@@ -26,6 +30,7 @@ DEFINE
         tc_xmf10       LIKE tc_xmf_file.tc_xmf10,   #add by huanglf170405
         tc_xmf09       LIKE tc_xmf_file.tc_xmf09    #add by huanglf170317
         ,tc_xmf11     LIKE tc_xmf_file.tc_xmf11 #darcy:2023/04/06 add
+        ,tc_xmf13     LIKE tc_xmf_file.tc_xmf13 #darcy:2025/06/13
                     END RECORD,
     g_tc_xmf_o         RECORD
         tc_xmf01       LIKE tc_xmf_file.tc_xmf01,
@@ -40,6 +45,7 @@ DEFINE
         tc_xmf10       LIKE tc_xmf_file.tc_xmf10,   #add by huanglf170405
         tc_xmf09       LIKE tc_xmf_file.tc_xmf09    #add by huanglf170317
         ,tc_xmf11     LIKE tc_xmf_file.tc_xmf11 #darcy:2023/04/06 add
+        ,tc_xmf13     LIKE tc_xmf_file.tc_xmf13 #darcy:2025/06/13 add
                     END RECORD,
     g_tc_xmf_t         RECORD
         tc_xmf01       LIKE tc_xmf_file.tc_xmf01,
@@ -54,6 +60,7 @@ DEFINE
         tc_xmf10       LIKE tc_xmf_file.tc_xmf10,   #add by huanglf170405
         tc_xmf09       LIKE tc_xmf_file.tc_xmf09    #add by huanglf170317
         ,tc_xmf11     LIKE tc_xmf_file.tc_xmf11 #darcy:2023/04/06 add
+        ,tc_xmf13     LIKE tc_xmf_file.tc_xmf13 #darcy:2025/06/13 add
                     END RECORD,
    #g_wc,g_wc2,g_sql    LIKE type_file.chr1000,  #No.FUN-680137 VARCHAR(800)
     g_wc,g_wc2,g_sql    STRING,   #TQC-630166  
@@ -374,6 +381,12 @@ FUNCTION t520_menu()
              END IF 
           END IF
          #No.FUN-6A0020-------add--------end----
+         #darcy:2025/06/13 add s---
+         when "add_remark"
+            if cl_chk_act_auth() then
+               call t520_add_remark(l_ac)
+            end if
+         #darcy:2025/06/13 add e---
         WHEN "confirm"
            IF cl_chk_act_auth() THEN
              LET g_success = 'Y'
@@ -1107,7 +1120,7 @@ define l_tc_xmf01    like tc_xmf_file.tc_xmf01
  
  
    LET g_forupd_sql =
-     "SELECT tc_xmf01,tc_xmf03,'','',tc_xmf04,tc_xmf05,tc_xmf06,tc_xmf07,tc_xmf08,tc_xmf10,tc_xmf09,tc_xmf11 ", #add by huanglf170405  #No.MOD-5A0455
+     "SELECT tc_xmf01,tc_xmf03,'','',tc_xmf04,tc_xmf05,tc_xmf06,tc_xmf07,tc_xmf08,tc_xmf10,tc_xmf09,tc_xmf11,tc_xmf13 ", #add by huanglf170405  #No.MOD-5A0455
      "  FROM tc_xmf_file",
      " WHERE tc_xmf00 = ? ",
      "   AND tc_xmf01 = ? ",
@@ -1723,7 +1736,7 @@ FUNCTION t520_b_fill(p_wc2)              #BODY FILL UP
 DEFINE p_wc2           LIKE type_file.chr1000       #No.FUN-680137  VARCHAR(200)
  
    LET g_sql =
-       "SELECT tc_xmf01,tc_xmf03,ima02,ima021,tc_xmf04,tc_xmf05,tc_xmf06,tc_xmf07,tc_xmf08,tc_xmf10,tc_xmf09,tc_xmf11 ", #add by huanglf170405#FUN-560193
+       "SELECT tc_xmf01,tc_xmf03,ima02,ima021,tc_xmf04,tc_xmf05,tc_xmf06,tc_xmf07,tc_xmf08,tc_xmf10,tc_xmf09,tc_xmf11,tc_xmf13 ", #add by huanglf170405#FUN-560193
        "  FROM tc_xmf_file LEFT OUTER JOIN ima_file ON tc_xmf_file.tc_xmf03=ima_file.ima01",
        " WHERE tc_xmf00 = '",g_tc_xme.tc_xme00,
        "'",
@@ -1896,6 +1909,12 @@ FUNCTION t520_bp(p_ud)
        ON ACTION confirm
          LET g_action_choice="confirm"
          EXIT DISPLAY 
+
+      # darcy:2025/06/13 add s---
+      on action add_remark
+         let g_action_choice = "add_remark"
+         exit display
+      # darcy:2025/06/13 add e---
 
       #str---mark by guanyao160614   
       #ON ACTION undo_confirm
@@ -2679,3 +2698,26 @@ function t520_ef()
       END IF
 end function
 #darcy:2023/03/27 add e---
+
+#darcy:2025/06/13 add s---
+function t520_add_remark(p_ac)
+   define p_ac       integer
+   define l_remark   varchar(1000)
+   
+   if p_ac <= 0 then 
+      return
+   end if
+
+   if p_ac > g_tc_xmf.getlength() then
+      return 
+   end if
+
+   call scxmt520_input(g_tc_xme.tc_xme00,g_tc_xmf[p_ac].tc_xmf01)
+      returning l_remark
+   
+   update tc_xmf_file set tc_xmf13 = l_remark
+    where tc_xmf00 = g_tc_xme.tc_xme00 and tc_xmf01 = g_tc_xmf[p_ac].tc_xmf01
+
+   let g_tc_xmf[p_ac].tc_xmf13 = l_remark
+end function
+#darcy:2025/06/13 add s---
