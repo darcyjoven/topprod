@@ -1,12 +1,415 @@
-# Prog. Version..: '5.30.06-13.04.19(00010)'     #
+# Prog. Version..:
 #
-# Program name...: scxmt520_sub.4gl
-# Description....: 提供cxmt520.4gl使用的sub routine
-# Date & Author..:darcy:2023/04/04
+# Pattern name...: scxmt520_sub.4gl
+# Descriptions...: cxmt520 核价单功能函数
+# Date & Author..: darcy:2025/06/09 add
 
 database ds
- 
-globals "../../../tiptop/config/top.global"
+
+GLOBALS "../../../tiptop/config/top.global"
+
+type tc_xmg record
+    tc_xmg02    like tc_xmg_file.tc_xmg02,
+    tc_xmg03    like tc_xmg_file.tc_xmg03,
+    tc_xmg04    like tc_xmg_file.tc_xmg04,
+    ima02_1     like ima_file.ima02,
+    ima021_1    like ima_file.ima021,
+    tc_xmg05    like tc_xmg_file.tc_xmg05,
+    tc_xmg06    like tc_xmg_file.tc_xmg06,
+    tc_xmg07    like tc_xmg_file.tc_xmg07,
+    tc_xmg08    like tc_xmg_file.tc_xmg08
+end record
+
+define g_tc_xmg dynamic array of tc_xmg
+define g_tc_xmg_o,g_tc_xmg_t tc_xmg
+define g_rec_b ,g_max_rec integer
+
+function scxmt520_input(p_tc_xmf00,p_tc_xmf01)
+    define p_tc_xmf00   like tc_xmf_file.tc_xmf00
+    define p_tc_xmf01   like tc_xmf_file.tc_xmf01
+
+    let g_max_rec = 10000
+    call scxmt520_b_fill(p_tc_xmf00,p_tc_xmf01)
+
+    call scxmt520_b(p_tc_xmf00,p_tc_xmf01) 
+
+    return scxmt520_b_remark(p_tc_xmf00,p_tc_xmf01)
+end function
+
+function scxmt520_b_fill(p_tc_xmf00,p_tc_xmf01)
+    define p_tc_xmf00   like tc_xmf_file.tc_xmf00
+    define p_tc_xmf01   like tc_xmf_file.tc_xmf01
+
+    define l_sql  string
+    define i integer
+
+    let l_sql = "select tc_xmg02,tc_xmg03,tc_xmg04,ima02,ima021,tc_xmg05,tc_xmg06,tc_xmg07,tc_xmg08",
+                "  from tc_xmg_file left join ima_file on ima01 = tc_xmg04 ",
+                " where tc_xmg01 = '",p_tc_xmf00,
+                "' and tc_xmg02 = ",p_tc_xmf01, 
+                " order by tc_xmg02, tc_xmg03"
+    prepare scxmt520_b_p from l_sql
+    declare scxmt520_b_cur cursor for scxmt520_b_p
+
+    let i = 1
+    call g_tc_xmg.clear()
+    foreach scxmt520_b_cur into g_tc_xmg[i].*
+        if sqlca.sqlcode then
+            call cl_err('scxmt520_b_cur',sqlca.sqlcode,1)
+            exit foreach
+        end if
+        let i = i+1 
+    end foreach
+    call g_tc_xmg.deleteElement(i)
+    let g_rec_b = i - 1
+
+end function
+
+function scxmt520_b(p_tc_xmf00,p_tc_xmf01)
+    define p_tc_xmf00   like tc_xmf_file.tc_xmf00
+    define p_tc_xmf01   like tc_xmf_file.tc_xmf01
+    
+    define l_allow_insert,l_allow_delete boolean
+    define l_ac,l_ac_t,l_cnt  integer
+    define l_sql    string
+    define l_lock_sw    varchar(1) 
+    define p_cmd varchar(1)
+
+    define l_pmj07  like pmj_file.pmj07,
+           l_pmj09  like pmj_file.pmj09
+    define l_tc_xmf03   like tc_xmf_file.tc_xmf03
+
+    WHENEVER ERROR CONTINUE
+
+    let l_sql = "select pmj07, pmj09 from (select pmj03, pmj07, pmj09
+                        from (select pmj03, pmj07, pmj09,
+                                    row_number() over (partition by pmj07 order by pmj09) as rn
+                                from pmi_file, pmj_file
+                                where pmi01 = pmj01
+                                and pmiconf = 'Y'
+                                and pmj03 = ? ) t
+                        where rn = 1  
+                        order by pmj09 desc)
+                 where rownum <= 2"
+    prepare scxmt520_pmi_p from l_sql
+    declare scxmt520_pmi_cur cursor for scxmt520_pmi_p
+
+    let l_sql =
+     "select tc_xmg02,tc_xmg03,tc_xmg04,'' ima02,'' ima021,tc_xmg05,tc_xmg06,tc_xmg07,tc_xmg08 ", 
+     "  from tc_xmg_file",
+     " where tc_xmg01 = ? ",
+     "   and tc_xmg02 = ? ", 
+     "   and tc_xmg03 = ? ", 
+     " for update "
+    let l_sql = cl_forupd_sql(l_sql)
+    declare scxmt520_bcl cursor from l_sql 
+
+    OPEN WINDOW scxmt520_w AT 1,1
+     WITH FORM "cxm/42f/scxmt520_1" ATTRIBUTE (STYLE = g_win_style CLIPPED) 
+    
+    CALL cl_ui_init()
+
+    let l_ac_t = 0
+    let l_allow_insert = cl_detail_input_auth("insert")
+    let l_allow_delete = cl_detail_input_auth("delete")
+
+    input array g_tc_xmg without defaults from s_tc_xmg.*
+        attribute(count=g_rec_b,maxcount=g_max_rec,unbuffered,
+            insert row=l_allow_insert,delete row=l_allow_delete,
+            append row=l_allow_insert)
+        
+        before input
+            if g_rec_b != 0 then
+                call fgl_set_arr_curr(l_ac)
+            end if
+        
+        before row
+            let l_ac = arr_curr()
+            let l_lock_sw = 'N'            
+            let g_success = 'Y'
+        
+            if g_rec_b >= l_ac then
+                let p_cmd='u'
+                let g_tc_xmg_t.* = g_tc_xmg[l_ac].*  #backup
+                let g_tc_xmg_o.* = g_tc_xmg[l_ac].*  #backup
+                begin work
+                -- 锁定单身
+                open scxmt520_bcl using p_tc_xmf00,g_tc_xmg_t.tc_xmg02,g_tc_xmg_t.tc_xmg03
+                if status then
+                    call cl_err('open scxmt520_bcl:', status, 1)
+                    let l_lock_sw = 'Y'
+                else
+                    -- 重新显示单身资料
+                    fetch scxmt520_bcl into g_tc_xmg[l_ac].*
+                    if sqlca.sqlcode then
+                        call cl_err(g_tc_xmg_t.tc_xmg03,sqlca.sqlcode,1)
+                        return
+                        let l_lock_sw = 'Y'
+                    end if
+                    select ima02 ,ima021 into g_tc_xmg[l_ac].ima02_1,g_tc_xmg[l_ac].ima021_1
+                       from ima_file where ima01 = g_tc_xmg[l_ac].tc_xmg04
+                end if
+                call cl_show_fld_cont()     #fun-550037(smin)
+            end if
+        
+        after insert
+            if int_flag then
+                call cl_err('',9001,0)
+                let int_flag = 0
+                cancel insert
+            end if
+            -- 插入资料
+            if cl_null(p_tc_xmf00) then let p_tc_xmf00=' ' end if
+            -- 料号备注至少录入一个
+            if cl_null(g_tc_xmg[l_ac].tc_xmg04) and cl_null(g_tc_xmg[l_ac].tc_xmg08) then
+                call cl_err('料号和备注至少录入一个','!',1)
+                cancel insert
+                let g_success = 'N'
+            end if
+            insert into tc_xmg_file (tc_xmg01,tc_xmg02,tc_xmg03,tc_xmg04,tc_xmg05,tc_xmg06,
+                                    tc_xmg07,tc_xmg08)  
+                        values(p_tc_xmf00, g_tc_xmg[l_ac].tc_xmg02,
+                               g_tc_xmg[l_ac].tc_xmg03,g_tc_xmg[l_ac].tc_xmg04,
+                               g_tc_xmg[l_ac].tc_xmg05,g_tc_xmg[l_ac].tc_xmg06,
+                               g_tc_xmg[l_ac].tc_xmg07,g_tc_xmg[l_ac].tc_xmg08)
+            if sqlca.sqlcode then 
+                call cl_err3('ins','tc_xmg_file',p_tc_xmf00,'',sqlca.sqlcode,'','',1) 
+                cancel insert
+                let g_success = 'N'
+            else
+                message 'insert o.k'
+                -- if g_success = 'Y' then
+                --     commit work
+                -- end if
+                let g_rec_b=g_rec_b+1
+                -- display g_rec_b to formonly.cn2
+            end if
+        
+        before insert 
+            let p_cmd='a'
+            initialize g_tc_xmg[l_ac].* to null
+            let g_tc_xmg_t.* = g_tc_xmg[l_ac].*
+            let g_tc_xmg_o.* = g_tc_xmg[l_ac].* 
+            let g_tc_xmg[l_ac].tc_xmg02 = p_tc_xmf01
+            call cl_show_fld_cont()
+            next field tc_xmg03
+
+        -- 自动增加项次
+        before field tc_xmg03
+            IF p_cmd = 'a' THEN
+                select max(tc_xmg03) +1 into g_tc_xmg[l_ac].tc_xmg03 from tc_xmg_file
+                 where tc_xmg01 = p_tc_xmf00 and tc_xmg02 = p_tc_xmf01
+            
+                if cl_null(g_tc_xmg[l_ac].tc_xmg03) then
+                    let g_tc_xmg[l_ac].tc_xmg03 = 1
+                end if
+            end if
+            
+        -- 检查项次重复
+        after field tc_xmg03
+            if not cl_null(g_tc_xmg[l_ac].tc_xmg03) then
+                IF p_cmd = 'a' OR (p_cmd = 'u' AND g_tc_xmg_t.tc_xmg03 != g_tc_xmg[l_ac].tc_xmg03) THEN
+                    if g_tc_xmg[l_ac].tc_xmg03 <=0 then
+                        call cl_err('','aec-994',0)
+                        let g_tc_xmg[l_ac].tc_xmg03 = g_tc_xmg_t.tc_xmg03
+                        next field tc_xmg03
+                    end if
+                    if g_tc_xmg[l_ac].tc_xmg03 != g_tc_xmg_t.tc_xmg03 or g_tc_xmg_t.tc_xmg03 is null then
+                        select count(*) into l_cnt from tc_xmg_file
+                        where tc_xmg01 = p_tc_xmf00
+                            and tc_xmg02 = p_tc_xmf01
+                            and tc_xmg03 = g_tc_xmg[l_ac].tc_xmg03
+                        if l_cnt > 0 then     -- l_cnt>0  则有重复
+                            call cl_err('',-239,0)
+                            let g_tc_xmg[l_ac].tc_xmg03 = g_tc_xmg_t.tc_xmg03
+                            next field tc_xmg03
+                        end if
+                    end if
+                end if
+            end if
+
+        after field tc_xmg04 
+            -- 带出料号的核价信息
+            if not cl_null(g_tc_xmg[l_ac].tc_xmg04) then
+                let l_cnt = 1
+                let g_tc_xmg[l_ac].tc_xmg05 = null
+                let g_tc_xmg[l_ac].tc_xmg06 = null
+                let g_tc_xmg[l_ac].tc_xmg07 = null
+                foreach scxmt520_pmi_cur using g_tc_xmg[l_ac].tc_xmg04
+                        into l_pmj07,l_pmj09
+                    if sqlca.sqlcode then
+                        call cl_err('scxmt520_pmi_cur',sqlca.sqlcode,1)
+                        exit foreach
+                    end if
+                    if l_cnt = 1 then
+                        let g_tc_xmg[l_ac].tc_xmg07 = l_pmj09
+                        let g_tc_xmg[l_ac].tc_xmg06 = l_pmj07
+                    end if
+                    if l_cnt = 2 then
+                        if l_pmj07 > g_tc_xmg[l_ac].tc_xmg06 then
+                            let g_tc_xmg[l_ac].tc_xmg05 = '降价'
+                            let g_tc_xmg[l_ac].tc_xmg06 = l_pmj07 - g_tc_xmg[l_ac].tc_xmg06
+                        else
+                            let g_tc_xmg[l_ac].tc_xmg05 = '涨价'
+                            let g_tc_xmg[l_ac].tc_xmg06 =  g_tc_xmg[l_ac].tc_xmg06 - l_pmj07
+                        end if
+                    end if
+                    let l_cnt = l_cnt + 1
+                end foreach
+                if l_cnt = 1 then 
+                    if  cl_null(g_tc_xmg[l_ac].tc_xmg06) then
+                        -- 没有核价信息
+                        call cl_err(sfmt('%1料号没有核价信息',g_tc_xmg[l_ac].tc_xmg04),'!',1)
+                        next field tc_xmg04 
+                    end if
+                end if
+                if l_cnt = 2 then
+                    let g_tc_xmg[l_ac].tc_xmg05 = '仅核价一次'
+                end if
+                select ima02 ,ima021 into g_tc_xmg[l_ac].ima02_1,g_tc_xmg[l_ac].ima021_1
+                  from ima_file where ima01 = g_tc_xmg[l_ac].tc_xmg04
+            end if
+
+        on row change
+            if int_flag then
+                call cl_err('',9001,0)
+                let int_flag = 0
+                let g_tc_xmg[l_ac].* = g_tc_xmg_t.*
+                close scxmt520_bcl
+                rollback work
+                exit input
+            end if
+        
+            if l_lock_sw = 'Y' then
+                call cl_err(g_tc_xmg[l_ac].tc_xmg03,-263,1)
+                let g_tc_xmg[l_ac].* = g_tc_xmg_t.*
+            else
+                -- 更新资料
+                update tc_xmg_file set  tc_xmg04=g_tc_xmg[l_ac].tc_xmg04,
+                                        tc_xmg05=g_tc_xmg[l_ac].tc_xmg05,
+                                        tc_xmg06=g_tc_xmg[l_ac].tc_xmg06,
+                                        tc_xmg07=g_tc_xmg[l_ac].tc_xmg07,
+                                        tc_xmg08=g_tc_xmg[l_ac].tc_xmg08
+                 where tc_xmg01 = p_tc_xmf00
+                   and tc_xmg02 = g_tc_xmg_t.tc_xmg02
+                   and tc_xmg03 = g_tc_xmg_t.tc_xmg03
+        
+                if sqlca.sqlcode then 
+                    call cl_err3('upd','tc_xmg_file',p_tc_xmf00,'',sqlca.sqlcode,'','',1) 
+                    let g_tc_xmg[l_ac].* = g_tc_xmg_t.*
+                    let g_success = 'N'
+                else
+                    message 'update o.k'
+                    if g_success = 'Y' then commit work end if
+                end if
+            end if
+        
+        after row
+            let l_ac = arr_curr() 
+            if int_flag then
+                call cl_err('',9001,0)
+                let int_flag = 0
+                if p_cmd = 'u' then
+                    let g_tc_xmg[l_ac].* = g_tc_xmg_t.* 
+                else
+                    call g_tc_xmg.deleteelement(l_ac)
+                    if g_rec_b != 0 then 
+                        let l_ac = l_ac_t
+                    end if 
+                end if 
+                exit input
+            end if
+            let l_ac_t = l_ac
+            commit work
+        
+        on action controlp
+            -- 开窗
+            case 
+                when infield(tc_xmg04)
+                    -- 需要查询成品料号 
+                    select tc_xmf03 into l_tc_xmf03 from tc_xmf_file 
+                     where tc_xmf00 = p_tc_xmf00 and tc_xmf01 = p_tc_xmf01
+                    call cl_init_qry_var()
+                    let g_qryparam.form = "cq_bmb03"
+                    let g_qryparam.arg1 = l_tc_xmf03
+                    call cl_create_qry() returning g_tc_xmg[l_ac].tc_xmg04
+                    display by name g_tc_xmg[l_ac].tc_xmg04
+                    next field tc_xmg04
+                otherwise
+                    exit case
+            end case
+        BEFORE DELETE                            #是否取消單身
+            if  not cl_null(g_tc_xmg_t.tc_xmg02) and not cl_null(g_tc_xmg_t.tc_xmg03) then
+                if not cl_delete() then
+                    cancel delete
+                end if
+                if l_lock_sw = "Y" then
+                    call cl_err("", -263, 1)
+                    cancel delete
+                end if
+                delete from tc_xmg_file                 #刪除單身
+                 where tc_xmg01 = p_tc_xmf00 and tc_xmg02 = p_tc_xmf01
+                   and tc_xmg03 = g_tc_xmg[l_ac].tc_xmg03
+                if sqlca.sqlcode then
+                    call cl_err3("del","tc_xmg_file",p_tc_xmf00,"",sqlca.sqlcode,"","",1)  #no.fun-660167
+                    rollback work
+                    cancel delete
+                end if 
+                let g_rec_b=g_rec_b-1
+            end if
+            if g_success ='y' then commit work end if
+        
+        on action controls
+            call cl_set_head_visible('','auto')
+        
+        on action controlo
+            if infield(tc_xmg03) and l_ac > 1 then
+                let g_tc_xmg[l_ac].* = g_tc_xmg[l_ac-1].*
+                next field tc_xmg03
+            end if
+        
+        on action controlr
+            call cl_show_req_fields()
+        
+        on action controlg
+            call cl_cmdask()
+        
+        on idle g_idle_seconds
+            call cl_on_idle()
+            continue input
+        
+        on action about
+            call cl_about()
+        
+        on action help
+            call cl_show_help()
+        
+    end input
+    
+    close WINDOW scxmt520_w
+end function
+
+
+function scxmt520_b_remark(p_tc_xmf00,p_tc_xmf01)
+    define p_tc_xmf00   like tc_xmf_file.tc_xmf00
+    define p_tc_xmf01   like tc_xmf_file.tc_xmf01
+
+    define l_remark string
+    define i   integer
+
+    call scxmt520_b_fill(p_tc_xmf00,p_tc_xmf01)
+
+    for i = 1 to g_tc_xmg.getlength()
+        if not cl_null(g_tc_xmg[i].tc_xmg04) then
+            let l_remark = l_remark , sfmt("%1:%2 %3%4 %5;",g_tc_xmg[i].tc_xmg04,g_tc_xmg[i].tc_xmg07,
+                                           g_tc_xmg[i].tc_xmg05,g_tc_xmg[i].tc_xmg06,g_tc_xmg[i].tc_xmg08)
+        else
+            let l_remark = l_remark,"备注:",g_tc_xmg[i].tc_xmg08,";"
+        end if
+    end for
+    
+    return l_remark
+end function
 
 function t520sub_lock_cl()
     define l_forupd_sql string
