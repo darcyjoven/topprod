@@ -354,7 +354,7 @@ FUNCTION q134_b_fill()              #BODY FILL UP
         "   AND pmn01 = pmm01 AND pmm_file.pmm09 = pmc_file.pmc01",
       # "   AND pmn20 > pmn50-pmn55-pmn58 AND pmn16 <= '2'",
        #"   AND pmn20 > pmn50-pmn55 AND pmn16 <= '2'",   #No.+032在外量不含倉退      #MOD-BB0287 mark
-        "   AND pmn20 > pmn50-pmn55 AND (pmn16 <= '2' OR pmn16 IN ('S','R','W'))",   #MOD-BB0287
+        "   AND pmn20 > pmn50 - pmn55 - pmn58 AND (pmn16 <= '2' OR pmn16 IN ('S','R','W'))",   #MOD-BB0287 # mod add pmn58
         "   AND pmn011 !='SUB' ",
         " ORDER BY pmn33 "
     PREPARE q134_pb FROM l_sql
@@ -372,8 +372,8 @@ FUNCTION q134_b_fill()              #BODY FILL UP
             EXIT FOREACH
         END IF
         LET g_sr[g_cnt].on_order = g_sr[g_cnt].pmn20 - g_sr[g_cnt].on_order +
-                                 # g_pmn55+g_pmn58
-                                   g_pmn55   #No.+032在外量不含倉退010424 linda
+                                  g_pmn55+g_pmn58  # darcy:2025/07/10 remark
+                                 --   g_pmn55   #No.+032在外量不含倉退010424 linda # darcy:2025/07/10 remark
         LET pmn20_t = pmn20_t + g_sr[g_cnt].pmn20   *g_factor
         LET pmn20_o = pmn20_o + g_sr[g_cnt].on_order*g_factor
         LET g_cnt = g_cnt + 1
