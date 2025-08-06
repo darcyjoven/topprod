@@ -66,12 +66,13 @@ MAIN
              ,",ogbud08.ogb_file.ogbud08" #darcy:2023/12/28 add
              ,",ogbqrcode.type_file.blob" #darcy:2024/07/16 add
              ,",ogbqrhead.type_file.blob"
+             ,",ocd221.ocd_file.ocd221" # darcy:2025/07/22 add
              
 
    LET  l_table = cl_prt_temptable('cxmr026',g_sql) CLIPPED
    IF l_table=-1 THEN EXIT PROGRAM END IF
    LET g_sql = "INSERT INTO ",g_cr_db_str CLIPPED,l_table CLIPPED,
-               " VALUES(?,?,?,?,?, ?,?,?,?,?, ?,?,?,?,?, ?,?,?,?,?, ?,? ,?,?)"  #darcy:2024/07/16 add ??   #add ? by guanyao161101   #add ?darcy:2023/12/28                
+               " VALUES(?,?,?,?,?, ?,?,?,?,?, ?,?,?,?,?, ?,?,?,?,?, ?,? ,?,?,?)"  #darcy:2024/07/16 add ??   #add ? by guanyao161101   #add ?darcy:2023/12/28                
    PREPARE insert_prep FROM g_sql
    IF STATUS THEN
       CALL cl_err('insert_prep:',status,1) EXIT PROGRAM
@@ -299,6 +300,7 @@ FUNCTION cxmr011()
                     ,ogbud08  like ogb_file.ogbud08 #darcy:2023/12/28 add
                     ,ogbqrcode byte #darcy:2024/07/16 add
                     ,ogbqrhead byte #darcy:2024/07/16 add
+                    ,ocd221 like ocd_file.ocd221 # darcy:2025/07/22 add
                     END RECORD
    DEFINE l_cnt     LIKE type_file.num5            
 
@@ -381,6 +383,13 @@ LET l_sql="select '','','','','',oga01,'','','',ogb04,'',sum(ogb12),'','','','',
          end if
 
          #darcy:2024/07/16 add e---
+         # darcy:2025/07/22 add s---
+         select ocd221 into sr.ocd221
+           from ocd_file, oga_file
+          where oga04 = ocd01
+            and ocd02 = oga044
+            and oga01 = sr.oga01
+         # darcy:2025/07/22 add e---
          # SELECT occ18 INTO sr.occ18 FROM occ_file WHERE occ01=sr.oga04
          IF cl_null(sr.occ18) THEN
                SELECT occ18 INTO sr.occ18 FROM occ_file WHERE occ01=sr.oga04
