@@ -343,6 +343,10 @@ FUNCTION t400sub_y_chk(p_flag,p_oea01)
    end if
 
    #darcy:2023/04/19 add e---
+
+   #darcy:2025/06/13 add s---
+   # 判断是否
+   #darcy:2025/06/13 add e---
    
 
    IF g_azw.azw04='2' THEN

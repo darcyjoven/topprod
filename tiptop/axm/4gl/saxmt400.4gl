@@ -34684,9 +34684,11 @@ end function
 function t400_split_init()
    call cl_set_comp_att_text("num01","每批数量")
    call cl_set_comp_att_text("num02","间隔数量")
+   call cl_set_comp_att_text("num03","最后拆分数量")
+   call cl_set_comp_att_text("dat01","最后拆分日期")
    call cl_set_comp_att_text("comb01","间隔单位")
    call cl_set_combo_items("comb01",'day,week,month','天,周,30天')
-   call cl_set_comp_visible("chk,oeb01s,oeb03s,oeb04s,oeb06s,ima021s,oeb12s,oeb15s,num01,num02,comb01",true)
+   call cl_set_comp_visible("chk,oeb01s,oeb03s,oeb04s,oeb06s,ima021s,oeb12s,oeb15s,num01,num02,num03,dat01,comb01",true)
    call cl_set_comp_entry("chk,oeb15s,num01,num02,comb01",true)
    call cl_set_comp_required("chk,oeb15s,num01,num02,comb01",true)
 end function
@@ -34699,6 +34701,21 @@ function t400_split_b_fill()
    prepare t400_split_p from l_sql
    declare t400_split_cur cursor for t400_split_p
 
+   # darcy:2025/07/17 add s---
+   let l_sql = "select *
+                  from (select tc_oeb12, tc_oeb16
+                           from oea_file, oeb_file, tc_oeb_file
+                           where oea01 = oeb01
+                           and tc_oeb01 = oeb01
+                           and tc_oeb03 = oeb03
+                           and oea00 = '0'
+                           and oeaconf = 'Y'
+                           and oeb04 = ?
+                           order by tc_oeb16 desc)
+                  where rownum = 1"
+   prepare t400_split_p2 from l_sql
+   # darcy:2025/07/17 add e---
+
    let g_cnt = 1
    call g_oebs.clear()
    foreach t400_split_cur into g_oebs[g_cnt].*
@@ -34709,6 +34726,11 @@ function t400_split_b_fill()
       let g_oebs[g_cnt].num01 = g_oebs[g_cnt].oeb12s
       let g_oebs[g_cnt].num02 = 1
       let g_oebs[g_cnt].comb01 = 'day'
+      # darcy:2025/07/17 add s---
+      # 上次拆分数量和日期
+      execute t400_split_p2 using g_oebs[g_cnt].oeb04s
+         into g_oebs[g_cnt].num03,g_oebs[g_cnt].dat01
+      # darcy:2025/07/17 add e---
       let g_cnt = g_cnt + 1
    end foreach
    call g_oebs.deleteElement(g_cnt)
@@ -35191,9 +35213,10 @@ function t400_fpc_copy_b_fill()
       -- 新料号
       -- 找光板料号对应的组装料号
       let l_bma01 = g_oebs[g_cnt].oeb04s
-      let l_bma01 = l_bma01[1,6],'%',l_bma01[8,10]
-      select ima01 into g_oebs[g_cnt].str01 from ima_file
+      let l_bma01 = l_bma01[1,6],'_',l_bma01[8,8],'_',l_bma01[10,10]
+      select max(ima01) into g_oebs[g_cnt].str01 from ima_file,bma_file
        where ima01 like l_bma01 and ima01[7,7] in ('A','B','C')
+         and bma01 = ima01 and bma10 = '2'
       -- 日期
       if cl_null( g_oebs[g_cnt].dat01) then
          let g_oebs[g_cnt].dat01 = g_oebs[g_cnt].oeb15s
