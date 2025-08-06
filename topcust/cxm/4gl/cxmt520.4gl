@@ -2667,6 +2667,13 @@ END FUNCTION
 function t520_ef()
    DEFINE l_tc_xmeacti LIKE tc_xme_file.tc_xmeacti   #MOD-B90091 add
 
+   # darcy:2025/07/16 add s---
+   define l_tc_xmf00    like tc_xmf_file.tc_xmf00, 
+          l_tc_xmf01    like tc_xmf_file.tc_xmf01, 
+          l_tc_xmf03    like tc_xmf_file.tc_xmf03
+   define l_ok    boolean
+   # darcy:2025/07/16 add e---
+
    select tc_xmeacti into l_tc_xmeacti from tc_xme_file where tc_xme00 = g_tc_xme.tc_xme00
 
    # CALL t520_y_chk() 
@@ -2680,7 +2687,30 @@ function t520_ef()
    IF g_success = 'N' THEN
       RETURN
    END IF
-
+   # darcy:2025/07/16 add s---
+   # 如果单价有波动，必须维护备注
+   let g_sql = "select tc_xmf00, tc_xmf01, tc_xmf03 ",
+               "   from tc_xmf_file, tc_xme_file ",
+               "  where tc_xme00 = tc_xmf00 ",
+               "    and tc_xme00 = ? ",
+               "    and tc_xmf05 <> tc_xmf11 ",
+               "    and tc_xmf11 <> 0 and tc_xmf13 is null"
+   declare cxmt520_price_chk cursor from g_sql
+   CALL s_showmsg_init()
+   let l_ok = true
+   foreach cxmt520_price_chk using g_tc_xme.tc_xme00 into l_tc_xmf00,l_tc_xmf01,l_tc_xmf03
+      if sqlca.sqlcode then
+         call cl_err('cxmt520_price_chk',sqlca.sqlcode,1)
+         exit foreach
+      end if
+      CALL s_errmsg('tc_xmf00,tc_xmf01,tc_xmf03',sfmt('%1|%2|%3',l_tc_xmf00,l_tc_xmf01,l_tc_xmf03),'','cxm-058',1)
+      let l_ok = false
+   end foreach
+   CALL s_showmsg() 
+   if not l_ok then
+      return
+   end if
+   # darcy:2025/07/16 add e---
 ##########
 # CALL aws_efcli()
 # 傳入參數: (1)單頭資料, (2-6)單身資料
