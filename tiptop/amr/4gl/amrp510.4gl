@@ -183,7 +183,7 @@ MAIN
    LET pmk.pmk04 = TODAY
    LET pmk.pmk12 = g_user
    LET summary_flag= '1'
-   LET mxno      = 20
+   LET mxno      = 10000 #darcy:2025/05/29 默认设置为10000
    SELECT gen03 INTO pmk.pmk13 FROM gen_file WHERE gen01=g_user
  
    SELECT zo02 INTO g_company FROM zo_file WHERE zo01 = g_lang
@@ -209,7 +209,7 @@ MAIN
          LET pmk.pmk04 = TODAY
          LET pmk.pmk12 = g_user
          LET summary_flag= '1'
-         LET mxno      = 20
+         LET mxno      = 10000 #darcy:2025/05/29 add
          SELECT gen03 INTO pmk.pmk13 FROM gen_file WHERE gen01=g_user
  
          CALL p510_ask()               # Ask for first_flag, data range or exist
@@ -791,7 +791,8 @@ FUNCTION p510()
  
    LET g_sql="SELECT mss_file.*, ima06, ima43,pmc15,ima54", #FUN-660020
              "  FROM mss_file LEFT OUTER JOIN pmc_file ON mss_file.mss02=pmc_file.pmc01, ima_file ",
-             " WHERE mss01 NOT LIKE 'K%' AND  mss01=ima01 AND mss09 > 0 AND mss10='N'",
+             " WHERE mss01 NOT LIKE 'K.%' AND  mss01=ima01 AND mss09 > 0 AND mss10='N'",
+             "   and mss01 like '%.%' ", #darcy:2025/05/16 add
              " AND mss_v='",ver_no,"'",
              "   AND ",g_wc CLIPPED
    CASE WHEN summary_flag='1'

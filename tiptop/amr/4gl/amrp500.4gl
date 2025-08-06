@@ -613,6 +613,11 @@ FUNCTION p500_mrp()
 #    CALL p500_mss042()           # 彙總 受訂量 #darcy:2024/08/27 mark 使用拆分订单明细
     call p500_mss042_new()
    FLUSH p500_c_ins_mst    # 將insert mst_file 的 cursor 寫入 database
+
+   #darcy:2025/06/25 add s---
+   call p500_mss065_upd()
+   FLUSH p500_c_ins_mst
+   #darcy:2025/06/25 add e---
  
    CALL p500_mss042_1()    # 彙總 MDS需求                              #No.FUN-920183
    FLUSH p500_c_ins_mst    # 將insert mst_file 的 cursor 寫入 database #No.FUN-920183
@@ -3905,6 +3910,76 @@ FUNCTION p500_mss065_ins(p_bmb01)   #No.MOD-880201 add p_bmb01
         CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211
         EXIT PROGRAM END IF
 END FUNCTION
+
+#darcy:2025/06/25 add s---
+# 更新计划产量字段
+# 更新逻辑：
+# 当有组装工单的时候，自动重建光板订单，即计划产量字段更新数量
+# 计划产量和等于组装订单，或者所有光板订单都冲减算作结束
+function p500_mss065_upd()
+   define l_sql   string
+   define l_bmb03 like bmb_file.bmb03
+   define l_amt   like mss_file.mss041
+   define l_mss01 like mss_file.mss01,
+          l_mss02 like mss_file.mss02,
+          l_mss03 like mss_file.mss03,
+          l_mss041 like mss_file.mss041
+
+
+   let l_sql = "select bmb03, sum(mss041) mss041
+                  from mss_file, bmb_file
+                 where mss_v = ?
+                   and mss01 not like '%-%'
+                   and mss01 not like '%.%'
+                   and mss01 = bmb01
+                   and bmb04 < trunc(sysdate)
+                   and (bmb05 > trunc(sysdate) or bmb05 is null)
+                   and substr(mss01, 7, 1) in ('A', 'B', 'C')
+                   and bmb03 not like '%-%'
+                   and bmb03 not like '%.%'
+                   and mss041 > 0 
+                   and substr(bmb03, 7, 1) not in ('A', 'B', 'C')
+                 group by bmb03 "
+   prepare p500_mss65_upd_p from l_sql
+   declare p500_mss65_upd_cur cursor for p500_mss65_upd_p
+
+   let l_sql = "select mss01,mss02,mss03,mss041 from mss_file",
+               " where mss_v = ? and mss01 = ? ",
+               " order by mss01,mss02,mss03" 
+   prepare p500_mss65_upd_p2 from l_sql
+   declare p500_mss65_upd_cur2 cursor for p500_mss65_upd_p2
+
+   foreach p500_mss65_upd_cur using mss.mss_v
+      into l_bmb03,l_amt
+      if sqlca.sqlcode then
+         call cl_err("p500_mss65_upd_cur",sqlca.sqlcode,1)
+         exit foreach
+      end if
+ 
+      foreach p500_mss65_upd_cur2 using mss.mss_v,l_bmb03
+         into l_mss01,l_mss02,l_mss03,l_mss041
+         if sqlca.sqlcode then
+            call cl_err("p500_mss65_upd_cur",sqlca.sqlcode,1)
+            exit foreach
+         end if
+         if l_amt <= 0 then
+            exit foreach
+         end if
+
+         if l_mss041 > l_amt then
+            execute p500_p_upd_mss065 using l_amt,mss.mss_v,l_mss01,l_mss02,l_mss03
+            if status then call cl_err('upd mss:',status,1) end if
+            let l_amt = 0
+         else
+            execute p500_p_upd_mss065 using l_mss041,mss.mss_v,l_mss01,l_mss02,l_mss03
+            if status then call cl_err('upd mss:',status,1) end if
+            let l_amt = l_amt - l_mss041
+         end if 
+      end foreach
+
+   end foreach
+end function
+#darcy:2025/06/25 add e---
  
 FUNCTION p500_plan()    # M.R.P. (M.R.P. By Lot)
   DEFINE l_x_mss_v   LIKE mss_file.mss_v
