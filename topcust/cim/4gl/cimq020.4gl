@@ -24,6 +24,10 @@ type tlf record
     tlf10       like tlf_file.tlf10,
     tlf11       like tlf_file.tlf11,
     tlf12       like tlf_file.tlf12,
+    # darcy:2025/07/17 add s---
+    tlf14       like tlf_file.tlf14,
+    azf03       like azf_file.azf03,
+    # darcy:2025/07/17 add s---
     ima25       like ima_file.ima25,
     ccc23       like ccc_file.ccc23,
     price       varchar(100),
@@ -221,10 +225,12 @@ function cimq020_b_fill()
     let l_sql = "insert into cimq020_tmp select tlf01,ima02,ima021,ima06,imz02 ima06_desc,",
                 "       tlf06,tlf905,tlf906,tlf13,tlf902,",
                 "       tlf903,tlf904,trunc(tlf10*tlf60*tlf907,3) tlf10,ima25 tlf11,tlf12,",
+                "       tlf14,azf03, ", #darcy:2025/07/17 add
                 "       ima25,ima53 ccc23,'2' price,0 amt,tlf07,tlf08",
                 "       ,'','','',''    ", #darcy:2024/06/25 add
                 " from tlf_file left join ima_file on ima01 = tlf01 ",
                 "      left join imz_file on imz01 = ima06 ",
+                "      left join azf_file on azf01 = tlf14 ", # darcy:2025/07/17 add
                 " where tlf13 !='aimt324' ",
                 "   and (tlf907='-1' or (tlf907 = '1' and tlf13 like 'asfi5%' ) )",
                 "   and ",g_wc
@@ -294,7 +300,7 @@ function cimq020_b_fill()
 
     let l_sql = " select tlf01,ima02,ima021,ima06,ima06_desc,",
                 "       tlf06,tlf905,tlf906,tlf13,tlf902,",
-                "       tlf903,tlf904,tlf10,tlf11,tlf12,",
+                "       tlf903,tlf904,tlf10,tlf11,tlf12,tlf14,azf03,",
                 "       ima25, ccc23,price,amt,tlf07,tlf08,gen01,gen02,gem01,gem02",
                 " from cimq020_tmp", 
                 " order by ima06,tlf01,tlf06,tlf905,tlf906"
@@ -485,6 +491,8 @@ tlf904      varchar(24),
 tlf10       decimal(20,6),
 tlf11       varchar(4),
 tlf12       decimal(20,8),
+tlf14       varchar(10),
+azf03       varchar(80),
 ima25       varchar(4),
 ccc23       decimal(20,6),
 price       varchar(100),
