@@ -5020,7 +5020,8 @@ DEFINE
 
     LET g_sql =
         "SELECT bmb02,bmb30,bmb03,ima02,ima021,ima08,bmb09,bmb16,bmb14,bmb04,bmb05,bmb06,bmb07,",#FUN-550014 add bmb30 #FUN-610022調換bmb30的順序
-        "       bmb10,bmb08,bmb081,bmb082,bmb19,bmb24,bmb13,bmb15,bmb31,  ",  #NO.FUN-690019 add bmb31 #No.FUN-A50089 add bmb081,bmb082
+        "       bmb10,bmb08,bmb081,bmb082,bmb19,bmb24,bmb13,bmb31,bmb15,  ",  #NO.FUN-690019 add bmb31 #No.FUN-A50089 add bmb081,bmb082
+        # mod by darcy:2025/07/25 bmb31 和bmb15 交换位置
         "bmb36  ,bmb37  ,", #FUN-D10093 add bmb36,bmb37
         "bmbud01,bmbud02,bmbud03,bmbud04,bmbud05,",
         "bmbud06,bmbud07,bmbud08,bmbud09,bmbud10,",
