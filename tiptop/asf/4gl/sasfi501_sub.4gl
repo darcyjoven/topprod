@@ -1506,7 +1506,7 @@ RUN " echo '"||l_str||"' >> /u1/topprod/topcust/cws/4gl/asfi514_zhangsba_auto_po
                  AND sie012= l_sfe012
                  AND sie013= l_sfe013
                IF cl_null(l_sie11) THEN LET l_sie11 = 0 END IF
-               IF l_sfa06+l_sie11 > l_sfa05  AND g_user<>'tiptop' THEN
+               IF l_sfa06+l_sie11 > l_sfa05  AND g_user<>'tiptop' AND g_user<>'31510' THEN
                   LET g_success = 'N'
                   CALL cl_err('','asf-889',1)
                   EXIT FOREACH
@@ -4871,7 +4871,9 @@ RUN " echo '"||l_str||"' >> /u1/topprod/topcust/cws/4gl/asfi514_zhangsba_auto_po
     END IF
 #FUN-B80129--end--add----
    
-    IF sfa06_t > l_sfa.sfa05 AND g_user<>'tiptop' and g_user <> '31664' and  g_user <> '51678' and g_user <> '37816' AND  #FUN-B50059 #darcy:2024/01/26 增加宗磊磊权限
+    IF sfa06_t > l_sfa.sfa05 AND g_user<>'tiptop' 
+    and g_user <> '31664' and  g_user <> '51678' and g_user <> '37816'   #FUN-B50059 #darcy:2024/01/26 增加宗磊磊权限
+    and g_user <> '31510' and # darcy:2025/06/16 add 
     #darcy:2024/08/30 add + sfa062_t
       ((p_argv1 = '1') OR (p_argv1='2' AND l_sfb.sfb02 NOT MATCHES '[58]')) THEN   #NO:7075 add sfb02 '8'狀態
       LET l_str='LINE No:',l_sfs.sfs02 USING '####' ,' sel sfa05'
