@@ -2825,12 +2825,12 @@ define l_tc_imh04    like tc_imh_file.tc_imh04 #darcy:2025/03/24 add
 
             #darcy:2025/03/24 add s---
             # [x] 管控每周领用 是否可以保存
-            if g_prog = 'aimt301' and (g_user = '59396' ) then
+            if g_prog = 'aimt301' then
                # 数量小于等于0，表示此料号还未管控
                # 重新查询一下可以领用数量
                call t370_weekamt(g_ina.ina04,g_inb[l_ac].inb04,g_ina.ina03,g_inb[l_ac].inb08,g_inb[l_ac].inb03)
                   returning g_inb[l_ac].weekamt,l_tc_imh04
-               if l_tc_imh04 > 0 then
+               if l_tc_imh04 >= 0 then
                   let g_inb[l_ac].remaind = l_tc_imh04 - g_inb[l_ac].weekamt  
                   if g_inb[l_ac].remaind < g_inb[l_ac].inb09 then
                      call cl_err(sfmt(cl_getmsg('cim-039',2),g_inb[l_ac].weekamt,g_inb[l_ac].remaind,g_inb[l_ac].inb09),'!',1) 
@@ -3347,7 +3347,7 @@ define l_tc_imh04    like tc_imh_file.tc_imh04 #darcy:2025/03/24 add
                let l_tc_imh04 = 0
                call t370_weekamt(g_ina.ina04,g_inb[l_ac].inb04,g_ina.ina03,g_inb[l_ac].inb08,g_inb[l_ac].inb03)
                   returning g_inb[l_ac].weekamt,l_tc_imh04
-               if l_tc_imh04 > 0 then
+               if l_tc_imh04 >= 0 then
                   let g_inb[l_ac].remaind = l_tc_imh04 - g_inb[l_ac].weekamt
                end if
             end if
@@ -4644,7 +4644,7 @@ define l_tc_imh04       like tc_imh_file.tc_imh04 #darcy:2025/03/24 add
             g_ina.ina04, g_inb[g_cnt].inb04,
             iif(g_ina.inapost=='Y',g_ina.ina02,g_ina.ina03),
             g_inb[g_cnt].inb08,g_inb[g_cnt].inb03 ) returning g_inb[g_cnt].weekamt,l_tc_imh04
-         if l_tc_imh04 > 0 then
+         if l_tc_imh04 >= 0 then
             let g_inb[g_cnt].remaind = l_tc_imh04 - g_inb[g_cnt].weekamt
          end if
       end if
@@ -5745,6 +5745,10 @@ DEFINE l_imaicd09 LIKE imaicd_file.imaicd09  #TQC-C60020
 END FUNCTION
  
 FUNCTION t370_set_required()
+
+   define l_weekamt  like tc_imh_file.tc_imh04,
+          l_tc_imh04 like tc_imh_file.tc_imh04
+
   #兩組雙單位資料不是一定要全部輸入,但是參考單位的時候要全輸入
   IF g_ima906 = '3' THEN
      CALL cl_set_comp_required("inb905,inb907,inb902,inb904",TRUE)
@@ -5788,12 +5792,20 @@ FUNCTION t370_set_required()
   end if
   #darcy:2024/01/05 add e---
   #darcy:2025/05/07 add s---
-   if g_prog = 'aimt301' and (g_user = '59396' ) then
-      call cl_set_comp_visible("inbud10",true)
-      call cl_set_comp_required("inbud10",true)
+   if g_prog = 'aimt301' then
+      call t370_weekamt(g_ina.ina04,g_inb[l_ac].inb04,g_ina.ina03,g_inb[l_ac].inb08,g_inb[l_ac].inb03)
+         returning l_weekamt,l_tc_imh04
+      if l_tc_imh04>=0 then
+         call cl_set_comp_visible("inbud10",true)
+         call cl_set_comp_required("inbud10",true)
+         call cl_set_comp_att_text("inbud10","线边数量")
+      else
+         call cl_set_comp_visible("inbud10",false)
+         call cl_set_comp_required("inbud10",false)
+      end if
    else
-      call cl_set_comp_required("inbud10",false)
       call cl_set_comp_visible("inbud10",false)
+      call cl_set_comp_required("inbud10",false)
    end if
   #darcy:2025/05/07 add e---
 END FUNCTION
@@ -13129,6 +13141,9 @@ function t370_weekamt(p_partno,p_item,p_day,p_unit,p_inb03)
    select tc_imh03,tc_imh04 into l_tc_imh03,l_tc_imh04 from tc_imh_file,eca_file
     where eca03 = p_partno and eca01 =  tc_imh02
       and tc_imh01 = p_item
+   if sqlca.sqlcode = 100 then
+      return 0 ,-1
+   end if
    if l_tc_imh03 != p_unit then
       call s_umfchk(p_item,l_tc_imh03,p_unit) returning l_flag,l_fac
       if (l_flag = 1) then
@@ -13143,6 +13158,13 @@ function t370_weekamt(p_partno,p_item,p_day,p_unit,p_inb03)
                " (select azn02, azn05 from azn_file where azn01 = '",p_day,"')"
    prepare t370_azn from l_sql
    execute t370_azn into l_begin,l_end
+   if l_end == p_day  then
+      -- 向后取一周
+      let p_day = p_day + 1
+      execute t370_azn into l_begin,l_end
+   end if
+      let l_begin = l_begin - 1
+      let l_end = l_end - 1
 
    # 本周领用值
    declare t370_weekamt cursor for
