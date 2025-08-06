@@ -2555,7 +2555,7 @@ FUNCTION t720_a()
  DEFINE l_rva100    LIKE rva_file.rva100    #CHI-A50012 add
  
     IF s_shut(0) THEN RETURN END IF
-    IF g_rvu00 = 'A' THEN RETURN END IF #FUN-B40031
+   --  IF g_rvu00 = 'A' THEN RETURN END IF #FUN-B40031
     #MESSAGE ""                    #FUN-A50001 mark
     CALL cl_msg("")                #FUN-A50001 add
     CLEAR FORM
