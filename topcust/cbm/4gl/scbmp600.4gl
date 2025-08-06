@@ -435,6 +435,8 @@ FUNCTION s_cbmp600_cnf_chk(p_bma01,p_bma06)
 
     END FOREACH
 
+    -- call scbmi600_sample(p_bma01)
+
     IF g_success = 'N' THEN 
         RETURN
     END IF
@@ -449,6 +451,8 @@ FUNCTION s_cbmp600_cnf_chk(p_bma01,p_bma06)
         LET g_success = 'N'
         RETURN
     END IF
+
+    call scbmi600_sample(p_bma01) #darcy:2025/06/16 add
 
     IF l_bma.bma10='1' THEN 
     #    CALL s_errmsg("bma01,bma10",l_bma.bma01||","||l_bma.bma10,"",'9023',1)   
@@ -2709,4 +2713,54 @@ function getze03(p_ze01)
     select ze03 into l_ze03 from ze_file
      where ze01 = p_ze01 and ze02 = '2'
     return l_ze03
+end function
+
+
+-- 样品固定损耗设置
+function scbmi600_sample(p_bmb01)
+    define p_bmb01 like bmb_file.bmb01
+
+    define l_sql    string
+    define l_bmb01  like bmb_file.bmb01
+    define l_bmb02  like bmb_file.bmb02
+    define l_bmb03  like bmb_file.bmb03
+    define l_ima06  like ima_file.ima06
+    define l_tc_sma06 like tc_sma_file.tc_sma06
+    define l_tc_sma07 like tc_sma_file.tc_sma07
+
+    if p_bmb01[10,10] not matches '[SF]' then 
+        return
+    end if
+
+    let l_sql = "select bmb01,bmb02,bmb03 from bmb_file ",
+                " where bmb01 = ? and bmb04 >= trunc(sysdate) ",
+                "   and (bmb05 < trunc(sysdate) or bmb05 is null)",
+                " order by bmb02"
+    prepare sbmp600_sample_p from l_sql
+    declare sbmp600_sample_cur cursor for sbmp600_sample_p
+
+    foreach sbmp600_sample_cur using p_bmb01 into l_bmb01,l_bmb02,l_bmb03
+        if sqlca.sqlcode then
+            call cl_err("sbmp600_sample_p",sqlca.sqlcode,1)
+            exit foreach
+        end if
+        -- 查询csmi115 是否由配置资料
+        select ima06 into l_ima06 from ima_file where ima01 = l_bmb03
+
+        select tc_sma06,tc_sma07 into l_tc_sma06,l_tc_sma07
+          from tc_sma_file 
+         where tc_sma01 = 'csmi115' and tc_sma02 = l_ima06
+        if sqlca.sqlcode then
+            continue foreach
+        end if
+
+        -- 更新损耗
+        update  bmb_file set bmb08 = l_tc_sma07,bmb081 = l_tc_sma06
+         where bmb01 = l_bmb01 and bmb02 = l_bmb02 and bmb03 = l_bmb03
+        if sqlca.sqlcode then
+            call cl_err("update bmb_file",sqlca.sqlcode,1)
+            exit foreach
+        end if
+
+    end foreach
 end function

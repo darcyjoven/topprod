@@ -1163,9 +1163,9 @@ DEFINE l_sql       STRING                #add by huanglf161031
         #Inflate With Minimum Issue Qty And Issue Pansize
         IF g_sfa.sfa11 = 'S' THEN   LET g_sfa.sfa05=g_sfa.sfa05 * (-1)  END IF #FUN-9C0040
         #str-----mark by guanyao160829 不需要考虑最小发料量和发料批量
-        #IF l_ima641 != 0 AND g_sfa.sfa05 < l_ima641 THEN
-        #   LET g_sfa.sfa05=l_ima641
-        #END IF
+        IF s_cralc_sample_wo(g_wo) and l_ima641 != 0 AND g_sfa.sfa05 < l_ima641 THEN
+           LET g_sfa.sfa05=l_ima641
+        END IF
         #IF l_ima64!=0 THEN
         #   LET l_double=(g_sfa.sfa05/l_ima64)+ 0.999999
         #   LET g_sfa.sfa05=l_double*l_ima64
@@ -1505,9 +1505,9 @@ DEFINE l_ima63   LIKE ima_file.ima63       #MOD-BC0199
         IF STATUS THEN LET l_ima64 = 0 LET l_ima641 = 0 END IF
         #check 最少發料量
         #str------mark by guanyao160829  不考虑最小发料量和发料批量
-        # IF l_ima641 != 0 AND l_total < l_ima641 THEN
-        #    LET l_total = l_ima641
-        # END IF
+        IF s_cralc_sample_wo(g_wo) and l_ima641 != 0 AND l_total < l_ima641 THEN
+           LET l_total = l_ima641
+        END IF
         # IF l_ima64 != 0 THEN
         #    LET l_double = (l_total/l_ima64) + 0.999999
         #    LET l_total = l_double * l_ima64
@@ -2281,9 +2281,9 @@ DEFINE p_ecm03        LIKE ecm_file.ecm03
         #Inflate With Minimum Issue Qty And Issue Pansize
         IF g_sfa.sfa11 = 'S' THEN   LET g_sfa.sfa05=g_sfa.sfa05 * (-1)  END IF 
         #str------mark by guanyao160829   不考虑最小发料量和发料批量
-        #IF l_ima641 != 0 AND g_sfa.sfa05 < l_ima641 THEN
-        #   LET g_sfa.sfa05=l_ima641
-        #END IF
+        IF s_cralc_sample_wo(g_wo) and l_ima641 != 0 AND g_sfa.sfa05 < l_ima641 THEN
+           LET g_sfa.sfa05=l_ima641
+        END IF
         #IF l_ima64!=0 THEN
         #   LET l_double=(g_sfa.sfa05/l_ima64)+ 0.999999
         #   LET g_sfa.sfa05=l_double*l_ima64
@@ -3016,3 +3016,17 @@ function s_cralc_sub(p_sfa)
    return true
 end function
 #darcy:2023/04/28 add e---
+# darcy:2025/04/18 add s---
+# 判断是否是样品工单
+function s_cralc_sample_wo(p_wo)
+   define p_wo   varchar(40)
+   define l_cnt  integer
+
+   let l_cnt = 0
+   select count(*) into l_cnt from tc_sma_file
+    where tc_sma01 = 'csmi109' and tc_sma06 = 5
+      and p_wo like tc_sma02 || '%' 
+
+   return l_cnt > 0 
+end function
+# darcy:2025/04/18 add e---

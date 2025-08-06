@@ -32,6 +32,8 @@ function scbmp600_imp_fromxlsx()
     define l_bmd    record like bmd_file.*
     # darcy:2025/05/07 add e---
     define l_sub    boolean #darcy:2025/05/12 add
+    define l_ok2     boolean
+
 
     whenever error continue
 
@@ -139,8 +141,16 @@ function scbmp600_imp_fromxlsx()
             if l_ok then let l_bmb.bmb10_fac = 1 end if
 
             call s_umfchk(l_bmb.bmb03,l_bmb.bmb10,l_ima86)
-                returning l_ok,l_bmb.bmb10_fac2
-            if l_ok then let l_bmb.bmb10_fac2 = 1 end if
+                returning l_ok2,l_bmb.bmb10_fac2
+            if l_ok2 then let l_bmb.bmb10_fac2 = 1 end if
+            # darcy:2025/06/25 add s---
+            if l_ok and l_ok then
+                call s_errmsg('bmb01,bmb03,bmb10',sfmt("主件:%1 元件:%2 单位:%3",l_bmb.bmb01,l_bmb.bmb03,l_bmb.bmb10),'单位错误',sqlca.sqlcode,1)
+                call scbmp600_imp_result(l_bma.bma01,j,10,sfmt('%1 bmb插入失败',l_bmb.bmb03 ),'warn')
+                let g_success = 'N'
+            end if
+            # darcy:2025/06/25 add e---
+
             let l_bmb.bmb14 = 0
             let l_bmb.bmb16 = 0 -- 取替代
             let l_bmb.bmb17 = 'N'
