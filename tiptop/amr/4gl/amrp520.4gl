@@ -598,6 +598,9 @@ FUNCTION p520()
    DEFINE l_sfb919         LIKE sfb_file.sfb919    #FUN-A80102
    DEFINE l_str            STRING                  #FUN-A90057
    DEFINE tok1             base.StringTokenizer    #FUN-A90057
+   define l_imaud10  like ima_file.imaud10
+   define l_pnl      decimal(15,3)
+   define i,j        integer
 
 #NO.FUN-570125 START--
    IF g_bgjob = 'Y' THEN
@@ -632,6 +635,7 @@ FUNCTION p520()
            # "   AND bma05 <= '",sfb.sfb81,"'",
             "   AND bma01 = mss01 ",
              "  AND bma06 = ima910 ",  #FUN-550110
+             "  and ima01 not like '%-%' ",
              " ORDER BY mss01,mss03"     #MOD-4B0079 ORDER BY 回歸到g_sql內
  
    PREPARE p520_p FROM g_sql
@@ -652,39 +656,45 @@ FUNCTION p520()
       END IF
       #FUN-970027--end--add--
       #FUN-A80102(S)
-      IF g_sma.sma1431='Y' THEN   
-        #工單不展開號機,因為此處無法指定號機數量
-        #LET tok1 = base.StringTokenizer.create(tm.msr919,",")
-        #WHILE tok1.hasMoreTokens()
-        #   LET l_lot_no = tok1.nextToken()
-        #   IF l_lot_no.getlength() > 0 THEN
-        #      CALL s_machine_de_code(mss.mss01,l_lot_no) RETURNING l_snum,l_enum
-        #      LET l_ssn = l_snum
-        #      LET l_esn = l_enum
-        #      IF l_esn < l_ssn THEN
-        #         CONTINUE FOREACH
-        #      END IF
-        #      LET l_sum_sfb08 = mss.mss09
-        #      LET l_avg_sfb08 = s_trunc(l_sum_sfb08 / (l_esn - l_ssn + 1),0)
-        #      LET l_tol_sfb08 = 0
-        #      LET mss.mss09 = l_avg_sfb08
-        #      FOR l_cnt = l_ssn TO l_esn
-        #         LET l_tol_sfb08 = l_tol_sfb08 + l_avg_sfb08
-        #         IF (l_cnt = l_esn) AND (l_tol_sfb08 < l_sum_sfb08) THEN
-        #            #將數量尾差寫到最後一筆
-        #            LET mss.mss09 = l_sum_sfb08 - l_tol_sfb08
-        #         END IF
-        #         LET l_sfb919 = s_machine_en_code(mss.mss01,l_cnt)
-        #         OUTPUT TO REPORT p520_rep(mss.*,l_sfb919)
-        #      END FOR
-        #   END IF      
-        #END WHILE   
-        OUTPUT TO REPORT p520_rep(mss.*,tm.msr919)
-      ELSE   
-      #FUN-A80102(E)
-         OUTPUT TO REPORT p520_rep(mss.*,'')         
-      END IF
-      LET l_cnt0 = l_cnt0 + 1  #FUN-6B0064
+      # darcy:2025/06/17 add s---
+      # 光板工单如果大于1500PNL，按照每个工单1000PNL产生
+      # 小于1500PNL，则直接产生工单
+      
+
+      if mss.mss01[7,7] not matches '[ABC]' then
+         select imaud10 into l_imaud10 from ima_file where ima01 = mss.mss01
+         let l_pnl = mss.mss09 / l_imaud10
+
+         if l_pnl > 1500 then
+         while l_pnl > 0
+               if l_pnl > 1000 then
+                  let mss.mss09 = 1000 * l_imaud10
+                  let l_pnl = l_pnl - 1000
+               else
+                  let mss.mss09 = l_pnl * l_imaud10
+                  let l_pnl = 0
+               end if
+               OUTPUT TO REPORT p520_rep(mss.*,'')  
+               LET l_cnt0 = l_cnt0 + 1
+            end while
+         else
+            OUTPUT TO REPORT p520_rep(mss.*,'')
+            LET l_cnt0 = l_cnt0 + 1
+         end if
+      else
+         OUTPUT TO REPORT p520_rep(mss.*,'') 
+         LET l_cnt0 = l_cnt0 + 1
+      end if
+      # darcy:2025/06/17 add e---
+      # darcy:2025/06/17 mark s---
+      -- IF g_sma.sma1431='Y' THEN    
+      --   OUTPUT TO REPORT p520_rep(mss.*,tm.msr919)
+      -- ELSE   
+      -- #FUN-A80102(E)
+      --    OUTPUT TO REPORT p520_rep(mss.*,'')         
+      -- END IF
+      -- LET l_cnt0 = l_cnt0 + 1  #FUN-6B0064
+      # darcy:2025/06/17 mark e---
    END FOREACH
    FINISH REPORT p520_rep
   #FUN-6B0064--begin
@@ -765,22 +775,26 @@ define l_imaud10        like ima_file.imaud10
        LET g_t1 = l_ima111
     END IF
 #No.FUN-920183 end --------
+# darcy:2025/06/20 add s---
+-- 把拆单放在良率之后
 #No.FUN-560060-begin
-      IF cl_null(sfb.sfb01[g_no_sp,g_no_ep]) THEN
-        CALL s_auto_assign_no("asf",sfb.sfb01,sfb.sfb81,"1","sfb_file","sfb01","","","")
-          RETURNING li_result,sfb.sfb01
-        IF (NOT li_result) THEN                                                   
-           LET g_success='N' 
-           CALL cl_batch_bg_javamail("N")     # No.FUN-570125
-           CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211
-           EXIT PROGRAM
-        END IF                                                                    
-#     IF cl_null(sfb.sfb01[5,10]) THEN
-#        CALL s_smyauno(sfb.sfb01,sfb.sfb81) RETURNING i,sfb.sfb01
-#        IF i THEN LET g_success='N' EXIT PROGRAM END IF
-      END IF
-      LET g_sfb01 = sfb.sfb01
+--       IF cl_null(sfb.sfb01[g_no_sp,g_no_ep]) THEN
+--         CALL s_auto_assign_no("asf",sfb.sfb01,sfb.sfb81,"1","sfb_file","sfb01","","","")
+--           RETURNING li_result,sfb.sfb01
+--         IF (NOT li_result) THEN                                                   
+--            LET g_success='N' 
+--            CALL cl_batch_bg_javamail("N")     # No.FUN-570125
+--            CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211
+--            EXIT PROGRAM
+--         END IF                                                                    
+--         display sfb.sfb01||mss.mss01
+-- #     IF cl_null(sfb.sfb01[5,10]) THEN
+-- #        CALL s_smyauno(sfb.sfb01,sfb.sfb81) RETURNING i,sfb.sfb01
+-- #        IF i THEN LET g_success='N' EXIT PROGRAM END IF
+--       END IF
+--       LET g_sfb01 = sfb.sfb01
 #No.FUN-560060-end   
+# darcy:2025/06/20 add e---
 ## No:2367 modify 1998/07/14 ------------------------
 #     SELECT ima08 INTO l_ima08 FROM ima_file WHERE ima01=sfb.sfb05
       SELECT ima08 INTO l_ima08 FROM ima_file WHERE ima01=mss.mss01
@@ -828,7 +842,7 @@ define l_imaud10        like ima_file.imaud10
       LET sfb.sfb13  =mss.mss11
       LET sfb.sfb15  =mss.mss03
       LET sfb.sfb20  =mss.mss03
-      LET sfb.sfb22  ='MRP',mss.mss_v,'-',mss.mss00 USING '&&&&'
+      LET sfb.sfb22  ='MRP',mss.mss_v,'-',mss.mss00 USING '&&&&&&'
       LET sfb.sfb23  ='N'
       LET sfb.sfb24  ='N'
       LET sfb.sfb29  ='Y'
@@ -837,7 +851,7 @@ define l_imaud10        like ima_file.imaud10
       LET sfb.sfb35  ='N'
       LET sfb.sfb39  ='1'
       LET sfb.sfb41  ='N'
-      LET sfb.sfb42  =0
+      LET sfb.sfb42  = 1   #darcy:2025/06/17 展开一层
       LET sfb.sfb44  =g_user    #MOD-A60099 add
       LET sfb.sfb87  ='N'
       #LET sfb.sfbmksg  ='N'     #TQC-9B0118 add #MOD-D10118
@@ -915,8 +929,11 @@ define l_imaud10        like ima_file.imaud10
 
       let l_rate = 0
       select imaud10 into l_imaud10 from ima_file where ima01 = sfb.sfb05
-      call i255_get_roduct_rate(new[g_i].new_part) returning l_rate,l_date
-      if not cl_null(l_rate) and l_rate >0 and l_rate < 100 then
+      call i255_get_roduct_rate(sfb.sfb05) returning l_rate,l_date
+      if l_rate = 0 then
+         let l_rate = 100
+      end if
+      if not cl_null(l_rate)  and l_rate <= 100 then
          #有维护良率 
          select ceil((sfb.sfb08/(l_rate/100))/l_imaud10)*l_imaud10 into sfb.sfb08 from dual
       end if
@@ -925,9 +942,40 @@ define l_imaud10        like ima_file.imaud10
       let sfb.sfbud10 = l_imaud10
 
       # 更新订单已转数量
-      # TODO
+      # TODO 
 
       #darcy:2024/08/02 add e---
+      #darcy:2025/06/20 add s---
+      # 光板大于1500PNL要进行1000PNL拆单
+      if sfb.sfb05[7,7] not matches '[ABC]' and sfb.sfbud07 > 1500 then
+         let l_pnl = sfb.sfbud07
+         while l_pnl > 0
+            if l_pnl > 1000 then
+               let sfb.sfb08 = 1000 * l_imaud10
+               let sfb.sfbud07 = 1000
+               let l_pnl = l_pnl - 1000
+            else
+               let sfb.sfb08 = l_pnl * l_imaud10
+               let sfb.sfbud07 = l_pnl
+               let l_pnl = 0
+            end if
+            
+         end while
+      else
+         IF cl_null(sfb.sfb01[g_no_sp,g_no_ep]) THEN
+            CALL s_auto_assign_no("asf",sfb.sfb01,sfb.sfb81,"1","sfb_file","sfb01","","","")
+            RETURNING li_result,sfb.sfb01
+            IF (NOT li_result) THEN                                                   
+               LET g_success='N' 
+               CALL cl_batch_bg_javamail("N")     # No.FUN-570125
+               CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211
+               EXIT PROGRAM
+            END IF                                                                    
+            display sfb.sfb01||mss.mss01 
+         END IF
+         LET g_sfb01 = sfb.sfb01 
+      end if
+      #darcy:2025/06/20 add e---
       INSERT INTO sfb_file VALUES(sfb.*)
       IF STATUS THEN 
 #         CALL cl_err('ins sfb:',STATUS,1) #No.FUN-660107
