@@ -15271,6 +15271,16 @@ FUNCTION t600_out()
                      "  'cxmr011_1' "
          CALL cl_cmdrun(g_msg)
       #darcy:2023/12/28 add e---
+      # darcy:2025/07/22 add s---
+      on action sale_tianma
+         LET l_wc='oga01="',l_no,'"'
+         LET g_msg = "cxmr011", 
+                     " '",g_today CLIPPED,"' ''",
+                     " '",g_lang CLIPPED,"' '",g_bgjob CLIPPED,"'  '' '1'",
+                     " '",l_wc CLIPPED,"' '' 'N' ",
+                     "  'cxmr011_tm' "
+         CALL cl_cmdrun(g_msg)
+      # darcy:2025/07/22 add e---
        #-------------07751hlf add-------------------------------------
        ON ACTION sale_goods10 #安费诺出货通知单
                LET l_wc='oga01="',l_no,'"'
