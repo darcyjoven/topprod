@@ -348,6 +348,8 @@ FUNCTION p_base_act_menu()
                   CALL cl_err('',-400,0)
                END IF
             END IF
+         when 'diydiy'
+            call p_base_act_diy()
  
 #         WHEN "mis_func"
 #            # 2004/08/17 MIS後門
@@ -1254,6 +1256,9 @@ FUNCTION p_base_act_bp(p_ud)
          LET g_action_choice="detail"
          LET l_ac = ARR_CURR()
          EXIT DISPLAY
+      on action diydiy
+         let g_action_choice = "diydiy"
+         exit display
  
       ON ACTION cancel
          LET INT_FLAG=FALSE                      #MOD-570244 mars
@@ -1557,6 +1562,7 @@ FUNCTION p_base_act_output_4ad()
       END CASE
  
       IF li_i1 > 1 THEN
+         # darcy:2025/07/28 mod 
          IF cl_confirm("azz-238") THEN
             LET lc_gap01=""
          END IF
@@ -1597,7 +1603,7 @@ FUNCTION p_base_act_output_4ad()
          END FOREACH
          LET ls_gap01=ls_gap01.subString(2,ls_gap01.getLength())
       ELSE
-         CALL cl_err_msg(NULL,"azz-061",g_gap01 CLIPPED,10)
+         CALL cl_err_msg(NULL,"azz-061",g_gap01 CLIPPED,10) # darcy:2025/07/28 mod
          RETURN   #TQC-620047
       END IF
    END IF
@@ -1607,7 +1613,7 @@ FUNCTION p_base_act_output_4ad()
     WHERE zz01 = lc_gap01
  
    IF cl_null(lc_zz011) THEN
-      CALL cl_err_msg(NULL,"azz-061",lc_gap01 CLIPPED,10)
+      CALL cl_err_msg(NULL,"azz-061",lc_gap01 CLIPPED,10) #darcy:2025/07/28 mod
       RETURN
    END IF
  
@@ -1815,6 +1821,7 @@ FUNCTION p_base_act_output_4tm()
       END CASE
  
       IF li_i1 > 1 THEN
+         # darcy:2025/07/28 mod
          IF cl_confirm("azz-239") THEN
             LET lc_gap01=""
          END IF
@@ -2342,3 +2349,18 @@ FUNCTION p_base_act_set_hotkey(lc_gap08)
    RETURN lc_gap08
 END FUNCTION
 #No.FUN-660195 ---end---
+
+
+function p_base_act_diy()
+
+   display '此工单在代码中被注释掉，请从代码中开启'
+   return
+   
+
+   while g_gap01 !='wagp020'
+      CALL p_base_act_fetch("N")
+      CALL p_base_act_output_4ad()
+      CALL p_base_act_output_4tm()
+      display g_gap01
+   end while 
+end function
