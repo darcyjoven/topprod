@@ -242,7 +242,7 @@ FUNCTION p301(p_argv1, p_argv2, p_argv3, p_argv4, p_trans)
       LET g_sfb.sfb42=p_argv3
  
       CASE 
-        WHEN g_sma.sma848='1'
+        WHEN g_sma.sma848='1' and g_prog != 'amrp520' #darcy:2025/06/17 add
              OPEN WINDOW p301_w AT 4,2 WITH FORM "asf/42f/asfp301"
                   ATTRIBUTE (STYLE = g_win_style CLIPPED) #No.FUN-580092 HCN
  
@@ -264,7 +264,7 @@ FUNCTION p301(p_argv1, p_argv2, p_argv3, p_argv4, p_trans)
              LET g_argv1=''  #FUN-D50098
              CALL asfp301()
              CLOSE WINDOW p301_w #darcy:2024/08/05 add
-         WHEN g_sma.sma848='2'
+         WHEN g_sma.sma848='2' or g_prog == 'amrp520' #darcy:2025/06/17 add
           #  CLOSE WINDOW screen   #MOD-580355    #FUN-D50098
  
           #  OPEN WINDOW p301_w AT 16,10 WITH 4 ROWS, 60 COLUMNS      #FUN-D50098 mark
@@ -747,7 +747,17 @@ FUNCTION asfp301()
     IF cl_null(l_imaud10) OR l_imaud10 =0  THEN 
        LET l_imaud10 = 1
     END IF 
-    SELECT ceil(l_sfb.sfb08/l_imaud10)*l_imaud10 INTO l_sfb.sfb08  FROM dual 
+    # darcy:2025/06/17 add s---
+    # 增加模切料的判断，如何工单中含有M开头的作业编号，当作模切料处理
+    # 模切料不需要整PNL生产，允许小数PNL
+    let l_cnt = 0
+    select count(*) into l_cnt from bmb_file where bmb01 = l_sfb.sfb05
+       and bmb04 <= g_sfb.sfb81 and (bmb05 is null or bmb05 > g_sfb.sfb81)
+       and bmb09 like 'M%'
+    if l_cnt == 0 then
+    # darcy:2025/06/17 add e---
+      SELECT ceil(l_sfb.sfb08/l_imaud10)*l_imaud10 INTO l_sfb.sfb08  FROM dual 
+    end if  #darcy:2025/06/17 add
     #end-----add by guanyao160730
     #MOD-D30136---end
     #MOD-D20122---end 
