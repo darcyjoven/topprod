@@ -884,7 +884,7 @@ define l_str   string #darcy:2024/10/17 add
                            let l_str = current hour to second
                            # 时间大于13:00 的时候
                            if l_str >= "13:00" then
-                              call sasft623_mail_info("YT1")
+                              call sasft623_mail_info("YT1","月末完工入库提醒")
                            end if
                         end if
                      end if
@@ -898,11 +898,22 @@ define l_str   string #darcy:2024/10/17 add
                            let l_str = current hour to second
                            # 时间大于13:00 的时候
                            if l_str >= "18:00" then
-                              call sasft623_mail_info("YT2")
+                              call sasft623_mail_info("YT2","月末完工入库提醒")
                            end if
                         end if
                      end if
                      #darcy:2025/01/17 add e---
+                     # darcy:2025/08/13 add s---
+                     # 完工入库的时候，料号JL/JN/KE系列，仓储：S005发送邮件通知
+                     let l_cnt = 0
+                     select count(*) into l_cnt from sfv_file
+                      where sfv01 = g_sfu.sfu01
+                        and (sfv04 like 'JL%' or sfv04 like 'JN%' or sfv04 like 'KE%')
+                        and sfv05 = 'S005'
+                     if l_cnt > 0 then
+                        call sasft623_mail_info("RK1","JL/JN/KE入库提醒")
+                     end if
+                     # darcy:2025/08/13 add e---
                 END IF
               END IF
               CALL t623_pic() #圖形顯示 #FUN-660137
@@ -8911,17 +8922,18 @@ function sasft623_last_in_chk(p_sfu01)
 end function
 
 #darcy:2024/10/16 add s---
-function sasft623_mail_info(p_smyslip)
+function sasft623_mail_info(p_smyslip,p_title)
    define l_path     string
    define l_ok       varchar(1)
    define l_receipt  string
    define l_gen06    like gen_file.gen06
    define p_smyslip  like smy_file.smyslip
+   define p_title    string
 
    let l_path = sfmt("/u1/out/%1.html",cs_uuid())
 
    # 产生邮件正文
-   call cs_html_init(cl_get_progname(g_prog,g_lang),"月末完工入库提醒")
+   call cs_html_init(cl_get_progname(g_prog,g_lang),p_title)
    call cs_html_main_field(ui.Interface.getRootNode(),"sfu01,symdesc,sfu02,sfu04")
    call cs_html_detail_field(ui.Interface.getRootNode(),"sfv03,sfv11,sfv20,sfv04,ima02,ima021,sfv08,sfv09,sfv05,sfv06,sfv07",base.typeinfo.create(g_sfv))
    call cs_html_write(l_path)
@@ -8940,7 +8952,7 @@ function sasft623_mail_info(p_smyslip)
    let l_receipt = l_receipt.subString(1,l_receipt.getLength()-1)
 
    # 发送邮件
-   call cs_mail_sendfile("月末完工入库提醒",l_path,l_receipt,"","darcy.li@forewin-sz.com.cn","") returning l_ok
+   call cs_mail_sendfile(p_title,l_path,l_receipt,"","darcy.li@forewin-sz.com.cn","") returning l_ok
    if l_ok then
       message "邮件通知成功"
    else
