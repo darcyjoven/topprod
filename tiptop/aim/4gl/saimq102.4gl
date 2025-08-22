@@ -1003,6 +1003,13 @@ FUNCTION q102_show2()
    DEFINE l_sfbud12       LIKE sfb_file.sfbud12 #darcy:2022/05/20 下版数量
    DEFINE l_tc_sfaa02     LIKE sfb_file.sfbud12 #darcy:2022/05/20 下版数量
    define l_ima27         like ima_file.ima27   #darcy:2023/04/03 add 
+   # darcy:2025/08/07 add s---
+   define l_sub_sfa06   like sfa_file.sfa06,
+          l_sub_sfa05   like sfa_file.sfa05,
+          l_sub_sfa161  like sfa_file.sfa161,
+          l_sub_sfa03   like sfa_file.sfa03,
+          l_sub_liuzhi  decimal(15,3)
+   # darcy:2025/08/07 add e---
     
    #-->受訂量
    MESSAGE sfmt(" (1) %1:Wait...",g_ima.ima01)
@@ -1026,6 +1033,17 @@ FUNCTION q102_show2()
 #    IF g_ima.sfa_q1 < 0  THEN    #TQC-A40009 
 #       LET g_ima.sfa_q1 = 0      #TQC-A40009     
 #    END IF                       #TQC-A40009 
+
+   #darcy:2025/08/07 add s---
+   # 留置计算相关SQL
+   let l_sql = "select sfa161 from sfa_file where sfa01 = ? and sfa27 =? and sfa26 = '4' ",
+               " and sfa08 = ? and sfa12 = ? "
+   prepare q102_sfa27_sfa161 from l_sql
+   let l_sql = "select sfa03,sfa05*sfa13,(sfa06+sfa062) * sfa13 from sfa_file where sfa01 = ? and sfa27 =?",
+               " and sfa08 = ? and sfa12 = ? ",
+               " order by sfa26,sfa03 "
+   declare q102_sfa27_sfa03 cursor from l_sql
+   #darcy:2025/08/07 add e---
 
     LET l_sql = "SELECT sfa_file.*",
                 " ,sfbud12 ", #darcy:2022/05/20
@@ -1088,8 +1106,39 @@ FUNCTION q102_show2()
          let l_tc_sfaa02 = 0
       end if
 
-      let g_ima.sfa_liuzhi = iif (cl_null(g_ima.sfa_liuzhi),0,g_ima.sfa_liuzhi)
-      let g_ima.sfa_liuzhi = g_ima.sfa_liuzhi + lr_sfa.sfa161 * l_tc_sfaa02 * lr_sfa.sfa13
+      # darcy:2025/08/07 mod s---
+      if lr_sfa.sfa26 matches "[4S]" then
+         # 修改留置计算方式，留置要计算取替代料号
+         # 先计算需留置数量，再从取替代料号中依次扣除
+         execute q102_sfa27_sfa161 using lr_sfa.sfa01,lr_sfa.sfa27,lr_sfa.sfa08,lr_sfa.sfa12
+            into l_sub_sfa161
+         -- 总留置数量
+         let l_sub_liuzhi = l_sub_sfa161 * l_tc_sfaa02 * lr_sfa.sfa13
+         foreach q102_sfa27_sfa03 using lr_sfa.sfa01,lr_sfa.sfa27,lr_sfa.sfa08,lr_sfa.sfa12
+            into l_sub_sfa03,l_sub_sfa05,l_sub_sfa06
+            if sqlca.sqlcode then
+               call cl_err('q102_sfa27_sfa03',sqlca.sqlcode,1)
+               exit foreach
+            end if
+            if l_sub_liuzhi <= 0 then
+               exit foreach
+            end if
+            if l_sub_sfa03 == lr_sfa.sfa03 then
+               if l_sub_liuzhi > l_sub_sfa05 - l_sub_sfa06 then
+                  let l_sub_liuzhi = l_sub_sfa05 - l_sub_sfa06
+               end if
+               let g_ima.sfa_liuzhi = iif (cl_null(g_ima.sfa_liuzhi),0,g_ima.sfa_liuzhi)
+               let g_ima.sfa_liuzhi = g_ima.sfa_liuzhi + l_sub_liuzhi
+               exit foreach
+            else
+               let l_sub_liuzhi = l_sub_liuzhi - l_sub_sfa05 - l_sub_sfa06
+            end if
+         end foreach
+      else
+         let g_ima.sfa_liuzhi = iif (cl_null(g_ima.sfa_liuzhi),0,g_ima.sfa_liuzhi)
+         let g_ima.sfa_liuzhi = g_ima.sfa_liuzhi + lr_sfa.sfa161 * l_tc_sfaa02 * lr_sfa.sfa13
+      end if
+      # darcy:2025/08/07 mod e---
       let l_tc_sfaa02 = 0
 
       #darcy:2022/07/13 e---
