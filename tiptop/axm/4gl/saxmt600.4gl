@@ -3097,6 +3097,7 @@ FUNCTION t600_menu()
                   IF g_success = "Y" AND g_prog = 'axmt610' THEN
                     CALL s_auto_gen_doc('axmt610',g_oga.oga01,'')
                   END IF
+                  call saxmt600_chk_add(g_oga.oga01) # darcy:2025/08/22 add
                END IF
                CALL t600_show()
             END IF
@@ -41357,3 +41358,110 @@ DISPLAY BY NAME d_ogb1[l_ac].*
 
 END FUNCTION
 #darcy:2023/12/28 add e---
+
+# darcy:2025/08/22 add s---
+# 检查是否是小米的料号，是否要邮件通知
+function saxmt600_chk_add(p_oga01)
+   define p_oga01    varchar(20)
+   define l_cnt      integer
+   define l_sql      string
+   define l_oga044   like oga_file.oga044
+
+   if cl_null(p_oga01) then 
+      return
+   end if
+
+   if g_prog <> 'axmt610' then
+      return 
+   end if
+
+   # 1. 客户编号是AA且是量产资料
+   let l_cnt = 0
+   select count(*) into l_cnt from oga_file,ogb_file
+    where oga01 = p_oga01 and oga03 = 'AA'
+      and oga01 = ogb01 and ogaconf <> 'X'
+      and ogb04 like '%R'
+   if l_cnt <= 0 then 
+      return
+   end if
+
+   # 2. 料号首次出货 OR 更换地址 
+
+   let l_sql = "select count(*)
+                  from (select oga01, ogb04, oga044
+                           from oga_file, ogb_file
+                           where oga01 = ogb01
+                           and ogaconf = 'Y'
+                           and oga09 = '1'
+                           and (ogb04, oga044) in
+                                 (select ogb04, oga044
+                                    from oga_file, ogb_file
+                                 where oga01 = ?
+                                    and oga01 = ogb01
+                                 group by ogb04, oga044)
+                  group by oga01, ogb04, oga044)"
+   prepare saxmt600_chk_single from l_sql
+   execute saxmt600_chk_single using p_oga01 into l_cnt
+   if l_cnt > 1 then
+      return
+   end if
+
+   # 3. 首次出货 地址是  27&57&59&63&64&68 首次出货地址，请附带承认书，封样。
+   #                   54&66  首次出货地址，请附带承认书，封样及飞针资料
+   #                   1&33&53 不需要任何通知
+
+   select oga044 into l_oga044 from oga_file
+    where oga01= p_oga01
+   
+   if l_oga044 = 27 or l_oga044 =57 or l_oga044 = 59 or l_oga044 = 63
+    or l_oga044 = 64 or l_oga044 = 68 then
+      call saxmt600_mail_info("AA0",p_oga01||" 首次出货地址，请附带承认书，封样")
+   else
+      if l_oga044 = 54 or l_oga044 = 66 then
+         call saxmt600_mail_info("AA0",p_oga01||" 首次出货地址，请附带承认书，封样及飞针资料")
+      end if
+   end if
+end function
+
+function saxmt600_mail_info(p_smyslip,p_title)
+   define l_path     string
+   define l_ok       varchar(1)
+   define l_receipt  string
+   define l_gen06    like gen_file.gen06
+   define p_smyslip  like smy_file.smyslip
+   define p_title    string
+
+   let l_path = sfmt("/u1/out/%1.html",cs_uuid())
+
+   # 产生邮件正文
+   call cs_html_init(cl_get_progname(g_prog,g_lang),p_title)
+   call cs_html_main_field(ui.Interface.getRootNode(),
+         "oga01,oaydesc,oga69,oga03,oga032,addr,oga14,gen02,ogaud02")
+   call cs_html_detail_field(ui.Interface.getRootNode(),
+         "ogb03,ogb31,ogb32,ogb04,ogb06,ogb09,ogb091,ogb092,ogb12,ogbud02,ogbud06",base.typeinfo.create(g_ogb))
+   call cs_html_write(l_path)
+
+   # 收件人处理
+   declare saxmt600_mail_cur cursor for
+      select gen06 from smu_file,gen_file where gen01 = smu02 and smu01 = p_smyslip
+   foreach saxmt600_mail_cur into l_gen06
+      if sqlca.sqlcode then
+         call cl_err("saxmt600_mail_cur",sqlca.sqlcode,1)
+         exit foreach
+      end if
+      if not cl_null(l_gen06) then
+         let l_receipt = l_receipt,l_gen06 , ";"
+      end if
+   end foreach
+
+   let l_receipt = l_receipt.subString(1,l_receipt.getLength()-1)
+
+   # 发送邮件
+   call cs_mail_sendfile(p_title,l_path,l_receipt,"","darcy.li@forewin-sz.com.cn","") returning l_ok
+   if l_ok then
+      message "邮件通知成功"
+   else
+      message "邮件通知失败"
+   end if
+end function
+# darcy:2025/08/22 add e---
