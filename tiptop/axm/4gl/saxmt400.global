@@ -87,6 +87,15 @@ type type_oebs record
   comb02         varchar(10)
 end record
 #darcy:2025/04/24 add e---
+# darcy:2025/08/19 add s---
+define g_imp_result dynamic array of record
+    sheet   string,
+    row integer,
+    col integer,
+    value   string,
+    style   string -- warn info mark
+end record
+# darcy:2025/08/19 add e---
 DEFINE
     g_slip  LIKE oay_file.oayslip, #No.FUN-680137 CHAR(5)     #No.FUN-550052   #FUN-A70146
     g_poz   RECORD LIKE poz_file.*,        #多角流程代碼(單頭) No.7946
