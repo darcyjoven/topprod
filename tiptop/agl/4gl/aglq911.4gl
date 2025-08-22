@@ -87,6 +87,52 @@ GLOBALS "../../config/top.global"
                 aba06  LIKE aba_file.aba06,
                 aba07  LIKE aba_file.aba07
            END RECORD 
+   # darcy:2025/08/14 add s---
+   DEFINE g_aba_excel      DYNAMIC ARRAY OF RECORD  
+                aba00  LIKE aba_file.aba00,    #帳別                                                                                     
+               #aba01  LIKE aba_file.aba01,   #傳票編號     #FUN-C80102                                                                            
+                aba01  LIKE type_file.chr1000,   #傳票編號  #FUN-C80102                                                                               
+                aba02  LIKE aba_file.aba02,   #傳票日期  
+                aba03  LIKE aba_file.aba03,
+                aba04  LIKE aba_file.aba04,                                                                       
+                abb02  LIKE abb_file.abb02,   #Seq
+                abb04  LIKE abb_file.abb04,                                                                                      
+               #abb03  LIKE abb_file.abb03,   #科目   #FUN-C80102                                                                                  
+                abb03  LIKE type_file.chr1000,   #科目    #FUN-C80102                                                                            
+                aag02  LIKE aag_file.aag02,   #科目名稱                                                                                 
+                aag13  LIKE aag_file.aag13,   #額外名稱                                                                                                      
+                abb03_1 LIKE type_file.chr1000,  #FUN-D10072                                                                                 
+               #abb05  LIKE abb_file.abb05,   #部門    #FUN-C80102 
+                abb05  LIKE type_file.chr1000,   #部門 #FUN-C80102
+                gem02  LIKE gem_file.gem02,
+                abb24  LIKE abb_file.abb24,                                                                                               
+                abb25  LIKE abb_file.abb25,   #匯率 #FUN-C80102
+                abb06  LIKE abb_file.abb06,   #借貸別                                                                                   
+                abb07  LIKE abb_file.abb07,   #異動金額 \
+                abb07f LIKE abb_file.abb07f,                                                                               
+                abb11  LIKE abb_file.abb11,   #異動碼-1                                                                                 
+                #FUN-C80102---add---str--
+                abb12  LIKE abb_file.abb12,   #異動碼-2                                                                              
+                abb13  LIKE abb_file.abb13,   #異動碼-3                                                                              
+                abb14  LIKE abb_file.abb14,   #異動碼-4                                                                              
+                abb35  LIKE abb_file.abb35,   #異動碼-9                                                                              
+                abb36  LIKE abb_file.abb36,   #異動碼-10                                                                              
+                abb37  LIKE abb_file.abb37,   #異動碼-關係人                                                                          
+                rec_d  LIKE abb_file.abb07f,                                                                                          
+                rec_c  LIKE abb_file.abb07f,                                                                                          
+                #FUN-C80102---add---end--
+                amt_d  LIKE abb_file.abb07,                                                                                           
+                amt_c  LIKE abb_file.abb07,                                                                                           
+                aba24  LIKE aba_file.aba24,   
+                gen02  LIKE gen_file.gen02,
+                aba37  LIKE aba_file.aba37,   
+                gen02_1 LIKE gen_file.gen02,
+                aba38  LIKE aba_file.aba38,
+                gen02_2 LIKE gen_file.gen02,
+                aba06  LIKE aba_file.aba06,
+                aba07  LIKE aba_file.aba07
+           END RECORD 
+   # darcy:2025/08/14 add e---
    DEFINE g_row_count    LIKE type_file.num10  
    DEFINE g_curs_index   LIKE type_file.num10  
    DEFINE g_jump         LIKE type_file.num10  
@@ -199,8 +245,12 @@ FUNCTION q911_menu()
             CALL cl_cmdask()
          WHEN "exporttoexcel"
             IF cl_chk_act_auth() THEN
-               CALL cl_export_to_excel
-               (ui.Interface.getRootNode(),base.TypeInfo.create(g_aba),'','')
+               # darcy:2025/08/14 mod s---
+               -- CALL cl_export_to_excel
+               -- (ui.Interface.getRootNode(),base.TypeInfo.create(g_aba),'','')
+               call cl_download_by_explorer(
+                  cl_expexcel1("s_aba",base.typeinfo.create(g_aba) ))
+               # darcy:2025/08/14 mod e---
             END IF
          WHEN "related_document"  #相關文件
             IF cl_chk_act_auth() THEN
@@ -385,6 +435,7 @@ FUNCTION aglq911_b_fill()
    LET g_tot4 = 0
   
    CALL g_aba.clear()   
+   CALL g_aba_excel.clear()   # darcy:2025/08/14 add
    LET g_rec_b=0
    LET g_cnt = 1
 
@@ -594,12 +645,20 @@ DEFINE l_sql  STRING
      LET l_tot3 = l_tot3 + g_aba[g_cnt].amt_c
     
      LET l_aba01 = g_aba[g_cnt].aba01   #FUN-C80102       
- 
-     LET g_cnt = g_cnt + 1
-     IF g_cnt > g_max_rec THEN
-        CALL cl_err( '', 9035, 0 )
-	      EXIT FOREACH
-     END IF     
+
+     # darcy:2025/08/14 mark s---
+   --   LET g_cnt = g_cnt + 1
+   --   IF g_cnt > g_max_rec THEN
+   --      CALL cl_err( '', 9035, 0 )
+	--       EXIT FOREACH
+   --    else
+   --   END IF     
+      if g_cnt <= g_max_rec then
+         let g_aba_excel[g_cnt].* = g_aba[g_cnt].*
+      end if
+      LET g_cnt = g_cnt + 1
+     # darcy:2025/08/14 mark e---
+
    END FOREACH
    
 #  LET g_aba[g_cnt].gem02 = cl_getmsg('amr-003',g_lang)  #合計  #FUN-C80102
@@ -711,11 +770,18 @@ DEFINE l_abb05  LIKE abb_file.abb05  #FUN-C80102
      LET l_tot3 = l_tot3 + g_aba[g_cnt].amt_c
      LET l_abb05 = g_aba[g_cnt].abb05       
  
-     LET g_cnt = g_cnt + 1
-     IF g_cnt > g_max_rec THEN
-        CALL cl_err( '', 9035, 0 )
-	      EXIT FOREACH
-     END IF     
+     # darcy:2025/08/14 mark s---
+   --   LET g_cnt = g_cnt + 1
+   --   IF g_cnt > g_max_rec THEN
+   --      CALL cl_err( '', 9035, 0 )
+	--       EXIT FOREACH
+   --    else
+   --   END IF     
+      if g_cnt <= g_max_rec then
+         let g_aba_excel[g_cnt].* = g_aba[g_cnt].*
+      end if
+      LET g_cnt = g_cnt + 1
+     # darcy:2025/08/14 mark e--- 
    END FOREACH
    
 #  LET g_aba[g_cnt].gem02 = cl_getmsg('amr-003',g_lang)  #合計   #FUN-C80102
@@ -816,11 +882,18 @@ DEFINE l_sql  STRING
      LET l_tot3 = l_tot3 + g_aba[g_cnt].amt_c
      LET l_abb03 = g_aba[g_cnt].abb03  #FUN-C80102       
  
-     LET g_cnt = g_cnt + 1
-     IF g_cnt > g_max_rec THEN
-        CALL cl_err( '', 9035, 0 )
-	      EXIT FOREACH
-     END IF     
+     # darcy:2025/08/14 mark s---
+   --   LET g_cnt = g_cnt + 1
+   --   IF g_cnt > g_max_rec THEN
+   --      CALL cl_err( '', 9035, 0 )
+	--       EXIT FOREACH
+   --    else
+   --   END IF     
+      if g_cnt <= g_max_rec then
+         let g_aba_excel[g_cnt].* = g_aba[g_cnt].*
+      end if
+      LET g_cnt = g_cnt + 1
+     # darcy:2025/08/14 mark e---    
    END FOREACH
    
   #LET g_aba[g_cnt].gem02 = cl_getmsg('amr-003',g_lang)  #合計  #FUN-C80102
@@ -850,7 +923,8 @@ FUNCTION q911_bp(p_ud)
    LET g_action_choice = " "
 
    CALL cl_set_act_visible("accept,cancel", FALSE)
-   DISPLAY ARRAY g_aba TO s_aba.* ATTRIBUTE(COUNT=g_rec_b,UNBUFFERED)
+   -- DISPLAY ARRAY g_aba TO s_aba.* ATTRIBUTE(COUNT=g_rec_b,UNBUFFERED) #darcy:2025/08/14 mark
+   DISPLAY ARRAY g_aba_excel TO s_aba.* ATTRIBUTE(COUNT=g_rec_b,UNBUFFERED) #darcy:2025/08/14 add
 
       BEFORE DISPLAY
          CALL cl_navigator_setting( g_curs_index,g_row_count )
@@ -992,6 +1066,7 @@ FUNCTION q911_cs()
  
    CLEAR FORM #清除畫面
    CALL g_aba.clear()
+   CALL g_aba_excel.clear() #darcy:2025/08/14 add
    CALL cl_opmsg('q')
    INITIALIZE tm.* TO NULL                   # Default condition
    LET tm.u = ' '
@@ -1494,11 +1569,18 @@ DEFINE l_sql  STRING
      LET l_tot5 = l_tot5 + g_aba[g_cnt].rec_d
      LET l_tot6 = l_tot6 + g_aba[g_cnt].rec_c
         
-     LET g_cnt = g_cnt + 1
-     IF g_cnt > g_max_rec THEN
-        CALL cl_err( '', 9035, 0 )
-	      EXIT FOREACH
-     END IF     
+     # darcy:2025/08/14 mark s---
+   --   LET g_cnt = g_cnt + 1
+   --   IF g_cnt > g_max_rec THEN
+   --      CALL cl_err( '', 9035, 0 )
+	--       EXIT FOREACH
+   --    else
+   --   END IF     
+      if g_cnt <= g_max_rec then
+         let g_aba_excel[g_cnt].* = g_aba[g_cnt].*
+      end if
+      LET g_cnt = g_cnt + 1
+     # darcy:2025/08/14 mark e---  
    END FOREACH
    
 
