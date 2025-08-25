@@ -161,6 +161,7 @@ function cs_csmi113_default(p_ima01)
     select tc_sma02,tc_sma03 from tc_sma_file
      where p_ima01 like tc_sma09||'%' and tc_sma01 = 'csmi113'
        and tc_sma09 is not null
+       and (tc_sma07 = l_layer or (tc_sma07 < l_layer and tc_sma05 = 'Y'))
      order by tc_sma02 desc ,tc_sma03
      ) where rownum = 1
     if not cl_null(l_tc_sma02) then
@@ -275,6 +276,7 @@ function cs_csmi113_calculate()
     end if
     let l_pcs = l_pcs * 100 / g_csmi113.tc_sma10 / g_csmi113.pnls
     let l_tmp = l_pcs
+    -- 进位
     if l_tmp * 1000 < l_pcs * 1000 then
         let g_csmi113.pnl = l_tmp + 1
     else
