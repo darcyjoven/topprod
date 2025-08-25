@@ -226,7 +226,7 @@ function cimq020_b_fill()
                 "       tlf06,tlf905,tlf906,tlf13,tlf902,",
                 "       tlf903,tlf904,trunc(tlf10*tlf60*tlf907,3) tlf10,ima25 tlf11,tlf12,",
                 "       tlf14,azf03, ", #darcy:2025/07/17 add
-                "       ima25,ima53 ccc23,'2' price,0 amt,tlf07,tlf08",
+                "       ima25,0 ccc23,'0' price,0 amt,tlf07,tlf08",
                 "       ,'','','',''    ", #darcy:2024/06/25 add
                 " from tlf_file left join ima_file on ima01 = tlf01 ",
                 "      left join imz_file on imz01 = ima06 ",
@@ -271,22 +271,45 @@ function cimq020_b_fill()
     execute cimq020_upd_gem2
     #darcy:2024/06/25 add e---
 
-    # 取成本单价
-    # 1.标准成本单价
-    let l_sql = " merge into cimq020_tmp a",
-                " using ( select ccc01, ccc23",
-                "   from ccc_file",
-                #darcy:2024/06/30 mod s---
-                -- " where ccc02 = (select ccz01 from ccz_file)",
-                -- "   and ccc03 = (select ccz02 from ccz_file)",
-                " where ccc02 = ",l_yy ,
-                "   and ccc03 = ",l_mm ,
-                #darcy:2024/06/30 mod e---
-                "   and ccc23 > 0 ) b",
-                " on (a.tlf01=b.ccc01)",
-                " when matched then update set a.ccc23 = b.ccc23,a.price='1',a.amt=b.ccc23*a.tlf10"
+    # darcy:2025/08/06 add s---
+    # 取客制成本单价
+    let l_sql = "merge into cimq020_tmp a ",
+                " using custom_cost b on (a.tlf01 = b.ta_ccc01)",
+                " when matched then update set a.ccc23 = b.ta_ccc23  ,a.price = '1',a.amt=b.ta_ccc23 * a.tlf10"
     prepare cimq020_upd_tmp1 from l_sql
     execute cimq020_upd_tmp1
+    # 取标准成本单价
+    let l_sql = "merge into cimq020_tmp a ",
+                " using std_cost b on (a.tlf01 = b.ccc01 and ( a.ccc23 = 0 or a.ccc23 is null))",
+                " when matched then update set a.ccc23 = b.ccc23 ,a.price = '2',a.amt=b.ccc23 * a.tlf10"
+    prepare cimq020_upd_tmp2 from l_sql
+    execute cimq020_upd_tmp2
+    # 取最近采购单价
+    let l_sql = "merge into cimq020_tmp a ",
+                " using (select ima01, ima53 / ima44_fac ima53 from ima_file) b on (a.tlf01 = b.ima01 and ( a.ccc23 = 0 or a.ccc23 is null))",
+                " when matched then update set a.ccc23 = b.ima53 ,a.price = '3',a.amt=b.ima53 * a.tlf10"
+    prepare cimq020_upd_tmp3 from l_sql
+    execute cimq020_upd_tmp3 
+    # darcy:2025/08/06 add e---
+
+    # 取成本单价
+    # 1.标准成本单价
+    -- darcy:2025/08/06 mark s---
+    -- let l_sql = " merge into cimq020_tmp a",
+    --             " using ( select ccc01, ccc23",
+    --             "   from ccc_file",
+    --             #darcy:2024/06/30 mod s---
+    --             -- " where ccc02 = (select ccz01 from ccz_file)",
+    --             -- "   and ccc03 = (select ccz02 from ccz_file)",
+    --             " where ccc02 = ",l_yy ,
+    --             "   and ccc03 = ",l_mm ,
+    --             #darcy:2024/06/30 mod e---
+    --             "   and ccc23 > 0 ) b",
+    --             " on (a.tlf01=b.ccc01)",
+    --             " when matched then update set a.ccc23 = b.ccc23,a.price='1',a.amt=b.ccc23*a.tlf10"
+    -- prepare cimq020_upd_tmp1 from l_sql
+    -- execute cimq020_upd_tmp1
+    -- darcy:2025/08/06 mark e---
 
     # 2.取最近采购单价
     # 默认就是采购单价
@@ -295,8 +318,8 @@ function cimq020_b_fill()
     let l_sql = "update cimq020_tmp ",
                 "   set ccc23 = 0 , price ='0', amt = 0 ",
                 " where ccc23 <= 0 "
-    prepare cimq020_upd_tmp2 from l_sql
-    execute cimq020_upd_tmp2
+    prepare cimq020_upd_tmp4 from l_sql
+    execute cimq020_upd_tmp4
 
     let l_sql = " select tlf01,ima02,ima021,ima06,ima06_desc,",
                 "       tlf06,tlf905,tlf906,tlf13,tlf902,",
