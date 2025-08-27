@@ -111,6 +111,9 @@ function cs_csmi113_default(p_ima01)
     define l_tok        base.StringTokenizer
     define l_layer      integer
     define l_tc_sma04   like tc_sma_file.tc_sma04
+    define l_rate1      like type_file.num15_3
+    define l_rate2      like type_file.num15_3
+    define l_rate3      like type_file.num15_3
 
     if cl_null(p_ima01) then
         return
@@ -229,6 +232,42 @@ function cs_csmi113_default(p_ima01)
            g_csmi113.tc_sma12,g_csmi113.tc_sma13,g_csmi113.tc_sma15,g_csmi113.tc_sma16,
            g_csmi113.tc_sma18,g_csmi113.tc_sma19
       from tc_sma_file where tc_sma01 = 'csmi113' and tc_sma02 = l_tc_sma02 and tc_sma03 = l_tc_sma03
+    # darcy:2025/08/25 add s---
+    # 解析
+    let l_tok = base.StringTokenizer.create(g_csmi113.tc_sma10," ")
+    if l_tok.hasMoreTokens() then
+        let l_rate1 = l_tok.nextToken()
+    end if
+    if l_tok.hasMoreTokens() then
+        let l_rate2 = l_tok.nextToken()
+    end if
+    if l_tok.hasMoreTokens() then
+        let l_rate3 = l_tok.nextToken()
+    end if
+    if cl_null(l_rate1) or l_rate1 = 0 then
+        message '32 排版良率抓取失败，请查看维护参数'
+    else
+        if cl_null(l_rate2) or l_rate2 = 0 then
+            message '19~31 排版良率抓取失败，请查看维护参数'
+        else
+            if cl_null(l_rate3) or l_rate3 = 0 then
+                message '18 排版良率抓取失败，请查看维护参数'
+            else
+                # 不同排版下的不同良率
+                case
+                    when g_csmi113.pnls >= 32
+                        let g_csmi113.tc_sma10 = l_rate1
+                    when g_csmi113.pnls > 19
+                        let g_csmi113.tc_sma10 = l_rate2
+                    otherwise 
+                        let g_csmi113.tc_sma10 = l_rate3
+                end case
+            end if
+        end if
+    end if
+    
+    
+    # darcy:2025/08/25 add e---
     -- 市场类型
     select tc_sma03||'.'||tc_sma06 into g_csmi113.tc_sma02 from tc_sma_file
      where tc_sma01 = 'csmi102' and tc_sma02 = 'aimi100' and tc_sma03 = l_imaud06
@@ -276,7 +315,6 @@ function cs_csmi113_calculate()
     end if
     let l_pcs = l_pcs * 100 / g_csmi113.tc_sma10 / g_csmi113.pnls
     let l_tmp = l_pcs
-    -- 进位
     if l_tmp * 1000 < l_pcs * 1000 then
         let g_csmi113.pnl = l_tmp + 1
     else
