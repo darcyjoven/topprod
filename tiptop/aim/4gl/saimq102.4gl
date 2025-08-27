@@ -1039,7 +1039,7 @@ FUNCTION q102_show2()
    let l_sql = "select sfa161 from sfa_file where sfa01 = ? and sfa27 =? and sfa26 = '4' ",
                " and sfa08 = ? and sfa12 = ? "
    prepare q102_sfa27_sfa161 from l_sql
-   let l_sql = "select sfa03,sfa05*sfa13,(sfa06+sfa062) * sfa13 from sfa_file where sfa01 = ? and sfa27 =?",
+   let l_sql = "select sfa03,sfa05*sfa13,sfa06 * sfa13 from sfa_file where sfa01 = ? and sfa27 =?",
                " and sfa08 = ? and sfa12 = ? ",
                " order by sfa26,sfa03 "
    declare q102_sfa27_sfa03 cursor from l_sql
