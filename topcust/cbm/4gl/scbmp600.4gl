@@ -1334,7 +1334,7 @@ FUNCTION s_cbmp600_get_recipient()
 
     LET l_recipient = "gongcheng1@forewin-sz.com.cn;", #工程
                     #   "bruce.han@forewin-sz.com.cn;",  #韩志伟 #darcy:2024/09/04 mark
-                      "yukun.zhang@forewin-sz.com.cn;",
+                    --   "yukun.zhang@forewin-sz.com.cn;",
                       "w.wang@forewin-sz.com.cn;",     #王委
                       "weixing.li@forewin-sz.com.cn;", #李卫星
                       "lusi.cheng@forewin-sz.com.cn;", #程露思
@@ -2733,8 +2733,8 @@ function scbmi600_sample(p_bmb01)
     end if
 
     let l_sql = "select bmb01,bmb02,bmb03 from bmb_file ",
-                " where bmb01 = ? and bmb04 >= trunc(sysdate) ",
-                "   and (bmb05 < trunc(sysdate) or bmb05 is null)",
+                " where bmb01 = ? and bmb04 <= trunc(sysdate) ",
+                "   and (bmb05 > trunc(sysdate) or bmb05 is null)",
                 " order by bmb02"
     prepare sbmp600_sample_p from l_sql
     declare sbmp600_sample_cur cursor for sbmp600_sample_p
