@@ -4400,6 +4400,16 @@ FUNCTION t260_y()
           RETURN 
        END IF
     END IF
+    # darcy:2025/09/01 add s---
+    # 检查转移单号必须正确
+    let l_cnt = 0 
+    select count(1) into l_cnt from shb_file
+     where shb01 = g_tsc.tscud02
+    if l_cnt = 0 then
+      call cl_err(g_tsc.tscud02,"ctm-009",1)
+      return
+    end if
+    # darcy:2025/09/01 add e---
     #darcy:2023/10/26 add s---
     # 管控数量不得超过本次良品转出数量
     let l_cnt = 0
