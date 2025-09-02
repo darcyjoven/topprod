@@ -1310,7 +1310,7 @@ FUNCTION q360_b_fill2()
    CALL q360_getday()
 
 
-   LET l_sql = "INSERT INTO q360_temp0 select  ecb01,imaud10,ecb02,ecb03,ecb06,ecb08,eca02,ecb19,ecb21, ecbud02,ecb17
+   LET l_sql = "INSERT INTO q360_temp0 select unique ecb01,imaud10,ecb02,ecb03,ecb06,ecb08,eca02,ecb19,ecb21, ecbud02,ecb17
                FROM ecb_file 
                left join eca_file on eca01=ecb08 
                left join tc_ecg_file on tc_ecg01 = ecb01 and tc_ecg02 = ecb02 and tc_ecg04 = ecb06  
