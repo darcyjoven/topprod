@@ -552,7 +552,6 @@ define l_msg        string #darcy:2024/11/29
                      where tc_sma01 = g_tc_sma01 and tc_sma02 = g_tc_sma[l_ac].tc_sma02
                     let g_tc_sma[l_ac].tc_sma03 = l_cnt
                     display by name g_tc_sma[l_ac].tc_sma03
-                    
                 end if
            END IF
         
@@ -1203,7 +1202,7 @@ FUNCTION i100_set_dny_combo()
     define l_gaz03      like gaz_file.gaz03
 
     let ps_values = "csmi100,csmi101,csmi102,csmi103,csmi104,csmi105,csmi106,csmi107,csmi108,csmi109,csmi110,csmi111,",
-                    "csmi112,csmi113,csmi114,csmi115,csmi116,csmi117,csmi118,csmi119,csmi120"
+                    "csmi112,csmi113,csmi114,csmi115,csmi116,csmi117,csmi118,csmi119,csmi120,csmi121"
 
     LET tok = base.StringTokenizer.create(ps_values,",")
     let l_ze01 = tok.nextToken()
@@ -1264,6 +1263,10 @@ FUNCTION i100_set_dny_combo()
         when 'csmi120'
             display '示例程序'
         # darcy:2025/07/28 e---
+        # darcy:2025/09/03 add s---
+        when 'csmi121'
+            display '料件项目属性维护'
+        # darcy:2025/09/03 add e---
     end case
 
     call i100_set_visiable()
@@ -1585,6 +1588,17 @@ function i100_set_visiable()
             -- 是否可以录入
             call cl_set_comp_entry("tc_sma02,tc_sma03",true)
         # darcy:2025/07/28 add e---
+        # darcy:2025/09/03 add s---
+        when 'csmi121'
+            call cl_set_comp_att_text('tc_sma02','项目阶段')
+            call cl_set_comp_att_text('tc_sma03','项目阶段值')
+            call cl_set_comp_att_text('tc_sma06','项目阶段说明')
+            call cl_set_comp_att_text('tc_sma07','备注')
+            call cl_set_comp_visible("tc_sma02_desc,tc_sma04,tc_sma05,
+                                      tc_sma08,tc_sma09,tc_sma10,tc_sma11,tc_sma12,tc_sma13,tc_sma14,
+                                      tc_sma15,tc_sma16,tc_sma17,tc_sma18,tc_sma19",false)
+            call cl_set_comp_entry("tc_sma03,tc_sma06,tc_sma07",true)
+        # darcy:2025/09/03 add e---
     end case
     
 end function
@@ -1630,5 +1644,9 @@ function i100_get_default()
          when 'csmi120'
             let g_tc_sma[l_ac].tc_sma06 = 'default'
          # darcy:2025/07/28 add e--- 
+         # darcy:2025/09/03 add s---
+         when 'csmi121'
+            let g_tc_sma[l_ac].tc_sma02 = 'aimi100'
+         # darcy:2025/09/03 add e---
     end case
 end function
