@@ -605,6 +605,7 @@ DEFINE   l_n                     LIKE type_file.num5
                                 ,imaud27,imaud28 #darcy:2023/11/06 add
                                 ,imaud33,imaud34 #darcy:2024/08/30 add
                                 ,imaud35 #darcy:2025/02/21 add
+                                ,imaud36 #darcy:2025/09/03 add
          BEFORE CONSTRUCT
             CALL cl_qbe_init()
 #No.FUN-A50011 ------begin------
@@ -1641,6 +1642,7 @@ FUNCTION i100_i(p_cmd)
         ,g_ima.imaud25,g_ima.imaud26 #darcy:2022/12/05 add
         ,g_ima.imaud27,g_ima.imaud28 #darcy:2023/11/06
         ,g_ima.imaud35 #darcy:2025/02/21 add
+        ,g_ima.imaud36 # darcy:2025/09/03 add 
         WITHOUT DEFAULTS
  
         BEFORE INPUT
@@ -3458,6 +3460,7 @@ FUNCTION i100_show()
                    ,g_ima.imaud27,g_ima.imaud28  #darcy:2023/11/06
                    ,g_ima.imaud33,g_ima.imaud34 #darcy:2024/08/30
                    ,g_ima.imaud35 #darcy:2025/02/21 add
+                   ,g_ima.imaud36 # darcy:2025/09/03 add
 #No.FUN-A50011 -----begin-----
 #No.FUN-A50011 -----end-----
    #darcy:2022/11/18 add s---
@@ -3679,6 +3682,7 @@ FUNCTION i100_init() #初始環境設定
    CALL i100_set_perlang()
 
    call i100_set_imaud06()  #darcy:2023/06/08 add
+   call i100_set_imaud36()  #darcy:2025/09/03 add
  
    SELECT zx07,zx09 INTO l_zx07,l_zx09 FROM zx_file
     WHERE zx01 = g_user
@@ -3893,6 +3897,7 @@ FUNCTION i100_default()
    LET g_ima.ima931 = 'N'    #DEV-D30026 add
    LET g_ima.ima934 = 'Y'    #No:DEV-D30026--add
    let g_ima.imaud35 = 'N'    #darcy:2025/02/21 add
+   let g_ima.imaud36 = ''     #darcy:2025/09/03 add
    #LET g_ima.imaud02 = 'N'   #add by guanyao160614
 END FUNCTION
  
@@ -9138,4 +9143,34 @@ function i100_set_imaud06()
    call cl_set_combo_items("imaud06",l_value,l_field)
 
 end function
+# darcy:2025/09/03 add s---
+function i100_set_imaud36()
+   define l_field,l_value string
+   define l_tc_sma03       varchar(20)
+   define l_tc_sma06       like tc_sma_file.tc_sma06
 
+   declare i100_imaud06_cl2 cursor for
+      select tc_sma03,tc_sma06 from tc_sma_file 
+       where tc_sma01='csmi121' and tc_sma02='aimi100'
+         and tc_sma20 ='Y'
+       order by tc_sma03
+   
+   foreach i100_imaud06_cl2 into l_tc_sma03,l_tc_sma06
+      if sqlca.sqlcode then
+         call cl_err('i100_imaud06_cl2',sqlca.sqlcode,1)
+         exit foreach
+      end if
+      if l_tc_sma03= "0" then
+         let l_value = "0"
+         let l_field = l_tc_sma03,".",l_tc_sma06
+      else
+         let l_tc_sma03 = cl_replace_str(l_tc_sma03," ","")
+         let l_field = l_field ,",",l_tc_sma03,".",l_tc_sma06
+         let l_value = l_value ,",",l_tc_sma03
+      end if
+   end foreach
+
+   call cl_set_combo_items("imaud36",l_value,l_field)
+
+end function
+# darcy:2025/09/03 add e---
