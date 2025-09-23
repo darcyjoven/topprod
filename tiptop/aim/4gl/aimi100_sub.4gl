@@ -119,6 +119,15 @@ FUNCTION i100sub_y_chk(p_ima01)
       end if
    end if
    #darcy:2024/07/10 add e---
+   # darcy:2025/09/23 add s---
+   if g_ima.ima06 = 'G01' or g_ima.ima06 = 'G02' or g_ima.ima06 = 'BCP' then
+      if cl_null(g_ima.imaud36) then
+         call cl_err('','cim-040',1)
+         let g_success = 'N'
+         return
+      end if
+   end if
+   # darcy:2025/09/23 add e---
 
    IF l_ima.imaacti='N' THEN
       #此筆資料已無效, 不可異動
