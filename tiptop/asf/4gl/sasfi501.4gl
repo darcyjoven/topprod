@@ -6999,7 +6999,8 @@ DEFINE   l_tc_sff05     LIKE tc_sff_file.tc_sff05   #tianry add end 161122
     # darcy:2025/08/12 mod s---
     # 增加SQA的判断
     if not cl_null(g_sfp.sfpud03)
-      and (g_user ='43474' or g_user = 'tiptop' or g_user = '39387' or g_user = '52983' or g_user = '55416') then
+      and (g_user ='43474' or g_user = 'tiptop' or g_user = '39387' or g_user = '52983' or g_user = '55416' 
+         or g_user = '56161' or g_user = '62754' or g_user = '52983' or g_user = '56046') then
     # darcy:2025/08/12 mod e---
       LET l_sql="SELECT * FROM sfa_file",     #tianry add 161128   g_sfa.sfa3->g_sfa.sfa27
               " LEFT JOIN tc_sff_file ON tc_sff01 = '",g_sfp.sfpud03,"' AND tc_sff27 = sfa27 ", #darcy:2022/10/12 add
