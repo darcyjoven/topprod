@@ -35297,11 +35297,23 @@ function saxmt400_export_batch()
       and oeb03 = tc_oeb03 and oea00 = '0' and oeb04 = l_item
 
    # 输入开始拆单日期
-   prompt "开始拆单日期" for l_begin
+   -- prompt "开始拆单日期" for l_begin
+
+   open window t400_date_w at 1,1 with form "csub/42f/cs_input"
+         attribute (style = g_win_style clipped)
+   call cl_ui_init()
+   call cl_set_comp_visible("dat1",true)
+   call cl_set_comp_att_text("dat1","拆分开始日期")
+   input l_begin WITHOUT DEFAULTS from dat1
+   
+   close window t400_date_w
+
+   let int_flag = false
    
    open window t400_export_w at 1,1 with form "axm/42f/axmt400s"
          attribute (style = g_win_style clipped)
    
+   call cl_ui_init()
    call saxmt400_export_batch_init()
 
    # 导出
@@ -35331,6 +35343,7 @@ function saxmt400_export_batch()
 end function
 
 function saxmt400_export_batch_bp()
+   define i integer
 
    input array g_oeb_batch without defaults from s_oebs.* 
          attribute(count=g_cnt,maxcount=g_max_rec,unbuffered,
@@ -35343,7 +35356,16 @@ function saxmt400_export_batch_bp()
          if g_oeb_batch[l_ac].num04 <= 0 and g_oeb_batch[l_ac].chk = 'Y' then
             call cl_err('该订单无可修改数量','!',1)
             next field chk
-         end if 
+         end if
+      on change chk
+         # darcy:2025/08/27 add s---
+         # 将整个订单项次一起勾选
+         for i = 1 to g_oeb_batch.getlength()
+            if g_oeb_batch[i].oeb01s = g_oeb_batch[l_ac].oeb01s then
+               let g_oeb_batch[i].chk = g_oeb_batch[l_ac].chk
+            end if
+         end for
+         # darcy:2025/08/27 add e---
       on action accept
          exit input
       on action cancel
@@ -35409,6 +35431,7 @@ function saxmt400_export_batch_fill(p_item,p_date)
       # 这里要新增能否修改
       let i = i + 1
    end foreach
+   call g_oeb_batch.deleteElement(i)
 end function
 # 导入一个料号的拆单明细
 function saxmt400_import_split()
@@ -35505,7 +35528,7 @@ function saxmt400_import_split()
    if g_success = 'N' then
       if g_imp_result.getLength() > 0 then
          if  cl_write(l_file,g_imp_result) then
-            if cl_confirm('cbm-040') then
+            if cl_confirm('cxm-060') then
                call cl_download_by_explorer(l_file)
             end if
          else
