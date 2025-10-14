@@ -124,10 +124,18 @@ define l_cnt,l_cnt1,l_i,l_cnt2     integer
             let l_return.msg = "料件建立失败"
         end if
         update ima_file 
-           set imaud30 = tm.RDno,
-               imaud33 = tm.mjtype,
+           set imaud30 = tm.RDno--,
+            --    imaud33 = tm.mjtype,
+            --    imaud34 = tm.jztype
+         where ima01 = g_ima01
+        # darcy:2025/09/05 add s---
+        # 模具才更新
+        update ima_file
+            set imaud33 = tm.mjtype,
                imaud34 = tm.jztype
          where ima01 = g_ima01
+           and ima06 = 'H.MJ'
+        # darcy:2025/09/05 add e---
         if sqlca.sqlcode then
             let g_status.code = sqlca.sqlcode
             let g_status.description = "更新料件资料失败"
@@ -159,7 +167,6 @@ function cws_create_pomj_ima()
     if tm.ifspare = 'Y' and tm.mjtype = "备品_功能测试" then
         let l_ima06 = "H.FC"
     else
-        
         #darcy:2024/09/23 add s---
         # 玻璃菲林
         if tm.mjtype = "玻璃菲林" then
@@ -176,7 +183,7 @@ function cws_create_pomj_ima()
         close cws_pomj_ima_cur
         let g_success = 'N'
         rollback work
-        return 
+        return
     end if
     #darcy:2024/07/26 add e---
 
