@@ -6664,6 +6664,7 @@ FUNCTION i600_copy_item(old_no,old_bma06,new_no2,new_bma06,ans_1,ans_2,ef_date,a
           LET l_bmb.bmb13 = NULL
       END IF
        LET l_bmb.bmb33 = '0'
+      let l_bmb.bmb081 = 0  # darcy:2025/08/28 add 复制不要带固定损耗
       INSERT INTO bmb_file VALUES(l_bmb.*)
       IF SQLCA.SQLCODE <> 0 THEN
          CALL cl_err3("ins","bmb_file",l_bmb.bmb01,l_bmb.bmb02,"mfg-001","","",1)  #No.TQC-660046
@@ -7504,6 +7505,7 @@ IF cl_sure(0,0) THEN
           LET l_bmb.bmb13 = NULL
       END IF
        LET l_bmb.bmb33 = '0'
+      let l_bmb.bmb081 = 0 # darcy:2025/08/28 复制不需要固定损耗
       INSERT INTO bmb_file VALUES(l_bmb.*)
       IF SQLCA.SQLCODE <> 0 THEN
          CALL cl_err3("ins","bmb_file",l_bmb.bmb01,l_bmb.bmb02,"mfg-001","","",1)  #No.TQC-660046
