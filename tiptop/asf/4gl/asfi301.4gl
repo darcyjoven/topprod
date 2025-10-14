@@ -6801,7 +6801,8 @@ FUNCTION i301_b(p_in)
          #      RETURNING g_sfa[l_ac].sfa05
          #FUN-D60039--mark--end--
          LET g_sfa[l_ac].sfa05 = s_digqty(g_sfa[l_ac].sfa05,g_sfa[l_ac].sfa12)  #FUN-D60039 add
-         IF g_sfa[l_ac].sfa26 MATCHES '[01257]' THEN  #FUN-A20037 add '7'  #MOD-A40012 mod
+         -- IF g_sfa[l_ac].sfa26 MATCHES '[01257]' THEN  #FUN-A20037 add '7'  #MOD-A40012 mod # darcy:2025/09/18 mark
+         IF g_sfa[l_ac].sfa26 MATCHES '[012457]' THEN  #FUN-A20037 add '7'  #MOD-A40012 mod # darcy:2025/09/18 add '4'
         #   AND g_sfb.sfb02 NOT MATCHES '[58]' THEN                        #MOD-A40012 mark 
             LET g_sfa[l_ac].sfa161=g_sfa[l_ac].sfa05/g_sfb.sfb08
             LET g_sfa_o.sfa161 = g_sfa[l_ac].sfa161  #MOD-C90069 add
