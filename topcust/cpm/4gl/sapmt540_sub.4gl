@@ -375,7 +375,10 @@ FUNCTION t540sub_y_chk(l_pmm)
         END IF
         #add by hehw 210402 ---s
         LET h_pmm01 = l_pmm.pmm01[1,3]
-        IF (l_pmm.pmm01[1,3] <> 'PSF' AND l_pmm.pmm01[1,3] <> 'MSY') THEN
+        # darcy:2025/08/08 mod s--- 
+        # MSY委外需要单价
+        IF (l_pmm.pmm01[1,3] <> 'PSF' ) THEN
+        # darcy:2025/08/08 mod e--- 
         #add by hehw 210402 ---e
         IF l_cnt > 0 THEN
           #CALL cl_err('','axm-627',1)    #MOD-840328 #FUN-C50076   #CHI-CB0069 mark
