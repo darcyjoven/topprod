@@ -20,7 +20,7 @@ define g_csmi113 record
     tc_sma04    varchar(1000),
     tc_sma07    integer,
     tc_sma09    like tc_sma_file.tc_sma09,
-    tc_sma10    like type_file.num15_3,
+    tc_sma10    like tc_sma_file.tc_sma10,
     tc_sma12    like type_file.num15_3,
     tc_sma13    like type_file.num15_3,
     tc_sma15    like type_file.num15_3,
