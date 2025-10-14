@@ -1310,7 +1310,7 @@ FUNCTION q360_b_fill2()
    CALL q360_getday()
 
 
-   LET l_sql = "INSERT INTO q360_temp0 select unique ecb01,imaud10,ecb02,ecb03,ecb06,ecb08,eca02,ecb19,ecb21, ecbud02,ecb17
+   LET l_sql = "INSERT INTO q360_temp0 select  ecb01,imaud10,ecb02,ecb03,ecb06,ecb08,eca02,ecb19,ecb21, ecbud02,ecb17
                FROM ecb_file 
                left join eca_file on eca01=ecb08 
                left join tc_ecg_file on tc_ecg01 = ecb01 and tc_ecg02 = ecb02 and tc_ecg04 = ecb06  
@@ -1494,7 +1494,7 @@ FUNCTION q360_b_fill2()
    EXECUTE q360_unique2 
    
    #NOTE 单一工时
-   LET l_sql ="select a.ecb01,a.imaud10,a.ecb02,a.ecb03,a.ecb06,a.ecb08,a.eca02,a.ecb19,a.ecb21,a.ecbud02,a.ecb17,
+   LET l_sql ="select unique a.ecb01,a.imaud10,a.ecb02,a.ecb03,a.ecb06,a.ecb08,a.eca02,a.ecb19,a.ecb21,a.ecbud02,a.ecb17,
                b.ecb011 ecb011max, a.ecb02max,a.ecb191,a.ecb211,'' ecb011min,'' ,0,0,a.ecbmark 
                from (
                select ecb01,imaud10,ecb02,ecb03,ecb06,ecb08,eca02,ecb19,ecb21,ecbud02,ecb17,max(ecb021) ecb02max,ecb191,ecb211,ecbmark from Q360_TEMPF
@@ -1517,7 +1517,7 @@ FUNCTION q360_b_fill2()
 
    
    #NOTE 多工时
-   LET l_sql = "select a.ecb01,a.imaud10,a.ecb02,a.ecb03,a.ecb06,a.ecb08,a.eca02,a.ecb19,a.ecb21,a.ecbud02,a.ecb17,
+   LET l_sql = "select unique a.ecb01,a.imaud10,a.ecb02,a.ecb03,a.ecb06,a.ecb08,a.eca02,a.ecb19,a.ecb21,a.ecbud02,a.ecb17,
                  d.ecb011 ecb011max,a.ecb02max,d.ecb191,d.ecb211,e.ecb011 ecb011min,a.ecb02min,e.ecb191,e.ecb211,a.ecbmark 
                  from (
                  select unique ecb01,imaud10,ecb02,ecb03,ecb06,ecb08,eca02,ecb19,ecb21,ecbud02,ecb17,
@@ -1542,7 +1542,7 @@ FUNCTION q360_b_fill2()
       LET g_cnt = g_cnt + 1 
     END FOREACH  
 
-   LET l_sql ="select ecb01,imaud10,ecb02,ecb03,ecb06,ecb08,eca02,ecb19,ecb21,ecbud02,ecb17,'','',0,0,'','',0,0,ecbmark  
+   LET l_sql ="select unique ecb01,imaud10,ecb02,ecb03,ecb06,ecb08,eca02,ecb19,ecb21,ecbud02,ecb17,'','',0,0,'','',0,0,ecbmark  
                from Q360_TEMPF where ecbmark ='前版本已在ceci110中维护' 
                order by 1,3,4,5"
    
