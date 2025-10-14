@@ -179,6 +179,7 @@ type tc_pmx record
    tc_pmx032   like tc_pmx_file.tc_pmx032,
    tc_pmx15    like tc_pmx_file.tc_pmx15,
    ima44       like ima_file.ima44,
+   tc_pmx23    like tc_pmx_file.tc_pmx23,  #darcy:2025/06/23 add 
    tc_pmx20    like tc_pmx_file.tc_pmx20,
    tc_pmx17    like tc_pmx_file.tc_pmx17,
    azf03       like azf_file.azf03,
@@ -475,12 +476,12 @@ ELSE
    CONSTRUCT g_wc2 ON tc_pmx02,tc_pmx03,tc_pmx031,tc_pmx032,tc_pmx04,tc_pmx05,
                       tc_pmx06,tc_pmx06t,tc_pmx07,tc_pmx07t,tc_pmx08,tc_pmx09,
                       tc_pmx10,tc_pmx11,tc_pmx13,
-                      tc_pmx15,tc_pmx16,tc_pmx17,tc_pmx18,tc_pmx19,tc_pmx20,
+                      tc_pmx15,tc_pmx16,tc_pmx17,tc_pmx18,tc_pmx19,tc_pmx20,tc_pmx23,
                       tc_pmx21,tc_pmx22
            FROM s_tc_pmx[1].tc_pmx02,s_tc_pmx[1].tc_pmx03,s_tc_pmx[1].tc_pmx031,s_tc_pmx[1].tc_pmx032,s_tc_pmx[1].tc_pmx04,s_tc_pmx[1].tc_pmx05,
                 s_tc_pmx[1].tc_pmx06,s_tc_pmx[1].tc_pmx06t,s_tc_pmx[1].tc_pmx07,s_tc_pmx[1].tc_pmx07t,s_tc_pmx[1].tc_pmx08,s_tc_pmx[1].tc_pmx09,
                 s_tc_pmx[1].tc_pmx10,s_tc_pmx[1].tc_pmx11,s_tc_pmx[1].tc_pmx13,
-                s_tc_pmx[1].tc_pmx15,s_tc_pmx[1].tc_pmx16,s_tc_pmx[1].tc_pmx17,s_tc_pmx[1].tc_pmx18,s_tc_pmx[1].tc_pmx19,s_tc_pmx[1].tc_pmx20,
+                s_tc_pmx[1].tc_pmx15,s_tc_pmx[1].tc_pmx16,s_tc_pmx[1].tc_pmx17,s_tc_pmx[1].tc_pmx18,s_tc_pmx[1].tc_pmx19,s_tc_pmx[1].tc_pmx20,s_tc_pmx[1].tc_pmx23,
                 s_tc_pmx[1].tc_pmx21,s_tc_pmx[1].tc_pmx22
 		#No.FUN-580031 --start--     HCN
 		BEFORE CONSTRUCT
@@ -1700,7 +1701,7 @@ define  l_pmn73     like pmn_file.pmn73,
    CALL cl_opmsg('b')
  
     LET g_forupd_sql = "SELECT tc_pmx02,tc_pmx04,tc_pmx05,tc_pmx03,tc_pmx031,tc_pmx032,tc_pmx15,'', ",
-                       " tc_pmx20,tc_pmx17,'',tc_pmx11,'',tc_pmx10,'',",
+                       " tc_pmx23,tc_pmx20,tc_pmx17,'',tc_pmx11,'',tc_pmx10,'',",
                        " '',tc_pmx13,tc_pmxicd14,tc_pmx16,tc_pmx06,tc_pmx06t,",
                        " tc_pmx07,tc_pmx07t,tc_pmx08,tc_pmx09,tc_pmx14,tc_pmx18,tc_pmx19 ", 
                        "  FROM tc_pmx_file",
@@ -1913,14 +1914,14 @@ define  l_pmn73     like pmn_file.pmn73,
                 tc_pmx09,tc_pmx10,tc_pmx06t,tc_pmx07t,tc_pmx11,
                 tc_pmx12,tc_pmx13,tc_pmxplant,tc_pmxlegal,tc_pmx14,
                 tc_pmxicd14,tc_pmx15,tc_pmx16,tc_pmx17,tc_pmx18,
-                tc_pmx19,tc_pmx20,tc_pmx21,tc_pmx22
+                tc_pmx19,tc_pmx20,tc_pmx23,tc_pmx21,tc_pmx22
             )values(
                 g_tc_pmw.tc_pmw01,g_tc_pmx[l_ac].tc_pmx02,g_tc_pmx[l_ac].tc_pmx03,g_tc_pmx[l_ac].tc_pmx031,g_tc_pmx[l_ac].tc_pmx032,
                 g_tc_pmx[l_ac].tc_pmx04,g_tc_pmx[l_ac].tc_pmx05,g_tc_pmx[l_ac].tc_pmx06,g_tc_pmx[l_ac].tc_pmx07,g_tc_pmx[l_ac].tc_pmx08,
                 g_tc_pmx[l_ac].tc_pmx09,g_tc_pmx[l_ac].tc_pmx10,g_tc_pmx[l_ac].tc_pmx06t,g_tc_pmx[l_ac].tc_pmx07t,g_tc_pmx[l_ac].tc_pmx11,
                 g_tc_pmx12,g_tc_pmx[l_ac].tc_pmx13,g_plant,g_legal,g_tc_pmx[l_ac].tc_pmx14,
                 g_tc_pmx[l_ac].tc_pmxicd14,g_tc_pmx[l_ac].tc_pmx15,g_tc_pmx[l_ac].tc_pmx16,g_tc_pmx[l_ac].tc_pmx17,g_tc_pmx[l_ac].tc_pmx18,
-                g_tc_pmx[l_ac].tc_pmx19,g_tc_pmx[l_ac].tc_pmx20,g_tc_pmx[l_ac].tc_pmx21,g_tc_pmx[l_ac].tc_pmx22
+                g_tc_pmx[l_ac].tc_pmx19,g_tc_pmx[l_ac].tc_pmx20,g_tc_pmx[l_ac].tc_pmx23,g_tc_pmx[l_ac].tc_pmx21,g_tc_pmx[l_ac].tc_pmx22
             )
         #    INSERT INTO tc_pmx_file(tc_pmx01,tc_pmx02,tc_pmx03,tc_pmx031,tc_pmx032,tc_pmx11,tc_pmx04,tc_pmx05,
         #                         tc_pmx06,tc_pmx06t,tc_pmx07,tc_pmx07t,tc_pmx09,tc_pmx10,tc_pmx08,       #No.FUN-550019  
@@ -2070,10 +2071,10 @@ define  l_pmn73     like pmn_file.pmn73,
            END IF
 
            IF NOT cl_null(l_m) THEN
-              SELECT ima44,ima44,ima908,ima45 INTO g_tc_pmx[l_ac].ima44,g_tc_pmx[l_ac].tc_pmx15,g_tc_pmx[l_ac].ima908,g_tc_pmx[l_ac].tc_pmx16
+              SELECT ima44,ima44,ima908,ima45,ima48 INTO g_tc_pmx[l_ac].ima44,g_tc_pmx[l_ac].tc_pmx15,g_tc_pmx[l_ac].ima908,g_tc_pmx[l_ac].tc_pmx16,g_tc_pmx[l_ac].tc_pmx23 #darcy:2025/06/23 tc_pmx03
                 FROM ima_file WHERE ima01=l_m
            ELSE
-              SELECT ima44,ima44,ima908,ima45 INTO g_tc_pmx[l_ac].ima44,g_tc_pmx[l_ac].tc_pmx15,g_tc_pmx[l_ac].ima908,g_tc_pmx[l_ac].tc_pmx16
+              SELECT ima44,ima44,ima908,ima45,ima48 INTO g_tc_pmx[l_ac].ima44,g_tc_pmx[l_ac].tc_pmx15,g_tc_pmx[l_ac].ima908,g_tc_pmx[l_ac].tc_pmx16,g_tc_pmx[l_ac].tc_pmx23 #darcy:2025/06/23 tc_pmx03
                 FROM ima_file WHERE ima01=g_tc_pmx[l_ac].tc_pmx03
            END IF     #No.FUN-830114
            IF SQLCA.sqlcode THEN
@@ -2271,6 +2272,15 @@ define  l_pmn73     like pmn_file.pmn73,
                     next field tc_pmx20
                 end if
             end if
+         
+         after field tc_pmx23
+            if not cl_null(g_tc_pmx[l_ac].tc_pmx23) then
+               if g_tc_pmx[l_ac].tc_pmx23 < 0 then
+                  call cl_err('不可小于0','!',0)
+                  next field tc_pmx23
+               end if
+            end if
+
         BEFORE DELETE                            #是否取消單身
            IF g_tc_pmx_t.tc_pmx02 > 0 AND g_tc_pmx_t.tc_pmx02 IS NOT NULL THEN
               IF g_tc_pmx_t.tc_pmx14 IS NOT NULL THEN
@@ -2351,6 +2361,7 @@ define  l_pmn73     like pmn_file.pmn73,
                      tc_pmx031 = g_tc_pmx[l_ac].tc_pmx031,
                      tc_pmx032 = g_tc_pmx[l_ac].tc_pmx032,
                      tc_pmx15 = g_tc_pmx[l_ac].tc_pmx15,
+                     tc_pmx23 = g_tc_pmx[l_ac].tc_pmx23, #darcy:2025/06/23 add
                      tc_pmx20 = g_tc_pmx[l_ac].tc_pmx20,
                      tc_pmx17 = g_tc_pmx[l_ac].tc_pmx17,
                      tc_pmx11 = g_tc_pmx[l_ac].tc_pmx11,
@@ -2816,7 +2827,7 @@ DEFINE  i        LIKE type_file.num5
     END IF
  
     LET g_sql = " select tc_pmx02,tc_pmx04,tc_pmx05,tc_pmx03,tc_pmx031,tc_pmx032,tc_pmx15,ima44,",
-                "     tc_pmx20,tc_pmx17,azf03,tc_pmx11,ima908,tc_pmx10,ecd02,",
+                "     tc_pmx23,tc_pmx20,tc_pmx17,azf03,tc_pmx11,ima908,tc_pmx10,ecd02,",
                 "     ecbud02,tc_pmx13,tc_pmxicd14,tc_pmx16,tc_pmx06,tc_pmx06t,",
                 "     tc_pmx07,tc_pmx07t,tc_pmx08,tc_pmx09,tc_pmx14,tc_pmx18,tc_pmx19,tc_pmx21,tc_pmx22",
                 " from tc_pmx_file",

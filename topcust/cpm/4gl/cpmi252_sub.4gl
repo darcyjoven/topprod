@@ -40,6 +40,7 @@ define l_tc_pmx03   like tc_pmx_file.tc_pmx03
 define l_tc_pmx031  like tc_pmx_file.tc_pmx031
 DEFINE l_tc_pmx           RECORD LIKE tc_pmx_file.*
 define l_where    varchar(500)
+define l_ima48    like ima_file.ima48 #darcy:2025/06/23 add
  
    LET g_success = 'Y'
    IF s_shut(0) THEN RETURN END IF
@@ -145,6 +146,13 @@ define l_where    varchar(500)
          call s_errmsg("tc_pmx03",l_tc_pmx03,l_cnt,'cpm-068',1)
          LET g_success = 'N'
       end if
+
+      # darcy:2025/06/23 add s ---
+      # 更新采购前置天数 
+      select max(tc_pmx23) into l_ima48 from tc_pmx_file 
+       where tc_pmx01 = l_tc_pmw.tc_pmw01 and tc_pmx03 = l_tc_pmx03
+      update ima_file set ima48 =  l_ima48 where ima01 = l_tc_pmx03
+      # darcy:2025/06/23 add e ---
       
    end foreach
    
