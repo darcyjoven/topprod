@@ -121,7 +121,7 @@ FUNCTION i100sub_y_chk(p_ima01)
    #darcy:2024/07/10 add e---
    # darcy:2025/09/23 add s---
    if g_ima.ima06 = 'G01' or g_ima.ima06 = 'G02' or g_ima.ima06 = 'BCP' then
-      if cl_null(g_ima.imaud36) then
+      if cl_null(g_ima.imaud36) and p_ima01 not matches '*-*'  then
          call cl_err('','cim-040',1)
          let g_success = 'N'
          return

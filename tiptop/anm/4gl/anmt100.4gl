@@ -700,6 +700,14 @@ FUNCTION t100_menu()
              CALL cl_cmdrun_wait(l_cmd CLIPPED)
           END IF    
       
+      # darcy:2025/09/22 add s---
+      # 更新付款银行
+      on action upd_nma03
+         let g_action_choice = "upd_nma03"
+         if cl_chk_act_auth() then
+            call t100_upd_nma03()
+         end if
+      # darcy:2025/09/22 add e---
        #修改寄領方式
        ON ACTION modify_sent_taken
            LET g_action_choice="modify_sent_taken"
@@ -2128,6 +2136,7 @@ END FUNCTION
 FUNCTION t100_nmd03(p_cmd)  #銀行代號
     DEFINE p_cmd      LIKE type_file.chr1,    #No.FUN-680107 VARCHAR(1)
            l_nma02    LIKE nma_file.nma02,
+           l_nma02_1  LIKE nma_file.nma02,    #darcy:2025/09/22 add
            l_nma10    LIKE nma_file.nma10,
            l_nma28    LIKE nma_file.nma28,
            l_nmaacti  LIKE nma_file.nmaacti,
@@ -2136,7 +2145,8 @@ FUNCTION t100_nmd03(p_cmd)  #銀行代號
     SELECT nma02,nma10,nmaacti,nma28
            INTO l_nma02,l_nma10,l_nmaacti,l_nma28
            FROM nma_file
-     WHERE nma01 = g_nmd.nmd03
+     WHERE nma01 = g_nmd.nmd03 
+   
  
     CASE WHEN SQLCA.SQLCODE = 100  LET g_errno = 'anm-013'
                             LET l_nma02 = NULL
@@ -2144,6 +2154,7 @@ FUNCTION t100_nmd03(p_cmd)  #銀行代號
          WHEN l_nmaacti='N' LET g_errno = '9028'
          OTHERWISE          LET g_errno = SQLCA.SQLCODE USING '-------'
     END CASE
+    
    
    IF g_aza.aza26<>'2' THEN #FUN-D80075 add
    SELECT COUNT(*) INTO l_cnt FROM nna_file WHERE nna01=g_nmd.nmd03        #FUN-C80018
@@ -2163,6 +2174,8 @@ FUNCTION t100_nmd03(p_cmd)  #銀行代號
        DISPLAY BY NAME g_nmd.nmd21
     END IF
     DISPLAY l_nma02 TO FORMONLY.nma02
+    select nma02 into l_nma02_1 from nma_file where nma01 = g_nmd.nmdud02 # darcy:2025/09/22 add
+    display l_nma02_1 to nma02_1  # darcy:2025/09/22 add
 END FUNCTION
  
 FUNCTION t100_nmd18(p_cmd)  #部門代號
@@ -3332,6 +3345,7 @@ FUNCTION t100_out()
         l_za05          LIKE type_file.chr1000, #No.FUN-680107 VARCHAR(40)
         l_chr           LIKE type_file.chr1     #No.FUN-680107 VARCHAR(1)
     DEFINE l_nma02               LIKE nma_file.nma02  #NO.FUN-830149
+    DEFINE l_nma02_1             LIKE nma_file.nma02  #darcy:2025/09/22 add
     DEFINE l_nmo02_1,l_nmo02_2   LIKE nmo_file.nmo02  #NO.FUN-830149
     DEFINE l_sta                 LIKE ze_file.ze03    #NO.FUN-830149
     CALL cl_del_data(l_table)                         #NO.FUN-830149
@@ -3353,6 +3367,7 @@ FUNCTION t100_out()
             END IF
          SELECT azi04 INTO t_azi04 FROM azi_file WHERE azi01=l_nmd.nmd21  
          SELECT nma02 INTO l_nma02 FROM nma_file WHERE nma01=l_nmd.nmd03
+         select nma02 into l_nma02_1 from nma_file where nma01 = l_nmd.nmdud02  # darcy:2025/09/22 add
          LET l_nmo02_1 = ''
          LET l_nmo02_2 = ''
          SELECT nmo02 INTO l_nmo02_1 FROM nmo_file WHERE nmo01 = l_nmd.nmd06
@@ -4782,3 +4797,178 @@ FUNCTION t100_undo_carry_voucher()
    DISPLAY BY NAME g_nmd.nmd27
 END FUNCTION
 #FUN-DA0047---add---end--
+
+# darcy:2025/09/22 add s---
+function t100_upd_nma03()
+   define l_nmd   record like nmd_file.*
+   define l_nmd_t    record like nmd_file.*
+   define l_nma02,l_nma02_1   like nma_file.nma02
+   define l_arg1     integer
+   define l_nmaacti     like nma_file.nmaacti
+
+   if g_nmd.nmd01 is null then
+      call cl_err('',-400,0)
+      return
+   end if
+
+   # 如果已经完全冲过了，就不能再修改银行
+   select * into l_nmd.* from nmd_file where nmd01 = g_nmd.nmd01
+   if l_nmd.nmd12 == '8' then
+      call cl_err('票据已经兑现，不能再修改付款银行','!',1)
+      return
+   end if
+
+   # 保存原值
+   let l_nmd_t.* = l_nmd.*
+
+   let l_nmd.nmdud02 = l_nmd.nmd03
+   let l_nmd.nmd03 = ''
+   display '','' to nmd03,nma02
+   select nma02 into l_nma02_1 from nma_file where nma01 = l_nmd.nmdud02
+   display l_nmd.nmdud02,l_nma02_1 to nmdud02,nma02_1
+
+   input by name l_nmd.nmd03 without defaults ATTRIBUTES (UNBUFFERED)
+
+      after field nmd03
+         if not cl_null(l_nmd.nmd03)  then
+            select nma02,nmaacti into l_nma02 , l_nmaacti from nma_file where nma01 = l_nmd.nmd03
+            if sqlca.sqlcode then
+               call cl_err('',-400,1)
+               next field nmd03
+            end if
+            if l_nmaacti = 'N' then 
+               call cl_err('银行不是生效状态','!',1)
+               next field nmd03
+            end if
+            display l_nma02 to nma02
+         end if
+
+      after input
+         message ''
+          update nmd_file set nmd03 = l_nmd.nmd03,nmdud02 = l_nmd.nmdud02 
+          where nmd01 = l_nmd.nmd01
+         if sqlca.sqlcode then
+            call cl_err('upd nmd_file',sqlca.sqlcode,1)  
+            next field nmd03
+         end if
+         exit input
+         
+      on action controlp
+         case
+            WHEN INFIELD(nmd03) #銀行代號
+               #-MOD-B20043-add-
+               LET l_arg1 = 1 
+               IF NOT cl_null(l_nmd.nmd31) THEN
+                  IF g_nmd.nmd31 = '98' THEN
+                     LET l_arg1 = 23
+                  END IF
+               END IF
+               #-MOD-B20043-end-
+               CALL cl_init_qry_var()
+               LET g_qryparam.form = "q_nma2"
+               LET g_qryparam.default1 = g_nmd.nmd03
+               #LET g_qryparam.arg1 = 1                #MOD-B20043 mark
+               #FUN-D80075--add--str--
+               IF g_aza.aza26='2' THEN
+                  LET l_arg1=123
+               END IF
+               #FUN-D80075--add--end
+               LET g_qryparam.arg1 = l_arg1           #MOD-B20043
+               CALL cl_create_qry() RETURNING l_nmd.nmd03
+               DISPLAY BY NAME l_nmd.nmd03
+               select nma02,nmaacti into l_nma02 , l_nmaacti from nma_file where nma01 = l_nmd.nmd03
+               if sqlca.sqlcode then
+                  call cl_err('',-400,1)
+                  next field nmd03
+               end if
+               if l_nmaacti = 'N' then 
+                  call cl_err('银行不是生效状态','!',1)
+                  next field nmd03
+               end if
+               display l_nma02 to nma02
+               NEXT FIELD nmd03
+         end case
+      
+      on action cancel
+         let l_nmd.nmd03 = l_nmd_t.nmd03
+         let l_nmd.nmdud02 = l_nmd_t.nmdud02 
+         select nma02 into l_nma02 from nma_file where nma01 = l_nmd.nmd03
+         select nma02 into l_nma02_1 from nma_file where nma01 = l_nmd.nmdud02
+         display l_nma02,l_nma02_1,l_nmd.nmd03,l_nmd.nmdud02  to nma02,nma02_1,nmd03,nmdud02
+         message ''
+         exit input
+
+      on action accept
+         update nmd_file set nmd03 = l_nmd.nmd03,nmdud02 = l_nmd.nmdud02 
+          where nmd01 = l_nmd.nmd01
+         if sqlca.sqlcode then
+            call cl_err('upd nmd_file',sqlca.sqlcode,1)  
+            next field nmd03
+         end if
+         exit input
+
+
+      ON ACTION CONTROLR
+         CALL cl_show_req_fields()
+ 
+      ON ACTION CONTROLG
+         CALL cl_cmdask()
+ 
+      ON ACTION CONTROLF                        # 欄位說明
+         CALL cl_set_focus_form(ui.Interface.getRootNode()) RETURNING g_fld_name,g_frm_name #Add on 040913
+         CALL cl_fldhelp(g_frm_name,g_fld_name,g_lang) #Add on 040913
+ 
+      ON IDLE g_idle_seconds
+          CALL cl_on_idle()
+          CONTINUE INPUT
+ 
+      ON ACTION about         #MOD-4C0121
+         CALL cl_about()      #MOD-4C0121
+ 
+      ON ACTION help          #MOD-4C0121
+         CALL cl_show_help()  #MOD-4C0121
+
+   end input
+
+end function
+# darcy:2025/09/22 add e---
+# darcy:2025/09/28 add s---
+function t100_upd_nma03_b()
+   define l_nmd               record 
+      nmd01_4     like nmd_file.nmd01,
+      nmd02_4     like nmd_file.nmd02,
+      nmd21_4     like nmd_file.nmd21,
+      nmd04_4     like nmd_file.nmd04,
+      nmd26_4     like nmd_file.nmd26,
+      nmd12_4     like nmd_file.nmd12,
+      nmd03_4     like nmd_file.nmd03,
+      nma02_4     like nma_file.nma02,
+      nmdud03_4   like nmd_file.nmdud03,
+      nma02_1_4   like nma_file.nma02
+   end record
+   define l_nmd_t             record 
+      nmd01_4     like nmd_file.nmd01,
+      nmd02_4     like nmd_file.nmd02,
+      nmd21_4     like nmd_file.nmd21,
+      nmd04_4     like nmd_file.nmd04,
+      nmd26_4     like nmd_file.nmd26,
+      nmd12_4     like nmd_file.nmd12,
+      nmd03_4     like nmd_file.nmd03,
+      nma02_4     like nma_file.nma02,
+      nmdud03_4   like nmd_file.nmdud03,
+      nma02_1_4   like nma_file.nma02
+   end record
+   define l_nma02,l_nma02_1   like nma_file.nma02
+   define l_arg1              integer
+   define l_nmaacti           like nma_file.nmaacti
+
+   if g_nmd.nmd01 is null then
+      call cl_err('',-400,0)
+      return
+   end if
+
+   if g_wc = ' 1=1' then
+
+   end if
+end function
+# darcy:2025/09/28 add e---
