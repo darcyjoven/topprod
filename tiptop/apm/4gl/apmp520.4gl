@@ -903,6 +903,7 @@ FUNCTION p520_b_askkey(p_cmd)
           LET l_pnn.pnn17=1 
         END IF
         LET l_pnn.pnn09=l_pnn.pnn09*l_pnn.pnn17
+        LET l_pnn.pnn09 = s_digqty(l_pnn.pnn09,l_pnn.pnn12) # darcy:2025/09/24 add
         
         #---存換算率以採購對請購之換算率
         CALL s_umfchk(l_pnn.pnn03,l_pnn.pnn12,l_pml07)
