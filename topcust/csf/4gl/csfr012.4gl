@@ -70,10 +70,11 @@ MAIN
              "eca02.eca_file.eca02"
              ,",sfe27.sfe_file.sfe27" #darcy:2022/10/11 add
              ,",tc_sfdud01.tc_sfd_file.tc_sfdud01"
+             ,",imaud06.ima_file.imaud06" #darcy:2025/09/26 add
    LET  l_table = cl_prt_temptable('csfr012',g_sql) CLIPPED
    IF l_table=-1 THEN EXIT PROGRAM END IF
    LET g_sql = "INSERT INTO ",g_cr_db_str CLIPPED,l_table CLIPPED,
-               " VALUES(?,?,?,?,?, ?,?,?,?,?, ?,?,?,?,?, ?,?,?,?,?, ?,?,?,?,?, ?,?,?,?,?)"  
+               " VALUES(?,?,?,?,?, ?,?,?,?,?, ?,?,?,?,?, ?,?,?,?,?, ?,?,?,?,?, ?,?,?,?,? ,?)"  
    PREPARE insert_prep FROM g_sql
    IF STATUS THEN
       CALL cl_err('insert_prep:',status,1) EXIT PROGRAM
@@ -310,6 +311,7 @@ FUNCTION csfr012()
              eca02      LIKE eca_file.eca02,
              sfe27      like sfe_file.sfe27,   #darcy:2022/10/11 add
              tc_sfdud01   LIKE tc_sfd_file.tc_sfdud01 
+             ,imaud06     like ima_file.imaud06  # darcy:2025/09/26 add
                     END RECORD
    DEFINE l_cnt     LIKE type_file.num5  
    DEFINE l_tc_sfe03   LIKE tc_sfe_file.tc_sfe03    #add by guanyao160912
@@ -323,6 +325,7 @@ FUNCTION csfr012()
      LET l_sql=" SELECT tc_sfd01,tc_sff03,0,sfb05,m.ima02,m.ima021, m.imaud07,m.imaud10, sfb08,sfb22,tc_sff02,tc_sff04,n.ima02,   n.ima021,sfa05,sfa06,0,tc_sff05, ",
                " tc_sff06,tc_sffud02,'',tc_sff08,'',tc_sfd06,tc_sff07,'','','' ",   #add tc_sfd06 by guanyao160826
                " ,tc_sff27,tc_sfdud01 ", #darcy:2022/10/11 add
+               " ,m.imaud06 ", # darcy:2025/09/26 add
                " FROM tc_sfd_file,ima_file j,sfb_file LEFT JOIN ima_file m ON sfb05=m.ima01,sfa_file,tc_sff_file LEFT JOIN ima_file n ON tc_sff04=n.ima01 ", #darcy:2022/12/09 mod add ima_file
                " WHERE tc_sfd01=tc_sff01 AND sfb01=sfa01 AND tc_sff04=sfa03 AND tc_sff07=sfa08 ",#str---add by huanglf160823
                "  AND tc_sff03 = sfb01",
@@ -368,6 +371,11 @@ FUNCTION csfr012()
         END IF 
         LET sr.tc_sfe03 = sr.tc_sfe03+l_tc_sfe03
         #end---add by guanyao160912
+        # darcy:2025/09/26 add s---
+        select tc_sma03 || '.' || tc_sma06 into sr.imaud06
+          from tc_sma_file 
+        where tc_sma01 = 'csmi102' and tc_sma03 = sr.imaud06
+        # darcy:2025/09/26 add e---
         SELECT sfa161 INTO l_sfa161 FROM sfa_file WHERE sfa01=sr.tc_sfe02 AND sfa03=sr.sfe07
         LET sr.num1=l_sfa161*sr.tc_sfe03
         LET sr.title='工单发料单'
