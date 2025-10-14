@@ -5,6 +5,7 @@
 # Description    : 采购单价波动情况
 # Date & Author  : darcy:2025/05/13 add
 import libuuid
+import libpriceexp
 
 database ds
  
@@ -103,7 +104,7 @@ function cpmq011()
                  using ( select uuid, ima01, pmi03, dat, price, 
                          LAG(price, 1, null) OVER (partition by uuid, ima01, pmi03 order by dat ) lastprice
                            from cpmq011_pd where uuid = '",g_uuid,"' ) b
-                on (a.uuid =b.uuid and a.ima01 = b.ima01 and a.dat=b.dat)
+                on (a.uuid =b.uuid and a.ima01 = b.ima01 and a.pmi03 = b.pmi03 and a.dat=b.dat)
                 when matched then update set a.change = a.price - b.lastprice"
     prepare cpmq011_upd_change from l_sql
     execute cpmq011_upd_change
@@ -132,14 +133,15 @@ function cpmq011()
 end function
 
 function cpmq011_sale()
+    # TODO 不需要客户编号
     define l_sql    string
     -- 1. 取期间下订单料号
-    let l_sql = "insert into cpmq011_s (uuid, ima01, oea03, occ02, occ18, ima02, ima021)
-                 select unique '",g_uuid,"', oeb04, oea03, occ02, occ18, ima02, ima021
-                   from oea_file, oeb_file, occ_file, ima_file
+    let l_sql = "insert into cpmq011_s (uuid, ima01, ima02, ima021)
+                 select unique '",g_uuid,"', oeb04, ima02, ima021
+                   from oea_file, oeb_file, ima_file
                   where oea01 = oeb01 and oeaconf = 'Y'
                     and oea02 between to_date('250401', 'yymmdd') and to_date('250430', 'yymmdd')
-                    and oea00 = '1' and occ01 = oea03 and oeb04 = ima01 and oeb13 <> 0
+                    and oea00 = '1' and oeb04 = ima01 and oeb13 <> 0
                     and oeb04 not like '%.%' "
     prepare cpmq011_ins_saleitem from l_sql
     execute cpmq011_ins_saleitem
@@ -148,16 +150,16 @@ function cpmq011_sale()
         return
     end if
     -- 2. 取期初单价
-    let l_sql = " insert into cpmq011_sd (uuid, ima01, oea03, dat, change, price, amt)
-                select uuid, ima01,oea03, tc_xmedate,0, tc_xmf05,0
+    let l_sql = " insert into cpmq011_sd (uuid, ima01, dat, change, price, amt)
+                select uuid, ima01, tc_xmedate,0, tc_xmf05,0
                    from cpmq011_s ,
-                        (select tc_xme03, tc_xmf03, max(tc_xmedate) tc_xmedate,
+                        (select tc_xmf03, max(tc_xmedate) tc_xmedate,
                                 max(tc_xmf05) keep(dense_rank last order by tc_xmedate) tc_xmf05
                            from tc_xme_file, tc_xmf_file 
-                          where tc_xme00 = tc_xmf00 and tc_xmeconf = 'Y' and tc_xmedate < to_date('250401', 'yymmdd')
-                          group by tc_xme03, tc_xmf03)
-                  where oea03 = tc_xme03 and ima01 = tc_xmf03
-                    and uuid = '",g_uuid,"' "
+                          where tc_xme00 = tc_xmf00 and tc_xmeconf = 'Y' 
+                            and tc_xmedate < to_date('250401', 'yymmdd')
+                          group by  tc_xmf03)
+                  where ima01 = tc_xmf03 and uuid = '",g_uuid,"' "
     prepare cpmq011_upd_first from l_sql
     execute cpmq011_upd_first
     if sqlca.sqlcode then
@@ -165,12 +167,12 @@ function cpmq011_sale()
         return
     end if
     -- 3. 取期间单价
-    let l_sql = "insert into cpmq011_sd (uuid, ima01, oea03, dat, change, price, amt)
-                 select uuid, ima01, oea03, tc_xmedate, 0, tc_xmf05, 0
+    let l_sql = "insert into cpmq011_sd (uuid, ima01, dat, change, price, amt)
+                 select uuid, ima01, tc_xmedate, 0, tc_xmf05, 0
                    from cpmq011_s,tc_xme_file, tc_xmf_file 
                   where tc_xme00 = tc_xmf00 and tc_xmeconf = 'Y'
                     and tc_xmedate between to_date('250401', 'yymmdd') and to_date('250430', 'yymmdd')
-                    and oea03 = tc_xme03  and tc_xmf03 = ima01 and uuid = '",g_uuid,"'"
+                    and tc_xmf03 = ima01 and uuid = '",g_uuid,"'"
     prepare cpmq011_upd_dur from l_sql
     execute cpmq011_upd_dur
     if sqlca.sqlcode then
@@ -179,8 +181,8 @@ function cpmq011_sale()
     end if
     -- 4. 更新涨跌价金额 
     let l_sql = "merge into cpmq011_sd a
-                 using ( select uuid, ima01, oea03, dat, price, 
-                         LAG(price, 1, null) OVER (partition by uuid, ima01, oea03 order by dat ) lastprice
+                 using ( select uuid, ima01, dat, price, 
+                         LAG(price, 1, null) OVER (partition by uuid, ima01 order by dat ) lastprice
                            from cpmq011_sd where uuid = '",g_uuid,"' ) b
                 on (a.uuid =b.uuid and a.ima01 = b.ima01 and a.dat=b.dat)
                 when matched then update set a.change = a.price - b.lastprice"
@@ -192,16 +194,16 @@ function cpmq011_sale()
     end if 
     -- 5. 更新期间订单数量
     let l_sql = "merge into cpmq011_sd a
-                 using (select uuid, ima01, oea03, dat, nvl(sum(oeb12), 0) oeb12
-                          from (select uuid, ima01, oea03, dat,
-                                    LAG(dat, 1, null) OVER (partition by uuid, ima01, oea03 order by dat desc) nextdat
+                 using (select uuid, ima01, dat, nvl(sum(oeb12), 0) oeb12
+                          from (select uuid, ima01, dat,
+                                    LAG(dat, 1, null) OVER (partition by uuid, ima01 order by dat desc) nextdat
                                   from cpmq011_sd where uuid = '",g_uuid,"')
-                                   left join (select oea03 oea03_1, oea02, oeb04, oeb12 from oea_file, oeb_file
+                                   left join (select oea02, oeb04, oeb12 from oea_file, oeb_file
                                  where oea01 = oeb01 and oea00 = '1' and oeaconf = 'Y')
-                                    on oea03_1 = oea03 and oeb04 = ima01 and oea02 >= dat
+                                    on oeb04 = ima01 and oea02 >= dat
                                   and (nextdat is null or oea02 <= nextdat)
-                                group by uuid, ima01, oea03, dat) b
-                    on (a.uuid = b.uuid and a.ima01 = b.ima01 and a.oea03 = b.oea03 and a.dat = b.dat)
+                                group by uuid, ima01, dat) b
+                    on (a.uuid = b.uuid and a.ima01 = b.ima01 and a.dat = b.dat)
                   when matched then update set a.amt = b.oeb12"
     prepare cpmq011_upd_amt2 from l_sql
     execute cpmq011_upd_amt2
@@ -251,9 +253,6 @@ function cpmq011_out()
         end record,
         sales dynamic array of record
             ima01   like ima_file.ima01,
-            oea03   like oea_file.oea03,
-            occ02   like occ_file.occ02,
-            occ18   like occ_file.occ18,
             ima02   like ima_file.ima02,
             ima021  like ima_file.ima021,
             sales_detail dynamic array of record
@@ -310,26 +309,25 @@ function cpmq011_out()
     call l_result.pur.deleteElement(i)
 
     -- 销售核价料号
-    let l_sql = "select ima01, oea03, occ02, occ18, ima02, ima021 from cpmq011_s ",
-                " where uuid = ?  order by ima01, oea03"
+    let l_sql = "select ima01, ima02, ima021 from cpmq011_s ",
+                " where uuid = ?  order by ima01"
     prepare cpmq011_s_p from l_sql
     declare cpmq011_s_cur cursor for cpmq011_s_p
     -- 销售核价明细
     let l_sql = "select dat, change, price, amt from cpmq011_sd ",
-                " where uuid = ? and ima01 = ? and oea03 = ? ",
+                " where uuid = ? and ima01 = ? ",
                 " order by dat"
     prepare cpmq011_sd_p from l_sql
     declare cpmq011_sd_cur cursor for cpmq011_sd_p
     let i = 1
     foreach cpmq011_s_cur using g_uuid
-       into l_result.sales[i].ima01, l_result.sales[i].oea03, l_result.sales[i].occ02,
-            l_result.sales[i].occ18, l_result.sales[i].ima02, l_result.sales[i].ima021
+       into l_result.sales[i].ima01, l_result.sales[i].ima02, l_result.sales[i].ima021
         if sqlca.sqlcode then
             call cl_err('cpmq011_s_cur',sqlca.sqlcode,1)
             exit foreach
         end if
         let j = 1
-        foreach cpmq011_sd_cur using g_uuid, l_result.sales[i].ima01, l_result.sales[i].oea03
+        foreach cpmq011_sd_cur using g_uuid, l_result.sales[i].ima01
            into l_result.sales[i].sales_detail[j].*
            if sqlca.sqlcode then
                 call cl_err('cpmq011_sd_cur',sqlca.sqlcode,1)
@@ -362,6 +360,8 @@ function cpmq011_out()
     let l_node = base.typeinfo.create(l_result)
     call l_node.writeXml(l_file)
 
-    display l_file
+    call priceExp(l_file) returning l_file 
+
+    call cl_download_by_explorer(l_file)
 
 end function
