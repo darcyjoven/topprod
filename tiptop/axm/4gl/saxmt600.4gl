@@ -41386,9 +41386,8 @@ function saxmt600_chk_add(p_oga01)
    end if
 
    # 2. 料号首次出货 OR 更换地址 
-
    let l_sql = "select count(*)
-                  from (select oga01, ogb04, oga044
+                  from (select ogb04, oga044,count(*)
                            from oga_file, ogb_file
                            where oga01 = ogb01
                            and ogaconf = 'Y'
@@ -41399,10 +41398,11 @@ function saxmt600_chk_add(p_oga01)
                                  where oga01 = ?
                                     and oga01 = ogb01
                                  group by ogb04, oga044)
-                  group by oga01, ogb04, oga044)"
+                  group by ogb04, oga044
+                  having count(*) = 1)"
    prepare saxmt600_chk_single from l_sql
    execute saxmt600_chk_single using p_oga01 into l_cnt
-   if l_cnt > 1 then
+   if l_cnt <= 0 then
       return
    end if
 
@@ -41417,7 +41417,7 @@ function saxmt600_chk_add(p_oga01)
     or l_oga044 = 64 or l_oga044 = 68 then
       call saxmt600_mail_info("AA0",p_oga01||" 首次出货地址，请附带承认书，封样")
    else
-      if l_oga044 = 54 or l_oga044 = 66 then
+      if l_oga044 = 54 or l_oga044 = 66 or l_oga044 = 67 then # darcy:2025/10/14 add 67
          call saxmt600_mail_info("AA0",p_oga01||" 首次出货地址，请附带承认书，封样及飞针资料")
       end if
    end if
