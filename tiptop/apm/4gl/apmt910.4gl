@@ -6138,12 +6138,12 @@ DEFINE l_x     LIKE type_file.num5    #add by guanyao160707
    IF g_pna.pna05 = 'X' THEN CALL cl_err('','9024',0) RETURN END IF
    IF g_pna.pna01 IS NULL THEN CALL cl_err('',-400,0) RETURN END IF
    #str----add by guanyao160707
-   LET l_x = 0
-   SELECT COUNT(*) INTO l_x FROM tc_sfp_file WHERE tc_sfp03 = g_pna.pna01 AND tc_sfp13 = g_pna.pna02
-   IF l_x >0 THEN 
-      CALL cl_err(g_pna.pna01||g_pna.pna02,'cpm-043',0)
-      RETURN 
-   END IF 
+   -- LET l_x = 0
+   -- SELECT COUNT(*) INTO l_x FROM tc_sfp_file WHERE tc_sfp03 = g_pna.pna01 AND tc_sfp13 = g_pna.pna02
+   -- IF l_x >0 THEN 
+   --    CALL cl_err(g_pna.pna01||g_pna.pna02,'cpm-043',0)
+   --    RETURN 
+   -- END IF 
    #end----add by guanyao160707
  
    IF NOT cl_confirm('axm-109') THEN RETURN END IF
@@ -6423,21 +6423,21 @@ FUNCTION t910_g()
    #FUN-C30081 add END
   END FOREACH
 #str------add by guanyao160707
-  LET l_pmm02 = ''
-  SELECT pmm02 INTO l_pmm02 FROM pmm_file WHERE pmm01 = g_pna.pna01
-  IF l_pmm02 = 'SUB' THEN
-     DECLARE t910_sub CURSOR FOR SELECT pnb03 FROM pnb_file WHERE pnb01 =g_pna.pna01 AND pnb02 = g_pna.pna02
-     FOREACH t910_sub INTO l_pnb03_1
-        LET l_tc_sfpconf = ''
-        SELECT tc_sfpconf INTO l_tc_sfpconf 
-          FROM tc_sfp_file WHERE tc_sfp03 = g_pna.pna01 AND tc_sfp13 = g_pna.pna02 AND tc_sfp04 = l_pnb03_1
-        IF cl_null(l_tc_sfpconf) OR l_tc_sfpconf!='Y' THEN 
-           CALL cl_err(g_pna.pna01||g_pna.pna02||l_pnb03_1,'cpm-042',0)
-           LET g_success = 'N'
-           RETURN 
-        END IF 
-     END FOREACH 
-  END IF 
+--   LET l_pmm02 = ''
+--   SELECT pmm02 INTO l_pmm02 FROM pmm_file WHERE pmm01 = g_pna.pna01
+--   IF l_pmm02 = 'SUB' THEN
+--      DECLARE t910_sub CURSOR FOR SELECT pnb03 FROM pnb_file WHERE pnb01 =g_pna.pna01 AND pnb02 = g_pna.pna02
+--      FOREACH t910_sub INTO l_pnb03_1
+--         LET l_tc_sfpconf = ''
+--         SELECT tc_sfpconf INTO l_tc_sfpconf 
+--           FROM tc_sfp_file WHERE tc_sfp03 = g_pna.pna01 AND tc_sfp13 = g_pna.pna02 AND tc_sfp04 = l_pnb03_1
+--         IF cl_null(l_tc_sfpconf) OR l_tc_sfpconf!='Y' THEN 
+--            CALL cl_err(g_pna.pna01||g_pna.pna02||l_pnb03_1,'cpm-042',0)
+--            LET g_success = 'N'
+--            RETURN 
+--         END IF 
+--      END FOREACH 
+--   END IF 
 #end------add by guanyao160707
   IF NOT cl_confirm('apm-338') THEN RETURN END IF    #No.MOD-740334 modify
   #NO.18010101 ---- 更新SCM采购单---
@@ -8811,15 +8811,15 @@ DEFINE l_cmd   STRING
    END IF 
 
    LET l_x = ARR_CURR()
-   LET l_a = 0
-   SELECT COUNT(*) INTO l_a 
-     FROM tc_sfp_file 
-    WHERE tc_sfp03 = g_pna.pna01 
-      AND tc_sfp04 =g_pnb[l_x].pnb03
-   IF cl_null(l_a) OR l_a = 0 THEN 
-      CALL cl_err('','cpm-012',0)
-      RETURN 
-   END IF 
+   -- LET l_a = 0
+   -- SELECT COUNT(*) INTO l_a 
+   --   FROM tc_sfp_file 
+   --  WHERE tc_sfp03 = g_pna.pna01 
+   --    AND tc_sfp04 =g_pnb[l_x].pnb03
+   -- IF cl_null(l_a) OR l_a = 0 THEN 
+   --    CALL cl_err('','cpm-012',0)
+   --    RETURN 
+   -- END IF 
    LET l_cmd = ''
       LET l_cmd = "csft001",
                   " '4' '",g_pna.pna01 CLIPPED,"'",
