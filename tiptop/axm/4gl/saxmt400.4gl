@@ -922,6 +922,7 @@ define g_oebs_t type_oebs
 define g_oeb_batch dynamic array of type_oebs
 define g_oeb_batch_t type_oebs
 # darcy:2025/08/13 add e---
+define g_tc_oebud02  like tc_oeb_file.tc_oebud02  # darcy:2025/10/24 add
 
 FUNCTION t400(p_argv1,p_oea901,p_argv2,p_argv3)
    DEFINE p_argv1      LIKE type_file.chr1    #No.FUN-680137 VARCHAR(1)   # 0.合約 1.訂單/換貨訂單
@@ -3355,7 +3356,7 @@ FUNCTION t400_menu()
          #darcy:2024/08/21 add s---
          when "modify_details"
             if cl_chk_act_auth() then 
-               -- call saxmt400_details() 不允许修改
+               call saxmt400_details()
              end if
          #darcy:2024/08/21 add e---
          # darcy:2025/08/13 add s---
@@ -34045,6 +34046,7 @@ DEFINE
    p_cmd           LIKE type_file.chr1,
    l_allow_insert  LIKE type_file.num5,
    l_allow_delete  LIKE type_file.num5
+define l_tc_oebud02  like tc_oeb_file.tc_oebud02  # darcy:2025/10/24 add
 
    let g_action_choice = ""
    select * into g_oea.* from oea_file where oea01= g_oea.oea01
@@ -34052,6 +34054,11 @@ DEFINE
    if g_oea.oea01 is null then return end if
    #if g_oea.oeaconf = 'Y' then call cl_err('',9023,0) return end if
    if g_oea.oeaconf = 'X' then call cl_err('',9024,0) return end if
+   # 已审核不允许修改
+   if g_oea.oeaconf = 'Y' then
+      call cl_err('',9022,0)
+      return
+   end if
    if g_oea.oea61 > 0 and g_oea.oea61 = g_oea.oea62 then
       call cl_err('','axm-162',0)
       return
@@ -34067,12 +34074,14 @@ DEFINE
    select count(*) into g_cnt from tc_oeb_file
     where tc_oeb01 = g_oea.oea01
    if g_cnt = 0 then
+      let g_tc_oebud02 = sfmt("%1-01",current year to day)
       let g_forupd_sql = "insert into tc_oeb_file ",
                   "   (tc_oeb01,tc_oeb03,tc_oeb031,tc_oeb04,tc_oeb05,tc_oeb06,tc_oeb12, ",
                   "    tc_oeb16,tc_oeb22,tc_oeb23,tc_oeb24,tc_oeb25,tc_oeb26,tc_oeb70, ",
-                  "    tc_oeb70d,tc_oebplant,tc_oeblegal) ",
-                  " select oeb01,oeb03,1,oeb04,oeb05,oeb06,oeb12,nvl(oeb15,trunc(sysdate)),oeb22,oeb23,oeb24,oeb25,oeb26,oeb70,oeb70d, ",
-                  "        '",g_plant,"','",g_legal,"' from oeb_file",
+                  "    tc_oeb70d,tc_oebplant,tc_oeblegal,tc_oebud02) ",
+                  " select oeb01,oeb03,1,oeb04,oeb05,oeb06,oeb12,nvl(oeb15,trunc(sysdate)),",
+                  "        oeb22,oeb23,oeb24,oeb25,oeb26,oeb70,oeb70d, ",
+                  "        '",g_plant,"','",g_legal,"','",g_tc_oebud02,"' from oeb_file",
                   "  where oeb01 = '",g_oea.oea01,"'"
       prepare saxmt500_ins_tc_oeb from g_forupd_sql
       execute saxmt500_ins_tc_oeb
@@ -34089,6 +34098,7 @@ DEFINE
 
    let g_forupd_sql = "SELECT tc_oeb03,tc_oeb031,tc_oeb04,tc_oeb05,tc_oeb06,'',tc_oeb12, ",
                       "       tc_oeb16,tc_oeb22,tc_oeb23,tc_oeb24,tc_oeb25,tc_oeb26,tc_oeb70,tc_oeb70d ", 
+                      "       ,tc_oebud02 ",
                       "  FROM tc_oeb_file ",
                       " WHERE tc_oeb01= ? AND tc_oeb03= ? and tc_oeb031 = ?  FOR UPDATE"
    let g_forupd_sql = cl_forupd_sql(g_forupd_sql)
@@ -34152,7 +34162,7 @@ DEFINE
                call cl_err("open saxmt400_b1cl:", status, 1)
                let l_lock_sw = "Y"
             else
-               fetch saxmt400_b1cl into g_tc_oeb[l_ac].*
+               fetch saxmt400_b1cl into g_tc_oeb[l_ac].*,g_tc_oebud02
                if sqlca.sqlcode then
                   call cl_err('lock oeb',sqlca.sqlcode,1)
                   let l_lock_sw = "Y"
@@ -34325,11 +34335,11 @@ end function
 function saxmt400_details_ins() 
    insert into tc_oeb_file (tc_oeb01,tc_oeb03,tc_oeb031,tc_oeb04,tc_oeb05,tc_oeb06,tc_oeb12,
                            tc_oeb16,tc_oeb22,tc_oeb23,tc_oeb24,tc_oeb25,tc_oeb26,tc_oeb70,
-                           tc_oeb70d,tc_oebplant,tc_oeblegal)
+                           tc_oeb70d,tc_oebplant,tc_oeblegal,tc_oebud02)
       values(g_oea.oea01,g_tc_oeb[l_ac].tc_oeb03,g_tc_oeb[l_ac].tc_oeb031,g_tc_oeb[l_ac].tc_oeb04,g_tc_oeb[l_ac].tc_oeb05,
              g_tc_oeb[l_ac].tc_oeb06,g_tc_oeb[l_ac].tc_oeb12,g_tc_oeb[l_ac].tc_oeb16,g_tc_oeb[l_ac].tc_oeb22,
              g_tc_oeb[l_ac].tc_oeb23,g_tc_oeb[l_ac].tc_oeb24,g_tc_oeb[l_ac].tc_oeb25,g_tc_oeb[l_ac].tc_oeb26,
-             g_tc_oeb[l_ac].tc_oeb70,g_tc_oeb[l_ac].tc_oeb70d,g_plant,g_legal )
+             g_tc_oeb[l_ac].tc_oeb70,g_tc_oeb[l_ac].tc_oeb70d,g_plant,g_legal,g_tc_oebud02 )
    if sqlca.sqlcode then
       call cl_err3("ins","tc_oeb_file",g_oea.oea01,g_tc_oeb[l_ac].tc_oeb031,sqlca.sqlcode,"","ins tc_oeb",1)  #no.fun-650108
       return false
@@ -34477,7 +34487,11 @@ function saxmt400_b1_chk_tc_oeb12()
    return true
 end function
 function saxmt400_details_del()
-   delete from tc_oeb_file where tc_oeb01 = g_oea.oea01 and tc_oeb03 = g_tc_oeb_t.tc_oeb03 and tc_oeb031 = g_tc_oeb_t.tc_oeb031
+   delete from tc_oeb_file where tc_oeb01 = g_oea.oea01 
+      and tc_oeb03 = g_tc_oeb_t.tc_oeb03 
+      and tc_oeb031 = g_tc_oeb_t.tc_oeb031
+      and tc_oebud02 = g_tc_oebud02
+
    if sqlca.sqlcode then
       call cl_err3("del","tc_oeb_file",g_oea.oea01,g_tc_oeb_t.tc_oeb031,sqlca.sqlcode,"","",1)
       return false
@@ -34491,6 +34505,7 @@ function saxmt400_details_upd()
     where tc_oeb01 = g_oea.oea01 
       and tc_oeb03 = g_tc_oeb_t.tc_oeb03
       and tc_oeb031 = g_tc_oeb_t.tc_oeb031
+      and tc_oebud02 = g_tc_oebud02
    if sqlca.sqlcode then
       call cl_err3("upd","tc_oeb_file",g_oea.oea01,g_tc_oeb_t.tc_oeb031,sqlca.sqlcode,"","upd tc_oeb",1)
       let g_tc_oeb[l_ac].* = g_tc_oeb_t.*
