@@ -3354,9 +3354,9 @@ FUNCTION t400_menu()
          #darcy:2024/08/01 add e---
          #darcy:2024/08/21 add s---
          when "modify_details"
-            if cl_chk_act_auth() then
-               call saxmt400_details()
-            end if
+            if cl_chk_act_auth() then 
+               -- call saxmt400_details() 不允许修改
+             end if
          #darcy:2024/08/21 add e---
          # darcy:2025/08/13 add s---
          when "export_batch" 
@@ -11923,6 +11923,7 @@ FUNCTION t400_b_fill(p_wc2,p_wc5)              #BODY FILL UP
 #  #FUN-A60035 ---add end
 #FUN-A60035 ---MARK END
     DEFINE p_wc5   STRING
+    define l_tc_oebud02    like tc_oeb_file.tc_oebud02   # darcy:2025/10/23 add
 
     LET l_sql =                         #NO.TQC-740135
         "SELECT oeb03,'',oebud02,oebud10,oeb71,oeb935,oeb936,oeb937,oeb49,oeb50,oeb04,'','','','','','','','','',", #No.FUN-A90040   #add oebud02 by guanyao160712
@@ -12076,6 +12077,11 @@ FUNCTION t400_b_fill(p_wc2,p_wc5)              #BODY FILL UP
 ##FUN-B90101 add &endif
 #FUN-C20006--mark--end--
    #darcy:2024/08/21 add s---
+   # darcy:2025/10/23 add s---
+   # 取最大版本
+   select max(tc_oebud02) into l_tc_oebud02 from tc_oeb_file
+    where tc_oeb01 = g_oea.oea01
+   # darcy:2025/10/23 add e---
    let l_sql = "select tc_oeb03,tc_oeb031,tc_oeb04,tc_oeb05,tc_oeb06,ima021,tc_oeb12,tc_oeb16, ",
                "       tc_oeb22,tc_oeb23,tc_oeb24,tc_oeb25,tc_oeb26,tc_oeb70,tc_oeb70d ",
                "  from tc_oeb_file,oea_file,oeb_file,ima_file",
@@ -12083,6 +12089,7 @@ FUNCTION t400_b_fill(p_wc2,p_wc5)              #BODY FILL UP
                "   and oea01 = oeb01 and oeb01 = tc_oeb01 and oeb03 = tc_oeb03 ",
                " and ",p_wc2 clipped," and oeb04 = ima01",
                " and (oeb1003='1' or (oeb1003='2' and oeb03<'9001')) ",
+               " and tc_oebud02 = '",l_tc_oebud02,"' ", # darcy:2025/10/23 add
                " order by tc_oeb03,tc_oeb031"
    prepare saxmt400_tc_oeb_bp from l_sql
    declare saxmt400_tc_oeb_cur cursor for saxmt400_tc_oeb_bp
@@ -34807,8 +34814,11 @@ function t400_split_do()
    define l_oeb12    like oeb_file.oeb12
    define l_tc_oeb   tc_oeb
    define l_days     integer
-
+   define l_tc_oebud02  like tc_oeb_file.tc_oebud02 
+   
    begin work
+
+   let l_tc_oebud02 = sfmt("%1-%2",current year to day,"01")
    let g_success = 'Y' 
 
    for i = 1 to g_oebs.getlength()
@@ -34860,11 +34870,11 @@ function t400_split_do()
          insert into tc_oeb_file 
             (tc_oeb01,tc_oeb03,tc_oeb031,tc_oeb04,tc_oeb05,tc_oeb06,tc_oeb12,
              tc_oeb16,tc_oeb22,tc_oeb23,tc_oeb24,tc_oeb25,tc_oeb26,tc_oeb70,
-             tc_oeb70d,tc_oebplant,tc_oeblegal)
+             tc_oeb70d,tc_oebplant,tc_oeblegal,tc_oebud02)
          values(g_oea.oea01,l_tc_oeb.tc_oeb03,l_tc_oeb.tc_oeb031,l_tc_oeb.tc_oeb04,l_tc_oeb.tc_oeb05,
                 l_tc_oeb.tc_oeb06,l_tc_oeb.tc_oeb12,l_tc_oeb.tc_oeb16,l_tc_oeb.tc_oeb22,
                 l_tc_oeb.tc_oeb23,l_tc_oeb.tc_oeb24,l_tc_oeb.tc_oeb25,l_tc_oeb.tc_oeb26,
-                l_tc_oeb.tc_oeb70,l_tc_oeb.tc_oeb70d,g_plant,g_legal )
+                l_tc_oeb.tc_oeb70,l_tc_oeb.tc_oeb70d,g_plant,g_legal,l_tc_oebud02)
          if sqlca.sqlcode then
             call cl_err("ins tc_oeb",sqlca.sqlcode,1)
             let g_success = 'N'
@@ -35272,6 +35282,7 @@ function saxmt400_export_batch()
    define l_begin    date
    define l_oeb_xlsx dynamic array of type_oebs
    define i,j integer
+   define l_str      string
 
    # 必要检查
    if cl_null(g_oea.oea01) then
@@ -35285,6 +35296,10 @@ function saxmt400_export_batch()
       return
    end if
 
+   let l_str = "cxmr027 '",g_oea.oea01,"' '' '' '' '",g_oeb[1].oeb04,"' '' 'Y' "
+   call cl_cmdrun_wait(l_str)
+   return
+
    # 获取料号和料号的最早拆单日期
    if l_ac > g_oeb.getlength() then
       let l_item = g_oeb[1].oeb04
@@ -35294,7 +35309,7 @@ function saxmt400_export_batch()
    select min(tc_oeb16) into l_begin
      from oea_file, oeb_file, tc_oeb_file
     where oea01 = oeb01 and oeaconf <> 'X' and oeb01 = tc_oeb01
-      and oeb03 = tc_oeb03 and oea00 = '0' and oeb04 = l_item
+      and oeb03 = tc_oeb03 and oea00 = '0' and oeb04 = l_item 
 
    # 输入开始拆单日期
    -- prompt "开始拆单日期" for l_begin
@@ -35576,6 +35591,7 @@ function saxmt400_import_upd(p_sheet)
       tc_oeb70    like tc_oeb_file.tc_oeb70,
       tc_oeb70d   like tc_oeb_file.tc_oeb70d
    end record
+   define l_tc_oebud02  like tc_oeb_file.tc_oebud02
 
    let l_sql = "select unique oeb01,oeb03 from axmt400_imp",
                " order by oeb01,oeb03"
@@ -35583,11 +35599,16 @@ function saxmt400_import_upd(p_sheet)
    declare saxmt400_imp_oeb_p cursor for saxmt400_imp_oeb
 
    -- 查询工单开立数量
-   let l_sql = "select oeb12,
-               case when nvl(sum(sfbud08),0) > oeb12 then oeb12 else nvl(sum(sfbud08),0) end sfbud08 
-               from oeb_file
-               left join sfb_file on sfb22 = oeb01 and sfb221 = oeb03 and sfb04 <> '8' and sfb87 <>'X'
-               where oeb01 = ? and oeb03 = ? group by oeb12"
+   let l_sql = "select oeb12, nvl(oeb24_1, 0)
+                  from oea_file, oeb_file
+                  left join (select oebud02 oea01_1, oeb04 oeb04_1, sum(oeb24) oeb24_1
+                               from oea_file, oeb_file
+                              where oea01 = oeb01 and oea00 = '1'
+                                and oeaconf = 'Y' group by oebud02, oeb04)
+                    on oeb01 = oea01_1 and oeb04_1 = oeb04
+                 where oea01 = oeb01 and oea00 = '0'
+                   and oea01 = ? and oeb03 = ? "
+
    prepare saxmt400_split_sfb from l_sql
 
    -- 查询订单允许修改的开始项次
@@ -35765,6 +35786,8 @@ function saxmt400_import_upd(p_sheet)
    declare saxmt400_imp_axmt400_p cursor for saxmt400_imp_axmt400
 
    begin work -- 开启事务
+   select oeb01 into l_oeb.oeb01 from axmt400_imp where rownum = 1
+   let l_tc_oebud02 = saxmt400_tc_oebud02()
    let l_oeb01 = ""
    let l_oeb03 = 0
    foreach saxmt400_imp_axmt400_p into l_oeb.*
@@ -35774,22 +35797,22 @@ function saxmt400_import_upd(p_sheet)
       end if
       -- 1. 删除项次大于本次最大项次的记录
       --    删除在本次拆分中的
-      if l_oeb01 <> l_oeb.oeb01 or l_oeb03 <> l_oeb.oeb03 then
-         delete from tc_oeb_file where tc_oeb01 = l_oeb.oeb01 and tc_oeb03 = l_oeb.oeb03
-            and tc_oeb031 >= l_min_oeb031
-         let l_oeb01 = l_oeb.oeb01
-         let l_oeb03 = l_oeb.oeb03
-      end if
+      -- if l_oeb01 <> l_oeb.oeb01 or l_oeb03 <> l_oeb.oeb03 then
+      --    delete from tc_oeb_file where tc_oeb01 = l_oeb.oeb01 and tc_oeb03 = l_oeb.oeb03
+      --       and tc_oeb031 >= l_min_oeb031
+      --    let l_oeb01 = l_oeb.oeb01
+      --    let l_oeb03 = l_oeb.oeb03
+      -- end if
       -- 2. 更新订单明细(应该是插入insert)
       initialize l_tc_oeb.* to null
       select oeb04,oeb05,oeb06,oeb22,oeb23,oeb24,oeb25,oeb26,oeb70,oeb70d into l_tc_oeb.*
         from oeb_file where oeb01 = l_oeb.oeb01 and oeb03 = l_oeb.oeb03
       insert into tc_oeb_file (tc_oeb01,tc_oeb03,tc_oeb031,tc_oeb04,tc_oeb05,tc_oeb06,tc_oeb12,
                                tc_oeb16,tc_oeb22,tc_oeb23,tc_oeb24,tc_oeb25,tc_oeb26,tc_oeb70,
-                               tc_oeb70d,tc_oebplant,tc_oeblegal)
+                               tc_oeb70d,tc_oebplant,tc_oeblegal,tc_oebud02)
       values(l_oeb.oeb01,l_oeb.oeb03,l_oeb.oeb031,l_tc_oeb.tc_oeb04,l_tc_oeb.tc_oeb05,l_tc_oeb.tc_oeb06,l_oeb.oeb12,
              l_oeb.oeb16,l_tc_oeb.tc_oeb22,l_tc_oeb.tc_oeb23,l_tc_oeb.tc_oeb24,l_tc_oeb.tc_oeb25,l_tc_oeb.tc_oeb26,
-             l_tc_oeb.tc_oeb70,l_tc_oeb.tc_oeb70d,g_plant,g_legal)
+             l_tc_oeb.tc_oeb70,l_tc_oeb.tc_oeb70d,g_plant,g_legal,l_tc_oebud02)
       if sqlca.sqlcode then
          let g_success = 'N'
          let l_msg = "ins tc_oeb_file 失败"
@@ -35833,3 +35856,32 @@ function saxmt400_imp_result(p_sheet, p_row,p_value)
 end function
 
 # darcy:2025/08/13 add e---
+
+function saxmt400_tc_oebud02()
+   define p_oea01       like oea_file.oea01
+   define l_tc_oebud02  like tc_oeb_file.tc_oebud02
+   define l_max_tc_oebud02  like tc_oeb_file.tc_oebud02
+   define l_cnt      integer
+   define l_serial   integer
+
+   let l_tc_oebud02 = current year to day,"-"
+
+   select count(*) into l_cnt from tc_oeb_file,axmt400_imp
+   where tc_oeb01 = oeb01 and tc_oeb03 = oeb03 and tc_oeb031 =oeb031
+     and tc_oebud02 like l_tc_oebud02||'%'
+    
+   if l_cnt > 0 then
+      select max(tc_oebud02) into l_max_tc_oebud02 from tc_oeb_file,axmt400_imp
+       where tc_oeb01 = oeb01 and tc_oeb03 = oeb03 and tc_oeb031 =oeb031
+         and tc_oebud02 like l_tc_oebud02||'%'
+      -- TODO 锁表
+
+      let l_serial = cl_replace_str(l_max_tc_oebud02,l_tc_oebud02,"")
+      let l_serial = l_serial + 1
+      let l_tc_oebud02 = sfmt("%1%2",l_tc_oebud02,l_serial using '&&')
+   else
+      let l_tc_oebud02 = l_tc_oebud02 , "01"
+   end if
+   
+   return l_tc_oebud02
+end function
