@@ -3351,6 +3351,21 @@ define l_delete   like type_file.chr1
         AFTER FIELD ecbud01
            IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
 
+         # darcy:2025/10/16 add s---
+         -- 表面处理的生产说明要弹窗填写
+         before field ecbud02
+            if not cl_null(g_ecb[l_ac].ecb06) then 
+               select count(*) into g_cnt from tc_sma_file
+                where tc_sma01 = 'csmi123' and tc_sma02 = g_ecb[l_ac].ecb06
+               if g_cnt > 0 then
+                  call i100sub_surface_remark(g_ecb[l_ac].ecbud02)
+                     returning g_ecb[l_ac].ecbud02
+                  display by name g_ecb[l_ac].ecbud02
+                  next field ecbud03
+               end if
+            end if
+
+         # darcy:2025/10/16 add e---
         AFTER FIELD ecbud02
            IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
 

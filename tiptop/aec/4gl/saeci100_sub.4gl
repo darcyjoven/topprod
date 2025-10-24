@@ -359,3 +359,166 @@ function i100sub_mod_log(p_ecb,p_type)
     end if
     return true
 end function
+
+# darcy:2025/10/15 add s---
+# 表面处理的镍钯金备注修改和维护
+# 输入原始备注，如果为空表示之前没备注
+# 输出组合的备注，如果为空表示取消录入
+function i100sub_surface_remark(p_remark)
+    define p_remark,l_remark    varchar(1500)
+    define sr record
+            au1     decimal(20,6),
+            au2     decimal(20,6),
+            pa1     decimal(20,6),
+            pa2     decimal(20,6),
+            ni1     decimal(20,6),
+            ni2     decimal(20,6),
+            remark  varchar(1500)
+        end record
+    define backup record
+            au1     decimal(20,6),
+            au2     decimal(20,6),
+            pa1     decimal(20,6),
+            pa2     decimal(20,6),
+            ni1     decimal(20,6),
+            ni2     decimal(20,6),
+            remark  varchar(1500)
+        end record
+
+    initialize sr.* to null
+    call i100sub_parse_remark(p_remark) returning sr.*
+    let backup.* = sr.*
+
+    open window i100_a_w at 1,1 with form "aec/42f/aeci100_a"
+       attribute (style = g_win_style clipped)
+    call cl_ui_init()
+
+    input by name sr.* without defaults
+        before input
+
+        on idle g_idle_seconds
+          call cl_on_idle()
+          continue input
+
+        on action about
+            call cl_about()
+
+        on action help
+          call cl_show_help()
+
+        on action controlg
+             call cl_cmdask()
+    end input
+
+    if int_flag then
+       -- 取消
+       let sr.* = backup.*
+       let int_flag = false
+    end if
+
+    close window i100_a_w
+    let l_remark = i100sub_join(sr.*)
+
+    return l_remark
+end function
+-- 解析备注内容至 sr
+function i100sub_parse_remark(p_remark)
+    define p_remark varchar(1500)
+    define sr record
+            au1     decimal(20,6),
+            au2     decimal(20,6),
+            pa1     decimal(20,6),
+            pa2     decimal(20,6),
+            ni1     decimal(20,6),
+            ni2     decimal(20,6),
+            remark  varchar(1500)
+        end record
+    define l_tok,l_tok1         base.StringTokenizer
+    define l_str   string
+    define l_t1,l_t2 decimal(20,6)
+    define l_type varchar(2)
+    define l_tmp  string
+
+    initialize sr.* to null
+
+    -- 1.Au: 0.075±0.025um, pa: 0.12±0.21122um, Ni: 3.5±1.5um
+    -- 2.化金面积S=2.73dm”，主检化金不良，记入表单，手指厚度切片
+    -- 3.测HOTBAR手指，见手指化金管控图，量测12pcs金手指尺寸
+    let l_tok = base.StringTokenizer.create(p_remark,'\n')
+    if l_tok.hasMoreTokens() then
+        let l_str = l_tok.nextToken()
+
+        -- remark部分
+        let sr.remark = ""
+        if l_tok.hasMoreTokens() then
+            while l_tok.hasMoreTokens() 
+                let l_tmp =  l_tok.nextToken() 
+                let sr.remark = sfmt("%1%2\n",sr.remark,l_tmp)
+            end while
+        end if
+
+        let l_str = cl_replace_str(l_str," ","")
+        -- 去掉'1.'
+        -- Au:0.075±0.025um,Pa:0.12±0.21122um,Ni:3.5±1.5um
+        let l_str = l_str.substring(3,l_str.getlength())
+        let l_tok = base.StringTokenizer.create(l_str,',')
+        while l_tok.hasMoreTokens()
+                -- Au:0.075±0.025um
+                -- Pa:0.12±0.21122um
+                -- Ni:3.5±1.5um
+                let l_str = l_tok.nextToken()
+                let l_type = l_str
+                -- 0.075±0.025um
+                if l_str.getlength() >= 6 then
+                    let l_str = l_str.substring(4,l_str.getlength()-2)
+                    let l_tok1 = base.StringTokenizer.create(l_str,'±')
+                    let l_t1 = 0 let l_t2 = 0
+                    if l_tok1.hasMoreTokens() then
+                        let l_t1 = l_tok1.nextToken()
+                    end if
+                    if l_tok1.hasMoreTokens() then
+                        let l_t2 = l_tok1.nextToken()
+                    end if
+
+                    case
+                        when l_type matches 'Au*'
+                            let sr.au1 = l_t1
+                            let sr.au2 = l_t2
+                        when l_type matches 'Pd*'
+                            let sr.pa1 = l_t1
+                            let sr.pa2 = l_t2
+                        when l_type matches 'Ni*'
+                            let sr.ni1 = l_t1
+                            let sr.ni2 = l_t2
+                    end case
+                end if
+            end while
+    end if
+    return sr.*
+end function
+function i100sub_join(sr)
+    define sr record
+            au1     decimal(20,6),
+            au2     decimal(20,6),
+            pa1     decimal(20,6),
+            pa2     decimal(20,6),
+            ni1     decimal(20,6),
+            ni2     decimal(20,6),
+            remark  varchar(1500)
+        end record
+    define l_remark string
+
+    let l_remark = "1."
+    if sr.au1 <> 0 then
+        let l_remark = l_remark , sfmt("Au: %1±%2um,",sr.au1 using "<<<&.<<<",sr.au2 using "<<<&.<<<")
+    end if
+    if sr.pa1 <> 0 then
+        let l_remark = l_remark , sfmt("Pd: %1±%2um,",sr.pa1 using "<<<&.<<<",sr.pa2 using "<<<&.<<<")
+    end if
+    if sr.ni1 <> 0 then
+        let l_remark = l_remark , sfmt("Ni: %1±%2um,",sr.ni1 using "<<<&.<<<",sr.ni2 using "<<<&.<<<")
+    end if
+    let l_remark = l_remark , "\n" ,sr.remark
+    return l_remark
+end function
+# darcy:2025/10/15 add e---
