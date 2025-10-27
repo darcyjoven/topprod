@@ -4,7 +4,10 @@
 # Descriptions...: 客供料追踪
 # Date & Author..: darcy:2025/09/19 
 #HFBG-16030001
-import libsummary
+-- import libsummary
+import os
+import libparttrack
+
 DATABASE ds
  
 GLOBALS "../../../tiptop/config/top.global"
@@ -119,6 +122,9 @@ FUNCTION cxmr023()
    define i,j,k,l                  integer
    define l_tc_sma06               like tc_sma_file.tc_sma06
    define l_uuid                   varchar(40)
+   define l_path,l_shortid,l_tmp   string
+   define l_children               dynamic array of string
+   define h,res                    integer
 
    let l_uuid = cs_uuid()
 
@@ -249,8 +255,7 @@ FUNCTION cxmr023()
       call cl_err("cxmr023_merge_img_p",sqlca.sqlcode,1)
       return
    end if
-
-   update cxmr023_exp set wh_avail_kit = 0 where uuid = l_uuid and wh_avail_kit is null
+   update cxmr023_exp set WH_AVAIL_KIT = 0 where uuid = l_uuid and WH_AVAIL_KIT is null
 
    -- 成品报废 累计工单报废
    let l_sql = "merge into cxmr023_exp using (
@@ -268,8 +273,65 @@ FUNCTION cxmr023()
       call cl_err("cxmr023_merge_sfb12_p",sqlca.sqlcode,1)
       return
    end if
-
    update cxmr023_exp set scrap_qty = 0 where uuid = l_uuid and scrap_qty is null
+
+   call exportTrack(l_uuid) returning l_shortid
+
+   # 遍历目录
+   let l_path = os.Path.Join("/u1/out",l_shortid)
+
+   if not os.Path.exists(l_path) then
+      display sfmt("%1 目录不存在，导出失败或无资料！",l_path)
+      return
+   end if
+
+  if not os.Path.isdirectory(l_path) then
+     display sfmt("%1 该目录不是一个文件夹",l_path)
+     return
+  end if
+
+   call l_children.clear()
+   call os.path.dirsort("name", 1)
+   let h = os.path.diropen(l_path)
+   let i = 1
+
+   while h > 0
+      let l_children[i] = os.path.dirnext(h)
+      if l_children[i] is null then 
+         exit while
+      end if
+      if l_children[i] == "." or l_children[i] == ".." then
+         continue while
+      end if
+      let i = i + 1
+   end while
+   call l_children.deleteElement(i)
+
+   if not cl_confirm2("cxm-062",sfmt("共%1个文件。",l_children.getLength())) then
+      display "取消导出"
+      return
+   end if
+
+   for i = 1 to l_children.getLength()
+      let l_tmp = fgl_getenv("FGLASIP") clipped,"/tiptop/out/",l_shortid,"/",l_children[i] clipped
+      call ui.Interface.frontCall("standard",
+                                  "shellexec",
+                                  ["EXPLORER \"" || l_tmp || "\""],
+                                  [res])
+      if status then
+         call cl_err("Front End Call Failed.",status,1)
+         return
+      end if
+   end for
+
+
+   for i = 1 to l_children.getLength()
+      let res = os.Path.delete(sfmt("%1/%2",l_path,l_children[i]))
+      if not res then
+         display sfmt("删除文件%1失败！",sfmt("%1/%2",l_path,l_children[i]))
+      end if
+   end for
+   let res = os.Path.delete(l_path)
 
 END FUNCTION
 
