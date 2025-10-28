@@ -366,6 +366,7 @@ MAIN
       CALL cl_set_act_visible("chkbom",FALSE)
       CALL cl_set_comp_visible("tree",FALSE)                        #FUN-B90117
    END IF
+   call cl_set_comp_visible("ecuud03",false)  #darcy:2025/10/28 add  
 #FUN-A50081 --end--
 #darcy:2024/03/06 add s---
    call cl_set_act_visible("g01",false)
@@ -761,6 +762,13 @@ define l_cnt integer #darcy:2023/04/12 add
                call i100_show()
             end if
          #darcy:2023/07/19 add e---
+         # darcy:2025/10/27 add s---
+         when "easyflow_approval"
+            call i100_show()
+            call i100_b_fill(" 1=1")
+            call i100_ef()
+            call i100_show()
+         # darcy:2025/10/27 add s---
          WHEN "help"
             CALL cl_show_help()
          WHEN "exit"
@@ -1053,13 +1061,18 @@ define l_cnt integer #darcy:2023/04/12 add
                 CALL cl_err("",'atm-365',1)
                 RETURN
             ELSE
+               # darcy:2025/10/28 add s---
+               if g_ecu.ecuud04 = 'Y' then
+                  call cl_err(g_ecu.ecuud03,"cec-063",1)
+               else
+               # darcy:2025/10/28 add e---
                #darcy:2025/04/28 add s---
                # 已开立工单不得取消
                select count(*) into l_cnt from sfb_file
                where sfb05 = g_ecu.ecu01 and sfb06 = g_ecu.ecu02
                   and sfb87 <> 'X'
                if l_cnt > 0 then
-                  call cl_err(g_ecu.ecu01||"|"||g_ecu.ecu02,'cec-062',1) 
+                  call cl_err(g_ecu.ecu01||"|"||g_ecu.ecu02,'cec-062',1)
                else
                #darcy:2025/04/28 add e---
                   IF cl_confirm('aap-224') THEN
@@ -1084,6 +1097,7 @@ define l_cnt integer #darcy:2023/04/12 add
                      END IF
                   END IF
                 end if #darcy:2025/04/28 add
+               end if  # darcy:2025/10/28 add
             END IF
           CALL i100_show()
        END IF
@@ -1322,6 +1336,8 @@ FUNCTION i100_stopuse()
 END FUNCTION 
 #add by zyq 170910 --end--
 FUNCTION i100_a()
+   DEFINE li_result LIKE type_file.num5
+
     IF s_shut(0) THEN RETURN END IF
     MESSAGE ""
     CLEAR FORM                                   # 清螢幕欄位內容
@@ -1367,7 +1383,28 @@ FUNCTION i100_a()
            CALL cl_err3("upd","ima_file",g_ecu.ecu01,g_ecu.ecu02,SQLCA.sqlcode,"","",1) #FUN-660091
            CONTINUE WHILE
         END IF 
-        #end-----add by guanyao160627
+        # darcy:2025/10/24 add s---
+        # 自动建立单号系统
+        call s_auto_assign_no("abm","ECU",g_today,"7","ecu_file","ecuud02","","","")
+         returning li_result,g_ecu.ecuud03
+        if (not li_result) then
+            rollback work
+            continue while
+        end if
+        display by name g_ecu.ecuud03
+        # 签核否
+        # 组装成品量产料号才需要送签
+        if g_user = 'tiptop' then
+         if g_ecu.ecu01[7,7] matches "[ABC]" and g_ecu.ecu01[10,10] not matches "[SF]" and g_ecu.ecu01 not matches "*-*" then 
+               let g_ecu.ecuud04 = 'Y'
+               display by name g_ecu.ecuud04
+         end if
+        end if
+        # 开立状态
+        let g_ecu.ecuud05 = '0'
+        display by name g_ecu.ecuud05
+        # darcy:2025/10/24 add e---
+        #end-----add by guanyao160627 
         INSERT INTO ecu_file VALUES(g_ecu.*)     # DISK WRITE
         IF SQLCA.sqlcode THEN
            CALL cl_err3("ins","ecu_file",g_ecu.ecu01,g_ecu.ecu02,SQLCA.sqlcode,"","",1) #FUN-660091
@@ -2200,6 +2237,13 @@ END FUNCTION
 
 FUNCTION i100_u()
     IF s_shut(0) THEN RETURN END IF
+
+    # darcy:2025/10/28 add s---
+    if g_ecu.ecuud05 matches '[Ss]' then 
+      call cl_err('','apm-030',1)
+      return
+    end if
+    # darcy:2025/10/28 add e---
     IF g_ecu.ecu01 IS NULL THEN
         CALL cl_err('',-400,0)
         RETURN
@@ -2288,6 +2332,12 @@ FUNCTION i100_r()
            l_cnt      LIKE type_file.num5         #No.FUN-680073 SMALLINT
 
     IF s_shut(0) THEN RETURN END IF
+    # darcy:2025/10/28 add s---
+    if g_ecu.ecuud05 matches '[Ss]' then 
+      call cl_err('','apm-030',1)
+      return
+    end if
+    # darcy:2025/10/28 add e---
     IF cl_null(g_ecu.ecu01) AND cl_null(g_ecu.ecu02) AND cl_null(g_ecu.ecu012) THEN #FUN-A50081 add ecu012
        CALL cl_err('',-400,0)
        RETURN
@@ -2450,7 +2500,7 @@ DEFINE l_msg              STRING #FUN-A50100
     IF cl_null(g_ecu.ecu01) OR g_ecu.ecu02 IS NULL OR g_ecu.ecu012 IS NULL THEN    #FUN-A50081 add ecu012
        CALL cl_err('',-400,0)
        RETURN
-    END IF
+    END IF 
 #CHI-C30107 --------- add --------- begin
     IF g_ecu.ecu10="Y" THEN
        CALL cl_err("",'cec-030',1) #modify by huanglf160928
@@ -2543,6 +2593,13 @@ FUNCTION i100_notconfirm()
        RETURN
     END IF
 
+   # darcy:2025/10/28 add s---
+   # 签核单据不能取消发放
+   if g_ecu.ecuud04 = 'Y' then
+      call cl_err(g_ecu.ecuud03,"cec-063",1)
+      return
+   end if
+   # darcy:2025/10/28 add e---
     #darcy:2025/04/28 add s---
     # 已开立工单不得取消
     select count(*) into l_cnt from sfb_file
@@ -2612,6 +2669,12 @@ define l_delete   like type_file.chr1
 
     LET g_action_choice = ""
     IF s_shut(0) THEN RETURN END IF
+    # darcy:2025/10/28 add s---
+    if g_ecu.ecuud05 matches '[Ss]' then 
+      call cl_err('','apm-030',1)
+      return
+    end if
+    # darcy:2025/10/28 add e---
     IF g_ecu.ecu01 IS NULL THEN RETURN END IF
     IF cl_null(g_ecu.ecu02) THEN RETURN END IF
     IF g_ecu.ecu012 IS NULL THEN RETURN END IF   #FUN-A50081 add
@@ -4817,6 +4880,12 @@ FUNCTION i100_bp(p_ud)
          end if
       #darcy:2023/02/14 e---
 
+      # darcy:2025/10/27 add s---
+       on action easyflow_approval
+         let g_action_choice = 'easyflow_approval'
+         exit dialog
+      # darcy:2025/10/27 add e---
+
 
 #str----add by huanglf161011
 
@@ -6995,3 +7064,50 @@ function aeci100_delete_ecb(p_ecb01,p_ecb02,p_ecb03,p_lock)
    return true
 end function
 #darcy:2024/08/13 add e---
+
+# darcy:2025/10/27 add s---
+# 送签
+function i100_ef()
+   # 进行审核和发送检查
+
+   select * into g_ecu.* from ecu_file where ecu01 = g_ecu.ecu01
+      and ecu02 = g_ecu.ecu02 and ecu012 = g_ecu.ecu012
+   
+   # 只有1.需要签核 2.开立 3.未作废 4.未审核 5.未发放 的单据 可以送签
+   # 送签后更新未送签中状态
+
+   # 送签的资料才继续
+   if g_ecu.ecuud04 != 'Y' or cl_null(g_ecu.ecuud04) then
+      call cl_err(g_ecu.ecuud02,"mfg3459",1)
+      return
+   end if
+
+   # 必须开立状态
+   if g_ecu.ecuud05 != '0' or cl_null(g_ecu.ecuud05) then
+      call cl_err(g_ecu.ecuud02,"9023",1)
+      return
+   end if
+
+   # 必须未审核，未发放
+   if not (g_ecu.ecu10 =='N' and g_ecu.ecuud02 = "N") then
+      call cl_err(g_ecu.ecuud02,"9023",1)
+      return
+   end if
+
+   call aws_condition()                            #判斷送簽資料
+   if g_success = 'N' then
+      return
+   end if
+
+   if aws_efcli2(base.typeinfo.create(g_ecu),base.typeinfo.create(g_ecb),'','','','') then
+      let g_success = 'Y'
+      let g_ecu.ecuud05 = 'S'   #開單成功, 更新狀態碼為 's. 送簽中'
+      update ecu_file set ecuud05 = g_ecu.ecuud05
+       where ecu01 = g_ecu.ecu01 and ecu02 = g_ecu.ecu02  and ecu012 = g_ecu.ecu012 
+      display by name g_ecu.ecuud05
+   else
+      let g_success = 'N'
+   end if
+
+end function
+# darcy:2025/10/27 add e---

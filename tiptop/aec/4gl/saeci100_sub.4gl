@@ -210,14 +210,29 @@ function i100sub_y_upd(p_ecu01,p_ecu02,p_inTransaction)
     define p_ecu01      like ecu_file.ecu01
     define p_ecu02      like ecu_file.ecu02
     define p_inTransaction like type_file.num5
+    # darcy:2025/10/28 add s---
+    define l_ecuud04    like ecu_file.ecuud04
+    define l_ecuud03     like ecu_file.ecuud03
+    # darcy:2025/10/28 add e---
 
     let g_success = 'Y'
+
+    # darcy:2025/10/28 add s---
+    # 送签的资料，不允许直接审核
+    # darcy:2025/10/28 add e---
+    select ecuud03,ecuud04 into l_ecuud03,l_ecuud04 from ecu_file
+     where ecu01 = p_ecu01 and ecu02 = p_ecu02
+    if l_ecuud04 == 'Y' then
+        call cl_err(l_ecuud03,"cxm-052",1) 
+        let g_success = 'N'
+        return
+    end if
+    #darcy:2023/09/27 add s---
 
     if not p_inTransaction then
         begin work
     end if
 
-    #darcy:2023/09/27 add s---
     # 还原为样品量产规则一致
     #darcy:2023/05/17 add s---
     # if p_ecu01[10,10] = 'S' or p_ecu01[10,10] = 'F' then
@@ -228,7 +243,7 @@ function i100sub_y_upd(p_ecu01,p_ecu02,p_inTransaction)
     #darcy:2023/09/27 add e---
 
     update ecu_file
-       set ecuud02="Y",ecudate = g_today
+       set ecuud02="Y",ecuud05='1',ecudate = g_today #darcy:2025/10/28 add ecuud05
      where ecu01=p_ecu01
        and ecu02=p_ecu02
     if sqlca.sqlcode then
