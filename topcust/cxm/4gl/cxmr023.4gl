@@ -325,13 +325,13 @@ FUNCTION cxmr023()
    end for
 
 
-   for i = 1 to l_children.getLength()
-      let res = os.Path.delete(sfmt("%1/%2",l_path,l_children[i]))
-      if not res then
-         display sfmt("删除文件%1失败！",sfmt("%1/%2",l_path,l_children[i]))
-      end if
-   end for
-   let res = os.Path.delete(l_path)
+   -- for i = 1 to l_children.getLength()
+   --    let res = os.Path.delete(sfmt("%1/%2",l_path,l_children[i]))
+   --    if not res then
+   --       display sfmt("删除文件%1失败！",sfmt("%1/%2",l_path,l_children[i]))
+   --    end if
+   -- end for
+   -- let res = os.Path.delete(l_path)
 
 END FUNCTION
 
