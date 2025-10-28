@@ -501,7 +501,9 @@ DEFINE g_tc_inb     DYNAMIC ARRAY OF RECORD
        END RECORD 
 DEFINE g_rec_b2           LIKE type_file.num5,   #單身二筆數 ##FUN-B30170
        l_ac2              LIKE type_file.num5 
-#end------add by guanyao160810                                                                                                                              
+#end------add by guanyao160810                
+
+   define g_inaud06_desc  varchar(200) #darcy:2025/09/26 add
 
 FUNCTION t370(p_argv1)
  
@@ -2232,7 +2234,18 @@ FUNCTION t370_i(p_cmd)
         AFTER FIELD inaud05
            IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
         AFTER FIELD inaud06
-           IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
+            # darcy:2025/09/26 add s---
+            -- IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
+            # 成品料号检查，提示是否有项目编号
+            if not cl_null(g_ina.inaud06) then
+               select unique tc_sma06 into g_inaud06_desc from tc_sma_file
+                where tc_sma01 = 'csmi122' and tc_sma02 = g_ina.inaud06
+               if sqlca.sqlcode then
+                  message "料号没有在csmi122种维护归属部门"
+               end if
+               display g_inaud06_desc to inaud06_desc
+            end if
+            # darcy:2025/09/26 add e---
         AFTER FIELD inaud07
            IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
         AFTER FIELD inaud08
@@ -2303,7 +2316,18 @@ FUNCTION t370_i(p_cmd)
                       CALL cl_create_qry() RETURNING g_ina.inaconu
                       DISPLAY BY NAME g_ina.inaconu
                       CALL t370_inaconu('a')
-                      NEXT FIELD inaconu                 
+                      NEXT FIELD inaconu    
+               # darcy:2025/09/26 s---
+               when infield(inaud06)
+                     call cl_init_qry_var()
+                     let g_qryparam.form = "cq_ima03"
+                     let g_qryparam.arg1 = g_lang
+                     let g_qryparam.default1 = g_ina.inaud06
+                     call cl_create_qry() returning g_ina.inaud06
+                     let g_ina.inaud06 = g_ina.inaud06[1,6]
+                     display g_ina.inaud06 to inaud06
+                     next field inaud06
+               # darcy:2025/09/26 e---
             END CASE
  
         ON ACTION CONTROLF                  #欄位說明
@@ -6164,6 +6188,11 @@ DEFINE l_x     LIKE type_file.num5   #add by guanyao160705
                    g_ina.inaud05,g_ina.inaud06,g_ina.inaud07,g_ina.inaud08,
                    g_ina.inaud09,g_ina.inaud10,g_ina.inaud11,g_ina.inaud12,
                    g_ina.inaud13,g_ina.inaud14,g_ina.inaud15 
+   # darcy:2025/09/26 add s---
+   select unique tc_sma06 into g_inaud06_desc from tc_sma_file
+    where tc_sma01 = 'csmi122' and tc_sma02 = g_ina.inaud06
+   display g_inaud06_desc to inaud06_desc
+   # darcy:2025/09/26 add e---
  
    SELECT gem02 INTO g_buf FROM gem_file WHERE gem01=g_ina.ina04
    CALL cl_show_fld_cont()                   #No.FUN-550037 hmf
