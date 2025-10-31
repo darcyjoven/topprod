@@ -376,7 +376,7 @@ LET l_sql="select '','','','','',oga01,'','','',ogb04,'',sum(ogb12),'','','','',
             locate sr.ogbqrhead in memory
             call sr.ogbqrhead.readFile(filename2)
          end if 
-         if not qrgenerate(sfmt("%1;%2;",sr.oga01,sr.ogb03),filename) then
+         if not qrgenerate(sfmt("%1;%2;%3;",sr.oga01,sr.ogb04,sr.ogb12),filename) then
             free sr.ogbqrcode
             locate sr.ogbqrcode in memory
             call sr.ogbqrcode.readFile(filename)
