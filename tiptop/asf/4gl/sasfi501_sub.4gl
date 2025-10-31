@@ -1508,7 +1508,7 @@ RUN " echo '"||l_str||"' >> /u1/topprod/topcust/cws/4gl/asfi514_zhangsba_auto_po
                IF cl_null(l_sie11) THEN LET l_sie11 = 0 END IF
                IF l_sfa06+l_sie11 > l_sfa05  AND g_user<>'tiptop' AND g_user<>'31510' THEN
                   LET g_success = 'N'
-                  CALL cl_err('','asf-889',1)
+                  CALL cl_err(sfmt("料号：%1 退料后已发数量%2超过应发料数量%3\n",l_sfe07,l_sfa06+l_sie11,l_sfa05),'asf-889',1)
                   EXIT FOREACH
                END IF
      END FOREACH
