@@ -784,6 +784,9 @@ function p_admin_wo_bp1(p_ud)
         # 负库存处理
         on action negative
             call p_admin_wo_negative()
+        # 理由码修改
+        on action upd_other
+            call p_admin_wo_other()
         # darcy:2025/11/03 add e---
         # TODO：公共按钮 e---
     end input
@@ -2067,5 +2070,119 @@ function p_admin_wo_negative()
     call cl_err(sfmt("调拨单号：%1 杂收单号：%2",l_imm01,l_ina01),"!",1)
 
     call cl_safe_close_progress_bar()
+end function
+# 修改理由码
+function p_admin_wo_other()
+    define l_tok1,l_tok2    base.stringTokenizer
+    define l_content,l_title,l_tmp       string
+    define l_item,l_no,l_reason integer
+    define l_array dynamic array of record
+        ordno   like ina_file.ina01,
+        item    like ima_file.ima01,
+        reason  varchar(200)
+        end record
+    define i,j,k        integer
+
+    open window p_amdin_cgoi200 at 1,1 with form "cgo/42f/cgoi200"
+            attribute (style = g_win_style clipped)
+    
+    call cl_ui_init()
+
+    input l_content from popup
+    if int_flag then
+        goto _end
+    end if
+
+    let l_content = cl_replace_str(l_content,"	"," ")
+
+    let l_tok1 = base.StringTokenizer.create(l_content,"\n")
+    -- 先判断列数判断顺序
+    let l_title = l_tok1.nextToken()
+    let l_tok2 = base.StringTokenizer.create(l_title," ")
+    let i = 1
+    while l_tok2.hasMoreTokens()
+        let l_tmp = l_tok2.nextToken()
+        case l_tmp
+            when "料件编号"
+                let l_item = i
+            when "改理由码"
+                let l_reason = i
+            when "单据编号"
+                let l_no = i
+        end case
+        let i = i + 1
+    end while
+
+    if l_item = 0 or l_reason = 0 or l_no = 0 then
+        call cl_err("列数错误,标题未找到","！",1)
+        goto _end
+    end if
+
+    call l_array.clear()
+    let i = 1
+    -- 取数据
+    while l_tok1.hasMoreTokens()
+        -- 一行数据
+        let l_tmp = l_tok1.nextToken()
+        let l_tok2 = base.StringTokenizer.create(l_tmp," ")
+
+        let j = 1
+        while l_tok2.hasMoreTokens()
+            case j
+                when l_item
+                    let l_array[i].item = l_tok2.nextToken()
+                when l_no
+                    let l_array[i].ordno = l_tok2.nextToken()
+                when l_reason
+                    let l_array[i].reason = l_tok2.nextToken()
+                    select azf01 into l_array[i].reason from azf_file
+                     where azf03 like '%'||l_array[i].reason||'%'
+                    if sqlca.sqlcode then
+                        call cl_err("sel azf_file",sqlca.sqlcode,0)
+                        let l_array[i].reason = ""
+                    end if
+            end case
+            let j = j + 1
+        end while
+        let i = i + 1
+    end while
+    
+
+    let g_success = 'Y'
+    begin work
+    for i = 1 to l_array.getLength()
+        if cl_null(l_array[i].reason) then
+            call cl_err(sfmt("理由码为空，单号：%1 料号：%2",l_array[i].ordno,l_array[i].item),"!",0)
+            let g_success = 'N'
+        end if
+
+        update tlf_file set tlf14 = l_array[i].reason
+         where tlf01 = l_array[i].item and tlf905 = l_array[i].ordno
+        if sqlca.sqlcode then
+            call cl_err("upd tlf_file",sqlca.sqlcode,1)
+            let g_success = 'N'
+            exit for
+        end if
+
+        update inb_file set inb15 = l_array[i].reason 
+         where inb04 = l_array[i].item and inb01 = l_array[i].ordno
+        if sqlca.sqlcode then
+            call cl_err("upd inb_file",sqlca.sqlcode,1)
+            let g_success = 'N'
+            exit for
+        end if
+    end for
+
+    if g_success = 'N' then
+        rollback work
+        return
+    end if
+
+    commit work
+
+    call cl_err("已完成","!",1)
+
+    label _end:
+    close window p_amdin_cgoi200
 end function
 # darcy:2025/11/03 add e---
