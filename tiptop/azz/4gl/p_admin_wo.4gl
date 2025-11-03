@@ -780,6 +780,11 @@ function p_admin_wo_bp1(p_ud)
         # TODO：公共按钮 s---
         on action btn_sfb98
             call p_admin_wo_sfb98()
+        # darcy:2025/11/03 add s---
+        # 负库存处理
+        on action negative
+            call p_admin_wo_negative()
+        # darcy:2025/11/03 add e---
         # TODO：公共按钮 e---
     end input
     call cl_set_act_visible("accept,cancel", true)
@@ -1880,3 +1885,187 @@ function test_mail()
     call cs_html_write(l_path)
     call cs_mail_sendfile("p_admin_wo",l_path,"darcy.li@forewin-sz.com.cn","","","") returning l_ok
 end function
+
+# darcy:2025/11/03 add s---
+# 负库存处理
+function p_admin_wo_negative()
+    define l_yy,l_mm    integer
+    define l_sql        string
+    define l_ina01      varchar(40) # aimt312
+    define l_imm01      varchar(40) # aimt324
+    define li_result    varchar(1)
+    define l_cnt,i      integer
+    define l_dat        date
+    define l_imn        record like imn_file.*
+    define l_inb        record like inb_file.*
+
+    whenever error continue
+
+    prompt "输入年份：" for l_yy
+    prompt "输入期别：" for l_mm
+
+
+    let l_dat = MDY(iif(l_mm=12,1,l_mm+1),1, iif(l_mm=12,l_yy+1,l_yy))
+    let l_dat = l_dat - 1
+
+    call cl_progress_bar(3)
+
+    begin work
+
+    # 1. 查询负库存中大于1的数据插入调拨单
+    call cl_progressing("1/3 查询负库存中大于1的数据插入调拨单……")
+    select count(*) into l_cnt from imk_file
+     where imk05 = l_yy and imk06 = l_mm
+       and imk09 <= -1
+    if l_cnt > 0 then
+        -- 单头资料插入
+        call s_auto_assign_no("aim","CRC",l_dat,'4',"ina_file","ina01","","","")
+            returning li_result,l_imm01
+        if (not li_result) then
+            return
+        end if
+        insert into imm_file (
+            imm01,imm02,imm03,imm04,imm10,immacti,immuser,immgrup,immmodu,immdate,immconf,
+            imm14,immspc,immplant,immlegal,immoriu,immorig,imm15,imm16,immmksg,imm17,
+            imm09 )
+        values (l_imm01,l_dat,'N','Y','1','Y',g_user,g_grup,g_user,g_today,'N',
+            g_grup,0,g_plant,g_legal,g_user,g_grup,"0",g_user,"N",g_today,
+            "负库存处理")
+        if sqlca.sqlcode then
+            call cl_err("ins imm_file",sqlca.sqlcode,1)
+            rollback work
+            return
+        end if
+        -- 单身资料插入
+        
+        let l_sql = "select img04 from (",
+                    " select img04 from img_file where img01 = ?",
+                    "   and img02 = ? and img03 = ? and img10 >= ? ",
+                    "   and img18 >= ? ",
+                    " order by img18 desc ) where rownum = 1 "
+        -- 可以调拨的仓库
+        prepare p_admin_wo_stock from l_sql
+        declare p_admin_wo_stock_c cursor for p_admin_wo_stock
+
+        declare p_admin_wo_transfer cursor for
+             select imk01,imk02,imk03,imk04,-1*imk09 imk09,ima25
+               from imk_file,ima_file where ima01 = imk01
+                and imk05 = l_yy and imk06 = l_mm
+                and imk09 <= -1
+
+        initialize l_imn.* to null
+        let i = 1
+        foreach p_admin_wo_transfer 
+           into l_imn.imn03,l_imn.imn15,l_imn.imn16,l_imn.imn17,l_imn.imn22,l_imn.imn20
+            if sqlca.sqlcode then
+                call cl_err("p_admin_wo_transfer",sqlca.sqlcode,1)
+                let g_success = 'N'
+                exit foreach
+            end if
+
+            -- 找来源批号
+            execute p_admin_wo_stock_c 
+              using l_imn.imn03,l_imn.imn15,l_imn.imn16,l_imn.imn22,l_dat
+               into l_imn.imn06
+            if sqlca.sqlcode then
+                let l_imn.imn06 = " "
+            end if
+
+            insert into imn_file (
+                    imn01,imn02,imn03,imn04,imn05,imn06,imn09,imn10,imn15,imn16,
+                    imn17,imn20,imn21,imn22,imn29,imnplant,imnlegal )
+            values (l_imm01,i,l_imn.imn03,l_imn.imn15,l_imn.imn16,l_imn.imn06,l_imn.imn20,l_imn.imn22,l_imn.imn15,l_imn.imn16,
+                    l_imn.imn17,l_imn.imn20,'1',l_imn.imn22,"N",g_plant,g_legal)
+            if sqlca.sqlcode then
+                call cl_err("ins imn_file",sqlca.sqlcode,1)
+                let g_success = 'N'
+                exit foreach 
+            end if
+            let i = i +1
+        end foreach
+        if g_success = 'N' then
+            rollback work
+            return
+        end if
+    end if
+
+
+    # 2. 查询负库存中小于1的数据插入aimt312
+    call cl_progressing("2/3 查询负库存中小于1的数据插入aimt312……")
+    select count(*) into l_cnt from imk_file
+     where imk05 = l_yy and imk06 = l_mm
+       and imk09 < 0 and imk09 > -1
+    if l_cnt > 0 then 
+        call s_auto_assign_no("aim","CRA",l_dat,"2","ina_file","ina01","","","")
+            returning li_result,l_ina01
+        if (not li_result) then
+            return
+        end if
+        -- 插入单头
+        insert into ina_file (
+            ina00,ina01,ina02,ina03,ina04,ina08,inapost,inauser,inagrup,
+            inamodu,inadate,inamksg,ina11,inaconf,inaspc,inaud03,inaud04,inaud05,
+            ina12,inacond,inacont,inaconu,inapos,inaplant,inalegal,inaoriu,inaorig,
+            ina07 )
+        values ("4",l_ina01,l_dat,l_dat,"B1209","0","N",g_user,g_grup,
+            g_user,g_today,"N","52948","N","0","N","N","0",
+            "N",g_today,"",g_user,"N",g_plant,g_legal,g_user,g_grup,
+            "负库存处理" )
+        if sqlca.sqlcode then
+            call cl_err("ins ina_file",sqlca.sqlcode,1)
+            rollback work
+            return
+        end if
+        -- 插入单身
+        declare p_admin_wo_other cursor for
+             select imk01,imk02,imk03,imk04,-1*imk09 imk09,ima25
+               from imk_file,ima_file where ima01 = imk01
+                and imk05 = l_yy and imk06 = l_mm
+                and imk09 > -1 and imk09 < 0
+        initialize l_inb.* to null
+        foreach p_admin_wo_other into l_inb.inb04,l_inb.inb05,l_inb.inb06,l_inb.inb07,l_inb.inb09,l_inb.inb08
+            if sqlca.sqlcode then
+                call cl_err("p_admin_wo_other",sqlca.sqlcode,1)
+                let g_success = 'N'
+                exit foreach
+            end if
+            insert into inb_file (
+                inb01,inb03,inb04,inb05,inb06,inb07,inb08,inb08_fac,inb09,inb10,inb11,
+                inb12,inb13,inb15,inb901,inb908,inb909,inb16,inbplant,inblegal,
+                inb132,inb133,inb134,inb135,inb136,inb137,inb138 )
+            values (l_ina01,i,l_inb.inb04,l_inb.inb05,l_inb.inb06,l_inb.inb07,l_inb.inb08,"1",l_inb.inb09," "," ",
+                    " ",0,"3019"," ",0,0,l_inb.inb09,g_plant,g_legal,
+                    0,0,0,0,0,0,0)
+            if sqlca.sqlcode then
+                call cl_err("ins inb_file",sqlca.sqlcode,1)
+                let g_success = 'N'
+                exit foreach 
+            end if
+            let i = i + 1
+        end foreach
+        if g_success = 'N' then
+            rollback work
+            return
+        end if
+    end if
+    # 3. 更新库存有效日期
+    call cl_progressing("2/3 更新库存有效日期……")
+
+    let l_sql = "update img_file set img18 = ? where (img01,img02,img03,img04) in ( ",
+                " select imk01,imk02,imk03,imk04 from imk_file,ima_file where imk09 <0 and imk01 = ima01 ",
+                "    and imk05=? and imk06=? and imk09 < 0 and imk09 > -1 ) and img18 < ? "
+    prepare p_admin_wo_update_img18 from l_sql
+    execute p_admin_wo_update_img18 using l_dat,l_yy,l_mm,l_dat
+    if sqlca.sqlcode then
+        call cl_err("ins inb_file",sqlca.sqlcode,1)
+        rollback work
+        return
+    end if
+
+    commit work
+
+    call cl_err(sfmt("调拨单号：%1 杂收单号：%2",l_imm01,l_ina01),"!",1)
+
+    call cl_safe_close_progress_bar()
+end function
+# darcy:2025/11/03 add e---
