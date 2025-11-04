@@ -126,10 +126,49 @@ FUNCTION cxmr023()
    define l_children               dynamic array of string
    define h,res                    integer
 
+   call cxmr023_crt_tmp()
+
+   let l_sql = " insert into cxmr023_sub ",
+               "    select unique bmb03, bmd04 ",
+               " from (select bmb01, bmb03, bmb06 / bmb07 bmb06 ",
+               "          from bmb_file ",
+               "          where bmb04 <= trunc(sysdate) ",
+               "          and (bmb05 is null or bmb05 > trunc(sysdate)) ",
+               "          start with bmb01 in ",
+               "                   (select ima01 ",
+               "                      from (select tc_sma06, tc_sma02, max(ima01) ima01 ",
+               "                               from (select tc_sma06, tc_sma02 ",
+               "                                        from tc_sma_file ",
+               "                                     where tc_sma01 = 'csmi122' ",
+               "                                     group by tc_sma06, tc_sma02) ",
+               "                               left join ima_file ",
+               "                                  on ima01 like tc_sma02 || '%' ",
+               "                               and ima01 not like '%-%' ",
+               "                               and substr(ima01, 7, 1) in ('A', 'B', 'C') ",
+               "                               and ima01 like '%R' ",
+               "                               and ima01 in (select bmb01 from bmb_file) ",
+               "                               group by tc_sma06, tc_sma02)) ",
+               "       connect by prior bmb03 = bmb01) ",
+               " left join (select bmd08, bmd01, bmd04 ",
+               "                from bmd_file ",
+               "             where bmd05 <= trunc(sysdate) ",
+               "                and (bmd06 is null or bmd06 > trunc(sysdate))) ",
+               "    on bmd08 = bmb01 ",
+               "    and bmd01 = bmb03 ",
+               " where bmb03 like 'K.%' "
+   prepare cxmr023_ins_sub1 from l_sql
+   execute cxmr023_ins_sub1
+   if sqlca.sqlcode then
+      call cl_err("cxmr023_ins_sub1",sqlca.sqlcode,1)
+      return
+   end if
+ 
+
    let l_uuid = cs_uuid()
 
-   let l_sql = "insert into cxmr023_exp (uuid,cust_proj,fg_part_no,comp_part_no,cust_part_no,mat_spec,usage_qty)
-                select '",l_uuid,"',tc_sma06,substr(bmb01,1,6) tc_sma02,bmb03,ima02,ima021,bmb06
+   -- 插入基础资料，展开的客供料
+   let l_sql = "insert into cxmr023_exp (uuid,cust_proj,fg_part_no,comp_part_no,cust_part_no,mat_spec,usage_qty,sub_item)
+                select '",l_uuid,"',tc_sma06,substr(bmb01,1,6) tc_sma02,bmb03,ima02,ima021,bmb06,bmb03
                 from (
                 select bmb01,bmb03,bmb06/bmb07 bmb06
                 from bmb_file
@@ -145,6 +184,7 @@ FUNCTION cxmr023()
                             on ima01 like tc_sma02 || '%'
                             and ima01 not like '%-%'
                             and substr(ima01, 7, 1) in ('A', 'B', 'C')
+                            and ima01 like '%R'
                             and ima01 in (select bmb01 from bmb_file)
                          group by tc_sma06, tc_sma02
                 )) connect by prior bmb03 = bmb01),ima_file,tc_sma_file
@@ -158,13 +198,23 @@ FUNCTION cxmr023()
       return
    end if
 
+   -- 将取替代资料插入
+   insert into cxmr023_exp (uuid,cust_proj,fg_part_no,comp_part_no,cust_part_no,mat_spec,usage_qty,sub_item)
+   select uuid,cust_proj,fg_part_no,comp_part_no,ima02,ima021,usage_qty,bmd04 
+     from cxmr023_exp,cxmr023_sub,ima_file
+    where uuid = l_uuid and bmb03 = comp_part_no and ima01 = bmd04 
+   if sqlca.sqlcode then
+      call cl_err("ins cxmr023_exp sub",sqlca.sqlcode,1)
+      return
+   end if
+
    -- 1) 杂收
-   -- 来料明细（器件到料）   CR1
+   -- 来料明细（器件到料）  CRA
    -- 内部调拨（量产转量产） CR2
    -- 试产调拨（试产转量产） CR3
 
    -- 2）杂发
-   -- 内部调拨（量产转量产） CR4
+   -- 内部调拨（量产转量产） CRB
    -- 客户预留（客户下预留的挪仓、退料、转寄）CR5
 
    -- 1. 发料明细
@@ -183,16 +233,15 @@ FUNCTION cxmr023()
                (uuid ,cust_proj ,movement_type ,record_date ,fg_part_no ,comp_part_no ,CUST_PART_NO,mat_desc ,qty ,remark) 
                select uuid,cust_proj,
                case when tlf907 > 0 then 
-                  case substr(tlf905,1,3) when 'CR1' then '1' when 'CR2' then '2' when 'CR3' then '3' else '1' end 
+                  case substr(tlf905,1,3) when 'CR2' then '2' when 'CR3' then '3' else '1' end 
                   when tlf907 < 0 then
-                  case substr(tlf905,1,3) when 'CR4' then '4' when 'CR5' then '5' else '6' end
+                  case substr(tlf905,1,3) when 'CR5' then '5' else '6' end
                end  movement_type,
                tlf06,FG_PART_NO,tlf01,ima02,ima021, abs(tlf10*tlf12) tlf10,ina07
-                from tlf_file,ina_file,( select uuid,cust_proj,FG_PART_NO,comp_part_no  from cxmr023_exp
-                                          where uuid = ?),ima_file 
-               where tlf905 = ina01  
-               and tlf13 in ('aimt301','aimt302')  and tlf01= ima01 
-               and tlf01 =comp_part_no"
+                from tlf_file,ina_file,(select uuid,cust_proj,FG_PART_NO,sub_item from cxmr023_exp
+                                         where uuid = ?),ima_file
+               where tlf905 = ina01 and tlf13 in ('aimt301','aimt302')  and tlf01= ima01 
+               and tlf01 = sub_item"
    prepare cxmr023_stock_movement_p from l_sql
    execute cxmr023_stock_movement_p using l_uuid
    if sqlca.sqlcode then
@@ -207,29 +256,29 @@ FUNCTION cxmr023()
    -- 预留 退料 cxmr023_stock_movement 5
    -- 电子仓 实发套数 cxmr023_stock_movement 6
    let l_sql = "merge into cxmr023_exp a using (
-               select uuid,CUST_PROJ, FG_PART_NO, COMP_PART_NO,sum(TRANS_IN_INT) TRANS_IN_INT,
-                      sum(TRANS_IN_TRIAL) TRANS_IN_TRIAL,sum(ARRIVAL_QTY) ARRIVAL_QTY,
-                      sum(TRANS_OUT_INT) TRANS_OUT_INT,sum(RESERVE_RET) RESERVE_RET,
-                      sum(WH_ISSUE) WH_ISSUE from (
-                     select uuid,CUST_PROJ, FG_PART_NO, COMP_PART_NO, 
-                       case when movement_type = '2' then qty else 0 end TRANS_IN_INT,
-                       case when movement_type = '3' then qty else 0 end TRANS_IN_TRIAL,
-                       case when movement_type = '1' then qty else 0 end ARRIVAL_QTY,
-                       case when movement_type = '4' then qty else 0 end TRANS_OUT_INT,
-                       case when movement_type = '5' then qty else 0 end RESERVE_RET,
-                       case when movement_type = '6' then qty else 0 end WH_ISSUE
+               select uuid,cust_proj, fg_part_no, comp_part_no,sum(trans_in_int) trans_in_int,
+                      sum(trans_in_trial) trans_in_trial,sum(arrival_qty) arrival_qty,
+                      sum(trans_out_int) trans_out_int,sum(reserve_ret) reserve_ret,
+                      sum(wh_issue) wh_issue from (
+                     select uuid,cust_proj, fg_part_no, comp_part_no, 
+                       case when movement_type = '2' then qty else 0 end trans_in_int,
+                       case when movement_type = '3' then qty else 0 end trans_in_trial,
+                       case when movement_type = '1' then qty else 0 end arrival_qty,
+                       case when movement_type = '4' then qty else 0 end trans_out_int,
+                       case when movement_type = '5' then qty else 0 end reserve_ret,
+                       case when movement_type = '6' then qty else 0 end wh_issue
                        from cxmr023_stock_movement
                       where uuid = ? )
-                     group by  uuid,CUST_PROJ, FG_PART_NO, COMP_PART_NO) b
+                     group by  uuid,cust_proj, fg_part_no, comp_part_no) b
                      on (a.uuid = b.uuid and a.cust_proj=b.cust_proj 
-                     and a.FG_PART_NO=b.FG_PART_NO and a.COMP_PART_NO = b.COMP_PART_NO)
+                     and a.fg_part_no=b.fg_part_no and a.sub_item = b.comp_part_no)
                when matched then update set 
-                  a.TRANS_IN_INT = b.TRANS_IN_INT,
-                  a.TRANS_IN_TRIAL = b.TRANS_IN_TRIAL,
-                  a.ARRIVAL_QTY = b.ARRIVAL_QTY,
-                  a.TRANS_OUT_INT = b.TRANS_OUT_INT,
-                  a.RESERVE_RET = b.RESERVE_RET,
-                  a.WH_ISSUE = b.WH_ISSUE"
+                  a.trans_in_int = b.trans_in_int,
+                  a.trans_in_trial = b.trans_in_trial,
+                  a.arrival_qty = b.arrival_qty,
+                  a.trans_out_int = b.trans_out_int,
+                  a.reserve_ret = b.reserve_ret,
+                  a.wh_issue = b.wh_issue"
    prepare cxmr023_merge_move_p from l_sql
    execute cxmr023_merge_move_p using l_uuid
    if sqlca.sqlcode then
@@ -247,15 +296,15 @@ FUNCTION cxmr023()
    -- 电子仓 可配套数量 img
    let l_sql = "merge into cxmr023_exp 
                 using (select img01 ,sum(img10)img10 from img_file group by img01)
-                   on (comp_part_no = img01 and uuid = ?)
-                 when matched then update set WH_AVAIL_KIT = img10"
+                   on (sub_item = img01 and uuid = ?)
+                 when matched then update set wh_avail_kit = img10"
    prepare cxmr023_merge_img_p from l_sql
    execute cxmr023_merge_img_p using l_uuid
    if sqlca.sqlcode then
       call cl_err("cxmr023_merge_img_p",sqlca.sqlcode,1)
       return
    end if
-   update cxmr023_exp set WH_AVAIL_KIT = 0 where uuid = l_uuid and WH_AVAIL_KIT is null
+   update cxmr023_exp set wh_avail_kit = 0 where uuid = l_uuid and wh_avail_kit is null
 
    -- 成品报废 累计工单报废
    let l_sql = "merge into cxmr023_exp using (
@@ -274,6 +323,15 @@ FUNCTION cxmr023()
       return
    end if
    update cxmr023_exp set scrap_qty = 0 where uuid = l_uuid and scrap_qty is null
+
+   -- -- 更新取替代料显示字段
+   -- let l_sql =" merge into cxmr023_exp using ( ",
+   --            " select bmb03,listagg(bmd04, ',') within group(order by bmd04) as bmd04 ",
+   --            " from cxmr023_sub group by bmb03) ",
+   --            " on (comp_part_no=bmb03 and uuid = ?) ",
+   --            " when matched then update set sub_item = bmd04 "
+   -- prepare cxmr023_merge_sub from l_sql
+   -- execute cxmr023_merge_sub using l_uuid
 
    call exportTrack(l_uuid) returning l_shortid
 
@@ -336,3 +394,10 @@ FUNCTION cxmr023()
 END FUNCTION
 
 
+function cxmr023_crt_tmp()
+   drop table cxmr023_sub
+   create temp table cxmr023_sub(
+      bmb03 varchar(20),
+      bmd04 varchar(20)
+   ) 
+end function
