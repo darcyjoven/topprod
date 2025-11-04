@@ -1165,6 +1165,10 @@ define   l_cnt5      like type_file.num10 #darcy:2024/06/05 add
    execute p400_cnt_wip using g_sfb.sfb01 into l_cnt5
    if l_cnt5 > 0 then
       let l_msg = l_msg,cl_getmsg('csf-128',g_lang), '(',l_cnt5, ')  \t'
+      call cl_err(l_msg,"!",1)
+      if g_user == 'tiptop' then
+         let l_msg = ""
+      end if
    end if
    #darcy:2024/06/05 add e---
  
