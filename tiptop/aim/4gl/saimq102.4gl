@@ -1131,7 +1131,7 @@ FUNCTION q102_show2()
                let g_ima.sfa_liuzhi = g_ima.sfa_liuzhi + l_sub_liuzhi
                exit foreach
             else
-               let l_sub_liuzhi = l_sub_liuzhi - l_sub_sfa05 - l_sub_sfa06
+               let l_sub_liuzhi = l_sub_liuzhi - l_sub_sfa05 + l_sub_sfa06
             end if
          end foreach
       else
