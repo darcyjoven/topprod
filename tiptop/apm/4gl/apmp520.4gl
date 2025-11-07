@@ -953,7 +953,7 @@ FUNCTION p520_b_askkey(p_cmd)
             FROM pmc_file 
            WHERE pmc01 = l_pnn.pnn05
         END IF 
-        LET l_pnn.pnn36 = l_pml07 
+      --   LET l_pnn.pnn36 = l_pml07  # darcy:2025/11/07 mark 不要取请购单位
         SELECT pmc47 INTO g_pmm.pmm21
           FROM pmc_file
           WHERE pmc01 =l_pnn.pnn05
