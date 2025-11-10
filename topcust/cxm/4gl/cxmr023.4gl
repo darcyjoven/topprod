@@ -235,7 +235,7 @@ FUNCTION cxmr023()
                case when tlf907 > 0 then 
                   case substr(tlf905,1,3) when 'CR2' then '2' when 'CR3' then '3' else '1' end 
                   when tlf907 < 0 then
-                  case substr(tlf905,1,3) when 'CR5' then '5' else '6' end
+                  case when substr(tlf905,1,3) = 'CR5' then '5' when tlf06 <= to_date('251030','yymmdd') then '5' else '6' end
                end  movement_type,
                tlf06,FG_PART_NO,tlf01,ima02,ima021, abs(tlf10*tlf12) tlf10,ina07
                 from tlf_file,ina_file,(select uuid,cust_proj,FG_PART_NO,sub_item from cxmr023_exp
@@ -332,6 +332,104 @@ FUNCTION cxmr023()
    --            " when matched then update set sub_item = bmd04 "
    -- prepare cxmr023_merge_sub from l_sql
    -- execute cxmr023_merge_sub using l_uuid
+
+   # darcy:2025/11/07 add s---
+   # ship, batch, issue, yield
+   insert into cxmr023_param (uuid,cust_proj) select unique uuid,cust_proj from cxmr023_exp
+
+   -- 作废数量
+   let l_sql = "merge into cxmr023_param a using ( ",
+               " select uuid,cust_proj, nvl(sum(sfb081), 0) sfb081 ",
+               "   from sfb_file, ",
+               "         (select unique uuid, cust_proj, fg_part_no ",
+               "            from cxmr023_exp   where uuid = ?) ",
+               "   where sfb87 = 'Y' ",
+               "      and sfb12 <> 0 and sfb05 not like '%-%' ",
+               "      and substr(sfb05, 7, 1) in ('A', 'B', 'C') ",
+               "      and substr(sfb05, 1, 6) = fg_part_no ",
+               "   group by uuid,cust_proj) b ",
+               " on (a.uuid = b.uuid and a.cust_proj = b.cust_proj)",
+               " when matched then update set issue = sfb081"
+   prepare cxmr023_merge_issue from l_sql
+   execute cxmr023_merge_issue using l_uuid
+   update cxmr023_param set issue = 0 where uuid = l_uuid and issue is null
+
+   -- 批数
+   let l_sql = "merge into cxmr023_param a using (  ",
+               " select uuid,cust_proj, tc_oeb12",
+               "  from (select uuid,cust_proj, tc_oeb12, tc_oeb16,",
+               "                 dense_rank() OVER (partition by uuid, cust_proj order by tc_oeb16 desc) rn",
+               "           from oea_file a,",
+               "                 oeb_file b,",
+               "                 tc_oeb_file c,",
+               "                 (select unique uuid, cust_proj, fg_part_no",
+               "                    from cxmr023_exp where uuid = ?)",
+               "           where a.oea01 = b.oeb01 and b.oeb01 = c.tc_oeb01",
+               "           and b.oeb03 = c.tc_oeb03 and a.oeaconf = 'Y'",
+               "           and c.tc_oeb04 not like '%-%' and SUBSTR(c.tc_oeb04, 7, 1) in ('A', 'B', 'C')",
+               "           and SUBSTR(c.tc_oeb04, 1, 6) = fg_part_no and a.oea00 = '0')",
+               "  where rn = 2 )b ",
+               " on (a.uuid = b.uuid and a.cust_proj = b.cust_proj)",
+               " when matched then update set batch = tc_oeb12"
+   prepare cxmr023_merge_batch from l_sql
+   execute cxmr023_merge_batch using l_uuid
+   update cxmr023_param set batch = 0 where uuid = l_uuid and batch is null
+
+   -- 出货
+   let l_sql  = "merge into cxmr023_param a using (",
+                " select uuid, cust_proj, sum(ogb12) ogb12,sum(ohb12) ohb12",
+                "   from (select unique uuid, cust_proj, fg_part_no from cxmr023_exp where uuid = ? )",
+                "   left join (select substr(ogb04, 1, 6) ogb04, sum(ogb12) ogb12",
+                "                  from oga_file, ogb_file where oga01 = ogb01",
+                "                  and ogapost = 'Y' and oga09 = '2'",
+                "                  and ogb04 not like '%-%' and SUBSTR(ogb04, 7, 1) in ('A', 'B', 'C')",
+                "               group by substr(ogb04, 1, 6))",
+                "      on ogb04 = fg_part_no",
+                "   left join (select substr(ohb04, 1, 6) ohb04, sum(ohb12) ohb12",
+                "                  from oha_file, ohb_file where oha01 = ohb01",
+                "                  and ohapost = 'Y' and oha09 in ('1', '4')",
+                "                  and oha04 not like '%-%' and SUBSTR(oha04, 7, 1) in ('A', 'B', 'C')",
+                "               group by substr(ohb04, 1, 6))",
+                "      on ohb04 = fg_part_no",
+                " group by uuid, cust_proj) b",
+                " on (a.uuid = b.uuid and a.cust_proj = b.cust_proj)",
+                " when matched then update set ship = nvl(ogb12,0)-nvl(ohb12,0)"
+   prepare cxmr023_merge_ship from l_sql
+   execute cxmr023_merge_ship using l_uuid
+   update cxmr023_param set ship = 0 where uuid = l_uuid and ship is null
+
+   -- 良率
+   let l_sql = "merge into cxmr023_param a using (",
+               " select uuid,cust_proj,tc_bmj07 from (",
+               " select uuid,cust_proj,tc_bmj07,tc_bmj09,",
+               "        dense_rank() over(partition by uuid,cust_proj order by tc_bmj09 desc) r",
+               "   from tc_bmi_file, tc_bmj_file,",
+               "      ( select unique uuid,cust_proj,fg_part_no from cxmr023_exp where uuid = ?)",
+               " where tc_bmi01 = tc_bmj01",
+               "    and tc_bmiconf = 'Y' and substr(tc_bmj04, 1, 6) = fg_part_no",
+               "    and substr(tc_bmj04, 7, 1) in ('A', 'B', 'C') and tc_bmj04 not like '%-%'",
+               "    and tc_bmj11 = 1) where r = 1)b",
+               " on (a.uuid=b.uuid and a.cust_proj=b.cust_proj)",
+               " when matched then update set yield = tc_bmj07"
+   prepare cxmr023_merge_yield from l_sql
+   execute cxmr023_merge_yield using l_uuid 
+   update cxmr023_param set yield = 98.5 where uuid = l_uuid and yield is null
+
+   # darcy:2025/11/07 add e---
+
+   # darcy:2025/11/10 add s---
+   # 每个项目只保留一个料号
+   let l_sql = "delete from cxmr023_exp",
+               " where (uuid, cust_proj, fg_part_no) in",
+               "       (select uuid, cust_proj, fg_part_no",
+               "          from (select uuid, cust_proj, fg_part_no,",
+               "                rank() over (partition by uuid, cust_proj order by fg_part_no desc) rn",
+               "                from cxmr023_exp where uuid = ?)",
+               "         where rn <> 1 group by uuid, cust_proj, fg_part_no )"
+   prepare cxmr023_delete_exp from l_sql
+   execute cxmr023_delete_exp using l_uuid
+
+   # darcy:2025/11/10 add s---
 
    call exportTrack(l_uuid) returning l_shortid
 
