@@ -850,6 +850,26 @@ define l_msg        string #darcy:2024/11/29
                         DISPLAY g_tc_sma[l_ac].tc_sma02 TO tc_sma02
                         NEXT FIELD tc_sma02
                     # darcy:2025/07/28 add s---
+                    # darcy:2025/09/10 add s---
+                    when 'csmi122'
+                        CALL cl_init_qry_var()
+                        LET g_qryparam.form = "cq_ima03"
+                        LET g_qryparam.arg1 = g_lang
+                        LET g_qryparam.default1 = g_tc_sma[l_ac].tc_sma02
+                        CALL cl_create_qry() RETURNING g_tc_sma[l_ac].tc_sma02
+                        let g_tc_sma[l_ac].tc_sma02 = g_tc_sma[l_ac].tc_sma02[1,6]
+                        DISPLAY g_tc_sma[l_ac].tc_sma02 TO tc_sma02
+                        NEXT FIELD tc_sma02
+                    # darcy:2025/09/10 add e---
+                    # darcy:2025/10/15 add s---
+                    when 'csmi123'
+                        CALL cl_init_qry_var()
+                        LET g_qryparam.form = "q_ecd3" 
+                        LET g_qryparam.default1 = g_tc_sma[l_ac].tc_sma02
+                        CALL cl_create_qry() RETURNING g_tc_sma[l_ac].tc_sma02 
+                        DISPLAY g_tc_sma[l_ac].tc_sma02 TO tc_sma02
+                        NEXT FIELD tc_sma02
+                    # darcy:2025/10/15 add e---
                 end case
               
            END CASE
@@ -1164,6 +1184,12 @@ FUNCTION i100_set_entry(p_cmd)
             call cl_set_comp_entry("tc_sma02",true)    
         end if
     # darcy:2025/07/28 add e---
+    # darcy:2025/10/15 add s---
+    when 'csmi123'
+        if p_cmd = 'a' then
+            call cl_set_comp_entry("tc_sma02",true)    
+        end if
+    # darcy:2025/10/15 add e---
    end case
    #darcy:2024/11/29 add e---
                                                                                                                                     
@@ -1189,6 +1215,12 @@ FUNCTION i100_set_no_entry(p_cmd)
             call cl_set_comp_entry("tc_sma02",false)    
         end if
     # darcy:2025/07/28 add e---
+    # darcy:2025/10/15 add s---
+    when 'csmi123'
+        if p_cmd = 'u' then
+            call cl_set_comp_entry("tc_sma02",false)    
+        end if
+    # darcy:2025/10/15 add e---
    end case
    #darcy:2024/11/29 add e---
 
@@ -1202,7 +1234,8 @@ FUNCTION i100_set_dny_combo()
     define l_gaz03      like gaz_file.gaz03
 
     let ps_values = "csmi100,csmi101,csmi102,csmi103,csmi104,csmi105,csmi106,csmi107,csmi108,csmi109,csmi110,csmi111,",
-                    "csmi112,csmi113,csmi114,csmi115,csmi116,csmi117,csmi118,csmi119,csmi120,csmi121"
+                    "csmi112,csmi113,csmi114,csmi115,csmi116,csmi117,csmi118,csmi119,csmi120,csmi121,csmi122,csmi123,",
+                    "csmi124"
 
     LET tok = base.StringTokenizer.create(ps_values,",")
     let l_ze01 = tok.nextToken()
@@ -1267,6 +1300,9 @@ FUNCTION i100_set_dny_combo()
         when 'csmi121'
             display '料件项目属性维护'
         # darcy:2025/09/03 add e---
+        when 'csmi122' display '成品料号对应项目编号' # darcy:2025/09/10 add 
+        when 'csmi123' display '表面处理镍钯金作业编号维护' # darcy:2025/10/15 add
+        when 'csmi124' display '库龄统计区间维护，最多维护9个区间' # darcy:2025/11/18 add 
     end case
 
     call i100_set_visiable()
@@ -1323,6 +1359,11 @@ function i100_get_tc_sma_desc(p_tc_sma01,p_tc_sma02)
             select ima02 into l_tc_sma02_desc from ima_file
              where ima01 = p_tc_sma02
         # darcy:2025/07/28 add e---
+        # darcy:2025/10/15 add s---
+        when 'csmi123'
+            select ecd02 into l_tc_sma02_desc from ecd_file
+             where ecd01 = p_tc_sma02
+        # darcy:2025/10/15 add e---
         otherwise
             let l_tc_sma02_desc = null
     end case
@@ -1377,6 +1418,10 @@ function i100_chk_tc_sma02(p_tc_sma01,p_tc_sma02)
         when 'csmi120'
             return true
         # darcy:2025/07/28 add e---
+        # darcy:2025/09/10 add s---·
+        when 'csmi122'
+            return true
+        # darcy:2025/09/10 add e---
     end case
     return true
 end function
@@ -1582,9 +1627,9 @@ function i100_set_visiable()
             call cl_set_comp_att_text('tc_sma19','输入框')
             call cl_set_comp_att_text('tc_sma20','有效否')
             -- 是否隐藏
-            -- call cl_set_comp_visible("tc_sma02,tc_sma02_desc,tc_sma03,tc_sma04,tc_sma05,
-            --                           tc_sma08,tc_sma10,tc_sma11,tc_sma12,tc_sma13,tc_sma14,
-            --                           tc_sma15,tc_sma16,tc_sma17,tc_sma18,tc_sma19",false)
+            -- call cl_set_comp_visible("tc_sma02,tc_sma02_desc,tc_sma03,tc_sma04,tc_sma05,tc_sma06,
+            --                           tc_sma07,tc_sma08,tc_sma09,tc_sma10,tc_sma11,tc_sma12,tc_sma13,
+            --                           tc_sma14,tc_sma15,tc_sma16,tc_sma17,tc_sma18,tc_sma19",false)
             -- 是否可以录入
             call cl_set_comp_entry("tc_sma02,tc_sma03",true)
         # darcy:2025/07/28 add e---
@@ -1599,6 +1644,37 @@ function i100_set_visiable()
                                       tc_sma15,tc_sma16,tc_sma17,tc_sma18,tc_sma19",false)
             call cl_set_comp_entry("tc_sma03,tc_sma06,tc_sma07",true)
         # darcy:2025/09/03 add e---
+        # darcy:2025/09/25 add s---
+        when 'csmi122'
+            call cl_set_comp_att_text('tc_sma02','料件编号')
+            call cl_set_comp_att_text('tc_sma06','归属项目')
+            call cl_set_comp_att_text('tc_sma07','说明')
+            call cl_set_comp_visible("tc_sma02_desc,tc_sma03,tc_sma04,tc_sma05,
+                                      tc_sma08,tc_sma09,tc_sma10,tc_sma11,tc_sma12,tc_sma13,tc_sma14,
+                                      tc_sma15,tc_sma16,tc_sma17,tc_sma18,tc_sma19",false)
+            call cl_set_comp_entry("tc_sma02,tc_sma06,tc_sma07",true)
+        # darcy:2025/09/25 add e---
+        # darcy:2025/10/15 add s---
+        when 'csmi123'
+            call cl_set_comp_att_text('tc_sma02','作业编号')
+            call cl_set_comp_att_text('tc_sma02_desc','说明')
+            call cl_set_comp_visible("tc_sma03,tc_sma04,tc_sma05,tc_sma06,tc_sma07,
+                                      tc_sma08,tc_sma09,tc_sma10,tc_sma11,tc_sma12,tc_sma13,tc_sma14,
+                                      tc_sma15,tc_sma16,tc_sma17,tc_sma18,tc_sma19",false)
+            call cl_set_comp_entry("tc_sma02",true)
+        # darcy:2025/10/15 add e---
+        # darcy:2025/11/18 add s---
+        when 'csmi124'
+            call cl_set_comp_att_text('tc_sma02','目的作业')
+            call cl_set_comp_att_text('tc_sma03','顺序（max8）')
+            call cl_set_comp_att_text('tc_sma06','天数')
+            -- 是否隐藏
+            call cl_set_comp_visible("tc_sma02_desc,tc_sma04,tc_sma05,
+                                      tc_sma07,tc_sma08,tc_sma09,tc_sma10,tc_sma11,tc_sma12,tc_sma13,
+                                      tc_sma14,tc_sma15,tc_sma16,tc_sma17,tc_sma18,tc_sma19",false)
+            -- 是否可以录入
+            call cl_set_comp_entry("tc_sma03,tc_sma06",true)
+        # darcy:2025/11/18 add e---
     end case
     
 end function
@@ -1643,10 +1719,11 @@ function i100_get_default()
          # 默认值
          when 'csmi120'
             let g_tc_sma[l_ac].tc_sma06 = 'default'
-         # darcy:2025/07/28 add e--- 
+         # darcy:2025/07/28 add e---
          # darcy:2025/09/03 add s---
          when 'csmi121'
             let g_tc_sma[l_ac].tc_sma02 = 'aimi100'
-         # darcy:2025/09/03 add e---
+         # darcy:2025/09/03 add e--- 
+         when 'csmi124' let g_tc_sma[l_ac].tc_sma02 = 'cimq024'  # darcy:2025/11/18 add
     end case
 end function
