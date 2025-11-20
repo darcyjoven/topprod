@@ -196,6 +196,17 @@ END FUNCTION
 FUNCTION s_cbmp600_b(p_bma01,p_bmb06)
     DEFINE p_bma01      LIKE bma_file.bma01
     DEFINE p_bmb06      LIKE bma_file.bma06
+    define l_cnt        like type_file.num5
+
+    # darcy:2025/11/20 add s---
+    # 已经审核的bom不再审核
+    select count(*) into l_cnt from bma_file
+     where bma01 = p_bma01 and bma06 = p_bmb06 and bma10 <> '0'
+
+    if l_cnt > 0 then
+        return
+    end if
+    # darcy:2025/11/20 add e---
 
     CALL s_cbmp600_cnf_chk(p_bma01,p_bmb06)
     IF g_success ='N' THEN  
