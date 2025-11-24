@@ -889,6 +889,10 @@ DEFINE l_op        com.WebOperation
       when "cws_CreateAsft623"
          let l_op =com.WebOperation.CreateDOCStyle("cws_CreateAsft623", p_op_name, g_request, g_response)
       #darcy:2024/06/24 add e---
+      # darcy:2025/11/18 add s---
+      when "cws_GetStock"
+         let l_op =com.WebOperation.CreateDOCStyle("cws_GetStock", p_op_name, g_request, g_response)
+      # darcy:2025/11/18 add e---
        END CASE
 
     RETURN l_op
@@ -3131,3 +3135,10 @@ function cws_CreateAsft623()
    call cws_create_asft623()
 end function
 #darcy:2024/06/24 add e---
+
+# darcy:2025/11/18 add s---
+function cws_GetStock()
+let g_service = "GetStock"
+   call cws_get_stock()
+end function
+# darcy:2025/11/18 add e---
