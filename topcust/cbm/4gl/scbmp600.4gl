@@ -993,16 +993,7 @@ FUNCTION s_cbmp600_bom(p_bma01,p_bma06)
             CALL cl_err("cbmp600_bmb03_dlc",SQLCA.sqlcode,1)
             LET g_success = 'N'
             RETURN
-        END IF
-        # darcy:2025/11/04 add s---
-        # 已审核的跳过
-        select count(*) into l_cnt from bma_file
-         where bma01 = p_bma01 and bma06 = p_bma06
-           and bma10 <> '0'
-        if l_cnt > 0 then
-            continue foreach
-        end if
-        # darcy:2025/11/04 add e---
+        END IF 
         LET l_cnt = l_cnt +1
     END FOREACH
 
