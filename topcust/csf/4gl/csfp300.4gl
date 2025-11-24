@@ -746,6 +746,7 @@ function csfp300_page2()
     define i,j integer
     define l_shm01  integer
     define l_cnum,l_snum  decimal(15,3)
+    define l_msg  string
 
     delete from csfp300_sfb1
     call g_sfb1.clear()
@@ -850,6 +851,15 @@ function csfp300_page2()
             call cl_err("csfp300_page2_5",sqlca.sqlcode,1)
             exit foreach
         end if
+        # darcy:2025/11/24 add s---
+        # 检查留置
+        let l_msg = ""
+        call csfp300_chk_hold(g_sfb1[g_cnt].sfb01_1) returning l_msg
+        if not cl_null(l_msg) then
+            call cl_err( l_msg, '!', 1 )
+            exit foreach
+        end if
+        # darcy:2025/11/24 add e---
         let g_cnt = g_cnt + 1
         if g_cnt > g_max_rec then
             call cl_err( '', 9035, 0 )
@@ -1178,3 +1188,48 @@ function csfp300_upd_shm05(p_ta_shm05,p_shm05)
     
 end function
 #darcy:2024/03/11 add e--- 
+
+
+# darcy:2025/11/24 add s---
+function csfp300_chk_hold(p_sfb01)
+   define p_sfb01 like sfb_file.sfb01
+   define p_tc_sfe01 like tc_sfe_file.tc_sfe01
+   define p_tc_sfe03 like tc_sfe_file.tc_sfe03
+   define l_msg   string
+   define l_tc_sfe03,l_tc_sfaa02,l_sfb08 decimal(15,3)
+
+   -- 已申请数量
+   select sum(tc_sfe03) into l_tc_sfe03
+     from tc_sfe_file, tc_sfd_file
+    where tc_sfe01 = tc_sfd01
+      and tc_sfd04 <> 'X'
+      and tc_sfe02 = p_sfb01
+   
+   if cl_null(l_tc_sfe03) then
+      let l_tc_sfe03 = 0
+   end if
+
+   -- 留置数量
+   select tc_sfaa02 into l_tc_sfaa02 from tc_sfaa_file
+    where tc_sfaa06 = '1' and tc_sfaa01 = p_sfb01
+   
+   if cl_null(l_tc_sfaa02) then
+      let l_tc_sfaa02 = 0
+   end if
+
+   -- 工单生产数量
+   select sfb08 into l_sfb08 from sfb_file 
+    where sfb01 = p_sfb01
+   
+   if cl_null(l_sfb08) then
+      let l_sfb08 = 0
+   end if
+
+   if l_sfb08 - l_tc_sfaa02 - l_tc_sfe03 <= 0 then 
+      return sfmt("工单:%1 生产数量:%2 留置数量:%3 已申请发料数量:%4,已经不能再开立发料申请单.",p_sfb01,l_sfb08,l_tc_sfaa02,l_tc_sfe03)
+   else
+      return ""
+   end if
+
+end function
+# darcy:2025/11/24 add e---

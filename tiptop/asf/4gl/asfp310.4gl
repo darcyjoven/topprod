@@ -137,6 +137,7 @@ FUNCTION p310_tm()
    define l_pcs,l_pnl   like type_file.num15_3
    #darcy:2023/05/15 add e---
    DEFINE l_now DATETIME YEAR TO FRACTION(3) #darcy:2024/01/22 
+   define l_msg   string # darcy:2025/11/24 add
 
    IF s_shut(0) THEN
       RETURN
@@ -236,6 +237,16 @@ FUNCTION p310_tm()
                #LET g_sfb08=g_sfb08-l_sum   #mark by jixf 160809
                #IF g_sfb08<=0 THEN          #mark by jixf 160809
           #     IF g_sfb08-l_sum<=0 THEN     #add by jixf 160809
+
+               # darcy:2025/11/24 add s---
+               # 检查留置数量
+               let l_msg = ""
+               call asfp310_chk_hold(g_sfb01) returning l_msg 
+               if not cl_null(l_msg) then
+                  call cl_err(l_msg,'!',1)
+                  next field g_sfb01
+               end if
+               # darcy:2025/11/24 add e---
 
            select sfbud09 INTO l_sfbud09 from sfb_file where sfb01=g_sfb01 and sfb81>to_date('2020-07-20','yyyy-mm-dd')
 
@@ -1624,3 +1635,47 @@ function asfp310_upd_shm05(p_ta_shm05,p_shm05)
     
 end function
 #darcy:2024/03/11 add e--- 
+
+# darcy:2025/11/24 add s---
+function asfp310_chk_hold(p_sfb01)
+   define p_sfb01 like sfb_file.sfb01
+   define p_tc_sfe01 like tc_sfe_file.tc_sfe01
+   define p_tc_sfe03 like tc_sfe_file.tc_sfe03
+   define l_msg   string
+   define l_tc_sfe03,l_tc_sfaa02,l_sfb08 decimal(15,3)
+
+   -- 已申请数量
+   select sum(tc_sfe03) into l_tc_sfe03
+     from tc_sfe_file, tc_sfd_file
+    where tc_sfe01 = tc_sfd01
+      and tc_sfd04 <> 'X'
+      and tc_sfe02 = p_sfb01
+   
+   if cl_null(l_tc_sfe03) then
+      let l_tc_sfe03 = 0
+   end if
+
+   -- 留置数量
+   select tc_sfaa02 into l_tc_sfaa02 from tc_sfaa_file
+    where tc_sfaa06 = '1' and tc_sfaa01 = p_sfb01
+   
+   if cl_null(l_tc_sfaa02) then
+      let l_tc_sfaa02 = 0
+   end if
+
+   -- 工单生产数量
+   select sfb08 into l_sfb08 from sfb_file 
+    where sfb01 = p_sfb01
+   
+   if cl_null(l_sfb08) then
+      let l_sfb08 = 0
+   end if
+
+   if l_sfb08 - l_tc_sfaa02 - l_tc_sfe03 <= 0 then 
+      return sfmt("工单:%1 生产数量:%2 留置数量:%3 已申请发料数量:%4,已经不能再开立发料申请单.",p_sfb01,l_sfb08,l_tc_sfaa02,l_tc_sfe03)
+   else
+      return ""
+   end if
+
+end function
+# darcy:2025/11/24 add e---

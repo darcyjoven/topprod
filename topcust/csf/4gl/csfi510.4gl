@@ -1166,6 +1166,17 @@ FUNCTION i510_i(p_cmd)
   DEFINE l_tc_sfd06         LIKE tc_sfd_file.tc_sfd06   #No.FUN-980038
   DEFINE l_smy72         LIKE smy_file.smy72   #No.MOD-9C0180
   DEFINE l_count         LIKE type_file.num5   #No.FUN-A90035 
+  # darcy:2025/11/17 add s---
+  define l_shm012        LIKE shm_file.shm012 
+  define l_msg           string
+  # darcy:2025/11/17 add e---
+
+   # darcy:2025/11/17 add s---
+   # 遍历投产批次号的工单号
+   declare i510_shm012 cursor for
+      select shm012 from shm_file
+       where ta_shm05 = ? group by shm012
+   # darcy:2025/11/17 add e---
  
     CALL cl_set_head_visible("","YES")  #NO.FUN-6B0031
     INPUT BY NAME g_tc_sfd.tc_sfdoriu,g_tc_sfd.tc_sfdorig,
@@ -1237,7 +1248,24 @@ FUNCTION i510_i(p_cmd)
                IF cl_null(l_count) OR l_count = 0  THEN
                   CALL cl_err('','csf-074',0)
                   NEXT FIELD tc_sfd07
-               END IF  
+               END IF
+               # darcy:2025/11/13 add s---
+               # 判断工单是否留置数量
+               foreach i510_shm012 using g_tc_sfd.tc_sfd07 into l_shm012
+                  if sqlca.sqlcode then
+                     call cl_err("",sqlca.sqlcode,1)
+                     exit foreach
+                  end if
+                  let l_msg = i510_chk_hold(l_shm012,g_tc_sfd.tc_sfd01,0)
+                  if not cl_null(l_msg) then
+                     exit foreach
+                  end if
+               end foreach
+               if not cl_null(l_msg) then
+                  call cl_err(l_msg,"!",1)
+                  next field tc_sfd07
+               end if
+               # darcy:2025/11/13 add e---
             END IF
 
         #FUN-AB0001 add str ------
@@ -1975,6 +2003,7 @@ FUNCTION i510_d_i()
    DEFINE l_tc_sfe014_t    LIKE tc_sfe_file.tc_sfe014  #FUN-C70014
    DEFINE l_shm08_sum   LIKE shm_file.shm08   #add by jixf 160809
    DEFINE l_tc_sfe03_sum   LIKE tc_sfe_file.tc_sfe03
+   define l_msg         string #darcy:2025/11/17 add
    
    LET g_flag_tc_sfe03=0     #CHI-6C0005 add
  
@@ -7822,6 +7851,32 @@ FUNCTION i510_sub_y_chk(p_tc_sfd01,p_action_choice) #TQC-C60079 add
    DEFINE l_flag          LIKE type_file.chr1         #add by huanglf161009
    DEFINE l_sfb02         LIKE sfb_file.sfb02
   #CHI-C30106---add---S
+  # darcy:2025/11/17 add s---
+  # 遍历工单号和套数
+--   define l_tc_sfe02       LIKE tc_sfe_file.tc_sfe02
+  define l_tc_sfe03       LIKE tc_sfe_file.tc_sfe03
+  define l_msg             STRING
+
+  declare i510_sfe02_03 cursor for 
+   select tc_sfe02,tc_sfe03 from tc_sfe_file where tc_sfe01=p_tc_sfd01
+  
+   let l_msg = ""
+   foreach i510_sfe02_03 into l_tc_sfe02,l_tc_sfe03
+      if sqlca.sqlcode then
+         CALL cl_err('i510_sfe02_03',sqlca.sqlcode,1)
+         exit foreach
+      end if
+      let l_msg = i510_chk_hold(l_tc_sfe02,p_tc_sfd01,l_tc_sfe03)
+      if not cl_null(l_msg) then
+         exit foreach
+      end if 
+   end foreach
+   if not cl_null(l_msg) then
+      call cl_err(l_msg,"!",1)
+      let g_success = 'N'
+      return 
+   end if 
+  # darcy:2025/11/17 add E---
    IF NOT cl_null(p_action_choice) THEN
       IF p_action_choice CLIPPED = "confirm" OR #執行 "確認" 功能(非簽核模式呼叫)
          p_action_choice CLIPPED = "insert"
@@ -8813,3 +8868,52 @@ FUNCTION i510_2_tc_sff_update(p_tc_sff)
    RETURN TRUE 
 END FUNCTION 
 #add by darcy: 2022-03-14 14:59:21 e---  
+
+# darcy:2025/11/13 add s---
+function i510_chk_hold(p_sfb01,p_tc_sfe01,p_tc_sfe03)
+   define p_sfb01 like sfb_file.sfb01
+   define p_tc_sfe01 like tc_sfe_file.tc_sfe01
+   define p_tc_sfe03 like tc_sfe_file.tc_sfe03
+   define l_msg   string
+   define l_tc_sfe03,l_tc_sfaa02,l_sfb08 decimal(15,3)
+
+   -- 已申请数量
+   select sum(tc_sfe03) into l_tc_sfe03
+     from tc_sfe_file, tc_sfd_file
+    where tc_sfe01 = tc_sfd01
+      and tc_sfd04 <> 'X'
+      and tc_sfe02 = p_sfb01
+      and tc_sfe01 <> p_tc_sfe01
+   
+   if cl_null(l_tc_sfe03) then
+      let l_tc_sfe03 = 0
+   end if
+
+   if cl_null(p_tc_sfe03) then
+      let p_tc_sfe03 = 0 
+   end if
+
+   -- 留置数量
+   select tc_sfaa02 into l_tc_sfaa02 from tc_sfaa_file
+    where tc_sfaa06 = '1' and tc_sfaa01 = p_sfb01
+   
+   if cl_null(l_tc_sfaa02) then
+      let l_tc_sfaa02 = 0
+   end if
+
+   -- 工单生产数量
+   select sfb08 into l_sfb08 from sfb_file 
+    where sfb01 = p_sfb01
+   
+   if cl_null(l_sfb08) then
+      let l_sfb08 = 0
+   end if
+
+   if l_sfb08 - l_tc_sfaa02 - l_tc_sfe03 < p_tc_sfe03 then 
+      return sfmt("工单:%1 生产数量:%2 留置数量:%3 已申请发料数量:%4,已经不能再开立发料申请单.",p_sfb01,l_sfb08,l_tc_sfaa02,l_tc_sfe03)
+   else
+      return ""
+   end if
+
+end function
+# darcy:2025/11/13 add e---
