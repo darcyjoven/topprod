@@ -1167,7 +1167,7 @@ function cimq024_process(p_tc_imi01)
     let last_month_msg = sfmt("上月总计(%1/%2/%3)",year(last_monthdat) using '&&&&',month(last_monthdat) using '&&',day(last_monthdat) using '&&')
     
     #Step1. 仓库汇总
-    let g_sql = "select ?,img02||imd02 img02,?,"
+    let g_sql = "select ?,img02_desc||imd02 img02,?,"
 
     for i = 1 to g_col.getlength()
         if i = 1 then let l_start = 0 else let l_start = g_col[i-1]+1 end if
@@ -1183,12 +1183,15 @@ function cimq024_process(p_tc_imi01)
     end for
 
     -- 最后汇总
-    let g_sql = g_sql , " sum(amt) from tc_imi_file,imd_file where imd01 = img02 and tc_imi01 = ? "
+    let g_sql = g_sql , " sum(amt) from (select tc_imi01,img01,img02,
+                         case img02 when 'S011' then img02 || (case substr(img01, 10, 1) when 'R' then '-量产-' else '-样品-' end)
+                                    when 'YP002' then img02|| (case when img02 like 'K.%' then '-器件-' else '-光板-'   end )
+                          else img02 end img02_desc, img10, img37, amt from tc_imi_file),imd_file where imd01 = img02 and tc_imi01 = ? "
     -- 预制SQL
     let l_presql = g_sql
     let g_sql = "insert into cimq024_tmp ",g_sql,
                 " and (img02 not in ('S001','S007','S010') or (img01 not like 'KG%' and img01 not like 'KH%'))", -- 扣除KG/KH料号
-                " group by img02,imd02"
+                " group by img02_desc,imd02"
 
     prepare cimq024_proc1 from g_sql
     let l_typ = '1'
@@ -1214,8 +1217,9 @@ function cimq024_process(p_tc_imi01)
     end if
 
     -- K001 仓库匹配PCS汇总
-    let l_sql = cl_replace_str(l_presql,"amt","img10")
-    let l_sql = "insert into cimq024_tmp ",l_sql," and img02 = 'K001' group by img02,imd02"
+    let l_sql = cl_replace_str(l_presql,"img10","img10 img10_1")
+    let l_sql = cl_replace_str(l_sql,"amt","img10")
+    let l_sql = "insert into cimq024_tmp ",l_sql," and img02 = 'K001' group by img02_desc,imd02"
 
     prepare cimq024_proc2 from l_sql
     execute cimq024_proc2 using l_typ,l_seq,p_tc_imi01
@@ -1281,7 +1285,7 @@ function cimq024_process(p_tc_imi01)
     let l_typ = '2'
     let l_sql = "insert into cimq024_tmp ",l_presql,
                 " and img02 in ('S001','S007','S010','YP001','YS001')",
-                " and img01 like 'M.%' group by img02,imd02"
+                " and img01 like 'M.%' group by img02_desc,imd02"
     prepare cimq024_proc3 from l_sql
     let l_seq = 1
     execute cimq024_proc3 using l_typ,l_seq,p_tc_imi01
@@ -1330,7 +1334,7 @@ function cimq024_process(p_tc_imi01)
     let l_seq = 1
     let l_sql = "insert into cimq024_tmp ",l_presql,
                 " and img02 in ('S003','S012','YP002')",
-                " and img01 like 'E.%' group by img02,imd02 "
+                " and img01 like 'E.%' group by img02_desc,imd02 "
     prepare cimq024_proc4 from l_sql
     execute cimq024_proc4 using l_typ,l_seq,p_tc_imi01
     if sqlca.sqlcode then
@@ -1379,7 +1383,7 @@ function cimq024_process(p_tc_imi01)
     let l_seq = 1
     let l_sql = "insert into cimq024_tmp ",l_presql,
                 " and img02 in ('P001','S006','YP003','S009')",
-                " and img01 not like '%.%' group by img02,imd02"
+                " and img01 not like '%.%' group by img02_desc,imd02"
     prepare cimq024_proc5 from l_sql
     execute cimq024_proc5 using l_typ,l_seq,p_tc_imi01
     if sqlca.sqlcode then
@@ -1427,13 +1431,9 @@ function cimq024_process(p_tc_imi01)
     -- S011,要区分量产还是样品 
     let l_typ = '5'
     let l_seq = 1
-    let l_sql = cl_replace_str(l_presql,"tc_imi_file",
-                        "(select tc_imi01,img01,
-                         case img02 when 's011' then img02||(case substr(img01,10,1)  when 'R' then '量产' else '样品' end ) else img02 end img02,
-                         img10,img37,amt from tc_imi_file where img02 in ('S005','S011','YP002') )")
 
-    let l_sql = "insert into cimq024_tmp ",l_sql,
-                " and img01 not like '%.%' group by img02,imd02"
+    let l_sql = "insert into cimq024_tmp ",l_presql,
+                " and img01 not like '%.%' and img02 in ('S005','S011','YP002') group by img02_desc,imd02"
     prepare cimq024_proc6 from l_sql
     execute cimq024_proc6 using l_typ,l_seq,p_tc_imi01
     if sqlca.sqlcode then
@@ -1480,12 +1480,13 @@ function cimq024_process(p_tc_imi01)
     #Step7. 客供器件(PCS数量)
     let l_typ = '6'
     let l_seq = 1
-    let l_sql = cl_replace_str(l_presql,'amt','img10')
+    let l_sql = cl_replace_str(l_presql,'img10','img10 img10_1')
+    let l_sql = cl_replace_str(l_sql,'amt','img10')
     let l_sql = "insert into cimq024_tmp ",l_sql,
                 " and img02 = 'K001' ",
-                " and img01 like 'K.%' group by img02,imd02 "
+                " and img01 like 'K.%' group by img02_desc,imd02 "
     let l_msg = sfmt("客供件(%1/%2/%3)",year(l_tc_imi02) using '&&&&',month(l_tc_imi02) using '&&',day(l_tc_imi02) using '&&')
-    let l_sql = cl_replace_str(l_sql,"img02||imd02 img02"," ? img02")
+    let l_sql = cl_replace_str(l_sql,"img02_desc||imd02 img02"," ? img02")
     prepare cimq024_proc7 from l_sql
     execute cimq024_proc7 using l_typ,l_msg,l_seq,p_tc_imi01
     if sqlca.sqlcode then
