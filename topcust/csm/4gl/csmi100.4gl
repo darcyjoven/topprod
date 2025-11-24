@@ -1235,7 +1235,7 @@ FUNCTION i100_set_dny_combo()
 
     let ps_values = "csmi100,csmi101,csmi102,csmi103,csmi104,csmi105,csmi106,csmi107,csmi108,csmi109,csmi110,csmi111,",
                     "csmi112,csmi113,csmi114,csmi115,csmi116,csmi117,csmi118,csmi119,csmi120,csmi121,csmi122,csmi123,",
-                    "csmi124"
+                    "csmi124,csmi125"
 
     LET tok = base.StringTokenizer.create(ps_values,",")
     let l_ze01 = tok.nextToken()
@@ -1275,34 +1275,35 @@ FUNCTION i100_set_dny_combo()
         when 'csmi111'
             display "此作业维护收件人群组，方便发送邮件通知" to lb_msg
         when 'csmi112'
-            display '全局参数设置'
+            display '全局参数设置' to lb_msg
         when 'csmi113'
-            display '光板样品下料规则'
+            display '光板样品下料规则' to lb_msg
         when 'csmi114'
-            display '预测工单拆单日期管控'
+            display '预测工单拆单日期管控' to lb_msg
         when 'csmi115'
-            display '分群码设置固定损耗量，损耗率'
+            display '分群码设置固定损耗量，损耗率' to lb_msg
         when 'csmi116'
-            call cl_set_combo_items("tc_sma04","1,2","光板,组装")
-            display '成品生产前置天数'
+            call cl_set_combo_items("tc_sma04","1,2","光板,组装") 
+            display '成品生产前置天数' to lb_msg
         when 'csmi117'
-            display '订单达交率账龄设置'
+            display '订单达交率账龄设置' to lb_msg
         when 'csmi118'
-            display '业务客户查询顺序'
+            display '业务客户查询顺序' to lb_msg
         when 'csmi119'
-            display '月份销售预测FCST维护'
+            display '月份销售预测FCST维护' to lb_msg
         # darcy:2025/07/28 s---
         # 程序名称
         when 'csmi120'
-            display '示例程序'
+            display '示例程序' to lb_msg
         # darcy:2025/07/28 e---
         # darcy:2025/09/03 add s---
         when 'csmi121'
-            display '料件项目属性维护'
+            display '料件项目属性维护' to lb_msg
         # darcy:2025/09/03 add e---
-        when 'csmi122' display '成品料号对应项目编号' # darcy:2025/09/10 add 
-        when 'csmi123' display '表面处理镍钯金作业编号维护' # darcy:2025/10/15 add
-        when 'csmi124' display '库龄统计区间维护，最多维护9个区间' # darcy:2025/11/18 add 
+        when 'csmi122' display '成品料号对应项目编号' to lb_msg# darcy:2025/09/10 add 
+        when 'csmi123' display '表面处理镍钯金作业编号维护' to lb_msg# darcy:2025/10/15 add
+        when 'csmi124' display '库龄统计区间维护，最多维护9个区间' to lb_msg # darcy:2025/11/18 add 
+        when 'csmi125' display '料件类型维护作业（IE）' to lb_msg  # darcy:2025/11/20 add
     end case
 
     call i100_set_visiable()
@@ -1364,6 +1365,11 @@ function i100_get_tc_sma_desc(p_tc_sma01,p_tc_sma02)
             select ecd02 into l_tc_sma02_desc from ecd_file
              where ecd01 = p_tc_sma02
         # darcy:2025/10/15 add e---
+        # darcy:2025/11/20 add s---
+        when 'csmi125'
+            select gaz03 into l_tc_sma02_desc from gaz_file
+             where gaz01 = p_tc_sma02 and gaz02='2'
+        # darcy:2025/11/20 add d---
         otherwise
             let l_tc_sma02_desc = null
     end case
@@ -1675,6 +1681,18 @@ function i100_set_visiable()
             -- 是否可以录入
             call cl_set_comp_entry("tc_sma03,tc_sma06",true)
         # darcy:2025/11/18 add e---
+        # darcy:2025/11/20 add s---
+        when 'csmi125'
+            call cl_set_comp_att_text("tc_sma02","作业编码")
+            call cl_set_comp_att_text("tc_sma02_desc","作业名称")
+            call cl_set_comp_att_text("tc_sma03","类型序号")
+            call cl_set_comp_att_text("tc_sma06","类型说明")
+            call cl_set_comp_att_text("tc_sma10","备注")
+            call cl_set_comp_visible("tc_sma04,tc_sma05,tc_sma07,tc_sma08,tc_sma09,tc_sma11,tc_sma12,tc_sma13,,tc_sma14,tc_sma15,tc_sma16,tc_sma17,tc_sma18,tc_sma19",false)
+            call cl_set_comp_entry("tc_sma02",false)
+            call cl_set_comp_entry("tc_sma06,tc_sma10",true)
+            call cl_set_comp_required("tc_sma06",true)
+        # darcy:2025/11/20 add e---
     end case
     
 end function
@@ -1725,5 +1743,12 @@ function i100_get_default()
             let g_tc_sma[l_ac].tc_sma02 = 'aimi100'
          # darcy:2025/09/03 add e--- 
          when 'csmi124' let g_tc_sma[l_ac].tc_sma02 = 'cimq024'  # darcy:2025/11/18 add
+         # darcy:2025/11/24 add s---
+         when 'csmi125'
+            let g_tc_sma[l_ac].tc_sma02 ='aimi100'
+            let g_tc_sma[l_ac].tc_sma07 = 0
+            let g_tc_sma[l_ac].tc_sma09 = 100
+            let g_tc_sma[l_ac].tc_sma02_desc = i100_get_tc_sma_desc(g_tc_sma01,g_tc_sma[l_ac].tc_sma02)
+         # darcy:2025/11/24 add e---
     end case
 end function
