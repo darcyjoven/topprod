@@ -55,7 +55,7 @@ MAIN
      #OPEN WINDOW t610_w AT p_row,p_col WITH FORM "axm/42f/axmt610" #FUN-710016
       OPEN WINDOW t610_w AT p_row,p_col WITH FORM "axm/42f/axmt620" #FUN-710016
          ATTRIBUTE (STYLE = g_win_style CLIPPED) #No.FUN-580092 HCN
- 
+   
       CALL cl_ui_init()
        #CHI-A40068 add --start--
        CASE g_sma.sma124  

@@ -564,6 +564,17 @@ FUNCTION t600sub_y_chk(p_oga01,p_action_choice) #CHI-C30118 add p_action_choice
    end if
    #darcy:2024/12/06 add e---
 
+   # darcy:2025/11/26 add s---
+   # 必须走签收检查
+   if g_prog ='axmt620' then
+      if cl_null(l_oga.oga65) or l_oga.oga65 != 'Y' then
+         let g_success = 'N'
+         call cl_err(l_oga.oga01,'cxm-0630',1)
+         return
+      end if
+   end if
+   # darcy:2025/11/26 add e---
+
  #DEV-D40019 add str-------
  #若aimi100[條碼使用否]=Y且有勾選製造批號/製造序號，需控卡不可直接確認or過帳
  IF g_aza.aza131 = 'Y' AND (g_prog = 'axmt610') THEN

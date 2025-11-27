@@ -4282,7 +4282,7 @@ FUNCTION t600_i(p_cmd)
                  LET g_oga.oga1016 =NULL
                  CALL cl_set_comp_entry("oga1016",FALSE)
                  CALL t600_show()
-                 CALL cl_set_comp_entry("oga65",TRUE)   #No.TQC-7C0114
+                 CALL cl_set_comp_entry("oga65",false)   #darcy:2025/11/27 mod #No.TQC-7C0114
               ELSE
                  CALL cl_set_comp_entry("oga1016",TRUE)  #No.TQC-7C0114
                  CALL cl_set_comp_entry("oga65,oga72",FALSE)   #No.TQC-7C0114    #FUN-A60004 add oga72
@@ -11154,6 +11154,7 @@ DEFINE cb             ui.ComboBox
            CALL cl_set_act_visible("qry_lot",FALSE)
          END IF
          CALL cl_set_comp_visible("oga65,oga72",TRUE)           #FUN-A60004 add oga72
+         -- call cl_set_comp_visible("oga65",false)   # darcy:2025/11/27 add
          CALL cl_set_comp_visible("oga99,oga905",FALSE)
          CALL cl_set_comp_visible("oga1012,oga1014",FALSE)
          CALL cl_set_comp_entry("oga011",FALSE)  #CHI-740016
@@ -11163,6 +11164,7 @@ DEFINE cb             ui.ComboBox
          CALL cb.removeItem('B')
       WHEN "2" #axmt620 一般出貨單
          CALL cl_set_comp_visible("oga65,oga72",TRUE)          #FUN-A60004 add oga72 
+         -- call cl_set_comp_visible("oga65",false)   # darcy:2025/11/27 add
          CALL cl_set_comp_visible("oga99,oga905",FALSE)
          CALL cl_set_comp_visible("oga01a,oga01b",TRUE)
          CALL cl_set_comp_visible("oea01",TRUE)   #MOD-950276
@@ -13034,6 +13036,7 @@ FUNCTION t600_set_entry(p_cmd)
     CALL cl_set_comp_entry("oga24",TRUE) #MOD-640570 add
     IF g_oga.oga65 = 'Y' AND g_argv0 MATCHES '[12]' THEN              #FUN-A60004
        CALL cl_set_comp_entry("oga65,oga72",TRUE)   #CHI-730002  #FUN-A60004 add oga72
+      --  call cl_set_comp_visible("oga65",false)   # darcy:2025/11/27 add
     ELSE                                                         #FUN-A60004
        CALL cl_set_comp_entry("oga65",TRUE)                      #FUN-A60004 
     END IF                                                       #FUN-A60004     
