@@ -1195,7 +1195,7 @@ function cimq024_process(p_tc_imi01)
 
     prepare cimq024_proc1 from g_sql
     let l_typ = '1'
-    let l_seq = 1
+    let l_seq = 3
     execute cimq024_proc1 using l_typ,l_seq,p_tc_imi01
     if sqlca.sqlcode then
         call cl_err("cimq024_proc1",sqlca.sqlcode,1)
@@ -1209,7 +1209,7 @@ function cimq024_process(p_tc_imi01)
       from cimq024_tmp where typ = ? and seq = ? "
     prepare cimq024_sum from l_sql
 
-    let l_seq1 = 1.1 
+    let l_seq1 = 3.1 
     execute cimq024_sum using l_typ,current_msg,l_seq1,l_typ,l_seq
     if sqlca.sqlcode then
         call cl_err("ins cimq024_tmp",sqlca.sqlcode,1)
@@ -1254,7 +1254,7 @@ function cimq024_process(p_tc_imi01)
     end if
 
     if not cl_null(last_month) then
-        let l_seq = 3
+        let l_seq = 1
         execute cimq024_proc1 using l_typ,l_seq,last_month
         if sqlca.sqlcode then
             call cl_err("cimq024_proc1",sqlca.sqlcode,1)
@@ -1287,14 +1287,14 @@ function cimq024_process(p_tc_imi01)
                 " and img02 in ('S001','S007','S010','YP001','YS001')",
                 " and img01 like 'M.%' group by img02_desc,imd02"
     prepare cimq024_proc3 from l_sql
-    let l_seq = 1
+    let l_seq = 3
     execute cimq024_proc3 using l_typ,l_seq,p_tc_imi01
     if sqlca.sqlcode then
         call cl_err("cimq024_proc3",sqlca.sqlcode,1)
         return
     end if
 
-    let l_seq1 = 1.1
+    let l_seq1 = 3.1
     execute cimq024_sum using l_typ,current_msg,l_seq1,l_typ,l_seq
     if sqlca.sqlcode then
         call cl_err("ins cimq024_tmp",sqlca.sqlcode,1)
@@ -1315,13 +1315,13 @@ function cimq024_process(p_tc_imi01)
         end if
     end if
     if not cl_null(last_month) then
-        let l_seq = 3
+        let l_seq = 1
         execute cimq024_proc3 using l_typ,l_seq,last_month
         if sqlca.sqlcode then
             call cl_err("cimq024_proc3",sqlca.sqlcode,1)
             return
         end if
-        let l_seq1 = 3.1
+        let l_seq1 = 1.1
         execute cimq024_sum using l_typ,last_month_msg,l_seq1,l_typ,l_seq
         if sqlca.sqlcode then
             call cl_err("ins cimq024_tmp",sqlca.sqlcode,1)
@@ -1331,7 +1331,7 @@ function cimq024_process(p_tc_imi01)
     
     #Step4. 器件
     let l_typ = '3'
-    let l_seq = 1
+    let l_seq = 3
     let l_sql = "insert into cimq024_tmp ",l_presql,
                 " and img02 in ('S003','S012','YP002')",
                 " and img01 like 'E.%' group by img02_desc,imd02 "
@@ -1342,7 +1342,7 @@ function cimq024_process(p_tc_imi01)
         return
     end if
 
-    let l_seq1 = 1.1
+    let l_seq1 = 3.1
     execute cimq024_sum using l_typ,current_msg,l_seq1,l_typ,l_seq
     if sqlca.sqlcode then
         call cl_err("ins cimq024_tmp",sqlca.sqlcode,1)
@@ -1364,13 +1364,13 @@ function cimq024_process(p_tc_imi01)
         end if
     end if
     if not cl_null(last_month) then
-        let l_seq = 3
+        let l_seq = 1
         execute cimq024_proc4 using l_typ,l_seq,last_month
         if sqlca.sqlcode then
             call cl_err("cimq024_proc4",sqlca.sqlcode,1)
             return
         end if
-        let l_seq1 = 3.1
+        let l_seq1 = 1.1
         execute cimq024_sum using l_typ,last_month_msg,l_seq1,l_typ,l_seq
         if sqlca.sqlcode then
             call cl_err("ins cimq024_tmp",sqlca.sqlcode,1)
@@ -1380,7 +1380,7 @@ function cimq024_process(p_tc_imi01)
 
     #Step5. 成品
     let l_typ = '4'
-    let l_seq = 1
+    let l_seq = 3
     let l_sql = "insert into cimq024_tmp ",l_presql,
                 " and img02 in ('P001','S006','YP003','S009')",
                 " and img01 not like '%.%' group by img02_desc,imd02"
@@ -1391,7 +1391,7 @@ function cimq024_process(p_tc_imi01)
         return
     end if
 
-    let l_seq1 = 1.1
+    let l_seq1 = 3.1
     execute cimq024_sum using l_typ,current_msg,l_seq1,l_typ,l_seq
     if sqlca.sqlcode then
         call cl_err("ins cimq024_tmp",sqlca.sqlcode,1)
@@ -1413,13 +1413,13 @@ function cimq024_process(p_tc_imi01)
         end if
     end if
     if not cl_null(last_month) then
-        let l_seq = 3
+        let l_seq = 1
         execute cimq024_proc5 using l_typ,l_seq,last_month
         if sqlca.sqlcode then
             call cl_err("cimq024_proc5",sqlca.sqlcode,1)
             return
         end if
-        let l_seq1 = 3.1
+        let l_seq1 = 1.1
         execute cimq024_sum using l_typ,last_month_msg,l_seq1,l_typ,l_seq
         if sqlca.sqlcode then
             call cl_err("ins cimq024_tmp",sqlca.sqlcode,1)
@@ -1430,7 +1430,7 @@ function cimq024_process(p_tc_imi01)
     #Step6. 光板
     -- S011,要区分量产还是样品 
     let l_typ = '5'
-    let l_seq = 1
+    let l_seq = 3
 
     let l_sql = "insert into cimq024_tmp ",l_presql,
                 " and img01 not like '%.%' and img02 in ('S005','S011','YP002') group by img02_desc,imd02"
@@ -1441,7 +1441,7 @@ function cimq024_process(p_tc_imi01)
         return
     end if
 
-    let l_seq1 = 1.1
+    let l_seq1 = 3.1
     execute cimq024_sum using l_typ,current_msg,l_seq1,l_typ,l_seq
     if sqlca.sqlcode then
         call cl_err("ins cimq024_tmp",sqlca.sqlcode,1)
@@ -1463,13 +1463,13 @@ function cimq024_process(p_tc_imi01)
         end if
     end if
     if not cl_null(last_month) then
-        let l_seq = 3
+        let l_seq = 1
         execute cimq024_proc6 using l_typ,l_seq,last_month
         if sqlca.sqlcode then
             call cl_err("cimq024_proc5",sqlca.sqlcode,1)
             return
         end if
-        let l_seq1 = 3.1
+        let l_seq1 = 1.1
         execute cimq024_sum using l_typ,last_month_msg,l_seq1,l_typ,l_seq
         if sqlca.sqlcode then
             call cl_err("ins cimq024_tmp",sqlca.sqlcode,1)
@@ -1479,7 +1479,7 @@ function cimq024_process(p_tc_imi01)
 
     #Step7. 客供器件(PCS数量)
     let l_typ = '6'
-    let l_seq = 1
+    let l_seq = 3
     let l_sql = cl_replace_str(l_presql,'img10','img10 img10_1')
     let l_sql = cl_replace_str(l_sql,'amt','img10')
     let l_sql = "insert into cimq024_tmp ",l_sql,
@@ -1506,7 +1506,7 @@ function cimq024_process(p_tc_imi01)
     end if
 
     if not cl_null(last_month) then
-        let l_seq = 3
+        let l_seq = 1
         let l_msg = sfmt("客供件(%1/%2/%3)",year(last_monthdat) using '&&&&',month(last_monthdat) using '&&',day(last_monthdat) using '&&')
         prepare cimq024_proc9 from l_sql
         execute cimq024_proc9 using l_typ,l_msg,l_seq,p_tc_imi01
