@@ -233,7 +233,7 @@ FUNCTION cxmr023()
                (uuid ,cust_proj ,movement_type ,record_date ,fg_part_no ,comp_part_no ,CUST_PART_NO,mat_desc ,qty ,remark) 
                select uuid,cust_proj,
                case when tlf907 > 0 then 
-                  case substr(tlf905,1,3) when 'CR2' then '2' when 'CR3' then '3' else '1' end 
+                  case when tlf905 in (select ina01 from cxmq024_cr2) then '2' when tlf905 in (select ina01 from cxmq024_cr3) then '3' when substr(tlf905,1,3)= 'CR2' then '2' when substr(tlf905,1,3) = 'CR3' then '3' else '1' end 
                   when tlf907 < 0 then
                   case when substr(tlf905,1,3) = 'CR5' then '5' when tlf06 <= to_date('251030','yymmdd') then '5' else '6' end
                end  movement_type,
@@ -252,7 +252,7 @@ FUNCTION cxmr023()
    -- 1. 内部调拨 入 cxmr023_stock_movement 2
    -- 2. 试产调拨 入 cxmr023_stock_movement 3
    -- 器件到货量 cxmr023_stock_movement 1
-   -- 内部调拨 出 cxmr023_stock_movement 4 
+   -- 内部调拨 出 cxmr023_stock_movement 4
    -- 预留 退料 cxmr023_stock_movement 5
    -- 电子仓 实发套数 cxmr023_stock_movement 6
    let l_sql = "merge into cxmr023_exp a using (
@@ -383,12 +383,14 @@ FUNCTION cxmr023()
                 "                  from oga_file, ogb_file where oga01 = ogb01",
                 "                  and ogapost = 'Y' and oga09 = '2'",
                 "                  and ogb04 not like '%-%' and SUBSTR(ogb04, 7, 1) in ('A', 'B', 'C')",
+                "                  and ogb04 like '%R' ",
                 "               group by substr(ogb04, 1, 6))",
                 "      on ogb04 = fg_part_no",
                 "   left join (select substr(ohb04, 1, 6) ohb04, sum(ohb12) ohb12",
                 "                  from oha_file, ohb_file where oha01 = ohb01",
                 "                  and ohapost = 'Y' and oha09 in ('1', '4')",
                 "                  and oha04 not like '%-%' and SUBSTR(oha04, 7, 1) in ('A', 'B', 'C')",
+                "                  and ohb04 like '%R' ",
                 "               group by substr(ohb04, 1, 6))",
                 "      on ohb04 = fg_part_no",
                 " group by uuid, cust_proj) b",
