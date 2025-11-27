@@ -1,7 +1,7 @@
 # Prog. Version..: '5.30.06-13.04.09(00010)'     #
 #
 # Pattern name...: cimq023.4gl
-# Descriptions...: 管理员工单处理工具
+# Descriptions...: 样品投入产出
 # Date & Author..: 22/11/02 By darcy
 import libmail
 
@@ -328,8 +328,9 @@ function cimq023_fill(p_wc1,p_wc2)
     select 'out' kind,tlf01,tlf905,tlf906,tlf10*tlf12,tlf06
       from tlf_file,SampleInOutItem_file
      where tlf01 like item||'%'
-       and tlf13 = 'asft6231'
+       and tlf13 = 'axmt620'
        and (tlf01 like '%S' or tlf01 like '%F')
+       and tlf902 != 'ZTC'
        -- 不管是否是组装出货
        -- and substr(tlf01,7,1) in ('A','B','C')
     if sqlca.sqlcode then
