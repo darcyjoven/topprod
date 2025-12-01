@@ -118,7 +118,7 @@ function p_login_history_parse()
    # 解析 /etc/httpd/logs/ssl_access_log 未解析部分
    # 删除30天之前的记录
 
-   call p_login_archive()
+   call p_login_history_archive()
    call p_login_history_read(g_file)
 
    delete from login_history where dat < g_today - 30
@@ -126,7 +126,7 @@ function p_login_history_parse()
 end function
 
 # 归档文件解析
-function p_login_archive()
+function p_login_history_archive()
    define h,i,j       integer
    define child   varchar(1000)
    
@@ -170,7 +170,7 @@ end function
 function p_login_history_read(p_file)
    define p_file  varchar(200)
    define p_date  date
-   define l_line  integer
+   define l_line,i,l_lastLine  integer
    
    define l_str   string
    define l_temp  varchar(100)
@@ -188,26 +188,27 @@ function p_login_history_read(p_file)
       seq    decimal(5),
       cnt    decimal(10)
    end record
+   define l_dat date 
 
    if p_file == g_file then
+      let l_size = p_login_history_cmd('stat -c %s '||sfmt('%1/%2',g_path,p_file))
       initialize l_offset.* to null
-      select dat,siz,line into l_offset.dat,l_offset.siz,l_offset.line
+      select hdat,siz,line into l_offset.dat,l_offset.siz,l_offset.line
         from login_offset where filename = g_file
       if sqlca.sqlcode or cl_null(l_offset.line) then
          let l_line = 0
       else
          # 实时日志，如果 1.第一行日期变了 2.size变小 行数重置为0
          # 日期判断
-         let l_str = p_login_cmd('head -n 1 '||sfmt('%1/%2',g_path,p_file))
+         let l_str = p_login_history_cmd('head -n 1 '||sfmt('%1/%2',g_path,p_file))
          
          initialize l_history.* to null
-         call p_login_getdate(l_str) returning l_history.ip,l_history.dat,l_history.tim
+         call p_login_history_getdate(l_str) returning l_history.ip,l_history.dat,l_history.tim
          if cl_null(l_offset.dat) or l_history.dat != l_offset.dat then
             let l_line = 0
          else
             # size 判断
-            let l_size = p_login_cmd('stat -c %s '||sfmt('%1/%2',g_path,p_file))
-            if l_size <> l_offset.siz or cl_null(l_offset.siz) then
+            if l_size < l_offset.siz or cl_null(l_offset.siz) then
                let l_line = 0
             else
                # 否则从上次行数开始
@@ -224,16 +225,16 @@ function p_login_history_read(p_file)
       end if
       # 判断末行日期是否早于解析日期，是的话不处理
       initialize l_history.* to null
-      let l_str = p_login_cmd('tail -n 1 '||sfmt('%1/%2',g_path,p_file))
-      call p_login_getdate(l_str) returning l_history.ip,l_history.dat,l_history.tim
+      let l_str = p_login_history_cmd('tail -n 1 '||sfmt('%1/%2',g_path,p_file))
+      call p_login_history_getdate(l_str) returning l_history.ip,l_history.dat,l_history.tim
       
       if l_history.dat < l_offset.dat then
          return
       end if
       # 判断首行是否晚于解析日期，是的话，全部处理
       initialize l_history.* to null
-      let l_str = p_login_cmd('head -n 1 '||sfmt('%1/%2',g_path,p_file))
-      call p_login_getdate(l_str) returning l_history.ip,l_history.dat,l_history.tim
+      let l_str = p_login_history_cmd('head -n 1 '||sfmt('%1/%2',g_path,p_file))
+      call p_login_history_getdate(l_str) returning l_history.ip,l_history.dat,l_history.tim
       
       if l_history.dat > l_offset.dat then
          let l_line = 0
@@ -249,7 +250,7 @@ function p_login_history_read(p_file)
                            year(l_offset.dat) using '&&&&',
                            l_offset.tim[1,2],
                            sfmt("%1/%2",g_path,p_file) )
-            let l_line = p_login_cmd(l_str)
+            let l_line = p_login_history_cmd(l_str)
             if cl_null(l_line) then
                let l_line = 0
             end if
@@ -260,33 +261,45 @@ function p_login_history_read(p_file)
    # 将文件符合的行抓取到文件~/output.txt 中
    -- grep 'GET /gas/ja/r/gdc-tiptop-udm-intranet' /etc/httpd/logs/ssl_access_log-20251102 >> output.log
    -- tail -n +100001 /etc/httpd/logs/ssl_access_log-20251102 | grep 'GET /gas/ja/r/gdc-tiptop-udm-intranet' >> /u1/usr/tiptop/output.txt
-   let l_line = p_login_cmd('wc -l < '||sfmt("%1/%2",g_path,p_file))
+   let l_lastLine = p_login_history_cmd('wc -l < '||sfmt("%1/%2",g_path,p_file))
    let l_str =  "/u1/usr/tiptop/parse.sh ",l_line," ",sfmt("%1/%2",g_path,p_file)," ","/u1/usr/tiptop/output.txt"
    run l_str 
 
-   call p_login_ins()
+   call p_login_history_ins()
+   let l_dat = l_history.dat
+   -- 最后一行
+   initialize l_history.* to null
+   let l_str = p_login_history_cmd('tail -n 1 '||sfmt('%1/%2',g_path,p_file))
+   call p_login_history_getdate(l_str) returning l_history.ip,l_history.dat,l_history.tim
 
    if p_file = g_file then
       # 这是实时日志
       # 第一行的日期
       # 最后一行的行数
-      insert into login_offset (filename,line,siz,dat,tim)
-       values(p_file,l_line,l_size,l_history.dat,'')
+
+      select count(*) into i from login_offset
+       where filename = p_file
+      if i > 0 then
+         update login_offset
+            set line = l_lastLine,
+                siz = l_size,
+                dat =  l_history.dat,
+                tim = l_history.tim,
+                hdat = l_dat
+         where filename = p_file
+      else
+         insert into login_offset(filename,line,siz,dat,tim,hdat)
+         values(p_file,l_lastLine,l_size,l_history.dat,l_history.tim,l_dat)
+      end if
    else
       # 归档日志
-      initialize l_history.* to null
-      let l_str = p_login_cmd('tail -n 1 '||sfmt('%1/%2',g_path,p_file))
-      call p_login_getdate(l_str) returning l_history.ip,l_history.dat,l_history.tim
-
-      insert into login_offset (filename,line,siz,dat,tim)
+      insert into login_offset(filename,line,siz,dat,tim)
        values(p_file,0,0,l_history.dat,l_history.tim)
    end if
-
-
 end function
 
 # 命令单行结果
-function p_login_cmd(p_cmd)
+function p_login_history_cmd(p_cmd)
    define p_cmd,ls_result           string
    define l_channel                 base.Channel
 
@@ -300,7 +313,7 @@ function p_login_cmd(p_cmd)
 end function
 
 # 从字符串获取ip、日期、时间
-function p_login_getdate(p_str)
+function p_login_history_getdate(p_str)
    define p_str string
    define l_ip     varchar(20)
    define l_dat    date
@@ -324,12 +337,12 @@ function p_login_getdate(p_str)
    let l_tim = l_temp[13,20]
    let l_temp = l_temp[1,11]
 
-   let l_dat = mdy(p_login_getmonth(l_temp[4,7]),l_temp[1,2],l_temp[8,11])
+   let l_dat = mdy(p_login_history_getmonth(l_temp[4,7]),l_temp[1,2],l_temp[8,11])
 
    return l_ip,l_dat,l_tim
 end function
 
-function p_login_getmonth(p_str)
+function p_login_history_getmonth(p_str)
    define p_str varchar(3)
 
    case p_str
@@ -362,23 +375,15 @@ function p_login_getmonth(p_str)
    end case
 end function
 
-# 时间转为第几个5分钟
-function p_login_minute_seq(p_str)
-   define p_str    varchar(10)
-   define l_seq    decimal(5)
-   define l_cnt    decimal(5)
-
-   -- 03:18:04
-   
-   let l_cnt = p_str[1,2] * 60 + p_str[4,5]
-   let l_seq = l_cnt / 5 + 1
-
-   return l_seq
-end function
-
 # 将文件内容解析并插入到数据库
-function p_login_ins()
+function p_login_history_ins()
    define l_history record
+      ip    varchar(20),
+      dat   date,
+      seq   decimal(5),
+      cnt   decimal(10)
+   end record
+   define l_old record
       ip    varchar(20),
       dat   date,
       seq   decimal(5),
@@ -387,8 +392,9 @@ function p_login_ins()
    define l_channel     base.Channel
    define l_str         string
    define l_tok         base.StringTokenizer
+   define i             integer
 
-   declare history_cur cursor for insert into login_history values (l_history.*)
+   declare history_cur cursor with hold for insert into login_history values (l_history.*)
    begin work
    open history_cur
 
@@ -405,7 +411,23 @@ function p_login_ins()
       let l_history.dat = l_tok.nextToken()
       let l_history.seq = l_tok.nextToken()
       let l_history.cnt = l_tok.nextToken()
-      put history_cur
+
+      initialize l_old.* to null
+      select * into l_old.* from login_history
+       where ip = l_history.ip
+         and dat = l_history.dat
+         and seq = l_history.seq
+      if not cl_null(l_old.ip) then
+         if l_history.cnt > l_old.cnt then
+            update login_history
+               set cnt = l_history.cnt
+             where ip = l_history.ip
+               and dat = l_history.dat
+               and seq = l_history.seq 
+         end if
+      else
+         put history_cur
+      end if
       if sqlca.sqlcode then
          exit while
       end if
