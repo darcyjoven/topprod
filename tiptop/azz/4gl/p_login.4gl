@@ -12,40 +12,49 @@ GLOBALS "../../config/top.global"
 
 
 # 资料定义 s---
-type tree record
-   parent      varchar(20),   -- 父亲节点
-   item        varchar(20),   -- 节点（部门、账号、作业编号）
-   descripe    string,        -- 节点名称 
-   children    boolean,       -- 是否含子节点
-   expand      boolean,       -- 展开否
-   level       integer,       -- 层级
-   path        string,        -- 路径
-   --- 
-   cnt         integer,       -- 计数
-   pid         varchar(10),   -- 进程pid
-   btime       varchar(20),   -- 开始时间
-   duration    varchar(20)    -- 耗时
+type group1 record
+   gem01    like gem_file.gem01,
+   gem02    like gem_file.gem02,
+   zyw01    like zyw_file.zyw01,
+   zyw02    like zyw_file.zyw02,
+   gbo02    like gbo_file.gbo02,
+   gbo03    integer,
+   right    integer
 end record
--- 登录时长统计
-type used record
-   gen01       varchar(10),
-   gen02       varchar(20),
-   gem01       varchar(10),
-   gem02       varchar(40),
-   stime       decimal(15,3), -- 登录时长
-   sday        integer        -- 登录天数
+type gen record
+   gen01     varchar(10),
+   gen02     varchar(100),
+   ip        varchar(20),
+   dat       date,
+   tim       varchar(10)
 end record
-type login record
-   ip       varchar(20),
-   dat      date,
-   seq      decimal(5),
-   cnt      decimal(10)
+type process record
+   chk         boolean,
+   pid         varchar(20),
+   shell       varchar(1000),
+   dat_1       date,
+   tim_1       varchar(10)
+end record
+type license  record
+      uuid      varchar(40),
+      dat       date,
+      ip        varchar(20),
+      pid       varchar(10),
+      startdat  date,
+      starttim  varchar(10),
+      cmd       varchar(1000)
 end record
 # 资料定义 e---
 
 # s ---
 define g_path     varchar(1000)
 define g_file     varchar(100)
+define g_cnt,l_ac       integer
+define g_group     dynamic array of group1
+define g_gen       dynamic array of gen
+define g_process   dynamic array of process
+define g_uuid      varchar(40)
+define g_flag      varchar(10)
 # e ---
 
 MAIN
@@ -65,13 +74,14 @@ MAIN
  
    call cl_used(g_prog, g_time, 1) returning g_time 
  
-   -- open window p_login_w with form "azz/42f/p_login" 
-   --      attribute(style=g_win_style clipped)
-   -- call cl_ui_init()
+   open window p_login_w with form "azz/42f/p_login" 
+        attribute(style=g_win_style clipped)
+   call cl_ui_init()
    
-   -- close window p_login_w
-   call p_login_history_parse()
+   call p_login_license()
+   -- call p_login_history_parse()
 
+   close window p_login_w
    call cl_used(g_prog, g_time, 2) returning g_time 
 END MAIN
 
@@ -81,13 +91,265 @@ end function
 
 # license 占用进程
 function p_login_license()
-   # 授权占用 登录时长
 
-   # 明细
-   # 部门合计
+   while true
+      call p_login_license_parse()
+      call p_login_license_bp()
+       
+      if g_action_choice = 'exit' then
+         exit while
+      end if
+   end while
 
-   # 授权人数 vs 登录人数 
 end function
+
+function p_login_license_bp()
+   dialog attributes(unbuffered)
+      display array g_group to s_group.*
+         before row
+            let l_ac = arr_curr()
+         after row
+            call p_login_license_fill_gen(g_uuid,g_group[l_ac].gem01)
+      end display
+
+      display array g_gen to s_gen.*
+         before row
+            let l_ac = arr_curr()
+         after row
+            call p_login_license_fill_process(g_uuid,g_gen[l_ac].gen01)
+      end display
+
+      input array g_process from s_process.* attribute(count=1,maxcount=g_max_rec,
+                                                       insert row=false,delete row=false,append row=false)
+
+      end input
+
+      on action kill
+         call p_login_license_kill()
+         continue dialog
+      on action page2
+         let g_flag = 'page2'
+         exit dialog
+      on action page3
+         let g_flag = 'page3'
+         exit dialog
+
+      on action help
+         call cl_show_help()
+         continue dialog
+      on action exit
+         let g_action_choice="exit"
+         exit dialog
+      on action controlg
+         call cl_cmdask()
+         continue dialog
+      on idle g_idle_seconds
+         call cl_on_idle()
+         continue dialog
+      on action close
+         let g_action_choice = 'close'
+         exit dialog
+
+
+   end dialog
+end function
+
+function p_login_license_kill()
+   define i integer
+   define l_cmd  string
+
+   for i = 1 to g_process.getLength()
+      let l_cmd = 'kill -9 ', g_process[i].pid
+      run l_cmd
+   end for
+   call p_login_license_fill_group(g_uuid)
+   message "已结束"
+end function
+
+function p_login_license_parse()
+   define   l_sql,l_cmd,l_str,l_temp    string
+   define   l_channel     base.Channel
+   define   l_tok,l_tok1         base.StringTokenizer
+   define   l_license     license
+   define   l_hostname    varchar(1000)
+   define   l_usr         varchar(100)
+   define   l_day,l_month,l_year,i  integer
+
+   let l_cmd = "/u1/usr/tiptop/license/parse.sh > /u1/usr/tiptop/output.txt"
+   run l_cmd
+
+   let l_channel = base.channel.create()
+   call l_channel.openfile("/u1/usr/tiptop/output.txt","r")
+
+   initialize l_license.* to null
+      -- uuid      varchar(40),
+      -- dat       date,
+      -- ip        varchar(20),
+      -- pid       varchar(10),
+      -- startdat  date,
+      -- starttim  varchar(10),
+      -- cmd       varchar(1000)
+   let l_license.uuid = cs_uuid()
+   let g_uuid = l_license.uuid
+   let l_license.dat = g_today
+
+   begin work
+   let g_success = 'Y'
+   while true
+      let l_str = l_channel.readline()
+      if l_channel.iseof() then
+         exit while
+      end if
+      -- 192.168.2.224;FLY-PC-0002-PC;yuanliaocang;25657
+      message l_str
+
+      let l_tok = base.StringTokenizer.create(l_str, ';')
+      let l_license.ip = l_tok.nextToken()
+      let l_hostname = l_tok.nextToken()
+      let l_usr = l_tok.nextToken()
+      let l_license.pid = l_tok.nextToken()
+      
+      let l_temp = p_login_cmd(sfmt("ps -p %1 -o lstart --no-headers",l_license.pid))
+      -- Mon Dec  1 15:01:38 2025
+      let l_tok1 = base.StringTokenizer.create(l_temp, ' ')
+      let l_license.starttim = l_tok1.nextToken()
+      let l_month = p_login_getmonth(l_tok1.nextToken())
+      let l_day = l_tok1.nextToken()
+      let l_license.starttim = l_tok1.nextToken()
+      let l_year = l_tok1.nextToken()
+      let l_license.startdat = mdy(l_month, l_day, l_year)      
+      
+      let l_license.cmd = p_login_cmd(sfmt("ps -p %1 -o cmd --no-headers",l_license.pid))
+      insert into login_license (uuid,dat,ip,pid,startdat,starttim,cmd)
+      values (l_license.uuid,l_license.dat,l_license.ip,l_license.pid,l_license.startdat,l_license.starttim,l_license.cmd)
+      if sqlca.sqlcode then
+         let g_success = 'N'
+         call cl_err('ins license',sqlca.sqlcode,1)
+         goto _error
+      end if
+
+      select count(*) into i from login_ip where ip = l_license.ip
+      if i > 0 then
+         update login_ip set usr = l_usr,hostname = l_hostname where ip = l_license.ip
+      else
+         insert into login_ip (ip,usr,hostname) values(l_license.ip,l_usr,l_hostname)
+      end if
+      if sqlca.sqlcode then
+         let g_success = 'N'
+         call cl_err('ins ip',sqlca.sqlcode,1)
+         goto _error
+      end if
+   end while
+
+   delete from login_gbq
+   insert into login_gbq select * from gbq_file
+
+   label _error:
+   if g_success = 'N' then
+      rollback work
+   else
+      commit work
+   end if
+
+   call p_login_license_fill_group(l_license.uuid)
+
+end function
+function p_login_license_fill_group(p_uuid)
+   define   p_uuid      varchar(40) 
+   define   l_sql       string
+
+   let l_sql = " select gem01,gem02,zyw01,zyw02,gbo02,gbo03,count(unique ip) cnt",
+               "   from login_license",
+               "   left join login_gbq on pid = gbq01",
+               "   left join zyw_file on zyw03 = gbq05",
+               "   left join gem_file on gbq05 = gem01",
+               "   left join gbo_file on gbo01 =  zyw01 ",
+               "  where uuid = ? ",
+               "  group by gem01,gem02,zyw01,zyw02,gbo02,gbo03",
+               " order by gem01"
+   prepare p_login_fill from l_sql
+   declare p_login_fill_cur cursor for p_login_fill
+
+   let g_cnt = 1
+   call g_group.clear()
+   foreach p_login_fill_cur using p_uuid into g_group[g_cnt].*
+      if sqlca.sqlcode then
+         call cl_err('p_login_fill',sqlca.sqlcode,1)
+         exit foreach
+      end if
+      let g_cnt = g_cnt + 1
+   end foreach
+   call g_group.deleteElement(g_cnt)
+   let g_cnt = g_cnt - 1
+
+   if g_cnt > 0 then
+      call p_login_license_fill_gen(p_uuid,g_group[1].gem01)
+   end if
+
+end function
+function p_login_license_fill_gen(p_uuid,p_gem01)
+   define l_sql   string
+   define p_uuid,p_gem01   varchar(40)
+
+   let l_sql = "select gbq03,zx02,ip,min(startdat) mindat,",
+               "        MIN(starttim) KEEP (DENSE_RANK FIRST ORDER BY startdat, starttim) AS mintim",
+               "  from login_license",
+               "  left join gbq_file on pid = gbq01",
+               "  left join zx_file on zx01 = gbq03",
+               "  left join zyw_file on zyw03 = gbq05",
+               "  left join gem_file on gbq05 =gem01",
+               "  left join gbo_file on gbo01 =  zyw01 ",
+               " where uuid = '",p_uuid,"' and gem01 = '",p_gem01,"'",
+               " group by gbq03,zx02,ip",
+               " order by gbq03"
+   prepare p_login_fill2 from l_sql
+   declare p_login_fill2_cur cursor for p_login_fill2
+   
+   let g_cnt = 1
+   call g_gen.clear()
+   foreach p_login_fill2_cur into g_gen[g_cnt].*
+      if sqlca.sqlcode then
+         call cl_err('p_login_fill2',sqlca.sqlcode,1)
+         exit foreach
+      end if
+      let g_cnt = g_cnt + 1
+   end foreach
+   call g_gen.deleteElement(g_cnt)
+   let g_cnt = g_cnt - 1
+   if g_cnt > 0 then
+      call p_login_license_fill_process(p_uuid,g_gen[1].gen01)
+   end if
+end function
+
+function p_login_license_fill_process(p_uuid,p_gen01)
+   define    l_sql    string
+   define    p_uuid,p_gen01    varchar(40)
+
+   let l_sql = " select 'Y',pid,cmd, startdat,starttim ",
+               "  from login_license",
+               "  left join gbq_file on pid = gbq01",
+               "  left join zx_file on zx01 = gbq03",
+               "  left join zyw_file on zyw03 = gbq05",
+               "  left join gem_file on gbq05 =gem01",
+               "  left join gbo_file on gbo01 =  zyw01 ",
+               " where uuid = '",p_uuid,"' and gbq03 = '",p_gen01,"' ",
+               "  order by startdat,starttim"
+   prepare p_login_fill3 from l_sql
+   declare p_login_fill3_cur cursor for p_login_fill3
+   
+   let g_cnt = 1
+   call g_process.clear()
+   foreach p_login_fill3_cur into g_process[g_cnt].*
+      if sqlca.sqlcode then
+         call cl_err('p_login_fill3',sqlca.sqlcode,1)
+         exit foreach
+      end if
+      let g_cnt = g_cnt + 1
+   end foreach
+   call g_process.deleteElement(g_cnt)
+   let g_cnt = g_cnt - 1
+end function
+
 
 # runtime 运行时长统计 p_used
 function p_login_runtime()
@@ -191,7 +453,7 @@ function p_login_history_read(p_file)
    define l_dat date 
 
    if p_file == g_file then
-      let l_size = p_login_history_cmd('stat -c %s '||sfmt('%1/%2',g_path,p_file))
+      let l_size = p_login_cmd('stat -c %s '||sfmt('%1/%2',g_path,p_file))
       initialize l_offset.* to null
       select hdat,siz,line into l_offset.dat,l_offset.siz,l_offset.line
         from login_offset where filename = g_file
@@ -200,7 +462,7 @@ function p_login_history_read(p_file)
       else
          # 实时日志，如果 1.第一行日期变了 2.size变小 行数重置为0
          # 日期判断
-         let l_str = p_login_history_cmd('head -n 1 '||sfmt('%1/%2',g_path,p_file))
+         let l_str = p_login_cmd('head -n 1 '||sfmt('%1/%2',g_path,p_file))
          
          initialize l_history.* to null
          call p_login_history_getdate(l_str) returning l_history.ip,l_history.dat,l_history.tim
@@ -225,7 +487,7 @@ function p_login_history_read(p_file)
       end if
       # 判断末行日期是否早于解析日期，是的话不处理
       initialize l_history.* to null
-      let l_str = p_login_history_cmd('tail -n 1 '||sfmt('%1/%2',g_path,p_file))
+      let l_str = p_login_cmd('tail -n 1 '||sfmt('%1/%2',g_path,p_file))
       call p_login_history_getdate(l_str) returning l_history.ip,l_history.dat,l_history.tim
       
       if l_history.dat < l_offset.dat then
@@ -233,7 +495,7 @@ function p_login_history_read(p_file)
       end if
       # 判断首行是否晚于解析日期，是的话，全部处理
       initialize l_history.* to null
-      let l_str = p_login_history_cmd('head -n 1 '||sfmt('%1/%2',g_path,p_file))
+      let l_str = p_login_cmd('head -n 1 '||sfmt('%1/%2',g_path,p_file))
       call p_login_history_getdate(l_str) returning l_history.ip,l_history.dat,l_history.tim
       
       if l_history.dat > l_offset.dat then
@@ -250,7 +512,7 @@ function p_login_history_read(p_file)
                            year(l_offset.dat) using '&&&&',
                            l_offset.tim[1,2],
                            sfmt("%1/%2",g_path,p_file) )
-            let l_line = p_login_history_cmd(l_str)
+            let l_line = p_login_cmd(l_str)
             if cl_null(l_line) then
                let l_line = 0
             end if
@@ -261,15 +523,15 @@ function p_login_history_read(p_file)
    # 将文件符合的行抓取到文件~/output.txt 中
    -- grep 'GET /gas/ja/r/gdc-tiptop-udm-intranet' /etc/httpd/logs/ssl_access_log-20251102 >> output.log
    -- tail -n +100001 /etc/httpd/logs/ssl_access_log-20251102 | grep 'GET /gas/ja/r/gdc-tiptop-udm-intranet' >> /u1/usr/tiptop/output.txt
-   let l_lastLine = p_login_history_cmd('wc -l < '||sfmt("%1/%2",g_path,p_file))
-   let l_str =  "/u1/usr/tiptop/parse.sh ",l_line," ",sfmt("%1/%2",g_path,p_file)," ","/u1/usr/tiptop/output.txt"
+   let l_lastLine = p_login_cmd('wc -l < '||sfmt("%1/%2",g_path,p_file))
+   let l_str =  "/u1/usr/tiptop/http/parse.sh ",l_line," ",sfmt("%1/%2",g_path,p_file)," ","/u1/usr/tiptop/output.txt"
    run l_str 
 
    call p_login_history_ins()
    let l_dat = l_history.dat
    -- 最后一行
    initialize l_history.* to null
-   let l_str = p_login_history_cmd('tail -n 1 '||sfmt('%1/%2',g_path,p_file))
+   let l_str = p_login_cmd('tail -n 1 '||sfmt('%1/%2',g_path,p_file))
    call p_login_history_getdate(l_str) returning l_history.ip,l_history.dat,l_history.tim
 
    if p_file = g_file then
@@ -299,7 +561,7 @@ function p_login_history_read(p_file)
 end function
 
 # 命令单行结果
-function p_login_history_cmd(p_cmd)
+function p_login_cmd(p_cmd)
    define p_cmd,ls_result           string
    define l_channel                 base.Channel
 
@@ -337,12 +599,12 @@ function p_login_history_getdate(p_str)
    let l_tim = l_temp[13,20]
    let l_temp = l_temp[1,11]
 
-   let l_dat = mdy(p_login_history_getmonth(l_temp[4,7]),l_temp[1,2],l_temp[8,11])
+   let l_dat = mdy(p_login_getmonth(l_temp[4,7]),l_temp[1,2],l_temp[8,11])
 
    return l_ip,l_dat,l_tim
 end function
 
-function p_login_history_getmonth(p_str)
+function p_login_getmonth(p_str)
    define p_str varchar(3)
 
    case p_str
@@ -497,3 +759,36 @@ end function
 -- }' | sort > "$OUTPUT_FILE"
 
 -- echo "处理完成，结果已写入: $OUTPUT_FILE"
+
+
+-- fglWrt -a info users | awk '
+-- function flush() {
+--     if (proc_id != "" && user != "" && host_addr != "" && host_name != "") {
+--         print host_addr ";" host_name ";" user ";" proc_id
+--     }
+--     user = ""; host_addr = ""; host_name = ""; proc_id = ""
+-- }
+
+-- /^[[:space:]]*GUI Server [0-9.:]+ - Process Id [0-9]+/ {
+--     flush()
+--     # 提取 Process Id：最后一个字段就是 PID
+--     proc_id = $NF
+--     next
+-- }
+
+-- proc_id != "" && /^[[:space:]]+user-name:[[:space:]]+/ {
+--     sub(/^[[:space:]]+user-name:[[:space:]]+/, "")
+--     user = $0
+-- }
+-- proc_id != "" && /^[[:space:]]+host-addr:[[:space:]]+/ {
+--     sub(/^[[:space:]]+host-addr:[[:space:]]+/, "")
+--     host_addr = $0
+-- }
+-- proc_id != "" && /^[[:space:]]+host-name:[[:space:]]+/ {
+--     sub(/^[[:space:]]+host-name:[[:space:]]+/, "")
+--     host_name = $0
+-- }
+
+-- END {
+--     flush()
+-- }'
