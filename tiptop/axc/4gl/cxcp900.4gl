@@ -1038,7 +1038,7 @@ FUNCTION p900_p_4()  #更新库存杂项入库、样品入库数量、金额；�
   EXECUTE p900_p1 
 
   #更新库存杂项出库数量  ta_ccc41
- UPDATE ta_ccp_file SET ta_ccc41=(SELECT SUM(tlf10*TLF907)
+ UPDATE ta_ccp_file SET ta_ccc41=(SELECT SUM(tlf10*TLF907*tlf60)
   FROM tlf_file  WHERE tlf13 IN ('aimt301','aimt303','aimt311','aimt313') AND INSTR(tlf01,'-')=0
   AND to_char(tlf06,'yyyyMM')= TO_CHAR(to_date(tm.yy||tm.mm,'yyyyMM'),'yyyyMM')
   AND tlf902 NOT IN( SELECT jce02 FROM jce_file WHERE jceacti='Y')
