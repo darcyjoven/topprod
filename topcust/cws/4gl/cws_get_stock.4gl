@@ -10,10 +10,16 @@ GLOBALS "../../config/top.global"
 GLOBALS "../../../tiptop/aws/4gl/aws_ttsrv_global.4gl"
 GLOBALS "../../../tiptop/aws/4gl/aws_ttsrv2_global.4gl"
 
-define l_return dynamic array of record
+# ---
+define l_p001 dynamic array of record
     img01   varchar(20),
     img10   decimal(15,3)
 end record
+define l_issue record
+    uuid     varchar(40)
+end record
+# ---
+
 define g_type   varchar(200)
 define l_user   varchar(200)
 define l_k integer
@@ -43,7 +49,7 @@ function cws_get_stock_process()
     define l_sql    string #darcy:2024/07/26 add
 
     let g_success = 'Y' 
-    call l_return.clear()
+    call l_p001.clear()
     let l_cnt1 = aws_ttsrv_getMasterRecordLength("GetStock") 
     if l_cnt1 = 0 then
        let g_status.code = "-1"
@@ -60,12 +66,21 @@ function cws_get_stock_process()
         case g_type
             when "P001"
                 call cws_get_stock_p001()
+            when 'issue'
+                initialize l_issue.* to null
+                call cws_get_stock_issue()
             otherwise
                 let g_status.code = "-1"
                 let g_status.description = "no recordset processed!"
         end case
         let l_node = aws_ttsrv_addMasterRecord(base.TypeInfo.create(g_status), "Master")
-        call aws_ttsrv_addDetailRecord(l_node,base.TypeInfo.create(l_return),"Detail")
+        case g_type
+            when "P001"
+                call aws_ttsrv_addDetailRecord(l_node,base.TypeInfo.create(l_p001),"Detail")
+            when 'issue'
+            otherwise 
+        end case 
+        
     end for
 end function
 
@@ -82,7 +97,7 @@ function cws_get_stock_p001()
          group by img01
 
     let i = 1
-    foreach get_stock_p001_c into l_return[i].*
+    foreach get_stock_p001_c into l_p001[i].*
         if sqlca.sqlcode then
             let g_success = 'N'
             let g_status.code = "-1"
@@ -91,5 +106,28 @@ function cws_get_stock_p001()
         end if
         let i = i + 1
     end foreach
-    call l_return.deleteElement(i)
+    call l_p001.deleteElement(i)
 end function
+
+# darcy:2025/11/25 add s---
+# 领用明细
+function cws_get_stock_issue()
+    define l_cmd    string
+
+    -- insert into  material_issue(uuid,gen_dat,item_no,dat,tim,doc_no,seq,reason,doc_source,wo_no,usr,part,price,price_source,qty,unit,amt,typ ) 
+
+
+    if cl_null(l_issue.uuid) then
+        let l_issue.uuid = cs_uuid()
+    end if
+
+    let l_cmd = "echo '",l_issue.uuid,"' >> /u1/out/darcy.txt"
+    run  l_cmd
+
+    let l_cmd = "cimq025 ",l_issue.uuid
+
+    call cl_cmdrun(l_cmd)
+
+    let g_status.description =  l_issue.uuid        
+end function
+# darcy:2025/11/25 add e---
