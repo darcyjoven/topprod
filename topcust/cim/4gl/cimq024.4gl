@@ -12,6 +12,7 @@ type img        record
     ima02           like ima_file.ima02,
     ima021          like ima_file.ima021,
     img02           like img_file.img02,
+    imd02           like imd_file.imd02,
     img03           like img_file.img03,
     img04           like img_file.img04,
     img09           like img_file.img09,
@@ -405,8 +406,9 @@ function cimq024_fill(p_wc)
     -- g_supppart ,g_supppart_excel 
 
     #Step1. 库存资料
-    let g_sql = " select img01,ima02,ima021,img02,img03,img04,img09,img10,img37,trunc(sysdate)-img37 stale ,img18,ccc23,amt,remark ",
-                "   from tc_imi_file where tc_imi01 =  '",g_tc_imi.tc_imi01,"'",
+    let g_sql = " select img01,ima02,ima021,img02,imd02,img03,img04,img09,img10,img37,trunc(sysdate)-img37 stale ,img18,ccc23,amt,remark ",
+                "   from tc_imi_file,imd_file where tc_imi01 =  '",g_tc_imi.tc_imi01,"'",
+                "    and img02 = imd01 ",
                 "    and ",p_wc clipped,
                 " order by img01,img02,img03,img04"
     prepare cimq024_fill1 from g_sql
