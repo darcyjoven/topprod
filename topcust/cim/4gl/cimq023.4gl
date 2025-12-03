@@ -439,7 +439,7 @@ function cimq023_fill(p_wc1,p_wc2)
     declare cimq023_total_fill cursor for
         select item,inamt,stockamt,
                (case inamt when 0 then 0 else stockamt/inamt end)*100 stockpercent,
-               outamt,(case inamt when 0 then 0 else stockamt/inamt end)*100 outpercent,
+               outamt,(case inamt when 0 then 0 else outamt/inamt end)*100 outpercent,
                firstin,firstout,lastout
           from SampleInOutItem_file order by item
     call g_total.clear()
