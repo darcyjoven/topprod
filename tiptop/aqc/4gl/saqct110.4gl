@@ -11910,3 +11910,218 @@ FUNCTION t110sub_chk_ima(p_qcs01,p_qcs02,p_qcs05,p_type)
 END FUNCTION
 #DEV-D40015 add end--------
  
+
+# darcy:2025/11/28 add s---
+# 验退跟随前项次
+function saqct110_follow(p_qcs01,p_qcs02,p_qcs05,p_tran)
+   define p_qcs01,l_qcs01        like qcs_file.qcs01
+   define p_qcs02,l_qcs02        like qcs_file.qcs02
+   define p_qcs05,l_qcs05        like qcs_file.qcs05
+   define l_qcs021               like qcs_file.qcs021
+   define l_qcs14                like qcs_file.qcs14  
+   define p_tran                 boolean
+
+   select qcs021,qcs14 into l_qcs021,l_qcs14 from qcs_file
+    where qcs01 = p_qcs01 and qcs02 = p_qcs02 and qcs05 = p_qcs05
+   if sqlca.sqlcode or cl_null(l_qcs021) then
+      return
+   end if
+
+   # 找一笔不是验退状态记录
+   select qcs01,qcs02,qcs05 into l_qcs01,l_qcs02,l_qcs05 from qcs_file
+    where qcs01 = l_qcs01 and qcs02 <> l_qcs02 and qcs09 <> '1'
+      and qcs021 = l_qcs021 and rownum = 1 
+   if sqlca.sqlcode or cl_null(l_qcs01) then
+      return
+   end if
+
+   if not p_tran then
+      begin work
+   end if
+
+   select * from qct_file where qct01 = l_qcs01 and qct02 = l_qcs02 and qct021 = l_qcs05
+     into temp x
+   if sqlca.sqlcode then
+      call cl_err('into temp',sqlca.sqlcode,1)
+      let g_success = 'N'
+      goto _error
+   end if
+
+   update x set qcs01=p_qcs01,qcs02=p_qcs02,qcs05 = p_qcs05
+   if sqlca.sqlcode then
+      call cl_err('upd x',sqlca.sqlcode,1)
+      let g_success = 'N'
+      goto _error
+   end if
+
+   delete from qct_file where qct01 = p_qcs01 and qct02 = p_qcs02 and qct021 = p_qcs05
+   if sqlca.sqlcode then
+      call cl_err('del qct',sqlca.sqlcode,1)
+      let g_success = 'N'
+      goto _error
+   end if
+
+   insert into qct_file select * from x
+   if sqlca.sqlcode then
+      call cl_err('ins qct',sqlca.sqlcode,1)
+      let g_success = 'N'
+      goto _error
+   end if
+
+   # Step1. 判断验证退货
+   call saqct110_return_chk(p_qcs01,p_qcs02,p_qcs05)
+
+   label _error:
+   if g_success = 'Y' then
+      if not p_tran then
+         commit work
+      end if
+   else
+      if not p_tran then
+         rollback work
+      end if
+   end if
+end function
+
+# 验退判断
+function saqct110_return_chk(p_qcs01,p_qcs02,p_qcs05)
+   define p_qcs01        like qcs_file.qcs01
+   define p_qcs02        like qcs_file.qcs02
+   define p_qcs05        like qcs_file.qcs05
+   define l_qcs   record like qcs_file.*
+   define l_cnt,l_numcr,l_numma,l_nummi   integer
+   define l_ima926       like ima_file.ima926
+
+   select * into l_qcs.* from qcs_file where qcs01 = p_qcs01
+    and qcs02 = p_qcs02 and qcs05 = p_qcs05
+
+   let l_cnt=0 let l_numcr=0 let l_numma=0 let l_nummi=0
+ 
+   select count(*) into l_cnt from qct_file
+    where qct01 = p_qcs01
+      and qct02 = p_qcs02
+      and qct021 = p_qcs05
+      and qct08 = '2'
+   
+   select ima918,ima921 into g_ima918,g_ima921
+     from ima_file
+    where ima01 = l_qcs.qcs021
+      and imaacti = "Y"
+
+   if l_cnt > 0 then
+      let l_qcs.qcs09='2'
+      IF g_ima918 = "Y" OR g_ima921 = "Y" THEN
+         IF (g_sma.sma90 = "Y" AND g_argv1='1') OR g_argv1<>'1' THEN
+            IF l_qcs.qcs00 = 'A' OR l_qcs.qcs00 = 'B' THEN
+               UPDATE rvbs_file SET rvbs10 = 0,
+                                    rvbs06 = 0
+                WHERE rvbs00 = g_prog
+                  AND rvbs01 = l_qcs.qcs01
+                  AND rvbs02 = l_qcs.qcs02
+                  AND rvbs13 = l_qcs.qcs05
+                  AND rvbs09 = 1
+            ELSE
+               UPDATE rvbs_file SET rvbs10 = 0
+                  WHERE rvbs00 = g_prog
+                    AND rvbs01 = l_qcs.qcs01
+                    AND rvbs02 = l_qcs.qcs02
+                    AND rvbs13 = l_qcs.qcs05
+                    AND rvbs09 = 1
+            END IF
+         END IF
+      END IF
+   ELSE
+      LET l_qcs.qcs09='1'
+      IF g_ima918 = "Y" OR g_ima921 = "Y" THEN
+         #IF g_sma.sma90 = "Y" THEN   #CHI-A70047
+         IF (g_sma.sma90 = "Y" AND g_argv1='1') OR g_argv1<>'1' THEN   #CHI-A70047 
+            UPDATE rvbs_file SET rvbs10 = rvbs06
+               WHERE rvbs00 = g_prog
+                 AND rvbs01 = l_qcs.qcs01
+                 AND rvbs02 = l_qcs.qcs02
+                 AND rvbs13 = l_qcs.qcs05
+                 AND rvbs09 = 1
+         END IF
+      END IF
+   END IF
+ 
+   #當參數『QC是否卡承認文號(AVL)』='Y',『資料來源』='1'收貨單,
+   #且無承認文號時,『判定結果』只能為『特採』
+   #在判斷qcz13(QC作AVL控管)的地方增加判斷料件是否做AVL管理，兩者都為Y，才檢查
+   SELECT ima926 INTO l_ima926 FROM ima_file 
+      WHERE ima01 = l_qcs.qcs021
+   IF l_qcs.qcs09 = '1' AND g_qcz.qcz13='Y' AND l_ima926 = 'Y'   #FUN-930108 add ima926='Y'
+      AND l_qcs.qcs00 = '1' AND cl_null(l_qcs.qcs10) THEN
+      LET l_qcs.qcs09='3'
+      CALL cl_err('','aqc-051',1)
+   END IF
+ 
+   #--------- CR 不良數
+   SELECT SUM(qct07) INTO l_numcr FROM qct_file
+    WHERE qct01=l_qcs.qcs01
+      AND qct02=l_qcs.qcs02
+      AND qct021=l_qcs.qcs05
+      AND qct05='1'
+   IF l_numcr IS NULL THEN LET l_numcr=0 END IF
+ 
+   SELECT SUM(qct07) INTO l_numma FROM qct_file
+    WHERE qct01=l_qcs.qcs01
+      AND qct02=l_qcs.qcs02
+      AND qct021=l_qcs.qcs05
+      AND qct05='2'
+   IF l_numma IS NULL THEN LET l_numma=0 END IF
+ 
+   SELECT SUM(qct07) INTO l_nummi FROM qct_file
+    WHERE qct01=l_qcs.qcs01
+      AND qct02=l_qcs.qcs02
+      AND qct021=l_qcs.qcs05
+      AND qct05='3'
+   IF l_nummi IS NULL THEN LET l_nummi=0 END IF
+ 
+   LET l_qcs.qcs091=l_qcs.qcs22
+ 
+   LET l_qcs.qcs36 = l_qcs.qcs30
+   LET l_qcs.qcs37 = l_qcs.qcs31
+   LET l_qcs.qcs38 = l_qcs.qcs32
+   LET l_qcs.qcs39 = l_qcs.qcs33
+   LET l_qcs.qcs40 = l_qcs.qcs34
+   LET l_qcs.qcs41 = l_qcs.qcs35
+ 
+   CASE l_qcs.qcs09
+      WHEN '1'
+         CALL cl_getmsg('aqc-004',g_lang) RETURNING des1
+      WHEN '2'
+         CALL cl_getmsg('apm-244',g_lang) RETURNING des1 #No:7706
+         LET l_qcs.qcs091 = 0 #bugno:4135 :2.退貨->合格量=0
+         LET l_qcs.qcs38 = 0  #No.FUN-610075
+         LET l_qcs.qcs41 = 0  #No.FUN-610075
+      WHEN '3'
+         CALL cl_getmsg('aqc-006',g_lang) RETURNING des1
+   END CASE
+ 
+   DISPLAY des1 TO FORMONLY.des1
+   DISPLAY BY NAME l_qcs.qcs091,l_qcs.qcs09,l_qcs.qcs13
+   DISPLAY BY NAME l_qcs.qcs36,l_qcs.qcs37,l_qcs.qcs38   #No.FUN-610075
+   DISPLAY BY NAME l_qcs.qcs39,l_qcs.qcs40,l_qcs.qcs41   #No.FUN-610075
+ 
+   UPDATE qcs_file SET qcs091 = l_qcs.qcs091,
+                       qcs09 = l_qcs.qcs09,
+                       qcs36 = l_qcs.qcs36,   #No.FUN-610075
+                       qcs37 = l_qcs.qcs37,   #No.FUN-610075
+                       qcs38 = l_qcs.qcs38,   #No.FUN-610075
+                       qcs39 = l_qcs.qcs39,   #No.FUN-610075
+                       qcs40 = l_qcs.qcs40,   #No.FUN-610075
+                       qcs41 = l_qcs.qcs41    #No.FUN-610075
+    WHERE qcs01 = l_qcs.qcs01
+      AND qcs02 = l_qcs.qcs02
+      AND qcs05 = l_qcs.qcs05
+
+    IF g_flag = 'Y' THEN
+       LET g_flag = 'N'
+       CALL t110_show()
+       CALL t110_b()
+    END IF
+ 
+    CALL t110_delHeader()
+end function
+# darcy:2025/11/28 add e---

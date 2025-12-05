@@ -112,7 +112,7 @@ end function
 # darcy:2025/11/25 add s---
 # 领用明细
 function cws_get_stock_issue()
-    define l_cmd    string
+    define l_sql    string
 
     -- insert into  material_issue(uuid,gen_dat,item_no,dat,tim,doc_no,seq,reason,doc_source,wo_no,usr,part,price,price_source,qty,unit,amt,typ ) 
 
@@ -121,12 +121,20 @@ function cws_get_stock_issue()
         let l_issue.uuid = cs_uuid()
     end if
 
-    let l_cmd = "echo '",l_issue.uuid,"' >> /u1/out/darcy.txt"
-    run  l_cmd
+    -- let l_cmd = "echo '",l_issue.uuid,"' >> /u1/out/darcy.txt"
+    -- run  l_cmd
 
-    let l_cmd = "cimq025 ",l_issue.uuid
+    -- let l_cmd = "cimq025 ",l_issue.uuid
 
-    call cl_cmdrun(l_cmd)
+    -- call cl_cmdrun(l_cmd)
+    let l_sql = "call cimq025_dbms('",l_issue.uuid,"')"
+    prepare get_stock1 from l_sql
+    execute get_stock1
+    if sqlca.sqlcode then
+        let g_success = 'N'
+        let g_status.code = sqlca.sqlcode
+        let g_status.description = "获取领用明细失败,get_stock_issue"
+    end if
 
     let g_status.description =  l_issue.uuid        
 end function
