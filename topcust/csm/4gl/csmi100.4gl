@@ -870,6 +870,24 @@ define l_msg        string #darcy:2024/11/29
                         DISPLAY g_tc_sma[l_ac].tc_sma02 TO tc_sma02
                         NEXT FIELD tc_sma02
                     # darcy:2025/10/15 add e---
+                    # darcy:2025/12/02 add s---
+                    when 'csmi126'
+                        CALL cl_init_qry_var()
+                        LET g_qryparam.form = "q_ecd3" 
+                        LET g_qryparam.default1 = g_tc_sma[l_ac].tc_sma02
+                        CALL cl_create_qry() RETURNING g_tc_sma[l_ac].tc_sma02 
+                        DISPLAY g_tc_sma[l_ac].tc_sma02 TO tc_sma02
+                        NEXT FIELD tc_sma02
+                    # darcy:2025/12/02 add e---
+                    # darcy:2025/12/05 add s---
+                    when 'csmi127'
+                        CALL cl_init_qry_var()
+                        LET g_qryparam.form = "q_ecd3" 
+                        LET g_qryparam.default1 = g_tc_sma[l_ac].tc_sma02
+                        CALL cl_create_qry() RETURNING g_tc_sma[l_ac].tc_sma02 
+                        DISPLAY g_tc_sma[l_ac].tc_sma02 TO tc_sma02
+                        NEXT FIELD tc_sma02
+                    # darcy:2025/12/05 add e---
                 end case
               
            END CASE
@@ -1235,7 +1253,7 @@ FUNCTION i100_set_dny_combo()
 
     let ps_values = "csmi100,csmi101,csmi102,csmi103,csmi104,csmi105,csmi106,csmi107,csmi108,csmi109,csmi110,csmi111,",
                     "csmi112,csmi113,csmi114,csmi115,csmi116,csmi117,csmi118,csmi119,csmi120,csmi121,csmi122,csmi123,",
-                    "csmi124,csmi125"
+                    "csmi124,csmi125,csmi126,csmi127"
 
     LET tok = base.StringTokenizer.create(ps_values,",")
     let l_ze01 = tok.nextToken()
@@ -1304,6 +1322,8 @@ FUNCTION i100_set_dny_combo()
         when 'csmi123' display '表面处理镍钯金作业编号维护' to lb_msg# darcy:2025/10/15 add
         when 'csmi124' display '库龄统计区间维护，最多维护9个区间' to lb_msg # darcy:2025/11/18 add 
         when 'csmi125' display '料件类型维护作业（IE）' to lb_msg  # darcy:2025/11/20 add
+        when 'csmi126' display '卷料损耗类型设置' to lb_msg  # darcy:2025/11/20 add
+        when 'csmi127' display '卷料损耗--盲孔裁切作业编号设定' to lb_msg  # darcy:2025/11/20 add
     end case
 
     call i100_set_visiable()
@@ -1370,6 +1390,16 @@ function i100_get_tc_sma_desc(p_tc_sma01,p_tc_sma02)
             select gaz03 into l_tc_sma02_desc from gaz_file
              where gaz01 = p_tc_sma02 and gaz02='2'
         # darcy:2025/11/20 add d---
+        # darcy:2025/12/02 add s---
+        when 'csmi126'
+            select ecd02 into l_tc_sma02_desc from ecd_file
+             where ecd01 = p_tc_sma02
+        # darcy:2025/12/02 add e---
+        # darcy:2025/12/05 add s---
+        when 'csmi127'
+            select ecd02 into l_tc_sma02_desc from ecd_file
+             where ecd01 = p_tc_sma02
+        # darcy:2025/12/05 add e---
         otherwise
             let l_tc_sma02_desc = null
     end case
@@ -1693,6 +1723,36 @@ function i100_set_visiable()
             call cl_set_comp_entry("tc_sma06,tc_sma10",true)
             call cl_set_comp_required("tc_sma06",true)
         # darcy:2025/11/20 add e---
+        # darcy:2025/12/02 add s---
+        when 'csmi126'
+            call cl_set_comp_att_text('tc_sma02','作业编号')
+            call cl_set_comp_att_text('tc_sma02_desc','说明')
+            call cl_set_comp_att_text('tc_sma03','项次')
+            call cl_set_comp_att_text('tc_sma04','类型')
+            call cl_set_comp_att_text('tc_sma06','损耗率')
+            call cl_set_combo_items("tc_sma04","1,2,3","类型1,类型2,类型3")
+            -- 是否隐藏
+            call cl_set_comp_visible("tc_sma05,
+                                      tc_sma07,tc_sma08,tc_sma09,tc_sma10,tc_sma11,tc_sma12,tc_sma13,
+                                      tc_sma14,tc_sma15,tc_sma16,tc_sma17,tc_sma18,tc_sma19",false)
+            -- 是否可以录入
+            call cl_set_comp_entry("tc_sma02,tc_sma03,tc_sma04,tc_sma06",true)
+        # darcy:2025/12/02 add e---
+        # darcy:2025/12/05 add s---
+        when 'csmi127'
+            call cl_set_comp_att_text('tc_sma02','作业编号')
+            call cl_set_comp_att_text('tc_sma02_desc','说明')
+            call cl_set_comp_att_text('tc_sma03','项次')
+            call cl_set_comp_att_text('tc_sma04','类型')
+            call cl_set_comp_att_text('tc_sma06','损耗率')
+            call cl_set_combo_items("tc_sma04","1,2,3","盲孔,裁切,新厂裁切")
+            -- 是否隐藏
+            call cl_set_comp_visible("tc_sma05,tc_sma06,
+                                      tc_sma07,tc_sma08,tc_sma09,tc_sma10,tc_sma11,tc_sma12,tc_sma13,
+                                      tc_sma14,tc_sma15,tc_sma16,tc_sma17,tc_sma18,tc_sma19",false)
+            -- 是否可以录入
+            call cl_set_comp_entry("tc_sma02,tc_sma03,tc_sma04",true)
+        # darcy:2025/12/05 add e---
     end case
     
 end function

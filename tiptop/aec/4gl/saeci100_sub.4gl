@@ -23,6 +23,18 @@ function i100sub_upd_bmb09(p_ecu01,p_ecu02)
     define l_sql        string
     define l_token      base.StringTokenizer
 
+    # darcy:2025/12/03 add s---
+    define l_tc_sma06   decimal(15,3)
+    define l_tc_sma04   like tc_sma_file.tc_sma04
+    define l_tc_sma02   like tc_sma_file.tc_sma02
+    define i      integer
+    # darcy:2025/12/03 add e---
+    # darcy:2025/12/05 add s---
+    define l_sql1,l_sql2,l_sql3        varchar(4000)
+    define l_typ                       varchar(1)
+    # darcy:2025/12/05 add e---
+    
+
     let g_success = 'Y'
 
     if p_ecu01 is null then
@@ -97,21 +109,108 @@ function i100sub_upd_bmb09(p_ecu01,p_ecu02)
                 exit foreach
             end if
         end while
-        #darcy:2023/06/15 add s---
-        # 根据csmi103设置更新损耗率
-        let l_sql = "MERGE INTO bmb_file USING (",
-                    " SELECT tc_sma02,tc_sma06 FROM tc_sma_file WHERE tc_sma01='csmi103' AND tc_sma20='Y' AND tc_sma06>0",
-                    " ) ON (bmb09 = tc_sma02 and bmb01 = ? and bmb19 = '1')", #darcy:2024/03/05 add bmb19 ='1' 只有原材料才需要设置损耗率
-                    " WHEN MATCHED THEN UPDATE SET bmb08 = tc_sma06"
-        prepare i100sub_bmb_upd2 from l_sql
-        execute i100sub_bmb_upd2 using p_ecu01
+    end foreach
+    #darcy:2023/06/15 add s---
+    # 根据csmi103设置更新损耗率
+    let l_sql = "MERGE INTO bmb_file USING (",
+                " SELECT tc_sma02,tc_sma06 FROM tc_sma_file WHERE tc_sma01='csmi103' AND tc_sma20='Y' AND tc_sma06>0",
+                " ) ON (bmb09 = tc_sma02 and bmb01 = ? and bmb19 = '1')", #darcy:2024/03/05 add bmb19 ='1' 只有原材料才需要设置损耗率
+                " WHEN MATCHED THEN UPDATE SET bmb08 = tc_sma06"
+    prepare i100sub_bmb_upd2 from l_sql
+    execute i100sub_bmb_upd2 using p_ecu01
+    if sqlca.sqlcode then
+        call cl_err3("i100sub_bmb_upd2","bmb_file",p_ecu01,"",SQLCA.sqlcode,"","",1) 
+        let g_success = 'N'
+        return
+    end if
+    #darcy:2023/06/15 add e---
+    # darcy:2025/12/02 add s ---
+    -- if g_user <> 'tiptop' then
+    --     return
+    -- end if
+
+    # 
+    let l_sql = "select listagg(' or fi.ecb06 like ''' || substr(tc_sma02, 1, 5), '%'' ') within group(order by tc_sma04) ",
+                " from tc_sma_file where tc_sma01 = 'csmi127' and tc_sma04 = ? "
+    prepare scimt002_listagg from l_sql
+
+    let l_typ = '1'
+    execute scimt002_listagg using l_typ into l_sql1
+    let l_sql1 = "( 1=2 ",l_sql1,"%' )"
+    let l_typ = '2'
+    execute scimt002_listagg using l_typ into l_sql2
+    let l_sql2 = "( 1=2 ",l_sql2,"%' )"
+    let l_typ = '3'
+    execute scimt002_listagg using l_typ into l_sql3
+    let l_sql3 = "( 1=2 ",l_sql3,"%' )"
+
+    # 卷料损耗设置
+    let l_sql = "select unique tc_sma04 from tc_sma_file where tc_sma01 = 'csmi126' "
+    declare i100sub_csmi126_1 cursor from l_sql  
+
+    let l_sql = "select tc_sma06 from tc_sma_file where tc_sma01 = 'csmi126' and tc_sma04 = ? and rownum = 1"
+    prepare i100sub_csmi126_2 from l_sql
+
+    let l_sql = "select tc_sma02 from tc_sma_file where tc_sma01 = 'csmi126' and tc_sma04 = ? order by tc_sma03"
+    declare i100sub_csmi126_3 cursor from l_sql
+
+    foreach i100sub_csmi126_1 into l_tc_sma04
         if sqlca.sqlcode then
-            call cl_err3("i100sub_bmb_upd2","bmb_file",p_ecu01,"",SQLCA.sqlcode,"","",1) 
+            call cl_err("i100sub_csmi126_1",sqlca.sqlcode,1)
             let g_success = 'N'
             exit foreach
         end if
-        #darcy:2023/06/15 add e---
+        -- 遍历类型
+        let l_sql = "select count(*) from ecb_file a where ecb01 = '",p_ecu01,"' and ecb02 = '",p_ecu02,"'"
+
+        let i = 1
+        foreach i100sub_csmi126_3 using l_tc_sma04 into l_tc_sma02
+            if sqlca.sqlcode then
+                call cl_err("i100sub_csmi126_3",sqlca.sqlcode,1)
+                let g_success = 'N'
+                exit foreach
+            end if
+            case l_tc_sma02
+                when '1'
+                     let l_sql = l_sql," and exists (select 1 from ecb_file fi where fi.ecb01 = a.ecb01",
+                                 "  and fi.ecb02=a.ecb02 and ",l_sql1,")"
+                when '2'
+                     let l_sql = l_sql," and exists (select 1 from ecb_file fi where fi.ecb01 = a.ecb01",
+                                 "  and fi.ecb02=a.ecb02 and ",l_sql2,")"
+                when '3'
+                     let l_sql = l_sql," and exists (select 1 from ecb_file fi where fi.ecb01 = a.ecb01",
+                                 "  and fi.ecb02=a.ecb02 and ",l_sql3,")"
+                otherwise
+                    let l_sql = l_sql , " and exists ( select 1 from ecb_file ",ascii(ord('a')+i),
+                                        " where ",ascii(ord('a')+i),".ecb01 = a.ecb01 ",
+                                        "  and ",ascii(ord('a')+i),".ecb02 = a.ecb02 and ",
+                                        ascii(ord('a')+i),".ecb06 like '",l_tc_sma02[1,5],"%' )"
+                    let i = i + 1
+            end case
+        end foreach
+
+        prepare i100sub_csmi126_4 from l_sql
+        execute i100sub_csmi126_4 into l_cnt
+        if l_cnt > 0 then 
+            -- 损耗率查询
+            execute i100sub_csmi126_2 using l_tc_sma04 into l_tc_sma06
+            if sqlca.sqlcode then
+                call cl_err("i100sub_csmi126_2",sqlca.sqlcode,1)
+                let g_success = 'N'
+                exit foreach
+            end if
+            -- 更新首站损耗
+            update bmb_file set bmb08 = l_tc_sma06 where bmb01 = p_ecu01 and bmb09 like 'F0107%'
+            if sqlca.sqlcode then
+                call cl_err("upd bmb",sqlca.sqlcode,1)
+                let g_success = 'N'
+                exit foreach
+            end if
+            exit foreach
+        end if
     end foreach
+
+    # darcy:2025/12/02 add e ---
 end function
 
 function i100sub_y_chk(p_ecu01,p_ecu02)
