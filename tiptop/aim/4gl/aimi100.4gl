@@ -607,6 +607,7 @@ DEFINE   l_n                     LIKE type_file.num5
                                 ,imaud35 #darcy:2025/02/21 add
                                 ,imaud36 #darcy:2025/09/03 add
                                 ,imaud37 # darcy:2025/11/24 add
+                                ,imaud38 # darcy:2025/12/10 add
          BEFORE CONSTRUCT
             CALL cl_qbe_init()
 #No.FUN-A50011 ------begin------
@@ -1645,6 +1646,7 @@ FUNCTION i100_i(p_cmd)
         ,g_ima.imaud35 #darcy:2025/02/21 add
         ,g_ima.imaud36 # darcy:2025/09/03 add 
         ,g_ima.imaud37 # darcy:2025/11/24 add
+        ,g_ima.imaud38 # darcy:2025/12/10 add
         WITHOUT DEFAULTS
  
         BEFORE INPUT
@@ -3464,6 +3466,7 @@ FUNCTION i100_show()
                    ,g_ima.imaud35 #darcy:2025/02/21 add
                    ,g_ima.imaud36 # darcy:2025/09/03 add
                    ,g_ima.imaud37 # darcy:2025/11/24 add
+                   ,g_ima.imaud38 # darcy:2025/12/10 add
 #No.FUN-A50011 -----begin-----
 #No.FUN-A50011 -----end-----
    #darcy:2022/11/18 add s---
@@ -3903,6 +3906,7 @@ FUNCTION i100_default()
    let g_ima.imaud35 = 'N'    #darcy:2025/02/21 add
    let g_ima.imaud36 = ''     #darcy:2025/09/03 add
    let g_ima.imaud37 = ''     # darcy:2025/11/24 add
+   let g_ima.imaud38 = ''     # darcy:2025/12/10 add
    #LET g_ima.imaud02 = 'N'   #add by guanyao160614
 END FUNCTION
  
