@@ -21,20 +21,234 @@ main
         exit program
     end if
     
-    call  cl_used(g_prog,g_time,1) returning g_time 
-    
-    display ORD('A')
-    display ORD('a')
-    display ORD('ab')
-    display ORD('你') 	  
+    call  cl_used(g_prog,g_time,1) returning g_time  
+    -- display LENGTH('abas')
+    -- call test_col_ana()
+    -- call test_csmi113()
     -- call test_excel_cell()
     -- call test_cl_wrtie()
     -- call test_write_excel()
     -- call test_xml()
     -- call test_impxlx()
+    -- call test_cxmt520()
+    -- call test_params()
+    -- call test_offline()
+    -- call test_remark()
+    -- call test_tc_oeb()
+    -- call test_run()
+    -- call test_dll()
+    -- call test_base_dll()
+    -- call test_frontcall()
+
+    call test_cl_label()
     
     call  cl_used(g_prog,g_time,2) returning g_time
 end main
+
+function test_cl_label()
+    define l_str,l_err string
+    -- let l_str = '"C:\\Program Files (x86)\\Seagull\\BarTender Suite\\bartend.exe" /AF=C:\\app\\FourJs\\gdc\\2.50.22\\bin\\demo\\demo.btw /D=C:\\app\\FourJs\\gdc\\2.50.22\\bin\\demo\\data.csv'
+    -- call ui.Interface.frontCall("standard","execute",[l_str,1],[l_err])
+
+    
+    if cl_label_query('demo','tqrcim0008','','','','','') then
+        if cl_label_prt('demo') then
+            display ""
+        end if
+    end if
+end function
+
+function test_frontcall()
+    define l_path string
+
+    call cl_frontcall_findpath("bartend") returning l_path
+
+
+end function
+
+function test_base_dll()
+    define res varchar(1000)
+    define str string
+
+    -- call ui.Interface.frontCall("frontbase","version",[],[res])
+
+    -- call ui.Interface.frontCall("frontbase","version",[],[str])
+
+    -- call ui.Interface.frontCall("frontbase","modDate",["frontbase.dll"],[str])
+
+    -- call ui.Interface.frontCall("frontbase","modDate",["D:/cache/table.json"],[str])
+    
+    -- call ui.Interface.frontCall("frontbase","modDate",["D:\\cache\\table.json"],[str])
+
+    -- call ui.Interface.frontCall("base/frontbase","modDate",["D:\\cache\\table.json"],[str])
+
+    call ui.Interface.frontCall("base/frontbase","findPath",["bartend"],[str])
+    let str = ""
+    call ui.Interface.frontCall("frontbase","findPath",["bartend"],[str])
+    let str = ""
+    call ui.Interface.frontCall("base/frontbase","findPath",["go"],[str])
+
+
+end function
+
+function test_dll()
+    define  res ,msg  varchar(10)
+    define  l_str     varchar(100)
+    define  l_cmd     varchar(1000)
+
+    CALL ui.Interface.frontCall("erpdemo", "mysum", [100,250], [res,msg])
+
+    -- l_str = "Genero Desktop Client"
+    CALL ui.Interface.frontCall( "standard", "feinfo", ["fename"], [l_str] )
+    -- l_str = "C:/app/FourJs/gdc/2.50.22/bin"
+    CALL ui.Interface.frontCall( "standard", "feinfo", ["fepath"], [l_str] )
+    -- l_str = "WINDOWS"
+    CALL ui.Interface.frontCall( "standard", "feinfo", ["ostype"], [l_str] )
+    -- l_str = "Windows 8"
+    CALL ui.Interface.frontCall( "standard", "feinfo", ["osversion"], [l_str] )
+    -- l_str = "2"
+    CALL ui.Interface.frontCall( "standard", "feinfo", ["numscreens"], [l_str] )
+    -- l_str = "2560x1440"
+    CALL ui.Interface.frontCall( "standard", "feinfo", ["screenresolution"], [l_str] )
+    -- l_str = "192.168.1.104"
+    CALL ui.Interface.frontCall( "standard", "feinfo", ["ip"], [l_str] )
+    -- l_str = "C:\\Users\\darcy.li\\AppData\\Local\\Four Js\\Genero Desktop Client\\cache\\ftcache"
+    CALL ui.Interface.frontCall( "standard", "feinfo", ["datadirectory"], [l_str] )
+    -- l_str = "0"
+    CALL ui.Interface.frontCall( "standard", "feinfo", ["isActiveX"], [l_str] )
+    -- l_str = "w64v100"
+    CALL ui.Interface.frontCall( "standard", "feinfo", ["target"], [l_str] )
+    CALL ui.Interface.frontCall( "standard", "feinfo", ["outputmap"], [l_str] )
+
+
+
+    -- for /f "tokens=2,*" %a in ('reg query "HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\App Paths\bartend.exe" /v Path 2^>nul') do @echo %b > "D:\cache\path.txt"
+    -- let l_cmd = 
+    -- let l_cmd = "for /f \"tokens=2,*\" %a in ('reg query \"HKLM\\SOFTWARE\\WOW6432Node\\Microsoft\\Windows\\CurrentVersion\\App Paths\\bartend.exe\" /v Path 2^>nul') do @echo %b > \"D:\\cache\\path.txt\""
+    let l_cmd = "D:\\cache\\get.bat"
+    call ui.Interface.frontCall("standard","execute",[l_cmd,1],[l_str])
+
+    -- let l_cmd = "\"C:\\Program Files (x86)\\Seagull\\BarTender Suite\\bartend.exe\""
+    let l_cmd = "\"C:\Program Files (x86)\Seagull\BarTender Suite\bartend.exe\" /AF=\"D:\\cache\\DB\\bartender\\标签1.btw\" /D=\"D:\\cache\\DB\\bartender\\item1.csv\""
+    call ui.Interface.frontCall("standard","execute",[l_cmd,1],[l_str])
+    
+end function
+function test_run()
+    define l_str string
+    run "golang version" returning l_str
+end function
+
+function test_tc_oeb()
+    call t400sub_export_batch(" oeb04 = 'MR0016S4DR'")
+end function
+
+function test_remark()
+    define l_str    string
+    
+    let l_str = "1.Au: 0.075±0.025um, pa: 0.12±0.21122um, Ni: 3.5±1.5um\n2.化金面积S=2.73dm”，主检化金不良，记入表单，手指厚度切片\n3.测HOTBAR手指，见手指化金管控图，量测12pcs金手指尺寸"
+
+    call i100sub_surface_remark(l_str) returning l_str
+
+    display l_str
+end function
+
+function test_offline()
+    define l_bmb01  like bmb_file.bmb01,
+           l_ok     integer
+    call cs_asf_gen_offine("MRA-25030069",'A10012',false)
+        returning l_bmb01,l_ok
+end function
+
+function test_display()
+    open window  test_param with form "azz/42f/p_zz"
+          attribute (style = g_win_style clipped)
+
+
+    close window test_param
+end function
+
+-- 动态新增栏位测试
+function test_params()
+    define lwin_curr        ui.Window
+    define lnode_win        om.DomNode,
+           lnode_form       om.DomNode,
+           llst_items       om.NodeList,
+           lnode_root       om.DomNode,
+           lnode_desc       om.DomNode,
+           lnode_item       om.DomNode,
+           lnode_desc_new       om.DomNode,
+           lnode_item_new       om.DomNode,
+           child       om.DomNode
+    define i,j,k,l,m,n,x,y      integer
+    define l_str            string
+
+
+    open window test_param with form "azz/42f/p_param"
+          attribute (style = g_win_style clipped)
+    
+    let lwin_curr = ui.Window.getCurrent()
+    let lnode_win = lwin_curr.getNode()
+
+    let llst_items = lnode_win.selectByPath("//Form/HBox/Grid")
+
+    if llst_items.getLength() ==0 then
+        return
+    end if
+
+    let lnode_root = llst_items.item(1)
+    
+    let l = lnode_root.getChildCount()
+
+    let l_str = lnode_root.tostring() 
+
+    call lnode_root.parse(l_str) returning lnode_root
+
+    let l = lnode_root.getChildCount()
+
+    MENU
+        ON ACTION new 
+            -- CALL newFile()
+        ON ACTION open 
+            -- CALL openFile()
+        ON ACTION save 
+            -- CALL saveFile()
+        ON ACTION import 
+            -- LOAD FROM "infile.dat" INSERT INTO table 
+        ON ACTION quit 
+            EXIT PROGRAM
+    END MENU
+    
+    close window test_param
+end function
+
+
+function test_cxmt520()
+    message scxmt520_input('TE2-25050077',2)
+end function
+
+
+function test_col_ana()
+    define l_sql  string
+    define l_cnt integer
+    
+    begin work
+    let l_sql = "SELECT ima01, ima02, ima021, 
+               CASE ima06 WHEN 'M.IN' THEN 1 ELSE 2 END ima07,
+               (ima51 * 2) / 100 AS ima51,
+               (SELECT NVL(imz02, 'null') FROM imz_file WHERE imz01 = ima06)
+        FROM ima_file
+        WHERE ima01 LIKE 'M.IN.00%'"
+    execute immediate "begin  parse_sql_query(q'["||l_sql||"]'); END;"
+
+    select count(*) into l_cnt from col_analysis
+    COMMIT work
+    select count(*) into l_cnt from col_analysis
+    return
+end function
+
+function test_csmi113()
+    call cs_csmi113('JA0233F3AS',1000)
+end function
 
 function test_impxlx()
     define l_file string
