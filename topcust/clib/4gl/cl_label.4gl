@@ -43,9 +43,10 @@ function cl_label()
 end function
 
 -- 通过调用p_query导出资料
-function cl_label_query(p_bartend,p_prog,p_argv1,p_argv2,p_argv3,p_argv4,p_argv5)
+function cl_label_query(p_bartend,p_prog,p_jump,p_argv1,p_argv2,p_argv3,p_argv4,p_argv5)
     define p_bartend,p_prog     varchar(100)
     define p_argv1,p_argv2,p_argv3,p_argv4,p_argv5       string
+    define p_jump       boolean  -- 跳过数据预览
     define l_ok         boolean
 
     define i,j,k,l  integer
@@ -59,8 +60,10 @@ function cl_label_query(p_bartend,p_prog,p_argv1,p_argv2,p_argv3,p_argv4,p_argv5
     let g_rec = 0
     
     --Step1. 调用p_query
-    let l_cmd = "p_query ",p_prog," ",p_argv1," ",p_argv2," ",p_argv3," ",p_argv4," ",p_argv5
-    call cl_cmdrun_wait(l_cmd)
+    if not p_jump then
+        let l_cmd = "p_query ",p_prog," ",p_argv1," ",p_argv2," ",p_argv3," ",p_argv4," ",p_argv5
+        call cl_cmdrun_wait(l_cmd)
+    end if
     --Step2. 组合sql
     select zak02 into l_zak02 from zak_file where zak01 = p_prog
     if sqlca.sqlcode or cl_null(l_zak02) then
@@ -204,6 +207,8 @@ function cl_label_prt(p_bartend)
     call cl_ui_init()
 
     let l_choice = 0
+
+    display sfmt("共%1笔资料，请选择打印方式",g_rec) to msg
 
     input l_choice without defaults from choice 
     if int_flag then

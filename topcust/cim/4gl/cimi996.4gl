@@ -51,7 +51,7 @@ function test_cl_label()
     -- call ui.Interface.frontCall("standard","execute",[l_str,1],[l_err])
 
     
-    if cl_label_query('demo','tqrcim0008','','','','','') then
+    if cl_label_query('demo','tqrcim0008',true,'','','','','') then
         if cl_label_prt('demo') then
             display ""
         end if
