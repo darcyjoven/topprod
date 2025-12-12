@@ -41,18 +41,29 @@ main
     -- call test_frontcall()
 
     call test_cl_label()
+    -- call test_cmd_start()
     
     call  cl_used(g_prog,g_time,2) returning g_time
 end main
+
+function test_cmd_start()
+    define l_str,l_err string
+
+    let l_str = 'cmd /c start "" bartend /AF=C:\\app\\FourJs\\gdc\\2.50.22\\bin\\custsubqrcode\\custsubqrcode.btw /D=C:\\app\\FourJs\\gdc\\2.50.22\\bin\\custsubqrcode\\data.csv /P'
+    call ui.Interface.frontCall("standard","execute",[l_str,1],[l_err])
+    let l_str = 'cmd /c start "" bartend /AF=C:\\app\\FourJs\\gdc\\2.50.22\\bin\\custsubqrcode\\custsubqrcode.btw /D=C:\\app\\FourJs\\gdc\\2.50.22\\bin\\custsubqrcode\\data.csv /P /X'
+    call ui.Interface.frontCall("standard","execute",[l_str,1],[l_err])
+end function
 
 function test_cl_label()
     define l_str,l_err string
     -- let l_str = '"C:\\Program Files (x86)\\Seagull\\BarTender Suite\\bartend.exe" /AF=C:\\app\\FourJs\\gdc\\2.50.22\\bin\\demo\\demo.btw /D=C:\\app\\FourJs\\gdc\\2.50.22\\bin\\demo\\data.csv'
     -- call ui.Interface.frontCall("standard","execute",[l_str,1],[l_err])
-
     
-    if cl_label_query('demo','tqrcim0008',true,'','','','','') then
-        if cl_label_prt('demo') then
+
+    let l_str = cl_label_query('custsubqrcode','tqrcim0009',true," ima01 = 'K.CA.0087R' ",'','','','')
+    if not cl_null(l_str) then
+        if cl_label_prt('custsubqrcode',l_str) then
             display ""
         end if
     end if
@@ -61,7 +72,7 @@ end function
 function test_frontcall()
     define l_path string
 
-    call cl_frontcall_findpath("bartend") returning l_path
+    call cl_frontcall_findpath("notepad") returning l_path
 
 
 end function
@@ -70,23 +81,23 @@ function test_base_dll()
     define res varchar(1000)
     define str string
 
-    -- call ui.Interface.frontCall("frontbase","version",[],[res])
+    call ui.Interface.frontCall("frontbase","version",[],[res])
 
-    -- call ui.Interface.frontCall("frontbase","version",[],[str])
+    call ui.Interface.frontCall("frontbase","version",[],[str])
 
-    -- call ui.Interface.frontCall("frontbase","modDate",["frontbase.dll"],[str])
+    call ui.Interface.frontCall("frontbase","modDate",["frontbase.dll"],[str])
 
-    -- call ui.Interface.frontCall("frontbase","modDate",["D:/cache/table.json"],[str])
+    call ui.Interface.frontCall("frontbase","modDate",["D:/cache/table.json"],[str])
     
-    -- call ui.Interface.frontCall("frontbase","modDate",["D:\\cache\\table.json"],[str])
+    call ui.Interface.frontCall("frontbase","modDate",["D:\\cache\\table.json"],[str])
 
     -- call ui.Interface.frontCall("base/frontbase","modDate",["D:\\cache\\table.json"],[str])
 
-    call ui.Interface.frontCall("base/frontbase","findPath",["bartend"],[str])
+    -- call ui.Interface.frontCall("base/frontbase","findPath",["bartend"],[str])
     let str = ""
     call ui.Interface.frontCall("frontbase","findPath",["bartend"],[str])
     let str = ""
-    call ui.Interface.frontCall("base/frontbase","findPath",["go"],[str])
+    -- call ui.Interface.frontCall("base/frontbase","findPath",["go"],[str])
 
 
 end function

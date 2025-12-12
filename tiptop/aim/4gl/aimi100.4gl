@@ -1246,7 +1246,18 @@ FUNCTION i100_menu()
                CALL cl_doc()
             END IF
          END IF
- 
+      # darcy:2025/12/11 add s---
+      # 客户器件二维码打印
+      on action custSubQrcode
+         let g_action_choice="custSubQrcode"
+         if cl_chk_act_auth() then 
+            if cl_label_prt('custsubqrcode',cl_label_query('custsubqrcode','tqrcim0009',true," ima01 = '"||g_ima.ima01||"' ",'','','','')) then
+               message "打印完成"
+            else
+               message "打印失败/取消！"
+            end if
+         end if
+      # darcy:2025/12/11 add e---
       ON ACTION aps_related_data
          LET g_action_choice="aps_related_data" #MOD-520032
          IF cl_null(g_ima.ima01) THEN
