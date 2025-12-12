@@ -33,6 +33,7 @@ function i100sub_upd_bmb09(p_ecu01,p_ecu02)
     define l_sql1,l_sql2,l_sql3        varchar(4000)
     define l_typ                       varchar(1)
     # darcy:2025/12/05 add e---
+    define l_ecd02          like ecd_file.ecd02 #darcy:2025/12/11 add
     
 
     let g_success = 'Y'
@@ -128,21 +129,17 @@ function i100sub_upd_bmb09(p_ecu01,p_ecu02)
     -- if g_user <> 'tiptop' then
     --     return
     -- end if
+ 
 
-    # 
-    let l_sql = "select listagg(' or fi.ecb06 like ''' || substr(tc_sma02, 1, 5), '%'' ') within group(order by tc_sma04) ",
-                " from tc_sma_file where tc_sma01 = 'csmi127' and tc_sma04 = ? "
-    prepare scimt002_listagg from l_sql
-
-    let l_typ = '1'
-    execute scimt002_listagg using l_typ into l_sql1
-    let l_sql1 = "( 1=2 ",l_sql1,"%' )"
-    let l_typ = '2'
-    execute scimt002_listagg using l_typ into l_sql2
-    let l_sql2 = "( 1=2 ",l_sql2,"%' )"
-    let l_typ = '3'
-    execute scimt002_listagg using l_typ into l_sql3
-    let l_sql3 = "( 1=2 ",l_sql3,"%' )"
+    -- let l_typ = '1'
+    -- execute scimt002_listagg using l_typ into l_sql1
+    -- let l_sql1 = "( 1=2 ",l_sql1,"%' )"
+    -- let l_typ = '2'
+    -- execute scimt002_listagg using l_typ into l_sql2
+    -- let l_sql2 = "( 1=2 ",l_sql2,"%' )"
+    -- let l_typ = '3'
+    -- execute scimt002_listagg using l_typ into l_sql3
+    -- let l_sql3 = "( 1=2 ",l_sql3,"%' )"
 
     # 卷料损耗设置
     let l_sql = "select unique tc_sma04 from tc_sma_file where tc_sma01 = 'csmi126' "
@@ -153,6 +150,10 @@ function i100sub_upd_bmb09(p_ecu01,p_ecu02)
 
     let l_sql = "select tc_sma02 from tc_sma_file where tc_sma01 = 'csmi126' and tc_sma04 = ? order by tc_sma03"
     declare i100sub_csmi126_3 cursor from l_sql
+
+    -- if g_user <> 'tiptop' then
+    --     return
+    -- end if
 
     foreach i100sub_csmi126_1 into l_tc_sma04
         if sqlca.sqlcode then
@@ -170,23 +171,44 @@ function i100sub_upd_bmb09(p_ecu01,p_ecu02)
                 let g_success = 'N'
                 exit foreach
             end if
-            case l_tc_sma02
-                when '1'
-                     let l_sql = l_sql," and exists (select 1 from ecb_file fi where fi.ecb01 = a.ecb01",
-                                 "  and fi.ecb02=a.ecb02 and ",l_sql1,")"
-                when '2'
-                     let l_sql = l_sql," and exists (select 1 from ecb_file fi where fi.ecb01 = a.ecb01",
-                                 "  and fi.ecb02=a.ecb02 and ",l_sql2,")"
-                when '3'
-                     let l_sql = l_sql," and exists (select 1 from ecb_file fi where fi.ecb01 = a.ecb01",
-                                 "  and fi.ecb02=a.ecb02 and ",l_sql3,")"
-                otherwise
-                    let l_sql = l_sql , " and exists ( select 1 from ecb_file ",ascii(ord('a')+i),
-                                        " where ",ascii(ord('a')+i),".ecb01 = a.ecb01 ",
-                                        "  and ",ascii(ord('a')+i),".ecb02 = a.ecb02 and ",
-                                        ascii(ord('a')+i),".ecb06 like '",l_tc_sma02[1,5],"%' )"
-                    let i = i + 1
-            end case
+
+            -- 找不到作业编号的，再csmi127找多笔作业编号
+            select ecd02 into l_ecd02 from ecd_file where ecd01 = l_tc_sma02
+            if cl_null(l_ecd02) or sqlca.sqlcode then
+                let l_sql2 = "select listagg(' or ",ascii(ord('a')+i),".ecb06 like ''' || substr(tc_sma02, 1, 5), '%'' ') within group(order by tc_sma04) ",
+                            " from tc_sma_file where tc_sma01 = 'csmi127' and tc_sma06 = ? "
+                prepare scimt002_listagg from l_sql2
+
+                execute scimt002_listagg using l_tc_sma02 into l_sql1
+                free scimt002_listagg
+                let l_sql1 = "(  1=2 ",l_sql1,"%' )"
+                let l_sql = l_sql,"  and exists /*",l_tc_sma02,"*/ (select 1 from ecb_file ",ascii(ord('a')+i),
+                                  " where ",ascii(ord('a')+i),".ecb01 = a.ecb01",
+                                  "  and ",ascii(ord('a')+i),".ecb02=a.ecb02 and ",l_sql1,")"
+            else
+                let l_sql = l_sql , " and exists/*",l_ecd02,"*/ ( select 1 from ecb_file ",ascii(ord('a')+i),
+                                    " where ",ascii(ord('a')+i),".ecb01 = a.ecb01 ",
+                                    "  and ",ascii(ord('a')+i),".ecb02 = a.ecb02 and ",
+                                    ascii(ord('a')+i),".ecb06 like '",l_tc_sma02[1,5],"%' )"
+            end if
+            let i = i + 1
+            -- case l_tc_sma02
+            --     when '1'
+            --          let l_sql = l_sql," and exists (select 1 from ecb_file fi where fi.ecb01 = a.ecb01",
+            --                      "  and fi.ecb02=a.ecb02 and ",l_sql1,")"
+            --     when '2'
+            --          let l_sql = l_sql," and exists (select 1 from ecb_file fi where fi.ecb01 = a.ecb01",
+            --                      "  and fi.ecb02=a.ecb02 and ",l_sql2,")"
+            --     when '3'
+            --          let l_sql = l_sql," and exists (select 1 from ecb_file fi where fi.ecb01 = a.ecb01",
+            --                      "  and fi.ecb02=a.ecb02 and ",l_sql3,")"
+            --     otherwise
+            --         let l_sql = l_sql , " and exists ( select 1 from ecb_file ",ascii(ord('a')+i),
+            --                             " where ",ascii(ord('a')+i),".ecb01 = a.ecb01 ",
+            --                             "  and ",ascii(ord('a')+i),".ecb02 = a.ecb02 and ",
+            --                             ascii(ord('a')+i),".ecb06 like '",l_tc_sma02[1,5],"%' )"
+            --         let i = i + 1
+            -- end case
         end foreach
 
         prepare i100sub_csmi126_4 from l_sql
