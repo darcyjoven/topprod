@@ -13,8 +13,9 @@ globals
 end globals
 -- 总比数
 define g_rec         integer
--- csv 
+-- csv , temp
 define g_csv         string
+define g_temp        string
 -- ip
 define g_ip          varchar(10)
 
@@ -32,8 +33,6 @@ function cl_label_query(p_bartend,p_prog,p_jump,p_argv1,p_argv2,p_argv3,p_argv4,
     define l_zak02,l_csv,l_local   varchar(2000)
     define l_ch             base.Channel
 
-    call cl_label()
-
     let g_rec = 0
     
     --Step1. 调用p_query
@@ -45,7 +44,7 @@ function cl_label_query(p_bartend,p_prog,p_jump,p_argv1,p_argv2,p_argv3,p_argv4,
     select zak02 into l_zak02 from zak_file where zak01 = p_prog
     if sqlca.sqlcode or cl_null(l_zak02) then
         call cl_err(sfmt("%1报表未定义",p_prog),"!",1)
-        return false
+        return ''
     end if
     let l_sql = l_zak02
     let l_sql = cl_replace_str(l_sql,'arg1',p_argv1)
@@ -53,31 +52,14 @@ function cl_label_query(p_bartend,p_prog,p_jump,p_argv1,p_argv2,p_argv3,p_argv4,
     let l_sql = cl_replace_str(l_sql,'arg3',p_argv3)
     let l_sql = cl_replace_str(l_sql,'arg4',p_argv4)
     let l_sql = cl_replace_str(l_sql,'arg5',p_argv5)
-    --Step3. 写入csv文件
-    -- select count(*) into i from zat_file where zat01 = p_prog
-    -- if i <= 0 then
-    --     call cl_err(sfmt("%1报表未定义任何列",p_prog),sqlca.sqlcode,1)
-    --     return false
-    -- end if
-
-    -- select tc_sma18 into l_csv from tc_sma_file
-    --  where tc_sma01 = 'csmi128' and tc_sma02 = p_bartend
-    --    and tc_sma06 = 'csv'
-    -- if cl_null(l_csv) then
-    --     call cl_err(sfmt("%1 csmi128 csv 路径 未定义",p_bartend),sqlca.sqlcode,1)
-    --     return false
-    -- end if
-    -- let l_csv = l_csv,"/",g_user
-    -- if not os.Path.isdirectory(l_csv) then
-    --     call os.Path.mkdir(l_csv) returning l_ok
-    --     if not l_ok then
-    --         call cl_err(sfmt("%1 csmi128 csv 创建目录失败",l_csv),"!",1)
-    --         return false
-    --     end if
-    -- end if
-    -- let l_csv = l_csv,"/data.csv"
 
     call cl_label_get_csv(p_bartend) returning l_csv,l_local
+
+    select count(*) into i from zat_file where zat01 = p_prog
+    if i <= 0 then
+        call cl_err(sfmt("%1报表未定义任何列",p_prog),sqlca.sqlcode,1)
+        return false
+    end if
 
     let l_ch = base.Channel.create()
     call l_ch.openFile(l_csv,"w")
@@ -97,7 +79,7 @@ function cl_label_query(p_bartend,p_prog,p_jump,p_argv1,p_argv2,p_argv3,p_argv4,
                                  sr[91],sr[92],sr[93],sr[94],sr[95],sr[96],sr[97],sr[98],sr[99],sr[100]
         if sqlca.sqlcode then
             call cl_err("cl_label_source",sqlca.sqlcode,1)
-            return false
+            return ''
         end if
         let l_line = ""
         for j = 1 to i 
@@ -110,15 +92,18 @@ function cl_label_query(p_bartend,p_prog,p_jump,p_argv1,p_argv2,p_argv3,p_argv4,
     call l_ch.close()
 
     --Step4. 覆盖本地文件
-    let g_csv = l_local
 
     -- 创建文件夹，防止报错
     if not cl_frontcall_mkdir(l_local) then
         call cl_err(sfmt("创建目录失败 %1",l_local),"!",1)
-        return false
+        return ''
     end if
 
-    return cl_download_file(l_csv,l_local)
+    if cl_download_file(l_csv,l_local) then
+        return l_local
+    else
+        return ''
+    end if
 end function
 
 -- 通过xml文件和数据导出数据
@@ -130,26 +115,26 @@ function cl_label_record(p_bartend,p_value,p_field)
 end function
 
 -- 调用bartend打印标签
-function cl_label_prt(p_bartend)
+function cl_label_prt(p_bartend,p_csv)
     define p_bartend        varchar(100)
-    define l_btw,l_local    varchar(1000)
+    define p_csv            string
+    define l_template            string
     define l_filename       varchar(1000)
-    define l_dat,l_today    varchar(10)
     define l_ok             boolean
     define l_choice         integer
     define l_cmd            string
     define l_bartend        string
-    define l_csv            string
     define l_redown         varchar(1)
 
     --Step1. 模板下载
-    if not cl_label_down_mod(p_bartend) then
+    let l_template = cl_label_down_mod(p_bartend)
+    if cl_null(l_template)  then
         call cl_err("下载模板失败，请联系系统管理员","!",1)
         return false
     end if
 
     --Step2. 打印/预览标签
-    open window cl_label_w at 1,1     with form "clib/42f/cl_label"
+    open window cl_label_w at 1,1 with form "clib/42f/cl_label"
          attribute (style = g_win_style clipped) 
 
     call cl_ui_init()
@@ -169,9 +154,9 @@ function cl_label_prt(p_bartend)
 
     close window cl_label_w
 
-    let l_local = cl_replace_str(l_local,'/',"\\")
-    let g_csv = cl_replace_str(g_csv,'/',"\\")
-    let l_cmd = sfmt('cmd /c start "" bartend /AF=%1 /D=%2',l_local,g_csv)
+    let l_template = cl_replace_str(l_template,'/',"\\")
+    let p_csv = cl_replace_str(p_csv,'/',"\\")
+    let l_cmd = sfmt('cmd /c start "" bartend /AF=%1 /D=%2',l_template,p_csv)
 
     -- 重新下载模板
     if l_redown = 'Y' then
@@ -221,25 +206,27 @@ function cl_label_down_mod(p_bartend)
      where tc_sma01 = 'csmi129' and tc_sma02 = g_ip
        and tc_sma06 = p_bartend
     
-    -- 有记录不需要处理
-    if i > 0 then
-        return true
-    end if
-
     select tc_sma18 into l_template from tc_sma_file
-     where tc_sma01 = 'csmi128' and tc_sma02 = p_bartend
-       and tc_sma06 = 'temp'
-
+        where tc_sma01 = 'csmi128' and tc_sma02 = p_bartend
+        and tc_sma06 = 'temp'
     if sqlca.sqlcode or cl_null(l_template) then
         call cl_err(sfmt("%1模板未在csmi128定义",p_bartend),sqlca.sqlcode,1)
-        return false
+        return ''
     end if
 
-    -- 开始下载
     let l_local = os.Path.basename(l_template)
     let l_local = "C:/tiptop/",l_local
 
-    return cl_download_file(l_template,l_local)
+    -- 有记录不需要处理
+    if i > 0 then
+        return l_local
+    end if
+
+    if cl_download_file(l_template,l_local) then
+        return l_local
+    else
+        return ''
+    end if
 end function
 
 -- 获得远程csv目录和本地csv的目录
@@ -248,17 +235,18 @@ function cl_label_get_csv(p_bartend)
     define l_csv        like tc_sma_file.tc_sma18
     define l_local      varchar(1000)
     define l_filename   varchar(1000)
+    define l_ok         boolean
 
     select tc_sma18 into l_csv from tc_sma_file
      where tc_sma01 = 'csmi128' and tc_sma02 = p_bartend
        and tc_sma06 = 'csv'
-    if sqlca.sqlcode or cl_null(l_template) then
+    if sqlca.sqlcode or cl_null(l_csv) then
         call cl_err(sfmt("%1 csv未在csmi128定义",p_bartend),sqlca.sqlcode,1)
         return '',''
     end if
 
     let l_filename = os.Path.basename(l_csv)
-    let l_local = "C:/tiptop/",l_local
+    let l_local = "C:/tiptop/",l_filename
 
     let l_csv = os.Path.dirname(l_csv)
     let l_csv = l_csv,"/",g_user #,"/",l_filename

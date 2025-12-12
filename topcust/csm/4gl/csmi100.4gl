@@ -113,6 +113,7 @@ MAIN
    let g_prog = g_argv1 
    let g_tc_sma01 = g_argv1
    call i100_set_dny_combo()
+   call i100_diy_action() # darcy:2025/12/10 add
    call i100_b_fill(" 1=1") #darcy:2024/11/29 add
    CALL i100_menu()
  
@@ -241,6 +242,10 @@ FUNCTION i100_menu()
             IF cl_chk_act_auth() THEN
               CALL cl_export_to_excel(ui.Interface.getRootNode(),base.TypeInfo.create(g_tc_sma),'','')
             END IF
+        # darcy:2025/12/10 add s---
+        when "csmi120_action" if cl_chk_act_auth() then display "ok" end if
+        when "csmi129_unlock" if cl_chk_act_auth() then call csmi100_csmi129_unlock() end if
+        # darcy:2025/12/10 add e---
          WHEN "related_document"  #相關文件
               IF cl_chk_act_auth() THEN
                  IF g_tc_sma01 IS NOT NULL THEN
@@ -1137,6 +1142,7 @@ FUNCTION i100_bp(p_ud)
       ON ACTION exit
          LET g_action_choice="exit"
          EXIT DISPLAY
+        
  
       ##########################################################################
       # Special 4ad ACTION
@@ -1144,6 +1150,13 @@ FUNCTION i100_bp(p_ud)
       ON ACTION controlg 
          LET g_action_choice="controlg"
          EXIT DISPLAY
+      
+      # darcy:2025/12/10 add s---
+      # csmi120
+      on action csmi120_action let g_action_choice = "csmi120_action" exit display
+      # csmi129
+      on action csmi129_unlock let g_action_choice = "csmi129_unlock" exit display
+      # darcy:2025/12/10 add e---
  
       ON ACTION accept
          LET g_action_choice="detail"
@@ -1253,7 +1266,7 @@ FUNCTION i100_set_dny_combo()
 
     let ps_values = "csmi100,csmi101,csmi102,csmi103,csmi104,csmi105,csmi106,csmi107,csmi108,csmi109,csmi110,csmi111,",
                     "csmi112,csmi113,csmi114,csmi115,csmi116,csmi117,csmi118,csmi119,csmi120,csmi121,csmi122,csmi123,",
-                    "csmi124,csmi125,csmi126,csmi127"
+                    "csmi124,csmi125,csmi126,csmi127,csmi128,csmi129"
 
     LET tok = base.StringTokenizer.create(ps_values,",")
     let l_ze01 = tok.nextToken()
@@ -1324,6 +1337,8 @@ FUNCTION i100_set_dny_combo()
         when 'csmi125' display '料件类型维护作业（IE）' to lb_msg  # darcy:2025/11/20 add
         when 'csmi126' display '卷料损耗类型设置' to lb_msg  # darcy:2025/11/20 add
         when 'csmi127' display '卷料损耗--盲孔裁切作业编号设定' to lb_msg  # darcy:2025/11/20 add
+        when 'csmi128' display '标签打印参数设置（bartender）' to lb_msg # darcy:2025/12/09 add
+        when 'csmi129' display 'IP下载模板记录' to lb_msg 
     end case
 
     call i100_set_visiable()
@@ -1743,16 +1758,43 @@ function i100_set_visiable()
             call cl_set_comp_att_text('tc_sma02','作业编号')
             call cl_set_comp_att_text('tc_sma02_desc','说明')
             call cl_set_comp_att_text('tc_sma03','项次')
-            call cl_set_comp_att_text('tc_sma04','类型')
-            call cl_set_comp_att_text('tc_sma06','损耗率')
-            call cl_set_combo_items("tc_sma04","1,2,3","盲孔,裁切,新厂裁切")
+            -- call cl_set_comp_att_text('tc_sma04','类型')
+            call cl_set_comp_att_text('tc_sma06','类型')
+            -- call cl_set_combo_items("tc_sma04","1,2,3","盲孔,裁切,新厂裁切")
             -- 是否隐藏
-            call cl_set_comp_visible("tc_sma05,tc_sma06,
+            call cl_set_comp_visible("tc_sma05,tc_sma04,
                                       tc_sma07,tc_sma08,tc_sma09,tc_sma10,tc_sma11,tc_sma12,tc_sma13,
                                       tc_sma14,tc_sma15,tc_sma16,tc_sma17,tc_sma18,tc_sma19",false)
             -- 是否可以录入
-            call cl_set_comp_entry("tc_sma02,tc_sma03,tc_sma04",true)
+            call cl_set_comp_entry("tc_sma02,tc_sma03,tc_sma06",true)
         # darcy:2025/12/05 add e---
+        # darcy:2025/12/09 add s---
+        when 'csmi128'
+            call cl_set_comp_att_text('tc_sma02','项目名')
+            call cl_set_comp_att_text('tc_sma03','顺序栏位')
+            call cl_set_comp_att_text('tc_sma06','参数名称')
+            call cl_set_comp_att_text('tc_sma18','参数值')
+            call cl_set_comp_att_text('tc_sma19','说明')
+            -- 是否隐藏
+            call cl_set_comp_visible("tc_sma02_desc,tc_sma04,tc_sma05,
+                                      tc_sma07,tc_sma08,tc_sma09,tc_sma10,tc_sma11,tc_sma12,tc_sma13,
+                                      tc_sma14,tc_sma15,tc_sma16,tc_sma17",false)
+            -- 是否可以录入
+            call cl_set_comp_entry("tc_sma02,tc_sma03,tc_sma06,tc_sma18,tc_sma19",true)
+        # darcy:2025/12/09 add e---
+        # darcy:2025/12/10 add s---
+        when 'csmi129'
+            call cl_set_comp_att_text('tc_sma02','IP')
+            call cl_set_comp_att_text('tc_sma03','项次')
+            call cl_set_comp_att_text('tc_sma05','已下载')
+            call cl_set_comp_att_text('tc_sma06','模板名称')
+            -- 是否隐藏
+            call cl_set_comp_visible("tc_sma02_desc,tc_sma03,tc_sma04,
+                                      tc_sma07,tc_sma08,tc_sma09,tc_sma10,tc_sma11,tc_sma12,tc_sma13,
+                                      tc_sma14,tc_sma15,tc_sma16,tc_sma17,tc_sma18,tc_sma19",false)
+            -- 是否可以录入
+            call cl_set_comp_entry("tc_sma05",true)
+        # darcy:2025/12/10 add e---
     end case
     
 end function
@@ -1811,4 +1853,48 @@ function i100_get_default()
             let g_tc_sma[l_ac].tc_sma02_desc = i100_get_tc_sma_desc(g_tc_sma01,g_tc_sma[l_ac].tc_sma02)
          # darcy:2025/11/24 add e---
     end case
+end function
+
+function i100_diy_action()
+
+    call cl_set_act_visible("csmi120_action,csmi129_unlock",false)
+    case g_prog
+        when "csmi120" call cl_set_act_visible("csmi120_action",true)
+        when "csmi129" call cl_set_act_visible("csmi129_unlock",true)
+    end case
+end function
+# csmi120
+# csmi129
+function csmi100_csmi129_unlock()
+    define l_mod varchar(1000)
+    define l_cnt integer
+
+    prompt "输入要清除的模块名称: " for l_mod
+
+    if cl_null(l_mod) then
+        display '已取消'
+        return
+    end if
+
+    select count(*) into l_cnt from tc_sma_file
+     where tc_sma01 = 'csmi129' and tc_sma06 = l_mod
+    if sqlca.sqlcode then
+        call cl_err(l_mod,sqlca.sqlcode,1)
+        return
+    end if
+
+    if not cl_confirm_parm('csm-003',l_cnt) then
+        return
+    end if
+
+    delete from tc_sma_file
+     where tc_sma01 = 'csmi129' and tc_sma06 = l_mod
+    
+    call i100_b_fill(' 1=1')
+
+    display array g_tc_sma to s_tc_sma.*
+        before display
+            exit display
+    end display
+    
 end function
