@@ -17,7 +17,7 @@ define g_rec         integer
 define g_csv         string
 define g_temp        string
 -- ip
-define g_ip          varchar(10)
+define g_ip          varchar(20)
 
 
 -- 通过调用p_query导出资料
@@ -94,10 +94,10 @@ function cl_label_query(p_bartend,p_prog,p_jump,p_argv1,p_argv2,p_argv3,p_argv4,
     --Step4. 覆盖本地文件
 
     -- 创建文件夹，防止报错
-    if not cl_frontcall_mkdir(l_local) then
-        call cl_err(sfmt("创建目录失败 %1",l_local),"!",1)
-        return ''
-    end if
+    -- if not cl_frontcall_mkdir(l_local) then
+    --     call cl_err(sfmt("创建目录失败 %1",l_local),"!",1)
+    --     return ''
+    -- end if
 
     if cl_download_file(l_csv,l_local) then
         return l_local
@@ -223,6 +223,14 @@ function cl_label_down_mod(p_bartend)
     end if
 
     if cl_download_file(l_template,l_local) then
+        select max(tc_sma03) into i from tc_sma_file
+         where tc_sma01 = 'csmi129' and tc_sma02 = g_ip
+        if cl_null(i) then
+            let i = 1
+        else
+            let i = i + 1
+        end if
+        insert into tc_sma_file (tc_sma01,tc_sma02,tc_sma03,tc_sma05,tc_sma06) values('csmi129',g_ip,i,'Y',p_bartend)
         return l_local
     else
         return ''
