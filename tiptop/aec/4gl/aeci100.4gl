@@ -1815,6 +1815,9 @@ FUNCTION i100_copy()
            l_sql           LIKE type_file.chr1000,       #No.FUN-680073 VARCHAR(400)
            l_ecu014        LIKE ecu_file.ecu014         #TQC-B60169
    define l_ima06    like ima_file.ima06 #darcy:2024/03/05 add
+   define l_ecuud04  like ecu_file.ecuud04 # darcy:2025/12/11 add
+   define l_ecuud03  like ecu_file.ecuud03 # darcy:2025/12/12 add
+   define li_result  varchar(1)
 
    IF s_shut(0) THEN RETURN END IF
    OPEN WINDOW i100_c_w AT 06,15 WITH FORM "aec/42f/aeci100_c"
@@ -1966,6 +1969,21 @@ FUNCTION i100_copy()
                             AND ecu02 = oecu02
                             AND ecu012 = oecu012         #FUN-A50081 add
      INTO TEMP ecu_tmp
+   # darcy:2025/12/11 add s---
+   # 签核状态判断
+   let l_ecuud04 = 'N'
+   if g_user = 'tiptop' then
+      if new_no[7,7] matches "[ABC]" and new_no[10,10] not matches "[SF]" and new_no not matches "*-*" then
+         call s_auto_assign_no("abm","ECU",g_today,"7","ecu_file","ecuud03","","","")
+            returning li_result,l_ecuud03
+         if (not li_result) then
+               rollback work
+               return
+         end if
+         let l_ecuud04 = 'Y'
+      end if
+   end if
+   # darcy:2025/12/11 add e---
    UPDATE ecu_tmp
        SET ecu01=new_no,       #新產品料號
            ecu02=necu02,       #新產品製程編號
@@ -1983,6 +2001,11 @@ FUNCTION i100_copy()
            ecuorig=g_grup,     #TQC-B50106 add
            ecumodu=NULL,       #資料修改者
            ecudate=g_today     #資料修改日期
+           # darcy:2025/12/11 add s---
+           ,ecuud04 = l_ecuud04,
+           ecuud05 = '0',
+           ecuud03 = l_ecuud03
+           # darcy:2025/12/11 add e---
    INSERT INTO ecu_file SELECT * FROM ecu_tmp
    IF STATUS THEN
    CALL cl_err3("ins","ecu_file",new_no,necu02,STATUS,"","ins ecu",1) #FUN-660091
@@ -6364,6 +6387,9 @@ function i100_copy_y(p_ecu01,p_ecu02)
            l_sql           LIKE type_file.chr1000,       #No.FUN-680073 VARCHAR(400)
            l_ecu014        LIKE ecu_file.ecu014         #TQC-B60169
    define l_ima06    like ima_file.ima06 #darcy:2024/03/05 add
+   define l_ecuud04  like ecu_file.ecuud04 # darcy:2025/12/11 add
+   define l_ecuud03 like ecu_file.ecuud03 #darcy:2025/12/12 add
+   define li_result varchar(1) #darcy:2025/12/12 add
 
 
    IF s_shut(0) THEN RETURN END IF
@@ -6547,6 +6573,22 @@ function i100_copy_y(p_ecu01,p_ecu02)
       AND ecu02 = oecu02
       AND ecu012 = oecu012
 
+   # darcy:2025/12/11 add s---
+   # 签核状态判断
+   let l_ecuud04 = 'N'
+   if g_user = 'tiptop' then
+      if new_no[7,7] matches "[ABC]" and new_no[10,10] not matches "[SF]" and new_no not matches "*-*" then 
+         call s_auto_assign_no("abm","ECU",g_today,"7","ecu_file","ecuud03","","","")
+            returning li_result,l_ecuud03
+         if (not li_result) then
+               rollback work
+               return
+         end if
+         let l_ecuud04 = 'Y'
+      end if
+   end if
+   # darcy:2025/12/11 add e---
+
    UPDATE ecu_tmp
        SET ecu01=new_no,       #新產品料號
            ecu02=necu02,       #新產品製程編號
@@ -6564,6 +6606,11 @@ function i100_copy_y(p_ecu01,p_ecu02)
            ecuorig=g_grup,     #TQC-B50106 add
            ecumodu=NULL,       #資料修改者
            ecudate=g_today     #資料修改日期
+           # darcy:2025/12/11 add s---
+           ,ecuud04 = l_ecuud04,
+           ecuud05 = '0',
+           ecuud93 = l_ecuud03
+           # darcy:2025/12/11 add e---
    INSERT INTO ecu_file SELECT * FROM ecu_tmp
    IF STATUS THEN
       # CALL cl_err3("ins","ecu_file",new_no,necu02,STATUS,"","ins ecu",1) #FUN-660091
@@ -6826,6 +6873,9 @@ function i100_copy_ecu(old_no,oecu02,oecu012,new_no,necu02,necu012)
           necu02  like ecu_file.ecu02,
           necu012 like ecu_file.ecu012
    define l_ecu014 like ecu_file.ecu014
+   define l_ecuud04 like ecu_file.ecuud04 # darcy:2025/12/11 add
+   define l_ecuud03 like ecu_file.ecuud03 # darcy:2025/12/12
+   define li_result varchar(1) # darcy:2025/12/12 add
 
    select ecr02 into l_ecu014 from ecr_file where ecr01=necu012
 
@@ -6834,12 +6884,29 @@ function i100_copy_ecu(old_no,oecu02,oecu012,new_no,necu02,necu012)
    insert into ecu_tmp
    select * from ecu_file
     where ecu01 = old_no and ecu02 = oecu02 and ecu012 = oecu012
+
+   # darcy:2025/12/11 add s---
+   # 签核状态判断
+   let l_ecuud04 = 'N'
+   if g_user = 'tiptop' then
+      if new_no[7,7] matches "[ABC]" and new_no[10,10] not matches "[SF]" and new_no not matches "*-*" then 
+         call s_auto_assign_no("abm","ECU",g_today,"7","ecu_file","ecuud03","","","")
+            returning li_result,l_ecuud03
+         if (not li_result) then
+               rollback work
+               return
+         end if
+         let l_ecuud04 = 'Y'
+      end if
+   end if
+   # darcy:2025/12/11 add e---
      
    update ecu_tmp
       set ecu01 = new_no,ecu02 = necu02,ecu012 = necu012,
           ecu014=l_ecu014,ecu015=NULL,ecu10='N',ecu11=NULL,
           ecuacti="Y",ecuud02='N',ecuuser=g_user,ecugrup=g_grup,
           ecuoriu=g_user,ecuorig=g_grup,ecumodu=NULL,ecudate=g_today
+          ,ecuud04 = l_ecuud04,ecuud05= '0',ecuud03 = l_ecuud03 # darcy:2025/12/11 add
    insert into ecu_file select * from ecu_tmp
 
    if status then
@@ -7098,7 +7165,7 @@ function i100_ef()
    if g_success = 'N' then
       return
    end if
-
+   let g_prog = 'aeci100_1'
    if aws_efcli2(base.typeinfo.create(g_ecu),base.typeinfo.create(g_ecb),'','','','') then
       let g_success = 'Y'
       let g_ecu.ecuud05 = 'S'   #開單成功, 更新狀態碼為 's. 送簽中'
@@ -7108,6 +7175,7 @@ function i100_ef()
    else
       let g_success = 'N'
    end if
+   let g_prog = 'aeci100'
 
 end function
 # darcy:2025/10/27 add e---
