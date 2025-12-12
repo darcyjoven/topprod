@@ -9,38 +9,15 @@ import os
 DATABASE ds
 GLOBALS "../../../tiptop/config/top.global"
 
-globals 
--- 根目录
-define g_basepath    varchar(1000)
-define g_bartendpath varchar(1000)
+globals
 end globals
--- 初始化flag
-define g_label_init  boolean
 -- 总比数
 define g_rec         integer
+-- csv 
 define g_csv         string
+-- ip
+define g_ip          varchar(10)
 
--- 标签功能的初始化
--- 1. 查询bartend本地安装目录
--- 2. 查询本地的根目录
-function cl_label()
-
-    if not g_label_init then
-        -- 根目录
-        if cl_null(g_basepath) then
-            call ui.Interface.frontCall('standard','feinfo',['fepath'],[g_basepath])
-        end if
-        -- bartend 安装目录
-        call cl_frontcall_findpath("bartend") returning g_bartendpath
-        let g_label_init = true
-    end if
-
-    if cl_null(g_bartendpath) then
-        call cl_err("你的电脑没有安装BarTender软件，无法打印标签，请联系系统管理员","!",1)
-        return
-    end if
-
-end function
 
 -- 通过调用p_query导出资料
 function cl_label_query(p_bartend,p_prog,p_jump,p_argv1,p_argv2,p_argv3,p_argv4,p_argv5)
@@ -77,28 +54,30 @@ function cl_label_query(p_bartend,p_prog,p_jump,p_argv1,p_argv2,p_argv3,p_argv4,
     let l_sql = cl_replace_str(l_sql,'arg4',p_argv4)
     let l_sql = cl_replace_str(l_sql,'arg5',p_argv5)
     --Step3. 写入csv文件
-    select count(*) into i from zat_file where zat01 = p_prog
-    if i <= 0 then
-        call cl_err(sfmt("%1报表未定义任何列",p_prog),sqlca.sqlcode,1)
-        return false
-    end if
+    -- select count(*) into i from zat_file where zat01 = p_prog
+    -- if i <= 0 then
+    --     call cl_err(sfmt("%1报表未定义任何列",p_prog),sqlca.sqlcode,1)
+    --     return false
+    -- end if
 
-    select tc_sma18 into l_csv from tc_sma_file
-     where tc_sma01 = 'csmi128' and tc_sma02 = p_bartend
-       and tc_sma06 = 'csv'
-    if cl_null(l_csv) then
-        call cl_err(sfmt("%1 csmi128 csv 路径 未定义",p_bartend),sqlca.sqlcode,1)
-        return false
-    end if
-    let l_csv = l_csv,"/",g_user
-    if not os.Path.isdirectory(l_csv) then
-        call os.Path.mkdir(l_csv) returning l_ok
-        if not l_ok then
-            call cl_err(sfmt("%1 csmi128 csv 创建目录失败",l_csv),"!",1)
-            return false
-        end if
-    end if
-    let l_csv = l_csv,"/data.csv"
+    -- select tc_sma18 into l_csv from tc_sma_file
+    --  where tc_sma01 = 'csmi128' and tc_sma02 = p_bartend
+    --    and tc_sma06 = 'csv'
+    -- if cl_null(l_csv) then
+    --     call cl_err(sfmt("%1 csmi128 csv 路径 未定义",p_bartend),sqlca.sqlcode,1)
+    --     return false
+    -- end if
+    -- let l_csv = l_csv,"/",g_user
+    -- if not os.Path.isdirectory(l_csv) then
+    --     call os.Path.mkdir(l_csv) returning l_ok
+    --     if not l_ok then
+    --         call cl_err(sfmt("%1 csmi128 csv 创建目录失败",l_csv),"!",1)
+    --         return false
+    --     end if
+    -- end if
+    -- let l_csv = l_csv,"/data.csv"
+
+    call cl_label_get_csv(p_bartend) returning l_csv,l_local
 
     let l_ch = base.Channel.create()
     call l_ch.openFile(l_csv,"w")
@@ -131,7 +110,6 @@ function cl_label_query(p_bartend,p_prog,p_jump,p_argv1,p_argv2,p_argv3,p_argv4,
     call l_ch.close()
 
     --Step4. 覆盖本地文件
-    let l_local = g_basepath,"/",p_bartend,"/data.csv"
     let g_csv = l_local
 
     -- 创建文件夹，防止报错
@@ -162,55 +140,26 @@ function cl_label_prt(p_bartend)
     define l_cmd            string
     define l_bartend        string
     define l_csv            string
+    define l_redown         varchar(1)
 
-    select tc_sma18 into l_btw from tc_sma_file 
-     where tc_sma01 = 'csmi128' and tc_sma02 = p_bartend
-       and tc_sma06 = 'temp'
-    if cl_null(l_btw) then
-        call cl_err(sfmt("%1模板未在csmi128定义",p_bartend),sqlca.sqlcode,1)
+    --Step1. 模板下载
+    if not cl_label_down_mod(p_bartend) then
+        call cl_err("下载模板失败，请联系系统管理员","!",1)
         return false
     end if
 
-    --Step1. 检查是否下载了模板
-    let l_filename = os.Path.basename(l_btw)
-    let l_local = g_basepath,"/",p_bartend,"/",l_filename
-
-    let l_dat = cl_frontcall_modDate(l_local)
-    let l_today = sfmt("%1/%2/%3",year(g_today) mod 100 using '&&',month(g_today) using '&&',day(g_today) using '&&')
-
-    if cl_null(l_dat) or l_dat < l_today then
-        -- 重新下载
-        -- 创建文件夹，防止报错
-        if not cl_frontcall_mkdir(l_local) then
-            call cl_err(sfmt("创建目录失败 %1",l_local),"!",1)
-            return false
-        end if
-
-        call cl_download_file(l_btw,l_local) returning l_ok
-        if not l_ok then
-            call cl_err(sfmt("下载模板失败 %1",l_local),"!",1)
-            return false
-        end if
-    end if
-
-    --Step2. 检查bartend是否安装
-    call cl_frontcall_findpath("bartend") returning g_bartendpath
-    if cl_null(g_bartendpath) then
-        call cl_err("未找到 Bartender 安装目录，请联系管理员","!",1)
-        return false
-    end if
-
-    --Step3. 打印/预览标签
+    --Step2. 打印/预览标签
     open window cl_label_w at 1,1     with form "clib/42f/cl_label"
          attribute (style = g_win_style clipped) 
 
     call cl_ui_init()
 
     let l_choice = 0
+    let l_redown = 'N'
 
     display sfmt("共%1笔资料，请选择打印方式",g_rec) to msg
 
-    input l_choice without defaults from choice 
+    input l_choice,l_redown without defaults from choice,redown
     if int_flag then
         message "已取消"
         close window cl_label_w
@@ -219,10 +168,21 @@ function cl_label_prt(p_bartend)
     end if
 
     close window cl_label_w
-    let l_bartend = g_bartendpath,"bartend.exe"
+
     let l_local = cl_replace_str(l_local,'/',"\\")
     let g_csv = cl_replace_str(g_csv,'/',"\\")
-    let l_cmd = sfmt('"%1" /AF=%2 /D=%3',l_bartend,l_local,g_csv)
+    let l_cmd = sfmt('cmd /c start "" bartend /AF=%1 /D=%2',l_local,g_csv)
+
+    -- 重新下载模板
+    if l_redown = 'Y' then
+        delete from tc_sma_file 
+         where tc_sma01 = 'csmi129' and tc_sma02 = g_ip
+           and tc_sma06 = p_bartend
+        if not cl_label_down_mod(p_bartend) then
+            call cl_err("下载模板失败，请联系系统管理员","!",1)
+            return false
+        end if
+    end if
 
     case l_choice
         when 0
@@ -230,7 +190,7 @@ function cl_label_prt(p_bartend)
             call ui.Interface.frontCall("standard","execute",[l_cmd,1],[l_ok])
         when 1
             -- 直接打印
-            let l_cmd = l_cmd," /P /X"
+            let l_cmd = l_cmd," /P"
             call ui.Interface.frontCall("standard","execute",[l_cmd,1],[l_ok])
         when 2
             -- 取消
@@ -242,4 +202,77 @@ function cl_label_prt(p_bartend)
     end case
 
     return l_ok
+end function
+
+-- 下载模板
+function cl_label_down_mod(p_bartend)
+    define p_bartend    varchar(1000)
+    define l_tc_sma03   like tc_sma_file.tc_sma03
+    define i            integer
+    define l_template   like tc_sma_file.tc_sma18
+    define l_local      varchar(1000)
+
+    -- 查询IP是否有记录
+    if cl_null(g_ip) then
+        call ui.Interface.frontCall( "standard", "feinfo", ["ip"], [g_ip] )
+    end if
+    
+    select count(*) into i from tc_sma_file
+     where tc_sma01 = 'csmi129' and tc_sma02 = g_ip
+       and tc_sma06 = p_bartend
+    
+    -- 有记录不需要处理
+    if i > 0 then
+        return true
+    end if
+
+    select tc_sma18 into l_template from tc_sma_file
+     where tc_sma01 = 'csmi128' and tc_sma02 = p_bartend
+       and tc_sma06 = 'temp'
+
+    if sqlca.sqlcode or cl_null(l_template) then
+        call cl_err(sfmt("%1模板未在csmi128定义",p_bartend),sqlca.sqlcode,1)
+        return false
+    end if
+
+    -- 开始下载
+    let l_local = os.Path.basename(l_template)
+    let l_local = "C:/tiptop/",l_local
+
+    return cl_download_file(l_template,l_local)
+end function
+
+-- 获得远程csv目录和本地csv的目录
+function cl_label_get_csv(p_bartend)
+    define p_bartend    varchar(1000)
+    define l_csv        like tc_sma_file.tc_sma18
+    define l_local      varchar(1000)
+    define l_filename   varchar(1000)
+
+    select tc_sma18 into l_csv from tc_sma_file
+     where tc_sma01 = 'csmi128' and tc_sma02 = p_bartend
+       and tc_sma06 = 'csv'
+    if sqlca.sqlcode or cl_null(l_template) then
+        call cl_err(sfmt("%1 csv未在csmi128定义",p_bartend),sqlca.sqlcode,1)
+        return '',''
+    end if
+
+    let l_filename = os.Path.basename(l_csv)
+    let l_local = "C:/tiptop/",l_local
+
+    let l_csv = os.Path.dirname(l_csv)
+    let l_csv = l_csv,"/",g_user #,"/",l_filename
+
+    -- 创建文件夹
+    if not os.Path.isdirectory(l_csv) then
+        call os.Path.mkdir(l_csv) returning l_ok
+        if not l_ok then
+            call cl_err(sfmt("%1 csmi128 csv 创建目录失败",l_csv),"!",1)
+            return '',''
+        end if
+    end if
+
+    let l_csv = l_csv,"/",l_filename
+
+    return l_csv,l_local
 end function
