@@ -19,6 +19,7 @@ type img        record
     img10           like img_file.img10,
     img37           like img_file.img37,
     stale           integer,
+    stale_type      integer,
     img18           like img_file.img18,
     ccc23           like ccc_file.ccc23,
     amt             decimal(20,2),
@@ -395,6 +396,7 @@ end function
 function cimq024_fill(p_wc)
     # ---
     define p_wc string
+    define i    integer
     # --- 
     -- g_tc_imi   ,g_tc_imi_t       
     -- g_img      ,g_img_excel      
@@ -406,9 +408,10 @@ function cimq024_fill(p_wc)
     -- g_supppart ,g_supppart_excel 
 
     #Step1. 库存资料
-    let g_sql = " select img01,ima02,ima021,img02,imd02,img03,img04,img09,img10,img37,trunc(sysdate)-img37 stale ,img18,ccc23,amt,remark ",
+    let g_sql = " select img01,ima02,ima021,img02,imd02,img03,img04,img09,img10,img37,trunc(sysdate)-img37 stale ,0 stale_type,img18,ccc23,amt,remark ",
                 "   from tc_imi_file,imd_file where tc_imi01 =  '",g_tc_imi.tc_imi01,"'",
                 "    and img02 = imd01 ",
+                "    and (img02 not in ('S001','S007','S010') or (img01 not like 'KG%' and img01 not like 'KH%'))",
                 "    and ",p_wc clipped,
                 " order by img01,img02,img03,img04"
     prepare cimq024_fill1 from g_sql
@@ -423,6 +426,14 @@ function cimq024_fill(p_wc)
             call cl_err("cimq024_p1",sqlca.sqlcode,1)
             exit foreach
         end if
+
+        for i = 1 to g_col.getLength()
+            if g_img_excel[g_cnt].stale <= g_col[i] then
+                let g_img_excel[g_cnt].stale_type = i
+                exit for
+            end if
+        end for
+
         if g_cnt <= 10000 then
             let g_img[g_cnt].* = g_img_excel[g_cnt].*
         end if
@@ -1551,7 +1562,8 @@ end function
 
 -- 初始化字段信息
 function cimq024_col_init()
-    define i,j integer
+    define i,j              integer
+    define l_value,l_desc   string
 
     call g_col.clear()
 
@@ -1574,6 +1586,10 @@ function cimq024_col_init()
 
     -- 字段名称设置
     for i = 1 to g_col.getlength()
+        let l_value = l_value,sfmt('%1,',i)
+        let l_desc = l_desc,sfmt("%1,",sfmt("%1~%2", -- 字段名称
+                        iif(i==1,0,g_col[i-1]+1), -- 上一个col，或者0
+                        g_col[i]))
         for j = 1 to 6
             call cl_set_comp_att_text(
                 sfmt("col%1_%2",i,j), -- 字段编号
@@ -1583,6 +1599,8 @@ function cimq024_col_init()
         end for
     end for
     -- 最后一笔
+    let l_value = l_value,'0'
+    let l_desc = l_desc,sfmt("%1及以上",g_col[g_col.getlength()]+1)
     for j = 1 to 6
         call cl_set_comp_att_text(
             sfmt("col%1_%2",g_col.getlength()+1,j), -- 字段编号
@@ -1595,5 +1613,7 @@ function cimq024_col_init()
             call cl_set_comp_visible(sfmt("col%1_%2",i,j),false)
         end for
     end for
+
+    call cl_set_combo_items("stable_type",l_value,l_desc)
 
 end function
