@@ -343,7 +343,7 @@ function i100sub_y_upd(p_ecu01,p_ecu02,p_inTransaction)
     # darcy:2025/10/28 add e---
     select ecuud03,ecuud04 into l_ecuud03,l_ecuud04 from ecu_file
      where ecu01 = p_ecu01 and ecu02 = p_ecu02
-    if l_ecuud04 == 'Y' then
+    if l_ecuud04 == 'Y' and g_prog = 'aeci100' then
         call cl_err(l_ecuud03,"cxm-052",1) 
         let g_success = 'N'
         return
