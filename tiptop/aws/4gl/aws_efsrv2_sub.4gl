@@ -708,6 +708,9 @@ FUNCTION aws_efsrv2_SetStatus()
                end if
                #自动审核程序
                if l_status = '1' then  #darcy:2023/06/20 add
+                  -- call cl_temp_log('aws_efsrv2_sub',false,g_wse.wse01||' '||l_formNum||' start' )
+                  -- call cl_temp_log('aws_efsrv2_sub',false,sfmt("formNum：%1",l_formNum) )
+                  -- call cl_temp_log('aws_efsrv2_sub',false,sfmt("SourceFormNum:%1",g_form.SourceFormNum) )
                   case g_wse.wse01
                      when 'axmt400'
                         # 再次送签 为新表单
@@ -717,6 +720,7 @@ FUNCTION aws_efsrv2_SetStatus()
                            let g_success = 'N'
                         end if
                   end case
+                  -- call cl_temp_log('aws_efsrv2_sub',false,g_wse.wse01||' '||l_formNum||' end \n' )
                end if #darcy:2023/06/20 add 
                if g_success ='N' then
                   #错误处理

@@ -6577,7 +6577,7 @@ function i100_copy_y(p_ecu01,p_ecu02)
    # 签核状态判断
    let l_ecuud04 = 'N'
    if g_user = 'tiptop' then
-      if new_no[7,7] matches "[ABC]" and new_no[10,10] not matches "[SF]" and new_no not matches "*-*" then 
+      if new_no[7,7] matches "[ABC]" and new_no[10,10] not matches "[SF]" and new_no not matches "*-*"  then 
          call s_auto_assign_no("abm","ECU",g_today,"7","ecu_file","ecuud03","","","")
             returning li_result,l_ecuud03
          if (not li_result) then
@@ -6609,7 +6609,7 @@ function i100_copy_y(p_ecu01,p_ecu02)
            # darcy:2025/12/11 add s---
            ,ecuud04 = l_ecuud04,
            ecuud05 = '0',
-           ecuud93 = l_ecuud03
+           ecuud03 = l_ecuud03
            # darcy:2025/12/11 add e---
    INSERT INTO ecu_file SELECT * FROM ecu_tmp
    IF STATUS THEN
