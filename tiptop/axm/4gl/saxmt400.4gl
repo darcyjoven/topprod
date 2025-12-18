@@ -6300,6 +6300,9 @@ DEFINE  l_sql3    LIKE type_file.chr1000 #str----add by huanglf160808
 define l_ima140 like ima_file.ima140 ,
       l_ima1401 like ima_file.ima1401
 #darcy:2023/11/03 e---
+# darcy:2025/12/17 add s---
+define l_multi_str   string
+# darcy:2025/12/17 add e---
 
 DEFINE l_x        LIKE type_file.num5   #add by guanyao160731
    LET g_action_choice = ""
@@ -7431,6 +7434,7 @@ DEFINE l_x        LIKE type_file.num5   #add by guanyao160731
            LET p_cmd = ''
            LET l_ac = ARR_CURR()
            LET l_lock_sw = 'N'                   #DEFAULT
+           let g_action_choice = ''  #darcy:2025/12/18 add
            #LET g_chr1 = 'N'    #MOD-870031   #CHI-880006
             #str---add by huanglf160722
             #LET g_oeb[l_ac].oebud03 = 'N'        #mark by guanyao160726
@@ -7607,6 +7611,7 @@ DEFINE l_x        LIKE type_file.num5   #add by guanyao160731
               LET INT_FLAG = 0
               CANCEL INSERT
            END IF
+           if cl_null(g_action_choice) or g_action_choice != 'multi_input' then # darcy:2025/12/18 add
 
            CASE t400_b_inschk()
               WHEN "oeb71"   # NEXT FIELD oeb71  #TQC-AA0139 move to "confirm" to check
@@ -7739,6 +7744,8 @@ DEFINE l_x        LIKE type_file.num5   #add by guanyao160731
               END IF #No.FUN-650108
               COMMIT WORK
            END IF
+
+           end if # darcy:2025/12/18 add
 
         BEFORE FIELD oeb03                            #default 序號
            CALL t400_bef_oeb03(p_cmd)
@@ -9632,16 +9639,37 @@ DEFINE l_x        LIKE type_file.num5   #add by guanyao160731
                 
             #str—add by huanglf 160713
               WHEN INFIELD(oebud02)
-             CALL cl_init_qry_var()
-              IF g_oea.oea03 IS NULL THEN 
-              LET g_qryparam.form = "q_oea22"
-              ELSE
-               LET g_qryparam.arg1 = g_oea.oea03
-               LET g_qryparam.form ="q_oea22_1"
-              END IF 
-              CALL cl_create_qry() RETURNING g_oeb[l_ac].oebud02,g_oeb[l_ac].oeb71
-               DISPLAY BY NAME g_oeb[l_ac].oebud02
-                 NEXT FIELD oebud02
+               # darcy:2025/12/17 mod s---
+            --  CALL cl_init_qry_var()
+            --   IF g_oea.oea03 IS NULL THEN 
+            --   LET g_qryparam.form = "q_oea22"
+            --   ELSE
+            --    LET g_qryparam.arg1 = g_oea.oea03
+            --    LET g_qryparam.form ="q_oea22_1"
+            --   END IF 
+            --   CALL cl_create_qry() RETURNING g_oeb[l_ac].oebud02,g_oeb[l_ac].oeb71
+            --    DISPLAY BY NAME g_oeb[l_ac].oebud02
+               # 修改的时候，还是原逻辑
+               if p_cmd = 'u' then 
+                  CALL cl_init_qry_var()
+                  IF g_oea.oea03 IS NULL THEN 
+                     LET g_qryparam.form = "q_oea22"
+                  ELSE
+                     LET g_qryparam.arg1 = g_oea.oea03
+                     LET g_qryparam.form ="q_oea22_1"
+                  END IF 
+                  CALL cl_create_qry() RETURNING g_oeb[l_ac].oebud02,g_oeb[l_ac].oeb71
+                  DISPLAY BY NAME g_oeb[l_ac].oebud02
+               --   NEXT FIELD oebud02
+               else
+               # 当新增的时候，允许批量录入
+               -- p_cmd = 'a'
+                  if saxmt400_multi_input() then
+                     CALL DIALOG.setCurrentRow("s_oeb", l_ac)
+                  end if
+               end if
+               NEXT FIELD oebud02
+               # darcy:2025/12/17 mod e---
             #end—add by huanglf 160713
               WHEN INFIELD(oebud03)
                  CALL cl_dynamic_qry() RETURNING g_oeb[l_ac].oebud03
@@ -12084,14 +12112,17 @@ FUNCTION t400_b_fill(p_wc2,p_wc5)              #BODY FILL UP
     where tc_oeb01 = g_oea.oea01
    # darcy:2025/10/23 add e---
    let l_sql = "select tc_oeb03,tc_oeb031,tc_oeb04,tc_oeb05,tc_oeb06,ima021,tc_oeb12,tc_oeb16, ",
-               "       tc_oeb22,tc_oeb23,tc_oeb24,tc_oeb25,tc_oeb26,tc_oeb70,tc_oeb70d ",
-               "  from tc_oeb_file,oea_file,oeb_file,ima_file",
-               " where oeb01 ='",g_oea.oea01,"'",
-               "   and oea01 = oeb01 and oeb01 = tc_oeb01 and oeb03 = tc_oeb03 ",
-               " and ",p_wc2 clipped," and oeb04 = ima01",
-               " and (oeb1003='1' or (oeb1003='2' and oeb03<'9001')) ",
-               " and tc_oebud02 = '",l_tc_oebud02,"' ", # darcy:2025/10/23 add
-               " order by tc_oeb03,tc_oeb031"
+               "       tc_oeb22,tc_oeb23,tc_oeb24,tc_oeb25,tc_oeb26,tc_oeb70,tc_oeb70d ", 
+               "  from (select tc_oeb01,tc_oeb03,tc_oeb031,tc_oeb04,tc_oeb05,tc_oeb06,tc_oeb12, ",
+               "               tc_oeb16,tc_oeb22,tc_oeb23,tc_oeb24,tc_oeb25,tc_oeb26,tc_oeb70, ",
+               "               tc_oeb70d,tc_oebud02,rank() OVER (partition by tc_oeb01, tc_oeb03 order by tc_oebud02 desc) as rn",
+               "         from tc_oeb_file) tc",
+               " join oeb_file b on tc.tc_oeb01 = b.oeb01 and tc.tc_oeb03 = b.oeb03 ",
+               " join oea_file e on b.oeb01 = e.oea01 ",
+               " join ima_file i on b.oeb04 = i.ima01 ",
+               " where tc.rn = 1 and b.oeb01 = '",g_oea.oea01,"' and (b.oeb1003 = '1' or (b.oeb1003 = '2' and b.oeb03 < '9001')) ",
+               " and ",p_wc2 clipped ,
+               " order by tc.tc_oeb03, tc.tc_oeb031 "
    prepare saxmt400_tc_oeb_bp from l_sql
    declare saxmt400_tc_oeb_cur cursor for saxmt400_tc_oeb_bp
    let g_cnt = 1
@@ -24939,7 +24970,9 @@ DEFINE l_count  LIKE type_file.num5    #TQC-A80141
    #-----END MOD-AA0180-----
 
    IF g_oaz.oaz43='Y' THEN
+      if cl_null(g_action_choice) or g_action_choice <> 'multi_input' then #darcy:2025/12/18 add
       CALL t400_b_more()
+      end if # darcy:2025/12/18 add
    ELSE
       IF g_oea.oea00 = '9' THEN
          LET b_oeb.oeb09 = g_oaz.oaz78
@@ -35900,3 +35933,104 @@ function saxmt400_tc_oebud02()
    
    return l_tc_oebud02
 end function
+
+
+# darcy:2025/12/17 add s---
+function saxmt400_multi_input()
+   define l_multi_str,l_temp      string
+   define l_tok,l_tok2     base.stringTokenizer
+   define l_oeb71          like oeb_file.oeb71
+   define l_oebud02        like oeb_file.oebud02
+   define l_max_oeb03      integer
+   define l_old_ac         integer
+   define l_sum            like oeb_file.oeb47
+   define l_ok             boolean
+
+   let g_action_choice = 'multi_input'
+   let l_old_ac = l_ac
+   let l_ok = false
+
+   call cq_oea(g_oea.oea03," 1=1",true,true) returning l_multi_str
+
+   let l_tok = base.StringTokenizer.create(l_multi_str,"|")
+   while l_tok.hasMoreTokens()
+      let l_temp = l_tok.nextToken()
+      let l_tok2 = base.StringTokenizer.create(l_temp,",")
+
+      let l_oebud02 = l_tok2.nextToken()
+      let l_oeb71 = l_tok2.nextToken()
+
+      -- 项次设置
+      select max(oeb03) into l_max_oeb03 from oeb_file 
+       where oeb01 = g_oea.oea01
+      if cl_null(l_max_oeb03) then
+         let l_max_oeb03 = 1
+      else
+         let l_max_oeb03 = l_max_oeb03 + 1
+      end if
+
+      call t400_b_bef_ins()
+
+      let g_oeb[l_ac].oeb03 = l_max_oeb03
+      let g_oeb[l_ac].oeb71 =  l_oeb71
+      let g_oeb[l_ac].oebud02 = l_oebud02 
+      select oeb04 into g_oeb[l_ac].oeb04 from oeb_file
+       where oeb01 = g_oeb[l_ac].oebud02 and oeb03 = g_oeb[l_ac].oeb71
+      
+      if not t400_chk_oeb71('a',true)then
+         return l_ok
+      end if
+
+      call t400_b_inschk() returning l_temp
+
+      IF g_oea.oea213 = 'N' THEN
+         LET g_oeb[l_ac].oeb14 = t400_amount(g_oeb[l_ac].oeb917,g_oeb[l_ac].oeb13,g_oeb[l_ac].oeb1006,t_azi03)
+         CALL cl_digcut(g_oeb[l_ac].oeb14,t_azi04)  RETURNING g_oeb[l_ac].oeb14
+         LET g_oeb[l_ac].oeb14t= g_oeb[l_ac].oeb14*(1+ g_oea.oea211/100)
+         CALL cl_digcut(g_oeb[l_ac].oeb14t,t_azi04) RETURNING g_oeb[l_ac].oeb14t
+      ELSE
+         LET g_oeb[l_ac].oeb14t= t400_amount(g_oeb[l_ac].oeb917,g_oeb[l_ac].oeb13,g_oeb[l_ac].oeb1006,t_azi03)
+         CALL cl_digcut(g_oeb[l_ac].oeb14t,t_azi04) RETURNING g_oeb[l_ac].oeb14t
+         LET g_oeb[l_ac].oeb14 = g_oeb[l_ac].oeb14t/(1+ g_oea.oea211/100)
+         CALL cl_digcut(g_oeb[l_ac].oeb14,t_azi04)  RETURNING g_oeb[l_ac].oeb14
+      END IF
+
+      SELECT SUM(rxc06) INTO l_sum FROM rxc_file WHERE rxc00 = '01'
+                                             AND rxc01 = g_oea.oea01
+                                             AND rxc02 = g_oeb[l_ac].oeb03
+      IF l_sum IS NULL THEN LET l_sum = 0 END IF
+      -- UPDATE oeb_file SET oeb47 = l_sum WHERE oeb01 = g_oea.oea01 AND oeb03 = g_oeb[l_ac].oeb03
+      LET g_oeb[l_ac].oeb47 = l_sum
+
+      CALL t400_b_move_back() #No.MOD-7A0063 add
+      IF NOT t400_b_ins() THEN
+         return l_ok
+      ELSE
+         let l_ok = true
+         LET g_rec_b=g_rec_b+1
+         DISPLAY g_rec_b TO FORMONLY.cn3
+         IF g_aza.aza50 = 'N' THEN
+            CALL t400_bu()
+         ELSE 
+            CALL t400_oea_sum()  
+            CALL t400_weight_cubage()
+         END IF 
+      END IF
+
+      let l_ac = l_ac + 1
+
+   end while
+
+   commit work
+   begin work
+
+   call t400_b_fill(' 1=1',' 1=1')
+
+   -- let l_ac = l_old_ac
+   if l_ac != l_old_ac then
+      let l_ac = l_ac - 1
+   end if
+
+   return l_ok
+end function
+# darcy:2025/12/17 add e---
