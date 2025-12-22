@@ -503,6 +503,8 @@ FUNCTION t110(p_argv1,p_argv2,p_argv3,p_argv4,p_argv5,p_argv6)
          EXIT PROGRAM 
    END CASE  
 
+   call saqct110_create_x() # darcy:2025/12/22 add
+
  
    LET g_forupd_sql = "SELECT * FROM qcs_file WHERE qcs01 = ? AND qcs02 = ? AND qcs05 = ? FOR UPDATE"    #liuxqa 091022
    LET g_forupd_sql = cl_forupd_sql(g_forupd_sql)
@@ -5781,6 +5783,8 @@ FUNCTION t110_y_upd()
    IF (g_argv5 <> "SPC_ins" AND g_argv5 <> "SPC_upd") OR g_argv5 IS NULL THEN
       BEGIN WORK
    END IF
+
+   call saqct110_follow(g_qcs.qcs01,g_qcs.qcs02,g_qcs.qcs05,true) # darcy:2025/12/08 add 
  
    OPEN t110_cl USING g_qcs.qcs01,g_qcs.qcs02,g_qcs.qcs05    #liuxqa 091022
    IF STATUS THEN
@@ -8286,10 +8290,12 @@ FUNCTION t110_3()
          LET g_msg = "aqci107 '",g_qcs.qcs01,"' '",g_qcs.qcs02,"' '",g_qcs.qcs05,"' '",l_type,"'"
          CALL cl_cmdrun_wait(g_msg)
       #MOD-D60068---add---START-------------------------------
-      ELSE  
-         INPUT BY NAME g_qcs.qcs41,g_qcs.qcs38,g_qcs.qcs091,g_qcs.qcsud13 WITHOUT DEFAULTS   #add byhlf07751
+      ELSE 
+         let g_qcs.qcs091 = g_qcs.qcs22 #darcy:2025/12/08 add
+         INPUT BY NAME g_qcs.qcs41,g_qcs.qcs38,g_qcs.qcs091,g_qcs.qcsud13 --WITHOUT DEFAULTS   #add byhlf07751
       
             BEFORE INPUT 
+               display g_qcs.qcs22 to qcs091 # darcy:2025/12/08 add
                IF g_sma.sma115 = "Y" THEN
                   CALL cl_set_comp_entry("qcs38,qcs41",TRUE)
                   CALL cl_set_comp_entry("qcs091,qcsud13",FALSE)      
@@ -11929,7 +11935,7 @@ function saqct110_follow(p_qcs01,p_qcs02,p_qcs05,p_tran)
 
    # 找一笔不是验退状态记录
    select qcs01,qcs02,qcs05 into l_qcs01,l_qcs02,l_qcs05 from qcs_file
-    where qcs01 = l_qcs01 and qcs02 <> l_qcs02 and qcs09 <> '1'
+    where qcs01 = p_qcs01 and qcs02 <> p_qcs02 and qcs09 <> '1'
       and qcs021 = l_qcs021 and rownum = 1 
    if sqlca.sqlcode or cl_null(l_qcs01) then
       return
@@ -11939,15 +11945,17 @@ function saqct110_follow(p_qcs01,p_qcs02,p_qcs05,p_tran)
       begin work
    end if
 
+   delete from  x 
+   
+   insert into x
    select * from qct_file where qct01 = l_qcs01 and qct02 = l_qcs02 and qct021 = l_qcs05
-     into temp x
    if sqlca.sqlcode then
       call cl_err('into temp',sqlca.sqlcode,1)
       let g_success = 'N'
       goto _error
    end if
 
-   update x set qcs01=p_qcs01,qcs02=p_qcs02,qcs05 = p_qcs05
+   update x set qct01=p_qcs01,qct02=p_qcs02,qct021 = p_qcs05
    if sqlca.sqlcode then
       call cl_err('upd x',sqlca.sqlcode,1)
       let g_success = 'N'
@@ -12125,3 +12133,7 @@ function saqct110_return_chk(p_qcs01,p_qcs02,p_qcs05)
     CALL t110_delHeader()
 end function
 # darcy:2025/11/28 add e---
+
+function saqct110_create_x()
+   select * from qct_file where 1=2 into temp x
+end function
