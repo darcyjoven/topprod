@@ -45,6 +45,7 @@ DEFINE
                 img01   LIKE img_file.img01,
                 ima02   LIKE ima_file.ima02,  #MOD-6A0130
                 ima021  LIKE ima_file.ima021, #MOD-6A0130
+                imaud38 like ima_file.imaud38, #darcy:2025/12/22 add
                 imaud10 LIKE ima_file.imaud10,#add by guanyao160913
                 img03   LIKE img_file.img03,
                 ime03   LIKE ime_file.ime03,   #TQC-CC0003
@@ -451,7 +452,7 @@ FUNCTION q401_b_fill()              #BODY FILL UP
 
  IF g_imd.chk1 = 'N' THEN 
    LET l_sql =
-        "SELECT img01, ima02, ima021,imaud10, img03,'', img04, img09, img10, ",  #MOD-6A0130 modify  #add imaud10 by guanyao160913
+        "SELECT img01, ima02, ima021,imaud38,imaud10, img03,'', img04, img09, img10, ",  #MOD-6A0130 modify  #add imaud10 by guanyao160913
         "       case when imaud10>0 then img10/imaud10 else 0 end case ,",     #add imaud10 by guanyao160913
         " img19, img36, img37,img18 ",
        #" ,ima02, ima021",          #FUN-640006  #MOD-6A0130 mark
@@ -465,14 +466,14 @@ FUNCTION q401_b_fill()              #BODY FILL UP
 ELSE 
 
    LET l_sql1 =
-        "SELECT img01,ima02,ima021,imaud10,img03,'', '', '', sum(img10), ",  #MOD-6A0130 modify  #add imaud10 by guanyao160913
+        "SELECT img01,ima02,ima021,imaud38,imaud10,img03,'', '', '', sum(img10), ",  #MOD-6A0130 modify  #add imaud10 by guanyao160913
         "       '' ,",     #add imaud10 by guanyao160913
         " '', '', '' ,'' ",
        #" ,ima02, ima021",          #FUN-640006  #MOD-6A0130 mark
         " FROM  img_file,ima_file",  #FUN-640006   #No.TQC-780080 add
         " WHERE img02 = '",g_imd.imd01,"' AND ", tm.wc2 CLIPPED,
         " AND   img_file.img01 = ima_file.ima01 AND img10!=0",   #FUN-640006
-        " GROUP BY img01,img03,ima02,ima021,imaud10 ",
+        " GROUP BY img01,img03,ima02,ima021,imaud10,imaud38 ",
         " ORDER BY img01 "
     PREPARE q401_pb1 FROM l_sql1
     DECLARE q401_bcs1                       #BODY CURSOR

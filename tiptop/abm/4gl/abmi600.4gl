@@ -324,6 +324,7 @@ DEFINE
                     bmb03    LIKE bmb_file.bmb03,       #元件料件
                     ima02_b  LIKE ima_file.ima02,       #品名
                     ima021_b LIKE ima_file.ima021,      #規格
+                    imaud38_b like ima_file.imaud38,    #原厂料号 # darcy:2025/12/22 add
                     ima08_b  LIKE ima_file.ima08,       #來源
                     bmb09    LIKE bmb_file.bmb09,       #作業編號
                     bmb16    LIKE bmb_file.bmb16,       #UTE/SUB
@@ -365,6 +366,7 @@ DEFINE
                     bmb03    LIKE bmb_file.bmb03,       #元件料件
                     ima02_b  LIKE ima_file.ima02,       #品名
                     ima021_b LIKE ima_file.ima021,      #規格
+                    imaud38_b like ima_file.imaud38,    #原厂料号 # darcy:2025/12/22 add
                     ima08_b  LIKE ima_file.ima08,       #來源
                     bmb09    LIKE bmb_file.bmb09,       #作業編號
                     bmb16    LIKE bmb_file.bmb16,       #UTE/SUB
@@ -406,6 +408,7 @@ DEFINE
                     bmb03    LIKE bmb_file.bmb03,       #元件料件
                     ima02_b  LIKE ima_file.ima02,       #品名
                     ima021_b LIKE ima_file.ima021,      #規格
+                    imaud38_b like ima_file.imaud38,    #原厂料号 # darcy:2025/12/22 add
                     ima08_b  LIKE ima_file.ima08,       #來源
                     bmb09    LIKE bmb_file.bmb09,       #作業編號
                     bmb16    LIKE bmb_file.bmb16,       #UTE/SUB
@@ -4708,9 +4711,9 @@ DEFINE
 
 
     LET g_errno = ' '
-    SELECT ima02,ima021,ima08,ima37,ima25,ima63,ima70,ima86,ima105,ima107,  #No.MOD-5A0193 add ima86
+    SELECT ima02,ima021,imaud38,ima08,ima37,ima25,ima63,ima70,ima86,ima105,ima107,  #No.MOD-5A0193 add ima86 #darcy:2025/12/22 add
            ima110,ima140,ima1401,imaacti,imaud32 #FUN-6A0036 add ima1401 #darcy:2023/07/15 add
-        INTO g_bmb[l_ac].ima02_b,g_bmb[l_ac].ima021_b,
+        INTO g_bmb[l_ac].ima02_b,g_bmb[l_ac].ima021_b,g_bmb[l_ac].imaud38_b, #darcy:2025/12/22 add
              g_ima08_b,g_ima37_b,g_ima25_b,g_ima63_b,
              g_ima70_b,g_ima86_b,g_bmb27,g_ima107_b,l_ima110,l_ima140,l_ima1401,l_imaacti  #No.MOD-5A0193 add ima86 #FUN-6A0036 add(ima1401)
              ,l_imaud32  #darcy:2023/07/15 add
@@ -5019,7 +5022,7 @@ DEFINE
     p_wc2      LIKE type_file.chr1000    #No.FUN-680096   VARCHAR(300)
 
     LET g_sql =
-        "SELECT bmb02,bmb30,bmb03,ima02,ima021,ima08,bmb09,bmb16,bmb14,bmb04,bmb05,bmb06,bmb07,",#FUN-550014 add bmb30 #FUN-610022調換bmb30的順序
+        "SELECT bmb02,bmb30,bmb03,ima02,ima021,imaud38,ima08,bmb09,bmb16,bmb14,bmb04,bmb05,bmb06,bmb07,",#add imaud38 #FUN-550014 add bmb30 #FUN-610022調換bmb30的順序
         "       bmb10,bmb08,bmb081,bmb082,bmb19,bmb24,bmb13,bmb31,bmb15,  ",  #NO.FUN-690019 add bmb31 #No.FUN-A50089 add bmb081,bmb082
         # mod by darcy:2025/07/25 bmb31 和bmb15 交换位置
         "bmb36  ,bmb37  ,", #FUN-D10093 add bmb36,bmb37

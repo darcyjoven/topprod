@@ -952,6 +952,12 @@ DEFINE   l_n3       LIKE type_file.num15_3 ###GP5.2  #NO.FUN-A20044
 END FUNCTION
  
 FUNCTION q102_show()
+   # darcy:2025/12/22 s---
+   define l_imaud38 like ima_file.imaud38 
+   select imaud38 into l_imaud38 from ima_file
+    where ima01 = g_ima.ima01
+   display l_imaud38 to imaud38
+   # darcy:2025/12/22 e---
    DISPLAY BY NAME
            g_ima.ima01, g_ima.ima02, g_ima.ima021,
            g_ima.ima25, g_ima.ima05, g_ima.ima06,
@@ -959,6 +965,7 @@ FUNCTION q102_show()
            g_ima.ima906,g_ima.ima907    #FUN-5C0086
 #          g_ima.ima261,g_ima.ima262    #NO.FUN-A20044
            ,g_ima.ima44,g_ima.ima44_fac,g_ima.ima45,g_ima.ima46,g_ima.ima881  #darcy:2023/06/26 add
+   
    DISPLAY g_unavl_stk to FORMONLY.unavl_stk      #NO.FUN-A20044    
    DISPLAY g_avl_stk to FORMONLY.avl_stk          #NO.FUN-A20044    
    #darcy:2023/06/20 add s---
