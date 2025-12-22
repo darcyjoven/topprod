@@ -89,7 +89,7 @@ MAIN
                
                "bmbud05.bmb_file.bmbud05,",#str---add byhuanglf160815
                "bmb02.bmb_file.bmb02,",
-               "bmd04.bmd_file.bmd04,",    #add by guanyao160902
+               "bmd04.type_file.chr1000,",    #add by guanyao160902 #darcy:2025/12/12 mod -> varchar(1000)
                "url.type_file.chr1000,",
                "url2.type_file.chr1000,",
 
@@ -102,6 +102,10 @@ MAIN
                "title.type_file.chr1000,",  #add by guanyao160928
                "imaud06.ima_file.imaud06,",   #add by huanglf161017
                "imaud06_1.ima_file.imaud06"   #add by huanglf161017
+               # darcy:2025/12/22 add s---
+               ,",imaud38.ima_file.imaud38,",
+               "bmb081.bmb_file.bmb081"
+               # darcy:2025/12/22 add e---
    LET l_table = cl_prt_temptable('cbmr001',g_sql) CLIPPED
    IF l_table = -1 THEN EXIT PROGRAM END IF
    
@@ -268,7 +272,7 @@ FUNCTION cbmr001()
 
                bmbud05  LIKE bmb_file.bmbud05, #str----add byhuanglf160815
                bmb02    LIKE bmb_file.bmb02,
-               bmd04    LIKE bmd_file.bmd04,   #add by guanyao160902
+               bmd04    varchar(1000),   #add by guanyao160902 #darcy:2025/12/12 mod -> varchar(1000)
                url      LIKE type_file.chr1000,
                url2     LIKE type_file.chr1000,
                
@@ -281,6 +285,10 @@ FUNCTION cbmr001()
                title    LIKE type_file.chr1000, #add by guanyao160928
                imaud06  LIKE ima_file.imaud06,  #add by huanglf161017
                imaud06_1 LIKE ima_file.imaud06
+               # darcy:2025/12/22 add s---
+               ,imaud38  like ima_file.imaud38,
+               bmb081   like bmb_file.bmb081
+               # darcy:2025/12/22 add e---
                  END RECORD
    DEFINE l_zo041     LIKE zo_file.zo041 
    DEFINE l_zo05      LIKE zo_file.zo05  
@@ -292,7 +300,7 @@ FUNCTION cbmr001()
    DEFINE l_n,l_n1         LIKE type_file.num5  #add by huanglf160920
    DEFINE l_ima02    LIKE ima_file.ima02  #add by huanglf160922
    DEFINE l_ima021   LIKE ima_file.ima021 #add by huanglf160922
-   DEFINE l_bmd04    LIKE bmd_file.bmd04  #add by huanglf160922
+   DEFINE l_bmd04    varchar(1000)  #add by huanglf160922 #darcy:2025/12/12 mod -> varchar(1000)
    DEFINE l_n2       LIKE type_file.num5  #add by huanglf160922
    DEFINE l_x        LIKE type_file.num5  #add by guanyao160928
    
@@ -308,7 +316,7 @@ FUNCTION cbmr001()
 
    LET l_n2 = 1 
    LET g_sql = "INSERT INTO ",g_cr_db_str CLIPPED,l_table CLIPPED,                    #add by huanglf161017 
-               " values(?,?,?,?,?, ?,?,?,?,?, ?,?,?,?,?, ?,?,?,?,?, ?,?,?,?,? ,?,?,?,?,?,?)"   #str----add byhuanglf160815  #add ? by guanyao160902 #add ? by wangxt170209
+               " values(?,?,?,?,?, ?,?,?,?,?, ?,?,?,?,?, ?,?,?,?,?, ?,?,?,?,? ,?,?,?,?,?,? ,?,?)"   #str----add byhuanglf160815  #add ? by guanyao160902 #add ? by wangxt170209
    PREPARE insert_prep FROM g_sql                                        #add by huanglf160914
    IF STATUS THEN                                                        #add by huanglf160920      
       CALL cl_err("insert_prep:",STATUS,1)                               #add by huanglf160922#add ? by guanyao160928
@@ -318,7 +326,7 @@ FUNCTION cbmr001()
    LET tm.wc = tm.wc CLIPPED,cl_get_extra_cond('ecuuser', 'ecugrup')  
 
    LET l_sql = "SELECT bma01,a.ima02,'',a.imaud07,a.imaud10,a.ima94,'',bmb03,bmb09,bmbud02,bmbud03,bmbud04,b.ima02,b.ima021,b.imaud05,bmb06,",#add bmb09 by wangxt170209
-               "       bmb10,bmbud01,bmbud05,bmb02,'','','',b.ima08,'','',bmbud06,'','',a.imaud06,b.imaud06",  #add by huanglf160914 
+               "       bmb10,bmbud01,bmbud05,bmb02,'','','',b.ima08,'','',bmbud06,'','',a.imaud06,b.imaud06,b.imaud38,bmb081",  #add by huanglf160914 
                "  FROM bmb_file LEFT JOIN ima_file b ON b.ima01=bmb03 ,",    #add by huanglf160920
                "       bma_file LEFT JOIN ima_file a ON a.ima01=bma01 ",
                " WHERE bmb01 = bma01",
