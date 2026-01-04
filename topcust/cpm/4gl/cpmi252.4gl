@@ -642,6 +642,12 @@ FUNCTION i255_menu()
             EXIT WHILE
          WHEN "controlg"
             CALL cl_cmdask()
+         # darcy:2026/01/04 add s---
+         when 're_ef'
+            if cl_chk_act_auth() then
+               call cpmi252_re_ef()
+            end if
+         # darcy:2026/01/04 add e---
          WHEN "pricing_by_qty"
             IF cl_chk_act_auth() THEN
                IF g_tc_pmw.tc_pmw05 = 'Y' THEN
@@ -1451,6 +1457,8 @@ FUNCTION i255_show()
     CALL i255_tc_pmw03('s') #MOD-570056
    CALL i255_tc_pmw08('d')                    #No.FUN-550019
    CALL i255_tc_pmw09('d')                      #FUN-630044  
+
+   call cpmi252_status()
  
    CALL i255_b_fill(g_wc2)                 #單身
  
@@ -3163,7 +3171,12 @@ FUNCTION i255_bp(p_ud)
          END IF 
          CALL i255_pic()     #FUN-920106
          EXIT DISPLAY
- 
+      # darcy:2026/01/04 add s---
+      on action re_ef
+         let g_action_choice = 're_ef'
+         exit display
+      # darcy:2026/01/04 add e---
+
       ON ACTION exit
          LET g_action_choice="exit"
          EXIT DISPLAY
@@ -4989,3 +5002,85 @@ function i255_chk_pmc_ima(p_cmd)
         return true
     end if
 end function
+
+# darcy:2026/01/04 add s---
+function cpmi252_re_ef()
+   define i,j     integer
+   define sr dynamic array of record
+         pmi01    like pmi_file.pmi01,
+         pmi10    like pmi_file.pmi10
+      end record
+   define l_prog  varchar(10)
+   
+   if cl_null(g_tc_pmw.tc_pmw01) then
+      return
+   end if
+
+   declare cpmi252_re_ef cursor for 
+      select unique pmi01,pmi10 from pmi_file,tc_pmx_file
+       where pmi01 = tc_pmx18 and tc_pmx01 = g_tc_pmw.tc_pmw01 and pmi06 = '0' and pmi07 = 'Y'
+   
+   let i = 1
+   call sr.clear()
+   foreach cpmi252_re_ef into sr[i].*
+      if sqlca.sqlcode then
+         call cl_err("cpmi252_re_ef;",sqlca.sqlcode,1)
+         let g_success = 'N'
+         exit foreach
+      end if 
+      let i = i + 1
+   end foreach
+   call sr.deleteElement(i)
+   let g_success = 'Y'
+
+   let j = 0
+   let l_prog = g_prog
+   for i = 1 to sr.getlength()
+      if sr[i].pmi10 = '1' then
+         let g_prog ='apmi255'
+      else
+         let g_prog ='apmi265'
+      end if
+      if not aws_efcli2(sr[i].pmi01) then
+         let g_success = 'N'
+         exit for
+      end if
+      let j = j + 1
+   end for
+   let g_prog = l_prog
+
+   if g_success ='Y' then
+      message sfmt("送签%1笔核价单成功！",j)
+   else
+      message "送签核价单失败！"
+   end if
+
+end function
+-- 核价单状态
+function cpmi252_status()
+   define i,j,l,m,n  integer
+
+   display 0 to confirm
+   display 0 to sign
+   
+   -- 总比数
+   select count(unique tc_pmx18) into i from tc_pmx_file where tc_pmx01 = g_tc_pmw.tc_pmw01
+   if i = 0 then
+      return
+   end if
+
+   -- 已审核笔数
+   select count(unique pmi01) into j from pmi_file,tc_pmx_file where tc_pmx01 = g_tc_pmw.tc_pmw01 and pmi01 = tc_pmx18
+      and pmiconf = 'Y'
+
+   -- 未送签数量
+   select count(unique pmi01) into l from pmi_file,tc_pmx_file where tc_pmx01 = g_tc_pmw.tc_pmw01 and pmi01 = tc_pmx18
+      and pmi06 = '0'
+
+   let m = (i - l) / i * 100
+   let n =  j / i * 100
+   display m to sign
+   display n to confirm
+
+end function
+# darcy:2026/01/04 add e---
