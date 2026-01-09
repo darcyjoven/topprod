@@ -605,6 +605,10 @@ FUNCTION t324sub_s(p_imm01,p_argv2,p_argv4,p_inTransaction)  #add by guanyao1606
    DEFINE l_sfp03     LIKE sfp_file.sfp03    #add by qianyuan170328
    define l_chk_imn04,l_chk_imn15 varchar(10)  #darcy:2023/08/16
    #DEV-D30046 --add--end
+   #darcy:2026/01/09 add s---
+   define l_amt,l_curr   decimal(15,3)
+   define l_num,l_temp   decimal(15,3)
+   #darcy:2026/01/09 add e---
    
    WHENEVER ERROR CONTINUE   
 
@@ -924,6 +928,21 @@ FUNCTION t324sub_s(p_imm01,p_argv2,p_argv4,p_inTransaction)  #add by guanyao1606
 
    FOREACH t325_y1_c3 INTO l_imn.*
       IF STATUS THEN EXIT FOREACH END IF
+      # darcy:2026/01/09 add s---
+      # 检查是否超过本月领用金额
+      if g_user = 'tiptop' and l_imn.imn15 = 'XBHCC' then
+         call cs_consumable_enable(l_imn.imn16,l_imm.imm17) returning l_num,l_temp
+         if l_num > 0 then
+            call cs_consumable(l_imn.imn16,l_imm.imm17) returning l_amt
+            call cs_consumable_amt(l_imn.imn03,l_imn.imn22,l_imn.imn20) returning l_curr
+            if l_amt + l_curr >= l_num + l_temp then
+               let g_totsuccess='N'
+               call cl_err(sfmt('料号：%1 已领用金额：%2 + 本次领用金额：%3 大于本月额度：%4 + 临时额度：%5',l_imn.imn03,l_amt,l_curr,l_num,l_temp),'!',1)
+               exit foreach
+            end if
+         end if
+      end if
+      # darcy:2026/01/09 add e---
       LET l_cnt_img = 0
       SELECT COUNT(*) INTO l_cnt_img
         FROM img_file
@@ -1016,7 +1035,7 @@ FUNCTION t324sub_s(p_imm01,p_argv2,p_argv4,p_inTransaction)  #add by guanyao1606
          LET l_chk_imn04 = 'N'
       END IF
       let l_cnt_img = 0
-      SELECT COUNT(*) INTO g_cnt FROM jce_file
+      SELECT COUNT(*) INTO l_cnt_img FROM jce_file
        WHERE jce02=l_imn.imn15
       IF l_cnt_img>0 THEN
          LET l_chk_imn15 = 'N'
