@@ -936,9 +936,9 @@ FUNCTION t324sub_s(p_imm01,p_argv2,p_argv4,p_inTransaction)  #add by guanyao1606
             call cs_consumable(l_imn.imn16,l_imm.imm17) returning l_amt
             call cs_consumable_amt(l_imn.imn03,l_imn.imn22,l_imn.imn20) returning l_curr
             if l_amt + l_curr >= l_num + l_temp then
-               let g_totsuccess='N'
-               call cl_err(sfmt('料号：%1 已领用金额：%2 + 本次领用金额：%3 大于本月额度：%4 + 临时额度：%5',l_imn.imn03,l_amt,l_curr,l_num,l_temp),'!',1)
-               exit foreach
+               LET g_success = 'N'
+               call cl_err(sfmt('料号：%1 已领用金额+ 本次领用金额：%2 大于本月额度：%3 + 临时额度：%4',l_imn.imn03,l_amt+l_curr,l_num,l_temp),'!',1)
+               return
             end if
          end if
       end if
