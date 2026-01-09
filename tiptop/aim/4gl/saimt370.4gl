@@ -5421,6 +5421,14 @@ DEFINE l_inaplant_desc   LIKE azp_file.azp02    #FUN-9C0090 ADD
    LET g_ina.inapos='N'       #No.FUN-870100
    LET g_ina.inacont=''       #No.FUN-870100
    LET g_ina.inaconu=''       #No.FUN-870100
+   # darcy:2025/10/31 add s---
+   if g_prog = 'aimt302' then
+      let g_ina.ina01 = "CRA"
+   end if
+   if g_prog = 'aimt301' then
+      let g_ina.ina01 = "CRB"
+   end if
+   # darcy:2025/10/31 add e---
    SELECT azp02 INTO l_inaplant_desc FROM azp_file
     WHERE azp01=g_ina.inaplant
    DISPLAY l_inaplant_desc TO FORMONLY.inaplant_desc
