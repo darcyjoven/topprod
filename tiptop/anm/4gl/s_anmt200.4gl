@@ -38,7 +38,7 @@ function sanmt200_undo_chk(p_nmh01,p_no)
                 # 要还原的是转付
                 # 1.检查单据后面序号是否还有转付记录
                 select max(nmi03) into l_nmi03 from nmi_file 
-                 where nmi10 = p_no and nmi01 = p_nmh01
+                where nmi01 = p_nmh01 and nmi02 = l_npn02 and nmi06 = l_npn03
                 if cl_null(l_nmi03) then
                     call s_errmsg("npn01",p_no,"未查到单据异动记录",'cnm-004',1)
                     let g_success = "N"
