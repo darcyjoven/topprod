@@ -30,6 +30,10 @@ DEFINE
          imaud33  like ima_file.imaud33,
          imaud34  like ima_file.imaud34,
          #darcy:2024/09/09 add e---
+         # darcy:2026/01/19 add s---
+         ina11    like ina_file.ina11,
+         gen02_1  like gen_file.gen02,
+         # darcy:2026/01/19 add e---
          tlf19    LIKE tlf_file.tlf19,
          gem02    LIKE gem_file.gem02,
          tlf14    LIKE tlf_file.tlf14,
@@ -72,6 +76,10 @@ DEFINE
          imaud33  like ima_file.imaud33,
          imaud34  like ima_file.imaud34,
          #darcy:2024/09/09 add e---
+         # darcy:2026/01/19 add s---
+         ina11    like ina_file.ina11,
+         gen02_1  like gen_file.gen02,
+         # darcy:2026/01/19 add e---
          tlf19    LIKE tlf_file.tlf19,
          gem02    LIKE gem_file.gem02,
          tlf14    LIKE tlf_file.tlf14,
@@ -1294,18 +1302,22 @@ FUNCTION q775_b_fill()
                 " AND pml01 =pmk01 )",
                 " WHERE r = 1"
    
-   LET g_sql = "SELECT ima12,ima57,ima08,tlf01,ima02,ima021,imaud33,imaud34,tlf19,axcq775_tmp.gem02,tlf14,azf03,tlf17, ",
+   LET g_sql = "SELECT ima12,ima57,ima08,tlf01,ima02,ima021,imaud33,imaud34,ina11,a.gen02,tlf19,axcq775_tmp.gem02,tlf14,azf03,tlf17, ",
                #darcy:2024/09/09 add imaud33,imaud34
                "       tlf021,tlf06,tlf026,ima39,ima391,tlf930,tlfccost,tlf10,l_ccc23a, ",
                "       l_ccc23b,l_ccc23c,l_ccc23d,l_ccc23e,l_ccc23f,l_ccc23g,l_ccc23h,l_tot ",
-               "       ,pmk12,gen02,pmk13,gem_file.gem02,pmk04 ", #darcy:2023/07/04 add
+               "       ,pmk12,b.gen02,pmk13,gem_file.gem02,pmk04 ", #darcy:2023/07/04 add
                "      ,inbud02 ",  #darcy:2023/07/12 add s---
                "  FROM axcq775_tmp " #, 
                #darcy:2023/07/04 add s---
                ," left join (",l_str,") on rvv31 = tlf01 and rvv32 = tlf021 ",
-               "  left join gen_file on gen01 = pmk12 ",
+               "  left join gen_file b on b.gen01 = pmk12 ",
                "  left join gem_file on gem01 = pmk13 "
                #darcy:2023/07/04 add e---
+               # darcy:2026/01/19 add s---
+               ,"  left join ina_file on ina01 = tlf026 ",
+               "  left join gen_file a on a.gen01 = ina11 "
+               # darcy:2026/01/19 add e---
                #darcy:2023/07/12 add s---
                ,"left join (select inb01,inb04,listagg(inbud02,',')within group(order by inb01,inb04) inbud02",
                 "      from inb_file GROUP BY inb01,inb04) on inb01 = tlf026 and inb04 = tlf01 "
