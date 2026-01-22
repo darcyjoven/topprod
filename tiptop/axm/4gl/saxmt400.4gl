@@ -8365,6 +8365,7 @@ DEFINE l_x        LIKE type_file.num5   #add by guanyao160731
             LET g_oeb[l_ac].oeb917= s_digqty(g_oeb[l_ac].oeb917,g_oeb[l_ac].oeb916)   #FUN-910088 add
             DISPLAY BY NAME g_oeb[l_ac].oeb916,g_oeb[l_ac].oeb917
          END IF
+         CALL DIALOG.setFieldTouched("s_oeb.oeb12", TRUE) # darcy:2026/01/08
 
 #TQC-B40118--add--str--
       AFTER FIELD oeb919
@@ -9665,7 +9666,9 @@ DEFINE l_x        LIKE type_file.num5   #add by guanyao160731
                # 当新增的时候，允许批量录入
                -- p_cmd = 'a'
                   if saxmt400_multi_input() then
-                     CALL DIALOG.setCurrentRow("s_oeb", l_ac)
+                     -- CALL DIALOG.setCurrentRow("s_oeb", l_ac)
+                     -- accept input
+                     exit dialog
                   end if
                end if
                NEXT FIELD oebud02
@@ -34611,6 +34614,12 @@ function saxmt400_tc_oeb12_change(p_oea01,p_oeb03,p_oeb12,p_tran)
    define l_tc_oeb_list dynamic array of record like tc_oeb_file.*
    define l_i           like type_file.num10
 
+   # darcy:2026/01/07 add s---
+   if g_prog != 'axmt400' then
+      return true
+   end if
+   # darcy:2026/01/07 add e---
+
    select oeb12,oeb15 into l_oeb12,l_oeb16 from oeb_file
     where oeb01 = p_oea01 and oeb03 = p_oeb03
    if cl_null(l_oeb12) or l_oeb12 = 0 then
@@ -34766,9 +34775,10 @@ function t400_split_init()
    call cl_set_comp_att_text("num02","间隔数量")
    call cl_set_comp_att_text("num03","最后拆分数量")
    call cl_set_comp_att_text("dat01","最后拆分日期")
+   call cl_set_comp_att_text("dat02","开单日期")
    call cl_set_comp_att_text("comb01","间隔单位")
    call cl_set_combo_items("comb01",'day,week,month','天,周,30天')
-   call cl_set_comp_visible("chk,oeb01s,oeb03s,oeb04s,oeb06s,ima021s,oeb12s,oeb15s,num01,num02,num03,dat01,comb01",true)
+   call cl_set_comp_visible("chk,oeb01s,oeb03s,oeb04s,oeb06s,ima021s,oeb12s,oeb15s,num01,num02,num03,dat01,dat02,comb01",true)
    call cl_set_comp_entry("chk,oeb15s,num01,num02,comb01",true)
    call cl_set_comp_required("chk,oeb15s,num01,num02,comb01",true)
 end function
@@ -34811,6 +34821,7 @@ function t400_split_b_fill()
       execute t400_split_p2 using g_oebs[g_cnt].oeb04s
          into g_oebs[g_cnt].num03,g_oebs[g_cnt].dat01
       # darcy:2025/07/17 add e---
+      select oea02 into g_oebs[g_cnt].dat02 from oea_file where oea01 = g_oebs[g_cnt].oeb01s # darcy:2026/01/07 add
       let g_cnt = g_cnt + 1
    end foreach
    call g_oebs.deleteElement(g_cnt)

@@ -143,11 +143,12 @@ function t400sub_export_batch_init()
    call cl_set_comp_att_text("oeb04s","料号")
    call cl_set_comp_att_text("oeb12s","拆分数量")
    call cl_set_comp_att_text("oeb15s","拆分日期")
+   call cl_set_comp_att_text("dat01","开单日期")
    call cl_set_comp_att_text("num02","订单总数量")
    call cl_set_comp_att_text("num03","已出货数量")
 --    call cl_set_comp_att_text("num04","订单允许修改数量")
    call cl_set_comp_att_text("str01","能否修改")
-   call cl_set_comp_visible("chk,oeb01s,oeb03s,num01,oeb04s,oeb12s,str01,oeb12s,oeb15s,num02,num02,num03",true)
+   call cl_set_comp_visible("chk,oeb01s,oeb03s,num01,oeb04s,oeb12s,str01,oeb12s,oeb15s,num02,num02,num03,dat01",true)
    call cl_set_comp_entry("chk",true)
    call cl_set_comp_required("chk",true)
 end function
@@ -160,7 +161,7 @@ function t400sub_export_batch_fill(p_wc)
    define l_oeb04  varchar(40)
    define l_ship   decimal(15,3)
 
-   let l_sql = "select 'N', oea01, oeb03, tc_oeb031, oeb04, tc_oeb12, tc_oeb16,",
+   let l_sql = "select 'N', oea01, oeb03, tc_oeb031, oeb04, tc_oeb12, tc_oeb16,oea02,",
                "            oeb12, nvl(oeb24_1, 0) oeb24_1",
                " from oea_file, oeb_file, tc_oeb_file",
                " left join (select oebud02 oea01_1, oeb04 oeb04_1, sum(oeb24) oeb24_1",
@@ -181,7 +182,7 @@ function t400sub_export_batch_fill(p_wc)
    foreach t400sub_split_cur
       into g_oeb_batch[i].chk,g_oeb_batch[i].oeb01s,g_oeb_batch[i].oeb03s,
            g_oeb_batch[i].num01,g_oeb_batch[i].oeb04s,g_oeb_batch[i].oeb12s,
-           g_oeb_batch[i].oeb15s,g_oeb_batch[i].num02,g_oeb_batch[i].num03
+           g_oeb_batch[i].oeb15s,g_oeb_batch[i].dat01,g_oeb_batch[i].num02,g_oeb_batch[i].num03
       if sqlca.sqlcode then
          call cl_err("t400sub_split_cur",sqlca.sqlcode,1)
          exit foreach
@@ -337,7 +338,7 @@ function t400sub_import_upd(p_sheet)
    define l_max_oeb031   like oeb_file.oeb03
    define l_min_oeb031   like oeb_file.oeb03
    define l_remaining_qty  like oeb_file.oeb12
-   define l_msg      string`
+   define l_msg      string
    define l_oea02    date
    define l_tc_oeb12 like oeb_file.oeb12
    define l_tc_oeb12_1 like oeb_file.oeb12
