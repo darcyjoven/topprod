@@ -4731,7 +4731,7 @@ DEFINE
     IF g_ima70_b IS NULL OR g_ima70_b = ' ' THEN
        LET g_ima70_b = 'N'
     END IF
-    LET g_bmb[l_ac].bmb15 = g_ima70_b
+   --  LET g_bmb[l_ac].bmb15 = g_ima70_b # darcy:2026/01/26 mark
     #--->來源碼為'Z':雜項料件
     IF g_ima08_b ='Z'
     THEN LET g_errno = 'mfg2752'
