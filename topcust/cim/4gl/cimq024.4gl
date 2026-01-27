@@ -411,7 +411,8 @@ function cimq024_fill(p_wc)
     let g_sql = " select img01,ima02,ima021,img02,imd02,img03,img04,img09,img10,img37,trunc(sysdate)-img37 stale ,0 stale_type,img18,ccc23,amt,remark ",
                 "   from tc_imi_file,imd_file where tc_imi01 =  '",g_tc_imi.tc_imi01,"'",
                 "    and img02 = imd01 ",
-                "    and (img02 not in ('S001','S007','S010') or (img01 not like 'KG%' and img01 not like 'KH%'))",
+                --"    and (img02 not in ('S001','S007','S010') or (img01 not like 'KG%' and img01 not like 'KH%'))",
+                "    and ( (remark not like 'KG%' and remark not like 'KH%') or (trunc(sysdate) - img37 <= 60) or (remark is null) )", -- remark 为KG、KH开始，呆滞天数大于90天的不要显示
                 "    and ",p_wc clipped,
                 " order by img01,img02,img03,img04"
     prepare cimq024_fill1 from g_sql
@@ -1199,7 +1200,10 @@ function cimq024_process(p_tc_imi01)
     let g_sql = g_sql , " sum(amt) from (select tc_imi01,img01,img02,
                          case img02 when 'S011' then img02 || (case substr(img01, 10, 1) when 'R' then '-量产-' else '-样品-' end)
                                     when 'YP002' then img02|| (case when img02 like 'K.%' then '-器件-' else '-光板-'   end )
-                          else img02 end img02_desc, img10, img37, amt from tc_imi_file),imd_file where imd01 = img02 and tc_imi01 = ? "
+                          else img02 end img02_desc, img10, img37, amt from tc_imi_file where",
+                          "  (remark not like 'KG%' and remark not like 'KH%') or (trunc(sysdate) - img37 <= 60) or (remark is null) ", -- 排除KG KH
+                          " ),imd_file where imd01 = img02 and tc_imi01 = ? "
+                          
     -- 预制SQL
     let l_presql = g_sql
     let g_sql = "insert into cimq024_tmp ",g_sql,
@@ -1275,7 +1279,7 @@ function cimq024_process(p_tc_imi01)
         end if
 
         -- 插入一笔汇总行
-        let l_seq1= 3.1
+        let l_seq1= 1.1
         execute cimq024_sum using l_typ,last_month_msg,l_seq1,l_typ,l_seq
         if sqlca.sqlcode then
             call cl_err("ins cimq024_tmp",sqlca.sqlcode,1)
@@ -1587,7 +1591,7 @@ function cimq024_col_init()
     -- 字段名称设置
     for i = 1 to g_col.getlength()
         let l_value = l_value,sfmt('%1,',i)
-        let l_desc = l_desc,sfmt("%1,",sfmt("%1~%2", -- 字段名称
+        let l_desc = l_desc,sfmt("%1.%2,",i,sfmt("%1~%2", -- 字段名称
                         iif(i==1,0,g_col[i-1]+1), -- 上一个col，或者0
                         g_col[i]))
         for j = 1 to 6
@@ -1600,7 +1604,7 @@ function cimq024_col_init()
     end for
     -- 最后一笔
     let l_value = l_value,'0'
-    let l_desc = l_desc,sfmt("%1及以上",g_col[g_col.getlength()]+1)
+    let l_desc = l_desc,sfmt("%1.%2及以上",g_col.getlength()+1,g_col[g_col.getlength()]+1)
     for j = 1 to 6
         call cl_set_comp_att_text(
             sfmt("col%1_%2",g_col.getlength()+1,j), -- 字段编号
@@ -1614,6 +1618,6 @@ function cimq024_col_init()
         end for
     end for
 
-    call cl_set_combo_items("stable_type",l_value,l_desc)
+    call cl_set_combo_items("stale_type",l_value,l_desc)
 
 end function
