@@ -43522,8 +43522,9 @@ FUNCTION t210_b_menu()
             END IF
          WHEN "exporttoexcel"
              IF cl_chk_act_auth() THEN
-                CALL cl_export_to_excel
-                (ui.Interface.getRootNode(),base.TypeInfo.create(g_apb),'','')
+               call cl_download_by_explorer(cl_expexcel1("s_apa_1",base.typeinfo.create(g_apa_1)))
+               --  CALL cl_export_to_excel
+               --  (ui.Interface.getRootNode(),base.TypeInfo.create(g_apa_1),'','')
              END IF
          #@WHEN "准"
          WHEN "agree"
