@@ -129,17 +129,17 @@ function cws_auto_aeci100(p_prog,p_docno)
     -- call cl_temp_log('cws_auto_confirm',false,sfmt("%(ERRORFILE):%(ERRORLINE) ecuud02:%1",l_ecuud02) )
 
     if l_ecuud02 = 'N' then
-        call i100sub_y_chk(l_ecu01,l_ecu02)
+        call aeci100sub_y_chk(l_ecu01,l_ecu02)
         -- call cl_temp_log('cws_auto_confirm',false,sfmt("%(ERRORFILE):%(ERRORLINE) y_chk:%1",g_success) )
         if g_success = 'Y' then
-            call i100sub_y_upd(l_ecu01,l_ecu02,false)
+            call aeci100sub_y_upd(l_ecu01,l_ecu02,false)
             -- call cl_temp_log('cws_auto_confirm',false,sfmt("%(ERRORFILE):%(ERRORLINE) y_upd:%1",g_success) )
         end if
     end if
     -- call cl_temp_log('cws_auto_confirm',false,sfmt("%(ERRORFILE):%(ERRORLINE) ecu10:%1",l_ecu10) )
     if g_success ='Y' and l_ecu10 = 'N' then
         -- call cl_temp_log('cws_auto_confirm',false,sfmt("%(ERRORFILE):%(ERRORLINE) release:%1",g_success) )
-        call i100sub_release(l_ecu01,l_ecu02,false)
+        call aeci100sub_release(l_ecu01,l_ecu02,false)
     end if
     
 end function
