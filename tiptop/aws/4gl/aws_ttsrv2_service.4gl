@@ -893,6 +893,7 @@ DEFINE l_op        com.WebOperation
       when "cws_GetStock"
          let l_op =com.WebOperation.CreateDOCStyle("cws_GetStock", p_op_name, g_request, g_response)
       # darcy:2025/11/18 add e---
+      when 'cws_UpdateLot' let l_op =com.WebOperation.CreateDOCStyle("cws_UpdateLot", p_op_name, g_request, g_response)# darcy:2026/01/27 add
        END CASE
 
     RETURN l_op
@@ -3142,3 +3143,9 @@ let g_service = "GetStock"
    call cws_get_stock()
 end function
 # darcy:2025/11/18 add e---
+# darcy:2026/01/27 add s---
+function cws_UpdateLot()
+   let g_service = 'UpdateLot'
+   call cws_update_lot()
+end function
+# darcy:2026/01/27 add e---
