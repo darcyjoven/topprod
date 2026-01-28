@@ -1236,7 +1236,7 @@ function cimq024_process(p_tc_imi01)
     -- K001 仓库匹配PCS汇总
     let l_sql = cl_replace_str(l_presql,"img10","img10 img10_1")
     let l_sql = cl_replace_str(l_sql,"amt","img10")
-    let l_sql = "insert into cimq024_tmp ",l_sql," and img02 = 'K001' group by img02_desc,imd02"
+    let l_sql = "insert into cimq024_tmp ",l_sql," and img02 in ('K001','K003') group by img02_desc,imd02"
 
     prepare cimq024_proc2 from l_sql
     execute cimq024_proc2 using l_typ,l_seq,p_tc_imi01
@@ -1399,7 +1399,7 @@ function cimq024_process(p_tc_imi01)
     let l_typ = '4'
     let l_seq = 3
     let l_sql = "insert into cimq024_tmp ",l_presql,
-                " and img02 in ('P001','S006','YP003','S009')",
+                " and img02 in ('P001','S006','YP003','S009','S008')",
                 " and img01 not like '%.%' group by img02_desc,imd02"
     prepare cimq024_proc5 from l_sql
     execute cimq024_proc5 using l_typ,l_seq,p_tc_imi01
@@ -1445,7 +1445,7 @@ function cimq024_process(p_tc_imi01)
     end if
 
     #Step6. 光板
-    -- S011,要区分量产还是样品 
+    -- S011,要区分量产还是样品
     let l_typ = '5'
     let l_seq = 3
 
@@ -1568,6 +1568,16 @@ end function
 function cimq024_col_init()
     define i,j              integer
     define l_value,l_desc   string
+    
+    call cl_set_comp_visible("ccc23,amt",false)
+
+    let g_action_choice = 'img'
+    let g_bgjob = 'Y'
+    if cl_chk_act_auth() then
+        call cl_set_comp_visible("ccc23,amt",true)
+    end if
+    let g_action_choice = ''
+    let g_bgjob = 'N'
 
     call g_col.clear()
 
