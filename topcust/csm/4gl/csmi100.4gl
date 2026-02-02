@@ -1960,7 +1960,7 @@ function i100_get_default()
             -- iif(month(g_today)==12,year(g_today)+1,year(g_today))
             -- iif(month(g_today)==12,1,month(g_today)+1)
             let g_tc_sma[l_ac].tc_sma21 = mdy(iif(month(g_today)==12,1,month(g_today)+1),1,iif(month(g_today)==12,year(g_today)+1,year(g_today)))
-        when 'csmi132' let g_tc_sma[l_ac].tc_sam02 = 'aimt370'
+         when 'csmi132' let g_tc_sma[l_ac].tc_sma02 = 'aimt370'
     end case
 end function
 
