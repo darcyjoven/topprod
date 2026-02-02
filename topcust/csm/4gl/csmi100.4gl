@@ -29,6 +29,16 @@ type tc_sma record
     tc_sma18 like tc_sma_file.tc_sma18,
     tc_sma19 like tc_sma_file.tc_sma19,
     tc_sma20 like tc_sma_file.tc_sma20,
+    tc_sma21 like tc_sma_file.tc_sma21,
+    tc_sma22 like tc_sma_file.tc_sma22,
+    tc_sma23 like tc_sma_file.tc_sma23,
+    tc_sma24 like tc_sma_file.tc_sma24,
+    tc_sma25 like tc_sma_file.tc_sma25,
+    tc_sma26 like tc_sma_file.tc_sma26,
+    tc_sma27 like tc_sma_file.tc_sma27,
+    tc_sma28 like tc_sma_file.tc_sma28,
+    tc_sma29 like tc_sma_file.tc_sma29,
+    tc_sma30 like tc_sma_file.tc_sma30,
     tc_smauser like tc_sma_file.tc_smauser,
     tc_smamod  like tc_sma_file.tc_smamod
 end record
@@ -134,11 +144,15 @@ DEFINE  lc_qbe_sn       LIKE    gbm_file.gbm01
     CONSTRUCT g_wc ON  tc_sma02,tc_sma03,tc_sma04,tc_sma05,tc_sma06,
                        tc_sma07,tc_sma08,tc_sma09,tc_sma10,tc_sma11,
                        tc_sma12,tc_sma13,tc_sma14,tc_sma15,tc_sma16,
-                       tc_sma17,tc_sma18,tc_sma19,tc_sma20,tc_smauser,tc_smamod
+                       tc_sma17,tc_sma18,tc_sma19,tc_sma20,tc_sma21,
+                       tc_sma22,tc_sma23,tc_sma24,tc_sma25,tc_sma26,
+                       tc_sma27,tc_sma28,tc_sma29,tc_sma30,tc_smauser,tc_smamod
             FROM s_tc_sma[1].tc_sma02,s_tc_sma[1].tc_sma03,s_tc_sma[1].tc_sma04,s_tc_sma[1].tc_sma05,s_tc_sma[1].tc_sma06,
                  s_tc_sma[1].tc_sma07,s_tc_sma[1].tc_sma08,s_tc_sma[1].tc_sma09,s_tc_sma[1].tc_sma10,s_tc_sma[1].tc_sma11,
                  s_tc_sma[1].tc_sma12,s_tc_sma[1].tc_sma13,s_tc_sma[1].tc_sma14,s_tc_sma[1].tc_sma15,s_tc_sma[1].tc_sma16,
-                 s_tc_sma[1].tc_sma17,s_tc_sma[1].tc_sma18,s_tc_sma[1].tc_sma19,s_tc_sma[1].tc_sma20,s_tc_sma[1].tc_smauser,s_tc_sma[1].tc_smamod
+                 s_tc_sma[1].tc_sma17,s_tc_sma[1].tc_sma18,s_tc_sma[1].tc_sma19,s_tc_sma[1].tc_sma20,s_tc_sma[1].tc_sma21,
+                 s_tc_sma[1].tc_sma22,s_tc_sma[1].tc_sma23,s_tc_sma[1].tc_sma24,s_tc_sma[1].tc_sma25,s_tc_sma[1].tc_sma26,
+                 s_tc_sma[1].tc_sma27,s_tc_sma[1].tc_sma28,s_tc_sma[1].tc_sma29,s_tc_sma[1].tc_sma30,s_tc_sma[1].tc_smauser,s_tc_sma[1].tc_smamod
  
             BEFORE CONSTRUCT
                CALL cl_qbe_display_condition(lc_qbe_sn)
@@ -250,7 +264,11 @@ FUNCTION i100_menu()
               IF cl_chk_act_auth() THEN
                  IF g_tc_sma01 IS NOT NULL THEN
                  LET g_doc.column1 = "tc_sma01"
+                 LET g_doc.column2 = "tc_sma02"
+                 LET g_doc.column3 = "tc_sma03"
                  LET g_doc.value1 = g_tc_sma01
+                 LET g_doc.value2 = g_tc_sma[l_ac].tc_sma02
+                 LET g_doc.value3 = g_tc_sma[l_ac].tc_sma03
                  CALL cl_doc()
                END IF
          END IF
@@ -442,7 +460,9 @@ define l_msg        string #darcy:2024/11/29
         " SELECT tc_sma02,'',tc_sma03,tc_sma04,tc_sma05,tc_sma06,",
         "               tc_sma07,tc_sma08,tc_sma09,tc_sma10,tc_sma11,",
         "               tc_sma12,tc_sma13,tc_sma14,tc_sma15,tc_sma16,",
-        "               tc_sma17,tc_sma18,tc_sma19,tc_sma20,tc_smauser,tc_smamod FROM tc_sma_file ",
+        "               tc_sma17,tc_sma18,tc_sma19,tc_sma20,tc_sma21,",
+        "               tc_sma22,tc_sma23,tc_sma24,tc_sma25,tc_sma26,",
+        "               tc_sma27,tc_sma28,tc_sma29,tc_sma30,tc_smauser,tc_smamod FROM tc_sma_file ",
         " WHERE tc_sma01 = ? AND tc_sma02 = ? AND tc_sma03 = ? FOR UPDATE "  
     LET g_forupd_sql = cl_forupd_sql(g_forupd_sql)
     DECLARE i100_bcl CURSOR FROM g_forupd_sql      # LOCK CURSOR
@@ -524,12 +544,16 @@ define l_msg        string #darcy:2024/11/29
                 tc_sma06,tc_sma07,tc_sma08,tc_sma09,tc_sma10,
                 tc_sma11,tc_sma12,tc_sma13,tc_sma14,tc_sma15,
                 tc_sma16,tc_sma17,tc_sma18,tc_sma19,tc_sma20,
+                tc_sma21,tc_sma22,tc_sma23,tc_sma24,tc_sma25,
+                tc_sma26,tc_sma27,tc_sma28,tc_sma29,tc_sma30,
                 tc_smauser,tc_smamod
             )VALUES(
                 g_tc_sma01,g_tc_sma[l_ac].tc_sma02,g_tc_sma[l_ac].tc_sma03,g_tc_sma[l_ac].tc_sma04,g_tc_sma[l_ac].tc_sma05,
                 g_tc_sma[l_ac].tc_sma06,g_tc_sma[l_ac].tc_sma07,g_tc_sma[l_ac].tc_sma08,g_tc_sma[l_ac].tc_sma09,g_tc_sma[l_ac].tc_sma10,
                 g_tc_sma[l_ac].tc_sma11,g_tc_sma[l_ac].tc_sma12,g_tc_sma[l_ac].tc_sma13,g_tc_sma[l_ac].tc_sma14,g_tc_sma[l_ac].tc_sma15,
                 g_tc_sma[l_ac].tc_sma16,g_tc_sma[l_ac].tc_sma17,g_tc_sma[l_ac].tc_sma18,g_tc_sma[l_ac].tc_sma19,g_tc_sma[l_ac].tc_sma20,
+                g_tc_sma[l_ac].tc_sma21,g_tc_sma[l_ac].tc_sma22,g_tc_sma[l_ac].tc_sma23,g_tc_sma[l_ac].tc_sma24,g_tc_sma[l_ac].tc_sma25,
+                g_tc_sma[l_ac].tc_sma26,g_tc_sma[l_ac].tc_sma27,g_tc_sma[l_ac].tc_sma28,g_tc_sma[l_ac].tc_sma29,g_tc_sma[l_ac].tc_sma30,
                 g_tc_sma[l_ac].tc_smauser,g_tc_sma[l_ac].tc_smamod
             )
             IF SQLCA.sqlcode THEN
@@ -667,6 +691,16 @@ define l_msg        string #darcy:2024/11/29
                     tc_sma18 = g_tc_sma[l_ac].tc_sma18,
                     tc_sma19 = g_tc_sma[l_ac].tc_sma19,
                     tc_sma20 = g_tc_sma[l_ac].tc_sma20,
+                    tc_sma21 = g_tc_sma[l_ac].tc_sma21,
+                    tc_sma22 = g_tc_sma[l_ac].tc_sma22,
+                    tc_sma23 = g_tc_sma[l_ac].tc_sma23,
+                    tc_sma24 = g_tc_sma[l_ac].tc_sma24,
+                    tc_sma25 = g_tc_sma[l_ac].tc_sma25,
+                    tc_sma26 = g_tc_sma[l_ac].tc_sma26,
+                    tc_sma27 = g_tc_sma[l_ac].tc_sma27,
+                    tc_sma28 = g_tc_sma[l_ac].tc_sma28,
+                    tc_sma29 = g_tc_sma[l_ac].tc_sma29,
+                    tc_sma30 = g_tc_sma[l_ac].tc_sma30,
                     tc_smauser = g_tc_sma[l_ac].tc_smauser,
                     tc_smamod = g_tc_sma[l_ac].tc_smamod
                 WHERE tc_sma01 = g_tc_sma01_t
@@ -893,6 +927,22 @@ define l_msg        string #darcy:2024/11/29
                         DISPLAY g_tc_sma[l_ac].tc_sma02 TO tc_sma02
                         NEXT FIELD tc_sma02
                     # darcy:2025/12/05 add e---
+                    when 'csmi130'
+                        CALL cl_init_qry_var()
+                        LET g_qryparam.form = "cq_eca"
+                        LET g_qryparam.arg1 = g_lang
+                        LET g_qryparam.default1 = g_tc_sma[l_ac].tc_sma02
+                        CALL cl_create_qry() RETURNING g_tc_sma[l_ac].tc_sma02
+                        DISPLAY g_tc_sma[l_ac].tc_sma02 TO tc_sma02
+                        NEXT FIELD tc_sma02
+                    when 'csmi131'
+                        CALL cl_init_qry_var()
+                        LET g_qryparam.form = "cq_eca"
+                        LET g_qryparam.arg1 = g_lang
+                        LET g_qryparam.default1 = g_tc_sma[l_ac].tc_sma02
+                        CALL cl_create_qry() RETURNING g_tc_sma[l_ac].tc_sma02
+                        DISPLAY g_tc_sma[l_ac].tc_sma02 TO tc_sma02
+                        NEXT FIELD tc_sma02
                 end case
               
            END CASE
@@ -927,7 +977,9 @@ DEFINE p_wc2   LIKE type_file.chr1000
    LET g_sql = " SELECT tc_sma02,'',tc_sma03,tc_sma04,tc_sma05,tc_sma06,",
                "       tc_sma07,tc_sma08,tc_sma09,tc_sma10,tc_sma11,",
                "       tc_sma12,tc_sma13,tc_sma14,tc_sma15,tc_sma16,",
-               "       tc_sma17,tc_sma18,tc_sma19,tc_sma20,tc_smauser,tc_smamod FROM tc_sma_file ",
+               "       tc_sma17,tc_sma18,tc_sma19,tc_sma20,tc_sma21,",
+               "       tc_sma22,tc_sma23,tc_sma24,tc_sma25,tc_sma26,",
+               "       tc_sma27,tc_sma28,tc_sma29,tc_sma30,tc_smauser,tc_smamod FROM tc_sma_file ",
                " WHERE tc_sma01 ='",g_tc_sma01,"'",  #單頭
                "   AND ",p_wc2 CLIPPED
     # darcy:2025/07/28 add s---            #單身
@@ -1221,6 +1273,7 @@ FUNCTION i100_set_entry(p_cmd)
             call cl_set_comp_entry("tc_sma02",true)    
         end if
     # darcy:2025/10/15 add e---
+    when 'csmi130' if p_cmd = 'a' then call cl_set_comp_entry("tc_sma02",true) end if # darcy:2025/12/23 add
    end case
    #darcy:2024/11/29 add e---
                                                                                                                                     
@@ -1252,6 +1305,7 @@ FUNCTION i100_set_no_entry(p_cmd)
             call cl_set_comp_entry("tc_sma02",false)    
         end if
     # darcy:2025/10/15 add e---
+    when 'csmi130' if p_cmd = 'a' then call cl_set_comp_entry("tc_sma02",false) end if # darcy:2025/12/23 add
    end case
    #darcy:2024/11/29 add e---
 
@@ -1266,7 +1320,7 @@ FUNCTION i100_set_dny_combo()
 
     let ps_values = "csmi100,csmi101,csmi102,csmi103,csmi104,csmi105,csmi106,csmi107,csmi108,csmi109,csmi110,csmi111,",
                     "csmi112,csmi113,csmi114,csmi115,csmi116,csmi117,csmi118,csmi119,csmi120,csmi121,csmi122,csmi123,",
-                    "csmi124,csmi125,csmi126,csmi127,csmi128,csmi129"
+                    "csmi124,csmi125,csmi126,csmi127,csmi128,csmi129,csmi130,csmi131,csmi132"
 
     LET tok = base.StringTokenizer.create(ps_values,",")
     let l_ze01 = tok.nextToken()
@@ -1339,6 +1393,9 @@ FUNCTION i100_set_dny_combo()
         when 'csmi127' display '卷料损耗--盲孔裁切作业编号设定' to lb_msg  # darcy:2025/11/20 add
         when 'csmi128' display '标签打印参数设置（bartender）' to lb_msg # darcy:2025/12/09 add
         when 'csmi129' display 'IP下载模板记录' to lb_msg 
+        when 'csmi130' display '工站月度耗材额度维护' to lb_msg
+        when 'csmi131' display '工站月度耗材临时额度维护' to lb_msg
+        when 'csmi132' display '杂项发料/收料 标识符维护' to lb_msg
     end case
 
     call i100_set_visiable()
@@ -1415,6 +1472,8 @@ function i100_get_tc_sma_desc(p_tc_sma01,p_tc_sma02)
             select ecd02 into l_tc_sma02_desc from ecd_file
              where ecd01 = p_tc_sma02
         # darcy:2025/12/05 add e---
+        when 'csmi130' select eca02 into l_tc_sma02_desc from eca_file where eca01 = p_tc_sma02
+        when 'csmi131' select eca02 into l_tc_sma02_desc from eca_file where eca01 = p_tc_sma02
         otherwise
             let l_tc_sma02_desc = null
     end case
@@ -1473,6 +1532,14 @@ function i100_chk_tc_sma02(p_tc_sma01,p_tc_sma02)
         when 'csmi122'
             return true
         # darcy:2025/09/10 add e---
+        when 'csmi130'
+         select count(*) into l_cnt from tc_sma_file where tc_sma01 = 'csmi130' and tc_sma02 = p_tc_sma02
+         if l_cnt > 0 then
+            return false
+         end if
+         select count(*) into l_cnt from eca_file where eca01 = p_tc_sma02 and ecaacti = 'Y'
+         return l_cnt > 0 
+         
     end case
     return true
 end function
@@ -1795,6 +1862,42 @@ function i100_set_visiable()
             -- 是否可以录入
             call cl_set_comp_entry("tc_sma05",true)
         # darcy:2025/12/10 add e---
+        when 'csmi130'
+            call cl_set_comp_att_text('tc_sma02','部门编号')
+            call cl_set_comp_att_text('tc_sma02_desc','名称')
+            call cl_set_comp_att_text('tc_sma27','月度耗材额度')
+            call cl_set_comp_att_text('tc_sma28','本月临时额度')
+            call cl_set_comp_att_text('tc_sma29','本月已领用金额')
+            -- 是否隐藏
+            call cl_set_comp_visible('tc_sma27,tc_sma28,tc_sma29',true)
+            call cl_set_comp_visible("tc_sma03,tc_sma04,tc_sma05,tc_sma06,
+                                      tc_sma07,tc_sma08,tc_sma09,tc_sma10,tc_sma11,tc_sma12,tc_sma13,
+                                      tc_sma14,tc_sma15,tc_sma16,tc_sma17,tc_sma18,tc_sma19",false)
+            -- 是否可以录入
+            call cl_set_comp_entry("tc_sma02,tc_sma27",true)
+        when 'csmi131'
+            call cl_set_comp_att_text('tc_sma02','部门编号')
+            call cl_set_comp_att_text('tc_sma02_desc','名称')
+            call cl_set_comp_att_text('tc_sma03','项次')
+            call cl_set_comp_att_text('tc_sma18','备注')
+            call cl_set_comp_att_text('tc_sma21','失效日期')
+            call cl_set_comp_att_text('tc_sma27','临时额度')
+            call cl_set_comp_visible('tc_sma27',true)
+            call cl_set_comp_visible("tc_sma04,tc_sma05,tc_sma06,
+                                      tc_sma07,tc_sma08,tc_sma09,tc_sma10,tc_sma11,tc_sma12,tc_sma13,
+                                      tc_sma14,tc_sma15,tc_sma16,tc_sma17,tc_sma19,tc_sma20",false)
+            call cl_set_comp_entry("tc_sma02,tc_sma03,tc_sma18,tc_sma21,tc_sma27",true)
+            call cl_set_comp_required("tc_sma21,tc_sma27",true)
+        when 'csmi132'
+            call cl_set_comp_att_text('tc_sma03','标识符')
+            call cl_set_comp_att_text('tc_sma06','标识符说明')
+            call cl_set_comp_att_text('tc_sma10','备注')
+            -- 是否隐藏
+            call cl_set_comp_visible("tc_sma02,tc_sma02_desc,tc_sma04,tc_sma05,
+                                      tc_sma07,tc_sma08,tc_sma09,tc_sma11,tc_sma12,tc_sma13,
+                                      tc_sma14,tc_sma15,tc_sma16,tc_sma17,tc_sma18,tc_sma19",false)
+            -- 是否可以录入
+            call cl_set_comp_entry("tc_sma03,tc_sma06,tc_sma10",true)
     end case
     
 end function
@@ -1852,6 +1955,12 @@ function i100_get_default()
             let g_tc_sma[l_ac].tc_sma09 = 100
             let g_tc_sma[l_ac].tc_sma02_desc = i100_get_tc_sma_desc(g_tc_sma01,g_tc_sma[l_ac].tc_sma02)
          # darcy:2025/11/24 add e---
+         when 'csmi131'
+            # 默认失效日期
+            -- iif(month(g_today)==12,year(g_today)+1,year(g_today))
+            -- iif(month(g_today)==12,1,month(g_today)+1)
+            let g_tc_sma[l_ac].tc_sma21 = mdy(iif(month(g_today)==12,1,month(g_today)+1),1,iif(month(g_today)==12,year(g_today)+1,year(g_today)))
+        when 'csmi132' let g_tc_sma[l_ac].tc_sam02 = 'aimt370'
     end case
 end function
 
