@@ -89,12 +89,18 @@ function i300_menu()
                     call i300_b()
                 end if
                 let g_action_choice = null
+            when "delete"
+                if cl_chk_act_auth() then
+                    call i300_r()
+                end if
             when "help"
                 call cl_show_help()
             when "exit"
                 exit while
             when "controlg"
                 call cl_cmdask()
+            when 'fresh'
+                call i300_fresh()
             when "related_document"
                 if cl_chk_act_auth() and l_ac != 0 then 
                     let g_doc.column1 = "tc_imh01"
@@ -179,9 +185,11 @@ function i300_b()
                   from ima_file where ima01 = g_tc_imh[l_ac].tc_imh01
                 select eca02,eca03,gem02 into g_tc_imh[l_ac].eca02,g_tc_imh[l_ac].gem01,g_tc_imh[l_ac].gem02
                   from eca_file,gem_file where gem01 = eca03 and eca01 = g_tc_imh[l_ac].tc_imh02
-                call i300_weekamt(g_tc_imh[l_ac].tc_imh01,g_tc_imh[l_ac].tc_imh02)
-                    returning g_tc_imh[l_ac].weekamt
-                let g_tc_imh[l_ac].avlamt = g_tc_imh[l_ac].tc_imh04 - g_tc_imh[l_ac].weekamt
+                -- darcy:2025/06/04 mark add s---
+                -- call i300_weekamt(g_tc_imh[l_ac].tc_imh01,g_tc_imh[l_ac].tc_imh02,g_tc_imh[l_ac].tc_imh03)
+                --     returning g_tc_imh[l_ac].weekamt
+                -- let g_tc_imh[l_ac].avlamt = g_tc_imh[l_ac].tc_imh04 - g_tc_imh[l_ac].weekamt
+                -- darcy:2025/06/04 mark add e---
 
                 call cl_show_fld_cont()
             end if
@@ -509,9 +517,11 @@ function i300_b_fill(p_wc)
             call cl_err('foreach:',status,1)
             exit foreach
         end if
-        call i300_weekamt(g_tc_imh[g_cnt].tc_imh01,g_tc_imh[g_cnt].tc_imh02)
-            returning g_tc_imh[g_cnt].weekamt
-        let g_tc_imh[g_cnt].avlamt = g_tc_imh[g_cnt].tc_imh04 - g_tc_imh[g_cnt].weekamt
+        -- darcy:2025/06/04 mark s---
+        -- call i300_weekamt(g_tc_imh[g_cnt].tc_imh01,g_tc_imh[g_cnt].tc_imh02,g_tc_imh[g_cnt].tc_imh03)
+        --     returning g_tc_imh[g_cnt].weekamt
+        -- let g_tc_imh[g_cnt].avlamt = g_tc_imh[g_cnt].tc_imh04 - g_tc_imh[g_cnt].weekamt
+        -- darcy:2025/06/04 mark e---
         let g_cnt = g_cnt + 1
         if g_cnt > g_max_rec then
             call cl_err('',9035,0)
@@ -546,6 +556,10 @@ function i300_bp(p_ud)
 
         on action query
             let g_action_choice = 'query'
+            exit display
+        
+        on action delete
+            let g_action_choice = 'delete'
             exit display
         
         on action detail
@@ -591,6 +605,10 @@ function i300_bp(p_ud)
         on action exporttoexcel
             let g_action_choice = 'exporttoexcel'
             exit display
+
+        on action fresh
+            let g_action_choice = 'fresh'
+            exit display
         
         after display
             continue display
@@ -599,10 +617,87 @@ function i300_bp(p_ud)
 
     call cl_set_act_visible('accept,cancel',true)
 end function
-function i300_weekamt(p_ima01,p_eca01)
+function i300_weekamt(p_ima01,p_eca01,p_unit)
     define  p_ima01     like ima_file.ima01,
             p_eca01     like eca_file.eca01
     define l_weekamt    decimal(15,3)
+    define l_gem01      like gem_file.gem01
+    define p_unit   like inb_file.inb08
+    define l_begin,l_end    date
+    define l_inb08,l_tc_imh03  like inb_file.inb08
+    define l_inb09  like inb_file.inb09
+    define l_ima25  like ima_file.ima25
+    define l_sql    string 
+    define l_ok      varchar(1)
+    define l_fac  decimal(20,6)
+    define l_flag varchar(1)
+
+    # 获取日期所属周的周日和周六两个日期
+   let l_sql = "select min(azn01), max(azn01)  ",
+               "  from azn_file where (azn02, azn05) in",
+               " (select azn02, azn05 from azn_file where azn01 = '",g_today,"')"
+   prepare i300_azn from l_sql
+   execute i300_azn into l_begin,l_end
+   if l_end == g_today  then
+      -- 向后取一周
+      let g_today = g_today + 1
+      execute i300_azn into l_begin,l_end
+   end if
+      let l_begin = l_begin - 1
+      let l_end = l_end - 1
+
+    select eca03 into l_gem01 from eca_file where eca01 = p_eca01
+
+    declare i300_weekamt cursor for
+    select inb08,inb09
+     from ina_file,inb_file where ina01 = inb01
+      and inaconf <> 'X' and ina00 = '1'
+      and inb04 = p_ima01 and ina04 = l_gem01
+      and (
+         (inapost ='Y' and ina02 between l_begin and l_end)
+         or (inapost !='Y' and ina03 between l_begin and l_end)
+      )
+
+   let l_weekamt = 0
+   foreach i300_weekamt into l_inb08,l_inb09
+      if sqlca.sqlcode then
+         call cl_err('i300_weekamt',sqlca.sqlcode,1)
+         exit foreach
+      end if
+
+      if l_inb08!=p_unit then
+         call s_umfchk(p_ima01,l_inb08,p_unit) returning l_flag,l_fac
+         if l_flag = 1 then
+            let l_fac = 1
+         end if
+      else
+         let l_fac = 1
+      end if
+      let l_weekamt = s_digqty(l_weekamt + l_inb09 * l_fac , p_unit)
+   end foreach
 
     return l_weekamt
+end function
+
+function i300_r()
+    IF s_shut(0) THEN RETURN END IF  
+
+    if cl_confirm('csm-002') then
+        delete from tc_imh_file
+        if sqlca.sqlcode then
+            call cl_err('del tc_imh',sqlca.sqlcode,1)
+            return
+        end if
+    end if
+end function
+
+function i300_fresh()
+    define i  integer
+
+    for i = 1 to g_tc_imh.getLength()
+        call i300_weekamt(g_tc_imh[i].tc_imh01,g_tc_imh[i].tc_imh02,g_tc_imh[i].tc_imh03)
+            returning g_tc_imh[i].weekamt
+        let g_tc_imh[i].avlamt = g_tc_imh[i].tc_imh04 - g_tc_imh[i].weekamt
+    end for
+    
 end function
