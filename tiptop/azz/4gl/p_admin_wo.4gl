@@ -2269,8 +2269,8 @@ function p_admin_wo_part()
             exit for
         end if
 
-        update inb_file set ina04 = l_array[i].part 
-         where inb01 = l_array[i].ordno
+        update ina_file set ina04 = l_array[i].part 
+         where ina01 = l_array[i].ordno
         if sqlca.sqlcode then
             call cl_err("upd inb_file",sqlca.sqlcode,1)
             let g_success = 'N'
