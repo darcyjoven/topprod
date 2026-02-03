@@ -942,6 +942,17 @@ DEFINE   l_n3       LIKE type_file.num15_3 ###GP5.2  #NO.FUN-A20044
         RETURN
     END IF
     CALL s_getstock(g_ima.ima01,g_plant) RETURNING  l_n1,l_n2,l_n3  ###GP5.2  #NO.FUN-A20044
+    # darcy:2026/01/30 add s---
+    # 排除仓库K003
+    select sum(img10*img21) into l_n2 from img_file
+     where img01 = g_ima.ima01 and img10 > 0 
+       and (img23 = 'N' or img02 = 'K003')
+
+    select sum(img10*img21) into l_n3 from img_file
+     where img01 = g_ima.ima01 and img10 > 0 
+       and img23 = 'Y' and img02 != 'K003'
+   
+    # darcy:2026/01/30 add e---
     LET g_unavl_stk = l_n2                                  #NO.FUN-A20044
     LET g_avl_stk = l_n3                                    #NO.FUN-A20044  
     #darcy:2023/06/20 add s---
@@ -2642,6 +2653,17 @@ function q102_get_g_ima(p_ima01)
         RETURN
     END IF
     CALL s_getstock(g_ima.ima01,g_plant) RETURNING  l_n1,l_n2,l_n3 
+    # darcy:2026/01/30 add s---
+    # 排除仓库K003
+    select sum(img10*img21) into l_n2 from img_file
+     where img01 = g_ima.ima01 and img10 > 0 
+       and (img23 = 'N' or img02 = 'K003')
+
+    select sum(img10*img21) into l_n3 from img_file
+     where img01 = g_ima.ima01 and img10 > 0 
+       and img23 = 'Y' and img02 != 'K003'
+   
+    # darcy:2026/01/30 add e---
     LET g_unavl_stk = l_n2
     LET g_avl_stk = l_n3
     CALL q102_show()
