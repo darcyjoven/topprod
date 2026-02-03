@@ -3845,10 +3845,10 @@ FUNCTION t400_menu()
                CALL t400_ef()
                CALL t400_show()  #FUN-C20028 add
             END IF
-         when "ef2"
-            if cl_chk_act_auth() then
-               call t400_ef2()
-            end if
+         -- when "ef2"
+         --    if cl_chk_act_auth() then
+         --       call t400_ef2()
+         --    end if
          #darcy:2025/04/24 add s---
          when 'auto_split'
             if cl_chk_act_auth() then
@@ -3861,7 +3861,12 @@ FUNCTION t400_menu()
                call t400_fpc_copy()
             end if
          #darcy:2025/04/27 add e---
-
+         # darcy:2026/01/26 add s---
+         when 'upd_version'
+            if cl_chk_act_auth() then
+               call t400_upd_version()
+            end if
+         # darcy:2026/01/26 add e---
          WHEN "other_data"
             IF cl_chk_act_auth() THEN
 #TQC-B40205 --begin--
@@ -10341,6 +10346,12 @@ FUNCTION t400_bp(p_ud)
          let g_action_choice = "import_split"
          exit dialog
       # darcy:2025/08/13 add e---
+      # darcy:2026/01/26 add s---
+      # 大版本升级，引入订单数量
+      on action upd_version
+         let g_action_choice = "upd_version"
+         exit dialog
+      # darcy:2026/01/26 add e---
 
 #@    ON ACTION 拋轉請購單
       ON ACTION carry_pr
@@ -10461,9 +10472,9 @@ FUNCTION t400_bp(p_ud)
          LET g_action_choice="easyflow_approval"
          EXIT DIALOG
       #darcy:2023/05/19 add s---
-      on action ef2
-         let g_action_choice= 'ef2'
-         exit dialog
+      -- on action ef2
+      --    let g_action_choice= 'ef2'
+      --    exit dialog
       #darcy:2023/05/19 add e---
 
       #darcy:2025/04/24 add s---
@@ -36045,3 +36056,314 @@ function saxmt400_multi_input()
    return l_ok
 end function
 # darcy:2025/12/17 add e---
+
+
+# darcy:2026/01/26 add s---
+# 大版本升级
+function t400_upd_version()
+   DEFINE old_no,new_no   LIKE oea_file.oea01,
+          new_date        LIKE type_file.dat     #No.FUN-680137 DATE
+   define new_item        like ima_file.ima01 
+   define new_qty         like oeb_file.oeb12
+   DEFINE l_oea           RECORD LIKE oea_file.*
+   DEFINE l_oayapr        LIKE oay_file.oayapr
+   DEFINE li_result       LIKE type_file.num5    #No.FUN-550052  #No.FUN-680137 SMALLINT
+   DEFINE l_oea23         LIKE oea_file.oea23   #MOD-A30147
+   DEFINE l_oea24         LIKE oea_file.oea24   #MOD-A30147
+   DEFINE l_cnt           LIKE type_file.num5    #TQC-C70220 add
+   DEFINE l_cnt1          LIKE type_file.num5   #FUN-C80045 add 
+   define new_ima02       LIKE ima_file.ima02
+
+   IF g_oea.oea11 ='3' THEN RETURN END IF
+   LET new_date=g_today
+   LET old_no  = g_oea.oea01
+
+   IF g_oea.oea01 IS NULL THEN
+      CALL cl_err('',-400,1)
+      RETURN
+   END IF
+
+   if l_ac > g_oeb.getlength() then
+      return
+   end if
+
+   # darcy:2026/02/03 add s---
+   # 已经升级过就不允许再升级
+   select count(*) into l_cnt from oea_file
+    where oeaud04 = g_oea.oea01 and oeaud10 = g_oeb[l_ac].oeb03
+      and oeaconf <> 'X'
+   if l_cnt > 0 then
+      call cl_err('订单该项次已经升级过，不可以再次升级','!',1)
+      return
+   end if
+   # darcy:2026/02/03 add e---
+
+ #TQC-C70220---add---start
+   IF g_oea.oea11='2' THEN
+     IF NOT cl_null(g_oea.oea12) THEN
+        LET l_cnt=0
+        SELECT COUNT(*) INTO l_cnt FROM oea_file
+        WHERE oea12=g_oea.oea12
+          AND oea11=g_oea.oea11
+          AND oeaconf !='X'
+        IF l_cnt > 0 THEN
+           CALL cl_err(l_cnt,'axm-602',1)
+           RETURN
+        END IF
+     END IF
+   END IF
+ #TQC-C70220---add---end
+
+   LET g_success = 'Y' #MOD-C20139 add
+   BEGIN WORK
+   LET g_before_input_done = FALSE
+   CALL t400_set_entry('a')
+   CALL cl_set_comp_entry("oea00,oea08",FALSE) 	#MOD-970154
+   LET g_before_input_done = TRUE
+
+   open window t410w_w with form "axm/42f/axmt400w"
+         attribute (style = g_win_style clipped) 
+   call cl_ui_init()
+
+   WHILE TRUE
+      CALL cl_set_head_visible("","YES")       #No.FUN-6A0092
+      INPUT new_no,new_date,new_item,new_qty FROM oea01w,oea02w,oeb04w,oeb12w
+
+         BEFORE INPUT
+            CALL cl_set_docno_format("oea01")
+            let new_no = g_oea.oea01[1,3]
+            let new_date = g_today
+            let new_item = g_oeb[l_ac].oeb04
+            let new_qty = g_oeb[l_ac].oeb12
+
+            display new_no,new_date,new_item,new_qty to oea01w,oea02w,oeb04w,oeb12w
+
+         AFTER FIELD oea01w
+            IF NOT cl_null(new_no) THEN
+               SELECT COUNT(*) INTO i FROM oea_file WHERE oea01=new_no
+               IF i>0 THEN
+                  CALL cl_err('sel oea:','-239',0)
+                  NEXT FIELD oea01w
+               END IF
+               #FUN-C80045 add sta
+               LET g_t1=s_get_doc_no(new_no)
+               LET l_cnt1 = 0
+               SELECT COUNT(*) INTO l_cnt1 FROM  rye_file WHERE rye04 = g_t1 AND ryeacti = 'Y' AND rye01 = 'axm'
+               IF l_cnt1 > 0 THEN
+                  CALL cl_err(g_t1,'apc1036',0)
+                  NEXT FIELD oea01w
+               END IF
+               #FUN-C80045 add end
+            CASE WHEN g_oea.oea00 = '0' CALL s_check_no('axm',new_no,"","20","oea_file","oea01","") RETURNING li_result,new_no #合約單別
+                  WHEN g_oea.oea00 = '1' CALL s_check_no('axm',new_no,"","30","oea_file","oea01","") RETURNING li_result,new_no #訂單單別
+                  WHEN g_oea.oea00 = 'A' CALL s_check_no('axm',new_no,"","30","oea_file","oea01","") RETURNING li_result,new_no #訂單單別  #No.FUN-610053
+                  WHEN g_oea.oea00 = '2' CALL s_check_no('axm',new_no,"","32","oea_file","oea01","") RETURNING li_result,new_no #換貨訂單
+                  WHEN g_oea.oea00 MATCHES '[37]' CALL s_check_no('axm',new_no,"","33","oea_file","oea01","") RETURNING li_result,new_no   #No.FUN-610055
+                  WHEN g_oea.oea00 = '4' CALL s_check_no('axm',new_no,"","34","oea_file","oea01","") RETURNING li_result,new_no
+                  WHEN g_oea.oea00 = '6' CALL s_check_no('axm',new_no,"","30","oea_file","oea01","") RETURNING li_result,new_no #代送訂單單別  #No.FUN-610055
+                  WHEN g_oea.oea00 = '8' CALL s_check_no('axm',new_no,"","22","oea_file","oea01","") RETURNING li_result,g_oea.oea01  #MOD-860171
+                  WHEN g_oea.oea00 = '9' CALL s_check_no('axm',new_no,"","22","oea_file","oea01","") RETURNING li_result,g_oea.oea01  #MOD-860171
+               END CASE
+                     IF (NOT li_result) THEN
+                        LET g_oea.oea01=g_oea_o.oea01
+                        NEXT FIELD oea01w
+                     END IF
+                  LET g_t1=new_no[1,g_doc_len]
+                  SELECT oayapr INTO l_oayapr
+                  FROM oay_file WHERE oayslip = g_t1
+            END IF
+         
+         after field oeb04w
+            if not cl_null(new_item) then
+               if not s_chk_item_no(new_item,'') then
+                  call cl_err('',g_errno,1)
+                  next field oeb04w
+               end if
+            end if
+         
+         after field oeb12w
+            if not cl_null(new_qty) then
+               if new_qty > g_oeb[l_ac].oeb12 then
+                  call cl_err("不得大于原订单数量","!",1)
+                  next field oeb12w
+               end if
+            end if
+
+         ON ACTION controlp
+            CASE
+               WHEN INFIELD(oea01w) #查詢單据
+                  LET g_t1=s_get_doc_no(new_no)
+                  CASE WHEN g_oea.oea00 = '0' LET g_buf='20'
+                        WHEN g_oea.oea00 = '1' LET g_buf='30'
+                        WHEN g_oea.oea00 = 'A' LET g_buf='30'  #No.FUN-610053
+                        WHEN g_oea.oea00 = '2' LET g_buf='32'
+                        WHEN g_oea.oea00 MATCHES '[37]' LET g_buf='33'    #No.FUn-610055
+                        WHEN g_oea.oea00 = '4' LET g_buf='34'
+                        WHEN g_oea.oea00 = '6' LET g_buf='30'  #FUN-610055
+                        WHEN g_oea.oea00 = '8' LET g_buf='22'   #No.FUN-740016
+                        WHEN g_oea.oea00 = '9' LET g_buf='22'   #No.FUN-740016
+                  END CASE
+                  CALL q_oay(FALSE,FALSE,g_t1,g_buf,'AXM') RETURNING g_t1 #FUN-610055
+                  LET new_no=g_t1
+                  DISPLAY new_no TO oea01
+                  NEXT FIELD oea01w
+
+               when infield(oeb04w)
+                  CALL cl_init_qry_var()
+                  LET g_qryparam.form = "q_ima"  #No.TQC-5B0095
+                  LET g_qryparam.state = 'i'
+                  CALL cl_create_qry() RETURNING new_item
+                   CALL cl_init_qry_var()
+                  LET g_qryparam.form ="q_ima"
+                  CALL cl_create_qry() RETURNING g_qryparam.multiret
+                  DISPLAY g_qryparam.multiret TO oeb04w
+                  NEXT FIELD oeb04w
+
+            END CASE
+
+         ON IDLE g_idle_seconds
+            CALL cl_on_idle()
+            CONTINUE INPUT
+
+         ON ACTION about         #MOD-4C0121
+            CALL cl_about()      #MOD-4C0121
+
+         ON ACTION help          #MOD-4C0121
+            CALL cl_show_help()  #MOD-4C0121
+
+         ON ACTION controlg      #MOD-4C0121
+            CALL cl_cmdask()     #MOD-4C0121
+
+      END INPUT
+
+      IF INT_FLAG THEN
+         LET INT_FLAG = 0
+         close window t410w_w
+         RETURN
+      END IF
+      CALL s_auto_assign_no("axm",new_no,new_date,g_buf,"oea_file","oea01","","","")
+      RETURNING li_result,new_no
+      IF (NOT li_result) THEN
+         CONTINUE WHILE
+      END IF
+      DISPLAY new_no TO oea01w
+      EXIT WHILE
+   END WHILE
+
+   close window t410w_w
+
+    IF INT_FLAG THEN
+       LET INT_FLAG=0
+       ROLLBACK WORK
+       RETURN
+    END IF
+
+
+    IF NOT cl_sure(0,0) THEN
+       ROLLBACK WORK
+       RETURN
+    END IF
+
+    DROP TABLE x
+    SELECT * FROM oea_file
+     WHERE oea01 = old_no 
+        INTO TEMP x
+#MOD-B80036 -- begin --
+    IF g_oea.oea08='1' THEN
+       LET exT=g_oaz.oaz52
+    ELSE
+       LET exT=g_oaz.oaz70
+    END IF
+#MOD-B80036 -- end --
+    #-----MOD-A30147---------
+    LET l_oea23 = '' 
+    SELECT oea23 INTO l_oea23 FROM oea_file 
+#      WHERE oea01 = g_oea.oea01 
+     WHERE oea01 = old_no            #TQC-B80019
+    CALL s_curr3(l_oea23,new_date,exT)
+                RETURNING l_oea24
+    #-----END MOD-A30147-----
+    UPDATE x
+        SET oea01=new_no,     #資料鍵值
+            oea02=new_date,   #日期
+            oea24=l_oea24,    #MOD-A30147
+            oea06=0,   #MOD-8C0193
+            oea62=0,
+            oea63=0,
+            oea40=NULL,
+            oea10=NULL, #200909
+            oea49='0',
+            oea905='N',
+            oea99 =NULL,  #No.9864
+            oeaconf='N',
+            oeahold=NULL,
+            oeaprsw=0,
+            oeauser=g_user,   #資料所有者
+            oeagrup=g_grup,   #資料所有者所屬群
+            oeaoriu=g_user,   #TQC-A30041 ADD
+            oeaorig=g_grup,   #TQC-A30041 ADD
+            oeamodu=NULL,     #資料修改日期
+            oeadate=g_today,   #資料建立日期
+            oeaconu=NULL,     #No.FUN-870007
+            oeacont=NULL,     #No.FUN-870007
+            oea72=NULL,       #TQC-C20339 add
+            oeamksg=l_oayapr,
+            oeaud04 = g_oea.oea01,
+            oeaud10 = g_oeb[l_ac].oeb03
+
+    INSERT INTO oea_file
+        SELECT * FROM x
+    IF STATUS OR SQLCA.SQLCODE THEN
+       CALL cl_err3("ins","oea_file",new_no,"",SQLCA.sqlcode,"","ins oea:",1)  #No.FUN-650108
+       ROLLBACK WORK RETURN
+    END IF
+#FUN-B90101--add--begin--
+    DROP TABLE x       #---------------------------------------- copy oeb_file
+    SELECT * FROM oeb_file WHERE oeb01=old_no and oeb03 = g_oeb[l_ac].oeb03 INTO TEMP x
+    IF STATUS THEN
+       CALL cl_err3("ins","x",old_no,"",STATUS,"","oeb- x:",1)  #No.FUN-650108
+       ROLLBACK WORK
+       RETURN
+    END IF
+
+   select ima02 into new_ima02 from ima_file 
+    where ima01 = new_item 
+
+    UPDATE x SET oeb01=new_no,
+                 oeb04 = new_item,
+                 oeb06 = new_ima02,
+                 oeb12 = new_qty,
+                 oeb23=0, oeb24=0, oeb25=0, oeb26=0, oeb70='N',oeb70d=NULL,
+                 oeb15 = g_today,oeb16=g_today, 
+                 oeb27='',oeb28=0 
+                ,oeb920 = 0    
+                ,oeb19='N', oeb905=0      
+                ,oebud05 = ''
+                ,oebud07 = 0 ,oebud09 = new_qty  
+   
+
+    #TQC-B40220--add--str--
+    IF g_sma.sma1422 ='N' THEN 
+       UPDATE x SET oeb919 = ''
+    END IF
+    #TQC-B40220--add--end--
+
+    INSERT INTO oeb_file SELECT * FROM x
+
+    IF STATUS OR SQLCA.SQLCODE THEN
+       CALL cl_err3("ins","oeb_file",new_no,"",SQLCA.sqlcode,"","ins oeb:",1)  #No.FUN-650108
+       ROLLBACK WORK RETURN
+    END IF
+#FUN-B90101 add &endif
+
+    COMMIT WORK          #---------------------------------------- commit work
+
+    CALL cl_msg("Copy Ok!")
+    SELECT oea_file.* INTO g_oea.* FROM oea_file WHERE oea01=new_no   #mod by liuxqa 091020
+    CALL t400_show() #FUN-6C0006
+    CALL cl_set_comp_entry("oea00,oea08",TRUE) #MOD-B50114 add 
+    CALL t400_u()
+    #SELECT oea_file.* INTO g_oea.* FROM oea_file WHERE oea01=old_no   #MOD-A70112  #FUN-C80046
+    CALL t400_show()   #MOD-A70112
+end function
+# darcy:2026/01/26 add e---
