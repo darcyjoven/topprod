@@ -1472,8 +1472,8 @@ function i100_get_tc_sma_desc(p_tc_sma01,p_tc_sma02)
             select ecd02 into l_tc_sma02_desc from ecd_file
              where ecd01 = p_tc_sma02
         # darcy:2025/12/05 add e---
-        when 'csmi130' select eca02 into l_tc_sma02_desc from eca_file where eca01 = p_tc_sma02
-        when 'csmi131' select eca02 into l_tc_sma02_desc from eca_file where eca01 = p_tc_sma02
+        when 'csmi130' select eca03||eca02 into l_tc_sma02_desc from eca_file where eca01 = p_tc_sma02
+        when 'csmi131' select eca03||eca02 into l_tc_sma02_desc from eca_file where eca01 = p_tc_sma02
         otherwise
             let l_tc_sma02_desc = null
     end case
