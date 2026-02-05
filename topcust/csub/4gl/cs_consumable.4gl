@@ -10,7 +10,8 @@ GLOBALS "../../../tiptop/config/top.global"
 
 -- 判断某个工站当月领用的领用金额 
 function cs_consumable(p_part,p_date)
-    define p_part       like eca_file.eca01 
+    define p_part       like eca_file.eca01
+    define l_part       like gem_file.gem01
     define p_date       date
     define l_num        decimal(15,3)
     define i,j,k,l      integer
@@ -21,23 +22,26 @@ function cs_consumable(p_part,p_date)
     call cs_crt_temp()
     delete from consumable_tmp where part = p_part
 
+    select eca03 into l_part from eca_file where eca01 = p_part
+
     -- 月初和月末日期
     let l_start = mdy(month(g_today),1,year(g_today))
     let l_end = mdy(iif(month(g_today)==12,1,month(g_today)+1),1,iif(month(g_today)==12,year(g_today)+1,year(g_today))) - 1
 
     let l_sql = 
     "insert into consumable_tmp ",
-    "select tlf903, tlf905, tlf06, tlf906, tlf01, tlf902,tlf903,tlf904,ima25, tlf10*tlf60 qty, nvl(ima53/ima44_fac,0) price ",
+    "select tlf19, tlf905, tlf06, tlf906, tlf01, tlf902,tlf903,tlf904,ima25, tlf10*tlf60 qty, nvl(ima53/ima44_fac,0) price ",
     " from tlf_file, ima_file where tlf06 between ? and ? ",
-    "  and tlf902 = 'XBC' and tlf903 = ? and ima01 = tlf01 and tlf907 = 1 "
+    "  and tlf01 like 'H.%' and ima01 = tlf01 and tlf13 = 'aimt301' and tlf19 = ? " 
+    -- "  and tlf902 = 'XBC' and tlf903 = ? and ima01 = tlf01 and tlf907 = 1 "
 
     prepare cs_consumable_p1 from l_sql
-    execute cs_consumable_p1 using l_start, l_end, p_part
+    execute cs_consumable_p1 using l_start, l_end, l_part
     if sqlca.sqlcode then
         return 0
     end if
 
-    select sum(qty*price) into l_num from consumable_tmp where part = p_part
+    select sum(qty*price) into l_num from consumable_tmp where part = l_part
 
     return l_num
 end function
@@ -74,18 +78,25 @@ function cs_consumable_enable(p_part,p_date)
     define p_date       date
     define l_num        decimal(15,3)
     define l_temp       decimal(15,3)
+    define l_part       like gem_file.gem01
+
+    select eca03 into l_part from eca_file where eca01 = p_part
 
     -- csmi130
-    select tc_sma27 into l_temp from tc_sma_file
-     where tc_sma01 = 'csmi130' and tc_sma02 = p_part
+    select sum(tc_sma27) into l_temp from tc_sma_file
+     where tc_sma01 = 'csmi130' and tc_sma02 in 
+     (select eca01 from eca_file where eca03 = l_part)
+
     if cl_null(l_temp) then let l_temp = 0 end if
     let l_num = l_temp
     
     -- csmi131
     let l_temp = 0
     select sum(nvl(tc_sma27,0)) into l_temp from tc_sma_file
-     where tc_sma01 = 'csmi131' and tc_sma02 = p_part
+     where tc_sma01 = 'csmi131' and tc_sma02 in 
+     (select eca01 from eca_file where eca03 = l_part)
        and tc_sma21 > g_today
+       
     if cl_null(l_temp) then let l_temp = 0 end if
     -- let l_num = l_num + l_temp 
 
