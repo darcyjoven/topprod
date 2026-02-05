@@ -504,6 +504,7 @@ DEFINE g_rec_b2           LIKE type_file.num5,   #單身二筆數 ##FUN-B30170
 #end------add by guanyao160810                
 
    define g_inaud06_desc  varchar(200) #darcy:2025/09/26 add
+   define g_inaud10_desc  varchar(200) #darcy:2026/02/02 add
 
 FUNCTION t370(p_argv1)
  
@@ -549,6 +550,9 @@ FUNCTION t370(p_argv1)
       call cl_set_act_visible("amri506,unamri506",false)
     end if
     #darcy:2023/03/31 add e--- 
+    # darcy:2026/02/05 add s---
+    call cl_set_comp_visible("inaud10,inaud10_desc",false)
+    # darcy:2026/02/05 add e---
 #FUN-C20101--add--begin--
 #    CALL cl_set_act_visible("controlb",FALSE) #FUN-C60100--MARK--
 #FUN-C20101--add--end-- 
@@ -2253,7 +2257,20 @@ FUNCTION t370_i(p_cmd)
         AFTER FIELD inaud09
            IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
         AFTER FIELD inaud10
-           IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
+            # darcy:2026/02/02 mod s---
+         --   IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
+            # 标识符检查
+            if not cl_null(g_ina.inaud10) then
+               let g_inaud10_desc = ''
+               select tc_sma06 into g_inaud10_desc from tc_sma_file
+                where tc_sma01 = 'csmi132' and tc_sma02 = 'aimt370' and tc_sma03 = g_ina.inaud10
+               if sqlca.sqlcode then
+                  message '标识符未再csmi132中定义，重新输入'
+                  next field inaud10
+               end if
+               display g_inaud10_desc to inaud10_desc
+            end if
+            # darcy:2026/02/02 mod e---
         AFTER FIELD inaud11
            IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
         AFTER FIELD inaud12
@@ -2328,6 +2345,18 @@ FUNCTION t370_i(p_cmd)
                      display g_ina.inaud06 to inaud06
                      next field inaud06
                # darcy:2025/09/26 e---
+               # darcy:2026/02/02 add s---
+               when infield(inaud10)
+                  call cl_init_qry_var()
+                  let g_qryparam.form = "cq_csmi132"
+                  let g_qryparam.arg1 = g_lang
+                  call cl_create_qry() returning g_ina.inaud10
+                  display g_ina.inaud10 to inaud10
+                  next field inaud10
+                  select tc_sma06 into g_inaud10_desc from tc_sma_file
+                   where tc_sam01 = 'csmi132' and tc_sam02 = 'aimt370' and tc_sma03 = g_ina.inaud10
+                  display g_inaud10_desc to inaud10_desc
+               # darcy:2026/02/02 add e---
             END CASE
  
         ON ACTION CONTROLF                  #欄位說明
@@ -6201,6 +6230,12 @@ DEFINE l_x     LIKE type_file.num5   #add by guanyao160705
     where tc_sma01 = 'csmi122' and tc_sma02 = g_ina.inaud06
    display g_inaud06_desc to inaud06_desc
    # darcy:2025/09/26 add e---
+   # darcy:2026/02/02 add s---
+   let g_inaud10_desc = ''
+   select tc_sma06 into g_inaud10_desc from tc_sma_file
+      where tc_sma01 = 'csmi132' and tc_sma02 = 'aimt370' and tc_sma03 = g_ina.inaud10
+   display g_inaud10_desc to inaud10_desc
+   # darcy:2026/02/02 add e---
  
    SELECT gem02 INTO g_buf FROM gem_file WHERE gem01=g_ina.ina04
    CALL cl_show_fld_cont()                   #No.FUN-550037 hmf
@@ -13167,7 +13202,7 @@ function t370_weekamt(p_partno,p_item,p_day,p_unit,p_inb03)
    define l_weekamt,l_tc_imh04  like type_file.num15_3
    define l_begin,l_end    date
    define l_inb08,l_tc_imh03  like inb_file.inb08
-   define l_inb09  like inb_file.inb09
+   define l_inb09  like inb_file.inb09  
    define l_ima25  like ima_file.ima25
    define l_sql    string
 
