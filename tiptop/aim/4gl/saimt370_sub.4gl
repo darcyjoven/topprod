@@ -1287,6 +1287,11 @@ FUNCTION t370sub_s_upd(p_ina01,p_argv1,p_inTransaction)
   DEFINE l_imm01   LIKE imm_file.imm01
   DEFINE p_argv1   LIKE ina_file.ina00
   DEFINE p_inTransaction LIKE type_file.num5
+  # darcy:2026/02/05 add s---
+  define l_amt,l_curr   decimal(15,3)
+  define l_num,l_temp   decimal(15,3)
+  define l_part   varchar(10)
+  # darcy:2026/02/05 add e---
  
    LET g_success = 'Y'
    IF g_action_choice CLIPPED = "stock_post" OR #執行 "確認" 功能(非簽核模式呼叫)
@@ -1355,6 +1360,23 @@ FUNCTION t370sub_s_upd(p_ina01,p_argv1,p_inTransaction)
          IF STATUS THEN
             EXIT FOREACH
          END IF
+         # darcy:2026/02/05 add s---
+         # 限制领用数量
+         if g_user = 'tiptop' then
+            select eca01 into l_part from eca_file where eca03 = l_ina.ina04 and rownum = 1 
+            call cs_consumable_enable(l_part,l_ina.ina02) returning l_num,l_temp
+            if l_num > 0 then
+               call cs_consumable(l_part,l_ina.ina02) returning l_amt
+               call cs_consumable_amt(l_inb.inb04,l_inb.inb09,l_inb.inb08) returning l_curr
+               if l_amt + l_curr >= l_num + l_temp then
+                  LET g_success = 'N'
+                  call cl_err(sfmt('料号：%1 已领用金额+ 本次领用金额：%2 大于本月额度：%3 + 临时额度：%4',l_inb.inb04,l_amt+l_curr,l_num,l_temp),'!',1)
+                  return
+               end if
+            end if
+         end if
+         # darcy:2026/02/05 add e---
+
          SELECT ima906 INTO l_ima906 FROM ima_file WHERE ima01=l_inb.inb04 
          IF g_sma.sma115 = 'Y' THEN
             IF l_ima906 = '2' THEN  #子母單位   
@@ -1433,6 +1455,12 @@ FUNCTION t370sub_s1(p_ina00,p_ina01,p_ina03,p_ina07,p_ina04,p_ina06,p_argv1)
    DEFINE p_ina04  LIKE ina_file.ina04
    DEFINE p_ina06  LIKE ina_file.ina06
    DEFINE p_argv1   LIKE ina_file.ina00
+   # darcy:2026/02/05 add s---
+   define l_amt,l_curr   decimal(15,3)
+   define l_num,l_temp   decimal(15,3)
+   define l_part         varchar(10)
+   define l_ina02        date
+   # darcy:2026/02/05 add e---
 
    IF cl_null(g_aimp880) THEN   #CHI-C80013 add
       CALL s_showmsg_init()   
@@ -1445,7 +1473,25 @@ FUNCTION t370sub_s1(p_ina00,p_ina01,p_ina03,p_ina07,p_ina04,p_ina06,p_argv1)
       IF STATUS THEN
          EXIT FOREACH
       END IF
- 
+      # darcy:2026/02/05 add s---
+      # 限制领用数量
+      if g_user = 'tiptop' then
+
+         select eca01 into l_part from eca_file where eca03 = p_ina04 and rownum = 1 
+         select ina02 into l_ina02 from ina_file where ina01 = p_ina01
+
+         call cs_consumable_enable(l_part,l_ina02) returning l_num,l_temp
+         if l_num > 0 then
+            call cs_consumable(l_part,l_ina02) returning l_amt
+            call cs_consumable_amt(l_inb.inb04,l_inb.inb09,l_inb.inb08) returning l_curr
+            if l_amt + l_curr >= l_num + l_temp then
+               LET g_success = 'N'
+               call cl_err(sfmt('料号：%1 已领用金额+ 本次领用金额：%2 大于本月额度：%3 + 临时额度：%4',l_inb.inb04,l_amt+l_curr,l_num,l_temp),'!',1)
+               return
+            end if
+         end if
+      end if
+      # darcy:2026/02/05 add e---
       IF g_gui_type MATCHES "[13]" AND fgl_getenv('GUI_VER') = '6' THEN
          LET l_smg = '_s1() read no:',l_inb.inb03 USING '#####&',' parts: ', l_inb.inb04  
          CALL cl_msg(l_smg)
