@@ -5055,20 +5055,23 @@ DEFINE l_pmn78         LIKE pmn_file.pmn78
               AND sfa012= l_sna.sna012b
               AND sfa013= l_sna.sna013b
 
-           UPDATE pmn_file SET pmn20 = l_sna.sna065a,
-                               pmn82 = l_sna.sna065a,
-                               pmn87 = l_sna.sna065a,  #MOD-D30053
-                               pmn88 = l_sna.sna065a * pmn31,  #MOD-D30053
-                               pmn88t= l_sna.sna065a * pmn31t  #MOD-D30053
-            WHERE pmn41 = l_sna.sna01
-              AND pmn04 = l_sna.sna03b
-              AND EXISTS (SELECT 1
-                             FROM sfb_file, sfa_file
-                             WHERE sfb01 = sfa01
-                             AND sfb39 = '1'
-                             AND sfbacti = 'Y'
-                             AND ( sfb02 = '7' OR sfb02 = '8' )
-                             AND sfb01 = l_sna.sna01)
+            # darcy:2026/01/14 add s---
+            # 外协+物控，要求，委外订单不跟随工单变更
+         --   UPDATE pmn_file SET pmn20 = l_sna.sna065a,
+         --                       pmn82 = l_sna.sna065a,
+         --                       pmn87 = l_sna.sna065a,  #MOD-D30053
+         --                       pmn88 = l_sna.sna065a * pmn31,  #MOD-D30053
+         --                       pmn88t= l_sna.sna065a * pmn31t  #MOD-D30053
+         --    WHERE pmn41 = l_sna.sna01
+         --      AND pmn04 = l_sna.sna03b
+         --      AND EXISTS (SELECT 1
+         --                     FROM sfb_file, sfa_file
+         --                     WHERE sfb01 = sfa01
+         --                     AND sfb39 = '1'
+         --                     AND sfbacti = 'Y'
+         --                     AND ( sfb02 = '7' OR sfb02 = '8' )
+         --                     AND sfb01 = l_sna.sna01)
+            # darcy:2026/01/14 add ---
         END IF
      END FOREACH
      #FUN-C10045---end
@@ -5096,37 +5099,41 @@ DEFINE l_pmn78         LIKE pmn_file.pmn78
             CALL cl_err('','asf-283',1)
             RETURN
          ELSE
-            UPDATE pmn_file SET pmn20 = g_snb.snb08a,
-                                pmn82 = g_snb.snb08a,
-                                pmn87 = g_snb.snb08a,  #MOD-D30053
-                                pmn88 = g_snb.snb08a * pmn31,  #MOD-D30053
-                                pmn88t= g_snb.snb08a * pmn31t  #MOD-D30053
-             WHERE pmn41 = l_sna.sna01
-               AND pmn04 = g_sfb.sfb05
-               AND EXISTS (SELECT 1
-                              FROM sfb_file, sfa_file
-                              WHERE sfb01 = sfa01
-                              AND sfb39 = '1'
-                              AND sfbacti = 'Y'
-                              AND ( sfb02 = '7' OR sfb02 = '8' )
-                              AND sfb01 = l_sna.sna01)
+            # darcy:2026/01/14 ADD S---
+            # UPDATE pmn_file SET pmn20 = g_snb.snb08a,
+            #                     pmn82 = g_snb.snb08a,
+            #                     pmn87 = g_snb.snb08a,  #MOD-D30053
+            #                     pmn88 = g_snb.snb08a * pmn31,  #MOD-D30053
+            #                     pmn88t= g_snb.snb08a * pmn31t  #MOD-D30053
+            #  WHERE pmn41 = l_sna.sna01
+            #    AND pmn04 = g_sfb.sfb05
+            #    AND EXISTS (SELECT 1
+            #                   FROM sfb_file, sfa_file
+            #                   WHERE sfb01 = sfa01
+            #                   AND sfb39 = '1'
+            #                   AND sfbacti = 'Y'
+            #                   AND ( sfb02 = '7' OR sfb02 = '8' )
+            #                   AND sfb01 = l_sna.sna01)
+            # darcy:2026/01/14 ADD e---
          END IF
       ELSE
          IF NOT cl_null(g_snb.snb08a) THEN
-            UPDATE pmn_file SET pmn20 = g_snb.snb08a,
-                                pmn82 = g_snb.snb08a,
-                                pmn87 = g_snb.snb08a,  #MOD-D30053
-                                pmn88 = g_snb.snb08a * pmn31,  #MOD-D30053
-                                pmn88t= g_snb.snb08a * pmn31t  #MOD-D30053
-             WHERE pmn41 = l_sna.sna01
-               AND pmn04 = g_sfb.sfb05
-               AND EXISTS (SELECT 1
-                              FROM sfb_file, sfa_file
-                              WHERE sfb01 = sfa01
-                              AND sfb39 = '1'
-                              AND sfbacti = 'Y'
-                              AND ( sfb02 = '7' OR sfb02 = '8' )
-                              AND sfb01 = l_sna.sna01)
+            # darcy:2026/01/14 ADD s---
+            -- UPDATE pmn_file SET pmn20 = g_snb.snb08a,
+            --                     pmn82 = g_snb.snb08a,
+            --                     pmn87 = g_snb.snb08a,  #MOD-D30053
+            --                     pmn88 = g_snb.snb08a * pmn31,  #MOD-D30053
+            --                     pmn88t= g_snb.snb08a * pmn31t  #MOD-D30053
+            --  WHERE pmn41 = l_sna.sna01
+            --    AND pmn04 = g_sfb.sfb05
+            --    AND EXISTS (SELECT 1
+            --                   FROM sfb_file, sfa_file
+            --                   WHERE sfb01 = sfa01j
+            --                   AND sfb39 = '1'
+            --                   AND sfbacti = 'Y'
+            --                   AND ( sfb02 = '7' OR sfb02 = '8' )
+            --                   AND sfb01 = l_sna.sna01)
+            # darcy:2026/01/14 ADD e---
          END IF
       END IF
      #MOD-C90216---add---E
