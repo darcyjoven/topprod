@@ -5,8 +5,14 @@ import libwritexcel
 database ds
  
 globals "../../../tiptop/config/top.global" 
+
+define g_str    string
+define g_sql    string
  
 main
+    constant l_ima01 = "string",
+             l_ima02 = 123  
+    define l_arr  array [ 3 ]  of integer
     options                                #改變一些系統預設值
         input no wrap
     defer interrupt                        #擷取中斷鍵, 由程式處理
@@ -20,6 +26,8 @@ main
     if (not cl_setup("CIM")) then
         exit program
     end if
+
+    display l_ima01
     
     call  cl_used(g_prog,g_time,1) returning g_time  
     -- display LENGTH('abas')
@@ -40,11 +48,48 @@ main
     -- call test_base_dll()
     -- call test_frontcall()
 
-    call test_cl_label()
+    -- call test_cl_label()
     -- call test_cmd_start()
+    -- call print_99_table()
+    -- call cq_oea("AA"," 1=1",true,true) returning  g_str
+    -- call cq_oea("AA"," 1=1",false,false) returning g_str,g_sql
+    -- call cs_consumable("G1001",g_today) returning g_str    
+    -- call cs_consumable_amt('M.IN.0002R',1,'G') returning g_str
+    call test_consum()
     
     call  cl_used(g_prog,g_time,2) returning g_time
 end main
+
+function test_consum()
+    define l_str    string 
+
+    call cs_consumable('G1013',g_today) returning l_str
+
+    call cs_consumable_enable('G1013',g_today) returning l_str,g_str
+
+    call cs_consumable_amt('M.IN.0002R',1,'G') returning g_str
+end function
+
+
+FUNCTION print_99_table()
+    DEFINE i, j INTEGER
+    DEFINE line_str STRING
+    DEFINE term_str STRING
+
+    FOR i = 1 TO 9
+        LET line_str = ""
+        FOR j = 1 TO i
+            -- 使用 SFMT 函数进行格式化和拼接
+            -- 格式: j * i = (i * j)
+            -- SFMT 自动将数值转换为字符串，并且不会增加额外的空白填充（除非格式串中指定）
+            LET term_str = SFMT("%1*%2=%3", j, i, (i * j))
+            
+            -- 使用 ',' (Append) 拼接，SFMT 的结果是无填充的字符串
+            LET line_str = line_str, term_str, "  "
+        END FOR
+        DISPLAY line_str
+    END FOR
+END FUNCTION
 
 function test_cmd_start()
     define l_str,l_err string
