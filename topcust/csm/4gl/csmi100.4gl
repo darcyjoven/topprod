@@ -943,6 +943,13 @@ define l_msg        string #darcy:2024/11/29
                         CALL cl_create_qry() RETURNING g_tc_sma[l_ac].tc_sma02
                         DISPLAY g_tc_sma[l_ac].tc_sma02 TO tc_sma02
                         NEXT FIELD tc_sma02
+                    when 'csmi133'
+                        CALL cl_init_qry_var()
+                        LET g_qryparam.form = "q_gaz"
+                        LET g_qryparam.arg1 = g_lang
+                        CALL cl_create_qry() RETURNING g_tc_sma[l_ac].tc_sma02
+                        DISPLAY g_tc_sma[l_ac].tc_sma02 TO tc_sma02
+                        NEXT FIELD tc_sma02
                 end case
               
            END CASE
@@ -1320,7 +1327,7 @@ FUNCTION i100_set_dny_combo()
 
     let ps_values = "csmi100,csmi101,csmi102,csmi103,csmi104,csmi105,csmi106,csmi107,csmi108,csmi109,csmi110,csmi111,",
                     "csmi112,csmi113,csmi114,csmi115,csmi116,csmi117,csmi118,csmi119,csmi120,csmi121,csmi122,csmi123,",
-                    "csmi124,csmi125,csmi126,csmi127,csmi128,csmi129,csmi130,csmi131,csmi132"
+                    "csmi124,csmi125,csmi126,csmi127,csmi128,csmi129,csmi130,csmi131,csmi132,csmi133"
 
     LET tok = base.StringTokenizer.create(ps_values,",")
     let l_ze01 = tok.nextToken()
@@ -1396,6 +1403,7 @@ FUNCTION i100_set_dny_combo()
         when 'csmi130' display '工站月度耗材额度维护' to lb_msg
         when 'csmi131' display '工站月度耗材临时额度维护' to lb_msg
         when 'csmi132' display '杂项发料/收料 标识符维护' to lb_msg
+        when 'csmi132' display '参数控制开关' to lb_msg
     end case
 
     call i100_set_visiable()
@@ -1474,6 +1482,7 @@ function i100_get_tc_sma_desc(p_tc_sma01,p_tc_sma02)
         # darcy:2025/12/05 add e---
         when 'csmi130' select eca03||eca02 into l_tc_sma02_desc from eca_file where eca01 = p_tc_sma02
         when 'csmi131' select eca03||eca02 into l_tc_sma02_desc from eca_file where eca01 = p_tc_sma02
+        when 'csmi133' select gaz03 into l_tc_sma02_desc from gaz_file where gaz01 = p_tc_sma02 and gaz02 = g_lang
         otherwise
             let l_tc_sma02_desc = null
     end case
@@ -1898,6 +1907,20 @@ function i100_set_visiable()
                                       tc_sma14,tc_sma15,tc_sma16,tc_sma17,tc_sma18,tc_sma19",false)
             -- 是否可以录入
             call cl_set_comp_entry("tc_sma03,tc_sma06,tc_sma10",true)
+        when 'csmi133'
+            call cl_set_comp_att_text('tc_sma02','程序编号')
+            call cl_set_comp_att_text('tc_sma02_desc','名称')
+            call cl_set_comp_att_text('tc_sma03','项次')
+            call cl_set_comp_att_text('tc_sma05','启用否')
+            call cl_set_comp_att_text('tc_sma06','参数')
+            call cl_set_comp_att_text('tc_sma07','说明')
+            -- 是否隐藏
+            call cl_set_comp_visible("tc_sma04,tc_sma08,tc_sma09,tc_sma10,tc_sma11,tc_sma12,tc_sma13,
+                                      tc_sma14,tc_sma15,tc_sma16,tc_sma17,tc_sma18,tc_sma19",false)
+            -- 是否可以录入
+            call cl_set_comp_entry("tc_sma02,tc_sma03,tc_sma05,tc_sma06,tc_sma07",true)
+        # darcy:2025/07/28 add e---
+        # darcy:2025/09/03 add s---
     end case
     
 end function
