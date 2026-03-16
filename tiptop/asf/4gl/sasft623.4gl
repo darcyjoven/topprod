@@ -5119,6 +5119,13 @@ define l_action_choice varchar(2000)
          call cl_err(current,'csf-116',1)
          return
       end if
+   #darcy:2023/10/11 add s---
+   if ((l_hour = 7 and l_minute <30) or (l_hour < 7)) and (g_sfu.sfu02 == today) then
+      if not cl_confirm('csf-117') then
+         return
+      end if
+   end if
+   #darcy:2023/10/11 add e---
    end if #darcy:2024/07/16 add
    #darcy:2023/09/15 add e---
 
@@ -5147,13 +5154,6 @@ define l_action_choice varchar(2000)
    # let g_bgjob = "N"
    #darcy:2024/09/23 add e---
 
-   #darcy:2023/10/11 add s---
-   if ((l_hour = 7 and l_minute <30) or (l_hour < 7)) and (g_sfu.sfu02 == today) then
-      if not cl_confirm('csf-117') then
-         return
-      end if
-   end if
-   #darcy:2023/10/11 add e---
    #darcy:2024/05/31 add s---
    # 最后一次入库前检查
    if g_sfu.sfu01 not matches "TT*" then
