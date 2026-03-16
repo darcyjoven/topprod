@@ -3,33 +3,30 @@ import libuuid
 import libwritexcel
 
 database ds
- 
-globals "../../../tiptop/config/top.global" 
+
+globals "../../../tiptop/config/top.global"
 
 define g_str    string
 define g_sql    string
- 
+
+
 main
-    constant l_ima01 = "string",
-             l_ima02 = 123  
-    define l_arr  array [ 3 ]  of integer
+
     options                                #改變一些系統預設值
         input no wrap
     defer interrupt                        #擷取中斷鍵, 由程式處理
- 
+
     if (not cl_user()) then
         exit program
     end if
-    
+
     whenever error call cl_err_msg_log
-    
+
     if (not cl_setup("CIM")) then
         exit program
     end if
 
-    display l_ima01
-    
-    call  cl_used(g_prog,g_time,1) returning g_time  
+    call  cl_used(g_prog,g_time,1) returning g_time
     -- display LENGTH('abas')
     -- call test_col_ana()
     -- call test_csmi113()
@@ -53,15 +50,34 @@ main
     -- call print_99_table()
     -- call cq_oea("AA"," 1=1",true,true) returning  g_str
     -- call cq_oea("AA"," 1=1",false,false) returning g_str,g_sql
-    -- call cs_consumable("G1001",g_today) returning g_str    
+    -- call cs_consumable("G1001",g_today) returning g_str
     -- call cs_consumable_amt('M.IN.0002R',1,'G') returning g_str
-    call test_consum()
-    
+    -- call test_consum()
+    -- call test_sql()
+    begin work
+    update tc_sma_file
+        set tc_sma05 = 'Y'
+        where tc_sma01 = 'csmi133'
+        and tc_sma02 = 'aeci100'
+    call saeci100_csmi134("AA0428A2CS")
+    call saeci100_csmi134("AO0053F3BS")
+    call saeci100_csmi134("BN8018S8DS")
+    rollback work
+
     call  cl_used(g_prog,g_time,2) returning g_time
 end main
 
+
+function test_sql()
+    define l    integer
+    select count(*) into l from ima_file where ima01 in (select 'M.IN.0001R' from dual)
+    display l
+    display l
+    display l
+end function
+
 function test_consum()
-    define l_str    string 
+    define l_str    string
 
     call cs_consumable('G1013',g_today) returning l_str
 
@@ -83,7 +99,7 @@ FUNCTION print_99_table()
             -- 格式: j * i = (i * j)
             -- SFMT 自动将数值转换为字符串，并且不会增加额外的空白填充（除非格式串中指定）
             LET term_str = SFMT("%1*%2=%3", j, i, (i * j))
-            
+
             -- 使用 ',' (Append) 拼接，SFMT 的结果是无填充的字符串
             LET line_str = line_str, term_str, "  "
         END FOR
@@ -104,7 +120,7 @@ function test_cl_label()
     define l_str,l_err string
     -- let l_str = '"C:\\Program Files (x86)\\Seagull\\BarTender Suite\\bartend.exe" /AF=C:\\app\\FourJs\\gdc\\2.50.22\\bin\\demo\\demo.btw /D=C:\\app\\FourJs\\gdc\\2.50.22\\bin\\demo\\data.csv'
     -- call ui.Interface.frontCall("standard","execute",[l_str,1],[l_err])
-    
+
 
     let l_str = cl_label_query('custsubqrcode','tqrcim0009',true," ima01 = 'K.CA.0087R' ",'','','','')
     if not cl_null(l_str) then
@@ -133,7 +149,7 @@ function test_base_dll()
     call ui.Interface.frontCall("frontbase","modDate",["frontbase.dll"],[str])
 
     call ui.Interface.frontCall("frontbase","modDate",["D:/cache/table.json"],[str])
-    
+
     call ui.Interface.frontCall("frontbase","modDate",["D:\\cache\\table.json"],[str])
 
     -- call ui.Interface.frontCall("base/frontbase","modDate",["D:\\cache\\table.json"],[str])
@@ -179,7 +195,7 @@ function test_dll()
 
 
     -- for /f "tokens=2,*" %a in ('reg query "HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\App Paths\bartend.exe" /v Path 2^>nul') do @echo %b > "D:\cache\path.txt"
-    -- let l_cmd = 
+    -- let l_cmd =
     -- let l_cmd = "for /f \"tokens=2,*\" %a in ('reg query \"HKLM\\SOFTWARE\\WOW6432Node\\Microsoft\\Windows\\CurrentVersion\\App Paths\\bartend.exe\" /v Path 2^>nul') do @echo %b > \"D:\\cache\\path.txt\""
     let l_cmd = "D:\\cache\\get.bat"
     call ui.Interface.frontCall("standard","execute",[l_cmd,1],[l_str])
@@ -187,7 +203,7 @@ function test_dll()
     -- let l_cmd = "\"C:\\Program Files (x86)\\Seagull\\BarTender Suite\\bartend.exe\""
     let l_cmd = "\"C:\Program Files (x86)\Seagull\BarTender Suite\bartend.exe\" /AF=\"D:\\cache\\DB\\bartender\\标签1.btw\" /D=\"D:\\cache\\DB\\bartender\\item1.csv\""
     call ui.Interface.frontCall("standard","execute",[l_cmd,1],[l_str])
-    
+
 end function
 function test_run()
     define l_str string
@@ -200,7 +216,7 @@ end function
 
 function test_remark()
     define l_str    string
-    
+
     let l_str = "1.Au: 0.075±0.025um, pa: 0.12±0.21122um, Ni: 3.5±1.5um\n2.化金面积S=2.73dm”，主检化金不良，记入表单，手指厚度切片\n3.测HOTBAR手指，见手指化金管控图，量测12pcs金手指尺寸"
 
     call i100sub_surface_remark(l_str) returning l_str
@@ -241,7 +257,7 @@ function test_params()
 
     open window test_param with form "azz/42f/p_param"
           attribute (style = g_win_style clipped)
-    
+
     let lwin_curr = ui.Window.getCurrent()
     let lnode_win = lwin_curr.getNode()
 
@@ -252,28 +268,28 @@ function test_params()
     end if
 
     let lnode_root = llst_items.item(1)
-    
+
     let l = lnode_root.getChildCount()
 
-    let l_str = lnode_root.tostring() 
+    let l_str = lnode_root.tostring()
 
     call lnode_root.parse(l_str) returning lnode_root
 
     let l = lnode_root.getChildCount()
 
     MENU
-        ON ACTION new 
+        ON ACTION new
             -- CALL newFile()
-        ON ACTION open 
+        ON ACTION open
             -- CALL openFile()
-        ON ACTION save 
+        ON ACTION save
             -- CALL saveFile()
-        ON ACTION import 
-            -- LOAD FROM "infile.dat" INSERT INTO table 
-        ON ACTION quit 
+        ON ACTION import
+            -- LOAD FROM "infile.dat" INSERT INTO table
+        ON ACTION quit
             EXIT PROGRAM
     END MENU
-    
+
     close window test_param
 end function
 
@@ -286,9 +302,9 @@ end function
 function test_col_ana()
     define l_sql  string
     define l_cnt integer
-    
+
     begin work
-    let l_sql = "SELECT ima01, ima02, ima021, 
+    let l_sql = "SELECT ima01, ima02, ima021,
                CASE ima06 WHEN 'M.IN' THEN 1 ELSE 2 END ima07,
                (ima51 * 2) / 100 AS ima51,
                (SELECT NVL(imz02, 'null') FROM imz_file WHERE imz01 = ima06)
@@ -310,7 +326,7 @@ function test_impxlx()
     define l_file string
     define l_data dynamic array with dimension 2 of string
     define i,x,y integer
-    
+
 
     let l_file = cl_import_open_file()
     if cl_import_xlsx(l_file)  then
@@ -322,7 +338,7 @@ function test_impxlx()
     for i = 1 to cl_import_get_sheet_count()
         let l_file = cl_import_get_sheet_name(i)
         call cl_import_get_sheet_size_by_name(l_file) returning x,y
-        call cl_import_get_cell_by_index(i,1,1) returning l_file 
+        call cl_import_get_cell_by_index(i,1,1) returning l_file
         call cl_import_get_data_by_sheet_index(i) returning l_data
     end for
 end function
@@ -338,20 +354,20 @@ function test_xml()
 	    italic    boolean,
 	    underline boolean
     end record
-    
+
     define p_file string
     define l_xml  om.DomNode
     define l_uuid,l_file string
-    
 
-    let p_data[1].sheet = 'AA01' 
+
+    let p_data[1].sheet = 'AA01'
     let p_data[1].pos = 'A1'
     let p_data[1].color = '#F0F0F0'
     let p_data[1].bold = true
     let p_data[1].italic = true
-    let p_data[1].value = 'AA01' 
+    let p_data[1].value = 'AA01'
 
-    let p_data[2].sheet = 'AA02' 
+    let p_data[2].sheet = 'AA02'
     let p_data[2].pos = 'A2'
     let p_data[2].color = '#FFF000'
     let p_data[2].underline = true
@@ -365,8 +381,8 @@ function test_xml()
 end function
 
 function test_write_excel()
-    define l_ok string 
-    
+    define l_ok string
+
     call writexcel("/u1/out/XBC呆滞物料.xlsx",
     "/u1/out/6dc576d4-d1bf-487f-85c6-96e81f53d073.xml") returning l_ok
     message l_ok
@@ -411,7 +427,7 @@ function test_cl_wrtie()
 
     call cl_write("/u1/out/XBC呆滞物料.xlsx",l_data ) returning l_ok
     message l_ok
-    
+
 end function
 function test_excel_cell()
     define l_str varchar(10)
