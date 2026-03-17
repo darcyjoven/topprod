@@ -503,7 +503,7 @@ define l_msg        string #darcy:2024/11/29
                      CALL cl_err(g_tc_sma01_t,SQLCA.sqlcode,1)
                      LET l_lock_sw = "Y"
                   END IF
-                  let g_tc_sma[l_ac].tc_sma02_desc = i100_get_tc_sma_desc(g_tc_sma01,g_tc_sma[l_ac].tc_sma02,g_tc_sma[g_cnt].tc_sma04)
+                  let g_tc_sma[l_ac].tc_sma02_desc = i100_get_tc_sma_desc(g_tc_sma01,g_tc_sma[l_ac].tc_sma02,g_tc_sma[l_ac].tc_sma04)
                END IF
                CALL cl_show_fld_cont()
             END IF
@@ -1043,7 +1043,8 @@ DEFINE p_wc2   LIKE type_file.chr1000
 
    END FOREACH
    CALL g_tc_sma.deleteElement(g_cnt)
-   LET g_rec_b =g_cnt-1
+   let g_cnt = g_cnt - 1
+   LET g_rec_b =g_cnt
    DISPLAY g_rec_b TO FORMONLY.cn2
 
 END FUNCTION
