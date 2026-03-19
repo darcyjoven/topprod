@@ -6,10 +6,10 @@
 # Modify.........: No.FUN-920106 09/02/20 By sabrina 新建立
 # Modify.........: No.FUN-980030 09/08/31 By Hiko 加上GP5.2的相關設定
 # Modify.........: No.FUN-A10043 10/01/11 By Lilan 從EasyFlow端簽核時可進行自動確認(不開窗,帶預設值)
-# Modify.........: No.FUN-AA0015 10/10/07 By Nicola 預設pmh25 
+# Modify.........: No.FUN-AA0015 10/10/07 By Nicola 預設pmh25
 # Modify.........: No:MOD-AB0166 10/11/17 By Smcpmin 分配比率沒有檢核不可大於100
 # Modify.........: No.CHI-C30107 12/06/11 By yuhuabao  整批修改將確認的詢問窗口放到chk段的前面
-# Modify.........: No.MOD-C90034 12/10/22 By Nina 還原 MOD-920027 確認,取消確認時需要更新最近更改者和最近更改日的調整 
+# Modify.........: No.MOD-C90034 12/10/22 By Nina 還原 MOD-920027 確認,取消確認時需要更新最近更改者和最近更改日的調整
 # Modify.........: No:CHI-C10039 12/11/16 By jt_chen 增加回寫核准狀態.
 # Modify.........: No.CHI-C20012 12/12/06 By pauline 新增pmh_file時增加欄位pmh06核准日期,當狀態為已核准時,pmh06為必輸
 # Modify.........: No.FUN-C40009 13/01/10 By Nina 只要程式有UPDATE pmh_file 的任何一個欄位時,多加pmhdate=g_today
@@ -18,19 +18,19 @@
 DATABASE ds
 
 GLOBALS "../../config/top.global"
- 
+
 FUNCTION i255sub_y_chk(p_tc_pmw01,p_inTransaction)
 define p_inTransaction  like type_file.chr1
 DEFINE p_tc_pmw01     LIKE tc_pmw_file.tc_pmw01      #FUN-920106
-DEFINE l_cnt       LIKE type_file.num5  
-DEFINE l_str       LIKE gfe_file.gfe01  
+DEFINE l_cnt       LIKE type_file.num5
+DEFINE l_str       LIKE gfe_file.gfe01
 DEFINE l_pml04     LIKE pml_file.pml04
 DEFINE l_imaacti   LIKE ima_file.imaacti
 DEFINE l_ima140    LIKE ima_file.ima140
-DEFINE l_tc_pmx01     LIKE tc_pmx_file.tc_pmx01 
+DEFINE l_tc_pmx01     LIKE tc_pmx_file.tc_pmx01
 DEFINE l_tc_pmx02     LIKE tc_pmx_file.tc_pmx02
-DEFINE l_pmm01     LIKE pmm_file.pmm01   
-DEFINE l_pmm09     LIKE pmm_file.pmm09  
+DEFINE l_pmm01     LIKE pmm_file.pmm01
+DEFINE l_pmm09     LIKE pmm_file.pmm09
 DEFINE l_status    LIKE type_file.chr1
 DEFINE l_tc_pmw       RECORD LIKE tc_pmw_file.*    #FUN-920106
 DEFINE l_t1        LIKE smy_file.smyslip     #FUN-920106
@@ -41,7 +41,11 @@ define l_tc_pmx031  like tc_pmx_file.tc_pmx031
 DEFINE l_tc_pmx           RECORD LIKE tc_pmx_file.*
 define l_where    varchar(500)
 define l_ima48    like ima_file.ima48 #darcy:2025/06/23 add
- 
+# darcy 2026年3月19日 add s---
+define l_tc_pmxud04 like tc_pmx_file.tc_pmxud04
+define l_tc_pmwud01 like tc_pmw_file.tc_pmwud01
+# darcy 2026年3月19日 add s---
+
    LET g_success = 'Y'
    IF s_shut(0) THEN RETURN END IF
    IF p_tc_pmw01 IS NULL THEN RETURN END IF     #FUN-920106
@@ -70,7 +74,7 @@ define l_ima48    like ima_file.ima48 #darcy:2025/06/23 add
 #CHI-C30107 ------------ add ------------ end
    SELECT * INTO l_tc_pmw.* FROM tc_pmw_file WHERE tc_pmw01 = p_tc_pmw01        #FUN-920106
    IF cl_null(l_tc_pmw.tc_pmw01) THEN CALL cl_err('',-400,0) RETURN END IF
- 
+
    IF l_tc_pmw.tc_pmwconf='X'      THEN
       CALL cl_err('','9024',0)
       LET g_success = 'N'
@@ -86,7 +90,7 @@ define l_ima48    like ima_file.ima48 #darcy:2025/06/23 add
        LET g_success = 'N'
        RETURN
    END IF
- 
+
    LET l_cnt =0
    #控管單身未輸入資料
    LET l_cnt=0
@@ -104,7 +108,7 @@ define l_ima48    like ima_file.ima48 #darcy:2025/06/23 add
    # bpm上传，ERP不检查
    # LET l_cnt =0
    # let l_where = "tc_pmw01=",l_tc_pmw.tc_pmw01
-   # select count(1) into l_cnt from gca_file,gcb_file 
+   # select count(1) into l_cnt from gca_file,gcb_file
    #  where gca07 = gcb01 and gca01 = l_where
    # if l_cnt = 0 then
    #    call cl_err(l_tc_pmw.tc_pmw01,'cpm-075',1)
@@ -113,7 +117,7 @@ define l_ima48    like ima_file.ima48 #darcy:2025/06/23 add
    # end if
    #
    #darcy:2023/06/09 add e---
- 
+
    #MOD-D10199 -- add start --
    DECLARE i255_tc_pmx09_cs CURSOR FOR
      SELECT tc_pmx09 FROM tc_pmx_file
@@ -127,13 +131,13 @@ define l_ima48    like ima_file.ima48 #darcy:2025/06/23 add
          RETURN
       END IF
    END FOREACH
-   #MOD-D10199 -- add end --  
+   #MOD-D10199 -- add end --
 
    #darcy:2023/05/24 add s---
    CALL s_showmsg_init()
-   declare i252sub_tc_pmx03 cursor for 
+   declare i252sub_tc_pmx03 cursor for
       SELECT UNIQUE tc_pmx03 FROM tc_pmx_file WHERE tc_pmx03 !='MISC' and tc_pmx01 = l_tc_pmw.tc_pmw01
-   
+
    foreach i252sub_tc_pmx03 into l_tc_pmx03
       let l_cnt = 0
       select count(1) into l_cnt from tc_pmx_file where tc_pmx01 = l_tc_pmw.tc_pmw01
@@ -148,14 +152,14 @@ define l_ima48    like ima_file.ima48 #darcy:2025/06/23 add
       end if
 
       # darcy:2025/06/23 add s ---
-      # 更新采购前置天数 
-      select max(tc_pmx23) into l_ima48 from tc_pmx_file 
-       where tc_pmx01 = l_tc_pmw.tc_pmw01 and tc_pmx03 = l_tc_pmx03
-      update ima_file set ima48 =  l_ima48 where ima01 = l_tc_pmx03
+      # 更新采购前置天数
+      #select max(tc_pmx23) into l_ima48 from tc_pmx_file
+      # where tc_pmx01 = l_tc_pmw.tc_pmw01 and tc_pmx03 = l_tc_pmx03
+      #update ima_file set ima48 =  l_ima48 where ima01 = l_tc_pmx03
       # darcy:2025/06/23 add e ---
-      
+
    end foreach
-   
+
    declare i252sub_tc_pmx031 cursor for
       SELECT UNIQUE tc_pmx031 FROM tc_pmx_file WHERE tc_pmx03  ='MISC' and tc_pmx01 = l_tc_pmw.tc_pmw01
    foreach i252sub_tc_pmx031 into l_tc_pmx031
@@ -180,7 +184,7 @@ define l_ima48    like ima_file.ima48 #darcy:2025/06/23 add
    update tc_pmx_file set tc_pmx21 = 'Y'
     where tc_pmx06 is not null and tc_pmx07 > tc_pmx06
       and tc_pmx01 = l_tc_pmw.tc_pmw01
-   
+
    update tc_pmx_file set tc_pmx21 = 'N'
     where tc_pmx06 is null or tc_pmx07 <= tc_pmx06
       and tc_pmx01 = l_tc_pmw.tc_pmw01
@@ -198,22 +202,70 @@ define l_ima48    like ima_file.ima48 #darcy:2025/06/23 add
    #    update tc_pmw_file set tc_pmw05 = 'N'
    #     where tc_pmw01 = l_tc_pmw.tc_pmw01
    #    display 'N' to tc_pmw05
-   #darcy:2023/08/17 remark e---
    end if
+   #darcy:2023/08/17 remark e---
+    # darcy 2026年3月19日 add s---
+    # 器件涨价，关联的成品料号更新，并更新
+    begin work
+    let g_success = 'Y'
+    let l_sql =  "select tc_pmx02 from tc_pmx_file",
+                 " where tc_pmx06 is not null and tc_pmx07 > tc_pmx06 and tc_pmx20 ='Y'",
+                 "   and tc_pmx01 = ? and tc_pmx03 like 'E.%'"
+    prepare cpmi252_eup_p from l_sql
+    declare cpmi252_eup_c cursor for cpmi252_eup_p
+
+    let l_sql = "select DBMS_LOB.SUBSTR(RTRIM(XMLAGG(XMLELEMENT(E, bmb01, ';').EXTRACT('//text()') order by bmb01).GETCLOBVAL(),
+                                 ';'),
+                           2000,
+                           1) as concatenated_bmb01
+                from (select distinct SUBSTR(CONNECT_BY_ROOT(bmb01), 1, 6) as bmb01
+                        from bmb_file
+                        where bmb04 <= TRUNC(sysdate)
+                        and (bmb05 is null or bmb05 > TRUNC(sysdate))
+                        start with bmb03 = ?
+                        connect by prior bmb03 = bmb01)"
+    prepare cpmi252_eroot from l_sql
+
+    let l_tc_pmwud01 = 'N'
+    foreach cpmi252_eup_c using l_tc_pmw.tc_pmw01 into l_tc_pmx02,l_tc_pmx03
+        if sqlca.sqlcode then
+            call cl_err('cpmi252_eup_c',sqlca.sqlcode,1)
+            exit foreach
+        end if
+        execute cpmi252_eroot using l_tc_pmx03 into l_tc_pmxud04
+        if not cl_null(l_tc_pmxud04) then
+            update tc_pmx_file set tc_pmxud04 = l_tc_pmxud04
+             where tc_pmx01 = l_tc_pmw.tc_pmw01  and tc_pmx02 = l_tc_pmx02
+            if sqlca.sqlcode then
+                call cl_err('upd tc_pmx',sqlca.sqlcode,1)
+                let g_success = 'N'
+                exit foreach
+            end if
+        end if
+        let l_tc_pmwud01 = 'Y'
+    end foreach
+    update tc_pmw_file set tc_pmwud01 = l_tc_pmwud01 where tc_pmw01 = l_tc_pmw.tc_pmw01
+    if g_success='Y' then
+        commit work
+        display l_tc_pmwud01 to tc_pmwud01
+    else
+        rollback work
+    end if
+    # darcy 2026年3月19日 add e---
 
 END FUNCTION
 
- 
+
 FUNCTION i255sub_lock_cl()
    DEFINE l_forupd_sql STRING
- 
+
    LET l_forupd_sql = "SELECT * FROM tc_pmw_file WHERE tc_pmw01 = ? FOR UPDATE"
    LET l_forupd_sql=cl_forupd_sql(l_forupd_sql)
 
    DECLARE i255sub_cl CURSOR FROM l_forupd_sql
 END FUNCTION
 
- 
+
 FUNCTION i255sub_y_upd(l_tc_pmw01,p_action_choice,p_inTransaction)
    define p_inTransaction     like type_file.chr1
    DEFINE  l_tc_pmw01         LIKE tc_pmw_file.tc_pmw01     #FUN-920106
@@ -224,9 +276,9 @@ FUNCTION i255sub_y_upd(l_tc_pmw01,p_action_choice,p_inTransaction)
    DEFINE  l_pmh19         LIKE pmh_file.pmh19   #No.FUN-610018
    DEFINE  l_cnt           LIKE type_file.num5    #No.FUN-680136 SMALLINT
    WHENEVER ERROR CONTINUE                          #FUN-920106
- 
+
    LET g_success = 'Y'
- 
+
    SELECT * INTO l_tc_pmw.* FROM tc_pmw_file WHERE tc_pmw01 = l_tc_pmw01  #FUN-920106
    IF p_action_choice CLIPPED = "confirm" THEN       #按「確認」時
       IF l_tc_pmw.tc_pmw07='Y' THEN
@@ -241,7 +293,7 @@ FUNCTION i255sub_y_upd(l_tc_pmw01,p_action_choice,p_inTransaction)
    if not p_inTransaction then
       BEGIN WORK
    end if
- 
+
    CALL i255sub_lock_cl()          #FUN-920106
    OPEN i255sub_cl USING l_tc_pmw01   #FUN-920106
    IF STATUS THEN
@@ -262,8 +314,8 @@ FUNCTION i255sub_y_upd(l_tc_pmw01,p_action_choice,p_inTransaction)
          ROLLBACK WORK
       end if
       RETURN
-   END IF 
-   #MOD-920027---Begin 
+   END IF
+   #MOD-920027---Begin
    #UPDATE tc_pmw_file SET tc_pmwconf='Y' WHERE tc_pmw01=l_tc_pmw.tc_pmw01
     UPDATE tc_pmw_file SET tc_pmwconf='Y'      #MOD-C90034 remove ,
                        #tc_pmwmodu=g_user,  #MOD-C90034 mark
@@ -284,7 +336,7 @@ FUNCTION i255sub_y_upd(l_tc_pmw01,p_action_choice,p_inTransaction)
          LET g_success = 'N'
       END IF
    END IF
- 
+
    IF g_success = 'Y' THEN
       SELECT COUNT(*) INTO l_cnt FROM tc_pmx_file
        WHERE tc_pmx01 = l_tc_pmw.tc_pmw01
@@ -293,13 +345,13 @@ FUNCTION i255sub_y_upd(l_tc_pmw01,p_action_choice,p_inTransaction)
          LET g_success = 'N'
       END IF
    END IF
- 
- 
+
+
    IF g_success = 'Y' THEN
       IF g_success='Y' THEN
          LET l_tc_pmw.tc_pmw06='1'
          LET l_tc_pmw.tc_pmwconf='Y'
-         #LET l_tc_pmw.tc_pmwmodu=g_user     #MOD-920027 add #MOD-C90034 mark 
+         #LET l_tc_pmw.tc_pmwmodu=g_user     #MOD-920027 add #MOD-C90034 mark
          #LET l_tc_pmw.tc_pmwdate=g_today    #MOD-920027 add #MOD-C90034 mark
          if not p_inTransaction then
             commit WORK
@@ -323,7 +375,7 @@ FUNCTION i255sub_y_upd(l_tc_pmw01,p_action_choice,p_inTransaction)
          ROLLBACK WORK
       end if
    END IF
- 
+
   #FUN-920106---mark---確認完後統一CALL i255_show()顯示
   ##CKP
   #SELECT * INTO g_tc_pmw.* FROM tc_pmw_file WHERE tc_pmw01 = g_tc_pmw.tc_pmw01
@@ -334,7 +386,7 @@ FUNCTION i255sub_y_upd(l_tc_pmw01,p_action_choice,p_inTransaction)
   #CALL cl_set_field_pic(g_tc_pmw.tc_pmwconf,g_chr2,"",g_chr3,g_chr,g_tc_pmw.tc_pmwacti)
   #FUN-920106---mark---end---
 END FUNCTION
- 
+
 FUNCTION i255sub_tc_pmx03_add(p_tc_pmx03,p_tc_pmx05,p_tc_pmx12,p_tc_pmx10,l_tc_pmw,p_tc_pmx13)
    DEFINE l_pmh     RECORD LIKE pmh_file.*,
           l_ima54   LIKE ima_file.ima54,
@@ -361,7 +413,7 @@ FUNCTION i255sub_tc_pmx03_add(p_tc_pmx03,p_tc_pmx05,p_tc_pmx12,p_tc_pmx10,l_tc_p
    LET l_pmh.pmh14=1
    LET l_pmh.pmhdate=g_today
   #LET l_pmh.pmh23=p_tc_pmx[l_ac].tc_pmx13   #No.FUN-810017
-   LET l_pmh.pmh23=p_tc_pmx13      #FUN-920106 
+   LET l_pmh.pmh23=p_tc_pmx13      #FUN-920106
    LET l_pmh.pmh06 = g_today    #CHI-C20012 add
    #No.FUN-610018 --start--
    LET l_pmh.pmh19=0
@@ -376,8 +428,8 @@ FUNCTION i255sub_tc_pmx03_add(p_tc_pmx03,p_tc_pmx05,p_tc_pmx12,p_tc_pmx10,l_tc_p
    #SELECT ima54 INTO l_ima54 FROM ima_file WHERE ima01=g_tc_pmx[l_ac].tc_pmx03
    #No.B433 010423 BY ANN CHEN
 
-   SELECT ima54,ima100,ima24,ima101,ima102   
-     INTO l_ima54,l_pmh.pmh09,l_pmh.pmh08,l_pmh.pmh15,l_pmh.pmh16   
+   SELECT ima54,ima100,ima24,ima101,ima102
+     INTO l_ima54,l_pmh.pmh09,l_pmh.pmh08,l_pmh.pmh15,l_pmh.pmh16
      FROM ima_file
     WHERE ima01=p_tc_pmx03
 
@@ -387,7 +439,7 @@ FUNCTION i255sub_tc_pmx03_add(p_tc_pmx03,p_tc_pmx05,p_tc_pmx12,p_tc_pmx10,l_tc_p
    ELSE
       LET l_pmh.pmh03='N'
    END IF
- 
+
    IF g_aza.aza17 = l_pmh.pmh13 THEN   #本幣
       LET l_pmh.pmh14 = 1
    ELSE
@@ -406,16 +458,16 @@ FUNCTION i255sub_tc_pmx03_add(p_tc_pmx03,p_tc_pmx05,p_tc_pmx12,p_tc_pmx10,l_tc_p
      LET p_row = 3 LET p_col = 37
      OPEN WINDOW i255a_w AT p_row,p_col WITH FORM "apm/42f/apmi255a"
       ATTRIBUTE (STYLE = g_win_style CLIPPED) #No.FUN-580092 HCN
- 
+
       CALL cl_ui_locale("apmi255a")
       DISPLAY l_pmh.pmh01 TO pmh01
-      LET l_pmh.pmh05 = 0 
+      LET l_pmh.pmh05 = 0
       DISPLAY l_pmh.pmh05 TO pmh05
- 
- 
+
+
      INPUT BY NAME l_pmh.pmh04,l_pmh.pmh13,l_pmh.pmh05,l_pmh.pmh06,l_pmh.pmh07,l_pmh.pmh08,    #CHI-C20012 add pmh06
                    l_pmh.pmh09,l_pmh.pmh14,l_pmh.pmh11 WITHOUT DEFAULTS  #MOD-540202
- 
+
       #MOD-540202................begin
        AFTER FIELD pmh11
          IF NOT cl_null(l_pmh.pmh11) THEN
@@ -427,7 +479,7 @@ FUNCTION i255sub_tc_pmx03_add(p_tc_pmx03,p_tc_pmx05,p_tc_pmx12,p_tc_pmx10,l_tc_p
              WHERE pmh01 = l_pmh.pmh01
                AND pmh22 = l_pmh.pmh22
                AND pmhacti = 'Y'                                           #CHI-910021
-            IF cl_null(m_pmh11) THEN LET m_pmh11 = 0 END IF   #MOD-AB0166 
+            IF cl_null(m_pmh11) THEN LET m_pmh11 = 0 END IF   #MOD-AB0166
             LET m_pmh11 = 100-m_pmh11
             IF l_pmh.pmh11 > m_pmh11 THEN
                CALL cl_err(l_pmh.pmh11,'apm-986',0)
@@ -436,7 +488,7 @@ FUNCTION i255sub_tc_pmx03_add(p_tc_pmx03,p_tc_pmx05,p_tc_pmx12,p_tc_pmx10,l_tc_p
             #No.MOD-8B0235 add --end
          END IF
       #MOD-540202................end
- 
+
        AFTER FIELD pmh13
          IF NOT cl_null(l_pmh.pmh13) THEN
             CALL i255sub_pmh13(l_pmh.pmh13)
@@ -445,11 +497,11 @@ FUNCTION i255sub_tc_pmx03_add(p_tc_pmx03,p_tc_pmx05,p_tc_pmx12,p_tc_pmx10,l_tc_p
                NEXT FIELD pmh13
             END IF
          END IF
-         
+
        BEFORE FIELD pmh05
-         IF cl_null(l_pmh.pmh05) THEN 
-            LET l_pmh.pmh05 = 0 
-          END IF 
+         IF cl_null(l_pmh.pmh05) THEN
+            LET l_pmh.pmh05 = 0
+          END IF
        AFTER FIELD pmh05
          IF NOT cl_null(l_pmh.pmh05) THEN
             IF l_pmh.pmh05 NOT MATCHES'[012]' THEN
@@ -481,18 +533,18 @@ FUNCTION i255sub_tc_pmx03_add(p_tc_pmx03,p_tc_pmx05,p_tc_pmx12,p_tc_pmx10,l_tc_p
             END IF
          END IF
        #MOD-530582(end)
- 
+
        AFTER FIELD pmh08
          IF NOT cl_null(l_pmh.pmh08) THEN
             IF l_pmh.pmh08 NOT MATCHES'[yYnN]' THEN
                NEXT FIELD pmh08
             END IF
          END IF
- 
+
        AFTER INPUT #MOD-D60113 add
          IF INT_FLAG THEN
-            EXIT INPUT               
-         END IF     #sunlm  
+            EXIT INPUT
+         END IF     #sunlm
          IF cl_null(l_pmh.pmh05) THEN
             DISPLAY BY NAME l_pmh.pmh05
             NEXT FIELD pmh05
@@ -501,7 +553,7 @@ FUNCTION i255sub_tc_pmx03_add(p_tc_pmx03,p_tc_pmx05,p_tc_pmx12,p_tc_pmx10,l_tc_p
             DISPLAY BY NAME l_pmh.pmh08
             NEXT FIELD pmh08
          END IF
- 
+
        ON ACTION controlp
          CASE
             WHEN INFIELD(pmh13)     #幣別
@@ -520,7 +572,7 @@ FUNCTION i255sub_tc_pmx03_add(p_tc_pmx03,p_tc_pmx05,p_tc_pmx12,p_tc_pmx10,l_tc_p
                 DISPLAY BY NAME l_pmh.pmh14
                NEXT FIELD pmh14
             #FUN-4B0051(end)
- 
+
              #MOD-530582
             WHEN INFIELD(pmh07)
                CALL cl_init_qry_var()
@@ -534,27 +586,27 @@ FUNCTION i255sub_tc_pmx03_add(p_tc_pmx03,p_tc_pmx05,p_tc_pmx12,p_tc_pmx10,l_tc_p
        ON IDLE g_idle_seconds
          CALL cl_on_idle()
          CONTINUE INPUT
- 
+
        ON ACTION about         #MOD-4C0121
          CALL cl_about()       #MOD-4C0121
- 
+
        ON ACTION help          #MOD-4C0121
          CALL cl_show_help()   #MOD-4C0121
- 
+
        ON ACTION controlg      #MOD-4C0121
          CALL cl_cmdask()      #MOD-4C0121
      END INPUT
- 
+
      CLOSE WINDOW i255a_w
- 
+
      IF INT_FLAG THEN
        LET INT_FLAG = 0
        RETURN
      END IF  #MOD-D60113
    END IF                      #FUN-A10043 add
- 
+
   #LET l_pmh.pmh11=0 #MOD-540202
- 
+
    #MOD-780186.................begin
    IF cl_null(l_pmh.pmh21) THEN
       LET l_pmh.pmh21=' '
@@ -565,7 +617,7 @@ FUNCTION i255sub_tc_pmx03_add(p_tc_pmx03,p_tc_pmx05,p_tc_pmx12,p_tc_pmx10,l_tc_p
    END IF
    #No.CHI-790003 START
    IF cl_null(l_pmh.pmh13) THEN LET l_pmh.pmh13=' ' END IF
-   #No.CHI-790003 END 
+   #No.CHI-790003 END
    LET l_pmh.pmhoriu = g_user      #No.FUN-980030 10/01/04
    LET l_pmh.pmhorig = g_grup      #No.FUN-980030 10/01/04
    LET l_pmh.pmh25='N'   #No:FUN-AA0015
@@ -575,34 +627,32 @@ FUNCTION i255sub_tc_pmx03_add(p_tc_pmx03,p_tc_pmx05,p_tc_pmx12,p_tc_pmx10,l_tc_p
       CALL cl_err3("ins","pmh_file","","",STATUS,"","ins pmh",1)  #No.FUN-660129
       LET g_errno='N'
    END IF
- 
+
 END FUNCTION
- 
+
 FUNCTION i255sub_pmh13(l_pmh13)  #幣別
     DEFINE l_azi02   LIKE azi_file.azi02             #No.FUN-550019
     DEFINE l_aziacti LIKE azi_file.aziacti           #No.FUN-550019
     DEFINE l_pmh13   LIKE pmh_file.pmh13
- 
+
     LET g_errno = ' '
     SELECT azi02,aziacti INTO l_azi02,l_aziacti      #No.FUN-550019
       FROM azi_file
      WHERE azi01 = l_pmh13
- 
+
     CASE WHEN STATUS=100          LET g_errno = 'mfg3008' #No.7926
          WHEN l_aziacti='N' LET g_errno = '9028'
          OTHERWISE          LET g_errno = SQLCA.sqlcode USING '-------'
     END CASE
- 
+
 END FUNCTION
- 
+
 #FUN-920106---add---start---
 FUNCTION i255sub_refresh(p_tc_pmw01)
 DEFINE p_tc_pmw01 LIKE tc_pmw_file.tc_pmw01
 DEFINE l_tc_pmw RECORD LIKE tc_pmw_file.*
- 
+
 SELECT * INTO l_tc_pmw.* FROM tc_pmw_file WHERE tc_pmw01=p_tc_pmw01
 RETURN l_tc_pmw.*
 END FUNCTION
 #FUN-920106---add---end-----
- 
- 
