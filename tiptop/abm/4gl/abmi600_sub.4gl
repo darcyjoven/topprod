@@ -703,6 +703,10 @@ function i600_sample(p_bmb01)
         return
     end if
 
+    if cl_csmi133('aeci100','aimi110') then
+      return
+    end if
+
     let l_sql = "select bmb01,bmb02,bmb03 from bmb_file ",
                 " where bmb01 = ? and bmb04 <= trunc(sysdate) ",
                 "   and (bmb05 > trunc(sysdate) or bmb05 is null)",
