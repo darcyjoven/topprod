@@ -34,7 +34,8 @@ function i100sub_upd_bmb09(p_ecu01,p_ecu02)
     define l_typ                       varchar(1)
     # darcy:2025/12/05 add e---
     define l_ecd02          like ecd_file.ecd02 #darcy:2025/12/11 add
-    
+    define l_ecb06          like ecb_file.ecb06 # darcy:2026/02/12 add
+
 
     let g_success = 'Y'
 
@@ -44,13 +45,13 @@ function i100sub_upd_bmb09(p_ecu01,p_ecu02)
         return
     end if
 
-    update bmb_file 
+    update bmb_file
        set bmb09 = ' '
      where bmb01 = p_ecu01
        and bmb04 <= g_today and (bmb05 is null or bmb05 > g_today)
 
     if sqlca.sqlcode then
-        CALL cl_err3("upd","bmb_file",p_ecu01,'',SQLCA.sqlcode,"","",0) 
+        CALL cl_err3("upd","bmb_file",p_ecu01,'',SQLCA.sqlcode,"","",0)
         let g_success ='N'
         return
     end if
@@ -63,7 +64,7 @@ function i100sub_upd_bmb09(p_ecu01,p_ecu02)
     SELECT COUNT(*) INTO l_cnt FROM ecb_file
      WHERE ecb01 = p_ecu01 and ecb02 = p_ecu02
        AND ecbud04 IS NOT NULL
-    
+
     if l_cnt = 0 then
         # 无资料需要处理
         return
@@ -89,7 +90,7 @@ function i100sub_upd_bmb09(p_ecu01,p_ecu02)
         # 遍历物料代号
         while l_token.hasMoreTokens()
             let l_bmbud02 = l_token.nextToken()
-            select count(1) into l_cnt from bmb_file 
+            select count(1) into l_cnt from bmb_file
              where bmbud02= l_bmbud02 and bmb01 = p_ecu01
             if l_cnt = 0 then
                 continue while
@@ -105,7 +106,7 @@ function i100sub_upd_bmb09(p_ecu01,p_ecu02)
             prepare i100sub_bmb_upd from l_sql
             execute i100sub_bmb_upd using sr.ecb06,p_ecu01,l_bmbud02,g_today,g_today
             if sqlca.sqlcode then
-                call cl_err3("upd","bmb_file",p_ecu01,"",SQLCA.sqlcode,"","",1) 
+                call cl_err3("upd","bmb_file",p_ecu01,"",SQLCA.sqlcode,"","",1)
                 let g_success = 'N'
                 exit foreach
             end if
@@ -113,23 +114,27 @@ function i100sub_upd_bmb09(p_ecu01,p_ecu02)
     end foreach
     #darcy:2023/06/15 add s---
     # 根据csmi103设置更新损耗率
-    let l_sql = "MERGE INTO bmb_file USING (",
-                " SELECT tc_sma02,tc_sma06 FROM tc_sma_file WHERE tc_sma01='csmi103' AND tc_sma20='Y' AND tc_sma06>0",
-                " ) ON (bmb09 = tc_sma02 and bmb01 = ? and bmb19 = '1')", #darcy:2024/03/05 add bmb19 ='1' 只有原材料才需要设置损耗率
-                " WHEN MATCHED THEN UPDATE SET bmb08 = tc_sma06"
-    prepare i100sub_bmb_upd2 from l_sql
-    execute i100sub_bmb_upd2 using p_ecu01
-    if sqlca.sqlcode then
-        call cl_err3("i100sub_bmb_upd2","bmb_file",p_ecu01,"",SQLCA.sqlcode,"","",1) 
-        let g_success = 'N'
-        return
+    if not cl_csmi133('aeci100','aeci620') then
+        let l_sql = "MERGE INTO bmb_file USING (",
+                    " SELECT tc_sma02,tc_sma06 FROM tc_sma_file WHERE tc_sma01='csmi103' AND tc_sma20='Y' AND tc_sma06>0",
+                    " ) ON (bmb09 = tc_sma02 and bmb01 = ? and bmb19 = '1')", #darcy:2024/03/05 add bmb19 ='1' 只有原材料才需要设置损耗率
+                    " WHEN MATCHED THEN UPDATE SET bmb08 = tc_sma06"
+        prepare i100sub_bmb_upd2 from l_sql
+        execute i100sub_bmb_upd2 using p_ecu01
+        if sqlca.sqlcode then
+            call cl_err3("i100sub_bmb_upd2","bmb_file",p_ecu01,"",SQLCA.sqlcode,"","",1)
+            let g_success = 'N'
+            return
+        end if
     end if
+
+    call saeci100_csmi134(p_ecu01) # darcy:2026/03/13 add
     #darcy:2023/06/15 add e---
     # darcy:2025/12/02 add s ---
     -- if g_user <> 'tiptop' then
     --     return
     -- end if
- 
+
 
     -- let l_typ = '1'
     -- execute scimt002_listagg using l_typ into l_sql1
@@ -141,9 +146,19 @@ function i100sub_upd_bmb09(p_ecu01,p_ecu02)
     -- execute scimt002_listagg using l_typ into l_sql3
     -- let l_sql3 = "( 1=2 ",l_sql3,"%' )"
 
+    # 判断第一站是否是F0107
+    select ecb06 into l_ecb06 from ecb_file
+     where ecb01 = p_ecu01 and ecb02 = p_ecu02
+       and rownum = 1 order by ecb03
+
+    if l_ecb06 not matches 'F0107*' then
+        return
+    end if
+
+
     # 卷料损耗设置
     let l_sql = "select unique tc_sma04 from tc_sma_file where tc_sma01 = 'csmi126' "
-    declare i100sub_csmi126_1 cursor from l_sql  
+    declare i100sub_csmi126_1 cursor from l_sql
 
     let l_sql = "select tc_sma06 from tc_sma_file where tc_sma01 = 'csmi126' and tc_sma04 = ? and rownum = 1"
     prepare i100sub_csmi126_2 from l_sql
@@ -162,7 +177,8 @@ function i100sub_upd_bmb09(p_ecu01,p_ecu02)
             exit foreach
         end if
         -- 遍历类型
-        let l_sql = "select count(*) from ecb_file a where ecb01 = '",p_ecu01,"' and ecb02 = '",p_ecu02,"'"
+        let l_sql = "select count(*) from (select * from ecb_file where ecb01 = '",
+                    p_ecu01,"' and ecb02 = '",p_ecu02,"' and rownum <= 10 order by ecb03) a where 1=1 "
 
         let i = 1
         foreach i100sub_csmi126_3 using l_tc_sma04 into l_tc_sma02
@@ -213,7 +229,7 @@ function i100sub_upd_bmb09(p_ecu01,p_ecu02)
 
         prepare i100sub_csmi126_4 from l_sql
         execute i100sub_csmi126_4 into l_cnt
-        if l_cnt > 0 then 
+        if l_cnt > 0 then
             -- 损耗率查询
             execute i100sub_csmi126_2 using l_tc_sma04 into l_tc_sma06
             if sqlca.sqlcode then
@@ -252,7 +268,7 @@ function i100sub_y_chk(p_ecu01,p_ecu02)
 
     select ecu10,ecuud02 into l_ecu10,l_ecuud02 from ecu_file
      where ecu01 = p_ecu01 and ecu02 = p_ecu02
-    
+
     if l_ecuud02 = 'Y' then
         call cl_err('','9023',1)
         let g_success = 'N'
@@ -285,7 +301,7 @@ function i100sub_y_chk(p_ecu01,p_ecu02)
     end foreach
 
     # HDI未维护报错
-    # select count(1) into l_cnt from ima_file 
+    # select count(1) into l_cnt from ima_file
     #  where ima06 in ('G01','G02') and ima01 =p_ecu01 and imaud25 is null
     # if l_cnt > 0 then
     #     call s_errmsg('ima01',p_ecu01,'','cec-043',1)
@@ -307,7 +323,7 @@ function i100sub_y_chk(p_ecu01,p_ecu02)
         'F04138','F04139','F0402F','F0402G','F04029','F0402A','F0402B','F0402C','F0402D','F0402E')
     if l_cnt > 0 then
         update ima_file set imaud25 = 'Y' where ima01=p_ecu01
-        select imaud26 into l_imaud26 from ima_file 
+        select imaud26 into l_imaud26 from ima_file
          where ima01 = p_ecu01
         if cl_null(l_imaud26) then
             call cl_err(p_ecu01,"cec-061",1)
@@ -316,10 +332,10 @@ function i100sub_y_chk(p_ecu01,p_ecu02)
         end if
     end if
     #darcy:2023/10/17 add e---
-         
+
     #确认是否审核
     if g_prog = 'aeci100' then
-        if not cl_confirm('aap-222') then 
+        if not cl_confirm('aap-222') then
             let g_success = 'N'
             return
         end if
@@ -344,7 +360,7 @@ function i100sub_y_upd(p_ecu01,p_ecu02,p_inTransaction)
     select ecuud03,ecuud04 into l_ecuud03,l_ecuud04 from ecu_file
      where ecu01 = p_ecu01 and ecu02 = p_ecu02
     if l_ecuud04 == 'Y' and g_prog = 'aeci100' then
-        call cl_err(l_ecuud03,"cxm-052",1) 
+        call cl_err(l_ecuud03,"cxm-052",1)
         let g_success = 'N'
         return
     end if
@@ -381,7 +397,7 @@ function i100sub_y_upd(p_ecu01,p_ecu02,p_inTransaction)
     end if
     if not p_inTransaction then
         commit work
-    end if 
+    end if
 end function
 
 function i100sub_release(p_ecu01,p_ecu02,p_inTransaction)
@@ -441,7 +457,7 @@ function i100sub_release(p_ecu01,p_ecu02,p_inTransaction)
         return
     end if
 
-    update ecu_file 
+    update ecu_file
        set ecu10 = 'Y',ecudate=  g_today
      where ecu01 = p_ecu01
        and ecu02 = p_ecu02
@@ -484,7 +500,7 @@ function i100sub_mod_log(p_ecb,p_type)
     define l_tc_ecc01   varchar(40)
     define l_tc_ecc02   varchar(40)
     define l_tc_ecc03   varchar(40)
-    
+
     let l_tc_ecc01 = current year to fraction(4)
     let l_tc_ecc02 = g_user
     let l_tc_ecc03 = p_type
@@ -587,8 +603,8 @@ function i100sub_parse_remark(p_remark)
         -- remark部分
         let sr.remark = ""
         if l_tok.hasMoreTokens() then
-            while l_tok.hasMoreTokens() 
-                let l_tmp =  l_tok.nextToken() 
+            while l_tok.hasMoreTokens()
+                let l_tmp =  l_tok.nextToken()
                 let sr.remark = sfmt("%1%2\n",sr.remark,l_tmp)
             end while
         end if
@@ -658,3 +674,176 @@ function i100sub_join(sr)
     return l_remark
 end function
 # darcy:2025/10/15 add e---
+
+
+# darcy.li 2026/03/09 s---
+# 根据规则更新损耗率/损耗量
+function saeci100_csmi134(p_ima01)
+    define p_ima01 varchar(20)
+    define l_sample varchar(1)
+    define l_sql    string
+    define l_bmb01,l_bmb03 like bmb_file.bmb01,
+           l_bmb02 like bmb_file.bmb02,
+           l_bmb08 like bmb_file.bmb08,
+           l_bmb081 like bmb_file.bmb081
+
+    let l_sample = iif(p_ima01[10,10] matches '[SF]','Y','N')
+    if p_ima01 matches '*-*' then
+        return
+    end if
+
+    let g_success = 'Y'
+
+    # 料件损耗
+    if cl_csmi133('aeci100','aimi100') then
+        let l_sql = " select bmb01,bmb02, bmb03, tc_sma06, tc_sma07",
+                    " from (select CONNECT_BY_ROOT(bmb01) root,bmb01, bmb02,bmb03",
+                    "         from bmb_file",
+                    "         where bmb04 <= trunc(sysdate)",
+                    "         and (bmb05 is null or bmb05 > trunc(sysdate))",
+                    "         start with bmb01 = ? ",
+                    "         connect by prior bmb03 = bmb01),",
+                    "     (select tc_sma02, tc_sma06, tc_sma07",
+                    "         from tc_sma_file",
+                    "         where tc_sma01 = 'csmi134'",
+                    "         and tc_sma20 = 'Y'",
+                    "         and tc_sma05 = ?",
+                    "         and tc_sma04 = 'aimi100')",
+                    " where tc_sma02 = bmb03"
+        prepare saeci100_csmi134_p1 from l_sql
+        declare saeci100_csmi134_cur1 cursor for saeci100_csmi134_p1
+
+        foreach saeci100_csmi134_cur1 using p_ima01,l_sample
+                                      into l_bmb01,l_bmb02,l_bmb03,l_bmb08,l_bmb081
+            if sqlca.sqlcode then
+                call cl_err('saeci100_csmi134_cur1',sqlca.sqlcode,1)
+                exit foreach
+            end if
+            if not cl_null(l_bmb08) and l_bmb08 > 0 then
+                update bmb_file set bmb08 = l_bmb08
+                 where bmb01 = l_bmb01 and bmb03 = l_bmb03 and bmb02 = l_bmb02
+                   and bmb04 <= trunc(sysdate) and (bmb05 is null or bmb05 > trunc(sysdate))
+            end if
+            if not cl_null(l_bmb081) and l_bmb081 > 0 then
+                update bmb_file set bmb081 = l_bmb081
+                 where bmb01 = l_bmb01 and bmb03 = l_bmb03 and bmb02 = l_bmb02
+                   and bmb04 <= trunc(sysdate) and (bmb05 is null or bmb05 > trunc(sysdate))
+            end if
+        end foreach
+
+    end if
+    # 分群码损耗
+    if cl_csmi133('aeci100','aimi110') then
+        let l_sql = " select bmb01, bmb02,bmb03, tc_sma06, tc_sma07 ",
+                    " from (select CONNECT_BY_ROOT(bmb01) root,bmb01, bmb02,bmb03,ima06 ",
+                    "         from bmb_file,ima_file ",
+                    "         where bmb03=ima01 and bmb04 <= trunc(sysdate) ",
+                    "         and (bmb05 is null or bmb05 > trunc(sysdate)) ",
+                    "         start with bmb01 = ? ",
+                    "         connect by prior bmb03 = bmb01), ",
+                    "     (select tc_sma02, tc_sma06, tc_sma07 ",
+                    "         from tc_sma_file ",
+                    "         where tc_sma01 = 'csmi134' ",
+                    "         and tc_sma20 = 'Y' ",
+                    "         and tc_sma05 = ? ",
+                    "         and tc_sma04 = 'aimi110') ",
+                    " where ima06 = tc_sma02 "
+        prepare saeci100_csmi134_p2 from l_sql
+        declare saeci100_csmi134_cur2 cursor for saeci100_csmi134_p2
+
+        foreach saeci100_csmi134_cur2 using p_ima01,l_sample
+                                      into l_bmb01,l_bmb02,l_bmb03,l_bmb08,l_bmb081
+            if sqlca.sqlcode then
+                call cl_err('saeci100_csmi134_cur2',sqlca.sqlcode,1)
+                exit foreach
+            end if
+            if not cl_null(l_bmb08) and l_bmb08 > 0 then
+                update bmb_file set bmb08 = l_bmb08
+                 where bmb01 = l_bmb01 and bmb03 = l_bmb03 and bmb02 = l_bmb02
+                   and bmb04 <= trunc(sysdate) and (bmb05 is null or bmb05 > trunc(sysdate))
+            end if
+            if not cl_null(l_bmb081) and l_bmb081 > 0 then
+                update bmb_file set bmb081 = l_bmb081
+                 where bmb01 = l_bmb01 and bmb03 = l_bmb03 and bmb02 = l_bmb02
+                   and bmb04 <= trunc(sysdate) and (bmb05 is null or bmb05 > trunc(sysdate))
+            end if
+        end foreach
+
+    end if
+    # 作业编号
+    if cl_csmi133('aeci100','aeci620') then
+        let l_sql = " select bmb01, bmb02,bmb03, tc_sma06, tc_sma07",
+                    " from (select CONNECT_BY_ROOT(bmb01) root, bmb01,bmb02,bmb03,bmb09",
+                    "         from bmb_file ",
+                    "         where  bmb04 <= trunc(sysdate)",
+                    "         and (bmb05 is null or bmb05 > trunc(sysdate))",
+                    "         start with bmb01 = ? ",
+                    "         connect by prior bmb03 = bmb01),",
+                    "     (select tc_sma02, tc_sma06, tc_sma07",
+                    "         from tc_sma_file",
+                    "         where tc_sma01 = 'csmi134'",
+                    "         and tc_sma20 = 'Y'",
+                    "         and tc_sma05 = ? ",
+                    "         and tc_sma04 = 'aeci620')",
+                    " where bmb09 = tc_sma02"
+        prepare saeci100_csmi134_p3 from l_sql
+        declare saeci100_csmi134_cur3 cursor for saeci100_csmi134_p3
+
+        foreach saeci100_csmi134_cur3 using p_ima01,l_sample
+                                      into l_bmb01,l_bmb02,l_bmb03,l_bmb08,l_bmb081
+            if sqlca.sqlcode then
+                call cl_err('saeci100_csmi134_cur3',sqlca.sqlcode,1)
+                exit foreach
+            end if
+            if not cl_null(l_bmb08) and l_bmb08 > 0 then
+                update bmb_file set bmb08 = l_bmb08
+                 where bmb01 = l_bmb01 and bmb03 = l_bmb03 and bmb02 = l_bmb02
+                   and bmb04 <= trunc(sysdate) and (bmb05 is null or bmb05 > trunc(sysdate))
+            end if
+            if not cl_null(l_bmb081) and l_bmb081 > 0 then
+                update bmb_file set bmb081 = l_bmb081
+                 where bmb01 = l_bmb01 and bmb03 = l_bmb03 and bmb02 = l_bmb02
+                   and bmb04 <= trunc(sysdate) and (bmb05 is null or bmb05 > trunc(sysdate))
+            end if
+        end foreach
+    end if
+
+    if cl_csmi133('aeci100','aeci600') then
+        let l_sql = " select bmb01, bmb02,bmb03, tc_sma06, tc_sma07",
+                    " from (select CONNECT_BY_ROOT(bmb01) root, bmb01,bmb02,bmb03,ecd07",
+                    "         from bmb_file ,ecd_file",
+                    "         where bmb09 = ecd01 and bmb04 <= trunc(sysdate)",
+                    "         and (bmb05 is null or bmb05 > trunc(sysdate))",
+                    "         start with bmb01 = ? ",
+                    "         connect by prior bmb03 = bmb01),",
+                    "     (select tc_sma02, tc_sma06, tc_sma07",
+                    "         from tc_sma_file",
+                    "         where tc_sma01 = 'csmi134'",
+                    "         and tc_sma20 = 'Y'",
+                    "         and tc_sma05 = ? ",
+                    "         and tc_sma04 = 'aeci600')",
+                    " where ecd07 = tc_sma02"
+        prepare saeci100_csmi134_p4 from l_sql
+        declare saeci100_csmi134_cur4 cursor for saeci100_csmi134_p4
+
+        foreach saeci100_csmi134_cur4 using p_ima01,l_sample
+                                      into l_bmb01,l_bmb02,l_bmb03,l_bmb08,l_bmb081
+            if sqlca.sqlcode then
+                call cl_err('saeci100_csmi134_cur4',sqlca.sqlcode,1)
+                exit foreach
+            end if
+            if not cl_null(l_bmb08) and l_bmb08 > 0 then
+                update bmb_file set bmb08 = l_bmb08
+                 where bmb01 = l_bmb01 and bmb03 = l_bmb03 and bmb02 = l_bmb02
+                   and bmb04 <= trunc(sysdate) and (bmb05 is null or bmb05 > trunc(sysdate))
+            end if
+            if not cl_null(l_bmb081) and l_bmb081 > 0 then
+                update bmb_file set bmb081 = l_bmb081
+                 where bmb01 = l_bmb01 and bmb03 = l_bmb03 and bmb02 = l_bmb02
+                   and bmb04 <= trunc(sysdate) and (bmb05 is null or bmb05 > trunc(sysdate))
+            end if
+        end foreach
+    end if
+
+end function
+# darcy.li 2026/03/09 e---
