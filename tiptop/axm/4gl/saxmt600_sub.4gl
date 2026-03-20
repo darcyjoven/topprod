@@ -1184,6 +1184,20 @@ END IF
      #CHI-C30104 add START
      #非多倉儲時 axmt640 確認時, 檢查 ogb09 倉庫別, 與 axms100 中的 oaz78(借出客戶倉庫), 是否同屬於成本倉, 或是非成本倉.
      #若不同, 則顯示錯誤訊息, 並取消確認的動作
+     # darcy:2026/01/23 add s---
+     if g_prog = 'axmt620' then
+         if l_ogb.ogb04[10,10] = 'R' and l_oga.oga01[1,3] = 'XRY' then
+            let g_success = 'N'
+            call cl_err(l_ogb.ogb04||"料号只能使用XRD单别",'!',1)  #出貨倉庫為非成本倉但借出客戶倉庫為成本倉
+            return
+         end if
+         if l_ogb.ogb04[10,10] matches '[SF]' and l_oga.oga01[1,3] = 'XRD' then
+            let g_success = 'N'
+            call cl_err(l_ogb.ogb04||"料号只能使用XRY单别",'!',1)  #出貨倉庫為非成本倉但借出客戶倉庫為成本倉
+            return
+         end if
+     end if
+     # darcy:2026/01/23 add e---
       LET l_n = 0
       LET l_n2 = 0
       IF l_oga.oga09 = 'A' AND NOT cl_null(g_oaz.oaz78) THEN  #借貨出貨單
