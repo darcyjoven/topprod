@@ -401,7 +401,10 @@ DEFINE l_npptype  LIKE npp_file.npptype
 
 
          WHEN "undo_carry_voucher"
-            IF cl_null(g_nppglno) THEN EXIT CASE END IF
+            IF cl_null(g_nppglno) THEN 
+               EXIT CASE
+               display "请先产生分录底稿" # darcy:2025/11/05 
+            END IF
             LET g_msg ="axcp302 '",g_plant,"' '",g_cdl_h.cdl01,"' '",g_nppglno CLIPPED,"' 'Y'"
             CALL cl_wait()
             CALL cl_cmdrun_wait(g_msg)
