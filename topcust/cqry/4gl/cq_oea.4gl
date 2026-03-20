@@ -251,7 +251,7 @@ FUNCTION c_m_oea_qry_prep_result_set()
                   where oea01 = oeb01
                      and oea00 = '0' and oeaconf = 'Y' and oea49 != '2'
                      and oea01 = oeb01 and (oea01 not like '%FPC%' or oeaud02 <> 'Y')
-                     and oea01 not like '%MRI%' and oeb32 > trunc(sysdate) 
+                     and oea01 not like '%MRI%'  
                      and oeb12 > nvl(oeb12_1, 0) and oeb70 = 'N'",
                 "    and oea03 = '",g_oea03,"'",
                 "    and ",ms_cons_where clipped
