@@ -148,7 +148,7 @@ function cl_label_prt(p_bartend,p_csv)
     if int_flag then
         message "已取消"
         close window cl_label_w
-        let int_flag = true
+        let int_flag = false
         return false
     end if
 
