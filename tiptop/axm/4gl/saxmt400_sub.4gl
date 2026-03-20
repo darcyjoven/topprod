@@ -16,7 +16,7 @@
 # Modify.........: No.TQC-740351 07/05/08 By Ray 拋轉請購單時單位應default采購單位
 # Modify.........: No.FUN-740034 07/05/14 By kim 確認過帳不使用rowid,改用單號
 # Modify.........: No.TQC-750152 07/05/30 By rainy 拋轉採購單，如單身的單位有更改，拋到採購單的數量計算錯誤
-# Modify.........: No.TQC-720023 07/06/05 By Echo 若此單別勾選自動確認時，新增單據完成時應詢問使用者「是否確認」而不該直接執行確認段。 
+# Modify.........: No.TQC-720023 07/06/05 By Echo 若此單別勾選自動確認時，新增單據完成時應詢問使用者「是否確認」而不該直接執行確認段。
 # Modify.........: No.MOD-770033 07/08/08 By claire 拋請購單時ima913先default='N',避免料號為MISC沒有值
 # Modify.........: No.MOD-780014 07/08/09 By claire EasyFlow執行時遇到axm-802會造成執行結果與原據狀況不符
 #                                                                     axm-104 修改同上
@@ -59,17 +59,17 @@
 # Modfiy.........: No.TQC-950014 09/05/06 By chenyu 分項次拋轉采購單時，回寫單身以拋轉采購量錯誤，用采購單的項次作為了訂單項次，拋轉請購單也有同樣的問題
 # Modify.........: No.TQC-960011 09/06/03 By lilingyu 當單別設為立即打印時,審核后才可以打印報表
 # Modify.........: No.MOD-960013 09/06/08 By mike 於INSERT INTO pmn_file時,才LET l_pmn.pmn90 = l_pmn.pmn31
-# Modify.........: No.MOD-960117 09/06/09 By mike 將tm.wc的長度調整成string 
+# Modify.........: No.MOD-960117 09/06/09 By mike 將tm.wc的長度調整成string
 # Modify.........: No.TQC-960155 09/06/23 By lilingyu axmt410在拋轉請購單時,出現-217的錯誤
 # Modify.........: No.MOD-960202 09/07/08 By Smapmin 判斷是否有產生請購/採購單時,要過濾已作廢的請購/採購單
-# Modify.........: No.MOD-970228 09/07/27 By Dido 確認段檢核多單位及數量不可為空 
+# Modify.........: No.MOD-970228 09/07/27 By Dido 確認段檢核多單位及數量不可為空
 # Modify.........: No.FUN-870007 09/07/27 By Zhangyajun 流通零售功能修改
 # Modify.........: No.MOD-980177 09/08/22 By Smapmin 針對obk_file的異動,新增時檢驗否相關欄位來自於ima_file,修改時不異動
 # Modify.........: No.TQC-980183 09/08/26 By xiaofeizhu 還原MOD-8B0273修改的內容
 # Modify.........: No.FUN-980010 09/08/31 By TSD.sar2436 GP5.2架構重整，修改 INSERT INTO 語法
 # Modify.........: No.FUN-980030 09/08/31 By Hiko 加上GP5.2的相關設定
 # Modify.........: No.CHI-960033 09/10/10 By chenmoyan 加pmh22為條件者，再加pmh23=''
-# Modify.........: No:MOD-9A0146 09/10/22 By Dido 若為簽核時給予 gi_ccc_logerr初始值  
+# Modify.........: No:MOD-9A0146 09/10/22 By Dido 若為簽核時給予 gi_ccc_logerr初始值
 # Modify.........: No:FUN-9B0023 09/11/02 By baofei 寫入請購單身時，也要一併寫入"電子採購否(pml92)"='N'
 # Modify.........: NO.FUN-9B0039 09/11/05 By liuxqa substr 修改。
 # Modify.........: No.TQC-9B0203 09/11/24 By douzh pmn58為NULL時賦初始值0
@@ -96,7 +96,7 @@
 # Modify.........: No:MOD-AB0249 10/12/03 By shiwuying 折扣輸入完畢確認時, 數量不可小於等於零.但折扣是不會輸入數量資料的.不應顯示此 error message
 # Modify.........: No:TQC-AC0257 10/12/22 By suncx s_defprice_new.4gl返回值新增兩個參數
 # Modify.........: No:TQC-AC0163 11/01/10 By shiwuying 現金折扣bug
-# Modify.........: No:FUN-B10047 11/01/19 By wangxin 拋轉請購單中新增‘依BOM展開' 
+# Modify.........: No:FUN-B10047 11/01/19 By wangxin 拋轉請購單中新增‘依BOM展開'
 # Modify.........: No:TQC-B30096 11/03/09 By zhangll pml91赋初值'N'
 # Modify.........: No:MOD-B30439 11/03/17 By jan 修正sql語句
 # Modify.........: No:MOD-B30116 11/03/18 By suncx 增加尾款金額的判斷
@@ -141,15 +141,15 @@
 # Modify.........: No:160614 16/06/14 By guanyao 合约订单转工单的时候增加未转订单数
 
 DATABASE ds
- 
+
 GLOBALS "../../config/top.global"
 
- 
+
 DEFINE g_pml RECORD LIKE pml_file.*      #No.TQC-740351
 DEFINE g_pmn RECORD LIKE pmn_file.*      #MOD-920385
 DEFINE g_oeb03 LIKE oeb_file.oeb03   #MOD-910210
 DEFINE a LIKE type_file.chr1     #FUN-A80012
-DEFINE g_oah08      LIKE oah_file.oah08  #FUN-C40089 
+DEFINE g_oah08      LIKE oah_file.oah08  #FUN-C40089
 #{
 #作用:訂單確認前的檢查
 #p_oea01:本筆訂單的單號
@@ -173,9 +173,9 @@ FUNCTION t400sub_y_chk(p_flag,p_oea01)
          l_oeb1010  LIKE oeb_file.oeb1010,
          l_oeb14t   LIKE oeb_file.oeb14t,
          l_oeb14    LIKE oeb_file.oeb14,
-         l_tqw07    LIKE tqw_file.tqw07,  
-         l_tqw08    LIKE tqw_file.tqw08,  
-         l_max      LIKE tqw_file.tqw07,  
+         l_tqw07    LIKE tqw_file.tqw07,
+         l_tqw08    LIKE tqw_file.tqw08,
+         l_max      LIKE tqw_file.tqw07,
          l_n        LIKE type_file.num5
    DEFINE l_oea61   LIKE oea_file.oea61   #No.FUN-740016
    DEFINE l_oea14   LIKE oea_file.oea14   #No.FUN-740016
@@ -184,11 +184,11 @@ FUNCTION t400sub_y_chk(p_flag,p_oea01)
    DEFINE l_occ72   LIKE occ_file.occ72   #No.FUN-870007
    DEFINE l_price   LIKE oeb_file.oeb14t  #No.FUN-870007
    DEFINE l_rxx04   LIKE rxx_file.rxx04   #No.FUN-870007
-#  DEFINE l_oeb47   LIKE oeb_file.oeb47   #No.FUN-870007  #FUN-AB0061 
-   DEFINE l_x1,l_x2 LIKE type_file.chr1   #MOD-970228                
-   DEFINE l_oeb910  LIKE oeb_file.oeb910  #MOD-970228                
-   DEFINE l_oeb912  LIKE oeb_file.oeb912  #MOD-970228                
-   DEFINE l_msg,l_msg1,l_msg2  STRING	  #MOD-970228    
+#  DEFINE l_oeb47   LIKE oeb_file.oeb47   #No.FUN-870007  #FUN-AB0061
+   DEFINE l_x1,l_x2 LIKE type_file.chr1   #MOD-970228
+   DEFINE l_oeb910  LIKE oeb_file.oeb910  #MOD-970228
+   DEFINE l_oeb912  LIKE oeb_file.oeb912  #MOD-970228
+   DEFINE l_msg,l_msg1,l_msg2  STRING	  #MOD-970228
    DEFINE l_sql    STRING 		  #MOD-970228
    DEFINE l_oeaa08  LIKE oeaa_file.oeaa08    #No:FUN-A50103
    DEFINE l_oeb09   LIKE oeb_file.oeb09   #No.FUN-AA0048
@@ -197,11 +197,14 @@ FUNCTION t400sub_y_chk(p_flag,p_oea01)
    DEFINE l_oebslk03     LIKE oebslk_file.oebslk03   #FUN-C70098
    DEFINE l_oebslk04     LIKE oebslk_file.oebslk04   #FUN-C70098
    DEFINE l_oebslk12     LIKE oebslk_file.oebslk12   #FUN-C70098
-   DEFINE l_gemacti      LIKE gem_file.gemacti       #TQC-C60211 
+   DEFINE l_gemacti      LIKE gem_file.gemacti       #TQC-C60211
    define l_imaud27     like ima_file.imaud27  #darcy:2023/11/06
    define l_imaud28     like ima_file.imaud28  #darcy:2024/02/19 add
-   define l_zhuanjieban boolean   #darcy:2024/07/18 add 
- 
+   define l_zhuanjieban boolean   #darcy:2024/07/18 add
+   # darcy 260309 s---
+   define l_xmf05 like xmf_file.xmf05,l_xmf07 like xmf_file.xmf07
+   # darcy 260309 e---
+
    WHENEVER ERROR CONTINUE                #忽略一切錯誤  #FUN-730012
 
    LET g_success = 'Y'
@@ -226,10 +229,10 @@ FUNCTION t400sub_y_chk(p_flag,p_oea01)
       RETURN
    END IF
    IF g_action_choice CLIPPED = "confirm" OR   #按「確認」時
-      g_action_choice CLIPPED = "insert"  OR      
+      g_action_choice CLIPPED = "insert"  OR
       g_action_choice CLIPPED = "discount_allowed" THEN
       IF NOT cl_confirm('axm-108') THEN
-         LET g_success = 'N'   
+         LET g_success = 'N'
          RETURN
       END IF
    END IF
@@ -258,15 +261,15 @@ FUNCTION t400sub_y_chk(p_flag,p_oea01)
 
 #MOD-C30219 add begin ----
    IF l_oea.oea11 = '3' AND NOT cl_null(l_oea.oea12) THEN
-      SELECT tqp04 INTO l_tqp04 
-        FROM tqp_file 
+      SELECT tqp04 INTO l_tqp04
+        FROM tqp_file
        WHERE tqp01 = l_oea.oea12
       IF l_tqp04 <> '3' THEN
          CALL cl_err('','axm1140',0)
-         LET g_success = 'N' 
+         LET g_success = 'N'
          RETURN
-      END IF  
-   END IF 
+      END IF
+   END IF
 #MOD-C30219 add end ------
 
    IF l_oea.oea00 != "2" AND cl_null(l_oea.oea32)  THEN
@@ -278,11 +281,11 @@ FUNCTION t400sub_y_chk(p_flag,p_oea01)
    #MOD-B30116 add begin-------------------------
    IF l_oea.oea263 < 0 THEN
       CALL cl_err ('','axm1019',1)
-      LET g_success = 'N'  
+      LET g_success = 'N'
       RETURN
    END IF
    #MOD-B30116 add end---------------------------
-  
+
    #No.FUN-AA0048  --Begin
    IF NOT s_chk_ware(l_oea.oea57) THEN
       LET g_success = 'N'
@@ -297,7 +300,7 @@ FUNCTION t400sub_y_chk(p_flag,p_oea01)
           RETURN
        END IF
    END FOREACH
-   #No.FUN-AA0048  --End  
+   #No.FUN-AA0048  --End
 
    #darcy:2023/04/19 add s---
    # 更新上次下单日期
@@ -347,50 +350,50 @@ FUNCTION t400sub_y_chk(p_flag,p_oea01)
    #darcy:2025/06/13 add s---
    # 判断是否
    #darcy:2025/06/13 add e---
-   
+
 
    IF g_azw.azw04='2' THEN
       IF l_oea.oea85='1' THEN #MOD-B90240 add
-         SELECT SUM(oeb14t) INTO l_oeb14t_1 FROM oeb_file 
-          WHERE oeb01=l_oea.oea01 AND oeb70='N'  
+         SELECT SUM(oeb14t) INTO l_oeb14t_1 FROM oeb_file
+          WHERE oeb01=l_oea.oea01 AND oeb70='N'
          IF SQLCA.sqlcode=100 THEN LET l_oeb14t_1=NULL END IF
          IF cl_null(l_oeb14t_1) THEN LET l_oeb14t_1=0 END IF
-   
+
    #FUN-AB0061 ----------------mark start----------------
    #     SELECT SUM(oeb47) INTO l_oeb47 FROM oeb_file
-   #      WHERE oeb01=l_oea.oea01 AND oeb70='N' 
-   #     IF cl_null(l_oeb47) THEN 
-   #        LET l_oeb47=0 
+   #      WHERE oeb01=l_oea.oea01 AND oeb70='N'
+   #     IF cl_null(l_oeb47) THEN
+   #        LET l_oeb47=0
    #     END IF
    #FUN-AB0061 ----------------mark end----------------
-         SELECT azi04 INTO t_azi04 FROM azi_file 
-          WHERE azi01=l_oea.oea23 
+         SELECT azi04 INTO t_azi04 FROM azi_file
+          WHERE azi01=l_oea.oea23
    #FUN-AB0061 ----------------mod start----------------
    #     IF l_oea.oea213 ='N' THEN
    #        LET l_oeb47=l_oeb47*(1+l_oea.oea211/100)
    #        CALL cl_digcut(l_oeb47,t_azi04) RETURNING l_oeb47
-   #     END IF  
+   #     END IF
    #     LET l_price=(l_oeb14t_1-l_oeb47)*l_oea.oea161/100
          LET l_price=(l_oeb14t_1)*l_oea.oea161/100
-   #FUN-AB0061 ---------------mod end----------------- 
+   #FUN-AB0061 ---------------mod end-----------------
          CALL cl_digcut(l_price,t_azi04) RETURNING l_price
-   
+
          SELECT SUM(rxx04) INTO l_rxx04 FROM rxx_file
-          WHERE rxx00='01' AND rxx01=l_oea.oea01 
+          WHERE rxx00='01' AND rxx01=l_oea.oea01
             AND rxx03='1' AND rxxplant=l_oea.oeaplant
-         IF SQLCA.sqlcode THEN 
+         IF SQLCA.sqlcode THEN
             CALL cl_err('sel sum(rxx04)',status,0)
-            LET l_rxx04=NULL 
+            LET l_rxx04=NULL
          END IF
-         IF cl_null(l_rxx04) THEN LET l_rxx04=0 END IF         
-         IF l_rxx04<l_price THEN 
+         IF cl_null(l_rxx04) THEN LET l_rxx04=0 END IF
+         IF l_rxx04<l_price THEN
             CALL cl_err('','art-265',0)
             LET g_success='N'
             RETURN
-         END IF 
+         END IF
       END IF #MOD-B90240 add
    END IF
-    
+
    #無單身資料不可確認
    LET l_cnt=0
    SELECT COUNT(*) INTO l_cnt FROM oeb_file
@@ -404,7 +407,7 @@ FUNCTION t400sub_y_chk(p_flag,p_oea01)
    #FUN-C70098----add----begin--------------
    IF s_industry("slk") AND g_azw.azw04 = '2' THEN
        DECLARE oebslk04_curs CURSOR FOR
-          SELECT oebslk03,oebslk04,oebslk12 FROM oebslk_file WHERE oebslk01 = l_oea.oea01   
+          SELECT oebslk03,oebslk04,oebslk12 FROM oebslk_file WHERE oebslk01 = l_oea.oea01
        CALL s_showmsg_init()
        FOREACH oebslk04_curs INTO l_oebslk03,l_oebslk04,l_oebslk12
            IF cl_null(l_oebslk12) OR l_oebslk12 = 0 THEN
@@ -422,7 +425,7 @@ FUNCTION t400sub_y_chk(p_flag,p_oea01)
    SELECT oah08 INTO g_oah08 FROM oah_file WHERE oah01=l_oea.oea31
    IF cl_null(g_oah08) THEN
       LET g_oah08 = 'Y'
-   END IF 
+   END IF
    IF g_oah08= 'N' THEN
       LET l_cnt = 0
       SELECT COUNT(*) INTO l_cnt FROM oeb_file
@@ -438,14 +441,14 @@ FUNCTION t400sub_y_chk(p_flag,p_oea01)
    IF (l_oea.oea08='1' AND l_cnt > g_oaz.oaz681) OR
       (l_oea.oea08 MATCHES '[23]' AND l_cnt > g_oaz.oaz682) THEN
       CALL cl_err('','axm-158',0)
-      LET g_success = 'N'   
+      LET g_success = 'N'
       RETURN
    END IF
-  
+
    IF l_oea.oea00 = '8' OR l_oea.oea00 = '9' THEN  #MOD-840197
       SELECT oea61*oea24,oea14 INTO l_oea61,l_oea14 FROM oea_file
        WHERE oea01=l_oea.oea01
-      
+
       SELECT ocn04 INTO l_ocn04 FROM ocn_file
        WHERE ocn01 = l_oea14
       IF l_oea61 > l_ocn04 THEN
@@ -456,7 +459,7 @@ FUNCTION t400sub_y_chk(p_flag,p_oea01)
    END IF   #MOD-840197 add
 
 #FUN-BC0071 -----------STA
-    SELECT COUNT(*) INTO l_n  FROM oeb_file 
+    SELECT COUNT(*) INTO l_n  FROM oeb_file
      WHERE oeb01 = l_oea.oea01
        AND oeb1001 = g_oaz.oaz88
      IF l_n > 0 THEN
@@ -464,7 +467,7 @@ FUNCTION t400sub_y_chk(p_flag,p_oea01)
         SELECT oeb04 FROM oeb_file
          WHERE oeb01= l_oea.oea01
            AND oeb1001 = g_oaz.oaz88
-       FOREACH  l_oeb04_cur INTO l_oeb04_1 
+       FOREACH  l_oeb04_cur INTO l_oeb04_1
           SELECT COUNT(*) INTO l_n FROM lpx_file,lqe_file,lqw_file
            WHERE lpx32 = l_oeb04_1 AND lpx01 = lqe02
              AND lqw08 = lqe02 AND lqw00 = '01'
@@ -482,18 +485,18 @@ FUNCTION t400sub_y_chk(p_flag,p_oea01)
           RETURN
        END IF
      END IF
-  
 
-#FUN-BC0071 -----------END  
-  
+
+#FUN-BC0071 -----------END
+
    IF g_aza.aza50 = 'Y' THEN
       DECLARE l_oeb1007_conf CURSOR FOR
-       SELECT oeb1007,oeb14,oeb14t,oeb1010     
+       SELECT oeb1007,oeb14,oeb14t,oeb1010
          FROM oeb_file
         WHERE oeb01=l_oea.oea01
           AND oeb1003='2'
           AND oeb1007 IS NOT NULL  #TQC-AC0163 Add
-    
+
       FOREACH l_oeb1007_conf INTO l_oeb1007,l_oeb14,l_oeb14t,l_oeb1010
          SELECT COUNT(*) INTO l_n
            FROM tqw_file
@@ -501,18 +504,18 @@ FUNCTION t400sub_y_chk(p_flag,p_oea01)
             AND tqw10 = '3'
             AND (abs(tqw07)-abs(tqw08)>=0)
             AND tqw17 = l_oea.oea23
-            AND tqw05 = l_oea.oea03  
+            AND tqw05 = l_oea.oea03
          IF l_n = 0 THEN
             CALL cl_err('','atm-028',0)
-            LET g_success = 'N'  
+            LET g_success = 'N'
             RETURN
          END IF
 
          SELECT tqw07,tqw08 INTO l_tqw07,l_tqw08 FROM tqw_file
           WHERE tqw01 =l_oeb1007
-    
+
          LET l_max =l_tqw07 -l_tqw08
-    
+
          IF l_oeb1010 ='Y' THEN
             IF l_max >= 0 THEN
                IF l_oeb14t >l_max OR l_oeb14t <= 0 THEN
@@ -543,7 +546,7 @@ FUNCTION t400sub_y_chk(p_flag,p_oea01)
       ##--最大折扣率判斷
       IF p_flag = '1' THEN
          LET l_gift_amt = 0
-         
+
          DECLARE b_amt_conf CURSOR FOR
           SELECT * FROM oeb_file
            WHERE oeb01 = l_oea.oea01
@@ -554,13 +557,13 @@ FUNCTION t400sub_y_chk(p_flag,p_oea01)
 
          FOREACH b_amt_conf INTO l_oeb.*
             IF STATUS THEN
-               CALL cl_err('foreach oeb',STATUS,0)   
-               RETURN 
-            END IF 
+               CALL cl_err('foreach oeb',STATUS,0)
+               RETURN
+            END IF
             IF l_oea.oea213='Y' THEN
                 LET l_oeb.oeb13=l_oeb.oeb13*(1-l_oea.oea211/100)
             END IF
-            IF g_sma.sma116 MATCHES '[23]' THEN   
+            IF g_sma.sma116 MATCHES '[23]' THEN
                LET l_oeb.oeb12=l_oeb.oeb917
             END IF
             LET l_gift_amt = l_gift_amt+l_oeb.oeb13*l_oeb.oeb12
@@ -570,60 +573,60 @@ FUNCTION t400sub_y_chk(p_flag,p_oea01)
 
          IF l_oea.oea61 = 0 THEN
             CALL cl_err('','atm-035',0)
-            LET g_success = 'N'  
+            LET g_success = 'N'
             RETURN
          END IF
 
          LET l_rate= l_amt_sum / l_oea.oea61*100
          SELECT occ1028 INTO l_occ1028 FROM occ_file
-          WHERE occ01 = l_oea.oea03  
+          WHERE occ01 = l_oea.oea03
          IF NOT cl_null(l_occ1028) THEN
             IF l_rate>l_occ1028 THEN
                CALL cl_err('','atm-033',0)
-               LET g_success = 'N'  
+               LET g_success = 'N'
                RETURN
             END IF
          END IF
       END IF
    END IF
 
-   IF g_sma.sma115= 'Y' THEN                                       
-      LET l_x1 = "Y"                                                             
-      LET l_x2 = "Y"                                                             
+   IF g_sma.sma115= 'Y' THEN
+      LET l_x1 = "Y"
+      LET l_x2 = "Y"
 
-      LET l_sql="SELECT oeb910,oeb912 FROM oeb_file ",             
+      LET l_sql="SELECT oeb910,oeb912 FROM oeb_file ",
                 " WHERE oeb01='",l_oea.oea01,"'",
-                "   AND oeb1003='1' "                                 
+                "   AND oeb1003='1' "
 
       PREPARE pre_oeb FROM l_sql
 
-      DECLARE oeb_curs CURSOR FOR pre_oeb                                       
+      DECLARE oeb_curs CURSOR FOR pre_oeb
 
-      FOREACH oeb_curs INTO l_oeb910,l_oeb912                   
-         IF cl_null(l_oeb910) THEN LET l_x1 = "N" END IF                         
-         IF cl_null(l_oeb912) THEN LET l_x2 = "N" END IF                         
-      END FOREACH                                                                
+      FOREACH oeb_curs INTO l_oeb910,l_oeb912
+         IF cl_null(l_oeb910) THEN LET l_x1 = "N" END IF
+         IF cl_null(l_oeb912) THEN LET l_x2 = "N" END IF
+      END FOREACH
 
-      IF l_x1 = "N" THEN                                                   
+      IF l_x1 = "N" THEN
          #出貨單位欄位不可空白
-         CALL cl_getmsg('asm-303',g_lang) RETURNING l_msg1                       
-         CALL cl_getmsg('mfg0037',g_lang) RETURNING l_msg2                       
-         LET l_msg = l_msg1 CLIPPED,l_msg2                                       
-      END IF                                                                     
+         CALL cl_getmsg('asm-303',g_lang) RETURNING l_msg1
+         CALL cl_getmsg('mfg0037',g_lang) RETURNING l_msg2
+         LET l_msg = l_msg1 CLIPPED,l_msg2
+      END IF
 
-      IF l_x2 = "N" THEN                                                         
+      IF l_x2 = "N" THEN
          #出貨數量欄位不可空白
-         CALL cl_getmsg('asm-307',g_lang) RETURNING l_msg1                       
-         CALL cl_getmsg('mfg0037',g_lang) RETURNING l_msg2                       
-         LET l_msg = l_msg CLIPPED,l_msg1 CLIPPED,l_msg2                         
-      END IF                                                                     
+         CALL cl_getmsg('asm-307',g_lang) RETURNING l_msg1
+         CALL cl_getmsg('mfg0037',g_lang) RETURNING l_msg2
+         LET l_msg = l_msg CLIPPED,l_msg1 CLIPPED,l_msg2
+      END IF
 
-      IF NOT cl_null(l_msg) THEN                                                 
-         CALL cl_msgany(10,20,l_msg)                                             
-         LET g_success = 'N'                                                     
-         RETURN                                                                  
-      END IF                                                                     
-   END IF       
+      IF NOT cl_null(l_msg) THEN
+         CALL cl_msgany(10,20,l_msg)
+         LET g_success = 'N'
+         RETURN
+      END IF
+   END IF
 
    call s_showmsg_init()  #darcy:2024/02/19 add
 
@@ -635,7 +638,7 @@ FUNCTION t400sub_y_chk(p_flag,p_oea01)
    FOREACH b_amt_conf2 INTO l_oeb.*
      #IF l_oeb.oeb12 <=0 OR cl_null(l_oeb.oeb12) THEN                              #MOD-AB0249
       IF (l_oeb.oeb12 <=0 OR cl_null(l_oeb.oeb12)) AND cl_null(l_oeb.oeb1007) THEN #MOD-AB0249
-         CALL cl_err(l_oeb.oeb03,'mfg3348',0) 
+         CALL cl_err(l_oeb.oeb03,'mfg3348',0)
          LET g_success = 'N'
          RETURN
       END IF
@@ -644,7 +647,7 @@ FUNCTION t400sub_y_chk(p_flag,p_oea01)
          let l_cnt = 0
          select count(1) into l_cnt from bma_file where bma01 = l_oeb.oeb04 and bma05 <= g_today and bma10 ='2'
          if l_cnt = 0 then
-            CALL cl_err(l_oeb.oeb04,'amr-001',1) 
+            CALL cl_err(l_oeb.oeb04,'amr-001',1)
             LET g_success = 'N'
             RETURN
          end if
@@ -678,11 +681,37 @@ FUNCTION t400sub_y_chk(p_flag,p_oea01)
                call s_errmsg("oea01,oeb03,oeb04,oeb13",sfmt("%1|%2|%3|%4",l_oea.oea01,l_oeb.oeb03,l_oeb.oeb04,l_oeb.oeb13),"",'cxm-043',1)
                let g_success = 'N'
             end if
+            select max(xmf05) into l_xmf05 from xme_file,xmf_file
+            where xme01 = xmf01
+               and xme02 = xmf02
+               and ta_xme01 = ta_xmf02
+               and xmf01 = l_oea.oea31
+               and xmf02 = l_oea.oea23
+               and xmf05 <= l_oea.oea02
+               and xmf04 = l_oeb.oeb05
+               and ta_xmf02 = l_oea.oea21
+               and xmf03 = l_oeb.oeb04
+               and xme00 = '1'
+            select max(xmf07) into l_xmf07 from xme_file,xmf_file
+            where xme01 = xmf01
+               and xme02 = xmf02
+               and ta_xme01 = ta_xmf02
+               and xmf01 = l_oea.oea31
+               and xmf02 = l_oea.oea23
+               and xmf05 <= l_oea.oea02
+               and xmf04 = l_oeb.oeb05
+               and ta_xmf02 = l_oea.oea21
+               and xmf03 = l_oeb.oeb04
+               and xme00 = '1'
+            if l_xmf07 <> 0 then
+                call s_errmsg("oea01,oeb03,oeb04,oeb13",sfmt("%1|%2|%3|%4",l_oea.oea01,l_oeb.oeb03,l_oeb.oeb04,l_oeb.oeb13),"",'cxm-043',1)
+                let g_success = 'N'
+            end if
          end if
       end if
       #darcy:2024/07/18 add e---
       if cl_null(l_oeb.oebud05) and l_oea.oea01 matches "MAP*" then
-         CALL cl_err(l_oeb.oeb04,'cpm-030',1) 
+         CALL cl_err(l_oeb.oeb04,'cpm-030',1)
          LET g_success = 'N'
          RETURN
       end if
@@ -706,7 +735,7 @@ FUNCTION t400sub_y_chk(p_flag,p_oea01)
    #-----END MOD-A50169-----
 
    #darcy:2024/02/20 add s---
-   call s_showmsg()  
+   call s_showmsg()
    if l_zhuanjieban then
       if not cl_confirm('cxm-042') then
          let g_success = 'N'
@@ -719,17 +748,17 @@ FUNCTION t400sub_y_chk(p_flag,p_oea01)
    IF l_oea.oea213 = 'Y' THEN
       IF (l_oea.oea261+l_oea.oea262+l_oea.oea263) <> l_oea.oea1008 THEN
          CALL cl_err(l_oea.oea01,'axm-967',1)
-         LET g_success = 'N'                                                     
-         RETURN                                                                  
+         LET g_success = 'N'
+         RETURN
       END IF
    ELSE
       IF (l_oea.oea261+l_oea.oea262+l_oea.oea263) <> l_oea.oea61 THEN
          CALL cl_err(l_oea.oea01,'axm-967',1)
-         LET g_success = 'N'                                                     
-         RETURN                                                                  
+         LET g_success = 'N'
+         RETURN
       END IF
    END IF
-   
+
    #檢查訂金多帳期金額是否與訂金應收金額相同
    SELECT SUM(oeaa08) INTO l_oeaa08
      FROM oeaa_file
@@ -738,8 +767,8 @@ FUNCTION t400sub_y_chk(p_flag,p_oea01)
 
    IF l_oeaa08 <> l_oea.oea261 THEN
       CALL cl_err(l_oea.oea261,'axm-961',1)
-      LET g_success = 'N'                                                     
-      RETURN                                                                  
+      LET g_success = 'N'
+      RETURN
    END IF
 
    #檢查訂金多帳期金額是否與訂金應收金額相同
@@ -750,20 +779,20 @@ FUNCTION t400sub_y_chk(p_flag,p_oea01)
 
    IF l_oeaa08 <> l_oea.oea263 THEN
       CALL cl_err(l_oea.oea263,'axm-961',1)
-      LET g_success = 'N'                                                     
-      RETURN                                                                  
+      LET g_success = 'N'
+      RETURN
    END IF
    #-----No:FUN-A50103 END-----
 
 END FUNCTION
- 
+
 #{
 #作用:lock cursor
 #回傳值:無
 #}
 FUNCTION t400sub_lock_cl()
    DEFINE l_forupd_sql STRING
- 
+
    LET l_forupd_sql = "SELECT * FROM oea_file WHERE oea01 = ? FOR UPDATE"
    LET l_forupd_sql = cl_forupd_sql(l_forupd_sql)
 
@@ -774,7 +803,7 @@ FUNCTION t400sub_lock_cl()
    DECLARE t400sub_cl2 CURSOR FROM l_forupd_sql
 
 END FUNCTION
- 
+
 #{
 #作用:訂單確認
 #p_oea01:本筆訂單的單號
@@ -802,12 +831,12 @@ FUNCTION t400sub_y_upd(p_oea01,p_action_choice,p_inTransaction)   #CHI-B80050
    DEFINE l_ocn04         LIKE ocn_file.ocn04   #No.FUN-740016
    DEFINE l_oayslip       LIKE oay_file.oayslip
    DEFINE l_oayprnt       LIKE oay_file.oayprnt
-   DEFINE l_count         LIKE type_file.num5  
+   DEFINE l_count         LIKE type_file.num5
    DEFINE p_inTransaction LIKE type_file.num5   #CHI-B80050 add
- 
+
    WHENEVER ERROR CONTINUE                #忽略一切錯誤  #FUN-730012
 
-  #CHI-A50004 程式搬移 --start-- 
+  #CHI-A50004 程式搬移 --start--
    IF NOT p_inTransaction THEN   #CHI-B80050 add
       BEGIN WORK
    END IF                        #CHI-B80050
@@ -821,7 +850,7 @@ FUNCTION t400sub_y_upd(p_oea01,p_action_choice,p_inTransaction)   #CHI-B80050
       LET g_success = 'N'                                #CHI-B80050
       RETURN
    END IF
-  
+
    FETCH t400sub_cl INTO l_oea.*          # 鎖住將被更改或取消的資料
    IF SQLCA.sqlcode THEN
       CALL cl_err(l_oea.oea01,SQLCA.sqlcode,0)     # 資料被他人LOCK
@@ -834,13 +863,13 @@ FUNCTION t400sub_y_upd(p_oea01,p_action_choice,p_inTransaction)   #CHI-B80050
 #CHI-B80050 -- end --
    END IF
   #CHI-A50004 程式搬移 --end--
-  
+
    LET g_success = 'Y'
-   
+
    IF p_action_choice CLIPPED = "confirm" OR   #按「確認」時
       p_action_choice CLIPPED = "insert"  OR              #No.TQC-720023
       p_action_choice CLIPPED = "discount_allowed" THEN
-      SELECT oeamksg,oea49 
+      SELECT oeamksg,oea49
         INTO l_oeamksg,l_oea49
         FROM oea_file
        WHERE oea01=p_oea01
@@ -854,28 +883,28 @@ FUNCTION t400sub_y_upd(p_oea01,p_action_choice,p_inTransaction)   #CHI-B80050
          END IF
       END IF
 #CHI-C30107 ----------------- mark --------------- begin
-#     IF NOT cl_confirm('axm-108') THEN 
+#     IF NOT cl_confirm('axm-108') THEN
 #        LET g_success = 'N'    #TQC-740245
 #       #ROLLBACK WORK #CHI-A50004 add                      #CHI-B80050 mark
 #        IF NOT p_inTransaction THEN ROLLBACK WORK END IF   #CHI-B80050
-#        RETURN 
+#        RETURN
 #     END IF
 #CHI-C30107 ----------------- mark --------------- end
    END IF
-  
-   IF g_aza.aza41 = '1' THEN                                                                                                
-      LET l_count = '3'                                                                                                     
-   ELSE                                                                                                                     
-      IF g_aza.aza41 = '2' THEN                                                                                         
-         LET l_count = '4'                                                                                              
-      ELSE                                                                                                              
-         LET l_count = '5'                                                                                          
-      END IF                                                                                                            
-   END IF        
+
+   IF g_aza.aza41 = '1' THEN
+      LET l_count = '3'
+   ELSE
+      IF g_aza.aza41 = '2' THEN
+         LET l_count = '4'
+      ELSE
+         LET l_count = '5'
+      END IF
+   END IF
    LET  l_oayslip= p_oea01[1,l_count]                      #FUN-9B0039 mod
    SELECT oayprnt INTO l_oayprnt FROM oay_file
-    WHERE oayslip = l_oayslip    
-  
+    WHERE oayslip = l_oayslip
+
   #CHI-A50004 程式搬移至FUNCTION一開始 mark --start--
   #BEGIN WORK
   #CALL t400sub_lock_cl()
@@ -886,7 +915,7 @@ FUNCTION t400sub_y_upd(p_oea01,p_action_choice,p_inTransaction)   #CHI-B80050
   #   ROLLBACK WORK
   #   RETURN
   #END IF
-  # 
+  #
   #FETCH t400sub_cl INTO l_oea.*          # 鎖住將被更改或取消的資料
   #IF SQLCA.sqlcode THEN
   #   CALL cl_err(l_oea.oea01,SQLCA.sqlcode,0)     # 資料被他人LOCK
@@ -895,7 +924,7 @@ FUNCTION t400sub_y_upd(p_oea01,p_action_choice,p_inTransaction)   #CHI-B80050
   #CHI-A50004 程式搬移至FUNCTION一開始 mark --end--
 
 
- 
+
    LET g_success = 'Y'
 #FUN-BC0071 -----------------STA
    CALL t400_upd_lqe(l_oea.*)
@@ -926,34 +955,34 @@ FUNCTION t400sub_y_upd(p_oea01,p_action_choice,p_inTransaction)   #CHI-B80050
                RETURN
          END CASE
       END IF
-  
+
       SELECT COUNT(*) INTO l_cnt FROM oeb_file
        WHERE oeb01 = l_oea.oea01
       IF l_cnt = 0 AND l_oea.oeamksg = 'Y' THEN
          CALL cl_err(' ','aws-065',0)
          LET g_success = 'N'
-  
+
       END IF
       IF g_success = 'Y' THEN
          SELECT oea61*oea24,oea14 INTO l_oea61,l_oea14 FROM oea_file
           WHERE oea01=l_oea.oea01
          CALL cl_digcut(l_oea61,g_azi04) RETURNING l_oea61     #CHI-C90032 add
-         
+
         #在借貨出貨訂單確認時要扣除業務額度,
         #業務額度在借貨償價時,來源為借貨出貨單時不可再重複扣除
         #其他項目,像是一般訂單出貨單不會異動業務額度
          IF l_oea.oea00 = '8' OR (l_oea.oea00 = '9' AND l_oea.oea11 <> '8') THEN    #CHI-C90032 add
             SELECT ocn03,ocn04 INTO l_ocn03,l_ocn04 FROM ocn_file
              WHERE ocn01 = l_oea14
-          
+
             LET l_ocn03 = l_ocn03+l_oea61
             LET l_ocn04 = l_ocn04-l_oea61
-          
+
             IF l_ocn04 < 0 THEN
                CALL cl_err(l_oea14,'axm-112',1)   #No:MOD-9C0377 modify
                LET g_success="N"
             END IF
-          
+
             UPDATE ocn_file SET ocn03 = l_ocn03,
                                 ocn04 = l_ocn04
              WHERE ocn01 = l_oea14
@@ -998,33 +1027,33 @@ FUNCTION t400sub_y_upd(p_oea01,p_action_choice,p_inTransaction)   #CHI-B80050
            #拋轉至各廠
            LET l_cmd="axmp800 '",l_oea.oea01,"' '",l_oea.oea905,"' "
            CALL cl_cmdrun_wait(l_cmd)
-           LET l_oea.oea905='Y'    
- 
+           LET l_oea.oea905='Y'
+
            #若是背景執行，則不產生報表(Ex: EasyFlow簽核，自動跑確認段)
            IF g_bgjob='N' OR cl_null(g_bgjob) THEN  #No.FUN-640248
               #列印三角貿易S/O
-                   LET l_wc='oea01="',l_oea.oea01,'"'                                                                                           
-                   LET l_msg = "axmr830",                                                                                                       
-                       " '",g_today CLIPPED,"' ''",                                                                                             
-                       " '",g_lang CLIPPED,"' 'Y' '' '1'",                                                                                      
+                   LET l_wc='oea01="',l_oea.oea01,'"'
+                   LET l_msg = "axmr830",
+                       " '",g_today CLIPPED,"' ''",
+                       " '",g_lang CLIPPED,"' 'Y' '' '1'",
                        " '",l_wc CLIPPED,"' "
-               IF l_oayprnt = 'Y' THEN                 #TQC-960011                  
+               IF l_oayprnt = 'Y' THEN                 #TQC-960011
                   CALL cl_cmdrun_wait(l_msg)
-               END IF                                  #TQC-960011   
+               END IF                                  #TQC-960011
                #列印三角貿易P/O
-                   LET l_wc='oea01="',l_oea.oea01,'"'                                                                                           
-                   LET l_msg = "axmr820",                                                                                                       
-                       " '",g_today CLIPPED,"' ''",                                                                                             
-                       " '",g_lang CLIPPED,"' 'Y' '' '1'",                                                                                      
-                       " '",l_wc CLIPPED,"' " 
-               IF l_oayprnt = 'Y' THEN                 #TQC-960011                  
+                   LET l_wc='oea01="',l_oea.oea01,'"'
+                   LET l_msg = "axmr820",
+                       " '",g_today CLIPPED,"' ''",
+                       " '",g_lang CLIPPED,"' 'Y' '' '1'",
+                       " '",l_wc CLIPPED,"' "
+               IF l_oayprnt = 'Y' THEN                 #TQC-960011
                   CALL cl_cmdrun_wait(l_msg)
-               END IF                                  #TQC-960011   
+               END IF                                  #TQC-960011
                END IF  #No.FUN-640248
        END IF   #NO.TQC-740111
   END IF
 END FUNCTION
- 
+
 #{
 #作用:訂單確認
 #l_oea:本筆訂單的data
@@ -1036,8 +1065,8 @@ FUNCTION t400sub_y1(l_oea)
  DEFINE l_oeb17 LIKE oeb_file.oeb17
  DEFINE l_msg   LIKE type_file.chr1000 #No.FUN-680137 VARCHAR(100)
  DEFINE l_oeb   RECORD LIKE oeb_file.*
- 
-   LET l_oea.oea72=TODAY 
+
+   LET l_oea.oea72=TODAY
    IF l_oea.oeamksg = 'N' AND
       l_oea.oeaconf = 'N' AND l_oea.oea49 = '0'  THEN
       LET l_oea.oea49 = '1'     #已核淮
@@ -1055,16 +1084,16 @@ FUNCTION t400sub_y1(l_oea)
       LET g_success = 'N'
       RETURN
    END IF
- 
-   CALL t400sub_hu1(l_oea.*) IF g_success = 'N' THEN RETURN END IF  #客戶信用查核    
+
+   CALL t400sub_hu1(l_oea.*) IF g_success = 'N' THEN RETURN END IF  #客戶信用查核
    CALL t400sub_hu2(l_oea.*) IF g_success = 'N' THEN RETURN END IF  #最近交易更新
- 
+
    DECLARE t400sub_y1_c CURSOR FOR
       SELECT * FROM oeb_file WHERE oeb01 = l_oea.oea01 ORDER BY oeb03
- 
+
    FOREACH t400sub_y1_c INTO l_oeb.*
       IF STATUS THEN
-         CALL cl_err('y1 foreach',STATUS,1)  
+         CALL cl_err('y1 foreach',STATUS,1)
          LET g_success='N'
          RETURN
       END IF
@@ -1094,7 +1123,7 @@ FUNCTION t400sub_y1(l_oea)
       CALL t400sub_bu4() IF g_success = 'N' THEN RETURN END IF #更新產品價格
    END FOREACH
 END FUNCTION
- 
+
 FUNCTION t400sub_hu1(l_oea)		#客戶信用查核
    DEFINE l_oea RECORD LIKE oea_file.*
    DEFINE l_msg LIKE type_file.chr1000    #MOD-780014 add
@@ -1103,21 +1132,21 @@ FUNCTION t400sub_hu1(l_oea)		#客戶信用查核
    IF l_oea.oea00='0' OR l_oea.oea00="A" THEN RETURN END IF   #No.FUN-610053
    IF g_oaz.oaz122 MATCHES "[12]" THEN
       IF l_oea.oeamksg = 'Y' THEN
-         CALL s_ccc_logerr()  
+         CALL s_ccc_logerr()
       END IF
 #     IF g_oaz.oaz96 = 'N' THEN                      #FUN-C50136 add
-         CALL s_ccc(l_oea.oea03,'2',l_oea.oea01)    # Customer Credit Check 客戶信用查核 
+         CALL s_ccc(l_oea.oea03,'2',l_oea.oea01)    # Customer Credit Check 客戶信用查核
       #FUN-C50136#add##str
-#     ELSE                    
+#     ELSE
 #        CALL s_ccc_oia07('A',l_oea.oea03) RETURNING l_oia07
 #        IF NOT cl_null(l_oia07) AND l_oia07 = '0' THEN
-#           CALL s_ccc_oia(l_oea.oea03,'A',l_oea.oea01,0,'') 
-#        END IF                                
-#     END IF                                           
-#     #FUN-C50136##add##end 
+#           CALL s_ccc_oia(l_oea.oea03,'A',l_oea.oea01,0,'')
+#        END IF
+#     END IF
+#     #FUN-C50136##add##end
       IF g_errno = 'N' THEN
          IF g_oaz.oaz122 = '1'
-            THEN # CALL cl_err('ccc','axm-104',1)           #MOD-780014 mark 
+            THEN # CALL cl_err('ccc','axm-104',1)           #MOD-780014 mark
                    LET l_msg = cl_getmsg('axm-104',g_lang)  #MOD-780014 add
                    CALL cl_msgany(10,20,l_msg)              #MOD-780014 add
                  LET l_oea.oeahold=g_oaz.oaz11
@@ -1129,24 +1158,24 @@ FUNCTION t400sub_hu1(l_oea)		#客戶信用查核
          END IF
       END IF
    END IF
-   CALL cl_msg("")              #No.FUN-640248 
+   CALL cl_msg("")              #No.FUN-640248
 END FUNCTION
- 
+
 FUNCTION t400sub_hu2(l_oea)		#最近交易日
    DEFINE l_occ RECORD LIKE occ_file.*
    DEFINE l_oea RECORD LIKE oea_file.*
-   CALL cl_msg("hu2!")          #No.FUN-640248 
-   OPEN t400sub_cl2 USING l_oea.oea03 
+   CALL cl_msg("hu2!")          #No.FUN-640248
+   OPEN t400sub_cl2 USING l_oea.oea03
    IF STATUS THEN
       CALL cl_err("OPEN t400sub_cl2:", STATUS, 1)
       CLOSE t400sub_cl2
       LET g_success = 'N'
       RETURN
    END IF
-   FETCH t400sub_cl2 INTO l_occ.*      
+   FETCH t400sub_cl2 INTO l_occ.*
    IF SQLCA.sqlcode THEN
-      CALL cl_err(l_occ.occ01,SQLCA.sqlcode,0)    
-      CLOSE t400sub_cl2 
+      CALL cl_err(l_occ.occ01,SQLCA.sqlcode,0)
+      CLOSE t400sub_cl2
       LET g_success = 'N'
       RETURN
    END IF
@@ -1154,7 +1183,7 @@ FUNCTION t400sub_hu2(l_oea)		#最近交易日
    IF l_occ.occ172 IS NULL OR l_occ.occ172 < l_oea.oea02 THEN
       LET l_occ.occ172=l_oea.oea02
    END IF
- 
+
    UPDATE occ_file SET * = l_occ.* WHERE occ01=l_oea.oea03     #FUN-610055
    IF STATUS THEN
       CALL cl_err3("upd","occ_file",l_oea.oea03,"",STATUS,"","u occ",1)  #No.FUN-650108
@@ -1162,28 +1191,28 @@ FUNCTION t400sub_hu2(l_oea)		#最近交易日
       LET g_success = 'N'
       RETURN
    END IF
- 
+
    CLOSE t400sub_cl2            #MOD-C80218 add
-   CALL cl_msg("")              #No.FUN-640248 
- 
+   CALL cl_msg("")              #No.FUN-640248
+
 END FUNCTION
- 
+
 FUNCTION t400sub_bu1(l_oea,l_oeb) 				#合約已轉訂單量更新
    DEFINE l_oea RECORD LIKE oea_file.*
    DEFINE l_oeb RECORD LIKE oeb_file.*
    DEFINE l_tot LIKE oeb_file.oeb14
-   DEFINE l_oeb05_1 LIKE oeb_file.oeb05  
-   DEFINE l_oeb04 LIKE oeb_file.oeb04    
-   DEFINE l_oeb05 LIKE oeb_file.oeb05    
-   DEFINE l_oeb12 LIKE oeb_file.oeb12    
+   DEFINE l_oeb05_1 LIKE oeb_file.oeb05
+   DEFINE l_oeb04 LIKE oeb_file.oeb04
+   DEFINE l_oeb05 LIKE oeb_file.oeb05
+   DEFINE l_oeb12 LIKE oeb_file.oeb12
    DEFINE l_cnt   LIKE type_file.num5
-   DEFINE l_factor LIKE ima_file.ima31_fac 
- 
-   CALL cl_msg("bu1!")          #No.FUN-640248 
- 
+   DEFINE l_factor LIKE ima_file.ima31_fac
+
+   CALL cl_msg("bu1!")          #No.FUN-640248
+
    IF l_oea.oea11 = '3' THEN #MOD-6A0171 mark OR l_oea.oea11="A" THEN   #No.FUN-610053
       DECLARE oeb12_cs CURSOR FOR
-        SELECT oeb04,oeb05,oeb12 FROM oea_file,oeb_file  
+        SELECT oeb04,oeb05,oeb12 FROM oea_file,oeb_file
          #WHERE oea12 = l_oea.oea12 AND oea00 IN ('1','3','4','6','7')    #mark by guanyao160719
          WHERE oebud02 = l_oeb.oebud02 AND oea00 IN ('1','3','4','6','7')   #add by guanyao160719
            AND oeaconf = 'Y'
@@ -1194,24 +1223,24 @@ FUNCTION t400sub_bu1(l_oea,l_oeb) 				#合約已轉訂單量更新
        # WHERE oeb01 = l_oea.oea12  #mark by guanyao160719
         WHERE oeb01 = l_oeb.oebud02 #add by guanyao160719
           AND oeb03 = l_oeb.oeb71
-      LET l_tot = 0 
+      LET l_tot = 0
       FOREACH oeb12_cs INTO l_oeb04,l_oeb05,l_oeb12
-        CALL s_umfchk(l_oeb04,l_oeb05,l_oeb05_1) RETURNING l_cnt,l_factor 
+        CALL s_umfchk(l_oeb04,l_oeb05,l_oeb05_1) RETURNING l_cnt,l_factor
         IF l_cnt = 1 THEN LET l_factor = 1 END IF
         LET l_tot = l_tot + (l_oeb12 * l_factor)
       END FOREACH
       IF cl_null(l_tot) THEN
          LET l_tot = 0
-      ELSE 
+      ELSE
          LET l_tot =s_digqty(l_tot ,l_oeb.oeb05)  #FUN-910088 add
       END IF
- 
+
       UPDATE oeb_file SET oeb24 = l_tot,
                           oebud08 = oeb12-l_tot   #add by guanyao160614
        #WHERE oeb01 = l_oea.oea12   #mark by guanyao160719
        WHERE oeb01 = l_oeb.oebud02  #add by guanyao160719
          AND oeb03 = l_oeb.oeb71
- 
+
       IF STATUS OR SQLCA.SQLCODE THEN
          #LET g_showmsg=l_oea.oea12,"/",l_oeb.oeb71                 #No.FUN-710046  #mark by guanyao160719
          LET g_showmsg=l_oeb.oebud02,"/",l_oeb.oeb71       #add by guanyao160719
@@ -1220,65 +1249,65 @@ FUNCTION t400sub_bu1(l_oea,l_oeb) 				#合約已轉訂單量更新
          RETURN
       END IF
    END IF
- 
-   CALL cl_msg("")                    #No.FUN-640248 
- 
-END FUNCTION
- 
-FUNCTION t400sub_bu2()
- 
-   CALL cl_msg("bu2!")                #No.FUN-640248 
+
    CALL cl_msg("")                    #No.FUN-640248
- 
+
 END FUNCTION
- 
+
+FUNCTION t400sub_bu2()
+
+   CALL cl_msg("bu2!")                #No.FUN-640248
+   CALL cl_msg("")                    #No.FUN-640248
+
+END FUNCTION
+
 FUNCTION t400sub_bu3(l_oea,l_oeb) 				#更新產品客戶
    DEFINE l_oea     RECORD LIKE oea_file.*
    DEFINE l_oeb     RECORD LIKE oeb_file.*
-   DEFINE l_fac     LIKE ima_file.ima31_fac       #單位換算率 #MOD-540201 add                                                      
-   DEFINE l_ima31   LIKE ima_file.ima31           #銷售單位   #MOD-540201 add                                                      
-   DEFINE l_rate    LIKE oea_file.oea24           #匯率       #MOD-540201 add                                                      
-   DEFINE l_ima33   LIKE ima_file.ima33           #最近售價   #MOD-540201 add                                                      
+   DEFINE l_fac     LIKE ima_file.ima31_fac       #單位換算率 #MOD-540201 add
+   DEFINE l_ima31   LIKE ima_file.ima31           #銷售單位   #MOD-540201 add
+   DEFINE l_rate    LIKE oea_file.oea24           #匯率       #MOD-540201 add
+   DEFINE l_ima33   LIKE ima_file.ima33           #最近售價   #MOD-540201 add
    DEFINE l_check   LIKE type_file.chr1    #No.FUN-680137 VARCHAR(1)  #MOD-540201 add
-   DEFINE l_obk11   LIKE obk_file.obk11           #TQC-6A0045 add                                                      
-   DEFINE l_obk12   LIKE obk_file.obk12           #TQC-6A0045 add                                                      
-   DEFINE l_obk13   LIKE obk_file.obk13           #TQC-6A0045 add                                                      
-   DEFINE l_obk14   LIKE obk_file.obk14           #TQC-6A0045 add                                                      
+   DEFINE l_obk11   LIKE obk_file.obk11           #TQC-6A0045 add
+   DEFINE l_obk12   LIKE obk_file.obk12           #TQC-6A0045 add
+   DEFINE l_obk13   LIKE obk_file.obk13           #TQC-6A0045 add
+   DEFINE l_obk14   LIKE obk_file.obk14           #TQC-6A0045 add
    DEFINE l_obkacti LIKE obk_file.obkacti         #No.MOD-740385 add
    DEFINE l_exT     LIKE type_file.chr1
-   CALL cl_msg("bu3!")                #No.FUN-640248 
-      #MOD-540201----------------------add                                                                                          
-      #更新料件主檔的最近售價ima33                                                                                                  
-      #==>單位轉換                                                                                                                  
-      SELECT ima31 INTO l_ima31 FROM ima_file                                                                                       
-       WHERE ima01= l_oeb.oeb04                                                                                                     
-      IF l_oeb.oeb05 =l_ima31 THEN                                                                                                  
-          LET l_fac = 1                                                                                                             
-      ELSE                                                                                                                          
-          CALL s_umfchk(l_oeb.oeb04,l_oeb.oeb05,l_ima31)                                                                            
-               RETURNING l_check,l_fac                                                                                              
-      END IF                                                                                                                        
-      #==>幣別匯率轉換                                                                                                              
-      IF l_oea.oea23 =g_aza.aza17 THEN                                                                                              
-          LET l_rate =1                                                                                                             
-      ELSE                                                                                                                          
-          IF l_oea.oea08='1' THEN                                                                                                   
-             LET l_exT=g_oaz.oaz52                                                                                                    
-          ELSE                                                                                                                      
-             LET l_exT=g_oaz.oaz70                                                                                                    
-          END IF                                                                                                                    
+   CALL cl_msg("bu3!")                #No.FUN-640248
+      #MOD-540201----------------------add
+      #更新料件主檔的最近售價ima33
+      #==>單位轉換
+      SELECT ima31 INTO l_ima31 FROM ima_file
+       WHERE ima01= l_oeb.oeb04
+      IF l_oeb.oeb05 =l_ima31 THEN
+          LET l_fac = 1
+      ELSE
+          CALL s_umfchk(l_oeb.oeb04,l_oeb.oeb05,l_ima31)
+               RETURNING l_check,l_fac
+      END IF
+      #==>幣別匯率轉換
+      IF l_oea.oea23 =g_aza.aza17 THEN
+          LET l_rate =1
+      ELSE
+          IF l_oea.oea08='1' THEN
+             LET l_exT=g_oaz.oaz52
+          ELSE
+             LET l_exT=g_oaz.oaz70
+          END IF
           CALL s_curr3(l_oea.oea23,l_oea.oea02,l_exT)
-                      RETURNING l_rate                                                                                              
-      END IF                                                                                                                        
-      #==>更新料件主檔的最近售價                                                                                                    
-      LET l_ima33 = (l_oeb.oeb13/l_fac) * l_rate                                                                                    
+                      RETURNING l_rate
+      END IF
+      #==>更新料件主檔的最近售價
+      LET l_ima33 = (l_oeb.oeb13/l_fac) * l_rate
       CALL cl_digcut(l_ima33,t_azi03)RETURNING l_ima33     #No.CHI-6A0004
-      UPDATE ima_file                                                                                                               
+      UPDATE ima_file
          SET ima33 = l_ima33,
-             imadate = g_today     #FUN-C30315 add                                                                                                        
-       WHERE ima01 = l_oeb.oeb04                                                                                                    
+             imadate = g_today     #FUN-C30315 add
+       WHERE ima01 = l_oeb.oeb04
        #MOD-540201----------------------(end)
- 
+
       IF g_oaz.oaz44 = 'Y' THEN
          LET l_obk11= 'N'
          LET l_obkacti = 'Y'      #No.MOD-740385 add
@@ -1288,7 +1317,7 @@ FUNCTION t400sub_bu3(l_oea,l_oeb) 				#更新產品客戶
                              obk06=l_oea.oea21,
                              obk07=l_oeb.oeb05,
                              obk08=l_oeb.oeb13,
-                             obk09=l_oeb.oeb12 
+                             obk09=l_oeb.oeb12
          WHERE obk01 = l_oeb.oeb04
            AND obk02 = l_oea.oea03    #FUN-610055
            AND obk05 = l_oea.oea23      #No.FUN-670099
@@ -1311,15 +1340,15 @@ FUNCTION t400sub_bu3(l_oea,l_oeb) 				#更新產品客戶
          END IF
       END IF
    CALL cl_msg("")                    #No.FUN-640248
- 
+
 END FUNCTION
- 
+
 FUNCTION t400sub_bu4() 				#更新產品價格
-   CALL cl_msg("bu4!")                #No.FUN-640248                                                                     
+   CALL cl_msg("bu4!")                #No.FUN-640248
    CALL cl_msg("")                    #No.FUN-640248
- 
+
 END FUNCTION
- 
+
 FUNCTION t400sub_tqw08_update(p_code,l_oea)
 DEFINE  t_oeb      RECORD LIKE oeb_file.*,
         p_code     LIKE type_file.num5    #No.FUN-680137 SMALLINT
@@ -1333,37 +1362,37 @@ DEFINE  l_oea      RECORD LIKE oea_file.*
       IF STATUS THEN
          CALL cl_err('foreach oeb',STATUS,0)
          LET g_success = 'N'   #FUN-890128
-         RETURN 
-      END IF  
-      IF p_code=1 THEN                                                                                                              
-         IF t_oeb.oeb1010='N' THEN                                                                                                  
-            UPDATE tqw_file SET tqw08=tqw08+t_oeb.oeb14                                                                             
-             WHERE tqw01=t_oeb.oeb1007                                                                                              
-         ELSE                                                                                                                       
-            UPDATE tqw_file SET tqw08=tqw08+t_oeb.oeb14t                                                                            
-             WHERE tqw01=t_oeb.oeb1007                                                                                              
-         END IF                                                                                                                     
-      ELSE                                                                                                                          
-         IF t_oeb.oeb1010='N' THEN                                                                                                  
-            UPDATE tqw_file SET tqw08=tqw08-t_oeb.oeb14                                                                             
-             WHERE tqw01=t_oeb.oeb1007                                                                                              
-         ELSE                                                                                                                       
-            UPDATE tqw_file SET tqw08=tqw08-t_oeb.oeb14t                                                                            
-             WHERE tqw01=t_oeb.oeb1007                                                                                              
-         END IF                                                                                                                     
-      END IF  
+         RETURN
+      END IF
+      IF p_code=1 THEN
+         IF t_oeb.oeb1010='N' THEN
+            UPDATE tqw_file SET tqw08=tqw08+t_oeb.oeb14
+             WHERE tqw01=t_oeb.oeb1007
+         ELSE
+            UPDATE tqw_file SET tqw08=tqw08+t_oeb.oeb14t
+             WHERE tqw01=t_oeb.oeb1007
+         END IF
+      ELSE
+         IF t_oeb.oeb1010='N' THEN
+            UPDATE tqw_file SET tqw08=tqw08-t_oeb.oeb14
+             WHERE tqw01=t_oeb.oeb1007
+         ELSE
+            UPDATE tqw_file SET tqw08=tqw08-t_oeb.oeb14t
+             WHERE tqw01=t_oeb.oeb1007
+         END IF
+      END IF
     END FOREACH
 END FUNCTION
- 
+
 FUNCTION t400sub_refresh(p_oea01)
   DEFINE p_oea01 LIKE oea_file.oea01
   DEFINE l_oea RECORD LIKE oea_file.*
- 
+
   SELECT * INTO l_oea.* FROM oea_file WHERE oea01 = p_oea01
   RETURN l_oea.*
 END FUNCTION
- 
- 
+
+
 # 拋轉P/O
 FUNCTION t400sub_exp_po(p_oea01,p_tag,p_buf)   #TQC-730022
   DEFINE p_oea01  LIKE oea_file.oea01,   #TQC-730022
@@ -1377,18 +1406,18 @@ FUNCTION t400sub_exp_po(p_oea01,p_tag,p_buf)   #TQC-730022
   DEFINE l_oeb03  LIKE oeb_file.oeb03
   DEFINE l_oeb12  LIKE oeb_file.oeb12
   DEFINE l_oeb28  LIKE oeb_file.oeb28
-  DEFINE l_sql    STRING 
-  DEFINE l_cnt    LIKE type_file.num5 
+  DEFINE l_sql    STRING
+  DEFINE l_cnt    LIKE type_file.num5
   DEFINE li_cnt   LIKE type_file.num5
   DEFINE l_ima54  LIKE ima_file.ima54
   DEFINE tm RECORD
-         wc       STRING,                  #MOD-960117  
+         wc       STRING,                  #MOD-960117
          oeb03    LIKE oeb_file.oeb03,     #FUN-870033
-         slip     LIKE oay_file.oayslip  
-         END RECORD 
+         slip     LIKE oay_file.oayslip
+         END RECORD
   DEFINE l_pmm01_conf DYNAMIC ARRAY OF  LIKE pmm_file.pmm01  #TQC-730022
   DEFINE l_i,l_n      LIKE type_file.num5  #TQC-730022
-  DEFINE l_gfa   RECORD LIKE gfa_file.*    #TQC-730022 
+  DEFINE l_gfa   RECORD LIKE gfa_file.*    #TQC-730022
   DEFINE l_oea   RECORD LIKE oea_file.*
   DEFINE l_slip  LIKE oay_file.oayslip
   DEFINE p_row,p_col LIKE type_file.num5
@@ -1401,9 +1430,9 @@ FUNCTION t400sub_exp_po(p_oea01,p_tag,p_buf)   #TQC-730022
   DEFINE l_fac    LIKE img_file.img21  #CHI-A80006 add
   DEFINE l_t      LIKE type_file.num5  #TQC-BC0172 add
   DEFINE li_result LIKE type_file.num5 #MOD-C90187 add
- 
+
   WHENEVER ERROR CONTINUE                #忽略一切錯誤  #FUN-730018
- 
+
     #重新讀取資料
     SELECT * INTO l_oea.* FROM oea_file
      WHERE oea01=p_oea01
@@ -1418,17 +1447,17 @@ FUNCTION t400sub_exp_po(p_oea01,p_tag,p_buf)   #TQC-730022
           AND gfaacti = 'Y'
       IF cl_null(l_gfa.gfa05) THEN RETURN END IF  #如果無設定單據自動化的資料就不再往下執行
     END IF
-  
+
    IF l_oea.oea49 = '2' THEN CALL cl_err('','Transfer to PO not allowed!',0)  RETURN END IF   #TQC-AB0132 add
    IF cl_null(l_oea.oea01) THEN RETURN END IF
-   IF l_oea.oea00 = '0' AND l_oea.oea00="A" THEN RETURN END IF  
+   IF l_oea.oea00 = '0' AND l_oea.oea00="A" THEN RETURN END IF
    IF l_oea.oeaconf = 'X' THEN CALL cl_err('',9024,0) RETURN END IF
   #IF l_oea.oea62 != 0 THEN CALL cl_err('','axm-582',0) RETURN END IF #MOD-D30032 mark
    IF l_oea.oeaconf = 'N' THEN
       CALL cl_err('','axm-184',0)
       RETURN
    END IF
- 
+
   #此訂單已拋請購單,就不可以再次拋轉
    LET li_cnt = 0
    SELECT COUNT(*) INTO li_cnt
@@ -1441,19 +1470,19 @@ FUNCTION t400sub_exp_po(p_oea01,p_tag,p_buf)   #TQC-730022
        RETURN
    END IF
    LET li_cnt = 0
- 
-   
+
+
   #檢查是否都有設定主供應商
-   SELECT COUNT(*) INTO li_cnt 
+   SELECT COUNT(*) INTO li_cnt
      FROM oeb_file,ima_file
-    WHERE ima01 = oeb04 
+    WHERE ima01 = oeb04
       AND (ima54 IS NULL OR ima54 = '')
       AND oeb01 = l_oea.oea01
    IF li_cnt > 0 THEN
       CALL cl_err('','apm-571',0)
       RETURN
    END IF
- 
+
    IF p_tag = 'A' THEN
      IF cl_null(p_buf) THEN
        LET l_slip = l_gfa.gfa05
@@ -1463,43 +1492,43 @@ FUNCTION t400sub_exp_po(p_oea01,p_tag,p_buf)   #TQC-730022
      LET tm.wc = " 1=1"   #No.TQC-920112 add
    ELSE
      LET p_row = 5 LET p_col = 11
-  
+
      OPEN WINDOW t400sub_exp_po AT p_row,p_col WITH FORM "axm/42f/axmt400f"
-      ATTRIBUTE (STYLE = g_win_style CLIPPED) 
-  
+      ATTRIBUTE (STYLE = g_win_style CLIPPED)
+
      CALL cl_ui_locale("axmt400f")
-  
+
       WHILE TRUE           #No.TQC-930021 add
-      CONSTRUCT BY NAME tm.wc ON oeb03   
-   
+      CONSTRUCT BY NAME tm.wc ON oeb03
+
       BEFORE CONSTRUCT
-   
+
          ON ACTION controlp
             CASE
-               WHEN INFIELD(oeb03) 
+               WHEN INFIELD(oeb03)
                     CALL q_oeb11(TRUE,TRUE,l_oea.oea01)
-                   RETURNING g_qryparam.multiret                                                                                      
+                   RETURNING g_qryparam.multiret
                     DISPLAY g_qryparam.multiret TO oeb03
             END CASE
-   
+
                 ON IDLE g_idle_seconds
                    CALL cl_on_idle()
                    CONTINUE CONSTRUCT
-   
-                ON ACTION about        
-                   CALL cl_about()     
-         
-                ON ACTION help          
-                   CALL cl_show_help()  
-         
-                ON ACTION controlg     
-                   CALL cl_cmdask()    
-   
+
+                ON ACTION about
+                   CALL cl_about()
+
+                ON ACTION help
+                   CALL cl_show_help()
+
+                ON ACTION controlg
+                   CALL cl_cmdask()
+
              END CONSTRUCT
              LET tm.wc = tm.wc CLIPPED,cl_get_extra_cond(null, null) #FUN-980030
       #CHI-A80006 mark --start--
       ##此訂單已拋采購單,就不可以再次拋轉
-      #LET l_cnt = 0 
+      #LET l_cnt = 0
       #LET l_sql ="SELECT COUNT(*)",
       #           "  FROM pmm_file,pmn_file,oeb_file",   #MOD-960202
       #           " WHERE oeb01 = pmn24",
@@ -1553,7 +1582,7 @@ FUNCTION t400sub_exp_po(p_oea01,p_tag,p_buf)   #TQC-730022
          END IF
       END IF
       IF cl_null(l_ima44) THEN LET l_ima44 = l_ima25 END IF
-      CALL s_umfchk(l_oeb04,l_ima44,l_oeb05) RETURNING l_flag,l_fac                                                                             
+      CALL s_umfchk(l_oeb04,l_ima44,l_oeb05) RETURNING l_flag,l_fac
       IF cl_null(l_fac) THEN LET l_fac=1 END IF
       LET l_oeb28 = l_oeb28 * l_fac
       IF l_oeb12 - l_oeb28 <= 0 THEN
@@ -1564,53 +1593,53 @@ FUNCTION t400sub_exp_po(p_oea01,p_tag,p_buf)   #TQC-730022
       END IF
       END WHILE
       #CHI-A80006 add --end--
-  
-     INPUT BY NAME tm.slip 
-       
+
+     INPUT BY NAME tm.slip
+
         AFTER FIELD slip
-           IF NOT cl_null(tm.slip) THEN  
+           IF NOT cl_null(tm.slip) THEN
               LET l_cnt = 0
               SELECT COUNT(*) INTO l_cnt FROM smy_file
-               WHERE smyslip = tm.slip AND smysys = 'apm' AND smykind = '2' 
-              IF SQLCA.sqlcode OR cl_null(tm.slip) THEN  
+               WHERE smyslip = tm.slip AND smysys = 'apm' AND smykind = '2'
+              IF SQLCA.sqlcode OR cl_null(tm.slip) THEN
                  LET l_cnt = 0
               END IF
               IF l_cnt = 0 THEN
-                 CALL cl_err(tm.slip,'aap-010',0)       
+                 CALL cl_err(tm.slip,'aap-010',0)
                  NEXT FIELD slip
               END IF
            END IF
            LET l_slip = tm.slip
-  
+
         IF INT_FLAG THEN
            LET INT_FLAG = 0
            CLOSE WINDOW t400sub_exp_po
            RETURN
         END IF
-  
+
         ON ACTION controlp
            CASE
               WHEN INFIELD(slip)
                    CALL q_smy(FALSE,TRUE,tm.slip,'APM','2') RETURNING tm.slip
-                   DISPLAY BY NAME tm.slip   
+                   DISPLAY BY NAME tm.slip
                    NEXT FIELD slip
               OTHERWISE EXIT CASE
            END CASE
-  
+
         ON IDLE g_idle_seconds
            CALL cl_on_idle()
            CONTINUE INPUT
-  
+
         ON ACTION about         #MOD-4C0121
            CALL cl_about()      #MOD-4C0121
-  
+
         ON ACTION help          #MOD-4C0121
            CALL cl_show_help()  #MOD-4C0121
-  
+
         ON ACTION controlg      #MOD-4C0121
            CALL cl_cmdask()     #MOD-4C0121
      END INPUT
-  
+
      IF INT_FLAG THEN
         LET INT_FLAG = 0
         CLOSE WINDOW t400sub_exp_po
@@ -1618,12 +1647,12 @@ FUNCTION t400sub_exp_po(p_oea01,p_tag,p_buf)   #TQC-730022
      END IF
      CLOSE WINDOW t400sub_exp_po
    END IF  #TQC-730022 end
- 
-   LET g_success = 'Y'  #MOD-8A0086                                               
-   BEGIN WORK           #MOD-8A0086                                             
+
+   LET g_success = 'Y'  #MOD-8A0086
+   BEGIN WORK           #MOD-8A0086
    LET l_oeb12 = 0
    LET l_oeb28 = 0
-   LET l_i = 0  #TQC-730022 
+   LET l_i = 0  #TQC-730022
    LET l_sql = "SELECT DISTINCT ima54 FROM ima_file,oeb_file ",       #MOD-D30032 mark #MOD-D40031 remark
   #LET l_sql = "SELECT DISTINCT ima54,oeb03 FROM ima_file,oeb_file ", #MOD-D30032 add #MOD-D40031 mark
                " WHERE ima01 = oeb04 ",
@@ -1634,17 +1663,17 @@ FUNCTION t400sub_exp_po(p_oea01,p_tag,p_buf)   #TQC-730022
    CALL s_showmsg_init()                     #No.FUN-710046
    FOREACH ima_cur INTO l_ima54          #MOD-D30032 mark #MOD-D40031 remark
   #FOREACH ima_cur INTO l_ima54,l_oeb03  #MOD-D30032 add  #MOD-D40031 mark
-     IF g_success = "N" THEN                                                                                                        
-        LET g_totsuccess = "N"                                                                                                      
-        LET g_success = "Y"                                                                                                         
-     END IF                                                                                                                         
+     IF g_success = "N" THEN
+        LET g_totsuccess = "N"
+        LET g_success = "Y"
+     END IF
     #MOD-D30032 add start -----
      IF l_oea.oea62 != 0 THEN
         LET l_cnt=0
        #MOD-D40031 add start -----
-        LET l_sql = "SELECT oeb03 FROM oeb_file ", 
+        LET l_sql = "SELECT oeb03 FROM oeb_file ",
                     " WHERE oeb01 = '",l_oea.oea01 CLIPPED,"'",
-                    "   AND ",tm.wc 
+                    "   AND ",tm.wc
         PREPARE ima_pre2  FROM l_sql
         DECLARE ima_cur2 CURSOR FOR ima_pre2
         FOREACH ima_cur2 INTO l_oeb03
@@ -1670,13 +1699,13 @@ FUNCTION t400sub_exp_po(p_oea01,p_tag,p_buf)   #TQC-730022
        IF s_industry("slk") THEN
           IF g_azw.azw04 = '2' THEN   #FUN-C20006 add
              CALL t400sub_ins_pmnslk_exp(l_pmm01,l_oea.oea01)
-          END IF                      #FUN-C20006 add    
+          END IF                      #FUN-C20006 add
        END IF
        #FUN-B90101--add--end--
        IF g_success = 'N' THEN  EXIT FOREACH  END IF
          IF p_tag = 'A' AND l_gfa.gfa06 = 'Y' THEN
            LET l_i = l_i + 1
-           LET l_pmm01_conf[l_i] = l_pmm01 
+           LET l_pmm01_conf[l_i] = l_pmm01
          END IF
      ELSE
        EXIT FOREACH
@@ -1685,7 +1714,7 @@ FUNCTION t400sub_exp_po(p_oea01,p_tag,p_buf)   #TQC-730022
    #採購單自動確認段
     IF p_tag = 'A' AND l_gfa.gfa06 = 'Y' THEN
       FOR l_n = 1 TO l_i
-        SELECT pmm_file.* INTO l_pmm.* 
+        SELECT pmm_file.* INTO l_pmm.*
           FROM pmm_file
          WHERE pmm01 = l_pmm01_conf[l_n]
         CALL t540sub_y_chk(l_pmm.*)          #CALL 原apmt540確認的 check 段
@@ -1694,34 +1723,34 @@ FUNCTION t400sub_exp_po(p_oea01,p_tag,p_buf)   #TQC-730022
         END IF
       END FOR
     END IF
-     IF g_totsuccess="N" THEN                                                                                                       
-        LET g_success="N"                                                                                                           
-     END IF                                      
-    CALL s_showmsg()                                                                                   
+     IF g_totsuccess="N" THEN
+        LET g_success="N"
+     END IF
+    CALL s_showmsg()
    IF g_success = 'Y' THEN
          COMMIT WORK
          LET l_prog_t = g_prog
          LET g_prog = 'apmt540'
          CALL cl_flow_notify(l_pmm01,'I')
          LET g_prog = l_prog_t
-         CALL cl_err(l_pmm01,'axm-560',1)                                   #FUN-870033                
+         CALL cl_err(l_pmm01,'axm-560',1)                                   #FUN-870033
    ELSE
          ROLLBACK WORK
    END IF
- 
+
 END FUNCTION
- 
+
 FUNCTION t400sub_ins_pmm(p_slip,p_ima54,l_oea)
    DEFINE p_ima54  LIKE ima_file.ima54
    DEFINE l_pmm    RECORD LIKE pmm_file.*
-   DEFINE li_result LIKE type_file.num5  
+   DEFINE li_result LIKE type_file.num5
    DEFINE l_t1     LIKE type_file.chr5
    DEFINE l_oea    RECORD LIKE oea_file.*
    DEFINE p_slip   LIKE type_file.chr5
-   
+
    WHENEVER ERROR CONTINUE                #忽略一切錯誤  #FUN-730012
    INITIALIZE l_pmm.* TO NULL
-          
+
    CALL s_check_no("apm",p_slip,"","2","pmm_file","pmm01","") #FUN-730018
       RETURNING li_result,l_pmm.pmm01
    CALL s_auto_assign_no("apm",l_pmm.pmm01,g_today,"","pmm_file","pmm01","","","")             #No.FUN-560132
@@ -1738,7 +1767,7 @@ FUNCTION t400sub_ins_pmm(p_slip,p_ima54,l_oea)
    LET l_pmm.pmm09 = p_ima54     #供應商
    SELECT pmc15,pmc16,pmc17,pmc47,pmc49,pmc22 #CHI-A50045 add pmc22
      INTO l_pmm.pmm10,l_pmm.pmm11,l_pmm.pmm20,l_pmm.pmm21,l_pmm.pmm41,l_pmm.pmm22  #CHI-A50045 add l_pmm.pmm22
-     FROM pmc_file 
+     FROM pmc_file
    WHERE pmc01 = p_ima54 AND pmc30 IN ('1','3')
    LET l_pmm.pmm12 = g_user      #採購員
    LET l_pmm.pmm13 = g_grup      #採購部門
@@ -1746,11 +1775,11 @@ FUNCTION t400sub_ins_pmm(p_slip,p_ima54,l_oea)
   #LET l_pmm.pmm22 = l_oea.oea23 #幣別  #CHI-A50045 mark
    LET l_pmm.pmm25 = '0'         #狀況碼:開立
    LET l_pmm.pmm26 = ''          #理由碼
-   LET l_pmm.pmm27 = g_today     #異動日 
+   LET l_pmm.pmm27 = g_today     #異動日
    LET l_pmm.pmm30 = 'N'         #收貨單列印否
    LET l_pmm.pmm40 = 0           #總金額
    LET l_pmm.pmm401= 0           #代買總金額
-   LET l_pmm.pmm40t= 0           #含稅總金額     
+   LET l_pmm.pmm40t= 0           #含稅總金額
   #LET l_pmm.pmm42 = l_oea.oea24 #匯率  #CHI-A50045 mark
    #CHI-A50045 add --start--
    CALL s_curr3(l_pmm.pmm22,l_pmm.pmm04,g_sma.sma904)
@@ -1766,13 +1795,13 @@ FUNCTION t400sub_ins_pmm(p_slip,p_ima54,l_oea)
    #MOD-B50152 add --start--
    LET l_pmm.pmm901 = 'N'         #多角貿易採購單
    LET l_pmm.pmm902 = ' '         #最終採購單否
-   LET l_pmm.pmm905 = 'N'         #多角貿易拋轉否 
+   LET l_pmm.pmm905 = 'N'         #多角貿易拋轉否
    LET l_pmm.pmm906 = ' '         #多角貿易來源採購單
    #MOD-B50152 add --end--
    LET l_pmm.pmm909 = '3'        #資料來源:由訂單轉入
    LET l_pmm.pmm99 = ''            #MOD-810063 add
    LET l_t1=s_get_doc_no(l_pmm.pmm01) #FUN-730018
-   SELECT smyapr,smysign INTO l_pmm.pmmmksg,l_pmm.pmmsign   
+   SELECT smyapr,smysign INTO l_pmm.pmmmksg,l_pmm.pmmsign
        FROM smy_file
      WHERE smyslip = l_t1    #FUN-730018
    IF SQLCA.sqlcode OR cl_null(l_pmm.pmmmksg) THEN
@@ -1783,7 +1812,7 @@ FUNCTION t400sub_ins_pmm(p_slip,p_ima54,l_oea)
    LET l_pmm.pmmsseq = 0         #應簽順序
    LET l_pmm.pmmprno = 0         #列印次數
    LET l_pmm.pmmsseq = 0         #已簽順序
-   LET l_pmm.pmmprsw = 'Y'       #列印控制 
+   LET l_pmm.pmmprsw = 'Y'       #列印控制
    CALL signm_count(l_pmm.pmmsign) RETURNING l_pmm.pmmsmax
    LET l_pmm.pmmacti ='Y'        #有效的資料
    LET l_pmm.pmmuser = g_user    #使用者
@@ -1798,27 +1827,27 @@ FUNCTION t400sub_ins_pmm(p_slip,p_ima54,l_oea)
    LET l_pmm.pmmorig = g_grup      #No.FUN-980030 10/01/04
    INSERT INTO pmm_file VALUES(l_pmm.*)     #DISK WRITE
    IF SQLCA.sqlcode OR SQLCA.sqlerrd[3]=0 THEN
-       CALL cl_err3("ins","pmm_file",l_pmm.pmm01,"",SQLCA.sqlcode,"","ins pmm",1)  
+       CALL cl_err3("ins","pmm_file",l_pmm.pmm01,"",SQLCA.sqlcode,"","ins pmm",1)
        LET g_success = 'N'
-   END IF         
+   END IF
    RETURN l_pmm.pmm01
-END FUNCTION      
- 
+END FUNCTION
+
 FUNCTION t400sub_ins_pmn_exp(l_pmm01,l_ima54,l_oea,l_wc)   #MOD-870269
  DEFINE l_pmm01  LIKE pmm_file.pmm01,
-        l_ima54  LIKE ima_file.ima54   
+        l_ima54  LIKE ima_file.ima54
  DEFINE l_oeo    RECORD LIKE oeo_file.*
- DEFINE l_oeb03  LIKE oeb_file.oeb03  
+ DEFINE l_oeb03  LIKE oeb_file.oeb03
  DEFINE l_qty    LIKE oeb_file.oeb12
- DEFINE l_oeb01  LIKE oeb_file.oeb01  
+ DEFINE l_oeb01  LIKE oeb_file.oeb01
  DEFINE l_oeb    RECORD LIKE oeb_file.*
  DEFINE l_oea    RECORD LIKE oea_file.*
  DEFINE l_sql    STRING   #MOD-870269
  DEFINE l_wc     LIKE type_file.chr1000   #MOD-870269
- 
+
  WHENEVER ERROR CONTINUE                #忽略一切錯誤  #FUN-730012
- 
- LET l_oeb03=0   
+
+ LET l_oeb03=0
  LET l_sql = "SELECT oeb_file.* FROM oeb_file,ima_file",
              "   WHERE oeb01 = '",l_oea.oea01,"'",
              "     AND oeb1003!='2'",
@@ -1826,7 +1855,7 @@ FUNCTION t400sub_ins_pmn_exp(l_pmm01,l_ima54,l_oea,l_wc)   #MOD-870269
              "     AND ",l_wc,
              "     ORDER BY oeb03 "    #FUN-B90101
  PREPARE t400sub_oeb_pre2 FROM l_sql
- DECLARE t400sub_oeb_curs2 CURSOR FOR t400sub_oeb_pre2 
+ DECLARE t400sub_oeb_curs2 CURSOR FOR t400sub_oeb_pre2
    FOREACH t400sub_oeb_curs2 INTO l_oeb.*
          IF SQLCA.sqlcode THEN
             CALL s_errmsg('','',"foreach:",SQLCA.sqlcode,1) #No.FUN-710046
@@ -1834,13 +1863,13 @@ FUNCTION t400sub_ins_pmn_exp(l_pmm01,l_ima54,l_oea,l_wc)   #MOD-870269
             EXIT FOREACH
          END IF
          LET l_oeb03 = l_oeb03+1
-         CALL t400sub_ins_pmn(l_pmm01,l_oeb.oeb01,l_oeb03,l_oeb.oeb03,l_oeb.oeb04,   
+         CALL t400sub_ins_pmn(l_pmm01,l_oeb.oeb01,l_oeb03,l_oeb.oeb03,l_oeb.oeb04,
                            l_oeb.oeb05_fac,l_oeb.oeb12,l_oeb.oeb15,
                            l_oeb.oeb05,l_oeb.oeb06,
                            l_oeb.oeb910,l_oeb.oeb911,l_oeb.oeb912,
                            l_oeb.oeb913,l_oeb.oeb914,l_oeb.oeb915,
                            l_oeb.oeb916,l_oeb.oeb917,l_ima54,l_oeb.* #FUN-730018
-                           ) 
+                           )
          DECLARE oeo_cus2 CURSOR FOR
              SELECT *
                FROM oeo_file
@@ -1865,31 +1894,31 @@ FUNCTION t400sub_ins_pmn_exp(l_pmm01,l_ima54,l_oea,l_wc)   #MOD-870269
          CALL t400sub_upd_pmm_amount(l_pmm01)
       END IF
 END FUNCTION
- 
+
 FUNCTION t400sub_upd_pmm_amount(l_pmm01)
   DEFINE l_pmm01  LIKE pmm_file.pmm01
   DEFINE l_tot_pmm40   LIKE pmm_file.pmm40,
          l_tot_pmm40t  LIKE pmm_file.pmm40t
   DEFINE l_pmm22  LIKE pmm_file.pmm22
   DEFINE t_azi04  LIKE azi_file.azi04
- 
+
   SELECT pmm22 INTO l_pmm22 FROM pmm_file WHERE pmm01 = l_pmm01
- 
+
   SELECT SUM(pmn88),SUM(pmn88t)
     INTO l_tot_pmm40,l_tot_pmm40t
     FROM pmn_file
    WHERE pmn01 = l_pmm01
   IF SQLCA.sqlcode OR l_tot_pmm40 IS NULL THEN
      LET l_tot_pmm40 = 0
-     LET l_tot_pmm40t= 0   
+     LET l_tot_pmm40t= 0
   END IF
- 
+
   SELECT azi04 INTO t_azi04 FROM azi_file
    WHERE azi01 = l_pmm22 AND aziacti = 'Y'
- 
-  CALL cl_digcut(l_tot_pmm40,t_azi04) RETURNING l_tot_pmm40  
-  CALL cl_digcut(l_tot_pmm40t,t_azi04) RETURNING l_tot_pmm40t  
- 
+
+  CALL cl_digcut(l_tot_pmm40,t_azi04) RETURNING l_tot_pmm40
+  CALL cl_digcut(l_tot_pmm40t,t_azi04) RETURNING l_tot_pmm40t
+
   UPDATE pmm_file SET pmm40 = l_tot_pmm40,  #未稅總金額
                       pmm40t= l_tot_pmm40t  #含稅總金額
     WHERE pmm01 = l_pmm01
@@ -1898,7 +1927,7 @@ FUNCTION t400sub_upd_pmm_amount(l_pmm01)
       LET g_success = 'N'
   END IF
 END FUNCTION
- 
+
 FUNCTION t400sub_pmn_ini(p_pmm01)
   DEFINE p_pmm01 LIKE pmm_file.pmm01,
          l_pmm02 LIKE pmm_file.pmm02,
@@ -1906,24 +1935,24 @@ FUNCTION t400sub_pmn_ini(p_pmm01)
          l_pmm25 LIKE pmm_file.pmm25,
          l_pmn   RECORD LIKE pmn_file.*,
          l_pmm13 LIKE pmm_file.pmm13
-  
-  
+
+
    SELECT pmm02,pmm25,pmm05,pmm13 INTO l_pmm02,l_pmm25,l_pmm05,l_pmm13
      FROM pmm_file WHERE pmm01 = p_pmm01
-   LET l_pmn.pmn01  = p_pmm01               
+   LET l_pmn.pmn01  = p_pmm01
    LET l_pmn.pmn011 = 'REG'
    LET l_pmn.pmn05  = NULL
    LET l_pmn.pmn11  = 'N'
    LET l_pmn.pmn122 = l_pmm05
    LET l_pmn.pmn13  = 0
-   LET l_pmn.pmn14  = g_sma.sma886[1,1]     
+   LET l_pmn.pmn14  = g_sma.sma886[1,1]
    LET l_pmn.pmn15  = g_sma.sma886[2,2]
    LET l_pmn.pmn16  = l_pmm25
    LET l_pmn.pmn18  = ''
    LET l_pmn.pmn32  = 0
    LET l_pmn.pmn38  ='Y'
    LET l_pmn.pmn42  ='0'
-   LET l_pmn.pmn43  = 0                  
+   LET l_pmn.pmn43  = 0
    LET l_pmn.pmn431 = 0
    LET l_pmn.pmn45  = NULL
    LET l_pmn.pmn46  = 0
@@ -1943,13 +1972,13 @@ FUNCTION t400sub_pmn_ini(p_pmm01)
    LET l_pmn.pmn930 = s_costcenter(l_pmm13)
    RETURN l_pmn.*
 END FUNCTION
- 
+
 FUNCTION t400sub_ins_pmn(p_pmm01, p_oeb01, p_oeb03, p_oeb03_t,p_oeb04, p_oeb05_fac,
-                            p_oeb12, p_oeb15, p_oeb05, p_oeb06, p_oeb910,  
+                            p_oeb12, p_oeb15, p_oeb05, p_oeb06, p_oeb910,
                             p_oeb911,p_oeb912,p_oeb913,p_oeb914,p_oeb915,
                             p_oeb916,p_oeb917,p_ima54,l_oeb)
   DEFINE p_pmm01     LIKE pmm_file.pmm01,
-         p_oeb01     LIKE oeb_file.oeb01,    
+         p_oeb01     LIKE oeb_file.oeb01,
          p_oeb03     LIKE oeb_file.oeb03,
          p_oeb03_t   LIKE oeb_file.oeb03,
          p_oeb04     LIKE oeb_file.oeb04,
@@ -1958,8 +1987,8 @@ FUNCTION t400sub_ins_pmn(p_pmm01, p_oeb01, p_oeb03, p_oeb03_t,p_oeb04, p_oeb05_f
          p_oeb06     LIKE oeb_file.oeb06,
          p_oeb12     LIKE oeb_file.oeb12,
          p_oeb15     LIKE oeb_file.oeb15,
-         p_oeb28     LIKE oeb_file.oeb28,    
-         p_oeb24     LIKE oeb_file.oeb24,    
+         p_oeb28     LIKE oeb_file.oeb28,
+         p_oeb24     LIKE oeb_file.oeb24,
          p_oeb910    LIKE oeb_file.oeb910,
          p_oeb911    LIKE oeb_file.oeb911,
          p_oeb912    LIKE oeb_file.oeb912,
@@ -1985,19 +2014,19 @@ FUNCTION t400sub_ins_pmn(p_pmm01, p_oeb01, p_oeb03, p_oeb03_t,p_oeb04, p_oeb05_f
          l_ima46     LIKE ima_file.ima46,
          l_ima49     LIKE ima_file.ima49,
          l_ima491    LIKE ima_file.ima491,
-         l_ima913    LIKE ima_file.ima913,   
-         l_ima914    LIKE ima_file.ima914,   
-         l_pmm09     LIKE pmm_file.pmm09,   
-         l_pmm22     LIKE pmm_file.pmm22,   
-         l_pmm04     LIKE pmm_file.pmm04,   
-         l_pmm21     LIKE pmm_file.pmm21,   
-         l_pmm42     LIKE pmm_file.pmm42,   
-         l_pmm43     LIKE pmm_file.pmm43,   
+         l_ima913    LIKE ima_file.ima913,
+         l_ima914    LIKE ima_file.ima914,
+         l_pmm09     LIKE pmm_file.pmm09,
+         l_pmm22     LIKE pmm_file.pmm22,
+         l_pmm04     LIKE pmm_file.pmm04,
+         l_pmm21     LIKE pmm_file.pmm21,
+         l_pmm42     LIKE pmm_file.pmm42,
+         l_pmm43     LIKE pmm_file.pmm43,
          l_pmm51     LIKE pmm_file.pmm51,    #No.FUN-870007
          l_pmmplant  LIKE pmm_file.pmmplant, #No.FUN-870007
          l_pmmlegal  LIKE pmm_file.pmmlegal, #No.FUN-870007
-         l_pan       LIKE type_file.num10,   
-         l_double    LIKE type_file.num10    
+         l_pan       LIKE type_file.num10,
+         l_double    LIKE type_file.num10
   DEFINE t_azi03     LIKE azi_file.azi03,
          t_azi04     LIKE azi_file.azi04
   DEFINE l_pmn       RECORD LIKE pmn_file.*
@@ -2007,17 +2036,17 @@ FUNCTION t400sub_ins_pmn(p_pmm01, p_oeb01, p_oeb03, p_oeb03_t,p_oeb04, p_oeb05_f
          l_flag      LIKE type_file.chr1     #MOD-920385
   DEFINE l_pmm20 LIKE pmm_file.pmm20                #No.FUN-930148
   DEFINE l_pmm41 LIKE pmm_file.pmm41                #No.FUN-930148
- 
+
    CALL t400sub_pmn_ini(p_pmm01) RETURNING l_pmn.*  #FUN-730018
- 
+
    IF p_oeb04[1,4] <> "MISC" THEN
     #   SELECT ima01,ima02,ima05,ima25,ima262,ima27,ima44,ima44_fac, #FUN-A20044
        SELECT ima01,ima02,ima05,ima25,0,ima27,ima44,ima44_fac, #FUN-A20044
               ima45,ima46,ima49,ima491,
-              ima913,ima914,ima15,ima35,ima36         
+              ima913,ima914,ima15,ima35,ima36
          INTO l_ima01,l_ima02,l_ima05,l_ima25,l_avl_stk,l_ima27,
               l_ima44,l_ima44_fac,l_ima45,l_ima46,l_ima49,l_ima491,
-              l_ima913,l_ima914,l_ima15,l_ima35,l_ima36       
+              l_ima913,l_ima914,l_ima15,l_ima35,l_ima36
          FROM ima_file
         WHERE ima01 = p_oeb04
         CALL s_getstock(p_oeb04,g_plant) RETURNING l_avl_stk_mpsmrp,l_unavl_stk,l_avl_stk
@@ -2038,7 +2067,7 @@ FUNCTION t400sub_ins_pmn(p_pmm01, p_oeb01, p_oeb03, p_oeb03_t,p_oeb04, p_oeb05_f
        IF cl_null(l_pmn.pmn09) THEN LET l_pmn.pmn09=1 END IF
        #先將訂單數量轉換成採購單位數量
        LET l_pmn.pmn121= 1
- 
+
       LET p_oeb12 = p_oeb12 * p_oeb05_fac / l_pmn.pmn09   #MOD-920385
       #CHI-A80006 add --start--
       LET p_oeb28=0
@@ -2064,7 +2093,7 @@ FUNCTION t400sub_ins_pmn(p_pmm01, p_oeb01, p_oeb03, p_oeb03_t,p_oeb04, p_oeb05_f
                    ELSE
                        LET l_pan=(p_oeb12*1000) -(l_pan*(l_ima45*1000))
                    END IF
- 
+
                    IF l_pan !=0 THEN
                        LET l_double = (p_oeb12/l_ima45) + 1
                    ELSE
@@ -2080,8 +2109,8 @@ FUNCTION t400sub_ins_pmn(p_pmm01, p_oeb01, p_oeb03, p_oeb03_t,p_oeb04, p_oeb05_f
            LET l_pmn.pmn20 = 0
        END IF
        LET l_pmn.pmn35 = p_oeb15                 #到庫日期
-       CALL s_aday(l_pmn.pmn35,-1,l_ima491) RETURNING l_pmn.pmn34 
-       CALL s_aday(l_pmn.pmn34,-1,l_ima49) RETURNING l_pmn.pmn33 
+       CALL s_aday(l_pmn.pmn35,-1,l_ima491) RETURNING l_pmn.pmn34
+       CALL s_aday(l_pmn.pmn34,-1,l_ima49) RETURNING l_pmn.pmn33
        LET l_pmn.pmn52 = l_ima35
        LET l_pmn.pmn53 = 0
        LET l_pmn.pmn54 = l_ima36
@@ -2096,22 +2125,22 @@ FUNCTION t400sub_ins_pmn(p_pmm01, p_oeb01, p_oeb03, p_oeb03_t,p_oeb04, p_oeb05_f
        LET l_pmn.pmn09 = 1
        LET l_pmn.pmn20 = p_oeb12
        LET l_pmn.pmn35 = p_oeb15
-       CALL s_aday(l_pmn.pmn35,-1,l_ima491) RETURNING l_pmn.pmn34 
-       CALL s_aday(l_pmn.pmn34,-1,l_ima49) RETURNING l_pmn.pmn33  
+       CALL s_aday(l_pmn.pmn35,-1,l_ima491) RETURNING l_pmn.pmn34
+       CALL s_aday(l_pmn.pmn34,-1,l_ima49) RETURNING l_pmn.pmn33
    END IF
- 
+
    LET l_pmn.pmn122 = l_oeb.oeb41
    LET l_pmn.pmn96  = l_oeb.oeb42
    LET l_pmn.pmn97  = l_oeb.oeb43
 #  LET l_pmn.pmn98  = l_oeb.oeb1001  #MOD-C30368 mark
-   
-   SELECT imb118 INTO l_pmn.pmn30 FROM imb_file WHERE imb01 = l_pmn.pmn04 
+
+   SELECT imb118 INTO l_pmn.pmn30 FROM imb_file WHERE imb01 = l_pmn.pmn04
     SELECT pmm09,pmm22,pmm04,pmm21,pmm43,pmm42,pmm51,pmm41,pmm20,pmmplant,pmmlegal   #FUN-B90101 add pmm41,pmm20
-     INTO l_pmm09,l_pmm22,l_pmm04,l_pmm21,l_pmm43,l_pmm42,l_pmm51,l_pmm41,l_pmm20,   #FUN-B90101 add l_pmm41,l_pmm20 
+     INTO l_pmm09,l_pmm22,l_pmm04,l_pmm21,l_pmm43,l_pmm42,l_pmm51,l_pmm41,l_pmm20,   #FUN-B90101 add l_pmm41,l_pmm20
           l_pmmplant,l_pmmlegal
      FROM pmm_file
     WHERE pmm01 = p_pmm01
- 
+
    LET l_pmn.pmn80 = p_oeb910
    LET l_pmn.pmn81 = p_oeb911
    LET l_pmn.pmn82 = p_oeb912
@@ -2126,25 +2155,25 @@ FUNCTION t400sub_ins_pmn(p_pmm01, p_oeb01, p_oeb03, p_oeb03_t,p_oeb04, p_oeb05_f
    LET g_pmn.* = l_pmn.*
    CALL t400_set_pmn87()
    LET l_pmn.pmn87=g_pmn.pmn87
- 
-   
+
+
    CALL s_defprice_new(l_pmn.pmn04,l_pmm09,l_pmm22,l_pmm04,l_pmn.pmn87,'',l_pmm21,l_pmm43,'1',l_pmn.pmn86,'',
                    l_pmm41,l_pmm20,g_plant)
        RETURNING l_pmn.pmn31,l_pmn.pmn31t,
-                 l_pmn.pmn73,l_pmn.pmn74   #TQC-AC0257 add              
- 
+                 l_pmn.pmn73,l_pmn.pmn74   #TQC-AC0257 add
+
    IF cl_null(l_pmn.pmn31)  THEN LET l_pmn.pmn31  = 0 END IF
    IF cl_null(l_pmn.pmn31t) THEN LET l_pmn.pmn31t = 0 END IF
-   SELECT pmh04,pmh07 
-    INTO l_pmn.pmn06,l_pmn.pmn123 
+   SELECT pmh04,pmh07
+    INTO l_pmn.pmn06,l_pmn.pmn123
     FROM pmh_file
    WHERE pmh01=l_ima01 and pmh02= p_ima54
-     AND pmh21 = " "                                             #CHI-860042                                                        
+     AND pmh21 = " "                                             #CHI-860042
      AND pmh22 = '1'                                             #CHI-860042
      AND pmh23 = ' '                                             #No.CHI-960033
      AND pmhacti = 'Y'                                           #CHI-910021
- 
-   SELECT pml01,pml02,pml66,pml67 
+
+   SELECT pml01,pml02,pml66,pml67
      INTO l_pmn.pmn24,l_pmn.pmn25,l_pmn.pmn66,l_pmn.pmn67
      FROM pml_file
     WHERE pml24=p_oeb01 AND pml25 = p_oeb03
@@ -2152,16 +2181,16 @@ FUNCTION t400sub_ins_pmn(p_pmm01, p_oeb01, p_oeb03, p_oeb03_t,p_oeb04, p_oeb05_f
    LET l_pmn.pmn69 = ''   #MOD-740282
    LET l_pmn.pmn70 = 0
    LET l_pmn.pmn71 = ''
- 
-   SELECT azi03,azi04 INTO t_azi03,t_azi04 FROM azi_file     
+
+   SELECT azi03,azi04 INTO t_azi03,t_azi04 FROM azi_file
                   WHERE azi01 = l_pmm22  AND aziacti= 'Y'
- 
+
    LET l_pmn.pmn44 = cl_digcut(l_pmn.pmn31*l_pmm42,g_azi03)
 #  LET l_pmn.pmn88 = cl_digcut(l_pmn.pmn31*l_pmn.pmn20,t_azi04)     #CHI-B70039 mark
 #  LET l_pmn.pmn88t = cl_digcut(l_pmn.pmn31t*l_pmn.pmn20,t_azi04)   #CHI-B70039 mark
    LET l_pmn.pmn88 = cl_digcut(l_pmn.pmn87*l_pmn.pmn31,t_azi04)     #CHI-B70039
    LET l_pmn.pmn88t = cl_digcut(l_pmn.pmn87*l_pmn.pmn31t,t_azi04)   #CHI-B70039
- 
+
    LET l_pmn.pmn24 = p_oeb01
    LET l_pmn.pmn25 = p_oeb03_t
    IF cl_null(l_pmn.pmn02) THEN LET l_pmn.pmn02 = 0 END IF   #TQC-790002 add
@@ -2190,7 +2219,7 @@ FUNCTION t400sub_ins_pmn(p_pmm01, p_oeb01, p_oeb03, p_oeb03_t,p_oeb04, p_oeb05_f
          END IF
       END IF
    END IF
-    SELECT SUM(pmn20) INTO l_pmn.pmn20 
+    SELECT SUM(pmn20) INTO l_pmn.pmn20
       FROM pmm_file,pmn_file
      WHERE pmn24 = l_pmn.pmn24
        AND pmn25 = l_pmn.pmn25
@@ -2202,12 +2231,12 @@ FUNCTION t400sub_ins_pmn(p_pmm01, p_oeb01, p_oeb03, p_oeb03_t,p_oeb04, p_oeb05_f
                  WHERE oeb01 = p_oeb01
                    AND oeb03 = p_oeb03_t  #No.TQC-950014 add
    IF SQLCA.sqlcode THEN
-      LET g_showmsg=p_oeb01,"/",p_oeb03       
+      LET g_showmsg=p_oeb01,"/",p_oeb03
       CALL s_errmsg("oeb01,oeb03",g_showmsg,"UPD oeb_file",SQLCA.sqlcode,1)
       LET g_success = 'N'
    END IF
 END FUNCTION
- 
+
 #FUN-B90101--add--begin--
 FUNCTION t400sub_ins_pmnslk_exp(l_pmm01,l_oea01)   #自動產生款號單身
  DEFINE l_pmnslk  RECORD  LIKE pmnslk_file.*
@@ -2215,11 +2244,11 @@ FUNCTION t400sub_ins_pmnslk_exp(l_pmm01,l_oea01)   #自動產生款號單身
  DEFINE l_pmn04           LIKE pmn_file.pmn04
  DEFINE l_pmm01           LIKE pmm_file.pmm01
  DEFINE l_oebslk  RECORD  LIKE oebslk_file.*
- DEFINE l_oea01           LIKE oea_file.oea01 
+ DEFINE l_oea01           LIKE oea_file.oea01
 
    DECLARE t400_g_pmnslk CURSOR FOR SELECT * FROM oebslk_file
                                      WHERE oebslk01=l_oea01
-                                     ORDER BY oebslk03    
+                                     ORDER BY oebslk03
 
    FOREACH t400_g_pmnslk INTO l_oebslk.*
       LET l_pmnslk.pmnslk01=l_pmm01
@@ -2308,7 +2337,7 @@ FUNCTION t400sub_ins_pmnslk_exp(l_pmm01,l_oea01)   #自動產生款號單身
          END IF
       END IF
 
-   END FOREACH  
+   END FOREACH
 
 # DECLARE t400_g_pmnslk CURSOR FOR SELECT MIN(pmn02),SUM(pmn20),SUM(pmn88),SUM(pmn88t)
 #                                    FROM pmn_file,pmni_file,imx_file
@@ -2345,7 +2374,7 @@ FUNCTION t400sub_ins_pmnslk_exp(l_pmm01,l_oea01)   #自動產生款號單身
 #    END IF
 #    IF cl_null(l_pmnslk.pmnslk31t) THEN
 #       LET l_pmnslk.pmnslk31t = 0
-#    END IF  
+#    END IF
 #    INSERT INTO pmnslk_file VALUES(l_pmnslk.*)
 #    IF STATUS THEN
 #       CALL cl_err3("ins","pmnslk_file","","",SQLCA.sqlcode,"","ins pmnslk",1)
@@ -2375,12 +2404,12 @@ FUNCTION t400sub_ins_pmlslk_exp(l_pmk01,l_oea01)   #自動產生款號單身
   DEFINE l_pml02           LIKE pml_file.pml02
   DEFINE l_pml04           LIKE pml_file.pml04
   DEFINE l_pmk01           LIKE pmk_file.pmk01
-  DEFINE l_oea01           LIKE oea_file.oea01   
+  DEFINE l_oea01           LIKE oea_file.oea01
   DEFINE l_oebslk  RECORD  LIKE oebslk_file.*
-   
+
    DECLARE t400_g_pmlslk CURSOR FOR SELECT * FROM oebslk_file
                                      WHERE oebslk01=l_oea01
-                                     ORDER BY oebslk03      
+                                     ORDER BY oebslk03
    FOREACH t400_g_pmlslk INTO l_oebslk.*
       LET l_pmlslk.pmlslk01=l_pmk01
       SELECT MAX(pmlslk02)+1 INTO l_pmlslk.pmlslk02 FROM pmlslk_file WHERE pmlslk01=l_pmk01
@@ -2409,10 +2438,10 @@ FUNCTION t400sub_ins_pmlslk_exp(l_pmk01,l_oea01)   #自動產生款號單身
       IF cl_null(l_pmlslk.pmlslk20) THEN
          CONTINUE FOREACH
       END IF
- 
+
       LET l_pmlslk.pmlslk88 = cl_digcut(l_pmlslk.pmlslk88,t_azi04)
       LET l_pmlslk.pmlslk88t= cl_digcut(l_pmlslk.pmlslk88t,t_azi04)
- 
+
       SELECT pml07,pml08,pml30,pml31,pml33,pml34,pml35,pml44,
              pml31t,pml190,pml191,pml192,pml930,pml90,pml50
         INTO l_pmlslk.pmlslk07,l_pmlslk.pmlslk08,
@@ -2479,7 +2508,7 @@ FUNCTION t400sub_ins_pmlslk_exp(l_pmk01,l_oea01)   #自動產生款號單身
   #要回寫每張訂單的己拋量和請購單號
       UPDATE oebslk_file SET oebslk28 = l_pmlslk.pmlslk20
                    WHERE oebslk01 = l_pmlslk.pmlslk24
-                     AND oebslk03 = l_pmlslk.pmlslk25     
+                     AND oebslk03 = l_pmlslk.pmlslk25
 
    END FOREACH
 
@@ -2511,7 +2540,7 @@ FUNCTION t400sub_ins_pmlslk_exp(l_pmk01,l_oea01)   #自動產生款號單身
 #       FROM pml_file
 #      WHERE pml01=l_pmk01 AND pml02=l_pml02
 
-#     SELECT DISTINCT oebislk03 INTO l_pmlslk.pmlslk25 FROM oebi_file 
+#     SELECT DISTINCT oebislk03 INTO l_pmlslk.pmlslk25 FROM oebi_file
 #        WHERE oebi01=l_pmlslk.pmlslk24 AND oebi03=l_pmlslk.pmlslk25
 #     IF cl_null(l_pmlslk.pmlslk30) THEN
 #        LET l_pmlslk.pmlslk30=0
@@ -2524,7 +2553,7 @@ FUNCTION t400sub_ins_pmlslk_exp(l_pmk01,l_oea01)   #自動產生款號單身
 #     END IF
 #     IF cl_null(l_pmlslk.pmlslk44) THEN
 #        LET l_pmlslk.pmlslk44=0
-#     END IF 
+#     END IF
 #     INSERT INTO pmlslk_file VALUES(l_pmlslk.*)
 #     IF STATUS THEN
 #        CALL cl_err3("ins","pmlslk_file","","",SQLCA.sqlcode,"","ins pmlslk",1)
@@ -2552,28 +2581,28 @@ FUNCTION t400sub_ins_pmlslk_exp(l_pmk01,l_oea01)   #自動產生款號單身
 #        AND pmlslk01 = pmk01
 #        AND pmk18 <> 'X'
 # #要回寫每張訂單的己拋量和請購單號
-#     UPDATE oebslk_file SET oebslk28 = l_pmlslk.pmlslk20 
-#                  WHERE oebslk01 = l_pmlslk.pmlslk24 
+#     UPDATE oebslk_file SET oebslk28 = l_pmlslk.pmlslk20
+#                  WHERE oebslk01 = l_pmlslk.pmlslk24
 #                    AND oebslk03 = l_pmlslk.pmlslk25
 #  END FOREACH
-   
+
 END FUNCTION
 #FUN-B90101--add--end--
- 
+
 FUNCTION t400sub_exp(p_oea01,p_tag,p_buf)   #TQC-730022
   DEFINE p_oea01  LIKE oea_file.oea01,   #TQC-730022
          p_tag    LIKE type_file.chr1,   #TQC-730022
          l_buf    LIKE oay_file.oayslip, #TQC-730022
          p_buf    LIKE oay_file.oayslip  #TQC-730022
   DEFINE l_pmk RECORD LIKE pmk_file.*     #TQC-730022
- 
+
   DEFINE l_pmk01  LIKE pmk_file.pmk01,
          l_oea40  LIKE oea_file.oea40
   DEFINE l_oeb12  LIKE oeb_file.oeb12
   DEFINE l_oeb28  LIKE oeb_file.oeb28
   DEFINE l_oeb24  LIKE oeb_file.oeb24
   DEFINE l_oeb03  LIKE oeb_file.oeb03  #TQC-730022
-  DEFINE l_sql    STRING 
+  DEFINE l_sql    STRING
   DEFINE l_cnt    LIKE type_file.num5    #No.FUN-680137 SMALLINT
   DEFINE l_cnt1   LIKE type_file.num5    #No.CHI-840016
   DEFINE tm RECORD
@@ -2581,14 +2610,14 @@ FUNCTION t400sub_exp(p_oea01,p_tag,p_buf)   #TQC-730022
          oeb01    LIKE oeb_file.oeb01,
          oeb03    LIKE oeb_file.oeb03,
          slip     LIKE oay_file.oayslip  #No.FUN-680137 VARCHAR(5)
-         END RECORD 
+         END RECORD
   DEFINE l_slip  LIKE oay_file.oayslip #FUN-730018
   DEFINE l_prog_t STRING
   DEFINE l_oea   RECORD LIKE oea_file.*
   DEFINE l_gfa   RECORD LIKE gfa_file.*
   DEFINE p_row,p_col LIKE type_file.num5
   DEFINE li_cnt   LIKE type_file.num5     #No.FUN-870033
-  DEFINE li_success   STRING              #No.FUN-870033  
+  DEFINE li_success   STRING              #No.FUN-870033
   DEFINE l_chr    STRING              #No.FUN-A80012
   DEFINE l_oeb04  LIKE oeb_file.oeb04  #CHI-A80006 add
   DEFINE l_oeb05  LIKE oeb_file.oeb05  #CHI-A80006 add
@@ -2597,11 +2626,11 @@ FUNCTION t400sub_exp(p_oea01,p_tag,p_buf)   #TQC-730022
   DEFINE l_flag   LIKE type_file.num5  #CHI-A80006 add
   DEFINE l_fac    LIKE img_file.img21  #CHI-A80006 add
   DEFINE l_t      LIKE type_file.num5  #TQC-BC0172 add
-  DEFINE l_n      LIKE type_file.num5,  #TQC-C80019  
-         p_flag   LIKE type_file.chr1 
+  DEFINE l_n      LIKE type_file.num5,  #TQC-C80019
+         p_flag   LIKE type_file.chr1
   DEFINE li_result LIKE type_file.num5  #MOD-C90187 add
   WHENEVER ERROR CONTINUE                #忽略一切錯誤  #FUN-730018
- 
+
    #重新讀取資料
    SELECT * INTO l_oea.* FROM oea_file
     WHERE oea01=p_oea01
@@ -2616,7 +2645,7 @@ FUNCTION t400sub_exp(p_oea01,p_tag,p_buf)   #TQC-730022
          AND gfaacti = 'Y'
      IF cl_null(l_gfa.gfa05) THEN RETURN END IF  #如果無設定單據自動化的資料就不再往下執行
    END IF
- 
+
    IF cl_null(l_oea.oea01) THEN RETURN END IF
    IF l_oea.oea00 = '0' AND l_oea.oea00="A" THEN RETURN END IF  #No.FUN-610053
    IF l_oea.oeaconf = 'X' THEN CALL cl_err('',9024,0) RETURN END IF
@@ -2624,9 +2653,9 @@ FUNCTION t400sub_exp(p_oea01,p_tag,p_buf)   #TQC-730022
       CALL cl_err('','axm-184',0)
       RETURN
    END IF
- 
- 
- 
+
+
+
   #此訂單已拋採購單,就不可以再次拋轉
    LET l_cnt = 0
    SELECT COUNT(*) INTO l_cnt
@@ -2638,35 +2667,35 @@ FUNCTION t400sub_exp(p_oea01,p_tag,p_buf)   #TQC-730022
        CALL cl_err('','axm-581',0)
        RETURN
    END IF
- 
-   
+
+
   # 單據自動化要產生的且為自動產生的
-   IF p_tag='A'  THEN  
+   IF p_tag='A'  THEN
      LET l_slip = l_gfa.gfa05
      LET tm.oeb01 = l_oea.oea01
      IF cl_null(p_buf) THEN
-       LET tm.slip = l_gfa.gfa05  
+       LET tm.slip = l_gfa.gfa05
      ELSE
        LET tm.slip = p_buf
      END IF
      LET tm.wc = " oeb01 = '", l_oea.oea01 CLIPPED,"'"
    ELSE
       LET p_row = 5 LET p_col = 11
- 
+
       OPEN WINDOW t400sub_exp AT p_row,p_col WITH FORM "axm/42f/axmt400e"
        ATTRIBUTE (STYLE = g_win_style CLIPPED) #No.FUN-580092 HCN
       #CALL cl_set_comp_visible("a",FALSE)    #TQC-AB0132 add  #FUN-B10047 mark
-      CALL cl_set_comp_visible("oeb01",FALSE) 
+      CALL cl_set_comp_visible("oeb01",FALSE)
       CALL cl_ui_locale("axmt400e")
-   
-   
+
+
       WHILE TRUE           #No.MOD-8B0265
       CONSTRUCT BY NAME tm.wc ON oeb01,oeb03    # 螢幕上取單頭條件
-   
+
       BEFORE CONSTRUCT
           LET tm.oeb01 = l_oea.oea01
           DISPLAY tm.oeb01 TO FORMONLY.oeb01
-   
+
          ON ACTION controlp
             CASE
                WHEN INFIELD(oea01) #查詢單据
@@ -2676,45 +2705,45 @@ FUNCTION t400sub_exp(p_oea01,p_tag,p_buf)   #TQC-730022
                     CALL cl_create_qry() RETURNING g_qryparam.multiret
                     DISPLAY g_qryparam.multiret TO oea01
                     NEXT FIELD oea01
-               WHEN INFIELD(oeb03) 
+               WHEN INFIELD(oeb03)
                     CALL q_oeb11(TRUE,TRUE,l_oea.oea01)
-                   RETURNING g_qryparam.multiret                                                                                      
+                   RETURNING g_qryparam.multiret
                     DISPLAY g_qryparam.multiret TO oeb03
             END CASE
-   
+
                 ON IDLE g_idle_seconds
                    CALL cl_on_idle()
                    CONTINUE CONSTRUCT
-   
+
                 ON ACTION about         #MOD-4C0121
                    CALL cl_about()      #MOD-4C0121
-         
+
                 ON ACTION help          #MOD-4C0121
                    CALL cl_show_help()  #MOD-4C0121
-         
+
                 ON ACTION controlg      #MOD-4C0121
                    CALL cl_cmdask()     #MOD-4C0121
-   
+
              END CONSTRUCT
- 
+
 #CHI-A80006 mark --start--
-#     #此訂單已拋請購單,就不可以再次拋轉                                         
-#      LET l_cnt = 0                                                             
-#      LET l_sql ="SELECT COUNT(*)",                                             
+#     #此訂單已拋請購單,就不可以再次拋轉
+#      LET l_cnt = 0
+#      LET l_sql ="SELECT COUNT(*)",
 #                 "  FROM pmk_file,pml_file,oeb_file",   #MOD-960202
-#                 " WHERE oeb01 = pml24",                                        
-#                 "   AND oeb03 = pml25",                                        
+#                 " WHERE oeb01 = pml24",
+#                 "   AND oeb03 = pml25",
 #                 "   AND pmk01 = pml01",   #MOD-960202
 #                 "   AND pmk18 != 'X'",    #MOD-960202
-#                 "   AND ",tm.wc                                                
-#      PREPARE t400sub_sel_pml FROM l_sql                                        
-#      EXECUTE t400sub_sel_pml INTO l_cnt                                        
-#      IF l_cnt >0  THEN                                                         
-#         CALL cl_err('','axm-001',0)                                            
+#                 "   AND ",tm.wc
+#      PREPARE t400sub_sel_pml FROM l_sql
+#      EXECUTE t400sub_sel_pml INTO l_cnt
+#      IF l_cnt >0  THEN
+#         CALL cl_err('','axm-001',0)
 #         CONTINUE WHILE   #MOD-960202
-#      ELSE                                                                      
-#         EXIT WHILE                                                             
-#      END IF         
+#      ELSE
+#         EXIT WHILE
+#      END IF
 #CHI-A80006 mark --end--
       #CHI-A80006 add --start--
       IF INT_FLAG THEN
@@ -2727,20 +2756,20 @@ FUNCTION t400sub_exp(p_oea01,p_tag,p_buf)   #TQC-730022
                  " WHERE ",tm.wc
       PREPARE t400sub_sel_oeb FROM l_sql
       EXECUTE t400sub_sel_oeb INTO l_t
-      IF l_t=0 THEN 
+      IF l_t=0 THEN
          CALL cl_err('','axm-974',1)
          CONTINUE WHILE
-      END IF            
+      END IF
       #TQC-BC0172--end
-      LET l_sql ="SELECT oeb04,oeb05,oeb12,oeb28 ",                                             
+      LET l_sql ="SELECT oeb04,oeb05,oeb12,oeb28 ",
                  "  FROM pmk_file,pml_file,oeb_file",
-                 " WHERE oeb01 = pml24",                                        
-                 "   AND oeb03 = pml25",                                        
+                 " WHERE oeb01 = pml24",
+                 "   AND oeb03 = pml25",
                  "   AND pmk01 = pml01",
                  "   AND pmk18 != 'X'",
-                 "   AND ",tm.wc                                                
-      PREPARE t400sub_sel_pml FROM l_sql                                        
-      EXECUTE t400sub_sel_pml INTO l_oeb04,l_oeb05,l_oeb12,l_oeb28                                      
+                 "   AND ",tm.wc
+      PREPARE t400sub_sel_pml FROM l_sql
+      EXECUTE t400sub_sel_pml INTO l_oeb04,l_oeb05,l_oeb12,l_oeb28
       SELECT ima25,ima44,ima906 INTO l_ima25,l_ima44
         FROM ima_file WHERE ima01=l_oeb04
       IF SQLCA.sqlcode =100 THEN
@@ -2750,22 +2779,22 @@ FUNCTION t400sub_exp(p_oea01,p_tag,p_buf)   #TQC-730022
          END IF
       END IF
       IF cl_null(l_ima44) THEN LET l_ima44 = l_ima25 END IF
-      CALL s_umfchk(l_oeb04,l_ima44,l_oeb05) RETURNING l_flag,l_fac                                                                             
+      CALL s_umfchk(l_oeb04,l_ima44,l_oeb05) RETURNING l_flag,l_fac
       IF cl_null(l_fac) THEN LET l_fac=1 END IF
       LET l_oeb28 = l_oeb28 * l_fac
       IF l_oeb12 - l_oeb28 <= 0 THEN
-         CALL cl_err('','axm-001',0)                                            
+         CALL cl_err('','axm-001',0)
          CONTINUE WHILE
-      ELSE                                                                      
+      ELSE
          EXIT WHILE
-      END IF         
+      END IF
       #CHI-A80006 add --end--
-      END WHILE    
+      END WHILE
 
       LET tm.oeb01 = l_oea.oea01
       DISPLAY tm.oeb01 TO FORMONLY.oeb01
       INPUT BY NAME tm.slip,a  #NO.FUN-670007  #FUN-B10047 add a
-        
+
          #FUN-B10047 add begin ---
          BEFORE INPUT
                LET a = 'N'
@@ -2786,13 +2815,13 @@ FUNCTION t400sub_exp(p_oea01,p_tag,p_buf)   #TQC-730022
                END IF
             END IF
             LET l_slip = tm.slip
-   
+
          IF INT_FLAG THEN
             LET INT_FLAG = 0
             CLOSE WINDOW t400sub_exp
             RETURN
          END IF
-   
+
          ON ACTION controlp
             CASE
                WHEN INFIELD(slip)
@@ -2801,31 +2830,31 @@ FUNCTION t400sub_exp(p_oea01,p_tag,p_buf)   #TQC-730022
                     NEXT FIELD slip
                OTHERWISE EXIT CASE
             END CASE
-   
-   
+
+
          ON IDLE g_idle_seconds
             CALL cl_on_idle()
             CONTINUE INPUT
-   
+
          ON ACTION about         #MOD-4C0121
             CALL cl_about()      #MOD-4C0121
-   
+
          ON ACTION help          #MOD-4C0121
             CALL cl_show_help()  #MOD-4C0121
-   
+
          ON ACTION controlg      #MOD-4C0121
             CALL cl_cmdask()     #MOD-4C0121
-   
-   
+
+
       END INPUT
-   
+
       IF INT_FLAG THEN
          LET INT_FLAG = 0
          CLOSE WINDOW t400sub_exp
          RETURN
       END IF
   END IF
- 
+
    LET g_success = 'Y'  #MOD-8A0086
    #MOD-B90127 add ----begin---------
    CREATE TEMP TABLE apm_p470(
@@ -2855,12 +2884,12 @@ FUNCTION t400sub_exp(p_oea01,p_tag,p_buf)   #TQC-730022
    LET l_oeb12 = 0
    LET l_oeb28 = 0
    LET l_oeb24 = 0
- 
+
    LET l_sql = "SELECT oeb03,oeb12,oeb28,oeb24,oeb04,oeb05 ",  #TQC-730022 add oeb03 #CHI-A80006 add oeb04,oeb05
                "  FROM oeb_file ",
                " WHERE ",tm.wc,
-               "   ORDER BY oeb03 " 
-  
+               "   ORDER BY oeb03 "
+
    PREPARE t400sub_exp_pre FROM l_sql
    IF SQLCA.sqlcode THEN CALL cl_err('t400sub_exp_pre',STATUS,1) END IF
    DECLARE t400sub_exp_c CURSOR FOR t400sub_exp_pre
@@ -2879,10 +2908,10 @@ FUNCTION t400sub_exp(p_oea01,p_tag,p_buf)   #TQC-730022
    CALL s_showmsg_init()                 #No.FUN-710046
    LET g_oeb03 = 0    #MOD-910210
    FOREACH t400sub_exp_c INTO l_oeb03,l_oeb12,l_oeb28,l_oeb24,l_oeb04,l_oeb05  #項次/訂單數量/己轉請購量/己交量/產品編號/銷售單位   #TQC-730022 add oeb03 #CHI-A80006 add oeb04,oeb05
-   IF g_success = "N" THEN                                                                                                        
-      LET g_totsuccess = "N"                                                                                                      
-      LET g_success = "Y"                                                                                                         
-   END IF                                                                                                                         
+   IF g_success = "N" THEN
+      LET g_totsuccess = "N"
+      LET g_success = "Y"
+   END IF
      #CHI-A80006 add --start--
      SELECT ima25,ima44,ima906 INTO l_ima25,l_ima44
        FROM ima_file WHERE ima01=l_oeb04
@@ -2893,7 +2922,7 @@ FUNCTION t400sub_exp(p_oea01,p_tag,p_buf)   #TQC-730022
         END IF
      END IF
      IF cl_null(l_ima44) THEN LET l_ima44 = l_ima25 END IF
-     CALL s_umfchk(l_oeb04,l_ima44,l_oeb05) RETURNING l_flag,l_fac                                                                             
+     CALL s_umfchk(l_oeb04,l_ima44,l_oeb05) RETURNING l_flag,l_fac
      IF cl_null(l_fac) THEN LET l_fac=1 END IF
      LET l_oeb28 = l_oeb28 * l_fac
      #CHI-A80006 add --end--
@@ -2901,8 +2930,8 @@ FUNCTION t400sub_exp(p_oea01,p_tag,p_buf)   #TQC-730022
          CONTINUE FOREACH
      ELSE
         #有出貨紀錄不可再拋請購單
-        IF l_oea.oea62 != 0 THEN 
-           LET l_cnt1=0 
+        IF l_oea.oea62 != 0 THEN
+           LET l_cnt1=0
            SELECT COUNT(*) INTO l_cnt1
              FROM ogb_file,oga_file
             WHERE ogb31=l_oea.oea01
@@ -2917,7 +2946,7 @@ FUNCTION t400sub_exp(p_oea01,p_tag,p_buf)   #TQC-730022
                CALL cl_err('l_oea.oea01/l_oeb03','axm-002',1)
             END IF
             LET li_success = 'N'                                    #FUN-870033
-              CONTINUE FOREACH 
+              CONTINUE FOREACH
            END IF
         END IF
          IF l_cnt = 1 THEN
@@ -2932,14 +2961,14 @@ FUNCTION t400sub_exp(p_oea01,p_tag,p_buf)   #TQC-730022
             ELSE
                CALL t400sub_ins_pml_exp(l_pmk01,p_oea01,l_oeb03)
             END IF
-         ELSE 
+         ELSE
             #CALL t400sub_ins_pml_exp(l_pmk01,p_oea01,l_oeb03)  #TQC-730022加項次避免重覆
             IF a = 'Y' THEN
                LET l_chr = "oea01='",p_oea01,"'AND oeb03=",l_oeb03
                CALL p500("",l_pmk01,l_chr)
             ELSE
                CALL t400sub_ins_pml_exp(l_pmk01,p_oea01,l_oeb03)
-            END IF 
+            END IF
 #FUN-A80012 --end
          END IF
          LET l_cnt = l_cnt + 1
@@ -2954,49 +2983,49 @@ FUNCTION t400sub_exp(p_oea01,p_tag,p_buf)   #TQC-730022
     #IF l_n <= 0 THEN RETURN END IF #TQC-C80033 add
     IF l_n > 0 THEN #TQC-C80033 add
        IF  cl_confirm('axm-803') THEN
-          IF a='Y' THEN 
+          IF a='Y' THEN
               #如果按照bom展開訂單到請購單,取得當前請購單的最大項次
              SELECT MAX(pml02) INTO g_oeb03 FROM pml_file
               WHERE pml01 = l_pmk01
-             IF cl_null(g_oeb03) THEN LET g_oeb03 = 0 END IF                 
+             IF cl_null(g_oeb03) THEN LET g_oeb03 = 0 END IF
           END IF
           LET l_sql = "SELECT oeb03 ",
                      "  FROM oeb_file ",
                      " WHERE ",tm.wc,
-                     " AND oeb1003!='2'"    
+                     " AND oeb1003!='2'"
           PREPARE t400sub_exp_pre2 FROM l_sql
           IF SQLCA.sqlcode THEN CALL cl_err('t400sub_exp_pre2',STATUS,1) END IF
           DECLARE t400sub_exp_c2 CURSOR FOR t400sub_exp_pre2
           IF SQLCA.sqlcode THEN CALL cl_err('t400sub_exp_c2',STATUS,1) END IF
           CALL s_showmsg_init()
-          FOREACH t400sub_exp_c2 INTO l_oeb03  
-             IF g_success = "N" THEN                                                                                                        
-                LET g_totsuccess = "N"                                                                                                      
-                LET g_success = "Y"                                                                                                         
-             END IF        
-             #產生備品資料 	
+          FOREACH t400sub_exp_c2 INTO l_oeb03
+             IF g_success = "N" THEN
+                LET g_totsuccess = "N"
+                LET g_success = "Y"
+             END IF
+             #產生備品資料
              CALL t400sub_ins_pml2_exp(l_pmk01,p_oea01,l_oeb03)
-          END FOREACH            
-       END IF   
+          END FOREACH
+       END IF
    END IF  #TQC-C80033 add
    #TQC-C80019----add end 120803
-   IF g_totsuccess="N" THEN                                                                                                       
-      LET g_success="N"                                                                                                           
-   END IF                                                                                                                         
+   IF g_totsuccess="N" THEN
+      LET g_success="N"
+   END IF
     CALL s_showmsg()         #CHI-840016 add
   #IF li_success = 'N' OR g_success = 'N' THEN                               #FUN-870033   #MOD-C90187 mark
    IF li_success = 'N' OR g_success = 'N' OR l_cnt <= 1 THEN                               #MOD-C90187 add
        ROLLBACK WORK                                                         #MOD-C30604 add
        CALL cl_err('','axm-558',1)                                           #FUN-870033
        CLOSE WINDOW t400sub_exp                                              #FUN-870033
-   ELSE                                                                      #FUN-870033                                                                              
+   ELSE                                                                      #FUN-870033
    CALL t400sub_upd_oea(l_pmk01,l_oea.oea01)
    IF g_success = 'Y' THEN
       #FUN-B90101--add--begin--
       IF s_industry("slk") THEN
          IF g_azw.azw04 = '2' THEN   #FUN-C20006 add
             CALL t400sub_ins_pmlslk_exp(l_pmk01,l_oea.oea01)
-         END IF                      #FUN-C20006 add 
+         END IF                      #FUN-C20006 add
       END IF
       #FUN-B90101--add--end--
        COMMIT WORK
@@ -3009,10 +3038,10 @@ FUNCTION t400sub_exp(p_oea01,p_tag,p_buf)   #TQC-730022
              CALL cl_err(l_pmk01,'axm-559',1)                                  #FUN-870033
        ELSE
           IF l_gfa.gfa06 = 'Y'  THEN   #執行請購單自動確認
-             SELECT pmk_file.* INTO l_pmk.* 
-               FROM pmk_file 
+             SELECT pmk_file.* INTO l_pmk.*
+               FROM pmk_file
               WHERE pmk01 = l_pmk01
- 
+
              CALL t420sub_y_chk(l_pmk.pmk01)  #CALL 原確認的 check 段
              IF g_success = "Y" THEN
                  CALL t420sub_y_upd(l_pmk.pmk01,'')      #CALL 原確認的 update 段
@@ -3024,14 +3053,14 @@ FUNCTION t400sub_exp(p_oea01,p_tag,p_buf)   #TQC-730022
        LET l_oea.oea40 = ''
    END IF
    CLOSE WINDOW t400sub_exp
-  END IF                                                                     #FUN-870033                            
+  END IF                                                                     #FUN-870033
 END FUNCTION
- 
+
 FUNCTION t400sub_upd_oea(p_pmk01,l_oea01)
  DEFINE p_pmk01 LIKE pmk_file.pmk01
  DEFINE l_oea40 LIKE oea_file.oea40
  DEFINE l_oea01 LIKE oea_file.oea01
- 
+
    LET l_oea40 = p_pmk01
    UPDATE oea_file SET oea40 = l_oea40
     WHERE oea01 = l_oea01
@@ -3039,9 +3068,9 @@ FUNCTION t400sub_upd_oea(p_pmk01,l_oea01)
       CALL s_errmsg("oea01",l_oea01,"UPD oea_file",SQLCA.sqlcode,1)           #No.FUN-710046
       LET g_success = 'N'
    END IF
- 
+
 END FUNCTION
- 
+
 #FUNCTION t400sub_ins_pmk(l_slip,p_oea84)  #No.FUN-870007   #MOD-C90187 mark
 #FUNCTION t400sub_ins_pmk(p_pmk01,p_oea84)  #No.FUN-870007   #MOD-C90187 add  #FUN-CC0082 Mark
 FUNCTION t400sub_ins_pmk(p_pmk01,p_oea84,p_oea95)                             #FUN-CC0082 Add
@@ -3051,9 +3080,9 @@ FUNCTION t400sub_ins_pmk(p_pmk01,p_oea84,p_oea95)                             #F
  DEFINE p_oea84 LIKE oea_file.oea84  #No.FUN-870007
  DEFINE p_pmk01 LIKE pmk_file.pmk01  ##MOD-C90187 add
  DEFINE p_oea95 LIKE oea_file.oea95  #FUN-CC0082 Add
- 
+
    INITIALIZE l_pmk.* TO NULL
-   #MOD-C90187 -- mark start -- 
+   #MOD-C90187 -- mark start --
    #CALL s_auto_assign_no("apm",l_slip,g_today,"","pmk_file","pmk01","","","")             #No.FUN-560132
    #     RETURNING li_result,l_pmk.pmk01
    #MOD-C90187 -- mark end --
@@ -3109,11 +3138,11 @@ FUNCTION t400sub_ins_pmk(p_pmk01,p_oea84,p_oea95)                             #F
       LET g_success = 'N'
    END IF           #NO.FUN-670007  add
   #RETURN l_pmk.pmk01   #MOD-C90187 mark
- 
+
 END FUNCTION        #NO.FUN-670007  add
- 
+
 FUNCTION t400sub_ins_pml_exp(l_pmk01,p_oea01,p_oeb03)
- DEFINE l_pmk01  LIKE pmk_file.pmk01   
+ DEFINE l_pmk01  LIKE pmk_file.pmk01
  DEFINE l_oeo    RECORD LIKE oeo_file.*
  DEFINE l_oeb03  LIKE oeb_file.oeb03  #No.+186 add
  DEFINE p_oeb03  LIKE oeb_file.oeb03  #TQC-730022 add
@@ -3121,7 +3150,7 @@ FUNCTION t400sub_ins_pml_exp(l_pmk01,p_oea01,p_oeb03)
  DEFINE l_oeb01  LIKE oeb_file.oeb01  #NO.FUN-670007
  DEFINE l_oeb    RECORD LIKE oeb_file.*
  DEFINE p_oea01  LIKE oea_file.oea01
- 
+
       DECLARE t400sub_oeb_curs1 CURSOR FOR
        SELECT * FROM oeb_file
         WHERE oeb01 = p_oea01
@@ -3144,7 +3173,7 @@ FUNCTION t400sub_ins_pml_exp(l_pmk01,p_oea01,p_oeb03)
                             g_oeb03,l_oeb.oeb44,  #MOD-910210 #No.FUN-870007-add oeb44
                             l_oeb.oeb919                #FUN-A90059 add
                             ) #BugNo:6097
-#TQC-C80019 mark begin----120803 
+#TQC-C80019 mark begin----120803
 #         DECLARE oeo_cus CURSOR FOR
 #             SELECT *
 #               FROM oeo_file
@@ -3168,18 +3197,18 @@ FUNCTION t400sub_ins_pml_exp(l_pmk01,p_oea01,p_oeb03)
 #                                 l_oeb.oeb919            #FUN-A90059 add
 #                                 ) #BugNo:6097
 #         END FOREACH
-#TQC-C80019 mark end----120803      
+#TQC-C80019 mark end----120803
       END FOREACH
- 
+
 END FUNCTION
- 
+
 FUNCTION t400sub_pml_ini(p_pmk01)
   DEFINE p_pmk01 LIKE pmk_file.pmk01,
          l_pmk02 LIKE pmk_file.pmk02,
          l_pmk25 LIKE pmk_file.pmk25,
          l_pmk13 LIKE pmk_file.pmk13
   DEFINE l_pml   RECORD LIKE pml_file.*
- 
+
    INITIALIZE l_pml.* TO NULL     #MOD-720009
    SELECT pmk02,pmk25,pmk13 INTO l_pmk02,l_pmk25,l_pmk13
      FROM pmk_file WHERE pmk01 = p_pmk01
@@ -3196,7 +3225,7 @@ FUNCTION t400sub_pml_ini(p_pmk01)
    LET l_pml.pmllegal=g_legal  #No.FUN-870007
    RETURN l_pml.*
 END FUNCTION
- 
+
 FUNCTION t400sub_ins_pml(p_pmk01,p_oeb01,p_oeb03,p_oeb04,p_oeb05_fac,p_oeb12,  #NO.FUN-670007
                          p_oeb15,p_oeb05,p_oeb06,   #NO.FUN-670007
                          p_oeb910,p_oeb911,p_oeb912,p_oeb913,p_oeb914,
@@ -3212,7 +3241,7 @@ FUNCTION t400sub_ins_pml(p_pmk01,p_oeb01,p_oeb03,p_oeb04,p_oeb05_fac,p_oeb12,  #
          p_oeb12     LIKE oeb_file.oeb12,
          p_oeb15     LIKE oeb_file.oeb15,
          p_oeb28     LIKE oeb_file.oeb28,    #NO.FUN-670007
-         p_oeb24     LIKE oeb_file.oeb24,    #NO.FUN-670007 
+         p_oeb24     LIKE oeb_file.oeb24,    #NO.FUN-670007
          p_oeb910    LIKE oeb_file.oeb910,
          p_oeb911    LIKE oeb_file.oeb911,
          p_oeb912    LIKE oeb_file.oeb912,
@@ -3249,11 +3278,11 @@ FUNCTION t400sub_ins_pml(p_pmk01,p_oeb01,p_oeb03,p_oeb04,p_oeb05_fac,p_oeb12,  #
    DEFINE l_pml      RECORD LIKE pml_file.*  #FUN-730018
    DEFINE l_oeb      RECORD LIKE oeb_file.*  #FUN-730018
    DEFINE l_pmli     RECORD LIKE pmli_file.* #No.FUN-830132 add
-   DEFINE l_rty03 LIKE rty_file.rty03        #No.FUN-870007                                                               
+   DEFINE l_rty03 LIKE rty_file.rty03        #No.FUN-870007
    DEFINE l_rty06 LIKE rty_file.rty06        #No.FUN-870007
- 
+
    CALL t400sub_pml_ini(p_pmk01) RETURNING l_pml.* #FUN-730018
- 
+
    LET l_ima913 = 'N'   #MOD-770033 add
    IF p_oeb04[1,4] <> "MISC" THEN
 #       SELECT ima01,ima02,ima05,ima25,ima262,ima27,ima44,ima44_fac, #FUN-A20044
@@ -3278,26 +3307,26 @@ FUNCTION t400sub_ins_pml(p_pmk01,p_oeb01,p_oeb03,p_oeb04,p_oeb05_fac,p_oeb12,  #
        LET l_pml.pml05 = NULL      #no.4649(APS單據編號)
        LET l_pml.pml07 = l_ima44      #No.TQC-740351
        LET l_pml.pml08 = l_ima25
-       CALL s_umfchk(l_pml.pml04,l_pml.pml07,                                                                                     
-            l_pml.pml08) RETURNING l_flag,l_pml.pml09                                                                             
+       CALL s_umfchk(l_pml.pml04,l_pml.pml07,
+            l_pml.pml08) RETURNING l_flag,l_pml.pml09
             IF cl_null(l_pml.pml09) THEN LET l_pml.pml09=1 END IF
-      #先將訂單數量轉換成請購單位數量                                                                                               
+      #先將訂單數量轉換成請購單位數量
        LET p_oeb12 = p_oeb12 * p_oeb05_fac / l_pml.pml09
        LET p_oeb28=0
        LET p_oeb24=0
-       SELECT oeb28,oeb24 INTO p_oeb28,p_oeb24 
+       SELECT oeb28,oeb24 INTO p_oeb28,p_oeb24
          FROM oeb_file
         WHERE oeb01=p_oeb01
           AND oeb03=p_oeb03
        IF cl_null(p_oeb28) THEN LET p_oeb28 = 0 END IF
        IF cl_null(p_oeb24) THEN LET p_oeb24 = 0 END IF
-       LET p_oeb12 = (p_oeb12-p_oeb28-p_oeb24) 
+       LET p_oeb12 = (p_oeb12-p_oeb28-p_oeb24)
        LET l_pml.pml42 = '0'
     IF g_sma.sma115='N' THEN      #No.TQC-740351
        #-->考慮最少採購量/倍量
        IF p_oeb12 > 0 THEN  #FUN-730018
             IF p_oeb12 < l_ima46 THEN #FUN-730018
-              #CALL s_sizechk(l_pml.pml04,p_oeb12,g_lang)              #CHI-C10037 mark                                                            
+              #CALL s_sizechk(l_pml.pml04,p_oeb12,g_lang)              #CHI-C10037 mark
                CALL s_sizechk(l_pml.pml04,p_oeb12,g_lang,l_pml.pml07)  #CHI-C10037 add
                              RETURNING l_pml.pml20
            ELSE
@@ -3308,7 +3337,7 @@ FUNCTION t400sub_ins_pml(p_pmk01,p_oeb01,p_oeb03,p_oeb04,p_oeb05_fac,p_oeb12,  #
                    ELSE
                        LET l_pan=(p_oeb12*1000) -(l_pan*(l_ima45*1000))
                    END IF
- 
+
                    IF l_pan !=0 THEN
                        LET l_double = (p_oeb12/l_ima45) + 1
                    ELSE
@@ -3363,43 +3392,43 @@ FUNCTION t400sub_ins_pml(p_pmk01,p_oeb01,p_oeb03,p_oeb04,p_oeb05_fac,p_oeb12,  #
    LET g_pml.* = l_pml.*      #No.TQC-740351
    CALL t400_set_pml87()      #No.TQC-740351
    LET l_pml.pml87=g_pml.pml87      #No.TQC-740351
- 
- 
+
+
    LET l_pml.pml190 = l_ima913    #統購否
    LET l_pml.pml191 = l_ima914    #採購成本中心
    LET l_pml.pml192 = 'N'         #拋轉否
- 
+
    LET l_pml.pml24 = p_oeb01
    LET l_pml.pml25 = p_oeb03
    IF g_azw.azw04='2' THEN
       LET l_pml.pml47 = ''
-      SELECT rty03,rty06 INTO l_rty03,l_rty06 FROM rty_file                                                                     
-       WHERE rty01=g_plant AND rty02=p_oeb04                                                                            
-      IF SQLCA.sqlcode=100 THEN                                                                                           
-         LET l_rty03=NULL                                                                                                   
-         LET l_rty06=NULL                                                                                                   
-      END IF                                                                                                              
-      LET l_pml.pml49=l_rty06                                                                                                 
-      LET l_pml.pml50=l_rty03                                                                                                 
-      IF l_pml.pml50='2' THEN                                                                                                 
-         LET l_pml.pml51=g_plant                                                                                         
-         LET l_pml.pml52=p_pmk01                                                                                          
-         LET l_pml.pml53=l_pml.pml02                                                                                    
-      ELSE                                                                                                                          
-         LET l_pml.pml51=''                                                                                                   
-         LET l_pml.pml52=''                                                                                                   
-         LET l_pml.pml53=''                                                                                                   
-      END IF           
+      SELECT rty03,rty06 INTO l_rty03,l_rty06 FROM rty_file
+       WHERE rty01=g_plant AND rty02=p_oeb04
+      IF SQLCA.sqlcode=100 THEN
+         LET l_rty03=NULL
+         LET l_rty06=NULL
+      END IF
+      LET l_pml.pml49=l_rty06
+      LET l_pml.pml50=l_rty03
+      IF l_pml.pml50='2' THEN
+         LET l_pml.pml51=g_plant
+         LET l_pml.pml52=p_pmk01
+         LET l_pml.pml53=l_pml.pml02
+      ELSE
+         LET l_pml.pml51=''
+         LET l_pml.pml52=''
+         LET l_pml.pml53=''
+      END IF
       SELECT rty05 INTO l_pml.pml48 FROM rty_file
        WHERE rty01= (SELECT oea84 FROM oea_file WHERE oea01=p_oeb01)
          AND rtyacti='Y' AND rty02=p_oeb04
       IF SQLCA.sqlcode=100 THEN
-         SELECT rty05 INTO l_pml.pml48 FROM rty_file                                                                 
-          WHERE rty01=g_plant AND rtyacti='Y' AND rty02=p_oeb04                                                  
-         IF SQLCA.sqlcode=100 THEN                                                                                              
-            LET l_pml.pml48=null                                                                                          
-         END IF  
-      END IF                                                                                                                
+         SELECT rty05 INTO l_pml.pml48 FROM rty_file
+          WHERE rty01=g_plant AND rtyacti='Y' AND rty02=p_oeb04
+         IF SQLCA.sqlcode=100 THEN
+            LET l_pml.pml48=null
+         END IF
+      END IF
       LET l_pml.pml54='2'
    ELSE
       LET l_pml.pml47=''
@@ -3410,7 +3439,7 @@ FUNCTION t400sub_ins_pml(p_pmk01,p_oeb01,p_oeb03,p_oeb04,p_oeb05_fac,p_oeb12,  #
       LET l_pml.pml52=''
       LET l_pml.pml53=''
       LET l_pml.pml54=' '
-   END IF       
+   END IF
 #FUN-B90101--add--begin--
   #給初始值
    IF cl_null(l_pml.pml88) THEN
@@ -3425,11 +3454,11 @@ FUNCTION t400sub_ins_pml(p_pmk01,p_oeb01,p_oeb03,p_oeb04,p_oeb05_fac,p_oeb12,  #
    IF cl_null(l_pml.pml50) THEN
       LET l_pml.pml50 = '1'
    END IF
-#FUN-B90101--add--end--                                                                                
+#FUN-B90101--add--end--
    LET l_pml.pml56 = '1'  #bnl
   #LET l_pml.pml91 = ' '  #FUN-980010 add 給初始值
    LET l_pml.pml91 = 'N'  #FUN-980010 add 給初始值  #Mod TQC-B30096
-   LET l_pml.pml92 = 'N' #FUN-9B0023 
+   LET l_pml.pml92 = 'N' #FUN-9B0023
    INSERT INTO pml_file VALUES(l_pml.*)
    IF SQLCA.sqlcode THEN
       CALL s_errmsg("pml01",l_pml.pml01,"INS pml_file",SQLCA.sqlcode,1)          #No.FUN-710046
@@ -3444,7 +3473,7 @@ FUNCTION t400sub_ins_pml(p_pmk01,p_oeb01,p_oeb03,p_oeb04,p_oeb05_fac,p_oeb12,  #
          LET l_pmli.pmlilegal = l_pml.pmllegal
          INSERT INTO pmli_file VALUES(l_pmli.*)
          IF SQLCA.sqlcode THEN
-            CALL s_errmsg("pmli01",l_pmli.pmli01,"INS pmli_file",SQLCA.sqlcode,1)  
+            CALL s_errmsg("pmli01",l_pmli.pmli01,"INS pmli_file",SQLCA.sqlcode,1)
             LET g_success = 'N'
          END IF
 #FUN-B90101--add--end--
@@ -3455,7 +3484,7 @@ FUNCTION t400sub_ins_pml(p_pmk01,p_oeb01,p_oeb03,p_oeb04,p_oeb05_fac,p_oeb12,  #
 #FUN-B90101--mark--end--
       END IF
    END IF
-    SELECT SUM(pml20) INTO l_pml.pml20 
+    SELECT SUM(pml20) INTO l_pml.pml20
       FROM pml_file,pmk_file
      WHERE pml24 = l_pml.pml24
        AND pml25 = l_pml.pml25
@@ -3485,7 +3514,7 @@ FUNCTION t400_set_pml87()
             l_qty1   LIKE img_file.img10,     #第一數量
             l_tot    LIKE img_file.img10,     #計價數量
             l_factor LIKE type_file.num20_6
- 
+
     SELECT ima25,ima44,ima906 INTO l_ima25,l_ima44,l_ima906
       FROM ima_file WHERE ima01=g_pml.pml04
     IF SQLCA.sqlcode =100 THEN
@@ -3495,7 +3524,7 @@ FUNCTION t400_set_pml87()
        END IF
     END IF
     IF cl_null(l_ima44) THEN LET l_ima44 = l_ima25 END IF
- 
+
     LET l_fac2=g_pml.pml84
     LET l_qty2=g_pml.pml85
     IF g_sma.sma115 = 'Y' THEN
@@ -3514,7 +3543,7 @@ FUNCTION t400_set_pml87()
     IF cl_null(l_qty1) THEN LET l_qty1=0 END IF
     IF cl_null(l_fac2) THEN LET l_fac2=1 END IF
     IF cl_null(l_qty2) THEN LET l_qty2=0 END IF
- 
+
     IF g_sma.sma115 = 'Y' THEN
        CASE l_ima906
           WHEN '1' LET l_tot=l_qty1*l_fac1
@@ -3535,7 +3564,7 @@ FUNCTION t400_set_pml87()
     LET g_pml.pml87 = l_tot
     LET g_pml.pml87 = s_digqty(g_pml.pml87,g_pml.pml86)   #No.FUN-BB0086
 END FUNCTION
- 
+
 FUNCTION t400_set_pmn87()
   DEFINE    l_item   LIKE img_file.img01,     #料號
             l_ima25  LIKE ima_file.ima25,     #ima單位
@@ -3548,7 +3577,7 @@ FUNCTION t400_set_pmn87()
             l_qty1   LIKE img_file.img10,     #第一數量
             l_tot    LIKE img_file.img10,     #計價數量
             l_factor LIKE type_file.num20_6
- 
+
     SELECT ima25,ima44,ima906 INTO l_ima25,l_ima44,l_ima906
       FROM ima_file WHERE ima01=g_pmn.pmn04
     IF SQLCA.sqlcode =100 THEN
@@ -3558,7 +3587,7 @@ FUNCTION t400_set_pmn87()
        END IF
     END IF
     IF cl_null(l_ima44) THEN LET l_ima44 = l_ima25 END IF
- 
+
     LET l_fac2=g_pmn.pmn84
     LET l_qty2=g_pmn.pmn85
     IF g_sma.sma115 = 'Y' THEN
@@ -3578,7 +3607,7 @@ FUNCTION t400_set_pmn87()
     IF cl_null(l_qty1) THEN LET l_qty1=0 END IF
     IF cl_null(l_fac2) THEN LET l_fac2=1 END IF
     IF cl_null(l_qty2) THEN LET l_qty2=0 END IF
- 
+
     IF g_sma.sma115 = 'Y' THEN
        CASE l_ima906
           WHEN '1' LET l_tot=l_qty1*l_fac1
@@ -3589,7 +3618,7 @@ FUNCTION t400_set_pmn87()
        LET l_tot=l_qty1*l_fac1
     END IF
     IF cl_null(l_tot) THEN LET l_tot = 0 END IF
- 
+
     LET l_factor = 1
     CALL s_umfchk(g_pmn.pmn04,l_ima44,g_pmn.pmn86)
           RETURNING g_cnt,l_factor
@@ -3600,7 +3629,7 @@ FUNCTION t400_set_pmn87()
     LET g_pmn.pmn87 = l_tot
     LET g_pmn.pmn87 = s_digqty(g_pmn.pmn87,g_pmn.pmn86)   #No.FUN-BB0086
 END FUNCTION
-# No.FUN-9C0073 --------------By chenls 10/01/07 
+# No.FUN-9C0073 --------------By chenls 10/01/07
 
 #FUN-BC0071---------------STA
 FUNCTION t400_upd_lqe(l_oea)
@@ -3613,29 +3642,29 @@ DEFINE l_n     LIKE type_file.num5
      AND lqw08 = lqe02 AND lqw00 = '01'
      AND lqw01= l_oea.oea01
      AND lqe01 BETWEEN lqw09 AND lqw10
-     AND lqe17 IN ('5','2') 
+     AND lqe17 IN ('5','2')
      AND lqe13 = l_oea.oeaplant
   IF l_n > 0 THEN
 
      UPDATE lqe_file SET  lqe17 = '1',
                           lqe06 = l_oea.oeaplant,
-                          lqe07 = g_today 
+                          lqe07 = g_today
       WHERE lqe01 IN (SELECT lqe01 FROM oeb_file,lpx_file,lqe_file,lqw_file
                        WHERE lpx32 = oeb04 AND lpx01 = lqe02
                          AND oeb01 = l_oea.oea01
                          AND lqw08 = lqe02 AND lqw00 = '01'
                          AND lqw01= l_oea.oea01
                          AND lqe01 BETWEEN lqw09 AND lqw10
-                         AND lqe17 IN ('5','2') 
+                         AND lqe17 IN ('5','2')
                          AND lqe13 = l_oea.oeaplant)
      IF STATUS OR SQLCA.sqlerrd[3] = 0 THEN
-        CALL cl_err3("upd","lqe_file",'',"",SQLCA.sqlcode,"","",1)  
+        CALL cl_err3("upd","lqe_file",'',"",SQLCA.sqlcode,"","",1)
         LET g_success = 'N'
         RETURN
      END IF
-   END IF          
+   END IF
 
-END FUNCTION 
+END FUNCTION
 
 FUNCTION t400_ins_lsn(l_oea)
 DEFINE l_oea    RECORD LIKE oea_file.*
@@ -3647,43 +3676,43 @@ DEFINE l_lsn07  LIKE lsn_file.lsn07
    SELECT COUNT(*) INTO l_n FROM oeb_file
     WHERE oeb01 = l_oea.oea01 AND oeb04= 'MISCCARD'
    IF l_n >0 THEN
-     SELECT SUM(oeb14t) INTO l_oeb14t FROM oeb_file 
+     SELECT SUM(oeb14t) INTO l_oeb14t FROM oeb_file
       WHERE oeb01 = l_oea.oea01 AND oeb04= 'MISCCARD'
-     SELECT SUM(oeb47+oeb14t) INTO l_money FROM oeb_file 
+     SELECT SUM(oeb47+oeb14t) INTO l_money FROM oeb_file
       WHERE oeb01 = l_oea.oea01 AND oeb04= 'MISCCARD'
      UPDATE lpj_file SET lpj06 = lpj06 + l_money,
                          lpjpos = '2'    #FUN-D30007 add
       WHERE lpj03 = l_oea.oea87
      IF STATUS OR SQLCA.sqlerrd[3] = 0 THEN
-        CALL cl_err3("upd","lpj_file",'',"",SQLCA.sqlcode,"","",1)  
+        CALL cl_err3("upd","lpj_file",'',"",SQLCA.sqlcode,"","",1)
         LET g_success = 'N'
         RETURN
      END IF
 
      IF g_success = 'Y' THEN
         LET l_lsn07 = l_oeb14t/(l_money*100)
-       #INSERT INTO lsn_file (lsn01,lsn02,lsn03,lsn04,lsn05,lsn07,lsnplant,lsnlegal,lsn10)                 #FUN-C70045 add lsn10  #FUN-C90102 mark 
+       #INSERT INTO lsn_file (lsn01,lsn02,lsn03,lsn04,lsn05,lsn07,lsnplant,lsnlegal,lsn10)                 #FUN-C70045 add lsn10  #FUN-C90102 mark
         INSERT INTO lsn_file (lsn01,lsn02,lsn03,lsn04,lsn05,lsn07,lsnstore,lsnlegal,lsn10)                 #FUN-C90102 add
          VALUES (l_oea.oea87,'E',l_oea.oea01,l_money,g_today,l_lsn07,l_oea.oeaplant,l_oea.oealegal,'1')    #FUN-C70045 add '1'
         IF SQLCA.sqlcode THEN
-           CALL cl_err3("ins","lsn_file",'',"",SQLCA.sqlcode,"","",1)  
+           CALL cl_err3("ins","lsn_file",'',"",SQLCA.sqlcode,"","",1)
            LET g_success = 'N'
            RETURN
         END IF
      END IF
-   END IF 
+   END IF
 
 END FUNCTION
 
-   
+
 #FUN-BC0071 --------------END
 
 
 
-#TQC-C80019 add begin 12-8-3 
+#TQC-C80019 add begin 12-8-3
 #copy t400sub_ins_pml_exp()
 FUNCTION t400sub_ins_pml2_exp(l_pmk01,p_oea01,p_oeb03)
- DEFINE l_pmk01  LIKE pmk_file.pmk01   
+ DEFINE l_pmk01  LIKE pmk_file.pmk01
  DEFINE l_oeo    RECORD LIKE oeo_file.*
  DEFINE l_oeb03  LIKE oeb_file.oeb03  #No.+186 add
  DEFINE p_oeb03  LIKE oeb_file.oeb03  #TQC-730022 add
@@ -3692,7 +3721,7 @@ FUNCTION t400sub_ins_pml2_exp(l_pmk01,p_oea01,p_oeb03)
  DEFINE l_oeb    RECORD LIKE oeb_file.*
  DEFINE p_oea01  LIKE oea_file.oea01,
         p_flag   LIKE type_file.chr1
- 
+
       DECLARE t400sub_oeb_curs3 CURSOR FOR
        SELECT * FROM oeb_file
         WHERE oeb01 = p_oea01
@@ -3712,7 +3741,7 @@ FUNCTION t400sub_ins_pml2_exp(l_pmk01,p_oea01,p_oeb03)
          FOREACH oeo_cus3 INTO l_oeo.*
               IF SQLCA.SQLCODE THEN
                  CALL s_errmsg('','',"sel oeo:",SQLCA.sqlcode,0)   #No.FUN-710046
-              END IF  
+              END IF
               LET g_oeb03 = g_oeb03+1   #MOD-910210
               LET l_qty = l_oeb.oeb12 * l_oeo.oeo06
                #CALL t400sub_ins_pml(l_pmk01,l_oeb01,l_oeb.oeb03,l_oeo.oeo04,    #NO.FUN-670007    #MOD-910210   #MOD-A20119
@@ -3728,7 +3757,7 @@ FUNCTION t400sub_ins_pml2_exp(l_pmk01,p_oea01,p_oeb03)
                                  ) #BugNo:6097
          END FOREACH
       END FOREACH
- 
+
 END FUNCTION
 
 #copy t400sub_ins_pml()
@@ -3747,7 +3776,7 @@ FUNCTION t400sub_ins_pml2(p_pmk01,p_oeb01,p_oeb03,p_oeb04,p_oeb05_fac,p_oeb12,  
          p_oeb12     LIKE oeb_file.oeb12,
          p_oeb15     LIKE oeb_file.oeb15,
          p_oeb28     LIKE oeb_file.oeb28,    #NO.FUN-670007
-         p_oeb24     LIKE oeb_file.oeb24,    #NO.FUN-670007 
+         p_oeb24     LIKE oeb_file.oeb24,    #NO.FUN-670007
          p_oeb910    LIKE oeb_file.oeb910,
          p_oeb911    LIKE oeb_file.oeb911,
          p_oeb912    LIKE oeb_file.oeb912,
@@ -3784,11 +3813,11 @@ FUNCTION t400sub_ins_pml2(p_pmk01,p_oeb01,p_oeb03,p_oeb04,p_oeb05_fac,p_oeb12,  
    DEFINE l_pml      RECORD LIKE pml_file.*  #FUN-730018
    DEFINE l_oeb      RECORD LIKE oeb_file.*  #FUN-730018
    DEFINE l_pmli     RECORD LIKE pmli_file.* #No.FUN-830132 add
-   DEFINE l_rty03 LIKE rty_file.rty03        #No.FUN-870007                                                               
+   DEFINE l_rty03 LIKE rty_file.rty03        #No.FUN-870007
    DEFINE l_rty06 LIKE rty_file.rty06        #No.FUN-870007
- 
+
    CALL t400sub_pml_ini(p_pmk01) RETURNING l_pml.* #FUN-730018
- 
+
    LET l_ima913 = 'N'   #MOD-770033 add
    IF p_oeb04[1,4] <> "MISC" THEN
 #       SELECT ima01,ima02,ima05,ima25,ima262,ima27,ima44,ima44_fac, #FUN-A20044
@@ -3813,10 +3842,10 @@ FUNCTION t400sub_ins_pml2(p_pmk01,p_oeb01,p_oeb03,p_oeb04,p_oeb05_fac,p_oeb12,  
        LET l_pml.pml05 = NULL      #no.4649(APS單據編號)
        LET l_pml.pml07 = l_ima44      #No.TQC-740351
        LET l_pml.pml08 = l_ima25
-       CALL s_umfchk(l_pml.pml04,l_pml.pml07,                                                                                     
-            l_pml.pml08) RETURNING l_flag,l_pml.pml09                                                                             
+       CALL s_umfchk(l_pml.pml04,l_pml.pml07,
+            l_pml.pml08) RETURNING l_flag,l_pml.pml09
             IF cl_null(l_pml.pml09) THEN LET l_pml.pml09=1 END IF
-      #先將訂單數量轉換成請購單位數量                                                                                               
+      #先將訂單數量轉換成請購單位數量
        LET p_oeb12 = p_oeb12 * p_oeb05_fac / l_pml.pml09
        LET l_pml.pml42 = '0'
     IF g_sma.sma115='N' THEN      #No.TQC-740351
@@ -3834,7 +3863,7 @@ FUNCTION t400sub_ins_pml2(p_pmk01,p_oeb01,p_oeb03,p_oeb04,p_oeb05_fac,p_oeb12,  
                    ELSE
                        LET l_pan=(p_oeb12*1000) -(l_pan*(l_ima45*1000))
                    END IF
- 
+
                    IF l_pan !=0 THEN
                        LET l_double = (p_oeb12/l_ima45) + 1
                    ELSE
@@ -3888,43 +3917,43 @@ FUNCTION t400sub_ins_pml2(p_pmk01,p_oeb01,p_oeb03,p_oeb04,p_oeb05_fac,p_oeb12,  
    LET g_pml.* = l_pml.*      #No.TQC-740351
    CALL t400_set_pml87()      #No.TQC-740351
    LET l_pml.pml87=g_pml.pml87      #No.TQC-740351
- 
- 
+
+
    LET l_pml.pml190 = l_ima913    #統購否
    LET l_pml.pml191 = l_ima914    #採購成本中心
    LET l_pml.pml192 = 'N'         #拋轉否
- 
+
    LET l_pml.pml24 = p_oeb01
    LET l_pml.pml25 = p_oeb03
    IF g_azw.azw04='2' THEN
       LET l_pml.pml47 = ''
-      SELECT rty03,rty06 INTO l_rty03,l_rty06 FROM rty_file                                                                     
-       WHERE rty01=g_plant AND rty02=p_oeb04                                                                            
-      IF SQLCA.sqlcode=100 THEN                                                                                           
-         LET l_rty03=NULL                                                                                                   
-         LET l_rty06=NULL                                                                                                   
-      END IF                                                                                                              
-      LET l_pml.pml49=l_rty06                                                                                                 
-      LET l_pml.pml50=l_rty03                                                                                                 
-      IF l_pml.pml50='2' THEN                                                                                                 
-         LET l_pml.pml51=g_plant                                                                                         
-         LET l_pml.pml52=p_pmk01                                                                                          
-         LET l_pml.pml53=l_pml.pml02                                                                                    
-      ELSE                                                                                                                          
-         LET l_pml.pml51=''                                                                                                   
-         LET l_pml.pml52=''                                                                                                   
-         LET l_pml.pml53=''                                                                                                   
-      END IF           
+      SELECT rty03,rty06 INTO l_rty03,l_rty06 FROM rty_file
+       WHERE rty01=g_plant AND rty02=p_oeb04
+      IF SQLCA.sqlcode=100 THEN
+         LET l_rty03=NULL
+         LET l_rty06=NULL
+      END IF
+      LET l_pml.pml49=l_rty06
+      LET l_pml.pml50=l_rty03
+      IF l_pml.pml50='2' THEN
+         LET l_pml.pml51=g_plant
+         LET l_pml.pml52=p_pmk01
+         LET l_pml.pml53=l_pml.pml02
+      ELSE
+         LET l_pml.pml51=''
+         LET l_pml.pml52=''
+         LET l_pml.pml53=''
+      END IF
       SELECT rty05 INTO l_pml.pml48 FROM rty_file
        WHERE rty01= (SELECT oea84 FROM oea_file WHERE oea01=p_oeb01)
          AND rtyacti='Y' AND rty02=p_oeb04
       IF SQLCA.sqlcode=100 THEN
-         SELECT rty05 INTO l_pml.pml48 FROM rty_file                                                                 
-          WHERE rty01=g_plant AND rtyacti='Y' AND rty02=p_oeb04                                                  
-         IF SQLCA.sqlcode=100 THEN                                                                                              
-            LET l_pml.pml48=null                                                                                          
-         END IF  
-      END IF                                                                                                                
+         SELECT rty05 INTO l_pml.pml48 FROM rty_file
+          WHERE rty01=g_plant AND rtyacti='Y' AND rty02=p_oeb04
+         IF SQLCA.sqlcode=100 THEN
+            LET l_pml.pml48=null
+         END IF
+      END IF
       LET l_pml.pml54='2'
    ELSE
       LET l_pml.pml47=''
@@ -3935,11 +3964,11 @@ FUNCTION t400sub_ins_pml2(p_pmk01,p_oeb01,p_oeb03,p_oeb04,p_oeb05_fac,p_oeb12,  
       LET l_pml.pml52=''
       LET l_pml.pml53=''
       LET l_pml.pml54=' '
-   END IF                                                                                       
+   END IF
    LET l_pml.pml56 = '1'  #bnl
   #LET l_pml.pml91 = ' '  #FUN-980010 add 給初始值
    LET l_pml.pml91 = 'N'  #FUN-980010 add 給初始值  #Mod TQC-B30096
-   LET l_pml.pml92 = 'N' #FUN-9B0023 
+   LET l_pml.pml92 = 'N' #FUN-9B0023
    INSERT INTO pml_file VALUES(l_pml.*)
    IF SQLCA.sqlcode THEN
       CALL s_errmsg("pml01",l_pml.pml01,"INS pml_file",SQLCA.sqlcode,1)          #No.FUN-710046
@@ -3955,5 +3984,5 @@ FUNCTION t400sub_ins_pml2(p_pmk01,p_oeb01,p_oeb03,p_oeb04,p_oeb05_fac,p_oeb12,  
       END IF
    END IF
 
-END FUNCTION 
+END FUNCTION
 #TQC-C80019 add end 12-8-3
