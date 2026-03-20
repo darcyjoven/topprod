@@ -5091,7 +5091,6 @@ END FUNCTION
 FUNCTION i301_set_entry(p_cmd)
  DEFINE p_cmd   LIKE type_file.chr1    #No.FUN-680121 VARCHAR(1)
  
- 
     IF p_cmd = 'a' AND ( NOT g_before_input_done ) THEN
        CALL cl_set_comp_entry("sfb01,sfb39,sfb071",TRUE)  #MOD-590259 add sfb071
     END IF
@@ -5141,6 +5140,12 @@ FUNCTION i301_set_entry(p_cmd)
  
    CALL cl_set_comp_entry("sfb1001",TRUE)    #FUN-6A0007
    CALL cl_set_comp_entry("sfb27,sfb271,sfb50,sfb51",TRUE)    #FUN-810045
+
+   # darcy:2026/01/04 add s---
+   if p_cmd = 'a' then
+      call cl_set_comp_entry("sfb22,sfb221",true)
+   end if
+   # darcy:2026/01/04 add e---
   
 END FUNCTION
  
@@ -5227,6 +5232,12 @@ FUNCTION i301_set_no_entry(p_cmd)
       #CALL cl_set_comp_entry("sfb27,sfb271,sfb50,sfb51",FALSE)  #mark by guanyao160705
       CALL cl_set_comp_entry("sfb271,sfb50,sfb51",FALSE)  #add by guanyao160705
     END IF
+   
+   # darcy:2026/01/04 add s---
+   if p_cmd = 'u' then
+      call cl_set_comp_entry("sfb22,sfb221",false)
+   end if
+   # darcy:2026/01/04 add e---
  
 END FUNCTION
  
