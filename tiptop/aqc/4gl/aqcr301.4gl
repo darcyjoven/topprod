@@ -423,7 +423,7 @@ FUNCTION r301()
              AND qctt021= sr.qcs05 AND qctt03 = sr.qct03                                                                            
              LET l_str1 = NULL                                                                                                      
          FOREACH qctt04_cs INTO sr.qctt04                                 
-             LET l_str1 = l_str1 CLIPPED,' ', cl_numfor(sr.qctt04,6,2)                                                              
+             LET l_str1 = l_str1 CLIPPED,' ', cl_numfor(sr.qctt04,8,4)                                                              
          END FOREACH                                                                                                                
               IF cl_null(l_str1) THEN LET l_str1 = '0' END IF                                                                       
          EXECUTE  insert_prep  USING                                                                                                

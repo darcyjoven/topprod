@@ -7982,6 +7982,14 @@ FUNCTION t110_3()
    DEFINE l_qck09               LIKE qck_file.qck09
    DEFINE l_type                LIKE type_file.chr1 
    DEFINE l_sum      LIKE qcs_file.qcs091   #FUN-CC0015 add
+   # darcy:2026/01/27 add s---
+   DEFINE l_ret        RECORD
+            success   LIKE type_file.chr1,
+            code      LIKE type_file.chr10,
+            msg       STRING
+                     END RECORD
+   define l_cnt integer
+   # darcy:2026/01/27 add e---
 
    SELECT * INTO g_qcs.* FROM qcs_file
     WHERE qcs01 = g_qcs.qcs01
@@ -8559,6 +8567,31 @@ FUNCTION t110_3()
    END IF
  
    CLOSE t110_cl
+   # darcy:2026/01/26 add s---
+   IF NOT cl_null(g_qcs.qcs01) THEN
+      SELECT count(*) INTO l_cnt FROM rva_file WHERE rvaud02 LIKE '%DN%' AND rva01 = g_qcs.qcs01
+      IF cl_null(l_cnt) THEN LET l_cnt = 0 END IF 
+      IF l_cnt > 0 THEN 
+            IF cl_getscmparameter()  THEN  
+            INITIALIZE l_ret TO NULL
+            CALL cjc_zmx_json_qcs(g_qcs.qcs01,g_qcs.qcs02,'Y') RETURNING l_ret.*
+            IF l_ret.success = 'Y' THEN
+            ELSE
+               IF cl_null(l_ret.msg) THEN
+                     LET l_ret.msg = "收货单：",g_qcs.qcs01 CLIPPED,"项次：",g_qcs.qcs02 CLIPPED ,"检验单同步失败"
+               END IF
+            END IF
+            #CALL cl_err(l_ret.msg,'!',1)
+            ELSE
+               # LET l_ret.msg = "请确认是否启用SCM！"
+               # CALL FGL_WINMESSAGE("Warning",l_ret.msg,"stop")
+            END IF
+      ELSE 
+            #LET l_ret.msg = "收货单：",g_qcs.qcs01 CLIPPED,"非SCM收货单，无需同步！"   
+            #CALL cl_err(l_ret.msg,'!',1)
+      END IF 
+   END IF
+   # darcy:2026/01/26 add e---
  
    SELECT * INTO g_qcs.* FROM qcs_file  
     WHERE qcs01 = g_qcs.qcs01
@@ -8573,6 +8606,16 @@ END FUNCTION
 FUNCTION t110_4()
    DEFINE l_qcs091  LIKE  qcs_file.qcs091
    DEFINE l_rvv17   LIKE  rvv_file.rvv17
+   # darcy:2026/01/27 add s---
+   DEFINE l_ret        RECORD
+            success   LIKE type_file.chr1,
+            code      LIKE type_file.chr10,
+            msg       STRING
+                     END RECORD
+   define l_cnt integer
+   # darcy:2026/01/27 add e---
+
+   
    #IF g_argv1 <> '1' THEN    #FUN-C30152
    IF g_argv1 <> '1' AND g_argv1 <> '2' THEN  #FUN-C30152  
       RETURN
@@ -8668,6 +8711,32 @@ FUNCTION t110_4()
    END IF
 
    CLOSE t110_cl
+
+   # darcy:2026/01/26 add s---
+   IF NOT cl_null(g_qcs.qcs01) THEN
+      SELECT count(*) INTO l_cnt FROM rva_file WHERE rvaud02 LIKE '%DN%' AND rva01 = g_qcs.qcs01
+      IF cl_null(l_cnt) THEN LET l_cnt = 0 END IF 
+      IF l_cnt > 0 THEN 
+            IF cl_getscmparameter()  THEN  
+            INITIALIZE l_ret TO NULL
+            CALL cjc_zmx_json_qcs(g_qcs.qcs01,g_qcs.qcs02,'Y') RETURNING l_ret.*
+            IF l_ret.success = 'Y' THEN
+            ELSE
+               IF cl_null(l_ret.msg) THEN
+                     LET l_ret.msg = "收货单：",g_qcs.qcs01 CLIPPED,"项次：",g_qcs.qcs02 CLIPPED ,"检验单同步失败"
+               END IF
+            END IF
+            #CALL cl_err(l_ret.msg,'!',1)
+            ELSE
+               # LET l_ret.msg = "请确认是否启用SCM！"
+               # CALL FGL_WINMESSAGE("Warning",l_ret.msg,"stop")
+            END IF
+      ELSE 
+            #LET l_ret.msg = "收货单：",g_qcs.qcs01 CLIPPED,"非SCM收货单，无需同步！"   
+            #CALL cl_err(l_ret.msg,'!',1)
+      END IF 
+   END IF 
+   # darcy:2026/01/26 add e---
    
    SELECT * INTO g_qcs.* FROM qcs_file
     WHERE qcs01 = g_qcs.qcs01
