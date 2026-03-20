@@ -4,20 +4,20 @@
 # Descriptions...: 送货单打印
 # Date & Author..: 16/03/03 By huanglf
 #HFBG-16030001
-import libqrcode #darcy:2024/07/16 add
+--import libqrcode #darcy:2024/07/16 add
 DATABASE ds
- 
+
 GLOBALS "../../../tiptop/config/top.global"
 
-DEFINE tm  RECORD                               
-              wc      LIKE type_file.chr1000,      
-              more    LIKE type_file.chr1          
-              END RECORD  
- 
-DEFINE   g_cnt           LIKE type_file.num10      
-DEFINE   g_i             LIKE type_file.num5       
-DEFINE   g_msg           LIKE type_file.chr1000   
- 
+DEFINE tm  RECORD
+              wc      LIKE type_file.chr1000,
+              more    LIKE type_file.chr1
+              END RECORD
+
+DEFINE   g_cnt           LIKE type_file.num10
+DEFINE   g_i             LIKE type_file.num5
+DEFINE   g_msg           LIKE type_file.chr1000
+
 DEFINE   l_table         STRING
 DEFINE   g_str           STRING
 DEFINE   g_sql           STRING
@@ -25,25 +25,25 @@ DEFINE   g_sql           STRING
 MAIN
    OPTIONS
        INPUT NO WRAP
-   DEFER INTERRUPT                      
- 
+   DEFER INTERRUPT
+
    IF (NOT cl_user()) THEN
       EXIT PROGRAM
    END IF
- 
+
    WHENEVER ERROR CALL cl_err_msg_log
- 
+
    IF (NOT cl_setup("CXM")) THEN
       EXIT PROGRAM
    END IF
-   CALL cl_used(g_prog,g_time,1) RETURNING g_time  
-  
+   CALL cl_used(g_prog,g_time,1) RETURNING g_time
+
    LET g_sql="zo02.zo_file.zo02,",
              "zo041.zo_file.zo041,",
              "zo042.zo_file.zo042,",
              "zo05.zo_file.zo05,",
              "zo09.zo_file.zo09,",
-             
+
              "oga01.oga_file.oga01,",
              "oga04.oga_file.oga04,",
              "occ18.occ_file.occ18,",  #modify by huanglf161102
@@ -61,25 +61,25 @@ MAIN
              "ogaud05.oga_file.ogaud05,",
              "oga02.oga_file.oga02,",
              "ima02.ima_file.ima02,", #add by guanyao161101
-             
+
              "ogbud02.ogb_file.ogbud02"
              ,",ogbud08.ogb_file.ogbud08" #darcy:2023/12/28 add
              ,",ogbqrcode.type_file.blob" #darcy:2024/07/16 add
              ,",ogbqrhead.type_file.blob"
              ,",ocd221.ocd_file.ocd221" # darcy:2025/07/22 add
-             
+
 
    LET  l_table = cl_prt_temptable('cxmr026',g_sql) CLIPPED
    IF l_table=-1 THEN EXIT PROGRAM END IF
    LET g_sql = "INSERT INTO ",g_cr_db_str CLIPPED,l_table CLIPPED,
-               " VALUES(?,?,?,?,?, ?,?,?,?,?, ?,?,?,?,?, ?,?,?,?,?, ?,? ,?,?,?)"  #darcy:2024/07/16 add ??   #add ? by guanyao161101   #add ?darcy:2023/12/28                
+               " VALUES(?,?,?,?,?, ?,?,?,?,?, ?,?,?,?,?, ?,?,?,?,?, ?,? ,?,?,?)"  #darcy:2024/07/16 add ??   #add ? by guanyao161101   #add ?darcy:2023/12/28
    PREPARE insert_prep FROM g_sql
    IF STATUS THEN
       CALL cl_err('insert_prep:',status,1) EXIT PROGRAM
    END IF
- 
-   INITIALIZE tm.* TO NULL         
-   LET g_pdate = ARG_VAL(1)       
+
+   INITIALIZE tm.* TO NULL
+   LET g_pdate = ARG_VAL(1)
    LET g_towhom = ARG_VAL(2)
    LET g_rlang = ARG_VAL(3)
    LET g_bgjob = ARG_VAL(4)
@@ -89,52 +89,52 @@ MAIN
    LET g_rep_user = ARG_VAL(8)
    LET g_rep_clas = ARG_VAL(9)
    # LET g_template = ARG_VAL(10)
-   LET g_rpt_name = ARG_VAL(10) 
-   
+   LET g_rpt_name = ARG_VAL(10)
+
    IF cl_null(tm.wc)
-      THEN CALL cxmr011_tm(0,0)          
+      THEN CALL cxmr011_tm(0,0)
       ELSE
-           CALL cxmr011()                
+           CALL cxmr011()
    END IF
-   CALL cl_used(g_prog,g_time,2) RETURNING g_time 
+   CALL cl_used(g_prog,g_time,2) RETURNING g_time
 END MAIN
 
 
 FUNCTION cxmr011_tm(p_row,p_col)
-DEFINE lc_qbe_sn      LIKE gbm_file.gbm01   
-DEFINE p_row,p_col    LIKE type_file.num5,        
-       l_cmd        LIKE type_file.chr1000      
- 
+DEFINE lc_qbe_sn      LIKE gbm_file.gbm01
+DEFINE p_row,p_col    LIKE type_file.num5,
+       l_cmd        LIKE type_file.chr1000
+
    LET p_row = 9 LET p_col = 8
- 
+
    OPEN WINDOW cxmr011_w AT p_row,p_col WITH FORM "cxm/42f/cxmr026"
-       ATTRIBUTE (STYLE = g_win_style CLIPPED) 
- 
+       ATTRIBUTE (STYLE = g_win_style CLIPPED)
+
     CALL cl_ui_init()
-  
+
    LET tm.more = 'N'
    LET g_pdate = g_today
    LET g_rlang = g_lang
    LET g_bgjob = 'N'
-   LET g_copies = '1' 
- 
+   LET g_copies = '1'
+
    CALL cl_opmsg('p')
 WHILE TRUE
    CONSTRUCT BY NAME tm.wc ON oga01,oga02
-                              
-     
+
+
          BEFORE CONSTRUCT
-             CALL cl_qbe_init() 
- 
-       ON ACTION locale 
-          CALL cl_show_fld_cont()                    
+             CALL cl_qbe_init()
+
+       ON ACTION locale
+          CALL cl_show_fld_cont()
          LET g_action_choice = "locale"
          EXIT CONSTRUCT
- 
+
      ON IDLE g_idle_seconds
         CALL cl_on_idle()
         CONTINUE CONSTRUCT
- 
+
       ON ACTION controlp
            CASE
               WHEN INFIELD(oga01)
@@ -148,37 +148,37 @@ WHILE TRUE
                 OTHERWISE
                  EXIT CASE
            END CASE
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
+
       ON ACTION controlg      #MOD-4C0121
          CALL cl_cmdask()     #MOD-4C0121
- 
- 
+
+
            ON ACTION exit
            LET INT_FLAG = 1
            EXIT CONSTRUCT
-         
+
          ON ACTION qbe_select
             CALL cl_qbe_select()
-         
- 
+
+
   END CONSTRUCT
        IF g_action_choice = "locale" THEN
           LET g_action_choice = ""
           CALL cl_dynamic_locale()
           CONTINUE WHILE
        END IF
- 
+
    IF INT_FLAG THEN
-      LET INT_FLAG = 0 CLOSE WINDOW cxmr011_w 
+      LET INT_FLAG = 0 CLOSE WINDOW cxmr011_w
       CALL cl_used(g_prog,g_time,2) RETURNING g_time #No.FUN-690126
       EXIT PROGRAM
-         
+
    END IF
    IF tm.wc=" 1=1" THEN
       CALL cl_err('','9046',0) CONTINUE WHILE
@@ -189,7 +189,7 @@ WHILE TRUE
          BEFORE INPUT
              CALL cl_qbe_display_condition(lc_qbe_sn)
          #No.FUN-580031 ---end---
- 
+
       AFTER FIELD more
          IF tm.more = 'Y'
             THEN CALL cl_repcon(0,0,g_pdate,g_towhom,g_rlang,
@@ -203,14 +203,14 @@ WHILE TRUE
       ON IDLE g_idle_seconds
          CALL cl_on_idle()
          CONTINUE INPUT
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
- 
+
+
           ON ACTION exit
           LET INT_FLAG = 1
           EXIT INPUT
@@ -218,13 +218,13 @@ WHILE TRUE
          ON ACTION qbe_save
             CALL cl_qbe_save()
          #No.FUN-580031 ---end---
- 
+
    END INPUT
    IF INT_FLAG THEN
-      LET INT_FLAG = 0 CLOSE WINDOW cxmr011_w 
+      LET INT_FLAG = 0 CLOSE WINDOW cxmr011_w
       CALL cl_used(g_prog,g_time,2) RETURNING g_time #No.FUN-690126
       EXIT PROGRAM
-         
+
    END IF
    IF g_bgjob = 'Y' THEN
       SELECT zz08 INTO l_cmd FROM zz_file    #get exec cmd (fglgo xxxx)
@@ -233,7 +233,7 @@ WHILE TRUE
          CALL cl_err('cxmr011','9031',1)
       ELSE
          LET tm.wc=cl_replace_str(tm.wc,'\\\"', "'")
-         LET l_cmd = l_cmd CLIPPED,        
+         LET l_cmd = l_cmd CLIPPED,
                          " '",g_pdate CLIPPED,"'",
                          " '",g_towhom CLIPPED,"'",
                          #" '",g_lang CLIPPED,"'", #No.FUN-7C0078
@@ -277,14 +277,14 @@ FUNCTION cxmr011()
                     zo042    LIKE zo_file.zo042,  #公司英语地址
                     zo05     LIKE zo_file.zo05,   #电话
                     zo09     LIKE zo_file.zo09,   #传真号码
-                    
+
                     oga01    LIKE oga_file.oga01, #出货单号
-                    oga04    LIKE oga_file.oga04, #送货客户编号 
+                    oga04    LIKE oga_file.oga04, #送货客户编号
                     occ18    LIKE occ_file.occ18,#送货客户名称
-                    ogb03    LIKE ogb_file.ogb03, 
+                    ogb03    LIKE ogb_file.ogb03,
                     ogb04    LIKE ogb_file.ogb04, #产品编号
 
-                    ogb11    LIKE ogb_file.ogb11, #客户产品编号 
+                    ogb11    LIKE ogb_file.ogb11, #客户产品编号
                     ogb12    LIKE ogb_file.ogb12, #数量
                     ogb05    LIKE ogb_file.ogb05, #单价
                     ogb31    LIKE ogb_file.ogb31, #订单单号
@@ -295,14 +295,14 @@ FUNCTION cxmr011()
                     ogaud05  LIKE oga_file.ogaud05,#运单号
                     oga02    LIKE oga_file.oga02,  #出货日期
                     ima02    LIKE ima_file.ima02,  #add by guanyao161101
-                    
+
                     ogbud02  LIKE ogb_file.ogbud02 #客户订单单号
                     ,ogbud08  like ogb_file.ogbud08 #darcy:2023/12/28 add
                     ,ogbqrcode byte #darcy:2024/07/16 add
                     ,ogbqrhead byte #darcy:2024/07/16 add
                     ,ocd221 like ocd_file.ocd221 # darcy:2025/07/22 add
                     END RECORD
-   DEFINE l_cnt     LIKE type_file.num5            
+   DEFINE l_cnt     LIKE type_file.num5
 
    DEFINE l_price LIKE ogb_file.ogb13
 
@@ -310,77 +310,77 @@ FUNCTION cxmr011()
    define filename   string #darcy:2024/07/16 add
    define filename2   string #darcy:2024/07/16 add
    define l_qrhead byte #darcy:2024/07/16 add
-   LOCATE l_img_blob IN MEMORY             
- 
+   LOCATE l_img_blob IN MEMORY
 
-     CALL cl_del_data(l_table) 
- 
+
+     CALL cl_del_data(l_table)
+
      SELECT zo02 INTO g_company FROM zo_file WHERE zo01 = g_rlang
- 
-     SELECT zz05 INTO g_zz05 FROM zz_file WHERE zz01='cxmr011' 
- 
-     LET tm.wc = tm.wc CLIPPED 
-     
+
+     SELECT zz05 INTO g_zz05 FROM zz_file WHERE zz01='cxmr011'
+
+     LET tm.wc = tm.wc CLIPPED
+
    #公司全名zo02、公司地址zo041、公司電話zo05、公司傳真zo09
    LET l_zo041 = NULL  LET l_zo05 = NULL  LET l_zo09 = NULL
 
    #darcy:2024/07/16 add s---
-   
-   locate sr.ogbqrhead in memory 
-   locate sr.ogbqrcode in memory 
-   let filename = FGL_GETENV("TEMPDIR") 
-   let filename2 = FGL_GETENV("TEMPDIR") 
+
+   locate sr.ogbqrhead in memory
+   locate sr.ogbqrcode in memory
+   let filename = FGL_GETENV("TEMPDIR")
+   let filename2 = FGL_GETENV("TEMPDIR")
    let filename = sfmt("%1/%2%3.bmp",filename,g_prog,FGL_GETPID())
    let filename2 = sfmt("%1/%2%3head.bmp",filename2,g_prog,FGL_GETPID())
-   
+
 
    #darcy:2024/07/16 add e---
 
- 
+
 --LET l_sql="select '','','','','',oga01,oga04,'',ogb03,ogb04,ogb11,ogb12,ogb05,ogb31,ogbud01,ogaud03,ogaud04,ogaud05,oga02,ogbud02",
            --" from ogb_file,oga_file ",
-           --" WHERE oga01 = ogb01 ", 
+           --" WHERE oga01 = ogb01 ",
            --"   AND ",tm.wc CLIPPED,
-           --"   AND ogaconf != 'X' " #01/08/20 mandy 
- 
+           --"   AND ogaconf != 'X' " #01/08/20 mandy
+
 LET l_sql="select '','','','','',oga01,'','','',ogb04,'',sum(ogb12),'','','','','','','','',ogbud02,ogbud08", #darcy:2023/12/28 add ogbud08
            " from ogb_file,oga_file ",
-           " WHERE oga01 = ogb01 ", 
+           " WHERE oga01 = ogb01 ",
            "   AND ",tm.wc CLIPPED,
-           "   AND ogaconf != 'X' ", #01/08/20 mandy 
+           "   AND ogaconf != 'X' ", #01/08/20 mandy
            "   GROUP BY oga01,ogb04,ogbud02,ogbud08"
-    
+
      PREPARE cxmr011_prepare1 FROM l_sql
-     IF STATUS THEN CALL cl_err('prepare:',STATUS,1) 
+     IF STATUS THEN CALL cl_err('prepare:',STATUS,1)
         CALL cl_used(g_prog,g_time,2) RETURNING g_time #No.FUN-690126
-        EXIT PROGRAM 
-     END IF 
+        EXIT PROGRAM
+     END IF
      LET l_ogb03 = 1
      DECLARE cxmr011_curs1 CURSOR FOR cxmr011_prepare1
-     FOREACH cxmr011_curs1 INTO sr.* 
+     FOREACH cxmr011_curs1 INTO sr.*
          IF STATUS THEN CALL cl_err('foreach:',STATUS,1) EXIT FOREACH END IF
          LET sr.ogb03 = l_ogb03
          #ly0814  临时处理下备注带出通单备注 ogbud01 替换为ogbud06
-         #SELECT oga03,ogb11,ogb05,ogb31,ogbud01,ogaud03,ogaud04,ogaud05,oga02 
-            SELECT oga03,ogb11,ogb05,ogb31,ogbud06,ogaud03,ogaud04,ogaud05,oga02 
+         #SELECT oga03,ogb11,ogb05,ogb31,ogbud01,ogaud03,ogaud04,ogaud05,oga02
+            SELECT oga03,ogb11,ogb05,ogb31,ogbud06,ogaud03,ogaud04,ogaud05,oga02
          INTO sr.oga04,sr.ogb11,sr.ogb05,sr.ogb31,sr.ogbud01,sr.ogaud03,sr.ogaud04,sr.ogaud05,sr.oga02
-         
+
          FROM ogb_file,oga_file WHERE oga01=ogb01 AND oga01 = sr.oga01 AND ogaconf!='X' AND ogb04 = sr.ogb04
          AND ogbud02 = sr.ogbud02 #AND ogbud01 = sr.ogbud01
          SELECT ima02 INTO sr.ima02 FROM ima_file WHERE ima01 = sr.ogb04  #add by guanyao161101
          SELECT zo02,zo041,zo042,zo05,zo09 INTO sr.zo02,sr.zo041,sr.zo042,sr.zo05,sr.zo09
          FROM zo_file WHERE zo01=g_rlang
          #darcy:2024/07/16 add s---
-         if not qrgenerate(sfmt("%1;",sr.oga01),filename2)  then
+         --if not qrgenerate(sfmt("%1;",sr.oga01),filename2)  then
             free sr.ogbqrhead
             locate sr.ogbqrhead in memory
             call sr.ogbqrhead.readFile(filename2)
-         end if 
-         if not qrgenerate(sfmt("%1;%2;%3;",sr.oga01,sr.ogb04,sr.ogb12),filename) then
+         --end if
+         --if not qrgenerate(sfmt("%1;%2;%3;",sr.oga01,sr.ogb04,sr.ogb12),filename) then
             free sr.ogbqrcode
             locate sr.ogbqrcode in memory
             call sr.ogbqrcode.readFile(filename)
-         end if
+         --end if
 
          #darcy:2024/07/16 add e---
          # darcy:2025/07/22 add s---
@@ -393,11 +393,11 @@ LET l_sql="select '','','','','',oga01,'','','',ogb04,'',sum(ogb12),'','','','',
          # SELECT occ18 INTO sr.occ18 FROM occ_file WHERE occ01=sr.oga04
          IF cl_null(sr.occ18) THEN
                SELECT occ18 INTO sr.occ18 FROM occ_file WHERE occ01=sr.oga04
-         END IF 
+         END IF
             EXECUTE insert_prep USING sr.*
          LET l_ogb03 = l_ogb03 + 1
      END FOREACH
- 
+
      LET g_sql = "SELECT * FROM ",g_cr_db_str CLIPPED,l_table CLIPPED
      IF g_zz05='Y' THEN
         CALL cl_wcchp(tm.wc,'oga01,oga02')
@@ -413,6 +413,3 @@ LET l_sql="select '','','','','',oga01,'','','',ogb04,'',sum(ogb12),'','','','',
      end if #darcy:2023/12/28 add
 
 END FUNCTION
-
-
-
