@@ -271,7 +271,7 @@ DEFINE
 
     l_ima02         LIKE ima_file.ima02,
     l_ima021        LIKE ima_file.ima021,
-    g_ima55         LIKE ima_file.ima55, 
+    g_ima55         LIKE ima_file.ima55,
     g_imaud07       LIKE ima_file.imaud07, #add by guanyao160627
     g_imaud10       LIKE ima_file.imaud10, #add by guanyao160627
     g_sw            LIKE type_file.chr1,         #No.FUN-680073 VARCHAR(01)
@@ -366,7 +366,7 @@ MAIN
       CALL cl_set_act_visible("chkbom",FALSE)
       CALL cl_set_comp_visible("tree",FALSE)                        #FUN-B90117
    END IF
-   call cl_set_comp_visible("ecuud03",false)  #darcy:2025/10/28 add  
+   call cl_set_comp_visible("ecuud03",false)  #darcy:2025/10/28 add
 #FUN-A50081 --end--
 #darcy:2024/03/06 add s---
    call cl_set_act_visible("g01",false)
@@ -380,13 +380,13 @@ MAIN
 
    #str------add by guanyao160719
    LET g_argv1 = ARG_VAL(1)
-   IF NOT cl_null(g_argv1) THEN 
+   IF NOT cl_null(g_argv1) THEN
       CALL i100_q()
    END IF #add by guanyao160805
-   #ELSE  
+   #ELSE
    #end------add by guanyao160719
    CALL i100()
-   #END IF 
+   #END IF
 
    CLOSE WINDOW i100_w
      CALL  cl_used(g_prog,g_time,2) RETURNING g_time #No.MOD-580088  HCN 20050818  #No.FUN-6A0100
@@ -409,7 +409,7 @@ FUNCTION i100()
 
    let g_forupd_sql = "select * from ecb_file where ecb01 = ? and ecb02 =? "
    declare i100_ecb_cl cursor from  g_forupd_sql
-   
+
    CALL i100_menu()
 
 END FUNCTION
@@ -421,15 +421,15 @@ DEFINE  lc_qbe_sn       LIKE    gbm_file.gbm01    #No.FUN-580031  HCN
    LET g_imaud07 = ''
    LET g_imaud10 = ''
    CALL cl_set_head_visible("","YES")    #No.FUN-6B0029
-   INITIALIZE g_ecu.* TO NULL    #No.FUN-750051
+   INITIALIZE .* TO NULL    #No.FUN-750051
    INITIALIZE g_tree TO NULL             #FUN-B90117
    INITIALIZE g_ecu.ecu01 TO NULL        #FUN-B90117
 
    #str-----add by guanyao160719
-   IF NOT cl_null(g_argv1) THEN 
+   IF NOT cl_null(g_argv1) THEN
       LET g_wc = " ecu01 = '",g_argv1,"'"
       LET g_wc2=' 1=1'
-   ELSE 
+   ELSE
    #end-----add by guanyao160719
    CONSTRUCT BY NAME g_wc ON
        ecu01, ecu02, ecu03,ecu012,ecu015,ecu10,ecu11,ecuuser, ecugrup, ecumodu, ecudate, ecuacti  #No.FUN-810017  #FUN-A50081 add ecu012,ecu015
@@ -618,9 +618,9 @@ DEFINE  lc_qbe_sn       LIKE    gbm_file.gbm01    #No.FUN-580031  HCN
 
    LET g_wc = g_wc CLIPPED,cl_get_extra_cond('ecuuser', 'ecugrup')
    #add by zhangzs 210106 ---s--
-   IF g_wc2 IS NULL THEN 
+   IF g_wc2 IS NULL THEN
       LET g_wc2 = '1=1'
-   END IF 
+   END IF
    #add by zhangzs 210106 ---e--
    IF g_wc2=' 1=1' THEN
       LET g_sql="SELECT ecu01,ecu02,ecu012 FROM ecu_file ",             #FUN-A50081 add ecu012
@@ -775,7 +775,7 @@ define l_cnt integer #darcy:2023/04/12 add
             EXIT WHILE
          WHEN "controlg"
             CALL cl_cmdask()
-        
+
         WHEN "routing_details"
             IF NOT cl_null(g_ecu.ecu01) AND NOT cl_null(g_ecu.ecu02)
               #AND NOT cl_null(g_ecu.ecu012)                            #FUN-A50081 add  #MOD-B40227
@@ -848,8 +848,8 @@ define l_cnt integer #darcy:2023/04/12 add
              END IF
           END IF
 
-          
- #str---add by huanglf160927         
+
+ #str---add by huanglf160927
         WHEN "release"
              IF cl_chk_act_auth() THEN
               CALL i100_confirm()
@@ -864,11 +864,11 @@ define l_cnt integer #darcy:2023/04/12 add
  #str---end by huanglf160927
 
 
-    
+
 
 #str----add by huanglf161011
         WHEN "work_no"
-          IF cl_chk_act_auth() THEN 
+          IF cl_chk_act_auth() THEN
               IF l_ac > 0 THEN           #No.MOD-A30038 add
                LET l_cmd = "ceci100 "," '",g_ecu.ecu01,"'",
                            " '",g_ecb[l_ac].ecb06,"'"          #No.MOD-780015 add
@@ -877,10 +877,10 @@ define l_cnt integer #darcy:2023/04/12 add
                      LET g_wc2 = " 1= 1"
                   END IF
                CALL i100_b_fill(g_wc2)                 #單身
-          
-             END IF    
-          END IF 
-#str----end by huanglf161011 
+
+             END IF
+          END IF
+#str----end by huanglf161011
 
         WHEN "confirm"
      IF cl_chk_act_auth() THEN
@@ -889,19 +889,19 @@ define l_cnt integer #darcy:2023/04/12 add
 #      #检查是否维护受镀面积
 #      #是否有需要维护受镀面积作业编码
 #      SELECT count(*) INTO l_cn2 FROM  ecb_file WHERE  ecb01=g_ecu.ecu01 AND ecb02=g_ecu.ecu02
-#      AND ecb06 
+#      AND ecb06
 #      IN (SELECT tc_ecn02 FROM tc_ecn_base  )
-     
-#      SELECT  count(*) INTO l_cn3
-#      FROM ecb_file ,tc_ecn_file 
-#      WHERE ecb01=g_ecu.ecu01 AND ecb02=g_ecu.ecu02 
-#      AND ecb01=tc_ecn01 AND   ecb06=tc_ecn02 AND tc_ecn04>0 
-  
 
-#      IF l_cn2<l_cn3 THEN  
+#      SELECT  count(*) INTO l_cn3
+#      FROM ecb_file ,tc_ecn_file
+#      WHERE ecb01=g_ecu.ecu01 AND ecb02=g_ecu.ecu02
+#      AND ecb01=tc_ecn01 AND   ecb06=tc_ecn02 AND tc_ecn04>0
+
+
+#      IF l_cn2<l_cn3 THEN
 #       CALL cl_err('','csf-046',0)
 #      END IF
-     
+
 #                 IF cl_null(g_ecu.ecu01) OR g_ecu.ecu02 IS NULL OR g_ecu.ecu012 IS NULL THEN    #FUN-A50081 add ecu012
 #                    CALL cl_err('',-400,0)
 #                  #  RETURN
@@ -909,76 +909,76 @@ define l_cnt integer #darcy:2023/04/12 add
 
 #          # 检查作业编码是否重复
 #          SELECT count(*) INTO l_cn1
-#          FROM 
+#          FROM
 #       (
 #             SELECT  ecb01,ecb02
-#             FROM ecb_file 
+#             FROM ecb_file
 #             WHERE  ecb01=g_ecu.ecu01 AND ecb02=g_ecu.ecu02
 #             GROUP BY  ecb01,ecb02,ecb06
 #             HAVING count(*)>1
 #          )
 
-#          IF cl_null(l_cn1) THEN  LET l_cn1=0 END IF 
-#          IF l_cn1>1 THEN 
+#          IF cl_null(l_cn1) THEN  LET l_cn1=0 END IF
+#          IF l_cn1>1 THEN
 #                CALL cl_err('','csf-033',0)
 #                  #  RETURN
 #           END IF
-            
+
 # UPDATE ECB_FILE
 # SET ecbud06='Y'  WHERE ecb01=g_ecu.ecu01 AND  ecb02=g_ecu.ecu02 AND ecbud06<>'Y' AND  ecbud04 IS NOT NULL
-              
+
 # UPDATE ECB_FILE
 # SET ecbud06='N'  WHERE ecb01=g_ecu.ecu01 AND  ecb02=g_ecu.ecu02  AND  ecbud08='G1018'
-     
+
 #            IF g_success = 'Y' THEN
 #                 IF g_ecu.ecuud02="Y" THEN
 #                    CALL cl_err("",9023,1)
 #                   # RETURN
 #                 END IF
-#             END IF 
+#             END IF
 # #str----add by huanglf161027
 #       LET l_num = 0
 #       LET g_success = 'Y'
 #      #tianry add 161212
-#       DECLARE sel_ttrryy_cur CURSOR FOR 
+#       DECLARE sel_ttrryy_cur CURSOR FOR
 #       SELECT ecb06,COUNT(ecb06)  FROM ecb_file  WHERE ecb01 = g_ecu.ecu01  AND ecb02 = g_ecu.ecu02
 #            GROUP BY ecb06
-#            HAVING COUNT(ecb06)>1 
-#       OPEN sel_ttrryy_cur 
+#            HAVING COUNT(ecb06)>1
+#       OPEN sel_ttrryy_cur
 #       FETCH sel_ttrryy_cur INTO l_ecb06,l_num
-#       CLOSE sel_ttrryy_cur 
-#       IF l_num>0 THEN 
+#       CLOSE sel_ttrryy_cur
+#       IF l_num>0 THEN
 #          CALL cl_err(l_ecb06,'cec-034',1)
 #          LET g_success = 'N'
-#       END IF 
-# #str----end by huanglf161027 
-#        IF g_success = 'Y' THEN 
+#       END IF
+# #str----end by huanglf161027
+#        IF g_success = 'Y' THEN
 #                 IF g_ecu.ecuacti="N"  THEN
 #                    CALL cl_err("",'aim-153',1)
 #                    LET g_success = 'N'   #add by huanglf161027
 #                    #RETURN                        #No.FUN-840036
 #                 ELSE
-#                     IF NOT cl_confirm('aap-222') THEN 
+#                     IF NOT cl_confirm('aap-222') THEN
 #                        LET g_success = 'N'  #add by huanglf161027
-#                         #RETURN 
+#                         #RETURN
 #                     END IF
 #                 END IF
 #                 IF g_ecu.ecuud02="Y" THEN
 #                    CALL cl_err("",9023,1)
 #                    LET g_success = 'N' #add by huanglf161027
-#                     #RETURN 
+#                     #RETURN
 #                 END IF
-#       END IF 
+#       END IF
 
 # #str---add by huanglf170313
 #          CALL i100_ecbud04('')
 #           IF g_success = 'N' THEN
 #              CALL cl_err('','cec-100',1)
-#           END IF 
-# #str---end by huanglf170313 
+#           END IF
+# #str---end by huanglf170313
 #          #darcy:2023/04/12 add s---
 #          # HDI未维护报错
-#          select count(1) into l_cnt from ima_file where ima06 in ('G01','G02') 
+#          select count(1) into l_cnt from ima_file where ima06 in ('G01','G02')
 #             and ima01 = g_ecu.ecu01 and imaud25 is null
 #          if l_cnt > 0 then
 #             call cl_err_msg('','cec-043',g_ecu.ecu01,1)
@@ -988,10 +988,10 @@ define l_cnt integer #darcy:2023/04/12 add
 #         IF g_success = 'Y' THEN  #add by huanglf161027
 #            IF g_ecu.ecuacti="N" THEN
 #                       CALL cl_err("",'aim-153',1)
-#                      RETURN 
+#                      RETURN
 #                                   #No.FUN-840036
 #            ELSE
-        
+
 #                     BEGIN WORK
 #                     #str-----add by guanyao160727
 #                     --UPDATE ima_file SET ima571 = g_ecu.ecu01,
@@ -1000,16 +1000,16 @@ define l_cnt integer #darcy:2023/04/12 add
 #                     --IF SQLCA.sqlcode THEN
 #                        --CALL cl_err3("upd","ima_file",g_ecu.ecu01,g_ecu.ecu02,SQLCA.sqlcode,"","ima571",1)
 #                        --ROLLBACK WORK
-#                        --RETURN 
+#                        --RETURN
 #                     --END IF
 #                 ----更新报工否
 # {
-#                  UPDATE ecb_file 
+#                  UPDATE ecb_file
 #                  SET ecbud06=(select ta_ecd05 from ecd_file where ecb06=ecd01),
 #                      ecb41='N'
-#                  WHERE ecb01=g_ecu.ecu01 and ecb02=g_ecu.ecu02 
+#                  WHERE ecb01=g_ecu.ecu01 and ecb02=g_ecu.ecu02
 #                     #end-----add by guanyao160727
- 
+
 # }
 #                    UPDATE ecu_file
 #                     SET ecuud02="Y",ecudate = g_today     #FUN-D10063 add ecudate = g_today
@@ -1026,13 +1026,13 @@ define l_cnt integer #darcy:2023/04/12 add
 #                     LET g_ecu.ecuud02="Y"
 #                     DISPLAY g_ecu.ecuud02 TO FORMONLY.ecuud02
 #                     #add by zhangzs 201208   记录审核状态到中间表 ect_file   ----s------
-#                     LET L_ecu01 = g_ecu.ecu01,g_ecu.ecu02  
+#                     LET L_ecu01 = g_ecu.ecu01,g_ecu.ecu02
 #                     # SELECT TO_CHAR(SYSDATE, 'YY-MM-DD,HH24:MM:SS') INTO l_date FROM DUAL  #日期+时间
 #                     CALL cl_ect('aeci100',l_ecu01,g_user,'1',g_today,TIME)
 #                     #add by zhangzs 201208   记录审核状态到中间表 ect_file   ----e------
 #                 END IF
-            
-#            END IF 
+
+#            END IF
 #         END IF  #add by huanglf161027
 #darcy:2023/10/17 mark e---
             #darcy:2023/10/17 add s---
@@ -1046,18 +1046,18 @@ define l_cnt integer #darcy:2023/04/12 add
             #darcy:2023/10/17 add e---
 
             CALL i100_show()
-           
-        END IF 
+
+        END IF
 
       WHEN "up_confirmall"
            IF cl_chk_act_auth() THEN
                CALL up_confirmall()
-               
+
            END IF
-    
+
         WHEN "notconfirm"
       IF cl_chk_act_auth() THEN
-           IF g_ecu.ecuud02="N" OR g_ecu.ecuacti="N" THEN  
+           IF g_ecu.ecuud02="N" OR g_ecu.ecuacti="N" THEN
                 CALL cl_err("",'atm-365',1)
                 RETURN
             ELSE
@@ -1090,7 +1090,7 @@ define l_cnt integer #darcy:2023/04/12 add
                         LET g_ecu.ecuud02="N"
                         DISPLAY g_ecu.ecuud02 TO FORMONLY.ecu10
                         #add by zhangzs 201208   记录审核状态到中间表 ect_file   ----s------
-                        LET L_ecu01 = g_ecu.ecu01,g_ecu.ecu02  
+                        LET L_ecu01 = g_ecu.ecu01,g_ecu.ecu02
                         SELECT TO_CHAR(SYSDATE, 'YY-MM-DD,HH24:MM:SS') INTO l_date FROM DUAL  #日期+时间
                         CALL cl_ect('aeci100',l_ecu01,g_user,'2',g_today,TIME)
                         #add by zhangzs 201208   记录审核状态到中间表 ect_file   ----e------
@@ -1122,18 +1122,18 @@ define l_cnt integer #darcy:2023/04/12 add
                END IF    #No.MOD-920375 add
             END IF
          #CHI-C90006---begin
-         WHEN "invalid"   
+         WHEN "invalid"
             IF cl_chk_act_auth() THEN
                CALL i100_x()
             END IF
          #CHI-C90006---end\
          #str-----add by guanyao160524_1
          WHEN "excel_into"
-            IF cl_chk_act_auth() THEN 
+            IF cl_chk_act_auth() THEN
                CALL i100_excel_into()
             END IF
          #end-----add by guanyao160524_1
-        
+
         #add by ly170809 刷序号
         WHEN "upecb03"
             IF cl_chk_act_auth() THEN
@@ -1143,13 +1143,13 @@ define l_cnt integer #darcy:2023/04/12 add
        WHEN "upecbud06"
             IF cl_chk_act_auth() THEN
               UPDATE ecb_file
-              SET ecbud06='Y' 
+              SET ecbud06='Y'
               WHERE ecb01=g_ecu.ecu01 and ecb02=g_ecu.ecu02
-            MESSAGE  " update 报工  OK " 
-              UPDATE ecb_file 
+            MESSAGE  " update 报工  OK "
+              UPDATE ecb_file
               SET ecbud06='N'
              WHERE   ecb01=g_ecu.ecu01 and ecb02=g_ecu.ecu02 and ecb08='G1018'
-            MESSAGE "自定义不报工更新OK"  
+            MESSAGE "自定义不报工更新OK"
             #darcy:2024/03/05 add s---
             # 记录修改记录
             # if g_user = 'tiptop' then
@@ -1172,7 +1172,7 @@ define l_cnt integer #darcy:2023/04/12 add
             IF cl_chk_act_auth() THEN
                CALL i100_stopuse()
                 CALL i100_show()
-            END IF 
+            END IF
         #add by zyq 170910 --end--
       END CASE
    END WHILE
@@ -1241,27 +1241,27 @@ DEFINE l_count1       LIKE type_file.num5
 
 SELECT count(*)  INTO l_count FROM ecu_file WHERE ecu01=g_ecu.ecu01 AND ecu02=g_ecu.ecu02 AND ( ecu10='Y'  OR ecuud02='Y' )
 
- 
+
 
 SELECT count(*)  INTO l_count1 FROM tc_ecg_file WHERE tc_ecg01=g_ecu.ecu01  AND tc_ecg02=g_ecu.ecu02
-IF l_count1>0 THEN 
+IF l_count1>0 THEN
    CALL cl_err(g_ecu.ecu01,'cec-103',1)
    RETURN
-END IF 
+END IF
 
-IF l_count>0 THEN 
+IF l_count>0 THEN
    CALL cl_err(g_ecu.ecu01,'cec-102',1)
    RETURN
 ELSE
-  UPDATE ecb_file 
-  SET ecbud12=ecb03 
+  UPDATE ecb_file
+  SET ecbud12=ecb03
    WHERE  ecb01=g_ecu.ecu01 AND ecb02=g_ecu.ecu02
 
-  update ecb_file 
+  update ecb_file
   SET ecb03=(select aa  from ( select  rownum*10 aa , ecb03  bb from ecb_file   where ecb01=g_ecu.ecu01 AND ecb02=g_ecu.ecu02  order by ecb03 ) where ecb01=g_ecu.ecu01 AND ecb02=g_ecu.ecu02 AND  ecb03=bb )
   where ecb01=g_ecu.ecu01  AND ecb02=g_ecu.ecu02
 
-   IF STATUS =0  THEN  MESSAGE  " update ecb03  OK "   END IF 
+   IF STATUS =0  THEN  MESSAGE  " update ecb03  OK "   END IF
    #darcy:2024/03/05 add s---
    # 记录修改记录
    # if g_user = 'tiptop' then
@@ -1276,17 +1276,17 @@ ELSE
    # end if
    #darcy:2024/03/05 add e---
 SELECT count(*)  INTO l_count1 FROM tc_ecg_file WHERE tc_ecg01=g_ecu.ecu01  AND tc_ecg02=g_ecu.ecu02
-IF l_count1>0 THEN 
+IF l_count1>0 THEN
  #  CALL cl_err(g_ecu.ecu01,'cec-103',1)
  #  RETURN
 
-  UPDATE tc_ecg_file 
+  UPDATE tc_ecg_file
   SET tc_ecg03=(select aa  from ( select  rownum*10 aa , tc_ecg03  bb from tc_ecg_file   where tc_ecg01=g_ecu.ecu01 AND tc_ecg02=g_ecu.ecu02  order by tc_ecg03 ) where tc_ecg01=g_ecu.ecu01 AND tc_ecg02=g_ecu.ecu02 AND  tc_ecg03=bb )
   WHERE  tc_ecg01=g_ecu.ecu01  AND tc_ecg02=g_ecu.ecu02
-    IF STATUS =0  THEN  MESSAGE  " update tc_ecg03  OK "   END IF 
-END IF 
-  
-END IF 
+    IF STATUS =0  THEN  MESSAGE  " update tc_ecg03  OK "   END IF
+END IF
+
+END IF
 DISPLAY  g_ecu.ecu01
 CALL i100_show()
 
@@ -1295,7 +1295,7 @@ END FUNCTION
 #add by zyq 170910 --start--
 FUNCTION i100_stopuse()
     DEFINE l_ecu06 LIKE ecu_file.ecu06
-    IF g_ecu.ecu06 IS NULL OR g_ecu.ecu06 = 'N' THEN 
+    IF g_ecu.ecu06 IS NULL OR g_ecu.ecu06 = 'N' THEN
         LET l_ecu06 = 'Y'
         BEGIN WORK
           UPDATE ecu_file
@@ -1305,16 +1305,16 @@ FUNCTION i100_stopuse()
               #AND ecu012 = g_ecu.ecu012   #FUN-A50081
           IF SQLCA.sqlcode THEN
             CALL cl_err3("upd","ecu_file",g_ecu.ecu01,g_ecu.ecu02,SQLCA.sqlcode,"","ecu06",1)
-            ROLLBACK WORK 
-          ELSE 
+            ROLLBACK WORK
+          ELSE
             COMMIT WORK
-          END IF 
-          SELECT ecu06 INTO g_ecu.ecu06 FROM ecu_file 
+          END IF
+          SELECT ecu06 INTO g_ecu.ecu06 FROM ecu_file
               WHERE ecu01=g_ecu.ecu01
               AND ecu02=g_ecu.ecu02
-          DISPLAY g_ecu.ecu06 TO FORMONLY.ecu06 
+          DISPLAY g_ecu.ecu06 TO FORMONLY.ecu06
         CALL cl_set_comp_entry("ecu01,ecu02,ecu03,ecu04,ecu05,ecu11,ecu012",FALSE)
-    ELSE 
+    ELSE
         LET l_ecu06 = 'N'
         BEGIN WORK
           UPDATE ecu_file
@@ -1323,17 +1323,17 @@ FUNCTION i100_stopuse()
               AND ecu02=g_ecu.ecu02
           IF SQLCA.sqlcode THEN
             CALL cl_err3("upd","ecu_file",g_ecu.ecu01,g_ecu.ecu02,SQLCA.sqlcode,"","ecu06",1)
-            ROLLBACK WORK 
-          ELSE 
+            ROLLBACK WORK
+          ELSE
             COMMIT WORK
-          END IF 
-         SELECT ecu06 INTO g_ecu.ecu06 FROM ecu_file 
+          END IF
+         SELECT ecu06 INTO g_ecu.ecu06 FROM ecu_file
               WHERE ecu01=g_ecu.ecu01
               AND ecu02=g_ecu.ecu02
-          DISPLAY g_ecu.ecu06 TO FORMONLY.ecu06 
+          DISPLAY g_ecu.ecu06 TO FORMONLY.ecu06
         CALL cl_set_comp_entry("ecu01,ecu02,ecu03,ecu04,ecu05,ecu11,ecu012",TRUE)
     END IF
-END FUNCTION 
+END FUNCTION
 #add by zyq 170910 --end--
 FUNCTION i100_a()
    DEFINE li_result LIKE type_file.num5
@@ -1382,7 +1382,7 @@ FUNCTION i100_a()
         IF SQLCA.sqlcode THEN
            CALL cl_err3("upd","ima_file",g_ecu.ecu01,g_ecu.ecu02,SQLCA.sqlcode,"","",1) #FUN-660091
            CONTINUE WHILE
-        END IF 
+        END IF
         # darcy:2025/10/24 add s---
         # 自动建立单号系统
         call s_auto_assign_no("abm","ECU",g_today,"7","ecu_file","ecuud02","","","")
@@ -1395,7 +1395,7 @@ FUNCTION i100_a()
         # 签核否
         # 组装成品量产料号才需要送签
         if g_user = 'tiptop' or g_user = '30369' then
-         if g_ecu.ecu01[7,7] matches "[ABC]" and g_ecu.ecu01[10,10] not matches "[SF]" and g_ecu.ecu01 not matches "*-*" and g_ecu.ecu02 like '*0' then 
+         if g_ecu.ecu01[7,7] matches "[ABC]" and g_ecu.ecu01[10,10] not matches "[SF]" and g_ecu.ecu01 not matches "*-*" and g_ecu.ecu02 like '*0' then
                let g_ecu.ecuud04 = 'Y'
                display by name g_ecu.ecuud04
          end if
@@ -1404,7 +1404,7 @@ FUNCTION i100_a()
         let g_ecu.ecuud05 = '0'
         display by name g_ecu.ecuud05
         # darcy:2025/10/24 add e---
-        #end-----add by guanyao160627 
+        #end-----add by guanyao160627
         INSERT INTO ecu_file VALUES(g_ecu.*)     # DISK WRITE
         IF SQLCA.sqlcode THEN
            CALL cl_err3("ins","ecu_file",g_ecu.ecu01,g_ecu.ecu02,SQLCA.sqlcode,"","",1) #FUN-660091
@@ -1456,11 +1456,21 @@ FUNCTION i100_i(p_cmd)
         g_ecu.ecuud05,g_ecu.ecuud06,g_ecu.ecuud07,g_ecu.ecuud08,
         g_ecu.ecuud09,g_ecu.ecuud10,g_ecu.ecuud11,g_ecu.ecuud12,
         g_ecu.ecuud13,g_ecu.ecuud14,g_ecu.ecuud15,g_imaud07,g_imaud10
+        # darcy add s---
+        ,g_ecu.ecuud31,g_ecu.ecuud17,g_ecu.ecuud18,g_ecu.ecuud19,g_ecu.ecuud20,
+        g_ecu.ecuud21,g_ecu.ecuud22,g_ecu.ecuud23,g_ecu.ecuud24,g_ecu.ecuud25,
+        g_ecu.ecuud26,g_ecu.ecuud27,g_ecu.ecuud28,g_ecu.ecuud29,g_ecu.ecuud30
+        # darcy add e---
     WITHOUT DEFAULTS
     FROM ecu01,ecu02,ecu03,ecu11,ecu012,ecu014,ecu015,ecuuser,ecugrup,ecumodu,ecudate,
          ecuacti,ecuud01,ecuud02,ecuud03,ecuud04,ecuud05,ecuud06,ecuud07,ecuud08,
          ecuud09,ecuud10,ecuud11,ecuud12,ecuud13,ecuud14,ecuud15,imaud07,imaud10
-#end----add by guanyao160627         
+         # darcy add s---
+         ,ecuud31,ecuud32,ecuud18,ecuud19,ecuud20,
+         ecuud21,ecuud22,ecuud23,ecuud24,ecuud25,
+         ecuud26,ecuud27,ecuud28,ecuud29,ecuud30
+         # darcy add e---
+#end----add by guanyao160627
         BEFORE INPUT
             LET g_before_input_done = FALSE
             CALL i100_set_entry(p_cmd)
@@ -1503,14 +1513,14 @@ FUNCTION i100_i(p_cmd)
 #               END IF
 #            END IF
            # LET l_num=g_ecu.ecu02.getLength()
-           LET l_length = LENGTH(g_ecu.ecu02) 
+           LET l_length = LENGTH(g_ecu.ecu02)
            # ly 270807
-            IF  g_ecu.ecu02[l_length,l_length]='o' OR g_ecu.ecu02[l_length,l_length]='O'  THEN 
+            IF  g_ecu.ecu02[l_length,l_length]='o' OR g_ecu.ecu02[l_length,l_length]='O'  THEN
                CALL cl_err('','cec-101',0)
                 DISPLAY BY NAME g_ecu.ecu02
                 NEXT FIELD ecu02
-            END IF 
-            
+            END IF
+
              IF cl_null(g_ecu.ecu02) THEN
                 NEXT FIELD CURRENT
              END IF
@@ -1609,7 +1619,7 @@ FUNCTION i100_i(p_cmd)
 
         AFTER FIELD ecuud10
             IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
-         
+
          #darcy:2023/12/04 add s---
          on change ecuud10
             if g_ecu.ecuud10 = '1' then
@@ -1768,10 +1778,10 @@ END FUNCTION
 
 FUNCTION i100_q()
     #add by zyq 170911 --start--
-    IF g_ecu.ecu06 IS NULL THEN 
+    IF g_ecu.ecu06 IS NULL THEN
     LET g_ecu.ecu06 = 'N'
     DISPLAY g_ecu.ecu06 TO FORMONLY.ecu06
-    END IF 
+    END IF
     #add by zyq 170911 -end--
     LET g_row_count = 0
     LET g_curs_index = 0
@@ -2028,11 +2038,11 @@ FUNCTION i100_copy()
    # darcy:2024/04/23 add s---
    update ecb_tmp set ecb08 = (select ecd07 from ecd_file where ecd01 = ecb06)
    # darcy:2024/04/23 add e---
-   
+
    # darcy:2022/06/06 add s---
-   if LENGTH(old_no) >=10 and LENGTH(new_no)>=10 then 
-      IF old_no[10,11]='S' OR new_no[10,11]='S' THEN 
-         if old_no[10,11] <> new_no[10,11] then 
+   if LENGTH(old_no) >=10 and LENGTH(new_no)>=10 then
+      IF old_no[10,11]='S' OR new_no[10,11]='S' THEN
+         if old_no[10,11] <> new_no[10,11] then
             UPDATE ecb_tmp  SET ecb19=0,ecb21=0
          end if
       END IF
@@ -2042,7 +2052,7 @@ FUNCTION i100_copy()
          UPDATE ecb_tmp  SET ecb19=0,ecb21=0
       end if
       #darcy:2022/08/24 add e---
-   end if 
+   end if
    # darcy:2022/06/06 add e---
    INSERT INTO ecb_file SELECT * FROM ecb_tmp
    IF STATUS THEN
@@ -2087,9 +2097,9 @@ FUNCTION i100_copy()
    CALL cl_err3("ins","sgc_file",new_no,necu02,STATUS,"","ins sgc",1) #FUN-660091
    RETURN END IF
    #FUN-C30027---begin
-   SELECT * 
+   SELECT *
      INTO g_ecu.*
-     FROM ecu_file 
+     FROM ecu_file
     WHERE ecu01 = new_no
       AND ecu02 = necu02
       AND ecu012 = necu012
@@ -2226,9 +2236,15 @@ DEFINE l_imaud06  LIKE ima_file.imaud06
         g_ecu.ecuud09,g_ecu.ecuud10,g_ecu.ecuud11,g_ecu.ecuud12,
         g_ecu.ecuud13,g_ecu.ecuud14,g_ecu.ecuud15
         ,g_ecu.ecu06#add by zyq
+    # darcy add s---
+    display by name g_ecu.ecuud31,g_ecu.ecuud32,g_ecu.ecuud18,g_ecu.ecuud19,g_ecu.ecuud20,
+                    g_ecu.ecuud21,g_ecu.ecuud22,g_ecu.ecuud23,g_ecu.ecuud24,g_ecu.ecuud25,
+                    g_ecu.ecuud26,g_ecu.ecuud27,g_ecu.ecuud28,g_ecu.ecuud29,g_ecu.ecuud30
+    # darcy add e---
+
 
     DISPLAY g_ecu.ecu10 TO FORMONLY.ecu10                  #No.FUN-810017
-    DISPLAY g_ecu.   ecu06 TO FORMONLY.euc06                  #add by zyq 170911 
+    DISPLAY g_ecu.   ecu06 TO FORMONLY.euc06                  #add by zyq 170911
     CALL i100_ecu014(g_ecu.ecu015) RETURNING g_ecr02       #FUN-B20078
     DISPLAY g_ecr02 TO ecr02                               #FUN-B20078
     INITIALIZE g_ima.* TO NULL
@@ -2262,7 +2278,7 @@ FUNCTION i100_u()
     IF s_shut(0) THEN RETURN END IF
 
     # darcy:2025/10/28 add s---
-    if g_ecu.ecuud05 matches '[Ss]' then 
+    if g_ecu.ecuud05 matches '[Ss]' then
       call cl_err('','apm-030',1)
       return
     end if
@@ -2284,7 +2300,7 @@ FUNCTION i100_u()
     END IF
     #CHI-C90006---begin
     IF g_ecu.ecuacti = 'N' THEN
-        CALL cl_err('',9027,0) 
+        CALL cl_err('',9027,0)
         RETURN
     END IF
     #CHI-C90006---end
@@ -2335,7 +2351,7 @@ FUNCTION i100_u()
         IF SQLCA.sqlcode THEN
            CALL cl_err3("upd","ima_file",g_ecu.ecu01,g_ecu.ecu02,SQLCA.sqlcode,"","",1) #FUN-660091
            CONTINUE WHILE
-        END IF 
+        END IF
         #end----add by guanyao160627
         UPDATE ecu_file SET ecu_file.* = g_ecu.*    # 更新DB
             WHERE ecu01 = g_ecu01_t AND ecu02 = g_ecu02_t             # COLAUTH?
@@ -2356,7 +2372,7 @@ FUNCTION i100_r()
 
     IF s_shut(0) THEN RETURN END IF
     # darcy:2025/10/28 add s---
-    if g_ecu.ecuud05 matches '[Ss]' then 
+    if g_ecu.ecuud05 matches '[Ss]' then
       call cl_err('','apm-030',1)
       return
     end if
@@ -2371,11 +2387,11 @@ FUNCTION i100_r()
     END IF
     #CHI-C90006---begin
     IF g_ecu.ecuacti = 'N' THEN
-        CALL cl_err('',9027,0) 
+        CALL cl_err('',9027,0)
         RETURN
     END IF
     #CHI-C90006---end
-    
+
     BEGIN WORK
 
     OPEN i100_cl USING g_ecu.ecu01,g_ecu.ecu02,g_ecu.ecu012   #FUN-A50081
@@ -2436,7 +2452,7 @@ FUNCTION i100_r()
         IF STATUS THEN
         CALL cl_err3("del","ecb_file",g_ecu.ecu01,g_ecu.ecu02,STATUS,"","del ecb:",1) #FUN-660091
         RETURN END IF
-         
+
 
          DELETE FROM vms_file WHERE vms01 = g_ecu.ecu01 AND vms02 = g_ecu.ecu02
             IF STATUS THEN
@@ -2516,14 +2532,14 @@ END FUNCTION
 
 FUNCTION i100_confirm()
 DEFINE l_msg              STRING #FUN-A50100
- 
+
    define l_cnt  integer #darcy:2023/04/12 add
 
     LET g_action_choice=NULL  #TQC-BC0168
     IF cl_null(g_ecu.ecu01) OR g_ecu.ecu02 IS NULL OR g_ecu.ecu012 IS NULL THEN    #FUN-A50081 add ecu012
        CALL cl_err('',-400,0)
        RETURN
-    END IF 
+    END IF
 #CHI-C30107 --------- add --------- begin
     IF g_ecu.ecu10="Y" THEN
        CALL cl_err("",'cec-030',1) #modify by huanglf160928
@@ -2533,8 +2549,8 @@ DEFINE l_msg              STRING #FUN-A50100
        CALL cl_err("",'aim-153',1)
        RETURN                        #No.FUN-840036
     ELSE
-        IF NOT cl_confirm('cec-031') THEN 
-           RETURN 
+        IF NOT cl_confirm('cec-031') THEN
+           RETURN
         END IF
     END IF
 #CHI-C30107 --------- add --------- end
@@ -2558,7 +2574,7 @@ DEFINE l_msg              STRING #FUN-A50100
 
       #darcy:2023/04/12 add s---
       # HDI未维护报错
-      select count(1) into l_cnt from ima_file where ima06 in ('G01','G02') 
+      select count(1) into l_cnt from ima_file where ima06 in ('G01','G02')
          and ima01 = g_ecu.ecu01 and imaud25 is null
       if l_cnt > 0 then
          call cl_err_msg('','cec-043',g_ecu.ecu01,1)
@@ -2571,9 +2587,9 @@ DEFINE l_msg              STRING #FUN-A50100
     CALL i100_ecbud04('')
     IF g_success = 'N' THEN
        CALL cl_err('','cec-100',1)
-       RETURN 
-    END IF 
-#str---end by huanglf170313 
+       RETURN
+    END IF
+#str---end by huanglf170313
 
     IF g_ecu.ecuacti="N" THEN
        CALL cl_err("",'aim-153',1)
@@ -2588,8 +2604,8 @@ DEFINE l_msg              STRING #FUN-A50100
             IF SQLCA.sqlcode THEN
                CALL cl_err3("upd","ima_file",g_ecu.ecu01,g_ecu.ecu02,SQLCA.sqlcode,"","ima571",1)
                ROLLBACK WORK
-               RETURN 
-            END IF 
+               RETURN
+            END IF
             #end-----add by guanyao160727
             UPDATE ecu_file
             SET ecu10="Y",ecudate = g_today     #FUN-D10063 add ecudate = g_today
@@ -2637,7 +2653,7 @@ FUNCTION i100_notconfirm()
        CALL cl_err('','aec-128',0)
        #RETURN
     END IF
-    IF g_ecu.ecu10="N" OR g_ecu.ecuacti="N" THEN  
+    IF g_ecu.ecu10="N" OR g_ecu.ecuacti="N" THEN
         CALL cl_err("",'atm-365',1)
         RETURN
     ELSE
@@ -2693,7 +2709,7 @@ define l_delete   like type_file.chr1
     LET g_action_choice = ""
     IF s_shut(0) THEN RETURN END IF
     # darcy:2025/10/28 add s---
-    if g_ecu.ecuud05 matches '[Ss]' then 
+    if g_ecu.ecuud05 matches '[Ss]' then
       call cl_err('','apm-030',1)
       return
     end if
@@ -2779,7 +2795,7 @@ define l_delete   like type_file.chr1
                    AND vmn04 = g_ecb[l_ac].ecb06
                 CALL cl_show_fld_cont()     #FUN-550037(smin)
             END IF
-             #darcy:2023/07/10 add s--- 
+             #darcy:2023/07/10 add s---
                call i100_set_entry_b(p_cmd)
                call i100_set_no_entry_b(p_cmd)
             #darcy:2023/07/10 add e---
@@ -3007,7 +3023,7 @@ define l_delete   like type_file.chr1
                #tianry add 170117
                SELECT ta_ecd05 INTO g_ecb[l_ac].ecbud06 FROM ecd_file WHERE ecd01=g_ecb[l_ac].ecb06
                DISPLAY BY NAME g_ecb[l_ac].ecb06
-               #tianry add end 
+               #tianry add end
 
                CALL i100_ecb06(p_cmd)
                IF NOT cl_null(g_errno) THEN
@@ -3017,14 +3033,14 @@ define l_delete   like type_file.chr1
                   NEXT FIELD ecb06
                END IF
                SELECT ima55 INTO g_ecb[l_ac].ecb45 FROM ima_file WHERE ima01=g_ecu.ecu01
-               IF NOT cl_null(g_ecb[l_ac].ecb45) THEN 
+               IF NOT cl_null(g_ecb[l_ac].ecb45) THEN
                   LET g_ecb[l_ac].ecb46=1
                   LET g_ecb[l_ac].ecb51=1
                END IF
                DISPLAY BY NAME g_ecb[l_ac].ecb45
                DISPLAY BY NAME g_ecb[l_ac].ecb46
                DISPLAY BY NAME g_ecb[l_ac].ecb51
-               
+
                #add by liy211206 s
                DISPLAY BY NAME g_ecb[l_ac].ecbud06
                IF NOT cl_null(g_ecb[l_ac].ecb08)  THEN
@@ -3041,8 +3057,8 @@ define l_delete   like type_file.chr1
                 IF g_success = 'N' THEN
                     CALL cl_err('','cec-100',0)
                     NEXT FIELD ecbud04
-                END IF 
-                END IF 
+                END IF
+                END IF
                #add by liy211206 e
               #FUN-A40060--add---str---
                IF NOT cl_null(g_sma.sma901) AND g_sma.sma901 = 'Y' THEN
@@ -3301,17 +3317,17 @@ define l_delete   like type_file.chr1
 #str-----------mark by guanyao160524
                #CALL s_umfchk(g_ecu.ecu01,l_ima55,g_ecb[l_ac].ecb45)
                #     RETURNING l_cnt,l_fac    #單位換算
-               #IF l_cnt = '1'  THEN 
+               #IF l_cnt = '1'  THEN
                #   LET l_fac = 1
                #END IF
                #LET g_ecb[l_ac].ecb46 = l_fac
-               IF l_ac = 1 THEN 
+               IF l_ac = 1 THEN
                   CALL i100_umfchk(g_ecu.ecu01,l_ima55,g_ecb[l_ac].ecb45)
                      RETURNING l_cnt,l_fac,g_ecb[l_ac].ecb46,g_ecb[l_ac].ecb51
-               ELSE 
+               ELSE
                   CALL i100_umfchk(g_ecu.ecu01,g_ecb[l_ac-1].ecb45,g_ecb[l_ac].ecb45)
                      RETURNING l_cnt,l_fac,g_ecb[l_ac].ecb46,g_ecb[l_ac].ecb51
-               END IF 
+               END IF
 #end-----------mark by guanyao160524
                #MOD-D20118---end
 #FUN-A50081 --begin--
@@ -3329,7 +3345,7 @@ define l_delete   like type_file.chr1
 #FUN-A50081 --end--
                #FUN-BB0083---add---str
                IF NOT cl_null(g_ecb[l_ac].ecb52) THEN
-                  IF NOT i100_ecb52_check() THEN 
+                  IF NOT i100_ecb52_check() THEN
                      LET g_ecb45_t = g_ecb[l_ac].ecb45
                      NEXT FIELD ecb52
                   END IF
@@ -3357,9 +3373,9 @@ define l_delete   like type_file.chr1
             END IF
            #MOD-C20166 mark add
            ##FUN-B90141 --START--
-           #IF NOT i100_chk_ecu51() THEN               
+           #IF NOT i100_chk_ecu51() THEN
            #   NEXT FIELD CURRENT
-           #END IF 
+           #END IF
            ##FUN-B90141 --END--
            #MOD-C20166 mark add
          ELSE
@@ -3374,11 +3390,11 @@ define l_delete   like type_file.chr1
             END IF
            #MOD-C20166 mark add
            ##FUN-B90141 --START--
-           #IF NOT i100_chk_ecu51() THEN               
+           #IF NOT i100_chk_ecu51() THEN
            #   NEXT FIELD CURRENT
-           #END IF 
+           #END IF
            ##FUN-B90141 --END--
-           #MOD-C20166 mark add  
+           #MOD-C20166 mark add
          ELSE
             #NEXT FIELD CURRENT   #FUN-B90141 mark
          END IF
@@ -3398,7 +3414,7 @@ define l_delete   like type_file.chr1
           #	  END IF
           #END IF
           #FUN-BB0083---mark---end
-          
+
        AFTER FIELD ecb53
          IF NOT cl_null(g_ecb[l_ac].ecb53) THEN
             IF g_ecb[l_ac].ecb53 <= 0 THEN
@@ -3440,7 +3456,7 @@ define l_delete   like type_file.chr1
          # darcy:2025/10/16 add s---
          -- 表面处理的生产说明要弹窗填写
          before field ecbud02
-            if not cl_null(g_ecb[l_ac].ecb06) then 
+            if not cl_null(g_ecb[l_ac].ecb06) then
                select count(*) into g_cnt from tc_sma_file
                 where tc_sma01 = 'csmi123' and tc_sma02 = g_ecb[l_ac].ecb06
                if g_cnt > 0 then
@@ -3465,12 +3481,12 @@ define l_delete   like type_file.chr1
                 IF g_success = 'N' THEN
                     CALL cl_err('','cec-100',0)
                     NEXT FIELD ecbud04
-                END IF 
-           END IF 
-        #str---end by huanglf170313 
+                END IF
+           END IF
+        #str---end by huanglf170313
         AFTER FIELD ecbud05
            IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
-        
+
         AFTER FIELD ecbud06
             IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
 
@@ -3500,15 +3516,15 @@ define l_delete   like type_file.chr1
 
         AFTER FIELD ecbud15
            IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
-           
+
         AFTER FIELD ecbud16
            IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
-           
+
         AFTER FIELD ecbud17
            IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
 
         BEFORE DELETE                            #是否取消單身
-        
+
             #darcy:2024/08/13 mod s---
             let l_delete = 'N'
             for l_i = 1 to g_ecb.getLength()
@@ -3525,7 +3541,7 @@ define l_delete   like type_file.chr1
                      exit for
                   end if
                end if
-            end for 
+            end for
 
             let l_i = 1
             let l_cnt = g_ecb.getLength()
@@ -3535,10 +3551,10 @@ define l_delete   like type_file.chr1
                   let l_cnt = l_cnt - 1
                else
                   let l_i = l_i + 1
-               end if 
-            end while 
+               end if
+            end while
 
-            # 复制一笔l_ac让程序自动删除 
+            # 复制一笔l_ac让程序自动删除
             # call g_ecb.insertElement(l_ac)
             # let g_ecb[l_ac].* = g_ecb[l_ac+1].*
             cancel delete
@@ -3582,7 +3598,7 @@ define l_delete   like type_file.chr1
             #        ROLLBACK WORK
             #        CANCEL DELETE
             #     ELSE
-                  
+
 
             #       DELETE FROM vms_file
             #           WHERE vms01 = g_ecu.ecu01 AND vms02 = g_ecu.ecu02
@@ -3815,7 +3831,7 @@ define l_delete   like type_file.chr1
         AFTER ROW
             LET l_ac = ARR_CURR()
             #LET l_ac_t = l_ac  #FUN-D40030
-            IF l_ac <= g_ecb.getLength() THEN       #MOD-C30195   
+            IF l_ac <= g_ecb.getLength() THEN       #MOD-C30195
             #MOD-C20166 str add-----
                IF NOT INT_FLAG THEN                 #MOD-C30539
                   IF NOT i100_chk_ecu51() THEN
@@ -3874,10 +3890,10 @@ define l_delete   like type_file.chr1
                     DISPLAY BY NAME g_ecb[l_ac].ecb06      #No.MOD-490371
                     #add by liy211206 s #客户要求带出所有
                      IF NOT cl_null(g_ecb[l_ac].ecb06) THEN
-						            
+
 						               SELECT ta_ecd05 INTO g_ecb[l_ac].ecbud06 FROM ecd_file WHERE ecd01=g_ecb[l_ac].ecb06
 						               DISPLAY BY NAME g_ecb[l_ac].ecb06
-						             
+
 						               CALL i100_ecb06(p_cmd)
 						               IF NOT cl_null(g_errno) THEN
 						                  CALL cl_err('',g_errno,0)
@@ -3886,15 +3902,15 @@ define l_delete   like type_file.chr1
 						                  NEXT FIELD ecb06
 						               END IF
 						               SELECT ima55 INTO g_ecb[l_ac].ecb45 FROM ima_file WHERE ima01=g_ecu.ecu01
-						               IF NOT cl_null(g_ecb[l_ac].ecb45) THEN 
+						               IF NOT cl_null(g_ecb[l_ac].ecb45) THEN
 						                  LET g_ecb[l_ac].ecb46=1
 						                  LET g_ecb[l_ac].ecb51=1
 						               END IF
 						               DISPLAY BY NAME g_ecb[l_ac].ecb45
 						               DISPLAY BY NAME g_ecb[l_ac].ecb46
 						               DISPLAY BY NAME g_ecb[l_ac].ecb51
-						               
-						       
+
+
 						               DISPLAY BY NAME g_ecb[l_ac].ecbud06
 						               IF NOT cl_null(g_ecb[l_ac].ecb08)  THEN
 							               CALL i100_ecb08('a')
@@ -3910,9 +3926,9 @@ define l_delete   like type_file.chr1
 						                IF g_success = 'N' THEN
 						                    CALL cl_err('','cec-100',0)
 						                    NEXT FIELD ecbud04
-						                END IF 
-						                END IF 
-						            
+						                END IF
+						                END IF
+
 						              #FUN-A40060--add---str---
 						               IF NOT cl_null(g_sma.sma901) AND g_sma.sma901 = 'Y' THEN
 						                   IF NOT cl_null(g_ecb_t.ecb06) AND
@@ -3957,10 +3973,10 @@ define l_delete   like type_file.chr1
 						                       END IF
 						                   END IF
 						               END IF
-						          
+
 						            END IF
                     #add by liy211206 e
-                    
+
                    NEXT FIELD ecb06
               WHEN INFIELD(ecb42)
                    IF g_ecb[l_ac].ecb41='Y' THEN
@@ -4090,7 +4106,7 @@ END FUNCTION
 FUNCTION i100_set_entry_b(p_cmd)
    DEFINE p_cmd   LIKE type_file.chr1         #No.FUN-680073 VARCHAR(01)
    #darcy:2024/03/06 add s---
-   define l_action_choice  varchar(40)   
+   define l_action_choice  varchar(40)
    define l_ima06     like ima_file.ima06
    #darcy:2024/03/06 add e---
 
@@ -4133,7 +4149,7 @@ END FUNCTION
 FUNCTION i100_set_no_entry_b(p_cmd)
   DEFINE p_cmd   LIKE type_file.chr1         #No.FUN-680073 VARCHAR(01)
   #darcy:2024/03/06 add s---
-  define l_action_choice  varchar(40)   
+  define l_action_choice  varchar(40)
   define l_ima06     like ima_file.ima06
   #darcy:2024/03/06 add e---
 
@@ -4142,7 +4158,7 @@ FUNCTION i100_set_no_entry_b(p_cmd)
           CALL cl_set_comp_entry("ecb42",FALSE)
        END IF
     END IF
-    CALL cl_set_comp_entry("ecb19,ecb21",FALSE) #darcy:add 2022年1月11日 
+    CALL cl_set_comp_entry("ecb19,ecb21",FALSE) #darcy:add 2022年1月11日
    #darcy:2023/07/08 add s---
    # 设置载板和光板可以修改报工否时，只能修改自己的报工
    if l_ac > 0 and l_ac <=  g_ecb.getLength() then
@@ -4340,9 +4356,9 @@ IF cl_null(g_wc2) THEN LET g_wc2=' 1=1' END IF  #No.FUN-810017
 
     LET g_rec_b=g_cnt -1
 #str----add by huanglf161031
-    IF g_rec_b = 1 THEN 
+    IF g_rec_b = 1 THEN
       CALL i100_show1(g_rec_b)
-    END IF 
+    END IF
 #str-----end by huanglf161031
 
     DISPLAY g_rec_b TO FORMONLY.cn2
@@ -4624,7 +4640,7 @@ FUNCTION i100_bp(p_ud)
          #   LET g_action_choice="detail"
          #   LET l_ac = 1
          #   EXIT DIALOG
-         #TQC-C30136--mark--end-- 
+         #TQC-C30136--mark--end--
 
       END DISPLAY
 #FUN-B90117--END--
@@ -4640,7 +4656,7 @@ FUNCTION i100_bp(p_ud)
             CALL cl_set_act_visible("aps_displace_vms",FALSE) #FUN-870012
             CALL cl_set_act_visible("aps_route_tools",FALSE) #FUN-890096
          END IF
-         
+
 
       BEFORE ROW
          LET l_ac = ARR_CURR()
@@ -4874,12 +4890,12 @@ FUNCTION i100_bp(p_ud)
        ON ACTION release
            LET g_action_choice="release"
            IF cl_chk_act_auth() THEN
-             IF g_ecu.ecuud02 = 'Y' THEN 
+             IF g_ecu.ecuud02 = 'Y' THEN
                 CALL i100_confirm()
                 CALL i100_show()
-             ELSE 
+             ELSE
                 CALL cl_err('','cec-033',1)
-             END IF 
+             END IF
            END IF
 
 
@@ -4914,22 +4930,22 @@ FUNCTION i100_bp(p_ud)
 
       ON ACTION work_no
            LET g_action_choice="work_no"
-           EXIT DIALOG  
+           EXIT DIALOG
 #str----end by huanglf161011
-         
+
         ON ACTION confirm
            LET g_action_choice="confirm"
-           EXIT DIALOG  
+           EXIT DIALOG
 
         ON ACTION notconfirm
            LET g_action_choice="notconfirm"
-           EXIT DIALOG  
+           EXIT DIALOG
 
         ON ACTION up_confirmall
             LET g_action_choice = "up_confirmall"
             EXIT DIALOG
 
-           
+
         ON ACTION output
            LET g_action_choice="output"
            IF cl_chk_act_auth()
@@ -4940,12 +4956,12 @@ FUNCTION i100_bp(p_ud)
            LET g_action_choice="invalid"
            IF cl_chk_act_auth() THEN
               CALL i100_x()
-           END IF 
+           END IF
         #CHI-C90006---end
         #str----add by guanyao160524_1
         ON ACTION excel_into
            LET g_action_choice="excel_into"
-           EXIT DIALOG   
+           EXIT DIALOG
         #end----add by guanyao160524_1
         #str----add by ly170809
         ON ACTION  upecb03
@@ -4960,7 +4976,7 @@ FUNCTION i100_bp(p_ud)
            LET g_action_choice="stopuse"
            EXIT DIALOG
         #add by zyq 170910 --end--
- 
+
 #FUN-B90117--mark--
 #      AFTER DISPLAY
 #         CONTINUE DISPLAY
@@ -5051,7 +5067,7 @@ FUNCTION i100_ecu01(p_cmd)  #料件編號
   SELECT ima02,ima021,imaacti,ima55
          ,imaud07,imaud10  #add by guanyao160627
          ,ima06            #add by guanyao160731
-         INTO l_ima02,l_ima021,l_imaacti,g_ima55 
+         INTO l_ima02,l_ima021,l_imaacti,g_ima55
               ,g_imaud07,g_imaud10    #add by guanyao160627
               ,l_ima06     #add by guanyao160731
          FROM ima_file
@@ -5065,9 +5081,9 @@ FUNCTION i100_ecu01(p_cmd)  #料件編號
        OTHERWISE                 LET g_errno = SQLCA.SQLCODE USING '-------'
   END CASE
   #str-----add by guanyao160731
-  IF l_ima06 = 'G01' THEN 
+  IF l_ima06 = 'G01' THEN
      LET g_imaud10 = 1
-  END IF 
+  END IF
   #end-----add by guanyao160731
   IF cl_null(g_errno) THEN
      DISPLAY l_ima02 TO FORMONLY.ima02
@@ -5156,24 +5172,24 @@ END FUNCTION
 
 FUNCTION i100_out()
   DEFINE l_cmd     LIKE type_file.chr1000
-  DEFINE l_wc     STRING 
+  DEFINE l_wc     STRING
   DEFINE l_ima06  LIKE ima_file.ima06
   DEFINE l_more    LIKE type_file.chr30
   DEFINE l_n      LIKE type_file.num5
 #str---add by huanglf160815
    SELECT ima06 INTO l_ima06 FROM ima_file WHERE ima01 = g_ecu.ecu01
- IF l_ima06 = 'G01' THEN 
+ IF l_ima06 = 'G01' THEN
        LET l_more = '1'
- END IF 
- IF l_ima06 = 'BCP'  or  l_ima06='G02'  THEN 
+ END IF
+ IF l_ima06 = 'BCP'  or  l_ima06='G02'  THEN
      SELECT count(*) INTO l_n FROM ima_file WHERE ima01 LIKE '%-%' AND ima01 = g_ecu.ecu01
-     IF l_n>0 THEN 
+     IF l_n>0 THEN
         LET l_more = '3'
      ELSE
         LET l_more = '2'
      END IF
-  END IF 
-       
+  END IF
+
 
 #str---end by huanglf160815
      LET l_wc = 'ecu01 = "',g_ecu.ecu01,'"',' AND ecu02 = "',g_ecu.ecu02,'"'
@@ -5192,12 +5208,12 @@ FUNCTION i100_out()
         --LET l_cmd = 'cecr001',
                               --" '",g_today CLIPPED,"' ''",
                        --" '",g_lang CLIPPED,"' '",g_bgjob CLIPPED,"'  '' '1'",
-                       --" '",l_wc CLIPPED,"' '' 'N' '' '' "  
+                       --" '",l_wc CLIPPED,"' '' 'N' '' '' "
     #str---add by huanglf160815
        LET l_cmd = 'cecr001',
                               " '",g_today CLIPPED,"' ''",
                        " '",g_lang CLIPPED,"' '",g_bgjob CLIPPED,"'  '' '1'",
-                       " '",l_wc CLIPPED,"' '",l_more CLIPPED,"' '' 'N' '' '' "         
+                       " '",l_wc CLIPPED,"' '",l_more CLIPPED,"' '' 'N' '' '' "
         CALL cl_cmdrun(l_cmd)
     #str---end by huanglf160815
        #end----mark by guanyao160811
@@ -5252,7 +5268,7 @@ FUNCTION i100_chk_aps()
 
 END FUNCTION
 #FUN-9A0047---add----end----
-#FUN-B90141 --START--            
+#FUN-B90141 --START--
 FUNCTION i100_chk_ecu51()
 DEFINE l_flag   LIKE type_file.chr1
 DEFINE l_fac    LIKE type_file.num26_10
@@ -5262,51 +5278,51 @@ DEFINE l_ecb51  LIKE ecb_file.ecb51  #add by guanyao160524
 DEFINE l_ecb46  LIKE ecb_file.ecb46  #add by guanyao160524
 
    IF cl_null(g_ecb[l_ac].ecb46) OR cl_null(g_ecb[l_ac].ecb51) THEN
-     #RETURN TRUE 
+     #RETURN TRUE
       RETURN FALSE        #MOD-C20166 add
-   END IF  
+   END IF
 
    SELECT ima55 INTO l_ima55 FROM ima_file WHERE ima01=g_ecu.ecu01
-#str-----mark by guanyao160524   
+#str-----mark by guanyao160524
    #CALL s_umfchk(g_ecu.ecu01,g_ecb[l_ac].ecb45,l_ima55)
    #                         RETURNING l_flag,l_fac
    #IF l_flag THEN
    #   CALL cl_err('','abm-731',1)
-   #   RETURN 
+   #   RETURN
    #   FALSE        #MOD-C20166 add
-   #END IF  
-   IF l_ac = 1 THEN 
+   #END IF
+   IF l_ac = 1 THEN
       CALL i100_umfchk(g_ecu.ecu01,g_ecb[l_ac].ecb45,l_ima55)
                             RETURNING l_flag,l_fac,l_ecb46,l_ecb51
-   ELSE 
+   ELSE
       CALL i100_umfchk(g_ecu.ecu01,g_ecb[l_ac].ecb45,g_ecb[l_ac-1].ecb45)
                             RETURNING l_flag,l_fac,l_ecb46,l_ecb51
    END IF
-#end-----mark by guanyao160524   
-   LET l_fac2 = g_ecb[l_ac].ecb51 / g_ecb[l_ac].ecb46  
-   
+#end-----mark by guanyao160524
+   LET l_fac2 = g_ecb[l_ac].ecb51 / g_ecb[l_ac].ecb46
+
    IF NOT s_industry('icd') THEN  #MOD-C30386
      #IF l_fac != l_fac2 THEN   #MOD-D40052 mark
       IF l_fac < l_fac2 THEN   #MOD-D40052 add
          CALL cl_err('','aec-069',1)
-         RETURN FALSE    
-      END IF    
+         RETURN FALSE
+      END IF
    END IF #MOD-C30386
-   
-   RETURN TRUE                     
-END FUNCTION 
-#FUN-B90141 --END--  
+
+   RETURN TRUE
+END FUNCTION
+#FUN-B90141 --END--
 #No.FUN-9C0077 程式精簡
 #FUN-B50046
 #FUN-B80046
 #FUN-BB0083---add---str
 FUNCTION i100_ecb52_check()
-#ecb52 的單位 ecb45   
+#ecb52 的單位 ecb45
    IF NOT cl_null(g_ecb[l_ac].ecb45) AND NOT cl_null(g_ecb[l_ac].ecb52) THEN
-      IF cl_null(g_ecb_t.ecb52) OR cl_null(g_ecb45_t) OR g_ecb_t.ecb52 != g_ecb[l_ac].ecb52 OR g_ecb45_t != g_ecb[l_ac].ecb45 THEN 
+      IF cl_null(g_ecb_t.ecb52) OR cl_null(g_ecb45_t) OR g_ecb_t.ecb52 != g_ecb[l_ac].ecb52 OR g_ecb45_t != g_ecb[l_ac].ecb45 THEN
          LET g_ecb[l_ac].ecb52=s_digqty(g_ecb[l_ac].ecb52,g_ecb[l_ac].ecb45)
-         DISPLAY BY NAME g_ecb[l_ac].ecb52  
-      END IF  
+         DISPLAY BY NAME g_ecb[l_ac].ecb52
+      END IF
    END IF
    IF cl_null(g_ecb[l_ac].ecb52) THEN
       RETURN FALSE
@@ -5333,8 +5349,8 @@ DEFINE l_chr LIKE type_file.chr1
        RETURN
     END IF
     BEGIN WORK
-    
-    OPEN i100_cl USING g_ecu.ecu01,g_ecu.ecu02,g_ecu.ecu012 
+
+    OPEN i100_cl USING g_ecu.ecu01,g_ecu.ecu02,g_ecu.ecu012
     IF STATUS THEN
        CALL cl_err("OPEN i100_cl:", STATUS, 1)
        CLOSE i100_cl
@@ -5371,7 +5387,7 @@ DEFINE l_chr LIKE type_file.chr1
 
     CLOSE i100_cl
     COMMIT WORK
-END FUNCTION 
+END FUNCTION
 #CHI-C90006---end
 
 #str------add by guanyao160524
@@ -5385,15 +5401,15 @@ FUNCTION i100_umfchk(p_item,p_1,p_2)
            l_tu       LIKE ima_file.ima31_fac   #目的單位兌換數量 	#No.FUN-680147 DECIMAL(16,8)
 
      IF p_1=p_2 OR p_item[1,4]='MISC' THEN RETURN 0,1.0,1,1 END IF
-     
+
      LET l_flag  = 0
-     SELECT smd04,smd06 INTO l_su,l_tu     
+     SELECT smd04,smd06 INTO l_su,l_tu
             FROM smd_file WHERE smd01=p_item AND smd02=p_1 AND smd03=p_2
      IF sqlca.sqlcode ='100' THEN
         SELECT smd06,smd04 INTO l_su,l_tu       #check 料件單位換算
                FROM smd_file WHERE smd01=p_item AND smd02=p_2 AND smd03=p_1
         #IF STATUS THEN TQC-C50233
-        IF sqlca.sqlcode ='100' THEN 
+        IF sqlca.sqlcode ='100' THEN
            SELECT smc03,smc04 INTO l_su,l_tu
                   FROM smc_file WHERE smc01=p_1 AND smc02=p_2
                    AND smcacti='Y'    #NO:4757
@@ -5401,13 +5417,13 @@ FUNCTION i100_umfchk(p_item,p_1,p_2)
            IF sqlca.sqlcode ='100' THEN LET l_flag = 1 END IF
         END IF
      END IF
-     IF l_flag = 0  THEN 
-        IF l_su = 0 OR l_su IS NULL THEN 
+     IF l_flag = 0  THEN
+        IF l_su = 0 OR l_su IS NULL THEN
            LET  l_factor = 0
-        ELSE 
+        ELSE
            LET  l_factor = l_tu / l_su     #轉換率
         END IF
-     ELSE 
+     ELSE
         LET l_flag = 0
         LET l_factor = 1
         LET l_su = 1
@@ -5424,17 +5440,17 @@ DEFINE l_ecb     RECORD LIKE ecb_file.*
 DEFINE g_fileloc               STRING
 DEFINE xlapp,iRes,iRow,i,j,iColumn,l_m,l_iRow     INTEGER
 DEFINE l_x,l_count,l_z,l_y       LIKE type_file.num5
-DEFINE l_ecu01,l_ecu01_o LIKE ecu_file.ecu01   
-DEFINE l_ecu02,l_ecu02_o LIKE ecu_file.ecu02 
+DEFINE l_ecu01,l_ecu01_o LIKE ecu_file.ecu01
+DEFINE l_ecu02,l_ecu02_o LIKE ecu_file.ecu02
 define l_ima06    like ima_file.ima06 #darcy:2024/03/05 add
 
    CALL cs_documentLocation()   #弹出窗口，接收本地文件路径
-   LET g_fileloc=gs_location 
+   LET g_fileloc=gs_location
    WHENEVER ERROR CALL cl_err_msg_log
 
    CALL cl_wait()
 
-   DROP TABLE ecu_tmp 
+   DROP TABLE ecu_tmp
    CREATE TEMP TABLE ecu_tmp (
          p_ecu01    LIKE ecu_file.ecu01,
          p_ecu02    LIKE ecu_file.ecu02,
@@ -5452,20 +5468,20 @@ define l_ima06    like ima_file.ima06 #darcy:2024/03/05 add
             CALL ui.interface.frontCall('WinCOM','ReleaseInstance',[xlApp],[iRes])
             MESSAGE ""
             CALL cl_err('','i171-01',1)
-            RETURN 
-         END IF 
-         IF iColumn <=2 THEN 
+            RETURN
+         END IF
+         IF iColumn <=2 THEN
             CALL ui.interface.frontCall('WinCOM','CallMethod',[xlApp,'Quit'],[iRes])
             CALL ui.interface.frontCall('WinCOM','ReleaseInstance',[xlApp],[iRes])
             MESSAGE ""
             CALL cl_err('','i171-01',1)
-            RETURN 
-         END IF 
+            RETURN
+         END IF
          LET l_iRow = iRow+1
          FOR i=2 TO l_iRow
             CALL ui.interface.frontCall('WinCOM','GetProperty',[xlApp,'ActiveSheet.Cells('||i||',1).Value'],[l_ecu01])  #料件编号
             CALL ui.interface.frontCall('WinCOM','GetProperty',[xlApp,'ActiveSheet.Cells('||i||',2).Value'],[l_ecu02])
-            IF NOT cl_null(l_ecu01) THEN 
+            IF NOT cl_null(l_ecu01) THEN
                LET l_ecu01_o =l_ecu01
                LET l_ecu02_o =l_ecu02
                LET l_z = 1
@@ -5474,7 +5490,7 @@ define l_ima06    like ima_file.ima06 #darcy:2024/03/05 add
                   LET g_success='N'
                   CALL s_errmsg("ins ecu_tmp",l_ecu01||';'||l_ecu02,'',SQLCA.sqlcode,1)
                END IF
-            ELSE 
+            ELSE
                LET l_z = l_z +1
                UPDATE ecu_tmp SET p_ecb03= l_z
                 WHERE p_ecu01=l_ecu01_o
@@ -5483,54 +5499,54 @@ define l_ima06    like ima_file.ima06 #darcy:2024/03/05 add
                   LET g_success='N'
                   CALL s_errmsg("upd ecu_tmp",l_ecu01||';'||l_ecu01,'',SQLCA.sqlcode,1)
                END IF
-            END IF 
+            END IF
          END FOR
-         IF g_success = 'N' THEN 
+         IF g_success = 'N' THEN
             CALL s_showmsg()
-            RETURN 
-         END IF 
-         
-         BEGIN WORK 
+            RETURN
+         END IF
+
+         BEGIN WORK
          LET g_success='Y'
          CALL s_showmsg_init()
-         FOR i=2 TO iRow                           
-            IF g_success='N' THEN 
-               EXIT FOR 
-            END IF 
-            INITIALIZE l_ecu.* TO NULL 
-            INITIALIZE l_ecb.* TO NULL            
+         FOR i=2 TO iRow
+            IF g_success='N' THEN
+               EXIT FOR
+            END IF
+            INITIALIZE l_ecu.* TO NULL
+            INITIALIZE l_ecb.* TO NULL
             CALL ui.interface.frontCall('WinCOM','GetProperty',[xlApp,'ActiveSheet.Cells('||i||',1).Value'],[l_ecu.ecu01])  #料件编号
             CALL ui.interface.frontCall('WinCOM','GetProperty',[xlApp,'ActiveSheet.Cells('||i||',2).Value'],[l_ecu.ecu02])  #工艺编号
             CALL ui.interface.frontCall('WinCOM','GetProperty',[xlApp,'ActiveSheet.Cells('||i||',3).Value'],[l_ecu.ecu03])  #工艺说明
-            IF cl_null(l_ecu.ecu01) OR cl_null(l_ecu.ecu02) THEN 
-              CONTINUE FOR  
-            ELSE 
+            IF cl_null(l_ecu.ecu01) OR cl_null(l_ecu.ecu02) THEN
+              CONTINUE FOR
+            ELSE
                SELECT COUNT(*) INTO l_x FROM ecu_file WHERE ecu01 = l_ecu.ecu01 AND ecu02 = l_ecu.ecu02
-               IF l_x > 0 THEN 
-                  LET g_success= 'N'                               
-                  CALL cl_err(i,'cei-002',1)                      
-                  EXIT  FOR  
-               END IF 
-            END IF 
-            IF NOT cl_null(l_ecu.ecu01) THEN 
+               IF l_x > 0 THEN
+                  LET g_success= 'N'
+                  CALL cl_err(i,'cei-002',1)
+                  EXIT  FOR
+               END IF
+            END IF
+            IF NOT cl_null(l_ecu.ecu01) THEN
                LET l_count=0
                SELECT COUNT(*) INTO l_count FROM ima_file WHERE ima01 = l_ecu.ecu01
                 IF l_count = 0 THEN
                   LET g_success = 'N'
                   CALL s_errmsg('ecu01',l_ecu.ecu01,'','art-440',1)
-               END IF 
+               END IF
             END IF
 
             #str----栏位取值--写ecu表
-            LET l_ecu.ecu012 = ' '     
+            LET l_ecu.ecu012 = ' '
             LET l_ecu.ecu04 = 0
             LET l_ecu.ecu05 = 0
             LET l_ecu.ecuacti = 'Y'
-            LET l_ecu.ecu10 = 'N'                        
+            LET l_ecu.ecu10 = 'N'
             LET l_ecu.ecuuser = g_user
             LET l_ecu.ecugrup = g_grup
-            LET l_ecu.ecuorig = g_grup  
-            LET l_ecu.ecuoriu = g_user  
+            LET l_ecu.ecuorig = g_grup
+            LET l_ecu.ecuoriu = g_user
             LET l_ecu.ecudate = TODAY
             INSERT INTO ecu_file VALUES (l_ecu.*)
             IF SQLCA.sqlcode THEN   			#置入資料庫不成功
@@ -5541,9 +5557,9 @@ define l_ima06    like ima_file.ima06 #darcy:2024/03/05 add
             #LET l_x = (iColumn-3)/23
             LET l_y = 0
             SELECT p_ecb03 INTO l_y FROM ecu_tmp WHERE p_ecu01 =l_ecu.ecu01 AND p_ecu02 = l_ecu.ecu02
-            LET l_y =l_y+i-1 
+            LET l_y =l_y+i-1
             FOR j=i TO l_y
-               CALL ui.interface.frontCall('WinCOM','GetProperty',[xlApp,'ActiveSheet.Cells('||j||',4).Value'],[l_ecb.ecb03]) #起始日期 
+               CALL ui.interface.frontCall('WinCOM','GetProperty',[xlApp,'ActiveSheet.Cells('||j||',4).Value'],[l_ecb.ecb03]) #起始日期
                CALL ui.interface.frontCall('WinCOM','GetProperty',[xlApp,'ActiveSheet.Cells('||j||',5).Value'],[l_ecb.ecb06])   #计划数量
                CALL ui.interface.frontCall('WinCOM','GetProperty',[xlApp,'ActiveSheet.Cells('||j||',6).Value'],[l_ecb.ecb17])
                CALL ui.interface.frontCall('WinCOM','GetProperty',[xlApp,'ActiveSheet.Cells('||j||',7).Value'],[l_ecb.ecb08])
@@ -5566,42 +5582,42 @@ define l_ima06    like ima_file.ima06 #darcy:2024/03/05 add
                CALL ui.interface.frontCall('WinCOM','GetProperty',[xlApp,'ActiveSheet.Cells('||j||',24).Value'],[l_ecb.ecb14])
                CALL ui.interface.frontCall('WinCOM','GetProperty',[xlApp,'ActiveSheet.Cells('||j||',25).Value'],[l_ecb.ecb52])
                CALL ui.interface.frontCall('WinCOM','GetProperty',[xlApp,'ActiveSheet.Cells('||j||',26).Value'],[l_ecb.ecb53])
-               CALL ui.interface.frontCall('WinCOM','GetProperty',[xlApp,'ActiveSheet.Cells('||j||',27).Value'],[l_ecb.ecb48]) 
+               CALL ui.interface.frontCall('WinCOM','GetProperty',[xlApp,'ActiveSheet.Cells('||j||',27).Value'],[l_ecb.ecb48])
                #str----栏位取值--写ecb表
-               IF cl_null(l_ecb.ecb03) THEN 
+               IF cl_null(l_ecb.ecb03) THEN
                   LET l_ecb.ecb03 = j
-               END IF 
-               IF cl_null(l_ecb.ecb18) THEN 
+               END IF
+               IF cl_null(l_ecb.ecb18) THEN
                   LET l_ecb.ecb18 = 0
-               END IF 
+               END IF
                IF cl_null(l_ecb.ecb19) THEN
                   LET l_ecb.ecb19 = 0
                END IF
-               IF cl_null(l_ecb.ecb20) THEN  
+               IF cl_null(l_ecb.ecb20) THEN
                   LET l_ecb.ecb20 = 0
-               END IF 
-               IF cl_null(l_ecb.ecb21) THEN 
+               END IF
+               IF cl_null(l_ecb.ecb21) THEN
                   LET l_ecb.ecb21 = 0
-               END IF 
-               IF cl_null(l_ecb.ecb38) THEN 
+               END IF
+               IF cl_null(l_ecb.ecb38) THEN
                   LET l_ecb.ecb38 = 0
-               END IF 
-               IF cl_null(l_ecb.ecb04) THEN 
+               END IF
+               IF cl_null(l_ecb.ecb04) THEN
                   LET l_ecb.ecb04 = 0
-               END IF 
-               LET l_ecb.ecb66 = 'Y'   
-               IF cl_null(l_ecb.ecb39) THEN 
+               END IF
+               LET l_ecb.ecb66 = 'Y'
+               IF cl_null(l_ecb.ecb39) THEN
                   LET l_ecb.ecb39 = 'N'
-               END IF 
-               IF cl_null(l_ecb.ecb40) THEN 
+               END IF
+               IF cl_null(l_ecb.ecb40) THEN
                   LET l_ecb.ecb40 = 'N'
                END IF
-               IF cl_null(l_ecb.ecb41) THEN 
+               IF cl_null(l_ecb.ecb41) THEN
                   LET l_ecb.ecb41 = 'N'
-               END IF 
-               LET l_ecb.ecb01= l_ecu.ecu01  
-               LET l_ecb.ecb02= l_ecu.ecu02   
-               LET l_ecb.ecb012 = ' '     
+               END IF
+               LET l_ecb.ecb01= l_ecu.ecu01
+               LET l_ecb.ecb02= l_ecu.ecu02
+               LET l_ecb.ecb012 = ' '
                INSERT INTO ecb_file VALUES (l_ecb.*)
                IF SQLCA.sqlcode THEN   			#置入資料庫不成功
                   LET g_success='N'
@@ -5616,7 +5632,7 @@ define l_ima06    like ima_file.ima06 #darcy:2024/03/05 add
                         call cl_err("更新报工否失败",'!',1)
                      end if
                   end if
-                  
+
                   select * into b_ecb.* from ecb_file
                   where ecb01 = l_ecu.ecu01 and ecb02 =l_ecu.ecu02
                     and ecb06 = l_ecb.ecb06
@@ -5627,28 +5643,28 @@ define l_ima06    like ima_file.ima06 #darcy:2024/03/05 add
                   end if
                # end if
                #darcy:2024/03/05 add e---
-            END FOR 
-         END FOR 
+            END FOR
+         END FOR
          CALL ui.interface.frontCall('WinCOM','CallMethod',[xlApp,'Quit'],[iRes])
          CALL ui.interface.frontCall('WinCOM','ReleaseInstance',[xlApp],[iRes])
          MESSAGE ""
-         IF g_success='Y' THEN 
-            COMMIT WORK 
+         IF g_success='Y' THEN
+            COMMIT WORK
             MESSAGE"汇入成功"
-         ELSE 
-            ROLLBACK WORK 
+         ELSE
+            ROLLBACK WORK
             CALL s_showmsg()
-         END IF 
-      END IF 
-   END IF    
-   
-END FUNCTION 
+         END IF
+      END IF
+   END IF
+
+END FUNCTION
 
 FUNCTION cs_documentLocation()
   DEFINE ls_str        STRING,
          ls_file       STRING,
          ls_location   STRING
-  DEFINE gr_gcb   RECORD LIKE gcb_file.*       
+  DEFINE gr_gcb   RECORD LIKE gcb_file.*
 
   LET gr_gcb.gcb02='DOC'
   CASE gr_gcb.gcb02
@@ -5665,7 +5681,7 @@ FUNCTION cs_documentLocation()
                     ON ACTION cancel
                         LET gs_location = ls_location
                         EXIT WHILE
- 
+
                     ON ACTION browse_document
                         LET ls_file = cl_browse_file()  #返回USER选择的本地路径
                         IF ls_file IS NOT NULL THEN
@@ -5676,10 +5692,10 @@ FUNCTION cs_documentLocation()
                         CALL cl_on_idle()
                         LET gs_location = ls_location
                         RETURN
- 
+
                 END PROMPT
             END WHILE
-       WHEN "URL" 
+       WHEN "URL"
             LET ls_str = cl_getmsg("lib-202", g_lang)
             LET ls_location = gs_location
             PROMPT ls_str CLIPPED FOR gs_location
@@ -5699,7 +5715,7 @@ FUNCTION cs_documentLocation()
   IF INT_FLAG THEN
      LET INT_FLAG = FALSE
   END IF
-END FUNCTION  
+END FUNCTION
 #end----add by guanyao160524_1
 
 
@@ -5713,50 +5729,50 @@ FUNCTION i100_show1(p_ac)
    DEFINE l_tc_ecnud06   LIKE tc_ecn_file.tc_ecnud06
    DEFINE l_tc_ecn08   LIKE tc_ecn_file.tc_ecn08
 
-   SELECT tc_ecn04,tc_ecn05,tc_ecn06,tc_ecn07,tc_ecnud06,tc_ecn08 
+   SELECT tc_ecn04,tc_ecn05,tc_ecn06,tc_ecn07,tc_ecnud06,tc_ecn08
    INTO l_tc_ecn04,l_tc_ecn05,l_tc_ecn06,l_tc_ecn07,l_tc_ecnud06,l_tc_ecn08
-   FROM tc_ecn_file 
-   WHERE tc_ecn01 = g_ecu.ecu01 AND tc_ecn02 = g_ecb[l_ac].ecb06 
-         AND tc_ecn09 = (SELECT MAX(tc_ecn09) FROM tc_ecn_file 
+   FROM tc_ecn_file
+   WHERE tc_ecn01 = g_ecu.ecu01 AND tc_ecn02 = g_ecb[l_ac].ecb06
+         AND tc_ecn09 = (SELECT MAX(tc_ecn09) FROM tc_ecn_file
                          WHERE tc_ecn01 = g_ecu.ecu01 AND tc_ecn02 = g_ecb[l_ac].ecb06 )
 DISPLAY  l_tc_ecn04 TO tc_ecn04
 DISPLAY  l_tc_ecn05 TO tc_ecn05
 DISPLAY  l_tc_ecn06 TO tc_ecn06
 DISPLAY  l_tc_ecn07 TO tc_ecn07
 DISPLAY  l_tc_ecnud06 TO tc_ecnud06
-DISPLAY  l_tc_ecn08 TO tc_ecn08  
+DISPLAY  l_tc_ecn08 TO tc_ecn08
 
-END FUNCTION 
+END FUNCTION
 #str----end by huanglf161031
 
 FUNCTION i100_e_work()
-DEFINE l_sql,l_sql1      STRING 
+DEFINE l_sql,l_sql1      STRING
 DEFINE l_ecb06     LIKE ecb_file.ecb06
-DEFINE l_bmb_e     RECORD 
+DEFINE l_bmb_e     RECORD
        ecb06       LIKE ecb_file.ecb06,
        ecbud04     LIKE ecb_file.ecbud04
-      END RECORD  
+      END RECORD
 DEFINE lst_token base.StringTokenizer
 DEFINE l_bmb02     LIKE bmb_file.bmb02
 DEFINE l_bmbud02   LIKE bmb_file.bmbud02
 DEFINE l_x         LIKE type_file.num5
 DEFINE l_bmb09     LIKE bmb_file.bmb09
 
-    IF g_ecu.ecu01 IS NULL THEN 
-       CALL cl_err('',-400,0) 
-       RETURN 
-    END IF 
-    
+    IF g_ecu.ecu01 IS NULL THEN
+       CALL cl_err('',-400,0)
+       RETURN
+    END IF
+
     LET g_success = 'Y'
-    UPDATE bmb_file SET bmb09 = ' ' 
+    UPDATE bmb_file SET bmb09 = ' '
                   WHERE bmb01 = g_ecu.ecu01 AND (bmb05>g_today OR bmb05 IS NULL)
-    IF SQLCA.sqlcode THEN      
-       CALL cl_err3("upd","bmb_file",g_ecu.ecu01,'',SQLCA.sqlcode,"","",1) 
-       LET g_success = 'N' 
+    IF SQLCA.sqlcode THEN
+       CALL cl_err3("upd","bmb_file",g_ecu.ecu01,'',SQLCA.sqlcode,"","",1)
+       LET g_success = 'N'
     END IF
     LET l_x = 0
-    SELECT COUNT(*) INTO l_x FROM ecb_file WHERE ecb01 =g_ecu.ecu01 AND ecbud04 IS NOT NULL 
-    IF l_x >0 THEN 
+    SELECT COUNT(*) INTO l_x FROM ecb_file WHERE ecb01 =g_ecu.ecu01 AND ecbud04 IS NOT NULL
+    IF l_x >0 THEN
        LET l_sql = "SELECT ecb06,ecbud04 FROM ecb_file",
                    " WHERE ecb01 ='",g_ecu.ecu01,"' ",
                    "   AND ecbud04 is not null",
@@ -5765,20 +5781,20 @@ DEFINE l_bmb09     LIKE bmb_file.bmb09
        DECLARE bmb_e_curs CURSOR FOR i600_e_pb
 
        INITIALIZE l_bmb_e.* TO NULL
-       FOREACH bmb_e_curs INTO l_bmb_e.*   
+       FOREACH bmb_e_curs INTO l_bmb_e.*
           IF SQLCA.sqlcode THEN
              CALL cl_err('foreach:',SQLCA.sqlcode,1)
              LET g_success = 'N'
              EXIT FOREACH
           END IF
-       
+
           LET lst_token = base.StringTokenizer.create(l_bmb_e.ecbud04, "|")
           WHILE lst_token.hasMoreTokens()
              LET l_bmb02 = ''
              LET l_bmbud02 = lst_token.nextToken()
              LET l_x = 0
              SELECT COUNT(*) INTO l_x FROM bmb_file WHERE bmbud02= l_bmbud02 AND bmb01 = g_ecu.ecu01
-             IF l_x >0 THEN 
+             IF l_x >0 THEN
                 LET l_sql = "SELECT bmb02 FROM bmb_file",
                             " WHERE bmb01 ='",g_ecu.ecu01,"' ",
                             "   AND bmbud02= '",l_bmbud02,"'",
@@ -5796,31 +5812,31 @@ DEFINE l_bmb09     LIKE bmb_file.bmb09
                    LET l_bmb09 = ''
                    SELECT bmb09 INTO l_bmb09 FROM bmb_file WHERE bmbud02= l_bmbud02 AND bmb01 = g_ecu.ecu01 AND bmb02 = l_bmb02
                    IF NOT cl_null(l_bmb09) THEN
-                      CONTINUE WHILE  
-                   ELSE 
-                      UPDATE bmb_file SET bmb09 = l_bmb_e.ecb06 
+                      CONTINUE WHILE
+                   ELSE
+                      UPDATE bmb_file SET bmb09 = l_bmb_e.ecb06
                                     WHERE bmb01 = g_ecu.ecu01
                                       AND bmb02 = l_bmb02
-                      IF SQLCA.sqlcode THEN      
-                         CALL cl_err3("upd","bmb_file",g_ecu.ecu01,l_bmb02,SQLCA.sqlcode,"","",1) 
-                         LET g_success = 'N' 
-                         EXIT FOREACH 
+                      IF SQLCA.sqlcode THEN
+                         CALL cl_err3("upd","bmb_file",g_ecu.ecu01,l_bmb02,SQLCA.sqlcode,"","",1)
+                         LET g_success = 'N'
+                         EXIT FOREACH
                       END IF
-                   END IF 
-                END FOREACH 
-             END IF 
+                   END IF
+                END FOREACH
+             END IF
           END WHILE
        END FOREACH
-    ELSE 
+    ELSE
        LET g_success = 'N'
-    END IF 
+    END IF
 
-END FUNCTION 
+END FUNCTION
 #end by wangxt170209
 
 #str---add by huanglf170313
 FUNCTION i100_ecbud04(g_ecbud04)
-DEFINE l_sql,l_sql1      STRING 
+DEFINE l_sql,l_sql1      STRING
 DEFINE l_ecb06     LIKE ecb_file.ecb06
 DEFINE l_ecbud04   LIKE ecb_file.ecbud04
 DEFINE l_ecbud04_1 LIKE ecb_file.ecbud04
@@ -5832,11 +5848,11 @@ DEFINE l_bmbud02   LIKE bmb_file.bmbud02
 DEFINE l_x         LIKE type_file.num5
 DEFINE l_bmb09     LIKE bmb_file.bmb09
 DEFINE l_num       LIKE type_file.num5
-DEFINE g_ecbud04   LIKE ecb_file.ecbud04   
-    IF g_ecu.ecu01 IS NULL THEN 
-       CALL cl_err('',-400,0) 
-       RETURN 
-    END IF 
+DEFINE g_ecbud04   LIKE ecb_file.ecbud04
+    IF g_ecu.ecu01 IS NULL THEN
+       CALL cl_err('',-400,0)
+       RETURN
+    END IF
 
     CALL aeci100_temp_table()
     LET g_success = 'Y'
@@ -5857,22 +5873,22 @@ DEFINE g_ecbud04   LIKE ecb_file.ecbud04
        DECLARE bmb_e_curs1 CURSOR FOR i600_e_pb1
 
        LET l_ecbud04 = ''
-       FOREACH bmb_e_curs1 INTO l_ecbud04   
+       FOREACH bmb_e_curs1 INTO l_ecbud04
           IF SQLCA.sqlcode THEN
              CALL cl_err('foreach:',SQLCA.sqlcode,1)
              LET g_success = 'N'
              EXIT FOREACH
           END IF
-       
+
           LET lst_token = base.StringTokenizer.create(l_ecbud04, "|")
           WHILE lst_token.hasMoreTokens()
              LET l_ecbud04_1 = lst_token.nextToken()
              SELECT COUNT(*) INTO l_num FROM aeci100_tmp WHERE ecbud04 = l_ecbud04_1
              IF l_num =0 OR cl_null(l_num) THEN
                  INSERT INTO aeci100_tmp VALUES(l_ecbud04_1)
-             ELSE 
+             ELSE
                  LET g_success = 'N'
-             END IF 
+             END IF
           END WHILE
        END FOREACH
 
@@ -5883,19 +5899,19 @@ DEFINE g_ecbud04   LIKE ecb_file.ecbud04
              SELECT COUNT(*) INTO l_num FROM aeci100_tmp WHERE ecbud04 = l_ecbud04_2
              IF l_num = 0 OR cl_null(l_num) THEN
                  INSERT INTO aeci100_tmp VALUES(l_ecbud04_2)
-             ELSE 
+             ELSE
                  LET g_success = 'N'
-             END IF 
+             END IF
           END WHILE
-      END IF 
+      END IF
 END FUNCTION
 
 #str---add by huanglf170310
 FUNCTION aeci100_temp_table()
-DEFINE l_sql    STRING 
+DEFINE l_sql    STRING
   DROP TABLE aeci100_tmp
-  CREATE TEMP TABLE aeci100_tmp(    
-        ecbud04   LIKE ecb_file.ecbud04)     
+  CREATE TEMP TABLE aeci100_tmp(
+        ecbud04   LIKE ecb_file.ecbud04)
 END FUNCTION
 #st----end by huanglf170310
 
@@ -5904,23 +5920,23 @@ END FUNCTION
 
 #根据MI批量审核发放
 FUNCTION up_confirmall()
-   DEFINE l_sql    STRING 
+   DEFINE l_sql    STRING
    define l_cnt     integer #darcy:2023/04/12 add
    {
-   LET l_sql = "SELECT DISTINCT bma01 FROM bma_file  where bma01  like  '",g_bma.bma01,"%' "                           
+   LET l_sql = "SELECT DISTINCT bma01 FROM bma_file  where bma01  like  '",g_bma.bma01,"%' "
    PREPARE upall_pl FROM l_sql
-   DECLARE upall_curl CURSOR FOR upall_pl               
+   DECLARE upall_curl CURSOR FOR upall_pl
    FOREACH upall_curl INTO g_bma.bma01
       CALL tc_sfa_pro()
-      
-      
+
+
  MESSAGE '执行完成'
-      
+
    END FOREACH
    }
       #darcy:2023/04/12 add s---
       # HDI未维护报错
-      select count(1) into l_cnt from ima_file where ima06 in ('G01','G02') 
+      select count(1) into l_cnt from ima_file where ima06 in ('G01','G02')
          and ima01 = g_ecu.ecu01 and imaud25 is null
       if l_cnt > 0 then
          call cl_err_msg('','cec-043',g_ecu.ecu01,1)
@@ -5928,24 +5944,24 @@ FUNCTION up_confirmall()
       end if
       #darcy:2023/04/12 add e---
 
-  
+
           UPDATE ecu_file
                 SET ecuud02='Y',
                     ecudate =g_today ,
                     ecumodu =g_user,
-                    ecu10='Y'   
+                    ecu10='Y'
            WHERE substr(ecu01,1,10)=g_ecu.ecu01  AND ecu02=g_ecu.ecu02
-                     
 
-   UPDATE IMA_FILE 
+
+   UPDATE IMA_FILE
    SET    ima94=g_ecu.ecu02
-   WHERE substr(ima01,1,10)=g_ecu.ecu01  
+   WHERE substr(ima01,1,10)=g_ecu.ecu01
 
-                     
-             CALL i100_show()                         
+
+             CALL i100_show()
             MESSAGE '执行完成'
- 
-END FUNCTION 
+
+END FUNCTION
 
 
 #darcy:2023/02/14 add s---
@@ -5977,7 +5993,7 @@ function i100_upd_ecbud06(p_ecb01,p_ecb02)
    define l_success  like type_file.chr1
    define l_flag7    like type_file.chr1  #darcy:2022/12/31 add
    # 主制程更新
-   let l_sql = "UPDATE ecb_file 
+   let l_sql = "UPDATE ecb_file
                   SET ecbud06 = 'Y'
                   WHERE ecb01 = ? AND ecb02 = ?
                   AND ecb06 IN (
@@ -6067,7 +6083,7 @@ function i100_upd_ecbud06(p_ecb01,p_ecb02)
       end if
 
       # 是否是特殊情况
-      let l_cnt = 0 
+      let l_cnt = 0
       execute ecbud06_p2 using l_ecb[l_index].ecb06 into l_ta_ecd09
       case l_ta_ecd09
          when 1 # 主制程,勾选后继续
@@ -6118,7 +6134,7 @@ function i100_upd_ecbud06(p_ecb01,p_ecb02)
                   let l_cnt = l_cnt + 1
                   if l_cnt = 3 then
                      # 第三个工序报工
-                     let l_ecb[l_index3].ecbud06='Y' 
+                     let l_ecb[l_index3].ecbud06='Y'
                   end if
                   let l_index = l_index3
                else
@@ -6200,7 +6216,7 @@ function i100_upd_ecbud06(p_ecb01,p_ecb02)
                end if
                if l_ta_ecd09 = 7 then
                   # 特殊情况
-                  # if l_ecd02 matches '*辅材*' then #darcy:2022/12/31 mark 
+                  # if l_ecd02 matches '*辅材*' then #darcy:2022/12/31 mark
                   if l_ecd02 matches '*辅材*' and l_flag7 ='N' then #darcy:2022/12/31 add
                      let l_ecb[l_index3].ecbud06 = 'Y'
                   #darcy:2022/12/31 add s---
@@ -6305,7 +6321,7 @@ function i100_upd_ecbud06(p_ecb01,p_ecb02)
                   exit for
                end if
             end for
-            
+
       end case
       #需考虑最后一站的情况
       # 最后一个工作站,但还是没有报工
@@ -6331,7 +6347,7 @@ function i100_upd_ecbud06(p_ecb01,p_ecb02)
    # 遍历3 s---
    for l_index = 1 to l_ecb.getLength()
       if l_ecb[l_index].ecbud06 = 'Y' then
-         update ecb_file set ecbud06 = 'Y' 
+         update ecb_file set ecbud06 = 'Y'
           where ecb01 = l_ecb[l_index].ecb01
             and ecb02 = l_ecb[l_index].ecb02
             and ecb03 = l_ecb[l_index].ecb03
@@ -6365,7 +6381,7 @@ function i100_upd_ecbud06(p_ecb01,p_ecb02)
       rollback work
       message "更新失败!"
    end if
-   
+
 end function
 #darcy:2022/11/23 add e---
 #darcy:2023/02/14 add e---
@@ -6427,8 +6443,8 @@ function i100_copy_y(p_ecu01,p_ecu02)
                WHERE ecu01  = old_no
                  AND ecu02  = oecu02
                  AND ecu012 = oecu012   #FUN-A50081 add
-        IF l_cnt=0 THEN 
-         CALL cl_err('','aec-018',0) 
+        IF l_cnt=0 THEN
+         CALL cl_err('','aec-018',0)
          NEXT FIELD old_no
          # CALL s_errmsg(field,date,msg,'mfg0301',1)
         END IF
@@ -6436,7 +6452,7 @@ function i100_copy_y(p_ecu01,p_ecu02)
         IF new_no IS NULL THEN NEXT FIELD new_no END IF
            CALL i100_newno(new_no)
            IF NOT cl_null(g_errno) THEN
-              CALL cl_err(new_no,g_errno,0) 
+              CALL cl_err(new_no,g_errno,0)
               NEXT FIELD new_no
            END IF
 
@@ -6454,13 +6470,13 @@ function i100_copy_y(p_ecu01,p_ecu02)
                  AND ecu02 = necu02
                  AND ecu012 = necu012   #FUN-A50081
         IF l_cnt>0 THEN
-           CALL cl_err('','aec-009',0) 
-           NEXT FIELD new_no 
+           CALL cl_err('','aec-009',0)
+           NEXT FIELD new_no
         END IF  #FUN-A50081 aec-014->aec-009
         SELECT COUNT(*) INTO l_cnt FROM ima_file WHERE ima01 = new_no
         IF l_cnt=0 THEN
-           CALL cl_err('','asf-399',0) 
-           NEXT FIELD new_no 
+           CALL cl_err('','asf-399',0)
+           NEXT FIELD new_no
         END IF
         #TQC-B60169-add-str--
         IF NOT cl_null(necu012) THEN
@@ -6566,9 +6582,9 @@ function i100_copy_y(p_ecu01,p_ecu02)
        CALL s_errmsg("","",'lock ecu:',SQLCA.sqlcode,1)
        CLOSE i100_cl ROLLBACK WORK RETURN
    END IF
-   
+
    insert into ecu_tmp
-   SELECT * FROM ecu_file 
+   SELECT * FROM ecu_file
     WHERE ecu01 = old_no
       AND ecu02 = oecu02
       AND ecu012 = oecu012
@@ -6577,7 +6593,7 @@ function i100_copy_y(p_ecu01,p_ecu02)
    # 签核状态判断
    let l_ecuud04 = 'N'
    if g_user = 'tiptop' or g_user = '30369' then
-      if new_no[7,7] matches "[ABC]" and new_no[10,10] not matches "[SF]" and new_no not matches "*-*" and necu02 matches '*0' then 
+      if new_no[7,7] matches "[ABC]" and new_no[10,10] not matches "[SF]" and new_no not matches "*-*" and necu02 matches '*0' then
          call s_auto_assign_no("abm","ECU",g_today,"7","ecu_file","ecuud03","","","")
             returning li_result,l_ecuud03
          if (not li_result) then
@@ -6615,9 +6631,9 @@ function i100_copy_y(p_ecu01,p_ecu02)
    IF STATUS THEN
       # CALL cl_err3("ins","ecu_file",new_no,necu02,STATUS,"","ins ecu",1) #FUN-660091
       CALL s_errmsg("",new_no||necu02,'ins ecu',STATUS,1)
-      RETURN 
+      RETURN
    END IF
-   
+
    LET l_sql = "insert into ecb_tmp",
                " SELECT * FROM ecb_file ",
                " WHERE ecb01= '",old_no,"' ",
@@ -6625,7 +6641,7 @@ function i100_copy_y(p_ecu01,p_ecu02)
                ,"   and ecb012 = '",oecu012,"'"
    PREPARE i300_pecb2 FROM l_sql
    EXECUTE i300_pecb2
-   IF STATUS THEN 
+   IF STATUS THEN
       # CALL cl_err('sel ecb',STATUS,0)
       CALL s_errmsg("","",'sel ecb',STATUS,1)
       RETURN
@@ -6638,9 +6654,9 @@ function i100_copy_y(p_ecu01,p_ecu02)
                       ,ecb012 =necu012  #FUN-A50081
                       ,ecb08 = (select ecd07 from ecd_file where ecd01 = ecb06) #darcy:2025/04/21 addd
    # darcy:2022/06/06 add s---
-   if LENGTH(old_no) >=10 and LENGTH(new_no)>=10 then 
-      IF old_no[10,11]='S' OR new_no[10,11]='S' THEN 
-         if old_no[10,11] <> new_no[10,11] then 
+   if LENGTH(old_no) >=10 and LENGTH(new_no)>=10 then
+      IF old_no[10,11]='S' OR new_no[10,11]='S' THEN
+         if old_no[10,11] <> new_no[10,11] then
             UPDATE ecb_tmp  SET ecb19=0,ecb21=0
          end if
       END IF
@@ -6650,13 +6666,13 @@ function i100_copy_y(p_ecu01,p_ecu02)
          UPDATE ecb_tmp  SET ecb19=0,ecb21=0
       end if
       #darcy:2022/08/24 add e---
-   end if 
+   end if
    # darcy:2022/06/06 add e---
    INSERT INTO ecb_file SELECT * FROM ecb_tmp
    IF STATUS THEN
       # CALL cl_err3("ins","ecb_file",new_no,necu02,STATUS,"","ins ecb",1) #FUN-660091
       CALL s_errmsg("",new_no||necu02,'ins ecb',STATUS,1)
-      RETURN 
+      RETURN
    END IF
    #darcy:2024/03/05 add s---
    # 更新组装报工和修改记录
@@ -6679,7 +6695,7 @@ function i100_copy_y(p_ecu01,p_ecu02)
    #darcy:2024/03/05 add e---
    LET g_cnt=SQLCA.SQLERRD[3]
    MESSAGE '(',g_cnt USING '##&',') ROW of (',new_no,') O.K'
-   
+
    LET l_sql = "insert into sgc_tmp",
                " SELECT * FROM sgc_file ",
                " WHERE sgc01= '",old_no,"' ",
@@ -6713,9 +6729,9 @@ function i100_copy_y(p_ecu01,p_ecu02)
       rollback work
    else
    #darcy:2023/03/29 add e---
-      SELECT * 
+      SELECT *
       INTO g_ecu.*
-      FROM ecu_file 
+      FROM ecu_file
       WHERE ecu01 = new_no
          AND ecu02 = necu02
          AND ecu012 = necu012
@@ -6724,8 +6740,8 @@ function i100_copy_y(p_ecu01,p_ecu02)
       LET g_cnt=SQLCA.SQLERRD[3]
       MESSAGE '(',g_cnt USING '##&',') ROW of (',new_no,') O.K'
       COMMIT WORK
-   end if #darcy:2023/03/29 
-   
+   end if #darcy:2023/03/29
+
 end function
 
 function i100_bom(old_no,oecu02,oecu012,new_no,necu02,necu012)
@@ -6751,7 +6767,7 @@ function i100_bom(old_no,oecu02,oecu012,new_no,necu02,necu012)
    # 如果BOM下阶料也有aeci100资料维护，则也需要复制。
    #TODO: 必须先导出array才能处理，否则foreach 报错。
    let l_i = 1
-   foreach i100_bom_c using old_no into l_bmb03[l_i] 
+   foreach i100_bom_c using old_no into l_bmb03[l_i]
       if status then
          let g_success ='N'
          # call cl_err("i100_bom_c",status,1)
@@ -6777,7 +6793,7 @@ function i100_bom(old_no,oecu02,oecu012,new_no,necu02,necu012)
          continue for
       end if
       #2. 检查旧料号,旧版本aeci100是否建立，不报错，继续
-      select ecu10,ecuud02 into l_flag,l_state from ecu_file 
+      select ecu10,ecuud02 into l_flag,l_state from ecu_file
        where ecu01 = old_no and ecu02 = oecu02 and ecu012 = oecu012
       if cl_null(l_flag) then
          let l_flag = 'N'
@@ -6789,7 +6805,7 @@ function i100_bom(old_no,oecu02,oecu012,new_no,necu02,necu012)
          continue for
       end if
       #3. 检查新料号是否已存在aeci100资料，报错，继续
-      select count(*) into l_cnt from ecu_file 
+      select count(*) into l_cnt from ecu_file
        where ecu01 = l_new_no and ecu02 = necu02 and ecu012 = necu012
       if cl_null(l_cnt) then
          let l_cnt = 1
@@ -6837,7 +6853,7 @@ function i100_bom(old_no,oecu02,oecu012,new_no,necu02,necu012)
       close i100_cl
 
       #6. 如果还有下阶继续遍历BOM
-      select count(1) into l_cnt from bmb_file 
+      select count(1) into l_cnt from bmb_file
        where bmb01 = l_bmb03[l_i] and bmb04 <=g_today
          and (bmb05 > g_today or bmb05 is null)
          and bmb03 not like '%.%'
@@ -6889,7 +6905,7 @@ function i100_copy_ecu(old_no,oecu02,oecu012,new_no,necu02,necu012)
    # 签核状态判断
    let l_ecuud04 = 'N'
    if g_user = 'tiptop' or g_user = '30369' then
-      if new_no[7,7] matches "[ABC]" and new_no[10,10] not matches "[SF]" and new_no not matches "*-*" and necu02 matches '*0' then 
+      if new_no[7,7] matches "[ABC]" and new_no[10,10] not matches "[SF]" and new_no not matches "*-*" and necu02 matches '*0' then
          call s_auto_assign_no("abm","ECU",g_today,"7","ecu_file","ecuud03","","","")
             returning li_result,l_ecuud03
          if (not li_result) then
@@ -6900,7 +6916,7 @@ function i100_copy_ecu(old_no,oecu02,oecu012,new_no,necu02,necu012)
       end if
    end if
    # darcy:2025/12/11 add e---
-     
+
    update ecu_tmp
       set ecu01 = new_no,ecu02 = necu02,ecu012 = necu012,
           ecu014=l_ecu014,ecu015=NULL,ecu10='N',ecu11=NULL,
@@ -6943,9 +6959,9 @@ function i100_copy_ecb(old_no,oecu02,oecu012,new_no,necu02,necu012)
 
    #NOTE: 限制大版本才带出工时，且样品和量产不能互相带出
    # darcy:2022/06/06 add s---
-   if LENGTH(old_no) >=10 and LENGTH(new_no)>=10 then 
-      IF old_no[10,11]='S' OR new_no[10,11]='S' THEN 
-         if old_no[10,11] <> new_no[10,11] then 
+   if LENGTH(old_no) >=10 and LENGTH(new_no)>=10 then
+      IF old_no[10,11]='S' OR new_no[10,11]='S' THEN
+         if old_no[10,11] <> new_no[10,11] then
             UPDATE ecb_tmp  SET ecb19=0,ecb21=0
          end if
       END IF
@@ -6955,7 +6971,7 @@ function i100_copy_ecb(old_no,oecu02,oecu012,new_no,necu02,necu012)
          UPDATE ecb_tmp  SET ecb19=0,ecb21=0
       end if
       #darcy:2022/08/24 add e---
-   end if 
+   end if
    # darcy:2022/06/06 add e---
 
    insert into ecb_file select * from ecb_tmp
@@ -7000,7 +7016,7 @@ function i100_copy_sgc(old_no,oecu02,oecu012,new_no,necu02,necu012)
           necu02  like ecu_file.ecu02,
           necu012 like ecu_file.ecu012
    define l_sql string
-   
+
    delete from sgc_tmp
    let l_sql = " insert into sgc_tmp ",
                "select * from sgc_file ",
@@ -7040,9 +7056,9 @@ function aeci100_delete_ecb(p_ecb01,p_ecb02,p_ecb03,p_lock)
          call cl_err("", -263, 1)
          return false
       end if
- 
-      select *  into b_ecb.* 
-        from ecb_file where ecb01 = p_ecb01 
+
+      select *  into b_ecb.*
+        from ecb_file where ecb01 = p_ecb01
          and ecb02 = p_ecb02 and ecb03 = p_ecb03
       if not sqlca.sqlcode then
          if not i100sub_mod_log(b_ecb.*,"delete") then
@@ -7110,10 +7126,10 @@ function aeci100_delete_ecb(p_ecb01,p_ecb02,p_ecb03,p_lock)
          let g_success = 'N'
       end if
 
-      delete from ecbb_file 
+      delete from ecbb_file
       where ecbb01=p_ecb01 and ecbb02=p_ecb02
          and ecbb03=p_ecb03
-         and ecbb012 = g_ecu.ecu012 
+         and ecbb012 = g_ecu.ecu012
       if sqlca.sqlcode then
          call cl_err3("del","ecbb_file",p_ecb01,p_ecb02,sqlca.sqlcode,"","",1) #fun-660091
          let g_success = 'N'
@@ -7139,7 +7155,7 @@ function i100_ef()
 
    select * into g_ecu.* from ecu_file where ecu01 = g_ecu.ecu01
       and ecu02 = g_ecu.ecu02 and ecu012 = g_ecu.ecu012
-   
+
    # 只有1.需要签核 2.开立 3.未作废 4.未审核 5.未发放 的单据 可以送签
    # 送签后更新未送签中状态
 
@@ -7170,7 +7186,7 @@ function i100_ef()
       let g_success = 'Y'
       let g_ecu.ecuud05 = 'S'   #開單成功, 更新狀態碼為 's. 送簽中'
       update ecu_file set ecuud05 = g_ecu.ecuud05
-       where ecu01 = g_ecu.ecu01 and ecu02 = g_ecu.ecu02  and ecu012 = g_ecu.ecu012 
+       where ecu01 = g_ecu.ecu01 and ecu02 = g_ecu.ecu02  and ecu012 = g_ecu.ecu012
       display by name g_ecu.ecuud05
    else
       let g_success = 'N'
