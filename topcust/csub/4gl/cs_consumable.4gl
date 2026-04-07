@@ -45,6 +45,26 @@ function cs_consumable(p_part,p_date)
         return 0
     end if
 
+    # 更新客制成本单价
+    -- Step 4.2: 更新客制成本单价
+    let l_sql = '
+        MERGE INTO consumable_tmp a
+        USING custom_cost b
+        ON ( a.item = b.ta_ccc01 AND (a.price = 0 OR a.price IS NULL))
+        WHEN MATCHED THEN
+            UPDATE SET a.price = b.ta_ccc23 '
+
+    execute immediate l_sql
+
+    let l_sql = '
+        MERGE INTO consumable_tmp a
+        USING std_cost b
+        ON ( a.item = b.ccc01 AND (a.price = 0 OR a.price IS NULL))
+        WHEN MATCHED THEN
+            UPDATE SET a.price = b.ccc23'
+
+    execute immediate l_sql
+
     select sum(qty*price) into l_num from consumable_tmp where part = l_part
 
     return l_num
@@ -173,7 +193,7 @@ function cs_consumable_all(p_part,p_date,p_docno,p_seq)
     let l_sql =
     "insert into consumable_tmp ",
     "select ina04,ina01,ina02,inb03,inb04,inb05,inb06,inb07,ima25 inb08, ",
-    "      (mod(ina00, 2) + 0.5 - 1) * 2 * inb09 * inb08_fac qty, ",
+    "      ( case when ina00 in ( '1', '2' ) then 1 else - 1 end ) * inb09 * inb08_fac qty, ",
     "  nvl(ima53 / ima44_fac, 0) price  ",
     "  from ina_file, inb_file, ima_file ",
     " where ina01 = inb01 ",
@@ -191,6 +211,26 @@ function cs_consumable_all(p_part,p_date,p_docno,p_seq)
     if sqlca.sqlcode then
         return 0
     end if
+
+    # 更新客制成本单价
+    -- Step 4.2: 更新客制成本单价
+    let l_sql = '
+        MERGE INTO consumable_tmp a
+        USING custom_cost b
+        ON ( a.item = b.ta_ccc01 AND (a.price = 0 OR a.price IS NULL))
+        WHEN MATCHED THEN
+            UPDATE SET a.price = b.ta_ccc23 '
+
+    execute immediate l_sql
+
+    let l_sql = '
+        MERGE INTO consumable_tmp a
+        USING std_cost b
+        ON ( a.item = b.ccc01 AND (a.price = 0 OR a.price IS NULL))
+        WHEN MATCHED THEN
+            UPDATE SET a.price = b.ccc23'
+
+    execute immediate l_sql
 
     select sum(qty*price) into l_num from consumable_tmp where part = l_part
 

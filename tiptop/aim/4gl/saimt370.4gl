@@ -13336,7 +13336,7 @@ function aimt370_month_limit(p_part,p_date,p_docno,p_seq,p_item,p_qty,p_unit)
    if cl_null(l_curr) then let l_curr = 0 end if
 
    if l_isuue + l_curr > l_limit + l_temp then
-      call cl_err(sfmt('料号：%1 已领用金额+ 本次领用金额：%2 大于本月额度：%3 + 临时额度：%4',p_item,l_curr+l_isuue,l_limit,l_temp ),'!',1)
+      call cl_err(sfmt('料号：%1 已领用金额%2 + 本次领用金额：%3 大于本月额度：%4 + 临时额度：%5',p_item,l_isuue,l_curr,l_limit,l_temp ),'!',1)
       return false
    end if
 

@@ -1415,7 +1415,7 @@ FUNCTION t370sub_s_upd(p_ina01,p_argv1,p_inTransaction)
       if l_num > 0 and l_curr > 0 then
          if l_amt + l_curr >= l_num + l_temp then
             LET g_success = 'N'
-            call cl_err(sfmt('料号：%1 已领用金额+本次领用金额：%2 大于本月额度：%3 + 临时额度：%4',l_inb.inb04,l_amt+l_curr,l_num,l_temp),'!',1)
+            call cl_err(sfmt('料号：%1 已领用金额%2 + 本次领用金额：%3 大于本月额度：%4 + 临时额度：%5',l_inb.inb04,l_amt,l_curr,l_num,l_temp),'!',1)
             return
          end if
       end if
@@ -1649,7 +1649,7 @@ FUNCTION t370sub_s1(p_ina00,p_ina01,p_ina03,p_ina07,p_ina04,p_ina06,p_argv1)
    if l_num > 0 and l_curr > 0 then
       if l_amt + l_curr >= l_num + l_temp then
          LET g_success = 'N'
-         call cl_err(sfmt('已领用金额+本次领用金额：%1 大于本月额度：%2 + 临时额度：%3',l_amt+l_curr,l_num,l_temp),'!',1)
+         call cl_err(sfmt('已领用金额%1 + 本次领用金额：%2 大于本月额度：%3 + 临时额度：%4',l_amt,l_curr,l_num,l_temp),'!',1)
          return
       end if
    end if
