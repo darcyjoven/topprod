@@ -421,7 +421,7 @@ DEFINE  lc_qbe_sn       LIKE    gbm_file.gbm01    #No.FUN-580031  HCN
    LET g_imaud07 = ''
    LET g_imaud10 = ''
    CALL cl_set_head_visible("","YES")    #No.FUN-6B0029
-   INITIALIZE .* TO NULL    #No.FUN-750051
+   INITIALIZE g_ecu.* TO NULL    #No.FUN-750051
    INITIALIZE g_tree TO NULL             #FUN-B90117
    INITIALIZE g_ecu.ecu01 TO NULL        #FUN-B90117
 
@@ -2241,7 +2241,6 @@ DEFINE l_imaud06  LIKE ima_file.imaud06
                     g_ecu.ecuud21,g_ecu.ecuud22,g_ecu.ecuud23,g_ecu.ecuud24,g_ecu.ecuud25,
                     g_ecu.ecuud26,g_ecu.ecuud27,g_ecu.ecuud28,g_ecu.ecuud29,g_ecu.ecuud30
     # darcy add e---
-
 
     DISPLAY g_ecu.ecu10 TO FORMONLY.ecu10                  #No.FUN-810017
     DISPLAY g_ecu.   ecu06 TO FORMONLY.euc06                  #add by zyq 170911
