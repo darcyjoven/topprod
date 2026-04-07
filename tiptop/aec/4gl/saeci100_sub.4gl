@@ -686,6 +686,7 @@ function saeci100_csmi134(p_ima01)
            l_bmb02 like bmb_file.bmb02,
            l_bmb08 like bmb_file.bmb08,
            l_bmb081 like bmb_file.bmb081
+    define l_ecb record like ecb_file.*
 
     let l_sample = iif(p_ima01[10,10] matches '[SF]','Y','N')
     if p_ima01 matches '*-*' then
@@ -729,6 +730,11 @@ function saeci100_csmi134(p_ima01)
                  where bmb01 = l_bmb01 and bmb03 = l_bmb03 and bmb02 = l_bmb02
                    and bmb04 <= trunc(sysdate) and (bmb05 is null or bmb05 > trunc(sysdate))
             end if
+            initialize l_ecb.* to null
+            select * into l_ecb.* from ecb_file where ecb01 = l_bmb01 and rownum = 1
+            if not cl_null(l_ecb.ecb01) then
+                if i100sub_mod_log(l_ecb.*,sfmt("aimi100,%1-%2/%3",l_bmb03,l_bmb08,l_bmb081)) then end if
+            end if
         end foreach
 
     end if
@@ -766,6 +772,11 @@ function saeci100_csmi134(p_ima01)
                 update bmb_file set bmb081 = l_bmb081
                  where bmb01 = l_bmb01 and bmb03 = l_bmb03 and bmb02 = l_bmb02
                    and bmb04 <= trunc(sysdate) and (bmb05 is null or bmb05 > trunc(sysdate))
+            end if
+            initialize l_ecb.* to null
+            select * into l_ecb.* from ecb_file where ecb01 = l_bmb01 and rownum = 1
+            if not cl_null(l_ecb.ecb01) then
+                if i100sub_mod_log(l_ecb.*,sfmt("aimi110,%1-%2/%3",l_bmb03,l_bmb08,l_bmb081)) then end if
             end if
         end foreach
 
@@ -805,6 +816,11 @@ function saeci100_csmi134(p_ima01)
                  where bmb01 = l_bmb01 and bmb03 = l_bmb03 and bmb02 = l_bmb02
                    and bmb04 <= trunc(sysdate) and (bmb05 is null or bmb05 > trunc(sysdate))
             end if
+            initialize l_ecb.* to null
+            select * into l_ecb.* from ecb_file where ecb01 = l_bmb01 and rownum = 1
+            if not cl_null(l_ecb.ecb01) then
+                if i100sub_mod_log(l_ecb.*,sfmt("aeci620,%1-%2/%3",l_bmb03,l_bmb08,l_bmb081)) then end if
+            end if
         end foreach
     end if
 
@@ -841,6 +857,11 @@ function saeci100_csmi134(p_ima01)
                 update bmb_file set bmb081 = l_bmb081
                  where bmb01 = l_bmb01 and bmb03 = l_bmb03 and bmb02 = l_bmb02
                    and bmb04 <= trunc(sysdate) and (bmb05 is null or bmb05 > trunc(sysdate))
+            end if
+            initialize l_ecb.* to null
+            select * into l_ecb.* from ecb_file where ecb01 = l_bmb01 and rownum = 1
+            if not cl_null(l_ecb.ecb01) then
+                if i100sub_mod_log(l_ecb.*,sfmt("aeci600,%1-%2/%3",l_bmb03,l_bmb08,l_bmb081)) then end if
             end if
         end foreach
     end if
