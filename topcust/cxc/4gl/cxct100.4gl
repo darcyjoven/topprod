@@ -282,7 +282,7 @@ DEFINE l_wc   STRING
     
          WHEN "zpsc" 
             IF cl_chk_act_auth() THEN
-             LET l_msg = "cxcp100 "                                
+             LET l_msg = "cxcp103 " # darcy:2025/12/03 mod                         
              CALL cl_cmdrun(l_msg)     
             END IF
             
