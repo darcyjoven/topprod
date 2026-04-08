@@ -242,13 +242,13 @@
 # Modify.........: No:CHI-BB0034 12/02/02 By ck2yuan 只有在查詢時才出現9025警告，其他action不需要
 # Modify.........: No.TQC-C20131 12/02/13 By zhuhao 在insert into bmd_file之前給bmd11賦值
 # Modify.........: No:TQC-C20149 12/02/15 By bart 點選"BOM發放"按鈕後選擇取消,程式會自動關閉
-# Modify.........: No:FUN-C20094 12/02/16 By pauline 不論有無勾選平行製程，一律顯示Tree資訊  
+# Modify.........: No:FUN-C20094 12/02/16 By pauline 不論有無勾選平行製程，一律顯示Tree資訊
 # Modify.........: No:TQC-C20388 12/02/22 By yuhuabao 修改新增時，無法選取"取替代特性"為9的資料 bug
 # Modify.........: No:TQC-C20419 12/02/23 By yuhuabao 元件的取替代特性為9，已建立abmi604的資料，但按右邊"維護取替代"Action時，還是會出現abm-200的詢問窗
 # Modify.........: No.TQC-C20444 12/02/24 By xianghui 由abmp102串接過來時不顯示資料
 # Modify.......... No.FUN-C20105 12/02/21 By lilingyu 調整FUN-B90117 增加TREE控件的鎖功能
 # Modify.......... No.TQC-C20429 12/02/28 By huangrh 調整服飾行業bmb30的默認值
-# Modify.......... No.TQC-C20130 12/02/28 By lilingyu 【狀態】頁簽欄位無法全部下查詢條件 
+# Modify.......... No.TQC-C20130 12/02/28 By lilingyu 【狀態】頁簽欄位無法全部下查詢條件
 # Modify.......... No.TQC-C30115 12/03/06 By bart 1.BOM資料刪除時,未一併刪除aici013資料icm_file
 #                                                 2.單身修改料號時,應同步更改icm_file資料,icm01應改為新料號
 # Modify.......... No.MOD-C30561 12/03/12 By fengrui 查詢時清空tree
@@ -625,7 +625,7 @@ DEFINE g_tree1    DYNAMIC ARRAY OF RECORD
           #各程式key的數量會不同，單身和單頭的key都要記錄
           #若key是數值，要先轉字串，避免數值型態放到Tree有多餘空白
           treekey3       STRING,
-          treekey4       STRING 
+          treekey4       STRING
        #  img            STRING         #图标   #FUN-CB0078 mark
                                END RECORD
 DEFINE g_tree_sel        LIKE type_file.chr1   # 用来判断填充哪个树的变量，1表示前页的树，2表示后面的树
@@ -676,7 +676,7 @@ DEFINE  l_bmb13   LIKE ze_file.ze03             #No.FUN-810014
                "bmb07.bmb_file.bmb07,",
                "bmb10.bmb_file.bmb10,",     #CHI-C90013 add ,
                "id.type_file.num10,",       #CHI-C90013 add
-               "pid.type_file.num10"        #CHI-C90013 add   
+               "pid.type_file.num10"        #CHI-C90013 add
 
    LET l_table = cl_prt_temptable('abmi600',g_sql) CLIPPED
    IF l_table = -1 THEN EXIT PROGRAM END IF
@@ -692,7 +692,7 @@ DEFINE  l_bmb13   LIKE ze_file.ze03             #No.FUN-810014
 
 #  LET g_lock = 'N'          #FUN-C20105
    LET g_hide = 'N'          #FUN-C30028
-   
+
    LET g_argv1 = ARG_VAL(1)
    LET g_argv2 = ARG_VAL(2)
    LET g_argv3 = ARG_VAL(3)    #no.FUN-84 0033 add
@@ -721,9 +721,9 @@ DEFINE  l_bmb13   LIKE ze_file.ze03             #No.FUN-810014
     LET g_show_flag = 'N'        #FUN-CB0078   add
     LET g_a_flag = 'N'           #FUN-CB0078   add
     #darcy:2022/03/30 s---
-    #IF g_user <>'tiptop' THEN 
+    #IF g_user <>'tiptop' THEN
     #  CALL cl_set_act_visible("confirmp",FALSE)
-    #END IF 
+    #END IF
     #darcy:2022/03/30 s---
 
     CALL cl_set_comp_visible("bmb36,bmb37",g_aza.aza121='Y') #FUN-D10093 add #當aoos010欄位"是否與PLM整合[aza121=Y]"打勾時,才show出bmb36/bmb37欄位
@@ -751,7 +751,7 @@ DEFINE  l_bmb13   LIKE ze_file.ze03             #No.FUN-810014
   #	 CALL cl_set_comp_visible("tree1",FALSE)
   #END IF
   #FUN-C20094 mark END
-  CALL cl_set_comp_visible("tree1",TRUE) #FUN-C20094 add 
+  CALL cl_set_comp_visible("tree1",TRUE) #FUN-C20094 add
 #FUN-B90117 --END--
 
     SELECT ze03 INTO g_tipstr FROM ze_file WHERE
@@ -761,7 +761,7 @@ DEFINE  l_bmb13   LIKE ze_file.ze03             #No.FUN-810014
        --CALL i600_q()
     --END IF
     #TQC-C20444-add-str--
-    IF NOT cl_null(g_argv1) THEN 
+    IF NOT cl_null(g_argv1) THEN
        CALL i600_q(0)
     END IF
     #TQC-C20444-add-end--
@@ -798,7 +798,7 @@ DEFINE l_wc   STRING                #雙按Tree的節點時的查詢條件 #FUN-
             END IF
          END IF
       END IF
-#FUN-C20105 --begin--      
+#FUN-C20105 --begin--
 ##FUN-B90117--BEGIN--
 #   ELSE
 #   	  IF g_action_choice = "tree" THEN
@@ -813,28 +813,28 @@ DEFINE l_wc   STRING                #雙按Tree的節點時的查詢條件 #FUN-
     CALL g_bmb.clear()
     LET l_flag = 'N'
     LET g_vdate = g_today
-  
-   #IF NOT cl_null(g_argv1) OR g_lock = 'Y' THEN                          #FUN-C20105  #FUN-C30036   
+
+   #IF NOT cl_null(g_argv1) OR g_lock = 'Y' THEN                          #FUN-C20105  #FUN-C30036
    #IF NOT cl_null(g_argv1) OR g_lock = 'Y' OR NOT cl_null(g_tree_item) THEN  #FUN-C30036  #FUN-CB0078  mark
     IF NOT cl_null(g_argv1) OR NOT cl_null(g_tree_item) THEN              #FUN-CB0078  add
-       IF NOT cl_null(g_argv1) THEN                                        #FUN-C20105 
+       IF NOT cl_null(g_argv1) THEN                                        #FUN-C20105
           LET g_wc = " bma01 = '",g_argv1,"' AND bma06 = '",g_argv2,"'"
           LET g_tree_bma01 = g_argv1     #FUN-CB0078  add
        END IF                                                              #FUN-C20105
 
 #FUN-C20105 --begin--
-    #  IF g_lock='Y' AND g_tree_arr_curr > 0 THEN                          #FUN-CB0078  mark 
+    #  IF g_lock='Y' AND g_tree_arr_curr > 0 THEN                          #FUN-CB0078  mark
        IF NOT cl_null(g_tree_item) AND g_tree_arr_curr > 0 THEN            #FUN-CB0078  add
-          LET g_wc = " bma01 = '",g_tree1[g_tree_arr_curr].treekey4,"'" 
-          LET g_tree_bma01 = g_tree1[1].treekey4                           #FUN-CB0078  add 
-       END IF 
+          LET g_wc = " bma01 = '",g_tree1[g_tree_arr_curr].treekey4,"'"
+          LET g_tree_bma01 = g_tree1[1].treekey4                           #FUN-CB0078  add
+       END IF
 #FUN-C20105 --end--
        #FUN-C30036---begin
        IF NOT cl_null(g_tree_item) THEN
           LET g_wc = " bma01 = '",g_tree_item,"'"
        END if
        #FUN-C30036---end
-       
+
        LET g_wc2= " 1=1"
        IF NOT cl_null(g_vdate) THEN #MOD-590173
           LET  g_wc2 = g_wc2  clipped,
@@ -847,7 +847,7 @@ DEFINE l_wc   STRING                #雙按Tree的節點時的查詢條件 #FUN-
           CALL cl_set_head_visible("","YES")    #No.FUN-6B0033
           INITIALIZE g_bma.* TO NULL    #No.FUN-750051
 
-#FUN-C20105 --begin--          
+#FUN-C20105 --begin--
 ##FUN-B90117--BEGIN--
 ##       IF p_idx = 0 THEN   #FUN-9A50010
 #        IF p_idx = 0 AND g_action_choice = "tree" THEN
@@ -855,7 +855,7 @@ DEFINE l_wc   STRING                #雙按Tree的節點時的查詢條件 #FUN-
 #        ELSE
 ##FUN-B90117 --END--
 
-        IF p_idx = 0 THEN 
+        IF p_idx = 0 THEN
 #FUN-C20105 --end--
           CONSTRUCT BY NAME g_wc ON             # 螢幕上取單頭條件
               bma01,bma06,bma10,bma04,bma05,bma08,    #No.FUN-7C0010
@@ -1082,14 +1082,14 @@ DEFINE l_wc   STRING                #雙按Tree的節點時的查詢條件 #FUN-
           ###FUN-9A50010 END ###
 
     END IF
-    
-    
+
+
 #FUN-C20105 --begin--
      IF cl_null(g_wc) THEN
         LET g_wc = " 1=1"
-     END IF 
+     END IF
 #FUN-C20105 --end--
-    
+
     IF l_flag = 'N' THEN   # 若單身未輸入條件
        LET g_sql = "SELECT  bma01,bma06 FROM bma_file ",        #FUN-550014 add bma06
                    " WHERE ", g_wc CLIPPED,
@@ -1171,9 +1171,9 @@ FUNCTION i600_menu()
 
          WHEN "insert"
             IF cl_chk_act_auth() THEN
-               LET g_a_flag = 'Y'       #FUN-CB0078 
+               LET g_a_flag = 'Y'       #FUN-CB0078
                CALL i600_a()
-               LET g_a_flag = 'N'       #FUN-CB0078 
+               LET g_a_flag = 'N'       #FUN-CB0078
                LET g_tree_item = ''     #FUN-CB0078
             END IF
          WHEN "query"
@@ -1217,7 +1217,7 @@ FUNCTION i600_menu()
 #          WHEN "lock"
 #            IF cl_chk_act_auth() THEN
 #               CALL i600_lock()
-#            END IF         
+#            END IF
 ##FUN-C20105 --begin--
 #FUN-CB0078 ------End--------
 
@@ -1258,7 +1258,7 @@ FUNCTION i600_menu()
                   CALL i600sub_refresh(g_bma.bma01,g_bma.bma06) RETURNING g_bma.*
                   CALL i600_show()
                END IF
-            END IF 
+            END IF
          #darcy:2022/03/28 e---
 
          WHEN "confirm"
@@ -1268,16 +1268,16 @@ FUNCTION i600_menu()
                #CALL i600_confirm()
                 CALL i600sub_y_chk(g_bma.bma01,g_bma.bma06)
 
-              select imaud10,imaud07 into l_imaud10,l_imaud07 from ima_file where ima01=g_bma.bma01 
+              select imaud10,imaud07 into l_imaud10,l_imaud07 from ima_file where ima01=g_bma.bma01
 
-	      IF cl_null(l_imaud10) OR ( l_imaud10=0 ) THEN 
+	      IF cl_null(l_imaud10) OR ( l_imaud10=0 ) THEN
               LET  g_success = 'N'
-	      END iF 
+	      END iF
 
-	     
-	      IF  cl_null(l_imaud07) THEN 
+
+	      IF  cl_null(l_imaud07) THEN
               LET  g_success = 'N'
-	      END iF 
+	      END iF
 
                 IF g_success = 'Y' THEN
                    IF g_bma.bma10 = '2' THEN         #MOD-A90182 add
@@ -1304,13 +1304,13 @@ FUNCTION i600_menu()
                CALL i600_unconfirm()
                LET g_bp_flag = "main"
            END IF
-          
+
          WHEN "up_imaud10"
            IF cl_chk_act_auth() THEN
                CALL up_imaud10()
                LET g_bp_flag = "main"
            END IF
-           
+
          WHEN "unrelease"
            IF cl_chk_act_auth() THEN
                CALL i600_unrelease()
@@ -1326,20 +1326,20 @@ FUNCTION i600_menu()
          WHEN "detail"
             IF cl_chk_act_auth() THEN
 #FUN-CB0078 ------Begin-------
-#FUN-C20105 --begin--            
-#              IF g_lock = 'N' THEN         
+#FUN-C20105 --begin--
+#              IF g_lock = 'N' THEN
 #                 #CALL cl_err('','abm-083',1)  #MOD-C30530 mark
 #                 #CALL cl_err('','abm-083',0)  #MOD-C30530 add  #MOD-C30413 mark
 #                 CALL cl_err('','abm-095',0)   #MOD-C30413 add
-#              ELSE    
-#FUN-C20105 --end--           
-#FUN-CB0078 ------End--------      
+#              ELSE
+#FUN-C20105 --end--
+#FUN-CB0078 ------End--------
                CALL i600_b()
                IF g_ima08_h = 'A' AND g_bma.bma01 IS NOT NULL THEN
                   CALL p500_tm(0,0,g_bma.bma01)      #主件為family
                END IF
                LET g_bp_flag = "main"
-#             END IF              #FUN-C20105        #FUN-CB0078   mark       
+#             END IF              #FUN-C20105        #FUN-CB0078   mark
             END IF
             #LET g_action_choice = ""  #FUN-D40030 mark
 
@@ -1351,7 +1351,7 @@ FUNCTION i600_menu()
                LET g_bp_flag = "main"
            END IF
         #end-----add by guanyao160706
-            
+
          WHEN "help"
             CALL cl_show_help()
             LET g_bp_flag = "main"
@@ -1446,7 +1446,7 @@ FUNCTION i600_menu()
             ELSE
                CALL cl_set_comp_visible("tree1",TRUE)
                LET g_hide = 'N'
-            END IF 
+            END IF
          #FUN-C30028---end
        #@WHEN "產生族群料件連結"
          WHEN "gen_group_link"
@@ -1582,19 +1582,19 @@ FUNCTION i600_menu()
          #str----add by guanyao160719
          WHEN "aec"
             IF cl_chk_act_auth() THEN
-               IF NOT cl_null(g_bma.bma01) THEN 
+               IF NOT cl_null(g_bma.bma01) THEN
                   LET l_cmd = "aeci100 '",g_bma.bma01,"'"
                   CALL cl_cmdrun_wait(l_cmd)
-               END IF 
-            END IF 
-         #end----add by guanyao160719 
+               END IF
+            END IF
+         #end----add by guanyao160719
          #No:FUN-B70096 --START--
           WHEN "sfa_pro"
             IF cl_chk_act_auth() THEN
                CALL tc_sfa_pro()
                #CALL tc_sfa_pl()
-            END IF 
-            
+            END IF
+
          WHEN "output"
             IF cl_chk_act_auth() THEN
                #CALL i600_out() #mark by guanyao160811
@@ -1611,18 +1611,18 @@ FUNCTION i600_a()
 
     IF s_shut(0) THEN RETURN END IF
     MESSAGE ""
-   #IF g_lock = 'N' THEN                #FUN-C20105   #FUN-CB0078 mark 
+   #IF g_lock = 'N' THEN                #FUN-C20105   #FUN-CB0078 mark
     IF cl_null(g_tree_item) THEN        #FUN-CB0078 add
       CLEAR FORM
-    END IF                              #FUN-C20105 
+    END IF                              #FUN-C20105
 
-#FUN-C20105 --begin-- 
-   #IF g_lock='N' THEN                  #FUN-CB0078 mark 
+#FUN-C20105 --begin--
+   #IF g_lock='N' THEN                  #FUN-CB0078 mark
     IF cl_null(g_tree_item) THEN        #FUN-CB0078 add
       CALL g_tree1.clear()
      END IF
-#FUN-C20105 --end--    
-      
+#FUN-C20105 --end--
+
     CALL g_bmb.clear()
     INITIALIZE g_bma.* LIKE bma_file.*             #DEFAULT 設定
     LET g_vdate = g_today   #MOD-980210   #No:MOD-A10148 modify
@@ -1633,7 +1633,7 @@ FUNCTION i600_a()
     LET g_bma_o.* = g_bma.*
     CALL cl_opmsg('a')
     WHILE TRUE
-#FUN-C20105 --begin--    
+#FUN-C20105 --begin--
 ##FUN-B90117--BEGIN--
 #        IF g_tree_arr_curr > 0 THEN
 #          LET g_bma.bma01=g_tree1[g_tree_arr_curr].treekey4
@@ -1641,10 +1641,10 @@ FUNCTION i600_a()
 ##FUN-B90117--END--
 
 #锁定状态时输入料号默认带树状图所选料号
-      # IF g_lock='Y' AND g_tree_arr_curr > 0 THEN                   #FUN-CB0078 mark 
-        IF NOT cl_null(g_tree_item) AND g_tree_arr_curr > 0 THEN     #FUN-CB0078  
+      # IF g_lock='Y' AND g_tree_arr_curr > 0 THEN                   #FUN-CB0078 mark
+        IF NOT cl_null(g_tree_item) AND g_tree_arr_curr > 0 THEN     #FUN-CB0078
           LET g_bma.bma01=g_tree1[g_tree_arr_curr].treekey4
-        END IF         
+        END IF
 #FUN-C20105 --end--
         LET g_bma.bmauser=g_user
         LET g_bma.bmaoriu = g_user #FUN-980030
@@ -1829,7 +1829,7 @@ DEFINE
     l_cmd     LIKE type_file.chr50,     #No.FUN-680096 VARCHAR(40)
     l_ima140  LIKE ima_file.ima140,
     l_imaud32 like ima_file.imaud32 #darcy:2023/07/15 add
-    
+
     DISPLAY BY NAME g_bma.bma05,g_bma.bma10,g_bma.bmauser,g_bma.bmamodu,   # NO.FUN-810014 bma10
         g_bma.bmagrup,g_bma.bmadate,g_bma.bmaacti
     DISPLAY BY NAME g_bma.bma08        #No.FUN-7C0010
@@ -1859,7 +1859,7 @@ DEFINE
             IF p_cmd = 'u' AND g_chkey matches'[Nn]' THEN
             #darcy:2025/03/13 add s---
                call cl_set_comp_entry('bma01',false)
-               NEXT FIELD bmaud03 
+               NEXT FIELD bmaud03
             END IF
                call cl_set_comp_entry('bma01',true)
             #darcy:2025/03/13 add e---
@@ -1870,17 +1870,17 @@ DEFINE
 
         AFTER FIELD bma01                         #主件料號
             IF NOT cl_null(g_bma.bma01) THEN
-            
+
             SELECT ima140,imaud32 INTO l_ima140,l_imaud32 FROM ima_file WHERE ima01=g_bma.bma01
             IF l_ima140='Y' THEN
                CALL cl_err(g_bma.bma01,'aim-045',1)
-               NEXT FIELD bma01            
-            END IF 
+               NEXT FIELD bma01
+            END IF
             #darcy:2023/07/15 add s---
             if l_imaud32=1 then
                call cl_err(g_bma.bma01,'cbm-023',1)
                next field bma01
-            end if 
+            end if
             #darcy:2023/07/15 add e---
                #FUN-AA0059 ----------------------------add start---------------------------
                IF NOT s_chk_item_no(g_bma.bma01,'') THEN
@@ -2095,13 +2095,13 @@ END FUNCTION
 #Query 查詢
 FUNCTION i600_q(p_idx)   #FUN-9A50010 加參數p_idx
     DEFINE p_idx  LIKE type_file.num5    #雙按Tree的節點index  #FUN-9A50010
-   
+
     #TQC-C70069--mark--str--
     ##MOD-C30530--add--str--
     #IF g_lock = 'Y' THEN
-    #   CALL cl_err('','abm-094',0)   
+    #   CALL cl_err('','abm-094',0)
     #   RETURN
-    #END IF             
+    #END IF
     ##MOD-C30530--add--end--
     #TQC-C70069--mark--end--
     LET g_row_count = 0
@@ -2286,14 +2286,14 @@ FUNCTION i600_show()
 DEFINE l_count    LIKE type_file.num5    #No.FUN-680096 SMALLINT
 DEFINE l_wc_new1  STRING                 #FUN-CB0078
 DEFINE l_wc_new2  STRING                 #FUN-CB0078
-DEFINE l_ecu02    LIKE ecu_file.ecu02     
+DEFINE l_ecu02    LIKE ecu_file.ecu02
 
 
-    
-    SELECT  ecu02 INTO l_ecu02 FROM ecu_file WHERE ecu01=g_bma.bma01 AND ROWNUM=1  ORDER BY ecu02 DESC 
+
+    SELECT  ecu02 INTO l_ecu02 FROM ecu_file WHERE ecu01=g_bma.bma01 AND ROWNUM=1  ORDER BY ecu02 DESC
 
 
-    DISPLAY l_ecu02 TO FORMONLY.ecu02 
+    DISPLAY l_ecu02 TO FORMONLY.ecu02
     LET g_bma_t.* = g_bma.*                #保存單頭舊值
     DISPLAY BY NAME g_bma.bmaoriu,g_bma.bmaorig,                              # 顯示單頭值
         g_bma.bma01,g_bma.bma06,g_bma.bma10,g_bma.bma04,g_bma.bma05, #FUN-550014 add bma06 #NO.FUN-810014 add bma10
@@ -2322,7 +2322,7 @@ DEFINE l_ecu02    LIKE ecu_file.ecu02
     CALL i600_pic()  #MOD-840435
 
 #FUN-B90117 --BEGIN--
-   #IF g_lock='N' AND cl_null(g_tree_item) THEN   #只有在非锁定状态才会刷新树状图           #FUN-C20105 #FUN-C30036	
+   #IF g_lock='N' AND cl_null(g_tree_item) THEN   #只有在非锁定状态才会刷新树状图           #FUN-C20105 #FUN-C30036
     IF g_show_flag = 'N' AND (cl_null(g_tree_item) OR  g_tree_arr_curr < = 0                #FUN-CB0078
          OR g_action_choice = "query"                                                       #FUN-CB0078
          OR g_action_choice = "modify") THEN                                                #FUN-CB0078
@@ -2341,8 +2341,8 @@ DEFINE l_ecu02    LIKE ecu_file.ecu02
        ELSE
           CALL i600_tree_fill(g_wc_o,NULL,0,NULL,NULL,NULL,g_bma.bma01)
        END IF
-      #FUN-CB0078 --end--       
-    END IF                                                              #FUN-C20105 
+      #FUN-CB0078 --end--
+    END IF                                                              #FUN-C20105
 #FUN-B90117--END--
 
     CALL i600_bma01('d')
@@ -2446,7 +2446,7 @@ FUNCTION i600_j()
      END IF
      IF l_imaacti MATCHES '[PH]' THEN
      #  CALL cl_err('','9038',0)      #TQC-9C0192
-        CALL cl_err('','abm-038',0)  #TQC-9C0192    
+        CALL cl_err('','abm-038',0)  #TQC-9C0192
         RETURN
      END IF
     IF g_bma.bma10 = 0 THEN CALL cl_err('','aco-174',0) RETURN END IF   #NO.FUN-810014
@@ -2722,13 +2722,13 @@ FUNCTION i600_r()
                                   AND icm01 IN  (SELECT bmb03
                                                    FROM bmb_file
                                                   WHERE bmb01 = g_bma.bma01
-                                                   and  bmb29 = g_bma.bma06) 
+                                                   and  bmb29 = g_bma.bma06)
            IF SQLCA.sqlcode THEN
               CALL cl_err3("del","icm_file",g_bma.bma01,"",SQLCA.sqlcode,"","del icm",1)
               ROLLBACK WORK
               RETURN
-           END IF        
-        END IF            
+           END IF
+        END IF
         #TQC-C30115---end
         DELETE FROM bma_file WHERE bma01=g_bma.bma01 AND bma06=g_bma.bma06
             IF SQLCA.sqlcode OR SQLCA.SQLERRD[3]=0 THEN
@@ -2838,14 +2838,14 @@ FUNCTION i600_r()
 #FUN-CB0078 -----End-------
        LET g_tree_sel='1'
      # IF g_lock='Y' THEN        #FUN-CB0078 mark
-       IF NOT cl_null(g_tree_item) OR g_tree_arr_curr > 0 THEN    #FUN-CB0078 add 
+       IF NOT cl_null(g_tree_item) OR g_tree_arr_curr > 0 THEN    #FUN-CB0078 add
           LET g_bma01_tree=g_tree1[1].treekey4
        ELSE
           LET g_bma01_tree=g_bma.bma01
-       END IF   
+       END IF
        CALL g_tree1.clear()
        CALL i600_tree_fill(g_wc_o,NULL,0,NULL,NULL,NULL,g_bma01_tree)
-   # END IF   #FUN-CB0078   mark     
+   # END IF   #FUN-CB0078   mark
 #FUN-C20105 --end--
 
     CALL i600_tree_update() #Tree 資料有異動 #FUN-9A50010
@@ -3199,9 +3199,9 @@ define l_imaud32     like ima_file.imaud32  #darcy:2023/07/15 add
               LET g_bma01_tree=g_tree1[1].treekey4
            ELSE
               LET g_bma01_tree=g_bma.bma01
-           END IF   
+           END IF
            CALL g_tree1.clear()
-        #  CALL i600_tree_fill(g_wc_o,NULL,0,NULL,NULL,NULL,g_bma01_tree)  #FUN-CB0078 
+        #  CALL i600_tree_fill(g_wc_o,NULL,0,NULL,NULL,NULL,g_bma01_tree)  #FUN-CB0078
            LET l_wc_new = "bma01 = '",g_bma01_tree,"'"      ##FUN-CB0078 add 不能傳入上次查詢時的條件，這樣會撈不到資料
            CALL i600_tree_fill(l_wc_new,NULL,0,NULL,NULL,NULL,g_bma01_tree)  #FUN-CB0078
 #FUN-C20105 --end--
@@ -3360,8 +3360,8 @@ define l_imaud32     like ima_file.imaud32  #darcy:2023/07/15 add
             #TQC-C50231--add--str--
             IF NOT cl_null(g_bmb[l_ac].bmb02) THEN
                IF g_bmb[l_ac].bmb02 < = 0 THEN
-                  LET g_bmb[l_ac].bmb02 = g_bmb_t.bmb02 
-                  DISPLAY BY NAME g_bmb[l_ac].bmb02 
+                  LET g_bmb[l_ac].bmb02 = g_bmb_t.bmb02
+                  DISPLAY BY NAME g_bmb[l_ac].bmb02
                   CALL cl_err('','aec-994',0)
                   NEXT FIELD bmb02
                END IF
@@ -3441,12 +3441,12 @@ define l_imaud32     like ima_file.imaud32  #darcy:2023/07/15 add
                   LET g_bmb[l_ac].bmb03 = g_bmb_t.bmb03
                   NEXT FIELD bmb03
                END IF
-               
+
             SELECT ima140,imaud32 INTO l_ima140,l_imaud32 FROM ima_file WHERE ima01=g_bmb[l_ac].bmb03
-            IF l_ima140 IS NULL THEN LET  l_ima140='N' END IF 
+            IF l_ima140 IS NULL THEN LET  l_ima140='N' END IF
             IF l_ima140='Y' THEN
                CALL cl_err(g_bmb[l_ac].bmb03,'aim-045',1)
-               NEXT FIELD bmb03            
+               NEXT FIELD bmb03
             END IF
             #darcy:2023/07/15 add s---
             if l_imaud32 = 1 then
@@ -3454,7 +3454,7 @@ define l_imaud32     like ima_file.imaud32  #darcy:2023/07/15 add
                next field bmb03
             end if
             #darcy:2023/07/15 add e---
-            
+
                #FUN-C30047---begin
                LET l_ima928 = 'N'
                SELECT ima928 INTO l_ima928 FROM ima_file
@@ -3463,7 +3463,7 @@ define l_imaud32     like ima_file.imaud32  #darcy:2023/07/15 add
                   CALL cl_err('','ima-001',1)
                   LET g_bmb[l_ac].bmb03 = g_bmb_t.bmb03
                   NEXT FIELD bmb03
-               END IF 
+               END IF
                #FUN-C30047---end
             END IF
             #FUN-AA0059 ----------------------------add end------------------------------
@@ -4050,9 +4050,9 @@ define l_imaud32     like ima_file.imaud32  #darcy:2023/07/15 add
                    ELSE
                       LET g_tree_reload = "Y"   #tree是否要重新整理 Y/N   #FUN-9A50010
                    END IF
-               END IF     
+               END IF
                #TQC-C30115---end
-               
+
                 DELETE FROM bmd_file
                     WHERE bmd01 = g_bmb_t.bmb03 AND
                           bmd08 = g_bma.bma01 AND
@@ -4158,14 +4158,14 @@ define l_imaud32     like ima_file.imaud32  #darcy:2023/07/15 add
 #           CALL g_tree1.clear()
 #           CALL i600_tree_fill(g_wc_o,NULL,0,NULL,NULL,NULL,g_bma01_tree)  #删除单身重新刷新树状图
 ##FUN-B90117--END--
-       
+
            LET g_tree_sel='1'
         #  IF g_lock='Y' THEN     #FUN-CB0078 mark
            IF NOT cl_null(g_tree_item) OR g_tree_arr_curr > 0 THEN   #FUN-CB0078 add
               LET g_bma01_tree=g_tree1[1].treekey4
            ELSE
               LET g_bma01_tree=g_bma.bma01
-           END IF 
+           END IF
            CALL g_tree1.clear()
            CALL i600_tree_fill(g_wc_o,NULL,0,NULL,NULL,NULL,g_bma01_tree)
 #FUN-C20105 --end--
@@ -4184,7 +4184,7 @@ define l_imaud32     like ima_file.imaud32  #darcy:2023/07/15 add
                 LET g_bmb[l_ac].* = g_bmb_t.*
             ELSE
 
-             ###FUN-9A50010 START ###  
+             ###FUN-9A50010 START ###
                #CALL i600_tree_loop(g_bma.bma01,g_bmb[l_ac].bmb03,NULL) RETURNING l_loop  #檢查是否為無窮迴圈
                #IF l_loop = "Y" THEN
                #   CALL cl_err(g_bmb[l_ac].bmb03,"agl1000",1)
@@ -4271,13 +4271,13 @@ define l_imaud32     like ima_file.imaud32  #darcy:2023/07/15 add
                             WHERE icm01 = g_bmb_t.bmb03
                               AND icm02 = g_bma.bma01
                           IF sqlca.sqlcode THEN
-                             CALL cl_err('',SQLCA.sqlcode,0) 
+                             CALL cl_err('',SQLCA.sqlcode,0)
                              LET g_bmb[l_ac].* = g_bmb_t.*
                              DISPLAY g_bmb[l_ac].* TO s_bmb[l_sl].*
                              ROLLBACK WORK
                              EXIT INPUT
                           END IF
-                       END IF 
+                       END IF
                       #TQC-C30115---end
                        SELECT COUNT(*) INTO l_n FROM bmt_file
                         WHERE bmt01 = g_bma.bma01
@@ -4327,9 +4327,9 @@ define l_imaud32     like ima_file.imaud32  #darcy:2023/07/15 add
               LET g_bma01_tree=g_tree1[1].treekey4
            ELSE
               LET g_bma01_tree=g_bma.bma01
-           END IF 
+           END IF
            CALL g_tree1.clear()
-           CALL i600_tree_fill(g_wc_o,NULL,0,NULL,NULL,NULL,g_bma01_tree) 
+           CALL i600_tree_fill(g_wc_o,NULL,0,NULL,NULL,NULL,g_bma01_tree)
 #FUN-C20105 --end--
 
         AFTER ROW
@@ -4747,7 +4747,7 @@ DEFINE
     IF cl_null(l_ima110) THEN LET l_ima110='1' END IF
     IF p_cmd = 'a' THEN
        LET g_bmb[l_ac].bmb19 = l_ima110
-       DISPLAY g_bmb[l_ac].bmb19 TO s_bmb[l_sl].bmb19       
+       DISPLAY g_bmb[l_ac].bmb19 TO s_bmb[l_sl].bmb19
     END IF
     IF p_cmd = 'd' OR cl_null(g_errno) THEN
         DISPLAY g_bmb[l_ac].ima02_b TO s_bmb[l_sl].ima02_b
@@ -5033,7 +5033,7 @@ DEFINE
         " WHERE bmb01 ='",g_bma.bma01,"' ",
         "   AND bmb29 ='",g_bma.bma06,"' ",  #FUN-550014 add
       #  "   AND bmb_file.bmb03 = ima_file.ima01 ",  #MOD-D80128 公式计算料件不用关联ima
-        "   AND bmb06 != 0 ",          #No.FUN-610022組成用量為零就不顯示了        
+        "   AND bmb06 != 0 ",          #No.FUN-610022組成用量為零就不顯示了
         "   AND ",p_wc2 CLIPPED
     CASE g_sma.sma65
       WHEN '1'  LET g_sql = g_sql CLIPPED, " ORDER BY 1,2,3"
@@ -5041,7 +5041,7 @@ DEFINE
       WHEN '3'  LET g_sql = g_sql CLIPPED, " ORDER BY 6,1,3"
       OTHERWISE LET g_sql = g_sql CLIPPED, " ORDER BY 1,2,3"
     END CASE
-     
+
     PREPARE i600_pb FROM g_sql
     DECLARE bmb_curs                       #SCROLL CURSOR
         CURSOR FOR i600_pb
@@ -5197,8 +5197,8 @@ FUNCTION i600_bp(p_ud)
                   CALL i600_tree_idxbypath()   #依tree path指定focus節點
                END IF
 
-               IF g_tree1[l_tree_arr_curr].has_children1 THEN                     #FUN-C20105   #FUN-CB0078 unmark 
-          #    IF g_tree1[l_tree_arr_curr].has_children1 AND g_lock = 'Y' THEN    #FUN-C20105   #FUN-CB0078 mark 
+               IF g_tree1[l_tree_arr_curr].has_children1 THEN                     #FUN-C20105   #FUN-CB0078 unmark
+          #    IF g_tree1[l_tree_arr_curr].has_children1 AND g_lock = 'Y' THEN    #FUN-C20105   #FUN-CB0078 mark
           #       LET g_tree_item = g_tree1[1].treekey4                 #FUN-CB0078
                   LET g_tree_item = g_tree1[l_tree_arr_curr].treekey4   #FUN-CB0078
                 # LET g_action_choice="tree"          #FUN-CB0078   mark
@@ -5216,7 +5216,7 @@ FUNCTION i600_bp(p_ud)
                IF NOT g_tree1[l_tree_arr_curr].has_children1 THEN  #尾阶料号时刷新单头单身为空      #FUN-C20105 #FUN-CB0078 unmark
           #    IF NOT g_tree1[l_tree_arr_curr].has_children1 AND g_lock = 'Y' THEN                  #FUN-C20105 #FUN-CB0078 mark
           #       LET g_tree_item = g_tree1[1].treekey4                 #FUN-CB0078
-                  LET g_tree_item = g_tree1[l_tree_arr_curr].treekey4   #FUN-CB0078 
+                  LET g_tree_item = g_tree1[l_tree_arr_curr].treekey4   #FUN-CB0078
                   LET g_show_flag = 'Y'                             #FUN-CB0078
                   INITIALIZE g_bma.* TO NULL
                   CALL g_bmb.clear()
@@ -5227,7 +5227,7 @@ FUNCTION i600_bp(p_ud)
                      BEFORE DISPLAY
                        EXIT DISPLAY
                   END DISPLAY
-               END IF   
+               END IF
 
                #LET g_tree_b = "Y"             #tree是否進入單身 Y/N
                 CALL i600_show_pic(l_tree_arr_curr)
@@ -5245,14 +5245,14 @@ FUNCTION i600_bp(p_ud)
                 LET l_cnt = 0
                 SELECT COUNT(*) INTO l_cnt FROM bma_file
                  WHERE bma01 = g_tree_item
-                IF l_cnt > 0 THEN  
+                IF l_cnt > 0 THEN
                    CALL i600_q(0)
             #FUN-CB0078 -----Begin--------
             #   ELSE
             #   #FUN-C30036---end
             #      IF g_lock='Y' AND NOT g_tree1[l_tree_arr_curr].has_children1 THEN
             #         LET g_action_choice="insert"
-            #         #EXIT DIALOG  #FUN-C30036 
+            #         #EXIT DIALOG  #FUN-C30036
             #      END IF
             #   #FUN-C30036---begin
             #FUN-CB0078 -----End----------
@@ -5265,10 +5265,10 @@ FUNCTION i600_bp(p_ud)
                    INITIALIZE g_bma.* TO NULL
                    CALL g_bmb.clear()
                    CALL i600_show()
-                END IF 
+                END IF
             #FUN-CB0078 -----End----------
-                LET g_tree_item = ''  
-              # EXIT DIALOG     #FUN-CB0078 mark 
+                LET g_tree_item = ''
+              # EXIT DIALOG     #FUN-CB0078 mark
                 #FUN-C30036---end
 #FUN-C20105 --end--
 
@@ -5289,7 +5289,7 @@ FUNCTION i600_bp(p_ud)
                   CALL i600_set_act_title("insert_loc",g_msg)
                   CALL i600_set_act_title("create_loc_data",g_msg)
                END IF
-               CALL cl_show_fld_cont()   #FUN-CB0078 lixh1 
+               CALL cl_show_fld_cont()   #FUN-CB0078 lixh1
 
             BEFORE ROW
                LET l_ac = ARR_CURR()
@@ -5308,7 +5308,7 @@ FUNCTION i600_bp(p_ud)
             AFTER DISPLAY
                CONTINUE DIALOG   #因為外層是DIALOG
 
-         END DISPLAY   
+         END DISPLAY
 
           DISPLAY ARRAY g_bma_l TO s_bma_l.* ATTRIBUTE(COUNT=g_rec_b1)
              BEFORE DISPLAY
@@ -5334,7 +5334,7 @@ FUNCTION i600_bp(p_ud)
           # IF g_tree_focus_idx > 0 THEN
           #    CALL Dialog.nextField("tree.name")                   #No.FUN-A30120 add by tommas   利用NEXT FIELD達到focus另一個table
           #    CALL Dialog.setCurrentRow("tree", g_tree_focus_idx)   #No.FUN-A30120 add by tommas   指定tree要focus的row
-          # END IF   
+          # END IF
             LET l_tree_arr_curr = 1
             LET l_ac = 1
 
@@ -5413,10 +5413,10 @@ FUNCTION i600_bp(p_ud)
             CALL i600_pic()
             EXIT DIALOG
          #darcy:2022/03/28 s---
-         ON ACTION confirmp 
+         ON ACTION confirmp
             LET g_action_choice = "confirmp"
             EXIT DIALOG
-         #darcy:2022/03/28 e---  
+         #darcy:2022/03/28 e---
          #darcy:2025/02/12 add s---
          on action xlsx_import
             let g_action_choice = 'xlsx_import'
@@ -5430,11 +5430,11 @@ FUNCTION i600_bp(p_ud)
          ON ACTION unconfirm
             LET g_action_choice = "unconfirm"
             EXIT DIALOG
-            
+
           ON ACTION up_imaud10
             LET g_action_choice = "up_imaud10"
             EXIT DIALOG
-            
+
          #@ON ACTION 發放
             ON ACTION bom_release         #TQC-640195
             LET g_action_choice="bom_release"
@@ -5607,7 +5607,7 @@ FUNCTION i600_bp(p_ud)
          #end----add by guanyao160719
           ON ACTION sfa_pro
             LET g_action_choice = 'sfa_pro'
-            EXIT DIALOG            
+            EXIT DIALOG
          #No:FUN-B70096 --START--
          ON ACTION OUTPUT
             LET g_action_choice = 'output'
@@ -5618,12 +5618,12 @@ FUNCTION i600_bp(p_ud)
 ##FUN-C20105 --begin--
 #        ON ACTION lock
 #           LET g_action_choice = 'lock'
-#           EXIT DIALOG           
+#           EXIT DIALOG
 ##FUN-C20105 --end--
 #FUN-CB0078 -----End-------
 #MOD-C90170 add &include "qry_string.4gl"
-&include "qry_string.4gl" 
-         
+&include "qry_string.4gl"
+
       END DIALOG
       CALL cl_set_act_visible("accept,cancel", TRUE)
       ###FUN-9A50010 END ###
@@ -5682,7 +5682,7 @@ FUNCTION i600_bp1(p_ud)
             BEFORE DISPLAY
                #重算g_curs_index，按上下筆按鈕才會正確
                #因為double click tree node後,focus tree的節點會改變
-               CALL cl_navigator_setting( g_curs_index, g_row_count )  #FUN-CB0078 lixh1 
+               CALL cl_navigator_setting( g_curs_index, g_row_count )  #FUN-CB0078 lixh1
                IF g_tree_focus_idx <= 0 THEN
                   LET g_tree_focus_idx = ARR_CURR()
                END IF
@@ -5716,7 +5716,7 @@ FUNCTION i600_bp1(p_ud)
 
 
             #double click tree node
-            
+
 #FUN-A50010  mark by dxfwo
 #              ON ACTION accept
 #              LET g_tree_focus_path = g_tree[l_tree_arr_curr].path
@@ -6051,23 +6051,23 @@ FUNCTION i600_copy_cur(ans_2,new_no)
    DEFINE l_sql   STRING
    DEFINE new_no  LIKE bmb_file.bmb03
    DEFINE ans_2   LIKE type_file.dat
-   
+
    # BOM 遍历
    LET l_sql = "SELECT bma01,bma06,bmb03,bmb29 FROM bmb_file,bma_file  WHERE bma01 =bmb01 ",
-               " AND bma01 =? and bma06 = ? and bmaacti='Y' " 
+               " AND bma01 =? and bma06 = ? and bmaacti='Y' "
    IF ans_2 IS NOT NULL THEN
       LET l_sql=l_sql CLIPPED,
                " AND (bmb04 <='",ans_2,"' OR bmb04 IS NULL)",
                " AND (bmb05 > '",ans_2,"' OR bmb05 IS NULL)"
    END IF
    PREPARE i600_bom_pre FROM l_sql
-   DECLARE i600_bom_dlc CURSOR FOR i600_bom_pre 
+   DECLARE i600_bom_dlc CURSOR FOR i600_bom_pre
 
    # 是否有下阶料
 
    LET l_sql = "SELECT count(1) FROM bma_file WHERE bma01 = ? and bma06 = ? and bmaacti ='Y' "
-   PREPARE i600_bom_next_d FROM l_sql 
-   
+   PREPARE i600_bom_next_d FROM l_sql
+
    # 检查半成品料件
    drop table j;
    CREATE TEMP TABLE j (
@@ -6075,18 +6075,18 @@ FUNCTION i600_copy_cur(ans_2,new_no)
       bmb03       varchar(40),
       bmb03_new   varchar(40),
       bmbcheck    varchar(1)
-   ) 
+   )
    # 将半成品，插入到j表中
-   LET l_sql = " merge into j tablea using ( ", 
+   LET l_sql = " merge into j tablea using ( ",
                " SELECT bmb01,bmb03,SUBSTR('",new_no CLIPPED,"',1,10)||SUBSTR(bmb03,11) bmb03_new FROM bmb_file,bma_file",
                " WHERE bmb01 = ?  and bmaacti ='Y' ",
-               # " AND bmb03 LIKE SUBSTR(bmb01,1,8)||'%'" 
+               # " AND bmb03 LIKE SUBSTR(bmb01,1,8)||'%'"
                " AND bma01 = bmb03 AND bma06 =bmb29"
    IF ans_2 IS NOT NULL THEN
       LET l_sql=l_sql CLIPPED,
                " AND (bmb04 <='",ans_2,"' OR bmb04 IS NULL)",
                " AND (bmb05 > '",ans_2,"' OR bmb05 IS NULL) "
-   END IF 
+   END IF
 
    let l_sql = l_sql ," ) tableb on (tablea.bmb03 = tablea.bmb03 and tableb.bmb03_new = tablea.bmb03_new ) ",
                " when not matched then insert (bmb01,bmb03,bmb03_new,bmbcheck) values (tableb.bmb01,tableb.bmb03,tableb.bmb03_new,'N') "
@@ -6095,9 +6095,9 @@ FUNCTION i600_copy_cur(ans_2,new_no)
    LET l_sql = " SELECT bmb01,bmb03,bmb03_new FROM j where bmbcheck ='N' "
    PREPARE i600_bom_rep FROM l_sql
    DECLARE i600_bom_rep_d CURSOR FOR i600_bom_rep
-   
+
    # 更新bmc_file 料件
-    
+
    LET l_sql =  "UPDATE bmc_file  ",
                 " SET bmc021 = NVL((SELECT bmb03_new FROM j WHERE bmb03 =bmc021),bmc021)",
                 " WHERE bmc01 =? "
@@ -6154,23 +6154,23 @@ FUNCTION i600_copy_new()
    DEFINE l_input       LIKE type_file.chr1
 
    CALL i600_copy_input() RETURNING old_no,old_bma06,new_no,new_bma06,ans_1,ans_2,ef_date,ans_3,ans_31,ans_4,ans_5,l_input
-   IF NOT l_input THEN 
+   IF NOT l_input THEN
       RETURN
    END IF
    let new_no = new_no[1,10]
    CALL i600_copy_cur(ans_2,new_no)
-   # BEGIN WORK 
+   # BEGIN WORK
    CALL i600_copy_item(old_no,old_bma06,new_no,new_bma06,ans_1,ans_2,ef_date,ans_3,ans_31,ans_4,ans_5)
-      # RETURNING g_succ 
+      # RETURNING g_succ
    if g_success = 'N' then
       return
    end if
    CALL i600_copy_bom(old_no,old_bma06,new_no,new_bma06,ans_1,ans_2,ef_date,ans_3,ans_31,ans_4,ans_5)
    if g_success = 'Y' then
       COMMIT WORK
-   else 
+   else
       ROLLBACK Work
-   end if 
+   end if
 END FUNCTION
 # 旧BOM复制为新BOM
 FUNCTION i600_copy_item(old_no,old_bma06,new_no2,new_bma06,ans_1,ans_2,ef_date,ans_3,ans_31,ans_4,ans_5)
@@ -6195,11 +6195,11 @@ FUNCTION i600_copy_item(old_no,old_bma06,new_no2,new_bma06,ans_1,ans_2,ef_date,a
    #解析新料件编号 s---
    #AA0014F4AR => AA0014F4BR
    #KK0002A4BR => KK0002A4BR
-   # 前十位全部被new_no2替换 
-   LET new_no = cl_replace_str(old_no,old_no[1,10],new_no2) 
+   # 前十位全部被new_no2替换
+   LET new_no = cl_replace_str(old_no,old_no[1,10],new_no2)
    #解析新料件编号 e---
 
-   #检查 s--- 
+   #检查 s---
    let g_cnt = 0
    select count(1) into g_cnt from j where bmb01 = old_no  and bmbcheck='Y'
    #  不需要bma06，因为j中已经是bma06 相同的了。
@@ -6209,42 +6209,42 @@ FUNCTION i600_copy_item(old_no,old_bma06,new_no2,new_bma06,ans_1,ans_2,ef_date,a
    end if
 
    SELECT count(1) INTO g_cnt FROM bma_file WHERE bma01 = new_no and bma06 = new_bma06
-   IF g_cnt>0 THEN 
-      CALL cl_err('bma_file',-239,0) 
-      # NEXT FIELD new_no 
-      LET g_success = 'N' 
+   IF g_cnt>0 THEN
+      CALL cl_err('bma_file',-239,0)
+      # NEXT FIELD new_no
+      LET g_success = 'N'
       ROLLBACK WORK
       return
-   END IF 
+   END IF
    SELECT count(1) INTO g_cnt FROM bma_file WHERE bma01 = old_no and bma06 = old_bma06 AND bmaacti='Y'
-   IF g_cnt=0 THEN 
-      CALL cl_err('ima_file',100,0) 
-      # NEXT FIELD new_no 
-      LET g_success = 'N' 
+   IF g_cnt=0 THEN
+      CALL cl_err('ima_file',100,0)
+      # NEXT FIELD new_no
+      LET g_success = 'N'
       ROLLBACK WORK
       return
    END IF
 
-   # 检查半成品料件是否建立 
+   # 检查半成品料件是否建立
    EXECUTE i600_bom_rep_e USING old_no
    IF STATUS THEN
       CALL cl_err("i600_bom_rep_e",STATUS,1)
-      LET g_success = 'N' 
+      LET g_success = 'N'
       ROLLBACK WORK
       return
    END IF
    FOREACH i600_bom_rep_d INTO l_bmb01,l_bmb03,l_bmb03_new
       IF STATUS THEN
          CALL cl_err("i600_bom_rep_d",STATUS,1)
-         LET g_success = 'N' 
+         LET g_success = 'N'
          ROLLBACK WORK
          return
-      END IF  
+      END IF
       # 1. 检查ima是否建立
       select count(1) into g_cnt from ima_file where ima01 =l_bmb03_new and imaacti='Y'
-      IF g_cnt = 0 THEN 
+      IF g_cnt = 0 THEN
          CALL cl_err(l_bmb03_new,'cbm-010',0)
-         LET g_success = 'N' 
+         LET g_success = 'N'
          ROLLBACK WORK
          return
       END IF
@@ -6252,15 +6252,15 @@ FUNCTION i600_copy_item(old_no,old_bma06,new_no2,new_bma06,ans_1,ans_2,ef_date,a
       SELECT count(1) INTO g_cnt FROM bma_file WHERE bma01 = l_bmb03_new and bma06 = new_bma06
       IF g_cnt >=1 THEN
          CALL cl_err(l_bmb03_new,'cbm-009',0)
-         LET g_success = 'N' 
+         LET g_success = 'N'
          ROLLBACK WORK
          return
-      END IF 
+      END IF
 
-   END FOREACH 
-   
+   END FOREACH
+
    #检查 e---
-   
+
    #說明資料是否復制ans_3
    IF ans_3 = 'Y' THEN
       delete from  w
@@ -6363,7 +6363,7 @@ FUNCTION i600_copy_item(old_no,old_bma06,new_no2,new_bma06,ans_1,ans_2,ef_date,a
       EXECUTE i600_pbmd
       IF SQLCA.sqlcode THEN
          CALL cl_err('i600_pbmd',SQLCA.sqlcode,0)
-         LET g_success = 'N' 
+         LET g_success = 'N'
          ROLLBACK WORK #MOD-650016 add
          RETURN
       END IF
@@ -6376,7 +6376,7 @@ FUNCTION i600_copy_item(old_no,old_bma06,new_no2,new_bma06,ans_1,ans_2,ef_date,a
       AND bma06=old_bma06 #FUN-550014 add
    #   INTO TEMP y
    #MOD-A30131 ---end---
- 
+
    LET g_success='Y'
    IF cl_null(old_bma06) THEN LET old_bma06 = ' ' END IF #FUN-550014 add
    IF cl_null(new_bma06) THEN LET new_bma06 = ' ' END IF #FUN-550014 add
@@ -6411,7 +6411,7 @@ FUNCTION i600_copy_item(old_no,old_bma06,new_no2,new_bma06,ans_1,ans_2,ef_date,a
      # END IF
      #MOD-A30131 mark---end---
      #将说明中的下阶料中半成品替换 s---
-     
+
      #将说明中的下阶料中半成品替换 e---
       CASE
          WHEN ans_1 ='2'
@@ -6420,7 +6420,7 @@ FUNCTION i600_copy_item(old_no,old_bma06,new_no2,new_bma06,ans_1,ans_2,ef_date,a
             UPDATE w SET bmc03 = ef_date
       END CASE
 
-      
+
       UPDATE w SET bmc01=new_no,
                    bmc06=new_bma06 #FUN-550014 add
       INSERT INTO bmc_file SELECT * FROM w
@@ -6431,9 +6431,9 @@ FUNCTION i600_copy_item(old_no,old_bma06,new_no2,new_bma06,ans_1,ans_2,ef_date,a
          RETURN
       END IF
       EXECUTE i600_bom_bmc_upd USING new_no
-      IF STATUS THEN 
+      IF STATUS THEN
          CALL cl_err("i600_bom_bmc_upd","!",1)
-         LET g_success = 'N' 
+         LET g_success = 'N'
          ROLLBACK WORK
          return
       END IF
@@ -6474,7 +6474,7 @@ FUNCTION i600_copy_item(old_no,old_bma06,new_no2,new_bma06,ans_1,ans_2,ef_date,a
          WHEN ans_1 ='3'
             UPDATE w2 SET bmt04 = ef_date
       END CASE
-      
+
 
       UPDATE w2 SET bmt01=new_no,
                     bmt08=new_bma06 #FUN-550014 add
@@ -6486,9 +6486,9 @@ FUNCTION i600_copy_item(old_no,old_bma06,new_no2,new_bma06,ans_1,ans_2,ef_date,a
          RETURN
       END IF
       EXECUTE i600_bom_bmt_upd USING new_no
-      IF STATUS THEN 
+      IF STATUS THEN
          CALL cl_err("i600_bom_bmt_upd","!",1)
-         LET g_success = 'N' 
+         LET g_success = 'N'
          ROLLBACK WORK
          return
       END IF
@@ -6522,7 +6522,7 @@ FUNCTION i600_copy_item(old_no,old_bma06,new_no2,new_bma06,ans_1,ans_2,ef_date,a
      # END IF
      #MOD-A30131 mark---end---
 
-      
+
 
       UPDATE z SET bml02=new_no
       INSERT INTO bml_file SELECT * FROM z
@@ -6533,9 +6533,9 @@ FUNCTION i600_copy_item(old_no,old_bma06,new_no2,new_bma06,ans_1,ans_2,ef_date,a
          RETURN
       END IF
       EXECUTE i600_bom_bml_upd USING new_no
-      IF STATUS THEN 
+      IF STATUS THEN
          CALL cl_err("i600_bom_bml_upd","!",1)
-         LET g_success = 'N' 
+         LET g_success = 'N'
          ROLLBACK WORK
          return
       END IF
@@ -6571,7 +6571,7 @@ FUNCTION i600_copy_item(old_no,old_bma06,new_no2,new_bma06,ans_1,ans_2,ef_date,a
     IF old_no = new_no AND old_bma06 != new_bma06 THEN  #TQC-610025
     ELSE                                               #TQC-610025
       # EXECUTE i600_bom_bmd_upd
-      # IF STATUS THEN 
+      # IF STATUS THEN
       #    CALL cl_err("i600_bom_bmd_upd","!",1)
       #    ROLLBACK WORK
       # END IF
@@ -6586,7 +6586,7 @@ FUNCTION i600_copy_item(old_no,old_bma06,new_no2,new_bma06,ans_1,ans_2,ef_date,a
             WHEN '3'   #人為輸入
                LET l_bmd.bmd05 = ef_date
          END CASE
-#MOD-B90133 -- end -- 
+#MOD-B90133 -- end --
           SELECT bmb03_new INTO l_bmd.bmd01 FROM j WHERE bmb03 = l_bmd.bmd01
 
           LET l_bmd.bmdoriu = g_user      #No.FUN-980030 10/01/04
@@ -6649,8 +6649,8 @@ FUNCTION i600_copy_item(old_no,old_bma06,new_no2,new_bma06,ans_1,ans_2,ef_date,a
       IF SQLCA.SQLCODE THEN CALL cl_err('sel bmb:',SQLCA.SQLCODE,0)
          EXIT FOREACH
       END IF
-      # 替换bmb03 
-      SELECT bmb03_new INTO l_bmb.bmb03  FROM j WHERE bmb03 = l_bmb.bmb03 
+      # 替换bmb03
+      SELECT bmb03_new INTO l_bmb.bmb03  FROM j WHERE bmb03 = l_bmb.bmb03
 
       LET l_bmb.bmb01 = new_no
       LET l_bmb.bmb29 = new_bma06 #FUN-550014 add
@@ -6668,6 +6668,7 @@ FUNCTION i600_copy_item(old_no,old_bma06,new_no2,new_bma06,ans_1,ans_2,ef_date,a
       END IF
        LET l_bmb.bmb33 = '0'
       let l_bmb.bmb081 = 0  # darcy:2025/08/28 add 复制不要带固定损耗
+      let l_bmb.bmb08 = 0  # darcy add 损耗率也不要复制
       INSERT INTO bmb_file VALUES(l_bmb.*)
       IF SQLCA.SQLCODE <> 0 THEN
          CALL cl_err3("ins","bmb_file",l_bmb.bmb01,l_bmb.bmb02,"mfg-001","","",1)  #No.TQC-660046
@@ -6703,7 +6704,7 @@ FUNCTION i600_copy_item(old_no,old_bma06,new_no2,new_bma06,ans_1,ans_2,ef_date,a
          WHEN 1  #呼叫 MDM 成功
            MESSAGE 'INSERT O.K, INSERT MDM O.K'
          WHEN 2  #呼叫 MDM 失敗
-           LET g_success = 'N' 
+           LET g_success = 'N'
            ROLLBACK WORK
            return
       END CASE
@@ -6729,11 +6730,11 @@ FUNCTION i600_copy_item(old_no,old_bma06,new_no2,new_bma06,ans_1,ans_2,ef_date,a
          EXIT FOREACH
       END IF
    END FOREACH
-  END IF 
+  END IF
 
   update j set bmbcheck ='Y'  # 更新成功就将状态更新为Y
 
-END FUNCTION 
+END FUNCTION
 # 输入必要条件
 FUNCTION i600_copy_input()
    DEFINE new_bma06,old_bma06 LIKE bma_file.bma06 #FUN-550014 add
@@ -6751,7 +6752,7 @@ FUNCTION i600_copy_input()
    DEFINE l_n          LIKE type_file.num5      #No.FUN-920157
    DEFINE l_icm  RECORD LIKE icm_file.*         #FUN-980033
    DEFINE l_tree_arr_curr    LIKE type_file.num5
-   
+
    IF s_shut(0) THEN RETURN END IF
 #MOD-B90133 -- begin --
    IF g_bma.bmaacti = 'N' THEN
@@ -6840,10 +6841,10 @@ FUNCTION i600_copy_input()
             IF g_cnt>0 THEN CALL cl_err('bma_file',-239,0) NEXT FIELD new_no END IF
             SELECT count(*) INTO g_cnt FROM ima_file WHERE ima01 = new_no
             IF g_cnt=0 THEN CALL cl_err('ima_file',100,0) NEXT FIELD new_no END IF
-            IF LENGTH(new_no) <> LENGTH(old_no) THEN  
+            IF LENGTH(new_no) <> LENGTH(old_no) THEN
                CALL cl_err(LENGTH(new_no),'cbm-008',0)
                NEXT FIELD new_no
-            END IF 
+            END IF
         END IF
       ON CHANGE ans_1
         IF ans_1 != '3' THEN
@@ -6912,7 +6913,7 @@ FUNCTION i600_copy_input()
    CLOSE WINDOW i600_c_w
    #TODO: 需要判断推出时机
    IF INT_FLAG THEN LET INT_FLAG = 0 RETURN '','','','','','','','','','','',FALSE END IF
-   MESSAGE ' COPY.... ' 
+   MESSAGE ' COPY.... '
    RETURN  old_no,old_bma06,new_no,new_bma06,ans_1,ans_2,ef_date,ans_3,ans_31,ans_4,ans_5,TRUE
 END FUNCTION
 # 遍历全部结构
@@ -6940,7 +6941,7 @@ FUNCTION i600_copy_bom(old_no,old_bma06,new_no,new_bma06,ans_1,ans_2,ef_date,ans
                   #TODO: l_copy
                END RECORD
    DEFINE l_i     LIKE type_file.num5
-   LET g_cnt = 1 
+   LET g_cnt = 1
    FOREACH i600_bom_dlc USING old_no,old_bma06 INTO l_copy[g_cnt].*
       IF STATUS THEN
 
@@ -6950,22 +6951,22 @@ FUNCTION i600_copy_bom(old_no,old_bma06,new_no,new_bma06,ans_1,ans_2,ef_date,ans
 
    FOR l_i = 1 TO l_copy.getlength()
 
-      LET g_cnt = 0 
+      LET g_cnt = 0
       EXECUTE i600_bom_next_d USING l_copy[l_i].bmb03,l_copy[l_i].bmb29 INTO g_cnt
-     
-      IF g_cnt > 0 THEN 
+
+      IF g_cnt > 0 THEN
          #TODO: bom->COPY
          CALL i600_copy_item(l_copy[l_i].bmb03,l_copy[l_i].bmb29,new_no,new_bma06,ans_1,ans_2,ef_date,ans_3,ans_31,ans_4,ans_5)
-         if g_success ='N' then 
+         if g_success ='N' then
             return
          end if
          #TODO: bom->copy
          CALL i600_copy_bom(l_copy[l_i].bmb03,l_copy[l_i].bmb29,new_no,new_bma06,ans_1,ans_2,ef_date,ans_3,ans_31,ans_4,ans_5)
-         if g_success ='N' then 
+         if g_success ='N' then
             return
          end if
       END IF
-   END FOR 
+   END FOR
 
 END FUNCTION
 #darcy:2022/04/27 add e---
@@ -7246,7 +7247,7 @@ IF cl_sure(0,0) THEN
       EXECUTE i600_pbmd_new
       IF SQLCA.sqlcode THEN
          CALL cl_err('i600_pbmd',SQLCA.sqlcode,0)
-         LET g_success = 'N' 
+         LET g_success = 'N'
          ROLLBACK WORK #MOD-650016 add
          RETURN
       END IF
@@ -7509,6 +7510,7 @@ IF cl_sure(0,0) THEN
       END IF
        LET l_bmb.bmb33 = '0'
       let l_bmb.bmb081 = 0 # darcy:2025/08/28 复制不需要固定损耗
+      let l_bmb.bmb08 = 0 # darcy 增加损耗率不复制
       INSERT INTO bmb_file VALUES(l_bmb.*)
       IF SQLCA.SQLCODE <> 0 THEN
          CALL cl_err3("ins","bmb_file",l_bmb.bmb01,l_bmb.bmb02,"mfg-001","","",1)  #No.TQC-660046
@@ -7576,7 +7578,7 @@ END IF
       #FUN-C30027---begin
       #LET g_wc="bma01='",new_no,"'"
       #CALL i600_q(0)
-      SELECT * 
+      SELECT *
         INTO g_bma.*
         from bma_file
        WHERE bma01 = new_no
@@ -7617,7 +7619,7 @@ FUNCTION i6002_prompt()
 #TQC-C20419 ----- add ----- end
      SELECT COUNT(*) INTO l_n FROM bmd_file
       WHERE bmd01 = g_bmb[l_ac].bmb03
-        AND bmd02 = l_bmb16                 #TQC-C20419 modify 
+        AND bmd02 = l_bmb16                 #TQC-C20419 modify
         AND (bmd08 = 'ALL'
         OR bmd08 = g_bma.bma01)
         AND bmdacti = 'Y'                                           #CHI-910021
@@ -9043,7 +9045,7 @@ END FUNCTION
                   " AND bmb01 = bma_file.bma01 ",
 #                 " AND bma01= '",g_bma_l[l_ac].bma01_l CLIPPED,"'",             #FUN-B90117
                   " AND bma01= '",p_bma01 CLIPPED,"'",             #FUN-B90117
-                  " AND bmb29 = bma06",                            #FUN-C20105                 
+                  " AND bmb29 = bma06",                            #FUN-C20105
                   " GROUP BY bmb01",
                   " ORDER BY bmb01"
       ELSE
@@ -9053,7 +9055,7 @@ END FUNCTION
                   " AND bmb01 = bma_file.bma01 ",
 #                 " AND bma01= '",g_bma_l[l_ac].bma01_l CLIPPED,"'",             #FUN-B90117
                   " AND bma01= '",p_bma01 CLIPPED,"'",             #FUN-B90117
-                  " AND bmb29 = bma06",                            #FUN-C20105                         
+                  " AND bmb29 = bma06",                            #FUN-C20105
                   " GROUP BY bmb01",
                   " ORDER BY bmb01"
 
@@ -9111,7 +9113,7 @@ END FUNCTION
          LET g_tree1[g_idx].treekey3 = l_bma[l_i].bma01
          LET g_tree1[g_idx].treekey4 = l_bma[l_i].bmb03
 #FUN-CB0078 ------Begin------
-#FUN-C20105 --unmark begin--         
+#FUN-C20105 --unmark begin--
 #        IF g_lock='Y' THEN
 #           LET g_tree1[g_idx].img = "lock.png"
 #        ELSE
@@ -9144,12 +9146,12 @@ END FUNCTION
 
        #LET l_sql = "SELECT UNIQUE bmb03,ima02,bmb06,bmb07,bmb10 ",
         LET l_sql = "SELECT UNIQUE bmb02,bmb03,ima02,bmb06,bmb07,bmb10 ",   #MOD-CC0278 add bmb02
-#                   " FROM  bmb_file LEFT JOIN ima_file ON bmb03 = ima_file.ima01 ",   #FUN-C20105 
-                    " FROM  bma_file,bmb_file LEFT JOIN ima_file ON bmb03 = ima_file.ima01 ",   #FUN-C20105                     
+#                   " FROM  bmb_file LEFT JOIN ima_file ON bmb03 = ima_file.ima01 ",   #FUN-C20105
+                    " FROM  bma_file,bmb_file LEFT JOIN ima_file ON bmb03 = ima_file.ima01 ",   #FUN-C20105
                     "WHERE  bmb01 = '", p_key1 CLIPPED,"'",
                     " AND bma06 = '",g_bma.bma06,"'",                #MOD-D20147
-                    " AND bmb29 = bma06",                            #FUN-C20105                    
-                    " AND bmb01 = bma01",                            #FUN-C20105                     
+                    " AND bmb29 = bma06",                            #FUN-C20105
+                    " AND bmb01 = bma01",                            #FUN-C20105
                    # " GROUP BY bmb03",
                    #" ORDER BY bmb03"
                     " ORDER BY bmb02"   #MOD-CC0278 bmb03 -> bmb02
@@ -9157,14 +9159,14 @@ END FUNCTION
        IF NOT cl_null(g_vdate) THEN  #FUN-A50010
        #LET l_sql = "SELECT UNIQUE bmb03,ima02,bmb06,bmb07,bmb10 ",
         LET l_sql = "SELECT UNIQUE bmb02,bmb03,ima02,bmb06,bmb07,bmb10 ",   #MOD-CC0278 add bmb02
-#                   " FROM bmb_file LEFT JOIN ima_file ON bmb03 = ima_file.ima01 ",   #FUN-C20105 
-                    " FROM bma_file,bmb_file LEFT JOIN ima_file ON bmb03 = ima_file.ima01 ",   #FUN-C20105 
+#                   " FROM bmb_file LEFT JOIN ima_file ON bmb03 = ima_file.ima01 ",   #FUN-C20105
+                    " FROM bma_file,bmb_file LEFT JOIN ima_file ON bmb03 = ima_file.ima01 ",   #FUN-C20105
                     "WHERE  bmb01 = '", p_key1 CLIPPED,"'",
                     "  AND  bma06 =  '",g_bma.bma06,"'",                        #MOD-D20147
                     "  AND (bmb04 <='", g_vdate,"'"," OR bmb04 IS NULL )",
                     "  AND (bmb05 >  '",g_vdate,"'"," OR bmb05 IS NULL )",
-                    " AND bmb29 = bma06",                            #FUN-C20105     
-                    " AND bmb01 = bma01",                            #FUN-C20105                      
+                    " AND bmb29 = bma06",                            #FUN-C20105
+                    " AND bmb01 = bma01",                            #FUN-C20105
                    #" ORDER BY bmb03"
                     " ORDER BY bmb02"   #MOD-CC0278 bmb03 -> bmb02
        END IF
@@ -9210,14 +9212,14 @@ END FUNCTION
                SELECT COUNT(bmb03) INTO l_child FROM bmb_file WHERE bmb01 = l_bmb[l_i].bmb03
                AND (bmb04 <= g_vdate OR bmb04 IS NULL )  #FUN-B90117
                AND (bmb05 >g_vdate OR bmb05 IS NULL )    #FUN-B90117
-          #MOD-D20147-add-start      
-            ELSE  
+          #MOD-D20147-add-start
+            ELSE
                 SELECT COUNT(bmb03) INTO l_child FROM bmb_file
                 WHERE bmb01 = l_bmb[l_i].bmb03
-                AND (bmb04 <= g_today OR bmb04 IS NULL )  
-                AND (bmb05 >g_today OR bmb05 IS NULL )    
+                AND (bmb04 <= g_today OR bmb04 IS NULL )
+                AND (bmb05 >g_today OR bmb05 IS NULL )
             END IF
-          #MOD-D20147-add-end    
+          #MOD-D20147-add-end
 
             IF l_child > 0 AND p_level <= max_level THEN #TQC-C60239
                LET g_tree[g_idx].has_children = TRUE
@@ -9251,14 +9253,14 @@ END FUNCTION
                SELECT COUNT(bmb03) INTO l_child FROM bmb_file WHERE bmb01 = l_bmb[l_i].bmb03
                AND (bmb04 <= g_vdate OR bmb04 IS NULL )
                AND (bmb05 >g_vdate OR bmb05 IS NULL )
-        #MOD-D20147-add-start      
-            ELSE  
+        #MOD-D20147-add-start
+            ELSE
                 SELECT COUNT(bmb03) INTO l_child FROM bmb_file
                 WHERE bmb01 = l_bmb[l_i].bmb03
-                AND (bmb04 <= g_today OR bmb04 IS NULL )  
-                AND (bmb05 >g_today OR bmb05 IS NULL )    
+                AND (bmb04 <= g_today OR bmb04 IS NULL )
+                AND (bmb05 >g_today OR bmb05 IS NULL )
             END IF
-        #MOD-D20147-add-end 
+        #MOD-D20147-add-end
 
 
             IF l_child > 0 AND p_level <= max_level THEN #TQC-C60239
@@ -9375,14 +9377,14 @@ FUNCTION  i600_tree_fill2(p_wc,p_pid,p_level,p_path,p_key1,p_key2 )
                SELECT COUNT(bmb03) INTO l_child FROM bmb_file WHERE bmb01 = l_bmb[l_i].bmb03
                AND (bmb04 <= g_vdate OR bmb04 IS NULL )
                AND (bmb05 >g_vdate OR bmb05 IS NULL )
-         #MOD-D20147-add-start      
-            ELSE  
+         #MOD-D20147-add-start
+            ELSE
                 SELECT COUNT(bmb03) INTO l_child FROM bmb_file
                 WHERE bmb01 = l_bmb[l_i].bmb03
-                AND (bmb04 <= g_today OR bmb04 IS NULL )  
-                AND (bmb05 >g_today OR bmb05 IS NULL )    
+                AND (bmb04 <= g_today OR bmb04 IS NULL )
+                AND (bmb05 >g_today OR bmb05 IS NULL )
             END IF
-        #MOD-D20147-add-end 
+        #MOD-D20147-add-end
             IF l_child > 0 AND p_level <= max_level THEN #TQC-C60239
                LET g_tree[g_idx].has_children = TRUE
                CALL i600_tree_fill2(p_wc,g_tree[g_idx].id,p_level,g_tree[g_idx].path,g_tree[g_idx].treekey1,g_tree[g_idx].treekey2)
@@ -9410,19 +9412,19 @@ FUNCTION  i600_tree_fill2(p_wc,p_pid,p_level,p_path,p_key1,p_key2 )
             LET g_tree1[g_idx].path1 = p_path CLIPPED,".",l_bmb[l_i].bmb03
             #LET g_tree[g_idx].treekey1 = l_bma[l_i].bma01
             LET g_tree1[g_idx].treekey4 = l_bmb[l_i].bmb03
-            
+
             IF NOT cl_null(g_vdate) THEN                   #MOD-D20147
                SELECT COUNT(bmb03) INTO l_child FROM bmb_file WHERE bmb01 = l_bmb[l_i].bmb03
                AND (bmb04 <= g_vdate OR bmb04 IS NULL )
                AND (bmb05 >g_vdate OR bmb05 IS NULL )
-        #MOD-D20147-add-start      
-            ELSE  
+        #MOD-D20147-add-start
+            ELSE
                 SELECT COUNT(bmb03) INTO l_child FROM bmb_file
                 WHERE bmb01 = l_bmb[l_i].bmb03
-                AND (bmb04 <= g_today OR bmb04 IS NULL )  
-                AND (bmb05 >g_today OR bmb05 IS NULL )    
+                AND (bmb04 <= g_today OR bmb04 IS NULL )
+                AND (bmb05 >g_today OR bmb05 IS NULL )
             END IF
-        #MOD-D20147-add-end 
+        #MOD-D20147-add-end
 
             IF l_child > 0 AND p_level <= max_level THEN #TQC-C60239
                LET g_tree1[g_idx].has_children1 = TRUE
@@ -9524,9 +9526,9 @@ FUNCTION i600_tree_loop(p_key1,p_addkey2,p_flag)
 
    IF cl_null(p_flag) THEN   #第一次進遞迴
       LET g_idx = 1
-      LET g_path_add[g_idx] = p_addkey2  
+      LET g_path_add[g_idx] = p_addkey2
       #TQC-C60231--add--str--   #如果主料與元料相同
-      IF g_path_add[g_idx] = p_key1 THEN 
+      IF g_path_add[g_idx] = p_key1 THEN
          LET l_loop = "Y"
          RETURN l_loop
       END IF
@@ -9573,7 +9575,7 @@ FUNCTION i600_tree_loop(p_key1,p_addkey2,p_flag)
             SELECT COUNT(bmb03) INTO l_child FROM bmb_file WHERE bmb01 = l_bmb[l_i].bmb03
             IF l_child > 0 THEN
                CALL i600_tree_loop(p_key1,l_bmb[l_i].bmb03,p_flag) RETURNING l_loop
-               IF l_loop = 'Y' THEN RETURN l_loop END IF           #TQC-C60231 add 
+               IF l_loop = 'Y' THEN RETURN l_loop END IF           #TQC-C60231 add
             END IF
             #TQC-A60039 mark---end---   #TQC-C60231  remark
           END FOR
@@ -9595,7 +9597,7 @@ FUNCTION i600_tree_update()
    LET g_tree_sel='2'              #FUN-B90117
 #  CALL i600_tree_fill(g_wc_o,NULL,0,NULL,NULL,NULL) #Tree填充          #FUN-B90117
 #  CALL i600_tree_fill(g_wc_o,NULL,0,NULL,NULL,NULL,NULL) #Tree填充     #FUN-B90117   #MOD-C70011 mark
-   CALL i600_tree_fill(g_wc_o,NULL,0,NULL,NULL,NULL,g_bma.bma01) #Tree填充  #MOD-C70011  
+   CALL i600_tree_fill(g_wc_o,NULL,0,NULL,NULL,NULL,g_bma.bma01) #Tree填充  #MOD-C70011
    CALL i600_tree_idxbypath()                        #依tree path指定focus節點
    CALL i600_tree_open(g_tree_focus_idx)             #展開節點
    #復原cursor，上下筆的按鈕才可以使用
@@ -9692,18 +9694,18 @@ END FUNCTION
 #str----add by guanyao160811
 FUNCTION i600_out1()
    DEFINE l_cmd     LIKE type_file.chr1000
-   DEFINE l_wc     STRING 
-   
-    IF cl_null(g_bma.bma01) THEN 
-       RETURN 
-    END IF 
+   DEFINE l_wc     STRING
+
+    IF cl_null(g_bma.bma01) THEN
+       RETURN
+    END IF
     LET l_wc = 'bma01 = "',g_bma.bma01,'"'
     LET l_cmd = 'cbmr001',
                        " '",g_today CLIPPED,"' ''",
                        " '",g_lang CLIPPED,"' '",g_bgjob CLIPPED,"'  '' '1'",
-                       " '",l_wc CLIPPED,"' '' 'N' '' '' "   
+                       " '",l_wc CLIPPED,"' '' 'N' '' '' "
     CALL cl_cmdrun(l_cmd)
-END FUNCTION  
+END FUNCTION
 #end----add by guanyao160811
 
 #No:FUN-B70096 --START--
@@ -9756,7 +9758,7 @@ DEFINE p_id       LIKE type_file.num10        #CHI-C90013 add
    END IF
 
    LET g_sql = "INSERT INTO ",g_cr_db_str CLIPPED,l_table2 CLIPPED,
-               " VALUES(?,?,?) "                                       #CHI-C90013 add ,? 
+               " VALUES(?,?,?) "                                       #CHI-C90013 add ,?
    PREPARE insert_prep2 FROM g_sql
    IF STATUS THEN
       CALL cl_err('insert_prep2:',status,1)
@@ -9794,9 +9796,9 @@ DEFINE p_id       LIKE type_file.num10        #CHI-C90013 add
                                       ,l_bma[l_n].ima02,l_bma[l_n].bma06
                                       ,l_bma[l_n].ima55,'0'
                                       ,l_bma[l_n].bma01,l_bma[l_n].ima02
-                                      ,'','1' 
+                                      ,'','1'
                                       ,'1',l_bma[l_n].ima55,l_id,p_id       #CHI-C90013 add ,l_id,p_id
- 
+
        IF SQLCA.sqlcode THEN
           CALL cl_err('Foreach:',SQLCA.sqlcode,1)
           EXIT FOREACH
@@ -9855,7 +9857,7 @@ DEFINE p_id       LIKE type_file.num10        #CHI-C90013 add
                                             ,l_bmb[l_n2].bmb02,l_bmb[l_n2].bmb03
                                             ,l_bmb[l_n2].ima02,l_bmb[l_n2].bmb09
                                             ,l_bmb[l_n2].bmb06,l_bmb[l_n2].bmb07
-                                            ,l_bmb[l_n2].bmb10,l_id,l_bma_b[l_bh_cnt].p_id    #CHI-C90013 add l_id,l_bma_b[l_bh_cnt].p_id 
+                                            ,l_bmb[l_n2].bmb10,l_id,l_bma_b[l_bh_cnt].p_id    #CHI-C90013 add l_id,l_bma_b[l_bh_cnt].p_id
                 EXECUTE insert_prep2 USING l_bmb[l_n2].bmb03,l_bmb[l_n2].ima910,l_id  #TEMP記錄下一層主件        #CHI-C90013 add l_id
                 LET l_n2 = l_n2 + 1
              END FOREACH
@@ -9880,7 +9882,7 @@ FUNCTION i600_bmb081_check()
        IF g_bmb[l_ac].bmb081 < 0 THEN
           CALL cl_err(g_bmb[l_ac].bmb081,'aec-020',0)
           LET g_bmb[l_ac].bmb081 = g_bmb_o.bmb081
-          RETURN FALSE     
+          RETURN FALSE
        END IF
        LET g_bmb_o.bmb081 = g_bmb[l_ac].bmb081
    END IF
@@ -9895,7 +9897,7 @@ END FUNCTION
 #FUN-CB0078 -----begin-----mark----
 ##FUN-C20105 --begin--
 #FUNCTION i600_lock()        #锁住BOM树状图
-   
+
 #  IF g_lock='N' THEN
 #     LET g_lock='Y'
 #     LET g_tree1[1].img = "lock.png"
@@ -9903,7 +9905,7 @@ END FUNCTION
 #     LET g_lock='N'
 #     LET g_tree1[1].img = " "
 #  END IF
- 
+
 #END FUNCTION
 ##FUN-C20105 --end--
 #FUN-CB0078 -----end-------mark----
@@ -9919,36 +9921,36 @@ FUNCTION i600_e_work_dhy()
    DEFINE l_bmb09 LIKE bmb_file.bmb09
    DEFINE i      SMALLINT
    LET i =0
-   LET l_sql = "SELECT sfb01,sfb05 FROM sfb_file"               
+   LET l_sql = "SELECT sfb01,sfb05 FROM sfb_file"
    PREPARE i600_e_pb1 FROM l_sql
    DECLARE bmb_e_curs1 CURSOR FOR i600_e_pb1
-   BEGIN WORK 
+   BEGIN WORK
    FOREACH bmb_e_curs1 INTO l_sfb01,l_sfb05
-      LET l_sql = "SELECT sfa03 FROM sfa_file where sfa01='",l_sfb01 CLIPPED,"'"              
+      LET l_sql = "SELECT sfa03 FROM sfa_file where sfa01='",l_sfb01 CLIPPED,"'"
       PREPARE i600_e_pb2 FROM l_sql
       DECLARE bmb_e_curs2 CURSOR FOR i600_e_pb2
       FOREACH bmb_e_curs2 INTO l_sfa03
          SELECT bmb09 INTO l_bmb09 FROM bmb_file WHERE bmb01=l_sfb05 AND bmb03=l_sfa03
          UPDATE sfa_file SET sfa08=l_bmb09 WHERE sfa01=l_sfb01 AND sfa03=l_sfa03
-      END FOREACH     
+      END FOREACH
    END FOREACH
-   #IF g_success = 'Y' THEN 
-       COMMIT WORK 
+   #IF g_success = 'Y' THEN
+       COMMIT WORK
        #MESSAGE '更新完成'
        #CALL i600_show()
-    #ELSE 
-       #ROLLBACK WORK 
+    #ELSE
+       #ROLLBACK WORK
       # MESSAGE g_bma.bma01
     #END IF
-   
+
 END FUNCTION
 FUNCTION i600_e_work()
-DEFINE l_sql,l_sql1      STRING 
+DEFINE l_sql,l_sql1      STRING
 DEFINE l_ecb06     LIKE ecb_file.ecb06
-DEFINE l_bmb_e     RECORD 
+DEFINE l_bmb_e     RECORD
        ecb06       LIKE ecb_file.ecb06,
        ecbud04     LIKE ecb_file.ecbud04
-      END RECORD  
+      END RECORD
 DEFINE lst_token base.StringTokenizer
 DEFINE l_bmb02     LIKE bmb_file.bmb02
 DEFINE l_bmbud02   LIKE bmb_file.bmbud02
@@ -9956,47 +9958,47 @@ DEFINE l_x         LIKE type_file.num5
 DEFINE l_bmb09     LIKE bmb_file.bmb09
 DEFINE l_cnt        LIKE type_file.num5
 DEFINE l_ecb02       LIKE ecb_file.ecb02
-    IF g_bma.bma01 IS NULL THEN 
-       CALL cl_err('',-400,0) 
-       RETURN 
-    END IF 
-    
-    BEGIN WORK 
+    IF g_bma.bma01 IS NULL THEN
+       CALL cl_err('',-400,0)
+       RETURN
+    END IF
+
+    BEGIN WORK
     LET g_success = 'Y'
-    UPDATE bmb_file SET bmb09 = ' ' 
+    UPDATE bmb_file SET bmb09 = ' '
                   WHERE bmb01 = g_bma.bma01 AND (bmb05>g_today OR bmb05 IS NULL)
-    IF SQLCA.sqlcode THEN      
-       CALL cl_err3("upd","bmb_file",g_bma.bma01,'',SQLCA.sqlcode,"","",1) 
-       LET g_success = 'N' 
+    IF SQLCA.sqlcode THEN
+       CALL cl_err3("upd","bmb_file",g_bma.bma01,'',SQLCA.sqlcode,"","",1)
+       LET g_success = 'N'
     END IF
     LET l_x = 0
-    SELECT COUNT(*) INTO l_x FROM ecb_file WHERE ecb01 =g_bma.bma01 AND ecbud04 IS NOT NULL 
-    IF l_x >0 THEN 
+    SELECT COUNT(*) INTO l_x FROM ecb_file WHERE ecb01 =g_bma.bma01 AND ecbud04 IS NOT NULL
+    IF l_x >0 THEN
        SELECT MAX(ecb02) INTO l_ecb02 FROM ecb_file WHERE ecb01=g_bma.bma01
-    
+
        LET l_sql = "SELECT ecb06,ecbud04 FROM ecb_file",
                    " WHERE ecb01 ='",g_bma.bma01,"' ",
                    "   AND ecbud04 is not null ",     # AND ecb02='",l_ecb02,"'  ",
                    " ORDER BY ecb02 DESC "
        PREPARE i600_e_pb FROM l_sql
        DECLARE bmb_e_curs CURSOR FOR i600_e_pb
-       LET l_cnt=1 
+       LET l_cnt=1
        INITIALIZE l_bmb_e.* TO NULL
-       FOREACH bmb_e_curs INTO l_bmb_e.*   
+       FOREACH bmb_e_curs INTO l_bmb_e.*
          # IF l_cnt>1 THEN CONTINUE FOREACH END IF #tianry add 170218
           IF SQLCA.sqlcode THEN
              CALL cl_err('foreach:',SQLCA.sqlcode,1)
              LET g_success = 'N'
              EXIT FOREACH
           END IF
-       
+
           LET lst_token = base.StringTokenizer.create(l_bmb_e.ecbud04, "|")
           WHILE lst_token.hasMoreTokens()
              LET l_bmb02 = ''
              LET l_bmbud02 = lst_token.nextToken()
              LET l_x = 0
              SELECT COUNT(*) INTO l_x FROM bmb_file WHERE bmbud02= l_bmbud02 AND bmb01 = g_bma.bma01
-             IF l_x >0 THEN 
+             IF l_x >0 THEN
                 LET l_sql = "SELECT bmb02 FROM bmb_file",
                             " WHERE bmb01 ='",g_bma.bma01,"' ",
                             "   AND bmbud02= '",l_bmbud02,"'",
@@ -10015,51 +10017,51 @@ DEFINE l_ecb02       LIKE ecb_file.ecb02
                    SELECT bmb09 INTO l_bmb09 FROM bmb_file WHERE bmbud02= l_bmbud02 AND bmb01 = g_bma.bma01 AND bmb02 = l_bmb02
                    AND (bmb05 >g_today  OR bmb05 IS NULL)
                    IF NOT cl_null(l_bmb09) THEN
-                      CONTINUE WHILE  
-                   ELSE 
-                      UPDATE bmb_file SET bmb09 = l_bmb_e.ecb06 
+                      CONTINUE WHILE
+                   ELSE
+                      UPDATE bmb_file SET bmb09 = l_bmb_e.ecb06
                                     WHERE bmb01 = g_bma.bma01
                                       AND bmb02 = l_bmb02
-                      IF SQLCA.sqlcode THEN      
-                         CALL cl_err3("upd","bmb_file",g_bma.bma01,l_bmb02,SQLCA.sqlcode,"","",1) 
-                         LET g_success = 'N' 
-                         EXIT FOREACH 
+                      IF SQLCA.sqlcode THEN
+                         CALL cl_err3("upd","bmb_file",g_bma.bma01,l_bmb02,SQLCA.sqlcode,"","",1)
+                         LET g_success = 'N'
+                         EXIT FOREACH
                       END IF
-                   END IF 
-                END FOREACH 
-             END IF 
+                   END IF
+                END FOREACH
+             END IF
           END WHILE
           LET l_cnt=l_cnt+1  #tianry add 170218
        END FOREACH
-    ELSE 
+    ELSE
        LET g_success = 'N'
-    END IF 
+    END IF
 
-    IF g_success = 'Y' THEN 
-       COMMIT WORK 
+    IF g_success = 'Y' THEN
+       COMMIT WORK
        CALL i600_show()
-    ELSE 
-       ROLLBACK WORK  
-    END IF  
+    ELSE
+       ROLLBACK WORK
+    END IF
 
-END FUNCTION 
+END FUNCTION
 #end--------add by guanyao160706
 
 #根据BOM批量刷一下工单的发料以及
 FUNCTION tc_sfa_pl()
-   DEFINE l_sql    STRING 
-   
-   LET l_sql = "SELECT DISTINCT bma01 FROM bma_file"                          
+   DEFINE l_sql    STRING
+
+   LET l_sql = "SELECT DISTINCT bma01 FROM bma_file"
    PREPARE tc_sfa_pl FROM l_sql
-   DECLARE tc_sfa_curl CURSOR FOR tc_sfa_pl               
+   DECLARE tc_sfa_curl CURSOR FOR tc_sfa_pl
    FOREACH tc_sfa_curl INTO g_bma.bma01
       CALL tc_sfa_pro()
    END FOREACH
-  
-END FUNCTION 
+
+END FUNCTION
 
 FUNCTION tc_sfa_pro()
-   DEFINE  l_sql        STRING 
+   DEFINE  l_sql        STRING
    DEFINE  l_sfb01      LIKE sfb_file.sfb01
    DEFINE  l_sfa03      LIKE sfa_file.sfa03
    DEFINE  l_sfa27      LIKE sfa_file.sfa27
@@ -10071,16 +10073,16 @@ FUNCTION tc_sfa_pro()
    DEFINE  l_cnt        SMALLINT
    DEFINE  l_sfa16_m    LIKE sfa_file.sfa16
    DEFINE  l_msg        CHAR(100)
-   
+
    IF cl_null(g_bma.bma01) THEN RETURN END IF
-   LET l_sql = "SELECT sfb01 FROM sfb_file WHERE sfb05 ='",g_bma.bma01,"' "                          
+   LET l_sql = "SELECT sfb01 FROM sfb_file WHERE sfb05 ='",g_bma.bma01,"' "
    PREPARE tc_sfa_pb FROM l_sql
-   DECLARE tc_sfa_cur CURSOR FOR tc_sfa_pb               
+   DECLARE tc_sfa_cur CURSOR FOR tc_sfa_pb
    FOREACH tc_sfa_cur INTO l_sfb01
      IF cl_null(l_sfb01) THEN CONTINUE FOREACH END IF
      LET l_msg = g_bma.bma01 CLIPPED,'-',l_sfb01 CLIPPED
      DISPLAY l_msg
-     LET l_sql = "SELECT sfa27,sfa03,sfa16 FROM sfa_file WHERE sfa01 ='",l_sfb01,"' "                            
+     LET l_sql = "SELECT sfa27,sfa03,sfa16 FROM sfa_file WHERE sfa01 ='",l_sfb01,"' "
      PREPARE tc_sfa_pb1 FROM l_sql
      DECLARE tc_sfa_cur1 CURSOR FOR tc_sfa_pb1
      FOREACH tc_sfa_cur1 INTO l_sfa03,l_sfa27,l_sfa16
@@ -10096,11 +10098,11 @@ FUNCTION tc_sfa_pro()
            PREPARE tc_sfa_pb2 FROM l_sql
            DECLARE tc_sfa_cur2 CURSOR FOR tc_sfa_pb2
            FOREACH tc_sfa_cur2 INTO l_bmb09,l_bmb06,l_bmb07
-              LET l_i = 'N'  
-              LET l_sfa16_m = l_bmb06 / l_bmb07 
+              LET l_i = 'N'
+              LET l_sfa16_m = l_bmb06 / l_bmb07
               IF l_sfa16_m = l_sfa16 THEN
                  UPDATE sfa_file SET sfa08=l_bmb09 WHERE bmb01=g_bma.bma01 AND bmb03=l_sfa27
-                 LET l_i = 'Y'                 
+                 LET l_i = 'Y'
               END IF
               IF l_i = 'Y' THEN EXIT FOREACH END IF
            END FOREACH
@@ -10108,7 +10110,7 @@ FUNCTION tc_sfa_pro()
      END FOREACH
    END FOREACH
    MESSAGE '执行完成'
-   
+
 END FUNCTION
 
 
@@ -10123,55 +10125,55 @@ DEFINE l_imadate  LIKE ima_file.imadate
 
    INPUT  l_ima01, l_imaud10,l_imaud07 FROM  ima01,imaud10,imaud07
 
-   BEFORE INPUT 
+   BEFORE INPUT
       LET l_ima01=g_bma.bma01
-      
-      select imaud10,imaud07 into l_imaud10,l_imaud07 
-      from ima_file 
+
+      select imaud10,imaud07 into l_imaud10,l_imaud07
+      from ima_file
       where ima01=g_bma.bma01
 
       SELECT TO_CHAR(SYSDATE, 'YY-MM-DD') INTO l_imadate FROM DUAL
-     
+
    DISPLAY l_imaud10 TO imaud10
    DISPLAY l_imaud07 TO imaud07
 
          ON ACTION controlp
-       
-            
+
+
          ON ACTION CONTROLR
             CALL cl_show_req_fields()
-  
+
          ON ACTION CONTROLG
             CALL cl_cmdask()
-            
+
          ON ACTION CONTROLF
             CALL cl_set_focus_form(ui.Interface.getRootNode()) RETURNING g_fld_name,g_frm_name #Add on 040913
             CALL cl_fldhelp(g_frm_name,g_fld_name,g_lang) #Add on 040913
- 
+
          ON IDLE g_idle_seconds
             CALL cl_on_idle()
             CONTINUE INPUT
- 
-#  
+
+#
 
           ON ACTION about         #MOD-4C0121
              CALL cl_about()      #MOD-4C0121
- 
+
           ON ACTION help          #MOD-4C0121
              CALL cl_show_help()
 
-          ON ACTION EXIT 
+          ON ACTION EXIT
              LET INT_FLAG=FALSE
-             EXIT INPUT 
+             EXIT INPUT
 
-          ON ACTION CANCEL 
+          ON ACTION CANCEL
              LET INT_FLAG=FALSE
-             EXIT INPUT 
-   END INPUT 
+             EXIT INPUT
+   END INPUT
 
    IF INT_FLAG THEN
    ELSE
-     IF NOT cl_null(l_imaud10) THEN  
+     IF NOT cl_null(l_imaud10) THEN
      UPDATE IMA_FILE
      SET imaud10 = l_imaud10,
          imaud07 = l_imaud07,
@@ -10189,13 +10191,13 @@ DEFINE l_imadate  LIKE ima_file.imadate
     UPDATE BMB_FILE
     SET bmbud06 = concat(concat(concat(l_imaud07,'MM/'),l_imaud10),'PCS')
     WHERE bmb01 = g_bma.bma01 AND bmbud02 = '#1'
-    
-    
-     END IF    
-     
-    
+
+
+     END IF
+
+
 
 END IF
-   CLOSE WINDOW i6001_w 
+   CLOSE WINDOW i6001_w
    CALL i600_show()
-END FUNCTION 
+END FUNCTION
