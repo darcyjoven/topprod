@@ -1445,10 +1445,17 @@ FUNCTION t800_a()
         SELECT * INTO l_oea.* FROM oea_file
             WHERE oea01 = g_oep.oep01
         LET g_oep.oepmksg = l_oea.oeamksg
+
+        # darcy add s---
+        if t800_get_oea00(g_oep.oep01) == '0' then
+            let g_oep.oepmksg = 'N'
+        end if
+        # darcy add e---
         DISPLAY g_oep.oepmksg TO oepmksg
         CALL s_axmsta('oep',g_oep.oep09,g_oep.oepconf,g_oep.oepmksg)
                       RETURNING g_sta
         DISPLAY g_sta TO FORMONLY.desc
+
 
         INSERT INTO oep_file VALUES(g_oep.*)
         IF SQLCA.sqlcode THEN
@@ -6779,7 +6786,7 @@ FUNCTION t800_y_chk()
             RETURN
          END IF
          CALL t800_oeb23(l_oea01,l_oeq03) RETURNING l_oeb23
-         IF l_oeb12 + l_oeb23 > l_oeq12a THEN
+         IF l_oeb12 + l_oeb23 > l_oeq12a and t800_get_oea00(g_oep.oep01) <> '0' THEN
             CALL cl_err(l_dbs_tra,'axm0007',1)
             LET g_success = 'N'
             RETURN
@@ -7726,7 +7733,7 @@ FUNCTION t800_g1()
             RETURN
          END IF
          CALL t800_oeb23(l_oea01,l_oeq03) RETURNING l_oeb23
-         IF l_oeb12 + l_oeb23 > l_oeq12a THEN
+         IF l_oeb12 + l_oeb23 > l_oeq12a and t800_get_oea00(g_oep.oep01) <> '0' THEN
             CALL cl_err(l_dbs_tra,'axm0007',1)
             LET g_success = 'N'
             RETURN
@@ -9388,7 +9395,7 @@ FUNCTION t800_qty_check()
                  RETURN 1
              END IF
              CALL t800_oeb23(g_oep.oep01,g_oeq[l_ac].oeq03) RETURNING l_oeb23
-             IF l_oeb12 + l_oeb23 > g_oeq[l_ac].oeq12a THEN
+             IF l_oeb12 + l_oeb23 > g_oeq[l_ac].oeq12a and t800_get_oea00(g_oep.oep01) <> '0' THEN
                 CALL cl_err('','axm0007',0)
                 RETURN 1
              ELSE
@@ -10929,7 +10936,7 @@ FUNCTION t800_oeq12a_check()
        END IF
 
         CALL t800_oeb23(g_oep.oep01,g_oeq[l_ac].oeq03) RETURNING l_oeb23
-        IF l_oeb12 + l_oeb23 > g_oeq[l_ac].oeq12a THEN
+        IF l_oeb12 + l_oeb23 > g_oeq[l_ac].oeq12a and t800_get_oea00(g_oep.oep01) <> '0' THEN
            CALL cl_err('','axm0007',0)
            RETURN l_flag1,l_fetch_price
         ELSE
@@ -11628,3 +11635,13 @@ FUNCTION t800_oeb23(p_oeb01,p_oeb03)
   IF l_sl < 0 THEN LET l_sl = 0 END IF
   RETURN l_sl
 END FUNCTION
+
+
+-- 获取单据类型
+function t800_get_oea00(p_oeb01)
+    define p_oeb01 like oeb_file.oeb01
+    define l_oea00 like oea_file.oea01
+
+    select oea00 into l_oea00 from oea_file where oea01 = p_oeb01
+    return l_oea00
+end function
