@@ -339,6 +339,7 @@ MAIN
          ATTRIBUTE (STYLE = g_win_style CLIPPED) #No.FUN-580092 HCN
 
    CALL cl_ui_init()
+   call i100_ecuud31_init() # darcy add
 
        CALL cl_set_comp_visible("ecbslk05,ecbslk04,ecbslk02,ecbslk01",FALSE)  #NO.TQC-BC0166 add ecbslk01
    #當系統參數設定有與APS整合時,
@@ -1361,6 +1362,7 @@ FUNCTION i100_a()
     LET g_ecu.ecuorig = g_grup  #TQC-B10209
     LET g_ecu.ecuoriu = g_user  #TQC-B10209
     LET g_ecu.ecudate = TODAY
+    Let g_ecu.ecuud31 = '常规' # darcy add
     CALL cl_opmsg('a')
     WHILE TRUE
         CALL i100_i("a")                         # 各欄位輸入
@@ -1515,15 +1517,15 @@ FUNCTION i100_i(p_cmd)
            # LET l_num=g_ecu.ecu02.getLength()
            LET l_length = LENGTH(g_ecu.ecu02)
            # ly 270807
+             IF cl_null(g_ecu.ecu02) THEN
+                NEXT FIELD CURRENT
+             END IF
             IF  g_ecu.ecu02[l_length,l_length]='o' OR g_ecu.ecu02[l_length,l_length]='O'  THEN
-               CALL cl_err('','cec-101',0)
+            CALL cl_err('','cec-101',0)
                 DISPLAY BY NAME g_ecu.ecu02
                 NEXT FIELD ecu02
             END IF
 
-             IF cl_null(g_ecu.ecu02) THEN
-                NEXT FIELD CURRENT
-             END IF
 #FUN-A50081 --end--
 
 #FUN-A50081 --begin--
@@ -7194,3 +7196,26 @@ function i100_ef()
 
 end function
 # darcy:2025/10/27 add e---
+
+# darcy add s---
+-- 初始化eccud31 下拉框
+function i100_ecuud31_init()
+    define l_tc_sma06 like tc_sma_file.tc_sma06
+    define l_desc   string
+
+    declare i100_eccud31 cursor for
+        select tc_sma06 from tc_sma_file
+         where tc_sma01 = 'csmi135' and tc_sma20 ='Y' order by tc_sma03
+
+    foreach i100_eccud31 into l_tc_sma06
+        if sqlca.sqlcode then
+            call cl_err('i100_eccud31',sqlca.sqlcode,1)
+            exit foreach
+        end if
+        let l_desc = l_desc , "," , l_tc_sma06
+    end foreach
+    --let l_desc = l_desc[2,l_desc.getlenght()]
+    let l_desc = l_desc.substring(2,l_desc.getlength())
+    call cl_set_combo_items("ecuud31",l_desc,l_desc)
+end function
+# darcy add e---
