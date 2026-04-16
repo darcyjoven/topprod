@@ -971,6 +971,9 @@ define l_msg        string #darcy:2024/11/29
                         end case
                         NEXT FIELD tc_sma02
                     # darcy:2025/09/10 add s---
+                    when 'csmi135'
+                        call cl_init_qry_var()
+
 
                 end case
 
@@ -1350,7 +1353,7 @@ FUNCTION i100_set_dny_combo()
 
     let ps_values = "csmi100,csmi101,csmi102,csmi103,csmi104,csmi105,csmi106,csmi107,csmi108,csmi109,csmi110,csmi111,",
                     "csmi112,csmi113,csmi114,csmi115,csmi116,csmi117,csmi118,csmi119,csmi120,csmi121,csmi122,csmi123,",
-                    "csmi124,csmi125,csmi126,csmi127,csmi128,csmi129,csmi130,csmi131,csmi132,csmi133,csmi134"
+                    "csmi124,csmi125,csmi126,csmi127,csmi128,csmi129,csmi130,csmi131,csmi132,csmi133,csmi134,csmi135"
 
     LET tok = base.StringTokenizer.create(ps_values,",")
     let l_ze01 = tok.nextToken()
@@ -1428,6 +1431,7 @@ FUNCTION i100_set_dny_combo()
         when 'csmi132' display '杂项发料/收料 标识符维护' to lb_msg
         when 'csmi132' display '参数控制开关' to lb_msg
         when 'csmi134' display '损耗率规则维护' to lb_msg
+        when 'csmi135' display '材料特性维护' to lb_msg
     end case
 
     call i100_set_visiable()
@@ -1523,6 +1527,8 @@ function i100_get_tc_sma_desc(p_tc_sma01,p_tc_sma02,p_tc_sma04)
                     select eca02 into l_tc_sma02_desc from eca_file
                      where eca01 = p_tc_sma02
             end case
+        when 'csmi135'
+            select gaz03 into l_tc_sma02_desc from gaz_file where gaz01 = p_tc_sma02 and gaz02='2'
         otherwise
             let l_tc_sma02_desc = null
     end case
@@ -1977,6 +1983,16 @@ function i100_set_visiable()
                                        tc_sma14,tc_sma15,tc_sma16,tc_sma17,tc_sma18,tc_sma19",false)
             -- 是否可以录入
             call cl_set_comp_entry("tc_sma02,tc_sma03,tc_sma04,tc_sma05,tc_sma06,tc_sma07,tc_sma09,tc_sma10",true)
+        when 'csmi135'
+                call cl_set_comp_att_text("tc_sma02","作业编码")
+                call cl_set_comp_att_text("tc_sma02_desc","作业名称")
+                call cl_set_comp_att_text("tc_sma03","特性序号")
+                call cl_set_comp_att_text("tc_sma06","特性说明")
+                call cl_set_comp_att_text("tc_sma10","备注")
+                call cl_set_comp_visible("tc_sma02,tc_sma02_desc,tc_sma04,tc_sma05,tc_sma07,tc_sma08,tc_sma09,tc_sma11,tc_sma12,tc_sma13,,tc_sma14,tc_sma15,tc_sma16,tc_sma17,tc_sma18,tc_sma19",false)
+                call cl_set_comp_entry("tc_sma02",false)
+                call cl_set_comp_entry("tc_sma03,tc_sma06,tc_sma10",true)
+                call cl_set_comp_required("tc_sma06",true)
     end case
 
 end function
@@ -2043,6 +2059,8 @@ function i100_get_default()
          when 'csmi134'
             let g_tc_sma[l_ac].tc_sma06 = 0
             let g_tc_sma[l_ac].tc_sma07 = 0
+        when 'csmi135'
+            let g_tc_sma[l_ac].tc_sma02 ='aeci100'
     end case
 end function
 
