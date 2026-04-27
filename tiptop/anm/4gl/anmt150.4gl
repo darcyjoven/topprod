@@ -167,6 +167,33 @@ DATABASE ds
 
 GLOBALS "../../config/top.global"
 
+type tc_npm record
+    tc_npm02        like tc_npm_file.tc_npm02,
+    tc_npm03        like tc_npm_file.tc_npm03,
+    tc_npm04        like tc_npm_file.tc_npm04,
+    tc_npm05        like tc_npm_file.tc_npm05,
+    tc_npm06        like tc_npm_file.tc_npm06,
+    tc_npm07        like tc_npm_file.tc_npm07,
+    tc_npm08        like tc_npm_file.tc_npm08,
+    tc_npm09        like tc_npm_file.tc_npm09,
+    tc_npmud01      like tc_npm_file.tc_npmud01,
+    tc_npmud02      like tc_npm_file.tc_npmud02,
+    tc_npmud03      like tc_npm_file.tc_npmud03,
+    tc_npmud04      like tc_npm_file.tc_npmud04,
+    tc_npmud05      like tc_npm_file.tc_npmud05,
+    tc_npmud06      like tc_npm_file.tc_npmud06,
+    tc_npmud07      like tc_npm_file.tc_npmud07,
+    tc_npmud08      like tc_npm_file.tc_npmud08,
+    tc_npmud09      like tc_npm_file.tc_npmud09,
+    tc_npmud10      like tc_npm_file.tc_npmud10,
+    tc_npmud11      like tc_npm_file.tc_npmud11,
+    tc_npmud12      like tc_npm_file.tc_npmud12,
+    tc_npmud13      like tc_npm_file.tc_npmud13,
+    tc_npmud14      like tc_npm_file.tc_npmud14,
+    tc_npmud15      like tc_npm_file.tc_npmud15,
+    tc_npmlegal     like tc_npm_file.tc_npmlegal
+end record
+
 DEFINE
     g_nme   RECORD LIKE nme_file.*,
     g_nmd   RECORD LIKE nmd_file.*,
@@ -181,6 +208,7 @@ DEFINE
     g_npl_t RECORD LIKE npl_file.*,
     m_npm   RECORD LIKE npm_file.*,          #INSERT ime_file 用
     b_npm   RECORD LIKE npm_file.*,
+    b_tc_npm    record like tc_npm_file.*,
     g_npm   DYNAMIC ARRAY OF RECORD
             npm02    LIKE npm_file.npm02,
             npm03    LIKE npm_file.npm03,
@@ -245,6 +273,10 @@ DEFINE
             npmud14  LIKE npm_file.npmud14,
             npmud15  LIKE npm_file.npmud15
  	    END RECORD,
+    # darcy add s---
+    g_tc_npm dynamic array of tc_npm,
+    g_tc_npm_t tc_npm,
+    # darcy add e---
     g_dbs_gl            LIKE type_file.chr21,  #No.FUN-680107 VARCHAR(21)
     g_plant_gl          LIKE type_file.chr10,  #No.FUN-980020
     g_nms               RECORD LIKE nms_file.*,
@@ -255,7 +287,7 @@ DEFINE
     g_sql               string,                #No.FUN-580092 HCN
     g_t1                LIKE oay_file.oayslip, #No.FUN-550057  #No.FUN-680107 VARCHAR(5)
     g_nmydmy1           LIKE nmy_file.nmydmy1, #No.FUN-680107 VARCHAR(1)
-    g_rec_b             LIKE type_file.num5,   #單身筆數  #No.FUN-680107 SMALLINT
+    g_rec_b,g_rec_b1    LIKE type_file.num5,   #單身筆數  #No.FUN-680107 SMALLINT
     l_ac                LIKE type_file.num5,   #目前處理的ARRAY CNT  #No.FUN-680107 SMALLINT
     l_cmd               LIKE type_file.chr1000,#No.FUN-680107 VARCHAR(100)
     g_argv1		LIKE npl_file.npl01    #No.FUN-680107 VARCHAR(16)               #No.FUN-550057
@@ -543,6 +575,8 @@ FUNCTION t150_menu()
             ELSE
                LET g_action_choice = NULL
             END IF
+         WHEN "detail1"
+               CALL t150_b2()
          WHEN "help"
             CALL cl_show_help()
          WHEN "exit"
@@ -551,13 +585,16 @@ FUNCTION t150_menu()
             CALL cl_cmdask()
          WHEN "confirm"
             IF cl_chk_act_auth() THEN
-               CALL t150_firm1()
-               IF g_npl.nplconf = 'X' THEN
-                  LET g_void = 'Y'
-               ELSE
-                  LET g_void = 'N'
-               END IF
-               CALL cl_set_field_pic(g_npl.nplconf,"","","",g_void,"")
+               call t150_tc_npm_chk()
+               if g_success = 'Y' then
+                CALL t150_firm1()
+                IF g_npl.nplconf = 'X' THEN
+                    LET g_void = 'Y'
+                ELSE
+                    LET g_void = 'N'
+                END IF
+                CALL cl_set_field_pic(g_npl.nplconf,"","","",g_void,"")
+               end if
             END IF
          WHEN "undo_confirm"
             IF cl_chk_act_auth() THEN
@@ -596,7 +633,10 @@ FUNCTION t150_menu()
          #FUN-D20035--ADD---END
          WHEN "gen_entry"
             IF cl_chk_act_auth() THEN
-               CALL t150_v(1)
+                call t150_tc_npm_chk()
+                if g_success = 'Y' then
+                    CALL t150_v(1)
+                end if
             END IF
          WHEN "entry_sheet"
             IF cl_chk_act_auth() AND not cl_null(g_npl.npl01) THEN
@@ -813,6 +853,7 @@ FUNCTION t150_show()
    DISPLAY g_amtdiff TO amt
    CALL cl_set_comp_visible("npm09",g_aza.aza26='2' AND g_npl.npl03='8')  #FUN-CB0045
    CALL t150_b_fill(g_wc1)
+   call t150_b_fill2()
    IF g_npl.nplconf = 'X' THEN
       LET g_void = 'Y'
    ELSE
@@ -917,6 +958,7 @@ FUNCTION t150_g_b()                 	#由出貨通知單/訂單自動產生單�
       CALL t150_g_b1()
       CALL t150_bu()
       CALL t150_b_fill(' 1=1')
+      call t150_b_fill2()
    END IF
 
 END FUNCTION
@@ -1039,6 +1081,7 @@ FUNCTION t150_g_b1()                 	#由應付票據產生單身
       INSERT INTO npm_file VALUES (b_npm.*)
    END FOREACH
    MESSAGE " "
+   call t150_tc_npm_update(false)
 
 END FUNCTION
 
@@ -1479,6 +1522,7 @@ DEFINE l_nmd04      LIKE nmd_file.nmd04,
             ELSE
                LET g_success = 'Y'
                CALL t150_bu()
+               call t150_tc_npm_update(true) #darcy add
                IF g_success='Y' THEN
                   COMMIT WORK
                   MESSAGE 'ins_npm_file INSERT O.K'
@@ -1718,7 +1762,13 @@ DEFINE l_nmd04      LIKE nmd_file.nmd04,
                   CANCEL DELETE
                END IF
                CALL t150_bu()
-               COMMIT WORK
+               call t150_tc_npm_update(true)
+               if g_success = 'Y' then
+                    COMMIT WORK
+                else
+                  ROLLBACK WORK
+                  CANCEL DELETE
+               end if
                LET g_rec_b=g_rec_b-1
                DISPLAY g_rec_b TO FORMONLY.cn2
             END IF
@@ -2110,6 +2160,7 @@ DEFINE l_wc2           STRING #No.FUN-680107 VARCHAR(200) #MOD-BB0301 mod 1000 -
    END IF
 
    CALL t150_b_fill(l_wc2)
+   call t150_b_fill2()
 
 END FUNCTION
 
@@ -2167,207 +2218,216 @@ FUNCTION t150_bp(p_ud)
    LET g_action_choice = " "
 
    CALL cl_set_act_visible("accept,cancel", FALSE)
-   DISPLAY ARRAY g_npm TO s_npm.* ATTRIBUTE(COUNT=g_rec_b,UNBUFFERED)
 
-      BEFORE DISPLAY
-         CALL cl_navigator_setting( g_curs_index, g_row_count )
-         CALL cl_show_fld_cont()                   #No.TQC-B40183
+    dialog ATTRIBUTE (UNBUFFERED)
+        DISPLAY ARRAY g_npm TO s_npm.* ATTRIBUTE(COUNT=g_rec_b)
 
-      BEFORE ROW
-         LET l_ac = ARR_CURR()
-      CALL cl_show_fld_cont()                   #No.FUN-550037 hmf
-      ##########################################################################
-      # Standard 4ad ACTION
-      ##########################################################################
-      ON ACTION insert
-         LET g_action_choice="insert"
-         EXIT DISPLAY
-      ON ACTION query
-         LET g_action_choice="query"
-         EXIT DISPLAY
-      ON ACTION delete
-         LET g_action_choice="delete"
-         EXIT DISPLAY
-      ON ACTION modify
-         LET g_action_choice="modify"
-         EXIT DISPLAY
-      ON ACTION first
-         CALL t150_fetch('F')
-         CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
-           IF g_rec_b != 0 THEN
-         CALL fgl_set_arr_curr(1)  ######add in 040505
-           END IF
-           ACCEPT DISPLAY                   #No.FUN-530067 HCN TEST
+            BEFORE DISPLAY
+                CALL cl_navigator_setting( g_curs_index, g_row_count )
+                CALL cl_show_fld_cont()                   #No.TQC-B40183
 
+            BEFORE ROW
+                LET l_ac = ARR_CURR()
+                CALL cl_show_fld_cont()
+            ON ACTION accept
+                LET g_action_choice="detail"
+                LET l_ac = ARR_CURR()
+                EXIT dialog
+        end DISPLAY
+        DISPLAY ARRAY g_tc_npm TO s_tc_npm.* ATTRIBUTE(COUNT=g_rec_b1)
 
-      ON ACTION previous
-         CALL t150_fetch('P')
-         CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
-           IF g_rec_b != 0 THEN
-         CALL fgl_set_arr_curr(1)  ######add in 040505
-           END IF
-	ACCEPT DISPLAY                   #No.FUN-530067 HCN TEST
+            BEFORE DISPLAY
+                CALL cl_navigator_setting( g_curs_index, g_row_count )
+                CALL cl_show_fld_cont()
 
+            BEFORE ROW
+                LET l_ac = ARR_CURR()
+                CALL cl_show_fld_cont()
+            ON ACTION accept
+                LET g_action_choice="detail1"
+                LET l_ac = ARR_CURR()
+                EXIT dialog
+        end DISPLAY
 
-      ON ACTION jump
-         CALL t150_fetch('/')
-         CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
-           IF g_rec_b != 0 THEN
-         CALL fgl_set_arr_curr(1)  ######add in 040505
-           END IF
-	ACCEPT DISPLAY                   #No.FUN-530067 HCN TEST
+        ON ACTION insert
+            LET g_action_choice="insert"
+            EXIT dialog
+        ON ACTION query
+            LET g_action_choice="query"
+            EXIT dialog
+        ON ACTION delete
+            LET g_action_choice="delete"
+            EXIT dialog
+        ON ACTION modify
+            LET g_action_choice="modify"
+            EXIT dialog
+        ON ACTION first
+            CALL t150_fetch('F')
+            CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
+            IF g_rec_b != 0 THEN
+                CALL fgl_set_arr_curr(1)  ######add in 040505
+            END IF
+            ACCEPT dialog                   #No.FUN-530067 HCN TEST
+        ON ACTION previous
+            CALL t150_fetch('P')
+            CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
+            IF g_rec_b != 0 THEN
+                CALL fgl_set_arr_curr(1)  ######add in 040505
+            END IF
+           	ACCEPT dialog                   #No.FUN-530067 HCN TEST
 
-
-      ON ACTION next
-         CALL t150_fetch('N')
-         CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
-           IF g_rec_b != 0 THEN
-         CALL fgl_set_arr_curr(1)  ######add in 040505
-           END IF
-	ACCEPT DISPLAY                   #No.FUN-530067 HCN TEST
-
-
-      ON ACTION last
-         CALL t150_fetch('L')
-         CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
-           IF g_rec_b != 0 THEN
-         CALL fgl_set_arr_curr(1)  ######add in 040505
-           END IF
-	ACCEPT DISPLAY                   #No.FUN-530067 HCN TEST
+        ON ACTION jump
+            CALL t150_fetch('/')
+            CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
+            IF g_rec_b != 0 THEN
+                CALL fgl_set_arr_curr(1)  ######add in 040505
+            END IF
+    	    ACCEPT dialog                   #No.FUN-530067 HCN TEST
 
 
-      ON ACTION detail
-         LET g_action_choice="detail"
-         LET l_ac = 1
-         LET l_ac = 1
-         EXIT DISPLAY
-
-      ON ACTION output
-         LET g_action_choice="output"
-         EXIT DISPLAY
-
-      ON ACTION help
-         LET g_action_choice="help"
-         EXIT DISPLAY
-
-      ON ACTION locale
-         CALL cl_dynamic_locale()
-          CALL cl_show_fld_cont()                   #No.FUN-550037 hmf
-         IF g_npl.nplconf = 'X' THEN
-            LET g_void = 'Y'
-         ELSE
-            LET g_void = 'N'
-         END IF
-         CALL cl_set_field_pic(g_npl.nplconf,"","","",g_void,"")
-         EXIT DISPLAY
-
-      ON ACTION exit
-         LET g_action_choice="exit"
-         EXIT DISPLAY
-
-      ##########################################################################
-      # Special 4ad ACTION
-      ##########################################################################
-      ON ACTION controlg
-         LET g_action_choice="controlg"
-         EXIT DISPLAY
-
-#@    ON ACTION 確認
-      ON ACTION confirm
-         LET g_action_choice="confirm"
-         EXIT DISPLAY
-
-#@    ON ACTION 取消確認
-      ON ACTION undo_confirm
-         LET g_action_choice="undo_confirm"
-         EXIT DISPLAY
-
-#@    ON ACTION 作廢
-      ON ACTION void
-         LET g_action_choice="void"
-         EXIT DISPLAY
-
-      #FUN-D20035---add--str
-#@    ON ACTION 取消作廢
-      ON ACTION undo_void
-         LET g_action_choice="undo_void"
-         EXIT DISPLAY
-      #FUN-D20035---add--end
-
-#@    ON ACTION 會計分錄產生
-      ON ACTION gen_entry
-         LET g_action_choice="gen_entry"
-         EXIT DISPLAY
-
-#@    ON ACTION 分錄底稿
-      ON ACTION entry_sheet
-         LET g_action_choice="entry_sheet"
-         EXIT DISPLAY
-      #No.TQC-BB0070  --Begin
-      #ON ACTION entry_sheet1
-      #   LET g_action_choice="entry_sheet1"
-      #   EXIT DISPLAY
-      ON ACTION entry_sheet2
-         LET g_action_choice="entry_sheet2"
-         EXIT DISPLAY
-      #No.TQC-BB0070  --End
-
-#@    ON ACTION 傳票拋轉
-      ON ACTION carry_voucher
-         LET g_action_choice="carry_voucher"
-         EXIT DISPLAY
-
-#@    ON ACTION 傳票拋轉還原
-      ON ACTION undo_carry_voucher
-         LET g_action_choice="undo_carry_voucher"
-         EXIT DISPLAY
-
-#@    ON ACTION 應撤/退/作廢票立帳
-      ON ACTION ent_note_wtdw_ret_ac
-         LET g_action_choice="ent_note_wtdw_ret_ac"
-         EXIT DISPLAY
-
-#@    ON ACTION 應撤/退/作廢票立帳還原
-      ON ACTION ent_note_wtdw_ret_ac_rtn
-         LET g_action_choice="ent_note_wtdw_ret_ac_rtn"
-         EXIT DISPLAY
-
-#@    ON ACTION 撤退票串查應付
-      ON ACTION qry_misc_ap
-         LET g_action_choice="qry_misc_ap"
-         EXIT DISPLAY
-
-      ON ACTION accept
-         LET g_action_choice="detail"
-         LET l_ac = ARR_CURR()
-         EXIT DISPLAY
-
-      ON ACTION cancel
-             LET INT_FLAG=FALSE 		#MOD-570244	mars
-         LET g_action_choice="exit"
-         EXIT DISPLAY
-
-      ON IDLE g_idle_seconds
-         CALL cl_on_idle()
-         CONTINUE DISPLAY
-
-      ON ACTION about         #MOD-4C0121
-         CALL cl_about()      #MOD-4C0121
+        ON ACTION next
+            CALL t150_fetch('N')
+            CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
+            IF g_rec_b != 0 THEN
+                CALL fgl_set_arr_curr(1)  ######add in 040505
+            END IF
+           	ACCEPT dialog                   #No.FUN-530067 HCN TEST
 
 
-      ON ACTION exporttoexcel       #FUN-4B0008
-         LET g_action_choice = 'exporttoexcel'
-         EXIT DISPLAY    #TQC-5B0076
-      ON ACTION related_document                #No.FUN-6A0011  相關文件
-         LET g_action_choice="related_document"
-         EXIT DISPLAY
-      AFTER DISPLAY
-         CONTINUE DISPLAY
-     ON ACTION controls
-         CALL cl_set_head_visible("","AUTO")
+        ON ACTION last
+            CALL t150_fetch('L')
+            CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
+            IF g_rec_b != 0 THEN
+                CALL fgl_set_arr_curr(1)  ######add in 040505
+            END IF
+           	ACCEPT dialog                   #No.FUN-530067 HCN TEST
 
-      &include "qry_string.4gl"
-   END DISPLAY
+
+        ON ACTION detail
+            LET g_action_choice="detail"
+            LET l_ac = 1
+            LET l_ac = 1
+            EXIT dialog
+
+        ON ACTION output
+            LET g_action_choice="output"
+            EXIT dialog
+
+        ON ACTION help
+            LET g_action_choice="help"
+            EXIT dialog
+
+        ON ACTION locale
+            CALL cl_dynamic_locale()
+                CALL cl_show_fld_cont()                   #No.FUN-550037 hmf
+            IF g_npl.nplconf = 'X' THEN
+                LET g_void = 'Y'
+            ELSE
+                LET g_void = 'N'
+            END IF
+            CALL cl_set_field_pic(g_npl.nplconf,"","","",g_void,"")
+            EXIT dialog
+
+        ON ACTION exit
+            LET g_action_choice="exit"
+            EXIT dialog
+
+            ##########################################################################
+            # Special 4ad ACTION
+            ##########################################################################
+        ON ACTION controlg
+            LET g_action_choice="controlg"
+            EXIT dialog
+
+    #@    ON ACTION 確認
+        ON ACTION confirm
+            LET g_action_choice="confirm"
+            EXIT dialog
+
+    #@    ON ACTION 取消確認
+        ON ACTION undo_confirm
+            LET g_action_choice="undo_confirm"
+            EXIT dialog
+
+    #@    ON ACTION 作廢
+        ON ACTION void
+            LET g_action_choice="void"
+            EXIT dialog
+
+            #FUN-D20035---add--str
+    #@    ON ACTION 取消作廢
+        ON ACTION undo_void
+            LET g_action_choice="undo_void"
+            EXIT dialog
+            #FUN-D20035---add--end
+
+    #@    ON ACTION 會計分錄產生
+        ON ACTION gen_entry
+            LET g_action_choice="gen_entry"
+            EXIT dialog
+
+    #@    ON ACTION 分錄底稿
+        ON ACTION entry_sheet
+            LET g_action_choice="entry_sheet"
+            EXIT dialog
+            #No.TQC-BB0070  --Begin
+            #ON ACTION entry_sheet1
+            #   LET g_action_choice="entry_sheet1"
+            #   EXIT DISPLAY
+        ON ACTION entry_sheet2
+            LET g_action_choice="entry_sheet2"
+            EXIT dialog
+            #No.TQC-BB0070  --End
+
+    #@    ON ACTION 傳票拋轉
+        ON ACTION carry_voucher
+            LET g_action_choice="carry_voucher"
+            EXIT dialog
+
+    #@    ON ACTION 傳票拋轉還原
+        ON ACTION undo_carry_voucher
+            LET g_action_choice="undo_carry_voucher"
+            EXIT dialog
+
+    #@    ON ACTION 應撤/退/作廢票立帳
+        ON ACTION ent_note_wtdw_ret_ac
+            LET g_action_choice="ent_note_wtdw_ret_ac"
+            EXIT dialog
+
+    #@    ON ACTION 應撤/退/作廢票立帳還原
+        ON ACTION ent_note_wtdw_ret_ac_rtn
+            LET g_action_choice="ent_note_wtdw_ret_ac_rtn"
+            EXIT dialog
+
+    #@    ON ACTION 撤退票串查應付
+        ON ACTION qry_misc_ap
+            LET g_action_choice="qry_misc_ap"
+            EXIT dialog
+
+        ON ACTION cancel
+                LET INT_FLAG=FALSE 		#MOD-570244	mars
+            LET g_action_choice="exit"
+            EXIT dialog
+
+        ON IDLE g_idle_seconds
+            CALL cl_on_idle()
+            CONTINUE dialog
+
+        ON ACTION about         #MOD-4C0121
+            CALL cl_about()      #MOD-4C0121
+
+
+        ON ACTION exporttoexcel       #FUN-4B0008
+            LET g_action_choice = 'exporttoexcel'
+            EXIT dialog    #TQC-5B0076
+        ON ACTION related_document                #No.FUN-6A0011  相關文件
+            LET g_action_choice="related_document"
+            EXIT dialog
+
+        ON ACTION controls
+            CALL cl_set_head_visible("","AUTO")
+      end dialog
+
    CALL cl_set_act_visible("accept,cancel", TRUE)
 END FUNCTION
 
@@ -2598,6 +2658,12 @@ FUNCTION t150_r()
       IF SQLCA.sqlcode THEN
          CALL cl_err('(t150_r:delete npm)',SQLCA.sqlcode,1) LET g_success='N'
       END IF
+      # darcy add s---
+      DELETE FROM tc_npm_file WHERE tc_npm01 = g_npl.npl01
+      IF SQLCA.sqlcode THEN
+         CALL cl_err('(t150_r:delete tc_npm)',SQLCA.sqlcode,1) LET g_success='N'
+      END IF
+      # darcy add e---
       DELETE FROM npl_file WHERE npl01 = g_npl.npl01
       IF SQLCA.sqlcode THEN
          CALL cl_err('(t150_r:delete npl)',SQLCA.sqlcode,1) LET g_success='N'
@@ -4923,3 +4989,566 @@ FUNCTION t150_gen_gl()
 END FUNCTION
 
 #No.FUN-C50125  --End
+
+# darcy add s---
+-- 更新金额汇总
+function t150_tc_npm_update(p_tran)
+    define p_tran   boolean
+    define l_sql    string
+    define sr       record
+         tc_npm04       like tc_npm_file.tc_npm04,
+         tc_npm05       like tc_npm_file.tc_npm05,
+         tc_npm09       like tc_npm_file.tc_npm09,
+         tc_npmud01     like tc_npm_file.tc_npmud01
+    end record
+    define l_seq    integer
+
+
+    if cl_null(g_npl.npl01) then
+        CALL cl_err('',-400,0)
+        return
+    end if
+
+    select * into g_npl.* from npl_file where npl01 = g_npl.npl01
+
+    IF g_npl.nplconf = 'X' THEN
+       CALL cl_err('','9024',0)
+       RETURN
+    END IF
+    IF g_npl.nplconf='Y' THEN
+       CALL cl_err('','9023',0)
+       RETURN
+    END IF
+    if not p_tran then
+        begin work
+    end if
+
+    delete from tc_npm_file where tc_npm01 = g_npl.npl01
+
+    let l_sql = "select nmd03,sum(npm04),sum(npm05) from npm_file,nmd_file
+                 where npm03 = nmd01 and npm01 = '",g_npl.npl01,"' group by nmd03 "
+    prepare t150_tc_npm_p1 from l_sql
+    declare t150_tc_npm_c1 cursor for t150_tc_npm_p1
+
+    let l_seq = 1
+    foreach t150_tc_npm_c1 into sr.tc_npm09,sr.tc_npm04,sr.tc_npm05
+        if sqlca.sqlcode then
+            call cl_err('t150_tc_npm_c1',sqlca.sqlcode,1)
+            exit foreach
+        end if
+        insert into tc_npm_file (tc_npm01,tc_npm02,tc_npm04,tc_npm05,tc_npm09)
+            values (g_npl.npl01,l_seq,sr.tc_npm04,sr.tc_npm05,sr.tc_npm09)
+        if sqlca.sqlcode then
+            let g_success = 'N'
+            exit foreach
+        end if
+        let l_seq = l_seq + 1
+    end foreach
+
+    if p_tran then
+        if g_success = 'N' then
+            rollback work
+        else
+            commit work
+        end if
+    end if
+
+    call t150_b_fill2()
+
+end function
+# darcy add e---
+#
+-- 刷新tc_npm
+function t150_b_fill2()
+    LET g_sql = "SELECT tc_npm02,tc_npm04,tc_npm05,tc_npm09,tc_npmud01 ",
+                " FROM tc_npm_file ",
+                " WHERE tc_npm01 ='",g_npl.npl01,"'",
+                " ORDER BY 1"
+
+    PREPARE t150_pb2 FROM g_sql
+    DECLARE tc_npm_curs CURSOR FOR t150_pb2
+
+    CALL g_tc_npm.clear()
+    LET g_cnt = 1
+    LET g_rec_b1 = 0
+
+    FOREACH tc_npm_curs INTO g_tc_npm[g_cnt].tc_npm02,g_tc_npm[g_cnt].tc_npm04,g_tc_npm[g_cnt].tc_npm05,g_tc_npm[g_cnt].tc_npm09,g_tc_npm[g_cnt].tc_npmud01   #單身 ARRAY 填充
+        IF STATUS THEN
+            CALL cl_err('foreach:',STATUS,1)
+            EXIT FOREACH
+        END IF                                     #MOD-C80205 add
+        LET g_cnt = g_cnt + 1
+
+        IF g_cnt > g_max_rec THEN
+            CALL cl_err( '', 9035, 0 )
+      	 EXIT FOREACH
+        END IF
+    END FOREACH
+    CALL g_tc_npm.deleteElement(g_cnt)   #取消 Array Element
+
+    LET g_rec_b1 = g_cnt - 1
+    LET g_cnt = 0
+
+end function
+
+
+FUNCTION t150_b2()
+    DEFINE
+        l_ac_t          LIKE type_file.num5,
+        l_row,l_col     LIKE type_file.num5,
+        l_n,l_cnt       LIKE type_file.num5,
+        l_lock_sw       LIKE type_file.chr1,
+        p_cmd           LIKE type_file.chr1,
+        l_nmaacti       LIKE nma_file.nmaacti,
+        l_b2     	    LIKE type_file.chr1000,
+        l_flag          LIKE type_file.num10,
+        l_dir           LIKE type_file.chr1,
+        l_allow_insert  LIKE type_file.num5,
+        l_allow_delete  LIKE type_file.num5
+    define l_tc_npm04   like tc_npm_file.tc_npm04
+
+    LET g_action_choice = ""
+    SELECT * INTO g_npl.* FROM npl_file WHERE npl01 = g_npl.npl01
+
+    IF cl_null(g_npl.npl01) THEN
+       RETURN
+    END IF
+
+    IF g_npl.nplconf = 'Y' THEN
+       CALL cl_err('','anm-105',0)
+       RETURN
+    END IF
+
+    IF g_npl.nplconf='X' THEN
+       CALL cl_err('','9024',0)
+       RETURN
+    END IF
+
+    CALL t150_g_b()
+
+    CALL cl_opmsg('b')
+
+    LET g_forupd_sql = "SELECT * FROM tc_npm_file WHERE tc_npm01=? AND tc_npm02=? FOR UPDATE"
+    LET g_forupd_sql = cl_forupd_sql(g_forupd_sql)
+    DECLARE t150_bcl2 CURSOR FROM g_forupd_sql      # LOCK CURSOR
+
+    LET l_allow_insert = cl_detail_input_auth("insert")
+    LET l_allow_delete = cl_detail_input_auth("delete")
+
+    INPUT ARRAY g_tc_npm WITHOUT DEFAULTS FROM s_tc_npm.*
+          ATTRIBUTE(COUNT=g_rec_b1,MAXCOUNT=g_max_rec,UNBUFFERED,
+                    INSERT ROW=l_allow_insert,DELETE ROW=l_allow_delete,APPEND ROW=l_allow_insert)
+
+        BEFORE INPUT
+           IF g_rec_b1!=0 THEN
+              CALL fgl_set_arr_curr(l_ac)
+           END IF
+
+        BEFORE ROW
+            LET p_cmd=''
+            LET l_ac = ARR_CURR()
+            LET l_lock_sw = 'N'                   #DEFAULT
+            LET l_n  = ARR_COUNT()
+
+            BEGIN WORK
+            OPEN t150_cl USING g_npl.npl01
+            IF STATUS THEN
+                CALL cl_err("OPEN t150_cl:", STATUS, 1)
+                CLOSE t150_cl
+                ROLLBACK WORK
+                RETURN
+            END IF
+           FETCH t150_cl INTO g_npl.*
+           IF SQLCA.sqlcode THEN
+              CALL cl_err(g_npl.npl01,SQLCA.sqlcode,0)
+              CLOSE t150_cl
+              ROLLBACK WORK
+              RETURN
+           END IF
+           IF g_rec_b1 >= l_ac THEN
+               LET p_cmd='u'
+               LET g_tc_npm_t.* = g_tc_npm[l_ac].*  #BACKUP
+               OPEN t150_bcl2 USING g_npl.npl01,g_tc_npm_t.tc_npm02
+               IF STATUS THEN
+                  CALL cl_err("OPEN t150_bcl2:", STATUS, 1)
+                  LET l_lock_sw = "Y"
+               END IF
+
+               FETCH t150_bcl2 INTO b_tc_npm.*
+               IF SQLCA.sqlcode THEN
+                  CALL cl_err('lock tc_npm',SQLCA.sqlcode,1)
+                  LET l_lock_sw = "Y"
+               ELSE
+                  CALL t150_b_move_to2()
+                  LET g_tc_npm_t.* = g_tc_npm[l_ac].*  #BACKUP
+               END IF
+               CALL cl_show_fld_cont()     #FUN-550037(smin)
+           END IF
+
+        on change tc_npm04
+            let g_tc_npm[l_ac].tc_npm05 = g_tc_npm[l_ac].tc_npm04
+
+        on change tc_npm05
+            let g_tc_npm[l_ac].tc_npm04 = g_tc_npm[l_ac].tc_npm05
+
+        BEFORE INSERT
+            LET l_n = ARR_COUNT()
+            LET p_cmd='a'
+            INITIALIZE g_tc_npm[l_ac].* TO NULL      #900423
+            LET b_tc_npm.tc_npm01 = g_npl.npl01
+            INITIALIZE g_tc_npm_t.* TO NULL
+            CALL cl_show_fld_cont()     #FUN-550037(smin)
+            NEXT FIELD tc_npm02
+
+        AFTER INSERT
+            IF INT_FLAG THEN
+               CALL cl_err('',9001,0)
+               LET INT_FLAG = 0
+               CANCEL INSERT
+            END IF
+            CALL t150_b_move_back2()
+
+            INSERT INTO tc_npm_file VALUES(b_tc_npm.*)
+            IF SQLCA.sqlcode THEN
+               CALL cl_err('ins tc_npm',SQLCA.sqlcode,0)
+               CANCEL INSERT
+            ELSE
+               LET g_success = 'Y'
+               IF g_success='Y' THEN
+                  COMMIT WORK
+                  MESSAGE 'ins_tc_npm_file INSERT O.K'
+                  LET g_rec_b1=g_rec_b1+1
+               ELSE
+                  ROLLBACK WORK
+                  MESSAGE 'ins_tc_npm_file ROLLBACK'
+               END IF
+            END IF
+            call t150_tc_npm_update2()
+
+        BEFORE FIELD tc_npm02                            #default 序號
+           IF cl_null(g_tc_npm[l_ac].tc_npm02) OR g_tc_npm[l_ac].tc_npm02 = 0 THEN
+              SELECT max(tc_npm02)+1 INTO g_tc_npm[l_ac].tc_npm02
+                FROM tc_npm_file WHERE tc_npm01 = g_npl.npl01
+              IF cl_null(g_tc_npm[l_ac].tc_npm02) THEN
+                 LET g_tc_npm[l_ac].tc_npm02 = 1
+              END IF
+           END IF
+
+        AFTER FIELD tc_npm02                        #check 序號是否重複
+           IF NOT cl_null(g_tc_npm[l_ac].tc_npm02) THEN
+              IF g_tc_npm[l_ac].tc_npm02 != g_tc_npm_t.tc_npm02 OR cl_null(g_tc_npm_t.tc_npm02) THEN
+                 SELECT count(*) INTO l_n FROM tc_npm_file
+                  WHERE tc_npm01 = g_npl.npl01 AND tc_npm02 = g_tc_npm[l_ac].tc_npm02
+                 IF l_n > 0 THEN
+                    LET g_tc_npm[l_ac].tc_npm02 = g_tc_npm_t.tc_npm02
+                    CALL cl_err('',-239,0) NEXT FIELD tc_npm02
+                 END IF
+              END IF
+           END IF
+
+        BEFORE DELETE                            #是否取消單身
+            IF g_tc_npm_t.tc_npm02 > 0 AND g_tc_npm_t.tc_npm02 IS NOT NULL THEN
+               IF NOT cl_delb(0,0) THEN
+                  CANCEL DELETE
+               END IF
+
+               IF l_lock_sw = "Y" THEN
+                  CALL cl_err("", -263, 1)
+                  CANCEL DELETE
+               END IF
+
+               DELETE FROM tc_npm_file
+                 WHERE tc_npm01 = g_npl.npl01 AND tc_npm02 = g_tc_npm_t.tc_npm02
+               IF SQLCA.SQLCODE THEN
+                  CALL cl_err(g_tc_npm_t.tc_npm02,SQLCA.sqlcode,0)
+                  ROLLBACK WORK
+                  CANCEL DELETE
+               END IF
+               COMMIT WORK
+               call t150_tc_npm_update2()
+               LET g_rec_b1=g_rec_b1-1
+            END IF
+
+        ON ROW CHANGE
+            IF INT_FLAG THEN
+               CALL cl_err('',9001,0)
+               LET INT_FLAG = 0
+               LET g_tc_npm[l_ac].* = g_tc_npm_t.*
+               CLOSE t150_bcl2
+               ROLLBACK WORK
+               EXIT INPUT
+            END IF
+            IF l_lock_sw = 'Y' THEN
+               CALL cl_err(g_tc_npm[l_ac].tc_npm02,-263,1)
+               LET g_tc_npm[l_ac].* = g_tc_npm_t.*
+            ELSE
+               CALL t150_b_move_back2()
+               UPDATE tc_npm_file SET * = b_tc_npm.*
+                WHERE tc_npm01=g_npl.npl01 AND tc_npm02=g_tc_npm_t.tc_npm02
+               IF SQLCA.sqlcode THEN
+                  CALL cl_err('upd tc_npm',SQLCA.sqlcode,0)
+                  LET g_tc_npm[l_ac].* = g_tc_npm_t.*
+               ELSE
+                  LET g_success = 'Y'
+                  CALL t150_bu()
+                  IF g_success='Y' THEN
+                     COMMIT WORK
+                     MESSAGE 'UPDATE O.K'
+                  ELSE
+                     ROLLBACK WORK
+                     MESSAGE 'ROLLBACK'
+                     MESSAGE 'upd_tc_npm_file ROLLBACK'
+                  END IF
+               END IF
+            END IF
+            if g_tc_npm_t.tc_npm04 <> g_tc_npm[l_ac].tc_npm04 then
+                call t150_tc_npm_update2()
+            end if
+
+        AFTER ROW
+            LET l_ac = ARR_CURR()
+            IF INT_FLAG THEN
+               CALL cl_err('',9001,0)
+               LET INT_FLAG = 0
+               IF p_cmd='u' THEN
+                  LET g_tc_npm[l_ac].* = g_tc_npm_t.*
+               ELSE
+                  CALL g_tc_npm.deleteElement(l_ac)
+                  IF g_rec_b1 != 0 THEN
+                     LET g_action_choice = "detail"
+                     LET l_ac = l_ac_t
+                  END IF
+               END IF
+               CLOSE t150_bcl2
+               ROLLBACK WORK
+               EXIT INPUT
+            END IF
+            LET l_ac_t = l_ac       #FUN-D30032 Add
+            CLOSE t150_bcl2
+            COMMIT WORK
+
+        ON ACTION CONTROLP
+           CASE
+              WHEN INFIELD(tc_npm09)
+                 CALL cl_init_qry_var()
+                 LET g_qryparam.form = "q_nma"
+                 CALL cl_create_qry() RETURNING g_tc_npm[l_ac].tc_npm09
+                 display by name g_tc_npm[l_ac].tc_npm09
+                 NEXT FIELD tc_npm09
+           END CASE
+
+        ON ACTION CONTROLR
+           CALL cl_show_req_fields()
+
+        ON ACTION CONTROLG
+           CALL cl_cmdask()
+
+        ON ACTION CONTROLF
+         CALL cl_set_focus_form(ui.Interface.getRootNode()) RETURNING g_fld_name,g_frm_name
+         CALL cl_fldhelp(g_frm_name,g_fld_name,g_lang)
+
+       ON IDLE g_idle_seconds
+          CALL cl_on_idle()
+          CONTINUE INPUT
+
+      ON ACTION about         #MOD-4C0121
+         CALL cl_about()      #MOD-4C0121
+
+      ON ACTION help          #MOD-4C0121
+         CALL cl_show_help()  #MOD-4C0121
+
+     ON ACTION controls
+         CALL cl_set_head_visible("","AUTO")
+
+    END INPUT
+
+    UPDATE npl_file SET npldate = g_today
+     WHERE npl01 = g_npl.npl01
+
+    CLOSE t150_bcl2
+    COMMIT WORK
+
+END FUNCTION
+
+FUNCTION t150_b_move_to2()
+
+   LET g_tc_npm[l_ac].tc_npm02 =   b_tc_npm.tc_npm02
+   LET g_tc_npm[l_ac].tc_npm03 =   b_tc_npm.tc_npm03
+   LET g_tc_npm[l_ac].tc_npm04 =   b_tc_npm.tc_npm04
+   LET g_tc_npm[l_ac].tc_npm05 =   b_tc_npm.tc_npm05
+   LET g_tc_npm[l_ac].tc_npm06 =   b_tc_npm.tc_npm06
+   LET g_tc_npm[l_ac].tc_npm09 =   b_tc_npm.tc_npm09    #FUN-CB0045
+   LET g_tc_npm[l_ac].tc_npmud01 = b_tc_npm.tc_npmud01
+   LET g_tc_npm[l_ac].tc_npmud02 = b_tc_npm.tc_npmud02
+   LET g_tc_npm[l_ac].tc_npmud03 = b_tc_npm.tc_npmud03
+   LET g_tc_npm[l_ac].tc_npmud04 = b_tc_npm.tc_npmud04
+   LET g_tc_npm[l_ac].tc_npmud05 = b_tc_npm.tc_npmud05
+   LET g_tc_npm[l_ac].tc_npmud06 = b_tc_npm.tc_npmud06
+   LET g_tc_npm[l_ac].tc_npmud07 = b_tc_npm.tc_npmud07
+   LET g_tc_npm[l_ac].tc_npmud08 = b_tc_npm.tc_npmud08
+   LET g_tc_npm[l_ac].tc_npmud09 = b_tc_npm.tc_npmud09
+   LET g_tc_npm[l_ac].tc_npmud10 = b_tc_npm.tc_npmud10
+   LET g_tc_npm[l_ac].tc_npmud11 = b_tc_npm.tc_npmud11
+   LET g_tc_npm[l_ac].tc_npmud12 = b_tc_npm.tc_npmud12
+   LET g_tc_npm[l_ac].tc_npmud13 = b_tc_npm.tc_npmud13
+   LET g_tc_npm[l_ac].tc_npmud14 = b_tc_npm.tc_npmud14
+   LET g_tc_npm[l_ac].tc_npmud15 = b_tc_npm.tc_npmud15
+
+END FUNCTION
+
+FUNCTION t150_b_move_back2()
+
+   LET b_tc_npm.tc_npm01 = g_npl.npl01
+   LET b_tc_npm.tc_npm02 = g_tc_npm[l_ac].tc_npm02
+   LET b_tc_npm.tc_npm03 = g_tc_npm[l_ac].tc_npm03
+   LET b_tc_npm.tc_npm04 = g_tc_npm[l_ac].tc_npm04
+   LET b_tc_npm.tc_npm05 = g_tc_npm[l_ac].tc_npm05
+   LET b_tc_npm.tc_npm06 = g_tc_npm[l_ac].tc_npm06
+   LET b_tc_npm.tc_npm07 = g_tc_npm[l_ac].tc_npm07
+   LET b_tc_npm.tc_npm08 = g_tc_npm[l_ac].tc_npm08
+   LET b_tc_npm.tc_npm09 = g_tc_npm[l_ac].tc_npm09
+   LET b_tc_npm.tc_npmud01 = g_tc_npm[l_ac].tc_npmud01
+   LET b_tc_npm.tc_npmud02 = g_tc_npm[l_ac].tc_npmud02
+   LET b_tc_npm.tc_npmud03 = g_tc_npm[l_ac].tc_npmud03
+   LET b_tc_npm.tc_npmud04 = g_tc_npm[l_ac].tc_npmud04
+   LET b_tc_npm.tc_npmud05 = g_tc_npm[l_ac].tc_npmud05
+   LET b_tc_npm.tc_npmud06 = g_tc_npm[l_ac].tc_npmud06
+   LET b_tc_npm.tc_npmud07 = g_tc_npm[l_ac].tc_npmud07
+   LET b_tc_npm.tc_npmud08 = g_tc_npm[l_ac].tc_npmud08
+   LET b_tc_npm.tc_npmud09 = g_tc_npm[l_ac].tc_npmud09
+   LET b_tc_npm.tc_npmud10 = g_tc_npm[l_ac].tc_npmud10
+   LET b_tc_npm.tc_npmud11 = g_tc_npm[l_ac].tc_npmud11
+   LET b_tc_npm.tc_npmud12 = g_tc_npm[l_ac].tc_npmud12
+   LET b_tc_npm.tc_npmud13 = g_tc_npm[l_ac].tc_npmud13
+   LET b_tc_npm.tc_npmud14 = g_tc_npm[l_ac].tc_npmud14
+   LET b_tc_npm.tc_npmud15 = g_tc_npm[l_ac].tc_npmud15
+
+   LET b_npm.npmlegal = g_legal
+
+END FUNCTION
+
+
+-- 更新金额汇总
+function t150_tc_npm_update2()
+    define l_sql    string
+    define sr       record
+         tc_npm04       like tc_npm_file.tc_npm04,
+         tc_npm05       like tc_npm_file.tc_npm05,
+         tc_npm09       like tc_npm_file.tc_npm09,
+         tc_npmud01     like tc_npm_file.tc_npmud01
+    end record
+    define l_seq,i    integer
+    define l_npm04,l_npm05,l_tc_npm04,l_tc_npm05 decimal(15,3)
+
+
+    if cl_null(g_npl.npl01) then
+        CALL cl_err('',-400,0)
+        return
+    end if
+
+    select * into g_npl.* from npl_file where npl01 = g_npl.npl01
+
+    IF g_npl.nplconf = 'X' THEN
+       CALL cl_err('','9024',0)
+       RETURN
+    END IF
+    IF g_npl.nplconf='Y' THEN
+       CALL cl_err('','9023',0)
+       RETURN
+    END IF
+
+    select sum(npm04),sum(npm05) into l_npm04,l_npm05
+      from npm_file where npm01 = g_npl.npl01
+    if cl_null(l_npm04) then let l_npm04 = 0 end if
+    if cl_null(l_npm05) then let l_npm05 = 0 end if
+
+    select sum(tc_npm04),sum(tc_npm05) into l_tc_npm04,l_tc_npm05
+      from tc_npm_file where tc_npm01 = g_npl.npl01
+    if cl_null(l_tc_npm04) then let l_tc_npm04 = 0 end if
+    if cl_null(l_tc_npm05) then let l_tc_npm05 = 0 end if
+
+    select max(tc_npm02) into l_seq from tc_npm_file where tc_npm01 = g_npl.npl01
+
+    if cl_null(l_seq) then
+        let l_seq = 1
+    else
+        let l_seq = l_seq + 1
+    end if
+
+    if l_npm04 > l_tc_npm04 then
+        if cl_confirm('cnm-008') then
+            insert into tc_npm_file (tc_npm01,tc_npm02,tc_npm04,tc_npm05)
+            values (g_npl.npl01,l_seq,l_npm04-l_tc_npm04,l_npm05-l_tc_npm05)
+            let i = g_tc_npm.getLength() + 1
+            let g_tc_npm[i].tc_npm02 = l_seq
+            let g_tc_npm[i].tc_npm04 = l_npm04-l_tc_npm04
+            let g_tc_npm[i].tc_npm05 = l_npm05-l_tc_npm05
+            let g_rec_b1 = g_rec_b1 + 1
+            if i > 1 then
+                let g_tc_npm[i].tc_npm09 = g_tc_npm[i-1].tc_npm09
+            end if
+        end if
+    end if
+
+    DISPLAY ARRAY g_tc_npm TO s_tc_npm.*
+        before display
+            exit display
+    END DISPLAY
+end function
+
+-- 检查tc_npm输入是否正确
+function t150_tc_npm_chk()
+    define l_npm04,l_npm05,l_tc_npm04,l_tc_npm05 decimal(15,3)
+    define sr record like tc_npm_file.*
+
+    IF g_npl.nplconf = 'X' THEN
+        CALL cl_err('','9024',0)
+        RETURN
+    END IF
+    IF g_npl.nplconf='Y' THEN
+        CALL cl_err('','9023',0)
+        RETURN
+    END IF
+
+    let g_success = 'Y'
+
+    select sum(npm04),sum(npm05) into l_npm04,l_npm05
+      from npm_file where npm01 = g_npl.npl01
+    if cl_null(l_npm04) then let l_npm04 = 0 end if
+    if cl_null(l_npm05) then let l_npm05 = 0 end if
+
+    select sum(tc_npm04),sum(tc_npm05) into l_tc_npm04,l_tc_npm05
+      from tc_npm_file where tc_npm01 = g_npl.npl01
+    if cl_null(l_tc_npm04) then let l_tc_npm04 = 0 end if
+    if cl_null(l_tc_npm05) then let l_tc_npm05 = 0 end if
+
+    if l_tc_npm04 <> l_npm04 then
+        call cl_err(sfmt('付款金额：%1 必须和票据金额：%2一致',l_tc_npm04,l_npm04),'!',1)
+        let g_success = 'N'
+        return
+    end if
+    if l_tc_npm05 <> l_npm05 then
+        call cl_err(sfmt('付款金额：%1 必须和票据金额：%2一致',l_tc_npm05,l_npm05),'!',1)
+        let g_success = 'N'
+        return
+    end if
+
+    let g_sql = "select * from tc_npm_file where tc_npm01 = '",g_npl.npl01,"' order by tc_npm02"
+
+    prepare t150_chk_tc_npm_p1 from g_sql
+    declare t150_chk_tc_npm_c1 cursor for t150_chk_tc_npm_p1
+
+    foreach t150_chk_tc_npm_c1 into sr.*
+        if sqlca.sqlcode then
+            call cl_err('t150_chk_tc_npm_c1',sqlca.sqlcode,1)
+            exit foreach
+        end if
+
+        if cl_null(sr.tc_npm09) then
+            call cl_err(sfmt('项次:%1 付款银行不可为空',sr.tc_npm02),'!',1)
+            let g_success = 'N'
+            exit foreach
+        end if
+    end foreach
+
+end function
