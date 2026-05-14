@@ -2,24 +2,24 @@
 #
 # Pattern name...: cxmr023.4gl
 # Descriptions...: 客供料追踪
-# Date & Author..: darcy:2025/09/19 
+# Date & Author..: darcy:2025/09/19
 #HFBG-16030001
 -- import libsummary
 import os
 import libparttrack
 
 DATABASE ds
- 
+
 GLOBALS "../../../tiptop/config/top.global"
 
 DEFINE tm  RECORD
       wc      string
-   END RECORD  
- 
-DEFINE   g_cnt           LIKE type_file.num10      
-DEFINE   g_i             LIKE type_file.num5       
-DEFINE   g_msg           LIKE type_file.chr1000   
- 
+   END RECORD
+
+DEFINE   g_cnt           LIKE type_file.num10
+DEFINE   g_i             LIKE type_file.num5
+DEFINE   g_msg           LIKE type_file.chr1000
+
 DEFINE   l_table         STRING
 DEFINE   g_str           STRING
 DEFINE   g_sql           STRING
@@ -27,67 +27,67 @@ DEFINE   g_sql           STRING
 MAIN
    OPTIONS
        INPUT NO WRAP
-   DEFER INTERRUPT                      
- 
+   DEFER INTERRUPT
+
    IF (NOT cl_user()) THEN
       EXIT PROGRAM
    END IF
- 
+
    WHENEVER ERROR CALL cl_err_msg_log
- 
+
    IF (NOT cl_setup("CXM")) THEN
       EXIT PROGRAM
    END IF
-   CALL cl_used(g_prog,g_time,1) RETURNING g_time  
+   CALL cl_used(g_prog,g_time,1) RETURNING g_time
 
-   INITIALIZE tm.* TO NULL         
+   INITIALIZE tm.* TO NULL
 
    CALL cxmr023_tm(0,0)
-   CALL cl_used(g_prog,g_time,2) RETURNING g_time 
+   CALL cl_used(g_prog,g_time,2) RETURNING g_time
 END MAIN
 
 
 FUNCTION cxmr023_tm(p_row,p_col)
-DEFINE lc_qbe_sn      LIKE gbm_file.gbm01   
-DEFINE p_row,p_col    LIKE type_file.num5,        
-       l_cmd        LIKE type_file.chr1000      
- 
+DEFINE lc_qbe_sn      LIKE gbm_file.gbm01
+DEFINE p_row,p_col    LIKE type_file.num5,
+       l_cmd        LIKE type_file.chr1000
+
    LET p_row = 9 LET p_col = 8
- 
+
    OPEN WINDOW cxmr023_w AT p_row,p_col WITH FORM "cxm/42f/cxmr023"
-       ATTRIBUTE (STYLE = g_win_style CLIPPED) 
- 
+       ATTRIBUTE (STYLE = g_win_style CLIPPED)
+
    CALL cl_ui_init()
    LET g_pdate = g_today
    LET g_rlang = g_lang
    LET g_bgjob = 'N'
    LET g_copies = '1'
- 
+
    CALL cl_opmsg('p')
-   WHILE TRUE 
-      construct by name tm.wc on tc_sma06 
+   WHILE TRUE
+      construct by name tm.wc on tc_sma06
 
          on action controlp
             case
                 when infield(tc_sma06)
                     CALL cl_init_qry_var()
                     LET g_qryparam.state= "c"
-                    LET g_qryparam.form = "cq_tc_sma06" 
+                    LET g_qryparam.form = "cq_tc_sma06"
                     CALL cl_create_qry() RETURNING g_qryparam.multiret
                     DISPLAY g_qryparam.multiret TO tc_sma06
                     next field tc_sma06
             end case
 
-         ON ACTION CONTROLG 
+         ON ACTION CONTROLG
             CALL cl_cmdask()
 
          ON IDLE g_idle_seconds
             CALL cl_on_idle()
             CONTINUE construct
-   
+
          ON ACTION about
             CALL cl_about()
-   
+
          ON ACTION help
             CALL cl_show_help()
 
@@ -102,12 +102,12 @@ DEFINE p_row,p_col    LIKE type_file.num5,
          CALL cl_dynamic_locale()
          CONTINUE WHILE
       END IF
- 
+
       IF INT_FLAG THEN
-         LET INT_FLAG = 0 CLOSE WINDOW cxmr023_w 
+         LET INT_FLAG = 0 CLOSE WINDOW cxmr023_w
          CALL cl_used(g_prog,g_time,2) RETURNING g_time #No.FUN-690126
          EXIT PROGRAM
-      END IF 
+      END IF
 
       CALL cl_wait()
       CALL cxmr023()
@@ -162,7 +162,7 @@ FUNCTION cxmr023()
       call cl_err("cxmr023_ins_sub1",sqlca.sqlcode,1)
       return
    end if
- 
+
 
    let l_uuid = cs_uuid()
 
@@ -173,7 +173,7 @@ FUNCTION cxmr023()
                 select bmb01,bmb03,bmb06/bmb07 bmb06
                 from bmb_file
                 where bmb04 <= trunc(sysdate)
-                and (bmb05 is null or bmb05 > trunc(sysdate)) 
+                and (bmb05 is null or bmb05 > trunc(sysdate))
                 start with bmb01 in (select ima01 from (
                 select tc_sma06, tc_sma02, max(ima01) ima01
                             from (select tc_sma06, tc_sma02
@@ -200,9 +200,9 @@ FUNCTION cxmr023()
 
    -- 将取替代资料插入
    insert into cxmr023_exp (uuid,cust_proj,fg_part_no,comp_part_no,cust_part_no,mat_spec,usage_qty,sub_item)
-   select uuid,cust_proj,fg_part_no,comp_part_no,ima02,ima021,usage_qty,bmd04 
+   select uuid,cust_proj,fg_part_no,comp_part_no,ima02,ima021,usage_qty,bmd04
      from cxmr023_exp,cxmr023_sub,ima_file
-    where uuid = l_uuid and bmb03 = comp_part_no and ima01 = bmd04 
+    where uuid = l_uuid and bmb03 = comp_part_no and ima01 = bmd04
    if sqlca.sqlcode then
       call cl_err("ins cxmr023_exp sub",sqlca.sqlcode,1)
       return
@@ -230,17 +230,23 @@ FUNCTION cxmr023()
    6. 发料
    }
    let l_sql = "insert into cxmr023_stock_movement
-               (uuid ,cust_proj ,movement_type ,record_date ,fg_part_no ,comp_part_no ,CUST_PART_NO,mat_desc ,qty ,remark) 
+               (uuid ,cust_proj ,movement_type ,record_date ,fg_part_no ,comp_part_no ,CUST_PART_NO,mat_desc ,qty ,remark)
                select uuid,cust_proj,
-               case when tlf907 > 0 then 
-                  case when tlf905 in (select ina01 from cxmq024_cr2) then '2' when tlf905 in (select ina01 from cxmq024_cr3) then '3' when substr(tlf905,1,3)= 'CR2' then '2' when substr(tlf905,1,3) = 'CR3' then '3' else '1' end 
+               case when tlf907 > 0 then
+                  case when tlf905 in (select ina01 from cxmq024_cr2) then '2'
+                       when tlf905 in (select ina01 from cxmq024_cr3) then '3'
+                       when substr(tlf905,1,3)= 'CR2' then '2'
+                       when substr(tlf905,1,3) = 'CR3' then '3'
+                       else '1' end
                   when tlf907 < 0 then
-                  case when substr(tlf905,1,3) = 'CR5' then '5' when tlf06 <= to_date('251030','yymmdd') then '5' else '6' end
+                  case when substr(tlf905,1,3) = 'CR5' then '5'
+                  when substr(tlf905,1,3) = 'CR4' then '4'
+                  when tlf06 <= to_date('251030','yymmdd') then '5' else '6' end
                end  movement_type,
                tlf06,FG_PART_NO,tlf01,ima02,ima021, abs(tlf10*tlf12) tlf10,ina07
                 from tlf_file,ina_file,(select uuid,cust_proj,FG_PART_NO,sub_item from cxmr023_exp
                                          where uuid = ?),ima_file
-               where tlf905 = ina01 and tlf13 in ('aimt301','aimt302')  and tlf01= ima01 
+               where tlf905 = ina01 and tlf13 in ('aimt301','aimt302')  and tlf01= ima01
                and tlf01 = sub_item"
    prepare cxmr023_stock_movement_p from l_sql
    execute cxmr023_stock_movement_p using l_uuid
@@ -260,7 +266,7 @@ FUNCTION cxmr023()
                       sum(trans_in_trial) trans_in_trial,sum(arrival_qty) arrival_qty,
                       sum(trans_out_int) trans_out_int,sum(reserve_ret) reserve_ret,
                       sum(wh_issue) wh_issue from (
-                     select uuid,cust_proj, fg_part_no, comp_part_no, 
+                     select uuid,cust_proj, fg_part_no, comp_part_no,
                        case when movement_type = '2' then qty else 0 end trans_in_int,
                        case when movement_type = '3' then qty else 0 end trans_in_trial,
                        case when movement_type = '1' then qty else 0 end arrival_qty,
@@ -270,9 +276,9 @@ FUNCTION cxmr023()
                        from cxmr023_stock_movement
                       where uuid = ? )
                      group by  uuid,cust_proj, fg_part_no, comp_part_no) b
-                     on (a.uuid = b.uuid and a.cust_proj=b.cust_proj 
+                     on (a.uuid = b.uuid and a.cust_proj=b.cust_proj
                      and a.fg_part_no=b.fg_part_no and a.sub_item = b.comp_part_no)
-               when matched then update set 
+               when matched then update set
                   a.trans_in_int = b.trans_in_int,
                   a.trans_in_trial = b.trans_in_trial,
                   a.arrival_qty = b.arrival_qty,
@@ -294,7 +300,7 @@ FUNCTION cxmr023()
    update cxmr023_exp set wh_issue = 0 where uuid = l_uuid and wh_issue is null
 
    -- 电子仓 可配套数量 img
-   let l_sql = "merge into cxmr023_exp 
+   let l_sql = "merge into cxmr023_exp
                 using (select img01 ,sum(img10)img10 from img_file group by img01)
                    on (sub_item = img01 and uuid = ?)
                  when matched then update set wh_avail_kit = img10"
@@ -323,6 +329,23 @@ FUNCTION cxmr023()
       return
    end if
    update cxmr023_exp set scrap_qty = 0 where uuid = l_uuid and scrap_qty is null
+
+
+   # 更新补料数量
+   let l_sql = "merge into cxmr023_exp using (
+                select sfe07, sum(sfe16) sfe16
+                  from sfe_file
+                 where (substr(sfe02, 1, 3) = 'MRD' or substr(sfe01, 1, 3) = 'MSA')
+                 group by sfe07) on (comp_part_no = sfe07 and uuid = ?)
+                when matched then update set over_issue = sfe16 "
+    prepare cxmr023_merge_sfb13_p from l_sql
+    execute cxmr023_merge_sfb13_p using l_uuid
+    if sqlca.sqlcode then
+        call cl_err("cxmr023_merge_sfb13_p",sqlca.sqlcode,1)
+        return
+    end if
+    update cxmr023_exp set over_issue = 0 where uuid = l_uuid and over_issue is null
+
 
    -- -- 更新取替代料显示字段
    -- let l_sql =" merge into cxmr023_exp using ( ",
@@ -389,7 +412,7 @@ FUNCTION cxmr023()
                 "   left join (select substr(ohb04, 1, 6) ohb04, sum(ohb12) ohb12",
                 "                  from oha_file, ohb_file where oha01 = ohb01",
                 "                  and ohapost = 'Y' and oha09 in ('1', '4')",
-                "                  and oha04 not like '%-%' and SUBSTR(oha04, 7, 1) in ('A', 'B', 'C')",
+                "                  and ohb04 not like '%-%' and SUBSTR(ohb04, 7, 1) in ('A', 'B', 'C')",
                 "                  and ohb04 like '%R' ",
                 "               group by substr(ohb04, 1, 6))",
                 "      on ohb04 = fg_part_no",
@@ -400,22 +423,80 @@ FUNCTION cxmr023()
    execute cxmr023_merge_ship using l_uuid
    update cxmr023_param set ship = 0 where uuid = l_uuid and ship is null
 
+   let l_sql = "insert into cxmr023_ship (
+                       uuid,cust_proj,fg_part_no,ogb31,ogbud02,oga011,oga01,oga02,oga03,oga032,ogbud01,
+                       ogb04,ogb06,ogb092,ogb12,oga02_s,ogbud04,ogbud05) ",
+               "select uuid,cust_proj,fg_part_no,ogb31,ogbud02,oga011,oga01,oga02,oga03,oga032,ogbud01,
+                       ogb04,ogb06,ogb092,ogb12,oga02_s,ogbud04,ogbud05
+                 from (select unique uuid,cust_proj,fg_part_no from cxmr023_exp where uuid = ? ),
+                      (select ogb31,ogbud02,oga011,oga01,oga02,oga03,oga032,ogbud01,ogb04,ogb06,ogb092,
+                              ogb12,oga02_s,ogbud04,ogbud05 from oga_file,ogb_file
+                        left join (select min(oga02) oga02_s,oga011 oga011_s,ogb03 ogb03_s
+                                     from oga_file,ogb_file where oga01 = ogb01 group by oga011,ogb03)
+                               on oga011_s = ogb01 and ogb03_s = ogb03
+                       where oga01 = ogb01 and ogapost = 'Y' and oga09 = '2' and ogb04 not like '%-%'
+                         and substr(ogb04,7,1) in ( 'A','B','C' ) and ogb04 like '%R'
+                       union
+                       select ohb31,ohbud02,'',oha01,oha02,oha03,oha032,ohbud01,ohb04,ohb06,ohb092,
+                              -ohb12,to_date('1899-12-31','YYYY-MM-DD'),ohbud04,ohbud05
+                         from oha_file,ohb_file where oha01 = ohb01 and ohapost = 'Y'
+                          and oha09 in ( '1','4' ) and ohb04 not like '%-%'
+                          and substr(ohb04,7,1) in ( 'A','B','C' ) and ohb04 like '%R')
+               where substr(ogb04,1,6) = fg_part_no"
+   prepare cxmr023_ins_ship from l_sql
+   execute cxmr023_ins_ship using l_uuid
+
    -- 良率
-   let l_sql = "merge into cxmr023_param a using (",
-               " select uuid,cust_proj,tc_bmj07 from (",
-               " select uuid,cust_proj,tc_bmj07,tc_bmj09,",
-               "        dense_rank() over(partition by uuid,cust_proj order by tc_bmj09 desc) r",
-               "   from tc_bmi_file, tc_bmj_file,",
-               "      ( select unique uuid,cust_proj,fg_part_no from cxmr023_exp where uuid = ?)",
-               " where tc_bmi01 = tc_bmj01",
-               "    and tc_bmiconf = 'Y' and substr(tc_bmj04, 1, 6) = fg_part_no",
-               "    and substr(tc_bmj04, 7, 1) in ('A', 'B', 'C') and tc_bmj04 not like '%-%'",
-               "    and tc_bmj11 = 1) where r = 1)b",
-               " on (a.uuid=b.uuid and a.cust_proj=b.cust_proj)",
-               " when matched then update set yield = tc_bmj07"
-   prepare cxmr023_merge_yield from l_sql
-   execute cxmr023_merge_yield using l_uuid 
-   update cxmr023_param set yield = 98.5 where uuid = l_uuid and yield is null
+   # let l_sql = "merge into cxmr023_param a using (",
+   #             " select uuid,cust_proj,tc_bmj07 from (",
+   #             " select uuid,cust_proj,tc_bmj07,tc_bmj09,",
+   #             "        dense_rank() over(partition by uuid,cust_proj order by tc_bmj09 desc) r",
+   #             "   from tc_bmi_file, tc_bmj_file,",
+   #             "      ( select unique uuid,cust_proj,fg_part_no from cxmr023_exp where uuid = ?)",
+   #             " where tc_bmi01 = tc_bmj01",
+   #             "    and tc_bmiconf = 'Y' and substr(tc_bmj04, 1, 6) = fg_part_no",
+   #             "    and substr(tc_bmj04, 7, 1) in ('A', 'B', 'C') and tc_bmj04 not like '%-%'",
+   #             "    and tc_bmj11 = 1) where r = 1)b",
+   #             " on (a.uuid=b.uuid and a.cust_proj=b.cust_proj)",
+   #             " when matched then update set yield = tc_bmj07"
+   # prepare cxmr023_merge_yield from l_sql
+   # execute cxmr023_merge_yield using l_uuid
+   # update cxmr023_param set yield = 98.5 where uuid = l_uuid and yield is null
+
+   # 订单数量和良率后数量
+   let l_sql = "with valid_rates as
+                (select b.tc_bmi01, c.tc_bmj04, c.tc_bmj07, c.tc_bmj09
+                   from tc_bmi_file b, tc_bmj_file c
+                  where b.tc_bmi01 = c.tc_bmj01 and c.tc_bmj11 = 1 and b.tc_bmiconf = 'Y'),
+               oea as
+                (select uuid, cust_proj, fg_part_no, oea01,oeb03, oea02, oeb04, oeb12
+                   from oea_file, oeb_file,
+                        (select unique uuid, cust_proj, fg_part_no
+                           from cxmr023_exp where uuid = ? )
+                  where oea01 = oeb01 and oeaconf = 'Y' and oea00 = '0'
+                    and oeb04 like fg_part_no || '%'
+                    and substr(oeb04, 7, 1) in ('A', 'B', 'C')
+                    and substr(oeb04, 10, 1) = 'R' and oeb04 not like '%-%'),
+               detail as
+                (select uuid, cust_proj, fg_part_no, oea02, oeb04, oeb12, tc_bmi01, tc_bmj07, tc_bmj09
+                   from (select uuid, cust_proj, fg_part_no, o.oea02, o.oeb04, o.oeb12, v.tc_bmi01, v.tc_bmj07, v.tc_bmj09,
+                    ROW_NUMBER() OVER (partition by o.oea01, o.oeb03 order by
+                    case  when v.tc_bmj09 <= o.oea02 then 0 else 1 end,
+                    case when v.tc_bmj09 <= o.oea02 then v.tc_bmj09 end desc,
+                    case when v.tc_bmj09 <= o.oea02 then v.tc_bmi01 end desc,
+                    v.tc_bmi01 asc) as rn
+                   from oea o left join valid_rates v on o.oeb04 = v.tc_bmj04) t
+                where rn = 1)
+              select uuid, cust_proj, sum(oeb12) oeb12, round(sum(oeb12 / nvl(tc_bmj07, 98.5) * 100)) oeb12_yield
+                from detail group by uuid, cust_proj "
+    let l_sql = "merge into cxmr023_param a using (
+                ",l_sql," ) b on (a.uuid=b.uuid and a.cust_proj=b.cust_proj)
+                when matched then update set a.wo_amt = b.oeb12,a.wo_yield = b.oeb12_yield "
+    prepare cxmr023_merge_wo_amt from l_sql
+    execute cxmr023_merge_wo_amt using l_uuid
+    update cxmr023_param set wo_amt = 0 where uuid = l_uuid and wo_amt is null
+    update cxmr023_param set wo_yield = 0 where uuid = l_uuid and wo_yield is null
+
 
    # darcy:2025/11/07 add e---
 
@@ -455,7 +536,7 @@ FUNCTION cxmr023()
 
    while h > 0
       let l_children[i] = os.path.dirnext(h)
-      if l_children[i] is null then 
+      if l_children[i] is null then
          exit while
       end if
       if l_children[i] == "." or l_children[i] == ".." then
@@ -499,5 +580,5 @@ function cxmr023_crt_tmp()
    create temp table cxmr023_sub(
       bmb03 varchar(20),
       bmd04 varchar(20)
-   ) 
+   )
 end function
