@@ -209,13 +209,13 @@
 # Modify.........: No.FUN-910053 09/02/12 By jan 當分群碼有異動時，將imz153=>ima153
 # Modify.........: No.FUN-920114 09/02/17 By ve007 ICD"光罩群組維護","ICD料件制程"兩個action 可以帶出相關資料
 # Modify.........: No.FUN-920170 09/02/23 By ve007 imicd08的控管
-# Modify.........: No.FUN-920172 09/02/26 By jan IF ica040='N',aimi100_icd的"ICD制程料號"的action 隱藏 
+# Modify.........: No.FUN-920172 09/02/26 By jan IF ica040='N',aimi100_icd的"ICD制程料號"的action 隱藏
 # Modify.........: No.FUN-930108 09/04/13 By zhaijie i100_a_inschk()中新增ima926為空的處理
 # Modify.........: No.TQC-940110 09/04/20 By sherry 修改庫存單位，庫存資料、銷售資料、采購資料、生管資料里面的單位轉換率沒有更新
-# Modify.........: No.MOD-940394 09/04/29 By lutingting回覆MOD-910197得調整,寫入azo_file的azo05寫入時改紀錄為rowid 
+# Modify.........: No.MOD-940394 09/04/29 By lutingting回覆MOD-910197得調整,寫入azo_file的azo05寫入時改紀錄為rowid
 # Modify.........: No.TQC-940183 09/04/30 By Carrier rowid定義規範化
 # Modify.........: No.FUN-950007 09/05/12 By sabrina 跨主機資料拋轉，shell手工調整
-# Modify.........: No.TQC-940178 09/05/14 By Cockroach 跨庫SQL一律改為調用s_dbstring() 
+# Modify.........: No.TQC-940178 09/05/14 By Cockroach 跨庫SQL一律改為調用s_dbstring()
 # Modify.........: No.MOD-940165 09/05/21 By Pengu 無效時應判斷是否有未結案工單，若有則不允許做無效
 # Modify.........: No.MOD-940259 09/05/21 By Pengu 來源碼是P、V、Z時，則在修改來源碼時則判斷是否有存在P件BOM下
 # Modify.........: No.FUN-960007 09/06/02 By chenmoyan global檔內沒有定義rowid變量
@@ -238,18 +238,18 @@
 # Modify.........: No:TQC-9B0126 09/11/18 By Carrier undo FUN-960014
 # Modify.........: No:TQC-9B0072 09/11/17 By sherry 修改aimi1004畫面上的問題
 # Modify.........: No:MOD-9C0361 09/12/23 By Pengu 調整批序號欄位的控管
-# Modify.........: No:MOD-9C0032 09/12/23 By sabrina 如果變動前置時間批量(ima601)是null則給"1"，否則依imz601的值帶入 
+# Modify.........: No:MOD-9C0032 09/12/23 By sabrina 如果變動前置時間批量(ima601)是null則給"1"，否則依imz601的值帶入
 # Modify.........: No.FUN-9C0109 09/12/24 By lutingting 代銷科目只有在業態為零售時才顯示
 # Modify.........: No.FUN-9C0072 10/01/14 By vealxu 精簡程式碼
 # Modify.........: No:MOD-A10083 10/01/20 By Smapmin CURSOR未正常釋放
 # Modify.........: No:TQC-A20008 10/02/03 By lilingyu 開窗選擇拋磚的DB清單sql寫錯
-# Modify.........: No:FUN-A20037 10/02/20 By lilingyu 功能改善:規格替代 
+# Modify.........: No:FUN-A20037 10/02/20 By lilingyu 功能改善:規格替代
 # Modify.........: No.FUN-9B0098 10/02/24 by tommas delete cl_doc
 # Modify.........: No.FUN-A20044 10/03/25 By vealxu ima26x 調整
 # Modify.........: No:FUN-8C0131 10/04/07 by dxfwo  過帳還原時的呆滯日期異動
 # Modify.........: No:MOD-A50099 10/05/17 By Sarah 在ima918或ima921欄位連續勾選、取消、再勾選時,ima919/920/922/923/924/925等欄位開關會異常
 # Modify.........: No:FUN-A50011 10/05/20 By yangfeng 維護顏色組/尺碼組即可自動產生屬性群組，並能自動生成子料件
-# Modify.........: No:CHI-A50006 10/05/25 by Summer 復原TQC-A20008修改 
+# Modify.........: No:CHI-A50006 10/05/25 by Summer 復原TQC-A20008修改
 # Modify.........: No:MOD-A60104 10/06/15 By Sarah 新增時,若有修改庫存單位(ima25)也應詢問aim-020
 # Modify.........: No:FUN-A50011 10/07/02 By yangfeng 增加顏色與尺碼維護
 # Modify.........: No.FUN-A80102 10/08/20 By kim GP5.25號機管理
@@ -266,16 +266,16 @@
 # Modify.........: No:FUN-AB0025 11/11/10 By lixh1  開窗BUG處理
 # Modify.........: No:MOD-A10080 10/11/25 By sabrina 無效時，mfg9163的錯誤訊息沒呈現
 # Modify.........: No:TQC-AB0142 10/12/01 By wangxin ima1006賦默認值
-# Modify.........: No:CHI-AC0014 10/12/09 By Summer 作廢段多判斷是否存在非無效的雜收/雜發單，若有則不允許作廢 
+# Modify.........: No:CHI-AC0014 10/12/09 By Summer 作廢段多判斷是否存在非無效的雜收/雜發單，若有則不允許作廢
 # Modify.........: No:TQC-AB0041 10/12/20 By lixh1  新增時給ima926賦默認值'N'
 # Modify.........: No.TQC-AC0185 10/12/22 By vealxu Layout請做調配避免讓 V-scrollbar出現,輸入順序請做相對應調整
 # Modify.........: No:TQC-A60015 10/12/23 By destiny 取消复制时应把开发录入的栏位管掉
 # Modify.........: No:FUN-AC0072 10/12/24 By jan 複製功能有錯誤
 # Modify.........: No:MOD-B10101 11/01/13 By sabrina 無效時判斷是否存在雜收/發單應判斷未確認的單子
 # Modify.........: No.FUN-B10049 11/01/24 By destiny 科目查詢自動過濾
-# Modify.........: No:MOD-B20100 11/02/21 By sabrina ima39應要存在總帳營運中心的會計科目裡 
+# Modify.........: No:MOD-B20100 11/02/21 By sabrina ima39應要存在總帳營運中心的會計科目裡
 # Modify.........: No:TQC-B20161 11/02/23 By jan ima912 新增存檔時 要判斷如果為null要給 0
-# Modify.........: No:TQC-B30013 11/03/02 By sabrina MOD-B20100少寫回傳值 
+# Modify.........: No:TQC-B30013 11/03/02 By sabrina MOD-B20100少寫回傳值
 # Modify.........: No:FUN-B20061 11/03/02 By jan 料件主檔應該是要放寬為S件也要可以維護"聯產品"(ima903)否，不然在abmi608也會無法維護(因為S PART ima903=N)
 # Modify.........: No:MOD-B30519 11/03/15 By jan aici020增加參:
 # Modify.........: No:FUN-9A0056 11/04/12 By Abby MES功能補強
@@ -305,7 +305,7 @@
 # Modify.........: No:MOD-B40111 11/07/17 By Summer 複製時要有自動編碼功能
 # Modify.........: No:MOD-B60132 11/07/17 By Summer 在做無效時，bmb_file應也要考慮bmaacti='Y'
 # Modify.........: No:MOD-B60152 11/07/17 By Summer (1)複製時按放棄的return值少回傳一個
-#                                                   (2)複製後輸入新的料件編號，舊的ima02沒有帶出來 
+#                                                   (2)複製後輸入新的料件編號，舊的ima02沒有帶出來
 # Modify.........: No:FUN-B70057 11/07/18 By zhangll 控管料號前不能有空格
 # Modify.........: No.FUN-B70051 11/07/22 By xianghui 開窗時加where條件裏的練劍狀態給'1'
 # Modify.........: No.FUN-B50096 11/08/18 By lixh1 所有入庫程式應該要加入可以依料號設置"批號(倉儲批的批)是否為必要輸入欄位"的選項
@@ -317,7 +317,7 @@
 #                                                     2.新增Action"特性維護"
 # Modify.........: No:FUN-B90101 11/10/12 By lixiang  服飾行業的修改 1.维护颜色组/尺码组即可自动产生属性群组,并能自动生成子料件
 #                                                                    2.母料件的資料修改後，同步更改資料件的資料
-# Modify.........: No.FUN-B80032 11/10/31 By nanbing ima_file 更新揮寫rtepos  
+# Modify.........: No.FUN-B80032 11/10/31 By nanbing ima_file 更新揮寫rtepos
 # Modify.........: No:FUN-B80186 11/09/06 By jason 規格替代位置調整
 # Modify.........: No:CHI-BA0046 11/11/10 By jason 料件特性(imaicd05)='2346'時：1.良率(imaicd15)要不可輸入2.刻號/BIN(imaicd08)要不可輸入3.DATECODE否(imaicd09)要不可輸入
                                                   #料件特性(imaicd05)='15'時，上述三項要可以輸入
@@ -327,10 +327,10 @@
 # Modify.........: No:FUN-B90103 11/11/23 By xjll   1. 製造業時屬性群組可開窗 2.插入子料件时ima940對應具體顏色agd02,
 #                                                      ima941對應具體顏色agd02,imaag=@CHILD，imaag1=母料件群组imaag
 #                                                   3. 子料件生管资料action中ima571缺省工艺料号=子料件编号,
-#                                                       ima94缺省工艺编号可开窗录入/修改，不可由母料件值赋值          
+#                                                       ima94缺省工艺编号可开窗录入/修改，不可由母料件值赋值
 # Modify.........: No:FUN-BB0083 11/11/29 By xujing 增加數量欄位小數取位
-# Modify.........: No:CHI-BC0005 11/12/05 By ck2yuan 刪除時，說明(azo06)更改為delete                                                
-# Modify.........: No:FUN-BC0100 12/01/04 By bart icd確認時檢查BIN群組及WAFER型號是否已存在icf_file，沒有則新增                                               
+# Modify.........: No:CHI-BC0005 11/12/05 By ck2yuan 刪除時，說明(azo06)更改為delete
+# Modify.........: No:FUN-BC0100 12/01/04 By bart icd確認時檢查BIN群組及WAFER型號是否已存在icf_file，沒有則新增
 # Modify.........: No:FUN-A10004 12/01/13 BY jason 帶入分群碼批序號管理的Defore值
 # Modify.........: No:FUN-BC0103 12/01/13 By jason 增加PIN COUNT等欄位for ICD
 # Modify.........: No:FUN-BB0086 12/01/16 By tanxc 增加數量欄位小數取位
@@ -385,7 +385,7 @@
 # Modify.........: No:FUN-C50036 12/05/21 By yangxf 新增ima160字段，给预设值
 # Modify.........: No:FUN-C50110 12/06/14 By bart 料件主檔新增後也應該同步新增aici001
 # Modify.........: No:TQC-C60001 12/06/14 By bart 複製料件時,imaicd11(New Code申請單號)應該要清空
-# Modify.........: No:FUN-C60021 12/06/15 By qiaozy 異動action，重新更新imaag1資料，產生子料件時新增imaslk資料 
+# Modify.........: No:FUN-C60021 12/06/15 By qiaozy 異動action，重新更新imaag1資料，產生子料件時新增imaslk資料
 # Modify.........: No:FUN-C60061 12/06/18 By bart 自動產生料號後顯示產生哪些料號
 # Modify.........: No.TQC-C50222 12/06/19 By fengrui 添加imaag清空與賦值
 # Modify.........: No.CHI-C30107 12/06/21 By yuhuabao  整批修改將確認的詢問窗口放到chk段的前面
@@ -412,7 +412,7 @@
 # Modify.........: No:MOD-D30081 13/03/08 By bart 料號複製成MISC的料號，銷售特性預設「2.MISC」
 # Modify.........: No.DEV-D30026 13/03/11 By Nina GP5.3 追版:DEV-D30026、DEV-D30026、DEV-CB0020、DEV-D10002為GP5.25 的單號
 # Modify.........: No.DEV-D30033 13/03/19 By TSD.JIE 若有勾選使用條碼，當選擇：序號管理否(ima921='Y'),序號唯一否(ima924)，固定給值Y，且不可異動。
-# Modify.........: No.DEV-D30036 13/03/21 By TSD.JIE 
+# Modify.........: No.DEV-D30036 13/03/21 By TSD.JIE
 #                  1.當使用條碼否(ima930)="Y"時,
 #                    製造批號編碼原則(ima920)多加限制在aooi401的檔案(geh03)="iba_file"
 #                    序號編碼原則(ima923)多加限制在aooi401的檔案(geh03)="iba_file"
@@ -432,11 +432,11 @@
 # Modify.........: No.FUN-D60083 13/08/26 By yangtt 新增費用科目，費用科目二
 # Modify.........: No.160614 16/06/14 By guanyao 1、料件是通过项目单生成的不能删除，2、录入料号的时候，自动带出3,4码分群码，3、增加客供否
 # Modify.........: No.160708 16/07/08 By guanyao 增加栏位包装量，包装单位
-# Modify.........: No.18010101        By shawn  增加SCM同步接口  
+# Modify.........: No.18010101        By shawn  增加SCM同步接口
 
 
 DATABASE ds
- 
+
 GLOBALS "../../config/top.global"
 GLOBALS "../4gl/aimi100.global"
 GLOBALS "../../sub/4gl/s_data_center.global"   #No.FUN-7C0010
@@ -449,10 +449,10 @@ DEFINE g_ima25_t     LIKE ima_file.ima25     #單位舊值   FUN-BB0083 add
 DEFINE g_ima01_t1    LIKE ima_file.ima01     #TQC-C70189 add
 DEFINE g_tc_ims02    LIKE tc_ims_file.tc_ims02  #add by huanglf170317
 #darcy:2022/11/18 add s---
-define g_smd record 
+define g_smd record
       smd04    like smd_file.smd04
    end record
-define g_smd_t record 
+define g_smd_t record
       smd04    like smd_file.smd04
    end record
 #darcy:2022/11/18 add e---
@@ -462,38 +462,38 @@ define g_smd_t record
 #FUN-B90103---------------end-------------
 MAIN
 DEFINE l_sma120      LIKE sma_file.sma120    #No.FUN-810016
- 
+
    OPTIONS                                #改變一些系統預設值
        INPUT NO WRAP     #,               #FUN-A20037 mark
      # FIELD ORDER FORM                   #整個畫面會依照p_per所設定的欄位順序(忽略4gl寫的順序)  #FUN-730061  #FUN-A20037 mark
    DEFER INTERRUPT
- 
- 
+
+
    LET g_argv1 = ARG_VAL(1)
    LET g_argv2 = ARG_VAL(2)   #no.FUN-840033 ADD
 
    IF (NOT cl_user()) THEN
       EXIT PROGRAM
    END IF
- 
+
    WHENEVER ERROR CALL cl_err_msg_log
 
- 
+
    IF (NOT cl_setup("AIM")) THEN
       EXIT PROGRAM
    END IF
 
    CALL cl_used(g_prog,g_time,1) RETURNING g_time                  #No.FUN-6A0074
- 
+
    LET g_forupd_sql = " SELECT * FROM ima_file WHERE ima01 = ? FOR UPDATE "
    LET g_forupd_sql = cl_forupd_sql(g_forupd_sql)
 
    DECLARE i100_cl CURSOR FROM g_forupd_sql
- 
+
    OPEN WINDOW i100_w WITH FORM "aim/42f/aimi100" #FUN-6C0006
      ATTRIBUTE (STYLE = g_win_style CLIPPED) #No.FUN-580092 HCN
    CALL cl_ui_init()
- 
+
    CALL i100_init()
 
    IF g_azw.azw04 = '2' THEN
@@ -533,15 +533,15 @@ DEFINE l_sma120      LIKE sma_file.sma120    #No.FUN-810016
    CALL cl_set_comp_visible("ima928,ima929,gb13",TRUE)  #TQC-C40248--ADD--
    CALL cl_set_act_visible("feature_maintain",TRUE)                #TQC-C40248--ADD--
    #FUN-C60046---begin
-   ELSE 
+   ELSE
       CALL cl_set_comp_visible("ima928,ima929,gb13",FALSE)
       CALL cl_set_act_visible("feature_maintain",FALSE)
-   END IF 
+   END IF
    #FUN-C60046---end
    IF NOT cl_null(g_argv1) THEN
       CALL i100_q()
    END IF
- 
+
     SELECT sma120 INTO l_sma120 FROM sma_file
           CALL cl_set_act_visible("style_informate",FALSE)
           CALL cl_set_act_visible("query_attributevalue,produce_sub_parts,maintain_color,maintain_size",FALSE)   #No.FUN-A50011
@@ -550,30 +550,30 @@ DEFINE l_sma120      LIKE sma_file.sma120    #No.FUN-810016
        ELSE
           CALL cl_set_comp_visible("ima151",FALSE)
        END IF
- 
- 
+
+
    LET g_action_choice = ""
    CALL i100_menu()
- 
+
    CLOSE WINDOW i100_w
- 
+
    CALL cl_used(g_prog,g_time,2) RETURNING g_time   #No.FUN-6A0074
 END MAIN
- 
+
 FUNCTION i100_curs()
 DEFINE   l_ima151                LIKE ima_file.ima151               #No.FUN-810016
 DEFINE   l_n                     LIKE type_file.num5
- 
+
    CLEAR FORM
- 
+
    IF cl_null(g_argv1) THEN
       INITIALIZE g_ima.* TO NULL    #FUN-640213 add
       CONSTRUCT BY NAME g_wc ON ima01,ima02,ima021,ima06,ima08,ima140,        #No.FUN-640013
-                                ima13,ima05,ima03,ima1010,ima93,ima930,ima934,ima932,ima915, #FUN-710060 add ima915 #DEV-D30026-add ima930,ima932 #No:DEV-D30026--add ima934 
+                                ima13,ima05,ima03,ima1010,ima93,ima930,ima934,ima932,ima915, #FUN-710060 add ima915 #DEV-D30026-add ima930,ima932 #No:DEV-D30026--add ima934
                                 ima916,                                        #No.FUN-7C0010
                                 ima151,                                        #No.FUN-810016
                                 imaag,  #No.FUN-640013
-                                ima910,#FUN-550017 add ima910                                
+                                ima910,#FUN-550017 add ima910
 #No.FUN-A50011  -----begin-----
 #No.FUN-A50011  ------end------
                               # ima105,ima14,ima107,ima147,ima109,ima903,                          #TQC-AC0185 mark
@@ -582,13 +582,13 @@ DEFINE   l_n                     LIKE type_file.num5
                                 ima24,ima911,ima109,ima07,ima70,ima37,ima51,ima52,   #TQC-AC0185 #FUN-B80186
                                 ima27,ima28,ima271,ima71,  #ima909, #FUN-540025 #FUN-560187
                                 ima25,ima35,ima36,ima159,ima23,ima906,ima907,ima908,   #FUN-B50096 add ima159 #TQC-C20105 調整順序
-                                ima918,ima919,ima920,ima921,ima922,ima923,ima924,ima931,ima933,ima925,  #No.FUN-810036 #DEV-D30026-add   
+                                ima918,ima919,ima920,ima921,ima922,ima923,ima924,ima931,ima933,ima925,  #No.FUN-810036 #DEV-D30026-add
                                 ima928,ima929,        #TQC-B90236--add
                                 #ima906,ima907,ima908, #FUN-540025 #TQC-C20105 mark
                                 ima12,ima39,ima391,ima163,ima1631,ima149,ima1491,ima164,ima1641,ima15,ima146,ima16,ima905,ima09,  #FUN-680034 #FUN-960141      #TQC-AC0185 add ima905  #FUN-C80094 add--ima163,ima1631 #FUN-D60083 add ima164,ima1641
                                 ima10,ima11,ima022,ima251,   #FUN-B80186
                                 ima1001,ima1002,ima1012,ima1013,#No.FUN-640010
-                               #ima1015,ima1014,ima1016,#No.FUN-640010  #CHI-CA0073 mark 
+                               #ima1015,ima1014,ima1016,#No.FUN-640010  #CHI-CA0073 mark
                                 ima1014,ima1016,#No.FUN-640010  #CHI-CA0073 add
 #                               ima901,ima902,ima881,ima73,             #No.FUN-8C0131
                                 ima901,ima902,ima9021,ima881,ima73,     #No.FUN-8C0131
@@ -608,12 +608,13 @@ DEFINE   l_n                     LIKE type_file.num5
                                 ,imaud36 #darcy:2025/09/03 add
                                 ,imaud37 # darcy:2025/11/24 add
                                 ,imaud38 # darcy:2025/12/10 add
+                                ,imaud39 # darcy add 特殊材料
          BEFORE CONSTRUCT
             CALL cl_qbe_init()
 #No.FUN-A50011 ------begin------
 #No.FUN-A50011 -------end------
-         AFTER FIELD ima151  
-       
+         AFTER FIELD ima151
+
             LET l_ima151=GET_FLDBUF(ima151)
             IF l_ima151="Y"   THEN
                CALL cl_set_comp_visible("imaag",TRUE)
@@ -634,7 +635,7 @@ DEFINE   l_n                     LIKE type_file.num5
                   LET g_qryparam.state    = "c"
                   #tianry add 161122
                   LET g_qryparam.ordercons=' DESC'
-                  #tianry add end 
+                  #tianry add end
                   LET g_qryparam.where = "(ima120 = '1' OR ima120 = ' ' OR ima120 IS NULL)"   #FUN-AB0021  #FUN-AB0025 add ()
                   CALL cl_create_qry() RETURNING g_qryparam.multiret
                   DISPLAY g_qryparam.multiret TO ima01
@@ -659,7 +660,7 @@ DEFINE   l_n                     LIKE type_file.num5
                   CALL cl_init_qry_var()
                  #LET g_qryparam.form   = "q_ima251"  #NO.FUN-B30092 mark
                   LET g_qryparam.form   = "q_gfo"     #NO.FUN-B30092
-                  LET g_qryparam.state  = "c" 
+                  LET g_qryparam.state  = "c"
                   CALL cl_create_qry() RETURNING g_qryparam.multiret
                   DISPLAY g_qryparam.multiret TO ima251
                   NEXT FIELD ima251
@@ -759,7 +760,7 @@ DEFINE   l_n                     LIKE type_file.num5
                   CALL cl_init_qry_var()
                   LET g_qryparam.form     = "q_aag02"   #MOD-860039 modify  #TQC-870001 modify  #MOD-870230 modify
                   LET g_qryparam.state    = "c"
-                  LET g_qryparam.arg1     = g_aza.aza82 #TQC-870001 add 
+                  LET g_qryparam.arg1     = g_aza.aza82 #TQC-870001 add
                   CALL cl_create_qry() RETURNING g_qryparam.multiret
                   DISPLAY g_qryparam.multiret TO ima391
                   NEXT FIELD ima391
@@ -801,7 +802,7 @@ DEFINE   l_n                     LIKE type_file.num5
                #FUN-D60083--add--end--
                WHEN INFIELD(ima149)
                   CALL cl_init_qry_var()
-                  LET g_qryparam.form     = "q_aag02" 
+                  LET g_qryparam.form     = "q_aag02"
                   LET g_qryparam.state    = "c"
                   LET g_qryparam.arg1     = g_aza.aza81
                   CALL cl_create_qry() RETURNING g_qryparam.multiret
@@ -809,7 +810,7 @@ DEFINE   l_n                     LIKE type_file.num5
                   NEXT FIELD ima149
                WHEN INFIELD(ima1491)
                   CALL cl_init_qry_var()
-                  LET g_qryparam.form     = "q_aag02" 
+                  LET g_qryparam.form     = "q_aag02"
                   LET g_qryparam.state    = "c"
                   LET g_qryparam.arg1     = g_aza.aza82
                   CALL cl_create_qry() RETURNING g_qryparam.multiret
@@ -853,8 +854,8 @@ DEFINE   l_n                     LIKE type_file.num5
                   LET g_qryparam.where = "ima01 IN(SELECT ima929 FROM ima_file)"
                   CALL cl_create_qry() RETURNING g_qryparam.multiret
                   DISPLAY g_qryparam.multiret TO ima929
-#TQC-B90236--add--end 
- 
+#TQC-B90236--add--end
+
                WHEN INFIELD(ima916)
                   CALL cl_init_qry_var()
                   LET g_qryparam.form     = "q_azp"
@@ -900,20 +901,20 @@ DEFINE   l_n                     LIKE type_file.num5
               #FUN-A80150---add---end---
                OTHERWISE EXIT CASE
             END CASE
- 
+
          ON IDLE g_idle_seconds
             CALL cl_on_idle()
             CONTINUE CONSTRUCT
- 
+
          ON ACTION about         #MOD-4C0121
             CALL cl_about()      #MOD-4C0121
- 
+
          ON ACTION help          #MOD-4C0121
             CALL cl_show_help()  #MOD-4C0121
- 
+
          ON ACTION controlg      #MOD-4C0121
             CALL cl_cmdask()     #MOD-4C0121
- 
+
                  ON ACTION qbe_select
              CALL cl_qbe_select()
                  ON ACTION qbe_save
@@ -922,36 +923,36 @@ DEFINE   l_n                     LIKE type_file.num5
    ELSE
       LET g_wc = "ima01 = '",g_argv1,"'"
    END IF
- 
+
    IF INT_FLAG THEN
       RETURN
    END IF
    CALL cl_set_comp_visible("imaag",FALSE)                 #FUN-810016
    #改用呼叫i100_declare_curs() FUNCTION定義CURSOR
- 
+
    CALL i100_declare_curs()
- 
+
 END FUNCTION
- 
+
 FUNCTION i100_declare_curs()
- 
+
    LET g_wc = g_wc CLIPPED,cl_get_extra_cond('imauser', 'imagrup')
- 
+
    LET g_sql = "SELECT ima01 FROM ima_file ", # 組合出 SQL 指令
              # " WHERE ",g_wc CLIPPED,                                                      #FUN-A90049 mark
                " WHERE ( ima120 IS NULL OR ima120 = ' ' OR ima120 = '1' ) AND ",g_wc CLIPPED,    #FUN-A90049 add
                " ORDER BY ima01"
    PREPARE aimi100_prepare FROM g_sql
    DECLARE aimi100_curs SCROLL CURSOR WITH HOLD FOR aimi100_prepare
- 
+
   #DECLARE aimi100_list_cur CURSOR FOR aimi100_prepare      #FUN-C90107 mark
- 
+
  # LET g_sql= "SELECT COUNT(*) FROM ima_file WHERE ",g_wc CLIPPED                                                    #FUN-A90049 makr
-   LET g_sql= "SELECT COUNT(*) FROM ima_file WHERE ( ima120 IS NULL OR ima120 = ' ' OR ima120 = '1' ) AND ",g_wc CLIPPED  #FUN-A90049 add 
+   LET g_sql= "SELECT COUNT(*) FROM ima_file WHERE ( ima120 IS NULL OR ima120 = ' ' OR ima120 = '1' ) AND ",g_wc CLIPPED  #FUN-A90049 add
    PREPARE aimi100_precount FROM g_sql
    DECLARE aimi100_count CURSOR FOR aimi100_precount
 END FUNCTION
- 
+
 FUNCTION i100_menu()
    DEFINE l_cmd     LIKE type_file.chr1000,   #MOD-590270 料號長度alter 40 #No.FUN-690026 VARCHAR(72)
           l_priv1   LIKE zy_file.zy03,        # 使用者執行權限
@@ -968,13 +969,13 @@ FUNCTION i100_menu()
              code      LIKE type_file.chr10,
              msg       STRING
                        END RECORD
-   DEFINE  l_time   LIKE type_file.chr100 
+   DEFINE  l_time   LIKE type_file.chr100
    #No.18010101---end---
    MENU ""
- 
+
       BEFORE MENU
          CALL cl_set_act_visible("add_multi_attr_sub",FALSE)     #No.MOD-5A0223 --add
-         CALL cl_set_act_visible("assign_product_strategy",g_azw.azw04 = '2')  #FUN-A90049 add   
+         CALL cl_set_act_visible("assign_product_strategy",g_azw.azw04 = '2')  #FUN-A90049 add
          CALL cl_navigator_setting(g_curs_index, g_row_count)    #No.MOD-680064 add
          IF cl_null(g_sma.sma901) OR g_sma.sma901='N' THEN
              CALL cl_set_act_visible("aps_related_data",FALSE)
@@ -986,7 +987,7 @@ FUNCTION i100_menu()
             EXIT MENU  #MOD-D30241
          END IF   #MOD-D30241
          LET g_action_choice = ""  #MOD-8A0193 add
- 
+
       ON ACTION insert
          LET g_action_choice="insert"
          IF g_aza.aza60 = 'N' THEN #不使用客戶申請作業時,才可按新增!
@@ -997,14 +998,14 @@ FUNCTION i100_menu()
              CALL cl_err('','aim-152',1)
              #不使用客戶申請作業時,才可按新增!
          END IF
- 
+
       ON ACTION query
          LET g_action_choice="query"
          IF cl_chk_act_auth() THEN
             CALL i100_q()
 
          END IF
- 
+
       ON ACTION delete
          LET g_action_choice="delete"
          IF cl_chk_act_auth() THEN
@@ -1012,41 +1013,41 @@ FUNCTION i100_menu()
                CALL i100_AFTER_DEL()
             END IF
          END IF
- 
+
       ON ACTION modify
          LET g_action_choice="modify"
          IF cl_chk_act_auth() THEN
             CALL i100_u()
          END IF
- 
+
       ON ACTION first
          CALL i100_fetch('F')
          CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
          IF g_rec_b1 != 0 THEN                   #No.FUN-7C0010
             CALL fgl_set_arr_curr(g_curs_index)  #No.FUN-7C0010
          END IF
- 
+
       ON ACTION previous
          CALL i100_fetch('P')
          CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
          IF g_rec_b1 != 0 THEN                   #No.FUN-7C0010
             CALL fgl_set_arr_curr(g_curs_index)  #No.FUN-7C0010
          END IF
- 
+
       ON ACTION jump
          CALL i100_fetch('/')
          CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
          IF g_rec_b1 != 0 THEN                   #No.FUN-7C0010
             CALL fgl_set_arr_curr(g_curs_index)  #No.FUN-7C0010
          END IF
- 
+
       ON ACTION next
          CALL i100_fetch('N')
          CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
          IF g_rec_b1 != 0 THEN                   #No.FUN-7C0010
             CALL fgl_set_arr_curr(g_curs_index)  #No.FUN-7C0010
          END IF
- 
+
       ON ACTION last
          CALL i100_fetch('L')
          CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
@@ -1061,13 +1062,13 @@ FUNCTION i100_menu()
             #CALL i100_upd_ima25()   #mark by sx211105
          END IF
       #end---add by jixf 160804
-      
+
       ON ACTION locale
          CALL cl_dynamic_locale()
          CALL i100_set_perlang()
          CALL i100_show_pic() #FUN-690060 add
          CALL cl_show_fld_cont()   #FUN-550077
- 
+
       ON ACTION invalid
          LET g_action_choice="invalid"
          IF cl_chk_act_auth() THEN
@@ -1075,7 +1076,7 @@ FUNCTION i100_menu()
             CALL i100sub_x(g_ima.ima01) #FUN-C90107 add  #TQC-CB0079 mark     #FUN-C90107 add
             CALL i100_show()           #No.FUN-610013
          END IF
- 
+
       ON ACTION reproduce
          LET g_action_choice="reproduce"
          IF g_aza.aza60 = 'N' THEN  #CHI-740027 add if判斷
@@ -1095,28 +1096,28 @@ FUNCTION i100_menu()
             CALL cl_export_to_excel(ui.Interface.getRootNode(),base.TypeInfo.create(g_ima_l),'','')
          END IF
      #No.FUN-9C0089 add -end-------------------
- 
+
       ON ACTION output
          LET g_action_choice="output"
          IF cl_chk_act_auth() THEN
             CALL i100_out()
          END IF
- 
+
       ON ACTION help
          CALL cl_show_help()
- 
+
       ON ACTION exit
          LET g_action_choice='exit'
          EXIT MENU
- 
+
       ON ACTION controlg
          CALL cl_cmdask()
- 
+
       ON ACTION data_status
          IF g_ima.ima01 IS NOT NULL AND g_ima.ima01 != ' ' THEN
             CALL i100_disp()
          END IF
- 
+
       ON ACTION inventory
          LET g_msg="aimi101 '",g_ima.ima01,"'"
          CALL cl_cmdrun_wait(g_msg) #MOD-580344
@@ -1125,10 +1126,10 @@ FUNCTION i100_menu()
 #NO.FUN-B30092  ------------------------add start------------------------
       ON ACTION quantifying
          LET g_msg="aooi104 '",g_ima.ima01,"'"
-         CALL cl_cmdrun_wait(g_msg) 
+         CALL cl_cmdrun_wait(g_msg)
          CALL i100_show()
 #NO.FUN-B30092 --------------------------add end------------------------
- 
+
       ON ACTION sales
          LET g_action_choice="sales"
          IF cl_chk_act_auth() AND g_ima.ima01 IS NOT NULL AND g_ima.ima01 != ' ' THEN
@@ -1136,7 +1137,7 @@ FUNCTION i100_menu()
             CALL  cl_cmdrun_wait(g_cmd) #MOD-580344
          END IF
          CALL i100_show()
- 
+
       ON ACTION purchase
          LET g_action_choice="purchase"
          IF cl_chk_act_auth() AND g_ima.ima01 IS NOT NULL AND g_ima.ima01 != ' ' THEN
@@ -1151,7 +1152,7 @@ FUNCTION i100_menu()
             SELECT * INTO g_ima.* FROM ima_file WHERE ima01 = g_ima.ima01
             CALL i100_show()
          END IF
- 
+
       ON ACTION production
          LET g_action_choice="production"
          IF cl_chk_act_auth() AND g_ima.ima01 IS NOT NULL AND g_ima.ima01 != ' ' THEN
@@ -1166,7 +1167,7 @@ FUNCTION i100_menu()
             SELECT * INTO g_ima.* FROM ima_file WHERE ima01 = g_ima.ima01
             CALL i100_show()
          END IF
- 
+
       ON ACTION cost
          LET g_action_choice="cost"
          IF cl_chk_act_auth() AND g_ima.ima01 IS NOT NULL AND g_ima.ima01 != ' ' THEN
@@ -1181,7 +1182,7 @@ FUNCTION i100_menu()
             SELECT * INTO g_ima.* FROM ima_file WHERE ima01 = g_ima.ima01
             CALL i100_show()
          END IF
- 
+
       ON ACTION cost_element
          LET g_action_choice="cost_element"
          IF cl_chk_act_auth() AND g_ima.ima01 IS NOT NULL AND g_ima.ima01 != ' ' THEN
@@ -1195,7 +1196,7 @@ FUNCTION i100_menu()
             LET g_priv3=l_priv3
          END IF
          CALL i100_show()
- 
+
       ON ACTION pn_spec_extra_desc
          LET g_action_choice="pn_spec_extra_desc"
          IF cl_chk_act_auth() AND NOT cl_null(g_ima.ima01) THEN
@@ -1203,20 +1204,20 @@ FUNCTION i100_menu()
             CALL cl_cmdrun_wait(g_msg) #MOD-580344
          END IF
          CALL i100_show()
- 
+
          ON ACTION carry
             LET g_action_choice = "carry"
             IF cl_chk_act_auth() THEN
                CALL ui.Interface.refresh()
                CALL i100_carry()
             END IF
- 
+
          ON ACTION download
             LET g_action_choice = "download"
             IF cl_chk_act_auth() THEN
                CALL i100_download()
             END IF
- 
+
          ON ACTION qry_carry_history
             LET g_action_choice = "qry_carry_history"
             IF cl_chk_act_auth() THEN
@@ -1236,7 +1237,7 @@ FUNCTION i100_menu()
                   CALL cl_err('',-400,0)
                END IF
             END IF
- 
+
       ON ACTION related_document
          LET g_action_choice="related_document"
          IF cl_chk_act_auth() THEN
@@ -1250,7 +1251,7 @@ FUNCTION i100_menu()
       # 客户器件二维码打印
       on action custSubQrcode
          let g_action_choice="custSubQrcode"
-         if cl_chk_act_auth() then 
+         if cl_chk_act_auth() then
             if not cl_null(g_ima.ima01) then
                if cl_label_prt('custsubqrcode',cl_label_query('custsubqrcode','tqrcim0009',true," ima01 = '"||g_ima.ima01||"' ",'','','','')) then
                   message "打印完成"
@@ -1272,18 +1273,18 @@ FUNCTION i100_menu()
          ELSE
              CALL cl_err('',-400,1)
          END IF
- 
+
       ON ACTION maintain_item_unit_conversion
          LET g_action_choice="maintain_item_unit_conversion"
          LET l_cmd = "aooi103 '",g_ima.ima01,"'" CLIPPED
          CALL cl_cmdrun(l_cmd CLIPPED)
 
-#FUN-C60021-----MARK----STR--- 
+#FUN-C60021-----MARK----STR---
 #      ON ACTION add_multi_attr_sub
 #         IF cl_null(g_ima.ima01) THEN
 #            CALL cl_err('',-400,1)
 #         ELSE
-#              IF g_ima.ima1010 !='1' THEN               # NO.FUN-870117 
+#              IF g_ima.ima1010 !='1' THEN               # NO.FUN-870117
 #                 CALL cl_err(g_ima.ima01,'aim-450',1)   # NO.FUN-870117
 #              ELSE                                      # NO.FUN-870117
 #                 LET g_action_choice="add_multi_attr_sub"
@@ -1293,10 +1294,10 @@ FUNCTION i100_menu()
 #&endif
 #                 LET INT_FLAG=0        #No.FUN-640013 退出子程序后INT_FLAG為1,要置0
 #                 CALL i100_show()
-#              END IF                                    # NO.FUN-870117  
+#              END IF                                    # NO.FUN-870117
 #         END IF
 #FUN-C60021------MARK-----END-------
- 
+
       ON ACTION confirm
          LET g_action_choice="confirm"
          UPDATE ima_file SET imaud19 = imaud42*imaud43/imaud10/1000000 WHERE ima01 = g_ima.ima01
@@ -1305,23 +1306,23 @@ FUNCTION i100_menu()
            #CALL i100_confirm() #mark
            #add 分群码检查  ly20180516
            select imz39,imz163 INTO l_imz39,l_imz163
-           from imz_file 
+           from imz_file
            where imz01=g_ima.ima06
-           IF  l_imz39<>g_ima.ima39 THEN 
-              CALL cl_err(g_ima.ima01,'cim-013',1)   
-               LET  g_success='N' 
-            END  IF  
+           IF  l_imz39<>g_ima.ima39 THEN
+              CALL cl_err(g_ima.ima01,'cim-013',1)
+               LET  g_success='N'
+            END  IF
 
-           IF  l_imz163<>g_ima.ima163 THEN 
-              CALL cl_err(g_ima.ima01,'cim-014',1)  
+           IF  l_imz163<>g_ima.ima163 THEN
+              CALL cl_err(g_ima.ima01,'cim-014',1)
               LET  g_success='N'
-           END  IF 
+           END  IF
            #endadd
             CALL i100sub_y_chk(g_ima.ima01)
             IF g_success = 'Y' THEN
-                IF cl_confirm('aap-222') THEN 
+                IF cl_confirm('aap-222') THEN
                     CALL i100sub_y_chk(g_ima.ima01) #CHI-C30107 add
-                    IF g_success = 'Y' THEN  #CHI-C30107 add 
+                    IF g_success = 'Y' THEN  #CHI-C30107 add
                     BEGIN WORK
                       CALL i100sub_y_upd(g_ima.ima01)
                     IF g_success = 'Y' THEN
@@ -1335,21 +1336,21 @@ FUNCTION i100_menu()
                     ELSE
                         ROLLBACK WORK
                     END IF
-                  END IF   #CHI-C30107 add 
+                  END IF   #CHI-C30107 add
                 END IF
             END IF
            #FUN-A70106--mod---end--
             CALL i100_show()
          END IF
- 
- 
+
+
       ON ACTION notconfirm
          LET g_action_choice="notconfirm"
          IF cl_chk_act_auth() THEN
             CALL i100_notconfirm()
             CALL i100_show()
          END IF
- 
+
       ON ACTION update_person
          LET g_action_choice="update_person"
          IF cl_chk_act_auth() THEN
@@ -1362,16 +1363,16 @@ FUNCTION i100_menu()
    #      IF cl_chk_act_auth() THEN
    ##         CALL i100_upd_ima25()
    #      END IF
-  
-      #tianry add end        
+
+      #tianry add end
 
       #FUN-A90049 ------------------------add start------------------------
-       ON ACTION assign_product_strategy 
+       ON ACTION assign_product_strategy
           LET g_action_choice = "assign_product_strategy"
           IF cl_chk_act_auth() THEN
              CALL i100_assign_product_strategy()
-          END IF 
-      #FUN-A90049 -----------------------add end------------------------     
+          END IF
+      #FUN-A90049 -----------------------add end------------------------
 
 #TQC-B90236--add--begin
        ON ACTION feature_maintain
@@ -1415,15 +1416,15 @@ FUNCTION i100_menu()
 #FUN-B30192---mark
       ON IDLE g_idle_seconds
          CALL cl_on_idle()
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
          LET g_action_choice='exit'
          CONTINUE MENU
- 
+
       -- for Windows close event trapped
-      ON ACTION close   #COMMAND KEY(INTERRUPT) #FUN-9B0145  
+      ON ACTION close   #COMMAND KEY(INTERRUPT) #FUN-9B0145
          LET INT_FLAG=FALSE          #MOD-570244 mars
          LET g_action_choice = "exit"
          EXIT MENU
@@ -1432,7 +1433,7 @@ FUNCTION i100_menu()
             IF cl_chk_act_auth() THEN
                 IF NOT cl_null(g_ima.ima01) THEN
                     INITIALIZE l_ret TO NULL
-                    SELECT to_char(sysdate,'yyyy-mm-dd`HH:MM:SS') INTO l_time FROM dual 
+                    SELECT to_char(sysdate,'yyyy-mm-dd`HH:MM:SS') INTO l_time FROM dual
                     CALL cl_zmx_json_ima(g_ima.ima01,l_time) RETURNING l_ret.*
                     IF l_ret.success = 'Y' THEN
                     ELSE
@@ -1445,16 +1446,16 @@ FUNCTION i100_menu()
             END IF
        #No.18010101---end---
       &include "qry_string.4gl"
- 
+
    END MENU
- 
+
    CLOSE aimi100_curs
- 
+
 END FUNCTION
- 
+
 FUNCTION i100_vmi()
    DEFINE l_vmi   RECORD LIKE vmi_file.*
-  
+
             SELECT vmi01 FROM vmi_file WHERE vmi01 =g_ima.ima01
             IF SQLCA.SQLCODE=100 THEN
                LET l_vmi.vmi01 = g_ima.ima01
@@ -1481,7 +1482,7 @@ FUNCTION i100_vmi()
                LET l_vmi.vmi45 = NULL
                LET l_vmi.vmi47 = 0
                LET l_vmi.vmi49 = 5   #FUN-8A0082 ADD
-               LET l_vmi.vmi50 = 10  #FUN-8A0082 ADD  
+               LET l_vmi.vmi50 = 10  #FUN-8A0082 ADD
                LET l_vmi.vmi64 = 0
                LET l_vmi.vmi57 = 1   #FUN-8B0003
                LET l_vmi.vmi56 = 0    #FUN-870012
@@ -1490,37 +1491,37 @@ FUNCTION i100_vmi()
                INSERT INTO vmi_file VALUES(l_vmi.*)
                   IF STATUS THEN
                      CALL cl_err3("ins","vmi_file",g_ima.ima01,"",SQLCA.sqlcode,
-                                  "","",1)  
+                                  "","",1)
                   END IF
                UPDATE ima_file SET imadate=g_today WHERE ima01 = g_ima.ima01
             END IF
 END FUNCTION
- 
+
 FUNCTION i100_a()
- 
+
    LET g_wc = NULL
    IF s_shut(0) THEN RETURN END IF
    MESSAGE ""
    #MOD-D10193---begin
-   IF NOT s_dc_ud_flag('1',g_ima.ima916,g_plant,'a') THEN                                                                          
-      CALL cl_err(g_ima.ima916,'aoo-078',1)                                                                                        
-      RETURN                                                                                                                       
-   END IF  
+   IF NOT s_dc_ud_flag('1',g_ima.ima916,g_plant,'a') THEN
+      CALL cl_err(g_ima.ima916,'aoo-078',1)
+      RETURN
+   END IF
    #MOD-D10193---end
    CLEAR FORM                                   # 清螢墓欄位內容
-   INITIALIZE g_ima.* LIKE ima_file.*        
+   INITIALIZE g_ima.* LIKE ima_file.*
    LET g_ima01_t = NULL
    LET g_ima_o.*=g_ima.*
    CALL i100_default()
    CALL cl_opmsg('a')
    #MOD-D10193---begin 移到上面
-   #IF NOT s_dc_ud_flag('1',g_ima.ima916,g_plant,'a') THEN                                                                          
-   #   CALL cl_err(g_ima.ima916,'aoo-078',1)                                                                                        
-   #   RETURN                                                                                                                       
-   #END IF   
+   #IF NOT s_dc_ud_flag('1',g_ima.ima916,g_plant,'a') THEN
+   #   CALL cl_err(g_ima.ima916,'aoo-078',1)
+   #   RETURN
+   #END IF
    #MOD-D10193---end
    WHILE TRUE
-      
+
       LET g_ima.ima151='N'                       # No.FUN-810016
       LET g_ima.ima928='N'                       # No.TQC-B90236--add
    #   LET g_ima.imaud06 = 'N'
@@ -1529,9 +1530,9 @@ FUNCTION i100_a()
       IF g_aza.aza28 = 'Y' THEN
          CALL s_auno(g_ima.ima01,'1','') RETURNING g_ima.ima01,g_ima.ima02  #No.FUN-850100
       END IF
-     
+
       CALL i100_i("a")                      # 各欄位輸入
- 
+
       IF INT_FLAG THEN                         # 若按了DEL鍵
          INITIALIZE g_ima.* TO NULL
          LET INT_FLAG = 0
@@ -1540,15 +1541,15 @@ FUNCTION i100_a()
          CLEAR FORM
          EXIT WHILE
       END IF
- 
+
       IF g_ima.ima01 IS NULL THEN                # KEY 不可空白
          CONTINUE WHILE
       END IF
- 
+
       CALL i100_a_inschk()
- 
+
       BEGIN WORK     #NO.FUN-680010
- 
+
       IF NOT i100_a_ins() THEN #FUN-710037
          ROLLBACK WORK    #NO.FUN-680010
          CONTINUE WHILE
@@ -1558,7 +1559,7 @@ FUNCTION i100_a()
       EXIT WHILE
    END WHILE
 END FUNCTION
- 
+
 FUNCTION i100_i(p_cmd)
    DEFINE p_cmd           LIKE type_file.chr1,    #No.FUN-690026 VARCHAR(1)
           l_buf           LIKE aag_file.aag02,    #FUN-660078
@@ -1570,13 +1571,13 @@ FUNCTION i100_i(p_cmd)
    DEFINE l_ima151        LIKE ima_file.ima151    #No.FUN-810016
    DEFINE l_imz150        LIKE imz_file.imz150    #No.FUN-810016
    DEFINE l_imz152        LIKE imz_file.imz152    #No.FUN-830087
-   DEFINE l_imz156        LIKE imz_file.imz156    #FUN-A80150 add  
-   DEFINE l_imz157        LIKE imz_file.imz157    #FUN-A80150 add  
-   DEFINE l_imz158        LIKE imz_file.imz158    #FUN-A80150 add  
+   DEFINE l_imz156        LIKE imz_file.imz156    #FUN-A80150 add
+   DEFINE l_imz157        LIKE imz_file.imz157    #FUN-A80150 add
+   DEFINE l_imz158        LIKE imz_file.imz158    #FUN-A80150 add
    DEFINE l_ima918        LIKE ima_file.ima918    #TQC-C20281 add
    DEFINE l_avl_stk_mpsmrp LIKE type_file.num15_3,#No.FUN-A20044
           l_unavl_stk      LIKE type_file.num15_3,#No.FUN-A20044
-          l_avl_stk        LIKE type_file.num15_3 #No.FUN-A20044  
+          l_avl_stk        LIKE type_file.num15_3 #No.FUN-A20044
    DEFINE l_count         LIKE type_file.num5     #No.DEV-D30026
 
    DEFINE l_imac          RECORD LIKE imac_file.* #No.TQC-B90236
@@ -1584,27 +1585,27 @@ FUNCTION i100_i(p_cmd)
    DEFINE l_ima63_fac     LIKE ima_file.ima63_fac  #add by guanyao160708
    DEFINE l_x             LIKE type_file.num5      #add by guanyao160708
    define l_cnt           integer                  #darcy:2024/03/15 add
-   
+
    DISPLAY BY NAME g_ima.ima901,g_ima.imauser,g_ima.imagrup,
                    g_ima.imadate,g_ima.imaacti
                    ,g_ima.ima151           #No.FUN-810016
                    ,g_ima.ima928           #TQC-B90236--add
- 
+
    DISPLAY BY NAME g_ima.ima906,g_ima.ima907,g_ima.ima908,g_ima.ima159, #,g_ima.ima909 #FUN-560187   #FUN-B50096 add ima159
                    g_ima.ima1010  #No.FUN-610013
    DISPLAY BY NAME g_ima.ima916   #No.FUN-7C0010
    DISPLAY BY NAME g_ima.ima022   #No.FUN-A20037
- 
- 
+
+
 #  LET g_d2=g_ima.ima262-g_ima.ima26      #FUN-A20044
    CALL s_getstock(g_ima.ima01,g_plant) RETURNING l_avl_stk_mpsmrp,l_unavl_stk,l_avl_stk   #FUN-A20044
    LET g_d2 = l_avl_stk - l_avl_stk_mpsmrp                                                 #FUN-A20044
    LET g_flag1 = p_cmd
    IF p_cmd = 'u' THEN LET g_ima.imadate = g_today END IF
- 
+
    LET g_on_change_02 = TRUE   #FUN-550077
    LET g_on_change_021= TRUE   #FUN-550077
- 
+
    SELECT sma119 INTO lc_sma119 FROM sma_file
    CASE lc_sma119
       WHEN "0"
@@ -1624,15 +1625,15 @@ FUNCTION i100_i(p_cmd)
         g_ima.imaag, #No.FUN-640013
         g_ima.ima910,
         g_ima.ima105,g_ima.ima14, g_ima.ima107,g_ima.ima147,   #FUN-550014 add ima910
-      # g_ima.ima109,g_ima.ima903, g_ima.ima905,g_ima.ima24,g_ima.ima911,   #FUN-610080 加ima911    #TQC-AC0185 mark 
-        g_ima.ima903, g_ima.ima905,g_ima.ima24,g_ima.ima911,g_ima.ima109,   #TQC-AC0185             	  
+      # g_ima.ima109,g_ima.ima903, g_ima.ima905,g_ima.ima24,g_ima.ima911,   #FUN-610080 加ima911    #TQC-AC0185 mark
+        g_ima.ima903, g_ima.ima905,g_ima.ima24,g_ima.ima911,g_ima.ima109,   #TQC-AC0185
         g_ima.ima07, g_ima.ima70 ,g_ima.ima37 , g_ima.ima51,
         g_ima.ima52, g_ima.ima27, g_ima.ima28 , g_ima.ima271,g_ima.ima71,
         g_ima.ima25, g_ima.ima35, g_ima.ima36,g_ima.ima159, g_ima.ima23,g_ima.ima906,g_ima.ima907,g_ima.ima908,   #FUN-B50096  add ima159 #TQC-C20105 調整順序
         g_ima.ima918,g_ima.ima919,g_ima.ima920,g_ima.ima921,  #No.FUN-810036
         g_ima.ima922,g_ima.ima923,g_ima.ima924,g_ima.ima931,g_ima.ima933,g_ima.ima925,  #No.FUN-810036  #DEV-D30026-add ima931,ima933
         g_ima.ima928,g_ima.ima929,            #TQC-B90236--add
-        #g_ima.ima906,g_ima.ima907,g_ima.ima908, #FUN-540025  ##TQC-C20105 mark                   
+        #g_ima.ima906,g_ima.ima907,g_ima.ima908, #FUN-540025  ##TQC-C20105 mark
         g_ima.ima12, g_ima.ima39,g_ima.ima391,  #FUN-680034
         g_ima.ima163,g_ima.ima1631,             #FUN-C80094
         g_ima.ima164,g_ima.ima1641,   #FUN-D60083 add
@@ -1640,10 +1641,10 @@ FUNCTION i100_i(p_cmd)
         g_ima.ima15, g_ima.ima146,g_ima.ima16 ,
         g_ima.ima09, g_ima.ima10, g_ima.ima11 ,
         g_ima.ima022,g_ima.ima251,     #FUN-A20037 add #FUN-B80186
-        g_ima.ima9021,                                #No.FUN-8C0031 add by dxfwo        
+        g_ima.ima9021,                                #No.FUN-8C0031 add by dxfwo
         g_ima.ima1001, g_ima.ima1002,                 #No.FUN-640010
         g_ima.ima1012, g_ima.ima1013,                 #No.FUN-640010
-       #g_ima.ima1015, g_ima.ima1014,g_ima.ima1016,   #No.FUN-640010   #CHI-CA0073 mark 
+       #g_ima.ima1015, g_ima.ima1014,g_ima.ima1016,   #No.FUN-640010   #CHI-CA0073 mark
         g_ima.ima1014,g_ima.ima1016,   #No.FUN-640010   #CHI-CA0073 add
         g_ima.ima156,g_ima.ima157,g_ima.ima158,       #FUN-A80150 add
         g_ima.imaud01,g_ima.imaud02,g_ima.imaud03,g_ima.imaud04,g_ima.imaud05,
@@ -1657,15 +1658,16 @@ FUNCTION i100_i(p_cmd)
         ,g_ima.imaud25,g_ima.imaud26 #darcy:2022/12/05 add
         ,g_ima.imaud27,g_ima.imaud28 #darcy:2023/11/06
         ,g_ima.imaud35 #darcy:2025/02/21 add
-        ,g_ima.imaud36 # darcy:2025/09/03 add 
+        ,g_ima.imaud36 # darcy:2025/09/03 add
         ,g_ima.imaud37 # darcy:2025/11/24 add
         ,g_ima.imaud38 # darcy:2025/12/10 add
+        ,g_ima.imaud39 # darcy add 特殊材料
         WITHOUT DEFAULTS
- 
+
         BEFORE INPUT
             LET g_before_input_done = FALSE
             CALL i100_set_entry(p_cmd)
-            CALL i100_set_no_entry(p_cmd)       
+            CALL i100_set_no_entry(p_cmd)
             CALL i100_set_no_required()  #FUN-540025
             CALL i100_set_required()     #FUN-540025
             LET g_before_input_done = TRUE
@@ -1686,7 +1688,7 @@ FUNCTION i100_i(p_cmd)
                call cl_set_comp_entry("imaud26",true)
             end if
             #darcy:2022/12/05 add e---
-          
+
         BEFORE FIELD ima01
             IF g_sma.sma60 = 'Y' THEN# 若須分段輸入
                CALL s_inp5(6,14,g_ima.ima01) RETURNING g_ima.ima01
@@ -1702,10 +1704,10 @@ FUNCTION i100_i(p_cmd)
                DISPLAY BY NAME g_ima.ima57
             END IF
 #No.FUN-D40110 ---------- add ----------- end ----------------------
- 
+
        #DEV-D40019 add str------
         IF p_cmd = 'a' THEN
-           LET g_ima.ima930 = 'N' 
+           LET g_ima.ima930 = 'N'
            LET g_ima.ima931 = 'N'
         END IF
        #DEV-D40019 add end------
@@ -1713,13 +1715,18 @@ FUNCTION i100_i(p_cmd)
             IF NOT i100_chk_ima01(p_cmd) THEN
                NEXT FIELD CURRENT
             END IF
- 
+            -- 只卡光板成品
+            if g_ima.ima01 not matches '*-*' and g_ima.ima01[7,7] not matches '[ABCD]' and g_ima.ima01 not matches '*.*' then
+                 let g_ima.imaud39 = '常规'     # darcy add 特殊材料
+                 display g_ima.imaud39 to imaud39
+            end if
+
         BEFORE FIELD ima02
             IF g_sma.sma64='Y' AND cl_null(g_ima.ima02) THEN
                CALL s_desinp(6,4,g_ima.ima02) RETURNING g_ima.ima02
                DISPLAY BY NAME g_ima.ima02
-            END IF 
-        
+            END IF
+
         ON CHANGE ima151
           CALL cl_set_comp_visible("imaag",g_ima.ima151='Y')
           #TQC-C50222--add--str--
@@ -1736,7 +1743,7 @@ FUNCTION i100_i(p_cmd)
           IF NOT i100_chk_imaag() THEN
               NEXT FIELD CURRENT
           END IF
- 
+
         ON CHANGE ima02
            IF (g_aza.aza44 = "Y") AND cl_null(g_ima.ima01) THEN
               NEXT FIELD ima01
@@ -1752,13 +1759,13 @@ FUNCTION i100_i(p_cmd)
            end if
            #darcy:2024/03/15 add e---
            CALL i100_chg_ima02()
- 
+
         ON CHANGE ima021
            IF (g_aza.aza44 = "Y") AND cl_null(g_ima.ima01) THEN
               NEXT FIELD ima01
            END IF   #MOD-6C0042 add
            CALL i100_chg_ima021()
- 
+
         AFTER FIELD ima06                     #分群碼
            #CHI-B50017 --- modify --- start
             SELECT imz02 INTO g_buf_2 FROM imz_file WHERE imz01=g_ima.ima06
@@ -1772,9 +1779,9 @@ FUNCTION i100_i(p_cmd)
                             WHERE imz01=g_ima.ima06
                  LET g_ima.ima150=l_imz150
                  LET g_ima.ima152=l_imz152
-                 LET g_ima.ima156=l_imz156   #FUN-A80150 add 
-                 LET g_ima.ima157=l_imz157   #FUN-A80150 add 
-                 LET g_ima.ima158=l_imz158   #FUN-A80150 add  
+                 LET g_ima.ima156=l_imz156   #FUN-A80150 add
+                 LET g_ima.ima157=l_imz157   #FUN-A80150 add
+                 LET g_ima.ima158=l_imz158   #FUN-A80150 add
                  CALL i100_ins_imac()        #MOD-C30147 add
                  CALL i100_show()
                  LET g_errno = ''  #No.FUN-A50011
@@ -1785,11 +1792,11 @@ FUNCTION i100_i(p_cmd)
               END IF
            END IF
            #------------------------add by huanglf160720
-           IF g_ima.ima06 = 'G01' OR g_ima.ima06 = 'BCP' THEN 
+           IF g_ima.ima06 = 'G01' OR g_ima.ima06 = 'BCP' THEN
            CALL cl_set_comp_required("imaud02",TRUE)
-           ELSE 
+           ELSE
             CALL cl_set_comp_required("imaud02",FALSE)
-           END IF 
+           END IF
           #--------------------------end by huanglf160720
         AFTER FIELD imaag
            IF NOT i100_chk_imaag() THEN
@@ -1797,59 +1804,59 @@ FUNCTION i100_i(p_cmd)
            END IF
 #FUN-B90103--------add----------------
 #FUN-B90103--------end----------------
- 
+
         BEFORE FIELD ima08
            CALL i100_set_entry(p_cmd)
- 
+
         AFTER FIELD ima08  #來源碼
            IF NOT i100_chk_ima08(p_cmd) THEN
               NEXT FIELD CURRENT
            END IF
- 
+
         AFTER FIELD ima13  #規格主件料件(source code 為 'T'時才輸入)
            IF NOT i100_chk_ima13() THEN
               NEXT FIELD CURRENT
            END IF
- 
+
         AFTER FIELD ima14  #工程料件
            IF NOT i100_chk_ima14() THEN
               NEXT FIELD CURRENT
            END IF
- 
+
         AFTER FIELD ima903  #No:6872 可否做聯產品入庫
            IF NOT i100_chk_ima903() THEN
               NEXT FIELD CURRENT
            END IF
- 
+
         AFTER FIELD ima24  #檢驗否
            IF NOT s_chk_checkbox(g_ima.ima24) THEN
               NEXT FIELD CURRENT
            END IF
            LET g_ima_o.ima24 = g_ima.ima24
- 
+
         AFTER FIELD ima911  #重複性生產料件
            IF NOT s_chk_checkbox(g_ima.ima911) THEN
               NEXT FIELD CURRENT
            END IF
            LET g_ima_o.ima911 = g_ima.ima911
- 
+
 #FUN-A20037 --begin--
        AFTER FIELD ima022
           IF NOT cl_null(g_ima.ima022) THEN
              IF g_ima.ima022 < 0 THEN
-                CALL cl_err('','aec-020',0) 
+                CALL cl_err('','aec-020',0)
                 NEXT FIELD CURRENT
-             END IF 
+             END IF
           END IF
           IF cl_null(g_ima.ima022) THEN
              LET g_ima.ima022 = 0
-          END IF 
+          END IF
 
        AFTER FIELD ima251
-          IF NOT cl_null(g_ima.ima251) THEN 
+          IF NOT cl_null(g_ima.ima251) THEN
              #CALL i251_chk()        #FUN-B30092
-              CALL i100_ima251_chk()        
-              IF NOT cl_null(g_errno) THEN CALL cl_err('',g_errno,0) NEXT FIELD CURRENT END IF END IF 
+              CALL i100_ima251_chk()
+              IF NOT cl_null(g_errno) THEN CALL cl_err('',g_errno,0) NEXT FIELD CURRENT END IF END IF
 #FUN-A20037 --end--
 
         AFTER FIELD ima107  #插件位置
@@ -1857,13 +1864,13 @@ FUNCTION i100_i(p_cmd)
               NEXT FIELD CURRENT
            END IF
            LET g_ima_o.ima107 = g_ima.ima107
- 
+
         AFTER FIELD ima147  #插件位置與QPA是否要勾稽BugNo:6542
            IF NOT s_chk_checkbox(g_ima.ima147) THEN
               NEXT FIELD CURRENT
            END IF
            LET g_ima_o.ima147 = g_ima.ima147
- 
+
         AFTER FIELD ima15  #保稅料件
            IF NOT s_chk_checkbox(g_ima.ima15) THEN
               NEXT FIELD CURRENT
@@ -1879,18 +1886,18 @@ FUNCTION i100_i(p_cmd)
               END IF
            END IF
            LET g_ima_o.ima109 = g_ima.ima109
- 
+
         AFTER FIELD ima910
            IF cl_null(g_ima.ima910) THEN
                LET g_ima.ima910 = ' '
            END IF
- 
+
         AFTER FIELD ima105
            IF NOT s_chk_checkbox(g_ima.ima105) THEN
               NEXT FIELD CURRENT
            END IF
            LET g_ima_o.ima105 = g_ima.ima105
- 
+
 #@@@@@可使為消耗性料件 1.多倉儲管理(sma12 = 'y')
 #@@@@@                 2.使用製程(sma54 = 'y')
         AFTER FIELD ima70  #消耗料件
@@ -1898,48 +1905,48 @@ FUNCTION i100_i(p_cmd)
               NEXT FIELD CURRENT
            END IF
            LET g_ima_o.ima70 = g_ima.ima70
- 
+
         AFTER FIELD ima09                     #其他分群碼一
            IF NOT i100_chk_ima09() THEN
               NEXT FIELD CURRENT
            END IF
            LET g_ima_o.ima09 = g_ima.ima09
- 
+
         AFTER FIELD ima10                     #其他分群碼二
            IF NOT i100_chk_ima10() THEN
               NEXT FIELD CURRENT
            END IF
            LET g_ima_o.ima10 = g_ima.ima10
- 
+
         AFTER FIELD ima11                     #其他分群碼三
            IF NOT i100_chk_ima11() THEN
               NEXT FIELD CURRENT
            END IF
            LET g_ima_o.ima11 = g_ima.ima11
 
-         AFTER FIELD ima9021 
+         AFTER FIELD ima9021
            IF g_ima.ima902 IS NULL AND  g_ima.ima9021 IS NOT NULL THEN
-              LET g_ima.ima902 = g_ima.ima9021 
+              LET g_ima.ima902 = g_ima.ima9021
            END IF
- 
+
         BEFORE FIELD ima1014
            IF p_cmd='a' THEN
               LET g_ima.ima1014='1'
            END IF
- 
+
         AFTER FIELD ima1014
            IF NOT cl_null(g_ima.ima1014) THEN
               IF g_ima.ima1014 NOT MATCHES '[123456]' THEN
                  NEXT FIELD CURRENT
               END IF
            END IF
- 
+
         AFTER FIELD ima12                     #其他分群碼四
            IF NOT i100_chk_ima12() THEN
               NEXT FIELD CURRENT
            END IF
            LET g_ima_o.ima12 = g_ima.ima12
- 
+
         AFTER FIELD ima25            #庫存單位
            IF NOT i100_chk_ima25() THEN
               NEXT FIELD CURRENT
@@ -1949,7 +1956,7 @@ FUNCTION i100_i(p_cmd)
                WHERE (ima63 <> g_ima.ima25 OR
                       ima31 <> g_ima.ima25 OR
                       ima44 <> g_ima.ima25 OR
-                      ima55 <> g_ima.ima25 
+                      ima55 <> g_ima.ima25
                      )
                  AND ima01=g_ima.ima01
               IF l_n > 0 THEN
@@ -1964,7 +1971,7 @@ FUNCTION i100_i(p_cmd)
               END IF
            END IF
           #str MOD-A60104 add
-          #新增時,若有修改庫存單位(ima25)也應詢問aim-020 
+          #新增時,若有修改庫存單位(ima25)也應詢問aim-020
            IF NOT cl_null(g_ima.ima25) AND p_cmd='a' THEN
               IF g_ima.ima25 <> g_ima_o.ima25 OR
                  g_ima.ima63 <> g_ima.ima25 OR
@@ -1978,16 +1985,16 @@ FUNCTION i100_i(p_cmd)
               END IF
            END IF
           #end MOD-A60104 add
-          #MOD-C60228 add begin-------------------   
-           IF g_sma.sma116 <> '0' AND NOT cl_null(g_ima.ima25) THEN 
-              IF g_ima_o.ima25 IS NULL OR g_ima.ima25<>g_ima_o.ima25 THEN  
+          #MOD-C60228 add begin-------------------
+           IF g_sma.sma116 <> '0' AND NOT cl_null(g_ima.ima25) THEN
+              IF g_ima_o.ima25 IS NULL OR g_ima.ima25<>g_ima_o.ima25 THEN
                  SELECT COUNT(*) INTO l_n FROM ima_file
                   WHERE ima908 <> g_ima.ima25 AND ima01=g_ima.ima01
                  IF l_n > 0 THEN
                     LET g_msg=cl_getmsg('aim1161',g_lang)
                     IF cl_prompt(0,0,g_msg) THEN
                        LET g_ima.ima908 = g_ima.ima25 #計價單位
-                    END IF 
+                    END IF
                  ELSE
                     IF g_ima.ima908 <> g_ima.ima25 THEN
                        LET g_msg=cl_getmsg('aim1161',g_lang)
@@ -1997,26 +2004,26 @@ FUNCTION i100_i(p_cmd)
                     END IF
                  END IF
               END IF
-           END IF 
+           END IF
           #MOD-C60228 add end---------------------
-           
+
            LET g_ima_o.ima25 = g_ima.ima25
            LET g_ima.ima86=g_ima.ima25
            CALL i100_unit_fac()     #TQC-940110 add
            #str-----add by guanyao160708
            IF NOT cl_null(g_ima.imaud02) THEN
-              IF g_ima.ima25 != g_ima.imaud02 THEN 
+              IF g_ima.ima25 != g_ima.imaud02 THEN
                  LET l_ima63_fac = ''
                  CALL s_umfchk(g_ima.ima01,g_ima.ima55,g_ima.ima25)
                   RETURNING g_sw,l_ima63_fac
                  IF g_sw = '1' THEN
-                    CALL cl_err(g_ima.imaud02,'cim-009',0)   
+                    CALL cl_err(g_ima.imaud02,'cim-009',0)
                  END IF
-              END IF 
-           END IF 
+              END IF
+           END IF
            #end-----add by guanyao160708
           #FUN-BB0083---add---str
-              LET l_case = '' 
+              LET l_case = ''
               IF NOT i100_ima52_check() THEN
                  LET l_case = "ima52"
               END IF
@@ -2047,26 +2054,26 @@ FUNCTION i100_i(p_cmd)
                    OTHERWISE EXIT CASE
                END CASE
           #FUN-BB0083---add---end
-          
+
         AFTER FIELD ima35
            IF NOT i100_chk_ima35() THEN
               NEXT FIELD CURRENT
            END IF
 	IF NOT s_imechk(g_ima.ima35,g_ima.ima36) THEN NEXT FIELD ima36 END IF  #FUN-D40103 add
- 
+
         AFTER FIELD ima36
 	IF cl_null(g_ima.ima36) THEN LET g_ima.ima36 = ' ' END IF  #FUN-D40103 add
            IF NOT i100_chk_ima36() THEN
               NEXT FIELD CURRENT
            END IF
- 
+
         AFTER FIELD ima23
            #No.B052 010326 by plum 加上有效碼的check
            IF NOT i100_chk_ima23() THEN
               NEXT FIELD ima23
            END IF
            LET g_ima_o.ima23 = g_ima.ima23             #MOD-4A0326
- 
+
         AFTER FIELD ima07  #ABC 碼
            IF g_aza.aza50='N' THEN
               IF NOT i100_chk_ima07() THEN
@@ -2085,7 +2092,7 @@ FUNCTION i100_i(p_cmd)
            #   END IF
            #END IF
            #FUN-BB0083---mark---end
- 
+
         AFTER FIELD ima28
            IF NOT i100_ima28_check() THEN NEXT FIELD ima28 END IF #FUN-BB0083 add
            #FUN-BB0083---mark---str
@@ -2096,7 +2103,7 @@ FUNCTION i100_i(p_cmd)
            #   END IF
            #END IF
            #FUN-BB0083---mark---end
- 
+
         AFTER FIELD ima271
            IF NOT i100_ima271_check() THEN NEXT FIELD ima271 END IF #FUN-BB0083 add
            #FUN-BB0083---mark---str
@@ -2107,7 +2114,7 @@ FUNCTION i100_i(p_cmd)
            #   END IF
            #END IF
            #FUN-BB0083---mark---end
- 
+
         AFTER FIELD ima71
            IF g_ima.ima71 IS NOT NULL THEN
               IF g_ima.ima71 <0 THEN
@@ -2150,13 +2157,13 @@ FUNCTION i100_i(p_cmd)
                  NEXT FIELD imaud43
               END IF
            END IF
- 
+
         AFTER FIELD ima37  #補貨策略碼
            IF NOT i100_chk_ima37() THEN
               NEXT FIELD CURRENT
            END IF
            LET g_ima_o.ima37 = g_ima.ima37
- 
+
         AFTER FIELD ima51
            IF NOT i100_ima51_check() THEN NEXT FIELD CURRENT END IF #FUN-BB0083 add
            #FUN-BB0083---mark---str
@@ -2165,7 +2172,7 @@ FUNCTION i100_i(p_cmd)
            #END IF
            #LET g_ima_o.ima51 = g_ima.ima51
            #FUN-BB0083---mark---str
- 
+
         AFTER FIELD ima52
            IF NOT i100_ima52_check() THEN NEXT FIELD CURRENT END IF #FUN-BB0083 add
            #FUN-BB0083---mark---str
@@ -2174,20 +2181,20 @@ FUNCTION i100_i(p_cmd)
            #END IF
            #LET g_ima_o.ima52 = g_ima.ima52
            #FUN-BB0083---mark---str
- 
+
         AFTER FIELD ima39
             IF NOT cl_null(g_ima.ima39) OR g_ima.ima39 != ' '  THEN
                IF NOT i100_chk_ima39() THEN
                   #FUN-B10049--begin
-                  CALL cl_init_qry_var()                                         
-                  LET g_qryparam.form ="q_aag02"                                   
-                  LET g_qryparam.default1 = g_ima.ima39  
-                  LET g_qryparam.construct = 'N'                
-                  LET g_qryparam.arg1 = g_aza.aza81  
-                  LET g_qryparam.where = " aag07 IN ('2','3') AND aag01 LIKE '",g_ima.ima39 CLIPPED,"%' "                                                                        
+                  CALL cl_init_qry_var()
+                  LET g_qryparam.form ="q_aag02"
+                  LET g_qryparam.default1 = g_ima.ima39
+                  LET g_qryparam.construct = 'N'
+                  LET g_qryparam.arg1 = g_aza.aza81
+                  LET g_qryparam.where = " aag07 IN ('2','3') AND aag01 LIKE '",g_ima.ima39 CLIPPED,"%' "
                   CALL cl_create_qry() RETURNING g_ima.ima39
-                  DISPLAY BY NAME g_ima.ima39  
-                  #FUN-B10049--end                   
+                  DISPLAY BY NAME g_ima.ima39
+                  #FUN-B10049--end
                   NEXT FIELD ima39
                END IF
                SELECT aag02 INTO l_buf FROM aag_file
@@ -2197,20 +2204,20 @@ FUNCTION i100_i(p_cmd)
                MESSAGE l_buf CLIPPED
             END IF
             LET g_ima_o.ima39 = g_ima.ima39
- 
+
         AFTER FIELD ima391
             IF NOT cl_null(g_ima.ima391) OR g_ima.ima391 != ' '  THEN
                IF NOT i100_chk_ima391() THEN
                   #FUN-B10049--begin
-                  CALL cl_init_qry_var()                                         
-                  LET g_qryparam.form ="q_aag02"                                   
-                  LET g_qryparam.default1 = g_ima.ima391  
-                  LET g_qryparam.construct = 'N'                
-                  LET g_qryparam.arg1 = g_aza.aza82  
-                  LET g_qryparam.where = " aag07 IN ('2','3') AND aag01 LIKE '",g_ima.ima391 CLIPPED,"%' "                                                                        
+                  CALL cl_init_qry_var()
+                  LET g_qryparam.form ="q_aag02"
+                  LET g_qryparam.default1 = g_ima.ima391
+                  LET g_qryparam.construct = 'N'
+                  LET g_qryparam.arg1 = g_aza.aza82
+                  LET g_qryparam.where = " aag07 IN ('2','3') AND aag01 LIKE '",g_ima.ima391 CLIPPED,"%' "
                   CALL cl_create_qry() RETURNING g_ima.ima391
-                  DISPLAY BY NAME g_ima.ima391  
-                  #FUN-B10049--end                    
+                  DISPLAY BY NAME g_ima.ima391
+                  #FUN-B10049--end
                   NEXT FIELD ima391
                END IF
                SELECT aag02 INTO l_buf FROM aag_file
@@ -2220,7 +2227,7 @@ FUNCTION i100_i(p_cmd)
                MESSAGE l_buf CLIPPED
             END IF
             LET g_ima_o.ima391 = g_ima.ima391
-    
+
         #FUN-C80094---ADD---STR
         AFTER FIELD ima163
             IF NOT cl_null(g_ima.ima163) OR g_ima.ima163 != ' '  THEN
@@ -2315,20 +2322,20 @@ FUNCTION i100_i(p_cmd)
             IF NOT cl_null(g_ima.ima149) OR g_ima.ima149 != ' '  THEN
                IF NOT i100_chk_ima149() THEN
                   #FUN-B10049--begin
-                  CALL cl_init_qry_var()                                         
-                  LET g_qryparam.form ="q_aag02"                                   
-                  LET g_qryparam.default1 = g_ima.ima149  
-                  LET g_qryparam.construct = 'N'                
-                  LET g_qryparam.arg1 = g_aza.aza81  
-                  LET g_qryparam.where = " aag07 IN ('2','3') AND aag01 LIKE '",g_ima.ima149  CLIPPED,"%' "                                                                        
-                  CALL cl_create_qry() RETURNING g_ima.ima149  
-                  DISPLAY BY NAME g_ima.ima149    
-                  #FUN-B10049--end                  
+                  CALL cl_init_qry_var()
+                  LET g_qryparam.form ="q_aag02"
+                  LET g_qryparam.default1 = g_ima.ima149
+                  LET g_qryparam.construct = 'N'
+                  LET g_qryparam.arg1 = g_aza.aza81
+                  LET g_qryparam.where = " aag07 IN ('2','3') AND aag01 LIKE '",g_ima.ima149  CLIPPED,"%' "
+                  CALL cl_create_qry() RETURNING g_ima.ima149
+                  DISPLAY BY NAME g_ima.ima149
+                  #FUN-B10049--end
                   NEXT FIELD ima149
                END IF
                SELECT aag02 INTO l_buf FROM aag_file
                       WHERE aag01 = g_ima.ima149
-                         AND aag07 != '1' 
+                         AND aag07 != '1'
                          AND aag00 = g_aza.aza81
                MESSAGE l_buf CLIPPED
             END IF
@@ -2337,38 +2344,38 @@ FUNCTION i100_i(p_cmd)
             IF NOT cl_null(g_ima.ima1491) OR g_ima.ima1491 != ' '  THEN
                IF NOT i100_chk_ima1491() THEN
                   #FUN-B10049--begin
-                  CALL cl_init_qry_var()                                         
-                  LET g_qryparam.form ="q_aag02"                                   
-                  LET g_qryparam.default1 = g_ima.ima1491  
-                  LET g_qryparam.construct = 'N'                
-                  LET g_qryparam.arg1 = g_aza.aza82  
-                  LET g_qryparam.where = " aag07 IN ('2','3') AND aag01 LIKE '",g_ima.ima1491  CLIPPED,"%' "                                                                        
-                  CALL cl_create_qry() RETURNING g_ima.ima1491  
-                  DISPLAY BY NAME g_ima.ima1491    
-                  #FUN-B10049--end                
+                  CALL cl_init_qry_var()
+                  LET g_qryparam.form ="q_aag02"
+                  LET g_qryparam.default1 = g_ima.ima1491
+                  LET g_qryparam.construct = 'N'
+                  LET g_qryparam.arg1 = g_aza.aza82
+                  LET g_qryparam.where = " aag07 IN ('2','3') AND aag01 LIKE '",g_ima.ima1491  CLIPPED,"%' "
+                  CALL cl_create_qry() RETURNING g_ima.ima1491
+                  DISPLAY BY NAME g_ima.ima1491
+                  #FUN-B10049--end
                   NEXT FIELD ima1491
                END IF
                SELECT aag02 INTO l_buf FROM aag_file
                       WHERE aag01 = g_ima.ima1491
                          AND aag07 != '1'
-                         AND aag00 = g_aza.aza82 
+                         AND aag00 = g_aza.aza82
                MESSAGE l_buf CLIPPED
             END IF
             LET g_ima_o.ima1491 = g_ima.ima1491
- 
+
       BEFORE FIELD ima906
          CALL i100_set_entry(p_cmd)
- 
+
       AFTER FIELD ima906
          IF NOT i100_chk_ima906(p_cmd) THEN
             NEXT FIELD CURRENT
          END IF
- 
+
       AFTER FIELD ima907
          IF NOT i100_chk_ima907(p_cmd) THEN
             NEXT FIELD ima907
          END IF
- 
+
       BEFORE FIELD ima908
          IF cl_null(g_ima.ima908) THEN
             IF g_sma.sma116 MATCHES '[123]' THEN    #No.FUN-610076
@@ -2376,12 +2383,12 @@ FUNCTION i100_i(p_cmd)
                DISPLAY BY NAME g_ima.ima908
             END IF
          END IF
- 
+
       AFTER FIELD ima908
          IF NOT i100_chk_ima908(p_cmd) THEN
             NEXT FIELD ima908
          END IF
- 
+
 #FUN-B90035 ------------Begin--------------
       AFTER FIELD ima159
          IF cl_null(g_ima.ima159) THEN
@@ -2393,20 +2400,20 @@ FUNCTION i100_i(p_cmd)
         #CALL I100_set_entry(p_cmd)      #CHI-B80032 mark
          CALL i100_set_entry(p_cmd)      #CHI-B80032
          CALL i100_set_no_entry(p_cmd)   #CHI-B80032
- 
+
       ON CHANGE ima918
          IF cl_null(g_ima.ima918) OR g_ima.ima918 = 'N' THEN
             LET g_ima.ima919 = 'N'
             LET g_ima.ima920 = NULL
-            CALL i100_set_no_required() 
+            CALL i100_set_no_required()
             DISPLAY BY NAME g_ima.ima919
             DISPLAY BY NAME g_ima.ima920
-         END IF 
+         END IF
          #MOD-C30091---begin
-         IF g_ima.ima918 = 'Y' AND cl_null(g_ima.ima925) THEN 
+         IF g_ima.ima918 = 'Y' AND cl_null(g_ima.ima925) THEN
             LET g_ima.ima925 = '1'
             DISPLAY BY NAME g_ima.ima925
-         END IF 
+         END IF
          #MOD-C30091---end
          CALL i100_set_no_entry(p_cmd)
 
@@ -2420,9 +2427,9 @@ FUNCTION i100_i(p_cmd)
             DISPLAY BY NAME g_ima.ima918
          END IF
         #CHI-B80043 --- modify ---  end  ---
- 
+
       #TQC-C40021--add--str--
-      AFTER FIELD ima918 
+      AFTER FIELD ima918
          IF cl_null(g_ima.ima918) OR g_ima.ima918 = 'N' THEN
             LET l_n = 0
             SELECT COUNT(*) INTO l_n FROM imac_file
@@ -2433,16 +2440,16 @@ FUNCTION i100_i(p_cmd)
                LET g_ima.ima918 = 'Y'
                DISPLAY BY NAME g_ima.ima918
                NEXT FIELD ima918    #TQC-C40044 add
-            END IF  
-         END IF   
+            END IF
+         END IF
       #TQC-C40021--add--end--
- 
+
       BEFORE FIELD ima919
          CALL i100_set_entry(p_cmd)
          CALL i100_set_no_entry(p_cmd) #CHI-B80032 add
          CALL i100_set_no_required()   #No.MOD-840257
          CALL i100_set_required()      #CHI-B80032 add
- 
+
      #AFTER FIELD ima919  #MOD-A50099 mark
       ON CHANGE ima919    #MOD-A50099
 #CHI-B80032 -- begin --
@@ -2453,7 +2460,7 @@ FUNCTION i100_i(p_cmd)
 #CHI-B80032 -- end --
          CALL i100_set_no_entry(p_cmd)
          CALL i100_set_required()   #No.MOD-840257
- 
+
       AFTER FIELD ima920
          IF NOT cl_null(g_ima.ima920) THEN
           #DEV-D30026--add--begin--------------
@@ -2465,7 +2472,7 @@ FUNCTION i100_i(p_cmd)
                   CALL cl_err(g_ima.ima920,'mfg-978',0)
                   NEXT FIELD ima920
                END IF
-            ELSE 
+            ELSE
           #DEV-D30026--add--end----------------
                SELECT COUNT(*) INTO l_n FROM geh_file,gei_file   #No.MOD-840254  #No.MOD-840294
                 WHERE geh04 = '5'   #No.MOD-840254
@@ -2485,21 +2492,21 @@ FUNCTION i100_i(p_cmd)
             END IF
             #DEV-D30036--add--end
          END IF
- 
+
       BEFORE FIELD ima921
          CALL i100_set_entry(p_cmd)
          CALL i100_set_no_entry(p_cmd)   #CHI-B80032 add
- 
+
       ON CHANGE ima921
          IF cl_null(g_ima.ima921) OR g_ima.ima921 = 'N' THEN
             LET g_ima.ima922 = 'N'
             LET g_ima.ima923 = NULL
             LET g_ima.ima924 = 'N'   #CHI-B80032 add
-            CALL i100_set_no_required() 
+            CALL i100_set_no_required()
             DISPLAY BY NAME g_ima.ima922
             DISPLAY BY NAME g_ima.ima923
             DISPLAY BY NAME g_ima.ima924   #CHI-B80032 add
-         END IF 
+         END IF
          #DEV-D30033--begin
          IF g_ima.ima921 = 'Y' THEN
             IF g_ima.ima930 = 'Y' THEN
@@ -2509,10 +2516,10 @@ FUNCTION i100_i(p_cmd)
          END IF
          #DEV-D30033--end
          #MOD-C30091---begin
-         IF g_ima.ima921 = 'Y' AND cl_null(g_ima.ima925) THEN 
+         IF g_ima.ima921 = 'Y' AND cl_null(g_ima.ima925) THEN
             LET g_ima.ima925 = '1'
             DISPLAY BY NAME g_ima.ima925
-         END IF 
+         END IF
          #MOD-C30091---end
          CALL i100_set_no_entry(p_cmd)
         #CHI-B80043 --- modify --- start ---
@@ -2531,7 +2538,7 @@ FUNCTION i100_i(p_cmd)
          CALL i100_set_no_entry(p_cmd) #CHI-B80032 add
          CALL i100_set_no_required()   #No.MOD-840257
          CALL i100_set_required()      #CHI-B80032 add
- 
+
      #AFTER FIELD ima922  #MOD-A50099 mark
       ON CHANGE ima922    #MOD-A50099
 #CHI-B80032 -- begin --
@@ -2542,7 +2549,7 @@ FUNCTION i100_i(p_cmd)
 #CHI-B80032 -- end --
          CALL i100_set_no_entry(p_cmd)
          CALL i100_set_required()   #No.MOD-840257
- 
+
       AFTER FIELD ima923
          IF NOT cl_null(g_ima.ima923) THEN
             SELECT COUNT(*) INTO l_n FROM geh_file,gei_file   #No.MOD-840254  #No.MOD-840294
@@ -2561,7 +2568,7 @@ FUNCTION i100_i(p_cmd)
             END IF
             #DEV-D30036--add--end
          END IF
- 
+
       AFTER FIELD ima925
          IF g_ima.ima925 NOT MATCHES '[123]' THEN
             NEXT FIELD ima925
@@ -2580,7 +2587,7 @@ FUNCTION i100_i(p_cmd)
             END IF
          END IF
      #DEV-D30026---add---end--------------
-     #DEV-D40010 add str---------- 
+     #DEV-D40010 add str----------
       AFTER FIELD ima932              #控卡條碼時機點輸入
          IF NOT cl_null(g_ima.ima932) THEN
            #當收貨單作批序號控管，則條碼時機點不可挑選IQC(L),採購入庫(E)
@@ -2589,7 +2596,7 @@ FUNCTION i100_i(p_cmd)
                NEXT FIELD ima932
             END IF
          END IF
-     #DEV-D40010 add end---------- 
+     #DEV-D40010 add end----------
 #TQC-B90236--add--begin
       BEFORE FIELD ima928
          CALL i100_set_entry(p_cmd)
@@ -2599,11 +2606,11 @@ FUNCTION i100_i(p_cmd)
             LET g_ima.ima929 = NULL
             DISPLAY BY NAME g_ima.ima929
          END IF
-   
+
       ON CHANGE ima928
          CALL i100_set_entry(p_cmd)
          CALL i100_set_no_entry(p_cmd)
-  
+
       AFTER FIELD ima929
          IF NOT cl_null(g_ima.ima929) THEN
 #MOD-C30551 ------- add -------- begin
@@ -2641,9 +2648,9 @@ FUNCTION i100_i(p_cmd)
          END IF
 #MOD-C30197 ----- add ----- end
 #TQC-B90236--add-end
- 
- 
- 
+
+
+
      #FUN-A80150---add---start---
       BEFORE FIELD ima156
          CALL i100_set_entry(p_cmd)
@@ -2653,10 +2660,10 @@ FUNCTION i100_i(p_cmd)
 
       AFTER FIELD ima157
          IF NOT cl_null(g_ima.ima157) THEN
-            SELECT COUNT(*) INTO l_n FROM geh_file,gei_file   
-             WHERE geh04 = '5'  
-               AND geh01 = gei03 
-               AND gei01 = g_ima.ima157  
+            SELECT COUNT(*) INTO l_n FROM geh_file,gei_file
+             WHERE geh04 = '5'
+               AND geh01 = gei03
+               AND gei01 = g_ima.ima157
             IF l_n = 0 THEN
                CALL cl_err(g_ima.ima157,'aoo-112',0)
                NEXT FIELD ima157
@@ -2730,25 +2737,25 @@ FUNCTION i100_i(p_cmd)
         AFTER FIELD imaud02
            #str------add by guanyao160708
            #IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
-           IF NOT cl_null(g_ima.imaud02) THEN 
+           IF NOT cl_null(g_ima.imaud02) THEN
               LET l_x = 0
               SELECT COUNT(*) INTO l_x FROM gfe_file WHERE gfe01 = g_ima.imaud02 AND gfeacti = 'Y'
-              IF cl_null(l_x) OR l_x = 0 THEN 
+              IF cl_null(l_x) OR l_x = 0 THEN
                  CALL cl_err('','mfg1200',0)
                  NEXT FIELD imaud02
-              END IF 
-              IF NOT cl_null(g_ima.ima25) THEN 
-                 IF g_ima.imaud02 !=g_ima.ima25 THEN 
+              END IF
+              IF NOT cl_null(g_ima.ima25) THEN
+                 IF g_ima.imaud02 !=g_ima.ima25 THEN
                     LET l_ima63_fac = ''
                     CALL s_umfchk(g_ima.ima01,g_ima.imaud02,g_ima.ima25)
                        RETURNING g_sw,l_ima63_fac
                     IF g_sw = '1' THEN
                        CALL cl_err(g_ima.imaud02,'cim-009',0)
                        NEXT FIELD imaud02
-                    END IF 
+                    END IF
                  END IF
-              END IF 
-           END IF 
+              END IF
+           END IF
            #end------add by guanyao160708
         AFTER FIELD imaud03
            IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
@@ -2758,7 +2765,7 @@ FUNCTION i100_i(p_cmd)
            IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
         AFTER FIELD imaud06
            IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
-        AFTER FIELD imaud07 
+        AFTER FIELD imaud07
          #   IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF #darcy:2024/07/10 mark
          #darcy:2024/07/10 add s---
          if not cl_null(g_ima.imaud07) then
@@ -2789,7 +2796,7 @@ FUNCTION i100_i(p_cmd)
            IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
         AFTER FIELD imaud20
            IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
- 
+
         AFTER INPUT  #判斷必要欄位之值是否有值,若無則反白顯示,並要求重新輸入
            LET g_ima.imauser = s_get_data_owner("ima_file") #FUN-C10039
            LET g_ima.imagrup = s_get_data_group("ima_file") #FUN-C10039
@@ -2805,11 +2812,11 @@ FUNCTION i100_i(p_cmd)
                when 'imaud19' next field imaud19 #darcy:2023/04/12 add
             END CASE
            IF g_ima.ima902 IS NULL AND  g_ima.ima9021 IS NOT NULL THEN
-              LET g_ima.ima902 = g_ima.ima9021 
+              LET g_ima.ima902 = g_ima.ima9021
            END IF
            DISPLAY BY NAME g_ima.ima902,g_ima.ima9021
 #No.FUN-A50011  -----begin----
-#No.FUN-A50011 -----end----- 
+#No.FUN-A50011 -----end-----
         ON ACTION item_group_common_inventory
            CALL cl_cmdrun("aimi110 ")
 
@@ -2817,34 +2824,34 @@ FUNCTION i100_i(p_cmd)
         ON ACTION quantifying
            CALL cl_cmdrun("aooi104 ")
 #NO.FUN-B30092 --------------------------add end------------------------
- 
+
         ON ACTION maintain_code_mat_category
            LET l_cmd="aooi305"  #6818
            CALL cl_cmdrun(l_cmd CLIPPED)
- 
+
         ON ACTION maintain_unit_data
            LET l_cmd="aooi101 "
            CALL cl_cmdrun(l_cmd CLIPPED)
- 
+
         ON ACTION maintain_othr_grp_cd1
            LET l_cmd="aooi309 "  #6818
            CALL cl_cmdrun(l_cmd CLIPPED)
- 
+
         ON ACTION maintain_othr_grp_cd2
            LET l_cmd="aooi310 "  #6818
            CALL cl_cmdrun(l_cmd CLIPPED)
- 
+
         ON ACTION maintain_othr_grp_cd3
            LET l_cmd="aooi311 "   #6818
            CALL cl_cmdrun(l_cmd CLIPPED)
- 
+
         ON ACTION maintain_othr_grp_cd4
            LET l_cmd="aooi312 "   #6818
            CALL cl_cmdrun(l_cmd CLIPPED)
- 
+
         ON ACTION maintain_unit_conversion
            CALL cl_cmdrun("aooi102 ")
- 
+
         ON ACTION controlp
             CASE
                WHEN INFIELD(ima13) #規格主件
@@ -3026,7 +3033,7 @@ FUNCTION i100_i(p_cmd)
                   NEXT FIELD ima149
                WHEN INFIELD(ima1491)
                   CALL cl_init_qry_var()
-                  LET g_qryparam.form     = "q_aag02"  
+                  LET g_qryparam.form     = "q_aag02"
                   LET g_qryparam.default1 = g_ima.ima1491
                   LET g_qryparam.arg1     = g_aza.aza82
                   CALL cl_create_qry() RETURNING g_ima.ima1491
@@ -3091,7 +3098,7 @@ FUNCTION i100_i(p_cmd)
                CALL cl_create_qry() RETURNING g_ima.ima929
                DISPLAY g_ima.ima929 TO ima929
 #TQC-B90236--add--end
- 
+
              WHEN INFIELD(imaud02)
              #str-------add by guanyao160708
                 CALL cl_init_qry_var()
@@ -3123,44 +3130,44 @@ FUNCTION i100_i(p_cmd)
             #FUN-A80150---add---start---
              WHEN INFIELD(ima157)
                 CALL cl_init_qry_var()
-                LET g_qryparam.form = "q_gei2"  
+                LET g_qryparam.form = "q_gei2"
                 LET g_qryparam.default1 = g_ima.ima157
-                LET g_qryparam.where = " geh04='5'"  
+                LET g_qryparam.where = " geh04='5'"
                 CALL cl_create_qry() RETURNING g_ima.ima157
                 DISPLAY g_ima.ima157 TO ima157
             #FUN-A80150---add---end---
-#No.FUN-A50011 -----begin-----                    
+#No.FUN-A50011 -----begin-----
 #No.FUN-A50011  -----end-----
              OTHERWISE EXIT CASE
             END CASE
- 
+
         ON ACTION prt_used_item_menu_referencet
            LET g_msg = 'ima01="',g_ima.ima01,'" '
            LET g_msg = "aimr180 '",g_today,"' '",g_user,"' '",g_lang,"' ",
                        " 'Y' ' ' '1' ",
                        " '",g_msg,"' "
            CALL cl_cmdrun(g_msg)
- 
+
         ON ACTION prt_item_used_other_group_code
            LET g_msg = 'ima01="',g_ima.ima01,'" '
            LET g_msg = "aimr182 '",g_today,"' '",g_user,"' '",g_lang,"' ",
                        " 'Y' ' ' '1' ",
                        " '",g_msg,"' "
            CALL cl_cmdrun(g_msg)
- 
+
          ON ACTION CONTROLR
             CALL cl_show_req_fields()
- 
+
          ON ACTION CONTROLG
             CALL cl_cmdask()
- 
+
          ON ACTION update
             IF NOT cl_null(g_ima.ima01) THEN
                LET g_doc.column1 = "ima01"
                LET g_doc.value1 = g_ima.ima01
                CALL cl_fld_doc("ima04")
             END IF
- 
+
          ON ACTION update_item
             CASE
                WHEN INFIELD(ima02)
@@ -3174,21 +3181,21 @@ FUNCTION i100_i(p_cmd)
                   LET g_on_change_021=FALSE
                   CALL cl_show_fld_cont()   #TQC-6C0060
             END CASE
- 
+
          ON ACTION CONTROLF
             CALL cl_set_focus_form(ui.Interface.getRootNode()) RETURNING g_fld_name,g_frm_name #Add on 040913
             CALL cl_fldhelp(g_frm_name,g_fld_name,g_lang) #Add on 040913
- 
+
          ON IDLE g_idle_seconds
             CALL cl_on_idle()
             CONTINUE INPUT
- 
+
           ON ACTION about         #MOD-4C0121
              CALL cl_about()      #MOD-4C0121
- 
+
           ON ACTION help          #MOD-4C0121
              CALL cl_show_help()  #MOD-4C0121
- 
+
     END INPUT
 
     IF g_ima.imaag IS NOT NULL THEN
@@ -3199,8 +3206,8 @@ FUNCTION i100_i(p_cmd)
 
 #TQC-B90236--add--begin-----離開單頭時進行判斷
 #MOD-C30147 ----- add ----- begin
-   IF INT_FLAG THEN 
-      ROLLBACK WORK 
+   IF INT_FLAG THEN
+      ROLLBACK WORK
       RETURN
    ELSE
       COMMIT WORK
@@ -3209,9 +3216,9 @@ FUNCTION i100_i(p_cmd)
    IF g_ima_t.ima928 = 'Y' AND g_ima.ima928 = 'N' THEN
       DELETE FROM imac_file WHERE imac01 = g_ima.ima01
    END IF
-  
+
    IF g_ima.ima929 != g_ima_t.ima929 #OR                              #MOD-C30308 mark
-#     (cl_null(g_ima.ima929) AND NOT cl_null(g_ima_t.ima929))         #MOD-C30308 mark   
+#     (cl_null(g_ima.ima929) AND NOT cl_null(g_ima_t.ima929))         #MOD-C30308 mark
       OR (cl_null(g_ima_t.ima929) AND NOT cl_null(g_ima.ima929)) THEN
       DELETE FROM imac_file WHERE imac01 = g_ima.ima01
       LET g_sql = "SELECT * FROM imac_file WHERE imac01 ='",g_ima.ima929,"'"
@@ -3237,10 +3244,10 @@ FUNCTION i100_i(p_cmd)
       IF l_n = 0 THEN  #不存在料件的特性資料檔時 才可進行特性維護
          CALL i100_feature_maintain()
       END IF
-   END IF   
+   END IF
 #TQC-B90236--add--end
 END FUNCTION
- 
+
 #FUN-A20037 --BEGIN--
 FUNCTION i100_ima251_chk()
  #FUN-B30092 --BEGIN--
@@ -3251,13 +3258,13 @@ FUNCTION i100_ima251_chk()
 
   LET g_errno= ""
  #SELECT gfe01,gfeacti INTO l_gfe01,l_gfeacti FROM gfe_file
- # WHERE gfe01 = g_ima.ima251 
+ # WHERE gfe01 = g_ima.ima251
   SELECT gfo01,gfoacti INTO l_gfo01,l_gfoacti FROM gfo_file
    WHERE gfo01 = g_ima.ima251
- 
-   CASE 
+
+   CASE
     WHEN SQLCA.SQLCODE =100  LET g_errno = 'mfg0019'
-   #WHEN l_gfeacti ='N'      LET g_errno = 'aec-090' 
+   #WHEN l_gfeacti ='N'      LET g_errno = 'aec-090'
    #                         LET l_gfe01 = NULL
    #                         LET l_gfeacti = NULL
     WHEN l_gfoacti ='N'      LET g_errno = 'aec-090'
@@ -3299,15 +3306,15 @@ FUNCTION i100_q()
         CALL i100_fetch('F')                  # 讀出TEMP第一筆並顯示
        #CALL i100_list_fill()   #No.FUN-7C0010    #FUN-C90107 mark
         CALL i100sub_list_fill()   #No.FUN-7C0010    #FUN-C90107 add
-        LET g_bp_flag = 'list'  #No.FUN-7C0010    
+        LET g_bp_flag = 'list'  #No.FUN-7C0010
     END IF
     MESSAGE ''
 END FUNCTION
- 
+
 FUNCTION i100_fetch(p_flima)
     DEFINE
         p_flima          LIKE type_file.chr1    #No.FUN-690026 VARCHAR(1)
- 
+
     CASE p_flima
         WHEN 'N' FETCH NEXT     aimi100_curs INTO g_ima.ima01
         WHEN 'P' FETCH PREVIOUS aimi100_curs INTO g_ima.ima01
@@ -3320,16 +3327,16 @@ FUNCTION i100_fetch(p_flima)
                PROMPT g_msg CLIPPED,': ' FOR g_jump
                   ON IDLE g_idle_seconds
                      CALL cl_on_idle()
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
+
       ON ACTION controlg      #MOD-4C0121
          CALL cl_cmdask()     #MOD-4C0121
- 
+
                END PROMPT
                IF INT_FLAG THEN
                    LET INT_FLAG = 0
@@ -3339,7 +3346,7 @@ FUNCTION i100_fetch(p_flima)
             FETCH ABSOLUTE g_jump aimi100_curs INTO g_ima.ima01
             LET mi_no_ask = FALSE     #No.FUN-6A0061
     END CASE
- 
+
     IF SQLCA.sqlcode THEN
         CALL cl_err(g_ima.ima01,SQLCA.sqlcode,0)
         INITIALIZE g_ima.* TO NULL  #TQC-6B0105
@@ -3352,10 +3359,10 @@ FUNCTION i100_fetch(p_flima)
          WHEN 'L' LET g_curs_index = g_row_count
          WHEN '/' LET g_curs_index = g_jump
       END CASE
- 
+
       CALL cl_navigator_setting(g_curs_index, g_row_count)
     END IF
- 
+
     SELECT * INTO g_ima.* FROM ima_file            # 重讀DB,因TEMP有不被更新特性
        WHERE ima01 = g_ima.ima01
     IF SQLCA.sqlcode THEN
@@ -3367,11 +3374,11 @@ FUNCTION i100_fetch(p_flima)
     END IF
 END FUNCTION
 
-#FUN-C90107 mark str----------------- 
+#FUN-C90107 mark str-----------------
 #FUNCTION i100_list_fill()
 #  DEFINE l_ima01         LIKE ima_file.ima01
 #  DEFINE l_i             LIKE type_file.num10
-# 
+#
 #    CALL g_ima_l.clear()
 #    LET l_i = 1
 #    FOREACH aimi100_list_cur INTO l_ima01
@@ -3397,16 +3404,16 @@ END FUNCTION
 #       BEFORE DISPLAY
 #          EXIT DISPLAY
 #    END DISPLAY
-# 
+#
 #END FUNCTION
- 
+
 FUNCTION i100_show()
    DEFINE l_avl_stk_mpsmrp  LIKE type_file.num15_3,     #No.FUN-A20044
           l_unavl_stk       LIKE type_file.num15_3,     #No.FUN-A20044
           l_avl_stk         LIKE type_file.num15_3,      #No.FUN-A20044
           l_agd031          LIKE agd_file.agd03,
           l_agd032          LIKE agd_file.agd03
- 
+
    SELECT ima93 INTO g_ima.ima93 FROM ima_file
     WHERE ima01=g_ima.ima01
    LET g_ima_t.* = g_ima.*
@@ -3414,7 +3421,7 @@ FUNCTION i100_show()
 #  LET g_d2=g_ima.ima262-g_ima.ima26      #FUN-A20044
    CALL s_getstock(g_ima.ima01,g_plant) RETURNING l_avl_stk_mpsmrp, l_unavl_stk,l_avl_stk  #FUN-A20044
    LET g_d2 = l_avl_stk - l_avl_stk_mpsmrp                                                 #FUN-A20044
- 
+
    IF g_ima.ima151="Y" THEN
      CALL cl_set_comp_visible("imaag",TRUE)
    ELSE
@@ -3433,11 +3440,11 @@ FUNCTION i100_show()
                    g_ima.ima39  ,g_ima.ima391 ,g_ima.ima163,g_ima.ima1631,g_ima.ima149,g_ima.ima1491,g_ima.ima13  , #FUN-960141 #FUN-C80094 add-ima163,ima1631
                    g_ima.ima164 ,g_ima.ima1641,              #FUN-D60083 add
                    g_ima.ima04  ,g_ima.ima14  ,g_ima.ima903 ,
-                   g_ima.ima905 ,g_ima.ima24  ,g_ima.ima911 ,                   
+                   g_ima.ima905 ,g_ima.ima24  ,g_ima.ima911 ,
                    g_ima.ima70  ,g_ima.ima107 ,g_ima.ima147 ,
                    g_ima.ima15  ,g_ima.ima910 ,g_ima.ima105 ,
                    g_ima.ima07  ,g_ima.ima16  ,g_ima.ima109 ,
-#                  g_ima.ima902 ,g_ima.ima37  ,g_ima.ima51  ,               #No.FUN-8C0131 
+#                  g_ima.ima902 ,g_ima.ima37  ,g_ima.ima51  ,               #No.FUN-8C0131
                    g_ima.ima902 ,g_ima.ima9021,g_ima.ima37  ,g_ima.ima51  , #No.FUN-8C0131
                    g_ima.ima52  ,g_ima.ima140 ,g_ima.ima09  ,
                    g_ima.ima10  ,g_ima.ima11  ,g_ima.ima12  ,
@@ -3463,7 +3470,7 @@ FUNCTION i100_show()
                    g_ima.imaud10,g_ima.imaud11,g_ima.imaud12,
                    g_ima.imaud13,g_ima.imaud14,g_ima.imaud15,
                    g_ima.ima1001,g_ima.ima1002,g_ima.ima1012,
-                  #g_ima.ima1013,g_ima.ima1015,g_ima.ima1014,  #CHI-CA0073  mark 
+                  #g_ima.ima1013,g_ima.ima1015,g_ima.ima1014,  #CHI-CA0073  mark
                    g_ima.ima1013,g_ima.ima1014,  #CHI-CA0073  add
                    g_ima.ima1016,g_ima.ima916                 #No.FUN-7C0010
                    ,g_ima.ima151,                              #No.FUN-810016
@@ -3480,10 +3487,11 @@ FUNCTION i100_show()
                    ,g_ima.imaud36 # darcy:2025/09/03 add
                    ,g_ima.imaud37 # darcy:2025/11/24 add
                    ,g_ima.imaud38 # darcy:2025/12/10 add
+                   ,g_ima.imaud39 # darcy add 特殊材料
 #No.FUN-A50011 -----begin-----
 #No.FUN-A50011 -----end-----
    #darcy:2022/11/18 add s---
-   # darcy:2025/04/23 mod 
+   # darcy:2025/04/23 mod
    # 修复单位错误
    call s_umfchk(g_ima.ima01,'SET','PCS') returning g_success,g_smd.smd04
    display g_smd.smd04 to smd04
@@ -3497,17 +3505,17 @@ FUNCTION i100_show()
 
 
    CALL i100_show_pic() #FUN-690060 add
- 
+
    IF NOT cl_is_multi_feature_manage(g_ima.ima01) THEN
       CALL cl_set_act_visible("add_multi_attr_sub",FALSE)
    ELSE
       CALL cl_set_act_visible("add_multi_attr_sub",TRUE)
    END IF
- 
+
    IF g_sma.sma120 != 'Y' THEN
       CALL cl_set_comp_visible("imaag",FALSE)
    END IF
- 
+
    LET g_doc.column1 = "ima01"
    LET g_doc.value1 = g_ima.ima01
    CALL cl_get_fld_doc("ima04")
@@ -3516,13 +3524,13 @@ FUNCTION i100_show()
       FROM gen_file
      WHERE gen01=g_ima.ima23
     DISPLAY g_gen02 TO FORMONLY.gen02
- 
+
    CALL cl_show_fld_cont()                   #No.FUN-550037 hmf
 END FUNCTION
- 
+
 FUNCTION i100_u()
     DEFINE l_imzacti  LIKE imz_file.imzacti
-    DEFINE l_ima      RECORD LIKE ima_file.*          #FUN-B80032 
+    DEFINE l_ima      RECORD LIKE ima_file.*          #FUN-B80032
     DEFINE l_ima_t    RECORD LIKE ima_file.*          #TQC-C40219
     IF s_shut(0) THEN RETURN END IF
     IF g_ima.ima01 IS NULL THEN
@@ -3553,12 +3561,12 @@ FUNCTION i100_u()
     IF g_action_choice <> "reproduce" THEN    #FUN-680010
        BEGIN WORK
     END IF
- 
+
     IF NOT i100_u_updchk() THEN  #carrier check?
        ROLLBACK WORK     #FUN-680010
        RETURN
     END IF
- 
+
     CALL i100_show()                          # 顯示最新資料
     WHILE TRUE
        CALL cl_set_comp_visible("imaag",g_ima.ima151)  #No.FUN-810016
@@ -3567,9 +3575,9 @@ FUNCTION i100_u()
 #&ifdef SLK
 #  #TQC-C30186--add--begin--
 #   IF g_ima.ima151 = 'N' AND g_ima.imaag = '@CHILD' THEN
-#      CALL i100_i_ima08("u")  
+#      CALL i100_i_ima08("u")
 #   ELSE
-#      CALL i100_i("u")  
+#      CALL i100_i("u")
 #   END IF
 #  #TQC-C30186--add--end--
 #&else
@@ -3580,7 +3588,7 @@ FUNCTION i100_u()
        IF INT_FLAG THEN
            LET INT_FLAG = 0
            LET g_ima.* = l_ima_t.*          #TQC-C40219
-          #LET g_ima.*=g_ima_t.*     #TQC-C40155 
+          #LET g_ima.*=g_ima_t.*     #TQC-C40155
           #LET g_ima.*=g_ima_o.*     #TQC-C40155  #TQC-C40219
            CALL i100_show()
            CALL cl_err('',9001,0)
@@ -3594,17 +3602,17 @@ FUNCTION i100_u()
         IF l_ima.ima02 <> g_ima.ima02 OR l_ima.ima021 <> g_ima.ima021
            OR l_ima.ima25 <> g_ima.ima25 OR l_ima.ima45 <> g_ima.ima45
            OR l_ima.ima131 <> g_ima.ima131 OR l_ima.ima151 <> g_ima.ima151
-           OR l_ima.ima154 <> g_ima.ima154 OR l_ima.ima1004 <> g_ima.ima1004 
+           OR l_ima.ima154 <> g_ima.ima154 OR l_ima.ima1004 <> g_ima.ima1004
            OR l_ima.ima1006 <> g_ima.ima1006 THEN
            IF g_aza.aza88 = 'Y' THEN
               UPDATE rte_file SET rtepos = '2' WHERE rte03 = g_ima.ima01 AND rtepos = '3'
            END IF
-        END IF 
-      #FUN-B80032---------END-------       
+        END IF
+      #FUN-B80032---------END-------
       #TQC-C70189--add--str--
-       IF cl_null(g_ima.ima571) OR g_ima01_t1 = g_ima.ima571 THEN 
+       IF cl_null(g_ima.ima571) OR g_ima01_t1 = g_ima.ima571 THEN
           LET g_ima.ima571 = g_ima.ima01
-       END IF        
+       END IF
       #TQC-C70189--add--str--
        IF NOT i100_u_upd() THEN
           ROLLBACK WORK       #FUN-680010
@@ -3618,7 +3626,7 @@ FUNCTION i100_u()
     END WHILE
     CLOSE i100_cl
 END FUNCTION
- 
+
 #FUN-6C0006 從_r()中抽出,成功刪除後的後續處理
 FUNCTION i100_AFTER_DEL()
    OPEN aimi100_count
@@ -3626,9 +3634,9 @@ FUNCTION i100_AFTER_DEL()
    DISPLAY g_row_count TO FORMONLY.cnt
    OPEN aimi100_curs
    #MOD-C30105--mark--str--
-   #   IF g_curs_index = g_row_count + 1 THEN   
+   #   IF g_curs_index = g_row_count + 1 THEN
    #      LET g_jump = g_row_count
-   #      CALL i100_fetch('L')  
+   #      CALL i100_fetch('L')
    #   ELSE
    #      LET g_jump = g_curs_index
    #      LET mi_no_ask = TRUE     #No.FUN-6A0061
@@ -3637,32 +3645,32 @@ FUNCTION i100_AFTER_DEL()
    #MOD-C30105--mark--end--
    #MOD-C30105--add--str--
    #IF g_curs_index > 1 THEN   #TQC-C40044 mark
-   IF g_row_count >= 1 THEN    #TQC-C40044 add   
-      IF g_curs_index = g_row_count + 1 THEN   
+   IF g_row_count >= 1 THEN    #TQC-C40044 add
+      IF g_curs_index = g_row_count + 1 THEN
          LET g_jump = g_row_count
       ELSE
          LET g_jump = g_curs_index
       END IF
-      LET mi_no_ask = TRUE     
+      LET mi_no_ask = TRUE
       CALL i100_fetch('/')
-   ELSE 
-      INITIALIZE g_ima.* TO NULL #TQC-C40231 add 
-   END IF                 
+   ELSE
+      INITIALIZE g_ima.* TO NULL #TQC-C40231 add
+   END IF
    #MOD-C30105--add--end--
 END FUNCTION
- 
+
 FUNCTION i100_copy()
    DEFINE l_flag LIKE type_file.num5
    DEFINE l_ima   RECORD LIKE ima_file.*
    DEFINE l_newno,l_oldno LIKE ima_file.ima01
    DEFINE l_ima02         LIKE ima_file.ima02    #MOD-B40111 add
- 
+
    CALL i100_copy_input() RETURNING l_flag,l_newno,l_ima02    #MOD-B40111 add l_ima02
    IF l_flag THEN
       CALL i100_copy_default(l_newno,l_ima02) RETURNING l_ima.*    #MOD-B40111 add l_ima02
       LET l_ima.ima1001 = NULL    #No.FUN-640010
       LET l_ima.ima1002 = NULL    #No.FUN-640010
-      LET l_ima.ima120 = '1'      #No.FUN-A90049      
+      LET l_ima.ima120 = '1'      #No.FUN-A90049
       IF i100_copy_insert(l_ima.*,l_newno) THEN
          LET l_oldno = g_ima.ima01
          SELECT ima_file.* INTO g_ima.* FROM ima_file
@@ -3672,27 +3680,27 @@ FUNCTION i100_copy()
       END IF
    END IF
 END FUNCTION
- 
+
 FUNCTION i100_init() #初始環境設定
- 
+
    INITIALIZE g_ima.* TO NULL
    INITIALIZE g_ima_t.* TO NULL
    INITIALIZE g_ima_o.* TO NULL
    LET g_ima01_t1 = NULL  #TQC-C70189 add
    LET g_db_type=cl_db_get_database_type()
- 
+
    IF g_aza.aza50='N' THEN
       CALL cl_set_comp_visible("page07",FALSE)
-   ELSE                                                                                      
+   ELSE
       CALL cl_set_comp_visible("page07",TRUE)
    END IF
- 
+
    CALL cl_set_comp_visible("ima391,ima1491",g_aza.aza63='Y')  #FUN-680034 #FUN-960141
- 
+
    CALL cl_set_comp_visible("ima910",g_sma.sma118='Y')
- 
+
    CALL cl_set_comp_visible("imaag",g_sma.sma120 = 'Y')
- 
+
    CALL cl_set_comp_visible("ima906",g_sma.sma115 = 'Y')
    CALL cl_set_comp_visible("group043",g_sma.sma115 = 'Y')
    CALL cl_set_comp_visible("ima907",g_sma.sma115 = 'Y')
@@ -3703,19 +3711,20 @@ FUNCTION i100_init() #初始環境設定
    call i100_set_imaud06()  #darcy:2023/06/08 add
    call i100_set_imaud36()  #darcy:2025/09/03 add
    call i100_set_imaud37()  # darcy:2025/11/24 add
- 
+   call i100_set_imaud39()  # darcy add 特殊材料
+
    SELECT zx07,zx09 INTO l_zx07,l_zx09 FROM zx_file
     WHERE zx01 = g_user
    IF SQLCA.sqlcode THEN
       LET l_zx07 = 'N'
    END IF
- 
+
     IF g_aza.aza60 = 'N' THEN #不使用客戶申請作業時,才可按確認/取消確認/新增
         CALL cl_set_act_visible("confirm,notconfirm,insert",TRUE)
     ELSE
         CALL cl_set_act_visible("confirm,notconfirm,insert",FALSE)
     END IF
-   
+
    #FUN-A80150---add---start---
     IF g_sma.sma1421 = 'Y' THEN
        CALL cl_set_comp_visible("machine_management",TRUE)
@@ -3724,7 +3733,7 @@ FUNCTION i100_init() #初始環境設定
     END IF
    #FUN-A80150---add---end---
 END FUNCTION
- 
+
 FUNCTION i100_set_perlang()
    IF g_sma.sma115='Y' THEN
       IF g_sma.sma122='1' THEN
@@ -3737,9 +3746,9 @@ FUNCTION i100_set_perlang()
       END IF
    END IF
 END FUNCTION
- 
+
 FUNCTION i100_default()
- 
+
    LET g_ima.ima07 = 'A'
    LET g_ima.ima08 = 'P'
    LET g_ima.ima108 = 'N'
@@ -3754,7 +3763,7 @@ FUNCTION i100_default()
    LET g_ima.ima10 =' '
    LET g_ima.ima11 =' '
    #LET g_ima.ima12 =' ' #CHI-CA0056
-   LET g_ima.ima12 =''  #CHI-CA0056 
+   LET g_ima.ima12 =''  #CHI-CA0056
    LET g_ima.ima23 = ' '
    LET g_ima.ima918= 'N'
    LET g_ima.ima919= 'N'
@@ -3882,7 +3891,7 @@ FUNCTION i100_default()
    LET g_ima.ima141 = '0'
    LET g_ima.ima1010 = '0' #0:開立        #FUN-690060
    #單位控制部分
- 
+
    IF g_sma.sma115 = 'Y' THEN
       IF g_sma.sma122 MATCHES '[13]' THEN
          LET g_ima.ima906 = '2'
@@ -3922,12 +3931,12 @@ FUNCTION i100_default()
    let g_ima.imaud38 = ''     # darcy:2025/12/10 add
    #LET g_ima.imaud02 = 'N'   #add by guanyao160614
 END FUNCTION
- 
- 
+
+
 FUNCTION i100_set_entry(p_cmd)
    DEFINE p_cmd   LIKE type_file.chr1    #No.FUN-690026 VARCHAR(1)
    DEFINE l_cnt     LIKE type_file.num5    #FUN-C90075
-   
+
    IF p_cmd = 'a' AND ( NOT g_before_input_done ) THEN        #No.FUN-550021
       CALL cl_set_comp_entry("ima01,ima25,ima910,ima55",TRUE) #FUN-550014 add ima910  BUG-530699 #MOD-560085 add ima55
       CALL cl_set_comp_entry('ima9021',TRUE)                  #FUN-8C0131
@@ -3954,12 +3963,12 @@ FUNCTION i100_set_entry(p_cmd)
           CALL cl_set_comp_entry("ima930,ima932,ima934",FALSE) #DEV-D30026 add
       END IF
    END IF
- 
+
   #DEV-D30026---add---str---
-  #IF NOT cl_null(g_aza.aza131) AND g_aza.aza131 = 'Y' THEN #是否與M-Barcode整合                        #DEV-D40019 mark      
-   IF g_aza.aza131 = 'Y' AND g_ima.ima930 = 'Y' THEN        #是否與M-Barcode整合且有勾選使用條碼否欄位  #DEV-D40019 add      
+  #IF NOT cl_null(g_aza.aza131) AND g_aza.aza131 = 'Y' THEN #是否與M-Barcode整合                        #DEV-D40019 mark
+   IF g_aza.aza131 = 'Y' AND g_ima.ima930 = 'Y' THEN        #是否與M-Barcode整合且有勾選使用條碼否欄位  #DEV-D40019 add
      #包號管理否(ima931)='N'且條碼產生時機點(ima932) MATCHES '[ABCDEFGIKL]' 時,才能維護批/序號相關欄位  #DEV-D40010 add FGKL #DEV-D40015 add I
-      IF g_ima.ima931 = 'N' AND g_ima.ima932 MATCHES '[ABCDEFGIKL]' THEN            #DEV-D40010 add FGKL #DEV-D40015 add I                  
+      IF g_ima.ima931 = 'N' AND g_ima.ima932 MATCHES '[ABCDEFGIKL]' THEN            #DEV-D40010 add FGKL #DEV-D40015 add I
           CALL cl_set_comp_entry("ima918,ima919,ima920",TRUE)         #批號相關
           CALL cl_set_comp_entry("ima921,ima922,ima923,ima924",TRUE)  #序號相關
       ELSE
@@ -3984,26 +3993,26 @@ FUNCTION i100_set_entry(p_cmd)
              LET g_ima.ima931 = 'Y'
           ELSE
              LET g_ima.ima931 = 'N'
-          END IF        
+          END IF
           LET g_ima.ima933 = ''
           CALL cl_set_comp_entry("ima931,ima933",FALSE) #包號相關
           DISPLAY BY NAME g_ima.ima931,g_ima.ima933
       END IF
-   END IF 
+   END IF
   #DEV-D30026---add---end---
 
    IF INFIELD(ima08) OR (NOT g_before_input_done) THEN
       CALL cl_set_comp_entry("ima13,ima903",TRUE)
    END IF
- 
+
    IF (NOT g_before_input_done) THEN  #單位控制方式/計價單位 #FUN-540025
       CALL cl_set_comp_entry("ima906,ima907,ima908",TRUE)
    END IF
- 
+
    IF INFIELD(ima906) OR (NOT g_before_input_done) THEN  #第二單位 #FUN-540025
       CALL cl_set_comp_entry("ima907",TRUE)
    END IF
- 
+
    IF g_sma.sma95 = "Y" THEN  #FUN-C80030 add
       CALL cl_set_comp_entry("ima918,ima919,ima920,ima921",TRUE)   #No.MOD-840174
       CALL cl_set_comp_entry("ima922,ima923,ima924,ima925",TRUE)   #No.MOD-840174
@@ -4011,14 +4020,14 @@ FUNCTION i100_set_entry(p_cmd)
    #MOD-C30091---begin
    #CALL cl_set_comp_entry("ima922,ima923,ima924,ima925",TRUE)  #No.MOD-840174 ---ADD
    #CALL cl_set_comp_entry("ima922,ima923,ima924",TRUE)         #No.FUN-C80030 mark
-   IF g_ima.ima918 = 'Y' OR g_ima.ima921 = 'Y' THEN 
-      CALL cl_set_comp_entry("ima925",TRUE)  
-   ELSE 
-      CALL cl_set_comp_entry("ima925",FALSE) 
-   END IF 
+   IF g_ima.ima918 = 'Y' OR g_ima.ima921 = 'Y' THEN
+      CALL cl_set_comp_entry("ima925",TRUE)
+   ELSE
+      CALL cl_set_comp_entry("ima925",FALSE)
+   END IF
    #MOD-C30091---end
    CALL cl_set_comp_entry('ima151',TRUE)     #No.FUN-830121
- 
+
   #FUN-A80150---add---start---
    IF g_ima.ima156 = 'Y' THEN
       CALL cl_set_comp_entry("ima157",TRUE)
@@ -4044,10 +4053,10 @@ FUNCTION i100_set_entry(p_cmd)
 
   IF l_cnt = 0 AND g_ima.ima916 = g_plant THEN
      CALL cl_set_comp_entry("ima25",TRUE)
-  END IF  
+  END IF
   #FUN-C90075---end
 END FUNCTION
- 
+
 FUNCTION i100_set_no_entry(p_cmd)
    DEFINE p_cmd     LIKE type_file.chr1    #No.FUN-690026 VARCHAR(1)
    DEFINE li_count  LIKE type_file.num5    #2005/05/11 FUN-550021 By Lifeng  #No.FUN-690026 SMALLINT
@@ -4058,13 +4067,13 @@ FUNCTION i100_set_no_entry(p_cmd)
    DEFINE l_ima151  LIKE ima_file.ima151   #MOD-C30270 add
    DEFINE l_imaag   LIKE ima_file.imaag    #MOD-C30270 add
    DEFINE l_cnt     LIKE type_file.num5    #FUN-C90075
- 
+
    IF p_cmd = 'u' AND g_chkey = 'N' AND ( NOT g_before_input_done ) THEN
       #CALL cl_set_comp_entry("ima01,ima940,ima941,ima151,imaag",FALSE)  #MOD-BB0157
        CALL cl_set_comp_entry("ima01",FALSE)  #MOD-BB0157
    END IF
    IF p_cmd = 'u' AND g_chkey = 'Y' AND ( NOT g_before_input_done ) THEN
-      CALL cl_set_comp_entry("ima9021",TRUE) 
+      CALL cl_set_comp_entry("ima9021",TRUE)
       IF NOT cl_null(g_aza.aza131) AND g_aza.aza131 = 'Y' THEN #是否與M-Barcode整合 #DEV-D30026 add if 判斷
           #DEV-D30026--add---begin---------------------
           IF g_ima.ima930 = 'Y' THEN
@@ -4087,10 +4096,10 @@ FUNCTION i100_set_no_entry(p_cmd)
       END IF
    END IF
   #DEV-D30026 add str-----------------------
-  #IF NOT cl_null(g_aza.aza131) AND g_aza.aza131 = 'Y' THEN #是否與M-Barcode整合     
-   IF g_aza.aza131 = 'Y' AND g_ima.ima930 = 'Y' THEN #是否與M-Barcode整合     
-     #包號管理否(ima931)='N'且條碼產生時機點(ima932) MATCHES '[ABCDEFGIKL]' 時,才能維護批/序號相關欄位  #DEV-D40010 add FGKL 
-      IF g_ima.ima931 = 'N' AND g_ima.ima932 MATCHES '[ABCDEFGIKL]' THEN          #DEV-D40010 add FGKL                      
+  #IF NOT cl_null(g_aza.aza131) AND g_aza.aza131 = 'Y' THEN #是否與M-Barcode整合
+   IF g_aza.aza131 = 'Y' AND g_ima.ima930 = 'Y' THEN #是否與M-Barcode整合
+     #包號管理否(ima931)='N'且條碼產生時機點(ima932) MATCHES '[ABCDEFGIKL]' 時,才能維護批/序號相關欄位  #DEV-D40010 add FGKL
+      IF g_ima.ima931 = 'N' AND g_ima.ima932 MATCHES '[ABCDEFGIKL]' THEN          #DEV-D40010 add FGKL
          CALL cl_set_comp_entry("ima918,ima919,ima920",TRUE)         #批號相關
          CALL cl_set_comp_entry("ima921,ima922,ima923,ima924",TRUE)  #序號相關
       ELSE
@@ -4115,36 +4124,36 @@ FUNCTION i100_set_no_entry(p_cmd)
             LET g_ima.ima931 = 'Y'
          ELSE
             LET g_ima.ima931 = 'N'
-         END IF    
+         END IF
          CALL cl_set_comp_entry("ima931,ima933",FALSE)#包號相關
          LET g_ima.ima933 = ''
          DISPLAY BY NAME g_ima.ima931,g_ima.ima933
       END IF
-   END IF         
+   END IF
   #DEV-D30026 add end-----------------------
 #TQC-B50017 --begin--
-   IF p_cmd = 'u' THEN 
-      IF g_ima.ima01[1,4] ='MISC' THEN 
-         CALL cl_set_comp_entry("ima24",FALSE) 
-      ELSE 
+   IF p_cmd = 'u' THEN
+      IF g_ima.ima01[1,4] ='MISC' THEN
+         CALL cl_set_comp_entry("ima24",FALSE)
+      ELSE
       	  CALL cl_set_comp_entry("ima24",TRUE)
-      END IF  	            
-   END IF 
+      END IF
+   END IF
 #TQC-B50017 --end--
-   
+
    #當參數設定使用料件申請作業時,修改時不可更改料號/品名/規格
    IF g_aza.aza60 = 'Y' AND p_cmd = 'u' AND ( NOT g_before_input_done ) THEN
        CALL cl_set_comp_entry("ima01,ima02,ima021",FALSE)
    END IF
- 
+
    IF p_cmd<>'a' THEN #MOD-570385
       CALL s_chkitmdel(g_ima.ima01) RETURNING l_errno
       CALL cl_set_comp_entry("ima25,ima906",cl_null(l_errno))   #No.FUN-610001  #有errmsg表示庫存單位不可修改狀態
-      IF g_ima.imaag ='@CHILD' THEN 
+      IF g_ima.imaag ='@CHILD' THEN
          CALL cl_set_comp_entry("ima151",FALSE)
-      END IF    
+      END IF
    END IF
- 
+
    IF INFIELD(ima08) OR (NOT g_before_input_done) THEN
       IF g_ima.ima08 != 'T' THEN
          CALL cl_set_comp_entry("ima13",FALSE)
@@ -4153,12 +4162,12 @@ FUNCTION i100_set_no_entry(p_cmd)
          CALL cl_set_comp_entry("ima903",FALSE)
       END IF
    END IF
- 
+
    IF NOT g_before_input_done THEN
       IF g_sma.sma118 !='Y' THEN
          CALL cl_set_comp_entry("ima910",FALSE)
       END IF
- 
+
       IF g_sma.sma115 = 'N' THEN
          LET g_ima.ima906 = '1'
          LET g_ima.ima907 = NULL
@@ -4170,7 +4179,7 @@ FUNCTION i100_set_no_entry(p_cmd)
             DISPLAY BY NAME g_ima.ima907
          END IF
       END IF
- 
+
       IF g_sma.sma116 = '0' THEN     #No.FUN-610076
          LET g_ima.ima908 = NULL
          DISPLAY BY NAME g_ima.ima908
@@ -4182,7 +4191,7 @@ FUNCTION i100_set_no_entry(p_cmd)
          END IF
       END IF
    END IF
- 
+
    IF (p_cmd = 'u' )AND( g_sma.sma120 = 'Y')  THEN
       IF g_ima.imaag = '@CHILD' THEN
          CALL cl_set_comp_visible("imaag",FALSE)
@@ -4191,9 +4200,9 @@ FUNCTION i100_set_no_entry(p_cmd)
          LET lc_sql = "SELECT COUNT(*) FROM ima_file WHERE imaag = '@CHILD' ",
                       "AND imaag1 = '",g_ima.imaag,"' AND ima01 LIKE '",
                       g_ima.ima01,"%' "
- 
+
          DECLARE lcurs_qry_ima CURSOR FROM lc_sql
- 
+
          OPEN lcurs_qry_ima
          FETCH lcurs_qry_ima INTO li_count
          IF li_count > 0 THEN
@@ -4205,13 +4214,13 @@ FUNCTION i100_set_no_entry(p_cmd)
          CLOSE lcurs_qry_ima
       END IF
    END IF
- 
+
    IF g_ima.ima906 = '1' THEN
       LET g_ima.ima907 = NULL
       DISPLAY BY NAME g_ima.ima907
       CALL cl_set_comp_entry("ima907",FALSE)
    END IF
- 
+
    #CHI-B80043 --- modify --- start ---
    LET l_n = 0
   #MOD-C30066 str -----
@@ -4247,20 +4256,20 @@ FUNCTION i100_set_no_entry(p_cmd)
          CALL cl_set_comp_entry("ima918,ima919,ima920,ima921",FALSE)
          CALL cl_set_comp_entry("ima922,ima923,ima924,ima925",FALSE)
       END IF
-   END IF                                            #FUN-C80030 add 
-    
+   END IF                                            #FUN-C80030 add
+
    IF g_ima.ima918 = 'N' THEN
       CALL cl_set_comp_entry("ima919",FALSE)
    ELSE                                      #MOD-A50099 add
       CALL cl_set_comp_entry("ima919",TRUE)  #MOD-A50099 add
    END IF
- 
+
    IF g_ima.ima919 = 'N' THEN
       CALL cl_set_comp_entry("ima920",FALSE)
    ELSE                                      #MOD-A50099 add
       CALL cl_set_comp_entry("ima920",TRUE)  #MOD-A50099 add
    END IF
- 
+
    IF g_ima.ima921 = 'N' THEN
       CALL cl_set_comp_entry("ima922,ima924",FALSE)
    ELSE                                             #MOD-A50099 add
@@ -4271,13 +4280,13 @@ FUNCTION i100_set_no_entry(p_cmd)
       END IF
       #DEV-D30033--end
    END IF
- 
+
    IF g_ima.ima922 = 'N' THEN
       CALL cl_set_comp_entry("ima923",FALSE)
    ELSE                                      #MOD-A50099 add
       CALL cl_set_comp_entry("ima923",TRUE)  #MOD-A50099 add
    END IF
- 
+
    IF g_ima.ima918 = 'N' AND g_ima.ima921 = 'N' THEN
       CALL cl_set_comp_entry("ima925",FALSE)
    ELSE                                      #MOD-A50099 add
@@ -4307,7 +4316,7 @@ FUNCTION i100_set_no_entry(p_cmd)
       LET g_ima.ima929 = NULL
       DISPLAY BY NAME g_ima.ima929
    END IF
-      
+
 #TQC-B90236--add--end
 
 #MOD-C30270--add--begin--
@@ -4325,43 +4334,43 @@ FUNCTION i100_set_no_entry(p_cmd)
 
   IF l_cnt > 0 THEN
      CALL cl_set_comp_entry("ima25",FALSE)
-  END IF 
-                     
+  END IF
+
   IF g_ima.ima916 <> g_plant THEN
      CALL cl_set_comp_entry("ima25",FALSE)
-  END IF 
+  END IF
   #FUN-C90075---end
 END FUNCTION
- 
+
 FUNCTION i100_set_required()
- 
+
    IF g_sma.sma115= 'Y' THEN
       CALL cl_set_comp_required("ima907",TRUE)
    END IF
- 
+
    IF g_sma.sma116 MATCHES '[123]' THEN    #No.FUN-610076
       CALL cl_set_comp_required("ima908",TRUE)
    END IF
- 
+
    IF g_ima.ima919 = "Y" THEN
       CALL cl_set_comp_required("ima920",TRUE)
    END IF
- 
+
    IF g_ima.ima922 = "Y" THEN
       CALL cl_set_comp_required("ima923",TRUE)
    END IF
- 
+
 END FUNCTION
- 
+
 FUNCTION i100_set_no_required()
- 
+
    CALL cl_set_comp_required("ima907",FALSE)
    CALL cl_set_comp_required("ima908",FALSE)
- 
+
    CALL cl_set_comp_required("ima920,ima923",FALSE) #No.MOD-840257
 
    call cl_set_comp_required("imaud19",false) #darcy:2023/04/12 add
- 
+
 END FUNCTION
 
 #TQC-B90236------------add----------------begin
@@ -4371,7 +4380,7 @@ DEFINE  l_imaacti  LIKE ima_file.imaacti
    SELECT imaacti INTO l_imaacti FROM ima_file
     WHERE ima928 = 'Y'
       AND ima01 = g_ima.ima929
-   CASE 
+   CASE
       WHEN SQLCA.sqlcode = 100
          LET g_errno = 'aim1119'
       WHEN l_imaacti <> 'Y'
@@ -4384,13 +4393,13 @@ DEFINE  l_imaacti  LIKE ima_file.imaacti
    END IF
 END  FUNCTION
 #TQC-B90236------------add----------------end
- 
+
 FUNCTION i100_ima06(p_def) #MOD-490474
   DEFINE
      p_def          LIKE type_file.chr1,    #MOD-490474  #No.FUN-690026 VARCHAR(1)
      l_msg          LIKE ze_file.ze03,      #No.FUN-690026 VARCHAR(57)
      l_imzacti      LIKE imz_file.imzacti
- 
+
    LET g_errno = ' '
    LET g_ans=' ' #FUN-5A0027 l_ans->g_ans
     SELECT imzacti INTO l_imzacti
@@ -4411,7 +4420,7 @@ FUNCTION i100_ima06(p_def) #MOD-490474
     END IF
   END IF
 END FUNCTION
- 
+
 #將imz_file相關欄位套用到ima_file,由i100_chk_ima06搬過來
 FUNCTION i100_set_rel_ima06()
   DEFINE
@@ -4421,7 +4430,7 @@ FUNCTION i100_set_rel_ima06()
      l_imagrup      LIKE ima_file.imagrup,
      l_imamodu      LIKE ima_file.imamodu,
      l_imadate      LIKE ima_file.imadate
- 
+
     SELECT imz01,imz02,imz03 ,imz04,
            imz07,imz08,imz09,imz10,
            imz11,imz12,imz14,imz15,
@@ -4454,10 +4463,10 @@ FUNCTION i100_set_rel_ima06()
            imz136,imz137,imz391,imz1321,
            imz72,imz153,imz601,  #FUN-910053   #MOD-9C0032 add imz601
            imz926,        #FUN-930108 add imz926
-           imz156,imz157,imz158,               #FUN-A80150 add 
+           imz156,imz157,imz158,               #FUN-A80150 add
            imz022,imz251,imz159,                #FUN-B30092 add  #FUN-B50096 add ima159
            imz163,imz1631                       #FUN-C80094
- 
+
       INTO g_ima.ima06,l_imz02,g_ima.ima03,g_ima.ima04,
            g_ima.ima07,g_ima.ima08,g_ima.ima09,g_ima.ima10,
            g_ima.ima11,g_ima.ima12,g_ima.ima14,g_ima.ima15,
@@ -4486,9 +4495,9 @@ FUNCTION i100_set_rel_ima06()
            l_imaacti,l_imauser,l_imagrup,l_imamodu,l_imadate,
            g_ima.ima906,g_ima.ima907,g_ima.ima908,g_ima.ima909,  #FUN-540025
            g_ima.ima911,                                         #FUN-610080 加ima911
-           g_ima.ima918,g_ima.ima919,g_ima.ima920,               #FUN-A10004  
-           g_ima.ima921,g_ima.ima922,g_ima.ima923,               #FUN-A10004  
-           g_ima.ima924,g_ima.ima925,                            #FUN-A10004 
+           g_ima.ima918,g_ima.ima919,g_ima.ima920,               #FUN-A10004
+           g_ima.ima921,g_ima.ima922,g_ima.ima923,               #FUN-A10004
+           g_ima.ima924,g_ima.ima925,                            #FUN-A10004
            g_ima.ima136,g_ima.ima137,g_ima.ima391,g_ima.ima1321, #FUN-650004   #FUN-680034
            g_ima.ima915,g_ima.ima153,g_ima.ima601,               #FUN-710060 add #FUN-910053 add ima153 #MOD-9C0032 add ima601
            g_ima.ima926,                                         #FUN-930108 add ima926
@@ -4503,13 +4512,13 @@ FUNCTION i100_set_rel_ima06()
    IF g_sma.sma95 = "N" THEN
       LET g_ima.ima918 = "N"
       LET g_ima.ima919 = "N"
-      LET g_ima.ima920 = NULL 
+      LET g_ima.ima920 = NULL
       LET g_ima.ima921 = "N"
       LET g_ima.ima922 = "N"
-      LET g_ima.ima923 = NULL 
+      LET g_ima.ima923 = NULL
       LET g_ima.ima924 = "N"
-      LET g_ima.ima925 = "1" 
-   END IF 
+      LET g_ima.ima925 = "1"
+   END IF
    #FUN-C80030--add--end--
    IF g_ima.ima01[1,4]='MISC' THEN #NO:6808(養生)
       LET g_ima.ima08='Z'
@@ -4517,15 +4526,15 @@ FUNCTION i100_set_rel_ima06()
        #MOD-C30091---begin
        IF cl_null(g_ima.ima159) THEN
           LET g_ima.ima159 = '3'
-       END IF 
+       END IF
        IF g_ima.ima918 = 'Y' OR g_ima.ima921 = 'Y' THEN
           IF cl_null(g_ima.ima925) THEN
              LET g_ima.ima925 = '1'
-          END IF 
-       END IF 
+          END IF
+       END IF
        #MOD-C30091---end
 END FUNCTION
- 
+
 #顯示料件處理狀況
 FUNCTION i100_disp()
   DEFINE ls_tmp  STRING
@@ -4535,14 +4544,14 @@ FUNCTION i100_disp()
          l_disp2 LIKE ze_file.ze03,             #No.FUN-690026 VARCHAR(08)
          l_msg   LIKE ze_file.ze03,             #No.FUN-690026 VARCHAR(40)
          l_ans   LIKE type_file.chr1            #No.FUN-690026 VARCHAR(1)
- 
- 
+
+
     OPEN WINDOW i100_w5 AT 9,43 WITH FORM "aim/42f/aimi1001"
      ATTRIBUTE (STYLE = g_win_style CLIPPED) #No.FUN-580092 HCN
- 
+
     display 'aimi1001: g_lang = ',g_lang
     CALL cl_ui_locale("aimi1001")
- 
+
     CALL cl_getmsg('mfg6059',g_lang) RETURNING l_disp1
     CALL cl_getmsg('mfg6060',g_lang) RETURNING l_disp2
     FOR i = 1 TO 8
@@ -4591,36 +4600,36 @@ FUNCTION i100_disp()
          ON IDLE g_idle_seconds
              CALL cl_on_idle()
              CONTINUE MENU
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
+
       ON ACTION controlg      #MOD-4C0121
          CALL cl_cmdask()     #MOD-4C0121
-        ON ACTION close   #COMMAND KEY(INTERRUPT) #FUN-9B0145  
+        ON ACTION close   #COMMAND KEY(INTERRUPT) #FUN-9B0145
              LET INT_FLAG=FALSE
             LET g_action_choice = "exit"
             EXIT MENU
- 
+
         END MENU
- 
+
         CLOSE WINDOW i100_w5
 END FUNCTION
- 
+
 #FUN-C90107 mark str------
 #TQC-CB0079 remark --str--
-#FUN-C90107 mark str--- 
+#FUN-C90107 mark str---
 #FUNCTION i100_x()
 #    DEFINE
 #        l_chr LIKE type_file.chr1,    #No.FUN-690026 VARCHAR(1)
 #        l_n   LIKE type_file.num5     #No.FUN-690026 SMALLINT
-#    DEFINE l_prog   LIKE type_file.chr8    #FUN-870101 add 
+#    DEFINE l_prog   LIKE type_file.chr8    #FUN-870101 add
 #    DEFINE l_avl_stk_mpsmrp LIKE type_file.num15_3,   #FUN-A20044
 #           l_unavl_stk      LIKE type_file.num15_3,   #FUN-A20044
-#           l_avl_stk        LIKE type_file.num15_3    #FUN-A20044           
+#           l_avl_stk        LIKE type_file.num15_3    #FUN-A20044
 #
 #    LET g_errno = ''   #FUN-5A0081
 #    IF s_shut(0) THEN RETURN END IF
@@ -4637,7 +4646,7 @@ END FUNCTION
 #    #--->產品結構(bma_file,bmb_file)須有效BOM
 #    LET l_n = 0
 #    SELECT COUNT(*) INTO l_n FROM bma_file
-#     WHERE bma01 = g_ima.ima01  
+#     WHERE bma01 = g_ima.ima01
 #       AND bmaacti = 'Y'
 #   #IF l_n > 0 THEN                          #MOD-CA0016 mark
 #    IF l_n > 0 AND g_ima.imaacti = 'Y' THEN  #MOD-CA0016
@@ -4667,8 +4676,8 @@ END FUNCTION
 #    #CHI-AC0014 add --start--
 #    LET l_n = 0
 #    SELECT COUNT(DISTINCT ina01) INTO l_n
-#      FROM ina_file,inb_file  
-#     WHERE inb01 = ina01 
+#      FROM ina_file,inb_file
+#     WHERE inb01 = ina01
 #       AND inb04 = g_ima.ima01
 #      #AND inaconf != 'X'       #MOD-B10101 mark
 #       AND inaconf = 'N'        #MOD-B10101 add
@@ -4688,32 +4697,32 @@ END FUNCTION
 #       RETURN
 #    END IF
 #    CALL s_getstock(g_ima.ima01,g_plant) RETURNING l_avl_stk_mpsmrp,l_unavl_stk,l_avl_stk   #FUN-A20044 add
-# 
+#
 ##   IF g_ima.ima26  >0 THEN        #FUN-A20044
-#    IF l_avl_stk_mpsmrp > 0 THEN   #FUN-A20044 
-#       CALL cl_err('','mfg9165',0) 
+#    IF l_avl_stk_mpsmrp > 0 THEN   #FUN-A20044
+#       CALL cl_err('','mfg9165',0)
 #       ROLLBACK WORK   #MOD-A10083
 #       CLOSE i100_cl   #MOD-A10083
-#       RETURN 
+#       RETURN
 #    END IF
 ##   IF g_ima.ima261 >0 THEN       #FUN-A20044
-#    IF l_unavl_stk > 0 THEN       #FUN-A20044 
-#       CALL cl_err('','mfg9166',0) 
+#    IF l_unavl_stk > 0 THEN       #FUN-A20044
+#       CALL cl_err('','mfg9166',0)
 #       ROLLBACK WORK   #MOD-A10083
 #       CLOSE i100_cl   #MOD-A10083
-#       RETURN 
+#       RETURN
 #    END IF
 ##   IF g_ima.ima262 >0 THEN       #FUN-A20044
 #    IF l_avl_stk > 0 THEN         #FUN-A20044
-#       CALL cl_err('','mfg9167',0) 
+#       CALL cl_err('','mfg9167',0)
 #       ROLLBACK WORK   #MOD-A10083
 #       CLOSE i100_cl   #MOD-A10083
-#       RETURN 
+#       RETURN
 #    END IF
-# 
+#
 #    LET l_n = 0
 #    SELECT COUNT(*) INTO l_n FROM sfb_file     #判斷是否有工單
-#           WHERE sfb05 = g_ima.ima01 AND sfb04 < '8'   #No.MOD-940165 add   
+#           WHERE sfb05 = g_ima.ima01 AND sfb04 < '8'   #No.MOD-940165 add
 #             AND sfb87 != 'X'                           #No:MOD-9B0066 add
 #    IF cl_null(l_n) OR l_n = 0 THEN
 #       SELECT COUNT(*) INTO l_n FROM pmn_file,pmm_file  #判斷是否有採購單    #No:MOD-9B0066 add pmm_file
@@ -4725,7 +4734,7 @@ END FUNCTION
 #                   AND oeb01 = oea01 AND oeaconf !='X'   #No:MOD-9B0066 add
 #       END IF
 #    END IF
-# 
+#
 #    IF NOT cl_null(l_n) AND l_n != 0 THEN
 #       IF NOT cl_confirm('aim-141') THEN
 #          ROLLBACK WORK   #MOD-A10083
@@ -4733,16 +4742,16 @@ END FUNCTION
 #          RETURN
 #       END IF
 #    END IF
-# 
+#
 #    SELECT COUNT(*) INTO l_n FROM img_file
 #     WHERE img01=g_ima.ima01
 #       AND img10 <>0
-#    IF l_n > 0 THEN 
-#       LET g_errno='mfg9163' 
+#    IF l_n > 0 THEN
+#       LET g_errno='mfg9163'
 #       CALL cl_err('',g_errno,0)       #No:MOD-A10080 add
 #       ROLLBACK WORK   #MOD-A10083
 #       CLOSE i100_cl   #MOD-A10083
-#       RETURN 
+#       RETURN
 #    END IF #MOD-5B0336 add RETURN
 #    IF cl_exp(0,0,g_ima.imaacti) THEN
 #        LET g_chr=g_ima.imaacti
@@ -4771,11 +4780,11 @@ END FUNCTION
 #            LET g_ima.ima1010=g_chr2      #No.FUN-610013
 #            LET g_success = 'N'           #FUN-9A0056 add
 #        END IF
-#        
+#
 #       #IF g_aza.aza90 MATCHES "[Yy]" THEN   #TQC-8B0011  ADD  #FUN-9A0056 mark
-#        IF g_success = 'Y' AND g_aza.aza90 MATCHES "[Yy]" AND g_ima.ima1010 = '1' THEN  #FUN-9A0056 add 
-#          
-#           IF g_ima.imaacti='N' THEN 
+#        IF g_success = 'Y' AND g_aza.aza90 MATCHES "[Yy]" AND g_ima.ima1010 = '1' THEN  #FUN-9A0056 add
+#
+#           IF g_ima.imaacti='N' THEN
 #             #FUN-9A0056 mark str ------
 #              ## CALL aws_mescli
 #              ## 傳入參數: (1)程式代號
@@ -4783,10 +4792,10 @@ END FUNCTION
 #              ##           (3)Key
 #              #LET l_prog=''
 #              #CASE g_ima.ima08
-#              #   WHEN 'P' LET l_prog = 'aimi100' 
+#              #   WHEN 'P' LET l_prog = 'aimi100'
 #              #   WHEN 'M' LET l_prog = 'axmi121'
 #              #   OTHERWISE LET l_prog= ' '
-#              #END CASE 
+#              #END CASE
 #              #CASE aws_mescli(l_prog,'delete',g_ima.ima01)
 #              #   WHEN 0  #無與 MES 整合
 #              #        CALL cl_msg('Delete O.K')
@@ -4802,8 +4811,8 @@ END FUNCTION
 #            ELSE                                                 #FUN-9A0056 add
 #              #確認資料由無效變有效,則傳送新增MES
 #              #CALL i100_mes(g_ima.ima08,'insert',g_ima.ima01)   #FUN-9A0056 add #FUN-A70106 mark
-#               CALL i100sub_mes(g_ima.ima08,'insert',g_ima.ima01)                #FUN-A70106 add    
-#           END IF 
+#               CALL i100sub_mes(g_ima.ima08,'insert',g_ima.ima01)                #FUN-A70106 add
+#           END IF
 #        END IF  #TQC-8B0011  ADD
 #
 #        #FUN-9A0056-----start
@@ -4813,7 +4822,7 @@ END FUNCTION
 #           RETURN
 #        END IF
 #        #FUN-9A0056-------end
-# 
+#
 #        DISPLAY BY NAME g_ima.ima1010     #No.FUN-610013
 #        DISPLAY BY NAME g_ima.imaacti
 #        CALL i100_list_fill()             #No.FUN-7C0010
@@ -4824,14 +4833,14 @@ END FUNCTION
 #FUN-C90107 mark end---
 #TQC-CB0079 remark --end--
 #FUN-C90107 mark end----------
- 
+
 FUNCTION i100_r()
     DEFINE l_chr    LIKE type_file.chr1    #No.FUN-690026 VARCHAR(1)
     DEFINE l_azo06  LIKE azo_file.azo06
     DEFINE l_n      LIKE type_file.num5    #FUN-980063
     DEFINE l_x      LIKE type_file.num5    #add by guanyao160614
-    
- 
+
+
     IF s_shut(0) THEN RETURN FALSE END IF
     IF g_ima.ima01 IS NULL THEN
         CALL cl_err('',-400,0)
@@ -4841,7 +4850,7 @@ FUNCTION i100_r()
        CALL cl_err(g_ima.ima916,'aoo-044',1)
        RETURN FALSE
     END IF
-   
+
     IF g_ima.imaacti = 'N' THEN
        #此筆資料已無效, 不可異動
        CALL cl_err(g_ima.ima01,'aim-153',1)
@@ -4854,12 +4863,12 @@ FUNCTION i100_r()
     END IF
     #str----add by guanyao160614
     SELECT COUNT(*) INTO l_x FROM tc_dhy_file WHERE tc_dhy05 = g_ima.ima01
-    IF l_x > 0 THEN 
+    IF l_x > 0 THEN
        CALL cl_err('','cim-003',0)
        RETURN FALSE
-    END IF 
+    END IF
     #end----add by guanyao160614
- 
+
     BEGIN WORK
     OPEN i100_cl USING g_ima.ima01
     IF SQLCA.sqlcode THEN
@@ -4893,7 +4902,7 @@ FUNCTION i100_r()
               RETURN FALSE
            END IF
         END IF
- 
+
         IF (NOT cl_del_itemname("ima_file","ima02", g_ima.ima01)) THEN   #CHI-6B0034
            ROLLBACK WORK
            RETURN              #TQC-710103
@@ -4902,7 +4911,7 @@ FUNCTION i100_r()
            ROLLBACK WORK
            RETURN              #TQC-710103
         END IF
- 
+
         DELETE FROM ima_file WHERE ima01 = g_ima.ima01
         IF SQLCA.SQLERRD[3]=0 THEN
            CALL cl_err3("del","ima_file",g_ima.ima01,"",SQLCA.sqlcode,"","",1)   #NO.FUN-640266
@@ -4912,7 +4921,7 @@ FUNCTION i100_r()
            CALL cl_del_pic("ima01",g_ima.ima01,"ima04")  #TQC-660041
             DELETE  FROM vmk_file where vmk01 = g_ima.ima01
             UPDATE ima_file SET imadate=g_today WHERE ima01 = g_ima.ima01
- 
+
            DELETE FROM imc_file WHERE imc01 = g_ima.ima01
            IF SQLCA.sqlcode THEN
               CALL cl_err3("del","imc_file",g_ima.ima01,"",SQLCA.sqlcode,"","",1)  #No.FUN-660156
@@ -4967,7 +4976,7 @@ FUNCTION i100_r()
               RETURN FALSE
            END IF
 #TQC-B90236-------add------end
-          
+
            LET g_msg=TIME
            #增加記錄料號
            #LET l_azo06='R: ',g_ima.ima01 CLIPPED   #CHI-BC0005 mark
@@ -4980,7 +4989,7 @@ FUNCTION i100_r()
               ROLLBACK WORK
               RETURN FALSE
            END IF
- 
+
            # CALL aws_spccli_base()
            # 傳入參數: (1)TABLE名稱, (2)刪除資料,
            #           (3)功能選項：insert(新增),update(修改),delete(刪除)
@@ -4993,7 +5002,7 @@ FUNCTION i100_r()
                    ROLLBACK WORK
                    RETURN FALSE
            END CASE
- 
+
            CLEAR FORM
           #CALL i100_list_fill()        #No.FUN-7C0010   #FUN-C90107 mark
            CALL i100sub_list_fill()        #No.FUN-7C0010   #FUN-C90107 add
@@ -5005,23 +5014,23 @@ FUNCTION i100_r()
     CLOSE i100_cl
     RETURN FALSE
 END FUNCTION
- 
+
 FUNCTION i100_out()
     DEFINE l_cmd           LIKE type_file.chr1000         #No.FUN-7C0043
- 
+
     IF cl_null(g_wc) AND NOT cl_null(g_ima.ima01) THEN
         LET g_wc=" ima01='",g_ima.ima01,"'"
     END IF
     IF g_wc IS NULL THEN
        CALL cl_err('','9057',0) RETURN
     END IF
- 
+
     #報表轉為使用 p_query
     LET l_cmd = ' p_query "aimi100" "',g_wc CLIPPED,'"'
     CALL cl_cmdrun(l_cmd)
     RETURN
 END FUNCTION
- 
+
 #FUN-A70106--mark---str--
 #FUNCTION i100_confirm()
 # DEFINE l_imaag    LIKE ima_file.imaag    #No.TQC-640171
@@ -5029,8 +5038,8 @@ END FUNCTION
 #        l_sql      STRING     #NO.FUN-910082
 # DEFINE l_prog     LIKE type_file.chr8    #FUN-870101 add
 # DEFINE l_gew03   LIKE gew_file.gew03    #FUN-950057
-# DEFINE l_i       LIKE type_file.num10   #FUN-950057  
-# 
+# DEFINE l_i       LIKE type_file.num10   #FUN-950057
+#
 #   IF g_ima.ima01 IS NULL THEN
 #      CALL cl_err("",-400,0)
 #      RETURN
@@ -5072,10 +5081,10 @@ END FUNCTION
 #          #           (3)Key
 #          LET l_prog=''
 #          CASE g_ima.ima08
-#             WHEN 'P' LET l_prog = 'aimi100' 
+#             WHEN 'P' LET l_prog = 'aimi100'
 #             WHEN 'M' LET l_prog = 'axmi121'
 #             OTHERWISE LET l_prog= ' '
-#          END CASE 
+#          END CASE
 #          CASE aws_mescli(l_prog,'insert',g_ima.ima01)
 #             WHEN 0  #無與 MES 整合
 #                  MESSAGE 'INSERT O.K'
@@ -5087,7 +5096,7 @@ END FUNCTION
 #       END IF #TQC-8B0011  ADD
 #      END IF
 #
-#      IF g_success = 'Y' THEN   #FUN-9A0056 add 
+#      IF g_success = 'Y' THEN   #FUN-9A0056 add
 #        SELECT imaag INTO l_imaag
 #          FROM ima_file
 #         WHERE ima01 = g_ima.ima01
@@ -5102,7 +5111,7 @@ END FUNCTION
 #           IF STATUS THEN
 #              CALL cl_err('ima1010',STATUS,1)  #FUN-690060 0->1
 #              #ROLLBACK WORK                   #FUN-690060 add #FUN-9A0056 mark
-#              #RETURN                          #FUN-9A0056 mark  
+#              #RETURN                          #FUN-9A0056 mark
 #              LET g_success = 'N'              #FUN-9A0056 add
 #           END IF
 #        END IF
@@ -5122,67 +5131,67 @@ END FUNCTION
 #    END IF
 #   END IF
 ##FUN-950057 ------------------------add start-------------------
-#   SELECT gev04 INTO g_gev04 FROM gev_file                                     
-#    WHERE gev01 = '1' AND gev02 = g_plant                                      
-#      AND gev03 = 'Y'                                                          
+#   SELECT gev04 INTO g_gev04 FROM gev_file
+#    WHERE gev01 = '1' AND gev02 = g_plant
+#      AND gev03 = 'Y'
 #   IF NOT cl_null(g_gev04) THEN
 #      SELECT DISTINCT gew03 INTO l_gew03 FROM gew_file
 #       WHERE gew01 = g_gev04 AND gew02 = '1'
 #      IF l_gew03 = '1' THEN #自动抛转
-#         LET l_sql = "SELECT COUNT(*) FROM &ima_file WHERE ima01='",g_ima.ima01,"'" 
+#         LET l_sql = "SELECT COUNT(*) FROM &ima_file WHERE ima01='",g_ima.ima01,"'"
 #         CALL s_dc_sel_db1(g_gev04,'1',l_sql)
-#         IF INT_FLAG THEN                                                       
-#            LET INT_FLAG=0                                                      
-#            RETURN                                                              
-#        END IF                                                                 
-#                                                                               
-#        CALL g_imax.clear()                                                    
-#        LET g_imax[1].sel = 'Y'                                                
+#         IF INT_FLAG THEN
+#            LET INT_FLAG=0
+#            RETURN
+#        END IF
+#
+#        CALL g_imax.clear()
+#        LET g_imax[1].sel = 'Y'
 #        LET g_imax[1].ima01 = g_ima.ima01
 #
-#        FOR l_i = 1 TO g_azp1.getLength()                                      
-#           LET g_azp[l_i].sel   = g_azp1[l_i].sel                              
-#           LET g_azp[l_i].azp01 = g_azp1[l_i].azp01                            
-#           LET g_azp[l_i].azp02 = g_azp1[l_i].azp02                            
-#           LET g_azp[l_i].azp03 = g_azp1[l_i].azp03                            
-#        END FOR                                                                
-#                                                                              
-#        CALL s_showmsg_init()                                                  
-#        CALL s_aimi100_carry(g_imax,g_azp,g_gev04,'0')                         
-#        CALL s_showmsg()                                                       
-#     END IF                                                                    
+#        FOR l_i = 1 TO g_azp1.getLength()
+#           LET g_azp[l_i].sel   = g_azp1[l_i].sel
+#           LET g_azp[l_i].azp01 = g_azp1[l_i].azp01
+#           LET g_azp[l_i].azp02 = g_azp1[l_i].azp02
+#           LET g_azp[l_i].azp03 = g_azp1[l_i].azp03
+#        END FOR
+#
+#        CALL s_showmsg_init()
+#        CALL s_aimi100_carry(g_imax,g_azp,g_gev04,'0')
+#        CALL s_showmsg()
+#     END IF
 #   END IF
 ##FUN-950057------------------------add end---------------------------------
 #
 #END FUNCTION
 #FUN-A70106--mark---end--
- 
+
 FUNCTION i100_notconfirm()
  DEFINE l_imaag    LIKE ima_file.imaag    #No.TQC-640171
  DEFINE l_sql      STRING        #NO.FUN-910082
  DEFINE l_n        LIKE type_file.num5    #No.FUN-870117
- DEFINE l_rte01    LIKE rte_file.rte01    #FUN-AB0025 
+ DEFINE l_rte01    LIKE rte_file.rte01    #FUN-AB0025
  DEFINE l_ima01    LIKE ima_file.ima01    #FUN-C30082
- 
+
    IF g_ima.ima01 IS NULL THEN
       CALL cl_err("",-400,0)
       RETURN
    END IF
- 
+
    IF NOT s_dc_ud_flag('1',g_ima.ima916,g_plant,'u') THEN
       CALL cl_err(g_ima.ima916,'aoo-045',1)
       RETURN
    END IF
     SELECT COUNT(*) INTO l_n FROM imx_file WHERE imx00 = g_ima.ima01
-    IF l_n > 0 THEN 
+    IF l_n > 0 THEN
       CALL cl_err('','aim-451',1)
-      RETURN 
-    END  IF  
+      RETURN
+    END  IF
     #FUN-C30082---begin
     LET g_sql =" SELECT imaicd00  FROM imaicd_file WHERE imaicd11 = '", g_ima.ima01,"'"
     PREPARE aimi100_newcode_pre FROM g_sql
     DECLARE aimi100_newcode_cur CURSOR FOR aimi100_newcode_pre
-    
+
     FOREACH aimi100_newcode_cur INTO l_ima01
        CALL s_chkitmdel(l_ima01) RETURNING g_errno
        IF NOT cl_null(g_errno) THEN
@@ -5210,27 +5219,27 @@ FUNCTION i100_notconfirm()
     #IF l_n > 0 THEN
     #   CALL cl_err('','aim-672',1)
     #   RETURN
-    #END IF        
+    #END IF
     #FUN-BC0106 --END--
-#&endif 
-    #MOD-C30407---end   
+#&endif
+    #MOD-C30407---end
     #FUN-AB0011 --------add start-------
     LET g_sql =" SELECT rte01  FROM rte_file WHERE rte03 = '", g_ima.ima01,"'"
     PREPARE aimi100_rte_pre FROM g_sql
     DECLARE aimi100_rte_cur CURSOR FOR aimi100_rte_pre
-   
-    FOREACH aimi100_rte_cur INTO l_rte01 
+
+    FOREACH aimi100_rte_cur INTO l_rte01
       IF SQLCA.sqlcode THEN
           CALL cl_err('foreach',SQLCA.sqlcode,1)
           CONTINUE FOREACH
        END IF
        IF NOT cl_null(l_rte01) THEN
           EXIT FOREACH
-       END IF 
+       END IF
     END FOREACH
     IF NOT cl_null(l_rte01) THEN
        CALL cl_err('','aim-670',1)
-       RETURN 
+       RETURN
     END IF
     #FUN-AB0011 --------add end-----------
    IF g_ima.ima1010 != '1' OR g_ima.imaacti='N' THEN #FUN-690060 add
@@ -5301,18 +5310,18 @@ FUNCTION i100_notconfirm()
       END IF
      #FUN-9A0056 add end ----------------------
       #CALL i100_list_fill()       #No.FUN-7C0010   #FUN-9A0056 mark
-      #COMMIT WORK                 #FUN-690060 add  #FUN-9A0056 mark             
+      #COMMIT WORK                 #FUN-690060 add  #FUN-9A0056 mark
     END IF
    END IF
 END FUNCTION
- 
+
 FUNCTION i100_chk_cur(p_sql)
 DEFINE p_sql STRING
 DEFINE l_cnt LIKE type_file.num5
 DEFINE l_result LIKE type_file.chr1
 DEFINE l_dbase LIKE type_file.chr21
    IF NOT cl_null(g_dbase) THEN  #指定資料庫,Table Name 前面加上資料庫名稱,如果有兩個Tablename,則此處理必須改寫
-      LET l_dbase=" FROM ",s_dbstring(g_dbase)           #TQC-940178 ADD 
+      LET l_dbase=" FROM ",s_dbstring(g_dbase)           #TQC-940178 ADD
       CALL cl_replace_once()
       LET p_sql=cl_replace_str(p_sql," FROM ",l_dbase)
       CALL cl_replace_init()
@@ -5331,7 +5340,7 @@ DEFINE l_dbase LIKE type_file.chr21
    CLOSE i100_chk_cur_c
    RETURN l_result
 END FUNCTION
- 
+
 FUNCTION i100_chk_ima09()
    IF cl_null(g_ima.ima09) THEN
       RETURN TRUE
@@ -5358,7 +5367,7 @@ FUNCTION i100_chk_ima09()
       RETURN TRUE
    END IF
 END FUNCTION
- 
+
 FUNCTION i100_chk_ima10()
    IF cl_null(g_ima.ima10) THEN
       RETURN TRUE
@@ -5385,7 +5394,7 @@ FUNCTION i100_chk_ima10()
       RETURN TRUE
    END IF
 END FUNCTION
- 
+
 FUNCTION i100_chk_ima11()
    IF cl_null(g_ima.ima11) THEN
       RETURN TRUE
@@ -5412,7 +5421,7 @@ FUNCTION i100_chk_ima11()
       RETURN TRUE
    END IF
 END FUNCTION
- 
+
 FUNCTION i100_chk_ima12()
    IF cl_null(g_ima.ima12) THEN
       RETURN TRUE
@@ -5439,7 +5448,7 @@ FUNCTION i100_chk_ima12()
       RETURN TRUE
    END IF
 END FUNCTION
- 
+
 FUNCTION i100_chk_ima23()
    IF cl_null(g_ima.ima23) THEN
       RETURN TRUE
@@ -5449,11 +5458,11 @@ FUNCTION i100_chk_ima23()
    WHERE gen01=g_ima.ima23
      AND genacti='Y'
    DISPLAY g_gen02 TO FORMONLY.gen02        #MOD-4A0326
- 
+
    LET g_sql="SELECT COUNT(*) FROM gen_file ",
              "WHERE gen01='",g_ima.ima23,"' ",
              "AND genacti='Y'"
- 
+
     IF NOT i100_chk_cur(g_sql) THEN #FUN-5A0027
       IF cl_null(g_dbase) THEN #FUN-5A0027
          CALL cl_err3("sel","gen_file",g_ima.ima23,"","aoo-001","","",1)  #No.FUN-660156
@@ -5472,7 +5481,7 @@ FUNCTION i100_chk_ima23()
       RETURN TRUE
    END IF
 END FUNCTION
- 
+
 FUNCTION i100_chk_ima25()
    IF cl_null(g_ima.ima25) THEN
       CALL cl_err(g_ima.ima25,'asf-031',1)  #No:MOD-9B0003 add
@@ -5499,7 +5508,7 @@ FUNCTION i100_chk_ima25()
       RETURN TRUE
    END IF
 END FUNCTION
- 
+
 FUNCTION i100_chk_ima31()
    IF cl_null(g_ima.ima31) THEN
       RETURN TRUE
@@ -5524,7 +5533,7 @@ FUNCTION i100_chk_ima31()
       RETURN TRUE
    END IF
 END FUNCTION
- 
+
 FUNCTION i100_chk_ima35()
 DEFINE l_imd10   LIKE imd_file.imd10   #FUN-CB0052
    IF cl_null(g_ima.ima35) THEN
@@ -5556,7 +5565,7 @@ DEFINE l_imd10   LIKE imd_file.imd10   #FUN-CB0052
       RETURN TRUE
    END IF
 END FUNCTION
- 
+
 FUNCTION i100_chk_ima39()
    IF cl_null(g_ima.ima39) THEN
       RETURN TRUE
@@ -5581,7 +5590,7 @@ FUNCTION i100_chk_ima39()
    ELSE
      #MOD-B20100---add---start---
       IF g_sma.sma03='Y' THEN
-         IF NOT s_actchk3(g_ima.ima39,g_aza.aza81) THEN  
+         IF NOT s_actchk3(g_ima.ima39,g_aza.aza81) THEN
              CALL cl_err(g_ima.ima39,'mfg0018',1)
              RETURN FALSE
          ELSE
@@ -5593,7 +5602,7 @@ FUNCTION i100_chk_ima39()
       END IF         #MOD-B20100 add
    END IF
 END FUNCTION
- 
+
 FUNCTION i100_chk_ima391()
    IF cl_null(g_ima.ima391) THEN
       RETURN TRUE
@@ -5675,7 +5684,7 @@ FUNCTION i100_chk_ima1631()
       RETURN TRUE
    END IF
 END FUNCTION
-#FUN-C80094--ADD--END 
+#FUN-C80094--ADD--END
 
 #FUN-D60083--add--str--
 FUNCTION i100_chk_ima164()
@@ -5755,7 +5764,7 @@ FUNCTION i100_chk_ima43()
       RETURN TRUE
    END IF
 END FUNCTION
- 
+
 FUNCTION i100_chk_ima44()
    IF cl_null(g_ima.ima44) THEN
       RETURN TRUE
@@ -5780,7 +5789,7 @@ FUNCTION i100_chk_ima44()
       RETURN TRUE
    END IF
 END FUNCTION
- 
+
 FUNCTION i100_chk_ima54()
    IF cl_null(g_ima.ima54) THEN
       RETURN TRUE
@@ -5804,7 +5813,7 @@ FUNCTION i100_chk_ima54()
       RETURN TRUE
    END IF
 END FUNCTION
- 
+
 FUNCTION i100_chk_ima55()
    IF cl_null(g_ima.ima55) THEN
       RETURN TRUE
@@ -5829,7 +5838,7 @@ FUNCTION i100_chk_ima55()
       RETURN TRUE
    END IF
 END FUNCTION
- 
+
 FUNCTION i100_chk_ima571()
    IF cl_null(g_ima.ima571) THEN
       RETURN TRUE
@@ -5856,7 +5865,7 @@ FUNCTION i100_chk_ima571()
       RETURN TRUE
    END IF
 END FUNCTION
- 
+
 FUNCTION i100_chk_ima63()
    IF cl_null(g_ima.ima63) THEN
       RETURN TRUE
@@ -5880,7 +5889,7 @@ FUNCTION i100_chk_ima63()
       RETURN TRUE
    END IF
 END FUNCTION
- 
+
 FUNCTION i100_chk_ima67()
 DEFINE l_cnt LIKE type_file.num10   #No.FUN-690026 INTEGER
    IF cl_null(g_ima.ima67) THEN
@@ -5906,7 +5915,7 @@ DEFINE l_cnt LIKE type_file.num10   #No.FUN-690026 INTEGER
       RETURN TRUE
    END IF
 END FUNCTION
- 
+
 FUNCTION i100_chk_ima86()
    IF cl_null(g_ima.ima86) THEN
       RETURN TRUE
@@ -5930,7 +5939,7 @@ FUNCTION i100_chk_ima86()
       RETURN TRUE
    END IF
 END FUNCTION
- 
+
 FUNCTION i100_chk_ima87()
    IF cl_null(g_ima.ima87) THEN
       RETURN TRUE
@@ -5955,7 +5964,7 @@ FUNCTION i100_chk_ima87()
       RETURN TRUE
    END IF
 END FUNCTION
- 
+
 FUNCTION i100_chk_ima872()
    IF cl_null(g_ima.ima872) THEN
       RETURN TRUE
@@ -5980,7 +5989,7 @@ FUNCTION i100_chk_ima872()
       RETURN TRUE
    END IF
 END FUNCTION
- 
+
 FUNCTION i100_chk_ima874()
    IF cl_null(g_ima.ima874) THEN
       RETURN TRUE
@@ -6005,12 +6014,12 @@ FUNCTION i100_chk_ima874()
       RETURN TRUE
    END IF
 END FUNCTION
- 
+
 FUNCTION i100_chk_ima109()
    IF cl_null(g_ima.ima109) THEN
       RETURN TRUE
    END IF
- 
+
    CALL s_field_chk(g_ima.ima109,'1',g_plant,'ima109') RETURNING g_flag2
    IF g_flag2 = '0' THEN
       CALL cl_err(g_ima.ima109,'aoo-043',1)
@@ -6018,7 +6027,7 @@ FUNCTION i100_chk_ima109()
       DISPLAY BY NAME g_ima.ima109
       RETURN FALSE
    END IF
- 
+
    LET g_sql="SELECT COUNT(*) FROM azf_file ", #FUN-5A0027
              "WHERE azf01='",g_ima.ima109,"' AND azf02='8' ",
              "AND azfacti='Y'"
@@ -6040,12 +6049,12 @@ FUNCTION i100_chk_ima109()
       RETURN TRUE
    END IF
 END FUNCTION
- 
+
 FUNCTION i100_chk_ima131()
    IF cl_null(g_ima.ima131) THEN #FUN-5A0027
       RETURN TRUE
    END IF
- 
+
    LET g_sql="SELECT COUNT(*) FROM oba_file ", #FUN-5A0027
              "WHERE oba01='",g_ima.ima131,"' "
    IF NOT i100_chk_cur(g_sql) THEN #FUN-5A0027
@@ -6064,7 +6073,7 @@ FUNCTION i100_chk_ima131()
       RETURN TRUE
    END IF
 END FUNCTION
- 
+
 FUNCTION i100_chk_ima132()
    IF cl_null(g_ima.ima132) THEN
       RETURN TRUE
@@ -6090,7 +6099,7 @@ FUNCTION i100_chk_ima132()
       RETURN TRUE
    END IF
 END FUNCTION
- 
+
 FUNCTION i100_chk_ima133(p_cmd)
 DEFINE p_cmd LIKE type_file.chr1    #No.FUN-690026 VARCHAR(1)
    IF cl_null(g_ima.ima133) THEN
@@ -6119,7 +6128,7 @@ DEFINE p_cmd LIKE type_file.chr1    #No.FUN-690026 VARCHAR(1)
       RETURN TRUE
    END IF
 END FUNCTION
- 
+
 FUNCTION i100_chk_ima134()
    IF cl_null(g_ima.ima134) THEN
       RETURN TRUE
@@ -6143,7 +6152,7 @@ FUNCTION i100_chk_ima134()
       RETURN TRUE
    END IF
 END FUNCTION
- 
+
 FUNCTION i100_chk_ima136()
    IF cl_null(g_ima.ima136) THEN
       RETURN TRUE
@@ -6168,7 +6177,7 @@ FUNCTION i100_chk_ima136()
       RETURN TRUE
    END IF
 END FUNCTION
- 
+
 FUNCTION i100_chk_ima137()
    IF cl_null(g_ima.ima137) THEN
       RETURN TRUE
@@ -6193,7 +6202,7 @@ FUNCTION i100_chk_ima137()
       RETURN TRUE
    END IF
 END FUNCTION
- 
+
 FUNCTION i100_chk_ima907(p_cmd)
 DEFINE p_cmd           LIKE type_file.chr1    #No.FUN-690026 VARCHAR(1)
 DEFINE l_factor        LIKE img_file.img21
@@ -6247,11 +6256,11 @@ DEFINE l_factor        LIKE img_file.img21
    END IF
    RETURN TRUE
 END FUNCTION
- 
+
 FUNCTION i100_chk_ima908(p_cmd)
 DEFINE p_cmd    LIKE type_file.chr1    #No.FUN-690026 VARCHAR(1)
 DEFINE l_factor LIKE img_file.img21
- 
+
    IF cl_null(g_ima.ima908) THEN
       RETURN TRUE
    END IF
@@ -6302,7 +6311,7 @@ DEFINE l_factor LIKE img_file.img21
    END IF
    RETURN TRUE
 END FUNCTION
- 
+
 FUNCTION i100_chk_rel_ima06(p_cmd)
 DEFINE p_cmd LIKE type_file.chr1    #No.FUN-690026 VARCHAR(1)
    IF NOT i100_chk_ima09() THEN
@@ -6397,7 +6406,7 @@ DEFINE p_cmd LIKE type_file.chr1    #No.FUN-690026 VARCHAR(1)
    END IF
    RETURN TRUE
 END FUNCTION
- 
+
 #show 圖示
 FUNCTION i100_show_pic()
      LET g_chr='N'
@@ -6410,12 +6419,12 @@ FUNCTION i100_show_pic()
                            #確認 ,核准,過帳,結案,作廢,有效         ,申請  ,留置
      #圖形顯示
 END FUNCTION
- 
+
 FUNCTION i100_chkdb_ima06()
    IF cl_null(g_ima.ima06) THEN
       RETURN TRUE
    END IF
- 
+
    LET g_sql="SELECT COUNT(*) FROM imz_file ",
              "WHERE imz01='",g_ima.ima06,"' ",
              "AND imzacti='Y'"
@@ -6435,7 +6444,7 @@ FUNCTION i100_chkdb_ima06()
       RETURN TRUE
    END IF
 END FUNCTION
- 
+
 FUNCTION i100_upd_person()
   DEFINE l_ident   LIKE type_file.chr1
   DEFINE l_old     LIKE gen_file.gen01
@@ -6443,17 +6452,17 @@ FUNCTION i100_upd_person()
   DEFINE l_gen02_1 LIKE gen_file.gen02
   DEFINE l_gen02_2 LIKE gen_file.gen02
   DEFINE l_cnt     LIKE type_file.num5
- 
+
   IF NOT s_dc_ud_flag('1',g_ima.ima916,g_plant,'u') THEN
      CALL cl_err(g_ima.ima916,'aoo-045',1)
      RETURN
   END IF
- 
+
   OPEN WINDOW i1004_w AT 10,25 WITH FORM "aim/42f/aimi1004"
      ATTRIBUTE (STYLE = g_win_style CLIPPED)
- 
+
   CALL cl_ui_locale("aimi1004")
- 
+
   INPUT l_ident,l_old,l_new FROM FORMONLY.choice,FORMONLY.old,FORMONLY.new
       AFTER FIELD choice
           IF l_ident NOT MATCHES "[123]" THEN
@@ -6503,20 +6512,20 @@ FUNCTION i100_upd_person()
              DISPLAY l_gen02_2 TO FORMONLY.gen02_2
           END IF
         END IF
- 
+
       ON IDLE g_idle_seconds
          CALL cl_on_idle()
          CONTINUE INPUT
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
+
       ON ACTION controlg      #MOD-4C0121
          CALL cl_cmdask()     #MOD-4C0121
- 
+
       ON ACTION controlp
         CASE
           WHEN INFIELD(old)
@@ -6530,7 +6539,7 @@ FUNCTION i100_upd_person()
               WHERE gen01=l_old
              DISPLAY l_gen02_1 TO FORMONLY.gen02_1
              NEXT FIELD old
- 
+
           WHEN INFIELD(new)
              CALL cl_init_qry_var()
              LET g_qryparam.form     = "q_gen"
@@ -6544,13 +6553,13 @@ FUNCTION i100_upd_person()
              NEXT FIELD new
         END CASE
     END INPUT
- 
+
     IF INT_FLAG THEN
         LET INT_FLAG = 0
         CLOSE WINDOW i1004_w
         RETURN
     END IF
- 
+
     CASE l_ident
       WHEN "1" #採購員(ima43)
         UPDATE ima_file SET ima43 = l_new,
@@ -6578,7 +6587,7 @@ FUNCTION i100_upd_person()
       LET g_ima.ima67=l_new
     END CASE
 END FUNCTION
- 
+
 FUNCTION i100_chk_ima01(p_cmd)
    DEFINE p_cmd LIKE type_file.chr1
    DEFINE l_cnt LIKE type_file.num5
@@ -6586,9 +6595,9 @@ FUNCTION i100_chk_ima01(p_cmd)
    DEFINE l_ima120 LIKE ima_file.ima120         #FUN-A90049 add
    #str----add by guanyao160614
    DEFINE l_x     LIKE type_file.num5
-   DEFINE l_imz01 LIKE imz_file.imz01 
+   DEFINE l_imz01 LIKE imz_file.imz01
    #str----add by guanyao160614
- 
+
    IF NOT cl_null(g_ima.ima01) THEN
       IF p_cmd = "a" OR                    # 若輸入或更改且改KEY
         (p_cmd = "u" AND g_ima.ima01 != g_ima01_t) THEN
@@ -6596,14 +6605,14 @@ FUNCTION i100_chk_ima01(p_cmd)
               WHERE ima01 = g_ima.ima01
           IF l_cnt > 0 THEN                  # Duplicated
               #FUN-A90049 -----------------add start--------------------------------
-              SELECT ima120 INTO l_ima120 FROM ima_file WHERE ima01 = g_ima.ima01         
+              SELECT ima120 INTO l_ima120 FROM ima_file WHERE ima01 = g_ima.ima01
               IF l_ima120 = '1' THEN
-                 CALL cl_err(g_ima.ima01,'aim-023',0) 
+                 CALL cl_err(g_ima.ima01,'aim-023',0)
               ELSE
                  IF l_ima120 = '2' THEN
                     CALL cl_err(g_ima.ima120,'aim-024',0)
-                 END IF 
-              END IF 
+                 END IF
+              END IF
               #FUN-A90049 -----------------add end-----------------------------
             # CALL cl_err(g_ima.ima01,-239,0)                  #FUN-A90049 mark
               LET g_ima.ima01 = g_ima01_t
@@ -6638,12 +6647,12 @@ FUNCTION i100_chk_ima01(p_cmd)
           #FUN-B70057 add--end
           #str-----add by guanyao160614
           LET l_imz01 = g_ima.ima01[3,4]
-          LET l_x = 0  
+          LET l_x = 0
           SELECT COUNT(*) INTO l_x FROM imz_file WHERE imz01 = l_imz01
-          IF l_x > 0 THEN 
+          IF l_x > 0 THEN
              LET g_ima.ima06 = l_imz01
              DISPLAY BY NAME g_ima.ima06
-          END IF 
+          END IF
           #end-----add by guanyao160614
       END IF
       #IF cl_null(g_ima.ima571)  THEN    #No.MOD-790164 add          #TQC-C70189 mark
@@ -6662,16 +6671,16 @@ FUNCTION i100_chk_ima01(p_cmd)
       END IF
       IF g_ima.ima01[1,4]='MISC' THEN
           LET g_ima.ima08='Z'
-          LET g_ima.ima24='N'               #FUN-B40078 
+          LET g_ima.ima24='N'               #FUN-B40078
           DISPLAY BY NAME g_ima.ima08
-#FUN-B40078 --begin--                         
+#FUN-B40078 --begin--
                          ,g_ima.ima24
-          CALL cl_set_comp_entry("ima24",FALSE)             
+          CALL cl_set_comp_entry("ima24",FALSE)
       ELSE
 #      	  LET g_ima.ima24 = ''           #TQC-B50017
       	  DISPLAY BY NAME g_ima.ima24
-      	  CALL cl_set_comp_entry("ima24",TRUE)     
-#FUN-B40078 --end--      	  
+      	  CALL cl_set_comp_entry("ima24",TRUE)
+#FUN-B40078 --end--
       END IF
      #CHI-CA0073 mark START
      #SELECT ima1015 INTO g_ima.ima1015
@@ -6689,7 +6698,7 @@ FUNCTION i100_chk_ima01(p_cmd)
    END IF
    RETURN TRUE
 END FUNCTION
- 
+
 FUNCTION i100_chg_ima02()
    IF g_aza.aza44 = "Y" THEN
       IF g_zx14 = "Y" AND g_on_change_02 THEN
@@ -6698,7 +6707,7 @@ FUNCTION i100_chg_ima02()
       END IF
    END IF
 END FUNCTION
- 
+
 FUNCTION i100_chg_ima021()
    IF g_aza.aza44 = "Y" THEN
       IF g_zx14 = "Y" AND g_on_change_021 THEN
@@ -6707,11 +6716,11 @@ FUNCTION i100_chg_ima021()
       END IF
    END IF
 END FUNCTION
- 
+
 FUNCTION i100_chk_ima06(p_cmd)
    DEFINE p_cmd LIKE type_file.chr1
    DEFINE l_n   LIKE type_file.num5  #MOD-870225
- 
+
    IF g_ima.ima06 IS NOT NULL AND  g_ima.ima06 != ' ' THEN  #MOD-490474
       IF (g_ima_o.ima06 IS NULL) OR (g_ima.ima06 != g_ima_o.ima06) THEN #MOD-490474
          IF p_cmd='u' THEN #FUN-650045
@@ -6735,15 +6744,15 @@ FUNCTION i100_chk_ima06(p_cmd)
             #若單據還原後,單純改分群碼
             IF g_errno='mfg9199' THEN
               LET l_n=0
-              SELECT COUNT(*) INTO l_n FROM tlf_file 
+              SELECT COUNT(*) INTO l_n FROM tlf_file
                WHERE tlf01 = g_ima.ima01
-              IF l_n=0 THEN 
+              IF l_n=0 THEN
                  IF NOT cl_confirm('mfg9187') THEN
                     LET g_ans='1'
                     RETURN TRUE
                  END IF
-              END IF 
-            END IF 
+              END IF
+            END IF
             CALL i100_ima06('N') #只check 對錯,不詢問
          END IF
       ELSE
@@ -6753,7 +6762,7 @@ FUNCTION i100_chk_ima06(p_cmd)
       IF g_flag2 = '0' THEN
          LET g_errno = 'aoo-043'
       END IF
- 
+
       IF NOT cl_null(g_errno) THEN
          CALL cl_err(g_ima.ima06,g_errno,0)
          LET g_ima.ima06 = g_ima_o.ima06
@@ -6764,10 +6773,10 @@ FUNCTION i100_chk_ima06(p_cmd)
    LET g_ima_o.ima06 = g_ima.ima06
    RETURN TRUE
 END FUNCTION
- 
+
 FUNCTION i100_chk_imaag()
    DEFINE l_cnt LIKE type_file.num5
- 
+
    IF NOT cl_null(g_ima.imaag) THEN
       SELECT count(*) INTO l_cnt FROM aga_file
           WHERE aga01 = g_ima.imaag
@@ -6778,12 +6787,12 @@ FUNCTION i100_chk_imaag()
    END IF
    RETURN TRUE
 END FUNCTION
- 
+
 FUNCTION i100_chk_ima08(p_cmd)
    DEFINE p_cmd LIKE type_file.chr1
    DEFINE l_misc LIKE type_file.chr4
    DEFINE l_cnt  LIKE type_file.num5     #No.MOD-940259 add
- 
+
    IF NOT cl_null(g_ima.ima08) THEN
       IF g_ima_o.ima08 != g_ima.ima08 AND NOT cl_null(g_ima_o.ima08) THEN
          IF g_ima_o.ima08 MATCHES "[PVZ]" THEN
@@ -6794,14 +6803,14 @@ FUNCTION i100_chk_ima08(p_cmd)
                      AND bma05 IS NOT NULL
                      AND bma01 = ima01
                      AND ima08 IN ('P','V','Z')
- 
+
             IF l_cnt > 0  AND g_ima.ima08 NOT MATCHES "[PVZ]" THEN
                CALL cl_err('','abm-043',1)
                RETURN FALSE
             END IF
          END  IF
       END IF
- 
+
       #IF g_ima.ima08 NOT MATCHES "[CTDAMPXKUVZS]"   #MOD-B40151
       IF g_ima.ima08 NOT MATCHES "[CTDAMPXKUVRZS]"   #MOD-B40151
            OR g_ima.ima08 IS NULL
@@ -6830,7 +6839,7 @@ FUNCTION i100_chk_ima08(p_cmd)
    CALL i100_set_no_entry(p_cmd)
    RETURN TRUE
 END FUNCTION
- 
+
 FUNCTION i100_chk_ima13()
    IF NOT cl_null(g_ima.ima13) THEN
        IF (g_ima.ima08 = 'T') AND (g_ima.ima13 IS NULL
@@ -6859,7 +6868,7 @@ FUNCTION i100_chk_ima13()
    LET g_ima_o.ima13 = g_ima.ima13
    RETURN TRUE
 END FUNCTION
- 
+
 FUNCTION i100_chk_ima14()
    IF NOT cl_null(g_ima.ima14) THEN
       IF g_ima.ima14 NOT MATCHES "[YN]" THEN
@@ -6872,7 +6881,7 @@ FUNCTION i100_chk_ima14()
    LET g_ima_o.ima14 = g_ima.ima14
    RETURN TRUE
 END FUNCTION
- 
+
 FUNCTION i100_chk_ima903()
    IF NOT cl_null(g_ima.ima903) THEN
       IF g_ima.ima903 NOT MATCHES "[YN]" THEN
@@ -6889,7 +6898,7 @@ FUNCTION i100_chk_ima903()
    END IF
    RETURN TRUE
 END FUNCTION
- 
+
 FUNCTION i100_chk_ima36()
  #FUN-D40103--mark--str--
  #   IF g_ima.ima36 !=' ' AND g_ima.ima36 IS NOT NULL THEN
@@ -6901,15 +6910,15 @@ FUNCTION i100_chk_ima36()
  #         RETURN FALSE
  #      END IF
  #   END IF
- #FUN-D40103--mark--end-- 
+ #FUN-D40103--mark--end--
    #FUN-D40103--add--str--
-   IF NOT s_imechk(g_ima.ima35,g_ima.ima36) THEN 
+   IF NOT s_imechk(g_ima.ima35,g_ima.ima36) THEN
       RETURN FALSE
-   END IF 
+   END IF
    #FUN-D40103--add--end--
    RETURN TRUE
 END FUNCTION
- 
+
 FUNCTION i100_chk_ima37()
    IF NOT cl_null(g_ima.ima37) THEN
       IF g_ima.ima37 NOT MATCHES "[0123456]" THEN                #No.FUN-810016
@@ -6929,7 +6938,7 @@ FUNCTION i100_chk_ima37()
    END IF
    RETURN TRUE
 END FUNCTION
- 
+
 FUNCTION i100_chk_ima07()
    IF NOT cl_null(g_ima.ima07) THEN
       IF g_ima.ima07 NOT MATCHES'[ABC]' THEN
@@ -6941,7 +6950,7 @@ FUNCTION i100_chk_ima07()
    END IF
    RETURN TRUE
 END FUNCTION
- 
+
 FUNCTION i100_chk_ima51()
    IF NOT cl_null(g_ima.ima51) THEN
       IF g_ima.ima51 <= 0
@@ -6956,7 +6965,7 @@ FUNCTION i100_chk_ima51()
    END IF
    RETURN TRUE
 END FUNCTION
- 
+
 FUNCTION i100_chk_ima52()
    IF NOT cl_null(g_ima.ima52) THEN #MOD-4A0098
      IF g_ima.ima52 <= 0 THEN
@@ -6971,10 +6980,10 @@ FUNCTION i100_chk_ima52()
    END IF
    RETURN TRUE
 END FUNCTION
- 
+
 FUNCTION i100_chk_ima906(p_cmd)
    DEFINE p_cmd LIKE type_file.chr1
- 
+
    IF NOT cl_null(g_ima.ima906) THEN
       IF g_sma.sma115 = 'Y' THEN
          IF g_ima.ima906 IS NULL THEN
@@ -7017,33 +7026,33 @@ FUNCTION i100_chk_ima906(p_cmd)
    CALL i100_set_no_entry(p_cmd)
    RETURN TRUE
 END FUNCTION
- 
+
 FUNCTION i100_copy_input()
    DEFINE l_newno LIKE ima_file.ima01
    DEFINE l_newno1 LIKE ima_file.ima01     #MOD-B40111 add
    DEFINE l_ima02 LIKE ima_file.ima02      #MOD-B40111 add
    DEFINE l_n     LIKE type_file.num5
-   DEFINE l_ima120  LIKE ima_file.ima120            #FUN-A90049 
+   DEFINE l_ima120  LIKE ima_file.ima120            #FUN-A90049
    define l_ima01  string  #darcy:2023/04/12 add
- 
+
    #MOD-B60152---modify---start---
    #IF s_shut(0) THEN RETURN END IF
-    IF s_shut(0) THEN 
-       RETURN FALSE,NULL,NULL 
+    IF s_shut(0) THEN
+       RETURN FALSE,NULL,NULL
     END IF
    #MOD-B60152---modify---end---
     IF g_ima.ima01 IS NULL THEN
         CALL cl_err('',-400,0)
         RETURN FALSE,NULL,NULL       #MOD-B60152 add NULL
     END IF
- 
+
     LET g_before_input_done = FALSE
     CALL i100_set_entry('a')
     LET g_before_input_done = TRUE
- 
+
    #MOD-B40111---add---start---
     IF g_aza.aza28 = 'Y' THEN
-       CALL s_auno(g_ima.ima01,'1','') RETURNING l_newno1,l_ima02    
+       CALL s_auno(g_ima.ima01,'1','') RETURNING l_newno1,l_ima02
     END IF
    #MOD-B40111---add---end--
 
@@ -7054,7 +7063,7 @@ FUNCTION i100_copy_input()
              DISPLAY l_newno TO ima01
           END IF
           IF NOT cl_null(l_newno1) THEN LET l_newno = l_newno1 END IF   #MOD-B40111 add
- 
+
       AFTER FIELD ima01
           IF l_newno IS NULL THEN
               NEXT FIELD ima01
@@ -7065,13 +7074,13 @@ FUNCTION i100_copy_input()
              #FUN-A90049 ------------------add start----------------------------------
               SELECT ima120 INTO l_ima120 FROM ima_file WHERE ima01 = l_newno
               IF l_ima120  = '1' THEN
-                 CALL cl_err(l_newno,'aim-023',0) 
+                 CALL cl_err(l_newno,'aim-023',0)
               ELSE
                  IF l_ima120 = '2' THEN
-                    CALL cl_err(l_newno,'aim-024',0) 
-                 END IF 
-              END IF 
-             #FUN-A90049 -----------------add end----------------------------------------    
+                    CALL cl_err(l_newno,'aim-024',0)
+                 END IF
+              END IF
+             #FUN-A90049 -----------------add end----------------------------------------
              #CALL cl_err(l_newno,-239,0)                         #FUN-A90049 mark
               NEXT FIELD ima01
           END IF
@@ -7099,44 +7108,44 @@ FUNCTION i100_copy_input()
           END IF
           IF l_newno[1,4]='MISC' THEN
               LET g_ima.ima08='Z'
-              LET g_ima.ima24='N'         #FUN-B40078               
+              LET g_ima.ima24='N'         #FUN-B40078
               DISPLAY BY NAME g_ima.ima08
-#FUN-B40078 --begin--              
+#FUN-B40078 --begin--
                              ,g_ima.ima24
               CALL cl_set_comp_entry("ima24",FALSE)
-          ELSE 
+          ELSE
               CALL cl_set_comp_entry("ima24",TRUE)
               LET g_ima.ima24 ='N'              #TQC-B50017 ''->'N'
-              DISPLAY BY NAME g_ima.ima24          	                     
-#FUN-B40078 --end--                             
+              DISPLAY BY NAME g_ima.ima24
+#FUN-B40078 --end--
           END IF
           #darcy:2023/04/12 add s---
           let l_ima01 = g_ima.ima01
           if l_ima01.getIndexOf(".",1) and l_ima01.getLength()<>10then
              call cl_err(g_ima.ima01,'cim-023',1)
              next field ima01
-          end if 
+          end if
           #darcy:2023/04/12 add e---
- 
+
       ON IDLE g_idle_seconds
          CALL cl_on_idle()
          CONTINUE INPUT
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
+
       ON ACTION controlg      #MOD-4C0121
          CALL cl_cmdask()     #MOD-4C0121
- 
+
     END INPUT
- 
+
     IF INT_FLAG THEN
         LET INT_FLAG = 0
        #CALL cl_set_comp_entry("ima02,ima021,ima13",FALSE)  #TQC-A60015 #MOD-B50026 mark
-        CALL cl_set_comp_entry("ima13",FALSE)                           #MOD-B50026 add 
+        CALL cl_set_comp_entry("ima13",FALSE)                           #MOD-B50026 add
         CALL cl_set_comp_entry("ima25,ima910,ima55,ima9021",FALSE)  #TQC-A60015
         DISPLAY BY NAME g_ima.ima01
         RETURN FALSE,NULL,NULL       #MOD-B60152 add NULL
@@ -7144,7 +7153,7 @@ FUNCTION i100_copy_input()
    #No.B018 010322 by plum 增加再次詢問的確定,以免不必要的新增
     IF NOT cl_confirm('mfg-003') THEN
        #CALL cl_set_comp_entry("ima02,ima021,ima13",FALSE)  #TQC-A60015   #MOD-B50026 mark
-        CALL cl_set_comp_entry("ima13",FALSE)                             #MOD-B50026 add 
+        CALL cl_set_comp_entry("ima13",FALSE)                             #MOD-B50026 add
         CALL cl_set_comp_entry("ima25,ima910,ima55,ima9021",FALSE)  #TQC-A60015
        RETURN FALSE,NULL,NULL       #MOD-B60152 add NULL
     END IF
@@ -7153,7 +7162,7 @@ FUNCTION i100_copy_input()
     IF cl_null(l_ima02) THEN LET l_ima02 = g_ima.ima02 END IF   #MOD-B60152 add
     RETURN TRUE,l_newno,l_ima02     #MOD-B40111 add l_ima02
 END FUNCTION
- 
+
 #FUNCTION i100_copy_default(l_newno)            #MOD-B40111 mark
 FUNCTION i100_copy_default(l_newno,l_ima02)     #MOD-B40111 add
    DEFINE l_ima RECORD LIKE ima_file.*
@@ -7162,9 +7171,9 @@ FUNCTION i100_copy_default(l_newno,l_ima02)     #MOD-B40111 add
    DEFINE l_ima02 LIKE ima_file.ima02     #MOD-B40111 add
 
    SELECT * INTO c_ima.* FROM ima_file WHERE ima01 = g_ima.ima01     #MOD-B90017 add
-   
+
    #No.B018 010322 by plum 將漏掉的補入,參考i100_default
-    #LET l_ima.* = g_ima.*      #MOD-B90017 mark 
+    #LET l_ima.* = g_ima.*      #MOD-B90017 mark
     LET l_ima.* = c_ima.*       #MOD-B90017 add
     LET l_ima.ima01  =l_newno   #資料鍵值
     LET l_ima.ima02  =l_ima02                 #MOD-B40111 add
@@ -7172,7 +7181,7 @@ FUNCTION i100_copy_default(l_newno,l_ima02)     #MOD-B40111 add
     LET l_ima.ima18  =0
     LET l_ima.ima16  =99         #NO:6973
 #   LET l_ima.ima26  =0         #MPS/MRP可用庫存數量     #No.FUN-A20044 mark
-#   LET l_ima.ima261 =0         #不可用庫存數量          #No.FUN-A20044 mark  
+#   LET l_ima.ima261 =0         #不可用庫存數量          #No.FUN-A20044 mark
 #   LET l_ima.ima262 =0         #庫存可用數量            #No.FUN-A20044 mark
     LET l_ima.ima29  =NULL      #最近易動日期
     LET l_ima.ima30  =NULL      #最近盤點日期
@@ -7232,7 +7241,11 @@ FUNCTION i100_copy_default(l_newno,l_ima02)     #MOD-B40111 add
     LET l_ima.imamodu=NULL      #資料修改日期
     LET l_ima.imadate=g_today   #資料建立日期
     LET l_ima.imaacti='P'       #有效資料 #FUN-690060
- 
+    -- 光板成品
+    if l_ima.ima01 not matches '*-*' and l_ima.ima01[7,7] not matches '[ABCD]' and l_ima.ima01 not matches '*.*' then
+         let l_ima.imaud39 = '常规'     # darcy add 特殊材料
+    end if
+
     IF l_ima.ima06 IS NULL THEN
        LET l_ima.ima871 =0         #間接物料分攤率
        LET l_ima.ima872 =''        #材料製造費用成本項目
@@ -7256,7 +7269,7 @@ FUNCTION i100_copy_default(l_newno,l_ima02)     #MOD-B40111 add
     IF l_ima.ima926 IS NULL THEN LET l_ima.ima926 = 'N' END IF  #No.FUN-9B0099
     RETURN l_ima.*
 END FUNCTION
- 
+
 FUNCTION i100_copy_insert(l_ima,l_newno)
    DEFINE l_ima RECORD LIKE ima_file.*
    DEFINE l_newno LIKE ima_file.ima01
@@ -7266,7 +7279,7 @@ FUNCTION i100_copy_insert(l_ima,l_newno)
    DEFINE l_imac  RECORD LIKE imac_file.*      #No.TQC-C20275 add
    DEFINE l_cnt   LIKE type_file.num5  #FUN-C50110
     BEGIN WORK
-    
+
     IF cl_null(g_ima.ima601) THEN
        LET l_ima.ima601 = '1'      #FUN-860111
     ELSE
@@ -7278,8 +7291,8 @@ FUNCTION i100_copy_insert(l_ima,l_newno)
     END IF
     #MOD-D30081---end
     LET l_ima.ima154 = 'N'      #FUN-870100 ADD
-    LET l_ima.ima155 = 'N'      #FUN-870100 ADD 
-    LET l_ima.ima571 = l_newno  #TQC-9A0185    
+    LET l_ima.ima155 = 'N'      #FUN-870100 ADD
+    LET l_ima.ima571 = l_newno  #TQC-9A0185
     LET l_ima.imaoriu = g_user      #No.FUN-980030 10/01/04
     LET l_ima.imaorig = g_grup      #No.FUN-980030 10/01/04
     LET l_ima.ima120 = '1'          #No.FUN-A90049 add
@@ -7321,7 +7334,7 @@ FUNCTION i100_copy_insert(l_ima,l_newno)
            LET l_imac.imac01 = l_newno
            INSERT INTO imac_file VALUES(l_imac.*)
            IF SQLCA.SQLCODE THEN
-              CALL cl_err3("ins","imac_file",l_imac.imac01,"",SQLCA.sqlcode,"","",1)  
+              CALL cl_err3("ins","imac_file",l_imac.imac01,"",SQLCA.sqlcode,"","",1)
               ROLLBACK WORK
               RETURN FALSE
            ELSE
@@ -7343,7 +7356,7 @@ FUNCTION i100_copy_insert(l_ima,l_newno)
               MESSAGE 'INSERT smd...'
            END IF
        END FOREACH
- 
+
       DECLARE imt_cur CURSOR FOR
        SELECT * FROM imt_file WHERE imt01=g_ima.ima01
        FOREACH imt_cur INTO l_imt.*
@@ -7351,13 +7364,13 @@ FUNCTION i100_copy_insert(l_ima,l_newno)
            INSERT INTO imt_file VALUES(l_imt.*)
            IF SQLCA.SQLCODE THEN
               CALL cl_err3("ins","imt_file",l_imt.imt01,"",SQLCA.sqlcode,"","",1)   #NO.FUN-640266
-              ROLLBACK WORK     
-              RETURN FALSE           
+              ROLLBACK WORK
+              RETURN FALSE
            ELSE
               MESSAGE 'INSERT imt...'
            END IF
        END FOREACH
-      
+
       #當使用多語言功能時,需連多語言的品名、規格資料一併複製
        IF g_aza.aza44 = "Y" THEN
           DECLARE gbc_cur1 CURSOR FOR
@@ -7373,7 +7386,7 @@ FUNCTION i100_copy_insert(l_ima,l_newno)
                 MESSAGE 'INSERT gbc...'
              END IF
           END FOREACH
- 
+
           DECLARE gbc_cur2 CURSOR FOR
              SELECT * FROM gbc_file WHERE gbc01 = 'ima_file'
                                       AND gbc02 = 'ima021'    #規格
@@ -7400,10 +7413,10 @@ FUNCTION i100_copy_insert(l_ima,l_newno)
        RETURN TRUE
     END IF
 END FUNCTION
- 
+
 FUNCTION i100_copy_finish(l_newno,l_oldno)
    DEFINE l_newno,l_oldno LIKE ima_file.ima01
- 
+
    # 傳入參數: (1)TABLE名稱, (2)新增資料,
    #           (3)功能選項：insert(新增),update(修改),delete(刪除)
    CASE aws_spccli_base('ima_file',base.TypeInfo.create(g_ima),'insert')
@@ -7421,7 +7434,7 @@ FUNCTION i100_copy_finish(l_newno,l_oldno)
    #               WHERE ima01 = l_oldno
    #FUN-C30027---end
 END FUNCTION
- 
+
 FUNCTION i100_i_inpchk()
    define l_ima01 string #darcy:2023/04/12 add
    IF ( g_ima.ima37='0' OR g_ima.ima37 ='5' )
@@ -7462,63 +7475,63 @@ FUNCTION i100_i_inpchk()
    if g_ima.imaud19 is null and (g_ima.ima06 ='G01' or g_ima.ima06 ='G02' or g_ima.ima06 ='BCP') then
    call cl_err('','cim-025',1)
       return "imaud19"
-   end if 
+   end if
    # 检测为带'.'的原材料，位数只能是10位，不能多，也不能少
    let l_ima01 = g_ima.ima01
    if l_ima01.getIndexOf(".",1) and l_ima01.getLength()<>10then
       call cl_err(g_ima.ima01,'cim-023',1)
       return 'ima01'
-   end if 
+   end if
    #darcy:2023/04/12 add e---
    RETURN NULL
 END FUNCTION
- 
+
 FUNCTION i100_a_inschk()
    IF g_ima.ima31 IS NULL THEN
       LET g_ima.ima31=g_ima.ima25
       LET g_ima.ima31_fac=1
    END IF
- 
+
    IF g_ima.ima133 IS NULL THEN
       LET g_ima.ima133 = g_ima.ima01
    END IF
- 
+
    IF g_ima.ima571 IS NULL THEN
       LET g_ima.ima571 = g_ima.ima01
    END IF
- 
+
    IF g_ima.ima44 IS NULL OR g_ima.ima44=' ' THEN
       LET g_ima.ima44=g_ima.ima25   #採購單位
       LET g_ima.ima44_fac=1
    END IF
- 
+
    IF g_ima.ima55 IS NULL OR g_ima.ima55=' ' THEN
       LET g_ima.ima55=g_ima.ima25   #生產單位
       LET g_ima.ima55_fac=1
    END IF
- 
+
    IF g_ima.ima63 IS NULL OR g_ima.ima63=' ' THEN
       LET g_ima.ima63=g_ima.ima25   #發料單位
       LET g_ima.ima63_fac=1
    END IF
- 
+
    LET g_ima.ima86=g_ima.ima25   #庫存單位=成本單位
    LET g_ima.ima86_fac=1
- 
+
    IF g_ima.ima35 IS NULL THEN
       LET g_ima.ima35=' ' #No:7726
    END IF
- 
+
    IF g_ima.ima36 IS NULL THEN
       LET g_ima.ima36=' ' #No:7726
    END IF
- 
+
    IF g_ima.ima910 IS NULL THEN
       LET g_ima.ima910=' ' #FUN-550014
    END IF
    IF g_ima.ima131 IS NULL THEN LET g_ima.ima131 = ' ' END IF #No.FUN-880032
-   
- 
+
+
    LET g_ima.ima913 = "N"   #No.MOD-640061
 
    IF g_ima.ima926 IS NULL THEN
@@ -7526,44 +7539,44 @@ FUNCTION i100_a_inschk()
    END IF
 
 END FUNCTION
- 
+
 FUNCTION i100_a_updchk()
    LET g_ima.ima31=g_ima.ima25
    LET g_ima.ima31_fac=1
- 
+
    LET g_ima.ima44=g_ima.ima25   #採購單位
    LET g_ima.ima44_fac=1
- 
+
    LET g_ima.ima55=g_ima.ima25   #生產單位
    LET g_ima.ima55_fac=1
- 
+
    LET g_ima.ima63=g_ima.ima25   #發料單位
    LET g_ima.ima63_fac=1
- 
+
    LET g_ima.ima86=g_ima.ima25   #庫存單位=成本單位
    LET g_ima.ima86_fac=1
 
 END FUNCTION
- 
+
 FUNCTION i100_a_ins()
 DEFINE l_cnt        LIKE type_file.num5     #FUN-C50110
 
    LET g_ima.ima01  = g_ima.ima01 CLIPPED      #No.FUN-870150
-   IF cl_null(g_ima.ima601) THEN 
-      LET g_ima.ima601 = '1'    #No:FUN-860111 
+   IF cl_null(g_ima.ima601) THEN
+      LET g_ima.ima601 = '1'    #No:FUN-860111
    END IF
-   LET g_ima.ima154 = 'N'      #FUN-870100 ADD                                                                                     
-   LET g_ima.ima155 = 'N'      #FUN-870100 ADD 
+   LET g_ima.ima154 = 'N'      #FUN-870100 ADD
+   LET g_ima.ima155 = 'N'      #FUN-870100 ADD
    IF g_ima.ima01[1,4]='MISC' THEN
       LET g_ima.ima130='2'
    END IF
    LET g_ima.imaoriu = g_user      #No.FUN-980030 10/01/04
    LET g_ima.imaorig = g_grup      #No.FUN-980030 10/01/04
-   LET g_ima.ima927 = 'N'          #No.FUN-A90049 add 
+   LET g_ima.ima927 = 'N'          #No.FUN-A90049 add
 #FUN-A20037 --begin--
    IF cl_null(g_ima.ima022) THEN
-     LET g_ima.ima022 = 0 
-   END IF 
+     LET g_ima.ima022 = 0
+   END IF
 #FUN-A20037 --end--
    IF cl_null(g_ima.ima156) THEN LET g_ima.ima156 ='N' END IF  #FUN-A80102
    IF cl_null(g_ima.ima157) THEN LET g_ima.ima157 =' ' END IF  #FUN-A80102
@@ -7602,7 +7615,7 @@ DEFINE l_cnt        LIKE type_file.num5     #FUN-C50110
          WHEN 2  #呼叫 MDM 失敗
               RETURN FALSE
       END CASE
- 
+
       # CALL aws_spccli_base()
       # 傳入參數: (1)TABLE名稱, (2)新增資料,
       #           (3)功能選項：insert(新增),update(修改),delete(刪除)
@@ -7616,13 +7629,13 @@ DEFINE l_cnt        LIKE type_file.num5     #FUN-C50110
          WHEN 2  #呼叫 SPC 失敗
               RETURN FALSE
       END CASE
- 
+
    END IF
    RETURN TRUE
 END FUNCTION
- 
+
 FUNCTION i100_u_updchk()
- 
+
     OPEN i100_cl USING g_ima.ima01
     IF SQLCA.sqlcode THEN
        CALL cl_err(g_ima.ima01,SQLCA.sqlcode,0)
@@ -7640,13 +7653,13 @@ FUNCTION i100_u_updchk()
     LET g_ima908 = g_ima.ima908
    RETURN TRUE
 END FUNCTION
- 
+
 FUNCTION i100_u_upd()
    DEFINE l_imzacti  LIKE imz_file.imzacti
-   DEFINE l_prog LIKE type_file.chr8 #FUN-870101 add 
+   DEFINE l_prog LIKE type_file.chr8 #FUN-870101 add
    DEFINE l_n    LIKE type_file.num5 #No.FUN-A50011
    DEFINE l_cnt  LIKE type_file.num5  #FUN-C50110
- 
+
 #  # B018 01/03/22 plum 為了擋user是使用copy,但使用的舊料件的主分群碼已無效
    LET g_errno=' '
    SELECT imzacti INTO l_imzacti FROM imz_file
@@ -7667,7 +7680,7 @@ FUNCTION i100_u_upd()
    IF cl_null(g_ima.ima35) THEN LET g_ima.ima35 = ' ' END IF   #MOD-A90173 add
    IF cl_null(g_ima.ima36) THEN LET g_ima.ima36 = ' ' END IF   #MOD-A90173 add
    #darcy:2022/11/18 add s---
-   if (g_smd_t.smd04 != g_smd.smd04) or 
+   if (g_smd_t.smd04 != g_smd.smd04) or
       ((cl_null(g_smd_t.smd04) and not cl_null(g_smd.smd04)) or
        (not cl_null(g_smd_t.smd04) and cl_null(g_smd.smd04))
       ) then
@@ -7702,16 +7715,16 @@ FUNCTION i100_u_upd()
       LET g_errno = TIME
       LET g_msg = 'Chg No:',g_ima.ima01
       LET g_u_flag='0'   #FUN-870101 add
- 
-      INSERT INTO azo_file (azo01,azo02,azo03,azo04,azo05,azo06,azoplant,azolegal) #No.FUN-980004 
-        VALUES ('aimi100',g_user,g_today,g_errno,g_ima.ima01,g_msg,g_plant,g_legal) #MOD-940394  #No.FUN-980004 #mod by liuxqa 091020 
+
+      INSERT INTO azo_file (azo01,azo02,azo03,azo04,azo05,azo06,azoplant,azolegal) #No.FUN-980004
+        VALUES ('aimi100',g_user,g_today,g_errno,g_ima.ima01,g_msg,g_plant,g_legal) #MOD-940394  #No.FUN-980004 #mod by liuxqa 091020
       IF SQLCA.sqlcode THEN
          CALL cl_err3("ins","azo_file","aimi100","",SQLCA.sqlcode,"","",1)  #No.FUN-660156
          RETURN FALSE
       END IF
 
       LET g_success = 'Y'          #FUN-9A0056 add
- 
+
       CASE aws_mdmdata('ima_file','update',g_ima.ima01,base.TypeInfo.create(g_ima),'CreateItemMasterData') #FUN-870166
          WHEN 0  #無與 MDM 整合
               CALL cl_msg('Update O.K')
@@ -7726,7 +7739,7 @@ FUNCTION i100_u_upd()
               LET g_success = 'N'    #FUN-9A0056 add
               #RETURN FALSE       #FUN-870101 mark
       END CASE
- 
+
       IF g_action_choice <> "reproduce" THEN
          # CALL aws_spccli_base()
          # 傳入參數: (1)TABLE名稱, (2)修改資料,
@@ -7744,8 +7757,8 @@ FUNCTION i100_u_upd()
                  LET g_success = 'N'    #FUN-9A0056 add
                 #LET g_u_flag='1'       #FUN-870101 add  #FUN-9A0056 mark
          END CASE
- 
-         IF g_aza.aza90 MATCHES "[Yy]" THEN   #TQC-8B0011  ADD 
+
+         IF g_aza.aza90 MATCHES "[Yy]" THEN   #TQC-8B0011  ADD
            #FUN-9A0056 mark str -----
             ## CALL aws_mescli
             ## 傳入參數: (1)程式代號
@@ -7753,19 +7766,19 @@ FUNCTION i100_u_upd()
             ##           (3)Key
             #LET l_prog=''
             #CASE g_ima.ima08
-            #   WHEN 'P' LET l_prog = 'aimi100' 
+            #   WHEN 'P' LET l_prog = 'aimi100'
             #   WHEN 'M' LET l_prog = 'axmi121'
             #   OTHERWISE LET l_prog= ' '
-            #END CASE 
+            #END CASE
             #CASE aws_mescli(l_prog,'update',g_ima.ima01)
             #   WHEN 0  #無與 MES 整合
             #        CALL cl_msg('Update O.K')
-            #        LET g_u_flag='0'   
+            #        LET g_u_flag='0'
             #   WHEN 1  #呼叫 MES 成功
-            #        LET g_u_flag='0'    
+            #        LET g_u_flag='0'
             #        CALL cl_msg('Update O.K, Update MES O.K')
             #   WHEN 2  #呼叫 MES 失敗
-            #        LET g_u_flag='1'    
+            #        LET g_u_flag='1'
             #END CASE
            #FUN-9A0056 mark end -----
 
@@ -7786,7 +7799,7 @@ FUNCTION i100_u_upd()
 END FUNCTION
 
 FUNCTION i100_reselect_data()
- 
+
    CALL i100_declare_curs()
    OPEN aimi100_count
    FETCH aimi100_count INTO g_row_count
@@ -7794,39 +7807,39 @@ FUNCTION i100_reselect_data()
    OPEN aimi100_curs                            # 從DB產生合乎條件TEMP(0-30秒)
    FETCH ABSOLUTE g_curs_index aimi100_curs INTO g_ima.ima01
    CALL cl_navigator_setting(g_curs_index, g_row_count)
- 
+
    SELECT * INTO g_ima.* FROM ima_file            # 重讀DB,因TEMP有不被更新特性
       WHERE ima01 = g_ima.ima01
- 
+
    IF SQLCA.sqlcode THEN
       CALL cl_err3("sel","ima_file",g_ima.ima01,"",SQLCA.sqlcode,"","",1)
    END IF
 END FUNCTION
- 
- 
- 
+
+
+
 FUNCTION i100_bp(p_ud)
    DEFINE   p_ud      LIKE type_file.chr1          #No.FUN-680126 VARCHAR(1)
- 
+
    IF p_ud <> "G" OR g_action_choice = "detail" THEN
       RETURN
    END IF
- 
+
    LET g_action_choice = " "
- 
+
    CALL cl_set_act_visible("accept,cancel", FALSE)
    DISPLAY ARRAY g_ima_l TO s_ima_l.* ATTRIBUTE(COUNT=g_rec_b1,UNBUFFERED)
- 
+
       BEFORE DISPLAY
          CALL cl_navigator_setting(g_curs_index, g_row_count)
          IF g_rec_b1 != 0 THEN
             CALL fgl_set_arr_curr(g_curs_index)
          END IF
- 
+
       BEFORE ROW
          LET l_ac1 = ARR_CURR()
          CALL cl_show_fld_cont()
- 
+
       ON ACTION main
          LET g_bp_flag = 'main'
          LET l_ac1 = ARR_CURR()
@@ -7841,7 +7854,7 @@ FUNCTION i100_bp(p_ud)
          CALL cl_set_comp_visible("page112", TRUE)
          CALL cl_set_comp_visible("info", TRUE)
          EXIT DISPLAY
- 
+
       ON ACTION accept
          LET l_ac1 = ARR_CURR()
          LET g_jump = l_ac1
@@ -7854,7 +7867,7 @@ FUNCTION i100_bp(p_ud)
          CALL ui.interface.refresh()                  #NO.FUN-840018 ADD
          CALL cl_set_comp_visible("page112", TRUE)    #NO.FUN-840018 ADD
          EXIT DISPLAY
- 
+
       ON ACTION first
          CALL i100_fetch('F')
          CALL cl_navigator_setting(g_curs_index, g_row_count)
@@ -7862,7 +7875,7 @@ FUNCTION i100_bp(p_ud)
             CALL fgl_set_arr_curr(g_curs_index)
          END IF
          CONTINUE DISPLAY
- 
+
       ON ACTION previous
          CALL i100_fetch('P')
          CALL cl_navigator_setting(g_curs_index, g_row_count)
@@ -7870,7 +7883,7 @@ FUNCTION i100_bp(p_ud)
             CALL fgl_set_arr_curr(g_curs_index)
          END IF
          CONTINUE DISPLAY
- 
+
       ON ACTION jump
          CALL i100_fetch('/')
          CALL cl_navigator_setting(g_curs_index, g_row_count)
@@ -7878,7 +7891,7 @@ FUNCTION i100_bp(p_ud)
             CALL fgl_set_arr_curr(g_curs_index)
          END IF
          CONTINUE DISPLAY
- 
+
       ON ACTION next
          CALL i100_fetch('N')
          CALL cl_navigator_setting(g_curs_index, g_row_count)
@@ -7886,7 +7899,7 @@ FUNCTION i100_bp(p_ud)
             CALL fgl_set_arr_curr(g_curs_index)
          END IF
          CONTINUE DISPLAY
- 
+
       ON ACTION last
          CALL i100_fetch('L')
          CALL cl_navigator_setting(g_curs_index, g_row_count)
@@ -7903,58 +7916,58 @@ FUNCTION i100_bp(p_ud)
 
       ON ACTION info_pg
          EXIT DISPLAY
- 
+
       ON ACTION help
          LET g_action_choice="help"
          EXIT DISPLAY
- 
+
       ON ACTION exit
          LET g_action_choice="exit"  #MOD-8A0193 add
          EXIT DISPLAY
- 
+
       ON ACTION controlg
-         LET g_action_choice="controlg"  
+         LET g_action_choice="controlg"
          EXIT DISPLAY
- 
+
       ON ACTION locale
          CALL cl_dynamic_locale()
          CALL i100_set_perlang()
          CALL i100_show_pic()
          CALL cl_show_fld_cont()
- 
+
       ON ACTION cancel
          LET INT_FLAG=FALSE          #MOD-8A0193
          LET g_action_choice="exit"  #MOD-8A0193 add
          EXIT DISPLAY
- 
+
       ON IDLE g_idle_seconds
          CALL cl_on_idle()
          CONTINUE DISPLAY
- 
+
       ON ACTION about         #MOD-4C0121
          LET g_action_choice="about"  #MOD-8A0193 add
          EXIT DISPLAY                 #MOD-8A0193 add
-     
+
       ON ACTION insert
          LET g_action_choice="insert"
          EXIT DISPLAY
- 
+
       ON ACTION query
          LET g_action_choice="query"
          EXIT DISPLAY
- 
+
       ON ACTION delete
          LET g_action_choice="delete"
          EXIT DISPLAY
- 
+
       ON ACTION modify
          LET g_action_choice="modify"
          EXIT DISPLAY
- 
+
       ON ACTION invalid
          LET g_action_choice="invalid"
          EXIT DISPLAY
- 
+
       ON ACTION reproduce
          LET g_action_choice="reproduce"
          EXIT DISPLAY
@@ -7963,100 +7976,100 @@ FUNCTION i100_bp(p_ud)
       ON ACTION exporttoexcel
          LET g_action_choice="exporttoexcel"
          EXIT DISPLAY
-      #No.FUN-9C0089 add -end----------------- 
+      #No.FUN-9C0089 add -end-----------------
 
       ON ACTION output
          LET g_action_choice="output"
          EXIT DISPLAY
- 
+
       ON ACTION data_status
          LET g_action_choice="data_status"
          EXIT DISPLAY
- 
+
       ON ACTION inventory
          LET g_action_choice="inventory"
          EXIT DISPLAY
 
 #NO.FUN-B30092  ------------------------add start------------------------
-      ON ACTION quantifying 
+      ON ACTION quantifying
          LET g_action_choice="quantifying"
          EXIT DISPLAY
 #NO.FUN-B30092 --------------------------add end------------------------
- 
- 
+
+
       ON ACTION sales
          LET g_action_choice="sales"
          EXIT DISPLAY
- 
+
       ON ACTION purchase
          LET g_action_choice="purchase"
          EXIT DISPLAY
- 
+
       ON ACTION production
          LET g_action_choice="production"
          EXIT DISPLAY
- 
+
       ON ACTION cost
          LET g_action_choice="cost"
          EXIT DISPLAY
- 
+
       ON ACTION cost_element
          LET g_action_choice="cost_element"
          EXIT DISPLAY
- 
+
       ON ACTION pn_spec_extra_desc
          LET g_action_choice="pn_spec_extra_desc"
          EXIT DISPLAY
- 
+
       ON ACTION carry
          LET g_action_choice = "carry"
          EXIT DISPLAY
- 
+
       ON ACTION download
          LET g_action_choice = "download"
          EXIT DISPLAY
- 
+
       ON ACTION qry_carry_history
          LET g_action_choice = "qry_carry_history"
          EXIT DISPLAY
- 
+
       ON ACTION related_document
          LET g_action_choice="related_document"
          EXIT DISPLAY
- 
+
       ON ACTION aps_related_data
-         LET g_action_choice="aps_related_data" 
+         LET g_action_choice="aps_related_data"
          EXIT DISPLAY
- 
+
       ON ACTION maintain_item_unit_conversion
          LET g_action_choice="maintain_item_unit_conversion"
          EXIT DISPLAY
- 
+
       ON ACTION add_multi_attr_sub
          LET g_action_choice="add_multi_attr_sub"
          EXIT DISPLAY
- 
+
       ON ACTION confirm
          LET g_action_choice="confirm"
          EXIT DISPLAY
- 
- 
+
+
       ON ACTION notconfirm
          LET g_action_choice="notconfirm"
          EXIT DISPLAY
- 
+
       ON ACTION update_person
          LET g_action_choice="update_person"
          EXIT DISPLAY
     #tianry add
       #ON ACTION  upd_ima25
       #   LET g_action_choice="upd_ima25"
- 
+
       AFTER DISPLAY
          CONTINUE DISPLAY
- 
+
       &include "qry_string.4gl"
- 
+
    END DISPLAY
    CALL cl_set_act_visible("accept,cancel", TRUE)
    IF INT_FLAG THEN
@@ -8068,14 +8081,14 @@ FUNCTION i100_bp(p_ud)
       LET INT_FLAG = 0
    END IF
 END FUNCTION
- 
- 
+
+
 FUNCTION i100_carry()
    DEFINE l_i       LIKE type_file.num10
    DEFINE l_j       LIKE type_file.num10
    DEFINE l_sql     LIKE type_file.chr1000
-   DEFINE l_gew03   LIKE gew_file.gew03  #FUN-950057 
- 
+   DEFINE l_gew03   LIKE gew_file.gew03  #FUN-950057
+
    IF cl_null(g_ima.ima01) THEN  #No.FUN-830090
       CALL cl_err('',-400,0)
       RETURN
@@ -8086,34 +8099,34 @@ FUNCTION i100_carry()
    END IF
 
 #FUN-950057 --------------------add start----------------------
-   SELECT ima1010 INTO g_ima.ima1010                                            
-     FROM ima_file                                                              
-    WHERE ima01 = g_ima.ima01                                                   
-   IF g_ima.ima1010 <> '1' THEN                                                 
-      CALL cl_err(g_ima.ima01,'aoo-092',3)                                      
-      RETURN                                                                    
+   SELECT ima1010 INTO g_ima.ima1010
+     FROM ima_file
+    WHERE ima01 = g_ima.ima01
+   IF g_ima.ima1010 <> '1' THEN
+      CALL cl_err(g_ima.ima01,'aoo-092',3)
+      RETURN
    END IF
 #FUN-950057 -------------------add end-------------------------
- 
+
    LET g_gev04 = NULL
- 
+
    #是否為資料中心的拋轉DB
-   SELECT gev04 INTO g_gev04 FROM gev_file 
+   SELECT gev04 INTO g_gev04 FROM gev_file
     WHERE gev01 = '1' AND gev02 = g_plant
       AND gev03 = 'Y'
    IF SQLCA.sqlcode THEN
       CALL cl_err(g_gev04,'aoo-036',1)
       RETURN
    END IF
- 
+
   IF cl_null(g_gev04) THEN RETURN END IF
- 
+
 #FUN-950057 ----------------------add start---------------------------
-   SELECT DISTINCT gew03 INTO l_gew03 FROM gew_file                               
-    WHERE gew01 = g_gev04 AND gew02 = '1'                                       
-   IF NOT cl_null(l_gew03) THEN                                                 
-      IF l_gew03 = '2' THEN                                                     
-          IF NOT cl_confirm('anm-929') THEN RETURN END IF  #询问是否执行抛转    
+   SELECT DISTINCT gew03 INTO l_gew03 FROM gew_file
+    WHERE gew01 = g_gev04 AND gew02 = '1'
+   IF NOT cl_null(l_gew03) THEN
+      IF l_gew03 = '2' THEN
+          IF NOT cl_confirm('anm-929') THEN RETURN END IF  #询问是否执行抛转
       END IF
 #FUN-950057 ---------------------add end-------------------------------
 
@@ -8125,7 +8138,7 @@ FUNCTION i100_carry()
       LET INT_FLAG=0
       RETURN
    END IF
- 
+
    CALL g_imax.clear()
    LET g_imax[1].sel = 'Y'
    LET g_imax[1].ima01 = g_ima.ima01
@@ -8135,19 +8148,19 @@ FUNCTION i100_carry()
        LET g_azp[l_i].azp02 = g_azp1[l_i].azp02
        LET g_azp[l_i].azp03 = g_azp1[l_i].azp03
    END FOR
- 
+
    CALL s_showmsg_init()
    CALL s_aimi100_carry(g_imax,g_azp,g_gev04,'0')  #No.FUN-830090
    CALL s_showmsg()
- END IF               #FUN-950057  
+ END IF               #FUN-950057
 
 END FUNCTION
- 
+
 FUNCTION i100_download()
   DEFINE l_path       LIKE ze_file.ze03
   DEFINE l_i          LIKE type_file.num10
   DEFINE l_j          LIKE type_file.num10
- 
+
    IF cl_null(g_ima.ima01) THEN  #No.FUN-830090
       CALL cl_err('',-400,0)
       RETURN
@@ -8158,27 +8171,27 @@ FUNCTION i100_download()
        LET g_imax[l_i].ima01 = g_ima_l[l_i].ima01_l
    END FOR
    CALL s_aimi100_download(g_imax)
- 
+
 END FUNCTION
- 
+
 FUNCTION i100_b_menu()
    DEFINE   l_priv1   LIKE zy_file.zy03,           # 使用者執行權限
             l_priv2   LIKE zy_file.zy04,           # 使用者資料權限
             l_priv3   LIKE zy_file.zy05            # 使用部門資料權限
    DEFINE   l_cmd     LIKE type_file.chr1000
- 
- 
+
+
    WHILE TRUE
- 
-      CALL i100_bp("G")  
- 
+
+      CALL i100_bp("G")
+
       IF NOT cl_null(g_action_choice) AND l_ac1>0 THEN #將清單的資料回傳到主畫面
-         SELECT ima_file.* 
-           INTO g_ima.* 
-           FROM ima_file 
+         SELECT ima_file.*
+           INTO g_ima.*
+           FROM ima_file
           WHERE ima01=g_ima_l[l_ac1].ima01_l
       END IF
- 
+
       IF g_action_choice!= "" THEN
          LET g_bp_flag = 'main'
          LET l_ac1 = ARR_CURR()
@@ -8193,7 +8206,7 @@ FUNCTION i100_b_menu()
          CALL cl_set_comp_visible("page112", TRUE)
          CALL cl_set_comp_visible("info", TRUE)
        END IF
- 
+
       CASE g_action_choice
          WHEN "insert"
             IF g_aza.aza60 = 'N' THEN #不使用客戶申請作業時,才可按新增!
@@ -8205,33 +8218,33 @@ FUNCTION i100_b_menu()
                 #不使用客戶申請作業時,才可按新增!
             END IF
             EXIT WHILE
- 
-        WHEN "query" 
+
+        WHEN "query"
             IF cl_chk_act_auth() THEN
                CALL i100_q()
             END IF
             EXIT WHILE
-        
-        WHEN "delete" 
+
+        WHEN "delete"
             IF cl_chk_act_auth() THEN
                IF i100_r() THEN
                   CALL i100_AFTER_DEL()
                END IF
             END IF
- 
+
         WHEN "modify"
             IF cl_chk_act_auth() THEN
                CALL i100_u()
             END IF
             EXIT WHILE
- 
+
         WHEN "invalid"
             IF cl_chk_act_auth() THEN
               #CALL i100_x()                #FUN-C90107 mark  #TQC-CB0079 remark   #FUN-C90107 mark
-               CALL i100sub_x(g_ima.ima01)  #FUN-C90107 add    TQC-CB0079 mark     #FUN-C90107 add           
-               CALL i100_show()          
+               CALL i100sub_x(g_ima.ima01)  #FUN-C90107 add    TQC-CB0079 mark     #FUN-C90107 add
+               CALL i100_show()
             END IF
- 
+
         WHEN "reproduce"
             IF g_aza.aza60 = 'N' THEN  #CHI-740027 add if判斷
                 IF cl_chk_act_auth() THEN
@@ -8248,37 +8261,37 @@ FUNCTION i100_b_menu()
            IF cl_chk_act_auth() THEN
               CALL cl_export_to_excel(ui.Interface.getRootNode(),base.TypeInfo.create(g_ima_l),'','')
            END IF
-       #No.FUN-9C0089 add -end------------------- 
+       #No.FUN-9C0089 add -end-------------------
 
         WHEN "output"
             IF cl_chk_act_auth() THEN
                CALL i100_out()
             END IF
- 
+
         WHEN "data_status"
             IF g_ima.ima01 IS NOT NULL AND g_ima.ima01 != ' ' THEN
                CALL i100_disp()
             END IF
- 
+
         WHEN "inventory"
             LET g_msg="aimi101 '",g_ima.ima01,"'"
             CALL cl_cmdrun_wait(g_msg) #MOD-580344
             CALL i100_show()
 
-#NO.FUN-B30092  ------------------------add start------------------------        
+#NO.FUN-B30092  ------------------------add start------------------------
         WHEN "quantifying"
             LET g_msg="aooi104 '",g_ima.ima01,"'"
-            CALL cl_cmdrun_wait(g_msg) 
+            CALL cl_cmdrun_wait(g_msg)
             CALL i100_show()
 #NO.FUN-B30092 --------------------------add end------------------------
- 
+
         WHEN "sales"
             IF cl_chk_act_auth() AND g_ima.ima01 IS NOT NULL AND g_ima.ima01 != ' ' THEN
                LET g_cmd = "axmi121 '",g_ima.ima01,"'"
                CALL  cl_cmdrun_wait(g_cmd) #MOD-580344
             END IF
             CALL i100_show()
- 
+
         WHEN "purchase"
             IF cl_chk_act_auth() AND g_ima.ima01 IS NOT NULL AND g_ima.ima01 != ' ' THEN
                LET l_priv1=g_priv1
@@ -8292,7 +8305,7 @@ FUNCTION i100_b_menu()
                SELECT * INTO g_ima.* FROM ima_file WHERE ima01 = g_ima.ima01
                CALL i100_show()
             END IF
- 
+
         WHEN "production"
             IF cl_chk_act_auth() AND g_ima.ima01 IS NOT NULL AND g_ima.ima01 != ' ' THEN
                LET l_priv1=g_priv1
@@ -8306,7 +8319,7 @@ FUNCTION i100_b_menu()
                SELECT * INTO g_ima.* FROM ima_file WHERE ima01 = g_ima.ima01
                CALL i100_show()
             END IF
- 
+
         WHEN "cost"
             IF cl_chk_act_auth() AND g_ima.ima01 IS NOT NULL AND g_ima.ima01 != ' ' THEN
                LET l_priv1=g_priv1
@@ -8320,7 +8333,7 @@ FUNCTION i100_b_menu()
                SELECT * INTO g_ima.* FROM ima_file WHERE ima01 = g_ima.ima01
                CALL i100_show()
             END IF
- 
+
         WHEN "cost_element"
             IF cl_chk_act_auth() AND g_ima.ima01 IS NOT NULL AND g_ima.ima01 != ' ' THEN
                LET l_priv1=g_priv1
@@ -8338,7 +8351,7 @@ FUNCTION i100_b_menu()
          LET g_action_choice="upd_ima25"
          IF cl_chk_act_auth() THEN
             #CALL i100_upd_ima25()   #mark by sx211105
-         END IF 
+         END IF
 
 
         WHEN "pn_spec_extra_desc"
@@ -8347,18 +8360,18 @@ FUNCTION i100_b_menu()
                CALL cl_cmdrun_wait(g_msg) #MOD-580344
             END IF
             CALL i100_show()
- 
+
         WHEN "carry"
             IF cl_chk_act_auth() THEN
                CALL ui.Interface.refresh()
                CALL i100_carry()
             END IF
- 
+
         WHEN "download"
             IF cl_chk_act_auth() THEN
                CALL i100_download()
             END IF
- 
+
         WHEN "qry_carry_history"
             IF cl_chk_act_auth() THEN
                IF NOT cl_null(g_ima.ima01) THEN   #No.FUN-830090
@@ -8377,7 +8390,7 @@ FUNCTION i100_b_menu()
                   CALL cl_err('',-400,0)
                END IF
             END IF
- 
+
         WHEN "related_document"
             IF cl_chk_act_auth() THEN
                IF g_ima.ima01 IS NOT NULL THEN
@@ -8386,7 +8399,7 @@ FUNCTION i100_b_menu()
                   CALL cl_doc()
                END IF
             END IF
- 
+
         WHEN "aps_related_data" #MOD-520032
              IF cl_null(g_ima.ima01) THEN
                 CALL cl_err('',-400,1)
@@ -8398,24 +8411,24 @@ FUNCTION i100_b_menu()
              ELSE
                  CALL cl_err('',-400,1)
              END IF
- 
+
              WHEN "maintain_item_unit_conversion"
              LET l_cmd = "aooi103 '",g_ima.ima01,"'" CLIPPED
              CALL cl_cmdrun(l_cmd CLIPPED)
- 
+
        WHEN "add_multi_attr_sub"
            IF cl_null(g_ima.ima01) THEN
               CALL cl_err('',-400,1)
            ELSE
-                IF g_ima.ima1010 !='1' THEN               # NO.FUN-870117 
+                IF g_ima.ima1010 !='1' THEN               # NO.FUN-870117
                    CALL cl_err(g_ima.ima01,'aim-450',1)   # NO.FUN-870117
                 ELSE                                      # NO.FUN-870117
                    CALL saimi311(g_ima.ima01)
                    LET INT_FLAG=0        #No.FUN-640013 退出子程序后INT_FLAG為1,要置0
                    CALL i100_show()
-                END IF                                    # NO.FUN-870117  
+                END IF                                    # NO.FUN-870117
            END IF
- 
+
         WHEN "confirm"
             IF cl_chk_act_auth() THEN
               #FUN-A70106--mod---str--
@@ -8439,59 +8452,59 @@ FUNCTION i100_b_menu()
               #FUN-A70106--mod---end--
                CALL i100_show()
             END IF
- 
- 
+
+
         WHEN "notconfirm"
             IF cl_chk_act_auth() THEN
                CALL i100_notconfirm()
                CALL i100_show()
             END IF
- 
+
         WHEN "update_person"
             IF cl_chk_act_auth() THEN
                CALL i100_upd_person()
                CALL i100_show() #FUN-6C0006
             END IF
-        #tianry add 
+        #tianry add
         WHEN  "upd_ima25"
          IF cl_chk_act_auth() THEN
             #CALL i100_upd_ima25()   #mark by sx211105
          END IF
- 
+
         WHEN "help"
             CALL cl_show_help()
- 
+
         WHEN "controlg"
             CALL cl_cmdask()
- 
+
         WHEN "locale"
             CALL cl_dynamic_locale()
             CALL i100_set_perlang()
             CALL i100_show_pic()
             CALL cl_show_fld_cont()
- 
+
         WHEN "exit"
             EXIT WHILE
- 
+
         WHEN "g_idle_seconds"
             CALL cl_on_idle()
- 
-        WHEN "about"      
-            CALL cl_about()      
- 
-        OTHERWISE 
+
+        WHEN "about"
+            CALL cl_about()
+
+        OTHERWISE
             EXIT WHILE
       END CASE
    END WHILE
 END FUNCTION
- 
+
 FUNCTION i100_unit_fac()
     IF cl_null(g_ima.ima31) THEN LET g_ima.ima31 = g_ima.ima25 END IF
     IF cl_null(g_ima.ima44) THEN LET g_ima.ima44 = g_ima.ima25 END IF
     IF cl_null(g_ima.ima55) THEN LET g_ima.ima55 = g_ima.ima25 END IF
     IF cl_null(g_ima.ima63) THEN LET g_ima.ima63 = g_ima.ima25 END IF
-      
-    #銷售單位轉換 
+
+    #銷售單位轉換
     IF g_ima.ima31 = g_ima.ima25 THEN
        LET g_ima.ima31_fac = 1
     ELSE
@@ -8502,44 +8515,44 @@ FUNCTION i100_unit_fac()
           DISPLAY BY NAME  g_ima.ima25
        END IF
     END IF
-    
+
     #庫存發料單位轉換
     IF g_ima.ima63 = g_ima.ima25
        THEN LET g_ima.ima63_fac = 1
-    ELSE 
+    ELSE
     	 CALL s_umfchk(g_ima.ima01,g_ima.ima63,g_ima.ima25)
             RETURNING g_sw,g_ima.ima63_fac
        IF g_sw = '1' THEN
           CALL cl_err(g_ima.ima25,'mfg1206',0)
-          DISPLAY BY NAME  g_ima.ima25     
+          DISPLAY BY NAME  g_ima.ima25
        END IF
     END IF
-            
+
     #采購單位轉換
     IF g_ima.ima44 = g_ima.ima25
        THEN LET g_ima.ima44_fac = 1
-    ELSE 
+    ELSE
     	 CALL s_umfchk(g_ima.ima01,g_ima.ima44,g_ima.ima25)
             RETURNING g_sw,g_ima.ima44_fac
        IF g_sw = '1' THEN
           CALL cl_err(g_ima.ima25,'mfg1206',0)
-          DISPLAY BY NAME  g_ima.ima25     
+          DISPLAY BY NAME  g_ima.ima25
        END IF
-    END IF 
-    
+    END IF
+
     #生產單位轉換
     IF g_ima.ima55 = g_ima.ima25
        THEN LET g_ima.ima55_fac = 1
-    ELSE 
+    ELSE
     	 CALL s_umfchk(g_ima.ima01,g_ima.ima55,g_ima.ima25)
             RETURNING g_sw,g_ima.ima55_fac
        IF g_sw = '1' THEN
           CALL cl_err(g_ima.ima25,'mfg1206',0)
-          DISPLAY BY NAME  g_ima.ima25     
+          DISPLAY BY NAME  g_ima.ima25
        END IF
-    END IF 
-            
-END FUNCTION            
+    END IF
+
+END FUNCTION
 
 FUNCTION i100_chk_ima149()
    IF cl_null(g_ima.ima149) THEN
@@ -8575,10 +8588,10 @@ FUNCTION i100_chk_ima1491()
    END IF
    LET g_sql="SELECT COUNT(*) FROM aag_file ",
              "WHERE aag01 = '",g_ima.ima1491,"' ",
-             "  AND aag07 <> '1'", 
-             "  AND aag00 = '",g_aza.aza82,"'" 
+             "  AND aag07 <> '1'",
+             "  AND aag00 = '",g_aza.aza82,"'"
    IF NOT i100_chk_cur(g_sql) THEN
-      IF cl_null(g_dbase) THEN 
+      IF cl_null(g_dbase) THEN
          #CALL cl_err(g_ima.ima1491,"anm-001",1)  #FUN-B10049
          CALL cl_err(g_ima.ima1491,"anm-001",0)   #FUN-B10049
          RETURN FALSE
@@ -8608,7 +8621,7 @@ FUNCTION i100_assign_product_strategy()
    DEFINE l_rte08     LIKE rte_file.rte08        #FUN-AB0011
    DEFINE l_gec02     LIKE gec_file.gec02,       #FUN-AB0011
           l_gecacti   LIKE gec_file.gecacti      #FUN-AB0011
- 
+
      IF cl_null(g_ima.ima01) THEN
         CALL cl_err('',-400,0)
         RETURN
@@ -8618,7 +8631,7 @@ FUNCTION i100_assign_product_strategy()
         CALL cl_err('','aim-689',0)
         RETURN
      END IF
-   
+
      LET l_rte04= 'Y'
      LET l_rte05 = 'Y'
      LET l_rte06 = 'Y'
@@ -8627,38 +8640,38 @@ FUNCTION i100_assign_product_strategy()
      OPEN WINDOW show_w1 AT 8,15 WITH FORM "aim/42f/saimi100"
       ATTRIBUTE (STYLE = g_win_style)
 
-     CALL cl_ui_init()    
+     CALL cl_ui_init()
      DISPLAY l_rte04 TO FORMONLY.rte04
      DISPLAY l_rte05 TO FORMONLY.rte05
      DISPLAY l_rte06 TO FORMONLY.rte06
 
      WHILE TRUE
         CONSTRUCT BY NAME g_wc ON rtd01
-         
+
          ON IDLE g_idle_seconds
             CALL cl_on_idle()
             CONTINUE CONSTRUCT
 
-         ON ACTION about        
-            CALL cl_about() 
+         ON ACTION about
+            CALL cl_about()
 
-         ON ACTION help         
-            CALL cl_show_help() 
+         ON ACTION help
+            CALL cl_show_help()
 
-         ON ACTION controlg    
+         ON ACTION controlg
             CALL cl_cmdask()
 
          ON ACTION CONTROLP
-            CASE 
+            CASE
                WHEN INFIELD(rtd01)
                  CALL cl_init_qry_var()
                  LET g_qryparam.form     = "q_rtd01_2"
                  LET g_qryparam.state    = "c"
                  LET g_qryparam.where    = " rtd01 NOT IN( SELECT rte01 FROM rte_file WHERE rte03 = '",  g_ima.ima01,"' )"
-                 CALL cl_create_qry() RETURNING g_qryparam.multiret 
+                 CALL cl_create_qry() RETURNING g_qryparam.multiret
                  DISPLAY g_qryparam.multiret TO rtd01
                  NEXT FIELD rtd01
-           END CASE 
+           END CASE
         END CONSTRUCT
         IF INT_FLAG THEN
            LET INT_FLAG = 0
@@ -8666,14 +8679,14 @@ FUNCTION i100_assign_product_strategy()
            RETURN
         END IF
         IF cl_null(g_wc) OR g_wc = " 1=1" THEN
-           CONTINUE WHILE 
+           CONTINUE WHILE
         END IF
      EXIT WHILE
      END WHILE
 
-     INPUT l_rte08,l_rte04,l_rte05,l_rte06 WITHOUT DEFAULTS FROM rte08,rte04,rte05,rte06 
-     
-      BEFORE INPUT 
+     INPUT l_rte08,l_rte04,l_rte05,l_rte06 WITHOUT DEFAULTS FROM rte08,rte04,rte05,rte06
+
+      BEFORE INPUT
 
       AFTER FIELD rte08
          IF NOT cl_null(l_rte08) THEN
@@ -8691,18 +8704,18 @@ FUNCTION i100_assign_product_strategy()
                    NEXT FIELD rte08
                 END IF
              END IF
-        
+
       ON IDLE g_idle_seconds
          CALL cl_on_idle()
          CONTINUE INPUT
 
-      ON ACTION about   
-         CALL cl_about() 
+      ON ACTION about
+         CALL cl_about()
 
-      ON ACTION help     
-         CALL cl_show_help()  
+      ON ACTION help
+         CALL cl_show_help()
 
-      ON ACTION controlg    
+      ON ACTION controlg
          CALL cl_cmdask()
 
       ON ACTION controlp
@@ -8716,27 +8729,27 @@ FUNCTION i100_assign_product_strategy()
              OTHERWISE EXIT CASE
            END CASE
 
-     END INPUT 
+     END INPUT
      IF INT_FLAG THEN
          LET INT_FLAG = 0
         CLOSE WINDOW show_w1
-        RETURN 
-     END IF 
-  
+        RETURN
+     END IF
+
      LET g_sql = "SELECT rtd01 FROM rtd_file ",
                  " WHERE rtd01 NOT IN(SELECT rte01 FROM rte_file WHERE rte03 = '",g_ima.ima01,"')",
                  " AND rtdconf = 'N' AND ",g_wc CLIPPED
      PREPARE sel_rtd01_pre FROM g_sql
-     DECLARE sel_rtd01_cs CURSOR FOR sel_rtd01_pre 
+     DECLARE sel_rtd01_cs CURSOR FOR sel_rtd01_pre
      BEGIN WORK
 
      FOREACH sel_rtd01_cs INTO l_rtd01
         IF SQLCA.sqlcode  THEN
-            LET g_success = 'N'          
-            EXIT FOREACH 
+            LET g_success = 'N'
+            EXIT FOREACH
         END IF
         SELECT max(rte02) INTO l_serial FROM rte_file
-         WHERE rte01 = l_rtd01 
+         WHERE rte01 = l_rtd01
         IF cl_null(l_serial) THEN
             LET l_serial = 0
         END IF
@@ -8750,12 +8763,12 @@ FUNCTION i100_assign_product_strategy()
            LET g_success = 'N'
            EXIT FOREACH
         END IF
-     END FOREACH 
+     END FOREACH
 
       IF cl_null(l_rtd01) THEN
          LET g_success = 'N'
          LET l_flag = FALSE
-      END IF  
+      END IF
       IF g_success = 'Y' THEN
             CALL cl_err('','art-687',1)
             COMMIT WORK
@@ -8764,13 +8777,13 @@ FUNCTION i100_assign_product_strategy()
             CALL cl_err('','art-688',1)
          ELSE
             CALL s_showmsg()
-         END IF 
+         END IF
          ROLLBACK WORK
       END IF
 
      CLOSE WINDOW show_w1
-     RETURN  
-#FUN-AB0011 ---------------add end---------------------------------  
+     RETURN
+#FUN-AB0011 ---------------add end---------------------------------
 
 #FUN-AB0011 ----------------mark start-------------
 #    CALL cl_init_qry_var()
@@ -8788,14 +8801,14 @@ FUNCTION i100_assign_product_strategy()
 #       IF SQLCA.sqlcode OR SQLCA.sqlerrd[3] = 0 THEN
 #          CALL cl_err3("ins","rte_file",ls_token,l_serial,SQLCA.sqlcode,"","",1)
 #          LET l_flag = FALSE
-#          EXIT WHILE 
-#       END IF 
+#          EXIT WHILE
+#       END IF
 #     # LET l_serial = l_serial + 1
 #    END WHILE
 #    IF l_flag THEN
 #       CALL cl_err(g_ima.ima01,'aim-025',1)
-#    END IF       
-#FUN-AB0011 ----------------mark end--------------------- 
+#    END IF
+#FUN-AB0011 ----------------mark end---------------------
 END FUNCTION
 #FUN-A90049 ----------------------------add end----------------------------
 
@@ -8856,27 +8869,27 @@ END FUNCTION
 FUNCTION i100_ima27_check()
 #ima27 的單位 ima25
    IF NOT cl_null(g_ima.ima25) AND NOT cl_null(g_ima.ima27) THEN
-      IF cl_null(g_ima_t.ima27) OR cl_null(g_ima25_t) OR g_ima_t.ima27 != g_ima.ima27 OR g_ima25_t != g_ima.ima25 THEN 
+      IF cl_null(g_ima_t.ima27) OR cl_null(g_ima25_t) OR g_ima_t.ima27 != g_ima.ima27 OR g_ima25_t != g_ima.ima25 THEN
          LET g_ima.ima27=s_digqty(g_ima.ima27, g_ima.ima25)
-         DISPLAY BY NAME g_ima.ima27  
-      END IF  
+         DISPLAY BY NAME g_ima.ima27
+      END IF
    END IF
    IF g_ima.ima27 IS NOT NULL THEN
       IF g_ima.ima27 <0 THEN
          CALL cl_err('','mfg4012',0)
          RETURN FALSE
       END IF
-   END IF 
+   END IF
 RETURN TRUE
 END FUNCTION
 
 FUNCTION i100_ima271_check()
 #ima271 的單位 ima25
    IF NOT cl_null(g_ima.ima25) AND NOT cl_null(g_ima.ima271) THEN
-      IF cl_null(g_ima_t.ima271) OR cl_null(g_ima25_t) OR g_ima_t.ima271 != g_ima.ima271 OR g_ima25_t != g_ima.ima25 THEN 
+      IF cl_null(g_ima_t.ima271) OR cl_null(g_ima25_t) OR g_ima_t.ima271 != g_ima.ima271 OR g_ima25_t != g_ima.ima25 THEN
          LET g_ima.ima271=s_digqty(g_ima.ima271, g_ima.ima25)
-         DISPLAY BY NAME g_ima.ima271  
-      END IF  
+         DISPLAY BY NAME g_ima.ima271
+      END IF
    END IF
    IF g_ima.ima271 IS NOT NULL THEN
       IF g_ima.ima271 <0 THEN
@@ -8890,10 +8903,10 @@ END FUNCTION
 FUNCTION i100_ima28_check()
 #ima28 的單位 ima25
    IF NOT cl_null(g_ima.ima25) AND NOT cl_null(g_ima.ima28) THEN
-      IF cl_null(g_ima_t.ima28) OR cl_null(g_ima25_t) OR g_ima_t.ima28 != g_ima.ima28 OR g_ima25_t != g_ima.ima25 THEN 
+      IF cl_null(g_ima_t.ima28) OR cl_null(g_ima25_t) OR g_ima_t.ima28 != g_ima.ima28 OR g_ima25_t != g_ima.ima25 THEN
          LET g_ima.ima28=s_digqty(g_ima.ima28, g_ima.ima25)
-         DISPLAY BY NAME g_ima.ima28  
-      END IF  
+         DISPLAY BY NAME g_ima.ima28
+      END IF
    END IF
    IF g_ima.ima28 IS NOT NULL THEN
       IF g_ima.ima28 <0 THEN
@@ -8907,7 +8920,7 @@ END FUNCTION
 FUNCTION i100_ima51_check()
    IF NOT cl_null(g_ima.ima44) AND NOT cl_null(g_ima.ima51) THEN
       LET g_ima.ima51=s_digqty(g_ima.ima51, g_ima.ima44)
-      DISPLAY BY NAME g_ima.ima51  
+      DISPLAY BY NAME g_ima.ima51
    END IF
    IF NOT i100_chk_ima51() THEN
       RETURN FALSE
@@ -8919,7 +8932,7 @@ END FUNCTION
 FUNCTION i100_ima52_check()
    IF NOT cl_null(g_ima.ima44) AND NOT cl_null(g_ima.ima52) THEN
       LET g_ima.ima52=s_digqty(g_ima.ima52, g_ima.ima44)
-      DISPLAY BY NAME g_ima.ima52  
+      DISPLAY BY NAME g_ima.ima52
    END IF
    IF NOT i100_chk_ima52() THEN
       RETURN FALSE
@@ -8933,16 +8946,16 @@ END FUNCTION
 ##TQC-C30186--add--begin--
 #FUNCTION i100_i_ima08(p_cmd)
 #  DEFINE p_cmd           LIKE type_file.chr1
-#  
+#
 #  DISPLAY BY NAME g_ima.ima901,g_ima.imauser,g_ima.imagrup,
 #                  g_ima.imadate,g_ima.imaacti
-#                  ,g_ima.ima151           
-#                  ,g_ima.ima928          
+#                  ,g_ima.ima151
+#                  ,g_ima.ima928
 #
-#  DISPLAY BY NAME g_ima.ima906,g_ima.ima907,g_ima.ima908,g_ima.ima159, 
-#                  g_ima.ima1010 
-#  DISPLAY BY NAME g_ima.ima916  
-#  DISPLAY BY NAME g_ima.ima022 
+#  DISPLAY BY NAME g_ima.ima906,g_ima.ima907,g_ima.ima908,g_ima.ima159,
+#                  g_ima.ima1010
+#  DISPLAY BY NAME g_ima.ima916
+#  DISPLAY BY NAME g_ima.ima022
 #
 #
 #  IF p_cmd = 'u' THEN LET g_ima.imadate = g_today END IF
@@ -8964,24 +8977,24 @@ END FUNCTION
 #             NEXT FIELD CURRENT
 #          END IF
 #
-#       AFTER INPUT  
+#       AFTER INPUT
 #           IF INT_FLAG THEN
 #               EXIT INPUT
 #           END IF
 
 #        ON ACTION CONTROLF
-#           CALL cl_set_focus_form(ui.Interface.getRootNode()) RETURNING g_fld_name,g_frm_name 
-#           CALL cl_fldhelp(g_frm_name,g_fld_name,g_lang) 
+#           CALL cl_set_focus_form(ui.Interface.getRootNode()) RETURNING g_fld_name,g_frm_name
+#           CALL cl_fldhelp(g_frm_name,g_fld_name,g_lang)
 #
 #        ON IDLE g_idle_seconds
 #           CALL cl_on_idle()
 #           CONTINUE INPUT
 #
-#         ON ACTION about     
-#            CALL cl_about()      
+#         ON ACTION about
+#            CALL cl_about()
 #
-#         ON ACTION help          
-#            CALL cl_show_help() 
+#         ON ACTION help
+#            CALL cl_show_help()
 #
 #   END INPUT
 #END FUNCTION
@@ -9044,7 +9057,7 @@ FUNCTION i100_chk_ghe(p_gei01)
      FROM geh_file,gei_file
     WHERE geh01 = gei03
       AND gei01 = p_gei01
-   CASE 
+   CASE
       WHEN SQLCA.sqlcode = 100 LET g_errno = "aoo-112"
                                LET l_geh03 = ''
                                LET l_geh04 = ''
@@ -9067,7 +9080,7 @@ FUNCTION i100_chk_ghe(p_gei01)
          RETURN
       END IF
    END IF
-   
+
 END FUNCTION
 #DEV-D30036--add--end
 #str---add by jixf 160804
@@ -9081,59 +9094,59 @@ DEFINE l_type    LIKE type_file.num5
 
    INPUT l_ima01,l_ima25,l_type FROM ima01,ima25,type1
 
-   BEFORE INPUT 
+   BEFORE INPUT
       LET l_ima01=g_ima.ima01
       LET l_type=1
 
          ON ACTION controlp
-            CASE 
+            CASE
             WHEN INFIELD(ima25)
                   CALL cl_init_qry_var()
                   LET g_qryparam.form     = "q_gfe"
                   LET g_qryparam.default1 = l_ima25
                   CALL cl_create_qry() RETURNING l_ima25
-                  DISPLAY l_ima25 TO ima25 
+                  DISPLAY l_ima25 TO ima25
                   NEXT FIELD ima25
             OTHERWISE EXIT CASE
-            END CASE 
-            
+            END CASE
+
          ON ACTION CONTROLR
             CALL cl_show_req_fields()
-  
+
          ON ACTION CONTROLG
             CALL cl_cmdask()
-            
+
          ON ACTION CONTROLF
             CALL cl_set_focus_form(ui.Interface.getRootNode()) RETURNING g_fld_name,g_frm_name #Add on 040913
             CALL cl_fldhelp(g_frm_name,g_fld_name,g_lang) #Add on 040913
- 
+
          ON IDLE g_idle_seconds
             CALL cl_on_idle()
             CONTINUE INPUT
- 
+
           ON ACTION about         #MOD-4C0121
              CALL cl_about()      #MOD-4C0121
- 
+
           ON ACTION help          #MOD-4C0121
              CALL cl_show_help()
 
-          ON ACTION EXIT 
+          ON ACTION EXIT
              LET INT_FLAG=FALSE
-             EXIT INPUT 
+             EXIT INPUT
 
-          ON ACTION CANCEL 
+          ON ACTION CANCEL
              LET INT_FLAG=FALSE
-             EXIT INPUT 
-   END INPUT 
+             EXIT INPUT
+   END INPUT
 
    IF INT_FLAG THEN
    ELSE
-     IF NOT cl_null(l_ima25) THEN  
+     IF NOT cl_null(l_ima25) THEN
       CALL cs_upd_ima25(l_ima01,l_ima25,l_type)
-     END IF    
+     END IF
 END IF
-   CLOSE WINDOW i1011_w 
-END FUNCTION 
+   CLOSE WINDOW i1011_w
+END FUNCTION
 #end---add by jixf 160804
 
 function i100_set_imaud06()
@@ -9142,11 +9155,11 @@ function i100_set_imaud06()
    define l_tc_sma06       like tc_sma_file.tc_sma06
 
    declare i100_imaud06_cl cursor for
-      select tc_sma03,tc_sma06 from tc_sma_file 
+      select tc_sma03,tc_sma06 from tc_sma_file
        where tc_sma01='csmi102' and tc_sma02='aimi100'
          and tc_sma20 ='Y'
        order by tc_sma03
-   
+
    foreach i100_imaud06_cl into l_tc_sma03,l_tc_sma06
       if sqlca.sqlcode then
          call cl_err('i100_imaud06_cl',sqlca.sqlcode,1)
@@ -9172,11 +9185,11 @@ function i100_set_imaud36()
    define l_tc_sma06       like tc_sma_file.tc_sma06
 
    declare i100_imaud06_cl2 cursor for
-      select tc_sma03,tc_sma06 from tc_sma_file 
+      select tc_sma03,tc_sma06 from tc_sma_file
        where tc_sma01='csmi121' and tc_sma02='aimi100'
          and tc_sma20 ='Y'
        order by tc_sma03
-   
+
    foreach i100_imaud06_cl2 into l_tc_sma03,l_tc_sma06
       if sqlca.sqlcode then
          call cl_err('i100_imaud06_cl2',sqlca.sqlcode,1)
@@ -9204,11 +9217,11 @@ function i100_set_imaud37()
    define l_tc_sma06       like tc_sma_file.tc_sma06
 
    declare i100_imaud37_cl cursor for
-      select tc_sma03,tc_sma06 from tc_sma_file 
+      select tc_sma03,tc_sma06 from tc_sma_file
        where tc_sma01='csmi125' and tc_sma02='aimi100'
          and tc_sma20 ='Y'
        order by tc_sma03
-   
+
    foreach i100_imaud37_cl into l_tc_sma03,l_tc_sma06
       if sqlca.sqlcode then
          call cl_err('i100_imaud37_cl',sqlca.sqlcode,1)
@@ -9228,3 +9241,26 @@ function i100_set_imaud37()
 
 end function
 # darcy:2025/11/24 add e---
+
+
+# darcy add 特殊材料 s---
+function i100_set_imaud39()
+    define l_tc_sma06 like tc_sma_file.tc_sma06
+    define l_desc   string
+
+    declare i100_imaud39 cursor for
+        select tc_sma06 from tc_sma_file
+        where tc_sma01 = 'csmi135' and tc_sma20 ='Y' order by tc_sma03
+
+    foreach i100_imaud39 into l_tc_sma06
+        if sqlca.sqlcode then
+            call cl_err('i100_imaud39',sqlca.sqlcode,1)
+            exit foreach
+        end if
+        let l_desc = l_desc , "," , l_tc_sma06
+    end foreach
+    --let l_desc = l_desc[2,l_desc.getlenght()]
+    let l_desc = l_desc.substring(2,l_desc.getlength())
+    call cl_set_combo_items("imaud39",l_desc,l_desc)
+end function
+# darcy add 特殊材料 e---
