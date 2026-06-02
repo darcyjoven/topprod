@@ -20,15 +20,15 @@
 DATABASE ds
 GLOBALS "../../config/top.global"
 GLOBALS "../4gl/aimi100.global"
-GLOBALS "../../sub/4gl/s_data_center.global"   
+GLOBALS "../../sub/4gl/s_data_center.global"
 
 FUNCTION i100sub_lock_cl() #FUN-A70106
-   DEFINE l_forupd_sql STRING                                                   
+   DEFINE l_forupd_sql STRING
 
   #LET l_forupd_sql = "SELECT * FROM ima_file WHERE ima01 = ? FOR UPDATE NOWAIT" #FUN-A70106 mark
    LET l_forupd_sql = "SELECT * FROM ima_file WHERE ima01 = ? FOR UPDATE "       #FUN-A70106 add
    LET g_forupd_sql = cl_forupd_sql(l_forupd_sql)           #轉換不同資料庫語法  #FUN-A70106 add
-   DECLARE i100sub_cl CURSOR FROM l_forupd_sql                                  
+   DECLARE i100sub_cl CURSOR FROM l_forupd_sql
 END FUNCTION
 
 #FUN-C90107 add str-------------
@@ -51,7 +51,7 @@ FUNCTION i100sub_declare_curs()
    PREPARE aimi100sub_prepare FROM g_sql
    DECLARE aimi100sub_curs SCROLL CURSOR WITH HOLD FOR aimi100sub_prepare
 
-   DECLARE aimi100sub_list_cur CURSOR FOR aimi100sub_prepare      
+   DECLARE aimi100sub_list_cur CURSOR FOR aimi100sub_prepare
 
 END FUNCTION
 #FUN-C90107 add end---------------
@@ -59,7 +59,7 @@ END FUNCTION
 FUNCTION i100sub_refresh(p_ima01)
    DEFINE p_ima01 LIKE ima_file.ima01
    DEFINE l_ima RECORD LIKE ima_file.*
-   
+
    SELECT * INTO l_ima.* FROM ima_file WHERE ima01=p_ima01
    RETURN l_ima.*
 END FUNCTION
@@ -84,7 +84,7 @@ FUNCTION i100sub_y_chk(p_ima01)
 
    SELECT * INTO l_ima.* FROM ima_file WHERE ima01 = p_ima01
 
-   IF NOT s_dc_ud_flag('1',l_ima.ima916,g_plant,'u') THEN 
+   IF NOT s_dc_ud_flag('1',l_ima.ima916,g_plant,'u') THEN
       CALL cl_err(l_ima.ima916,'aoo-045',1) #參數設定:不可修改其他營運中心拋轉過來的資料
       LET g_errno = 'aoo-045'
       LET g_success = 'N'
@@ -128,6 +128,11 @@ FUNCTION i100sub_y_chk(p_ima01)
       end if
    end if
    # darcy:2025/09/23 add e---
+   #
+   if not aimi100_imaud39() then
+    let g_success = 'N'
+    return
+   end if
 
    IF l_ima.imaacti='N' THEN
       #此筆資料已無效, 不可異動
@@ -136,7 +141,7 @@ FUNCTION i100sub_y_chk(p_ima01)
       LET g_success = 'N'
       RETURN
    END IF
-   
+
    IF NOT s_industry('slk') THEN  #FUN-C60021--ADD
 #MOD-C30124 ----- add ----- begin
 # 母料為特性主料時，無特性主料不能確認
@@ -180,17 +185,17 @@ FUNCTION i100sub_y_chk(p_ima01)
    #TQC-C20283--add--end
    END IF #FUN-C60021----ADD--
 
-END FUNCTION 
+END FUNCTION
 
 FUNCTION i100sub_y_upd(p_ima01)
    DEFINE p_ima01   LIKE ima_file.ima01
    DEFINE l_ima     RECORD LIKE ima_file.*
-   DEFINE l_imaag   LIKE ima_file.imaag   
-   DEFINE l_sql     STRING                
+   DEFINE l_imaag   LIKE ima_file.imaag
+   DEFINE l_sql     STRING
 
    WHENEVER ERROR CONTINUE
 
-   LET g_success = 'Y'   
+   LET g_success = 'Y'
 
    CALL i100sub_lock_cl()
 
@@ -205,55 +210,55 @@ FUNCTION i100sub_y_upd(p_ima01)
    FETCH i100sub_cl INTO l_ima.*                # 鎖住將被更改或取消的資料
    IF SQLCA.sqlcode THEN
        CALL cl_err(p_ima01,SQLCA.sqlcode,1)     # 資料被他人LOCK
-       CLOSE i100sub_cl 
+       CLOSE i100sub_cl
        LET g_errno = '-243'                     #資料已經被鎖住, 無法讀取 !
        LET g_success = 'N'
        RETURN
    END IF
    CLOSE i100sub_cl
-   
+
    #darcy:2025/03/13 ads s---
    -- 油墨M.IN 料件生产单位必须为g ，imz55
    if l_ima.ima06 == 'M.IN' then
       select imz55,imz63 into l_ima.ima55,l_ima.ima63 from imz_file where imz01 = 'M.IN'
-   end if 
+   end if
    #darcy:2025/03/13 ads e---
    UPDATE ima_file
       SET ima1010 = '1', #'1':確認
           imaacti = 'Y', #'Y':確認
           imadate = g_today  #FUN-C30315 add
           #darcy:2025/03/13 add s---
-          ,ima55 = l_ima.ima55 
-          ,ima63 = l_ima.ima63 
-          #darcy:2025/03/13 add e--- 
+          ,ima55 = l_ima.ima55
+          ,ima63 = l_ima.ima63
+          #darcy:2025/03/13 add e---
     WHERE ima01 = p_ima01
    IF SQLCA.sqlcode THEN
        CALL cl_err3("upd","ima_file",l_ima.ima01,"",SQLCA.sqlcode,"",
                     "ima1010",1)  #
        LET g_errno = 'aws-190' #更新ERP料件主檔的狀況碼(ima1010)和有效碼(imaacti)不成功!
-       LET g_success = 'N'    
+       LET g_success = 'N'
        RETURN
    END IF
-   
+
    SELECT imaag INTO l_imaag
      FROM ima_file
     WHERE ima01 = l_ima.ima01
-   
+
    IF l_imaag IS NULL OR l_imaag = '@CHILD' THEN
    ELSE
       LET l_sql = " UPDATE ima_file SET ima1010 = '1',imaacti='Y', ",
-                  " imadate = '",g_today, "'",     #FUN-C30315 add 
+                  " imadate = '",g_today, "'",     #FUN-C30315 add
                   "  WHERE ima01 LIKE '",l_ima.ima01,"_%'"
       PREPARE ima_cs3       FROM l_sql
       EXECUTE ima_cs3
       IF STATUS THEN
-         CALL cl_err('ima1010',STATUS,1) 
+         CALL cl_err('ima1010',STATUS,1)
          LET g_errno = 'aws-192' #更新料件屬性群組資料失敗!
-         LET g_success = 'N'            
+         LET g_success = 'N'
          RETURN
       END IF
-   END IF 
-   
+   END IF
+
    IF g_aza.aza90 MATCHES "[Yy]" THEN
        CALL i100sub_mes(l_ima.ima08,'insert',l_ima.ima01)
        #FUN-B20050---add---str--
@@ -262,39 +267,39 @@ FUNCTION i100sub_y_upd(p_ima01)
        END IF
        #FUN-B20050---add---end--
    END IF
-END FUNCTION 
+END FUNCTION
 
 FUNCTION i100sub_carry(p_ima01)
    DEFINE p_ima01   LIKE ima_file.ima01
-   DEFINE l_gew03   LIKE gew_file.gew03   
-   DEFINE l_i       LIKE type_file.num10  
-   DEFINE l_sql     STRING     
+   DEFINE l_gew03   LIKE gew_file.gew03
+   DEFINE l_i       LIKE type_file.num10
+   DEFINE l_sql     STRING
    DEFINE l_bma01   LIKE bma_file.bma01  #FUN-C50110
    DEFINE l_bma06   LIKE bma_file.bma06  #FUN-C50110
-   DEFINE l_bma10   LIKE bma_file.bma10  #FUN-C50110 
-   
-   SELECT gev04 
-     INTO g_gev04 
-     FROM gev_file 
-    WHERE gev01 = '1' 
+   DEFINE l_bma10   LIKE bma_file.bma10  #FUN-C50110
+
+   SELECT gev04
+     INTO g_gev04
+     FROM gev_file
+    WHERE gev01 = '1'
       AND gev02 = g_plant
       AND gev03 = 'Y'
-   IF NOT cl_null(g_gev04) THEN 
+   IF NOT cl_null(g_gev04) THEN
       SELECT UNIQUE gew03 INTO l_gew03 FROM gew_file
        WHERE gew01 = g_gev04 AND gew02 = '1'
       IF l_gew03 = '1' THEN #自動拋轉
         #開窗選擇拋轉的db清單
-         LET l_sql = "SELECT COUNT(*) FROM &ima_file WHERE ima01='",p_ima01,"'"  
+         LET l_sql = "SELECT COUNT(*) FROM &ima_file WHERE ima01='",p_ima01,"'"
          CALL s_dc_sel_db1(g_gev04,'1',l_sql)
          IF INT_FLAG THEN
             LET INT_FLAG=0
             RETURN
          END IF
-      
+
          CALL g_imax.clear()
          LET g_imax[1].sel = 'Y'
          LET g_imax[1].ima01 = p_ima01
-      
+
          FOR l_i = 1 TO g_azp1.getLength()
             LET g_azp[l_i].sel   = g_azp1[l_i].sel
             LET g_azp[l_i].azp01 = g_azp1[l_i].azp01
@@ -308,30 +313,30 @@ FUNCTION i100sub_carry(p_ima01)
                         " ORDER BY imaicd00"
             PREPARE i100_imaicd00_p FROM g_sql
             DECLARE i100_imaicd00_cs CURSOR FOR i100_imaicd00_p
-       
+
             LET l_i = 2
             FOREACH i100_imaicd00_cs INTO g_imax[l_i].*
                LET l_i = l_i + 1
             END FOREACH
-         END IF 
-         #FUN-C50110---end   
+         END IF
+         #FUN-C50110---end
          CALL s_showmsg_init()
          CALL s_aimi100_carry(g_imax,g_azp,g_gev04,'0')
          CALL s_showmsg()
          #FUN-C50110---begin
          #ICD行業別時,自動產生出來的BOM也要做資料拋轉
-         IF s_industry('icd') THEN   
+         IF s_industry('icd') THEN
             LET g_sql = "SELECT DISTINCT bma01,bma06,bma10 FROM bma_file",
                         " WHERE bmaicd01='",p_ima01 CLIPPED,"'",
                         " ORDER BY bma01,bma06"
             PREPARE i100_bma_p FROM g_sql
             DECLARE i100_bma_cs CURSOR WITH HOLD FOR i100_bma_p
-                  
-            FOREACH i100_bma_cs INTO l_bma01,l_bma06,l_bma10  
+
+            FOREACH i100_bma_cs INTO l_bma01,l_bma06,l_bma10
                CALL s_abmi600_com_carry(l_bma01,l_bma06,l_bma10,g_plant,1)
             END FOREACH
          END IF
-         #FUN-C50110---end 
+         #FUN-C50110---end
       END IF
    END IF
 END FUNCTION
@@ -467,7 +472,7 @@ FUNCTION i100sub_x(p_ima01)
     IF g_prog <> 'aws_ttsrv2' THEN    #FUN-C90107 add
        BEGIN WORK
     END IF                            #FUN-C90107 add
- 
+
     CALL i100sub_lock_cl()            #FUN-C90107 add
 
 #   OPEN i100_cl USING g_ima.ima01    #FUN-C90107 mark
@@ -478,7 +483,7 @@ FUNCTION i100sub_x(p_ima01)
        CALL cl_err(g_ima.ima01,SQLCA.sqlcode,0)
        LET g_errno = SQLCA.sqlcode       #FUN-C90107 add
        IF g_prog <> 'aws_ttsrv2' THEN    #FUN-C90107 add
-          ROLLBACK WORK   #MOD-A10083     
+          ROLLBACK WORK   #MOD-A10083
        END IF                            #FUN-C90107 add
       #CLOSE i100_cl      #MOD-A10083    #FUN-C90107 mark
        CLOSE i100sub_cl   #MOD-A10083    #FUN-C90107 add
@@ -513,10 +518,10 @@ FUNCTION i100sub_x(p_ima01)
        CALL cl_err('','mfg9167',0)
        LET g_errno = 'mfg9167'           #FUN-C90107 add
        IF g_prog <> 'aws_ttsrv2' THEN    #FUN-C90107 add
-          ROLLBACK WORK   #MOD-A10083   
+          ROLLBACK WORK   #MOD-A10083
        END IF                            #FUN-C90107 add
-      #CLOSE i100_cl      #MOD-A10083    #FUN-C90107 mark 
-       CLOSE i100sub_cl   #MOD-A10083    #FUN-C90107 add 
+      #CLOSE i100_cl      #MOD-A10083    #FUN-C90107 mark
+       CLOSE i100sub_cl   #MOD-A10083    #FUN-C90107 add
        RETURN
     END IF
 
@@ -552,7 +557,7 @@ FUNCTION i100sub_x(p_ima01)
        LET g_errno='mfg9163'
        CALL cl_err('',g_errno,0)       #No:MOD-A10080 add
        IF g_prog <> 'aws_ttsrv2' THEN    #FUN-C90107 add
-          ROLLBACK WORK   #MOD-A10083 
+          ROLLBACK WORK   #MOD-A10083
        END IF                            #FUN-C90107 add
       #CLOSE i100_cl      #MOD-A10083    #FUN-C90107 mark
        CLOSE i100sub_cl   #MOD-A10083    #FUN-C90107 add
@@ -662,7 +667,7 @@ END FUNCTION
 FUNCTION i100sub_list_fill()
   DEFINE l_ima01         LIKE ima_file.ima01
   DEFINE l_i             LIKE type_file.num10
-  
+
    CALL i100sub_declare_curs()  #MOD-D30241
    CALL g_ima_l.clear()
     LET l_i = 1
@@ -712,7 +717,7 @@ function p100sub_cre_set(p_ima01,p_smd04)
         if cl_null(p_smd04) or p_smd04 = 0 then
             delete from smd_file
              where smd01 = p_ima01
-                and smd02 = 'PCS' 
+                and smd02 = 'PCS'
                 and smd03 = 'SET'
         else
             update smd_file
@@ -721,10 +726,10 @@ function p100sub_cre_set(p_ima01,p_smd04)
                     smdacti = 'Y',
                     smddate = g_today
             where smd01 = p_ima01
-                and smd02 = 'PCS' 
+                and smd02 = 'PCS'
                 and smd03 = 'SET'
         end if
-      
+
       if status then
          call cl_err("upd smd",status,1)
          return false
@@ -750,10 +755,22 @@ function aimi100_imaud07(p_imaud07)
                "  WHERE  REGEXP_LIKE('",p_imaud07,"','^([1-9]\\d{0,2})\\*([1-9]\\d{0,2})$')"
    prepare imaud07_chk_p from l_sql
    execute imaud07_chk_p into i
-   if i = 0 then 
+   if i = 0 then
       call cl_err(p_imaud07,'cim-034',1)
       return false
    end if
    return true
 end function
 #darcy:2024/07/10 add e---
+
+-- 特殊料号管控
+function aimi100_imaud39()
+    -- 只卡光板成品
+    if g_ima.ima01 not matches '*-*' and g_ima.ima01[7,7] not matches '[ABCD]' and g_ima.ima01 not matches '*.*' then
+        if cl_null(g_ima.imaud39) then
+            call cl_err('光板料号必须维护"特殊料号"栏位','!',1)
+            return false
+        end if
+    end if
+    return true
+end function
