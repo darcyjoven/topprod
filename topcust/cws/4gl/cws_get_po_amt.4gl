@@ -35,6 +35,7 @@ function cws_get_po_amt_process()
         end record
     define l_return record
             pr      varchar(20),
+            date    date,
             erp_pr  varchar(20),
             item    varchar(20),
             success varchar(1),
@@ -73,7 +74,8 @@ function cws_get_po_amt_process()
 
             call cws_get_po_amt_do(param.*)
                 returning l_return.mark,l_return.po,
-                          l_return.qty,l_return.amt,l_return.amtf
+                          l_return.qty,l_return.amt,l_return.amtf,
+                          l_return.date
             let l_r = aws_ttsrv_addMasterRecord(base.TypeInfo.create(l_return), "Master")
         end for
     end for
@@ -95,7 +97,9 @@ function cws_get_po_amt_do(l_param)
     define l_pmm01              like pmm_file.pmm01,
            l_pmn20              like pmn_file.pmn20,
            l_pmn88              like pmn_file.pmn88,
-           l_pmn88t             like pmn_file.pmn88t
+           l_pmn88t             like pmn_file.pmn88t,
+           l_pmm04              like pmm_file.pmm04,
+           l_date               date
 
     -- 检查单据是否存在
     select count(*) into l_cnt from pml_file,pmk_file where pml01 = pmk01
@@ -117,7 +121,7 @@ function cws_get_po_amt_do(l_param)
     end if
 
     declare get_po_amt_1 cursor for
-        select pmm01,pmn20,pmn88,pmn88t
+        select pmm01,pmn20,pmn88,pmn88t,pmm04
           from pmm_file,pmn_file where pmm01 = pmn01
            and pmm18 ='Y' and pmn24 = l_param.erp_pr
            and pmn04 = l_param.item
@@ -125,10 +129,13 @@ function cws_get_po_amt_do(l_param)
     let l_qty = 0
     let l_amt = 0
     let l_amtf = 0
-    foreach get_po_amt_1 into l_pmm01,l_pmn20,l_pmn88,l_pmn88t
+    foreach get_po_amt_1 into l_pmm01,l_pmn20,l_pmn88,l_pmn88t,l_pmm04
         if sqlca.sqlcode then
             call cl_err('get_po_amt_1',sqlca.sqlcode,1)
             exit foreach
+        end if
+        if cl_null(l_pmm04) or l_date > l_pmm04 or l_date < mdy(1,1,2000) then
+            let l_date = l_pmm04
         end if
 
         if cl_null(po) then
@@ -141,5 +148,5 @@ function cws_get_po_amt_do(l_param)
         let l_amtf = l_amtf + l_pmn88t
 
     end foreach
-    return "",po,l_qty,l_amt,l_amtf
+    return "",po,l_qty,l_amt,l_amtf,l_date
 end function
