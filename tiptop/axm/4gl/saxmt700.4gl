@@ -133,8 +133,8 @@
 #                                                  2.新增action"相關文件"
 # Modify.........: No.FUN-6B0065 06/11/21 By Ray atmi217并入aooi313(azf09,10,11,12,13取代tqe03,04,05,11,08)
 # Modify.........: No.CHI-6A0064 06/11/30 By Sarah 輸入銷退時,若該出貨項有做成品替代,要可輸入該替代料做銷退
-# Modify.........: No.MOD-690042 06/12/06 By pengu 若類別為'4'折讓且原訂單出貨 時,必須輸入出貨單號 
-# Modify.........: No.MOD-690019 06/12/07 By Claire oha09='Y' -> oha09='4' 
+# Modify.........: No.MOD-690042 06/12/06 By pengu 若類別為'4'折讓且原訂單出貨 時,必須輸入出貨單號
+# Modify.........: No.MOD-690019 06/12/07 By Claire oha09='Y' -> oha09='4'
 # Modify.........: NO.MOD-690057 06/12/07 By Claire 銷退換貨時產生訂單要寫回銷退量
 # Modify.........: No.MOD-6B0169 06/12/12 By Carol 5.折讓時應無須異動庫存
 # Modify.........: NO.FUN-670007 06/12/20 BY yiting oax07判斷
@@ -156,8 +156,8 @@
 # Modify.........: No.MOD-740446 07/04/26 By Nicola 給預設值
 # Modify.........: No.TQC-740323 07/04/27 By Rayven 單頭“調貨出貨單號”應該是不可以維護的，“對應代送出貨”應該改成“對應調貨出貨”，相應的在出貨單axmt620單頭的“對應代送銷退”應該改成“對應調貨銷退”
 #                                                   在對應到出貨單的情況下，沒有稽核銷退數量不能大于出貨數量，而且也沒有管控單位不同的情況下的數量稽核
-#                                                   在不使用多單位的情況下，修改單身“單位”以后重新計算計價數量錯誤，導致計算金額也錯誤                                                   
-# Modify.........: No.FUN-740016 07/05/07 By Nicola 借出管理 
+#                                                   在不使用多單位的情況下，修改單身“單位”以后重新計算計價數量錯誤，導致計算金額也錯誤
+# Modify.........: No.FUN-740016 07/05/07 By Nicola 借出管理
 # Modify.........: NO.MOD-750067 07/05/15 By claire MOD-640344 調整, 已有換貨訂單不允許過帳還原程式應return
 # Modify.........: No.FUN-750051 07/05/22 By johnray 連續二次查詢key值時,若第二次查詢不到key值時,會顯示錯誤key值
 # Modify.........; NO.TQC-750149 07/05/25 BY Yiting 不用加上
@@ -186,7 +186,7 @@
 # Modify.........: No.FUN-7B0015 07/12/13 By lilingyu 增加查詢刻號/BIN資料
 # Modify.........: No.MOD-7C0062 07/12/20 By claire 作廢時,要先判斷有rml_file資料再更新
 # Modify.........: No.MOD-7C0208 07/12/27 By claire 理由碼開窗與AFTER FIELD 判斷不一致
-# Modify.........: No.FUN-7C0043 07/12/25 By destiny 報表改為p_query輸出 
+# Modify.........: No.FUN-7C0043 07/12/25 By destiny 報表改為p_query輸出
 # Modify.........: No.TQC-810024 08/01/08 By chenl  審核時，應用會計年度及期別于sma51,sma52做判斷。
 # Modify.........: No.FUN-7C0050 08/01/15 By johnray 串查程序代碼添加共用 ACTION 的引用
 # Modify.........: No.MOD-810169 08/01/22 By claire 銷退方式為5.折讓時,產生tlf_file 不產生img_file
@@ -195,8 +195,8 @@
 # Modify.........: No.MOD-820075 08/03/20 By claire 5.折讓時,MISC料件不產生tlf_file
 # Modify.........: No.TQC-830056 08/03/27 By Judy 單頭出貨單號欄位增加控管
 # Modify.........: No.FUN-830132 08/03/27 By hellen 將imaicd_file變成icd專用
-# Modify.........: No.MOD-830228 08/03/28 By claire _last() 排除 99 站 
-# Modify.........: No.FUN-840042 08/04/11 by TSD.zeak 自訂欄位功能修改 
+# Modify.........: No.MOD-830228 08/03/28 By claire _last() 排除 99 站
+# Modify.........: No.FUN-840042 08/04/11 by TSD.zeak 自訂欄位功能修改
 # Modify.........: No.TQC-840066 08/04/28 By Mandy AXD系統欲刪,原使用 AXD 模組相關欄位的程式進行調整
 # Modify.........: NO.FUN-860025 08/06/12 BY yiting 批序號功能
 # Modify.........: No.FUN-860045 08/06/12 By Nicola 批/序號傳入值修改及開窗詢問使用者是否回寫單身數量
@@ -219,7 +219,7 @@
 #                                                       2.IF cl_null(原始發票號碼) THEN "出貨單號"之開窗維持現狀 ELSE "出貨單號"之開窗僅開啟該發票號碼之出貨單資料
 # Modify.........: No.FUN-880129 08/09/16 By xiaofeizhu s_del_rvbs 的傳入參數(出/入庫，單據編號，單據項次，專案編號)，改為(出/入庫，單據編號，單據項次，檢驗順序)
 # Modify.........: No.MOD-890120 08/09/16 By Smapmin 沒有對應的出貨單號時,批序號資料也要能維護
-# Modify.........: No.MOD-890232 08/09/24 By chenl   單身直接輸入料件時，增加抓取基本資料中的檢驗字段的值賦給ohb61 
+# Modify.........: No.MOD-890232 08/09/24 By chenl   單身直接輸入料件時，增加抓取基本資料中的檢驗字段的值賦給ohb61
 # Modify.........: No.MOD-890234 08/09/24 By Smapmin 修改SQL語法
 # Modify.........: No.MOD-890123 08/09/25 By Smapmin 過帳時,產生的調撥單若不能過帳,整個動作應該要ROLLBACK
 # Modify.........: No.MOD-890249 08/09/26 By chenyu 修改FUN-7B0015這個單號修改的一些內容
@@ -233,12 +233,12 @@
 # Modify.........: No.MOD-8A0173 08/10/20 By Smapmin 輸入料號時要控管是否為有效料件
 # Modify.........: No.MOD-8B0107 08/11/12 By Smapmin 已簽核/未確認的單據,按單身修改後,狀況碼未更新為0.開立
 # Modify.........: No.MOD-8B0248 08/11/24 By Smapmin 單身輸入無法按放棄離開
-# Modify.........: No.FUN-8B0035 08/11/12 By jan 下階料展BOM時，特性代碼抓ima910 
+# Modify.........: No.FUN-8B0035 08/11/12 By jan 下階料展BOM時，特性代碼抓ima910
 # Modify.........: No.CHI-8B0048 08/11/25 By claire 參數設定確認後單據直接拋轉多角,若拋轉過程失敗,則不允許扣帳
-# Modify.........: No.MOD-8B0304 08/12/01 By Smapmin 進入單身修改金額後,金額未update 
+# Modify.........: No.MOD-8B0304 08/12/01 By Smapmin 進入單身修改金額後,金額未update
 # Modify.........: No.MOD-8C0023 08/12/02 By Smapmin 修改SQL語法
 # Modify.........: No.MOD-8C0048 08/12/04 By Smapmin 銷退方式為5.折讓時,無法取消確認.
-# Modify.........: No.MOD-8C0101 08/12/10 By wujie 銷退單可以對出至境外倉的出貨單做銷退，這樣會導致庫存不對 
+# Modify.........: No.MOD-8C0101 08/12/10 By wujie 銷退單可以對出至境外倉的出貨單做銷退，這樣會導致庫存不對
 # Modify.........: No.CHI-8B0046 08/12/11 By Nicola 如為借貨訂單，update銷退量時，也一併update結案量
 # Modify.........: No.MOD-8C0109 08/12/21 By chenl  若"不折讓,不換貨",則銷退數量= 出貨數量 - 已立賬數量
 # Modify.........: No.FUN-8C0084 08/12/22 By jan s_upimg相關改以 料倉儲批為參數傳入 ,不使用 ROWID
@@ -262,7 +262,7 @@
 # Modify.........: No.TQC-930155 09/04/14 By dongbg open cursor或fetch cursor失敗時不要rollback,給g_success賦值
 # Modify.........: No.MOD-940194 09/04/14 By Smapmin 預設單頭出貨單所對應的原發票號碼
 # Modify.........: No.TQC-930152 09/04/15 By chenyu 單頭銷退方式改成5.折讓后，要提示單身的數量必須為0
-# Modify.........: No.MOD-940331 09/04/24 By Smapmin 修改完單價後,oha53未一併update 
+# Modify.........: No.MOD-940331 09/04/24 By Smapmin 修改完單價後,oha53未一併update
 # Modify.........: No.CHI-940056 09/04/28 By kim 修正ICD作廢時的處理問題
 # Modify.........: No.CHI-8B0053 09/04/29 By Dido 允許中斷點的銷退單輸入(參考 saxmt600 做法)
 # Modify.........: No.TQC-940183 09/04/30 By Carrier rowid定義規範化
@@ -275,14 +275,14 @@
 # Modify.........: No.MOD-950146 09/05/27 By Smapmin 於確認段增加防呆控管:當單頭銷退方式為4時,單身的出貨單號不可為空.
 # Modify.........: No.MOD-950186 09/05/27 By Smapmin 銷退方式為折讓時,已確認過帳產生帳款的銷退單,不該可以做取消確認
 # Modify.........: No.MOD-950169 09/05/27 By Smapmin 產生調撥單單身時,單位與數量要依照倉庫的單位來換算
-# Modify.........: No.MOD-950294 09/05/30 By Dido 批序號管理 INSERT 到 rvbs_file 時 rvbs13 = 0 
+# Modify.........: No.MOD-950294 09/05/30 By Dido 批序號管理 INSERT 到 rvbs_file 時 rvbs13 = 0
 # Modify.........: No.FUN-960007 09/06/03 By chenmoyan global檔內沒有定義rowid變量
 # Modify.........: No.MOD-960165 09/06/23 By lilingyu 銷退單在點"作廢"按鈕時程序當出
-# Modify.........: No.CHI-970020 09/07/09 By mike 銷退類別為1/4時,銷退方式不可為6.(控管在AFTER FIELD 銷退方式)                      
-#                                                 銷退方式為6時,銷退類別不可為1/4.(控管在AFTER FIELD 銷退類別)                      
+# Modify.........: No.CHI-970020 09/07/09 By mike 銷退類別為1/4時,銷退方式不可為6.(控管在AFTER FIELD 銷退方式)
+#                                                 銷退方式為6時,銷退類別不可為1/4.(控管在AFTER FIELD 銷退類別)
 # Modify.........: No.FUN-870007 09/07/30 By Zhangyajun 流通零售功能修改
 # Modify.........: No.MOD-980232 09/08/27 By Dido 發票客戶應一致
-# Modify.........: No.TQC-980210 09/08/24 By sherry 單頭幣種匯率欄位“匯率”輸入負數沒有控管  
+# Modify.........: No.TQC-980210 09/08/24 By sherry 單頭幣種匯率欄位“匯率”輸入負數沒有控管
 # Modify.........: No.FUN-980010 09/08/31 By TSD.sar2436 GP5.2架構重整，修改 INSERT INTO 語法
 # Modify.........: No.FUN-960130 09/09/09 By Sunyanchun 取價
 # Modify.........: No.FUN-980030 09/08/31 By Hiko 加上GP5.2的相關設定
@@ -292,29 +292,29 @@
 # Modify.........: No.TQC-9A0132 09/10/26 By liuxqa 修改OUTER语法。
 # Modify.........: No.FUN-9B0016 09/11/08 By Sunyanchun post no
 # Modify.........: No.TQC-9B0045 09/11/13 By xiaofeizhu DECODE寫法調整
-# Modify.........: No:MOD-9B0114 09/11/18 By Dido 當oha14新舊改變時再異動業務部門 
+# Modify.........: No:MOD-9B0114 09/11/18 By Dido 當oha14新舊改變時再異動業務部門
 # Modify.........: No:MOD-9B0090 09/11/19 By Smapmin 銷退日期不可小於出貨日期
 # Modify.........: No:MOD-9C0016 09/12/02 By mike 原有的零售管控非成本仓拿掉
 # Modify.........: No:MOD-9C0063 09/12/07 By sherry 生成換貨訂單時，給oea901賦值
 # Modify.........: No:TQC-9C0007 09/12/11 By lilingyu "銷退方式"為1.銷退折讓 4.折讓且原單出貨 5.折讓時,在審核前,判斷是否已經維護了單價
-# Modify.........: No:TQC-9C0031 09/12/14 By Dido 若為多角銷售逆拋時應於一般銷退單中選取多角出貨單,並提示警訊即可 
+# Modify.........: No:TQC-9C0031 09/12/14 By Dido 若為多角銷售逆拋時應於一般銷退單中選取多角出貨單,並提示警訊即可
 # Modify.........: No:FUN-9C0064 09/12/14 By Cockroach oha87 改为开窗录入
 # Modify.........: No:TQC-9C0126 09/12/15 By Smapmin 還原TQC-9C0031
 # Modify.........: No:FUN-9C0083 09/12/17 By mike 取价call s_fetch_price_new()
-# Modify.........: No:FUN-9C0120 09/12/21 By mike 通过价格条件管控未取到价格时单价栏位是否可以人工输入 
+# Modify.........: No:FUN-9C0120 09/12/21 By mike 通过价格条件管控未取到价格时单价栏位是否可以人工输入
 # Modify.........: No:MOD-9C0402 09/12/25 By sabrina 單頭的出貨單若更改，單身資料不會重新抓取，會導致單頭與單身出貨單不一致
 # Modify.........: No:MOD-9C0330 09/12/25 By Smapmin 單身新增時,才insert rvbs_file
-# Modify.........: No:CHI-9C0034 09/12/29 By Dido 多角銷退逆拋允許於一般銷退處理,並提示警訊 
-# Modify.........: No:MOD-9C0453 09/12/30 By Dido oha01 應與系統原則控制 
+# Modify.........: No:CHI-9C0034 09/12/29 By Dido 多角銷退逆拋允許於一般銷退處理,並提示警訊
+# Modify.........: No:MOD-9C0453 09/12/30 By Dido oha01 應與系統原則控制
 # Modify.........: No:FUN-9C0073 10/01/07 By chenls  程序精簡
-# Modify.........: No:CHI-A10016 10/01/18 By Dido 調整 s_lotout transcation 架構 
+# Modify.........: No:CHI-A10016 10/01/18 By Dido 調整 s_lotout transcation 架構
 # Modify.........: No:MOD-A10098 10/01/20 By Smapmin 簽收流程,出貨單對應的簽收單必須過完帳才能打銷退
 # Modify.........: No:FUN-A10110 10/01/26 By Cockroach 銷退單新增【折價明細】按鈕
 # Modify.........: No:FUN-A10106 10/02/01 By destiny 销退单新增赠品发放按钮
 # Modify.........: No:MOD-A10123 10/02/03 By Smapmin oeb1006若為空時,default 100
 # Modify.........: No:MOD-A20013 10/02/03 By Smapmin 批號後增加是否新增倉庫的判斷
 # Modify.........: No:CHI-9C0050 10/02/05 By Smapmin 折讓類(oha09='1'/'4'/'5'),金額不可小於等於0
-# Modify.........: No:FUN-A20022 10/02/08 By Cockroach 會員積分計算 
+# Modify.........: No:FUN-A20022 10/02/08 By Cockroach 會員積分計算
 # Modify.........: No:FUN-A20038 10/02/20 By destiny 抓合格量的where条件有错应该用出货单单号
 # Modify.........: No:MOD-A10016 10/02/23 By sabrina 確認時判斷單身是否有訂單單號及項次
 # Modify.........: No:TQC-A10039 10/02/24 By destiny 销退时抓销售单的分摊sql有误，导致销退单的分摊折价为空
@@ -328,7 +328,7 @@
 # Modify.........: No:MOD-A30237 10/04/07 By Smapmin 開窗修改單身原因碼後按確定,無法正確的update資料
 # Modify.........: No.FUN-A40041 10/04/20 By wujie     g_sys->AXM
 # Modify.........: No:CHI-A40057 10/04/26 By Smapmin 判斷是否已產生換貨訂單時的條件,將oea10改為oea12
-# Modify.........: No:MOD-A50083 10/05/13 By lilingyu  1.銷退單類型為5. 折讓時,輸入完單身資料，確定後,畫面資料消失 2.畫面數量欄位為0,但是審核過不了,報錯 
+# Modify.........: No:MOD-A50083 10/05/13 By lilingyu  1.銷退單類型為5. 折讓時,輸入完單身資料，確定後,畫面資料消失 2.畫面數量欄位為0,但是審核過不了,報錯
 # Modify.........: No:TQC-A50055 10/05/17 By lilingyu 銷退單類型為2.3折讓時,過賬後,應該不可以再維護單價和賬款
 # Modify.........: No.FUN-A50071 10/05/19 By vealxu GP5.2 相關程序增加POS單號字段 并管控如果不為空的情況下 不可取消審核與取消過帳
 # Modify.........: No.FUN-A50054 FUN-A60035 10/06/01 By chenmoyan 增加款式明細功能
@@ -362,7 +362,7 @@
 # Modify.........: No.FUN-A40022 10/10/25 By jan 當料件為批號控管,則批號必須輸入
 # Modify.........: No:FUN-AA0048 10/10/28 By Carrier GP5.2架构下仓库权限修改
 # Modify.........: No:FUN-AA0095 10/11/01 By wangxin 單身選擇料件時可多選，多選后可自動生成多筆資料
-# Modify.........: No:TQC-AA0133 10/11/03 By lilingyu 更改判別"經營方式"的部分邏輯 
+# Modify.........: No:TQC-AA0133 10/11/03 By lilingyu 更改判別"經營方式"的部分邏輯
 # Modify.........: No:MOD-AA0189 10/11/09 By Smapmin 無法將出貨單批序號資料帶到銷退單
 # Modify.........: No:MOD-AB0080 10/11/09 By Smapmin 無法新增訂單
 # Modify.........: No:FUN-AB0059 10/11/15 By huangtao mod 庫存抓取資料前做料號控管
@@ -393,11 +393,11 @@
 # Modify.........: No:FUN-A60034 11/03/08 By Mandy (1)EasyFlow整合功能外序參數的接收順序交換為：ARG_VAL(1)-->imm01調撥單號； ARG_VAL(2)-->Action ID ； ARG_VAL(3) -->借出管理flag
 #                                                  (2)因aimt324 新增EasyFlow整合功能影響INSERT INTO imm_file
 # Modify.........: No:FUN-A70104 11/03/08 By Mandy [EF簽核] aimt324影響程式簽核欄位default
-# Modify.........: No:MOD-B30222 11/03/12 By wangxin 單價維護后不重新取價 
+# Modify.........: No:MOD-B30222 11/03/12 By wangxin 單價維護后不重新取價
 # Modify.........: No:MOD-B30438 11/03/15 By baogc 修改bug
 # Modify.........: No:MOD-B30432 11/03/15 By baogc 判斷可發贈品和折價明細按鈕只有在零售業態才顯示
-# Modify.........: No:MOD-B30464 11/03/15 By Summer 還原CHI-8B0048的修改 
-# Modify.........: No:MOD-B30574 11/03/17 By Summer BEFORE DELETE 裡的_b_fill拿掉 
+# Modify.........: No:MOD-B30464 11/03/15 By Summer 還原CHI-8B0048的修改
+# Modify.........: No:MOD-B30574 11/03/17 By Summer BEFORE DELETE 裡的_b_fill拿掉
 # Modify.........: No:FUN-B30012 11/03/09 By baogc MARK掉可發贈品按鈕部份,退贈品的時候直接打銷退單
 # Modify.........: No:MOD-B30651 11/03/30 by Summer 修改判別有效天數
 # Modify.........: No:MOD-B30698 11/03/31 By Summer 單身輸入出貨單號後再行判斷是否給單身原始發票
@@ -407,16 +407,16 @@
 # Modify.........: No:TQC-B40164 11/04/19 By lixia 單身無資料時點擊單價按鈕，新畫面中點擊確定后報錯
 # Modify.........: No:TQC-B40073 11/04/25 By shiwuying 增加审核时间ohacont
 # Modify.........: No:TQC-B40203 11/04/25 By lilingyu EF簽核相關問題修改
-# Modify.........: No:MOD-B40242 11/05/06 By Summer 單身輸入同筆出貨單號項次時,必須控卡總數量不可超過原出貨單號項次數量 
-# Modify.........: No:MOD-B50039 11/05/06 By Summer not null欄位給預設值 
+# Modify.........: No:MOD-B40242 11/05/06 By Summer 單身輸入同筆出貨單號項次時,必須控卡總數量不可超過原出貨單號項次數量
+# Modify.........: No:MOD-B50039 11/05/06 By Summer not null欄位給預設值
 # Modify.........: No:FUN-B50054 11/05/11 By shiwuying 单身增加抽成编号ohb40
-# Modify.........: No:MOD-B50113 11/05/16 By Summer 控卡多角的銷退單身出貨單號不能不同 
+# Modify.........: No:MOD-B50113 11/05/16 By Summer 控卡多角的銷退單身出貨單號不能不同
 # Modify.........: No:FUN-B40098 11/05/18 By shiwuying 扣率代銷時產生一筆非成本倉的雜收單和成本倉的倉退單
 # Modify.........: No:FUN-B50171 11/05/31 By shiwuying 更改數量時，單價一直有變化
 # Modify.........: No.FUN-B50064 11/06/03 By xianghui BUG修改，刪除時提取資料報400錯誤
 # Modify.........: No:TQC-B60288 11/06/22 By shiwuying 取價后單價不需要根據稅率重新計算
 # Modify.........: No.FUN-B30187 11/06/29 By jason ICD功能修改，增加母批、DATECODE欄位
-# Modify.........: No:MOD-B70174 11/07/18 By Summer 原幣含稅未稅金額請增加aom-557控卡  
+# Modify.........: No:MOD-B70174 11/07/18 By Summer 原幣含稅未稅金額請增加aom-557控卡
 # Modify.........: No.FUN-B70061 11/07/21 By jason saxmt700.4gl-> saxmt700.src.4gl
 # Modify.........: No:FUN-B70087 11/07/21 By zhangll 增加oah07控管，s_unitprice_entry增加传参
 # Modify.........: No:TQC-B70184 11/07/28 By pauline 現付客戶且單據已確認點選單價只可查看不可修改
@@ -426,7 +426,7 @@
 # Modify.........: No.TQC-B80005 11/08/03 By jason s_icdpost函數傳入參數
 # Modify.........: No.FUN-B50096 11/08/19 By lixh1 所有入庫程式應該要加入可以依料號設置"批號(倉儲批的批)是否為必要輸入欄位"的選項
 # Modify.........: No:MOD-B80194 11/09/02 By johung 修改t700_i FUN-B70061對中斷鍵的修改
-# Modify.........: No:MOD-B80050 11/09/07 By Summer 借貨還量產生的調撥單沒有寫批序號rvbs_file 
+# Modify.........: No:MOD-B80050 11/09/07 By Summer 借貨還量產生的調撥單沒有寫批序號rvbs_file
 # Modify.........: No:CHI-B80050 11/09/09 By johung 產生換貨訂單時，若單別有設定為自動確認，換貨訂單需自動確認
 # Modify.........: No.FUN-B80119 11/09/14 By fengrui  增加調用s_icdpost的p_plant參數
 # Modify.........: No:MOD-BA0027 11/10/11 By Smapmin 確認段增加判斷若出貨單號為空時,需與axrt310或是amdi100的金額做比較.
@@ -434,13 +434,13 @@
 # Modify.........: No:FUN-BA0014 11/10/25 By Abby   新增自動確認功能
 # Modify.........: No.FUN-B90103 11/09/27 By xjll   增加服飾二維方式
 # Modify.........: No:FUN-BB0024 11/11/07 By yangxf 修改過帳/過帳還原時更新會員銷售及積分,加入積分款別
-# Modify.........: No:MOD-BB0151 11/11/14 By Dido 拋轉帳款參數調整 
+# Modify.........: No:MOD-BB0151 11/11/14 By Dido 拋轉帳款參數調整
 # Modify.........: No:MOD-BB0202 11/12/01 By 抓合格量的where条件有错应该用銷退單號
 # Modify.........: No:FUN-BC0081 12/12/28 BY yangxf 添加“销售券号”ACTION 及相关逻辑
 # Modify.........: No.TQC-B90236 12/01/12 By zhuhao s_lotout_del程式段Mark，改為s_lot_del，傳入參數不變
 #                                            _r()中，使用FOR迴圈執行s_del_rvbs程式段Mark，改為s_lot_del，傳入參數同上，但第三個參數(項次)傳""
 #                                            s_lotou程式段，改為s_mod_lot，原傳入為"APP"改為"MOD"，其餘傳入參數不變，於最後多傳入1
-#                                            rvbs09的值更改 
+#                                            rvbs09的值更改
 # Modify.........: No.FUN-BA0051 12/01/13 By jason 一批號多DATECODE功能
 # MOdify.........: No.TQC-C20183 12/01/17 By chenjing 增加數量欄位小數取位
 # MOdify.........: No.FUN-C10053 12/01/17 By yangxf 更新税别时添加三个条件，以及更新含税价与未税价，在单身新增、修改、删除的同时跟新ogk_file
@@ -455,11 +455,11 @@
 # Modify.........: No:FUN-C20006 12/02/03 By lixiang 修改查詢是點擊取消，報-404的錯誤
 # Modify.........: No:FUN-C20002 12/02/03 by fanbj 券產品倉庫調整
 # Modify.........: No:MOD-C10161 12/02/03 By Vampire 換貨訂單產生時，其oea261,oea262,oea263未給值
-# Modify.........: No:MOD-BA0085 12/02/03 By Summer 新增後直接列印會出現語法錯誤 
+# Modify.........: No:MOD-BA0085 12/02/03 By Summer 新增後直接列印會出現語法錯誤
 # Modify.........: No:MOD-BA0114 12/02/03 By Summer 請判斷無訂單出貨單時,訂單單號項次不須給值
-# Modify.........: No:MOD-BC0083 12/02/03 By Summer CALL t700_aic_s_icdin,應該是ICD行業別才需呼叫 
+# Modify.........: No:MOD-BC0083 12/02/03 By Summer CALL t700_aic_s_icdin,應該是ICD行業別才需呼叫
 # Modify.........: No:MOD-C10162 12/02/03 By jt_chen 修正換貨訂單的發票別為客戶基本資料的慣用發票別
-# Modify.........: No:MOD-C20018 12/02/03 By jt_chen 修正單身無資料時不可執行 批/序號查詢 Action 
+# Modify.........: No:MOD-C20018 12/02/03 By jt_chen 修正單身無資料時不可執行 批/序號查詢 Action
 # Modify.........: No:FUN-BC0082 12/02/06 By chenwei 错误信息 clm-332改为 alm1562
 # Modify.........: No:FUN-BC0071 12/02/08 By huangtao 增加取價參數
 # Modify.........: No:FUN-C20028 12/02/13 By Abby EF功能調整-客戶不以整張單身資料送簽問題
@@ -476,7 +476,7 @@
 # Modify.........: No:TQC-C20348 12/02/22 By xjll    服飾流通業商品策略，價格策略的修改以及開窗的修改
 # Modify.........: No:TQC-C20500 12/02/27 By xjll    刷新多屬性單身
 # Modify.........: No:TQC-C20537 12/02/29 By Carrier 产生待抵与否，均在状态栏给一个提示
-# Modify.........: No:CHI-B40056 12/02/29 By Summer tup08,tup09是No Use不使用的欄位,調整為tup11,tup12 
+# Modify.........: No:CHI-B40056 12/02/29 By Summer tup08,tup09是No Use不使用的欄位,調整為tup11,tup12
 # Modify.........: No:TQC-C20362 12/03/02 By zhuhao t700_ins_rvbs函數中插入rvbs_file，對應的rvbs09的值應為‘1’
 # Modify.........: No:FUN-C20116 12/03/02 By Abby t700_y1()進行chk段與upd段的拆分
 # Modify.........: No:TQC-C30106 12/03/06 By yangxf 單身攤位檢查時，攤位對應的合同必須是統一收銀；預租期內的攤位商戶也可以錄入
@@ -524,7 +524,7 @@
 # Modify.........: No:MOD-C70243 12/08/07 By Vampire 排除QC的資料,增加rvbs00<>'aqct800'
 # Modify.........: No:MOD-C70044 12/08/07 By Vampire 出貨單有勾選多倉時,原本銷退單在輸入項次時會寫入rvbs_file,變更項次、料號時需重新寫入rvbs_file
 # Modify.........: No:MOD-C60237 12/08/07 By Vampire 判斷出貨單號新舊值不同時客戶編號、送貨客戶需重帶
-# Modify.........: No.CHI-C80009 12/08/16 By Sakura 1.多角icd銷退修改單身時,也一併要顯示刻號/BIN查詢,入庫 ACTION 2.過帳還原mark poz011=1 
+# Modify.........: No.CHI-C80009 12/08/16 By Sakura 1.多角icd銷退修改單身時,也一併要顯示刻號/BIN查詢,入庫 ACTION 2.過帳還原mark poz011=1
 #                                                   3.把銷退單拋轉的動作移至過帳後4.修改CHI-C30118 bug確認選否也會自動確認成功,刪除transaction
 # Modify.........: No.FUN-C80045 12/08/17 By nanbing 檢查POS單別，不允許在ERP中錄入
 # Modify.........: No.TQC-C80119 12/08/20 By xumeimei 寫INSERT INTO lsm_file欄位不對應，導致insert錯誤
@@ -585,7 +585,7 @@
 #                                                 不要自動開批序號的Key In畫面(s_mod_lot)
 # Modify.........: No:MOD-D40018 13/04/02 By Vampire 訂單沒有多倉替代的資料，故直接回寫該訂單像次的oeb25即可
 # Modify.........: No.DEV-D30040 13/04/01 By Nina 批序號相關程式,當料件使用條碼時(ima930 = 'Y'),確認時,
-#                                                 若未輸入批序號資料則不需控卡單據數量與批/序號總數量是否相符 
+#                                                 若未輸入批序號資料則不需控卡單據數量與批/序號總數量是否相符
 #                                                 ex:單據數量與批/序號總數量不符，請檢查資料！(aim-011)
 # Modify.........: No:CHI-C80072 13/04/02 By chenjing 統一確認和取消確認時確認人員和確認日期的寫法
 # Modify.........: No:MOD-D40025 13/04/02 By Vampire 銷退方式選5.折讓時，批號非必填
@@ -600,10 +600,10 @@
 # Modify.........: NO.18010101   20/07/31 BY shawn 增加同步SCM接口
 
 DATABASE ds
- 
+
 GLOBALS "../../config/top.global"
 GLOBALS "../4gl/saxmt700.global"
-GLOBALS "../4gl/s_slk.global"   #FUN-B90103 add  
+GLOBALS "../4gl/s_slk.global"   #FUN-B90103 add
 #FUN-CC0095---begin
 GLOBALS
    DEFINE g_padd_img       DYNAMIC ARRAY OF RECORD
@@ -646,14 +646,14 @@ GLOBALS
                             END RECORD
 END GLOBALS
 #FUN-CC0095---end
- 
+
 DEFINE g_ima918        LIKE ima_file.ima918  #FUN-860025
 DEFINE g_ima921        LIKE ima_file.ima921  #FUN-860025
 DEFINE g_ima930        LIKE ima_file.ima930  #DEV-D30059 add
 DEFINE l_r             LIKE type_file.chr1   #CHI-910023
-DEFINE g_multi_ima01   STRING           #FUN-AA0095 add 
+DEFINE g_multi_ima01   STRING           #FUN-AA0095 add
 DEFINE g_acc           LIKE type_file.chr1   #MOD-B30222 add
-DEFINE li_a            LIKE type_file.chr10  #FUN-B90103--add 
+DEFINE li_a            LIKE type_file.chr10  #FUN-B90103--add
 DEFINE g_rxx04_point LIKE rxx_file.rxx04         #抵現積分   #FUN-BB0024  ADD
 #FUN-B30170 add begin--------------------------
 DEFINE g_rvbs   DYNAMIC ARRAY OF RECORD        #批序號明細單身變量
@@ -674,7 +674,7 @@ DEFINE g_rec_b1           LIKE type_file.num5,   #單身二筆數 ##FUN-B30170
 #FUN-B90103--start--
 #FUN-BC0081 add begin---
 DEFINE l_ac5              LIKE type_file.num5,
-       g_rec_b5           LIKE type_file.num5 
+       g_rec_b5           LIKE type_file.num5
 DEFINE g_rxe              DYNAMIC ARRAY OF RECORD
            rxe02          LIKE rxe_file.rxe02,
            rxe03          LIKE rxe_file.rxe03,
@@ -685,8 +685,8 @@ DEFINE g_rxe              DYNAMIC ARRAY OF RECORD
            rxe07          LIKE rxe_file.rxe07,
            lrz02          LIKE lrz_file.lrz02,
            rxe08          LIKE rxe_file.rxe08,
-           rxe09          LIKE rxe_file.rxe09                                  
-                          END RECORD   
+           rxe09          LIKE rxe_file.rxe09
+                          END RECORD
 DEFINE g_rxe_t            RECORD
            rxe02          LIKE rxe_file.rxe02,
            rxe03          LIKE rxe_file.rxe03,
@@ -697,25 +697,25 @@ DEFINE g_rxe_t            RECORD
            rxe07          LIKE rxe_file.rxe07,
            lrz02          LIKE lrz_file.lrz02,
            rxe08          LIKE rxe_file.rxe08,
-           rxe09          LIKE rxe_file.rxe09                
-                          END RECORD  
-DEFINE g_flag3            LIKE type_file.chr1                          
+           rxe09          LIKE rxe_file.rxe09
+                          END RECORD
+DEFINE g_flag3            LIKE type_file.chr1
 DEFINE g_flag_chk         LIKE type_file.chr1
 DEFINE g_flag             LIKE type_file.chr1   #MOD-BB0151
-DEFINE g_oah08            LIKE oah_file.oah08   #FUN-C40089 
+DEFINE g_oah08            LIKE oah_file.oah08   #FUN-C40089
 #DEFINE l_img_table      STRING               #FUN-C70087  #FUN-CC0095
 #DEFINE l_imgg_table     STRING               #FUN-C70087  #FUN-CC0095
 
-#FUN-BC0081 add end ---  
+#FUN-BC0081 add end ---
 #FUN-B90103--end--
 #FUN-B30170 add -end---------------------------
 #FUN-CB0014--add--str--
-DEFINE g_oha_l     DYNAMIC ARRAY OF RECORD   
+DEFINE g_oha_l     DYNAMIC ARRAY OF RECORD
                     oha05     LIKE oha_file.oha05,
                     oha08     LIKE oha_file.oha08,
                     oha01     LIKE oha_file.oha01,
                     oaydesc   LIKE oay_file.oaydesc,
-                    oha02     LIKE oha_file.oha02,                   
+                    oha02     LIKE oha_file.oha02,
                     oha16     LIKE oha_file.oha16,
                     oha03     LIKE oha_file.oha03,
                     oha14     LIKE oha_file.oha14,
@@ -741,24 +741,24 @@ FUNCTION t700(p_argv0,p_argv1,p_argv2)  #FUN-840012
   DEFINE p_argv2        STRING     #No.TQC-660096
   DEFINE cb             ui.ComboBox         #TQC-BC0204
   DEFINE l_msg          STRING              #TQC-BC0204
- 
+
     WHENEVER ERROR CONTINUE                #忽略一切錯誤
     LET p_argv2 = ARG_VAL(2)       #No.TQC-660096
-     
+
     #CALL s_padd_img_create() RETURNING l_img_table    #FUN-C70087  #FUN-CC0095
     #CALL s_padd_imgg_create() RETURNING l_imgg_table  #FUN-C70087  #FUN-CC0095
-    
+
     CALL cl_set_comp_visible("ohb40",g_azw.azw04='2') #FUN-B50054
 #--FUN-B90103-- start
 #--FUN-B90103-- end
-  #No.FUN-A90040  begin--  
+  #No.FUN-A90040  begin--
   #IF (g_azw.azw04 <> '2') THEN                #FUN-AC0077
    IF g_azw.azw04 = '2' AND p_argv0 = '1' THEN #FUN-AC0077
        CALL cl_set_comp_visible("ohb69,ohb70,oha57",TRUE)
     ELSE
        CALL cl_set_comp_visible("ohb69,ohb70,oha57",FALSE)
    END IF
-   #No.FUN-A90040  end-- 
+   #No.FUN-A90040  end--
 #FUN-AB0039 --Begin--
   #IF p_argv0 = '1' THEN                     #FUN-AB0096
    IF p_argv0 = '1' AND g_azw.azw04='2' THEN #FUN-AB0096
@@ -769,31 +769,31 @@ FUNCTION t700(p_argv0,p_argv1,p_argv2)  #FUN-840012
 #FUN-AB0039 --End----
     CALL cl_set_comp_visible("pagehide",g_azw.azw04='2')
     CALL cl_set_comp_visible("ohb64,ohb65,ohb66,ohb67,ohb68,b1_ohb1001",g_azw.azw04='2')
-    CALL cl_set_comp_visible("oha98",g_aza.aza88 = 'Y')                        #FUN-A50071 add  
+    CALL cl_set_comp_visible("oha98",g_aza.aza88 = 'Y')                        #FUN-A50071 add
     CALL cl_set_act_visible("reback_money,money_detail",g_azw.azw04='2')
   # CALL cl_set_act_visible("discount_detail",p_argv0 = '1') #FUN-A10110 ADD     #MOD-B30432 MARK
     CALL cl_set_act_visible("discount_detail",p_argv0 = '1' AND g_azw.azw04='2') #MOD-B30432 ADD
     CALL cl_set_act_visible("kefa",g_azw.azw04='2')                              #MOD-B30432 ADD
     CALL cl_set_act_visible("ticket_back",g_azw.azw04='2')   #FUN-BC0081 add
-    IF g_aza.aza115='Y' THEN CALL cl_set_comp_required('b1_ohb50',TRUE) END IF   #FUN-CB0087 add 
+    IF g_aza.aza115='Y' THEN CALL cl_set_comp_required('b1_ohb50',TRUE) END IF   #FUN-CB0087 add
 #FUN-A60035 MARK --Begin --chenmoyan
 #   #FUN-A50054 Begin
 #   IF s_industry("slk") THEN
 #      CALL cl_set_act_visible("style_detail",TRUE)
 #   ELSE
 #      CALL cl_set_act_visible("style_detail",FALSE)
-#   END IF 
+#   END IF
 #   #FUN-A50054---end
-#FUN-A60035 MARK --End --chenmoyan   
+#FUN-A60035 MARK --End --chenmoyan
     LET g_forupd_sql = "SELECT * FROM oha_file WHERE oha01 = ? FOR UPDATE "    #No.MOD-740326 modify
     LET g_forupd_sql = cl_forupd_sql(g_forupd_sql)
     DECLARE t700_cl CURSOR FROM g_forupd_sql
     LET g_argv0=p_argv0
     LET g_argv1=p_argv1
     LET g_argv2=p_argv2
- 
+
     LET g_action_choice = ''
- 
+
 #TQC-BC0204 --begin--
    LET cb = ui.ComboBox.forName("oha212")
    IF g_aza.aza26 = '2' THEN
@@ -835,7 +835,7 @@ FUNCTION t700(p_argv0,p_argv1,p_argv2)  #FUN-840012
     #建立簽核模式時的 toolbar icon
     CALL aws_efapp_toolbar()
     #FUN-BA0014 add end---
-  
+
     IF NOT cl_null(g_argv1) THEN
        CASE g_argv2
           WHEN "query"
@@ -875,7 +875,7 @@ FUNCTION t700(p_argv0,p_argv1,p_argv2)  #FUN-840012
                 IF g_success = "Y" THEN
                    #CALL t700_s('1')   #DEV-D30046 --mark
                    CALL saxmt700sub_s('1',g_argv0,g_oha.oha01,FALSE)  #DEV-D30046 --add
-                END IF 
+                END IF
                 #CALL s_padd_img_drop(l_img_table)    #TQC-CA0028 #FUN-CC0095
                 #CALL s_padd_imgg_drop(l_imgg_table)  #TQC-CA0028 #FUN-CC0095
                 CALL cl_used(g_prog,g_time,2) RETURNING g_time #No.FUN-B30211
@@ -883,17 +883,17 @@ FUNCTION t700(p_argv0,p_argv1,p_argv2)  #FUN-840012
              END IF
        END CASE
     END IF
- 
+
     CALL t700_menu()
     #CALL s_padd_img_drop(l_img_table)    #FUN-C70087 #FUN-CC0095
     #CALL s_padd_imgg_drop(l_imgg_table)  #FUN-C70087 #FUN-CC0095
 END FUNCTION
- 
+
 FUNCTION t700_cs()
 DEFINE  lc_qbe_sn       LIKE    gbm_file.gbm01    #No.FUN-580031  HCN
     CLEAR FORM                             #清除畫面
-    CALL g_ohb1.clear()           
-    CALL g_ohb2.clear()      
+    CALL g_ohb1.clear()
+    CALL g_ohb2.clear()
 #--FUN-B90103--str---------------------
 #--FUN-B90103--end---------------------
     CALL cl_set_comp_visible("ohb40",g_azw.azw04='2') #FUN-B50054
@@ -915,18 +915,18 @@ DEFINE  lc_qbe_sn       LIKE    gbm_file.gbm01    #No.FUN-580031  HCN
 #         oha03,oha032,oha04,oha17,oha56,oha48,   #No.FUN-740016
 #         oha14,oha15,
 #         oha25,oha21,oha211,oha212,oha213,oha23,oha24,oha10,oha1018,oha1015,   #FUN-650108
-#         oha99,oha44,oha98,ohaconf,ohapost,oha55,ohamksg,   #FUN-550051        #FUN-A50071 add oha98 
+#         oha99,oha44,oha98,ohaconf,ohapost,oha55,ohamksg,   #FUN-550051        #FUN-A50071 add oha98
 #         oha50,
 #         oha1001,oha1011,oha1010,oha1003,oha1005,oha1009,oha1002,
 #         oha1014,oha1017,oha1012,oha1013,oha1004,
-#         oha85,oha86,oha87,ohaplant,oha57,oha88,oha89,oha90,oha91,oha92, #No.FUN-870007 #FUN-AA0057 add oha57                               
+#         oha85,oha86,oha87,ohaplant,oha57,oha88,oha89,oha90,oha91,oha92, #No.FUN-870007 #FUN-AA0057 add oha57
 #         oha93,oha94,oha95,oha96,oha97,ohaconu,ohacond,ohacont,   #No.FUN-870007 #TQC-B40073 Add cont
 #         ohauser,ohagrup,ohamodu,ohadate,
 #         ohaoriu,ohaorig,                                          #TQC-A30041 ADD
 #         ohaud01,ohaud02,ohaud03,ohaud04,ohaud05,
 #         ohaud06,ohaud07,ohaud08,ohaud09,ohaud10,
 #         ohaud11,ohaud12,ohaud13,ohaud14,ohaud15
-#         
+#
 #         BEFORE CONSTRUCT
 #            CALL cl_qbe_init()
 #
@@ -946,7 +946,7 @@ DEFINE  lc_qbe_sn       LIKE    gbm_file.gbm01    #No.FUN-580031  HCN
 #                    LET g_qryparam.form ="q_oga"
 #                    LET g_qryparam.where = " oga94 = 'N'"   #FUN-AA0057
 #                    IF g_azw.azw04='2' THEN
-#                       LET g_qryparam.where = " oga83='",g_plant,"'" 
+#                       LET g_qryparam.where = " oga83='",g_plant,"'"
 #                    END IF
 #                    LET g_qryparam.default1 = g_oha.oha16
 #                    IF g_argv0='1' THEN
@@ -1024,86 +1024,86 @@ DEFINE  lc_qbe_sn       LIKE    gbm_file.gbm01    #No.FUN-580031  HCN
 #                    CALL cl_create_qry() RETURNING g_qryparam.multiret
 #                    DISPLAY g_qryparam.multiret TO oha25
 #                    NEXT FIELD oha25
-#               WHEN INFIELD(oha1004) 
-#                    LET g_qryparam.form ="q_azf01"     #No.FUN-6B0065  
+#               WHEN INFIELD(oha1004)
+#                    LET g_qryparam.form ="q_azf01"     #No.FUN-6B0065
 #                    LET g_qryparam.state = "c"
 #                    LET g_qryparam.default1 = g_oha.oha1004
 #                    LET g_qryparam.arg1='2'
 #                    CALL cl_create_qry() RETURNING g_qryparam.multiret
-#                    DISPLAY g_qryparam.multiret TO oha1004 
+#                    DISPLAY g_qryparam.multiret TO oha1004
 #                    NEXT FIELD oha1004
-#               WHEN INFIELD(oha1001) 
-#                    LET g_qryparam.form ="q_occ6"    
+#               WHEN INFIELD(oha1001)
+#                    LET g_qryparam.form ="q_occ6"
 #                    LET g_qryparam.default1 = g_oha.oha1001
 #                    LET g_qryparam.state = "c"
 #                    CALL cl_create_qry() RETURNING g_qryparam.multiret
-#                    DISPLAY g_qryparam.multiret TO oha1001 
+#                    DISPLAY g_qryparam.multiret TO oha1001
 #                    NEXT FIELD oha1001
-#               WHEN INFIELD(oha1011) 
-#                    LET g_qryparam.form ="q_occ7"        
+#               WHEN INFIELD(oha1011)
+#                    LET g_qryparam.form ="q_occ7"
 #                    LET g_qryparam.default1 = g_oha.oha1011
 #                    LET g_qryparam.state = "c"
 #                    CALL cl_create_qry() RETURNING g_qryparam.multiret
-#                    DISPLAY g_qryparam.multiret TO oha1011 
-#                    NEXT FIELD oha1011                     
-#               WHEN INFIELD(oha1010) 
+#                    DISPLAY g_qryparam.multiret TO oha1011
+#                    NEXT FIELD oha1011
+#               WHEN INFIELD(oha1010)
 #                    LET g_qryparam.form ="q_tqb"
 #                    LET g_qryparam.default1 = g_oha.oha1010
 #                    LET g_qryparam.state = "c"
 #                    CALL cl_create_qry() RETURNING g_qryparam.multiret
-#                    DISPLAY g_qryparam.multiret TO oha1010 
-#                    NEXT FIELD oha1010  
-#               WHEN INFIELD(oha1003) 
+#                    DISPLAY g_qryparam.multiret TO oha1010
+#                    NEXT FIELD oha1010
+#               WHEN INFIELD(oha1003)
 #                    LET g_qryparam.form ="q_tqb"
 #                    LET g_qryparam.state = "c"
 #                    LET g_qryparam.default1 = g_oha.oha1003
 #                    CALL cl_create_qry() RETURNING g_qryparam.multiret
 #                    DISPLAY g_qryparam.multiret TO oha1003
-#                    NEXT FIELD oha1003    
-#               WHEN INFIELD(oha1009) 
+#                    NEXT FIELD oha1003
+#               WHEN INFIELD(oha1009)
 #                    LET g_qryparam.form ="q_tqa1"
 #                    LET g_qryparam.arg1 ='19'
 #                    LET g_qryparam.default1 = g_oha.oha1009
 #                    LET g_qryparam.state = "c"
 #                    CALL cl_create_qry() RETURNING g_qryparam.multiret
 #                    DISPLAY g_qryparam.multiret TO oha1009
-#                    NEXT FIELD oha1009  
-#               WHEN INFIELD(oha1002) 
+#                    NEXT FIELD oha1009
+#               WHEN INFIELD(oha1002)
 #                    LET g_qryparam.form ="q_tqa1"
 #                    LET g_qryparam.arg1 ='20'
 #                    LET g_qryparam.default1 = g_oha.oha1002
 #                    LET g_qryparam.state = "c"
 #                    CALL cl_create_qry() RETURNING g_qryparam.multiret
 #                    DISPLAY g_qryparam.multiret TO oha1002
-#                    NEXT FIELD oha1002  
-#               WHEN INFIELD(oha1014) 
+#                    NEXT FIELD oha1002
+#               WHEN INFIELD(oha1014)
 #                    LET g_qryparam.form ="q_occ5"
 #                    LET g_qryparam.default1 = g_oha.oha1014
 #                    LET g_qryparam.state = "c"
 #                    CALL cl_create_qry() RETURNING g_qryparam.multiret
 #                    DISPLAY g_qryparam.multiret TO oha1014
-#                    NEXT FIELD oha1014   
-#               WHEN INFIELD(oha86)                                                                                              
-#                     CALL cl_init_qry_var()                                                                                     
-#                     LET g_qryparam.state = "c"                                                                                 
-#                     LET g_qryparam.form ="q_oha86"      
-#                     CALL cl_create_qry() RETURNING g_qryparam.multiret                                                         
-#                     DISPLAY g_qryparam.multiret TO oha86                                                                       
-#                     NEXT FIELD oha86                                                                                           
-#               WHEN INFIELD(ohaconu)                                                                                            
-#                     CALL cl_init_qry_var()                                                                                     
-#                     LET g_qryparam.state = "c"                                                                                 
-#                     LET g_qryparam.form ="q_ohaconu"                                               
-#                     CALL cl_create_qry() RETURNING g_qryparam.multiret                                                         
-#                     DISPLAY g_qryparam.multiret TO ohaconu                                                                     
-#                     NEXT FIELD ohaconu                 
+#                    NEXT FIELD oha1014
+#               WHEN INFIELD(oha86)
+#                     CALL cl_init_qry_var()
+#                     LET g_qryparam.state = "c"
+#                     LET g_qryparam.form ="q_oha86"
+#                     CALL cl_create_qry() RETURNING g_qryparam.multiret
+#                     DISPLAY g_qryparam.multiret TO oha86
+#                     NEXT FIELD oha86
+#               WHEN INFIELD(ohaconu)
+#                     CALL cl_init_qry_var()
+#                     LET g_qryparam.state = "c"
+#                     LET g_qryparam.form ="q_ohaconu"
+#                     CALL cl_create_qry() RETURNING g_qryparam.multiret
+#                     DISPLAY g_qryparam.multiret TO ohaconu
+#                     NEXT FIELD ohaconu
 #               WHEN INFIELD(ohaplant)
 #                     CALL cl_init_qry_var()
 #                     LET g_qryparam.state = "c"
 #                     LET g_qryparam.form ="q_azp"
 #                     CALL cl_create_qry() RETURNING g_qryparam.multiret
 #                     DISPLAY g_qryparam.multiret TO ohaplant
-#                     NEXT FIELD ohaplant                                                                        
+#                     NEXT FIELD ohaplant
 #            END CASE
 ########  ON IDLE g_idle_seconds
 ########     CALL cl_on_idle()
@@ -1128,7 +1128,7 @@ DEFINE  lc_qbe_sn       LIKE    gbm_file.gbm01    #No.FUN-580031  HCN
 #      CONSTRUCT g_wc2 ON ohb03,ohb30,ohb31,ohb32,ohb33,ohb34,ohb69,ohb70,ohb50,ohb40,ohb1004,ohb04,ohb06,ohb11,  #No.FUN-A90040 #FUN-B50054
 #                        #ohb092,ohb09,ohb091,ohb61,ohb05,ohb12,   #No.FUN-740016       #CHI-6B0027 mod #CHI-A80042 mark
 #                         ohb09,ohb091,ohb092,ohb61,ohb05,ohb12,   #CHI-A80042
-#                         ohb913,ohb914,ohb915,ohb910,ohb911,ohb912,ohb916,ohb917, 
+#                         ohb913,ohb914,ohb915,ohb910,ohb911,ohb912,ohb916,ohb917,
 #                         ohb1002,ohb1001,ohb1003,ohb51,ohb930,    #FUN-670063
 #                         ohbud01,ohbud02,ohbud03,ohbud04,ohbud05,
 #                         ohbud06,ohbud07,ohbud08,ohbud09,ohbud10,
@@ -1142,7 +1142,7 @@ DEFINE  lc_qbe_sn       LIKE    gbm_file.gbm01    #No.FUN-580031  HCN
 #                       # s1_ohb[1].b1_ohb69,s1_ohb[1].b1_ohb70,s1_ohb[1].b1_ohb71,s1_ohb[1].b1_ohb50,s1_ohb[1].b1_ohb1004,    #No.FUN-A90040   #No.FUN-AA0048
 #                         s1_ohb[1].ohb69,s1_ohb[1].ohb70,s1_ohb[1].b1_ohb50,
 #                         s1_ohb[1].ohb40,s1_ohb[1].b1_ohb1004,    #No.FUN-A90040   #No.FUN-AA0048 #FUN-B50054
-#                         s1_ohb[1].ohb04, s1_ohb[1].b1_ohb06, s1_ohb[1].b1_ohb11,                     #CHI-6B0027 mod  
+#                         s1_ohb[1].ohb04, s1_ohb[1].b1_ohb06, s1_ohb[1].b1_ohb11,                     #CHI-6B0027 mod
 #                        #s1_ohb[1].b1_ohb092,s1_ohb[1].b1_ohb09, s1_ohb[1].b1_ohb091, #CHI-A80042 mark
 #                         s1_ohb[1].b1_ohb09,s1_ohb[1].b1_ohb091, s1_ohb[1].b1_ohb092, #CHI-A80042
 #                         s1_ohb[1].b1_ohb61,s1_ohb[1].b1_ohb05, s1_ohb[1].b1_ohb12,   #No.FUN-740016
@@ -1154,21 +1154,21 @@ DEFINE  lc_qbe_sn       LIKE    gbm_file.gbm01    #No.FUN-580031  HCN
 #                         s1_ohb[1].ohbud06,s1_ohb[1].ohbud07,s1_ohb[1].ohbud08,s1_ohb[1].ohbud09,s1_ohb[1].ohbud10,
 #                         s1_ohb[1].ohbud11,s1_ohb[1].ohbud12,s1_ohb[1].ohbud13,s1_ohb[1].ohbud14,s1_ohb[1].ohbud15,
 #                         s1_ohb[1].ohb64,s1_ohb[1].ohb65,s1_ohb[1].ohb66,s1_ohb[1].ohb67,s1_ohb[1].ohb68   #No.FUN-870007
-#&ifdef ICD                           
+#&ifdef ICD
 #                         ,s1_ohb[1].ohbiicd028,s1_ohb[1].ohbiicd029   #FUN-B70061
-#&endif                                                         
+#&endif
 #		BEFORE CONSTRUCT
 #		   CALL cl_qbe_display_condition(lc_qbe_sn)
 #         ON ACTION CONTROLP
 #            CASE
 #               WHEN INFIELD(ohb04)
-#        #No.FUN-A90048 ----------------start-----------------------       
+#        #No.FUN-A90048 ----------------start-----------------------
 #        #            CALL cl_init_qry_var()
 #        #            LET g_qryparam.state = "c"
 #        #            LET g_qryparam.form ="q_ima"
 #        #            LET g_qryparam.default1 = g_ohb1[1].ohb04   #No.FUN-650108
 #        #            CALL cl_create_qry() RETURNING g_qryparam.multiret
-#                     CALL q_sel_ima( TRUE, "q_ima","",g_ohb1[1].ohb04,"","","","","",'')     
+#                     CALL q_sel_ima( TRUE, "q_ima","",g_ohb1[1].ohb04,"","","","","",'')
 #                             RETURNING  g_qryparam.multiret
 #        #No.FUN-A90048 --------------------end-----------------------
 #                    DISPLAY g_qryparam.multiret TO ohb04
@@ -1186,11 +1186,11 @@ DEFINE  lc_qbe_sn       LIKE    gbm_file.gbm01    #No.FUN-580031  HCN
 #                    #CALL cl_init_qry_var()
 #                    #LET g_qryparam.state = "c"
 #                    #LET g_qryparam.form ="q_imd"
-#                    #LET g_qryparam.default1 = g_ohb1[1].ohb09  #FUN-650108 
+#                    #LET g_qryparam.default1 = g_ohb1[1].ohb09  #FUN-650108
 #                    # LET g_qryparam.arg1     = 'SW'        #倉庫類別 #MOD-4A0213
 #                    #CALL cl_create_qry() RETURNING g_qryparam.multiret
 #                    CALL q_imd_1(TRUE,TRUE,g_ohb1[1].ohb09,"","","","") RETURNING g_qryparam.multiret
-#                    #No.FUN-AA0048  --End  
+#                    #No.FUN-AA0048  --End
 #                    DISPLAY g_qryparam.multiret TO b1_ohb09 #No.FUN-650108
 #                    NEXT FIELD b1_ohb09   #No.FUN-650108
 #               WHEN INFIELD(b1_ohb091)   #No.FUN-650108
@@ -1200,7 +1200,7 @@ DEFINE  lc_qbe_sn       LIKE    gbm_file.gbm01    #No.FUN-580031  HCN
 #                    #LET g_qryparam.form ="q_ime"
 #                    #CALL cl_create_qry() RETURNING g_qryparam.multiret
 #                    CALL q_ime_1(TRUE,TRUE,"","","","","","","") RETURNING g_qryparam.multiret
-#                    #No.FUN-AA0048  --End  
+#                    #No.FUN-AA0048  --End
 #                    DISPLAY g_qryparam.multiret TO b1_ohb091   #NO.FUN-650108
 #                    NEXT FIELD b1_ohb091   #NO.FUN-650108
 #               WHEN INFIELD(b1_ohb31)  #NO.FUN-650108
@@ -1208,27 +1208,27 @@ DEFINE  lc_qbe_sn       LIKE    gbm_file.gbm01    #No.FUN-580031  HCN
 #                    LET g_qryparam.state = "c"
 #                    LET g_qryparam.form ="q_ogb01"
 #                    LET g_qryparam.default1 = g_ohb1[1].ohb31   #FUN-650108
-#                    LET g_qryparam.where = " oga94 = 'N'"   #FUN-AA0057 
+#                    LET g_qryparam.where = " oga94 = 'N'"   #FUN-AA0057
 #                    LET g_qryparam.arg1 = g_oha.oha03
 #                    IF g_oha.oha09="6" THEN
 #                       LET g_qryparam.where = "( oga09='A')"
 #                    ELSE
-#                       LET g_qryparam.where = "( oga09='2' OR oga09='3' OR oga09='4' OR oga09='8')"  #No.FUN-610079    #TQC-9C0031        #TQC-9C0126 mark     #CHI-9C0034 
+#                       LET g_qryparam.where = "( oga09='2' OR oga09='3' OR oga09='4' OR oga09='8')"  #No.FUN-610079    #TQC-9C0031        #TQC-9C0126 mark     #CHI-9C0034
 #                    END IF
 #                    CALL cl_create_qry() RETURNING g_qryparam.multiret
 #                     DISPLAY g_qryparam.multiret TO b1_ohb31  #NO.FUN-650108 #MOD-4B0149
 #                    NEXT FIELD b1_ohb31   #NO.FUN-650108
 #               WHEN INFIELD(b1_ohb33)   #NO.FUN-650108
 #                   IF g_aza.aza50='Y' THEN
-#                       CALL q_oea1(FALSE,TRUE,g_ohb1[1].ohb33,g_oha.oha03,'1')   
+#                       CALL q_oea1(FALSE,TRUE,g_ohb1[1].ohb33,g_oha.oha03,'1')
 #                            RETURNING g_qryparam.multiret
 #                   ELSE
-#                       CALL q_oea(FALSE,TRUE,g_ohb1[1].ohb33,g_oha.oha03,'1')  
+#                       CALL q_oea(FALSE,TRUE,g_ohb1[1].ohb33,g_oha.oha03,'1')
 #                            RETURNING g_qryparam.multiret
 #                   END IF
 #                    DISPLAY g_qryparam.multiret TO b1_ohb33   #MOD-4B0149  #No.FUN-650108
 #                    NEXT FIELD b1_ohb33  #No.FUN-650108
-#           #No.FUN-A90040  begin--           
+#           #No.FUN-A90040  begin--
 #               WHEN INFIELD(ohb69)
 #                     CALL cl_init_qry_var()
 #                     LET g_qryparam.form ="q_ohb69"
@@ -1236,7 +1236,7 @@ DEFINE  lc_qbe_sn       LIKE    gbm_file.gbm01    #No.FUN-580031  HCN
 #                     CALL cl_create_qry() RETURNING g_qryparam.multiret
 #                     DISPLAY g_qryparam.multiret TO ohb69
 #                     NEXT FIELD ohb69
-#            #No.FUN-A90040    end--   
+#            #No.FUN-A90040    end--
 #               WHEN INFIELD(b1_ohb50)  #No.FUN-650108
 #                    CALL cl_init_qry_var()
 #                    LET g_qryparam.state = "c"
@@ -1299,15 +1299,15 @@ DEFINE  lc_qbe_sn       LIKE    gbm_file.gbm01    #No.FUN-580031  HCN
 #                  CALL cl_create_qry() RETURNING g_qryparam.multiret
 #                  DISPLAY g_qryparam.multiret TO ohb930
 #                  NEXT FIELD ohb930
-#&ifdef ICD                        
+#&ifdef ICD
 #                  #FUN-B70061 --START--
 #                  WHEN INFIELD(ohbiicd029)
-#                     CALL q_slot(TRUE,TRUE,g_ohb1[1].ohbiicd029,'','')                         
+#                     CALL q_slot(TRUE,TRUE,g_ohb1[1].ohbiicd029,'','')
 #                         RETURNING g_qryparam.multiret
 #                     DISPLAY g_qryparam.multiret TO ohbiicd029
 #                     NEXT FIELD ohbiicd029
 #                  #FUN-B70061 --END--
-#&endif                                      
+#&endif
 #            END CASE
 #         ON IDLE g_idle_seconds
 #            CALL cl_on_idle()
@@ -1328,24 +1328,24 @@ DEFINE  lc_qbe_sn       LIKE    gbm_file.gbm01    #No.FUN-580031  HCN
 #
 #      IF INT_FLAG THEN LET INT_FLAG=0 RETURN END IF
 #      CONSTRUCT g_wc3 ON ohb03,ohb31,ohb32,ohb50,ohb1007,ohb1008,                                                #No.FUN-610062
-#                         ohb1009,ohb1010,ohb1011,ohb14,ohb14t     
+#                         ohb1009,ohb1010,ohb1011,ohb14,ohb14t
 #                    FROM s2_ohb[1].b2_ohb03, s2_ohb[1].b2_ohb31,
-#                         s2_ohb[1].b2_ohb32, s2_ohb[1].b2_ohb50, 
+#                         s2_ohb[1].b2_ohb32, s2_ohb[1].b2_ohb50,
 #                         s2_ohb[1].b2_ohb1007,s2_ohb[1].b2_ohb1008, s2_ohb[1].b2_ohb1009,
 #                         s2_ohb[1].b2_ohb1010,s2_ohb[1].b2_ohb1011, s2_ohb[1].b2_ohb14,
 #                         s2_ohb[1].b2_ohb14t
 #         BEFORE CONSTRUCT
 #       	   CALL cl_qbe_display_condition(lc_qbe_sn)
-# 
+#
 #         ON ACTION CONTROLP
-#            CASE 
+#            CASE
 #               WHEN INFIELD(b2_ohb31)
 #                    CALL cl_init_qry_var()
 #                    LET g_qryparam.state = "c"
-#                    LET g_qryparam.form ="q_ogb01"         
+#                    LET g_qryparam.form ="q_ogb01"
 #                    LET g_qryparam.default1 = g_ohb2[1].ohb31
 #                    LET g_qryparam.where = " oga94 = 'N'"   #FUN-AA0057
-#                    LET g_qryparam.arg1 = g_oha.oha03                          
+#                    LET g_qryparam.arg1 = g_oha.oha03
 #                    IF g_oha.oha09="6" THEN
 #                       LET g_qryparam.where = "( oga09='A')"
 #                    ELSE
@@ -1354,15 +1354,15 @@ DEFINE  lc_qbe_sn       LIKE    gbm_file.gbm01    #No.FUN-580031  HCN
 #                    CALL cl_create_qry() RETURNING g_qryparam.multiret
 #                    DISPLAY g_qryparam.multiret TO b2_ohb31
 #                    NEXT FIELD b2_ohb31
-#               WHEN INFIELD(b2_ohb50)                                             
-#                    CALL cl_init_qry_var()                                     
-#                    LET g_qryparam.state = "c"                                 
+#               WHEN INFIELD(b2_ohb50)
+#                    CALL cl_init_qry_var()
+#                    LET g_qryparam.state = "c"
 #                    LET g_qryparam.form ="q_azf04"     #TQC-7C0045
-#                    LET g_qryparam.arg1="2"           
+#                    LET g_qryparam.arg1="2"
 #                    LET g_qryparam.arg2='3'            #TQC-7C0045
-#                    CALL cl_create_qry() RETURNING g_qryparam.multiret         
-#                    DISPLAY g_qryparam.multiret TO b2_ohb50                       
-#                    NEXT FIELD b2_ohb50      
+#                    CALL cl_create_qry() RETURNING g_qryparam.multiret
+#                    DISPLAY g_qryparam.multiret TO b2_ohb50
+#                    NEXT FIELD b2_ohb50
 #               WHEN INFIELD(b2_ohb1007)
 #                    CALL cl_init_qry_var()
 #                    LET g_qryparam.state = "c"
@@ -1385,13 +1385,13 @@ DEFINE  lc_qbe_sn       LIKE    gbm_file.gbm01    #No.FUN-580031  HCN
 #
 #         ON ACTION controlg      #MOD-4C0121
 #            CALL cl_cmdask()     #MOD-4C0121
-#      
+#
 #       	    ON ACTION qbe_save
 #       	       CALL cl_qbe_save()
 #      END CONSTRUCT
 #FUN-B90103--mark--end--
 #FUN-B90103--start--
-      DIALOG ATTRIBUTES(UNBUFFERED) 
+      DIALOG ATTRIBUTES(UNBUFFERED)
        CONSTRUCT BY NAME g_wc ON                     # 螢幕上取單頭條件
           oha05,          #No.FUN-650108
           oha08,oha01,oha02,
@@ -1446,7 +1446,7 @@ DEFINE  lc_qbe_sn       LIKE    gbm_file.gbm01    #No.FUN-580031  HCN
                 BEFORE CONSTRUCT
                    CALL cl_qbe_display_condition(lc_qbe_sn)
               END CONSTRUCT
- 
+
        CONSTRUCT g_wc3 ON ohb03,ohb31,ohb32,ohb50,ohb1007,ohb1008,
                          ohb1009,ohb1010,ohb1011,ohb14,ohb14t
                     FROM s2_ohb[1].b2_ohb03, s2_ohb[1].b2_ohb31,
@@ -1467,7 +1467,7 @@ DEFINE  lc_qbe_sn       LIKE    gbm_file.gbm01    #No.FUN-580031  HCN
                    CALL cl_create_qry() RETURNING g_qryparam.multiret
                    DISPLAY g_qryparam.multiret TO oha01
                    NEXT FIELD oha01
-       
+
                WHEN INFIELD(oha16)
                      CALL cl_init_qry_var()
                      LET g_qryparam.state = "c"
@@ -1490,7 +1490,7 @@ DEFINE  lc_qbe_sn       LIKE    gbm_file.gbm01    #No.FUN-580031  HCN
                      CALL cl_create_qry() RETURNING g_qryparam.multiret
                      DISPLAY g_qryparam.multiret TO oha16
                      NEXT FIELD oha16
-                    
+
                 WHEN INFIELD(oha03)
                      CALL cl_init_qry_var()
                      LET g_qryparam.state = "c"
@@ -1698,7 +1698,7 @@ DEFINE  lc_qbe_sn       LIKE    gbm_file.gbm01    #No.FUN-580031  HCN
                      LET g_qryparam.state = "c"
                      LET g_qryparam.form ="q_ogb09"
                      LET g_qryparam.default1 = g_ohb1[1].ohb32
-                     LET g_qryparam.where = " oga94 = 'N'"   
+                     LET g_qryparam.where = " oga94 = 'N'"
                      LET g_qryparam.arg1 = g_oha.oha03
                      IF g_oha.oha09="6" THEN
                         LET g_qryparam.where = "( oga09='A') "
@@ -1760,7 +1760,7 @@ DEFINE  lc_qbe_sn       LIKE    gbm_file.gbm01    #No.FUN-580031  HCN
                    CALL cl_create_qry() RETURNING g_qryparam.multiret
                    DISPLAY g_qryparam.multiret TO b1_ohb913 #No.FUN-650108
                    NEXT FIELD b1_ohb913  #No.FUN-650108
- 
+
                 WHEN INFIELD(b1_ohb910)   #No.FUN-650108
                    CALL cl_init_qry_var()
                    LET g_qryparam.state = "c"
@@ -1768,7 +1768,7 @@ DEFINE  lc_qbe_sn       LIKE    gbm_file.gbm01    #No.FUN-580031  HCN
                    CALL cl_create_qry() RETURNING g_qryparam.multiret
                    DISPLAY g_qryparam.multiret TO b1_ohb910  #No.FUN-650108
                    NEXT FIELD b1_ohb910  #No.FUN-650108
- 
+
                 WHEN INFIELD(b1_ohb916)   #No.FUN-650108
                    CALL cl_init_qry_var()
                    LET g_qryparam.state = "c"
@@ -1821,100 +1821,100 @@ DEFINE  lc_qbe_sn       LIKE    gbm_file.gbm01    #No.FUN-580031  HCN
                      CALL cl_create_qry() RETURNING g_qryparam.multiret
                      DISPLAY g_qryparam.multiret TO b2_ohb1007
                      NEXT FIELD b2_ohb1007
-               
-    
+
+
                WHEN INFIELD(ohbslk04)
-                    CALL q_sel_ima( TRUE, "q_ima","",g_ohbslk[1].ohbslk04,"","","","","",'')     
+                    CALL q_sel_ima( TRUE, "q_ima","",g_ohbslk[1].ohbslk04,"","","","","",'')
                     RETURNING  g_qryparam.multiret
-                    NEXT FIELD ohbslk04  
-               WHEN INFIELD(ohbslk05) 
+                    NEXT FIELD ohbslk04
+               WHEN INFIELD(ohbslk05)
                      CALL cl_init_qry_var()
                      LET g_qryparam.state = "c"
                      LET g_qryparam.form ="q_gfe"
-                     LET g_qryparam.default1 = g_ohbslk[1].ohbslk05  
+                     LET g_qryparam.default1 = g_ohbslk[1].ohbslk05
                      CALL cl_create_qry() RETURNING g_qryparam.multiret
-                     DISPLAY g_qryparam.multiret TO ohbslk05 
+                     DISPLAY g_qryparam.multiret TO ohbslk05
                      NEXT FIELD ohbslk05
                WHEN INFIELD(ohbslk09)
                      CALL q_imd_1(TRUE,TRUE,g_ohbslk[1].ohbslk09,"","","","") RETURNING g_qryparam.multiret
-                     DISPLAY g_qryparam.multiret TO ohbslk09 
+                     DISPLAY g_qryparam.multiret TO ohbslk09
                      NEXT FIELD ohbslk09
                WHEN INFIELD(ohbslk091)
                      CALL q_ime_1(TRUE,TRUE,"","","","","","","") RETURNING g_qryparam.multiret
-                     DISPLAY g_qryparam.multiret TO ohbslk091 
+                     DISPLAY g_qryparam.multiret TO ohbslk091
                      NEXT FIELD ohbslk091
                WHEN INFIELD(ohbslk31)
                      CALL cl_init_qry_var()
                      LET g_qryparam.state = "c"
                      LET g_qryparam.form ="q_ohbslk31"
-                     LET g_qryparam.default1 = g_ohbslk[1].ohbslk31  
+                     LET g_qryparam.default1 = g_ohbslk[1].ohbslk31
                      CALL cl_create_qry() RETURNING g_qryparam.multiret
                      DISPLAY g_qryparam.multiret TO ohbslk31
                      NEXT FIELD ohbslk31
 
-                WHEN INFIELD(ohbslk33) 
+                WHEN INFIELD(ohbslk33)
                     IF g_aza.aza50='Y' THEN
-                        CALL q_oea1(FALSE,TRUE,g_ohbslk[1].ohbslk33,g_oha.oha03,'1')   
+                        CALL q_oea1(FALSE,TRUE,g_ohbslk[1].ohbslk33,g_oha.oha03,'1')
                              RETURNING g_qryparam.multiret
                     ELSE
-                        CALL q_oea(FALSE,TRUE,g_ohbslk[1].ohbslk33,g_oha.oha03,'1')  
+                        CALL q_oea(FALSE,TRUE,g_ohbslk[1].ohbslk33,g_oha.oha03,'1')
                              RETURNING g_qryparam.multiret
                     END IF
-                     DISPLAY g_qryparam.multiret TO ohbslk33 
-                     NEXT FIELD ohbslk33 
+                     DISPLAY g_qryparam.multiret TO ohbslk33
+                     NEXT FIELD ohbslk33
 
                 WHEN INFIELD(ohbslk50)
                    CALL cl_init_qry_var()
-                   LET g_qryparam.form ="q_azf04"   
-                   LET g_qryparam.arg1="2"           
-                   LET g_qryparam.arg2='3'                      
+                   LET g_qryparam.form ="q_azf04"
+                   LET g_qryparam.arg1="2"
+                   LET g_qryparam.arg2='3'
                    CALL cl_create_qry() RETURNING g_ohbslk[1].ohbslk50
-                   DISPLAY BY NAME g_ohbslk[1].ohbslk50 
+                   DISPLAY BY NAME g_ohbslk[1].ohbslk50
                    NEXT FIELD ohbslk50
- 
+
                 OTHERWISE
              END CASE
 
           ON IDLE g_idle_seconds
              CALL cl_on_idle()
              CONTINUE DIALOG
- 
+
           ON ACTION about         #MOD-4C0121
              CALL cl_about()      #MOD-4C0121
- 
+
           ON ACTION help          #MOD-4C0121
              CALL cl_show_help()  #MOD-4C0121
- 
+
           ON ACTION controlg      #MOD-4C0121
              CALL cl_cmdask()     #MOD-4C0121
- 
+
           ON ACTION qbe_save
              CALL cl_qbe_save()
 
           ON ACTION accept
              EXIT DIALOG
-       
+
           ON ACTION EXIT
              LET INT_FLAG = TRUE
-             EXIT DIALOG 
-                 
+             EXIT DIALOG
+
           ON ACTION cancel
              LET INT_FLAG = TRUE
-             EXIT DIALOG          
+             EXIT DIALOG
         END DIALOG
-    END IF  
-#-- FUN-B90103--end           
- 
-     IF INT_FLAG THEN 
+    END IF
+#-- FUN-B90103--end
+
+     IF INT_FLAG THEN
        #LET INT_FLAG=0    #FUN-C20006
-        RETURN 
+        RETURN
      END IF
 #    END IF  #FUN-580113   #mark -FUN-B90103
- 
+
     #資料權限的檢查
     LET g_wc = g_wc CLIPPED,cl_get_extra_cond('ohauser', 'ohagrup')
- 
- 
+
+
     IF g_argv0='1' THEN
        LET g_wc=g_wc clipped," AND (oha41 ='N' OR oha41 IS NULL OR oha41=' ') "
     END IF
@@ -1932,8 +1932,8 @@ DEFINE  lc_qbe_sn       LIKE    gbm_file.gbm01    #No.FUN-580031  HCN
        LET g_sql = "SELECT UNIQUE oha_file. oha01 ",
                    "  FROM oha_file, ohb_file",
                    " WHERE oha01 = ohb01",
-                   "   AND ohaplant IN ",g_auth CLIPPED,   #No.FUN-870007 
-                   "   AND ohaplant=ohbplant ",            #No.FUN-870007  
+                   "   AND ohaplant IN ",g_auth CLIPPED,   #No.FUN-870007
+                   "   AND ohaplant=ohbplant ",            #No.FUN-870007
                    "   AND ", g_wc CLIPPED, " AND ",g_wc2 CLIPPED," AND ",g_wc3 CLIPPED,    #No.FUN-650108
                    " ORDER BY 1"
     END IF
@@ -1942,15 +1942,15 @@ DEFINE  lc_qbe_sn       LIKE    gbm_file.gbm01    #No.FUN-580031  HCN
 #--FUN-B90103--end
 
 #--FUN--B90103--start--
-#--FUN--B90103--end-- 
+#--FUN--B90103--end--
 
     PREPARE t700_prepare FROM g_sql
     DECLARE t700_cs                         #SCROLL CURSOR
         SCROLL CURSOR WITH HOLD FOR t700_prepare
-    DECLARE t700_fill_cs CURSOR FOR t700_prepare   #FUN-CB0014  
+    DECLARE t700_fill_cs CURSOR FOR t700_prepare   #FUN-CB0014
 
 #--FUN-B90103--start
-#--FUN-B90103--end 
+#--FUN-B90103--end
     IF g_wc2 = " 1=1" AND g_wc3=" 1=1" THEN			# 取合乎條件筆數 #No.FUN-650108
        LET g_sql="SELECT COUNT(*) FROM oha_file WHERE ",g_wc CLIPPED,
                  " AND ohaplant IN ",g_auth CLIPPED                     #No.FUN-870007
@@ -1963,11 +1963,11 @@ DEFINE  lc_qbe_sn       LIKE    gbm_file.gbm01    #No.FUN-580031  HCN
 #--FUN-B90103--end
 
 #--FUN--B90103--start--
-#--FUN--B90103--end-- 
+#--FUN--B90103--end--
     PREPARE t700_precount FROM g_sql
     DECLARE t700_count CURSOR FOR t700_precount
 END FUNCTION
- 
+
 FUNCTION t700_menu()
    DEFINE l_creator     LIKE type_file.chr1       # No.FUN-680137 VARCHAR(1)   #「不准」時是否退回填表人 #FUN-580113
    DEFINE l_flowuser    LIKE type_file.chr1       # No.FUN-680137 VARCHAR(1)   # 是否有指定加簽人員      #FUN-580113
@@ -1981,14 +1981,14 @@ FUNCTION t700_menu()
                        END RECORD
    #No.18010101---end---
    LET l_flowuser = "N"   #FUN-580113
- 
+
    WHILE TRUE
-      CASE 
-         WHEN (g_b_flag IS NULL) OR (g_b_flag='1') 
+      CASE
+         WHEN (g_b_flag IS NULL) OR (g_b_flag='1')
            CALL t700_bp1("G")
          WHEN (g_b_flag='2')
            CALL t700_bp2("G")
-         #FUN-CB0014---add---str---   
+         #FUN-CB0014---add---str---
          WHEN (g_b_flag = '3')
             CALL t700_list_fill()
             CALL t700_bp3("G")
@@ -2011,8 +2011,8 @@ FUNCTION t700_menu()
                CALL ui.interface.refresh()
                CALL cl_set_comp_visible("page_in", TRUE)
                CALL cl_set_comp_visible("info", TRUE)
-             END IF 
-             #FUN-CB0014---add---end---            
+             END IF
+             #FUN-CB0014---add---end---
       END CASE
       CASE g_action_choice
          WHEN "insert"
@@ -2055,21 +2055,21 @@ FUNCTION t700_menu()
             IF cl_chk_act_auth() THEN
                CALL t700_u()
             END IF
-       
+
          WHEN "aic_s_icdin"
              IF cl_chk_act_auth() THEN
                 CALL t700_aic_s_icdin('m','')
              END IF
- 
+
          WHEN "aic_s_icdqry"
              IF NOT cl_null(g_oha.oha01) THEN
                CALL s_icdqry(0,g_oha.oha01,'',g_oha.ohapost,'')
-             END IF 
- 
+             END IF
+
          WHEN "detail"
             IF cl_chk_act_auth() THEN
              IF g_b_flag='2' THEN
-              CALL t700_b2() 
+              CALL t700_b2()
              ELSE
               CALL t700_b1()
 	     END IF
@@ -2086,17 +2086,17 @@ FUNCTION t700_menu()
             EXIT WHILE
          WHEN "controlg"
             CALL cl_cmdask()
-         WHEN "unit_price"                                                                                                          
-            #IF cl_chk_act_auth() THEN                                                                                                           
-            #   CALL t700_d()                                                                                                        
-            #END IF 
+         WHEN "unit_price"
+            #IF cl_chk_act_auth() THEN
+            #   CALL t700_d()
+            #END IF
             #add by ly 20170222--s
             SELECT ZX04 INTO l_zx04
             FROM zx_file
             WHERE zx01 = g_user
-            IF g_oha.oha09 = '5' OR l_zx04 = 'CLASS-A' OR l_zx04 = 'erp' THEN 
-               CALL t700_d()   
-            END IF 
+            IF g_oha.oha09 = '5' OR l_zx04 = 'CLASS-A' OR l_zx04 = 'erp' THEN
+               CALL t700_d()
+            END IF
             #add by ly 20170222--e
          WHEN "modify_wh_loc"
             IF cl_chk_act_auth() THEN
@@ -2116,21 +2116,21 @@ FUNCTION t700_menu()
 #              CALL cl_err('','-400',1)
 #           ELSE
 #              CALL s_gifts('03',g_oha.oha01,g_oha.ohaplant,g_oha.oha02,g_oha.oha87)
-#           END IF      
+#           END IF
 #        #No.FUN-A10106--end
 ###FUN-B30012 MARK  -----END-----
-         
+
          WHEN "memo"
             IF cl_chk_act_auth() THEN
 #TQC-B40203 --begin--
               IF g_oha.oha55 MATCHES '[Ss]' THEN
                  CALL cl_err('','apm-030',0)
-              ELSE 
-#TQC-B40203 --end--         
+              ELSE
+#TQC-B40203 --end--
                  CALL t700_m()
-              END IF    #TQC-B40203   
+              END IF    #TQC-B40203
             END IF
-            
+
          WHEN "confirm"
             IF cl_chk_act_auth() THEN
                #CALL t700_y_chk()      #CALL 原確認的 check 段  #DEV-D30046 --mark
@@ -2147,6 +2147,7 @@ FUNCTION t700_menu()
                 # END IF   #FUN-A60035 mark
                END IF
                #DEV-D30046 --add--begin
+               if cl_action(g_prog,g_oga.oga01,0,'confirm',g_user,g_grup,false,false) then end if #darcy add
                CALL saxmt700sub_refresh(g_oha.oha01) RETURNING g_oha.*
                CALL t700_show()
                #DEV-D30046 --add--end
@@ -2170,22 +2171,22 @@ FUNCTION t700_menu()
                CALL t700_x(2)
             END IF
          #FUN-D20025 --------end
-         WHEN "reback_money"                                                                                                  
+         WHEN "reback_money"
             IF cl_chk_act_auth() THEN
                CALL t700_pay_chk()
-               CALL l_price() RETURNING l_price1  
+               CALL l_price() RETURNING l_price1
                CALL s_pay('03',g_oha.oha01,g_oha.ohaplant,l_price1,g_oha.ohaconf)
-            END IF    
-         WHEN "money_detail"                                                                                                        
-           IF cl_chk_act_auth() THEN                                                                                                
-                 CALL s_pay_detail('03',g_oha.oha01,g_oha.ohaplant,g_oha.ohaconf)                                                     
-           END IF 
-         #FUN-BC0081 add begin ----  
-         WHEN "ticket_back"  
-           IF cl_chk_act_auth() THEN                                                                                                
+            END IF
+         WHEN "money_detail"
+           IF cl_chk_act_auth() THEN
+                 CALL s_pay_detail('03',g_oha.oha01,g_oha.ohaplant,g_oha.ohaconf)
+           END IF
+         #FUN-BC0081 add begin ----
+         WHEN "ticket_back"
+           IF cl_chk_act_auth() THEN
                  LET g_flag3 = '1'
-                 CALL t700_ticket_back()                                                     
-           END IF 
+                 CALL t700_ticket_back()
+           END IF
          #FUN-BC0081 add end ---
          WHEN "stock_post"
             IF cl_chk_act_auth() THEN
@@ -2193,6 +2194,16 @@ FUNCTION t700_menu()
                CALL saxmt700sub_s('2',g_argv0,g_oha.oha01,FALSE)  #DEV-D30046 --add
                #DEV-D30046 --add--begin
                CALL saxmt700sub_refresh(g_oha.oha01) RETURNING g_oha.*
+               # darcy add s---
+               if g_oha.ohapost = 'Y' then
+                let g_action_choice = 'action_stock_post'
+                let g_bgjob = 'Y'
+                if cl_chk_act_auth() then
+                    if cl_action(g_prog,g_oha.oha01,0,'post','','',true,false) then end if
+                end if
+                let g_action_choice = 'stock_post'
+               end if
+               # darcy add e---
                CALL t700_show()
                #DEV-D30046 --add--end
             END IF
@@ -2219,35 +2230,35 @@ FUNCTION t700_menu()
                END IF
                #FUN-CA0084--add--end
 #TQC-B40203 --begin--
-              IF g_oha.oha55 MATCHES '[Ss]' THEN 
+              IF g_oha.oha55 MATCHES '[Ss]' THEN
                  CALL cl_err('','apm-030',0)
-              ELSE 
-#TQC-B40203 --end--            
+              ELSE
+#TQC-B40203 --end--
                 LET g_flag = 'N'   #MOD-BB0151
                 #CALL t700_CN()   #DEV-D30046 --mark
                 CALL saxmt700sub_CN(g_oha.oha01,g_flag)   #DEV-D30046 --add
-              END IF    #TQC-B40203   
+              END IF    #TQC-B40203
             END IF
-            
+
          WHEN "maintain_acct"
 #TQC-A50055 --begin--
-             IF g_oha.oha09 = '2' OR g_oha.oha09 = '3' THEN 
+             IF g_oha.oha09 = '2' OR g_oha.oha09 = '3' THEN
                 CALL cl_err('','axm-096',0)
-             ELSE                   
-#TQC-A50055 --end--     
+             ELSE
+#TQC-A50055 --end--
 #TQC-B40203 --begin--
-                IF g_oha.oha55 MATCHES '[Ss]' THEN 
+                IF g_oha.oha55 MATCHES '[Ss]' THEN
                    CALL cl_err('','apm-030',0)
-                ELSE 
-#TQC-B40203 --end--      
+                ELSE
+#TQC-B40203 --end--
                    LET g_msg="axrt300 '",g_oha.oha10,"' '' '21'" #TQC-630066
                    CALL cl_cmdrun_wait(g_msg)  #FUN-660216 add
-                   SELECT * INTO g_oha.* FROM oha_file 
-                    WHERE oha01=g_oha.oha01 
+                   SELECT * INTO g_oha.* FROM oha_file
+                    WHERE oha01=g_oha.oha01
                    DISPLAY BY NAME g_oha.oha10
-                END IF    #TQC-B40203   
-             END IF   #TQC-A50055 
-            
+                END IF    #TQC-B40203
+             END IF   #TQC-A50055
+
          WHEN "exporttoexcel"     #FUN-4B0038
             IF cl_chk_act_auth() THEN
               #CALL cl_export_to_excel(ui.Interface.getRootNode(),base.TypeInfo.create(g_ohb1),'','')   #FUN-650108 #FUN-CB0014
@@ -2264,7 +2275,7 @@ FUNCTION t700_menu()
               END IF
               #FUN-CB0014---add---end---
             END IF
- 
+
          #@WHEN "簽核狀況"
          WHEN "approval_status"
             IF cl_chk_act_auth() THEN        #DISPLAY ONLY
@@ -2272,7 +2283,7 @@ FUNCTION t700_menu()
                     CALL aws_efstat2()                  #MOD-560007
                END IF
             END IF
- 
+
          WHEN "easyflow_approval"     #FUN-550051
             IF cl_chk_act_auth() THEN
               #FUN-C20028 add str---
@@ -2280,16 +2291,16 @@ FUNCTION t700_menu()
                 WHERE oha01 = g_oha.oha01
                CALL t700_show()
                IF g_aza.aza50='Y' THEN
-                  CALL t700_b_fill(' 1=1',' 1=1')    
-                  CALL t700_b_fill2(' 1=1')             
+                  CALL t700_b_fill(' 1=1',' 1=1')
+                  CALL t700_b_fill2(' 1=1')
                ELSE
-                  CALL t700_b_fill(' 1=1',' 1=1')        
+                  CALL t700_b_fill(' 1=1',' 1=1')
                END IF
               #FUN-C20028 add end---
                CALL t700_ef()
                CALL t700_show()  #FUN-C20028 add
             END IF
- 
+
          #@WHEN "准"
          WHEN "agree"
               IF g_laststage = "Y" AND l_flowuser = "N" THEN  #最後一關並且沒有加簽人員
@@ -2326,7 +2337,7 @@ FUNCTION t700_menu()
                     EXIT WHILE
                  END IF
               END IF
- 
+
          #@WHEN "不准"
          WHEN "deny"
              IF (l_creator := aws_efapp_backflow()) IS NOT NULL THEN
@@ -2356,7 +2367,7 @@ FUNCTION t700_menu()
                    END IF
                 END IF
               END IF
- 
+
          #@WHEN "加簽"
          WHEN "modify_flow"
              IF aws_efapp_flowuser() THEN   #選擇欲加簽人員
@@ -2364,7 +2375,7 @@ FUNCTION t700_menu()
              ELSE
                 LET l_flowuser = 'N'
              END IF
- 
+
          #@WHEN "撤簽"
          WHEN "withdraw"
               IF cl_confirm("aws-080") THEN
@@ -2372,7 +2383,7 @@ FUNCTION t700_menu()
                     EXIT WHILE
                  END IF
               END IF
- 
+
          #@WHEN "抽單"
          WHEN "org_withdraw"
               IF cl_confirm("aws-079") THEN
@@ -2380,14 +2391,14 @@ FUNCTION t700_menu()
                     EXIT WHILE
                  END IF
               END IF
- 
+
         #@WHEN "簽核意見"
          WHEN "phrase"
               CALL aws_efapp_phrase()
         #@WHEN "是否計算業績“
          WHEN "perf"
               CALL t700_perf()
- 
+
          WHEN "related_document"  #相關文件
               IF cl_chk_act_auth() THEN
                  IF g_oha.oha01 IS NOT NULL THEN
@@ -2398,29 +2409,29 @@ FUNCTION t700_menu()
          END IF
 
 #FUN-A70132 --begin--
-         WHEN "trans_tax"                                                                                                          
-            IF cl_chk_act_auth() THEN                                                                                                           
-               CALL t700_trans_tax()                                                                                                        
-            END IF 
-#FUN-A70132 --end--   
+         WHEN "trans_tax"
+            IF cl_chk_act_auth() THEN
+               CALL t700_trans_tax()
+            END IF
+#FUN-A70132 --end--
 
 #FUN-A70132 --begin--
-         WHEN "detail_tax"                                                                                                          
-            IF cl_chk_act_auth() THEN                                                                                                           
-               CALL t700_detail_tax()                                                                                                        
-            END IF 
-#FUN-A70132 --end--        
- 
+         WHEN "detail_tax"
+            IF cl_chk_act_auth() THEN
+               CALL t700_detail_tax()
+            END IF
+#FUN-A70132 --end--
+
         WHEN "qry_lot"
        #IF l_ac <= g_ohb1.getLength() THEN   #MOD-C20018 add    #TQC-C70003 mark
         IF l_ac > 0 THEN                                        #TQC-C70003 add
 #FUN-B90103--start--
 #FUN-B90103--end--
-           SELECT ima918,ima921 INTO g_ima918,g_ima921 
+           SELECT ima918,ima921 INTO g_ima918,g_ima921
              FROM ima_file
             WHERE ima01 = g_ohb1[l_ac].ohb04
               AND imaacti = "Y"
-           
+
            IF g_ima918 = "Y" OR g_ima921 = "Y" THEN
               CALL t700_b_move_back()
               CALL t700_b_else()
@@ -2438,7 +2449,7 @@ FUNCTION t700_menu()
               IF g_success = "Y" THEN
                  COMMIT WORK
               ELSE
-                 ROLLBACK WORK    
+                 ROLLBACK WORK
               END IF
              #-CHI-A10016-end-
               IF l_r = "Y" THEN
@@ -2452,9 +2463,9 @@ FUNCTION t700_menu()
         #FUN-A50054 --Begin
       # WHEN "style_detail"
       #      # CALL s_detail(g_prog,g_oha.oha01,g_ohb1[l_ac].ohb03,g_ohb1[l_ac].ohb04,'N')   #FUN-A60035 mark
-      #       CALL s_detail(g_prog,g_oha.oha01,g_ohb1[l_ac].ohb03,g_ohb1[l_ac].ohb04,'Y')    #FUN-A60035 add  
+      #       CALL s_detail(g_prog,g_oha.oha01,g_ohb1[l_ac].ohb03,g_ohb1[l_ac].ohb04,'Y')    #FUN-A60035 add
       #         RETURNING g_ohb1[l_ac].ohb12
-        #FUN-A50054 --End           
+        #FUN-A50054 --End
         #FUN-A60035--- mark end
          #No.18010101--begin--
          WHEN "transf2scm"
@@ -2475,14 +2486,14 @@ FUNCTION t700_menu()
        #No.18010101---end---
       END CASE
    END WHILE
- 
+
 END FUNCTION
 
 #FUN-A70132 --begin--
 FUNCTION t700_trans_tax()
    DEFINE  l_sql     LIKE type_file.chr1000
    DEFINE  g_rec_b   LIKE type_file.num5,
-           g_cnt     LIKE type_file.num5 
+           g_cnt     LIKE type_file.num5
    DEFINE l_ogj  DYNAMIC ARRAY OF RECORD
             ogj02  LIKE ogj_file.ogj02,
             ogj03  LIKE ogj_file.ogj03,
@@ -2495,7 +2506,7 @@ FUNCTION t700_trans_tax()
             ogj08  LIKE ogj_file.ogj08
             END RECORD
 #  IF (g_azw.azw04='2') AND (g_oha.oha94 = 'Y') THEN        #FUN-C10053 mark
-   IF (g_azw.azw04='2') THEN                                #FUN-C10053 add 
+   IF (g_azw.azw04='2') THEN                                #FUN-C10053 add
       LET l_sql ="SELECT ogj02,ogj03,'',ogj04,ogj05,ogj06,ogj07,",
                  " ogj07t,ogj08 ",
                  "  FROM ogj_file,oha_file ",
@@ -2503,41 +2514,41 @@ FUNCTION t700_trans_tax()
                  "   AND ogj01 = '",g_oha.oha01,"'",
                  " ORDER BY ogj02 "
       PREPARE t700_prepare1 FROM l_sql
-         IF SQLCA.sqlcode THEN 
-            CALL cl_err('t700_prepare1:',SQLCA.sqlcode,1) 
-            RETURN 
+         IF SQLCA.sqlcode THEN
+            CALL cl_err('t700_prepare1:',SQLCA.sqlcode,1)
+            RETURN
          END IF
-      DECLARE t700_curs3 CURSOR WITH HOLD FOR t700_prepare1   
+      DECLARE t700_curs3 CURSOR WITH HOLD FOR t700_prepare1
       CALL l_ogj.clear()
-      LET g_cnt = 1        
+      LET g_cnt = 1
       FOREACH t700_curs3 INTO l_ogj[g_cnt].*
          IF SQLCA.sqlcode THEN
             CALL cl_err('foreach:',SQLCA.sqlcode,1)
             EXIT FOREACH
          END IF
-         SELECT gec02 INTO l_ogj[g_cnt].gec02 FROM gec_file 
-          WHERE gec01 = l_ogj[g_cnt].ogj03 
+         SELECT gec02 INTO l_ogj[g_cnt].gec02 FROM gec_file
+          WHERE gec01 = l_ogj[g_cnt].ogj03
             AND gec011 = '2'
-         LET g_cnt = g_cnt + 1 
-      END FOREACH 
+         LET g_cnt = g_cnt + 1
+      END FOREACH
       CALL l_ogj.deleteElement(g_cnt)
-      LET g_rec_b=g_cnt-1      
+      LET g_rec_b=g_cnt-1
       OPEN WINDOW axmt700_b_w WITH FORM "axm/42f/axmt700_b"
          ATTRIBUTE (STYLE = g_win_style CLIPPED)
-      CALL cl_ui_locale("axmt700_b")         
+      CALL cl_ui_locale("axmt700_b")
       DISPLAY g_rec_b TO FORMONLY.cn2
-      DISPLAY ARRAY l_ogj TO s_ogj.*  ATTRIBUTE(COUNT=g_rec_b) 
-         ON ACTION controlg                                 
-            CALL cl_cmdask()  
-      END DISPLAY       
+      DISPLAY ARRAY l_ogj TO s_ogj.*  ATTRIBUTE(COUNT=g_rec_b)
+         ON ACTION controlg
+            CALL cl_cmdask()
+      END DISPLAY
       IF INT_FLAG THEN
-         LET INT_FLAG = 0 
-         CLOSE WINDOW axmt700_b_w 
-      END IF          
-   ELSE 
-      RETURN 
+         LET INT_FLAG = 0
+         CLOSE WINDOW axmt700_b_w
+      END IF
+   ELSE
+      RETURN
    END IF
-   CLOSE WINDOW axmt700_b_w 
+   CLOSE WINDOW axmt700_b_w
 END FUNCTION
 #FUN-A70132 --end--
 
@@ -2558,9 +2569,9 @@ FUNCTION t700_detail_tax()
             ogk08t LIKE ogk_file.ogk08t,
             ogk09  LIKE ogk_file.ogk09
             END RECORD
-   IF l_ac = 0  OR cl_null(l_ac)  THEN                                          
-      RETURN                                                                    
-   END IF  
+   IF l_ac = 0  OR cl_null(l_ac)  THEN
+      RETURN
+   END IF
 #  IF (g_azw.azw04='2') AND (g_oha.oha94 = 'Y') THEN                      #FUN-C10053 MARK
    IF (g_azw.azw04='2' AND g_oha.oha94 = 'Y') OR g_azw.azw04='2' THEN     #FUN-C10053
       LET l_sql ="SELECT ogk02,ogk03,ogk04,'',ogk05,ogk06,ogk07,ogk08,",
@@ -2572,88 +2583,88 @@ FUNCTION t700_detail_tax()
                  "   AND ohb01 = '",g_oha.oha01,"'",
                  " ORDER BY ogk03 "
       PREPARE t700_prepare2 FROM l_sql
-         IF SQLCA.sqlcode THEN 
-            CALL cl_err('t700_prepare2:',SQLCA.sqlcode,1) 
-            RETURN 
+         IF SQLCA.sqlcode THEN
+            CALL cl_err('t700_prepare2:',SQLCA.sqlcode,1)
+            RETURN
          END IF
-      DECLARE t700_curs2 CURSOR WITH HOLD FOR t700_prepare2   
+      DECLARE t700_curs2 CURSOR WITH HOLD FOR t700_prepare2
       CALL l_ogk.clear()
-      LET g_cnt = 1        
+      LET g_cnt = 1
       FOREACH t700_curs2 INTO l_ogk[g_cnt].*
          IF SQLCA.sqlcode THEN
             CALL cl_err('foreach:',SQLCA.sqlcode,1)
             EXIT FOREACH
          END IF
-         SELECT gec02 INTO l_ogk[g_cnt].gec02 FROM gec_file 
-          WHERE gec01 =l_ogk[g_cnt].ogk04 
+         SELECT gec02 INTO l_ogk[g_cnt].gec02 FROM gec_file
+          WHERE gec01 =l_ogk[g_cnt].ogk04
             AND gec011 = '2'
-         LET g_cnt = g_cnt + 1 
-      END FOREACH 
+         LET g_cnt = g_cnt + 1
+      END FOREACH
       CALL l_ogk.deleteElement(g_cnt)
-      LET g_rec_b=g_cnt-1      
+      LET g_rec_b=g_cnt-1
       OPEN WINDOW axmt700_c_w WITH FORM "axm/42f/axmt700_c"
          ATTRIBUTE (STYLE = g_win_style CLIPPED)
-      CALL cl_ui_locale("axmt700_c")         
+      CALL cl_ui_locale("axmt700_c")
       DISPLAY g_rec_b TO FORMONLY.cn2
-      DISPLAY ARRAY l_ogk TO s_ogk.*  ATTRIBUTE(COUNT=g_rec_b) 
-         ON ACTION controlg                                 
-            CALL cl_cmdask() 
-      END DISPLAY      
+      DISPLAY ARRAY l_ogk TO s_ogk.*  ATTRIBUTE(COUNT=g_rec_b)
+         ON ACTION controlg
+            CALL cl_cmdask()
+      END DISPLAY
       IF INT_FLAG THEN
-         LET INT_FLAG = 0 
-         CLOSE WINDOW axmt700_c_w 
-      END IF          
-   ELSE 
-      RETURN 
+         LET INT_FLAG = 0
+         CLOSE WINDOW axmt700_c_w
+      END IF
+   ELSE
+      RETURN
    END IF
-   CLOSE WINDOW axmt700_c_w 
+   CLOSE WINDOW axmt700_c_w
 END FUNCTION
 #FUN-A70132 --end--
- 
+
 FUNCTION t700_pay_chk()
-   SELECT * INTO g_oha.* FROM oha_file WHERE oha01 = g_oha.oha01                                                                    
-                                                                                                                                    
-   IF g_oha.oha01 IS NULL THEN RETURN END IF                                                                                  
-   IF g_oha.ohaconf = 'Y' THEN                                                                                                      
-      CALL cl_err('','art-334',0) RETURN                                                                                       
-   END IF                                                                                                                           
-                                                                                                                                    
-   IF g_oha.oha53 > 0 AND g_oha.oha53 = g_oha.oha54 THEN                                                                            
-      CALL cl_err('oha53>0','axr-265',0)                                                                                            
-      RETURN                                                                                                                   
-   END IF                                                                                                                           
-                                                                                                                                    
-   IF g_oha.ohaconf = 'X' THEN CALL cl_err('','9024',0) RETURN  END IF                                                         
-   IF g_oha.oha55 matches '[Ss]' THEN                                                                                 
-       CALL cl_err('','art-335',0)                                                                                                  
-       RETURN                                                                                                                  
-   END IF                               
+   SELECT * INTO g_oha.* FROM oha_file WHERE oha01 = g_oha.oha01
+
+   IF g_oha.oha01 IS NULL THEN RETURN END IF
+   IF g_oha.ohaconf = 'Y' THEN
+      CALL cl_err('','art-334',0) RETURN
+   END IF
+
+   IF g_oha.oha53 > 0 AND g_oha.oha53 = g_oha.oha54 THEN
+      CALL cl_err('oha53>0','axr-265',0)
+      RETURN
+   END IF
+
+   IF g_oha.ohaconf = 'X' THEN CALL cl_err('','9024',0) RETURN  END IF
+   IF g_oha.oha55 matches '[Ss]' THEN
+       CALL cl_err('','art-335',0)
+       RETURN
+   END IF
 END FUNCTION
- 
-FUNCTION l_price()                                                                                                                  
-DEFINE l_ohb14t LIKE ohb_file.ohb14t                                                                                                
-DEFINE l_price LIKE ohb_file.ohb14t                                                                                                 
-#DEFINE l_ohb67 LIKE ohb_file.ohb67   #FUN-AB0061 mark 
-                                                                                        
-   SELECT SUM(ohb14t) INTO l_ohb14t FROM ohb_file                                                                                   
-    WHERE ohb01=g_oha.oha01                                                                                            
+
+FUNCTION l_price()
+DEFINE l_ohb14t LIKE ohb_file.ohb14t
+DEFINE l_price LIKE ohb_file.ohb14t
+#DEFINE l_ohb67 LIKE ohb_file.ohb67   #FUN-AB0061 mark
+
+   SELECT SUM(ohb14t) INTO l_ohb14t FROM ohb_file
+    WHERE ohb01=g_oha.oha01
 #FUN-AB0061 ------ mod ------str-------------------
 #  SELECT SUM(ohb67) INTO l_ohb67 FROM ohb_file
-#   WHERE ohb01=g_oha.oha01 
+#   WHERE ohb01=g_oha.oha01
 #  IF g_oha.oha213='N' THEN
 #     LET l_ohb67=l_ohb67*(1+g_oha.oha211/100)
 #     CALL cl_digcut(l_ohb67,t_azi04) RETURNING l_ohb67
 #  END IF
 #  LET l_price=l_ohb14t-l_ohb67
    LET l_price=l_ohb14t
-#FUN-AB0061 ------ mod ------end-------------------- 
-   CALL cl_digcut(l_price,t_azi04) RETURNING l_price                                                                               
-   RETURN l_price                                                                                                                   
+#FUN-AB0061 ------ mod ------end--------------------
+   CALL cl_digcut(l_price,t_azi04) RETURNING l_price
+   RETURN l_price
 END FUNCTION
- 
+
 FUNCTION t700_a()
  DEFINE l_rtz03  LIKE rtz_file.rtz03  #FUN-B50054
- 
+
 	IF s_shut(0) THEN RETURN END IF
 	CALL cl_msg("")
 	CLEAR FORM
@@ -2670,30 +2681,30 @@ FUNCTION t700_a()
 	   CALL t700_i("a")                #輸入單頭
 	   IF INT_FLAG THEN
 	      INITIALIZE g_oha.* TO NULL
-	      LET INT_FLAG=0 
-	      CALL cl_err('',9001,0) 
-	      ROLLBACK WORK 
+	      LET INT_FLAG=0
+	      CALL cl_err('',9001,0)
+	      ROLLBACK WORK
 	      EXIT WHILE
 	   END IF
-	   IF g_oha.oha01 IS NULL THEN 
-	      CONTINUE WHILE 
+	   IF g_oha.oha01 IS NULL THEN
+	      CONTINUE WHILE
 	   END IF
 	   BEGIN WORK
      IF NOT t700_a_inschk() THEN
         ROLLBACK WORK
         CONTINUE WHILE
      END IF
- 
+
      IF NOT t700_a_ins() THEN
         ROLLBACK WORK
         CONTINUE WHILE
      END IF
-     
+
 	   COMMIT WORK        #No;7829
 	   CALL cl_flow_notify(g_oha.oha01,'I')
-     
+
 	   SELECT oha01 INTO g_oha.oha01 FROM oha_file WHERE oha01 = g_oha.oha01
-     
+
 	   LET g_oha_t.* = g_oha.*
 
    #FUN-B50054 Begin---
@@ -2714,16 +2725,16 @@ FUNCTION t700_a()
 #FUN-B90103--start--
 #FUN-B90103--end--
     #LET g_wc = g_wc," OR oha01 = '",g_oha.oha01,"'" #MOD-BA0085 mark
-     
+
  	   CALL t700_b1()                   #輸入單身
 #FUN-B90103--add
  	   CALL t700_b2()                   #輸入單身
 #FUN-B90103--add
      EXIT WHILE
   END WHILE
- 
+
 END FUNCTION
- 
+
 FUNCTION t700_u()
   DEFINE l_chr       LIKE type_file.chr1    #No.TQC-930152 add
   DEFINE l_ohb12     LIKE ohb_file.ohb12    #No.TQC-930152 add
@@ -2736,26 +2747,26 @@ FUNCTION t700_u()
         CALL cl_err('','apm-030',0)
         RETURN
     END IF
- 
+
     IF g_oha.oha54 != 0 THEN CALL cl_err('oha54!=0','axr-265',0) RETURN END IF
     CALL cl_msg("")
     CALL cl_opmsg('u')
     LET g_oha_o.* = g_oha.*
- 
+
     BEGIN WORK
- 
+
     OPEN t700_cl USING g_oha.oha01
     IF SQLCA.sqlcode THEN
         CALL cl_err(g_oha.oha01,SQLCA.sqlcode,0)     # 資料被他人LOCK
-        CLOSE t700_cl 
-        ROLLBACK WORK 
+        CLOSE t700_cl
+        ROLLBACK WORK
         RETURN
     END IF
     FETCH t700_cl INTO g_oha.*          # 鎖住將被更改或取消的資料
     IF SQLCA.sqlcode THEN
         CALL cl_err(g_oha.oha01,SQLCA.sqlcode,0)     # 資料被他人LOCK
-        CLOSE t700_cl 
-        ROLLBACK WORK 
+        CLOSE t700_cl
+        ROLLBACK WORK
         RETURN
     END IF
     CALL t700_show()
@@ -2783,7 +2794,7 @@ FUNCTION t700_u()
            LET l_chr = '0'
            FOREACH t700_u_ohb12 INTO l_ohb12
               IF l_ohb12 > 0 THEN
-                 LET l_chr = '1' 
+                 LET l_chr = '1'
                  EXIT FOREACH
               END IF
           END FOREACH
@@ -2799,7 +2810,7 @@ FUNCTION t700_u()
                    CALL cl_err3("upd","ohb_file",g_oha.oha01,"",SQLCA.sqlcode,"","update detail qty",1)  #No.FUN-650108
                    CONTINUE WHILE
 #FUN-B90103-----------add----
-#FUN-B90103-----------end----          
+#FUN-B90103-----------end----
                 END IF
 #FUN-B90103------------add---
 #FUN-B90103-----------end---
@@ -2811,20 +2822,20 @@ FUNCTION t700_u()
         EXIT WHILE
 #FUN-B90103-----begin---
 #FUN-B90103---end-------
-         CALL s_icdqry(0,g_oha.oha01,g_ohb1[l_ac].ohb03,g_oha.ohapost,g_ohb1[l_ac].ohb04) #NO.FUN-7B0015  
+         CALL s_icdqry(0,g_oha.oha01,g_ohb1[l_ac].ohb03,g_oha.ohapost,g_ohb1[l_ac].ohb04) #NO.FUN-7B0015
 #FUN-B90103--add&endif
    END WHILE
     CLOSE t700_cl
     DISPLAY BY NAME g_oha.oha55
     CALL t700_chspic()
- 
+
     COMMIT WORK
     CALL cl_flow_notify(g_oha.oha01,'U')
- 
+
 # 新增自動確認功能 Modify by WUPN 96-05-06 ----------
     LET g_t1=s_get_doc_no(g_oha.oha01)       #No.FUN-540049
     SELECT * INTO g_oay.* FROM oay_file WHERE oayslip=g_t1
-    IF STATUS THEN 
+    IF STATUS THEN
        CALL cl_err3("sel","oay_file",g_t1,"",STATUS,"","sel oay_file",1) #No.FUN-650108
        RETURN
     END IF
@@ -2846,9 +2857,9 @@ FUNCTION t700_u()
        #DEV-D30046 --add--end
     END IF
     IF g_oay.oayprnt='Y' THEN CALL t700_out() END IF   #單據需立即列印
- 
+
 END FUNCTION
- 
+
 #處理INPUT
 FUNCTION t700_i(p_cmd)
   DEFINE p_cmd           LIKE type_file.chr1                  #a:輸入 u:更改        #No.FUN-680137 VARCHAR(1)
@@ -2867,10 +2878,10 @@ FUNCTION t700_i(p_cmd)
       WHERE rtz01 = g_oha.ohaplant
   END IF
 #FUN-C10053 add end  ----
- 
-    DISPLAY BY NAME g_oha.oha55,g_oha.oha57,g_oha.oha1015,g_oha.ohamksg   #FUN-AA0057 add oha57    
+
+    DISPLAY BY NAME g_oha.oha55,g_oha.oha57,g_oha.oha1015,g_oha.ohamksg   #FUN-AA0057 add oha57
                    ,g_oha.ohaoriu,g_oha.ohaorig                    #TQC-A30041 ADD
-    CALL cl_set_head_visible("","YES")                #No.FUN-6A0092 
+    CALL cl_set_head_visible("","YES")                #No.FUN-6A0092
     INPUT BY NAME g_oha.ohaoriu,g_oha.ohaorig,
         g_oha.oha05,   #No.FUN-650108
         g_oha.oha08,g_oha.oha01,g_oha.oha02,
@@ -2890,16 +2901,16 @@ FUNCTION t700_i(p_cmd)
         g_oha.oha1018,g_oha.oha1017,g_oha.oha1012,g_oha.oha1013,g_oha.oha1004,
         g_oha.oha85,g_oha.oha86,g_oha.oha87,g_oha.oha88,g_oha.oha89,    #No.FUN-870007
         g_oha.oha90,g_oha.oha91,g_oha.oha94,g_oha.oha97,g_oha.ohaplant,g_oha.oha57,      #No.FUN-870007 #FUN-AA0057 add oha57
-        g_oha.ohauser,g_oha.ohagrup,g_oha.ohamodu,g_oha.ohadate, 
+        g_oha.ohauser,g_oha.ohagrup,g_oha.ohamodu,g_oha.ohadate,
         g_oha.ohaud01,g_oha.ohaud02,g_oha.ohaud03,g_oha.ohaud04,
         g_oha.ohaud05,g_oha.ohaud06,g_oha.ohaud07,g_oha.ohaud08,
         g_oha.ohaud09,g_oha.ohaud10,g_oha.ohaud11,g_oha.ohaud12,
-        g_oha.ohaud13,g_oha.ohaud14,g_oha.ohaud15 
+        g_oha.ohaud13,g_oha.ohaud14,g_oha.ohaud15
            WITHOUT DEFAULTS
- 
+
         BEFORE INPUT
            LET g_before_input_done = FALSE
-           CALL t700_set_entry(p_cmd)     #NO.FUN-860025 mark #MOD-9C0453 remark 
+           CALL t700_set_entry(p_cmd)     #NO.FUN-860025 mark #MOD-9C0453 remark
            CALL t700_set_no_entry(p_cmd)  #NO.FUN-860025 mark #MOD-9C0453 remark
            LET g_before_input_done = TRUE
            CALL cl_set_docno_format("oha01")      #No.FUN-540049
@@ -2913,10 +2924,10 @@ FUNCTION t700_i(p_cmd)
               CALL cl_set_comp_entry("oha57",TRUE)
            END IF
         END IF
- #FUN-AA0057--add-end 
+ #FUN-AA0057--add-end
         AFTER FIELD oha08
            IF NOT cl_null(g_oha.oha08) THEN
-              IF g_oha.oha08 NOT MATCHES '[123]' THEN 
+              IF g_oha.oha08 NOT MATCHES '[123]' THEN
                  NEXT FIELD CURRENT
               END IF
 #FUN-C10053 add begin ---
@@ -2943,29 +2954,29 @@ FUNCTION t700_i(p_cmd)
                     LET g_oha.oha08 = g_oha_t.oha08
                     NEXT FIELD oha08
                  END IF
-              END IF 
+              END IF
  #TQC-C80076 -- add -- end
-           END IF   
- 
- 
+           END IF
+
+
         AFTER FIELD oha01
            IF NOT t700_chk_oha01() THEN
               NEXT FIELD CURRENT
            END IF
- 
+
         AFTER FIELD oha02
            IF NOT t700_chk_oha02() THEN
               NEXT FIELD CURRENT
            END IF
- 
+
         AFTER FIELD oha09
            IF NOT t700_chk_oha09() THEN
               NEXT FIELD CURRENT
            END IF
- 
+
         BEFORE FIELD oha16
            CALL t700_set_entry(p_cmd)
- 
+
         AFTER FIELD oha16
            IF NOT t700_chk_oha16(p_cmd) THEN
               NEXT FIELD CURRENT
@@ -2974,27 +2985,27 @@ FUNCTION t700_i(p_cmd)
                  CALL t700_show()
               END IF
            END IF
-           
+
       IF NOT cl_null(g_ohA.oha16) THEN
           SELECT OGA08 INTO g_oga08 FROM oga_file WHERE oga01=g_ohA.oha16
           IF g_oga08<>g_oha.oha08 THEN
              CALL cl_err(g_oga08,'cxm-994',1)
              NEXT FIELD oha08
           END IF
-       END IF 
-       
+       END IF
+
            IF NOT cl_null(g_oha.oha16) THEN
               DECLARE oha_cs CURSOR FOR
                SELECT ohb31 FROM ohb_file
                 WHERE ohb01= g_oha.oha01
               FOREACH oha_cs INTO l_ohb31
                 IF g_oha.oha16 <> l_ohb31 THEN
-                   CALL cl_err(g_oha.oha16,'apm-940',1) 
+                   CALL cl_err(g_oha.oha16,'apm-940',1)
                    NEXT FIELD oha16
                 END IF
               END FOREACH
   #FUN-AA0057--add-begin
-              CALL cl_set_comp_entry("oha57",FALSE) 
+              CALL cl_set_comp_entry("oha57",FALSE)
               SELECT oga57 INTO g_oha.oha57 FROM oga_file
               WHERE oga01=g_oha.oha16 AND ogaplant = g_oha.ohaplant
   #FUN-B90103--start
@@ -3004,42 +3015,42 @@ FUNCTION t700_i(p_cmd)
               CALL cl_set_comp_entry("oha57",TRUE)
  #FUN-AA0057--add-end
            END IF
- 
+
         BEFORE FIELD oha03
            CALL t700_set_entry(p_cmd)
- 
+
         AFTER FIELD oha03
            IF NOT t700_chk_oha03(p_cmd) THEN
-              NEXT FIELD CURRENT 
+              NEXT FIELD CURRENT
            END IF
- 
- 
+
+
         BEFORE FIELD oha04
               IF cl_null(g_oha.oha04) THEN
                  LET g_oha.oha04=g_oha.oha03
                  IF g_aza.aza50='Y' THEN
-                    SELECT occ09 INTO g_oha.oha04 FROM occ_file where occ01=g_oha.oha03 
+                    SELECT occ09 INTO g_oha.oha04 FROM occ_file where occ01=g_oha.oha03
                  END IF
                  DISPLAY BY NAME g_oha.oha04
               END IF
- 
- 
- 
+
+
+
         AFTER FIELD oha04
            IF NOT t700_chk_oha04() THEN
               NEXT FIELD CURRENT
            END IF
- 
+
         AFTER FIELD oha05
            IF g_oha.oha05!='4' THEN
-              CALL cl_set_comp_entry("oha1014",FALSE) 
+              CALL cl_set_comp_entry("oha1014",FALSE)
            END IF
            IF g_oha.oha05 ='5' THEN
               LET g_oha.oha09='6'
               DISPLAY BY NAME g_oha.oha09
-              CALL cl_set_comp_entry("oha09",FALSE) 
+              CALL cl_set_comp_entry("oha09",FALSE)
            ELSE
-              CALL cl_set_comp_entry("oha09",TRUE) 
+              CALL cl_set_comp_entry("oha09",TRUE)
            END IF
 #FUN-C10053 add begin ---
            IF NOT cl_null(g_oha.oha05) THEN
@@ -3048,116 +3059,116 @@ FUNCTION t700_i(p_cmd)
                     CALL cl_err('','alm1559',0)
                     LET g_oha.oha05 = g_oha_t.oha05
                     NEXT FIELD oha05
-                 END IF  
-              END IF 
-           END IF    
+                 END IF
+              END IF
+           END IF
 #FUN-C10053 add end ---
-  
+
         BEFORE FIELD oha1001
            IF cl_null(g_oha.oha1001) THEN
-              SELECT occ1022 INTO g_oha.oha1001 FROM occ_file 
-               WHERE occ01=g_oha.oha03        
+              SELECT occ1022 INTO g_oha.oha1001 FROM occ_file
+               WHERE occ01=g_oha.oha03
              DISPLAY BY NAME g_oha.oha1001
            END IF
- 
+
         AFTER FIELD oha1001
            IF NOT t700_chk_oha1001() THEN
               NEXT FIELD CURRENT
            END IF
- 
+
         AFTER FIELD oha1011
            IF NOT t700_chk_oha1011() THEN
               NEXT FIELD CURRENT
            END IF
- 
+
         AFTER FIELD oha1010
            IF NOT t700_chk_oha1010() THEN
               NEXT FIELD CURRENT
            END IF
- 
+
         AFTER FIELD oha1003
            IF NOT t700_chk_oha1003() THEN
               NEXT FIELD CURRENT
            END IF
- 
+
         AFTER FIELD oha1009
            IF NOT t700_chk_oha1009() THEN
               NEXT FIELD CURRENT
            END IF
- 
+
         AFTER FIELD oha1002
            IF NOT t700_chk_oha1002() THEN
               NEXT FIELD CURRENT
            END IF
- 
+
         AFTER FIELD oha1014
            IF NOT t700_chk_oha1014() THEN
               NEXT FIELD CURRENT
            END IF
- 
+
         AFTER FIELD oha1004
            IF NOT t700_chk_oha1004() THEN
               NEXT FIELD CURRENT
            END IF
-        AFTER FIELD oha86                                                                                                          
-              IF NOT cl_null(g_oha.oha86) THEN                                                                                     
-                 LET l_cnt=0                                                                                                       
-                 SELECT COUNT(*) INTO l_cnt FROM tqa_file WHERE                                                                    
-                  tqa01=g_oha.oha86 AND tqa03='23' AND tqaacti='Y'                                                                
-                 IF l_cnt=0 THEN                                                                                                   
-                    CALL cl_err('','art-251',0)                                                                                    
-                    NEXT FIELD oha86                                                                                               
-                 END IF                                                                                                            
-              END IF                                                                                                               
-        AFTER FIELD oha87  
-              IF NOT cl_null(g_oha.oha87) THEN 
-                 LET l_cnt=0                                                                                                        
+        AFTER FIELD oha86
+              IF NOT cl_null(g_oha.oha86) THEN
+                 LET l_cnt=0
+                 SELECT COUNT(*) INTO l_cnt FROM tqa_file WHERE
+                  tqa01=g_oha.oha86 AND tqa03='23' AND tqaacti='Y'
+                 IF l_cnt=0 THEN
+                    CALL cl_err('','art-251',0)
+                    NEXT FIELD oha86
+                 END IF
+              END IF
+        AFTER FIELD oha87
+              IF NOT cl_null(g_oha.oha87) THEN
+                 LET l_cnt=0
                   SELECT COUNT(*) INTO l_cnt FROM lpj_file
-                   WHERE lpj03=g_oha.oha87 AND lpj04<=g_today 
+                   WHERE lpj03=g_oha.oha87 AND lpj04<=g_today
                     #AND lpj05=g_today     AND lpj09='2'                  #TQC-A20058 MARK
                      AND (lpj05 IS NULL OR lpj05>=g_today) AND lpj09='2'  #add
-                 IF l_cnt=0 THEN                                                                                                   
-                     CALL cl_err('','art-313',0)                                                                                    
-                     NEXT FIELD oha87                                                                                               
-                 END IF           
-              END IF     
+                 IF l_cnt=0 THEN
+                     CALL cl_err('','art-313',0)
+                     NEXT FIELD oha87
+                 END IF
+              END IF
         AFTER FIELD oha14
-           IF NOT cl_null(g_oha.oha14) AND (g_oha.oha14 != g_oha_t.oha14 OR g_oha_t.oha14 IS NULL ) THEN      #MOD-9B0114  
+           IF NOT cl_null(g_oha.oha14) AND (g_oha.oha14 != g_oha_t.oha14 OR g_oha_t.oha14 IS NULL ) THEN      #MOD-9B0114
               IF NOT t700_chk_oha14() THEN
                  NEXT FIELD CURRENT
               END IF
-              IF NOT t700_chkall_azf() THEN LET g_oha.oha14 = g_oha_t.oha14 NEXT FIELD oha14 END IF       #FUN-CB0087 add 
+              IF NOT t700_chkall_azf() THEN LET g_oha.oha14 = g_oha_t.oha14 NEXT FIELD oha14 END IF       #FUN-CB0087 add
            END IF                                                                                             #MOD-9B0114
- 
+
         AFTER FIELD oha15
-           IF NOT cl_null(g_oha.oha15) AND (g_oha.oha15 != g_oha_t.oha15 OR g_oha_t.oha15 IS NULL ) THEN  #FUN-CB0087 add   
+           IF NOT cl_null(g_oha.oha15) AND (g_oha.oha15 != g_oha_t.oha15 OR g_oha_t.oha15 IS NULL ) THEN  #FUN-CB0087 add
               IF NOT t700_chk_oha15() THEN
                  NEXT FIELD CURRENT
               END IF
               IF NOT t700_chkall_azf() THEN LET g_oha.oha15 = g_oha_t.oha15 NEXT FIELD oha15 END IF       #FUN-CB0087 add
            END IF  #FUN-CB0087 add
- 
+
         AFTER FIELD oha23
            IF NOT t700_chk_oha23() THEN
               NEXT FIELD CURRENT
            END IF
- 
+
         AFTER FIELD oha25
            IF NOT t700_chk_oha25() THEN
               NEXT FIELD CURRENT
            END IF
- 
+
         AFTER FIELD oha21
            IF NOT t700_chk_oha21() THEN
               NEXT FIELD CURRENT
            END IF
- 
-        AFTER FIELD oha24                                                                                                           
-           IF g_oha.oha24 <= 0 THEN                                                                                                 
-              CALL cl_err(g_oha.oha24,'axm-987',0)                                                                                  
-              NEXT FIELD oha24                                                                                                      
-           END IF                                                                                                                   
- 
+
+        AFTER FIELD oha24
+           IF g_oha.oha24 <= 0 THEN
+              CALL cl_err(g_oha.oha24,'axm-987',0)
+              NEXT FIELD oha24
+           END IF
+
         AFTER FIELD ohaud01
            IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
         AFTER FIELD ohaud02
@@ -3188,7 +3199,7 @@ FUNCTION t700_i(p_cmd)
            IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
         AFTER FIELD ohaud15
            IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
- 
+
         AFTER INPUT
            LET g_oha.ohauser = s_get_data_owner("oha_file") #FUN-C10039
            LET g_oha.ohagrup = s_get_data_group("oha_file") #FUN-C10039
@@ -3207,9 +3218,9 @@ FUNCTION t700_i(p_cmd)
                 NEXT FIELD oha02
              END IF
           ELSE
-             DECLARE t700_ohb CURSOR FOR  
+             DECLARE t700_ohb CURSOR FOR
                SELECT DISTINCT ohb31 FROM ohb_file WHERE ohb01=g_oha.oha01
-             FOREACH t700_ohb INTO l_ohb31   
+             FOREACH t700_ohb INTO l_ohb31
                LET l_oga02 = ''
                SELECT oga02 INTO l_oga02 FROM oga_file WHERE oga01=l_ohb31
                IF g_oha.oha02 < l_oga02 THEN
@@ -3217,10 +3228,10 @@ FUNCTION t700_i(p_cmd)
                   NEXT FIELD oha02
                END IF
              END FOREACH
-          END IF 
+          END IF
         ON KEY(F1) NEXT FIELD oha08
         ON KEY(F2) NEXT FIELD oha03
- 
+
         ON ACTION CONTROLP
            CASE
               WHEN INFIELD(oha01) #查詢單据
@@ -3320,25 +3331,25 @@ FUNCTION t700_i(p_cmd)
                    NEXT FIELD oha1004
               WHEN INFIELD(oha1001)
                    CALL cl_init_qry_var()
-                   LET g_qryparam.form ="q_occ6"        
+                   LET g_qryparam.form ="q_occ6"
                    LET g_qryparam.default1 = g_oha.oha1001
                    CALL cl_create_qry() RETURNING g_oha.oha1001
                    DISPLAY BY NAME g_oha.oha1001
                    NEXT FIELD oha1001
               WHEN INFIELD(oha1011)
                    CALL cl_init_qry_var()
-                   LET g_qryparam.form ="q_occ7"         
+                   LET g_qryparam.form ="q_occ7"
                    LET g_qryparam.default1 = g_oha.oha1011
                    CALL cl_create_qry() RETURNING g_oha.oha1011
                    DISPLAY BY NAME g_oha.oha1011
-                   NEXT FIELD oha1011   
+                   NEXT FIELD oha1011
                WHEN INFIELD(oha1010)
                    CALL cl_init_qry_var()
                    LET g_qryparam.form ="q_tqb"
                    LET g_qryparam.default1 = g_oha.oha1010
                    CALL cl_create_qry() RETURNING g_oha.oha1010
                    DISPLAY BY NAME g_oha.oha1010
-                   NEXT FIELD oha1010       
+                   NEXT FIELD oha1010
                WHEN INFIELD(oha1003)
                    CALL cl_init_qry_var()
                    LET g_qryparam.form ="q_tqb"
@@ -3353,7 +3364,7 @@ FUNCTION t700_i(p_cmd)
                    LET g_qryparam.default1 = g_oha.oha1009
                    CALL cl_create_qry() RETURNING g_oha.oha1009
                    DISPLAY BY NAME g_oha.oha1009
-                   NEXT FIELD oha1009      
+                   NEXT FIELD oha1009
                WHEN INFIELD(oha1002)
                    CALL cl_init_qry_var()
                    LET g_qryparam.form ="q_tqa1"
@@ -3361,7 +3372,7 @@ FUNCTION t700_i(p_cmd)
                    LET g_qryparam.default1 = g_oha.oha1002
                    CALL cl_create_qry() RETURNING g_oha.oha1002
                    DISPLAY BY NAME g_oha.oha1002
-                   NEXT FIELD oha1002  
+                   NEXT FIELD oha1002
                WHEN INFIELD(oha1014)
                    CALL cl_init_qry_var()
                    LET g_qryparam.form ="q_occ5"
@@ -3369,57 +3380,57 @@ FUNCTION t700_i(p_cmd)
                    CALL cl_create_qry() RETURNING g_oha.oha1014
                    DISPLAY BY NAME g_oha.oha1014
                    NEXT FIELD oha1014
-               WHEN INFIELD(oha86)                                                                                                   
-                    CALL cl_init_qry_var()                                                                                         
-                    LET g_qryparam.form ="q_tqa"                                                                                   
-                    LET g_qryparam.default1 = g_oha.oha86                                                                         
-                    LET g_qryparam.arg1='23'                                                                                       
-                    CALL cl_create_qry() RETURNING g_oha.oha86                                                                     
-                    DISPLAY BY NAME g_oha.oha86                                                                                    
-                    NEXT FIELD oha86         
-                 WHEN INFIELD(oha87)                  
-                 CALL cl_init_qry_var()                    
-                 LET g_qryparam.form ="q_lpj03_1"                    
-                 LET g_qryparam.default1 = g_oha.oha87                  
-                 LET g_qryparam.arg1=g_today                        
-                 CALL cl_create_qry() RETURNING g_oha.oha87    
-                 DISPLAY BY NAME g_oha.oha87                
-                 NEXT FIELD oha87   
+               WHEN INFIELD(oha86)
+                    CALL cl_init_qry_var()
+                    LET g_qryparam.form ="q_tqa"
+                    LET g_qryparam.default1 = g_oha.oha86
+                    LET g_qryparam.arg1='23'
+                    CALL cl_create_qry() RETURNING g_oha.oha86
+                    DISPLAY BY NAME g_oha.oha86
+                    NEXT FIELD oha86
+                 WHEN INFIELD(oha87)
+                 CALL cl_init_qry_var()
+                 LET g_qryparam.form ="q_lpj03_1"
+                 LET g_qryparam.default1 = g_oha.oha87
+                 LET g_qryparam.arg1=g_today
+                 CALL cl_create_qry() RETURNING g_oha.oha87
+                 DISPLAY BY NAME g_oha.oha87
+                 NEXT FIELD oha87
             END CASE
- 
+
         ON ACTION CONTROLF                  #欄位說明
          CALL cl_set_focus_form(ui.Interface.getRootNode()) RETURNING g_fld_name,g_frm_name #Add on 040913
          CALL cl_fldhelp(g_frm_name,g_fld_name,g_lang) #Add on 040913
- 
+
         ON ACTION CONTROLR
            CALL cl_show_req_fields()
- 
-        ON ACTION CONTROLG 
+
+        ON ACTION CONTROLG
            CALL cl_cmdask()
- 
+
         ON IDLE g_idle_seconds
            CALL cl_on_idle()
            CONTINUE INPUT
- 
+
         ON ACTION about         #MOD-4C0121
            CALL cl_about()      #MOD-4C0121
-        
+
         ON ACTION help          #MOD-4C0121
            CALL cl_show_help()  #MOD-4C0121
     END INPUT
 END FUNCTION
- 
+
 FUNCTION t700_q()
     LET g_row_count = 0
     LET g_curs_index = 0
     CALL cl_navigator_setting( g_curs_index, g_row_count )
     INITIALIZE g_oha.* TO NULL               #No.FUN-6A0020
     CALL cl_opmsg('q')
-    IF g_sma.sma120 = 'Y' THEN                                                                                
-       #初始化界面的樣式(沒有任何默認屬性組)                                                                                           
-       LET lg_oay22 = ''                                                                                                               
-       LET lg_group = ''                                                                                                               
-       CALL t700_refresh_detail() 
+    IF g_sma.sma120 = 'Y' THEN
+       #初始化界面的樣式(沒有任何默認屬性組)
+       LET lg_oay22 = ''
+       LET lg_group = ''
+       CALL t700_refresh_detail()
     END IF
     CALL cl_msg("")
     DISPLAY ' ' TO cnt
@@ -3438,12 +3449,12 @@ FUNCTION t700_q()
     END IF
     CALL cl_msg("")
 END FUNCTION
- 
+
 FUNCTION t700_fetch(p_flag)
 DEFINE
     p_flag          LIKE type_file.chr1,                #處理方式        #No.FUN-680137 VARCHAR(1)
     l_slip          LIKE faj_file.faj02        # No.FUN-680137  VARCHAR(10)  #No.TQC-650099
- 
+
     CASE p_flag
         WHEN 'N' FETCH NEXT     t700_cs INTO g_oha.oha01
         WHEN 'P' FETCH PREVIOUS t700_cs INTO g_oha.oha01
@@ -3456,17 +3467,17 @@ DEFINE
                 PROMPT g_msg CLIPPED,': ' FOR g_jump
                     ON IDLE g_idle_seconds
                        CALL cl_on_idle()
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
+
       ON ACTION controlg      #MOD-4C0121
          CALL cl_cmdask()     #MOD-4C0121
- 
- 
+
+
                 END PROMPT
                 IF INT_FLAG THEN
                     LET INT_FLAG = 0
@@ -3476,7 +3487,7 @@ DEFINE
             LET mi_no_ask = FALSE
             FETCH ABSOLUTE g_jump t700_cs INTO g_oha.oha01
     END CASE
- 
+
     IF SQLCA.sqlcode THEN
         CALL cl_err(g_oha.oha01,SQLCA.sqlcode,0)
         INITIALIZE g_oha.* TO NULL  #TQC-6B0105
@@ -3489,7 +3500,7 @@ DEFINE
           WHEN 'L' LET g_curs_index = g_row_count
           WHEN '/' LET g_curs_index = g_jump
        END CASE
- 
+
        CALL cl_navigator_setting( g_curs_index, g_row_count )
     END IF
     SELECT * INTO g_oha.* FROM oha_file WHERE oha01 = g_oha.oha01
@@ -3522,18 +3533,18 @@ DEFINE
        END CASE
     END IF
     #CHI-C10027 -- add end --
-    #在使用Q查詢的情況下得到當前對應的屬性組oay22                                                                                    
-    IF g_sma.sma120 = 'Y' AND g_sma.sma907 = 'Y' THEN                                                                                
-       LET l_slip = g_oha.oha01[1,g_doc_len]                                                                                         
-       SELECT oay22 INTO lg_oay22 FROM oay_file                                                                                      
-        WHERE oayslip = l_slip                                                                                                     
-    END IF 
+    #在使用Q查詢的情況下得到當前對應的屬性組oay22
+    IF g_sma.sma120 = 'Y' AND g_sma.sma907 = 'Y' THEN
+       LET l_slip = g_oha.oha01[1,g_doc_len]
+       SELECT oay22 INTO lg_oay22 FROM oay_file
+        WHERE oayslip = l_slip
+    END IF
     LET g_data_owner = g_oha.ohauser      #FUN-4C0057 add
     LET g_data_group = g_oha.ohagrup      #FUN-4C0057 add
     LET g_data_plant = g_oha.ohaplant #FUN-980030
     CALL t700_show()
 END FUNCTION
- 
+
 FUNCTION t700_show()
  DEFINE l_occ02 LIKE occ_file.occ02
  DEFINE l_tqa02 LIKE tqa_file.tqa02
@@ -3541,7 +3552,7 @@ FUNCTION t700_show()
  DEFINE l_azp02 LIKE azp_file.azp02   #No.FUN-870007
  DEFINE l_gen02 LIKE gen_file.gen02   #No.FUN-870007
  DEFINE l_rtz03 LIKE rtz_file.rtz03   #FUN-B50054
- 
+
    LET g_oha_t.* = g_oha.*                #保存單頭舊值
    DISPLAY BY NAME g_oha.oha08, g_oha.ohaoriu,g_oha.ohaorig,
               g_oha.oha01,g_oha.oha02,g_oha.oha09,
@@ -3558,12 +3569,12 @@ FUNCTION t700_show()
               g_oha.ohaud01,g_oha.ohaud02,g_oha.ohaud03,g_oha.ohaud04,
               g_oha.ohaud05,g_oha.ohaud06,g_oha.ohaud07,g_oha.ohaud08,
               g_oha.ohaud09,g_oha.ohaud10,g_oha.ohaud11,g_oha.ohaud12,
-              g_oha.ohaud13,g_oha.ohaud14,g_oha.ohaud15, 
+              g_oha.ohaud13,g_oha.ohaud14,g_oha.ohaud15,
 			  g_oha.oha85,g_oha.oha86,g_oha.oha87,g_oha.oha88,g_oha.oha89,                       #No.FUN-870007
 			  g_oha.oha90,g_oha.oha91,g_oha.oha92,g_oha.oha93,g_oha.oha94,                       #No.FUN-870007
 			  g_oha.oha95,g_oha.oha96,g_oha.oha97,g_oha.ohaplant,g_oha.oha57,g_oha.ohaconu,  #FUN-AA0057 add oha57#No.FUN-870007
 			  g_oha.ohacond,g_oha.ohacont  #No.FUN-870007 #TQC-B40073
- 
+
   #FUN-B50054 Begin---
    IF g_azw.azw04 = '2' THEN
       SELECT rtz03 INTO l_rtz03 FROM rtz_file WHERE rtz01 = g_oha.ohaplant
@@ -3576,9 +3587,9 @@ FUNCTION t700_show()
   #FUN-B50054 End-----
 
    CALL t700_chspic()
-   
+
    LET g_buf = s_get_doc_no(g_oha.oha01)   #No.TQC-5A0098
- 
+
    SELECT oaydesc INTO g_buf FROM oay_file WHERE oayslip=g_buf
    DISPLAY g_buf TO oaydesc LET g_buf = NULL
    SELECT azi03,azi04 INTO t_azi03,t_azi04               #No.CHI-6A0004
@@ -3590,7 +3601,7 @@ FUNCTION t700_show()
    SELECT gem02 INTO g_buf FROM gem_file WHERE gem01=g_oha.oha15
                 DISPLAY g_buf TO gem02 LET g_buf = NULL
    SELECT oab02 INTO g_buf FROM oab_file WHERE oab01=g_oha.oha25
-   DISPLAY g_buf TO oab02 
+   DISPLAY g_buf TO oab02
    LET g_buf = NULL
    DISPLAY BY NAME g_oha.oha1018,g_oha.oha1015
    IF g_azw.azw04='2' THEN
@@ -3608,23 +3619,23 @@ FUNCTION t700_show()
         g_oha.oha1010,g_oha.oha1003,g_oha.oha1005,g_oha.oha1009,
         g_oha.oha1002,g_oha.oha1014,g_oha.oha1018,g_oha.oha1015,
         g_oha.oha1017,g_oha.oha1012,g_oha.oha1013,g_oha.oha1019
- 
+
        SELECT occ02 INTO l_occ02 FROM occ_file WHERE occ01=g_oha.oha1001
-                    DISPLAY l_occ02 TO occ02b LET l_occ02=NULL 
+                    DISPLAY l_occ02 TO occ02b LET l_occ02=NULL
        SELECT occ02 INTO l_occ02 FROM occ_file WHERE occ01=g_oha.oha1011
-                    DISPLAY l_occ02 TO occ02c LET l_occ02=NULL 
+                    DISPLAY l_occ02 TO occ02c LET l_occ02=NULL
        SELECT occ02 INTO l_occ02 FROM occ_file WHERE occ01=g_oha.oha1014
-                    DISPLAY l_occ02 TO occ02d LET l_occ02=NULL              
+                    DISPLAY l_occ02 TO occ02d LET l_occ02=NULL
        SELECT tqb02 INTO l_tqb02 FROM tqb_file WHERE tqb01=g_oha.oha1010
-                    DISPLAY l_tqb02 TO tqb02 LET l_tqb02=NULL 
+                    DISPLAY l_tqb02 TO tqb02 LET l_tqb02=NULL
        SELECT tqb02 INTO l_tqb02 FROM tqb_file WHERE tqb01=g_oha.oha1003
-                    DISPLAY l_tqb02 TO tqb02a LET l_tqb02=NULL 
+                    DISPLAY l_tqb02 TO tqb02a LET l_tqb02=NULL
        SELECT tqa02 INTO l_tqa02 FROM tqa_file WHERE tqa01=g_oha.oha1009
                                                  AND tqa03='19'  #No.MOD-A60121
                     DISPLAY l_tqa02 TO tqa02 LET l_tqa02=NULL
        SELECT tqa02 INTO l_tqa02 FROM tqa_file WHERE tqa01=g_oha.oha1002
-                                                 AND tqa03='20'  #No.MOD-A60121 
-                    DISPLAY l_tqa02 TO tqa02a LET l_tqa02=NULL 
+                                                 AND tqa03='20'  #No.MOD-A60121
+                    DISPLAY l_tqa02 TO tqa02a LET l_tqa02=NULL
 	 END IF
    IF g_aza.aza50='Y' THEN
       CALL t700_1004('d')                   #No.FUN-650108
@@ -3634,9 +3645,9 @@ FUNCTION t700_show()
       CALL t700_b_fill(g_wc2,g_wc4)         #FUN-B90103-新增參數用於服飾行業子料件關聯
    END IF
    DISPLAY g_rec_b TO FORMONLY.cn2       #No.TQC-690065
-   CALL cl_show_fld_cont()                   #No.FUN-550037 hmf   
+   CALL cl_show_fld_cont()                   #No.FUN-550037 hmf
 END FUNCTION
- 
+
 FUNCTION t700_b1()
 DEFINE l_lock_sw       LIKE type_file.chr1,                 #單身鎖住否        #No.FUN-680137 VARCHAR(1)
        p_cmd           LIKE type_file.chr1,                 #處理狀態        #No.FUN-680137 VARCHAR(1)
@@ -3647,11 +3658,11 @@ DEFINE l_lock_sw       LIKE type_file.chr1,                 #單身鎖住否    
        l_oha55         LIKe oha_file.oha55,
        g_oga08         LIKE oga_file.oga08,
        l_check_res     LIKE type_file.num5,        # No.FUN-680137  SMALLINT
-       l_au            LIKE type_file.chr1         # NO.FUN-7B0015  
+       l_au            LIKE type_file.chr1         # NO.FUN-7B0015
 DEFINE g_cnt           LIKE type_file.num5  #No.FUN-A90040
 DEFINE l_ogb48         LIKE ogb_file.ogb48  #No.FUN-A90040
 DEFINE l_ogb49         LIKE ogb_file.ogb49  #No.FUN-A90040
-#DEFINE l_ogb50        LIKE ogb_file.ogb50  #No.FUN-A90040        
+#DEFINE l_ogb50        LIKE ogb_file.ogb50  #No.FUN-A90040
 DEFINE l_occ930        LIKE occ_file.occ930 #No.FUN-870007
 DEFINE lc_type         LIKE type_file.chr1  #No.FUN-870007
 DEFINE li_ret          LIKE type_file.num5  #No.FUN-870007
@@ -3664,15 +3675,15 @@ DEFINE l_rtg08         LIKE rtg_file.rtg08  #No.FUN-870007
 DEFINE l_sale_price    LIKE ogb_file.ogb13 #No.FUN-870007
 DEFINE l_n             LIKE type_file.num5  #No.FUN-870007
 #FUN-A50054---begin
-DEFINE l_ata02         LIKE ata_file.ata02 
+DEFINE l_ata02         LIKE ata_file.ata02
 DEFINE l_ata04         LIKE ata_file.ata04
 #FUN-A50054---End
-DEFINE l_ima151        LIKE ima_file.ima151                #FUN-A60035	
+DEFINE l_ima151        LIKE ima_file.ima151                #FUN-A60035
 #DEFINE l_imaicd13     LIKE imaicd_file.imaicd13  #FUN-A40022  #FUN-B50096
-DEFINE l_ima159        LIKE ima_file.ima159  #FUN-B50096     
+DEFINE l_ima159        LIKE ima_file.ima159  #FUN-B50096
 DEFINE l_ima25         LIKE ima_file.ima25   #MOD-AC0070
 DEFINE l_oga57         LIKE oga_file.oga57   # FUN-AA0057
-DEFINE l_ima154        LIKE ima_file.ima154  #FUN-BC0081 
+DEFINE l_ima154        LIKE ima_file.ima154  #FUN-BC0081
 DEFINE l_rtz06         LIKE rtz_file.rtz06      #FUN-C10053
 DEFINE l_rvy04         LIKE rvy_file.rvy04      #FUN-C10053
 DEFINE l_gec04         LIKE gec_file.gec04      #FUN-C10053
@@ -3683,22 +3694,22 @@ DEFINE l_count         LIKE type_file.num5      #FUN-C10053
 DEFINE l_imaicd09      LIKE imaicd_file.imaicd09  #TQC-C60020
 DEFINE l_oeb29         LIKE oeb_file.oeb29   #MOD-C30817 add
 DEFINE l_flag          LIKE type_file.chr1   #FUN-CB0087
-DEFINE l_where         STRING                #FUN-CB0087 
+DEFINE l_where         STRING                #FUN-CB0087
 DEFINE l_ogc17  LIKE ogc_file.ogc17  #CHI-C80045 add
 DEFINE l_ogc12  LIKE ogc_file.ogc12  #CHI-C80045 add
 DEFINE l_cnt    LIKE type_file.num5  #CHI-C80045 add
 DEFINE l_ac3_t  LIKE type_file.num5  #FUN-D30034 Add
 DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
- 
+
    LET g_action_choice = ""
    LET g_flag2 = '0'   #CHI-920011
    LET g_acc = 'N'     #MOD-B30222 add
- 
+
    IF NOT t700_b1_chk() THEN
       RETURN
    END IF
    LET l_oha55 = g_oha.oha55      #FUN-550051
- 
+
    LET g_forupd_sql = "SELECT * FROM ohb_file ",
                       " WHERE ohb01= ? AND ohb03= ?  FOR UPDATE "             #No.TQC-740323
    LET g_forupd_sql = cl_forupd_sql(g_forupd_sql)
@@ -3713,7 +3724,7 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
 #--FUN-B90103--start
 #--FUN-B90103--end
 
- 
+
    LET l_allow_insert = cl_detail_input_auth("insert")
    LET l_allow_delete = cl_detail_input_auth("delete")
 #FUN-B90103--start--
@@ -3726,20 +3737,20 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
                    INSERT ROW=l_allow_insert,DELETE ROW=l_allow_delete,APPEND ROW=l_allow_insert)
 #FUN-B90103--end
 
-#FUN-B90103--start 
+#FUN-B90103--start
 #   INPUT ARRAY g_ohb1 WITHOUT DEFAULTS FROM s1_ohb.*   #No.FUN-650108
 #         ATTRIBUTE(COUNT=g_rec_b,MAXCOUNT=g_max_rec,UNBUFFERED,
 #                   INSERT ROW=l_allow_insert,DELETE ROW=l_allow_delete,APPEND ROW=l_allow_insert)
 #FUN-B90103--end
- 
+
        BEFORE INPUT
-          CALL t700_b1_bef_inp()             
- 
+          CALL t700_b1_bef_inp()
+
        BEFORE ROW
            LET l_ac = ARR_CURR()
            LET g_ohb04_t = NULL
            LET l_lock_sw = 'N'                   #DEFAULT
-           LET l_au= ''                    # NO.FUN-7B0015 
+           LET l_au= ''                    # NO.FUN-7B0015
            LET g_value = NULL
            LET g_ohb04 = NULL
            LET g_chr2  = '0'
@@ -3786,21 +3797,21 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
 #            END IF
 #TQC-C30106 MARK end ----
 #TQC-C30106 add begin ---
-        CALL t700_ohb69_ohb70_chk()    
+        CALL t700_ohb69_ohb70_chk()
         IF NOT cl_null(g_errno) THEN
            CALL cl_err('',g_errno,0)
            IF NOT　cl_null(g_ohb1[l_ac].ohb31) OR NOT cl_null(g_ohb1[l_ac].ohb32) THEN
-              NEXT FIELD b1_ohb31 
+              NEXT FIELD b1_ohb31
            ELSE
-              NEXT FIELD ohb69 
-           END IF 
+              NEXT FIELD ohb69
+           END IF
         END IF
 #TQC-C30106 add end ----
      END IF
 #FUN-AA0057--add-end
- 
+
            BEGIN WORK
- 
+
            OPEN t700_cl USING g_oha.oha01
            IF SQLCA.sqlcode THEN
               CALL cl_err("open oha",SQLCA.sqlcode,0)
@@ -3808,15 +3819,15 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
               ROLLBACK WORK
               RETURN
            END IF
- 
+
            FETCH t700_cl INTO g_oha.*
            IF SQLCA.sqlcode THEN
               CALL cl_err(g_oha.oha01,SQLCA.sqlcode,0)
               CLOSE t700_cl ROLLBACK WORK RETURN
            END IF
- 
+
            LET g_ohb12_1=0 LET g_ogb12_1=0 LET g_ohb14t_1=0
- 
+
            IF g_rec_b >= l_ac THEN
               LET p_cmd='u'
               LET g_ohb1_t.* = g_ohb1[l_ac].*         #BACKUP #No.FUN-650108
@@ -3843,14 +3854,14 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
 #               END FOREACH
 #               LET g_ohb1_t.* = g_ohb1[l_ac].*
 #            ELSE
-#FUN-A50054 --End 
+#FUN-A50054 --End
 #FUN-A60035 --End mark by chenmoyan
               OPEN t700_bcl USING g_oha.oha01,g_ohb1_t.ohb03 #No.FUN-650108
               IF SQLCA.sqlcode THEN
                  CALL cl_err('lock ohb',SQLCA.sqlcode,1)
                  LET l_lock_sw = "Y"
               ELSE
-                 FETCH t700_bcl INTO b_ohb.* 
+                 FETCH t700_bcl INTO b_ohb.*
                  IF SQLCA.sqlcode THEN
                     CALL cl_err('lock ohb',SQLCA.sqlcode,1)
                     LET l_lock_sw = "Y"
@@ -3867,14 +3878,14 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
                            ELSE
                               CALL t700_get_ohb_unit3(p_cmd)   #No.MOD-920074 add
                               CALL t700_get_ohb(p_cmd)
-                           END IF                           
-                       END IF                  
+                           END IF
+                       END IF
                        LET g_ohb1[l_ac].gem02c=s_costcenter_desc(g_ohb1[l_ac].ohb930) #FUN-670063
                  END IF
               END IF
 #            END IF #FUN-A50054 add #FUN-A60035 mark by chenmoyan
                SELECT ima906 INTO g_ima906 FROM ima_file
-                WHERE ima01=g_ohb1[l_ac].ohb04 
+                WHERE ima01=g_ohb1[l_ac].ohb04
               CALL t700_set_entry_b('u')
               CALL t700_set_no_entry_b('u')
                  CALL t700_set_no_required('u')
@@ -3886,7 +3897,7 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
               CALL cl_set_comp_entry("att00,att01,att01_c,att02,att02_c,att03,att03_c",TRUE)
               CALL cl_set_comp_entry("att04,att04_c,att05,att05_c,att06,att06_c",TRUE)
               CALL cl_set_comp_entry("att07,att07_c,att08,att08_c,att09,att09_c,att10,att10_c",TRUE)
-              #IF s_industry('icd') THEN       #FUN-A40022 #FUN-B70061 mark 
+              #IF s_industry('icd') THEN       #FUN-A40022 #FUN-B70061 mark
                  CALL t700_set_no_required_1()   #FUN-A40022
                  CALL t700_set_required_1(p_cmd) #FUN-A40022
                  CALL t700_set_entry_ohb092()    #FUN-B50096
@@ -3897,7 +3908,7 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
            LET p_cmd='a'
            CALL t700_b1_bef_ins()
            NEXT FIELD b1_ohb03    #No.FUN-650108
- 
+
        AFTER INSERT
            IF INT_FLAG THEN
               CALL cl_err('',9001,0)
@@ -3905,7 +3916,7 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
               LET g_flag2 = '1'   #CHI-920011
               CANCEL INSERT
            END IF
- 
+
            CASE t700_b1_inschk()
               WHEN "ohb04" NEXT FIELD ohb04
            END CASE
@@ -3913,7 +3924,7 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
            CALL t700_b_else()
            LET l_oha55 = '0'          #FUN-550051
            IF NOT t700_b1_ins() THEN
-              DELETE FROM ata_file 
+              DELETE FROM ata_file
                WHERE ata00=g_prog
                  AND ata01=g_oha.oha01
                  AND ata02=g_ohb1[l_ac].ohb03
@@ -3926,12 +3937,12 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
               END IF
               COMMIT WORK
               LET l_au='a'             # NO.FUN-7B0015
-	      CALL t700_b_fill(' 1=1',' 1=1')   #FUN-B90103-新增參數用於服飾行業子料件關聯 
+	      CALL t700_b_fill(' 1=1',' 1=1')   #FUN-B90103-新增參數用於服飾行業子料件關聯
            END IF
- 
+
        BEFORE FIELD b1_ohb03      #No.FUN-650108           #default 序號
           CALL t700_bef_ohb03()
- 
+
        AFTER FIELD b1_ohb03            #No.FUN-650108            #check 序號是否重複
           IF NOT t700_chk_ohb03() THEN
              NEXT FIELD CURRENT
@@ -3940,17 +3951,17 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
                 NEXT FIELD CURRENT
              END IF
           END IF
-		  IF g_ohb1[l_ac].ohb03<=0 THEN                                                                              
-             CALL cl_err('','aim-223',0)   
-			 LET g_ohb1[l_ac].ohb03=g_ohb1_t.ohb03                                                                  
-			 NEXT FIELD b1_ohb03                                                                                     
+		  IF g_ohb1[l_ac].ohb03<=0 THEN
+             CALL cl_err('','aim-223',0)
+			 LET g_ohb1[l_ac].ohb03=g_ohb1_t.ohb03
+			 NEXT FIELD b1_ohb03
 	 	  END IF
- 
+
        AFTER FIELD b1_ohb30   #No.FUN-650108
           IF NOT t700_chk_ohb30() THEN
              NEXT FIELD CURRENT
           END IF
- 
+
        BEFORE FIELD b1_ohb31  #No.FUN-650108
           CALL t700_bef_ohb31(p_cmd)
           IF NOT cl_null(g_oha.oha16) AND cl_null(g_ohb1[l_ac].ohb31) THEN
@@ -3968,7 +3979,7 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
        #tianry add end
        AFTER FIELD b1_ohb31   #No.FUN-650108
 #MOD-C30103 MARK begin
-##TQC-C20021 add begin   
+##TQC-C20021 add begin
 #          IF NOT cl_null(g_oha.oha16) AND cl_null(g_ohb1[l_ac].ohb31) THEN
 #             LET g_ohb1[l_ac].ohb31 = g_oha.oha16
 #          END IF
@@ -3986,9 +3997,9 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
                  CALL cl_err('',g_errno,0)
                  NEXT FIELD b1_ohb31
               END IF
-          END IF 
+          END IF
 #TQC-C30106 add end ----
-          IF NOT cl_null(g_ohb1[l_ac].ohb31) THEN    
+          IF NOT cl_null(g_ohb1[l_ac].ohb31) THEN
               SELECT oga57 INTO l_oga57  FROM oga_file
               WHERE oga01=g_ohb1[l_ac].ohb31 AND ogaplant = g_oha.ohaplant
               IF g_oha.oha57 != l_oga57 THEN
@@ -4009,50 +4020,50 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
              ELSE
                 NEXT FIELD ohb04
              END IF
-          END IF    
-       END IF 
-#FUN-BC0081  add ----end 
+          END IF
+       END IF
+#FUN-BC0081  add ----end
 #MOD-C30103 add begin
        IF NOT cl_null(g_ohb1[l_ac].ohb31) THEN
           CALL cl_set_comp_required("b1_ohb32",TRUE)
        ELSE
           CALL cl_set_comp_required("b1_ohb32",FALSE)
-       END IF 
+       END IF
 #MOD-C30103 add end
-       
+
        #tianry add   161109 带出订单号+项次的BUG
        IF not cl_null(g_ohb1[l_ac].ohb32) THEN
-          SELECT ogb31,ogb32  INTO g_ohb1[l_ac].ohb33,g_ohb1[l_ac].ohb34 FROM ogb_file 
-          WHERE ogb01=g_ohb1[l_ac].ohb31 AND ogb03=g_ohb1[l_ac].ohb32 
+          SELECT ogb31,ogb32  INTO g_ohb1[l_ac].ohb33,g_ohb1[l_ac].ohb34 FROM ogb_file
+          WHERE ogb01=g_ohb1[l_ac].ohb31 AND ogb03=g_ohb1[l_ac].ohb32
           DISPLAY BY NAME g_ohb1[l_ac].ohb33,g_ohb1[l_ac].ohb34
        END IF
-              
 
 
-       #tianry add end 
+
+       #tianry add end
        BEFORE FIELD b1_ohb33  #No.FUN-650108
              CALL t700_set_no_required(p_cmd)
- 
+
        AFTER FIELD b1_ohb33  #No.FUN-650108
           CASE t700_chk_ohb33()
              WHEN "ohb31" NEXT FIELD b1_ohb31
              WHEN "ohb33" NEXT FIELD CURRENT
           END CASE
- 
+
        BEFORE FIELD b1_ohb32  #NO.FUN-650108
           CALL t700_set_entry_b(p_cmd)
           #IF s_industry('icd') THEN   #FUN-A40022   #FUN-B70061 mark
           CALL t700_set_no_required_1()   #FUN-A40022
-          CALL t700_set_entry_ohb092()    #FUN-B50096 
+          CALL t700_set_entry_ohb092()    #FUN-B50096
           #END IF #FUN-A40022   #FUN-B70061 mark
        AFTER FIELD b1_ohb32  #No.FUn-650108
 #TQC-C20021 add begin MOD-C30103 MARK begin
-#          IF NOT cl_null(g_oha.oha16) THEN 
-#             IF cl_null(g_ohb1[l_ac].ohb32) THEN 
+#          IF NOT cl_null(g_oha.oha16) THEN
+#             IF cl_null(g_ohb1[l_ac].ohb32) THEN
 #                CALL cl_err('','axm-625',0)
 #                NEXT FIELD b1_ohb32
-#             END IF 
-#          END IF 
+#             END IF
+#          END IF
 #TQC-C20021 add end MOD-C30103 MARK begin
 #MOD-C30103 add begin
           IF NOT cl_null(g_ohb1[l_ac].ohb31) THEN
@@ -4074,7 +4085,7 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
           END IF
           #IF p_cmd = 'a' THEN   #MOD-9C0330   #MOD-A90106
           IF p_cmd = 'a' AND g_oha.oha09 <> '5' THEN   #MOD-9C0330   #MOD-A90106 add g_oga.oga09 <> '5'
-             #CALL t700_ins_rvbs()         #NO.FUN-860025 #MOD-C70044 mark 
+             #CALL t700_ins_rvbs()         #NO.FUN-860025 #MOD-C70044 mark
              CALL t700_ins_rvbs('1')       #MOD-C70044 add
           END IF   #MOD-9C0330
           #FUN-A40022--begin--add--------
@@ -4098,11 +4109,11 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
           END IF
           #END IF   #FUN-B70061 mark
           #FUN-A40022--end--add-------
-              #No.FUN-A90040  --begin      
-      IF (g_azw.azw04 = '2') THEN  
+              #No.FUN-A90040  --begin
+      IF (g_azw.azw04 = '2') THEN
 #TQC-C30106 MARK begin----
 #           IF NOT　cl_null(g_ohb1[l_ac].ohb31) OR NOT cl_null(g_ohb1[l_ac].ohb32) THEN
-#               CALL cl_set_comp_entry("ohb69",FALSE) 
+#               CALL cl_set_comp_entry("ohb69",FALSE)
 #               SELECT oga57 INTO l_oga57  FROM oga_file
 #              WHERE oga01=g_ohb1[l_ac].ohb31 AND ogaplant = g_oha.ohaplant
 #              IF g_oha.oha57 != l_oga57 THEN
@@ -4110,13 +4121,13 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
 #                 NEXT FIELD b1_ohb31
 #              END IF
 #                  SELECT ogb48, ogb49  INTO  l_ogb48, l_ogb49
-#                  FROM ogb_file 
+#                  FROM ogb_file
 #            #      WHERE ogb01 = g_ohb1[l_ac].ohb31 AND ogb03 = g_ohb1[l_ac].ohb32 AND ogbplant = ohaplant           #FUN-AB0059  mark
 #                   WHERE ogb01 = g_ohb1[l_ac].ohb31 AND ogb03 = g_ohb1[l_ac].ohb32 AND ogbplant = g_oha.ohaplant     #FUN-AB0059
-#                  LET  g_ohb1[l_ac].ohb69 = l_ogb48 
+#                  LET  g_ohb1[l_ac].ohb69 = l_ogb48
 #                  LET  g_ohb1[l_ac].ohb70 = l_ogb49
 #                  IF NOT  cl_null(g_ohb1[l_ac].ohb69) AND NOT cl_null(g_ohb1[l_ac].ohb70) THEN
-#                 SELECT COUNT(*) INTO g_cnt 
+#                 SELECT COUNT(*) INTO g_cnt
 #                 FROM lnt_file WHERE lnt04 = g_ohb1[l_ac].ohb70 AND lnt06 = g_ohb1[l_ac].ohb69 AND lntplant = g_oha.ohaplant
 #                                    AND lnt26 = 'Y' AND g_oha.oha02 BETWEEN lnt17 AND lnt18
 #                  IF g_cnt = 0 THEN
@@ -4126,9 +4137,9 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
 #             END IF
 #           END IF
 #           IF cl_null(g_ohb1[l_ac].ohb31) AND  cl_null(g_ohb1[l_ac].ohb32) THEN
-#              CALL cl_set_comp_entry("ohb69",TRUE) 
-#              IF NOT  cl_null(g_ohb1[l_ac].ohb69) AND NOT cl_null(g_ohb1[l_ac].ohb70) THEN   
-#                SELECT COUNT(*) INTO g_cnt 
+#              CALL cl_set_comp_entry("ohb69",TRUE)
+#              IF NOT  cl_null(g_ohb1[l_ac].ohb69) AND NOT cl_null(g_ohb1[l_ac].ohb70) THEN
+#                SELECT COUNT(*) INTO g_cnt
 #                FROM lnt_file WHERE lnt04 = g_ohb1[l_ac].ohb70 AND lnt06 = g_ohb1[l_ac].ohb69 AND lntplant = g_oha.ohaplant
 #                                  AND lnt26 = 'Y' AND g_oha.oha02 BETWEEN lnt17 AND lnt18
 #                IF g_cnt = 0 THEN
@@ -4143,14 +4154,14 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
         IF NOT cl_null(g_errno) THEN
            CALL cl_err('',g_errno,0)
            IF NOT　cl_null(g_ohb1[l_ac].ohb31) OR NOT cl_null(g_ohb1[l_ac].ohb32) THEN
-              NEXT FIELD b1_ohb32 
+              NEXT FIELD b1_ohb32
            ELSE
               NEXT FIELD ohb69
            END IF
         END IF
 #TQC-C30106 add end ----
-     END IF  
-   #No.FUN-A90040  --end 
+     END IF
+   #No.FUN-A90040  --end
    #FUN-BC0081 add begin ---
      IF NOT cl_null(g_ohb1[l_ac].ohb32) THEN
         IF NOT cl_null(g_ohb1[l_ac].ohb31) AND (p_cmd = 'a'
@@ -4163,7 +4174,7 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
               NEXT FIELD ohb04
            END IF
         END IF
-     END IF      
+     END IF
    #FUN-BC0081 add end  ---
 
 #FUN-A60035 --Begin mark by chenmoyan
@@ -4172,7 +4183,7 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
 #          OR cl_null(g_ohb1_t.ohb31) OR g_ohb1[l_ac].ohb31 != g_ohb1_t.ohb31 THEN
 #            IF s_industry("slk") THEN
 #               DROP TABLE x
-#               DELETE FROM ata_file 
+#               DELETE FROM ata_file
 #                WHERE ata00 = g_prog
 #                  AND ata01 = g_oha.oha01
 #                  AND ata02 = g_ohb1_t.ohb03
@@ -4191,8 +4202,8 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
 #FUN-A50054 --End
 #FUN-A60035 --Begin
 #         IF s_industry("slk") THEN
-#            SELECT ima151 INTO l_ima151 FROM ima_file        #FUN-A60035                                                               
-#             WHERE ima01=g_ohb1[l_ac].ohb04                  #FUN-A60035 
+#            SELECT ima151 INTO l_ima151 FROM ima_file        #FUN-A60035
+#             WHERE ima01=g_ohb1[l_ac].ohb04                  #FUN-A60035
 #            SELECT oeaslk02 INTO g_oea.oeaslk02
 #              FROM oga_file,ogb_file,oea_file,oeb_file
 #             WHERE oea01 = ogb31
@@ -4208,14 +4219,14 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
 #FUN-A60035 --End
 #FUN-A60035 --End mark by chenmoyan
       #tianry add 161113
-        LET g_ohb1[l_ac].ohb09='S009' 
+        LET g_ohb1[l_ac].ohb09='S009'
         DISPLAY BY NAME g_ohb1[l_ac].ohb09
 
-          #tianry add end 
+          #tianry add end
       #MOD-C70044 add start -----
       ON CHANGE b1_ohb32
           CALL t700_ins_rvbs('2')
-          LET g_ohb1[l_ac].ohb09='S009' 
+          LET g_ohb1[l_ac].ohb09='S009'
         DISPLAY BY NAME g_ohb1[l_ac].ohb09
       #MOD-C70044 add end   -----
 
@@ -4224,11 +4235,11 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
         IF g_azw.azw04 = '2'  THEN
            IF NOT  cl_null(g_ohb1[l_ac].ohb69) THEN
 #TQC-C30106 mark begin ----
-##FUN-AC0097--add--begin 
+##FUN-AC0097--add--begin
 #                   SELECT lnt04 INTO g_ohb1[l_ac].ohb70
 #                   FROM lnt_file WHERE lnt06 = g_ohb1[l_ac].ohb69
 #                                 AND lnt26 = 'Y' AND g_oha.oha02 BETWEEN lnt17 AND lnt18
-##FUN-AC0097--add--end  
+##FUN-AC0097--add--end
 #                   SELECT COUNT(*) INTO g_cnt
 #                   FROM lnt_file WHERE lnt04 = g_ohb1[l_ac].ohb70 AND lnt06 = g_ohb1[l_ac].ohb69
 #                                    AND lntplant = g_oha.ohaplant
@@ -4245,14 +4256,14 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
                     CALL cl_err('',g_errno,0)
                     NEXT FIELD ohb69
                  END IF
-#TQC-C30106 add end ---                 
+#TQC-C30106 add end ---
                  IF cl_null(g_ohb1[l_ac].ohb69) THEN
                     LET g_ohb1[l_ac].ohb70 =''
                  END IF
 #FUN-AC0097--add--end
            END IF
        END IF
-# No.FUN-AA0057--add--end 
+# No.FUN-AA0057--add--end
        AFTER FIELD b1_ohb34    #NO.FUN-650108
           IF NOT t700_chk_ohb34(p_cmd) THEN
              NEXT FIELD CURRENT
@@ -4260,15 +4271,15 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
 
        #FUN-CB0087--add--str--
        BEFORE FIELD b1_ohb50
-          IF g_aza.aza115 = 'Y' AND cl_null(g_ohb1[l_ac].ohb50) THEN 
-             LET g_ohb1[l_ac].ohb50=s_reason_code(g_oha.oha01,g_ohb1[l_ac].ohb31,'',g_ohb1[l_ac].ohb04,g_ohb1[l_ac].ohb09,g_oha.oha14,g_oha.oha15) 
+          IF g_aza.aza115 = 'Y' AND cl_null(g_ohb1[l_ac].ohb50) THEN
+             LET g_ohb1[l_ac].ohb50=s_reason_code(g_oha.oha01,g_ohb1[l_ac].ohb31,'',g_ohb1[l_ac].ohb04,g_ohb1[l_ac].ohb09,g_oha.oha14,g_oha.oha15)
              DISPLAY BY NAME g_ohb1[l_ac].*
           END IF
-       #FUN-CB0087--add--end--           
+       #FUN-CB0087--add--end--
        AFTER FIELD b1_ohb50
           IF NOT t700_chk_ohb50() THEN
              IF g_aza.aza115='N' THEN NEXT FIELD CURRENT END IF                      #FUN-CB0087 添加判斷
-          ELSE 
+          ELSE
              SELECT azf03 INTO g_ohb1[l_ac].azf03 FROM azf_file WHERE azf01=g_ohb1[l_ac].ohb50 AND azf02='2' #FUN-CB0087 add
              DISPLAY BY NAME g_ohb1[l_ac].*  #FUN-CB0087
           END IF
@@ -4277,7 +4288,7 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
        ON CHANGE ohb04
           CALL t700_ins_rvbs('2')
        #MOD-C70044 add end   -----
- 
+
        BEFORE FIELD ohb04
           CALL t700_set_entry_b('u')
           CALL t700_set_du_no_required(p_cmd)
@@ -4286,39 +4297,39 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
           CALL t700_set_entry_ohb092()    #FUN-B50096
        AFTER FIELD ohb04
 #TQC-C20021 add begin  MOD-C30103 MARK begin
-#          IF NOT cl_null(g_oha.oha16) THEN 
-#             IF cl_null(g_ohb1[l_ac].ohb32) THEN 
+#          IF NOT cl_null(g_oha.oha16) THEN
+#             IF cl_null(g_ohb1[l_ac].ohb32) THEN
 #                CALL cl_err('','axm-625',0)
-#                NEXT FIELD b1_ohb32                
-#             END IF 
-#          END IF    
+#                NEXT FIELD b1_ohb32
+#             END IF
+#          END IF
 #TQC-C20021 add end   MOD-C30103 MARK end
-          #AFTER FIELD 處理邏輯修改為使用下面的函數來進行判斷，請參考相關代碼  
+          #AFTER FIELD 處理邏輯修改為使用下面的函數來進行判斷，請參考相關代碼
           IF NOT cl_null(g_ohb1[l_ac].ohb04) THEN                    #FUN-AA0047
- #NO.FUN-A90048 add -----------start--------------------     
+ #NO.FUN-A90048 add -----------start--------------------
              IF NOT s_chk_item_no(g_ohb1[l_ac].ohb04,'') THEN
                 CALL cl_err('',g_errno,1)
-                LET g_ohb1[l_ac].ohb04 = g_ohb1_t.ohb04 
+                LET g_ohb1[l_ac].ohb04 = g_ohb1_t.ohb04
                 NEXT FIELD ohb04
              END IF
-#NO.FUN-A90048 add ------------end --------------------           
-             CALL t700_check_ohb04('ohb04',l_ac) RETURNING                                                                            
+#NO.FUN-A90048 add ------------end --------------------
+             CALL t700_check_ohb04('ohb04',l_ac) RETURNING
                 l_check_res,g_buf,g_buf1,l_b2,l_ima35,l_ima36
-             IF NOT l_check_res THEN NEXT FIELD CURRENT END IF                                                                          
-             SELECT imaag INTO l_imaag FROM ima_file                              
-              WHERE ima01 = g_ohb1[l_ac].ohb04                                     
+             IF NOT l_check_res THEN NEXT FIELD CURRENT END IF
+             SELECT imaag INTO l_imaag FROM ima_file
+              WHERE ima01 = g_ohb1[l_ac].ohb04
 #         IF NOT s_industry("slk") THEN    #FUN-A50054 #FUN-A60035 mark by chenmoyan
-             IF NOT cl_null(l_imaag) AND l_imaag <> '@CHILD' THEN                 
+             IF NOT cl_null(l_imaag) AND l_imaag <> '@CHILD' THEN
                 LET g_ohb1[l_ac].ima021 = NULL
                 DISPLAY BY NAME g_ohb1[l_ac].*
                 CALL cl_err(g_ohb1[l_ac].ohb04,'aim1004',0)
                 NEXT FIELD CURRENT
-             END IF                        
+             END IF
 #         END IF                           #FUN-A50054 #FUN-A60035 mark by chenmoyan
           END IF                                                        #FUN-AA0047
           IF NOT cl_null(g_ohb1[l_ac].ohb04) OR g_ohb1[l_ac].ohb04 != g_ohb1_t.ohb04 THEN
              IF g_acc = 'N' THEN   #MOD-B30222 add
-                CALL t700_fetch_price('a') #No.FUN-960130 
+                CALL t700_fetch_price('a') #No.FUN-960130
              END IF      #MOD-B30222 add
              #CHI-C80045 add start -----
              IF NOT cl_null(g_ohb1[l_ac].ohb31) AND NOT cl_null(g_ohb1[l_ac].ohb32) THEN
@@ -4330,10 +4341,10 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
                       AND ogc17 = g_ohb1[l_ac].ohb04
                    IF l_cnt = 0 THEN
                       CALL cl_err(g_ohb1[l_ac].ohb04,'axm1166',1)
-                      NEXT FIELD CURRENT 
+                      NEXT FIELD CURRENT
                    END IF
-                END IF 
-             
+                END IF
+
                 IF g_oaz.oaz23 = 'Y' AND g_ogb.ogb17 = 'Y' THEN
                    SELECT ogc12 INTO l_ogc12
                      FROM ogc_file
@@ -4348,23 +4359,23 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
           #FUN-C10053 add end -----
           #FUN-BC0081 add begin---
           IF NOT cl_null(g_ohb1[l_ac].ohb04) THEN
-             IF p_cmd = 'a' OR (p_cmd ='u' AND g_ohb1[l_ac].ohb04 != g_ohb1_t.ohb04) THEN 
+             IF p_cmd = 'a' OR (p_cmd ='u' AND g_ohb1[l_ac].ohb04 != g_ohb1_t.ohb04) THEN
                 CALL t700_check_ohb04_ticket()      #判断当前业态是否为零售，否则不可销售券产品
-                IF g_success = 'N' THEN 
+                IF g_success = 'N' THEN
                    LET g_ohb1[l_ac].ohb04 = g_ohb1_t.ohb04
                    NEXT FIELD ohb04
                 ELSE
                    IF g_flag_chk = 'Y' THEN
                       LET g_flag3 = '2'
                       CALL t700_ticket_back()          #开窗维护对应的券资料
-                      NEXT FIELD b1_ohb05 
+                      NEXT FIELD b1_ohb05
                    END IF
                 END IF
-             END IF 
-          END IF 
-          #FUN-BC0081 add end ---           
+             END IF
+          END IF
+          #FUN-BC0081 add end ---
 	      #IF s_industry('icd') THEN       #FUN-A40022 #FUN-B70061 mark
-             CALL t700_set_required_1(p_cmd) #FUN-A40022            
+             CALL t700_set_required_1(p_cmd) #FUN-A40022
              CALL t700_set_no_entry_ohb092() #FUN-B50096
 #FUN-A60035 --Begin mark by chenmoyan
 #FUN-A50054 --Begin
@@ -4386,8 +4397,8 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
 #FUN-A50054 --End
 #FUN-A60035 --Begin
 #         IF s_industry("slk") THEN
-#            SELECT ima151 INTO l_ima151 FROM ima_file        #FUN-A60035                                                               
-#             WHERE ima01=g_ohb1[l_ac].ohb04                  #FUN-A60035 
+#            SELECT ima151 INTO l_ima151 FROM ima_file        #FUN-A60035
+#             WHERE ima01=g_ohb1[l_ac].ohb04                  #FUN-A60035
 #            SELECT oeaslk02 INTO g_oea.oeaslk02
 #              FROM oga_file,ogb_file,oea_file,oeb_file
 #             WHERE oea01 = ogb31
@@ -4408,24 +4419,24 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
        AFTER FIELD att00
           #檢查att00里面輸入的母料件是否是符合對應屬性組的母料件
           LET g_cnt=0
-          SELECT COUNT(ima01) INTO g_cnt FROM ima_file 
+          SELECT COUNT(ima01) INTO g_cnt FROM ima_file
            WHERE ima01 = g_ohb1[l_ac].att00 AND imaag = lg_oay22  #No.FUN-650108
           IF g_cnt = 0 THEN
              CALL cl_err_msg('','aim-909',lg_oay22,0)
              NEXT FIELD CURRENT
           END IF
-       
+
           LET g_ohb04 = g_ohb1[l_ac].att00 #No.FUN-650108
-       
+
           #如果設置為不允許新增
           CALL t700_check_ohb04('imx00',l_ac) RETURNING
              l_check_res,g_buf,g_buf1,l_b2,l_ima35,l_ima36
           IF NOT l_check_res THEN NEXT FIELD CURRENT END IF
-        
+
        AFTER FIELD att01
           CALL t700_check_att0x(g_ohb1[l_ac].att01,1,l_ac)  #No.FUN-650108
              RETURNING l_check_res,g_buf,g_buf1,l_b2,l_ima35,l_ima36
-          IF NOT l_check_res THEN NEXT FIELD att01 END IF              
+          IF NOT l_check_res THEN NEXT FIELD att01 END IF
        AFTER FIELD att02
           CALL t700_check_att0x(g_ohb1[l_ac].att02,2,l_ac)  #No.FUN-650108
              RETURNING l_check_res,g_buf,g_buf1,l_b2,l_ima35,l_ima36
@@ -4441,7 +4452,7 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
        AFTER FIELD att05
           CALL t700_check_att0x(g_ohb1[l_ac].att05,5,l_ac)  #No.FUN-650108
              RETURNING l_check_res,g_buf,g_buf1,l_b2,l_ima35,l_ima36
-          IF NOT l_check_res THEN NEXT FIELD att05 END IF          
+          IF NOT l_check_res THEN NEXT FIELD att05 END IF
        AFTER FIELD att06
           CALL t700_check_att0x(g_ohb1[l_ac].att06,6,l_ac)  #No.FUN-650108
              RETURNING l_check_res,g_buf,g_buf1,l_b2,l_ima35,l_ima36
@@ -4466,7 +4477,7 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
        AFTER FIELD att01_c
           CALL t700_check_att0x_c(g_ohb1[l_ac].att01_c,1,l_ac) #No.FUN-650108
              RETURNING l_check_res,g_buf,g_buf1,l_b2,l_ima35,l_ima36
-          IF NOT l_check_res THEN NEXT FIELD att01_c END IF      
+          IF NOT l_check_res THEN NEXT FIELD att01_c END IF
        AFTER FIELD att02_c
            CALL t700_check_att0x_c(g_ohb1[l_ac].att02_c,2,l_ac)  #No.FUN-650108
              RETURNING l_check_res,g_buf,g_buf1,l_b2,l_ima35,l_ima36
@@ -4503,7 +4514,7 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
            CALL t700_check_att0x_c(g_ohb1[l_ac].att10_c,10,l_ac)  #No.FUN-650108
               RETURNING l_check_res,g_buf,g_buf1,l_b2,l_ima35,l_ima36
            IF NOT l_check_res THEN NEXT FIELD att10_c END IF
- 
+
        AFTER FIELD b1_ohb05
           IF NOT t700_chk_ohb05() THEN
              NEXT FIELD CURRENT
@@ -4520,7 +4531,7 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
           #-----END MOD-AC0070-----
           LET g_ohb1[l_ac].ohb12 = s_digqty(g_ohb1[l_ac].ohb12,g_ohb1[l_ac].ohb05)   #TQC-C20183 add
           DISPLAY g_ohb1[l_ac].ohb12 TO b1_ohb12  #TQC-C20183 add
- 
+
        AFTER FIELD b1_ohb12  #No.FUN-650108
 #FUN-BC0081 add begin---
           IF NOT cl_null(g_ohb1[l_ac].ohb12) THEN
@@ -4538,25 +4549,25 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
           IF NOT t700_chk_ohb12(p_cmd) THEN
              NEXT FIELD CURRENT
           END IF
- 
+
           LET g_ima918 = ''   #DEV-D30059 add
           LET g_ima921 = ''   #DEV-D30059 add
           LET g_ima930 = ''   #DEV-D30059 add
 
-          SELECT ima918,ima921,ima930 INTO g_ima918,g_ima921,g_ima930 #DEV-D30059 add ima930 
+          SELECT ima918,ima921,ima930 INTO g_ima918,g_ima921,g_ima930 #DEV-D30059 add ima930
             FROM ima_file
            WHERE ima01 = g_ohb1[l_ac].ohb04
              AND imaacti = "Y"
-          
+
           IF cl_null(g_ima930) THEN LET g_ima930 = 'N' END IF  #DEV-D30059 add
 
-          IF (g_ima918 = "Y" OR g_ima921 = "Y") AND 
+          IF (g_ima918 = "Y" OR g_ima921 = "Y") AND
              (cl_null(g_ohb1_t.ohb12) OR (g_ohb1[l_ac].ohb12<>g_ohb1_t.ohb12 )) THEN
               CALL t700_b_move_back()
               CALL t700_b_else()
              #IF NOT cl_null(g_ohb1[l_ac].ohb31) THEN   #MOD-890120          #MOD-B80050 mark
               IF g_ima930 = 'N' THEN                                        #DEV-D30059
-                 IF NOT cl_null(g_ohb1[l_ac].ohb31) AND g_oha.oha05 != '5' THEN #MOD-B80050 
+                 IF NOT cl_null(g_ohb1[l_ac].ohb31) AND g_oha.oha05 != '5' THEN #MOD-B80050
                    #CALL s_lotout(g_prog,g_oha.oha01,g_ohb1[l_ac].ohb03,0,    #TQC-B90236 mark
                     CALL s_mod_lot(g_prog,g_oha.oha01,g_ohb1[l_ac].ohb03,0,    #TQC-B90236 add
                                  g_ohb1[l_ac].ohb04,g_ohb1[l_ac].ohb09,
@@ -4581,7 +4592,7 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
            END IF
        IF g_ohb1[l_ac].ohb12 IS NULL OR g_ohb1[l_ac].ohb12 !=g_ohb1_t.ohb12 THEN
           IF g_acc = 'N' THEN   #MOD-B30222 add
-             CALL t700_fetch_price('a') #No.FUN-960130 
+             CALL t700_fetch_price('a') #No.FUN-960130
           END IF      #MOD-B30222 add
        END IF
 
@@ -4612,7 +4623,7 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
 
        BEFORE FIELD b1_ohb913  #No.FUN-650108
           CALL t700_set_du_no_required(p_cmd)
- 
+
        AFTER FIELD b1_ohb913  #No.FUN-650108
           CASE t700_chk_ohb913(p_cmd)
              WHEN "ohb04"  NEXT FIELD ohb04
@@ -4621,13 +4632,13 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
           END CASE
           LET g_ohb1[l_ac].ohb915 = s_digqty(g_ohb1[l_ac].ohb915,g_ohb1[l_ac].ohb913)   #TQC-C20183 add
           DISPLAY g_ohb1[l_ac].ohb915 TO b1_ohb915  #TQC-C20183 add
- 
+
        BEFORE FIELD b1_ohb914  #第二轉換率
           CASE t700_bef_ohb914()
              WHEN "ohb04"  NEXT FIELD ohb04
              WHEN "ohb09"  NEXT FIELD b1_ohb09
-             WHEN "ohb092" 
-                CASE 
+             WHEN "ohb092"
+                CASE
                    WHEN g_oaz.oaz104 = 'Y'
                         NEXT FIELD b1_ohb092
                    WHEN g_oaz.oaz103 = 'Y'
@@ -4636,18 +4647,18 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
                         NEXT FIELD b1_ohb09
                 END CASE
           END CASE
- 
+
        AFTER FIELD b1_ohb914  #第二轉換率  #No.FUN-650108
           IF NOT t700_chk_ohb914() THEN
              NEXT FIELD CURRENT
           END IF
-       
+
        BEFORE FIELD b1_ohb915 #No.FUN-650108
           CASE t700_bef_ohb915()
              WHEN "ohb04"  NEXT FIELD ohb04
              WHEN "ohb09"  NEXT FIELD b1_ohb09
-             WHEN "ohb092" 
-                CASE 
+             WHEN "ohb092"
+                CASE
                    WHEN g_oaz.oaz104 = 'Y'
                         NEXT FIELD b1_ohb092
                    WHEN g_oaz.oaz103 = 'Y'
@@ -4659,7 +4670,7 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
           IF cl_null(g_ohb1[l_ac].ohb915) THEN
              LET g_ohb1[l_ac].ohb915 = 0
           END IF
- 
+
        AFTER FIELD b1_ohb915  #No.FUN-650108
           LET g_ohb1[l_ac].ohb915 = s_digqty(g_ohb1[l_ac].ohb915,g_ohb1[l_ac].ohb913)   #TQC-C20183 add
           DISPLAY g_ohb1[l_ac].ohb915 TO b1_ohb915  #TQC-C20183 add
@@ -4667,23 +4678,23 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
              NEXT FIELD CURRENT
           END IF
 
-          LET g_ima918 = ''   #DEV-D30059 add 
-          LET g_ima921 = ''   #DEV-D30059 add 
-          LET g_ima930 = ''   #DEV-D30059 add 
-          SELECT ima918,ima921,ima930 INTO g_ima918,g_ima921,g_ima930 #DEV-D30059 add ima930 
+          LET g_ima918 = ''   #DEV-D30059 add
+          LET g_ima921 = ''   #DEV-D30059 add
+          LET g_ima930 = ''   #DEV-D30059 add
+          SELECT ima918,ima921,ima930 INTO g_ima918,g_ima921,g_ima930 #DEV-D30059 add ima930
             FROM ima_file
            WHERE ima01 = g_ohb1[l_ac].ohb04
              AND imaacti = "Y"
 
           IF cl_null(g_ima930) THEN LET g_ima930 = 'N' END IF  #DEV-D30059 add
-          
-          IF (g_ima918 = "Y" OR g_ima921 = "Y") AND 
+
+          IF (g_ima918 = "Y" OR g_ima921 = "Y") AND
              (cl_null(g_ohb1_t.ohb12) OR (g_ohb1[l_ac].ohb12<>g_ohb1_t.ohb12 )) THEN
               CALL t700_b_move_back()
               CALL t700_b_else()
              #IF NOT cl_null(g_ohb1[l_ac].ohb31) THEN   #MOD-890120          #MOD-B80050 mark
               IF g_ima930 = 'N' THEN                                         #DEV-D30059
-                 IF NOT cl_null(g_ohb1[l_ac].ohb31) AND g_oha.oha05 != '5' THEN #MOD-B80050 
+                 IF NOT cl_null(g_ohb1[l_ac].ohb31) AND g_oha.oha05 != '5' THEN #MOD-B80050
                    #CALL s_lotout(g_prog,g_oha.oha01,g_ohb1[l_ac].ohb03,0,    #TQC-B90236 mark
                     CALL s_mod_lot(g_prog,g_oha.oha01,g_ohb1[l_ac].ohb03,0,   #TQC-B90236 add
                                  g_ohb1[l_ac].ohb04,g_ohb1[l_ac].ohb09,
@@ -4707,10 +4718,10 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
                  LET g_ohb1[l_ac].ohb12 = s_digqty(g_ohb1[l_ac].ohb12,g_ohb1[l_ac].ohb05)   #TQC-C20183--add--
               END IF
            END IF
- 
+
        BEFORE FIELD b1_ohb910  #No.FUN-650108
           CALL t700_set_du_no_required(p_cmd)
- 
+
        AFTER FIELD b1_ohb910  #No.FUN-650108
           CASE t700_chk_ohb910(p_cmd)
              WHEN "ohb04"  NEXT FIELD ohb04
@@ -4719,13 +4730,13 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
           END CASE
           LET g_ohb1[l_ac].ohb912 = s_digqty(g_ohb1[l_ac].ohb912,g_ohb1[l_ac].ohb910)   #TQC-C20183 add
           DISPLAY g_ohb1[l_ac].ohb912 TO b1_ohb912  #TQC-C20183 add
- 
+
        BEFORE FIELD b1_ohb911  #第二轉換率  #No.FUN-650108
           CASE t700_bef_ohb915()
              WHEN "ohb04"  NEXT FIELD ohb04
              WHEN "ohb09"  NEXT FIELD b1_ohb09
-             WHEN "ohb092" 
-                CASE 
+             WHEN "ohb092"
+                CASE
                    WHEN g_oaz.oaz104 = 'Y'
                         NEXT FIELD b1_ohb092
                    WHEN g_oaz.oaz103 = 'Y'
@@ -4734,18 +4745,18 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
                         NEXT FIELD b1_ohb09
                 END CASE
           END CASE
- 
+
        AFTER FIELD b1_ohb911  #第二轉換率  #No.FUN-650108
           IF NOT t700_chk_ohb911() THEN
              NEXT FIELD CURRENT
           END IF
-          
+
       BEFORE FIELD b1_ohb912  #No.FUN-650108
           CASE t700_bef_ohb912()
              WHEN "ohb04"  NEXT FIELD ohb04
              WHEN "ohb09"  NEXT FIELD b1_ohb09
-             WHEN "ohb092" 
-                CASE 
+             WHEN "ohb092"
+                CASE
                    WHEN g_oaz.oaz104 = 'Y'
                         NEXT FIELD b1_ohb092
                    WHEN g_oaz.oaz103 = 'Y'
@@ -4757,37 +4768,37 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
           IF cl_null(g_ohb1[l_ac].ohb912) THEN
              LET g_ohb1[l_ac].ohb912 = 0
           END IF
- 
+
        AFTER FIELD b1_ohb912  #No.FUN-650108
           LET g_ohb1[l_ac].ohb912 = s_digqty(g_ohb1[l_ac].ohb912,g_ohb1[l_ac].ohb910)   #TQC-C20183 add
           DISPLAY g_ohb1[l_ac].ohb912 TO b1_ohb912  #TQC-C20183 add
           IF NOT t700_chk_ohb912(p_cmd) THEN
              NEXT FIELD CURRENT
           END IF
- 
+
        BEFORE FIELD b1_ohb916   #No.FUN-650108
           CALL t700_set_du_no_required(p_cmd)
- 
-       AFTER FIELD b1_ohb916  #No.FUN-650108          
+
+       AFTER FIELD b1_ohb916  #No.FUN-650108
           CASE t700_chk_ohb916(p_cmd)
              WHEN "ohb04"  NEXT FIELD ohb04
              WHEN "ohb916" NEXT FIELD CURRENT
           END CASE
           LET g_ohb1[l_ac].ohb917 = s_digqty(g_ohb1[l_ac].ohb917,g_ohb1[l_ac].ohb916)   #TQC-C20183 add
-          DISPLAY g_ohb1[l_ac].ohb917 TO b1_ohb917  #TQC-C20183 add 
+          DISPLAY g_ohb1[l_ac].ohb917 TO b1_ohb917  #TQC-C20183 add
 
        BEFORE FIELD b1_ohb917  #No.FUN-650108
           IF g_change = 'Y' THEN
              CALL t700_set_ohb917()
           END IF
- 
+
        AFTER FIELD b1_ohb917
           LET g_ohb1[l_ac].ohb917 = s_digqty(g_ohb1[l_ac].ohb917,g_ohb1[l_ac].ohb916)   #TQC-C20183 add
-          DISPLAY g_ohb1[l_ac].ohb917 TO b1_ohb917  #TQC-C20183 add 
+          DISPLAY g_ohb1[l_ac].ohb917 TO b1_ohb917  #TQC-C20183 add
           IF NOT t700_chk_ohb917() THEN
              NEXT FIELD CURRENT
           END IF
- 
+
        BEFORE FIELD b1_ohb13
           IF NOT t700_bef_ohb13(p_cmd) THEN
              IF g_ima906 MATCHES '[23]' THEN
@@ -4796,38 +4807,38 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
                 NEXT FIELD b1_ohb912
              END IF
           END IF
- 
+
        AFTER FIELD b1_ohb13
           CALL t700_chk_ohb13()
- 
+
        AFTER FIELD b1_ohb14
           CALL t700_chk_ohb14()
- 
+
       AFTER FIELD b1_ohb14t
           CALL t700_chk_ohb14t()
- 
+
      #tianry add 161113
      BEFORE FIELD b1_ohb09
-        LET g_ohb1[l_ac].ohb09='S009' 
+        LET g_ohb1[l_ac].ohb09='S009'
         DISPLAY BY NAME g_ohb1[l_ac].ohb09
 
-  
 
-     #tianry add end 
+
+     #tianry add end
 
       AFTER FIELD b1_ohb09
           CASE t700_chk_ohb09()
              WHEN "ohb09" NEXT FIELD b1_ohb09
              #WHEN "ohb50" NEXT FIELD b1_ohb50   #MOD-A20013
           END CASE
- 
+
       AFTER FIELD b1_ohb092  #NO.FUN-650108
           IF cl_null(g_ohb1[l_ac].ohb092) THEN
              LET g_ohb1[l_ac].ohb092=' '
           END IF
           #FUN-A40022----begin--add---------------
           #IF s_industry('icd') THEN   #FUN-B70061 mark
-          IF NOT cl_null(g_ohb1[l_ac].ohb04) THEN 
+          IF NOT cl_null(g_ohb1[l_ac].ohb04) THEN
 #FUN-B50096 ---------------Begin------------------
             #   LET l_imaicd13=''
             #   SELECT imaicd13 INTO l_imaicd13
@@ -4851,7 +4862,7 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
              WHEN "ohb092" NEXT FIELD CURRENT
           END CASE
           #-----END MOD-A20013-----
- 
+
       AFTER FIELD b1_ohb091  #NO.FUN-650108
           IF cl_null(g_ohb1[l_ac].ohb091) THEN
              LET g_ohb1[l_ac].ohb091=' '
@@ -4873,17 +4884,17 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
              END IF
           END IF
 #FUN-B50096 ------------End-----------------
- 
+
        AFTER FIELD b1_ohb51  #NO.FUN-650108
           IF g_aza.aza27 = 'Y' THEN
              CALL t700_b_more2(p_cmd)
           END IF
- 
+
         AFTER FIELD b1_ohb1002
            IF NOT t700_chk_ohb1002() THEN
               NEXT FIELD CURRENT
            END IF
- 
+
         AFTER FIELD b1_ohb1003
            IF NOT cl_null(g_ohb1[l_ac].ohb1003) THEN
               IF g_ohb1[l_ac].ohb1003>100 or g_ohb1[l_ac].ohb1003<0 THEN
@@ -4891,7 +4902,7 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
                  NEXT FIELD CURRENT
               END IF
            END IF
- 
+
         AFTER FIELD ohbud01
            IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
         AFTER FIELD ohbud02
@@ -4922,36 +4933,36 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
            IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
         AFTER FIELD ohbud15
            IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
- 
+
         BEFORE DELETE                            #是否取消單身
            IF g_ohb1_t.ohb03 > 0 AND g_ohb1_t.ohb03 IS NOT NULL THEN  #No.FUN-650108
               IF NOT cl_delb(0,0) THEN
                  CANCEL DELETE
               END IF
               #FUN-BC0081 add begin ---
-              SELECT ima154 INTO l_ima154 
-                FROM ima_file 
+              SELECT ima154 INTO l_ima154
+                FROM ima_file
                WHERE ima01 = g_ohb1_t.ohb04
               IF l_ima154 = 'Y' THEN
                  IF NOT cl_confirm('alm1516') THEN    #將刪除券銷售銷退明細檔(rxe_file)中對應的券資料(Y/N)？
-                    CANCEL DELETE 
-                 END IF 
-                 IF NOT t700_rxe_del() THEN 
+                    CANCEL DELETE
+                 END IF
+                 IF NOT t700_rxe_del() THEN
                      ROLLBACK WORK
                      CANCEL DELETE
-                 END IF     
-              END IF 
+                 END IF
+              END IF
               #FUN-BC0081 add end ----
               IF l_lock_sw = "Y" THEN
                  CALL cl_err("", -263, 1)
                  CANCEL DELETE
               END IF
-              
-              SELECT ima918,ima921 INTO g_ima918,g_ima921 
+
+              SELECT ima918,ima921 INTO g_ima918,g_ima921
                 FROM ima_file
                WHERE ima01 = g_ohb1[l_ac].ohb04
                  AND imaacti = "Y"
-              
+
               IF g_ima918 = "Y" OR g_ima921 = "Y" THEN
                 #IF NOT s_lotout_del(g_prog,g_oha.oha01,g_ohb1[l_ac].ohb03,0,g_ohb1[l_ac].ohb04,'DEL') THEN   #TQC-B90236 mark
                  IF NOT s_lot_del(g_prog,g_oha.oha01,g_ohb1[l_ac].ohb03,0,g_ohb1[l_ac].ohb04,'DEL') THEN   #TQC-B90236 add
@@ -5008,7 +5019,7 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
               CALL t700_b_move_back()
               CALL t700_b_else()
               IF NOT t700_b1_upd() THEN
-                 LET g_ohb1[l_ac].* = g_ohb1_t.*  #No.FUN-650108                 
+                 LET g_ohb1[l_ac].* = g_ohb1_t.*  #No.FUN-650108
                  ROLLBACK WORK
               ELSE
                #MOD-B10154 Begin---
@@ -5028,7 +5039,7 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
                  CALL cl_msg('UPDATE O.K')
                  LET l_oha55 = '0'          #FUN-550051
                  IF g_aza.aza50='Y' THEN
-                    CALL t700_oha_sum() 
+                    CALL t700_oha_sum()
                  ELSE
 				    CALL t700_bu()
                  END IF
@@ -5037,7 +5048,7 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
                  CALL t700_b_fill('1=1','1=1') #No.FUN-870007-  #FUN-B90103-新增參數用於服飾行業子料件關聯
               END IF
            END IF
- 
+
         AFTER ROW
             LET l_ac = ARR_CURR()
             #將INT_FLAG的判斷移到AFTER ROW的一開始
@@ -5047,11 +5058,11 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
                LET g_flag2 = '1'   #CHI-920011
 #              IF p_cmd = 'a' THEN   #MOD-9C0330                    #TQC-B70198 mark
                IF p_cmd = 'a' AND l_ac <= g_ohb1.getLength() THEN   #TQC-B70198
-                  SELECT ima918,ima921 INTO g_ima918,g_ima921 
+                  SELECT ima918,ima921 INTO g_ima918,g_ima921
                     FROM ima_file
                    WHERE ima01 = g_ohb1[l_ac].ohb04
                      AND imaacti = "Y"
-                  
+
                   IF g_ima918 = "Y" OR g_ima921 = "Y" THEN
                     #IF NOT s_lotout_del(g_prog,g_oha.oha01,g_ohb1[l_ac].ohb03,0,g_ohb1[l_ac].ohb04,'DEL') THEN   #TQC-B90236 mark
                      IF NOT s_lot_del(g_prog,g_oha.oha01,g_ohb1[l_ac].ohb03,0,g_ohb1[l_ac].ohb04,'DEL') THEN   #TQC-B90236 add
@@ -5068,7 +5079,7 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
                   CALL g_ohb1.deleteElement(l_ac)
                   IF g_rec_b != 0 THEN
                      LET g_action_choice = "detail"
-                     LET l_ac = l_ac_t 
+                     LET l_ac = l_ac_t
                      LET g_b_flag = '1'
                   END IF
                #FUN-D30034--add--end--
@@ -5078,7 +5089,7 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
 #               EXIT INPUT    #mark by FUN-B90103
                 EXIT DIALOG   #FUN-B90103
 #MOD-A50083 --begin--
-            ELSE   
+            ELSE
                IF l_ac <= g_ohb1.getLength() THEN   #MOD-D70135 add
                #CHI-C80045 add start -----
                IF NOT cl_null(g_ohb1[l_ac].ohb31) AND NOT cl_null(g_ohb1[l_ac].ohb32) THEN
@@ -5100,7 +5111,7 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
                    WHERE ohb01 = g_oha.oha01
                      AND ohb03 = g_ohb1[l_ac].ohb03
                END IF #MOD-B10069 add
-#MOD-A50083 --end--                 
+#MOD-A50083 --end--
             END IF
             IF l_ac <= g_ohb1.getLength() THEN #MOD-B10069 add
               #IF g_ohb1[l_ac].ohb04 != 'MISC' AND g_oha.oha09 != '5' THEN #MOD-B20130 mark
@@ -5113,29 +5124,29 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
             IF l_ac <= g_ohb1.getLength() THEN #MOD-B10069 add
                IF g_sma.sma115 = 'Y' AND    #MOD-8B0248
                   p_cmd = 'a' AND NOT cl_null(g_ohb1[l_ac].ohb03)THEN   #MOD-8B0248
-                  CALL s_chk_va_setting(g_ohb1[l_ac].ohb04)   
+                  CALL s_chk_va_setting(g_ohb1[l_ac].ohb04)
                        RETURNING g_flag,g_ima906,g_ima907
                   IF g_flag=1 THEN
                      NEXT FIELD ohb04
                   END IF
-               
+
                   CALL s_chk_va_setting1(g_ohb1[l_ac].ohb04)
                        RETURNING g_flag,g_ima908
                   IF g_flag=1 THEN
                      NEXT FIELD ohb04
                   END IF
-               
+
                   CALL t700_du_data_to_correct()
                END IF
             END IF #MOD-B10069 add
-            LET l_ac_t = l_ac      #FUN-D30034 Add 
+            LET l_ac_t = l_ac      #FUN-D30034 Add
             CLOSE t700_bcl
             COMMIT WORK
 #            CALL g_ohb1.deleteElement(g_rec_b+1)   #MOD-8B0248  #MOD-A50083
-            
+
 #MOD-BC0083 add --start--
 #MOD-BC0083 add --end--
-        
+
         AFTER INPUT
             SELECT COUNT(*) INTO g_cnt FROM ohb_file WHERE ohb01=g_oha.oha01
             IF (g_oha.oha08='1' AND g_cnt > g_oaz.oaz691) OR
@@ -5160,31 +5171,31 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
                 END IF
             END FOR
            #CHI-C30118---add---END
- 
+
        ON ACTION CONTROLO                        #沿用所有欄位
           IF INFIELD(b1_ohb03) AND l_ac > 1 THEN  #NO.FUN-650108
              LET g_ohb1[l_ac].* = g_ohb1[l_ac-1].* #NO.FUN-650108
              LET g_ohb1[l_ac].ohb03 = NULL  #NO.FUN-650108
              NEXT FIELD b1_ohb03  #NO.FUN-650108
           END IF
- 
-       #FUN-BC0081  add begin --- 
+
+       #FUN-BC0081  add begin ---
        ON ACTION ticket_back
           IF NOT cl_null(g_ohb1[l_ac].ohb04) THEN
              CALL t700_check_ohb04_ticket()      #判断当前业态是否为零售，否则不可销售券产品
              IF g_success = 'N' THEN
                 LET g_ohb1[l_ac].ohb04 = g_ohb1_t.ohb04
-                NEXT FIELD ohb12 
+                NEXT FIELD ohb12
              ELSE
                 IF g_flag_chk = 'Y' THEN
                    LET g_flag3 = '2'
                    CALL t700_ticket_back()
-                   NEXT FIELD b1_ohb05 
-                END IF 
-             END IF 
-          END IF 
+                   NEXT FIELD b1_ohb05
+                END IF
+             END IF
+          END IF
 
-       #FUN-BC0081  add end --- 
+       #FUN-BC0081  add end ---
 
 #CHI-C80009---add---START
 #CHI-C80009---add-----END
@@ -5192,7 +5203,7 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
        ON ACTION CONTROLP
           CASE
              WHEN INFIELD(ohb04)
-        #No.FUN-A90048 ---------------start---------------------------     
+        #No.FUN-A90048 ---------------start---------------------------
         #          CALL cl_init_qry_var()
         #          IF g_azw.azw04='2' THEN
         #             SELECT rtz04 INTO l_rtz04 FROM rtz_file
@@ -5209,46 +5220,46 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
         #          LET g_qryparam.default1 = g_ohb1[l_ac].ohb04  #NO.FUN-650108
         #          CALL cl_create_qry() RETURNING g_ohb1[l_ac].ohb04  #NO.FUN-650108
         #FUN-AA0095  add ---------------------------------begin----------------------------------
-        IF p_cmd = 'a' AND cl_null(g_oha.oha16) AND		
-                           cl_null(g_ohb1[l_ac].ohb31) AND cl_null(g_ohb1[l_ac].ohb32) AND		
-                           cl_null(g_ohb1[l_ac].ohb33) AND cl_null(g_ohb1[l_ac].ohb34) THEN		
+        IF p_cmd = 'a' AND cl_null(g_oha.oha16) AND
+                           cl_null(g_ohb1[l_ac].ohb31) AND cl_null(g_ohb1[l_ac].ohb32) AND
+                           cl_null(g_ohb1[l_ac].ohb33) AND cl_null(g_ohb1[l_ac].ohb34) THEN
 
-           CALL q_ima(1,1,g_plant)  RETURNING  g_multi_ima01                     
-           IF NOT cl_null(g_multi_ima01)  THEN     
+           CALL q_ima(1,1,g_plant)  RETURNING  g_multi_ima01
+           IF NOT cl_null(g_multi_ima01)  THEN
               CALL t700_multi_ima01()
-              IF g_success = 'N' THEN 
+              IF g_success = 'N' THEN
                  NEXT FIELD ohb04
-              END IF 
+              END IF
               CALL t700_b_fill(" 1=1"," 1=1")  #FUN-B90103-新增參數用於服飾行業子料件關聯
               LET g_flag = TRUE
               CALL t700_b1()
       #       EXIT INPUT   #mark by FUN-B90103
-              EXIT DIALOG  #FUN-B90103--add 
-           END IF 
-        ELSE  
+              EXIT DIALOG  #FUN-B90103--add
+           END IF
+        ELSE
         #FUN-AA0095  add ---------------------------------end------------------------------------
-           CALL q_sel_ima(FALSE, "q_ima","",g_ohb1[l_ac].ohb04,"", "", "", "" ,"" ,'')  
+           CALL q_sel_ima(FALSE, "q_ima","",g_ohb1[l_ac].ohb04,"", "", "", "" ,"" ,'')
                 RETURNING g_ohb1[l_ac].ohb04
         #No.FUN-A90048 -------------end--------------------------------
            DISPLAY BY NAME g_ohb1[l_ac].ohb04  #NO.FUN-650108
            NEXT FIELD ohb04
         END IF   #FUN-AA0095  add
-             #Add Start , 新增的母料件開窗                                                                              
+             #Add Start , 新增的母料件開窗
              #這里只需要處理g_sma.sma908='Y'的情況,因為不允許單身新增子料件則在前面
-             #BEFORE FIELD att00來做開窗了                                                                                         
+             #BEFORE FIELD att00來做開窗了
              #需注意的是其條件限制是要開多屬性母料件且母料件的屬性組等于當前屬性組
-             WHEN INFIELD(att00)                                                                                                   
+             WHEN INFIELD(att00)
                 #可以新增子料件,開窗是單純的選取母料件
-         #No.FUN-A90048 ----------------start------------------------------       
-         #       CALL cl_init_qry_var()                                                                                             
-         #       LET g_qryparam.form ="q_ima_p"                                                                                     
-         #       LET g_qryparam.arg1 = lg_group                                                                                     
-         #       CALL cl_create_qry() RETURNING g_ohb1[l_ac].att00  #NO.FUN-650108   
-                CALL q_sel_ima(FALSE, "q_ima_p","","",lg_group, "", "", "" ,"" ,'')            
-                                  RETURNING g_ohb1[l_ac].att00   
+         #No.FUN-A90048 ----------------start------------------------------
+         #       CALL cl_init_qry_var()
+         #       LET g_qryparam.form ="q_ima_p"
+         #       LET g_qryparam.arg1 = lg_group
+         #       CALL cl_create_qry() RETURNING g_ohb1[l_ac].att00  #NO.FUN-650108
+                CALL q_sel_ima(FALSE, "q_ima_p","","",lg_group, "", "", "" ,"" ,'')
+                                  RETURNING g_ohb1[l_ac].att00
          #No.FUN-A90048 ------------------end--------------------------------
                 DISPLAY BY NAME g_ohb1[l_ac].att00    #NO.FUN-650108
-                NEXT FIELD att00                                                                                                   
+                NEXT FIELD att00
              WHEN INFIELD(b1_ohb05)  #NO.FUN-650108
                   CALL cl_init_qry_var()
                   LET g_qryparam.form ="q_gfe"
@@ -5280,8 +5291,8 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
              #     #LET g_qryparam.default1    = g_ohb1[l_ac].ohb09  #NO.FUN-6j50108
              #     #LET g_qryparam.arg1     = 'SW'        #倉庫類別 #MOD-4A0213
              #     #CALL cl_create_qry() RETURNING g_ohb1[l_ac].ohb09  #NO.FUN-650108
-             #     CALL q_imd_1(FALSE,TRUE,g_ohb1[l_ac].ohb09,"","","","") RETURNING g_ohb1[l_ac].ohb09 
-             #     #No.FUN-AA0048  --End  
+             #     CALL q_imd_1(FALSE,TRUE,g_ohb1[l_ac].ohb09,"","","","") RETURNING g_ohb1[l_ac].ohb09
+             #     #No.FUN-AA0048  --End
              #     #DISPLAY BY NAME g_ohb1[l_ac].ohb09  #NO.FUN-650108   #MOD-A30237
              #     DISPLAY g_ohb1[l_ac].ohb09 TO b1_ohb09   #MOD-A30237
              #     NEXT FIELD b1_ohb09  #NO.FUN-650108
@@ -5295,7 +5306,7 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
                   #LET g_qryparam.arg2     = 'SW'                  #倉庫類別 #MOD-4A0063
                   #CALL cl_create_qry() RETURNING g_ohb1[l_ac].ohb091  #No.FUN-650108
                   CALL q_ime_1(FALSE,TRUE,g_ohb1[l_ac].ohb091,g_ohb1[l_ac].ohb09,"","","","","") RETURNING g_ohb1[l_ac].ohb091
-                  #No.FUN-AA0048  --End  
+                  #No.FUN-AA0048  --End
                   #DISPLAY BY NAME g_ohb1[l_ac].ohb091     #NO.FUN-650108   #MOD-A30237
                   DISPLAY g_ohb1[l_ac].ohb091 TO b1_ohb091   #MOD-A30237
                   NEXT FIELD b1_ohb091      #NO.FUN-650108
@@ -5311,23 +5322,23 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
                        LET g_qryparam.form ="q_ogb03"
                     ELSE                                         #CHI-880026
                     	 LET g_qryparam.form ="q_ogb10"          #CHI-880026
-                    END IF                                       #CHI-880026	   
+                    END IF                                       #CHI-880026
                   ELSE
                   	IF cl_null(g_ohb1[l_ac].ohb30) THEN      #CHI-880026
                        LET g_qryparam.form ="q_ogb02"    #MOD-490169 修正單身"出貨單號"開窗
                     ELSE                                         #CHI-880026
                     	 LET g_qryparam.form ="q_ogb10"          #CHI-880026
-                    END IF                                       #CHI-880026                       
+                    END IF                                       #CHI-880026
                   END IF    #NO.FUN-650108
                   END IF  #No.FUN-870007
                   LET g_qryparam.where = " oga94 = 'N'"   #FUN-AA0057
                   LET g_qryparam.arg1 = g_oha.oha03
                   IF NOT cl_null(g_ohb1[l_ac].ohb30) THEN        #CHI-880026
                      LET g_qryparam.arg2 = g_ohb1[l_ac].ohb30    #CHI-880026
-                  END IF                                         #CHI-880026  
- 
+                  END IF                                         #CHI-880026
+
  #MOD-4B0149 mark  p_qry中修改不加 arg2 傳入,因oha16不一定有值改用加 where條件設定
- 
+
                   IF cl_null(g_ohb1[l_ac].ohb30) THEN            #CHI-880026
                   IF g_argv0='1' THEN
                      IF g_oha.oha09="6" THEN
@@ -5344,8 +5355,8 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
                   END IF
                   IF NOT cl_null(g_oha.oha21) THEN
                      LET g_qryparam.where = " oga21 = '",g_oha.oha21 CLIPPED,"' " #MOD-D80112
-                  END IF                  
-                  END IF                                         #CHI-880026 
+                  END IF
+                  END IF                                         #CHI-880026
                   CALL cl_create_qry() RETURNING g_ohb1[l_ac].ohb31,g_ohb1[l_ac].ohb32  #NO.FUN-650108
                   #DISPLAY BY NAME g_ohb1[l_ac].ohb31,g_ohb1[l_ac].ohb32  #NO.FUN-650108   #MOD-A30237
                   DISPLAY g_ohb1[l_ac].ohb31 TO b1_ohb31 #MOD-A30237
@@ -5371,24 +5382,24 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
                   #DISPLAY BY NAME g_ohb1[l_ac].ohb33 #,g_ohb[l_ac].ohb34  #NO.FUN-650108   #MOD-A30237
                   DISPLAY g_ohb1[l_ac].ohb33 TO b1_ohb33   #MOD-A30237
                   NEXT FIELD b1_ohb33  #NO.FUN-650108
-          #No.FUN-A90040  begin--           
+          #No.FUN-A90040  begin--
                 WHEN INFIELD(ohb69)
                       CALL cl_init_qry_var()
                       LET g_qryparam.form ="q_lnt06_2"
                       LET g_qryparam.default1 = g_ohb1[l_ac].ohb69
                       LET g_qryparam.default2 = g_ohb1[l_ac].ohb70
                    #  LET g_qryparam.default3 = g_ohb1[l_ac].ohb71   #FUN-AA0057
-                      LET g_qryparam.arg1 = g_oha.ohaplant           #FUN-AA0057 
+                      LET g_qryparam.arg1 = g_oha.ohaplant           #FUN-AA0057
                       LET g_qryparam.arg2 = g_oha.oha02              #FUN-AA0057
                       CALL cl_create_qry() RETURNING g_ohb1[l_ac].ohb69,g_ohb1[l_ac].ohb70
                       DISPLAY BY NAME g_ohb1[l_ac].ohb69,g_ohb1[l_ac].ohb70
                       NEXT FIELD ohb69
-          #No.FUN-A90040    end-- 
-                  
+          #No.FUN-A90040    end--
+
              WHEN INFIELD(b1_ohb50)  #NO.FUN-650108
-                  #FUN-CB0087---add---str---         
+                  #FUN-CB0087---add---str---
                   CALL s_get_where(g_oha.oha01,g_ohb1[l_ac].ohb31,'',g_ohb1[l_ac].ohb04,g_ohb1[l_ac].ohb09,g_oha.oha14,g_oha.oha15) RETURNING l_flag,l_where
-                  IF l_flag AND g_aza.aza115 = 'Y' THEN 
+                  IF l_flag AND g_aza.aza115 = 'Y' THEN
                      CALL cl_init_qry_var()
                      LET g_qryparam.form     ="q_ggc08"
                      LET g_qryparam.where = l_where
@@ -5400,7 +5411,7 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
                      LET g_qryparam.arg1='2'            #TQC-7C0045
                      LET g_qryparam.arg2='2'            #TQC-7C0045
                      LET g_qryparam.default1 = g_ohb1[l_ac].ohb50  #NO.FUN-650108
-                  END IF #FUN-CB0087 add   
+                  END IF #FUN-CB0087 add
                   CALL cl_create_qry() RETURNING g_ohb1[l_ac].ohb50  #NO.FUN-650108
                   #DISPLAY BY NAME g_ohb1[l_ac].ohb50  #NO.FUN-650108   #MOD-A30237
                   DISPLAY g_ohb1[l_ac].ohb50 TO b1_ohb50 #MOD-A30237
@@ -5421,7 +5432,7 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
                     #DISPLAY BY NAME g_ohb1[l_ac].ohb910  #NO.FUN-650108   #MOD-A30237
                     DISPLAY g_ohb1[l_ac].ohb910 TO b1_ohb910   #MOD-A30237
                     NEXT FIELD b1_ohb910  #NO.FUN-650108
- 
+
                WHEN INFIELD(b1_ohb913) #單位  #NO.FUN-650108
                     CALL cl_init_qry_var()
                     LET g_qryparam.form ="q_gfe"
@@ -5430,7 +5441,7 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
                     #DISPLAY BY NAME g_ohb1[l_ac].ohb913  #NO.FUN-650108   #MOD-A30237
                     DISPLAY g_ohb1[l_ac].ohb913 TO b1_ohb913   #MOD-A30237
                     NEXT FIELD b1_ohb913  #NO.FUN-650108
- 
+
                WHEN INFIELD(b1_ohb916) #單位  #NO.FUN-650108
                     CALL cl_init_qry_var()
                     LET g_qryparam.form ="q_gfe"
@@ -5456,17 +5467,17 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
                  DISPLAY BY NAME g_ohb1[l_ac].ohb930
                  NEXT FIELD ohb930
            END CASE
-#--FUN-B90103--mark--start 
+#--FUN-B90103--mark--start
 #       ON ACTION CONTROLR
 #          CALL cl_show_req_fields()
-# 
+#
 #       ON ACTION CONTROLG
 #          CALL cl_cmdask()
 #--FUN-B90103--mark--end
- 
+
        ON ACTION mntn_other_data
           CALL t700_b_more(p_cmd)
- 
+
        ON ACTION mntn_custom_menu
           IF g_aza.aza27 = 'Y' THEN
              CALL t700_b_more2(p_cmd)
@@ -5478,11 +5489,11 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
                       g_oha.oha23,g_oha.oha25,g_argv0)
           EXIT DIALOG
        CALL t700_show()
-      #tianry add end 
+      #tianry add end
 
        ON ACTION mntn_unit_price
-          CALL t700_7() 
-          LET g_ohb1[l_ac].ohb37 = b_ohb.ohb37  #FUN-AB0061   
+          CALL t700_7()
+          LET g_ohb1[l_ac].ohb37 = b_ohb.ohb37  #FUN-AB0061
           LET g_ohb1[l_ac].ohb13 = b_ohb.ohb13  #NO.FUN-650108
           LET g_ohb1[l_ac].ohb14 = b_ohb.ohb14  #NO.FUN-650108
           LET g_ohb1[l_ac].ohb14t= b_ohb.ohb14t #NO.FUN-650108
@@ -5493,33 +5504,33 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
         ON ACTION CONTROLF
            CALL cl_set_focus_form(ui.Interface.getRootNode()) RETURNING g_fld_name,g_frm_name #Add on 040913
            CALL cl_fldhelp(g_frm_name,g_fld_name,g_lang) #Add on 040913
- 
+
         ON IDLE g_idle_seconds
            CALL cl_on_idle()
   #        CONTINUE INPUT   #mark by FUN-B90103
            CONTINUE DIALOG  #FUN-B90103--add
- 
+
         ON ACTION about         #MOD-4C0121
            CALL cl_about()      #MOD-4C0121
- 
+
         ON ACTION help          #MOD-4C0121
            CALL cl_show_help()  #MOD-4C0121
- 
+
         ON ACTION CONTROLS
            LET g_action_choice = 'controls'
            CALL cl_set_head_visible("","AUTO")
 
         ON ACTION modi_lot
-#FUN-AB0059 ---------------------start---------------------------- 
+#FUN-AB0059 ---------------------start----------------------------
          IF s_joint_venture( g_ohb1[l_ac].ohb04,g_plant) OR NOT s_internal_item( g_ohb1[l_ac].ohb04,g_plant ) THEN
-         ELSE   
-           
+         ELSE
+
 #FUN-AB0059 ---------------------end-------------------------------
-           SELECT ima918,ima921 INTO g_ima918,g_ima921 
+           SELECT ima918,ima921 INTO g_ima918,g_ima921
              FROM ima_file
             WHERE ima01 = g_ohb1[l_ac].ohb04
               AND imaacti = "Y"
-           
+
            IF g_ima918 = "Y" OR g_ima921 = "Y" THEN
               CALL t700_b_move_back()
               CALL t700_b_else()
@@ -5529,7 +5540,7 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
                  AND img03=g_ohb1[l_ac].ohb091
                  AND img04=g_ohb1[l_ac].ohb092
              #IF NOT cl_null(g_ohb1[l_ac].ohb31) THEN   #MOD-890120          #MOD-B80050 mark
-              IF NOT cl_null(g_ohb1[l_ac].ohb31) AND g_oha.oha05 != '5' THEN #MOD-B80050 
+              IF NOT cl_null(g_ohb1[l_ac].ohb31) AND g_oha.oha05 != '5' THEN #MOD-B80050
                 #CALL s_lotout(g_prog,g_oha.oha01,g_ohb1[l_ac].ohb03,0,   #TQC-B90236 mark
                  CALL s_mod_lot(g_prog,g_oha.oha01,g_ohb1[l_ac].ohb03,0,   #TQC-B90236 add
                               g_ohb1[l_ac].ohb04,g_ohb1[l_ac].ohb09,
@@ -5585,13 +5596,13 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
 #FUN-B90103------------------add--------------------
      IF l_n>0 THEN
         IF g_acc = 'N' THEN   #MOD-B30222 add
-           CALL t700_fetch_price('e') #No.FUN-960130 
+           CALL t700_fetch_price('e') #No.FUN-960130
         END IF      #MOD-B30222 add
         CALL t700_b_fill(' 1=1',' 1=1')    #NO.FUN-960130   #FUN-B90103-新增參數用於服飾行業子料件關聯
      END IF
-#FUN-B90103------------end---------------------------     
-     UPDATE oha_file SET oha55 = l_oha55 WHERE oha01 = g_oha.oha01   #TQC-B40203 
-     
+#FUN-B90103------------end---------------------------
+     UPDATE oha_file SET oha55 = l_oha55 WHERE oha01 = g_oha.oha01   #TQC-B40203
+
      LET g_oha.oha55 = l_oha55
      DISPLAY BY NAME g_oha.oha55
      CALL t700_after_detail()
@@ -5615,7 +5626,7 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
         DISPLAY BY NAME g_oha.oha95
      END IF
     #MOD-B10154 End-----
- 
+
 # 新增自動確認功能 Modify by WUPN 96-05-06 ----------
      LET g_t1 = s_get_doc_no(g_oha.oha01)   #No.TQC-5A0098
      SELECT * INTO g_oay.* FROM oay_file WHERE oayslip=g_t1
@@ -5624,7 +5635,7 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
         RETURN
      END IF
 
-   # FUN-BA0014 mod str--- 
+   # FUN-BA0014 mod str---
    # IF g_oay.oayconf='N' THEN #單據不需自動確認
      IF (g_oay.oayconf = 'N' OR g_oay.oayapr = 'Y') THEN #單據不需自動確認
    #FUN-BA0014 mod end---
@@ -5641,15 +5652,15 @@ DEFINE l_ac_t   LIKE type_file.num5  #FUN-D30034 Add
         CALL t700_show()
         #DEV-D30046 --add--end
      END IF
- 
+
      IF g_oay.oayprnt='Y' THEN CALL t700_out() END IF   #單據需立即列印
 END FUNCTION
- 
-FUNCTION t700_price_1(p_ac)                                                                                                         
-DEFINE p_ac LIKE type_file.num5                                                                                                     
+
+FUNCTION t700_price_1(p_ac)
+DEFINE p_ac LIKE type_file.num5
 DEFINE l_oga211 LIKE oga_file.oga211
-DEFINE l_oga213 LIKE oga_file.oga213     
-DEFINE l_flag LIKE type_file.chr1                                                                                                                               
+DEFINE l_oga213 LIKE oga_file.oga213
+DEFINE l_flag LIKE type_file.chr1
 #FUN-C10053 add begin ---
 DEFINE l_rtz04      LIKE rtz_file.rtz04
 DEFINE l_rtz06      LIKE rtz_file.rtz06
@@ -5659,18 +5670,18 @@ DEFINE l_rtz06      LIKE rtz_file.rtz06
        WHERE rtz01 = g_oha.ohaplant
    END IF
 #FUN-C10053 ----add---end -----
- 
-   CALL t700_ohb04() RETURNING l_flag 
+
+   CALL t700_ohb04() RETURNING l_flag
    IF l_flag='1' THEN
       RETURN 1
-   END IF                                                                                       
-   IF cl_null(g_ohb1[p_ac].ohb916) THEN                                                                                             
-      LET g_ohb1[p_ac].ohb917 = g_ohb1[p_ac].ohb12                                                                           
+   END IF
+   IF cl_null(g_ohb1[p_ac].ohb916) THEN
+      LET g_ohb1[p_ac].ohb917 = g_ohb1[p_ac].ohb12
       LET g_ohb1[l_ac].ohb917 = s_digqty(g_ohb1[l_ac].ohb917,g_ohb1[l_ac].ohb916)   #TQC-C20183--add--
    END IF
-   IF cl_null(g_oha.oha16) AND NOT cl_null(g_ohb1[p_ac].ohb31) THEN                                                              
-      SELECT oga211,oga213 INTO l_oga211,l_oga213 FROM oga_file                                                            
-       WHERE oga01 = g_ohb1[p_ac].ohb31                               
+   IF cl_null(g_oha.oha16) AND NOT cl_null(g_ohb1[p_ac].ohb31) THEN
+      SELECT oga211,oga213 INTO l_oga211,l_oga213 FROM oga_file
+       WHERE oga01 = g_ohb1[p_ac].ohb31
 #FUN-C10053 ----add---begin ---
       IF g_azw.azw04 = '2' THEN
          CALL t700_sub(g_ohb1[p_ac].ohb04,l_rtz04,g_oha.oha213,g_ohb1[p_ac].ohb12,g_ohb1[p_ac].ohb13,t_azi04)
@@ -5680,44 +5691,44 @@ DEFINE l_rtz06      LIKE rtz_file.rtz06
          IF l_oga213 = 'N' THEN
 #           LET g_ohb1[p_ac].ohb14 = g_ohb1[p_ac].ohb12* g_ohb1[p_ac].ohb13    #CHI-B70039 mark
             LET g_ohb1[p_ac].ohb14 = g_ohb1[p_ac].ohb917* g_ohb1[p_ac].ohb13   #CHI-B70039
-            CALL cl_digcut(g_ohb1[p_ac].ohb14,t_azi04)  RETURNING g_ohb1[p_ac].ohb14  
-            LET g_ohb1[p_ac].ohb14t= g_ohb1[p_ac].ohb14*(1+ l_oga211/100)   
+            CALL cl_digcut(g_ohb1[p_ac].ohb14,t_azi04)  RETURNING g_ohb1[p_ac].ohb14
+            LET g_ohb1[p_ac].ohb14t= g_ohb1[p_ac].ohb14*(1+ l_oga211/100)
             CALL cl_digcut(g_ohb1[p_ac].ohb14t,t_azi04) RETURNING g_ohb1[p_ac].ohb14t
          ELSE
 #           LET g_ohb1[p_ac].ohb14t= g_ohb1[p_ac].ohb12*g_ohb1[p_ac].ohb13    #CHI-B70039 mark
             LET g_ohb1[p_ac].ohb14t= g_ohb1[p_ac].ohb917*g_ohb1[p_ac].ohb13   #CHI-B70039
-            CALL cl_digcut(g_ohb1[p_ac].ohb14t,t_azi04) RETURNING g_ohb1[p_ac].ohb14t                                  
-            LET g_ohb1[p_ac].ohb14 = g_ohb1[p_ac].ohb14t/(1+ l_oga211/100)                                                            
-            CALL cl_digcut(g_ohb1[p_ac].ohb14,t_azi04)  RETURNING g_ohb1[p_ac].ohb14    
-         END IF   
-      END IF 
-   ELSE                                                                                                                          
+            CALL cl_digcut(g_ohb1[p_ac].ohb14t,t_azi04) RETURNING g_ohb1[p_ac].ohb14t
+            LET g_ohb1[p_ac].ohb14 = g_ohb1[p_ac].ohb14t/(1+ l_oga211/100)
+            CALL cl_digcut(g_ohb1[p_ac].ohb14,t_azi04)  RETURNING g_ohb1[p_ac].ohb14
+         END IF
+      END IF
+   ELSE
 #FUN-C10053 ----add---begin ---
       IF g_azw.azw04 = '2' THEN
          CALL t700_sub(g_ohb1[p_ac].ohb04,l_rtz04,g_oha.oha213,g_ohb1[p_ac].ohb12,g_ohb1[p_ac].ohb13,t_azi04)
               RETURNING g_ohb1[p_ac].ohb14,g_ohb1[p_ac].ohb14t
       ELSE
-#FUN-C10053 ----add---end -----      
-         IF g_oha.oha213 = 'N' THEN                                                                                          
+#FUN-C10053 ----add---end -----
+         IF g_oha.oha213 = 'N' THEN
 #           LET g_ohb1[p_ac].ohb14 = g_ohb1[p_ac].ohb12* g_ohb1[p_ac].ohb13    #CHI-B70039 mark
             LET g_ohb1[p_ac].ohb14 = g_ohb1[p_ac].ohb917* g_ohb1[p_ac].ohb13   #CHI-B70039
-            CALL cl_digcut(g_ohb1[p_ac].ohb14,t_azi04)  RETURNING g_ohb1[p_ac].ohb14                                             
+            CALL cl_digcut(g_ohb1[p_ac].ohb14,t_azi04)  RETURNING g_ohb1[p_ac].ohb14
             LET g_ohb1[p_ac].ohb14t= g_ohb1[p_ac].ohb14*(1+ g_oha.oha211/100)
-            CALL cl_digcut(g_ohb1[p_ac].ohb14t,t_azi04) RETURNING g_ohb1[p_ac].ohb14t                                             
-         ELSE                                                                                                                   
+            CALL cl_digcut(g_ohb1[p_ac].ohb14t,t_azi04) RETURNING g_ohb1[p_ac].ohb14t
+         ELSE
 #           LET g_ohb1[p_ac].ohb14t= g_ohb1[p_ac].ohb12*g_ohb1[p_ac].ohb13    #CHI-B70039 mark
             LET g_ohb1[p_ac].ohb14t= g_ohb1[p_ac].ohb917*g_ohb1[p_ac].ohb13   #CHI-B70039
-            CALL cl_digcut(g_ohb1[p_ac].ohb14t,t_azi04) RETURNING g_ohb1[p_ac].ohb14t                                              
-            LET g_ohb1[p_ac].ohb14 = g_ohb1[p_ac].ohb14t/(1+ g_oha.oha211/100)                                                    
-            CALL cl_digcut(g_ohb1[p_ac].ohb14,t_azi04)  RETURNING g_ohb1[p_ac].ohb14                                              
-         END IF    
-      END IF #FUN-C10053 
-   END IF                                                                                              
-   RETURN 0                                                                                                                         
-END FUNCTION 
- 
+            CALL cl_digcut(g_ohb1[p_ac].ohb14t,t_azi04) RETURNING g_ohb1[p_ac].ohb14t
+            LET g_ohb1[p_ac].ohb14 = g_ohb1[p_ac].ohb14t/(1+ g_oha.oha211/100)
+            CALL cl_digcut(g_ohb1[p_ac].ohb14,t_azi04)  RETURNING g_ohb1[p_ac].ohb14
+         END IF
+      END IF #FUN-C10053
+   END IF
+   RETURN 0
+END FUNCTION
+
 FUNCTION t700_b2()
-DEFINE 
+DEFINE
    l_n             LIKE type_file.num5,                                                #No.FUN-680137 SMALLINT
    l_lock_sw       LIKE type_file.chr1,                                               #No.FUN-680137 VARCHAR(1)
    p_cmd           LIKE type_file.chr1,                                                  #No.FUN-680137 VARCHAR(1)
@@ -5726,57 +5737,57 @@ DEFINE
    g_oha55         LIKe oha_file.oha55,
    l_azf09         LIKE azf_file.azf09,     #No.FUN-6B0065
    li_flag         LIKE type_file.num5     # No.FUN-680137 SMALLINT
-DEFINE l_ac_t      LIKE type_file.num5     #FUN-D30034 Add 
- 
-   
+DEFINE l_ac_t      LIKE type_file.num5     #FUN-D30034 Add
+
+
     LET g_action_choice = ""
     LET g_flag2 = '0'   #CHI-920011
- 
+
     SELECT * INTO g_oha.* FROM oha_file WHERE oha01 = g_oha.oha01
-    LET g_oha55 = g_oha.oha55      
- 
+    LET g_oha55 = g_oha.oha55
+
     IF g_oha.oha01 IS NULL THEN RETURN END IF
     IF g_oha.ohaconf = 'Y' THEN
-       CALL cl_err('','axm-101',0) RETURN 
+       CALL cl_err('','axm-101',0) RETURN
     END IF
- 
+
     IF g_oha.oha53 > 0 AND g_oha.oha53 = g_oha.oha54 THEN
        CALL cl_err('oha53>0','axr-265',0) RETURN END IF
- 
+
     CALL cl_opmsg('b')
- 
+
     IF g_oha.ohaconf = 'X' THEN CALL cl_err('','9024',0) RETURN END IF
     IF g_oha.oha55 matches '[Ss]' THEN       #FUN-550051
         CALL cl_err('','apm-030',0)
         RETURN
     END IF
- 
+
     LET g_forupd_sql = "SELECT *  FROM ohb_file ",
                        " WHERE ohb01= ? AND ohb03= ?  FOR UPDATE "            #NO.TQC-750149
     LET g_forupd_sql = cl_forupd_sql(g_forupd_sql)
     DECLARE t700_bc2 CURSOR FROM g_forupd_sql
- 
+
     LET l_allow_insert = cl_detail_input_auth("insert")
     LET l_allow_delete = cl_detail_input_auth("delete")
- 
-    INPUT ARRAY g_ohb2 WITHOUT DEFAULTS FROM s2_ohb.*     
-          ATTRIBUTE(COUNT=g_rec_b2,MAXCOUNT=g_max_rec,UNBUFFERED,   
+
+    INPUT ARRAY g_ohb2 WITHOUT DEFAULTS FROM s2_ohb.*
+          ATTRIBUTE(COUNT=g_rec_b2,MAXCOUNT=g_max_rec,UNBUFFERED,
                     INSERT ROW=l_allow_insert,DELETE ROW=l_allow_delete,APPEND ROW=l_allow_insert)
- 
+
         BEFORE INPUT
             IF g_rec_b2 != 0 THEN
                CALL fgl_set_arr_curr(l_ac)
             END IF
             LET g_before_input_done = FALSE
             LET g_before_input_done = TRUE
- 
+
         BEFORE ROW
-            LET l_ac = ARR_CURR() 
+            LET l_ac = ARR_CURR()
             LET l_lock_sw = 'N'                   #DEFAULT
             LET l_n  = ARR_COUNT()
-                 
+
             BEGIN WORK
- 
+
             OPEN t700_cl USING g_oha.oha01
             IF SQLCA.sqlcode THEN
                CALL cl_err("open oha",SQLCA.sqlcode,0)
@@ -5784,32 +5795,32 @@ DEFINE l_ac_t      LIKE type_file.num5     #FUN-D30034 Add
                ROLLBACK WORK
                RETURN
             END IF
- 
+
             FETCH t700_cl INTO g_oha.*
             IF SQLCA.sqlcode THEN
                CALL cl_err(g_oha.oha01,SQLCA.sqlcode,0)
                CLOSE t700_cl ROLLBACK WORK RETURN
             END IF
- 
+
             LET g_ohb12_1=0 LET g_ogb12_1=0 LET g_ohb14t_1=0
- 
+
             IF g_rec_b2 >= l_ac THEN
                LET p_cmd='u'
-               LET g_ohb2_t.* = g_ohb2[l_ac].*         
- 
-               OPEN t700_bc2 USING g_oha.oha01,g_ohb2_t.ohb03    
+               LET g_ohb2_t.* = g_ohb2[l_ac].*
+
+               OPEN t700_bc2 USING g_oha.oha01,g_ohb2_t.ohb03
                IF SQLCA.sqlcode THEN
                   CALL cl_err('lock ohb',SQLCA.sqlcode,1)
                   LET l_lock_sw = "Y"
                ELSE
-                  FETCH t700_bc2 INTO b_ohb.* 
+                  FETCH t700_bc2 INTO b_ohb.*
                   IF SQLCA.sqlcode THEN
                      CALL cl_err('lock ohb',SQLCA.sqlcode,1)
                      LET l_lock_sw = "Y"
                   ELSE
                      IF NOT cl_null(g_ohb2[l_ac].ohb32) THEN
                         SELECT * INTO g_ogb.* FROM ogb_file
-                         WHERE ogb01=g_ohb2[l_ac].ohb31 
+                         WHERE ogb01=g_ohb2[l_ac].ohb31
                            AND ogb03=g_ohb2[l_ac].ohb32
                            AND ogb1005='2'
                          IF g_sma.sma115 = 'Y' THEN
@@ -5825,19 +5836,19 @@ DEFINE l_ac_t      LIKE type_file.num5     #FUN-D30034 Add
                END IF
                IF g_ohb2[l_ac].ohb1010='Y' THEN
                   CALL cl_set_comp_entry("b2_ohb14",FALSE)
-                  CALL cl_set_comp_entry("b2_ohb14t",TRUE) 
-               ELSE 
+                  CALL cl_set_comp_entry("b2_ohb14t",TRUE)
+               ELSE
                   CALL cl_set_comp_entry("b2_ohb14t",FALSE)
-                  CALL cl_set_comp_entry("b2_ohb14",TRUE) 
+                  CALL cl_set_comp_entry("b2_ohb14",TRUE)
                END IF
                LET g_change='N'
                CALL cl_show_fld_cont()     #FUN-550037(smin)
             END IF
- 
+
         BEFORE INSERT
             LET l_n = ARR_COUNT()
             LET p_cmd='a'
-            INITIALIZE g_ohb2[l_ac].* TO NULL      
+            INITIALIZE g_ohb2[l_ac].* TO NULL
             LET b_ohb.ohb01=g_oha.oha01
             LET g_ohb2[l_ac].ohb14=0
             LET g_ohb2[l_ac].ohb14t=0
@@ -5848,8 +5859,8 @@ DEFINE l_ac_t      LIKE type_file.num5     #FUN-D30034 Add
             LET g_ohb2_t.* = g_ohb2[l_ac].*             #新輸入資料
             CALL cl_show_fld_cont()     #FUN-550037(smin)
             NEXT FIELD b2_ohb03
- 
-        AFTER INSERT            
+
+        AFTER INSERT
             IF INT_FLAG THEN
                CALL cl_err('',9001,0)
                LET INT_FLAG = 0
@@ -5878,28 +5889,28 @@ DEFINE l_ac_t      LIKE type_file.num5     #FUN-D30034 Add
             IF b_ohb.ohb16     IS NULL THEN LET b_ohb.ohb16=0 END IF
             IF b_ohb.ohb60     IS NULL THEN LET b_ohb.ohb60=0 END IF
             IF cl_null(b_ohb.ohb917) THEN LET b_ohb.ohb917=0 END IF  #MOD-780263 add
-            LET b_ohb.ohb930 = s_costcenter(g_oha.oha15) #FUN-680006 
+            LET b_ohb.ohb930 = s_costcenter(g_oha.oha15) #FUN-680006
             LET b_ohb.ohbplant = g_plant  #No.FUN-870007
             LET b_ohb.ohblegal = g_legal  #No.FUN-870007
             INSERT INTO ohb_file VALUES(b_ohb.*)
             IF SQLCA.sqlcode THEN
                CALL cl_err3("ins","ohb_file",b_ohb.ohb01,"",SQLCA.sqlcode,"","ins ohb",1)  #No.FUN-650108
                CANCEL INSERT
-               SELECT ima918,ima921 INTO g_ima918,g_ima921 
+               SELECT ima918,ima921 INTO g_ima918,g_ima921
                  FROM ima_file
                 WHERE ima01 = g_ohb1[l_ac].ohb04
                   AND imaacti = "Y"
-               
+
                IF g_ima918 = "Y" OR g_ima921 = "Y" THEN
                  #IF NOT s_lotout_del(g_prog,g_oha.oha01,g_ohb2[l_ac].ohb03,0,g_ohb1[l_ac].ohb04,'DEL') THEN    #TQC-B90236 mark
                   IF NOT s_lot_del(g_prog,g_oha.oha01,g_ohb2[l_ac].ohb03,0,g_ohb1[l_ac].ohb04,'DEL') THEN    #TQC-B90236 add
                      CALL cl_err3("del","rvbs_file",g_oha.oha01,g_ohb2_t.ohb03,
                                    SQLCA.sqlcode,"","",1)
-                     ROLLBACK WORK      #CHI-A10016 
+                     ROLLBACK WORK      #CHI-A10016
                      CANCEL INSERT      #CHI-A10016
                   END IF
                END IF
-            ELSE 
+            ELSE
                CALL cl_msg('INSERT O.K')
                UPDATE ohb_file
                   SET ohb1005='2'
@@ -5907,58 +5918,58 @@ DEFINE l_ac_t      LIKE type_file.num5     #FUN-D30034 Add
                   AND ohb03=b_ohb.ohb03
                LET g_oha55 = '0'          #FUN-550051
                LET g_rec_b2=g_rec_b2+1
-               DISPLAY g_rec_b2 TO FORMONLY.cn2  
-               CALL t700_oha_sum() 
+               DISPLAY g_rec_b2 TO FORMONLY.cn2
+               CALL t700_oha_sum()
                COMMIT WORK
-             
+
            END IF
- 
+
         BEFORE FIELD b2_ohb03            #default 序號 #
             IF g_ohb2[l_ac].ohb03 IS NULL OR g_ohb2[l_ac].ohb03 = 0 THEN
                 SELECT max(ohb03)+1 INTO g_ohb2[l_ac].ohb03
-                 FROM ohb_file 
+                 FROM ohb_file
                 WHERE ohb01 = g_oha.oha01
                   AND ohb1005='2'
                 IF g_ohb2[l_ac].ohb03 IS NULL THEN
                    LET g_ohb2[l_ac].ohb03 = 9001
                 END IF
             END IF
- 
-        AFTER FIELD b2_ohb03          #check 序號是否重複  
+
+        AFTER FIELD b2_ohb03          #check 序號是否重複
             IF NOT cl_null(g_ohb2[l_ac].ohb03) THEN
                IF g_ohb2[l_ac].ohb03 <9001 THEN
                   NEXT FIELD b2_ohb03
                END IF
-               IF g_ohb2[l_ac].ohb03 != g_ohb2_t.ohb03 OR     
-                  g_ohb2_t.ohb03 IS NULL THEN                 
+               IF g_ohb2[l_ac].ohb03 != g_ohb2_t.ohb03 OR
+                  g_ohb2_t.ohb03 IS NULL THEN
                    SELECT count(*) INTO l_n FROM ohb_file
                     WHERE ohb01 = g_oha.oha01 AND ohb03 = g_ohb2[l_ac].ohb03
                       AND ohb1005='2'
                    IF l_n > 0 THEN
                       LET g_ohb1[l_ac].ohb03 = g_ohb1_t.ohb03
-                      CALL cl_err('',-239,0) NEXT FIELD b2_ohb03  
+                      CALL cl_err('',-239,0) NEXT FIELD b2_ohb03
                    END IF
                END IF
-               IF g_ohb2[l_ac].ohb03<=0 THEN                                                                       
-                  CALL cl_err('','aim-223',0)                                                                       
-                  NEXT FIELD b2_ohb03                                                                                
+               IF g_ohb2[l_ac].ohb03<=0 THEN
+                  CALL cl_err('','aim-223',0)
+                  NEXT FIELD b2_ohb03
                END IF
             END IF
- 
-        BEFORE FIELD b2_ohb31        
+
+        BEFORE FIELD b2_ohb31
            IF NOT cl_null(g_oha.oha16) AND cl_null(g_ohb2[l_ac].ohb31) THEN
               LET g_ohb2[l_ac].ohb31 = g_oha.oha16
            END IF
-            
-        AFTER FIELD b2_ohb31  
+
+        AFTER FIELD b2_ohb31
            IF NOT cl_null(g_ohb2[l_ac].ohb31) THEN
               IF NOT cl_null(g_oha.oha16) THEN
                  IF g_ohb2[l_ac].ohb31 != g_oha.oha16 THEN
                     CALL cl_err('','axm-300',0) NEXT FIELD b2_ohb31
                  END IF
               END IF
-              SELECT * INTO g_oga.* FROM oga_file 
-               WHERE oga01=g_ohb2[l_ac].ohb31 AND oga03=g_oha.oha03    
+              SELECT * INTO g_oga.* FROM oga_file
+               WHERE oga01=g_ohb2[l_ac].ohb31 AND oga03=g_oha.oha03
               IF STATUS THEN
                  CALL cl_err3("sel","oga_file",g_ohb2[l_ac].ohb31,g_oha.oha03,STATUS,"","sel oga",1)  #No.FUN-650108
                  NEXT FIELD b2_ohb31
@@ -5968,42 +5979,42 @@ DEFINE l_ac_t      LIKE type_file.num5     #FUN-D30034 Add
                  AND ogb1005='2'
               IF g_n=0 THEN
                  CALL cl_err('ohb31','mfg9329',0)
-                 NEXT FIELD b2_ohb31     
+                 NEXT FIELD b2_ohb31
               END IF
               IF NOT cl_null(g_ohb2[l_ac].ohb32) THEN
                  IF (g_ohb2[l_ac].ohb31 !=g_ohb2_t.ohb31 OR cl_null(g_ohb2_t.ohb31)) THEN
                      IF g_ohb2[l_ac].ohb31 != g_oha.oha16 THEN
                         CALL cl_err('','atm-253',0)
-                        NEXT FIELD b2_ohb31      
+                        NEXT FIELD b2_ohb31
                      END IF
                  END IF
-              END IF 
+              END IF
               IF g_oga.ogaconf != 'Y' THEN	#未確認 01/08/15 mandy
                  CALL cl_err('sel oga','axm-184',0)
-                 NEXT FIELD b2_ohb31      
+                 NEXT FIELD b2_ohb31
               END IF
               #帳單編號為null #No:9344
               SELECT ooz65 INTO g_ooz.ooz65 FROM ooz_file   #MOD-870183
              #IF NOT (g_aza.aza26='2' AND g_ooz.ooz65='Y') THEN        #MOD-870183 #CHI-C10018 mark
               IF g_ooz.ooz65 = 'N' THEN                                #CHI-C10018 add
-                 IF g_oha.oha09 MATCHES '[145]' AND g_oga.oga10 IS NULL THEN   
+                 IF g_oha.oha09 MATCHES '[145]' AND g_oga.oga10 IS NULL THEN
                     CALL cl_err(g_oga.oga01,'mfg-029',0)
-                    NEXT FIELD b2_ohb31   
+                    NEXT FIELD b2_ohb31
                  END IF
               END IF   #MOD-870183
               IF g_oga.oga08 != g_oha.oha08 THEN	#國內外不符
                  CALL cl_err('sel oga','axm-125',0) NEXT FIELD b2_ohb31   #
               END IF
               IF g_oga.oga03 != g_oha.oha03 THEN	#客戶不符
-                 CALL cl_err('sel oga','axm-138',0) NEXT FIELD b2_ohb31   
+                 CALL cl_err('sel oga','axm-138',0) NEXT FIELD b2_ohb31
               END IF
               IF g_oga.oga21 != g_oha.oha21 THEN	#稅別不符
-                 CALL cl_err('sel oga','axm-142',0) NEXT FIELD b2_ohb31  
+                 CALL cl_err('sel oga','axm-142',0) NEXT FIELD b2_ohb31
               END IF
               IF g_oga.oga23 != g_oha.oha23 THEN	#幣別不符
-                 CALL cl_err('sel oga','axm-144',0) NEXT FIELD b2_ohb31  
+                 CALL cl_err('sel oga','axm-144',0) NEXT FIELD b2_ohb31
               END IF
- 
+
               #判斷是否為三角貿易訂單 No.7992
              #MOD-D20003 mark start -----
              #IF cl_null(g_oha.oha41) OR g_oha.oha41 = 'N' THEN
@@ -6012,68 +6023,68 @@ DEFINE l_ac_t      LIKE type_file.num5     #FUN-D30034 Add
                  IF g_argv0 = '1' AND g_oga.oga09 ='4' THEN #MOD-D20003 add
                     #IF t700_chkpoz() THEN RETURN FALSE END IF  #DEV-D30046 --mark
                     #DEV-D30046 --add--begin
-                   # CALL saxmt700sub_chkpoz(g_oha.*,g_ohb1[l_ac].ohb31) 
+                   # CALL saxmt700sub_chkpoz(g_oha.*,g_ohb1[l_ac].ohb31)
                     CALL saxmt700sub_chkpoz(g_oha.*,g_ohb1[1].ohb31)       #DEV-D70003 add
-                       RETURNING li_flag,g_poz.*,g_flow 
-                    IF li_flag THEN RETURN FALSE END IF 
+                       RETURNING li_flag,g_poz.*,g_flow
+                    IF li_flag THEN RETURN FALSE END IF
                     #DEV-D30046 --add--end
                    #IF g_oga.oga09 = '4' AND g_poz.poz011 = '2' THEN  #TQC-9C0126 mark #MOD-D20003 mark
                     IF g_poz.poz011 = '2' THEN  #MOD-D20003 add
-                       CALL cl_err('','axm-163',1)                    #TQC-9C0126 mark                      
+                       CALL cl_err('','axm-163',1)                    #TQC-9C0126 mark
              #MOD-D20003 mark start -----
              #      ELSE                                              #TQC-9C0126 mark
-             #        CALL cl_err('','tri-015',1) NEXT FIELD b2_ohb31    
+             #        CALL cl_err('','tri-015',1) NEXT FIELD b2_ohb31
              #MOD-D20003 mark start -----
                     END IF                                            #TQC-9C0126 mark
                  END IF                       #TQC-9C0031 mark   #TQC-9C0126 取消mark
-             #END IF #MOD-D20003 mark 
-              SELECT ogb1007,ogb1008,ogb1009,ogb1010,ogb1011 INTO g_ogb1007,g_ogb1008,g_ogb1009,g_ogb1010,g_ogb1011        
+             #END IF #MOD-D20003 mark
+              SELECT ogb1007,ogb1008,ogb1009,ogb1010,ogb1011 INTO g_ogb1007,g_ogb1008,g_ogb1009,g_ogb1010,g_ogb1011
                 FROM ogb_file
-               WHERE ogb01=g_ohb1[l_ac].ohb31 
+               WHERE ogb01=g_ohb1[l_ac].ohb31
                  AND ogb03=g_ohb1[l_ac].ohb32
                  AND ogb1005='2'
               LET g_ohb2[l_ac].ohb1007=g_ogb1007
-              LET g_ohb2[l_ac].ohb1008=g_ogb1008     
-              LET g_ohb2[l_ac].ohb1009=g_ogb1009     
-              LET g_ohb2[l_ac].ohb1010=g_ogb1010    
-              LET g_ohb2[l_ac].ohb1011=g_ogb1011    
+              LET g_ohb2[l_ac].ohb1008=g_ogb1008
+              LET g_ohb2[l_ac].ohb1009=g_ogb1009
+              LET g_ohb2[l_ac].ohb1010=g_ogb1010
+              LET g_ohb2[l_ac].ohb1011=g_ogb1011
               IF g_ohb2[l_ac].ohb1010='Y' THEN
                     CALL cl_set_comp_entry("b2_ohb14",FALSE)
-                    CALL cl_set_comp_entry("b2_ohb14t",TRUE)  
+                    CALL cl_set_comp_entry("b2_ohb14t",TRUE)
               ELSE
                     CALL cl_set_comp_entry("b2_ohb14t",FALSE)
-                    CALL cl_set_comp_entry("b2_ohb14",TRUE)  
+                    CALL cl_set_comp_entry("b2_ohb14",TRUE)
              END IF
-              SELECT tqw16,tqw081 INTO g_ohb2[l_ac].tqw16,g_ohb2[l_ac].tqw081 FROM tqw_file                                                                       
+              SELECT tqw16,tqw081 INTO g_ohb2[l_ac].tqw16,g_ohb2[l_ac].tqw081 FROM tqw_file
                WHERE tqw01=g_ohb2[l_ac].ohb1007
            IF cl_null(g_ohb2[l_ac].ohb31) OR cl_null(g_ohb2[l_ac].ohb32) THEN
-              CALL cl_set_comp_entry("b2_ohb50",TRUE)   
-           END IF 
+              CALL cl_set_comp_entry("b2_ohb50",TRUE)
+           END IF
          END IF
- 
- 
+
+
         AFTER FIELD b2_ohb32
            IF NOT cl_null(g_ohb2[l_ac].ohb32) THEN
               SELECT ogb_file.* INTO g_ogb.* FROM oga_file,ogb_file
-               WHERE ogb01=g_ohb2[l_ac].ohb31 
+               WHERE ogb01=g_ohb2[l_ac].ohb31
                  AND ogb03=g_ohb2[l_ac].ohb32
                  AND oga01 = ogb01  #BugNO:3444 01/09/03 mandy
                  AND (oga09 = '2' OR oga09 = '3' OR oga09 = '8' OR  #3.無訂單出貨單 #BugNo:4439   #No.FUN-610079
                       oga09 = '4' OR oga09 = '6' OR oga09 = 'A')    #No.FUN-740016           #No.4444,8981
-                 AND ogb1005='2'               
- 
+                 AND ogb1005='2'
+
               IF STATUS THEN
                  CALL cl_err3("sel","oga_file,ogb_file","","",STATUS,"","sel ogb",1)  #No.FUN-650108
-                 NEXT FIELD b2_ohb32 
+                 NEXT FIELD b2_ohb32
               END IF
- 
+
              #此出貨單已開發票(ogb60), 銷退方式不可設為 '3不折讓,不換貨'!
               IF g_ogb.ogb60 > 0 AND g_oha.oha09='3' THEN
                  CALL cl_err('sel ogb','axm-182',0) NEXT FIELD b2_ohb32
               END IF
- 
+
               IF NOT cl_null(g_errno) THEN
-                 CALL cl_err(g_msg1,g_errno,0) 
+                 CALL cl_err(g_msg1,g_errno,0)
                  IF p_cmd='a' THEN
                     LET g_ohb2[l_ac].ohb32=g_ohb2_t.ohb32
                    IF g_oha.oha09 !='5' THEN
@@ -6092,17 +6103,17 @@ DEFINE l_ac_t      LIKE type_file.num5     #FUN-D30034 Add
                  LET g_ohb2[l_ac].ohb1011 = g_ogb.ogb1011
                  IF g_ohb2[l_ac].ohb1010='Y' THEN
                     CALL cl_set_comp_entry("b2_ohb14",FALSE)
-                    CALL cl_set_comp_entry("b2_ohb14t",TRUE)  
+                    CALL cl_set_comp_entry("b2_ohb14t",TRUE)
                     LET g_ohb2[l_ac].tqw081 = g_ogb.ogb14t
                  ELSE
                     CALL cl_set_comp_entry("b2_ohb14t",FALSE)
-                    CALL cl_set_comp_entry("b2_ohb14",TRUE)  
+                    CALL cl_set_comp_entry("b2_ohb14",TRUE)
                     LET g_ohb2[l_ac].tqw081 = g_ogb.ogb14
                  END IF
                  SELECT tqw16 INTO g_ohb2[l_ac].tqw16 FROM tqw_file
                   WHERE tqw01=g_ohb2[l_ac].ohb1007
              END IF
- 
+
              IF NOT cl_null(g_ohb2[l_ac].ohb31) AND NOT cl_null(g_ohb2[l_ac].ohb32) THEN
                 IF (g_ohb2[l_ac].ohb32!=g_ohb2_t.ohb32 OR g_ohb2_t.ohb32 IS NULL) THEN
                     LET g_ohb2[l_ac].ohb50 = NULL
@@ -6111,15 +6122,15 @@ DEFINE l_ac_t      LIKE type_file.num5     #FUN-D30034 Add
                 CALL cl_set_comp_entry("b2_ohb50",TRUE)
              END IF
            END IF
- 
- 
+
+
          AFTER FIELD b2_ohb50
               SELECT count(*) INTO g_n FROM azf_file
                WHERE azf01=g_ohb2[l_ac].ohb50
                  AND azf02='2'      #No.TQC-760054
                  AND azfacti='Y'
-                 AND azf09='3'     #TQC-7C0045 add 
-              IF g_n=0 THEN 
+                 AND azf09='3'     #TQC-7C0045 add
+              IF g_n=0 THEN
                  CALL cl_err('ohb50','mfg9329',0)
                  NEXT FIELD b2_ohb50
               END IF
@@ -6130,10 +6141,10 @@ DEFINE l_ac_t      LIKE type_file.num5     #FUN-D30034 Add
                  CALL cl_err('ohb50','atm-246',0)
                  NEXT FIELD b2_ohb50
               END IF
- 
+
           AFTER FIELD b2_ohb14
               SELECT SUM(ohb14) INTO g_b_n1 FROM ohb_file,oha_file
-               WHERE ohb31=g_ogb.ogb01       
+               WHERE ohb31=g_ogb.ogb01
                  AND ohb32=g_ogb.ogb03
                  AND ohb1005='2'
                  AND ohb01=oha01
@@ -6142,22 +6153,22 @@ DEFINE l_ac_t      LIKE type_file.num5     #FUN-D30034 Add
               IF g_ogb.ogb14 IS NULL THEN LET g_ogb.ogb14=0 END IF
               LET g_b_n=g_ogb.ogb14-g_b_n1
               IF g_b_n>=0 THEN
-                IF g_ohb2[l_ac].ohb14> g_b_n OR g_ohb2[l_ac].ohb14<=0 THEN         
-                    CALL cl_err('','atm-390',0)                                 
-                    NEXT FIELD b2_ohb14                                            
-                END IF                                                          
+                IF g_ohb2[l_ac].ohb14> g_b_n OR g_ohb2[l_ac].ohb14<=0 THEN
+                    CALL cl_err('','atm-390',0)
+                    NEXT FIELD b2_ohb14
+                END IF
                 LET g_ohb2[l_ac].ohb14t=g_ohb2[l_ac].ohb14*(1+g_ohb2[l_ac].ohb1009/100)
-              ELSE                                                              
-                IF g_ohb2[l_ac].ohb14>=0 OR g_ohb2[l_ac].ohb14<g_b_n THEN          
-                   CALL cl_err('','atm-390',0)                                 
-                   NEXT FIELD b2_ohb14                                            
-                END IF                                                         
+              ELSE
+                IF g_ohb2[l_ac].ohb14>=0 OR g_ohb2[l_ac].ohb14<g_b_n THEN
+                   CALL cl_err('','atm-390',0)
+                   NEXT FIELD b2_ohb14
+                END IF
                 LET g_ohb2[l_ac].ohb14t=g_ohb2[l_ac].ohb14*(1+g_ohb2[l_ac].ohb1009/100)
-              END IF                                   
-                 
+              END IF
+
           AFTER FIELD b2_ohb14t
               SELECT SUM(ohb14t) INTO g_b_n1 FROM ohb_file,oha_file
-               WHERE ohb31=g_ogb.ogb01       
+               WHERE ohb31=g_ogb.ogb01
                  AND ohb32=g_ogb.ogb03
                  AND ohb1005='2'
                  AND ohb01=oha01
@@ -6166,43 +6177,43 @@ DEFINE l_ac_t      LIKE type_file.num5     #FUN-D30034 Add
               IF g_ogb.ogb14t IS NULL THEN LET g_ogb.ogb14t=0 END IF
               LET g_b_n=g_ogb.ogb14t-g_b_n1
               IF g_b_n>=0 THEN
-                IF g_ohb2[l_ac].ohb14t> g_b_n OR g_ohb2[l_ac].ohb14t<=0 THEN         
-                    CALL cl_err('','atm-390',0)                                 
-                    NEXT FIELD b2_ohb14t                                            
-                END IF                                                          
-              ELSE                                                              
-                IF g_ohb2[l_ac].ohb14t>=0 OR g_ohb2[l_ac].ohb14t<g_b_n THEN          
-                   CALL cl_err('','atm-390',0)                                 
-                   NEXT FIELD b2_ohb14t                                            
-                END IF                                                         
+                IF g_ohb2[l_ac].ohb14t> g_b_n OR g_ohb2[l_ac].ohb14t<=0 THEN
+                    CALL cl_err('','atm-390',0)
+                    NEXT FIELD b2_ohb14t
+                END IF
+              ELSE
+                IF g_ohb2[l_ac].ohb14t>=0 OR g_ohb2[l_ac].ohb14t<g_b_n THEN
+                   CALL cl_err('','atm-390',0)
+                   NEXT FIELD b2_ohb14t
+                END IF
                 LET g_ohb2[l_ac].ohb14=g_ohb2[l_ac].ohb14t*(1+g_ohb2[l_ac].ohb1009/100)
-              END IF            
-                 
+              END IF
+
         BEFORE DELETE                            #是否取消單身
            IF g_ohb2_t.ohb03 > 0 AND g_ohb2_t.ohb03 IS NOT NULL THEN
               IF NOT cl_delb(0,0) THEN
                  CANCEL DELETE
               END IF
-                
-              IF l_lock_sw = "Y" THEN 
-                 CALL cl_err("", -263, 1) 
-                 CANCEL DELETE 
-              END IF 
-              
+
+              IF l_lock_sw = "Y" THEN
+                 CALL cl_err("", -263, 1)
+                 CANCEL DELETE
+              END IF
+
               DELETE FROM ohb_file
                WHERE ohb01 = g_oha.oha01 AND ohb03 = g_ohb2_t.ohb03
               IF SQLCA.sqlcode THEN
                  CALL cl_err3("del","ohb_file",g_oha.oha01,g_ohb2_t.ohb03,SQLCA.sqlcode,"","",1)  #No.FUN-650108
                  ROLLBACK WORK
-                 CANCEL DELETE 
+                 CANCEL DELETE
               END IF
-              CALL t700_oha_sum()   
+              CALL t700_oha_sum()
               COMMIT WORK
               LET g_rec_b2=g_rec_b2-1
-              DISPLAY g_rec_b2 TO FORMONLY.cn2  
+              DISPLAY g_rec_b2 TO FORMONLY.cn2
               LET g_oha55 = '0'          #FUN-550051
             END IF
- 
+
         ON ROW CHANGE
             IF INT_FLAG THEN
                CALL cl_err('',9001,0)
@@ -6225,7 +6236,7 @@ DEFINE l_ac_t      LIKE type_file.num5     #FUN-D30034 Add
                   CALL cl_err3("upd","ohb_file",g_oha.oha01,g_ohb2_t.ohb03,SQLCA.sqlcode,"","upd ohb",1)  #No.FUN-650108
                   LET g_ohb2[l_ac].* = g_ohb2_t.*
                ELSE
-                #MOD-B10154 Begin---  
+                #MOD-B10154 Begin---
                 ##FUN-A20022 ADD----------UPDATE THE POINT---------------------------
                 # IF NOT cl_null(g_oha.oha87) THEN
                 #    LET g_oha.oha95= t700_oha95_amount()
@@ -6241,11 +6252,11 @@ DEFINE l_ac_t      LIKE type_file.num5     #FUN-D30034 Add
                 #MOD-B10154 End-----
                   CALL cl_msg('UPDATE O.K')
                   LET g_oha55 = '0'          #FUN-550051
-                  COMMIT WORK                
+                  COMMIT WORK
                END IF
                CALL t700_oha_sum()
             END IF
- 
+
         AFTER ROW
             LET l_ac = ARR_CURR()
             IF INT_FLAG THEN
@@ -6268,33 +6279,33 @@ DEFINE l_ac_t      LIKE type_file.num5     #FUN-D30034 Add
                ROLLBACK WORK
                EXIT INPUT
             END IF
-            LET l_ac_t = l_ac    #FUN-D30034 Add 
+            LET l_ac_t = l_ac    #FUN-D30034 Add
             CLOSE t700_bc2
             COMMIT WORK
- 
+
         AFTER INPUT
             SELECT COUNT(*) INTO g_cnt FROM ohb_file WHERE ohb01=g_oha.oha01
             IF (g_oha.oha08='1' AND g_cnt > g_oaz.oaz691) OR
                (g_oha.oha08='2' AND g_cnt > g_oaz.oaz692) THEN
-               CALL cl_err('','axm-156',0) 
+               CALL cl_err('','axm-156',0)
                NEXT FIELD b2_ohb03
             END IF
- 
- 
+
+
         ON ACTION CONTROLO                        #沿用所有欄位
            IF INFIELD(b2_ohb03) AND l_ac > 1 THEN
               LET g_ohb2[l_ac].* = g_ohb2[l_ac-1].*
               LET g_ohb2[l_ac].ohb03 = NULL
               NEXT FIELD b2_ohb03
            END IF
- 
-        ON ACTION CONTROLP                 
-           CASE 
+
+        ON ACTION CONTROLP
+           CASE
                WHEN INFIELD(b2_ohb31)
                    CALL cl_init_qry_var()
-                   LET g_qryparam.form ="q_ogb03"   
-                   LET g_qryparam.where = " oga94 = 'N'"   #FUN-AA0057 
-                   LET g_qryparam.arg1 = g_oha.oha03    
+                   LET g_qryparam.form ="q_ogb03"
+                   LET g_qryparam.where = " oga94 = 'N'"   #FUN-AA0057
+                   LET g_qryparam.arg1 = g_oha.oha03
                    DISPLAY "g_argv0=",g_argv0
                    IF g_argv0='1' THEN
                       IF g_oha.oha09="6" THEN
@@ -6306,16 +6317,16 @@ DEFINE l_ac_t      LIKE type_file.num5     #FUN-D30034 Add
                      #LET g_qryparam.where = "( oga09='4' OR oga09='6') "                            #FUN-C40072 mark
                       LET g_qryparam.where = "( oga09='4' OR oga09='6' OR oga09='8') AND oga65='N' " #FUN-C40072 add
                    END IF
-                   IF NOT cl_null(g_oha.oha16) THEN 
+                   IF NOT cl_null(g_oha.oha16) THEN
                       LET g_qryparam.where = " oga01 = '",g_oha.oha16 CLIPPED,"' "
-                   END IF 
+                   END IF
                    CALL cl_create_qry() RETURNING g_ohb2[l_ac].ohb31,g_ohb2[l_ac].ohb32
                    DISPLAY BY NAME g_ohb2[l_ac].ohb31,g_ohb2[l_ac].ohb32
                    NEXT FIELD b2_ohb31
                 WHEN INFIELD(b2_ohb50)
                    CALL cl_init_qry_var()
                    LET g_qryparam.form ="q_azf04"     #TQC-7C0045
-                   LET g_qryparam.arg1="2"           
+                   LET g_qryparam.arg1="2"
                    LET g_qryparam.arg2='3'            #TQC-7C0045
                    CALL cl_create_qry() RETURNING g_ohb2[l_ac].ohb50
                    DISPLAY BY NAME g_ohb2[l_ac].ohb50
@@ -6323,50 +6334,50 @@ DEFINE l_ac_t      LIKE type_file.num5     #FUN-D30034 Add
           END CASE
         ON ACTION CONTROLR
            CALL cl_show_req_fields()
- 
+
         ON ACTION CONTROLG CALL cl_cmdask()
- 
+
         ON ACTION CONTROLF
          CALL cl_set_focus_form(ui.Interface.getRootNode()) RETURNING g_fld_name,g_frm_name #Add on 040913
          CALL cl_fldhelp(g_frm_name,g_fld_name,g_lang) #Add on 040913
-          
+
          ON IDLE g_idle_seconds
             CALL cl_on_idle()
             CONTINUE INPUT
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
+
       ON ACTION controls                             #No.FUN-6A0092
          CALL cl_set_head_visible("","AUTO")           #No.FUN-6A0092
-     
+
       END INPUT
-    
+
       #FUN-D30034------add----str
       IF g_action_choice = "detail" THEN
          RETURN
       END IF
       #FUN-D30034------add----end
-  
+
       IF l_ac <= g_ohb1.getLength() THEN   #TQC-B70198 add
          CALL t700_fetch_price('e')   #NO.FUN-960130
       END IF                               #TQC-B70198 add
 
       CALL t700_b_fill2(' 1=1')    #NO.FUN-960130
-      
+
 #     UPDATE oha_file SET oga55 = g_oha55 WHERE oha01 = g_oha.oha01   #TQC-B40203 #FUN-C10053 MARK
-      UPDATE oha_file SET oha55 = g_oha55 WHERE oha01 = g_oha.oha01   #TQC-B40203 #FUN-C10053 
-      
+      UPDATE oha_file SET oha55 = g_oha55 WHERE oha01 = g_oha.oha01   #TQC-B40203 #FUN-C10053
+
       LET g_oha.oha55 = g_oha55   #MOD-8B0107
       DISPLAY BY NAME g_oha.oha55   #MOD-8B0107
       CALL t700_after_detail()
-      
+
       CLOSE t700_bc2
       COMMIT WORK
- 
+
 # 新增自動確認功能 Modify by WUPN 96-05-06 ----------
       LET g_t1 = s_get_doc_no(g_oha.oha01)   #No.TQC-5A0098
       SELECT * INTO g_oay.* FROM oay_file WHERE oayslip=g_t1
@@ -6378,9 +6389,9 @@ DEFINE l_ac_t      LIKE type_file.num5     #FUN-D30034 Add
      #FUN-BA0014 mod str---
      #IF g_oay.oayconf='N' THEN #單據不需自動確認
       IF (g_oay.oayconf = 'N' OR g_oay.oayapr = 'Y') THEN #單據不需自動確認
-     #FUN-BA0014 mod end--- 
-         RETURN 
-      ELSE 
+     #FUN-BA0014 mod end---
+         RETURN
+      ELSE
          #CALL t700_y_chk()  #CALL 原確認的 check 段  #DEV-D30046 --mark
          CALL saxmt700sub_y_chk(g_oha.oha01,g_action_choice)  #DEV-D30046 --add
          IF g_success = "Y" AND g_flag2 = '0' THEN   #CHI-920011
@@ -6392,9 +6403,9 @@ DEFINE l_ac_t      LIKE type_file.num5     #FUN-D30034 Add
          CALL t700_show()
          #DEV-D30046 --add--end
       END IF
- 
+
       IF g_oay.oayprnt='Y' THEN CALL t700_out() END IF   #單據需立即列印
- 
+
 END FUNCTION
 FUNCTION t700_b_fill(p_wc2,p_wc4)              #BODY FILL UP  #FUN-B90103-增加參數用於服飾行業查詢關聯
    DEFINE p_wc2   LIKE type_file.chr1000       #No.FUN-680137 VARCHAR(200)
@@ -6429,7 +6440,7 @@ FUNCTION t700_b_fill(p_wc2,p_wc4)              #BODY FILL UP  #FUN-B90103-增加
      LET g_sql =
        "SELECT ohb03,ohb30,ohb31,ohb32,ohb33,ohb34,ohb69,ohb70,ohb40,'',ohb04,'','','','','','','','','','','','','','','','','','','','','',",    #No.TQC-650089 #No.FUN-A90040 #FUN-B50054 #FUN-CB0087 移動ohb50
       #" ohb06,ima021,ima1002,ima135,ohb11,ohb092,ohb09,ohb091,ohb61,ohb05,ohb12,", #CHI-6B0027 mod   #No.FUN-740016 #CHI-A80042 mark
-       " ohb06,ima021,ima1002,ima135,ohb11,ohb09,ohb091,ohb092,ohb50,azf03,ohb61,ohb05,ohb12,", #CHI-A80042 #FUN-CB0087 add ohb50,azf03 
+       " ohb06,ima021,ima1002,ima135,ohb11,ohb09,ohb091,ohb092,ohb50,azf03,ohb61,ohb05,ohb12,", #CHI-A80042 #FUN-CB0087 add ohb50,azf03
        " ohb913,ohb914,ohb915,ohb910,ohb911,ohb912,ohb916,ohb917,'','',",
        " ohb37,ohb13,'',ohb14,ohb14t,",  #FUN-AB0061 add  ohb37
        " ohb51,ohb930,'',  ",  #FUN-670063
@@ -6581,27 +6592,27 @@ DEFINE p_wc3      LIKE type_file.chr1000,       #No.FUN-680137  VARCHAR(200)
        l_ogb14t   LIKE ogb_file.ogb14t,
        l_ohb14    LIKE ohb_file.ohb14,
        l_ogb14    LIKE ogb_file.ogb14
- 
+
     LET g_sql =
-        "SELECT ohb03,ohb31,ohb32,ohb50,ohb1007,tqw16,'', ",    
-        " ohb1008,ohb1009,ohb1010,ohb1011,ohb14,ohb14t ",                                           
+        "SELECT ohb03,ohb31,ohb32,ohb50,ohb1007,tqw16,'', ",
+        " ohb1008,ohb1009,ohb1010,ohb1011,ohb14,ohb14t ",
         " FROM ohb_file LEFT OUTER JOIN tqw_file ON ohb1007 = tqw01 ",   #No.TQC-9A0132 mod
-        " WHERE ohb01 ='",g_oha.oha01,"' ", 
-        " AND ",p_wc3 CLIPPED,      
+        " WHERE ohb01 ='",g_oha.oha01,"' ",
+        " AND ",p_wc3 CLIPPED,
         " AND ohb1005='2' ",
         " ORDER BY ohb03 "
- 
+
     PREPARE t700_pb1 FROM g_sql
     DECLARE ohb_curs1                       #CURSOR
         CURSOR FOR t700_pb1
- 
+
     CALL g_ohb2.clear()
-    
+
     LET g_cnt = 1
-    FOREACH ohb_curs1 INTO g_ohb2[g_cnt].*  
+    FOREACH ohb_curs1 INTO g_ohb2[g_cnt].*
         IF g_ohb2[g_cnt].ohb1010 = "Y" THEN
-           SELECT sum(ohb14t) INTO l_ohb14t 
-             FROM ohb_file,oha_file 
+           SELECT sum(ohb14t) INTO l_ohb14t
+             FROM ohb_file,oha_file
             WHERE ohb31 = g_ohb2[g_cnt].ohb31
               AND ohb32 = g_ohb2[g_cnt].ohb32
               AND ohapost = "Y"
@@ -6615,20 +6626,20 @@ DEFINE p_wc3      LIKE type_file.chr1000,       #No.FUN-680137  VARCHAR(200)
            IF l_ogb14t IS NULL THEN LET l_ogb14t=0 END IF
            LET g_ohb2[g_cnt].tqw081 = l_ogb14t-l_ohb14t
         ELSE
-           SELECT sum(ohb14) INTO l_ohb14                                     
-             FROM ohb_file,oha_file                                                      
-            WHERE ohb31 = g_ohb2[g_cnt].ohb31                                   
-              AND ohb32 = g_ohb2[g_cnt].ohb32                                   
-              AND ohapost = "Y"                                                 
-              AND ohaconf = "Y"                                                 
+           SELECT sum(ohb14) INTO l_ohb14
+             FROM ohb_file,oha_file
+            WHERE ohb31 = g_ohb2[g_cnt].ohb31
+              AND ohb32 = g_ohb2[g_cnt].ohb32
+              AND ohapost = "Y"
+              AND ohaconf = "Y"
               AND oha01=ohb01
-           SELECT ogb14 INTO l_ogb14                                          
-             FROM ogb_file                                                      
-            WHERE ogb01 = g_ohb2[g_cnt].ohb31                                   
-              AND ogb03 = g_ohb2[g_cnt].ohb32                                   
-           IF l_ohb14 IS NULL THEN LET l_ohb14=0 END IF                       
-           IF l_ogb14 IS NULL THEN LET l_ogb14=0 END IF                       
-           LET g_ohb2[g_cnt].tqw081 = l_ogb14-l_ohb14  
+           SELECT ogb14 INTO l_ogb14
+             FROM ogb_file
+            WHERE ogb01 = g_ohb2[g_cnt].ohb31
+              AND ogb03 = g_ohb2[g_cnt].ohb32
+           IF l_ohb14 IS NULL THEN LET l_ohb14=0 END IF
+           IF l_ogb14 IS NULL THEN LET l_ogb14=0 END IF
+           LET g_ohb2[g_cnt].tqw081 = l_ogb14-l_ohb14
         END IF
         IF STATUS THEN CALL cl_err('foreach:',STATUS,1) EXIT FOREACH END IF
         LET g_cnt = g_cnt + 1
@@ -6640,16 +6651,16 @@ DEFINE p_wc3      LIKE type_file.chr1000,       #No.FUN-680137  VARCHAR(200)
     CALL g_ohb2.deleteElement(g_cnt)
     LET g_rec_b2=g_cnt - 1
     DISPLAY g_rec_b2 TO FORMONLY.cn2
-    LET g_cnt = 0 
+    LET g_cnt = 0
     #FUN-B30170 add begin-------------------------
     LET g_sql = " SELECT rvbs02,rvbs021,ima02,ima021,rvbs022,rvbs04,rvbs03,rvbs05,rvbs06,rvbs07,rvbs08",
                 "   FROM rvbs_file LEFT JOIN ima_file ON rvbs021 = ima01",
                 "  WHERE rvbs00 = '",g_prog,"' AND rvbs01 = '",g_oha.oha01,"'"
     PREPARE sel_rvbs_pre2 FROM g_sql
     DECLARE rvbs_curs2 CURSOR FOR sel_rvbs_pre2
-    
+
     CALL g_rvbs.clear()
-    
+
     LET g_cnt = 1
     FOREACH rvbs_curs2 INTO g_rvbs[g_cnt].*   #單身 ARRAY 填充
        IF STATUS THEN CALL cl_err('foreach:',STATUS,1) EXIT FOREACH END IF
@@ -6666,15 +6677,15 @@ END FUNCTION
 
 #FUN-B90103--start--
 #FUN-B90103--end--
- 
+
 FUNCTION t700_bp1(p_ud)  #NO.FUN-650108
    DEFINE   p_ud   LIKE type_file.chr1          #No.FUN-680137 VARCHAR(1)
    IF p_ud <> "G" OR g_action_choice = "detail" THEN
       RETURN
    END IF
- 
+
    LET g_action_choice = " "
- 
+
    CALL cl_set_act_visible("accept,cancel", FALSE)
    #FUN-B30170 add -----------begin-------------
    DIALOG ATTRIBUTES(UNBUFFERED)
@@ -6682,7 +6693,7 @@ FUNCTION t700_bp1(p_ud)  #NO.FUN-650108
 #--FUN-B90103--end
 
 #      DISPLAY ARRAY g_ohb1 TO s1_ohb.* ATTRIBUTE(COUNT=g_rec_b)   #FUN-B90103--mark--
-       DISPLAY ARRAY g_ohb1 TO s1_ohb.*                            #FUN-B90103--add-- 
+       DISPLAY ARRAY g_ohb1 TO s1_ohb.*                            #FUN-B90103--add--
       BEFORE DISPLAY
          CALL cl_navigator_setting( g_curs_index, g_row_count )
          LET g_chr='@'
@@ -6690,13 +6701,13 @@ FUNCTION t700_bp1(p_ud)  #NO.FUN-650108
             CALL cl_set_act_visible("gen_gds_exch_order,trsf_to_acct_to_offset,maintain_acct",FALSE)
          END IF
          #IF NOT s_industry("icd") THEN   #FUN-B70061 mark
-            CALL cl_set_act_visible("aic_s_icdqry",FALSE)                                                                              
-            CALL cl_set_act_visible("aic_s_icdin",FALSE)                                                                                 
+            CALL cl_set_act_visible("aic_s_icdqry",FALSE)
+            CALL cl_set_act_visible("aic_s_icdin",FALSE)
          #END IF   #FUN-B70061 mark
       BEFORE ROW
 #         LET l_ac = ARR_CURR()   #mark by FUN-B90103
           LET l_ac = DIALOG.getCurrentRow("s1_ohb")   #add by FUN-B90103
-         CALL cl_show_fld_cont() 
+         CALL cl_show_fld_cont()
       END DISPLAY
 #      DISPLAY ARRAY g_rvbs TO s_rvbs.* ATTRIBUTE(COUNT=g_rec_b1)   #FUN-B90103--mark--
        DISPLAY ARRAY g_rvbs TO s_rvbs.*                             #FUN-B90103--add
@@ -6710,42 +6721,42 @@ FUNCTION t700_bp1(p_ud)  #NO.FUN-650108
 
          AFTER DISPLAY
             CONTINUE DIALOG   #因為外層是DIALOG
-      END DISPLAY  
-      ON ACTION CONTROLS                                                                                                               
-      LET g_action_choice = 'controls'                                                                                              
-      CALL cl_set_head_visible("","AUTO")                                                                                           
+      END DISPLAY
+      ON ACTION CONTROLS
+      LET g_action_choice = 'controls'
+      CALL cl_set_head_visible("","AUTO")
 
       ON ACTION info_list                 #FUN-CB0014
          LET g_b_flag="3"                 #FUN-CB0014
          EXIT DIALOG                      #FUN-CB0014
-         
+
       ON ACTION return
          LET g_b_flag="2"
          EXIT DIALOG
       ON ACTION insert
          LET g_action_choice="insert"
          EXIT DIALOG
- 
+
       ON ACTION query
          LET g_action_choice="query"
          EXIT DIALOG
- 
+
       ON ACTION locale
          CALL cl_dynamic_locale()
          CALL cl_show_fld_cont()                   #No.FUN-550037 hmf
          CALL t700_chspic()
-         CALL t700_set_perlang()   #No.FUN-650108 
- 
+         CALL t700_set_perlang()   #No.FUN-650108
+
          EXIT DIALOG
- 
+
       ON ACTION delete
          LET g_action_choice="delete"
          EXIT DIALOG
- 
+
       ON ACTION modify
          LET g_action_choice="modify"
          EXIT DIALOG
- 
+
       ON ACTION first
          CALL t700_fetch('F')
          CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
@@ -6755,7 +6766,7 @@ FUNCTION t700_bp1(p_ud)  #NO.FUN-650108
          CALL fgl_set_arr_curr(1)  ######add in 040505
            END IF
            ACCEPT DIALOG                   #No.FUN-530067 HCN TEST
- 
+
       ON ACTION previous
          CALL t700_fetch('P')
          CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
@@ -6765,7 +6776,7 @@ FUNCTION t700_bp1(p_ud)  #NO.FUN-650108
          CALL fgl_set_arr_curr(1)  ######add in 040505
            END IF
 	ACCEPT DIALOG                   #No.FUN-530067 HCN TEST
- 
+
       ON ACTION jump
          CALL t700_fetch('/')
          CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
@@ -6775,7 +6786,7 @@ FUNCTION t700_bp1(p_ud)  #NO.FUN-650108
          CALL fgl_set_arr_curr(1)  ######add in 040505
            END IF
 	ACCEPT DIALOG                   #No.FUN-530067 HCN TEST
- 
+
       ON ACTION next
          CALL t700_fetch('N')
          CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
@@ -6785,7 +6796,7 @@ FUNCTION t700_bp1(p_ud)  #NO.FUN-650108
          CALL fgl_set_arr_curr(1)  ######add in 040505
            END IF
 	ACCEPT DIALOG                   #No.FUN-530067 HCN TEST
- 
+
       ON ACTION last
          CALL t700_fetch('L')
          CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
@@ -6795,101 +6806,101 @@ FUNCTION t700_bp1(p_ud)  #NO.FUN-650108
          CALL fgl_set_arr_curr(1)  ######add in 040505
            END IF
 	ACCEPT DIALOG                   #No.FUN-530067 HCN TEST
- 
- 
+
+
       ON ACTION detail
          LET g_action_choice="detail"
 #FUN-B90103--modify--
          LET l_ac = 1
 #FUN-B90103--end
          EXIT DIALOG
- 
+
       ON ACTION output
          LET g_action_choice="output"
          EXIT DIALOG
 ###FUN-B30012 MARK  ----BEGIN----
 #     #No.FUN-A10106--begin
-#     ON ACTION kefa  
+#     ON ACTION kefa
 #        LET g_action_choice="kefa"
 #        EXIT DIALOG
-#     #No.FUN-A10106--end 
+#     #No.FUN-A10106--end
 ###FUN-B30012 MARK  -----END-----
        ON ACTION aic_s_icdqry
           LET g_action_choice="aic_s_icdqry"
           EXIT DIALOG
- 
+
        ON ACTION aic_s_icdin
           LET g_action_choice="aic_s_icdin"
-          EXIT DIALOG     
- 
+          EXIT DIALOG
+
       ON ACTION help
          LET g_action_choice="help"
          EXIT DIALOG
 
 ##FUN-B90103--start
 #FUN-B90103--end
- 
+
       ON ACTION exit
          LET g_action_choice="exit"
          EXIT DIALOG
- 
+
       ON ACTION controlg
          LET g_action_choice="controlg"
          EXIT DIALOG
 #FUN-B90103--start--服飾行業去掉單價和倉庫批修改
-         
-      ON ACTION unit_price                                                                                                          
-         LET g_action_choice="unit_price"                                                                                           
-         EXIT DIALOG 
- 
+
+      ON ACTION unit_price
+         LET g_action_choice="unit_price"
+         EXIT DIALOG
+
 #@    ON ACTION 更改倉儲
       ON ACTION modify_wh_loc
          LET g_action_choice="modify_wh_loc"
          EXIT DIALOG
 #FUN-B90103--end--
- 
+
 #@    ON ACTION 備註
       ON ACTION memo
          LET g_action_choice="memo"
          EXIT DIALOG
- 
+
     #@ON ACTION easyflow送簽
       ON ACTION easyflow_approval         #FUN-550051
          LET g_action_choice = "easyflow_approval"
          EXIT DIALOG
- 
+
 #@    ON ACTION 確認
       ON ACTION confirm
          LET g_action_choice="confirm"
          EXIT DIALOG
- 
+
 #@    ON ACTION 取消確認
       ON ACTION undo_confirm
          LET g_action_choice="undo_confirm"
          EXIT DIALOG
- 
+
 #@    ON ACTION 作廢
       ON ACTION void
          LET g_action_choice="void"
          EXIT DIALOG
-      
+
       #FUN-D20025 ----------STA
       ON ACTION undo_void
          LET g_action_choice="undo_void"
          EXIT DIALOG
       #FUN-D20025 ----------END
-      ON ACTION reback_money                                                                                                  
-         LET g_action_choice = "reback_money"                                                                                
-         EXIT DIALOG                  
+      ON ACTION reback_money
+         LET g_action_choice = "reback_money"
+         EXIT DIALOG
 
-      ON ACTION money_detail                                                                                                        
-         LET g_action_choice = "money_detail"                                                                                       
-         EXIT DIALOG 
+      ON ACTION money_detail
+         LET g_action_choice = "money_detail"
+         EXIT DIALOG
 
       #FUN-BC0081  add begin ---
       ON ACTION ticket_back
          LET g_action_choice = "ticket_back"
-         EXIT DIALOG 
+         EXIT DIALOG
       #FUN-BC0081  add end ---
 
       ON ACTION discount_detail           #FUN-A10110 折價明細
@@ -6900,164 +6911,164 @@ FUNCTION t700_bp1(p_ud)  #NO.FUN-650108
       ON ACTION stock_post
          LET g_action_choice="stock_post"
          EXIT DIALOG
- 
+
 #@    ON ACTION 過帳還原
       ON ACTION undo_post
          LET g_action_choice="undo_post"
          EXIT DIALOG
- 
+
 #@    ON ACTION 換貨訂單產生
       ON ACTION gen_gds_exch_order
          LET g_action_choice="gen_gds_exch_order"
          EXIT DIALOG
- 
+
 #@    ON ACTION 轉待抵帳款
       ON ACTION trsf_to_acct_to_offset
          LET g_action_choice="trsf_to_acct_to_offset"
          EXIT DIALOG
- 
+
 #@    ON ACTION 帳款維護
       ON ACTION maintain_acct
          LET g_action_choice="maintain_acct"
          EXIT DIALOG
- 
+
       #@ON ACTION 簽核狀況
       ON ACTION approval_status
          LET g_action_choice="approval_status"
          EXIT DIALOG
- 
+
       ON ACTION perf
          LET g_action_choice="perf"
          EXIT DIALOG
- 
+
       ON ACTION accept
          LET g_action_choice="detail"
 #FUN-B90103--modify--
-         LET l_ac = ARR_CURR() 
+         LET l_ac = ARR_CURR()
 #FUN-B90103--end
          EXIT DIALOG
- 
+
       ON ACTION cancel
          LET INT_FLAG=FALSE 		#MOD-570244	mars
          LET g_action_choice="exit"
          EXIT DIALOG
- 
+
       ON IDLE g_idle_seconds
          CALL cl_on_idle()
          CONTINUE DIALOG
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION exporttoexcel       #FUN-4B0038
          LET g_action_choice = 'exporttoexcel'
          EXIT DIALOG
- 
+
       AFTER DIALOG
          CONTINUE DIALOG
- 
+
       ON ACTION agree
          LET g_action_choice = 'agree'
          EXIT DIALOG
- 
+
       ON ACTION deny
          LET g_action_choice = 'deny'
          EXIT DIALOG
- 
+
       ON ACTION modify_flow
          LET g_action_choice = 'modify_flow'
          EXIT DIALOG
- 
+
       ON ACTION withdraw
          LET g_action_choice = 'withdraw'
          EXIT DIALOG
- 
+
       ON ACTION org_withdraw
          LET g_action_choice = 'org_withdraw'
          EXIT DIALOG
- 
+
       ON ACTION phrase
          LET g_action_choice = 'phrase'
          EXIT DIALOG
-         
-#FUN-A70132 --begin--         
+
+#FUN-A70132 --begin--
       ON ACTION trans_tax
-         LET g_action_choice="trans_tax"  
-         EXIT DIALOG 
-#FUN-A70132 --end--  
-       
-#FUN-A70132 --begin--         
-      ON ACTION detail_tax
-         LET g_action_choice="detail_tax"  
-         EXIT DIALOG 
-#FUN-A70132 --end--  
- 
-      ON ACTION related_document                #No.FUN-6A0020  相關文件
-         LET g_action_choice="related_document"          
+         LET g_action_choice="trans_tax"
          EXIT DIALOG
- 
+#FUN-A70132 --end--
+
+#FUN-A70132 --begin--
+      ON ACTION detail_tax
+         LET g_action_choice="detail_tax"
+         EXIT DIALOG
+#FUN-A70132 --end--
+
+      ON ACTION related_document                #No.FUN-6A0020  相關文件
+         LET g_action_choice="related_document"
+         EXIT DIALOG
+
       &include "qry_string.4gl"
- 
+
       ON ACTION qry_lot
          LET g_action_choice="qry_lot"
-         EXIT DIALOG                   
-         
+         EXIT DIALOG
+
      #No.18010101--begin--
       ON ACTION transf2scm
          LET g_action_choice="transf2scm"
-         EXIT DIALOG 
-     #No.18010101---end---  
+         EXIT DIALOG
+     #No.18010101---end---
    END DIALOG
-   
+
 #   DISPLAY ARRAY g_ohb1 TO s1_ohb.* ATTRIBUTE(COUNT=g_rec_b,UNBUFFERED) #No.FUN-650108
-#   
+#
 #      BEFORE DISPLAY
 #         CALL cl_navigator_setting( g_curs_index, g_row_count )
 #         LET g_chr='@'
 #         IF g_argv0='2' THEN
 #            CALL cl_set_act_visible("gen_gds_exch_order,trsf_to_acct_to_offset,maintain_acct",FALSE)
 #         END IF
-# 
-#         IF NOT s_industry("icd") THEN                                                                                              
-#            CALL cl_set_act_visible("aic_s_icdqry",FALSE)                                                                              
-#            CALL cl_set_act_visible("aic_s_icdin",FALSE)                                                                                 
-#         END IF                                                                                                                     
-# 
+#
+#         IF NOT s_industry("icd") THEN
+#            CALL cl_set_act_visible("aic_s_icdqry",FALSE)
+#            CALL cl_set_act_visible("aic_s_icdin",FALSE)
+#         END IF
+#
 #      BEFORE ROW
 #         LET l_ac = ARR_CURR()
 #         CALL cl_show_fld_cont()                   #No.FUN-550037 hmf
-# 
-#   ON ACTION CONTROLS                                                                                                               
-#      LET g_action_choice = 'controls'                                                                                              
-#      CALL cl_set_head_visible("","AUTO")                                                                                           
-# 
+#
+#   ON ACTION CONTROLS
+#      LET g_action_choice = 'controls'
+#      CALL cl_set_head_visible("","AUTO")
+#
 #      ON ACTION return
 #         LET g_b_flag="2"
 #         EXIT DISPLAY
 #      ON ACTION insert
 #         LET g_action_choice="insert"
 #         EXIT DISPLAY
-# 
+#
 #      ON ACTION query
 #         LET g_action_choice="query"
 #         EXIT DISPLAY
-# 
+#
 #      ON ACTION locale
 #         CALL cl_dynamic_locale()
 #         CALL cl_show_fld_cont()                   #No.FUN-550037 hmf
 #         CALL t700_chspic()
-#         CALL t700_set_perlang()   #No.FUN-650108 
-# 
+#         CALL t700_set_perlang()   #No.FUN-650108
+#
 #         EXIT DISPLAY
-# 
+#
 #      ON ACTION delete
 #         LET g_action_choice="delete"
 #         EXIT DISPLAY
-# 
+#
 #      ON ACTION modify
 #         LET g_action_choice="modify"
 #         EXIT DISPLAY
-# 
+#
 #      ON ACTION first
 #         CALL t700_fetch('F')
 #         CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
@@ -7065,7 +7076,7 @@ FUNCTION t700_bp1(p_ud)  #NO.FUN-650108
 #         CALL fgl_set_arr_curr(1)  ######add in 040505
 #           END IF
 #           ACCEPT DISPLAY                   #No.FUN-530067 HCN TEST
-# 
+#
 #      ON ACTION previous
 #         CALL t700_fetch('P')
 #         CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
@@ -7073,7 +7084,7 @@ FUNCTION t700_bp1(p_ud)  #NO.FUN-650108
 #         CALL fgl_set_arr_curr(1)  ######add in 040505
 #           END IF
 #	ACCEPT DISPLAY                   #No.FUN-530067 HCN TEST
-# 
+#
 #      ON ACTION jump
 #         CALL t700_fetch('/')
 #         CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
@@ -7081,7 +7092,7 @@ FUNCTION t700_bp1(p_ud)  #NO.FUN-650108
 #         CALL fgl_set_arr_curr(1)  ######add in 040505
 #           END IF
 #	ACCEPT DISPLAY                   #No.FUN-530067 HCN TEST
-# 
+#
 #      ON ACTION next
 #         CALL t700_fetch('N')
 #         CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
@@ -7089,7 +7100,7 @@ FUNCTION t700_bp1(p_ud)  #NO.FUN-650108
 #         CALL fgl_set_arr_curr(1)  ######add in 040505
 #           END IF
 #	ACCEPT DISPLAY                   #No.FUN-530067 HCN TEST
-# 
+#
 #      ON ACTION last
 #         CALL t700_fetch('L')
 #         CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
@@ -7097,84 +7108,84 @@ FUNCTION t700_bp1(p_ud)  #NO.FUN-650108
 #         CALL fgl_set_arr_curr(1)  ######add in 040505
 #           END IF
 #	ACCEPT DISPLAY                   #No.FUN-530067 HCN TEST
-# 
-# 
+#
+#
 #      ON ACTION detail
 #         LET g_action_choice="detail"
 #         LET l_ac = 1
 #         EXIT DISPLAY
-# 
+#
 #      ON ACTION output
 #         LET g_action_choice="output"
 #         EXIT DISPLAY
 ####FUN-B30012 MARK  ----BEGIN----
 ##     #No.FUN-A10106--begin
-##     ON ACTION kefa  
+##     ON ACTION kefa
 ##        LET g_action_choice="kefa"
 ##        EXIT DISPLAY
-##     #No.FUN-A10106--end 
+##     #No.FUN-A10106--end
 ####FUN-B30012 MARK  -----END-----
 #       ON ACTION aic_s_icdqry
 #          LET g_action_choice="aic_s_icdqry"
 #          EXIT DISPLAY
-# 
+#
 #       ON ACTION aic_s_icdin
 #          LET g_action_choice="aic_s_icdin"
-#          EXIT DISPLAY     
-# 
+#          EXIT DISPLAY
+#
 #      ON ACTION help
 #         LET g_action_choice="help"
 #         EXIT DISPLAY
-# 
+#
 #      ON ACTION exit
 #         LET g_action_choice="exit"
 #         EXIT DISPLAY
-# 
+#
 #      ON ACTION controlg
 #         LET g_action_choice="controlg"
 #         EXIT DISPLAY
-#         
-#      ON ACTION unit_price                                                                                                          
-#         LET g_action_choice="unit_price"                                                                                           
-#         EXIT DISPLAY 
-# 
+#
+#      ON ACTION unit_price
+#         LET g_action_choice="unit_price"
+#         EXIT DISPLAY
+#
 ##@    ON ACTION 更改倉儲
 #      ON ACTION modify_wh_loc
 #         LET g_action_choice="modify_wh_loc"
 #         EXIT DISPLAY
-# 
+#
 ##@    ON ACTION 備註
 #      ON ACTION memo
 #         LET g_action_choice="memo"
 #         EXIT DISPLAY
-# 
+#
 #    #@ON ACTION easyflow送簽
 #      ON ACTION easyflow_approval         #FUN-550051
 #         LET g_action_choice = "easyflow_approval"
 #         EXIT DISPLAY
-# 
+#
 ##@    ON ACTION 確認
 #      ON ACTION confirm
 #         LET g_action_choice="confirm"
 #         EXIT DISPLAY
-# 
+#
 ##@    ON ACTION 取消確認
 #      ON ACTION undo_confirm
 #         LET g_action_choice="undo_confirm"
 #         EXIT DISPLAY
-# 
+#
 ##@    ON ACTION 作廢
 #      ON ACTION void
 #         LET g_action_choice="void"
 #         EXIT DISPLAY
 #
-#      ON ACTION reback_money                                                                                                  
-#         LET g_action_choice = "reback_money"                                                                                
-#         EXIT DISPLAY                  
+#      ON ACTION reback_money
+#         LET g_action_choice = "reback_money"
+#         EXIT DISPLAY
 #
-#      ON ACTION money_detail                                                                                                        
-#         LET g_action_choice = "money_detail"                                                                                       
-#         EXIT DISPLAY 
+#      ON ACTION money_detail
+#         LET g_action_choice = "money_detail"
+#         EXIT DISPLAY
 #
 #      ON ACTION discount_detail           #FUN-A10110 折價明細
 #         LET g_action_choice="discount_detail"
@@ -7184,102 +7195,102 @@ FUNCTION t700_bp1(p_ud)  #NO.FUN-650108
 #      ON ACTION stock_post
 #         LET g_action_choice="stock_post"
 #         EXIT DISPLAY
-# 
+#
 ##@    ON ACTION 過帳還原
 #      ON ACTION undo_post
 #         LET g_action_choice="undo_post"
 #         EXIT DISPLAY
-# 
+#
 ##@    ON ACTION 換貨訂單產生
 #      ON ACTION gen_gds_exch_order
 #         LET g_action_choice="gen_gds_exch_order"
 #         EXIT DISPLAY
-# 
+#
 ##@    ON ACTION 轉待抵帳款
 #      ON ACTION trsf_to_acct_to_offset
 #         LET g_action_choice="trsf_to_acct_to_offset"
 #         EXIT DISPLAY
-# 
+#
 ##@    ON ACTION 帳款維護
 #      ON ACTION maintain_acct
 #         LET g_action_choice="maintain_acct"
 #         EXIT DISPLAY
-# 
+#
 #      #@ON ACTION 簽核狀況
 #      ON ACTION approval_status
 #         LET g_action_choice="approval_status"
 #         EXIT DISPLAY
-# 
+#
 #      ON ACTION perf
 #         LET g_action_choice="perf"
 #         EXIT DISPLAY
-# 
+#
 #      ON ACTION accept
 #         LET g_action_choice="detail"
 #         LET l_ac = ARR_CURR()
 #         EXIT DISPLAY
-# 
+#
 #      ON ACTION cancel
 #         LET INT_FLAG=FALSE 		#MOD-570244	mars
 #         LET g_action_choice="exit"
 #         EXIT DISPLAY
-# 
+#
 #      ON IDLE g_idle_seconds
 #         CALL cl_on_idle()
 #         CONTINUE DISPLAY
-# 
+#
 #      ON ACTION about         #MOD-4C0121
 #         CALL cl_about()      #MOD-4C0121
-# 
+#
 #      ON ACTION exporttoexcel       #FUN-4B0038
 #         LET g_action_choice = 'exporttoexcel'
 #         EXIT DISPLAY
-# 
+#
 #      AFTER DISPLAY
 #         CONTINUE DISPLAY
-# 
+#
 #      ON ACTION agree
 #         LET g_action_choice = 'agree'
 #         EXIT DISPLAY
-# 
+#
 #      ON ACTION deny
 #         LET g_action_choice = 'deny'
 #         EXIT DISPLAY
-# 
+#
 #      ON ACTION modify_flow
 #         LET g_action_choice = 'modify_flow'
 #         EXIT DISPLAY
-# 
+#
 #      ON ACTION withdraw
 #         LET g_action_choice = 'withdraw'
 #         EXIT DISPLAY
-# 
+#
 #      ON ACTION org_withdraw
 #         LET g_action_choice = 'org_withdraw'
 #         EXIT DISPLAY
-# 
+#
 #      ON ACTION phrase
 #         LET g_action_choice = 'phrase'
 #         EXIT DISPLAY
-#         
-##FUN-A70132 --begin--         
+#
+##FUN-A70132 --begin--
 #      ON ACTION trans_tax
-#         LET g_action_choice="trans_tax"  
-#         EXIT DISPLAY 
-##FUN-A70132 --end--  
-#       
-##FUN-A70132 --begin--         
-#      ON ACTION detail_tax
-#         LET g_action_choice="detail_tax"  
-#         EXIT DISPLAY 
-##FUN-A70132 --end--  
-# 
-#      ON ACTION related_document                #No.FUN-6A0020  相關文件
-#         LET g_action_choice="related_document"          
+#         LET g_action_choice="trans_tax"
 #         EXIT DISPLAY
-# 
+##FUN-A70132 --end--
+#
+##FUN-A70132 --begin--
+#      ON ACTION detail_tax
+#         LET g_action_choice="detail_tax"
+#         EXIT DISPLAY
+##FUN-A70132 --end--
+#
+#      ON ACTION related_document                #No.FUN-6A0020  相關文件
+#         LET g_action_choice="related_document"
+#         EXIT DISPLAY
+#
 #      &include "qry_string.4gl"
-# 
+#
 #      ON ACTION qry_lot
 #         LET g_action_choice="qry_lot"
 #         EXIT DISPLAY
@@ -7295,33 +7306,33 @@ FUNCTION t700_bp1(p_ud)  #NO.FUN-650108
    #FUN-B30170 add -----------begin-------------
    CALL cl_set_act_visible("accept,cancel", TRUE)
    CALL t700_b_fill2(g_wc3)  #No.TQC-690065
- 
+
 END FUNCTION
- 
+
 FUNCTION t700_bp2(p_ud)
    DEFINE   p_ud   LIKE type_file.chr1          #No.FUN-680137 VARCHAR(1)
- 
+
    IF p_ud <> "G" OR g_action_choice = "detail" THEN
       RETURN
    END IF
- 
+
    LET g_action_choice = " "
- 
+
    CALL cl_set_act_visible("accept,cancel", FALSE)
    #FUN-B30170 add -----------begin-------------
    DIALOG ATTRIBUTE(UNBUFFERED)
       DISPLAY ARRAY g_ohb2 TO s2_ohb.* ATTRIBUTE(COUNT=g_rec_b2)
- 
+
       BEFORE DISPLAY
          CALL cl_navigator_setting( g_curs_index, g_row_count )
          LET g_chr='@'
          IF g_argv0='2' THEN
             CALL cl_set_act_visible("gen_gds_exch_order,trsf_to_acct_to_offset,maintain_acct",FALSE)
          END IF
-         #IF NOT s_industry("icd") THEN   #FUN-B70061 mark                                                                                              
-            CALL cl_set_act_visible("aic_s_icdqry",FALSE)                                                                              
-            CALL cl_set_act_visible("aic_s_icdin",FALSE)                                                                                 
-         #END IF   #FUN-B70061 mark                                                                                                                     
+         #IF NOT s_industry("icd") THEN   #FUN-B70061 mark
+            CALL cl_set_act_visible("aic_s_icdqry",FALSE)
+            CALL cl_set_act_visible("aic_s_icdin",FALSE)
+         #END IF   #FUN-B70061 mark
       BEFORE ROW
          LET l_ac = ARR_CURR()
          CALL cl_show_fld_cont()
@@ -7341,7 +7352,7 @@ FUNCTION t700_bp2(p_ud)
       ON ACTION info_list                 #FUN-CB0014
          LET g_b_flag="3"                 #FUN-CB0014
          EXIT DIALOG                      #FUN-CB0014
-         
+
       ON ACTION reback
          LET g_b_flag="1"
          EXIT DIALOG
@@ -7351,30 +7362,30 @@ FUNCTION t700_bp2(p_ud)
       ON ACTION query
          LET g_action_choice="query"
          EXIT DIALOG
- 
+
       ON ACTION locale
          CALL cl_dynamic_locale()
           CALL cl_show_fld_cont()                   #No.FUN-550037 hmf
          CALL t700_chspic()
-         CALL t700_set_perlang()      
- 
+         CALL t700_set_perlang()
+
          EXIT DIALOG
- 
+
       ON ACTION delete
          LET g_action_choice="delete"
          EXIT DIALOG
       ON ACTION modify
          LET g_action_choice="modify"
          EXIT DIALOG
- 
-      ON ACTION first 
+
+      ON ACTION first
          CALL t700_fetch('F')
          CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
            IF g_rec_b2 != 0 THEN
          CALL fgl_set_arr_curr(1)  ######add in 040505
            END IF
            ACCEPT DIALOG                   #No.FUN-530067 HCN TEST
-                              
+
       ON ACTION previous
          CALL t700_fetch('P')
          CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
@@ -7382,15 +7393,15 @@ FUNCTION t700_bp2(p_ud)
          CALL fgl_set_arr_curr(1)  ######add in 040505
            END IF
 	ACCEPT DIALOG                   #No.FUN-530067 HCN TEST
-                              
-      ON ACTION jump 
+
+      ON ACTION jump
          CALL t700_fetch('/')
          CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
            IF g_rec_b2 != 0 THEN
          CALL fgl_set_arr_curr(1)  ######add in 040505
            END IF
 	ACCEPT DIALOG                   #No.FUN-530067 HCN TEST
-                              
+
       ON ACTION next
          CALL t700_fetch('N')
          CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
@@ -7398,16 +7409,16 @@ FUNCTION t700_bp2(p_ud)
          CALL fgl_set_arr_curr(1)  ######add in 040505
            END IF
 	ACCEPT DIALOG                   #No.FUN-530067 HCN TEST
-                              
-      ON ACTION last 
+
+      ON ACTION last
          CALL t700_fetch('L')
          CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
            IF g_rec_b2 != 0 THEN
          CALL fgl_set_arr_curr(1)  ######add in 040505
            END IF
 	ACCEPT DIALOG                   #No.FUN-530067 HCN TEST
- 
- 
+
+
       ON ACTION detail
          LET g_action_choice="detail"
          LET l_ac = 1
@@ -7421,16 +7432,16 @@ FUNCTION t700_bp2(p_ud)
       ON ACTION exit
          LET g_action_choice="exit"
          EXIT DIALOG
- 
-      ON ACTION controlg 
+
+      ON ACTION controlg
          LET g_action_choice="controlg"
          EXIT DIALOG
 ###FUN-B30012 MARK  ----BEGIN----
 #     #No.FUN-A10106--begin
-#     ON ACTION kefa  
+#     ON ACTION kefa
 #        LET g_action_choice="kefa"
 #        EXIT DIALOG
-#     #No.FUN-A10106--end 
+#     #No.FUN-A10106--end
 ###FUN-B30012 MARK  -----END-----
 #@    ON ACTION 更改倉儲
       ON ACTION modify_wh_loc
@@ -7488,113 +7499,113 @@ FUNCTION t700_bp2(p_ud)
       ON ACTION perf
          LET g_action_choice="perf"
          EXIT DIALOG
- 
+
       ON ACTION aic_s_icdqry
          LET g_action_choice="aic_s_icdqry"
          EXIT DIALOG
- 
+
       ON ACTION aic_s_icdin
          LET g_action_choice="aic_s_icdin"
-         EXIT DIALOG  
- 
+         EXIT DIALOG
+
       ON ACTION accept
          LET g_action_choice="detail"
          LET l_ac = ARR_CURR()
          EXIT DIALOG
- 
+
       ON ACTION cancel
          LET INT_FLAG=FALSE 		#MOD-570244	mars
          LET g_action_choice="exit"
          EXIT DIALOG
- 
+
       ON IDLE g_idle_seconds
          CALL cl_on_idle()
          CONTINUE DIALOG
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION exporttoexcel       #FUN-4B0038
          LET g_action_choice = 'exporttoexcel'
          EXIT DIALOG
- 
+
       AFTER DIALOG
          CONTINUE DIALOG
- 
+
       ON ACTION agree
          LET g_action_choice = 'agree'
          EXIT DIALOG
- 
+
       ON ACTION deny
          LET g_action_choice = 'deny'
          EXIT DIALOG
- 
+
       ON ACTION modify_flow
          LET g_action_choice = 'modify_flow'
          EXIT DIALOG
- 
+
       ON ACTION withdraw
          LET g_action_choice = 'withdraw'
          EXIT DIALOG
- 
+
       ON ACTION org_withdraw
          LET g_action_choice = 'org_withdraw'
          EXIT DIALOG
- 
+
       ON ACTION phrase
          LET g_action_choice = 'phrase'
          EXIT DIALOG
- 
+
    ON ACTION controls
       LET g_action_choice = 'controls'
       CALL cl_set_head_visible("","AUTO")
 
-#FUN-A70132 --begin--      
+#FUN-A70132 --begin--
       ON ACTION trans_tax
          LET g_action_choice = "trans_tax"
-         EXIT DIALOG  
-#FUN-A70132 --end--     
+         EXIT DIALOG
+#FUN-A70132 --end--
 
-#FUN-A70132 --begin--      
+#FUN-A70132 --begin--
       ON ACTION detail_tax
          LET g_action_choice = "detail_tax"
-         EXIT DIALOG  
-#FUN-A70132 --end--       
-   
-      ON ACTION related_document                #No.FUN-6A0020  相關文件
-         LET g_action_choice="related_document"          
          EXIT DIALOG
- 
+#FUN-A70132 --end--
+
+      ON ACTION related_document                #No.FUN-6A0020  相關文件
+         LET g_action_choice="related_document"
+         EXIT DIALOG
+
       &include "qry_string.4gl"
- 
+
       ON ACTION qry_lot
          LET g_action_choice="qry_lot"
-         EXIT DIALOG                      
-         
+         EXIT DIALOG
+
      #No.18010101--begin--
       ON ACTION transf2scm
          LET g_action_choice="transf2scm"
-         EXIT DIALOG 
-     #No.18010101---end--- 
-   END DIALOG 
+         EXIT DIALOG
+     #No.18010101---end---
+   END DIALOG
 #   DISPLAY ARRAY g_ohb2 TO s2_ohb.* ATTRIBUTE(COUNT=g_rec_b2,UNBUFFERED)
-# 
+#
 #      BEFORE DISPLAY
 #         CALL cl_navigator_setting( g_curs_index, g_row_count )
 #         LET g_chr='@'
 #         IF g_argv0='2' THEN
 #            CALL cl_set_act_visible("gen_gds_exch_order,trsf_to_acct_to_offset,maintain_acct",FALSE)
 #         END IF
-# 
-#         IF NOT s_industry("icd") THEN                                                                                              
-#            CALL cl_set_act_visible("aic_s_icdqry",FALSE)                                                                              
-#            CALL cl_set_act_visible("aic_s_icdin",FALSE)                                                                                 
-#         END IF                                                                                                                     
-# 
+#
+#         IF NOT s_industry("icd") THEN
+#            CALL cl_set_act_visible("aic_s_icdqry",FALSE)
+#            CALL cl_set_act_visible("aic_s_icdin",FALSE)
+#         END IF
+#
 #      BEFORE ROW
 #         LET l_ac = ARR_CURR()
 #      CALL cl_show_fld_cont()                   #No.FUN-550037 hmf
-# 
+#
 #      ON ACTION reback
 #         LET g_b_flag="1"
 #         EXIT DISPLAY
@@ -7604,30 +7615,30 @@ FUNCTION t700_bp2(p_ud)
 #      ON ACTION query
 #         LET g_action_choice="query"
 #         EXIT DISPLAY
-# 
+#
 #      ON ACTION locale
 #         CALL cl_dynamic_locale()
 #          CALL cl_show_fld_cont()                   #No.FUN-550037 hmf
 #         CALL t700_chspic()
-#         CALL t700_set_perlang()      
-# 
+#         CALL t700_set_perlang()
+#
 #         EXIT DISPLAY
-# 
+#
 #      ON ACTION delete
 #         LET g_action_choice="delete"
 #         EXIT DISPLAY
 #      ON ACTION modify
 #         LET g_action_choice="modify"
 #         EXIT DISPLAY
-# 
-#      ON ACTION first 
+#
+#      ON ACTION first
 #         CALL t700_fetch('F')
 #         CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
 #           IF g_rec_b2 != 0 THEN
 #         CALL fgl_set_arr_curr(1)  ######add in 040505
 #           END IF
 #           ACCEPT DISPLAY                   #No.FUN-530067 HCN TEST
-#                              
+#
 #      ON ACTION previous
 #         CALL t700_fetch('P')
 #         CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
@@ -7635,15 +7646,15 @@ FUNCTION t700_bp2(p_ud)
 #         CALL fgl_set_arr_curr(1)  ######add in 040505
 #           END IF
 #	ACCEPT DISPLAY                   #No.FUN-530067 HCN TEST
-#                              
-#      ON ACTION jump 
+#
+#      ON ACTION jump
 #         CALL t700_fetch('/')
 #         CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
 #           IF g_rec_b2 != 0 THEN
 #         CALL fgl_set_arr_curr(1)  ######add in 040505
 #           END IF
 #	ACCEPT DISPLAY                   #No.FUN-530067 HCN TEST
-#                              
+#
 #      ON ACTION next
 #         CALL t700_fetch('N')
 #         CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
@@ -7651,16 +7662,16 @@ FUNCTION t700_bp2(p_ud)
 #         CALL fgl_set_arr_curr(1)  ######add in 040505
 #           END IF
 #	ACCEPT DISPLAY                   #No.FUN-530067 HCN TEST
-#                              
-#      ON ACTION last 
+#
+#      ON ACTION last
 #         CALL t700_fetch('L')
 #         CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
 #           IF g_rec_b2 != 0 THEN
 #         CALL fgl_set_arr_curr(1)  ######add in 040505
 #           END IF
 #	ACCEPT DISPLAY                   #No.FUN-530067 HCN TEST
-# 
-# 
+#
+#
 #      ON ACTION detail
 #         LET g_action_choice="detail"
 #         LET l_ac = 1
@@ -7674,16 +7685,16 @@ FUNCTION t700_bp2(p_ud)
 #      ON ACTION exit
 #         LET g_action_choice="exit"
 #         EXIT DISPLAY
-# 
-#      ON ACTION controlg 
+#
+#      ON ACTION controlg
 #         LET g_action_choice="controlg"
 #         EXIT DISPLAY
 ####FUN-B30012 MARK  ----BEGIN----
 ##     #No.FUN-A10106--begin
-##     ON ACTION kefa  
+##     ON ACTION kefa
 ##        LET g_action_choice="kefa"
 ##        EXIT DISPLAY
-##     #No.FUN-A10106--end 
+##     #No.FUN-A10106--end
 ####FUN-B30012 MARK  -----END-----
 ##@    ON ACTION 更改倉儲
 #      ON ACTION modify_wh_loc
@@ -7736,147 +7747,147 @@ FUNCTION t700_bp2(p_ud)
 #      ON ACTION perf
 #         LET g_action_choice="perf"
 #         EXIT DISPLAY
-# 
+#
 #      ON ACTION aic_s_icdqry
 #         LET g_action_choice="aic_s_icdqry"
 #         EXIT DISPLAY
-# 
+#
 #      ON ACTION aic_s_icdin
 #         LET g_action_choice="aic_s_icdin"
-#         EXIT DISPLAY  
-# 
+#         EXIT DISPLAY
+#
 #      ON ACTION accept
 #         LET g_action_choice="detail"
 #         LET l_ac = ARR_CURR()
 #         EXIT DISPLAY
-# 
+#
 #      ON ACTION cancel
 #         LET INT_FLAG=FALSE 		#MOD-570244	mars
 #         LET g_action_choice="exit"
 #         EXIT DISPLAY
-# 
+#
 #      ON IDLE g_idle_seconds
 #         CALL cl_on_idle()
 #         CONTINUE DISPLAY
-# 
+#
 #      ON ACTION about         #MOD-4C0121
 #         CALL cl_about()      #MOD-4C0121
-# 
+#
 #      ON ACTION exporttoexcel       #FUN-4B0038
 #         LET g_action_choice = 'exporttoexcel'
 #         EXIT DISPLAY
-# 
+#
 #      AFTER DISPLAY
 #         CONTINUE DISPLAY
-# 
+#
 #      ON ACTION agree
 #         LET g_action_choice = 'agree'
 #         EXIT DISPLAY
-# 
+#
 #      ON ACTION deny
 #         LET g_action_choice = 'deny'
 #         EXIT DISPLAY
-# 
+#
 #      ON ACTION modify_flow
 #         LET g_action_choice = 'modify_flow'
 #         EXIT DISPLAY
-# 
+#
 #      ON ACTION withdraw
 #         LET g_action_choice = 'withdraw'
 #         EXIT DISPLAY
-# 
+#
 #      ON ACTION org_withdraw
 #         LET g_action_choice = 'org_withdraw'
 #         EXIT DISPLAY
-# 
+#
 #      ON ACTION phrase
 #         LET g_action_choice = 'phrase'
 #         EXIT DISPLAY
-# 
+#
 #   ON ACTION controls
 #      LET g_action_choice = 'controls'
 #      CALL cl_set_head_visible("","AUTO")
 #
-##FUN-A70132 --begin--      
+##FUN-A70132 --begin--
 #      ON ACTION trans_tax
 #         LET g_action_choice = "trans_tax"
-#         EXIT DISPLAY  
-##FUN-A70132 --end--     
+#         EXIT DISPLAY
+##FUN-A70132 --end--
 #
-##FUN-A70132 --begin--      
+##FUN-A70132 --begin--
 #      ON ACTION detail_tax
 #         LET g_action_choice = "detail_tax"
-#         EXIT DISPLAY  
-##FUN-A70132 --end--       
-#   
-#      ON ACTION related_document                #No.FUN-6A0020  相關文件
-#         LET g_action_choice="related_document"          
 #         EXIT DISPLAY
-# 
+##FUN-A70132 --end--
+#
+#      ON ACTION related_document                #No.FUN-6A0020  相關文件
+#         LET g_action_choice="related_document"
+#         EXIT DISPLAY
+#
 #      &include "qry_string.4gl"
-# 
+#
 #      ON ACTION qry_lot
 #         LET g_action_choice="qry_lot"
 #         EXIT DISPLAY
-# 
-#   END DISPLAY     
+#
+#   END DISPLAY
 #FUN-B30170 add -end---------------------------
    CALL cl_set_act_visible("accept,cancel", TRUE)
    CALL t700_b_fill(g_wc2,g_wc4)   #No.TQC-690065   #FUN-B90103-新增參數用於服飾行業子料件關聯
- 
+
 END FUNCTION
- 
+
 FUNCTION t700_perf()
    IF g_oha.oha55 = '9' OR g_oha.ohaconf = 'X' THEN
       CALL cl_err('','atm-264',0)
       RETURN
    END IF
- 
-   IF g_oha.oha1005 = 'Y' THEN 
+
+   IF g_oha.oha1005 = 'Y' THEN
      IF NOT cl_confirm('atm-037') THEN RETURN END IF
      LET g_oha.oha1005 = 'N'
-   ELSE 
+   ELSE
      IF NOT cl_confirm('atm-036') THEN RETURN END IF
      LET g_oha.oha1005 = 'Y'
-   END IF 
+   END IF
    BEGIN WORK    #TQC-930155 add
-   
-   UPDATE  oha_file 
+
+   UPDATE  oha_file
      SET oha1005 = g_oha.oha1005
      WHERE oha01=g_oha.oha01
-  
+
    IF STATUS OR SQLCA.SQLCODE THEN
        CALL cl_err3("upd","oha_file",g_oha.oha01,"",SQLCA.sqlcode,"","update oha:",1)  #No.FUN-650108
        ROLLBACK WORK RETURN
    END IF
    COMMIT WORK    #TQC-930155
    DISPLAY BY NAME g_oha.oha1005
-END FUNCTION 
- 
+END FUNCTION
+
 FUNCTION t700_chk_oha1001()
    IF NOT cl_null(g_oha.oha1001) THEN
-      SELECT occ02 INTO g_buf FROM occ_file 
+      SELECT occ02 INTO g_buf FROM occ_file
        WHERE occ01=g_oha.oha1001
          AND occacti='Y'
          AND occ1004='1'       #No.FUN-690025
-         AND occ06 IN ('1','3')           
-      IF STATUS THEN 
+         AND occ06 IN ('1','3')
+      IF STATUS THEN
          CALL cl_err3("sel","occ_file",g_oha.oha1001,"",STATUS,"","select occ",1)  #No.FUN-650108
          RETURN FALSE
       END IF
       DISPLAY g_buf TO occ02b
-   END IF 
+   END IF
    RETURN TRUE
 END FUNCTION
- 
+
 FUNCTION t700_chk_oha1011()
    IF NOT cl_null(g_oha.oha1011) THEN
-      SELECT occ02 INTO g_buf FROM occ_file 
+      SELECT occ02 INTO g_buf FROM occ_file
        WHERE occ01=g_oha.oha1011
          AND occacti='Y'
          AND occ1004='1'   #No.FUN-690025
-         AND occ06 IN ('1','4')      
-      IF STATUS THEN 
+         AND occ06 IN ('1','4')
+      IF STATUS THEN
          CALL cl_err3("sel","occ_file",g_oha.oha1011,"",STATUS,"","select occ",1)  #No.FUN-650108
          RETURN FALSE
       END IF
@@ -7884,35 +7895,35 @@ FUNCTION t700_chk_oha1011()
    END IF
    RETURN TRUE
 END FUNCTION
- 
+
 FUNCTION t700_chk_oha1010()
    IF NOT cl_null(g_oha.oha1010) THEN
-      SELECT tqb02 INTO g_buf FROM tqb_file 
+      SELECT tqb02 INTO g_buf FROM tqb_file
        WHERE tqb01=g_oha.oha1010
          AND tqbacti='Y'
-      IF STATUS THEN 
+      IF STATUS THEN
          CALL cl_err3("sel","tqb_file",g_oha.oha1010,"",STATUS,"","select tqb",1)  #No.FUN-650108
          RETURN FALSE
       END IF
       DISPLAY g_buf TO tqb02
-   END IF 
+   END IF
    RETURN TRUE
 END FUNCTION
- 
+
 FUNCTION t700_chk_oha1003()
    IF NOT cl_null(g_oha.oha1003) THEN
-      SELECT tqb02 INTO g_buf FROM tqb_file 
+      SELECT tqb02 INTO g_buf FROM tqb_file
        WHERE tqb01=g_oha.oha1003
          AND tqbacti='Y'
-      IF STATUS THEN 
+      IF STATUS THEN
          CALL cl_err3("sel","tqb_file",g_oha.oha1003,"",STATUS,"","select tqb",1)  #No.FUN-650108
          RETURN FALSE
       END IF
       DISPLAY g_buf TO tqb02a
-   END IF 
+   END IF
    RETURN TRUE
 END FUNCTION
- 
+
 FUNCTION t700_chk_oha1009()
    IF NOT cl_null(g_oha.oha1009) THEN
       SELECT tqa02 INTO g_buf FROM tqa_file
@@ -7927,42 +7938,42 @@ FUNCTION t700_chk_oha1009()
    END IF
    RETURN TRUE
 END FUNCTION
- 
+
 FUNCTION t700_chk_oha1002()
    IF NOT cl_null(g_oha.oha1002) THEN
-      SELECT tqa02 INTO g_buf FROM tqa_file 
+      SELECT tqa02 INTO g_buf FROM tqa_file
        WHERE tqa01=g_oha.oha1002
          AND tqaacti='Y'
          AND tqa03='20'
-      IF STATUS THEN 
+      IF STATUS THEN
          CALL cl_err3("sel","tqa_file",g_oha.oha1002,"",STATUS,"","select tqb",1)  #No.FUN-650108
          RETURN FALSE
       END IF
       DISPLAY g_buf TO tqa02a
-   END IF 
+   END IF
    RETURN TRUE
 END FUNCTION
- 
+
 FUNCTION t700_chk_oha1014()
    IF NOT cl_null(g_oha.oha1014) THEN
       IF g_oha.oha1014 = g_oha.oha03 THEN   #
          CALL cl_err('oha1004','atm-252',0)
          RETURN FALSE
       END IF
-      SELECT occ02 INTO g_buf FROM occ_file 
+      SELECT occ02 INTO g_buf FROM occ_file
        WHERE occ01=g_oha.oha1014
          AND occacti='Y'
-         AND occ1004='1'   #No.FUN-690025             
+         AND occ1004='1'   #No.FUN-690025
          AND occ06='1'
-      IF STATUS THEN 
+      IF STATUS THEN
          CALL cl_err3("sel","occ_file",g_oha.oha1014,"",STATUS,"","select tqb",1)  #No.FUN-650108
          RETURN FALSE
       END IF
-      DISPLAY g_buf TO occ02d               
-   END IF 
+      DISPLAY g_buf TO occ02d
+   END IF
    RETURN TRUE
 END FUNCTION
- 
+
 FUNCTION t700_chk_oha1004()
    IF NOT cl_null(g_oha.oha1004) THEN
       CALL t700_1004('d')
@@ -7973,78 +7984,78 @@ FUNCTION t700_chk_oha1004()
    END IF
    RETURN TRUE
 END FUNCTION
- 
+
 FUNCTION t700_oha_sum()
    DEFINE   l_cnt   LIKE type_file.num5,          #No.FUN-680137 SMALLINT
             l_sql   STRING,  #NO.TQC-630166
             l_tax   LIKE type_file.num20_6,       #No.FUN-680137 DEC(20,6)
             l_tax1  LIKE type_file.num20_6,       #No.FUN-680137 DEC(20,6)
-            l_tax2  LIKE type_file.num20_6,       #No.FUN-680137 DEC(20,6)    
-            l_tax3  LIKE type_file.num20_6,       #No.FUN-680137 DEC(20,6)    
+            l_tax2  LIKE type_file.num20_6,       #No.FUN-680137 DEC(20,6)
+            l_tax3  LIKE type_file.num20_6,       #No.FUN-680137 DEC(20,6)
             l_sum1  LIKE type_file.num20_6,       #No.FUN-680137 DEC(20,6)
-            l_sum2  LIKE type_file.num20_6,       #No.FUN-680137 DEC(20,6)    
-            l_sum2_t LIKE type_file.num20_6,       #No.FUN-680137 DEC(20,6)    
-            l_sum   LIKE ohb_file.ohb14,  
+            l_sum2  LIKE type_file.num20_6,       #No.FUN-680137 DEC(20,6)
+            l_sum2_t LIKE type_file.num20_6,       #No.FUN-680137 DEC(20,6)
+            l_sum   LIKE ohb_file.ohb14,
             l_sum_t LIKE ohb_file.ohb14t
-   SELECT azi03,azi04 INTO t_azi03,t_azi04      #No.CHI-6A0004   
+   SELECT azi03,azi04 INTO t_azi03,t_azi04      #No.CHI-6A0004
         FROM azi_file WHERE azi01=g_oha.oha23
-        
+
    LET l_sum = 0
    LET l_sum_t = 0
-   LET l_tax = 0    
+   LET l_tax = 0
    SELECT sum(ohb14),sum(ohb14t) INTO l_sum,l_sum_t FROM ohb_file
-    WHERE ohb01 = g_oha.oha01 AND ohb1005='1'    
-   IF l_sum IS NUll THEN let  l_sum=0 END IF 
-   IF l_sum_t IS NUll THEN let  l_sum_t=0 END IF 
- 
+    WHERE ohb01 = g_oha.oha01 AND ohb1005='1'
+   IF l_sum IS NUll THEN let  l_sum=0 END IF
+   IF l_sum_t IS NUll THEN let  l_sum_t=0 END IF
+
    CALL cl_numfor(l_sum,8,t_azi04) RETURNING l_sum     #No.CHI-6A0004
    CALL cl_numfor(l_sum_t,8,t_azi04) RETURNING l_sum_t #No.CHI-6A0004
 
    IF g_oha.oha09 = '2' THEN LET l_sum = 0 END IF #MOD-C20212 add
-  
+
    UPDATE oha_file SET oha50=l_sum,oha1008=l_sum_t
    WHERE oha01=g_oha.oha01
-   
+
    LET g_oha.oha50=l_sum
    LET g_oha.oha1008=l_sum_t
    LET l_tax=l_sum_t-l_sum
    CALL cl_numfor(l_tax,8,t_azi04) RETURNING l_tax      #No.CHI-6A0004
-   
+
    DISPLAY BY NAME g_oha.oha50
    DISPLAY l_tax  TO FORMONLY.tot1
    SELECT sum(ohb14),sum(ohb14t) INTO l_sum2,l_sum2_t FROM ohb_file
-    WHERE ohb01 = g_oha.oha01 AND ohb1005='2'      
-   IF l_sum2 IS NUll THEN let  l_sum2=0 END IF 
-   IF l_sum2_t IS NUll THEN let  l_sum2_t=0 END IF 
- 
+    WHERE ohb01 = g_oha.oha01 AND ohb1005='2'
+   IF l_sum2 IS NUll THEN let  l_sum2=0 END IF
+   IF l_sum2_t IS NUll THEN let  l_sum2_t=0 END IF
+
    CALL cl_numfor(l_sum2,8,t_azi04) RETURNING l_sum2      #No.CHI-6A0004
-   CALL cl_numfor(l_sum2_t,8,t_azi04) RETURNING l_sum2_t  #No.CHI-6A0004 
- 
+   CALL cl_numfor(l_sum2_t,8,t_azi04) RETURNING l_sum2_t  #No.CHI-6A0004
+
    UPDATE oha_file SET oha1019=l_sum2,oha1020=l_sum2_t
    WHERE oha01=g_oha.oha01
-   
+
    LET g_oha.oha1019=l_sum2
    LET g_oha.oha1020=l_sum2_t
    LET g_oha.oha53=g_oha.oha50-g_oha.oha1019
    UPDATE oha_file SET oha53=g_oha.oha53
    WHERE oha01=g_oha.oha01   #MOD-8C0023
    LET l_tax2=l_sum2_t-l_sum2
-   CALL cl_numfor(l_tax2,8,t_azi04) RETURNING l_tax2       #No.CHI-6A0004 
+   CALL cl_numfor(l_tax2,8,t_azi04) RETURNING l_tax2       #No.CHI-6A0004
    LET l_tax3=l_sum+l_tax-l_sum2-l_tax2
-   IF l_tax3 IS NULL THEN LET l_tax3=0 END IF 
+   IF l_tax3 IS NULL THEN LET l_tax3=0 END IF
    DISPLAY BY NAME g_oha.oha1019
    DISPLAY BY NAME g_oha.oha53
    DISPLAY l_tax2 TO FORMONLY.tax2
    DISPLAY l_tax3 TO FORMONLY.tot3
 
 END FUNCTION
- 
+
 FUNCTION t700_chk_ohb1002()
    IF NOT cl_null(g_ohb1[l_ac].ohb1002) THEN
       SELECT * FROM tqx_file,tqy_file,tqz_file,tsa_file
-       WHERE tqx01=tqy01 AND tqx01=tqz01 
-         AND tqx01=tsa01 AND tqy02=tsa02 
-         AND tqz02=tsa03 AND tqy03=g_oha.oha03        
+       WHERE tqx01=tqy01 AND tqx01=tqz01
+         AND tqx01=tsa01 AND tqy02=tsa02
+         AND tqz02=tsa03 AND tqy03=g_oha.oha03
          AND tqy37= 'Y'  AND tqx07= '3'
          AND tqx01=g_ohb1[l_ac].ohb1002
          AND (tqz03 =g_ohb1[l_ac].ohb04 OR
@@ -8063,19 +8074,19 @@ FUNCTION t700_chk_ohb1002()
    END IF
    RETURN TRUE
 END FUNCTION
- 
+
 ####以下由saxmt700 global移過來#### #FUN-720049
 FUNCTION t700_init()
     LET g_wc2=' 1=1'
     CALL t700_def_form()
- 
+
     #初始化界面的樣式(沒有任何默認屬性組)
     LET lg_oay22 = ''
     LET lg_group = ''
     CALL t700_refresh_detail()
- 
+
     SELECT * INTO g_sma.* FROM sma_file WHERE sma00='0'
-#FUN-BA0014 mark str--- 
+#FUN-BA0014 mark str---
 #   IF fgl_getenv('EASYFLOW') = "1" THEN
 #      LET g_argv1 = aws_efapp_wsk(1)   #參數:key-1
 #   END IF
@@ -8083,7 +8094,7 @@ FUNCTION t700_init()
 #   #設定簽核功能及哪些 action 在簽核狀態時是不可被執行的
 #   CALL aws_efapp_flowaction("insert, modify, delete, detail, query, locale, void, confirm, undo_confirm, easyflow_approval, stock_post, undo_post, trsf_to_acct_to_offset,
 #                 gen_gds_exch_order, modify_wh_loc, maintain_acct
-#                ,memo,unit_price    #TQC-B40203        
+#                ,memo,unit_price    #TQC-B40203
 #                ")   #No.MOD-590355
 #        RETURNING g_laststage
 #
@@ -8092,7 +8103,7 @@ FUNCTION t700_init()
 #FUN-BA0014 mark end---
     CALL t700_set_perlang()     #No.FUN-650108
 END FUNCTION
- 
+
 FUNCTION t700_def_form()
     IF g_aza.aza50='N' THEN
        CALL cl_set_comp_visible("page02,page04",FALSE)
@@ -8122,26 +8133,26 @@ FUNCTION t700_def_form()
     END IF
     CALL cl_set_comp_visible("page1",g_sma.sma95='Y')                #TQC-C90012
     CALL cl_set_act_visible("qry_lot,modi_lot",g_sma.sma95='Y')      #TQC-C90012
- 
-    #初始化界面的樣式(沒有任何默認屬性組)                                                                                           
-    LET lg_oay22 = ''                                                                                                               
-    LET lg_group = ''     
-    CALL cl_set_comp_visible("ohb930,gem02c",g_aaz.aaz90='Y')  #FUN-670063                                                                                                          
-    CALL t700_refresh_detail()                                                                                                      
+
+    #初始化界面的樣式(沒有任何默認屬性組)
+    LET lg_oay22 = ''
+    LET lg_group = ''
+    CALL cl_set_comp_visible("ohb930,gem02c",g_aaz.aaz90='Y')  #FUN-670063
+    CALL t700_refresh_detail()
 END FUNCTION
- 
+
 FUNCTION t700_set_perlang()     #根據傳入的參數隱藏銷退處理方式的選項
    DEFINE cb  ui.ComboBox
    DEFINE l_items LIKE type_file.chr1000     # No.FUN-680137 VARCHAR(100)
- 
+
    LET l_items = NULL
- 
+
    CASE g_argv0
       WHEN "1" #axmt700 一般銷退
          LET cb = ui.ComboBox.forName("oha05")
          CALL cb.removeItem('3')
       WHEN "2" #axmt840 多角銷退
-         LET l_items = '1:',cl_getmsg('atm-041',g_lang)  
+         LET l_items = '1:',cl_getmsg('atm-041',g_lang)
          CALL cl_set_combo_items("oha09","1",l_items CLIPPED)
          LET l_items = NULL
          LET l_items = '2:',cl_getmsg('atm-042',g_lang)
@@ -8170,10 +8181,10 @@ FUNCTION t700_set_perlang()     #根據傳入的參數隱藏銷退處理方式�
       CALL cl_set_comp_att_text("b1_ohb912",g_msg CLIPPED)   #No.FUN-650108
    END IF
 END FUNCTION
- 
+
 FUNCTION t700_a_default()
 DEFINE l_azp02 LIKE azp_file.azp02  #No.FUN-870007
- 
+
    LET g_oha.oha05  ='1'
    LET g_oha.oha1015='N'
    LET g_oha.oha1017='0'
@@ -8230,17 +8241,17 @@ DEFINE l_azp02 LIKE azp_file.azp02  #No.FUN-870007
       DISPLAY l_azp02 TO ohaplant_desc
    END IF
 END FUNCTION
- 
+
 FUNCTION t700_ohb04()
-DEFINE l_rty06 LIKE rty_file.rty06                                                                                                  
-DEFINE l_rty05 LIKE rty_file.rty05                                                                                                  
-DEFINE l_rtt01 LIKE rtt_file.rtt01                                                                                                  
-DEFINE l_rtt11 LIKE rtt_file.rtt11                                                                                                  
-DEFINE l_rtv12 LIKE rtv_file.rtv12     
-DEFINE l_rtu08 LIKE rtu_file.rtu08                                                                                                  
-DEFINE l_rtu01 LIKE rtu_file.rtu01                                                                                                  
-DEFINE l_rtv13 LIKE rtv_file.rtv13   
-DEFINE l_occ930 LIKE occ_file.occ930                                                                                                
+DEFINE l_rty06 LIKE rty_file.rty06
+DEFINE l_rty05 LIKE rty_file.rty05
+DEFINE l_rtt01 LIKE rtt_file.rtt01
+DEFINE l_rtt11 LIKE rtt_file.rtt11
+DEFINE l_rtv12 LIKE rtv_file.rtv12
+DEFINE l_rtu08 LIKE rtu_file.rtu08
+DEFINE l_rtu01 LIKE rtu_file.rtu01
+DEFINE l_rtv13 LIKE rtv_file.rtv13
+DEFINE l_occ930 LIKE occ_file.occ930
 DEFINE lc_type LIKE type_file.chr1
 DEFINE li_ret LIKE type_file.num5
 DEFINE l_rth04 LIKE rth_file.rth04
@@ -8249,71 +8260,71 @@ DEFINE l_rtg06 LIKE rtg_file.rtg06
 DEFINE l_rtg08 LIKE rtg_file.rtg08
 DEFINE l_rtg05 LIKE rtg_file.rtg05
 DEFINE l_rtz05 LIKE rtz_file.rtz05
- 
-   IF NOT cl_null(g_ohb1[l_ac].ohb04) AND NOT cl_null(g_ohb1[l_ac].ohb05) AND                                     
+
+   IF NOT cl_null(g_ohb1[l_ac].ohb04) AND NOT cl_null(g_ohb1[l_ac].ohb05) AND
        NOT cl_null(g_oha.oha03) AND NOT cl_null(g_oha.ohaplant) THEN
-      CALL t700_fetch_price('a')      
-      CALL cl_digcut(g_ohb1[l_ac].ohb37,t_azi03) RETURNING g_ohb1[l_ac].ohb37              #FUN-AB0061 add                                                                                                                          
-      CALL cl_digcut(g_ohb1[l_ac].ohb13,t_azi03) RETURNING g_ohb1[l_ac].ohb13                                                  
-   END IF 
+      CALL t700_fetch_price('a')
+      CALL cl_digcut(g_ohb1[l_ac].ohb37,t_azi03) RETURNING g_ohb1[l_ac].ohb37              #FUN-AB0061 add
+      CALL cl_digcut(g_ohb1[l_ac].ohb13,t_azi03) RETURNING g_ohb1[l_ac].ohb13
+   END IF
 
  IF cl_null(g_ohb1[l_ac].ohb31) OR cl_null(g_ohb1[l_ac].ohb31) THEN       #TQC-AA0133 add
-   SELECT rty06 INTO l_rty06 FROM rty_file 
-    WHERE rty01=g_plant                                                                 
-      AND rty02=g_ohb1[l_ac].ohb04 
-      AND rtyacti="Y"                                                                                   
-   IF SQLCA.sqlcode=100 THEN 
-      LET l_rty06=NULL 
-   END IF                                                                                
-   LET g_ohb1[l_ac].ohb64=l_rty06      
+   SELECT rty06 INTO l_rty06 FROM rty_file
+    WHERE rty01=g_plant
+      AND rty02=g_ohb1[l_ac].ohb04
+      AND rtyacti="Y"
+   IF SQLCA.sqlcode=100 THEN
+      LET l_rty06=NULL
+   END IF
+   LET g_ohb1[l_ac].ohb64=l_rty06
 #TQC-AA0133 --begin--
-   IF cl_null(g_ohb1[l_ac].ohb64) THEN 
+   IF cl_null(g_ohb1[l_ac].ohb64) THEN
       LET g_ohb1[l_ac].ohb64 = '1'
-   END IF    
- ELSE 
- 	 LET l_rty06 = NULL 
+   END IF
+ ELSE
+ 	 LET l_rty06 = NULL
  	 SELECT ogb44 INTO l_rty06 FROM ogb_file
  	  WHERE ogb01 = g_ohb1[l_ac].ohb31
  	    AND ogb03 = g_ohb1[l_ac].ohb32
- 	 LET g_ohb1[l_ac].ohb64 = l_rty06    
-#TQC-AA0133 --end--                                                              
+ 	 LET g_ohb1[l_ac].ohb64 = l_rty06
+#TQC-AA0133 --end--
    IF cl_null(g_ohb1[l_ac].ohb64) THEN
       CALL cl_err('','art-510',0)
       RETURN 1
    END IF
-END IF   #TQC-AA0133 
-   
-   IF g_ohb1[l_ac].ohb64='3' OR g_ohb1[l_ac].ohb64='4' THEN                                                                        
-      SELECT rty05 INTO l_rty05 FROM rty_file WHERE rty01=g_plant                                                              
-       AND rty02=g_ohb1[l_ac].ohb04 AND rtyacti="Y"                                                                               
-      IF NOT cl_null(l_rty05) THEN                                                                                                  
-         SELECT rtt01,rtt11 INTO l_rtt01,l_rtt11 FROM rtt_file,rts_file,rto_file                                                    
-          WHERE rts01 = rtt01 AND rttplant = rtsplant                                                                                   
-           AND rts02 = rtt02 AND rtt04 =g_ohb1[l_ac].ohb04 AND rto01 = rts04 AND rtoplant = rtsplant                                   
-           AND rto05 = l_rty05 AND rto06 = g_ohb1[l_ac].ohb64 AND rto08<=g_oha.oha02                                                
-           AND rto09>=g_oha.oha02 AND rtt15="Y"      
-           AND rtoconf = 'Y' AND rtsconf = 'Y' AND rto03 = rts02 AND rtoplant =  g_plant                                         
-         IF NOT cl_null(l_rtt01) THEN                                                                                               
-            SELECT rtv12,rtu08,rtu01,rtv13 INTO l_rtv12,l_rtu08,l_rtu01,l_rtv13 FROM rtv_file,rtu_file,rtt_file                     
-             WHERE rtt01=rtu04 AND rtt02=rtu02 AND rttplant=rtuplant AND rtuplant=g_plant                                            
-              AND rtuconf="Y" AND rtuplant=rtvplant AND rtu01=rtv01 AND rtu02=rtv02                                                     
-              AND rtt01=l_rtt01 AND rtu05=l_rty05 AND rtu06=g_ohb1[l_ac].ohb64                                                     
-              AND rtv04=g_ohb1[l_ac].ohb04                                                                                        
-            IF NOT cl_null(l_rtu01) THEN                                                                                            
-               LET g_ohb1[l_ac].ohb65=l_rtv12                                                                                      
-            ELSE                                                                                                                    
-               LET g_ohb1[l_ac].ohb65=l_rtt11                                                                                      
-            END IF                                                                                                                  
-         END IF                                                                                                                     
-      END IF                                                                                                                        
-   ELSE                                                                                                                             
-      LET g_ohb1[l_ac].ohb65=NULL                                                                                                  
-   END IF                                                                                                                           
-   LET g_ohb1[l_ac].ohb66=g_ohb1[l_ac].ohb65                                                                                        
-   CALL cl_set_comp_entry("ohb66",false)                                                                                            
+END IF   #TQC-AA0133
+
+   IF g_ohb1[l_ac].ohb64='3' OR g_ohb1[l_ac].ohb64='4' THEN
+      SELECT rty05 INTO l_rty05 FROM rty_file WHERE rty01=g_plant
+       AND rty02=g_ohb1[l_ac].ohb04 AND rtyacti="Y"
+      IF NOT cl_null(l_rty05) THEN
+         SELECT rtt01,rtt11 INTO l_rtt01,l_rtt11 FROM rtt_file,rts_file,rto_file
+          WHERE rts01 = rtt01 AND rttplant = rtsplant
+           AND rts02 = rtt02 AND rtt04 =g_ohb1[l_ac].ohb04 AND rto01 = rts04 AND rtoplant = rtsplant
+           AND rto05 = l_rty05 AND rto06 = g_ohb1[l_ac].ohb64 AND rto08<=g_oha.oha02
+           AND rto09>=g_oha.oha02 AND rtt15="Y"
+           AND rtoconf = 'Y' AND rtsconf = 'Y' AND rto03 = rts02 AND rtoplant =  g_plant
+         IF NOT cl_null(l_rtt01) THEN
+            SELECT rtv12,rtu08,rtu01,rtv13 INTO l_rtv12,l_rtu08,l_rtu01,l_rtv13 FROM rtv_file,rtu_file,rtt_file
+             WHERE rtt01=rtu04 AND rtt02=rtu02 AND rttplant=rtuplant AND rtuplant=g_plant
+              AND rtuconf="Y" AND rtuplant=rtvplant AND rtu01=rtv01 AND rtu02=rtv02
+              AND rtt01=l_rtt01 AND rtu05=l_rty05 AND rtu06=g_ohb1[l_ac].ohb64
+              AND rtv04=g_ohb1[l_ac].ohb04
+            IF NOT cl_null(l_rtu01) THEN
+               LET g_ohb1[l_ac].ohb65=l_rtv12
+            ELSE
+               LET g_ohb1[l_ac].ohb65=l_rtt11
+            END IF
+         END IF
+      END IF
+   ELSE
+      LET g_ohb1[l_ac].ohb65=NULL
+   END IF
+   LET g_ohb1[l_ac].ohb66=g_ohb1[l_ac].ohb65
+   CALL cl_set_comp_entry("ohb66",false)
    RETURN 0
 END FUNCTION
- 
+
 FUNCTION t700_a_inschk()
 DEFINE li_result LIKE type_file.num5     #No.FUN-540049        #No.FUN-680137 SMALLINT
 #  CALL s_auto_assign_no(g_sys,g_oha.oha01,g_oha.oha02,"1","oha_file","oha01","","","")
@@ -8328,7 +8339,7 @@ DEFINE li_result LIKE type_file.num5     #No.FUN-540049        #No.FUN-680137 SM
    IF cl_null(g_oha.oha94) THEN LET g_oha.oha94='N' END IF #No.FUN-A50071
    RETURN TRUE
 END FUNCTION
- 
+
 FUNCTION t700_a_ins()
    LET g_oha.ohaoriu = g_user      #No.FUN-980030 10/01/04
    LET g_oha.ohaorig = g_grup      #No.FUN-980030 10/01/04
@@ -8340,17 +8351,17 @@ FUNCTION t700_a_ins()
 	 END IF
    RETURN TRUE
 END FUNCTION
- 
+
 FUNCTION t700_u_upd()
    #-----MOD-A50024---------
    DEFINE l_ohb03     LIKE ohb_file.ohb03,
           l_ohb917    LIKE ohb_file.ohb917,
           l_ohb13     LIKE ohb_file.ohb13,
           l_ohb14     LIKE ohb_file.ohb14,
-          l_ohb14t    LIKE ohb_file.ohb14t,  
+          l_ohb14t    LIKE ohb_file.ohb14t,
           l_cnt       LIKE type_file.num5
 #FUN-B90103------add---
-#FUN-B90103------end---   
+#FUN-B90103------end---
 #FUN-C10053 add begin ---
    DEFINE l_rtz04      LIKE rtz_file.rtz04
    DEFINE l_rtz06      LIKE rtz_file.rtz06
@@ -8394,17 +8405,17 @@ FUNCTION t700_u_upd()
       END IF
    END IF
    #CHI-CB0008 add end-----
-      LET l_cnt = 0 
+      LET l_cnt = 0
       SELECT COUNT(*) INTO l_cnt FROM ohb_file
         WHERE ohb01 = g_oha.oha01
-      IF l_cnt > 0 THEN 
+      IF l_cnt > 0 THEN
 #FUN-C10053 begin ---
          IF g_azw.azw04 = '2' THEN
             SELECT rtz04,rtz06 INTO l_rtz04,l_rtz06
               FROM rtz_file
              WHERE rtz01 = g_oha.ohaplant
          END IF
-         LET l_chk_gec07 = true 
+         LET l_chk_gec07 = true
          IF g_azw.azw04 = '2' AND NOT cl_null(l_rtz04) THEN
             LET l_chk_gec07 = false
          END IF
@@ -8415,49 +8426,49 @@ FUNCTION t700_u_upd()
                SELECT azi04 INTO t_azi04 FROM azi_file WHERE azi01 = g_oha.oha23
    #FUN-B90103-------add------------
    #FUN-B90103-------end------------
-               DECLARE ohb_cs CURSOR FOR 
+               DECLARE ohb_cs CURSOR FOR
                  SELECT ohb03,ohb917,ohb13 FROM ohb_file WHERE ohb01 = g_oha.oha01
                FOREACH ohb_cs INTO l_ohb03,l_ohb917,l_ohb13
-                 IF l_ohb917 > 0 THEN 
+                 IF l_ohb917 > 0 THEN
 #FUN-C10053 ----add---begin ---
                    SELECT ohb04 INTO l_ohb04
-                     FROM ohb_file 
+                     FROM ohb_file
                     WHERE ohb01 = g_oha.oha01
                       AND ohb03 = l_ohb03
                    IF g_azw.azw04 = '2' THEN
                       CALL t700_sub(l_ohb04,l_rtz04,g_oha.oha213,l_ohb917,l_ohb13,t_azi04)
-                           RETURNING l_ohb14,l_ohb14t 
+                           RETURNING l_ohb14,l_ohb14t
                    ELSE
 #FUN-C10053 ----add---end -----
-                      IF g_oha.oha213 = 'N' THEN 
+                      IF g_oha.oha213 = 'N' THEN
                          LET l_ohb14 =l_ohb917*l_ohb13
-                         CALL cl_digcut(l_ohb14,t_azi04) RETURNING l_ohb14   
+                         CALL cl_digcut(l_ohb14,t_azi04) RETURNING l_ohb14
                          LET l_ohb14t=l_ohb14*(1+g_oha.oha211/100)
-                         CALL cl_digcut(l_ohb14t,t_azi04)RETURNING l_ohb14t    
-                      ELSE 
+                         CALL cl_digcut(l_ohb14t,t_azi04)RETURNING l_ohb14t
+                      ELSE
                          LET l_ohb14t=l_ohb917*l_ohb13
-                         CALL cl_digcut(l_ohb14t,t_azi04)RETURNING l_ohb14t   
+                         CALL cl_digcut(l_ohb14t,t_azi04)RETURNING l_ohb14t
                          LET l_ohb14 =l_ohb14t/(1+g_oha.oha211/100)
-                         CALL cl_digcut(l_ohb14,t_azi04) RETURNING l_ohb14    
+                         CALL cl_digcut(l_ohb14,t_azi04) RETURNING l_ohb14
                       END IF
                    END IF    #FUN-C10053
                  ELSE
                     IF g_oha.oha213 = 'N' THEN
                        LET l_ohb14 =l_ohb13
-                       CALL cl_digcut(l_ohb14,t_azi04) RETURNING l_ohb14   
+                       CALL cl_digcut(l_ohb14,t_azi04) RETURNING l_ohb14
                        LET l_ohb14t=l_ohb14*(1+g_oha.oha211/100)
-                       CALL cl_digcut(l_ohb14t,t_azi04)RETURNING l_ohb14t   
+                       CALL cl_digcut(l_ohb14t,t_azi04)RETURNING l_ohb14t
                     ELSE
                        LET l_ohb14t=l_ohb13
-                       CALL cl_digcut(l_ohb14t,t_azi04)RETURNING l_ohb14t   
+                       CALL cl_digcut(l_ohb14t,t_azi04)RETURNING l_ohb14t
                        LET l_ohb14 =l_ohb14t/(1+g_oha.oha211/100)
-                       CALL cl_digcut(l_ohb14,t_azi04) RETURNING l_ohb14   
+                       CALL cl_digcut(l_ohb14,t_azi04) RETURNING l_ohb14
                     END IF
                  END IF
                  UPDATE ohb_file SET ohb14=l_ohb14,ohb14t=l_ohb14t
                     WHERE ohb01=g_oha.oha01 AND ohb03=l_ohb03
                  IF SQLCA.sqlcode THEN
-                    CALL cl_err3("upd","ohb_file",g_oha.oha01,"",SQLCA.sqlcode,"","update ohb",1)  
+                    CALL cl_err3("upd","ohb_file",g_oha.oha01,"",SQLCA.sqlcode,"","update ohb",1)
                     RETURN FALSE
                  END IF
                END FOREACH
@@ -8471,14 +8482,14 @@ FUNCTION t700_u_upd()
    #-----END MOD-A50024-----
    RETURN TRUE
 END FUNCTION
- 
+
 FUNCTION t700_chk_oha01()
 DEFINE li_result LIKE type_file.num5     #No.FUN-540049        #No.FUN-680137 SMALLINT
 DEFINE l_cnt     LIKE type_file.num5   #FUN-C80045 add
    IF NOT cl_null(g_oha.oha01) THEN
       #FUN-C80045 add sta
       LET g_t1=s_get_doc_no(g_oha.oha01)
-      LET l_cnt = 0 
+      LET l_cnt = 0
       SELECT COUNT(*) INTO l_cnt FROM rye_file WHERE rye04 = g_t1 AND ryeacti = 'Y' AND rye01 = 'axm'
       IF l_cnt > 0 THEN
          CALL cl_err(g_t1,'apc1036',0)
@@ -8493,12 +8504,12 @@ DEFINE l_cnt     LIKE type_file.num5   #FUN-C80045 add
          RETURN FALSE
       END IF
       #得到該單別對應的屬性群組
-      IF (g_sma.sma120 = 'Y' )AND( g_sma.sma907 = 'Y' ) THEN                                                              
-         #讀取oay_file中指定作業對應的默認屬性群組          
-         LET g_t1 =g_oha.oha01[1,g_doc_len]                                                               
+      IF (g_sma.sma120 = 'Y' )AND( g_sma.sma907 = 'Y' ) THEN
+         #讀取oay_file中指定作業對應的默認屬性群組
+         LET g_t1 =g_oha.oha01[1,g_doc_len]
          SELECT oay22 INTO lg_oay22 FROM oay_file WHERE oayslip = g_t1
-         #刷新界面顯示                                                                                                     
-         CALL t700_refresh_detail()                                                                                       
+         #刷新界面顯示
+         CALL t700_refresh_detail()
          IF NOT cl_null(g_oha.oha16) THEN
             LET l_oay22_oha = lg_oay22
             LET g_t1 = g_oha.oha16[1,g_doc_len]
@@ -8510,13 +8521,13 @@ DEFINE l_cnt     LIKE type_file.num5   #FUN-C80045 add
                RETURN FALSE
             END IF
          END IF
-      ELSE                                                                                                                 
-         LET lg_oay22 = ''                                                                                                 
-      END IF                   
+      ELSE
+         LET lg_oay22 = ''
+      END IF
       LET g_oha.ohamksg=g_oay.oayapr
       DISPLAY BY NAME g_oha.ohamksg
- 
-   ELSE 
+
+   ELSE
       IF g_sma.sma120 = 'Y' AND g_sma.sma907 = 'Y' THEN
          LET lg_oay22 = ''
          CALL t700_refresh_detail()
@@ -8524,19 +8535,19 @@ DEFINE l_cnt     LIKE type_file.num5   #FUN-C80045 add
    END IF
    RETURN TRUE
 END FUNCTION
- 
+
 FUNCTION t700_chk_oha02()
   DEFINE l_yy,l_mm        LIKE type_file.num5         #No.FUN-680137 SMALLINT
    IF NOT cl_null(g_oha.oha02) THEN
       IF g_oha.oha02 <= g_oaz.oaz09 THEN
-         CALL cl_err('','axm-164',0) 
+         CALL cl_err('','axm-164',0)
          RETURN FALSE
       END IF
       IF g_oaz.oaz03 = 'Y' AND
-         g_sma.sma53 IS NOT NULL AND g_oha.oha02 <= g_sma.sma53 THEN 
-         CALL cl_err('','mfg9999',0)                                                                                                
-         RETURN FALSE 
-      END IF                                                                                                                        
+         g_sma.sma53 IS NOT NULL AND g_oha.oha02 <= g_sma.sma53 THEN
+         CALL cl_err('','mfg9999',0)
+         RETURN FALSE
+      END IF
       CALL s_yp(g_oha.oha02) RETURNING l_yy,l_mm
       IF l_yy > g_sma.sma51 THEN
         CALL cl_err('','mfg6091',0)
@@ -8549,24 +8560,24 @@ FUNCTION t700_chk_oha02()
    END IF
    RETURN TRUE
 END FUNCTION
- 
+
 FUNCTION t700_chk_oha09()
- 
+
    IF NOT cl_null(g_oha.oha09) THEN
       IF (g_oha.oha09 NOT MATCHES '[1-6]') THEN   #No.FUN-740016
          RETURN FALSE
       END IF
- 
+
       IF g_argv0='2' AND g_oha.oha09 <> '1' THEN
          RETURN FALSE
       END IF
-   
+
    END IF
- 
+
    RETURN TRUE
- 
+
 END FUNCTION
- 
+
 FUNCTION t700_chk_oha16(p_cmd)
    DEFINE l_last_plant    LIKE poy_file.poy04
    DEFINE p_cmd LIKE type_file.chr1
@@ -8608,29 +8619,29 @@ FUNCTION t700_chk_oha16(p_cmd)
          RETURN FALSE
       END IF
       #MOD-C30817 add end   -----
-      IF g_oga.oga00 ='3' THEN                                                  
-         CALL cl_err(g_oga.oga01,'axm-935',1)                                   
-         RETURN FALSE                                                           
-      END IF                                                                    
+      IF g_oga.oga00 ='3' THEN
+         CALL cl_err(g_oga.oga01,'axm-935',1)
+         RETURN FALSE
+      END IF
       IF g_oga.oga00='1' and g_argv0='2' THEN
          LET g_oha.oha05='2'
-      END IF 
+      END IF
       IF g_oga.oga00='1' and g_argv0='1' THEN
          LET g_oha.oha05='1'
-      END IF 
+      END IF
       IF g_oga.oga00='6' THEN
          LET g_oha.oha05='4'
-      END IF 
+      END IF
       IF g_oga.ogaconf != 'Y' THEN	#未確認 01/08/17 mandy
-         CALL cl_err('sel oga','axm-184',0) 
+         CALL cl_err('sel oga','axm-184',0)
          RETURN FALSE
       END IF
       IF g_oga.ogapost = 'N' THEN    #未扣帳
-         CALL cl_err('sel oga','axm-299',0) 
+         CALL cl_err('sel oga','axm-299',0)
          RETURN FALSE
       END IF
       IF  g_azw.azw04='2' THEN
-          IF g_oga.oga83 != g_oha.ohaplant THEN 
+          IF g_oga.oga83 != g_oha.ohaplant THEN
              CALL cl_err('','art-337',0)
              RETURN FALSE
           END IF
@@ -8673,14 +8684,14 @@ FUNCTION t700_chk_oha16(p_cmd)
           RETURN FALSE
        END IF
       END IF #MOD-4B0162
- 
+
       IF g_argv0 = '1' AND g_oga.oga09 ='4' THEN
          #IF t700_chkpoz() THEN RETURN FALSE END IF   #DEV-D30046 --mark
          #DEV-D30046 --add--begin
-        # CALL saxmt700sub_chkpoz(g_oha.*,g_ohb1[l_ac].ohb31) 
+        # CALL saxmt700sub_chkpoz(g_oha.*,g_ohb1[l_ac].ohb31)
           CALL saxmt700sub_chkpoz(g_oha.*,g_ohb1[1].ohb31)       #DEV-D70003 add
-            RETURNING li_flag,g_poz.*,g_flow 
-         IF li_flag THEN RETURN FALSE END IF 
+            RETURNING li_flag,g_poz.*,g_flow
+         IF li_flag THEN RETURN FALSE END IF
          #DEV-D30046 --add--end
          IF g_poz.poz011 = '2' THEN
             CALL cl_err(g_oga.oga01,'axm-163',1)
@@ -8712,10 +8723,10 @@ FUNCTION t700_chk_oha16(p_cmd)
          #檢查流程代碼
          #IF t700_chkpoz() THEN RETURN FALSE END IF   #DEV-D30046 --mark
          #DEV-D30046 --add--begin
-        # CALL saxmt700sub_chkpoz(g_oha.*,g_ohb1[l_ac].ohb31) 
+        # CALL saxmt700sub_chkpoz(g_oha.*,g_ohb1[l_ac].ohb31)
           CALL saxmt700sub_chkpoz(g_oha.*,g_ohb1[1].ohb31)       #DEV-D70003 add
-            RETURNING li_flag,g_poz.*,g_flow 
-         IF li_flag THEN RETURN FALSE END IF 
+            RETURNING li_flag,g_poz.*,g_flow
+         IF li_flag THEN RETURN FALSE END IF
          #DEV-D30046 --add--end
          IF g_poz.poz011 = '1' THEN  #正拋方式
             #檢查是否為起始訂單
@@ -8733,12 +8744,12 @@ FUNCTION t700_chk_oha16(p_cmd)
       END IF
 
       #-----MOD-A10098---------
-      IF g_oga.oga09='2' AND g_oga.oga65='Y' THEN 
+      IF g_oga.oga09='2' AND g_oga.oga65='Y' THEN
          LET l_cnt = 0
          SELECT COUNT(*) INTO l_cnt FROM oga_file
            WHERE oga011 = g_oga.oga01
              AND ogaconf='Y'
-             AND ogapost='Y'         
+             AND ogapost='Y'
              AND oga09='8'
          IF l_cnt = 0 THEN
             CALL cl_err('','axm-609',0)
@@ -8746,7 +8757,7 @@ FUNCTION t700_chk_oha16(p_cmd)
          END IF
       END IF
       #-----END MOD-A10098-----
- 
+
       #IF p_cmd='a' THEN       #由出貨單轉銷退單 #MOD-C60237 mark
       IF p_cmd='a' OR (g_oha_t.oha16 != g_oha.oha16 OR (g_oha_t.oha16 IS NULL AND g_oha.oha16 IS NOT NULL)) THEN  #MOD-C60237 add
          LET g_oha.oha03 = g_oga.oga03
@@ -8771,18 +8782,18 @@ FUNCTION t700_chk_oha16(p_cmd)
          LET g_oha.oha1014=g_oga.oga1004     #No.FUN-650108
          IF g_azw.azw04='2' THEN
             LET g_oha.oha85=g_oga.oga85
-            LET g_oha.oha86=g_oga.oga86  
-            LET g_oha.oha87=g_oga.oga87                                                                                             
+            LET g_oha.oha86=g_oga.oga86
+            LET g_oha.oha87=g_oga.oga87
             LET g_oha.oha88=g_oga.oga88
-            LET g_oha.oha89=g_oga.oga89                                                                                             
-            LET g_oha.oha90=g_oga.oga90                                                                                             
-            LET g_oha.oha91=g_oga.oga91                                                                                             
-            LET g_oha.oha92=g_oga.oga92  
-            LET g_oha.oha93=g_oga.oga93                                                                                             
-            LET g_oha.oha94=g_oga.oga94                                                                                             
-            LET g_oha.oha95=g_oga.oga95                                                                                             
-            LET g_oha.oha96=g_oga.oga96                                                                                             
-            LET g_oha.oha97=g_oga.oga97                                                                                             
+            LET g_oha.oha89=g_oga.oga89
+            LET g_oha.oha90=g_oga.oga90
+            LET g_oha.oha91=g_oga.oga91
+            LET g_oha.oha92=g_oga.oga92
+            LET g_oha.oha93=g_oga.oga93
+            LET g_oha.oha94=g_oga.oga94
+            LET g_oha.oha95=g_oga.oga95
+            LET g_oha.oha96=g_oga.oga96
+            LET g_oha.oha97=g_oga.oga97
          END IF
          IF g_oga.oga24=0 OR g_oga.oga24 IS NULL THEN
             #IF g_oea.oea08='1' THEN #MOD-C20176 mark
@@ -8801,7 +8812,7 @@ FUNCTION t700_chk_oha16(p_cmd)
          LET g_oha.oha31 = g_oga.oga31
          DISPLAY BY NAME g_oha.oha08
          DISPLAY BY NAME g_oha.oha03, g_oha.oha032, g_oha.oha04,
-                         g_oha.oha1001,g_oha.oha1011,  
+                         g_oha.oha1001,g_oha.oha1011,
                          g_oha.oha1010,g_oha.oha1003,g_oha.oha1009,
                          g_oha.oha1002,g_oha.oha1014,
                          g_oha.oha85,g_oha.oha86,g_oha.oha87,g_oha.oha88,
@@ -8816,7 +8827,7 @@ FUNCTION t700_chk_oha16(p_cmd)
    CALL t700_set_no_entry(p_cmd)
    RETURN TRUE
 END FUNCTION
- 
+
 FUNCTION t700_chk_oha03(p_cmd)
   DEFINE l_occ RECORD LIKE occ_file.*
   DEFINE p_cmd LIKE type_file.chr1
@@ -8829,15 +8840,15 @@ FUNCTION t700_chk_oha03(p_cmd)
       WHERE rtz01 = g_oha.ohaplant
   END IF
 #FUN-C10053 add end  ----
- 
+
    IF NOT cl_null(g_oha.oha03) THEN
           IF NOT cl_null(g_oha.oha03) THEN
            IF g_aza.aza50='Y' THEN
-              SELECT * INTO l_occ.* FROM occ_file 
+              SELECT * INTO l_occ.* FROM occ_file
               WHERE occ01=g_oha.oha03 AND occacti='Y'
-                AND occ1004='1'     #No.FUN-690025         
-                AND occ06='1'            
-             IF STATUS THEN 
+                AND occ1004='1'     #No.FUN-690025
+                AND occ06='1'
+             IF STATUS THEN
                 CALL cl_err3("sel","occ_file",g_oha.oha03,"","atm-071","","select occ",1)  #No.FUN-650108
                 RETURN FALSE
              END IF
@@ -8895,14 +8906,14 @@ FUNCTION t700_chk_oha03(p_cmd)
                  DISPLAY BY NAME g_oha.oha24
                  LET g_oha.oha1011 = l_occ.occ07
                  LET g_oha.oha1009 = l_occ.occ1006
-                 LET g_oha.oha04 = l_occ.occ09  
+                 LET g_oha.oha04 = l_occ.occ09
                  LET g_oha.oha1001 = l_occ.occ1022
                  LET g_oha.oha1010 = l_occ.occ1005
                  LET g_oha.oha1003 = l_occ.occ1024
                  DISPLAY BY NAME g_oha.oha1001,g_oha.oha1009,g_oha.oha04,
                                  g_oha.oha1011,g_oha.oha1010,g_oha.oha1003
              END IF
-             IF g_azw.azw04='2' THEN 
+             IF g_azw.azw04='2' THEN
                 SELECT occ71 INTO g_oha.oha85 FROM occ_file
                  WHERE occ01=g_oha.oha03
                 DISPLAY BY NAME g_oha.oha85
@@ -8910,28 +8921,28 @@ FUNCTION t700_chk_oha03(p_cmd)
           END IF
 #FUN-C10053 add begin ---
           IF NOT cl_null(g_oha.oha05) OR NOT cl_null(g_oha.oha08) THEN
-             IF g_azw.azw04 = '2' AND NOT cl_null(l_rtz04) AND g_oha.oha03 = l_rtz06 
+             IF g_azw.azw04 = '2' AND NOT cl_null(l_rtz04) AND g_oha.oha03 = l_rtz06
                 AND g_prog[1,7] <> 'axmt840' THEN    #TQC-C90050 add g_prog
                 IF g_oha.oha05 <> '1' OR g_oha.oha08 <> '1' THEN
                    CALL cl_err('','alm1559',0)
                    LET g_oha.oha03 = g_oha_t.oha03
-                   RETURN FALSE 
+                   RETURN FALSE
                 END IF
              END IF
-          END IF 
+          END IF
 #FUN-C10053 add end ---
    END IF
    CALL t700_set_no_entry(p_cmd)
    RETURN TRUE
 END FUNCTION
- 
+
 FUNCTION t700_chk_oha04()
    IF NOT cl_null(g_oha.oha04) THEN
       IF g_aza.aza50='Y' THEN
-        SELECT occ02 INTO g_buf FROM occ_file 
+        SELECT occ02 INTO g_buf FROM occ_file
          WHERE occ01=g_oha.oha04
            AND occacti='Y'
-           AND occ1004='1'    #No.FUN-690025 
+           AND occ1004='1'    #No.FUN-690025
            AND occ06 IN ('1','2')
       ELSE
         SELECT occ02 INTO g_buf FROM occ_file
@@ -8946,7 +8957,7 @@ FUNCTION t700_chk_oha04()
    END IF
    RETURN TRUE
 END FUNCTION
- 
+
 FUNCTION t700_chk_oha14()
    IF NOT cl_null(g_oha.oha14) THEN
       SELECT gen02,gen03 INTO g_buf,g_oha.oha15 FROM gen_file        #No.TQC-7B0142 add gen03
@@ -8959,7 +8970,7 @@ FUNCTION t700_chk_oha14()
    END IF
    RETURN TRUE
 END FUNCTION
- 
+
 FUNCTION t700_chk_oha15()
    IF NOT cl_null(g_oha.oha15) THEN
       SELECT gem02 INTO g_buf FROM gem_file
@@ -8973,7 +8984,7 @@ FUNCTION t700_chk_oha15()
    END IF
    RETURN TRUE
 END FUNCTION
- 
+
 FUNCTION t700_chk_oha23()
    IF NOT cl_null(g_oha.oha23) THEN
       SELECT azi02,azi03,azi04 INTO g_buf,t_azi03,t_azi04         #No.CHI-6A0004
@@ -8998,7 +9009,7 @@ FUNCTION t700_chk_oha23()
    END IF
    RETURN TRUE
 END FUNCTION
- 
+
 FUNCTION t700_chk_oha25()
    IF NOT cl_null(g_oha.oha25) THEN
       SELECT oab02 INTO g_buf FROM oab_file WHERE oab01=g_oha.oha25
@@ -9010,7 +9021,7 @@ FUNCTION t700_chk_oha25()
    END IF
    RETURN TRUE
 END FUNCTION
- 
+
 FUNCTION t700_chk_oha21()
    IF NOT cl_null(g_oha.oha21) THEN
       SELECT gec04,gec05,gec07
@@ -9025,44 +9036,44 @@ FUNCTION t700_chk_oha21()
    END IF
    RETURN TRUE
 END FUNCTION
- 
- 
+
+
 FUNCTION t700_set_entry(p_cmd)
  DEFINE p_cmd   LIKE type_file.chr1          #No.FUN-680137 VARCHAR(1)
- 
+
     IF p_cmd = 'a' AND ( NOT g_before_input_done ) THEN
        CALL cl_set_comp_entry("oha01,oha03,oha21",TRUE)
     END IF
- 
+
     IF INFIELD(oha16) OR ( NOT g_before_input_done ) THEN
        CALL cl_set_comp_entry("oha03,oha21",TRUE)
     END IF
- 
+
     IF INFIELD(oha03) OR ( NOT g_before_input_done ) THEN
        CALL cl_set_comp_entry("oha032",TRUE)
     END IF
- 
+
 END FUNCTION
- 
+
 FUNCTION t700_set_no_entry(p_cmd)
   DEFINE p_cmd   LIKE type_file.chr1          #No.FUN-680137 VARCHAR(1)
- 
+
     IF p_cmd = 'u' AND g_chkey = 'N' AND ( NOT g_before_input_done ) THEN
        CALL cl_set_comp_entry("oha01",FALSE)
-       
+
     END IF
     IF p_cmd = 'a' AND (NOT g_before_input_done) THEN
        CALL cl_set_comp_entry("oha1010,oha1009",FALSE)
     END IF
- 
- 
+
+
     IF INFIELD(oha16) OR ( NOT g_before_input_done ) THEN
        IF NOT cl_null(g_oha.oha16) THEN
           CALL cl_set_comp_entry("oha03,oha032,oha21",FALSE)
        END IF
     END IF
-    IF g_azw.azw04='2' THEN 
-       IF INFIELD(oha03) OR ( NOT g_before_input_done ) THEN 
+    IF g_azw.azw04='2' THEN
+       IF INFIELD(oha03) OR ( NOT g_before_input_done ) THEN
           IF NOT cl_null(g_oha.oha03) THEN
              CALL cl_set_comp_entry("oha85",FALSE)
           END IF
@@ -9073,34 +9084,34 @@ FUNCTION t700_set_no_entry(p_cmd)
           CALL cl_set_comp_entry("oha032",FALSE)
        END IF
     END IF
- 
+
 END FUNCTION
- 
- 
+
+
 FUNCTION t700_1004(p_cmd)
     DEFINE l_azf03 LIKE azf_file.azf03
     DEFINE l_azf09 LIKE azf_file.azf09
     DEFINE l_azf10 LIKE azf_file.azf10
     DEFINE l_azfacti LIKE azf_file.azfacti
     DEFINE p_cmd LIKE type_file.chr1          #No.FUN-680137 VARCHAR(1)
- 
-    LET g_errno = " "  
-    SELECT azf03,azfacti,azf09,azf10 INTO l_azf03,l_azfacti,l_azf09,l_azf10 
-      FROM azf_file 
+
+    LET g_errno = " "
+    SELECT azf03,azfacti,azf09,azf10 INTO l_azf03,l_azfacti,l_azf09,l_azf10
+      FROM azf_file
      WHERE azf01=g_oha.oha1004      #No.FUN-6B0065
       AND azf02='2'      #No.TQC-760054
-    CASE WHEN SQLCA.SQLCODE = 100  LET g_errno='mfg9329'                                               
-                           LET l_azf03 = NULL                                   
-        WHEN l_azfacti='N' LET g_errno = '9028'                                 
+    CASE WHEN SQLCA.SQLCODE = 100  LET g_errno='mfg9329'
+                           LET l_azf03 = NULL
+        WHEN l_azfacti='N' LET g_errno = '9028'
         WHEN l_azf09 != '2' OR l_azf10 ='Y' LET g_errno = 'atm-247'
-        OTHERWISE          LET g_errno = SQLCA.SQLCODE USING '-------'          
-   END CASE                                                                     
-                                                                                
-   IF cl_null(g_errno) OR p_cmd = 'd' THEN                                      
+        OTHERWISE          LET g_errno = SQLCA.SQLCODE USING '-------'
+   END CASE
+
+   IF cl_null(g_errno) OR p_cmd = 'd' THEN
       DISPLAY l_azf03 TO FORMONLY.azf03     #No.FUN-6B0065
-   END IF                       
+   END IF
 END FUNCTION
- 
+
 FUNCTION t700_r()
    DEFINE l_chr,l_sure LIKE type_file.chr1          # No.FUN-680137 VARCHAR(1)
    #DEFINE l_imaicd04   LIKE imaicd_file.imaicd04       #NO.FUN-7B0015 #FUN-BA0051 mark
@@ -9109,7 +9120,7 @@ FUNCTION t700_r()
    DEFINE l_ohb04      LIKE ohb_file.ohb04             #No.MOD-890249
    DEFINE l_cnt        LIKE type_file.num10            #MOD-AB0253
    DEFINE l_flag       LIKE type_file.num10            #MOD-AB0253
- 
+
    IF s_shut(0) THEN RETURN END IF
    SELECT * INTO g_oha.* FROM oha_file WHERE oha01 = g_oha.oha01
    IF g_oha.oha01 IS NULL THEN CALL cl_err('',-400,0) RETURN END IF
@@ -9120,26 +9131,26 @@ FUNCTION t700_r()
       CALL cl_err('','mfg3557',0)
       RETURN
    END IF
- 
+
    BEGIN WORK
- 
+
    OPEN t700_cl USING g_oha.oha01
    IF SQLCA.sqlcode THEN
       CALL cl_err(g_oha.oha01,SQLCA.sqlcode,0)
-      CLOSE t700_cl 
-      ROLLBACK WORK 
+      CLOSE t700_cl
+      ROLLBACK WORK
       RETURN
    END IF
- 
+
    FETCH t700_cl INTO g_oha.*
    IF SQLCA.sqlcode THEN
       CALL cl_err(g_oha.oha01,SQLCA.sqlcode,0)
-      CLOSE t700_cl 
-      ROLLBACK WORK 
+      CLOSE t700_cl
+      ROLLBACK WORK
       RETURN
    END IF
- 
- 
+
+
    IF NOT cl_delh(20,16) THEN
       RETURN
    END IF
@@ -9158,18 +9169,18 @@ FUNCTION t700_r()
       RETURN
    END IF
 
-   IF g_azw.azw04='2' THEN                                                                                                          
-      DELETE FROM rxx_file WHERE rxx00='03' AND rxx01=g_oha.oha01                                                                   
-      DELETE FROM rxy_file WHERE rxy00='03' AND rxy01=g_oha.oha01                                                                   
-      DELETE FROM rxz_file WHERE rxz00='03' AND rxz01=g_oha.oha01                                                                   
+   IF g_azw.azw04='2' THEN
+      DELETE FROM rxx_file WHERE rxx00='03' AND rxx01=g_oha.oha01
+      DELETE FROM rxy_file WHERE rxy00='03' AND rxy01=g_oha.oha01
+      DELETE FROM rxz_file WHERE rxz00='03' AND rxz01=g_oha.oha01
    END IF
-   DELETE FROM ogk_file WHERE ogk01 = g_oha.oha01           #FUN-C10053 add 
+   DELETE FROM ogk_file WHERE ogk01 = g_oha.oha01           #FUN-C10053 add
    #-----MOD-AB0253---------
    #-----END MOD-AB0253-----
- 
+
    DECLARE t700_del CURSOR FOR
      SELECT ohb04 FROM ohb_file WHERE ohb01 = g_oha.oha01
-  
+
    FOREACH t700_del INTO l_ohb04
       IF STATUS THEN
          CALL cl_err('foreach:',STATUS,1)
@@ -9200,33 +9211,33 @@ FUNCTION t700_r()
       CALL cl_err3("del","rxe_file",g_oha.oha01,"",STATUS,"","",1)
       ROLLBACK WORK
       RETURN
-   END IF 
+   END IF
 #FUN-BC0081 end ----
-#FUN-B90103----###add&endif 
+#FUN-B90103----###add&endif
    DELETE FROM oao_file WHERE oao01 = g_oha.oha01
    DELETE FROM oap_file WHERE oap01 = g_oha.oha01
    DELETE FROM rxc_file WHERE rxc00 = '03' AND rxc01 = g_oha.oha01  #NO.FUN-960130
-  #這段應該放在刪除單身的sql之前，并且不能用l_ac，應該用一個FOREACH來執行 
+  #這段應該放在刪除單身的sql之前，并且不能用l_ac，應該用一個FOREACH來執行
 
 #FUN-B90103--start--
 #FUN-B90103--end
-   FOR l_i = 1 TO g_rec_b 
+   FOR l_i = 1 TO g_rec_b
       #IF NOT s_del_rvbs("1",g_oha.oha01,g_ohb1[l_i].ohb03,0)  THEN   #FUN-880129   #TQC-B90236 mark
        IF NOT s_lot_del(g_prog,g_oha.oha01,'',0,g_ohb1[l_i].ohb04,'DEL') THEN   #TQC-B90236 add
          ROLLBACK WORK
          RETURN
        END IF
    END FOR
-#FUN-B90103 add 
+#FUN-B90103 add
    UPDATE rml_file SET rml04=NULL WHERE rml04=g_oha.oha01  #NO:7224
- 
+
    LET g_msg = TIME
- 
+
    INSERT INTO azo_file(azo01,azo02,azo03,azo04,azo05,azo06,azoplant,azolegal) #FUN-980010 add azoplant,azolegal
       VALUES ('axmt700',g_user,g_today,g_msg,g_oha.oha01,'delete',g_plant,g_legal) #FUN-980010 add g_plant,g_legal
- 
+
    CLEAR FORM
-   CALL g_ohb1.clear()   
+   CALL g_ohb1.clear()
    CALL g_ohb2.clear()
    INITIALIZE g_oha.* TO NULL
    CLOSE t700_cl
@@ -9249,9 +9260,9 @@ FUNCTION t700_r()
       COMMIT WORK
       RETURN
    END IF
-   #FUN-B50064-add-end-- 
+   #FUN-B50064-add-end--
    DISPLAY g_row_count TO FORMONLY.cnt
- 
+
    OPEN t700_cs
    IF g_curs_index = g_row_count + 1 THEN
       LET g_jump = g_row_count
@@ -9262,24 +9273,24 @@ FUNCTION t700_r()
       CALL t700_fetch('/')
    END IF
    CALL cl_msg("")
- 
+
 END FUNCTION
- 
+
 FUNCTION t700_b1_chk()
    SELECT * INTO g_oha.* FROM oha_file WHERE oha01 = g_oha.oha01
- 
+
    IF g_oha.oha01 IS NULL THEN RETURN FALSE END IF
    IF g_oha.ohaconf = 'Y' THEN
       CALL cl_err('','axm-101',0) RETURN FALSE
    END IF
- 
+
    IF g_oha.oha53 > 0 AND g_oha.oha53 = g_oha.oha54 THEN
-      CALL cl_err('oha53>0','axr-265',0) 
-      RETURN FALSE 
+      CALL cl_err('oha53>0','axr-265',0)
+      RETURN FALSE
    END IF
- 
+
    CALL cl_opmsg('b')
- 
+
    IF g_oha.ohaconf = 'X' THEN CALL cl_err('','9024',0) RETURN FALSE END IF
    IF g_oha.oha55 matches '[Ss]' THEN       #FUN-550051
        CALL cl_err('','apm-030',0)
@@ -9287,7 +9298,7 @@ FUNCTION t700_b1_chk()
    END IF
    RETURN TRUE
 END FUNCTION
- 
+
 FUNCTION t700_b1_bef_inp()
 
    IF g_rec_b != 0 THEN
@@ -9308,7 +9319,7 @@ FUNCTION t700_b1_bef_inp()
    CALL cl_set_docno_format("ohb31")     #No.FUN-540049
 
 END FUNCTION
- 
+
 FUNCTION t700_b1_bef_ins()
    INITIALIZE g_ohb1[l_ac].* TO NULL      #900423  #No.FUN-650108
    INITIALIZE arr_detail[l_ac].* TO NULL #No.TQC-650099
@@ -9319,11 +9330,11 @@ FUNCTION t700_b1_bef_ins()
    LET g_ohb1[l_ac].ohb14=0
    LET g_ohb1[l_ac].ohb14t=0
    LET g_ohb1[l_ac].ohb1003=100
-   IF NOT cl_null(g_oha.oha16) THEN         
-      LET g_ohb1[l_ac].ohb31=g_oha.oha16    
+   IF NOT cl_null(g_oha.oha16) THEN
+      LET g_ohb1[l_ac].ohb31=g_oha.oha16
       SELECT oma10 INTO g_ohb1[l_ac].ohb30 FROM oma_file
         WHERE oma01 = (SELECT oga10 FROM oga_file WHERE oga01=g_oha.oha16)
-   END IF                                   
+   END IF
    LET b_ohb.ohb05_fac=1
    LET b_ohb.ohb15_fac=1
    LET b_ohb.ohb16=0
@@ -9331,7 +9342,7 @@ FUNCTION t700_b1_bef_ins()
    LET b_ohb.ohb11=''    #No.MOD-5B0280
    IF g_azw.azw04='2' THEN
       LET g_ohb1[l_ac].ohb67=0
-      LET g_ohb1[l_ac].ohb68='N'     
+      LET g_ohb1[l_ac].ohb68='N'
    ELSE
       LET g_ohb1[l_ac].ohb64 = '1'
    END IF
@@ -9351,7 +9362,7 @@ FUNCTION t700_b1_bef_ins()
    CALL cl_set_comp_entry("att04,att04_c,att05,att05_c,att06,att06_c",TRUE)
    CALL cl_set_comp_entry("att07,att07_c,att08,att08_c,att09,att09_c,att10,att10_c",TRUE)
 END FUNCTION
- 
+
 FUNCTION t700_b1_inschk()
    DEFINE   l_tqn   RECORD  LIKE tqn_file.*
    IF g_sma.sma115 = 'Y' THEN
@@ -9360,30 +9371,30 @@ FUNCTION t700_b1_inschk()
       IF g_flag=1 THEN
          RETURN "ohb04"
       END IF
- 
+
       CALL s_chk_va_setting1(g_ohb1[l_ac].ohb04)   #NO.FUN-650108
            RETURNING g_flag,g_ima908
       IF g_flag=1 THEN
          RETURN "ohb04"
       END IF
- 
+
       CALL t700_du_data_to_correct()
    END IF
- 
+
    IF g_sma.sma115 = 'Y' THEN
       CALL t700_set_origin_field()
    END IF
- 
+
    IF cl_null(g_ohb1[l_ac].ohb916) THEN
       LET g_ohb1[l_ac].ohb916 = g_ohb1[l_ac].ohb05
       LET g_ohb1[l_ac].ohb917 = g_ohb1[l_ac].ohb12
    END IF
    IF cl_null(g_ohb1[l_ac].ohb917) THEN LET g_ohb1[l_ac].ohb917=0 END IF  #MOD-780263 add
- 
-   CALL t700_b_move_back()   
+
+   CALL t700_b_move_back()
    RETURN NULL
 END FUNCTION
- 
+
 FUNCTION t700_b1_ins()
    DEFINE l_tqn    RECORD LIKE tqn_file.*
    DEFINE l_sql    STRING  #FUN-A50054 add
@@ -9418,7 +9429,7 @@ FUNCTION t700_b1_ins()
          END IF
       END IF
    END IF
-   
+
    IF cl_null(b_ohb.ohb64) THEN
       LET b_ohb.ohb64='1'
    END IF
@@ -9428,7 +9439,7 @@ FUNCTION t700_b1_ins()
    IF cl_null(b_ohb.ohb68) THEN
       LET b_ohb.ohb68='N'
    END IF
-  
+
 #FUN-A60035---mark begin
    #FUN-A50054 --Begin
 #  IF s_industry("slk") THEN   #FUN-A60035 mod
@@ -9443,9 +9454,9 @@ FUNCTION t700_b1_ins()
 #        LET b_ohb.ohb917= g_ohb1[l_ac].ohb917 * b_ohb.ohb12 / g_ohb1[l_ac].ohb12
 #        CALL cl_digcut(b_ohb.ohb14,t_azi04)  RETURNING b_ohb.ohb14
 #        CALL cl_digcut(b_ohb.ohb14t,t_azi04) RETURNING b_ohb.ohb14t
-#        LET b_ohb.ohbplant = g_plant 
-#        LET b_ohb.ohblegal = g_legal  
-#  
+#        LET b_ohb.ohbplant = g_plant
+#        LET b_ohb.ohblegal = g_legal
+#
 #        INSERT INTO ohb_file VALUES(b_ohb.*)
 #        IF SQLCA.sqlcode THEN
 #           CALL cl_err3("ins","ohb_file",b_ohb.ohb01,"",SQLCA.sqlcode,"","ins ohb",1)  #No.FUN-670008
@@ -9458,37 +9469,37 @@ FUNCTION t700_b1_ins()
 
 #MOD-AB0252  --begin--
        IF cl_null(b_ohb.ohb14) THEN
-          LET b_ohb.ohb14 = 0 
-       END IF 
+          LET b_ohb.ohb14 = 0
+       END IF
        IF cl_null(b_ohb.ohb14t) THEN
-          LET b_ohb.ohb14t = 0 
-       END IF 
+          LET b_ohb.ohb14t = 0
+       END IF
 #MOD-AB0252  --end--
        IF g_oha.oha09 = '2' THEN LET b_ohb.ohb13 = 0 END IF     #MOD-C60052 add
        IF g_oha.oha09 = '2' THEN LET b_ohb.ohb14 = 0 END IF     #MOD-C60052 add
        IF g_oha.oha09 = '2' THEN LET b_ohb.ohb14t= 0 END IF     #MOD-C60052 add
        INSERT INTO ohb_file VALUES(b_ohb.*)
        IF SQLCA.sqlcode THEN
-          CALL cl_err3("ins","ohb_file",b_ohb.ohb01,"",SQLCA.sqlcode,"","ins ohb",1)  #No.FUN-650108          
+          CALL cl_err3("ins","ohb_file",b_ohb.ohb01,"",SQLCA.sqlcode,"","ins ohb",1)  #No.FUN-650108
           RETURN        #FUN-B70061
-       ELSE          
+       ELSE
           CALL t700_ins_ogk(b_ohb.ohb03,b_ohb.ohb04,b_ohb.ohb917,b_ohb.ohb13)     #FUN-C10053 add
           IF g_success ='N' THEN
              RETURN FALSE
           END IF
           CALL cl_msg('INSERT O.K')
-          UPDATE ohb_file 
-             SET ohb1005='1' 
+          UPDATE ohb_file
+             SET ohb1005='1'
            WHERE ohb01=b_ohb.ohb01
-             AND ohb03=b_ohb.ohb03 
+             AND ohb03=b_ohb.ohb03
           LET g_rec_b=g_rec_b+1
-          DISPLAY g_rec_b TO FORMONLY.cn2          
+          DISPLAY g_rec_b TO FORMONLY.cn2
        END IF
-#  END IF  #FUN-A50054 add #FUN-A60035 mark   
+#  END IF  #FUN-A50054 add #FUN-A60035 mark
    RETURN TRUE
 #FUN-B90103--add
 END FUNCTION
- 
+
 FUNCTION t700_bef_ohb03()
 #FUN-B90103--start--
 #FUN-B90103--end
@@ -9501,42 +9512,42 @@ FUNCTION t700_bef_ohb03()
 #      WHERE ata00=g_prog
 #        AND ata01=g_oha.oha01
 #        AND ata02=g_ohb1[l_ac].ohb03
-#  ELSE 
-#  #FUN-A50054 end      
+#  ELSE
+#  #FUN-A50054 end
 #FUN-A60035---mark end
        SELECT max(ohb03)+1 INTO g_ohb1[l_ac].ohb03
-         FROM ohb_file 
+         FROM ohb_file
         WHERE ohb01 = g_oha.oha01
           AND ohb1005='1'
-#  END IF #FUN-A50054 add #FUN-A60035 mark      
+#  END IF #FUN-A50054 add #FUN-A60035 mark
        IF g_ohb1[l_ac].ohb03 IS NULL THEN
           LET g_ohb1[l_ac].ohb03 = 1
        END IF
    END IF
 #FUN-B90103--add
 END FUNCTION
- 
+
 FUNCTION t700_chk_ohb03()
 #FUN-B90103--start--
 #FUN-B90103--end--
    IF NOT cl_null(g_ohb1[l_ac].ohb03) THEN
-      IF g_ohb1[l_ac].ohb03 != g_ohb1_t.ohb03 OR     
-         g_ohb1_t.ohb03 IS NULL THEN  
+      IF g_ohb1[l_ac].ohb03 != g_ohb1_t.ohb03 OR
+         g_ohb1_t.ohb03 IS NULL THEN
          #FUN-A50054 --Begin
-      # SELECT ima151 INTO l_ima151 FROM ima_file        #FUN-A60035                                                               
-      #  WHERE ima01=g_ohb1[l_ac].ohb04                  #FUN-A60035 
+      # SELECT ima151 INTO l_ima151 FROM ima_file        #FUN-A60035
+      #  WHERE ima01=g_ohb1[l_ac].ohb04                  #FUN-A60035
       #    IF g_oea.oeaslk02 = 'Y' AND g_sma.sma120='Y' AND l_ima151='Y' THEN
       #       CALL s_detail(g_prog,g_oha.oha01,g_ohb1[l_ac].ohb03,g_ohb1[l_ac].ohb04,'N')
       #           RETURNING g_ohb1[l_ac].ohb12
       #    END IF
-         #FUN-A50054 --End  
-         LET g_cnt=0             
+         #FUN-A50054 --End
+         LET g_cnt=0
          SELECT count(*) INTO g_cnt FROM ohb_file
           WHERE ohb01 = g_oha.oha01 AND ohb03 = g_ohb1[l_ac].ohb03
-            AND ohb1005='1' 
+            AND ohb1005='1'
          IF g_cnt > 0 THEN
             LET g_ohb1[l_ac].ohb03 = g_ohb1_t.ohb03
-            CALL cl_err('',-239,0) 
+            CALL cl_err('',-239,0)
             RETURN FALSE
          END IF
       END IF
@@ -9544,18 +9555,18 @@ FUNCTION t700_chk_ohb03()
 #FUN-B90103--add
    RETURN TRUE
 END FUNCTION
- 
+
 FUNCTION t700_chk_ohb30()
    DEFINE l_cnt LIKE type_file.num5   #MOD-920193
- 
-   IF NOT cl_null(g_ohb1[l_ac].ohb30) THEN  
-      LET l_cnt = 0 
+
+   IF NOT cl_null(g_ohb1[l_ac].ohb30) THEN
+      LET l_cnt = 0
       SELECT COUNT(*) INTO l_cnt FROM oma_file
        WHERE oma10=g_ohb1[l_ac].ohb30
          AND oma00 MATCHES '1*'
          AND oma03 = g_oha.oha03 		      #MOD-980232
-      CASE  
-         WHEN l_cnt = 0  
+      CASE
+         WHEN l_cnt = 0
           #輸入單身原始發票號碼時,檢查若不存在axrt300,再判斷是否存在amdi100
            SELECT COUNT(*) INTO l_cnt FROM amd_file
             WHERE amd03 = g_ohb1[l_ac].ohb30
@@ -9567,19 +9578,19 @@ FUNCTION t700_chk_ohb30()
            SELECT oma16 INTO g_ohb1[l_ac].ohb31 FROM oma_file
             WHERE oma10=g_ohb1[l_ac].ohb30
               AND oma00 MATCHES '1*'
-         WHEN l_cnt > 1 
-           CALL cl_err('','axm-618',0)      
-      END CASE   
+         WHEN l_cnt > 1
+           CALL cl_err('','axm-618',0)
+      END CASE
    END IF
    RETURN TRUE
 END FUNCTION
- 
+
 FUNCTION t700_bef_ohb31(p_cmd)
    DEFINE p_cmd LIKE type_file.chr1
    CALL t700_set_entry_b(p_cmd)
    CALL t700_set_no_required(p_cmd)
 END FUNCTION
- 
+
 FUNCTION t700_chk_ohb31(p_cmd)
    DEFINE p_cmd LIKE type_file.chr1
    DEFINE l_ogb11         LIKE ogb_file.ogb11
@@ -9588,9 +9599,9 @@ FUNCTION t700_chk_ohb31(p_cmd)
    DEFINE l_ogb1006       LIKE ogb_file.ogb1006
    DEFINE l_ogb1004       LIKE ogb_file.ogb1004
    DEFINE l_ogb1012       LIKE ogb_file.ogb1012
-   DEFINE l_ogb44         LIKE ogb_file.ogb44   #No.FUN-870007                                                                                    
-   DEFINE l_ogb45         LIKE ogb_file.ogb45   #No.FUN-870007                                                                                  
-   DEFINE l_ogb46         LIKE ogb_file.ogb46   #No.FUN-870007                                                                                  
+   DEFINE l_ogb44         LIKE ogb_file.ogb44   #No.FUN-870007
+   DEFINE l_ogb45         LIKE ogb_file.ogb45   #No.FUN-870007
+   DEFINE l_ogb46         LIKE ogb_file.ogb46   #No.FUN-870007
    DEFINE l_ogb47         LIKE ogb_file.ogb47   #No.FUN-870007
    DEFINE l_oga02         LIKE oga_file.oga02   #MOD-9B0090
    DEFINE l_cnt           LIKE type_file.num5    #MOD-A10098
@@ -9606,7 +9617,7 @@ FUNCTION t700_chk_ohb31(p_cmd)
       #MOD-C30817 add start -----
      #SELECT oga00 INTO l_oga00 FROM oga_file WHERE oga01 = g_ohb1[l_ac].ohb31 #MOD-C80027 mark
       #MOD-C80027 add start -----
-      SELECT oga00,oga65,oga99 INTO l_oga00,l_oga65,l_oga99 FROM oga_file WHERE oga01 = g_ohb1[l_ac].ohb31 
+      SELECT oga00,oga65,oga99 INTO l_oga00,l_oga65,l_oga99 FROM oga_file WHERE oga01 = g_ohb1[l_ac].ohb31
       IF l_oga65 = 'Y' THEN
          CALL cl_err(g_ohb1[l_ac].ohb31,'axm1165',1)
          RETURN FALSE
@@ -9670,7 +9681,7 @@ FUNCTION t700_chk_ohb31(p_cmd)
       END IF
       #CHI-AB0032 add --end---------------------
       IF g_sma.sma120 = 'Y' AND g_sma.sma907 = 'Y' THEN
-         LET g_t1 = g_ohb1[l_ac].ohb31[1,g_doc_len]  #FUN-650108 
+         LET g_t1 = g_ohb1[l_ac].ohb31[1,g_doc_len]  #FUN-650108
          SELECT oay22 INTO l_oay22_oga FROM oay_file WHERE oayslip =g_t1
          LET g_t1 = g_oha.oha01[1,g_doc_len]
          SELECT oay22 INTO l_oay22_oha FROM oay_file WHERE oayslip =g_t1
@@ -9683,8 +9694,8 @@ FUNCTION t700_chk_ohb31(p_cmd)
       END IF
       IF g_aza.aza50='Y' THEN
         SELECT * INTO g_oga.* FROM oga_file
-         WHERE oga01=g_ohb1[l_ac].ohb31   
-      ELSE 
+         WHERE oga01=g_ohb1[l_ac].ohb31
+      ELSE
          SELECT * INTO g_oga.* FROM oga_file
          WHERE oga01=g_ohb1[l_ac].ohb31
            AND oga03=g_oha.oha03
@@ -9693,28 +9704,28 @@ FUNCTION t700_chk_ohb31(p_cmd)
          CALL cl_err3("sel","oga_file",g_ohb1[l_ac].ohb31,"",STATUS,"","sel oga",1) #No.FUN-650108
          RETURN FALSE   #No.FUN-650108
       END IF
-      IF g_oga.oga00 ='3' THEN                                                  
-         CALL cl_err(g_oga.oga01,'axm-935',1)                                   
-         RETURN FALSE                                                           
-      END IF                                                                    
+      IF g_oga.oga00 ='3' THEN
+         CALL cl_err(g_oga.oga01,'axm-935',1)
+         RETURN FALSE
+      END IF
       IF g_aza.aza50='Y' THEN
          SELECT count(*) INTO g_n FROM ogb_file
           WHERE ogb01=g_ohb1[l_ac].ohb31
             AND (ogb1005!='2' OR ogb1005 IS NULL)
          IF g_n=0 THEN
             CALL cl_err('ohb31','mfg9329',0)
-            RETURN FALSE    
+            RETURN FALSE
          END IF
          IF NOT cl_null(g_ohb1[l_ac].ohb32) THEN
             IF (g_ohb1[l_ac].ohb31 !=g_ohb1_t.ohb31 OR cl_null(g_ohb1_t.ohb31)) THEN
                 IF g_ohb1[l_ac].ohb31 != g_oha.oha16 THEN
                    CALL cl_err('','atm-253',0)
-                   RETURN FALSE      
+                   RETURN FALSE
                 END IF
             END IF
-         END IF 
+         END IF
       END IF
- 
+
       IF g_oga.ogaconf != 'Y' THEN	#未確認 01/08/15 mandy
          CALL cl_err('sel oga','axm-184',0)
          RETURN FALSE  #No.FUn-650108
@@ -9722,11 +9733,11 @@ FUNCTION t700_chk_ohb31(p_cmd)
 
       #-----MOD-A80148---------
       IF g_oga.ogapost = 'N' THEN    #未扣帳
-         CALL cl_err('sel oga','axm-299',0) 
+         CALL cl_err('sel oga','axm-299',0)
          RETURN FALSE
       END IF
       #-----END MOD-A80148-----
- 
+
      IF g_azw.azw04='2' THEN
          IF g_oga.oga83 != g_oha.ohaplant THEN
             CALL cl_err('','art-337',0)
@@ -9737,25 +9748,25 @@ FUNCTION t700_chk_ohb31(p_cmd)
             AND (ogb1005!='2' OR ogb1005 IS NULL)
          IF g_n=0 THEN
             CALL cl_err('ohb31','mfg9329',0)
-            RETURN FALSE    
+            RETURN FALSE
          END IF
          IF NOT cl_null(g_ohb1[l_ac].ohb32) THEN
             IF (g_ohb1[l_ac].ohb31 !=g_ohb1_t.ohb31 OR cl_null(g_ohb1_t.ohb31)) THEN
                 IF g_ohb1[l_ac].ohb31 != g_oha.oha16 THEN
                    CALL cl_err('','atm-253',0)
-                   RETURN FALSE      
+                   RETURN FALSE
                 END IF
             END IF
-         END IF 
+         END IF
       END IF
- 
+
       #帳單編號為null #No:9344
       SELECT ooz65 INTO g_ooz.ooz65 FROM ooz_file   #MOD-870183
      #IF NOT (g_aza.aza26='2' AND g_ooz.ooz65='Y') THEN        #MOD-870183 #CHI-C10018 mark
       IF g_ooz.ooz65 = 'N' THEN                                #CHI-C10018 add
          IF g_oha.oha09 MATCHES '[145]' AND g_oga.oga10 IS NULL THEN
             CALL cl_err(g_oga.oga01,'mfg-029',0)
-            RETURN FALSE    #No.FUN-650108  
+            RETURN FALSE    #No.FUN-650108
          END IF
       END IF   #MOD-870183
       IF g_oga.oga08 != g_oha.oha08 THEN	#國內外不符
@@ -9770,7 +9781,7 @@ FUNCTION t700_chk_ohb31(p_cmd)
       IF g_oga.oga23 != g_oha.oha23 THEN	#幣別不符
          CALL cl_err('sel oga','axm-144',0) RETURN FALSE   #NO.FUN-650108
       END IF
- 
+
       #判斷是否為三角貿易訂單 No.7992
      #MOD-D20003 mark start ----
      #IF cl_null(g_oha.oha41) OR g_oha.oha41 = 'N' THEN
@@ -9779,22 +9790,22 @@ FUNCTION t700_chk_ohb31(p_cmd)
          IF g_argv0 = '1' AND g_oga.oga09 ='4' THEN #MOD-D20003 add
             #IF t700_chkpoz() THEN RETURN FALSE END IF  #DEV-D30046 --mark
             #DEV-D30046 --add--begin
-           # CALL saxmt700sub_chkpoz(g_oha.*,g_ohb1[l_ac].ohb31) 
+           # CALL saxmt700sub_chkpoz(g_oha.*,g_ohb1[l_ac].ohb31)
             CALL saxmt700sub_chkpoz(g_oha.*,g_ohb1[1].ohb31)       #DEV-D70003 add
-               RETURNING li_flag,g_poz.*,g_flow 
-            IF li_flag THEN RETURN FALSE END IF 
+               RETURNING li_flag,g_poz.*,g_flow
+            IF li_flag THEN RETURN FALSE END IF
             #DEV-D30046 --add--end
            #IF g_oga.oga09 = '4' AND g_poz.poz011 = '2' THEN              #TQC-9C0126 mark #MOD-D20003 mark
-            IF g_poz.poz011 = '2' THEN                                    #MOD-D20003 add 
-               CALL cl_err('','axm-163',1)                                #TQC-9C0126 mark                      
+            IF g_poz.poz011 = '2' THEN                                    #MOD-D20003 add
+               CALL cl_err('','axm-163',1)                                #TQC-9C0126 mark
      #MOD-D20003 mark start -----
      #      ELSE                                                          #TQC-9C0126 mark
-     #         CALL cl_err('','tri-015',1) RETURN FALSE   #No.FUN-650108  
+     #         CALL cl_err('','tri-015',1) RETURN FALSE   #No.FUN-650108
      #MOD-D20003 mark end   -----
             END IF                                                        #TQC-9C0126 mark
          END IF                       #TQC-9C0031 mark   #TQC-9C0126 取消mark
      #END IF #MOD-D20003 mark
-      LET l_oga02 = '' 
+      LET l_oga02 = ''
       SELECT oga02 INTO l_oga02 FROM oga_file WHERE oga01=g_ohb1[l_ac].ohb31
       IF g_oha.oha02 < l_oga02 THEN
          CALL cl_err(l_oga02,'axm-325',0)
@@ -9802,12 +9813,12 @@ FUNCTION t700_chk_ohb31(p_cmd)
       END IF
 
       #-----MOD-A10098---------
-      IF g_oga.oga09='2' AND g_oga.oga65='Y' THEN 
+      IF g_oga.oga09='2' AND g_oga.oga65='Y' THEN
          LET l_cnt = 0
          SELECT COUNT(*) INTO l_cnt FROM oga_file
            WHERE oga011 = g_oga.oga01
              AND ogaconf='Y'
-             AND ogapost='Y'         
+             AND ogapost='Y'
              AND oga09='8'
          IF l_cnt = 0 THEN
             CALL cl_err('','axm-609',0)
@@ -9817,10 +9828,10 @@ FUNCTION t700_chk_ohb31(p_cmd)
       #-----END MOD-A10098-----
 
       IF g_aza.aza50='Y' THEN
-        SELECT ogb1001,ogb1002,ogb1004,ogb11,ogb1006,ogb1012 
+        SELECT ogb1001,ogb1002,ogb1004,ogb11,ogb1006,ogb1012
           INTO l_ogb1001,l_ogb1002,l_ogb1004,l_ogb11,l_ogb1006,l_ogb1012
           FROM ogb_file
-         WHERE ogb01=g_ohb1[l_ac].ohb31 
+         WHERE ogb01=g_ohb1[l_ac].ohb31
            AND ogb03=g_ohb1[l_ac].ohb32
         IF l_ogb1006 IS NULL THEN
            LET l_ogb1006 = 100
@@ -9833,22 +9844,22 @@ FUNCTION t700_chk_ohb31(p_cmd)
         LET g_ohb1[l_ac].ohb1002=l_ogb1004
         LET g_ohb1[l_ac].ohb1003=l_ogb1006
         LET g_ohb1[l_ac].ohb11=l_ogb11
-        CALL cl_set_comp_entry("ohb04,b1_ohb1002,b1_ohb1003,b1_ohb11,b1_ohb14,b1_ohb14t",FALSE)  
-        SELECT ima906 INTO g_ima906 FROM ima_file                                                                       
-         WHERE ima01=g_ohb1[l_ac].ohb04      
-        IF g_ima906='1' THEN                                                                                            
-           CALL cl_set_comp_entry("b1_ohb913,b1_ohb914,b1_ohb915",FALSE)                                                         
-        END IF                                                                                                          
-        IF g_ima906='2' THEN                                                                                            
-           CALL cl_set_comp_entry("b1_ohb911,b1_ohb914",FALSE)                                                                 
-        END IF                                                                                                          
-        IF g_ima906='3' THEN                                                                                            
-            CALL cl_set_comp_entry("b1_ohb913",FALSE)                                                                     
-        END IF                            
+        CALL cl_set_comp_entry("ohb04,b1_ohb1002,b1_ohb1003,b1_ohb11,b1_ohb14,b1_ohb14t",FALSE)
+        SELECT ima906 INTO g_ima906 FROM ima_file
+         WHERE ima01=g_ohb1[l_ac].ohb04
+        IF g_ima906='1' THEN
+           CALL cl_set_comp_entry("b1_ohb913,b1_ohb914,b1_ohb915",FALSE)
+        END IF
+        IF g_ima906='2' THEN
+           CALL cl_set_comp_entry("b1_ohb911,b1_ohb914",FALSE)
+        END IF
+        IF g_ima906='3' THEN
+            CALL cl_set_comp_entry("b1_ohb913",FALSE)
+        END IF
       END IF
       #-----MOD-A60041---------
       #判斷流程代碼是否相同
-      IF g_oha.oha41 = 'Y' THEN 
+      IF g_oha.oha41 = 'Y' THEN
          LET l_oea904_1 = ''
          SELECT DISTINCT oea904 INTO l_oea904_1 FROM ogb_file,oea_file
            WHERE ogb31 = oea01
@@ -9863,27 +9874,27 @@ FUNCTION t700_chk_ohb31(p_cmd)
             SELECT DISTINCT oea904 INTO l_oea904_2 FROM ogb_file,oea_file
               WHERE ogb31 = oea01
                 AND ogb01 = l_ohb31
-            IF l_oea904_1 <> l_oea904_2 THEN  
+            IF l_oea904_1 <> l_oea904_2 THEN
                CALL cl_err(g_oea.oea901,'axm1015',0)
                RETURN FALSE
             END IF
          END FOREACH
-      END IF   
+      END IF
       #-----END MOD-A60041-----
    END IF
    IF g_aza.aza50='Y' THEN
     IF cl_null(g_ohb1[l_ac].ohb31) OR cl_null(g_ohb1[l_ac].ohb32) THEN
-       CALL cl_set_comp_entry("ohb04,b1_ohb1002,b1_ohb50,b1_ohb1003,b1_ohb11,b1_ohb14,b1_ohb14t",TRUE)    #NO.TQC-640125  
-    END IF 
+       CALL cl_set_comp_entry("ohb04,b1_ohb1002,b1_ohb50,b1_ohb1003,b1_ohb11,b1_ohb14,b1_ohb14t",TRUE)    #NO.TQC-640125
+    END IF
    END IF
-        
+
    IF g_azw.azw04='2' THEN
 #     SELECT ogb1001,ogb1002,ogb1004,ogb11,ogb1006,ogb1012,ogb44,ogb45,ogb46,ogb47,   #No.TQC-A10039
       SELECT ogb1001,ogb1002,ogb1004,ogb11,ogb1006,ogb1012,ogb44,ogb45,ogb46,ogb47    #No.TQC-A10039
         INTO l_ogb1001,l_ogb1002,l_ogb1004,l_ogb11,l_ogb1006,
              l_ogb1012,l_ogb44,l_ogb45,l_ogb46,l_ogb47
         FROM ogb_file
-       WHERE ogb01=g_ohb1[l_ac].ohb31 
+       WHERE ogb01=g_ohb1[l_ac].ohb31
          AND ogb03=g_ohb1[l_ac].ohb32
      IF l_ogb1006 IS NULL THEN
         LET l_ogb1006 = 100
@@ -9897,30 +9908,30 @@ FUNCTION t700_chk_ohb31(p_cmd)
      LET g_ohb1[l_ac].ohb1003=l_ogb1006
      LET g_ohb1[l_ac].ohb11=l_ogb11
      LET g_ohb1[l_ac].ohb64=l_ogb44
-     LET g_ohb1[l_ac].ohb65=l_ogb45 
-     LET g_ohb1[l_ac].ohb66=l_ogb46                                                                                              
+     LET g_ohb1[l_ac].ohb65=l_ogb45
+     LET g_ohb1[l_ac].ohb66=l_ogb46
      LET g_ohb1[l_ac].ohb67=l_ogb47
-     CALL cl_set_comp_entry("b1_ohb1002,b1_ohb1003,b1_ohb11,b1_ohb14,b1_ohb14t",FALSE)  
-     SELECT ima906 INTO g_ima906 FROM ima_file                                                                       
-      WHERE ima01=g_ohb1[l_ac].ohb04      
-     IF g_ima906='1' THEN                                                                                            
-        CALL cl_set_comp_entry("b1_ohb913,b1_ohb914,b1_ohb915",FALSE)                                                         
-     END IF                                                                                                          
-     IF g_ima906='2' THEN                                                                                            
-        CALL cl_set_comp_entry("b1_ohb911,b1_ohb914",FALSE)                                                                 
-     END IF                                                                                                          
-     IF g_ima906='3' THEN                                                                                            
-        CALL cl_set_comp_entry("b1_ohb913",FALSE)                                                                     
-     END IF                            
+     CALL cl_set_comp_entry("b1_ohb1002,b1_ohb1003,b1_ohb11,b1_ohb14,b1_ohb14t",FALSE)
+     SELECT ima906 INTO g_ima906 FROM ima_file
+      WHERE ima01=g_ohb1[l_ac].ohb04
+     IF g_ima906='1' THEN
+        CALL cl_set_comp_entry("b1_ohb913,b1_ohb914,b1_ohb915",FALSE)
+     END IF
+     IF g_ima906='2' THEN
+        CALL cl_set_comp_entry("b1_ohb911,b1_ohb914",FALSE)
+     END IF
+     IF g_ima906='3' THEN
+        CALL cl_set_comp_entry("b1_ohb913",FALSE)
+     END IF
    END IF
- 
+
    CALL t700_set_no_entry_b(p_cmd)
    CALL t700_set_entry_ohb092()    #FUN-B50096
    CALL t700_set_no_entry_ohb092() #FUN-B50096
    CALL t700_set_required(p_cmd)
    RETURN TRUE
 END FUNCTION
- 
+
 FUNCTION t700_chk_ohb33()
    DEFINE l_last_plant    LIKE poy_file.poy04
    DEFINE l_num           LIKE type_file.num5
@@ -9928,7 +9939,7 @@ FUNCTION t700_chk_ohb33()
    DEFINE p_cmd           LIKE type_file.chr1
    DEFINE l_err           LIKE type_file.chr1    #CHI-8B0053
    DEFINE li_flag         LIKE type_file.num5    #DEV-D30046 --add
- 
+
    IF NOT cl_null(g_ohb1[l_ac].ohb33) THEN
       IF g_aza.aza50='Y' THEN
          SELECT count(*) INTO g_n FROM oeb_file
@@ -9958,7 +9969,7 @@ FUNCTION t700_chk_ohb33()
          CALL cl_err3("sel","oea_file",g_ohb1[l_ac].ohb33,"",STATUS,"","sel oea",1)
          RETURN "ohb33"
       END IF
- 
+
       IF g_oea.oeaconf != 'Y' THEN	#未確認 01/08/15 mandy
          CALL cl_err('sel oea','axm-184',0) RETURN "ohb31"  #No.FUN-650108
       END IF
@@ -9982,17 +9993,17 @@ FUNCTION t700_chk_ohb33()
          IF g_argv0 = '1' AND g_oga.oga09 ='4' THEN #MOD-D20003 add
                #IF t700_chkpoz() THEN RETURN FALSE END IF  #DEV-D30046 --mark
                #DEV-D30046 --add--begin
-              # CALL saxmt700sub_chkpoz(g_oha.*,g_ohb1[l_ac].ohb31) 
+              # CALL saxmt700sub_chkpoz(g_oha.*,g_ohb1[l_ac].ohb31)
                CALL saxmt700sub_chkpoz(g_oha.*,g_ohb1[1].ohb31)       #DEV-D70003 add
-                  RETURNING li_flag,g_poz.*,g_flow 
-               IF li_flag THEN RETURN FALSE END IF 
+                  RETURNING li_flag,g_poz.*,g_flow
+               IF li_flag THEN RETURN FALSE END IF
                #DEV-D30046 --add--end
               #IF g_oga.oga09 = '4' AND g_poz.poz011 = '2' THEN              #TQC-9C0126 mark
-               IF g_poz.poz011 = '2' THEN                                    #MOD-D20003 add 
-                  CALL cl_err('','axm-163',1)                                #TQC-9C0126 mark                        
+               IF g_poz.poz011 = '2' THEN                                    #MOD-D20003 add
+                  CALL cl_err('','axm-163',1)                                #TQC-9C0126 mark
      #MOD-D20003 mark start -----
      #         ELSE                                                          #TQC-9C0126 mark
-     #            CALL cl_err('','tri-015',1) RETURN "ohb31"  #No.FUN-650108 
+     #            CALL cl_err('','tri-015',1) RETURN "ohb31"  #No.FUN-650108
      #MOD-D20003 mark end   -----
                END IF                                                        #TQC-9C0126 mark
          END IF
@@ -10010,10 +10021,10 @@ FUNCTION t700_chk_ohb33()
          #檢查流程代碼
          #IF t700_chkpoz() THEN RETURN "ohb31" END IF  #No.FUN-650108  #DEV-D30046 --mark
          #DEV-D30046 --add--begin
-        # CALL saxmt700sub_chkpoz(g_oha.*,g_ohb1[l_ac].ohb31) 
+        # CALL saxmt700sub_chkpoz(g_oha.*,g_ohb1[l_ac].ohb31)
           CALL saxmt700sub_chkpoz(g_oha.*,g_ohb1[1].ohb31)       #DEV-D70003 add
-            RETURNING li_flag,g_poz.*,g_flow 
-         IF li_flag THEN RETURN "ohb31" END IF 
+            RETURNING li_flag,g_poz.*,g_flow
+         IF li_flag THEN RETURN "ohb31" END IF
          #DEV-D30046 --add--end
          IF g_oha.oha05 MATCHES '[23]' THEN #三角銷退 #No.8981
             IF g_poz.poz011 = '1' THEN  #正拋方式
@@ -10072,7 +10083,7 @@ FUNCTION t700_chk_ohb33()
       CALL t700_set_required(p_cmd)
    RETURN TRUE
 END FUNCTION
- 
+
 FUNCTION t700_chk_ohb32_1(p_cmd)
 DEFINE p_cmd LIKE type_file.chr1,
        l_imaacti LIKE ima_file.imaacti   #MOD-A90157
@@ -10107,18 +10118,18 @@ DEFINE l_ima02  LIKE ima_file.ima02  #CHI-C80045 add
 #        GROUP BY ata05
 #     END IF
 #FUN-A60035 --End
-#FUN-A60035---mark end   
+#FUN-A60035---mark end
       IF STATUS THEN
          CALL cl_err3("sel","oga_file,ogb_file","","",STATUS,"","sel ogb",1)  #No.FUN-650108
          RETURN FALSE
       END IF
-   
+
      #此出貨單已開發票(ogb60), 銷退方式不可設為 '3不折讓,不換貨'!
       IF g_ogb.ogb60 > 0 AND g_oha.oha09='3' THEN
-         CALL cl_err('sel ogb','axm-182',0) 
+         CALL cl_err('sel ogb','axm-182',0)
          RETURN FALSE
       END IF
-   
+
       IF g_sma.sma115 = 'Y' THEN
          CALL t700_get_ohb_unit2(p_cmd)
          IF cl_null(g_errno) THEN
@@ -10166,7 +10177,7 @@ DEFINE l_ima02  LIKE ima_file.ima02  #CHI-C80045 add
               FROM ogc_file
              WHERE ogc01 = g_ohb1[l_ac].ohb31 AND ogc03 = g_ohb1[l_ac].ohb32
             LET g_ohb1[l_ac].ohb04 = l_ogc17
-         ELSE 
+         ELSE
          #CHI-C80045 add end   -----
             LET g_ohb1[l_ac].ohb04 = g_ogb.ogb04
          END IF #CHI-C80045 add
@@ -10181,12 +10192,12 @@ DEFINE l_ima02  LIKE ima_file.ima02  #CHI-C80045 add
          #-----END MOD-A90157-----
          SELECT imx00,imx01,imx02,imx03,imx04,imx05,
                 imx06,imx07,imx08,imx09,imx10
-           INTO g_ohb1[l_ac].att00, g_ohb1[l_ac].att01, g_ohb1[l_ac].att02,       
-                g_ohb1[l_ac].att03, g_ohb1[l_ac].att04, g_ohb1[l_ac].att05,       
-                g_ohb1[l_ac].att06, g_ohb1[l_ac].att07, g_ohb1[l_ac].att08,       
-                g_ohb1[l_ac].att09, g_ohb1[l_ac].att10 
-           FROM imx_file   
-          WHERE imx000 = g_ohb1[l_ac].ohb04          
+           INTO g_ohb1[l_ac].att00, g_ohb1[l_ac].att01, g_ohb1[l_ac].att02,
+                g_ohb1[l_ac].att03, g_ohb1[l_ac].att04, g_ohb1[l_ac].att05,
+                g_ohb1[l_ac].att06, g_ohb1[l_ac].att07, g_ohb1[l_ac].att08,
+                g_ohb1[l_ac].att09, g_ohb1[l_ac].att10
+           FROM imx_file
+          WHERE imx000 = g_ohb1[l_ac].ohb04
          LET g_ohb1[l_ac].att01_c = g_ohb1[l_ac].att01
          LET g_ohb1[l_ac].att02_c = g_ohb1[l_ac].att02
          LET g_ohb1[l_ac].att03_c = g_ohb1[l_ac].att03
@@ -10197,16 +10208,16 @@ DEFINE l_ima02  LIKE ima_file.ima02  #CHI-C80045 add
          LET g_ohb1[l_ac].att08_c = g_ohb1[l_ac].att08
          LET g_ohb1[l_ac].att09_c = g_ohb1[l_ac].att09
          LET g_ohb1[l_ac].att10_c = g_ohb1[l_ac].att10
-         DISPLAY BY NAME 
-            g_ohb1[l_ac].att01, g_ohb1[l_ac].att01_c, 
+         DISPLAY BY NAME
+            g_ohb1[l_ac].att01, g_ohb1[l_ac].att01_c,
             g_ohb1[l_ac].att02, g_ohb1[l_ac].att02_c,
-            g_ohb1[l_ac].att03, g_ohb1[l_ac].att03_c, 
-            g_ohb1[l_ac].att04, g_ohb1[l_ac].att04_c, 
-            g_ohb1[l_ac].att05, g_ohb1[l_ac].att05_c, 
-            g_ohb1[l_ac].att06, g_ohb1[l_ac].att06_c, 
-            g_ohb1[l_ac].att07, g_ohb1[l_ac].att07_c, 
-            g_ohb1[l_ac].att08, g_ohb1[l_ac].att08_c, 
-            g_ohb1[l_ac].att09, g_ohb1[l_ac].att09_c, 
+            g_ohb1[l_ac].att03, g_ohb1[l_ac].att03_c,
+            g_ohb1[l_ac].att04, g_ohb1[l_ac].att04_c,
+            g_ohb1[l_ac].att05, g_ohb1[l_ac].att05_c,
+            g_ohb1[l_ac].att06, g_ohb1[l_ac].att06_c,
+            g_ohb1[l_ac].att07, g_ohb1[l_ac].att07_c,
+            g_ohb1[l_ac].att08, g_ohb1[l_ac].att08_c,
+            g_ohb1[l_ac].att09, g_ohb1[l_ac].att09_c,
             g_ohb1[l_ac].att10, g_ohb1[l_ac].att10_c
          LET g_ohb1[l_ac].ohb37 = g_ogb.ogb37     #FUN-AB0061
          LET g_ohb1[l_ac].ohb13 = g_ogb.ogb13
@@ -10221,8 +10232,8 @@ DEFINE l_ima02  LIKE ima_file.ima02  #CHI-C80045 add
          #CHI-C80045 add start -----
          IF g_oaz.oaz23 = 'Y' AND g_ogb.ogb17 = 'Y' THEN
             SELECT ima02 INTO l_ima02 FROM ima_file
-             WHERE ima01 = g_ohb1[l_ac].ohb04 
-            LET g_ohb1[l_ac].ohb06 = l_ima02 
+             WHERE ima01 = g_ohb1[l_ac].ohb04
+            LET g_ohb1[l_ac].ohb06 = l_ima02
             LET g_ohb1[l_ac].ohb09 = l_ogc09
             LET g_ohb1[l_ac].ohb091= l_ogc091
          ELSE
@@ -10234,7 +10245,7 @@ DEFINE l_ima02  LIKE ima_file.ima02  #CHI-C80045 add
             LET g_ohb1[l_ac].ohb092= g_ogb.ogb092
          END IF
          #CHI-C80045 add end    -----
-         LET b_ohb.ohb07       = g_ogb.ogb07  
+         LET b_ohb.ohb07       = g_ogb.ogb07
         #LET g_ohb1[l_ac].ohb09 = g_ogb.ogb09  #CHI-C80045 mark
         #LET g_ohb1[l_ac].ohb091= g_ogb.ogb091 #CHI-C80045 mark
          LET g_ohb1[l_ac].ohb61= g_ogb.ogb19   #No.FUN-740016
@@ -10264,7 +10275,7 @@ DEFINE l_ima02  LIKE ima_file.ima02  #CHI-C80045 add
             LET g_ohb1[l_ac].ohb912= 0
             LET g_ohb1[l_ac].ohb915= 0
             LET g_ohb1[l_ac].ohb917= 0
-            SELECT ogb930 INTO g_ohb1[l_ac].ohb930 
+            SELECT ogb930 INTO g_ohb1[l_ac].ohb930
                                        FROM ogb_file
                                       WHERE ogb01=g_ohb1[l_ac].ohb31
                                         AND ogb03=g_ohb1[l_ac].ohb32
@@ -10286,7 +10297,7 @@ DEFINE l_ima02  LIKE ima_file.ima02  #CHI-C80045 add
          DISPLAY BY NAME g_ohb1[l_ac].ohb912
          DISPLAY BY NAME g_ohb1[l_ac].ohb915
          DISPLAY BY NAME g_ohb1[l_ac].ohb917
-         LET g_ohb1[l_ac].ohb37 = g_ogb.ogb37   #FUN-AB0061 
+         LET g_ohb1[l_ac].ohb37 = g_ogb.ogb37   #FUN-AB0061
          LET g_ohb1[l_ac].ohb13 = g_ogb.ogb13
          SELECT ima021 INTO g_ohb1[l_ac].ima021 FROM ima_file
           WHERE ima01=g_ohb1[l_ac].ohb04
@@ -10301,7 +10312,7 @@ DEFINE l_ima02  LIKE ima_file.ima02  #CHI-C80045 add
       END IF
    END IF
    SELECT ima906 INTO g_ima906 FROM ima_file
-    WHERE ima01=g_ohb1[l_ac].ohb04 
+    WHERE ima01=g_ohb1[l_ac].ohb04
    CALL t700_set_no_entry_b(p_cmd) #No.FUN-570260 add
    CALL t700_set_entry_ohb092()    #FUN-B50096
    CALL t700_set_no_entry_ohb092() #FUN-B50096
@@ -10312,7 +10323,7 @@ DEFINE l_ima02  LIKE ima_file.ima02  #CHI-C80045 add
    END IF
    RETURN TRUE
 END FUNCTION
- 
+
 FUNCTION t700_chk_ohb34(p_cmd)
    DEFINE p_cmd LIKE type_file.chr1
    IF NOT cl_null(g_ohb1[l_ac].ohb34) THEN   #No.FUN-650108
@@ -10333,12 +10344,12 @@ FUNCTION t700_chk_ohb34(p_cmd)
          CALL cl_err('sel oeb-b2','axm-178',0)
          RETURN FALSE
       END IF
- 
+
       IF g_oeb.oeb70 = 'Y' AND g_oha.oha09 = '4' THEN #BugNo:5710
          CALL cl_err('sel oeb','axm-150',0)
          RETURN FALSE
       END IF
- 
+
       IF cl_null(g_ohb1[l_ac].ohb31) AND
          (p_cmd='a' OR g_ohb1[l_ac].ohb31!=g_ohb1_t.ohb31
                     OR g_ohb1_t.ohb31 IS NULL     #No.B370 add
@@ -10373,7 +10384,7 @@ FUNCTION t700_chk_ohb34(p_cmd)
          DISPLAY BY NAME g_ohb1[l_ac].ohb091
          DISPLAY BY NAME g_ohb1[l_ac].ohb61   #No.FUN-740016
          DISPLAY BY NAME g_ohb1[l_ac].ohb092
- 
+
          IF g_oha.oha09 ='5' THEN
             LET g_ohb1[l_ac].ohb12 = 0
             LET g_ohb1[l_ac].ohb912= 0
@@ -10384,9 +10395,9 @@ FUNCTION t700_chk_ohb34(p_cmd)
             LET g_ohb1[l_ac].ohb912= g_oeb.oeb912
             LET g_ohb1[l_ac].ohb915= g_oeb.oeb915
          END IF
- 
+
 #        LET g_ohb1[l_ac].ohb13 = g_ogb.ogb13   #FUN-AB0061 mark
-         LET g_ohb1[l_ac].ohb37 = g_oeb.oeb37    #FUN-AB0061 add  
+         LET g_ohb1[l_ac].ohb37 = g_oeb.oeb37    #FUN-AB0061 add
          LET g_ohb1[l_ac].ohb13 = g_oeb.oeb13
          SELECT ima021 INTO g_ohb1[l_ac].ima021 FROM ima_file
           WHERE ima01=g_ohb1[l_ac].ohb04
@@ -10395,10 +10406,10 @@ FUNCTION t700_chk_ohb34(p_cmd)
    # 若資料未輸入,則應可按ESC離開才對
    RETURN TRUE
 END FUNCTION
- 
+
 FUNCTION t700_chk_ohb05()
 DEFINE l_fac_1 LIKE type_file.chr1 #No.FUN-870007
- 
+
    IF NOT cl_null(g_ohb1[l_ac].ohb05) THEN  #No.FUN-650108
       SELECT COUNT(*) INTO g_cnt FROM gfe_file
        WHERE gfe01=g_ohb1[l_ac].ohb05  #No.FUN-650108
@@ -10437,7 +10448,7 @@ DEFINE l_fac_1 LIKE type_file.chr1 #No.FUN-870007
    END IF
    RETURN TRUE
 END FUNCTION
- 
+
 FUNCTION t700_chk_ohb12(p_cmd)
    DEFINE p_cmd LIKE type_file.chr1
 #FUN-C10053 add begin ---
@@ -10449,7 +10460,7 @@ FUNCTION t700_chk_ohb12(p_cmd)
        WHERE rtz01 = g_oha.ohaplant
    END IF
 #FUN-C10053 ----add---end -----
-   
+
    IF g_ohb1_t.ohb12 IS NULL AND g_ohb1[l_ac].ohb12 IS NOT NULL OR
       g_ohb1_t.ohb12 IS NOT NULL AND g_ohb1[l_ac].ohb12 IS NULL OR
       g_ohb1_t.ohb12 <> g_ohb1[l_ac].ohb12 THEN
@@ -10460,19 +10471,19 @@ FUNCTION t700_chk_ohb12(p_cmd)
       IF g_ohb1[l_ac].ohb12 < 0 THEN  #No.FUN-650108
          RETURN FALSE  #No.FUN-650108
       END IF
- 
+
       IF g_oha.oha09 ='5' AND g_ohb1[l_ac].ohb12 <> 0 THEN  #No.FUN-650108
          CALL cl_err(g_oha.oha01,'axm-606',0)
          LET g_ohb1[l_ac].ohb12=g_ohb1_t.ohb12  #No.FUN-650108
          RETURN FALSE #No.FUN-650108
       END IF
- 
+
       IF g_oha.oha09 <>'5' AND g_ohb1[l_ac].ohb12 = 0 THEN  #No.FUN-650108
          CALL cl_err(g_oha.oha01,'axm-607',0)
          LET g_ohb1[l_ac].ohb12=g_ohb1_t.ohb12   #No.FUN-650108
          RETURN FALSE #No.FUN-650108
       END IF
- 
+
       IF NOT cl_null(g_ohb1[l_ac].ohb32) THEN   #No.FUN-650108
          CALL t700_get_ohb('b')
          IF NOT cl_null(g_errno) THEN
@@ -10497,7 +10508,7 @@ FUNCTION t700_chk_ohb12(p_cmd)
                END IF
             END IF
          END IF
- 
+
          IF g_ohb1[l_ac].ohb12 !=g_ohb1_t.ohb12 AND  #No.FUN-650108
             g_ohb1_t.ohb12 IS NOT NULL THEN   #No.FUN-650108
             CALL t700_chk_omb()
@@ -10507,12 +10518,12 @@ FUNCTION t700_chk_ohb12(p_cmd)
                ELSE
                   CALL cl_err(l_omb14t,g_errno,0)
                END IF
-               LET g_ohb1[l_ac].ohb12=g_ohb1_t.ohb12  #FUN-650108 
+               LET g_ohb1[l_ac].ohb12=g_ohb1_t.ohb12  #FUN-650108
                RETURN FALSE  #No.FUN-650108
             END IF
           END IF
       END IF
- 
+
       IF g_ohb1[l_ac].ohb12 <> g_ohb1_t.ohb12 THEN     #No.FUN-650108             #MOD-530543
        IF g_aza.aza50='Y' THEN
          IF g_sma.sma116 ='2' OR g_sma.sma116='3'  THEN
@@ -10528,17 +10539,17 @@ FUNCTION t700_chk_ohb12(p_cmd)
                         RETURNING g_ohb1[l_ac].ohb14,g_ohb1[l_ac].ohb14t
                 ELSE
 #FUN-C10053 ----add---end -----
-                   IF g_oha.oha213 = 'N' THEN   
+                   IF g_oha.oha213 = 'N' THEN
                       LET g_ohb1[l_ac].ohb14=l_qty*g_ohb1[l_ac].ohb13*g_ohb1[l_ac].ohb1003/100
                       CALL cl_digcut(g_ohb1[l_ac].ohb14,t_azi04)  RETURNING g_ohb1[l_ac].ohb14    #CHI-7A0036-add
                       LET g_ohb1[l_ac].ohb14t=g_ohb1[l_ac].ohb14*(1+g_oha.oha211/100)
                       CALL cl_digcut(g_ohb1[l_ac].ohb14t,t_azi04) RETURNING g_ohb1[l_ac].ohb14t   #CHI-7A0036-add
-                   ELSE 
+                   ELSE
                       LET g_ohb1[l_ac].ohb14t=l_qty*g_ohb1[l_ac].ohb13*g_ohb1[l_ac].ohb1003/100
                       CALL cl_digcut(g_ohb1[l_ac].ohb14t,t_azi04) RETURNING g_ohb1[l_ac].ohb14t   #CHI-7A0036-add
-                      LET g_ohb1[l_ac].ohb14=g_ohb1[l_ac].ohb14t/(1+g_oha.oha211/100)                       
+                      LET g_ohb1[l_ac].ohb14=g_ohb1[l_ac].ohb14t/(1+g_oha.oha211/100)
                       CALL cl_digcut(g_ohb1[l_ac].ohb14,t_azi04)  RETURNING g_ohb1[l_ac].ohb14    #CHI-7A0036-add
-                   END IF 
+                   END IF
                 END IF     #FUN-C10053
              ELSE
 #FUN-C10053 ----add---begin ---
@@ -10552,17 +10563,17 @@ FUNCTION t700_chk_ohb12(p_cmd)
                       CALL cl_digcut(g_ohb1[l_ac].ohb14,t_azi04)  RETURNING g_ohb1[l_ac].ohb14    #CHI-7A0036-add
                       LET g_ohb1[l_ac].ohb14t=g_ohb1[l_ac].ohb14*(1+g_oha.oha211/100)
                       CALL cl_digcut(g_ohb1[l_ac].ohb14t,t_azi04) RETURNING g_ohb1[l_ac].ohb14t   #CHI-7A0036-add
-                   ELSE 
+                   ELSE
                       LET g_ohb1[l_ac].ohb14t=g_ohb1[l_ac].ohb13*g_ohb1[l_ac].ohb1003/100
                       CALL cl_digcut(g_ohb1[l_ac].ohb14t,t_azi04) RETURNING g_ohb1[l_ac].ohb14t   #CHI-7A0036-add
                       LET g_ohb1[l_ac].ohb14 =g_ohb1[l_ac].ohb14t/(1+g_oha.oha211/100)
                       CALL cl_digcut(g_ohb1[l_ac].ohb14,t_azi04)  RETURNING g_ohb1[l_ac].ohb14    #CHI-7A0036-add
                    END IF
-                END IF    #FUN-C10053 
+                END IF    #FUN-C10053
              END IF
-          ELSE 
+          ELSE
              LET g_ohb1[l_ac].ohb14=0
-             LET g_ohb1[l_ac].ohb14t=0  
+             LET g_ohb1[l_ac].ohb14t=0
           END IF
        ELSE
          IF g_ohb1[l_ac].ohb917 > 0 THEN  #No.FUN-650108   #MOD-860106
@@ -10583,7 +10594,7 @@ FUNCTION t700_chk_ohb12(p_cmd)
                   LET g_ohb1[l_ac].ohb14 =g_ohb1[l_ac].ohb14t/(1+g_oha.oha211/100)  #No.FUN-650108
                   CALL cl_digcut(g_ohb1[l_ac].ohb14,t_azi04) RETURNING g_ohb1[l_ac].ohb14     #No.FUN-650108 #No.MOD-5C0102    #No.CHI-6A0004
                END IF
-            END IF    #FUN-C10053 
+            END IF    #FUN-C10053
           ELSE
 #FUN-C10053 ----add---begin ---
             IF g_azw.azw04 = '2' THEN
@@ -10593,16 +10604,16 @@ FUNCTION t700_chk_ohb12(p_cmd)
 #FUN-C10053 ----add---end -----
                IF g_oha.oha213 = 'N' THEN
                   LET g_ohb1[l_ac].ohb14 =g_ohb1[l_ac].ohb13 #No.FUN-650108
-                  CALL cl_digcut(g_ohb1[l_ac].ohb14,t_azi04) RETURNING g_ohb1[l_ac].ohb14  #No.FUN-650108 #No.MOD-5C0102       #No.CHI-6A0004 
+                  CALL cl_digcut(g_ohb1[l_ac].ohb14,t_azi04) RETURNING g_ohb1[l_ac].ohb14  #No.FUN-650108 #No.MOD-5C0102       #No.CHI-6A0004
                   LET g_ohb1[l_ac].ohb14t=g_ohb1[l_ac].ohb14*(1+g_oha.oha211/100)  #No.FUN-650108
-                  CALL cl_digcut(g_ohb1[l_ac].ohb14t,t_azi04) RETURNING g_ohb1[l_ac].ohb14t   #No.FUN-650108 #No.MOD-5C0102     #No.CHI-6A0004 
+                  CALL cl_digcut(g_ohb1[l_ac].ohb14t,t_azi04) RETURNING g_ohb1[l_ac].ohb14t   #No.FUN-650108 #No.MOD-5C0102     #No.CHI-6A0004
                ELSE
-                  LET g_ohb1[l_ac].ohb14t=g_ohb1[l_ac].ohb13 #No.FUN-650108 
+                  LET g_ohb1[l_ac].ohb14t=g_ohb1[l_ac].ohb13 #No.FUN-650108
                   CALL cl_digcut(g_ohb1[l_ac].ohb14t,t_azi04) RETURNING g_ohb1[l_ac].ohb14t   #No.FUN-650108 #No.MOD-5C0102     #No.CHI-6A0004
                   LET g_ohb1[l_ac].ohb14 =g_ohb1[l_ac].ohb14t/(1+g_oha.oha211/100)
                   CALL cl_digcut(g_ohb1[l_ac].ohb14,t_azi04) RETURNING g_ohb1[l_ac].ohb14   #No.MOD-5C0102 #No.FUN-650108      #No.CHI-6A0004
                END IF
-             END IF   #FUN-C10053 
+             END IF   #FUN-C10053
           END IF
        END IF  #No.FUN-650108
           DISPLAY BY NAME g_ohb1[l_ac].ohb14 #No.FUN-650108
@@ -10620,7 +10631,7 @@ FUNCTION t700_chk_ohb12(p_cmd)
    END IF
    RETURN TRUE
 END FUNCTION
- 
+
 FUNCTION t700_chk_ohb913(p_cmd)
    DEFINE p_cmd LIKE type_file.chr1
    IF cl_null(g_ohb1[l_ac].ohb04) THEN RETURN "ohb04" END IF  #No.FUN-650108
@@ -10662,7 +10673,7 @@ FUNCTION t700_chk_ohb913(p_cmd)
    CALL cl_show_fld_cont()
    RETURN NULL
 END FUNCTION
- 
+
 FUNCTION t700_bef_ohb914()
    IF cl_null(g_ohb1[l_ac].ohb04) THEN RETURN "ohb04" END IF
    IF (g_ohb1[l_ac].ohb09 IS NULL OR g_ohb1[l_ac].ohb091 IS NULL OR
@@ -10691,7 +10702,7 @@ FUNCTION t700_bef_ohb914()
    END IF
    RETURN NULL
 END FUNCTION
- 
+
 FUNCTION t700_chk_ohb914()
    IF g_ohb1_t.ohb914 IS NULL AND g_ohb1[l_ac].ohb914 IS NOT NULL OR
       g_ohb1_t.ohb914 IS NOT NULL AND g_ohb1[l_ac].ohb914 IS NULL OR
@@ -10705,7 +10716,7 @@ FUNCTION t700_chk_ohb914()
    END IF
    RETURN TRUE
 END FUNCTION
- 
+
 FUNCTION t700_bef_ohb915()
    IF cl_null(g_ohb1[l_ac].ohb04) THEN RETURN "ohb04" END IF  #No.FUN-650108
    IF (g_ohb1[l_ac].ohb09 IS NULL OR g_ohb1[l_ac].ohb091 IS NULL OR  #No.FUN-650108
@@ -10734,7 +10745,7 @@ FUNCTION t700_bef_ohb915()
    END IF
    RETURN NULL
 END FUNCTION
- 
+
 FUNCTION t700_chk_ohb915(p_cmd)
    DEFINE p_cmd LIKE type_file.chr1
    IF g_ohb1_t.ohb915 IS NULL AND g_ohb1[l_ac].ohb915 IS NOT NULL OR  #No.FUN-650108
@@ -10746,19 +10757,19 @@ FUNCTION t700_chk_ohb915(p_cmd)
       IF g_ohb1[l_ac].ohb915 < 0 THEN #No.FUN-650108
          RETURN FALSE
       END IF
- 
+
       IF g_oha.oha09 ='5' AND g_ohb1[l_ac].ohb915 <> 0 THEN  #No.FUN-650108
          CALL cl_err(g_oha.oha01,'axm-606',0)
          LET g_ohb1[l_ac].ohb915=g_ohb1_t.ohb915  #No.FUN-650108
          RETURN FALSE
       END IF
- 
+
       IF g_oha.oha09 <>'5' AND g_ohb1[l_ac].ohb915 = 0 AND g_ohb1[l_ac].ohb912 = 0 THEN  #No.FUN-650108
          CALL cl_err(g_oha.oha01,'axm-607',0)
          LET g_ohb1[l_ac].ohb915=g_ohb1_t.ohb915  #No.FUN-650108
          RETURN FALSE
       END IF
- 
+
       IF NOT cl_null(g_ohb1[l_ac].ohb32) THEN  #No.FUN-650108
          CALL t700_get_ohb_unit2('b')
          IF NOT cl_null(g_errno) THEN
@@ -10800,7 +10811,7 @@ FUNCTION t700_chk_ohb915(p_cmd)
    CALL cl_show_fld_cont()
    RETURN TRUE
 END FUNCTION
- 
+
 FUNCTION t700_chk_ohb910(p_cmd)
    DEFINE p_cmd LIKE type_file.chr1
    IF cl_null(g_ohb1[l_ac].ohb04) THEN RETURN "ohb04" END IF  #No.FUN-650108
@@ -10840,7 +10851,7 @@ FUNCTION t700_chk_ohb910(p_cmd)
    CALL cl_show_fld_cont()
    RETURN NULL
 END FUNCTION
- 
+
 FUNCTION t700_bef_ohb911()
    IF cl_null(g_ohb1[l_ac].ohb04) THEN RETURN "ohb04" END IF  #No.FUN-650108
    IF (g_ohb1[l_ac].ohb09 IS NULL OR g_ohb1[l_ac].ohb091 IS NULL OR  #No.FUN-650108
@@ -10873,7 +10884,7 @@ FUNCTION t700_bef_ohb911()
    END IF
    RETURN NULL
 END FUNCTION
- 
+
 FUNCTION t700_chk_ohb911()
    IF g_ohb1_t.ohb911 IS NULL AND g_ohb1[l_ac].ohb911 IS NOT NULL OR
       g_ohb1_t.ohb911 IS NOT NULL AND g_ohb1[l_ac].ohb911 IS NULL OR
@@ -10887,7 +10898,7 @@ FUNCTION t700_chk_ohb911()
    END IF
    RETURN TRUE
 END FUNCTION
- 
+
 FUNCTION t700_bef_ohb912()
    IF cl_null(g_ohb1[l_ac].ohb04) THEN RETURN "ohb04" END IF  #No.FUN-650108
    IF (g_ohb1[l_ac].ohb09 IS NULL OR g_ohb1[l_ac].ohb091 IS NULL OR  #No.FUN-650108
@@ -10920,7 +10931,7 @@ FUNCTION t700_bef_ohb912()
    END IF
    RETURN NULL
 END FUNCTION
- 
+
 FUNCTION t700_chk_ohb912(p_cmd)
    DEFINE p_cmd LIKE type_file.chr1
    IF g_ohb1_t.ohb912 IS NULL AND g_ohb1[l_ac].ohb912 IS NOT NULL OR #No.FUN-650108
@@ -10932,20 +10943,20 @@ FUNCTION t700_chk_ohb912(p_cmd)
       IF g_ohb1[l_ac].ohb912 < 0 THEN #No.FUN-650108
          RETURN FALSE  #No.FUN-650108
       END IF
- 
+
       IF g_oha.oha09 ='5' AND g_ohb1[l_ac].ohb912 <> 0 THEN  #No.FUN-650108
          CALL cl_err(g_oha.oha01,'axm-606',0)
          LET g_ohb1[l_ac].ohb912=g_ohb1_t.ohb912  #No.FUN-650108
          RETURN FALSE  #No.FUN-650108
       END IF
- 
+
       IF g_oha.oha09 <>'5' AND g_ohb1[l_ac].ohb915 = 0 AND g_ohb1[l_ac].ohb912 = 0 THEN   #No.FUN-650108
          CALL cl_err(g_oha.oha01,'axm-607',0)
          LET g_ohb1[l_ac].ohb912=g_ohb1_t.ohb912  #No.FUN-650108
          RETURN FALSE  #No.FUN-650108
       END IF
- 
-      IF NOT cl_null(g_ohb1[l_ac].ohb32) THEN  #FUN-650108 
+
+      IF NOT cl_null(g_ohb1[l_ac].ohb32) THEN  #FUN-650108
          CALL t700_get_ohb_unit1('b')
          IF NOT cl_null(g_errno) THEN
             CALL cl_err(g_msg1,g_errno,0)
@@ -10976,11 +10987,11 @@ FUNCTION t700_chk_ohb912(p_cmd)
    CALL cl_show_fld_cont()
    RETURN TRUE
 END FUNCTION
- 
+
 FUNCTION t700_chk_ohb916(p_cmd)
    DEFINE p_cmd LIKE type_file.chr1
    DEFINE l_ogb1012   LIKE ogb_file.ogb1012  #No.TQC-740323
- 
+
    IF cl_null(g_ohb1[l_ac].ohb04) THEN RETURN "ohb04" END IF  #No.FUN-650108
    IF g_ohb1_t.ohb916 IS NULL AND g_ohb1[l_ac].ohb916 IS NOT NULL OR  #No.FUN-650108
       g_ohb1_t.ohb916 IS NOT NULL AND g_ohb1[l_ac].ohb916 IS NULL OR  #No.FUN-650108
@@ -11028,9 +11039,9 @@ FUNCTION t700_chk_ohb916(p_cmd)
    CALL t700_set_du_required(p_cmd)
    RETURN NULL
 END FUNCTION
- 
+
 FUNCTION t700_chk_ohb917()
-   DEFINE l_ogb1012  LIKE ogb_file.ogb1012 
+   DEFINE l_ogb1012  LIKE ogb_file.ogb1012
 #FUN-C10053 add begin ---
    DEFINE l_rtz04      LIKE rtz_file.rtz04
    DEFINE l_rtz06      LIKE rtz_file.rtz06
@@ -11040,7 +11051,7 @@ FUNCTION t700_chk_ohb917()
        WHERE rtz01 = g_oha.ohaplant
    END IF
 #FUN-C10053 ----add---end -----
- 
+
    IF NOT cl_null(g_ohb1[l_ac].ohb917) THEN  #No.FUN-650108
       IF g_ohb1[l_ac].ohb917 < 0 THEN  #No.FUN-650108
          RETURN FALSE  #No.FUN-650108
@@ -11052,7 +11063,7 @@ FUNCTION t700_chk_ohb917()
          LET g_ohb1[l_ac].ohb13 = b_ohb.ohb13
          LET g_ohb1[l_ac].ohb14 = b_ohb.ohb14
          LET g_ohb1[l_ac].ohb14t= b_ohb.ohb14t
-         DISPLAY BY NAME g_ohb1[l_ac].ohb37      #FUN-AB0061  
+         DISPLAY BY NAME g_ohb1[l_ac].ohb37      #FUN-AB0061
          DISPLAY BY NAME g_ohb1[l_ac].ohb13
          DISPLAY BY NAME g_ohb1[l_ac].ohb14
          DISPLAY BY NAME g_ohb1[l_ac].ohb14t
@@ -11062,7 +11073,7 @@ FUNCTION t700_chk_ohb917()
        IF g_aza.aza50='Y' THEN
          IF g_sma.sma116='2' OR g_sma.sma116='3' THEN
             LET l_qty=g_ohb1[l_ac].ohb917
-         ELSE 
+         ELSE
             LET l_qty=g_ohb1[l_ac].ohb12
          END IF
          IF cl_null(g_ohb1[l_ac].ohb1004) THEN
@@ -11071,7 +11082,7 @@ FUNCTION t700_chk_ohb917()
                AND ogb03 = g_ohb1[l_ac].ohb32
             LET g_ohb1[l_ac].ohb1004 = l_ogb1012
          END IF
-         IF g_ohb1[l_ac].ohb1004!='Y' THEN                 
+         IF g_ohb1[l_ac].ohb1004!='Y' THEN
           IF l_qty > 0 THEN   #MOD-860106
 #FUN-C10053 ----add---begin ---
              IF g_azw.azw04 = '2' THEN
@@ -11084,7 +11095,7 @@ FUNCTION t700_chk_ohb917()
                    CALL cl_digcut(g_ohb1[l_ac].ohb14,t_azi04)  RETURNING g_ohb1[l_ac].ohb14    #CHI-7A0036-add
                    LET g_ohb1[l_ac].ohb14t=g_ohb1[l_ac].ohb14*(1+g_oha.oha211/100)
                    CALL cl_digcut(g_ohb1[l_ac].ohb14t,t_azi04) RETURNING g_ohb1[l_ac].ohb14t   #CHI-7A0036-add
-                ELSE 
+                ELSE
                    LET g_ohb1[l_ac].ohb14t=l_qty*g_ohb1[l_ac].ohb13*g_ohb1[l_ac].ohb1003/100
                    CALL cl_digcut(g_ohb1[l_ac].ohb14t,t_azi04) RETURNING g_ohb1[l_ac].ohb14t   #CHI-7A0036-add
                    LET g_ohb1[l_ac].ohb14 =g_ohb1[l_ac].ohb14t/(1+g_oha.oha211/100)
@@ -11103,7 +11114,7 @@ FUNCTION t700_chk_ohb917()
                    CALL cl_digcut(g_ohb1[l_ac].ohb14,t_azi04)  RETURNING g_ohb1[l_ac].ohb14    #CHI-7A0036-add
                    LET g_ohb1[l_ac].ohb14t=g_ohb1[l_ac].ohb14*(1+g_oha.oha211/100)
                    CALL cl_digcut(g_ohb1[l_ac].ohb14t,t_azi04) RETURNING g_ohb1[l_ac].ohb14t   #CHI-7A0036-add
-                ELSE 
+                ELSE
                    LET g_ohb1[l_ac].ohb14t=g_ohb1[l_ac].ohb13*g_ohb1[l_ac].ohb1003/100
                    CALL cl_digcut(g_ohb1[l_ac].ohb14t,t_azi04) RETURNING g_ohb1[l_ac].ohb14t   #CHI-7A0036-add
                    LET g_ohb1[l_ac].ohb14 =g_ohb1[l_ac].ohb14t/(1+g_oha.oha211/100)
@@ -11117,8 +11128,8 @@ FUNCTION t700_chk_ohb917()
          END IF
          DISPLAY BY NAME g_ohb1[l_ac].ohb14
          DISPLAY BY NAME g_ohb1[l_ac].ohb14t
-       ELSE 
-         IF g_ohb1[l_ac].ohb917 > 0 THEN  #NO.FUN-650108   
+       ELSE
+         IF g_ohb1[l_ac].ohb917 > 0 THEN  #NO.FUN-650108
             IF g_oha.oha213 = 'N' THEN
                LET g_ohb1[l_ac].ohb14 =g_ohb1[l_ac].ohb917*g_ohb1[l_ac].ohb13  #No.FUN-650108
                CALL cl_digcut(g_ohb1[l_ac].ohb14,t_azi04)  RETURNING g_ohb1[l_ac].ohb14    #CHI-7A0036-add
@@ -11150,7 +11161,7 @@ FUNCTION t700_chk_ohb917()
    END IF
    RETURN TRUE
 END FUNCTION
- 
+
 FUNCTION t700_bef_ohb13(p_cmd)
    DEFINE p_cmd LIKE type_file.chr1
 #FUN-C10053 add begin ---
@@ -11173,14 +11184,14 @@ FUNCTION t700_bef_ohb13(p_cmd)
          LET g_ohb1[l_ac].ohb915=g_ohb1_t.ohb915  #No.FUN-650108
          RETURN FALSE
       END IF
- 
+
       IF g_oha.oha09 <>'5' AND g_ohb1[l_ac].ohb12 = 0 THEN   #No.FUN-650108
          CALL cl_err(g_oha.oha01,'axm-607',0)
          LET g_ohb1[l_ac].ohb912=g_ohb1_t.ohb912   #No.FUN-650108
          LET g_ohb1[l_ac].ohb915=g_ohb1_t.ohb915  #No.FUN-650108
          RETURN FALSE
       END IF
- 
+
       IF NOT cl_null(g_ohb1[l_ac].ohb32) THEN  #No.FUN-650108
          CALL t700_get_ohb('b')
          IF NOT cl_null(g_errno) THEN
@@ -11206,7 +11217,7 @@ FUNCTION t700_bef_ohb13(p_cmd)
                END IF
             END IF
          END IF
- 
+
          IF g_ohb1[l_ac].ohb12 !=g_ohb1_t.ohb12 AND  #No.FUN-650108
             g_ohb1_t.ohb12 IS NOT NULL THEN  #No.FUN-650108
             CALL t700_chk_omb()
@@ -11222,7 +11233,7 @@ FUNCTION t700_bef_ohb13(p_cmd)
             END IF
           END IF
       END IF
- 
+
       IF g_ohb1[l_ac].ohb12 <> g_ohb1_t.ohb12 THEN  #No.FUN-650108     #MOD-530543
          IF g_aza.aza50='Y' THEN
             IF g_ohb1[l_ac].ohb917 > 0 THEN   #MOD-860106
@@ -11237,7 +11248,7 @@ FUNCTION t700_bef_ohb13(p_cmd)
                      CALL cl_digcut(g_ohb1[l_ac].ohb14,t_azi04)  RETURNING g_ohb1[l_ac].ohb14    #CHI-7A0036-add
                      LET g_ohb1[l_ac].ohb14t=g_ohb1[l_ac].ohb14*(1+g_oha.oha211/100)
                      CALL cl_digcut(g_ohb1[l_ac].ohb14t,t_azi04) RETURNING g_ohb1[l_ac].ohb14t   #CHI-7A0036-add
-                  ELSE 
+                  ELSE
                      LET g_ohb1[l_ac].ohb14t=g_ohb1[l_ac].ohb917*g_ohb1[l_ac].ohb13
                      CALL cl_digcut(g_ohb1[l_ac].ohb14t,t_azi04) RETURNING g_ohb1[l_ac].ohb14t   #CHI-7A0036-add
                      LET g_ohb1[l_ac].ohb14 =g_ohb1[l_ac].ohb14t/(1+g_oha.oha211/100)
@@ -11256,7 +11267,7 @@ FUNCTION t700_bef_ohb13(p_cmd)
                      CALL cl_digcut(g_ohb1[l_ac].ohb14,t_azi04)  RETURNING g_ohb1[l_ac].ohb14    #CHI-7A0036-add
                      LET g_ohb1[l_ac].ohb14t=g_ohb1[l_ac].ohb14*(1+g_oha.oha211/100)
                      CALL cl_digcut(g_ohb1[l_ac].ohb14t,t_azi04) RETURNING g_ohb1[l_ac].ohb14t   #CHI-7A0036-add
-                  ELSE 
+                  ELSE
                      LET g_ohb1[l_ac].ohb14t=g_ohb1[l_ac].ohb13
                      CALL cl_digcut(g_ohb1[l_ac].ohb14t,t_azi04) RETURNING g_ohb1[l_ac].ohb14t   #CHI-7A0036-add
                      LET g_ohb1[l_ac].ohb14 =g_ohb1[l_ac].ohb14t/(1+g_oha.oha211/100)
@@ -11283,7 +11294,7 @@ FUNCTION t700_bef_ohb13(p_cmd)
                      LET g_ohb1[l_ac].ohb14 =g_ohb1[l_ac].ohb14t/(1+g_oha.oha211/100)  #No.FUN-650108
                      CALL cl_digcut(g_ohb1[l_ac].ohb14,t_azi04) RETURNING g_ohb1[l_ac].ohb14   #No.FUN-650108 #No.MOD-5C0102     #No.CHI-6A0004
                   END IF
-               END IF    #FUN-C10053 
+               END IF    #FUN-C10053
             ELSE
 #FUN-C10053 ----add---begin ---
                IF g_azw.azw04 = '2' THEN
@@ -11314,7 +11325,7 @@ FUNCTION t700_bef_ohb13(p_cmd)
    END IF
    RETURN TRUE
 END FUNCTION
- 
+
 FUNCTION t700_chk_ohb13()
   DEFINE l_ogb1012   LIKE ogb_file.ogb1012  #No.TQC-740323
 #FUN-C10053 add begin ---
@@ -11326,7 +11337,7 @@ FUNCTION t700_chk_ohb13()
        WHERE rtz01 = g_oha.ohaplant
    END IF
 #FUN-C10053 ----add---end -----
- 
+
    IF NOT cl_null(g_ohb1[l_ac].ohb13) THEN  #No.FUN-650108
       IF g_aza.aza50='Y' THEN
          IF g_sma.sma116='2' or g_sma.sma116='3' THEN
@@ -11354,13 +11365,13 @@ FUNCTION t700_chk_ohb13()
                          CALL cl_digcut(g_ohb1[l_ac].ohb14,t_azi04)  RETURNING g_ohb1[l_ac].ohb14    #CHI-7A0036-add
                          LET g_ohb1[l_ac].ohb14t=g_ohb1[l_ac].ohb14*(1+g_oha.oha211/100)
                          CALL cl_digcut(g_ohb1[l_ac].ohb14t,t_azi04) RETURNING g_ohb1[l_ac].ohb14t   #CHI-7A0036-add
-                     ELSE 
+                     ELSE
                          LET g_ohb1[l_ac].ohb14t=l_qty*g_ohb1[l_ac].ohb13*g_ohb1[l_ac].ohb1003/100
                          CALL cl_digcut(g_ohb1[l_ac].ohb14t,t_azi04) RETURNING g_ohb1[l_ac].ohb14t   #CHI-7A0036-add
                          LET g_ohb1[l_ac].ohb14 =g_ohb1[l_ac].ohb14t/(1+g_oha.oha211/100)
                          CALL cl_digcut(g_ohb1[l_ac].ohb14,t_azi04)  RETURNING g_ohb1[l_ac].ohb14    #CHI-7A0036-add
-                     END IF 
-                  END IF    #FUN-C10053 
+                     END IF
+                  END IF    #FUN-C10053
                ELSE
                   #FUN-C10053 ----add---begin ---
                   IF g_azw.azw04 = '2' THEN
@@ -11373,22 +11384,22 @@ FUNCTION t700_chk_ohb13()
                         CALL cl_digcut(g_ohb1[l_ac].ohb14,t_azi04)  RETURNING g_ohb1[l_ac].ohb14    #CHI-7A0036-add
                         LET g_ohb1[l_ac].ohb14t=g_ohb1[l_ac].ohb14*(1+g_oha.oha211/100)
                         CALL cl_digcut(g_ohb1[l_ac].ohb14t,t_azi04) RETURNING g_ohb1[l_ac].ohb14t   #CHI-7A0036-add
-                     ELSE 
+                     ELSE
                         LET g_ohb1[l_ac].ohb14t=g_ohb1[l_ac].ohb13
                         CALL cl_digcut(g_ohb1[l_ac].ohb14t,t_azi04) RETURNING g_ohb1[l_ac].ohb14t   #CHI-7A0036-add
                         LET g_ohb1[l_ac].ohb14 =g_ohb1[l_ac].ohb14t/(1+g_oha.oha211/100)
                         CALL cl_digcut(g_ohb1[l_ac].ohb14,t_azi04)  RETURNING g_ohb1[l_ac].ohb14    #CHI-7A0036-add
                      END IF
-                  END IF     #FUN-C10053 
+                  END IF     #FUN-C10053
                END IF
             END IF  #CHI-CB0008 add
-         ELSE 
+         ELSE
             LET g_ohb1[l_ac].ohb14=0
             LET g_ohb1[l_ac].ohb14t=0
          END IF
          DISPLAY BY NAME g_ohb1[l_ac].ohb13    #CHI-CB0008 add
-         DISPLAY BY NAME g_ohb1[l_ac].ohb14                               
-         DISPLAY BY NAME g_ohb1[l_ac].ohb14t   
+         DISPLAY BY NAME g_ohb1[l_ac].ohb14
+         DISPLAY BY NAME g_ohb1[l_ac].ohb14t
       ELSE
          IF g_ohb1[l_ac].ohb13 != g_ohb1_t.ohb13 OR cl_null(g_ohb1_t.ohb13) THEN    #CHI-CB0008 add
             IF g_ohb1[l_ac].ohb917 > 0 THEN  #NO.FUN-650108   #MOD-860106
@@ -11402,14 +11413,14 @@ FUNCTION t700_chk_ohb13()
                      LET g_ohb1[l_ac].ohb14 =g_ohb1[l_ac].ohb917*g_ohb1[l_ac].ohb13  #NO.FUN-650108
                      CALL cl_digcut(g_ohb1[l_ac].ohb14,t_azi04) RETURNING g_ohb1[l_ac].ohb14   #NO.FUN-650108 #No.MOD-5C0102    #No.CHI-6A0004
                      LET g_ohb1[l_ac].ohb14t=g_ohb1[l_ac].ohb14*(1+g_oha.oha211/100) #NO.FUN-650108
-                     CALL cl_digcut(g_ohb1[l_ac].ohb14t,t_azi04)RETURNING g_ohb1[l_ac].ohb14t   #NO.FUN-650108 #No.MOD-5C0102   #No.CHI-6A0004 
+                     CALL cl_digcut(g_ohb1[l_ac].ohb14t,t_azi04)RETURNING g_ohb1[l_ac].ohb14t   #NO.FUN-650108 #No.MOD-5C0102   #No.CHI-6A0004
                   ELSE
                      LET g_ohb1[l_ac].ohb14t=g_ohb1[l_ac].ohb917*g_ohb1[l_ac].ohb13  #NO.FUN-650108
                      CALL cl_digcut(g_ohb1[l_ac].ohb14t,t_azi04)RETURNING g_ohb1[l_ac].ohb14t    #NO.FUN-650108 #No.MOD-5C0102  #No.CHI-6A0004
                      LET g_ohb1[l_ac].ohb14 =g_ohb1[l_ac].ohb14t/(1+g_oha.oha211/100)  #NO.FUN-650108
                      CALL cl_digcut(g_ohb1[l_ac].ohb14,t_azi04) RETURNING g_ohb1[l_ac].ohb14   #NO.FUN-650108 #No.MOD-5C0102     #No.CHI-6A0004
                   END IF
-               END IF    #FUN-C10053 
+               END IF    #FUN-C10053
             ELSE
                #FUN-C10053 ----add---begin ---
                IF g_azw.azw04 = '2' THEN
@@ -11437,7 +11448,7 @@ FUNCTION t700_chk_ohb13()
       END IF #NO.FUN-650108
    END IF
 END FUNCTION
- 
+
 FUNCTION t700_chk_ohb14()
    IF NOT cl_null(g_ohb1[l_ac].ohb32) THEN  #NO.FUN-650108
       IF g_ohb1[l_ac].ohb14 !=g_ohb1_t.ohb14 OR g_ohb1_t.ohb14 IS NULL THEN  #NO.FUN-650108
@@ -11451,7 +11462,7 @@ FUNCTION t700_chk_ohb14()
       END IF
    END IF
 END FUNCTION
- 
+
 FUNCTION t700_chk_ohb14t()
    IF NOT cl_null(g_ohb1[l_ac].ohb32) THEN  #NO.FUN-650108
       IF g_ohb1[l_ac].ohb14t !=g_ohb1_t.ohb14t OR  #NO.FUN-650108
@@ -11461,7 +11472,7 @@ FUNCTION t700_chk_ohb14t()
       END IF
    END IF
 END FUNCTION
- 
+
 FUNCTION t700_chk_ohb09()
 DEFINE l_cnt LIKE type_file.num5 #No.FUN-870007
    #FUN-C20002--start add------------------------
@@ -11469,9 +11480,9 @@ DEFINE l_cnt LIKE type_file.num5 #No.FUN-870007
    DEFINE   l_rcj03      LIKE rcj_file.rcj03
    DEFINE   l_rtz07      LIKE rtz_file.rtz07
    DEFINE   l_rtz08      LIKE rtz_file.rtz08
-   #FUN-C20002--end add-------------------------- 
+   #FUN-C20002--end add--------------------------
 
-  #IF g_oha.oha09 != '5' THEN #no.7204 '5.折讓'可不輸入 #MOD-B20130 mark 
+  #IF g_oha.oha09 != '5' THEN #no.7204 '5.折讓'可不輸入 #MOD-B20130 mark
    IF g_oha.oha09 != '5' AND g_ohb1[l_ac].ohb04[1,4] != 'MISC' THEN #'5.折讓',MISC可不輸入 #MOD-B20130
       IF cl_null(g_ohb1[l_ac].ohb09) THEN  #NO.FUN-650108
          RETURN "ohb09"  #NO.FUN-650108
@@ -11510,9 +11521,9 @@ DEFINE l_cnt LIKE type_file.num5 #No.FUN-870007
          END IF
          #FUN-C20002--end add--------------------------
 
-         IF g_ohb1[l_ac].ohb04[1,4] != 'MISC' THEN 
-               IF NOT s_chksmz(g_ohb1[l_ac].ohb04, g_oha.oha01, 
-                               g_ohb1[l_ac].ohb09, g_ohb1[l_ac].ohb091) THEN  
+         IF g_ohb1[l_ac].ohb04[1,4] != 'MISC' THEN
+               IF NOT s_chksmz(g_ohb1[l_ac].ohb04, g_oha.oha01,
+                               g_ohb1[l_ac].ohb09, g_ohb1[l_ac].ohb091) THEN
                    RETURN "ohb09"  #NO.FUN-650108
                END IF
          END IF
@@ -11520,7 +11531,7 @@ DEFINE l_cnt LIKE type_file.num5 #No.FUN-870007
                                    AND imdacti = 'Y' #MOD-4B0169
          IF STATUS THEN
             CALL cl_err3("sel","imd_file",g_ohb1[l_ac].ohb09,"",STATUS,"","",1)  #No.FUN-650108
-            RETURN "ohb09" 
+            RETURN "ohb09"
          END IF
          #No.FUN-AA0048  --Begin
          #IF g_azw.azw04='2' THEN
@@ -11536,10 +11547,10 @@ DEFINE l_cnt LIKE type_file.num5 #No.FUN-870007
          IF NOT s_chk_ware(g_ohb1[l_ac].ohb09) THEN
               RETURN "ohb09"
          END IF
-         #No.FUN-AA0048  --End  
+         #No.FUN-AA0048  --End
       END IF
    END IF
- 
+
    #MOD-510129
    IF g_oaz.oaz103='N' THEN
       IF g_ohb1[l_ac].ohb091 IS NULL THEN LET g_ohb1[l_ac].ohb091=' ' END IF  #NO.FUN-650108
@@ -11554,10 +11565,10 @@ DEFINE l_cnt LIKE type_file.num5 #No.FUN-870007
        IF g_ohb1[l_ac].ohb09 IS NULL THEN LET g_ohb1[l_ac].ohb09=' ' END IF  #NO.FUN-650108
        IF g_ohb1[l_ac].ohb091 IS NULL THEN LET g_ohb1[l_ac].ohb091=' ' END IF  #NO.FUN-650108
        IF g_ohb1[l_ac].ohb092 IS NULL THEN LET g_ohb1[l_ac].ohb092=' ' END IF  #NO.FUN-650108
-#FUN-AB0059 ---------------------start---------------------------- 
+#FUN-AB0059 ---------------------start----------------------------
        IF s_joint_venture( g_ohb1[l_ac].ohb04,g_plant) OR NOT s_internal_item( g_ohb1[l_ac].ohb04,g_plant ) THEN
        ELSE
-#FUN-AB0059 ---------------------end-------------------------------      
+#FUN-AB0059 ---------------------end-------------------------------
          SELECT img09,img10 INTO g_img09,g_img10 FROM img_file
           WHERE img01=g_ohb1[l_ac].ohb04 AND img02=g_ohb1[l_ac].ohb09  #NO.FUN-650108
             AND img03=g_ohb1[l_ac].ohb091 AND img04=g_ohb1[l_ac].ohb092  #NO.FUN-650108
@@ -11568,7 +11579,7 @@ DEFINE l_cnt LIKE type_file.num5 #No.FUN-870007
                    RETURN "ohb09"   #MOD-980236
                END IF
             END IF
-      
+
            #IF g_oha.oha09 != '5' THEN #CHI-6A0050 #MOD-B20130 mark
             IF g_oha.oha09 != '5' AND g_ohb1[l_ac].ohb04[1,4] != 'MISC' THEN #MOD-B20130
               CALL s_add_img(g_ohb1[l_ac].ohb04, g_ohb1[l_ac].ohb09,  #NO.FUN-650108
@@ -11585,7 +11596,7 @@ DEFINE l_cnt LIKE type_file.num5 #No.FUN-870007
    END IF
    RETURN NULL
 END FUNCTION
- 
+
 FUNCTION t700_chk_ohb091_1()
    IF g_oaz.oaz104='N' THEN   #MOD-A20013
       IF NOT cl_null(g_ohb1[l_ac].ohb09) THEN  #NO.FUN-650108
@@ -11596,7 +11607,7 @@ FUNCTION t700_chk_ohb091_1()
                    RETURN "ohb09"  #NO.FUN-650108
                END IF
          END IF
-      
+
          IF g_ohb1[l_ac].ohb09 IS NULL THEN
             LET g_ohb1[l_ac].ohb09=' '
          END IF
@@ -11606,10 +11617,10 @@ FUNCTION t700_chk_ohb091_1()
          IF g_ohb1[l_ac].ohb092 IS NULL THEN
             LET g_ohb1[l_ac].ohb092=' '
          END IF
-#FUN-AB0059 ---------------------start---------------------------- 
+#FUN-AB0059 ---------------------start----------------------------
          IF s_joint_venture( g_ohb1[l_ac].ohb04,g_plant) OR NOT s_internal_item( g_ohb1[l_ac].ohb04,g_plant) THEN
          ELSE
-#FUN-AB0059 ---------------------end-------------------------------      
+#FUN-AB0059 ---------------------end-------------------------------
            SELECT img09,img10 INTO g_img09,g_img10 FROM img_file
             WHERE img01=g_ohb1[l_ac].ohb04 AND img02=g_ohb1[l_ac].ohb09
               AND img03=g_ohb1[l_ac].ohb091 AND img04=g_ohb1[l_ac].ohb092
@@ -11620,7 +11631,7 @@ FUNCTION t700_chk_ohb091_1()
                     RETURN "ohb091" #MOD-980236
                  END IF
               END IF
-      
+
             #IF g_oha.oha09 != '5' THEN  #CHI-6A0050 #MOD-B20130 mark
              IF g_oha.oha09 != '5' AND g_ohb1[l_ac].ohb04[1,4] != 'MISC' THEN #MOD-B20130
                 CALL s_add_img(g_ohb1[l_ac].ohb04, g_ohb1[l_ac].ohb09,  #NO.FUN-650108
@@ -11630,7 +11641,7 @@ FUNCTION t700_chk_ohb091_1()
                    RETURN "ohb091"  #NO.FUN-650108
                 END IF
              END IF                      #CHI-6A0050
-       
+
              SELECT img09,img10 INTO g_img09,g_img10 FROM img_file
               WHERE img01=g_ohb1[l_ac].ohb04 AND img02=g_ohb1[l_ac].ohb09   #NO.FUN-650108
                 AND img03=g_ohb1[l_ac].ohb091 AND img04=g_ohb1[l_ac].ohb092   #NO.FUN-650108
@@ -11652,49 +11663,49 @@ FUNCTION t700_chk_ohb092_1()
    IF g_ohb1[l_ac].ohb092 IS NULL THEN
       LET g_ohb1[l_ac].ohb092=' '
    END IF
-#FUN-AB0059 ---------------------start---------------------------- 
+#FUN-AB0059 ---------------------start----------------------------
    IF s_joint_venture( g_ohb1[l_ac].ohb04,g_plant) OR NOT s_internal_item(g_ohb1[l_ac].ohb04,g_plant ) THEN
       RETURN NULL
    END IF
-#FUN-AB0059 ---------------------end-------------------------------   
+#FUN-AB0059 ---------------------end-------------------------------
    SELECT img09,img10 INTO g_img09,g_img10 FROM img_file
     WHERE img01=g_ohb1[l_ac].ohb04 AND img02=g_ohb1[l_ac].ohb09
       AND img03=g_ohb1[l_ac].ohb091 AND img04=g_ohb1[l_ac].ohb092
    IF STATUS=100 THEN
      #IF g_sma.sma892[3,3] = 'Y' AND g_oha.oha09 != '5'  THEN #MOD-B20130 mark
-      IF g_sma.sma892[3,3] = 'Y' AND g_oha.oha09 != '5' AND g_ohb1[l_ac].ohb04[1,4] != 'MISC' THEN #MOD-B20130 
+      IF g_sma.sma892[3,3] = 'Y' AND g_oha.oha09 != '5' AND g_ohb1[l_ac].ohb04[1,4] != 'MISC' THEN #MOD-B20130
          IF NOT cl_confirm('mfg1401') THEN
-             RETURN "ohb092" 
+             RETURN "ohb092"
          END IF
       END IF
-   
-     #IF g_oha.oha09 != '5' THEN #MOD-B20130 mark 
+
+     #IF g_oha.oha09 != '5' THEN #MOD-B20130 mark
       IF g_oha.oha09 != '5' AND g_ohb1[l_ac].ohb04[1,4] != 'MISC' THEN  #MOD-B20130
-         CALL s_add_img(g_ohb1[l_ac].ohb04, g_ohb1[l_ac].ohb09,  
-                        g_ohb1[l_ac].ohb091, g_ohb1[l_ac].ohb092, 
-                        g_oha.oha01, g_ohb1[l_ac].ohb03, g_today)  
+         CALL s_add_img(g_ohb1[l_ac].ohb04, g_ohb1[l_ac].ohb09,
+                        g_ohb1[l_ac].ohb091, g_ohb1[l_ac].ohb092,
+                        g_oha.oha01, g_ohb1[l_ac].ohb03, g_today)
          IF g_errno='N' THEN
-            RETURN "ohb092"  
+            RETURN "ohb092"
          END IF
-      END IF                     
-   
+      END IF
+
       SELECT img09,img10 INTO g_img09,g_img10 FROM img_file
-       WHERE img01=g_ohb1[l_ac].ohb04 AND img02=g_ohb1[l_ac].ohb09   
-         AND img03=g_ohb1[l_ac].ohb091 AND img04=g_ohb1[l_ac].ohb092   
+       WHERE img01=g_ohb1[l_ac].ohb04 AND img02=g_ohb1[l_ac].ohb09
+         AND img03=g_ohb1[l_ac].ohb091 AND img04=g_ohb1[l_ac].ohb092
    END IF
    RETURN NULL
 END FUNCTION
 #-----END MOD-A20013-----
- 
+
 FUNCTION t700_chk_ohb50()
 #FUN-CB0087--add--str--
-DEFINE l_flag        LIKE type_file.chr1       
-DEFINE l_where       STRING                    
-DEFINE l_sql         STRING                    
+DEFINE l_flag        LIKE type_file.chr1
+DEFINE l_where       STRING
+DEFINE l_sql         STRING
 DEFINE l_n           LIKE type_file.num5
 
-   LET l_flag = FALSE 
-   IF g_aza.aza115='Y' THEN 
+   LET l_flag = FALSE
+   IF g_aza.aza115='Y' THEN
       CALL s_get_where(g_oha.oha01,g_ohb1[l_ac].ohb31,'',g_ohb1[l_ac].ohb04,g_ohb1[l_ac].ohb09,g_oha.oha14,g_oha.oha15) RETURNING l_flag,l_where
    END IF
    IF g_aza.aza115='Y' AND l_flag THEN
@@ -11703,29 +11714,29 @@ DEFINE l_n           LIKE type_file.num5
       EXECUTE ggc08_pre1 INTO l_n
       IF l_n < 1 THEN
          CALL cl_err(g_ohb1[l_ac].ohb50,'aim-425',0)
-         RETURN FALSE 
+         RETURN FALSE
       END IF
-   ELSE 
-#FUN-CB0087--add--end--  
+   ELSE
+#FUN-CB0087--add--end--
       LET g_cnt=0
       SELECT count(*) INTO g_cnt FROM azf_file
        WHERE azf01=g_ohb1[l_ac].ohb50
          AND azf02='2'      #No.TQC-760054
          AND azfacti='Y'
-          AND azf09='2'     #TQC-7C0045 add 
+          AND azf09='2'     #TQC-7C0045 add
       IF g_cnt=0 THEN   #No.TQC-740308
          CALL cl_err('ohb50','axm-777',0)    #TQC-7C0017
          RETURN FALSE
       END IF
-      SELECT azf10 INTO g_ohb1[l_ac].ohb1004 FROM azf_file           
-       WHERE azf01 = g_ohb1[l_ac].ohb50    
+      SELECT azf10 INTO g_ohb1[l_ac].ohb1004 FROM azf_file
+       WHERE azf01 = g_ohb1[l_ac].ohb50
          AND azf02='2'      #No.TQC-760054
-         AND azf09='2'     #TQC-7C0045 add 
+         AND azf09='2'     #TQC-7C0045 add
       IF g_ohb1[l_ac].ohb1004 != g_ogb.ogb1012 THEN
          CALL cl_err('ohb50','atm-245',0)
          RETURN FALSE
       END IF
-   END IF  #FUN-CB0087  add 
+   END IF  #FUN-CB0087  add
    RETURN TRUE
 END FUNCTION
 
@@ -11753,43 +11764,43 @@ DEFINE l_cnt         LIKE type_file.num5
          ELSE
             LET l_n=0
             SELECT count(*) INTO l_n FROM azf_file
-             WHERE azf01=g_ohb1[l_cnt].ohb50 
+             WHERE azf01=g_ohb1[l_cnt].ohb50
                AND azf02='2'      #No.TQC-760054
-               AND azfacti='Y'    
+               AND azfacti='Y'
                 AND azf09='2'     #TQC-7C0045 add
             IF l_n=0 THEN   #No.TQC-740308
                CALL cl_err('ohb50','axm-777',0)    #TQC-7C0017
                RETURN FALSE
             END IF
-            SELECT azf10 INTO g_ohb1[l_cnt].ohb1004 FROM azf_file   
-             WHERE azf01 = g_ohb1[l_cnt].ohb50   
+            SELECT azf10 INTO g_ohb1[l_cnt].ohb1004 FROM azf_file
+             WHERE azf01 = g_ohb1[l_cnt].ohb50
                AND azf02='2'      #No.TQC-760054
-               AND azf09='2'     #TQC-7C0045 add 
+               AND azf09='2'     #TQC-7C0045 add
             IF g_ohb1[l_cnt].ohb1004 != g_ogb.ogb1012 THEN
                CALL cl_err('ohb50','atm-245',0)
                RETURN FALSE
-            END IF 
+            END IF
          END IF
       END FOR
    END IF
    RETURN TRUE
 END FUNCTION
 #FUN-CB0087--add--end--
- 
+
 FUNCTION t700_b1_del()
 #FUN-A60035---mark begin
 #FUN-A50054 --Begin
 #IF g_oea.oeaslk02 = 'Y' THEN
 #  DELETE FROM ohb_file
-#   WHERE ohb01 = g_oha.oha01 AND ohb03 IN 
-#  (SELECT ata03 FROM ata_file 
+#   WHERE ohb01 = g_oha.oha01 AND ohb03 IN
+#  (SELECT ata03 FROM ata_file
 #   WHERE ata00 = g_prog
 #     AND ata01 = g_oha.oha01
 #     AND ata02 = g_ohb1[l_ac].ohb03)
 #  IF SQLCA.sqlcode THEN
 #     CALL cl_err3("del","ohb_file",g_oha.oha01,g_ohb1_t.ohb03,SQLCA.sqlcode,"","",1)
-#  ELSE 
-#  	  DELETE FROM ata_file 
+#  ELSE
+#  	  DELETE FROM ata_file
 #      WHERE ata00 = g_prog
 #        AND ata02 = g_ohb1_t.ohb03
 #        AND ata01 = g_oha.oha01
@@ -11797,7 +11808,7 @@ FUNCTION t700_b1_del()
 #           CALL cl_err3("del","ata_file",g_oha.oha01,g_ohb1_t.ohb03,SQLCA.sqlcode,"","",1 )
 #        END IF
 #  END IF
-#FUN-A50054 end             
+#FUN-A50054 end
 #FUN-A60035---mark end
    DELETE FROM ohb_file
     WHERE ohb01 = g_oha.oha01 AND ohb03 = g_ohb1_t.ohb03
@@ -11823,7 +11834,7 @@ FUNCTION t700_b1_del()
 #FUN-C10053 add end -----
    RETURN TRUE
 END FUNCTION
- 
+
 FUNCTION t700_b1_updchk()
    IF g_sma.sma115 = 'Y' THEN
       CALL s_chk_va_setting(g_ohb1[l_ac].ohb04)  #No.FUN-650108
@@ -11831,28 +11842,28 @@ FUNCTION t700_b1_updchk()
       IF g_flag=1 THEN
          RETURN "ohb04"
       END IF
- 
+
       CALL s_chk_va_setting1(g_ohb1[l_ac].ohb04)  #No.FUN-650108
            RETURNING g_flag,g_ima908
       IF g_flag=1 THEN
          RETURN "ohb04"
       END IF
- 
+
       CALL t700_du_data_to_correct()
    END IF
- 
- 
+
+
    IF g_sma.sma115 = 'Y' THEN
       CALL t700_set_origin_field()
    END IF
- 
+
    IF cl_null(g_ohb1[l_ac].ohb916) THEN  #No.FUN-650108
       LET g_ohb1[l_ac].ohb916 = g_ohb1[l_ac].ohb05  #No.FUN-650108
       LET g_ohb1[l_ac].ohb917 = g_ohb1[l_ac].ohb12  #No.FUN-650108
    END IF
    RETURN NULL
 END FUNCTION
- 
+
 FUNCTION t700_b1_upd()
 #FUN-A50054 begin add
 DEFINE l_sql        LIKE type_file.chr1000
@@ -11861,15 +11872,15 @@ DEFINE l_ata03_t    LIKE ata_file.ata03
 DEFINE l_ata04_t    LIKE ata_file.ata04
 DEFINE l_ata04      LIKE ata_file.ata04
 DEFINE l_ata08      LIKE ata_file.ata08
-DEFINE l_str,l_str1 STRING 
+DEFINE l_str,l_str1 STRING
 #FUN-A50054 end
 
 #MOD-A50083 --begin--
-  IF cl_null(b_ohb.ohb12) THEN LET b_ohb.ohb12 = 0 END IF 
+  IF cl_null(b_ohb.ohb12) THEN LET b_ohb.ohb12 = 0 END IF
   IF cl_null(b_ohb.ohb37) THEN LET b_ohb.ohb37 = 0 END IF   #FUN-AB0061
-  IF cl_null(b_ohb.ohb13) THEN LET b_ohb.ohb13 = 0 END IF 
-  IF cl_null(b_ohb.ohb14) THEN LET b_ohb.ohb14 = 0 END IF 
-  IF cl_null(b_ohb.ohb14t) THEN LET b_ohb.ohb14t = 0 END IF         
+  IF cl_null(b_ohb.ohb13) THEN LET b_ohb.ohb13 = 0 END IF
+  IF cl_null(b_ohb.ohb14) THEN LET b_ohb.ohb14 = 0 END IF
+  IF cl_null(b_ohb.ohb14t) THEN LET b_ohb.ohb14t = 0 END IF
 #MOD-A50083 --end--
 
 #FUN-A60035---mark begin
@@ -11911,13 +11922,13 @@ DEFINE l_str,l_str1 STRING
 #                           AND ata01 = g_oha.oha01
 #                           AND ata03 = l_ata03_t
 #           IF SQLCA.sqlcode THEN
-#              CALL cl_err3("upd","ata_file",g_oha.oha01,g_ohb1_t.ohb03,SQLCA.sqlcode,"","upd ata",1)  
+#              CALL cl_err3("upd","ata_file",g_oha.oha01,g_ohb1_t.ohb03,SQLCA.sqlcode,"","upd ata",1)
 #              LET g_ohb1[l_ac].* = g_ohb1_t.*
 #              RETURN FALSE
 #           END IF
 #        END FOREACH
 #     END IF
-#  END IF    
+#  END IF
 #ELSE
 #FUN-A50054 --End
 #FUN-A60035---mark end
@@ -11929,37 +11940,37 @@ DEFINE l_str,l_str1 STRING
    END IF
 #FUN-BC0081 add begin ---
    UPDATE rxe_file SET rxe02 = b_ohb.ohb03
-    WHERE rxe00 ='03' 
+    WHERE rxe00 ='03'
       AND rxe01 = g_oha.oha01
       AND rxe02 = g_ohb1_t.ohb03
    IF SQLCA.sqlcode THEN
       CALL cl_err3("upd","rxe_file",g_oha.oha01,g_ohb1_t.ohb03,SQLCA.sqlcode,"","upd rxe",1)
       RETURN FALSE
-   END IF 
+   END IF
 #FUN-BC0081 add end  ----
 #FUN-C10053 add begin ---
    IF g_ohb1[l_ac].ohb04 != g_ohb1_t.ohb04 OR
       g_ohb1[l_ac].ohb31 != g_ohb1_t.ohb31 OR
       g_ohb1[l_ac].ohb32 != g_ohb1_t.ohb32 OR
-      g_ohb1[l_ac].ohb03 != g_ohb1_t.ohb03 OR 
+      g_ohb1[l_ac].ohb03 != g_ohb1_t.ohb03 OR
       g_ohb1[l_ac].ohb12 != g_ohb1_t.ohb12 THEN
-      DELETE FROM ogk_file WHERE ogk01 = g_oha.oha01 AND ogk02 = g_ohb1_t.ohb03  
-      CALL t700_ins_ogk(g_ohb1[l_ac].ohb03,g_ohb1[l_ac].ohb04,g_ohb1[l_ac].ohb12,b_ohb.ohb13)   
+      DELETE FROM ogk_file WHERE ogk01 = g_oha.oha01 AND ogk02 = g_ohb1_t.ohb03
+      CALL t700_ins_ogk(g_ohb1[l_ac].ohb03,g_ohb1[l_ac].ohb04,g_ohb1[l_ac].ohb12,b_ohb.ohb13)
       IF g_success ='N' THEN
-         RETURN FALSE 
+         RETURN FALSE
       END IF
-   END IF 
+   END IF
 #FUN-C10053 add end -----
-#END IF  #FUN-A50054 add #FUN-A60035 mark  
+#END IF  #FUN-A50054 add #FUN-A60035 mark
    RETURN TRUE
 END FUNCTION
- 
+
 FUNCTION t700_after_detail()
    UPDATE oha_file SET ohamodu = g_user,ohadate = g_today,oha55=g_oha.oha55   #MOD-8B0107
     WHERE oha01 = g_oha.oha01
    CALL t700_chspic()
 END FUNCTION
- 
+
 FUNCTION t700_b_move_to()
 
    LET g_ohb1[l_ac].ohb03 = b_ohb.ohb03
@@ -12027,7 +12038,7 @@ FUNCTION t700_b_move_to()
    LET g_ohb1[l_ac].ohb68=b_ohb.ohb68  #No.FUN-870007
    LET g_ohb1[l_ac].ohb68=b_ohb.ohb68
 END FUNCTION
- 
+
 FUNCTION t700_b_move_back()
 #FUN-B90103--start--
 #FUN-B90103--end--
@@ -12086,17 +12097,17 @@ FUNCTION t700_b_move_back()
    LET b_ohb.ohbud13 = g_ohb1[l_ac].ohbud13
    LET b_ohb.ohbud14 = g_ohb1[l_ac].ohbud14
    LET b_ohb.ohbud15 = g_ohb1[l_ac].ohbud15
-   IF cl_null(g_ohb1[l_ac].ohb13) THEN 
-      LET g_ohb1[l_ac].ohb13=0          
+   IF cl_null(g_ohb1[l_ac].ohb13) THEN
+      LET g_ohb1[l_ac].ohb13=0
    END IF
    LET b_ohb.ohb64=g_ohb1[l_ac].ohb64
    LET b_ohb.ohb65=g_ohb1[l_ac].ohb65
-   LET b_ohb.ohb66=g_ohb1[l_ac].ohb66                                                                                               
+   LET b_ohb.ohb66=g_ohb1[l_ac].ohb66
    LET b_ohb.ohb67=g_ohb1[l_ac].ohb67
    LET b_ohb.ohb68=g_ohb1[l_ac].ohb68
-#FUN-B90103--add 
+#FUN-B90103--add
 END FUNCTION
- 
+
 FUNCTION t700_b_else()
    DEFINE l_img21    LIKE img_file.img21
    DEFINE l_img01    LIKE img_file.img01
@@ -12121,20 +12132,20 @@ FUNCTION t700_b_else()
       ELSE
 #FUN-C10053 ----add---end -----
          IF g_oha.oha213 = 'N'
-            THEN LET b_ohb.ohb14 =b_ohb.ohb917*b_ohb.ohb13*b_ohb.ohb1003/100    
+            THEN LET b_ohb.ohb14 =b_ohb.ohb917*b_ohb.ohb13*b_ohb.ohb1003/100
                  CALL cl_digcut(b_ohb.ohb14,t_azi04)  RETURNING b_ohb.ohb14    #CHI-7A0036-add
                  LET b_ohb.ohb14t=b_ohb.ohb14*(1+g_oha.oha211/100)
                  CALL cl_digcut(b_ohb.ohb14t,t_azi04) RETURNING b_ohb.ohb14t   #CHI-7A0036-add
-            ELSE 
+            ELSE
                  IF b_ohb.ohb1004 = 'Y' THEN
                     LET b_ohb.ohb14t = 0
-                    LET b_ohb.ohb14 = 0 
+                    LET b_ohb.ohb14 = 0
                  ELSE
-                    LET b_ohb.ohb14t=b_ohb.ohb917*b_ohb.ohb13*b_ohb.ohb1003/100    
+                    LET b_ohb.ohb14t=b_ohb.ohb917*b_ohb.ohb13*b_ohb.ohb1003/100
                     CALL cl_digcut(b_ohb.ohb14t,t_azi04) RETURNING b_ohb.ohb14t   #CHI-7A0036-add
                     LET b_ohb.ohb14 =b_ohb.ohb14t/(1+g_oha.oha211/100)
                     CALL cl_digcut(b_ohb.ohb14,t_azi04)  RETURNING b_ohb.ohb14    #CHI-7A0036-add
-                 END IF  #TQC-7C0045 
+                 END IF  #TQC-7C0045
          END IF
        END IF #FUN-C10053 add
     ELSE
@@ -12146,15 +12157,15 @@ FUNCTION t700_b_else()
           LET b_ohb.ohb14t=0
        END IF
    END IF
- 
- 
+
+
   ELSE
    IF b_ohb.ohb917 > 0 THEN   #MOD-860106
 #FUN-C10053 ----add---begin ---
       IF g_azw.azw04 = '2' THEN
          CALL t700_sub(b_ohb.ohb04,l_rtz04,g_oha.oha213,b_ohb.ohb917,b_ohb.ohb13,t_azi04)
               RETURNING b_ohb.ohb14,b_ohb.ohb14t
-      ELSE   
+      ELSE
 #FUN-C10053 ----add---end -----
          IF g_oha.oha213 = 'N' THEN
             #  用計價數量計算
@@ -12183,16 +12194,16 @@ FUNCTION t700_b_else()
       END IF
    END IF
   END IF  #NO.FUN-650108
- 
+
   LET g_ohb1[l_ac].ohb14 = b_ohb.ohb14   #MOD-8B0304
   LET g_ohb1[l_ac].ohb14t= b_ohb.ohb14t  #MOD-8B0304
   DISPLAY BY NAME g_ohb1[l_ac].ohb14,g_ohb1[l_ac].ohb14t   #MOD-8B0304
- 
+
    IF b_ohb.ohb09  IS NULL THEN LET b_ohb.ohb09  = ' ' END IF
    IF b_ohb.ohb091 IS NULL THEN LET b_ohb.ohb091 = ' ' END IF
    IF b_ohb.ohb092 IS NULL THEN LET b_ohb.ohb092 = ' ' END IF
 
-#FUN-AB0059 ---------------------start---------------------------- 
+#FUN-AB0059 ---------------------start----------------------------
    IF s_joint_venture( b_ohb.ohb04,g_plant) OR NOT s_internal_item( b_ohb.ohb04,g_plant ) THEN
    ELSE
 #FUN-AB0059 ---------------------end-------------------------------
@@ -12200,7 +12211,7 @@ FUNCTION t700_b_else()
       WHERE img01 = b_ohb.ohb04 AND img02 = b_ohb.ohb09
         AND img03 = b_ohb.ohb091 AND img04 = b_ohb.ohb092
    END IF                         #FUN-AB0059
- 
+
    IF STATUS=0 THEN
       IF b_ohb.ohb05 = b_ohb.ohb15 THEN
          LET b_ohb.ohb15_fac =1
@@ -12213,24 +12224,24 @@ FUNCTION t700_b_else()
          END IF
       END IF
    END IF
- 
+
    IF cl_null(b_ohb.ohb15_fac) THEN LET b_ohb.ohb15_fac = 1 END IF
- 
+
    LET b_ohb.ohb16 = b_ohb.ohb12 * b_ohb.ohb15_fac
    LET b_ohb.ohb16 = s_digqty(b_ohb.ohb16,b_ohb.ohb15)   #TQC-C20183--add--
- 
+
    IF cl_null(b_ohb.ohb60) THEN LET b_ohb.ohb60 = 0 END IF
    LET b_ohb.ohbplant = g_plant #FUN-980010 add
    LET b_ohb.ohblegal = g_legal #FUN-980010 add
 #FUN-B90103--add
 END FUNCTION
- 
+
 FUNCTION t700_b_get_price()
    DEFINE l_oah03	LIKE type_file.chr1        # No.FUN-680137 VARCHAR(1) #單價取價方式
    DEFINE l_ima131	LIKE type_file.chr20       # No.FUN-680137 VARCHAR(20) #Product Type
- 
+
    SELECT oah03 INTO l_oah03 FROM oah_file WHERE oah01 = g_oha.oha31
- 
+
    CASE
       WHEN l_oah03 = '0'
          RETURN
@@ -12250,7 +12261,7 @@ FUNCTION t700_b_get_price()
                         obg06,obg07,obg08,obg09,obg10
                    FROM obg_file
                   WHERE (obg01 = l_ima131 OR obg01 = '*')
-                    AND (obg02 = g_ohb1[l_ac].ohb04 OR obg02 = '*') #No.FUN-650108 
+                    AND (obg02 = g_ohb1[l_ac].ohb04 OR obg02 = '*') #No.FUN-650108
                     AND (obg03 = g_ohb1[l_ac].ohb05)  #No.FUN-650108
                     AND (obg04 = g_oha.oha25 OR obg04 = '*')
                     AND (obg05 = g_oha.oha31 OR obg05 = '*')
@@ -12260,12 +12271,12 @@ FUNCTION t700_b_get_price()
                   #-----MOD-A80172---------
                   #ORDER BY 2,3,4,5,6,7,8,9,10,11
                   ORDER BY obg01 DESC,obg02 DESC,obg03 DESC,obg04 DESC,
-                           obg05 DESC,obg06 DESC,obg07 DESC,obg08 DESC, 
+                           obg05 DESC,obg06 DESC,obg07 DESC,obg08 DESC,
                            obg09 DESC,obg10 DESC
                   #-----END MOD-A80172-----
          FOREACH t400_b_get_price_c INTO g_ohb1[l_ac].ohb13   #No.FUN-650108
             IF STATUS THEN
-               CALL cl_err('foreach obg',STATUS,1)   
+               CALL cl_err('foreach obg',STATUS,1)
             END IF
             EXIT FOREACH
          END FOREACH
@@ -12274,9 +12285,9 @@ FUNCTION t700_b_get_price()
           WHERE obk01 = g_ohb1[l_ac].ohb04   #No.FUN-650108
             AND obk02 = g_oha.oha03
    END CASE
-   LET g_ohb1[l_ac].ohb37 = g_ohb1[l_ac].ohb13   #FUN-AB0061 
+   LET g_ohb1[l_ac].ohb37 = g_ohb1[l_ac].ohb13   #FUN-AB0061
 END FUNCTION
- 
+
 FUNCTION t700_7()
 DEFINE l_rtg01 LIKE rtg_file.rtg01     #No.FUN-870007
 DEFINE l_rth06 LIKE rth_file.rth06     #No.FUN-870007
@@ -12296,28 +12307,28 @@ DEFINE b_ohb_ohb14t_o LIKE ohb_file.ohb14t #MOD-C80202
        WHERE rtz01 = g_oha.ohaplant
    END IF
 #FUN-C10053 ----add---end -----
- 
- 
+
+
    OPEN WINDOW t7007_w AT 8,23 WITH FORM "axm/42f/axmt7007"
     ATTRIBUTE (STYLE = g_win_style CLIPPED) #No.FUN-580092 HCN
- 
+
    CALL cl_ui_locale("axmt7007")
- 
+
    INPUT BY NAME b_ohb.ohb13,b_ohb.ohb14,b_ohb.ohb14t WITHOUT DEFAULTS
- 
+
       #MOD-C80202 -- add start --
       BEFORE INPUT
          LET b_ohb_ohb13_o = b_ohb.ohb13
          LET b_ohb_ohb14_o = b_ohb.ohb14
          LET b_ohb_ohb14t_o = b_ohb.ohb14t
       #MOD-C80202 -- add end --
-      
+
       AFTER FIELD ohb13
        #FUN-C40089---begin
        SELECT oah08 INTO g_oah08 FROM oah_file WHERE oah01=g_oha.oha31
        IF cl_null(g_oah08) THEN
           LET g_oah08 = 'Y'
-       END IF  
+       END IF
        IF g_oah08='N' AND b_ohb.ohb13=0 THEN
           CALL cl_err(b_ohb.ohb13,'axm-627',0) #FUN-C50074
           NEXT FIELD ohb13
@@ -12332,16 +12343,16 @@ DEFINE b_ohb_ohb14t_o LIKE ohb_file.ohb14t #MOD-C80202
                      RETURNING b_ohb.ohb14,b_ohb.ohb14t
              ELSE
 #FUN-C10053 ----add---end -----
-                IF g_oha.oha213 = 'N' THEN 
+                IF g_oha.oha213 = 'N' THEN
                    LET b_ohb.ohb14 =b_ohb.ohb917*b_ohb.ohb13*b_ohb.ohb1003/100    #No.FUN-610062
                    CALL cl_digcut(b_ohb.ohb14,t_azi04) RETURNING b_ohb.ohb14      #No.CHI-6A0004
                    LET b_ohb.ohb14t=b_ohb.ohb14*(1+g_oha.oha211/100)
                    CALL cl_digcut(b_ohb.ohb14t,t_azi04)RETURNING b_ohb.ohb14t     #No.CHI-6A0004
-                ELSE 
+                ELSE
                    LET b_ohb.ohb14t=b_ohb.ohb917*b_ohb.ohb13*b_ohb.ohb1003/100    #No.FUN-610062
                    CALL cl_digcut(b_ohb.ohb14t,t_azi04)RETURNING b_ohb.ohb14t     #No.CHI-6A0004
                    LET b_ohb.ohb14 =b_ohb.ohb14t/(1+g_oha.oha211/100)
-                   CALL cl_digcut(b_ohb.ohb14,t_azi04) RETURNING b_ohb.ohb14      #No.CHI-6A0004  
+                   CALL cl_digcut(b_ohb.ohb14,t_azi04) RETURNING b_ohb.ohb14      #No.CHI-6A0004
                 END IF
              END IF #FUN-C10053
           ELSE
@@ -12351,16 +12362,16 @@ DEFINE b_ohb_ohb14t_o LIKE ohb_file.ohb14t #MOD-C80202
                      RETURNING b_ohb.ohb14,b_ohb.ohb14t
              ELSE
 #FUN-C10053 ----add---end -----
-                IF g_oha.oha213 = 'N' THEN 
-                   LET b_ohb.ohb14 =b_ohb.ohb13*b_ohb.ohb1003/100   
-                   CALL cl_digcut(b_ohb.ohb14,t_azi04) RETURNING b_ohb.ohb14      
+                IF g_oha.oha213 = 'N' THEN
+                   LET b_ohb.ohb14 =b_ohb.ohb13*b_ohb.ohb1003/100
+                   CALL cl_digcut(b_ohb.ohb14,t_azi04) RETURNING b_ohb.ohb14
                    LET b_ohb.ohb14t=b_ohb.ohb14*(1+g_oha.oha211/100)
-                   CALL cl_digcut(b_ohb.ohb14t,t_azi04)RETURNING b_ohb.ohb14t     
-                ELSE 
-                   LET b_ohb.ohb14t=b_ohb.ohb13*b_ohb.ohb1003/100    
-                   CALL cl_digcut(b_ohb.ohb14t,t_azi04)RETURNING b_ohb.ohb14t     
+                   CALL cl_digcut(b_ohb.ohb14t,t_azi04)RETURNING b_ohb.ohb14t
+                ELSE
+                   LET b_ohb.ohb14t=b_ohb.ohb13*b_ohb.ohb1003/100
+                   CALL cl_digcut(b_ohb.ohb14t,t_azi04)RETURNING b_ohb.ohb14t
                    LET b_ohb.ohb14 =b_ohb.ohb14t/(1+g_oha.oha211/100)
-                   CALL cl_digcut(b_ohb.ohb14,t_azi04) RETURNING b_ohb.ohb14        
+                   CALL cl_digcut(b_ohb.ohb14,t_azi04) RETURNING b_ohb.ohb14
                 END IF
              END IF #FUN-C10053
           END IF
@@ -12379,11 +12390,11 @@ DEFINE b_ohb_ohb14t_o LIKE ohb_file.ohb14t #MOD-C80202
                   CALL cl_digcut(b_ohb.ohb14t,t_azi04)RETURNING b_ohb.ohb14t       #No.CHI-6A0004
                ELSE
                   LET b_ohb.ohb14t=b_ohb.ohb917*b_ohb.ohb13
-                  CALL cl_digcut(b_ohb.ohb14t,t_azi04)RETURNING b_ohb.ohb14t      #No.CHI-6A0004 
+                  CALL cl_digcut(b_ohb.ohb14t,t_azi04)RETURNING b_ohb.ohb14t      #No.CHI-6A0004
                   LET b_ohb.ohb14 =b_ohb.ohb14t/(1+g_oha.oha211/100)
                   CALL cl_digcut(b_ohb.ohb14,t_azi04) RETURNING b_ohb.ohb14       #No.CHI-6A0004
                END IF
-            END IF    #FUN-C10053 
+            END IF    #FUN-C10053
          ELSE
 #FUN-C10053 ----add---begin ---
             IF g_azw.azw04 = '2' THEN
@@ -12393,59 +12404,59 @@ DEFINE b_ohb_ohb14t_o LIKE ohb_file.ohb14t #MOD-C80202
 #FUN-C10053 ----add---end -----
                IF g_oha.oha213 = 'N' THEN
                   LET b_ohb.ohb14 =b_ohb.ohb13
-                  CALL cl_digcut(b_ohb.ohb14,t_azi04) RETURNING b_ohb.ohb14       
+                  CALL cl_digcut(b_ohb.ohb14,t_azi04) RETURNING b_ohb.ohb14
                   LET b_ohb.ohb14t=b_ohb.ohb14*(1+g_oha.oha211/100)
-                  CALL cl_digcut(b_ohb.ohb14t,t_azi04)RETURNING b_ohb.ohb14t      
+                  CALL cl_digcut(b_ohb.ohb14t,t_azi04)RETURNING b_ohb.ohb14t
                ELSE
                   LET b_ohb.ohb14t=b_ohb.ohb13
-                  CALL cl_digcut(b_ohb.ohb14t,t_azi04)RETURNING b_ohb.ohb14t      
+                  CALL cl_digcut(b_ohb.ohb14t,t_azi04)RETURNING b_ohb.ohb14t
                   LET b_ohb.ohb14 =b_ohb.ohb14t/(1+g_oha.oha211/100)
-                  CALL cl_digcut(b_ohb.ohb14,t_azi04) RETURNING b_ohb.ohb14       
+                  CALL cl_digcut(b_ohb.ohb14,t_azi04) RETURNING b_ohb.ohb14
                END IF
             END IF #FUN-C10053
          END IF
           IF g_azw.azw04='2' THEN
-            SELECT rtz05 INTO l_rtg01 FROM rtz_file 
+            SELECT rtz05 INTO l_rtg01 FROM rtz_file
              WHERE rtz01 = g_plant
             SELECT rtg07,rtg08 INTO l_rtg07,l_rtg08 FROM rtg_file,rtf_file
              WHERE rtg01=rtf01 AND rtfconf='Y'
                AND rtg01 = l_rtg01
                AND rtg03=b_ohb.ohb04 AND rtg04=b_ohb.ohb03
-           IF SQLCA.sqlcode=100 THEN  
-              CALL cl_err('','art-273',0) 
+           IF SQLCA.sqlcode=100 THEN
+              CALL cl_err('','art-273',0)
               NEXT FIELD ohb13
            END IF
-           IF l_rtg08='Y' THEN 
+           IF l_rtg08='Y' THEN
               SELECT rth06 INTO l_rth06 FROM rth_file
-               WHERE rth01=b_ohb.ohb04                                          
-                 AND rth02=b_ohb.ohb03 
-                 AND rthplant=g_oea.oeaplant  
-             IF SQLCA.sqlcode=100 THEN                                                                                    
-                CALL cl_err('','art-273',0) 
+               WHERE rth01=b_ohb.ohb04
+                 AND rth02=b_ohb.ohb03
+                 AND rthplant=g_oea.oeaplant
+             IF SQLCA.sqlcode=100 THEN
+                CALL cl_err('','art-273',0)
                 NEXT FIELD ohb13
-             END IF                                                                  
-             IF b_ohb.ohb13<l_rth06 THEN              
-                CALL cl_err('','art-300',0)                                                                            
-                NEXT FIELD ohb13                                                            
-             END IF                                                                 
-          ELSE                                                                          
+             END IF
+             IF b_ohb.ohb13<l_rth06 THEN
+                CALL cl_err('','art-300',0)
+                NEXT FIELD ohb13
+             END IF
+          ELSE
              IF b_ohb.ohb13<l_rtg07 THEN
                 CALL cl_err('','art-268',0)
                 NEXT FIELD ohb13
              END IF
           END IF
-          IF g_oha.oha213 = 'N' THEN                                                                                              
+          IF g_oha.oha213 = 'N' THEN
 #              LET b_ohb.ohb14 =b_ohb.ohb12*b_ohb.ohb13    #CHI-B70039 mark
                LET b_ohb.ohb14 =b_ohb.ohb917*b_ohb.ohb13   #CHI-B70039
-               CALL cl_digcut(b_ohb.ohb14,t_azi04) RETURNING b_ohb.ohb14                                          
-               LET b_ohb.ohb14t=b_ohb.ohb14*(1+g_oha.oha211/100)                                                                    
-               CALL cl_digcut(b_ohb.ohb14t,t_azi04) RETURNING b_ohb.ohb14t                                            
-            ELSE                                                                                                                    
+               CALL cl_digcut(b_ohb.ohb14,t_azi04) RETURNING b_ohb.ohb14
+               LET b_ohb.ohb14t=b_ohb.ohb14*(1+g_oha.oha211/100)
+               CALL cl_digcut(b_ohb.ohb14t,t_azi04) RETURNING b_ohb.ohb14t
+            ELSE
 #              LET b_ohb.ohb14t=b_ohb.ohb12*b_ohb.ohb13    #CHI-B70039 mark
                LET b_ohb.ohb14t=b_ohb.ohb917*b_ohb.ohb13   #CHI-B70039
-               CALL cl_digcut(b_ohb.ohb14t,t_azi04) RETURNING b_ohb.ohb14t                                           
-               LET b_ohb.ohb14 =b_ohb.ohb14t/(1+g_oha.oha211/100)                                                                   
-               CALL cl_digcut(b_ohb.ohb14,t_azi04) RETURNING b_ohb.ohb14                                             
+               CALL cl_digcut(b_ohb.ohb14t,t_azi04) RETURNING b_ohb.ohb14t
+               LET b_ohb.ohb14 =b_ohb.ohb14t/(1+g_oha.oha211/100)
+               CALL cl_digcut(b_ohb.ohb14,t_azi04) RETURNING b_ohb.ohb14
             END IF
         END IF
        END IF  #NO.FUN-650108
@@ -12456,28 +12467,28 @@ DEFINE b_ohb_ohb14t_o LIKE ohb_file.ohb14t #MOD-C80202
       AFTER INPUT
          IF INT_FLAG THEN EXIT INPUT END IF                #FUN-B70061 mark #FUN-B90103--remark
       #  IF INT_FLAG THEN LET INT_FLAG=0 EXIT INPUT END IF  #FUN-B70061  #FUN-B90103--mark
-         IF g_oha.oha09 MATCHES '[145]' AND 
+         IF g_oha.oha09 MATCHES '[145]' AND
             (b_ohb.ohb14 <=0 OR b_ohb.ohb14t <= 0) THEN
             CALL cl_err('','aap-201',0)
-            NEXT FIELD ohb14 
+            NEXT FIELD ohb14
          END IF
       #-----END CHI-9C0050-----
- 
+
       ON IDLE g_idle_seconds
          CALL cl_on_idle()
          CONTINUE INPUT
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
+
       ON ACTION controlg      #MOD-4C0121
          CALL cl_cmdask()     #MOD-4C0121
- 
+
    END INPUT
- 
+
    IF INT_FLAG THEN
       LET INT_FLAG=0
       CLOSE WINDOW t7007_w                 #結束畫面
@@ -12486,13 +12497,13 @@ DEFINE b_ohb_ohb14t_o LIKE ohb_file.ohb14t #MOD-C80202
       LET b_ohb.ohb14t = b_ohb_ohb14t_o    #MOD-C80202
       RETURN
    END IF
-   LET g_acc = 'Y'                      #MOD-B30222 add 
+   LET g_acc = 'Y'                      #MOD-B30222 add
    CLOSE WINDOW t7007_w                 #結束畫面
- 
+
 END FUNCTION
- 
+
 FUNCTION t700_bu()
- 
+
    LET g_oha.oha50 = NULL
     SELECT SUM(ohb14) INTO g_oha.oha50 FROM ohb_file
     WHERE ohb01 = g_oha.oha01
@@ -12502,26 +12513,26 @@ FUNCTION t700_bu()
    IF cl_null(g_oha.oha50) THEN
       LET g_oha.oha50 = 0
    END IF
- 
+
    DISPLAY BY NAME g_oha.oha50
    LET g_oha.oha53 = g_oha.oha50
- 
+
    UPDATE oha_file SET oha50 = g_oha.oha50,
                        oha53 = g_oha.oha53
     WHERE oha01 = g_oha.oha01
- 
+
    IF STATUS OR SQLCA.SQLCODE THEN
       CALL cl_err3("upd","oha_file",g_oha.oha01,"",SQLCA.SQLCODE,"","_bu():upd oha",1) #No.FUN-650108
    END IF
- 
+
 END FUNCTION
- 
- 
+
+
 FUNCTION t700_out()
 DEFINE l_wc   LIKE type_file.chr1000   #No.TQC-610089 add        #No.FUN-680137 VARCHAR(200)
- 
+
    IF g_oha.oha01 IS NULL THEN RETURN END IF
- 
+
    MENU ""
       ON ACTION list
          CALL t700_out1()
@@ -12535,43 +12546,43 @@ DEFINE l_wc   LIKE type_file.chr1000   #No.TQC-610089 add        #No.FUN-680137 
          --CALL cl_cmdrun(g_msg)
   #str----add by huanglf161201
                LET l_wc='oha01="',g_oha.oha01,'"'
-               LET g_msg = "cxmr020", 
+               LET g_msg = "cxmr020",
                        " '",g_today CLIPPED,"' ''",
                        " '",g_lang CLIPPED,"' '",g_bgjob CLIPPED,"'  '' '1'",
-                       " '",l_wc CLIPPED,"' '' 'N' "   
+                       " '",l_wc CLIPPED,"' '' 'N' "
                     CALL cl_cmdrun(g_msg)
 
 
   #str----end by huanglf161201
- 
+
       ON ACTION exit
          EXIT MENU
- 
+
       ON ACTION cancel
          EXIT MENU
- 
+
       ON IDLE g_idle_seconds
          CALL cl_on_idle()
          CONTINUE MENU
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
+
       ON ACTION controlg      #MOD-4C0121
          CALL cl_cmdask()     #MOD-4C0121
- 
-      ON ACTION close   #COMMAND KEY(INTERRUPT) #FUN-9B0145  
+
+      ON ACTION close   #COMMAND KEY(INTERRUPT) #FUN-9B0145
          LET INT_FLAG=FALSE 		#MOD-570244	mars
          LET g_action_choice = "exit"
          EXIT MENU
- 
+
    END MENU
- 
+
 END FUNCTION
- 
+
 FUNCTION t700_out1()
 DEFINE l_i             LIKE type_file.num5,          #No.FUN-680137 SMALLINT
        sr              RECORD
@@ -12586,87 +12597,87 @@ DEFINE l_i             LIKE type_file.num5,          #No.FUN-680137 SMALLINT
                           oha23       LIKE oha_file.oha23
                        END RECORD,
        l_name          LIKE type_file.chr20                #External(Disk) file name        #No.FUN-680137 VARCHAR(20)
-DEFINE l_cmd  LIKE type_file.chr1000             #No.FUN-7C0043                                                                    
-                                                                                                                                    
-   IF cl_null(g_wc) AND NOT cl_null(g_oha.oha01) THEN                                                                               
-      LET g_wc = " oha01 = '",g_oha.oha01,"'"                                                                                       
-   END IF                                                                                                                           
-                                                                                                                                    
-   IF cl_null(g_wc) THEN   #No.MOD-480198                                                                                           
-      CALL cl_err('','9057',0)                                                                                                      
-      RETURN                                                                                                                        
-   END IF                                                                                                                           
-   IF g_prog='axmt840' THEN                                                                                                         
-      LET l_cmd = 'p_query "axmt840" "',g_wc CLIPPED,'"'                                                                            
-      CALL cl_cmdrun(l_cmd)                                                                                                         
-   ELSE                                                                                                                             
-      LET l_cmd = 'p_query "axmt700" "',g_wc CLIPPED,'"'                                                                            
-      CALL cl_cmdrun(l_cmd)                                                                                                         
-   END IF                                                                                                                           
-  #CALL cl_cmdrun(l_cmd) #MOD-BA0085 mark 
-   RETURN               
- 
- 
+DEFINE l_cmd  LIKE type_file.chr1000             #No.FUN-7C0043
+
+   IF cl_null(g_wc) AND NOT cl_null(g_oha.oha01) THEN
+      LET g_wc = " oha01 = '",g_oha.oha01,"'"
+   END IF
+
+   IF cl_null(g_wc) THEN   #No.MOD-480198
+      CALL cl_err('','9057',0)
+      RETURN
+   END IF
+   IF g_prog='axmt840' THEN
+      LET l_cmd = 'p_query "axmt840" "',g_wc CLIPPED,'"'
+      CALL cl_cmdrun(l_cmd)
+   ELSE
+      LET l_cmd = 'p_query "axmt700" "',g_wc CLIPPED,'"'
+      CALL cl_cmdrun(l_cmd)
+   END IF
+  #CALL cl_cmdrun(l_cmd) #MOD-BA0085 mark
+   RETURN
+
+
 END FUNCTION
- 
- 
+
+
 FUNCTION t700_b_more(p_cmd)
- 
+
   DEFINE l_ima25    LIKE gsb_file.gsb05,         # No.FUN-680137 VARCHAR(4)
          p_cmd      LIKE type_file.chr1          #No.FUN-680137 VARCHAR(1)
- 
+
     OPEN WINDOW t7005_w AT 14,10 WITH FORM "axm/42f/axmt7005"
           ATTRIBUTE (STYLE = g_win_style CLIPPED) #No.FUN-580092 HCN
- 
+
     CALL cl_ui_locale("axmt7005")
- 
+
     SELECT ima906 INTO g_ima906 FROM ima_file WHERE ima01 = g_ohb1[l_ac].ohb04   #No.FUN-650108
     CALL t7005_def_form()
     SELECT ima25 INTO l_ima25 FROM ima_file WHERE ima01 = g_ohb1[l_ac].ohb04   #NO.FUN-650108
     IF STATUS THEN LET l_ima25=NULL END IF
- 
+
     INPUT BY NAME b_ohb.ohb11,b_ohb.ohb07,b_ohb.ohb05, b_ohb.ohb12, l_ima25,
                   b_ohb.ohb913,b_ohb.ohb914,b_ohb.ohb915,
                   b_ohb.ohb910,b_ohb.ohb911,b_ohb.ohb912,
                   b_ohb.ohb05_fac, b_ohb.ohb15, b_ohb.ohb15_fac, b_ohb.ohb16
                   WITHOUT DEFAULTS
- 
+
         BEFORE FIELD ohb15_fac
            CALL t700_set_origin_field()
- 
+
         AFTER FIELD ohb15_fac
            LET b_ohb.ohb16 = b_ohb.ohb12 * b_ohb.ohb15_fac
            LET b_ohb.ohb16 = s_digqty(b_ohb.ohb16,b_ohb.ohb15)   #TQC-C20183--add--
            DISPLAY BY NAME b_ohb.ohb16
- 
+
        ON IDLE g_idle_seconds
           CALL cl_on_idle()
           CONTINUE INPUT
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
+
       ON ACTION controlg      #MOD-4C0121
          CALL cl_cmdask()     #MOD-4C0121
- 
+
     AFTER INPUT
       IF cl_null(b_ohb.ohb916) THEN
          LET b_ohb.ohb916 = b_ohb.ohb05
          LET b_ohb.ohb917 = b_ohb.ohb12
       END IF
- 
- 
+
+
     END INPUT
- 
+
     IF INT_FLAG THEN
        LET INT_FLAG=0
        CLOSE WINDOW t7005_w                 #結束畫面
        RETURN
     END IF
- 
+
    IF p_cmd = 'u' THEN
       UPDATE ohb_file
          SET ohb11    = b_ohb.ohb11,
@@ -12692,22 +12703,22 @@ FUNCTION t700_b_more(p_cmd)
    END IF
    CLOSE WINDOW t7005_w                 #結束畫面
 END FUNCTION
- 
+
 FUNCTION t700_m()
    IF g_oha.oha01 IS NULL THEN RETURN END IF
- 
+
    LET g_action_choice="modify"
    IF NOT cl_chk_act_auth() THEN
       LET g_chr='d'
    ELSE
       LET g_chr='u'
    END IF
- 
+
    CALL s_axm_memo(g_oha.oha01,0,g_chr)
- 
+
 END FUNCTION
- 
- 
+
+
 #DEV-D30046 搬移至saxmt700_sub.4gl--mark--begin
 #FUNCTION t700_y_upd()
 ##DEFINE l_oia07  LIKE  oia_file.oia07   #FUN-C50136
@@ -12715,15 +12726,15 @@ END FUNCTION
 #
 #  #CHI-A50004 程式搬移 --start--
 #   BEGIN WORK
-# 
+#
 #   OPEN t700_cl USING g_oha.oha01
 #   IF SQLCA.sqlcode THEN
 #      CALL cl_err(g_oha.oha01,SQLCA.sqlcode,0)
-#      CLOSE t700_cl 
+#      CLOSE t700_cl
 #      ROLLBACK WORK
 #      RETURN
 #   END IF
-# 
+#
 #   FETCH t700_cl INTO g_oha.*
 #   IF SQLCA.sqlcode THEN
 #      CALL cl_err(g_oha.oha01,SQLCA.sqlcode,0)
@@ -12743,13 +12754,13 @@ END FUNCTION
 #  #        RETURN
 #  #     END IF
 #  #   END IF
-#  #   IF NOT cl_confirm('axm-108') THEN ROLLBACK WORK RETURN END IF #CHI-A50004 add ROLLBACK WORK 
+#  #   IF NOT cl_confirm('axm-108') THEN ROLLBACK WORK RETURN END IF #CHI-A50004 add ROLLBACK WORK
 #  #END IF
 #  #CHI-C30118---mark---END
-# 
+#
 #  #CHI-A50004 程式搬移至FUNCTION一開始 mark --start--
 #  #BEGIN WORK
-#  # 
+#  #
 #  #OPEN t700_cl USING g_oha.oha01
 #  #IF SQLCA.sqlcode THEN
 #  #   CALL cl_err(g_oha.oha01,SQLCA.sqlcode,0)
@@ -12776,13 +12787,13 @@ END FUNCTION
 #      LET g_success = 'N' RETURN
 #   END IF
 #  #FUN-C20116 mod end---
-# 
+#
 #   IF g_success = 'Y' THEN
 #      IF g_oha.ohamksg = 'Y' THEN #簽核模式
 #         CASE aws_efapp_formapproval()            #呼叫 EF 簽核功能
 #             WHEN 0  #呼叫 EasyFlow 簽核失敗
 #                  LET g_oha.ohaconf="N"
-#                  LET g_oha.ohaconu=''  #No.FUN-870007 
+#                  LET g_oha.ohaconu=''  #No.FUN-870007
 #                  LET g_oha.ohacond=''  #No.FUN-870007
 #                  LET g_success = "N"
 #                  ROLLBACK WORK
@@ -12795,7 +12806,7 @@ END FUNCTION
 #                  RETURN
 #         END CASE
 #      END IF
-# 
+#
 #      LET g_oha.oha55='1'           #執行成功, 狀態值顯示為 '1' 已核准
 #      UPDATE oha_file SET oha55 = g_oha.oha55 WHERE oha01=g_oha.oha01
 #      IF SQLCA.sqlerrd[3]=0 THEN
@@ -12804,7 +12815,7 @@ END FUNCTION
 #      LET g_oha.ohaconf='Y'         #執行成功, 確認碼顯示為 'Y' 已確認
 #      DISPLAY BY NAME g_oha.ohaconf
 #      DISPLAY BY NAME g_oha.oha55
-# 
+#
 #      IF g_azw.azw04='2' THEN
 #         LET l_time = TIME    #CHI-C80072
 #         LET g_oha.ohaconu=g_user
@@ -12818,7 +12829,7 @@ END FUNCTION
 #         DISPLAY g_buf TO ohaconu_desc
 #        #TQC-B40073 End-----
 #      END IF
-# 
+#
 #      IF g_oha.ohamksg = 'Y' AND g_oha.oha55 = 'N' THEN
 #         IF g_success = 'N' THEN
 #            ROLLBACK WORK RETURN
@@ -12827,11 +12838,11 @@ END FUNCTION
 #      CALL t700_chstatus('Y')
 #      CALL s_showmsg()   #No.FUN-710028
 ##     #FUN-C50136-add-str--
-##     IF g_oaz.oaz96 ='Y' THEN 
+##     IF g_oaz.oaz96 ='Y' THEN
 ##        CALL s_ccc_oia07('G',g_oha.oha03) RETURNING l_oia07
 ##        IF l_oia07 = '0' THEN
 ##           CALL s_ccc_oia(g_oha.oha03,'G',g_oha.oha01,0,'')
-##        END IF         
+##        END IF
 ##     END IF
 ##     #FUN-C50136-add-end--
 #      IF g_success = 'Y' THEn   #TQC-930155 add
@@ -12840,13 +12851,13 @@ END FUNCTION
 #         ROLLBACK WORK
 #         RETURN
 #      END IF
-# 
+#
 #      CALL cl_flow_notify(g_oha.oha01,'Y')
-# 
+#
 #      DISPLAY BY NAME g_oha.ohaconf
 #      # '5.折讓'自動做扣帳
 #      IF g_oha.oha09 = '5' THEN
-#         CALL t700_s('1')  
+#         CALL t700_s('1')
 #      ELSE
 #         IF g_oaz.oaz61 MATCHES "[12]" THEN
 #           #FUN-BA0014 add str---
@@ -12886,15 +12897,15 @@ END FUNCTION
 #      CALL s_showmsg()   #No.FUN-710028
 #      ROLLBACK WORK
 #   END IF
-# 
-#   IF g_success = 'Y' AND g_oaz.oaz63='Y' AND 
+#
+#   IF g_success = 'Y' AND g_oaz.oaz63='Y' AND
 #     (g_oha.oha09 MATCHES '[1,4,5]') THEN #FUN-640264
 #      LET g_flag = 'Y'   #MOD-BB0151
 #      CALL t700_CN()
 #   END IF
-# 
+#
 #END FUNCTION
-# 
+#
 #FUNCTION t700_w() 			# when g_oha.ohaconf='Y' (Turn to 'N')
 # DEFINE l_cnt     LIKE type_file.num10  # No.FUN-680137 INTEGER #MOD-640344 add
 # DEFINE l_ohb14t  LIKE ohb_file.ohb14t  #MOD-B10154
@@ -12908,10 +12919,10 @@ END FUNCTION
 #    CALL cl_err('','mfg9999',0)
 #    RETURN
 # END IF
-# 
+#
 # CALL s_yp(g_oha.oha02) RETURNING l_yy,l_mm
 # IF (l_yy > g_sma.sma51) OR (l_yy = g_sma.sma51 AND l_mm > g_sma.sma52) THEN
-#     CALL cl_err('','mfg6090',0)  
+#     CALL cl_err('','mfg6090',0)
 #     RETURN
 # END IF
 # #CHI-C70017---end
@@ -12921,23 +12932,23 @@ END FUNCTION
 #    SELECT ohapost INTO g_oha.ohapost FROM oha_file
 #      WHERE oha01 = g_oha.oha01
 #    IF g_oha.ohapost = 'Y' THEN
-#       RETURN 
-#    END IF 
+#       RETURN
+#    END IF
 # END IF
 # #-----END MOD-A80199-----
 #
 #  #CHI-A50004 程式搬移 --start--
 #   LET g_success = 'Y'
 #   BEGIN WORK
-# 
+#
 #    OPEN t700_cl USING g_oha.oha01
 #    IF SQLCA.sqlcode THEN
 #       CALL cl_err(g_oha.oha01,SQLCA.sqlcode,0)
-#       CLOSE t700_cl 
+#       CLOSE t700_cl
 #       ROLLBACK WORK
 #       RETURN
 #    END IF
-# 
+#
 #    FETCH t700_cl INTO g_oha.*
 #    IF SQLCA.sqlcode THEN
 #       CALL cl_err(g_oha.oha01,SQLCA.sqlcode,0)
@@ -12976,9 +12987,9 @@ END FUNCTION
 #      CALL cl_err('','axm-740',0)
 #      ROLLBACK WORK #CHI-A50004 add
 #      RETURN
-#   END IF 
-##No.FUN-A50071 ----end------ 
-# 
+#   END IF
+##No.FUN-A50071 ----end------
+#
 #   IF g_oaz.oaz03 = 'Y' AND
 #      g_sma.sma53 IS NOT NULL AND g_oha.oha02 <= g_sma.sma53 THEN
 #      CALL cl_err('','mfg9999',0) ROLLBACK WORK RETURN #CHI-A50004 add
@@ -12992,18 +13003,18 @@ END FUNCTION
 #   END IF
 #   IF g_oha.ohaconf = 'X' THEN CALL cl_err('','9024',0) ROLLBACK WORK RETURN END IF #CHI-A50004 add
 #   #若已存在OQC單,則不可取消確認
-#   LET l_cnt = 0 
+#   LET l_cnt = 0
 #   SELECT COUNT(*) INTO l_cnt FROM qcs_file
 #     WHERE qcs01 = g_oha.oha01
 #       AND qcs14 <> 'X'
 #   IF l_cnt > 0 THEN
 #      CALL cl_err(g_oha.oha01,'axm-089',1)
 #      ROLLBACK WORK #CHI-A50004 add
-#      RETURN   
+#      RETURN
 #   END IF
-# 
-# 
-# 
+#
+#
+#
 #    IF NOT cl_confirm('axm-109') THEN ROLLBACK WORK RETURN END IF #CHI-A50004 add
 #    #-----MOD-A80199---------
 #    #因為取消扣帳的動作不能包在Transaction裡,故將取消扣帳的動作往前移
@@ -13021,10 +13032,10 @@ END FUNCTION
 #    #   IF g_success ='N' THEN ROLLBACK WORK RETURN END IF #CHI-A50004 add
 #    #END IF
 #    #-----END MOD-A80199-----
-# 
+#
 #  #CHI-A50004 程式搬移至FUNCTION一開始 mark --start--
 #  #BEGIN WORK
-#  # 
+#  #
 #  # OPEN t700_cl USING g_oha.oha01
 #  # IF SQLCA.sqlcode THEN
 #  #    CALL cl_err(g_oha.oha01,SQLCA.sqlcode,0)
@@ -13037,7 +13048,7 @@ END FUNCTION
 #  #    CLOSE t700_cl ROLLBACK WORK RETURN
 #  # END IF
 #  #CHI-A50004 程式搬移至FUNCTION一開始 mark --end--
-# 
+#
 #   #TQC-B40073 Begin---
 #   #UPDATE oha_file SET ohaconf = 'N',ohaconu='',ohacond='' WHERE oha01 = g_oha.oha01 #No.FUN-870007
 #  #CHI-C80072--str--
@@ -13073,7 +13084,7 @@ END FUNCTION
 ##       ELSE
 ##          MESSAGE 'UPDATE lpj_file OK'
 ##       END IF
-## 
+##
 ##       DELETE FROM lsm_file WHERE lsm01= g_oha.oha87 AND lsm02='8'           #8:Maintain Sales Return Note(axmt700)
 ##                              AND lsm03= g_oha.oha01
 ##       IF SQLCA.SQLERRD[3]=0 THEN
@@ -13088,22 +13099,22 @@ END FUNCTION
 ##FUN-BA0069 -----------------MARK ----------------------END
 #   #FUN-C10053 add begin ---
 #    SELECT COUNT(*) INTO l_cnt
-#      FROM ogj_file 
-#     WHERE ogj01 = g_oha.oha01 
+#      FROM ogj_file
+#     WHERE ogj01 = g_oha.oha01
 #    IF l_cnt > 0 THEN
-#       DELETE FROM ogj_file WHERE ogj01 = g_oha.oha01 
+#       DELETE FROM ogj_file WHERE ogj01 = g_oha.oha01
 #       IF SQLCA.sqlcode THEN
 #          CALL cl_err3("del","ogj_file",g_oha.oha01,"",SQLCA.sqlcode,"","delete",1)
 #          LET g_success = 'N'
 #          RETURN
-#       END IF   
-#    END IF 
-#   #FUN-C10053 add end ----- 
+#       END IF
+#    END IF
+#   #FUN-C10053 add end -----
 #    CALL t700_chstatus('N')  #FUN-550051
 ##   #FUN-C50136-add-str--
-##   IF g_oaz.oaz96 ='Y' THEN 
+##   IF g_oaz.oaz96 ='Y' THEN
 ##      CALL s_ccc_oia07('G',g_oha.oha03) RETURNING l_oia07
-##      IF l_oia07 = '0' THEN 
+##      IF l_oia07 = '0' THEN
 ##         CALL s_ccc_rback(g_oha.oha03,'G',g_oha.oha01,0,'')
 ##      END IF
 ##   END IF
@@ -13112,7 +13123,7 @@ END FUNCTION
 #    IF g_success = 'Y' THEN
 #       LET g_oha.ohaconf='N' COMMIT WORK
 #  #CHI-C80072--str--
-#  #    LET g_oha.ohaconu=NULL  #No.FUN-870007                                                                                               
+#  #    LET g_oha.ohaconu=NULL  #No.FUN-870007
 #  #    LET g_oha.ohacond=NULL  #No.FUN-870007
 #  #    LET g_oha.ohacont=NULL  #TQC-B40073
 #  #    LET g_buf = ' '         #TQC-B40073
@@ -13124,7 +13135,7 @@ END FUNCTION
 #       DISPLAY BY NAME g_oha.ohaconf
 #  #CHI-C80072--end--
 #    ELSE
-#       LET g_oha.ohaconu=g_user   #No.FUN-870007                                                                                              
+#       LET g_oha.ohaconu=g_user   #No.FUN-870007
 #       LET g_oha.ohacond=g_today  #No.FUN-870007
 #   #   LET g_oha.ohacont=TIME     #TQC-B40073   #CHI-C80072
 #       LET g_oha.ohacont = l_time  #CHI-C80072
@@ -13140,9 +13151,9 @@ END FUNCTION
 #   END IF
 #    IF g_oha.ohaconf='X' THEN LET g_chr='Y' ELSE LET g_chr='N' END IF
 #    CALL cl_set_field_pic(g_oha.ohaconf,"",g_oha.ohapost,"",g_chr,"")
-# 
+#
 #END FUNCTION
-# 
+#
 #FUNCTION t700_y1()
 #   DEFINE s_ohb12 LIKE ohb_file.ohb12
 #   DEFINE l_slip   LIKE oay_file.oayslip
@@ -13152,7 +13163,7 @@ END FUNCTION
 #   DEFINE l_cnt    LIKE type_file.num5,   #MOD-BA0027
 #          l_amt    LIKE ohb_file.ohb14t   #MOD-BA0027
 #
-#  #FUN-C20116 mark str--- 
+#  #FUN-C20116 mark str---
 #  #LET g_time=TIME #TQC-B40073
 #  #UPDATE oha_file SET ohaconf = 'Y',
 #  #                    ohaconu=g_user,
@@ -13218,14 +13229,14 @@ END FUNCTION
 #   SELECT * FROM ohb_file WHERE ohb01 = g_oha.oha01 AND (ohb1005="1" OR ohb1005 IS NULL) AND (ohb1004="N" OR ohb1004 IS NULL) ORDER BY ohb03  #No.FUN-650108
 #   CALL s_showmsg_init()  #No.FUN-710028
 #   FOREACH t700_y1_c INTO b_ohb.*
-#    IF g_success='N' THEN                                                                                                         
-#       LET g_totsuccess='N'                                                                                                       
-#       LET g_success="Y"                                                                                                          
-#    END IF                                                                                                                        
-# 
+#    IF g_success='N' THEN
+#       LET g_totsuccess='N'
+#       LET g_success="Y"
+#    END IF
+#
 #    IF STATUS THEN
 #       CALL s_errmsg('ohb01',g_oha.oha01,'y1 foreach',STATUS,1) #No.FUN-710028
-#       LET g_success = 'N' RETURN    
+#       LET g_success = 'N' RETURN
 #    END IF
 #    LET g_cmd='_y1() read ohb:',b_ohb.ohb03 #FUN-840012
 #    CALL cl_msg(g_cmd) #FUN-840012
@@ -13326,12 +13337,12 @@ END FUNCTION
 ## END IF #FUN-A60035 #FUN-A60035 mark
 #    IF g_success='N' THEN CONTINUE FOREACH END IF   #No.FUN-710028
 #   END FOREACH
-#   IF g_totsuccess="N" THEN                                                                                                        
-#      LET g_success="N"                                                                                                            
-#   END IF                                                                                                                          
-# 
+#   IF g_totsuccess="N" THEN
+#      LET g_success="N"
+#   END IF
+#
 #END FUNCTION
-# 
+#
 #FUNCTION t700_bu1() 				#更新出貨單銷退量 & 訂單銷退量
 #  DEFINE l_ogb04   LIKE ogb_file.ogb04
 #  DEFINE l_oeb25   LIKE oeb_file.oeb25
@@ -13339,7 +13350,7 @@ END FUNCTION
 #  DEFINE l_ogb05   LIKE ogb_file.ogb05        #No.TQC-C20183
 #   CALL cl_msg("bu!")
 #   IF g_oha.oha09 = '1' THEN RETURN END IF
-# 
+#
 #   IF NOT cl_null(b_ohb.ohb31) THEN 			#更新出貨單銷退量
 #      SELECT SUM(ohb12) INTO tot1 FROM ohb_file, oha_file
 #       WHERE ohb31=b_ohb.ohb31 AND ohb32=b_ohb.ohb32
@@ -13349,14 +13360,14 @@ END FUNCTION
 #         AND ohb01=oha01 AND ohapost='Y' AND oha09='3'
 #      IF cl_null(tot1) THEN LET tot1 = 0 END IF
 #      IF cl_null(tot2) THEN LET tot2 = 0 END IF
-# 
+#
 #      LET g_chr='N'
-# 
+#
 #      SELECT ogb04 INTO l_ogb04 FROM ogb_file
 #       WHERE ogb01=b_ohb.ohb31 AND ogb03=b_ohb.ohb32
 #
 #      #No.TQC-C20183--add--begin--
-#      SELECT ogb05 INTO l_ogb05 FROM ogb_file 
+#      SELECT ogb05 INTO l_ogb05 FROM ogb_file
 #       WHERE ogb01 = b_ohb.ohb31
 #         AND ogb03 = b_ohb.ohb32
 #      LET tot1 = s_digqty(tot1,l_ogb05)
@@ -13374,9 +13385,9 @@ END FUNCTION
 #         END IF
 #      END IF
 #   END IF
-# 
+#
 #   IF g_oha.oha09 != '4' THEN RETURN END IF      #bugno:5730 add ......
-# 
+#
 #   IF NOT cl_null(b_ohb.ohb33) THEN     # 訂單銷退量
 #      LET g_chr='N'
 #      SELECT * INTO g_oeb.* FROM oeb_file
@@ -13395,7 +13406,7 @@ END FUNCTION
 #         CALL s_errmsg('','','sel oeb','axm-150',1)   #No.FUN-710028
 #         LET g_success = 'N' RETURN
 #      END IF
-# 
+#
 #     #IF b_ohb.ohb04 = g_oeb.oeb04 THEN      #銷退品號與訂單品號相同才update #MOD-D40018 mark
 #         SELECT oeb25 INTO l_oeb25 FROM oeb_file
 #          WHERE oeb01 = b_ohb.ohb33 AND oeb03 = b_ohb.ohb34
@@ -13415,9 +13426,9 @@ END FUNCTION
 #         END IF
 #     #END IF #MOD-D40018 mark
 #   END IF
-# 
+#
 #END FUNCTION
-# 
+#
 #FUNCTION t700_s(p_cmd) 			# when g_oha.ohapost='N' (Turn to 'Y')
 #   DEFINE p_cmd		  LIKE type_file.chr1  # 1.不詢問 2.要詢問        #No.FUN-680137 VARCHAR(1)
 #   DEFINE l_sum007  LIKE tsa_file.tsa07,
@@ -13441,15 +13452,15 @@ END FUNCTION
 #DEFINE m_qcs091c     LIKE qcs_file.qcs091  #No.FUN-740016
 #DEFINE l_sql         STRING                #No.FUN-740016
 ##DEFINE l_imaicd04    LIKE imaicd_file.imaicd04 #NO.FUN-7B0015 #FUN-BA0051 mark
-##DEFINE l_imaicd08    LIKE imaicd_file.imaicd08 #NO.FUN-7B0015 #FUN-BA0051 mark 
-#DEFINE l_flag        LIKE type_file.num10      #NO.FUN-7B0015 
+##DEFINE l_imaicd08    LIKE imaicd_file.imaicd08 #NO.FUN-7B0015 #FUN-BA0051 mark
+#DEFINE l_flag        LIKE type_file.num10      #NO.FUN-7B0015
 #DEFINE l_ohb  RECORD LIKE ohb_file.*
 #DEFINE l_tot         LIKE oeb_file.oeb25
 #DEFINE l_tot1        LIKE oeb_file.oeb26    #No.CHI-8B0046
 #DEFINE l_ocn03       LIKE ocn_file.ocn03
 #DEFINE l_ocn04       LIKE ocn_file.ocn04
 #DEFINE lj_result     LIKE type_file.chr1    #No.FUN-930108
-#DEFINE l_ohg         RECORD LIKE ohb_file.* #FUN-BC0081 
+#DEFINE l_ohg         RECORD LIKE ohb_file.* #FUN-BC0081
 #DEFINE l_rxe04       LIKE rxe_file.rxe04    #FUN-BC0081
 #DEFINE l_rxe05       LIKE rxe_file.rxe05    #FUN-BC0081
 #DEFINE l_rxe08       LIKE rxe_file.rxe08    #FUN-BC0081
@@ -13466,18 +13477,18 @@ END FUNCTION
 #DEFINE l_oea61       LIKE oea_file.oea61  #CHI-C90032 add
 #
 #  LET g_success = 'Y'   #MOD-BB0204 add
-#  
+#
 #  #CHI-A50004 程式搬移 --start--
 #   BEGIN WORK
-# 
+#
 #   OPEN t700_cl USING g_oha.oha01
 #   IF SQLCA.sqlcode THEN
 #      CALL cl_err(g_oha.oha01,SQLCA.sqlcode,0)
-#      CLOSE t700_cl 
+#      CLOSE t700_cl
 #      ROLLBACK WORK
 #      RETURN
 #   END IF
-# 
+#
 #   FETCH t700_cl INTO g_oha.*
 #   IF SQLCA.sqlcode THEN
 #      CALL cl_err(g_oha.oha01,SQLCA.sqlcode,0)
@@ -13491,8 +13502,8 @@ END FUNCTION
 #   IF g_oha.ohaconf='N' THEN CALL cl_err('conf=N','axm-154',0) ROLLBACK WORK RETURN END IF #CHI-A50004 add ROLLBACK WORK
 #   IF g_oha.ohapost='Y' THEN ROLLBACK WORK RETURN END IF #CHI-A50004 add ROLLBACK WORK
 #   IF g_oha.ohaconf = 'X' THEN CALL cl_err('','9024',0) ROLLBACK WORK RETURN END IF #CHI-A50004 add ROLLBACK WORK
-# 
-#   DECLARE ohb_s_c CURSOR FOR 
+#
+#   DECLARE ohb_s_c CURSOR FOR
 #         SELECT * FROM ohb_file WHERE ohb01 = g_oha.oha01
 #   CALL s_showmsg_init()
 ##FUN-BC0081 add begin ---
@@ -13503,7 +13514,7 @@ END FUNCTION
 #               "   AND rxe00 = '03'"
 #   PREPARE selrxe_pre_1 FROM g_sql
 #   DECLARE selrxe_cs_1 CURSOR FOR selrxe_pre_1
-##FUN-BC0081 add end --- 
+##FUN-BC0081 add end ---
 #   FOREACH ohb_s_c INTO l_ohb.*
 #      IF g_argv0 = '1' THEN
 #         CALL s_incchk(l_ohb.ohb09,l_ohb.ohb091,g_user)
@@ -13549,7 +13560,7 @@ END FUNCTION
 ##FUN-BC0081 add end ---
 #   END FOREACH
 #   CALL s_showmsg()
-#   IF g_success = 'N' THEN         
+#   IF g_success = 'N' THEN
 #      ROLLBACK WORK #CHI-A50004 add
 #      RETURN
 #   END IF
@@ -13557,14 +13568,14 @@ END FUNCTION
 #   LET l_sql = "SELECT rxe04,rxe05 FROM rxe_file ",
 #               " WHERE rxe00 = '03' ",
 #               "   AND rxe01 = ? AND rxe02 = ? "
-#   PREPARE sel_rxe_p FROM l_sql 
+#   PREPARE sel_rxe_p FROM l_sql
 #   DECLARE sel_rxe_c CURSOR FOR sel_rxe_p
 #   CALL s_showmsg_init()
 #   FOREACH ohb_s_c INTO l_ohg.*
 #      SELECT ima154 INTO l_ima154
-#        FROM ima_file 
+#        FROM ima_file
 #       WHERE ima01 = l_ohg.ohb04
-#       IF l_ima154 ='Y' THEN 
+#       IF l_ima154 ='Y' THEN
 #          FOREACH sel_rxe_c USING l_ohg.ohb01,l_ohg.ohb03 INTO l_rxe04,l_rxe05
 #             SELECT COUNT(*) INTO l_cnt
 #               FROM lqe_file
@@ -13579,21 +13590,21 @@ END FUNCTION
 #                                 lqe10 = g_oha.oha02,
 #                                 lqe17 = '2'
 #              WHERE lqe01 >= l_rxe04
-#                AND lqe01 <= l_rxe05 
+#                AND lqe01 <= l_rxe05
 #             IF SQLCA.sqlcode OR SQLCA.sqlerrd[3] = 0 THEN
 #                CALL s_errmsg("lqe09,lqe10,lqe17",SQLCA.sqlcode,"","",1)
 #                LET g_success = 'N'
 #             END IF
-#          END FOREACH              
-#       END IF  
-#   END FOREACH 
+#          END FOREACH
+#       END IF
+#   END FOREACH
 #   CALL s_showmsg()
-#   IF g_success = 'N' THEN         
-#      ROLLBACK WORK 
+#   IF g_success = 'N' THEN
+#      ROLLBACK WORK
 #      RETURN
-#   END IF   
-##FUN-BC0081 end --- 
-# 
+#   END IF
+##FUN-BC0081 end ---
+#
 #   IF g_oha.oha02 <= g_oaz.oaz09 THEN
 #      CALL cl_err('','axm-273',1) ROLLBACK WORK RETURN #CHI-A50004 add ROLLBACK WORK
 #   END IF
@@ -13601,13 +13612,13 @@ END FUNCTION
 #      g_sma.sma53 IS NOT NULL AND g_oha.oha02 <= g_sma.sma53 THEN
 #      CALL cl_err('','axm-273',1) ROLLBACK WORK RETURN #CHI-A50004 add ROLLBACK WORK
 #   END IF
-# 
+#
 #   IF p_cmd='2' THEN IF NOT cl_confirm('axm-152') THEN ROLLBACK WORK RETURN END IF END IF  #MOD-490169在詢問是否庫存過帳之前,先做銷退日期與關帳日期的判斷 #CHI-A50004 add ROLLBACK WORK
 #
 #   #FUN-C70087---begin
 #   CALL s_padd_img_init()  #FUN-CC0095
 #   CALL s_padd_imgg_init()  #FUN-CC0095
-#   
+#
 #   DECLARE t700_s_c1 CURSOR FOR SELECT * FROM ohb_file
 #     WHERE ohb01 = g_oha.oha01
 #
@@ -13631,15 +13642,15 @@ END FUNCTION
 #       IF l_fg = 1 THEN
 #          #CALL s_padd_imgg_data(l_ohb.ohb04,l_ohb.ohb09,l_ohb.ohb091,l_ohb.ohb092,l_ohb.ohb910,g_oha.oha01,l_ohb.ohb03,l_imgg_table) #FUN-CC0095
 #          CALL s_padd_imgg_data1(l_ohb.ohb04,l_ohb.ohb09,l_ohb.ohb091,l_ohb.ohb092,l_ohb.ohb910,g_oha.oha01,l_ohb.ohb03) #FUN-CC0095
-#       END IF 
+#       END IF
 #       CALL s_chk_imgg(l_ohb.ohb04,l_ohb.ohb09,
 #                       l_ohb.ohb091,l_ohb.ohb092,
 #                       l_ohb.ohb913) RETURNING l_fg
 #       IF l_fg = 1 THEN
 #          #CALL s_padd_imgg_data(l_ohb.ohb04,l_ohb.ohb09,l_ohb.ohb091,l_ohb.ohb092,l_ohb.ohb913,g_oha.oha01,l_ohb.ohb03,l_imgg_table) #FUN-CC0095
 #          CALL s_padd_imgg_data1(l_ohb.ohb04,l_ohb.ohb09,l_ohb.ohb091,l_ohb.ohb092,l_ohb.ohb913,g_oha.oha01,l_ohb.ohb03) #FUN-CC0095
-#       END IF 
-#   END FOREACH 
+#       END IF
+#   END FOREACH
 #   #FUN-CC0095---begin mark
 #   #LET l_sql = " SELECT COUNT(*) ",
 #   #            " FROM ",l_img_table CLIPPED  #,g_cr_db_str
@@ -13652,28 +13663,28 @@ END FUNCTION
 #   #PREPARE cnt_imgg FROM l_sql
 #   #LET l_cnt_imgg = 0
 #   #EXECUTE cnt_imgg INTO l_cnt_imgg
-#   #FUN-CC0095---end    
+#   #FUN-CC0095---end
 #   LET l_cnt_img = g_padd_img.getLength()  #FUN-CC0095
 #   LET l_cnt_imgg = g_padd_imgg.getLength()  #FUN-CC0095
-#   
+#
 #   IF g_sma.sma892[3,3] = 'Y' AND (l_cnt_img > 0 OR l_cnt_imgg > 0) THEN
-#      IF cl_confirm('mfg1401') THEN 
-#         IF l_cnt_img > 0 THEN 
+#      IF cl_confirm('mfg1401') THEN
+#         IF l_cnt_img > 0 THEN
 #            #IF NOT s_padd_img_show(l_img_table) THEN  #FUN-CC0095
 #            IF NOT s_padd_img_show1() THEN  #FUN-CC0095
 #               #CALL s_padd_img_del(l_img_table) #FUN-CC0095
 #               LET g_success = 'N'
-#               RETURN 
-#            END IF 
-#         END IF 
+#               RETURN
+#            END IF
+#         END IF
 #         IF l_cnt_imgg > 0 THEN #FUN-CC0095
 #            #IF NOT s_padd_imgg_show(l_imgg_table) THEN  #FUN-CC0095
 #            IF NOT s_padd_imgg_show1() THEN  #FUN-CC0095
 #               #CALL s_padd_imgg_del(l_imgg_table) #FUN-CC0095
 #               LET g_success = 'N'
-#               RETURN 
-#            END IF 
-#         END IF #FUN-CC0095  
+#               RETURN
+#            END IF
+#         END IF #FUN-CC0095
 #      ELSE
 #         #CALL s_padd_img_del(l_img_table) #FUN-CC0095
 #         #CALL s_padd_imgg_del(l_imgg_table) #FUN-CC0095
@@ -13684,15 +13695,15 @@ END FUNCTION
 #   #CALL s_padd_img_del(l_img_table) #FUN-CC0095
 #   #CALL s_padd_imgg_del(l_imgg_table) #FUN-CC0095
 #   #FUN-C70087---end
-#   
+#
 ##  LET l_sql = " SELECT ohb12,ohb61,ohb04,ohb01,ohb03 FROM ohb_file ",           #No.FUN-A20038
 ##  LET l_sql = " SELECT ohb12,ohb61,ohb04,ohb01,ohb31,ohb32 FROM ohb_file ",     #No.FUN-A20038
 #   LET l_sql = " SELECT ohb12,ohb61,ohb04,ohb01,ohb03 FROM ohb_file ",           #No.MOD-BB0202
 #               "  WHERE ohb01 = '",g_oha.oha01,"'"
-#  
+#
 #   PREPARE t700_curs1 FROM l_sql
 #   DECLARE t700_pre1 CURSOR FOR t700_curs1
-#  
+#
 ##  FOREACH t700_pre1 INTO m_ohb12,m_ohb61,m_ohb04,m_ohb01,m_ohb03                #No.FUN-A20038
 ##  FOREACH t700_pre1 INTO m_ohb12,m_ohb61,m_ohb04,m_ohb01,m_ohb31,m_ohb32        #No.FUN-A20038
 #   FOREACH t700_pre1 INTO m_ohb12,m_ohb61,m_ohb04,m_ohb01,m_ohb03                #No.MOD-BB0202
@@ -13707,11 +13718,11 @@ END FUNCTION
 ##           AND qcs02 = m_ohb32                                                  #No.FUN-A20038
 #            AND qcs02 = m_ohb03                                                  #No.MOD-BB0202
 #            AND qcs14 = 'Y'
-# 
+#
 #         IF m_qcs091c IS NULL THEN
 #            LET m_qcs091c = 0
 #         END IF
-# 
+#
 #         IF m_ohb12 > m_qcs091c THEN
 #            CALL cl_err(m_ohb04,'mfg3558',1)
 #            ROLLBACK WORK #CHI-A50004 add
@@ -13719,7 +13730,7 @@ END FUNCTION
 #         END IF
 #      END IF
 #   END FOREACH
-# 
+#
 #   IF g_oha.oha09 = "6" THEN
 #     #MOD-D10185 add start -----
 #      SELECT COUNT(*) INTO l_cnt FROM ohb_file WHERE ohb01 = g_oha.oha01 AND ohb04 NOT LIKE 'MISC%'
@@ -13731,12 +13742,12 @@ END FUNCTION
 #            ROLLBACK WORK #CHI-A50004 add
 #            RETURN
 #         END IF
-# 
+#
 #         SELECT imm03 INTO l_imm03 FROM imm_file
 #          WHERE imm01=g_oha.oha56
 #         IF l_imm03 = "Y" THEN
 #            LET g_oha.ohapost='Y'
-#            DECLARE ohb_c CURSOR FOR 
+#            DECLARE ohb_c CURSOR FOR
 #              SELECT * FROM ohb_file WHERE ohb01 = g_oha.oha01
 #            FOREACH ohb_c INTO l_ohb.*
 #               IF g_argv0 = '1' THEN
@@ -13752,10 +13763,10 @@ END FUNCTION
 #                  SELECT oeb25,oeb26 INTO l_tot,l_tot1 FROM oeb_file    #No.CHI-8B0046
 #                   WHERE oeb01 = l_ohb.ohb33
 #                     AND oeb03 = l_ohb.ohb34
-#               
+#
 #                  LET l_tot = l_tot+l_ohb.ohb12
 #                  LET l_tot1 = l_tot1+l_ohb.ohb12   #No.CHI-8B0046
-#               
+#
 #                  UPDATE oeb_file SET oeb25=l_tot,
 #                                      oeb26=l_tot1   #No.CHI-8B0046
 #                   WHERE oeb01 = l_ohb.ohb33
@@ -13766,12 +13777,12 @@ END FUNCTION
 #
 #               SELECT ocn03,ocn04 INTO l_ocn03,l_ocn04 FROM ocn_file
 #                WHERE ocn01 = g_oha.oha14
-#               
+#
 #              #LET l_ocn03 = l_ocn03-(g_oha.oha24*l_ohb.ohb14)  #CHI-C90032 mark
 #              #LET l_ocn04 = l_ocn04+(g_oha.oha24*l_ohb.ohb14)  #CHI-C90032 mark
 #               LET l_ocn03 = l_ocn03-l_oea61                    #CHI-C90032 add
 #               LET l_ocn04 = l_ocn04+l_oea61                    #CHI-C90032 add
-#               
+#
 #               UPDATE ocn_file SET ocn03 = l_ocn03,
 #                                   ocn04 = l_ocn04
 #                WHERE ocn01 = g_oha.oha14
@@ -13783,8 +13794,8 @@ END FUNCTION
 #            LET g_oha.oha56 = ''#FUN-C10053
 #            IF l_imm03="A" THEN
 #               CALL cl_err ("","abm-020",1)
-#            END IF    
-#         END IF    
+#            END IF
+#         END IF
 #         UPDATE oha_file SET ohapost=g_oha.ohapost,
 #                             oha56 = g_oha.oha56
 #          WHERE oha01=g_oha.oha01
@@ -13814,13 +13825,13 @@ END FUNCTION
 #      END IF
 #     #MOD-D10185 add end  -----
 #   END IF
-# 
+#
 ##CHI-C80009---mark---START-->>把銷退單拋轉的動作移至過帳後
 ##  IF g_oha.oha41  ='Y' THEN
 ##     IF t700_chkpoz() THEN ROLLBACK WORK RETURN END IF #CHI-A50004 add ROLLBACK WORK
 ##     #若銷售多角且正拋，則直接拋轉不異動庫存-->#CHI-C80009 應可直接扣庫存帳
 ##     IF g_argv0 = '2' AND g_poz.poz011 = '1' THEN
-##        IF g_oax.oax07 = 'Y' THEN        #FUN-670007 
+##        IF g_oax.oax07 = 'Y' THEN        #FUN-670007
 ##            ROLLBACK WORK   #MOD-C20079 add
 ##            CALL t700_muticarry()
 ##            CALL t700_chspic()
@@ -13830,10 +13841,10 @@ END FUNCTION
 ##     END IF
 ##  END IF
 ##CHI-C80009---mark-----END
-# 
+#
 #  #CHI-A50004 程式搬移至FUNCTION一開始 mark --start--
 #  #BEGIN WORK
-#  # 
+#  #
 #  #OPEN t700_cl USING g_oha.oha01
 #  #IF SQLCA.sqlcode THEN
 #  #   CALL cl_err(g_oha.oha01,SQLCA.sqlcode,0)
@@ -13847,10 +13858,10 @@ END FUNCTION
 #  #END IF
 #  #CHI-A50004 程式搬移至FUNCTION一開始 mark --end--
 #  #LET g_success = 'Y'   #MOD-BB0204 mark
-# 
-# 
+#
+#
 #   UPDATE oha_file SET ohapost='Y' WHERE oha01=g_oha.oha01
-# 
+#
 #   CALL t700_s1()
 #
 #   IF sqlca.sqlcode THEN LET g_success='N' END IF
@@ -13887,7 +13898,7 @@ END FUNCTION
 #      #FUN-C30176 mark END
 #      #FUN-C30176 add START
 #      #INSERT INTO lsm_file (lsm01,lsm02,lsm03,lsm04,lsm05,lsm06,lsm08,lsmlegal,lsmplant,lsm15)        #FUN-C70045 add lsm15   #FUN-C90102 mark
-#       INSERT INTO lsm_file (lsm01,lsm02,lsm03,lsm04,lsm05,lsm06,lsm08,lsmlegal,lsmstore,lsm15)        #FUN-C90102 add 
+#       INSERT INTO lsm_file (lsm01,lsm02,lsm03,lsm04,lsm05,lsm06,lsm08,lsmlegal,lsmstore,lsm15)        #FUN-C90102 add
 #       #            VALUES(g_oha.oha87,'A',g_oha.oha01,g_rxx04_point,g_oha.oha02,'','',                #TQC-C80119 mark
 #                    VALUES(g_oha.oha87,'A',g_oha.oha01,g_rxx04_point,g_oha.oha02,'',                   #TQC-C80119 add
 #                                   0,g_oha.ohalegal,g_oha.ohaplant,'1')                                #FUN-C70045 add '1'
@@ -13905,10 +13916,10 @@ END FUNCTION
 #  #                            ,g_oha.oha1008*(-1),g_oha.ohalegal,g_oha.ohaplant)
 #  #FUN-C30176 mark END
 #  #FUN-C30176 mark START
-#  #INSERT INTO lsm_file (lsm01,lsm02,lsm03,lsm04,lsm05,lsm06,lsm08,lsmlegal,lsmplant,lsm15)              #FUN-C70045 add lsm15   #FUN-C90102 mark 
+#  #INSERT INTO lsm_file (lsm01,lsm02,lsm03,lsm04,lsm05,lsm06,lsm08,lsmlegal,lsmplant,lsm15)              #FUN-C70045 add lsm15   #FUN-C90102 mark
 #   INSERT INTO lsm_file (lsm01,lsm02,lsm03,lsm04,lsm05,lsm06,lsm08,lsmlegal,lsmstore,lsm15)              #FUN-C90102 add
 #   #            VALUES(g_oha.oha87,'8',g_oha.oha01,g_oha.oha95*(-1),g_oha.oha02,'',''                    #TQC-C80119 mark
-#                VALUES(g_oha.oha87,'8',g_oha.oha01,g_oha.oha95*(-1),g_oha.oha02,''                       #TQC-C80119 add  
+#                VALUES(g_oha.oha87,'8',g_oha.oha01,g_oha.oha95*(-1),g_oha.oha02,''                       #TQC-C80119 add
 #                               ,g_oha.oha1008*(-1),g_oha.ohalegal,g_oha.ohaplant,'1')                    #FUN-C70045 add '1'
 #  #FUN-C30176 mark END
 #
@@ -13927,7 +13938,7 @@ END FUNCTION
 #    WHERE ohb01 = g_oha.oha01
 #   IF cl_null(l_sum_ohb14t) THEN
 #      LET l_sum_ohb14t = 0
-#   END IF 
+#   END IF
 ##FUN-C80110 add end -----
 #   UPDATE lpj_file SET lpj07 = COALESCE(lpj07,0) +1,
 #                       lpj08 = max_lsm05,
@@ -13950,12 +13961,12 @@ END FUNCTION
 ##FUN-BA0069 ----------------END
 #   CALL s_showmsg()   #No.FUN-710028
 ##  #FUN-C50136-add-str--
-##  IF g_oaz.oaz96 = 'Y' THEN 
+##  IF g_oaz.oaz96 = 'Y' THEN
 ##     CALL s_ccc_oia07('G',g_oha.oha03) RETURNING l_oia07
 ##     IF l_oia07 = '1' THEN
 ##        CALL s_ccc_oia(g_oha.oha03,'G',g_oha.oha01,0,'')
-##     END IF      
-##  END IF 
+##     END IF
+##  END IF
 ##  #FUN-C50136-add-end--
 #   IF g_success = 'Y' THEN
 #      LET g_oha.ohapost='Y'
@@ -13983,7 +13994,7 @@ END FUNCTION
 #         #WHERE oay01=l_oga.oga01                  #MOD-C20142 mark
 #          WHERE oayslip=l_t1                       #MOD-C20142 add
 #         IF l_oay11='Y' THEN
-#            CALL t700_ar()      
+#            CALL t700_ar()
 #         END IF
 #      END IF
 #   END IF
@@ -14003,7 +14014,7 @@ END FUNCTION
 #      END IF
 #   END IF
 ##CHI-C80009---add-----END
-# 
+#
 #   # 多角貿易自動拋轉
 #   IF g_success = 'Y' AND g_argv0 MATCHES '[2]' THEN
 #      IF (g_poz.poz19='Y' AND g_poz.poz18=g_plant) THEN
@@ -14015,21 +14026,21 @@ END FUNCTION
 #            #SELECT oha44 INTO g_oha.oha44 FROM oha_file WHERE oha01 = g_oha.oha01
 #            #IF g_oha.oha44 <> 'Y' THEN
 #            #   CALL t700_z('y')    #'y' 不需再顯示扣帳畫面直接執行
-#            #END IF 
+#            #END IF
 #            #MOD-B30464 mark --end--
 #         END IF                       #FUN-670007
 #      END IF                          #MOD-950075
 #   END IF
 #    CALL t700_chspic()
-# 
-# 
+#
+#
 #END FUNCTION
 #DEV-D30046 搬移至saxmt700_sub.4gl--mark--end
- 
+
 FUNCTION t700_d()
- DEFINE l_rec_b   LIKE type_file.num5 
- DEFINE l_sum_ohb14   LIKE ohb_file.ohb14  
- DEFINE l_ohb31       LIKE ohb_file.ohb31 
+ DEFINE l_rec_b   LIKE type_file.num5
+ DEFINE l_sum_ohb14   LIKE ohb_file.ohb14
+ DEFINE l_ohb31       LIKE ohb_file.ohb31
  DEFINE d_ohb     DYNAMIC ARRAY OF RECORD
                   ohb03     LIKE ohb_file.ohb03,
                   ohb31     LIKE ohb_file.ohb31,
@@ -14072,10 +14083,10 @@ FUNCTION t700_d()
                   ohb14     LIKE ohb_file.ohb14,
                   ohb14t    LIKE ohb_file.ohb14t
                   END RECORD,
-  i               LIKE type_file.num5,  
-  l_n             LIKE type_file.num5, 
-  l_allow_insert  LIKE type_file.num5, 
-  l_allow_delete  LIKE type_file.num5      #可 h除否 
+  i               LIKE type_file.num5,
+  l_n             LIKE type_file.num5,
+  l_allow_insert  LIKE type_file.num5,
+  l_allow_delete  LIKE type_file.num5      #可 h除否
  DEFINE l_rxc     RECORD LIKE rxc_file.*   #FUN-AC0012
  DEFINE l_oha50_1 LIKE ohb_file.ohb14t     #TQC-C90021
 #FUN-C10053 add begin ---
@@ -14087,17 +14098,17 @@ FUNCTION t700_d()
        WHERE rtz01 = g_oha.ohaplant
    END IF
 #FUN-C10053 ----add---end -----
- 
+
    BEGIN WORK
 
 #TQC-A50055 --begin--
-   IF g_oha.oha09 = '2' OR g_oha.oha09 = '3' THEN 
+   IF g_oha.oha09 = '2' OR g_oha.oha09 = '3' THEN
      CALL cl_err('','axm-096',0)
-     ROLLBACK WORK 
-     RETURN 
-    END IF                     
-#TQC-A50055 --end-- 
- 
+     ROLLBACK WORK
+     RETURN
+    END IF
+#TQC-A50055 --end--
+
    OPEN t700_cl USING g_oha.oha01
    IF STATUS THEN
       CALL cl_err("OPEN t700_cl:", STATUS, 1)
@@ -14105,22 +14116,22 @@ FUNCTION t700_d()
       ROLLBACK WORK
       RETURN
    END IF
- 
+
    FETCH t700_cl INTO g_oha.*          #  i住  被更改或取消的 Y料
    IF SQLCA.sqlcode THEN
        CALL cl_err(g_oha.oha01,SQLCA.sqlcode,0)     #  Y料被他人LOCK
        CLOSE t700_cl ROLLBACK WORK RETURN
    END IF
- 
+
   #依此單延伸控卡
- 
+
    LET p_row = 4 LET p_col = 2
- 
+
    OPEN WINDOW t700p_w AT p_row,p_col WITH FORM "axm/42f/axmt700p"
          ATTRIBUTE (STYLE = g_win_style CLIPPED) #No.FUN-580092 HCN
- 
+
     CALL cl_ui_locale("axmt700p")
- 
+
     CALL cl_set_comp_visible("ohb911,ohb914",FALSE)
     IF g_sma.sma115 = 'Y' THEN
        CALL cl_set_comp_visible("ohb05,ohb12",FALSE)
@@ -14131,7 +14142,7 @@ FUNCTION t700_d()
     IF g_sma.sma116 MATCHES '[01]' THEN
        CALL cl_set_comp_visible("ohb916,ohb917",FALSE)
     END IF
-       
+
    DISPLAY BY NAME g_oha.oha50
    #TQC-C90021 add begin ---
    LET l_oha50_1 = 0
@@ -14144,7 +14155,7 @@ FUNCTION t700_d()
    SELECT SUM(ohb12) INTO g_cnt
      FROM ohb_file
     WHERE ohb01 = g_oha.oha01
-   IF cl_null(g_cnt) THEN LET g_cnt = 0 END IF 
+   IF cl_null(g_cnt) THEN LET g_cnt = 0 END IF
    DISPLAY g_cnt TO FORMONLY.cn3
    #TQC-C90021 add end ---
    DECLARE t700_d_c CURSOR FOR
@@ -14154,60 +14165,60 @@ FUNCTION t700_d()
         FROM ohb_file
        WHERE ohb01=g_oha.oha01
          AND ohb1005 ='1'
- 
+
    CALL d_ohb.clear()
- 
+
    LET i=1
    LET l_rec_b = 0
    FOREACH t700_d_c INTO d_ohb[i].*
-     LET i=i+1 
+     LET i=i+1
    END FOREACH
    CALL d_ohb.deleteElement(i)
    LET l_rec_b = i-1
 #   IF g_oha.oha10 IS NOT NULL OR g_argv0 MATCHES '[456]' THEN  #TQC-B40164 mark
    IF g_oha.oha10 IS NOT NULL OR g_argv0 MATCHES '[456]'
               OR l_rec_b = 0                        #TQC-B40164
-              OR g_oha.oha55 MATCHES '[Ss]'         #MOD-BB0007 add 
+              OR g_oha.oha55 MATCHES '[Ss]'         #MOD-BB0007 add
               OR (g_oha.ohaconf = 'Y' AND g_oha.oha85 = '1') THEN       #TQC-B70184
       DISPLAY ARRAY d_ohb TO s_ohb.* ATTRIBUTE(COUNT=l_rec_b,UNBUFFERED)
-        
+
      ON IDLE g_idle_seconds
             CALL cl_on_idle()
             CONTINUE DISPLAY
- 
-      ON ACTION about        
-         CALL cl_about()    
- 
-      ON ACTION help       
+
+      ON ACTION about
+         CALL cl_about()
+
+      ON ACTION help
          CALL cl_show_help()
- 
-      ON ACTION controlg   
-         CALL cl_cmdask() 
- 
+
+      ON ACTION controlg
+         CALL cl_cmdask()
+
          ON ACTION exit
             EXIT DISPLAY
       END DISPLAY
-      CLOSE WINDOW t700p_w 
+      CLOSE WINDOW t700p_w
       CLOSE t700_cl #MOD-D20106 add
       RETURN
    END IF
- 
- 
+
+
    LET l_ac = 1
    INPUT ARRAY d_ohb WITHOUT DEFAULTS FROM s_ohb.*
          ATTRIBUTE(COUNT=l_rec_b,MAXCOUNT=g_max_rec,UNBUFFERED,
                    INSERT ROW=FALSE,DELETE ROW=FALSE,APPEND ROW=FALSE)
- 
+
       BEFORE INPUT
           IF l_rec_b != 0 THEN
              CALL fgl_set_arr_curr(l_ac)
           END IF
- 
+
       BEFORE ROW
          LET l_ac = ARR_CURR()
          LET d_ohb_t.* = d_ohb[l_ac].*  #BACKUP
-        CALL cl_show_fld_cont()  
- 
+        CALL cl_show_fld_cont()
+
       AFTER FIELD ohb13
          IF NOT cl_null(d_ohb[l_ac].ohb13) THEN
             IF d_ohb[l_ac].ohb13 < 0 THEN
@@ -14218,13 +14229,13 @@ FUNCTION t700_d()
             SELECT oah08 INTO g_oah08 FROM oah_file WHERE oah01=g_oha.oha31
             IF cl_null(g_oah08) THEN
                LET g_oah08 = 'Y'
-            END IF  
+            END IF
             IF g_oah08='N' AND d_ohb[l_ac].ohb13=0 THEN
                CALL cl_err(d_ohb[l_ac].ohb13,'axm-627',0)  #FUN-C50074
                NEXT FIELD ohb13
             END IF
             #FUN-C40089---end
-            IF g_sma.sma116 MATCHES '[01]' THEN 
+            IF g_sma.sma116 MATCHES '[01]' THEN
                LET d_ohb[l_ac].ohb916=d_ohb[l_ac].ohb05
                LET d_ohb[l_ac].ohb917=d_ohb[l_ac].ohb12
             END IF
@@ -14237,16 +14248,16 @@ FUNCTION t700_d()
                         RETURNING d_ohb[l_ac].ohb14,d_ohb[l_ac].ohb14t
                 ELSE
 #FUN-C10053 ----add---end -----
-                   IF g_oha.oha213 = 'N' THEN 
+                   IF g_oha.oha213 = 'N' THEN
                       LET d_ohb[l_ac].ohb14 =d_ohb[l_ac].ohb917*d_ohb[l_ac].ohb13
-                      CALL cl_digcut(d_ohb[l_ac].ohb14,t_azi04) RETURNING d_ohb[l_ac].ohb14      #CHI-7A0036-add 
+                      CALL cl_digcut(d_ohb[l_ac].ohb14,t_azi04) RETURNING d_ohb[l_ac].ohb14      #CHI-7A0036-add
                       LET d_ohb[l_ac].ohb14t=d_ohb[l_ac].ohb14*(1+g_oha.oha211/100)
-                      CALL cl_digcut(d_ohb[l_ac].ohb14t,t_azi04)RETURNING d_ohb[l_ac].ohb14t     #CHI-7A0036-add 
-                   ELSE 
+                      CALL cl_digcut(d_ohb[l_ac].ohb14t,t_azi04)RETURNING d_ohb[l_ac].ohb14t     #CHI-7A0036-add
+                   ELSE
                       LET d_ohb[l_ac].ohb14t=d_ohb[l_ac].ohb917*d_ohb[l_ac].ohb13
-                      CALL cl_digcut(d_ohb[l_ac].ohb14t,t_azi04)RETURNING d_ohb[l_ac].ohb14t     #CHI-7A0036-add 
+                      CALL cl_digcut(d_ohb[l_ac].ohb14t,t_azi04)RETURNING d_ohb[l_ac].ohb14t     #CHI-7A0036-add
                       LET d_ohb[l_ac].ohb14 =d_ohb[l_ac].ohb14t/(1+g_oha.oha211/100)
-                      CALL cl_digcut(d_ohb[l_ac].ohb14,t_azi04) RETURNING d_ohb[l_ac].ohb14      #CHI-7A0036-add 
+                      CALL cl_digcut(d_ohb[l_ac].ohb14,t_azi04) RETURNING d_ohb[l_ac].ohb14      #CHI-7A0036-add
                    END IF
                END IF #FUN-C10053
             ELSE
@@ -14258,18 +14269,18 @@ FUNCTION t700_d()
 #FUN-C10053 ----add---end -----
                     IF g_oha.oha213 = 'N' THEN
                        LET d_ohb[l_ac].ohb14 =d_ohb[l_ac].ohb13
-                       CALL cl_digcut(d_ohb[l_ac].ohb14,t_azi04) RETURNING d_ohb[l_ac].ohb14   
+                       CALL cl_digcut(d_ohb[l_ac].ohb14,t_azi04) RETURNING d_ohb[l_ac].ohb14
                        LET d_ohb[l_ac].ohb14t=d_ohb[l_ac].ohb14*(1+g_oha.oha211/100)
-                       CALL cl_digcut(d_ohb[l_ac].ohb14t,t_azi04)RETURNING d_ohb[l_ac].ohb14t   
+                       CALL cl_digcut(d_ohb[l_ac].ohb14t,t_azi04)RETURNING d_ohb[l_ac].ohb14t
                     ELSE
                        LET d_ohb[l_ac].ohb14t=d_ohb[l_ac].ohb13
-                       CALL cl_digcut(d_ohb[l_ac].ohb14t,t_azi04)RETURNING d_ohb[l_ac].ohb14t   
+                       CALL cl_digcut(d_ohb[l_ac].ohb14t,t_azi04)RETURNING d_ohb[l_ac].ohb14t
                        LET d_ohb[l_ac].ohb14 =d_ohb[l_ac].ohb14t/(1+g_oha.oha211/100)
-                       CALL cl_digcut(d_ohb[l_ac].ohb14,t_azi04) RETURNING d_ohb[l_ac].ohb14   
+                       CALL cl_digcut(d_ohb[l_ac].ohb14,t_azi04) RETURNING d_ohb[l_ac].ohb14
                     END IF
                 END IF #FUN-C10053
             END IF
-         END IF 
+         END IF
          DISPLAY BY NAME d_ohb[l_ac].ohb14,d_ohb[l_ac].ohb14t   #CHI-9C0050
 
       #MOD-B70174 add --start--
@@ -14289,7 +14300,7 @@ FUNCTION t700_d()
             END IF
          END IF
       #MOD-B70174 add --end--
- 
+
       ON ROW CHANGE
           IF INT_FLAG THEN
              CALL cl_err('',9001,0)
@@ -14299,13 +14310,13 @@ FUNCTION t700_d()
              EXIT INPUT
           END IF
           #-----CHI-9C0050---------
-          IF g_oha.oha09 MATCHES '[145]' AND 
+          IF g_oha.oha09 MATCHES '[145]' AND
              (d_ohb[l_ac].ohb14 <=0 OR d_ohb[l_ac].ohb14t <= 0) THEN
              CALL cl_err('','aap-201',0)
-             NEXT FIELD ohb14 
+             NEXT FIELD ohb14
           END IF
           #-----END CHI-9C0050-----
- 
+
          #FUN-AC0012 Begin---
           IF d_ohb[l_ac].ohb13 <> d_ohb_t.ohb13 THEN
             IF g_azw.azw04='2' THEN #FUN-B10014
@@ -14328,8 +14339,8 @@ FUNCTION t700_d()
                 LET l_rxc.rxc09 = 0
                 IF NOT cl_null(g_oha.oha87) THEN
                    LET g_cnt = 0
-                   SELECT COUNT(*) INTO g_cnt FROM lpj_file,lpk_file 
-                    WHERE lpj01=lpk01 
+                   SELECT COUNT(*) INTO g_cnt FROM lpj_file,lpk_file
+                    WHERE lpj01=lpk01
                       AND lpj03=g_oha.oha87
                    IF g_cnt > 0 THEN
                       LET l_rxc.rxc11 = 'Y'
@@ -14369,10 +14380,10 @@ FUNCTION t700_d()
                               ohb67=l_rxc.rxc06,        #FUN-AC0012
                               ohb14=d_ohb[l_ac].ohb14,
                               ohb14t=d_ohb[l_ac].ohb14t
-           WHERE ohb01=g_oha.oha01 
+           WHERE ohb01=g_oha.oha01
              AND ohb03=d_ohb[l_ac].ohb03
-          IF SQLCA.sqlcode OR SQLCA.sqlerrd[3] = 0 THEN 
-             CALL cl_err3("upd","ohb_file",g_oha.oha01,d_ohb[l_ac].ohb03,SQLCA.sqlcode,"","",1) 
+          IF SQLCA.sqlcode OR SQLCA.sqlerrd[3] = 0 THEN
+             CALL cl_err3("upd","ohb_file",g_oha.oha01,d_ohb[l_ac].ohb03,SQLCA.sqlcode,"","",1)
           END IF
           #FUN-C10053 add begin ---
           DELETE FROM ogk_file WHERE ogk01 = g_oha.oha01 AND ogk02 = d_ohb[l_ac].ohb03
@@ -14380,7 +14391,7 @@ FUNCTION t700_d()
           IF g_success = 'N' THEN
              ROLLBACK WORK
              EXIT INPUT
-          END IF 
+          END IF
           #FUN-C10053 add end -----
 #FUN-B90103--start--
 #FUN-B90103--end--
@@ -14398,7 +14409,7 @@ FUNCTION t700_d()
         # END IF
         ##FUN-A20022 END----------------------------------------------
         #MOD-B10154 End-----
- 
+
 	  SELECT SUM(ohb14) INTO g_oha.oha50 FROM ohb_file
            WHERE ohb01=g_oha.oha01
 
@@ -14413,33 +14424,33 @@ FUNCTION t700_d()
          IF g_oha.oha09 = '2' THEN LET l_oha50_1 = 0 END IF
          DISPLAY l_oha50_1 TO FORMONLY.oha50_1
          LET g_cnt = 0
-         SELECT SUM(ohb12) INTO g_cnt 
-           FROM ohb_file 
+         SELECT SUM(ohb12) INTO g_cnt
+           FROM ohb_file
           WHERE ohb01 = g_oha.oha01
          IF cl_null(g_cnt) THEN LET g_cnt = 0 END IF
          DISPLAY g_cnt TO FORMONLY.cn3
          #TQC-C90021 add end ---
-         SELECT ohb31 INTO l_ohb31 FROM ohb_file 
+         SELECT ohb31 INTO l_ohb31 FROM ohb_file
                                    WHERE ohb01 = g_oha.oha01
                                      AND ohb03 = d_ohb[l_ac].ohb03
- 
+
          SELECT SUM(ohb14) INTO l_sum_ohb14 FROM oha_file,ohb_file
                            WHERE ohb31 = l_ohb31
                              AND oha01 = ohb01
                              AND oha09 = '2'
                              AND ohaconf = 'Y'
                              AND ohapost = 'Y'
- 
+
          IF NOT cl_null(l_sum_ohb14) THEN
-            
+
             UPDATE oea_file SET oea62=l_sum_ohb14
              WHERE oea01=l_ohb31
-            
+
             IF SQLCA.sqlcode OR SQLCA.sqlerrd[3] = 0 THEN
                CALL cl_err('',SQLCA.sqlcode,0)
             END IF
          END IF
- 
+
       AFTER ROW
           LET l_ac = ARR_CURR()
           IF INT_FLAG THEN
@@ -14449,30 +14460,30 @@ FUNCTION t700_d()
              ROLLBACK WORK
              EXIT INPUT
           END IF
- 
-       AFTER INPUT      
+
+       AFTER INPUT
           COMMIT WORK
- 
+
       ON IDLE g_idle_seconds
          CALL cl_on_idle()
          CONTINUE INPUT
- 
-      ON ACTION about     
-         CALL cl_about() 
- 
-      ON ACTION help    
+
+      ON ACTION about
+         CALL cl_about()
+
+      ON ACTION help
          CALL cl_show_help()
- 
-      ON ACTION controlg   
-         CALL cl_cmdask() 
- 
-   
+
+      ON ACTION controlg
+         CALL cl_cmdask()
+
+
    END INPUT
- 
+
    IF INT_FLAG THEN LET INT_FLAG=0 END IF
- 
+
    BEGIN WORK      #MOD-950113 add
- 
+
   #MOD-B10154 Begin---
    IF NOT cl_null(g_oha.oha87) THEN
       LET g_oha.oha95= t700_oha95_amount()
@@ -14485,11 +14496,11 @@ FUNCTION t700_d()
       DISPLAY BY NAME g_oha.oha95
    END IF
   #MOD-B10154 End-----
-   SELECT SUM(ohb14) INTO g_oha.oha50 FROM ohb_file 
+   SELECT SUM(ohb14) INTO g_oha.oha50 FROM ohb_file
     WHERE ohb01=g_oha.oha01
    LET g_oha.oha53 = g_oha.oha50   #MOD-940331
-   UPDATE oha_file SET oha50=g_oha.oha50, 
-                       oha53=g_oha.oha53   #MOD-940331 
+   UPDATE oha_file SET oha50=g_oha.oha50,
+                       oha53=g_oha.oha53   #MOD-940331
     WHERE oha01=g_oha.oha01
    IF SQLCA.SQLCODE THEN
       CALL cl_err3("upd","oha_file",g_oha.oha01,"",SQLCA.sqlcode,"","update oha",1)  #No.FUN-670008
@@ -14497,41 +14508,41 @@ FUNCTION t700_d()
    ELSE
       COMMIT WORK
    END IF
- 
+
    CLOSE WINDOW t700p_w
    CALL t700_b_fill(' 1=1',' 1=1')
    DISPLAY BY NAME g_oha.oha50
- 
+
 END FUNCTION
- 
- 
+
+
 #DEV-D30046 搬移至saxmt700_sub.4gl--mark--begin
 #FUNCTION t700_s1()
-#DEFINE  g_oha53 LIKE oha_file.oha53          
+#DEFINE  g_oha53 LIKE oha_file.oha53
 #DEFINE  g_msg   STRING    #TQC-7C0045
 #DEFINE  l_oayauno      LIKE oay_file.oayauno,
 #        l_oay16        LIKE oay_file.oay16,
 #        l_oay19        LIKE oay_file.oay19,
 #        l_oay20        LIKE oay_file.oay20,
 #        l_tqk04        LIKE tqk_file.tqk04,
-#        l_occ02        LIKE occ_file.occ02,  
-#        l_occ11        LIKE occ_file.occ11,  
-#        l_occ07        LIKE occ_file.occ07,  
-#        l_occ08        LIKE occ_file.occ08,  
-#        l_occ09        LIKE occ_file.occ09,  
-#        l_occ1023      LIKE occ_file.occ1023, 
-#        l_occ1024      LIKE occ_file.occ1024, 
-#        l_occ1022      LIKE occ_file.occ1022, 
-#        l_occ1005      LIKE occ_file.occ1005, 
-#        l_occ1006      LIKE occ_file.occ1006, 
+#        l_occ02        LIKE occ_file.occ02,
+#        l_occ11        LIKE occ_file.occ11,
+#        l_occ07        LIKE occ_file.occ07,
+#        l_occ08        LIKE occ_file.occ08,
+#        l_occ09        LIKE occ_file.occ09,
+#        l_occ1023      LIKE occ_file.occ1023,
+#        l_occ1024      LIKE occ_file.occ1024,
+#        l_occ1022      LIKE occ_file.occ1022,
+#        l_occ1005      LIKE occ_file.occ1005,
+#        l_occ1006      LIKE occ_file.occ1006,
 #        l_oaytype      LIKE oay_file.oaytype,
-#        l_occ1027      LIKE occ_file.occ1027  
+#        l_occ1027      LIKE occ_file.occ1027
 #DEFINE l_ogb930        LIKE ogb_file.ogb930    #FUN-670063
-#DEFINE l_ogbi          RECORD LIKE ogbi_file.* #No.FUN-7B0018 
+#DEFINE l_ogbi          RECORD LIKE ogbi_file.* #No.FUN-7B0018
 ##DEFINE l_imaicd04      LIKE imaicd_file.imaicd04    #No.MOD-890249 add #FUN-BA0051 mark
 ##DEFINE l_imaicd08      LIKE imaicd_file.imaicd08    #No.MOD-890249 add #FUN-BA0051 mark
 #DEFINE l_flag          LIKE type_file.num5          #No.MOD-890249 add
-#DEFINE l_ohbi          RECORD LIKE ohbi_file.*      #TQC-B80005 
+#DEFINE l_ohbi          RECORD LIKE ohbi_file.*      #TQC-B80005
 ##FUN-B90103--------add---
 #&ifdef SLK
 #DEFINE l_ogbslk03     LIKE ogbslk_file.ogbslk03
@@ -14539,12 +14550,12 @@ END FUNCTION
 #DEFINE l_ogbslk13     LIKE ogbslk_file.ogbslk13
 #DEFINE l_ogbslk13t    LIKE ogbslk_file.ogbslk13
 #DEFINE l_ogbslk14     LIKE ogbslk_file.ogbslk14
-#DEFINE l_ogbslk14t    LIKE ogbslk_file.ogbslk14t 
+#DEFINE l_ogbslk14t    LIKE ogbslk_file.ogbslk14t
 #&endif
 ##FUN-B90103--------end---
 #DEFINE l_oga14    LIKE oga_file.oga14  #FUN-CB0087
 #DEFINE l_oga15    LIKE oga_file.oga15  #FUN-CB0087
-#    IF g_oha.oha05='4' THEN    
+#    IF g_oha.oha05='4' THEN
 #       INITIALIZE l_oga.* TO NULL
 #       LET g_oha53=0
 #       LET l_t = s_get_doc_no(g_oha.oha01)
@@ -14559,25 +14570,25 @@ END FUNCTION
 #       SELECT azf10 INTO g_azf10 FROM azf_file
 #        WHERE azf01=l_oay19
 #          AND azf02='2'      #No.TQC-760054
-#       IF SQLCA.sqlcode THEN                                                    
+#       IF SQLCA.sqlcode THEN
 #          CALL cl_err3("sel","azf_file",l_oay19,"","aoo-018","","",1)  #No.FUN-650108     #No.FUN-6B0065
-#          LET g_success='N'                                                     
-#          RETURN                                                                
-#       END IF              
+#          LET g_success='N'
+#          RETURN
+#       END IF
 #       SELECT oaytype INTO l_oaytype
 #         FROM oay_file
 #        WHERE oayslip = l_oay16
-#       
+#
 #        CALL s_auto_assign_no("AXM",l_oay16,g_oha.oha02,l_oaytype,"oga_file","oga01","","","")
 #              RETURNING li_result,g_oga.oga01
-#         IF (NOT li_result) THEN                                                                                                     
+#         IF (NOT li_result) THEN
 #             LET g_success='N'
 #             RETURN
-#         END IF                                                                                                                      
-# 
-#       SELECT occ07,occ08,occ09,occ1005,occ1006,           
-#              occ1022,occ1024  
-#         INTO l_occ07,l_occ08,l_occ09,l_occ1005,l_occ1006,   
+#         END IF
+#
+#       SELECT occ07,occ08,occ09,occ1005,occ1006,
+#              occ1022,occ1024
+#         INTO l_occ07,l_occ08,l_occ09,l_occ1005,l_occ1006,
 #              l_occ1022,l_occ1024
 #         FROM occ_file
 #        WHERE occ01=g_oha.oha1014
@@ -14586,12 +14597,12 @@ END FUNCTION
 #       IF cl_null(l_occ09) THEN LET l_occ09=' ' END IF
 #       IF cl_null(l_occ1005) THEN LET l_occ1005=' ' END IF
 #       IF cl_null(l_occ1006) THEN LET l_occ1006=' ' END IF
-#       IF cl_null(l_occ1022) THEN LET l_occ1022=' ' END IF 
-#       IF cl_null(l_occ1024) THEN LET l_occ1024=' ' END IF 
+#       IF cl_null(l_occ1022) THEN LET l_occ1022=' ' END IF
+#       IF cl_null(l_occ1024) THEN LET l_occ1024=' ' END IF
 #       SELECT occ02,occ11 INTO l_occ02,l_occ11 FROM occ_file
 #        WHERE occ01=l_occ07
 #       IF cl_null(l_occ02) THEN LET l_occ02=' ' END IF
-#       IF cl_null(l_occ11) THEN LET l_occ11=' ' END IF 
+#       IF cl_null(l_occ11) THEN LET l_occ11=' ' END IF
 #       SELECT tqk04 INTO l_tqk04 FROM tqk_file
 #        WHERE tqk01=g_oha.oha1014
 #          AND tqk02=g_oha.oha1002
@@ -14600,14 +14611,14 @@ END FUNCTION
 #       LET l_oga.oga00='1'
 #       LET l_oga.oga01=g_oga.oga01
 #       LET l_oga.oga02=g_oha.oha02
-#       LET l_oga.oga03=g_oha.oha1014           
-#       LET l_oga.oga032=l_occ02             
-#       LET l_oga.oga1009=l_occ1006       
-#       LET l_oga.oga04=l_occ09          
-#       LET l_oga.oga1011=l_occ1022         
-#       LET l_oga.oga18=l_occ07             
-#       LET l_oga.oga1003=l_occ1024    
-#       LET l_oga.oga1010=l_occ1005  
+#       LET l_oga.oga03=g_oha.oha1014
+#       LET l_oga.oga032=l_occ02
+#       LET l_oga.oga1009=l_occ1006
+#       LET l_oga.oga04=l_occ09
+#       LET l_oga.oga1011=l_occ1022
+#       LET l_oga.oga18=l_occ07
+#       LET l_oga.oga1003=l_occ1024
+#       LET l_oga.oga1010=l_occ1005
 #       LET l_oga.oga033=l_occ11
 #       LET l_oga.oga04=l_occ09
 #       LET l_oga.oga05=l_occ08
@@ -14641,7 +14652,7 @@ END FUNCTION
 #       LET l_oga.oga54=0
 #       #FUN-AC0055 add ------begin------
 #       IF cl_null(l_oga.oga57) THEN
-#          LET l_oga.oga57= '1' 
+#          LET l_oga.oga57= '1'
 #       END IF
 #       #FUN-AC0055 add -------end-------
 #       LET l_oga.oga65='N'
@@ -14667,17 +14678,17 @@ END FUNCTION
 #       IF g_azw.azw04='2' THEN
 #          LET l_oga.oga85 = g_oha.oha85
 #          LET l_oga.oga86 = g_oha.oha86
-#          LET l_oga.oga87 = g_oha.oha87                                                                                             
-#          LET l_oga.oga88 = g_oha.oha88  
-#          LET l_oga.oga89 = g_oha.oha89                                                                                             
-#          LET l_oga.oga90 = g_oha.oha90                                                                                             
-#          LET l_oga.oga91 = g_oha.oha91                                                                                             
-#          LET l_oga.oga92 = g_oha.oha92 
-#          LET l_oga.oga93 = g_oha.oha93                                                                                             
-#          LET l_oga.oga94 = g_oha.oha94                                                                                             
-#          LET l_oga.oga95 = g_oha.oha95                                                                                             
-#          LET l_oga.oga96 = g_oha.oha96                                                                                             
-#          LET l_oga.oga97 = g_oha.oha97                                                                                             
+#          LET l_oga.oga87 = g_oha.oha87
+#          LET l_oga.oga88 = g_oha.oha88
+#          LET l_oga.oga89 = g_oha.oha89
+#          LET l_oga.oga90 = g_oha.oha90
+#          LET l_oga.oga91 = g_oha.oha91
+#          LET l_oga.oga92 = g_oha.oha92
+#          LET l_oga.oga93 = g_oha.oha93
+#          LET l_oga.oga94 = g_oha.oha94
+#          LET l_oga.oga95 = g_oha.oha95
+#          LET l_oga.oga96 = g_oha.oha96
+#          LET l_oga.oga97 = g_oha.oha97
 #       END IF
 #       LET l_oga.ogaoriu = g_user      #No.FUN-980030 10/01/04
 #       LET l_oga.ogaorig = g_grup      #No.FUN-980030 10/01/04
@@ -14698,7 +14709,7 @@ END FUNCTION
 #       LET l_ogb930=s_costcenter(l_oga.oga15) #FUN-670063
 #
 ##FUN-B90103--add--------begin-------
-#&ifdef SLK 
+#&ifdef SLK
 #      DECLARE t700_s1_c_slk CURSOR FOR SELECT * FROM ohbslk_file WHERE ohbslk01=g_oha.oha01
 #      FOREACH t700_s1_c_slk INTO b_ohbslk.*
 #      IF g_oha.oha05='4' THEN
@@ -14816,27 +14827,27 @@ END FUNCTION
 #
 ##FUN-B90103-------------end-------------------
 #&ifdef SLK
-#  DECLARE t700_s1_c CURSOR FOR SELECT * FROM ohb_file WHERE ohb01=g_oha.oha01 
-#        AND ohb03 IN(SELECT ohb03 FROM ohb_file,ohbi_file 
+#  DECLARE t700_s1_c CURSOR FOR SELECT * FROM ohb_file WHERE ohb01=g_oha.oha01
+#        AND ohb03 IN(SELECT ohb03 FROM ohb_file,ohbi_file
 #                       WHERE ohb01=ohbi01
 #                         AND ohb03=ohbi03
-#                         AND ohbi01=g_oha.oha01 
+#                         AND ohbi01=g_oha.oha01
 #                         AND ohbislk02=b_ohbslk.ohbslk03)
 #&else
 #  DECLARE t700_s1_c CURSOR FOR SELECT * FROM ohb_file WHERE ohb01=g_oha.oha01
 #&endif
 #  CALL s_showmsg_init()   #No.FUN-710028
 #  FOREACH t700_s1_c INTO b_ohb.*
-#    IF g_success='N' THEN                                                                                                         
-#       LET g_totsuccess='N'                                                                                                       
-#       LET g_success="Y"                                                                                                          
-#    END IF                                                                                                                        
-# 
+#    IF g_success='N' THEN
+#       LET g_totsuccess='N'
+#       LET g_success="Y"
+#    END IF
+#
 #    IF STATUS THEN EXIT FOREACH END IF
 #    LET g_cmd= '_s1() read ohb:',b_ohb.ohb03 #FUN-840012
 #    CALL cl_msg(g_cmd) #FUN-840012
-# 
-#   IF g_oha.oha09 = '5' THEN  
+#
+#   IF g_oha.oha09 = '5' THEN
 #      IF b_ohb.ohb04[1,4] != 'MISC' THEN  #MOD-820075 modify #折讓時,不產tlf_file
 #       CALL t700_update1()
 #       IF g_success='N' THEN RETURN END IF
@@ -14844,11 +14855,11 @@ END FUNCTION
 #   ELSE
 #    IF g_oha.oha09 != '5' THEN   #MOD-6B0169 add
 #       CALL t700_bu1()     #更新出貨單銷退量
-#       IF g_success = 'N' THEN 
+#       IF g_success = 'N' THEN
 #          CONTINUE FOREACH       #No.FUN-710028
 #       END IF
 #    END IF                       #MOD-6B0169 add
-# 
+#
 #    IF cl_null(b_ohb.ohb04) THEN CONTINUE FOREACH END IF
 #    IF cl_null(b_ohb.ohb09) THEN LET b_ohb.ohb09=' ' END IF
 #    IF cl_null(b_ohb.ohb091) THEN LET b_ohb.ohb091=' ' END IF
@@ -14857,24 +14868,24 @@ END FUNCTION
 #    IF g_aza.aza50='Y' THEN
 #       IF b_ohb.ohb1005='2' THEN
 #          IF b_ohb.ohb1010='Y' THEN
-#             UPDATE tqw_file 
+#             UPDATE tqw_file
 #                SET tqw081=tqw081-b_ohb.ohb14t
 #              WHERE tqw01=b_ohb.ohb1007
 #          ELSE
-#             UPDATE tqw_file 
+#             UPDATE tqw_file
 #                SET tqw081=tqw081-b_ohb.ohb14
 #              WHERE tqw01=b_ohb.ohb1007
 #          END IF
 #       END IF
 #    END IF
-# 
+#
 #    # 非MISC的料件且銷退方式不為 5.折讓的才須異動庫存
 #    IF b_ohb.ohb04[1,4] != 'MISC' AND g_oha.oha09 != '5' THEN #MOD-6B0169 add oha09 !='5'
 #&ifdef ICD
 #        #IF s_industry('icd') THEN   #FUN-B70061 mark
 #          #TQC-B80005 --START--
 #          SELECT * INTO l_ohbi.* FROM ohbi_file
-#           WHERE ohbi01 = b_ohb.ohb01 AND ohbi03 = b_ohb.ohb03  
+#           WHERE ohbi01 = b_ohb.ohb01 AND ohbi03 = b_ohb.ohb03
 #          #TQC-B80005 --END--
 #          CALL s_icdpost(1,b_ohb.ohb04,b_ohb.ohb09,b_ohb.ohb091,
 #                         b_ohb.ohb092,b_ohb.ohb05,b_ohb.ohb12,
@@ -14891,15 +14902,15 @@ END FUNCTION
 #       #FUN-C50097 ADD BEG------TQC-C70206
 #       #當爲大陸版,且立賬走開票流程,且不做發出商品管理
 #       #IF g_aza.aza26='2' AND g_oaz.oaz92 = 'Y' AND g_oaz.oaz93 = 'Y' AND g_oha.oha09 = '3' THEN   #TQC-C90070 add g_oha.oha09 #MOD-CB0083 mark
-#       IF g_aza.aza26='2' AND g_oaz.oaz92 = 'Y' AND g_oaz.oaz93 = 'Y' 
+#       IF g_aza.aza26='2' AND g_oaz.oaz92 = 'Y' AND g_oaz.oaz93 = 'Y'
 #          AND g_oha.oha09 NOT MATCHES '[23]' THEN  #MOD-CB0083 add
 #          CALL t700_update2()
 #          IF g_sma.sma115 = 'Y' THEN
 #             CALL t700_update_du2()
 #          END IF
-#          IF g_success='N' THEN RETURN END IF          
+#          IF g_success='N' THEN RETURN END IF
 #       END IF
-#       #FUN-C50097 ADD END------        
+#       #FUN-C50097 ADD END------
 #       IF g_success='N' THEN RETURN END IF
 #       IF g_sma.sma115 = 'Y' THEN
 #          CALL t700_update_du()
@@ -14907,14 +14918,14 @@ END FUNCTION
 #       IF g_success='N' THEN RETURN END IF
 #    END IF
 #    END IF #MOD-810169 add
-#    IF g_oha.oha05='4' AND (b_ohb.ohb1005='1' OR b_ohb.ohb1005 IS NULL) THEN 
+#    IF g_oha.oha05='4' AND (b_ohb.ohb1005='1' OR b_ohb.ohb1005 IS NULL) THEN
 #       INITIALIZE l_ogb.* TO NULL
 #       SELECT MAX(ogb03)+1 INTO l_ogb03 FROM ogb_file
 #        WHERE ogb01=g_oga.oga01
 #       IF cl_null(l_ogb03) OR l_ogb03=0 THEN
 #          LET l_ogb03=1
 #       END IF
-#       SELECT occ1027 INTO l_occ1027 FROM occ_file 
+#       SELECT occ1027 INTO l_occ1027 FROM occ_file
 #        WHERE occ01=g_oha.oha1014
 #          AND occ1014='3'
 #       IF l_occ1027='Y' THEN
@@ -14933,9 +14944,9 @@ END FUNCTION
 #                                 g_oha.oha01,b_ohb.ohb03,b_ohb.ohb917,
 #                                 b_ohb.ohb1002,'a')
 ##            RETURNING b_ohb.ohb13  #FUN-AB0061 mark
-#             RETURNING b_ohb.ohb13,b_ohb.ohb37    #FUN-AB0061 add  
+#             RETURNING b_ohb.ohb13,b_ohb.ohb37    #FUN-AB0061 add
 #         #FUN-B70087 mod
-#         #IF b_ohb.ohb13=0 THEN CALL s_unitprice_entry(g_oha.oha03,g_oha.oha31,g_oha.ohaplant,' ') END IF #FUN-9C0120 #FUN-B70061 暫時加' ' 
+#         #IF b_ohb.ohb13=0 THEN CALL s_unitprice_entry(g_oha.oha03,g_oha.oha31,g_oha.ohaplant,' ') END IF #FUN-9C0120 #FUN-B70061 暫時加' '
 #          #FUN-BC0088 ------- add start -----
 #          IF b_ohb.ohb04[1,4] = 'MISC' THEN
 #             CALL s_unitprice_entry(g_oha.oha03,g_oha.oha31,g_oha.ohaplant,'M')
@@ -14980,13 +14991,13 @@ END FUNCTION
 #          LET l_ogb14t=l_ogb13*b_ohb.ohb12*b_ohb.ohb1003/100
 #          CALL cl_digcut(l_ogb14t,t_azi04)  RETURNING l_ogb14t  #CHI-7A0036-add
 #       END IF
-#      
+#
 #       LET l_ogb.ogb01=l_oga.oga01
 #       LET l_ogb.ogb03=l_ogb03
 #       LET l_ogb.ogb04=b_ohb.ohb04
-#       LET l_ogb.ogb05=b_ohb.ohb05    
-#       LET l_ogb.ogb05_fac=b_ohb.ohb05_fac  
-#       LET l_ogb.ogb06=b_ohb.ohb06 
+#       LET l_ogb.ogb05=b_ohb.ohb05
+#       LET l_ogb.ogb05_fac=b_ohb.ohb05_fac
+#       LET l_ogb.ogb06=b_ohb.ohb06
 #       LET l_ogb.ogb910=b_ohb.ohb910
 #       LET l_ogb.ogb911=b_ohb.ohb911
 #       LET l_ogb.ogb912=b_ohb.ohb912
@@ -14996,19 +15007,19 @@ END FUNCTION
 #       LET l_ogb.ogb916=b_ohb.ohb916
 #       LET l_ogb.ogb917=b_ohb.ohb917
 #       LET l_ogb.ogb911=b_ohb.ohb911
-#       LET l_ogb.ogb07=b_ohb.ohb07 
-#       LET l_ogb.ogb08=b_ohb.ohb08 
-#       LET l_ogb.ogb09=b_ohb.ohb09 
-#       LET l_ogb.ogb091=b_ohb.ohb091 
-#       LET l_ogb.ogb19=b_ohb.ohb61   #No.FUN-740016 
-#       LET l_ogb.ogb092=b_ohb.ohb092 
-#       LET l_ogb.ogb11=b_ohb.ohb11 
+#       LET l_ogb.ogb07=b_ohb.ohb07
+#       LET l_ogb.ogb08=b_ohb.ohb08
+#       LET l_ogb.ogb09=b_ohb.ohb09
+#       LET l_ogb.ogb091=b_ohb.ohb091
+#       LET l_ogb.ogb19=b_ohb.ohb61   #No.FUN-740016
+#       LET l_ogb.ogb092=b_ohb.ohb092
+#       LET l_ogb.ogb11=b_ohb.ohb11
 #       LET l_ogb.ogb12=b_ohb.ohb12
 #       LET l_ogb.ogb13=l_ogb13
 #       LET l_ogb.ogb37=b_ohb.ohb13 #FUN-AB0061
-#       LET l_ogb.ogb14=l_ogb14 
+#       LET l_ogb.ogb14=l_ogb14
 #       LET l_ogb.ogb14t=l_ogb14t
-#       LET l_ogb.ogb15=b_ohb.ohb15 
+#       LET l_ogb.ogb15=b_ohb.ohb15
 #       LET l_ogb.ogb15_fac=b_ohb.ohb15_fac
 #       LET l_ogb.ogb16=b_ohb.ohb16
 #       LET l_ogb.ogb1001=l_oay19
@@ -15027,40 +15038,40 @@ END FUNCTION
 #       LET l_ogb.ogb44=b_ohb.ohb64
 #       LET l_ogb.ogb47=0 #MOD-B50039 add
 #       IF g_azw.azw04='2' THEN
-#          LET l_ogb.ogb45=b_ohb.ohb65  
-#          LET l_ogb.ogb46=b_ohb.ohb66                                                                                               
+#          LET l_ogb.ogb45=b_ohb.ohb65
+#          LET l_ogb.ogb46=b_ohb.ohb66
 #          LET l_ogb.ogb47=b_ohb.ohb67
 #       END IF
 #       #FUN-AB0061--------add-------str-----------------
 #       IF cl_null(l_ogb.ogb37) OR l_ogb.ogb37=0 THEN
 #          LET l_ogb.ogb37 = l_ogb.ogb13
-#       END IF 
-#       #FUN-AB0061--------add-------end----------------- 
+#       END IF
+#       #FUN-AB0061--------add-------end-----------------
 #       #FUN-AB0096 --------------add start-------------
 #      #IF cl_null(l_ogb.ogb50) THEN
 #      #   LET l_ogb.ogb50 = '1'
 #      #END IF
 #       #FUN-AB0096 -------------add end-------------------
 #       #FUN-C50097 ADD BEGIN-----
-#       IF cl_null(l_ogb.ogb50) THEN 
+#       IF cl_null(l_ogb.ogb50) THEN
 #         LET l_ogb.ogb50 = 0
-#       END IF 
-#       IF cl_null(l_ogb.ogb51) THEN 
+#       END IF
+#       IF cl_null(l_ogb.ogb51) THEN
 #         LET l_ogb.ogb51 = 0
-#       END IF 
-#       IF cl_null(l_ogb.ogb52) THEN 
+#       END IF
+#       IF cl_null(l_ogb.ogb52) THEN
 #         LET l_ogb.ogb52 = 0
-#       END IF     
-#       IF cl_null(l_ogb.ogb53) THEN 
+#       END IF
+#       IF cl_null(l_ogb.ogb53) THEN
 #         LET l_ogb.ogb53 = 0
-#       END IF 
-#       IF cl_null(l_ogb.ogb54) THEN 
+#       END IF
+#       IF cl_null(l_ogb.ogb54) THEN
 #         LET l_ogb.ogb54 = 0
-#       END IF 
-#       IF cl_null(l_ogb.ogb55) THEN 
+#       END IF
+#       IF cl_null(l_ogb.ogb55) THEN
 #         LET l_ogb.ogb55 = 0
-#       END IF                                          
-#       #FUN-C50097 ADD END-------       
+#       END IF
+#       #FUN-C50097 ADD END-------
 #       #FUN-CB0087--add--str--
 #       IF g_aza.aza115='Y' THEN
 #          SELECT oga14,oga15 INTO l_oga14,l_oga15 FROM oga_file WHERE oga01 = l_ogb.ogb01
@@ -15083,13 +15094,13 @@ END FUNCTION
 #          #IF NOT s_industry('std') THEN   #FUN-B70061 mark
 #             INITIALIZE l_ogbi.* TO NULL
 ##FUN-B90103-----------------add---------------------
-#&ifdef SLK 
+#&ifdef SLK
 #             LET l_ogbi.ogbislk01=l_ogbslk.ogbslk04     #料件編號
 #             LET l_ogbi.ogbislk02=l_ogbslk.ogbslk03     #項次
 #             LET l_ogbi.ogbiplant = g_plant
 #             LET l_ogbi.ogbilegal = g_legal
-#            
-#&endif 
+#
+#&endif
 ##FUN-B90103-----------------end---------------------
 #             LET l_ogbi.ogbi01 = l_ogb.ogb01
 #             LET l_ogbi.ogbi03 = l_ogb.ogb03
@@ -15100,7 +15111,7 @@ END FUNCTION
 #          #END IF   #FUN-B70061 mark
 #&endif
 #       END IF
-#       CALL t700_update_7() 
+#       CALL t700_update_7()
 #       IF g_success='N' THEN
 #          RETURN
 #       END IF
@@ -15111,7 +15122,7 @@ END FUNCTION
 #             IF NOT cl_null(l_ogb.ogb913) THEN
 #                CALL t700_upd_imgg_oh('1',l_ogb.ogb04,l_ogb.ogb09,l_ogb.ogb091,l_ogb.ogb092,l_ogb.ogb913,l_ogb.ogb914,l_ogb.ogb915,-1,'2')
 #                IF g_success='N' THEN RETURN END IF
-#                IF NOT cl_null(l_ogb.ogb915) THEN                               #CHI-860005         
+#                IF NOT cl_null(l_ogb.ogb915) THEN                               #CHI-860005
 #                   CALL t700_tlff_oh('2',l_ogb.ogb913,l_ogb.ogb914,l_ogb.ogb915)
 #                   IF g_success='N' THEN RETURN END IF
 #                END IF
@@ -15138,7 +15149,7 @@ END FUNCTION
 #          IF g_success='N' THEN RETURN END IF
 #          LET l_oga50=l_oga.oga50+l_ogb.ogb14
 #          LET l_oga51=l_oga.oga51+l_ogb.ogb14t
-#          LET l_oga53=l_oga.oga53+l_ogb.ogb14        
+#          LET l_oga53=l_oga.oga53+l_ogb.ogb14
 #          LET l_oga501=l_oga.oga501+l_ogb.ogb14*g_oha.oha24
 #          LET l_oga511=l_oga.oga511+l_ogb.ogb14t*g_oha.oha24
 #          UPDATE oga_file SET oga50=l_oga50,
@@ -15158,12 +15169,12 @@ END FUNCTION
 #&ifdef SLK
 #  IF g_oha.oha05='4'  THEN
 #     CALL t700_update_ogbslk(l_ogbslk.ogbslk03)  #回寫數量和金額
-#  END IF 
+#  END IF
 #END FOREACH  #FUN-B90103--add
 #&endif
 #
 ##FUN-B90103--start--
-#&ifdef SLK 
+#&ifdef SLK
 # DECLARE t700_s1_c_ohbslk CURSOR FOR SELECT * FROM ohbslk_file WHERE ohbslk01=g_oha.oha01
 #  CALL s_showmsg_init()   #No.FUN-710028
 #  FOREACH t700_s1_c_ohbslk INTO b_ohbslk.*
@@ -15176,16 +15187,16 @@ END FUNCTION
 #          CALL t700_bu2()    #更新訂單和出貨單
 #       IF g_success = 'N' THEN
 #          CONTINUE FOREACH
-#       END IF 
+#       END IF
 #    END IF
-#  END FOREACH 
-#&endif    
-##FUN-B90103--end-- 
+#  END FOREACH
+#&endif
+##FUN-B90103--end--
 #
-#  IF g_totsuccess="N" THEN                                                                                                        
-#     LET g_success="N"                                                                                                            
-#  END IF                                                                                                                          
-#  IF g_oha.oha05='4' THEN    
+#  IF g_totsuccess="N" THEN
+#     LET g_success="N"
+#  END IF
+#  IF g_oha.oha05='4' THEN
 #     IF g_success = 'Y' THEN
 #        #出貨單都過帳及產生tlf_file了,故這里要把ogapost置為Y
 #        UPDATE oga_file SET ogapost='Y'
@@ -15194,16 +15205,16 @@ END FUNCTION
 #           CALL s_errmsg('oga01',l_oga.oga01,'',SQLCA.sqlcode,1)
 #           LET g_success = 'N'
 #           RETURN
-#        END IF 
+#        END IF
 #     END IF
 #  END IF
-# 
+#
 #END FUNCTION
-# 
+#
 #FUNCTION t700_update_du()
 #  DEFINE l_ima25   LIKE ima_file.ima25,
 #         u_type    LIKE type_file.num5        # No.FUN-680137  SMALLINT
-##FUN-AB0059 ---------------------start---------------------------- 
+##FUN-AB0059 ---------------------start----------------------------
 #   IF s_joint_venture( b_ohb.ohb04,g_plant) OR NOT s_internal_item( b_ohb.ohb04,g_plant ) THEN
 #      RETURN
 #   END IF
@@ -15216,12 +15227,12 @@ END FUNCTION
 #   IF cl_null(g_ima906) or g_ima906 = '1' THEN
 #      RETURN
 #   END IF
-# 
+#
 #   IF g_ima906 = '2' THEN  #子母單位
 #      IF NOT cl_null(b_ohb.ohb913) THEN
 #         CALL t700_upd_imgg('1',b_ohb.ohb04,b_ohb.ohb09,b_ohb.ohb091,b_ohb.ohb092,b_ohb.ohb913,b_ohb.ohb914,b_ohb.ohb915,+1,'2')
 #         IF g_success='N' THEN RETURN END IF
-#         IF NOT cl_null(b_ohb.ohb915) THEN                             #CHI-860005  
+#         IF NOT cl_null(b_ohb.ohb915) THEN                             #CHI-860005
 #            CALL t700_tlff('2',b_ohb.ohb913,b_ohb.ohb914,b_ohb.ohb915)
 #            IF g_success='N' THEN RETURN END IF
 #         END IF
@@ -15229,7 +15240,7 @@ END FUNCTION
 #      IF NOT cl_null(b_ohb.ohb910) THEN
 #         CALL t700_upd_imgg('1',b_ohb.ohb04,b_ohb.ohb09,b_ohb.ohb091,b_ohb.ohb092,b_ohb.ohb910,b_ohb.ohb911,b_ohb.ohb912,+1,'1')
 #         IF g_success='N' THEN RETURN END IF
-#         IF NOT cl_null(b_ohb.ohb912) THEN                             #CHI-860005 
+#         IF NOT cl_null(b_ohb.ohb912) THEN                             #CHI-860005
 #            CALL t700_tlff('1',b_ohb.ohb910,b_ohb.ohb911,b_ohb.ohb912)
 #            IF g_success='N' THEN RETURN END IF
 #         END IF
@@ -15245,7 +15256,7 @@ END FUNCTION
 #         END IF
 #      END IF
 #   END IF
-# 
+#
 #END FUNCTION
 #
 #FUNCTION t700_upd_imgg(p_imgg00,p_imgg01,p_imgg02,p_imgg03,p_imgg04,
@@ -15263,14 +15274,14 @@ END FUNCTION
 #         l_imgg21   LIKE imgg_file.imgg21,
 #         p_imgg10   LIKE imgg_file.imgg10,
 #         p_type     LIKE type_file.num10       # No.FUN-680137 INTEGER
-# 
+#
 #    LET g_forupd_sql =
 #        "SELECT imgg01,imgg02,imgg03,imgg04,imgg09 FROM imgg_file ",
 #        " WHERE imgg01= ? AND imgg02= ? AND imgg03= ? AND imgg04= ? ",
-#        "   AND imgg09= ? FOR UPDATE "                  #no.TQC-750149 
+#        "   AND imgg09= ? FOR UPDATE "                  #no.TQC-750149
 #    LET g_forupd_sql = cl_forupd_sql(g_forupd_sql)
 #    DECLARE imgg_lock CURSOR FROM g_forupd_sql
-# 
+#
 #    OPEN imgg_lock USING p_imgg01,p_imgg02,p_imgg03,p_imgg04,p_imgg09
 #    IF STATUS THEN
 #       CALL s_errmsg('','',"OPEN imgg_lock:", STATUS, 1)  #No.FUN-710028
@@ -15280,7 +15291,7 @@ END FUNCTION
 #       RETURN
 #    END IF
 #
-#    FETCH imgg_lock INTO p_imgg01,p_imgg02,p_imgg03,p_imgg04,p_imgg09 
+#    FETCH imgg_lock INTO p_imgg01,p_imgg02,p_imgg03,p_imgg04,p_imgg09
 #    IF STATUS THEN
 #       CALL s_errmsg('','','lock imgg fail',STATUS,1)  #No.FUN-710028
 #       LET g_success='N'
@@ -15288,27 +15299,27 @@ END FUNCTION
 #       CALL s_showmsg()   #No.FUN-710028
 #       RETURN
 #    END IF
-# 
+#
 #    SELECT ima25,ima906 INTO l_ima25,l_ima906
 #      FROM ima_file WHERE ima01=p_imgg01
 #    IF SQLCA.sqlcode OR l_ima25 IS NULL THEN
 #       CALL s_errmsg('ima01',p_imgg01,'ima25 null',SQLCA.sqlcode,1)   #No.FUN-710028
 #       LET g_success = 'N' RETURN
 #    END IF
-# 
+#
 #    CALL s_umfchk(p_imgg01,p_imgg09,l_ima25)
 #          RETURNING g_cnt,l_imgg21
 #    IF g_cnt = 1 AND NOT (l_ima906='3' AND p_no='2') THEN
 #       CALL s_errmsg('','','','mfg3075',1)   #No.FUN-710028
 #       LET g_success = 'N' RETURN
 #    END IF
-# 
+#
 #    CALL s_upimgg(p_imgg01,p_imgg02,p_imgg03,p_imgg04,p_imgg09,p_type,p_imgg10,g_oha.oha02,  #FUN-8C0084
 #          '','','','','','','','','','',l_imgg21,'','','','','','','',p_imgg211)
 #    IF g_success='N' THEN RETURN END IF
-# 
+#
 #END FUNCTION
-# 
+#
 #FUNCTION t700_tlff(p_flag,p_unit,p_fac,p_qty)
 #DEFINE
 #   p_flag     LIKE type_file.chr1,          #No.FUN-680137 VARCHAR(1)
@@ -15316,14 +15327,14 @@ END FUNCTION
 #   p_fac      LIKE img_file.img21,
 #   p_qty      LIKE img_file.img10,
 #   l_imgg10   LIKE imgg_file.imgg10
-# 
+#
 #   INITIALIZE g_tlff.* TO NULL
 #   SELECT imgg10 INTO l_imgg10 FROM imgg_file
 #    WHERE imgg01=b_ohb.ohb04  AND imgg02=b_ohb.ohb09
 #      AND imgg03=b_ohb.ohb091 AND imgg04=b_ohb.ohb092
 #      AND imgg09=p_unit
 #   IF cl_null(l_imgg10) THEN LET l_imgg10=0 END IF
-# 
+#
 #   #----來源----
 #   LET g_tlff.tlff01=b_ohb.ohb04     #異動料件編號
 #   LET g_tlff.tlff02=731
@@ -15345,8 +15356,8 @@ END FUNCTION
 #   LET g_tlff.tlff035=p_unit         #庫存單位(ima_file or img_file)
 #   LET g_tlff.tlff036=g_oha.oha01    #銷退單號
 #   LET g_tlff.tlff037=b_ohb.ohb03    #銷退項次
-# 
-# 
+#
+#
 #   #-->異動數量
 #   LET g_tlff.tlff04= ' '             #工作站
 #   LET g_tlff.tlff05= ' '             #作業序號
@@ -15359,7 +15370,7 @@ END FUNCTION
 #   LET g_tlff.tlff12=p_fac            #發料/庫存 換算率
 #   LET g_tlff.tlff13='aomt800'                            #TQC-630210
 #   LET g_tlff.tlff14=' '              #異動原因
-# 
+#
 #  LET g_tlff.tlff17=' '              #非庫存性料件編號
 #  CALL s_imaQOH(b_ohb.ohb04)
 #       RETURNING g_tlff.tlff18
@@ -15374,9 +15385,9 @@ END FUNCTION
 #  ELSE
 #     CALL s_tlff(p_flag,b_ohb.ohb913)
 #  END IF
-# 
+#
 #END FUNCTION
-# 
+#
 #FUNCTION t700_update()
 #  DEFINE l_qty    LIKE img_file.img10,
 #         l_ima01  LIKE ima_file.ima01,
@@ -15398,16 +15409,16 @@ END FUNCTION
 # #DEFINE l_adq06  LIKE adq_file.adq06   #MOD-CB0111 mark
 # #DEFINE l_adp05  LIKE adp_file.adp05   #MOD-CB0111 mark
 # #DEFINE l_adq07  LIKE adq_file.adq07   #MOD-CB0111 mark
-#  DEFINE l_tuq06  LIKE tuq_file.tuq06                                           
-#  DEFINE l_tup05  LIKE tup_file.tup05                                           
-# #DEFINE l_tup08  LIKE tup_file.tup08 #CHI-B40056 mark                                          
-#  DEFINE l_tup11  LIKE tup_file.tup11 #CHI-B40056                                          
-#  DEFINE l_tuq07  LIKE tuq_file.tuq07                                           
-#  DEFINE l_tuq11  LIKE tuq_file.tuq11                                           
-#  DEFINE l_tuq12  LIKE tuq_file.tuq12      
+#  DEFINE l_tuq06  LIKE tuq_file.tuq06
+#  DEFINE l_tup05  LIKE tup_file.tup05
+# #DEFINE l_tup08  LIKE tup_file.tup08 #CHI-B40056 mark
+#  DEFINE l_tup11  LIKE tup_file.tup11 #CHI-B40056
+#  DEFINE l_tuq07  LIKE tuq_file.tuq07
+#  DEFINE l_tuq11  LIKE tuq_file.tuq11
+#  DEFINE l_tuq12  LIKE tuq_file.tuq12
 #  DEFINE l_desc   LIKE type_file.chr1        # No.FUN-680137 VARCHAR(1)
 #  DEFINE i        LIKE type_file.num5          #No.FUN-680137 SMALLINT
-#  DEFINE l_tup06  LIKE tup_file.tup06    #MOD-B30651 add                                       
+#  DEFINE l_tup06  LIKE tup_file.tup06    #MOD-B30651 add
 ##TQC-C20183--add--start--
 #  DEFINE l_tup05_1 LIKE tup_file.tup05,
 #         l_tuq07_1 LIKE tuq_file.tuq07,
@@ -15415,11 +15426,11 @@ END FUNCTION
 ##TQC-C20183--add--end--
 #  DEFINE l_adq07_1   LIKE adq_file.adq07   #No.TQC-C20183
 #  DEFINE l_adq09_1   LIKE adq_file.adq09   #No.TQC-C20183
-##FUN-AB0059 ---------------------start---------------------------- 
+##FUN-AB0059 ---------------------start----------------------------
 #  IF s_joint_venture( b_ohb.ohb04,g_plant) OR NOT s_internal_item( b_ohb.ohb04,g_plant ) THEN
 #     RETURN
 #  END IF
-##FUN-AB0059 ---------------------end------------------------------- 
+##FUN-AB0059 ---------------------end-------------------------------
 #    #MOD-BC0033 ----- modify start -----
 #    LET l_cnt = 0
 #    SELECT COUNT(*) INTO l_cnt FROM img_file
@@ -15441,7 +15452,7 @@ END FUNCTION
 #                let p_img.imgplant=g_plant    #FUN-B90103--add
 #                let p_img.imglegal=g_legal    #FUN-B90103--add
 #        	let b_ohb.ohb15=b_ohb.ohb05
-#                
+#
 #       #         IF s_internal_item( p_img.img01,g_plant ) AND NOT s_joint_venture( p_img.img01 ,g_plant) THEN  #FUN-A90049 add     #FUN-AB0059 mark
 #        	insert into img_file values(p_img.*)
 #        	IF STATUS THEN
@@ -15464,7 +15475,7 @@ END FUNCTION
 #       CALL s_errmsg('img01,img02,img03,img04',g_showmsg,'lock img fail',STATUS,1)    #No.FUN-710028
 #       LET g_success='N' RETURN
 #    END IF
-# 
+#
 #    FETCH img_lock INTO l_img.*
 #    IF STATUS THEN
 #       LET g_showmsg = b_ohb.ohb04,"/",b_ohb.ohb09,"/",b_ohb.ohb091,"/",b_ohb.ohb092  #MOD-920056
@@ -15512,9 +15523,9 @@ END FUNCTION
 #      FROM ima_file WHERE ima01=b_ohb.ohb04
 #    IF cl_null(l_ima71) THEN LET l_ima71=0 END IF
 #    #MOD-B30651 add --start--
-#    IF l_ima71 = 0 THEN 
+#    IF l_ima71 = 0 THEN
 #       LET l_tup06 = g_lastdat
-#    ELSE 
+#    ELSE
 #       LET l_tup06 = g_oha.oha02 + l_ima71
 #    END IF
 #    #MOD-B30651 add --end--
@@ -15526,9 +15537,9 @@ END FUNCTION
 #       END IF
 #   #END IF                       #MOD-CB0111 mark
 #   #IF g_aza.aza50='Y' THEN      #MOD-CB0111 mark
-#      SELECT COUNT(*) INTO i FROM tuq_file                                        
-#       WHERE tuq01=g_oha.oha03  AND tuq02=b_ohb.ohb04                             
-#         AND tuq03=b_ohb.ohb092 AND tuq04=g_oha.oha02                             
+#      SELECT COUNT(*) INTO i FROM tuq_file
+#       WHERE tuq01=g_oha.oha03  AND tuq02=b_ohb.ohb04
+#         AND tuq03=b_ohb.ohb092 AND tuq04=g_oha.oha02
 #         AND tuq11=l_tuq11 AND tuq12=g_oha.oha04
 #         AND tuq05=g_oha.oha01 AND tuq051=b_ohb.ohb03   #MOD-CB0111 add
 #   #MOD-CB0111 -- mark start --
@@ -15551,17 +15562,17 @@ END FUNCTION
 #    #IF g_aza.aza50='Y' THEN   #MOD-CB0111 mark
 #       LET l_tuq09_1 = b_ohb.ohb12*l_fac1*-1           #TQC-C20183 --add--
 #       LET l_tuq09_1 = s_digqty(l_tuq09_1,l_ima25)     #TQC-C20183 --add--
-#       INSERT INTO tuq_file(tuq01,tuq02,tuq03,tuq04,tuq05,tuq051,                      
+#       INSERT INTO tuq_file(tuq01,tuq02,tuq03,tuq04,tuq05,tuq051,
 #                            tuq06,tuq07,tuq08,tuq09,tuq10,tuq11,tuq12,tuqplant,tuqlegal)  #FUN-980010 add tuqplant,tuqlegal
 #       VALUES(g_oha.oha03,b_ohb.ohb04,b_ohb.ohb092,g_oha.oha02,g_oha.oha01,b_ohb.ohb03,     #No.TQC-640125
-#             #b_ohb.ohb05,b_ohb.ohb12*-1,l_fac1,b_ohb.ohb12*l_fac1*-1,'2',l_tuq11,g_oha.oha04,g_plant,g_legal) #FUN-980010 add g_plant,g_legal   #TQC-C20183 --mark-- 
+#             #b_ohb.ohb05,b_ohb.ohb12*-1,l_fac1,b_ohb.ohb12*l_fac1*-1,'2',l_tuq11,g_oha.oha04,g_plant,g_legal) #FUN-980010 add g_plant,g_legal   #TQC-C20183 --mark--
 #              b_ohb.ohb05,b_ohb.ohb12*-1,l_fac1,l_tuq09_1,'2',l_tuq11,g_oha.oha04,g_plant,g_legal) #TQC-C20183 --add--
-#       IF SQLCA.sqlcode THEN                                                    
+#       IF SQLCA.sqlcode THEN
 #          LET g_showmsg = g_oha.oha03,"/",b_ohb.ohb04,"/",b_ohb.ohb092,"/",g_oha.oha02,"/",l_tuq11,"/",g_oha.oha04  #No.FUN-710028
 #          CALL s_errmsg('tuq01,tuq02,tuq03,tuq04,tuq11,tuq12',g_showmsg,'insert tuq_file',SQLCA.sqlcode,1)          #No.FUN-710028
-#          LET g_success ='N'                                                    
-#          RETURN                                                                
-#       END IF       
+#          LET g_success ='N'
+#          RETURN
+#       END IF
 #    #MOD-CB0111 -- mark start --
 #    #ELSE
 #    #  INSERT INTO adq_file(adq01,adq02,adq03,adq04,adq05,
@@ -15578,19 +15589,19 @@ END FUNCTION
 #    #MOD-CB0111 -- mark end --
 #    ELSE
 #   #IF g_aza.aza50='Y' THEN   #MOD-CB0111 mark
-#       SELECT UNIQUE tuq06 INTO l_tuq06 FROM tuq_file                           
-#        WHERE tuq01=g_oha.oha03  AND tuq02=b_ohb.ohb04         
-#          AND tuq03=b_ohb.ohb092 AND tuq04=g_oha.oha02                          
+#       SELECT UNIQUE tuq06 INTO l_tuq06 FROM tuq_file
+#        WHERE tuq01=g_oha.oha03  AND tuq02=b_ohb.ohb04
+#          AND tuq03=b_ohb.ohb092 AND tuq04=g_oha.oha02
 #          AND tuq11=l_tuq11 and tuq12=g_oha.oha04
 #          AND tuq05=g_oha.oha01 AND tuq051=b_ohb.ohb03 #MOD-CB0111 add
-#       IF SQLCA.sqlcode THEN                                                    
+#       IF SQLCA.sqlcode THEN
 #          LET g_showmsg = g_oha.oha03,"/",b_ohb.ohb04,"/",b_ohb.ohb092,"/",g_oha.oha02,"/",l_tuq11,"/",g_oha.oha04  #No.FUN-710028
 #          CALL s_errmsg('tuq01,tuq02,tuq03,tuq04,tuq11,tuq12',g_showmsg,'select tuq06',SQLCA.sqlcode,1)             #No.FUN-650108
-#          LET g_success ='N'                                                    
-#          RETURN                                                                
-#       END IF        
+#          LET g_success ='N'
+#          RETURN
+#       END IF
 #    #MOD-CB0111 -- mark start--
-#    #ELSE   
+#    #ELSE
 #    #  SELECT UNIQUE adq06 INTO l_adq06 FROM adq_file
 #    #   WHERE adq01=g_oha.oha03  AND adq02=b_ohb.ohb04
 #    #     AND adq03=b_ohb.ohb092 AND adq04=g_oha.oha02
@@ -15606,67 +15617,67 @@ END FUNCTION
 #    #MOD-CB0111 -- mark end--
 #       LET l_fac1=1
 #   #IF g_aza.aza50='Y' THEN   #MOD-CB0111 mark
-#        IF b_ohb.ohb05 <> l_tuq06 THEN                                           
-#          CALL s_umfchk(b_ohb.ohb04,b_ohb.ohb05,l_tuq06)                        
-#               RETURNING l_cnt,l_fac1                                           
-#           IF l_cnt = '1'  THEN            
-#             CALL s_errmsg('','',b_ohb.ohb04,'abm-731',0)   #No.FUN-710028                            
-#             LET l_fac1=1                                                       
-#           END IF                                                                
-#        END IF               
-#       SELECT tuq07 INTO l_tuq07 FROM tuq_file                                  
-#        WHERE tuq01=g_oha.oha03  AND tuq02=b_ohb.ohb04                          
-#          AND tuq03=b_ohb.ohb092 AND tuq04=g_oha.oha02                          
+#        IF b_ohb.ohb05 <> l_tuq06 THEN
+#          CALL s_umfchk(b_ohb.ohb04,b_ohb.ohb05,l_tuq06)
+#               RETURNING l_cnt,l_fac1
+#           IF l_cnt = '1'  THEN
+#             CALL s_errmsg('','',b_ohb.ohb04,'abm-731',0)   #No.FUN-710028
+#             LET l_fac1=1
+#           END IF
+#        END IF
+#       SELECT tuq07 INTO l_tuq07 FROM tuq_file
+#        WHERE tuq01=g_oha.oha03  AND tuq02=b_ohb.ohb04
+#          AND tuq03=b_ohb.ohb092 AND tuq04=g_oha.oha02
 #          AND tuq11=l_tuq11 AND tuq12=g_oha.oha04
 #          AND tuq05=g_oha.oha01 AND tuq051=b_ohb.ohb03 #MOD-CB0111 add
-#       IF cl_null(l_tuq07) THEN LET l_tuq07=0 END IF                            
-#       IF l_tuq07-b_ohb.ohb12*l_fac1<0 THEN                                     
-#          LET l_desc='2'                                                        
-#       ELSE                                                                     
-#          LET l_desc='1'                                                        
-#       END IF   
-#       IF l_tuq07=b_ohb.ohb12*l_fac1 THEN                                       
-#          DELETE FROM tuq_file                                                  
-#           WHERE tuq01=g_oha.oha03  AND tuq02=b_ohb.ohb04                       
-#             AND tuq03=b_ohb.ohb092 AND tuq04=g_oha.oha02                       
+#       IF cl_null(l_tuq07) THEN LET l_tuq07=0 END IF
+#       IF l_tuq07-b_ohb.ohb12*l_fac1<0 THEN
+#          LET l_desc='2'
+#       ELSE
+#          LET l_desc='1'
+#       END IF
+#       IF l_tuq07=b_ohb.ohb12*l_fac1 THEN
+#          DELETE FROM tuq_file
+#           WHERE tuq01=g_oha.oha03  AND tuq02=b_ohb.ohb04
+#             AND tuq03=b_ohb.ohb092 AND tuq04=g_oha.oha02
 #             AND tuq11=l_tuq11 AND tuq12=g_oha.oha04
 #             AND tuq05=g_oha.oha01 AND tuq051=b_ohb.ohb03 #MOD-CB0111 add
-#          IF SQLCA.sqlcode THEN                                                 
+#          IF SQLCA.sqlcode THEN
 #             LET g_showmsg = g_oha.oha03,"/",b_ohb.ohb04,"/",b_ohb.ohb092,"/",g_oha.oha02,"/",l_tuq11,"/",g_oha.oha04  #No.FUN-710028
 #             CALL s_errmsg('tuq01,tuq02,tuq03,tuq04,tuq11,tuq12',g_showmsg,'delete tuq_file',SQLCA.sqlcode,1)          #No.FUN-710028
-#             LET g_success='N'                                                  
-#             RETURN                                                             
-#          END IF                         
-#       ELSE                                                                     
-#          LET l_fac2=1                                                          
-#          IF l_tuq06 <> l_ima25 THEN                                            
-#             CALL s_umfchk(b_ohb.ohb04,l_tuq06,l_ima25)                         
-#                  RETURNING l_cnt,l_fac2                                        
-#             IF l_cnt = '1'  THEN                                               
-#                CALL s_errmsg('','',b_ohb.ohb04,'abm-731',0)  #No.FUN-710028                        
-#                LET l_fac2=1                                                    
-#             END IF                                                             
-#          END IF              
+#             LET g_success='N'
+#             RETURN
+#          END IF
+#       ELSE
+#          LET l_fac2=1
+#          IF l_tuq06 <> l_ima25 THEN
+#             CALL s_umfchk(b_ohb.ohb04,l_tuq06,l_ima25)
+#                  RETURNING l_cnt,l_fac2
+#             IF l_cnt = '1'  THEN
+#                CALL s_errmsg('','',b_ohb.ohb04,'abm-731',0)  #No.FUN-710028
+#                LET l_fac2=1
+#             END IF
+#          END IF
 #          LET l_tuq07_1 = b_ohb.ohb12*l_fac1              #TQC-C20183 --add--
 #          LET l_tuq07_1 = s_digqty(l_tuq07_1,l_tuq06)     #TQC-C20183 --add-
 #          LET l_tuq09_1 = b_ohb.ohb12*l_fac1*l_fac2       #TQC-C20183 --add--
-#          LET l_tuq09_1 = s_digqty(l_tuq09_1,l_ima25)     #TQC-C20183 --add-                                                  
-#       #  UPDATE tuq_file SET tuq07=tuq07-b_ohb.ohb12*l_fac1,             #TQC-C20183 --mark---      
-#       #                      tuq09=tuq09-b_ohb.ohb12*l_fac1*l_fac2,      #TQC-C20183 --mark---      
+#          LET l_tuq09_1 = s_digqty(l_tuq09_1,l_ima25)     #TQC-C20183 --add-
+#       #  UPDATE tuq_file SET tuq07=tuq07-b_ohb.ohb12*l_fac1,             #TQC-C20183 --mark---
+#       #                      tuq09=tuq09-b_ohb.ohb12*l_fac1*l_fac2,      #TQC-C20183 --mark---
 #          UPDATE tuq_file SET tuq07=tuq07-l_tuq07_1,                      #TQC-C20183 --add--
 #                              tuq09=tuq09-l_tuq09_1,                      #TQC-C20183 --add--
-#                              tuq10=l_desc                                      
-#           WHERE tuq01=g_oha.oha03  AND tuq02=b_ohb.ohb04                       
-#             AND tuq03=b_ohb.ohb092 AND tuq04=g_oha.oha02                       
+#                              tuq10=l_desc
+#           WHERE tuq01=g_oha.oha03  AND tuq02=b_ohb.ohb04
+#             AND tuq03=b_ohb.ohb092 AND tuq04=g_oha.oha02
 #             AND tuq11=l_tuq11 AND tuq12=g_oha.oha04
 #             AND tuq05=g_oha.oha01 AND tuq051=b_ohb.ohb03 #MOD-CB0111 add
-#          IF SQLCA.sqlcode THEN                                                 
+#          IF SQLCA.sqlcode THEN
 #             LET g_showmsg = g_oha.oha03,"/",b_ohb.ohb04,"/",b_ohb.ohb092,"/",g_oha.oha02,"/",l_tuq11,"/",g_oha.oha04  #No.FUN-710028
 #             CALL s_errmsg('tuq01,tuq02,tuq03,tuq04,tuq11,tuq12',g_showmsg,'update tuq_file',SQLCA.sqlcode,1)          #No.FUN-710028
-#             LET g_success='N'                                                  
-#             RETURN                                                             
-#          END IF                                                                
-#       END IF                    
+#             LET g_success='N'
+#             RETURN
+#          END IF
+#       END IF
 #    #MOD-CB0111 -- mark start --
 #    #ELSE
 #    #  IF b_ohb.ohb05 <> l_adq06 THEN
@@ -15691,7 +15702,7 @@ END FUNCTION
 #    #      WHERE adq01=g_oha.oha03  AND adq02=b_ohb.ohb04
 #    #        AND adq03=b_ohb.ohb092 AND adq04=g_oha.oha02
 #    #     IF SQLCA.sqlcode THEN
-#    #        LET g_showmsg = g_oha.oha03,"/",b_ohb.ohb04,"/",b_ohb.ohb092,"/",g_oha.oha02              #No.FUN-710028 
+#    #        LET g_showmsg = g_oha.oha03,"/",b_ohb.ohb04,"/",b_ohb.ohb092,"/",g_oha.oha02              #No.FUN-710028
 #    #        CALL s_errmsg('adq01,adq02,adq03,adq04',g_showmsg,'delete adq_file',SQLCA.sqlcode,1)      #No.FUN-710028
 #    #        LET g_success='N'
 #    #        RETURN
@@ -15716,7 +15727,7 @@ END FUNCTION
 #    #      WHERE adq01=g_oha.oha03  AND adq02=b_ohb.ohb04
 #    #        AND adq03=b_ohb.ohb092 AND adq04=g_oha.oha02
 #    #     IF SQLCA.sqlcode THEN
-#    #        LET g_showmsg = g_oha.oha03,"/",b_ohb.ohb04,"/",b_ohb.ohb092,"/",g_oha.oha02              #No.FUN-710028 
+#    #        LET g_showmsg = g_oha.oha03,"/",b_ohb.ohb04,"/",b_ohb.ohb092,"/",g_oha.oha02              #No.FUN-710028
 #    #        CALL s_errmsg('adq01,adq02,adq03,adq04',g_showmsg,'delete adq_file',SQLCA.sqlcode,1)      #No.FUN-710028
 #    #        LET g_success='N'
 #    #        RETURN
@@ -15738,44 +15749,44 @@ END FUNCTION
 #    IF g_oga.oga00='7' THEN
 #      #LET l_tup08='2' #CHI-B40056 mark
 #       LET l_tup11='2' #CHI-B40056
-#    ELSE 
+#    ELSE
 #      #LET l_tup08='1' #CHI-B40056 mark
 #       LET l_tup11='1' #CHI-B40056
 #    END IF
-#    SELECT COUNT(*) INTO i FROM tup_file                                        
-#     WHERE tup01=g_oha.oha03  AND tup02=b_ohb.ohb04                             
-#       AND tup03=b_ohb.ohb092                                                   
+#    SELECT COUNT(*) INTO i FROM tup_file
+#     WHERE tup01=g_oha.oha03  AND tup02=b_ohb.ohb04
+#       AND tup03=b_ohb.ohb092
 #      #AND tup08=l_tup08 AND tup09=g_oha.oha04 #CHI-B40056 mark
 #       AND tup11=l_tup11 AND tup12=g_oha.oha04 #CHI-B40056
 #    IF cl_null(b_ohb.ohb092) THEN LET b_ohb.ohb092=' ' END IF   #FUN-790001 add
 #    LET l_tup05_1= b_ohb.ohb12*l_fac1*-1                   #TQC-C20183  --ADD--
-#    LET l_tup05_1 = s_digqty(l_tup05_1,l_ima25)            #TQC-C20183  --ADD--                    
-#    IF i=0 THEN                                     
-#      #INSERT INTO tup_file(tup01,tup02,tup03,tup04,tup05,tup06,tup07,tup08,tup09,tupplant,tuplegal)  #FUN-980010 add tupplant,tuplegal  #CHI-B40056 mark      
+#    LET l_tup05_1 = s_digqty(l_tup05_1,l_ima25)            #TQC-C20183  --ADD--
+#    IF i=0 THEN
+#      #INSERT INTO tup_file(tup01,tup02,tup03,tup04,tup05,tup06,tup07,tup08,tup09,tupplant,tuplegal)  #FUN-980010 add tupplant,tuplegal  #CHI-B40056 mark
 #       INSERT INTO tup_file(tup01,tup02,tup03,tup04,tup05,tup06,tup07,tup11,tup12,tupplant,tuplegal)  #CHI-B40056 modfiy tup08,tup09 ->tup11,tup12
-#       VALUES(g_oha.oha03,b_ohb.ohb04,b_ohb.ohb092,l_ima25,                     
-#             #b_ohb.ohb12*l_fac1*-1,l_ima71+g_oha.oha02,g_oha.oha02,l_tup08,g_oha.oha04,g_plant,g_legal) #FUN-980010 add g_plant,g_legal #MOD-B30651 mark         
+#       VALUES(g_oha.oha03,b_ohb.ohb04,b_ohb.ohb092,l_ima25,
+#             #b_ohb.ohb12*l_fac1*-1,l_ima71+g_oha.oha02,g_oha.oha02,l_tup08,g_oha.oha04,g_plant,g_legal) #FUN-980010 add g_plant,g_legal #MOD-B30651 mark
 #             #b_ohb.ohb12*l_fac1*-1,l_tup06,g_oha.oha02,l_tup08,g_oha.oha04,g_plant,g_legal)             #MOD-B30651 #TQC-C20183  --mark--
-#              l_tup05_1,l_tup06,g_oha.oha02,l_tup11,g_oha.oha04,g_plant,g_legal)              #TQC-C20183  --ADD-- #CHI-B40056 modfiy tup08->tup11 
-#       IF SQLCA.sqlcode THEN                                                    
+#              l_tup05_1,l_tup06,g_oha.oha02,l_tup11,g_oha.oha04,g_plant,g_legal)              #TQC-C20183  --ADD-- #CHI-B40056 modfiy tup08->tup11
+#       IF SQLCA.sqlcode THEN
 #          LET g_showmsg = g_oha.oha03,"/",b_ohb.ohb04,"/",b_ohb.ohb092                        #No.FUN-710028
 #          CALL s_errmsg('tup01,tup02,tup03',g_showmsg,'insert tup_file',SQLCA.sqlcode,1)      #No.FUN-710028
-#          LET g_success='N'                                                     
-#          RETURN                                                                
-#       END IF                                                                   
-#    ELSE                                                                        
+#          LET g_success='N'
+#          RETURN
+#       END IF
+#    ELSE
 #      #UPDATE tup_file SET tup05=tup05-b_ohb.ohb12*l_fac1      #TQC-C20183  --mark--
 #       UPDATE tup_file SET tup05=tup05+l_tup05_1               #TQC-C20183  --ADD-
-#        WHERE tup01=g_oha.oha03  AND tup02=b_ohb.ohb04                          
-#          AND tup03=b_ohb.ohb092                                                
+#        WHERE tup01=g_oha.oha03  AND tup02=b_ohb.ohb04
+#          AND tup03=b_ohb.ohb092
 #         #AND tup08=l_tup08 and tup09=g_oha.oha04 #CHI-B40056 mark
 #          AND tup11=l_tup11 and tup12=g_oha.oha04 #CHI-B40056 add
-#       IF SQLCA.sqlcode THEN                                                    
+#       IF SQLCA.sqlcode THEN
 #          LET g_showmsg = g_oha.oha03,"/",b_ohb.ohb04,"/",b_ohb.ohb092,"/",l_tup11,"/",g_oha.oha04    #No.FUN-710028 #CHI-B40056 l_tup08->l_tup11
 #          CALL s_errmsg('tup01,tup02,tup03,tup11,tup12',g_showmsg,'insert tup_file',SQLCA.sqlcode,1)  #No.FUN-710028 #CHI-B40056 tup08,tup09->tup11,tup12
-#          LET g_success='N'                                                     
-#          RETURN                                                                
-#       END IF           
+#          LET g_success='N'
+#          RETURN
+#       END IF
 #    END IF
 #  #MOD-CB0111 -- mark start --
 #  #ELSE
@@ -15826,11 +15837,11 @@ END FUNCTION
 #               END RECORD,
 #         l_cnt  LIKE type_file.num5          #No.FUN-680137 SMALLINT
 #
-##FUN-AB0059 ---------------------start---------------------------- 
+##FUN-AB0059 ---------------------start----------------------------
 #  IF s_joint_venture( b_ohb.ohb04,g_plant) OR NOT s_internal_item( b_ohb.ohb04,g_plant ) THEN
 #     RETURN
 #  END IF
-##FUN-AB0059 ---------------------end------------------------------- 
+##FUN-AB0059 ---------------------end-------------------------------
 #    #MOD-BC0033 ----- modify start -----
 #    LET l_cnt = 0
 #    SELECT COUNT(*) INTO l_cnt FROM img_file
@@ -15862,7 +15873,7 @@ END FUNCTION
 #                let p_img.imgplant=g_plant    #FUN-B90103--add
 #                let p_img.imglegal=g_legal    #FUN-B90103--add
 #        	let b_ohb.ohb15=b_ohb.ohb05
-#                
+#
 #       #         IF s_internal_item( p_img.img01,g_plant ) AND NOT s_joint_venture( p_img.img01 ,g_plant) THEN  #FUN-A90049 add     #FUN-AB0059 mark
 #        	insert into img_file values(p_img.*)
 #        	IF STATUS THEN
@@ -15891,7 +15902,7 @@ END FUNCTION
 #       CALL s_errmsg('img01,img02,img03,img04',g_showmsg,'lock img fail',STATUS,1)    #No.FUN-710028
 #       LET g_success='N' RETURN
 #    END IF
-# 
+#
 #    FETCH img_lock2 INTO l_img.*
 #    IF STATUS THEN
 #       #No.MOD-CB0199  --Begin
@@ -15945,7 +15956,7 @@ END FUNCTION
 #FUNCTION t700_update_du2()
 #  DEFINE l_ima25   LIKE ima_file.ima25,
 #         u_type    LIKE type_file.num5        # No.FUN-680137  SMALLINT
-##FUN-AB0059 ---------------------start---------------------------- 
+##FUN-AB0059 ---------------------start----------------------------
 #   IF s_joint_venture( b_ohb.ohb04,g_plant) OR NOT s_internal_item( b_ohb.ohb04,g_plant ) THEN
 #      RETURN
 #   END IF
@@ -15958,12 +15969,12 @@ END FUNCTION
 #   IF cl_null(g_ima906) or g_ima906 = '1' THEN
 #      RETURN
 #   END IF
-# 
+#
 #   IF g_ima906 = '2' THEN  #子母單位
 #      IF NOT cl_null(b_ohb.ohb913) THEN
 #         CALL t700_upd_imgg('1',b_ohb.ohb04,g_oaz.oaz95,g_oha.oha03,b_ohb.ohb092,b_ohb.ohb913,b_ohb.ohb914,b_ohb.ohb915,-1,'2')
 #         IF g_success='N' THEN RETURN END IF
-#         IF NOT cl_null(b_ohb.ohb915) THEN                             #CHI-860005  
+#         IF NOT cl_null(b_ohb.ohb915) THEN                             #CHI-860005
 #            CALL t700_tlff2('2',b_ohb.ohb913,b_ohb.ohb914,b_ohb.ohb915)
 #            IF g_success='N' THEN RETURN END IF
 #         END IF
@@ -15971,7 +15982,7 @@ END FUNCTION
 #      IF NOT cl_null(b_ohb.ohb910) THEN
 #         CALL t700_upd_imgg('1',b_ohb.ohb04,g_oaz.oaz95,g_oha.oha03,b_ohb.ohb092,b_ohb.ohb910,b_ohb.ohb911,b_ohb.ohb912,-1,'1')
 #         IF g_success='N' THEN RETURN END IF
-#         IF NOT cl_null(b_ohb.ohb912) THEN                             #CHI-860005 
+#         IF NOT cl_null(b_ohb.ohb912) THEN                             #CHI-860005
 #            CALL t700_tlff2('1',b_ohb.ohb910,b_ohb.ohb911,b_ohb.ohb912)
 #            IF g_success='N' THEN RETURN END IF
 #         END IF
@@ -15987,7 +15998,7 @@ END FUNCTION
 #         END IF
 #      END IF
 #   END IF
-# 
+#
 #END FUNCTION
 #
 ##发票仓tlff异动记录
@@ -15998,16 +16009,16 @@ END FUNCTION
 #   p_fac      LIKE img_file.img21,
 #   p_qty      LIKE img_file.img10,
 #   l_imgg10   LIKE imgg_file.imgg10
-# 
+#
 #   INITIALIZE g_tlff.* TO NULL
 #   SELECT imgg10 INTO l_imgg10 FROM imgg_file
 #    WHERE imgg01=b_ohb.ohb04  AND imgg02=g_oaz.oaz95
 #      AND imgg03=g_oha.oha03 AND imgg04=b_ohb.ohb092
 #      AND imgg09=p_unit
 #   IF cl_null(l_imgg10) THEN LET l_imgg10=0 END IF
-# 
+#
 #   #----來源----
-#   LET g_tlff.tlff01=b_ohb.ohb04     #異動料件編號 
+#   LET g_tlff.tlff01=b_ohb.ohb04     #異動料件編號
 #   LET g_tlff.tlff02=50
 #   LET g_tlff.tlff020=b_ohb.ohb08
 #   LET g_tlff.tlff021=g_oaz.oaz95    #倉庫
@@ -16026,7 +16037,7 @@ END FUNCTION
 #   LET g_tlff.tlff034=0       #異動後庫存數量
 #   LET g_tlff.tlff035=' '         #庫存單位(ima_file or img_file)
 #   LET g_tlff.tlff036=g_oha.oha01    #銷退單號
-#   LET g_tlff.tlff037=b_ohb.ohb03    #銷退項次    
+#   LET g_tlff.tlff037=b_ohb.ohb03    #銷退項次
 #   #-->異動數量
 #   LET g_tlff.tlff04= ' '             #工作站
 #   LET g_tlff.tlff05= ' '             #作業序號
@@ -16039,7 +16050,7 @@ END FUNCTION
 #   LET g_tlff.tlff12=p_fac            #發料/庫存 換算率
 #   LET g_tlff.tlff13='aomt800'                            #TQC-630210
 #   LET g_tlff.tlff14=' '              #異動原因
-# 
+#
 #  LET g_tlff.tlff17=' '              #非庫存性料件編號
 #  CALL s_imaQOH(b_ohb.ohb04)
 #       RETURNING g_tlff.tlff18
@@ -16054,7 +16065,7 @@ END FUNCTION
 #  ELSE
 #     CALL s_tlff(p_flag,b_ohb.ohb913)
 #  END IF
-# 
+#
 #END FUNCTION
 ##FUN-C50097 ADD END-----
 #
@@ -16069,7 +16080,7 @@ END FUNCTION
 #      l_sfb27    LIKE sfb_file.sfb27,
 #      l_sta      LIKE type_file.num5,        # No.FUN-680137 SMALLINT
 #      g_cnt      LIKE type_file.num5        # No.FUN-680137 SMALLINT
-# 
+#
 #   #----來源----
 #   LET g_tlf.tlf01=b_ohb.ohb04             #異動料件編號
 #   LET g_tlf.tlf02=731
@@ -16103,7 +16114,7 @@ END FUNCTION
 #   LET g_tlf.tlf12 =b_ohb.ohb15_fac #發料/庫存 換算率
 #   LET g_tlf.tlf13='aomt800'
 #   LET g_tlf.tlf14=b_ohb.ohb50      #異動原因   #MOD-870120
-# 
+#
 #   LET g_tlf.tlf17=' '              #非庫存性料件編號
 #   CALL s_imaQOH(b_ohb.ohb04)
 #        RETURNING g_tlf.tlf18
@@ -16113,7 +16124,7 @@ END FUNCTION
 #   LET g_tlf.tlf62=b_ohb.ohb33    #參考單號(訂單)
 #   LET g_tlf.tlf64=b_ohb.ohb52    #手冊編號 NO.A093
 #   LET g_tlf.tlf930=b_ohb.ohb930 #FUN-670063
-#   SELECT ogb41,ogb42,ogb43,ogb1001 
+#   SELECT ogb41,ogb42,ogb43,ogb1001
 #     INTO g_tlf.tlf20,g_tlf.tlf41,g_tlf.tlf42,g_tlf.tlf43
 #     FROM ogb_file
 #    WHERE ogb01 = b_ohb.ohb31
@@ -16139,18 +16150,18 @@ END FUNCTION
 #      l_sfb27    LIKE sfb_file.sfb27,
 #      l_sta      LIKE type_file.num5,        # No.FUN-680137 SMALLINT
 #      g_cnt      LIKE type_file.num5        # No.FUN-680137 SMALLINT
-# 
+#
 #
 ##   #----來源----
 #    LET g_tlf.tlf01=b_ohb.ohb04             #異動料件編號
 #    LET g_tlf.tlf02=50
 #    LET g_tlf.tlf021=g_oaz.oaz95
 #    LET g_tlf.tlf024=p_img10
-#    LET g_tlf.tlf022=g_oha.oha03      
-#    LET g_tlf.tlf023=b_ohb.ohb092        
+#    LET g_tlf.tlf022=g_oha.oha03
+#    LET g_tlf.tlf023=b_ohb.ohb092
 #    LET g_tlf.tlf025=p_unit
 #    LET g_tlf.tlf026=g_oha.oha01    #銷退單號
-#    LET g_tlf.tlf027=b_ohb.ohb03    #銷退項次    
+#    LET g_tlf.tlf027=b_ohb.ohb03    #銷退項次
 ##   #---目的----
 #   LET g_tlf.tlf03=731
 #   LET g_tlf.tlf030=' '    #销退入库营运中心编号
@@ -16173,7 +16184,7 @@ END FUNCTION
 #   LET g_tlf.tlf12 =b_ohb.ohb15_fac #發料/庫存 換算率
 #   LET g_tlf.tlf13='aomt800'
 #   LET g_tlf.tlf14=b_ohb.ohb50      #異動原因   #MOD-870120
-# 
+#
 #   LET g_tlf.tlf17=' '              #非庫存性料件編號
 #   CALL s_imaQOH(b_ohb.ohb04)
 #        RETURNING g_tlf.tlf18
@@ -16183,7 +16194,7 @@ END FUNCTION
 #   LET g_tlf.tlf62=b_ohb.ohb33    #參考單號(訂單)
 #   LET g_tlf.tlf64=b_ohb.ohb52    #手冊編號 NO.A093
 #   LET g_tlf.tlf930=b_ohb.ohb930 #FUN-670063
-#   SELECT ogb41,ogb42,ogb43,ogb1001 
+#   SELECT ogb41,ogb42,ogb43,ogb1001
 #     INTO g_tlf.tlf20,g_tlf.tlf41,g_tlf.tlf42,g_tlf.tlf43
 #     FROM ogb_file
 #    WHERE ogb01 = b_ohb.ohb31
@@ -16197,7 +16208,7 @@ END FUNCTION
 #   CALL s_tlf(1,0)
 #END FUNCTION
 ##FUN-C50097 ADD END-----
-# 
+#
 #FUNCTION t700_CN()	# 產生待抵帳款 (Credit Note)
 #   IF g_oha.ohaconf='N' THEN CALL cl_err('conf=N','aap-717',0) RETURN END IF
 #   IF g_oha.ohapost='N' THEN CALL cl_err('post=N','aim-206',0) RETURN END IF
@@ -16211,7 +16222,7 @@ END FUNCTION
 #  #LET g_msg="axrp304 '",g_oha.oha01,"' '",g_oha.oha09,"' '",g_oha.ohaplant,"' '' '' '' '' '' 'Y' "            #MOD-BB0151 mark
 #  #LET g_msg="axrp304 '",g_oha.oha01,"' '",g_oha.oha09,"' '",g_oha.ohaplant,"' '' '' '' '' '' '",g_flag,"' "   #MOD-BB0151  #CHI-C20015 mark
 #   LET g_msg="axrp304 '",g_oha.oha01,"' '",g_oha.oha09,"' '",g_oha.ohaplant,"' '' '' '' '' '' '",g_flag,"' 'Y' "   #CHI-C20015 add   #多傳一個參數,判斷是否可以開窗修改單別
-#DISPLAY g_msg 
+#DISPLAY g_msg
 #  #FUN-BA0014 mod end---
 #   CALL cl_cmdrun_wait(g_msg)
 #   SELECT * INTO g_oha.* FROM oha_file WHERE oha01=g_oha.oha01
@@ -16221,12 +16232,12 @@ END FUNCTION
 #   ELSE
 #      CALL cl_err(g_oha.oha10,'abm-020',0)
 #   END IF
-#   #No.TQC-C20537  --End  
+#   #No.TQC-C20537  --End
 #   DISPLAY BY NAME g_oha.oha10
 #   DISPLAY BY NAME g_oha.oha24
 #END FUNCTION
 #DEV-D30046 搬移至saxmt700_sub.4gl--mark--end
- 
+
 #------------------#
 # 換貨訂單產生作業 #
 #------------------#
@@ -16254,7 +16265,7 @@ FUNCTION t700_t()
         CALL cl_err(g_oha.oha01,'aba-105',1)
         RETURN
     END IF
-    
+
     #TQC-AB0273 add ----------begin---------------
     IF g_oha.oha09 != '2' THEN
         #MESSAGE 'Do not to affirm'             #TQC-D70010 mark
@@ -16262,48 +16273,48 @@ FUNCTION t700_t()
         RETURN
     END IF
     #TQC-AB0273 add -----------end----------------
- 
+
     OPEN WINDOW t700_t AT 6,20 WITH FORM "axm/42f/axmt7008"
           ATTRIBUTE (STYLE = g_win_style CLIPPED) #No.FUN-580092 HCN
- 
+
     CALL cl_ui_locale("axmt7008")
- 
+
     CLEAR FORM                                    #清除畫面
- 
+
     CONSTRUCT BY NAME g_wc ON oha01,oha02,oha03
- 
+
        BEFORE CONSTRUCT
           DISPLAY g_oha.oha01 TO oha01
- 
+
        ON IDLE g_idle_seconds
           CALL cl_on_idle()
           CONTINUE CONSTRUCT
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
+
       ON ACTION controlg      #MOD-4C0121
          CALL cl_cmdask()     #MOD-4C0121
- 
- 
+
+
     END CONSTRUCT
     IF INT_FLAG THEN
        LET INT_FLAG = 0 #No:6704 INT_FLAG 要復原
        CLOSE WINDOW t700_t
        RETURN
     END IF
- 
+
     #資料權限的檢查
- 
- 
+
+
     LET g_wc  = g_wc CLIPPED," AND ohaconf='Y'"   # 已確認
- 
+
     LET g_oay.oayslip=''
     INPUT BY NAME g_oay.oayslip WITHOUT DEFAULTS
- 
+
        AFTER FIELD oayslip
          IF NOT cl_null(g_oay.oayslip) THEN
             SELECT * INTO g_oay.* FROM oay_file
@@ -16315,7 +16326,7 @@ FUNCTION t700_t()
             DISPLAY l_curr TO oaymxno
             SLEEP 1
          END IF
- 
+
        ON ACTION CONTROLP
           CASE WHEN INFIELD(oayslip)
                     LET g_t1=s_get_doc_no(g_oay.oayslip)  #No.FUN-540049
@@ -16328,29 +16339,29 @@ FUNCTION t700_t()
        ON IDLE g_idle_seconds
           CALL cl_on_idle()
           CONTINUE INPUT
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
+
       ON ACTION controlg      #MOD-4C0121
          CALL cl_cmdask()     #MOD-4C0121
- 
- 
+
+
     END INPUT
- 
+
     #加上INT_FLAG判斷
     IF INT_FLAG THEN
        LET INT_FLAG = 0
        CLOSE WINDOW t700_t
        RETURN
     END IF
- 
-    IF NOT cl_sure(10,10) THEN 
+
+    IF NOT cl_sure(10,10) THEN
        CLOSE WINDOW t700_t
-       RETURN 
+       RETURN
     END IF
     LET g_sql = "SELECT * FROM oha_file ",
                 " WHERE oha09='2' ",
@@ -16360,33 +16371,33 @@ FUNCTION t700_t()
                 "   WHERE oea00='2' ",
                 "     AND oea12 IS NOT NULL ",
                 "     AND oeaconf != 'X' ) "
- 
+
     LET l_cnt  = 1
     LET l_curr  = g_oay.oaymxno + 1     # 目前單號
     LET l_found   = 'N'
     LET g_success = 'Y'
     BEGIN WORK
- 
+
     PREPARE t700_t_prepare FROM g_sql
     DECLARE t700_t CURSOR FOR t700_t_prepare
     CALL s_showmsg_init()       #No.FUN-710028
     FOREACH t700_t INTO g_oha.*
-      IF g_success='N' THEN                                                                                                         
-         LET g_totsuccess='N'                                                                                                       
-         LET g_success="Y"                                                                                                          
-      END IF                                                                                                                        
- 
+      IF g_success='N' THEN
+         LET g_totsuccess='N'
+         LET g_success="Y"
+      END IF
+
       IF STATUS THEN CALL s_errmsg('','','foreach',STATUS,1)  #No.FUN-710028
          LET g_success='N' EXIT FOREACH
       END IF
- 
+
       # 單頭部份 #
       LET l_found   = 'Y'
       INITIALIZE g_oea.* TO NULL
       LET l_sum_oeb14=0
       LET g_oea.oea00 = '2'           # 換貨訂單
       LET g_oea.oea02 = g_today       # 訂單日
- 
+
 #     CALL s_auto_assign_no(g_sys,g_oay.oayslip,g_oea.oea02,"2","oea_file","oea01","","","")
       CALL s_auto_assign_no("axm",g_oay.oayslip,g_oea.oea02,"2","oea_file","oea01","","","")   #No.FUN-A40041
            RETURNING li_result,g_oea.oea01
@@ -16395,14 +16406,14 @@ FUNCTION t700_t()
           LET g_success = 'N'
           CONTINUE FOREACH     #No.FUN-710028
       END IF
- 
+
       IF l_cnt = 1 THEN
          LET l_start = g_oea.oea01 # 起始單號
          LET l_end = g_oea.oea01 # 起始單號
       ELSE
          LET l_end = g_oea.oea01 # 起始單號
       END IF
- 
+
       LET g_oea.oea03 = g_oha.oha03   # 帳款客戶編號
       LET g_oea.oea032= g_oha.oha032  # 帳款客戶簡稱
       LET g_oea.oea04 = g_oha.oha04   # 送貨客戶編號
@@ -16424,7 +16435,7 @@ FUNCTION t700_t()
       LET g_oea.oea213= g_oha.oha213  # 含稅否
       LET g_oea.oea23 = g_oha.oha23   # 幣別
       LET g_oea.oea24 = g_oha.oha24   # 匯率
- 
+
       IF g_oea.oea24=0 OR cl_null(g_oea.oea24) THEN
          #IF g_oea.oea08='1' THEN #MOD-C20176 mark
          IF g_oha.oha08='1' THEN  #MOD-C20176 add
@@ -16434,11 +16445,11 @@ FUNCTION t700_t()
          END IF
          CALL s_curr3(g_oea.oea23,g_oea.oea02,exT) RETURNING g_oea.oea24
       END IF
- 
+
       IF cl_null(g_oea.oea24) THEN
          LET g_oea.oea24=0
       END IF
- 
+
       LET g_oea.oea25 = g_oha.oha25   # 銷售分類
       LET g_oea.oea31 = g_oha.oha31   # 價格條件
        SELECT occ45 INTO g_oea.oea32 FROM occ_file #MOD-530543
@@ -16465,13 +16476,13 @@ FUNCTION t700_t()
       IF g_azw.azw04='2' THEN
          LET g_oea.oea85 = g_oha.oha85
          LET g_oea.oea86 = g_oha.oha86
-         LET g_oea.oea87 = g_oha.oha87                                                                                      
-         LET g_oea.oea88 = g_oha.oha88                                                                                     
-         LET g_oea.oea89 = g_oha.oha89                                                                                            
-         LET g_oea.oea90 = g_oha.oha90                                                                                              
-         LET g_oea.oea91 = g_oha.oha91  
-         LET g_oea.oea92 = g_oha.oha92                                                                                              
-         LET g_oea.oea93 = g_oha.oha93            
+         LET g_oea.oea87 = g_oha.oha87
+         LET g_oea.oea88 = g_oha.oha88
+         LET g_oea.oea89 = g_oha.oha89
+         LET g_oea.oea90 = g_oha.oha90
+         LET g_oea.oea91 = g_oha.oha91
+         LET g_oea.oea92 = g_oha.oha92
+         LET g_oea.oea93 = g_oha.oha93
       END IF
       IF cl_null(g_oea.oea85) THEN LET g_oea.oea85 = ' ' END IF
       IF cl_null(g_oea.oea918) THEN LET g_oea.oea918 = 'n' END IF
@@ -16480,7 +16491,7 @@ FUNCTION t700_t()
       LET g_oea.oeaorig = g_grup      #No.FUN-980030 10/01/04
       IF cl_null(g_oea.oeaslk02) THEN LET g_oea.oeaslk02 = 'N' END IF   #MOD-AB0080
 #TQC-C20292----add--------------------
-#TQC-C20292---end---------------------      
+#TQC-C20292---end---------------------
       INSERT INTO oea_file VALUES(g_oea.*)
 
       #MOD-C10161 ----- start start -----
@@ -16518,22 +16529,22 @@ FUNCTION t700_t()
          CALL s_errmsg('oea01',g_oea.oea01,'ins oea_file',SQLCA.SQLCODE,1)                #No.FUN-710028
          LET g_success='N' CONTINUE FOREACH  #No.FUN-710028
       END IF
- 
+
       # 單身部份 --------------------------------------------------------#
 #FUN-B90103--start--
 #FUN-B90103--end--
 #TQC-C40248---ADD---STR----
-#TQC-C40248---ADD---end---                              
+#TQC-C40248---ADD---end---
       DECLARE t700_tb CURSOR FOR
        SELECT * FROM ohb_file WHERE ohb01=g_oha.oha01
- 
+
       LET g_i=1
- #TQC-C40248---ADD-&endif     
+ #TQC-C40248---ADD-&endif
       FOREACH t700_tb INTO l_ohb.*
            IF STATUS THEN CALL s_errmsg('','','foreach',STATUS,1)   #No.FUN-710028
             LET g_success='N' EXIT FOREACH
          END IF
- 
+
          INITIALIZE g_oeb.* TO NULL
          LET g_oeb.oeb01 = g_oea.oea01       # 單號
          LET g_oeb.oeb03 = g_i LET g_i=g_i+1 # 項次
@@ -16544,18 +16555,18 @@ FUNCTION t700_t()
            FROM ima_file
           WHERE ima01 = l_ohb.ohb04
          IF NOT cl_null(l_ima929) THEN
-            LET l_oeb04 = NULL 
+            LET l_oeb04 = NULL
             SELECT oeb04 INTO l_oeb04
              FROM oeb_file
              WHERE oeb01 = l_ohb.ohb33
                AND oeb03 = l_ohb.ohb34
             IF NOT cl_null(l_oeb04) THEN
                LET g_oeb.oeb04 = l_oeb04
-            END IF 
-         END IF 
+            END IF
+         END IF
          #CHI-C30030---end
          LET g_oeb.oeb05 = l_ohb.ohb05       # 產品單位
- 
+
          #MOD-C20144 ----- add start -----
          SELECT ima25 INTO l_ima25 FROM ima_file WHERE ima01 = g_oeb.oeb04
          CALL s_umfchk(g_oeb.oeb04,g_oeb.oeb05,l_ima25) RETURNING g_cnt,g_oeb.oeb05_fac
@@ -16571,10 +16582,10 @@ FUNCTION t700_t()
          #   AND smd02=g_oeb.oeb05 AND smd03=ima25
          #IF STATUS THEN LET g_oeb.oeb05_fac=1 END IF
          #MOD-C20144 ----- mark end -----
- 
+
          LET g_oeb.oeb06 = l_ohb.ohb06       # 品名規格
          LET g_oeb.oeb12 = l_ohb.ohb12       # 數量
-         LET g_oeb.oeb37 = l_ohb.ohb37       # 基礎單價   #FUN-AB0061 
+         LET g_oeb.oeb37 = l_ohb.ohb37       # 基礎單價   #FUN-AB0061
          LET g_oeb.oeb13 = l_ohb.ohb13       # 單價
          LET g_oeb.oeb17 = g_oeb.oeb13       # 取出單價no.7150
          LET g_oeb.oeb14 = l_ohb.ohb14       # 未稅金額
@@ -16603,13 +16614,13 @@ FUNCTION t700_t()
          LET g_oeb.oeb1003='1' #MOD-740187
         #MOD-D40151 add start -----
          SELECT obk11 INTO l_obk11 FROM obk_file
-          WHERE obk01 = l_ohb.ohb04 AND obk02 = g_oha.oha03 
+          WHERE obk01 = l_ohb.ohb04 AND obk02 = g_oha.oha03
          IF NOT cl_null(l_obk11) THEN
-            LET g_oeb.oeb906 = l_obk11 
+            LET g_oeb.oeb906 = l_obk11
          ELSE
         #MOD-D40151 add end   -----
             LET g_oeb.oeb906 = "N"  #No.MOD-740446
-         END IF #MOD-D40151 add 
+         END IF #MOD-D40151 add
          LET g_oeb.oeb19 = "N"  #No.MOD-740446
          #MOD-CA0004 add start -----
          IF l_ohb.ohb11 IS NULL THEN
@@ -16617,15 +16628,15 @@ FUNCTION t700_t()
             WHERE obk01 = l_ohb.ohb04
               AND obk02 = g_oha.oha03
          ELSE
-         #MOD-CA0004 add end  ----- 
+         #MOD-CA0004 add end  -----
             LET g_oeb.oeb11 = l_ohb.ohb11   #MOD-8A0108
          END IF #MOD-CA0004 add
          LET g_oeb.oeb44 = l_ohb.ohb64
          LET g_oeb.oebplant = l_ohb.ohbplant
-         LET g_oeb.oeblegal = l_ohb.ohblegal        
+         LET g_oeb.oeblegal = l_ohb.ohblegal
          IF g_azw.azw04 = '2' THEN
-            LET g_oeb.oeb45 = l_ohb.ohb65  
-            LET g_oeb.oeb46 = l_ohb.ohb66                                                                                           
+            LET g_oeb.oeb45 = l_ohb.ohb65
+            LET g_oeb.oeb46 = l_ohb.ohb66
             LET g_oeb.oeb47 = l_ohb.ohb67
          END IF
 #TQC-C20292----add-------------------
@@ -16638,7 +16649,7 @@ FUNCTION t700_t()
          IF cl_null(g_oeb.oeb37) OR g_oeb.oeb37 = 0 THEN
             LET g_oeb.oeb37 = g_oeb.oeb13
          END IF
-         #FUN-AB0061----------add---------------end---------------- 
+         #FUN-AB0061----------add---------------end----------------
          INSERT INTO oeb_file VALUES(g_oeb.*)
          IF STATUS OR SQLCA.SQLCODE THEN
             LET g_showmsg = g_oeb.oeb01,"/",g_oeb.oeb03   #No.FUN-710028
@@ -16646,15 +16657,15 @@ FUNCTION t700_t()
             LET g_success='N' EXIT FOREACH
          ELSE
          END IF
- 
+
       END FOREACH     # 單身---------------------------------------#
 
 #FUN-B90103--start--
-#FUN-B90103--end-- 
+#FUN-B90103--end--
       IF g_success='N' THEN
          CONTINUE FOREACH  #No.FUN-710028
       END IF
- 
+
       UPDATE oea_file set oea61=l_sum_oeb14 WHERE oea01=g_oea.oea01
       IF STATUS OR SQLCA.SQLCODE THEN
          CALL s_errmsg('oea01',g_oea.oea01,'upd oea_file',SQLCA.SQLCODE,1)                #No.FUN-710028
@@ -16676,12 +16687,12 @@ FUNCTION t700_t()
 #CHI-B80050 -- end --
 
       LET l_cnt = l_cnt + 1
- 
+
     END FOREACH       # 單頭
-    IF g_totsuccess="N" THEN                                                                                                        
-       LET g_success="N"                                                                                                            
-    END IF                                                                                                                          
- 
+    IF g_totsuccess="N" THEN
+       LET g_success="N"
+    END IF
+
     CLOSE WINDOW t700_t                 #結束畫面
     CALL s_showmsg()   #No.FUN-710028
     IF g_success = 'Y' THEN
@@ -16700,9 +16711,9 @@ FUNCTION t700_t()
        CALL cl_rbmsg(1)
        ROLLBACK WORK RETURN
     END IF
- 
+
 END FUNCTION
- 
+
 FUNCTION t700_bom(p_level,p_key,p_key2,p_ohb04) #FUN-550095 add p_key2
    DEFINE p_level	LIKE type_file.num5,        # No.FUN-680137 SMALLINT
           p_key		LIKE bma_file.bma01,  #主件料件編號
@@ -16718,15 +16729,15 @@ FUNCTION t700_bom(p_level,p_key,p_key2,p_ohb04) #FUN-550095 add p_key2
               bma01 LIKE bma_file.bma01     #No.MOD-490217
           END RECORD,
           l_sql		LIKE type_file.chr1000       #No.FUN-680137 VARCHAR(600)
-    DEFINE l_ima910    DYNAMIC ARRAY OF LIKE ima_file.ima910          #No.FUN-8B0035 
- 
+    DEFINE l_ima910    DYNAMIC ARRAY OF LIKE ima_file.ima910          #No.FUN-8B0035
+
     IF p_level > 20 THEN
        CALL cl_err('','mfg2733',1)
     END IF
- 
+
     LET p_level = p_level + 1
     LET arrno = 600
- 
+
     LET l_sql= "SELECT 0, bmb02, bmb03, bma01",
                "  FROM bmb_file LEFT OUTER JOIN bma_file ON bmb03 = bma01 ",   #No.TQC-9A0132 mod
                " WHERE bmb01='", p_key,"'",   #AND bmb_file.bmb03 = bma_file.bma01",#No.TQC-9A0132 mod
@@ -16734,7 +16745,7 @@ FUNCTION t700_bom(p_level,p_key,p_key2,p_ohb04) #FUN-550095 add p_key2
     PREPARE t700_precur FROM l_sql
     IF SQLCA.sqlcode THEN CALL cl_err('P1:',STATUS,1) END IF
     DECLARE t700_cur CURSOR FOR t700_precur
- 
+
     LET l_ac = 1
     FOREACH t700_cur INTO sr[l_ac].*	# 先將BOM單身存入BUFFER
         LET l_ima910[l_ac]=''
@@ -16743,7 +16754,7 @@ FUNCTION t700_bom(p_level,p_key,p_key2,p_ohb04) #FUN-550095 add p_key2
         LET l_ac = l_ac + 1
         IF l_ac > arrno THEN EXIT FOREACH END IF
     END FOREACH
- 
+
     FOR i = 1 TO l_ac-1    	        	# 讀BUFFER傳給REPORT
         IF sr[i].bmb03 = p_ohb04 THEN LET g_found = 1 END IF
         IF sr[i].bma01 IS NOT NULL THEN #若為主件
@@ -16751,7 +16762,7 @@ FUNCTION t700_bom(p_level,p_key,p_key2,p_ohb04) #FUN-550095 add p_key2
         END IF
     END FOR
 END FUNCTION
- 
+
 FUNCTION t700_3()
    DEFINE d_ohb     DYNAMIC ARRAY OF RECORD
                     ohb03     LIKE ohb_file.ohb03,
@@ -16808,9 +16819,9 @@ FUNCTION t700_3()
    DEFINE l_rec_b          LIKE type_file.num5,          #No.FUN-680137 SMALLINT
           l_allow_insert   LIKE type_file.num5,                #可新增否        #No.FUN-680137 SMALLINT
           l_allow_delete   LIKE type_file.num5                 #可刪除否        #No.FUN-680137 SMALLINT
- 
+
    BEGIN WORK
- 
+
    OPEN t700_cl USING g_oha.oha01
    IF SQLCA.sqlcode THEN
        CALL cl_err(g_oha.oha01,SQLCA.sqlcode,0)     # 資料被他人LOCK
@@ -16818,25 +16829,25 @@ FUNCTION t700_3()
        ROLLBACK WORK
        RETURN
    END IF
- 
+
    FETCH t700_cl INTO g_oha.*          # 鎖住將被更改或取消的資料
    IF SQLCA.sqlcode THEN
        CALL cl_err(g_oha.oha01,SQLCA.sqlcode,0)     # 資料被他人LOCK
        CLOSE t700_cl ROLLBACK WORK RETURN
    END IF
- 
+
    IF g_oha.oha01 IS NULL THEN RETURN END IF
    IF g_oha.ohaconf = 'X' THEN CALL cl_err('',9024,0) RETURN END IF
    IF g_oha.ohapost = 'Y' THEN CALL cl_err('','mfg0175',0) RETURN END IF
- 
- 
+
+
    OPEN WINDOW t7003_w AT 07,03 WITH FORM "axm/42f/axmt7003"
          ATTRIBUTE (STYLE = g_win_style CLIPPED) #No.FUN-580092 HCN
- 
+
     CALL cl_ui_locale("axmt7003")
- 
+
     CALL t7005_def_form()   #FUN-610006
- 
+
     IF g_sma.sma115 = 'Y' THEN
        CALL cl_set_comp_visible("ohb05,ohb12",FALSE)
     ELSE
@@ -16847,8 +16858,8 @@ FUNCTION t700_3()
        CALL cl_set_comp_visible("ohb916,ohb917",FALSE)
     END IF
     CALL cl_set_comp_visible("ohb64",g_azw.azw04='2')   #MOD-BA0142 add
- 
- 
+
+
    DECLARE t7003_c CURSOR FOR
       SELECT ohb03,ohb30,ohb31,ohb32,ohb33,ohb34,ohb04,ohb06,'',
              ohb05,ohb12,ohb913,ohb914,ohb915,ohb910,ohb911,
@@ -16856,18 +16867,18 @@ FUNCTION t700_3()
              ohb912,ohb916,ohb917,ohb64,ohb09,ohb091,ohb092 #No.FUN-870007
         FROM ohb_file
        WHERE ohb01=g_oha.oha01
- 
+
    CALL d_ohb.clear()
- 
+
    LET i=1 LET l_ac = 1
    LET l_rec_b =0
    CALL s_showmsg_init()    #No.FUN-710028
    FOREACH t7003_c INTO d_ohb[i].*
-     IF g_success='N' THEN                                                                                                         
-        LET g_totsuccess='N'                                                                                                       
-        LET g_success="Y"                                                                                                          
-     END IF                                                                                                                        
- 
+     IF g_success='N' THEN
+        LET g_totsuccess='N'
+        LET g_success="Y"
+     END IF
+
      SELECT ima021 INTO d_ohb[i].ima021 FROM ima_file
       WHERE ima01=d_ohb[i].ohb04
       IF i > g_max_rec THEN
@@ -16876,50 +16887,50 @@ FUNCTION t700_3()
       END IF
       LET i = i + 1
    END FOREACH
-   IF g_totsuccess="N" THEN                                                                                                        
-      LET g_success="N"                                                                                                            
-   END IF                                                                                                                          
- 
+   IF g_totsuccess="N" THEN
+      LET g_success="N"
+   END IF
+
    CALL d_ohb.deleteElement(i)
    LET l_rec_b = i - 1
- 
+
    IF g_oha.oha10 IS NOT NULL THEN
       DISPLAY ARRAY d_ohb TO s_ohb.* ATTRIBUTE(COUNT=l_rec_b)
          ON IDLE g_idle_seconds
             CALL cl_on_idle()
             CONTINUE DISPLAY
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
+
       ON ACTION controlg      #MOD-4C0121
          CALL cl_cmdask()     #MOD-4C0121
- 
+
       END DISPLAY
       CLOSE WINDOW t7003_w
       RETURN
    END IF
- 
+
    LET l_allow_insert = cl_detail_input_auth("insert")
    LET l_allow_delete = cl_detail_input_auth("delete")
- 
+
    INPUT ARRAY d_ohb WITHOUT DEFAULTS FROM s_ohb.*
          ATTRIBUTE(COUNT=l_rec_b,MAXCOUNT=g_max_rec,UNBUFFERED,
                    INSERT ROW=FALSE,DELETE ROW=FALSE,
                    APPEND ROW=FALSE)
- 
+
       BEFORE INPUT
           IF l_rec_b != 0 THEN
              CALL fgl_set_arr_curr(l_ac)
           END IF
- 
+
       BEFORE ROW
          LET l_ac = ARR_CURR()
          LET d_ohb_t.* = d_ohb[l_ac].*
- 
+
        AFTER FIELD ohb09
           #IF g_oha.oha09 != '5' THEN  #no.7204 '5.折讓'可不輸入 #MOD-B20130 mark
            IF g_oha.oha09 != '5' AND d_ohb[l_ac].ohb04[1,4] != 'MISC' THEN  #'5.折讓',MISC可不輸入 #MOD-B20130
@@ -16934,15 +16945,15 @@ FUNCTION t700_3()
                  NEXT FIELD ohb09
               END IF
               #No.FUN-AA0048  --Begin
-              #IF g_azw.azw04='2' THEN                                                                                         
-              #   LET l_n =0                                                                                                  
-              #   SELECT COUNT(*) INTO l_n FROM imd_file                                                                      
-              #    WHERE imd01=d_ohb[l_ac].ohb09                                                                                 
-              #      AND imd20=g_plant                                                                                    
-              #   IF l_n=0 THEN                                                                                                
-              #      CALL cl_err(d_ohb[l_ac].ohb09,'art-487',0)                                                                
-              #      NEXT FIELD ohb09                                                                                             
-              #   END IF                                                                                                        
+              #IF g_azw.azw04='2' THEN
+              #   LET l_n =0
+              #   SELECT COUNT(*) INTO l_n FROM imd_file
+              #    WHERE imd01=d_ohb[l_ac].ohb09
+              #      AND imd20=g_plant
+              #   IF l_n=0 THEN
+              #      CALL cl_err(d_ohb[l_ac].ohb09,'art-487',0)
+              #      NEXT FIELD ohb09
+              #   END IF
               #END IF
               #CHI-CC0014 ----------------sta
              #IF NOT cl_null(d_ohb[l_ac].ohb091) THEN
@@ -16955,13 +16966,13 @@ FUNCTION t700_3()
               IF NOT s_chk_ware(d_ohb[l_ac].ohb09) THEN
                  NEXT FIELD ohb09
               END IF
-              #No.FUN-AA0048  --End  
+              #No.FUN-AA0048  --End
            END IF
- 
+
        AFTER FIELD ohb091
            IF d_ohb[l_ac].ohb091 IS NULL THEN LET d_ohb[l_ac].ohb091=' ' END IF
            #------------------------------------ 檢查料號預設倉儲及單別預設倉儲
-           IF NOT cl_null(d_ohb[l_ac].ohb09) THEN  
+           IF NOT cl_null(d_ohb[l_ac].ohb09) THEN
              IF NOT s_chksmz(d_ohb[l_ac].ohb04, g_oha.oha01,
                              d_ohb[l_ac].ohb09, d_ohb[l_ac].ohb091) THEN
                 NEXT FIELD ohb09
@@ -16970,7 +16981,7 @@ FUNCTION t700_3()
              IF d_ohb[l_ac].ohb09 IS NULL THEN LET d_ohb[l_ac].ohb09=' ' END IF
              IF d_ohb[l_ac].ohb091 IS NULL THEN LET d_ohb[l_ac].ohb091=' ' END IF
              IF d_ohb[l_ac].ohb092 IS NULL THEN LET d_ohb[l_ac].ohb092=' ' END IF
-#FUN-AB0059 ---------------------start---------------------------- 
+#FUN-AB0059 ---------------------start----------------------------
              IF s_joint_venture( d_ohb[l_ac].ohb04,g_plant) OR NOT s_internal_item( d_ohb[l_ac].ohb04,g_plant ) THEN
              ELSE
 #FUN-AB0059 ---------------------end-------------------------------
@@ -16984,7 +16995,7 @@ FUNCTION t700_3()
                          NEXT FIELD ohb091
                       END IF
                    END IF
- 
+
                   #IF g_oha.oha09 != '5' THEN  #CHI-6A0050 #MOD-B20130 mark
                    IF g_oha.oha09 != '5' AND d_ohb[l_ac].ohb04[1,4] != 'MISC' THEN  #MOD-B20130
                       CALL s_add_img(d_ohb[l_ac].ohb04, d_ohb[l_ac].ohb09,
@@ -16995,7 +17006,7 @@ FUNCTION t700_3()
                          NEXT FIELD ohb091
                       END IF
                    END IF                      #CHI-6A0050
- 
+
                     SELECT img09,img10 INTO g_img09,g_img10 FROM img_file
                      WHERE img01=d_ohb[l_ac].ohb04 AND img02=d_ohb[l_ac].ohb09
                        AND img03=d_ohb[l_ac].ohb091 AND img04=d_ohb[l_ac].ohb092
@@ -17048,7 +17059,7 @@ FUNCTION t700_3()
                 END IF
              END IF
            END IF
- 
+
       AFTER ROW
          IF INT_FLAG THEN
             CALL s_errmsg('','','',9001,0)  #No.FUN-710028
@@ -17056,7 +17067,7 @@ FUNCTION t700_3()
             LET d_ohb[l_ac].* = d_ohb_t.*
             EXIT INPUT
          END IF
- 
+
          UPDATE ohb_file SET ohb09=d_ohb[l_ac].ohb09,
                              ohb091=d_ohb[l_ac].ohb091,
                              ohb092=d_ohb[l_ac].ohb092      #No.MOD-7101096 add
@@ -17073,7 +17084,7 @@ FUNCTION t700_3()
              CALL s_showmsg()  #No.FUN-710028
              COMMIT WORK
          END IF
- 
+
       ON ACTION CONTROLP
          CASE WHEN INFIELD(ohb09)
                    #No.FUN-AA0048  --Begin
@@ -17083,7 +17094,7 @@ FUNCTION t700_3()
                    #LET g_qryparam.arg1     = 'SW'        #倉庫類別 #MOD-4A0213
                    #CALL cl_create_qry() RETURNING d_ohb[l_ac].ohb09
                    CALL q_imd_1(FALSE,TRUE,d_ohb[l_ac].ohb09,"","","","") RETURNING d_ohb[l_ac].ohb09
-                   #No.FUN-AA0048  --End 
+                   #No.FUN-AA0048  --End
                     DISPLAY BY NAME d_ohb[l_ac].ohb09       #No.MOD-490371
                    NEXT FIELD ohb09
               WHEN INFIELD(ohb091)
@@ -17102,43 +17113,43 @@ FUNCTION t700_3()
       ON IDLE g_idle_seconds
          CALL cl_on_idle()
          CONTINUE INPUT
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
+
       ON ACTION controlg      #MOD-4C0121
          CALL cl_cmdask()     #MOD-4C0121
- 
+
       ON ACTION controls                             #No.FUN-6A0092
          CALL cl_set_head_visible("","AUTO")           #No.FUN-6A0092
- 
+
    END INPUT
- 
+
    IF INT_FLAG THEN
       LET INT_FLAG=0
       CLOSE WINDOW t7003_w
    END IF
- 
-   CLOSE WINDOW t7003_w   
- 
+
+   CLOSE WINDOW t7003_w
+
 END FUNCTION
- 
- 
+
+
 FUNCTION t700_chk_omb()
- 
+
   LET l_omb12=0 LET l_omb14t=0 LET g_errno=' '
- 
+
   SELECT SUM(omb12),SUM(omb14t) INTO l_omb12,l_omb14t
    FROM oma_file,omb_file
    WHERE omb31=g_ohb1[l_ac].ohb31 AND omb32=g_ohb1[l_ac].ohb32  #No.FUN-650108
      AND oma01=omb01 AND omavoid='N' AND oma16=g_oha.oha01
- 
+
   IF cl_null(l_omb12 ) THEN LET l_omb12=0 END IF
   IF cl_null(l_omb14t) THEN LET l_omb14t=0 END IF
- 
+
   IF g_oha.oha09 !='5' THEN
      IF l_omb12 !=0 AND l_omb12 < g_ohb1[l_ac].ohb12 THEN  #NO.FUN-650108
         LET g_errno='axr-265'
@@ -17148,9 +17159,9 @@ FUNCTION t700_chk_omb()
         LET g_errno='axr-265'
      END IF
   END IF
- 
+
 END FUNCTION
- 
+
 #只控管數量,金額只警告
 FUNCTION t700_get_ohb(p_cmd)
   DEFINE p_cmd    LIKE type_file.chr1          #No.FUN-680137 VARCHAR(1)
@@ -17162,19 +17173,19 @@ FUNCTION t700_get_ohb(p_cmd)
   DEFINE l_ohb12_n  LIKE ohb_file.ohb12  #MOD-B40242 add
   DEFINE l_ohb14t_n LIKE ohb_file.ohb14t #MOD-B40242 add
   DEFINE l_ohb14_n  LIKE ohb_file.ohb14  #MOD-B40242 add
- 
+
   LET g_errno=' '  LET g_flag='Y'
  #已確認的銷退
  SELECT SUM(ohb12),SUM(ohb14t),SUM(ohb14) INTO g_ohb12,g_ohb14t,g_ohb14
    FROM oha_file,ohb_file
   WHERE oha01=ohb01 AND ohb31=g_ohb1[l_ac].ohb31 AND ohb32=g_ohb1[l_ac].ohb32   #NO.FUN-650108
     AND ohaconf='Y'
- 
+
 #未確認的銷退
  SELECT SUM(ohb12),SUM(ohb14t),SUM(ohb14) INTO g_ohb12_n,g_ohb14t_n,g_ohb14_n
    FROM oha_file,ohb_file
   WHERE oha01=ohb01 AND ohb31=g_ohb1[l_ac].ohb31 AND ohb32=g_ohb1[l_ac].ohb32     #No.FUN-650108
-    AND ohaconf='N' AND oha01 !=g_oha.oha01 
+    AND ohaconf='N' AND oha01 !=g_oha.oha01
 
  #MOD-B40242 add --start--
  #此張單已輸入的項次
@@ -17186,9 +17197,9 @@ FUNCTION t700_get_ohb(p_cmd)
  LET l_ohb14_n = 0
  SELECT SUM(ohb12),SUM(ohb14t),SUM(ohb14) INTO l_ohb12_n,l_ohb14t_n,l_ohb14_n
    FROM oha_file,ohb_file
-  WHERE oha01=ohb01 AND ohb31=g_ohb1[l_ac].ohb31 AND ohb32=g_ohb1[l_ac].ohb32 
-    AND ohaconf='N' AND oha01 = g_oha.oha01 
-    AND ohb03 != g_ohb1[l_ac].ohb03 
+  WHERE oha01=ohb01 AND ohb31=g_ohb1[l_ac].ohb31 AND ohb32=g_ohb1[l_ac].ohb32
+    AND ohaconf='N' AND oha01 = g_oha.oha01
+    AND ohb03 != g_ohb1[l_ac].ohb03
  IF cl_null(l_ohb12_n)  THEN LET l_ohb12_n=0  END IF
  IF cl_null(l_ohb14t_n) THEN LET l_ohb14t_n=0 END IF
  IF cl_null(l_ohb14_n)  THEN LET l_ohb14_n =0 END IF
@@ -17196,18 +17207,18 @@ FUNCTION t700_get_ohb(p_cmd)
  LET g_ohb14t_n = g_ohb14t_n + l_ohb14t_n
  LET g_ohb14_n = g_ohb14_n + l_ohb14_n
  #MOD-B40242 add --end--
- 
-  IF g_oha.oha09 = '3' THEN 
+
+  IF g_oha.oha09 = '3' THEN
     SELECT SUM(omb12) INTO l_omb12 FROM oma_file,omb_file
-     WHERE oma01 = omb01 AND omavoid <> 'Y' 
+     WHERE oma01 = omb01 AND omavoid <> 'Y'
        AND omb31 = g_ohb1[l_ac].ohb31 AND omb32=g_ohb1[l_ac].ohb32
-    IF cl_null(l_omb12) THEN LET l_omb12 = 0 END IF 
+    IF cl_null(l_omb12) THEN LET l_omb12 = 0 END IF
   END IF
- 
+
  LET g_ogb12_1= g_ogb.ogb12
- IF g_oha.oha09 = '3' THEN               #No.MOD-8C0109  
-    LET g_ogb12_1 = g_ogb12_1 - l_omb12  #No.MOD-8C0109 
- END IF                                  #No.MOD-8C0109  
+ IF g_oha.oha09 = '3' THEN               #No.MOD-8C0109
+    LET g_ogb12_1 = g_ogb12_1 - l_omb12  #No.MOD-8C0109
+ END IF                                  #No.MOD-8C0109
  IF cl_null(g_ogb12_1)  THEN LET g_ogb12_1=0  END IF
  IF cl_null(g_ohb12 )   THEN LET g_ohb12 =0   END IF
  IF cl_null(g_ohb14t)   THEN LET g_ohb14t=0   END IF
@@ -17217,7 +17228,7 @@ FUNCTION t700_get_ohb(p_cmd)
  IF cl_null(g_ohb14_n)  THEN LET g_ohb14_n =0 END IF
  IF g_sma.sma115 = 'N' THEN
     LET g_ohb12_1 =g_ohb12+g_ohb12_n     #No.FUN-650108
- 
+
     IF p_cmd='a' THEN
        IF g_oha.oha09 ='5' THEN
           LET g_ohb1[l_ac].ohb12 = 0   #No.FUN-650108
@@ -17236,7 +17247,7 @@ FUNCTION t700_get_ohb(p_cmd)
     END IF
     LET l_ogb12 = l_ogb12 * g_factor
  END IF
- 
+
 #show原出貨量/已確認的銷退量/其他未確認的銷退量
  CALL cl_getmsg('axr-266',g_lang) RETURNING l_msg1
  CALL cl_getmsg('axr-288',g_lang) RETURNING l_msg2
@@ -17245,13 +17256,13 @@ FUNCTION t700_get_ohb(p_cmd)
             l_msg1 CLIPPED,g_ogb.ogb12 USING '######&.##',
             l_msg2 CLIPPED,g_ohb12     USING '######&.##',
             l_msg3 CLIPPED,g_ohb12_n   USING '######&.##'
- 
+
  IF g_gui_type MATCHES "[13]" AND fgl_getenv('GUI_VER') = '6' THEN
     CALL cl_msg(g_msg1)
  ELSE
     DISPLAY g_msg1 CLIPPED AT 2,1
  END IF
- 
+
  LET g_msg1=' '
 #此項次的銷退量不可大於出貨單+項次量
  IF g_sma.sma115 = 'Y' THEN
@@ -17280,20 +17291,20 @@ FUNCTION t700_get_ohb(p_cmd)
         LET g_errno='axr-264' RETURN
     END IF
  END IF
- 
+
 #銷退方式: 1-4: 數量不可為0  5:數量一定為0
  IF g_oha.oha09 !='5' AND g_ohb1[l_ac].ohb12 =0 THEN  #No.FUN-650108
     LET g_flag='N'
     LET g_msg1=g_ohb1[l_ac].ohb31  #No.FUN-650108
     LET g_errno='axm-607' RETURN
  END IF
- 
+
  IF g_oha.oha09='5' AND g_ohb1[l_ac].ohb12 !=0 THEN  #NO.FUN-650108
     LET g_flag='N'
     LET g_msg1=g_ohb1[l_ac].ohb31  #NO.FUN-650108
     LET g_errno='axm-606' RETURN
  END IF
- 
+
 #己確認銷退量+本次異動量不可大於銷退單+項次量
  IF g_sma.sma115 = 'Y' THEN
     IF l_ogb12 - (g_ohb12+g_ohb1[l_ac].ohb12) <0 THEN  #NO.FUN-650108
@@ -17318,28 +17329,28 @@ FUNCTION t700_get_ohb(p_cmd)
        LET g_errno='aap-999' RETURN
     END IF
  END IF
- 
+
  #銷退類型為: "不折讓,不換貨"時,銷退數量<=出貨數量-已立賬數量
- IF g_oha.oha09 = '3' THEN 
-    IF g_sma.sma115 = 'Y' THEN 
+ IF g_oha.oha09 = '3' THEN
+    IF g_sma.sma115 = 'Y' THEN
        IF g_ohb1[l_ac].ohb12 > (l_ogb12 - l_omb12 - g_ohb12 - g_ohb12_n ) THEN
           LET g_flag = 'N'
           LET l_msg1 = cl_getmsg('axm-721',g_lang)
           LET l_msg2 = (l_ogb12 - l_omb12 - g_ohb12 - g_ohb12_n ) USING '##########&.##'
           LET g_msg1 = l_msg1 CLIPPED,l_msg2
           LET g_errno='aap-999' RETURN
-       END IF 
-    ELSE 
+       END IF
+    ELSE
        IF g_ohb1[l_ac].ohb12 > (g_ogb.ogb12 - l_omb12 - g_ohb12 - g_ohb12_n ) THEN
           LET g_flag = 'N'
           LET l_msg1 = cl_getmsg('axm-721',g_lang)
           LET l_msg2 = (g_ogb.ogb12 - l_omb12 - g_ohb12 - g_ohb12_n ) USING '##########&.##'
           LET g_msg1 = l_msg1 CLIPPED,l_msg2
           LET g_errno='aap-999' RETURN
-       END IF 
-    END IF 
+       END IF
+    END IF
  END IF
- 
+
 #此項次的銷退未稅金額不可大於出貨單+項次出貨未稅金額-> 只警告不拒絕
  IF g_ohb1[l_ac].ohb14 > g_ogb.ogb14 THEN   #NO.FUN-650108
     CALL cl_getmsg('axr-269',g_lang) RETURNING l_msg1
@@ -17350,7 +17361,7 @@ FUNCTION t700_get_ohb(p_cmd)
                l_msg3 CLIPPED,g_ohb1[l_ac].ohb14 USING '#####&.##'   #No.FUN-650108
     LET g_errno='aap-999' RETURN
  END IF
- 
+
 #此項次的銷退含稅金額不可大於出貨單+項次出貨含稅金額-> 只警告不拒絕
  IF g_ohb1[l_ac].ohb14t > g_ogb.ogb14t THEN   #NO.FUN-650108
     CALL cl_getmsg('axr-269',g_lang) RETURNING l_msg1
@@ -17361,7 +17372,7 @@ FUNCTION t700_get_ohb(p_cmd)
                l_msg3 CLIPPED,g_ohb1[l_ac].ohb14t USING '#####&.##'   #NO.FUN-650108
     LET g_errno='aap-999' RETURN
  END IF
- 
+
 #己確認銷退含稅金額+本次異動含稅金額不可大於出貨單+項次含稅金額 ->只警告不拒絕
  IF g_ogb.ogb14t - (g_ohb14t+g_ohb1[l_ac].ohb14t) <0 THEN   #NO.FUN-650108
     CALL cl_getmsg('axr-269',g_lang) RETURNING l_msg1
@@ -17372,7 +17383,7 @@ FUNCTION t700_get_ohb(p_cmd)
                l_msg3 CLIPPED,g_ohb1[l_ac].ohb14t USING '#####&.##'   #No.FUN-650108
     LET g_errno='aap-999' RETURN
  END IF
- 
+
 #己確認銷退未稅金額+本次異動未稅金額不可大於出貨單+項次未稅金額->只警告不拒絕
  IF g_ogb.ogb14 - (g_ohb14+g_ohb1[l_ac].ohb14) <0 THEN   #NO.FUN-650108
     CALL cl_getmsg('axr-269',g_lang) RETURNING l_msg1
@@ -17384,20 +17395,20 @@ FUNCTION t700_get_ohb(p_cmd)
     LET g_errno='aap-999' RETURN
  END IF
 END FUNCTION
- 
+
 FUNCTION t700_get_ohb_unit2(p_cmd)
   DEFINE p_cmd    LIKE type_file.chr1          #No.FUN-680137 VARCHAR(1)
   DEFINE l_ohb915_n  LIKE ohb_file.ohb915  #MOD-B40242 add
- 
+
   LET g_errno=' '  LET g_flag='Y'
- 
+
  #已確認的銷退
   SELECT SUM(ohb915)
     INTO g_ohb915
     FROM oha_file,ohb_file
    WHERE oha01=ohb01 AND ohb31=g_ohb1[l_ac].ohb31 AND ohb32=g_ohb1[l_ac].ohb32   #NO.FUN-650108
      AND ohaconf='Y'
- 
+
  #未確認的銷退
   SELECT SUM(ohb915)
     INTO g_ohb915_n
@@ -17412,19 +17423,19 @@ FUNCTION t700_get_ohb_unit2(p_cmd)
   SELECT SUM(ohb915)
     INTO l_ohb915_n
     FROM oha_file,ohb_file
-   WHERE oha01=ohb01 AND ohb31=g_ohb1[l_ac].ohb31 AND ohb32=g_ohb1[l_ac].ohb32 
-     AND ohaconf='N' AND oha01 = g_oha.oha01 
-     AND ohb03 != g_ohb1[l_ac].ohb03 
+   WHERE oha01=ohb01 AND ohb31=g_ohb1[l_ac].ohb31 AND ohb32=g_ohb1[l_ac].ohb32
+     AND ohaconf='N' AND oha01 = g_oha.oha01
+     AND ohb03 != g_ohb1[l_ac].ohb03
   IF cl_null(l_ohb915_n)  THEN LET l_ohb915_n=0  END IF
   LET g_ohb915_n = g_ohb915_n + l_ohb915_n
   #MOD-B40242 add --end--
- 
+
   LET g_ogb915_1=g_ogb.ogb915
- 
+
   IF cl_null(g_ogb915_1) THEN LET g_ogb915_1=0 END IF
   IF cl_null(g_ohb915)   THEN LET g_ohb915=0   END IF
   IF cl_null(g_ohb915_n) THEN LET g_ohb915_n=0 END IF
- 
+
   LET g_ohb915_1=g_ohb915+g_ohb915_n#+g_ohb1[l_ac].ohb915   #NO.FUN-650108
   IF p_cmd='a' THEN
      IF g_oha.oha09 ='5' THEN
@@ -17447,9 +17458,9 @@ FUNCTION t700_get_ohb_unit2(p_cmd)
      END IF
   END IF
   #MOD-B40242 add --end--
- 
+
 END FUNCTION
- 
+
 #DEV-D30046 搬移至saxmt700_sub.4gl--mark--begin
 #FUNCTION t700_y_chk()
 #   DEFINE l_yy,l_mm   LIKE type_file.num5        # No.FUN-680137  SMALLINT
@@ -17457,17 +17468,17 @@ END FUNCTION
 #   DEFINE l_ohb12     LIKE ohb_file.ohb12  #No.9732
 #   DEFINE l_ohb       RECORD LIKE ohb_file.*      #no.FUN-860025
 #   DEFINE l_rvbs06    LIKE rvbs_file.rvbs06       #no.FUN-860025
-#   DEFINE l_rxx04     LIKE rxx_file.rxx04         #No.FUN-870007 
-#   DEFINE l_ohb14t    LIKE ohb_file.ohb14t        #No.FUN-870007     
+#   DEFINE l_rxx04     LIKE rxx_file.rxx04         #No.FUN-870007
+#   DEFINE l_ohb14t    LIKE ohb_file.ohb14t        #No.FUN-870007
 ##  DEFINE l_ohb67     LIKE ohb_file.ohb67         #No.FUN-870007   #FUN-AB0061 mark
 #   DEFINE l_ohb13     LIKE ohb_file.ohb13
 #   DEFINE l_ohb03     LIKE ohb_file.ohb03
 #   #DEFINE l_ohb33     LIKE ohb_file.ohb33  #MOD-A10016 add       #MOD-BA0171 mark
-#   #DEFINE l_ohb34     LIKE ohb_file.ohb34  #MOD-A10016 add       #MOD-BA0171 mark  
+#   #DEFINE l_ohb34     LIKE ohb_file.ohb34  #MOD-A10016 add       #MOD-BA0171 mark
 ##  DEFINE l_imaicd13  LIKE imaicd_file.imaicd13   #FUN-A40022  #FUN-B50096
-#   DEFINE l_ima159    LIKE ima_file.ima159        #FUN-B50096 
+#   DEFINE l_ima159    LIKE ima_file.ima159        #FUN-B50096
 #   DEFINE l_ohb09     LIKE ohb_file.ohb09         #No.FUN-AA0048
-#   DEFINE l_ima154    LIKE ima_file.ima154        #FUN-BC0081 
+#   DEFINE l_ima154    LIKE ima_file.ima154        #FUN-BC0081
 #   DEFINE l_rxe08     LIKE rxe_file.rxe08         #FUN-BC0081
 #   DEFINE l_rxe04     LIKE rxe_file.rxe04         #FUN-BC0081
 #   DEFINE l_rxe05     LIKE rxe_file.rxe05         #FUN-BC0081
@@ -17483,10 +17494,10 @@ END FUNCTION
 #   DEFINE l_gemacti   LIKE gem_file.gemacti       #TQC-C60211
 #   LET g_success = 'Y'
 #  #TQC-C70003 -- add -- begin
-#   IF cl_null(g_oha.oha01) THEN 
-#      CALL cl_err('',-400,0) 
+#   IF cl_null(g_oha.oha01) THEN
+#      CALL cl_err('',-400,0)
 #      LET g_success = 'N'
-#      RETURN 
+#      RETURN
 #   END IF
 #  #TQC-C70003 -- add -- end
 ##TQC-C60211 -- add -- begin
@@ -17510,14 +17521,14 @@ END FUNCTION
 #            RETURN
 #         END IF
 #      END IF
-#      IF NOT cl_confirm('axm-108') THEN 
+#      IF NOT cl_confirm('axm-108') THEN
 #         LET g_success = 'N' #CHI-C80009 add
-#        #ROLLBACK WORK #CHI-C80009 mark 
-#         RETURN 
+#        #ROLLBACK WORK #CHI-C80009 mark
+#         RETURN
 #      END IF
 #   END IF
 #   #CHI-C30118---add---END
-#   
+#
 #  #TQC-BA0032--begin
 #  SELECT COUNT(*) INTO l_cnt FROM gen_file WHERE gen01=g_oha.oha14
 #  IF l_cnt=0 THEN
@@ -17537,12 +17548,12 @@ END FUNCTION
 #          RETURN
 #       END IF
 #   END FOREACH
-#   #No.FUN-AA0048  --End  
+#   #No.FUN-AA0048  --End
 #   #FUN-C40089---begin
 #   SELECT oah08 INTO g_oah08 FROM oah_file WHERE oah01=g_oha.oha31
 #   IF cl_null(g_oah08) THEN
 #      LET g_oah08 = 'Y'
-#   END IF  
+#   END IF
 #   IF g_oah08= 'N' THEN
 #      LET l_cnt = 0
 #      SELECT COUNT(*) INTO l_cnt FROM ohb_file
@@ -17557,7 +17568,7 @@ END FUNCTION
 #   END IF
 #   #FUN-C40089---end
 #
-#  #-----MOD-BA0171--------- 
+#  #-----MOD-BA0171---------
 #  ##MOD-A10016---add---start---
 #  # IF g_oha.oha09 = '6' THEN
 #  #    DECLARE oha09_cs CURSOR FOR
@@ -17577,28 +17588,28 @@ END FUNCTION
 #      IF g_oha.oha85='1' THEN
 #         SELECT SUM(ohb14t) INTO l_ohb14t FROM ohb_file
 #          WHERE ohb01=g_oha.oha01
-#         IF cl_null(l_ohb14t) THEN LET l_ohb14t=0 END IF      
+#         IF cl_null(l_ohb14t) THEN LET l_ohb14t=0 END IF
 ##FUN-AB0061--------------mod----------------str--------------
-##        SELECT SUM(ohb67) INTO l_ohb67 FROM ohb_file                                                                      
-##         WHERE ohb01=g_oha.oha01                  
-##        IF cl_null(l_ohb67) THEN LET l_ohb67=0 END IF                                                                          
-##        IF g_oha.oha213='N' THEN                                                                                            
-##           LET l_ohb67=l_ohb67*(1+g_oha.oha211/100)                                                                         
-##           CALL cl_digcut(l_ohb67,t_azi04) RETURNING l_ohb67                                                               
-##        END IF                                                                                                                
-##        LET l_ohb14t=l_ohb14t-l_ohb67                      
-#         LET l_ohb14t=l_ohb14t 
-##FUN-AB0061--------------mod----------------end-------------                                                                 
-#         CALL cl_digcut(l_ohb14t,t_azi04) RETURNING l_ohb14t    
+##        SELECT SUM(ohb67) INTO l_ohb67 FROM ohb_file
+##         WHERE ohb01=g_oha.oha01
+##        IF cl_null(l_ohb67) THEN LET l_ohb67=0 END IF
+##        IF g_oha.oha213='N' THEN
+##           LET l_ohb67=l_ohb67*(1+g_oha.oha211/100)
+##           CALL cl_digcut(l_ohb67,t_azi04) RETURNING l_ohb67
+##        END IF
+##        LET l_ohb14t=l_ohb14t-l_ohb67
+#         LET l_ohb14t=l_ohb14t
+##FUN-AB0061--------------mod----------------end-------------
+#         CALL cl_digcut(l_ohb14t,t_azi04) RETURNING l_ohb14t
 #         SELECT SUM(rxx04) INTO l_rxx04 FROM rxx_file
-#          WHERE rxx00='03' AND rxx01=g_oha.oha01 
+#          WHERE rxx00='03' AND rxx01=g_oha.oha01
 #            AND rxx03='-1' AND rxxplant=g_oha.ohaplant
 #         IF cl_null(l_rxx04) THEN LET l_rxx04=0 END IF
 #         IF l_ohb14t != l_rxx04 THEN
 #            CALL cl_err('','art-336',0)
 #            LET g_success = 'N'
 #            RETURN
-#         END IF 
+#         END IF
 #      END IF
 #   END IF
 #   #無單身資料不可確認
@@ -17614,7 +17625,7 @@ END FUNCTION
 #&ifdef SLK
 #   IF g_azw.azw04 = '2' THEN
 #       DECLARE ohbslk04_curs CURSOR FOR
-#          SELECT ohbslk03,ohbslk04,ohbslk12 FROM ohbslk_file WHERE ohbslk01 = g_oha.oha01 
+#          SELECT ohbslk03,ohbslk04,ohbslk12 FROM ohbslk_file WHERE ohbslk01 = g_oha.oha01
 #       CALL s_showmsg_init()
 #       FOREACH ohbslk04_curs INTO l_ohbslk03,l_ohbslk04,l_ohbslk12
 #           IF cl_null(l_ohbslk12) OR l_ohbslk12 = 0 THEN
@@ -17651,11 +17662,11 @@ END FUNCTION
 #         END IF
 #      END FOREACH
 #   END IF
-# 
+#
 #   DECLARE t700sub_ohbrvbs CURSOR FOR
 #   SELECT * FROM ohb_file
 #    WHERE ohb01=g_oha.oha01
-# 
+#
 #   FOREACH t700sub_ohbrvbs INTO l_ohb.*
 #     #FUN-A40022--begin--add--------
 #      #IF s_industry('icd') THEN   #FUN-B70061 mark
@@ -17667,9 +17678,9 @@ END FUNCTION
 #     #      IF l_imaicd13 = 'Y' AND cl_null(l_ohb.ohb092)THEN
 #         LET l_ima159 = ''
 #         SELECT ima159 INTO l_ima159 FROM ima_file
-#          WHERE ima01 = l_ohb.ohb04 
-#         IF l_ima159 = '1' AND cl_null(l_ohb.ohb092) 
-#            AND g_oaz.oaz104='Y' THEN 
+#          WHERE ima01 = l_ohb.ohb04
+#         IF l_ima159 = '1' AND cl_null(l_ohb.ohb092)
+#            AND g_oaz.oaz104='Y' THEN
 ##FUN-B50096 ---------------End---------------------
 #            LET g_success = 'N'
 #            CALL cl_err(l_ohb.ohb04,'aim-034',1)
@@ -17682,11 +17693,11 @@ END FUNCTION
 #      LET g_ima918 = ''   #DEV-D30040 add
 #      LET g_ima921 = ''   #DEV-D30040 add
 #      LET g_ima930 = ''   #DEV-D30040 add
-#      SELECT ima918,ima921,ima930 INTO g_ima918,g_ima921,g_ima930 #DEV-D30059 add ima930 
+#      SELECT ima918,ima921,ima930 INTO g_ima918,g_ima921,g_ima930 #DEV-D30059 add ima930
 #        FROM ima_file
 #       WHERE ima01 = l_ohb.ohb04
 #         AND imaacti = "Y"
-#      
+#
 #         IF cl_null(g_ima930) THEN LET g_ima930 = 'N' END IF  #DEV-D30059 add
 #
 #         IF g_ima918 = "Y" OR g_ima921 = "Y" THEN
@@ -17694,11 +17705,11 @@ END FUNCTION
 #              FROM rvbs_file
 #             WHERE rvbs00 = g_prog
 #               AND rvbs01 = l_ohb.ohb01
-#               AND rvbs02 = l_ohb.ohb03    
-#               AND rvbs13 = 0   
+#               AND rvbs02 = l_ohb.ohb03
+#               AND rvbs13 = 0
 #              #AND rvbs09 = -1   #TQC-B90236  mark
-#               AND rvbs09 = 1    #TQC-B90236   add 
-#         
+#               AND rvbs09 = 1    #TQC-B90236   add
+#
 #            IF cl_null(l_rvbs06) THEN
 #               LET l_rvbs06 = 0
 #            END IF
@@ -17709,10 +17720,10 @@ END FUNCTION
 #            CALL s_umfchk(l_ohb.ohb04,l_ohb.ohb05,l_img09) RETURNING g_cnt,l_ohb05_fac
 #            IF g_cnt = '1' THEN
 #               LET  l_ohb05_fac = 1
-#            END IF            
-#           #CHI-C30064---End---add          
+#            END IF
+#           #CHI-C30064---End---add
 #           #IF (l_ohb.ohb12 * l_ohb.ohb05_fac) <> l_rvbs06 THEN
-#            IF (g_ima930 = 'Y' and l_rvbs06 <> 0) OR g_ima930 = 'N' THEN  #DEV-D30040                  
+#            IF (g_ima930 = 'Y' and l_rvbs06 <> 0) OR g_ima930 = 'N' THEN  #DEV-D30040
 #               IF (l_ohb.ohb12 * l_ohb05_fac) <> l_rvbs06 THEN #CHI-C30064
 #                  LET g_success = "N"
 #                  CALL cl_err(l_ohb.ohb04,"aim-011",1)
@@ -17730,23 +17741,23 @@ END FUNCTION
 #      IF g_aza.aza50='Y' THEN
 #       SELECT count(*) INTO l_cnt FROM azf_file
 #        WHERE azf01=l_ohb.ohb50
-#          AND azf02='2'     
+#          AND azf02='2'
 #          AND azfacti='Y'
-#          AND azf09='2'      
+#          AND azf09='2'
 #      ELSE
 #       SELECT count(*) INTO l_cnt FROM azf_file
 #        WHERE azf01=l_ohb.ohb50
-#          AND azf02='2'   
+#          AND azf02='2'
 #          AND azfacti='Y'
-#      END IF 
-#      IF l_cnt=0 THEN  
+#      END IF
+#      IF l_cnt=0 THEN
 #         LET g_success = 'N'
-#         CALL cl_err('ohb50','axm-777',0)  
-#         RETURN 
+#         CALL cl_err('ohb50','axm-777',0)
+#         RETURN
 #      END IF
 #      #-----END MOD-A30185-----
 #   END FOREACH
-# 
+#
 #   SELECT * INTO g_oha.* FROM oha_file WHERE oha01 = g_oha.oha01
 #   IF g_oha.ohaconf='Y' THEN LET g_success='N' CALl cl_err('','9023',0) RETURN END IF   #FUN-650108
 #   IF g_oaz.oaz03 = 'Y' AND g_sma.sma53 IS NOT NULL
@@ -17755,13 +17766,13 @@ END FUNCTION
 #      LET g_success = 'N'   #FUN-580113
 #      RETURN
 #   END IF
-# 
+#
 #   IF g_oha.oha01 IS NULL THEN
 #      CALL cl_err('',-400,0)
 #      LET g_success = 'N'   #FUN-580113
 #      RETURN
 #   END IF
-# 
+#
 #   # ---若現行年月大於出貨單/銷退單之年月--不允許確認-----
 #   CALL s_yp(g_oha.oha02) RETURNING l_yy,l_mm
 #   IF (l_yy > g_sma.sma51) OR (l_yy = g_sma.sma51 AND l_mm > g_sma.sma52) THEN
@@ -17774,7 +17785,7 @@ END FUNCTION
 #      LET g_success = 'N'   #FUN-580113
 #      RETURN
 #   END IF
-# 
+#
 #  IF g_oha.oha09 = '1' OR g_oha.oha09 = '4' OR g_oha.oha09 = '5' THEN
 #     DECLARE t700_y_price CURSOR FOR
 #      SELECT ohb03,ohb13 FROM ohb_file WHERE ohb01 = g_oha.oha01
@@ -17791,7 +17802,7 @@ END FUNCTION
 #   DECLARE t700sel_ohb CURSOR FOR
 #   SELECT * FROM ohb_file
 #    WHERE ohb01=g_oha.oha01
-#   INITIALIZE l_ohb.* TO NULL 
+#   INITIALIZE l_ohb.* TO NULL
 #   LET g_sql = "SELECT rxe04,rxe05 ",
 #               "  FROM rxe_file ",
 #               " WHERE rxe01 = ? ",
@@ -17800,25 +17811,25 @@ END FUNCTION
 #   PREPARE selrxe_pre FROM g_sql
 #   DECLARE selrxe_cs CURSOR FOR selrxe_pre
 #   FOREACH t700sel_ohb INTO l_ohb.*
-#      SELECT ima154 INTO l_ima154 
-#        FROM ima_file 
+#      SELECT ima154 INTO l_ima154
+#        FROM ima_file
 #       WHERE ima01 = l_ohb.ohb04
-#      IF l_ima154 = 'Y' THEN 
+#      IF l_ima154 = 'Y' THEN
 #         SELECT sum(rxe08) INTO l_rxe08
-#           FROM rxe_file 
-#          WHERE rxe00 ='03' 
+#           FROM rxe_file
+#          WHERE rxe00 ='03'
 #            AND rxe01 = l_ohb.ohb01
 #            AND rxe02 = l_ohb.ohb03
 #         IF cl_null(l_rxe08) THEN
 #            LET l_rxe08 = 0
-#         END IF 
-#         IF l_rxe08 <> l_ohb.ohb12 THEN 
+#         END IF
+#         IF l_rxe08 <> l_ohb.ohb12 THEN
 #            CALL cl_err(l_ohb.ohb04,'alm1540',0)
-#            LET g_success = 'N' 
+#            LET g_success = 'N'
 #            RETURN
-#         END IF 
-#      END IF       
-#      FOREACH selrxe_cs using l_ohb.ohb01,l_ohb.ohb03 INTO l_rxe04,l_rxe05 
+#         END IF
+#      END IF
+#      FOREACH selrxe_cs using l_ohb.ohb01,l_ohb.ohb03 INTO l_rxe04,l_rxe05
 #         SELECT COUNT(*) INTO l_cnt
 #           FROM lqe_file
 #          WHERE lqe01 BETWEEN l_rxe04 AND l_rxe05
@@ -17827,37 +17838,37 @@ END FUNCTION
 #            CALL cl_err('','alm1503',0)
 #            LET g_success = 'N'
 #            RETURN
-#         END IF 
-#      END FOREACH      
-#   END FOREACH     
+#         END IF
+#      END FOREACH
+#   END FOREACH
 ##FUN-BC0081 add end ---
-##FUN-C10053 add begin ---  
+##FUN-C10053 add begin ---
 #   IF g_success = 'Y' THEN
 #      CALL t700_ins_ogj()
 #      IF g_success = 'N' THEN
 #         RETURN
-#      END IF 
-#   END IF 
+#      END IF
+#   END IF
 ##FUN-C10053 add end ---
 #
 #  CALL t700_y1()  #FUN-C20116 add
 #
 #END FUNCTION
 #DEV-D30046 搬移至saxmt700_sub.4gl--mark--end
- 
+
 FUNCTION t700_get_ohb_unit1(p_cmd)
   DEFINE p_cmd    LIKE type_file.chr1          #No.FUN-680137 VARCHAR(1)
   DEFINE l_ohb912_n  LIKE ohb_file.ohb912  #MOD-B40242 add
- 
+
   LET g_errno=' '  LET g_flag='Y'
- 
+
  #已確認的銷退
   SELECT SUM(ohb912)
     INTO g_ohb912
     FROM oha_file,ohb_file
    WHERE oha01=ohb01 AND ohb31=g_ohb1[l_ac].ohb31 AND ohb32=g_ohb1[l_ac].ohb32   #NO.FUN-650108
      AND ohaconf='Y'
- 
+
  #未確認的銷退
   SELECT SUM(ohb912)
     INTO g_ohb912_n
@@ -17872,19 +17883,19 @@ FUNCTION t700_get_ohb_unit1(p_cmd)
   SELECT SUM(ohb912)
     INTO l_ohb912_n
     FROM oha_file,ohb_file
-   WHERE oha01=ohb01 AND ohb31=g_ohb1[l_ac].ohb31 AND ohb32=g_ohb1[l_ac].ohb32 
-     AND ohaconf='N' AND oha01 = g_oha.oha01 
-     AND ohb03 != g_ohb1[l_ac].ohb03 
+   WHERE oha01=ohb01 AND ohb31=g_ohb1[l_ac].ohb31 AND ohb32=g_ohb1[l_ac].ohb32
+     AND ohaconf='N' AND oha01 = g_oha.oha01
+     AND ohb03 != g_ohb1[l_ac].ohb03
   IF cl_null(l_ohb912_n)  THEN LET l_ohb912_n=0  END IF
   LET g_ohb912_n = g_ohb912_n + l_ohb912_n
   #MOD-B40242 add --end--
- 
+
   LET g_ogb912_1=g_ogb.ogb912
- 
+
   IF cl_null(g_ogb912_1) THEN LET g_ogb912_1=0 END IF
   IF cl_null(g_ohb912)   THEN LET g_ohb912=0   END IF
   IF cl_null(g_ohb912_n) THEN LET g_ohb912_n=0 END IF
- 
+
   LET g_ohb912_1=g_ohb912+g_ohb912_n#+g_ohb1[l_ac].ohb912   #No.FUN-650108
   IF p_cmd='a' THEN
      IF g_oha.oha09 ='5' THEN
@@ -17907,29 +17918,29 @@ FUNCTION t700_get_ohb_unit1(p_cmd)
      END IF
   END IF
   #MOD-B40242 add --end--
- 
+
 END FUNCTION
- 
+
 FUNCTION t700_get_ohb_unit3(p_cmd)
   DEFINE p_cmd    LIKE type_file.chr1          #No.FUN-680137 VARCHAR(1)
   DEFINE l_ohb917_n  LIKE ohb_file.ohb917  #MOD-B40242 add
- 
+
   LET g_errno=' '  LET g_flag='Y'
- 
+
  #已確認的銷退
   SELECT SUM(ohb917)
     INTO g_ohb917
     FROM oha_file,ohb_file
    WHERE oha01=ohb01 AND ohb31=g_ohb1[l_ac].ohb31 AND ohb32=g_ohb1[l_ac].ohb32   #No.FUN-650108
      AND ohaconf='Y'
- 
+
  #未確認的銷退
   SELECT SUM(ohb917)
     INTO g_ohb917_n
     FROM oha_file,ohb_file
    WHERE oha01=ohb01 AND ohb31=g_ohb1[l_ac].ohb31 AND ohb32=g_ohb1[l_ac].ohb32   #No.FUN-650108
      AND ohaconf='N' AND oha01 !=g_oha.oha01
- 
+
   #MOD-B40242 add --start--
   #此張單已輸入的項次
   IF cl_null(g_ohb917_n)  THEN LET g_ohb917_n=0  END IF
@@ -17937,19 +17948,19 @@ FUNCTION t700_get_ohb_unit3(p_cmd)
   SELECT SUM(ohb917)
     INTO l_ohb917_n
     FROM oha_file,ohb_file
-   WHERE oha01=ohb01 AND ohb31=g_ohb1[l_ac].ohb31 AND ohb32=g_ohb1[l_ac].ohb32 
-     AND ohaconf='N' AND oha01 = g_oha.oha01 
-     AND ohb03 != g_ohb1[l_ac].ohb03 
+   WHERE oha01=ohb01 AND ohb31=g_ohb1[l_ac].ohb31 AND ohb32=g_ohb1[l_ac].ohb32
+     AND ohaconf='N' AND oha01 = g_oha.oha01
+     AND ohb03 != g_ohb1[l_ac].ohb03
   IF cl_null(l_ohb917_n)  THEN LET l_ohb917_n=0  END IF
   LET g_ohb917_n = g_ohb917_n + l_ohb917_n
   #MOD-B40242 add --end--
 
   LET g_ogb917_1=g_ogb.ogb917
- 
+
   IF cl_null(g_ogb917_1) THEN LET g_ogb917_1=0 END IF
   IF cl_null(g_ohb917)   THEN LET g_ohb917=0   END IF
   IF cl_null(g_ohb917_n) THEN LET g_ohb917_n=0 END IF
- 
+
   LET g_ohb917_1=g_ohb917+g_ohb917_n#+g_ohb1[l_ac].ohb917  #No.FUN-650108
   IF p_cmd='a' THEN
      IF g_oha.oha09 ='5' THEN
@@ -17958,18 +17969,18 @@ FUNCTION t700_get_ohb_unit3(p_cmd)
         LET g_ohb1[l_ac].ohb917= g_ogb917_1- g_ohb917_1   #No.FUN-650108
      END IF
   END IF
- 
+
 END FUNCTION
- 
+
 # mandy增加作廢/作廢還原功能
 FUNCTION t700_x(p_type)
 DEFINE p_type    LIKE type_file.chr1   #FUN-D20025 add '1' 作废  '2' 取消作废
 DEFINE l_ohaconf_o LIKE oha_file.ohaconf
-DEFINE l_cnt  LIKE type_file.num5   #MOD-7C0062 
+DEFINE l_cnt  LIKE type_file.num5   #MOD-7C0062
 #DEFINE l_imaicd04   LIKE imaicd_file.imaicd04       #NO.FUN-7B0015 #FUN-BA0051 mark
 #DEFINE l_imaicd08   LIKE imaicd_file.imaicd08       #NO.FUN-7B0015 #FUN-BA0051 mark
-DEFINE l_flag  LIKE type_file.num5   #CHI-940056 
- 
+DEFINE l_flag  LIKE type_file.num5   #CHI-940056
+
    IF s_shut(0) THEN RETURN END IF
    IF cl_null(g_oha.oha01) THEN CALL cl_err('',-400,0) RETURN END IF
    IF g_oha.oha55 MATCHES '[Ss1]' THEN            #FUN-550040
@@ -17984,17 +17995,17 @@ DEFINE l_flag  LIKE type_file.num5   #CHI-940056
     END IF
     #FUN-D20025 ----------end
    BEGIN WORK
- 
+
    LET g_success='Y'
- 
+
    OPEN t700_cl USING g_oha.oha01
    IF SQLCA.sqlcode THEN
       CALL cl_err(g_oha.oha01,SQLCA.sqlcode,0)      #資料被他人LOCK
-      CLOSE t700_cl 
-      ROLLBACK WORK 
+      CLOSE t700_cl
+      ROLLBACK WORK
       RETURN
    END IF
- 
+
    FETCH t700_cl INTO g_oha.*          #鎖住將被更改或取消的資料
    IF SQLCA.sqlcode THEN
       CALL cl_err(g_oha.oha01,SQLCA.sqlcode,0)      #資料被他人LOCK
@@ -18003,7 +18014,7 @@ DEFINE l_flag  LIKE type_file.num5   #CHI-940056
    #-->確認不可作廢
    IF g_oha.ohaconf = 'Y' THEN CALL cl_err('',9023,0) RETURN END IF
    LET l_ohaconf_o=g_oha.ohaconf
- 
+
    IF NOT cl_void(0,0,g_oha.ohaconf) THEN
       RETURN
    ELSE
@@ -18036,7 +18047,7 @@ DEFINE l_flag  LIKE type_file.num5   #CHI-940056
          END IF  #MOD-7C0062
       END IF
    END IF
- 
+
    CLOSE t700_cl
    IF l_ohaconf_o<>'X' THEN
       #CALL t700_chstatus('X')  #FUN-550051   #DEV-D30046 --mark
@@ -18046,26 +18057,26 @@ DEFINE l_flag  LIKE type_file.num5   #CHI-940056
       CALL saxmt700sub_chstatus('N',g_oha.oha01)  #DEV-D30046 --add
    END IF
    IF g_success='N' THEN ROLLBACK WORK RETURN END IF
- 
+
    COMMIT WORK
- 
- 
+
+
    CALL cl_flow_notify(g_oha.oha01,'V')
- 
+
 END FUNCTION
- 
+
 #檢查是否為備品資料 no.7168
 FUNCTION t700_chkoeo(p_oeo01,p_oeo03,p_oeo04)
   DEFINE p_oeo01 LIKE oeo_file.oeo01
   DEFINE p_oeo03 LIKE oeo_file.oeo03
   DEFINE p_oeo04 LIKE oeo_file.oeo04
- 
+
   SELECT COUNT(*) INTO g_cnt FROM oeo_file
    WHERE oeo01 = p_oeo01 AND oeo03 = p_oeo03
      AND oeo04 = p_oeo04 AND oeo08 = '2'
   IF g_cnt > 0 THEN RETURN 1 ELSE RETURN 0 END IF
 END FUNCTION
- 
+
 #DEV-D30046 搬移至saxmt700_sub.4gl--mark--begin
 #FUNCTION t700_z(p_cmd)
 #   DEFINE l_cnt  LIKE type_file.num5   #MOD-640344        #No.FUN-680137 SMALLINT
@@ -18077,14 +18088,14 @@ END FUNCTION
 #   DEFINE l_ohb14   LIKE ohb_file.ohb14
 #   DEFINE l_ohb14t  LIKE ohb_file.ohb14t
 #   DEFINE l_ohb1002 LIKE ohb_file.ohb1002
-#   DEFINE l_tqy02   LIKE tqy_file.tqy02  
-#   DEFINE l_tqz02   LIKE tqz_file.tqz02   
+#   DEFINE l_tqy02   LIKE tqy_file.tqy02
+#   DEFINE l_tqz02   LIKE tqz_file.tqz02
 #   DEFINE l_ohg     RECORD LIKE ohb_file.*   #FUN-BC0081
 #   DEFINE l_rxe04   LIKE rxe_file.rxe04    #FUN-BC0081
 #   DEFINE l_sql     STRING                 #FUN-BC0081
 #   DEFINE l_rxe05   LIKE rxe_file.rxe05    #FUN-BC0081
 #   DEFINE l_rxe     RECORD LIKE rxe_file.* #FUN-BC0081
-#   DEFINE l_ima154  LIKE ima_file.ima154   #FUN-BC0081  
+#   DEFINE l_ima154  LIKE ima_file.ima154   #FUN-BC0081
 #   DEFINE l_lqe01   LIKE lqe_file.lqe01    #FUN-BC0081
 #&ifdef SLK
 #  DEFINE l_ogbslk04 LIKE ogbslk_file.ogbslk04   #FUN-B90103
@@ -18098,7 +18109,7 @@ END FUNCTION
 #   LET g_cmd = p_cmd
 #   #  #用oha1015為判斷,不再用oha1018,可以做銷退還原
 #   IF g_oha.oha05 = '4' THEN
-#       IF g_oha.oha1015='Y' THEN   
+#       IF g_oha.oha1015='Y' THEN
 #         LET g_success = 'N'   #MOD-950186
 #         CALL cl_err('','atm-258',1)
 #         RETURN
@@ -18136,15 +18147,15 @@ END FUNCTION
 #   #No.TQC-AA0079  --Begin
 #   #IF g_oha.oha94 != 'N	'THEN
 #   IF g_oha.oha94 != 'N' THEN
-#   #No.TQC-AA0079  --End  
+#   #No.TQC-AA0079  --End
 #      CALL cl_err('','axm-741',0)
 #      RETURN
-#   END IF 
-##No.FUN-A50071 -----end----- 
-# 
+#   END IF
+##No.FUN-A50071 -----end-----
+#
 ##FUN-C40018 add START
 #   #單據若自於儲值卡註銷,不可扣帳還原
-#   LET l_cnt = 0 
+#   LET l_cnt = 0
 #   SELECT COUNT(*) INTO l_cnt FROM lpv_file
 #     WHERE lpv13 = g_oha.oha01
 #   IF l_cnt > 0 THEN
@@ -18152,7 +18163,7 @@ END FUNCTION
 #     RETURN
 #   END IF
 ##FUN-C40018 add END
-# 
+#
 #   #控管若換貨訂單已產生者,不可異動!
 #   LET l_cnt = 0
 #   SELECT COUNT(*) INTO l_cnt
@@ -18173,31 +18184,31 @@ END FUNCTION
 #         CALL cl_err(g_oha.oha01,'axm-299',0) RETURN
 #      END IF
 #     #IF g_oha.oha44 = 'Y' THEN  #CHI-8B0048 add  #若為扣帳時失敗,不再詢問是否要執行還原transation #MOD-B30464 mark
-#         IF NOT cl_sure(10,10) THEN 
+#         IF NOT cl_sure(10,10) THEN
 #            LET g_success = 'N'   #MOD-950186
-#            RETURN 
+#            RETURN
 #         END IF
-#     #END IF                      #CHI-8B0048 add #MOD-B30464 mark 
-#      IF t700_chkpoz() THEN 
+#     #END IF                      #CHI-8B0048 add #MOD-B30464 mark
+#      IF t700_chkpoz() THEN
 #         LET g_success = 'N'   #MOD-950186
-#         RETURN 
+#         RETURN
 #      END IF
-#      IF g_oax.oax07 = 'Y' THEN        #FUN-670007 
+#      IF g_oax.oax07 = 'Y' THEN        #FUN-670007
 #          CALL t700_undo_muticarry()
 #      END IF                           #FUN-670007
 ##CHI-C80009---mark---START
-##     IF g_poz.poz011 = '1' THEN 
+##     IF g_poz.poz011 = '1' THEN
 ##        LET g_success = 'N'   #MOD-950186
-##        RETURN 
+##        RETURN
 ##     END IF
 ##CHI-C80009---mark-----END
 #      SELECT * INTO g_oha.* FROM oha_file WHERE oha01 = g_oha.oha01
 #      CALL t700_chspic()
 #      #若拋轉還原未成功，則不可做扣帳還原
-#      IF g_oha.oha44 ='Y' THEN 
+#      IF g_oha.oha44 ='Y' THEN
 #         LET g_success = 'N'   #MOD-950186
-#         CALL cl_err('','tri-013',1) 
-#         RETURN 
+#         CALL cl_err('','tri-013',1)
+#         RETURN
 #      END IF
 #   END IF
 ##FUN-BC0081 begin ---
@@ -18206,14 +18217,14 @@ END FUNCTION
 #               "   AND rxe01 = ? AND rxe02 = ? "
 #   PREPARE sel_rxe_p1 FROM l_sql
 #   DECLARE sel_rxe_c1 CURSOR FOR sel_rxe_p1
-#   LET g_success = 'Y'   
-#   DECLARE ohb_s_c_1 CURSOR FOR 
+#   LET g_success = 'Y'
+#   DECLARE ohb_s_c_1 CURSOR FOR
 #      SELECT * FROM ohb_file WHERE ohb01 = g_oha.oha01
 #   DECLARE rxe_s_c   CURSOR FOR
-#      SELECT * FROM rxe_file WHERE rxe01 = ? AND rxe02 = ?  
+#      SELECT * FROM rxe_file WHERE rxe01 = ? AND rxe02 = ?
 #   LET l_sql = "SELECT lqe01 FROM lqe_file ",
 #               " WHERE lqe01 >= ? AND lqe01 <= ? AND lqe17 <> '2' AND lqe13 = '",g_oha.ohaplant,"'"
-#   PREPARE sel_lqe_p FROM l_sql 
+#   PREPARE sel_lqe_p FROM l_sql
 #   DECLARE lqe_s_c  CURSOR FOR sel_lqe_p
 #   CALL s_showmsg_init()
 #   FOREACH ohb_s_c_1 INTO l_ohg.*
@@ -18222,13 +18233,13 @@ END FUNCTION
 #         LET g_success = 'N'
 #         EXIT FOREACH
 #      END IF
-#      SELECT * FROM rxe_file 
+#      SELECT * FROM rxe_file
 #       WHERE rxe00 = '03'
-#         AND rxe01 = l_ohg.ohb01 
-#         AND rxe02 = l_ohg.ohb03 
+#         AND rxe01 = l_ohg.ohb01
+#         AND rxe02 = l_ohg.ohb03
 #      IF SQLCA.sqlcode = 100 THEN
 #         EXIT FOREACH
-#      END IF 
+#      END IF
 #      FOREACH rxe_s_c USING l_ohg.ohb01,l_ohg.ohb03 INTO l_rxe.*
 #         IF SQLCA.sqlcode THEN
 #            CALL cl_err('foreach rxe_s_c',SQLCA.sqlcode,1)
@@ -18243,15 +18254,15 @@ END FUNCTION
 #            END IF
 #            CALL s_errmsg(l_lqe01,"","","alm1541",1)
 #            LET g_success = 'N'
-#         END FOREACH           
+#         END FOREACH
 #      END FOREACH
-#      IF g_success = 'N' THEN 
-#         EXIT FOREACH 
-#      END IF 
+#      IF g_success = 'N' THEN
+#         EXIT FOREACH
+#      END IF
 #      SELECT ima154 INTO l_ima154
-#        FROM ima_file 
+#        FROM ima_file
 #       WHERE ima01 = l_ohg.ohb04
-#       IF l_ima154 ='Y' THEN 
+#       IF l_ima154 ='Y' THEN
 #          FOREACH sel_rxe_c1 USING l_ohg.ohb01,l_ohg.ohb03 INTO l_rxe04,l_rxe05
 #             IF SQLCA.sqlcode THEN
 #                CALL cl_err('foreach sel_rxe_c1',SQLCA.sqlcode,1)
@@ -18262,27 +18273,27 @@ END FUNCTION
 #                                 lqe10 = '',
 #                                 lqe17 = '1'
 #              WHERE lqe01 >= l_rxe04
-#                AND lqe01 <= l_rxe05 
+#                AND lqe01 <= l_rxe05
 #             IF SQLCA.sqlcode OR SQLCA.sqlerrd[3] = 0 THEN
 #                CALL s_errmsg("lqe09,lqe10,lqe17",SQLCA.sqlcode,"","",1)
 #                LET g_success = 'N'
-#             END IF   
-#          END FOREACH           
-#       END IF  
-#   END FOREACH 
+#             END IF
+#          END FOREACH
+#       END IF
+#   END FOREACH
 ##  #FUN-C50136-add-str--
 ##  IF g_oaz.oaz96 ='Y' THEN
 ##     CALL s_ccc_oia07('G',g_oha.oha03) RETURNING l_oia07
 ##     IF l_oia07 = '1' THEN
 ##        CALL s_ccc_rback(g_oha.oha03,'G',g_oha.oha01,0,'')
 ##     END IF
-##  END IF       
+##  END IF
 ##  #FUN-C50136-add-end--
 #   CALL s_showmsg()
-#   IF g_success = 'N' THEN         
+#   IF g_success = 'N' THEN
 #      RETURN
-#   END IF   
-##FUN-BC0081 end --- 
+#   END IF
+##FUN-BC0081 end ---
 #   IF g_oha.ohapost='N' THEN
 #      LET g_success = 'N'   #MOD-950186
 #      CALL cl_err(g_oha.oha01,'axm-299',0)
@@ -18340,7 +18351,7 @@ END FUNCTION
 #   SELECT oha56,ohapost INTO g_oha.oha56,g_oha.ohapost FROM oha_file   #No.FUN-740016
 #    WHERE oha01 = g_oha.oha01
 #   DISPLAY BY NAME g_oha.ohapost,g_oha.oha56   #No.FUN-740016
-#   IF g_oha.oha05='4' THEN    
+#   IF g_oha.oha05='4' THEN
 #      SELECT oha1015,oha1018 FROM oha_file
 #       WHERE oha01 = g_oha.oha01
 #      DISPLAY BY NAME g_oha.oha1015,g_oha.oha1018
@@ -18350,33 +18361,33 @@ END FUNCTION
 #      WHERE ohb01 = g_oha.oha01
 #    FOREACH t700_s1_c3 INTO b_ohb.*
 #     IF g_aza.aza50='Y' THEN
-#      IF b_ohb.ohb1005='2' THEN                                                  
-#       IF b_ohb.ohb1010='Y' THEN                                                
-#          UPDATE tqw_file                                                       
-#             SET tqw081=tqw081+b_ohb.ohb14t                                     
-#           WHERE tqw01=b_ohb.ohb1007                                            
-#        ELSE                                                                     
-#          UPDATE tqw_file                                                       
-#             SET tqw081=tqw081+b_ohb.ohb14                                      
-#           WHERE tqw01=b_ohb.ohb1007                                            
-#        END IF                                                                   
-#      END IF                                                                     
-#     END IF                                                                      
+#      IF b_ohb.ohb1005='2' THEN
+#       IF b_ohb.ohb1010='Y' THEN
+#          UPDATE tqw_file
+#             SET tqw081=tqw081+b_ohb.ohb14t
+#           WHERE tqw01=b_ohb.ohb1007
+#        ELSE
+#          UPDATE tqw_file
+#             SET tqw081=tqw081+b_ohb.ohb14
+#           WHERE tqw01=b_ohb.ohb1007
+#        END IF
+#      END IF
+#     END IF
 #    END FOREACH
-# 
+#
 #   IF g_oha.ohapost = "Y" THEN
 #      DECLARE t700_s1_c2 CURSOR FOR SELECT * FROM ohb_file
 #        WHERE ohb01 = g_oha.oha01
-# 
+#
 #      LET g_imm01 = ""
 #      LET g_success = "Y"
 #      BEGIN WORK
-# 
+#
 #      FOREACH t700_s1_c2 INTO b_ohb.*
 #         IF STATUS THEN
 #            EXIT FOREACH
 #         END IF
-# 
+#
 #         IF g_sma.sma115 = 'Y' THEN
 #            IF g_ima906 = '2' THEN  #子母單位
 #               LET g_unit_arr[1].unit= b_ohb.ohb910
@@ -18392,7 +18403,7 @@ END FUNCTION
 #            END IF
 #         END IF
 #      END FOREACH
-# 
+#
 #      IF g_success = "Y" AND NOT cl_null(g_imm01) THEN
 #         COMMIT WORK
 #         LET g_msg="aimt324 '",g_imm01,"'"
@@ -18424,7 +18435,7 @@ END FUNCTION
 #         IF SQLCA.sqlcode OR SQLCA.SQLERRD[3]=0 THEN
 #            LET g_showmsg = b_ohbslk.ohbslk31,"/",b_ohbslk.ohbslk32
 #            CALL s_errmsg('ogbslk01,ogbslk03',g_showmsg,'upd ogbslk63,64',STATUS,1)
-#            LET g_success = 'N' 
+#            LET g_success = 'N'
 #            EXIT FOREACH
 #         END IF
 #      END IF
@@ -18436,7 +18447,7 @@ END FUNCTION
 #       WHERE oebslk01=b_ohbslk.ohbslk33 AND oebslk03=b_ohbslk.ohbslk34
 #      IF STATUS THEN
 #         CALL s_errmsg('oebslk01,oebslk03',g_showmsg,'sel oebslk',STATUS,1)
-#         LET g_success = 'N' 
+#         LET g_success = 'N'
 #         EXIT FOREACH
 #      END IF
 #      IF b_ohbslk.ohbslk04 = g_oebslk.oebslk04 THEN      #銷退品號與訂單品號相同才update
@@ -18449,7 +18460,7 @@ END FUNCTION
 #         IF STATUS THEN
 #            LET g_showmsg = b_ohbslk.ohbslk33,"/",b_ohbslk.ohbslk34
 #            CALL s_errmsg('oebslk01,oebslk03',g_showmsg,'upd oebslk25',STATUS,1)
-#            LET g_success = 'N' 
+#            LET g_success = 'N'
 #            EXIT FOREACH
 #         END IF
 #      END IF
@@ -18457,14 +18468,14 @@ END FUNCTION
 #  END FOREACH
 #&endif
 ##FUN-B90103---------end--------------------------
-# 
+#
 #END FUNCTION
-# 
+#
 ##檢查多角流程代碼資料
 #FUNCTION t700_chkpoz()
 #DEFINE l_oea01 LIKE oea_file.oea01
 #DEFINE l_oga01 LIKE oga_file.oga01
-# 
+#
 #   IF cl_null(g_oha.oha16) THEN
 #    SELECT COUNT(*) INTO g_cnt FROM ohb_file
 #     WHERE ohb01=g_oha.oha01
@@ -18478,7 +18489,7 @@ END FUNCTION
 #   ELSE
 #      LET l_oga01 = g_oha.oha16
 #   END IF
-# 
+#
 #   SELECT oga99[1,8] INTO g_flow FROM oga_file WHERE oga01 = l_oga01
 #   LET g_flow=g_flow CLIPPED #No.8881
 #   SELECT * INTO g_poz.* FROM poz_file WHERE poz01 = g_flow
@@ -18486,19 +18497,19 @@ END FUNCTION
 #      CALL cl_err3("sel","poz_file",g_flow,"","axm-318","","",1)  #No.FUN-650108
 #      RETURN 1
 #   END IF
-# 
+#
 #   IF g_oha.oha05='2' AND g_poz.poz00='2' THEN
 #      CALL cl_err(g_flow,'tri-008',1) RETURN 1
 #   END IF
 #   IF g_oha.oha05='3' AND g_poz.poz00='1' THEN
 #      CALL cl_err(g_flow,'tri-008',1) RETURN 1
 #   END IF
-# 
+#
 #   RETURN 0
-# 
+#
 #END FUNCTION
 #DEV-D30046 搬移至saxmt700_sub.4gl--mark--end
- 
+
 #檢查最終站
 FUNCTION t700_last()
 DEFINE l_last        LIKE poy_file.poy02
@@ -18508,9 +18519,9 @@ DEFINE l_poz19       LIKE poz_file.poz19   #CHI-8B0053
 DEFINE l_break       LIKE poy_file.poy02   #CHI-8B0053
 DEFINE l_now         LIKE poy_file.poy02   #CHI-8B0053
 DEFINE l_err         LIKE type_file.chr1   #CHI-8B0053
- 
+
   LET l_err = "0"   #CHI-8B0053
- 
+
   SELECT MAX(poy02) INTO l_last FROM poy_file
    WHERE poy01 = g_flow
      AND poy02 <> 99    #MOD-830228 add
@@ -18518,24 +18529,24 @@ DEFINE l_err         LIKE type_file.chr1   #CHI-8B0053
      CALL cl_err3("sel","poy_file",g_flow,"","axm-318","","",1)  #No.FUN-650108
      RETURN ''
   END IF
- 
+
   SELECT poy04 INTO l_last_plant FROM poy_file
    WHERE poy01 = g_flow AND poy02 = l_last
- 
+
    IF cl_null(l_last_plant) THEN
       LET l_err ="1"
       CALL cl_err('','axm-318',1)
    END IF
- 
+
    SELECT poz18,poz19 INTO l_poz18,l_poz19 FROM poz_file
     WHERE poz01 = g_flow
    IF l_poz19 = "Y" THEN
       SELECT poy02 INTO l_break FROM poy_file
        WHERE poy04 = l_poz18
- 
+
       SELECT poy02 INTO l_now FROM poy_file
        WHERE poy04 = g_plant
- 
+
       IF l_last_plant != l_now THEN
          IF l_now > l_break THEN
             LET l_err ="1"
@@ -18550,11 +18561,11 @@ DEFINE l_err         LIKE type_file.chr1   #CHI-8B0053
          CALL cl_err(g_plant,'axm-410',1)
       END IF
    END IF
- 
+
    RETURN l_err
- 
+
 END FUNCTION
- 
+
 #DEV-D30046 搬移至saxmt700_sub.4gl--mark--begin
 #FUNCTION t700_muticarry()
 #  IF g_poz.poz011='1' THEN   #正拋
@@ -18565,11 +18576,11 @@ END FUNCTION
 #  CALL cl_cmdrun_wait(g_msg CLIPPED)
 #  SELECT ohapost,oha99,oha44  INTO g_oha.ohapost,g_oha.oha99,g_oha.oha44
 #    FROM oha_file WHERE oha01=g_oha.oha01
-# 
+#
 #  DISPLAY BY NAME g_oha.ohapost,g_oha.oha99,g_oha.oha44
-# 
+#
 #END FUNCTION
-# 
+#
 #FUNCTION t700_undo_muticarry()
 #      IF g_oha.oha44  = 'N' THEN RETURN END IF
 #      IF g_poz.poz011='1' THEN   #正拋
@@ -18583,7 +18594,7 @@ END FUNCTION
 #      DISPLAY BY NAME g_oha.ohapost,g_oha.oha99,g_oha.oha44
 #END FUNCTION
 #DEV-D30046 搬移至saxmt700_sub.4gl--mark--end
- 
+
 #  維護海關手冊編號
 FUNCTION t700_b_more2(p_cmd)
     DEFINE l_no         LIKE coc_file.coc01
@@ -18592,21 +18603,21 @@ FUNCTION t700_b_more2(p_cmd)
     DEFINE l_cnt        LIKE type_file.num5          #No.FUN-680137 SMALLINT
     DEFINE p_cmd        LIKE type_file.chr1   #a:新增 u:修改        #No.FUN-680137 VARCHAR(1)
     DEFINE p_row,p_col  LIKE type_file.num5          #No.FUN-680137 SMALLINT
- 
+
     LET p_row = 2 LET p_col = 10
- 
+
     OPEN WINDOW t700_m_w AT p_row,p_col WITH FORM "axm/42f/axmt700_m"
           ATTRIBUTE (STYLE = g_win_style CLIPPED) #No.FUN-580092 HCN
- 
+
     CALL cl_ui_locale("axmt700_m")
- 
+
     SELECT ohb52 INTO b_ohb.ohb52 FROM ohb_file
      WHERE ohb01 = g_oha.oha01 AND ohb03 = g_ohb1[l_ac].ohb03   #No.FUN-650108
     IF cl_null(b_ohb.ohb52) THEN
        SELECT ogb908 INTO b_ohb.ohb52 FROM ogb_file
         WHERE ogb01=g_ohb1[l_ac].ohb31 AND ogb03=g_ohb1[l_ac].ohb32   #No.FUN-650108
     END IF
- 
+
     INPUT BY NAME b_ohb.ohb52 WITHOUT DEFAULTS
        AFTER FIELD ohb52
           IF NOT cl_null(b_ohb.ohb52) THEN
@@ -18625,13 +18636,13 @@ FUNCTION t700_b_more2(p_cmd)
                 NEXT FIELD ohb52
              END IF
           END IF
- 
+
        ON ACTION CONTROLR
           CALL cl_show_req_fields()
- 
+
        ON ACTION CONTROLG
           CALL cl_cmdask()
- 
+
        ON ACTION CONTROLP
           CASE
              WHEN INFIELD(ohb52)
@@ -18642,30 +18653,30 @@ FUNCTION t700_b_more2(p_cmd)
                NEXT FIELD ohb52
              OTHERWISE EXIT CASE
           END CASE
- 
+
         AFTER INPUT
           IF INT_FLAG THEN EXIT INPUT END IF                #FUN-B70061 mark   #FUN-B90103 remark
 #         IF INT_FLAG THEN LET INT_FLAG=0 EXIT INPUT END IF  #FUN-B70061       #FUN-B90103  mark
- 
+
        ON IDLE g_idle_seconds
           CALL cl_on_idle()
           CONTINUE INPUT
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
- 
+
+
     END INPUT
- 
+
     IF INT_FLAG THEN
        LET INT_FLAG=0
        CLOSE WINDOW t700_m_w
        RETURN
     END IF
- 
+
     IF p_cmd = 'u' THEN
        UPDATE ohb_file SET ohb52=b_ohb.ohb52
         WHERE ohb01=g_oha.oha01 AND ohb03=g_ohb1[l_ac].ohb03   #No.FUN-650108
@@ -18673,17 +18684,17 @@ FUNCTION t700_b_more2(p_cmd)
           CALL cl_err3("upd","ohb_file",g_oha.oha01,g_ohb1[l_ac].ohb03,STATUS,"","upd ohb52",1)  #No.FUN-650108
        END IF
     END IF
- 
+
     CLOSE WINDOW t700_m_w                 #結束畫面
- 
+
 END FUNCTION
- 
+
 FUNCTION t700_set_entry_b(p_cmd)
   DEFINE p_cmd   LIKE type_file.chr1          #No.FUN-680137 VARCHAR(1)
     IF NOT g_before_input_done THEN
        CALL cl_set_comp_entry("b1_ohb092,b1_ohb09,b1_ohb091,b1_ohb12,b1_ohb61",TRUE)   #No.FUN-740016          #CHI-6B0027 mod   #No.FUN-650108
     END IF
- 
+
     IF INFIELD(b1_ohb31) OR p_cmd = 'u' THEN  #NO.FUN-650108
        CALL cl_set_comp_entry("b1_ohb32,b1_ohb33,b1_ohb34",TRUE)  #No.FUN-650108
        IF g_argv0 !='2' THEN #No.FUN-570260 add 三角貿易不能修改品名規格
@@ -18696,23 +18707,23 @@ FUNCTION t700_set_entry_b(p_cmd)
           CALL cl_set_comp_entry("ohb04,b1_ohb06",TRUE)  #No.FUN-650108
        END IF
     END IF
- 
+
    IF g_argv0 !='2' THEN #No.FUN-570260 add 三角貿易不能修改品名規格
       IF INFIELD(ohb04) OR p_cmd = 'u' THEN   #No.9779
          CALL cl_set_comp_entry("b1_ohb06",TRUE)   #No.FUN-650108
       END IF
    END IF     #No.FUN-570260 end
- 
+
   IF g_sma.sma115 = 'Y' THEN
     CALL cl_set_comp_entry("b1_ohb912,b1_ohb915,b1_phb917",TRUE)   #No.FUN-650108
   END IF
 
 END FUNCTION
- 
+
 FUNCTION t700_set_no_entry_b(p_cmd)
   DEFINE p_cmd   LIKE type_file.chr1          #No.FUN-680137 VARCHAR(1)
   #DEFINE l_imaicd08 LIKE imaicd_file.imaicd08 #FUN-B70061 #FUN-BA0051 mark
- 
+
    #CHI-BC0006 ----- mark start -----
    #IF NOT g_before_input_done THEN
    #   IF g_oha.oha09 <> "5" THEN   #No.MOD-5A0225
@@ -18733,7 +18744,7 @@ FUNCTION t700_set_no_entry_b(p_cmd)
        CALL cl_set_comp_entry("b1_ohb12",FALSE)   #NO.FUN-650108
        CALL cl_set_comp_entry("b1_ohb915,b1_ohb912,b1_ohb917",FALSE)  #NO.FUN-650108
     END IF
- 
+
     IF INFIELD(b1_ohb31)  OR p_cmd = 'u' THEN  #NO.FUN-650108
        IF cl_null(g_ohb1[l_ac].ohb31) THEN  #NO.FUN-650108
           CALL cl_set_comp_entry("b1_ohb32,b1_ohb33,b1_ohb34",FALSE) #NO.FUN-650108
@@ -18752,7 +18763,7 @@ FUNCTION t700_set_no_entry_b(p_cmd)
           CALL cl_set_comp_entry("b1_ohb06",FALSE)    #NO.FUN-650108
        END IF
     END IF
- 
+
     IF g_ima906 = '1' THEN
        CALL cl_set_comp_entry("b1_ohb913,b1_ohb914,b1_ohb915",FALSE)   #NO.FUN-650108
     END IF
@@ -18783,7 +18794,7 @@ FUNCTION t700_set_no_entry_b(p_cmd)
     END IF
 
 END FUNCTION
- 
+
 FUNCTION t700_set_required(p_cmd)
  DEFINE p_cmd LIKE type_file.chr1          #No.FUN-680137 VARCHAR(1)
 
@@ -18803,7 +18814,7 @@ FUNCTION t700_set_required(p_cmd)
     END IF
  END IF
 END FUNCTION
- 
+
 FUNCTION t700_set_du_required(p_cmd)
  DEFINE p_cmd LIKE type_file.chr1          #No.FUN-680137 VARCHAR(1)
   IF g_sma.sma115='Y' THEN
@@ -18824,18 +18835,18 @@ FUNCTION t700_set_du_required(p_cmd)
        CALL cl_set_comp_required("b1_ohb917",TRUE)  #NO.FUN-650108
     END IF
   END IF
- 
+
 END FUNCTION
- 
+
 FUNCTION t700_set_du_no_required(p_cmd)
  DEFINE p_cmd LIKE type_file.chr1          #No.FUN-680137 VARCHAR(1)
- 
+
  CALL cl_set_comp_required("b1_ohb913,b1_ohb914,b1_ohb915,b1_ohb910,b1_ohb911,b1_ohb912,b1_ohb916,b1_ohb917",FALSE)   #NO.FUN-650108
- 
- 
+
+
 END FUNCTION
- 
- 
+
+
 FUNCTION t700_set_no_required(p_cmd)
  DEFINE p_cmd LIKE type_file.chr1          #No.FUN-680137 VARCHAR(1)
 
@@ -18852,10 +18863,10 @@ FUNCTION t700_set_no_required(p_cmd)
     CALL cl_set_comp_required("b1_ohb34",FALSE)   #NO.FUN-650108
  END IF
 END FUNCTION
- 
-#FUN-A40022--begin--add----  
-FUNCTION t700_set_required_1(p_cmd) 
-#DEFINE l_imaicd13 LIKE imaicd_file.imaicd13 
+
+#FUN-A40022--begin--add----
+FUNCTION t700_set_required_1(p_cmd)
+#DEFINE l_imaicd13 LIKE imaicd_file.imaicd13
 DEFINE l_ima159   LIKE ima_file.ima159
 DEFINE p_cmd      LIKE type_file.chr1
 #FUN-B90103--start--
@@ -18869,7 +18880,7 @@ DEFINE p_cmd      LIKE type_file.chr1
          SELECT ima159 INTO l_ima159 FROM ima_file
           WHERE ima01 = g_ohb1[l_ac].ohb04
          IF g_oha.oha09 != '5' THEN #MOD-D40025 add
-            IF l_ima159 = '1' AND g_oaz.oaz104='Y' THEN 
+            IF l_ima159 = '1' AND g_oaz.oaz104='Y' THEN
 #FUN-B50096 -------------End-------------------
                CALL cl_set_comp_required("b1_ohb092",TRUE)
             END IF
@@ -18877,7 +18888,7 @@ DEFINE p_cmd      LIKE type_file.chr1
       END IF
    END IF
 #FUN-B90103--add
-END FUNCTION 
+END FUNCTION
 
 FUNCTION t700_set_no_required_1()
 #FUN-B90103--start--
@@ -18902,8 +18913,8 @@ DEFINE l_ima159   LIKE ima_file.ima159
             WHERE ima01 = g_ohb1[l_ac].ohb04
            IF l_ima159 = '2' THEN
               CALL cl_set_comp_entry("b1_ohb092",FALSE)
-           ELSE 
-              CALL cl_set_comp_entry("b1_ohb092",TRUE)  
+           ELSE
+              CALL cl_set_comp_entry("b1_ohb092",TRUE)
            END IF
         END IF
      END IF
@@ -18916,7 +18927,7 @@ FUNCTION t700_set_entry_ohb092()
 #FUN-B90103--end
    IF g_oaz.oaz104 = 'Y' THEN
       CALL cl_set_comp_entry("b1_ohb092",TRUE)
-   END IF 
+   END IF
 #FUN-B90103--add
 END FUNCTION
 #FUN-B50096 -----------------End-------------------
@@ -18943,21 +18954,21 @@ FUNCTION t700_du_default(p_cmd)
            l_qty3   LIKE img_file.img10,     #第一數量
            p_cmd    LIKE type_file.chr1,          #No.FUN-680137 VARCHAR(1)
            l_factor LIKE pml_file.pml09      # No.FUN-680137 DECIMAL(16,8)
- 
+
    LET l_item = g_ohb1[l_ac].ohb04
    LET l_ware = g_ohb1[l_ac].ohb09
    LET l_loc  = g_ohb1[l_ac].ohb091
    LET l_lot  = g_ohb1[l_ac].ohb092
- 
+
    SELECT ima25,ima31,ima906,ima907 INTO l_ima25,l_ima31,l_ima906,l_ima907
      FROM ima_file WHERE ima01 = l_item
- 
+
    SELECT img09 INTO l_img09 FROM img_file
     WHERE img01 = l_item
       AND img02 = l_ware
       AND img03 = l_loc
       AND img04 = l_lot
- 
+
    IF g_sma.sma115 = 'Y' THEN          #No.TQC-6C0131 add
       IF l_ima906 = '1' THEN  #不使用雙單位
          LET l_unit2 = NULL
@@ -18976,7 +18987,7 @@ FUNCTION t700_du_default(p_cmd)
       LET l_fac1  = 1
       LET l_qty1  = 0
    END IF                             #No.TQC-6C0131 add
- 
+
    IF g_sma.sma116 MATCHES '[01]' THEN    #No.FUN-610076
       LET l_unit3 = NULL
       LET l_qty3  = NULL
@@ -18984,7 +18995,7 @@ FUNCTION t700_du_default(p_cmd)
       LET l_unit3 = l_ima908
       LET l_qty3  = 0
    END IF
- 
+
       LET g_ohb1[l_ac].ohb913=l_unit2
       LET g_ohb1[l_ac].ohb914=l_fac2
       LET g_ohb1[l_ac].ohb915=l_qty2
@@ -18996,7 +19007,7 @@ FUNCTION t700_du_default(p_cmd)
      LET g_ohb1[l_ac].ohb912 = NULL
   END IF
 END FUNCTION
- 
+
 #對原來數量/換算率/單位的賦值
 FUNCTION t700_set_origin_field()
   DEFINE    l_ima906 LIKE ima_file.ima906,
@@ -19010,7 +19021,7 @@ FUNCTION t700_set_origin_field()
             l_fac1   LIKE ohb_file.ohb911,
             l_qty1   LIKE ohb_file.ohb912,
             l_factor LIKE pml_file.pml09      # No.FUN-680137 DECIMAL(16,8)
- 
+
     IF g_sma.sma115='N' THEN RETURN END IF
     SELECT ima25,ima31 INTO l_ima25,l_ima31
       FROM ima_file WHERE ima01=g_ohb1[l_ac].ohb04  #NO.FUN-650108
@@ -19021,17 +19032,17 @@ FUNCTION t700_set_origin_field()
        END IF
     END IF
     IF cl_null(l_ima31) THEN LET l_ima31=l_ima25 END IF
- 
+
     LET l_fac2=g_ohb1[l_ac].ohb914
     LET l_qty2=g_ohb1[l_ac].ohb915
     LET l_fac1=g_ohb1[l_ac].ohb911
     LET l_qty1=g_ohb1[l_ac].ohb912
- 
+
     IF cl_null(l_fac1) THEN LET l_fac1=1 END IF
     IF cl_null(l_qty1) THEN LET l_qty1=0 END IF
     IF cl_null(l_fac2) THEN LET l_fac2=1 END IF
     IF cl_null(l_qty2) THEN LET l_qty2=0 END IF
- 
+
     IF g_sma.sma115 = 'Y' THEN
        CASE g_ima906
           WHEN '1' IF cl_null(g_ohb1[l_ac].ohb31) THEN  #NO.FUN-650108
@@ -19062,23 +19073,23 @@ FUNCTION t700_set_origin_field()
        LET g_factor = 1
     END IF
     LET b_ohb.ohb05_fac = g_factor
- 
+
 END FUNCTION
- 
- 
+
+
 #兩組雙單位資料不是一定要全部KEY,如果沒有KEY單位,則把換算率/數量清空
 FUNCTION t700_du_data_to_correct()
- 
+
    IF cl_null(g_ohb1[l_ac].ohb913) THEN
       LET g_ohb1[l_ac].ohb914 = NULL
       LET g_ohb1[l_ac].ohb915 = NULL
    END IF
- 
+
    IF cl_null(g_ohb1[l_ac].ohb910) THEN
       LET g_ohb1[l_ac].ohb911 = NULL
       LET g_ohb1[l_ac].ohb912 = NULL
    END IF
- 
+
    DISPLAY BY NAME g_ohb1[l_ac].ohb913
    DISPLAY BY NAME g_ohb1[l_ac].ohb914
    DISPLAY BY NAME g_ohb1[l_ac].ohb915
@@ -19086,7 +19097,7 @@ FUNCTION t700_du_data_to_correct()
    DISPLAY BY NAME g_ohb1[l_ac].ohb911
    DISPLAY BY NAME g_ohb1[l_ac].ohb912
 END FUNCTION
- 
+
 FUNCTION t700_set_ohb917()
   DEFINE    l_item   LIKE img_file.img01,     #料號
             l_ima25  LIKE ima_file.ima25,     #ima單位
@@ -19099,7 +19110,7 @@ FUNCTION t700_set_ohb917()
             l_tot    LIKE img_file.img10,     #計價數量
             l_factor LIKE pml_file.pml09      # No.FUN-680137 DECIMAL(16,8)
   DEFINE    l_ima908 LIKE ima_file.ima908     #No.MOD-8A0133
- 
+
     SELECT ima25,ima31,ima906,ima908 INTO l_ima25,l_ima31,l_ima906,l_ima908  #No.MOD-8A0133 add ima908
       FROM ima_file WHERE ima01=g_ohb1[l_ac].ohb04   #NO.FUN-650108
     IF SQLCA.sqlcode = 100 THEN
@@ -19109,7 +19120,7 @@ FUNCTION t700_set_ohb917()
        END IF
     END IF
     IF cl_null(l_ima31) THEN LET l_ima31=l_ima25 END IF
- 
+
     LET l_fac2=g_ohb1[l_ac].ohb914   #NO.FUN-650108
     LET l_qty2=g_ohb1[l_ac].ohb915   #NO.FUN-650108
     IF g_sma.sma115 = 'Y' THEN
@@ -19128,7 +19139,7 @@ FUNCTION t700_set_ohb917()
     IF cl_null(l_qty1) THEN LET l_qty1=0 END IF
     IF cl_null(l_fac2) THEN LET l_fac2=1 END IF
     IF cl_null(l_qty2) THEN LET l_qty2=0 END IF
- 
+
     IF g_sma.sma115 = 'Y' THEN
        CASE l_ima906
           WHEN '1' LET l_tot=l_qty1*l_fac1
@@ -19140,13 +19151,13 @@ FUNCTION t700_set_ohb917()
     END IF
     IF cl_null(l_tot) THEN LET l_tot = 0 END IF
     LET l_factor = 1
-    IF g_sma.sma116 = '2' OR g_sma.sma116 = '3' THEN 
+    IF g_sma.sma116 = '2' OR g_sma.sma116 = '3' THEN
        IF cl_null(g_ohb1[l_ac].ohb916) THEN
           LET g_ohb1[l_ac].ohb916 = l_ima908
        END IF
-    ELSE 
+    ELSE
        LET g_ohb1[l_ac].ohb916 = g_ohb1[l_ac].ohb05
-    END IF 
+    END IF
     IF g_sma.sma115 = 'Y' THEN
        CALL s_umfchk(g_ohb1[l_ac].ohb04,g_ohb1[l_ac].ohb05,g_ohb1[l_ac].ohb916)
              RETURNING g_cnt,l_factor
@@ -19158,16 +19169,16 @@ FUNCTION t700_set_ohb917()
        LET l_factor = 1
     END IF
     LET l_tot = l_tot * l_factor
- 
-    IF g_ohb1[l_ac].ohb05 = g_ohb1[l_ac].ohb916 AND g_sma.sma115 ='N' THEN 
+
+    IF g_ohb1[l_ac].ohb05 = g_ohb1[l_ac].ohb916 AND g_sma.sma115 ='N' THEN
        LET l_tot = g_ohb1[l_ac].ohb12
-    END IF 
+    END IF
     LET g_ohb1[l_ac].ohb917 = l_tot   #NO.FUN-650108
     LET g_ohb1[l_ac].ohb917 = s_digqty(g_ohb1[l_ac].ohb917,g_ohb1[l_ac].ohb916)   #TQC-C20183--add--
 END FUNCTION
- 
+
 FUNCTION t700_ef()
- 
+
      #start FUN-580113
      #CALL t700_y_chk()     #CALL 原確認的 check 段   #DEV-D30046 --mark
      CALL saxmt700sub_y_chk(g_oha.oha01,g_action_choice)  #DEV-D30046 --add
@@ -19175,7 +19186,7 @@ FUNCTION t700_ef()
          RETURN
      END IF
      #end FUN-580113
- 
+
      CALL aws_condition()      #判斷送簽資料
      IF g_success = 'N' THEN
            RETURN
@@ -19193,7 +19204,7 @@ FUNCTION t700_ef()
   ELSE
       LET g_success='N'
   END IF
- 
+
 END FUNCTION
 
 #DEV-D30046 搬移至saxmt700_sub.4gl--mark--begin
@@ -19201,7 +19212,7 @@ END FUNCTION
 #FUNCTION t700_chstatus(l_new)
 #DEFINE l_new  LIKE type_file.chr1        # No.FUN-680137 VARCHAR(1)
 ##DEFINE l_imaicd04   LIKE imaicd_file.imaicd04       #NO.FUN-7B0015 #FUN-BA0051 mark
-##DEFINE l_imaicd08   LIKE imaicd_file.imaicd08       #NO.FUN-7B0015 #FUN-BA0051 mark 
+##DEFINE l_imaicd08   LIKE imaicd_file.imaicd08       #NO.FUN-7B0015 #FUN-BA0051 mark
 #DEFINE l_cnt        LIKE type_file.num10            #MOD-AB0253
 #DEFINE l_flag       LIKE type_file.num10            #MOD-AB0253
 ##Y;N;X
@@ -19228,20 +19239,20 @@ END FUNCTION
 #           RETURN
 #        END IF
 #        LET g_oha.oha55='9'
-# 
+#
 ##-----MOD-AB0253---------
 ##IF l_ac > 0 THEN     #MOD-960165
 ##    SELECT imaicd04,imaicd08 INTO l_imaicd04,l_imaicd08
 ##        FROM imaicd_file
 ##        WHERE imaicd00=g_ohb1[l_ac].ohb04
-## 
+##
 ##   IF l_imaicd04 MATCHES '[0-4]' THEN
 ##      DELETE FROM idd_file WHERE idd01=g_ohb1[l_ac].ohb04
 ##      UPDATE idc_file SET idc01=NULL WHERE idc01=g_ohb1[l_ac].ohb04
 ##   END IF
 ##   IF l_imaicd04 MATCHES '[0-4]' AND l_imaicd08 ='Y' THEN
 ##      DELETE FROM ida_file WHERE ida01=g_ohb1[l_ac].ohb04
-##   END IF   
+##   END IF
 ##END IF               #MOD-960165
 #&ifdef ICD
 #    #IF s_industry('icd') THEN   #FUN-B70061 mark
@@ -19262,13 +19273,13 @@ END FUNCTION
 #      END IF
 #    #END IF   #FUN-B70061 mark
 #&endif
-##-----END MOD-AB0253----- 
+##-----END MOD-AB0253-----
 # END CASE
 #    DISPLAY BY NAME g_oha.oha55
 #    CALL t700_chspic()
 #END FUNCTION
 #DEV-D30046 搬移至saxmt700_sub.4gl--mark--end
- 
+
 #變更圖檔
 FUNCTION t700_chspic()
 DEFINE l_chr,l_chr2,l_chr3 LIKE type_file.chr1          #No.FUN-680137 VARCHAR(1)
@@ -19278,7 +19289,7 @@ DEFINE l_chr,l_chr2,l_chr3 LIKE type_file.chr1          #No.FUN-680137 VARCHAR(1
     IF g_oha.oha55='6' THEN LET l_chr3='Y' ELSE LET l_chr3='N' END IF
      CALL cl_set_field_pic(g_oha.ohaconf,l_chr2,g_oha.ohapost,l_chr3,l_chr,"")   #No.MOD-570268
 END FUNCTION
- 
+
 #DEV-D30046 搬移至saxmt700_sub.4gl--mark--begin
 #FUNCTION t700_upd_imgg_oh(p_imgg00,p_imgg01,p_imgg02,p_imgg03,p_imgg04,p_imgg09,p_imgg211,p_imgg10,p_type,p_no)
 #  DEFINE l_ima25   LIKE ima_file.ima25,
@@ -19297,7 +19308,7 @@ END FUNCTION
 #         l_imgg10  LIKE imgg_file.imgg10,
 #         p_type    LIKE aba_file.aba18,      # No.FUN-680137  VARCHAR(2)
 #         P_no      LIKE type_file.chr1        # No.FUN-680137  VARCHAR(1)
-##FUN-AB0059 ---------------------start---------------------------- 
+##FUN-AB0059 ---------------------start----------------------------
 #    IF s_joint_venture( p_imgg01,g_plant) OR NOT s_internal_item( p_imgg01,g_plant ) THEN
 #       RETURN
 #    END IF
@@ -19318,13 +19329,13 @@ END FUNCTION
 #       RETURN
 #    END IF
 #
-#    FETCH imgg_lock1 INTO p_imgg01,p_imgg02,p_imgg03,p_imgg04,p_imgg09 
+#    FETCH imgg_lock1 INTO p_imgg01,p_imgg02,p_imgg03,p_imgg04,p_imgg09
 #    IF STATUS THEN
 #       CALL s_errmsg('','','lock imgg fail',STATUS,1)   #No.FUN-710028
 #       LET g_success='N'
 #       CLOSE imgg_lock1
 #       CALL s_showmsg()   #No.FUN-710028
-#       RETURN  
+#       RETURN
 #    END IF
 #
 #    SELECT ima25,ima906 INTO l_ima25,l_ima906 FROM ima_file
@@ -19342,10 +19353,10 @@ END FUNCTION
 #    CALL s_upimgg(p_imgg01,p_imgg02,p_imgg03,p_imgg04,p_imgg09,p_type,p_imgg10,g_oga.oga02, #FUN-8C0084
 #                  '','','','','','','','','','',l_imgg21,'','','','','','','',p_imgg21)     #FUN-8C0084
 #    IF g_success='N' THEN RETURN END IF
-#    
-#    
+#
+#
 #END FUNCTION
-# 
+#
 #FUNCTION t700_tlff_oh(p_flag,p_unit,p_fac,p_qty)
 #  DEFINE l_ima25  LIKE ima_file.ima25,
 #         l_ima86  LIKE ima_file.ima86,
@@ -19354,8 +19365,8 @@ END FUNCTION
 #         p_unit   LIKE ogb_file.ogb913,      # No.FUN-680137 VARCHAR(4) #TQC-840066
 #         p_fac    LIKE pml_file.pml09,      # No.FUN-680137  DECIMAL(16,8)
 #         p_qty    LIKE ogb_file.ogb915      # No.FUN-680137  DECIMAL(13,3) #TQC-840066
-# 
-##FUN-AB0059 ---------------------start---------------------------- 
+#
+##FUN-AB0059 ---------------------start----------------------------
 #    IF s_joint_venture( l_ogb.ogb04,g_plant) OR NOT s_internal_item( l_ogb.ogb04,g_plant ) THEN
 #       RETURN
 #    END IF
@@ -19392,21 +19403,21 @@ END FUNCTION
 #    LET g_tlff.tlff022=l_ogb.ogb091
 #    LET g_tlff.tlff023=l_ogb.ogb092
 #    LET g_tlff.tlff024=l_imgg10
-#    LET g_tlff.tlff025=p_unit  
+#    LET g_tlff.tlff025=p_unit
 #    LET g_tlff.tlff026=l_oga.oga01
-#    LET g_tlff.tlff027=l_ogb.ogb03  
-#    LET g_tlff.tlff01=l_ogb.ogb04 
+#    LET g_tlff.tlff027=l_ogb.ogb03
+#    LET g_tlff.tlff01=l_ogb.ogb04
 ##目的
 #    LET g_tlff.tlff03=724
-#    LET g_tlff.tlff030=' '                 
+#    LET g_tlff.tlff030=' '
 #    LET g_tlff.tlff031=' '
 #    LET g_tlff.tlff032=' '
 #    LET g_tlff.tlff033=' '
 #    LET g_tlff.tlff034=0
 #    LET g_tlff.tlff035=' '
 #    LET g_tlff.tlff036=l_oga.oga01
-#    LET g_tlff.tlff037=l_ogb.ogb03  
-#    LET g_tlff.tlff04=' '                 
+#    LET g_tlff.tlff037=l_ogb.ogb03
+#    LET g_tlff.tlff04=' '
 #    LET g_tlff.tlff05=' '
 #    LET g_tlff.tlff06=l_oga.oga02
 #    LET g_tlff.tlff07=g_today
@@ -19429,19 +19440,19 @@ END FUNCTION
 #       CALL s_tlff(p_flag,l_ogb.ogb913)
 #    END IF
 #END FUNCTION
-# 
+#
 #FUNCTION t700_tlf_7(p_unit,p_img10)
 #   DEFINE p_unit  LIKE gsb_file.gsb05,      # No.FUN-680137 VARCHAR(4)
 #          p_img10 LIKE img_file.img10
-#          
+#
 #    LET g_tlf.tlf01=l_ogb.ogb04
 #    LET g_tlf.tlf02=50
 #    LET g_tlf.tlf021=l_ogb.ogb09
 #    LET g_tlf.tlf024=p_img10
-#    LET g_tlf.tlf022=l_ogb.ogb091     
-#    LET g_tlf.tlf023=l_ogb.ogb092        
+#    LET g_tlf.tlf022=l_ogb.ogb091
+#    LET g_tlf.tlf023=l_ogb.ogb092
 #    LET g_tlf.tlf025=p_unit
-#    
+#
 #    LET g_tlf.tlf03=724
 #    LET g_tlf.tlf030=' '
 #    LET g_tlf.tlf031=' '
@@ -19451,7 +19462,7 @@ END FUNCTION
 #    LET g_tlf.tlf035=' '
 #    LET g_tlf.tlf036=l_oga.oga01
 #    LET g_tlf.tlf037=l_ogb.ogb03
-#    
+#
 #    LET g_tlf.tlf04=' '
 #    LET g_tlf.tlf05=' '
 #    LET g_tlf.tlf06=l_oga.oga02
@@ -19463,7 +19474,7 @@ END FUNCTION
 #    LET g_tlf.tlf12=l_ogb.ogb15_fac
 #    LET g_tlf.tlf13='axmt620'
 #    LET g_tlf.tlf14=l_ogb.ogb1001   #MOD-870120
-#    
+#
 #    LET g_tlf.tlf17=' '
 #    CALL s_imaQOH(l_ogb.ogb04) RETURNING g_tlf.tlf18
 #    LET g_tlf.tlf19=l_oga.oga03 #No.MOD-870252
@@ -19475,11 +19486,11 @@ END FUNCTION
 #    LET g_tlf.tlf42 = l_ogb.ogb43
 #    LET g_tlf.tlf43 = l_ogb.ogb1001
 #    CALL s_tlf(1,0)
-#    
-#END FUNCTION 
-# 
+#
+#END FUNCTION
+#
 #FUNCTION t700_update_7()
-#   
+#
 #    DEFINE l_qty    LIKE img_file.img10,
 #           l_occ31  LIKE occ_file.occ31,
 #           l_ima01  LIKE ima_file.ima01,
@@ -19488,39 +19499,39 @@ END FUNCTION
 #           l_ima86  LIKE ima_file.ima86,
 #           p_img    RECORD LIKE img_file.*,
 #           l_fac1,l_fac2 LIKE ogb_file.ogb15_fac,
-#           l_img RECORD                                                          
+#           l_img RECORD
 #                l_imgg01    LIKE imgg_file.imgg01,       # No.FUN-680137  INT                                              #No.TQC-940183  #No.TQC-950134
-#                img10   LIKE img_file.img10,                                    
-#                img16   LIKE img_file.img16,                                    
-#                img23   LIKE img_file.img23,                                    
-#                img24   LIKE img_file.img24,                                    
-#                img09   LIKE img_file.img09,                                    
-#                img21   LIKE img_file.img21                                     
-#                END RECORD,     
+#                img10   LIKE img_file.img10,
+#                img16   LIKE img_file.img16,
+#                img23   LIKE img_file.img23,
+#                img24   LIKE img_file.img24,
+#                img09   LIKE img_file.img09,
+#                img21   LIKE img_file.img21
+#                END RECORD,
 #           l_cnt    LIKE type_file.num5           #No.FUN-680137 SMALLINT
-#    DEFINE l_tuq06  LIKE tuq_file.tuq06                                          
-#    DEFINE l_tuq11  LIKE tuq_file.tuq11                                          
-#    DEFINE l_tup05  LIKE tup_file.tup05                                          
-#   #DEFINE l_tup08  LIKE tup_file.tup08   #CHI-B40056 mark                                       
-#    DEFINE l_tup11  LIKE tup_file.tup11   #CHI-B40056 add                                       
-#    DEFINE l_tuq07  LIKE tuq_file.tuq07                                          
-#    DEFINE l_desc   LIKE type_file.chr1        # No.FUN-680137  VARCHAR(01) 
+#    DEFINE l_tuq06  LIKE tuq_file.tuq06
+#    DEFINE l_tuq11  LIKE tuq_file.tuq11
+#    DEFINE l_tup05  LIKE tup_file.tup05
+#   #DEFINE l_tup08  LIKE tup_file.tup08   #CHI-B40056 mark
+#    DEFINE l_tup11  LIKE tup_file.tup11   #CHI-B40056 add
+#    DEFINE l_tuq07  LIKE tuq_file.tuq07
+#    DEFINE l_desc   LIKE type_file.chr1        # No.FUN-680137  VARCHAR(01)
 #    DEFINE i        LIKE type_file.num5             #No.FUN-680137 SMALLINT
-#    DEFINE l_tup06  LIKE tup_file.tup06    #MOD-B30651 add                                       
+#    DEFINE l_tup06  LIKE tup_file.tup06    #MOD-B30651 add
 ##TQC-C20183--add--start--
 #    DEFINE l_tup05_1 LIKE tup_file.tup05,
 #           l_tuq07_1 LIKE tuq_file.tuq07,
 #           l_tuq09_1 LIKE tuq_file.tuq09
-##TQC-C20183--add--end-- 
-##FUN-AB0059 ---------------------start---------------------------- 
+##TQC-C20183--add--end--
+##FUN-AB0059 ---------------------start----------------------------
 #    IF s_joint_venture( l_ogb.ogb04,g_plant) OR NOT s_internal_item( l_ogb.ogb04,g_plant ) THEN
 #       RETURN
 #    END IF
-##FUN-AB0059 ---------------------end-------------------------------           
+##FUN-AB0059 ---------------------end-------------------------------
 #    IF l_ogb.ogb15 IS NULL THEN
 #       INITIALIZE  p_img.*  TO  NULL
 #       LET p_img.img01 = l_ogb.ogb04
-#       LET p_img.img02 = l_ogb.ogb09       
+#       LET p_img.img02 = l_ogb.ogb09
 #       LET p_img.img03 = l_ogb.ogb091
 #       LET p_img.img04 = l_ogb.ogb092
 #       LET p_img.img09 = l_ogb.ogb05
@@ -19530,8 +19541,8 @@ END FUNCTION
 #       LET l_ogb.ogb15 = l_ogb.ogb05
 #       SELECT ima25 INTO l_ima25 FROM ima_file WHERE ima01=p_img.img01
 #       IF SQLCA.sqlcode OR l_ima25 IS NULL THEN
-#          CALL s_errmsg('ima01',p_img.img01,'ima25 null',SQLCA.sqlcode,1)  #No.FUN-710028 
-#          LET g_success='N' 
+#          CALL s_errmsg('ima01',p_img.img01,'ima25 null',SQLCA.sqlcode,1)  #No.FUN-710028
+#          LET g_success='N'
 #          RETURN
 #       END IF
 #       CALL s_umfchk(p_img.img01,p_img.img09,l_ima25) RETURNING g_cnt,p_img.img21
@@ -19573,7 +19584,7 @@ END FUNCTION
 #          LET g_success='N'
 #          RETURN
 #       END IF
-#       IF cl_null(l_img.img10) THEN 
+#       IF cl_null(l_img.img10) THEN
 #          LET l_img.img10=0
 #       END IF
 #       LET l_qty=l_img.img10-l_ogb.ogb16
@@ -19584,7 +19595,7 @@ END FUNCTION
 #          CALL s_errmsg('','','s_upimg','9050',0)   #No.FUN-710028
 #          RETURN
 #       END IF
-#       
+#
 #       LET g_forupd_sql ="SELECT ima25,ima86 FROM ima_file ",
 #                         " WHERE ima01= ?  FOR UPDATE "  #no.TQC-750149
 #       LET g_forupd_sql = cl_forupd_sql(g_forupd_sql)
@@ -19610,27 +19621,27 @@ END FUNCTION
 #      IF g_success='Y' THEN
 #         CALL t700_tlf_7(l_img.img09,l_qty)
 #      END IF
-#      IF g_success = 'N' THEN 
-#         RETURN 
-#      END IF                                       
-#      SELECT occ31 INTO l_occ31 FROM occ_file 
-#       WHERE occ01=l_oga.oga03          
-#      IF cl_null(l_occ31) THEN 
-#         LET l_occ31='N' 
+#      IF g_success = 'N' THEN
+#         RETURN
 #      END IF
-#      IF l_occ31 = 'N' THEN 
-#         RETURN 
+#      SELECT occ31 INTO l_occ31 FROM occ_file
+#       WHERE occ01=l_oga.oga03
+#      IF cl_null(l_occ31) THEN
+#         LET l_occ31='N'
 #      END IF
-#      SELECT ima25,ima71 INTO l_ima25,l_ima71                                     
-#        FROM ima_file 
-#       WHERE ima01=l_ogb.ogb04                                     
-#      IF cl_null(l_ima71) THEN 
-#         LET l_ima71=0 
-#      END IF                             
+#      IF l_occ31 = 'N' THEN
+#         RETURN
+#      END IF
+#      SELECT ima25,ima71 INTO l_ima25,l_ima71
+#        FROM ima_file
+#       WHERE ima01=l_ogb.ogb04
+#      IF cl_null(l_ima71) THEN
+#         LET l_ima71=0
+#      END IF
 #      #MOD-B30651 add --start--
-#      IF l_ima71 = 0 THEN 
+#      IF l_ima71 = 0 THEN
 #         LET l_tup06 = g_lastdat
-#      ELSE 
+#      ELSE
 #         LET l_tup06 = l_oga.oga02 + l_ima71
 #      END IF
 #      #MOD-B30651 add --end--
@@ -19639,85 +19650,85 @@ END FUNCTION
 #       ELSE
 #          LET l_tuq11='1'
 #       END IF
-#      SELECT COUNT(*) INTO i FROM tuq_file                                        
-#       WHERE tuq01=l_oga.oga03    
-#         AND tuq02=l_ogb.ogb04                             
-#         AND tuq03=l_ogb.ogb092 
+#      SELECT COUNT(*) INTO i FROM tuq_file
+#       WHERE tuq01=l_oga.oga03
+#         AND tuq02=l_ogb.ogb04
+#         AND tuq03=l_ogb.ogb092
 #         AND tuq11=l_tuq11
 #         AND tuq12= l_oga.oga04
 #         AND tuq04=l_oga.oga02
 #      IF i=0 THEN
-#         LET l_fac1=1                                                             
-#         IF l_ogb.ogb05 <> l_ima25 THEN                                           
-#             CALL s_umfchk(l_ogb.ogb04,l_ogb.ogb05,l_ima25)                        
-#                  RETURNING l_cnt,l_fac1                                           
-#            IF l_cnt = '1'  THEN                                                  
+#         LET l_fac1=1
+#         IF l_ogb.ogb05 <> l_ima25 THEN
+#             CALL s_umfchk(l_ogb.ogb04,l_ogb.ogb05,l_ima25)
+#                  RETURNING l_cnt,l_fac1
+#            IF l_cnt = '1'  THEN
 #               CALL s_errmsg('','',l_ogb.ogb04,'abm-731',0)  #No.FUN-710028
 #               LET l_fac1=1
 #            END IF
 #         END IF
 #         LET l_tuq09_1 = l_ogb.ogb12*l_fac1*1            #TQC-C20183 --add--
 #         LET l_tuq09_1 = s_digqty(l_tuq09_1,l_ima25)     #TQC-C20183 --add-
-#         INSERT INTO tuq_file(tuq01,tuq02,tuq03,tuq04,tuq05,tuq051,                      
+#         INSERT INTO tuq_file(tuq01,tuq02,tuq03,tuq04,tuq05,tuq051,
 #                           tuq06,tuq07,tuq08,tuq09,tuq10,tuq11,tuq12,tuqplant,tuqlegal)  #FUN-980010 add tuqplant,tuqlegal
-#         VALUES(l_oga.oga03,l_ogb.ogb04,l_ogb.ogb092,l_oga.oga02,l_oga.oga01,l_ogb.ogb03,    
-#               #l_ogb.ogb05,l_ogb.ogb12*1,l_fac1,l_ogb.ogb12*l_fac1*1,'1',l_tuq11,l_oga.oga04,g_plant,g_legal)  #FUN-980010 add g_plant,g_legal   #TQC-C20183 --mark-- 
+#         VALUES(l_oga.oga03,l_ogb.ogb04,l_ogb.ogb092,l_oga.oga02,l_oga.oga01,l_ogb.ogb03,
+#               #l_ogb.ogb05,l_ogb.ogb12*1,l_fac1,l_ogb.ogb12*l_fac1*1,'1',l_tuq11,l_oga.oga04,g_plant,g_legal)  #FUN-980010 add g_plant,g_legal   #TQC-C20183 --mark--
 #                l_ogb.ogb05,l_ogb.ogb12*1,l_fac1,l_tuq09_1,'1',l_tuq11,l_oga.oga04,g_plant,g_legal)  #TQC-C20183 add
 #         IF SQLCA.sqlcode THEN
 #            LET g_showmsg = l_oga.oga03,"/",l_ogb.ogb04,"/",l_ogb.ogb092,"/",l_oga.oga02,"/",l_tuq11,"/",l_oga.oga04  #No.FUN-710028
 #            CALL s_errmsg('tuq01,tuq02,tuq03,tuq04,tuq11,tuq12',g_showmsg,'insert tuq_file',SQLCA.sqlcode,1)   #No.FUN-710028
-#            LET g_success ='N'                                                    
-#            RETURN                                                                
-#         END IF  
-#      ELSE                                                                        
-#         SELECT UNIQUE tuq06 INTO l_tuq06 FROM tuq_file                           
-#          WHERE tuq01=l_oga.oga03                      
-#            AND tuq02=l_ogb.ogb04                          
+#            LET g_success ='N'
+#            RETURN
+#         END IF
+#      ELSE
+#         SELECT UNIQUE tuq06 INTO l_tuq06 FROM tuq_file
+#          WHERE tuq01=l_oga.oga03
+#            AND tuq02=l_ogb.ogb04
 #            AND tuq03=l_ogb.ogb092
-#            AND tuq04=l_oga.oga02                          
+#            AND tuq04=l_oga.oga02
 #            AND tuq11=l_tuq11
 #            AND tuq12=l_oga.oga04
-#         IF SQLCA.sqlcode THEN                                                    
+#         IF SQLCA.sqlcode THEN
 #            LET g_showmsg = l_oga.oga03,"/",l_ogb.ogb04,"/",l_ogb.ogb092,"/",l_oga.oga02,"/",l_tuq11,"/",l_oga.oga04  #No.FUN-710028
 #            CALL s_errmsg('tuq01,tuq02,tuq03,tuq04,tuq11,tuq12',g_showmsg,'select tuq06',SQLCA.sqlcode,1)             #No.FUN-710028
-#            LET g_success ='N'                                                    
-#            RETURN                                                                
-#         END IF                                                                   
-#         LET l_fac1=1                                                             
-#         IF l_ogb.ogb05 <> l_tuq06 THEN                                           
-#            CALL s_umfchk(l_ogb.ogb04,l_ogb.ogb05,l_tuq06)                        
-#                 RETURNING l_cnt,l_fac1                                           
-#            IF l_cnt = '1'  THEN            
+#            LET g_success ='N'
+#            RETURN
+#         END IF
+#         LET l_fac1=1
+#         IF l_ogb.ogb05 <> l_tuq06 THEN
+#            CALL s_umfchk(l_ogb.ogb04,l_ogb.ogb05,l_tuq06)
+#                 RETURNING l_cnt,l_fac1
+#            IF l_cnt = '1'  THEN
 #               CALL s_errmsg('','',l_ogb.ogb04,'abm-731',0)   #No.FUN-710028
-#               LET l_fac1=1                                                       
-#            END IF                                                                
-#         END IF                                                                   
-#         SELECT tuq07 INTO l_tuq07 FROM tuq_file                                  
-#          WHERE tuq01=g_oha.oha03        
-#            AND tuq02=l_ogb.ogb04                          
-#            AND tuq03=l_ogb.ogb092 
+#               LET l_fac1=1
+#            END IF
+#         END IF
+#         SELECT tuq07 INTO l_tuq07 FROM tuq_file
+#          WHERE tuq01=g_oha.oha03
+#            AND tuq02=l_ogb.ogb04
+#            AND tuq03=l_ogb.ogb092
 #            AND tuq04=l_oga.oga02
 #            AND tuq11=l_tuq11
 #            AND tuq12=l_oga.oga04
 #         #MOD-B50039 add --start--
-#         IF SQLCA.sqlcode THEN                                                    
-#            LET g_showmsg = g_oha.oha03,"/",l_ogb.ogb04,"/",l_ogb.ogb092,"/",l_oga.oga02,"/",l_tuq11,"/",l_oga.oga04 
-#            CALL s_errmsg('tuq01,tuq02,tuq03,tuq04,tuq11,tuq12',g_showmsg,'select tuq07',SQLCA.sqlcode,1) 
-#            LET g_success ='N'                                                    
-#            RETURN                                                                
-#         END IF                                                                   
+#         IF SQLCA.sqlcode THEN
+#            LET g_showmsg = g_oha.oha03,"/",l_ogb.ogb04,"/",l_ogb.ogb092,"/",l_oga.oga02,"/",l_tuq11,"/",l_oga.oga04
+#            CALL s_errmsg('tuq01,tuq02,tuq03,tuq04,tuq11,tuq12',g_showmsg,'select tuq07',SQLCA.sqlcode,1)
+#            LET g_success ='N'
+#            RETURN
+#         END IF
 #         #MOD-B50039 add --end--
-#         IF cl_null(l_tuq07) THEN LET l_tuq07=0 END IF                            
-#         IF l_tuq07+l_ogb.ogb12*l_fac1<0 THEN                                     
-#            LET l_desc='2'                                                        
-#         ELSE                                                                     
-#            LET l_desc='1'                                                        
-#         END IF                                                                   
-#         IF l_tuq07=l_ogb.ogb12*l_fac1 THEN                                       
-#            DELETE FROM tuq_file                                                  
+#         IF cl_null(l_tuq07) THEN LET l_tuq07=0 END IF
+#         IF l_tuq07+l_ogb.ogb12*l_fac1<0 THEN
+#            LET l_desc='2'
+#         ELSE
+#            LET l_desc='1'
+#         END IF
+#         IF l_tuq07=l_ogb.ogb12*l_fac1 THEN
+#            DELETE FROM tuq_file
 #                  WHERE tuq01=l_oga.oga03    #No.TQC-640125
-#                    AND tuq02=l_ogb.ogb04                       
-#                    AND tuq03=l_ogb.ogb092 
+#                    AND tuq02=l_ogb.ogb04
+#                    AND tuq03=l_ogb.ogb092
 #                    AND tuq04=l_oga.oga02
 #                    AND tuq11=l_tuq11
 #                    AND tuq12=l_oga.oga04
@@ -19729,44 +19740,44 @@ END FUNCTION
 #            END IF
 #         ELSE
 #            LET l_fac2=1
-#            IF l_tuq06 <> l_ima25 THEN                                            
-#               CALL s_umfchk(l_ogb.ogb04,l_tuq06,l_ima25)                         
-#                   RETURNING l_cnt,l_fac2                                        
-#               IF l_cnt = '1'  THEN                                               
-#                   CALL s_errmsg('','',l_ogb.ogb04,'abm-731',0)  #No.FUN-710028        
-#                   LET l_fac2=1                                                    
-#               END IF                                                             
-#            END IF                                                                
+#            IF l_tuq06 <> l_ima25 THEN
+#               CALL s_umfchk(l_ogb.ogb04,l_tuq06,l_ima25)
+#                   RETURNING l_cnt,l_fac2
+#               IF l_cnt = '1'  THEN
+#                   CALL s_errmsg('','',l_ogb.ogb04,'abm-731',0)  #No.FUN-710028
+#                   LET l_fac2=1
+#               END IF
+#            END IF
 #            LET l_tuq07_1 = l_ogb.ogb12*l_fac1              #TQC-C20183 --add--
 #            LET l_tuq07_1 = s_digqty(l_tuq07_1,l_tuq06)     #TQC-C20183 --add-
 #            LET l_tuq09_1 = l_ogb.ogb12*l_fac1*l_fac2       #TQC-C20183 --add--
 #            LET l_tuq09_1 = s_digqty(l_tuq09_1,l_ima25)     #TQC-C20183 --add-
-#            UPDATE tuq_file 
-#              #SET tuq07=tuq07+l_ogb.ogb12*l_fac1,          #TQC-C20183 --mark--         
-#              #    tuq09=tuq09+l_ogb.ogb12*l_fac1*l_fac2,   #TQC-C20183 --mark--         
+#            UPDATE tuq_file
+#              #SET tuq07=tuq07+l_ogb.ogb12*l_fac1,          #TQC-C20183 --mark--
+#              #    tuq09=tuq09+l_ogb.ogb12*l_fac1*l_fac2,   #TQC-C20183 --mark--
 #               SET tuq07=tuq07+l_tuq07_1,                   #TQC-C20183 --add--
 #                   tuq09=tuq09+l_tuq09_1,                   #TQC-C20183 --add--
-#                   tuq10=l_desc                                      
-#             WHERE tuq01=l_oga.oga03      
-#               AND tuq02=l_ogb.ogb04                       
-#               AND tuq03=l_ohb.ohb092 
+#                   tuq10=l_desc
+#             WHERE tuq01=l_oga.oga03
+#               AND tuq02=l_ogb.ogb04
+#               AND tuq03=l_ohb.ohb092
 #               AND tuq04=g_oha.oha02
 #               AND tuq11=l_tuq11
 #               AND tuq12=l_oga.oga04
 #            IF SQLCA.sqlcode THEN
 #               LET g_showmsg = l_oga.oga03,"/",l_ogb.ogb04,"/",l_ogb.ogb092,"/",l_oga.oga02,"/",l_tuq11,"/",l_oga.oga04  #No.FUN-710028
 #               CALL s_errmsg('tuq01,tuq02,tuq03,tuq04,tuq11,tuq12',g_showmsg,'update tuq_file',SQLCA.sqlcode,1)          #No.FUN-710028
-#               LET g_success='N'                                                  
-#               RETURN                                                             
-#            END IF                                                                
-#          END IF                                                                   
-#      END IF               
-#      LET l_fac1=1                                                                
-#      IF l_ogb.ogb05 <> l_ima25 THEN                                              
-#         CALL s_umfchk(l_ogb.ogb04,l_ogb.ogb05,l_ima25) 
-#              RETURNING l_cnt,l_fac1                                              
-#         IF l_cnt = '1'  THEN                                                     
-#            CALL s_errmsg('','',l_ogb.ogb04,'abm-731',0)   #No.FUN-710028                               
+#               LET g_success='N'
+#               RETURN
+#            END IF
+#          END IF
+#      END IF
+#      LET l_fac1=1
+#      IF l_ogb.ogb05 <> l_ima25 THEN
+#         CALL s_umfchk(l_ogb.ogb04,l_ogb.ogb05,l_ima25)
+#              RETURNING l_cnt,l_fac1
+#         IF l_cnt = '1'  THEN
+#            CALL s_errmsg('','',l_ogb.ogb04,'abm-731',0)   #No.FUN-710028
 #            LET l_fac1=1
 #         END IF
 #      END IF
@@ -19777,9 +19788,9 @@ END FUNCTION
 #        #LET l_tup08='1'   #CHI-B40056 mark
 #         LET l_tup11='1'   #CHI-B40056 add
 #      END IF
-#      SELECT COUNT(*) INTO i FROM tup_file                                        
-#       WHERE tup01=l_oga.oga03     
-#         AND tup02=l_ogb.ogb04                             
+#      SELECT COUNT(*) INTO i FROM tup_file
+#       WHERE tup01=l_oga.oga03
+#         AND tup02=l_ogb.ogb04
 #        #AND tup08=l_tup08       #CHI-B40056 mark
 #        #AND tup09=l_oga.oga04   #CHI-B40056 mark
 #         AND tup11=l_tup11 AND tup12=l_oga.oga04  #CHI-B40056 add
@@ -19788,24 +19799,24 @@ END FUNCTION
 #      LET l_tup05_1= l_ogb.ogb12*l_fac1*1                    #TQC-C20183  --ADD--
 #      LET l_tup05_1 = s_digqty(l_tup05_1,l_ima25)            #TQC-C20183  --ADD--
 #      IF i=0 THEN
-#        #INSERT INTO tup_file(tup01,tup02,tup03,tup04,tup05,tup06,tup07,tup08,tup09,tupplant,tuplegal)  #FUN-980010 add  tupplant,tuplegal #CHI-B40056 mark     
+#        #INSERT INTO tup_file(tup01,tup02,tup03,tup04,tup05,tup06,tup07,tup08,tup09,tupplant,tuplegal)  #FUN-980010 add  tupplant,tuplegal #CHI-B40056 mark
 #         INSERT INTO tup_file(tup01,tup02,tup03,tup04,tup05,tup06,tup07,tup11,tup12,tupplant,tuplegal)  #FUN-980010 add  tupplant,tuplegal #CHI-B40056 modfiy tup08,tup09 ->tup11,tup12
-#         VALUES(l_oga.oga03,l_ogb.ogb04,l_ogb.ogb092,l_ima25,     
+#         VALUES(l_oga.oga03,l_ogb.ogb04,l_ogb.ogb092,l_ima25,
 #               #l_ogb.ogb12*l_fac1*1,l_ima71+l_oga.oga02,l_oga.oga02,l_tup08,l_oga.oga04,g_plant,g_legal)   #TQC-930128 #FUN-980010 add g_plant,g_legal #MOD-B30651 mark
-#               #l_ogb.ogb12*l_fac1*1,l_tup06,l_oga.oga02,l_tup08,l_oga.oga04,g_plant,g_legal)      #TQC-C20183 --mark--                                                     #MOD-B30651 
-#                l_tup05_1,l_tup06,l_oga.oga02,l_tup11,l_oga.oga04,g_plant,g_legal)                 #TQC-C20183 --add--  #MOD-B30651 #CHI-B40056 modfiy tup08 ->tup11 
+#               #l_ogb.ogb12*l_fac1*1,l_tup06,l_oga.oga02,l_tup08,l_oga.oga04,g_plant,g_legal)      #TQC-C20183 --mark--                                                     #MOD-B30651
+#                l_tup05_1,l_tup06,l_oga.oga02,l_tup11,l_oga.oga04,g_plant,g_legal)                 #TQC-C20183 --add--  #MOD-B30651 #CHI-B40056 modfiy tup08 ->tup11
 #         IF SQLCA.sqlcode THEN
 #            LET g_showmsg = l_oga.oga03,"/",l_ogb.ogb04,"/",l_ogb.ogb092,"/",l_oga.oga02,"/",l_tuq11,"/",l_oga.oga04  #No.FUN-710028
 #            CALL s_errmsg('tuq01,tuq02,tuq03,tuq04,tuq11,tuq12',g_showmsg,'insert tuq_file',SQLCA.sqlcode,1)          #No.FUN-710028
-#            LET g_success='N'                                                     
-#            RETURN                                                                
-#         END IF                                                                   
-#      ELSE                                                                        
-#         UPDATE tup_file 
+#            LET g_success='N'
+#            RETURN
+#         END IF
+#      ELSE
+#         UPDATE tup_file
 #           #SET tup05=tup05+l_ogb.ogb12*l_fac1           #TQC-C20183 --mark--
 #            SET tup05=tup05+l_tup05_1                    #TQC-C20183 --add--
-#          WHERE tup01=l_oga.oga03    
-#            AND tup02=l_ogb.ogb04                          
+#          WHERE tup01=l_oga.oga03
+#            AND tup02=l_ogb.ogb04
 #            AND tup03=l_ogb.ogb092
 #           #AND tup08=l_tup08      #CHI-B40056 mark
 #           #AND tup09=l_oga.oga04  #CHI-B40056 mark
@@ -19813,20 +19824,20 @@ END FUNCTION
 #         IF SQLCA.sqlcode THEN
 #            LET g_showmsg = l_oga.oga03,"/",l_ogb.ogb04,"/",l_ogb.ogb092,"/",l_tup11,"/",l_oga.oga04   #No.FUN-710028  #CHI-B40056 modfiy l_tup08->l_tup11
 #            CALL s_errmsg('tup01,tup02,tup03,tup11,tup12',g_showmsg,'update tup_file',SQLCA.sqlcode,1) #No.FUN-710028  #CHI-B40056 modfiy tup08,tup09 ->tup11,tup12
-#            LET g_success='N'                                                     
-#            RETURN                                                                
-#         END IF                                                                   
-#      END IF    
+#            LET g_success='N'
+#            RETURN
+#         END IF
+#      END IF
 #END FUNCTION
-# 
+#
 ##此FUN僅DIS使用,因在過帳段使用,所以納入Global
 #FUNCTION t700_ar()
-#     
-#   IF l_oga.ogaconf='N' THEN 
-#      CALL cl_err('conf=N','aap-717',0) RETURN 
+#
+#   IF l_oga.ogaconf='N' THEN
+#      CALL cl_err('conf=N','aap-717',0) RETURN
 #   END IF
-#   IF l_oga.ogapost='N' THEN 
-#      CALL cl_err('post=N','aim-206',0) RETURN 
+#   IF l_oga.ogapost='N' THEN
+#      CALL cl_err('post=N','aim-206',0) RETURN
 #   END IF
 #   IF l_oga.oga10 IS NOT NULL THEN RETURN END IF
 #   IF l_oga.oga00 MATCHES '[23]'THEN
@@ -19839,9 +19850,9 @@ END FUNCTION
 #             " '",l_oga.oga05,"' '",
 #                  l_oga.oga212,"'"
 #   CALL cl_cmdrun_wait(g_msg)
-#END FUNCTION 
+#END FUNCTION
 #DEV-D30046 搬移至saxmt700_sub.4gl--mark--end
- 
+
 #此FUN僅DIS使用,因在扣帳段有呼叫,所以納入Global
 FUNCTION t700_price(p_ac)
 DEFINE l_n             LIKE type_file.num5,          #No.FUN-680137 SMALLINT
@@ -19855,7 +19866,7 @@ DEFINE l_n             LIKE type_file.num5,          #No.FUN-680137 SMALLINT
        l_ohb05         LIKE ohb_file.ohb05,
        l_flag          LIKE type_file.chr1,          #No.FUN-680137 VARCHAR(1)
        l_unitrate      LIKE ima_file.ima31_fac,
-       l_unit          LIKE ima_file.ima31, 
+       l_unit          LIKE ima_file.ima31,
        l_tqz06         LIKE tqz_file.tqz06,
        l_tqz07         LIKE tqz_file.tqz07,
        l_tqy38         LIKE tqy_file.tqy38,
@@ -19871,7 +19882,7 @@ DEFINE l_rtz06      LIKE rtz_file.rtz06
        WHERE rtz01 = g_oha.ohaplant
    END IF
 #FUN-C10053 ----add---end -----
-       
+
    IF cl_null(g_oha.oha02) THEN
       CALL cl_err('','atm-206',0)
       RETURN 0
@@ -19904,7 +19915,7 @@ DEFINE l_rtz06      LIKE rtz_file.rtz06
                           g_oha.oha01,g_ohb1[p_ac].ohb03,g_ohb1[p_ac].ohb917,
                           g_ohb1[p_ac].ohb1002,'a')
 #     RETURNING g_ohb1[p_ac].ohb13  #FUN-AB0061 mark
-      RETURNING g_ohb1[p_ac].ohb13,g_ohb1[p_ac].ohb37  #FUN-AB0061 add 
+      RETURNING g_ohb1[p_ac].ohb13,g_ohb1[p_ac].ohb37  #FUN-AB0061 add
   #END IF #TQC-B10009 #FUN-B50171
   #FUN-B70087 mod
   #IF g_ohb1[p_ac].ohb13=0 THEN CALL s_unitprice_entry(g_oha.oha03,g_oha.oha31,g_oha.ohaplant,' ') END IF #FUN-9C0120 #FUN-B70061 暫時加' '
@@ -19928,30 +19939,30 @@ DEFINE l_rtz06      LIKE rtz_file.rtz06
 #FUN-C10053 ----add---end -----
       IF g_oha.oha213 = 'N' THEN
          LET g_ohb1[p_ac].ohb14 =g_ohb1[p_ac].ohb917*g_ohb1[p_ac].ohb13*g_ohb1[p_ac].ohb1003/100
-         CALL cl_digcut(g_ohb1[p_ac].ohb14,t_azi04)  RETURNING g_ohb1[p_ac].ohb14 
+         CALL cl_digcut(g_ohb1[p_ac].ohb14,t_azi04)  RETURNING g_ohb1[p_ac].ohb14
          LET g_ohb1[p_ac].ohb14t=g_ohb1[p_ac].ohb14*(1+g_oha.oha211/100)
-         CALL cl_digcut(g_ohb1[p_ac].ohb14t,t_azi04) RETURNING g_ohb1[p_ac].ohb14t 
+         CALL cl_digcut(g_ohb1[p_ac].ohb14t,t_azi04) RETURNING g_ohb1[p_ac].ohb14t
       ELSE
         #TQC-B60288 Begin---
         #LET g_ohb1[p_ac].ohb13=g_ohb1[p_ac].ohb13*(1+g_oha.oha211/100)
         #CALL cl_digcut(g_ohb1[p_ac].ohb13,t_azi03) RETURNING g_ohb1[p_ac].ohb13
         #LET g_ohb1[p_ac].ohb37=g_ohb1[p_ac].ohb37*(1+g_oha.oha211/100)           #FUN-AB0061 add
-        #CALL cl_digcut(g_ohb1[p_ac].ohb37,t_azi03) RETURNING g_ohb1[p_ac].ohb37  #FUN-AB0061 add 
+        #CALL cl_digcut(g_ohb1[p_ac].ohb37,t_azi03) RETURNING g_ohb1[p_ac].ohb37  #FUN-AB0061 add
         #TQC-B60288 End-----
          LET g_ohb1[p_ac].ohb14t=g_ohb1[p_ac].ohb917*g_ohb1[p_ac].ohb13*g_ohb1[p_ac].ohb1003/100
          CALL cl_digcut(g_ohb1[p_ac].ohb14t,t_azi04) RETURNING g_ohb1[p_ac].ohb14t
          LET g_ohb1[p_ac].ohb14 =g_ohb1[p_ac].ohb14t/(1+g_oha.oha211/100)
-         CALL cl_digcut(g_ohb1[p_ac].ohb14,t_azi04)  RETURNING g_ohb1[p_ac].ohb14 
+         CALL cl_digcut(g_ohb1[p_ac].ohb14,t_azi04)  RETURNING g_ohb1[p_ac].ohb14
       END IF
    END IF #FUN-C10053
    END IF #FUN-B50171
-   IF g_ohb1[p_ac].ohb1004 = 'Y'  THEN 
+   IF g_ohb1[p_ac].ohb1004 = 'Y'  THEN
       LET g_ohb1[p_ac].ohb14=0
       LET g_ohb1[p_ac].ohb14t=0
    END IF
    RETURN 0
 END FUNCTION
- 
+
 FUNCTION t7005_def_form()
 
     CALL cl_set_comp_entry("ohb911,ohb914",FALSE)
@@ -20008,9 +20019,9 @@ FUNCTION t7005_def_form()
     LET b_ohb.ohb911= g_ohb1[l_ac].ohb911
     LET b_ohb.ohb912= g_ohb1[l_ac].ohb912
 END FUNCTION
- 
-FUNCTION t700_refresh_detail() 
-   DEFINE l_compare          LIKE oay_file.oay22    
+
+FUNCTION t700_refresh_detail()
+   DEFINE l_compare          LIKE oay_file.oay22
    DEFINE li_col_count       LIKE type_file.num5        # No.FUN-680137 SMALLINT
    DEFINE li_i, li_j         LIKE type_file.num5        # No.FUN-680137 SMALLINT
    DEFINE lc_agb03           LIKE agb_file.agb03
@@ -20021,14 +20032,14 @@ FUNCTION t700_refresh_detail()
    DEFINE ls_sql             STRING
    DEFINE ls_show,ls_hide    STRING
    DEFINE l_gae04            LIKE gae_file.gae04
-   
+
    #判斷是否進行料件多屬性新機制管理以及是否傳入了屬性群組
    IF ( g_sma.sma120 = 'Y' )AND( g_sma.sma907 = 'Y' ) THEN
       #首先判斷有無單身記錄，如果單身根本沒有東東，則按照默認的lg_oay22來決定
       #顯示什么組別的信息，如果有單身，則進行下面的邏輯判斷
       IF g_ohb1.getLength() = 0 THEN   #No.FUN-650108
          LET lg_group = lg_oay22
-      ELSE   
+      ELSE
          #讀取當前單身所有的料件資料，如果它們都屬于多屬性子料件，并且擁有一致的
          #屬性群組，則以該屬性群組作為顯示單身明細屬性的依據，如果有不統一的狀況
          #則返回一個NULL，下面將不顯示任明細屬性列
@@ -20041,33 +20052,33 @@ FUNCTION t700_refresh_detail()
             END IF
             SELECT imaag INTO l_compare FROM ima_file WHERE ima01 = g_ohb1[li_i].att00  #No.FUN-650108
             #第一次是賦值
-            IF cl_null(lg_group) THEN 
+            IF cl_null(lg_group) THEN
                LET lg_group = l_compare
-            #以后是比較   
-            ELSE 
+            #以后是比較
+            ELSE
               #如果在單身料件屬于不同的屬性組則直接退出（不顯示這些東東)
               IF l_compare <> lg_group THEN
                  LET lg_group = ''
                  EXIT FOR
               END IF
             END IF
-          IF lg_group <> lg_oay22 THEN                                           
-            LET lg_group = ''                                                   
-            EXIT FOR                                                            
-          END IF  
-         END FOR 
+          IF lg_group <> lg_oay22 THEN
+            LET lg_group = ''
+            EXIT FOR
+          END IF
+         END FOR
       END IF
- 
+
       #到這里時lg_group中存放的已經是應該顯示的組別了，該變量是一個全局變量
       #在單身INPUT或開窗時都會用到，因為refresh函數被執行的時機較早，所以能保証在需要的時候有值
       SELECT COUNT(*) INTO li_col_count FROM agb_file WHERE agb01 = lg_group
- 
+
       #走到這個分支說明是采用新機制，那么使用att00父料件編號代替ohb04子料件編號來顯示
       #得到當前語言別下ohb04的欄位標題
-      SELECT gae04 INTO l_gae04 FROM gae_file 
+      SELECT gae04 INTO l_gae04 FROM gae_file
        WHERE gae01 = g_prog AND gae02 = 'ohb04' AND gae03 = g_lang
       CALL cl_set_comp_att_text("att00",l_gae04)
-     
+
       #為了提高效率，把需要顯示和隱藏的欄位都放到各自的變量里，然后在結尾的地方一次性顯示或隱藏
       IF NOT cl_null(lg_group) THEN
          LET ls_hide = 'ohb04,b1_ohb06'   #No.FUN-650108
@@ -20076,19 +20087,19 @@ FUNCTION t700_refresh_detail()
          LET ls_hide = 'att00'
          LET ls_show = 'ohb04,b1_ohb06'   #No.FUN-650108
       END IF
- 
+
       #顯現該有的欄位,置換欄位格式
       CALL lr_agc.clear()  #因為這個過程可能會被執行多次，作為一個公共變量，每次執行之前必須要初始化
       FOR li_i = 1 TO li_col_count
          SELECT agb03 INTO lc_agb03 FROM agb_file
           WHERE agb01 = lg_group AND agb02 = li_i
- 
+
          LET lc_agb03 = lc_agb03 CLIPPED
          SELECT * INTO lr_agc[li_i].* FROM agc_file
           WHERE agc01 = lc_agb03
- 
+
          LET lc_index = li_i USING '&&'
- 
+
          CASE lr_agc[li_i].agc04
             WHEN '1'
                LET ls_show = ls_show || ",att" || lc_index
@@ -20098,7 +20109,7 @@ FUNCTION t700_refresh_detail()
                   CALL cl_chg_comp_att("formonly.att" || lc_index,"NOT NULL|REQUIRED|SCROLL","1|1|1")
             WHEN '2'
                LET ls_show = ls_show || ",att" || lc_index || "_c"
-               LET ls_hide = ls_hide || ",att" || lc_index 
+               LET ls_hide = ls_hide || ",att" || lc_index
                CALL cl_set_comp_att_text("att" || lc_index || "_c",lr_agc[li_i].agc02)
                LET ls_sql = "SELECT * FROM agd_file WHERE agd01 = '",lr_agc[li_i].agc01,"'"
                DECLARE agd_curs CURSOR FROM ls_sql
@@ -20129,7 +20140,7 @@ FUNCTION t700_refresh_detail()
                #這里需要判別g_sma.sma908,如果是允許新增子料件則要把這些屬性設置成為REQUIRED的,否則要設成NOENTRY
                   CALL cl_chg_comp_att("formonly.att" || lc_index,"NOT NULL|REQUIRED|SCROLL","1|1|1")
          END CASE
-      END FOR       
+      END FOR
    ELSE
       #否則什么也不做(不顯示任何屬性列)
       LET li_i = 1
@@ -20137,30 +20148,30 @@ FUNCTION t700_refresh_detail()
       LET ls_hide = 'att00'
       LET ls_show = 'ohb04'
    END IF
-  
+
    #下面開始隱藏其他明細屬性欄位(從li_i開始)
    FOR li_j = li_i TO 10
       LET lc_index = li_j USING '&&'
       #注意att0x和att0x_c都要隱藏，別忘了_c的
       LET ls_hide = ls_hide || ",att" || lc_index || ",att" || lc_index || "_c"
    END FOR
- 
+
    #這樣只用調兩次公共函數就可以解決問題了，效率應該會高一些
    CALL cl_set_comp_visible(ls_show, TRUE)
    CALL cl_set_comp_visible(ls_hide, FALSE)
 END FUNCTION
- 
+
 #--------------------在修改下面的代碼前請讀一下注釋先，謝了! -----------------------
- 
+
 #下面代碼是從單身INPUT ARRAY語句中的AFTER FIELD段中拷貝來的，因為在多屬性新模式下原來的oea04料件編號
 #欄位是要被隱藏起來，并由新增加的imx00（母料件編號）+各個明細屬性欄位來取代，所以原來的AFTER FIELD
 #代碼是不會被執行到，需要執行的判斷應該放新增加的几個欄位的AFTER FIELD中來進行，因為要用多次嘛，所以
 #單獨用一個FUNCTION來放，順便把ohb04的AFTER FIELD也移過來，免得將來維護的時候遺漏了
 #下標g_ohb[l_ac]都被改成g_ohb[p_ac]，請注意
- 
+
 #本函數返回TRUE/FALSE,表示檢核過程是否通過，一般說來，在使用過程中應該是如下方式□
 #    AFTER FIELD XXX
-#        IF NOT t700_check_ohb04(.....)  THEN NEXT FIELD XXX END IF        
+#        IF NOT t700_check_ohb04(.....)  THEN NEXT FIELD XXX END IF
 FUNCTION t700_check_ohb04(p_field,p_ac)
    DEFINE
      p_field                     STRING, #當前是在哪個欄位中觸發了AFTER FIELD事件
@@ -20199,7 +20210,7 @@ FUNCTION t700_check_ohb04(p_field,p_ac)
      l_max                       LIKE tqw_file.tqw07,
      l_flag_chk                  LIKE type_file.chr1      #CHI-6A0064 add
 DEFINE l_flag                    LIKE type_file.chr1      #No.FUN-7B0018
-DEFINE l_rtz04                LIKE rtz_file.rtz04    #No.FUN-870007   
+DEFINE l_rtz04                LIKE rtz_file.rtz04    #No.FUN-870007
 DEFINE l_rte05                LIKE rte_file.rte05    #No.FUN-870007
 DEFINE l_rte06                LIKE rte_file.rte06    #No.FUN-870007
 DEFINE l_rte07                LIKE rte_file.rte07    #No.FUN-870007
@@ -20210,12 +20221,12 @@ DEFINE l_rtdconf              LIKE rtd_file.rtdconf  #No.FUN-870007
    DEFINE l_rtz07             LIKE rtz_file.rtz07
    DEFINE l_rtz08             LIKE rtz_file.rtz08
    #FUN-C20002--end add------------------------------------
-     
+
      #如果當前欄位是新增欄位（母料件編號以及十個明細屬性欄位）的時候，如果全部輸了值則合成出一個
      #新的子料件編號并把值填入到已經隱藏起來的ohb04中（如果imxXX能夠顯示，ohb04一定是隱藏的）
      #下面就可以直接沿用ohb04的檢核邏輯了
      #如果不是，則看看是不是ohb04自己觸發了，如果還不是則什么也不做(無聊)，返回一個FALSE
-#IF g_oea.oeaslk02 <> 'Y' THEN  #FUN-A50054 add #FUN-A60035 mark    
+#IF g_oea.oeaslk02 <> 'Y' THEN  #FUN-A50054 add #FUN-A60035 mark
      IF ( p_field = 'imx00' ) OR ( p_field = 'imx01' ) OR ( p_field = 'imx02' ) OR
         ( p_field = 'imx03' ) OR ( p_field = 'imx04' ) OR ( p_field = 'imx05' ) OR
         ( p_field = 'imx06' ) OR ( p_field = 'imx07' ) OR ( p_field = 'imx08' ) OR
@@ -20224,7 +20235,7 @@ DEFINE l_rtdconf              LIKE rtd_file.rtdconf  #No.FUN-870007
         #全部被輸入完成了才進行后續的操作
         LET ls_pid = g_ohb1[p_ac].att00   # ls_pid 父料件編號   #No.FUN-650108
         LET ls_value = g_ohb1[p_ac].att00   # ls_value 子料件編號   #No.FUN-650108
-        IF cl_null(ls_pid) THEN 
+        IF cl_null(ls_pid) THEN
            #所有要返回TRUE的分支都要加這兩句話,原來下面的會被
            #注釋掉
            CALL t700_set_no_entry_b(p_cmd)
@@ -20233,9 +20244,9 @@ DEFINE l_rtdconf              LIKE rtd_file.rtdconf  #No.FUN-870007
            CALL t700_set_du_required(p_cmd)
            RETURN TRUE,g_buf,g_buf1,l_b2,l_ima35,l_ima36
         END IF  #注意這里沒有錯，所以返回TRUE
-       
+
         #取出當前母料件包含的明細屬性的個數
-        SELECT COUNT(*) INTO l_cnt FROM agb_file WHERE agb01 = 
+        SELECT COUNT(*) INTO l_cnt FROM agb_file WHERE agb01 =
           (SELECT imaag FROM ima_file WHERE ima01 = ls_pid)
         IF l_cnt = 0 THEN
            #所有要返回TRUE的分支都要加這兩句話,原來下面的會被
@@ -20246,10 +20257,10 @@ DEFINE l_rtdconf              LIKE rtd_file.rtdconf  #No.FUN-870007
            CALL t700_set_du_required(p_cmd)
            RETURN TRUE,g_buf,g_buf1,l_b2,l_ima35,l_ima36
         END IF
-        
+
         FOR li_i = 1 TO l_cnt
            #如果有任何一個明細屬性應該輸而沒有輸的則退出
-           IF cl_null(arr_detail[p_ac].imx[li_i]) THEN 
+           IF cl_null(arr_detail[p_ac].imx[li_i]) THEN
               #所有要返回TRUE的分支都要加這兩句話,原來下面的會被
               #注釋掉
               CALL t700_set_no_entry_b(p_cmd)
@@ -20257,19 +20268,19 @@ DEFINE l_rtdconf              LIKE rtd_file.rtdconf  #No.FUN-870007
               CALL t700_set_no_entry_ohb092() #FUN-B50096
               CALL t700_set_du_required(p_cmd)
               RETURN TRUE,g_buf,g_buf1,l_b2,l_ima35,l_ima36
-           END IF  
+           END IF
         END FOR
-   
+
         #得到系統定義的標准分隔符sma46
-        SELECT sma46 INTO l_ps FROM sma_file    
-       
+        SELECT sma46 INTO l_ps FROM sma_file
+
         #合成子料件的名稱
         SELECT ima02 INTO ls_pname FROM ima_file   # ls_name 父料件名稱
          WHERE ima01 = ls_pid
         LET ls_spec = ls_pname  # ls_spec 子料件名稱
         #方法□循環在agd_file中找有沒有對應記錄，如果有，就用該記錄的名稱來
         #替換初始名稱，如果找不到則就用原來的名稱
-        FOR li_i = 1 TO l_cnt  
+        FOR li_i = 1 TO l_cnt
            LET lc_agd03 = ""
            LET ls_value = ls_value.trim(), l_ps CLIPPED, arr_detail[p_ac].imx[li_i]
            SELECT agd03 INTO lc_agd03 FROM agd_file
@@ -20279,15 +20290,15 @@ DEFINE l_rtdconf              LIKE rtd_file.rtdconf  #No.FUN-870007
            ELSE
               LET ls_spec = ls_spec.trim(),l_ps,lc_agd03
            END IF
-        END FOR     
-        
+        END FOR
+
         #解析ls_value生成要傳給cl_copy_bom的那個l_param_list
         LET l_str_tok = base.StringTokenizer.create(ls_value,l_ps)
         LET l_tmp = l_str_tok.nextToken()   #先把第一個部分--名稱去掉
-   
+
         LET ls_sql = "SELECT agb03 FROM agb_file,ima_file WHERE ",
                      "ima01 = '",ls_pid CLIPPED,"' AND agb01 = imaag ",
-                     "ORDER BY agb02"  
+                     "ORDER BY agb02"
         DECLARE param_curs CURSOR FROM ls_sql
         FOREACH param_curs INTO lc_agb03
            #l_str_tok中的Tokens數量應該和param_curs中的記錄數量完全一致
@@ -20296,22 +20307,22 @@ DEFINE l_rtdconf              LIKE rtd_file.rtdconf  #No.FUN-870007
            ELSE
               LET l_param_list = l_param_list,'|#',lc_agb03,'#|',l_str_tok.nextToken()
            END IF
-        END FOREACH     
- 
+        END FOREACH
+
         LET g_value = ls_value
- 
-        #不允許新增ima_file里面沒有的子料件，故在此檢查一下               
-        SELECT count(*) INTO l_n FROM ima_file                                  
-         WHERE ima01 =g_value                                                   
-        IF l_n =0 THEN                                                          
+
+        #不允許新增ima_file里面沒有的子料件，故在此檢查一下
+        SELECT count(*) INTO l_n FROM ima_file
+         WHERE ima01 =g_value
+        IF l_n =0 THEN
            CALL cl_err(ls_value,'atm-523',0)
            RETURN FALSE,g_buf,g_buf1,l_b2,l_ima35,l_ima36
-        END IF         
-        
+        END IF
+
         #調用cl_copy_ima將新生成的子料件插入到數據庫中
         IF cl_copy_ima(ls_pid,ls_value,ls_spec,l_param_list) = TRUE THEN
            #如果向其中成功插入記錄則同步插入屬性記錄到imx_file中去
-           LET ls_value_fld = ls_value 
+           LET ls_value_fld = ls_value
            INSERT INTO imx_file VALUES(ls_value_fld, ls_pid,arr_detail[p_ac].imx[1],
              arr_detail[p_ac].imx[2],arr_detail[p_ac].imx[3],arr_detail[p_ac].imx[4],
              arr_detail[p_ac].imx[5],arr_detail[p_ac].imx[6],arr_detail[p_ac].imx[7],
@@ -20323,18 +20334,18 @@ DEFINE l_rtdconf              LIKE rtd_file.rtdconf  #No.FUN-870007
               DELETE FROM ima_file WHERE ima01 = ls_value_fld
               RETURN FALSE,g_buf,g_buf1,l_b2,l_ima35,l_ima36
            END IF
-        END IF 
+        END IF
         #把生成的子料件賦給ohb04，否則下面的檢查就沒有意義了
         LET g_ohb1[p_ac].ohb04 = ls_value   #No.FUN-650108
-     ELSE 
-        IF ( p_field <> 'ohb04' )AND( p_field <> 'imx00' ) THEN 
+     ELSE
+        IF ( p_field <> 'ohb04' )AND( p_field <> 'imx00' ) THEN
            RETURN FALSE,g_buf,g_buf1,l_b2,l_ima35,l_ima36
         END IF
      END IF
-#END IF  #FUN-A50054 add #FUN-A60035 mark 
+#END IF  #FUN-A50054 add #FUN-A60035 mark
      #到這里已經完成了以前在cl_itemno_multi_att()中做的所有准備工作，在系統資料庫
      #中已經有了對應的子料件的名稱，下面可以按照ohb04進行判斷了
-  
+
      #--------重要 !!!!!!!!!!!-------------------------
      #下面的代碼都是從原INPUT ARRAY中的AFTER FIELD ohb04段拷貝來的，唯一做的修改
      #是將原來的NEXT FIELD 語句都改成了RETURN FALSE, xxx,xxx ... ，因為NEXE FIELD
@@ -20342,25 +20353,25 @@ DEFINE l_rtdconf              LIKE rtd_file.rtdconf  #No.FUN-870007
      #返回的還有一些CHECK過程中要從ima_file中取得的欄位信息，其他的比如判斷邏輯和
      #錯誤提示都沒有改，如果你需要在里面添加代碼請注意上面的那個要點就可以了
      #CALL t700_set_no_entry_b('u')  #MOD-480379
-  
+
      IF NOT cl_null(g_ohb1[l_ac].ohb04) THEN   #No.FUN-650108
-        #新增一個判斷,如果lg_oay22不為空,表示當前采用的是料件多屬性的新機制,因此這>                                                    
-        #attxx這樣的明細屬性欄位的AFTER FIELD來調用的,所以不再使用原來的輸入機制,否                                                    
+        #新增一個判斷,如果lg_oay22不為空,表示當前采用的是料件多屬性的新機制,因此這>
+        #attxx這樣的明細屬性欄位的AFTER FIELD來調用的,所以不再使用原來的輸入機制,否
       # IF g_oea.oeaslk02 <> 'Y'  THEN  #FUN-A50054 add #FUN-A60035 mark
-          IF g_sma.sma120 = 'Y' THEN                                                                                                   
+          IF g_sma.sma120 = 'Y' THEN
              CALL cl_itemno_multi_att("ohb04",g_ohb1[l_ac].ohb04,"","1","e")    #No.FUN-650108
                 RETURNING l_check,g_ohb1[l_ac].ohb04,g_ohb1[l_ac].ohb06                  #No.FUN-650108
-             DISPLAY g_ohb1[l_ac].ohb04 TO ohb04    #No.FUN-650108                                   
-             DISPLAY g_ohb1[l_ac].ohb06 TO ohb06      #No.FUN-650108                                    
+             DISPLAY g_ohb1[l_ac].ohb04 TO ohb04    #No.FUN-650108
+             DISPLAY g_ohb1[l_ac].ohb06 TO ohb06      #No.FUN-650108
           END IF
-      # END IF  #FUN-A50054 add #FUN-A60035 mark                                                                                                                        
+      # END IF  #FUN-A50054 add #FUN-A60035 mark
           IF g_aza.aza50='Y' THEN
                IF g_ohb1[l_ac].ohb04[1,4]!='MISC' THEN
                   SELECT count(*) INTO g_n FROM ima_file
-                   WHERE ima01=g_ohb1[l_ac].ohb04 
+                   WHERE ima01=g_ohb1[l_ac].ohb04
                      AND ima1010='1'     #No.FUN-690025
                      AND imaacti='Y'
-                  IF g_n=0 THEN 
+                  IF g_n=0 THEN
                      CALL cl_err('ohb04','mfg9329',0)
                      RETURN FALSE,g_buf,g_buf1,l_b2,l_ima35,l_ima36
                   END IF
@@ -20368,8 +20379,8 @@ DEFINE l_rtdconf              LIKE rtd_file.rtdconf  #No.FUN-870007
                    WHERE ima01=g_ohb1[l_ac].ohb04
                   LET g_ohb1[l_ac].ima1002=g_ima1002
                   LET g_ohb1[l_ac].ima135=g_ima135
-                  DISPLAY g_ohb1[l_ac].ima1002 TO b1_ima1002 
-                  DISPLAY g_ohb1[l_ac].ima135 TO b1_ima135  
+                  DISPLAY g_ohb1[l_ac].ima1002 TO b1_ima1002
+                  DISPLAY g_ohb1[l_ac].ima135 TO b1_ima135
                END IF
                IF g_ohb1[l_ac].ohb04[1,4]!='MISC' THEN
                    SELECT count(*) INTO g_n FROM ima_file,tqh_file
@@ -20380,25 +20391,25 @@ DEFINE l_rtdconf              LIKE rtd_file.rtdconf  #No.FUN-870007
                       CALL cl_err('ohb04','atm-375',0)
                     RETURN FALSE,g_buf,g_buf1,l_b2,l_ima35,l_ima36
                    END IF
-               END IF       
+               END IF
           ELSE
              IF g_ohb1[l_ac].ohb04[1,4]='MISC' THEN
-                LET g_n = 0 
+                LET g_n = 0
                 SELECT COUNT(*) INTO g_n FROM ima_file
                  WHERE ima01='MISC'
              ELSE
-                LET g_n = 0 
+                LET g_n = 0
                 SELECT COUNT(*) INTO g_n FROM ima_file
-                 WHERE ima01=g_ohb1[l_ac].ohb04 
-                   AND ima1010='1'     
+                 WHERE ima01=g_ohb1[l_ac].ohb04
+                   AND ima1010='1'
                    AND imaacti='Y'
              END IF
-             IF g_n = 0 THEN 
+             IF g_n = 0 THEN
                 CALL cl_err('ohb04','mfg9329',0)
                 RETURN FALSE,g_buf,g_buf1,l_b2,l_ima35,l_ima36
              END IF
           END IF
- 
+
         LET l_misc=g_ohb1[l_ac].ohb04[1,4]   #No.FUN-650108
         IF g_ohb1[l_ac].ohb04[1,4]='MISC' THEN   #No.FUN-650108
            SELECT COUNT(*) INTO l_n FROM ima_file
@@ -20415,53 +20426,53 @@ DEFINE l_rtdconf              LIKE rtd_file.rtdconf  #No.FUN-870007
             WHERE rtz01=g_plant
            IF SQLCA.sqlcode=100 THEN
               CALL cl_err('','art-430',0)
-              RETURN FALSE,g_buf,g_buf1,l_b2,l_ima35,l_ima36   
+              RETURN FALSE,g_buf,g_buf1,l_b2,l_ima35,l_ima36
            END IF
-           IF cl_null(l_rtz04) THEN                                                                                           
-              LET l_n = 0                                                                                                             
-              SELECT COUNT(*) INTO l_n FROM ima_file                                                                                  
-               WHERE ima01=g_ohb1[l_ac].ohb04                                                                            
-              IF l_n= 0 THEN                                                                                                          
-                 CALL cl_err('','art-440',0)                                                                                          
-                 RETURN FALSE,g_buf,g_buf1,l_b2,l_ima35,l_ima36                                                                    
-              END IF                                                                                                                  
-              LET l_n = 0                                                                                                             
-              SELECT COUNT(*) INTO l_n FROM ima_file                                                                                  
-               WHERE ima01=g_ohb1[l_ac].ohb04 AND imaacti='Y'                                                                         
-              IF l_n= 0 THEN                                                                                                          
-                 CALL cl_err('','art-441',0)                                                                                          
-                 RETURN FALSE,g_buf,g_buf1,l_b2,l_ima35,l_ima36  
-              END IF                                                                                                                  
-          ELSE                      
-              SELECT rte06,rte07,rtdconf INTO l_rte06,l_rte07,l_rtdconf 
+           IF cl_null(l_rtz04) THEN
+              LET l_n = 0
+              SELECT COUNT(*) INTO l_n FROM ima_file
+               WHERE ima01=g_ohb1[l_ac].ohb04
+              IF l_n= 0 THEN
+                 CALL cl_err('','art-440',0)
+                 RETURN FALSE,g_buf,g_buf1,l_b2,l_ima35,l_ima36
+              END IF
+              LET l_n = 0
+              SELECT COUNT(*) INTO l_n FROM ima_file
+               WHERE ima01=g_ohb1[l_ac].ohb04 AND imaacti='Y'
+              IF l_n= 0 THEN
+                 CALL cl_err('','art-441',0)
+                 RETURN FALSE,g_buf,g_buf1,l_b2,l_ima35,l_ima36
+              END IF
+          ELSE
+              SELECT rte06,rte07,rtdconf INTO l_rte06,l_rte07,l_rtdconf
                 FROM rtd_file,rte_file
               WHERE rte01=rtd01 AND rtd01=l_rtz04 AND rte03=g_ohb1[l_ac].ohb04
-              IF SQLCA.sqlcode=100 THEN                                                                                                
-                 CALL cl_err('','art-431',0)                                                                                           
-                 RETURN FALSE,g_buf,g_buf1,l_b2,l_ima35,l_ima36                                                                        
-              END IF     
-              IF l_rte06='N' THEN                                                                                                
-                 CALL cl_err('','art-432',0)                                                                                           
-                 RETURN FALSE,g_buf,g_buf1,l_b2,l_ima35,l_ima36                                                                        
-              END IF   
-              IF l_rte07='N' THEN                                                                                                
-                 CALL cl_err('','art-433',0)                                                                                           
-                 RETURN FALSE,g_buf,g_buf1,l_b2,l_ima35,l_ima36                                                                        
-              END IF   
-              IF l_rtdconf !='Y' THEN                                                                                                
-                 CALL cl_err('','art-434',0)                                                                                           
-                  RETURN FALSE,g_buf,g_buf1,l_b2,l_ima35,l_ima36                                                                        
-              END IF   
+              IF SQLCA.sqlcode=100 THEN
+                 CALL cl_err('','art-431',0)
+                 RETURN FALSE,g_buf,g_buf1,l_b2,l_ima35,l_ima36
+              END IF
+              IF l_rte06='N' THEN
+                 CALL cl_err('','art-432',0)
+                 RETURN FALSE,g_buf,g_buf1,l_b2,l_ima35,l_ima36
+              END IF
+              IF l_rte07='N' THEN
+                 CALL cl_err('','art-433',0)
+                 RETURN FALSE,g_buf,g_buf1,l_b2,l_ima35,l_ima36
+              END IF
+              IF l_rtdconf !='Y' THEN
+                 CALL cl_err('','art-434',0)
+                  RETURN FALSE,g_buf,g_buf1,l_b2,l_ima35,l_ima36
+              END IF
           END IF
         END IF
         IF g_ohb04_t != g_ohb1[l_ac].ohb04 OR   #No.FUN-650108
-           g_ohb1[l_ac].ohb04 != g_ohb1_t.ohb04 OR   #No.FUN-650108   
+           g_ohb1[l_ac].ohb04 != g_ohb1_t.ohb04 OR   #No.FUN-650108
            cl_null(g_ohb1_t.ohb04) THEN   #No.FUN-650108
            LET g_change='Y' #No.FUN-540049
            # 不允許新增母料件
            SELECT COUNT(*) INTO l_n FROM ima_file
             WHERE ima01=g_ohb1[l_ac].ohb04    #No.FUN-650108
-              AND imaag IS NOT NULL 
+              AND imaag IS NOT NULL
               AND (imaag1 IS NULL OR imaag1 = ' ')
            IF l_n>0 THEN
               CALL cl_err('','aim1004',0)
@@ -20472,8 +20483,8 @@ DEFINE l_rtdconf              LIKE rtd_file.rtdconf  #No.FUN-870007
              FROM ima_file
             WHERE ima01=g_ohb1[l_ac].ohb04    #No.FUN-650108
             #-----MOD-AB0142---------
-            LET g_ohb1[l_ac].ohb05=l_b2   
-            DISPLAY BY NAME g_ohb1[l_ac].ohb05   
+            LET g_ohb1[l_ac].ohb05=l_b2
+            DISPLAY BY NAME g_ohb1[l_ac].ohb05
             #-----END MOD-AB0142-----
             #-----MOD-AC0070---------
             SELECT ima25 INTO l_ima25 FROM ima_file
@@ -20484,14 +20495,14 @@ DEFINE l_rtdconf              LIKE rtd_file.rtdconf  #No.FUN-870007
                LET g_factor = 1
             END IF
             LET b_ohb.ohb05_fac = g_factor
-            #-----END MOD-AC0070----- 
+            #-----END MOD-AC0070-----
            IF SQLCA.SQLCODE THEN
               LET g_buf=NULL
               LET g_buf1=NULL
               DISPLAY g_ohb1[l_ac].ohb06 TO b1_ohb06           #No.FUN-650108
               DISPLAY g_ohb1[l_ac].ima021 TO b1_ima021         #No.FUN-650108
               IF g_ohb1[l_ac].ohb04[1,4] <> 'MISC' THEN     #No.FUN-650108
-                 CALL cl_err('sel ima',SQLCA.SQLCODE,0)    
+                 CALL cl_err('sel ima',SQLCA.SQLCODE,0)
                  RETURN FALSE,g_buf,g_buf1,l_b2,l_ima35,l_ima36
               END IF
            END IF
@@ -20603,7 +20614,7 @@ DEFINE l_rtdconf              LIKE rtd_file.rtdconf  #No.FUN-870007
           LET g_buf = NULL
           SELECT obk03 INTO g_buf FROM obk_file
            WHERE obk01 = g_ohb1[l_ac].ohb04 AND obk02 = g_oha.oha03       #No.FUN-650108
-  
+
           IF cl_null(b_ohb.ohb11) THEN LET b_ohb.ohb11 = g_buf END IF
           IF g_sma.sma115 = 'Y' THEN
              CALL s_chk_va_setting(g_ohb1[l_ac].ohb04)    #No.FUN-650108
@@ -20646,22 +20657,22 @@ DEFINE l_rtdconf              LIKE rtd_file.rtdconf  #No.FUN-870007
      ELSE
         #如果是由ohb04來觸發的,說明當前用的是舊的流程,那么ohb04為空是可以的
         #如果是由att00來觸發,原理一樣
-        IF ( p_field = 'ohb04' ) OR ( p_field = 'imx00' ) THEN 
+        IF ( p_field = 'ohb04' ) OR ( p_field = 'imx00' ) THEN
            #所有要返回TRUE的分支都要加這兩句話,原來下面的會被
            #注釋掉
            CALL t700_set_no_entry_b('u')   #MOD-480379
            CALL t700_set_entry_ohb092()    #FUN-B50096
-           CALL t700_set_no_entry_ohb092() #FUN-B50096 
+           CALL t700_set_no_entry_ohb092() #FUN-B50096
            CALL t700_set_du_required(p_cmd)
            RETURN TRUE,g_buf,g_buf1,l_b2,l_ima35,l_ima36
-        ELSE 
+        ELSE
            #如果不是ohb,則是由attxx來觸發的,則非輸不可
            RETURN FALSE,g_buf,g_buf1,l_b2,l_ima35,l_ima36
         END IF #如果為空則不允許新增
      END IF                        #MOD-480379
- 
+
 END FUNCTION
- 
+
 #用于att01~att10這十個輸入型屬性欄位的AFTER FIELD事件的判斷函數
 #傳入參數:p_value 要比較的欄位內容,p_index當前欄位的索引號(從1~10表示att01~att10)
 #         p_row是當前行索引,傳入INPUT ARRAY中使用的l_ac即可
@@ -20679,16 +20690,16 @@ FUNCTION t700_check_att0x(p_value,p_index,p_row)
   DEFINE l_imaacti    LIKE ima_file.imaacti
   DEFINE l_ima35      LIKE faj_file.faj02        # No.FUN-680137 VARCHAR(10)
   DEFINE l_ima36      LIKE faj_file.faj02        # No.FUN-680137 VARCHAR(10)
-  DEFINE l_ima25      LIKE ima_file.ima25 
-  
+  DEFINE l_ima25      LIKE ima_file.ima25
+
   #這個欄位一旦進入了就不能忽略，因為要保証在輸入其他欄位之前必須要生成ohb04料件編號
-  IF cl_null(p_value) THEN 
+  IF cl_null(p_value) THEN
      RETURN FALSE,g_buf,g_buf1,l_b2,l_ima35,l_ima36
   END IF
- 
+
   #這里使用到了一個用于存放當前屬性組包含的所有屬性信息的全局數組lr_agc
   #該數組會由t700_refresh_detail()函數在較早的時候填充
-  
+
   #判斷長度與定義的使用位數是否相等
   IF LENGTH(p_value CLIPPED) <> lr_agc[p_index].agc03 THEN
      CALL cl_err_msg("","aim-911",lr_agc[p_index].agc03,1)
@@ -20710,11 +20721,11 @@ FUNCTION t700_check_att0x(p_value,p_index,p_row)
   #通過了欄位檢查則可以下面的合成子料件代碼以及相應的檢核操作了
   LET arr_detail[p_row].imx[p_index] = p_value
   LET l_index = p_index USING '&&'
-  CALL t700_check_ohb04('imx' || l_index ,p_row) 
+  CALL t700_check_ohb04('imx' || l_index ,p_row)
      RETURNING l_check_res,g_buf,g_buf1,l_b2,l_ima35,l_ima36
   RETURN l_check_res,g_buf,g_buf1,l_b2,l_ima35,l_ima36
 END FUNCTION
- 
+
 #用于att01_c~att10_c這十個選擇型屬性欄位的AFTER FIELD事件的判斷函數
 #傳入參數:p_value 要比較的欄位內容,p_index當前欄位的索引號(從1~10表示att01~att10)
 #         p_row是當前行索引,傳入INPUT ARRAY中使用的l_ac即可
@@ -20732,19 +20743,19 @@ DEFINE
   l_ima35         LIKE faj_file.faj02,        # No.FUN-680137  VARCHAR(10)
   l_ima36         LIKE faj_file.faj02,        # No.FUN-680137   VARCHAR(10)
   l_ima25         LIKE ima_file.ima25
- 
+
   #這個欄位一旦進入了就不能忽略，因為要保証在輸入其他欄位之前必須要生成ohb04料件編號
-  IF cl_null(p_value) THEN 
+  IF cl_null(p_value) THEN
      RETURN FALSE,g_buf,g_buf1,l_b2,l_ima35,l_ima36
-  END IF       
-  #下拉框選擇項相當簡單，不需要進行范圍和長度的判斷，因為肯定是符合要求的了  
+  END IF
+  #下拉框選擇項相當簡單，不需要進行范圍和長度的判斷，因為肯定是符合要求的了
   LET arr_detail[p_row].imx[p_index] = p_value
   LET l_index = p_index USING '&&'
   CALL t700_check_ohb04('imx'||l_index,p_row)
      RETURNING l_check_res,g_buf,g_buf1,l_b2,l_ima35,l_ima36
   RETURN l_check_res,g_buf,g_buf1,l_b2,l_ima35,l_ima36
-END FUNCTION         
- 
+END FUNCTION
+
 FUNCTION t700_chk_ohb32_2(p_cmd)
    DEFINE p_cmd LIKE type_file.chr1
    IF NOT cl_null(g_ohb1[l_ac].ohb32) THEN
@@ -20787,12 +20798,12 @@ FUNCTION t700_chk_ohb32_2(p_cmd)
       ELSE
          CALL cl_set_comp_entry("ohb04,b1_ohb50,b1_ohb1003,b1_ohb11,b1_ohb14,b1_ohb14t",TRUE)
       END IF
-      
+
       #g_ogb的值來自:t700_chk_ohb32()
       IF p_cmd='a' OR g_ohb1[l_ac].ohb31!=g_ohb1_t.ohb31
                    OR g_ohb1_t.ohb31 IS NULL
                    OR g_ohb1_t.ohb32 IS NULL
-                   OR g_ohb1[l_ac].ohb32!=g_ohb1_t.ohb32 THEN         
+                   OR g_ohb1[l_ac].ohb32!=g_ohb1_t.ohb32 THEN
          LET g_ohb1[l_ac].ohb1004 = g_ogb.ogb1012
          LET g_ohb1[l_ac].ohb11 = g_ogb.ogb11
          LET g_ohb1[l_ac].ohb1001 = g_ogb.ogb1002
@@ -20809,24 +20820,24 @@ FUNCTION t700_chk_ohb32_2(p_cmd)
       END IF
    END IF
 END FUNCTION
- 
+
 FUNCTION t700_aic_s_icdin(p_cmd,p_cmd1)
-   DEFINE p_cmd      LIKE type_file.chr1,      #m:從MENU段呼叫  b：從單身呼叫 
+   DEFINE p_cmd      LIKE type_file.chr1,      #m:從MENU段呼叫  b：從單身呼叫
           p_cmd1     LIKE type_file.chr1       #a.新增  u.修改
    #DEFINE l_imaicd04 LIKE imaicd_file.imaicd04,   #FUN-BA0051 mark
-   #       l_imaicd08 LIKE imaicd_file.imaicd08,   #FUN-BA0051 mark     
-   DEFINE l_ohb1      RECORD LIKE ohb_file.*,      #FUN-BA0051  
+   #       l_imaicd08 LIKE imaicd_file.imaicd08,   #FUN-BA0051 mark
+   DEFINE l_ohb1      RECORD LIKE ohb_file.*,      #FUN-BA0051
           l_status   LIKE ohb_file.ohb092
    DEFINE l_ida17    LIKE ida_file.ida17     #No.MOD-890249
    DEFINE l_imaicd04_1 LIKE imaicd_file.imaicd04  #TQC-9B0045-Add
    DEFINE l_r          LIKE type_file.chr1  #FUN-C30302
    DEFINE l_qty        LIKE type_file.num15_3  #FUN-C30302
- 
+
    #因銷退方式=5(折讓)時,銷退數量必為0,不會異動到庫存,所以不用維護刻號明細資料
-   IF g_ohb1[l_ac].ohb12 =0  THEN 
-       RETURN 
+   IF g_ohb1[l_ac].ohb12 =0  THEN
+       RETURN
    END IF
-   
+
    #IF g_argv0 !='1'        THEN RETURN END IF #MOD-BB0137 mark
    IF cl_null(g_oha.oha01) THEN RETURN END IF
    IF g_oha.ohaconf != 'N' THEN RETURN END IF
@@ -20834,19 +20845,19 @@ FUNCTION t700_aic_s_icdin(p_cmd,p_cmd1)
    IF p_cmd = 'b' AND (cl_null(p_cmd1) OR p_cmd1 NOT MATCHES '[au]') THEN
       RETURN
    END IF
- 
+
    IF p_cmd = 'b' AND
       NOT cl_null(p_cmd1) AND p_cmd1 MATCHES '[au]' THEN
       #FUN-BA0051 --START mark--
       #LET l_imaicd08 = NULL
       #SELECT imaicd08,imaicd04 INTO l_imaicd08,l_imaicd04
       #   FROM imaicd_file
-      #   WHERE imaicd00 = g_ohb1[l_ac].ohb04      
-      #  
+      #   WHERE imaicd00 = g_ohb1[l_ac].ohb04
+      #
       #IF l_imaicd04 MATCHES '[0124]' AND
       #      NOT cl_null(l_imaicd08) AND l_imaicd08 = 'Y' THEN
       #FUN-BA0051 --END mark--
-      IF s_icdbin(g_ohb1[l_ac].ohb04) THEN   #FUN-BA0051            
+      IF s_icdbin(g_ohb1[l_ac].ohb04) THEN   #FUN-BA0051
          IF NOT cl_confirm('axm_102') THEN
             RETURN
          END IF
@@ -20854,14 +20865,14 @@ FUNCTION t700_aic_s_icdin(p_cmd,p_cmd1)
          RETURN
       END IF
    END IF
- 
+
    #避免資料為舊的,重新撈取資料
-   INITIALIZE l_ohb1.* TO NULL  
-   
+   INITIALIZE l_ohb1.* TO NULL
+
    SELECT * INTO l_ohb1.* FROM ohb_file
       WHERE ohb01 = g_oha.oha01
-        AND ohb03 = g_ohb1[l_ac].ohb03       
-          
+        AND ohb03 = g_ohb1[l_ac].ohb03
+
    #若是未測wafer imaicd04,母批=單身中的批號
    LET l_status = ''
    SELECT imaicd04 INTO l_imaicd04_1
@@ -20870,7 +20881,7 @@ FUNCTION t700_aic_s_icdin(p_cmd,p_cmd1)
       LET l_status = l_ohb1.ohb092
    ELSE
       LET l_status =''
-   END IF  
+   END IF
    CALL s_icdin(1,l_ohb1.ohb04,l_ohb1.ohb09,
                    l_ohb1.ohb091,l_ohb1.ohb092,
                    l_ohb1.ohb05,l_ohb1.ohb12,
@@ -20880,11 +20891,11 @@ FUNCTION t700_aic_s_icdin(p_cmd,p_cmd1)
        RETURNING l_ida17,l_r,l_qty       #No.MOD-890249 add  #FUN-C30302
        #FUN-C30302---begin
        IF l_r = 'Y' THEN
-          LET l_qty = s_digqty(l_qty,l_ohb1.ohb05) 
+          LET l_qty = s_digqty(l_qty,l_ohb1.ohb05)
           LET g_ohb1[l_ac].ohb12 = l_qty
           LET g_ohb1[l_ac].ohb912 = l_qty
           LET g_ohb1[l_ac].ohb917 = l_qty
-          
+
           IF g_oha.oha213 = 'N' THEN
              LET g_ohb1[l_ac].ohb14 = cl_digcut(g_ohb1[l_ac].ohb917 * l_ohb1.ohb13, t_azi04)
              LET g_ohb1[l_ac].ohb14t = cl_digcut(g_ohb1[l_ac].ohb14 * (1 + g_oha.oha211/100), t_azi04)
@@ -20900,13 +20911,13 @@ FUNCTION t700_aic_s_icdin(p_cmd,p_cmd1)
                               ohb14t= g_ohb1[l_ac].ohb14t
            WHERE ohb01=g_oha.oha01
              AND ohb03=g_ohb1[l_ac].ohb03
-          IF SQLCA.sqlcode OR SQLCA.sqlerrd[3] = 0 THEN 
+          IF SQLCA.sqlcode OR SQLCA.sqlerrd[3] = 0 THEN
              LET g_ohb1[l_ac].ohb12= b_ohb.ohb12
              LET g_ohb1[l_ac].ohb912= b_ohb.ohb912
              LET g_ohb1[l_ac].ohb917= b_ohb.ohb917
              LET g_ohb1[l_ac].ohb14= b_ohb.ohb14
              LET g_ohb1[l_ac].ohb14t= b_ohb.ohb14t
-             LET g_success = 'N' 
+             LET g_success = 'N'
           ELSE
              LET b_ohb.ohb12 = g_ohb1[l_ac].ohb12
              LET b_ohb.ohb912 = g_ohb1[l_ac].ohb912
@@ -20916,11 +20927,11 @@ FUNCTION t700_aic_s_icdin(p_cmd,p_cmd1)
           END IF
           DISPLAY BY NAME g_ohb1[l_ac].ohb12, g_ohb1[l_ac].ohb912, g_ohb1[l_ac].ohb917,
                           g_ohb1[l_ac].ohb14, g_ohb1[l_ac].ohb14t
-       END IF 
+       END IF
        #FUN-C30302---end
    CALL t700_icd_upd_dies(l_ida17)   #No.MOD-890249 add
  END FUNCTION
- 
+
 #更新die數
 #當料號為wafer段時imaicd04=1,用dice數量加總給原將單據的第二單位數量。
 #當料號為wafer段時imaicd04=2,用pass bin = 'Y'數量加總給原將單據的第二單位數量。
@@ -20928,11 +20939,11 @@ FUNCTION t700_icd_upd_dies(p_dies)
   DEFINE p_dies      LIKE ogb_file.ogb915
   DEFINE l_ima906    LIKE ima_file.ima906,
          l_imaicd04  LIKE imaicd_file.imaicd04
-        #,l_imaicd08  LIKE imaicd_file.imaicd08   #FUN-B70061 #FUN-BA0051 mark  
-           
+        #,l_imaicd08  LIKE imaicd_file.imaicd08   #FUN-B70061 #FUN-BA0051 mark
+
   BEGIN WORK            #FUN-B70061
   LET g_success = 'Y'   #FUN-B70061
- 
+
   IF (g_sma.sma115 = 'Y') AND (p_dies > 0) THEN
       LET l_ima906 = NULL
       LET l_imaicd04 = NULL
@@ -20950,7 +20961,7 @@ FUNCTION t700_icd_upd_dies(p_dies)
                                 ohb915= g_ohb1[l_ac].ohb915
              WHERE ohb01=g_oha.oha01
                AND ohb03=g_ohb1[l_ac].ohb03
-            IF SQLCA.sqlcode OR SQLCA.sqlerrd[3] = 0 THEN 
+            IF SQLCA.sqlcode OR SQLCA.sqlerrd[3] = 0 THEN
                LET g_ohb1[l_ac].ohb914= b_ohb.ohb914
                LET g_ohb1[l_ac].ohb915= b_ohb.ohb915
                LET g_success = 'N'   #FUN-B70061
@@ -20964,31 +20975,31 @@ FUNCTION t700_icd_upd_dies(p_dies)
          END IF
       END IF
    END IF
- 
+
     #FUN-BA0051 --START mark--
     #FUN-B70061 --START--
     #IF cl_null(l_imaicd08) THEN
-    #    SELECT imaicd08 INTO l_imaicd08 FROM imaicd_file 
+    #    SELECT imaicd08 INTO l_imaicd08 FROM imaicd_file
     #     WHERE imaicd00 = g_ohb1[l_ac].ohb04
     #END IF
-    # 
+    #
     #IF l_imaicd08 = 'Y' THEN
     #FUN-BA0051 --END mark--
     IF s_icdbin(g_ohb1[l_ac].ohb04) THEN   #FUN-BA0051
-       LET g_sql = "SELECT ida15 FROM ida_file",   #FUN-BC0109 del ida16 
+       LET g_sql = "SELECT ida15 FROM ida_file",   #FUN-BC0109 del ida16
                    " WHERE ida07 = '", g_oha.oha01, "'",
                    " AND ida08 =", g_ohb1[l_ac].ohb03
-       DECLARE t700_upd_dia_c CURSOR FROM g_sql            
-       OPEN t700_upd_dia_c                                       
+       DECLARE t700_upd_dia_c CURSOR FROM g_sql
+       OPEN t700_upd_dia_c
        FETCH t700_upd_dia_c INTO g_ohb1[l_ac].ohbiicd029   #FUN-BC0109 del ,g_ohb1[l_ac].ohbiicd028
 
        #串接Date Code值
-       CALL s_icdfun_datecode('2',g_oha.oha01,g_ohb1[l_ac].ohb03) 
-                                RETURNING g_ohb1[l_ac].ohbiicd028   #FUN-BC0109 
-                                
+       CALL s_icdfun_datecode('2',g_oha.oha01,g_ohb1[l_ac].ohb03)
+                                RETURNING g_ohb1[l_ac].ohbiicd028   #FUN-BC0109
+
        UPDATE ohbi_file set ohbiicd029 = g_ohb1[l_ac].ohbiicd029,
         ohbiicd028 = g_ohb1[l_ac].ohbiicd028
-        WHERE ohbi01=g_oha.oha01 AND ohbi03=g_ohb1[l_ac].ohb03 
+        WHERE ohbi01=g_oha.oha01 AND ohbi03=g_ohb1[l_ac].ohb03
        IF SQLCA.sqlcode OR SQLCA.sqlerrd[3] = 0 THEN
           LET g_ohb1[l_ac].ohbiicd029 = b_ohbi.ohbiicd029
           LET g_ohb1[l_ac].ohbiicd028 = b_ohbi.ohbiicd028
@@ -20997,10 +21008,10 @@ FUNCTION t700_icd_upd_dies(p_dies)
           LET b_ohbi.ohbiicd029 = g_ohb1[l_ac].ohbiicd029
           LET b_ohbi.ohbiicd028 = g_ohb1[l_ac].ohbiicd028
           LET g_success  = 'Y'
-       END IF 
-       DISPLAY BY NAME g_ohb1[l_ac].ohbiicd029, g_ohb1[l_ac].ohbiicd028       
+       END IF
+       DISPLAY BY NAME g_ohb1[l_ac].ohbiicd029, g_ohb1[l_ac].ohbiicd028
     END IF
-    
+
     IF g_success = 'Y' THEN
        COMMIT WORK
     ELSE
@@ -21008,7 +21019,7 @@ FUNCTION t700_icd_upd_dies(p_dies)
     END IF
     #FUN-B70061 --END--
 END FUNCTION
- 
+
 #DEV-D30046 搬移至saxmt700_sub.4gl--mark--begin
 #FUNCTION t700_imm()
 #   DEFINE l_oha RECORD LIKE oha_file.*
@@ -21018,7 +21029,7 @@ END FUNCTION
 #   DEFINE l_rvbs RECORD LIKE rvbs_file.* #MOD-B80050 add
 #   DEFINE l_sql STRING
 #   DEFINE li_result LIKE type_file.num5
-#   DEFINE l_msg  STRING 
+#   DEFINE l_msg  STRING
 #   DEFINE l_imm03 LIKE imm_file.imm03
 #   DEFINE l_tot   LIKE oeb_file.oeb25
 #   DEFINE l_ocn03   LIKE ocn_file.ocn03
@@ -21035,7 +21046,7 @@ END FUNCTION
 #      CALL cl_err('',-400,0)
 #      RETURN ""
 #   END IF
-# 
+#
 #   BEGIN WORK
 #   LET g_success = "Y"
 #   LET l_imm.imm12 = ""         #MOD-A60070 add
@@ -21048,7 +21059,7 @@ END FUNCTION
 #      IF (NOT li_result) THEN
 #         LET g_success = "N"
 #      END IF
-#      
+#
 #      LET l_imm.imm02 = g_oha.oha02   #MOD-860259
 #      LET l_imm.imm03 = "N"
 #      LET l_imm.imm10 = "1"
@@ -21059,7 +21070,7 @@ END FUNCTION
 #      LET l_imm.immdate=g_today
 #      LET l_imm.immplant = g_plant  #No.FUN-870007
 #      LET l_imm.immlegal = g_legal  #No.FUN-870007
-# 
+#
 #      LET l_imm.immoriu = g_user      #No.FUN-980030 10/01/04
 #      LET l_imm.immorig = g_grup      #No.FUN-980030 10/01/04
 #      #FUN-A60034--add---str---
@@ -21073,12 +21084,12 @@ END FUNCTION
 #      IF STATUS THEN
 #         LET g_success = "N"
 #      END IF
-#      
+#
 #      LET l_sql = "SELECT * FROM ohb_file WHERE ohb01='",g_oha.oha01,"'"
-#      
+#
 #      PREPARE pre_imn FROM l_sql
 #      DECLARE imn_curs CURSOR FOR pre_imn
-#      
+#
 #      FOREACH imn_curs INTO l_ohb.*
 #        #MOD-D10185 add start -----
 #         IF l_ohb.ohb04[1,4] = 'MISC' THEN
@@ -21093,7 +21104,7 @@ END FUNCTION
 #         END IF
 #         LET l_imn.imn03 = l_ohb.ohb04
 #         LET l_imn.imn04 = g_oaz.oaz78
-#         LET l_imn.imn05 = " "    
+#         LET l_imn.imn05 = " "
 #         LET l_imn.imn06 = l_oha.oha03
 #        SELECT img09 INTO l_imn.imn09 FROM img_file
 #          WHERE img01 = l_imn.imn03
@@ -21112,7 +21123,7 @@ END FUNCTION
 #         LET l_imn.imn17 = l_ohb.ohb092
 #         LET l_imn.imn28 = l_ohb.ohb50
 #         LET l_imn.imn29 = "N"
-#        #MOD-B10122 mark --start-- 
+#        #MOD-B10122 mark --start--
 #        #LET l_imn.imn30 = l_ohb.ohb05
 #        #LET l_imn.imn31 = 1
 #        #LET l_imn.imn32 = l_ohb.ohb12
@@ -21127,7 +21138,7 @@ END FUNCTION
 #        #LET l_imn.imn45 = 0
 #        #LET l_imn.imn51 = 1
 #        #LET l_imn.imn52 = 0
-#        #MOD-B10122 mark --end-- 
+#        #MOD-B10122 mark --end--
 #         LET l_imn.imn9301 = s_costcenter(l_imm.imm14)
 #         LET l_imn.imn9302 = l_imn.imn9301
 #         SELECT img09 INTO l_imn.imn20 FROM img_file
@@ -21203,7 +21214,7 @@ END FUNCTION
 #               LET g_success = 'N'
 #            END IF
 #         END IF
-#         #FUN-CB0087---qiull---add---end--- 
+#         #FUN-CB0087---qiull---add---end---
 #
 #         INSERT INTO imn_file VALUES (l_imn.*)
 #         IF STATUS THEN
@@ -21222,13 +21233,13 @@ END FUNCTION
 #         END IF
 #
 #         #MOD-B80050 add --start--
-#         LET g_ima918 = ''  
-#         LET g_ima921 = ''  
-#         SELECT ima918,ima921 INTO g_ima918,g_ima921 
+#         LET g_ima918 = ''
+#         LET g_ima921 = ''
+#         SELECT ima918,ima921 INTO g_ima918,g_ima921
 #           FROM ima_file
 #          WHERE ima01 = l_imn.imn03
 #            AND imaacti = "Y"
-#               
+#
 #         IF g_ima918 = "Y" OR g_ima921 = "Y" THEN
 #            DECLARE t600_rvbs_1 CURSOR FOR SELECT * FROM rvbs_file
 #                                            WHERE rvbs01 = l_ohb.ohb01
@@ -21237,26 +21248,26 @@ END FUNCTION
 #                 IF STATUS THEN
 #                    CALL cl_err('rvbs',STATUS,1)
 #                 END IF
-#               
-#                 LET l_rvbs.rvbs00 = 'aimt324' 
+#
+#                 LET l_rvbs.rvbs00 = 'aimt324'
 #                 LET l_rvbs.rvbs01 = l_imn.imn01
 #                 LET l_rvbs.rvbs02 = l_imn.imn02
 #                 LET l_rvbs.rvbs13 = 0
-#               
+#
 #                 INSERT INTO rvbs_file VALUES(l_rvbs.*)
 #                 IF STATUS OR SQLCA.SQLCODE THEN
-#                    CALL cl_err3("ins","rvbs_file","","",SQLCA.sqlcode,"","ins rvbs",1)  
+#                    CALL cl_err3("ins","rvbs_file","","",SQLCA.sqlcode,"","ins rvbs",1)
 #                    LET g_success = 'N'
 #                 END IF
 #            END FOREACH
 #
-#            DELETE FROM rvbs_file WHERE rvbs00 = 'aimt324' 
+#            DELETE FROM rvbs_file WHERE rvbs00 = 'aimt324'
 #                                    AND rvbs01 = l_imn.imn01
 #                                    AND rvbs02 = l_imn.imn02
 #                                    AND rvbs13 = 0
 #                                    AND rvbs09 = 1
 #            DECLARE t600_rvbs_11 CURSOR FOR SELECT * FROM rvbs_file
-#                                             WHERE rvbs00 = 'aimt324' 
+#                                             WHERE rvbs00 = 'aimt324'
 #                                              AND rvbs01 = l_imn.imn01
 #                                              AND rvbs02 = l_imn.imn02
 #                                              AND rvbs13 = 0
@@ -21267,45 +21278,45 @@ END FUNCTION
 #               IF STATUS OR SQLCA.SQLERRD[3]<>0 THEN   #DEV-D40013 add
 #                  CALL cl_err('rvbs',STATUS,1)
 #               END IF
-#                  
+#
 #               LET l_rvbs.rvbs09 = 1
-#                  
+#
 #               INSERT INTO rvbs_file VALUES(l_rvbs.*)
 #               IF STATUS OR SQLCA.SQLCODE THEN
-#                  CALL cl_err3("ins","rvbs_file","","",SQLCA.sqlcode,"","ins rvbs",1)  
+#                  CALL cl_err3("ins","rvbs_file","","",SQLCA.sqlcode,"","ins rvbs",1)
 #                  LET g_success = 'N'
 #               END IF
 #            END FOREACH
 #         END IF
 #         #MOD-B80050 add --end--
-#      
+#
 #      END FOREACH
 #   END IF
-# 
-#   IF g_success = 'Y' THEN 
-#      COMMIT WORK  
+#
+#   IF g_success = 'Y' THEN
+#      COMMIT WORK
 #     #LET l_msg="aimt324 '",l_imm.imm01,"' 'A'"      #FUN-A60034 mark
 #      LET l_msg="aimt324 '",l_imm.imm01,"' ' ' 'A'"  #FUN-A60034 add
 #      CALL cl_cmdrun_wait(l_msg)
 #      RETURN l_imm.imm01
-#   ELSE 
+#   ELSE
 #      ROLLBACK WORK
 #      RETURN ""
 #   END IF
-# 
-# 
+#
+#
 #END FUNCTION
-# 
+#
 #FUNCTION t700_update1()
 #  DEFINE l_qty    LIKE img_file.img10,
 #         l_ima86  LIKE ima_file.ima86,
-#         l_ima25  LIKE ima_file.ima25 
+#         l_ima25  LIKE ima_file.ima25
 ##FUN-AB0059 ---------------------start----------------------------
 #    IF s_joint_venture( b_ohb.ohb04,g_plant) OR NOT s_internal_item( b_ohb.ohb04,g_plant ) THEN
 #        RETURN
 #    END IF
 ##FUN-AB0059 ---------------------end-------------------------------
-#    LET g_forupd_sql ="SELECT ima25,ima86 FROM ima_file ",  
+#    LET g_forupd_sql ="SELECT ima25,ima86 FROM ima_file ",
 #                      " WHERE ima01= ?  FOR UPDATE"
 #    LET g_forupd_sql = cl_forupd_sql(g_forupd_sql)
 #    DECLARE ima_lock1 CURSOR FROM g_forupd_sql
@@ -21319,10 +21330,10 @@ END FUNCTION
 #    END IF
 #       CALL t700_tlf(l_ima25,l_qty)
 #    IF g_success = 'N' THEN RETURN END IF
-# 
+#
 #END FUNCTION
 #DEV-D30046 搬移至saxmt700_sub.4gl--mark--end
- 
+
 #FUNCTION t700_ins_rvbs() #MOD-C70044 mark
 FUNCTION t700_ins_rvbs(p_cmd) #MOD-C70044 add
 DEFINE l_rvbs  RECORD LIKE rvbs_file.*
@@ -21330,7 +21341,7 @@ DEFINE l_rvbs06    LIKE rvbs_file.rvbs06  #no.FUN-860025
 DEFINE i           LIKE type_file.num5    #MOD-AA0189
 DEFINE p_cmd       LIKE type_file.chr1    #MOD-C70044 add
 DEFINE l_ima930    LIKE ima_file.ima930   #DEV-D40015 add
- 
+
       #MOD-C70044 add start -----
       IF p_cmd = '2' THEN
          IF g_ohb1_t.ohb04 <> g_ohb1[l_ac].ohb04 OR g_ohb1_t.ohb04 IS NULL
@@ -21342,14 +21353,14 @@ DEFINE l_ima930    LIKE ima_file.ima930   #DEV-D40015 add
          END IF
       END IF
       #MOD-C70044 add end   -----
-     
+
       LET l_ima930 = 'N'       #DEV-D40015 add
-      SELECT ima918,ima921,ima930 INTO g_ima918,g_ima921,l_ima930 #DEV-D40015 add ima930 
+      SELECT ima918,ima921,ima930 INTO g_ima918,g_ima921,l_ima930 #DEV-D40015 add ima930
         FROM ima_file
        #WHERE ima01 = g_ogb.ogb04        #MOD-C70044 mark
        WHERE ima01 = g_ohb1[l_ac].ohb04  #MOD-C70044 add
          AND imaacti = "Y"
-      
+
       IF cl_null(l_ima930) THEN LET l_ima930 = "N" END IF             #DEV-D40015 add
 
      #IF g_ima918 = "Y" OR g_ima921 = "Y" THEN                        #DEV-D40015 mark
@@ -21361,40 +21372,40 @@ DEFINE l_ima930    LIKE ima_file.ima930   #DEV-D40015 add
                                           #AND rvbs021= g_ogb.ogb04   #MOD-C70007 add #MOD-C70044 mark
                                           AND rvbs021= g_ohb1[l_ac].ohb04 #MOD-C70044 add
                                           AND rvbs00 <> 'aqct800' #MOD-C70243 add
-         
+
          LET i = 1   #MOD-AA0189
          FOREACH t700_g_rvbs INTO l_rvbs.*
             IF STATUS THEN
                CALL cl_err('rvbs',STATUS,1)
             END IF
-         
+
             LET l_rvbs.rvbs00 = g_prog       #程式代號
             LET l_rvbs.rvbs01 = g_oha.oha01  #銷退單號
             LET l_rvbs.rvbs02 = g_ohb1[l_ac].ohb03   #No.CHI-890002  銷退單項次
             LET l_rvbs.rvbs09 = 1          #TQC-C20362  add
             SELECT SUM(rvbs06) INTO l_rvbs06
               FROM rvbs_file,ohb_file
-             WHERE rvbs00 IN ("axmt700","axmt840")              #MOD-950294 add 
+             WHERE rvbs00 IN ("axmt700","axmt840")              #MOD-950294 add
                AND ohb01 = rvbs01
                AND ohb03 = rvbs02
                AND ohb31 = g_ohb1[l_ac].ohb31
-               AND ohb32 = g_ohb1[l_ac].ohb32 
+               AND ohb32 = g_ohb1[l_ac].ohb32
                AND rvbs03 = l_rvbs.rvbs03
                AND rvbs04 = l_rvbs.rvbs04
                AND rvbs08 = l_rvbs.rvbs08
               #AND rvbs09 = -1  #TQC-B90236 ---MARK--
                AND rvbs09 = 1   #TQC-B90236 ---ADD---
- 
+
             IF cl_null(l_rvbs06) THEN
                LET l_rvbs06 = 0
             END IF
- 
+
             LET l_rvbs.rvbs06 = l_rvbs.rvbs06 - l_rvbs06
             LET l_rvbs.rvbs022 = i     #MOD-AA0189
             LET l_rvbs.rvbs13 = 0                      		#MOD-950294
             LET l_rvbs.rvbsplant = g_plant #FUN-980010 add
             LET l_rvbs.rvbslegal = g_legal #FUN-980010 add
- 
+
             INSERT INTO rvbs_file VALUES(l_rvbs.*)
             IF STATUS OR SQLCA.SQLCODE THEN
                CALL cl_err3("ins","rvbs_file","","",SQLCA.sqlcode,"","ins rvbs",1)  #No.FUN-670008
@@ -21403,12 +21414,12 @@ DEFINE l_ima930    LIKE ima_file.ima930   #DEV-D40015 add
             LET i = i + 1   #MOD-AA0189
          END FOREACH
       END IF
- 
+
 END FUNCTION
-FUNCTION t700_fetch_price(p_cmd)     
- DEFINE p_cmd           LIKE type_file.chr1    
- DEFINE l_ohb05         LIKE ohb_file.ohb05   
- DEFINE l_occ930         LIKE occ_file.occ930 
+FUNCTION t700_fetch_price(p_cmd)
+ DEFINE p_cmd           LIKE type_file.chr1
+ DEFINE l_ohb05         LIKE ohb_file.ohb05
+ DEFINE l_occ930         LIKE occ_file.occ930
  DEFINE lc_type         LIKE type_file.chr1
  DEFINE li_ret          LIKE type_file.num5
  DEFINE l_ogb05         LIKE ogb_file.ogb05  #TQC-B10009
@@ -21422,7 +21433,7 @@ FUNCTION t700_fetch_price(p_cmd)
        WHERE rtz01 = g_oha.ohaplant
    END IF
 #FUN-C10053 ----add---end -----
- 
+
     IF g_sma.sma116 MATCHES '[23]' AND NOT cl_null(g_ohb1[l_ac].ohb916) THEN
        LET l_ohb05=g_ohb1[l_ac].ohb916
     ELSE
@@ -21451,11 +21462,11 @@ FUNCTION t700_fetch_price(p_cmd)
                              g_oha.oha01,g_ohb1[l_ac].ohb03,g_ohb1[l_ac].ohb917,
                              g_ohb1[l_ac].ohb1002,p_cmd)
 #        RETURNING g_ohb1[l_ac].ohb13                     #FUN-AB0061 mark
-         RETURNING g_ohb1[l_ac].ohb13,g_ohb1[l_ac].ohb37  #FUN-AB0061 add        
+         RETURNING g_ohb1[l_ac].ohb13,g_ohb1[l_ac].ohb37  #FUN-AB0061 add
      #FUN-C90128 Add Begin ---
      #折價金額賦值與顯示
       SELECT SUM(rxc06) INTO g_ohb1[l_ac].ohb67 FROM rxc_file
-        WHERE rxc00 = '03'   
+        WHERE rxc00 = '03'
           AND rxc01 = g_oha.oha01
           AND rxc02 = g_ohb1[l_ac].ohb03
       IF cl_null(g_ohb1[l_ac].ohb67) THEN LET g_ohb1[l_ac].ohb67=0 END IF
@@ -21470,13 +21481,13 @@ FUNCTION t700_fetch_price(p_cmd)
     ELSE
     #FUN-BC0088 ---add end -----
        IF g_ohb1[l_ac].ohb13=0 THEN
-          CALL s_unitprice_entry(g_oha.oha03,g_oha.oha31,g_oha.ohaplant,'N') 
+          CALL s_unitprice_entry(g_oha.oha03,g_oha.oha31,g_oha.ohaplant,'N')
        ELSE
-          CALL s_unitprice_entry(g_oha.oha03,g_oha.oha31,g_oha.ohaplant,'Y') 
+          CALL s_unitprice_entry(g_oha.oha03,g_oha.oha31,g_oha.ohaplant,'Y')
        END IF
     END IF #FUN-BC0088 add
     #zLynn mod--end
- 
+
 #FUN-C10053 ----add---begin ---
    IF g_azw.azw04 = '2' THEN
       CALL t700_sub(g_ohb1[l_ac].ohb04,l_rtz04,g_oha.oha213,g_ohb1[l_ac].ohb917,g_ohb1[l_ac].ohb13,t_azi04)
@@ -21485,20 +21496,20 @@ FUNCTION t700_fetch_price(p_cmd)
 #FUN-C10053 ----add---end -----
       IF g_oha.oha213 = 'N' THEN
           LET g_ohb1[l_ac].ohb14 =g_ohb1[l_ac].ohb917*g_ohb1[l_ac].ohb13*g_ohb1[l_ac].ohb1003/100
-          CALL cl_digcut(g_ohb1[l_ac].ohb14,t_azi04)  RETURNING g_ohb1[l_ac].ohb14 
+          CALL cl_digcut(g_ohb1[l_ac].ohb14,t_azi04)  RETURNING g_ohb1[l_ac].ohb14
           LET g_ohb1[l_ac].ohb14t=g_ohb1[l_ac].ohb14*(1+g_oha.oha211/100)
-          CALL cl_digcut(g_ohb1[l_ac].ohb14t,t_azi04) RETURNING g_ohb1[l_ac].ohb14t 
+          CALL cl_digcut(g_ohb1[l_ac].ohb14t,t_azi04) RETURNING g_ohb1[l_ac].ohb14t
        ELSE
          #TQC-B60288 Begin---
          #LET g_ohb1[l_ac].ohb13=g_ohb1[l_ac].ohb13*(1+g_oha.oha211/100)
-         #CALL cl_digcut(g_ohb1[l_ac].ohb13,t_azi03) RETURNING g_ohb1[l_ac].ohb13 
-         #LET g_ohb1[l_ac].ohb37=g_ohb1[l_ac].ohb37*(1+g_oha.oha211/100)             #FUN-AB0061 
-         #CALL cl_digcut(g_ohb1[l_ac].ohb37,t_azi03) RETURNING g_ohb1[l_ac].ohb37    #FUN-AB0061 
+         #CALL cl_digcut(g_ohb1[l_ac].ohb13,t_azi03) RETURNING g_ohb1[l_ac].ohb13
+         #LET g_ohb1[l_ac].ohb37=g_ohb1[l_ac].ohb37*(1+g_oha.oha211/100)             #FUN-AB0061
+         #CALL cl_digcut(g_ohb1[l_ac].ohb37,t_azi03) RETURNING g_ohb1[l_ac].ohb37    #FUN-AB0061
          #TQC-B60288 End-----
           LET g_ohb1[l_ac].ohb14t=g_ohb1[l_ac].ohb917*g_ohb1[l_ac].ohb13*g_ohb1[l_ac].ohb1003/100
           CALL cl_digcut(g_ohb1[l_ac].ohb14t,t_azi04) RETURNING g_ohb1[l_ac].ohb14t
           LET g_ohb1[l_ac].ohb14 =g_ohb1[l_ac].ohb14t/(1+g_oha.oha211/100)
-          CALL cl_digcut(g_ohb1[l_ac].ohb14,t_azi04)  RETURNING g_ohb1[l_ac].ohb14 
+          CALL cl_digcut(g_ohb1[l_ac].ohb14,t_azi04)  RETURNING g_ohb1[l_ac].ohb14
        END IF
     END IF  #FUN-C10053
   END IF #FUN-B50171
@@ -21507,7 +21518,7 @@ FUNCTION t700_fetch_price(p_cmd)
 END FUNCTION
 # No.FUN-9C0073 -------------By chenls 10/01/07
 
-# No.FUN-A20022 -------------By Cockroach 10/02/08 
+# No.FUN-A20022 -------------By Cockroach 10/02/08
 FUNCTION t700_oha95_amount()
   DEFINE l_ohb      DYNAMIC ARRAY OF RECORD
                        #TQC-B10186 Begin---
@@ -21548,10 +21559,10 @@ END FUNCTION
 #No.FUN-A20022 ADD END-----------------------------------------
 #-----FUN-A30076---------
 FUNCTION t700_show_oao()
-   DEFINE i,j       LIKE type_file.num5    
-   DEFINE l_oao06   LIKE type_file.chr1000 
+   DEFINE i,j       LIKE type_file.num5
+   DEFINE l_oao06   LIKE type_file.chr1000
 
-   DECLARE t700_show_c CURSOR FOR 
+   DECLARE t700_show_c CURSOR FOR
            SELECT oao03,oao04,oao06 FROM oao_file
                                    WHERE oao01=g_oha.oha01
                                    ORDER BY oao03,oao04
@@ -21562,13 +21573,13 @@ FUNCTION t700_show_oao()
       END IF
       LET g_msg = g_msg CLIPPED,' ',l_oao06
    END FOREACH
-   CALL cl_msg(g_msg CLIPPED)                
+   CALL cl_msg(g_msg CLIPPED)
 END FUNCTION
 #-----END FUN-A30076-----
 
 #FUN-AA0095  add ---------------------------------begin----------------------------------
-FUNCTION t700_multi_ima01()        
-DEFINE tok         base.StringTokenizer			
+FUNCTION t700_multi_ima01()
+DEFINE tok         base.StringTokenizer
 DEFINE l_ohb       RECORD LIKE ohb_file.*
 DEFINE l_ohbi      RECORD LIKE ohbi_file.*   #FUN-B70061
 DEFINE l_ima25     LIKE ima_file.ima25,     #ima單位
@@ -21582,13 +21593,13 @@ DEFINE l_ima25     LIKE ima_file.ima25,     #ima單位
        l_ima130    LIKE ima_file.ima130,
        l_ima131    LIKE ima_file.ima131,
        l_imaacti   LIKE ima_file.imaacti,
-       l_qty       LIKE type_file.num10,       
+       l_qty       LIKE type_file.num10,
        p_cmd       STRING,
        l_n         LIKE type_file.num5,
        l_misc      LIKE type_file.chr4,
        l_rtz04     LIKE rtz_file.rtz04,
-       l_rte06     LIKE rte_file.rte06,    
-       l_rte07     LIKE rte_file.rte07,   
+       l_rte06     LIKE rte_file.rte06,
+       l_rte07     LIKE rte_file.rte07,
        l_rtdconf   LIKE rtd_file.rtdconf,
        l_flag_chk  LIKE type_file.chr1,
        l_ima135    LIKE ima_file.ima135,
@@ -21597,12 +21608,12 @@ DEFINE l_ima25     LIKE ima_file.ima25,     #ima單位
        l_img09     LIKE img_file.img09,     #img單位
        l_factor    LIKE ima_file.ima31_fac,
        l_rty05     LIKE rty_file.rty05,
-       l_rtt01     LIKE rtt_file.rtt01,                                                                                                  
+       l_rtt01     LIKE rtt_file.rtt01,
        l_rtt11     LIKE rtt_file.rtt11,
-       l_rtv12     LIKE rtv_file.rtv12, 
+       l_rtv12     LIKE rtv_file.rtv12,
        l_rtu01     LIKE rtu_file.rtu01,
        l_unit      LIKE ima_file.ima31,
-       l_ohb04     LIKE ohb_file.ohb04,      
+       l_ohb04     LIKE ohb_file.ohb04,
        l_cnt       LIKE type_file.num5,
        l_item      LIKE img_file.img01,     #料號
        l_ware      LIKE img_file.img02,     #倉庫
@@ -21617,22 +21628,22 @@ DEFINE l_ima25     LIKE ima_file.ima25,     #ima單位
        l_unit3     LIKE img_file.img09,     #第一單位
        l_qty3      LIKE img_file.img10,      #第一數量
        i           LIKE type_file.num5      #FUN-B10010
-   
-   CALL s_showmsg_init()			
-   LET tok = base.StringTokenizer.create(g_multi_ima01,"|")	
-   LET i = 1                           #FUN-B10010		
-   WHILE tok.hasMoreTokens()			
-      LET l_ohb.ohb04 = tok.nextToken()		
-      IF cl_null(l_ohb.ohb04) THEN 
-         CONTINUE WHILE 
+
+   CALL s_showmsg_init()
+   LET tok = base.StringTokenizer.create(g_multi_ima01,"|")
+   LET i = 1                           #FUN-B10010
+   WHILE tok.hasMoreTokens()
+      LET l_ohb.ohb04 = tok.nextToken()
+      IF cl_null(l_ohb.ohb04) THEN
+         CONTINUE WHILE
       END IF
       LET l_ohb.ohb01 = g_oha.oha01
-       
+
       SELECT MAX(ohb03)+1 INTO l_ohb.ohb03 FROM ohb_file
        WHERE ohb01 = g_oha.oha01
-      IF cl_null(l_ohb.ohb03) THEN 
+      IF cl_null(l_ohb.ohb03) THEN
          LET l_ohb.ohb03 = 1
-      END IF   
+      END IF
 #FUN-B10010---add--begin
       IF i=1 THEN
          LET l_ohb.ohb69 =g_ohb1[l_ac].ohb69
@@ -21645,50 +21656,50 @@ DEFINE l_ima25     LIKE ima_file.ima25,     #ima單位
       SELECT ima02,ima31,ima31_fac INTO l_ohb.ohb06,l_ohb.ohb05,l_ohb.ohb05_fac
         FROM ima_file
        WHERE ima01 = l_ohb.ohb04
-      
-      IF g_aza.aza50='Y' THEN   
+
+      IF g_aza.aza50='Y' THEN
          IF l_ohb.ohb04[1,4]!='MISC' THEN
             SELECT count(*) INTO g_n FROM ima_file,tqh_file
              WHERE tqh02=ima1006
                AND tqhacti='Y'
                AND ima01=l_ohb.ohb04
-            IF g_n=0 THEN 
+            IF g_n=0 THEN
                CALL s_errmsg('ohb01',l_ohb.ohb04,'INS ohb_file','mfg9329',1)
-               CONTINUE WHILE  
+               CONTINUE WHILE
             END IF
-         END IF       
+         END IF
       END IF
-      LET l_misc=l_ohb.ohb04[1,4]   
-      IF l_ohb.ohb04[1,4]='MISC' THEN   
+      LET l_misc=l_ohb.ohb04[1,4]
+      IF l_ohb.ohb04[1,4]='MISC' THEN
          SELECT COUNT(*) INTO l_n FROM ima_file
           WHERE ima01=l_misc
          IF l_n=0 THEN
             CALL s_errmsg('ohb01',l_ohb.ohb04,'INS ohb_file','aim-806',1)
-            CONTINUE WHILE  
+            CONTINUE WHILE
          END IF
-      END IF  
-      
+      END IF
+
       SELECT COUNT(*) INTO l_n FROM ima_file
-       WHERE ima01=l_ohb.ohb04    
-         AND imaag IS NOT NULL 
+       WHERE ima01=l_ohb.ohb04
+         AND imaag IS NOT NULL
          AND (imaag1 IS NULL OR imaag1 = ' ')
       IF l_n>0 THEN
          CALL s_errmsg('ohb01',l_ohb.ohb04,'INS ohb_file','aim1004',1)
          CONTINUE WHILE
       END IF
-      SELECT ima24 INTO l_ohb.ohb61 FROM ima_file WHERE ima01=l_ohb.ohb04    
+      SELECT ima24 INTO l_ohb.ohb61 FROM ima_file WHERE ima01=l_ohb.ohb04
       IF SQLCA.SQLCODE THEN
-         IF l_ohb.ohb04[1,4] <> 'MISC' THEN     
-            CALL s_errmsg('ohb01',l_ohb.ohb04,'INS ohb_file',SQLCA.SQLCODE,1)  
+         IF l_ohb.ohb04[1,4] <> 'MISC' THEN
+            CALL s_errmsg('ohb01',l_ohb.ohb04,'INS ohb_file',SQLCA.SQLCODE,1)
             CONTINUE WHILE
          END IF
       END IF
-      
-      IF cl_null(l_ohb.ohb05) THEN    
-         LET l_ohb.ohb05=l_b2     
+
+      IF cl_null(l_ohb.ohb05) THEN
+         LET l_ohb.ohb05=l_b2
       END IF
-      IF cl_null(l_ohb.ohb09) AND   
-        (cl_null(l_ohb.ohb31) OR cl_null(l_ohb.ohb33)) THEN   
+      IF cl_null(l_ohb.ohb09) AND
+        (cl_null(l_ohb.ohb31) OR cl_null(l_ohb.ohb33)) THEN
          IF g_azw.azw04='2' THEN
             #FUN-C90049 mark begin---
             #SELECT rtz07 INTO l_ohb.ohb09 FROM rtz_file
@@ -21696,45 +21707,45 @@ DEFINE l_ima25     LIKE ima_file.ima25,     #ima單位
             #FUN-C90049 mark end-----
             CALL s_get_coststore(g_plant,l_ohb.ohb04) RETURNING l_ohb.ohb09    #FUN-C90049 add
          ELSE
-         LET l_ohb.ohb09=l_ima35      
-         END IF  
+         LET l_ohb.ohb09=l_ima35
+         END IF
          IF NOT s_chk_ware(l_ohb.ohb09) THEN
             LET l_ohb.ohb09 = NULL
-         END IF 
-      END IF 
-      
-      IF cl_null(l_ohb.ohb091) AND   
-        (cl_null(l_ohb.ohb31) OR cl_null(l_ohb.ohb33)) THEN  
-         LET l_ohb.ohb091=l_ima36          
+         END IF
+      END IF
+
+      IF cl_null(l_ohb.ohb091) AND
+        (cl_null(l_ohb.ohb31) OR cl_null(l_ohb.ohb33)) THEN
+         LET l_ohb.ohb091=l_ima36
       END IF
       LET g_buf = NULL
       SELECT obk03 INTO g_buf FROM obk_file
-       WHERE obk01 = l_ohb.ohb04 AND obk02 = g_oha.oha03       
+       WHERE obk01 = l_ohb.ohb04 AND obk02 = g_oha.oha03
       IF cl_null(b_ohb.ohb11) THEN LET b_ohb.ohb11 = g_buf END IF
 
-      IF g_sma.sma115 = 'Y' THEN		
-         CALL s_chk_va_setting(l_ohb.ohb04)   
-            RETURNING g_flag,g_ima906,g_ima907		
-         CALL s_chk_va_setting1(l_ohb.ohb04)  
-            RETURNING g_flag,g_ima908			
-         SELECT zl00,zl09 FROM zl_file  WHERE zl08='FUN-AB0059' and zl26='3' ORDER BY zl00,zl09		
-         LET l_ohb.ohb913=g_ima907    		 
-      END IF			
+      IF g_sma.sma115 = 'Y' THEN
+         CALL s_chk_va_setting(l_ohb.ohb04)
+            RETURNING g_flag,g_ima906,g_ima907
+         CALL s_chk_va_setting1(l_ohb.ohb04)
+            RETURNING g_flag,g_ima908
+         SELECT zl00,zl09 FROM zl_file  WHERE zl08='FUN-AB0059' and zl26='3' ORDER BY zl00,zl09
+         LET l_ohb.ohb913=g_ima907
+      END IF
 
-      IF g_sma.sma116 MATCHES '[23]' THEN   
-         IF cl_null(g_ohb1[l_ac].ohb916) THEN    
-            LET g_ohb1[l_ac].ohb916=g_ima908     
+      IF g_sma.sma116 MATCHES '[23]' THEN
+         IF cl_null(g_ohb1[l_ac].ohb916) THEN
+            LET g_ohb1[l_ac].ohb916=g_ima908
          END IF
       END IF
       SELECT ima25 INTO g_ima25 FROM ima_file
-       WHERE ima01=g_ohb1[l_ac].ohb04         
+       WHERE ima01=g_ohb1[l_ac].ohb04
       LET g_ima31 = l_b2
 
       SELECT imc02 INTO l_ohb.ohb07 FROM imc_file
        WHERE imc01 = l_ohb.ohb04
-      
+
       LET l_ohb.ohb08 = g_plant
-      
+
       IF g_azw.azw04 = '2' THEN   #判斷是否為流通業
          #FUN-C90049 mark begin---
          #SELECT rtz07 INTO l_ohb.ohb09 FROM rtz_file
@@ -21742,11 +21753,11 @@ DEFINE l_ima25     LIKE ima_file.ima25,     #ima單位
          #FUN-C90049 mark end---
          CALL s_get_coststore(g_plant,g_ohb1[l_ac].ohb04) RETURNING l_ohb.ohb09    #FUN-C90049 add
          SELECT ima36 INTO l_ohb.ohb091 FROM ima_file
-          WHERE ima01 = l_ohb.ohb04 
+          WHERE ima01 = l_ohb.ohb04
       ELSE
          SELECT ima35,ima36  INTO l_ohb.ohb09,l_ohb.ohb091 FROM ima_file
           WHERE ima01 = l_ohb.ohb04
-      END IF 
+      END IF
       IF cl_null(l_ohb.ohb09)  THEN
          LET l_ohb.ohb09 = ''
       END IF
@@ -21754,20 +21765,20 @@ DEFINE l_ima25     LIKE ima_file.ima25,     #ima單位
          LET l_ohb.ohb091 = ''
       END IF
       LET l_ohb.ohb092 = NULL
-      
+
       SELECT obk03 INTO l_ohb.ohb11 FROM obk_file
        WHERE obk01 = l_ohb.ohb04 AND obk02 = g_oha.oha03
-       
+
       IF g_sma.sma116 ='2' OR g_sma.sma116='3' THEN
           LET l_unit=l_ohb.ohb916
       ELSE
           LET l_unit=l_ohb.ohb05
-      END IF 
-      
+      END IF
+
       SELECT img09 INTO l_ohb.ohb15 FROM img_file
        WHERE img01 = l_ohb.ohb04 AND img02 = l_ohb.ohb09
-         AND img03 = l_ohb.ohb091 AND img04 = l_ohb.ohb092 
-      
+         AND img03 = l_ohb.ohb091 AND img04 = l_ohb.ohb092
+
       IF cl_null(l_ohb.ohb15) THEN
          LET l_ohb.ohb15 = l_ohb.ohb05
       END IF
@@ -21775,57 +21786,57 @@ DEFINE l_ima25     LIKE ima_file.ima25,     #ima單位
          LET l_ohb.ohb15_fac = 1
       ELSE
          CALL s_umfchk(l_ohb.ohb04,l_ohb.ohb05,l_ohb.ohb15)
-              RETURNING l_cnt,l_ohb.ohb15_fac                                                                                            
-         IF l_cnt = '1'  THEN                                                                                                   
-            CALL cl_err(l_ohb.ohb04,'abm-731',1)                                                                                
-            LET l_ohb.ohb15_fac=1                                                                                                        
-         END IF          
+              RETURNING l_cnt,l_ohb.ohb15_fac
+         IF l_cnt = '1'  THEN
+            CALL cl_err(l_ohb.ohb04,'abm-731',1)
+            LET l_ohb.ohb15_fac=1
+         END IF
          IF cl_null(l_ohb.ohb15_fac) THEN
             LET l_ohb.ohb15_fac = 1
          END IF
       END IF
-      
+
       LET l_item = l_ohb.ohb04
       LET l_ware = l_ohb.ohb09
       LET l_loc  = l_ohb.ohb091
       LET l_lot  = l_ohb.ohb092
-      
+
       SELECT ima25,ima31,ima906,ima907 INTO l_ima25,l_ima31,l_ima906,l_ima907
         FROM ima_file WHERE ima01 = l_item
-      
+
       SELECT img09 INTO l_img09 FROM img_file
        WHERE img01 = l_item
          AND img02 = l_ware
          AND img03 = l_loc
          AND img04 = l_lot
-      
-      IF g_sma.sma115 = 'Y' THEN         
+
+      IF g_sma.sma115 = 'Y' THEN
          IF l_ima906 = '1' THEN  #不使用雙單位
             LET l_unit2 = NULL
             LET l_fac2  = NULL
             LET l_qty2  = NULL
          ELSE
             LET l_unit2 = l_ima907
-            IF g_oha.oha09 != '5' THEN 
+            IF g_oha.oha09 != '5' THEN
             CALL s_du_umfchk(l_item,'','','',l_ima31,l_ima907,l_ima906)
                  RETURNING g_errno,l_factor
-            END IF   
+            END IF
             LET l_fac2 = l_factor
             LET l_qty2  = 0
          END IF
          LET l_unit1 = l_ima31
          LET l_fac1  = 1
          LET l_qty1  = 0
-      END IF                            
-      
-      IF g_sma.sma116 MATCHES '[01]' THEN    
+      END IF
+
+      IF g_sma.sma116 MATCHES '[01]' THEN
          LET l_unit3 = NULL
          LET l_qty3  = NULL
       ELSE
          LET l_unit3 = l_ima908
          LET l_qty3  = 0
       END IF
-      
+
       LET l_ohb.ohb913=l_unit2
       LET l_ohb.ohb914=l_fac2
       LET l_ohb.ohb915=l_qty2
@@ -21836,51 +21847,51 @@ DEFINE l_ima25     LIKE ima_file.ima25,     #ima單位
          LET l_ohb.ohb915 = NULL
          LET l_ohb.ohb912 = NULL
       END IF
-        
+
       CALL s_fetch_price_new(g_oha.oha03,b_ohb.ohb04,b_ohb.ohb69,l_unit,g_oha.oha02,         #FUN-BC0071
                              '3',g_oha.ohaplant,g_oha.oha23,g_oha.oha31,'',
                               g_oha.oha01,b_ohb.ohb03,b_ohb.ohb917,
                               b_ohb.ohb1002,'a')
 #          RETURNING l_ohb.ohb13               #FUN-AB0061 mark
-           RETURNING l_ohb.ohb13,l_ohb.ohb37   #FUN-AB0061 add      
-        
+           RETURNING l_ohb.ohb13,l_ohb.ohb37   #FUN-AB0061 add
+
       SELECT rty06 INTO l_ohb.ohb64 FROM rty_file
        WHERE rty01 = g_plant AND rty02 = l_ohb.ohb04
-      IF cl_null(l_ohb.ohb64) THEN 
+      IF cl_null(l_ohb.ohb64) THEN
          LET l_ohb.ohb64 = 1
       END IF
-        
-      IF l_ohb.ohb64='3' OR l_ohb.ohb64='4' THEN                                                                           
-         SELECT rty05 INTO l_rty05 FROM rty_file WHERE rty01=g_plant                                                              
-          AND rty02=l_ohb.ohb04 AND rtyacti="Y"                                                                                  
-         IF NOT cl_null(l_rty05) THEN                                                                                                  
-            SELECT rtt01,rtt11 INTO l_rtt01,l_rtt11 FROM rtt_file,rts_file,rto_file                                                    
-             WHERE rts01 = rtt01 AND rttplant = rtsplant                                                                                   
-               AND rts02 = rtt02 AND rtt04 =l_ohb.ohb04 AND rto01 = rts04 AND rtoplant = rts9plant                                    
-               AND rto05 = l_rty05  AND rto06 = l_ohb.ohb64 AND rto08<=g_oha.oha02                                                
-               AND rto09>=g_oha.oha02 AND rtt15="Y"                                                                                     
-               AND rtoconf = 'Y' AND rtsconf = 'Y' AND rto03 = rts02 AND rtoplant =  g_plant                                         
-            IF NOT cl_null(l_rtt01) THEN                                                                                               
-               SELECT rtv12,rtu01 INTO l_rtv12,l_rtu01 FROM rtv_file,rtu_file,rtt_file                     
-                WHERE rtt01=rtu04 AND rtt02=rtu02 AND rttplant=rtuplant AND rtuplant=g_plant                                            
-                  AND rtuconf="Y" AND rtuplant=rtvplant AND rtu01=rtv01 AND rtu02=rtv02                                                     
-                  AND rtt01=l_rtt01 AND rtu05=l_rty05 AND rtu06=l_ohb.ohb64                                                       
-                  AND rtv04=l_ohb.ohb04                                                                                           
-               IF NOT cl_null(l_rtu01) THEN       
-                  LET l_ohb.ohb65=l_rtv12                                                                                        
-               ELSE                                                                                                                    
-                  LET l_ohb.ohb65=l_rtt11                                                                                        
-               END IF                                                                                                                  
-            END IF                                                                                                                     
-         END IF                                                                                                                        
-      ELSE                                                                                                                             
-         LET l_ohb.ohb65=NULL                                                                                                    
-      END IF      
-            
-      LET l_ohb.ohb66 = l_ohb.ohb65  
+
+      IF l_ohb.ohb64='3' OR l_ohb.ohb64='4' THEN
+         SELECT rty05 INTO l_rty05 FROM rty_file WHERE rty01=g_plant
+          AND rty02=l_ohb.ohb04 AND rtyacti="Y"
+         IF NOT cl_null(l_rty05) THEN
+            SELECT rtt01,rtt11 INTO l_rtt01,l_rtt11 FROM rtt_file,rts_file,rto_file
+             WHERE rts01 = rtt01 AND rttplant = rtsplant
+               AND rts02 = rtt02 AND rtt04 =l_ohb.ohb04 AND rto01 = rts04 AND rtoplant = rts9plant
+               AND rto05 = l_rty05  AND rto06 = l_ohb.ohb64 AND rto08<=g_oha.oha02
+               AND rto09>=g_oha.oha02 AND rtt15="Y"
+               AND rtoconf = 'Y' AND rtsconf = 'Y' AND rto03 = rts02 AND rtoplant =  g_plant
+            IF NOT cl_null(l_rtt01) THEN
+               SELECT rtv12,rtu01 INTO l_rtv12,l_rtu01 FROM rtv_file,rtu_file,rtt_file
+                WHERE rtt01=rtu04 AND rtt02=rtu02 AND rttplant=rtuplant AND rtuplant=g_plant
+                  AND rtuconf="Y" AND rtuplant=rtvplant AND rtu01=rtv01 AND rtu02=rtv02
+                  AND rtt01=l_rtt01 AND rtu05=l_rty05 AND rtu06=l_ohb.ohb64
+                  AND rtv04=l_ohb.ohb04
+               IF NOT cl_null(l_rtu01) THEN
+                  LET l_ohb.ohb65=l_rtv12
+               ELSE
+                  LET l_ohb.ohb65=l_rtt11
+               END IF
+            END IF
+         END IF
+      ELSE
+         LET l_ohb.ohb65=NULL
+      END IF
+
+      LET l_ohb.ohb66 = l_ohb.ohb65
       LET l_ohb.ohb12   = 0
-      LET l_ohb.ohb14   = 0             
-      LET l_ohb.ohb14t  = 0        
+      LET l_ohb.ohb14   = 0
+      LET l_ohb.ohb14t  = 0
       LET l_ohb.ohb16   = 0
       LET l_ohb.ohb30   = NULL
       LET l_ohb.ohb31   = NULL
@@ -21931,15 +21942,15 @@ DEFINE l_ima25     LIKE ima_file.ima25,     #ima單位
       IF cl_null(l_ohb.ohb37) OR l_ohb.ohb37 = 0 THEN
          LET l_ohb.ohb37 = l_ohb.ohb13
       END IF
-      #FUN-AB0061----------add---------------end---------------- 
+      #FUN-AB0061----------add---------------end----------------
       INSERT INTO ohb_file values (l_ohb.*)
       IF STATUS THEN
-         CALL s_errmsg('ohb01',l_ohb.ohb04,'INS ohb_file',STATUS,1) 
+         CALL s_errmsg('ohb01',l_ohb.ohb04,'INS ohb_file',STATUS,1)
          CONTINUE WHILE
-      END IF 		
+      END IF
    LET i = i+1                  #FUN-B10010
-   END WHILE		
-   CALL s_showmsg()	 
+   END WHILE
+   CALL s_showmsg()
 END FUNCTION
 #FUN-AA0095  add ---------------------------------end-----------------------------------
 
@@ -21992,7 +22003,7 @@ END FUNCTION
 #    LET l_odw.oha02 = g_oha.oha02
 #    LET l_odw.oha03 = g_oha.oha03
 ##換貨週期 換貨率 換貨率對象
-#    SELECT odw04,odw05,odw06,odw07 
+#    SELECT odw04,odw05,odw06,odw07
 #      INTO l_odw.odw04,l_odw.odw05,l_odw06,l_odw.odw07
 #      FROM odw_file
 #     WHERE odw01 = l_odw.oha03
@@ -22017,14 +22028,14 @@ END FUNCTION
 ##本次退貨額
 #    SELECT SUM(ohb14) INTO l_odw.ohb14_2
 #      FROM oha_file,ohb_file
-#     WHERE oha01=ohb01 
+#     WHERE oha01=ohb01
 #       AND oha01=g_oha.oha01
 #       AND oha09='1'
 #
 ##本次換貨額
 #    SELECT SUM(ohb14) INTO l_odw.ohb14_4
 #      FROM oha_file,ohb_file
-#     WHERE oha01=ohb01 
+#     WHERE oha01=ohb01
 #       AND oha01=g_oha.oha01
 #       AND oha09='2'
 #
@@ -22040,7 +22051,7 @@ END FUNCTION
 #    IF cl_null(l_odw.ohb14_2) THEN LET l_odw.ohb14_2 = 0 END IF
 #    IF cl_null(l_odw.ohb14_3) THEN LET l_odw.ohb14_3 = 0 END IF
 #    IF cl_null(l_odw.ohb14_4) THEN LET l_odw.ohb14_4 = 0 END IF
-#    
+#
 #    IF l_oga02+l_odw.odw04 > l_odw.oha02 THEN
 #       LET l_odw.ohb14_1 = (l_odw.ogb14_1-l_odw.ohb14_1)*l_odw06-l_odw.ohb14_3
 #       LET l_odw.ohb14_3 = (l_odw.ogb14_1-l_odw.ohb14_3)*l_odw06
@@ -22091,7 +22102,7 @@ END FUNCTION
 #           WHERE ima01 = l_ohb[l_cnt].ohb04
 #
 ##此款所有發貨數量
-#          SELECT SUM(ata08) INTO l_ohb[l_cnt].ogb12 
+#          SELECT SUM(ata08) INTO l_ohb[l_cnt].ogb12
 #            FROM ata_file,oga_file
 #           WHERE ata00 = 'axmt620_slk'
 #             AND ata05 = l_ohb[l_cnt].ohb04
@@ -22105,7 +22116,7 @@ END FUNCTION
 #             AND ata05 = l_ohb[l_cnt].ohb04
 #             AND ata01 = oha01
 #             AND oha03 = l_odw.oha03
-#          
+#
 ##本次退貨數
 #          SELECT SUM(ata08),MAX(ohb13)
 #            INTO l_ohb[l_cnt].ogb12_2,l_ohb[l_cnt].ohb13
@@ -22122,7 +22133,7 @@ END FUNCTION
 #          CLOSE t700_y_cs2
 #
 ##最近發貨數量/最近發貨價
-#          SELECT SUM(ogb12),SUM(ogb14) 
+#          SELECT SUM(ogb12),SUM(ogb14)
 #            INTO l_ohb[l_cnt].ogb12_1,l_ohb[l_cnt].ogb14
 #            FROM ogb_file,ata_file
 #           WHERE ogb01 = l_oga01
@@ -22150,11 +22161,11 @@ END FUNCTION
 #                   "  WHERE ohb01 = '",g_oha.oha01,"'"
 #       PREPARE t700_y_pre_1 FROM l_sql
 #       DECLARE t700_y_cs_1 CURSOR FOR t700_y_pre_1
-#       FOREACH t700_y_cs_1 
+#       FOREACH t700_y_cs_1
 #          INTO l_ohb[l_cnt].ohb04,l_ohb[l_cnt].ohb06,
 #               l_ohb[l_cnt].ogb12_2,l_ohb[l_cnt].ohb13
 ##此款所有發貨數量
-#          SELECT SUM(ogb12) INTO l_ohb[l_cnt].ogb12 
+#          SELECT SUM(ogb12) INTO l_ohb[l_cnt].ogb12
 #            FROM oga_file,ogb_file
 #           WHERE oga01 = ogb01
 #             AND oga03 = l_odw.oha03
@@ -22166,14 +22177,14 @@ END FUNCTION
 #           WHERE oha01 = ohb01
 #             AND oha03 = l_odw.oha03
 #             AND ohb04 = l_ohb[l_cnt].ohb04
-#          
+#
 ##最近發貨日期
 #          OPEN t700_y_cs2 USING l_odw.oha03,l_ohb[l_cnt].ohb04
 #          FETCH FIRST t700_y_cs2 INTO l_ohb[l_cnt].oga02,l_oga01
 #          CLOSE t700_y_cs2
 #
 ##最近發貨數量/最近發貨價
-#          SELECT SUM(ogb12),SUM(ogb14) 
+#          SELECT SUM(ogb12),SUM(ogb14)
 #            INTO l_ohb[l_cnt].ogb12_1,l_ohb[l_cnt].ogb14
 #            FROM ogb_file
 #           WHERE ogb01 = l_oga01
@@ -22184,7 +22195,7 @@ END FUNCTION
 #             LET l_ohb[l_cnt].ohb12_1 = (l_ohb[l_cnt].ogb12-l_ohb[l_cnt].ohb12)*l_odw.odw05
 #          END IF
 #          IF cl_null(l_ohb[l_cnt].ohb12_1) THEN
-#             LET l_ohb[l_cnt].ohb12_1 = 0 
+#             LET l_ohb[l_cnt].ohb12_1 = 0
 #          END IF
 #          IF l_ohb[l_cnt].ohb12_1 < l_ohb[l_cnt].ogb12_2 THEN
 #             LET l_ohb[l_cnt].aaa='N'
@@ -22216,73 +22227,73 @@ FUNCTION t700_ohb31(p_ohb31,p_ohb32)
    DEFINE l_ima154 LIKE ima_file.ima154
    DEFINE l_ogb04  LIKE ogb_file.ogb04
    DEFINE l_rxe    RECORD LIKE rxe_file.*
-   DEFINE l_sql    STRING 
-   SELECT ogb04 INTO l_ogb04 
-     FROM ogb_file 
+   DEFINE l_sql    STRING
+   SELECT ogb04 INTO l_ogb04
+     FROM ogb_file
     WHERE ogb01 = p_ohb31
       AND ogb03 = p_ohb32
-   
+
    LET g_ohb1[l_ac].ohb04 = l_ogb04
    SELECT ima154 INTO l_ima154
      FROM ima_file
-    WHERE ima01 = l_ogb04 
-   IF l_ima154 = 'Y' THEN     
-      DELETE FROM rxe_file 
-       WHERE rxe00 = '03' 
+    WHERE ima01 = l_ogb04
+   IF l_ima154 = 'Y' THEN
+      DELETE FROM rxe_file
+       WHERE rxe00 = '03'
          AND rxe01 = g_oha.oha01
-         AND rxe02 = g_ohb1[l_ac].ohb03 
+         AND rxe02 = g_ohb1[l_ac].ohb03
       IF SQLCA.SQLCODE THEN
           LET g_success = 'N'
-          RETURN 
-      END IF 
+          RETURN
+      END IF
       LET l_sql = " SELECT * ",
-                  "   FROM rxe_file", 
+                  "   FROM rxe_file",
                   "  WHERE rxe01 = '",p_ohb31,"'",
                   "    AND rxe02 = '",p_ohb32,"'"
-      PREPARE sel_rxe_pb_2 FROM l_sql 
+      PREPARE sel_rxe_pb_2 FROM l_sql
       DECLARE sel_rxe_cs_2 CURSOR FOR sel_rxe_pb_2
-      FOREACH sel_rxe_cs_2 INTO l_rxe.* 
+      FOREACH sel_rxe_cs_2 INTO l_rxe.*
          IF SQLCA.SQLCODE THEN
             CALL cl_err('foreach:',SQLCA.SQLCODE,1)
-            LET g_success = 'N' 
+            LET g_success = 'N'
             EXIT FOREACH
-         END IF          
+         END IF
          LET l_rxe.rxe00 = '03'
          LET l_rxe.rxe01 = g_oha.oha01
          LET l_rxe.rxe02 = g_ohb1[l_ac].ohb03
          SELECT MAX(rxe03)+1 INTO l_rxe.rxe03
-           FROM rxe_file 
-          WHERE rxe00 = '03' 
+           FROM rxe_file
+          WHERE rxe00 = '03'
             AND rxe01 = g_oha.oha01
             AND rxe02 = g_ohb1[l_ac].ohb03
-         IF cl_null(l_rxe.rxe03) THEN 
+         IF cl_null(l_rxe.rxe03) THEN
             LET l_rxe.rxe03 = 1
-         END IF 
+         END IF
          LET l_rxe.rxeplant = g_oha.ohaplant
          LET l_rxe.rxelegal = g_oha.ohalegal
          INSERT INTO rxe_file VALUES (l_rxe.*)
          IF SQLCA.sqlcode THEN
              CALL cl_err3("ins","rxe_file",l_rxe.rxe01,
                          l_rxe.rxe02,SQLCA.sqlcode,"","",1)
-             LET g_success = 'N'             
-             RETURN 
-         END IF 
-      END FOREACH  
-   END IF 
-   
-END FUNCTION 	
+             LET g_success = 'N'
+             RETURN
+         END IF
+      END FOREACH
+   END IF
+
+END FUNCTION
 
 FUNCTION t700_rxe_del()
    DELETE FROM rxe_file
-    WHERE rxe01 = g_oha.oha01 
+    WHERE rxe01 = g_oha.oha01
       AND rxe02 = g_ohb1_t.ohb03
       AND rxe00 = '03'
    IF SQLCA.sqlcode THEN
-      CALL cl_err3("del","rxe_file",g_oha.oha01,g_ohb1_t.ohb03,SQLCA.sqlcode,"","",1)  
+      CALL cl_err3("del","rxe_file",g_oha.oha01,g_ohb1_t.ohb03,SQLCA.sqlcode,"","",1)
       RETURN FALSE
    END IF
-   RETURN TRUE   
-END FUNCTION 
+   RETURN TRUE
+END FUNCTION
 
 FUNCTION t700_check_ohb04_ticket()
    DEFINE l_azw04  LIKE azw_file.azw04
@@ -22290,44 +22301,44 @@ FUNCTION t700_check_ohb04_ticket()
    DEFINE l_cnt    LIKE type_file.num5
    LET g_success = 'Y'
    LET g_flag_chk = 'Y'
-   SELECT ima154 INTO l_ima154 
-     FROM ima_file 
+   SELECT ima154 INTO l_ima154
+     FROM ima_file
     WHERE ima01 = g_ohb1[l_ac].ohb04
-   SELECT azw04 INTO l_azw04 
-     FROM azw_file 
+   SELECT azw04 INTO l_azw04
+     FROM azw_file
     WHERE azw01 = g_oha.ohaplant
-   IF l_ima154 = 'Y' THEN 
-      IF l_azw04 = '2' THEN 
-         IF NOT cl_null(g_ohb1_t.ohb04) AND g_ohb1[l_ac].ohb04 != g_ohb1_t.ohb04 THEN 
+   IF l_ima154 = 'Y' THEN
+      IF l_azw04 = '2' THEN
+         IF NOT cl_null(g_ohb1_t.ohb04) AND g_ohb1[l_ac].ohb04 != g_ohb1_t.ohb04 THEN
              SELECT COUNT(*) INTO l_cnt
-               FROM rxe_file 
-              WHERE rxe01 = g_oha.oha01 
+               FROM rxe_file
+              WHERE rxe01 = g_oha.oha01
                 AND rxe02 = g_ohb1[l_ac].ohb03
                 AND rxe00 = '03'
-             IF l_cnt > 0 THEN 
-                 IF NOT cl_confirm('alm1512') THEN 
+             IF l_cnt > 0 THEN
+                 IF NOT cl_confirm('alm1512') THEN
                     LET g_success = 'N'
-                    RETURN 
-                 ELSE 
-                    DELETE FROM rxe_file 
-                     WHERE rxe00 = '03' 
+                    RETURN
+                 ELSE
+                    DELETE FROM rxe_file
+                     WHERE rxe00 = '03'
                        AND rxe01 = g_oha.oha01
-                       AND rxe02 = g_ohb1[l_ac].ohb03 
+                       AND rxe02 = g_ohb1[l_ac].ohb03
                     IF SQLCA.sqlcode THEN
                        CALL cl_err3("del","rxe_file",g_oha.oha01,g_ohbslk_t.ohbslk03,SQLCA.sqlcode,"","",1)
                        LET g_success = 'N'
-                       RETURN 
-                    ELSE 
+                       RETURN
+                    ELSE
                        LET g_success = 'Y'
-                    END IF    
-                 END IF       
-             END IF    
-         END IF 
-      ELSE 
-          CALL cl_err('','alm1513',0) 
-          LET g_success = 'N'   
-      END IF 
-   ELSE 
+                    END IF
+                 END IF
+             END IF
+         END IF
+      ELSE
+          CALL cl_err('','alm1513',0)
+          LET g_success = 'N'
+      END IF
+   ELSE
       LET g_flag_chk = 'N'
       IF NOT cl_null(g_ohb1_t.ohb04) AND g_ohb1[l_ac].ohb04 != g_ohb1_t.ohb04 THEN
           SELECT COUNT(*) INTO l_cnt
@@ -22348,108 +22359,108 @@ FUNCTION t700_check_ohb04_ticket()
                     CALL cl_err3("del","rxe_file",g_oha.oha01,g_ohbslk_t.ohbslk03,SQLCA.sqlcode,"","",1)
                     LET g_success = 'N'
                     RETURN
-                 END IF 
-              END IF 
+                 END IF
+              END IF
          END IF
       END IF
-   END IF    
+   END IF
 
-END FUNCTION 
+END FUNCTION
 
 FUNCTION t700_check_ohb12()
    DEFINE l_ima154 LIKE ima_file.ima154
    DEFINE l_rxe08  LIKE rxe_file.rxe08
    LET g_success = 'Y'
-   SELECT ima154 INTO l_ima154 
-     FROM ima_file 
+   SELECT ima154 INTO l_ima154
+     FROM ima_file
     WHERE ima01 = g_ohb1[l_ac].ohb04
    IF l_ima154 = 'Y' THEN
-      SELECT SUM(rxe08) INTO l_rxe08 
+      SELECT SUM(rxe08) INTO l_rxe08
         FROM rxe_file
        WHERE rxe00 = '03'
          AND rxe01 = g_oha.oha01
          AND rxe02 = g_ohb1[l_ac].ohb03
        IF cl_null(l_rxe08) THEN
           LET l_rxe08 = 0
-       END IF 
-       IF g_ohb1[l_ac].ohb12 <> l_rxe08 THEN 
+       END IF
+       IF g_ohb1[l_ac].ohb12 <> l_rxe08 THEN
           IF NOT cl_confirm('alm1556') THEN    #是否更新正确的数量
              LET g_success = 'N'
-          ELSE 
+          ELSE
              LET g_ohb1[l_ac].ohb12 = l_rxe08
              LET g_ohb1[l_ac].ohb12 = s_digqty(g_ohb1[l_ac].ohb12,g_ohb1[l_ac].ohb05)
-          END IF  
-       END IF    
-   END IF  
-    
-END FUNCTION 
+          END IF
+       END IF
+   END IF
+
+END FUNCTION
 
 FUNCTION t700_ticket_back()
    DEFINE l_rxe08 LIKE rxe_file.rxe08
-   DEFINE l_sql   STRING 
+   DEFINE l_sql   STRING
    DEFINE l_rxe   RECORD LIKE rxe_file.*
-   IF cl_null(g_oha.oha01) THEN 
+   IF cl_null(g_oha.oha01) THEN
       CALL cl_err('',-400,1)
-      RETURN 
-   END IF 
+      RETURN
+   END IF
    OPEN WINDOW t700_ticket_w WITH FORM "axm/42f/axmt7009"
         ATTRIBUTE(STYLE=g_win_style CLIPPED)
    CALL cl_ui_locale("axmt7009")
-   IF g_flag3 <> '2' THEN 
+   IF g_flag3 <> '2' THEN
       LET l_sql = "SELECT * FROM rxe_file WHERE rxe00 = '03' AND rxe01 = '",g_oha.oha01,"'"
-   ELSE 
+   ELSE
       LET l_sql = "SELECT * FROM rxe_file WHERE rxe00 = '03' ",
                   " AND rxe01 = '",g_oha.oha01,"'",
                   " AND rxe02 = '",g_ohb1[l_ac].ohb03,"'"
-   END IF 
+   END IF
    PREPARE sel_rxe_pre FROM l_sql
    DECLARE sel_rxe_cs CURSOR FOR sel_rxe_pre
    LET g_cnt  = 1
    CALL g_rxe.clear()
    FOREACH sel_rxe_cs INTO l_rxe.*
       LET g_rxe[g_cnt].rxe02 = l_rxe.rxe02
-      LET g_rxe[g_cnt].rxe03 = l_rxe.rxe03 
+      LET g_rxe[g_cnt].rxe03 = l_rxe.rxe03
       LET g_rxe[g_cnt].rxe04 = l_rxe.rxe04
       LET g_rxe[g_cnt].rxe05 = l_rxe.rxe05
       LET g_rxe[g_cnt].rxe06 = l_rxe.rxe06
       LET g_rxe[g_cnt].rxe07 = l_rxe.rxe07
       LET g_rxe[g_cnt].rxe08 = l_rxe.rxe08
-      LET g_rxe[g_cnt].rxe09 = l_rxe.rxe09   
+      LET g_rxe[g_cnt].rxe09 = l_rxe.rxe09
       SELECT lpx02 INTO g_rxe[g_cnt].lpx02
-        FROM lpx_file 
+        FROM lpx_file
        WHERE lpx01 = g_rxe[g_cnt].rxe06
       SELECT lrz02 INTO g_rxe[g_cnt].lrz02
         FROM lrz_file
        WHERE lrz01 = g_rxe[g_cnt].rxe07
-      LET g_cnt = g_cnt + 1  
-   END FOREACH 
+      LET g_cnt = g_cnt + 1
+   END FOREACH
    CALL g_rxe.deleteElement(g_cnt)
    LET g_rec_b5 = g_cnt - 1
-   IF g_flag3 = '2' THEN 
+   IF g_flag3 = '2' THEN
       CALL t700_ticket_b()
-   END IF 
+   END IF
    CALL t700_ticket_menu()
    CLOSE WINDOW t700_ticket_w
-   IF g_flag3 = '2' THEN 
+   IF g_flag3 = '2' THEN
       SELECT SUM(rxe08) INTO l_rxe08
-        FROM rxe_file 
+        FROM rxe_file
        WHERE rxe00 = '03'
          AND rxe01 = g_oha.oha01
-         AND rxe02 = g_ohb1[l_ac].ohb03 
-       IF NOT cl_null(l_rxe08) THEN  
+         AND rxe02 = g_ohb1[l_ac].ohb03
+       IF NOT cl_null(l_rxe08) THEN
          UPDATE ohb_file SET ohb12 = l_rxe08
           WHERE ohb01 = g_oha.oha01
-            AND ohb03 = g_ohb1[l_ac].ohb03    
+            AND ohb03 = g_ohb1[l_ac].ohb03
             IF SQLCA.sqlcode THEN
                CALL cl_err3("upd","ohb_file",g_oha.oha01,"",SQLCA.sqlcode,"","",1)
-            ELSE 
-               LET g_ohb1[l_ac].ohb12 = l_rxe08  
+            ELSE
+               LET g_ohb1[l_ac].ohb12 = l_rxe08
             END IF
-       ELSE 
+       ELSE
            LET g_ohb1[l_ac].ohb12 = 0
-       END IF   
-    END IF       
-END FUNCTION 
+       END IF
+    END IF
+END FUNCTION
 
 FUNCTION t700_ticket_menu()
    WHILE TRUE
@@ -22461,7 +22472,7 @@ FUNCTION t700_ticket_menu()
             CALL t700_ticket_b()
       END CASE
    END WHILE
-END FUNCTION 
+END FUNCTION
 
 FUNCTION t700_ticket_bp(p_ud)
    DEFINE   p_ud   LIKE type_file.chr1
@@ -22473,19 +22484,19 @@ FUNCTION t700_ticket_bp(p_ud)
    DISPLAY ARRAY g_rxe TO s_rxe.* ATTRIBUTE(COUNT=g_rec_b5)
       BEFORE DISPLAY
         CALL cl_navigator_setting( g_curs_index, g_row_count)
-        DISPLAY g_rec_b5 TO FORMONLY.cnt 
+        DISPLAY g_rec_b5 TO FORMONLY.cnt
 
       BEFORE ROW
         LET l_ac5 = ARR_CURR()
         CALL cl_show_fld_cont()
 
-      ON ACTION detail 
+      ON ACTION detail
          LET g_action_choice="detail"
-         EXIT DISPLAY 
-      
+         EXIT DISPLAY
+
       ON ACTION accept
          LET g_action_choice="detail"
-         EXIT DISPLAY 
+         EXIT DISPLAY
 
       ON ACTION HELP
          LET g_action_choice="help"
@@ -22515,7 +22526,7 @@ FUNCTION t700_ticket_bp(p_ud)
          CALL cl_about()
    END DISPLAY
    CALL cl_set_act_visible("accept,cancel", TRUE)
-END FUNCTION 
+END FUNCTION
 
 FUNCTION t700_ticket_b()
 DEFINE
@@ -22533,8 +22544,8 @@ DEFINE l_lpx28     LIKE lpx_file.lpx28
    IF s_shut(0) THEN RETURN END IF
    LET g_action_choice = ""
    IF g_flag3 <> '2' THEN #1.通过按钮开窗 2.AFTER FIELD ohb04 开窗
-      RETURN 
-   END IF 
+      RETURN
+   END IF
    LET l_allow_insert = cl_detail_input_auth('insert')
    LET l_allow_delete = cl_detail_input_auth('delete')
    LET g_forupd_sql = "SELECT rxe02,rxe03,rxe04,rxe05,rxe06,'',",
@@ -22565,7 +22576,7 @@ DEFINE l_lpx28     LIKE lpx_file.lpx28
              LET g_before_input_done = TRUE
              LET g_rxe_t.* = g_rxe[l_ac5].*
              OPEN t700_ticket_bcl USING g_oha.oha01,g_rxe_t.rxe02,g_rxe_t.rxe03
-                   
+
              IF STATUS THEN
                 CALL cl_err("OPEN t700_ticket_bcl:", STATUS, 1)
                 LET l_lock_sw = "Y"
@@ -22573,7 +22584,7 @@ DEFINE l_lpx28     LIKE lpx_file.lpx28
                   FETCH t700_ticket_bcl INTO g_rxe[l_ac5].*
                   IF SQLCA.sqlcode THEN
                      CALL cl_err(g_rxe_t.rxe03,SQLCA.sqlcode,1)
-                     LET l_lock_sw = "Y" 
+                     LET l_lock_sw = "Y"
                   ELSE
                      SELECT lpx02 INTO g_rxe[l_ac5].lpx02
                        FROM lpx_file
@@ -22581,7 +22592,7 @@ DEFINE l_lpx28     LIKE lpx_file.lpx28
                      SELECT lrz02 INTO g_rxe[l_ac5].lrz02
                        FROM lrz_file
                       WHERE lrz01 = g_rxe[l_ac5].rxe07
-                  END IF 
+                  END IF
              END IF
              CALL cl_show_fld_cont()
           END IF
@@ -22597,7 +22608,7 @@ DEFINE l_lpx28     LIKE lpx_file.lpx28
           CALL cl_show_fld_cont()
           NEXT FIELD rxe03
 
-          
+
        AFTER INSERT
           IF INT_FLAG THEN
              CALL cl_err('',9001,0)
@@ -22619,48 +22630,48 @@ DEFINE l_lpx28     LIKE lpx_file.lpx28
           END IF
 
        BEFORE FIELD rxe03
-          IF p_cmd ='a' THEN 
+          IF p_cmd ='a' THEN
              SELECT max(rxe03) + 1 INTO g_rxe[l_ac5].rxe03
-               FROM rxe_file 
+               FROM rxe_file
               WHERE rxe01 = g_oha.oha01
                 AND rxe02 = g_rxe[l_ac5].rxe02
-             IF cl_null(g_rxe[l_ac5].rxe03) OR g_rxe[l_ac5].rxe03 = 0 THEN    
+             IF cl_null(g_rxe[l_ac5].rxe03) OR g_rxe[l_ac5].rxe03 = 0 THEN
                 LET g_rxe[l_ac5].rxe03 = 1
-             END IF 
-          END IF 
-          
-       AFTER FIELD rxe03 
-          IF NOT cl_null(g_rxe[l_ac5].rxe03) 
+             END IF
+          END IF
+
+       AFTER FIELD rxe03
+          IF NOT cl_null(g_rxe[l_ac5].rxe03)
              AND (p_cmd= 'a' OR g_rxe_t.rxe03 != g_rxe[l_ac5].rxe03) THEN
              SELECT COUNT(*) INTO l_n
-               FROM rxe_file 
+               FROM rxe_file
               WHERE rxe01 = g_oha.oha01
                 AND rxe02 = g_rxe[l_ac5].rxe02
                 AND rxe03 = g_rxe[l_ac5].rxe03
              IF l_n > 0 THEN
                 LET g_rxe[l_ac5].rxe03 = g_rxe_t.rxe03
                 CALL cl_err('','alm1504',0)
-                NEXT FIELD rxe03  
-             END IF     
-          END IF  
-          
+                NEXT FIELD rxe03
+             END IF
+          END IF
+
        AFTER FIELD rxe04 #起始编号
          IF NOT cl_null(g_rxe[l_ac5].rxe04) THEN
-            CALL t700_rxe04_rxe05(g_rxe[l_ac5].rxe04,p_cmd) 
+            CALL t700_rxe04_rxe05(g_rxe[l_ac5].rxe04,p_cmd)
             IF NOT cl_null(g_errno) THEN
                CALL cl_err('',g_errno,0)
                LET g_rxe[l_ac5].rxe04 = g_rxe_t.rxe04
                NEXT FIELD rxe04
-            END IF            
+            END IF
             IF g_success = 'N' THEN
                LET g_rxe[l_ac5].rxe04 = g_rxe_t.rxe04
                NEXT FIELD rxe04
-            END IF 
+            END IF
          END IF
 
        AFTER FIELD rxe05 #结束编号
          IF NOT cl_null(g_rxe[l_ac5].rxe05) THEN
-            CALL t700_rxe04_rxe05(g_rxe[l_ac5].rxe05,p_cmd) 
+            CALL t700_rxe04_rxe05(g_rxe[l_ac5].rxe05,p_cmd)
             IF NOT cl_null(g_errno) THEN
                CALL cl_err('',g_errno,0)
                LET g_rxe[l_ac5].rxe05 = g_rxe_t.rxe05
@@ -22670,8 +22681,8 @@ DEFINE l_lpx28     LIKE lpx_file.lpx28
                LET g_rxe[l_ac5].rxe05 = g_rxe_t.rxe05
                NEXT FIELD rxe05
             END IF
-         END IF 
-          
+         END IF
+
        BEFORE DELETE
           IF g_rxe_t.rxe04 IS NOT NULL THEN
              IF NOT cl_delete() THEN
@@ -22688,7 +22699,7 @@ DEFINE l_lpx28     LIKE lpx_file.lpx28
                AND rxe03 = g_rxe_t.rxe03
              IF SQLCA.sqlcode THEN
                 CALL cl_err3("del","rxe_file",g_rxe_t.rxe02,"",SQLCA.sqlcode,"","",1)
-                CANCEL DELETE 
+                CANCEL DELETE
              END IF
              LET g_rec_b5=g_rec_b5-1
              DISPLAY g_rec_b5 TO FORMONLY.cnt
@@ -22743,7 +22754,7 @@ DEFINE l_lpx28     LIKE lpx_file.lpx28
              EXIT INPUT
           END IF
           CLOSE t700_ticket_bcl
-  
+
        ON ACTION CONTROLO
           IF INFIELD(rxe03) AND l_ac5 > 1 THEN
              LET g_rxe[l_ac5].* = g_rxe[l_ac5-1].*
@@ -22776,7 +22787,7 @@ DEFINE l_lpx28     LIKE lpx_file.lpx28
 
    END INPUT
    CLOSE t700_ticket_bcl
-END FUNCTION 
+END FUNCTION
 
 FUNCTION t700_rxe04_rxe05(p_no,p_cmd)
  DEFINE l_sql       STRING
@@ -22785,7 +22796,7 @@ FUNCTION t700_rxe04_rxe05(p_no,p_cmd)
  DEFINE p_cmd       LIKE type_file.chr1
  DEFINE l_lqe02     LIKE lqe_file.lqe02
  DEFINE l_lqe03     LIKE lqe_file.lqe03
- DEFINE l_lpx01     LIKE lpx_file.lpx01 
+ DEFINE l_lpx01     LIKE lpx_file.lpx01
  DEFINE l_lpx02     LIKE lpx_file.lpx02
  DEFINE l_lpx22     LIKE lpx_file.lpx22
  DEFINE l_lpx23     LIKE lpx_file.lpx23
@@ -22806,23 +22817,23 @@ FUNCTION t700_rxe04_rxe05(p_no,p_cmd)
 
     LET g_errno = ''
     LET g_success = 'Y'
-    SELECT lqe02,lqe03,lqe17 INTO l_lqe02,l_lqe03,l_lqe17 
+    SELECT lqe02,lqe03,lqe17 INTO l_lqe02,l_lqe03,l_lqe17
       FROM lqe_file
      WHERE lqe01 = p_no
        AND lqe13 = g_oha.ohaplant
-    CASE 
+    CASE
          WHEN SQLCA.sqlcode = 100 LET g_errno = 'alm-477'
          WHEN l_lqe17 <> '1'      LET g_errno = 'alm1557'
          OTHERWISE                LET g_errno = SQLCA.SQLCODE USING '-------'
     END CASE
     IF NOT cl_null(g_errno) THEN
-       RETURN 
+       RETURN
     END IF
     LET l_length = LENGTH(p_no)
-    SELECT lpx01,lpx02,lpx22,lpx23,lpx24,lpx28,lpx15,lpxacti                       
-      INTO l_lpx01,l_lpx02,l_lpx22,l_lpx23,l_lpx24,l_rxe07,l_lpx15,l_lpxacti          
+    SELECT lpx01,lpx02,lpx22,lpx23,lpx24,lpx28,lpx15,lpxacti
+      INTO l_lpx01,l_lpx02,l_lpx22,l_lpx23,l_lpx24,l_rxe07,l_lpx15,l_lpxacti
       FROM lpx_file
-     WHERE lpx01 = l_lqe02 
+     WHERE lpx01 = l_lqe02
  #   CASE WHEN SQLCA.sqlcode = 100 LET g_errno = 'clm-332'   #FUN-BC0082 mark
      CASE WHEN SQLCA.sqlcode = 100 LET g_errno = 'alm1562'   #FUN-BC0082 add
          WHEN l_lpxacti = 'N'     LET g_errno = '9028'
@@ -22869,13 +22880,13 @@ FUNCTION t700_rxe04_rxe05(p_no,p_cmd)
       #   LET l_slip_length = LENGTH(p_no)
       #ELSE
       #   LET l_slip_length = LENGTH(p_no) - LENGTH(l_lpx23)
-      #END IF 
+      #END IF
       ##CHI-C80030 add end-----
 
        IF LENGTH(p_no) - LENGTH(l_lpx23) <> l_lpx24 OR l_lpx23 <> p_no[1,l_lpx22] THEN      #CHI-C80030 mark
       #IF l_slip_length<> l_lpx24 OR l_lpx23 <> p_no[1,l_lpx22] THEN                        #CHI-C80030 add
           LET g_errno = 'alm-388'
-          RETURN 
+          RETURN
        ELSE
           IF NOT cl_null(l_rxe07) THEN
              SELECT lrz02,lrz03 INTO l_lrz02,l_lrz03
@@ -22892,8 +22903,8 @@ FUNCTION t700_rxe04_rxe05(p_no,p_cmd)
           END IF
        END IF
        IF NOT cl_null(g_errno) THEN
-           RETURN 
-       END IF 
+           RETURN
+       END IF
        SELECT COUNT(*) INTO l_cnt FROM lnk_file
         WHERE lnk01 = l_lpx01
           AND lnk02 = '2'
@@ -22901,19 +22912,19 @@ FUNCTION t700_rxe04_rxe05(p_no,p_cmd)
           AND lnk05 = 'Y'
        IF l_cnt < 1 THEN
           LET g_errno = 'alm-395'
-          RETURN 
+          RETURN
        END IF
-       IF p_cmd ='a' OR (g_rxe[l_ac5].rxe05 != g_rxe_t.rxe05 
-          OR g_rxe[l_ac5].rxe04 != g_rxe_t.rxe04) THEN  
+       IF p_cmd ='a' OR (g_rxe[l_ac5].rxe05 != g_rxe_t.rxe05
+          OR g_rxe[l_ac5].rxe04 != g_rxe_t.rxe04) THEN
           LET l_cnt = 0
           IF p_cmd = 'a' THEN
-             SELECT COUNT(*) INTO l_cnt 
-               FROM rxe_file 
+             SELECT COUNT(*) INTO l_cnt
+               FROM rxe_file
               WHERE rxe00 = '03'
                 AND rxe01 = g_oha.oha01
                 AND rxe04 <= p_no
                 AND rxe05 >= p_no
-          ELSE 
+          ELSE
              SELECT COUNT(*) INTO l_cnt
                FROM rxe_file
               WHERE rxe00 = '03'
@@ -22922,19 +22933,19 @@ FUNCTION t700_rxe04_rxe05(p_no,p_cmd)
                 AND rxe04 <= p_no
                 AND rxe05 >= p_no
                 AND rxe03 <> g_rxe[l_ac5].rxe03
-          END IF 
-          IF l_cnt > 0 THEN 
+          END IF
+          IF l_cnt > 0 THEN
              LET g_errno = '-239'
              RETURN
-          END IF 
-       END IF 
+          END IF
+       END IF
     END IF
     IF cl_null(g_errno) OR p_cmd = 'd' THEN
        LET g_rxe[l_ac5].rxe06 = l_lpx01
        LET g_rxe[l_ac5].rxe07 = l_rxe07
        LET g_rxe[l_ac5].lpx02 = l_lpx02
        LET g_rxe[l_ac5].lrz02 = l_lrz02
-       DISPLAY BY NAME g_rxe[l_ac5].rxe06,g_rxe[l_ac5].rxe07 
+       DISPLAY BY NAME g_rxe[l_ac5].rxe06,g_rxe[l_ac5].rxe07
     END IF
     IF NOT cl_null(g_rxe[l_ac5].rxe05) AND NOT cl_null(g_rxe[l_ac5].rxe04) THEN
       ##CHI-C80030 add begin---
@@ -22948,13 +22959,13 @@ FUNCTION t700_rxe04_rxe05(p_no,p_cmd)
       #END IF   #CHI-C80030 add
        IF l_end < l_start THEN
           LET g_errno = 'aim-919'
-          RETURN 
+          RETURN
        END IF
        CALL s_showmsg_init()
        CALL t700_rxe04_rxe05_chk(l_lpx01,g_rxe[l_ac5].rxe04,g_rxe[l_ac5].rxe05)
        IF  g_success <> 'Y' THEN
            CALL s_showmsg()
-       ELSE 
+       ELSE
           LET g_rxe[l_ac5].rxe08 = l_end - l_start + 1
           LET g_rxe[l_ac5].rxe09 = g_rxe[l_ac5].lrz02 * g_rxe[l_ac5].rxe08
           DISPLAY BY NAME g_rxe[l_ac5].rxe08,g_rxe[l_ac5].rxe09
@@ -22971,19 +22982,19 @@ DEFINE l_lqe01   LIKE lqe_file.lqe01
 DEFINE l_lqe02   LIKE lqe_file.lqe02
 DEFINE l_lqe02_1 LIKE lqe_file.lqe02
 
-   LET g_success = 'Y' 
+   LET g_success = 'Y'
    LET g_sql = "SELECT lqe01 FROM lqe_file ",
                " WHERE lqe01 BETWEEN '",l_rxe04,"' AND '",l_rxe05,"'",
                "   AND (lqe17 <> '1' OR lqe13 <> '",g_oha.ohaplant,"')"
-   PREPARE sel_lqe_pre FROM g_sql 
-   DECLARE sel_lqe_cs CURSOR FOR sel_lqe_pre 
+   PREPARE sel_lqe_pre FROM g_sql
+   DECLARE sel_lqe_cs CURSOR FOR sel_lqe_pre
    FOREACH sel_lqe_cs INTO l_lqe01
       LET g_success = 'N'
       CALL s_errmsg(l_lqe01,'','','alm1503',1)
-   END FOREACH 
+   END FOREACH
    IF g_success = 'N' THEN
       RETURN
-   END IF 
+   END IF
    #檢查券起訖編號範圍內是否有不同的券種
    SELECT lqe02 INTO l_lqe02
      FROM lqe_file
@@ -23016,11 +23027,11 @@ DEFINE l_lqe02_1 LIKE lqe_file.lqe02
       CALL cl_err_msg("","alm1481",l_rxe04 CLIPPED|| "|" || l_rxe05 CLIPPED,10)
       RETURN
    END IF
-END FUNCTION 
+END FUNCTION
 #FUN-BC0081 add end ---
 #FUN-C10053 add begin ---
 FUNCTION t700_ins_ogk(p_ohb03,p_ohb04,p_ohb917,p_ohb13)
-   DEFINE p_ohb03  LIKE ohb_file.ohb03 
+   DEFINE p_ohb03  LIKE ohb_file.ohb03
    DEFINE p_ohb04  LIKE ohb_file.ohb04
    DEFINE p_ohb917 LIKE ohb_file.ohb917
    DEFINE p_ohb13  LIKE ohb_file.ohb13
@@ -23038,8 +23049,8 @@ FUNCTION t700_ins_ogk(p_ohb03,p_ohb04,p_ohb917,p_ohb13)
         FROM rtz_file
        WHERE rtz01 = g_oha.ohaplant
        SELECT SUM(gec04),SUM(rvy06) INTO l_sum_gec04,l_sum_rvy06
-         FROM rte_file 
-        INNER JOIN rvy_file 
+         FROM rte_file
+        INNER JOIN rvy_file
            ON rte01 = rvy01
           AND rte02 = rvy02
         INNER JOIN gec_file
@@ -23047,10 +23058,10 @@ FUNCTION t700_ins_ogk(p_ohb03,p_ohb04,p_ohb917,p_ohb13)
           AND rvy05 = gec011
         WHERE rte01 = l_rtz04
           AND rte03 = p_ohb04
-          AND rte07 = 'Y' 
+          AND rte07 = 'Y'
        IF cl_null(l_sum_gec04) THEN
           LET l_sum_gec04 = 0
-       END IF 
+       END IF
        IF cl_null(l_sum_rvy06) THEN
           LET l_sum_rvy06 = 0
        END IF
@@ -23089,18 +23100,18 @@ FUNCTION t700_ins_ogk(p_ohb03,p_ohb04,p_ohb917,p_ohb13)
                LET l_ogk.ogk06 = 0
             END IF
             IF l_ogk.ogk07 = 'Y' THEN
-               LET l_ogk.ogk08t = p_ohb917 * p_ohb13 
+               LET l_ogk.ogk08t = p_ohb917 * p_ohb13
                CALL cl_digcut(l_ogk.ogk08t,t_azi04) RETURNING l_ogk.ogk08t
                IF l_ogk08 = 0 THEN
-                  LET l_ogk.ogk08 = (l_ogk.ogk08t - l_sum_rvy06*p_ohb917)/(1 + l_sum_gec04/100) 
+                  LET l_ogk.ogk08 = (l_ogk.ogk08t - l_sum_rvy06*p_ohb917)/(1 + l_sum_gec04/100)
                   LET l_ogk08_1 = l_ogk.ogk08
-               ELSE 
+               ELSE
                   LET l_ogk.ogk08 = l_ogk08 + l_ogk09
-               END IF 
+               END IF
                CALL cl_digcut(l_ogk.ogk08,t_azi04) RETURNING l_ogk.ogk08
                IF l_ogk.ogk06 = 0 THEN
                   LET l_ogk.ogk09 = l_ogk08_1 * l_ogk.ogk05/100
-               ELSE 
+               ELSE
                   LET l_ogk.ogk09 = 0
                END IF
                LET l_ogk.ogk08t = l_ogk.ogk08 + l_ogk.ogk09 + l_ogk.ogk06 * p_ohb917
@@ -23109,13 +23120,13 @@ FUNCTION t700_ins_ogk(p_ohb03,p_ohb04,p_ohb917,p_ohb13)
                IF l_ogk08 = 0 THEN
                   LET l_ogk.ogk08 = p_ohb917 * p_ohb13 - l_sum_rvy06*p_ohb917
                   LET l_ogk08_1 = l_ogk.ogk08
-               ELSE 
+               ELSE
                   LET l_ogk.ogk08 = l_ogk08 + l_ogk09
-               END IF 
+               END IF
                CALL cl_digcut(l_ogk.ogk08,t_azi04) RETURNING l_ogk.ogk08
                IF l_ogk.ogk06 = 0 THEN
                   LET l_ogk.ogk09 = l_ogk08_1*l_ogk.ogk05/100
-               ELSE 
+               ELSE
                   LET l_ogk.ogk09 = 0
                END IF
                LET l_ogk.ogk08t = l_ogk.ogk08 + l_ogk.ogk09 + l_ogk.ogk06 * p_ohb917
@@ -23123,7 +23134,7 @@ FUNCTION t700_ins_ogk(p_ohb03,p_ohb04,p_ohb917,p_ohb13)
             END IF
             IF l_ogk.ogk06 > 0 THEN
                LET l_ogk.ogk09 = l_ogk.ogk06 * p_ohb917
-            END IF 
+            END IF
             CALL cl_digcut(l_ogk.ogk09,t_azi04) RETURNING l_ogk.ogk09
             LET l_ogk08 = l_ogk.ogk08
             LET l_ogk09 = l_ogk.ogk09
@@ -23142,8 +23153,8 @@ FUNCTION t700_ins_ogk(p_ohb03,p_ohb04,p_ohb917,p_ohb13)
                EXIT FOREACH
             END IF
        END FOREACH
-   END IF 
-END FUNCTION 
+   END IF
+END FUNCTION
 
 FUNCTION t700_sub(p_no,p_rtz04,p_oha213,p_ohb917,p_ohb13,t_azi04)
    DEFINE p_no      LIKE rte_file.rte03    #产品编号
@@ -23152,7 +23163,7 @@ FUNCTION t700_sub(p_no,p_rtz04,p_oha213,p_ohb917,p_ohb13,t_azi04)
    DEFINE p_ohb917  LIKE ohb_file.ohb917   #计价数量
    DEFINE p_ohb13   LIKE ohb_file.ohb13    #单价
    DEFINE t_azi04   LIKE azi_file.azi04    #金额小数位
-   DEFINE l_rtz06   LIKE rtz_file.rtz06    
+   DEFINE l_rtz06   LIKE rtz_file.rtz06
    DEFINE l_rvy04   LIKE rvy_file.rvy04
    DEFINE l_gec04   LIKE gec_file.gec04
    DEFINE l_gec07   LIKE gec_file.gec07
@@ -23164,7 +23175,7 @@ FUNCTION t700_sub(p_no,p_rtz04,p_oha213,p_ohb917,p_ohb13,t_azi04)
    DEFINE l_sum_rvy06 LIKE rvy_file.rvy06
    DEFINE l_sql     STRING
    IF NOT cl_null(p_rtz04) THEN
-      LET l_sql = "SELECT rvy04,gec04,gec07,rvy06", 
+      LET l_sql = "SELECT rvy04,gec04,gec07,rvy06",
                   "  FROM rte_file",
                   " INNER JOIN rvy_file",
                   "    ON rte01 = rvy01",
@@ -23191,36 +23202,36 @@ FUNCTION t700_sub(p_no,p_rtz04,p_oha213,p_ohb917,p_ohb13,t_azi04)
         #FUN-C50117 add END
          IF NOT cl_null(l_rvy06) THEN
             LET l_ohb14_1 = l_ohb14_1 - l_rvy06 * p_ohb917  #扣除固定税额
-            LET l_sum_rvy06 = l_sum_rvy06 + l_rvy06 * p_ohb917 
-         END IF 
-         LET l_sum_gec04 = l_sum_gec04 + l_gec04     #累加所有税率    
+            LET l_sum_rvy06 = l_sum_rvy06 + l_rvy06 * p_ohb917
+         END IF
+         LET l_sum_gec04 = l_sum_gec04 + l_gec04     #累加所有税率
       END FOREACH
       IF p_oha213 = 'Y' THEN
          LET l_ohb14t =  p_ohb917 * p_ohb13   #含税价
-         CALL cl_digcut(l_ohb14t,t_azi04) RETURNING l_ohb14t      
+         CALL cl_digcut(l_ohb14t,t_azi04) RETURNING l_ohb14t
          LET l_ohb14 = l_ohb14_1 / (1 + l_sum_gec04/100)
-         CALL cl_digcut(l_ohb14,t_azi04) RETURNING l_ohb14      
+         CALL cl_digcut(l_ohb14,t_azi04) RETURNING l_ohb14
       ELSE
          LET l_ohb14 = l_ohb14_1             #未税价
-         CALL cl_digcut(l_ohb14,t_azi04) RETURNING l_ohb14    
+         CALL cl_digcut(l_ohb14,t_azi04) RETURNING l_ohb14
          LET l_ohb14t = l_ohb14 * (1 + l_sum_gec04/100) + l_sum_rvy06
-         CALL cl_digcut(l_ohb14t,t_azi04) RETURNING l_ohb14t      
-      END IF    
-   ELSE 
+         CALL cl_digcut(l_ohb14t,t_azi04) RETURNING l_ohb14t
+      END IF
+   ELSE
       IF p_oha213 = 'Y' THEN
          LET l_ohb14t = p_ohb917 * p_ohb13   #含税价
          CALL cl_digcut(l_ohb14t,t_azi04) RETURNING l_ohb14t
          LET l_ohb14 = l_ohb14_1 / (1 + g_oha.oha211/100)
-         CALL cl_digcut(l_ohb14,t_azi04) RETURNING l_ohb14  
-      ELSE 
+         CALL cl_digcut(l_ohb14,t_azi04) RETURNING l_ohb14
+      ELSE
          LET l_ohb14 = p_ohb917 * p_ohb13    #未税价
          CALL cl_digcut(l_ohb14,t_azi04) RETURNING l_ohb14
-         LET l_ohb14t = l_ohb14 * (1 + g_oha.oha211/100) 
+         LET l_ohb14t = l_ohb14 * (1 + g_oha.oha211/100)
          CALL cl_digcut(l_ohb14t,t_azi04) RETURNING l_ohb14t
-      END IF 
-   END IF 
+      END IF
+   END IF
    RETURN l_ohb14,l_ohb14t
-END FUNCTION 
+END FUNCTION
 
 #DEV-D30046 搬移至saxmt700_sub.4gl--mark--begin
 #FUNCTION t700_ins_ogj()
@@ -23258,7 +23269,7 @@ END FUNCTION
 #   END IF
 #   IF g_azw.azw04 = '2' THEN
 #      SELECT rxy05 INTO l_rxy05_09    #积分抵现金额
-#        FROM rxy_file 
+#        FROM rxy_file
 #       WHERE rxy00 = '03'
 #         AND rxy01 = g_oha.oha01
 #         AND rxy03 = '09'
@@ -23266,13 +23277,13 @@ END FUNCTION
 #         LET l_rxy05_09 = 0
 #      END IF
 #      SELECT SUM(rxy05) INTO l_rxy05_other  #其余付款金额
-#        FROM rxy_file   
-#       WHERE rxy00 = '03' 
-#         AND rxy01 = g_oha.oha01 
+#        FROM rxy_file
+#       WHERE rxy00 = '03'
+#         AND rxy01 = g_oha.oha01
 #         AND rxy03 NOT IN ('04','09')
 #      IF cl_null(l_rxy05_other) THEN
 #         LET l_rxy05_other = 0
-#      END IF 
+#      END IF
 #      SELECT COUNT(*) INTO l_cnt
 #        FROM ogj_file
 #       WHERE ogj01 = g_oha.oha01
@@ -23302,14 +23313,14 @@ END FUNCTION
 #            CALL cl_err('foreach:',SQLCA.sqlcode,1)
 #            EXIT FOREACH
 #         END IF
-#         #固定税额大于零则直接写入到实际交易税别明细档 
+#         #固定税额大于零则直接写入到实际交易税别明细档
 #         IF l_ogk06 >0 THEN
 #            SELECT MAX(ogj02) + 1 INTO l_ogj.ogj02
 #              FROM ogj_file
 #             WHERE ogj01 = g_oha.oha01
 #            IF cl_null(l_ogj.ogj02) THEN
 #               LET l_ogj.ogj02 = 1
-#            END IF 
+#            END IF
 #            LET l_ogj.ogj03 = l_ogk04
 #            LET l_ogj.ogj04 = l_ogk05
 #            LET l_ogj.ogj05 = l_ogk06
@@ -23319,7 +23330,7 @@ END FUNCTION
 #            LET l_ogj.ogj08 = l_ogk09
 #           #TQC-C30085 add START
 #            IF cl_null(l_ogj.ogj09) THEN
-#               LET l_ogj.ogj09 = 0 
+#               LET l_ogj.ogj09 = 0
 #            END IF
 #           #TQC-C30085 add END
 #            INSERT INTO ogj_file VALUES(l_ogj.*)
@@ -23342,10 +23353,10 @@ END FUNCTION
 #               IF l_rxy05_09 > l_ogk08t THEN
 #                  LET l_rxy05_09 = l_rxy05_09 - l_ogk08t
 #                  LET l_ogk08t = 0
-#               ELSE 
+#               ELSE
 #                  LET l_ogk08t = l_ogk08t - l_rxy05_09
 #                  LET l_rxy05_09 = 0
-#               END IF 
+#               END IF
 #               LET l_ogk09 = l_ogk08t - l_ogk08t/(1+l_ogk05/100)
 #               CALL cl_digcut(l_ogk09,t_azi04) RETURNING l_ogk09
 #               LET l_ogk08 = l_ogk08t - l_ogk09
@@ -23356,44 +23367,44 @@ END FUNCTION
 #                     CALL cl_err3("ins","ogk_temp",g_oha.oha01,"",SQLCA.SQLCODE,"","",1)
 #                     LET g_success = 'N'
 #                     EXIT FOREACH
-#                  END IF 
+#                  END IF
 #               END IF
-#            END IF 
-#         ELSE 
-#            IF l_ogk05 > 0 THEN  
+#            END IF
+#         ELSE
+#            IF l_ogk05 > 0 THEN
 #               INSERT INTO ogk_temp(ogk04,ogk05,ogk06,ogk07,ogk08,ogk08t,ogk09)
 #                             VALUES(l_ogk04,l_ogk05,l_ogk06,l_ogk07,l_ogk08,l_ogk08t,l_ogk09)
 #               IF SQLCA.SQLCODE THEN
 #                  CALL cl_err3("ins","ogk_temp",g_oha.oha01,"",SQLCA.SQLCODE,"","",1)
 #                  LET g_success = 'N'
 #                  EXIT FOREACH
-#               END IF 
-#            END IF    
-#         END IF 
+#               END IF
+#            END IF
+#         END IF
 #         #用其他款别付款
 #         IF l_rxy05_other > 0 THEN
 #            IF l_ogk06 > 0 THEN   #先扣除固定税额
 #               IF l_rxy05_other < l_ogk09 THEN
 #                  LET l_ogk09 = l_ogk09 - l_rxy05_other
 #                  LET l_rxy05_other = 0
-#               ELSE 
+#               ELSE
 #                  LET l_rxy05_other = l_rxy05_other - l_ogk09
 #                  LET l_ogk09 = 0
-#               END IF 
-#            ELSE 
+#               END IF
+#            ELSE
 #               IF l_ogk05 = 0 THEN   #在扣除税率为零的金额
 #                  IF l_rxy05_other > l_ogk08t THEN
 #                     LET l_rxy05_other = l_rxy05_other - l_ogk08t
 #                     LET l_ogj07t = l_ogk08t   #FUN-C50047 add
 #                     LET l_ogk08t = 0
-#                  ELSE  
+#                  ELSE
 #                     LET l_ogk08t = l_ogk08t - l_rxy05_other
 #                     LET l_ogj07t = l_rxy05_other          #FUN-C50047 add
 #                     LET l_rxy05_other = 0
-#                  END IF 
-#               END IF 
-#            END IF              
-#         END IF 
+#                  END IF
+#               END IF
+#            END IF
+#         END IF
 #        #FUN-C50047 add START
 #         IF l_ogk06 = 0 AND l_ogk05 = 0 THEN
 #            LET l_ogk08 = l_ogj07t / (1+l_ogk05/100)
@@ -23414,11 +23425,11 @@ END FUNCTION
 #       WHERE ogk05 > 0
 #      IF cl_null(l_ogk08t_t) THEN
 #         LET l_ogk08t_t = 0
-#      END IF 
+#      END IF
 #      IF l_ogk08t_t = l_rxy05_other THEN
 #         LET l_sql = "SELECT * FROM ogk_temp ORDER BY ogk05 desc, ogk06 asc "
 #         PREPARE sel_ogk_temp_p FROM l_sql
-#         DECLARE sel_ogk_temp CURSOR FOR sel_ogk_temp_p 
+#         DECLARE sel_ogk_temp CURSOR FOR sel_ogk_temp_p
 #         FOREACH sel_ogk_temp INTO l_ogj.ogj03,l_ogj.ogj04,l_ogj.ogj05,l_ogj.ogj06,l_ogj.ogj07,l_ogj.ogj07t,l_ogj.ogj08
 #            SELECT MAX(ogj02) + 1 INTO l_ogj.ogj02
 #              FROM ogj_file
@@ -23439,8 +23450,8 @@ END FUNCTION
 #            END IF
 #         END FOREACH
 #      END IF
-#   END IF 
-#END FUNCTION 
+#   END IF
+#END FUNCTION
 #DEV-D30046 搬移至saxmt700_sub.4gl--mark--end
 #FUN-C10053 add end ----
 
@@ -23453,10 +23464,10 @@ FUNCTION t700_ohb69_ohb70_chk()
    DEFINE l_lih08   LIKE lih_file.lih08
    DEFINE l_lnt57   LIKE lnt_file.lnt57
    DEFINE l_lih21   LIKE lih_file.lih21
-   LET g_errno = '' 
+   LET g_errno = ''
    IF NOT　cl_null(g_ohb1[l_ac].ohb31) AND NOT cl_null(g_ohb1[l_ac].ohb32) THEN
       SELECT ogb48,ogb49 INTO l_ogb48,l_ogb49
-        FROM ogb_file 
+        FROM ogb_file
        WHERE ogb01 = g_ohb1[l_ac].ohb31
          AND ogb03 = g_ohb1[l_ac].ohb32
          AND ogbplant = g_oha.ohaplant
@@ -23509,19 +23520,19 @@ FUNCTION t700_ohb69_ohb70_chk()
       END IF
    END IF
 END FUNCTION
-#TQC-C30106 add end ----- 
+#TQC-C30106 add end -----
 #FUN-B90103--end
 
 #FUN-CB0014---add---str---
 FUNCTION t700_bp3(p_ud)
    DEFINE   p_ud   LIKE type_file.chr1          #No.FUN-680137 VARCHAR(1)
- 
+
    IF p_ud <> "G" OR g_action_choice = "detail" THEN
       RETURN
    END IF
- 
+
    LET g_action_choice = " "
- 
+
    CALL cl_set_act_visible("accept,cancel", FALSE)
    DISPLAY ARRAY g_oha_l TO s_oha_l.* ATTRIBUTE(COUNT=g_rec_b6,UNBUFFERED)
 
@@ -23532,7 +23543,7 @@ FUNCTION t700_bp3(p_ud)
       BEFORE ROW
          LET l_ac2 = ARR_CURR()
          LET g_curs_index = l_ac2
-         CALL cl_show_fld_cont() 
+         CALL cl_show_fld_cont()
 
       ON ACTION main
          LET g_b_flag = '1'
@@ -23557,11 +23568,11 @@ FUNCTION t700_bp3(p_ud)
          CALL t700_fetch('/')
          CALL cl_set_comp_visible("info", FALSE)
          CALL cl_set_comp_visible("info", TRUE)
-         CALL cl_set_comp_visible("page_in", FALSE) 
-         CALL ui.interface.refresh()                 
-         CALL cl_set_comp_visible("page_in", TRUE)    
+         CALL cl_set_comp_visible("page_in", FALSE)
+         CALL ui.interface.refresh()
+         CALL cl_set_comp_visible("page_in", TRUE)
          EXIT DISPLAY
-         
+
       ON ACTION reback
          LET g_b_flag="1"
          EXIT DISPLAY
@@ -23571,61 +23582,61 @@ FUNCTION t700_bp3(p_ud)
       ON ACTION query
          LET g_action_choice="query"
          EXIT DISPLAY
- 
+
       ON ACTION locale
          CALL cl_dynamic_locale()
-         CALL cl_show_fld_cont()  
+         CALL cl_show_fld_cont()
          CALL t700_chspic()
-         CALL t700_set_perlang()      
+         CALL t700_set_perlang()
          EXIT DISPLAY
- 
+
       ON ACTION delete
          LET g_action_choice="delete"
          EXIT DISPLAY
       ON ACTION modify
          LET g_action_choice="modify"
          EXIT DISPLAY
- 
-      ON ACTION first 
+
+      ON ACTION first
          CALL t700_fetch('F')
-         CALL cl_navigator_setting(g_curs_index, g_row_count)   
+         CALL cl_navigator_setting(g_curs_index, g_row_count)
          IF g_rec_b6 != 0 THEN
-           CALL fgl_set_arr_curr(g_curs_index) 
+           CALL fgl_set_arr_curr(g_curs_index)
          END IF
-	     ACCEPT DISPLAY 
-                              
+	     ACCEPT DISPLAY
+
       ON ACTION previous
          CALL t700_fetch('P')
-         CALL cl_navigator_setting(g_curs_index, g_row_count)   
+         CALL cl_navigator_setting(g_curs_index, g_row_count)
          IF g_rec_b6 != 0 THEN
-           CALL fgl_set_arr_curr(g_curs_index) 
+           CALL fgl_set_arr_curr(g_curs_index)
          END IF
-	     ACCEPT DISPLAY 
-                              
-      ON ACTION jump 
+	     ACCEPT DISPLAY
+
+      ON ACTION jump
          CALL t700_fetch('/')
-         CALL cl_navigator_setting(g_curs_index, g_row_count)  
+         CALL cl_navigator_setting(g_curs_index, g_row_count)
          IF g_rec_b6 != 0 THEN
-           CALL fgl_set_arr_curr(g_curs_index) 
+           CALL fgl_set_arr_curr(g_curs_index)
          END IF
-	     ACCEPT DISPLAY 
-                              
+	     ACCEPT DISPLAY
+
       ON ACTION next
          CALL t700_fetch('N')
-         CALL cl_navigator_setting(g_curs_index, g_row_count)   
+         CALL cl_navigator_setting(g_curs_index, g_row_count)
          IF g_rec_b6 != 0 THEN
-           CALL fgl_set_arr_curr(g_curs_index) 
+           CALL fgl_set_arr_curr(g_curs_index)
          END IF
-	     ACCEPT DISPLAY 
-                              
-      ON ACTION last 
+	     ACCEPT DISPLAY
+
+      ON ACTION last
          CALL t700_fetch('L')
-         CALL cl_navigator_setting(g_curs_index, g_row_count)  
+         CALL cl_navigator_setting(g_curs_index, g_row_count)
          IF g_rec_b6 != 0 THEN
-           CALL fgl_set_arr_curr(g_curs_index) 
+           CALL fgl_set_arr_curr(g_curs_index)
          END IF
-	     ACCEPT DISPLAY               
-      
+	     ACCEPT DISPLAY
+
       #TQC-D10084--mark--str--
       #ON ACTION detail
       #   LET g_action_choice="detail"
@@ -23641,8 +23652,8 @@ FUNCTION t700_bp3(p_ud)
       ON ACTION exit
          LET g_action_choice="exit"
          EXIT DISPLAY
- 
-      ON ACTION controlg 
+
+      ON ACTION controlg
          LET g_action_choice="controlg"
          EXIT DISPLAY
 
@@ -23679,6 +23690,10 @@ FUNCTION t700_bp3(p_ud)
       ON ACTION stock_post
          LET g_action_choice="stock_post"
          EXIT DISPLAY
+      # darcy add s---
+      on action action_stock_post
+      on action action_confirm
+      # darcy add e---
 #@    ON ACTION 過帳還原
       ON ACTION undo_post
          LET g_action_choice="undo_post"
@@ -23702,86 +23717,86 @@ FUNCTION t700_bp3(p_ud)
       ON ACTION perf
          LET g_action_choice="perf"
          EXIT DISPLAY
- 
+
       ON ACTION aic_s_icdqry
          LET g_action_choice="aic_s_icdqry"
          EXIT DISPLAY
- 
+
       ON ACTION aic_s_icdin
          LET g_action_choice="aic_s_icdin"
-         EXIT DISPLAY  
- 
+         EXIT DISPLAY
+
       ON ACTION cancel
-         LET INT_FLAG=FALSE 		 
+         LET INT_FLAG=FALSE
          LET g_action_choice="exit"
          EXIT DISPLAY
- 
+
       ON IDLE g_idle_seconds
          CALL cl_on_idle()
          CONTINUE DISPLAY
- 
-      ON ACTION about          
-         CALL cl_about()       
- 
-      ON ACTION exporttoexcel       
+
+      ON ACTION about
+         CALL cl_about()
+
+      ON ACTION exporttoexcel
          LET g_action_choice = 'exporttoexcel'
          EXIT DISPLAY
- 
+
       AFTER DISPLAY
          CONTINUE DISPLAY
- 
+
       ON ACTION agree
          LET g_action_choice = 'agree'
          EXIT DISPLAY
- 
+
       ON ACTION deny
          LET g_action_choice = 'deny'
          EXIT DISPLAY
- 
+
       ON ACTION modify_flow
          LET g_action_choice = 'modify_flow'
          EXIT DISPLAY
- 
+
       ON ACTION withdraw
          LET g_action_choice = 'withdraw'
          EXIT DISPLAY
- 
+
       ON ACTION org_withdraw
          LET g_action_choice = 'org_withdraw'
          EXIT DISPLAY
- 
+
       ON ACTION phrase
          LET g_action_choice = 'phrase'
          EXIT DISPLAY
- 
+
       ON ACTION controls
          LET g_action_choice = 'controls'
          CALL cl_set_head_visible("","AUTO")
-     
+
       ON ACTION trans_tax
          LET g_action_choice = "trans_tax"
-         EXIT DISPLAY  
-     
+         EXIT DISPLAY
+
       ON ACTION detail_tax
          LET g_action_choice = "detail_tax"
-         EXIT DISPLAY  
-      
-   
-      ON ACTION related_document                #相關文件
-         LET g_action_choice="related_document"          
          EXIT DISPLAY
- 
+
+
+      ON ACTION related_document                #相關文件
+         LET g_action_choice="related_document"
+         EXIT DISPLAY
+
       &include "qry_string.4gl"
- 
+
       ON ACTION qry_lot
          LET g_action_choice="qry_lot"
-         EXIT DISPLAY                      
+         EXIT DISPLAY
      #No.18010101--begin--
       ON ACTION transf2scm
          LET g_action_choice="transf2scm"
-         EXIT DISPLAY 
-     #No.18010101---end--- 
-   END DISPLAY 
+         EXIT DISPLAY
+     #No.18010101---end---
+   END DISPLAY
    CALL cl_set_act_visible("accept,cancel", TRUE)
    CALL t700_b_fill(g_wc2,g_wc4)
 END FUNCTION
@@ -23789,7 +23804,7 @@ END FUNCTION
 FUNCTION t700_list_fill()
   DEFINE l_oha01         LIKE oha_file.oha01
   DEFINE l_i             LIKE type_file.num10
-  DEFINE l_slip          LIKE aba_file.aba00 
+  DEFINE l_slip          LIKE aba_file.aba00
 
     CALL g_oha_l.clear()
     LET l_i = 1
@@ -23806,13 +23821,13 @@ FUNCTION t700_list_fill()
               LEFT OUTER JOIN gem_file ON oha15 = gem01
               LEFT OUTER JOIN oab_file ON oha25 = oab01
         WHERE oha01=l_oha01
-       LET l_slip=s_get_doc_no(g_oha_l[l_i].oha01) 
-       SELECT oaydesc INTO g_oha_l[l_i].oaydesc FROM oay_file WHERE oayslip=l_slip        
+       LET l_slip=s_get_doc_no(g_oha_l[l_i].oha01)
+       SELECT oaydesc INTO g_oha_l[l_i].oaydesc FROM oay_file WHERE oayslip=l_slip
        LET l_i = l_i + 1
        IF l_i > g_max_rec THEN
-          IF g_action_choice ="query"  THEN  
+          IF g_action_choice ="query"  THEN
             CALL cl_err( '', 9035, 0 )
-          END IF                             
+          END IF
           EXIT FOREACH
        END IF
     END FOREACH
