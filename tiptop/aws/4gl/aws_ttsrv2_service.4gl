@@ -11,14 +11,14 @@
 # Modify.........: No.FUN-850147 08/07/06 By Echo 新增"建立BOM資料"服務
 # Modify.........: No.FUN-870028 08/07/15 By sherry 增加作業編號,單位,碼別,倉庫,倉儲
 # Modify.........: No.FUN-880012 08/08/04 By kevin 取得使用者帳號驗證碼
-# Modify.........: No.FUN-840012 08/09/30 By kim 新增mBarcode相關服務 
+# Modify.........: No.FUN-840012 08/09/30 By kim 新增mBarcode相關服務
 # Modify.........: No.FUN-8A0112 08/10/27 By David Fluid Lee 新增TIPTOP通用集成接口服務
 # Modify.........: No.FUN-8B0113 08/11/27 By Vicky 新增"呼叫 TIPTOP 執行 r.c2、r.f2、r.l2"服務
 # Modify.........: No.FUN-860068 08/06/20 By Kevin e-B Online 平台呼叫 TIPTOP Web Service
 # Modify.........: No.TQC-910021 09/01/12 By Kevin 讓APS 呼叫 apsp702 以背景的方式執行
 # Modify.........: No.FUN-930132 09/04/13 By Vicky 新增 "取得報表資料" 服務
 # Modify.........: No.FUN-A40084 10/04/29 By Echo Genero2.21版本需調整 com.WebOperation.CreateDOCStyle
-# Modify.........: No.FUN-A50022 10/06/11 By Jay 增加GetReportData服務 
+# Modify.........: No.FUN-A50022 10/06/11 By Jay 增加GetReportData服務
 # Modify.........: No.FUN-930139 10/08/13 By Lilan 新增CRM相關服務
 # Modify.........: No.FUN-AA0022 10/10/13 By Mandy HR GP5.2 追版-------str----
 # Modify.........: No:FUN-9A0090 09/10/26 By Mandy 新增--HR整合函式
@@ -50,7 +50,7 @@
 # Modify.........: No:FUN-B10037 11/05/11 By abby 新增--"CreateWOWorkReportData"(建立報工單資料)
 # Modify.........: No:FUN-B60003 11/06/01 By Lilan 新增POS用整合函式
 #                                                  (1)取得會員基本資料：GetMemberData
-#                                                  (2)取得卡明細資料：GetCardDetailData 
+#                                                  (2)取得卡明細資料：GetCardDetailData
 # Modify.........: No:FUN-A20026 11/06/20 By Abby 新增"讀取工作站資料服務","讀取機器資料服務"
 # Modify.........: No:FUN-A70142 11/06/20 By Abby 新增--"CreateSupplierItemData"(建立料件供應商資料服務)
 # Modify.........: No:FUN-A80131 11/06/20 By Abby 新增--"CreateItemApprovalData"(建立料件承認資料)
@@ -84,18 +84,18 @@
 #                                                 (1) CreatePLMTempTableData
 #                                                 (2) GetPLMTempTableDataStatus
 #                                                 (3) DeletePLMTempTableData
-# Modify.........: No:18010101    by shawn    增加SCM接口 
+# Modify.........: No:18010101    by shawn    增加SCM接口
 
-IMPORT com 
+IMPORT com
 
 DATABASE ds
- 
+
 #FUN-840004
- 
+
 GLOBALS "../../config/top.global"
 GLOBALS "../4gl/aws_ttsrv2_global.4gl"   #TIPTOP Service Gateway 使用的全域變數檔
- 
- 
+
+
 #[
 # Description....: Dummy Function
 # Date & Author..: 2007/02/06 by Brendan
@@ -107,12 +107,12 @@ GLOBALS "../4gl/aws_ttsrv2_global.4gl"   #TIPTOP Service Gateway 使用的全域
 #]
 FUNCTION aws_ttsrv_serviceFunction(p_op_name,p_func)
 DEFINE p_op_name   STRING
-DEFINE p_func      STRING 
+DEFINE p_func      STRING
 DEFINE l_op        com.WebOperation
-   
+
     WHENEVER ERROR CONTINUE
-    
-    #FUN-A40084 -- start -- 
+
+    #FUN-A40084 -- start --
     #------------------------------------------------------------------------------------------------------#
     # 請新增每一個 ERP 服務時, 於以下加入發佈 Service Function 段落                                        #
     # 此處定義的 Function Name 必須與設定作業中輸入的一致(否則執行時將報錯)                                #
@@ -454,33 +454,33 @@ DEFINE l_op        com.WebOperation
        WHEN "aws_rollbackVoucherData"
             LET l_op = com.WebOperation.CreateDOCStyle("aws_rollbackVoucherData", p_op_name, g_request, g_response)
       #FUN-AA0022 add end----------------
-       WHEN "aws_getPaymentTermsData"                                                                                #FUN-Ac0068 add 
+       WHEN "aws_getPaymentTermsData"                                                                                #FUN-Ac0068 add
             LET l_op = com.WebOperation.CreateDOCStyle("aws_getPaymentTermsData", p_op_name, g_request, g_response)  #FUN-AC0068 add
        WHEN "aws_createShippingOrdersWithoutOrders"                                                                                #FUN-B10004 add
             LET l_op = com.WebOperation.CreateDOCStyle("aws_createShippingOrdersWithoutOrders", p_op_name, g_request, g_response)  #FUN-B10004 add
        WHEN "aws_getSSOKey"                                                                                          #FUN-B10003 add
-            LET l_op = com.WebOperation.CreateDOCStyle("aws_getSSOKey", p_op_name, g_request, g_response)            #FUN-B10003 add           
+            LET l_op = com.WebOperation.CreateDOCStyle("aws_getSSOKey", p_op_name, g_request, g_response)            #FUN-B10003 add
        WHEN "aws_getItemGroupData"                                                                                   #FUN-B30026 add
             LET l_op = com.WebOperation.CreateDOCStyle("aws_getItemGroupData", p_op_name, g_request, g_response)     #FUN-B30026 add
        WHEN "aws_getItemOtherGroupData"                                                                                   #FUN-B30147 add
             LET l_op = com.WebOperation.CreateDOCStyle("aws_getItemOtherGroupData", p_op_name, g_request, g_response)     #FUN-B30147 add
 
       #FUN-A20026 add begin---------------
-       WHEN "aws_getWorkstationData"                                                                                   
-            LET l_op = com.WebOperation.CreateDOCStyle("aws_getWorkstationData", p_op_name, g_request, g_response)    
-       WHEN "aws_getMachineData"                                                                                  
-            LET l_op = com.WebOperation.CreateDOCStyle("aws_getMachineData", p_op_name, g_request, g_response)     
-       WHEN "aws_getProdRoutingData"                                                                                   
-            LET l_op = com.WebOperation.CreateDOCStyle("aws_getProdRoutingData", p_op_name, g_request, g_response)     
+       WHEN "aws_getWorkstationData"
+            LET l_op = com.WebOperation.CreateDOCStyle("aws_getWorkstationData", p_op_name, g_request, g_response)
+       WHEN "aws_getMachineData"
+            LET l_op = com.WebOperation.CreateDOCStyle("aws_getMachineData", p_op_name, g_request, g_response)
+       WHEN "aws_getProdRoutingData"
+            LET l_op = com.WebOperation.CreateDOCStyle("aws_getProdRoutingData", p_op_name, g_request, g_response)
       #FUN-A20026 add end-----------------
-             
-      #FUN-B40072 add begin----------------             
-       WHEN "aws_getProdState"                                                                                      
-            LET l_op = com.WebOperation.CreateDOCStyle("aws_getProdState", p_op_name, g_request, g_response)        
-       WHEN "aws_getProdInfo"                                                                                       
-            LET l_op = com.WebOperation.CreateDOCStyle("aws_getProdInfo", p_op_name, g_request, g_response)         
-       WHEN "aws_getOnlineUser"                                                                                     
-            LET l_op = com.WebOperation.CreateDOCStyle("aws_getOnlineUser", p_op_name, g_request, g_response)       
+
+      #FUN-B40072 add begin----------------
+       WHEN "aws_getProdState"
+            LET l_op = com.WebOperation.CreateDOCStyle("aws_getProdState", p_op_name, g_request, g_response)
+       WHEN "aws_getProdInfo"
+            LET l_op = com.WebOperation.CreateDOCStyle("aws_getProdInfo", p_op_name, g_request, g_response)
+       WHEN "aws_getOnlineUser"
+            LET l_op = com.WebOperation.CreateDOCStyle("aws_getOnlineUser", p_op_name, g_request, g_response)
       #FUN-B40072 add ending----------------
 
       #FUN-B10037 add begin-----------------
@@ -493,15 +493,15 @@ DEFINE l_op        com.WebOperation
             LET l_op = com.WebOperation.CreateDOCStyle("aws_getMemberData", p_op_name, g_request, g_response)
        WHEN "aws_getCardDetailData"
             LET l_op = com.WebOperation.CreateDOCStyle("aws_getCardDetailData", p_op_name, g_request, g_response)
-      #FUN-B60003 add end------- 
+      #FUN-B60003 add end-------
 
        WHEN "aws_createSupplierItemData"                                                                                #FUN-A70142 add
             LET l_op = com.WebOperation.CreateDOCStyle("aws_createSupplierItemData", p_op_name, g_request, g_response)  #FUN-A70142 add
        WHEN "aws_createItemApprovalData"                                                                                #FUN-A80131 add
             LET l_op = com.WebOperation.CreateDOCStyle("aws_createItemApprovalData", p_op_name, g_request, g_response)  #FUN-A80131 add
-       WHEN "aws_getBrandData"                                                                                          #FUN-A80127 add 
+       WHEN "aws_getBrandData"                                                                                          #FUN-A80127 add
             LET l_op = com.WebOperation.CreateDOCStyle("aws_getBrandData", p_op_name, g_request, g_response)            #FUN-A80127 add
-       WHEN "aws_createRepSubPBOMData"                                                                                  #FUN-A70147 add   
+       WHEN "aws_createRepSubPBOMData"                                                                                  #FUN-A70147 add
             LET l_op = com.WebOperation.CreateDOCStyle("aws_createRepSubPBOMData", p_op_name, g_request, g_response)    #FUN-A70147 add
        WHEN "aws_createECNData"                                                                                         #FUN-A80017 add
             LET l_op = com.WebOperation.CreateDOCStyle("aws_createECNData", p_op_name, g_request, g_response)           #FUN-A80017 add
@@ -516,13 +516,13 @@ DEFINE l_op        com.WebOperation
 
        #FUN-C50138 add begin----------------
        WHEN "aws_modPassWord"
-            LET l_op = com.WebOperation.CreateDOCStyle("aws_modPassWord", p_op_name, g_request, g_response)     
+            LET l_op = com.WebOperation.CreateDOCStyle("aws_modPassWord", p_op_name, g_request, g_response)
        WHEN "aws_getMemberCardInfo"
-            LET l_op = com.WebOperation.CreateDOCStyle("aws_getMemberCardInfo", p_op_name, g_request, g_response)     
+            LET l_op = com.WebOperation.CreateDOCStyle("aws_getMemberCardInfo", p_op_name, g_request, g_response)
        WHEN "aws_writePoint"
-            LET l_op = com.WebOperation.CreateDOCStyle("aws_writePoint", p_op_name, g_request, g_response)     
+            LET l_op = com.WebOperation.CreateDOCStyle("aws_writePoint", p_op_name, g_request, g_response)
        WHEN "aws_getCashCardInfo"
-            LET l_op = com.WebOperation.CreateDOCStyle("aws_getCashCardInfo", p_op_name, g_request, g_response)     
+            LET l_op = com.WebOperation.CreateDOCStyle("aws_getCashCardInfo", p_op_name, g_request, g_response)
        WHEN "aws_deductMoney"
             LET l_op = com.WebOperation.CreateDOCStyle("aws_deductMoney", p_op_name, g_request, g_response)
        WHEN "aws_checkGiftNo"
@@ -537,9 +537,9 @@ DEFINE l_op        com.WebOperation
             LET l_op = com.WebOperation.CreateDOCStyle("aws_deductPayment", p_op_name, g_request, g_response)
        #FUN-C50138 add end------------------
 
-       #FUN-B90089 add str--- 
+       #FUN-B90089 add str---
         WHEN "aws_getDataCount"
-           LET l_op = com.WebOperation.CreateDOCStyle("aws_getDataCount", p_op_name, g_request, g_response) 
+           LET l_op = com.WebOperation.CreateDOCStyle("aws_getDataCount", p_op_name, g_request, g_response)
         WHEN "aws_getUserDefOrg"
            LET l_op = com.WebOperation.CreateDOCStyle("aws_getUserDefOrg", p_op_name, g_request, g_response)
         WHEN "aws_getSOData"
@@ -548,7 +548,7 @@ DEFINE l_op        com.WebOperation
              LET l_op = com.WebOperation.CreateDOCStyle("aws_getShappingData", p_op_name, g_request, g_response)
         WHEN "aws_getQuotationData"
              LET l_op = com.WebOperation.CreateDOCStyle("aws_getQuotationData", p_op_name, g_request, g_response)
-       #FUN-B90089 add end--- 
+       #FUN-B90089 add end---
 
        #FUN-CA0090 Add Begin ---
         WHEN "aws_getCardScore" #取會員可扣減積分
@@ -597,13 +597,13 @@ DEFINE l_op        com.WebOperation
 
       #str---add-guanyao160603
        WHEN "get_start_works"
-            LET l_op = com.WebOperation.CreateDOCStyle("get_start_works", p_op_name, g_request, g_response) 
+            LET l_op = com.WebOperation.CreateDOCStyle("get_start_works", p_op_name, g_request, g_response)
       #end---add-guanyao160602
       #str---add-guanyao160606
        WHEN "create_work"
-            LET l_op = com.WebOperation.CreateDOCStyle("create_work", p_op_name, g_request, g_response) 
+            LET l_op = com.WebOperation.CreateDOCStyle("create_work", p_op_name, g_request, g_response)
        WHEN "get_finish_works"
-            LET l_op = com.WebOperation.CreateDOCStyle("get_finish_works", p_op_name, g_request, g_response) 
+            LET l_op = com.WebOperation.CreateDOCStyle("get_finish_works", p_op_name, g_request, g_response)
        WHEN "create_finish_work"
             LET l_op = com.WebOperation.CreateDOCStyle("create_finish_work", p_op_name, g_request, g_response)
       #end---add-guanyao160606
@@ -618,7 +618,7 @@ DEFINE l_op        com.WebOperation
        WHEN "get_password"
             LET l_op = com.WebOperation.CreateDOCStyle("get_password", p_op_name, g_request, g_response)
       #end---add by guanyao160718
-   
+
        #add huxy160727--------Beg------
        WHEN "aws_GetAppver"
             LET l_op = com.WebOperation.CreateDOCStyle("aws_GetAppver", p_op_name, g_request, g_response)
@@ -629,9 +629,9 @@ DEFINE l_op        com.WebOperation
        #end-----add by guanyao160805
        #add by shenran 2016-08-03 14:15:19 �������� str
    #    WHEN "aws_GetAppver"
-   #         LET l_op = com.WebOperation.CreateDOCStyle("aws_GetAppver", p_op_name, g_request, g_response)   
+   #         LET l_op = com.WebOperation.CreateDOCStyle("aws_GetAppver", p_op_name, g_request, g_response)
    #    WHEN "aws_loginCheck"
-   #         LET l_op = com.WebOperation.CreateDOCStyle("aws_loginCheck", p_op_name, g_request, g_response)  
+   #         LET l_op = com.WebOperation.CreateDOCStyle("aws_loginCheck", p_op_name, g_request, g_response)
    #    WHEN "aws_getPlant"
    #         LET l_op = com.WebOperation.CreateDOCStyle("aws_getPlant", p_op_name, g_request, g_response)
        WHEN "aws_getAimt302"
@@ -669,7 +669,7 @@ DEFINE l_op        com.WebOperation
        WHEN "aws_updateAllotAgain"
              LET l_op = com.WebOperation.CreateDOCStyle("aws_updateAllotAgain", p_op_name, g_request, g_response)
        WHEN "aws_getAsft620"
-             LET l_op = com.WebOperation.CreateDOCStyle("aws_getAsft620", p_op_name, g_request, g_response) 
+             LET l_op = com.WebOperation.CreateDOCStyle("aws_getAsft620", p_op_name, g_request, g_response)
        WHEN "aws_updateAsft620"
              LET l_op = com.WebOperation.CreateDOCStyle("aws_updateAsft620", p_op_name, g_request, g_response)
        WHEN "aws_getFifo1"
@@ -687,7 +687,7 @@ DEFINE l_op        com.WebOperation
        WHEN "aws_createCxmt620"
              LET l_op = com.WebOperation.CreateDOCStyle("aws_createCxmt620", p_op_name, g_request, g_response)
        WHEN "aws_getInventory"
-             LET l_op = com.WebOperation.CreateDOCStyle("aws_getInventory", p_op_name, g_request, g_response) 
+             LET l_op = com.WebOperation.CreateDOCStyle("aws_getInventory", p_op_name, g_request, g_response)
        WHEN "aws_createInventory"
              LET l_op = com.WebOperation.CreateDOCStyle("aws_createInventory", p_op_name, g_request, g_response)
        WHEN "aws_getDeliverymei"
@@ -705,7 +705,7 @@ DEFINE l_op        com.WebOperation
        WHEN "aws_getApmt110"
              LET l_op = com.WebOperation.CreateDOCStyle("aws_getApmt110", p_op_name, g_request, g_response)
      #  WHEN "get_start_works"
-     #        LET l_op = com.WebOperation.CreateDOCStyle("get_start_works", p_op_name, g_request, g_response) 
+     #        LET l_op = com.WebOperation.CreateDOCStyle("get_start_works", p_op_name, g_request, g_response)
      #  WHEN "create_work"
      #        LET l_op = com.WebOperation.CreateDOCStyle("create_work", p_op_name, g_request, g_response)
      #  WHEN "get_finish_works"
@@ -717,7 +717,7 @@ DEFINE l_op        com.WebOperation
 #       WHEN "aws_getIma"
 #             LET l_op = com.WebOperation.CreateDOCStyle("aws_getIma", p_op_name, g_request, g_response)
        WHEN "aws_getProcess"
-             LET l_op = com.WebOperation.CreateDOCStyle("aws_getProcess", p_op_name, g_request, g_response) 
+             LET l_op = com.WebOperation.CreateDOCStyle("aws_getProcess", p_op_name, g_request, g_response)
 #       WHEN "aws_createAxmt410"
 #             LET l_op = com.WebOperation.CreateDOCStyle("aws_createAxmt410", p_op_name, g_request, g_response)
 #       WHEN "aws_createShopping"
@@ -764,12 +764,12 @@ DEFINE l_op        com.WebOperation
             LET l_op = com.WebOperation.CreateDOCStyle("aws_getAsfi528",p_op_name,g_request, g_response)
       #No:160807 add end------
       WHEN "aws_createAsfi528"
-            LET l_op = com.WebOperation.CreateDOCStyle("aws_createAsfi528",p_op_name,g_request, g_response)      
+            LET l_op = com.WebOperation.CreateDOCStyle("aws_createAsfi528",p_op_name,g_request, g_response)
       WHEN "aws_getApmt722"
             LET l_op = com.WebOperation.CreateDOCStyle("aws_getApmt722",p_op_name,g_request, g_response)
       WHEN "aws_createApmt722"
-            LET l_op = com.WebOperation.CreateDOCStyle("aws_createApmt722",p_op_name,g_request, g_response)                                             
-      #add by shenran 2016-08-03 14:15:19 �������� end 
+            LET l_op = com.WebOperation.CreateDOCStyle("aws_createApmt722",p_op_name,g_request, g_response)
+      #add by shenran 2016-08-03 14:15:19 �������� end
 	  #add by nihuan 20170508-----------start---------------
 	  WHEN "aws_gettransferdata"
             LET l_op = com.WebOperation.CreateDOCStyle("aws_gettransferdata",p_op_name,g_request, g_response)
@@ -812,7 +812,7 @@ DEFINE l_op        com.WebOperation
        #杂收单过账(有源) 	cws_post_aimt302
        WHEN "post_aimt302"
             LET l_op = com.WebOperation.CreateDOCStyle("post_aimt302", p_op_name, g_request, g_response)
-                
+
 	     WHEN "aws_gettransferdatadetail"
             LET l_op = com.WebOperation.CreateDOCStyle("aws_gettransferdatadetail", p_op_name, g_request, g_response)
        WHEN "aws_getaxmt700data"
@@ -823,9 +823,9 @@ DEFINE l_op        com.WebOperation
             LET l_op = com.WebOperation.CreateDOCStyle("aws_updaxmt700", p_op_name, g_request, g_response)
        WHEN "aws_getzafifo"  #add by caojf20180428
             LET l_op = com.WebOperation.CreateDOCStyle("aws_getzafifo", p_op_name, g_request, g_response)
-       
+
 	  #add by nihuan 20170508-----------end---------------
-	   #v4.0 18010101 接口----- begin--- 
+	   #v4.0 18010101 接口----- begin---
        WHEN "cjc_CreateERPReceipts"
             LET l_op = com.WebOperation.CreateDOCStyle("cjc_CreateERPReceipts", p_op_name, g_request, g_response)
        WHEN "cjc_CreateERPGodownEntry"
@@ -842,17 +842,17 @@ DEFINE l_op        com.WebOperation
             LET l_op = com.WebOperation.CreateDOCStyle("cjc_CreateERPSales", p_op_name, g_request, g_response)
        WHEN "cjc_CreateERPIssue"
             LET l_op = com.WebOperation.CreateDOCStyle("cjc_CreateERPIssue", p_op_name, g_request, g_response)
-      #add by darcy 220321 
+      #add by darcy 220321
       WHEN "cws_webservicedemo"
-	    LET l_op =com.WebOperation.CreateDOCStyle("cws_webservicedemo", p_op_name, g_request, g_response)	
-      #add by darcy 220321  
+	    LET l_op =com.WebOperation.CreateDOCStyle("cws_webservicedemo", p_op_name, g_request, g_response)
+      #add by darcy 220321
       #darcy:2022/10/18 s---
       WHEN "cws_checksubdts"
-	    LET l_op =com.WebOperation.CreateDOCStyle("cws_checksubdts", p_op_name, g_request, g_response)	
+	    LET l_op =com.WebOperation.CreateDOCStyle("cws_checksubdts", p_op_name, g_request, g_response)
       #darcy:2022/10/18 e---
       #darcy:2023/05/08 add s---
       WHEN "cws_checkputset"
-	    LET l_op =com.WebOperation.CreateDOCStyle("cws_checkputset", p_op_name, g_request, g_response)	
+	    LET l_op =com.WebOperation.CreateDOCStyle("cws_checkputset", p_op_name, g_request, g_response)
       #darcy:2023/05/08 add e---
       {WHEN "cjc_CreateERPWorkReport"
             LET l_op = com.WebOperation.CreateDOCStyle("cjc_CreateERPWorkReport", p_op_name, g_request, g_response)
@@ -872,7 +872,7 @@ DEFINE l_op        com.WebOperation
             LET l_op = com.WebOperation.CreateDOCStyle("cjc_Del_POrder", p_op_name, g_request, g_response)
 
        }
-	  #--18010101--end ------ 
+	  #--18010101--end ------
       #darcy:2024/01/23 add s---
       WHEN "cws_Createtc_pmm"
          let l_op =com.WebOperation.CreateDOCStyle("cws_Createtc_pmm", p_op_name, g_request, g_response)
@@ -894,25 +894,29 @@ DEFINE l_op        com.WebOperation
          let l_op =com.WebOperation.CreateDOCStyle("cws_GetStock", p_op_name, g_request, g_response)
       # darcy:2025/11/18 add e---
       when 'cws_UpdateLot' let l_op =com.WebOperation.CreateDOCStyle("cws_UpdateLot", p_op_name, g_request, g_response)# darcy:2026/01/27 add
+      when 'cws_getpoamt' let  l_op =com.WebOperation.CreateDOCStyle("cws_getpoamt", p_op_name, g_request, g_response)# darcy 查询采购金额 add
+      when 'cws_UpdateUser' let  l_op =com.WebOperation.CreateDOCStyle("cws_UpdateUser", p_op_name, g_request, g_response)# darcy 查询采购金额 add
+      when 'cws_CreateSalePrice' let  l_op =com.WebOperation.CreateDOCStyle("cws_CreateSalePrice", p_op_name, g_request, g_response)# darcy 查询采购金额 add
+
        END CASE
 
     RETURN l_op
-    #FUN-A40084 -- end -- 
+    #FUN-A40084 -- end --
 
 END FUNCTION
- 
+
 #No.FUN-8A0112 BEGIN->
 #------------------------------------------------------------------------------#
 # TIPTOP通用集成接口是為實現本公司內部產品之間的數據交換和服務調用而設計       #
 # 并可作為各產品統一的外部接口與其他多個系統進行集成，而不用每次都撰寫單       #
 # 獨的集成程序                                                                 #
 #------------------------------------------------------------------------------#
- 
-#TIPTOP通用集成接口                                              
-FUNCTION TIPTOPGateWay()                                                                                                                                                                  
-    LET g_service = "TIPTOPGateWay"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱 
-    CALL aws_ttsrv2_GateWay()                                                    
-                                                                                
+
+#TIPTOP通用集成接口
+FUNCTION TIPTOPGateWay()
+    LET g_service = "TIPTOPGateWay"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
+    CALL aws_ttsrv2_GateWay()
+
 END FUNCTION
 #No.FUN-8A0112 <-END
 
@@ -948,772 +952,772 @@ FUNCTION aws_invokeMdm()    #FUN-B50032
 END FUNCTION
 #FUN-B30147 add end --------
 #No.FUN-B20029  -- end --
- 
+
 #------------------------------------------------------------------------------#
 # 請新增每一個 ERP 服務時, 於以下加入被指定呼叫的 4GL Service Function 段落    #
 # 真正實作的程式邏輯, 可另定義於另外的 4GL source, 並由此處呼叫                #
 # 此處定義的 Function Name 必須與設定作業中輸入的一致(否則執行時將報錯)        #
 #------------------------------------------------------------------------------#
- 
+
 #取得 ERP 料件資料的服務(單檔範例)
 FUNCTION aws_getItemData()
- 
-    
+
+
     LET g_service = "GetItemData"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
     CALL aws_get_item_data()
- 
+
 END FUNCTION
- 
+
 #FUN-BA0002 add str---
 #取得客戶類別資料的服務
 FUNCTION aws_getCustClassificationData()
-    
+
     LET g_service = "GetCustClassificationData"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
     CALL aws_get_cust_classification_data()
- 
+
 END FUNCTION
 
 #取得銷售價格條件資料的服務
 FUNCTION aws_getTradeTermData()
-    
+
     LET g_service = "GetTradeTermData"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
     CALL aws_get_trade_term_data()
- 
+
 END FUNCTION
 
 #取得發票別清單的服務
 FUNCTION aws_getInvoiceTypeList()
-    
+
     LET g_service = "GetInvoiceTypeList"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
     CALL aws_get_invoice_type_list()
- 
+
 END FUNCTION
 #FUN-BA0002 add end---
- 
+
 #取得 ERP BOM 資料的服務(雙檔範例)
 FUNCTION aws_getBOMData() #FUN-A10061 mod
- 
-    
+
+
    #LET g_service = "GetBomData"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱 #FUN-A10061 mark
     LET g_service = "GetBOMData"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱 #FUN-A10061 add
     CALL aws_get_bom_data()
- 
+
 END FUNCTION
- 
- 
+
+
 #自動取單號的服務(參數回傳範例)
 FUNCTION aws_getDocumentNumber()
- 
-    
+
+
     LET g_service = "GetDocumentNumber"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
     CALL aws_get_doc_no()
- 
+
 END FUNCTION
- 
- 
+
+
 #建立客戶資料的服務(單檔建立範例)
 FUNCTION aws_createCustomerData()
- 
-    
+
+
     LET g_service = "CreateCustomerData"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
     CALL aws_create_customer_data()
- 
+
 END FUNCTION
- 
- 
+
+
 #建立報價單資料的服務(雙檔建立範例)
 FUNCTION aws_createQuotationData()
- 
-    
+
+
     LET g_service = "CreateQuotationData"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
     CALL aws_create_quotation_data()
- 
+
 END FUNCTION
- 
+
 #建立料件主檔資料的服務 #FUN-860036
 FUNCTION aws_createItemMasterData()
-   
+
     LET g_service = "CreateItemMasterData"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
     CALL aws_create_itemmaster_data()
- 
+
 END FUNCTION
- 
+
 #建立廠商主檔資料的服務 #FUN-860036
 FUNCTION aws_createVendorData()
- 
+
     LET g_service = "CreateVendorData"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
     CALL aws_create_vendor_data()
- 
+
 END FUNCTION
- 
+
 #建立員工主檔資料的服務 #FUN-860036
 FUNCTION aws_createEmployeeData()
-   
+
     LET g_service = "CreateEmployeeData"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
     CALL aws_create_employee_data()
- 
+
 END FUNCTION
- 
+
 #建立客戶其他地址資料的服務 #FUN-860036
 FUNCTION aws_createAddressData()
-   
+
     LET g_service = "CreateAddressData"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
     CALL aws_create_address_data()
- 
+
 END FUNCTION
- 
+
 #FUN-850022
 #回傳檢驗碼(rvb39)
 FUNCTION aws_getInspectionData()
- 
+
    LET g_service = "GetInspectionData"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
    CALL aws_get_inspection_data()
- 
+
 END FUNCTION
- 
+
 #FUN-860037 begin
 #查詢 ERP 區域別編號
 FUNCTION aws_getAreaData()
- 
+
    LET g_service = "GetAreaData"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
    CALL aws_get_area_data()
- 
+
 END FUNCTION
- 
+
 #取得 ERP 會計科目資料服務
 FUNCTION aws_getAccountSubjectData()
- 
+
    LET g_service = "GetAccountSubjectData"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
    CALL aws_get_account_subject_data()
- 
+
 END FUNCTION
- 
+
 #取得 ERP 替代料資料服務
 FUNCTION aws_getComponentrepsubData()
- 
+
    LET g_service = "GetComponentrepsubData"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
    CALL aws_get_componentrepsub_data()
- 
+
 END FUNCTION
- 
+
 #取得 ERP 銷售系統單別服務
 FUNCTION aws_getAxmDocument()
- 
+
    LET g_service = "GetAxmDocument"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
    CALL aws_get_axm_document()
- 
+
 END FUNCTION
- 
+
 #取得 ERP 區域代碼服務
 FUNCTION aws_getAreaList()
- 
+
    LET g_service = "GetAreaList"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
    CALL aws_get_area_list()
- 
+
 END FUNCTION
- 
+
 #取得 ERP 成本分群資料服務
 FUNCTION aws_getCostGroupData()
- 
+
    LET g_service = "GetCostGroupData"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
    CALL aws_get_cost_group_data()
- 
+
 END FUNCTION
- 
+
 #取得 ERP 國別資料服務
 FUNCTION aws_getCountryData()
- 
+
    LET g_service = "GetCountryData"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
    CALL aws_get_country_data()
- 
+
 END FUNCTION
- 
+
 #取得 ERP 國別代碼服務
 FUNCTION aws_getCountryList()
- 
+
    LET g_service = "GetCountryList"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
    CALL aws_get_country_list()
- 
+
 END FUNCTION
- 
+
 #取得 ERP 幣別資料服務
 FUNCTION aws_getCurrencyData()
- 
+
    LET g_service = "GetCurrencyData"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
    CALL aws_get_currency_data()
- 
+
 END FUNCTION
- 
+
 #取得 ERP 幣別代碼服務
 FUNCTION aws_getCurrencyList()
- 
+
    LET g_service = "GetCurrencyList"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
    CALL aws_get_currency_list()
- 
+
 END FUNCTION
- 
+
 #取得 ERP 客戶編號列表服務
 FUNCTION aws_getCustList()
- 
+
    LET g_service = "GetCustList"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
    CALL aws_get_cust_list()
- 
+
 END FUNCTION
- 
+
 #取得 ERP 客戶資料服務
 FUNCTION aws_getCustomerData()
- 
+
    LET g_service = "GetCustomerData"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
    CALL aws_get_customer_data()
- 
+
 END FUNCTION
- 
+
 #取得 ERP 產品客戶資料服務
 FUNCTION aws_getCustomerProductData()
- 
+
    LET g_service = "GetCustomerProductData"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
    CALL aws_get_customer_product_data()
- 
+
 END FUNCTION
- 
+
 #取得 ERP 部門資料服務
 FUNCTION aws_getDepartmentData()
- 
+
    LET g_service = "GetDepartmentData"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
    CALL aws_get_department_data()
- 
+
 END FUNCTION
- 
+
 #取得 ERP 部門編號列表服務
 FUNCTION aws_getDepartmentList()
- 
+
    LET g_service = "GetDepartmentList"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
    CALL aws_get_department_list()
- 
+
 END FUNCTION
- 
+
 #取得 ERP 員工資料服務
 FUNCTION aws_getEmployeeData()
- 
+
    LET g_service = "GetEmployeeData"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
    CALL aws_get_employee_data()
- 
+
 END FUNCTION
- 
+
 #取得 ERP 員工編號列表服務
 FUNCTION aws_getEmployeeList()
- 
+
    LET g_service = "GetEmployeeList"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
    CALL aws_get_employee_list()
- 
+
 END FUNCTION
- 
+
 #取得 ERP 料件編號列表服務
 FUNCTION aws_getItemList()
- 
+
    LET g_service = "GetItemList"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
    CALL aws_get_item_list()
- 
+
 END FUNCTION
- 
+
 #取得 ERP 月份列表服務
 FUNCTION aws_getMonthList()
- 
+
    LET g_service = "GetMonthList"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
    CALL aws_get_month_list()
- 
+
 END FUNCTION
- 
+
 #取得 ERP 營運中心代碼服務
 FUNCTION aws_getOrganizationList()
- 
+
    LET g_service = "GetOrganizationList"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
    LET g_non_plant = "Y" #880012
    CALL aws_get_organization_list()
- 
+
 END FUNCTION
- 
+
 #取得 ERP 逾期帳款排行
 FUNCTION aws_getOverdueAmtRankingData()
- 
+
    LET g_service = "GetOverdueAmtRankingData"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
    CALL aws_get_overdue_amt_ranking_data()
- 
+
 END FUNCTION
- 
+
 #取得 ERP 逾期帳款排行明細資料服務
 FUNCTION aws_getOverdueAmtDetailData()
- 
+
    LET g_service = "GetOverdueAmtDetailData"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
    CALL aws_get_overdue_amt_detail_data()
- 
+
 END FUNCTION
- 
+
 #取得 ERP 產品分類碼列表服務
 FUNCTION aws_getProdClassList()
- 
+
    LET g_service = "GetProdClassList"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
    CALL aws_get_prod_class_list()
- 
+
 END FUNCTION
- 
+
 #提供取得 ERP 銷售統計資料服務
 FUNCTION aws_getSalesDetailData()
- 
+
    LET g_service = "GetSalesDetailData"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
    CALL aws_get_sales_detail_data()
- 
+
 END FUNCTION
- 
+
 #取得ERP銷售統計資料
 FUNCTION aws_getSalesStatisticsData()
- 
+
    LET g_service = "GetSalesStatisticsData"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
    CALL aws_get_sales_statistics_data()
- 
+
 END FUNCTION
- 
+
 #取得ERP訂單資訊資料
 FUNCTION aws_getSOInfoData()
- 
+
    LET g_service = "GetSOInfoData"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
    CALL aws_get_so_info_data()
- 
+
 END FUNCTION
- 
+
 #取得ERP訂單資訊明細資料服務
 FUNCTION aws_getSOInfoDetailData()
- 
+
    LET g_service = "GetSOInfoDetailData"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
    CALL aws_get_so_info_detail_data()
- 
+
 END FUNCTION
- 
+
 #取得ERP 供應商資料服務
 FUNCTION aws_getSupplierData()
- 
+
    LET g_service = "GetSupplierData"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
   #FUN-AA0022---mod----str---
   #CALL aws_getSupplierData()
    CALL aws_get_supplier_data()
   #FUN-AA0022---mod----end---
- 
+
 END FUNCTION
- 
+
 #取得ERP 料件/供應商資料服務
 FUNCTION aws_getSupplierItemData()
- 
+
    LET g_service = "GetSupplierItemData"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
    CALL aws_get_supplier_item_data()
- 
+
 END FUNCTION
 #FUN-860037 end --
- 
+
 #FUN-850147
 #取得ERP 料件/供應商資料服務
 FUNCTION aws_createBOMData()
- 
+
    LET g_service = "CreateBOMData"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
    CALL aws_create_bom_data()
- 
+
 END FUNCTION
 #END FUN-850147
- 
+
 #FUN-870028
 FUNCTION aws_getOperationData() #作業編號
- 
-   LET g_service = "GetOperationData" 
+
+   LET g_service = "GetOperationData"
    CALL aws_get_operation_data()
- 
+
 END FUNCTION
- 
+
 FUNCTION aws_getUnitData() #單位
- 
-   LET g_service = "GetUnitData" 
+
+   LET g_service = "GetUnitData"
    CALL aws_get_unit_data()
- 
+
 END FUNCTION
- 
+
 FUNCTION aws_getBasicCodeData() #碼別代號
- 
-   LET g_service = "GetBasicCodeData" 
+
+   LET g_service = "GetBasicCodeData"
    CALL aws_get_basic_code_data()
- 
+
 END FUNCTION
- 
+
 FUNCTION aws_getWarehouseData() #倉庫代號
- 
-   LET g_service = "GetWarehouseData" 
+
+   LET g_service = "GetWarehouseData"
    CALL aws_get_warehouse_data()
- 
+
 END FUNCTION
- 
+
 FUNCTION aws_getLocationData() #倉儲代號
- 
-   LET g_service = "GetLocationData" 
+
+   LET g_service = "GetLocationData"
    CALL aws_get_location_data()
- 
+
 END FUNCTION
- 
+
 FUNCTION aws_getProductClassData() #產品分類
- 
-   LET g_service = "GetProductClassData" 
+
+   LET g_service = "GetProductClassData"
    CALL aws_get_product_class_data()
- 
+
 END FUNCTION
- 
+
 FUNCTION aws_createIssueReturnData() #MES產生退料單
- 
-   LET g_service = "CreateIssueReturnData" 
+
+   LET g_service = "CreateIssueReturnData"
    CALL aws_create_issue_return_data()
- 
+
 END FUNCTION
- 
+
 FUNCTION aws_createStockInData() #MES產生入庫單
- 
-   LET g_service = "CreateStockInData" 
+
+   LET g_service = "CreateStockInData"
    CALL aws_create_stock_in_data()
- 
+
 END FUNCTION
 #--
- 
+
 #FUN-880012 --start
 FUNCTION aws_getUserToken() #使用者帳號驗證碼
- 
-   LET g_service = "GetUserToken" 
+
+   LET g_service = "GetUserToken"
    LET g_non_plant = "Y"
    CALL aws_get_user_token()
- 
+
 END FUNCTION
- 
+
 FUNCTION aws_checkUserAuth() #驗證使用者帳號是否正確
- 
-   LET g_service = "CheckUserAuth" 
+
+   LET g_service = "CheckUserAuth"
    LET g_non_plant = "Y"
    CALL aws_check_user_auth()
- 
+
 END FUNCTION
- 
+
 FUNCTION aws_getMenuData() #取得Menu清單/樹狀結構
- 
-   LET g_service = "GetMenuData" 
+
+   LET g_service = "GetMenuData"
    LET g_non_plant = "Y"
    CALL aws_get_menu_data()
- 
+
 END FUNCTION
 #FUN-880012 --end
- 
+
 #FUN-840012................begin
 FUNCTION aws_CheckExecAuthorization()
- 
+
   LET g_service = "CheckExecAuthorization"  #IMPORTANT! 指定此次呼叫的 function 所代表
   CALL aws_check_exec_authorization()
- 
+
 END FUNCTION
- 
+
 #建立 ERP 採購收貨單資料的服務  #rva_file - rvb_file
 FUNCTION aws_createPOReceivingData()
- 
+
    LET g_service = "CreatePOReceivingData"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
    CALL aws_create_poreceiving_data()
- 
+
 END FUNCTION
- 
+
 #建立 ERP 採購收貨入庫單資料的服務  #rvu_file - rvv_file
 FUNCTION aws_createPurchaseStockIn()
- 
+
    LET g_service = "CreatePurchaseStockIn"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
    CALL aws_create_purchase_stock_in()
- 
+
 END FUNCTION
- 
+
 #建立 ERP 採購收貨入庫單資料的服務  #rvu_file - rvv_file
 FUNCTION aws_createPurchaseStockOut()
- 
+
    LET g_service = "CreatePurchaseStockOut"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
    CALL aws_create_purchase_stock_out()
- 
+
 END FUNCTION
- 
+
 #建立 ERP 工單完工入庫資料的服務  #sfu_file - sfv_file
 FUNCTION aws_createWOStockinData()
- 
+
    LET g_service = "CreateWOStockinData"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
    CALL aws_create_wo_stock_in_data()
- 
+
 END FUNCTION
- 
+
 #建立 ERP 盤點標籤相關資料的服務
 FUNCTION aws_getCountingLabelData()
- 
+
    LET g_service = "GetCountingLabelData"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
    CALL aws_get_counting_label_data()
- 
+
 END FUNCTION
- 
+
 #取得 ERP 可入庫FQC單相關資料的服務
 FUNCTION aws_getFQCData()
- 
+
    LET g_service = "GetFQCData"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
    CALL aws_get_fqc_data()
- 
+
 END FUNCTION
- 
+
 #取得 ERP 料件庫存相關資料的服務
 FUNCTION aws_getItemStockList()
- 
+
    LET g_service = "GetItemStockList"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
    CALL aws_get_item_stock_list()
- 
+
 END FUNCTION
- 
+
 #取得 ERP 盤點標籤別相關資料的服務
 FUNCTION aws_getLabelTypeData()
- 
+
    LET g_service = "GetLabelTypeData"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
    CALL aws_get_label_type_data()
- 
+
 END FUNCTION
- 
+
 #提供他系統呼叫以取得 TIPTOP 製造管理系統單據別及會計年月
 FUNCTION aws_getMFGDocument()
- 
+
    LET g_service = "GetMFGDocument"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
    CALL aws_get_mfg_document()
- 
+
 END FUNCTION
- 
+
 #取得 ERP 採購資料的服務  #pmm_file - pmn_file
 FUNCTION aws_getPOData()
- 
- 
+
+
    LET g_service = "GetPOData"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
    CALL aws_get_po_data()
- 
+
 END FUNCTION
- 
+
 #取得 ERP 可入庫收貨單相關資料的服務  #rva_file - rvb_file
 FUNCTION aws_getPOReceivingInData()
- 
- 
+
+
    LET g_service = "GetPOReceivingInData"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
    CALL aws_get_po_receiving_in_data()
- 
+
 END FUNCTION
- 
+
 #取得 ERP 可入庫收貨單相關資料的服務  #rva_file - rvb_file
 FUNCTION aws_getPOReceivingOutData()
- 
- 
+
+
    LET g_service = "GetPOReceivingOutData"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
    CALL aws_get_po_receiving_out_data()
- 
+
 END FUNCTION
- 
+
 #提供已入量、未入量及可入額度、收貨 倉庫/儲位資料
 FUNCTION aws_getPurchaseStockInQty()
- 
- 
+
+
    LET g_service = "GetPurchaseStockInQty"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
    CALL aws_get_purchase_stock_in_qty()
- 
+
 END FUNCTION
- 
+
 #提供已入量、未入量及可入額度、收貨 倉庫/儲位資料
 FUNCTION aws_getPurchaseStockOutQty()
- 
- 
+
+
    LET g_service = "GetPurchaseStockOutQty"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
    CALL aws_get_purchase_stock_out_qty()
- 
+
 END FUNCTION
- 
+
 FUNCTION aws_getReasonCode()
- 
- 
+
+
    LET g_service = "GetReasonCode"  #IMPORTANT! 指定此次呼叫的 function
    CALL aws_get_reason_code()
- 
+
 END FUNCTION
- 
+
 #提供採購單 已收量、未收量及可收額度、倉庫/儲位資料
 FUNCTION aws_getReceivingQty()
- 
- 
+
+
    LET g_service = "GetReceivingQty"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
    CALL aws_get_receiving_qty()
- 
+
 END FUNCTION
- 
-#提供 ERP 倉庫/儲位 資料 的服務 
+
+#提供 ERP 倉庫/儲位 資料 的服務
 FUNCTION aws_getStockData()
- 
- 
+
+
    LET g_service = "GetStockData"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
    CALL aws_get_stock_data()
- 
+
 END FUNCTION
- 
+
 #建立 ERP 可入庫工單資料的服務
 FUNCTION aws_getWOData()
- 
+
    LET g_service = "GetWOData"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
    CALL aws_get_wo_data()
- 
+
 END FUNCTION
- 
+
 #取得 ERP 未確認領料單相關資料的服務
 FUNCTION aws_getWOIssueData()
- 
+
    LET g_service = "GetWOIssueData"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
    CALL aws_get_wo_issue_data()
- 
+
 END FUNCTION
- 
+
 #提供工單之 可入庫量、已入庫量、預設倉庫、預設儲位
 FUNCTION aws_getWOStockQty()
- 
+
    LET g_service = "GetWOStockQty"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
    CALL aws_get_wo_stock_qty()
- 
+
 END FUNCTION
- 
+
 #更新 ERP 盤點標籤資料的服務  #pia_file
 FUNCTION aws_updateCountingLabelData()
- 
+
    LET g_service = "UpdateCountingLabelData"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
    CALL aws_update_counting_label_data()
- 
+
 END FUNCTION
- 
+
 #更新 ERP 領料單相關資料的服務
 FUNCTION aws_updateWOIssueData()
- 
+
    LET g_service = "UpdateWOIssueData"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
    CALL aws_update_wo_issue_data()
- 
+
 END FUNCTION
- 
-#建立 ERP 銷售退回單資料的服務 
+
+#建立 ERP 銷售退回單資料的服務
 FUNCTION aws_createSalesReturn()
- 
- 
-   LET g_service = "CreateSalesReturn" #IMPORTANT! 指定此次呼叫的 function 
-   CALL aws_create_sales_return() 
- 
+
+
+   LET g_service = "CreateSalesReturn" #IMPORTANT! 指定此次呼叫的 function
+   CALL aws_create_sales_return()
+
 END FUNCTION
- 
-#建立 ERP 出貨單資料的服務 
+
+#建立 ERP 出貨單資料的服務
 FUNCTION aws_createShippingOrder()
- 
- 
-   LET g_service = "CreateShippingOrder" #IMPORTANT! 指定此次呼叫的 function 
-   CALL aws_create_shipping_order() 
- 
+
+
+   LET g_service = "CreateShippingOrder" #IMPORTANT! 指定此次呼叫的 function
+   CALL aws_create_shipping_order()
+
 END FUNCTION
- 
+
 #建立 ERP 調撥單資料的服務
 FUNCTION aws_createTransferNote()
- 
- 
-   LET g_service = "CreateTransferNote" #IMPORTANT! 指定此次呼叫的 function 
-   CALL aws_create_transfer_note() 
- 
+
+
+   LET g_service = "CreateTransferNote" #IMPORTANT! 指定此次呼叫的 function
+   CALL aws_create_transfer_note()
+
 END FUNCTION
- 
-#提供 ERP 單位換算後之數量的服務 
-FUNCTION aws_getQtyConversion() 
- 
- 
+
+#提供 ERP 單位換算後之數量的服務
+FUNCTION aws_getQtyConversion()
+
+
    LET g_service = "GetQtyConversion" #IMPORTANT! 指定此次呼叫的 function
    CALL aws_get_qty_conversion()
- 
-END FUNCTION 
- 
+
+END FUNCTION
+
 #提供 ERP 銷售系統單據及會計年月的服務
 FUNCTION aws_getSalesDocument()
- 
- 
-   LET g_service = "GetSalesDocumentn" #IMPORTANT! 指定此次呼叫的 function 
-   CALL aws_get_sales_document() 
- 
-END FUNCTION 
- 
-#提供 ERP 出貨通知單單身資料的服務 
-FUNCTION aws_getShippingNoticeData() 
- 
- 
-   LET g_service = "GetShippingNoticeData" #IMPORTANT! 指定此次呼叫的 function 
-   CALL aws_get_shipping_notice_data() 
- 
-END FUNCTION 
- 
-#提供 ERP 出貨單單身資料的服務 
-FUNCTION aws_getShippingOrderData() 
- 
- 
-   LET g_service = "GetShippingOrderData" #IMPORTANT! 指定此次呼叫的 function 
-   CALL aws_get_shipping_order_data() 
- 
+
+
+   LET g_service = "GetSalesDocumentn" #IMPORTANT! 指定此次呼叫的 function
+   CALL aws_get_sales_document()
+
 END FUNCTION
- 
+
+#提供 ERP 出貨通知單單身資料的服務
+FUNCTION aws_getShippingNoticeData()
+
+
+   LET g_service = "GetShippingNoticeData" #IMPORTANT! 指定此次呼叫的 function
+   CALL aws_get_shipping_notice_data()
+
+END FUNCTION
+
+#提供 ERP 出貨單單身資料的服務
+FUNCTION aws_getShippingOrderData()
+
+
+   LET g_service = "GetShippingOrderData" #IMPORTANT! 指定此次呼叫的 function
+   CALL aws_get_shipping_order_data()
+
+END FUNCTION
+
 FUNCTION aws_createStockData() #建立新料件倉儲批資料
- 
-   LET g_service = "CreateStockData" 
+
+   LET g_service = "CreateStockData"
    CALL aws_create_stock_data()
- 
+
 END FUNCTION
- 
+
 FUNCTION aws_CreateMISCIssueData()
- 
+
   LET g_service = "CreateMISCIssueData"  #IMPORTANT! 指定此次呼叫的 function 所代表
   CALL aws_create_misc_issue_data()
- 
+
 END FUNCTION
- 
+
 #FUN-840012................end
- 
+
 #FUN-8B0113--start--
 #提供使用者遠端呼叫 TIPTOP 執行 r.c2、r.f2、r.l2 服務
 FUNCTION aws_runCommand()
- 
+
    LET g_service = "RunCommand"
    CALL aws_run_command()
- 
+
 END FUNCTION
 #FUN-8B0113--end--
- 
+
 #FUN-860068 start --
 #提供EBO取得 ERP 客戶資料服務
 FUNCTION aws_EboGetCustData()
- 
+
   LET g_service = "EboGetCustData"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
   CALL aws_ebo_get_cust_data()
- 
+
 END FUNCTION
- 
+
 FUNCTION aws_EboGetProdData()
- 
+
   LET g_service = "EboGetProdData"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
   CALL aws_ebo_get_prod_data()
- 
+
 END FUNCTION
- 
+
 FUNCTION aws_EboGetOrderData()
- 
+
   LET g_service = "EboGetOrderData"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
   CALL aws_ebo_get_order_data()
- 
+
 END FUNCTION
 #FUN-860068 end --
- 
+
 #TQC-910021 start --
- 
+
 FUNCTION aws_CheckApsExecution()
- 
+
   LET g_service = "CheckApsExecution"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
   CALL aws_check_aps_execution()
- 
+
 END FUNCTION
 #TQC-910021 end --
 
@@ -1725,7 +1729,7 @@ FUNCTION aws_getReportData()
   CALL aws_get_report_data()
 
 END FUNCTION
-#--FUN-930132--end-- 
+#--FUN-930132--end--
 
 
 #FUN-930139 add str ------------------
@@ -1920,13 +1924,13 @@ FUNCTION aws_getPaymentTermsData()
 END FUNCTION
 #FUN-AC0068 add end --------
 
-#FUN-B10003 add str --------                          
+#FUN-B10003 add str --------
 #取得TIPTOP SSOKey資料
-FUNCTION aws_getSSOKey()                                            
+FUNCTION aws_getSSOKey()
 
    LET g_service = "GetSSOKey"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
    CALL aws_get_sso_key()
-    
+
 END FUNCTION
 #FUN-B10003 add end --------
 
@@ -1987,9 +1991,9 @@ END FUNCTION
 #FUN-B30147 add end --------
 
 
-#FUN-B40072 add str --------                          
+#FUN-B40072 add str --------
 # 讀取TIPTOP運行狀態
-FUNCTION aws_getProdState()                                            
+FUNCTION aws_getProdState()
    LET g_service = "GetProdSate"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
    LET g_non_plant = "Y"
    CALL aws_get_prod_state()
@@ -1997,9 +2001,9 @@ END FUNCTION
 
 
 # 讀取TIPTOP產品資訊
-FUNCTION aws_getProdInfo()                                            
+FUNCTION aws_getProdInfo()
    LET g_service = "GetProdInfo"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
-   LET g_non_plant = "Y"   
+   LET g_non_plant = "Y"
    CALL aws_get_prod_Info()
 END FUNCTION
 
@@ -2007,16 +2011,16 @@ END FUNCTION
 # 讀取TIPTOP目前線上人數
 FUNCTION aws_getOnlineUser()
    LET g_service = "GetOnlineUser"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
-   LET g_non_plant = "Y"   
+   LET g_non_plant = "Y"
    CALL aws_get_online_user()
 END FUNCTION
 #FUN-B40072 add end --------
 
 #FUN-B60090 -- start --
-#建立使用者帳號資料 
+#建立使用者帳號資料
 FUNCTION aws_syncAccountData()
    LET g_service = "SyncAccountData"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
-   LET g_non_plant = "Y"   
+   LET g_non_plant = "Y"
    CALL aws_sync_account_data()
 END FUNCTION
 #FUN-B60090 -- end --
@@ -2126,12 +2130,12 @@ END FUNCTION
 
 FUNCTION aws_writePoint()
    LET g_service = "WritePoint"
-   CALL aws_write_point() 
+   CALL aws_write_point()
 END FUNCTION
 
 FUNCTION aws_getCashCardInfo()
    LET g_service = "GetCashCardInfo"
-   CALL aws_get_cash_card_info() 
+   CALL aws_get_cash_card_info()
 END FUNCTION
 
 FUNCTION aws_deductMoney()
@@ -2180,7 +2184,7 @@ END FUNCTION
 FUNCTION aws_getUserDefOrg()
 
     LET g_service = "GetUserDefOrg"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
-    LET g_non_plant = "Y" 
+    LET g_non_plant = "Y"
     CALL aws_get_user_def_org()
 
 END FUNCTION
@@ -2228,7 +2232,7 @@ FUNCTION aws_selCardInfo()
     CALL aws_sel_card_info()
 END FUNCTION
 FUNCTION aws_checkCard()
-    
+
     LET g_service = "CheckCard"    #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
     CALL aws_check_card()
 END FUNCTION
@@ -2238,7 +2242,7 @@ FUNCTION aws_changeCard()
     CALL aws_change_card()
 END FUNCTION
 FUNCTION aws_checkCoupon()
- 
+
     LET g_service = "CheckCoupon"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
     CALL aws_check_coupon()
 END FUNCTION
@@ -2264,7 +2268,7 @@ FUNCTION aws_getOrderInfo()
     LET g_service = "GetOrderInfo"   #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
     CALL aws_get_order_info()
 END FUNCTION
-#FUN-CB0104 Add End ----- 
+#FUN-CB0104 Add End -----
 
 #FUN-C50126 add str --------
 FUNCTION aws_getAPCategoryAccountCode()
@@ -2325,7 +2329,7 @@ FUNCTION get_start_works()
    LET g_service = "cws_get_start_works"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
    CALL cws_get_start_works()
 
-END FUNCTION 
+END FUNCTION
 #end---add by guanyao 20160603-----End----------
 
 #str---add by guanyao 20160606-----Beg----------
@@ -2334,13 +2338,13 @@ FUNCTION create_work()
    LET g_service = "cws_create_work"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
    CALL cws_create_work()
 
-END FUNCTION 
+END FUNCTION
 FUNCTION get_finish_works()
 
    LET g_service = "cws_get_finish_works"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
    CALL cws_get_finish_works()
 
-END FUNCTION 
+END FUNCTION
 
 FUNCTION create_finish_work()
 
@@ -2425,7 +2429,7 @@ FUNCTION aws_getAimt302()
    CALL aws_get_aimt302()
 
 END FUNCTION
-	
+
 FUNCTION aws_createAimt302()
 
    LET g_service = "CreateAimt302"  #IMPORTANT! ָ���˴κ��е� function �������ķ������Q
@@ -2439,7 +2443,7 @@ FUNCTION aws_createAimt301()
    CALL aws_create_aimt301()
 
 END FUNCTION
-	
+
 FUNCTION aws_getMove()
 
    LET g_service = "GetMove"  #IMPORTANT! ָ���˴κ��е� function �������ķ������Q
@@ -2509,7 +2513,7 @@ FUNCTION aws_createTlfb510()
    CALL aws_create_tlfb510()
 
 END FUNCTION
-	
+
 FUNCTION aws_getAllot()
 
    LET g_service = "GetAllot"  #IMPORTANT! ָ���˴κ��е� function �������ķ������Q
@@ -2530,7 +2534,7 @@ FUNCTION aws_updateAllot()
    CALL aws_update_allot()
 
 END FUNCTION
-	
+
 FUNCTION aws_updateAllotAgain()
 
    LET g_service = "UpdateAllotAgain"  #IMPORTANT! ָ���˴κ��е� function �������ķ������Q
@@ -2579,7 +2583,7 @@ FUNCTION aws_getFifo4()
    CALL aws_get_fifo4()
 
 END FUNCTION
-	
+
 FUNCTION aws_createTlfb520()
 
    LET g_service = "CreateTlfb520"  #IMPORTANT! ָ���˴κ��е� function �������ķ������Q
@@ -2607,14 +2611,14 @@ FUNCTION aws_getInventory()
    CALL aws_get_inventory()
 
 END FUNCTION
-	
+
 FUNCTION aws_createInventory()
 
    LET g_service = "CreateInventory"  #IMPORTANT! ָ���˴κ��е� function �������ķ������Q
    CALL aws_create_inventory()
 
 END FUNCTION
-	
+
 #���ܴ��ջ��ӿ�
 #ȡ�û�����Ϣ 07751
 FUNCTION aws_getDeliverymei()
@@ -2632,38 +2636,38 @@ FUNCTION aws_createApmt110mei()
 END FUNCTION
 
 FUNCTION aws_getReceiptmei()
- 
-   LET g_service = "GetReceiptmei" 
+
+   LET g_service = "GetReceiptmei"
    CALL aws_get_receiptmei()
- 
+
 END FUNCTION
 
 FUNCTION aws_createApmt720mei()
- 
+
    LET g_service = "CreateApmt720mei"  #IMPORTANT! ָ���˴κ��е� function �������ķ������Q
    CALL aws_create_apmt720mei()
- 
+
 END FUNCTION
 
 FUNCTION aws_getTransfermei()
- 
+
    LET g_service = "GetTransfermei"  #IMPORTANT! ָ���˴κ��е� function �������ķ������Q
    CALL aws_get_transfermei()
- 
+
 END FUNCTION
 
 FUNCTION aws_createAimt324mei()
- 
+
    LET g_service = "CreateAimt324mei"  #IMPORTANT! ָ���˴κ��е� function �������ķ������Q
    CALL aws_create_aimt324mei()
- 
+
 END FUNCTION
-	
+
 FUNCTION aws_getApmt110()
- 
+
    LET g_service = "GetApmt110"  #IMPORTANT! ָ���˴κ��е� function �������ķ������Q
    CALL aws_get_apmt110()
- 
+
 END FUNCTION
 
 
@@ -2672,17 +2676,17 @@ END FUNCTION
 #FUNCTION get_start_works()
 #   LET g_service = "cws_get_start_works"  #IMPORTANT! ָ���˴κ��е� function �������ķ������Q
 #   CALL aws_get_start_works()
-#END FUNCTION 
+#END FUNCTION
 
 #FUNCTION create_work()
 #   LET g_service = "cws_create_work"  #IMPORTANT! ָ���˴κ��е� function �������ķ������Q
 #   CALL aws_create_work()
-#END FUNCTION 
+#END FUNCTION
 
 #FUNCTION get_finish_works()
 #   LET g_service = "cws_get_finish_works"  #IMPORTANT! ָ���˴κ��е� function �������ķ������Q
 #   CALL aws_get_finish_works()
-#END FUNCTION 
+#END FUNCTION
 
 #FUNCTION create_finish_work()
 #   LET g_service = "cws_create_finish_work"  #IMPORTANT! ָ���˴κ��е� function �������ķ������Q
@@ -2698,8 +2702,8 @@ END FUNCTION
 #   LET g_service = "cws_create_scan_out"  #IMPORTANT! ָ���˴κ��е� function �������ķ������Q
 #   CALL aws_create_scan_out()
 #END FUNCTION
- 
-      
+
+
        #------------------------huxy160627-----End------------------------
 #FUNCTION aws_getIma()
 #   LET g_service = "GetIma"  #IMPORTANT! ָ���˴κ��е� function �������ķ������Q
@@ -2710,7 +2714,7 @@ FUNCTION aws_getProcess()
    LET g_service = "GetProcess"  #IMPORTANT! ָ���˴κ��е� function �������ķ������Q
    CALL aws_get_process()
 END FUNCTION
-	
+
 #FUNCTION aws_createAxmt410()
 #   LET g_service = "CreateAxmt410"  #IMPORTANT! ָ���˴κ��е� function �������ķ������Q
 #   CALL aws_create_axmt410()
@@ -2743,84 +2747,84 @@ END FUNCTION
 
 #add by shenran 2016-03-20 8:27:25 ��ȡ��¼Ӫ������ str
 #FUNCTION aws_getPlant()
-# 
+#
 #   LET g_service = "GetPlant"  #IMPORTANT! ָ���˴κ��е� function �������ķ������Q
 #   CALL aws_get_plant()
-# 
+#
 #END FUNCTION
-#add by shenran 2016-03-20 8:27:25 ��ȡ��¼Ӫ������ end 
+#add by shenran 2016-03-20 8:27:25 ��ȡ��¼Ӫ������ end
 #add by shenran 2016-03-20 8:27:25 �����깤���ⵥ�� str
 FUNCTION aws_createArts()
- 
+
    LET g_service = "CreateArts"  #IMPORTANT! ָ���˴κ��е� function �������ķ������Q
    CALL aws_create_arts()
- 
+
 END FUNCTION
 #add by shenran 2016-03-20 8:27:25 �����깤���ⵥ�� end
 #add by shenran 2016-03-21 6:53:03 ���¼��鵥���� str
 FUNCTION aws_createCheck()
- 
+
    LET g_service = "CreateCheck"  #IMPORTANT! ָ���˴κ��е� function �������ķ������Q
    CALL aws_create_check()
- 
+
 END FUNCTION
 
 #add by shenran 2016/4/17 17:15:45 ��¼��֤ str
 #FUNCTION aws_loginCheck()
-# 
+#
 #   LET g_service = "LoginCheck"  #IMPORTANT! ָ���˴κ��е� function �������ķ������Q
 #   CALL aws_login_check()
-# 
+#
 #END FUNCTION
 #add by shenran 2016/4/17 17:15:47 ��¼��֤ end
 #add by shenran 2016-03-20 8:27:25 �����깤���ⵥ�� str
 FUNCTION aws_createAsft620()
- 
+
    LET g_service = "CreateAsft620"  #IMPORTANT! ָ���˴κ��е� function �������ķ������Q
    CALL aws_create_asft620()
- 
+
 END FUNCTION
-#add by shenran 2016-03-20 8:27:25 �����깤���ⵥ�� end 
+#add by shenran 2016-03-20 8:27:25 �����깤���ⵥ�� end
 #add by shenran 2016-03-20 8:27:25 �������ⵥ�� str
 FUNCTION aws_createApmt720()
- 
+
    LET g_service = "CreateApmt720"  #IMPORTANT! ָ���˴κ��е� function �������ķ������Q
    CALL aws_create_apmt720()
- 
+
 END FUNCTION
 #add by shenran 2016-03-20 8:27:25 �������ⵥ�� end
 ############################  start add by yanglan
 #----------ȡ�� ERP�ϼ�ͼƬ��Ϣ����--------#
 FUNCTION aws_getPicture()
- 
+
    LET g_service = "GetPicture"  #IMPORTANT! ָ���˴κ��е� function �������ķ������Q
    CALL aws_get_picture()
- 
+
 END FUNCTION
-############################  end  
+############################  end
 
 ##----------ȡ�� ERP������Ϣ����--------#
 #FUNCTION aws_getJob()
-# 
+#
 #   LET g_service = "GetJob"  #IMPORTANT! ָ���˴κ��е� function �������ķ������Q
 #   CALL aws_get_job()
-# 
+#
 #END FUNCTION
 #############################  end
 
 
 #----------ȡ�� ERP�������浵��Ϣ����--------#
 FUNCTION aws_getImgb()
- 
+
    LET g_service = "GetImgb"  #IMPORTANT! ָ���˴κ��е� function �������ķ������Q
    CALL aws_get_imgb()
- 
+
 END FUNCTION
 FUNCTION aws_getImg()
- 
+
    LET g_service = "GetImg"  #IMPORTANT! ָ���˴κ��е� function �������ķ������Q
    CALL aws_get_img()
- 
+
 END FUNCTION
 
 #�����ջ������� 07751
@@ -2870,12 +2874,12 @@ FUNCTION aws_getReason()
   CALL aws_get_reason()
 
 END FUNCTION
-	
+
 FUNCTION aws_getArts()
- 
+
    LET g_service = "GetArts"  #IMPORTANT! ָ���˴κ��е� function �������ķ������Q
    CALL aws_get_arts()
- 
+
 END FUNCTION
 ############################  end
 #add by shenran 2016-08-03 10:23:57  end
@@ -2883,41 +2887,41 @@ END FUNCTION
 #add by nihuan 20170508-----------start---------------
 
 FUNCTION aws_gettransferdata()
- 
-   LET g_service = "GetTransferData"  
+
+   LET g_service = "GetTransferData"
    CALL aws_get_transferdata()
- 
+
 END FUNCTION
 
 
 FUNCTION aws_getitemno()
- 
-   LET g_service = "GetItemNo"  
+
+   LET g_service = "GetItemNo"
    CALL aws_get_item_no()
- 
+
 END FUNCTION
 
 FUNCTION aws_gettcimnFifo()
- 
-   LET g_service = "GetTcimnFifo"  
+
+   LET g_service = "GetTcimnFifo"
    CALL aws_get_tc_imn_fifo()
- 
+
 END FUNCTION
 
 FUNCTION aws_csft512s()
- 
-   LET g_service = "Csft512S"  
+
+   LET g_service = "Csft512S"
    CALL aws_csft512_s()
- 
+
 END FUNCTION
 
 FUNCTION aws_asfi511s()
- 
-   LET g_service = "Asfi511S"  
+
+   LET g_service = "Asfi511S"
    CALL aws_asfi511_s()
- 
+
 END FUNCTION
-	
+
 FUNCTION cws_query_asfi512()
    LET g_service = "cws_query_asfi512"
    CALL cws_query_asfi512_g()
@@ -2946,13 +2950,13 @@ FUNCTION get_aimt324()
    LET g_service = "cws_get_aimt324"
    CALL cws_get_aimt324()
 END FUNCTION
-	
+
 #调拨单过账 cws_post_aimt324
 FUNCTION post_aimt324()
    LET g_service = "cws_post_aimt324"
    CALL cws_post_aimt324_g()
 END FUNCTION
-	
+
 FUNCTION cws_upd_aimt301()
    LET g_service = "cws_upd_aimt301"
    CALL cws_upd_aimt301_g()
@@ -2967,7 +2971,7 @@ FUNCTION get_aimt302()
    LET g_service = "cws_get_aimt302"
    CALL cws_get_aimt302()
 END FUNCTION
-	
+
 #有源杂收单过账 cws_post_aimt302
 FUNCTION post_aimt302()
    LET g_service = "cws_post_aimt302"
@@ -2983,39 +2987,39 @@ FUNCTION aws_createApmt722()
    LET g_service = "CreateApmt722"  #IMPORTANT! 指定此次呼叫的 function 所代表的服務名稱
    CALL aws_create_apmt722()
 END FUNCTION
-	
+
 FUNCTION aws_gettransferdatadetail()
-   LET g_service = "GetTransferDataDetail"  
+   LET g_service = "GetTransferDataDetail"
    CALL aws_get_transferdata_detail()
-END FUNCTION	
+END FUNCTION
 
 FUNCTION aws_getaxmt700data()
-   LET g_service = "GetAxmt700Data"  
+   LET g_service = "GetAxmt700Data"
    CALL aws_get_axmt700_data()
 END FUNCTION
-	
+
 FUNCTION aws_getaxmt700datadetail()
-   LET g_service = "GetAxmt700DataDetail"  
+   LET g_service = "GetAxmt700DataDetail"
    CALL aws_get_axmt700_data_detail()
 END FUNCTION
 
 FUNCTION aws_updaxmt700()
-   LET g_service = "UpdAxmt700"  
+   LET g_service = "UpdAxmt700"
    CALL aws_update_axmt700()
-END FUNCTION									
+END FUNCTION
 #add by nihuan 20170508-----------end---------------
 
 FUNCTION aws_getzafifo()
-   LET g_service = "als.za.fifo.get"  
+   LET g_service = "als.za.fifo.get"
    CALL aws_get_za_fifo()
 END FUNCTION
 
 
 
-#NO.18010101   --- BEGIN  -----   
+#NO.18010101   --- BEGIN  -----
 #**********************************
-#v4.0 接口 
-#*********************************** 
+#v4.0 接口
+#***********************************
 #生成收货单
 FUNCTION cjc_CreateERPReceipts()
   LET g_service = "SCM_CreateERPReceipts"
@@ -3062,8 +3066,8 @@ END FUNCTION
 FUNCTION cws_webservicedemo()
   LET g_service = "WebServiceDemo"
   CALL cws_webservice_demo()
-END FUNCTION 
-#add by darcy 220321 
+END FUNCTION
+#add by darcy 220321
 #darcy:2022/10/18 s---
 function cws_checksubdts()
    let g_service = "CheckSubDTS"
@@ -3105,7 +3109,7 @@ end function
 #   CALL cjc_zm_getWorkTaskBack()
 # END FUNCTION
 }
-#NO.18010101    ----END---   
+#NO.18010101    ----END---
 
 
 #darcy:2024/01/23 add s---
@@ -3149,3 +3153,19 @@ function cws_UpdateLot()
    call cws_update_lot()
 end function
 # darcy:2026/01/27 add e---
+# darcy add 采购金额查询 s---
+function cws_getpoamt()
+    let g_service = 'GetPOAmt'
+    call cws_get_po_amt()
+end function
+# darcy add 采购金额查询 e---
+#
+--
+function cws_UpdateUser()
+    let g_service = 'UpdateUser'
+    call cws_update_user()
+end function
+function cws_CreateSalePrice()
+    let g_service = 'CreateSalePrice'
+    call cws_create_sale_price()
+end function
