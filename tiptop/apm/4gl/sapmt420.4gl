@@ -98,7 +98,7 @@
 # Modify.........: No.FUN-670051 06/07/13 By kim GP3.5 利潤中心
 # Modify.........: NO.FUN-670007 06/08/07 BY yiting 1.刪除/作廢請購單時，要將訂單上的請購單資料清除oeb28/(oeb28-pml87)
 #                                                   2.請購單單身加上pml24/pml25
-#                                                   3.請購量有異動時，不可大於訂單數量，依來源號碼回寫S/O之資料 
+#                                                   3.請購量有異動時，不可大於訂單數量，依來源號碼回寫S/O之資料
 # Modify.........: No.FUN-650191 06/08/14 By rainy pmw03改抓pmx12
 # Modify.........: No.FUN-680029 06/08/23 By Rayven 新增多帳套功能
 # Modify.........: No.FUN-680136 06/09/14 By Jackho 欄位類型修改
@@ -108,7 +108,7 @@
 # Modify.........: No.FUN-690047 06/09/28 By Sarah 畫面單身增加顯示pml38,單身的pml38(可用/不可用)預設跟單頭的pmn45一樣,
 #                                                  當pmk45='Y'時,單身的pml38可進入更改,當pmk45='N'時,單身的pml38不可更改
 # Modify.........: No.FUN-570078 06/10/16 By rainy 1.單身顯示凍結碼pml11
-#                                                  2.單頭的更動序號不可修改                    
+#                                                  2.單頭的更動序號不可修改
 # Modify.........: No.CHI-6A0004 06/10/25 By bnlent g_azixx(本幣取位)與t_azixx(原幣取位)變數定義問題修改
 # Modify.........: No.FUN-6A0036 06/11/13 By rainy 判斷停產(ima140)時，要一併判斷生效日期(ima1401)
 # Modify.........: No.FUN-6B0032 06/11/13 By Czl 增加雙檔單頭折疊功能
@@ -153,7 +153,7 @@
 # Modify.........: No.FUN-7B0080 07/11/16 By saki 自定義欄位功能修改
 # Modify.........: No.TQC-7C0024 07/12/05 By wujie 1,單別未綁定屬性群組，且asms290未選擇單據輸入可新增料件,單身料號以多屬性輸入時,此料號不存在于ima_file時也可完成輸入,并且ima_file并未有料件新增進去,這是錯誤的，應該不允許通過
 #                                                  2,單別未綁定屬性群組，且asms290選擇單據輸入可新增料件,單身料號以多屬性輸入時,此料號不存在于ima_file時也可完成輸入,并且ima_file并未有料件新增進去,這是錯誤的，應該是先新增料件，然后通過檢查
-# Modify.........: No.MOD-7C0050 07/12/07 By claire MISC料件無效時不可使用 
+# Modify.........: No.MOD-7C0050 07/12/07 By claire MISC料件無效時不可使用
 # Modify.........: No.TQC-7C0120 07/12/08 By Davidzv 單身"維護料件資料"action改為調用aimi100
 # Modify.........: No.TQC-7C0144 07/12/13 By wujie  TQC-7C0024中漏了排除MISC開頭的料件
 # Modify.........: No.MOD-7C0225 07/12/28 By Pengu 資料權限不應該影響刪除action的權限顯示
@@ -171,7 +171,7 @@
 # Modify.........: No.MOD-830188 08/03/25 By Dido 單身維護時自動帶 pml08 庫存單位
 # Modify.........: No.FUN-830132 08/03/27 By hellen 行業別拆分表以后，增加INS/DEL行業別TABLE
 # Modify.........: No.FUN-830161 08/04/01 By Carrier 去掉預算編號pml66,pmk06
-# Modify.........: No.FUN-840042 08/04/15 by TSD.zeak 自訂欄位功能修改 
+# Modify.........: No.FUN-840042 08/04/15 by TSD.zeak 自訂欄位功能修改
 # Modify.........: No.CHI-840016 08/04/16 By claire 由訂單來源產生的請購單,修改請購量時,要回寫訂單已轉請購量oeb28
 # Modify.........: No.MOD-840226 08/04/20 By claire 不由訂單來源產生的請購單,刪除時會rollback
 # Modify.........: No.MOD-840201 08/04/20 By claire 凍結碼default為'N'
@@ -209,16 +209,16 @@
 # Modify.........: No.MOD-950256 09/05/30 By Dido 提前給予 g_pml2.pml31,g_pml2.pml31t 值
 # Modify.........: No.MOD-950284 09/06/03 By Smapmin 使用利潤中心功能又做預算控管時,會一直卡在會計科目的欄位
 # Modify.........: No.FUN-960007 09/06/03 By chenmoyan global檔內沒有定義rowid變量
-# Modify.........: No.MOD-960034 09/06/03 By mike 計算pmk40=sum(pml88)            
+# Modify.........: No.MOD-960034 09/06/03 By mike 計算pmk40=sum(pml88)
 # Modify.........: No.MOD-960186 09/07/08 By Smapmin 使用多單位且料件為單一單位時,單位一的轉換率有錯誤
 # Modify.........: No.FUN-950088 09/06/29 By hongmei 單身增加pml123,mse02欄位
 # Modify.........: No.TQC-970119 09/07/13 By lilingyu 錄入完單頭在進入單身前報錯
 # Modify.........: No.FUN-870007 09/07/16 By Zhangyajun 流通零售系統功能修改
-# Modify.........: No.MOD-970187 09/07/21 By mike 在CONTROLO(預設上筆資料)時,加上 LET g_pml_t.* = g_pml[l_ac].*                     
-# Modify.........: No.TQC-970421 09/08/03 By mike 還原MOD-970187的修改.     
-# Modify.........: No.TQC-970335 09/07/29 By dxfwo  sapmt420_slk.4gl                                                                
-#1.單身異動"項次"字段跑on row change段時，不會更新pmli_file的項次字段，                                                             
-#  下次再進入這筆單身數據時，在open t420_bcl_ind時會出現錯誤                                                                        
+# Modify.........: No.MOD-970187 09/07/21 By mike 在CONTROLO(預設上筆資料)時,加上 LET g_pml_t.* = g_pml[l_ac].*
+# Modify.........: No.TQC-970421 09/08/03 By mike 還原MOD-970187的修改.
+# Modify.........: No.TQC-970335 09/07/29 By dxfwo  sapmt420_slk.4gl
+#1.單身異動"項次"字段跑on row change段時，不會更新pmli_file的項次字段，
+#  下次再進入這筆單身數據時，在open t420_bcl_ind時會出現錯誤
 #  g_pmli.pmli02 沒有更新為新值 導致在on row change 時沒有更新為新值
 # Modify.........: No.FUN-980006 09/08/14 By TSD.sar2436 GP5.2架構重整，修改 INSERT INTO 語法
 # Modify.........: No.MOD-960221 09/08/22 By Smapmin 檢核請購數量是否超過訂單數量
@@ -229,13 +229,13 @@
 # Modify.........: No.MOD-9A0028 09/10/07 By Dido 料件與前一筆不同時,應清空前一筆 pml40,pml401
 # Modify.........: No.CHI-960033 09/10/10 By chenmoyan 加pmh22為條件者，再加pmh23=''
 # Modify.........: No.CHI-960022 09/10/15 By chenmoyan 預設單位一數量時，加上判斷，單位一數量為空或為1時，才預設
-# Modify.........: No.FUN-990080 09/10/21 By mike 于请购单单身增加pml16状态码栏位 
-# Modify.........: NO.FUN-9B0023 09/11/04 By baofei 寫入請購單身時，也要一併寫入"電子採購否(pml92)"='N'      
+# Modify.........: No.FUN-990080 09/10/21 By mike 于请购单单身增加pml16状态码栏位
+# Modify.........: NO.FUN-9B0023 09/11/04 By baofei 寫入請購單身時，也要一併寫入"電子採購否(pml92)"='N'
 # Modify.........: NO.FUN-9A0065 09/11/04 By baofei 增加Action"發佈電子採購需求"和身增加二個欄位"電子採購否(pml92)"、"電子採購序號(pml93)"
 # Modify.........: NO.CHI-930021 09/11/17 By jan 虛擬料件不可做任何單據
 # Modify.........: No:MOD-9B0137 09/11/23 By Smapmin 加嚴控管入庫/到廠/到貨日與單據日的檢核
 # Modify.........: No:TQC-9C0003 09/12/10 By lilingyu 刪除一筆請購單號后,未清除掉axmt410訂單那邊生成的"請購單號"和"已轉請購量"等欄位內容
-# Modify.........: No.FUN-9C0069 09/12/14 By bnlent mark or replace rucplant/ruclegal 
+# Modify.........: No.FUN-9C0069 09/12/14 By bnlent mark or replace rucplant/ruclegal
 # Modify.........: No:CHI-9C0002 09/12/15 By Smapmin special_description加入權限控管
 # Modify.........: No:FUN-A10037 10/01/07 By bnlent 1.增加採購類型統采代采insert into ruc_file 2.零售採購中心管控，并改為buttonedit
 # Modify.........: No:FUN-A10034 10/01/07 By baofei   取消確認時加判斷，if 有資料已轉電子採購，則不可取消確認及BUG修改
@@ -247,7 +247,7 @@
 # Modify.........: No:MOD-A30154 10/03/24 By Smapmin 請購單做預算控管時,傳入的年月應為pmk31/pmk32
 # Modify.........: No:MOD-A50021 10/05/07 By Smapmin sfb25-->sfb13
 # Modify.........: No.FUN-A50071 10/05/19 By vealxu GP5.2 增加POS單號字段 并管控如果不為空的情況下 不可取消審核與取消過帳
-# Modify.........: No.FUN-A50054 FUN-A60035 10/05/31 By chenmoyan 增加服饰版二维功能 
+# Modify.........: No.FUN-A50054 FUN-A60035 10/05/31 By chenmoyan 增加服饰版二维功能
 # Modify.........: No:CHI-A40021 10/06/04 By Summer 用agli102科目是否有做專案控管的參數,
 #                                                   做為抓取預算資料時是否要以專案為條件
 # Modify.........: No:MOD-A50129 10/06/15 By Smapmin 單身新增時,不default料號
@@ -256,20 +256,20 @@
 # Modify.........: No:MOD-A70072 10/07/23 By Carrier 供应商查询时,不区分业态
 # Modify.........: No:FUN-A60035 10/07/27 By chenls 服飾版二維功能mark
 # Modify.........: No:FUN-A80016 10/08/02 By houlia p500加傳參數接收QBE資料
-# Modify.........: No:CHI-A80006 10/08/13 By Summer 單身查詢pml2應改為pml24 
+# Modify.........: No:CHI-A80006 10/08/13 By Summer 單身查詢pml2應改為pml24
 # Modify.........: No.FUN-A80087 10/08/31 By Lilan EF簽核時,賦值給g_action_choice
 # Modify.........: No.FUN-A80150 10/09/07 By sabrina 單身新增"計畫批號"(pml919)欄位
 # Modify.........: No.TQC-A90101 10/09/25 By Carrier prompt提示信息多语系化
 # Modify.........: No.FUN-A90009 10/09/29 By destiny B2B修改
 # Modify.........: No.FUN-A80148 10/10/09 By vealxu 因為rtzacti已不使用,所以都不要再使用rtzacti相關的變數名稱
 # Modify.........: No:MOD-AA0099 10/10/19 By sabrina 在INSERT INTO pml_file前再取一次pml09的值
-# Modify.........: No.FUN-AA0059 10/10/22 By chenying 料號開窗控管 
+# Modify.........: No.FUN-AA0059 10/10/22 By chenying 料號開窗控管
 # Modify.........: No.FUN-AA0059 10/11/01 By huangtao 修改料號AFTER FIELD的管控
 # Modify.........: No.MOD-AA0084 10/11/03 By lilingyu 進入單身,未錄入資料,此時按“確定”鍵,程式無法結束錄入動作
 # Modify.........: No.FUN-A80117 10/11/09 By huangtao
 # Modify.........: No.TQC-AB0038 10/11/09 By vealxu sybase err
 # Modify.........: No.FUN-AB0025 10/11/11 By vealxu 全系統增加料件管控
-# Modify.........: No.TQC-AB0081 10/11/28 By lixh1  複製后按esc键取消,"請購日期"欄位也一併顯示出來 
+# Modify.........: No.TQC-AB0081 10/11/28 By lixh1  複製后按esc键取消,"請購日期"欄位也一併顯示出來
 # Modify.........: No.TQC-AB0397 10/11/30 By wangxin 給pml91默認值'N'
 # Modify.........: No.TQC-AC0337 10/12/23 By huangrh 來源為2補貨建議的請購單據不可刪除數據，只能有補貨建議取消確認同時刪除
 # Modify.........: No.MOD-AC0309 10/12/28 By chenying 新增時pml04欄位欄位可開窗複選料號，但複選後，料號不會分項次到請購單單身
@@ -337,7 +337,7 @@
 # Modify.........: No.MOD-C10218 12/02/29 By jt_chen 作廢還原時控卡已轉數量不可大於來源單據數量
 # Modify.........: No:TQC-C30005 12/03/01 By lixiang 修正TQC-C20348的問題
 # Modify.........: No:MOD-C30118 12/03/09 By lixiang 修改新增時的備份值
-# Modify.........: No:TQC-C30196 12/03/10 By lixiang 服飾新增時錄入資料后，再返回來更改母料件,需將後面的數值金額欄位等重新賦值 
+# Modify.........: No:TQC-C30196 12/03/10 By lixiang 服飾新增時錄入資料后，再返回來更改母料件,需將後面的數值金額欄位等重新賦值
 # Modify.........: No:MOD-C30217 12/03/10 By lixiang 控管數量欄位數量不可小於零 和多屬性單身bug修改
 # Modify.........: No:FUN-C30052 12/03/14 By lixiang 支持服飾流通業下母料件可以錄入相同的料件編號
 # Modify.........: No:TQC-C30165 12/03/27 By SunLM 修正複製採購單據時候,匯率不能取到最新值
@@ -373,19 +373,19 @@
 # Modify.........: No:CHI-D20006 13/04/08 By jt_chen 調整單身無資料，進單身也需開窗(4204)詢問USER
 # Modify.........: No.CHI-D30005 13/04/09 By Elise 串查apmi600第一個參數g_argv1為廠商代號,第二個g_argv2為執行功能
 # Modify.........: No.TQC-D40036 13/04/16 By chenjing 取消审核赋值审核异动日期和审核异动人员
-# Modify.........: No:TQC-D40025 13/04/19 By chenjing 修改單身新增時按下放棄鍵未執行AFTER INSERT的問題 
+# Modify.........: No:TQC-D40025 13/04/19 By chenjing 修改單身新增時按下放棄鍵未執行AFTER INSERT的問題
 # Modify.........: No:FUN-D50097 13/05/29 By zhuhao 更改ACTION CONTROLF显示顺序
 # Modify.........: No:TQC-D50082 13/07/15 By qirl 做預算控管時,【費用原因】則是需要必輸的
 # Modify.........: No:TQC-D50078 13/07/16 By lujh 有供應商管控時，直接帶出apmi254中的【幣種】
-# Modify.........: NO.MOD-D90140 13/09/26 By SunLM 增加qbe條件查詢存儲按鈕           
+# Modify.........: NO.MOD-D90140 13/09/26 By SunLM 增加qbe條件查詢存儲按鈕
 
 
 DATABASE ds
- 
+
 GLOBALS "../../config/top.global"
 GLOBALS "../4gl/sapmt420.global"
 GLOBALS "../../axm/4gl/s_slk.global"      #No.FUN-B90101
- 
+
 DEFINE g_bookno1     LIKE aza_file.aza81  #No.FUN-730033
 DEFINE g_bookno2     LIKE aza_file.aza82  #No.FUN-730033
 DEFINE g_flag        LIKE type_file.chr1  #No.FUN-730033
@@ -395,9 +395,9 @@ DEFINE g_pml02       LIKE type_file.chr20  #FUN-890118
 DEFINE g_cnt1        LIKE type_file.num5   #FUN-9A0065
 DEFINE g_rec_b1      LIKE type_file.num5
 DEFINE   g_b_flag       LIKE type_file.chr1   #TQC-D40025
-#DEFINE g_multi_ima01 STRING               #MOD-AC0309   
+#DEFINE g_multi_ima01 STRING               #MOD-AC0309
 DEFINE  g_pml1  DYNAMIC ARRAY OF RECORD
-                ch     LIKE  type_file.chr1,  #選擇 
+                ch     LIKE  type_file.chr1,  #選擇
                 wpc10  LIKE  wpc_file.wpc10,  #No.FUN-A90009
                 pml33  LIKE  pml_file.pml33,  #No.FUN-A90009
                 pml02  LIKE  pml_file.pml02,  #項次
@@ -416,15 +416,15 @@ DEFINE  g_pml1_t  DYNAMIC ARRAY OF RECORD
                 pml07  LIKE  pml_file.pml07,  #請購單位
                 pml20  LIKE  pml_file.pml20  #訂購量
                 END RECORD
-DEFINE g_renew      LIKE  type_file.num5   
-DEFINE g_ac         LIKE  type_file.num5    
+DEFINE g_renew      LIKE  type_file.num5
+DEFINE g_ac         LIKE  type_file.num5
 DEFINE   g_c            DYNAMIC ARRAY OF RECORD
-               pmk09       LIKE pmk_file.pmk09, 
+               pmk09       LIKE pmk_file.pmk09,
                pmc03       LIKE pmc_file.pmc03
-                           END RECORD   
+                           END RECORD
 DEFINE   g_wpc         RECORD LIKE wpc_file.*
 DEFINE g_channel        base.Channel
-DEFINE g_tmpstr         STRING     
+DEFINE g_tmpstr         STRING
 DEFINE g_pml07_t         LIKE pml_file.pml07   #No.FUN-BB0086
 DEFINE g_pml80_t         LIKE pml_file.pml80   #No.FUN-BB0086
 DEFINE g_pml83_t         LIKE pml_file.pml83   #No.FUN-BB0086
@@ -463,9 +463,9 @@ FUNCTION t420(p_argv1,p_argv2,p_argv3,p_argv4) #No.FUN-630010
           p_argv2    LIKE type_file.chr1,     #No.FUN-680136 VARCHAR(01)         #狀況碼
           p_argv3    LIKE pmk_file.pmk02,     #性質
           p_argv4    STRING                   #No.FUN-630010
- 
+
    WHENEVER ERROR CONTINUE
- 
+
    IF g_sma.sma31 matches'[Nn]' THEN    #無使用請購功能
       CALL cl_err(g_sma.sma31,'mfg0032',1)    #No.MOD-870161
       CALL cl_used(g_prog,g_time,2) RETURNING g_time #No.FUN-B40085
@@ -482,32 +482,32 @@ FUNCTION t420(p_argv1,p_argv2,p_argv3,p_argv4) #No.FUN-630010
        po_qty   LIKE sfa_file.sfa04,
        qc_qty   LIKE sfa_file.sfa04,
        wo_qty   LIKE sfa_file.sfa04)
- 
+
    CREATE UNIQUE INDEX p470_t1 ON apm_p470 (part,sfa01,sfa26,sfb13)  #MOD-740471   #MOD-A50021 sfb25--sfb13 #add sfa01 by sx210426
    DROP table  cus_temp
-  
+
    CREATE TEMP TABLE cus_temp (
      c01  LIKE  pml_file.pml02,
      c02  LIKE  pmk_file.pmk09,
-     c03  LIKE  pmk_file.pmk01)  
+     c03  LIKE  pmk_file.pmk01)
    INITIALIZE g_pmk.* TO NULL
    INITIALIZE g_pmk_t.* TO NULL
    INITIALIZE g_pmk_o.* TO NULL
    LET g_rec_b1 = 0   #FUN-9A0065
    #初始化界面的樣式(沒有任何默認屬性組)
    LET lg_smy62 = ''
-   LET lg_group = ''   
- 
+   LET lg_group = ''
+
    LET g_forupd_sql = "SELECT * FROM pmk_file WHERE pmk01 = ? FOR UPDATE"
    LET g_forupd_sql = cl_forupd_sql(g_forupd_sql)
    DECLARE t420_cl CURSOR FROM g_forupd_sql
- 
+
    LET g_argv1 = p_argv1      #單號
    LET g_argv2 = p_argv2      #狀況
    LET g_argv3 = p_argv3      #性質
    LET g_argv4 = p_argv4      #No.FUN-630010
    LET g_ydate = NULL
- 
+
    IF fgl_getenv('EASYFLOW') = "1" THEN   #判斷是否為簽核模式
       LET g_argv1 = aws_efapp_wsk(1)   #取得單號
    END IF
@@ -523,12 +523,12 @@ FUNCTION t420(p_argv1,p_argv2,p_argv3,p_argv4) #No.FUN-630010
              ||"pmkplant,pmkplant_desc,pml47,pml48,pml48_desc,"
              ||"pml49,pml50,pml51,pml52,pml53,pml54,pml55,pml56"
    CALL cl_set_comp_visible(g_sql,g_azw.azw04='2')
-   CALL cl_set_comp_visible('pml919',g_sma.sma1421='Y')         #FUN-A80150 add 
+   CALL cl_set_comp_visible('pml919',g_sma.sma1421='Y')         #FUN-A80150 add
    CALL cl_set_act_visible("e_proc_require",g_aza.aza95='Y')    #No.FUN-A90009
-   CALL cl_set_comp_visible("pmlislk01",FALSE)    #No.FUN-810017    
-   CALL cl_set_comp_visible("pmlslk92",g_aza.aza95 = 'Y')     #FUN-B90101        
-   CALL cl_set_comp_visible("pmk49",g_aza.aza88 = 'Y')#No.FUN-A50071 add  
-   CALL cl_set_comp_visible("pml93,pml92",g_aza.aza95 = 'Y')  #MOD-B30310 add  
+   CALL cl_set_comp_visible("pmlislk01",FALSE)    #No.FUN-810017
+   CALL cl_set_comp_visible("pmlslk92",g_aza.aza95 = 'Y')     #FUN-B90101
+   CALL cl_set_comp_visible("pmk49",g_aza.aza88 = 'Y')#No.FUN-A50071 add
+   CALL cl_set_comp_visible("pml93,pml92",g_aza.aza95 = 'Y')  #MOD-B30310 add
    CALL cl_set_comp_visible("pmkud02,pmkud03,userdefined_field",true)
 #FUN-B90101--add--begin--
 #FUN-B90101--add--end--
@@ -537,21 +537,21 @@ FUNCTION t420(p_argv1,p_argv2,p_argv3,p_argv4) #No.FUN-630010
    CALL cl_set_comp_visible("pml05",g_sma.sma901 = 'Y') #FUN-B80167 add
 
    CALL t420_refresh_detail()   #No.TQC-650108
- 
+
    CALL aws_efapp_toolbar()    #建立簽核模式時的 toolbar icon #FUN-580011
-   
+
    #將aws_gpmcli_toolbar()移到aws_efapp_toolbar()之後
    IF g_bgjob='N' OR cl_null(g_bgjob) THEN
-      IF g_aza.aza71 MATCHES '[Yy]' THEN 
+      IF g_aza.aza71 MATCHES '[Yy]' THEN
          CALL aws_gpmcli_toolbar()
          CALL cl_set_act_visible("gpm_show,gpm_query", TRUE)
       ELSE
          CALL cl_set_act_visible("gpm_show,gpm_query", FALSE)
       END IF
    END IF
-   
-   CALL t420_def_form()    
- 
+
+   CALL t420_def_form()
+
    IF NOT cl_null(g_argv1) THEN
       CASE g_argv4
          WHEN "query"
@@ -577,26 +577,26 @@ FUNCTION t420(p_argv1,p_argv2,p_argv3,p_argv4) #No.FUN-630010
             CALL t420_q()
       END CASE
    END IF
- 
+
    ##傳入簽核模式時不應執行的 action 清單
    #CALL aws_efapp_flowaction("insert, modify, delete, reproduce, detail, query, locale, void, confirm, undo_confirm,easyflow_approval, aps_related_data")  #TQC-740281 #FUN-D20025 mark
    CALL aws_efapp_flowaction("insert, modify, delete, reproduce, detail, query, locale, void, undo_void, confirm, undo_confirm,easyflow_approval, aps_related_data") #FUN-D20025 add
          RETURNING g_laststage
- 
+   call cl_set_act_visible('action_stock_post',false) #darcy add
    CALL t420_menu()
- 
+
    CLOSE WINDOW t420_w
- 
+
 END FUNCTION
- 
+
 FUNCTION t420_cs()
 DEFINE  lc_qbe_sn       LIKE    gbm_file.gbm01    #No.FUN-580031  HCN
 DEFINE  l_ima926        LIKE    ima_file.ima926   #FUN-D30087 add
- 
+
    CLEAR FORM
    CALL g_pml.clear()
 #No.FUN-B90101--add--
-#No.FUN-B90101--end--   
+#No.FUN-B90101--end--
 
    IF NOT cl_null(g_argv1) THEN
       LET g_wc = " pmk01 = '",g_argv1,"'"
@@ -606,7 +606,7 @@ DEFINE  l_ima926        LIKE    ima_file.ima926   #FUN-D30087 add
       INITIALIZE g_pmk.* TO NULL    #No.FUN-750051`
 #FUN-B90101--add--begin--
       DIALOG ATTRIBUTES(UNBUFFERED)
-      CONSTRUCT BY NAME g_wc ON pmk46,pmk01,pmk03,pmk04,pmk48,pmk02,pmk09,pmk05,pmk49,pmk18,   #No.FUN-870007  #FUN-A50071 add pmk49	
+      CONSTRUCT BY NAME g_wc ON pmk46,pmk01,pmk03,pmk04,pmk48,pmk02,pmk09,pmk05,pmk49,pmk18,   #No.FUN-870007  #FUN-A50071 add pmk49
                                 pmkcond,pmkconu,pmkcont,pmk47,pmk50,pmkplant,            #No.FUN-870007 #FUN-CC0057 add pmk50
                                 pmk20,pmk41,pmk10,pmk11,pmk12,pmk13,pmk21,
                                 pmk43,pmk22,pmk42,pmk45,pmkmksg,pmksign,pmk25,
@@ -619,13 +619,13 @@ DEFINE  l_ima926        LIKE    ima_file.ima926   #FUN-D30087 add
 
          BEFORE CONSTRUCT
             CALL cl_qbe_init()
-      END CONSTRUCT      
+      END CONSTRUCT
       CONSTRUCT g_wc2 ON pml02,pml24,pml25,pml47,pml04,pml041,pml07,        #No.FUN-870007 #CHI-A80006 mod pml2->pml24
                          pml48,pml49,pml50,pml51,pml52,pml53,pml54,pml20,    #No.FUN-870007
                          pml83,pml84,pml85,pml80,pml81,pml82,pml86,pml87,
                          pml21,pml35,pml34,pml33,pml919,pml55,pml41,pml190,pml191,pml192,  #No.FUN-630040   #No.TQC-640132 #No.FUN-870007-add-pml55 #FUN-A80150 pml919
                          pml92,pml93,                  #FUN-9A0065 add pml92,pml93
-                         pml12,pml121,pml122,            
+                         pml12,pml121,pml122,
                          pml67,pml90,pml40,pml401,pml31,p31t,        #FUN-810045 add  #No.FUN-830161
                          pml930,pml06,pml16,pml56,pml123                   #FUN-570106  #FUN-670051 #FUN-950088 add pml123 #No.FUN-870007-add-pml56 #FUN-990080 add pml16
                          ,pml91          #No.FUN-920183 add
@@ -633,31 +633,31 @@ DEFINE  l_ima926        LIKE    ima_file.ima926   #FUN-D30087 add
            ,pmlud01,pmlud02,pmlud03,pmlud04,pmlud05,
            pmlud06,pmlud07,pmlud08,pmlud09,pmlud10,
            pmlud11,pmlud12,pmlud13,pmlud14,pmlud15
-           FROM s_pml[1].pml02, 
+           FROM s_pml[1].pml02,
                 s_pml[1].pml24,s_pml[1].pml25,   #NO.FUN-670007 add
                 s_pml[1].pml47,                  #No.FUN-870007
                 s_pml[1].pml04,
                 s_pml[1].pml041,s_pml[1].pml07,
-                s_pml[1].pml48,s_pml[1].pml49,   #No.FUN-870007 
-                s_pml[1].pml50,s_pml[1].pml51,   #No.FUN-870007 
-                s_pml[1].pml52,s_pml[1].pml53,   #No.FUN-870007 
-                s_pml[1].pml54,                  #No.FUN-870007 
+                s_pml[1].pml48,s_pml[1].pml49,   #No.FUN-870007
+                s_pml[1].pml50,s_pml[1].pml51,   #No.FUN-870007
+                s_pml[1].pml52,s_pml[1].pml53,   #No.FUN-870007
+                s_pml[1].pml54,                  #No.FUN-870007
                 s_pml[1].pml20, s_pml[1].pml83,
                 s_pml[1].pml84, s_pml[1].pml85,
                 s_pml[1].pml80, s_pml[1].pml81,
                 s_pml[1].pml82, s_pml[1].pml86,
                 s_pml[1].pml87, s_pml[1].pml21,
-                s_pml[1].pml35, s_pml[1].pml34,   #FUN-570106   #No.TQC-640132 
+                s_pml[1].pml35, s_pml[1].pml34,   #FUN-570106   #No.TQC-640132
                 s_pml[1].pml33, s_pml[1].pml919,s_pml[1].pml55,s_pml[1].pml41,   #FUN-570106   #No.TQC-640132 #No.FUN-870007-add-pml55 #FUN-A80150 add pml919
                 s_pml[1].pml190,s_pml[1].pml191,s_pml[1].pml192,  #No.FUN-630040
                 s_pml[1].pml92,s_pml[1].pmL93,  #FUN-9A0065 add pml92,pml93
-                s_pml[1].pml12, s_pml[1].pml121,   
+                s_pml[1].pml12, s_pml[1].pml121,
                 s_pml[1].pml122,
                 s_pml[1].pml67,s_pml[1].pml90,
                 s_pml[1].pml40,s_pml[1].pml401,
                 s_pml[1].pml31,s_pml[1].pml31t,                 #No.FUN-830161
                 s_pml[1].pml930,s_pml[1].pml06,  #FUN-670051
-                s_pml[1].pml16, #FUN-990080     
+                s_pml[1].pml16, #FUN-990080
                 s_pml[1].pml56,                  #No.FUN-870007
                 s_pml[1].pml123    #FUN-950088 add
                ,s_pml[1].pml91                 #No.FUN-920183 add
@@ -665,10 +665,10 @@ DEFINE  l_ima926        LIKE    ima_file.ima926   #FUN-D30087 add
                 ,s_pml[1].pmlud01,s_pml[1].pmlud02,s_pml[1].pmlud03,s_pml[1].pmlud04,s_pml[1].pmlud05,
                 s_pml[1].pmlud06,s_pml[1].pmlud07,s_pml[1].pmlud08,s_pml[1].pmlud09,s_pml[1].pmlud10,
                 s_pml[1].pmlud11,s_pml[1].pmlud12,s_pml[1].pmlud13,s_pml[1].pmlud14,s_pml[1].pmlud15
-	
+
 		BEFORE CONSTRUCT
 		   CALL cl_qbe_display_condition(lc_qbe_sn)
-      END CONSTRUCT     
+      END CONSTRUCT
 
       ON ACTION CONTROLP
          CASE
@@ -679,11 +679,11 @@ DEFINE  l_ima926        LIKE    ima_file.ima926   #FUN-D30087 add
                  CALL cl_create_qry() RETURNING g_qryparam.multiret
                  DISPLAY g_qryparam.multiret TO pmk01
                  NEXT FIELD pmk01
- 
+
             WHEN INFIELD(pmk05)  #專案代號
                  CALL cl_init_qry_var()
                  LET g_qryparam.state= "c"
-                 LET g_qryparam.form ="q_pja2"  
+                 LET g_qryparam.form ="q_pja2"
                  CALL cl_create_qry() RETURNING g_qryparam.multiret
                  DISPLAY g_qryparam.multiret TO pmk05
                  NEXT FIELD pmk05
@@ -734,13 +734,13 @@ DEFINE  l_ima926        LIKE    ima_file.ima926   #FUN-D30087 add
                  CALL cl_create_qry() RETURNING g_qryparam.multiret
                  DISPLAY g_qryparam.multiret TO pmk15
                  NEXT FIELD pmk15
-            WHEN INFIELD(pmk16) #運送方式                                                                                         
-                 CALL cl_init_qry_var()                                                                                          
-                 LET g_qryparam.form = "q_ged"                                                                                   
-                 LET g_qryparam.state = 'c'                                                                                      
-                 CALL cl_create_qry() RETURNING g_qryparam.multiret                                                              
-                 DISPLAY g_qryparam.multiret TO pmk16                                                                            
-                 NEXT FIELD pmk16 
+            WHEN INFIELD(pmk16) #運送方式
+                 CALL cl_init_qry_var()
+                 LET g_qryparam.form = "q_ged"
+                 LET g_qryparam.state = 'c'
+                 CALL cl_create_qry() RETURNING g_qryparam.multiret
+                 DISPLAY g_qryparam.multiret TO pmk16
+                 NEXT FIELD pmk16
             WHEN INFIELD(pmk17) #廠商資料
                  CALL cl_init_qry_var()
                  LET g_qryparam.form = "q_pmc1"
@@ -778,7 +778,7 @@ DEFINE  l_ima926        LIKE    ima_file.ima926   #FUN-D30087 add
                  NEXT FIELD pmk41
             WHEN INFIELD(pmkconu) #確認人員
                  CALL cl_init_qry_var()
-                 LET g_qryparam.form = "q_pmkconu" 
+                 LET g_qryparam.form = "q_pmkconu"
                  LET g_qryparam.state = 'c'
                  CALL cl_create_qry() RETURNING g_qryparam.multiret
                  DISPLAY g_qryparam.multiret TO pmkconu
@@ -827,31 +827,31 @@ DEFINE  l_ima926        LIKE    ima_file.ima926   #FUN-D30087 add
                  DISPLAY g_qryparam.multiret TO pmkud06
                  NEXT FIELD pmkud06
             WHEN INFIELD(pmlslk04) #料件編號
-                 CALL q_sel_ima(TRUE, "q_ima","","","","","","","",'')  RETURNING  g_qryparam.multiret 
+                 CALL q_sel_ima(TRUE, "q_ima","","","","","","","",'')  RETURNING  g_qryparam.multiret
                  DISPLAY g_qryparam.multiret TO pmlslk04
-                 NEXT FIELD pmlslk04   
+                 NEXT FIELD pmlslk04
             WHEN INFIELD(pmlslk07) #採購單位
                  CALL cl_init_qry_var()
                  LET g_qryparam.form = "q_gfe"
                  LET g_qryparam.state = 'c'
                  CALL cl_create_qry() RETURNING g_qryparam.multiret
                  DISPLAY g_qryparam.multiret TO pmlslk07
-                 NEXT FIELD pmlslk07     
+                 NEXT FIELD pmlslk07
             WHEN INFIELD(pmlslk90) #費用原因
                   CALL cl_init_qry_var()
-                  LET g_qryparam.form ="q_azf01a"   
+                  LET g_qryparam.form ="q_azf01a"
                   LET g_qryparam.state = "c"   #多選
-                  LET g_qryparam.arg1 = '7'      
+                  LET g_qryparam.arg1 = '7'
                   CALL cl_create_qry() RETURNING g_qryparam.multiret
                   DISPLAY g_qryparam.multiret TO pmlslk90
-                  NEXT FIELD pmlslk90     
+                  NEXT FIELD pmlslk90
             WHEN INFIELD(pml04) #料件編號
-#FUN-AA0059--------mod------------str-----------------               
+#FUN-AA0059--------mod------------str-----------------
 #                 CALL cl_init_qry_var()
 #                 LET g_qryparam.form = "q_ima"
 #                 LET g_qryparam.state = 'c'
 #                 CALL cl_create_qry() RETURNING g_qryparam.multiret
-                 CALL q_sel_ima(TRUE, "q_ima","","","","","","","",'')  RETURNING  g_qryparam.multiret 
+                 CALL q_sel_ima(TRUE, "q_ima","","","","","","","",'')  RETURNING  g_qryparam.multiret
 #FUN-AA0059--------mod------------end-----------------
                  DISPLAY g_qryparam.multiret TO pml04
                  NEXT FIELD pml04
@@ -869,7 +869,7 @@ DEFINE  l_ima926        LIKE    ima_file.ima926   #FUN-D30087 add
                  CALL cl_create_qry() RETURNING g_qryparam.multiret
                  DISPLAY g_qryparam.multiret TO pml83
                  NEXT FIELD pml83
- 
+
             WHEN INFIELD(pml80)
                  CALL cl_init_qry_var()
                  LET g_qryparam.state = "c"
@@ -877,7 +877,7 @@ DEFINE  l_ima926        LIKE    ima_file.ima926   #FUN-D30087 add
                  CALL cl_create_qry() RETURNING g_qryparam.multiret
                  DISPLAY g_qryparam.multiret TO pml80
                  NEXT FIELD pml80
- 
+
             WHEN INFIELD(pml86)
                  CALL cl_init_qry_var()
                  LET g_qryparam.state = "c"
@@ -887,7 +887,7 @@ DEFINE  l_ima926        LIKE    ima_file.ima926   #FUN-D30087 add
                  NEXT FIELD pml86
             WHEN INFIELD(pml12)  #專案代號
                  CALL cl_init_qry_var()
-                 LET g_qryparam.form ="q_pja2"  
+                 LET g_qryparam.form ="q_pja2"
                  LET g_qryparam.state = "c"   #多選
                  CALL cl_create_qry() RETURNING g_qryparam.multiret
                  DISPLAY g_qryparam.multiret TO pml12
@@ -949,13 +949,13 @@ DEFINE  l_ima926        LIKE    ima_file.ima926   #FUN-D30087 add
                  SELECT ima926 INTO l_ima926 FROM ima_file  #FUN-D30087 add
                   WHERE ima01 = g_pml[l_ac].pml04           #FUN-D30087 add
                  CALL cl_init_qry_var()
-                 IF l_ima926 = 'Y' THEN            #FUN-D30087 add 
+                 IF l_ima926 = 'Y' THEN            #FUN-D30087 add
                     LET g_qryparam.form = "q_bmj3" #FUN-D30087 add
                  ELSE                              #FUN-D30087 add
                     LET g_qryparam.form = "q_mse"
                  END IF                            #FUN-D30087 add
                  LET g_qryparam.state = 'c'
-                 LET g_qryparam.arg1 = g_pml[l_ac].pml04  #FUN-D30087 add 
+                 LET g_qryparam.arg1 = g_pml[l_ac].pml04  #FUN-D30087 add
                  CALL cl_create_qry() RETURNING g_qryparam.multiret
                  DISPLAY g_qryparam.multiret TO pml123
                  NEXT FIELD pml123
@@ -994,23 +994,23 @@ DEFINE  l_ima926        LIKE    ima_file.ima926   #FUN-D30087 add
 	     CALL cl_qbe_display_condition(lc_qbe_sn)
       #MOD-D90140 add --start-- sunlm
       ON ACTION qbe_save
-         CALL cl_qbe_save() 
-      #MOD-D90140 add --end--		       
+         CALL cl_qbe_save()
+      #MOD-D90140 add --end--
       ON ACTION accept
          EXIT DIALOG
-      
+
       ON ACTION EXIT
          LET INT_FLAG = TRUE
-         EXIT DIALOG 
-          
+         EXIT DIALOG
+
       ON ACTION cancel
          LET INT_FLAG = TRUE
-         EXIT DIALOG          
-      END DIALOG 
-#FUN-B90101--add--end----    
-#FUN-B90101--mark--begin--  
+         EXIT DIALOG
+      END DIALOG
+#FUN-B90101--add--end----
+#FUN-B90101--mark--begin--
 #
-#      CONSTRUCT BY NAME g_wc ON pmk46,pmk01,pmk03,pmk04,pmk48,pmk02,pmk09,pmk05,pmk49,pmk18,   #No.FUN-870007  #FUN-A50071 add pmk49	
+#      CONSTRUCT BY NAME g_wc ON pmk46,pmk01,pmk03,pmk04,pmk48,pmk02,pmk09,pmk05,pmk49,pmk18,   #No.FUN-870007  #FUN-A50071 add pmk49
 #                                pmkcond,pmkconu,pmkcont,pmk47,pmkplant,            #No.FUN-870007
 #                                pmk20,pmk41,pmk10,pmk11,pmk12,pmk13,pmk21,
 #                                pmk43,pmk22,pmk42,pmk45,pmkmksg,pmksign,pmk25,
@@ -1023,7 +1023,7 @@ DEFINE  l_ima926        LIKE    ima_file.ima926   #FUN-D30087 add
 #
 #         BEFORE CONSTRUCT
 #            CALL cl_qbe_init()
-#          
+#
 #         ON ACTION CONTROLP
 #            CASE
 #               WHEN INFIELD(pmk01) #請購單號
@@ -1033,11 +1033,11 @@ DEFINE  l_ima926        LIKE    ima_file.ima926   #FUN-D30087 add
 #                    CALL cl_create_qry() RETURNING g_qryparam.multiret
 #                    DISPLAY g_qryparam.multiret TO pmk01
 #                    NEXT FIELD pmk01
-# 
+#
 #               WHEN INFIELD(pmk05)  #專案代號
 #                    CALL cl_init_qry_var()
 #                    LET g_qryparam.state= "c"
-#                    LET g_qryparam.form ="q_pja2"  
+#                    LET g_qryparam.form ="q_pja2"
 #                    CALL cl_create_qry() RETURNING g_qryparam.multiret
 #                    DISPLAY g_qryparam.multiret TO pmk05
 #                    NEXT FIELD pmk05
@@ -1088,13 +1088,13 @@ DEFINE  l_ima926        LIKE    ima_file.ima926   #FUN-D30087 add
 #                    CALL cl_create_qry() RETURNING g_qryparam.multiret
 #                    DISPLAY g_qryparam.multiret TO pmk15
 #                    NEXT FIELD pmk15
-#               WHEN INFIELD(pmk16) #運送方式                                                                                         
-#                    CALL cl_init_qry_var()                                                                                          
-#                    LET g_qryparam.form = "q_ged"                                                                                   
-#                    LET g_qryparam.state = 'c'                                                                                      
-#                    CALL cl_create_qry() RETURNING g_qryparam.multiret                                                              
-#                    DISPLAY g_qryparam.multiret TO pmk16                                                                            
-#                    NEXT FIELD pmk16 
+#               WHEN INFIELD(pmk16) #運送方式
+#                    CALL cl_init_qry_var()
+#                    LET g_qryparam.form = "q_ged"
+#                    LET g_qryparam.state = 'c'
+#                    CALL cl_create_qry() RETURNING g_qryparam.multiret
+#                    DISPLAY g_qryparam.multiret TO pmk16
+#                    NEXT FIELD pmk16
 #               WHEN INFIELD(pmk17) #廠商資料
 #                    CALL cl_init_qry_var()
 #                    LET g_qryparam.form = "q_pmc1"
@@ -1132,7 +1132,7 @@ DEFINE  l_ima926        LIKE    ima_file.ima926   #FUN-D30087 add
 #                    NEXT FIELD pmk41
 #               WHEN INFIELD(pmkconu) #確認人員
 #                    CALL cl_init_qry_var()
-#                    LET g_qryparam.form = "q_pmkconu" 
+#                    LET g_qryparam.form = "q_pmkconu"
 #                    LET g_qryparam.state = 'c'
 #                    CALL cl_create_qry() RETURNING g_qryparam.multiret
 #                    DISPLAY g_qryparam.multiret TO pmkconu
@@ -1173,38 +1173,38 @@ DEFINE  l_ima926        LIKE    ima_file.ima926   #FUN-D30087 add
 #                  NEXT FIELD pmkud06
 #               OTHERWISE EXIT CASE
 #            END CASE
-# 
+#
 #         ON IDLE g_idle_seconds
 #            CALL cl_on_idle()
 #            CONTINUE CONSTRUCT
-# 
+#
 #         ON ACTION about         #MOD-4C0121
 #            CALL cl_about()      #MOD-4C0121
-# 
+#
 #         ON ACTION help          #MOD-4C0121
 #            CALL cl_show_help()  #MOD-4C0121
-# 
+#
 #         ON ACTION controlg      #MOD-4C0121
 #            CALL cl_cmdask()     #MOD-4C0121
-# 
+#
 #		#No.FUN-580031 --start--     HCN
 #                 ON ACTION qbe_select
 #		   CALL cl_qbe_list() RETURNING lc_qbe_sn
 #		   CALL cl_qbe_display_condition(lc_qbe_sn)
 #		#No.FUN-580031 --end--       HCN
 #      END CONSTRUCT
-# 
+#
 #      IF INT_FLAG THEN
 #         LET INT_FLAG=0
 #         RETURN
 #      END IF
-# 
+#
 #       CONSTRUCT g_wc2 ON pml02,pml24,pml25,pml47,pml04,pml041,pml07,        #No.FUN-870007 #CHI-A80006 mod pml2->pml24
 #                         pml48,pml49,pml50,pml51,pml52,pml53,pml54,pml20,    #No.FUN-870007
 #                         pml83,pml84,pml85,pml80,pml81,pml82,pml86,pml87,
 #                         pml21,pml35,pml34,pml33,pml919,pml55,pml41,pml190,pml191,pml192,  #No.FUN-630040   #No.TQC-640132 #No.FUN-870007-add-pml55 #FUN-A80150 pml919
 #                         pml92,pml93,                  #FUN-9A0065 add pml92,pml93
-#                         pml12,pml121,pml122,            
+#                         pml12,pml121,pml122,
 #                         pml67,pml90,pml40,pml401,pml31,p31t,        #FUN-810045 add  #No.FUN-830161
 #                         pml930,pml06,pml16,pml56,pml123                   #FUN-570106  #FUN-670051 #FUN-950088 add pml123 #No.FUN-870007-add-pml56 #FUN-990080 add pml16
 #                         ,pml91          #No.FUN-920183 add
@@ -1212,35 +1212,35 @@ DEFINE  l_ima926        LIKE    ima_file.ima926   #FUN-D30087 add
 #&ifdef SLK
 #                         ,pmlislk01    #No.FUN-810017
 #&endif
-# 
+#
 #           ,pmlud01,pmlud02,pmlud03,pmlud04,pmlud05,
 #           pmlud06,pmlud07,pmlud08,pmlud09,pmlud10,
 #           pmlud11,pmlud12,pmlud13,pmlud14,pmlud15
-#           FROM s_pml[1].pml02, 
+#           FROM s_pml[1].pml02,
 #                s_pml[1].pml24,s_pml[1].pml25,   #NO.FUN-670007 add
 #                s_pml[1].pml47,                  #No.FUN-870007
 #                s_pml[1].pml04,
 #                s_pml[1].pml041,s_pml[1].pml07,
-#                s_pml[1].pml48,s_pml[1].pml49,   #No.FUN-870007 
-#                s_pml[1].pml50,s_pml[1].pml51,   #No.FUN-870007 
-#                s_pml[1].pml52,s_pml[1].pml53,   #No.FUN-870007 
-#                s_pml[1].pml54,                  #No.FUN-870007 
+#                s_pml[1].pml48,s_pml[1].pml49,   #No.FUN-870007
+#                s_pml[1].pml50,s_pml[1].pml51,   #No.FUN-870007
+#                s_pml[1].pml52,s_pml[1].pml53,   #No.FUN-870007
+#                s_pml[1].pml54,                  #No.FUN-870007
 #                s_pml[1].pml20, s_pml[1].pml83,
 #                s_pml[1].pml84, s_pml[1].pml85,
 #                s_pml[1].pml80, s_pml[1].pml81,
 #                s_pml[1].pml82, s_pml[1].pml86,
 #                s_pml[1].pml87, s_pml[1].pml21,
-#                s_pml[1].pml35, s_pml[1].pml34,   #FUN-570106   #No.TQC-640132 
+#                s_pml[1].pml35, s_pml[1].pml34,   #FUN-570106   #No.TQC-640132
 #                s_pml[1].pml33, s_pml[1].pml919,s_pml[1].pml55,s_pml[1].pml41,   #FUN-570106   #No.TQC-640132 #No.FUN-870007-add-pml55 #FUN-A80150 add pml919
 #                s_pml[1].pml190,s_pml[1].pml191,s_pml[1].pml192,  #No.FUN-630040
 #                s_pml[1].pml92,s_pml[1].pmL93,  #FUN-9A0065 add pml92,pml93
-#                s_pml[1].pml12, s_pml[1].pml121,   
+#                s_pml[1].pml12, s_pml[1].pml121,
 #                s_pml[1].pml122,
 #                s_pml[1].pml67,s_pml[1].pml90,
 #                s_pml[1].pml40,s_pml[1].pml401,
 #                s_pml[1].pml31,s_pml[1].pml31t,                 #No.FUN-830161
 #                s_pml[1].pml930,s_pml[1].pml06,  #FUN-670051
-#                s_pml[1].pml16, #FUN-990080     
+#                s_pml[1].pml16, #FUN-990080
 #                s_pml[1].pml56,                  #No.FUN-870007
 #                s_pml[1].pml123    #FUN-950088 add
 #               ,s_pml[1].pml91                 #No.FUN-920183 add
@@ -1251,7 +1251,7 @@ DEFINE  l_ima926        LIKE    ima_file.ima926   #FUN-D30087 add
 #                ,s_pml[1].pmlud01,s_pml[1].pmlud02,s_pml[1].pmlud03,s_pml[1].pmlud04,s_pml[1].pmlud05,
 #                s_pml[1].pmlud06,s_pml[1].pmlud07,s_pml[1].pmlud08,s_pml[1].pmlud09,s_pml[1].pmlud10,
 #                s_pml[1].pmlud11,s_pml[1].pmlud12,s_pml[1].pmlud13,s_pml[1].pmlud14,s_pml[1].pmlud15
-#	
+#
 #  	        #No.FUN-580031 --start--     HCN
 #		BEFORE CONSTRUCT
 #		   CALL cl_qbe_display_condition(lc_qbe_sn)
@@ -1259,12 +1259,12 @@ DEFINE  l_ima926        LIKE    ima_file.ima926   #FUN-D30087 add
 #         ON ACTION CONTROLP
 #            CASE
 #               WHEN INFIELD(pml04) #料件編號
-##FUN-AA0059---------mod------------str-----------------               
+##FUN-AA0059---------mod------------str-----------------
 ##                    CALL cl_init_qry_var()
 ##                    LET g_qryparam.form = "q_ima"
 ##                    LET g_qryparam.state = 'c'
 ##                    CALL cl_create_qry() RETURNING g_qryparam.multiret
-#                    CALL q_sel_ima(TRUE, "q_ima","","","","","","","",'')  RETURNING  g_qryparam.multiret 
+#                    CALL q_sel_ima(TRUE, "q_ima","","","","","","","",'')  RETURNING  g_qryparam.multiret
 ##FUN-AA0059---------mod------------end-----------------
 #                    DISPLAY g_qryparam.multiret TO pml04
 #                    NEXT FIELD pml04
@@ -1282,7 +1282,7 @@ DEFINE  l_ima926        LIKE    ima_file.ima926   #FUN-D30087 add
 #                    CALL cl_create_qry() RETURNING g_qryparam.multiret
 #                    DISPLAY g_qryparam.multiret TO pml83
 #                    NEXT FIELD pml83
-# 
+#
 #               WHEN INFIELD(pml80)
 #                    CALL cl_init_qry_var()
 #                    LET g_qryparam.state = "c"
@@ -1290,7 +1290,7 @@ DEFINE  l_ima926        LIKE    ima_file.ima926   #FUN-D30087 add
 #                    CALL cl_create_qry() RETURNING g_qryparam.multiret
 #                    DISPLAY g_qryparam.multiret TO pml80
 #                    NEXT FIELD pml80
-# 
+#
 #               WHEN INFIELD(pml86)
 #                    CALL cl_init_qry_var()
 #                    LET g_qryparam.state = "c"
@@ -1300,7 +1300,7 @@ DEFINE  l_ima926        LIKE    ima_file.ima926   #FUN-D30087 add
 #                    NEXT FIELD pml86
 #               WHEN INFIELD(pml12)  #專案代號
 #                  CALL cl_init_qry_var()
-#                  LET g_qryparam.form ="q_pja2"  
+#                  LET g_qryparam.form ="q_pja2"
 #                  LET g_qryparam.state = "c"   #多選
 #                  CALL cl_create_qry() RETURNING g_qryparam.multiret
 #                  DISPLAY g_qryparam.multiret TO pml12
@@ -1372,12 +1372,12 @@ DEFINE  l_ima926        LIKE    ima_file.ima926   #FUN-D30087 add
 #                    DISPLAY g_qryparam.multiret TO pml48
 #                    NEXT FIELD pml48
 #&ifdef SLK
-#               WHEN INFIELD(pmlislk01)                                                                                                 
-#                  CALL cl_init_qry_var()                                                                                            
-#                  LET g_qryparam.form  = "q_skd1"                                                                                   
-#                  LET g_qryparam.state = "c"                                                                                   
-#                  CALL cl_create_qry() RETURNING g_qryparam.multiret                                                                
-#                  DISPLAY g_qryparam.multiret TO pmlislk01                                                                             
+#               WHEN INFIELD(pmlislk01)
+#                  CALL cl_init_qry_var()
+#                  LET g_qryparam.form  = "q_skd1"
+#                  LET g_qryparam.state = "c"
+#                  CALL cl_create_qry() RETURNING g_qryparam.multiret
+#                  DISPLAY g_qryparam.multiret TO pmlislk01
 #                  NEXT FIELD pmlislk01
 #&endif
 #               WHEN INFIELD(pml191)
@@ -1390,34 +1390,34 @@ DEFINE  l_ima926        LIKE    ima_file.ima926   #FUN-D30087 add
 #                 NEXT FIELD pml191
 #               OTHERWISE EXIT CASE
 #            END CASE
-# 
+#
 #         ON IDLE g_idle_seconds
 #            CALL cl_on_idle()
 #            CONTINUE CONSTRUCT
-# 
+#
 #         ON ACTION about         #MOD-4C0121
 #            CALL cl_about()      #MOD-4C0121
-# 
+#
 #         ON ACTION help          #MOD-4C0121
 #            CALL cl_show_help()  #MOD-4C0121
-# 
+#
 #         ON ACTION controlg      #MOD-4C0121
 #            CALL cl_cmdask()     #MOD-4C0121
-# 
+#
 #		#No.FUN-580031 --start--     HCN
 #                    ON ACTION qbe_save
 #		       CALL cl_qbe_save()
 #		#No.FUN-580031 --end--       HCN
 #      END CONSTRUCT
-# 
+#
 #FUN-B90101--mark--end--
       IF INT_FLAG THEN
          RETURN
       END IF
    END IF
- 
+
    LET g_wc = g_wc CLIPPED,cl_get_extra_cond('pmkuser', 'pmkgrup')
- 
+
    IF g_argv2 = '1' THEN      #已核淮
       LET g_wc = g_wc clipped," AND pmk25 IN ('1') "
    END IF
@@ -1429,12 +1429,12 @@ DEFINE  l_ima926        LIKE    ima_file.ima926   #FUN-D30087 add
   #    LET g_wc = g_wc clipped," AND pmk02 = 'SUB' "
   # END IF
 #end-----add by guanyao160721
- 
+
    IF g_wc2=' 1=1 ' OR cl_null(g_wc2) THEN
       LET g_sql="SELECT UNIQUE pmk01 FROM pmk_file ",
                 " WHERE ",g_wc CLIPPED, " ORDER BY pmk01"
 #FUN-B90101--add--begin--
-#FUN-B90101--add--end---                  
+#FUN-B90101--add--end---
    ELSE
       LET g_sql="SELECT UNIQUE pmk01 FROM pmk_file,pml_file ",
                 " WHERE pmk01=pml01 AND ",g_wc CLIPPED," AND ",g_wc2 CLIPPED,
@@ -1442,11 +1442,11 @@ DEFINE  l_ima926        LIKE    ima_file.ima926   #FUN-D30087 add
 #FUN-B90101--add--begin--
 #FUN-B90101--add--end---
    END IF
- 
+
    PREPARE t420_prepare FROM g_sql           # RUNTIME 編譯
    DECLARE t420_cs SCROLL CURSOR WITH HOLD FOR t420_prepare
    DECLARE t420_fill_cs CURSOR FOR t420_prepare     #FUN-CB0014 add
- 
+
    IF g_wc2=' 1=1' OR cl_null(g_wc2) THEN
       LET g_sql= "SELECT COUNT(*) FROM pmk_file WHERE ",g_wc CLIPPED
 #FUN-B90101--add--begin--
@@ -1457,25 +1457,25 @@ DEFINE  l_ima926        LIKE    ima_file.ima926   #FUN-D30087 add
 #FUN-B90101--add--begin--
 #FUN-B90101--add--end--
    END IF
- 
+
    PREPARE t420_precount FROM g_sql
- 
+
    DECLARE t420_count CURSOR FOR t420_precount
- 
+
 END FUNCTION
- 
+
 FUNCTION t420_b_askkey()
    DEFINE l_ima926 LIKE ima_file.ima926  #FUN-D30087 add
 
    CONSTRUCT g_wc2 ON pml02 ,pml24,pml25,
-                      pml04 ,pml041 ,pml20 ,  #NO.FUN-670007 ADD pml24/pml25 
+                      pml04 ,pml041 ,pml20 ,  #NO.FUN-670007 ADD pml24/pml25
                       pml83,pml84,pml85,pml80,pml81,pml82,pml86,pml87,
                       pml35,pml34,pml33,pml919,pml06,pml41,   #FUN-570106   #No.TQC-640132   #FUN-A80150 add pml919
                       pml190,pml191,pml192,     #No.FUN-630040
                       pml92,pml93,       #FUN-9A0065 add pml92,pml93
-                      pml12,pml121,pml122,   
+                      pml12,pml121,pml122,
                       pml67,pml90,pml40,pml401,pml31,pml31t,pml123  #FUN-810045  #No.FUN-830161 #FUN-950088 add apml123
-                 FROM s_pml[1].pml02, 
+                 FROM s_pml[1].pml02,
                       s_pml[1].pml24,s_pml[1].pml25,   #NO.FUN-670007
                       s_pml[1].pml04,
                       s_pml[1].pml041,s_pml[1].pml20,
@@ -1483,7 +1483,7 @@ FUNCTION t420_b_askkey()
                       s_pml[1].pml85, s_pml[1].pml80,
                       s_pml[1].pml81, s_pml[1].pml82,
                       s_pml[1].pml86, s_pml[1].pml87,
-                      s_pml[1].pml35, s_pml[1].pml34,   #FUN-570106   #No.TQC-640132 
+                      s_pml[1].pml35, s_pml[1].pml34,   #FUN-570106   #No.TQC-640132
                       s_pml[1].pml33, s_pml[1].pml919,s_pml[1].pml06,   #FUN-570106   #No.TQC-640132  #FUN-A80150 add pml919
                       s_pml[1].pml41,
                       s_pml[1].pml190,s_pml[1].pml191,s_pml[1].pml192,   #No.FUN-630040
@@ -1505,7 +1505,7 @@ FUNCTION t420_b_askkey()
                      CALL cl_create_qry() RETURNING g_qryparam.multiret
                      DISPLAY g_qryparam.multiret TO pml83
                      NEXT FIELD pml83
- 
+
                 WHEN INFIELD(pml80)
                      CALL cl_init_qry_var()
                      LET g_qryparam.state = "c"
@@ -1513,7 +1513,7 @@ FUNCTION t420_b_askkey()
                      CALL cl_create_qry() RETURNING g_qryparam.multiret
                      DISPLAY g_qryparam.multiret TO pml80
                      NEXT FIELD pml80
- 
+
                 WHEN INFIELD(pml86)
                      CALL cl_init_qry_var()
                      LET g_qryparam.state = "c"
@@ -1521,7 +1521,7 @@ FUNCTION t420_b_askkey()
                      CALL cl_create_qry() RETURNING g_qryparam.multiret
                      DISPLAY g_qryparam.multiret TO pml86
                      NEXT FIELD pml86
- 
+
                 WHEN INFIELD(pml122) #活動
                    CALL cl_init_qry_var()
                    LET g_qryparam.form ="q_pjk3"
@@ -1538,7 +1538,7 @@ FUNCTION t420_b_askkey()
                    NEXT FIELD pml67
                 WHEN INFIELD(pml90) #費用原因
                    CALL cl_init_qry_var()
-                   LET g_qryparam.form ="q_azf01a"    #No.FUN-930104 
+                   LET g_qryparam.form ="q_azf01a"    #No.FUN-930104
                    LET g_qryparam.state = "c"   #多選
                    LET g_qryparam.arg1 = '7'          #No.FUN-930104
                    CALL cl_create_qry() RETURNING g_qryparam.multiret
@@ -1560,7 +1560,7 @@ FUNCTION t420_b_askkey()
                    CALL cl_create_qry() RETURNING g_qryparam.multiret
                    DISPLAY g_qryparam.multiret TO pml40
                    NEXT FIELD pml401
-                WHEN INFIELD(pml123) 
+                WHEN INFIELD(pml123)
                    LET l_ima926 = 'N'                #FUN-D30087 add
                    SELECT ima926 INTO l_ima926 FROM ima_file  #FUN-D30087 add
                     WHERE ima01 = g_pml[l_ac].pml04           #FUN-D30087 add
@@ -1574,30 +1574,30 @@ FUNCTION t420_b_askkey()
                    LET g_qryparam.default1 = g_pml[l_ac].pml123
                    CALL cl_create_qry() RETURNING g_pml[l_ac].pml123
                    DISPLAY BY NAME g_pml[l_ac].pml123
-                   NEXT FIELD pml123   
+                   NEXT FIELD pml123
                 OTHERWISE EXIT CASE
              END CASE
       ON IDLE g_idle_seconds
          CALL cl_on_idle()
          CONTINUE CONSTRUCT
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
+
       ON ACTION controlg      #MOD-4C0121
          CALL cl_cmdask()     #MOD-4C0121
- 
- 
+
+
                  ON ACTION qbe_select
          	   CALL cl_qbe_select()
                  ON ACTION qbe_save
 		   CALL cl_qbe_save()
    END CONSTRUCT
 END FUNCTION
- 
+
 FUNCTION t420_menu()
    DEFINE l_creator    LIKE type_file.chr1      #No.FUN-680136 VARCHAR(1)   #「不准」時是否退回填表人 #FUN-580011
    DEFINE l_flowuser   LIKE type_file.chr1      #No.FUN-680136 VARCHAR(1)   # 是否有指定加簽人員      #FUN-580011
@@ -1605,16 +1605,16 @@ FUNCTION t420_menu()
    DEFINE l_supplierid STRING   #GPM廠商
    DEFINE l_status     LIKE type_file.num10  #GPM傳回值
    DEFINE l_cnt        LIKE type_file.num5   #TQC-760044
- 
+
    LET l_flowuser = "N"                  #FUN-580011
- 
+
    WHILE TRUE
       LET g_chr='@'
    IF cl_null(g_action_flag) OR g_action_flag = "page_main" THEN   #FUN-CB0014 add
       CALL t420_bp("G")
-   ELSE                           
+   ELSE
          CALL t420_list_fill()
-         CALL t420_bp3("G")           
+         CALL t420_bp3("G")
          IF NOT cl_null(g_action_choice) AND l_ac4>0 THEN #將清單的資料回傳到主畫面
             SELECT pmk_file.* INTO g_pmk.*
               FROM pmk_file
@@ -1633,8 +1633,8 @@ FUNCTION t420_menu()
             CALL ui.interface.refresh()
             CALL cl_set_comp_visible("page_list", TRUE)
             CALL cl_set_comp_visible("info", TRUE)
-          END IF               
-      END IF  
+          END IF
+      END IF
       #FUN-CB0014---add---end--
       CASE g_action_choice
          WHEN "insert"
@@ -1658,7 +1658,7 @@ FUNCTION t420_menu()
                CALL t420_copy()
             END IF
          WHEN "detail"
-            IF cl_chk_act_auth() THEN		
+            IF cl_chk_act_auth() THEN
                #CHI-D20006 -- add start --
                LET l_cnt = 0
                SELECT COUNT(*) INTO l_cnt
@@ -1670,7 +1670,7 @@ FUNCTION t420_menu()
                #CHI-D20006 -- add start --
                ELSE
                   CALL t420_g_b()
-               END IF 
+               END IF
                #CHI-D20006 -- add end --
                CALL t420_sign('b')
                ELSE                           #TQC-D40025
@@ -1693,14 +1693,14 @@ FUNCTION t420_menu()
          WHEN "qry_po_status"
             LET g_cmd = "apmq540 ","'",g_pmk.pmk01,"'"
             CALL cl_cmdrun(g_cmd)
- 
+
           WHEN "approval_status"               # MOD-4C0041
             IF cl_chk_act_auth() THEN  #DISPLAY ONLY
                IF aws_condition2() THEN                #FUN-550038
                     CALL aws_efstat2()     #MOD-560007
                END IF
             END IF
- 
+
          WHEN "easyflow_approval"     #FUN-550038
             IF cl_chk_act_auth() THEN
               #FUN-C20026 add str---
@@ -1711,18 +1711,28 @@ FUNCTION t420_menu()
               #FUN-C20026 add end---
                CALL t420_ef()
                CALL t420_show()  #FUN-C20026 add
+               # darcy add s---
+               if g_pmk.pmk25 = 'S' then
+                   let g_action_choice = 'action_stock_post'
+                   let g_bgjob = 'Y'
+                   if cl_chk_act_auth() then
+                       if cl_action(g_prog,g_pmk.pmk25,0,'sign','','',true,false) then end if
+                   end if
+                   let g_action_choice = 'easyflow_approval'
+               end if
+               # darcy add e---
             END IF
-       
+
        #FUN-B30082----ADD----START------
        #@WHEN "變更狀況"
          WHEN "modify_status"
             IF cl_null(g_pmk.pmk01) THEN
-               CALL cl_err('','-400',1)  
+               CALL cl_err('','-400',1)
             ELSE
                LET g_cmd = "apmt900 '",g_pmk.pmk01,"'"
-               CALL cl_cmdrun_wait(g_cmd)  
+               CALL cl_cmdrun_wait(g_cmd)
             END IF
-       #FUN-B30082----ADD----END-------- 
+       #FUN-B30082----ADD----END--------
        #@WHEN "備註"
          WHEN "memo"
             IF cl_chk_act_auth() THEN
@@ -1749,8 +1759,8 @@ FUNCTION t420_menu()
                    CALL t420sub_y_upd(g_pmk.pmk01,g_action_choice)      #CALL 原確認的 update 段
                    IF g_success = 'Y' THEN
                      LET l_cnt = 0
-                     SELECT COUNT(*) INTO l_cnt 
-                       FROM pml_file 
+                     SELECT COUNT(*) INTO l_cnt
+                       FROM pml_file
                       WHERE pml01 = g_pmk.pmk01
                         AND pml190 = 'N'
                      IF l_cnt > 0 THEN
@@ -1789,11 +1799,11 @@ FUNCTION t420_menu()
        #@WHEN "取消作廢"
          WHEN "undo_void"
             IF cl_chk_act_auth() THEN
-               CALL t420_x(2) 
+               CALL t420_x(2)
                CALL t420sub_refresh(g_pmk.pmk01) RETURNING g_pmk.*
                CALL t420_show()
             END IF
-#FUN-D20025 add                       
+#FUN-D20025 add
          WHEN "exporttoexcel"     #FUN-4B0025
             LET w = ui.Window.getCurrent()   #FUN-CB0014 add
             LET f = w.getForm()              #FUN-CB0014 add
@@ -1844,7 +1854,7 @@ FUNCTION t420_menu()
                     EXIT WHILE
                  END IF
               END IF
- 
+
          #@WHEN "不准"
          WHEN "deny"
              IF (l_creator := aws_efapp_backflow()) IS NOT NULL THEN #退回關卡
@@ -1874,7 +1884,7 @@ FUNCTION t420_menu()
                    END IF
                 END IF
               END IF
- 
+
          #@WHEN "加簽"
          WHEN "modify_flow"
               IF aws_efapp_flowuser() THEN   #選擇欲加簽人員
@@ -1882,7 +1892,7 @@ FUNCTION t420_menu()
               ELSE
                  LET l_flowuser = 'N'
               END IF
- 
+
          #@WHEN "撤簽"
          WHEN "withdraw"
               IF cl_confirm("aws-080") THEN
@@ -1890,7 +1900,7 @@ FUNCTION t420_menu()
                     EXIT WHILE
                  END IF
               END IF
- 
+
          #@WHEN "抽單"
          WHEN "org_withdraw"
               IF cl_confirm("aws-079") THEN
@@ -1898,11 +1908,11 @@ FUNCTION t420_menu()
                     EXIT WHILE
                  END IF
               END IF
- 
+
         #@WHEN "簽核意見"
          WHEN "phrase"
               CALL aws_efapp_phrase()
-               
+
          WHEN "related_document"  #相關文件
               IF cl_chk_act_auth() THEN
                  IF g_pmk.pmk01 IS NOT NULL THEN
@@ -1911,8 +1921,8 @@ FUNCTION t420_menu()
                  CALL cl_doc()
                END IF
          END IF
- 
-         #@WHEN GPM規範顯示   
+
+         #@WHEN GPM規範顯示
          WHEN "gpm_show"
               LET l_partnum = ''
               LET l_supplierid = ''
@@ -1920,7 +1930,7 @@ FUNCTION t420_menu()
               LET l_supplierid = g_pmk.pmk09
               CALL aws_gpmcli(l_partnum,l_supplierid)
                 RETURNING l_status
- 
+
          #@WHEN GPM規範查詢
          WHEN "gpm_query"
               LET l_partnum = ''
@@ -1929,18 +1939,18 @@ FUNCTION t420_menu()
               LET l_supplierid = g_pmk.pmk09
               CALL aws_gpmcli(l_partnum,l_supplierid)
                 RETURNING l_status
- 
+
       #APS相關資料
       WHEN "aps_related_data"
             IF cl_chk_act_auth() THEN
                CALL t420_aps()
             END IF
-      WHEN "e_proc_require"                                                                                                      
-         IF cl_chk_act_auth() THEN                                                                                                  
-            CALL t420_epr()                                                                                                         
+      WHEN "e_proc_require"
+         IF cl_chk_act_auth() THEN
+            CALL t420_epr()
          END IF
 #FUN-A60035 ---MARK BEGIN
-#&ifdef SLK         
+#&ifdef SLK
 ##FUN-A50054---begin add
 #     WHEN "style_detail"
 #        IF l_ac>0 THEN
@@ -1948,115 +1958,115 @@ FUNCTION t420_menu()
 #           RETURNING g_pml[l_ac].pml20
 #        END IF
 ##FUN-A50054 --End
-#&endif                    
+#&endif
 #FUN-A60035 ---MARK END
       END CASE
    END WHILE
- 
+
    CLOSE t420_cs
- 
+
 END FUNCTION
- 
+
 FUNCTION t420_k()
    DEFINE l_pml02      LIKE pml_file.pml02    #No.FUN-680136 INTEGER
-   DEFINE l_ver        LIKE mss_file.mss_v   #MOD-8A0276  
+   DEFINE l_ver        LIKE mss_file.mss_v   #MOD-8A0276
    DEFINE l_part       LIKE pml_file.pml04    #No.MOD-490217
    DEFINE l_pml41      LIKE pml_file.pml41   #MOD-8A0276
    DEFINE l_str        STRING   #MOD-8A0276
    DEFINE l_cnt        LIKE type_file.num5   #MOD-8A0276
- 
-   #No.TQC-A90101  --Begin                                                      
-   CALL cl_getmsg('apm-169',g_lang) RETURNING g_msg                             
-                                                                                
-   LET INT_FLAG = 0                                                             
-   PROMPT g_msg CLIPPED FOR l_pml02                                             
-   ON IDLE g_idle_seconds                                                       
-     CALL cl_on_idle()                                                          
-                                                                                
-   ON ACTION about                                                              
-      CALL cl_about()                                                           
-                                                                                
-   ON ACTION help                                                               
-      CALL cl_show_help()                                                       
-                                                                                
-   ON ACTION controlg                                                           
-      CALL cl_cmdask()                                                          
-                                                                                
-   END PROMPT      
+
+   #No.TQC-A90101  --Begin
+   CALL cl_getmsg('apm-169',g_lang) RETURNING g_msg
+
+   LET INT_FLAG = 0
+   PROMPT g_msg CLIPPED FOR l_pml02
+   ON IDLE g_idle_seconds
+     CALL cl_on_idle()
+
+   ON ACTION about
+      CALL cl_about()
+
+   ON ACTION help
+      CALL cl_show_help()
+
+   ON ACTION controlg
+      CALL cl_cmdask()
+
+   END PROMPT
    #CASE g_lang
    #  WHEN '0'
    #     LET INT_FLAG = 0  ######add for prompt bug
    #     PROMPT "請輸入查詢項次:" FOR l_pml02
    #     ON IDLE g_idle_seconds
    #       CALL cl_on_idle()
- 
-   #     ON ACTION about         
-   #        CALL cl_about()     
- 
-   #     ON ACTION help          
-   #        CALL cl_show_help() 
- 
-   #     ON ACTION controlg      
-   #        CALL cl_cmdask()     
- 
+
+   #     ON ACTION about
+   #        CALL cl_about()
+
+   #     ON ACTION help
+   #        CALL cl_show_help()
+
+   #     ON ACTION controlg
+   #        CALL cl_cmdask()
+
    #     END PROMPT
    #  WHEN '2'
    #         LET INT_FLAG = 0  ######add for prompt bug
    #    PROMPT "請輸入查詢項次:" FOR l_pml02
    #     ON IDLE g_idle_seconds
    #       CALL cl_on_idle()
- 
-   #     ON ACTION about         
-   #        CALL cl_about()     
- 
-   #     ON ACTION help          
-   #        CALL cl_show_help() 
- 
-   #     ON ACTION controlg      
-   #        CALL cl_cmdask()     
- 
+
+   #     ON ACTION about
+   #        CALL cl_about()
+
+   #     ON ACTION help
+   #        CALL cl_show_help()
+
+   #     ON ACTION controlg
+   #        CALL cl_cmdask()
+
    #     END PROMPT
    #  OTHERWISE
    #         LET INT_FLAG = 0  ######add for prompt bug
    #    PROMPT "Enter Qry Line #:" FOR l_pml02
    #       ON IDLE g_idle_seconds
    #          CALL cl_on_idle()
- 
+
    #   ON ACTION about         #MOD-4C0121
    #      CALL cl_about()      #MOD-4C0121
- 
+
    #   ON ACTION help          #MOD-4C0121
    #      CALL cl_show_help()  #MOD-4C0121
- 
+
    #   ON ACTION controlg      #MOD-4C0121
    #      CALL cl_cmdask()     #MOD-4C0121
- 
- 
+
+
    #    END PROMPT
    #END CASE
    #No.TQC-A90101  --End
- 
+
    CLOSE WINDOW t420_k_w
- 
+
    IF INT_FLAG THEN
       LET INT_FLAG = 0
       RETURN
    END IF
- 
+
    SELECT pml41,pml04 INTO l_pml41,l_part FROM pml_file    #MOD-8A0276
     WHERE pml01 = g_pmk.pmk01
       AND pml02 = l_pml02
- 
-   LET l_str = l_pml41   
-   LET l_cnt = l_str.getIndexOf('-',1)   
-   LET l_ver = l_str.subString(1,l_cnt-1)   
- 
+
+   LET l_str = l_pml41
+   LET l_cnt = l_str.getIndexOf('-',1)
+   LET l_ver = l_str.subString(1,l_cnt-1)
+
    LET g_cmd = "amrq500 '",l_ver CLIPPED,"' '",l_part,"'"
- 
+
    CALL cl_cmdrun(g_cmd)
- 
+
 END FUNCTION
- 
+
 FUNCTION t420_a()
    DEFINE  l_chr       LIKE type_file.chr1,    #No.FUN-680136 VARCHAR(01)
            l_prt       LIKE type_file.chr1,    #No.FUN-680136 VARCHAR(01)
@@ -2065,7 +2075,7 @@ FUNCTION t420_a()
    DEFINE  ls_doc      STRING
    DEFINE  li_inx      LIKE type_file.num10    #No.FUN-680136 INTEGER
    DEFINE l_pmkplant_desc LIKE azp_file.azp02  #No.FUN-870007
- 
+
    IF s_shut(0) THEN RETURN END IF
    IF g_sma.sma44 MATCHES'[Nn]' THEN           #請購單不可直接輸入
       CALL cl_err(g_sma.sma44,'mfg0033',1)
@@ -2085,17 +2095,17 @@ FUNCTION t420_a()
        LET g_pmk.pmk01 = g_sheet               #單別
        LET g_pmk.pmk04 = g_ydate               #收貨日期
    END IF
- 
+
    SELECT azn02,azn04 INTO g_pmk.pmk31,g_pmk.pmk32 FROM azn_file
     WHERE azn01 = g_pmk.pmk04
    IF SQLCA.sqlcode THEN
-      CALL cl_err3("sel","azn_file",g_pmk.pmk04,"","mfg0027","","",1)  
+      CALL cl_err3("sel","azn_file",g_pmk.pmk04,"","mfg0027","","",1)
       LET g_pmk.pmk04 = g_pmk_o.pmk04
       DISPLAY BY NAME g_pmk.pmk04
    END IF
    CALL s_get_bookno(YEAR(g_pmk.pmk04))
         RETURNING g_flag,g_bookno1,g_bookno2
- 
+
    LET g_pmk01_t = NULL
    IF NOT cl_null(g_argv3) THEN
       LET g_pmk.pmk02 = g_argv3
@@ -2138,8 +2148,8 @@ FUNCTION t420_a()
    LET g_pmk.pmk47 = g_plant
    LET g_pmk.pmk50 = null    #FUN-CC0057 add
    LET g_pmk.pmk48 = TIME
-   IF g_azw.azw04 = '2' THEN   
-      SELECT azp02 INTO l_pmkplant_desc FROM azp_file 
+   IF g_azw.azw04 = '2' THEN
+      SELECT azp02 INTO l_pmkplant_desc FROM azp_file
        WHERE azp01 = g_plant
       DISPLAY l_pmkplant_desc,l_pmkplant_desc
            TO pmk47_desc,pmkplant_desc
@@ -2184,11 +2194,11 @@ FUNCTION t420_a()
        IF cl_null(g_pmk.pmkmksg) THEN
           LET  g_pmk.pmkmksg = 'N'
        END IF
- 
-      IF cl_null(g_pmk.pmk46) THEN 
+
+      IF cl_null(g_pmk.pmk46) THEN
          LET g_pmk.pmk46 = '1'
-      END IF 
-      
+      END IF
+
        #MOD-C10008 ----- add start -----
        IF g_smy.smy59 = 'Y' AND cl_null(g_pmk.pmk22) THEN
           LET g_pmk.pmk22 = g_aza.aza17
@@ -2206,22 +2216,22 @@ FUNCTION t420_a()
           CONTINUE WHILE
        ELSE
           COMMIT WORK    #No:7766
- 
+
           CALL cl_flow_notify(g_pmk.pmk01,'I')
           SELECT pmk01 INTO g_pmk.pmk01 FROM pmk_file
             WHERE pmk01 = g_pmk.pmk01
 
- 
+
           #單據別有做預管控管時，才顯示預算相關欄位 預算/部門/科目一
           CALL cl_set_comp_visible("pml67,pml40,pml31,pml31t",g_smy.smy59='Y')          #No.FUN-830161
           #單據別有做預算控管且有使用多套帳時才顯示科目二
-          CALL cl_set_comp_visible("pml401",g_smy.smy59='Y' AND g_aza.aza63='Y')  
-								 
+          CALL cl_set_comp_visible("pml401",g_smy.smy59='Y' AND g_aza.aza63='Y')
+
 #CHI-D20006 -- mark start #程式段搬移為獨立FUNCTION t420_g_b()--
 #          #將prompt改開窗滑鼠選
 #&ifdef SLK
 #         #FUN-C20006--add--begin--
-#          IF g_azw.azw04 = '2' THEN 
+#          IF g_azw.azw04 = '2' THEN
 #             LET g_rec_b = 0
 #             LET g_rec_b2= 0
 #             LET g_rec_b3= 0
@@ -2229,23 +2239,23 @@ FUNCTION t420_a()
 #             CALL g_pmlslk.clear()
 #             CALL g_imx.clear()
 #            #CALL t420_b2()    #FUN-C60098--mark
-#             CALL t420_b2_i()  #FUN-C60098--add 
+#             CALL t420_b2_i()  #FUN-C60098--add
 #          ELSE
 #         #FUN-C20006--add--end--
 #             OPEN WINDOW t4206_w WITH FORM "apm/42f/apmt4206"
 #                ATTRIBUTE (STYLE = g_win_style CLIPPED) #No.FUN-580092 HCN
-#          
+#
 #             CALL cl_ui_locale("apmt4206")
 #          END IF        #FUN-C20006 add
 #&else
 #          OPEN WINDOW t4204_w WITH FORM "apm/42f/apmt4204"
 #             ATTRIBUTE (STYLE = g_win_style CLIPPED) #No.FUN-580092 HCN
-# 
+#
 #          CALL cl_ui_locale("apmt4204")
-#&endif 
+#&endif
 #           LET l_chr='1'   #MOD-530423
-#          INPUT l_chr WITHOUT DEFAULTS FROM FORMONLY.a  
-# 
+#          INPUT l_chr WITHOUT DEFAULTS FROM FORMONLY.a
+#
 #&ifdef SLK
 #             AFTER FIELD a
 #                IF l_chr NOT MATCHES '[1234]' THEN  #No.FUN-870124 add 4
@@ -2256,30 +2266,30 @@ FUNCTION t420_a()
 #            IF l_chr NOT MATCHES '[1234]' THEN  #No.FUN-A20039 add 4
 #               NEXT FIELD a
 #            END IF
-#&endif 
-# 
+#&endif
+#
 #          ON ACTION CONTROLR
 #             CALL cl_show_req_fields()
-# 
+#
 #          ON ACTION CONTROLG
 #             CALL cl_cmdask()
-# 
+#
 #          AFTER INPUT
 #             IF INT_FLAG THEN                         # 若按了DEL鍵
 #                LET INT_FLAG = 0
 #                EXIT INPUT
 #             END IF
-# 
+#
 #          ON IDLE g_idle_seconds
 #             CALL cl_on_idle()
 #             CONTINUE INPUT
-# 
+#
 #          ON ACTION about         #MOD-4C0121
 #             CALL cl_about()      #MOD-4C0121
-# 
+#
 #          ON ACTION help          #MOD-4C0121
 #             CALL cl_show_help()  #MOD-4C0121
-# 
+#
 #          END INPUT
 #          IF INT_FLAG THEN
 #             LET INT_FLAG=0
@@ -2288,14 +2298,14 @@ FUNCTION t420_a()
 #&ifdef SLK
 #          IF g_azw.azw04 <> '2' THEN           #FUN-C20006 add
 #             CLOSE WINDOW t4206_w              #結束畫面
-#          END IF                               #FUN-C20006 add 
+#          END IF                               #FUN-C20006 add
 #&else
 #          CLOSE WINDOW t4204_w                 #結束畫面
-#&endif 
+#&endif
 #
 ##FUN-C20006--add--begin--
 #&ifdef SLK
-#          IF g_azw.azw04 <> '2' THEN 
+#          IF g_azw.azw04 <> '2' THEN
 #             IF cl_null(l_chr) THEN
 #                LET l_chr = '1'
 #             END IF
@@ -2410,16 +2420,16 @@ FUNCTION t420_a()
 #            LET g_pmk_o.* = g_pmk.*                # 保存上筆資料
 #            CALL t420_sign('a')
 #         END IF
-#&endif   
+#&endif
 #CHI-D20006 -- mark end --
           CALL t420_g_b()   #CHI-D20006 add
        END IF   #CHI-D20006 add
- 
+
        IF NOT cl_null(g_pmk.pmk01) AND g_smy.smydmy4='Y'
           AND g_smy.smyapr <> 'Y'                        #確認  #FUN-640184
-       THEN 
+       THEN
           LET g_action_choice = "insert"      #FUN-640184
- 
+
          CALL t420sub_y_chk(g_pmk.pmk01)          #CALL 原確認的 check 段
           IF g_success = "Y" THEN
               CALL t420sub_y_upd(g_pmk.pmk01,g_action_choice)      #CALL 原確認的 update 段
@@ -2433,7 +2443,7 @@ FUNCTION t420_a()
        EXIT WHILE
    END WHILE
 END FUNCTION
- 
+
 FUNCTION t420_i(p_cmd)
     DEFINE
         p_cmd           LIKE type_file.chr1,     #No.FUN-680136 VARCHAR(1)
@@ -2441,7 +2451,7 @@ FUNCTION t420_i(p_cmd)
         l_buf           LIKE type_file.chr1000,  #No.FUN-680136 VARCHAR(30)
         l_cmd           LIKE type_file.chr1000,  #No.FUN-680136 VARCHAR(60)
         l_flag          LIKE type_file.chr1,     #No.FUN-680136 VARCHAR(01)
-        l_pnz01         LIKE pnz_file.pnz01, #FUN-930113 
+        l_pnz01         LIKE pnz_file.pnz01, #FUN-930113
         l_pmc03         LIKE pmc_file.pmc03,
         l_gen02         LIKE gen_file.gen02,
         l_n,l_cnt       LIKE type_file.num5     #No.FUN-680136 SMALLINT
@@ -2454,13 +2464,13 @@ FUNCTION t420_i(p_cmd)
 #CHI-B80082 -- end --
 DEFINE l_ged02          LIKE ged_file.ged02  #TQC-BB0128
 DEFINE l_pmk42          LIKE pmk_file.pmk42    #TQC-C30165
-DEFINE l_cnt1           LIKE type_file.num5 #FUN-C80045 
+DEFINE l_cnt1           LIKE type_file.num5 #FUN-C80045
     DISPLAY BY NAME g_pmk.pmk18,g_pmk.pmkuser,g_pmk.pmkgrup,
                     g_pmk.pmk46,g_pmk.pmk47,g_pmk.pmk50,g_pmk.pmkplant,  #No.FUN-870007   #FUN-CC0047 add pmk50
                     g_pmk.pmkcrat,g_pmk.pmk48,               #No.FUN-870007
                     g_pmk.pmkdate,g_pmk.pmkacti
                    ,g_pmk.pmkoriu,g_pmk.pmkorig             #TQC-A30041 ADD
- 
+
     CALL cl_set_head_visible("","YES")           #No.FUN-6B0032
     INPUT BY NAME g_pmk.pmkoriu,g_pmk.pmkorig,
          g_pmk.pmk01,g_pmk.pmk03,g_pmk.pmk04,g_pmk.pmk48,g_pmk.pmk02, #No.FUN-870007-add-pmk48
@@ -2474,16 +2484,16 @@ DEFINE l_cnt1           LIKE type_file.num5 #FUN-C80045
          g_pmk.pmkud06,g_pmk.pmkud07,g_pmk.pmkud08,g_pmk.pmkud09,g_pmk.pmkud10,
          g_pmk.pmkud11,g_pmk.pmkud12,g_pmk.pmkud13,g_pmk.pmkud14,g_pmk.pmkud15,
          g_pmk.pmkuser,g_pmk.pmkgrup,g_pmk.pmkmodu,g_pmk.pmkdate,
-         g_pmk.pmkacti 
+         g_pmk.pmkacti
         WITHOUT DEFAULTS
- 
+
         BEFORE INPUT
             LET g_before_input_done = FALSE
             CALL t420_set_entry(p_cmd)
             CALL t420_set_no_entry(p_cmd)
             LET g_before_input_done = TRUE
             CALL cl_set_docno_format("pmk01")
- 
+
         AFTER FIELD pmk01
             IF NOT cl_null(g_pmk.pmk01) THEN
                LET g_t1=s_get_doc_no(g_pmk.pmk01)
@@ -2501,10 +2511,10 @@ DEFINE l_cnt1           LIKE type_file.num5 #FUN-C80045
                   SELECT smy62 INTO lg_smy62 FROM smy_file WHERE smyslip = g_t1
                   #刷新界面顯示
                   CALL t420_refresh_detail()
-               ELSE 
+               ELSE
                   LET lg_smy62 = ''
-               END IF         
- 
+               END IF
+
                CALL s_check_no("apm",g_pmk.pmk01,g_pmk01_t,"1","pmk_file","pmk01","") RETURNING li_result,g_pmk.pmk01
                DISPLAY BY NAME g_pmk.pmk01
                IF (NOT li_result) THEN
@@ -2519,7 +2529,7 @@ DEFINE l_cnt1           LIKE type_file.num5 #FUN-C80045
                      DISPLAY BY NAME g_pmk.pmk02
                   END IF
                END IF
-               
+
                 IF g_pmk_t.pmk01 IS NULL OR
                    (g_pmk.pmk01 != g_pmk_t.pmk01 ) THEN
                    LET  g_pmk.pmkmksg = g_smy.smyapr
@@ -2528,15 +2538,15 @@ DEFINE l_cnt1           LIKE type_file.num5 #FUN-C80045
                    DISPLAY BY NAME g_pmk.pmksign   #簽核等級
                 END IF
                 LET g_pmk.pmkprsw = 'Y' #g_smy.smyprint      #modi by kitty 96-06-18
-            ELSE                                                                   
-               IF g_sma.sma120 = 'Y' AND g_sma.sma907 = 'Y' THEN                   
-                  LET lg_smy62 = ''                                                
-                  CALL t420_refresh_detail()                                       
-               END IF                                                              
+            ELSE
+               IF g_sma.sma120 = 'Y' AND g_sma.sma907 = 'Y' THEN
+                  LET lg_smy62 = ''
+                  CALL t420_refresh_detail()
+               END IF
             END IF
             CALL t420_set_entry(p_cmd)   #MOD-910060
             CALL t420_set_no_entry(p_cmd)
- 
+
         AFTER FIELD pmk02  #單據性質
            IF NOT cl_null(g_pmk.pmk02) THEN
                IF g_pmk.pmk02 != 'REG' AND g_pmk.pmk02 != 'EXP' AND
@@ -2548,7 +2558,7 @@ DEFINE l_cnt1           LIKE type_file.num5 #FUN-C80045
                END IF
                LET g_pmk_o.pmk02 = g_pmk.pmk02
            END IF
- 
+
       AFTER FIELD pmk04       #請購日期(預設會計年度/期間)
           IF NOT cl_null(g_pmk.pmk04) THEN
              #MOD-C70108 add begin
@@ -2556,7 +2566,7 @@ DEFINE l_cnt1           LIKE type_file.num5 #FUN-C80045
                CALL cl_err('','mfg9999',0)
                NEXT FIELD pmk04
              END IF
-             #MOD-C70108 add end          
+             #MOD-C70108 add end
              IF (g_pmk_o.pmk04 IS NULL) OR (g_pmk_o.pmk04 != g_pmk.pmk04) THEN
                  SELECT azn02,azn04 INTO g_pmk.pmk31,g_pmk.pmk32 FROM azn_file
                   WHERE azn01 = g_pmk.pmk04
@@ -2574,31 +2584,31 @@ DEFINE l_cnt1           LIKE type_file.num5 #FUN-C80045
                 NEXT FIELD pmk04
              END IF
              #TQC-C30165--begin
-             IF g_aza.aza17 != g_pmk.pmk22 THEN 
-                IF NOT cl_null(g_pmk_o.pmk04) AND g_pmk_o.pmk04 != g_pmk.pmk04 THEN 
-                   IF cl_confirm('apm-701') THEN 
+             IF g_aza.aza17 != g_pmk.pmk22 THEN
+                IF NOT cl_null(g_pmk_o.pmk04) AND g_pmk_o.pmk04 != g_pmk.pmk04 THEN
+                   IF cl_confirm('apm-701') THEN
                       CALL s_curr3(g_pmk.pmk22,g_pmk.pmk04,g_sma.sma904)
                             RETURNING g_pmk.pmk42
                       DISPLAY BY NAME g_pmk.pmk42
-                   END IF  
-                END IF 
-             END IF 
+                   END IF
+                END IF
+             END IF
              #TQC-C30165--end
              LET g_pmk_o.pmk04 = g_pmk.pmk04
            END IF
- 
+
           AFTER FIELD pmk05
            IF NOT cl_null(g_pmk.pmk05) THEN
               SELECT COUNT(*) INTO g_cnt FROM pja_file
                WHERE pja01 = g_pmk.pmk05
-                 AND pjaacti = 'Y'    
+                 AND pjaacti = 'Y'
                  AND pjaclose='N'             #FUN-960038
               IF g_cnt = 0 THEN
                  CALL cl_err(g_pmk.pmk05,'asf-984',0)
                  NEXT FIELD pmk05
               END IF
            END IF
- 
+
         AFTER FIELD pmk09     #供應商
           IF NOT cl_null(g_pmk.pmk09) THEN
              IF (g_pmk_o.pmk09 IS NULL) OR (g_pmk_o.pmk09 != g_pmk.pmk09)
@@ -2612,12 +2622,12 @@ DEFINE l_cnt1           LIKE type_file.num5 #FUN-C80045
                   END IF
                   IF p_cmd='u' THEN
 #CHI-B80082 -- mark begin --
-                    #SELECT COUNT(*) INTO l_n FROM pmk_file,pml_file 
+                    #SELECT COUNT(*) INTO l_n FROM pmk_file,pml_file
                     # WHERE pmk01=g_pmk.pmk01
                     #   AND pml01=pmk01
-                    #   AND pml04 IN (SELECT ima01 FROM ima_file 
+                    #   AND pml04 IN (SELECT ima01 FROM ima_file
                     #                  WHERE ima915 IN ('1','3'))
-                    #IF l_n > 0 THEN                    
+                    #IF l_n > 0 THEN
                     #   CALL cl_err('','apm-281',1)
                     #   LET g_pmk.pmk09 = g_pmk_o.pmk09
                     #   DISPLAY BY NAME g_pmk.pmk09
@@ -2649,7 +2659,7 @@ DEFINE l_cnt1           LIKE type_file.num5 #FUN-C80045
                   CALL t420_pmk09_cd()     #show 出預設值
                   IF g_aza.aza17 = g_pmk.pmk22 THEN   #本幣
                      LET g_pmk.pmk42 = 1
-                  ELSE 
+                  ELSE
                      CALL s_curr3(g_pmk.pmk22,g_pmk.pmk04,g_sma.sma904) #FUN-640085
                      RETURNING g_pmk.pmk42
                   END IF
@@ -2663,18 +2673,18 @@ DEFINE l_cnt1           LIKE type_file.num5 #FUN-C80045
              LET g_pmk_o.pmk09 = g_pmk.pmk09
           END IF
           IF cl_null(g_pmk.pmk09) THEN DISPLAY '  ' TO FORMONLY.pmc03 END IF  #MOD-780026 add
- 
+
        AFTER FIELD pmk10     #送貨地址
           IF NOT cl_null(g_pmk.pmk10) THEN
              LET l_cnt=0
              SELECT COUNT(*) INTO l_cnt FROM pme_file
               WHERE pme01=g_pmk.pmk10 AND pme02 IN ('0','2')
-             IF l_cnt=0 THEN 
+             IF l_cnt=0 THEN
                     CALL cl_err(g_pmk.pmk10,'apm-423',0)                      #No.MOD-870161
                     NEXT FIELD pmk10
              END IF
           END IF
- 
+
        AFTER FIELD pmk11     #發票地址
           IF NOT cl_null(g_pmk.pmk11) THEN
              LET l_cnt=0
@@ -2682,10 +2692,10 @@ DEFINE l_cnt1           LIKE type_file.num5 #FUN-C80045
               WHERE pme01=g_pmk.pmk11 AND pme02 IN ('1','2')
              IF l_cnt=0 THEN
                    CALL cl_err(g_pmk.pmk11,'apm-424',0)                       #No.MOD-870161
-                   NEXT FIELD pmk11 
+                   NEXT FIELD pmk11
              END IF
           END IF
- 
+
        AFTER FIELD pmk12       #請購員
           IF NOT cl_null(g_pmk.pmk12) THEN
               IF g_pmk_o.pmk12 IS NULL OR (g_pmk.pmk12 != g_pmk_o.pmk12 ) THEN
@@ -2700,7 +2710,7 @@ DEFINE l_cnt1           LIKE type_file.num5 #FUN-C80045
               END IF
               LET g_pmk_o.pmk12 = g_pmk.pmk12
           END IF
- 
+
        AFTER FIELD pmk13       #請購部門
           IF NOT cl_null(g_pmk.pmk13) THEN
               IF g_pmk_o.pmk13 IS NULL OR (g_pmk.pmk13 != g_pmk_o.pmk13 ) THEN
@@ -2718,19 +2728,19 @@ DEFINE l_cnt1           LIKE type_file.num5 #FUN-C80045
      AFTER FIELD pmk16
           IF NOT cl_null(g_pmk.pmk16) THEN
             LET l_n=0
-              SELECT count(*) INTO l_n from ged_file 
+              SELECT count(*) INTO l_n from ged_file
                WHERE ged01=g_pmk.pmk16
-            IF l_n=0 THEN 
+            IF l_n=0 THEN
                CALL cl_err(g_pmk.pmk16,'apm-425',0)
                NEXT FIELD pmk16
             END IF
             #TQC-BB0128--begin
             SELECT ged02 INTO l_ged02 FROM ged_file
                WHERE ged01=g_pmk.pmk16
-            DISPLAY l_ged02 TO ged02  
+            DISPLAY l_ged02 TO ged02
             #TQC-BB0128--end
           END IF
- 
+
         AFTER FIELD pmk20                       #付款條件
           IF NOT cl_null(g_pmk.pmk20) THEN
              IF (g_pmk_o.pmk20 IS NULL) OR (g_pmk_o.pmk20 != g_pmk.pmk20) THEN
@@ -2746,7 +2756,7 @@ DEFINE l_cnt1           LIKE type_file.num5 #FUN-C80045
              LET g_pmk_o.pmk20 = g_pmk.pmk20
            END IF
           IF cl_null(g_pmk.pmk20) THEN DISPLAY '  ' TO pma02 END IF  #MOD-780083 add
- 
+
         AFTER FIELD pmk21                       #稅別條件
             IF NOT cl_null(g_pmk.pmk21) THEN
               IF (g_pmk_o.pmk21 IS NULL) OR (g_pmk.pmk21 != g_pmk_o.pmk21) THEN
@@ -2760,13 +2770,13 @@ DEFINE l_cnt1           LIKE type_file.num5 #FUN-C80045
                   END IF
               END IF
            ELSE
-	       LET g_pmk.pmk43 = 0 
-	       LET g_gec07 = 'N' 
-	       DISPLAY g_gec07 TO gec07 
+	       LET g_pmk.pmk43 = 0
+	       LET g_gec07 = 'N'
+	       DISPLAY g_gec07 TO gec07
 	       DISPLAY BY NAME g_pmk.pmk43
-            END IF  
+            END IF
               LET g_pmk_o.pmk21 = g_pmk.pmk21
- 
+
         AFTER FIELD pmk43          #稅率
             IF cl_null(g_pmk.pmk43) THEN
                LET g_pmk.pmk43 = 0
@@ -2779,7 +2789,7 @@ DEFINE l_cnt1           LIKE type_file.num5 #FUN-C80045
                  NEXT FIELD pmk43
             END IF
             LET g_pmk_o.pmk43 = g_pmk.pmk43
- 
+
         AFTER FIELD pmk22                       #幣別
             IF NOT cl_null(g_pmk.pmk22) THEN
               IF (g_pmk_o.pmk22 IS NULL) OR (g_pmk_o.pmk22 != g_pmk.pmk22)
@@ -2812,18 +2822,18 @@ DEFINE l_cnt1           LIKE type_file.num5 #FUN-C80045
                       #TQC-D50078--add--end--
                       IF g_aza.aza17 = g_pmk.pmk22 THEN   #本幣
                           LET g_pmk.pmk42 = 1
-                      ELSE 
+                      ELSE
                           CALL s_curr3(g_pmk.pmk22,g_pmk.pmk04,g_sma.sma904) #FUN-640085
                           RETURNING g_pmk.pmk42
                       END IF
                       DISPLAY BY NAME g_pmk.pmk42
               END IF
-            ELSE 
+            ELSE
                LET g_pmk.pmk42 = 1
                DISPLAY BY NAME g_pmk.pmk42
-            END IF 
+            END IF
               LET g_pmk_o.pmk22 = g_pmk.pmk22
- 
+
        AFTER FIELD pmk41                      #價格條件
            IF NOT cl_null(g_pmk.pmk41) THEN
             SELECT pnz02 INTO l_buf FROM pnz_file WHERE pnz01=g_pmk.pmk41 #FUN-930113 oah-->pnz
@@ -2833,9 +2843,9 @@ DEFINE l_cnt1           LIKE type_file.num5 #FUN-C80045
             END IF
            ELSE               #MOD-780083 add
              LET l_buf=NULL   #MOD-780083 add
-           END IF             #MOD-780083 add 
+           END IF             #MOD-780083 add
            DISPLAY l_buf TO FORMONLY.pnz02 #FUN-930113 oah-->pnz
- 
+
        AFTER FIELD pmk42                      #匯率
             IF NOT cl_null(g_pmk.pmk42) THEN
                IF g_pmk.pmk42 <= 0 THEN
@@ -2845,25 +2855,25 @@ DEFINE l_cnt1           LIKE type_file.num5 #FUN-C80045
                    NEXT FIELD pmk42
                END IF
                LET g_pmk_o.pmk42 = g_pmk.pmk42
- 
+
                IF g_pmk.pmk22 =g_aza.aza17 THEN
                   LET g_pmk.pmk42 =1
                   DISPLAY g_pmk.pmk42  TO pmk42
                END IF
-#TQC-C30165 add begin               
+#TQC-C30165 add begin
                IF g_aza.aza17 != g_pmk.pmk22 THEN
                   CALL s_curr3(g_pmk.pmk22,g_pmk.pmk04,g_sma.sma904)
                      RETURNING l_pmk42
-                  IF l_pmk42 <>  g_pmk.pmk42 THEN 
+                  IF l_pmk42 <>  g_pmk.pmk42 THEN
                       IF cl_confirm('apm-702') THEN
                          LET  g_pmk.pmk42 = l_pmk42
                          DISPLAY BY NAME g_pmk.pmk42
-                      END IF 
-                  END IF 
+                      END IF
+                  END IF
                END IF
-#TQC-C30165 add end 
+#TQC-C30165 add end
             END IF
- 
+
         AFTER FIELD pmk45                      #可用否
            IF NOT cl_null(g_pmk.pmk45) THEN
                IF g_pmk.pmk45 NOT MATCHES'[YyNn]' THEN
@@ -2874,7 +2884,7 @@ DEFINE l_cnt1           LIKE type_file.num5 #FUN-C80045
                END IF
                LET g_pmk_o.pmk45= g_pmk.pmk45
            END IF
- 
+
         AFTER FIELD pmkmksg    #簽核否
            IF NOT cl_null(g_pmk.pmkmksg) THEN
                IF g_pmk.pmkmksg NOT MATCHES'[yYnN]' THEN NEXT FIELD pmkmksg END IF
@@ -2897,7 +2907,7 @@ DEFINE l_cnt1           LIKE type_file.num5 #FUN-C80045
                   DISPLAY g_sta TO FORMONLY.desc2
                END IF
            END IF
- 
+
 ##-------------- Genero 其他畫面副程式(sapmt423)加入主程式 ---------------##
        AFTER FIELD pmk14
             IF cl_null(g_pmk.pmk14) THEN    #收貨部門
@@ -2914,7 +2924,7 @@ DEFINE l_cnt1           LIKE type_file.num5 #FUN-C80045
                  END IF
             END IF
             LET g_pmk_o.pmk14 = g_pmk.pmk14
- 
+
        AFTER FIELD pmk15
             IF cl_null(g_pmk.pmk15) THEN    #確認人
                DISPLAY ' ' TO FORMONLY.gen02_2
@@ -2930,7 +2940,7 @@ DEFINE l_cnt1           LIKE type_file.num5 #FUN-C80045
                  END IF
             END IF
             LET g_pmk_o.pmk15 = g_pmk.pmk15
- 
+
        AFTER FIELD pmk17                      #代理商
            IF cl_null(g_pmk.pmk17) THEN
                DISPLAY ' ' TO FORMONLY.pmc03_2
@@ -2945,7 +2955,7 @@ DEFINE l_cnt1           LIKE type_file.num5 #FUN-C80045
                     END IF
                  END IF
             END IF
- 
+
        AFTER FIELD pmk30                      #印驗收單
            IF NOT cl_null(g_pmk.pmk30 ) THEN
                IF g_pmk.pmk30 NOT MATCHES'[YyNn]' THEN
@@ -2956,7 +2966,7 @@ DEFINE l_cnt1           LIKE type_file.num5 #FUN-C80045
                END IF
                LET g_pmk_o.pmk30= g_pmk.pmk30
            END IF
- 
+
 ##-------------- Genero 其他畫面副程式(sapmt423)加入主程式 (end)----------##
         AFTER FIELD pmkud01
            IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
@@ -2988,7 +2998,7 @@ DEFINE l_cnt1           LIKE type_file.num5 #FUN-C80045
            IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
         AFTER FIELD pmkud15
            IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
- 
+
        AFTER INPUT
 #TQC-B60102   ---start   Add
           LET g_pmk.pmkuser = s_get_data_owner("pmk_file") #FUN-C10039
@@ -3012,14 +3022,14 @@ DEFINE l_cnt1           LIKE type_file.num5 #FUN-C80045
             IF g_aza.aza17 != g_pmk.pmk22 THEN
                CALL s_curr3(g_pmk.pmk22,g_pmk.pmk04,g_sma.sma904)
                   RETURNING l_pmk42
-               IF l_pmk42 <>  g_pmk.pmk42 THEN 
+               IF l_pmk42 <>  g_pmk.pmk42 THEN
                    IF cl_confirm('apm-702') THEN
                       LET  g_pmk.pmk42 = l_pmk42
                       DISPLAY BY NAME g_pmk.pmk42
-                   END IF 
-               END IF 
-            END IF           
-         END IF 
+                   END IF
+               END IF
+            END IF
+         END IF
 #TQC-C30165 add end
 #TQC-C10018 add begin----------------------------------------
         IF p_cmd='u' THEN
@@ -3046,20 +3056,20 @@ DEFINE l_cnt1           LIKE type_file.num5 #FUN-C80045
             CALL cl_err('',9001,0)
             EXIT INPUT
         END IF
- 
+
         ON ACTION maintain_supplier_common_data
            #LET g_cmd = "apmi600  '' ",g_pmk.pmk09 CLIPPED  #MOD-4B0255 #參數傳錯 #CHI-D30005 mark
             LET g_cmd = "apmi600 '",g_pmk.pmk09,"' '' "     #CHI-D30005 add
            CALL cl_cmdrun(g_cmd)
- 
+
         ON ACTION qry_item_supplier
             LET g_cmd = "apmq210 '' ",g_pmk.pmk09 CLIPPED  #MOD-4B0255
            CALL cl_cmdrun(g_cmd)
- 
+
         ON ACTION qry_supplr_item_last_p_o_price
             LET g_cmd = "apmq220 ",g_pmk.pmk09 CLIPPED  #MOD-4B0255
            CALL cl_cmdrun(g_cmd)
- 
+
         ON ACTION CONTROLP
             CASE
                WHEN INFIELD(pmk01) #單據編號
@@ -3067,15 +3077,15 @@ DEFINE l_cnt1           LIKE type_file.num5 #FUN-C80045
                     CALL q_smy(FALSE,FALSE,g_t1,'APM','1') RETURNING g_t1 #TQC-670008
                     LET g_pmk.pmk01 = g_t1
                     NEXT FIELD pmk01
- 
+
                WHEN INFIELD(pmk05)  #專案代號
                     CALL cl_init_qry_var()
-                    LET g_qryparam.form ="q_pja2"   
+                    LET g_qryparam.form ="q_pja2"
                     LET g_qryparam.default1 = g_pmk.pmk05
                     CALL cl_create_qry() RETURNING g_pmk.pmk05
                     DISPLAY BY NAME g_pmk.pmk05
                     NEXT FIELD pmk05
- 
+
                WHEN INFIELD(pmk09) #查詢廠商檔
                     CALL cl_init_qry_var()
                     #No.MOD-A70072  --Begin
@@ -3086,7 +3096,7 @@ DEFINE l_cnt1           LIKE type_file.num5 #FUN-C80045
                     #   LET g_qryparam.form = "q_pmc1"
                     #END IF
                     LET g_qryparam.form = "q_pmc1"
-                    #No.MOD-A70072  --End  
+                    #No.MOD-A70072  --End
                     LET g_qryparam.default1 = g_pmk.pmk09
                     CALL cl_create_qry() RETURNING g_pmk.pmk09
                     DISPLAY BY NAME g_pmk.pmk09
@@ -3124,13 +3134,13 @@ DEFINE l_cnt1           LIKE type_file.num5 #FUN-C80045
                     DISPLAY BY NAME g_pmk.pmk15
                     CALL t420_peo('a','2',g_pmk.pmk15)
                      NEXT FIELD pmk15   #NO.MOD-480478
-                WHEN INFIELD(pmk16) #運送方式                                                                                          
-                    CALL cl_init_qry_var()                                                                                          
-                    LET g_qryparam.form = "q_ged"                                                                                   
-                    LET g_qryparam.default1 = g_pmk.pmk16                                                                           
-                    CALL cl_create_qry() RETURNING g_pmk.pmk16                                                                      
-                    DISPLAY BY NAME g_pmk.pmk16                                                                                     
-                     NEXT FIELD pmk16 
+                WHEN INFIELD(pmk16) #運送方式
+                    CALL cl_init_qry_var()
+                    LET g_qryparam.form = "q_ged"
+                    LET g_qryparam.default1 = g_pmk.pmk16
+                    CALL cl_create_qry() RETURNING g_pmk.pmk16
+                    DISPLAY BY NAME g_pmk.pmk16
+                     NEXT FIELD pmk16
                WHEN INFIELD(pmk13) #請購Dept
                     CALL cl_init_qry_var()
                     LET g_qryparam.form = "q_gem"
@@ -3209,31 +3219,31 @@ DEFINE l_cnt1           LIKE type_file.num5 #FUN-C80045
                   NEXT FIELD pmkud06
                OTHERWISE EXIT CASE
             END CASE
- 
+
          ON ACTION CONTROLR
              CALL cl_show_req_fields()
- 
+
          ON ACTION CONTROLG
             CALL cl_cmdask()
- 
+
         ON ACTION CONTROLF                        # 欄位說明
          CALL cl_set_focus_form(ui.Interface.getRootNode()) RETURNING g_fld_name,g_frm_name #Add on 040913
          CALL cl_fldhelp(g_frm_name,g_fld_name,g_lang) #Add on 040913
- 
+
        ON IDLE g_idle_seconds
           CALL cl_on_idle()
           CONTINUE INPUT
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
 
     END INPUT
 END FUNCTION
- 
- 
+
+
 FUNCTION t420_supplier(p_cmd,p_code,p_key)  #供應廠商
     DEFINE l_pmc03   LIKE pmc_file.pmc03,
            l_pmc30   LIKE pmc_file.pmc30,
@@ -3242,22 +3252,22 @@ FUNCTION t420_supplier(p_cmd,p_code,p_key)  #供應廠商
            p_code    LIKE type_file.chr1,    #No.FUN-680136 VARCHAR(01)
            p_key     LIKE pmc_file.pmc01
 DEFINE l_pmc05  LIKE pmc_file.pmc05  #No.FUN-870007
-DEFINE l_pmc930 LIKE pmc_file.pmc930 #No.FUN-870007 
- 
+DEFINE l_pmc930 LIKE pmc_file.pmc930 #No.FUN-870007
+
     LET g_errno = ' '
      SELECT pmc03,pmc30,pmcacti,pmc05,pmc930             #No.FUN-870007
        INTO l_pmc03,l_pmc30,l_pmcacti,l_pmc05,l_pmc930   #No.FUN-870007
        FROM pmc_file
       WHERE pmc01 = p_key
   IF g_azw.azw04 = '2' THEN
-     CASE WHEN SQLCA.SQLCODE = 100  LET g_errno = 'mfg3014'                                                                       
-                                      LET l_pmc03 = NULL                                                                            
+     CASE WHEN SQLCA.SQLCODE = 100  LET g_errno = 'mfg3014'
+                                      LET l_pmc03 = NULL
             WHEN l_pmcacti !='Y'   LET g_errno = 'art-471'
-            WHEN l_pmc05 !='1'     LET g_errno = 'art-472'                                                        
-            WHEN l_pmc30  ='2' LET g_errno = 'apm-420'      #付款商                     
-            WHEN l_pmc930 = g_plant LET g_errno = 'art-445'                                             
-            OTHERWISE          LET g_errno = SQLCA.SQLCODE USING '-------'                                                          
-     END CASE 
+            WHEN l_pmc05 !='1'     LET g_errno = 'art-472'
+            WHEN l_pmc30  ='2' LET g_errno = 'apm-420'      #付款商
+            WHEN l_pmc930 = g_plant LET g_errno = 'art-445'
+            OTHERWISE          LET g_errno = SQLCA.SQLCODE USING '-------'
+     END CASE
   ELSE
     CASE WHEN SQLCA.SQLCODE = 100  LET g_errno = 'mfg3014'
                             LET l_pmc03 = NULL
@@ -3372,7 +3382,7 @@ FUNCTION t420_pmk09_cd()  #供應廠商check ,default
           END IF
        END IF
     END IF
- 
+
     IF NOT cl_null(g_pmk.pmk41) THEN
        SELECT pnz02 INTO l_buf FROM pnz_file #FUN-930113 oah-->pnz
         WHERE pnz01=g_pmk.pmk41 #FUN-930113 oah-->pnz
@@ -3392,9 +3402,9 @@ FUNCTION t420_pmk09_cd()  #供應廠商check ,default
     DISPLAY BY NAME g_pmk.pmk41         #價格條件
 #TQC-BB0121 --end--
 
- 
+
 END FUNCTION
- 
+
 FUNCTION t420_peo(p_cmd,p_code,p_key)    #人員
   DEFINE p_cmd       LIKE type_file.chr1,    #No.FUN-680136  VARCHAR(01)
          p_code      LIKE type_file.chr1,    #No.FUN-680136 VARCHAR(01)
@@ -3405,7 +3415,7 @@ FUNCTION t420_peo(p_cmd,p_code,p_key)    #人員
   LET g_errno = ' '
   SELECT gen02,gen03,genacti INTO l_gen02,l_gen03,l_genacti
          FROM gen_file  WHERE gen01 = p_key
- 
+
   CASE WHEN SQLCA.SQLCODE = 100  LET g_errno = 'mfg1312' LET l_gen02 = NULL
        WHEN l_genacti='N' LET g_errno = '9028'
        OTHERWISE          LET g_errno = SQLCA.SQLCODE USING '-------'
@@ -3423,25 +3433,25 @@ FUNCTION t420_peo(p_cmd,p_code,p_key)    #人員
      END IF
   END IF
 END FUNCTION
- 
+
 FUNCTION t420_dep(p_cmd,p_code,p_key)    #Dept
    DEFINE p_cmd       LIKE type_file.chr1,    #No.FUN-680136 VARCHAR(01)
           p_code      LIKE type_file.chr1,    #No.FUN-680136 VARCHAR(01)
           p_key       LIKE gem_file.gem01,
           l_gem02     LIKE gem_file.gem02,
           l_gemacti   LIKE gem_file.gemacti
- 
+
    LET g_errno = ' '
- 
+
    SELECT gem02,gemacti INTO l_gem02,l_gemacti
      FROM gem_file
     WHERE gem01 = p_key
- 
+
    CASE WHEN SQLCA.SQLCODE = 100  LET g_errno = 'mfg3097' LET l_gem02 = NULL
         WHEN l_gemacti='N' LET g_errno = '9028'
         OTHERWISE          LET g_errno = SQLCA.SQLCODE USING '-------'
    END CASE
- 
+
    IF cl_null(g_errno) OR p_cmd = 'd' THEN
       IF p_code = '1' THEN
          DISPLAY l_gem02 TO FORMONLY.gem02
@@ -3449,92 +3459,92 @@ FUNCTION t420_dep(p_cmd,p_code,p_key)    #Dept
          DISPLAY l_gem02 TO FORMONLY.gem02_2
       END IF
    END IF
- 
+
 END FUNCTION
- 
+
 FUNCTION t420_pmk20()  #付款條件
    DEFINE l_pmaacti  LIKE pma_file.pmaacti,
           l_pma02    LIKE pma_file.pma02
- 
+
    LET g_errno = " "
- 
+
    SELECT pma02,pmaacti INTO l_pma02,l_pmaacti
      FROM pma_file
     WHERE pma01 = g_pmk.pmk20
- 
+
    CASE WHEN SQLCA.SQLCODE = 100  LET g_errno = 'mfg3099'
                          LET l_pmaacti = NULL
                          LET l_pma02   = NULL
      WHEN l_pmaacti='N' LET g_errno = '9028'
      OTHERWISE          LET g_errno = SQLCA.SQLCODE USING '-------'
    END CASE
- 
+
    DISPLAY l_pma02 TO pma02
- 
+
 END FUNCTION
- 
+
 FUNCTION t420_pmk21()  #稅別
    DEFINE l_gec04     LIKE gec_file.gec04,
           l_gecacti   LIKE gec_file.gecacti
- 
+
    LET g_errno = " "
- 
+
    SELECT gec04,gecacti,gec07 INTO l_gec04,l_gecacti,g_gec07    #No.FUN-550019
      FROM gec_file
     WHERE gec01 = g_pmk.pmk21
       AND gec011 = '1'  #進項
- 
+
    CASE WHEN SQLCA.SQLCODE = 100  LET g_errno = 'mfg3044'
                             LET l_gec04 = 0
         WHEN l_gecacti='N' LET g_errno = '9028'
         OTHERWISE          LET g_errno = SQLCA.SQLCODE USING '-------'
    END CASE
- 
+
    IF NOT cl_null(l_gec04) THEN
       LET g_pmk.pmk43 = l_gec04
       DISPLAY BY NAME g_pmk.pmk43
    END IF
- 
+
    DISPLAY g_gec07 TO gec07        #No.FUN-550019
- 
+
 END FUNCTION
- 
+
 FUNCTION t420_pmk22()  #幣別
    DEFINE l_aziacti LIKE azi_file.aziacti
- 
+
    LET g_errno = " "
- 
+
    SELECT azi03,aziacti INTO t_azi03,l_aziacti FROM azi_file  #No.FUN-550019  #No.CHI-6A0004
     WHERE azi01 = g_pmk.pmk22
- 
+
    CASE WHEN SQLCA.SQLCODE = 100  LET g_errno = 'mfg3008'
                             LET l_aziacti = 0
         WHEN l_aziacti='N' LET g_errno = '9028'
         OTHERWISE          LET g_errno = SQLCA.SQLCODE USING '-------'
    END CASE
- 
+
 END FUNCTION
- 
+
 FUNCTION t420_q()
- 
+
    LET g_row_count = 0
    LET g_curs_index = 0
- 
+
    CALL cl_navigator_setting( g_curs_index, g_row_count )
    INITIALIZE g_pmk.* TO NULL                   #MOD-570070
- 
+
    CALL cl_msg("")                              #FUN-640184
- 
+
    CALL cl_opmsg('q')
    DISPLAY '   ' TO FORMONLY.cnt
- 
+
    IF g_sma.sma120 = 'Y'  THEN
       LET lg_smy62 = ''
       LET lg_group = ''
       CALL t420_refresh_detail()
    END IF
    CALL t420_cs()                          # 宣告 SCROLL CURSOR
- 
+
    IF INT_FLAG THEN
       LET INT_FLAG = 0
       CLEAR FORM
@@ -3544,13 +3554,13 @@ FUNCTION t420_q()
       INITIALIZE g_pmk.* TO NULL
       RETURN
    END IF
- 
+
    CALL cl_msg(" SEARCHING ! ")                              #FUN-640184
- 
+
    OPEN t420_count
    FETCH t420_count INTO g_row_count
    DISPLAY g_row_count TO FORMONLY.cnt
- 
+
    OPEN t420_cs                            # 從DB產生合乎條件TEMP(0-30秒)
    IF SQLCA.sqlcode THEN
       CALL cl_err(g_pmk.pmk01,SQLCA.sqlcode,0)
@@ -3558,15 +3568,15 @@ FUNCTION t420_q()
    ELSE
       CALL t420_fetch('F')                  # 讀出TEMP第一筆並顯示
    END IF
- 
+
    CALL cl_msg("")                              #FUN-640184
- 
+
 END FUNCTION
- 
+
 FUNCTION t420_fetch(p_flpmk)
    DEFINE p_flpmk   LIKE type_file.chr1    #No.FUN-680136 VARCHAR(1)
    DEFINE l_slip    LIKE smy_file.smyslip  #No.FUN-680136 VARCHAR(10)  #No.TQC-650108
- 
+
     CASE p_flpmk
         WHEN 'N' FETCH NEXT     t420_cs INTO g_pmk.pmk01
         WHEN 'P' FETCH PREVIOUS t420_cs INTO g_pmk.pmk01
@@ -3579,17 +3589,17 @@ FUNCTION t420_fetch(p_flpmk)
                 PROMPT g_msg CLIPPED,': ' FOR g_jump
                    ON IDLE g_idle_seconds
                       CALL cl_on_idle()
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
+
       ON ACTION controlg      #MOD-4C0121
          CALL cl_cmdask()     #MOD-4C0121
- 
- 
+
+
                 END PROMPT
                 IF INT_FLAG THEN
                     LET INT_FLAG = 0
@@ -3599,7 +3609,7 @@ FUNCTION t420_fetch(p_flpmk)
             FETCH ABSOLUTE g_jump t420_cs INTO g_pmk.pmk01
             LET mi_no_ask = FALSE
     END CASE
- 
+
     IF SQLCA.sqlcode THEN
         CALL cl_err(g_pmk.pmk01,SQLCA.sqlcode,0)
         INITIALIZE g_pmk.* TO NULL  #TQC-6B0105
@@ -3613,17 +3623,17 @@ FUNCTION t420_fetch(p_flpmk)
           WHEN 'L' LET g_curs_index = g_row_count
           WHEN '/' LET g_curs_index = g_jump
        END CASE
- 
+
        CALL cl_navigator_setting( g_curs_index, g_row_count )
     END IF
- 
-   #在使用Q查詢的情況下得到當前對應的屬性組smy62                                
-   IF g_sma.sma120 = 'Y' AND g_sma.sma907 = 'Y' THEN                            
-      LET l_slip = g_pmk.pmk01[1,g_doc_len]                                     
-      SELECT smy62 INTO lg_smy62 FROM smy_file                                  
-         WHERE smyslip = l_slip                                                 
-   END IF                                                                       
- 
+
+   #在使用Q查詢的情況下得到當前對應的屬性組smy62
+   IF g_sma.sma120 = 'Y' AND g_sma.sma907 = 'Y' THEN
+      LET l_slip = g_pmk.pmk01[1,g_doc_len]
+      SELECT smy62 INTO lg_smy62 FROM smy_file
+         WHERE smyslip = l_slip
+   END IF
+
     SELECT * INTO g_pmk.* FROM pmk_file            # 重讀DB,因TEMP有不被更新特性
      WHERE pmk01 = g_pmk.pmk01
     IF SQLCA.sqlcode THEN
@@ -3635,7 +3645,7 @@ FUNCTION t420_fetch(p_flpmk)
     ELSE
        LET g_t1=g_pmk.pmk01[1,g_doc_len]
        SELECT * INTO g_smy.* FROM smy_file WHERE smyslip=g_t1
- 
+
        LET g_data_owner = g_pmk.pmkuser      #FUN-4C0056 add
        LET g_data_group = g_pmk.pmkgrup      #FUN-4C0056 add
        LET g_data_plant = g_pmk.pmkplant #FUN-980030
@@ -3645,12 +3655,12 @@ FUNCTION t420_fetch(p_flpmk)
        END IF
        CALL t420_show()                      # 重新顯示
     END IF
- 
+
 END FUNCTION
- 
+
 FUNCTION t420_show()
    DEFINE l_str   LIKE imd_file.imd01    #No.FUN-680136 VARCHAR(10)
-   DEFINE l_buf   LIKE pnz_file.pnz02   #MOD-8C0263 #FUN-930113 
+   DEFINE l_buf   LIKE pnz_file.pnz02   #MOD-8C0263 #FUN-930113
 DEFINE l_pmkconu_desc LIKE gen_file.gen02  #No.FUN-870007
 DEFINE l_pmkplant_desc LIKE azp_file.azp02 #No.FUN-870007
 DEFINE l_pmk47_desc    LIKE azp_file.azp02 #No.FUN-870007
@@ -3684,7 +3694,7 @@ DEFINE l_pmk50_desc     LIKE azp_file.azp02  #FUN-CC0057 add
        WHERE azp01 = g_pmk.pmkplant
       SELECT azp02 INTO l_pmk47_desc FROM azp_file
        WHERE azp01 = g_pmk.pmk47
-      DISPLAY l_pmk47_desc,l_pmkplant_desc 
+      DISPLAY l_pmk47_desc,l_pmkplant_desc
            TO pmk47_desc,pmkplant_desc
       #FUN-CC0057---add---str
       SELECT azp02 INTO l_pmk50_desc FROM azp_file
@@ -3698,46 +3708,46 @@ DEFINE l_pmk50_desc     LIKE azp_file.azp02  #FUN-CC0057 add
      WHERE ged01=g_pmk.pmk16
     DISPLAY l_ged02 TO ged02
    #TQC-BB0128--end
-   
+
    CALL s_pmksta('pmk',g_pmk.pmk25,g_pmk.pmk18,g_pmk.pmkmksg)
                   RETURNING g_sta
- 
+
    DISPLAY g_sta TO FORMONLY.desc2
- 
+
    SELECT pnz02 INTO l_buf FROM pnz_file WHERE pnz01=g_pmk.pmk41 #FUN-930113 oah-->pnz
    DISPLAY l_buf TO FORMONLY.pnz02 #FUN-930113 oah-->pnz
- 
+
    #單據別有做預管控管時，才顯示預算相關欄位 預算/部門/科目一/未稅單價/含稅單價
    CALL cl_set_comp_visible("pml67,pml40,pml31,pml31t",g_smy.smy59='Y')          #No.FUN-830161
    #單據別有做預算控管且有使用多套帳時才顯示科目二
-   CALL cl_set_comp_visible("pml401",g_smy.smy59='Y' AND g_aza.aza63='Y')  
- 
+   CALL cl_set_comp_visible("pml401",g_smy.smy59='Y' AND g_aza.aza63='Y')
+
    CALL t420_peo('d','1',g_pmk.pmk12)
- 
+
    CALL t420_peo('d','2',g_pmk.pmk15)
- 
+
    CALL t420_dep('d','1',g_pmk.pmk13)
- 
+
    CALL t420_dep('d','2',g_pmk.pmk14)
- 
+
    CALL t420_supplier('d','1',g_pmk.pmk09)
- 
+
    CALL t420_supplier('d','2',g_pmk.pmk17)
- 
+
    CALL t420_pmk20()
- 
+
    CALL t420_pmk21()       #No.FUN-550019
- 
+
    CALL t420_pmk22()       #No.FUN-550019
- 
+
 #FUN-B90101--add--begin
-   CALL t420_b_fill(g_wc2,' 1=1')       #FUN-B90101 add 第二個參數，服飾中母單身的條件 
+   CALL t420_b_fill(g_wc2,' 1=1')       #FUN-B90101 add 第二個參數，服飾中母單身的條件
 #FUN-B90101--add--begin
-#FUN-B90101--add--end-- 
+#FUN-B90101--add--end--
    CALL cl_show_fld_cont()                   #No.FUN-550037 hmf
- 
+
 END FUNCTION
- 
+
 FUNCTION t420_b_fill(p_wc2,p_wc3)          #FUN-B90101 add 第二個參數，服飾中母單身的條件
    DEFINE p_wc2    LIKE type_file.chr1000, #No.FUN-680136 VARCHAR(200)
           l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT
@@ -3753,14 +3763,14 @@ FUNCTION t420_b_fill(p_wc2,p_wc3)          #FUN-B90101 add 第二個參數，服
 #FUN-A60035 ---MARK END
 
      DEFINE p_wc3    STRING                  #FUN-B90101 add
- 
+
    IF cl_null(p_wc2) THEN
       LET p_wc2 = " 1=1"
    END IF
 #&ifndef STD   #FUN-B901010 mark
 #&else          #FUN-B901010 mark
 #FUN-B90101--add--begin--
-#FUN-B90101--add--end--            
+#FUN-B90101--add--end--
       LET g_sql="SELECT pml02,pml24,pml25,'',pml47,pml04,'','','','','','','','','','','','','','','','','','','','','', ",  #NO.FUN-670007 ADD pml24/pml25 #No.FUN-870007-add-pml47
                 "       pml041,ima021,pml07,pml48,'',pml49,pml50,pml51,pml52,pml53,pml54,pml20,",   #No.FUN-870007
                 "       pml83,pml84,pml85,pml80,pml81,pml82,pml86,pml87,",
@@ -3769,10 +3779,10 @@ FUNCTION t420_b_fill(p_wc2,p_wc3)          #FUN-B90101 add 第二個參數，服
                 "       pml92,pml93,",  #FUN-9A0065 add pml92,pml93
                 "       pml12,pml121,pml122,",
                 "       pml67,pml90,pml40,pml401,pml31,pml31t,",        #FUN-810045  #No.FUN-830161
-                "       pml930,'',pml06,pml38,pml16,pml11,pml56,pml123,'',pml91,pml05 ",  #No.FUN-870007 #FUN-990080 add pml16 #FUN-B80167 add pml05    
+                "       pml930,'',pml06,pml38,pml16,pml11,pml56,pml123,'',pml91,pml05 ",  #No.FUN-870007 #FUN-990080 add pml16 #FUN-B80167 add pml05
                 "       ,pmlud01,pmlud03,pmlud04,pmlud05,",
                 "       pmlud06,pmlud07,pmlud08,pmlud09,pmlud10,",
-                "       pmlud11,pmlud12,pmlud13,pmlud14,pmlud15", 
+                "       pmlud11,pmlud12,pmlud13,pmlud14,pmlud15",
                 " FROM pml_file,OUTER ima_file ",
                 " WHERE pml01= '",g_pmk.pmk01,"' AND ",p_wc2 CLIPPED,
                 "   AND pml_file.pml04=ima_file.ima01 ",
@@ -3783,13 +3793,13 @@ FUNCTION t420_b_fill(p_wc2,p_wc3)          #FUN-B90101 add 第二個參數，服
       CALL cl_used(g_prog,g_time,2) RETURNING g_time #No.FUN-B30211
       EXIT PROGRAM
    END IF
- 
+
    DECLARE t420_cs2 CURSOR FOR t420_pp
- 
+
    CALL g_pml.clear()
    LET l_cnt=1
    FOREACH t420_cs2 INTO g_pml[l_cnt].*
-   
+
       IF SQLCA.sqlcode THEN
          CALL cl_err('prepare2:',SQLCA.sqlcode,1) EXIT FOREACH
       END IF
@@ -3801,7 +3811,7 @@ FUNCTION t420_b_fill(p_wc2,p_wc3)          #FUN-B90101 add 第二個參數，服
          LET g_pml[l_cnt].pml84 = NULL
          LET g_pml[l_cnt].pml85 = NULL
       END IF
-      CALL t420_set_pml930(g_pml[l_cnt].pml930) 
+      CALL t420_set_pml930(g_pml[l_cnt].pml930)
          RETURNING g_pml[l_cnt].gem02a #FUN-670051
        SELECT mse02 INTO g_pml[l_cnt].mse02
          FROM mse_file WHERE mse01=g_pml[l_cnt].pml123
@@ -3848,38 +3858,38 @@ FUNCTION t420_b_fill(p_wc2,p_wc3)          #FUN-B90101 add 第二個參數，服
 #&else
 ##FUN-A50054 --End
 #FUN-A60035 ---MARK END
-      #如果進行料件多屬性管理并選擇新機制則要對單身顯示的東東進行更改         
-      IF g_sma.sma120 = 'Y' AND g_sma.sma907 = 'Y' THEN                       
-         #得到該料件對應的父料件和所有屬性                                    
-         SELECT imx00,imx01,imx02,imx03,imx04,imx05,imx06,                    
-                imx07,imx08,imx09,imx10 INTO                                  
-                g_pml[l_cnt].att00,g_pml[l_cnt].att01,g_pml[l_cnt].att02,     
-                g_pml[l_cnt].att03,g_pml[l_cnt].att04,g_pml[l_cnt].att05,     
-                g_pml[l_cnt].att06,g_pml[l_cnt].att07,g_pml[l_cnt].att08,     
-                g_pml[l_cnt].att09,g_pml[l_cnt].att10                         
-         FROM imx_file WHERE imx000 = g_pml[l_cnt].pml04      
- 
-         LET g_pml[l_cnt].att01_c = g_pml[l_cnt].att01                        
-         LET g_pml[l_cnt].att02_c = g_pml[l_cnt].att02                        
-         LET g_pml[l_cnt].att03_c = g_pml[l_cnt].att03                        
-         LET g_pml[l_cnt].att04_c = g_pml[l_cnt].att04                        
-         LET g_pml[l_cnt].att05_c = g_pml[l_cnt].att05                        
-         LET g_pml[l_cnt].att06_c = g_pml[l_cnt].att06                        
-         LET g_pml[l_cnt].att07_c = g_pml[l_cnt].att07                        
-         LET g_pml[l_cnt].att08_c = g_pml[l_cnt].att08                        
-         LET g_pml[l_cnt].att09_c = g_pml[l_cnt].att09                        
-         LET g_pml[l_cnt].att10_c = g_pml[l_cnt].att10                        
-                                                                              
-      END IF 
+      #如果進行料件多屬性管理并選擇新機制則要對單身顯示的東東進行更改
+      IF g_sma.sma120 = 'Y' AND g_sma.sma907 = 'Y' THEN
+         #得到該料件對應的父料件和所有屬性
+         SELECT imx00,imx01,imx02,imx03,imx04,imx05,imx06,
+                imx07,imx08,imx09,imx10 INTO
+                g_pml[l_cnt].att00,g_pml[l_cnt].att01,g_pml[l_cnt].att02,
+                g_pml[l_cnt].att03,g_pml[l_cnt].att04,g_pml[l_cnt].att05,
+                g_pml[l_cnt].att06,g_pml[l_cnt].att07,g_pml[l_cnt].att08,
+                g_pml[l_cnt].att09,g_pml[l_cnt].att10
+         FROM imx_file WHERE imx000 = g_pml[l_cnt].pml04
+
+         LET g_pml[l_cnt].att01_c = g_pml[l_cnt].att01
+         LET g_pml[l_cnt].att02_c = g_pml[l_cnt].att02
+         LET g_pml[l_cnt].att03_c = g_pml[l_cnt].att03
+         LET g_pml[l_cnt].att04_c = g_pml[l_cnt].att04
+         LET g_pml[l_cnt].att05_c = g_pml[l_cnt].att05
+         LET g_pml[l_cnt].att06_c = g_pml[l_cnt].att06
+         LET g_pml[l_cnt].att07_c = g_pml[l_cnt].att07
+         LET g_pml[l_cnt].att08_c = g_pml[l_cnt].att08
+         LET g_pml[l_cnt].att09_c = g_pml[l_cnt].att09
+         LET g_pml[l_cnt].att10_c = g_pml[l_cnt].att10
+
+      END IF
 #FUN-A60035 ---MARK BEGIN
 ##FUN-A50054---Begin add
 #&endif
-##FUN-A50054---end        
-#FUN-A60035 ---MARK END                                                               
+##FUN-A50054---end
+#FUN-A60035 ---MARK END
       IF NOT cl_null(g_pml[l_cnt].pml48) THEN
          SELECT pmc03 INTO g_pml[l_cnt].pml48_desc FROM pmc_file
-          WHERE pmc01=g_pml[l_cnt].pml48 
-      END IF            
+          WHERE pmc01=g_pml[l_cnt].pml48
+      END IF
       LET l_cnt=l_cnt+1
       IF l_cnt > g_max_rec THEN     #No.FUN-870007
          CALL cl_err( '', 9035, 0 )
@@ -3900,7 +3910,7 @@ FUNCTION t420_b_fill(p_wc2,p_wc3)          #FUN-B90101 add 第二個參數，服
 #FUN-C20006--mark--end--
    CALL t420_refresh_detail()  #No.TQC-650108
 END FUNCTION
- 
+
 #FUN-B90101--add--begin--
 #FUN-B90101--add--end--
 
@@ -3918,9 +3928,9 @@ FUNCTION t420_bp(p_ud)
     IF p_ud <> "G" OR g_action_choice = "detail" THEN
        RETURN
     END IF
- 
+
    LET g_action_choice = " "
- 
+
    CALL cl_set_act_visible("accept,cancel", FALSE)
 #FUN-B90101---Add---Str--
    DIALOG ATTRIBUTES(UNBUFFERED)
@@ -3945,7 +3955,7 @@ FUNCTION t420_bp(p_ud)
 #              CALL s_settext_slk(g_pmlslk[l_ac2].pmlslk04)
 #              CALL s_fillimx_slk(g_pmlslk[l_ac2].pmlslk04,
 #                                  g_pmk.pmk01,g_pmlslk[l_ac2].pmlslk02)
-#              LET g_rec_b3 = g_imx.getLength()   
+#              LET g_rec_b3 = g_imx.getLength()
 #           END IF
 #     END DISPLAY
 
@@ -3959,7 +3969,7 @@ FUNCTION t420_bp(p_ud)
 #           CALL cl_show_fld_cont()
 #     END DISPLAY
 #&endif
-##FUN-B90101---Add---End--   
+##FUN-B90101---Add---End--
 #FUN-C20006--mark--end--
 
   #DISPLAY ARRAY g_pml TO s_pml.* ATTRIBUTE(COUNT=g_rec_b,UNBUFFERED)   #FUN-B90101---mark---
@@ -3971,57 +3981,57 @@ FUNCTION t420_bp(p_ud)
       END IF
        LET g_action_choice=""   #No.MOD-490256
        LET g_b_flag = '1'       #TQC-D40025
- 
+
       BEFORE ROW
          LET l_ac = ARR_CURR()
          CALL cl_show_fld_cont()                   #No.FUN-550037 hmf
-#FUN-B90101--mark--                                        
+#FUN-B90101--mark--
 #      ON ACTION insert
 #         LET g_action_choice="insert"
 #         EXIT DISPLAY
-#         
+#
 #      ON ACTION query
 #         LET g_action_choice="query"
 #         EXIT DISPLAY
-# 
+#
 #      ON ACTION delete
 #         LET g_action_choice="delete"
 #         EXIT DISPLAY
-# 
+#
 #      ON ACTION modify
 #         LET g_action_choice="modify"
 #         EXIT DISPLAY
-# 
+#
 #      ON ACTION first
 #         CALL t420_fetch('F')
 #         CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
 #         CALL fgl_set_arr_curr(1)
 #         ACCEPT DISPLAY   #FUN-530067(smin)
-# 
+#
 #      ON ACTION previous
 #         CALL t420_fetch('P')
 #         CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
 #         CALL fgl_set_arr_curr(1)
 #         ACCEPT DISPLAY   #FUN-530067(smin)
-# 
+#
 #      ON ACTION jump
 #         CALL t420_fetch('/')
 #         CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
 #         CALL fgl_set_arr_curr(1)
 #         ACCEPT DISPLAY   #FUN-530067(smin)
-# 
+#
 #      ON ACTION next
 #         CALL t420_fetch('N')
 #         CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
 #         CALL fgl_set_arr_curr(1)
 #         ACCEPT DISPLAY   #FUN-530067(smin)
-# 
+#
 #      ON ACTION last
 #         CALL t420_fetch('L')
 #         CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
 #         CALL fgl_set_arr_curr(1)
 #         ACCEPT DISPLAY   #FUN-530067(smin)
-# 
+#
 #      ON ACTION reproduce
 #         LET g_action_choice="reproduce"
 #         EXIT DISPLAY
@@ -4035,24 +4045,24 @@ FUNCTION t420_bp(p_ud)
 #      ON ACTION help
 #         LET g_action_choice="help"
 #         EXIT DISPLAY
-# 
+#
 #      ON ACTION locale
 #         CALL cl_dynamic_locale()
 #         CALL cl_show_fld_cont()                   #No.FUN-550037 hmf
 #         CALL t420_def_form()   #FUN-610067
-#         IF g_aza.aza71 MATCHES '[Yy]' THEN       
+#         IF g_aza.aza71 MATCHES '[Yy]' THEN
 #            CALL aws_gpmcli_toolbar()
 #            CALL cl_set_act_visible("gpm_show,gpm_query", TRUE)
 #         ELSE
 #            CALL cl_set_act_visible("gpm_show,gpm_query", FALSE)  #N0.TQC-710042
-#         END IF 
+#         END IF
 #         CALL t420_pic() #FUN-730012
 #         EXIT DISPLAY
-# 
+#
 #      ON ACTION exit
 #         LET g_action_choice="exit"
 #         EXIT DISPLAY
-# 
+#
 #      ON ACTION controlg
 #         LET g_action_choice="controlg"
 #         EXIT DISPLAY
@@ -4061,95 +4071,95 @@ FUNCTION t420_bp(p_ud)
 #      ON ACTION query_mrp
 #         LET g_action_choice="query_mrp"
 #         EXIT DISPLAY
-# 
+#
 #    #@ON ACTION 採購查詢
 #      ON ACTION qry_po_status
 #         LET g_action_choice="qry_po_status"
 #         EXIT DISPLAY
-# 
+#
 #    #@ON ACTION 簽核狀況
 #      ON ACTION approval_status
 #         LET g_action_choice="approval_status"
 #         EXIT DISPLAY
-#    
+#
 #    #FUN-B30082----ADD----START----
 #    #@ON ACTION 變更狀況
 #      ON ACTION modify_status
 #         LET g_action_choice="modify_status"
 #         EXIT DISPLAY
 #    #FUN-B30082----ADD-----END-----
-# 
+#
 #    #@ON ACTION 備註
 #      ON ACTION memo
 #         LET g_action_choice="memo"
 #         EXIT DISPLAY
-# 
+#
 #    #@ON ACTION 特別說明
 #      ON ACTION special_description
 #         LET g_action_choice="special_description"
 #         EXIT DISPLAY
-# 
+#
 #    #@ON ACTION easyflow送簽
 #      ON ACTION easyflow_approval         #FUN-550038
 #         LET g_action_choice = "easyflow_approval"
 #         EXIT DISPLAY
-# 
+#
 #    #@ON ACTION 確認
 #      ON ACTION confirm
 #         LET g_action_choice="confirm"
 #         EXIT DISPLAY
-# 
+#
 #    #@ON ACTION 取消確認
 #      ON ACTION undo_confirm
 #         LET g_action_choice="undo_confirm"
 #         EXIT DISPLAY
-# 
+#
 #    #@ON ACTION 作廢
 #      ON ACTION void
 #         LET g_action_choice="void"
 #         EXIT DISPLAY
-# 
+#
 #      ON ACTION accept
 #         LET g_action_choice="detail"
 #         LET l_ac = ARR_CURR()
 #         EXIT DISPLAY
-# 
+#
 #      ON ACTION cancel
 #             LET INT_FLAG=FALSE                 #MOD-570244     mars
 #         LET g_action_choice="exit"
 #         EXIT DISPLAY
-# 
+#
 #      ON IDLE g_idle_seconds
 #         CALL cl_on_idle()
 #         CONTINUE DISPLAY
-# 
+#
 #      ON ACTION about         #MOD-4C0121
 #         CALL cl_about()      #MOD-4C0121
-# 
-# 
+#
+#
 #      ON ACTION exporttoexcel       #FUN-4B0025
 #         LET g_action_choice = 'exporttoexcel'
 #         EXIT DISPLAY
 #      ON ACTION agree
 #         LET g_action_choice = 'agree'
 #         EXIT DISPLAY
-# 
+#
 #      ON ACTION deny
 #         LET g_action_choice = 'deny'
 #         EXIT DISPLAY
-# 
+#
 #      ON ACTION modify_flow
 #         LET g_action_choice = 'modify_flow'
 #         EXIT DISPLAY
-# 
+#
 #      ON ACTION withdraw
 #         LET g_action_choice = 'withdraw'
 #         EXIT DISPLAY
-# 
+#
 #      ON ACTION org_withdraw
 #         LET g_action_choice = 'org_withdraw'
 #         EXIT DISPLAY
-# 
+#
 #      ON ACTION phrase
 #         LET g_action_choice = 'phrase'
 #         EXIT DISPLAY
@@ -4162,87 +4172,87 @@ FUNCTION t420_bp(p_ud)
 ##      ON ACTION style_detail
 ##         LET g_action_choice = 'style_detail'
 ##         EXIT DISPLAY
-###FUN-A50054---End         
-##&endif              
+###FUN-A50054---End
+##&endif
 ##FUN-A60035 ---MARK END
 #      AFTER DISPLAY
 #         CONTINUE DISPLAY
-# 
-#      ON ACTION controls                           #No.FUN-6B0032             
+#
+#      ON ACTION controls                           #No.FUN-6B0032
 #         CALL cl_set_head_visible("","AUTO")       #No.FUN-6B0032
-# 
+#
 #      ON ACTION related_document                #No.FUN-6A0162  相關文件
-#         LET g_action_choice="related_document"          
+#         LET g_action_choice="related_document"
 #         EXIT DISPLAY
-# 
+#
 #      ON ACTION gpm_show
 #         LET g_action_choice="gpm_show"
 #         EXIT DISPLAY
-#         
+#
 #      ON ACTION gpm_query
 #         LET g_action_choice="gpm_query"
 #         EXIT DISPLAY
-# 
+#
 #      ON ACTION aps_related_data
 #         LET g_action_choice = 'aps_related_data'
 #         EXIT DISPLAY
-# 
+#
 ##      &include "qry_string.4gl"          #MOD-B30150 mark
-#FUN-B90101--mark-- 
+#FUN-B90101--mark--
    END DISPLAY
 
       #FUN-CB0014---add---str---
       ON ACTION page_list
-         LET g_action_flag = "page_list"  
+         LET g_action_flag = "page_list"
          EXIT DIALOG
       #FUN-CB0014---add---end---
-#FUN-B90101--add--begin--  
+#FUN-B90101--add--begin--
       ON ACTION insert
          LET g_action_choice="insert"
-         EXIT DIALOG 
-         
+         EXIT DIALOG
+
       ON ACTION query
          LET g_action_choice="query"
          EXIT DIALOG
- 
+
       ON ACTION delete
          LET g_action_choice="delete"
          EXIT DIALOG
- 
+
       ON ACTION modify
          LET g_action_choice="modify"
          EXIT DIALOG
- 
+
       ON ACTION first
          CALL t420_fetch('F')
          CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
          CALL fgl_set_arr_curr(1)
          ACCEPT DIALOG   #FUN-530067(smin)
- 
+
       ON ACTION previous
          CALL t420_fetch('P')
          CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
          CALL fgl_set_arr_curr(1)
          ACCEPT DIALOG   #FUN-530067(smin)
- 
+
       ON ACTION jump
          CALL t420_fetch('/')
          CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
          CALL fgl_set_arr_curr(1)
          ACCEPT DIALOG   #FUN-530067(smin)
- 
+
       ON ACTION next
          CALL t420_fetch('N')
          CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
          CALL fgl_set_arr_curr(1)
          ACCEPT DIALOG   #FUN-530067(smin)
- 
+
       ON ACTION last
          CALL t420_fetch('L')
          CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
          CALL fgl_set_arr_curr(1)
          ACCEPT DIALOG   #FUN-530067(smin)
- 
+
       ON ACTION reproduce
          LET g_action_choice="reproduce"
          EXIT DIALOG
@@ -4256,84 +4266,84 @@ FUNCTION t420_bp(p_ud)
       ON ACTION help
          LET g_action_choice="help"
          EXIT DIALOG
- 
+
       ON ACTION locale
          CALL cl_dynamic_locale()
          CALL cl_show_fld_cont()                   #No.FUN-550037 hmf
          CALL t420_def_form()   #FUN-610067
-         IF g_aza.aza71 MATCHES '[Yy]' THEN       
+         IF g_aza.aza71 MATCHES '[Yy]' THEN
             CALL aws_gpmcli_toolbar()
             CALL cl_set_act_visible("gpm_show,gpm_query", TRUE)
          ELSE
             CALL cl_set_act_visible("gpm_show,gpm_query", FALSE)  #N0.TQC-710042
-         END IF 
+         END IF
          CALL t420_pic() #FUN-730012
          EXIT DIALOG
- 
+
 #FUN-C20006--mark--begin--
 #&ifdef SLK
-#     ON ACTION controlb	
-#        IF li_a THEN	
-#           LET li_a = FALSE	
-#           NEXT FIELD pmlslk04	
-#        ELSE	
-#           LET li_a = TRUE	
-#           NEXT FIELD color	
-#        END IF	
+#     ON ACTION controlb
+#        IF li_a THEN
+#           LET li_a = FALSE
+#           NEXT FIELD pmlslk04
+#        ELSE
+#           LET li_a = TRUE
+#           NEXT FIELD color
+#        END IF
 #&endif
 #FUN-C20006--mark--end--
 
       ON ACTION controlg
          LET g_action_choice="controlg"
          EXIT DIALOG
-
+      on action action_stock_post let g_action_choice = 'action_stock_post' #darcy add
     #@ON ACTION MRP查詢
       ON ACTION query_mrp
          LET g_action_choice="query_mrp"
          EXIT DIALOG
- 
+
     #@ON ACTION 採購查詢
       ON ACTION qry_po_status
          LET g_action_choice="qry_po_status"
          EXIT DIALOG
- 
+
     #@ON ACTION 簽核狀況
       ON ACTION approval_status
          LET g_action_choice="approval_status"
          EXIT DIALOG
-    
+
     #FUN-B30082----ADD----START----
     #@ON ACTION 變更狀況
       ON ACTION modify_status
          LET g_action_choice="modify_status"
          EXIT DIALOG
     #FUN-B30082----ADD-----END-----
- 
+
     #@ON ACTION 備註
       ON ACTION memo
          LET g_action_choice="memo"
          EXIT DIALOG
- 
+
     #@ON ACTION 特別說明
       ON ACTION special_description
          LET g_action_choice="special_description"
          EXIT DIALOG
- 
+
     #@ON ACTION easyflow送簽
       ON ACTION easyflow_approval         #FUN-550038
          LET g_action_choice = "easyflow_approval"
          EXIT DIALOG
- 
+
     #@ON ACTION 確認
       ON ACTION confirm
          LET g_action_choice="confirm"
          EXIT DIALOG
- 
+
     #@ON ACTION 取消確認
       ON ACTION undo_confirm
          LET g_action_choice="undo_confirm"
          EXIT DIALOG
- 
+
     #@ON ACTION 作廢
       ON ACTION void
          LET g_action_choice="void"
@@ -4342,38 +4352,38 @@ FUNCTION t420_bp(p_ud)
     #@ON ACTION 取消作廢
       ON ACTION undo_void
          LET g_action_choice="undo_void"
-         EXIT DIALOG 
-#FUN-D20025 add   
+         EXIT DIALOG
+#FUN-D20025 add
       ON IDLE g_idle_seconds
          CALL cl_on_idle()
          CONTINUE DIALOG
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION exporttoexcel       #FUN-4B0025
          LET g_action_choice = 'exporttoexcel'
          EXIT DIALOG
       ON ACTION agree
          LET g_action_choice = 'agree'
          EXIT DIALOG
- 
+
       ON ACTION deny
          LET g_action_choice = 'deny'
          EXIT DIALOG
- 
+
       ON ACTION modify_flow
          LET g_action_choice = 'modify_flow'
          EXIT DIALOG
- 
+
       ON ACTION withdraw
          LET g_action_choice = 'withdraw'
          EXIT DIALOG
- 
+
       ON ACTION org_withdraw
          LET g_action_choice = 'org_withdraw'
          EXIT DIALOG
- 
+
       ON ACTION phrase
          LET g_action_choice = 'phrase'
          EXIT DIALOG
@@ -4386,29 +4396,29 @@ FUNCTION t420_bp(p_ud)
 #      ON ACTION style_detail
 #         LET g_action_choice = 'style_detail'
 #         EXIT DIALOG
-##FUN-A50054---End         
-#&endif              
+##FUN-A50054---End
+#&endif
 #FUN-A60035 ---MARK END
- 
-      ON ACTION controls                           #No.FUN-6B0032             
+
+      ON ACTION controls                           #No.FUN-6B0032
          CALL cl_set_head_visible("","AUTO")       #No.FUN-6B0032
- 
+
       ON ACTION related_document                #No.FUN-6A0162  相關文件
-         LET g_action_choice="related_document"          
+         LET g_action_choice="related_document"
          EXIT DIALOG
- 
+
       ON ACTION gpm_show
          LET g_action_choice="gpm_show"
          EXIT DIALOG
-         
+
       ON ACTION gpm_query
          LET g_action_choice="gpm_query"
          EXIT DIALOG
- 
+
       ON ACTION aps_related_data
          LET g_action_choice = 'aps_related_data'
          EXIT DIALOG
-   
+
       ON ACTION EXIT
          LET g_action_choice = "EXIT"
          EXIT DIALOG
@@ -4418,24 +4428,24 @@ FUNCTION t420_bp(p_ud)
 #&ifndef SLK                    #FUN-C20006--mark--
          LET l_ac = ARR_CURR()
 #&endif                         #FUN-C20006--mark--
-         EXIT DIALOG  
+         EXIT DIALOG
       ON ACTION cancel
          LET INT_FLAG = TRUE
          LET g_action_choice = "EXIT"
-         EXIT DIALOG          
-   END DIALOG       
+         EXIT DIALOG
+   END DIALOG
 #FUN-B90101--add--end--
    CALL cl_set_act_visible("accept,cancel", TRUE)
 END FUNCTION
- 
+
 #FUN-C20006--add--begin--
 #FUN-C20006--add--end--
- 
+
 FUNCTION t420_u()
     DEFINE  l_pml02  LIKE pml_file.pml02
     DEFINE  l_first  LIKE type_file.chr1   #FUN-6A0153 add
     DEFINE  l_update LIKE type_file.chr1   #FUN-6A0153 add
- 
+
     IF s_shut(0) THEN RETURN END IF
    #IF g_pmk.pmk01 IS NULL THEN CALL cl_err('',-420,0) RETURN END IF
    #IF g_pmk.pmk01 IS NULL THEN CALL cl_err('',-400,0) RETURN END IF   #TQC-C10020 #MOD-BA0139 mark
@@ -4449,7 +4459,7 @@ FUNCTION t420_u()
          CALL cl_err('','apm-030',0)
          RETURN
     END IF
- 
+
     #已發出轉請購單僅可"已發出採購單作業"才可更改
     IF g_argv2 matches '[01]' AND g_pmk.pmk25='2' THEN
        CALL cl_err('','mfg9118',0)
@@ -4541,7 +4551,7 @@ FUNCTION t420_u()
            END IF
         END IF
         #No.MOD-C80183  --End
- 
+
         #---更改單身狀況
           DECLARE t420_stat CURSOR FOR SELECT pml02 FROM pml_file
                            WHERE pml01 = g_pmk.pmk01
@@ -4550,11 +4560,11 @@ FUNCTION t420_u()
              LET l_update= 'Y'   #FUN-6A0153 add
              CALL s_showmsg_init()        #No.FUN-710030
              FOREACH t420_stat INTO l_pml02
-                  IF g_success="N" THEN                                                                                                       
-                     LET g_totsuccess="N"                                                                                                     
-                     LET g_success="Y"                                                                                                        
-                  END IF     
- 
+                  IF g_success="N" THEN
+                     LET g_totsuccess="N"
+                     LET g_success="Y"
+                  END IF
+
                #當單頭的pmk45改成N時,要將單身所有的pml38全部改成N
                 IF g_pmk.pmk45 != g_pmk_t.pmk45 THEN
                    IF g_pmk.pmk45='N' THEN
@@ -4611,7 +4621,7 @@ FUNCTION t420_u()
     CLOSE t420_cl
     DISPLAY BY NAME g_pmk.pmk25
     CALL t420_pic() #FUN-730012
- 
+
     CALL s_showmsg()       #No.FUN-710030
     IF g_success = 'N' THEN
        ROLLBACK WORK
@@ -4622,7 +4632,7 @@ FUNCTION t420_u()
     CALL t420_show()                             # 顯示最新資料   #FUN-690047 add
     CALL cl_flow_notify(g_pmk.pmk01,'U')
 END FUNCTION
- 
+
 FUNCTION t420_r()
    DEFINE  l_pml      RECORD
            pml12      LIKE pml_file.pml12,
@@ -4642,7 +4652,7 @@ FUNCTION t420_r()
     DEFINE   l_pml41   LIKE pml_file.pml41  #MOD-D20125
     DEFINE   l_str     STRING  #MOD-D20125
     DEFINE   l_mss_v   LIKE mss_file.mss_v  #MOD-D20125
-    
+
     IF s_shut(0) THEN RETURN END IF
     IF g_pmk.pmk01 IS NULL THEN CALL cl_err('',-400,0) RETURN END IF
     SELECT * INTO g_pmk.* FROM pmk_file
@@ -4653,7 +4663,7 @@ FUNCTION t420_r()
        CALL cl_err("","mfg3557",0)
        RETURN
     END IF
-    IF g_pmk.pmkacti='N' THEN 
+    IF g_pmk.pmkacti='N' THEN
        CALL cl_err('','art-264',0)
        RETURN
     END IF
@@ -4668,7 +4678,7 @@ FUNCTION t420_r()
     SELECT COUNT(*) INTO g_cnt FROM pml_file
            WHERE pml01=g_pmk.pmk01 AND pml21 > 0
     IF g_cnt > 0 THEN CALL cl_err('','mfg9118',0) RETURN END IF
- 
+
     BEGIN WORK
     LET g_success = 'Y'  #No.FUN-8A0086
     OPEN t420_cl USING g_pmk.pmk01
@@ -4695,17 +4705,17 @@ FUNCTION t420_r()
           ROLLBACK WORK RETURN
        END IF
        #MOD-D20125---begin
-       DECLARE pml41_c1 CURSOR FOR 
+       DECLARE pml41_c1 CURSOR FOR
                         SELECT pml41 FROM pml_file WHERE pml01 = g_pmk.pmk01
                                                      AND pml41 IS NOT NULL  #TQC-D30025
-        
+
        FOREACH pml41_c1 INTO l_pml41
            LET l_str = l_pml41
            LET l_mss_v = l_pml41[1,l_str.getIndexOf('-',1)-1]
            UPDATE mss_file
               SET mss10 = 'N'
-            WHERE mss_v = l_mss_v    
-       END FOREACH 
+            WHERE mss_v = l_mss_v
+       END FOREACH
        #MOD-D20125---end
 #FUN-B90101--add--begin--
 #FUN-B90101--add--end--
@@ -4755,7 +4765,7 @@ FUNCTION t420_r()
           END IF
        END FOREACH
        #MOD-C80135 --add end--
- 
+
    DECLARE t420_r1_c CURSOR FOR
       SELECT pml12,pml121,pml122 FROM pml_file
        WHERE pml01=g_pmk.pmk01
@@ -4775,20 +4785,20 @@ FUNCTION t420_r()
    IF g_totsuccess="N" THEN
       LET g_success="N"
    END IF
- 
+
        IF g_sma.sma901 = 'Y' THEN
            LET l_cmd = " DELETE FROM vmz_file ",
                        "  WHERE vmz01 MATCHES '",g_pmk.pmk01,"*'"
            PREPARE t420_del_aps_spm FROM l_cmd
            EXECUTE t420_del_aps_spm
            IF SQLCA.sqlcode THEN
-               CALL cl_err3("del","vmz_file",g_pmk.pmk01,'',SQLCA.sqlcode,"","",1) 
+               CALL cl_err3("del","vmz_file",g_pmk.pmk01,'',SQLCA.sqlcode,"","",1)
                ROLLBACK WORK
                RETURN
            END IF
        END IF
-#FUN-B90101--add--begin-- 
-#FUN-B90101--add--end-- 
+#FUN-B90101--add--begin--
+#FUN-B90101--add--end--
        DELETE FROM pml_file WHERE pml01 = g_pmk.pmk01
 
 #FUN-A60035 ---MARK BEGIN
@@ -4796,7 +4806,7 @@ FUNCTION t420_r()
 #&ifdef SLK
 #       DELETE FROM ata_file WHERE ata00=g_prog AND ata01=g_pmk.pmk01  #FUN-A50054
 #&endif
-##FUN-A50054 --End       
+##FUN-A50054 --End
 #FUN-A60035 ---MARK END
        DELETE FROM pmo_file WHERE pmo01 = g_pmk.pmk01
        DELETE FROM pmp_file WHERE pmp01 = g_pmk.pmk01
@@ -4838,7 +4848,7 @@ FUNCTION t420_r()
            COMMIT WORK
            RETURN
         END IF
-        #FUN-B50063-add-end-- 
+        #FUN-B50063-add-end--
         FETCH t420_count INTO g_row_count
         #FUN-B50063-add-start--
         IF STATUS OR (cl_null(g_row_count) OR  g_row_count = 0 ) THEN
@@ -4869,12 +4879,12 @@ FUNCTION t420_r()
     END IF
     CALL cl_flow_notify(g_pmk.pmk01,'D')
 END FUNCTION
- 
+
 FUNCTION t420_sign(p_cmd)
   DEFINE     p_cmd    LIKE type_file.chr1,    #No.FUN-680136 VARCHAR(1)
               l_slip   LIKE oay_file.oayslip,  #No.FUN-680136 VARCHAR(05)   #No.MOD-540182
              l_pmksign   LIKE pmk_file.pmksign
- 
+
  IF cl_null(g_pmk.pmk01) THEN RETURN END IF
  IF g_pmk.pmkmksg MATCHES'[nN]' OR g_pmk.pmk25 matches'[269]'
  THEN RETURN
@@ -4958,21 +4968,21 @@ FUNCTION t420_sign(p_cmd)
     END IF
  END IF
 END FUNCTION
- 
+
 FUNCTION t420_copy()
 DEFINE
        l_newno      LIKE pmk_file.pmk01,
        l_oldno      LIKE pmk_file.pmk01,
        l_pmk25      LIKE pmk_file.pmk25,
        l_pmk01_t    LIKE pmk_file.pmk01
- 
+
 DEFINE l_newdate    LIKE pmk_file.pmk04,    #No.B359
        l_pmk31      LIKE pmk_file.pmk31,
        l_pmk32      LIKE pmk_file.pmk32,
        l_pmk04_t    LIKE pmk_file.pmk04
 DEFINE li_result    LIKE type_file.num5     #No.FUN-680136 SMALLINT
 DEFINE l_pmk48      LIKE pmk_file.pmk48     #No.FUN-870007
-DEFINE l_cnt1       LIKE type_file.num5     #FUN-C80045 add   
+DEFINE l_cnt1       LIKE type_file.num5     #FUN-C80045 add
     IF s_shut(0) THEN RETURN END IF
     #TQC-C10020 mark---------------
     #IF g_pmk.pmk01 IS NULL THEN
@@ -4990,15 +5000,15 @@ DEFINE l_cnt1       LIKE type_file.num5     #FUN-C80045 add
      LET g_before_input_done = FALSE  #No.MOD-480235
      CALL t420_set_entry('a')         #No.MOD-480235
      LET g_before_input_done = TRUE   #No.MOD-480235
- 
+
     CALL cl_set_head_visible("","YES")           #No.FUN-6B0032
     INPUT l_newno,l_newdate FROM pmk01,pmk04  #No.B359
           BEFORE INPUT
              CALL cl_set_docno_format("pmk01")
- 
+
           AFTER FIELD pmk01
               IF NOT cl_null(l_newno) THEN
-                 #FUN-C80045 add sta 
+                 #FUN-C80045 add sta
                  LET g_t1=s_get_doc_no(l_newno)
                  LET l_cnt1 = 0
                  SELECT COUNT(*) INTO l_cnt1 FROM  rye_file WHERE rye04 = g_t1 AND ryeacti = 'Y' AND rye01 = 'apm'
@@ -5013,7 +5023,7 @@ DEFINE l_cnt1       LIKE type_file.num5     #FUN-C80045 add
                     NEXT FIELD pmk01
                  END IF
               END IF
- 
+
           AFTER FIELD pmk04       #請購日期(預設會計年度/期間)
              IF NOT cl_null(l_newdate) THEN
                 SELECT azn02,azn04 INTO l_pmk31,l_pmk32 FROM azn_file
@@ -5038,7 +5048,7 @@ DEFINE l_cnt1       LIKE type_file.num5     #FUN-C80045 add
                NEXT FIELD pmk01
             END IF
             DISPLAY l_newno TO pmk01
- 
+
              ON ACTION controlp
                  CASE
                      WHEN INFIELD(pmk01) #單據編號
@@ -5052,19 +5062,19 @@ DEFINE l_cnt1       LIKE type_file.num5     #FUN-C80045 add
              ON IDLE g_idle_seconds
                 CALL cl_on_idle()
                 CONTINUE INPUT
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
+
       ON ACTION controlg      #MOD-4C0121
          CALL cl_cmdask()     #MOD-4C0121
- 
- 
+
+
     END INPUT
- 
+
     IF INT_FLAG THEN
         LET INT_FLAG = 0
         ROLLBACK WORK
@@ -5098,7 +5108,7 @@ DEFINE l_cnt1       LIKE type_file.num5     #FUN-C80045 add
             pmkcrat=g_today,  #資料創建日   #No.FUN-870007
             pmk46='1',        #來源類型     #No.FUN-870007
             pmk47=g_plant,    #取貨機構     #No.FUN-870007
-            pmk50=null,       #生产营运中心 #FUN-CC0057 
+            pmk50=null,       #生产营运中心 #FUN-CC0057
             pmkconu='',       #審核人員     #No.FUN-870007
             pmkcond='',       #審核時間     #No.FUN-870007
             pmkplant=g_plant,   #機構別       #No.FUN-870007
@@ -5111,11 +5121,11 @@ DEFINE l_cnt1       LIKE type_file.num5     #FUN-C80045 add
         CALL cl_err3("ins","pmk_file",g_pmk.pmk01,"",SQLCA.sqlcode,"","",1)  #No.FUN-660129
         ROLLBACK WORK
         RETURN
-    ELSE              
-        COMMIT WORK  
+    ELSE
+        COMMIT WORK
     END IF
 #FUN-B90101--add--begin--
-#FUN-B90101--add--end-- 
+#FUN-B90101--add--end--
     DROP TABLE x
     SELECT * FROM pml_file         #單身複製
         WHERE pml01=l_pmk01_t
@@ -5131,9 +5141,9 @@ DEFINE l_cnt1       LIKE type_file.num5     #FUN-C80045 add
             pml21= 0  ,
             pml43= 0,
             pml431= 0,
-            pml33='',  #No.B345 
-            pml34='',          
-            pml35='',         
+            pml33='',  #No.B345
+            pml34='',
+            pml35='',
             pml18='',
             pml92='N',  #FUN-A10034
             pml93=NULL  #FUN-A10034
@@ -5145,7 +5155,7 @@ DEFINE l_cnt1       LIKE type_file.num5     #FUN-C80045 add
     END IF
     LET g_cnt=SQLCA.SQLERRD[3]
     MESSAGE '(',g_cnt USING '##&',') ROW of (',l_newno,') O.K'
- 
+
      LET l_oldno = g_pmk.pmk01
      SELECT pmk_file.* INTO g_pmk.* FROM pmk_file
                     WHERE pmk01 = l_newno
@@ -5155,21 +5165,21 @@ DEFINE l_cnt1       LIKE type_file.num5     #FUN-C80045 add
      #CALL t420_show()                                #FUN-C80046
     DISPLAY BY NAME g_pmk.pmk01
 END FUNCTION
- 
+
 FUNCTION t420_prt()
- 
+
    IF cl_confirm('mfg3242') THEN
       CALL t420_out()
    END IF
- 
+
 END FUNCTION
- 
+
 FUNCTION t420_out()
    DEFINE l_cmd         LIKE type_file.chr1000, #No.FUN-680136 VARCHAR(200)
           l_prog        LIKE zz_file.zz01,      #No.FUN-680136 VARCHAR(10)
           l_wc,l_wc2    LIKE type_file.chr1000, #No.FUN-680136 VARCHAR(50)
           l_prtway      LIKE type_file.chr1     #No.FUN-680136 VARCHAR(1)
- 
+
     --IF cl_null(g_pmk.pmk01) THEN RETURN END IF
   #  LET l_prog='apmr903' #FUN-C30085 mark
     --LET l_prog='apmg903' #FUN-C30085 add
@@ -5192,14 +5202,14 @@ FUNCTION t420_out()
        #-------------07751hlf add-------------------------------------
        ON ACTION buy_goods1 #辅材料请购单
                LET l_wc='pmk01="',g_pmk.pmk01,'"'
-               LET g_msg = "cpmr420", 
+               LET g_msg = "cpmr420",
                        " '",g_today CLIPPED,"' ''",
                        " '",g_lang CLIPPED,"' '",g_bgjob CLIPPED,"'  '' '1'",
-                       " '",l_wc CLIPPED,"' '' 'N' "   
+                       " '",l_wc CLIPPED,"' '' 'N' "
                     CALL cl_cmdrun(g_msg)
-      #---------------07751 end---------------------------------------  
-        
-        
+      #---------------07751 end---------------------------------------
+
+
 
        ON ACTION exit
           EXIT MENU
@@ -5221,14 +5231,14 @@ FUNCTION t420_out()
          CALL cl_cmdask()     #MOD-4C0121
 
         -- for Windows close event trapped
-        ON ACTION close   #COMMAND KEY(INTERRUPT) #FUN-9B0145  
+        ON ACTION close   #COMMAND KEY(INTERRUPT) #FUN-9B0145
              LET INT_FLAG=FALSE   #MOD-570244 mars
             LET g_action_choice = "exit"
             EXIT MENU
     END MENU
- 
+
 END FUNCTION
- 
+
 FUNCTION t420_b()
 DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT              #未取消的ARRAY CNT
        l_n,l_idx       LIKE type_file.num5,    #No.FUN-680136 SMALLINT     #檢查重複用
@@ -5250,18 +5260,18 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
        l_allow_delete  LIKE type_file.num5,    #No.FUN-680136 SMALLINT   #可刪除否
        l_pmk25         LIKE pmk_file.pmk25,
        l_ima928        LIKE ima_file.ima928    #FUN-C30075 add
-   DEFINE   li_i         LIKE type_file.num5    #No.FUN-680136 SMALLINT 
+   DEFINE   li_i         LIKE type_file.num5    #No.FUN-680136 SMALLINT
    DEFINE   l_azf09      LIKE azf_file.azf09    #No.FUN-930104
    DEFINE   l_imaag      LIKE ima_file.imaag
-   DEFINE   l_count      LIKE type_file.num5    #No.FUN-680136 SMALLINT                                               
-   DEFINE   l_temp       LIKE ima_file.ima01                                    
-   DEFINE   l_check_res  LIKE type_file.num5    #No.FUN-680136 SMALLINT                                               
+   DEFINE   l_count      LIKE type_file.num5    #No.FUN-680136 SMALLINT
+   DEFINE   l_temp       LIKE ima_file.ima01
+   DEFINE   l_check_res  LIKE type_file.num5    #No.FUN-680136 SMALLINT
    DEFINE l_chr4      LIKE type_file.chr4
    DEFINE  l_pjb25    LIKE pjb_file.pjb25,
            l_ima920   LIKE ima_file.ima920
-   DEFINE  l_pjb09    LIKE pjb_file.pjb09   #No.FUN-850027 
+   DEFINE  l_pjb09    LIKE pjb_file.pjb09   #No.FUN-850027
    DEFINE  l_pjb11    LIKE pjb_file.pjb11   #No.FUN-850027
- 
+
    DEFINE l_rtz04 LIKE rtz_file.rtz04
    DEFINE l_rte04 LIKE rte_file.rte04
    DEFINE l_rte07 LIKE rte_file.rte07
@@ -5270,7 +5280,7 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
    DEFINE l_pmc30 LIKE pmc_file.pmc30
    DEFINE l_pmcacti LIKE pmc_file.pmcacti
    DEFINE l_pmc930 LIKE pmc_file.pmc930
-   DEFINE li_result LIKE type_file.chr1 
+   DEFINE li_result LIKE type_file.chr1
    DEFINE l_img04   LIKE img_file.img04   #add by jixf 160804
 #FUN-C20006--mark-begin--
 ##FUN-B90101--add--begin--
@@ -5278,8 +5288,8 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 # DEFINE l_i        LIKE type_file.num5,
 #        l_index    LIKE type_file.num5,
 #        l_pmlslk09 LIKE pml_file.pml09
-# 
-#        
+#
+#
 #&endif
 ##FUN-B90101--add--end--
 #FUN-C20006--mark--end--
@@ -5289,10 +5299,10 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
   DEFINE l_ima926 LIKE ima_file.ima926  #FUN-D30087 add
 
    LET g_action_choice = ""
-   
+
    IF s_shut(0) THEN RETURN END IF
    IF cl_null(g_pmk.pmk01)  THEN RETURN END IF
-   LET g_success = 'Y'  
+   LET g_success = 'Y'
    SELECT * INTO g_pmk.* FROM pmk_file
     WHERE pmk01=g_pmk.pmk01
    LET l_pmk25 = g_pmk.pmk25          #FUN-550038
@@ -5307,7 +5317,7 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
       CALL cl_err('','mfg3168',0)
       RETURN
    END IF
- 
+
    IF g_argv2 = '0' AND g_pmk.pmk25 matches'[269]' THEN
       CALL cl_err('','mfg3141',0)
       RETURN
@@ -5321,9 +5331,9 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
       CALL cl_err('','mfg9118',0)
       RETURN
    END IF
- 
+
    CALL cl_opmsg('b')
- 
+
     LET g_forupd_sql =
     "SELECT * ",
     "  FROM pml_file ",
@@ -5345,15 +5355,15 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #FUN-C20006--mark--end--
 
     LET l_ac_t = 0
- 
+
     IF g_rec_b > 0 THEN LET l_ac = 1 END IF
- 
+
     LET l_allow_insert = cl_detail_input_auth("insert")
     LET l_allow_delete = cl_detail_input_auth("delete")
-    IF g_rec_b > 0 THEN LET l_ac = 1 END IF   #TQC-D40025 add 
+    IF g_rec_b > 0 THEN LET l_ac = 1 END IF   #TQC-D40025 add
 
 #FUN-B90101--add--str--
-    DIALOG ATTRIBUTES(UNBUFFERED) 
+    DIALOG ATTRIBUTES(UNBUFFERED)
 #FUN-C20006--mark-begin--
 #&ifdef SLK
 #      INPUT ARRAY g_pmlslk FROM s_pmlslk.*
@@ -5395,14 +5405,14 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #               CALL cl_set_comp_entry("pmlslk20",FALSE)
 #            ELSE
 #               CALL cl_set_comp_entry("pmlslk20",TRUE)
-#            END IF         
+#            END IF
 #            IF g_gec07 = 'N' OR cl_null(g_gec07) THEN         #No.FUN-560102   #MOD-860100
 #               CALL cl_set_comp_entry("pmlslk31t",FALSE)
 #               CALL cl_set_comp_entry("pmlslk31",TRUE)
 #            ELSE
 #               CALL cl_set_comp_entry("pmlslk31",FALSE)
 #               CALL cl_set_comp_entry("pmlslk31t",TRUE)
-#            END IF  
+#            END IF
 #            IF g_sma.sma59 = 'Y' AND g_pmlslk[l_ac2].pmlslk20 != 0 THEN
 #               CALL cl_set_comp_required("pmlslk31,pmlslk31t",TRUE)
 #            ELSE
@@ -5414,18 +5424,18 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #               LET p_cmd='u'
 #               LET g_pmlslk_t.* = g_pmlslk[l_ac2].*  #BACKUP
 #               LET l_lock_sw = 'N'            #DEFAULT
-#               
+#
 #               OPEN t420_bcl_slk USING g_pmk.pmk01,g_pmlslk_t.pmlslk02
 #               IF STATUS THEN
 #                   CALL cl_err("OPEN t420_bcl_slk:", STATUS, 1)
 #                   LET l_lock_sw = "Y"
-#               ELSE                   
+#               ELSE
 #                   FETCH t420_bcl_slk INTO g_pmlslk2.* #FUN-730068
 #                   IF SQLCA.sqlcode THEN
 #                       CALL cl_err(g_pmlslk_t.pmlslk02,SQLCA.sqlcode,1)
 #                       LET l_lock_sw = "Y"
 #                   ELSE
-#                       CALL t420_b_move_to() #FUN-730068               
+#                       CALL t420_b_move_to() #FUN-730068
 #                       SELECT pmlslk_file.* INTO g_pmlslk2.*
 #                         FROM pmlslk_file
 #                        WHERE pmlslk01 = g_pmk.pmk01
@@ -5456,27 +5466,27 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #                IF g_flag=1 THEN
 #                   NEXT FIELD pmlslk04
 #                END IF
-#             END IF             
-#            IF g_smy.smy59 = 'Y' THEN             
-#              IF cl_null(g_pmlslk[l_ac2].pmlslk90) THEN 
+#             END IF
+#            IF g_smy.smy59 = 'Y' THEN
+#              IF cl_null(g_pmlslk[l_ac2].pmlslk90) THEN
 #                 CALL cl_err('','apj-201',0)
 #                 NEXT FIELD pmlslk90
-#              END IF                                                
-#              IF cl_null(g_pmlslk[l_ac2].pmlslk33) THEN 
+#              END IF
+#              IF cl_null(g_pmlslk[l_ac2].pmlslk33) THEN
 #                 LET g_pmlslk[l_ac2].pmlslk33 = g_today
-#              END IF                                                   
+#              END IF
 #            END IF
 
 #             LET g_pmlslk2.pmlslk31  = g_pmlslk[l_ac2].pmlslk31 	#MOD-950256 add
 #             LET g_pmlslk2.pmlslk31t = g_pmlslk[l_ac2].pmlslk31t    #MOD-950256 add
-#         
-#             SELECT azi03,azi04 INTO t_azi03,t_azi04 FROM azi_file    
+#
+#             SELECT azi03,azi04 INTO t_azi03,t_azi04 FROM azi_file
 #              WHERE azi01 = g_pmk.pmk22  AND aziacti= 'Y'  #原幣
 #             LET g_pmlslk2.pmlslk88 =cl_digcut(g_pmlslk2.pmlslk20*g_pmlslk2.pmlslk31,t_azi04)
 #             LET g_pmlslk2.pmlslk88t=cl_digcut(g_pmlslk2.pmlslk20*g_pmlslk2.pmlslk31t,t_azi04)
 #             LET g_pmlslk2.pmlslk930=g_pmlslk[l_ac2].pmlslk930 #FUN-670051
 
-#             IF cl_null(g_pmlslk[l_ac2].pmlslk90) THEN 
+#             IF cl_null(g_pmlslk[l_ac2].pmlslk90) THEN
 #                LET g_pmlslk[l_ac2].pmlslk90=' '
 #             END IF
 #             LET g_pmlslk2.pmlslk24 =g_pmlslk[l_ac2].pmlslk24
@@ -5485,7 +5495,7 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #             IF cl_null(g_pmlslk2.pmlslk50) THEN LET g_pmlslk2.pmlslk50='1' END IF
 #             LET g_pmlslk2.pmlslkplant =g_plant  #FUN-980006 add
 #             LET g_pmlslk2.pmlslklegal =g_legal  #FUN-980006 add
-#           
+#
 #             CALL s_umfchk(g_pmlslk[l_ac2].pmlslk04,g_pmlslk[l_ac2].pmlslk07,
 #                           g_pmlslk2.pmlslk08) RETURNING l_flag,l_pmlslk09
 #             IF l_flag THEN
@@ -5505,15 +5515,15 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #                   SELECT MAX(pml02) INTO l_n FROM pml_file WHERE pml01 = g_pmk.pmk01
 #                   IF cl_null(l_n) THEN
 #                      LET l_n = 0
-#                   END IF 
+#                   END IF
 #                   LET g_pml_slk.pml02 = l_n + 1
 #                   LET g_pml_slk.pml04 = g_pmlslk[l_ac2].pmlslk04
-#                   LET g_pml_slk.pml041= g_pmlslk[l_ac2].pmlslk041   
+#                   LET g_pml_slk.pml041= g_pmlslk[l_ac2].pmlslk041
 #                   CALL t420_pmlslk_move()
 #                   INSERT INTO pml_file VALUES(g_pml_slk.*)
 #                   IF SQLCA.sqlcode THEN
 #                      CALL cl_err3("ins","pml_file",g_pmk.pmk01,g_pmlslk[l_ac2].pmlslk02,SQLCA.sqlcode,"","",1)
-#                      CANCEL INSERT  
+#                      CANCEL INSERT
 #                   ELSE
 #                      LET g_pmli_slk.pmli01 = g_pmk.pmk01
 #                      LET g_pmli_slk.pmli02 = g_pml_slk.pml02
@@ -5521,16 +5531,16 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #                      LET g_pmli_slk.pmlislk03 = g_pmlslk[l_ac2].pmlslk02
 #                      LET g_pmli_slk.pmliplant = g_plant
 #                      LET g_pmli_slk.pmlilegal = g_legal
-#                      INSERT INTO pmli_file VALUES(g_pmli_slk.*)  
+#                      INSERT INTO pmli_file VALUES(g_pmli_slk.*)
 #                      IF SQLCA.sqlcode THEN
 #                         CALL cl_err3("ins","pmli_file",g_pmk.pmk01,g_pmlslk[l_ac2].pmlslk02,SQLCA.sqlcode,"","",1)
-#                         CANCEL INSERT   
+#                         CANCEL INSERT
 #                      END IF
 #                   END IF
-#                END IF  
+#                END IF
 #                LET l_pmk25 = '0'
 #                CALL t420_update() #MOD-960034
-#                DISPLAY g_rec_b2 TO FORMONLY.cn2 
+#                DISPLAY g_rec_b2 TO FORMONLY.cn2
 #             END IF
 
 #         BEFORE INSERT
@@ -5560,11 +5570,11 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #            INITIALIZE g_pmlslk_t.* TO NULL
 #            CALL t420_azi()
 #            LET g_pmlslk2.pmlslk01 = g_pmk.pmk01
-#            IF l_ac2 != 1 THEN 
+#            IF l_ac2 != 1 THEN
 #               SELECT pmlslk08 INTO g_pmlslk2.pmlslk08 FROM pmlslk_file
 #                 WHERE pmlslk01 = g_pmk.pmk01 AND pmlslk02 = g_pmlslk[l_ac2-1].pmlslk02
 #            END IF
-#            LET g_pmlslk[l_ac2].pmlslk20 = 0  
+#            LET g_pmlslk[l_ac2].pmlslk20 = 0
 #            LET g_pmlslk[l_ac2].pmlslk21 = 0          #已轉採購量
 #            LET g_pmlslk[l_ac2].pmlslk30 = 0
 #            LET g_pmlslk[l_ac2].pmlslk31 = 0
@@ -5574,10 +5584,10 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #            LET g_pmlslk[l_ac2].pmlslk88t= 0
 #            LET g_pmlslk[l_ac2].pmlslk33 = g_today
 #            LET g_pmlslk[l_ac2].pmlslk34 = g_today
-#            LET g_pmlslk[l_ac2].pmlslk35 = g_today 
+#            LET g_pmlslk[l_ac2].pmlslk35 = g_today
 #            LET g_pmlslk[l_ac2].pmlslk90 = ' '           #費用原因
 #            LET g_pmlslk[l_ac2].pmlslk50 = '1'
-#            LET g_pmlslk[l_ac2].pmlslk190 = 'N'          #No.MOD-6A0014 add                                                                  
+#            LET g_pmlslk[l_ac2].pmlslk190 = 'N'          #No.MOD-6A0014 add
 #            LET g_pmlslk[l_ac2].pmlslk192 = "N"  #No.FUN-630040
 #            LET g_pmlslk[l_ac2].pmlslk930=s_costcenter(g_pmk.pmk13)
 #            LET g_pmlslk_t.* = g_pmlslk[l_ac2].*         #新輸入資料
@@ -5606,10 +5616,10 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #            IF NOT cl_null(g_pmlslk[l_ac2].pmlslk02) THEN
 #                IF g_pmlslk[l_ac2].pmlslk02 != g_pmlslk_t.pmlslk02 OR
 #                   g_pmlslk_t.pmlslk02 IS NULL THEN
-#                   LET g_pmli.pmlislk02=g_pmlslk[l_ac2].pmlslk02   #No.TQC-970335           
+#                   LET g_pmli.pmlislk02=g_pmlslk[l_ac2].pmlslk02   #No.TQC-970335
 #                   SELECT count(*) INTO l_n FROM pmlslk_file
 #                     WHERE pmlslk01 = g_pmk.pmk01 AND
-#                           pmlslk02 = g_pmlslk[l_ac2].pmlslk02                  
+#                           pmlslk02 = g_pmlslk[l_ac2].pmlslk02
 #                   IF l_n > 0 THEN
 #                      CALL cl_err('',-239,0)
 #                      LET g_pmlslk[l_ac2].pmlslk02 = g_pmlslk_t.pmlslk02
@@ -5630,8 +5640,8 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #         AFTER FIELD pmlslk04     # check 料件編號
 #            IF NOT cl_null(g_pmlslk[l_ac2].pmlslk04) THEN
 #            #FUN-C20006 mark
-#            #  SELECT COUNT(*) INTO l_n FROM ima_file WHERE ima01=g_pmlslk[l_ac2].pmlslk04 
-#            #                                           AND imaacti='Y' 
+#            #  SELECT COUNT(*) INTO l_n FROM ima_file WHERE ima01=g_pmlslk[l_ac2].pmlslk04
+#            #                                           AND imaacti='Y'
 #            #                                           AND ( ima151 != 'N' OR imaag <> '@CHILD' )
 #            #  IF l_n = 0 THEN
 #            #     CALL cl_err('g_pmlslk[l_ac2].pmlslk04','-0811',0)
@@ -5658,21 +5668,21 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #                  CALL cl_set_comp_entry("pmlslk20",FALSE)
 #               ELSE
 #                  CALL cl_set_comp_entry("pmlslk20",TRUE)
-#               END IF    
+#               END IF
 #               IF g_pmlslk_o.pmlslk04 IS NULL OR g_pmlslk[l_ac2].pmlslk04 != g_pmlslk_o.pmlslk04 THEN
-#                  SELECT COUNT(*) INTO l_n FROM pmlslk_file WHERE pmlslk01=g_pmk.pmk01 
+#                  SELECT COUNT(*) INTO l_n FROM pmlslk_file WHERE pmlslk01=g_pmk.pmk01
 #                                                              AND pmlslk04=g_pmlslk[l_ac2].pmlslk04
 #                  IF l_n > 0 THEN
 #                     CALL cl_err('',-239,0)
 #                     NEXT FIELD pmlslk04
 #                  END IF
-#               END IF  
+#               END IF
 #               IF g_pmlslk[l_ac2].pmlslk04[1,4] != 'MISC' THEN        #TQC-B30200
 #                  IF NOT s_chk_item_no(g_pmlslk[l_ac2].pmlslk04,"") THEN
 #                     CALL cl_err('',g_errno,1)
 #                     NEXT FIELD pmlslk04
 #                  END IF
-#               END IF                                          #TQC-B30200 
+#               END IF                                          #TQC-B30200
 #            END IF
 #            IF NOT s_chkima08(g_pmlslk[l_ac2].pmlslk04) THEN
 #               NEXT FIELD CURRENT
@@ -5681,8 +5691,8 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #            IF (g_pmlslk_o.pmlslk04 IS NULL OR g_pmlslk[l_ac2].pmlslk04 != g_pmlslk_o.pmlslk04)
 #               AND (g_pmlslk[l_ac2].pmlslk04[1,4] != 'MISC') THEN
 #               IF g_sma.sma908 = 'N' THEN
-#                  SELECT COUNT(*) INTO l_n FROM ima_file WHERE ima01 =g_pmlslk[l_ac2].pmlslk04 
-#                  IF l_n =0 THEN 
+#                  SELECT COUNT(*) INTO l_n FROM ima_file WHERE ima01 =g_pmlslk[l_ac2].pmlslk04
+#                  IF l_n =0 THEN
 #                     LET g_pmlslk[l_ac2].pmlslk04 =NULL
 #                     CALL cl_err(g_pmlslk[l_ac2].pmlslk04,'ams-003',1)
 #                     NEXT FIELD pmlslk04
@@ -5708,13 +5718,13 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #                                                    g_pmlslk[l_ac2].pmlslk08,g_pmlslk[l_ac2].pmlslk190,
 #                                                    g_pmlslk[l_ac2].pmlslk191 FROM ima_file
 #             WHERE ima01=g_pmlslk[l_ac2].pmlslk04
-#         
+#
 #        SELECT imb118 INTO g_pmlslk[l_ac2].pmlslk30 FROM imb_file WHERE imb01=g_pmlslk[l_ac2].pmlslk04
 #        LET g_pmlslk[l_ac2].pmlslk192='N'
-#        LET g_pmlslk[l_ac2].pmlslk930=s_costcenter(g_pmk.pmk13) 
+#        LET g_pmlslk[l_ac2].pmlslk930=s_costcenter(g_pmk.pmk13)
 #        SELECT rty03 INTO g_pmlslk[l_ac2].pmlslk50 FROM rty_file
 #            WHERE rty01=g_plant AND rty02=g_pmlslk[l_ac2].pmlslk04
-#        DISPLAY BY NAME g_pmlslk[l_ac2].*                       #MOD-AA0084           
+#        DISPLAY BY NAME g_pmlslk[l_ac2].*                       #MOD-AA0084
 #
 #
 #         AFTER FIELD pmlslk07    #請購單位
@@ -5759,16 +5769,16 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #               IF  g_pmlslk[l_ac2].pmlslk20 < 0 THEN
 #                   LET g_pmlslk[l_ac2].pmlslk20 = g_pmlslk_t.pmlslk20
 #                   NEXT FIELD pmlslk20
-#               END IF      
+#               END IF
 #               IF NOT cl_null(g_pmlslk[l_ac2].pmlslk31) THEN
 #                  LET g_pmlslk[l_ac2].pmlslk88 = g_pmlslk[l_ac2].pmlslk31*g_pmlslk[l_ac2].pmlslk20
 #               END IF
-#               IF NOT cl_null(g_pmlslk[l_ac2].pmlslk31T) THEN 
+#               IF NOT cl_null(g_pmlslk[l_ac2].pmlslk31T) THEN
 #                  LET g_pmlslk[l_ac2].pmlslk88t= g_pmlslk[l_ac2].pmlslk31t*g_pmlslk[l_ac2].pmlslk20
 #               END IF
 #               CALL cl_digcut(g_pmlslk[l_ac2].pmlslk88,t_azi04) RETURNING g_pmlslk[l_ac2].pmlslk88
 #               CALL cl_digcut(g_pmlslk[l_ac2].pmlslk88t,t_azi04) RETURNING g_pmlslk[l_ac2].pmlslk88t
-#            END IF 
+#            END IF
 #         AFTER FIELD pmlslk33    #交貨日期
 #           IF NOT cl_null(g_pmlslk[l_ac2].pmlslk33) THEN
 #              IF g_pmlslk[l_ac2].pmlslk33 < g_pmk.pmk04 THEN
@@ -5789,7 +5799,7 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #              LET g_pmlslk2.pmlslk33 = g_pmlslk[l_ac2].pmlslk33
 #            # CALL t420_bud(p_cmd,'3')
 #            # IF NOT cl_null(g_errno) THEN
-#            #    NEXT FIELD pmlslk33 
+#            #    NEXT FIELD pmlslk33
 #            # END IF
 #           END IF
 #           LET g_pmlslk_o.pmlslk33 = g_pmlslk[l_ac2].pmlslk33
@@ -5847,12 +5857,12 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #                LET g_pmlslk[l_ac2].pmlslk35 = g_pmlslk[l_ac2].pmlslk34 + g_ima491
 #                DISPLAY BY NAME g_pmlslk[l_ac2].pmlslk35
 #           END IF
-#           IF cl_null(g_pmlslk[l_ac2].pmlslk34) 
-#              OR g_pmlslk_t.pmlslk35 != g_pmlslk[l_ac2].pmlslk35 OR cl_null(g_pmlslk_t.pmlslk35) THEN #TQC-970421 
+#           IF cl_null(g_pmlslk[l_ac2].pmlslk34)
+#              OR g_pmlslk_t.pmlslk35 != g_pmlslk[l_ac2].pmlslk35 OR cl_null(g_pmlslk_t.pmlslk35) THEN #TQC-970421
 #              CALL s_aday(g_pmlslk[l_ac2].pmlslk35,-1,g_ima491) RETURNING g_pmlslk[l_ac2].pmlslk34
 #           END IF
-#           IF cl_null(g_pmlslk[l_ac2].pmlslk33) 
-#              OR g_pmlslk_t.pmlslk35 != g_pmlslk[l_ac2].pmlslk35 OR cl_null(g_pmlslk_t.pmlslk35) THEN #TQC-970421 
+#           IF cl_null(g_pmlslk[l_ac2].pmlslk33)
+#              OR g_pmlslk_t.pmlslk35 != g_pmlslk[l_ac2].pmlslk35 OR cl_null(g_pmlslk_t.pmlslk35) THEN #TQC-970421
 #              CALL s_aday(g_pmlslk[l_ac2].pmlslk34,-1,g_ima49) RETURNING g_pmlslk[l_ac2].pmlslk33
 #           END IF
 #           LET g_pmlslk2.pmlslk33 = g_pmlslk[l_ac2].pmlslk33
@@ -5873,20 +5883,20 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #        AFTER FIELD pmlslk90  #費用原因
 #          IF NOT cl_null(g_pmlslk[l_ac2].pmlslk90) THEN
 #             SELECT COUNT(*) INTO g_cnt FROM azf_file
-#               WHERE azf01=g_pmlslk[l_ac2].pmlslk90 AND azf02='2' AND azfacti='Y'          
+#               WHERE azf01=g_pmlslk[l_ac2].pmlslk90 AND azf02='2' AND azfacti='Y'
 #             IF g_cnt = 0 THEN
 #                CALL cl_err(g_pmlslk[l_ac2].pmlslk90,'asf-453',0)
 #                NEXT FIELD pmlslk90
 #             END IF
-#             SELECT azf09 INTO l_azf09 FROM azf_file 
-#              WHERE azf01=g_pmlslk[l_ac2].pmlslk90 AND azf02='2' AND azfacti='Y' 
-#                 IF l_azf09 !='7' THEN 
+#             SELECT azf09 INTO l_azf09 FROM azf_file
+#              WHERE azf01=g_pmlslk[l_ac2].pmlslk90 AND azf02='2' AND azfacti='Y'
+#                 IF l_azf09 !='7' THEN
 #                   CALL cl_err('','aoo-406',1)
 #                    NEXT FIELD pmlslk90
-#                 END IF   
+#                 END IF
 #           # CALL t420_bud(p_cmd,'3')
 #           # IF NOT cl_null(g_errno) THEN
-#           #    NEXT FIELD pmlslk90 
+#           #    NEXT FIELD pmlslk90
 #           # END IF
 #          END IF
 #
@@ -5895,15 +5905,15 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #              CALL cl_set_comp_entry("pmlslk31t",FALSE)
 #           ELSE
 #              CALL cl_set_comp_entry("pmlslk31",FALSE)
-#           END IF 
-#        
+#           END IF
+#
 #        BEFORE FIELD pmlslk31t
 #           IF g_gec07 = 'N' OR cl_null(g_gec07) THEN         #No.FUN-560102   #MOD-860100
 #              CALL cl_set_comp_entry("pmlslk31t",FALSE)
 #           ELSE
 #              CALL cl_set_comp_entry("pmlslk31",FALSE)
 #           END IF
-# 
+#
 #        AFTER FIELD pmlslk31   #未稅單價
 #           IF NOT cl_null(g_pmlslk[l_ac2].pmlslk31) THEN
 #              IF cl_null(g_pmlslk[l_ac2].pmlslk31) OR g_pmlslk[l_ac2].pmlslk31<0 THEN
@@ -5911,15 +5921,15 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #                 DISPLAY BY NAME g_pmlslk[l_ac2].pmlslk31
 #                 NEXT FIELD pmlslk31
 #              END IF
-#              LET g_pmlslk[l_ac2].pmlslk31 = cl_digcut(g_pmlslk[l_ac2].pmlslk31,t_azi03)  #No.CHI-6A0004 
+#              LET g_pmlslk[l_ac2].pmlslk31 = cl_digcut(g_pmlslk[l_ac2].pmlslk31,t_azi03)  #No.CHI-6A0004
 #              LET g_pmlslk[l_ac2].pmlslk44 = g_pmlslk[l_ac2].pmlslk31*g_pmk.pmk42
 #              LET g_pmlslk[l_ac2].pmlslk44 = cl_digcut(g_pmlslk[l_ac2].pmlslk44,t_azi03)
 #              LET g_pmlslk[l_ac2].pmlslk31t = g_pmlslk[l_ac2].pmlslk31 * (1 + g_pmk.pmk43/100)
-#              LET g_pmlslk[l_ac2].pmlslk31t = cl_digcut(g_pmlslk[l_ac2].pmlslk31t,t_azi03) #No.CHI-6A0004 
+#              LET g_pmlslk[l_ac2].pmlslk31t = cl_digcut(g_pmlslk[l_ac2].pmlslk31t,t_azi03) #No.CHI-6A0004
 #              IF NOT cl_null(g_pmlslk[l_ac2].pmlslk20) THEN
 #                 LET g_pmlslk[l_ac2].pmlslk88 = cl_digcut(g_pmlslk[l_ac2].pmlslk31*g_pmlslk[l_ac2].pmlslk20,t_azi04)
 #                 LET g_pmlslk[l_ac2].pmlslk88t= cl_digcut(g_pmlslk[l_ac2].pmlslk31t*g_pmlslk[l_ac2].pmlslk20,t_azi04)
-#              END IF   
+#              END IF
 #              IF cl_null(g_pmlslk[l_ac2].pmlslk44) THEN
 #                 LET g_pmlslk[l_ac2].pmlslk44 = 0
 #              END IF
@@ -5931,7 +5941,7 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #              END IF
 #            # CALL t420_bud(p_cmd,'3')
 #            # IF NOT cl_null(g_errno) THEN
-#            #    NEXT FIELD pmlslk31 
+#            #    NEXT FIELD pmlslk31
 #            # END IF
 #           END IF
 #        AFTER FIELD pmlslk31t  #含稅單價
@@ -5941,9 +5951,9 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #                 DISPLAY BY NAME g_pmlslk[l_ac2].pmlslk31t
 #                 NEXT FIELD pmlslk31t
 #              END IF
-#              LET g_pmlslk[l_ac2].pmlslk31t = cl_digcut(g_pmlslk[l_ac2].pmlslk31t,t_azi03)  #No.CHI-6A0004 
+#              LET g_pmlslk[l_ac2].pmlslk31t = cl_digcut(g_pmlslk[l_ac2].pmlslk31t,t_azi03)  #No.CHI-6A0004
 #              LET g_pmlslk[l_ac2].pmlslk31 = g_pmlslk[l_ac2].pmlslk31t / (1 + g_pmk.pmk43/100)
-#              LET g_pmlslk[l_ac2].pmlslk31 = cl_digcut(g_pmlslk[l_ac2].pmlslk31,t_azi03)  #No.CHI-6A0004 
+#              LET g_pmlslk[l_ac2].pmlslk31 = cl_digcut(g_pmlslk[l_ac2].pmlslk31,t_azi03)  #No.CHI-6A0004
 #              LET g_pmlslk[l_ac2].pmlslk44=g_pmlslk[l_ac2].pmlslk31*g_pmk.pmk42             #No.TQC-630043 add
 #              LET g_pmlslk[l_ac2].pmlslk44 = cl_digcut(g_pmlslk[l_ac2].pmlslk44,t_azi03)
 #              IF NOT cl_null(g_pmlslk[l_ac2].pmlslk20) THEN
@@ -5958,7 +5968,7 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #              END IF
 #              IF cl_null(g_pmlslk[l_ac2].pmlslk88t) THEN
 #                 LET g_pmlslk[l_ac2].pmlslk88t = 0
-#              END IF    
+#              END IF
 #          END IF
 
 #         BEFORE DELETE                            #是否取消單身
@@ -5979,25 +5989,25 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #               IF g_sma.sma901 = 'Y' THEN
 #                  LET l_chr4 = g_pmlslk[l_ac2].pmlslk02 USING '&&&&'
 #                  LET g_pmlslk02 = g_pmlslk_t.pmlslk02
-#                  IF g_pmlslk_t.pmlslk02<10 THEN 
+#                  IF g_pmlslk_t.pmlslk02<10 THEN
 #                     LET g_pmlslk02='000',g_pmlslk02
-#                  ELSE 
-#                     IF g_pmlslk_t.pmlslk02<100 THEN 
+#                  ELSE
+#                     IF g_pmlslk_t.pmlslk02<100 THEN
 #                        LET g_pmlslk02='00',g_pmlslk02
-#                     ELSE 
+#                     ELSE
 #                        IF g_pmlslk_t.pmlslk02<1000 THEN
 #                           LET g_pmlslk02='0',g_pmlslk02
-#                        ELSE 
+#                        ELSE
 #                           LET g_pmlslk02=g_pmlslk02
 #                        END IF
 #                     END IF
 #                  END IF
-#            
+#
 #                  LET g_pmlslk02 = g_pmk.pmk01,'-',g_pmlslk02
 #                  DISPLAY "g_pmlslk02 = ",g_pmlslk02
 #                  DELETE FROM vmz_file where vmz01=g_pmlslk02
 #               END IF
-#               CALL t420_upd_oebslk28('d',g_pmlslk_t.pmlslk02) 
+#               CALL t420_upd_oebslk28('d',g_pmlslk_t.pmlslk02)
 #               DELETE FROM pmo_file
 #                  WHERE pmo01 = g_pmk.pmk01
 #                  AND pmo03 = g_pmlslk_t.pmlslk02
@@ -6014,24 +6024,24 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #                   CANCEL DELETE
 #               ELSE
 #                  LET g_rec_b2=g_rec_b2-1
-#                  DELETE FROM pml_file WHERE pml01=g_pmk.pmk01 
+#                  DELETE FROM pml_file WHERE pml01=g_pmk.pmk01
 #                                         AND pml02 IN (SELECT pml02 FROM pml_file,pmli_file
 #                                                        WHERE pml01=pmli01
-#                                                          AND pml02=pmli02 
+#                                                          AND pml02=pmli02
 #                                                          AND pmli01=g_pmk.pmk01
 #                                                          AND pmlislk02=g_pmlslk_t.pmlslk04
 #                                                          AND pmlislk03=g_pmlslk_t.pmlslk02)
 #                  DELETE FROM pmli_file WHERE pmli01=g_pmk.pmk01
 #                                          AND pmlislk02=g_pmlslk_t.pmlslk04
-#                                          AND pmlislk03=g_pmlslk_t.pmlslk02                                    
+#                                          AND pmlislk03=g_pmlslk_t.pmlslk02
 #               END IF
-# 
+#
 #               DISPLAY g_rec_b2 TO FORMONLY.cn2
 #               SELECT SUM(pml20) INTO l_count FROM pml_file WHERE pml01=g_pmk.pmk01
 #               DISPLAY l_count TO FORMONLY.qty
 #               LET l_pmk25 = '0'          #FUN-550038
 #               LET g_no = g_pmlslk2.pmlslk04[1,4]
-#               CALL t420_update() #MOD-960034   
+#               CALL t420_update() #MOD-960034
 #               COMMIT WORK
 #            END IF
 #
@@ -6042,7 +6052,7 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #                LET g_pmlslk[l_ac2].* = g_pmlslk_t.*
 #                CLOSE t420_bcl_slk
 #                ROLLBACK WORK
-#                EXIT DIALOG 
+#                EXIT DIALOG
 #             END IF
 #             IF l_lock_sw = 'Y' THEN
 #                CALL cl_err(g_pmlslk[l_ac2].pmlslk02,-263,1)
@@ -6064,7 +6074,7 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #                LET g_pmlslk2.pmlslk31  = g_pmlslk[l_ac2].pmlslk31 	#MOD-950256 add
 #                LET g_pmlslk2.pmlslk31t = g_pmlslk[l_ac2].pmlslk31t #MOD-950256 add
 
-#                SELECT azi03,azi04 INTO t_azi03,t_azi04 FROM azi_file    
+#                SELECT azi03,azi04 INTO t_azi03,t_azi04 FROM azi_file
 #                 WHERE azi01 = g_pmk.pmk22  AND aziacti= 'Y'  #原幣
 #                LET g_pmlslk2.pmlslk88 =cl_digcut(g_pmlslk2.pmlslk20*g_pmlslk2.pmlslk31,t_azi04)
 #                LET g_pmlslk2.pmlslk88t=cl_digcut(g_pmlslk2.pmlslk20*g_pmlslk2.pmlslk31t,t_azi04)
@@ -6084,7 +6094,7 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #                   CALL cl_err3("upd","pmlslk_file",g_pmk.pmk01,g_pmlslk_t.pmlslk02,SQLCA.sqlcode,"","",1)  #No.FUN-660129
 #                   LET g_pmlslk[l_ac2].* = g_pmlslk_t.*
 #                ELSE
-#                   IF g_pmlslk[l_ac2].pmlslk04 != g_pmlslk_t.pmlslk04 THEN 
+#                   IF g_pmlslk[l_ac2].pmlslk04 != g_pmlslk_t.pmlslk04 THEN
 #                      DELETE FROM pml_file WHERE pml01=g_pmk.pmk01
 #                                             AND pml02 IN (SELECT pml02 FROM pml_file,pmli_file
 #                                                            WHERE pml01=pmli01
@@ -6095,13 +6105,13 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #                      DELETE FROM pmli_file WHERE pmli01=g_pmk.pmk01
 #                                              AND pmlislk02=g_pmlslk_t.pmlslk04
 #                                              AND pmlislk03=g_pmlslk_t.pmlslk02
-#                      SELECT ima151 INTO l_ima151 FROM ima_file WHERE ima01 = g_pmlslk[l_ac2].pmlslk04 
+#                      SELECT ima151 INTO l_ima151 FROM ima_file WHERE ima01 = g_pmlslk[l_ac2].pmlslk04
 #                      IF l_ima151 = 'N' THEN        #非子、母料件
 #                          LET g_pml_slk.pml01 = g_pmk.pmk01
 #                          SELECT MAX(pml02) INTO l_n FROM pml_file WHERE pml01 = g_pmk.pmk01
 #                          IF cl_null(l_n) THEN
 #                             LET l_n = 0
-#                          END IF 
+#                          END IF
 #                          LET g_pml_slk.pml02 = l_n + 1
 #                          LET g_pml_slk.pml04 = g_pmlslk[l_ac2].pmlslk04
 #                          LET g_pml_slk.pml041= g_pmlslk[l_ac2].pmlslk041
@@ -6121,7 +6131,7 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #                                CALL cl_err3("ins","pmli_file",g_pmk.pmk01,g_pmlslk[l_ac2].pmlslk02,SQLCA.sqlcode,"","",1)
 #                             END IF
 #                          END IF
-#                      END IF   
+#                      END IF
 #                   ELSE
 #                      SELECT ima151 INTO l_ima151 FROM ima_file WHERE ima01 = g_pmlslk_t.pmlslk04
 #                      IF l_ima151 = 'N' THEN        #非子、母料件
@@ -6170,14 +6180,14 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #                                                            AND pml02=pmli02
 #                                                            AND pmli01=g_pmk.pmk01
 #                                                            AND pmlislk02=g_pmlslk_t.pmlslk04
-#                                                            AND pmlislk03=g_pmlslk_t.pmlslk02)        
+#                                                            AND pmlislk03=g_pmlslk_t.pmlslk02)
 #                      END IF
 #                  END IF
 #               END IF       #FUN-A50054 add
 #               MESSAGE 'UPDATE O.K'
-#               LET l_pmk25 = '0'  
+#               LET l_pmk25 = '0'
 #               CALL t420_upd_oebslk28('b',g_pmlslk_t.pmlslk02)
-#               CALL t420_update() #MOD-960034   
+#               CALL t420_update() #MOD-960034
 #               COMMIT WORK
 #             END IF
 #
@@ -6192,17 +6202,17 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #                END IF
 #                CLOSE t420_bcl_slk
 #                ROLLBACK WORK
-#                EXIT DIALOG 
-#             ELSE 
-#                IF g_smy.smy59 = 'Y' THEN             
-#                   IF cl_null(g_pmlslk[l_ac2].pmlslk90) THEN 
+#                EXIT DIALOG
+#             ELSE
+#                IF g_smy.smy59 = 'Y' THEN
+#                   IF cl_null(g_pmlslk[l_ac2].pmlslk90) THEN
 #                      CALL cl_err('','apj-201',0)
 #                      NEXT FIELD pmlslk90
-#                   END IF                   
-#                   IF cl_null(g_pmlslk[l_ac2].pmlslk33) THEN 
+#                   END IF
+#                   IF cl_null(g_pmlslk[l_ac2].pmlslk33) THEN
 #                      LET g_pmlslk[l_ac2].pmlslk33 = g_today
-#                   END IF                                             
-#                END IF                
+#                   END IF
+#                END IF
 #             END IF
 #             CLOSE t420_bcl_slk
 #             COMMIT WORK
@@ -6213,7 +6223,7 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #               WHEN INFIELD(pmlslk04) #料件編號
 #                    CALL cl_init_qry_var()
 #                    LET g_qryparam.form ="q_ima01"
-#                    LET g_qryparam.default1 = g_pmlslk[l_ac2].pmlslk04 
+#                    LET g_qryparam.default1 = g_pmlslk[l_ac2].pmlslk04
 #                    CALL cl_create_qry() RETURNING g_pmlslk[l_ac2].pmlslk04
 #                    DISPLAY g_pmlslk[l_ac2].pmlslk04 TO pmlslk04
 #                    NEXT FIELD pmlslk04
@@ -6226,9 +6236,9 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #                    NEXT FIELD pmlslk07
 #               WHEN INFIELD(pmlslk90)  #費用原因
 #                    CALL cl_init_qry_var()
-#                    LET g_qryparam.form ="q_azf01a" #No.FUN-930104 
+#                    LET g_qryparam.form ="q_azf01a" #No.FUN-930104
 #                    LET g_qryparam.default1 = g_pmlslk[l_ac2].pmlslk90
-#                    LET g_qryparam.arg1 = '7'       #No.FUN-930104  
+#                    LET g_qryparam.arg1 = '7'       #No.FUN-930104
 #                    CALL cl_create_qry() RETURNING g_pmlslk[l_ac2].pmlslk90
 #                    DISPLAY BY NAME g_pmlslk[l_ac2].pmlslk90
 #                    NEXT FIELD pmlslk90
@@ -6245,10 +6255,10 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #            IF g_sma.sma38 MATCHES'[Yy]' THEN
 #               IF not cl_null(g_pmlslk[l_ac2].pmlslk04) THEN
 #                  LET g_cmd = "aimi100 '",g_pmlslk[l_ac2].pmlslk04 CLIPPED,"'"
-#               ELSE 
+#               ELSE
 #                  LET g_cmd = "aimi100 "
 #               END IF
-#               CALL cl_cmdrun(g_cmd)    
+#               CALL cl_cmdrun(g_cmd)
 #            ELSE
 #               CALL cl_err(g_sma.sma38,'mfg0035',1)
 #            END IF
@@ -6289,7 +6299,7 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #                CALL cl_init_qry_var()
 #                LET g_qryparam.form = "q_pmh"
 #                LET g_qryparam.arg1 = g_pmk.pmk09  #No.MOD-480478
-#                LET g_qryparam.default1 = g_pmlslk[l_ac2].pmlslk04  
+#                LET g_qryparam.default1 = g_pmlslk[l_ac2].pmlslk04
 #                CALL cl_create_qry() RETURNING g_pmlslk[l_ac2].pmlslk04
 #                DISPLAY g_pmlslk[l_ac2].pmlslk04 TO pmlslk04
 #                NEXT FIELD pmlslk04
@@ -6300,7 +6310,7 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #
 #         ON ACTION item_inquiry_list
 #         #  CALL t420_b_more()
-#             
+#
 #         ON ACTION CONTROLO                        #沿用所有欄位
 #            IF INFIELD(pmlslk02) AND l_ac2 > 1 THEN
 #               LET g_pmlslk[l_ac2].* = g_pmlslk[l_ac2-1].*
@@ -6322,12 +6332,12 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #            ATTRIBUTE(COUNT=g_rec_b3,MAXCOUNT=g_max_rec,WITHOUT DEFAULTS=TRUE,
 #            INSERT ROW=TRUE,DELETE ROW=TRUE,APPEND ROW=TRUE)
 #         BEFORE INPUT
-#             IF g_rec_b3 != 0 THEN 
+#             IF g_rec_b3 != 0 THEN
 #                CALL fgl_set_arr_curr(l_ac3)
 #             END IF
 #             CALL cl_set_comp_required('color',TRUE)
-#         
-#         BEFORE ROW 
+#
+#         BEFORE ROW
 #            LET p_cmd3 = ''
 #            LET l_ac3 = ARR_CURR()
 #            INITIALIZE g_imx_t.* TO NULL
@@ -6351,16 +6361,16 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 
 #            IF g_rec_b3 >= l_ac3 THEN
 #               LET p_cmd3='u'
-#               LET g_imx_t.* = g_imx[l_ac3].*  
-#               LET l_lock_sw = 'N'           
+#               LET g_imx_t.* = g_imx[l_ac3].*
+#               LET l_lock_sw = 'N'
 #            END IF
-#          
+#
 #          BEFORE INSERT
 #            LET p_cmd3='a'
 #            LET l_ac3 = ARR_CURR()
 #            INITIALIZE g_imx_t.* TO NULL
 
-#          AFTER FIELD color          
+#          AFTER FIELD color
 #             IF NOT cl_null(g_imx[l_ac3].color) THEN
 #                IF NOT t420_check_color() THEN
 #                   LET g_imx[l_ac3].color=g_imx_t.color
@@ -6368,16 +6378,16 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #                END IF
 #                IF g_imx[l_ac3].color !=g_imx_t.color AND g_imx_t.color IS NOT NULL THEN
 #                   CALL s_updcolor_slk(l_ac3,g_pmlslk[l_ac2].pmlslk04,
-#                                    g_pmk.pmk01,g_pmlslk[l_ac2].pmlslk02) 
+#                                    g_pmk.pmk01,g_pmlslk[l_ac2].pmlslk02)
 #                END IF
-#             END IF             
+#             END IF
 #
 
 #          AFTER FIELD imx01
 #             IF NOT cl_null(g_imx[l_ac3].imx01) THEN
 #                IF p_cmd3='a' OR (g_imx[l_ac3].imx01 !=g_imx_t.imx01 AND g_imx_t.imx01 IS NOT NULL) THEN
 #                   IF NOT t420_check_imx(1,g_imx[l_ac3].imx01,g_imx_t.imx01) THEN
-#                      LET g_imx[l_ac3].imx01 = g_imx_t.imx01 
+#                      LET g_imx[l_ac3].imx01 = g_imx_t.imx01
 #                      NEXT FIELD imx01
 #                   END IF
 #                   CALL s_ins_ima_slk(l_ac3,1,g_pmlslk[l_ac2].pmlslk04)
@@ -6397,22 +6407,22 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #             IF NOT cl_null(g_imx[l_ac3].imx03) THEN
 #                IF p_cmd3='a' OR (g_imx[l_ac3].imx03 !=g_imx_t.imx03 AND g_imx_t.imx03 IS NOT NULL) THEN
 #                   IF NOT t420_check_imx(3,g_imx[l_ac3].imx03,g_imx_t.imx03) THEN
-#                      LET g_imx[l_ac3].imx03 = g_imx_t.imx03  
+#                      LET g_imx[l_ac3].imx03 = g_imx_t.imx03
 #                      NEXT FIELD imx03
 #                   END IF
 #                   CALL s_ins_ima_slk(l_ac3,3,g_pmlslk[l_ac2].pmlslk04)
 #                END IF
-#             END IF 
+#             END IF
 #          AFTER FIELD imx04
 #             IF NOT cl_null(g_imx[l_ac3].imx04) THEN
 #                IF p_cmd3='a' OR (g_imx[l_ac3].imx04 !=g_imx_t.imx04 AND g_imx_t.imx04 IS NOT NULL) THEN
 #                    IF NOT t420_check_imx(4,g_imx[l_ac3].imx04,g_imx_t.imx04) THEN
-#                       LET g_imx[l_ac3].imx04 = g_imx_t.imx04 
+#                       LET g_imx[l_ac3].imx04 = g_imx_t.imx04
 #                       NEXT FIELD imx04
 #                    END IF
 #                   CALL s_ins_ima_slk(l_ac3,4,g_pmlslk[l_ac2].pmlslk04)
 #                END IF
-#             END IF  
+#             END IF
 #          AFTER FIELD imx05
 #             IF NOT cl_null(g_imx[l_ac3].imx05) THEN
 #                IF p_cmd3='a' OR (g_imx[l_ac3].imx05 !=g_imx_t.imx05 AND g_imx_t.imx05 IS NOT NULL) THEN
@@ -6422,7 +6432,7 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #                   END IF
 #                   CALL s_ins_ima_slk(l_ac3,5,g_pmlslk[l_ac2].pmlslk04)
 #                END IF
-#             END IF   
+#             END IF
 #          AFTER FIELD imx06
 #             IF NOT cl_null(g_imx[l_ac3].imx06) THEN
 #                IF p_cmd3='a' OR (g_imx[l_ac3].imx06 !=g_imx_t.imx06 AND g_imx_t.imx06 IS NOT NULL) THEN
@@ -6432,7 +6442,7 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #                   END IF
 #                   CALL s_ins_ima_slk(l_ac3,6,g_pmlslk[l_ac2].pmlslk04)
 #                END IF
-#             END IF  
+#             END IF
 #          AFTER FIELD imx07
 #             IF NOT cl_null(g_imx[l_ac3].imx07) THEN
 #                IF p_cmd3='a' OR (g_imx[l_ac3].imx07 !=g_imx_t.imx07 AND g_imx_t.imx07 IS NOT NULL) THEN
@@ -6441,7 +6451,7 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #                      NEXT FIELD imx07
 #                   END IF
 #                   CALL s_ins_ima_slk(l_ac3,7,g_pmlslk[l_ac2].pmlslk04)
-#                END IF 
+#                END IF
 #             END IF
 #          AFTER FIELD imx08
 #             IF NOT cl_null(g_imx[l_ac3].imx08) THEN
@@ -6452,27 +6462,27 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #                   END IF
 #                   CALL s_ins_ima_slk(l_ac3,8,g_pmlslk[l_ac2].pmlslk04)
 #                END IF
-#             END IF 
+#             END IF
 #          AFTER FIELD imx09
 #             IF NOT cl_null(g_imx[l_ac3].imx09) THEN
 #                IF p_cmd3='a' OR (g_imx[l_ac3].imx09 !=g_imx_t.imx09 AND g_imx_t.imx09 IS NOT NULL) THEN
 #                   IF NOT t420_check_imx(9,g_imx[l_ac3].imx09,g_imx_t.imx09) THEN
-#                      LET g_imx[l_ac3].imx09 = g_imx_t.imx09 
+#                      LET g_imx[l_ac3].imx09 = g_imx_t.imx09
 #                      NEXT FIELD imx09
 #                   END IF
 #                   CALL s_ins_ima_slk(l_ac3,9,g_pmlslk[l_ac2].pmlslk04)
 #                END IF
-#             END IF   
+#             END IF
 #          AFTER FIELD imx10
 #             IF NOT cl_null(g_imx[l_ac3].imx10) THEN
 #                IF p_cmd3='a' OR (g_imx[l_ac3].imx10 !=g_imx_t.imx10 AND g_imx_t.imx10 IS NOT NULL) THEN
 #                   IF NOT t420_check_imx(10,g_imx[l_ac3].imx10,g_imx_t.imx10) THEN
-#                      LET g_imx[l_ac3].imx10 = g_imx_t.imx10 
+#                      LET g_imx[l_ac3].imx10 = g_imx_t.imx10
 #                      NEXT FIELD imx10
 #                   END IF
 #                   CALL s_ins_ima_slk(l_ac3,10,g_pmlslk[l_ac2].pmlslk04)
 #                END IF
-#             END IF       
+#             END IF
 #          AFTER FIELD imx11
 #             IF NOT cl_null(g_imx[l_ac3].imx11) THEN
 #                IF p_cmd3='a' OR (g_imx[l_ac3].imx11 !=g_imx_t.imx11 AND g_imx_t.imx11 IS NOT NULL) THEN
@@ -6497,22 +6507,22 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #             IF NOT cl_null(g_imx[l_ac3].imx13) THEN
 #                IF p_cmd3='a' OR (g_imx[l_ac3].imx13 !=g_imx_t.imx13 AND g_imx_t.imx13 IS NOT NULL) THEN
 #                   IF NOT t420_check_imx(13,g_imx[l_ac3].imx13,g_imx_t.imx13) THEN
-#                      LET g_imx[l_ac3].imx13 = g_imx_t.imx13 
+#                      LET g_imx[l_ac3].imx13 = g_imx_t.imx13
 #                      NEXT FIELD imx13
 #                   END IF
 #                   CALL s_ins_ima_slk(l_ac3,13,g_pmlslk[l_ac2].pmlslk04)
 #                END IF
-#             END IF 
+#             END IF
 #          AFTER FIELD imx14
 #             IF NOT cl_null(g_imx[l_ac3].imx14) THEN
 #                IF p_cmd3='a' OR (g_imx[l_ac3].imx14 !=g_imx_t.imx14 AND g_imx_t.imx14 IS NOT NULL) THEN
 #                   IF NOT t420_check_imx(14,g_imx[l_ac3].imx14,g_imx_t.imx14) THEN
-#                      LET g_imx[l_ac3].imx14 = g_imx_t.imx14 
+#                      LET g_imx[l_ac3].imx14 = g_imx_t.imx14
 #                      NEXT FIELD imx14
 #                   END IF
 #                   CALL s_ins_ima_slk(l_ac3,14,g_pmlslk[l_ac2].pmlslk04)
 #                END IF
-#             END IF  
+#             END IF
 #          AFTER FIELD imx15
 #             IF NOT cl_null(g_imx[l_ac3].imx15) THEN
 #                IF p_cmd3='a' OR (g_imx[l_ac3].imx15 !=g_imx_t.imx15 AND g_imx_t.imx15 IS NOT NULL) THEN
@@ -6522,14 +6532,14 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #                   END IF
 #                   CALL s_ins_ima_slk(l_ac3,15,g_pmlslk[l_ac2].pmlslk04)
 #                END IF
-#             END IF   
+#             END IF
 
-#          BEFORE DELETE 
+#          BEFORE DELETE
 #            IF NOT cl_delb(0,0) THEN
 #               CANCEL DELETE
 #            END IF
 #            CALL s_ins_slk('r',l_ac3,g_pmlslk[l_ac2].pmlslk04,
-#                           g_pmk.pmk01,g_pmlslk[l_ac2].pmlslk02)  
+#                           g_pmk.pmk01,g_pmlslk[l_ac2].pmlslk02)
 #            LET g_rec_b3=g_rec_b3-1
 #            CALL t420_update_pmlslk()
 #            CALL t420_update()
@@ -6542,8 +6552,8 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #               BEFORE DISPLAY
 #                  EXIT DISPLAY
 #            END DISPLAY
-#            
-#          AFTER INSERT 
+#
+#          AFTER INSERT
 #             CALL t420_pmlslk_move()
 #             CALL s_ins_slk('a',l_ac3,g_pmlslk[l_ac2].pmlslk04,
 #                           g_pmk.pmk01,g_pmlslk[l_ac2].pmlslk02)
@@ -6558,9 +6568,9 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #             DISPLAY ARRAY g_pml TO s_pml.* ATTRIBUTE(COUNT=g_rec_b,UNBUFFERED)
 #                BEFORE DISPLAY
 #                   EXIT DISPLAY
-#             END DISPLAY 
+#             END DISPLAY
 
-#          ON ROW CHANGE 
+#          ON ROW CHANGE
 #             CALL t420_pmlslk_move()
 #             CALL s_ins_slk('u',l_ac3,g_pmlslk[l_ac2].pmlslk04,
 #                           g_pmk.pmk01,g_pmlslk[l_ac2].pmlslk02)
@@ -6574,24 +6584,24 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #             DISPLAY ARRAY g_pml TO s_pml.* ATTRIBUTE(COUNT=g_rec_b,UNBUFFERED)
 #                BEFORE DISPLAY
 #                   EXIT DISPLAY
-#             END DISPLAY           
-#  
+#             END DISPLAY
+#
 #          AFTER ROW
 #             IF g_success = 'Y' THEN
 #                COMMIT WORK
 #             ELSE
-#  	         ROLLBACK WORK 
+#  	         ROLLBACK WORK
 #             END IF
 #             CLOSE t420_cl
 
-#          AFTER INPUT 
+#          AFTER INPUT
 #             IF INT_FLAG THEN                         # 若按了DEL鍵
 #                LET INT_FLAG = 0
 #                EXIT DIALOG
 #             END IF
 
-#       END INPUT   
-#&else          
+#       END INPUT
+#&else
 #FUN-C20006--mark--end--
        INPUT ARRAY g_pml FROM s_pml.*
              ATTRIBUTE(COUNT=g_rec_b,MAXCOUNT=g_max_rec,WITHOUT DEFAULTS=TRUE,
@@ -6601,21 +6611,21 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #       INPUT ARRAY g_pml WITHOUT DEFAULTS FROM s_pml.*
 #            ATTRIBUTE(COUNT=g_rec_b,MAXCOUNT=g_max_rec,UNBUFFERED,
 #            INSERT ROW=l_allow_insert,DELETE ROW=l_allow_delete,APPEND ROW=l_allow_insert)
-# 
+#
 #FUN-B90101--mark--
           BEFORE INPUT
               IF g_rec_b != 0 THEN
                  CALL fgl_set_arr_curr(l_ac)
               END IF
               LET g_b_flag = '1'            #TQC-D40025
- 
+
           BEFORE ROW
              LET p_cmd = ''
              LET l_ac = ARR_CURR()
              LET l_n  = ARR_COUNT()
              LET l_ins_flag = 'N'
              BEGIN WORK
- 
+
              OPEN t420_cl USING g_pmk.pmk01
              IF STATUS THEN
                 CALL cl_err("OPEN t420_cl:", STATUS, 1)
@@ -6630,7 +6640,7 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
                 ROLLBACK WORK
                 RETURN
              END IF
-         
+
              #用在 INSERT 時的判斷
              #因為輸入新資料時不做 INITIALIZE g_pml[l_ac].* TO NULL ( L600 )
              IF g_rec_b >= l_ac THEN
@@ -6655,19 +6665,19 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #                    AND ata02=g_pml_t.pml02
 #                FOREACH t420_ata1 INTO l_ata02,g_pml_t.pml02,l_ata04,l_ata05 #FUN-A60035 add l_ata05
 #&endif
-##FUN-A50054 --End 
+##FUN-A50054 --End
 #FUN-A60035 ---MARK END
                 OPEN t420_bcl USING g_pmk.pmk01,g_pml_t.pml02
                 IF STATUS THEN
                     CALL cl_err("OPEN t420_bcl:", STATUS, 1)
                     LET l_lock_sw = "Y"
-                ELSE                   
+                ELSE
                     FETCH t420_bcl INTO g_pml2.* #FUN-730068
                     IF SQLCA.sqlcode THEN
                         CALL cl_err(g_pml_t.pml02,SQLCA.sqlcode,1)
                         LET l_lock_sw = "Y"
                     ELSE
-#FUN-A60035 ---MARK BEGIN 
+#FUN-A60035 ---MARK BEGIN
 ##FUN-A50054 --Begin
 #&ifndef SLK
 ##FUN-A50054 --End
@@ -6676,29 +6686,29 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #FUN-A60035 ---MARK BEGIN
 ##FUN-A50054 --Begin
 #&endif
-##FUN-A50054 --End        
-#FUN-A60035 ---MARK END                
-                        IF g_sma.sma120 = 'Y' AND g_sma.sma907 = 'Y' THEN              
+##FUN-A50054 --End
+#FUN-A60035 ---MARK END
+                        IF g_sma.sma120 = 'Y' AND g_sma.sma907 = 'Y' THEN
                            #得到該料件對應的父料件和所有屬性
-                           SELECT imx00,imx01,imx02,imx03,imx04,imx05,imx06,                                                                 
-                                  imx07,imx08,imx09,imx10 INTO                                                                               
-                                  g_pml[l_ac].att00,g_pml[l_ac].att01,g_pml[l_ac].att02,                                                     
-                                  g_pml[l_ac].att03,g_pml[l_ac].att04,g_pml[l_ac].att05,                                                     
-                                  g_pml[l_ac].att06,g_pml[l_ac].att07,g_pml[l_ac].att08,                                                     
-                                  g_pml[l_ac].att09,g_pml[l_ac].att10                                                                        
-                           FROM imx_file WHERE imx000 = g_pml[l_ac].pml04                                                                    
-                                                                                                                                             
-                           LET g_pml[l_ac].att01_c = g_pml[l_ac].att01                                                                       
-                           LET g_pml[l_ac].att02_c = g_pml[l_ac].att02                                                                       
-                           LET g_pml[l_ac].att03_c = g_pml[l_ac].att03                                                                       
-                           LET g_pml[l_ac].att04_c = g_pml[l_ac].att04                                                                       
-                           LET g_pml[l_ac].att05_c = g_pml[l_ac].att05                                                                       
-                           LET g_pml[l_ac].att06_c = g_pml[l_ac].att06                                                                       
-                           LET g_pml[l_ac].att07_c = g_pml[l_ac].att07                                                                       
-                           LET g_pml[l_ac].att08_c = g_pml[l_ac].att08                                                                       
-                           LET g_pml[l_ac].att09_c = g_pml[l_ac].att09                                                                       
+                           SELECT imx00,imx01,imx02,imx03,imx04,imx05,imx06,
+                                  imx07,imx08,imx09,imx10 INTO
+                                  g_pml[l_ac].att00,g_pml[l_ac].att01,g_pml[l_ac].att02,
+                                  g_pml[l_ac].att03,g_pml[l_ac].att04,g_pml[l_ac].att05,
+                                  g_pml[l_ac].att06,g_pml[l_ac].att07,g_pml[l_ac].att08,
+                                  g_pml[l_ac].att09,g_pml[l_ac].att10
+                           FROM imx_file WHERE imx000 = g_pml[l_ac].pml04
+
+                           LET g_pml[l_ac].att01_c = g_pml[l_ac].att01
+                           LET g_pml[l_ac].att02_c = g_pml[l_ac].att02
+                           LET g_pml[l_ac].att03_c = g_pml[l_ac].att03
+                           LET g_pml[l_ac].att04_c = g_pml[l_ac].att04
+                           LET g_pml[l_ac].att05_c = g_pml[l_ac].att05
+                           LET g_pml[l_ac].att06_c = g_pml[l_ac].att06
+                           LET g_pml[l_ac].att07_c = g_pml[l_ac].att07
+                           LET g_pml[l_ac].att08_c = g_pml[l_ac].att08
+                           LET g_pml[l_ac].att09_c = g_pml[l_ac].att09
                            LET g_pml[l_ac].att10_c = g_pml[l_ac].att10
-                         
+
                         END IF
                         SELECT ima021 INTO g_pml[l_ac].ima021 FROM ima_file
                         WHERE ima01=g_pml[l_ac].pml04
@@ -6727,8 +6737,8 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #                 LET g_pml_t.pml02 = g_pml2.pml02
 #                 LET g_pml_t.pml04 = g_pml2.pml04
 #&endif
-##FUN-A50054 --End        
-#FUN-A60035 ---MARK END        
+##FUN-A50054 --End
+#FUN-A60035 ---MARK END
                 LET g_change='N'
                 CALL t420_sel_ima()
                 CALL t420_set_entry_b('u')
@@ -6738,11 +6748,11 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
                 CALL cl_show_fld_cont()     #FUN-550037(smin)
              END IF
              LET g_before_input_done = FALSE
-             CALL t420_set_entry_b('u')      
-             CALL t420_set_no_entry_b('u')  
-             LET g_before_input_done = TRUE 
+             CALL t420_set_entry_b('u')
+             CALL t420_set_no_entry_b('u')
+             LET g_before_input_done = TRUE
              CALL t420_set_pml191()    #No.FUN-A10037
- 
+
           AFTER INSERT
               IF INT_FLAG THEN
                  CALL cl_err('',9001,0)
@@ -6764,71 +6774,71 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
                  CALL t420_set_origin_field()
               END IF
 
-#TQC-B50066 --begin--              
-             IF g_smy.smy59 = 'Y' THEN             
-               IF cl_null(g_pml[l_ac].pml90) THEN 
+#TQC-B50066 --begin--
+             IF g_smy.smy59 = 'Y' THEN
+               IF cl_null(g_pml[l_ac].pml90) THEN
                   CALL cl_err('','apj-201',0)
                   NEXT FIELD pml90
-               END IF                   
-               IF cl_null(g_pml[l_ac].pml40) THEN 
+               END IF
+               IF cl_null(g_pml[l_ac].pml40) THEN
                   CALL cl_err('','apj-202',0)
                   NEXT FIELD pml40
-               END IF               
+               END IF
                IF g_aza.aza63 = 'Y' AND cl_null(g_pml[l_ac].pml401) THEN
                   CALL cl_err('','apj-203',0)
                   NEXT FIELD pml401
-               END IF                  
+               END IF
               #MOD-B50258 mark  下方有赋值，此处没必要
-              #IF cl_null(g_pml[l_ac].pml121) THEN 
+              #IF cl_null(g_pml[l_ac].pml121) THEN
               #   NEXT FIELD pml121
-              #END IF                
-              #IF cl_null(g_pml[l_ac].pml12) THEN 
+              #END IF
+              #IF cl_null(g_pml[l_ac].pml12) THEN
               #   LET g_pml[l_ac].pml12 = ' '
-              #END IF                              
+              #END IF
               #MOD-B50258 mark--end
-               IF cl_null(g_pml[l_ac].pml33) THEN 
+               IF cl_null(g_pml[l_ac].pml33) THEN
                   LET g_pml[l_ac].pml33 = g_today
-               END IF                            
-               IF cl_null(g_pml[l_ac].pml67) THEN 
-                  LET g_pml[l_ac].pml67 = ' ' 
-               END IF      
+               END IF
+               IF cl_null(g_pml[l_ac].pml67) THEN
+                  LET g_pml[l_ac].pml67 = ' '
+               END IF
                CALL t420_bud(p_cmd,'3')
                IF NOT cl_null(g_errno) THEN
                   CALL cl_err('',g_errno,0)
                   NEXT FIELD pml12
-               END IF                  
+               END IF
              END IF
 #TQC-B50066 --end--
 
-#TQC-B50066 --begin--              
+#TQC-B50066 --begin--
 ##MOD-B40202 --begin--
-#              IF g_smy.smy59 = 'Y' THEN 
-#                 IF cl_null(g_pml[l_ac].pml90) THEN 
-#                    LET g_pml[l_ac].pml90 = ' ' 
-#                 END IF                  
-#                 IF cl_null(g_pml[l_ac].pml40) THEN 
-#                    LET g_pml[l_ac].pml40 = ' ' 
-#                 END IF   
-#                 IF cl_null(g_pml[l_ac].pml33) THEN 
+#              IF g_smy.smy59 = 'Y' THEN
+#                 IF cl_null(g_pml[l_ac].pml90) THEN
+#                    LET g_pml[l_ac].pml90 = ' '
+#                 END IF
+#                 IF cl_null(g_pml[l_ac].pml40) THEN
+#                    LET g_pml[l_ac].pml40 = ' '
+#                 END IF
+#                 IF cl_null(g_pml[l_ac].pml33) THEN
 #                    LET g_pml[l_ac].pml33 = g_today
-#                 END IF   
-#                 IF cl_null(g_pml[l_ac].pml121) THEN 
-#                    LET g_pml[l_ac].pml121 = ' ' 
-#                 END IF   
-#                 IF cl_null(g_pml[l_ac].pml67) THEN 
-#                    LET g_pml[l_ac].pml67 = ' ' 
-#                 END IF   
-#                 IF cl_null(g_pml[l_ac].pml12) THEN 
-#                    LET g_pml[l_ac].pml12 = ' ' 
-#                 END IF                                                                         
+#                 END IF
+#                 IF cl_null(g_pml[l_ac].pml121) THEN
+#                    LET g_pml[l_ac].pml121 = ' '
+#                 END IF
+#                 IF cl_null(g_pml[l_ac].pml67) THEN
+#                    LET g_pml[l_ac].pml67 = ' '
+#                 END IF
+#                 IF cl_null(g_pml[l_ac].pml12) THEN
+#                    LET g_pml[l_ac].pml12 = ' '
+#                 END IF
 #
 #                 CALL t420_bud(p_cmd,'3')
 #                 IF NOT cl_null(g_errno) THEN
 #                    NEXT FIELD pml12
-#                 END IF 
-#              END IF 
+#                 END IF
+#              END IF
 ##MOD-B40202 --end-
-#TQC-B50066 --end--              
+#TQC-B50066 --end--
               IF cl_null(g_pml[l_ac].pml86) THEN
                  LET g_pml[l_ac].pml86 = g_pml[l_ac].pml07
                  LET g_pml[l_ac].pml87 = g_pml[l_ac].pml20
@@ -6843,7 +6853,7 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
               LET g_pml2.pml85 =g_pml[l_ac].pml85
               LET g_pml2.pml86 =g_pml[l_ac].pml86
               LET g_pml2.pml87 =g_pml[l_ac].pml87
-              SELECT azi03,azi04 INTO t_azi03,t_azi04 FROM azi_file    
+              SELECT azi03,azi04 INTO t_azi03,t_azi04 FROM azi_file
                WHERE azi01 = g_pmk.pmk22  AND aziacti= 'Y'  #原幣
               LET g_pml2.pml88 =cl_digcut(g_pml2.pml87*g_pml2.pml31,t_azi04)
               LET g_pml2.pml88t=cl_digcut(g_pml2.pml87*g_pml2.pml31t,t_azi04)
@@ -6857,7 +6867,7 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
               IF cl_null(g_pml[l_ac].pml122) THEN     #No:8841
                 LET g_pml[l_ac].pml122=' '              #FUN-810045
               END IF
-              IF cl_null(g_pml[l_ac].pml90) THEN 
+              IF cl_null(g_pml[l_ac].pml90) THEN
                  LET g_pml[l_ac].pml90=' '
               END IF
               LET g_pml2.pml24 =g_pml[l_ac].pml24
@@ -6869,7 +6879,7 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
               IF cl_null(g_pml2.pml56) THEN LET g_pml2.pml56='1' END IF
               LET g_pml2.pmlplant =g_plant  #FUN-980006 add
               LET g_pml2.pmllegal =g_legal  #FUN-980006 add
-              LET g_pml2.pml92 = 'N'  #FUN-9B0023 
+              LET g_pml2.pml92 = 'N'  #FUN-9B0023
 #FUN-A60035 ---MARK BEGIN
 ##FUN-A50054 --Begin
 #&ifdef SLK
@@ -6882,7 +6892,7 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #             LET g_pml2.pml31=(g_pml2.pml20/g_pml[l_ac].pml20)*g_pml[l_ac].pml31
 #             LET g_pml2.pml31t=(g_pml2.pml20/g_pml[l_ac].pml20)*g_pml[l_ac].pml31t
 #&endif
-##FUN-A50054 --End              
+##FUN-A50054 --End
 #FUN-A60035 ---MARK END
              #MOD-AA0099---add---start---
               CALL s_umfchk(g_pml[l_ac].pml04,g_pml[l_ac].pml07,
@@ -6902,29 +6912,29 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
                     LET g_rec_b=g_rec_b+1
                     LET l_pmk25 = '0'
                     CALL t420_update() #MOD-960034
-                    DISPLAY g_rec_b TO FORMONLY.cn2 
-        
+                    DISPLAY g_rec_b TO FORMONLY.cn2
+
               END IF
 #FUN-A60035 ---MARK BEGIN
 #&ifdef SLK
 #   END FOREACH   #FUN-A50054 add
-#&endif               
+#&endif
 #                    MESSAGE 'INSERT O.K'
 #                    LET g_rec_b=g_rec_b+1
 #                    LET l_pmk25 = '0'
-#                    CALL t420_update() #MOD-960034   
+#                    CALL t420_update() #MOD-960034
 #                    DISPLAY g_rec_b TO FORMONLY.cn2
 ##FUN-A50054 --Begin
 #&ifndef SLK
 #                    COMMIT WORK
 #&endif
-##FUN-A50054 --End      
+##FUN-A50054 --End
 #FUN-A60035 ---MARK END
           BEFORE INSERT
              LET l_n = ARR_COUNT()
              INITIALIZE arr_detail[l_ac].* TO NULL   #No.TQC-650108
              #No.FUN-BB0086--add--begin--
-             LET g_pml07_t = NULL 
+             LET g_pml07_t = NULL
              LET g_pml80_t = NULL
              LET g_pml83_t = NULL
              LET g_pml86_t = NULL
@@ -6995,14 +7005,14 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
                    LET g_pml[l_ac].pml48=g_pmk.pmk09
                 END IF
                 LET g_pml[l_ac].pml56='1'
-                LET g_pml[l_ac].pml55=TIME 
+                LET g_pml[l_ac].pml55=TIME
               END IF
              LET g_pml2.pml01 = g_pmk.pmk01
              LET g_pml2.pml011= g_pmk.pmk02
              LET g_pml2.pml16 = g_pmk.pmk25
-             LET g_pml[l_ac].pml16 = g_pmk.pmk25 #FUN-990080   
-             IF l_ac = 1 THEN 
-                LET g_pml2.pml09 = 1  
+             LET g_pml[l_ac].pml16 = g_pmk.pmk25 #FUN-990080
+             IF l_ac = 1 THEN
+                LET g_pml2.pml09 = 1
              ELSE
                 SELECT pml08,pml09 INTO g_pml2.pml08,g_pml2.pml09 FROM pml_file
                   WHERE pml01 = g_pmk.pmk01 AND pml02 = g_pml[l_ac-1].pml02
@@ -7038,8 +7048,8 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
              LET g_pml2.pml42 = '0'        #替代碼
              LET g_pml2.pml44 = 0          #本幣單價
              LET g_pml2.pml192 = "N"       #No.FUN-630040
-             LET g_pml2.pml190 = 'N'               #No.MOD-6A0014 add                                                                  
-             LET g_pml[l_ac].pml190 = 'N'          #No.MOD-6A0014 add                                                                  
+             LET g_pml2.pml190 = 'N'               #No.MOD-6A0014 add
+             LET g_pml[l_ac].pml190 = 'N'          #No.MOD-6A0014 add
              LET g_pml2.pml35  = g_pml2.pml18   #No.TQC-640132
              LET g_pml[l_ac].pml192 = "N"  #No.FUN-630040
              LET g_pml2.pmlplant = g_pmk.pmkplant #No.FUN-870007
@@ -7060,7 +7070,7 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
              #CALL cl_set_comp_required("pml20",TRUE) #No.FUN-870007   #MOD-BB0233 mark
              CALL cl_show_fld_cont()     #FUN-550037(smin)
              NEXT FIELD pml02
- 
+
           BEFORE FIELD pml02                        #default 序號
              IF g_pml[l_ac].pml02 IS NULL OR g_pml[l_ac].pml02 = 0 THEN
 #FUN-A60035 ---MARK BEGIN
@@ -7073,7 +7083,7 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #                     LET g_pml[l_ac].pml02 = 1
 #                  END IF
 ##FUN-A50054 --End
-#&else       	
+#&else
 #FUN-A60035 ---MARK END
                 SELECT max(pml02)+1 INTO g_pml[l_ac].pml02
                   FROM pml_file WHERE pml01 = g_pmk.pmk01
@@ -7103,16 +7113,16 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #                       AND ata01 = g_pmk.pmk01
 #                       AND ata02 = g_pml[l_ac].pml02
 #&else
-##FUN-A50054 --End        
-#FUN-A60035 ---MARK END            
+##FUN-A50054 --End
+#FUN-A60035 ---MARK END
                     SELECT count(*) INTO l_n FROM pml_file
                       WHERE pml01 = g_pmk.pmk01 AND
                             pml02 = g_pml[l_ac].pml02
 #FUN-A60035 ---MARK BEGIN
 ##FUN-A50054---Begin
 #&endif
-##FUN-A50054---end        
-#FUN-A60035 ---MARK END                    
+##FUN-A50054---end
+#FUN-A60035 ---MARK END
                     IF l_n > 0 THEN
                        CALL cl_err('',-239,0)
                        LET g_pml[l_ac].pml02 = g_pml_t.pml02
@@ -7125,7 +7135,7 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #MOD-B60119 -- end --
                     END IF
                  END IF
-                 SELECT pml92,pml93 INTO g_pml[l_ac].pml92,g_pml[l_ac].pml93 
+                 SELECT pml92,pml93 INTO g_pml[l_ac].pml92,g_pml[l_ac].pml93
                    FROM pml_file
                   WHERE pml01 = g_pmk.pmk01 AND
                         pml02 = g_pml[l_ac].pml02
@@ -7133,7 +7143,7 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
                  LET g_pml_o.pml02 = g_pml[l_ac].pml02
 #                DISPLAY BY NAME g_pml[l_ac].*   #MOD-920166    #MOD-AA0084
              END IF
- 
+
           AFTER FIELD pml47
              IF NOT cl_null(g_pml[l_ac].pml47) THEN
 #FUN-AB0025 ----------mark start----------
@@ -7144,33 +7154,33 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #               END IF
 #               #FUN-AA0059 ---------------------end-------------------------------
 #FUN-AB0025 ----------mark end------------
-                #商品條碼必須是商品條碼維護作業中的有效商品!                                                       
-                LET l_cnt=0                                                                                                
-                SELECT count(*) INTO l_cnt FROM rta_file                                                            
-                 WHERE rta05=g_pml[l_ac].pml47 AND rtaacti='Y'                                                          
-                IF l_cnt=0 THEN                                                                                            
-                   CALL cl_err('','art-231',1)                                                                            
+                #商品條碼必須是商品條碼維護作業中的有效商品!
+                LET l_cnt=0
+                SELECT count(*) INTO l_cnt FROM rta_file
+                 WHERE rta05=g_pml[l_ac].pml47 AND rtaacti='Y'
+                IF l_cnt=0 THEN
+                   CALL cl_err('','art-231',1)
                    NEXT FIELD pml47
                 END IF
-                SELECT rta01,rta03 INTO g_pml[l_ac].pml04,g_pml[l_ac].pml07 FROM rta_file                                    
-                 WHERE rta05=g_pml[l_ac].pml47                                                                                     
+                SELECT rta01,rta03 INTO g_pml[l_ac].pml04,g_pml[l_ac].pml07 FROM rta_file
+                 WHERE rta05=g_pml[l_ac].pml47
                 CALL check_pml04_1() RETURNING li_result
                 IF NOT li_result THEN
                    NEXT FIELD pml47
-                END IF 
-                SELECT ima02,ima021 INTO g_pml[l_ac].pml041,g_pml[l_ac].ima021 FROM ima_file                                        
-                 WHERE ima01=g_pml[l_ac].pml04                                                                                      
+                END IF
+                SELECT ima02,ima021 INTO g_pml[l_ac].pml041,g_pml[l_ac].ima021 FROM ima_file
+                 WHERE ima01=g_pml[l_ac].pml04
                 CALL t420_pml4953('d')
                 CALL t420_pml48('d')
                 IF p_cmd='u' THEN
-                   CALL cl_set_comp_entry("pml04",FALSE) 
-                END IF                           
+                   CALL cl_set_comp_entry("pml04",FALSE)
+                END IF
              END IF
           BEFORE FIELD pml04
              CALL t420_set_entry_b(p_cmd)
              CALL t420_set_no_required()
              LET g_pml04_y= g_pml[l_ac].pml04
- 
+
           AFTER FIELD pml04     # check 料件編號
 #FUN-AA0059 ---------------------start----------------------------
             IF NOT cl_null(g_pml[l_ac].pml04) THEN
@@ -7179,8 +7189,8 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
                    CALL cl_err('',g_errno,1)
                    NEXT FIELD pml04
                 END IF
-              END IF                                          #TQC-B30200 
-            #FUN-C30075---add---START 
+              END IF                                          #TQC-B30200
+            #FUN-C30075---add---START
               SELECT ima928 INTO l_ima928 FROM ima_file WHERE ima01 = g_pml[l_ac].pml04
               IF l_ima928 = 'Y' THEN
                 LET l_cnt = 0
@@ -7199,25 +7209,25 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #FUN-A60035 ---MARK BEGIN
 ##FUN-A50054---begin add
 #&ifdef SLK
-#            SELECT ima151 INTO l_ima151                                                  #FUN-A60035 
-#              FROM ima_file                                                                #FUN-A60035 
+#            SELECT ima151 INTO l_ima151                                                  #FUN-A60035
+#              FROM ima_file                                                                #FUN-A60035
 #             WHERE ima01 = g_pml[l_ac].pml04                                               #FUN-A60035
 #            CALL cl_set_comp_entry("oeb12",FALSE)
 #              IF g_sma.sma908='Y' AND g_sma.sma120='Y' AND l_ima151='Y' THEN               #FUN-A60035
 #                 CALL s_detail(g_prog,g_pmk.pmk01,g_pml[l_ac].pml02,g_pml[l_ac].pml04,'N') #FUN-A50054
 #                             RETURNING g_pml[l_ac].pml20
-#                 SELECT ima25 INTO l_ima25 
-#                   FROM ima_file 
+#                 SELECT ima25 INTO l_ima25
+#                   FROM ima_file
 #                  WHERE ima01 = g_pml[l_ac].pml04
-#                 CALL t420_check_pml04('pml04',l_ac,p_cmd) RETURNING 
+#                 CALL t420_check_pml04('pml04',l_ac,p_cmd) RETURNING
 #                      l_check_res
-#                 IF NOT l_check_res THEN NEXT FIELD pml04 END IF     
+#                 IF NOT l_check_res THEN NEXT FIELD pml04 END IF
 #                 DISPLAY BY NAME g_pml[l_ac].pml20
 #              ELSE
-#              END IF     
-#&else 
-##FUN-A50054---End add 
-#             CALL cl_set_comp_entry("pml20",TRUE)   #FUN-A50054 add            
+#              END IF
+#&else
+##FUN-A50054---End add
+#             CALL cl_set_comp_entry("pml20",TRUE)   #FUN-A50054 add
 #FUN-A60035 ---MARK END
              #AFTER FIELD 處理邏輯修改為使用下面的函數來進行判斷，請參考相關代碼
              CALL t420_check_pml04('pml04',l_ac,p_cmd) RETURNING #No.MOD-660090
@@ -7226,14 +7236,14 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #FUN-A60035 ---MARK BEGIN
 ##FUN-A50054---Begin add
 #&endif
-##FUN-A50054---End        
-#FUN-A60035 ---MARK END     
+##FUN-A50054---End
+#FUN-A60035 ---MARK END
           #如果設置為不允許新增
              IF (g_pml_o.pml04 IS NULL OR g_pml[l_ac].pml04 != g_pml_o.pml04)
                 AND (g_pml[l_ac].pml04[1,4] != 'MISC') THEN
                 IF g_sma.sma908 = 'N' THEN
-                   SELECT COUNT(*) INTO l_n FROM ima_file WHERE ima01 =g_pml[l_ac].pml04 
-                   IF l_n =0 THEN 
+                   SELECT COUNT(*) INTO l_n FROM ima_file WHERE ima01 =g_pml[l_ac].pml04
+                   IF l_n =0 THEN
                       LET g_pml[l_ac].pml04 =NULL
                       CALL cl_err(g_pml[l_ac].pml04,'ams-003',1)
                       NEXT FIELD pml04
@@ -7257,30 +7267,30 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
                 CALL check_pml04_1() RETURNING li_result
                 IF NOT li_result THEN
                    NEXT FIELD pml04
-                END IF  
-                SELECT ima02,ima021 
-                  INTO g_pml[l_ac].pml041,g_pml[l_ac].ima021 
-                  FROM ima_file                                        
-                 WHERE ima01=g_pml[l_ac].pml04                                                                                      
-                CALL cl_set_comp_entry("pml041,ima021",FALSE)                                                           
-                CALL t420_pml4953('d')                                                                                              
-                CALL cl_set_comp_entry("pml49,pml50,pml51,pml52,pml53",FALSE)  
-                CALL t420_pml48('d')        
+                END IF
+                SELECT ima02,ima021
+                  INTO g_pml[l_ac].pml041,g_pml[l_ac].ima021
+                  FROM ima_file
+                 WHERE ima01=g_pml[l_ac].pml04
+                CALL cl_set_comp_entry("pml041,ima021",FALSE)
+                CALL t420_pml4953('d')
+                CALL cl_set_comp_entry("pml49,pml50,pml51,pml52,pml53",FALSE)
+                CALL t420_pml48('d')
              END IF
-         END IF 
+         END IF
         #str-----mark by guanyao160805  不合理，黄顾问
          #str---add by jixf 160804 根据料号带img04,默认一个料号在img中只有一个批号
         # LET l_img04=''
         # SELECT DISTINCT img04 INTO l_img04 FROM img_file WHERE img01=g_pml[l_ac].pml04
-        # IF NOT cl_null(l_img04) THEN 
+        # IF NOT cl_null(l_img04) THEN
         #    LET g_pml[l_ac].pmlud02=l_img04
-        # END IF 
+        # END IF
          #end---add by jixf 160804
         #str-----mark by guanyao160805
          CALL t420_set_pml191()    #No.FUN-A10037
          CALL t420_get_pml041()    #MOD-B90082 add
-         DISPLAY BY NAME g_pml[l_ac].*                       #MOD-AA0084           
- 
+         DISPLAY BY NAME g_pml[l_ac].*                       #MOD-AA0084
+
       #當sma908 <> 'Y'的時候,即不准通過單身來新增子料件,這時
       #對于采用料件多屬性新機制(與單據性質綁定)的分支來說,各個明細屬性欄位都
       #變NOENTRY的, 只能通過在母料件欄位開窗來選擇子料件,并且母料件本身也不允許
@@ -7288,10 +7298,10 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
       #欄位的時候就auto開窗,開完窗之后直接NEXT FIELD以避免用戶亂動
       #其他分支就不需要這么麻煩了
       BEFORE FIELD att00
-                       
+
             #根據子料件找到母料件及各個屬性
             SELECT imx00,imx01,imx02,imx03,imx04,imx05,
-                   imx06,imx07,imx08,imx09,imx10 
+                   imx06,imx07,imx08,imx09,imx10
             INTO g_pml[l_ac].att00, g_pml[l_ac].att01, g_pml[l_ac].att02,
                  g_pml[l_ac].att03, g_pml[l_ac].att04, g_pml[l_ac].att05,
                  g_pml[l_ac].att06, g_pml[l_ac].att07, g_pml[l_ac].att08,
@@ -7310,7 +7320,7 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
             LET g_pml[l_ac].att09_c = g_pml[l_ac].att09
             LET g_pml[l_ac].att10_c = g_pml[l_ac].att10
             #顯示所有屬性
-            DISPLAY BY NAME 
+            DISPLAY BY NAME
               g_pml[l_ac].att01, g_pml[l_ac].att01_c,
               g_pml[l_ac].att02, g_pml[l_ac].att02_c,
               g_pml[l_ac].att03, g_pml[l_ac].att03_c,
@@ -7321,7 +7331,7 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
               g_pml[l_ac].att08, g_pml[l_ac].att08_c,
               g_pml[l_ac].att09, g_pml[l_ac].att09_c,
               g_pml[l_ac].att10, g_pml[l_ac].att10_c
-                               
+
       #以下是為料件多屬性機制新增的20個屬性欄位的AFTER FIELD代碼
       #下面是十個輸入型屬性欄位的判斷語句
       AFTER FIELD att00
@@ -7334,24 +7344,24 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
           END IF
           #FUN-AB0025 ------------add end------------
           #檢查att00里面輸入的母料件是否是符合對應屬性組的母料件
-          SELECT COUNT(ima01) INTO l_count FROM ima_file 
+          SELECT COUNT(ima01) INTO l_count FROM ima_file
             WHERE ima01 = g_pml[l_ac].att00 AND imaag = lg_smy62
           IF l_count = 0 THEN
              CALL cl_err_msg('','aim-909',lg_smy62,0)
-             NEXT FIELD att00          
+             NEXT FIELD att00
           END IF
- 
+
           #如果設置為不允許新增
           IF g_sma.sma908 <> 'Y' THEN
              CALL t420_check_pml04('imx00',l_ac,p_cmd) RETURNING #No.MOD-660090
                l_check_res
              IF NOT l_check_res THEN NEXT FIELD att00 END IF
           END IF
-      
+
       AFTER FIELD att01
           CALL t420_check_att0x(g_pml[l_ac].att01,1,l_ac,p_cmd) RETURNING #No.MOD-660090
                l_check_res
-          IF NOT l_check_res THEN NEXT FIELD att01 END IF              
+          IF NOT l_check_res THEN NEXT FIELD att01 END IF
       AFTER FIELD att02
           CALL t420_check_att0x(g_pml[l_ac].att02,2,l_ac,p_cmd) RETURNING #No.MOD-660090
                l_check_res
@@ -7367,7 +7377,7 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
       AFTER FIELD att05
           CALL t420_check_att0x(g_pml[l_ac].att05,5,l_ac,p_cmd) RETURNING #No.MOD-660090
                l_check_res
-          IF NOT l_check_res THEN NEXT FIELD att05 END IF          
+          IF NOT l_check_res THEN NEXT FIELD att05 END IF
       AFTER FIELD att06
           CALL t420_check_att0x(g_pml[l_ac].att06,6,l_ac,p_cmd) RETURNING #No.MOD-660090
                l_check_res
@@ -7392,7 +7402,7 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
       AFTER FIELD att01_c
           CALL t420_check_att0x_c(g_pml[l_ac].att01_c,1,l_ac,p_cmd) RETURNING #No.MOD-660090
                l_check_res
-          IF NOT l_check_res THEN NEXT FIELD att01_c END IF      
+          IF NOT l_check_res THEN NEXT FIELD att01_c END IF
       AFTER FIELD att02_c
           CALL t420_check_att0x_c(g_pml[l_ac].att02_c,2,l_ac,p_cmd) RETURNING #No.MOD-660090
                l_check_res
@@ -7429,11 +7439,11 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
           CALL t420_check_att0x_c(g_pml[l_ac].att10_c,10,l_ac,p_cmd) RETURNING #No.MOD-660090
                l_check_res
           IF NOT l_check_res THEN NEXT FIELD att10_c END IF
- 
+
           AFTER FIELD pml041
              LET g_pml2.pml041 = g_pml[l_ac].pml041
              LET g_pml_o.pml041 = g_pml[l_ac].pml041
- 
+
           AFTER FIELD pml07    #請購單位
              IF g_pml_t.pml07 IS NULL AND g_pml[l_ac].pml07 IS NOT NULL OR
                 g_pml_t.pml07 IS NOT NULL AND g_pml[l_ac].pml07 IS NULL OR
@@ -7483,72 +7493,72 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
                   END IF
                 END IF
                 #No.FUN-BB0086--add--begin--
-                IF NOT cl_null(g_pml[l_ac].pml20) AND g_pml[l_ac].pml20<>0 THEN  #TQC-C20183 add 
-                   IF NOT t420_pml20_check(p_cmd) THEN 
+                IF NOT cl_null(g_pml[l_ac].pml20) AND g_pml[l_ac].pml20<>0 THEN  #TQC-C20183 add
+                   IF NOT t420_pml20_check(p_cmd) THEN
                       LET g_pml07_t = g_pml[l_ac].pml07
                       NEXT FIELD pml20
-                   END IF 
+                   END IF
                 END IF
                 LET g_pml07_t = g_pml[l_ac].pml07
                 #No.FUN-BB0086--add--end--
              END IF
          AFTER FIELD pml48
-            IF NOT cl_null(g_pml[l_ac].pml48) THEN   
+            IF NOT cl_null(g_pml[l_ac].pml48) THEN
                IF g_pml_t.pml48 IS NULL OR g_pml[l_ac].pml48 !=g_pml_t.pml48 THEN
                    IF cl_null(g_pmk.pmk09) THEN
-                      SELECT pmc05,pmc30,pmcacti,pmc930                                                                             
-                        INTO l_pmc05,l_pmc30,l_pmcacti,l_pmc930                                                           
-                        FROM pmc_file                                                                                      
-                       WHERE pmc01 = g_pml[l_ac].pml48                    
+                      SELECT pmc05,pmc30,pmcacti,pmc930
+                        INTO l_pmc05,l_pmc30,l_pmcacti,l_pmc930
+                        FROM pmc_file
+                       WHERE pmc01 = g_pml[l_ac].pml48
                       IF SQLCA.SQLCODE = 100  THEN
-                         CALL cl_err('','mfg3014',0)  
-                         NEXT FIELD pml48   
-                      END IF     
-                      IF l_pmcacti != 'Y' THEN                                                                               
-                         CALL cl_err('','art-471',0)                                                                        
-                         NEXT FIELD pml48                                                                                           
-                      END IF                                                                      
+                         CALL cl_err('','mfg3014',0)
+                         NEXT FIELD pml48
+                      END IF
+                      IF l_pmcacti != 'Y' THEN
+                         CALL cl_err('','art-471',0)
+                         NEXT FIELD pml48
+                      END IF
                       IF l_pmc05 !='1' THEN
                          CALL cl_err('','art-472',0)
-                         NEXT FIELD pml48  
-                      END IF                                                 
-                      IF l_pmc30  ='2' THEN 
-                         CALL cl_err('','apm-420',0)    
-                         NEXT FIELD pml48                                                                                           
-                      END IF            
+                         NEXT FIELD pml48
+                      END IF
+                      IF l_pmc30  ='2' THEN
+                         CALL cl_err('','apm-420',0)
+                         NEXT FIELD pml48
+                      END IF
                       IF NOT cl_null(l_pmc930) THEN
                          IF l_pmc930=g_plant THEN
                             CALL cl_err('','art-445',0)
-                            NEXT FIELD pml48  
+                            NEXT FIELD pml48
                          END IF
                       END IF
-                      LET l_cnt =0 
+                      LET l_cnt =0
                       SELECT COUNT(*) INTO l_cnt FROM rto_file,rtt_file,rts_file
                        WHERE rto05=g_pml[l_ac].pml48 AND rtt04=g_pml[l_ac].pml04 AND rtt15='Y'
                          AND rtt930=g_plant AND rtsconf='Y' AND rts04=rto01 AND rto08<=g_pmk.pmk04
                          AND rto09>=g_pmk.pmk04 AND rtt01=rts01 AND rtt02=rts02 AND rttplant=rtsplant
                          AND rtoplant=g_plant
                       IF l_cnt=0 THEN
-                         LET l_cnt=0 
+                         LET l_cnt=0
                          SELECT COUNT(*) INTO l_cnt FROM pmc_file
                           WHERE pmc01=g_pml[l_ac].pml48
                             AND pmc05='1'
                             AND pmc30 !='2'
                             AND pmcacti='Y'
-                            AND (pmc930 !=g_plant OR pmc930 IS NULL)                                                         
-                         IF l_cnt=0 THEN                                                                                      
-                            CALL cl_err('','art-479',0)                                                                  
-                            NEXT FIELD pml48             
-                         END IF          
-                      END IF  
+                            AND (pmc930 !=g_plant OR pmc930 IS NULL)
+                         IF l_cnt=0 THEN
+                            CALL cl_err('','art-479',0)
+                            NEXT FIELD pml48
+                         END IF
+                      END IF
                       CALL t420_pml48('d')
                    END IF
                 END IF
            END IF
- 
-          BEFORE FIELD pml20 
+
+          BEFORE FIELD pml20
             CALL t420_set_no_required()
- 
+
           AFTER FIELD pml20   #請購數量
              IF NOT t420_pml20_check(p_cmd) THEN NEXT FIELD pml20 END IF   #No.FUN-BB0086
              #No.FUN-BB0086--mark--begin--
@@ -7610,11 +7620,11 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
              #    END IF
              #END IF
              #No.FUN-BB0086--mark--end--
- 
+
         BEFORE FIELD pml83
            CALL t420_sel_ima()
            CALL t420_set_no_required()
- 
+
         AFTER FIELD pml83  #第二單位
            IF cl_null(g_pml[l_ac].pml04) THEN NEXT FIELD pml04 END IF
            IF g_pml_t.pml83 IS NULL AND g_pml[l_ac].pml83 IS NOT NULL OR
@@ -7647,10 +7657,10 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
               LET g_pml_o.pml83 = g_pml[l_ac].pml83
               #No.FUN-BB0086--add--begin--
               IF NOT cl_null(g_pml[l_ac].pml85) AND g_pml[l_ac].pml85<>0 THEN  #TQC-C20183 add
-                 IF NOT t420_pml85_check(p_cmd) THEN 
+                 IF NOT t420_pml85_check(p_cmd) THEN
                     LET g_pml83_t = g_pml[l_ac].pml83
                     NEXT FIELD pml85
-                 END IF 
+                 END IF
               END IF
               LET g_pml83_t = g_pml[l_ac].pml83
               #No.FUN-BB0086--add--end--
@@ -7665,7 +7675,7 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
            END IF
            CALL t420_set_required()
            CALL cl_show_fld_cont()                   #No.FUN-550037 hmf
- 
+
         AFTER FIELD pml84  #第二轉換率
            IF g_pml_t.pml84 IS NULL AND g_pml[l_ac].pml84 IS NOT NULL OR
               g_pml_t.pml84 IS NOT NULL AND g_pml[l_ac].pml84 IS NULL OR
@@ -7679,7 +7689,7 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
               LET g_pml2.pml84 = g_pml[l_ac].pml84
               LET g_pml_o.pml84 = g_pml[l_ac].pml84
            END IF
- 
+
         AFTER FIELD pml85  #第二數量
            IF NOT t420_pml85_check(p_cmd) THEN NEXT FIELD pml85 END IF   #No.FUN-BB0086
            #No.FUN-BB0086--mark--begin--
@@ -7716,11 +7726,11 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
            #END IF
            #CALL cl_show_fld_cont()                   #No.FUN-550037 hmf
            #No.FUN-BB0086--mark--end--
- 
+
         BEFORE FIELD pml80
            CALL t420_sel_ima()
            CALL t420_set_no_required()
- 
+
         AFTER FIELD pml80  #第一單位
            #No.FUN-BB0086--add--begin--
            LET l_tf = ""
@@ -7760,7 +7770,7 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
               IF NOT cl_null(g_pml[l_ac].pml82) AND g_pml[l_ac].pml82<>0 THEN  #TQC-C20183 add
                  CALL t420_pml82_check(p_cmd,l_flag) RETURNING l_tf,l_case
               END IF
-              #No.FUN-BB0086--add--end-- 
+              #No.FUN-BB0086--add--end--
            END IF
            IF g_change='Y' THEN
               CALL t420_set_pml87()
@@ -7772,17 +7782,17 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
            END IF
            CALL t420_set_required()
            CALL cl_show_fld_cont()                   #No.FUN-550037 hmf
-           #No.FUN-BB0086--add--begin-- 
+           #No.FUN-BB0086--add--begin--
            LET g_pml80_t = g_pml[l_ac].pml80
-           IF NOT l_tf THEN 
-              CASE l_case 
-                 WHEN "pml82" NEXT FIELD pml82 
+           IF NOT l_tf THEN
+              CASE l_case
+                 WHEN "pml82" NEXT FIELD pml82
                  WHEN "pml85" NEXT FIELD pml85
-                 OTHERWISE EXIT CASE 
-              END CASE 
-           END IF  
-           #No.FUN-BB0086--add--end-- 
- 
+                 OTHERWISE EXIT CASE
+              END CASE
+           END IF
+           #No.FUN-BB0086--add--end--
+
         AFTER FIELD pml81  #第一轉換率
            IF g_pml_t.pml81 IS NULL AND g_pml[l_ac].pml81 IS NOT NULL OR
               g_pml_t.pml81 IS NOT NULL AND g_pml[l_ac].pml81 IS NULL OR
@@ -7796,20 +7806,20 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
               LET g_pml2.pml81 = g_pml[l_ac].pml81
               LET g_pml_o.pml81 = g_pml[l_ac].pml81
            END IF
- 
+
         AFTER FIELD pml82  #第一數量
            #No.FUN-BB0086--add--begin--
            LET l_tf = ""
            LET l_case = ""
            CALL t420_pml82_check(p_cmd,l_flag) RETURNING l_tf,l_case
-           IF NOT l_tf THEN 
-              CASE l_case 
-                 WHEN "pml82" NEXT FIELD pml82 
+           IF NOT l_tf THEN
+              CASE l_case
+                 WHEN "pml82" NEXT FIELD pml82
                  WHEN "pml85" NEXT FIELD pml85
-                 OTHERWISE EXIT CASE 
-              END CASE 
-           END IF  
-           #No.FUN-BB0086--add--end-- 
+                 OTHERWISE EXIT CASE
+              END CASE
+           END IF
+           #No.FUN-BB0086--add--end--
            #No.FUN-BB0086--mark--begin---
            #IF g_pml_t.pml82 IS NULL AND g_pml[l_ac].pml82 IS NOT NULL OR
            #   g_pml_t.pml82 IS NOT NULL AND g_pml[l_ac].pml82 IS NULL OR
@@ -7900,11 +7910,11 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
            #END IF
            #CALL cl_show_fld_cont()                   #No.FUN-550037 hmf
            #No.FUN-BB0086--mark--end---
- 
+
         BEFORE FIELD pml86
            CALL t420_sel_ima()
            CALL t420_set_no_required()
- 
+
         AFTER FIELD pml86  #計價單位
            IF cl_null(g_pml[l_ac].pml04) THEN NEXT FIELD pml04 END IF
            IF g_pml_t.pml86 IS NULL AND g_pml[l_ac].pml86 IS NOT NULL OR
@@ -7933,16 +7943,16 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
               LET g_pml_o.pml86 = g_pml[l_ac].pml86
               #No.FUN-BB0086--add--begin--
               IF NOT cl_null(g_pml[l_ac].pml87) AND g_pml[l_ac].pml87<>0 THEN  #TQC-C20183
-                 IF NOT t420_pml87_check() THEN 
+                 IF NOT t420_pml87_check() THEN
                     LET g_pml86_t = g_pml[l_ac].pml86
                     NEXT FIELD pml87
-                 END IF 
+                 END IF
               END IF
               LET g_pml86_t = g_pml[l_ac].pml86
               #No.FUN-BB0086--add--end--
            END IF
            CALL t420_set_required()
- 
+
         BEFORE FIELD pml87
            IF cl_null(g_pml[l_ac].pml83) THEN
               LET g_pml[l_ac].pml84 = NULL
@@ -7960,7 +7970,7 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
                  NEXT FIELD pml82
               END IF
            END IF
- 
+
         AFTER FIELD pml87  #計價數量
            IF NOT t420_pml87_check() THEN NEXT FIELD pml87 END IF   #No.FUN-BB0086
            #No.FUN-BB0086--mark--begin--
@@ -7973,7 +7983,7 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
            #   LET g_pml_o.pml87 = g_pml[l_ac].pml87
            #END IF
            #No.FUN-BB0086--mark--end--
- 
+
           AFTER FIELD pml33    #交貨日期
             IF NOT cl_null(g_pml[l_ac].pml33) THEN
                IF g_pml[l_ac].pml33 < g_pmk.pmk04 THEN
@@ -7994,10 +8004,10 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
                LET g_pml2.pml33 = g_pml[l_ac].pml33
                CALL t420_bud(p_cmd,'3')
                IF NOT cl_null(g_errno) THEN
-                  NEXT FIELD pml33 
+                  NEXT FIELD pml33
                END IF
             END IF
- 
+
              LET g_pml_o.pml33 = g_pml[l_ac].pml33
 
          #str------mark by guanyao160805 #
@@ -8005,15 +8015,15 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
          #AFTER FIELD pmlud02
          #   LET l_img04=''
          #   SELECT DISTINCT img04 INTO l_img04 FROM img_file WHERE img01=g_pml[l_ac].pml04
-         #   IF NOT cl_null(l_img04) THEN 
-         #      IF g_pml[l_ac].pmlud02<>l_img04 THEN 
+         #   IF NOT cl_null(l_img04) THEN
+         #      IF g_pml[l_ac].pmlud02<>l_img04 THEN
          #         CALL cl_err('','t420-22',1)
          #         LET g_pml[l_ac].pmlud02=l_img04
-         #      END IF 
+         #      END IF
          #   END IF
          #end---add by jixf 160804
          #end-----mark by guanyao160805
-         
+
         #FUN-A80150---add---start---
          BEFORE FIELD pml919
             IF cl_null(g_pml[l_ac].pml33) THEN
@@ -8050,7 +8060,7 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
                CALL cl_err("","apm-027",0)
                NEXT FIELD pml33
             END IF
- 
+
          AFTER FIELD pml35
             IF NOT cl_null(g_pml[l_ac].pml35) THEN
               SELECT ima49,ima491 INTO g_ima49,g_ima491
@@ -8074,12 +8084,12 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
                  LET g_pml[l_ac].pml35 = g_pml[l_ac].pml34 + g_ima491
                  DISPLAY BY NAME g_pml[l_ac].pml35
             END IF
-            IF cl_null(g_pml[l_ac].pml34) 
-               OR g_pml_t.pml35 != g_pml[l_ac].pml35 OR cl_null(g_pml_t.pml35) THEN #TQC-970421 
+            IF cl_null(g_pml[l_ac].pml34)
+               OR g_pml_t.pml35 != g_pml[l_ac].pml35 OR cl_null(g_pml_t.pml35) THEN #TQC-970421
                CALL s_aday(g_pml[l_ac].pml35,-1,g_ima491) RETURNING g_pml[l_ac].pml34
             END IF
-            IF cl_null(g_pml[l_ac].pml33) 
-               OR g_pml_t.pml35 != g_pml[l_ac].pml35 OR cl_null(g_pml_t.pml35) THEN #TQC-970421 
+            IF cl_null(g_pml[l_ac].pml33)
+               OR g_pml_t.pml35 != g_pml[l_ac].pml35 OR cl_null(g_pml_t.pml35) THEN #TQC-970421
                CALL s_aday(g_pml[l_ac].pml34,-1,g_ima49) RETURNING g_pml[l_ac].pml33
             END IF
             LET g_pml2.pml33 = g_pml[l_ac].pml33
@@ -8096,15 +8106,15 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
                CALL cl_err("","apm-027",0)
                NEXT FIELD pml33
             END IF
- 
+
           BEFORE FIELD pml12
             CALL t420_set_entry_b(p_cmd)
- 
+
          AFTER FIELD pml12   #專案代號
           IF NOT cl_null(g_pml[l_ac].pml12) THEN
              SELECT COUNT(*) INTO g_cnt FROM pja_file
               WHERE pja01 = g_pml[l_ac].pml12
-                AND pjaacti = 'Y'    
+                AND pjaacti = 'Y'
                 AND pjaclose='N'             #FUN-960038
              IF g_cnt = 0 THEN
                 CALL cl_err(g_pml[l_ac].pml12,'asf-984',0)
@@ -8113,32 +8123,32 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
              CALL t420_bud(p_cmd,'3')
              IF NOT cl_null(g_errno) THEN
                 NEXT FIELD pml12
-             END IF            
-          ELSE 
+             END IF
+          ELSE
              NEXT FIELD pml90    #IF 專案沒輸入資料，直接跳到費用原因,WBS/活動不可輸入
           END IF
           CALL t420_set_no_entry_b(p_cmd)
- 
+
          BEFORE FIELD pml121    #wbs
            IF cl_null(g_pml[l_ac].pml12) THEN
              NEXT FIELD pml12
            END IF
-        
+
          AFTER FIELD pml121  #WBS
           IF NOT cl_null(g_pml[l_ac].pml121) THEN
              SELECT COUNT(*) INTO g_cnt FROM pjb_file
               WHERE pjb01 = g_pml[l_ac].pml12
                 AND pjb02 = g_pml[l_ac].pml121
-                AND pjbacti = 'Y'    
+                AND pjbacti = 'Y'
              IF g_cnt = 0 THEN
                 CALL cl_err(g_pml[l_ac].pml121,'apj-051',0)
                 LET g_pml[l_ac].pml121 = g_pml_t.pml121
                 NEXT FIELD pml121
              ELSE
-                SELECT pjb09,pjb11 INTO l_pjb09,l_pjb11 
+                SELECT pjb09,pjb11 INTO l_pjb09,l_pjb11
                  FROM pjb_file WHERE pjb01 = g_pml[l_ac].pml12
                   AND pjb02 = g_pml[l_ac].pml121
-                  AND pjbacti = 'Y'            
+                  AND pjbacti = 'Y'
                 IF l_pjb09 != 'Y' OR l_pjb11 != 'Y' THEN
                    CALL cl_err(g_pml[l_ac].pml121,'apj-090',0)
                    LET g_pml[l_ac].pml121 = g_pml_t.pml121
@@ -8159,7 +8169,7 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
                 NEXT FIELD pml121
              END IF
           END IF
-       
+
         BEFORE FIELD pml122
           IF cl_null(g_pml[l_ac].pml121) THEN
              NEXT FIELD pml121
@@ -8172,50 +8182,50 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
                 NEXT FIELD pml90
              END IF
           END IF
- 
+
          AFTER FIELD pml122  #活動
           IF NOT cl_null(g_pml[l_ac].pml122) THEN
              SELECT COUNT(*) INTO g_cnt FROM pjk_file
               WHERE pjk02 = g_pml[l_ac].pml122
                 AND pjk11 = g_pml[l_ac].pml121
-                AND pjkacti = 'Y'    
+                AND pjkacti = 'Y'
              IF g_cnt = 0 THEN
                 CALL cl_err(g_pml[l_ac].pml122,'apj-049',0)
                 NEXT FIELD pml122
              END IF
           END IF
- 
+
          AFTER FIELD pml67   #部門
           IF NOT cl_null(g_pml[l_ac].pml67) THEN
-            SELECT COUNT(*) INTO g_cnt FROM gem_file 
+            SELECT COUNT(*) INTO g_cnt FROM gem_file
              WHERE gem01=g_pml[l_ac].pml67
-               AND gemacti='Y'   
+               AND gemacti='Y'
             IF g_cnt = 0 THEN
                CALL cl_err(g_pml[l_ac].pml67,'apm-003',0)
                NEXT FIELD pml67
             END IF
             CALL t420_bud(p_cmd,'3')
             IF NOT cl_null(g_errno) THEN
-               NEXT FIELD pml67 
+               NEXT FIELD pml67
             END IF
           ELSE
             LET g_pml[l_ac].pml67 = ' '
           END IF
- 
+
          AFTER FIELD pml90  #費用原因
            IF NOT cl_null(g_pml[l_ac].pml90) THEN
               SELECT COUNT(*) INTO g_cnt FROM azf_file
-                WHERE azf01=g_pml[l_ac].pml90 AND azf02='2' AND azfacti='Y'          
+                WHERE azf01=g_pml[l_ac].pml90 AND azf02='2' AND azfacti='Y'
               IF g_cnt = 0 THEN
                  CALL cl_err(g_pml[l_ac].pml90,'asf-453',0)
                  NEXT FIELD pml90
               END IF
-              SELECT azf09 INTO l_azf09 FROM azf_file 
-               WHERE azf01=g_pml[l_ac].pml90 AND azf02='2' AND azfacti='Y' 
-                  IF l_azf09 !='7' THEN 
+              SELECT azf09 INTO l_azf09 FROM azf_file
+               WHERE azf01=g_pml[l_ac].pml90 AND azf02='2' AND azfacti='Y'
+                  IF l_azf09 !='7' THEN
                     CALL cl_err('','aoo-406',1)
                      NEXT FIELD pml90
-                  END IF   
+                  END IF
               CALL t420_bud(p_cmd,'3')
               IF NOT cl_null(g_errno) THEN
 #MOD-B40202 --begin--
@@ -8223,9 +8233,9 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #                 LET g_pml[l_ac].pml401= g_pml_t.pml401
 #                 DISPLAY BY NAME g_pml[l_ac].pml40,g_pml[l_ac].pml401
 #MOD-B40202 --end-
-                 NEXT FIELD pml90 
+                 NEXT FIELD pml90
               END IF
-#TQC-B50066 --begin--              
+#TQC-B50066 --begin--
 #           ELSE  #料號如果要做專案控管的話，一定要輸入費用原因碼
 #             IF g_smy.smy59 = 'Y' THEN
 #               CALL cl_err(g_pml[l_ac].pml12,'apj-201',0)
@@ -8233,7 +8243,7 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #             END IF
 #TQC-B50066 --end--
            END IF
- 
+
            IF g_pml_t.pml90 IS NULL AND g_pml[l_ac].pml90 IS NOT NULL OR
               g_pml_t.pml90 IS NOT NULL AND g_pml[l_ac].pml90 IS NULL OR
               g_pml_t.pml90 <> g_pml[l_ac].pml90 THEN
@@ -8244,19 +8254,19 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
                 IF g_pml[l_ac].pml67  IS NULL THEN LET g_pml[l_ac].pml67   = ' ' END IF
                 SELECT afb02 INTO g_pml[l_ac].pml40
                   FROM afb_file
-                 WHERE afb00 = g_bookno1 
-                   AND afb01 = g_pml[l_ac].pml90 
+                 WHERE afb00 = g_bookno1
+                   AND afb01 = g_pml[l_ac].pml90
                    AND afb03 = YEAR(g_pmk.pmk04)
                    AND afb04 = g_pml[l_ac].pml121
-                   AND afb041= g_pml[l_ac].pml67 
+                   AND afb041= g_pml[l_ac].pml67
                    AND afb042= g_pml[l_ac].pml12
- 
+
 #                SELECT azf14 INTO g_pml[l_ac].pml40
 #                  FROM azf_file
 #                WHERE azf01=g_pml[l_ac].pml90 AND azf02='2' AND azfacti='Y'
 #No.TQC-B50094 --end
               END IF
- 
+
               IF g_aza.aza63='Y' AND cl_null(g_pml[l_ac].pml401) THEN
                 LET g_pml[l_ac].pml401 = g_pml[l_ac].pml40
               END IF
@@ -8266,9 +8276,9 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
          AFTER FIELD pml40   #科目一
            IF NOT cl_null(g_pml[l_ac].pml40) THEN
                SELECT COUNT(*) INTO g_cnt
-                 FROM aag_file 
+                 FROM aag_file
                 WHERE aag01=g_pml[l_ac].pml40
-                  AND aag00=g_bookno1  
+                  AND aag00=g_bookno1
                IF g_cnt = 0 THEN
 #FUN-B10052 --begin--
 #                 LET g_pml[l_ac].pml40=g_pml_t.pml40
@@ -8278,46 +8288,46 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
                   CALL cl_init_qry_var()
                   LET g_qryparam.form = "q_aag"
                   LET g_qryparam.default1 = g_pml[l_ac].pml40
-                  LET g_qryparam.arg1 = g_bookno1   
+                  LET g_qryparam.arg1 = g_bookno1
                   LET g_qryparam.construct = 'N'
                   LET g_qryparam.where = " aag07 IN ('2','3')  AND aag03 = '2' AND aag01 LIKE '",g_pml[l_ac].pml40 CLIPPED,"%'"
-                  CALL cl_create_qry() RETURNING g_pml[l_ac].pml40                  
+                  CALL cl_create_qry() RETURNING g_pml[l_ac].pml40
 #FUN-B10052 --end--
                   DISPLAY BY NAME g_pml[l_ac].pml40
                   NEXT FIELD pml40
                END IF
                CALL t420_bud(p_cmd,'1')
                IF NOT cl_null(g_errno) THEN
-                  NEXT FIELD pml40 
+                  NEXT FIELD pml40
                END IF
-#TQC-B50066 --begin--               
+#TQC-B50066 --begin--
 #           ELSE
 #             IF g_smy.smy59 = 'Y' THEN
 #               CALL cl_err('','apj-202',0)
 #               NEXT FIELD pml40
 #             END IF
-#TQC-B50066 --end--             
+#TQC-B50066 --end--
            END IF
- 
+
          AFTER FIELD pml401  #科目二
            IF NOT cl_null(g_pml[l_ac].pml401) THEN
-             SELECT COUNT(*) INTO g_cnt FROM aag_file 
+             SELECT COUNT(*) INTO g_cnt FROM aag_file
               WHERE aag01=g_pml[l_ac].pml401
-                AND aag00=g_bookno2  
+                AND aag00=g_bookno2
              IF g_cnt = 0 THEN
 #FUN-B10052 --begin--
 #               LET g_pml[l_ac].pml401=g_pml_t.pml401
 #               CALL cl_err(g_pml[l_ac].pml401,"aap-021",1)
                  CALL cl_err(g_pml[l_ac].pml401,"aap-021",0)
-                  
+
                   CALL cl_init_qry_var()
                   LET g_qryparam.form = "q_aag"
                   LET g_qryparam.default1 = g_pml[l_ac].pml401
-                  LET g_qryparam.arg1 = g_bookno2   
+                  LET g_qryparam.arg1 = g_bookno2
                   LET g_qryparam.construct = 'N'
                   LET g_qryparam.where = " aag03 IN ('2','4') AND aag01 LIKE '",g_pml[l_ac].pml401 CLIPPED,"%'"
                   CALL cl_create_qry() RETURNING g_pml[l_ac].pml401
-#FUN-B10052 --end--                
+#FUN-B10052 --end--
                 DISPLAY BY NAME g_pml[l_ac].pml401
                 NEXT FIELD pml401
              END IF
@@ -8331,9 +8341,9 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #               CALL cl_err('','apj-203',0)
 #               NEXT FIELD pml401
 #             END IF
-#TQC-B50066 --end--             
+#TQC-B50066 --end--
            END IF
- 
+
          AFTER FIELD pml31   #未稅單價
            IF NOT cl_null(g_pml[l_ac].pml31) THEN
                IF cl_null(g_pml[l_ac].pml31) OR g_pml[l_ac].pml31<0 THEN
@@ -8348,7 +8358,7 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
                   DISPLAY BY NAME g_pml[l_ac].pml31
                   NEXT FIELD pml31
                END IF
-               LET g_pml[l_ac].pml31 = cl_digcut(g_pml[l_ac].pml31,t_azi03)  #No.CHI-6A0004 
+               LET g_pml[l_ac].pml31 = cl_digcut(g_pml[l_ac].pml31,t_azi03)  #No.CHI-6A0004
                #MOD-C10008 ----- add start -----
                IF cl_null(g_pmk.pmk42) THEN
                   LET g_pml2.pml44=g_pml[l_ac].pml31
@@ -8357,10 +8367,10 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
                   LET g_pml2.pml44=g_pml[l_ac].pml31*g_pmk.pmk42
                END IF #MOD-C10008 add
                LET g_pml[l_ac].pml31t = g_pml[l_ac].pml31 * (1 + g_pmk.pmk43/100)
-               LET g_pml[l_ac].pml31t = cl_digcut(g_pml[l_ac].pml31t,t_azi03) #No.CHI-6A0004 
+               LET g_pml[l_ac].pml31t = cl_digcut(g_pml[l_ac].pml31t,t_azi03) #No.CHI-6A0004
                CALL t420_bud(p_cmd,'3')
                IF NOT cl_null(g_errno) THEN
-                  NEXT FIELD pml31 
+                  NEXT FIELD pml31
                END IF
            END IF
          AFTER FIELD pml31t  #含稅單價
@@ -8370,9 +8380,9 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
                   DISPLAY BY NAME g_pml[l_ac].pml31t
                   NEXT FIELD pml31t
                END IF
-               LET g_pml[l_ac].pml31t = cl_digcut(g_pml[l_ac].pml31t,t_azi03)  #No.CHI-6A0004 
+               LET g_pml[l_ac].pml31t = cl_digcut(g_pml[l_ac].pml31t,t_azi03)  #No.CHI-6A0004
                LET g_pml[l_ac].pml31 = g_pml[l_ac].pml31t / (1 + g_pmk.pmk43/100)
-               LET g_pml[l_ac].pml31 = cl_digcut(g_pml[l_ac].pml31,t_azi03)  #No.CHI-6A0004 
+               LET g_pml[l_ac].pml31 = cl_digcut(g_pml[l_ac].pml31,t_azi03)  #No.CHI-6A0004
                #MOD-C10008 ----- add start -----
                IF cl_null(g_pmk.pmk42) THEN
                   LET g_pml2.pml44=g_pml[l_ac].pml31
@@ -8381,14 +8391,14 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
                   LET g_pml2.pml44=g_pml[l_ac].pml31*g_pmk.pmk42             #No.TQC-630043 add
                END IF #MOD-C10008 add
            END IF
- 
+
           AFTER FIELD pml06
              LET g_pml2.pml06=g_pml[l_ac].pml06
-             
+
           AFTER FIELD pml930
              IF NOT cl_null(g_pml[l_ac].pml930) THEN
                  LET l_cnt=0
-                 SELECT COUNT(*) INTO l_cnt FROM gem_file 
+                 SELECT COUNT(*) INTO l_cnt FROM gem_file
                                            WHERE gem01=g_pml[l_ac].pml930
                                              AND gem09 IN ('1','2')
                                              AND gemacti='Y'
@@ -8409,13 +8419,13 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
                  LET g_pml[l_ac].gem02a=NULL
                  DISPLAY BY NAME g_pml[l_ac].gem02a
              END IF
-             
+
              LET g_pml2.pml930  = g_pml[l_ac].pml930
              LET g_pml_o.pml930 = g_pml[l_ac].pml930
-          
+
           AFTER FIELD pml38
              LET g_pml2.pml38=g_pml[l_ac].pml38
-          
+
           AFTER FIELD pml123
               IF NOT cl_null(g_pml[l_ac].pml123) THEN
                  SELECT COUNT(*) INTO g_cnt FROM mse_file
@@ -8423,31 +8433,31 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
                  IF g_cnt = 0 THEN
                     CALL cl_err(g_pml[l_ac].pml123,'mfg2603',0)
                     NEXT FIELD pml123
-                 ELSE 
+                 ELSE
                    SELECT mse02 INTO g_pml[l_ac].mse02
                      FROM mse_file WHERE mse01=g_pml[l_ac].pml123
                    DISPLAY g_pml[l_ac].mse02 TO FORMONLY.mse02
                  END IF
               END IF
 #TQC-BB0167 add begin
-              IF cl_null(g_pml[l_ac].pml123) THEN 
+              IF cl_null(g_pml[l_ac].pml123) THEN
                  LET g_pml[l_ac].mse02 = ''
                  DISPLAY g_pml[l_ac].mse02 TO FORMONLY.mse02
-              END IF    
-#TQC-BB0167 add end 
-        BEFORE FIELD pml191                
-             CALL t420_set_pml191()   
-        AFTER FIELD pml191           
+              END IF
+#TQC-BB0167 add end
+        BEFORE FIELD pml191
+             CALL t420_set_pml191()
+        AFTER FIELD pml191
          IF NOT cl_null(g_pml[l_ac].pml191) THEN
-            IF p_cmd = "a" OR (p_cmd = "u" AND                    
+            IF p_cmd = "a" OR (p_cmd = "u" AND
                g_pml[l_ac].pml191 <> g_pml_t.pml191 OR cl_null(g_pml_t.pml191)) THEN
                CALL t420_pml191()
                IF NOT cl_null(g_errno) THEN
                   CALL cl_err('pml191:',g_errno,1)
                   LET g_pml[l_ac].pml191 = g_pml_t.pml191
                   DISPLAY BY NAME g_pml[l_ac].pml191
-                  NEXT FIELD pml191 
-               ELSE 
+                  NEXT FIELD pml191
+               ELSE
                   LET g_pml_t.pml191 = g_pml[l_ac].pml191
                END IF
             END IF
@@ -8466,7 +8476,7 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
                 IF NOT cl_delb(0,0) THEN
                    CANCEL DELETE
                 END IF
- 
+
                 IF l_lock_sw = "Y" THEN
                    CALL cl_err("", -263, 1)
                    CANCEL DELETE
@@ -8479,20 +8489,20 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
                 IF g_sma.sma901 = 'Y' THEN
                    LET l_chr4 = g_pml[l_ac].pml02 USING '&&&&'
                    LET g_pml02 = g_pml_t.pml02
-                   IF g_pml_t.pml02<10 THEN 
+                   IF g_pml_t.pml02<10 THEN
                       LET g_pml02='000',g_pml02
-                   ELSE 
-                      IF g_pml_t.pml02<100 THEN 
+                   ELSE
+                      IF g_pml_t.pml02<100 THEN
                          LET g_pml02='00',g_pml02
-                      ELSE 
+                      ELSE
                          IF g_pml_t.pml02<1000 THEN
                             LET g_pml02='0',g_pml02
-                         ELSE 
+                         ELSE
                             LET g_pml02=g_pml02
                          END IF
                       END IF
                    END IF
-             
+
                    LET g_pml02 = g_pmk.pmk01,'-',g_pml02
                    DISPLAY "g_pml02 = ",g_pml02
                    DELETE FROM vmz_file where vmz01=g_pml02
@@ -8501,10 +8511,10 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #FUN-A60035 ---MARK BEGIN
 ##FUN-A50054---Begin
 #&ifdef SLK
-#               DELETE FROM pml_file 
-#                WHERE pml01 = g_pmk.pmk01 
+#               DELETE FROM pml_file
+#                WHERE pml01 = g_pmk.pmk01
 #                  AND pml02 IN
-#              (SELECT ata03 FROM ata_file 
+#              (SELECT ata03 FROM ata_file
 #                WHERE ata00 = g_prog
 #                  AND ata02 = g_pml_t.pml02
 #                  AND ata01 = g_pmk.pmk01)
@@ -8525,7 +8535,7 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #                     ROLLBACK WORK
 #                     CANCEL DELETE
 #                  ELSE
-#                     DELETE FROM ata_file 
+#                     DELETE FROM ata_file
 #                      WHERE ata00 = g_prog
 #                        AND ata02 = g_pml_t.pml02
 #                        AND ata01 = g_pmk.pmk01
@@ -8533,11 +8543,11 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #                        CALL cl_err3("del","pml_file",g_pmk.pmk01,g_pml_t.pml02,SQLCA.sqlcode,"","",1)
 #                        ROLLBACK WORK
 #                        CANCEL DELETE
-#                     END IF 
+#                     END IF
 #                  END IF
-#               END IF    
+#               END IF
 #&else
-##FUN-A50054 --End                                
+##FUN-A50054 --End
 #FUN-A60035 ---MARK END
 #MOD-B60119 -- begin --
                 DELETE FROM pmo_file
@@ -8569,10 +8579,10 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
                 LET l_pmk25 = '0'          #FUN-550038
                 LET g_no = g_pml2.pml04[1,4]
                 LET l_diff = (g_pml[l_ac].pml20 * g_pml2.pml09) * -1
-                CALL t420_update() #MOD-960034   
+                CALL t420_update() #MOD-960034
                 COMMIT WORK
              END IF
- 
+
           ON ROW CHANGE
               IF INT_FLAG THEN
                  CALL cl_err('',9001,0)
@@ -8600,11 +8610,11 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
                     CALL t420_du_data_to_correct()
                     CALL t420_set_origin_field()
                  END IF
- 
+
                  #檢核請購數量是否超過訂單數量
-                 IF NOT cl_null(g_pml[l_ac].pml24) AND  
+                 IF NOT cl_null(g_pml[l_ac].pml24) AND
                     NOT cl_null(g_pml[l_ac].pml25) THEN
-                    LET l_qty = 0 
+                    LET l_qty = 0
                     SELECT oeb12 * oeb05_fac INTO l_qty FROM oeb_file
                      WHERE oeb01 = g_pml[l_ac].pml24
                        AND oeb03 = g_pml[l_ac].pml25
@@ -8621,8 +8631,8 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
                           NEXT FIELD pml20
                        END IF
                     END IF
-                 END IF 
- 
+                 END IF
+
                  IF cl_null(g_pml[l_ac].pml86) THEN
                     LET g_pml[l_ac].pml86 = g_pml[l_ac].pml07
                     LET g_pml[l_ac].pml87 = g_pml[l_ac].pml20
@@ -8636,12 +8646,12 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
                  LET g_pml2.pml84=g_pml[l_ac].pml84
                  LET g_pml2.pml85=g_pml[l_ac].pml85
                  LET g_pml2.pml86=g_pml[l_ac].pml86
-                 LET g_pml2.pml87=g_pml[l_ac].pml87 
-                 LET g_pml2.pml919=g_pml[l_ac].pml919    #FUN-A80150 add 
+                 LET g_pml2.pml87=g_pml[l_ac].pml87
+                 LET g_pml2.pml919=g_pml[l_ac].pml919    #FUN-A80150 add
 
 
- 
-                 SELECT azi03,azi04 INTO t_azi03,t_azi04 FROM azi_file    
+
+                 SELECT azi03,azi04 INTO t_azi03,t_azi04 FROM azi_file
                   WHERE azi01 = g_pmk.pmk22  AND aziacti= 'Y'  #原幣
                  LET g_pml2.pml88 =cl_digcut(g_pml2.pml87*g_pml2.pml31,t_azi04)
                  LET g_pml2.pml88t=cl_digcut(g_pml2.pml87*g_pml2.pml31t,t_azi04)
@@ -8727,19 +8737,19 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #                  #   CALL cl_digcut(b_oeb.oeb14,t_azi04)  RETURNING b_oeb.oeb14
 #                  #END IF
 
-#                   IF cl_null(g_pml2.pml91) THEN 
+#                   IF cl_null(g_pml2.pml91) THEN
 #                      LET g_pml2.pml91 = "1"
 #                   END IF
-#                   IF cl_null(g_pml2.pml49) THEN 
+#                   IF cl_null(g_pml2.pml49) THEN
 #                      LET g_pml2.pml49 = "1"
 #                   END IF
-#                   IF cl_null(g_pml2.pml50) THEN 
+#                   IF cl_null(g_pml2.pml50) THEN
 #                      LET g_pml2.pml50 = "1"
 #                   END IF
-#                   IF cl_null(g_pml2.pml54) THEN 
+#                   IF cl_null(g_pml2.pml54) THEN
 #                      LET g_pml2.pml54 = "1"
 #                   END IF
-#                   IF cl_null(g_pml2.pml56) THEN 
+#                   IF cl_null(g_pml2.pml56) THEN
 #                      LET g_pml2.pml56 = "1"
 #                   END IF
 #                   INSERT INTO pml_file VALUES(g_pml2.*)
@@ -8754,7 +8764,7 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #                      END IF
 #                   END IF
 
-#                   #  UPDATE pml_file SET pml_file.* = g_pml2.*  
+#                   #  UPDATE pml_file SET pml_file.* = g_pml2.*
 #                   #   WHERE pml01=g_pmk.pmk01 AND pml02=l_ata03_t
 #                   #  IF SQLCA.sqlcode THEN
 #                   #     CALL cl_err3("upd","pml_file",g_pmk.pmk01,g_pml_t.pml02,SQLCA.sqlcode,"","upd pml",1)  #No.FUN-650108
@@ -8764,9 +8774,9 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #                   #     LET g_pmli.pmlislk01 = g_pml[l_ac].pmlislk01
 #                   #     UPDATE pmli_file SET pmli_file.* = g_pmli.*
 #                   #      WHERE pmli01=g_pmk.pmk01
-#                   #        AND pmli02=l_ata03_t 
+#                   #        AND pmli02=l_ata03_t
 #                   #     IF SQLCA.sqlcode THEN
-#                   #        CALL cl_err3("upd","pmli_file",g_pmk.pmk01,g_pml_t.pml02,SQLCA.sqlcode,"","upd pmli",1)  
+#                   #        CALL cl_err3("upd","pmli_file",g_pmk.pmk01,g_pml_t.pml02,SQLCA.sqlcode,"","upd pmli",1)
 #                   #     END IF
 #                   #  END IF
 #                   #LSE
@@ -8799,7 +8809,7 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
                     MESSAGE 'UPDATE O.K'
                     LET l_pmk25 = '0'          #FUN-550038
                     CALL t420_upd_oeb28('b',g_pml_t.pml02)   #CHI-840016 add
-                    CALL t420_update() #MOD-960034   
+                    CALL t420_update() #MOD-960034
                     COMMIT WORK
 #FUN-A60035 ---MARK BEGIN
 ##FUN-A50054---Begin add
@@ -8807,10 +8817,10 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 ##FUN-A50054---end
 #FUN-A60035 ---MARK END
               END IF
- 
+
           AFTER ROW
               LET l_ac = ARR_CURR()
-              LET l_ac_t = l_ac    
+              LET l_ac_t = l_ac
               IF INT_FLAG THEN
                  CALL cl_err('',9001,0)
                  LET INT_FLAG = 0
@@ -8821,49 +8831,49 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
                  CLOSE t420_bcl
                  ROLLBACK WORK
                  EXIT DIALOG
-#TQC-B50066 --begin--              
-          ELSE 
-             IF g_smy.smy59 = 'Y' THEN             
-               IF cl_null(g_pml[l_ac].pml90) THEN 
+#TQC-B50066 --begin--
+          ELSE
+             IF g_smy.smy59 = 'Y' THEN
+               IF cl_null(g_pml[l_ac].pml90) THEN
                   CALL cl_err('','apj-201',0)
                   NEXT FIELD pml90
-               END IF                   
-               IF cl_null(g_pml[l_ac].pml40) THEN 
+               END IF
+               IF cl_null(g_pml[l_ac].pml40) THEN
                   CALL cl_err('','apj-202',0)
                   NEXT FIELD pml40
-               END IF               
+               END IF
                IF g_aza.aza63 = 'Y' AND cl_null(g_pml[l_ac].pml401) THEN
                   CALL cl_err('','apj-203',0)
                   NEXT FIELD pml401
-               END IF                  
-               IF cl_null(g_pml[l_ac].pml121) THEN 
+               END IF
+               IF cl_null(g_pml[l_ac].pml121) THEN
                  #NEXT FIELD pml121
                   LET g_pml[l_ac].pml121 = ' '  #MOD-B50258 mod
-               END IF                
-               IF cl_null(g_pml[l_ac].pml12) THEN 
+               END IF
+               IF cl_null(g_pml[l_ac].pml12) THEN
                   LET g_pml[l_ac].pml12 = ' '
-               END IF                              
-               IF cl_null(g_pml[l_ac].pml33) THEN 
+               END IF
+               IF cl_null(g_pml[l_ac].pml33) THEN
                   LET g_pml[l_ac].pml33 = g_today
-               END IF                            
-               IF cl_null(g_pml[l_ac].pml67) THEN 
-                  LET g_pml[l_ac].pml67 = ' ' 
-               END IF      
+               END IF
+               IF cl_null(g_pml[l_ac].pml67) THEN
+                  LET g_pml[l_ac].pml67 = ' '
+               END IF
                CALL t420_bud(p_cmd,'3')
                IF NOT cl_null(g_errno) THEN
                   CALL cl_err('',g_errno,0)
                   NEXT FIELD pml12
-               END IF                  
+               END IF
              END IF
-#TQC-B50066 --end--                 
+#TQC-B50066 --end--
               END IF
               CLOSE t420_bcl
               COMMIT WORK
- 
+
           ON ACTION CONTROLP
              CASE
                #這里只需要處理g_sma.sma908='Y'的情況,因為不允許單身新增子料件則在前面
-               #BEFORE FIELD att00來做開窗了            
+               #BEFORE FIELD att00來做開窗了
                #需注意的是其條件限制是要開多屬性母料件且母料件的屬性組等于當前屬性組
                 WHEN INFIELD(att00)
                      #可以新增子料件,開窗是單純的選取母料件
@@ -8872,23 +8882,23 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #                    LET g_qryparam.form ="q_ima_p"
 #                    LET g_qryparam.arg1 = lg_group
 #                    CALL cl_create_qry() RETURNING g_pml[l_ac].att00
-                     CALL q_sel_ima(FALSE, "q_ima_p","","",lg_group,"","","","",'' ) 
-                      RETURNING g_pml[l_ac].att00  
+                     CALL q_sel_ima(FALSE, "q_ima_p","","",lg_group,"","","","",'' )
+                      RETURNING g_pml[l_ac].att00
 #FUN-AA0059---------mod------------end-----------------
-                     DISPLAY BY NAME g_pml[l_ac].att00  
-                     NEXT FIELD att00              
-            
+                     DISPLAY BY NAME g_pml[l_ac].att00
+                     NEXT FIELD att00
+
                 WHEN INFIELD(pml04) #料件編號
                      #MOD-AC0309------add------str------------------
-                    #IF p_cmd = 'a' AND cl_null(g_pml[l_ac].pml24) AND cl_null(g_pml[l_ac].pml25) THEN  
-                    #   CALL q_ima(1,1,g_plant) RETURNING g_multi_ima01  
+                    #IF p_cmd = 'a' AND cl_null(g_pml[l_ac].pml24) AND cl_null(g_pml[l_ac].pml25) THEN
+                    #   CALL q_ima(1,1,g_plant) RETURNING g_multi_ima01
                     #   IF NOT cl_null(g_multi_ima01)  THEN
                     #      CALL t420_multi_ima01()
                     #      CALL t420_b_fill(' 1=1')
                     #      LET g_flag = TRUE
                     #      CALL t420_b()
                     #      EXIT INPUT
-                    #   END IF 
+                    #   END IF
                     #ELSE
                      #MOD-AC0309------add------end------------------
 #FUN-AA0059---------mod------------str-----------------
@@ -8897,12 +8907,12 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
                      # IF g_azw.azw04 = '2' THEN
                      #    CALL cl_init_qry_var()                           #FUN-AA0059 add
                      #    LET g_qryparam.form = "q_rte03_2"
-                     #    LET g_qryparam.default1 = g_pml[l_ac].pml04      #FUN-AA0059 add 
+                     #    LET g_qryparam.default1 = g_pml[l_ac].pml04      #FUN-AA0059 add
                      #    CALL cl_create_qry() RETURNING g_pml[l_ac].pml04 #FUN-AA0059 add
                      #ELSE
 #                    #    LET g_qryparam.form = "q_ima"                    #FUN-AA0059 mark
 #                    #    CALL q_sel_ima(TRUE, "q_ima","",g_pml[l_ac].pml04,"","","","","",'')  RETURNING  g_pml[l_ac].pml04  #FUN-AA0059 add  #MOD-AC0309 mark
-                     #    CALL q_sel_ima(FALSE, "q_ima","",g_pml[l_ac].pml04,"","","","","",'')  RETURNING  g_pml[l_ac].pml04  #FUN-AA0059 add #MOD-AC0309 add 
+                     #    CALL q_sel_ima(FALSE, "q_ima","",g_pml[l_ac].pml04,"","","","","",'')  RETURNING  g_pml[l_ac].pml04  #FUN-AA0059 add #MOD-AC0309 add
                      #END IF  #No.FUN-870007
                       CALL q_sel_ima(FALSE, "q_ima","",g_pml[l_ac].pml04,"","","","","",'')  RETURNING  g_pml[l_ac].pml04
                      #FUN-B40042 End-----
@@ -8911,7 +8921,7 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #FUN-AA0059---------mod------------end-----------------
                       DISPLAY g_pml[l_ac].pml04 TO pml04
                       NEXT FIELD pml04
-                   #END IF   #MOD-AC0309 add  
+                   #END IF   #MOD-AC0309 add
                 WHEN INFIELD(pml07) #採購單位
                      CALL cl_init_qry_var()
                      LET g_qryparam.form = "q_gfe"
@@ -8919,12 +8929,12 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
                      CALL cl_create_qry() RETURNING g_pml[l_ac].pml07
                      DISPLAY g_pml[l_ac].pml07 TO pml07
                      NEXT FIELD pml07
-               WHEN INFIELD(pml48) 
+               WHEN INFIELD(pml48)
                       CALL cl_init_qry_var()
                       #No.MOD-A70072  --Begin
-                      #LET g_qryparam.form = "q_pmc1_1"                                                               
-                      #LET g_qryparam.arg1 = g_plant     
-                      LET g_qryparam.form = "q_pmc1"                                                               
+                      #LET g_qryparam.form = "q_pmc1_1"
+                      #LET g_qryparam.arg1 = g_plant
+                      LET g_qryparam.form = "q_pmc1"
                       #No.MOD-A70072  --End
                       LET g_qryparam.default1=g_pml[l_ac].pml48
                       CALL cl_create_qry() RETURNING g_pml[l_ac].pml48
@@ -8940,7 +8950,7 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
                      CALL cl_create_qry() RETURNING g_pml[l_ac].pml80
                      DISPLAY BY NAME g_pml[l_ac].pml80
                      NEXT FIELD pml80
- 
+
                 WHEN INFIELD(pml83) #單位
                      CALL cl_init_qry_var()
                      LET g_qryparam.form ="q_gfe"
@@ -8948,7 +8958,7 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
                      CALL cl_create_qry() RETURNING g_pml[l_ac].pml83
                      DISPLAY BY NAME g_pml[l_ac].pml83
                      NEXT FIELD pml83
- 
+
                 WHEN INFIELD(pml86) #單位
                      CALL cl_init_qry_var()
                      LET g_qryparam.form ="q_gfe"
@@ -8958,21 +8968,21 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
                      NEXT FIELD pml86
                WHEN INFIELD(pml12)   #專案
                   CALL cl_init_qry_var()
-                  LET g_qryparam.form ="q_pja2"  
-                  CALL cl_create_qry() RETURNING g_pml[l_ac].pml12 
+                  LET g_qryparam.form ="q_pja2"
+                  CALL cl_create_qry() RETURNING g_pml[l_ac].pml12
                   DISPLAY BY NAME g_pml[l_ac].pml12
                   NEXT FIELD pml12
                WHEN INFIELD(pml121)  #WBS
                   CALL cl_init_qry_var()
                   LET g_qryparam.form ="q_pjb4"
-                  LET g_qryparam.arg1 = g_pml[l_ac].pml12 
+                  LET g_qryparam.arg1 = g_pml[l_ac].pml12
                   CALL cl_create_qry() RETURNING g_pml[l_ac].pml121
                   DISPLAY BY NAME g_pml[l_ac].pml121
                   NEXT FIELD pml121
                WHEN INFIELD(pml122)  #活動
                   CALL cl_init_qry_var()
                   LET g_qryparam.form ="q_pjk3"
-                  LET g_qryparam.arg1 = g_pml[l_ac].pml121  
+                  LET g_qryparam.arg1 = g_pml[l_ac].pml121
                   CALL cl_create_qry() RETURNING g_pml[l_ac].pml122
                   DISPLAY BY NAME g_pml[l_ac].pml122
                   NEXT FIELD pml122
@@ -8985,9 +8995,9 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
                   NEXT FIELD pml67
                WHEN INFIELD(pml90)  #費用原因
                   CALL cl_init_qry_var()
-                  LET g_qryparam.form ="q_azf01a" #No.FUN-930104 
+                  LET g_qryparam.form ="q_azf01a" #No.FUN-930104
                   LET g_qryparam.default1 = g_pml[l_ac].pml90
-                  LET g_qryparam.arg1 = '7'       #No.FUN-930104  
+                  LET g_qryparam.arg1 = '7'       #No.FUN-930104
                   CALL cl_create_qry() RETURNING g_pml[l_ac].pml90
                   DISPLAY BY NAME g_pml[l_ac].pml90
                   NEXT FIELD pml90
@@ -8995,7 +9005,7 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
                   CALL cl_init_qry_var()
                   LET g_qryparam.form = "q_aag"
                   LET g_qryparam.default1 = g_pml[l_ac].pml40
-                  LET g_qryparam.arg1 = g_bookno1   
+                  LET g_qryparam.arg1 = g_bookno1
                   LET g_qryparam.where = " aag07 IN ('2','3')  AND aag03 = '2' "
                   CALL cl_create_qry() RETURNING g_pml[l_ac].pml40
                   DISPLAY BY NAME g_pml[l_ac].pml40
@@ -9004,7 +9014,7 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
                   CALL cl_init_qry_var()
                   LET g_qryparam.form = "q_aag"
                   LET g_qryparam.default1 = g_pml[l_ac].pml401
-                  LET g_qryparam.arg1 = g_bookno2   
+                  LET g_qryparam.arg1 = g_bookno2
                   LET g_qryparam.where = " aag03 IN ('2','4') "
                   CALL cl_create_qry() RETURNING g_pml[l_ac].pml401
                   DISPLAY BY NAME g_pml[l_ac].pml401
@@ -9015,7 +9025,7 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
                   CALL cl_create_qry() RETURNING g_pml[l_ac].pml930
                   DISPLAY BY NAME g_pml[l_ac].pml930
                   NEXT FIELD pml930
-               WHEN INFIELD(pml123) 
+               WHEN INFIELD(pml123)
                   LET l_ima926 = 'N'                #FUN-D30087 add
                   SELECT ima926 INTO l_ima926 FROM ima_file  #FUN-D30087 add
                    WHERE ima01 = g_pml[l_ac].pml04           #FUN-D30087 add
@@ -9029,7 +9039,7 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
                   LET g_qryparam.default1 = g_pml[l_ac].pml123
                   CALL cl_create_qry() RETURNING g_pml[l_ac].pml123
                   DISPLAY BY NAME g_pml[l_ac].pml123
-                  NEXT FIELD pml123  
+                  NEXT FIELD pml123
                WHEN INFIELD(pml191)
                   CALL cl_init_qry_var()
                   LET g_qryparam.form ="q_geu"
@@ -9040,48 +9050,48 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
                   NEXT FIELD pml191
                OTHERWISE EXIT CASE
              END CASE
- 
+
           ON ACTION maintain_item_master
              IF g_sma.sma38 MATCHES'[Yy]' THEN
                 IF not cl_null(g_pml[l_ac].pml04) THEN
                    LET g_cmd = "aimi100 '",g_pml[l_ac].pml04 CLIPPED,"'"
-                ELSE 
+                ELSE
                    LET g_cmd = "aimi100 "
                 END IF
-                CALL cl_cmdrun(g_cmd)    
+                CALL cl_cmdrun(g_cmd)
              ELSE
                 CALL cl_err(g_sma.sma38,'mfg0035',1)
              END IF
- 
+
           ON ACTION maintain_unit_data
              LET g_cmd = 'aooi101 '
              CALL cl_cmdrun(g_cmd)
- 
+
           ON ACTION maintain_unit_conversion
              LET g_cmd = 'aooi102 '
              CALL cl_cmdrun(g_cmd)
- 
+
           ON ACTION maintain_item_unit_conversion
              LET g_cmd = 'aooi103 '
              CALL cl_cmdrun(g_cmd)
- 
+
           ON ACTION maintain_pr_unit_conv
              CALL t442()
- 
+
           ON ACTION maintain_date_data
              CALL t444()
- 
- 
+
+
           ON ACTION special_description #特別說明
              LET g_cmd = "apmt402 0 '",g_pmk.pmk01,"' ",g_pml[l_ac].pml02
              CALL cl_cmdrun_wait(g_cmd)  #FUN-660216 add
- 
+
           ON ACTION item_vender_query
              IF NOT cl_null(g_pmk.pmk09) THEN
                  CALL cl_init_qry_var()
                  LET g_qryparam.form = "q_pmh"
                  LET g_qryparam.arg1 = g_pmk.pmk09  #No.MOD-480478
-                 LET g_qryparam.default1 = g_pml[l_ac].pml04  
+                 LET g_qryparam.default1 = g_pml[l_ac].pml04
                  CALL cl_create_qry() RETURNING g_pml[l_ac].pml04
                  DISPLAY g_pml[l_ac].pml04 TO pml04
                  NEXT FIELD pml04
@@ -9089,26 +9099,26 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
                  #供應廠商並無輸入,所以無法在此^U!
                  CALL cl_err('','apm-004',0)
              END IF
- 
+
           ON ACTION item_inquiry_list
              CALL t420_b_more()
 
          #FUN-D30088---add---S
-          ON ACTION regen_detail   #單身全部刪除再重新產生 
+          ON ACTION regen_detail   #單身全部刪除再重新產生
              IF g_pmk.pmk18 = 'Y' OR g_pmk.pmk18 = 'X' THEN
                 CALL cl_err('','aim-027',0)
                 EXIT DIALOG
-             END IF 
+             END IF
              IF NOT cl_confirm('aim-148') THEN
-                EXIT DIALOG 
-             END IF 
+                EXIT DIALOG
+             END IF
              CALL t420_del()
              CALL g_pml.clear()
              CALL t420_g_2()
              CALL t420_b_fill(' 1=1',' 1=1')
              EXIT DIALOG
          #FUN-D30088---add---E
-              
+
           ON ACTION CONTROLO                        #沿用所有欄位
              IF INFIELD(pml02) AND l_ac > 1 THEN
                 LET g_pml[l_ac].* = g_pml[l_ac-1].*
@@ -9125,7 +9135,7 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
                 NEXT FIELD pml02
              END IF
 
-#FUN-B90101--mark--begin--             
+#FUN-B90101--mark--begin--
 #          ON ACTION CONTROLR
 #            CALL cl_show_req_fields()
 #
@@ -9147,12 +9157,12 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #     ON ACTION help          #MOD-4C0121
 #        CALL cl_show_help()  #MOD-4C0121
 #
-#     ON ACTION controls                           #No.FUN-6B0032             
+#     ON ACTION controls                           #No.FUN-6B0032
 #        CALL cl_set_head_visible("","AUTO")       #No.FUN-6B0032
 #
-#FUN-B90101--mark--end-- 
+#FUN-B90101--mark--end--
        END INPUT
-#FUN-B90101--add--begin--       
+#FUN-B90101--add--begin--
 #&endif      #FUN-C20006 mark
 
 #FUN-C20006--mark-begin--
@@ -9168,7 +9178,7 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 #               NEXT FIELD color
 #            END IF
 #         END IF
-#&endif      
+#&endif
 #FUN-C20006--mark--end--
    #TQC-D40025--add--str--
          BEFORE DIALOG
@@ -9179,10 +9189,10 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 
        ON ACTION CONTROLR
           CALL cl_show_req_fields()
- 
-       ON ACTION controlg  
-         CALL cl_cmdask() 
- 
+
+       ON ACTION controlg
+         CALL cl_cmdask()
+
 #FUN-D50097 ------- mark ----------- begin ------------
 #       ON ACTION CONTROLF
 #          CALL cl_set_focus_form(ui.Interface.getRootNode()) RETURNING g_fld_name,g_frm_name #Add on 040913
@@ -9191,15 +9201,15 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
 
        ON IDLE g_idle_seconds
           CALL cl_on_idle()
-          CONTINUE DIALOG 
- 
+          CONTINUE DIALOG
+
        ON ACTION about         #MOD-4C0121
           CALL cl_about()      #MOD-4C0121
- 
+
        ON ACTION help          #MOD-4C0121
           CALL cl_show_help()  #MOD-4C0121
- 
-       ON ACTION controls                           #No.FUN-6B0032             
+
+       ON ACTION controls                           #No.FUN-6B0032
           CALL cl_set_head_visible("","AUTO")       #No.FUN-6B0032
 
        ON ACTION ACCEPT
@@ -9225,15 +9235,15 @@ DEFINE l_ac_t,l_cnt    LIKE type_file.num5,    #No.FUN-680136 SMALLINT          
           CALL cl_fldhelp(g_frm_name,g_fld_name,g_lang) #Add on 040913
 #FUN-D50097 ------- add ------------ end --------------
 
-    END DIALOG 
-#FUN-B90101--add--end--   
+    END DIALOG
+#FUN-B90101--add--end--
        UPDATE pmk_file SET pmkmodu=g_user,pmkdate=g_today ,pmk25 = l_pmk25
          WHERE pmk01=g_pmk.pmk01
        LET g_pmk.pmk25 = l_pmk25
        DISPLAY BY NAME g_pmk.pmk25
        CALL t420_pic() #FUN-730012
 
-       CALL t420_b_fill('1=1',' 1=1')    #FUN-B90101 add 
+       CALL t420_b_fill('1=1',' 1=1')    #FUN-B90101 add
        CLOSE t420_bcl
        COMMIT WORK
        CALL t420_delHeader()     #CHI-C30002 add
@@ -9252,17 +9262,17 @@ DEFINE  l_cnt       LIKE type_file.num5
       ATTRIBUTE (STYLE = g_win_style CLIPPED)
     CALL cl_ui_locale("apmt4204")
 
-    LET l_chr='1'  
+    LET l_chr='1'
     INPUT l_chr WITHOUT DEFAULTS FROM FORMONLY.a
 
     AFTER FIELD a
-       IF l_chr NOT MATCHES '[1234]' THEN  
+       IF l_chr NOT MATCHES '[1234]' THEN
           NEXT FIELD a
        END IF
 
     ON ACTION CONTROLR
        CALL cl_show_req_fields()
-         
+
     ON ACTION CONTROLG
        CALL cl_cmdask()
 
@@ -9273,14 +9283,14 @@ DEFINE  l_cnt       LIKE type_file.num5
        END IF
 
        ON IDLE g_idle_seconds
-          CALL cl_on_idle()                        
+          CALL cl_on_idle()
           CONTINUE INPUT
 
-       ON ACTION about         
-          CALL cl_about()      
+       ON ACTION about
+          CALL cl_about()
 
-       ON ACTION help          
-          CALL cl_show_help()  
+       ON ACTION help
+          CALL cl_show_help()
 
     END INPUT
 
@@ -9289,7 +9299,7 @@ DEFINE  l_cnt       LIKE type_file.num5
        LET l_chr = '1'
     END IF
 
-    CLOSE WINDOW t4204_w 
+    CLOSE WINDOW t4204_w
 
     IF cl_null(l_chr) THEN
        LET l_chr = '1'
@@ -9321,7 +9331,7 @@ DEFINE  l_cnt       LIKE type_file.num5
                RETURN
             END IF
        WHEN l_chr='4'
-            CALL p500("G",g_pmk.pmk01,"")  
+            CALL p500("G",g_pmk.pmk01,"")
             LET g_wc2=NULL
             CALL t420_b_fill(g_wc2,' 1=1')       #第二個參數，服飾中母單身的條件
             LET g_action_choice="detail"
@@ -9355,9 +9365,9 @@ DEFINE l_cnt              LIKE type_file.num5  #CHI-C80041
       LET l_sql = " SELECT COUNT(*) FROM pmk_file ",
                   "  WHERE pmk01 LIKE '",l_slip,"%' ",
                   "    AND pmk01 > '",g_pmk.pmk01,"'"
-      PREPARE t420_pb1 FROM l_sql 
-      EXECUTE t420_pb1 INTO l_cnt 
-      
+      PREPARE t420_pb1 FROM l_sql
+      EXECUTE t420_pb1 INTO l_cnt
+
       LET l_action_choice = g_action_choice
       LET g_action_choice = 'delete'
       IF cl_chk_act_auth() AND l_cnt = 0 THEN
@@ -9366,30 +9376,30 @@ DEFINE l_cnt              LIKE type_file.num5  #CHI-C80041
       ELSE
          CALL cl_getmsg('aec-131',g_lang) RETURNING g_msg
          LET l_num = 2
-      END IF 
+      END IF
       LET g_action_choice = l_action_choice
       PROMPT g_msg CLIPPED,': ' FOR l_cho
          ON IDLE g_idle_seconds
             CALL cl_on_idle()
 
-         ON ACTION about     
+         ON ACTION about
             CALL cl_about()
 
-         ON ACTION help         
+         ON ACTION help
             CALL cl_show_help()
 
-         ON ACTION controlg   
-            CALL cl_cmdask() 
+         ON ACTION controlg
+            CALL cl_cmdask()
       END PROMPT
-      IF l_cho > l_num THEN LET l_cho = 1 END IF 
-      IF l_cho = 2 THEN 
+      IF l_cho > l_num THEN LET l_cho = 1 END IF
+      IF l_cho = 2 THEN
          #CALL t420_x() #FUN-D20025 mark
          CALL t420_x(1) #FUN-D20025 add
          CALL t420sub_refresh(g_pmk.pmk01) RETURNING g_pmk.*
          CALL t420_show()
-      END IF 
-      
-      IF l_cho = 3 THEN 
+      END IF
+
+      IF l_cho = 3 THEN
          DELETE FROM pmo_file WHERE pmo01 = g_pmk.pmk01
          DELETE FROM pmp_file WHERE pmp01 = g_pmk.pmk01
       #CHI-C80041---end
@@ -9401,7 +9411,7 @@ DEFINE l_cnt              LIKE type_file.num5  #CHI-C80041
    END IF
 END FUNCTION
 #CHI-C30002 -------- add -------- end
-FUNCTION check_pml04_1()    
+FUNCTION check_pml04_1()
 DEFINE l_cnt LIKE type_file.num5
 DEFINE l_n LIKE type_file.num5
 DEFINE l_rtz04 LIKE rtz_file.rtz04
@@ -9409,44 +9419,44 @@ DEFINE l_rte04 LIKE rte_file.rte04
 DEFINE l_rte07 LIKE rte_file.rte07
 DEFINE l_rtdconf LIKE rtd_file.rtdconf
 DEFINE li_result LIKE type_file.chr1
- 
-    LET l_cnt=0                                                                                                    
-    SELECT COUNT(*) INTO l_cnt FROM rty_file                                                                      
-     WHERE rty01=g_plant AND rty02=g_pml[l_ac].pml04 AND rtyacti='Y'                                          
-    IF l_cnt=0 THEN                                                                                             
-       CALL cl_err('','art-229',0)                                                                                
-       RETURN FALSE                                                                                            
+
+    LET l_cnt=0
+    SELECT COUNT(*) INTO l_cnt FROM rty_file
+     WHERE rty01=g_plant AND rty02=g_pml[l_ac].pml04 AND rtyacti='Y'
+    IF l_cnt=0 THEN
+       CALL cl_err('','art-229',0)
+       RETURN FALSE
     END IF
-    #商品策略管控   
-    SELECT rtz04 INTO l_rtz04 
+    #商品策略管控
+    SELECT rtz04 INTO l_rtz04
   #   FROM rtz_file                            #FUN-A80148 mark
   #  WHERE rtz01=g_plant AND rtzacti='Y'       #FUN-A80148 mark
-      FROM rtz_file INNER JOIN azw_file        #FUN-A80148 add        
+      FROM rtz_file INNER JOIN azw_file        #FUN-A80148 add
         ON rtz01 = azw01                       #FUN-A80148 add
-    WHERE rtz01=g_plant AND azwacti = 'Y'      #fun-a80148 add  
-    IF NOT cl_null(l_rtz04) THEN                                                                                                    
-       SELECT rte04,rte07,rtdconf INTO l_rte04,l_rte07,l_rtdconf                                                           
-         FROM rte_file,rtd_file                                                                                            
-        WHERE rte01=rtd01 AND rte03=g_pml[l_ac].pml04                                                                      
-          AND rte01=l_tqb13                                                                                                
-       IF SQLCA.sqlcode=100 THEN     
-           CALL cl_err('','art-431',0)                                                                                      
-           RETURN FALSE                                                                                                
-       END IF                                                                                                              
-       IF l_rte04='N' THEN                                                                                                        
-          CALL cl_err('','art-435',0)                                                                                      
-          RETURN FALSE                                                                                                   
-       END IF                                                                                                              
-       IF l_rte07='N' THEN                                                                                                 
-          CALL cl_err('','art-433',0)                                                                                      
-          RETURN FALSE                                                                                                 
-       END IF                                                                                                              
-       IF l_rtdconf !='Y' THEN                                                                                             
-          CALL cl_err('','art-434',0)                                                                                      
-          RETURN FALSE                                                                                                 
-       END IF                                                                                                              
-    END IF             
-    
+    WHERE rtz01=g_plant AND azwacti = 'Y'      #fun-a80148 add
+    IF NOT cl_null(l_rtz04) THEN
+       SELECT rte04,rte07,rtdconf INTO l_rte04,l_rte07,l_rtdconf
+         FROM rte_file,rtd_file
+        WHERE rte01=rtd01 AND rte03=g_pml[l_ac].pml04
+          AND rte01=l_tqb13
+       IF SQLCA.sqlcode=100 THEN
+           CALL cl_err('','art-431',0)
+           RETURN FALSE
+       END IF
+       IF l_rte04='N' THEN
+          CALL cl_err('','art-435',0)
+          RETURN FALSE
+       END IF
+       IF l_rte07='N' THEN
+          CALL cl_err('','art-433',0)
+          RETURN FALSE
+       END IF
+       IF l_rtdconf !='Y' THEN
+          CALL cl_err('','art-434',0)
+          RETURN FALSE
+       END IF
+    END IF
+
     #條碼對應的商品 與 請購單的供應商 須滿足以下條件
     IF NOT cl_null(g_pmk.pmk09) THEN
        CALL check() RETURNING li_result
@@ -9455,96 +9465,96 @@ DEFINE li_result LIKE type_file.chr1
        END IF
     ELSE
        #經營方式，供應商
-       SELECT rty06,rty05 
-         INTO g_pml[l_ac].pml49,g_pml[l_ac].pml48 
-         FROM rty_file                                                                
-        WHERE rty01=g_plant AND rtyacti='Y' 
-          AND rty02=g_pml[l_ac].pml04  
-       {LET  l_n=0                                                                                                          
-       SELECT COUNT(*) INTO l_n FROM pmc_file                                                                               
-        WHERE pmc01=g_pml[l_ac].pml48 AND pmc930=g_plant                                                               
-       IF l_n !=0 THEN CALL cl_err('','art-445',0) RETURN FALSE END IF}    
+       SELECT rty06,rty05
+         INTO g_pml[l_ac].pml49,g_pml[l_ac].pml48
+         FROM rty_file
+        WHERE rty01=g_plant AND rtyacti='Y'
+          AND rty02=g_pml[l_ac].pml04
+       {LET  l_n=0
+       SELECT COUNT(*) INTO l_n FROM pmc_file
+        WHERE pmc01=g_pml[l_ac].pml48 AND pmc930=g_plant
+       IF l_n !=0 THEN CALL cl_err('','art-445',0) RETURN FALSE END IF}
        CALL check() RETURNING li_result
        IF NOT li_result THEN
          RETURN FALSE
-       END IF                                                               
+       END IF
     END IF
    RETURN TRUE
 END FUNCTION
- 
+
 FUNCTION check()
 DEFINE l_n LIKE type_file.num5
 DEFINE l_rto06 LIKE rto_file.rto06
- 
-   LET l_n=0   
-   SELECT COUNT(*) INTO l_n FROM rtt_file,rts_file,rto_file                                                 
-                   WHERE rtt04 = g_pml[l_ac].pml04                                                                                  
+
+   LET l_n=0
+   SELECT COUNT(*) INTO l_n FROM rtt_file,rts_file,rto_file
+                   WHERE rtt04 = g_pml[l_ac].pml04
                      #AND rtt930 = g_pmk.pmkplant            #TQC-C50053 mark
-                     AND rttplant = g_pmk.pmkplant           #TQC-C50053 add                                                                    
-                     AND rtt15 = 'Y'                                                                                                
-                     AND rts01 = rtt01                                                                                              
-                     AND rts02 = rtt02                                                                                              
-                     AND rto01 = rts04                                                                                              
-                     AND rto03 = rts02                                                                                              
-                     #AND rts930 = g_pmk.pmkplant             #TQC-C50053 mark        
-                     AND rtsplant = g_pmk.pmkplant            #TQC-C50053 add                                                       
-                     AND rtsconf = 'Y'                                                                                              
-                     AND rto05 = g_pml[l_ac].pml48                                                                 
-                     AND rtoconf ='Y'                                                                                               
-                     AND rto08 <= g_today                                                                                           
-                     AND rto09 >= g_today                                                                                           
-                     AND rtoplant = g_pmk.pmkplant      
+                     AND rttplant = g_pmk.pmkplant           #TQC-C50053 add
+                     AND rtt15 = 'Y'
+                     AND rts01 = rtt01
+                     AND rts02 = rtt02
+                     AND rto01 = rts04
+                     AND rto03 = rts02
+                     #AND rts930 = g_pmk.pmkplant             #TQC-C50053 mark
+                     AND rtsplant = g_pmk.pmkplant            #TQC-C50053 add
+                     AND rtsconf = 'Y'
+                     AND rto05 = g_pml[l_ac].pml48
+                     AND rtoconf ='Y'
+                     AND rto08 <= g_today
+                     AND rto09 >= g_today
+                     AND rtoplant = g_pmk.pmkplant
    IF l_n>0 THEN
-      SELECT DISTINCT rto06 INTO l_rto06 FROM rtt_file,rts_file,rto_file                                                 
-                   WHERE rtt04 = g_pml[l_ac].pml04                                                                                  
+      SELECT DISTINCT rto06 INTO l_rto06 FROM rtt_file,rts_file,rto_file
+                   WHERE rtt04 = g_pml[l_ac].pml04
                      #AND rtt930 = g_pmk.pmkplant            #TQC-C50053 mark
-                     AND rttplant = g_pmk.pmkplant           #TQC-C50053 add                                                                              
-                     AND rtt15 = 'Y'                                                                                                
-                     AND rts01 = rtt01                                                                                              
-                     AND rts02 = rtt02                                                                                              
-                     AND rto01 = rts04                                                                                              
-                     AND rto03 = rts02                                                                                              
-                     #AND rts930 = g_pmk.pmkplant             #TQC-C50053 mark  
-                     AND rtsplant = g_pmk.pmkplant            #TQC-C50053 add                                                                                     
-                     AND rtsconf = 'Y'                                                                                              
-                     AND rto05 = g_pml[l_ac].pml48                                                                         
-                     AND rtoconf ='Y'                                                                                               
-                     AND rto08 <= g_today                                                                                           
-                     AND rto09 >= g_today                                                                                           
+                     AND rttplant = g_pmk.pmkplant           #TQC-C50053 add
+                     AND rtt15 = 'Y'
+                     AND rts01 = rtt01
+                     AND rts02 = rtt02
+                     AND rto01 = rts04
+                     AND rto03 = rts02
+                     #AND rts930 = g_pmk.pmkplant             #TQC-C50053 mark
+                     AND rtsplant = g_pmk.pmkplant            #TQC-C50053 add
+                     AND rtsconf = 'Y'
+                     AND rto05 = g_pml[l_ac].pml48
+                     AND rtoconf ='Y'
+                     AND rto08 <= g_today
+                     AND rto09 >= g_today
                      AND rtoplant = g_pmk.pmkplant
    ELSE
       LET l_n=0
-      {SELECT COUNT(*) INTO l_n FROM tqb_file 
+      {SELECT COUNT(*) INTO l_n FROM tqb_file
        WHERE tqb01=(SELECT pmc930 FROM pmc_file WHERE pmc01=g_pml[l_ac].pml48)
          AND tqb09 = '4'}
       SELECT COUNT(*) INTO l_n FROM pmc_file
-       WHERE pmc01=g_pml[l_ac].pml48 
+       WHERE pmc01=g_pml[l_ac].pml48
          AND pmc05='1'
          AND pmc30 !='2'
          AND pmcacti='Y'
          AND (pmc930 !=g_plant OR pmc930 IS NULL)
-      IF l_n=0 THEN 
-         CALL cl_err('','art-479',0)  
-         RETURN FALSE 
+      IF l_n=0 THEN
+         CALL cl_err('','art-479',0)
+         RETURN FALSE
       ELSE
-         LET l_rto06='1' 
-      END IF       
-   END IF 
- 
+         LET l_rto06='1'
+      END IF
+   END IF
+
    IF NOT cl_null(g_pmk.pmk09) THEN
       LET g_pml[l_ac].pml49=l_rto06
    END IF
- 
-   RETURN TRUE         
-   
+
+   RETURN TRUE
+
 END FUNCTION
- 
+
 FUNCTION t420_pml47(p_cmd)
 DEFINE p_cmd LIKE type_file.chr1
 DEFINE l_rta01 LIKE rta_file.rta01
 DEFINE l_rta03 LIKE rta_file.rta03
    SELECT rta01,rta03 INTO l_rta01,l_rta03 FROM rta_file
-    WHERE rta05=g_pml[l_ac].pml47 
+    WHERE rta05=g_pml[l_ac].pml47
    IF SQLCA.sqlcode=100 THEN
       LET l_rta01=null
       LET l_rta03=null
@@ -9555,28 +9565,28 @@ DEFINE l_rta03 LIKE rta_file.rta03
       SELECT ima02,ima021 INTO g_pml[l_ac].pml041,g_pml[l_ac].ima021 FROM ima_file
        WHERE ima01=g_pml[l_ac].pml04
    END IF
-          
+
 END FUNCTION
- 
+
 FUNCTION t420_pml48(p_cmd)
 DEFINE p_cmd LIKE type_file.chr1
 DEFINE l_pmc03 LIKE pmc_file.pmc03
    SELECT pmc03 INTO l_pmc03 FROM pmc_file
-    WHERE pmc01=g_pml[l_ac].pml48 AND pmcacti='Y' 
+    WHERE pmc01=g_pml[l_ac].pml48 AND pmcacti='Y'
    IF SQLCA.sqlcode=100 THEN
       LET l_pmc03=null
-   END IF 
-   IF p_cmd='d' THEN           
-      LET g_pml[l_ac].pml48_desc =l_pmc03 
-   END IF   
+   END IF
+   IF p_cmd='d' THEN
+      LET g_pml[l_ac].pml48_desc =l_pmc03
+   END IF
 END FUNCTION
- 
+
 FUNCTION t420_pml4953(p_cmd)
 DEFINE p_cmd LIKE type_file.chr1
-DEFINE l_rty03 LIKE rty_file.rty03 
+DEFINE l_rty03 LIKE rty_file.rty03
    SELECT rty03 INTO l_rty03 FROM rty_file
-    WHERE rty01=g_plant AND rty02=g_pml[l_ac].pml04 
-   IF p_cmd='d' THEN           
+    WHERE rty01=g_plant AND rty02=g_pml[l_ac].pml04
+   IF p_cmd='d' THEN
       LET g_pml[l_ac].pml50=l_rty03
       IF g_pml[l_ac].pml50='2' OR g_pml[l_ac].pml50='4' THEN  #No.FUN-A10037
          LET g_pml[l_ac].pml51=g_plant
@@ -9586,12 +9596,12 @@ DEFINE l_rty03 LIKE rty_file.rty03
          LET g_pml[l_ac].pml51=''
          LET g_pml[l_ac].pml52=''
          LET g_pml[l_ac].pml53=''
-      END IF   
-   END IF   
+      END IF
+   END IF
 END FUNCTION
- 
- 
-#專案需求 pjf_file 架構修改為 
+
+
+#專案需求 pjf_file 架構修改為
 #pjf01:WBS  pjf02:項次  pjf03:料號  pjf04:品名 pjf05:需求量
 #所以check數量改以 WBS及料號 check pjf05
 FUNCTION t420_chk_pjf05(p_pml121,p_pml04,p_pml20_t)
@@ -9601,12 +9611,12 @@ FUNCTION t420_chk_pjf05(p_pml121,p_pml04,p_pml20_t)
            l_pjf05     LIKE pjf_file.pjf05,   #需求數量
            l_pml20     LIKE pml_file.pml20,
            l_pml       RECORD LIKE pml_file.*
- 
+
     LET g_errno = ''
     SELECT pjf05 INTO l_pjf05 FROM pjf_file
-     WHERE pjf01 = p_pml121 
+     WHERE pjf01 = p_pml121
        AND pjf03 = p_pml04
- 
+
    #合計&換算單位數量
     SELECT SUM(pml20) INTO l_pml20 FROM pml_file
      WHERE pml121=p_pml121 AND pml04=p_pml04
@@ -9614,13 +9624,13 @@ FUNCTION t420_chk_pjf05(p_pml121,p_pml04,p_pml20_t)
     LET l_pml20 = l_pml20-p_pml20_t+g_pml[l_ac].pml20
     IF l_pml20 > l_pjf05 THEN CALL cl_err('','apm-165','1')  END IF
 END FUNCTION
- 
+
 FUNCTION t420_azi()
   DEFINE  l_aziacti LIKE  azi_file.aziacti
- 
+
   LET g_errno = ' '
   IF cl_null(g_pmk.pmk22) THEN LET g_pmk.pmk22 = g_aza.aza17 END IF
-  SELECT azi03,azi04,azi05,aziacti INTO t_azi03,t_azi04,t_azi05,l_aziacti   #No.CHI-6A0004 
+  SELECT azi03,azi04,azi05,aziacti INTO t_azi03,t_azi04,t_azi05,l_aziacti   #No.CHI-6A0004
     FROM azi_file
    WHERE azi01 = g_pmk.pmk22
    CASE WHEN SQLCA.SQLCODE = 100  LET g_errno = 'mfg3008'
@@ -9634,11 +9644,11 @@ FUNCTION t420_azi()
         FROM azi_file
        WHERE azi01 = g_aza.aza17  AND aziacti IN ('Y','y')
    END IF
-  IF cl_null(g_azi03_l) THEN  LET g_azi03_l = t_azi03 END IF  #No.CHI-6A0004 
-  IF cl_null(g_azi04_l) THEN  LET g_azi04_l = t_azi04 END IF  #No.CHI-6A0004 
-  IF cl_null(g_azi05_l) THEN  LET g_azi05_l = t_azi05 END IF  #No.CHI-6A0004 
+  IF cl_null(g_azi03_l) THEN  LET g_azi03_l = t_azi03 END IF  #No.CHI-6A0004
+  IF cl_null(g_azi04_l) THEN  LET g_azi04_l = t_azi04 END IF  #No.CHI-6A0004
+  IF cl_null(g_azi05_l) THEN  LET g_azi05_l = t_azi05 END IF  #No.CHI-6A0004
 END FUNCTION
- 
+
 FUNCTION t420_pml04(p_cmd,p_no)  #料件編號
     DEFINE l_ima02   LIKE ima_file.ima02,
            l_ima021  LIKE ima_file.ima021,
@@ -9649,7 +9659,7 @@ FUNCTION t420_pml04(p_cmd,p_no)  #料件編號
            l_imaacti LIKE ima_file.imaacti,
            p_no      LIKE type_file.chr4,    #No.FUN-680136 VARCHAR(04)
            p_cmd     LIKE type_file.chr1    #No.FUN-680136 VARCHAR(1)
- 
+
   LET g_errno = " "
   SELECT ima02,ima021,ima39,ima391,ima49,ima491,ima140,ima1401,imaacti,  #No:7225 #No.FUN-680029 add ima391  #FUN-6A0036
          ima913,ima914   #No.FUN-630040
@@ -9657,19 +9667,19 @@ FUNCTION t420_pml04(p_cmd,p_no)  #料件編號
          g_pml2.pml190,g_pml2.pml191   #No.FUN-630040
     FROM ima_file
    WHERE ima01 = g_pml[l_ac].pml04
- 
+
   CASE WHEN SQLCA.SQLCODE = 100  LET g_errno = 'mfg0002'
                           LET l_ima02 = NULL  LET l_imaacti = NULL
        WHEN l_imaacti='N' LET g_errno = '9028'
        WHEN l_imaacti MATCHES '[PH]'  LET g_errno = '9038'  #No.FUN-690022 add
-       WHEN l_ima140 = 'Y' AND l_ima1401 <= g_pmk.pmk04  
+       WHEN l_ima140 = 'Y' AND l_ima1401 <= g_pmk.pmk04
          LET g_errno = 'apm-006' #No:7225
        OTHERWISE          LET g_errno = SQLCA.SQLCODE USING '-------'
   END CASE
   #MISC料無效時不可用於請/採購
   IF g_pml[l_ac].pml04[1,4]='MISC' AND g_errno<>'9028' THEN
      LET g_errno=''
-  END IF 
+  END IF
      LET g_pml[l_ac].pml041 = l_ima02
      LET g_pml2.pml041      = l_ima02
      LET g_pml[l_ac].ima021 = l_ima021
@@ -9690,18 +9700,18 @@ FUNCTION t420_pml04(p_cmd,p_no)  #料件編號
      DISPLAY g_pml[l_ac].ima021 TO ima021 #MOD-530058 add
   END IF   #MOD-920166
 END FUNCTION
- 
+
 FUNCTION t420_b_more()
     DEFINE l_cnt  LIKE type_file.num5
- 
+
     OPEN WINDOW t4205_w WITH FORM "apm/42f/apmt4205"
           ATTRIBUTE (STYLE = g_win_style CLIPPED) #No.FUN-580092 HCN
- 
+
     CALL cl_ui_locale("apmt4205")
- 
- 
+
+
     INPUT BY NAME g_pml2.pml06,g_pml2.pml03 WITHOUT DEFAULTS
- 
+
     BEFORE FIELD pml06
      IF cl_null(g_pml2.pml06) THEN
         SELECT  pmh04 INTO g_pml2.pml06 FROM pmh_file
@@ -9712,7 +9722,7 @@ FUNCTION t420_b_more()
            AND pmhacti = 'Y'                                           #CHI-910021
         DISPLAY BY NAME g_pml2.pml06
      END IF
- 
+
     AFTER FIELD pml03  #詢價單號
       IF NOT cl_null(g_pml2.pml03) THEN
          CALL t420_pml03()
@@ -9723,10 +9733,10 @@ FUNCTION t420_b_more()
             NEXT FIELD pml03
          END IF
          IF NOT cl_null(g_pmk.pmk09) THEN  #詢價單號的廠商與P/O 不同   #FUN-650191
-            SELECT COUNT(*) INTO l_cnt FROM pmx_file 
+            SELECT COUNT(*) INTO l_cnt FROM pmx_file
              WHERE pmx01= g_pml2.pml03
                AND pmx12 = g_pmk.pmk09
-               AND pmx10 = " "                                        #CHI-860042                                                   
+               AND pmx10 = " "                                        #CHI-860042
                AND pmx11 = '1'                                        #CHI-860042
             IF l_cnt = 0 THEN
               CALL cl_err(g_pml2.pml03,'mfg0028',0)
@@ -9735,13 +9745,13 @@ FUNCTION t420_b_more()
          END IF
       END IF
       LET g_pml_o.pml03 = g_pml2.pml03
- 
+
     ON ACTION CONTROLR
        CALL cl_show_req_fields()
- 
+
     ON ACTION CONTROLG
        CALL cl_cmdask()
- 
+
     AFTER INPUT
        IF INT_FLAG THEN                         # 若按了DEL鍵
           LET INT_FLAG = 0
@@ -9750,28 +9760,28 @@ FUNCTION t420_b_more()
        ON IDLE g_idle_seconds
           CALL cl_on_idle()
           CONTINUE INPUT
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
- 
+
+
     END INPUT
     CLOSE WINDOW t4205_w                 #結束畫面
     IF INT_FLAG THEN LET INT_FLAG=0 RETURN END IF
 END FUNCTION
- 
+
 FUNCTION t420_pml03()  #詢價單號
    DEFINE l_pmwacti   LIKE pmw_file.pmwacti
- 
+
    LET g_errno = " "
- 
-   SELECT pmwacti INTO l_pmwacti   #FUN-650191 拿掉 pmw03 
-     FROM pmw_file 
+
+   SELECT pmwacti INTO l_pmwacti   #FUN-650191 拿掉 pmw03
+     FROM pmw_file
     WHERE pmw01 = g_pml2.pml03
- 
+
    CASE
       WHEN SQLCA.SQLCODE = 100
          LET g_errno = 'mfg3051'
@@ -9781,18 +9791,18 @@ FUNCTION t420_pml03()  #詢價單號
       OTHERWISE
          LET g_errno = SQLCA.SQLCODE USING '-------'
    END CASE
- 
+
 END FUNCTION
- 
+
 #系統參數設料件/供應商須存在
 #FUNCTION t420_pmh()  #供應廠商   #CHI-B80082 mark
 FUNCTION t420_pmh(p_pml04)        #CHI-B80082
    DEFINE l_pmhacti   LIKE pmh_file.pmhacti
    DEFINE l_pmh05     LIKE pmh_file.pmh05
    DEFINE p_pml04     LIKE pml_file.pml04   #CHI-B80082 add
- 
+
    LET g_errno = " "
- 
+
    SELECT pmhacti,pmh05 INTO l_pmhacti,l_pmh05
      FROM pmh_file
 #   WHERE pmh01 = g_pml[l_ac].pml04   #CHI-B80082 mark
@@ -9802,7 +9812,7 @@ FUNCTION t420_pmh(p_pml04)        #CHI-B80082
       AND pmh22 = '1' AND pmh21 =' '    #No.CHI-8C0017 add
       AND pmh23 = ' '                                             #No.CHI-960033
       AND pmhacti = 'Y'                                           #CHI-910021
- 
+
    CASE
       WHEN SQLCA.SQLCODE = 100
          LET g_errno = 'mfg0031'
@@ -9814,15 +9824,15 @@ FUNCTION t420_pmh(p_pml04)        #CHI-B80082
       OTHERWISE
          LET g_errno = SQLCA.SQLCODE USING '-------'
    END CASE
- 
+
 END FUNCTION
- 
+
 #料件輸入完後
 FUNCTION t420_def()
   DEFINE  l_imaacti  LIKE ima_file.imaacti,
           l_ima02    LIKE ima_file.ima02,
           l_ima021   LIKE ima_file.ima021
- 
+
   LET g_errno = " "
 #來源料件主檔的預設值 (版本/採購單位/庫存單位/OPC/再補貨量)
   SELECT ima44,ima25,ima37,ima99,imaacti,ima02,ima021,ima913,ima914   #No.FUN-630040
@@ -9838,10 +9848,10 @@ FUNCTION t420_def()
    END CASE
    IF NOT cl_null(g_errno) THEN RETURN END IF
    LET g_pml[l_ac].pml07 = g_pml2.pml07
- 
+
    LET g_pml[l_ac].pml190 = g_pml2.pml190   #No.FUN-630040
    LET g_pml[l_ac].pml191 = g_pml2.pml191   #No.FUN-630040
- 
+
 #來源料件/供廠商對應檔的預設值(廠商料件)
    SELECT  pmh04 INTO g_pml2.pml06 FROM pmh_file
            WHERE pmh01 = g_pml[l_ac].pml04 AND pmh02 = g_pmk.pmk09
@@ -9849,26 +9859,26 @@ FUNCTION t420_def()
              AND pmh22 = '1' AND pmh21 =' '    #No.CHI-8C0017 add
              AND pmh23 = ' '                                             #No.CHI-960033
              AND pmhacti = 'Y'                                           #CHI-910021
- 
+
 #來源料件/供廠商對應檔的預設值(超短交限率)
    CALL s_overate(g_pml[l_ac].pml04) RETURNING g_pml2.pml13
- 
+
 #來源料件/供廠商對應檔的預設值(標準價格)
    SELECT imb118 INTO g_pml2.pml30 FROM imb_file
                 WHERE imb01 = g_pml[l_ac].pml04
- 
+
 END FUNCTION
- 
+
 FUNCTION t420_unit(p_unit)  #單位
    DEFINE p_unit    LIKE gfe_file.gfe01,
           l_gfeacti LIKE gfe_file.gfeacti
- 
+
    LET g_errno = ' '
- 
+
    SELECT gfeacti INTO l_gfeacti
      FROM gfe_file
     WHERE gfe01 = p_unit
- 
+
    CASE
       WHEN SQLCA.SQLCODE = 100
          LET g_errno = 'mfg2605'
@@ -9878,19 +9888,19 @@ FUNCTION t420_unit(p_unit)  #單位
       OTHERWISE
          LET g_errno = SQLCA.SQLCODE USING '-------'
    END CASE
- 
+
 END FUNCTION
- 
+
 FUNCTION t441(p_cmd)
    DEFINE p_cmd    LIKE type_file.num5,    #No.FUN-680136 VARCHAR(01)
           l_seq    LIKE type_file.num5,    #No.FUN-680136 SMALLINT
           l_flag   LIKE type_file.chr1    #No.FUN-680136 VARCHAR(1)
- 
+
    OPEN WINDOW t441_w WITH FORM "apm/42f/apmt441"
      ATTRIBUTE (STYLE = g_win_style CLIPPED) #No.FUN-580092 HCN
- 
+
    CALL cl_ui_locale("apmt441")
- 
+
    IF p_cmd = 'u' THEN
       SELECT pml40 INTO g_pml2.pml40 FROM pml_file
        WHERE pml01 = g_pmk.pmk01
@@ -9909,11 +9919,11 @@ FUNCTION t441(p_cmd)
          END IF
       END IF
    END IF
- 
+
    DISPLAY BY NAME g_pml2.pml40
- 
+
    INPUT BY NAME g_pml2.pml40 WITHOUT DEFAULTS
- 
+
       AFTER FIELD pml40                 #會計科目
          IF NOT cl_null(g_pml2.pml40) THEN
             IF g_sma.sma03='Y' THEN
@@ -9924,9 +9934,9 @@ FUNCTION t441(p_cmd)
                  CALL cl_init_qry_var()
                  LET g_qryparam.form = "q_aag"
                  LET g_qryparam.default1 = g_pml2.pml40
-                 LET g_qryparam.arg1 = g_bookno1  
+                 LET g_qryparam.arg1 = g_bookno1
                  LET g_qryparam.construct = 'N'
-                 LET g_qryparam.where = " aag07 IN ('2','3') AND aag03 = '2' AND aag01 LIKE '",g_pml2.pml40 CLIPPED,"%'" 
+                 LET g_qryparam.where = " aag07 IN ('2','3') AND aag03 = '2' AND aag01 LIKE '",g_pml2.pml40 CLIPPED,"%'"
                  CALL cl_create_qry() RETURNING g_pml2.pml40
                  DISPLAY BY NAME g_pml2.pml40
 #FUN-B10052 --end--
@@ -9935,7 +9945,7 @@ FUNCTION t441(p_cmd)
             END IF
          END IF
          LET g_pml_o.pml40 = g_pml2.pml40
- 
+
       ON ACTION CONTROLP
          CASE
             WHEN INFIELD(pml40) #會計科目
@@ -9945,18 +9955,18 @@ FUNCTION t441(p_cmd)
                  LET g_qryparam.arg1 = g_bookno1  #No.FUN-730033
                   LET g_qryparam.where = " aag07 IN ('2','3') AND aag03 = '2' " #MOD-4B0276
                  CALL cl_create_qry() RETURNING g_pml2.pml40
- 
+
                DISPLAY BY NAME g_pml2.pml40
                NEXT FIELD pml40
             OTHERWISE EXIT CASE
          END CASE
- 
+
       ON ACTION CONTROLR
          CALL cl_show_req_fields()
- 
+
       ON ACTION CONTROLG
          CALL cl_cmdask()
- 
+
       AFTER INPUT
          IF INT_FLAG THEN                         # 若按了DEL鍵
             LET INT_FLAG = 0
@@ -9967,35 +9977,35 @@ FUNCTION t441(p_cmd)
             CALL cl_err('','9033',0)
             NEXT FIELD pml40
          END IF
- 
+
       ON IDLE g_idle_seconds
          CALL cl_on_idle()
          CONTINUE INPUT
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
+
    END INPUT
- 
+
    CLOSE WINDOW t441_w
- 
+
    LET g_pml[l_ac].pml40 = g_pml2.pml40
    DISPLAY BY NAME g_pml[l_ac].pml40
- 
+
 END FUNCTION
- 
+
 FUNCTION  t442()
   DEFINE  l_flag   LIKE type_file.chr1    #No.FUN-680136 VARCHAR(1)
   DEFINE  l_ima906 LIKE ima_file.ima906 #No.FUN-540027
- 
+
   OPEN WINDOW t442_w WITH FORM "apm/42f/apmt442"
         ATTRIBUTE (STYLE = g_win_style CLIPPED) #No.FUN-580092 HCN
- 
+
     CALL cl_ui_locale("apmt442")
- 
+
     SELECT ima906 INTO l_ima906 FROM ima_file WHERE ima01=g_pml2.pml04
     CALL cl_set_comp_entry("pml81,pml84",FALSE)
     IF g_sma.sma115 = 'Y' THEN
@@ -10033,21 +10043,21 @@ FUNCTION  t442()
        CALL cl_getmsg('asm-361',g_lang) RETURNING g_msg
        CALL cl_set_comp_att_text("pml81",g_msg CLIPPED)
     END IF
- 
+
  DISPLAY BY NAME g_pml2.pml07,g_pml2.pml83,g_pml2.pml84,
                  g_pml2.pml80,g_pml2.pml81,g_pml2.pml08,g_pml2.pml09
- 
+
  INPUT BY NAME g_pml2.pml07,g_pml2.pml83,g_pml2.pml84,
                g_pml2.pml80,g_pml2.pml81,g_pml2.pml08,g_pml2.pml09
         WITHOUT DEFAULTS
- 
+
         BEFORE INPUT
             CALL t420_sel_ima()
             CALL t420_set_entry_b('u')
             CALL t420_set_no_entry_b('u')
             CALL t420_set_no_required()
             CALL t420_set_required()
- 
+
         AFTER FIELD pml83  #第二單位
             IF NOT cl_null(g_pml2.pml83) THEN
                 IF (g_pml_o.pml83 IS NULL ) OR
@@ -10071,7 +10081,7 @@ FUNCTION  t442()
                 END IF
                 LET g_pml_o.pml83  = g_pml2.pml83
              END IF
- 
+
         AFTER FIELD pml80  #第一單位
             IF NOT cl_null(g_pml2.pml80) THEN
                 IF (g_pml_o.pml80 IS NULL ) OR
@@ -10095,7 +10105,7 @@ FUNCTION  t442()
                 END IF
                 LET g_pml_o.pml80  = g_pml2.pml80
              END IF
- 
+
         BEFORE FIELD pml09
              IF g_sma.sma115 = 'Y' THEN
                 IF cl_null(g_pml2.pml80) AND cl_null(g_pml2.pml83) THEN
@@ -10125,7 +10135,7 @@ FUNCTION  t442()
                    LET g_pml_o.pml07  = g_pml2.pml07
                 END IF
              END IF
- 
+
         AFTER FIELD pml07  #採購單位,須存在
             IF NOT cl_null(g_pml2.pml07) THEN
                 IF (g_pml_o.pml07 IS NULL ) OR
@@ -10154,7 +10164,7 @@ FUNCTION  t442()
                 END IF
                 LET g_pml_o.pml07  = g_pml2.pml07
             END IF
- 
+
        AFTER FIELD pml09         #轉換率
             IF NOT cl_null(g_pml2.pml09) THEN
                 IF g_pml2.pml09 <= 0 THEN
@@ -10165,7 +10175,7 @@ FUNCTION  t442()
                 END IF
                 LET g_pml_o.pml09  = g_pml2.pml09
             END IF
- 
+
         ON ACTION CONTROLP
             CASE
                WHEN INFIELD(pml07) #採購單位
@@ -10173,7 +10183,7 @@ FUNCTION  t442()
                   LET g_qryparam.form = "q_gfe"
                   LET g_qryparam.default1 = g_pml2.pml07
                   CALL cl_create_qry() RETURNING g_pml2.pml07
- 
+
                   DISPLAY BY NAME g_pml2.pml07
                   NEXT FIELD pml07
                WHEN INFIELD(pml83) #第二單位
@@ -10192,21 +10202,21 @@ FUNCTION  t442()
                   NEXT FIELD pml80
                OTHERWISE EXIT CASE
             END CASE
- 
+
        ON ACTION maintain_unit_conversion
                    LET g_cmd = 'aooi102 '
                    CALL cl_cmdrun(g_cmd)
- 
+
        ON ACTION maintain_item_unit_conversion
                    LET g_cmd = 'aooi103 '
                    CALL cl_cmdrun(g_cmd)
- 
+
        ON ACTION CONTROLR
            CALL cl_show_req_fields()
- 
+
        ON ACTION CONTROLG
            CALL cl_cmdask()
- 
+
        AFTER INPUT
         IF INT_FLAG THEN                         # 若按了DEL鍵
            LET INT_FLAG = 0
@@ -10246,32 +10256,32 @@ FUNCTION  t442()
     ON IDLE g_idle_seconds
        CALL cl_on_idle()
        CONTINUE INPUT
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
- 
+
+
  END INPUT
  CLOSE WINDOW t442_w
  DISPLAY BY NAME g_pml[l_ac].pml07
  DISPLAY BY NAME g_pml[l_ac].pml80
  DISPLAY BY NAME g_pml[l_ac].pml83
 END FUNCTION
- 
+
 FUNCTION  t443()
    DEFINE
       l_ima53   LIKE ima_file.ima53,
       l_ima531  LIKE ima_file.ima531,
       l_flag    LIKE type_file.chr1    #No.FUN-680136 VARCHAR(01)
- 
+
     OPEN WINDOW t443_w WITH FORM "apm/42f/apmt443"
           ATTRIBUTE (STYLE = g_win_style CLIPPED) #No.FUN-580092 HCN
- 
+
     CALL cl_ui_locale("apmt443")
- 
+
    SELECT ima49,ima491,ima53,ima531
      INTO g_ima49,g_ima491,l_ima53,l_ima531
      FROM ima_file WHERE ima01 =  g_pml[l_ac].pml04
@@ -10280,7 +10290,7 @@ FUNCTION  t443()
    DISPLAY l_ima53 TO FORMONYL.ima53
    DISPLAY l_ima531 TO FORMONYL.ima531
    DISPLAY BY NAME g_pml2.pml44,g_pml2.pml30,g_pml2.pml32
- 
+
    INPUT BY NAME g_pml2.pml23 WITHOUT DEFAULTS
       AFTER FIELD pml23
          IF NOT cl_null(g_pml2.pml23) THEN
@@ -10288,7 +10298,7 @@ FUNCTION  t443()
                  NEXT FIELD pml23
              END IF
          END IF
- 
+
       AFTER INPUT
          IF INT_FLAG THEN
             LET INT_FLAG = 0
@@ -10303,21 +10313,21 @@ FUNCTION  t443()
       ON IDLE g_idle_seconds
          CALL cl_on_idle()
          CONTINUE INPUT
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
+
       ON ACTION controlg      #MOD-4C0121
          CALL cl_cmdask()     #MOD-4C0121
- 
- 
+
+
    END INPUT
    CLOSE WINDOW t443_w
 END FUNCTION
- 
+
 FUNCTION  t444()
   DEFINE  l_ima53   LIKE ima_file.ima53,
           l_ima531  LIKE ima_file.ima531,
@@ -10325,19 +10335,19 @@ FUNCTION  t444()
           l_flag1   LIKE type_file.chr1,    #No.FUN-680136 VARCHAR(01)
           g_flag,l_flag   LIKE type_file.chr1,    #No.FUN-680136 VARCHAR(01)
           g_date    LIKE type_file.dat     #No.FUN-680136 DATE
- 
+
   CALL t420_pml04('a',g_no)   #MOD-570246
- 
+
   OPEN WINDOW t444_w WITH FORM "apm/42f/apmt444"
-     ATTRIBUTE (STYLE = g_win_style CLIPPED) 
- 
+     ATTRIBUTE (STYLE = g_win_style CLIPPED)
+
   CALL cl_ui_locale("apmt444")
- 
+
   INPUT BY NAME g_pml2.pml14,g_pml2.pml15,
                g_pml2.pml18,g_pml2.pml35,g_pml2.pml34,g_pml2.pml33,   #No.TQC-640132
                g_pml2.pml05
         WITHOUT DEFAULTS
- 
+
         AFTER FIELD pml33    #交貨日期
             IF cl_null(g_pml2.pml33)
             THEN  IF NOT cl_null(g_pml2.pml34) THEN #依到廠日推出交貨日
@@ -10368,7 +10378,7 @@ FUNCTION  t444()
                DISPLAY BY NAME g_pml2.pml35
             END IF
             LET g_pml_o.pml33 = g_pml2.pml33
- 
+
         AFTER FIELD pml34     #到廠日期
             IF NOT cl_null(g_pml2.pml34) THEN
                CALL s_wkday(g_pml2.pml34) RETURNING g_flag,g_date
@@ -10391,7 +10401,7 @@ FUNCTION  t444()
                DISPLAY BY NAME g_pml2.pml35
             END IF
             LET g_pml_o.pml34 = g_pml2.pml34
- 
+
         AFTER FIELD pml35    #入庫日期
           IF NOT cl_null(g_pml2.pml35) THEN
                CALL s_wkday(g_pml2.pml35) RETURNING g_flag,g_date
@@ -10412,7 +10422,7 @@ FUNCTION  t444()
                  DISPLAY BY NAME g_pml2.pml35
            END IF
            LET g_pml_o.pml35 = g_pml2.pml35
- 
+
        AFTER INPUT
         IF INT_FLAG THEN
             LET INT_FLAG = 0
@@ -10435,17 +10445,17 @@ FUNCTION  t444()
     ON IDLE g_idle_seconds
        CALL cl_on_idle()
        CONTINUE INPUT
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
+
       ON ACTION controlg      #MOD-4C0121
          CALL cl_cmdask()     #MOD-4C0121
- 
- 
+
+
  END INPUT
  CLOSE WINDOW t444_w
  LET g_pml[l_ac].pml33=g_pml2.pml33
@@ -10454,14 +10464,14 @@ FUNCTION  t444()
  LET g_pml[l_ac].pml35=g_pml2.pml35
  DISPLAY BY NAME g_pml[l_ac].pml34
  DISPLAY BY NAME g_pml[l_ac].pml35
- 
+
 END FUNCTION
- 
+
 FUNCTION t420_z() # when g_pmk.pmk18='Y' (Turn to 'N')
    DEFINE l_pml21    LIKE pml_file.pml21
    DEFINE l_n,l_n2   LIKE type_file.num5    #No.FUN-680136 SMALLINT
    DEFINE l_pmkcont  LIKE pmk_file.pmkcont  #CHI-C80072 Add
- 
+
    IF g_pmk.pmk01 IS NULL THEN RETURN END IF
    IF g_pmk.pmk25 = 'S' THEN
       CALL cl_err(g_pmk.pmk25,'apm-030',1)
@@ -10471,7 +10481,7 @@ FUNCTION t420_z() # when g_pmk.pmk18='Y' (Turn to 'N')
    SELECT COUNT(*) INTO l_n FROM pne_file WHERE pne01=g_pmk.pmk01
    IF l_n > 0 THEN
       CALL cl_err('','axm-676',1)
-      RETURN 
+      RETURN
    END IF
    #MOD-B30262 add ----end----
    SELECT * INTO g_pmk.* FROM pmk_file WHERE pmk01=g_pmk.pmk01
@@ -10480,10 +10490,10 @@ FUNCTION t420_z() # when g_pmk.pmk18='Y' (Turn to 'N')
       RETURN
    END IF
 #No.FUN-A50071 -----start-------
-   IF g_pmk.pmk46 = '7' THEN 
+   IF g_pmk.pmk46 = '7' THEN
       CALL cl_err('','axm-740',0)
-      RETURN 
-   END IF  
+      RETURN
+   END IF
 #No.FUN-A50071 -----end-----
 
    SELECT SUM(pml21) INTO l_pml21 FROM pml_file WHERE pml01 = g_pmk.pmk01
@@ -10501,18 +10511,18 @@ FUNCTION t420_z() # when g_pmk.pmk18='Y' (Turn to 'N')
        CALL cl_err('','apm-581',0)
        RETURN
     END IF
-   LET l_n = 0 
+   LET l_n = 0
    SELECT COUNT(*) INTO l_n FROM pml_file
     WHERE pml01 = g_pmk.pmk01
       AND pml92 = 'Y'
    IF l_n > 0 THEN
        CALL cl_err('','apm-141',0)
-       RETURN      
-   END IF   
+       RETURN
+   END IF
    IF g_azw.azw04 = '2' THEN
-      LET l_n=0 
+      LET l_n=0
       SELECT COUNT(*) INTO l_n FROM ruc_file
-       WHERE ruc00='1' AND ruc01=g_pmk.pmkplant AND ruc02=g_pmk.pmk01 
+       WHERE ruc00='1' AND ruc01=g_pmk.pmkplant AND ruc02=g_pmk.pmk01
          AND (ruc19<>'0' OR ruc20<>'0' OR ruc21<>'0')
       IF l_n<>0 THEN
          CALL cl_err('','art-243',1)
@@ -10531,11 +10541,11 @@ FUNCTION t420_z() # when g_pmk.pmk18='Y' (Turn to 'N')
    SELECT COUNT(*) INTO l_n FROM pnn_file
     WHERE pnn01=g_pmk.pmk01
    IF l_n > 0 THEN CALL cl_err(g_pmk.pmk01,'apm-510',0) RETURN END IF
- 
- 
+
+
    BEGIN WORK
    LET g_success = 'Y'
- 
+
    OPEN t420_cl USING g_pmk.pmk01
    IF STATUS THEN
       CALL cl_err("OPEN t420_cl:", STATUS, 1)
@@ -10543,7 +10553,7 @@ FUNCTION t420_z() # when g_pmk.pmk18='Y' (Turn to 'N')
       ROLLBACK WORK
       RETURN
    END IF
- 
+
    FETCH t420_cl INTO g_pmk.*               # 對DB鎖定
    IF SQLCA.sqlcode THEN
       CALL cl_err(g_pmk.pmk01,SQLCA.sqlcode,0)
@@ -10551,10 +10561,10 @@ FUNCTION t420_z() # when g_pmk.pmk18='Y' (Turn to 'N')
       ROLLBACK WORK
       RETURN
    END IF
- 
+
    CALL t420_z1()
 
-   LET l_pmkcont = TIME  #CHI-C80072 Add 
+   LET l_pmkcont = TIME  #CHI-C80072 Add
    IF g_success = 'Y' THEN
       LET g_pmk.pmk18='N' COMMIT WORK
       DISPLAY BY NAME g_pmk.pmk03
@@ -10563,7 +10573,7 @@ FUNCTION t420_z() # when g_pmk.pmk18='Y' (Turn to 'N')
       CALL s_pmksta('pmk',g_pmk.pmk25,g_pmk.pmk18,g_pmk.pmkmksg) RETURNING g_sta
       DISPLAY g_sta TO FORMONLY.desc2
 
-     #LET g_pmk.pmk15=''  #TQC-BB0169  #MOD-C80239 mark 
+     #LET g_pmk.pmk15=''  #TQC-BB0169  #MOD-C80239 mark
      #CHI-C80072 Mark&Add Str
      #LET g_pmk.pmkconu=''
      #LET g_pmk.pmkcond=''
@@ -10579,12 +10589,12 @@ FUNCTION t420_z() # when g_pmk.pmk18='Y' (Turn to 'N')
       LET g_pmk.pmk18 = 'Y'
       ROLLBACK WORK
    END IF
- 
+
    SELECT * INTO g_pmk.* FROM pmk_file WHERE pmk01 = g_pmk.pmk01
- 
+
    CALL t420_pic() #FUN-730012
 END FUNCTION
- 
+
 #FUNCTION t420_x() # when g_pmk.pmk18='N' (Turn to 'X') #FUN-D20025 mark
 FUNCTION t420_x(p_type) #FUN-D20025 add
    DEFINE l_pml     RECORD
@@ -10596,33 +10606,33 @@ FUNCTION t420_x(p_type) #FUN-D20025 add
    DEFINE l_pml16   LIKE pml_file.pml16
    DEFINE l_n       LIKE type_file.num5    #No.FUN-680136 SMALLINT
    DEFINE l_pml02   LIKE pml_file.pml02    #CHI-840016
-   DEFINE p_type    LIKE type_file.chr1  #FUN-D20025 add   
+   DEFINE p_type    LIKE type_file.chr1  #FUN-D20025 add
    IF cl_null(g_pmk.pmk01) THEN RETURN END IF
- 
+
    SELECT * INTO g_pmk.* FROM pmk_file WHERE pmk01=g_pmk.pmk01
- 
+
    SELECT SUM(pml21) INTO l_pml21 FROM pml_file WHERE pml01 = g_pmk.pmk01
- 
+
    IF l_pml21 > 0  THEN CALL cl_err('sel_pml','apm-294',0)  RETURN END IF
- 
+
    IF g_pmk.pmk18 ='Y' THEN CALL cl_err('','9023',0) RETURN  END IF
- 
+
    IF g_pmk.pmk25 NOT MATCHES '[0RW9]' THEN RETURN END IF #非開立&作廢    #FUN-550038
-   #FUN-D20025---begin 
-    IF p_type = 1 THEN 
+   #FUN-D20025---begin
+    IF p_type = 1 THEN
        IF g_pmk.pmk18='X' THEN RETURN END IF
     ELSE
        IF g_pmk.pmk18<>'X' THEN RETURN END IF
-    END IF 
-    #FUN-D20025---end    
+    END IF
+    #FUN-D20025---end
    SELECT COUNT(*) INTO l_n FROM pnn_file
     WHERE pnn01=g_pmk.pmk01
- 
+
    IF l_n > 0 THEN CALL cl_err(g_pmk.pmk01,'apm-510',0) RETURN END IF
- 
+
    BEGIN WORK
    LET g_success = 'Y'
- 
+
    OPEN t420_cl USING g_pmk.pmk01
    IF STATUS THEN
       CALL cl_err("OPEN t420_cl:", STATUS, 1)
@@ -10630,7 +10640,7 @@ FUNCTION t420_x(p_type) #FUN-D20025 add
       ROLLBACK WORK
       RETURN
    END IF
- 
+
    FETCH t420_cl INTO g_pmk.*               # 對DB鎖定
    IF SQLCA.sqlcode THEN
       CALL cl_err(g_pmk.pmk01,SQLCA.sqlcode,0)
@@ -10638,7 +10648,7 @@ FUNCTION t420_x(p_type) #FUN-D20025 add
       ROLLBACK WORK
       RETURN
    END IF
- 
+
    IF cl_void(0,0,g_pmk.pmk18) THEN
       IF g_pmk.pmk18 ='N' THEN
          LET g_pmk.pmk18='X'
@@ -10650,8 +10660,8 @@ FUNCTION t420_x(p_type) #FUN-D20025 add
              SELECT pml02 FROM pml_file
               WHERE pml01=g_pmk.pmk01
           FOREACH t420_x2_c INTO l_pml02
-             CALL t420_upd_oeb28('x',l_pml02)  
-          END FOREACH 
+             CALL t420_upd_oeb28('x',l_pml02)
+          END FOREACH
 #FUN-B90101 add &endif
       ELSE
          LET g_pmk.pmk18='N'
@@ -10663,8 +10673,8 @@ FUNCTION t420_x(p_type) #FUN-D20025 add
              SELECT pml02 FROM pml_file
               WHERE pml01=g_pmk.pmk01
           FOREACH t420_x3_c INTO l_pml02
-             CALL t420_upd_oeb28('z',l_pml02)  
-          END FOREACH 
+             CALL t420_upd_oeb28('z',l_pml02)
+          END FOREACH
 #FUN-B90101 add &endif
       END IF
       UPDATE pmk_file SET
@@ -10675,14 +10685,14 @@ FUNCTION t420_x(p_type) #FUN-D20025 add
           WHERE pmk01 = g_pmk.pmk01
       IF STATUS OR SQLCA.sqlerrd[3] = 0 THEN
          CALL cl_err3("upd","pmk_file",g_pmk.pmk01,"",STATUS,"","x_upd pmk18",1)  #No.FUN-660129
-         LET g_success = 'N' 
+         LET g_success = 'N'
       END IF
       UPDATE pml_file SET
              pml16 = l_pml16
           WHERE pml01 = g_pmk.pmk01
       IF STATUS THEN  #No:8753
          CALL cl_err3("upd","pml_file",g_pmk.pmk01,"",STATUS,"","x_upd pml16",1)  #No.FUN-660129
-         LET g_success = 'N' 
+         LET g_success = 'N'
       END IF
    END IF
    DECLARE t420_x1_c CURSOR FOR
@@ -10703,7 +10713,7 @@ FUNCTION t420_x(p_type) #FUN-D20025 add
    IF g_totsuccess="N" THEN
       LET g_success="N"
    END IF
- 
+
    CLOSE t420_cl
    CALL s_showmsg()       #No.FUN-710030
    IF g_success='Y' THEN
@@ -10716,18 +10726,18 @@ FUNCTION t420_x(p_type) #FUN-D20025 add
      INTO g_pmk.pmk18,g_pmk.pmk25,g_pmk.pmkmksg FROM pmk_file
     WHERE pmk01=g_pmk.pmk01
    DISPLAY BY NAME g_pmk.pmk18,g_pmk.pmk25
- 
+
    CALL s_pmksta('pmk',g_pmk.pmk25,g_pmk.pmk18,g_pmk.pmkmksg) RETURNING g_sta
    DISPLAY g_sta TO FORMONLY.desc2
- 
+
    CALL t420_pic() #FUN-730012
 END FUNCTION
- 
+
 FUNCTION t420_z1()
    DEFINE l_pml         RECORD LIKE pml_file.*
    DEFINE l_pml20       LIKE pml_file.pml20
    DEFINE l_pmkcont     LIKE pmk_file.pmkcont   #CHI-C80072 Add
- 
+
  # LET g_pmk.pmk25=0                 #TQC-AB0038 mark
    LET g_pmk.pmk25 = '0'             #TQC-AB0038 add
   #LET g_pmk.pmk03=g_pmk.pmk03+1     #MOD-C10159 mark
@@ -10763,7 +10773,7 @@ FUNCTION t420_z1()
         WHERE pml01 = g_pmk.pmk01
           AND pml16 != '9'           #MOD-B90092
 #FUN-B90101--add--begin--
-#FUN-B90101--add--end 
+#FUN-B90101--add--end
        IF STATUS OR SQLCA.sqlerrd[3] = 0 THEN
 #FUN-B90101 add &endif
          IF g_bgerr THEN
@@ -10785,29 +10795,29 @@ FUNCTION t420_z1()
          END IF
       END IF
       IF g_azw.azw04='2' THEN
-         DELETE FROM ruc_file WHERE ruc00='1' AND ruc01=g_pmk.pmkplant 
+         DELETE FROM ruc_file WHERE ruc00='1' AND ruc01=g_pmk.pmkplant
                     AND ruc02=g_pmk.pmk01  #No.FUN-9C0069
-         IF STATUS THEN                                                                                                             
-            CALL cl_err3("del","ruc_file",g_pmk.pmk01,"",SQLCA.sqlcode,                                                             
-                               "","",1)                                                                                             
+         IF STATUS THEN
+            CALL cl_err3("del","ruc_file",g_pmk.pmk01,"",SQLCA.sqlcode,
+                               "","",1)
             LET g_success="N"
-            RETURN                                                                                                            
+            RETURN
          END IF
        END IF
    END IF
 END FUNCTION
-#FUN-CC0057--------mark---------str 
+#FUN-CC0057--------mark---------str
 #FUNCTION t420_transfer()
 #DEFINE l_ruc RECORD LIKE ruc_file.*
 #DEFINE l_flag LIKE type_file.chr1
 #DEFINE l_rate LIKE ruc_file.ruc17
-#       
+#
 #   LET g_sql="SELECT '','',pml01,pml02,pml04,'','','',pml24,pml25,pml48,pml49,pml50,'',",
 #             " pml47,pml041,pml07,'',pml20,'','','','',",
 #             " pml51,pml52,pml53,'',pml33,pml54,'',pml191,pml55 ",        #No.FUN-9C0069
 #             " FROM pml_file WHERE pml01='",g_pmk.pmk01,"' ORDER BY pml02 "
 #   PREPARE t420_prepsel FROM g_sql
-#   DECLARE t420_curssel CURSOR FOR t420_prepsel 
+#   DECLARE t420_curssel CURSOR FOR t420_prepsel
 #   FOREACH t420_curssel INTO l_ruc.*
 #      IF SQLCA.sqlcode THEN
 #        CALL cl_err('foreach:',SQLCA.sqlcode,1)
@@ -10827,9 +10837,9 @@ END FUNCTION
 #      LET l_ruc.ruc32=g_pmk.pmk50    #FUN-CC0057 add
 #      IF cl_null(l_ruc.ruc06) THEN
 #         LET l_ruc.ruc06 = g_pmk.pmkplant
-#         LET l_ruc.ruc29 = 'Y' 
+#         LET l_ruc.ruc29 = 'Y'
 #      ELSE
-#         LET l_ruc.ruc29 = 'N' 
+#         LET l_ruc.ruc29 = 'N'
 #      END IF
 #      SELECT rty04 INTO l_ruc.ruc26 FROM rty_file
 #       WHERE rty01=l_ruc.ruc06 AND rty02=l_ruc.ruc04
@@ -10844,26 +10854,26 @@ END FUNCTION
 #      LET l_ruc.ruc22=NULL
 #      LET l_ruc.ruc33=' '
 #      IF l_ruc.ruc12='2' OR l_ruc.ruc12='3' OR l_ruc.ruc12 ='4' THEN  #No.FUN-A10037
-#         INSERT INTO ruc_file VALUES(l_ruc.*) 
-#         IF STATUS THEN                                                                                                       
-#            CALL cl_err3("ins","ruc_file",g_pmk.pmk01,"",SQLCA.sqlcode,"","",1) 
-#            EXIT FOREACH                                                                                              
+#         INSERT INTO ruc_file VALUES(l_ruc.*)
+#         IF STATUS THEN
+#            CALL cl_err3("ins","ruc_file",g_pmk.pmk01,"",SQLCA.sqlcode,"","",1)
+#            EXIT FOREACH
 #         END IF
 #      END IF
 #      IF NOT cl_null(l_ruc.ruc23) AND l_ruc.ruc23<>g_plant THEN
 #         UPDATE pml_file SET pml11="Y" WHERE pml01=l_ruc.ruc02 AND pml02=l_ruc.ruc03
-#                                         AND pml930=g_plant      
-#         IF STATUS THEN                                                                                                             
-#            CALL cl_err3("upd","pml_file",g_pmk.pmk01,"",SQLCA.sqlcode,                                                             
-#                               "","",1)                                                                                             
-#            EXIT FOREACH                                                                                                            
-#         END IF    
-#      END IF 
-#      INITIALIZE l_ruc.* TO NULL 
-#   END FOREACH                             
+#                                         AND pml930=g_plant
+#         IF STATUS THEN
+#            CALL cl_err3("upd","pml_file",g_pmk.pmk01,"",SQLCA.sqlcode,
+#                               "","",1)
+#            EXIT FOREACH
+#         END IF
+#      END IF
+#      INITIALIZE l_ruc.* TO NULL
+#   END FOREACH
 #END FUNCTION
 #FUN-CC0057--------mark---------end
- 
+
 FUNCTION t420_g()
    DEFINE l_cmd         LIKE type_file.chr1000, #No.FUN-680136 VARCHAR(200)
           l_prog        LIKE zz_file.zz01,      #No.FUN-680136 VARCHAR(10)
@@ -10878,8 +10888,8 @@ FUNCTION t420_g()
           l_updsql_1    LIKE type_file.chr1000, #No.FUN-680136 VARCHAR(500)
           l_updsql_2    LIKE type_file.chr1000, #No.FUN-680136 VARCHAR(500)
           l_upload      LIKE type_file.chr1000  #No.FUN-680136 VARCHAR(1000)
- 
- 
+
+
    IF g_aza.aza23 matches '[ Nn]'
      THEN
       IF g_bgerr THEN
@@ -10889,11 +10899,11 @@ FUNCTION t420_g()
       END IF
      RETURN
    END IF
- 
+
    IF g_pmk.pmk01 IS NULL OR g_pmk.pmk01 = ' '
      THEN RETURN
    END IF
- 
+
    IF g_pmk.pmkmksg IS NULL OR g_pmk.pmkmksg matches '[Nn]'
      THEN
       IF g_bgerr THEN
@@ -10903,7 +10913,7 @@ FUNCTION t420_g()
       END IF
      RETURN
    END IF
- 
+
    IF g_pmk.pmk18 matches '[Nn]'
      THEN
       IF g_bgerr THEN
@@ -10922,7 +10932,7 @@ FUNCTION t420_g()
       END IF
      RETURN
    END IF
- 
+
    IF g_pmk.pmk25 matches '[Ss1]'
      THEN
       IF g_bgerr THEN
@@ -10932,15 +10942,15 @@ FUNCTION t420_g()
       END IF
      RETURN
    END IF
- 
+
 #--- 產生本張單據之報表檔
   # LET l_prog='apmr903' #FUN-C30085 mark
-   LET l_prog='apmg903'  #FUN-C30085 add 
+   LET l_prog='apmg903'  #FUN-C30085 add
    LET l_wc='pmk01="',g_pmk.pmk01,'"'
- 
+
    SELECT zz21,zz22 INTO l_wc2,l_prtway FROM zz_file WHERE zz01 = l_prog
    IF SQLCA.sqlcode OR l_wc2 IS NULL THEN LET l_wc2 = " '3' " END IF
- 
+
 #---- 抓報表檔名  l_name
    CALL cl_outnam(l_prog) RETURNING l_name
    LET l_cmd = l_prog CLIPPED,
@@ -10949,10 +10959,10 @@ FUNCTION t420_g()
                " '",l_wc CLIPPED,"' '",l_wc2 CLIPPED,"' '' '' ",
                " '",l_name CLIPPED,"'"
     CALL cl_cmdrun(l_cmd)
- 
- 
+
+
 #---- 更新[目前狀態] 為 'S.送簽中'
- 
+
    LET l_updsql_0="UPDATE pmk_file SET pmk25='S' WHERE pmk01='",g_pmk.pmk01,"';"
    LET l_updsql_1="UPDATE pmk_file SET pmk25='1' WHERE pmk01='",g_pmk.pmk01,"';",
                   "UPDATE pml_file SET pml16='1' WHERE pml01='",g_pmk.pmk01,"';"
@@ -10971,17 +10981,17 @@ FUNCTION t420_g()
                  '"C',g_pmk.pmksign CLIPPED,'" ',        #條件1: 簽核等級
                  '"N','5000','" '                       #條件2: 總金額
   RUN l_easycmd
- 
+
   CALL t420_pic() #FUN-730012
 END FUNCTION
- 
+
 FUNCTION t420_ef()
- 
+
      CALL t420sub_y_chk(g_pmk.pmk01)          #CALL 原確認的 check 段
      IF g_success = "N" THEN
          RETURN
      END IF
- 
+
      CALL aws_condition()#判斷送簽資料
      IF g_success = 'N' THEN
          RETURN
@@ -10990,7 +11000,7 @@ FUNCTION t420_ef()
 # 傳入參數: (1)單頭資料, (2-6)單身資料
 # 回傳值  : 0 開單失敗; 1 開單成功
 ##########
- 
+
    IF aws_efcli2(base.TypeInfo.create(g_pmk),base.TypeInfo.create(g_pml),'','','','')
    THEN
        LET g_success='Y'
@@ -11001,35 +11011,35 @@ FUNCTION t420_ef()
    END IF
 END FUNCTION
 #genero
- 
+
 FUNCTION t420_set_entry(p_cmd)
    DEFINE p_cmd   LIKE type_file.chr1     #No.FUN-680136  VARCHAR(1)
- 
+
    IF (NOT g_before_input_done) OR INFIELD(pmk01) THEN
      #CALL cl_set_comp_entry("pmk01,pmk02,pmk03",TRUE)   #FUN-570078 add pmk03 #No.FUN-830161 #MOD-D10269 mark
       CALL cl_set_comp_entry("pmk01,pmk02",TRUE)         #MOD-D10269
    END IF
 
-   CALL cl_set_comp_entry("pmk15",TRUE)   #MOD-C80239 add 
+   CALL cl_set_comp_entry("pmk15",TRUE)   #MOD-C80239 add
 END FUNCTION
- 
+
 FUNCTION t420_set_no_entry(p_cmd)
    DEFINE p_cmd   LIKE type_file.chr1     #No.FUN-680136  VARCHAR(1)
- 
+
     IF (NOT g_before_input_done) THEN                    #MOD-560162
        IF p_cmd = 'u' AND g_chkey matches'[Nn]' THEN
            CALL cl_set_comp_entry("pmk01",FALSE)
        END IF
    END IF
 
-  #MOD-D10269 mark---S 
+  #MOD-D10269 mark---S
   #IF (NOT g_before_input_done) THEN
   #  IF p_cmd='u' THEN
   #     CALL cl_set_comp_entry("pmk03",FALSE)
   #  END IF
   #END IF
   #MOD-D10269 mark---E
- 
+
    IF NOT cl_null(g_argv3) THEN
        CALL cl_set_comp_entry("pmk02",FALSE)
    END IF
@@ -11039,46 +11049,46 @@ FUNCTION t420_set_no_entry(p_cmd)
       CALL cl_set_comp_entry("pmk15",FALSE)
    END IF
   #MOD-C80239---E---
- 
+
 END FUNCTION
- 
+
 FUNCTION t420_set_entry_b(p_cmd)
 DEFINE   p_cmd     LIKE type_file.chr1     #No.FUN-680136 VARCHAR(1)
- 
+
    IF g_pmk.pmk45='Y' AND (NOT g_before_input_done) THEN
       CALL cl_set_comp_entry("pml38",TRUE)
    END IF
- 
+
    IF INFIELD(pml04) OR (NOT g_before_input_done) THEN
       CALL cl_set_comp_entry("pml041",TRUE)
    END IF
- 
+
    IF INFIELD(pml12) OR (NOT g_before_input_done) THEN
       CALL cl_set_comp_entry("pml07",TRUE)
    END IF
- 
+
    CALL cl_set_comp_entry("pml83,pml85,pml86,pml87",TRUE)
-  
+
    CALL cl_set_comp_entry("pml12,pml121,pml122",TRUE)
-   IF cl_null(g_pmk.pmk09) THEN   
+   IF cl_null(g_pmk.pmk09) THEN
       CALL cl_set_comp_entry("pml48",TRUE)
    END IF
- 
+
 END FUNCTION
- 
+
 FUNCTION t420_set_no_entry_b(p_cmd)
 DEFINE   p_cmd     LIKE type_file.chr1     #No.FUN-680136 VARCHAR(1)
- 
+
    IF g_pmk.pmk45='N' AND (NOT g_before_input_done) THEN
       CALL cl_set_comp_entry("pml38",FALSE)
    END IF
- 
+
    IF INFIELD(pml04) OR (NOT g_before_input_done) THEN
       IF g_no[1,4] != 'MISC' THEN
           CALL cl_set_comp_entry("pml041",FALSE)
       END IF
    END IF
- 
+
    IF INFIELD(pml12) OR (NOT g_before_input_done) THEN
       IF NOT cl_null(g_pml[l_ac].pml12) THEN
           CALL cl_set_comp_entry("pml07",FALSE)
@@ -11086,13 +11096,13 @@ DEFINE   p_cmd     LIKE type_file.chr1     #No.FUN-680136 VARCHAR(1)
    END IF
 
 #FUN-A60035 ---MARK BEGIN
-##No.FUN-A50054 --begin--by dxfwo 
-# IF g_sma.sma124 = 'slk' THEN 
+##No.FUN-A50054 --begin--by dxfwo
+# IF g_sma.sma124 = 'slk' THEN
 #    CALL cl_set_comp_entry("pml20",FALSE)
-# END IF 
+# END IF
 ##No.FUN-A50054 --end--
 #FUN-A60035 ---MARK END
- 
+
    IF g_ima906 = '1' THEN
       CALL cl_set_comp_entry("pml83,pml84,pml85",FALSE)
    END IF
@@ -11105,7 +11115,7 @@ DEFINE   p_cmd     LIKE type_file.chr1     #No.FUN-680136 VARCHAR(1)
    IF g_sma.sma116 MATCHES '[02]' THEN    #No.FUN-610076
       CALL cl_set_comp_entry("pml86,pml87",FALSE)
    END IF
- 
+
    #如果資料是由前端帶入的，則不可修改專案相關欄位
    IF NOT cl_null(g_pml[l_ac].pml24) THEN
      CALL cl_set_comp_entry("pml12,pml121,pml122",FALSE)
@@ -11114,9 +11124,9 @@ DEFINE   p_cmd     LIKE type_file.chr1     #No.FUN-680136 VARCHAR(1)
       CALL cl_set_comp_entry("pml48",FALSE)
    END IF
 END FUNCTION
- 
+
 FUNCTION t420_set_required()
- 
+
  IF g_ima906 = '3' THEN
     CALL cl_set_comp_required("pml83,pml85,pml80,pml82",TRUE)
  END IF
@@ -11133,7 +11143,7 @@ FUNCTION t420_set_required()
        CALL cl_set_comp_required("pml87",TRUE)
     END IF
  END IF
- 
+
  #IF g_apy.apydmy5 = 'Y' AND g_pml[l_ac].pml20 !=0  THEN  #單據有做預算控算時，則預算相關欄位要輸入
   IF g_smy.smy59 = 'Y' AND g_pml[l_ac].pml20 !=0  THEN  #單據有做預算控算時，則預算相關欄位要輸入  #MOD-B60032 mod
 #    CALL cl_set_comp_required("pml67,pml40,pml31,pml31t",TRUE)        #No.FUN-830161    #TQC-D50082-mark--
@@ -11142,32 +11152,32 @@ FUNCTION t420_set_required()
        CALL cl_set_comp_required("pml401",TRUE)
      END IF
   END IF
- 
+
 END FUNCTION
- 
+
 FUNCTION t420_set_no_required()
 
  CALL cl_set_comp_required("pml83,pml84,pml85,pml80,pml81,pml82,pml86,pml87",FALSE)
 #CALL cl_set_comp_required("pml67,pml40,pml401,pml31,pml31t",FALSE)        #FUN-810045  #No.FUN-830161 #TQC-D50082-mark--
  CALL cl_set_comp_required("pml67,pml40,pml401,pml31,pml31t,pml90",FALSE)        #FUN-810045  #No.FUN-830161  #TQC-D50082
- 
+
 END FUNCTION
- 
+
 FUNCTION t421_set_entry(p_cmd)
 DEFINE   p_cmd     LIKE type_file.chr1     #No.FUN-680136 VARCHAR(1)
- 
+
    IF (NOT g_before_input_done) THEN
 #FUN-B90101--add--begin--
-#FUN-B90101--add--end--      
+#FUN-B90101--add--end--
        CALL cl_set_comp_entry("pml31,pml31t",TRUE)
 #FUN-B90101 add &endif
    END IF
- 
+
 END FUNCTION
- 
+
 FUNCTION t421_set_no_entry(p_cmd)
 DEFINE   p_cmd    LIKE type_file.chr1     #No.FUN-680136  VARCHAR(1)
- 
+
    IF g_gec07 = 'N' OR cl_null(g_gec07) THEN         #No.FUN-560102   #MOD-860100
 #FUN-B90101--add--begin--
 #FUN-B90101--add--end--
@@ -11176,19 +11186,19 @@ DEFINE   p_cmd    LIKE type_file.chr1     #No.FUN-680136  VARCHAR(1)
       CALL cl_set_comp_entry("pml31",FALSE)
 #FUN-B90101 add &endif
    END IF
- 
+
 END FUNCTION
 FUNCTION t420_set_pml191()
   IF g_azw.azw04 ='2' AND g_pml[l_ac].pml50 MATCHES '[24]' THEN
       LET g_pml[l_ac].pml190 ='Y'
       IF cl_null(g_pml[l_ac].pml191) AND NOT cl_null(g_pml[l_ac].pml04) THEN
-         SELECT rty12 INTO g_pml[l_ac].pml191 
+         SELECT rty12 INTO g_pml[l_ac].pml191
            FROM rty_file
           WHERE rty01 = g_pmk.pmkplant
             AND rty02 = g_pml[l_ac].pml04
       END IF
       CALL cl_set_comp_entry("pml191",TRUE)
-      CALL cl_set_comp_required("pml191",TRUE)   
+      CALL cl_set_comp_required("pml191",TRUE)
       DISPLAY BY NAME g_pml[l_ac].pml190
       DISPLAY BY NAME g_pml[l_ac].pml191
   ELSE
@@ -11197,19 +11207,19 @@ FUNCTION t420_set_pml191()
 END FUNCTION
 FUNCTION t420_pml191()
 DEFINE  l_geuacti LIKE geu_file.geuacti
-        
+
     LET g_errno=''
     SELECT geuacti INTO l_geuacti
-      FROM geu_file 
+      FROM geu_file
      WHERE geu01 = g_pml[l_ac].pml191 AND geu00='4'
-    CASE                          
-        WHEN SQLCA.sqlcode=100   LET g_errno = 'art-591'   
+    CASE
+        WHEN SQLCA.sqlcode=100   LET g_errno = 'art-591'
         WHEN l_geuacti='N'       LET g_errno='9028'
-        OTHERWISE   
-        LET g_errno=SQLCA.sqlcode USING '------' 
+        OTHERWISE
+        LET g_errno=SQLCA.sqlcode USING '------'
    END CASE
 END FUNCTION
- 
+
 FUNCTION t420_set_pml07()
   DEFINE    l_ima906 LIKE ima_file.ima906,
             l_ima907 LIKE ima_file.ima907,
@@ -11223,14 +11233,14 @@ FUNCTION t420_set_pml07()
             l_ima25  LIKE ima_file.ima25,
             l_ima44  LIKE ima_file.ima44,
             p_code   LIKE type_file.chr1     #No.FUN-680136 VARCHAR(01)
- 
+
    SELECT ima25,ima44,ima906 INTO l_ima25,l_ima44,l_ima906 FROM ima_file
     WHERE ima01=g_pml[l_ac].pml04
    LET l_fac2=g_pml2.pml84
    LET l_qty2=g_pml2.pml85
    LET l_fac1=g_pml2.pml81
    LET l_qty1=g_pml2.pml82
- 
+
    IF cl_null(l_fac1) THEN LET l_fac1=1 END IF
    IF cl_null(l_qty1) THEN LET l_qty1=0 END IF
    IF cl_null(l_fac2) THEN LET l_fac2=1 END IF
@@ -11250,7 +11260,7 @@ FUNCTION t420_set_pml07()
       LET g_pml2.pml07=g_pml2.pml80
       LET g_pml2.pml20=l_qty1
    END IF
- 
+
    LET g_cnt = 0
    LET g_factor = 1
    CALL s_umfchk(g_pml2.pml04,g_pml2.pml07,l_ima25)
@@ -11259,15 +11269,15 @@ FUNCTION t420_set_pml07()
       LET g_factor = 1
    END IF
    LET g_pml2.pml09 = g_factor
- 
+
    IF cl_null(g_pml2.pml86) THEN
       LET g_pml2.pml86 = g_pml2.pml07
       LET g_pml2.pml87 = g_pml2.pml09
    END IF
    RETURN g_cnt
- 
+
 END FUNCTION
- 
+
 #用于default 雙單位/轉換率/數量
 FUNCTION t420_du_default(p_cmd)
   DEFINE    l_item   LIKE img_file.img01,     #料號
@@ -11287,13 +11297,13 @@ FUNCTION t420_du_default(p_cmd)
             l_qty3   LIKE img_file.img10,     #計價數量
             p_cmd    LIKE type_file.chr1,     #No.FUN-680136 VARCHAR(01)
             l_factor LIKE ima_file.ima31_fac  #No.FUN-680136 DECIMAL(16,8)
- 
+
     LET l_item = g_pml[l_ac].pml04
- 
+
     SELECT ima25,ima44,ima31,ima906,ima907,ima908
       INTO l_ima25,l_ima44,l_ima31,l_ima906,l_ima907,l_ima908
       FROM ima_file WHERE ima01 = l_item
- 
+
     IF g_sma.sma115 = 'Y' THEN   #No.TQC-6B0124 add
        IF l_ima906 = '1' THEN  #不使用雙單位
           LET l_unit2 = NULL
@@ -11306,12 +11316,12 @@ FUNCTION t420_du_default(p_cmd)
           LET l_fac2 = l_factor
           LET l_qty2  = 0
        END IF
-       
+
        LET l_unit1 = l_ima44
        LET l_fac1  = 1
        LET l_qty1  = 0
     END IF       #No.TQC-6B0124 add
- 
+
     IF g_sma.sma116 MATCHES '[02]' THEN    #No.FUN-610076
        LET l_unit3 = NULL
        LET l_qty3  = NULL
@@ -11319,7 +11329,7 @@ FUNCTION t420_du_default(p_cmd)
        LET l_unit3 = l_ima908
        LET l_qty3  = 0
     END IF
- 
+
     IF p_cmd = 'a' OR g_pml[l_ac].pml04 <> g_pml04_y THEN
        LET g_pml[l_ac].pml83=l_unit2
        LET g_pml[l_ac].pml84=l_fac2
@@ -11331,7 +11341,7 @@ FUNCTION t420_du_default(p_cmd)
        LET g_pml[l_ac].pml87=l_qty3
     END IF
 END FUNCTION
- 
+
 #對原來數量/換算率/單位的賦值
 FUNCTION t420_set_origin_field()
   DEFINE    l_ima906 LIKE ima_file.ima906,
@@ -11345,7 +11355,7 @@ FUNCTION t420_set_origin_field()
             l_factor LIKE ima_file.ima31_fac,   #No.FUN-680136 DECIMAL(16,8)
             l_ima25  LIKE ima_file.ima25,
             l_ima44  LIKE ima_file.ima44
- 
+
     IF g_sma.sma115='N' THEN RETURN END IF
     SELECT ima25,ima44 INTO l_ima25,l_ima44
       FROM ima_file WHERE ima01=g_pml[l_ac].pml04
@@ -11356,17 +11366,17 @@ FUNCTION t420_set_origin_field()
        END IF
     END IF
     IF cl_null(l_ima44) THEN LET l_ima44 = l_ima25 END IF
- 
+
     LET l_fac2=g_pml[l_ac].pml84
     LET l_qty2=g_pml[l_ac].pml85
     LET l_fac1=g_pml[l_ac].pml81
     LET l_qty1=g_pml[l_ac].pml82
- 
+
     IF cl_null(l_fac1) THEN LET l_fac1=1 END IF
     IF cl_null(l_qty1) THEN LET l_qty1=0 END IF
     IF cl_null(l_fac2) THEN LET l_fac2=1 END IF
     IF cl_null(l_qty2) THEN LET l_qty2=0 END IF
- 
+
     IF g_sma.sma115 = 'Y' THEN
        CASE g_ima906
           WHEN '1' LET g_pml[l_ac].pml07=g_pml[l_ac].pml80
@@ -11385,7 +11395,7 @@ FUNCTION t420_set_origin_field()
                    LET g_pml2.pml84=g_pml[l_ac].pml84
        END CASE
     END IF
- 
+
     LET g_factor = 1
     CALL s_umfchk(g_pml[l_ac].pml04,g_pml[l_ac].pml07,l_ima25)
           RETURNING g_cnt,g_factor
@@ -11393,8 +11403,8 @@ FUNCTION t420_set_origin_field()
        LET g_factor = 1
     END IF
     LET g_pml2.pml09 = g_factor
- 
-     SELECT azi03,azi04 INTO t_azi03,t_azi04 FROM azi_file    
+
+     SELECT azi03,azi04 INTO t_azi03,t_azi04 FROM azi_file
       WHERE azi01 = g_pmk.pmk22  AND aziacti= 'Y'  #原幣
     IF g_sma.sma116 MATCHES '[13]' THEN    #No.FUN-610076
        LET g_pml2.pml88 =cl_digcut(g_pml2.pml31*g_pml2.pml87,t_azi04)  #MOD-730047
@@ -11402,10 +11412,10 @@ FUNCTION t420_set_origin_field()
        LET g_pml2.pml88 =cl_digcut(g_pml2.pml31*g_pml2.pml20,t_azi04)  #MOD-730047
     END IF
 END FUNCTION
- 
+
 #兩組雙單位資料不是一定要全部KEY,如果沒有KEY單位,則把換算率/數量清空
 FUNCTION t420_du_data_to_correct()
- 
+
    IF cl_null(g_pml[l_ac].pml80) THEN
       LET g_pml[l_ac].pml81 = NULL
       LET g_pml[l_ac].pml82 = NULL
@@ -11413,7 +11423,7 @@ FUNCTION t420_du_data_to_correct()
       LET g_pml2.pml81 = NULL
       LET g_pml2.pml82 = NULL
    END IF
- 
+
    IF cl_null(g_pml[l_ac].pml83) THEN
       LET g_pml[l_ac].pml84 = NULL
       LET g_pml[l_ac].pml85 = NULL
@@ -11421,22 +11431,22 @@ FUNCTION t420_du_data_to_correct()
       LET g_pml2.pml84 = NULL
       LET g_pml2.pml85 = NULL
    END IF
- 
+
    IF cl_null(g_pml[l_ac].pml86) THEN
       LET g_pml[l_ac].pml87 = NULL
       LET g_pml2.pml86 = NULL
       LET g_pml2.pml87 = NULL
    END IF
- 
+
    DISPLAY BY NAME g_pml[l_ac].pml81
    DISPLAY BY NAME g_pml[l_ac].pml82
    DISPLAY BY NAME g_pml[l_ac].pml84
    DISPLAY BY NAME g_pml[l_ac].pml85
    DISPLAY BY NAME g_pml[l_ac].pml86
    DISPLAY BY NAME g_pml[l_ac].pml87
- 
+
 END FUNCTION
- 
+
 FUNCTION t420_set_pml87()
   DEFINE    l_item   LIKE img_file.img01,     #料號
             l_ima25  LIKE ima_file.ima25,     #ima單位
@@ -11448,7 +11458,7 @@ FUNCTION t420_set_pml87()
             l_qty1   LIKE img_file.img10,     #第一數量
             l_tot    LIKE img_file.img10,     #計價數量
             l_factor LIKE ima_file.ima31_fac  #No.FUN-680136 DECIMAL(16,8)
- 
+
     SELECT ima25,ima44,ima906 INTO l_ima25,l_ima44,l_ima906
       FROM ima_file WHERE ima01=g_pml[l_ac].pml04
     IF SQLCA.sqlcode =100 THEN
@@ -11458,7 +11468,7 @@ FUNCTION t420_set_pml87()
        END IF
     END IF
     IF cl_null(l_ima44) THEN LET l_ima44 = l_ima25 END IF
- 
+
     LET l_fac2=g_pml[l_ac].pml84
     LET l_qty2=g_pml[l_ac].pml85
     IF g_sma.sma115 = 'Y' THEN
@@ -11477,7 +11487,7 @@ FUNCTION t420_set_pml87()
     IF cl_null(l_qty1) THEN LET l_qty1=0 END IF
     IF cl_null(l_fac2) THEN LET l_fac2=1 END IF
     IF cl_null(l_qty2) THEN LET l_qty2=0 END IF
- 
+
     IF g_sma.sma115 = 'Y' THEN
        CASE l_ima906
           WHEN '1' LET l_tot=l_qty1*l_fac1
@@ -11500,11 +11510,11 @@ FUNCTION t420_set_pml87()
        LET l_factor = 1
     END IF
     LET l_tot = l_tot * l_factor
- 
+
     LET g_pml[l_ac].pml87 = l_tot
-    LET g_pml[l_ac].pml87 = s_digqty(g_pml[l_ac].pml87,g_pml[l_ac].pml86)   #No.FUN-BB0086   
+    LET g_pml[l_ac].pml87 = s_digqty(g_pml[l_ac].pml87,g_pml[l_ac].pml86)   #No.FUN-BB0086
 END FUNCTION
- 
+
 FUNCTION t420_sel_ima()
 #FUN-B90101--add--begin--
 #FUN-B90101--add--end--
@@ -11514,9 +11524,9 @@ FUNCTION t420_sel_ima()
      WHERE ima01=g_pml[l_ac].pml04
 #FUN-B90101 add &endif
 END FUNCTION
- 
+
 FUNCTION t420_def_form()
- 
+
    CALL cl_set_comp_visible("pml81,pml84",FALSE)
    IF g_sma.sma115 = 'Y' THEN
       CALL cl_set_comp_visible("pml07,pml20",FALSE)
@@ -11524,11 +11534,11 @@ FUNCTION t420_def_form()
       CALL cl_set_comp_visible("pml83,pml84,pml85",FALSE)
       CALL cl_set_comp_visible("pml80,pml81,pml82",FALSE)
    END IF
- 
+
    IF g_sma.sma116 MATCHES '[02]' THEN    #No.FUN-610076
       CALL cl_set_comp_visible("pml86,pml87",FALSE)
    END IF
- 
+
    IF g_sma.sma122 ='1' THEN
       CALL cl_getmsg('asm-302',g_lang) RETURNING g_msg
       CALL cl_set_comp_att_text("pml83",g_msg CLIPPED)
@@ -11539,7 +11549,7 @@ FUNCTION t420_def_form()
       CALL cl_getmsg('asm-307',g_lang) RETURNING g_msg
       CALL cl_set_comp_att_text("pml82",g_msg CLIPPED)
    END IF
- 
+
    IF g_sma.sma122 ='2' THEN
       CALL cl_getmsg('asm-304',g_lang) RETURNING g_msg
       CALL cl_set_comp_att_text("pml83",g_msg CLIPPED)
@@ -11551,13 +11561,13 @@ FUNCTION t420_def_form()
       CALL cl_set_comp_att_text("pml82",g_msg CLIPPED)
    END IF
    CALL cl_set_comp_visible("pml930,gem02a",g_aaz.aaz90='Y')
- 
+
    CALL cl_set_comp_visible("pmk05,pml12,pml121,pml122",g_aza.aza08='Y')  #FUN-810045 add
- 
+
 END FUNCTION
- 
+
 FUNCTION t420_refresh_detail()
-  DEFINE l_compare          LIKE smy_file.smy62    
+  DEFINE l_compare          LIKE smy_file.smy62
   DEFINE li_col_count       LIKE type_file.num5     #No.FUN-680136 SMALLINT
   DEFINE li_i, li_j         LIKE type_file.num5     #No.FUN-680136 SMALLINT
   DEFINE lc_agb03           LIKE agb_file.agb03
@@ -11568,7 +11578,7 @@ FUNCTION t420_refresh_detail()
   DEFINE ls_sql             STRING
   DEFINE ls_show,ls_hide    STRING
   DEFINE l_gae04            LIKE gae_file.gae04
-   
+
   #判斷是否進行料件多屬性新機制管理以及是否傳入了屬性群組
   IF (g_sma.sma120 = 'Y') AND (g_sma.sma907 = 'Y') AND
      NOT cl_null(lg_smy62) THEN
@@ -11576,7 +11586,7 @@ FUNCTION t420_refresh_detail()
      #顯示什么組別的信息，如果有單身，則進行下面的邏輯判斷
      IF g_pml.getLength() = 0 THEN
         LET lg_group = lg_smy62
-     ELSE   
+     ELSE
        #讀取當前單身所有的料件資料，如果它們都屬于多屬性子料件，并且擁有一致的
        #屬性群組，則以該屬性群組作為顯示單身明細屬性的依據，如果有不統一的狀況
        #則返回一個NULL，下面將不顯示任明細屬性列
@@ -11589,10 +11599,10 @@ FUNCTION t420_refresh_detail()
          END IF
          SELECT imaag INTO l_compare FROM ima_file WHERE ima01 = g_pml[li_i].att00
          #第一次是賦值
-         IF cl_null(lg_group) THEN 
+         IF cl_null(lg_group) THEN
             LET lg_group = l_compare
-         #以后是比較   
-         ELSE 
+         #以后是比較
+         ELSE
            #如果在單身料件屬于不同的屬性組則直接退出（不顯示這些東東)
            IF l_compare <> lg_group THEN
               LET lg_group = ''
@@ -11603,19 +11613,19 @@ FUNCTION t420_refresh_detail()
             LET lg_group = ''
             EXIT FOR
          END IF
-       END FOR 
+       END FOR
      END IF
- 
+
      #到這里時lg_group中存放的已經是應該顯示的組別了，該變量是一個全局變量
      #在單身INPUT或開窗時都會用到，因為refresh函數被執行的時機較早，所以能保証在需要的時候有值
      SELECT COUNT(*) INTO li_col_count FROM agb_file WHERE agb01 = lg_group
- 
+
      #走到這個分支說明是采用新機制，那么使用att00父料件編號代替oeb04子料件編號來顯示
      #得到當前語言別下oeb04的欄位標題
-     SELECT gae04 INTO l_gae04 FROM gae_file 
+     SELECT gae04 INTO l_gae04 FROM gae_file
        WHERE gae01 = g_prog AND gae02 = 'pml04' AND gae03 = g_lang
      CALL cl_set_comp_att_text("att00",l_gae04)
-     
+
      #為了提高效率，把需要顯示和隱藏的欄位都放到各自的變量里，然后在結尾的地方一次性顯示或隱藏
      IF NOT cl_null(lg_group) THEN
         LET ls_hide = 'pml04,pml041'
@@ -11624,30 +11634,30 @@ FUNCTION t420_refresh_detail()
         LET ls_hide = 'att00'
         LET ls_show = 'pml04,pml041'
      END IF
- 
+
      #顯現該有的欄位,置換欄位格式
      CALL lr_agc.clear()  #因為這個過程可能會被執行多次，作為一個公共變量，每次執行之前必須要初始化
      FOR li_i = 1 TO li_col_count
          SELECT agb03 INTO lc_agb03 FROM agb_file
            WHERE agb01 = lg_group AND agb02 = li_i
- 
+
          LET lc_agb03 = lc_agb03 CLIPPED
          SELECT * INTO lr_agc[li_i].* FROM agc_file
            WHERE agc01 = lc_agb03
- 
+
          LET lc_index = li_i USING '&&'
- 
+
          CASE lr_agc[li_i].agc04
            WHEN '1'
              LET ls_show = ls_show || ",att" || lc_index
              LET ls_hide = ls_hide || ",att" || lc_index || "_c"
              CALL cl_set_comp_att_text("att" || lc_index,lr_agc[li_i].agc02)
-             
+
              #這里需要判別g_sma.sma908,如果是允許新增子料件則要把這些屬性設置成為REQUIRED的,否則要設成NOENTRY
                 CALL cl_chg_comp_att("formonly.att" || lc_index,"NOT NULL|REQUIRED|SCROLL","1|1|1")
            WHEN '2'
              LET ls_show = ls_show || ",att" || lc_index || "_c"
-             LET ls_hide = ls_hide || ",att" || lc_index 
+             LET ls_hide = ls_hide || ",att" || lc_index
              CALL cl_set_comp_att_text("att" || lc_index || "_c",lr_agc[li_i].agc02)
              LET ls_sql = "SELECT * FROM agd_file WHERE agd01 = '",lr_agc[li_i].agc01,"'"
              DECLARE agd_curs CURSOR FROM ls_sql
@@ -11678,8 +11688,8 @@ FUNCTION t420_refresh_detail()
              #這里需要判別g_sma.sma908,如果是允許新增子料件則要把這些屬性設置成為REQUIRED的,否則要設成NOENTRY
                 CALL cl_chg_comp_att("formonly.att" || lc_index,"NOT NULL|REQUIRED|SCROLL","1|1|1")
        END CASE
-     END FOR       
-    
+     END FOR
+
   ELSE
     #否則什么也不做(不顯示任何屬性列)
     LET li_i = 1
@@ -11687,37 +11697,37 @@ FUNCTION t420_refresh_detail()
     LET ls_hide = 'att00'
     LET ls_show = 'pml04'
   END IF
-  
+
   #下面開始隱藏其他明細屬性欄位(從li_i開始)
   FOR li_j = li_i TO 10
       LET lc_index = li_j USING '&&'
       #注意att0x和att0x_c都要隱藏，別忘了_c的
       LET ls_hide = ls_hide || ",att" || lc_index || ",att" || lc_index || "_c"
   END FOR
- 
+
   #這樣只用調兩次公共函數就可以解決問題了，效率應該會高一些
   CALL cl_set_comp_visible(ls_show, TRUE)
   CALL cl_set_comp_visible(ls_hide, FALSE)
- 
+
 END FUNCTION
- 
+
 #--------------------在修改下面的代碼前請讀一下注釋先，謝了! -----------------------
- 
+
 #下面代碼是從單身INPUT ARRAY語句中的AFTER FIELD段中拷貝來的，因為在多屬性新模式下原來的oea04料件編號
 #欄位是要被隱藏起來，并由新增加的imx00（母料件編號）+各個明細屬性欄位來取代，所以原來的AFTER FIELD
 #代碼是不會被執行到，需要執行的判斷應該放新增加的几個欄位的AFTER FIELD中來進行，因為要用多次嘛，所以
 #單獨用一個FUNCTION來放，順便把oeb04的AFTER FIELD也移過來，免得將來維護的時候遺漏了
 #下標g_oeb[l_ac]都被改成g_oeb[p_ac]，請注意
- 
+
 #本函數返回TRUE/FALSE,表示檢核過程是否通過，一般說來，在使用過程中應該是如下方式□
 #    AFTER FIELD XXX
-#        IF NOT t420_check_oeb04(.....)  THEN NEXT FIELD XXX END IF        
+#        IF NOT t420_check_oeb04(.....)  THEN NEXT FIELD XXX END IF
 FUNCTION t420_check_pml04(p_field,p_ac,p_cmd) #No.MOD-660090
 DEFINE
   p_field                     STRING,    #當前是在哪個欄位中觸發了AFTER FIELD事件
   p_ac                        LIKE type_file.num5,     #No.FUN-680136 SMALLINT  #g_oeb數組中的當前記錄下標
   l_flag1,g_flag              LIKE type_file.chr1,     #No.FUN-680136 VARCHAR(01)
-                              
+
   l_ps                        LIKE sma_file.sma46,
   l_str_tok                   base.stringTokenizer,
   l_tmp, ls_sql               STRING,
@@ -11725,7 +11735,7 @@ DEFINE
   l_cnt, li_i                 LIKE type_file.num5,     #No.FUN-680136 SMALLINT
   ls_value                    STRING,
   ls_pid,ls_value_fld         LIKE ima_file.ima01,
-  ls_name, ls_spec            STRING, 
+  ls_name, ls_spec            STRING,
   lc_agb03                    LIKE agb_file.agb03,
   lc_agd03                    LIKE agd_file.agd03,
   ls_pname                    LIKE ima_file.ima02,
@@ -11737,13 +11747,13 @@ DEFINE
   l_ima25                     LIKE ima_file.ima25,
   l_imaacti                   LIKE ima_file.imaacti,
   l_qty                       LIKE type_file.num10,    #No.FUN-680136 INTEGER
-  p_cmd                       LIKE type_file.chr1,     #No.FUN-680136 VARCHAR(01) #No.MOD-660090     
-  l_ima915                    LIKE ima_file.ima915     #FUN-710060 add 
+  p_cmd                       LIKE type_file.chr1,     #No.FUN-680136 VARCHAR(01) #No.MOD-660090
+  l_ima915                    LIKE ima_file.ima915     #FUN-710060 add
 
 #FUN-A60035 ---MARK BEGIN
 ##FUN-A50054---Begin add
 #&ifndef SLK
-##FUN-A50054---end  
+##FUN-A50054---end
 #FUN-A60035 ---MARK END
   #如果當前欄位是新增欄位（母料件編號以及十個明細屬性欄位）的時候，如果全部輸了值則合成出一個
   #新的子料件編號并把值填入到已經隱藏起來的oeb04中（如果imxXX能夠顯示，oeb04一定是隱藏的）
@@ -11752,55 +11762,55 @@ DEFINE
   IF (p_field = 'imx00') OR (p_field = 'imx01') OR (p_field = 'imx02') OR
      (p_field = 'imx03') OR (p_field = 'imx04') OR (p_field = 'imx05') OR
      (p_field = 'imx06') OR (p_field = 'imx07') OR (p_field = 'imx08') OR
-     (p_field = 'imx09') OR (p_field = 'imx10')  THEN                   
-     
+     (p_field = 'imx09') OR (p_field = 'imx10')  THEN
+
      #首先判斷需要的欄位是否全部完成了輸入（只有母料件編號+被顯示出來的所有明細屬性
      #全部被輸入完成了才進行后續的操作
      LET ls_pid = g_pml[p_ac].att00   # ls_pid 父料件編號
      LET ls_value = g_pml[p_ac].att00   # ls_value 子料件編號
-     IF cl_null(ls_pid) THEN 
+     IF cl_null(ls_pid) THEN
         #所有要返回TRUE的分支都要加這兩句話,原來下面的會被
         #注釋掉
         CALL t420_set_no_entry_b(p_cmd)
         CALL t420_set_required()
- 
+
         RETURN TRUE
      END IF  #注意這里沒有錯，所以返回TRUE
-     
+
      #取出當前母料件包含的明細屬性的個數
-     SELECT COUNT(*) INTO l_cnt FROM agb_file WHERE agb01 = 
+     SELECT COUNT(*) INTO l_cnt FROM agb_file WHERE agb01 =
         (SELECT imaag FROM ima_file WHERE ima01 = ls_pid)
      IF l_cnt = 0 THEN
         #所有要返回TRUE的分支都要加這兩句話,原來下面的會被
         #注釋掉
         CALL t420_set_no_entry_b(p_cmd)
         CALL t420_set_required()
-         
+
          RETURN TRUE
      END IF
-     
+
      FOR li_i = 1 TO l_cnt
          #如果有任何一個明細屬性應該輸而沒有輸的則退出
-         IF cl_null(arr_detail[p_ac].imx[li_i]) THEN 
+         IF cl_null(arr_detail[p_ac].imx[li_i]) THEN
             #所有要返回TRUE的分支都要加這兩句話,原來下面的會被
             #注釋掉
             CALL t420_set_no_entry_b(p_cmd)
             CALL t420_set_required()
-            
+
             RETURN TRUE
-         END IF  
+         END IF
      END FOR
- 
+
      #得到系統定義的標准分隔符sma46
-     SELECT sma46 INTO l_ps FROM sma_file    
-     
+     SELECT sma46 INTO l_ps FROM sma_file
+
      #合成子料件的名稱
      SELECT ima02 INTO ls_pname FROM ima_file   # ls_name 父料件名稱
        WHERE ima01 = ls_pid
      LET ls_spec = ls_pname  # ls_spec 子料件名稱
      #方法:循環在agd_file中找有沒有對應記錄，如果有，就用該記錄的名稱來
      #替換初始名稱，如果找不到則就用原來的名稱
-     FOR li_i = 1 TO l_cnt  
+     FOR li_i = 1 TO l_cnt
          LET lc_agd03 = ""
          LET ls_value = ls_value.trim(), l_ps, arr_detail[p_ac].imx[li_i]
          SELECT agd03 INTO lc_agd03 FROM agd_file
@@ -11810,15 +11820,15 @@ DEFINE
          ELSE
             LET ls_spec = ls_spec.trim(),l_ps,lc_agd03
          END IF
-     END FOR     
-     
+     END FOR
+
      #解析ls_value生成要傳給cl_copy_bom的那個l_param_list
      LET l_str_tok = base.StringTokenizer.create(ls_value,l_ps)
      LET l_tmp = l_str_tok.nextToken()   #先把第一個部分--名稱去掉
- 
+
      LET ls_sql = "SELECT agb03 FROM agb_file,ima_file WHERE ",
                   "ima01 = '",ls_pid CLIPPED,"' AND agb01 = imaag ",
-                  "ORDER BY agb02"  
+                  "ORDER BY agb02"
      DECLARE param_curs CURSOR FROM ls_sql
      FOREACH param_curs INTO lc_agb03
        #l_str_tok中的Tokens數量應該和param_curs中的記錄數量完全一致
@@ -11827,21 +11837,21 @@ DEFINE
        ELSE
           LET l_param_list = l_param_list,'|#',lc_agb03,'#|',l_str_tok.nextToken()
        END IF
-     END FOREACH     
- 
-     LET g_value = ls_value                                                  
-     IF g_sma.sma908 <> 'Y' THEN                                             
-        SELECT COUNT(*) INTO l_n FROM ima_file WHERE ima01=g_value           
-        IF l_n=0 THEN                                                        
-           CALL cl_err(g_value,'ams-003',1)                                  
+     END FOREACH
+
+     LET g_value = ls_value
+     IF g_sma.sma908 <> 'Y' THEN
+        SELECT COUNT(*) INTO l_n FROM ima_file WHERE ima01=g_value
+        IF l_n=0 THEN
+           CALL cl_err(g_value,'ams-003',1)
            RETURN FALSE
-        END IF                                                               
-     END IF                                                  
-     
+        END IF
+     END IF
+
      #調用cl_copy_ima將新生成的子料件插入到數據庫中
      IF cl_copy_ima(ls_pid,ls_value,ls_spec,l_param_list) = TRUE THEN
         #如果向其中成功插入記錄則同步插入屬性記錄到imx_file中去
-        LET ls_value_fld = ls_value 
+        LET ls_value_fld = ls_value
         INSERT INTO imx_file VALUES(ls_value_fld,ls_pid,arr_detail[p_ac].imx[1],
           arr_detail[p_ac].imx[2],arr_detail[p_ac].imx[3],arr_detail[p_ac].imx[4],
           arr_detail[p_ac].imx[5],arr_detail[p_ac].imx[6],arr_detail[p_ac].imx[7],
@@ -11861,32 +11871,32 @@ DEFINE
 #&endif
 #MOD-B10129 mark --end--
         END IF
-     END IF 
+     END IF
      #把生成的子料件賦給oeb04，否則下面的檢查就沒有意義了
      LET g_pml[p_ac].pml04 = ls_value
-  ELSE 
-    IF ( p_field <> 'pml04' )AND( p_field <> 'imx00' ) THEN 
+  ELSE
+    IF ( p_field <> 'pml04' )AND( p_field <> 'imx00' ) THEN
        RETURN FALSE
     END IF
   END IF
 #FUN-A60035 ---MARK BEGIN
 ##FUN-A50054--Begin add
 #&endif
-##FUN-A50054---end  
+##FUN-A50054---end
 #FUN-A60035 ---MARK END
   #到這里已經完成了以前在cl_itemno_multi_att()中做的所有准備工作，在系統資料庫
   #中已經有了對應的子料件的名稱，下面可以按照oeb04進行判斷了
-  
+
   #--------重要 !!!!!!!!!!!-------------------------
   #下面的代碼都是從原INPUT ARRAY中的AFTER FIELD oeb04段拷貝來的，唯一做的修改
   #是將原來的NEXT FIELD 語句都改成了RETURN FALSE, xxx,xxx ... ，因為NEXE FIELD
   #語句要交給調用方來做，這里只需要返回一個FALSE告訴它有錯誤就可以了，同時一起
   #返回的還有一些CHECK過程中要從ima_file中取得的欄位信息，其他的比如判斷邏輯和
   #錯誤提示都沒有改，如果你需要在里面添加代碼請注意上面的那個要點就可以了
- 
+
     IF NOT cl_null(g_pml[l_ac].pml04) THEN
        LET l_misc=g_pml[l_ac].pml04[1,4]
-       IF g_pml[l_ac].pml04[1,4]='MISC' THEN  
+       IF g_pml[l_ac].pml04[1,4]='MISC' THEN
           SELECT COUNT(*) INTO l_n FROM ima_file
            WHERE ima01=l_misc
              AND ima01='MISC'
@@ -11897,13 +11907,13 @@ DEFINE
        END IF
        LET g_pml2.pml04 = g_pml[l_ac].pml04
        LET g_no = g_pml2.pml04[1,4]
-       IF g_pml[l_ac].pml04 != g_pml_t.pml04 OR cl_null(g_pml_t.pml04) THEN 
+       IF g_pml[l_ac].pml04 != g_pml_t.pml04 OR cl_null(g_pml_t.pml04) THEN
 	  LET g_pml2.pml40  = NULL	#MOD-9A0028
 	  LET g_pml2.pml401 = NULL	#MOD-9A0028
           CALL t420_pml04('a',g_no)
           LET g_pml[l_ac].pml40 = g_pml2.pml40   #MOD-B10094 add
           LET g_pml[l_ac].pml401 = g_pml2.pml401 #MOD-B10094 add
-          IF NOT cl_null(g_errno) THEN  #MOD-7C0050 
+          IF NOT cl_null(g_errno) THEN  #MOD-7C0050
               CALL cl_err(g_pml[l_ac].pml04,g_errno,0)
               LET g_pml[l_ac].pml04 = g_pml_o.pml04
               RETURN FALSE
@@ -11953,7 +11963,7 @@ DEFINE
              DISPLAY BY NAME g_pml[l_ac].pml83
           END IF
        END IF
-       IF g_sma.sma116 MATCHES '[13]' THEN    
+       IF g_sma.sma116 MATCHES '[13]' THEN
           IF cl_null(g_pml[l_ac].pml86) THEN
              LET g_pml[l_ac].pml86=g_ima908
              DISPLAY BY NAME g_pml[l_ac].pml86
@@ -11966,10 +11976,10 @@ DEFINE
        LET g_pml_o.pml04 = g_pml[l_ac].pml04
     DISPLAY g_pml[l_ac].pml04 TO pml04
     DISPLAY g_pml[l_ac].pml041 TO pml041
-    
+
 #FUN-A60035 ---MARK BEGIN
 ##FUN-A50054 Begin add
-#&ifndef SLK     
+#&ifndef SLK
 #FUN-A60035 ---MARK END
      #新增一個判斷,如果lg_smy62不為空,表示當前采用的是料件多屬性的新機制,因此這個函數應該是被
      #attxx這樣的明細屬性欄位的AFTER FIELD來調用的,所以不再使用原來的輸入機制,否則不變
@@ -11985,40 +11995,40 @@ DEFINE
      END IF
 #FUN-A60035 ---MARK BEGIN
 #&endif
-##FUN-A50054 end add      
+##FUN-A50054 end add
 #FUN-A60035 ---MARK END
- 
+
      #-新增的關于AFTER FIELD oeb的邏輯請同樣加一份在這里
-     
+
      #所有要返回TRUE的分支都要加這兩句話,原來下面的會被
      #注釋掉
      CALL t420_set_no_entry_b(p_cmd)
      CALL t420_set_required()
- 
+
      RETURN TRUE
   ELSE
      #如果是由oeb04來觸發的,說明當前用的是舊的流程,那么oeb04為空是可以的
      #如果是由att00來觸發,原理一樣
-     IF (p_field = 'pml04') OR (p_field = 'imx00') THEN 
+     IF (p_field = 'pml04') OR (p_field = 'imx00') THEN
         #所有要返回TRUE的分支都要加這兩句話,原來下面的會被
         #注釋掉
         CALL t420_set_no_entry_b(p_cmd)
         CALL t420_set_required()
- 
+
         RETURN TRUE
-     ELSE 
+     ELSE
         #如果不是oeb,則是由attxx來觸發的,則非輸不可
         RETURN FALSE
      END IF #如果為空則不允許新增
   END IF
 END FUNCTION
-         
+
 #用于att01~att10這十個輸入型屬性欄位的AFTER FIELD事件的判斷函數
 #傳入參數:p_value 要比較的欄位內容,p_index當前欄位的索引號(從1~10表示att01~att10)
 #         p_row是當前行索引,傳入INPUT ARRAY中使用的l_ac即可
 #與t420_check_oeb04相同,如果檢查過程中如果發現錯誤,則報錯并返回一個FALSE
 #而AFTER FIELD的時候檢測到這個返回值則會做NEXT FIELD
- 
+
 FUNCTION t420_check_att0x(p_value,p_index,p_row,p_cmd) #No.MOD-660090
 DEFINE
   p_value      LIKE imx_file.imx01,
@@ -12033,16 +12043,16 @@ DEFINE
   l_imaacti    LIKE ima_file.imaacti,
   l_ima130     LIKE ima_file.ima130,    #No.FUN-680136 VARCHAR(1)
   l_ima131     LIKE ima_file.ima131,    #No.FUN-680136 VARCHAR(10)
-  l_ima25      LIKE ima_file.ima25 
-  
+  l_ima25      LIKE ima_file.ima25
+
   #這個欄位一旦進入了就不能忽略，因為要保証在輸入其他欄位之前必須要生成oeb04料件編號
-  IF cl_null(p_value) THEN 
+  IF cl_null(p_value) THEN
      RETURN FALSE
   END IF
- 
+
   #這里使用到了一個用于存放當前屬性組包含的所有屬性信息的全局數組lr_agc
   #該數組會由t420_refresh_detail()函數在較早的時候填充
-  
+
   #判斷長度與定義的使用位數是否相等
   IF LENGTH(p_value CLIPPED) <> lr_agc[p_index].agc03 THEN
      CALL cl_err_msg("","aim-911",lr_agc[p_index].agc03,1)
@@ -12068,7 +12078,7 @@ DEFINE
     RETURNING l_check_res
     RETURN l_check_res
 END FUNCTION
- 
+
 #用于att01_c~att10_c這十個選擇型屬性欄位的AFTER FIELD事件的判斷函數
 #傳入參數:p_value 要比較的欄位內容,p_index當前欄位的索引號(從1~10表示att01~att10)
 #         p_row是當前行索引,傳入INPUT ARRAY中使用的l_ac即可
@@ -12084,29 +12094,29 @@ DEFINE
   l_check_res     LIKE type_file.num5,     #No.FUN-680136 SMALLINT
   l_b2            LIKE type_file.chr1000,  #No.FUN-680136 VARCHAR(30)
   l_imaacti       LIKE ima_file.imaacti,
-  l_ima130        LIKE ima_file.ima130,    #No.FUN-680136 VARCHAR(1) 
+  l_ima130        LIKE ima_file.ima130,    #No.FUN-680136 VARCHAR(1)
   l_ima131        LIKE ima_file.ima131,    #No.FUN-680136 VARCHAR(10)
   l_ima25         LIKE ima_file.ima25
- 
- 
+
+
   #這個欄位一旦進入了就不能忽略，因為要保証在輸入其他欄位之前必須要生成oeb04料件編號
-  IF cl_null(p_value) THEN 
+  IF cl_null(p_value) THEN
      RETURN FALSE
-  END IF       
- 
-  #下拉框選擇項相當簡單，不需要進行范圍和長度的判斷，因為肯定是符合要求的了  
+  END IF
+
+  #下拉框選擇項相當簡單，不需要進行范圍和長度的判斷，因為肯定是符合要求的了
   LET arr_detail[p_row].imx[p_index] = p_value
   LET l_index = p_index USING '&&'
   CALL t420_check_pml04('imx'||l_index,p_row,p_cmd) RETURNING l_check_res
- 
+
   RETURN l_check_res
-END FUNCTION         
- 
- 
+END FUNCTION
+
+
 FUNCTION t420_set_pml930(p_pml930)
    DEFINE p_pml930 LIKE pml_file.pml930
    DEFINE l_gem02  LIKE gem_file.gem02
- 
+
    SELECT gem02 INTO l_gem02 FROM gem_file
                             WHERE gem01=p_pml930
    IF SQLCA.sqlcode THEN
@@ -12114,48 +12124,48 @@ FUNCTION t420_set_pml930(p_pml930)
    END IF
    RETURN l_gem02
 END FUNCTION
- 
- 
+
+
 FUNCTION t420_pic()
    IF g_pmk.pmk18 = 'X' THEN
       LET g_chr = 'Y'
    ELSE
       LET g_chr = 'N'
    END IF
- 
+
    IF g_pmk.pmk25 = '1' OR g_pmk.pmk25 = '2' THEN
       LET g_chr2 = 'Y'
    ELSE
       LET g_chr2 = 'N'
    END IF
- 
+
    IF g_pmk.pmk25 = '6' THEN
       LET g_chr3 = 'Y'
    ELSE
       LET g_chr3 = 'N'
    END IF
- 
+
    CALL cl_set_field_pic(g_pmk.pmk18,g_chr2,"",g_chr3,g_chr,"")
 END FUNCTION
- 
+
 FUNCTION t420_aps()
    DEFINE  l_chr4      LIKE type_file.chr4
-   DEFINE  l_vmz       RECORD LIKE vmz_file.*    #FUN-7C0002 
+   DEFINE  l_vmz       RECORD LIKE vmz_file.*    #FUN-7C0002
    DEFINE  l_vmz01     LIKE vmz_file.vmz01       #FUN-7C0002
- 
-         IF cl_null(l_ac) OR l_ac = 0 THEN LET l_ac = 1 END IF  
+
+         IF cl_null(l_ac) OR l_ac = 0 THEN LET l_ac = 1 END IF
          IF cl_null(g_pmk.pmk01) THEN
              CALL cl_err('',-400,1)
-             RETURN 
+             RETURN
          END IF
          IF cl_null(g_pml[l_ac].pml02) THEN
              CALL cl_err('','arm-034',1)
-             RETURN 
+             RETURN
          END IF
          LET l_chr4 = g_pml[l_ac].pml02 USING '&&&&'
- 
+
          LET l_vmz01 = g_pmk.pmk01 CLIPPED,'-',l_chr4
-         SELECT vmz01 FROM vmz_file 
+         SELECT vmz01 FROM vmz_file
           WHERE vmz01 = l_vmz01
          IF SQLCA.SQLCODE=100 THEN
             LET l_vmz.vmz01 = l_vmz01
@@ -12167,41 +12177,41 @@ FUNCTION t420_aps()
             INSERT INTO vmz_file VALUES(l_vmz.*)
                IF STATUS THEN
                   CALL cl_err3("ins","vmz_file",l_vmz.vmz01,"",SQLCA.sqlcode,
-                               "","",1)  
+                               "","",1)
                END IF
          END IF
          LET g_cmd = "apsi317 '",l_vmz01,"'"
          CALL cl_cmdrun(g_cmd)
 END FUNCTION
- 
+
 FUNCTION t420_b_move_to()
 #FUN-B90101--add--begin
 #FUN-B90101--add--end--
-   LET g_pml[l_ac].pml02  = g_pml2.pml02  
-   LET g_pml[l_ac].pml24  = g_pml2.pml24 
-   LET g_pml[l_ac].pml25  = g_pml2.pml25 
-   LET g_pml[l_ac].pml04  = g_pml2.pml04 
+   LET g_pml[l_ac].pml02  = g_pml2.pml02
+   LET g_pml[l_ac].pml24  = g_pml2.pml24
+   LET g_pml[l_ac].pml25  = g_pml2.pml25
+   LET g_pml[l_ac].pml04  = g_pml2.pml04
    LET g_pml[l_ac].pml041 = g_pml2.pml041
-   LET g_pml[l_ac].pml07  = g_pml2.pml07 
-   LET g_pml[l_ac].pml20  = g_pml2.pml20 
-   LET g_pml[l_ac].pml83  = g_pml2.pml83 
-   LET g_pml[l_ac].pml84  = g_pml2.pml84 
-   LET g_pml[l_ac].pml85  = g_pml2.pml85 
-   LET g_pml[l_ac].pml80  = g_pml2.pml80 
-   LET g_pml[l_ac].pml81  = g_pml2.pml81 
-   LET g_pml[l_ac].pml82  = g_pml2.pml82 
-   LET g_pml[l_ac].pml86  = g_pml2.pml86 
-   LET g_pml[l_ac].pml87  = g_pml2.pml87 
-   LET g_pml[l_ac].pml21  = g_pml2.pml21 
-   LET g_pml[l_ac].pml35  = g_pml2.pml35 
-   LET g_pml[l_ac].pml34  = g_pml2.pml34 
-   LET g_pml[l_ac].pml33  = g_pml2.pml33 
-   LET g_pml[l_ac].pml919  = g_pml2.pml919     #FUN-A80150 add 
-   LET g_pml[l_ac].pml41  = g_pml2.pml41 
+   LET g_pml[l_ac].pml07  = g_pml2.pml07
+   LET g_pml[l_ac].pml20  = g_pml2.pml20
+   LET g_pml[l_ac].pml83  = g_pml2.pml83
+   LET g_pml[l_ac].pml84  = g_pml2.pml84
+   LET g_pml[l_ac].pml85  = g_pml2.pml85
+   LET g_pml[l_ac].pml80  = g_pml2.pml80
+   LET g_pml[l_ac].pml81  = g_pml2.pml81
+   LET g_pml[l_ac].pml82  = g_pml2.pml82
+   LET g_pml[l_ac].pml86  = g_pml2.pml86
+   LET g_pml[l_ac].pml87  = g_pml2.pml87
+   LET g_pml[l_ac].pml21  = g_pml2.pml21
+   LET g_pml[l_ac].pml35  = g_pml2.pml35
+   LET g_pml[l_ac].pml34  = g_pml2.pml34
+   LET g_pml[l_ac].pml33  = g_pml2.pml33
+   LET g_pml[l_ac].pml919  = g_pml2.pml919     #FUN-A80150 add
+   LET g_pml[l_ac].pml41  = g_pml2.pml41
    LET g_pml[l_ac].pml190 = g_pml2.pml190
    LET g_pml[l_ac].pml191 = g_pml2.pml191
    LET g_pml[l_ac].pml192 = g_pml2.pml192
-   LET g_pml[l_ac].pml12  = g_pml2.pml12 
+   LET g_pml[l_ac].pml12  = g_pml2.pml12
    LET g_pml[l_ac].pml121 = g_pml2.pml121
    LET g_pml[l_ac].pml122 = g_pml2.pml122
    LET g_pml[l_ac].pml67  = g_pml2.pml67
@@ -12211,16 +12221,16 @@ FUNCTION t420_b_move_to()
    LET g_pml[l_ac].pml31  = g_pml2.pml31
    LET g_pml[l_ac].pml31t = g_pml2.pml31t
    LET g_pml[l_ac].pml930 = g_pml2.pml930
-   LET g_pml[l_ac].pml06  = g_pml2.pml06 
-   LET g_pml[l_ac].pml38  = g_pml2.pml38 
-   LET g_pml[l_ac].pml16  = g_pml2.pml16    #FUN-990080        
+   LET g_pml[l_ac].pml06  = g_pml2.pml06
+   LET g_pml[l_ac].pml38  = g_pml2.pml38
+   LET g_pml[l_ac].pml16  = g_pml2.pml16    #FUN-990080
    LET g_pml[l_ac].pml11  = g_pml2.pml11
-   LET g_pml[l_ac].pml123 = g_pml2.pml123 #FUN-950088 add 
+   LET g_pml[l_ac].pml123 = g_pml2.pml123 #FUN-950088 add
    LET g_pml[l_ac].pml91  = g_pml2.pml91  #No.FUN-920183
    LET g_pml[l_ac].pml05  = g_pml2.pml05  #No.FUN-B80167
-#&ifdef SLK                                                       #No.FUN-B90101  
+#&ifdef SLK                                                       #No.FUN-B90101
 #   LET g_pml[l_ac].pmlislk01 = g_pmli.pmlislk01  #No.FUN-810017  #No.FUN-B90101
-#&endif                                                           #No.FUN-B90101  
+#&endif                                                           #No.FUN-B90101
    LET g_pml[l_ac].pmlud01 = g_pml2.pmlud01
    LET g_pml[l_ac].pmlud02 = g_pml2.pmlud02
    LET g_pml[l_ac].pmlud03 = g_pml2.pmlud03
@@ -12236,68 +12246,68 @@ FUNCTION t420_b_move_to()
    LET g_pml[l_ac].pmlud13 = g_pml2.pmlud13
    LET g_pml[l_ac].pmlud14 = g_pml2.pmlud14
    LET g_pml[l_ac].pmlud15 = g_pml2.pmlud15
-   LET g_pml[l_ac].pml47=g_pml2.pml47                                                                                               
-   LET g_pml[l_ac].pml48=g_pml2.pml48                                                                                               
-   LET g_pml[l_ac].pml49=g_pml2.pml49                                                                                               
-   LET g_pml[l_ac].pml50=g_pml2.pml50                                                                                               
-   LET g_pml[l_ac].pml51=g_pml2.pml51                                                                                               
-   LET g_pml[l_ac].pml52=g_pml2.pml52                                                                                               
-   LET g_pml[l_ac].pml53=g_pml2.pml53  
+   LET g_pml[l_ac].pml47=g_pml2.pml47
+   LET g_pml[l_ac].pml48=g_pml2.pml48
+   LET g_pml[l_ac].pml49=g_pml2.pml49
+   LET g_pml[l_ac].pml50=g_pml2.pml50
+   LET g_pml[l_ac].pml51=g_pml2.pml51
+   LET g_pml[l_ac].pml52=g_pml2.pml52
+   LET g_pml[l_ac].pml53=g_pml2.pml53
    LET g_pml[l_ac].pml54=g_pml2.pml54
-   LET g_pml[l_ac].pml55=g_pml2.pml55                                                                                               
+   LET g_pml[l_ac].pml55=g_pml2.pml55
    LET g_pml[l_ac].pml56=g_pml2.pml56
 #FUN-B90101 add &endif
 END FUNCTION
- 
+
 FUNCTION t420_b_move_back()
 #FUN-B90101--add--begin--
 #FUN-B90101--add--end--
-   LET g_pml2.pml02  = g_pml[l_ac].pml02   
-   LET g_pml2.pml24  = g_pml[l_ac].pml24  
-   LET g_pml2.pml25  = g_pml[l_ac].pml25  
-   LET g_pml2.pml04  = g_pml[l_ac].pml04  
-   LET g_pml2.pml041 = g_pml[l_ac].pml041 
-   LET g_pml2.pml07  = g_pml[l_ac].pml07  
+   LET g_pml2.pml02  = g_pml[l_ac].pml02
+   LET g_pml2.pml24  = g_pml[l_ac].pml24
+   LET g_pml2.pml25  = g_pml[l_ac].pml25
+   LET g_pml2.pml04  = g_pml[l_ac].pml04
+   LET g_pml2.pml041 = g_pml[l_ac].pml041
+   LET g_pml2.pml07  = g_pml[l_ac].pml07
    IF g_pml2.pml08 IS NULL THEN
       SELECT ima25
         INTO g_pml2.pml08
         FROM ima_file
        WHERE ima01=g_pml[l_ac].pml04
    END IF
-   LET g_pml2.pml20  = g_pml[l_ac].pml20  
-   LET g_pml2.pml83  = g_pml[l_ac].pml83  
-   LET g_pml2.pml84  = g_pml[l_ac].pml84  
-   LET g_pml2.pml85  = g_pml[l_ac].pml85  
-   LET g_pml2.pml80  = g_pml[l_ac].pml80  
-   LET g_pml2.pml81  = g_pml[l_ac].pml81  
-   LET g_pml2.pml82  = g_pml[l_ac].pml82  
-   LET g_pml2.pml86  = g_pml[l_ac].pml86  
-   LET g_pml2.pml87  = g_pml[l_ac].pml87  
-   LET g_pml2.pml21  = g_pml[l_ac].pml21  
+   LET g_pml2.pml20  = g_pml[l_ac].pml20
+   LET g_pml2.pml83  = g_pml[l_ac].pml83
+   LET g_pml2.pml84  = g_pml[l_ac].pml84
+   LET g_pml2.pml85  = g_pml[l_ac].pml85
+   LET g_pml2.pml80  = g_pml[l_ac].pml80
+   LET g_pml2.pml81  = g_pml[l_ac].pml81
+   LET g_pml2.pml82  = g_pml[l_ac].pml82
+   LET g_pml2.pml86  = g_pml[l_ac].pml86
+   LET g_pml2.pml87  = g_pml[l_ac].pml87
+   LET g_pml2.pml21  = g_pml[l_ac].pml21
    IF cl_null(g_pml2.pml21) THEN LET g_pml2.pml21 = 0 END IF #TQC-730022
-   LET g_pml2.pml35  = g_pml[l_ac].pml35  
-   LET g_pml2.pml34  = g_pml[l_ac].pml34  
-   LET g_pml2.pml33  = g_pml[l_ac].pml33  
-   LET g_pml2.pml919  = g_pml[l_ac].pml919     #FUN-A80150 add 
-   LET g_pml2.pml41  = g_pml[l_ac].pml41  
-   LET g_pml2.pml190 = g_pml[l_ac].pml190 
-   LET g_pml2.pml191 = g_pml[l_ac].pml191 
-   LET g_pml2.pml192 = g_pml[l_ac].pml192 
-   LET g_pml2.pml12  = g_pml[l_ac].pml12  
-   LET g_pml2.pml121 = g_pml[l_ac].pml121 
-   LET g_pml2.pml122 = g_pml[l_ac].pml122 
-   LET g_pml2.pml67  = g_pml[l_ac].pml67 
-   LET g_pml2.pml90 = g_pml[l_ac].pml90 
-   LET g_pml2.pml40  = g_pml[l_ac].pml40 
-   LET g_pml2.pml401 = g_pml[l_ac].pml401 
-   LET g_pml2.pml31  = g_pml[l_ac].pml31 
-   LET g_pml2.pml31t = g_pml[l_ac].pml31t 
-   LET g_pml2.pml930 = g_pml[l_ac].pml930 
-   LET g_pml2.pml06  = g_pml[l_ac].pml06  
-   LET g_pml2.pml38  = g_pml[l_ac].pml38  
-   LET g_pml2.pml16  = g_pml[l_ac].pml16    #FUN-990080        
+   LET g_pml2.pml35  = g_pml[l_ac].pml35
+   LET g_pml2.pml34  = g_pml[l_ac].pml34
+   LET g_pml2.pml33  = g_pml[l_ac].pml33
+   LET g_pml2.pml919  = g_pml[l_ac].pml919     #FUN-A80150 add
+   LET g_pml2.pml41  = g_pml[l_ac].pml41
+   LET g_pml2.pml190 = g_pml[l_ac].pml190
+   LET g_pml2.pml191 = g_pml[l_ac].pml191
+   LET g_pml2.pml192 = g_pml[l_ac].pml192
+   LET g_pml2.pml12  = g_pml[l_ac].pml12
+   LET g_pml2.pml121 = g_pml[l_ac].pml121
+   LET g_pml2.pml122 = g_pml[l_ac].pml122
+   LET g_pml2.pml67  = g_pml[l_ac].pml67
+   LET g_pml2.pml90 = g_pml[l_ac].pml90
+   LET g_pml2.pml40  = g_pml[l_ac].pml40
+   LET g_pml2.pml401 = g_pml[l_ac].pml401
+   LET g_pml2.pml31  = g_pml[l_ac].pml31
+   LET g_pml2.pml31t = g_pml[l_ac].pml31t
+   LET g_pml2.pml930 = g_pml[l_ac].pml930
+   LET g_pml2.pml06  = g_pml[l_ac].pml06
+   LET g_pml2.pml38  = g_pml[l_ac].pml38
+   LET g_pml2.pml16  = g_pml[l_ac].pml16    #FUN-990080
    LET g_pml2.pml11  = g_pml[l_ac].pml11
-   LET g_pml2.pml123 = g_pml[l_ac].pml123 #FUN-950088 add  
+   LET g_pml2.pml123 = g_pml[l_ac].pml123 #FUN-950088 add
    LET g_pml2.pml91  = g_pml[l_ac].pml91  #No.FUN-920183
    LET g_pml2.pml05  = g_pml[l_ac].pml05  #No.FUN-B80167
 #&ifdef SLK                                                          #FUN-B90101
@@ -12320,22 +12330,22 @@ FUNCTION t420_b_move_back()
    LET g_pml2.pmlud15 = g_pml[l_ac].pmlud15
    LET g_pml2.pml47=g_pml[l_ac].pml47
    LET g_pml2.pml48=g_pml[l_ac].pml48
-   LET g_pml2.pml49=g_pml[l_ac].pml49 
-   LET g_pml2.pml50=g_pml[l_ac].pml50 
-   LET g_pml2.pml51=g_pml[l_ac].pml51 
-   LET g_pml2.pml52=g_pml[l_ac].pml52 
+   LET g_pml2.pml49=g_pml[l_ac].pml49
+   LET g_pml2.pml50=g_pml[l_ac].pml50
+   LET g_pml2.pml51=g_pml[l_ac].pml51
+   LET g_pml2.pml52=g_pml[l_ac].pml52
    LET g_pml2.pml53=g_pml[l_ac].pml53
    LET g_pml2.pml54=g_pml[l_ac].pml54
    LET g_pml2.pml55=g_pml[l_ac].pml55
    LET g_pml2.pml56=g_pml[l_ac].pml56
 #FUN-B90101 add &endif
 END FUNCTION
- 
+
 FUNCTION t420_bud(p_cmd,p_flag)
   DEFINE p_cmd       LIKE type_file.chr1
   DEFINE p_flag      LIKE type_file.chr1
-  DEFINE p_sum1      LIKE afc_file.afc06 
-  DEFINE p_sum2      LIKE afc_file.afc06 
+  DEFINE p_sum1      LIKE afc_file.afc06
+  DEFINE p_sum2      LIKE afc_file.afc06
   DEFINE l_flag      LIKE type_file.num5
   DEFINE l_msg       LIKE ze_file.ze03
   DEFINE l_over      LIKE afc_file.afc07
@@ -12343,21 +12353,21 @@ FUNCTION t420_bud(p_cmd,p_flag)
   DEFINE l_aag23     LIKE aag_file.aag23  #CHI-A40021 add
   DEFINE l_pml121    LIKE pml_file.pml121 #CHI-A40021 add
   DEFINE l_pml12     LIKE pml_file.pml12  #CHI-A40021 add
- 
+
   LET g_errno = ''
   IF g_smy.smy59 <> 'Y' THEN RETURN END IF
- 
+
   IF g_aza.aza08 = 'N' THEN
      LET g_pml[l_ac].pml12 = ' '
      LET g_pml[l_ac].pml121= ' '
   END IF
   IF g_bookno1 IS NULL OR g_pml[l_ac].pml90 IS NULL OR
-     g_pml[l_ac].pml40 IS NULL OR g_pml[l_ac].pml33 IS NULL OR 
-     g_pml[l_ac].pml121 IS NULL OR g_pml[l_ac].pml67 IS NULL OR 
+     g_pml[l_ac].pml40 IS NULL OR g_pml[l_ac].pml33 IS NULL OR
+     g_pml[l_ac].pml121 IS NULL OR g_pml[l_ac].pml67 IS NULL OR
      g_pml[l_ac].pml12 IS NULL THEN
      RETURN
   END IF
- 
+
   IF g_aaz.aaz90 = 'Y' THEN
      IF g_pml[l_ac].pml930 IS NULL THEN
         RETURN
@@ -12368,7 +12378,7 @@ FUNCTION t420_bud(p_cmd,p_flag)
         RETURN
      END IF
   END IF
- 
+
   #MOD-C10008 ----- add start -----
   IF cl_null(g_pmk.pmk42) THEN
      LET p_sum1 = g_pml_t.pml87 * g_pml_t.pml31
@@ -12380,7 +12390,7 @@ FUNCTION t420_bud(p_cmd,p_flag)
   END IF #MOD-C10008 add
   IF cl_null(p_sum1) THEN LET p_sum1 = 0 END IF
   IF cl_null(p_sum2) THEN LET p_sum2 = 0 END IF
- 
+
   #CHI-A40021 add --start--
   SELECT aag23 INTO l_aag23 FROM  aag_file
    WHERE aag00=g_bookno1
@@ -12442,7 +12452,7 @@ FUNCTION t420_bud(p_cmd,p_flag)
         END IF
      END IF
   END IF
- 
+
   IF g_aza.aza63 = 'N' THEN RETURN END IF
   IF p_flag = '2' OR p_flag = '3' THEN
      IF g_aaz.aaz90='Y' THEN
@@ -12459,8 +12469,8 @@ FUNCTION t420_bud(p_cmd,p_flag)
         END IF
         #CHI-A40021 add --end--
         IF g_bookno2 IS NULL OR g_pml[l_ac].pml90 IS NULL OR
-           g_pml[l_ac].pml401 IS NULL OR g_pml[l_ac].pml33 IS NULL OR 
-           g_pml[l_ac].pml121 IS NULL OR g_pml[l_ac].pml930 IS NULL OR 
+           g_pml[l_ac].pml401 IS NULL OR g_pml[l_ac].pml33 IS NULL OR
+           g_pml[l_ac].pml121 IS NULL OR g_pml[l_ac].pml930 IS NULL OR
            g_pml[l_ac].pml12 IS NULL THEN
            RETURN
         END IF
@@ -12489,8 +12499,8 @@ FUNCTION t420_bud(p_cmd,p_flag)
         END IF
      ELSE
         IF g_bookno2 IS NULL OR g_pml[l_ac].pml90 IS NULL OR
-           g_pml[l_ac].pml401 IS NULL OR g_pml[l_ac].pml33 IS NULL OR 
-           g_pml[l_ac].pml121 IS NULL OR g_pml[l_ac].pml67 IS NULL OR 
+           g_pml[l_ac].pml401 IS NULL OR g_pml[l_ac].pml33 IS NULL OR
+           g_pml[l_ac].pml121 IS NULL OR g_pml[l_ac].pml67 IS NULL OR
            g_pml[l_ac].pml12 IS NULL THEN
            RETURN
         END IF
@@ -12520,9 +12530,9 @@ FUNCTION t420_bud(p_cmd,p_flag)
      END IF
   END IF
   RETURN
- 
+
 END FUNCTION
- 
+
 FUNCTION t420_upd_oeb28(l_cmd,l_pml02)
     DEFINE l_oeb28    LIKE oeb_file.oeb28,
            l_oeb28_o  LIKE oeb_file.oeb28,   #MOD-C10218
@@ -12534,14 +12544,14 @@ FUNCTION t420_upd_oeb28(l_cmd,l_pml02)
            l_oeb27    LIKE oeb_file.oeb27,   #MOD-8C0134
            l_oeb12    LIKE oeb_file.oeb12,   #MOD-C10218
            l_msg      STRING                 #MOD-C10218
- 
+
    IF g_pmk.pmk46 <> '3' THEN
       RETURN
    END IF
    LET l_pml20 = 0
-   LET g_sql = "SELECT pml20,pml24,pml25 ",                          
-                " FROM pml_file ",   
-                " WHERE pml01= '",g_pmk.pmk01,"'",              
+   LET g_sql = "SELECT pml20,pml24,pml25 ",
+                " FROM pml_file ",
+                " WHERE pml01= '",g_pmk.pmk01,"'",
                 "   AND pml02= '",l_pml02,"'"
    PREPARE t420_pml_b FROM g_sql
    IF SQLCA.sqlcode THEN
@@ -12552,10 +12562,10 @@ FUNCTION t420_upd_oeb28(l_cmd,l_pml02)
    DECLARE t420_pml_bc CURSOR FOR t420_pml_b
    OPEN t420_pml_bc
    FETCH t420_pml_bc INTO l_pml20,l_pml24,l_pml25
-   IF cl_null(l_pml24) AND (cl_null(l_pml25) OR l_pml25=0) THEN 
-      RETURN 
-   END IF 
-      SELECT SUM(pml20) INTO l_oeb28 
+   IF cl_null(l_pml24) AND (cl_null(l_pml25) OR l_pml25=0) THEN
+      RETURN
+   END IF
+      SELECT SUM(pml20) INTO l_oeb28
         FROM pml_file,pmk_file
        WHERE pml24 = l_pml24
          AND pml25 = l_pml25
@@ -12596,33 +12606,33 @@ FUNCTION t420_upd_oeb28(l_cmd,l_pml02)
         ROLLBACK WORK RETURN
    END IF
 END FUNCTION
- 
-FUNCTION t420_update()                                                                                                              
-   SELECT SUM(pml88) INTO g_pmk.pmk40                                                                                               
-     FROM pml_file                                                                                                                  
+
+FUNCTION t420_update()
+   SELECT SUM(pml88) INTO g_pmk.pmk40
+     FROM pml_file
     WHERE pml01=g_pmk.pmk01
-   IF SQLCA.sqlcode OR g_pmk.pmk40 IS NULL THEN                                                                                     
-      LET g_pmk.pmk40=0                                                                                                             
-   END IF                                                                                                                           
-   SELECT azi04 INTO t_azi04 FROM azi_file                                                                                          
-    WHERE azi01=g_pmk.pmk22 AND aziacti='Y'                                                                                         
-   CALL cl_digcut(g_pmk.pmk40,t_azi04) RETURNING g_pmk.pmk40                                                                        
-   UPDATE pmk_file SET pmk40=g_pmk.pmk40                                                                                            
-    WHERE pmk01=g_pmk.pmk01                                                                                                         
-   IF SQLCA.sqlcode THEN                                                                                                            
-      CALL cl_err3("upd","pmk_file",g_pmk.pmk01,"",SQLCA.sqlcode,"","update pmk40 fail :",1)                                        
-      LET g_success = 'N'                                                                                                           
-   END IF                                                                                                                           
-                                                                                                                                    
-END FUNCTION             
-                                                                                                           
+   IF SQLCA.sqlcode OR g_pmk.pmk40 IS NULL THEN
+      LET g_pmk.pmk40=0
+   END IF
+   SELECT azi04 INTO t_azi04 FROM azi_file
+    WHERE azi01=g_pmk.pmk22 AND aziacti='Y'
+   CALL cl_digcut(g_pmk.pmk40,t_azi04) RETURNING g_pmk.pmk40
+   UPDATE pmk_file SET pmk40=g_pmk.pmk40
+    WHERE pmk01=g_pmk.pmk01
+   IF SQLCA.sqlcode THEN
+      CALL cl_err3("upd","pmk_file",g_pmk.pmk01,"",SQLCA.sqlcode,"","update pmk40 fail :",1)
+      LET g_success = 'N'
+   END IF
+
+END FUNCTION
+
 FUNCTION t420_epr()
  DEFINE  l_wpc  RECORD LIKE  wpc_file.*
  DEFINE  l_wpc01 LIKE  wpc_file.wpc01
  DEFINE  n_wpc01 LIKE  wpc_file.wpc01
  DEFINE  s_wpc01 LIKE  type_file.num5
  DEFINE  l_month LIKE  type_file.chr3
- DEFINE  l_day   LIKE  type_file.chr3 
+ DEFINE  l_day   LIKE  type_file.chr3
  DEFINE  i       LIKE  type_file.num5
  DEFINE  l_cnt   LIKE  type_file.num5
  DEFINE  l_n     LIKE  type_file.num5
@@ -12633,13 +12643,13 @@ FUNCTION t420_epr()
  DEFINE  l_pml33 LIKE  pml_file.pml33
  DEFINE  l_t     LIKE  type_file.num5 #No.FUN-A90009
  DEFINE  l_b     LIKE  type_file.num5 #No.FUN-A90009
- 
+
   IF cl_null(g_pmk.pmk01) THEN  RETURN END IF
   IF g_pmk.pmk18 = 'N'  THEN CALL cl_err(g_pmk.pmk01,'aap-717',0)  RETURN END IF
-  IF g_pmk.pmk18 = 'X'  THEN CALL cl_err(g_pmk.pmk01,'9024',0)  RETURN END IF     
-  IF g_pmk.pmk25 != '1' AND g_pmk.pmk25 != '2' THEN CALL cl_err(g_pmk.pmk01,'aqc-012',0)  RETURN END IF  
+  IF g_pmk.pmk18 = 'X'  THEN CALL cl_err(g_pmk.pmk01,'9024',0)  RETURN END IF
+  IF g_pmk.pmk25 != '1' AND g_pmk.pmk25 != '2' THEN CALL cl_err(g_pmk.pmk01,'aqc-012',0)  RETURN END IF
 
-  
+
   OPEN WINDOW p4201_w WITH FORM "apm/42f/apmt420_e"
       ATTRIBUTE (STYLE = g_win_style CLIPPED)
   CALL cl_ui_locale("apmt420_e")
@@ -12649,7 +12659,7 @@ FUNCTION t420_epr()
    LET l_count = 0
    SELECT COUNT(*) INTO l_count FROM pml_file
     WHERE pml01 = g_pmk.pmk01  #AND pml92='N'
-   IF l_count = 0 THEN 
+   IF l_count = 0 THEN
       CALL cl_err(g_pmk.pmk01,'apm-136',1)
       EXIT WHILE
    END IF
@@ -12658,18 +12668,18 @@ FUNCTION t420_epr()
    #            " FROM pml_file ",
    #            " WHERE pml01 = '",g_pmk.pmk01,"' AND pml92='N' ",
    #            " ORDER BY pml02 " CLIPPED
-   IF cl_null(g_pmk.pmk09) THEN  
-      LET g_sql = " SELECT 'N','',pml33,pml02,pml04,pml041,pml07,(pml20-pml21) ", 
+   IF cl_null(g_pmk.pmk09) THEN
+      LET g_sql = " SELECT 'N','',pml33,pml02,pml04,pml041,pml07,(pml20-pml21) ",
                   " FROM pml_file,ima_file ",
                   " WHERE pml01 = '",g_pmk.pmk01,"' AND pml92='N' AND ima927='Y' AND ima01=pml04 ",
                   " ORDER BY pml02 " CLIPPED
    ELSE
-      LET g_sql = " SELECT 'N','',pml33,pml02,pml04,pml041,pml07,(pml20-pml21) ",   
+      LET g_sql = " SELECT 'N','',pml33,pml02,pml04,pml041,pml07,(pml20-pml21) ",
                   " FROM pml_file,pmh_file,pmk_file ",
                   " WHERE pml01=pmk01 AND pml01 = '",g_pmk.pmk01,"' AND pml92='N' AND pmh25='Y' AND pmh01=pml04 AND pmh02=pmk09",
-                  " ORDER BY pml02 " CLIPPED   	
-   END IF 
-   #No.FUN-A90009--end 
+                  " ORDER BY pml02 " CLIPPED
+   END IF
+   #No.FUN-A90009--end
    PREPARE t420_e FROM g_sql
    IF SQLCA.sqlcode THEN
       CALL cl_err('prepare:',SQLCA.sqlcode,1)
@@ -12686,59 +12696,59 @@ FUNCTION t420_epr()
          CALL cl_err('preparE_e:',SQLCA.sqlcode,1) EXIT FOREACH
       END IF
       LET g_pml1[l_cnt].wpc10=(g_today+g_pml1[l_cnt].pml33)/2     #No.FUN-A90009
-      LET g_pml1_t[l_cnt].* = g_pml1[l_cnt].*      
+      LET g_pml1_t[l_cnt].* = g_pml1[l_cnt].*
       LET l_cnt = l_cnt+1
-   END FOREACH  
+   END FOREACH
       LET g_cnt1 = l_cnt-1
    CALL g_pml1.deleteElement(l_cnt)
    INPUT ARRAY g_pml1 WITHOUT DEFAULTS FROM tb3.*
          ATTRIBUTE(INSERT ROW=FALSE,DELETE ROW=FALSE,APPEND ROW=FALSE,UNBUFFERED)
 
      BEFORE ROW
-         IF g_renew THEN 
-            LET g_ac = ARR_CURR()   
+         IF g_renew THEN
+            LET g_ac = ARR_CURR()
          END IF
          CALL fgl_set_arr_curr(g_ac)
          LET g_renew = 1
          CALL cl_show_fld_cont()
-         
+
           #No.FUN-A90009--begin
-          AFTER FIELD ch 
-            IF g_pml1[g_ac].ch='Y' THEN 
+          AFTER FIELD ch
+            IF g_pml1[g_ac].ch='Y' THEN
                CALL cl_set_comp_entry('wpc10',TRUE)
                LET g_pml1[g_ac].wpc10=(g_today+g_pml1[g_ac].pml33)/2
                DISPLAY BY NAME g_pml1[g_ac].wpc10
-            ELSE 
+            ELSE
             	 CALL cl_set_comp_entry('wpc10',FALSE)
-#           	 LET g_pml1[g_ac].wpc10=NULL               #No.FUN-A90009 
-#           	 DISPLAY BY NAME g_pml1[g_ac].wpc10        #No.FUN-A90009 
-            END IF 
-            
+#           	 LET g_pml1[g_ac].wpc10=NULL               #No.FUN-A90009
+#           	 DISPLAY BY NAME g_pml1[g_ac].wpc10        #No.FUN-A90009
+            END IF
+
           ON CHANGE ch
-            IF g_pml1[g_ac].ch='Y' THEN 
+            IF g_pml1[g_ac].ch='Y' THEN
                CALL cl_set_comp_entry('wpc10',TRUE)
                LET g_pml1[g_ac].wpc10=(g_today+g_pml1[g_ac].pml33)/2
-               DISPLAY BY NAME g_pml1[g_ac].wpc10               
-            ELSE 
+               DISPLAY BY NAME g_pml1[g_ac].wpc10
+            ELSE
              	 CALL cl_set_comp_entry('wpc10',FALSE)
-#          	 LET g_pml1[g_ac].wpc10=NULL 
+#          	 LET g_pml1[g_ac].wpc10=NULL
 #          	 DISPLAY BY NAME g_pml1[g_ac].wpc10
-            END IF   
-            
-          AFTER FIELD wpc10 
-            IF NOT cl_null(g_pml1[g_ac].wpc10) THEN 
-              #IF g_pml1[g_ac].wpc10<=g_today OR g_pml1[g_ac].wpc10 >g_pml1[g_ac].pml33 THEN  #TQC-B30010  mark 
+            END IF
+
+          AFTER FIELD wpc10
+            IF NOT cl_null(g_pml1[g_ac].wpc10) THEN
+              #IF g_pml1[g_ac].wpc10<=g_today OR g_pml1[g_ac].wpc10 >g_pml1[g_ac].pml33 THEN  #TQC-B30010  mark
                IF g_pml1[g_ac].wpc10<g_today OR g_pml1[g_ac].wpc10 >g_pml1[g_ac].pml33 THEN   #TQC-B30010  add
                   CALL cl_err('','apm-319',1)
-                  NEXT FIELD wpc10 
-               END IF 
-            END IF             
-          #No.FUN-A90009--end  
-          
+                  NEXT FIELD wpc10
+               END IF
+            END IF
+          #No.FUN-A90009--end
+
      ON ACTION mul
         LET g_renew = 0
-        CALL t420_mul()  
-        
+        CALL t420_mul()
+
      ON ACTION accept
         IF g_cnt1 = 0 THEN
            LET INT_FLAG = 1
@@ -12746,13 +12756,13 @@ FUNCTION t420_epr()
         END IF
         IF cl_confirm('apm-135') THEN
            EXIT INPUT
-        END IF  
-        
+        END IF
+
      ON ACTION cancel
         EXIT INPUT
    END INPUT
-   IF INT_FLAG THEN 
-      LET INT_FLAG = 0 
+   IF INT_FLAG THEN
+      LET INT_FLAG = 0
       EXIT WHILE
    END IF
 
@@ -12760,10 +12770,10 @@ FUNCTION t420_epr()
    CALL s_showmsg_init()
    LET l_sum = 0
    LET g_success = 'Y'
-   FOR i=1 TO l_cnt-1 
+   FOR i=1 TO l_cnt-1
     INITIALIZE g_wpc.* TO NULL
     IF g_pml1[i].ch ='Y' THEN
-      LET l_n = 0 
+      LET l_n = 0
          LET l_month = "0"||MONTH(g_today)
          LET l_month = l_month[LENGTH(l_month)-1,LENGTH(l_month)]
          LET l_day = "0"||DAY(g_today)
@@ -12778,7 +12788,7 @@ FUNCTION t420_epr()
             LET g_wpc.wpc01 = "000"||s_wpc01
             LET g_wpc.wpc01 = g_wpc.wpc01[LENGTH(g_wpc.wpc01)-3,LENGTH(g_wpc.wpc01)]
          END IF
-         LET g_wpc.wpc01 = l_wpc01 CLIPPED,g_wpc.wpc01       
+         LET g_wpc.wpc01 = l_wpc01 CLIPPED,g_wpc.wpc01
          LET g_wpc.wpc02 = '1'
          LET l_pml33 = ''
          SELECT  pml33 INTO l_pml33 FROM pml_file WHERE pml01 =  g_pmk.pmk01
@@ -12793,66 +12803,66 @@ FUNCTION t420_epr()
          LET g_wpc.wpc11=g_plant         #No.FUN-A90009
          IF cl_null(g_wpc.wpc08) THEN
             LET g_wpc.wpc08 = 0
-         END IF          
-      #No.FUN-A90009--begin    
-      #IF  cl_null(g_pmk.pmk09) THEN       
+         END IF
+      #No.FUN-A90009--begin
+      #IF  cl_null(g_pmk.pmk09) THEN
       #  LET l_sql = " SELECT c02 FROM cus_temp WHERE c01 = '",g_pml1[i].pml02,"' ",
       #              "    AND c03 = '",g_pmk.pmk01,"'"       #FUN-A10034
       #
       #  PREPARE e_pr5 FROM l_sql
       #  DECLARE e_curs5 CURSOR FOR e_pr5
-      #   
-      #  FOREACH e_curs5 INTO l_c02  
-      #   
+      #
+      #  FOREACH e_curs5 INTO l_c02
+      #
       #     LET g_wpc.wpc03 = l_c02
       #     IF cl_null(g_wpc.wpc03) THEN
       #        LET g_wpc.wpc03 = ' '
       #     END IF
-      #          
+      #
       #     INSERT INTO wpc_file VALUES(g_wpc.*)
       #     IF STATUS OR SQLCA.SQLCODE THEN
       #        CALL s_errmsg('','','',SQLCA.sqlcode,1)
       #        LET g_success = 'N'
       #     ELSE
-      #     	  CALL sendmail()  
-      #     	  LET l_n = l_n+1  
-      #     END IF      
-      #   
+      #     	  CALL sendmail()
+      #     	  LET l_n = l_n+1
+      #     END IF
+      #
       #  END FOREACH
-      #END IF   
-      #IF l_n = 0 THEN  
+      #END IF
+      #IF l_n = 0 THEN
       #   LET	g_wpc.wpc03 =  g_pmk.pmk09
       #   IF cl_null(g_wpc.wpc03) THEN
       #      LET g_wpc.wpc03 = ' '
       #   END IF
-      # 
+      #
       #   INSERT INTO wpc_file VALUES(g_wpc.*)
       #   IF STATUS OR SQLCA.SQLCODE THEN
       #      CALL s_errmsg('','','',SQLCA.sqlcode,1)
       #      LET g_success = 'N'
       #   ELSE
-      #   	  CALL sendmail() 
-      #   END IF         
-      #END IF 
+      #   	  CALL sendmail()
+      #   END IF
+      #END IF
       SELECT COUNT(*) INTO l_t FROM cus_temp WHERE c01 = g_pml1[i].pml02 AND c03=g_pmk.pmk01
-      IF l_t=0 THEN 
-         IF NOT cl_null(g_pmk.pmk09) THEN   #指定廠商  
+      IF l_t=0 THEN
+         IF NOT cl_null(g_pmk.pmk09) THEN   #指定廠商
             LET	g_wpc.wpc03 =  g_pmk.pmk09
             INSERT INTO wpc_file VALUES(g_wpc.*)
             IF STATUS OR SQLCA.SQLCODE THEN
                CALL s_errmsg('','','',SQLCA.sqlcode,1)
                LET g_success = 'N'
-               CONTINUE FOR 
+               CONTINUE FOR
             ELSE
-            	 CALL sendmail() 
-            END IF                  
-         ELSE 
+            	 CALL sendmail()
+            END IF
+         ELSE
          	  SELECT COUNT(*) INTO l_b FROM pmh_file WHERE pmh01=g_pml1[i].pml04 AND pmh25='Y'
-         	  IF l_b=0 THEN 
+         	  IF l_b=0 THEN
          	     CALL s_errmsg('ima01',g_pml1[i].pml04,'','apm-320',1)
                LET g_success = 'N'
-               CONTINUE FOR 
-         	  ELSE 
+               CONTINUE FOR
+         	  ELSE
          	  	 DECLARE e_cur6 CURSOR FOR SELECT pmh02 FROM pmh_file WHERE pmh01=g_pml1[i].pml04 AND pmh25='Y'
                FOREACH e_cur6 INTO l_c02
                   LET g_wpc.wpc03 = l_c02
@@ -12860,37 +12870,37 @@ FUNCTION t420_epr()
                   IF STATUS OR SQLCA.SQLCODE THEN
                      CALL s_errmsg('','','',SQLCA.sqlcode,1)
                      LET g_success = 'N'
-                     CONTINUE FOREACH 
+                     CONTINUE FOREACH
                   ELSE
-                  	 CALL sendmail()  
-                  END IF       
-               END FOREACH 
-         	  END IF 
-         END IF 
+                  	 CALL sendmail()
+                  END IF
+               END FOREACH
+         	  END IF
+         END IF
       ELSE #多需求
          LET l_sql = " SELECT c02 FROM cus_temp WHERE c01 = '",g_pml1[i].pml02,"' ",
-                     "    AND c03 = '",g_pmk.pmk01,"'"      
+                     "    AND c03 = '",g_pmk.pmk01,"'"
          PREPARE e_pr5 FROM l_sql
-         DECLARE e_curs5 CURSOR FOR e_pr5         
-         FOREACH e_curs5 INTO l_c02           
+         DECLARE e_curs5 CURSOR FOR e_pr5
+         FOREACH e_curs5 INTO l_c02
             LET g_wpc.wpc03 = l_c02
             INSERT INTO wpc_file VALUES(g_wpc.*)
             IF STATUS OR SQLCA.SQLCODE THEN
                CALL s_errmsg('','','',SQLCA.sqlcode,1)
                LET g_success = 'N'
-               CONTINUE FOREACH 
+               CONTINUE FOREACH
             ELSE
-            	 CALL sendmail()  
-            END IF               
-         END FOREACH                  	
-      END IF 
-      #No.FUN-A90009--end       
+            	 CALL sendmail()
+            END IF
+         END FOREACH
+      END IF
+      #No.FUN-A90009--end
       IF g_success='Y' THEN #No.FUN-A90009
          UPDATE pml_file SET pml92 = 'Y',pml93 = g_wpc.wpc01
           WHERE pml01 = g_pmk.pmk01 AND pml02 = g_pml1[i].pml02
       END IF                #No.FUN-A90009
-      LET l_sum = l_sum+1 
-    END IF  
+      LET l_sum = l_sum+1
+    END IF
    END FOR
    CALL s_showmsg()
    IF g_success = 'N' THEN
@@ -12902,12 +12912,12 @@ FUNCTION t420_epr()
           AND c03 = g_pmk.pmk01       #FUN-A10034
       CALL cl_err(l_sum,'apm-137',1)
      #CALL t420_b_fill(g_wc2)
-     EXIT WHILE 
+     EXIT WHILE
    END IF
-  END WHILE 
+  END WHILE
     CLOSE WINDOW p4201_w
  END FUNCTION
- 
+
 FUNCTION sendmail()
   DEFINE  l_str      STRING
   DEFINE  l_sql      STRING
@@ -12915,8 +12925,8 @@ FUNCTION sendmail()
   DEFINE  l_pmd02    LIKE  pmd_file.pmd02
   DEFINE  l_cn       LIKE  type_file.num5
   DEFINE  ls_temppath       STRING
-  DEFINE  ls_filename       STRING  
-  
+  DEFINE  ls_filename       STRING
+
   WHENEVER ERROR CALL cl_err_msg_log
   LET ls_temppath = FGL_GETENV("TEMPDIR")
   LET ls_filename = ls_temppath.trim(),"/apmt420_" || FGL_GETPID() || ".htm"
@@ -12924,15 +12934,15 @@ FUNCTION sendmail()
 
   INITIALIZE g_xml.* TO NULL
 
-  LET g_xml.subject = "鼎新電腦股份有份公司-採購需求發佈通知"  
+  LET g_xml.subject = "鼎新電腦股份有份公司-採購需求發佈通知"
   LET l_pmd07 = ''
   LET l_str = ''
-  LET l_cn = 0 
+  LET l_cn = 0
   IF NOT cl_null(g_wpc.wpc03) THEN
-#No.TQC-B20184   begin 
+#No.TQC-B20184   begin
 #    SELECT pmd07,pmd02 INTO l_pmd07,l_pmd02  FROM pmd_file
-#     WHERE pmd07 IS NOT NULL AND pmd08 = 'Y' AND pmd01 = g_wpc.wpc03 
-#    IF NOT cl_null(l_pmd07) THEN 
+#     WHERE pmd07 IS NOT NULL AND pmd08 = 'Y' AND pmd01 = g_wpc.wpc03
+#    IF NOT cl_null(l_pmd07) THEN
 #       LET l_str = l_pmd07,":",l_pmd02  CLIPPED
 #    END IF
      LET l_sql = "SELECT pmd07,pmd02 FROM pmd_file WHERE pmd07 IS NOT NULL AND pmd08 = 'Y' AND pmd01 = '",g_wpc.wpc03,"'"
@@ -12945,24 +12955,24 @@ FUNCTION sendmail()
            LET l_str = l_str,";",l_pmd07,":",l_pmd02  CLIPPED
         END IF
         LET l_cn = l_cn + 1
-     END FOREACH 
-#No.TQC-B20184   end 
+     END FOREACH
+#No.TQC-B20184   end
 
-#No.FUN-A90009--begin  
+#No.FUN-A90009--begin
 #  ELSE
 #     LET l_sql = " SELECT pmd07,pmd02 FROM pmd_file,wpa_file WHERE pmd07 IS NOT NULL ",
 #                 "    AND pmd08 = 'Y' AND pmd01 = wpa01 AND wpa02 ='Y' "
 #     PREPARE pmd_pr2 FROM l_sql
-#     DECLARE pmd_curs2 CURSOR FOR pmd_pr2  
-#     FOREACH pmd_curs2 INTO l_pmd07,l_pmd02              
+#     DECLARE pmd_curs2 CURSOR FOR pmd_pr2
+#     FOREACH pmd_curs2 INTO l_pmd07,l_pmd02
 #        IF l_cn = 0 THEN
 #           LET l_str = l_pmd07,":",l_pmd02  CLIPPED
-#        ELSE    
+#        ELSE
 #           LET l_str = l_str,";",l_pmd07,":",l_pmd02  CLIPPED
 #        END IF
-#        LET l_cn = l_cn +1   
+#        LET l_cn = l_cn +1
 #     END FOREACH
-#No.FUN-A90009--end  
+#No.FUN-A90009--end
   END IF
   LET g_xml.body      = ls_filename.trim()
   LET g_xml.sender    = "tiptop@dsc.com.tw:top30"
@@ -12970,40 +12980,40 @@ FUNCTION sendmail()
   LET g_channel = base.Channel.create()
   CALL g_channel.openFile( ls_filename CLIPPED, "a" )
   CALL g_channel.setDelimiter("")
-  
+
   CALL t420_head()
   CALL t420_detail()
   CALL t420_tail()
 
   CALL g_channel.close()
- 
+
   CALL cl_jmail()
- 
+
   RUN "rm -f " || ls_filename
-  
+
   RUN "rm -f " || FGL_GETPID() || ".xml"
-  
+
 END FUNCTION
 
 FUNCTION t420_mul()
-  DEFINE   l_sql           STRING   
+  DEFINE   l_sql           STRING
   DEFINE   l_cn            LIKE   type_file.num5
   DEFINE   l_allow_insert  LIKE   type_file.num5
-  DEFINE   l_allow_delete  LIKE   type_file.num5   
+  DEFINE   l_allow_delete  LIKE   type_file.num5
   DEFINE   l_count         LIKE   type_file.num5
   DEFINE   l_pmk09_t       LIKE   pmk_file.pmk09
-  DEFINE   l_c             LIKE   type_file.num5  
-                         
+  DEFINE   l_c             LIKE   type_file.num5
+
     IF g_cnt1 = 0 THEN
        RETURN
-    END IF  
-   IF g_ac = 0 THEN        
+    END IF
+   IF g_ac = 0 THEN
       CALL cl_err('','apm-140',0)
-   END IF    
+   END IF
     IF g_pml1[g_ac].ch <> 'Y' THEN
        CALL cl_err('','apm-138',1)
        RETURN
-    END IF 
+    END IF
     IF NOT cl_null(g_pmk.pmk09) THEN
        CALL cl_err('','apm-139',1)
        RETURN
@@ -13015,31 +13025,31 @@ FUNCTION t420_mul()
 
     PREPARE cus_pre  FROM l_sql
     DECLARE cus_d CURSOR FOR cus_pre
-    
+
     FOREACH cus_d INTO g_c[l_c].pmk09
        SELECT pmc03 INTO g_c[l_c].pmc03 FROM pmc_file
         WHERE pmc01 = g_c[l_c].pmk09
         LET l_c=l_c+1
     END FOREACH
     LET g_rec_b1 = l_c-1
-    CALL g_c.deleteElement(l_c)    
-    
-    
+    CALL g_c.deleteElement(l_c)
+
+
     OPEN WINDOW t420_w2 WITH FORM "apm/42f/apmt420_m"
       ATTRIBUTE(STYLE=g_win_style)
-    CALL cl_ui_locale("apmt420_m") 
+    CALL cl_ui_locale("apmt420_m")
     DISPLAY  g_pml1[g_ac].pml02  TO FORMONLY.pml02
 
-    
+
     LET l_allow_insert = cl_detail_input_auth("insert")
-    LET l_allow_delete = cl_detail_input_auth("delete")   
+    LET l_allow_delete = cl_detail_input_auth("delete")
     INPUT ARRAY g_c WITHOUT DEFAULTS FROM tb4.*
         ATTRIBUTE(COUNT=g_rec_b1,MAXCOUNT=g_max_rec,UNBUFFERED,
                     INSERT ROW=l_allow_insert,DELETE ROW=l_allow_delete,
                     APPEND ROW=l_allow_insert)
         BEFORE ROW
-             LET l_cn = ARR_CURR()    
-             LET  l_pmk09_t = g_c[l_cn].pmk09 
+             LET l_cn = ARR_CURR()
+             LET  l_pmk09_t = g_c[l_cn].pmk09
         AFTER FIELD pmk09
              IF NOT cl_null(g_c[l_cn].pmk09) THEN
                 CALL t420_pmk09(g_c[l_cn].pmk09)
@@ -13047,59 +13057,59 @@ FUNCTION t420_mul()
                   CALL cl_err(g_c[l_cn].pmk09,g_errno,0)
                   LET g_c[l_cn].pmk09  = l_pmk09_t
                   DISPLAY g_c[l_cn].pmk09 TO pmk09
-                  NEXT FIELD pmk09                   
+                  NEXT FIELD pmk09
                 END IF
                IF l_pmk09_t <> g_c[l_cn].pmk09  THEN
                 LET l_count = 0
-                SELECT COUNT(*) INTO l_count FROM cus_temp 
+                SELECT COUNT(*) INTO l_count FROM cus_temp
                  WHERE c02 = g_c[l_cn].pmk09
                    AND c01 = g_pml1[g_ac].pml02
                    AND c03 = g_pmk.pmk01       #FUN-A10034
                 IF l_count > 0 THEN
                    CALL cl_err('','aec-009',0)
-                   NEXT FIELD  pmk09   
-                END IF  
-               END IF            
+                   NEXT FIELD  pmk09
+                END IF
+               END IF
                 SELECT pmc03 INTO g_c[l_cn].pmc03 FROM pmc_file
                  WHERE pmc01 = g_c[l_cn].pmk09
                 DISPLAY g_c[l_cn].pmc03 TO pmc03
              END IF
         BEFORE DELETE                      #是否取消單身
            DISPLAY "BEFORE DELETE"
-           
+
               IF NOT cl_delb(0,0) THEN
                  CANCEL DELETE
               END IF
 
-              DELETE FROM cus_temp 
+              DELETE FROM cus_temp
                WHERE c02 = g_c[l_cn].pmk09
-                 AND c01 = g_pml1[g_ac].pml02                            
+                 AND c01 = g_pml1[g_ac].pml02
                 #AND c03 = g_pmk.pmk09        #No.FUN-A10034
                  AND c03 = g_pmk.pmk01        #No.TQC-B20184
               IF SQLCA.sqlcode THEN
-                 CALL cl_err3("del","cus_file",'','',SQLCA.sqlcode,"","",1)   
+                 CALL cl_err3("del","cus_file",'','',SQLCA.sqlcode,"","",1)
                  CANCEL DELETE
               ELSE
                  LET g_rec_b1=g_rec_b1-1
               END IF
-              
-       AFTER INSERT 
+
+       AFTER INSERT
            DISPLAY "AFTER INSERT!"
            IF INT_FLAG THEN
               CALL cl_err('',9001,0)
               LET INT_FLAG = 0
               CANCEL INSERT
            END IF
-            
+
          # INSERT INTO cus_temp VALUES(g_pm1[g_ac].pml02,g_c[l_cn].pmk09,g_pmk.pmk01)   #No.TQC-B20184  mark
-           INSERT INTO cus_temp VALUES(g_pml1[g_ac].pml02,g_c[l_cn].pmk09,g_pmk.pmk01)  #No.TQC-B20184  add 
+           INSERT INTO cus_temp VALUES(g_pml1[g_ac].pml02,g_c[l_cn].pmk09,g_pmk.pmk01)  #No.TQC-B20184  add
            IF SQLCA.sqlcode THEN
-              CALL cl_err3("ins","cus_temp",'','',SQLCA.sqlcode,"","",1) 
+              CALL cl_err3("ins","cus_temp",'','',SQLCA.sqlcode,"","",1)
               CANCEL INSERT
            ELSE
-           	   LET g_rec_b1=g_rec_b1+1   
-           END IF       
-                         
+           	   LET g_rec_b1=g_rec_b1+1
+           END IF
+
         ON ROW CHANGE
            IF INT_FLAG THEN
               CALL cl_err('',9001,0)
@@ -13108,18 +13118,18 @@ FUNCTION t420_mul()
               EXIT INPUT
            END IF
 
-              UPDATE cus_temp SET  c02 = g_c[l_cn].pmk09  WHERE c01 = g_pml1[g_ac].pml02  
-                AND c02 = l_pmk09_t  
+              UPDATE cus_temp SET  c02 = g_c[l_cn].pmk09  WHERE c01 = g_pml1[g_ac].pml02
+                AND c02 = l_pmk09_t
                #AND c03 = g_pmk.pmk09            #FUN-A10034 #TQC-B20184 mark
                 AND c03 = g_pmk.pmk01            #TQC-B20184 add
               IF SQLCA.sqlcode OR SQLCA.sqlerrd[3] = 0 THEN
-                 CALL cl_err3("upd","cus_file",'','',SQLCA.sqlcode,"","",1)  
+                 CALL cl_err3("upd","cus_file",'','',SQLCA.sqlcode,"","",1)
                  LET g_c[l_cn].pmk09 = l_pmk09_t
               ELSE
                  MESSAGE 'UPDATE O.K'
               END IF
-                       
-      ON ACTION CONTROLP    
+
+      ON ACTION CONTROLP
             CASE
                WHEN INFIELD(pmk09)
                     CALL cl_init_qry_var()
@@ -13131,11 +13141,11 @@ FUNCTION t420_mul()
                      WHERE pmc01 = g_c[l_cn].pmk09
                     DISPLAY g_c[l_cn].pmc03 TO pmc03
                     NEXT FIELD pmk09
-            END CASE                
-      
-         
-    END INPUT  
-    CLOSE WINDOW t420_w2     
+            END CASE
+
+
+    END INPUT
+    CLOSE WINDOW t420_w2
 END FUNCTION
 
 FUNCTION t420_pmk09(p_wpa01)
@@ -13143,22 +13153,22 @@ FUNCTION t420_pmk09(p_wpa01)
   DEFINE  l_wpa01   LIKE  wpa_file.wpa01
   DEFINE  l_wpa02   LIKE  wpa_file.wpa02
     LET g_errno = ' '
-    SELECT DISTINCT wpa01,wpa02 INTO l_wpa01,l_wpa02 FROM wpa_file 
-     WHERE wpa01 = p_wpa01 
+    SELECT DISTINCT wpa01,wpa02 INTO l_wpa01,l_wpa02 FROM wpa_file
+     WHERE wpa01 = p_wpa01
     CASE WHEN SQLCA.SQLCODE = 100  LET g_errno = 'aom-061'
                                LET l_wpa01 = NULL
                                LET l_wpa02 = NULL
          WHEN l_wpa02<>'Y'     LET g_errno = '9028'
                                LET l_wpa01 = NULL
-                               LET l_wpa02 = NULL 
+                               LET l_wpa02 = NULL
          OTHERWISE             LET g_errno = SQLCA.SQLCODE USING '-------'
-    END CASE     
+    END CASE
 END FUNCTION
 
 FUNCTION t420_head()
    DEFINE l_codeset STRING
    DEFINE l_lang    STRING
-   
+
    CASE g_lang
       WHEN '0'
          LET l_lang = "zh-tw"
@@ -13168,7 +13178,7 @@ FUNCTION t420_head()
          LET l_lang = "en"
    END CASE
    LET l_codeset = "UTF-8"
- 
+
    LET g_tmpstr ='<html><head>                                                               ' CALL g_channel.write(g_tmpstr.trimRight())
    LET g_tmpstr ='<meta http-equiv="Content-Language" content="',l_lang,'">                  ' CALL g_channel.write(g_tmpstr.trimRight()) #No.FUN-740189
    LET g_tmpstr ='<meta http-equiv="Content-Type" content="text/html; charset=',l_codeset,'">' CALL g_channel.write(g_tmpstr.trimRight()) #No.FUN-740189
@@ -13191,25 +13201,25 @@ FUNCTION t420_head()
    LET g_tmpstr ='      <font size="4"><i></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        ' CALL g_channel.write(g_tmpstr.trimRight())
    LET g_tmpstr ='      ',g_xml.subject CLIPPED,'</font></span></p></div>                    ' CALL g_channel.write(g_tmpstr.trimRight())
    LET g_tmpstr ='<p class="MsoNormal">　</p>                                                ' CALL g_channel.write(g_tmpstr.trimRight())
- 
+
 END FUNCTION
 
 FUNCTION t420_detail()
- 
-   DEFINE ls_zl15    STRING   
- 
+
+   DEFINE ls_zl15    STRING
+
    LET g_tmpstr ='<table border="1" style="border-collapse: collapse" width="680" id="table2">               ' CALL g_channel.write(g_tmpstr.trimRight())
    LET g_tmpstr ='<tr><td width="100" bgcolor="#000080" align="center">                                      ' CALL g_channel.write(g_tmpstr.trimRight())
    LET g_tmpstr ='    <p style="line-height: 150%"><b>                                                       ' CALL g_channel.write(g_tmpstr.trimRight())
    LET g_tmpstr ='    <font color="#FFFF00" size="2">需求單號</font></b></td>                                ' CALL g_channel.write(g_tmpstr.trimRight())
- 
+
    LET ls_zl15 = g_wpc.wpc01 CLIPPED
    LET g_tmpstr ='    <td><p style="line-height: 150%"><font size="2">',ls_zl15.trim(),'</font></td>         ' CALL g_channel.write(g_tmpstr.trimRight())
    LET g_tmpstr ='</tr><tr>                                                                                  ' CALL g_channel.write(g_tmpstr.trimRight())
    LET g_tmpstr ='    <td width="100" bgcolor="#000080" align="center">                                      ' CALL g_channel.write(g_tmpstr.trimRight())
    LET g_tmpstr ='    <p style="line-height: 150%"><b>                                                       ' CALL g_channel.write(g_tmpstr.trimRight())
    LET g_tmpstr ='    <font color="#FFFF00" size="2">需求日期</font></b></td>                                ' CALL g_channel.write(g_tmpstr.trimRight())
- 
+
    LET ls_zl15 = g_wpc.wpc04 CLIPPED
    LET g_tmpstr ='    <td><p style="line-height: 150%"><font size="2">',ls_zl15.trim(),'</font></td>         ' CALL g_channel.write(g_tmpstr.trimRight())
    LET g_tmpstr ='</tr><tr>' CALL g_channel.write(g_tmpstr.trimRight())
@@ -13234,14 +13244,14 @@ FUNCTION t420_detail()
    LET g_tmpstr ='    <td><p style="line-height: 150%"><font size="2">',g_wpc.wpc08 CLIPPED,'</font></td> ' CALL g_channel.write(g_tmpstr.trimRight())
 
    LET g_tmpstr ='</tr></table><p class="MsoNormal"></p>                                                     ' CALL g_channel.write(g_tmpstr.trimRight())
- 
+
 END FUNCTION
 
 FUNCTION t420_tail()
- 
+
    DEFINE l_time      DATETIME YEAR TO SECOND
    DEFINE lc_zx02     LIKE zx_file.zx02
- 
+
    LET g_tmpstr ='<p class="MsoNormal"> </p>                                                    ' CALL g_channel.write(g_tmpstr.trimRight())
    LET g_tmpstr ='<table border="1" style="border-collapse: collapse" width="680" id="table3">  ' CALL g_channel.write(g_tmpstr.trimRight())
    LET g_tmpstr ='<tr><td width="50%" bgcolor="#000080" align="center">                         ' CALL g_channel.write(g_tmpstr.trimRight())
@@ -13255,13 +13265,13 @@ FUNCTION t420_tail()
    SELECT zx02 INTO lc_zx02 FROM zx_file WHERE zx01=g_user
    LET g_tmpstr ='    <p style="line-height: 150%"><font size="2">',g_user CLIPPED,' / ',lc_zx02 CLIPPED,'</font></td>' CALL g_channel.write(g_tmpstr.trimRight())
    LET g_tmpstr ='    <td width="50%" align="center">                                           ' CALL g_channel.write(g_tmpstr.trimRight())
- 
+
    LET l_time = CURRENT YEAR TO SECOND
- 
+
    LET g_tmpstr ='    <p style="line-height: 150%"><font size="2">',l_time CLIPPED,'</font></td>' CALL g_channel.write(g_tmpstr.trimRight())
    LET g_tmpstr ='</tr>                                                                         ' CALL g_channel.write(g_tmpstr.trimRight())
    LET g_tmpstr ='</table></body></html>                                                        ' CALL g_channel.write(g_tmpstr.trimRight())
- 
+
 END FUNCTION
 
 #FUN-BB0086--add--begin--
@@ -13284,17 +13294,19 @@ FUNCTION t420_pml20_check(p_cmd)
       IF g_pml[l_ac].pml20 <= 0  THEN
          CALL cl_err(g_pml[l_ac].pml20,'mfg0013',1)
          LET g_pml[l_ac].pml20 = g_pml_o.pml20
-         RETURN FALSE 
+         RETURN FALSE
       END IF
        IF p_cmd = 'u' THEN
           IF g_pml[l_ac].pml20 < g_pml[l_ac].pml21 THEN
              CALL cl_err(g_pml[l_ac].pml20,'mfg3082',1)
              LET g_pml[l_ac].pml20 = g_pml_t.pml20
-             RETURN FALSE 
+             RETURN FALSE
           END IF
        END IF
        IF (cl_null(g_pml_o.pml20) OR g_pml[l_ac].pml20 != g_pml_o.pml20 )
-          AND (g_no[1,4] != 'MISC') THEN
+          AND (g_no[1,4] != 'MISC')
+          AND g_pmk.pmk01[1,3] != 'FRA' # darcy 增加FRA不判断请购批量和
+          THEN
          #CALL s_sizechk(g_pml[l_ac].pml04,g_pml[l_ac].pml20,g_lang) #CHI-C10037 mark
           CALL s_sizechk(g_pml[l_ac].pml04,g_pml[l_ac].pml20,g_lang,g_pml[l_ac].pml07) #CHI-C10037 add
            RETURNING g_pml[l_ac].pml20
@@ -13329,12 +13341,12 @@ FUNCTION t420_pml20_check(p_cmd)
           DISPLAY BY NAME g_pml[l_ac].pml87
          CALL t420_bud(p_cmd,'3')
          IF NOT cl_null(g_errno) THEN
-            RETURN FALSE 
+            RETURN FALSE
          END IF
        END IF
    END IF
-   RETURN TRUE 
-END FUNCTION 
+   RETURN TRUE
+END FUNCTION
 
 FUNCTION t420_pml82_check(p_cmd,l_flag)
    DEFINE p_cmd,l_flag  LIKE type_file.chr1
@@ -13433,7 +13445,7 @@ FUNCTION t420_pml82_check(p_cmd,l_flag)
          RETURN FALSE,'pml82'
       END IF
    END IF
-   CALL cl_show_fld_cont()                   
+   CALL cl_show_fld_cont()
    RETURN TRUE,''
 END FUNCTION
 
@@ -13454,7 +13466,7 @@ FUNCTION t420_pml85_check(p_cmd)
    IF NOT cl_null(g_pml[l_ac].pml85) THEN
       IF g_pml[l_ac].pml85 < 0 THEN
          CALL cl_err('','aim-391',0)  #
-         RETURN FALSE 
+         RETURN FALSE
       END IF
       IF p_cmd = 'a' OR  p_cmd = 'u' AND
          g_pml_t.pml85 <> g_pml[l_ac].pml85 THEN
@@ -13475,11 +13487,11 @@ FUNCTION t420_pml85_check(p_cmd)
       DISPLAY BY NAME g_pml[l_ac].pml87
       CALL t420_bud(p_cmd,'3')
       IF NOT cl_null(g_errno) THEN
-         RETURN FALSE 
+         RETURN FALSE
       END IF
    END IF
    CALL cl_show_fld_cont()                   #No.FUN-550037 hmf
-   RETURN TRUE 
+   RETURN TRUE
 END FUNCTION
 
 FUNCTION t420_pml87_check()
@@ -13493,53 +13505,53 @@ FUNCTION t420_pml87_check()
    IF NOT cl_null(g_pml[l_ac].pml87) THEN
       IF g_pml[l_ac].pml87 < 0 THEN
          CALL cl_err('','aim-391',0)  #
-         RETURN FALSE 
+         RETURN FALSE
       END IF
       LET g_pml2.pml87 = g_pml[l_ac].pml87
       LET g_pml_o.pml87 = g_pml[l_ac].pml87
    END IF
-   RETURN TRUE 
+   RETURN TRUE
 END FUNCTION
 #FUN-BB0086--add--end--
 
 #MOD-AC0309------add-----str--------------------
-#FUNCTION t420_multi_ima01()        
+#FUNCTION t420_multi_ima01()
 #DEFINE   tok          base.StringTokenizer
 #DEFINE   l_sql        STRING
 #DEFINE   l_n          LIKE type_file.num5
 #DEFINE   g_cnt        LIKE type_file.num5
 #DEFINE   l_plant      LIKE azw_file.azw01
-#DEFINE   l_pml        RECORD LIKE pml_file.* 
+#DEFINE   l_pml        RECORD LIKE pml_file.*
 #DEFINE   l_ima31      LIKE ima_file.ima31,
 #        l_ima906     LIKE ima_file.ima906,
 #        l_ima907     LIKE ima_file.ima907,
 #        l_ima908     LIKE ima_file.ima907,
-#        l_factor     LIKE ima_file.ima31_fac,   
+#        l_factor     LIKE ima_file.ima31_fac,
 #        l_max        LIKE tqw_file.tqw07,
-#        l_ima49      LIKE ima_file.ima49, 
-#        l_ima491     LIKE ima_file.ima491, 
-#        l_ima44      LIKE ima_file.ima44,      
+#        l_ima49      LIKE ima_file.ima49,
+#        l_ima491     LIKE ima_file.ima491,
+#        l_ima44      LIKE ima_file.ima44,
 #        l_flag       LIKE type_file.chr1
-#DEFINE l_ima02   LIKE ima_file.ima02,     
-#      l_ima021  LIKE ima_file.ima021,     
+#DEFINE l_ima02   LIKE ima_file.ima02,
+#      l_ima021  LIKE ima_file.ima021,
 #      l_ima39   LIKE ima_file.ima39,
-#      l_ima391  LIKE ima_file.ima391 
-#      
+#      l_ima391  LIKE ima_file.ima391
+#
 #   CALL s_showmsg_init()
 #   LET l_plant = g_plant
 #   LET tok = base.StringTokenizer.create(g_multi_ima01,"|")
 #       WHILE tok.hasMoreTokens()
 #          LET l_pml.pml04 = tok.nextToken()
 #          IF NOT s_chk_item_no(l_pml.pml04,"") THEN
-#            CALL s_errmsg('pml01',l_pml.pml04,'INS pml_file',g_errno,1) 
+#            CALL s_errmsg('pml01',l_pml.pml04,'INS pml_file',g_errno,1)
 #            CONTINUE WHILE
 #           END IF
-#           
+#
 #    LET l_pml.pml01  = g_pmk.pmk01
 #    LET l_pml.pml011 = g_pmk.pmk02
 #    LET l_pml.pml12  = g_pmk.pmk05
 #    LET l_pml.pml33  = g_pmk.pmk04
-#    
+#
 #   LET l_sql="SELECT max(pml02)+1 FROM ",cl_get_target_table(l_plant,'pml_file'),
 #                    " WHERE pml01 = '",g_pmk.pmk01,"'"
 #   CALL cl_replace_sqldb(l_sql) RETURNING l_sql
@@ -13549,15 +13561,15 @@ END FUNCTION
 #   IF cl_null(l_pml.pml02) THEN
 #      LET  l_pml.pml02 = '1'
 #   END IF
-#   
+#
 #   LET l_sql="SELECT ima44,ima25, ima44,ima31,ima49,ima491,ima906,ima907,ima908 FROM ",cl_get_target_table(l_plant,'ima_file'),
 #             " WHERE ima01 = '",l_pml.pml04,"'"
 #   CALL cl_replace_sqldb(l_sql) RETURNING l_sql
 #   CALL cl_parse_qry_sql(l_sql,l_plant) RETURNING l_sql
 #          PREPARE sel_ima_pre FROM l_sql
-#          EXECUTE sel_ima_pre INTO  l_pml.pml07,l_pml.pml08,l_ima44,l_ima31,l_ima49,l_ima491,l_ima906,l_ima907,l_ima908        
-#  
-#    IF g_sma.sma115 = 'Y' THEN            
+#          EXECUTE sel_ima_pre INTO  l_pml.pml07,l_pml.pml08,l_ima44,l_ima31,l_ima49,l_ima491,l_ima906,l_ima907,l_ima908
+#
+#    IF g_sma.sma115 = 'Y' THEN
 #       IF l_ima906 = '1' THEN  #不使用雙單位
 #          LET l_pml.pml83 = NULL
 #          LET l_pml.pml84  = NULL
@@ -13573,29 +13585,29 @@ END FUNCTION
 #           LET l_pml.pml81  = 1
 #           LET l_pml.pml82  = 0
 #       END IF
-#       IF g_sma.sma116 MATCHES '[02]' THEN   
+#       IF g_sma.sma116 MATCHES '[02]' THEN
 #          LET l_pml.pml86 = NULL
 #          LET l_pml.pml87 = NULL
 #       ELSE
 #          LET l_pml.pml86 = l_ima908
 #          LET l_pml.pml87 = 0
-#       END IF  
+#       END IF
 
 #       SELECT ima02,ima021,ima39,ima391 INTO l_ima02,l_ima021,l_ima39,l_ima391
 #          FROM ima_file
-#          WHERE ima01 = l_pml.pml04          
+#          WHERE ima01 = l_pml.pml04
 #       LET l_pml.pml041= l_ima02
 
 #       IF l_pml.pml04[1,4] <> 'MISC' THEN
 #          LET l_pml.pml40 = l_ima39
 #       END IF
 #       IF g_aza.aza63 = 'Y' THEN
-#          IF l_pml.pml04[1,4] <> 'MISC' THEN   
+#          IF l_pml.pml04[1,4] <> 'MISC' THEN
 #             LET l_pml.pml401 = l_ima391
 #          END IF
 #       END IF
-#       
-#        
+#
+#
 #       IF g_sma.sma115 = 'Y' THEN
 #          CALL s_chk_va_setting(l_pml.pml04)
 #           RETURNING g_flag,g_ima906,g_ima907
@@ -13612,9 +13624,9 @@ END FUNCTION
 #             SELECT ima44 INTO l_ima44 FROM ima_file
 #               WHERE ima01=l_pml.pml04
 #             LET l_pml.pml80=l_ima44
-#          END IF 
-#       END IF 
-#       
+#          END IF
+#       END IF
+#
 #       LET l_sql="SELECT gen03 FROM ",cl_get_target_table(l_plant,'gen_file'),
 #                 " WHERE gen01 = '",g_pmk.pmk12,"' "
 #       CALL cl_replace_sqldb(l_sql) RETURNING l_sql
@@ -13630,14 +13642,14 @@ END FUNCTION
 #       EXECUTE sel_imb_pre INTO  l_pml.pml30
 #       IF cl_null(l_pml.pml30)  THEN
 #          LET  l_pml.pml30 = '0'
-#       END IF 
+#       END IF
 #       LET  l_pml.pml03 = NULL
 #       LET  l_pml.pml05 = NULL
-#       IF NOT cl_null(l_pml.pml04) THEN 
+#       IF NOT cl_null(l_pml.pml04) THEN
 #          CALL s_umfchk(l_pml.pml04,l_pml.pml07,
 #                        l_pml.pml08)
 #               RETURNING g_sw,l_pml.pml09
-#       END IF 
+#       END IF
 #       LET  l_pml.pml10 = NULL
 #       LET  l_pml.pml11 = 'N'
 #       IF NOT cl_null(l_pml.pml04) THEN
@@ -13645,11 +13657,11 @@ END FUNCTION
 #       END IF
 #          LET  l_pml.pml31  = 0
 #          LET  l_pml.pml31t = 0
-#          LET  l_pml.pml14 = g_sma.sma886[1,1] 
-#          LET  l_pml.pml15 = g_sma.sma886[2,2]      
+#          LET  l_pml.pml14 = g_sma.sma886[1,1]
+#          LET  l_pml.pml15 = g_sma.sma886[2,2]
 #          LET  l_pml.pml16 = '0'
 #          LET  l_pml.pml20 = 0
-#          LET  l_pml.pml25 = ' ' 
+#          LET  l_pml.pml25 = ' '
 #          LET  l_pml.pml34 = l_pml.pml33 + l_ima49
 #          LET  l_pml.pml35 = l_pml.pml34 + l_ima491
 #          LET  l_pml.pml38 = g_pmk.pmk45
@@ -13659,10 +13671,10 @@ END FUNCTION
 #          LET  l_pml.pml50 = '1'
 #          LET  l_pml.pml53 = ' '
 #          LET  l_pml.pml54 = '1'
-#          LET  l_pml.pml55 = TIME 
-#          LET  l_pml.pml56 = ' '  
-#          LET  l_pml.pml88 = l_pml.pml31 * l_pml.pml87 
-#          LET  l_pml.pml88t= l_pml.pml31t* l_pml.pml87    
+#          LET  l_pml.pml55 = TIME
+#          LET  l_pml.pml56 = ' '
+#          LET  l_pml.pml88 = l_pml.pml31 * l_pml.pml87
+#          LET  l_pml.pml88t= l_pml.pml31t* l_pml.pml87
 #          LET  l_pml.pml91 = ' '
 #          LET  l_pml.pml92 = ' '
 #          LET  l_pml.pml190 = 'N'
@@ -13675,8 +13687,8 @@ END FUNCTION
 #          IF g_azw.azw04 = '2' THEN
 #             LET l_pml.pml52=' '
 #             LET l_pml.pml54=' '
-#          END IF  
-#          
+#          END IF
+#
 #          LET l_sql="SELECT gem10 FROM ",cl_get_target_table(l_plant,'gem_file'),
 #                    " WHERE gem01 = '",l_pml.pml67,"' "
 #          CALL cl_replace_sqldb(l_sql) RETURNING l_sql
@@ -13685,10 +13697,10 @@ END FUNCTION
 #          EXECUTE sel_gem10_pre INTO  l_pml.pml930
 #          INSERT INTO pml_file VALUES (l_pml.*)
 #          IF SQLCA.sqlcode THEN
-#               CALL s_errmsg('pml01',l_pml.pml04,'INS pml_file',SQLCA.sqlcode,1) 
+#               CALL s_errmsg('pml01',l_pml.pml04,'INS pml_file',SQLCA.sqlcode,1)
 #               CONTINUE WHILE
 #          END IF
-#       END WHILE            
+#       END WHILE
 #   CALL s_showmsg()
 #END FUNCTION
 #MOD-AC0309--------add------------------end----------------
@@ -13726,9 +13738,9 @@ FUNCTION t420_list_fill()
 
        LET l_i = l_i + 1
        IF l_i > g_max_rec THEN
-          IF g_action_choice ="query"  THEN  
+          IF g_action_choice ="query"  THEN
             CALL cl_err( '', 9035, 0 )
-          END IF                             
+          END IF
           EXIT FOREACH
        END IF
     END FOREACH
@@ -13741,26 +13753,26 @@ FUNCTION t420_list_fill()
 END FUNCTION
 
 FUNCTION t420_bp3(p_ud)
-   DEFINE   p_ud   LIKE type_file.chr1   
+   DEFINE   p_ud   LIKE type_file.chr1
 
 
    IF p_ud <> "G" THEN
       RETURN
    END IF
- 
+
    LET g_action_choice = " "
- 
+
    CALL cl_set_act_visible("accept,cancel", FALSE)
 
    DISPLAY ARRAY g_pmk_l TO s_pmk_l.* ATTRIBUTE(COUNT=g_rec_b4,UNBUFFERED)                                     #FUN-B90101---Add---
        BEFORE DISPLAY
-          CALL fgl_set_arr_curr(g_curs_index) 
-          CALL cl_navigator_setting( g_curs_index, g_row_count )  
+          CALL fgl_set_arr_curr(g_curs_index)
+          CALL cl_navigator_setting( g_curs_index, g_row_count )
        BEFORE ROW
           LET l_ac4 = ARR_CURR()
           LET g_curs_index = l_ac4
           CALL cl_show_fld_cont()
-          
+
       ON ACTION page_main
          LET g_action_flag = "page_main"
          LET l_ac4 = ARR_CURR()
@@ -13784,57 +13796,57 @@ FUNCTION t420_bp3(p_ud)
          CALL t420_fetch('/')
          CALL cl_set_comp_visible("info", FALSE)
          CALL cl_set_comp_visible("info", TRUE)
-         CALL cl_set_comp_visible("page_list", FALSE) 
-         CALL ui.interface.refresh()                 
-         CALL cl_set_comp_visible("page_list", TRUE)    
+         CALL cl_set_comp_visible("page_list", FALSE)
+         CALL ui.interface.refresh()
+         CALL cl_set_comp_visible("page_list", TRUE)
          EXIT DISPLAY
-         
+
       ON ACTION insert
          LET g_action_choice="insert"
-         EXIT DISPLAY 
-         
+         EXIT DISPLAY
+
       ON ACTION query
          LET g_action_choice="query"
          EXIT DISPLAY
- 
+
       ON ACTION delete
          LET g_action_choice="delete"
          EXIT DISPLAY
- 
+
       ON ACTION modify
          LET g_action_choice="modify"
          EXIT DISPLAY
- 
+
       ON ACTION first
          CALL t420_fetch('F')
-         CALL cl_navigator_setting(g_curs_index, g_row_count) 
+         CALL cl_navigator_setting(g_curs_index, g_row_count)
          CALL fgl_set_arr_curr(g_curs_index)
-         ACCEPT DISPLAY 
- 
+         ACCEPT DISPLAY
+
       ON ACTION previous
          CALL t420_fetch('P')
-         CALL cl_navigator_setting(g_curs_index, g_row_count)  
+         CALL cl_navigator_setting(g_curs_index, g_row_count)
          CALL fgl_set_arr_curr(g_curs_index)
-         ACCEPT DISPLAY   
- 
+         ACCEPT DISPLAY
+
       ON ACTION jump
          CALL t420_fetch('/')
-         CALL cl_navigator_setting(g_curs_index, g_row_count)   
+         CALL cl_navigator_setting(g_curs_index, g_row_count)
          CALL fgl_set_arr_curr(g_curs_index)
-         ACCEPT DISPLAY   
- 
+         ACCEPT DISPLAY
+
       ON ACTION next
          CALL t420_fetch('N')
-         CALL cl_navigator_setting(g_curs_index, g_row_count)   
+         CALL cl_navigator_setting(g_curs_index, g_row_count)
          CALL fgl_set_arr_curr(g_curs_index)
-         ACCEPT DISPLAY   
- 
+         ACCEPT DISPLAY
+
       ON ACTION last
          CALL t420_fetch('L')
-         CALL cl_navigator_setting(g_curs_index, g_row_count)  
+         CALL cl_navigator_setting(g_curs_index, g_row_count)
          CALL fgl_set_arr_curr(g_curs_index)
-         ACCEPT DISPLAY  
- 
+         ACCEPT DISPLAY
+
       ON ACTION reproduce
          LET g_action_choice="reproduce"
          EXIT DISPLAY
@@ -13851,20 +13863,20 @@ FUNCTION t420_bp3(p_ud)
       ON ACTION help
          LET g_action_choice="help"
          EXIT DISPLAY
- 
+
       ON ACTION locale
          CALL cl_dynamic_locale()
-         CALL cl_show_fld_cont()                  
-         CALL t420_def_form()  
-         IF g_aza.aza71 MATCHES '[Yy]' THEN       
+         CALL cl_show_fld_cont()
+         CALL t420_def_form()
+         IF g_aza.aza71 MATCHES '[Yy]' THEN
             CALL aws_gpmcli_toolbar()
             CALL cl_set_act_visible("gpm_show,gpm_query", TRUE)
          ELSE
-            CALL cl_set_act_visible("gpm_show,gpm_query", FALSE)  
-         END IF 
-         CALL t420_pic() 
+            CALL cl_set_act_visible("gpm_show,gpm_query", FALSE)
+         END IF
+         CALL t420_pic()
          EXIT DISPLAY
- 
+
 
       ON ACTION controlg
          LET g_action_choice="controlg"
@@ -13874,49 +13886,49 @@ FUNCTION t420_bp3(p_ud)
       ON ACTION query_mrp
          LET g_action_choice="query_mrp"
          EXIT DISPLAY
- 
+
     #@ON ACTION 採購查詢
       ON ACTION qry_po_status
          LET g_action_choice="qry_po_status"
          EXIT DISPLAY
- 
+
     #@ON ACTION 簽核狀況
       ON ACTION approval_status
          LET g_action_choice="approval_status"
          EXIT DISPLAY
-    
+
 
     #@ON ACTION 變更狀況
       ON ACTION modify_status
          LET g_action_choice="modify_status"
          EXIT DISPLAY
 
- 
+
     #@ON ACTION 備註
       ON ACTION memo
          LET g_action_choice="memo"
          EXIT DISPLAY
- 
+
     #@ON ACTION 特別說明
       ON ACTION special_description
          LET g_action_choice="special_description"
          EXIT DISPLAY
- 
+
     #@ON ACTION easyflow送簽
       ON ACTION easyflow_approval         #FUN-550038
          LET g_action_choice = "easyflow_approval"
          EXIT DISPLAY
- 
+
     #@ON ACTION 確認
       ON ACTION confirm
          LET g_action_choice="confirm"
          EXIT DISPLAY
- 
+
     #@ON ACTION 取消確認
       ON ACTION undo_confirm
          LET g_action_choice="undo_confirm"
          EXIT DISPLAY
- 
+
     #@ON ACTION 作廢
       ON ACTION void
          LET g_action_choice="void"
@@ -13926,77 +13938,77 @@ FUNCTION t420_bp3(p_ud)
       ON ACTION undo_void
          LET g_action_choice="undo_void"
          EXIT DISPLAY
-#FUN-D20025 add         
+#FUN-D20025 add
       ON IDLE g_idle_seconds
          CALL cl_on_idle()
          CONTINUE DISPLAY
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION exporttoexcel       #FUN-4B0025
          LET g_action_choice = 'exporttoexcel'
          EXIT DISPLAY
       ON ACTION agree
          LET g_action_choice = 'agree'
          EXIT DISPLAY
- 
+
       ON ACTION deny
          LET g_action_choice = 'deny'
          EXIT DISPLAY
- 
+
       ON ACTION modify_flow
          LET g_action_choice = 'modify_flow'
          EXIT DISPLAY
- 
+
       ON ACTION withdraw
          LET g_action_choice = 'withdraw'
          EXIT DISPLAY
- 
+
       ON ACTION org_withdraw
          LET g_action_choice = 'org_withdraw'
          EXIT DISPLAY
- 
+
       ON ACTION phrase
          LET g_action_choice = 'phrase'
          EXIT DISPLAY
       ON ACTION e_proc_require
          LET g_action_choice = 'e_proc_require'
          EXIT DISPLAY
- 
-      ON ACTION controls                           #No.FUN-6B0032             
+
+      ON ACTION controls                           #No.FUN-6B0032
          CALL cl_set_head_visible("","AUTO")       #No.FUN-6B0032
- 
+
       ON ACTION related_document                #No.FUN-6A0162  相關文件
-         LET g_action_choice="related_document"          
+         LET g_action_choice="related_document"
          EXIT DISPLAY
- 
+
       ON ACTION gpm_show
          LET g_action_choice="gpm_show"
          EXIT DISPLAY
-         
+
       ON ACTION gpm_query
          LET g_action_choice="gpm_query"
          EXIT DISPLAY
- 
+
       ON ACTION aps_related_data
          LET g_action_choice = 'aps_related_data'
          EXIT DISPLAY
-   
+
       ON ACTION EXIT
          LET g_action_choice = "EXIT"
          EXIT DISPLAY
- 
+
       ON ACTION cancel
          LET INT_FLAG = TRUE
          LET g_action_choice = "EXIT"
-         EXIT DISPLAY          
-   END DISPLAY       
+         EXIT DISPLAY
+   END DISPLAY
 
    CALL cl_set_act_visible("accept,cancel", TRUE)
 END FUNCTION
 #FUN-CB0014---add---end---
-#CHI-D20006 -- add start --				   
+#CHI-D20006 -- add start --
 FUNCTION t420_g_b()
 DEFINE  l_chr       LIKE type_file.chr1
 

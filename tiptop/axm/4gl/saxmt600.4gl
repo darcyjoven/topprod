@@ -45,7 +45,7 @@
 # Modify.........: No.MOD-480401 04/09/20 By Melody 出貨扣帳應check img18(庫存有效日期)
 # Modify.........: No:MOD-490371 04/09/23 By Kitty Controlp 未加display
 # Modify.........: No:MOD-490365 04/09/24 By Nicola 未確認也要卡單身
-# Modify.........: No.MOD-490460 04/09/27 By Kammy chk imd_file時不應chk imd12   
+# Modify.........: No.MOD-490460 04/09/27 By Kammy chk imd_file時不應chk imd12
 # Modify.........: No:MOD-4A0063 04/10/06 By Mandy q_ime 的參數傳的有誤
 # Modify.........: No:MOD-4A0095 04/10/08 By Smapmin將cl_conf改為cl_confirm
 # Modify.........: No:FUN-4A0064 04/10/11 By Carol 將construct contolp 寫法修改
@@ -375,20 +375,20 @@
 #                                                   (2) axmt820,axmt821,axmt850 更改送貨客戶action取消
 # Modify.........: No:MOD-820106 08/03/20 By cliare 中斷點後的出貨單,執行扣帳還原時,axmp650執行失敗,不能清除oga99流程序號,oga905拋轉
 # Modify.........: No:CHI-820011 08/03/20 By cliare (1)單身的action單價由input改為display
-#                                                   (2)單身的action其它資料可修改欄位調整               
+#                                                   (2)單身的action其它資料可修改欄位調整
 # Modify.........: No:FUN-830078 08/03/20 By bnlent ICD行業BUG修改
-# Modify.........: No:MOD-830189 08/03/25 By chenl  若為簽單，則客戶出貨簽收否oga65應為'N'，不必依據客戶主檔occ65取值。 
-# Modify.........: No:FUN-830134 08/03/27 By bnlent 新增action（料件庫存指定) 
-# Modify.........: No:MOD-830220 08/03/27 By Carol 代採逆拋t600_last() 排除 99 站 
+# Modify.........: No:MOD-830189 08/03/25 By chenl  若為簽單，則客戶出貨簽收否oga65應為'N'，不必依據客戶主檔occ65取值。
+# Modify.........: No:FUN-830134 08/03/27 By bnlent 新增action（料件庫存指定)
+# Modify.........: No:MOD-830220 08/03/27 By Carol 代採逆拋t600_last() 排除 99 站
 # Modify.........: No:MOD-840067 08/04/08 By claire 多角單據過帳還原時,串出axmp650按取消會清空oga99,oga905
 # Modify.........: No:MOD-840012 08/04/10 By claire TQC-7B0166 請原修改者取消修改 ,會造成ogb917 = ogb912 (不使用計價單位)
 # Modify.........: No:MOD-840078 08/04/10 By claire 由出通單產出貨單身,金額沒有依原幣取位
 # Modify.........: No:CHI-840009 08/04/10 By claire oaz71='2'時,批號不需帶入條件
 # Modify.........: No:MOD-840086 08/04/10 By claire 銷退數量應只取銷退方式(oha09)為4.折讓,且以原訂單出貨
-# Modify.........: No.FUN-840042 08/04/10 by TSD.liquor 自訂欄位功能修改 
+# Modify.........: No.FUN-840042 08/04/10 by TSD.liquor 自訂欄位功能修改
 # Modify.........: No:MOD-840099 08/04/12 By claire 連續輸入二筆出貨單頭,應清空g_oea.*變數,避免留有上一筆殘值
 # Modify.........: No.CHI-830036 08/04/12 By claire 出貨單要印發票資料時,串回ofa_file要先判斷invoice來源為oga01,oga011再給條件
-# Modify.........: No:CHI-830035 08/04/12 By claire 同一客戶有可能收款條件不符,需要控卡,增加一訊息axm-143的判斷 
+# Modify.........: No:CHI-830035 08/04/12 By claire 同一客戶有可能收款條件不符,需要控卡,增加一訊息axm-143的判斷
 # Modify.........: No:MOD-840118 08/04/15 By claire 透過訂單轉入的出通單,及透過訂單或出通單轉入的出貨單,造成沒有帶到occ67
 # Modify.........: No:MOD-840143 08/04/18 By claire 信用額度超限時,取消確認時,仍應即時顯示超限原應oga902(不用重查再show)
 # Modify.........: No:MOD-840330 08/04/21 By Mandy 由備品產生單身時,ogb1005沒給值
@@ -403,7 +403,7 @@
 # Modify.......... NO.CHI-840076 08/05/06 BY claire 按放棄不需寫入ogc_file
 # Modify.........: No:FUN-850120 08/05/21 By rainy 批序號新增參數oaz81判斷出通是否做批序管理
 # Modify.........: No:FUN-850100 08/05/19 By Nicola 批/序號管理第二階段
-# Modify.........: No:FUN-850128 08/05/26 By sherry 選擇類別為 ""借貨還價", 
+# Modify.........: No:FUN-850128 08/05/26 By sherry 選擇類別為 ""借貨還價",
 #                                                   在訂單編號 開窗 看不到 "借貨還價訂單資料
 # Modify.........: No:MOD-850241 08/05/27 By Smapmin 增加背景傳遞參數
 # Modify.........: No:MOD-850249 08/05/27 By Smapmin 修正MOD-680010
@@ -453,7 +453,7 @@
 # Modify.........: No:MOD-8A0098 08/10/14 By wujie  設定單別綁定屬性群組時，修改多屬性料件欄位，開窗返回的還是未修改的老料號
 # Modify.........: NO:MOD-890080 08/09/11 By claire 多角出貨單切換DB後, 按扣帳還原應再確認目前DB一次
 # Modify.........: No:MOD-8B0003 08/11/05 By Smapmin 修改required的控管方式
-# Modify.........: No:FUN-8B0021 08/11/05 By Nicola FUN-8A0030測試問題修改 
+# Modify.........: No:FUN-8B0021 08/11/05 By Nicola FUN-8A0030測試問題修改
 # Modify.........: No.MOD-8B0023 08/11/05 By wujie  過賬還原時沒有正確刪除idd_file資料
 # Modify.........: No:MOD-8A0098 08/10/14 By wujie  設定單別綁定屬性群組時，修改多屬性料件欄位，開窗返回的還是未修改的老料號
 # Modify.........: No:MOD-8B0029 08/11/15 By Pengu 調整CURSOR t600b_c_2的OUTER語法
@@ -476,8 +476,8 @@
 # Modify.........: No:MOD-910067 09/01/08 By chenyu 單身有數據，單頭稅率改變，單身的金額也應該重算
 # Modify.........: No:FUN-8C0127 09/01/08 By Smapmin 將axmt600p畫面中的oga50改為oga50_1
 # Modify.........: No:MOD-910186 09/01/16 By Smapmin 文件地址多oap044/oap045二個欄位
-# Modify.........: No:MOD-910183 09/01/13 By sherry  還原MOD-4B0107的修改  
-# Modify.........: No:MOD-910216 09/01/20 By sherry  單別已設置設限倉庫,但出貨通知單仍可以從此其他倉庫出  
+# Modify.........: No:MOD-910183 09/01/13 By sherry  還原MOD-4B0107的修改
+# Modify.........: No:MOD-910216 09/01/20 By sherry  單別已設置設限倉庫,但出貨通知單仍可以從此其他倉庫出
 # Modify.........: No:MOD-920019 09/02/02 By claire 多角出貨單axmt820,合併出貨時,未帶出oga32的值
 # Modify.........: No:MOD-920025 09/02/03 By Smapmin 自動確認又直接扣帳時,
 #                                                    傳入t600sub_y_upd()的第二個參數要寫死為confirm.
@@ -504,8 +504,8 @@
 # Modify.........: No:MOD-940053 09/04/07 By Dido 單價 action 中未稅金額合計因出通單輸入後而失真
 # Modify.........: No:MOD-940055 09/04/07 By Dido 直接新增簽收單 oga65 須為 'N'
 # Modify.........: No:CHI-940010 09/04/08 By hellen 修改SELECT ima或者imaicd欄位卻未JOIN相關表的問題
-# Modify.........: No:MOD-940119 09/04/09 By Dido t600_b_ogg_1() 須先抓取再判斷 l_ima906 
-# Modify.........: No:MOD-940130 09/04/10 By Dido 從訂單挑選 action 中增加過濾已出貨或出通訂單資料 
+# Modify.........: No:MOD-940119 09/04/09 By Dido t600_b_ogg_1() 須先抓取再判斷 l_ima906
+# Modify.........: No:MOD-940130 09/04/10 By Dido 從訂單挑選 action 中增加過濾已出貨或出通訂單資料
 # Modify.........: No:MOD-940231 09/04/20 By Dido 若 oma16 = null 則開放 oga32 維護,並檢核是否與單身訂單收款條件相同
 # Modify.........: No:MOD-940275 09/04/21 By Dido 合併處理 MOD-860197 問題
 # Modify.........: No:MOD-940336 09/04/24 By Smapmin 出通單若已出貨並立帳,僅提供單價查詢
@@ -520,9 +520,9 @@
 # Modify.......... No.MOD-960004 09/06/04 By Dido oga07 切換時須增加詢問並刪除 npq_file
 # Modify.........: No.MOD-960058 09/06/04 By Carrier 訂單帶出的客戶需要檢查
 # Modify.........: No.CHI-960017 09/06/04 By mike 出貨單單身 , 選取訂單單號時 , 開窗會顯示單價 , 建議隱藏單價顯示 (因為出貨單有可能倉庫管理人員會看到單價資訊)
-# Modify.........: No.TQC-950054 09/06/22 By jan updat行業別檔時，KEY值一并update 
+# Modify.........: No.TQC-950054 09/06/22 By jan updat行業別檔時，KEY值一并update
 # Modify.........: No:MOD-960139 09/06/23 By lilingyu 新增后先保存,然后修改客戶編號，后續的送貨客戶等值不會自動帶出
-# Modify.........: No:MOD-960307 09/06/25 By lilingyu "單價"按鈕在出貨通知單中應隱藏 
+# Modify.........: No:MOD-960307 09/06/25 By lilingyu "單價"按鈕在出貨通知單中應隱藏
 # Modify.........: No:MOD-960349 09/07/06 By lilingyu  當單身無資料時,點擊"批/序號查詢"ACTION,程序當出
 # Modify.........: No:MOD-950276 09/07/07 By Smapmin 出至境外倉訂單出貨單應顯示已產生的境外倉出貨訂單單號
 #                                                    出至境外倉出貨單未過帳之前,oga910/oga911這二個欄位是可以修改的
@@ -532,21 +532,21 @@
 # Modify.........: No:MOD-970012 09/07/16 By Smapmin 維護文件地址離開後,cursor未release
 # Modify.........: No:MOD-960347 09/07/16 By Smapmin 修改單頭客戶編號後,收款條件沒有一起更改
 # Modify.........: No:MOD-970019 09/07/16 By Smapmin 檢核完庫存資料正確性後,回到倉儲批的那一個欄位,需考慮出貨設定
-#                                                    銷售單位�庫存單位未抓取 
+#                                                    銷售單位�庫存單位未抓取
 # Modify.........: No:MOD-970133 09/07/17 By lilingyu 當系統參數控管需多倉儲批時,應控管單身倉儲批欄位不可輸入
-# Modify.........: No:MOD-970014 09/07/21 By Dido 收款條件增加多角檢核 
+# Modify.........: No:MOD-970014 09/07/21 By Dido 收款條件增加多角檢核
 # Modify.........: No:TQC-970202 09/07/22 By lilingyu 還原MOD-970133修改的部分
 # Modify.........: No:MOD-970092 09/07/22 By Dido RETURN 時改為 ogb03
 # Modify.........: No:MOD-970149 09/07/24 By Smapmin 使用多單位且多倉庫出貨時,無法過帳還原,因為ogc17沒有給值
 # Modify.........: No.FUN-870007 09/07/29 By Zhangyajun 流通零售功能修改
-# Modify.........: No:MOD-970252 09/07/29 By mike 列印串包裝單時參數有誤，最后面倒數第三第四個參數應交換                            
+# Modify.........: No:MOD-970252 09/07/29 By mike 列印串包裝單時參數有誤，最后面倒數第三第四個參數應交換
 # Modify.........: No:MOD-970260 09/07/29 By mike 目前出貨單確認后因有OQC單據而無法取消確認，但已將OQC狀態改為作廢，仍然會卡住無法取
-# Modify.........: No:TQC-970352 09/07/30 By destiny _b1()時增加g_prog對axmp220_icd的判斷 
+# Modify.........: No:TQC-970352 09/07/30 By destiny _b1()時增加g_prog對axmp220_icd的判斷
 # Modify.........: No:MOD-980038 09/08/12 By Dido 簽收單不可修改與出貨單不同的出貨類別
-# Modify.........: No:TQC-980154 09/08/20 By sherry 送貨客戶簡稱沒有帶出來      
-# Modify.........: No:TQC-980196 09/08/24 By sherry 匯率輸入負數沒有控管    
+# Modify.........: No:TQC-980154 09/08/20 By sherry 送貨客戶簡稱沒有帶出來
+# Modify.........: No:TQC-980196 09/08/24 By sherry 匯率輸入負數沒有控管
 # Modify.........: No.FUN-980010 09/08/25 By TSD.Martin GP5.2架構重整，修改 INSERT INTO 語法
-# Modify.........: No:MOD-980217 09/08/27 By mike 調整 oga09 預設值    
+# Modify.........: No:MOD-980217 09/08/27 By mike 調整 oga09 預設值
 # Modify.........: No.MOD-980238 09/08/27 By 還原 MOD-910183 修改
 # Modify.........: No.FUN-950093 09/08/27 By chenmoyan 增加單身訂單查詢功能
 # Modify.........: No:TQC-980197 09/08/28 By lilingyu "幣種"欄位輸入任何值沒有控管
@@ -554,15 +554,15 @@
 # Modify.........: No:MOD-980247 09/09/01 By Smapmin [更改倉儲]倉儲開窗應開跟單身開的一樣
 # Modify.........: No:FUN-960130 09/09/04 By Sunyanchun 取價
 # Modify.........: No.FUN-980020 09/09/18 By douzh GP5.2架構重整，修改sub相關傳參
-# Modify.........: No:MOD-990233 09/09/28 By Dido 銷售正拋過帳還原應可執行 axmp650                      
+# Modify.........: No:MOD-990233 09/09/28 By Dido 銷售正拋過帳還原應可執行 axmp650
 # Modify.........: No:FUN-970108 09/08/20 By hongmei add oga71申報統編
-# Modify.........: No:TQC-980071 09/09/30 By mike 取消收款條件多角條件(oga32)邏輯     
-# Modify.........: No:MOD-9A0014 09/10/02 By Dido 若單頭未輸入訂單則訂金比率改抓單身                      
+# Modify.........: No:TQC-980071 09/09/30 By mike 取消收款條件多角條件(oga32)邏輯
+# Modify.........: No:MOD-9A0014 09/10/02 By Dido 若單頭未輸入訂單則訂金比率改抓單身
 # Modify.........: No:MOD-990096 09/10/08 By Smapmin axmt628將單身刪除功能拿掉
 # Modify.........: No:MOD-990097 09/10/09 By lilingyu 如果將出貨通知單和出貨單作廢,則允許更改訂單;這時候再將出貨單、出通單取消作廢,而產生的出貨單單身資料和訂單單身的資料不一致
 # Modify.........: No.FUN-960038 09/10/15 By chenmoyan 專案加上'結案'的判斷
 # Modify.........: No.CHI-960022 09/10/15 By chenmoyan 預設單位一數量時，加上判斷，單位一數量為空或為1時，才預設
-# Modify.........: No:FUN-990074 09/09/24 By mike axmt610文件地址action中,交運方式的中文要顯示在oga43的右手邊.                      
+# Modify.........: No:FUN-990074 09/09/24 By mike axmt610文件地址action中,交運方式的中文要顯示在oga43的右手邊.
 # Modify.........: No:TQC-9A0115 09/10/23 By xiaofeizhu 標準SQL修改
 # Modify.........: No:TQC-9A0161 09/10/28 By Carrier SQL STANDARDIZE
 # Modify.........: No:CHI-9A0052 09/11/02 By Smapmin 將語法加回去
@@ -579,24 +579,24 @@
 # Modify.........: No:MOD-9C0016 09/12/02 By mike 原有的零售管控非成本仓拿掉
 # Modify.........: No:MOD-9C0055 09/12/04 By Smapmin 變數初始化
 # Modify.........: No:CHI-9C0009 09/12/04 By Dido 銷售正拋時若倉儲不存在需新增 img_file
-# Modify.........: No:MOD-9C0092 09/12/09 By Dido 多角序號應僅限於多角使用 
+# Modify.........: No:MOD-9C0092 09/12/09 By Dido 多角序號應僅限於多角使用
 # Modify.........: No:MOD-9C0105 09/12/10 By Smapmin 維護文件地址若按放棄,應要把舊值回復
 # Modify.........: No:FUN-9C0064 09/12/14 By Cockroach oha87 改为开窗录入
 # Modify.........: No:MOD-9C0128 09/12/15 By Smapmin 客戶編號有修改後,才重新預設客戶其他的資料
 # Modify.........: No:MOD-9C0141 09/12/16 By Smapmin ogg091/ogg092為空白時,不要再重新抓值
-# Modify.........: No:MOD-9C0183 09/12/18 By sabrina 輸入訂單號碼後，不可修改oga032 
+# Modify.........: No:MOD-9C0183 09/12/18 By sabrina 輸入訂單號碼後，不可修改oga032
 # Modify.........: No:FUN-9C0120 09/12/21 By mike 通过价格条件管控未取到价格时单价栏位是否可以人工输入
 # Modify.........: No:FUN-990053 09/12/29 By baofei s_chkban前先檢查aza21 = 'Y'
 # Modify.........: No:FUN-9C0173 09/12/29 By mike 当oaz65='0'时，取价失败
-# Modify.........: No:FUN-A10016 10/01/06 By bnlent 1.单身删除显示不正确 2.单身新增分摊折价没取到 
+# Modify.........: No:FUN-A10016 10/01/06 By bnlent 1.单身删除显示不正确 2.单身新增分摊折价没取到
 #                                                   3.无订单出货时，经过订单或订单项次栏位时数量不应重置为0
-# Modify.........: No:CHI-A10016 10/01/18 By Dido 調整 s_lotout transcation 架構 
+# Modify.........: No:CHI-A10016 10/01/18 By Dido 調整 s_lotout transcation 架構
 # Modify.........: No.FUN-9C0073 10/01/18 By chenls 程序精簡
 # Modify.........: No.TQC-A10153 10/01/25 By lilingyu 1. 單頭無訂單單號和出通單號時,訂單單號ogb31開窗查不到明細,但可以手工錄入
 # ...............:                                    2.ogb32增加對應的開窗
 # Modify.........: No:FUN-A10110 10/01/26 By Cockroach 出貨單新增【折價明細】按鈕
 # Modify.........: No:FUN-A10106 10/02/01 By destiny 出货单新增赠品发放按钮
-# Modify.........: No:MOD-A20021 10/02/03 By Dido 單價視窗放棄時,需更新 INT_FLAG 
+# Modify.........: No:MOD-A20021 10/02/03 By Dido 單價視窗放棄時,需更新 INT_FLAG
 # Modify.........: No:CHI-960010 10/02/05 By Smapmin 回寫已出貨未稅金額應於過帳段才回寫
 # Modify.........: No:FUN-A20022 10/02/05 By Cockroach 會員積分計算
 # Modify.........: No:MOD-A20068 10/02/09 By Smapmin 由訂單自動產生出通時,若數量為0則不要產生該項次
@@ -604,14 +604,14 @@
 # Modify.........: No:MOD-A10163 10/02/22 By Smapmin 產生客戶簽收單時,rvbs022/rvbs13重給default值
 #                                                    客戶簽收單不會有多倉儲資料
 # Modify.........: No:CHI-A10002 10/02/23 By sabrina 確認時,無倉儲批的錯誤訊息請加上料號,當單身筆數很多時,會查不出是哪一筆的問題
-# Modify.........: No:MOD-A10010 10/02/23 By sabrina t600_3()UPDATE段多增加ogb092 
-# Modify.........: No:CHI-A20017 10/02/23 By Dido 多角須控管 axm-075 
+# Modify.........: No:MOD-A10010 10/02/23 By sabrina t600_3()UPDATE段多增加ogb092
+# Modify.........: No:CHI-A20017 10/02/23 By Dido 多角須控管 axm-075
 # Modify.........: No:CHI-9C0024 10/02/23 By Smapmin 多倉儲的畫面,數量移到倉儲批後面
 # Modify.........: No:MOD-A20102 10/02/24 By Smapmin oaz71='2'時,批號不需帶入條件
 # Modify.........: No.TQC-A20058 10/02/25 By Cockroach lpj05的條件不完全
 # Modify.........: NO:CHI-880006 10/02/24 By Smapmin 單身檢驗碼(ogb19)不可維護
 # Modify.........: No:MOD-A30051 10/03/10 By Smapmin 還原MOD-960307的修改
-# Modify.........: No.TQC-A30041 10/03/16 By Cockroach add oriu/orig 
+# Modify.........: No.TQC-A30041 10/03/16 By Cockroach add oriu/orig
 # Modify.........: No:CHI-9A0022 10/03/20 By chenmoyan給s_lotout加一個參數:歸屬單號
 # Modify.........: No.FUN-9C0103 10/03/17 By vealxu 原call s_lotout前，抓取歸屬單號的程式段增加判斷
 # Modify.........: No.FUN-A30063 10/03/19 By Cockroach add ogacont
@@ -623,7 +623,7 @@
 # Modify.........: No:MOD-A40013 10/04/20 By Smapmin 出通單單頭的"結關日期"改為"預計出貨日期"
 # Modify.........: No:TQC-A40113 10/04/22 By lilingyu 訂單分配時,在數量ogb12處過不去
 # Modify.........: No.FUN-A50071 10/05/19 By vealxu GP5.2 相關程序增加POS單號字段 并管控如果不為空的情況下 不可取消審核與取消過帳
-# Modify.........: No.TQC-A50152 10/05/26 By lilingyu oeb03項次欄位條件錯誤 
+# Modify.........: No.TQC-A50152 10/05/26 By lilingyu oeb03項次欄位條件錯誤
 # Modify.........: No.TQC-A50162 10/05/28 By houlia oga94 POS銷售否=Y時，不可取消審核
 # Modify.........: No.FUN-A50054 10/06/01 By chenmoyan 增加款式明細功能
 # Modify.........: No:CHI-A40029 10/06/04 By Summer 針對出貨單之img_file的控管一律移到過帳段
@@ -631,7 +631,7 @@
 # Modify.........: No.MOD-A60112 10/06/18 By Carrier 订单单号检查时,要check项次已经KEY了,若项次为空,则确定不了订单单身
 # Modify.........: No.MOD-A60121 10/06/21 By Carrier SELECT tqa_file时没有给tqa03值
 # Modify.........: No.MOD-A60134 10/06/21 By Carrier t600_ogb04()仅在azw04='2'时才需要检查
-# Modify.........: No:FUN-A50103 10/06/03 By Nicola 訂單多帳期 
+# Modify.........: No:FUN-A50103 10/06/03 By Nicola 訂單多帳期
 # Modify.........: No:CHI-A50004 10/06/24 By Summer 在確認/取消確認/過帳/取消過帳時,將lock資料的動作往前移至FUNCTION的一開始
 # Modify.........: No:FUN-A60035 10/07/05 By chenls 款式明細時維護s_detail
 # Modify.........: No.FUN-A60035 10/07/08 By chenmoyan 零售業沒有考慮到服飾行業
@@ -654,8 +654,8 @@
 # Modify.........: No:FUN-A70130 10/08/20 By huangtao  修改q_oay參數
 # Modify.........: No:FUN-A70132 10/08/20 By lixh1  增加 "實際交易稅別明細"Action,"單身稅別明細" Action
 # Modify.........: No.FUN-A60004 10/08/31 By vealxu 功能單
-# Modify.........: No.MOD-A90032 10/09/07 by Dido 作廢時應刪除分錄底稿 
-# Modify.........: No:MOD-A90150 10/09/23 By Dido 出口報單號碼需檢核是否為 14碼 
+# Modify.........: No.MOD-A90032 10/09/07 by Dido 作廢時應刪除分錄底稿
+# Modify.........: No:MOD-A90150 10/09/23 By Dido 出口報單號碼需檢核是否為 14碼
 # Modify.........: No:MOD-A90158 10/09/28 By Smapmin 多角時詢問是否依送貨客戶重新抓取交易條件
 # Modify.........: No:MOD-A90170 10/09/28 By Smapmin 修正TQC-A40082
 # Modify.........: No:CHI-A90022 10/09/29 By Summer 寫入azo_file時,程式代號改為g_prog
@@ -665,7 +665,7 @@
 # Modify.........: No:FUN-A40022 10/10/25 By jan 當料件為批號控管,則批號必須輸入
 # Modify.........: No:FUN-AA0007 10/10/26 By jan 若輸入的批號之i17='Y',則控卡不能輸入
 # Modify.........: No:FUN-AA0089 10/10/28 By suncx 單身選擇料件時可多選，多選后自動生成多筆單身
-# Modify.........: No:FUN-AA0059 10/10/29 By chenying 料號開窗控管 
+# Modify.........: No:FUN-AA0059 10/10/29 By chenying 料號開窗控管
 # Modify.........: No:FUN-AA0059 10/10/29 By huangtao 修改料號AFTER FIELD的管控
 # Modify.........: No:FUN-AA0057 10/11/02 BY shiwuying INSERT INTOogb_file前ogb50给预设值
 # Modify.........: No:MOD-AB0053 10/11/05 By lilingyu 如果是"製造"業態時,出貨單action"單價"也應該顯示出來
@@ -682,25 +682,25 @@
 # Modify.........: No:FUN-AB0059 10/11/16 By huangtao 添加料號相關控卡
 # Modify.........: No:FUN-AB0061 10/11/16 By shenyang 添加ogb37欄位
 # Modify.........: No:FUN-AB0039 10/11/25 By lixh1    當程式代碼 "axmt620"時,"單身稅別明細"及"實際交易稅別明細"Action才顯示,否則隱藏
-# Modify.........: No:MOD-AB0233 10/11/26 By Dido 若訂金比率為 100 則 oga07 應為 'N' 
+# Modify.........: No:MOD-AB0233 10/11/26 By Dido 若訂金比率為 100 則 oga07 應為 'N'
 # Modify.........: No.TQC-AB0251 10/11/29 By shenyang GP5.2 SOP流程修改
 # Modify.........: No.TQC-AB0253 10/11/29 By shenyang GP5.2 SOP流程修改
 # Modify.........: No:MOD-AB0247 10/11/30 By sabrina 出貨單單身筆數沒有控卡所輸入的筆數資料
-# Modify.........: No:MOD-AB0246 10/11/30 By sabrina 當oga09='2' AND oga07='Y'時，單頭修改出貨日期後應重新產生分錄底稿 
+# Modify.........: No:MOD-AB0246 10/11/30 By sabrina 當oga09='2' AND oga07='Y'時，單頭修改出貨日期後應重新產生分錄底稿
 # Modify.........: No:CHI-AB0029 10/11/30 By Summer INVOICE,PACKING增加直式列印的選項
 # Modify.........: No.TQC-AB0242 10/11/30 By lixh1    點擊右邊"單價"action,更改單價後，最新單價及時顯>
 #示在主畫面單身裡
 # Modify.........: No:MOD-AC0012 10/12/01 By Smapmin 過帳還原成功後,才處理idd_file還原的動作
 # Modify.........: No.TQC-AB0329 10/12/02 By wuxj     查询客户签收更改
 # Modify.........: No:FUN-AC0012 10/12/03 By shiwuying 單價按鈕邏輯更改，如果單價有改動寫一筆資料到rxc_file中，更新折價金額
-# Modify.........: No:FUN-AA0057 10/12/06 BY shenyang  修改q_lnt06_1 傳入參數  
+# Modify.........: No:FUN-AA0057 10/12/06 BY shenyang  修改q_lnt06_1 傳入參數
 # Modify.........: No:MOD-AC0070 10/12/09 By Smapmin 出貨單不需打訂單時,ogb05_fac沒有重新計算
 # Modify.........: No:TQC-AC0101 10/12/09 By huangtao 服飾業隱藏款式明細
 # Modify.........: No:CHI-AC0002 10/12/13 By Summer 增加分錄底稿二ACTION
 # Modify.........: No:TQC-AC0177 10/12/14 By chenying 單身欄位"攤位編號"、"商戶編號"、"開票性質"應為流通業時才顯示
 # Modify.........: No:FUN-AB0096 10/12/14 By shiwuying 稅別明細按鈕只有azw04=2才顯示
-# Modify.........: No:TQC-AC0191 10/12/20 By suncx azw04=2時才顯示可發贈品按鈕     
-# Modify.........: No:TQC-AC0140 10/12/20 By suncx 價格策略允許自定價時,單價維護BUG調整  
+# Modify.........: No:TQC-AC0191 10/12/20 By suncx azw04=2時才顯示可發贈品按鈕
+# Modify.........: No:TQC-AC0140 10/12/20 By suncx 價格策略允許自定價時,單價維護BUG調整
 # Modify.........: No:FUN-A50029 10/12/21 By Lilan 控制EF簽核時,ICD行業別不可執行的ACTION
 # Modify.........: No.FUN-AC0055 10/12/21 By wangxin oga57欄位預設值修正
 # Modify.........: No:MOD-AB0152 10/12/24 By Summer 簽收流程,簽收單已立帳,出貨單與出通單都不能修改單價
@@ -712,7 +712,7 @@
 # Modify.........: No:MOD-AC0376 11/01/05 By Smapmin 1.多單位的換算率不正確.
 #                                                    2.修改單位數量後計價數量沒有重算.
 # Modify.........: No:CHI-AC0034 11/01/06 By Summer 產生的簽收單axmt628,若是替代的要多新增ogc_file
-# Modify.........: No:MOD-B10020 11/01/07 By Summer 按出貨單明細 action 串至axmt620 時顯示 error 
+# Modify.........: No:MOD-B10020 11/01/07 By Summer 按出貨單明細 action 串至axmt620 時顯示 error
 # Modify.........: No:FUN-B10010 11/01/07 By shenyang 右邊單價按鈕的畫面中顯示基礎單價
 # Modify.........: No:FUN-B10014 11/01/07 By shiwuying 零售才写rxc_file
 # Modify.........: No:TQC-B10066 11/01/10 By shiwuying 單身一顯示物返資料，單身二只顯示現返資料
@@ -733,15 +733,15 @@
 # Modify.........: No:TQC-B30107 11/03/10 By zhangll 修正FUN-AB0011问题l_ac->l_ac1
 # Modify.........: No:MOD-B30218 11/03/12 By wangxin 修改數量后，不重新取價
 # Modify.........: No:MOD-B30467 11/03/14 By baogc 增加判斷為非零售業時，折價明細按鈕隱藏
-# Modify.........: No:MOD-B30453 11/03/14 By suncx 款別明細的ACTION無需做權限判斷 
+# Modify.........: No:MOD-B30453 11/03/14 By suncx 款別明細的ACTION無需做權限判斷
 # Modify.........: No:TQC-B30124 11/03/15 By zhangll 快速錄入功能中取消与订单勾稽
 # Modify.........: No:MOD-B30485 11/03/17 By chenying 原MOD-B10204的修改mark掉;
 #                                                     "單價"action:單身數據不可更改時,按下確認應可直接跳出,現報誤信息-->在display array後面的屬性加上accept=FALSE,cancel=FALSE
 # Modify.........: No:FUN-B30012 11/03/18 By huangtao 單身有贈品不可進入單身，單身有訂單贈品不可進入單身不可點擊可發贈品
 # Modify.........: No:MOD-B30301 11/03/18 By chenying 修改報錯訊息
-# Modify.........: No:MOD-B30464 11/03/22 By Summer 還原CHI-8B0048的修改 
-# Modify.........: No:MOD-B30486 11/03/22 By Summer AFTER FIELD ogb17,IF ogb17='Y',ogb倉儲批資料都變為一個空白 
-# Modify.........: No:MOD-B30419 11/03/22 By Summer 單頭訂單自動產生單身時,ogb17不應該為NULL 
+# Modify.........: No:MOD-B30464 11/03/22 By Summer 還原CHI-8B0048的修改
+# Modify.........: No:MOD-B30486 11/03/22 By Summer AFTER FIELD ogb17,IF ogb17='Y',ogb倉儲批資料都變為一個空白
+# Modify.........: No:MOD-B30419 11/03/22 By Summer 單頭訂單自動產生單身時,ogb17不應該為NULL
 # Modify.........: No:TQC-B30189 11/03/25 By baogc 修改bug
 # Modify.........: No:FUN-B30211 11/04/01 By lixiang  加cl_used(g_prog,g_time,2)
 # Modify.........: No:TQC-B40067 11/04/11 By yinhy s_chkban前先檢查aza21 = 'Y'
@@ -749,9 +749,9 @@
 #                                                    還原MOD-B30486,因為單身的倉儲資料會做為多倉儲的預設
 # Modify.........: No:FUN-B30170 11/04/11 By suncx 單身增加批序號明細頁簽
 # Modify.........: No:TQC-B40101 11/04/13 By lilignyu 單身輸入攤位時,需判斷若單頭發票性質欄位='商戶開票'時,需控管攤位欄位為必填
-# Modify.........: No:MOD-B40148 11/04/19 By Summer 轉出貨簽收時ins ogc重複 
+# Modify.........: No:MOD-B40148 11/04/19 By Summer 轉出貨簽收時ins ogc重複
 # Modify.........: No:MOD-B40171 11/04/20 By Summer 單頭有打訂單編號時,幣別/稅別等欄位會變為noentry,其值是依訂單帶過來的
-#                                                   故MOD-A90158這張單子的修改要加上,當單頭訂單單號為空時才成立 
+#                                                   故MOD-A90158這張單子的修改要加上,當單頭訂單單號為空時才成立
 # Modify.........: No:TQC-B40204 11/04/25 By lilingyu EF簽核相關BUG修改
 # Modify.........: No:FUN-B40076 11/04/26 By xianghui 開放axmt620_icd的資料庫存指定功能
 # Modify.........: No:FUN-B10026 11/04/25 By lixiang 增加axmt629列印功能
@@ -767,8 +767,8 @@
 # Modify.........: No:MOD-B60001 11/06/01 By Smapmin 輸入單頭的會員卡號時,要再計算一次oga95
 # Modify.........: No:TQC-B50052 11/06/02 By lixh1 UPDATE ogb12的時候同時UPDATE ogb16,ogb18
 # Modify.........: No:MOD-B60052 11/06/07 By JoHung 訂單編號及項次不為空時才取訂單單價
- 
-# Modify.........: No:MOD-B50142 11/06/07 By Summer 還原CHI-690060 mark掉的那行  
+
+# Modify.........: No:MOD-B50142 11/06/07 By Summer 還原CHI-690060 mark掉的那行
 # Modify.........: No:CHI-B60054 11/06/09 By yinhy MARK掉CHI-B30093和TQC-B50099單號更改內容
 # Modify.........: No:MOD-B50227 11/06/10 By Summer 出貨有設備置量時,出貨數量不可超過備置量
 # Modify.........: No:MOD-B60010 11/06/15 By Summer 判斷oga54<>0的地方,改判斷-->出通/出貨單據是否存在未作廢invoice,若存在則不可刪除
@@ -822,18 +822,18 @@
 # Modify.........: No.FUN-910088 12/01/30 By chenjing 增加數量欄位小數取位
 # Modify.........: No:MOD-BC0116 12/02/01 By Vampire img10的變數定義改為LIKE img_file.img10
 # Modify.........: No:MOD-C10027 12/02/01 By Vampire l_cnt後,卻使用 g_cnt來判定,造成檢核發票異常
-# Modify.........: No:MOD-C10013 12/02/01 By Vampire 簽收單應該是要依出貨單單價，不應該重新取價 
+# Modify.........: No:MOD-C10013 12/02/01 By Vampire 簽收單應該是要依出貨單單價，不應該重新取價
 # Modify.........: No:MOD-C10047 12/02/01 By Vampire 判斷oga13為null時才抓occ67
 # Modify.........: No:FUN-B80189 12/02/01 By baogc 成本代銷入非成本倉或扣率代銷檢查成本倉是否有img_file資料，若不存在則自動新增
 # Modify.........: No:FUN-C10039 12/02/02 by Hiko 整批修改資料歸屬設定
 # Modify.........: No:TQC-C20183 12/02/21 By fengrui 數量欄位小數取位處理
-# Modify.........: No:FUN-BB0086 12/02/02 By tanxc 增加數量欄位小數取位  
+# Modify.........: No:FUN-BB0086 12/02/02 By tanxc 增加數量欄位小數取位
 # Modify.........: No:FUN-C20002 12/02/03 By fanbj 券產品倉庫調整
 # Modify.........: No:FUN-C20006 12/02/03 By lixiang 服飾二維BUG修改（非多屬性料件的判斷)
 # Modify.........: No:FUN-C20006 12/02/03 By xjll   增加業態g_azw.azw04='2' 判斷
-# Modify.........: No:FUN-BC0082 12/02/06 By chenwei  clm-332 改为 alm1562  
+# Modify.........: No:FUN-BC0082 12/02/06 By chenwei  clm-332 改为 alm1562
 # Modify.........: No:FUN-BC0071 12/02/08 By huangtao 取消確認和過帳還原時判斷單身的換贈資料
-# Modify.........: No:FUN-C10051 12/02/08 By chenwei   程式過帳還原時加入判斷 
+# Modify.........: No:FUN-C10051 12/02/08 By chenwei   程式過帳還原時加入判斷
 # Modify.........: No:TQC-C20127 12/02/13 By lilingyu 非零售業態下，錄完單頭程式報錯-391，出現NULL值
 # Modify.........: No:FUN-C20028 12/02/13 By Abby EF功能調整-客戶不以整張單身資料送簽問題
 # Modify.........: No:FUN-BA0069 12/02/15 By yangxf解决如单身后会出现将null值插入rxc_file中
@@ -847,12 +847,12 @@
 # Modify.........: No:MOD-C20105 12/02/27 By Vampire 程式_bp()段若使用DIALOG的寫法必須加上AFTER DIALOG
 # Modify.........: No:TQC-C20466 12/02/27 BY xumm 報錯信息ams-003的判斷邏輯排除為NULL的情況
 # Modify.........: No:MOD-C10060 12/02/29 By Elise 修正計價數量給值邏輯應同訂單
-# Modify.........: No:MOD-B90214 12/03/01 By Summer 項次改用_o紀錄欄位變動的新舊資料去做判斷 
+# Modify.........: No:MOD-B90214 12/03/01 By Summer 項次改用_o紀錄欄位變動的新舊資料去做判斷
 # Modify.........: No:MOD-BB0135 12/03/01 by Summer 不使用計價單位,修改數量時,先將批序號數量>單據數量,再調整為小於單據數量,
 #                                                   回寫時不會停在ogb12,就算不到計價數量
 # Modify.........: No:MOD-BC0070 12/03/01 By Summer UPDATE oga55的WHERE條件欄位錯誤
 # Modify.........: No:MOD-BC0148 12/03/01 By Summer 修正MOD-960139,變更客戶編號,科目類別未更新
-# Modify.........: No:MOD-BC0207 12/03/01 By Summer 1.控卡參考單位時,不可輸入批序號 2.庫存扣帳時抓單據數量 
+# Modify.........: No:MOD-BC0207 12/03/01 By Summer 1.控卡參考單位時,不可輸入批序號 2.庫存扣帳時抓單據數量
 # Modify.........: No:TQC-C30031 12/03/02 By wuxj  axm-678的訊息，開窗的方式呈現
 # Modify.........: No:TQC-C20344 12/03/03 By 調整批序號維護的時候沒有進行批序號篩選BUG
 # Modify.........: No:TQC-C20418 12/03/06 By huangrh 修改FUN-C10040的問題，服飾行業的金額計算保持不變
@@ -883,7 +883,7 @@
 # Modify.........: No:MOD-C30033 12/03/15 By Vampire 定義另一個變數與l_qoh型態一樣,將p_ogb.ogb12 * p_ogb.ogb05_fac存入該變數後,兩個變數值再做比大小
 # Modify.........: No:MOD-C30053 12/03/15 By Vampire 若單頭未輸入訂單號碼且oga07為null的話, 則oga07預設axms060的oaz64
 # Modify.........: No:MOD-C30596 12/03/15 By linlin :出通單不控卡
-# Modify.........: No:MOD-C30377 12/03/15 By linlin 抓取不到價格條件資料 
+# Modify.........: No:MOD-C30377 12/03/15 By linlin 抓取不到價格條件資料
 # Modify.........: No:MOD-C30213 12/03/16 By xumm 使用流通配銷功能UPDATE oga51
 # Modify.........: No:MOD-C30348 12/03/16 By yangxf 根据不同作业设置按钮是否隐藏或显示
 # Modify.........: No:MOD-C30508 12/03/16 By yuhuabao 錄完訂單單號和項次自動未出貨量，而非訂單數量
@@ -944,7 +944,7 @@
 # Modify.........: No:FUN-C60100 12/06/28 By qiaozy 服飾流通：快捷鍵controlb的問題，切換的標記請在BEFORE INPUT 賦值
 # Modify.........: No:FUN-C30085 12/07/05 By nanbing CR改串GR
 # Modify.........: No.FUN-C50136 12/07/09 By xianghui 處理信用管控控管，增加信用管控的沖銷
-# Modify.........: No:CHI-B60096 12/07/10 By Summer 調整訊息顯示 
+# Modify.........: No:CHI-B60096 12/07/10 By Summer 調整訊息顯示
 # Modify.........: No:MOD-C60215 12/07/10 By Elise 修正MOD-B60010錯誤
 # Modify.........: No:MOD-C70078 12/07/10 By Elise 替代同一顆料,不同倉庫出時,調整將數量sum起來寫入ogc_file
 # Modify.........: No:MOD-C70088 12/07/10 By Elise 調整t600_gen_check_note()中INSERT INTO rvbs_file的條件判斷
@@ -1021,7 +1021,7 @@
 # Modify.........: No:FUN-D30024 13/03/12 By fengrui 負庫存依據imd23判斷
 # Modify.........: No:CHI-B60094 13/03/22 By Elise 客戶相關查詢判斷多角時改串查第0站,s_cusqry加傳參數
 # Modify.........: No:CHI-D30032 13/03/22 By Vampire (1) 若已確認之單據，需檢核數量總和不得超過單身數量
-#                                                    (2) 若未確認單據，詢問 axm-170 後回寫單身 
+#                                                    (2) 若未確認單據，詢問 axm-170 後回寫單身
 # Modify.........: No:CHI-D30033 13/03/22 By Vampire 出貨通知單/出貨單上使用更改倉儲，勾多倉儲批出貨調整為不自動開窗
 # Modify.........: No.CHI-C90022 13/03/25 By Elise (1) 更改倉儲批時,檢查是否有rvbs_file,存在批/序號資料是否刪除,選是則刪除,選否則不可變更
 #                                                  (2) 在更該倉儲的畫面增加批/序號維護Action
@@ -1037,8 +1037,8 @@
 # Modify.........: No:CHI-D10007 13/04/15 By Sakura 將CHI-C20057程式段mark
 # Modify.........: No:MOD-D40088 13/04/15 By Vampire 未抓到最大版本的狀態，COUNT(*) 筆數判斷。
 # Modify.........: No:JT 13/04/15 By jt_chen 季會決議:
-#                                                      出通單:1.目前自動帶單身會卡axm-678,需取消,要可自動帶出 
-#                                                             2.輸入完項次會帶q_ima,請取消 
+#                                                      出通單:1.目前自動帶單身會卡axm-678,需取消,要可自動帶出
+#                                                             2.輸入完項次會帶q_ima,請取消
 #                                                             3.修正s_chk_item_no.4gl中出通單可輸入特性主料
 #                                                             4.增加Action【挑選特性子料】才開q_ima可挑選子料 5.子料需可不打倉儲批(目前出通應該就已經不卡一定要輸入倉儲批)
 #                                                      出貨單:仍維持自動開窗挑選子料,且出貨一定要控卡不可以是母料
@@ -1046,11 +1046,11 @@
 # Modify.........: No:MOD-D40100 13/04/16 By Vampire axm-124 應排除 MISC 訂單
 # Modify.........: No:CHI-A90012 13/04/17 By Smapmin 出貨單未拋轉帳款&未產生傳票前,可以修改"出貨計待驗收入"選項,以及單價.
 # Modify.........: No:FUN-D30034 13/04/18 By xumm 修改單身新增時按下放棄鍵未執行AFTER INSERT的問題
-# Modify.........: No:TQC-D40078 13/04/28 By xujing 負庫存函数添加营运中心参数 
+# Modify.........: No:TQC-D40078 13/04/28 By xujing 負庫存函数添加营运中心参数
 # Modify.........: No:TQC-D40056 13/07/17 By zhangweib 單頭出貨單號任意錄入，
 #                                            會報錯"單身資料均已轉至客戶驗收單,不可再轉!"，應提示出貨單號不存在
 # Modify.........: No.TQC-D50068 13/07/31 By SunLM axmt850審核后自動拋轉多角出通單
-# Modify.........: NO.MOD-D90147 13/09/26 By SunLM 增加qbe條件查詢存儲按鈕           
+# Modify.........: NO.MOD-D90147 13/09/26 By SunLM 增加qbe條件查詢存儲按鈕
 # Modify.........: NO.FUN-CC0009 13/10/16 By SunLM 调整t600_chk_ogb32()函数逻辑。
 # Modify.........: NO.TQC-DB0073 13/11/27 By wangrr 當出貨單通過axmt930裝箱單轉入時，在刪除出貨單資料時因將對應ogl08=NULL
 # Modify.........: ly 20170810  更改文件地址控制方式
@@ -1073,27 +1073,27 @@ DEFINE l_tmoga01 LIKE oga_file.oga01   #FUN-9B0039 mod
 DEFINE g_rxx04_point LIKE rxx_file.rxx04         #抵現積分              #FUN-BA0069 add
 #DEFINE g_ata00   LIKE ata_file.ata00   #FUN-A50054   #FUN-A60035 ---MARK   #MOD-C30250
 #FUN-A80081--Add--Begin
-DEFINE g_ogb1 DYNAMIC ARRAY OF RECORD                                                                                            
-              ogb04  LIKE ogb_file.ogb04,                                                                                         
+DEFINE g_ogb1 DYNAMIC ARRAY OF RECORD
+              ogb04  LIKE ogb_file.ogb04,
               ima02  LIKE ima_file.ima02,
               ima021 LIKE ima_file.ima021,
               ogb09  LIKE ogb_file.ogb09,
               ogb091 LIKE ogb_file.ogb091,
               ogb092 LIKE ogb_file.ogb092,
               img09  LIKE img_file.img09,
-              qty    LIKE type_file.num5             
-              END RECORD                                                                                                         
-DEFINE g_ogb1_t  RECORD                                                                                            
-              ogb04  LIKE ogb_file.ogb04,                                                                                         
+              qty    LIKE type_file.num5
+              END RECORD
+DEFINE g_ogb1_t  RECORD
+              ogb04  LIKE ogb_file.ogb04,
               ima02  LIKE ima_file.ima02,
               ima021 LIKE ima_file.ima021,
               ogb09  LIKE ogb_file.ogb09,
               ogb091 LIKE ogb_file.ogb091,
               ogb092 LIKE ogb_file.ogb092,
               img09  LIKE img_file.img09,
-              qty    LIKE type_file.num5                                                                                        
-              END RECORD 
-DEFINE l_ac1  LIKE type_file.num5 
+              qty    LIKE type_file.num5
+              END RECORD
+DEFINE l_ac1  LIKE type_file.num5
 DEFINE  g_oap041   LIKE oap_file.oap041   #tianry add 161221
 #FUN-A80081--Add--End
 DEFINE g_multi_ima01  STRING                 #FUN-AA0089  add
@@ -1146,17 +1146,17 @@ DEFINE g_rec_b4          LIKE type_file.num5
 DEFINE g_wc4             STRING
 DEFINE g_sal             LIKE type_file.chr4
 DEFINE g_flag_chk        LIKE type_file.chr1
-DEFINE g_flag3           LIKE type_file.chr1  
+DEFINE g_flag3           LIKE type_file.chr1
 DEFINE g_ogb04_1         LIKE ogb_file.ogb04
 #FUN-BC0064----add----end-----
 #FUN-CB0014----add----str-----
 DEFINE g_oga_l     DYNAMIC ARRAY OF RECORD
                     oga00      LIKE oga_file.oga00,
-                    oga08      LIKE oga_file.oga08,   
+                    oga08      LIKE oga_file.oga08,
                     oga01      LIKE oga_file.oga01,
                     oga02      LIKE oga_file.oga02,
                     oga011      LIKE oga_file.oga011,
-                    oga16      LIKE oga_file.oga16,                    
+                    oga16      LIKE oga_file.oga16,
                     oga03      LIKE oga_file.oga03,
                     oga032     LIKE oga_file.oga032,
                     oga14      LIKE oga_file.oga14,
@@ -1179,11 +1179,11 @@ DEFINE g_ogb05_t            LIKE ogb_file.ogb05     #No.FUN-BB0086
 DEFINE g_ogb910_t           LIKE ogb_file.ogb910   #No.FUN-BB0086
 DEFINE g_ogb913_t           LIKE ogb_file.ogb913   #No.FUN-BB0086
 DEFINE g_ogb916_t           LIKE ogb_file.ogb916   #No.FUN-BB0086
-DEFINE g_oah08              LIKE oah_file.oah08  #FUN-C40089 
+DEFINE g_oah08              LIKE oah_file.oah08  #FUN-C40089
 DEFINE g_flag2              LIKE type_file.chr1     #FUN-C80107  add
 #CHI-D30032 add start -----
-DEFINE g_loc_flag         LIKE type_file.chr1 
-DEFINE g_can_flag         LIKE type_file.chr1 
+DEFINE g_loc_flag         LIKE type_file.chr1
+DEFINE g_can_flag         LIKE type_file.chr1
 DEFINE d_ogb     DYNAMIC ARRAY OF RECORD
                  ogb03     LIKE ogb_file.ogb03,
                  ogb31     LIKE ogb_file.ogb31,
@@ -1200,7 +1200,7 @@ DEFINE d_ogb     DYNAMIC ARRAY OF RECORD
                  ogb912    LIKE ogb_file.ogb912,
                  ogb916    LIKE ogb_file.ogb916,
                  ogb917    LIKE ogb_file.ogb917,
-                 ogb17     LIKE ogb_file.ogb17, 
+                 ogb17     LIKE ogb_file.ogb17,
                  ogb09     LIKE ogb_file.ogb09,
                  ogb091    LIKE ogb_file.ogb091,
                  ogb092    LIKE ogb_file.ogb092
@@ -1221,7 +1221,7 @@ DEFINE d_ogb     DYNAMIC ARRAY OF RECORD
                  ogb912    LIKE ogb_file.ogb912,
                  ogb916    LIKE ogb_file.ogb916,
                  ogb917    LIKE ogb_file.ogb917,
-                 ogb17     LIKE ogb_file.ogb17,  
+                 ogb17     LIKE ogb_file.ogb17,
                  ogb09     LIKE ogb_file.ogb09,
                  ogb091    LIKE ogb_file.ogb091,
                  ogb092    LIKE ogb_file.ogb092
@@ -1231,7 +1231,7 @@ DEFINE  g_flag1  LIKE type_file.chr1  #add by huanglf160922
 
 
 FUNCTION t600(p_argv0,p_argv1,p_argv2)
-   DEFINE p_argv0    LIKE type_file.chr1     #FUN-680137 VARCHAR(1)   
+   DEFINE p_argv0    LIKE type_file.chr1     #FUN-680137 VARCHAR(1)
                                              #1.出貨通知單      2.出貨單
                                              #4.三角貿易出貨單  5.三角貿易通知單
                                              #6.代採買三角貿易
@@ -1256,7 +1256,7 @@ CALL cl_set_comp_visible("Page1",g_sma.sma95="Y")            #FUN-C80030 add
    END IF
 #FUN-AB0039 --Begin--
  #FUN-CB0014--add--str--
- IF p_argv0='9' THEN 
+ IF p_argv0='9' THEN
     CALL cl_set_comp_visible("oga55_l",FALSE)
  END IF
  #FUN-CB0014--add--end--
@@ -1278,7 +1278,7 @@ CALL cl_set_comp_visible("Page1",g_sma.sma95="Y")            #FUN-C80030 add
 #str----add by huanglf161208
 IF g_prog = 'axmt610' THEN
  CALL cl_set_act_visible("chdz",FALSE)
-END IF 
+END IF
 #str----end by huanglf161208
    #darcy:2023/06/20 add s---
    if g_prog = 'axmt628' then
@@ -1287,20 +1287,20 @@ END IF
       call cl_set_act_visible("add_ogaud06",false)
    end if
    #darcy:2023/06/20 add e---
-    #No.FUN-A90040  begin--  
-   IF g_azw.azw04 ='2' AND p_argv0 ='2' THEN 
+    #No.FUN-A90040  begin--
+   IF g_azw.azw04 ='2' AND p_argv0 ='2' THEN
       CALL cl_set_comp_visible("ogb48,ogb49,oga57",TRUE)     #FUN-AA0057 add oga57
    ELSE
       CALL cl_set_comp_visible("ogb48,ogb49,oga57",FALSE)     #FUN-AA0057 add oga57
    END IF
-   #No.FUN-A90040  end-- 
-   #CALL cl_set_act_visible("kefa",g_azw.azw04 ='2')     #TQC-AB0253  
+   #No.FUN-A90040  end--
+   #CALL cl_set_act_visible("kefa",g_azw.azw04 ='2')     #TQC-AB0253
    #CALL cl_set_act_visible("kefa",p_argv0 <>'1')     #TQC-AB0251
    CALL cl_set_act_visible("kefa",(p_argv0 <>'1' AND g_azw.azw04 ='2'))  #TQC-AC0191
- # CALL cl_set_comp_visible("ogb48,ogb49",p_argv0 ='2')    #FUN-AB0061 #FUN-AA0057 
+ # CALL cl_set_comp_visible("ogb48,ogb49",p_argv0 ='2')    #FUN-AB0061 #FUN-AA0057
    CALL cl_set_comp_visible("grhide",g_azw.azw04='2')                            #No.FUN-870007
    CALL cl_set_comp_visible("ogb44,ogb45,ogb46,ogb47",g_azw.azw04='2')           #No.FUN-870007
-   CALL cl_set_comp_visible("oga98",g_aza.aza88 = 'Y')                           #No.FUN-A50071 
+   CALL cl_set_comp_visible("oga98",g_aza.aza88 = 'Y')                           #No.FUN-A50071
    CALL cl_set_act_visible("cancel_price1,modify_rate,pay_money,money_detail",g_azw.azw04='2') #No.FUN-870007
   #CALL cl_set_act_visible("discount_detail",g_prog='axmt620') #FUN-A10110 ADD
   #CALL cl_set_act_visible("discount_detail",p_argv0 ='2')     #FUN-AC0012    #MOD-B30467 MARK
@@ -1310,16 +1310,16 @@ END IF
    #TQC-AC0177-------add----str-----------------------
    CALL cl_set_comp_visible("ogb48,ogb49",FALSE)
    IF g_azw.azw04 ='2' AND p_argv0 ='2' THEN
-      CALL cl_set_comp_visible("ogb48,ogb49",TRUE) 
+      CALL cl_set_comp_visible("ogb48,ogb49",TRUE)
    END IF
-   #TQC-AC0177-------add----end----------------------- 
+   #TQC-AC0177-------add----end-----------------------
 #FUN-C30072 add begin ----
    IF p_argv0 = '1' THEN
       CALL cl_set_act_visible("pay_money",FALSE)
    END IF
 #FUN-C30072 add end -----
    #FUN-BC0064-------add----str----
-   IF g_azw.azw04 = '2' THEN                  
+   IF g_azw.azw04 = '2' THEN
       CALL cl_set_act_visible("sal",TRUE)
    ELSE
       CALL cl_set_act_visible("sal",FALSE)
@@ -1335,11 +1335,11 @@ END IF
 #  IF g_argv0 = '2' AND g_prog ="axmt620_slk" THEN                            #TQC-C30327 mark
    IF g_argv0 = '2' AND (g_prog = "axmt620_slk" OR g_prog = "axmt620") AND g_azw.azw04='2' THEN   #TQC-C30327 add #TQC-C40189 add azw04
       CALL cl_set_act_visible("kefa,sal,cancel_price1,modify_rate",TRUE)
-   END IF  
+   END IF
 #TQC-C30327 add begin ---
    IF g_argv0 = '4' AND (g_prog = "axmt820" OR g_prog = "axmt820_slk") AND g_azw.azw04='2' THEN   #TQC-C40189 add azw04
-      CALL cl_set_act_visible("kefa,sal,cancel_price1,modify_rate",TRUE) 
-   END IF  
+      CALL cl_set_act_visible("kefa,sal,cancel_price1,modify_rate",TRUE)
+   END IF
    IF g_argv0 = '5' AND (g_prog = "axmt850" OR g_prog = "axmt850_slk") AND g_azw.azw04='2' THEN   #TQC-C40189 add azw04
       CALL cl_set_act_visible("kefa,sal,cancel_price1,modify_rate",TRUE)
    END IF
@@ -1348,7 +1348,7 @@ END IF
    END IF
 #TQC-C30327 add end -----
 #MOD-C30348 add end -----
-   LET g_forupd_sql = "SELECT * FROM oga_file WHERE oga01 = ? FOR UPDATE" 
+   LET g_forupd_sql = "SELECT * FROM oga_file WHERE oga01 = ? FOR UPDATE"
    LET g_forupd_sql = cl_forupd_sql(g_forupd_sql)
 
    DECLARE t600_cl CURSOR FROM g_forupd_sql
@@ -1357,8 +1357,8 @@ END IF
    END IF
 
    LET l_dbsold = g_plant      #MOD-890080  add
-   LET g_check  = 'Y'          #MOD-990097 
-   
+   LET g_check  = 'Y'          #MOD-990097
+
    IF g_prog='atmt321' THEN    #配送單維護作業
       CALL t321_q2()
       CALL t321_menu2()
@@ -1381,7 +1381,7 @@ END IF
      #設定簽核功能及哪些 action 在簽核狀態時是不可被執行的
      #FUN-A50029 mod str ---
       #FUN-D20025 add undo_void
-      CALL aws_efapp_flowaction("insert, modify, delete, reproduce, detail, query, locale, void,undo_void, confirm, undo_confirm, easyflow_approval, unit_price, address, other_data, modify_wh_loc, modify_shipping_customer, gen_entry_sheet, memo, deduct_inventory, undo_deduct, trsf_to_ar_invo, a_r, release_ov_lmt_credit, entry_sheet,,entry_sheet2, gen_on_check_note,qc_reject_q, mix_order_auto_generate, confirm_t321, undo_confirm_t321,unit_price")  #TQC-750026 modify  #TQC-7B0107 modify   #MOD-940011 #CHI-AC0002 add entry_sheet2 
+      CALL aws_efapp_flowaction("insert, modify, delete, reproduce, detail, query, locale, void,undo_void, confirm, undo_confirm, easyflow_approval, unit_price, address, other_data, modify_wh_loc, modify_shipping_customer, gen_entry_sheet, memo, deduct_inventory, undo_deduct, trsf_to_ar_invo, a_r, release_ov_lmt_credit, entry_sheet,,entry_sheet2, gen_on_check_note,qc_reject_q, mix_order_auto_generate, confirm_t321, undo_confirm_t321,unit_price")  #TQC-750026 modify  #TQC-7B0107 modify   #MOD-940011 #CHI-AC0002 add entry_sheet2
                                                             #TQC-B40204 add unit_price
      #FUN-A50029 mod end ---
            RETURNING g_laststage
@@ -1442,6 +1442,8 @@ END IF
          CALL t600_q()
       END IF
 
+      call cl_set_act_visible('action_stock_post',false) #darcy add
+
       CALL t600_menu()
 
    END IF   #FUN-630102 add
@@ -1459,8 +1461,8 @@ FUNCTION t600_cs()
    CALL cl_set_comp_visible("ogb40",g_azw.azw04='2' AND g_argv0 ='2') #FUN-B50054
 
 #FUN-B90104-----add--------begin---------------
-   IF cl_null(g_argv1) AND cl_null(begin_no) AND NOT (NOT cl_null(g_argv2) AND g_argv0 MATCHES '[89]') THEN  
-      INITIALIZE g_oga.* TO NULL    
+   IF cl_null(g_argv1) AND cl_null(begin_no) AND NOT (NOT cl_null(g_argv2) AND g_argv0 MATCHES '[89]') THEN
+      INITIALIZE g_oga.* TO NULL
 #FUN-C20006--mark--begin------------------------------
 #&ifdef SLK
 #     DIALOG ATTRIBUTES(UNBUFFERED)
@@ -1547,32 +1549,32 @@ FUNCTION t600_cs()
            END CONSTRUCT
 #FUN-C20006---add----------------------
 #FUN-C20006-----end--------------------------
-           CONSTRUCT g_wc2 ON ogb03,ogb31,ogb32,ogb48,ogb49,ogb04,ogb06,ogb11,ogb1001,ogb40,ogb1012, 
-                              ogb17,ogb09,ogb091,ogb092,ogb1003,ogb19,ogb05,ogb12, 
+           CONSTRUCT g_wc2 ON ogb03,ogb31,ogb32,ogb48,ogb49,ogb04,ogb06,ogb11,ogb1001,ogb40,ogb1012,
+                              ogb17,ogb09,ogb091,ogb092,ogb1003,ogb19,ogb05,ogb12,
                               ogb913,ogb914,ogb915,ogb910,ogb911,
                               ogb912,ogb916,ogb917,ogb65,  #FUN-C50097 ADD ogb52 ,ogb52
-                              ogb41,ogb42,ogb43,         
-                              ogb1004,ogb1002,ogb37,ogb13,ogb1006,ogb14,ogb14t,ogb930,ogb908   
+                              ogb41,ogb42,ogb43,
+                              ogb1004,ogb1002,ogb37,ogb13,ogb1006,ogb14,ogb14t,ogb930,ogb908
                              ,ogbud01,ogbud02,ogbud03,ogbud04,ogbud05
                              ,ogbud06,ogbud07,ogbud08,ogbud09,ogbud10
                              ,ogbud11,ogbud12,ogbud13,ogbud14,ogbud15
-                             ,ogb44,ogb45,ogb46,ogb47      
+                             ,ogb44,ogb45,ogb46,ogb47
                              ,ogbiicd07      #FUN-C30289
-                FROM s_b1[1].ogb03,s_b1[1].ogb31, s_b1[1].ogb32,s_b1[1].ogb48,s_b1[1].ogb49, 
-                     s_b1[1].ogb04, s_b1[1].ogb06,  s_b1[1].ogb11,s_b1[1].ogb1001,s_b1[1].ogb40,s_b1[1].ogb1012, 
+                FROM s_b1[1].ogb03,s_b1[1].ogb31, s_b1[1].ogb32,s_b1[1].ogb48,s_b1[1].ogb49,
+                     s_b1[1].ogb04, s_b1[1].ogb06,  s_b1[1].ogb11,s_b1[1].ogb1001,s_b1[1].ogb40,s_b1[1].ogb1012,
                      s_b1[1].ogb17, s_b1[1].ogb09,  s_b1[1].ogb091,s_b1[1].ogb092,s_b1[1].ogb1003,
                      s_b1[1].ogb19, s_b1[1].ogb05,  s_b1[1].ogb12,
                      s_b1[1].ogb913,s_b1[1].ogb914, s_b1[1].ogb915,
                      s_b1[1].ogb910,s_b1[1].ogb911, s_b1[1].ogb912,
                      s_b1[1].ogb916,s_b1[1].ogb917, s_b1[1].ogb65, #FUN-C50097 ADD ogb52 ,s_b1[1].ogb52
-                     s_b1[1].ogb41, s_b1[1].ogb42,  s_b1[1].ogb43, 
-                     s_b1[1].ogb1004,s_b1[1].ogb1002,s_b1[1].ogb37, s_b1[1].ogb13,  
+                     s_b1[1].ogb41, s_b1[1].ogb42,  s_b1[1].ogb43,
+                     s_b1[1].ogb1004,s_b1[1].ogb1002,s_b1[1].ogb37, s_b1[1].ogb13,
                      s_b1[1].ogb1006,s_b1[1].ogb14,s_b1[1].ogb14t,
-                     s_b1[1].ogb930,s_b1[1].ogb908 
+                     s_b1[1].ogb930,s_b1[1].ogb908
                     ,s_b1[1].ogbud01,s_b1[1].ogbud02,s_b1[1].ogbud03,s_b1[1].ogbud04,s_b1[1].ogbud05
                     ,s_b1[1].ogbud06,s_b1[1].ogbud07,s_b1[1].ogbud08,s_b1[1].ogbud09,s_b1[1].ogbud10
                     ,s_b1[1].ogbud11,s_b1[1].ogbud12,s_b1[1].ogbud13,s_b1[1].ogbud14,s_b1[1].ogbud15
-                    ,s_b1[1].ogb44,s_b1[1].ogb45,s_b1[1].ogb46,s_b1[1].ogb47  
+                    ,s_b1[1].ogb44,s_b1[1].ogb45,s_b1[1].ogb46,s_b1[1].ogb47
                     ,s_b1[1].ogbiicd07  #FUN-C30289
                   BEFORE CONSTRUCT
                      CALL cl_qbe_display_condition(lc_qbe_sn)
@@ -1606,9 +1608,9 @@ FUNCTION t600_cs()
                          WHEN g_argv0 = '4' LET g_qryparam.arg1 = '4'
                          WHEN g_argv0 = '5' LET g_qryparam.arg1 = '5'
                          WHEN g_argv0 = '6' LET g_qryparam.arg1 = '6'
-                         WHEN g_argv0 = '8' LET g_qryparam.arg1 = '8'  
-                         WHEN g_argv0 = '9' LET g_qryparam.arg1 = '9' 
-                         WHEN g_argv0 = 'A' LET g_qryparam.arg1 = 'A' 
+                         WHEN g_argv0 = '8' LET g_qryparam.arg1 = '8'
+                         WHEN g_argv0 = '9' LET g_qryparam.arg1 = '9'
+                         WHEN g_argv0 = 'A' LET g_qryparam.arg1 = 'A'
                       END CASE
                       CALL cl_create_qry() RETURNING g_qryparam.multiret
                       DISPLAY g_qryparam.multiret TO oga01
@@ -1620,15 +1622,15 @@ FUNCTION t600_cs()
                          WHEN g_argv0 = '4' LET l_type = '5'
                          WHEN g_argv0 = '5' LET l_type = '4'
                          WHEN g_argv0 = '6' LET l_type = '5'
-                         #WHEN g_argv0 = '8' LET l_type = '7'  
-                         #WHEN g_argv0 = '9' LET l_type = '7' 
-                         WHEN g_argv0 = '8' LET l_type = '2' 
+                         #WHEN g_argv0 = '8' LET l_type = '7'
+                         #WHEN g_argv0 = '9' LET l_type = '7'
+                         WHEN g_argv0 = '8' LET l_type = '2'
                          WHEN g_argv0 = '9' LET l_type = '2'
                          WHEN g_argv0 = 'A' LET l_type = 'A'
                       END CASE
                       CALL cl_init_qry_var()
                       LET g_qryparam.form ="q_oga"
-                      LET g_qryparam.state = "c"  
+                      LET g_qryparam.state = "c"
                       LET g_qryparam.where = "  (oga09='",l_type,"') "
                       #FUN-BB0167 add begin------------------------
                       IF g_argv0 = '8' OR g_argv0 = '9' THEN
@@ -1661,63 +1663,63 @@ FUNCTION t600_cs()
                       CALL cl_create_qry() RETURNING g_qryparam.multiret
                       DISPLAY g_qryparam.multiret TO oga27
                       NEXT FIELD oga27
-                      WHEN INFIELD(oga83)                                                                                              
-                            CALL cl_init_qry_var()                                                                                     
-                            LET g_qryparam.state = "c"                                                                                 
-                            LET g_qryparam.form ="q_oga83"                                                                             
-                            CALL cl_create_qry() RETURNING g_qryparam.multiret                                                         
-                            DISPLAY g_qryparam.multiret TO oga83                                                                       
-                            NEXT FIELD oga83                                                                                           
-                      WHEN INFIELD(oga84)                                                                                              
-                            CALL cl_init_qry_var()                                                                                     
-                            LET g_qryparam.state = "c"                                                                                 
-                            LET g_qryparam.form ="q_oga84"                                                                             
-                            CALL cl_create_qry() RETURNING g_qryparam.multiret                                                         
-                            DISPLAY g_qryparam.multiret TO oga84                                                                       
-                            NEXT FIELD oga84                                                                                           
-                      WHEN INFIELD(oga86)                                                                                              
-                            CALL cl_init_qry_var()                                                                                     
-                            LET g_qryparam.state = "c"                                                                                 
-                            LET g_qryparam.form ="q_oga86"     
-                            CALL cl_create_qry() RETURNING g_qryparam.multiret                                                         
-                            DISPLAY g_qryparam.multiret TO oga86                                                                       
-                            NEXT FIELD oga86                                                                                           
-                      WHEN INFIELD(ogaconu)                                                                                           
-                            CALL cl_init_qry_var()                                                                                     
-                            LET g_qryparam.state = "c"                                                                                 
-                            LET g_qryparam.form ="q_ogaconu"                                                                          
-                            CALL cl_create_qry() RETURNING g_qryparam.multiret                                                         
-                            DISPLAY g_qryparam.multiret TO ogaconu                                                                    
-                            NEXT FIELD ogaconu               
+                      WHEN INFIELD(oga83)
+                            CALL cl_init_qry_var()
+                            LET g_qryparam.state = "c"
+                            LET g_qryparam.form ="q_oga83"
+                            CALL cl_create_qry() RETURNING g_qryparam.multiret
+                            DISPLAY g_qryparam.multiret TO oga83
+                            NEXT FIELD oga83
+                      WHEN INFIELD(oga84)
+                            CALL cl_init_qry_var()
+                            LET g_qryparam.state = "c"
+                            LET g_qryparam.form ="q_oga84"
+                            CALL cl_create_qry() RETURNING g_qryparam.multiret
+                            DISPLAY g_qryparam.multiret TO oga84
+                            NEXT FIELD oga84
+                      WHEN INFIELD(oga86)
+                            CALL cl_init_qry_var()
+                            LET g_qryparam.state = "c"
+                            LET g_qryparam.form ="q_oga86"
+                            CALL cl_create_qry() RETURNING g_qryparam.multiret
+                            DISPLAY g_qryparam.multiret TO oga86
+                            NEXT FIELD oga86
+                      WHEN INFIELD(ogaconu)
+                            CALL cl_init_qry_var()
+                            LET g_qryparam.state = "c"
+                            LET g_qryparam.form ="q_ogaconu"
+                            CALL cl_create_qry() RETURNING g_qryparam.multiret
+                            DISPLAY g_qryparam.multiret TO ogaconu
+                            NEXT FIELD ogaconu
                      WHEN INFIELD(ogaplant)
                             CALL cl_init_qry_var()
                             LET g_qryparam.state = "c"
                             LET g_qryparam.form ="q_azp"
                             CALL cl_create_qry() RETURNING g_qryparam.multiret
                             DISPLAY g_qryparam.multiret TO ogaplant
-                            NEXT FIELD ogaplant                                                                         
+                            NEXT FIELD ogaplant
                  WHEN INFIELD(oga16)
                       IF g_argv0 = "A" THEN
                          CALL cl_init_qry_var()
                          LET g_qryparam.state = "c"
-                         LET g_qryparam.form ="q_oea16"  
+                         LET g_qryparam.form ="q_oea16"
                          CALL cl_create_qry() RETURNING g_qryparam.multiret
                       ELSE
                          IF g_argv0='4' OR g_argv0='5' OR g_argv0='6' THEN
                             CALL q_oea(TRUE,TRUE,g_oga.oga16,'','2')
-                                 RETURNING g_qryparam.multiret 
+                                 RETURNING g_qryparam.multiret
                          ELSE
                             CALL q_oea(TRUE,TRUE,g_oga.oga16,'','1')
-                                 RETURNING g_qryparam.multiret 
+                                 RETURNING g_qryparam.multiret
                          END IF
-                      END IF 
-                      DISPLAY g_qryparam.multiret TO oga16  
+                      END IF
+                      DISPLAY g_qryparam.multiret TO oga16
                       NEXT FIELD oga16
 
                  WHEN INFIELD(oga18)
                       CALL cl_init_qry_var()
                       LET g_qryparam.state = "c"
-                      LET g_qryparam.form ="q_occ6"   
+                      LET g_qryparam.form ="q_occ6"
                       CALL cl_create_qry() RETURNING g_qryparam.multiret
                       DISPLAY g_qryparam.multiret TO oga18
                       NEXT FIELD oga18
@@ -1725,12 +1727,12 @@ FUNCTION t600_cs()
                  WHEN INFIELD(oga56)
                       CALL cl_init_qry_var()
                       LET g_qryparam.state = "c"
-                      LET g_qryparam.form ="q_oga56"   
+                      LET g_qryparam.form ="q_oga56"
                       CALL cl_create_qry() RETURNING g_qryparam.multiret
                       DISPLAY g_qryparam.multiret TO oga56
                       NEXT FIELD oga56
 #FUN-C50097 ADD END
-                 WHEN INFIELD(oga03) 
+                 WHEN INFIELD(oga03)
                       CALL cl_init_qry_var()
                       LET g_qryparam.state = "c"
                       LET g_qryparam.form ="q_occ3"
@@ -1821,11 +1823,11 @@ FUNCTION t600_cs()
                  WHEN INFIELD(oga1011)
                       CALL cl_init_qry_var()
                       LET g_qryparam.state = "c"
-                      LET g_qryparam.form ="q_occ7"  
+                      LET g_qryparam.form ="q_occ7"
                       CALL cl_create_qry() RETURNING g_qryparam.multiret
                       DISPLAY g_qryparam.multiret TO oga1011
                       NEXT FIELD oga1011
-                 WHEN INFIELD(oga03)  
+                 WHEN INFIELD(oga03)
                       CALL cl_init_qry_var()
                       LET g_qryparam.state = "c"
                       LET g_qryparam.form ="q_occ5"
@@ -1865,10 +1867,10 @@ FUNCTION t600_cs()
    #str----end by huanglf170204
                  WHEN INFIELD(ogb31)
                        IF g_argv0='4' OR g_argv0='5' OR g_argv0='6' THEN
-                           CALL q_oea(TRUE ,TRUE,g_ogb[1].ogb31,g_oga.oga18,'2')  
+                           CALL q_oea(TRUE ,TRUE,g_ogb[1].ogb31,g_oga.oga18,'2')
                                  RETURNING g_qryparam.multiret
                        ELSE
-                           CALL q_oea(TRUE ,TRUE,g_ogb[1].ogb31,g_oga.oga18,'1') 
+                           CALL q_oea(TRUE ,TRUE,g_ogb[1].ogb31,g_oga.oga18,'1')
                                  RETURNING g_qryparam.multiret
                        END IF
                        DISPLAY g_qryparam.multiret TO ogb31
@@ -1888,18 +1890,18 @@ FUNCTION t600_cs()
                        CALL q_coc2(TRUE,TRUE,g_ogb[1].ogb908,'',g_oga.oga02,'0',
                                    '',g_ogb[1].ogb04)
                        RETURNING g_ogb[1].ogb908
-                       DISPLAY BY NAME g_ogb[1].ogb908     
+                       DISPLAY BY NAME g_ogb[1].ogb908
                        NEXT FIELD ogb908
                  #TQC-C60228 -- add -- begin
                   WHEN INFIELD(ogb05)
                        CALL cl_init_qry_var()
                        LET g_qryparam.state = "c"
                        LET g_qryparam.form ="q_ogb051"
-                       CALL cl_create_qry() RETURNING g_qryparam.multiret  
-                       DISPLAY g_qryparam.multiret TO ogb05   
+                       CALL cl_create_qry() RETURNING g_qryparam.multiret
+                       DISPLAY g_qryparam.multiret TO ogb05
                        NEXT FIELD ogb05
                  #TQC-C60228 -- add -- end
-                  WHEN INFIELD(ogb09) 
+                  WHEN INFIELD(ogb09)
                        CALL q_imd_1(TRUE,TRUE,"","","","","") RETURNING g_qryparam.multiret
                        DISPLAY g_qryparam.multiret TO ogb09
                        NEXT FIELD ogb09
@@ -1948,15 +1950,15 @@ FUNCTION t600_cs()
                   WHEN INFIELD(ogb1001)
                        CALL cl_init_qry_var()
                        LET g_qryparam.state = "c"
-                       LET g_qryparam.default1 = g_ogb[1].ogb1001  
+                       LET g_qryparam.default1 = g_ogb[1].ogb1001
                        IF g_aza.aza50 = 'Y' THEN
-                          LET g_qryparam.form ="q_azf03"  
-                          LET g_qryparam.arg1 ="2"   
-                          LET g_qryparam.arg2 ="1"    
+                          LET g_qryparam.form ="q_azf03"
+                          LET g_qryparam.arg1 ="2"
+                          LET g_qryparam.arg2 ="1"
                        ELSE
-                          LET g_qryparam.form ="q_azf03" 
-                          LET g_qryparam.arg1 ="2"      
-                          LET g_qryparam.arg2 ="1"     
+                          LET g_qryparam.form ="q_azf03"
+                          LET g_qryparam.arg1 ="2"
+                          LET g_qryparam.arg2 ="1"
                        END IF
                        CALL cl_create_qry() RETURNING g_qryparam.multiret
                        DISPLAY g_qryparam.multiret TO ogb1001
@@ -1968,7 +1970,7 @@ FUNCTION t600_cs()
                        CALL cl_create_qry() RETURNING g_qryparam.multiret
                        DISPLAY g_qryparam.multiret TO ogb910
                        NEXT FIELD ogb910
- 
+
                   WHEN INFIELD(ogb916)
                        CALL cl_init_qry_var()
                        LET g_qryparam.state = "c"
@@ -1976,13 +1978,13 @@ FUNCTION t600_cs()
                        CALL cl_create_qry() RETURNING g_qryparam.multiret
                        DISPLAY g_qryparam.multiret TO ogb916
                        NEXT FIELD ogb916
- 
+
                   WHEN INFIELD(ogb65)
                        CALL cl_init_qry_var()
-                       LET g_qryparam.form ="q_azf03" 
+                       LET g_qryparam.form ="q_azf03"
                        LET g_qryparam.state = "c"
                        LET g_qryparam.arg1 = "2"
-                       LET g_qryparam.arg2 = "5"     
+                       LET g_qryparam.arg2 = "5"
                        DISPLAY g_qryparam.multiret TO ogb65
                        NEXT FIELD ogb65
                   WHEN INFIELD(ogb930)
@@ -2000,10 +2002,10 @@ FUNCTION t600_cs()
                        CALL cl_create_qry() RETURNING g_qryparam.multiret
                        DISPLAY g_qryparam.multiret TO ogbiicd07
                        NEXT FIELD ogbiicd07
-                  #FUN-C30289---end               
+                  #FUN-C30289---end
                   WHEN INFIELD(b2_31)
                        IF g_argv0='4' OR g_argv0='5' OR g_argv0='6' THEN
-                          CALL q_oea(TRUE ,TRUE,g_b2[1].ogb31,g_oga.oga18,'2') 
+                          CALL q_oea(TRUE ,TRUE,g_b2[1].ogb31,g_oga.oga18,'2')
                                  RETURNING g_qryparam.multiret
                        ELSE
                           CALL q_oea(TRUE ,TRUE,g_b2[1].ogb31,g_oga.oga18,'1')
@@ -2016,8 +2018,8 @@ FUNCTION t600_cs()
                        LET g_qryparam.state = "c"
                        LET g_qryparam.default1=g_b2[l_ac].ogb1001
                        LET g_qryparam.form ="q_azf02"
-                       LET g_qryparam.arg1 ="2"  
-                       LET g_qryparam.arg2 ="3" 
+                       LET g_qryparam.arg1 ="2"
+                       LET g_qryparam.arg2 ="3"
                        CALL cl_create_qry() RETURNING g_qryparam.multiret
                        DISPLAY g_qryparam.multiret TO b2_1001
                        NEXT FIELD b2_1001
@@ -2048,7 +2050,7 @@ FUNCTION t600_cs()
              CALL cl_qbe_display_condition(lc_qbe_sn)
          #MOD-D90147 add --beg--
          ON ACTION qbe_save
-            CALL cl_qbe_save() 
+            CALL cl_qbe_save()
          #MOD-D90147 add --end--
           ON ACTION accept
              EXIT DIALOG
@@ -2080,7 +2082,7 @@ FUNCTION t600_cs()
 #                                ogapost,ogamksg,oga55,oga25,oga23,oga24,oga21,
 #                                oga211,oga212,oga213,oga1011,oga1010,
 #                                oga1014,oga1012 , #oga914,  #FUN-930104 mark oga914 #FUN-6C0050 新增入庫單號
-#                                oga83,oga84,oga85,oga86,oga87,ogaplant,oga57,oga88,oga89,oga90,oga91,oga92,  #No.FUN-870007 #FUN-AA0057 add oga57                              
+#                                oga83,oga84,oga85,oga86,oga87,ogaplant,oga57,oga88,oga89,oga90,oga91,oga92,  #No.FUN-870007 #FUN-AA0057 add oga57
 #                                oga93,oga98,oga94,oga95,oga96,oga97,ogaconu,ogacond,ogacont,           #FUN-A30063 ADD cont          #No.FUN-870007  #FUN-A50071 add oga98
 #                                oga65,oga72,oga13,oga05,oga10,oga914,  #,ogauser,ogagrup,ogamodu,ogadate    #CHI-740014 解除remark   #FUN-A60004 add oga72
 #                                ogaud01,ogaud02,ogaud03,ogaud04,ogaud05,
@@ -2153,41 +2155,41 @@ FUNCTION t600_cs()
 #                   CALL cl_create_qry() RETURNING g_qryparam.multiret
 #                   DISPLAY g_qryparam.multiret TO oga27
 #                   NEXT FIELD oga27
-#                   WHEN INFIELD(oga83)                                                                                              
-#                         CALL cl_init_qry_var()                                                                                     
-#                         LET g_qryparam.state = "c"                                                                                 
-#                         LET g_qryparam.form ="q_oga83"                                                                             
-#                         CALL cl_create_qry() RETURNING g_qryparam.multiret                                                         
-#                         DISPLAY g_qryparam.multiret TO oga83                                                                       
-#                         NEXT FIELD oga83                                                                                           
-#                   WHEN INFIELD(oga84)                                                                                              
-#                         CALL cl_init_qry_var()                                                                                     
-#                         LET g_qryparam.state = "c"                                                                                 
-#                         LET g_qryparam.form ="q_oga84"                                                                             
-#                         CALL cl_create_qry() RETURNING g_qryparam.multiret                                                         
-#                         DISPLAY g_qryparam.multiret TO oga84                                                                       
-#                         NEXT FIELD oga84                                                                                           
-#                   WHEN INFIELD(oga86)                                                                                              
-#                         CALL cl_init_qry_var()                                                                                     
-#                         LET g_qryparam.state = "c"                                                                                 
-#                         LET g_qryparam.form ="q_oga86"     
-#                         CALL cl_create_qry() RETURNING g_qryparam.multiret                                                         
-#                         DISPLAY g_qryparam.multiret TO oga86                                                                       
-#                         NEXT FIELD oga86                                                                                           
-#                   WHEN INFIELD(ogaconu)                                                                                           
-#                         CALL cl_init_qry_var()                                                                                     
-#                         LET g_qryparam.state = "c"                                                                                 
-#                         LET g_qryparam.form ="q_ogaconu"                                                                          
-#                         CALL cl_create_qry() RETURNING g_qryparam.multiret                                                         
-#                         DISPLAY g_qryparam.multiret TO ogaconu                                                                    
-#                         NEXT FIELD ogaconu               
+#                   WHEN INFIELD(oga83)
+#                         CALL cl_init_qry_var()
+#                         LET g_qryparam.state = "c"
+#                         LET g_qryparam.form ="q_oga83"
+#                         CALL cl_create_qry() RETURNING g_qryparam.multiret
+#                         DISPLAY g_qryparam.multiret TO oga83
+#                         NEXT FIELD oga83
+#                   WHEN INFIELD(oga84)
+#                         CALL cl_init_qry_var()
+#                         LET g_qryparam.state = "c"
+#                         LET g_qryparam.form ="q_oga84"
+#                         CALL cl_create_qry() RETURNING g_qryparam.multiret
+#                         DISPLAY g_qryparam.multiret TO oga84
+#                         NEXT FIELD oga84
+#                   WHEN INFIELD(oga86)
+#                         CALL cl_init_qry_var()
+#                         LET g_qryparam.state = "c"
+#                         LET g_qryparam.form ="q_oga86"
+#                         CALL cl_create_qry() RETURNING g_qryparam.multiret
+#                         DISPLAY g_qryparam.multiret TO oga86
+#                         NEXT FIELD oga86
+#                   WHEN INFIELD(ogaconu)
+#                         CALL cl_init_qry_var()
+#                         LET g_qryparam.state = "c"
+#                         LET g_qryparam.form ="q_ogaconu"
+#                         CALL cl_create_qry() RETURNING g_qryparam.multiret
+#                         DISPLAY g_qryparam.multiret TO ogaconu
+#                         NEXT FIELD ogaconu
 #                  WHEN INFIELD(ogaplant)
 #                         CALL cl_init_qry_var()
 #                         LET g_qryparam.state = "c"
 #                         LET g_qryparam.form ="q_azp"
 #                         CALL cl_create_qry() RETURNING g_qryparam.multiret
 #                         DISPLAY g_qryparam.multiret TO ogaplant
-#                         NEXT FIELD ogaplant                                                                         
+#                         NEXT FIELD ogaplant
 #              WHEN INFIELD(oga16)
 #                   IF g_argv0 = "A" THEN
 #                      CALL cl_init_qry_var()
@@ -2376,9 +2378,9 @@ FUNCTION t600_cs()
 #                          ,ogbud06,ogbud07,ogbud08,ogbud09,ogbud10
 #                          ,ogbud11,ogbud12,ogbud13,ogbud14,ogbud15
 #                          ,ogb44,ogb45,ogb46,ogb47           #No.FUN-870007
-#&ifdef ICD                          
+#&ifdef ICD
 #                          ,ogbiicd028,ogbiicd029                #FUN-B30187
-#&endif                          
+#&endif
 #             FROM s_b1[1].ogb03,s_b1[1].ogb31, s_b1[1].ogb32,s_b1[1].ogb48,s_b1[1].ogb49,  #No.FUN-A90040
 #                  s_b1[1].ogb04, s_b1[1].ogb06,  s_b1[1].ogb11,s_b1[1].ogb1001,s_b1[1].ogb40,s_b1[1].ogb1012,   #No.FUN-610064 #FUN-B50054
 #                  s_b1[1].ogb17, s_b1[1].ogb09,  s_b1[1].ogb091,s_b1[1].ogb092,s_b1[1].ogb1003,  #No:MOD-570264  No.FUN-610064
@@ -2399,11 +2401,11 @@ FUNCTION t600_cs()
 #                  ,s_b1[1].ogb44,s_b1[1].ogb45,s_b1[1].ogb46,s_b1[1].ogb47   #No.FUN-870007
 #&ifdef ICD
 #                  ,s_b1[1].ogbiicd028,s_b1[1].ogbiicd029    #FUN-B30187
-#&endif                  
+#&endif
 #                   BEFORE CONSTRUCT
 #                      CALL cl_qbe_display_condition(lc_qbe_sn)
 #       ON ACTION controlp
-#            CASE 
+#            CASE
 #                WHEN INFIELD(ogb31)
 #                      IF g_argv0='4' OR g_argv0='5' OR g_argv0='6' THEN
 #                          CALL q_oea(TRUE ,TRUE,g_ogb[1].ogb31,g_oga.oga18,'2')   #No.FUN-610064
@@ -2414,7 +2416,7 @@ FUNCTION t600_cs()
 #                      END IF
 #                      DISPLAY g_qryparam.multiret TO ogb31
 #                      NEXT FIELD ogb31
-#          #No.FUN-A90040  begin--           
+#          #No.FUN-A90040  begin--
 #                WHEN INFIELD(ogb48)
 #                      CALL cl_init_qry_var()
 #                      LET g_qryparam.form ="q_ogb48"
@@ -2422,7 +2424,7 @@ FUNCTION t600_cs()
 #                      CALL cl_create_qry() RETURNING g_qryparam.multiret
 #                      DISPLAY g_qryparam.multiret TO ogb48
 #                      NEXT FIELD ogb48
-#          #No.FUN-A90040    end--        
+#          #No.FUN-A90040    end--
 #                 WHEN INFIELD(ogb04)
 ##FUN-AA0059---------mod------------str-----------------
 ##                     CALL cl_init_qry_var()
@@ -2449,7 +2451,7 @@ FUNCTION t600_cs()
 #                       CALL q_imd_1(TRUE,TRUE,"","","","","") RETURNING g_qryparam.multiret
 #                       DISPLAY g_qryparam.multiret TO ogb09
 #                       NEXT FIELD ogb09
-#                       #No.FUN-AA0048  --End  
+#                       #No.FUN-AA0048  --End
 #
 #              WHEN INFIELD(ogb913)
 #                 CALL cl_init_qry_var()
@@ -2499,15 +2501,15 @@ FUNCTION t600_cs()
 #              WHEN INFIELD(ogb1001)
 #                 CALL cl_init_qry_var()
 #                 LET g_qryparam.state = "c"
-#                 LET g_qryparam.default1 = g_ogb[1].ogb1001     #No.TQC-7C0055     #MOD-830036 
+#                 LET g_qryparam.default1 = g_ogb[1].ogb1001     #No.TQC-7C0055     #MOD-830036
 #                 IF g_aza.aza50 = 'Y' THEN
-#                    LET g_qryparam.form ="q_azf03"  
-#                    LET g_qryparam.arg1 ="2"   
-#                    LET g_qryparam.arg2 ="1"    
+#                    LET g_qryparam.form ="q_azf03"
+#                    LET g_qryparam.arg1 ="2"
+#                    LET g_qryparam.arg2 ="1"
 #                 ELSE
 #                    LET g_qryparam.form ="q_azf03"  #No.FUN-930104
 #                    LET g_qryparam.arg1 ="2"        #No.FUN-930104
-#                    LET g_qryparam.arg2 ="1"        #No.FUN-930104 
+#                    LET g_qryparam.arg2 ="1"        #No.FUN-930104
 #                 END IF
 #                 CALL cl_create_qry() RETURNING g_qryparam.multiret
 #                 DISPLAY g_qryparam.multiret TO ogb1001
@@ -2533,7 +2535,7 @@ FUNCTION t600_cs()
 #                 LET g_qryparam.form ="q_azf03"  #No.FUN-930104
 #                 LET g_qryparam.state = "c"
 #                 LET g_qryparam.arg1 = "2"
-#                 LET g_qryparam.arg2 = "5"       #No.FUN-930104                 
+#                 LET g_qryparam.arg2 = "5"       #No.FUN-930104
 #                 DISPLAY g_qryparam.multiret TO ogb65
 #                 NEXT FIELD ogb65
 #              WHEN INFIELD(ogb930)
@@ -2543,15 +2545,15 @@ FUNCTION t600_cs()
 #                 CALL cl_create_qry() RETURNING g_qryparam.multiret
 #                 DISPLAY g_qryparam.multiret TO ogb930
 #                 NEXT FIELD ogb930
-#&ifdef ICD                        
+#&ifdef ICD
 #              #FUN-B30187 --START--
 #              WHEN INFIELD(ogbiicd029)
-#                 CALL q_slot(TRUE,TRUE,g_ogb[1].ogbiicd029,'','')                         
+#                 CALL q_slot(TRUE,TRUE,g_ogb[1].ogbiicd029,'','')
 #                  RETURNING g_qryparam.multiret
 #                 DISPLAY g_qryparam.multiret TO ogbiicd029
 #                 NEXT FIELD ogbiicd029
 #              #FUN-B30187 --END--
-#&endif              
+#&endif
 #          END CASE
 #
 #          ON IDLE g_idle_seconds
@@ -2677,7 +2679,7 @@ FUNCTION t600_cs()
       LET g_sql = "SELECT DISTINCT oga01 ",                #MOD-840653    #No.TQC-9A0161
                   "  FROM oga_file, ogb_file",
                   " WHERE oga01 = ogb01",
-                  "   AND ogaplant IN ",g_auth CLIPPED,     #No:FUN-870007  
+                  "   AND ogaplant IN ",g_auth CLIPPED,     #No:FUN-870007
                   "   AND ogaplant = ogbplant ",            #No:FUN-870007
                   "   AND ", g_wc CLIPPED, " AND ",g_wc2 CLIPPED
    END IF
@@ -2690,7 +2692,7 @@ FUNCTION t600_cs()
    PREPARE t600_prepare FROM g_sql
    DECLARE t600_cs                         #SCROLL CURSOR
        SCROLL CURSOR WITH HOLD FOR t600_prepare
-   DECLARE t600_fill_cs CURSOR FOR t600_prepare  #FUN-CB0014  
+   DECLARE t600_fill_cs CURSOR FOR t600_prepare  #FUN-CB0014
 
 #非服飾行業處理
 
@@ -2700,7 +2702,7 @@ FUNCTION t600_cs()
    ELSE
        LET g_sql="SELECT COUNT(DISTINCT oga01) FROM oga_file,ogb_file WHERE ",
                  "ogb01=oga01 AND ",g_wc CLIPPED," AND ",g_wc2 CLIPPED,
-                 " AND ogaplant IN ",g_auth CLIPPED,    #No:FUN-870007 
+                 " AND ogaplant IN ",g_auth CLIPPED,    #No:FUN-870007
                  " AND ogaplant = ogbplant "            #No:FUN-870007
    END IF
    IF g_wc3 != " 1=1" THEN                      # 取合乎條件筆數
@@ -2720,12 +2722,12 @@ FUNCTION t600_menu()
    DEFINE l_str       STRING                     #MOD-940011
    DEFINE l_cnt       LIKE type_file.num5        #MOD-AB0246  add
    DEFINE temp_b      LIKE lpj_file.lpj12        #FUN-BA0069 add
-   DEFINE max_lsm05   LIKE lsm_file.lsm05        #FUN-BA0069 add 
-   DEFINE l_lps_cnt   LIKE type_file.num5        #FUN-C10051 add 
+   DEFINE max_lsm05   LIKE lsm_file.lsm05        #FUN-BA0069 add
+   DEFINE l_lps_cnt   LIKE type_file.num5        #FUN-C10051 add
    DEFINE l_price1    LIKE ogb_file.ogb14t       #No.FUN-870007
    DEFINE l_oga03     LIKE oga_file.oga03     #CHI-B60094 add
    DEFINE li_result   LIKE type_file.num5     #CHI-B60094 add
-   DEFINE l_poz       RECORD LIKE poz_file.*  #CHI-B60094 add 
+   DEFINE l_poz       RECORD LIKE poz_file.*  #CHI-B60094 add
    DEFINE l_oea99     LIKE oea_file.oea99     #CHI-B60094 add
    DEFINE l_flow      LIKE oea_file.oea904    #CHI-B60094 add
    DEFINE l_azp03     LIKE azp_file.azp03     #CHI-B60094 add
@@ -2751,9 +2753,9 @@ FUNCTION t600_menu()
           CALL t600_bp1("G")
          WHEN '2'
           CALL t600_bp2("G")
-         #FUN-CB0014---add---str--- 
+         #FUN-CB0014---add---str---
          WHEN 'info_list'
-            IF NOT cl_null(g_b_flag) THEN 
+            IF NOT cl_null(g_b_flag) THEN
                CALL t600_list_fill()
             END IF
             CALL t600_bp3("G")
@@ -2776,8 +2778,8 @@ FUNCTION t600_menu()
                CALL ui.interface.refresh()
                CALL cl_set_comp_visible("page_in", TRUE)
                CALL cl_set_comp_visible("info", TRUE)
-             END IF 
-         #FUN-CB0014---add---end---    
+             END IF
+         #FUN-CB0014---add---end---
          OTHERWISE
           CALL t600_bp1("G")
       END CASE
@@ -2828,14 +2830,14 @@ FUNCTION t600_menu()
                   CALL t600_b2()
                END IF
 
-               IF g_oga.oga09 ='2' AND g_oga.oga07 = 'Y' THEN 
+               IF g_oga.oga09 ='2' AND g_oga.oga07 = 'Y' THEN
                  #CHI-AC0002 mod --start--
                  #CALL s_t600_gl(g_oga.oga01)
                   CALL s_t600_gl(g_oga.oga01,'0')
                   IF g_aza.aza63 = 'Y' THEN
                      CALL s_t600_gl(g_oga.oga01,'1')
                   END IF
-                 #CHI-AC0002 mod --end-- 
+                 #CHI-AC0002 mod --end--
                END IF
             ELSE
                LET g_action_choice = NULL
@@ -2864,7 +2866,7 @@ FUNCTION t600_menu()
                   CALL cl_err('','axm-885',0)
                END IF
 #FUN-B30012 -------------------END
-            END IF      
+            END IF
          #No.FUN-A10106--end
          WHEN "unit_price"
             IF cl_chk_act_auth() THEN
@@ -2876,16 +2878,16 @@ FUNCTION t600_menu()
             IF cl_chk_act_auth() THEN
 	     				#add by huzhou 20170807 出货单已审核或已过帐不允许修改收获地址
                  IF g_oga.ogaconf='Y' or g_oga.ogapost='Y' THEN
-                  
+
                    CALL t600_1a()
 		           #  CALL cl_err('','HZ-001',0)
 
-#TQC-B40204 --begin--            
-#              IF g_oga.oga55 = 'S' THEN 
+#TQC-B40204 --begin--
+#              IF g_oga.oga55 = 'S' THEN
 #                 CALL cl_err('','apm-228',0)
-#              ELSE  
-#TQC-B40204 --end--              	
-		         ELSE	
+#              ELSE
+#TQC-B40204 --end--
+		         ELSE
                    CALL t600_1()
                    CALL t600_show() #MOD-640570 add
                  END IF     #TQC-B40204
@@ -2893,13 +2895,13 @@ FUNCTION t600_menu()
 
          WHEN "other_data"
             IF cl_chk_act_auth() THEN
-#TQC-B40204 --begin--            
-               IF g_oga.oga55 = 'S' THEN 
+#TQC-B40204 --begin--
+               IF g_oga.oga55 = 'S' THEN
                   CALL cl_err('','apm-228',0)
-               ELSE  
-#TQC-B40204 --end--             
+               ELSE
+#TQC-B40204 --end--
                   CALL t600_2()
-               END IF       #TQC-B40204    
+               END IF       #TQC-B40204
             END IF
 #FUN-BC0064---add---str----
          WHEN "sal"
@@ -2929,36 +2931,36 @@ FUNCTION t600_menu()
          WHEN "entry_sheet"
             IF cl_chk_act_auth() THEN
 #TQC-B40204 --begin--
-               IF g_oga.oga55 = 'S' THEN 
+               IF g_oga.oga55 = 'S' THEN
                   CALL cl_err('','apm-228',0)
-               ELSE    
-#TQC-B40204 --end--            
+               ELSE
+#TQC-B40204 --end--
                  #CALL t600_fsgl()    #CHI-AC0002 mark
                   CALL t600_fsgl('0') #CHI-AC0002
-               END IF   #TQC-B40204    
+               END IF   #TQC-B40204
             END IF
 
          #CHI-AC0002 add --start--
          WHEN "entry_sheet2"
             IF cl_chk_act_auth() THEN
 #TQC-B40204 --begin--
-            IF g_oga.oga55 = 'S' THEN 
+            IF g_oga.oga55 = 'S' THEN
                CALL cl_err('','apm-228',0)
-            ELSE    
-#TQC-B40204 --end--            
+            ELSE
+#TQC-B40204 --end--
                CALL t600_fsgl('1')
-            END IF    #TQC-B40204    
+            END IF    #TQC-B40204
             END IF
          #CHI-AC0002 add --end--
 
          WHEN "gen_entry_sheet"
 #TQC-B40204 --begin--
-            IF g_oga.oga55 = 'S' THEN 
+            IF g_oga.oga55 = 'S' THEN
                CALL cl_err('','apm-228',0)
-            ELSE    
-#TQC-B40204 --end--         
+            ELSE
+#TQC-B40204 --end--
                CALL t600_v()
-            END IF    #TQC-B40204    
+            END IF    #TQC-B40204
 
          WHEN "query_delivery"
             CALL s_shpqry(g_oga.oga01)
@@ -3014,28 +3016,28 @@ FUNCTION t600_menu()
 
            #FUN-C50136-add-str--
 #          IF g_oaz.oaz96 = 'Y' THEN
-#              LET g_msg = 'axmq274 ',g_oga.oga03             
-#              CALL cl_cmdrun(g_msg)                          
-#           ELSE                                              
-#              CALL s_cusqry(g_oga.oga03)                      
-#           END IF                                            
+#              LET g_msg = 'axmq274 ',g_oga.oga03
+#              CALL cl_cmdrun(g_msg)
+#           ELSE
+#              CALL s_cusqry(g_oga.oga03)
+#           END IF
             #FUN-C50136-add-end--
 
          WHEN "memo"
             IF cl_chk_act_auth() THEN
-#TQC-B40204 --begin--            
-              IF g_oga.oga55 = 'S' THEN 
+#TQC-B40204 --begin--
+              IF g_oga.oga55 = 'S' THEN
                  CALL cl_err('','apm-228',0)
-              ELSE  
-#TQC-B40204 --end--             
+              ELSE
+#TQC-B40204 --end--
                  CALL t600_m()
-              END IF         #TQC-B40204    
+              END IF         #TQC-B40204
             END IF
 #str----add by huanglf160922
         WHEN "chuizi"
            IF g_oga.ogaconf = 'Y' THEN
              CALL t600_d1()
-           END IF 
+           END IF
 #str----end by huanglf160922
       #darcy:2023/12/28 add s---
       when "upd_ogbud08"
@@ -3049,20 +3051,20 @@ FUNCTION t600_menu()
            IF g_oga.ogaconf = 'Y' THEN
               CALL t600_u3()
               CALL t600_show()
-           END IF 
+           END IF
 #str----end by huanglf160922
 
          WHEN "confirm"
             IF cl_chk_act_auth() THEN
                CALL t600sub_y_chk(g_oga.oga01,g_action_choice) #CALL 原確認的 check 段 #FUN-740034 #CHI-C30118 add g_action_choice
-                #tianry add 161209 
+                #tianry add 161209
                 SELECT COUNT(*) INTO l_cnt FROM ogb_file WHERE (ogb05 IS NULL OR ogb05=' ' )
                 AND ogb01=g_oga.oga01
                 IF l_cnt>0 THEN
                    CALL cl_err('','cxm-288',1)
                  #  RETURN
                    CONTINUE WHILE
-                END IF 
+                END IF
                  #tianry add 161221
                 CALL s_addr(g_oga.oga01,g_oga.oga04,g_oga.oga044)
                 RETURNING l_oap.oap041,
@@ -3073,31 +3075,32 @@ FUNCTION t600_menu()
                 IF cl_null(l_oap.oap041) AND g_prog='axmt610' THEN
                    CALL cl_err('','cxm-032',1)
                    CONTINUE WHILE
-                END IF 
-                 #tianry add end 
-                #tianry add end 
-                #tianry add 161220  
+                END IF
+                 #tianry add end
+                #tianry add end
+                #tianry add 161220
               #  SELECT oap041 INTO l_oap041 FROM oap_file WHERE oap01=g_oga.oga01
               #  IF cl_null(l_oap041) AND g_prog='axmt610' THEN
                 #   CALL cl_err('','cxm-032',1)
                #   # RETURN
                  #  CONTINUE WHILE
-               # END IF 
-                #tianry add end 
+               # END IF
+                #tianry add end
 
                IF g_success = "Y" THEN
                   CALL t600sub_y_upd(g_oga.oga01,g_action_choice)      #CALL 原確認的 update 段 #FUN-740034
                   #TQC-D50068 add begin-----
                   IF g_success = "Y" THEN
-                     CALL t600_t_muticarry('') 
-                  END IF   
-                  #TQC-D50068 add end-------                   
+                     CALL t600_t_muticarry('')
+                  END IF
+                  #TQC-D50068 add end-------
                   CALL t600sub_refresh(g_oga.oga01) RETURNING g_oga.*  #FUN-730012 重新讀取g_oga
                  #流程自動化產生下游單據
                   IF g_success = "Y" AND g_prog = 'axmt610' THEN
                     CALL s_auto_gen_doc('axmt610',g_oga.oga01,'')
                   END IF
                   call saxmt600_chk_add(g_oga.oga01) # darcy:2025/08/22 add
+                  if cl_action(g_prog,g_oga.oga01,0,'confirm',g_user,g_grup,false,false) then end if #darcy add
                END IF
                CALL t600_show()
             END IF
@@ -3114,7 +3117,7 @@ FUNCTION t600_menu()
                            LET l_ret.msg = "出货通知单撤销(",g_oga.oga01 CLIPPED,")失败"
                        END IF
                        CALL cl_err(l_ret.msg,'!',1)
-                       EXIT CASE 
+                       EXIT CASE
                     END IF
                 END IF
                 #No.18010101--end--
@@ -3129,10 +3132,10 @@ FUNCTION t600_menu()
             END IF
 
          WHEN "modify_rate"
-            IF cl_chk_act_auth() THEN  
+            IF cl_chk_act_auth() THEN
                CALL t600_m2()
-               CALL t600_show()               
-            END IF  
+               CALL t600_show()
+            END IF
 
          WHEN "deduct_inventory"
             IF cl_chk_act_auth() THEN
@@ -3156,6 +3159,16 @@ FUNCTION t600_menu()
                      END IF
                   END IF
                END IF
+               # darcy add s---
+               if g_oga.ogapost = 'Y' then
+                let g_action_choice = 'action_stock_post'
+                let g_bgjob = 'Y'
+                if cl_chk_act_auth() then
+                    if cl_action(g_prog,g_oga.oga01,0,'post','','',true,false) then end if
+                end if
+                let g_action_choice = 'stock_post'
+               end if
+               # darcy add e---
               #MOD-AB0246---add---end---
                CALL t600_show() #FUN-730012
             END IF
@@ -3207,10 +3220,10 @@ FUNCTION t600_menu()
                        LET g_success = 'N'
                     END IF
                  END IF
-                 #FUN-C10051 add end----------         
+                 #FUN-C10051 add end----------
                  IF g_success = 'Y' THEN
               #FUN-BA0069 add end  ----
-                     CALL t600_z()   #CHI-8B0048 modify 'z' #MOD-B30464 取消z 
+                     CALL t600_z()   #CHI-8B0048 modify 'z' #MOD-B30464 取消z
                  END IF  #FUN-BA0069 add
                  CALL t600sub_refresh(g_oga.oga01) RETURNING g_oga.*  #FUN-930038 重新讀取g_oga
                  CALL t600_show() #FUN-930038
@@ -3218,10 +3231,10 @@ FUNCTION t600_menu()
                   CALL cl_err(l_dbsnew,'mfg9143',1)
                END IF
                IF g_success = 'Y' THEN
-                  LET g_msg=TIME 
-                  INSERT INTO azo_file(azo01,azo02,azo03,azo04,azo05,azo06,azoplant,azolegal) 
-                   VALUES (g_prog,g_user,g_today,g_msg,g_oga.oga01,'undo_deduct',g_plant,g_legal) 
-               END IF 
+                  LET g_msg=TIME
+                  INSERT INTO azo_file(azo01,azo02,azo03,azo04,azo05,azo06,azoplant,azolegal)
+                   VALUES (g_prog,g_user,g_today,g_msg,g_oga.oga01,'undo_deduct',g_plant,g_legal)
+               END IF
             END IF
 
          WHEN "trsf_to_ar_invo"
@@ -3254,7 +3267,7 @@ FUNCTION t600_menu()
                IF cl_null(l_oma00) THEN
                   LET l_oma00='12'
                END IF
-               LET g_msg="axrt300 '",g_oga.oga10,"' '' '",l_oma00,"'" #No:TQC-630066  
+               LET g_msg="axrt300 '",g_oga.oga10,"' '' '",l_oma00,"'" #No:TQC-630066
 
                CALL cl_cmdrun_wait(g_msg)  #FUN-660216 add
                SELECT * INTO g_oga.* FROM oga_file
@@ -3279,18 +3292,18 @@ FUNCTION t600_menu()
          WHEN "undo_void"
             IF cl_chk_act_auth() THEN
                CALL t600_x(2)
-            END IF 
+            END IF
          #FUN-D20025 -----------end
 
          WHEN "gen_on_check_note"
             IF cl_chk_act_auth() THEN
 #TQC-B40204 --begin--
-               IF g_oga.oga55 = 'S' THEN 
+               IF g_oga.oga55 = 'S' THEN
                   CALL cl_err('','apm-228',0)
-               ELSE    
-#TQC-B40204 --end--            
+               ELSE
+#TQC-B40204 --end--
                   CALL t600_gen_check_note()
-               END IF    #TQC-B40204    
+               END IF    #TQC-B40204
             END IF
 
          WHEN "qry_on_check_note"
@@ -3323,20 +3336,20 @@ FUNCTION t600_menu()
                         IF g_success = "Y" THEN
                            COMMIT WORK
                         ELSE
-                           ROLLBACK WORK    
+                           ROLLBACK WORK
                         END IF
                     END IF
                 END IF
             END IF
-         WHEN "pay_money"                                                                                                           
+         WHEN "pay_money"
             IF cl_chk_act_auth() THEN
                CALL pay_chk()
-               CALL l_price() RETURNING l_price1                                                                                   
+               CALL l_price() RETURNING l_price1
                CALL s_pay('02',g_oga.oga01,g_oga.ogaplant,l_price1,g_oga.ogaconf)
-            END IF 
-         WHEN "money_detail"                                                                                                        
-           #IF cl_chk_act_auth() THEN     #MOD-B30453 mark                                                                                           
-                 CALL s_pay_detail('02',g_oga.oga01,g_oga.ogaplant,g_oga.ogaconf)                                                     
+            END IF
+         WHEN "money_detail"
+           #IF cl_chk_act_auth() THEN     #MOD-B30453 mark
+                 CALL s_pay_detail('02',g_oga.oga01,g_oga.ogaplant,g_oga.ogaconf)
            #END IF    #MOD-B30453 mark
 
          WHEN "help"
@@ -3513,11 +3526,11 @@ FUNCTION t600_menu()
           IF l_ac > 0 THEN    #MOD-960349
            LET g_ima918 = ''   #MOD-9C0055
            LET g_ima921 = ''   #MOD-9C0055
-           SELECT ima918,ima921 INTO g_ima918,g_ima921 
+           SELECT ima918,ima921 INTO g_ima918,g_ima921
              FROM ima_file
             WHERE ima01 = g_ogb[l_ac].ogb04
               AND imaacti = "Y"
-           
+
            IF g_ima918 = "Y" OR g_ima921 = "Y" THEN
               #非多倉儲出貨才可查詢批/序號資料
               IF g_ogb[l_ac].ogb17 = "N" THEN   #No:FUN-870131
@@ -3535,7 +3548,7 @@ FUNCTION t600_menu()
                  IF g_success = "Y" THEN
                     COMMIT WORK
                  ELSE
-                    ROLLBACK WORK    
+                    ROLLBACK WORK
                  END IF
               #-----MOD-A90036---------
               ELSE
@@ -3549,7 +3562,7 @@ FUNCTION t600_menu()
            IF cl_chk_act_auth() THEN
 #FUN-C50097 ADD BEG----
 #              IF g_aza.aza26 = '2' AND g_oaz.oaz92 = 'Y' AND g_oaz.oaz93 = 'N' THEN  #FUN-C50097 ADD BEG---
-                 LET l_oga01=''                                          #FUN-CA0084 
+                 LET l_oga01=''                                          #FUN-CA0084
                  SELECT oga01 INTO l_oga01 FROM oga_file
                   WHERE oga09 = '9'
                     AND oga56 = g_oga.oga01
@@ -3557,12 +3570,12 @@ FUNCTION t600_menu()
 #                 SELECT oga01 INTO l_oga01 FROM oga_file #TQC-C70206
 #                  WHERE oga09 = '9'
 #                    AND oga011 = g_oga.oga011
-#              END IF  
-#FUN-C50097 ADD END----  
+#              END IF
+#FUN-C50097 ADD END----
               IF NOT cl_null(l_oga01) THEN
                  LET l_str = 'oga01="',l_oga01,'"'
                  LET g_msg="axmt629 '' '",l_str CLIPPED,"'"
-                 CALL cl_cmdrun_wait(g_msg)  
+                 CALL cl_cmdrun_wait(g_msg)
               END IF
            END IF
         WHEN "order_query_b"
@@ -3576,21 +3589,21 @@ FUNCTION t600_menu()
            IF cl_chk_act_auth() THEN
               CALL t600_chdz()
           END IF
-        #tianry add end  161207 
-#FUN-A70132 --begin--             
+        #tianry add end  161207
+#FUN-A70132 --begin--
         WHEN "detail_tax"          #--單身稅別明細
           IF cl_chk_act_auth() THEN
             CALL t600_detail_tax()
           END IF
 #FUN-A70132 --end--
 
-#FUN-A70132 --begin--          
+#FUN-A70132 --begin--
         WHEN "trans_tax"           #--實際交易稅別明細
           IF cl_chk_act_auth() THEN
             CALL t600_trans_tax()
-          END IF          
-#FUN-A70132 --end--           
-           
+          END IF
+#FUN-A70132 --end--
+
 #FUN-A60035 ---MARK BEGIN
 ##FUN-A50054 --Begin
 #        WHEN "style_detail"
@@ -3631,7 +3644,7 @@ END FUNCTION
 FUNCTION t600_trans_tax()
    DEFINE  l_sql     LIKE type_file.chr1000
    DEFINE  g_rec_b   LIKE type_file.num5,
-           g_cnt     LIKE type_file.num5 
+           g_cnt     LIKE type_file.num5
    DEFINE l_ogh    DYNAMIC ARRAY OF RECORD     #--定義一個動態數組
             ogh02     LIKE ogh_file.ogh02,
             ogh03     LIKE ogh_file.ogh03,
@@ -3652,41 +3665,41 @@ FUNCTION t600_trans_tax()
                  "   AND oga01 = '",g_oga.oga01,"'",
                  " ORDER BY ogh02 "
       PREPARE t620_prepare1 FROM l_sql
-         IF SQLCA.sqlcode THEN 
-            CALL cl_err('t620_prepare1:',SQLCA.sqlcode,1) 
-            RETURN 
+         IF SQLCA.sqlcode THEN
+            CALL cl_err('t620_prepare1:',SQLCA.sqlcode,1)
+            RETURN
          END IF
-      DECLARE t620_curs1 CURSOR WITH HOLD FOR t620_prepare1   
+      DECLARE t620_curs1 CURSOR WITH HOLD FOR t620_prepare1
       CALL l_ogh.clear()
-      LET g_cnt = 1     
+      LET g_cnt = 1
       FOREACH t620_curs1 INTO l_ogh[g_cnt].*
          IF SQLCA.sqlcode THEN
             CALL cl_err('foreach:',SQLCA.sqlcode,1)
             EXIT FOREACH
          END IF
-         SELECT gec02 INTO l_ogh[g_cnt].gec02 FROM gec_file 
-          WHERE gec01 = l_ogh[g_cnt].ogh03 
+         SELECT gec02 INTO l_ogh[g_cnt].gec02 FROM gec_file
+          WHERE gec01 = l_ogh[g_cnt].ogh03
             AND gec011 = '2'
-         LET g_cnt = g_cnt + 1 
-      END FOREACH 
+         LET g_cnt = g_cnt + 1
+      END FOREACH
       CALL l_ogh.deleteElement(g_cnt)
-      LET g_rec_b=g_cnt-1      
+      LET g_rec_b=g_cnt-1
       OPEN WINDOW axmt620_a_w WITH FORM "axm/42f/axmt620_a"
          ATTRIBUTE (STYLE = g_win_style CLIPPED)
-      CALL cl_ui_locale("axmt620_a")         
+      CALL cl_ui_locale("axmt620_a")
       DISPLAY g_rec_b TO FORMONLY.cn2
-      DISPLAY ARRAY l_ogh TO s_ogh.*  ATTRIBUTE(COUNT=g_rec_b) 
-         ON ACTION controlg                                 
-            CALL cl_cmdask() 
-      END DISPLAY 
+      DISPLAY ARRAY l_ogh TO s_ogh.*  ATTRIBUTE(COUNT=g_rec_b)
+         ON ACTION controlg
+            CALL cl_cmdask()
+      END DISPLAY
       IF INT_FLAG THEN
-         LET INT_FLAG = 0 
-         CLOSE WINDOW axmt620_a_w 
-      END IF          
-   ELSE 
-      RETURN 
+         LET INT_FLAG = 0
+         CLOSE WINDOW axmt620_a_w
+      END IF
+   ELSE
+      RETURN
    END IF
-   CLOSE WINDOW axmt620_a_w    
+   CLOSE WINDOW axmt620_a_w
 END FUNCTION
 #FUN-A70132 --end--
 
@@ -3706,10 +3719,10 @@ FUNCTION t600_detail_tax()
             ogi08     LIKE ogi_file.ogi08,
             ogi08t    LIKE ogi_file.ogi08t,
             ogi09     LIKE ogi_file.ogi09
-            END RECORD           
-   IF l_ac = 0  OR cl_null(l_ac)  THEN                                          
-      RETURN                                                                    
-   END IF  
+            END RECORD
+   IF l_ac = 0  OR cl_null(l_ac)  THEN
+      RETURN
+   END IF
    #IF (g_azw.azw04='2') AND (g_oga.oga94 = 'Y') THEN     #FUN-C10040 mark
    IF g_azw.azw04='2' THEN   #FUN-C10040 add
       LET l_sql ="SELECT ogi02,ogi03,ogi04,'',ogi05,ogi06,ogi07,",
@@ -3717,15 +3730,15 @@ FUNCTION t600_detail_tax()
                  "  FROM ogi_file,ogb_file ",
                  " WHERE ogi01 = ogb01 ",
                  "   AND ogi02 = ogb03 ",
-                 "   AND ogb01 = '",g_oga.oga01,"'", 
-                 "   AND ogi02 = '",g_ogb[l_ac].ogb03,"'", 
+                 "   AND ogb01 = '",g_oga.oga01,"'",
+                 "   AND ogi02 = '",g_ogb[l_ac].ogb03,"'",
                  " ORDER BY ogi02,ogi03 "
       PREPARE t620_prepare2 FROM l_sql
-         IF SQLCA.sqlcode THEN 
-            CALL cl_err('t620_prepare2:',SQLCA.sqlcode,1) 
-            RETURN 
+         IF SQLCA.sqlcode THEN
+            CALL cl_err('t620_prepare2:',SQLCA.sqlcode,1)
+            RETURN
          END IF
-      DECLARE t620_curs2 CURSOR WITH HOLD FOR t620_prepare2   
+      DECLARE t620_curs2 CURSOR WITH HOLD FOR t620_prepare2
       CALL l_ogi.clear()
       LET g_cnt = 1
       FOREACH t620_curs2 INTO l_ogi[g_cnt].*
@@ -3733,29 +3746,29 @@ FUNCTION t600_detail_tax()
             CALL cl_err('foreach:',SQLCA.sqlcode,1)
             EXIT FOREACH
          END IF
-         SELECT gec02 INTO l_ogi[g_cnt].gec02 FROM gec_file 
-          WHERE gec01 =l_ogi[g_cnt].ogi04 
+         SELECT gec02 INTO l_ogi[g_cnt].gec02 FROM gec_file
+          WHERE gec01 =l_ogi[g_cnt].ogi04
             AND gec011 = '2'
-         LET g_cnt = g_cnt + 1 
-      END FOREACH 
+         LET g_cnt = g_cnt + 1
+      END FOREACH
       CALL l_ogi.deleteElement(g_cnt)
-      LET g_rec_b=g_cnt-1      
+      LET g_rec_b=g_cnt-1
       OPEN WINDOW axmt620_b_w WITH FORM "axm/42f/axmt620_b"
          ATTRIBUTE (STYLE = g_win_style CLIPPED)
-      CALL cl_ui_locale("axmt620_b")          
+      CALL cl_ui_locale("axmt620_b")
       DISPLAY g_rec_b TO FORMONLY.cn2
-      DISPLAY ARRAY l_ogi TO s_ogi.*  ATTRIBUTE(COUNT=g_rec_b) 
-         ON ACTION controlg                                 
-            CALL cl_cmdask() 
-      END DISPLAY       
+      DISPLAY ARRAY l_ogi TO s_ogi.*  ATTRIBUTE(COUNT=g_rec_b)
+         ON ACTION controlg
+            CALL cl_cmdask()
+      END DISPLAY
       IF INT_FLAG THEN
-         LET INT_FLAG = 0 
-         CLOSE WINDOW axmt620_b_w 
-      END IF          
-   ELSE 
-      RETURN 
-   END IF 
-   CLOSE WINDOW axmt620_b_w   
+         LET INT_FLAG = 0
+         CLOSE WINDOW axmt620_b_w
+      END IF
+   ELSE
+      RETURN
+   END IF
+   CLOSE WINDOW axmt620_b_w
 END FUNCTION
 #FUN-A70132 --end--
 
@@ -3771,9 +3784,9 @@ DEFINE l_n    LIKE type_file.num5         #MOD-C30244 add
    IF g_oga.ogaconf = 'Y' THEN CALL cl_err('',9023,0) RETURN END IF
    IF g_oga.ogaconf = 'X' THEN CALL cl_err('',9024,0) RETURN END IF
 #MOD-C30244 ----------------------STA
-   SELECT COUNT(*) INTO l_n  FROM rxy_file WHERE rxy00 = '02' AND rxy01 = g_oga.oga01 
+   SELECT COUNT(*) INTO l_n  FROM rxy_file WHERE rxy00 = '02' AND rxy01 = g_oga.oga01
    IF l_n > 0 THEN
-      CALL cl_err('','axm-722',0) 
+      CALL cl_err('','axm-722',0)
       RETURN
    END IF
 #MOD-C30244 ----------------------END
@@ -3825,13 +3838,13 @@ DEFINE l_n    LIKE type_file.num5         #MOD-C30244 add
           SELECT azi03,azi04 INTO t_azi03,t_azi04
             FROM azi_file
            WHERE azi01=g_oga.oga23
-   
+
           SELECT rtz04 INTO l_rtz04 FROM rtz_file WHERE rtz01 = g_oga.ogaplant
 
-          CALL t620_sub(l_ogb.ogb04,l_rtz04,g_oga.oga213,l_ogb.ogb917,l_ogb.ogb37,t_azi04) 
-                 RETURNING l_ogb.ogb14,l_ogb.ogb14t          
+          CALL t620_sub(l_ogb.ogb04,l_rtz04,g_oga.oga213,l_ogb.ogb917,l_ogb.ogb37,t_azi04)
+                 RETURNING l_ogb.ogb14,l_ogb.ogb14t
 
-          
+
           UPDATE ogb_file SET ogb47 = 0,
                               ogb13 = ogb37,
                               ogb14 = l_ogb.ogb14,
@@ -3858,15 +3871,15 @@ DEFINE l_n    LIKE type_file.num5         #MOD-C30244 add
           END IF
 
           UPDATE rxc_file SET rxc06 = 0
-           WHERE rxc00 = '02' AND rxc01 = g_oga.oga01 AND rxc02 = g_oeb7[l_i].oeb03 
+           WHERE rxc00 = '02' AND rxc01 = g_oga.oga01 AND rxc02 = g_oeb7[l_i].oeb03
           IF SQLCA.sqlcode OR SQLCA.sqlerrd[3] = 0 THEN
              CALL cl_err3("upd","ogb_file",g_oga.oga01,"",SQLCA.sqlcode,"","",1)
              ROLLBACK WORK
              EXIT FOR
-          END IF                 
- 
+          END IF
+
           IF g_aza.aza50='Y' THEN
-             CALL t600_oga50_sum() 
+             CALL t600_oga50_sum()
           ELSE
              CALL t600_bu()
           END IF
@@ -3926,7 +3939,7 @@ FUNCTION t600_a()
    DEFINE l_rtz03      LIKE rtz_file.rtz03           #FUN-B50054
    #str-----add by guanyao160608
    DEFINE l_y       LIKE type_file.chr20
-   DEFINE l_m       LIKE type_file.chr20 
+   DEFINE l_m       LIKE type_file.chr20
    DEFINE l_str     LIKE type_file.chr20
    DEFINE l_tmp     LIKE type_file.chr20
    DEFINE l_d       LIKE type_file.chr20
@@ -3964,26 +3977,26 @@ FUNCTION t600_a()
       END IF
 
       #str-----add by guanyao160608  #当客户为蓝思的时候，增加流水码
-      #IF g_oga.oga03 = '' THEN 
+      #IF g_oga.oga03 = '' THEN
          LET l_y =YEAR(g_today)
-         LET l_y = l_y USING '&&&&' 
+         LET l_y = l_y USING '&&&&'
          LET l_y = l_y[3,4]
          LET l_m =MONTH(g_today)
-         LET l_m = l_m USING '&&' 
+         LET l_m = l_m USING '&&'
          LET l_d =DAY(g_today)
-         LET l_d = l_d USING '&&' 
-         LET l_str='FL92' CLIPPED,l_y CLIPPED,l_m CLIPPED,l_d CLIPPED 
+         LET l_d = l_d USING '&&'
+         LET l_str='FL92' CLIPPED,l_y CLIPPED,l_m CLIPPED,l_d CLIPPED
          SELECT MAX(substr(ogaud02,11,12)) INTO l_tmp FROM oga_file
           WHERE substr(ogaud02,1,10)=l_str
-         IF cl_null(l_tmp) THEN 
-            LET l_tmp = '01' 
-         ELSE 
+         IF cl_null(l_tmp) THEN
+            LET l_tmp = '01'
+         ELSE
             LET l_tmp = l_tmp + 1
-            LET l_tmp = l_tmp USING '&&'     
-         END IF 
-         LET g_oga.ogaud02 = l_str CLIPPED,l_tmp	
-         DISPLAY  BY NAME g_oga.ogaud02 
-      #END IF 
+            LET l_tmp = l_tmp USING '&&'
+         END IF
+         LET g_oga.ogaud02 = l_str CLIPPED,l_tmp
+         DISPLAY  BY NAME g_oga.ogaud02
+      #END IF
       #end-----add by guanyao160608
 
       BEGIN WORK   #No:7829
@@ -4018,7 +4031,7 @@ FUNCTION t600_a()
       LET g_rec_b1 = 0     #No.TQC-640123
       LET g_rec_b2 = 0     #No.TQC-640123
 
-      CALL t600_g_b8()            #FUN-A80081 Add  
+      CALL t600_g_b8()            #FUN-A80081 Add
       CALL t600_b1()                   #輸入單身
       IF g_aza.aza50='Y' THEN
          CALL t600_b2()                   #輸入單身
@@ -4194,13 +4207,13 @@ FUNCTION t600_i(p_cmd)
    DEFINE l_type2         LIKE type_file.chr1    #FUN-C40072 add
    DEFINE l_cnt           LIKE type_file.num5    #No.FUN-870007
 #FUN-A60004 ----------------add start----------------------------------
-   DEFINE l_oma11         LIKE oma_file.oma11                                   
-   DEFINE l_oma12         LIKE oma_file.oma12                                   
-   DEFINE l_oma03         LIKE oma_file.oma03                                   
-   DEFINE l_oma32         LIKE oma_file.oma32                                   
-   DEFINE l_oma02         LIKE oma_file.oma02                                   
-   DEFINE l_oma09         LIKE oma_file.oma09                                   
-   DEFINE l_oea02         LIKE oea_file.oea02   
+   DEFINE l_oma11         LIKE oma_file.oma11
+   DEFINE l_oma12         LIKE oma_file.oma12
+   DEFINE l_oma03         LIKE oma_file.oma03
+   DEFINE l_oma32         LIKE oma_file.oma32
+   DEFINE l_oma02         LIKE oma_file.oma02
+   DEFINE l_oma09         LIKE oma_file.oma09
+   DEFINE l_oea02         LIKE oea_file.oea02
 #FUN-A60004 ---------------add end-------------------------------------
   ##FUN-B60011  --begin--
    DEFINE l_occ20         LIKE occ_file.occ20
@@ -4231,21 +4244,21 @@ FUNCTION t600_i(p_cmd)
         g_oga.oga25,g_oga.oga23,g_oga.oga24,
         g_oga.oga21,g_oga.oga211,g_oga.oga212,g_oga.oga213,
         g_oga.oga1011,g_oga.oga1010,g_oga.oga1014,g_oga.oga1012,g_oga.oga65,
-        g_oga.oga83,g_oga.oga84,g_oga.oga85,g_oga.oga86,g_oga.oga87,                  #No:FUN-870008                                          
+        g_oga.oga83,g_oga.oga84,g_oga.oga85,g_oga.oga86,g_oga.oga87,                  #No:FUN-870008
         g_oga.oga88,g_oga.oga89,g_oga.oga90,g_oga.oga91,g_oga.oga92,                  #No:FUN-870008
-        g_oga.oga93,g_oga.oga98,g_oga.oga94,g_oga.oga95,g_oga.oga96,g_oga.oga97,g_oga.ogaplant,   #No:FUN-870008  #FUN-A50071 
+        g_oga.oga93,g_oga.oga98,g_oga.oga94,g_oga.oga95,g_oga.oga96,g_oga.oga97,g_oga.ogaplant,   #No:FUN-870008  #FUN-A50071
         g_oga.oga57,g_oga.oga72,g_oga.oga13,g_oga.oga05 ,g_oga.oga10,        #FUN-AA0057 add oga57     #No.FUN-A60004 add oga72
         g_oga.ogauser,g_oga.ogagrup,g_oga.ogamodu,g_oga.ogadate,
         g_oga.ogaud01,g_oga.ogaud02,g_oga.ogaud03,g_oga.ogaud04,
         g_oga.ogaud05,g_oga.ogaud06,g_oga.ogaud07,g_oga.ogaud08,
         g_oga.ogaud09,g_oga.ogaud10,g_oga.ogaud11,g_oga.ogaud12,
-        g_oga.ogaud13,g_oga.ogaud14,g_oga.ogaud15 
+        g_oga.ogaud13,g_oga.ogaud14,g_oga.ogaud15
            WITHOUT DEFAULTS
 
         BEFORE INPUT
            LET g_before_input_done = FALSE
-           CALL t600_set_entry(p_cmd)           
-           CALL t600_set_no_entry(p_cmd)          
+           CALL t600_set_entry(p_cmd)
+           CALL t600_set_no_entry(p_cmd)
            LET g_before_input_done = TRUE
            CALL cl_set_docno_format("oga01")        #No.FUN-550052
 
@@ -4328,8 +4341,8 @@ FUNCTION t600_i(p_cmd)
            END IF
            #MOD-CA0025 -- add end --
 
-         AFTER FIELD oga84                                                                                                          
-            IF NOT cl_null(g_oga.oga84) THEN                                                                                     
+         AFTER FIELD oga84
+            IF NOT cl_null(g_oga.oga84) THEN
                IF p_cmd='a' OR (p_cmd='u' AND g_oga.oga84<>g_oga_t.oga84) THEN
                   CALL t600_oga84('a')
                   IF NOT cl_null(g_errno) THEN
@@ -4338,27 +4351,27 @@ FUNCTION t600_i(p_cmd)
                      DISPLAY BY NAME g_oga.oga84
                      NEXT FIELD oga84
                   END IF
-               END IF 
-            END IF   
-                                                                                                          
-         AFTER FIELD oga86                                                                                                          
-               IF NOT cl_null(g_oga.oga86) THEN                                                                                     
-                  LET l_cnt=0                                                                                                       
-                  SELECT COUNT(*) INTO l_cnt FROM tqa_file                                                                    
-                   WHERE tqa01=g_oga.oga86 AND tqa03='23' AND tqaacti='Y'                                                                
-                  IF l_cnt=0 THEN                                                                                                   
-                     CALL cl_err('','art-251',1)                                                                                    
-                     NEXT FIELD oga86                                                                                               
-                  END IF                                                                                                            
-               END IF                                                                                                               
-         AFTER FIELD oga87  
+               END IF
+            END IF
+
+         AFTER FIELD oga86
+               IF NOT cl_null(g_oga.oga86) THEN
+                  LET l_cnt=0
+                  SELECT COUNT(*) INTO l_cnt FROM tqa_file
+                   WHERE tqa01=g_oga.oga86 AND tqa03='23' AND tqaacti='Y'
+                  IF l_cnt=0 THEN
+                     CALL cl_err('','art-251',1)
+                     NEXT FIELD oga86
+                  END IF
+               END IF
+         AFTER FIELD oga87
                IF NOT cl_null(g_oga.oga87) THEN
                   LET l_cnt=0
                   SELECT COUNT(*) INTO l_cnt FROM lpj_file
-                   WHERE lpj03=g_oga.oga87 AND lpj04<=g_today 
-                  #  AND lpj05=g_today     AND lpj09='2'                    #TQC-A20058 MARK 
-                     AND (lpj05 IS NULL OR lpj05>=g_today ) AND lpj09='2'   #add 
-                  IF l_cnt=0 THEN 
+                   WHERE lpj03=g_oga.oga87 AND lpj04<=g_today
+                  #  AND lpj05=g_today     AND lpj09='2'                    #TQC-A20058 MARK
+                     AND (lpj05 IS NULL OR lpj05>=g_today ) AND lpj09='2'   #add
+                  IF l_cnt=0 THEN
                      CALL cl_err('','art-313',0)
                      NEXT FIELD oga87
                   END IF
@@ -4370,7 +4383,7 @@ FUNCTION t600_i(p_cmd)
                      DISPLAY BY NAME g_oga.oga95
                   END IF
                   #-----END MOD-B60001-----
-               END IF 
+               END IF
 
         AFTER FIELD oga69
            IF NOT t600_chk_oga69() THEN
@@ -4431,10 +4444,10 @@ FUNCTION t600_i(p_cmd)
                LET g_oga.oga24 =1
                DISPLAY g_oga.oga24  TO oga24
             END IF
-            IF g_oga.oga24 < = 0 THEN                                                                                               
-               CALL cl_err(g_oga.oga24,'axm-987',0)                                                                                 
-               NEXT FIELD oga24                                                                                                     
-            END IF                                                                                                                  
+            IF g_oga.oga24 < = 0 THEN
+               CALL cl_err(g_oga.oga24,'axm-987',0)
+               NEXT FIELD oga24
+            END IF
 
 
         AFTER FIELD oga18   #No.FUN-610064
@@ -4446,32 +4459,32 @@ FUNCTION t600_i(p_cmd)
            IF NOT t600_chk_oga04() THEN
               NEXT FIELD CURRENT
            END IF
-           IF cl_null(g_oga.oga16) THEN #MOD-B40171 add 
+           IF cl_null(g_oga.oga16) THEN #MOD-B40171 add
               #-----MOD-A90158---------
-              IF g_oga.oga04 <> g_oga_t.oga04 AND 
+              IF g_oga.oga04 <> g_oga_t.oga04 AND
                  g_oga.oga09 MATCHES '[45]'THEN
                  IF cl_confirm('axm_116') THEN
-                    SELECT occ42,occ43,occ41 
+                    SELECT occ42,occ43,occ41
                       INTO g_oga.oga23,g_oga.oga25,g_oga.oga21
                       FROM occ_file WHERE occ01 = g_oga.oga04
-                    CALL t600_oea18_get() RETURNING g_oea18_yn                                                                        
-                    IF g_oea18_yn = 'N' THEN                                                                                          
-                       IF g_oga.oga08='1' THEN                                                                                       
-                           LET exT=g_oaz.oaz52                                                                                       
-                       ELSE                                                                                                          
-                           LET exT=g_oaz.oaz70                                                                                       
-                       END IF                                                                                                        
-                       IF g_oga.oga909 = 'Y' THEN                                                                                    
-                          CALL t600_chk_poz00() RETURNING exT    
-                       END IF                                                                                                        
+                    CALL t600_oea18_get() RETURNING g_oea18_yn
+                    IF g_oea18_yn = 'N' THEN
+                       IF g_oga.oga08='1' THEN
+                           LET exT=g_oaz.oaz52
+                       ELSE
+                           LET exT=g_oaz.oaz70
+                       END IF
+                       IF g_oga.oga909 = 'Y' THEN
+                          CALL t600_chk_poz00() RETURNING exT
+                       END IF
                        IF NOT cl_null(g_oga.oga021) THEN
                           LET g_exdate = g_oga.oga021    #結關日期
                        ELSE
                           LET g_exdate = g_oga.oga02     #出貨日期
-                       END IF 
+                       END IF
                        CALL s_curr3(g_oga.oga23,g_exdate,exT) RETURNING g_oga.oga24
                     END IF
-                    SELECT gec04,gec05,gec07 
+                    SELECT gec04,gec05,gec07
                       INTO g_oga.oga211,g_oga.oga212,g_oga.oga213
                       FROM gec_file WHERE gec01=g_oga.oga21
                                       AND gec011='2'  #銷項
@@ -4498,7 +4511,7 @@ FUNCTION t600_i(p_cmd)
            END IF
 
         AFTER FIELD oga23
-          #IF NOT t600_chk_oga23() THEN        #MOD-BC0069 mark 
+          #IF NOT t600_chk_oga23() THEN        #MOD-BC0069 mark
            IF NOT t600_chk_oga23(p_cmd) THEN   #MOD-BC0069
               NEXT FIELD CURRENT
            END IF
@@ -4524,11 +4537,11 @@ FUNCTION t600_i(p_cmd)
                  IF g_oga.oga00 <> '1' AND g_oga.oga08 <> '1' THEN
                     CALL cl_err('','axm1123',1)
                     LET g_oga.oga03 = g_oga_t.oga03
-                 END IF 
-              END IF 
-           END IF 
+                 END IF
+              END IF
+           END IF
            #FUN-C10040---------add------end----
-              CALL t600_show()      
+              CALL t600_show()
 
         AFTER FIELD oga1002
           IF NOT cl_null(g_oga.oga1002) AND (g_oga.oga1002 != g_oga_t.oga1002
@@ -4655,7 +4668,7 @@ FUNCTION t600_i(p_cmd)
 
 #FUN-A60004 ------------------------------add start--------------------------
         AFTER FIELD oga65
-          IF cl_null(g_oga.oga72) THEN                                          
+          IF cl_null(g_oga.oga72) THEN
               #MOD-C20123 ----- add start -----
               IF g_oga.oga65 = 'Y' AND g_oga.oga07 = 'Y' THEN
                  LET g_oga.oga65 = 'N'
@@ -4663,29 +4676,29 @@ FUNCTION t600_i(p_cmd)
                  NEXT FIELd CURRENT
               END IF
               #MOD-C20123 ----- add end -----
-              IF g_oga.oga65 = 'Y' AND g_argv0 MATCHES '[12]' THEN 
-              #单据性质=一般出货单/出通单时才自动推算oga72 ELSE 给NULL 
+              IF g_oga.oga65 = 'Y' AND g_argv0 MATCHES '[12]' THEN
+              #单据性质=一般出货单/出通单时才自动推算oga72 ELSE 给NULL
               #FUN-B60011--begin--
-                 SELECT occ20,occ21,occ22 
+                 SELECT occ20,occ21,occ22
                     INTO l_occ20,l_occ21,l_occ22
                     FROM occ_file WHERE occ01 = g_oga.oga04
                  IF NOT cl_null(g_oga.oga16) THEN
-                    SELECT oea31 
+                    SELECT oea31
                        INTO l_oea31
                        FROM oea_file WHERE oea01 = g_oga.oga16
                  END IF
                  IF cl_null(l_occ20) THEN  LET l_occ20 =' ' END IF
                  IF cl_null(l_occ21) THEN  LET l_occ21 =' ' END IF
                  IF cl_null(l_occ22) THEN  LET l_occ22 =' ' END IF
-                 SELECT oat05 
+                 SELECT oat05
                     INTO l_oat05
                     FROM oat_file WHERE oat01 = l_occ20 AND oat02 = l_occ21 AND oat03 = l_occ22 AND oat04 = l_oea31
                  IF l_oat05 = 0 THEN
-                    SELECT oat05 
+                    SELECT oat05
                        INTO l_oat05
                        FROM oat_file WHERE oat01 = l_occ20 AND oat02 = l_occ21 AND oat03 = ' ' AND oat04 = l_oea31
                     IF l_oat05 = 0 THEN
-                       SELECT oat05 
+                       SELECT oat05
                           INTO l_oat05
                           FROM oat_file WHERE oat01 = l_occ20 AND oat02 = ' ' AND oat03 = ' ' AND oat04 = l_oea31
                     END IF
@@ -4693,31 +4706,31 @@ FUNCTION t600_i(p_cmd)
                  LET l_oma11 = g_oga.oga02 + l_oat05
               #FUN-B60011---end---
               #FUN-B60011---begin mark---
-              #   LET l_oma03 = g_oga.oga03                                      
-              #   IF NOT cl_null(g_oea.oea80) THEN                               
-              #      LET l_oma32 = g_oea.oea80                                   
-              #   ELSE                                                           
-              #      LET l_oma32 = g_oea.oea32                                   
-              #   END IF                                                         
-              #   LET l_oma02 = g_oga.oga02                                      
-              #   LET l_oma09 = g_oga.oga021                                     
-              #   IF NOT cl_null(g_oga.oga16) THEN                               
-              #      SELECT oea02 INTO l_oea02 FROM oea_file                     
-              #       WHERE oea01 = g_oga.oga16                                  
-              #   ELSE                                                           
-              #       LET l_oea02 = g_oga.oga02                                  
+              #   LET l_oma03 = g_oga.oga03
+              #   IF NOT cl_null(g_oea.oea80) THEN
+              #      LET l_oma32 = g_oea.oea80
+              #   ELSE
+              #      LET l_oma32 = g_oea.oea32
               #   END IF
-              #   LET g_dbs2 = s_dbstring(g_dbs)                                 
-              #   CALL s_rdatem(l_oma03,l_oma32,l_oma02,l_oma09,l_oea02,g_plant2)  
-              #   #呼叫公用程式自动推算签收日                                    
-              #   RETURNING l_oma11,l_oma12      
-              #FUN-B60011----end mark----                                
+              #   LET l_oma02 = g_oga.oga02
+              #   LET l_oma09 = g_oga.oga021
+              #   IF NOT cl_null(g_oga.oga16) THEN
+              #      SELECT oea02 INTO l_oea02 FROM oea_file
+              #       WHERE oea01 = g_oga.oga16
+              #   ELSE
+              #       LET l_oea02 = g_oga.oga02
+              #   END IF
+              #   LET g_dbs2 = s_dbstring(g_dbs)
+              #   CALL s_rdatem(l_oma03,l_oma32,l_oma02,l_oma09,l_oea02,g_plant2)
+              #   #呼叫公用程式自动推算签收日
+              #   RETURNING l_oma11,l_oma12
+              #FUN-B60011----end mark----
                  LET g_oga.oga72 = l_oma11  ##预计签收日
-                 DISPLAY g_oga.oga72 TO oga72                                   
-              ELSE                                                              
-                 LET g_oga.oga72 = NULL                                         
-                 DISPLAY g_oga.oga72 TO oga72                                   
-              END IF                                                            
+                 DISPLAY g_oga.oga72 TO oga72
+              ELSE
+                 LET g_oga.oga72 = NULL
+                 DISPLAY g_oga.oga72 TO oga72
+              END IF
            #FUN-C40072---add---START
               IF g_oga.oga65 = 'Y' AND (g_oga.oga09 = '4' OR g_oga.oga09 = '5') THEN
                  LET l_cnt = 0
@@ -4731,16 +4744,16 @@ FUNCTION t600_i(p_cmd)
                  END IF
               END IF
            #FUN-C40072---add-----END
-          END IF                                                                
-          IF g_oga.oga65 = 'N' THEN LET g_oga.oga72 = NULL END IF               
+          END IF
+          IF g_oga.oga65 = 'N' THEN LET g_oga.oga72 = NULL END IF
           DISPLAY BY NAME g_oga.oga72
-    
-        AFTER FIELD oga72                                                       
-           IF g_oga.oga65 = 'Y' THEN                                            
-             IF cl_null(g_oga.oga72) THEN                                       
-                CALL cl_err('','aim-927',0)                                     
-                NEXT FIELD oga72                                                
-             END IF                                                             
+
+        AFTER FIELD oga72
+           IF g_oga.oga65 = 'Y' THEN
+             IF cl_null(g_oga.oga72) THEN
+                CALL cl_err('','aim-927',0)
+                NEXT FIELD oga72
+             END IF
            END IF
 #FUN-A60004 -----------------------------add end---------------------------------
 
@@ -4751,14 +4764,14 @@ FUNCTION t600_i(p_cmd)
                 SELECT pmc03 INTO l_pmc03 FROM pmc_file WHERE pmc01 = g_oga.ogaud04
                 DISPLAY l_pmc03 TO FORMONLY.pmc03
 
-           #     SELECT COUNT(*) INTO l_num FROM pmc_file 
+           #     SELECT COUNT(*) INTO l_num FROM pmc_file
            #     WHERE pmc01 = g_ogaud04 AND pmc14 = '6' AND pmc05 = '1'
 
            #     IF l_num = 0 THEN
            #        CALL cl_err('','cxm-033',0)
            #        NEXT FIELD ogaud04
-           #     END IF  
-            END IF    
+           #     END IF
+            END IF
 #str-----end by huanglf170314
         AFTER FIELD ogaud01
            IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
@@ -4828,10 +4841,10 @@ FUNCTION t600_i(p_cmd)
                       WHEN g_argv0 = 'A' LET l_type = 'A'   #No:FUN-740016
                    END CASE
 #str----add by huanglf160929
-              IF g_prog = 'axmt620' THEN 
+              IF g_prog = 'axmt620' THEN
                   CALL cq_oga_1(FALSE,TRUE,'','') #MOD-530311   #MOD-8B0108 #MOD-C20054 add g_oga.oga00
                   RETURNING g_oga.oga011
-              ELSE 
+              ELSE
                    CALL cl_init_qry_var()
                    LET g_qryparam.form ="q_oga"
                   #LET g_qryparam.where = "  (oga09='",l_type,"') "                        #FUN-C40072 mark
@@ -4842,9 +4855,9 @@ FUNCTION t600_i(p_cmd)
                    END IF
                    #FUN-BB0167 add end--------------------------
                    LET g_qryparam.default1 = g_oga.oga011
-                   CALL cl_create_qry() RETURNING g_oga.oga011           
+                   CALL cl_create_qry() RETURNING g_oga.oga011
 
-              END IF 
+              END IF
 #str----end by huanglf160929
                    DISPLAY BY NAME g_oga.oga011
                    NEXT FIELD oga011
@@ -4886,7 +4899,7 @@ FUNCTION t600_i(p_cmd)
                    NEXT FIELD oga03
               WHEN INFIELD(oga04)
                    CALL cl_init_qry_var()
-                  #LET g_qryparam.form ="q_occ"     #MOD-C90205 mark 
+                  #LET g_qryparam.form ="q_occ"     #MOD-C90205 mark
                    LET g_qryparam.form ="q_occ4"
                    LET g_qryparam.default1 = g_oga.oga04
                    CALL cl_create_qry() RETURNING g_oga.oga04
@@ -5001,39 +5014,39 @@ FUNCTION t600_i(p_cmd)
                    DISPLAY BY NAME g_oga.oga902
                    NEXT FIELD oga902
 #FUN-9B0132 add -end------------------------------------
-              WHEN INFIELD(oga84)                                                                                                   
-                 CALL cl_init_qry_var()                                                                                             
-                 LET g_qryparam.form ="q_azp"                                                                                      
-                 LET g_qryparam.default1 = g_oga.oga84                                                                              
-                 CALL cl_create_qry() RETURNING g_oga.oga84                                                                         
-                 DISPLAY BY NAME g_oga.oga84                                                                                        
-                 CALL t600_oga84('d')                                                                                               
-                 NEXT FIELD oga84                                                                                                   
-              WHEN INFIELD(oga86)                                                                                                   
-                 CALL cl_init_qry_var()                                                                                             
-                 LET g_qryparam.form ="q_tqa"                                                                                       
-                 LET g_qryparam.default1 = g_oga.oga86                                                                              
-                 LET g_qryparam.arg1='23'                                                                                           
-                 CALL cl_create_qry() RETURNING g_oga.oga86    
-                 DISPLAY BY NAME g_oga.oga86                                                                                        
-                 NEXT FIELD oga86                                                                                                   
-             WHEN INFIELD(oga87)                  
-                 CALL cl_init_qry_var()                    
-                 LET g_qryparam.form ="q_lpj03_1"                    
-                 LET g_qryparam.default1 = g_oga.oga87                  
-                 LET g_qryparam.arg1=g_today                        
-                 CALL cl_create_qry() RETURNING g_oga.oga87    
-                 DISPLAY BY NAME g_oga.oga87                
+              WHEN INFIELD(oga84)
+                 CALL cl_init_qry_var()
+                 LET g_qryparam.form ="q_azp"
+                 LET g_qryparam.default1 = g_oga.oga84
+                 CALL cl_create_qry() RETURNING g_oga.oga84
+                 DISPLAY BY NAME g_oga.oga84
+                 CALL t600_oga84('d')
+                 NEXT FIELD oga84
+              WHEN INFIELD(oga86)
+                 CALL cl_init_qry_var()
+                 LET g_qryparam.form ="q_tqa"
+                 LET g_qryparam.default1 = g_oga.oga86
+                 LET g_qryparam.arg1='23'
+                 CALL cl_create_qry() RETURNING g_oga.oga86
+                 DISPLAY BY NAME g_oga.oga86
+                 NEXT FIELD oga86
+             WHEN INFIELD(oga87)
+                 CALL cl_init_qry_var()
+                 LET g_qryparam.form ="q_lpj03_1"
+                 LET g_qryparam.default1 = g_oga.oga87
+                 LET g_qryparam.arg1=g_today
+                 CALL cl_create_qry() RETURNING g_oga.oga87
+                 DISPLAY BY NAME g_oga.oga87
                  NEXT FIELD oga87
-                 
-            #str----add by huanglf170204     
+
+            #str----add by huanglf170204
                WHEN INFIELD(ogaud04)
-                 CALL cl_init_qry_var()                    
-                 LET g_qryparam.form ="q_ogaud04"                    
-                 LET g_qryparam.default1 = g_oga.ogaud04                 
+                 CALL cl_init_qry_var()
+                 LET g_qryparam.form ="q_ogaud04"
+                 LET g_qryparam.default1 = g_oga.ogaud04
                  CALL cl_create_qry() RETURNING g_oga.ogaud04
-                 DISPLAY BY NAME g_oga.ogaud04  
-             #str---end by huanglf170204  
+                 DISPLAY BY NAME g_oga.ogaud04
+             #str---end by huanglf170204
 
             END CASE
 
@@ -5062,13 +5075,13 @@ FUNCTION t600_i(p_cmd)
            END IF
            #MOD-C20123 ----- add end -----
            #TQC-C60131 -- add -- begin
-           IF NOT t600_chk_oga21(p_cmd) THEN 
+           IF NOT t600_chk_oga21(p_cmd) THEN
               NEXT FIELD oga21
            END IF
            #TQC-C60131 -- add -- end
 
            #MOD-AB0246---add---start---
-            IF g_oga.oga09 ='2' AND g_oga.oga07 = 'Y' THEN 
+            IF g_oga.oga09 ='2' AND g_oga.oga07 = 'Y' THEN
                LET l_cnt = 0
                SELECT COUNT(*) INTO l_cnt FROM npp_file
                 WHERE nppsys = 'AR'
@@ -5086,11 +5099,11 @@ FUNCTION t600_i(p_cmd)
            #MOD-AB0246---add---end---
  #FUN-A60004 -------------------add start-----------------------------
             IF g_argv0 MATCHES '[12]' THEN #MOD-B10134 add
-               IF g_oga.oga65 = 'Y' THEN                                            
-                  IF cl_null(g_oga.oga72) THEN                                       
-                     CALL cl_err('','aim-927',0)                                     
-                     NEXT FIELD oga72                                                
-                  END IF                                                             
+               IF g_oga.oga65 = 'Y' THEN
+                  IF cl_null(g_oga.oga72) THEN
+                     CALL cl_err('','aim-927',0)
+                     NEXT FIELD oga72
+                  END IF
                END IF
             END IF #MOD-B10134 add
  #FUN-A60004 ----------------add end----------------------------------
@@ -5100,7 +5113,7 @@ FUNCTION t600_i(p_cmd)
                WHEN "oga23"   NEXT FIELD oga23
                WHEN "oga21"   NEXT FIELD oga21
                WHEN "oga011"  NEXT FIELD oga011
-               WHEN "oga00"   NEXT FIELD oga00		#MOD-980038 		
+               WHEN "oga00"   NEXT FIELD oga00		#MOD-980038
             END CASE
 
        ON IDLE g_idle_seconds
@@ -5137,7 +5150,7 @@ FUNCTION t600_q()
 
     OPEN t600_cs                            # 從DB產生合乎條件TEMP(0-30秒)
     IF SQLCA.sqlcode THEN
-       CALL cl_err('',SQLCA.sqlcode,0)      
+       CALL cl_err('',SQLCA.sqlcode,0)
        INITIALIZE g_oga.* TO NULL
     ELSE
        OPEN t600_count
@@ -5153,7 +5166,7 @@ DEFINE
     l_slip          LIKE oga_file.oga03  #No.FUN-680137 VARCHAR(10)  #No.TQC-650088
 
     CASE p_flag
-        WHEN 'N' FETCH NEXT     t600_cs INTO g_oga.oga01  #TQC-9A0115  
+        WHEN 'N' FETCH NEXT     t600_cs INTO g_oga.oga01  #TQC-9A0115
         WHEN 'P' FETCH PREVIOUS t600_cs INTO g_oga.oga01  #TQC-9A0115
         WHEN 'F' FETCH FIRST    t600_cs INTO g_oga.oga01  #TQC-9A0115
         WHEN 'L' FETCH LAST     t600_cs INTO g_oga.oga01  #TQC-9A0115
@@ -5249,7 +5262,7 @@ DEFINE
    DEFINE l_pjb25    LIKE pjb_file.pjb25  #FUN-810045
    DEFINE g_cnt      LIKE type_file.num5  #FUN-7B0014
    DEFINE g_aza50    LIKE aza_file.aza50  #FUN-7B0014
-   DEFINE l_pjb09    LIKE pjb_file.pjb09  #No.FUN-850027 
+   DEFINE l_pjb09    LIKE pjb_file.pjb09  #No.FUN-850027
    DEFINE l_pjb11    LIKE pjb_file.pjb11  #No.FUN-850027
    DEFINE l_occ930 LIKE occ_file.occ930 #No.FUN-870007
    DEFINE lc_type  LIKE type_file.chr1  #No.FUN-870007
@@ -5286,8 +5299,8 @@ DEFINE
    DEFINE l_oeb04         LIKE oeb_file.oeb04       #TQC-B90236
 #FUN-BC0064--add---str----
    DEFINE l_ima154        LIKE ima_file.ima154
-   DEFINE l_azw04         LIKE azw_file.azw04 
-   DEFINE l_cnt           LIKE type_file.num5  
+   DEFINE l_azw04         LIKE azw_file.azw04
+   DEFINE l_cnt           LIKE type_file.num5
    DEFINE l_rxe08         LIKE rxe_file.rxe08
    DEFINE l_rxe           RECORD LIKE rxe_file.*
 #FUN-BC0064--add---end----
@@ -5304,7 +5317,7 @@ DEFINE l_factor LIKE ima_file.ima31_fac,   #FUN-C50097
 DEFINE l_ogb12,l_ogb12_t  LIKE ogb_file.ogb12    #FUN-CA0084
 DEFINE l_ogb52,l_ogb52_t  LIKE ogb_file.ogb52    #FUN-CA0084
 DEFINE l_flag1             LIKE type_file.chr1   #FUN-CB0087
-DEFINE l_where            STRING                 #FUN-CB0087 
+DEFINE l_where            STRING                 #FUN-CB0087
 DEFINE l_ac5_t            LIKE type_file.num5    #FUN-D30034 Add
 DEFINE l_ogbud06          LIKE ogb_file.ogbud06  #add by ly 20170810
 DEFINE l_oebud01 	  LIKE oeb_file.oebud01  #add by huzhou 20170808
@@ -5312,12 +5325,12 @@ DEFINE l_oebud01 	  LIKE oeb_file.oebud01  #add by huzhou 20170808
 DEFINE l_tc_zsa02   LIKE type_file.chr1,
        l_tc_zsa03   LIKE type_file.chr10
 #2022032401 add----end----
-  ##FUN-B60011  ---end--- 
+  ##FUN-B60011  ---end---
     LET l_del_flg='N' #FUN-B10024
     LET l_cha_flg='N' #MOD-D10161 add
     #LET g_chr1 = 'N' #No.FUN-640074   #CHI-880006
     LET g_chr2 = '0'  #No.FUN-640074
-    LET l_oea00 = ''  #No.FUN-9C0103 
+    LET l_oea00 = ''  #No.FUN-9C0103
     LET l_oea11 = ''  #No.FUN-9C0103
     LET l_oea12 = ''  #No.FUN-9C0103
     LET l_oga16 = ''  #No.FUN-9C0103
@@ -5337,15 +5350,15 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
     END IF
 #FUN-B30012 --------------END
     #2022032401 add----begin----
-    IF g_oga.ogaud01[1,2] = 'DO' THEN 
+    IF g_oga.ogaud01[1,2] = 'DO' THEN
     	LET l_tc_zsa02 = ''
     	LET l_tc_zsa03 = ''
     	SELECT tc_zsa02,tc_zsa03 INTO l_tc_zsa02,l_tc_zsa03 FROM tc_zsa_file
-    	IF l_tc_zsa02 = 'Y' AND NOT cl_null(l_tc_zsa03) AND g_today >= l_tc_zsa03 THEN 
+    	IF l_tc_zsa02 = 'Y' AND NOT cl_null(l_tc_zsa03) AND g_today >= l_tc_zsa03 THEN
     		CALL cl_err('','cpm-066',0)
-    		RETURN 
-    	END IF 
-    END IF 
+    		RETURN
+    	END IF
+    END IF
     #2022032401 add----end----
 #FUN-C10040--add---str----
     SELECT rtz04, rtz06 INTO l_rtz04,l_rtz06
@@ -5403,7 +5416,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
 
 IF g_azw.azw04='2' AND (g_prog="axmt610_slk" OR g_prog="axmt620_slk" OR g_prog="axmt640_slk") THEN       #FUN-C20006--add
 #非服飾行業代碼
-ELSE          #FUN-C20006---add---    
+ELSE          #FUN-C20006---add---
   WHILE TRUE
     IF NOT l_exit_sw THEN CALL t600_b1_fill(' 1=1') END IF
     LET l_exit_sw = TRUE
@@ -5453,9 +5466,9 @@ ELSE          #FUN-C20006---add---
             CALL t600_ogb1005_1()
 
             IF NOT cl_null(g_ogb[l_ac].ogb31) AND NOT cl_null(g_ogb[l_ac].ogb32) THEN
-               CALL cl_set_comp_entry("ogb04,ogb05,ogb11,ogb1004,ogb13,ogb14,ogb14t,ogb916,ogb1003,ogb1004,ogb1006,ogb913,ogb910,ogb41,ogb42,ogb43" ,FALSE)  #FUN-810045 add ogb41-43 #MOD-930121 
+               CALL cl_set_comp_entry("ogb04,ogb05,ogb11,ogb1004,ogb13,ogb14,ogb14t,ogb916,ogb1003,ogb1004,ogb1006,ogb913,ogb910,ogb41,ogb42,ogb43" ,FALSE)  #FUN-810045 add ogb41-43 #MOD-930121
             ELSE
-               CALL cl_set_comp_entry("ogb1001,ogb04,ogb05,ogb11,ogb13,ogb14,ogb14t,ogb1003,ogb1004,ogb1006,ogb913,ogb910,ogb41,ogb42,ogb43" ,TRUE)     #FUN-810045 add ogb41-43   
+               CALL cl_set_comp_entry("ogb1001,ogb04,ogb05,ogb11,ogb13,ogb14,ogb14t,ogb1003,ogb1004,ogb1006,ogb913,ogb910,ogb41,ogb42,ogb43" ,TRUE)     #FUN-810045 add ogb41-43
             END IF
             LET l_ogb931 = NULL
             LET l_ogb932 = NULL
@@ -5479,19 +5492,19 @@ ELSE          #FUN-C20006---add---
             IF g_rec_b1 >= l_ac THEN      #No.TQC-640123
                LET p_cmd='u'
                #No.FUN-BB0086--add--begin---
-               LET g_ogb05_t = g_ogb[l_ac].ogb05   
-               LET g_ogb910_t = g_ogb[l_ac].ogb910    
-               LET g_ogb913_t = g_ogb[l_ac].ogb913     
-               LET g_ogb916_t = g_ogb[l_ac].ogb915     
+               LET g_ogb05_t = g_ogb[l_ac].ogb05
+               LET g_ogb910_t = g_ogb[l_ac].ogb910
+               LET g_ogb913_t = g_ogb[l_ac].ogb913
+               LET g_ogb916_t = g_ogb[l_ac].ogb915
                LET g_ogb04_1 = g_ogb[l_ac].ogb04  #FUN-C30169 add
                #No.FUN-BB0086--add--end---
                LET g_ogb_t.* = g_ogb[l_ac].*     #TQC-C70204
             END IF
             CALL t600_set_no_required_b1('')   #CHI-8C0013
             CALL t600_set_required_b1('')   #CHI-8C0013
-            IF g_azw.azw04="2" THEN                                                                                               
-               CALL t600_set_entry_b1(p_cmd)                                                                                       
-               CALL t600_set_no_entry_b1(p_cmd)                                                                                
+            IF g_azw.azw04="2" THEN
+               CALL t600_set_entry_b1(p_cmd)
+               CALL t600_set_no_entry_b1(p_cmd)
             END IF
 #&ifdef ICD #FUN-B50096
             CALL t600_set_no_required_1()   #FUN-A40022
@@ -5549,16 +5562,16 @@ ELSE          #FUN-C20006---add---
                CALL cl_err('',g_errno,0)
                IF NOT cl_null(g_ogb[l_ac].ogb31) THEN
                   NEXT FIELD ogb31
-               ELSE 
+               ELSE
                   NEXT FIELD ogb48
-               END IF 
-               
+               END IF
+
             END IF
 #TQC-C30106 add end -----
-#FUN-AC0097--add--begin 
-            IF cl_null(g_ogb[l_ac].ogb48) THEN 
-               LET g_ogb[l_ac].ogb49 = ''  
-            END IF                                                                                                              
+#FUN-AC0097--add--begin
+            IF cl_null(g_ogb[l_ac].ogb48) THEN
+               LET g_ogb[l_ac].ogb49 = ''
+            END IF
 #FUN-AC0097--add--end
          END IF
 
@@ -5567,14 +5580,14 @@ ELSE          #FUN-C20006---add---
             LET p_cmd='a'
             INITIALIZE g_ogb[l_ac].* TO NULL      #900423
             #No.FUN-BB0086--add--begin---
-            LET g_ogb05_t = NULL   
-            LET g_ogb910_t = NULL   
-            LET g_ogb913_t = NULL   
-            LET g_ogb916_t = NULL   
+            LET g_ogb05_t = NULL
+            LET g_ogb910_t = NULL
+            LET g_ogb913_t = NULL
+            LET g_ogb916_t = NULL
             LET g_ogb04_1 = NULL   #FUN-C30169 add
             #No.FUN-BB0086--add--end---
             INITIALIZE arr_detail[l_ac].* TO NULL     #No.TQC-650088
-            INITIALIZE g_ogb_o.* TO NULL  #MOD-BA0038 add 
+            INITIALIZE g_ogb_o.* TO NULL  #MOD-BA0038 add
             CALL t600_b1_default(p_cmd)
             NEXT FIELD ogb03
 
@@ -5604,7 +5617,7 @@ ELSE          #FUN-C20006---add---
            #MOD-AB0247---add---end---
 
             CASE t600_b1_inschk()
-               WHEN "ogb03" 
+               WHEN "ogb03"
                   NEXT FIELD ogb03
                WHEN "ogb904"
                   NEXT FIELD ogb904
@@ -5674,7 +5687,7 @@ ELSE          #FUN-C20006---add---
                SELECT ima918,ima921 INTO g_ima918,g_ima921
                  FROM ima_file
                 WHERE ima01 = g_ogb[l_ac].ogb04 AND imaacti = "Y"
-            
+
                IF g_ima918 = "Y" OR g_ima921 = "Y" THEN
                   LET g_cnt = 0
                   SELECT COUNT(*) INTO g_cnt FROM rvbs_file
@@ -5699,7 +5712,7 @@ ELSE          #FUN-C20006---add---
 
         AFTER FIELD ogb31
           #TQC-C80053 -- add -- begin
-           IF NOT cl_null(g_oga.oga011) OR NOT cl_null(g_oga.oga16) THEN 
+           IF NOT cl_null(g_oga.oga011) OR NOT cl_null(g_oga.oga16) THEN
               IF cl_null(g_ogb[l_ac].ogb31) THEN
                  CALL cl_err('','abx-067',0)
                  NEXT FIELD ogb31
@@ -5714,24 +5727,24 @@ ELSE          #FUN-C20006---add---
                IF NOT t600_chk_oea() THEN
                    NEXT FIELD CURRENT
                END IF
-               #No.MOD-A60112  --End  
+               #No.MOD-A60112  --End
                IF NOT cl_null(g_ogb[l_ac].ogb32) THEN
                CASE t600_chk_ogb32(p_cmd)
                   WHEN "ogb31" NEXT FIELD ogb31
-                  WHEN "ogb32" NEXT FIELD ogb32              
+                  WHEN "ogb32" NEXT FIELD ogb32
                END CASE
                END IF
 #MOD-C30377---add----begin---
-           IF cl_null(g_oga.oga31) THEN 
+           IF cl_null(g_oga.oga31) THEN
               SELECT oea31 INTO g_oga.oga31
                 FROM oea_file WHERE oea01 = g_ogb[l_ac].ogb31
            END IF
-#MOD-C30377---add----end--- 
+#MOD-C30377---add----end---
            END IF          #no.MOD-740415
 #FUN-B60011---begin---
-           IF (l_ac = 1 AND cl_null(g_oga.oga16) AND g_oga.oga65 = 'Y' 
+           IF (l_ac = 1 AND cl_null(g_oga.oga16) AND g_oga.oga65 = 'Y'
                AND g_argv0 MATCHES '[12]') THEN
-               SELECT occ20,occ21,occ22 
+               SELECT occ20,occ21,occ22
                  INTO l_occ20,l_occ21,l_occ22
                  FROM occ_file WHERE occ01 = g_oga.oga04
                SELECT oea31
@@ -5740,24 +5753,24 @@ ELSE          #FUN-C20006---add---
                IF cl_null(l_occ20) THEN  LET l_occ20 =' ' END IF
                IF cl_null(l_occ21) THEN  LET l_occ21 =' ' END IF
                IF cl_null(l_occ22) THEN  LET l_occ22 =' ' END IF
-               SELECT oat05 
+               SELECT oat05
                   INTO l_oat05
                   FROM oat_file WHERE oat01 = l_occ20 AND oat02 = l_occ21 AND oat03 = l_occ22 AND oat04 = l_oea31
                IF l_oat05 = 0 THEN
-                  SELECT oat05 
+                  SELECT oat05
                      INTO l_oat05
                      FROM oat_file WHERE oat01 = l_occ20 AND oat02 = l_occ21 AND oat03 = ' ' AND oat04 = l_oea31
                   IF l_oat05 = 0 THEN
-                     SELECT oat05 
+                     SELECT oat05
                         INTO l_oat05
                         FROM oat_file WHERE oat01 = l_occ20 AND oat02 = ' ' AND oat03 = ' ' AND oat04 = l_oea31
                   END IF
                END IF
-               LET l_oga72 = g_oga.oga02 + l_oat05 
+               LET l_oga72 = g_oga.oga02 + l_oat05
                IF(g_oga.oga72 <> l_oga72) THEN
                   CALL cl_confirm('axm1032') RETURNING g_chr
                   IF g_chr='1' THEN
-                     LET g_oga.oga72 = l_oga72  ##預計簽收日 
+                     LET g_oga.oga72 = l_oga72  ##預計簽收日
                      DISPLAY g_oga.oga72 TO oga72
                      UPDATE oga_file SET oga72 = g_oga.oga72
                      WHERE oga01 = g_oga.oga01
@@ -5765,7 +5778,7 @@ ELSE          #FUN-C20006---add---
                   END IF
                END IF
             END IF
-           #FUN-B60011----end---- 
+           #FUN-B60011----end----
            LET g_ogb_o.ogb31 = g_ogb[l_ac].ogb31 #MOD-B90214 add
 #TQC-C30106 add begin ----
            IF g_azw.azw04 = '2' THEN
@@ -5781,12 +5794,12 @@ ELSE          #FUN-C20006---add---
            IF g_aza.aza115='Y' AND g_argv0 MATCHES '[89]' AND NOT t600_chk_ogb65(p_cmd) THEN NEXT FIELD ogb65  END IF  #FUN-CB0087--add
 #str----add by huanglf161104
            IF cl_null(g_ogb[l_ac].ogb09) THEN
-              SELECT SUM(img10) INTO g_ogb[l_ac].l_goods FROM img_file 
+              SELECT SUM(img10) INTO g_ogb[l_ac].l_goods FROM img_file
               WHERE img01 = g_ogb[l_ac].ogb04 GROUP BY img01 #str--add by huanglf160805
            ELSE
               SELECT SUM(img10) INTO g_ogb[l_ac].l_goods FROM img_file
-              WHERE img01 = g_ogb[l_ac].ogb04 AND img02 = g_ogb[l_ac].ogb09 
-           END IF  
+              WHERE img01 = g_ogb[l_ac].ogb04 AND img02 = g_ogb[l_ac].ogb09
+           END IF
 #str----end by huanglf161104
           DISPLAY BY NAME g_ogb[l_ac].l_goods
         AFTER FIELD ogb32
@@ -5812,8 +5825,8 @@ ELSE          #FUN-C20006---add---
 #&endif
 ##FUN-A50054 --End
 #FUN-A60035 ---MARK END
-         
-          
+
+
            IF cl_null(g_ogb[l_ac].ogb32) THEN
               IF NOT cl_null(g_ogb[l_ac].ogb31) THEN
                  CALL cl_err('','atm-243',0)
@@ -5824,19 +5837,19 @@ ELSE          #FUN-C20006---add---
            IF NOT t600_chk_oea() THEN
                NEXT FIELD CURRENT
            END IF
-           #No.MOD-A60112  --End 
-    #No.FUN-A90040  --begin      
-      IF g_azw.azw04 = '2' THEN  
+           #No.MOD-A60112  --End
+    #No.FUN-A90040  --begin
+      IF g_azw.azw04 = '2' THEN
 #TQC-C30106 mark begin ----
 #           IF NOT cl_null(g_ogb[l_ac].ogb31) OR NOT cl_null(g_ogb[l_ac].ogb32) THEN
-#               CALL cl_set_comp_entry("ogb48",FALSE) 
+#               CALL cl_set_comp_entry("ogb48",FALSE)
 #                  SELECT oeb49, oeb50 INTO l_oeb49,l_oeb50
 #                  FROM oeb_file WHERE oeb01 = g_ogb[l_ac].ogb31 AND oeb03 = g_ogb[l_ac].ogb32 AND oebplant = g_oga.oga83
-#                  LET  g_ogb[l_ac].ogb48 = l_oeb49 
+#                  LET  g_ogb[l_ac].ogb48 = l_oeb49
 #                  LET  g_ogb[l_ac].ogb49 = l_oeb50
 #                  IF NOT  cl_null(g_ogb[l_ac].ogb48) AND NOT cl_null(g_ogb[l_ac].ogb49) THEN
 #                    LET g_cnt = 0        #MOD-AB0247 add
-#                    SELECT COUNT(*) INTO g_cnt 
+#                    SELECT COUNT(*) INTO g_cnt
 #                    FROM lnt_file WHERE lnt04 = g_ogb[l_ac].ogb49 AND lnt06 = g_ogb[l_ac].ogb48 AND lntplant = g_oga.oga83
 #                                       AND lnt26 = 'Y' AND (g_oga.oga02 BETWEEN lnt17 AND lnt18)
 #
@@ -5855,11 +5868,11 @@ ELSE          #FUN-C20006---add---
 #           END IF
 #        #  ELSE
 #           IF cl_null(g_ogb[l_ac].ogb31) AND cl_null(g_ogb[l_ac].ogb32) THEN
-#               CALL cl_set_comp_entry("ogb48",TRUE) 
+#               CALL cl_set_comp_entry("ogb48",TRUE)
 #                IF NOT  cl_null(g_ogb[l_ac].ogb48) AND NOT cl_null(g_ogb[l_ac].ogb49) THEN
 #                   LET g_cnt = 0        #MOD-AB0247 add
-#                   SELECT COUNT(*) INTO g_cnt 
-#                   FROM lnt_file 
+#                   SELECT COUNT(*) INTO g_cnt
+#                   FROM lnt_file
 #                   WHERE lnt04 = g_ogb[l_ac].ogb49 AND lnt06 = g_ogb[l_ac].ogb48 AND lntplant = g_oga.oga83
 #                   AND lnt26 = 'Y' AND g_oga.oga02 BETWEEN lnt17 AND lnt18
 #                   IF g_cnt = 0 THEN
@@ -5875,17 +5888,17 @@ ELSE          #FUN-C20006---add---
             CALL cl_err('',g_errno,0)
             IF NOT cl_null(g_ogb[l_ac].ogb32) THEN
                NEXT FIELD ogb32
-            ELSE 
-               NEXT FIELD ogb48 
-            END IF 
+            ELSE
+               NEXT FIELD ogb48
+            END IF
         END IF
 #TQC-C30106 add end ------
-     END IF  
-   #No.FUN-A90040  --end       
+     END IF
+   #No.FUN-A90040  --end
            IF NOT cl_null(g_ogb[l_ac].ogb31) AND NOT cl_null(g_ogb[l_ac].ogb32) THEN
-              CALL cl_set_comp_entry("ogb04,ogb05,ogb11,ogb1004,ogb13,ogb14,ogb14t,ogb916,ogb1003,ogb1004,ogb1006,ogb913,ogb910,ogb41,ogb42,ogb43" ,FALSE)  #FUN-810045 ogb41~43 #MOD-930121 
+              CALL cl_set_comp_entry("ogb04,ogb05,ogb11,ogb1004,ogb13,ogb14,ogb14t,ogb916,ogb1003,ogb1004,ogb1006,ogb913,ogb910,ogb41,ogb42,ogb43" ,FALSE)  #FUN-810045 ogb41~43 #MOD-930121
            ELSE
-              CALL cl_set_comp_entry("ogb1001,ogb04,ogb05,ogb11,ogb13,ogb14,ogb14t,ogb1001,ogb1003,ogb1004,ogb1006,ogb913,ogb910,ogb41,ogb42,ogb43" ,TRUE)   #No.TQC-640123 #FUN-810045 ogb41~43 
+              CALL cl_set_comp_entry("ogb1001,ogb04,ogb05,ogb11,ogb13,ogb14,ogb14t,ogb1001,ogb1003,ogb1004,ogb1006,ogb913,ogb910,ogb41,ogb42,ogb43" ,TRUE)   #No.TQC-640123 #FUN-810045 ogb41~43
            END IF
           #IF (g_ogb[l_ac].ogb32!=g_ogb_t.ogb32 OR g_ogb_t.ogb32 IS NULL) THEN #MOD-B90214 mark
            IF (g_ogb[l_ac].ogb32!=g_ogb_o.ogb32 OR g_ogb_o.ogb32 IS NULL) THEN #MOD-B90214
@@ -5923,7 +5936,7 @@ ELSE          #FUN-C20006---add---
 #                   AND ata01=g_oga.oga01
 #                   AND ata02=g_ogb[l_ac].ogb03
 #             END IF
-#             SELECT ima151 INTO l_ima151 FROM ima_file WHERE ima01= g_ogb[l_ac].ogb04      #NO.FUN-A60035 add 
+#             SELECT ima151 INTO l_ima151 FROM ima_file WHERE ima01= g_ogb[l_ac].ogb04      #NO.FUN-A60035 add
 #             IF NOT cl_null(g_ogb[l_ac].ogb32 AND g_sma.sma120='Y' AND l_ima151='Y') THEN  #NO.FUN-A60035 mod
 #                CALL s_detail(g_prog,g_oga.oga01,g_ogb[l_ac].ogb03,g_ogb[l_ac].ogb04,'N')
 #                       RETURNING g_ogb[l_ac].ogb12
@@ -5957,12 +5970,12 @@ ELSE          #FUN-C20006---add---
                      ELSE
                         CALL q_ima929(FALSE,FALSE,g_ogb[l_ac].ogb31,g_ogb[l_ac].ogb32,l_oeb04) RETURNING g_ogb[l_ac].ogb04
                      END IF
-                     IF g_ogb[l_ac].ogb04 IS NULL THEN 
+                     IF g_ogb[l_ac].ogb04 IS NULL THEN
                         LET g_ogb[l_ac].ogb06=''
                         LET g_ogb[l_ac].ima021=''
                         NEXT FIELD ogb32    #MOD-C30456 add
                      END IF
-                     SELECT ima02,ima021 INTO g_ogb[l_ac].ogb06,g_ogb[l_ac].ima021 
+                     SELECT ima02,ima021 INTO g_ogb[l_ac].ogb06,g_ogb[l_ac].ima021
                        FROM ima_file WHERE ima01=g_ogb[l_ac].ogb04
                      UPDATE ogb_file SET ogb04=g_ogb[l_ac].ogb04,ogb06=g_ogb[l_ac].ogb06
                                    WHERE ogb01=g_oga.oga01
@@ -5971,24 +5984,24 @@ ELSE          #FUN-C20006---add---
                END IF
 #str----add by huanglf161104
            IF cl_null(g_ogb[l_ac].ogb09) THEN
-              SELECT SUM(img10) INTO g_ogb[l_ac].l_goods FROM img_file 
+              SELECT SUM(img10) INTO g_ogb[l_ac].l_goods FROM img_file
               WHERE img01 = g_ogb[l_ac].ogb04 GROUP BY img01 #str--add by huanglf160805
            ELSE
               SELECT SUM(img10) INTO g_ogb[l_ac].l_goods FROM img_file
-              WHERE img01 = g_ogb[l_ac].ogb04 AND img02 = g_ogb[l_ac].ogb09 
-           END IF  
+              WHERE img01 = g_ogb[l_ac].ogb04 AND img02 = g_ogb[l_ac].ogb09
+           END IF
 #str----end by huanglf161104
            #END IF   #JT add
 ##No.TQC-B90236------------add--------end------------
         AFTER FIELD ogb48,ogb49
-        IF g_azw.azw04 = '2' THEN 
+        IF g_azw.azw04 = '2' THEN
 #TQC-C30106 mark begin ----
 #          IF NOT  cl_null(g_ogb[l_ac].ogb48)  THEN
 ##FUN-AC0097--add--begin
-#             SELECT lnt04 INTO g_ogb[l_ac].ogb49 
+#             SELECT lnt04 INTO g_ogb[l_ac].ogb49
 #             FROM lnt_file WHERE  lnt06 = g_ogb[l_ac].ogb48 AND lntplant = g_oga.oga83
-#                                AND lnt26 = 'Y' AND (g_oga.oga02 BETWEEN lnt17 AND lnt18)            
-##FUN-AC0097--add--end 
+#                                AND lnt26 = 'Y' AND (g_oga.oga02 BETWEEN lnt17 AND lnt18)
+##FUN-AC0097--add--end
 #             LET g_cnt = 0        #MOD-AB0247 add
 #             SELECT COUNT(*) INTO g_cnt
 #             FROM lnt_file WHERE lnt04 = g_ogb[l_ac].ogb49 AND lnt06 = g_ogb[l_ac].ogb48 AND lntplant = g_oga.oga83
@@ -6009,21 +6022,21 @@ ELSE          #FUN-C20006---add---
               CALL t600_ogb48_ogb49_chk()
               IF NOT cl_null(g_errno) THEN
                  CALL cl_err('',g_errno,0)
-                 NEXT FIELD ogb48  
+                 NEXT FIELD ogb48
               END IF
           IF NOT  cl_null(g_ogb[l_ac].ogb48)  THEN
 #TQC-C30106 add end ------
 #TQC-B40101 --begin--
           ELSE
-             IF g_oga.oga57 = '2' THEN 
+             IF g_oga.oga57 = '2' THEN
                 NEXT FIELD ogb48
-            END IF 
+            END IF
 #TQC-B40101 --end--
           END IF
-#FUN-AC0097--add--begin 
-          IF cl_null(g_ogb[l_ac].ogb48) THEN 
-             LET g_ogb[l_ac].ogb49 = ''  
-          END IF                                                                                                              
+#FUN-AC0097--add--begin
+          IF cl_null(g_ogb[l_ac].ogb48) THEN
+             LET g_ogb[l_ac].ogb49 = ''
+          END IF
 #FUN-AC0097--add--end
        END IF
 #FUN-AA0057--add--end
@@ -6033,38 +6046,38 @@ ELSE          #FUN-C20006---add---
            CALL t600_set_no_required_b1('')
 
         #FUN-CB0087--add--str--
-        BEFORE FIELD ogb1001 
-          IF g_aza.aza115 = 'Y' AND g_argv0<>'1' AND cl_null(g_ogb[l_ac].ogb1001) THEN 
+        BEFORE FIELD ogb1001
+          IF g_aza.aza115 = 'Y' AND g_argv0<>'1' AND cl_null(g_ogb[l_ac].ogb1001) THEN
              CALL s_reason_code(g_oga.oga01,g_ogb[l_ac].ogb31,'',g_ogb[l_ac].ogb04,g_ogb[l_ac].ogb09,g_oga.oga14,g_oga.oga15) RETURNING g_ogb[l_ac].ogb1001
              CALL t600_azf03_ogb1001()  #TQC-D20050 add
           END IF
-        #FUN-CB0087--add--end-- 
+        #FUN-CB0087--add--end--
         AFTER FIELD ogb1001
            IF NOT t600_chk_ogb1001(p_cmd) THEN
               NEXT FIELD CURRENT
-           ELSE 
-              SELECT azf03 INTO g_ogb[l_ac].azf03_1 FROM azf_file WHERE azf01=g_ogb[l_ac].ogb1001 AND azf02 ='2'   
+           ELSE
+              SELECT azf03 INTO g_ogb[l_ac].azf03_1 FROM azf_file WHERE azf01=g_ogb[l_ac].ogb1001 AND azf02 ='2'
            END IF
            CALL t600_azf03_ogb1001()    #TQC-D20050 add
         #FUN-CB0087--add--str--
-        BEFORE FIELD ogb65 
-          IF g_aza.aza115 = 'Y' AND g_argv0<>'1' AND cl_null(g_ogb[l_ac].ogb65) AND g_ogb[l_ac].ogb52<>0 THEN 
+        BEFORE FIELD ogb65
+          IF g_aza.aza115 = 'Y' AND g_argv0<>'1' AND cl_null(g_ogb[l_ac].ogb65) AND g_ogb[l_ac].ogb52<>0 THEN
              CALL s_reason_code(g_oga.oga01,g_ogb[l_ac].ogb31,'',g_ogb[l_ac].ogb04,g_ogb[l_ac].ogb09,g_oga.oga14,g_oga.oga15) RETURNING g_ogb[l_ac].ogb65
              CALL t600_azf03_ogb65()    #TQC-D20050 add
           END IF
-        #FUN-CB0087--add--end-- 
+        #FUN-CB0087--add--end--
         AFTER FIELD ogb65
            IF NOT cl_null(g_ogb[l_ac].ogb65)THEN
               #FUN-CB0087--modify--str--
               #CALL t600_chk_ogb65('a')
-              #IF NOT cl_null(g_errno) THEN 
+              #IF NOT cl_null(g_errno) THEN
               #   CALL cl_err('',g_errno,1)
               IF NOT t600_chk_ogb65('a') THEN
               #FUN-CB0087--modify--end--
                  NEXT FIELD ogb65
-              ELSE 
+              ELSE
                  SELECT azf03 INTO g_ogb[l_ac].azf03_2 FROM azf_file WHERE azf01=g_ogb[l_ac].ogb65 AND azf02 ='2'
-              END IF   
+              END IF
            END IF
            CALL t600_azf03_ogb65()    #TQC-D20050 add
 
@@ -6104,7 +6117,7 @@ ELSE          #FUN-C20006---add---
 #FUN-AA0059 ---------------------end-------------------------------
            IF NOT cl_null(g_ogb[l_ac].ogb04) THEN    #TQC-C20466 add
              #IF g_ogb[l_ac].ogb04!=g_ogb_t.ogb04 THEN #MOD-C30830 add    #CHI-C40023 mark
-              IF g_ogb[l_ac].ogb04!=g_ogb_t.ogb04 OR cl_null(g_ogb_t.ogb04) THEN         #CHI-C40023 add 
+              IF g_ogb[l_ac].ogb04!=g_ogb_t.ogb04 OR cl_null(g_ogb_t.ogb04) THEN         #CHI-C40023 add
                  CALL t600_check_ogb04('ogb04',l_ac,p_cmd) RETURNING         #MOD-660090
                        l_chk_res,g_buf,g_buf1,l_b2,l_ima35,l_ima36
                  IF NOT l_chk_res THEN
@@ -6118,7 +6131,7 @@ ELSE          #FUN-C20006---add---
 #FUN-BC0064------add-----str------
        IF NOT cl_null(g_ogb[l_ac].ogb04) THEN
          #FUN-C30169 add START
-          IF g_azw.azw04 = '2' THEN 
+          IF g_azw.azw04 = '2' THEN
              SELECT ima154 INTO l_ima154
                FROM ima_file
               WHERE ima01 = g_ogb[l_ac].ogb04
@@ -6126,14 +6139,14 @@ ELSE          #FUN-C20006---add---
                 LET l_n = 0
                 SELECT COUNT(*) INTO l_n FROM rxe_file
                   WHERE rxe01 = g_oga.oga01
-                    AND rxe02 = g_ogb[l_ac].ogb03 
-                    AND rxe00 = '02' 
+                    AND rxe02 = g_ogb[l_ac].ogb03
+                    AND rxe00 = '02'
                 IF cl_null(l_n) THEN LET l_n = 0 END IF
              END IF
           END IF
          #FUN-C30169 add END
-          IF (p_cmd = 'a' AND cl_null(g_ogb04_1)) OR (p_cmd = 'a' AND g_ogb[l_ac].ogb04 != g_ogb04_1) 
-             OR (p_cmd ='u' AND g_ogb[l_ac].ogb04 != g_ogb04_1) 
+          IF (p_cmd = 'a' AND cl_null(g_ogb04_1)) OR (p_cmd = 'a' AND g_ogb[l_ac].ogb04 != g_ogb04_1)
+             OR (p_cmd ='u' AND g_ogb[l_ac].ogb04 != g_ogb04_1)
              OR (l_n = 0 AND l_ima154 = 'Y' ) THEN  #FUN-C30169 add
              IF g_azw.azw04 = '2' THEN
                 CALL t600_check_ogb04_sal(g_ogb[l_ac].ogb04)      #判断当前业态是否为零售，否则不可销售券产品
@@ -6153,7 +6166,7 @@ ELSE          #FUN-C20006---add---
                 SELECT ima154 INTO l_ima154
                   FROM ima_file
                  WHERE ima01 = g_ogb[l_ac].ogb04
-                IF l_ima154 = 'Y' THEN  
+                IF l_ima154 = 'Y' THEN
                #MOD-C30576 add END
                    CALL cl_err('','axm-681',0)
                    NEXT FIELD ogb04
@@ -6192,7 +6205,7 @@ ELSE          #FUN-C20006---add---
 #                 RETURNING g_ogb[l_ac].ogb12
 #          END IF
 ##       END IF
-#&endif 
+#&endif
 ##FUN-A50054 --End
 #FUN-A60035 ---MARK END
 #FUN-C10040---------add-------str------
@@ -6319,7 +6332,7 @@ ELSE          #FUN-C20006---add---
               NEXT FIELD ogb09
            END IF
 #&ifdef ICD    #FUN-B50096
-         #FUN-A40022----begin--add--------------- 
+         #FUN-A40022----begin--add---------------
             IF NOT cl_null(g_ogb[l_ac].ogb04) THEN
 #FUN-B50096 ----------------Begin----------------
          #     LET l_imaicd13=''
@@ -6332,7 +6345,7 @@ ELSE          #FUN-C20006---add---
                 WHERE ima01 = g_ogb[l_ac].ogb04
                IF l_ima159 = '1' AND cl_null(g_ogb[l_ac].ogb092)
                   AND g_oaz.oaz104='Y' AND g_ogb[l_ac].ogb17 = 'N'
-                  AND g_argv0 <>'8' 
+                  AND g_argv0 <>'8'
                   AND g_prog[1,7] <> 'axmt610' THEN   #MOD-C80250 add
 #FUN-B50096 ----------------End------------------
                   IF g_prog <> 'axmt850_icd' AND g_prog <> 'axmt610_icd' AND g_prog <> 'axmt610' #MOD-C30352  #MOD-C30596 add <> 'axmt610'
@@ -6366,11 +6379,11 @@ ELSE          #FUN-C20006---add---
            IF NOT cl_null(g_ogb[l_ac].ogb09) THEN
               IF g_aza.aza115='Y' AND g_argv0 MATCHES '[2456A]' THEN
                  IF NOT t600_chk_ogb1001('a') THEN NEXT FIELD ogb1001 END IF
-              END IF  
-              IF g_aza.aza115='Y' AND g_argv0 MATCHES '[89]' THEN
-                 IF NOT t600_chk_ogb65('a') THEN NEXT FIELD ogb65 END IF 
               END IF
-           END IF 
+              IF g_aza.aza115='Y' AND g_argv0 MATCHES '[89]' THEN
+                 IF NOT t600_chk_ogb65('a') THEN NEXT FIELD ogb65 END IF
+              END IF
+           END IF
            #TQC-D10082--add--end--
 
        AFTER FIELD ogb05
@@ -6387,7 +6400,7 @@ ELSE          #FUN-C20006---add---
               LET g_factor = 1
            END IF
            LET b_ogb.ogb05_fac = g_factor
-           #-----END MOD-AC0070----- 
+           #-----END MOD-AC0070-----
             #No.FUN-BB0086--add--begin--
             IF NOT cl_null(g_ogb[l_ac].ogb12) AND NOT cl_null(g_ogb[l_ac].ogb05) THEN
                IF cl_null(g_ogb_t.ogb12) OR cl_null(g_ogb05_t) OR g_ogb_t.ogb12 != g_ogb[l_ac].ogb12 OR g_ogb05_t != g_ogb[l_ac].ogb05 THEN
@@ -6397,7 +6410,7 @@ ELSE          #FUN-C20006---add---
             END IF
             LET g_ogb05_t = g_ogb[l_ac].ogb05
             #No.FUN-BB0086--add--end--
- 
+
  #TQC-C70204--mark--str--
  #     BEFORE FIELD ogb12
  #         IF NOT cl_null(g_ogb[l_ac].ogb12) THEN
@@ -6429,7 +6442,7 @@ ELSE          #FUN-C20006---add---
           IF NOT cl_null(g_ogb[l_ac].ogb12) AND p_cmd = 'u' THEN
              DELETE FROM ogi_file WHERE ogi01 = g_oga.oga01 AND ogi02 = g_ogb[l_ac].ogb03
              CALL t620_ins_ogi(g_ogb[l_ac].ogb03,g_ogb[l_ac].ogb04,g_ogb[l_ac].ogb12,g_ogb[l_ac].ogb13)
-          END IF 
+          END IF
           #FUN-C10040---------add-------end-----
           #IF NOT t600_chk_ogb12() THEN      #FUN-AC0012
               IF NOT t600_chk_ogb12(p_cmd) THEN #FUN-AC0012
@@ -6467,18 +6480,18 @@ ELSE          #FUN-C20006---add---
                  NEXT FIELD ogb12
               END IF
            END IF
-           #FUN-CA0084-----add----end  
+           #FUN-CA0084-----add----end
            LET g_ima918 = ''   #MOD-9C0055
            LET g_ima921 = ''   #MOD-9C0055
            LET g_ima930 = ''   #DEV-D30059
-           SELECT ima918,ima921,ima930 INTO g_ima918,g_ima921,g_ima930 #DEV-D30059 add ima930 
+           SELECT ima918,ima921,ima930 INTO g_ima918,g_ima921,g_ima930 #DEV-D30059 add ima930
              FROM ima_file
             WHERE ima01 = g_ogb[l_ac].ogb04
               AND imaacti = "Y"
-           
+
            IF cl_null(g_ima930) THEN LET g_ima930 = 'N' END IF  #DEV-D30059 add
 
-           IF (g_ima918 = "Y" OR g_ima921 = "Y") AND 
+           IF (g_ima918 = "Y" OR g_ima921 = "Y") AND
               (cl_null(g_ogb_t.ogb12) OR (g_ogb[l_ac].ogb12<>g_ogb_t.ogb12 )) THEN
               #非多倉儲出貨才可查詢批/序號資料
               IF g_ogb[l_ac].ogb17 = "N" THEN   #No:FUN-870131
@@ -6500,7 +6513,7 @@ ELSE          #FUN-C20006---add---
                           ELSE
                           #FUN-9C0103 ---end---
                              LET l_bno = g_ogb[l_ac].ogb31
-                          END IF 
+                          END IF
                        ELSE
                           LET l_bno = g_ogb[l_ac].ogb41
                        END IF
@@ -6557,7 +6570,7 @@ ELSE          #FUN-C20006---add---
                                            g_ogb[l_ac].ogb04,g_ogb[l_ac].ogb09,
                                            g_ogb[l_ac].ogb091,g_ogb[l_ac].ogb092,
                                            g_ogb[l_ac].ogb05,b_ogb.ogb15,b_ogb.ogb15_fac,
-                                           g_ogb[l_ac].ogb12,'','SEL',-1)#CHI-9A0022 add ''  #TQC-B90236 add '-1'   
+                                           g_ogb[l_ac].ogb12,'','SEL',-1)#CHI-9A0022 add ''  #TQC-B90236 add '-1'
                                  RETURNING l_r,g_qty
                           END IF                                                        #DEV-D30059
                           IF l_r = "Y" THEN
@@ -6586,7 +6599,7 @@ ELSE          #FUN-C20006---add---
                           ELSE
                           #FUN-9C0103 ---end---
                              LET l_bno = g_ogb[l_ac].ogb31
-                          END IF 
+                          END IF
                        ELSE
                           LET l_bno = g_ogb[l_ac].ogb41
                        END IF
@@ -6615,72 +6628,72 @@ ELSE          #FUN-C20006---add---
                  END IF
               END IF   #No:FUN-870131
            END IF
-      IF g_azw.azw04='2' THEN 
-         IF g_ogb[l_ac].ogb12 IS NULL OR g_ogb[l_ac].ogb12 !=g_ogb_t.ogb12 THEN                                                     
-            IF NOT cl_null(g_ogb[l_ac].ogb13) AND g_ogb[l_ac].ogb13 != 0 THEN 
+      IF g_azw.azw04='2' THEN
+         IF g_ogb[l_ac].ogb12 IS NULL OR g_ogb[l_ac].ogb12 !=g_ogb_t.ogb12 THEN
+            IF NOT cl_null(g_ogb[l_ac].ogb13) AND g_ogb[l_ac].ogb13 != 0 THEN
                SELECT rtz05 INTO l_rtz05 FROM rtz_file WHERE rtz01 = g_plant
                SELECT rtg05,rtg08 INTO l_rtg05,l_rtg08 FROM rtg_file,rtf_file
                 WHERE rtg01=rtf01 AND rtfconf='Y'
                   AND rtg01 = l_rtz05
                   AND rtg03=g_ogb[l_ac].ogb04
                   AND rtg04=g_ogb[l_ac].ogb05
-               IF l_rtg08='Y' THEN 
-                  SELECT rth04 INTO l_rth04 
+               IF l_rtg08='Y' THEN
+                  SELECT rth04 INTO l_rth04
                     FROM rth_file
-                   WHERE rth01=g_ogb[l_ac].ogb04 AND rth02=g_ogb[l_ac].ogb05 
+                   WHERE rth01=g_ogb[l_ac].ogb04 AND rth02=g_ogb[l_ac].ogb05
                      AND rthplant=g_plant AND rthacti='Y'
                   LET l_sale_price=l_rth04
                ELSE
                   LET l_sale_price=l_rtg05
                END IF
-               IF l_sale_price=g_ogb[l_ac].ogb13 THEN 
-                   CALL t600_price_1(l_ac) RETURNING l_fac                                                                 
-                   IF l_fac THEN                                                                                              
-                      RETURN FALSE                                                                                           
-                   END IF  
+               IF l_sale_price=g_ogb[l_ac].ogb13 THEN
+                   CALL t600_price_1(l_ac) RETURNING l_fac
+                   IF l_fac THEN
+                      RETURN FALSE
+                   END IF
                 ELSE
                    #FUN-C10040 ----add---begin ---
                    SELECT rtz04, rtz06 INTO l_rtz04,l_rtz06
                      FROM rtz_file
                     WHERE rtz01 = g_oga.ogaplant
                    IF g_azw.azw04 = '2' AND NOT s_industry("slk") THEN  #TQC-C20418 ADD not slk
-                      CALL t620_sub(g_ogb[l_ac].ogb04,l_rtz04,g_oga.oga213,g_ogb[l_ac].ogb12,g_ogb[l_ac].ogb13,t_azi04) 
-                           RETURNING g_ogb[l_ac].ogb14,g_ogb[l_ac].ogb14t 
+                      CALL t620_sub(g_ogb[l_ac].ogb04,l_rtz04,g_oga.oga213,g_ogb[l_ac].ogb12,g_ogb[l_ac].ogb13,t_azi04)
+                           RETURNING g_ogb[l_ac].ogb14,g_ogb[l_ac].ogb14t
                    ELSE
                    #FUN-C10040 ----add---end -----
-                      IF g_oga.oga213 = 'N' THEN                                                                                       
+                      IF g_oga.oga213 = 'N' THEN
 #                        LET g_ogb[l_ac].ogb14 = g_ogb[l_ac].ogb12* g_ogb[l_ac].ogb13    #CHI-B70039 mark
                          LET g_ogb[l_ac].ogb14 = g_ogb[l_ac].ogb917* g_ogb[l_ac].ogb13   #CHI-B70039
-                         CALL cl_digcut(g_ogb[l_ac].ogb14,t_azi04)  RETURNING g_ogb[l_ac].ogb14                                        
-                         LET g_ogb[l_ac].ogb14t= g_ogb[l_ac].ogb14*(1+ g_oga.oga211/100)                                               
-                         CALL cl_digcut(g_ogb[l_ac].ogb14t,t_azi04) RETURNING g_ogb[l_ac].ogb14t   
-                      ELSE                                                                                                             
+                         CALL cl_digcut(g_ogb[l_ac].ogb14,t_azi04)  RETURNING g_ogb[l_ac].ogb14
+                         LET g_ogb[l_ac].ogb14t= g_ogb[l_ac].ogb14*(1+ g_oga.oga211/100)
+                         CALL cl_digcut(g_ogb[l_ac].ogb14t,t_azi04) RETURNING g_ogb[l_ac].ogb14t
+                      ELSE
 #                        LET g_ogb[l_ac].ogb14t= g_ogb[l_ac].ogb12*g_ogb[l_ac].ogb13    #CHI-B70039 mark
                          LET g_ogb[l_ac].ogb14t= g_ogb[l_ac].ogb917*g_ogb[l_ac].ogb13   #CHI-B70039
-                         CALL cl_digcut(g_ogb[l_ac].ogb14t,t_azi04) RETURNING g_ogb[l_ac].ogb14t                                       
-                         LET g_ogb[l_ac].ogb14 = g_ogb[l_ac].ogb14t/(1+ g_oga.oga211/100)                                              
-                         CALL cl_digcut(g_ogb[l_ac].ogb14,t_azi04)  RETURNING g_ogb[l_ac].ogb14                                        
-                      END IF                                                                                                           
+                         CALL cl_digcut(g_ogb[l_ac].ogb14t,t_azi04) RETURNING g_ogb[l_ac].ogb14t
+                         LET g_ogb[l_ac].ogb14 = g_ogb[l_ac].ogb14t/(1+ g_oga.oga211/100)
+                         CALL cl_digcut(g_ogb[l_ac].ogb14,t_azi04)  RETURNING g_ogb[l_ac].ogb14
+                      END IF
                    END IF  #FUN-C10040  add
-                END IF                                                                                                              
-             END IF                                                                                                                 
-         END IF                                                                                                                     
+                END IF
+             END IF
+         END IF
       END IF
       CALL t600_set_required_b1(p_cmd) #FUN-9C0173
       CALL t600_set_no_required_b1(p_cmd) #FUN-9C0173
 ##FUN-C50097 ADD BEG------ TQC-C70206
-      IF  g_prog[1,7] = 'axmt628' AND g_aza.aza26='2' AND g_oaz.oaz94 = 'Y' THEN         
-         IF NOT t600_chk_ogb52() THEN 
+      IF  g_prog[1,7] = 'axmt628' AND g_aza.aza26='2' AND g_oaz.oaz94 = 'Y' THEN
+         IF NOT t600_chk_ogb52() THEN
             CALL cl_err(g_ogb[l_ac].ogb12,'axm-958',0)
             LET g_ogb[l_ac].ogb12 = g_ogb_t.ogb12
-            NEXT FIELD ogb12 
-         END IF    
+            NEXT FIELD ogb12
+         END IF
       END IF
        BEFORE FIELD ogb52
           IF NOT cl_null(g_ogb[l_ac].ogb52) THEN
               LET g_ogb_t.ogb52 = g_ogb[l_ac].ogb52
           END IF
-              
+
        AFTER FIELD ogb52
           IF NOT cl_null(g_ogb[l_ac].ogb52) AND NOT cl_null(g_ogb[l_ac].ogb05) THEN
              IF cl_null(g_ogb_t.ogb52) OR cl_null(g_ogb05_t) OR g_ogb_t.ogb52 != g_ogb[l_ac].ogb52 OR g_ogb05_t != g_ogb[l_ac].ogb05 THEN
@@ -6720,7 +6733,7 @@ ELSE          #FUN-C20006---add---
              END IF
           END IF
          ##FUN-CA00844-----add----end
-          IF NOT t600_chk_ogb52() THEN 
+          IF NOT t600_chk_ogb52() THEN
              CALL cl_err(g_ogb[l_ac].ogb52,'axm-957',0)
              LET g_ogb[l_ac].ogb52 = 0
              NEXT FIELD ogb52
@@ -6732,27 +6745,27 @@ ELSE          #FUN-C20006---add---
              CALL cl_set_comp_required('ogb65',g_ogb[l_ac].ogb52<>0 AND NOT cl_null(g_ogb[l_ac].ogb52))
           END IF
           #FUN-CB0087--add--end--
-          
+
        BEFORE FIELD ogb53
           IF NOT cl_null(g_ogb[l_ac].ogb53) THEN
               LET g_ogb_t.ogb53 = g_ogb[l_ac].ogb53
           END IF
-       AFTER FIELD ogb53          
-          IF NOT t600_chk_ogb53() THEN 
+       AFTER FIELD ogb53
+          IF NOT t600_chk_ogb53() THEN
              CALL cl_err(g_ogb[l_ac].ogb53,'axm-957',0)
              LET g_ogb[l_ac].ogb53 = 0
              NEXT FIELD ogb53
-          END IF          
+          END IF
           #将双单位合计签退数量写入签退数量(依销售单位)ogb52,
           CALL t600_set_ogb52()
           #签退计价数量(依计价单位)ogb55
-          CALL t600_set_ogb55()          
+          CALL t600_set_ogb55()
        BEFORE FIELD ogb54
           IF NOT cl_null(g_ogb[l_ac].ogb54) THEN
               LET g_ogb_t.ogb54 = g_ogb[l_ac].ogb54
           END IF
-       AFTER FIELD ogb54          
-          IF NOT t600_chk_ogb53() THEN 
+       AFTER FIELD ogb54
+          IF NOT t600_chk_ogb53() THEN
              CALL cl_err(g_ogb[l_ac].ogb54,'axm-957',0)
              LET g_ogb[l_ac].ogb54 = 0
              NEXT FIELD ogb54
@@ -6760,19 +6773,19 @@ ELSE          #FUN-C20006---add---
           #将双单位合计签退数量写入签退数量(依销售单位)ogb52,
           CALL t600_set_ogb52()
           #签退计价数量(依计价单位)ogb55
-          CALL t600_set_ogb55()                     
+          CALL t600_set_ogb55()
        BEFORE FIELD ogb55
           IF NOT cl_null(g_ogb[l_ac].ogb55) THEN
               LET g_ogb_t.ogb55 = g_ogb[l_ac].ogb55
-          END IF         
-       AFTER FIELD ogb55               
-#FUN-C50097 ADD END------     
+          END IF
+       AFTER FIELD ogb55
+#FUN-C50097 ADD END------
        AFTER FIELD ogb13
            #FUN-C40089---begin
            SELECT oah08 INTO g_oah08 FROM oah_file WHERE oah01=g_oga.oga31
            IF cl_null(g_oah08) THEN
               LET g_oah08 = 'Y'
-           END IF 
+           END IF
            IF g_oah08='N' AND g_ogb[l_ac].ogb13=0 THEN
               CALL cl_err(g_ogb[l_ac].ogb13,'axm-627',0)   #FUN-C50074
               NEXT FIELD ogb13
@@ -6812,8 +6825,8 @@ ELSE          #FUN-C20006---add---
         AFTER FIELD ogb913  #第二單位
            CASE t600_chk_ogb913()
               WHEN "ogb04"  NEXT FIELD ogb04
-              WHEN "ogb092" 
-                 CASE 
+              WHEN "ogb092"
+                 CASE
                     WHEN g_oaz.oaz104 = 'Y'
                          NEXT FIELD ogb092
                     WHEN g_oaz.oaz103 = 'Y'
@@ -6836,8 +6849,8 @@ ELSE          #FUN-C20006---add---
         BEFORE FIELD ogb914  #第二轉換率
            CASE t600_bef_ogb914()
               WHEN "ogb04"  NEXT FIELD ogb04
-              WHEN "ogb092" 
-                 CASE 
+              WHEN "ogb092"
+                 CASE
                     WHEN g_oaz.oaz104 = 'Y'
                          NEXT FIELD ogb092
                     WHEN g_oaz.oaz103 = 'Y'
@@ -6855,8 +6868,8 @@ ELSE          #FUN-C20006---add---
         BEFORE FIELD ogb915
            CASE t600_bef_ogb915()
               WHEN "ogb04"  NEXT FIELD ogb04
-              WHEN "ogb092" 
-                 CASE 
+              WHEN "ogb092"
+                 CASE
                     WHEN g_oaz.oaz104 = 'Y'
                          NEXT FIELD ogb092
                     WHEN g_oaz.oaz103 = 'Y'
@@ -6883,15 +6896,15 @@ ELSE          #FUN-C20006---add---
            LET g_ima918 = ''   #MOD-9C0055
            LET g_ima921 = ''   #MOD-9C0055
            LET g_ima930 = ''   #DEV-D30059
-           SELECT ima918,ima921,ima930 INTO g_ima918,g_ima921,g_ima930 #DEV-D30059 add ima930 
+           SELECT ima918,ima921,ima930 INTO g_ima918,g_ima921,g_ima930 #DEV-D30059 add ima930
              FROM ima_file
             WHERE ima01 = g_ogb[l_ac].ogb04
               AND imaacti = "Y"
-           
+
 
            IF cl_null(g_ima930) THEN LET g_ima930 = 'N' END IF  #DEV-D30059 add
 
-           IF (g_ima918 = "Y" OR g_ima921 = "Y") AND 
+           IF (g_ima918 = "Y" OR g_ima921 = "Y") AND
               (cl_null(g_ogb_t.ogb915) OR (g_ogb[l_ac].ogb915<>g_ogb_t.ogb915 )) THEN
               #非多倉儲出貨才可查詢批/序號資料
               IF g_ogb[l_ac].ogb17 = "N" THEN   #No:FUN-870131
@@ -6956,7 +6969,7 @@ ELSE          #FUN-C20006---add---
                        ELSE
                           LET l_bno = g_ogb[l_ac].ogb41
                        END IF
-#No.FUN-9C0103 ---end---  
+#No.FUN-9C0103 ---end---
                       #CALL s_lotout(g_prog,g_oga.oga01,g_ogb[l_ac].ogb03,0,   #TQC-B90236
                        IF g_ima930 = 'N' THEN                                        #DEV-D30059
                           CALL s_mod_lot(g_prog,g_oga.oga01,g_ogb[l_ac].ogb03,0,   #TQC-B90236
@@ -6989,7 +7002,7 @@ ELSE          #FUN-C20006---add---
                           ELSE
                           #FUN-9C0103 ---end---
                              LET l_bno = g_ogb[l_ac].ogb31
-                          END IF  
+                          END IF
                        ELSE
                           LET l_bno = g_ogb[l_ac].ogb41
                        END IF
@@ -7024,8 +7037,8 @@ ELSE          #FUN-C20006---add---
            #No.FUN-BB0086--add--end--
            CASE t600_chk_ogb910()
               WHEN "ogb04"  NEXT FIELD ogb04
-              WHEN "ogb092" 
-                 CASE 
+              WHEN "ogb092"
+                 CASE
                     WHEN g_oaz.oaz104 = 'Y'
                          NEXT FIELD ogb092
                     WHEN g_oaz.oaz103 = 'Y'
@@ -7039,8 +7052,8 @@ ELSE          #FUN-C20006---add---
         BEFORE FIELD ogb911  #第一轉換率
            CASE t600_bef_ogb911()
               WHEN "ogb04"  NEXT FIELD ogb04
-              WHEN "ogb092" 
-                 CASE 
+              WHEN "ogb092"
+                 CASE
                     WHEN g_oaz.oaz104 = 'Y'
                          NEXT FIELD ogb092
                     WHEN g_oaz.oaz103 = 'Y'
@@ -7058,8 +7071,8 @@ ELSE          #FUN-C20006---add---
         BEFORE FIELD ogb912
            CASE t600_bef_ogb912()
               WHEN "ogb04"  NEXT FIELD ogb04
-              WHEN "ogb092" 
-                 CASE 
+              WHEN "ogb092"
+                 CASE
                     WHEN g_oaz.oaz104 = 'Y'
                          NEXT FIELD ogb092
                     WHEN g_oaz.oaz103 = 'Y'
@@ -7082,14 +7095,14 @@ ELSE          #FUN-C20006---add---
            #No.FUN-BB0086--add--begin--
            LET l_tf = ""
            LET l_case = ""
-           CALL t600_ogb912_check() RETURNING l_tf,l_case 
-           IF NOT l_tf THEN 
-              CASE l_case 
+           CALL t600_ogb912_check() RETURNING l_tf,l_case
+           IF NOT l_tf THEN
+              CASE l_case
                  WHEN "ogb912" NEXT FIELD ogb912
                  WHEN "ogb915" NEXT FIELD ogb915
-                 OTHERWISE EXIT CASE 
-               END CASE 
-           END IF 
+                 OTHERWISE EXIT CASE
+               END CASE
+           END IF
            #No.FUN-BB0086--add--end--
            #No.FUN-BB0086--mark--begin--
            #CASE t600_chk_ogb912()
@@ -7110,10 +7123,10 @@ ELSE          #FUN-C20006---add---
            END CASE
            #No.FUN-BB0086--add--begin--
            IF NOT cl_null(g_ogb[l_ac].ogb917) AND g_ogb[l_ac].ogb917 <> 0 THEN #TQC-C20183
-              IF NOT t600_ogb917_check() THEN 
+              IF NOT t600_ogb917_check() THEN
                  LET g_ogb916_t = g_ogb[l_ac].ogb916
                  NEXT FIELD ogb917
-              END IF 
+              END IF
            END IF                                                              #TQC-C20183
            LET g_ogb916_t = g_ogb[l_ac].ogb916
            #No.FUN-BB0086--add--end--
@@ -7147,7 +7160,7 @@ ELSE          #FUN-C20006---add---
 
         AFTER FIELD ogb1003
           #CALL t600_price(l_ac) RETURNING l_fac       #FUN-AC0012
-          #CALL t600_price(l_ac,p_cmd) RETURNING l_fac #FUN-AC0012  #TQC-B50117 
+          #CALL t600_price(l_ac,p_cmd) RETURNING l_fac #FUN-AC0012  #TQC-B50117
            IF cl_null(g_ogb[l_ac].ogb31) AND cl_null(g_ogb[l_ac].ogb32) THEN     #MOD-B60052 add
               CALL t600_price(p_cmd,l_ac) RETURNING l_fac #FUN-AC0012 #TQC-B50117
            END IF                                                                #MOD-B60052 add
@@ -7183,10 +7196,10 @@ ELSE          #FUN-C20006---add---
                 LET g_ogb[l_ac].ogb42 = g_ogb_t.ogb42
                 NEXT FIELD ogb42
              ELSE
-                SELECT pjb09,pjb11 INTO l_pjb09,l_pjb11 
+                SELECT pjb09,pjb11 INTO l_pjb09,l_pjb11
                  FROM pjb_file WHERE pjb01 = g_ogb[l_ac].ogb41
                   AND pjb02 = g_ogb[l_ac].ogb42
-                  AND pjbacti = 'Y'            
+                  AND pjbacti = 'Y'
                 IF l_pjb09 != 'Y' OR l_pjb11 != 'Y' THEN
                    CALL cl_err(g_ogb[l_ac].ogb42,'apj-090',0)
                    LET g_ogb[l_ac].ogb42 = g_ogb_t.ogb42
@@ -7246,7 +7259,7 @@ ELSE          #FUN-C20006---add---
 	  #str-----------------------add by ly20170810
 
           #str-----------------------add by huzhou 20170808
-          IF cl_null(g_ogb[l_ac].ogbud01) or g_ogb[l_ac].ogbud01=' ' or g_ogb[l_ac].ogbud01 IS NULL THEN 
+          IF cl_null(g_ogb[l_ac].ogbud01) or g_ogb[l_ac].ogbud01=' ' or g_ogb[l_ac].ogbud01 IS NULL THEN
              SELECT oebud01 INTO l_oebud01 FROM oeb_file WHERE oeb01=g_ogb[l_ac].ogb31 AND oeb04=g_ogb[l_ac].ogb04
                  AND oeb03=g_ogb[l_ac].ogb32
              LET g_ogb[l_ac].ogbud01 = l_oebud01
@@ -7266,16 +7279,16 @@ ELSE          #FUN-C20006---add---
         AFTER FIELD ogbud05
            IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
         AFTER FIELD ogbud06
-         #str--------------------------add by ly170810 
+         #str--------------------------add by ly170810
          # IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
-          IF cl_null(g_ogb[l_ac].ogbud06) AND  g_oga.oga09  MATCHES '[246]' THEN 
+          IF cl_null(g_ogb[l_ac].ogbud06) AND  g_oga.oga09  MATCHES '[246]' THEN
              SELECT ogbud06 INTO l_ogbud06 FROM ogb_file WHERE ogb01=g_oga.oga011 AND ogb03=g_ogb[l_ac].ogbud10
              LET g_ogb[l_ac].ogbud06 = l_ogbud06
           ELSE
              LET g_ogb[l_ac].ogbud06 = g_ogb[l_ac].ogbud06
           DISPLAY BY NAME g_ogb[l_ac].ogbud06
            #  NEXT FIELD ogbud01   # mark by ly20170810
-          
+
          END IF
 
         AFTER FIELD ogbud07
@@ -7335,21 +7348,21 @@ ELSE          #FUN-C20006---add---
                    END IF
                    #FUN-BC0064---------add-----end------
                 END IF     #FUN-820046 add
-                
+
                 IF l_lock_sw = "Y" THEN
                    CALL cl_err("", -263, 1)
                    CANCEL DELETE
                 END IF
 
-                #如果是出通單，要判斷參數是否做批序號管理 
+                #如果是出通單，要判斷參數是否做批序號管理
                 IF g_argv0 <> '1' OR (g_argv0='1' AND g_oaz.oaz81='Y') THEN  #FUN-850120 add
                   LET g_ima918 = ''   #MOD-9C0055
                   LET g_ima921 = ''   #MOD-9C0055
-                  SELECT ima918,ima921 INTO g_ima918,g_ima921 
+                  SELECT ima918,ima921 INTO g_ima918,g_ima921
                     FROM ima_file
                    WHERE ima01 = g_ogb[l_ac].ogb04
                      AND imaacti = "Y"
-               
+
                   IF g_ima918 = "Y" OR g_ima921 = "Y" THEN
                     #IF NOT s_lotout_del(g_prog,g_oga.oga01,g_ogb[l_ac].ogb03,0,g_ogb[l_ac].ogb04,'DEL') THEN   #No:FUN-860045 #TQC-B90236
                      IF NOT s_lot_del(g_prog,g_oga.oga01,g_ogb[l_ac].ogb03,0,g_ogb[l_ac].ogb04,'DEL') THEN   #No:FUN-860045 #TQC-B90236
@@ -7364,10 +7377,10 @@ ELSE          #FUN-C20006---add---
 
                IF g_prog[1,7] <> 'axmt628' AND g_prog[1,7]<>'axmt629' THEN  #axmt628/629不處理rvbs #FUN-B40066 add [1,7]
 #No.TQC-B90236-----mark------------
-                 #IF NOT s_del_rvbs("1",g_oga.oga01,g_ogb[l_ac].ogb03,0)  THEN                      #FUN-880129 Mark 
+                 #IF NOT s_del_rvbs("1",g_oga.oga01,g_ogb[l_ac].ogb03,0)  THEN                      #FUN-880129 Mark
                  #  ROLLBACK WORK
                  #  CANCEL DELETE
-                 #END IF   
+                 #END IF
 #No.TQC-B90236-----mark------------
                END IF
 
@@ -7434,9 +7447,9 @@ ELSE          #FUN-C20006---add---
                   CALL t600_b_else()
 
 #TQC-B40204 --begin--
-              IF g_oga.oga55 MATCHES '[01RW]' THEN 
+              IF g_oga.oga55 MATCHES '[01RW]' THEN
                  LET l_oga55 = '0'
-              END IF 
+              END IF
 #TQC-B40204 --end--
 
                IF NOT t600_b1_upd() THEN
@@ -7457,7 +7470,7 @@ ELSE          #FUN-C20006---add---
                #  END IF
                ##FUN-A20022 END----------------------------------------------
                #MOD-B10154 End-----
-#                 LET l_oga55 = '0'          #FUN-550050      #TQC-B40204 
+#                 LET l_oga55 = '0'          #FUN-550050      #TQC-B40204
                   CALL t600_mlog('U')
                   #FUN-C10040 add begin ---
                   DELETE FROM ogi_file WHERE ogi01 = g_oga.oga01 AND ogi02 = g_ogb[l_ac].ogb03
@@ -7465,7 +7478,7 @@ ELSE          #FUN-C20006---add---
                   IF g_success = 'N' THEN
                      ROLLBACK WORK
                      EXIT INPUT
-                  END IF 
+                  END IF
                   #FUN-C10040 add end -----
                   IF g_aza.aza50='Y' THEN
                      CALL t600_oga50_sum()    #No.FUN-610064
@@ -7493,17 +7506,17 @@ ELSE          #FUN-C20006---add---
                LET INT_FLAG = 0
                LET g_flag2 = '1'   #CHI-920012
 
-               
+
                IF p_cmd = 'a' AND l_ac <= g_ogb.getLength() THEN #CHI-C30118 add
-                  #如果是出通單，要判斷參數是否做批序號管理 
+                  #如果是出通單，要判斷參數是否做批序號管理
                   IF g_argv0 <> '1' OR (g_argv0='1' AND g_oaz.oaz81='Y') THEN  #FUN-850120 add
                     LET g_ima918 = ''   #MOD-9C0055
                     LET g_ima921 = ''   #MOD-9C0055
-                    SELECT ima918,ima921 INTO g_ima918,g_ima921 
+                    SELECT ima918,ima921 INTO g_ima918,g_ima921
                       FROM ima_file
                      WHERE ima01 = g_ogb[l_ac].ogb04
                        AND imaacti = "Y"
-                  
+
                     IF g_ima918 = "Y" OR g_ima921 = "Y" THEN
                        #MOD-CA0189 add start -----
                        IF g_ogb[l_ac].ogb03 <> g_ogb_o.ogb03 THEN
@@ -7539,7 +7552,7 @@ ELSE          #FUN-C20006---add---
                      LET l_ac = l_ac_t
                      LET g_b_flag = '1'
                   END IF
-               #FUN-D30034--add--end--  
+               #FUN-D30034--add--end--
                END IF
                CLOSE t600_bcl1
                ROLLBACK WORK
@@ -7554,11 +7567,11 @@ ELSE          #FUN-C20006---add---
                        #IF g_oga.oga09 MATCHES '[2468]' THEN   #CHI-CC0014
                         IF g_oga.oga09 MATCHES '[124568]' THEN   #CHI-CC0014
                            IF NOT s_chksmz(g_ogb[l_ac].ogb04, g_oga.oga01, g_ogb[l_ac].ogb09, g_ogb[l_ac].ogb091) THEN
-                              NEXT FIELD ogb09  
+                              NEXT FIELD ogb09
                            END IF
                         END IF
-                     END IF 
-                  END IF 
+                     END IF
+                  END IF
                  #MOD-D10161 add end   -----
                   IF g_ogb[l_ac].ogb17='Y' AND g_oaz.oaz23 = 'Y' THEN     ##多倉儲出貨
                      SELECT SUM(ogc12) INTO l_ogc12_t FROM ogc_file
@@ -7582,7 +7595,7 @@ ELSE          #FUN-C20006---add---
             IF l_ac <= g_ogb.getLength() THEN #MOD-BA0038 add
               #IF g_azw.azw04 = '2' THEN                     #FUN-B10024
                IF g_azw.azw04 = '2' AND l_del_flg = 'N' THEN #FUN-B10024
-                  CALL t600_add_store(g_ogb[l_ac].ogb04,g_ogb[l_ac].ogb09)  
+                  CALL t600_add_store(g_ogb[l_ac].ogb04,g_ogb[l_ac].ogb09)
                END IF
             END IF #MOD-BA0038 add
             LET l_del_flg = 'N'       #FUN-B10024
@@ -7612,7 +7625,7 @@ ELSE          #FUN-C20006---add---
            LET l_exit_sw = FALSE
            EXIT INPUT
        ##JT -- add start --
-       #ON ACTION select_ima01 
+       #ON ACTION select_ima01
        #   IF NOT cl_null(g_ogb[l_ac].ogb31) AND NOT cl_null(g_ogb[l_ac].ogb32) THEN
        #      SELECT oeb04 INTO l_oeb04 FROM oeb_file
        #        WHERE oeb01=g_ogb[l_ac].ogb31 AND oeb03=g_ogb[l_ac].ogb32
@@ -7646,7 +7659,7 @@ ELSE          #FUN-C20006---add---
        #                         AND ogb03=g_ogb[l_ac].ogb03
        #      END IF
        #      LET g_ogb_o.ogb32 = g_ogb[l_ac].ogb32
-       #   END IF 
+       #   END IF
        ##JT -- add end --
 
         ON ACTION mntn_serial_no
@@ -7673,7 +7686,7 @@ ELSE          #FUN-C20006---add---
                   ELSE
                   #FUN-BB0081--Add--End
                      CALL t600_b_ogg()
-                  END IF #FUN-BB0081 add            
+                  END IF #FUN-BB0081 add
                ELSE
                   IF g_oaz.oaz23 = 'Y' THEN
                      CALL t600_b_ogd()
@@ -7686,7 +7699,7 @@ ELSE          #FUN-C20006---add---
         ON ACTION qry_product_inventory
               LET g_msg='axmq450 ',g_ogb[l_ac].ogb04
               CALL cl_cmdrun(g_msg)
-    
+
         ON ACTION unit_price
                CALL t600_6007()
 
@@ -7781,32 +7794,32 @@ ELSE          #FUN-C20006---add---
                    RETURNING g_ogb[l_ac].att00
 #FUN-AA0059---------mod------------end------------------
                  DISPLAY BY NAME g_ogb[l_ac].att00
-                 LET g_ogb[l_ac].ogb04 =g_ogb[l_ac].att00                       
-                 LET g_ogb[l_ac].att01 =null                                    
-                 LET g_ogb[l_ac].att01_c =null                                  
-                 LET g_ogb[l_ac].att02 =null                                    
-                 LET g_ogb[l_ac].att02_c =null                                  
-                 LET g_ogb[l_ac].att03 =null                                    
-                 LET g_ogb[l_ac].att03_c =null                                  
-                 LET g_ogb[l_ac].att04 =null                                    
-                 LET g_ogb[l_ac].att04_c =null                                  
-                 LET g_ogb[l_ac].att05 =null                                    
-                 LET g_ogb[l_ac].att05_c =null                                  
-                 LET g_ogb[l_ac].att06 =null                                    
-                 LET g_ogb[l_ac].att06_c =null                                  
-                 LET g_ogb[l_ac].att07 =null                                    
-                 LET g_ogb[l_ac].att07_c =null                                  
-                 LET g_ogb[l_ac].att08 =null                                    
-                 LET g_ogb[l_ac].att08_c =null                                  
-                 LET g_ogb[l_ac].att09 =null                                    
-                 LET g_ogb[l_ac].att09_c =null                                  
-                 LET g_ogb[l_ac].att10 =null                                    
-                 LET g_ogb[l_ac].att10_c =null                                  
+                 LET g_ogb[l_ac].ogb04 =g_ogb[l_ac].att00
+                 LET g_ogb[l_ac].att01 =null
+                 LET g_ogb[l_ac].att01_c =null
+                 LET g_ogb[l_ac].att02 =null
+                 LET g_ogb[l_ac].att02_c =null
+                 LET g_ogb[l_ac].att03 =null
+                 LET g_ogb[l_ac].att03_c =null
+                 LET g_ogb[l_ac].att04 =null
+                 LET g_ogb[l_ac].att04_c =null
+                 LET g_ogb[l_ac].att05 =null
+                 LET g_ogb[l_ac].att05_c =null
+                 LET g_ogb[l_ac].att06 =null
+                 LET g_ogb[l_ac].att06_c =null
+                 LET g_ogb[l_ac].att07 =null
+                 LET g_ogb[l_ac].att07_c =null
+                 LET g_ogb[l_ac].att08 =null
+                 LET g_ogb[l_ac].att08_c =null
+                 LET g_ogb[l_ac].att09 =null
+                 LET g_ogb[l_ac].att09_c =null
+                 LET g_ogb[l_ac].att10 =null
+                 LET g_ogb[l_ac].att10_c =null
                  NEXT FIELD att00
               WHEN INFIELD(ogb1001)
-                 #FUN-CB0087---add---str---         
+                 #FUN-CB0087---add---str---
                  CALL s_get_where(g_oga.oga01,g_ogb[l_ac].ogb31,'',g_ogb[l_ac].ogb04,g_ogb[l_ac].ogb09,g_oga.oga14,g_oga.oga15) RETURNING l_flag1,l_where
-                 IF l_flag1 AND g_aza.aza115 = 'Y' AND g_argv0 <> '1' THEN 
+                 IF l_flag1 AND g_aza.aza115 = 'Y' AND g_argv0 <> '1' THEN
                     CALL cl_init_qry_var()
                     LET g_qryparam.form     ="q_ggc08"
                     LET g_qryparam.where = l_where
@@ -7816,53 +7829,53 @@ ELSE          #FUN-C20006---add---
                     CALL cl_init_qry_var()
                     LET g_qryparam.default1 = g_ogb[l_ac].ogb1001  #No.TQC-7C0055
                     IF g_aza.aza50 = 'Y' THEN
-                       LET g_qryparam.form ="q_azf03"  
-                       LET g_qryparam.arg1 ="2"   
-                       LET g_qryparam.arg2 ="1"    
+                       LET g_qryparam.form ="q_azf03"
+                       LET g_qryparam.arg1 ="2"
+                       LET g_qryparam.arg2 ="1"
                     ELSE
                        LET g_qryparam.form ="q_azf03"  #No.FUN-930104
                        LET g_qryparam.arg1 ="2"        #No.FUN-930104
-                       LET g_qryparam.arg2 ="1"        #No.FUN-930104  
+                       LET g_qryparam.arg2 ="1"        #No.FUN-930104
                     END IF
-                 END IF  #FUN-CB0087 add   
+                 END IF  #FUN-CB0087 add
                  CALL cl_create_qry() RETURNING g_ogb[l_ac].ogb1001
                  DISPLAY BY NAME g_ogb[l_ac].ogb1001
                  CALL t600_azf03_ogb1001()    #TQC-D20050 add
                  NEXT FIELD ogb1001
-       #No.FUN-A90040  begin--           
+       #No.FUN-A90040  begin--
               WHEN INFIELD(ogb48)
                  CALL cl_init_qry_var()
                  LET g_qryparam.form ="q_lnt06_1"
                  LET g_qryparam.default1 = g_ogb[l_ac].ogb48
                  LET g_qryparam.default2 = g_ogb[l_ac].ogb49
-                 LET g_qryparam.arg1 = g_oga.oga83       #FUN-AA0057   
-                 LET g_qryparam.arg2 = g_oga.oga02       #FUN-AA0057   
+                 LET g_qryparam.arg1 = g_oga.oga83       #FUN-AA0057
+                 LET g_qryparam.arg2 = g_oga.oga02       #FUN-AA0057
                  CALL cl_create_qry() RETURNING g_ogb[l_ac].ogb48,g_ogb[l_ac].ogb49
                  DISPLAY BY NAME g_ogb[l_ac].ogb48,g_ogb[l_ac].ogb49
                  NEXT FIELD ogb48
-          #No.FUN-A90040    end--    
+          #No.FUN-A90040    end--
 
-                 
+
                  WHEN INFIELD(ogb04)
                     #FUN-AA0089--------------------------add start------------------------------
                     IF p_cmd = 'a' AND cl_null(g_oga.oga011) AND cl_null(g_oga.oga16)
                        AND cl_null(g_ogb[l_ac].ogb31) AND cl_null(g_ogb[l_ac].ogb32) THEN
-                       CALL q_ima(1,1,g_plant)  RETURNING  g_multi_ima01                   
-                       IF NOT cl_null(g_multi_ima01)  THEN 
-                          CALL t600_multi_ima01()      
-                          IF g_success = 'N' THEN    
-                             NEXT FIELD ohb04    
-                          END IF                    
+                       CALL q_ima(1,1,g_plant)  RETURNING  g_multi_ima01
+                       IF NOT cl_null(g_multi_ima01)  THEN
+                          CALL t600_multi_ima01()
+                          IF g_success = 'N' THEN
+                             NEXT FIELD ohb04
+                          END IF
                           CALL t600_b1_fill(" 1=1")
                           LET g_flag = TRUE
                           CALL t600_b1()   #FUN-AA0089 101119
-                          EXIT INPUT                 
+                          EXIT INPUT
                        END IF
                     ELSE
-                    #FUN-AA0089--------------------------add end-------------------------------- 
+                    #FUN-AA0089--------------------------add end--------------------------------
 #FUN-AB0025---------mod------------str-----------------
-#                      CALL cl_init_qry_var()                    
-#                      IF g_azw.azw04='2' THEN                    
+#                      CALL cl_init_qry_var()
+#                      IF g_azw.azw04='2' THEN
 #                         SELECT rtz04 INTO l_rtz04 FROM rtz_file
 #                          WHERE rtz01=g_plant
 #                         IF NOT cl_null(l_rtz04) THEN
@@ -7872,14 +7885,14 @@ ELSE          #FUN-C20006---add---
 #                            LET g_qryparam.form="q_ima"
 #                         END IF
 #                      ELSE
-#                         LET g_qryparam.form ="q_ima"                                          
+#                         LET g_qryparam.form ="q_ima"
 #                      END IF  #No.FUN-870007
-#                      LET g_qryparam.default1 = g_ogb[l_ac].ogb04                   
-#                      CALL cl_create_qry() RETURNING g_ogb[l_ac].ogb04            
+#                      LET g_qryparam.default1 = g_ogb[l_ac].ogb04
+#                      CALL cl_create_qry() RETURNING g_ogb[l_ac].ogb04
                        CALL q_sel_ima(FALSE, "q_ima","",g_ogb[l_ac].ogb04,"","","","","",'' )
-                           RETURNING g_ogb[l_ac].ogb04                                        
+                           RETURNING g_ogb[l_ac].ogb04
 #FUN-AB0025---------mod------------end-----------------
-                       DISPLAY g_ogb[l_ac].ogb04 TO ogb04  #No.MOD-490172            
+                       DISPLAY g_ogb[l_ac].ogb04 TO ogb04  #No.MOD-490172
                        NEXT FIELD ogb04
                     END IF
 
@@ -7895,8 +7908,8 @@ ELSE          #FUN-C20006---add---
                     IF g_azw.azw04='2' THEN
                        CALL q_img42(FALSE,TRUE,g_ogb[l_ac].ogb04,g_ogb[l_ac].ogb09,
                               g_ogb[l_ac].ogb091,g_ogb[l_ac].ogb092,'A','1',g_oga.ogaplant)
-                        RETURNING g_ogb[l_ac].ogb09,g_ogb[l_ac].ogb091,                                                       
-                                  g_ogb[l_ac].ogb092   
+                        RETURNING g_ogb[l_ac].ogb09,g_ogb[l_ac].ogb091,
+                                  g_ogb[l_ac].ogb092
                     ELSE
                        #FUN-C30300---begin
                        LET g_ima906 = NULL
@@ -7921,11 +7934,11 @@ ELSE          #FUN-C20006---add---
                      NEXT FIELD ogb09
 
                  WHEN INFIELD(ogb091)
-                     IF g_azw.azw04='2' THEN                                                                                        
-                        CALL q_img42(FALSE,TRUE,g_ogb[l_ac].ogb04,g_ogb[l_ac].ogb09,                                               
-                              g_ogb[l_ac].ogb091,g_ogb[l_ac].ogb092,'A','1',g_oga.ogaplant)                                          
-                        RETURNING g_ogb[l_ac].ogb09,g_ogb[l_ac].ogb091,                                                             
-                                        g_ogb[l_ac].ogb092                                                                          
+                     IF g_azw.azw04='2' THEN
+                        CALL q_img42(FALSE,TRUE,g_ogb[l_ac].ogb04,g_ogb[l_ac].ogb09,
+                              g_ogb[l_ac].ogb091,g_ogb[l_ac].ogb092,'A','1',g_oga.ogaplant)
+                        RETURNING g_ogb[l_ac].ogb09,g_ogb[l_ac].ogb091,
+                                        g_ogb[l_ac].ogb092
                      ELSE
                         #FUN-C30300---begin
                         LET g_ima906 = NULL
@@ -7950,11 +7963,11 @@ ELSE          #FUN-C20006---add---
                      NEXT FIELD ogb091
                  #MOD-C30509---begin
                  WHEN INFIELD(ogb092)
-                     IF g_azw.azw04='2' THEN                                                                                        
-                        CALL q_img42(FALSE,TRUE,g_ogb[l_ac].ogb04,g_ogb[l_ac].ogb09,                                               
-                              g_ogb[l_ac].ogb091,g_ogb[l_ac].ogb092,'A','1',g_oga.ogaplant)                                          
-                        RETURNING g_ogb[l_ac].ogb09,g_ogb[l_ac].ogb091,                                                             
-                                        g_ogb[l_ac].ogb092                                                                          
+                     IF g_azw.azw04='2' THEN
+                        CALL q_img42(FALSE,TRUE,g_ogb[l_ac].ogb04,g_ogb[l_ac].ogb09,
+                              g_ogb[l_ac].ogb091,g_ogb[l_ac].ogb092,'A','1',g_oga.ogaplant)
+                        RETURNING g_ogb[l_ac].ogb09,g_ogb[l_ac].ogb091,
+                                        g_ogb[l_ac].ogb092
                      ELSE
                         #FUN-C30300---begin
                         LET g_ima906 = NULL
@@ -7977,7 +7990,7 @@ ELSE          #FUN-C20006---add---
                      DISPLAY BY NAME g_ogb[l_ac].ogb091
                      DISPLAY BY NAME g_ogb[l_ac].ogb092
                      NEXT FIELD ogb092
-                 #MOD-C30509---end    
+                 #MOD-C30509---end
                  WHEN INFIELD(ogb908)
                       CALL q_coc2(FALSE,FALSE,g_ogb[l_ac].ogb908,'',g_oga.oga02,
                                   '0','',g_ogb[l_ac].ogb04)
@@ -8009,17 +8022,17 @@ ELSE          #FUN-C20006---add---
                       DISPLAY BY NAME g_ogb[l_ac].ogb916
                       NEXT FIELD ogb916
                  WHEN INFIELD(ogb65)
-                      #FUN-CB0087---add---str---         
+                      #FUN-CB0087---add---str---
                       CALL s_get_where(g_oga.oga01,g_ogb[l_ac].ogb31,'',g_ogb[l_ac].ogb04,g_ogb[l_ac].ogb09,g_oga.oga14,g_oga.oga15) RETURNING l_flag1,l_where
-                      IF l_flag1 AND g_aza.aza115 = 'Y' AND g_argv0 <> '1' THEN 
+                      IF l_flag1 AND g_aza.aza115 = 'Y' AND g_argv0 <> '1' THEN
                          CALL cl_init_qry_var()
                          LET g_qryparam.form     ="q_ggc08"
                          LET g_qryparam.where = l_where
                          LET g_qryparam.default1 = g_ogb[l_ac].ogb65
-                      ELSE 
+                      ELSE
                       #FUN-CB0087---add---end---
                          CALL cl_init_qry_var()
-                         LET g_qryparam.form ="q_azf03"  #No.FUN-930104 
+                         LET g_qryparam.form ="q_azf03"  #No.FUN-930104
                          LET g_qryparam.arg1 = "2"
                          LET g_qryparam.arg2 = "5"       #No.FUN-930104
                          LET g_qryparam.default1 = g_ogb[l_ac].ogb65
@@ -8041,8 +8054,8 @@ ELSE          #FUN-C20006---add---
                        LET g_qryparam.form ="q_icd3"
                        CALL cl_create_qry() RETURNING g_ogb[l_ac].ogbiicd07
                        DISPLAY BY NAME g_ogb[l_ac].ogbiicd07
-                       NEXT FIELD ogbiicd07                 
-                 #FUN-C30289---end  
+                       NEXT FIELD ogbiicd07
+                 #FUN-C30289---end
                  OTHERWISE LET g_msg='axmq450 ',g_ogb[l_ac].ogb04
                      CALL cl_cmdrun(g_msg)
             END CASE
@@ -8050,15 +8063,15 @@ ELSE          #FUN-C20006---add---
         ON ACTION modi_lot
            LET g_ima918 = ''   #MOD-9C0055
            LET g_ima921 = ''   #MOD-9C0055
-#FUN-AB0059 ---------------------start---------------------------- 
+#FUN-AB0059 ---------------------start----------------------------
            IF s_joint_venture( g_ogb[l_ac].ogb04,g_plant) OR NOT s_internal_item( g_ogb[l_ac].ogb04,g_plant ) THEN
            ELSE
 #FUN-AB0059 ---------------------end-------------------------------
-           SELECT ima918,ima921 INTO g_ima918,g_ima921 
+           SELECT ima918,ima921 INTO g_ima918,g_ima921
              FROM ima_file
             WHERE ima01 = g_ogb[l_ac].ogb04
               AND imaacti = "Y"
-           
+
            IF g_ima918 = "Y" OR g_ima921 = "Y" THEN
               #非多倉儲出貨才可查詢批/序號資料
               IF g_ogb[l_ac].ogb17 = "N" THEN   #No:FUN-870131
@@ -8078,9 +8091,9 @@ ELSE          #FUN-C20006---add---
                     END IF
                  END IF
                  #MOD-CA0189 add start -----
-                 #如果是出通單，要判斷參數是否做批序號管理 
+                 #如果是出通單，要判斷參數是否做批序號管理
                  IF g_argv0 = '1' OR g_argv0 = '5' THEN   #MOD-940294 add
-                    IF g_oaz.oaz81='Y' THEN  
+                    IF g_oaz.oaz81='Y' THEN
                       CALL t600_b1_move_back()
                       CALL t600_b_else()
 #No.CHI-9A0022 --Begin
@@ -8184,7 +8197,7 @@ ELSE          #FUN-C20006---add---
                           LET l_bno = g_ogb[l_ac].ogb41
                        END IF
 #No.CHI-9A0022 --End
-                     #CALL s_lotout(g_prog,g_oga.oga01,g_ogb[l_ac].ogb03,0,    #TQC-B90236 
+                     #CALL s_lotout(g_prog,g_oga.oga01,g_ogb[l_ac].ogb03,0,    #TQC-B90236
                       IF t600_pre_ins_or_upd(p_cmd) THEN                            #TQC-C20344
                          LET l_pre_flag = 'Y'                                      #TQC-C20344 數據預插入或更新成功
                          CALL s_mod_lot(g_prog,g_oga.oga01,g_ogb[l_ac].ogb03,0,    #TQC-B90236
@@ -8206,9 +8219,9 @@ ELSE          #FUN-C20006---add---
                  END IF
               END IF   #No:FUN-870131
            END IF  #FUN-850120 add
-         END IF                                        #FUN-AB0059  add   
+         END IF                                        #FUN-AB0059  add
 
-        #str---add by jixf 160728   
+        #str---add by jixf 160728
         ON ACTION qry_more1
            CALL cq_ogb04(TRUE,TRUE,'','','',
                           g_oga.oga01,
@@ -8219,9 +8232,9 @@ ELSE          #FUN-C20006---add---
                           g_ogb[l_ac].ogb12,
                           g_ogb[l_ac].ogb09)
            CALL t600_b1_fill('1=1')
-           
+
         #end---add by jixf 160728
-        
+
         ON ACTION CONTROLR
            CALL cl_show_req_fields()
 
@@ -8259,7 +8272,7 @@ ELSE          #FUN-C20006---add---
                        AND rvbs02 = g_ogb[l_ac].ogb03
                 END IF
             END FOR
-           #CHI-C30118---add---END          
+           #CHI-C30118---add---END
 
            IF cl_null(g_oga.oga32) THEN
                    SELECT occ45 INTO g_oga.oga32 FROM occ_file
@@ -8269,7 +8282,7 @@ ELSE          #FUN-C20006---add---
                   END IF
                 display 'sqlca.sqlerrd[3]->',sqlca.sqlerrd[3]
                 display 'g_oga.oga32->',g_oga.oga32
- 
+
         ON IDLE g_idle_seconds
            CALL cl_on_idle()
            CONTINUE INPUT
@@ -8306,7 +8319,7 @@ END IF    #FUN-C20006--add
   #    DISPLAY BY NAME g_oga.oga95
   # END IF
   ##MOD-B10154 End-----
-  #FUN-C40094 mark END  
+  #FUN-C40094 mark END
 
     #FUN-D30034-----Add----Str
     IF g_action_choice = "detail" THEN
@@ -8321,7 +8334,7 @@ END IF    #FUN-C20006--add
     LET g_oga.oga55 = l_oga55
 
     DISPLAY BY NAME g_oga.oga55
-    CALL t600_fetch_price('e')         
+    CALL t600_fetch_price('e')
     CALL t600_chspic()
 
    #FUN-C40094 add START
@@ -8360,7 +8373,7 @@ DEFINE p_store     LIKE ogb_file.ogb09
         RETURN
     END IF
 #FUN-AB0011 -------------------END
- 
+
   #檢查料倉儲批是否存在，不存在就增加
    LET g_cnt = 0
    SELECT COUNT(*) INTO g_cnt FROM img_file
@@ -8386,9 +8399,9 @@ DEFINE l_n   LIKE type_file.num5
       CALL cl_err('',-400,1)
       RETURN
    END IF
-   
-   IF s_shut(0) THEN 
-      RETURN 
+
+   IF s_shut(0) THEN
+      RETURN
    END IF
    OPEN WINDOW t620_w1 WITH FORM "axm/42f/axmt620_add"
       ATTRIBUTE (STYLE = g_win_style CLIPPED)
@@ -8401,7 +8414,7 @@ DEFINE l_n   LIKE type_file.num5
 
    CALL t600_sal_menu()
    CLOSE WINDOW t620_w1
-END FUNCTION 
+END FUNCTION
 FUNCTION t600_sal_menu()
  DEFINE l_cmd   LIKE type_file.chr1000
 
@@ -8409,10 +8422,10 @@ FUNCTION t600_sal_menu()
       CALL t600_sal_bp("G")
       CASE g_action_choice
 #TQC-C90021 mark begin ---
-#         WHEN "query"  
+#         WHEN "query"
 #            IF cl_chk_act_auth() THEN
 #               CALL t600_sal_q()
-#            END IF      
+#            END IF
 #TQC-C90021 mark end ---
          WHEN "detail"
             IF cl_chk_act_auth() THEN
@@ -8429,7 +8442,7 @@ FUNCTION t600_sal_menu()
 END FUNCTION
 
 FUNCTION t600_sal_bp(p_ud)
-   DEFINE   p_ud   LIKE type_file.chr1    
+   DEFINE   p_ud   LIKE type_file.chr1
 
    IF p_ud <> "G" OR g_action_choice = "detail" THEN
       RETURN
@@ -8446,7 +8459,7 @@ FUNCTION t600_sal_bp(p_ud)
 
       BEFORE ROW
       LET l_ac7 = ARR_CURR()
-      CALL cl_show_fld_cont()                   
+      CALL cl_show_fld_cont()
 #TQC-C90021 add begin ---
       IF g_flag3 = '1' THEN
          CALL cl_set_act_visible("detail",FALSE)
@@ -8467,7 +8480,7 @@ FUNCTION t600_sal_bp(p_ud)
 
       ON ACTION locale
          CALL cl_dynamic_locale()
-         CALL cl_show_fld_cont()                   
+         CALL cl_show_fld_cont()
 
       ON ACTION exit
          LET g_action_choice="exit"
@@ -8479,7 +8492,7 @@ FUNCTION t600_sal_bp(p_ud)
          EXIT DISPLAY
      #No.18010101---end---
 
-      ON ACTION controlg 
+      ON ACTION controlg
          LET g_action_choice="controlg"
          EXIT DISPLAY
 
@@ -8489,17 +8502,17 @@ FUNCTION t600_sal_bp(p_ud)
          EXIT DISPLAY
 
       ON ACTION cancel
-         LET INT_FLAG=FALSE 		
+         LET INT_FLAG=FALSE
          LET g_action_choice="exit"
          EXIT DISPLAY
 
       ON IDLE g_idle_seconds
          CALL cl_on_idle()
          CONTINUE DISPLAY
- 
-      ON ACTION about         
-         CALL cl_about()    
- 
+
+      ON ACTION about
+         CALL cl_about()
+
 
       AFTER DISPLAY
          CONTINUE DISPLAY
@@ -8510,22 +8523,22 @@ FUNCTION t600_sal_bp(p_ud)
 END FUNCTION
 
 FUNCTION t600_sal_b()
-DEFINE l_cnt           LIKE type_file.num5                    
+DEFINE l_cnt           LIKE type_file.num5
 DEFINE l_ac7_t         LIKE type_file.num5
-DEFINE l_n             LIKE type_file.num5                     
-DEFINE l_lock_sw       LIKE type_file.chr1                     
-DEFINE p_cmd           LIKE type_file.chr1                     
+DEFINE l_n             LIKE type_file.num5
+DEFINE l_lock_sw       LIKE type_file.chr1
+DEFINE p_cmd           LIKE type_file.chr1
 DEFINE l_start         LIKE rxe_file.rxe04
 DEFINE l_end           LIKE rxe_file.rxe05
 DEFINE l_lpx22         LIKE lpx_file.lpx22
 DEFINE l_rxe03         LIKE rxe_file.rxe03
 DEFINE l_ima154        LIKE ima_file.ima154
 DEFINE l_rxe08_sum     LIKE rxe_file.rxe08
-DEFINE l_allow_insert  LIKE type_file.chr1               
-DEFINE l_allow_delete  LIKE type_file.chr1       
- 
-    IF s_shut(0) THEN 
-       RETURN 
+DEFINE l_allow_insert  LIKE type_file.chr1
+DEFINE l_allow_delete  LIKE type_file.chr1
+
+    IF s_shut(0) THEN
+       RETURN
     END IF
 
     SELECT ima154 INTO l_ima154
@@ -8538,42 +8551,42 @@ DEFINE l_allow_delete  LIKE type_file.chr1
     CALL cl_opmsg('b')
     LET g_action_choice = ""
 
-    LET g_forupd_sql = "SELECT rxe02,rxe03,rxe04,rxe05,rxe06,'',rxe07,'',rxe08,rxe09 ",  
+    LET g_forupd_sql = "SELECT rxe02,rxe03,rxe04,rxe05,rxe06,'',rxe07,'',rxe08,rxe09 ",
                        "  FROM rxe_file WHERE rxe00= '02' ",
                        "   AND rxe01 = ? AND rxe02 = ? AND rxe03 = ? FOR UPDATE "
     LET g_forupd_sql=cl_forupd_sql(g_forupd_sql)
 
-    DECLARE t600_bcl CURSOR FROM g_forupd_sql      
+    DECLARE t600_bcl CURSOR FROM g_forupd_sql
 
     LET l_allow_insert = cl_detail_input_auth('insert')
     LET l_allow_delete = cl_detail_input_auth('delete')
 
     INPUT ARRAY g_rxe WITHOUT DEFAULTS FROM s_rxe.*
           ATTRIBUTE (COUNT=g_rec_b7,MAXCOUNT=g_max_rec,UNBUFFERED,
-                     INSERT ROW = l_allow_insert,DELETE ROW=l_allow_delete,APPEND ROW=l_allow_insert) 
- 
+                     INSERT ROW = l_allow_insert,DELETE ROW=l_allow_delete,APPEND ROW=l_allow_insert)
+
        BEFORE INPUT
           IF g_rec_b7 != 0 THEN
              CALL fgl_set_arr_curr(l_ac7)
              LET l_ac7 = 1
           END IF
        BEFORE ROW
-          LET p_cmd='' 
+          LET p_cmd=''
           LET l_ac7 = ARR_CURR()
-          LET l_lock_sw = 'N'           
+          LET l_lock_sw = 'N'
           LET l_n  = ARR_COUNT()
           BEGIN WORK
- 
+
           IF g_rec_b7>=l_ac7 THEN
-             LET p_cmd='u'                                  
-            
-             LET g_rxe_t.* = g_rxe[l_ac7].*  
+             LET p_cmd='u'
+
+             LET g_rxe_t.* = g_rxe[l_ac7].*
              OPEN t600_bcl USING g_oga.oga01,g_rxe_t.rxe02,g_rxe_t.rxe03
              IF STATUS THEN
                 CALL s_errmsg('','','OPEN t600_bcl:',STATUS,1)
                 LET l_lock_sw = "Y"
-             ELSE 
-                FETCH t600_bcl INTO g_rxe[l_ac7].* 
+             ELSE
+                FETCH t600_bcl INTO g_rxe[l_ac7].*
                 IF SQLCA.sqlcode THEN
                    CALL s_errmsg('',g_rxe_t.rxe02,'',SQLCA.sqlcode,1)
                    CALL cl_err(g_rxe_t.rxe02,SQLCA.sqlcode,1)
@@ -8597,12 +8610,12 @@ DEFINE l_allow_delete  LIKE type_file.chr1
           LET l_n=ARR_COUNT()
           LET p_cmd='a'
           INITIALIZE g_rxe[l_ac7].* TO NULL
-          LET g_rxe[l_ac7].rxe02 = g_ogb[l_ac].ogb03 
+          LET g_rxe[l_ac7].rxe02 = g_ogb[l_ac].ogb03
           CALL cl_set_comp_entry("rxe02",FALSE)
           LET g_rxe_t.*=g_rxe[l_ac7].*
           CALL cl_show_fld_cont()
           NEXT FIELD rxe03
-          
+
        AFTER INSERT
           IF INT_FLAG THEN
              CALL cl_err('',9001,0)
@@ -8624,7 +8637,7 @@ DEFINE l_allow_delete  LIKE type_file.chr1
              LET g_rec_b7=g_rec_b7+1
              DISPLAY g_rec_b7 TO FORMONLY.cnt
           END IF
-   
+
        BEFORE FIELD rxe03
            IF g_rxe[l_ac7].rxe03 IS NULL OR g_rxe[l_ac7].rxe03 = 0 THEN
               SELECT max(rxe03) INTO l_rxe03
@@ -8645,7 +8658,7 @@ DEFINE l_allow_delete  LIKE type_file.chr1
                     CALL cl_err('','aec-994',0)
                     LET g_rxe[l_ac7].rxe03 = g_rxe_t.rxe03
                     NEXT FIELD rxe03
-                 END IF 
+                 END IF
                  SELECT count(*)
                    INTO l_n
                    FROM rxe_file
@@ -8661,12 +8674,12 @@ DEFINE l_allow_delete  LIKE type_file.chr1
            END IF
        AFTER FIELD rxe04  #起始编号
           IF NOT cl_null(g_rxe[l_ac7].rxe04) THEN
-             CALL t600_rxe04_rxe05(g_rxe[l_ac7].rxe04,p_cmd) 
+             CALL t600_rxe04_rxe05(g_rxe[l_ac7].rxe04,p_cmd)
              IF NOT cl_null(g_errno) THEN
                 CALL cl_err('',g_errno,0)
                 LET g_rxe[l_ac7].rxe04 = g_rxe_t.rxe04
                 NEXT FIELD rxe04
-             END IF            
+             END IF
              IF g_success = 'N' THEN
                 LET g_rxe[l_ac7].rxe04 = g_rxe_t.rxe04
                 NEXT FIELD rxe04
@@ -8675,7 +8688,7 @@ DEFINE l_allow_delete  LIKE type_file.chr1
 
        AFTER FIELD rxe05 #结束编号
           IF NOT cl_null(g_rxe[l_ac7].rxe05) THEN
-             CALL t600_rxe04_rxe05(g_rxe[l_ac7].rxe05,p_cmd) 
+             CALL t600_rxe04_rxe05(g_rxe[l_ac7].rxe05,p_cmd)
              IF NOT cl_null(g_errno) THEN
                 CALL cl_err('',g_errno,0)
                 LET g_rxe[l_ac7].rxe05 = g_rxe_t.rxe05
@@ -8687,8 +8700,8 @@ DEFINE l_allow_delete  LIKE type_file.chr1
              END IF
           END IF
 
- 
-       BEFORE DELETE  
+
+       BEFORE DELETE
            IF NOT cl_delb(0,0) THEN
               CANCEL DELETE
            END IF
@@ -8702,16 +8715,16 @@ DEFINE l_allow_delete  LIKE type_file.chr1
               AND rxe02 = g_rxe_t.rxe02
               AND rxe03 = g_rxe_t.rxe03
            IF SQLCA.sqlcode THEN
-              CALL cl_err3("del","rxe_file",g_oga.oga01,g_rxe_t.rxe02,SQLCA.sqlcode,"","",1)  
+              CALL cl_err3("del","rxe_file",g_oga.oga01,g_rxe_t.rxe02,SQLCA.sqlcode,"","",1)
               ROLLBACK WORK
               CANCEL DELETE
            END IF
            LET g_rec_b7=g_rec_b7-1
            DISPLAY g_rec_b7 TO FORMONLY.cnt
            COMMIT WORK
- 
+
        ON ROW CHANGE
-          IF INT_FLAG THEN        
+          IF INT_FLAG THEN
              CALL cl_err('',9001,0)
              LET g_rxe[l_ac7].* = g_rxe_t.*
              CLOSE t600_bcl
@@ -8742,18 +8755,18 @@ DEFINE l_allow_delete  LIKE type_file.chr1
                  COMMIT WORK
               END IF
            END IF
- 
+
         AFTER ROW
-           LET l_ac7 = ARR_CURR()            
-           LET l_ac7_t = l_ac7               
- 
-           IF INT_FLAG THEN   
+           LET l_ac7 = ARR_CURR()
+           LET l_ac7_t = l_ac7
+
+           IF INT_FLAG THEN
               LET INT_FLAG = 0
               IF p_cmd='u' THEN
                  LET g_rxe[l_ac7].* = g_rxe_t.*
               END IF
               CLOSE t600_bcl
-              LET g_success = 'N'                        
+              LET g_success = 'N'
               EXIT INPUT
            END IF
            SELECT SUM(rxe08)
@@ -8772,28 +8785,28 @@ DEFINE l_allow_delete  LIKE type_file.chr1
                WHERE ogb01 = g_oga.oga01
                  AND ogb03 = g_ogb[l_ac].ogb03
               LET g_ogb[l_ac].ogb12 = l_rxe08_sum
-           ELSE    
+           ELSE
               LET g_ogb[l_ac].ogb12 = l_rxe08_sum
            END IF
-           CLOSE t600_bcl            
- 
+           CLOSE t600_bcl
+
           ON ACTION CONTROLR
              CALL cl_show_req_fields()
-  
+
           ON ACTION CONTROLG
              CALL cl_cmdask()
- 
+
           ON IDLE g_idle_seconds
              CALL cl_on_idle()
              CONTINUE INPUT
- 
-          ON ACTION about        
-             CALL cl_about()     
- 
-          ON ACTION HELP        
-             CALL cl_show_help()  
-                 
-       END INPUT  
+
+          ON ACTION about
+             CALL cl_about()
+
+          ON ACTION HELP
+             CALL cl_show_help()
+
+       END INPUT
 END FUNCTION
 
 FUNCTION t600_sal_q()
@@ -8805,20 +8818,20 @@ FUNCTION t600_sal_q()
                       s_rxe[1].rxe07,s_rxe[1].rxe08,s_rxe[1].rxe09
       BEFORE CONSTRUCT
          CALL cl_qbe_init()
-                 
+
       ON IDLE g_idle_seconds
          CALL cl_on_idle()
          CONTINUE CONSTRUCT
- 
-      ON ACTION about         
-         CALL cl_about()      
- 
-      ON ACTION help          
-         CALL cl_show_help()  
- 
-      ON ACTION controlg      
-         CALL cl_cmdask() 
-         
+
+      ON ACTION about
+         CALL cl_about()
+
+      ON ACTION help
+         CALL cl_show_help()
+
+      ON ACTION controlg
+         CALL cl_cmdask()
+
       ON ACTION CONTROLP
            CASE
               WHEN INFIELD(rxe06)
@@ -8837,9 +8850,9 @@ FUNCTION t600_sal_q()
                  DISPLAY g_qryparam.multiret TO rxe07
                  NEXT FIELD rxe07
            END CASE
-           
+
       ON ACTION qbe_select
-         CALL cl_qbe_select() 
+         CALL cl_qbe_select()
       ON ACTION qbe_save
          CALL cl_qbe_save()
    END CONSTRUCT
@@ -8855,7 +8868,7 @@ FUNCTION t600_sal_q()
 END FUNCTION
 
 FUNCTION t600_rxe_fill()
-    
+
     IF g_flag3 = '1' THEN
        LET g_sql = "SELECT rxe02,rxe03,rxe04,rxe05,rxe06,'',rxe07,'',rxe08,rxe09 ",
                    " FROM rxe_file",
@@ -8870,15 +8883,15 @@ FUNCTION t600_rxe_fill()
     END IF
     PREPARE t600_rxe_pb FROM g_sql
     DECLARE t600_rxe_curs CURSOR FOR t600_rxe_pb
- 
+
     CALL g_rxe.clear()
     LET g_cnt = 1
-    MESSAGE "Searching!" 
-    FOREACH t600_rxe_curs INTO g_rxe[g_cnt].* 
+    MESSAGE "Searching!"
+    FOREACH t600_rxe_curs INTO g_rxe[g_cnt].*
        IF STATUS THEN
            LET g_success = 'N'
            CALL s_errmsg('','','FOREACH:',SQLCA.sqlcode,1)
-           EXIT FOREACH 
+           EXIT FOREACH
        END IF
        SELECT lpx02 INTO g_rxe[g_cnt].lpx02
          FROM lqe_file
@@ -8891,7 +8904,7 @@ FUNCTION t600_rxe_fill()
    INNER JOIN lrz_file
            ON lqe03 = lrz01
         WHERE lqe01 = g_rxe[g_cnt].rxe04
-         
+
        LET g_cnt = g_cnt + 1
        IF g_cnt > g_max_rec THEN
        LET g_success = 'N'
@@ -8901,7 +8914,7 @@ FUNCTION t600_rxe_fill()
     END FOREACH
     CALL g_rxe.deleteElement(g_cnt)
     MESSAGE ""
-    LET g_rec_b7 = g_cnt-1  
+    LET g_rec_b7 = g_cnt-1
     LET g_cnt = 0
 END FUNCTION
 
@@ -8911,7 +8924,7 @@ FUNCTION t600_rxe04_rxe05(p_no,p_cmd)
  DEFINE p_cmd       LIKE type_file.chr1
  DEFINE l_lqe02     LIKE lqe_file.lqe02
  DEFINE l_lqe03     LIKE lqe_file.lqe03
- DEFINE l_lpx01     LIKE lpx_file.lpx01 
+ DEFINE l_lpx01     LIKE lpx_file.lpx01
  DEFINE l_lpx02     LIKE lpx_file.lpx02
  DEFINE l_lpx22     LIKE lpx_file.lpx22
  DEFINE l_lpx23     LIKE lpx_file.lpx23
@@ -8928,23 +8941,23 @@ FUNCTION t600_rxe04_rxe05(p_no,p_cmd)
  DEFINE l_rxe04     LIKE rxe_file.rxe04
  DEFINE l_lqe02_1   LIKE lqe_file.lqe02
  DEFINE l_lqe03_1   LIKE lqe_file.lqe03
- DEFINE l_sql       STRING 
+ DEFINE l_sql       STRING
  DEFINE l_n         LIKE type_file.num5   #FUN-C30169 add
 #DEFINE l_slip_length LIKE type_file.num20    #CHI-C80030 add
 
     LET g_errno = ''
     LET g_success = 'Y'
-    SELECT lqe02,lqe03,lqe17 INTO l_lqe02,l_lqe03,l_lqe17 
+    SELECT lqe02,lqe03,lqe17 INTO l_lqe02,l_lqe03,l_lqe17
       FROM lqe_file
      WHERE lqe01 = p_no
        AND lqe13 = g_oga.ogaplant
-    CASE 
+    CASE
          WHEN SQLCA.sqlcode = 100                    LET g_errno = 'alm-477'
          WHEN l_lqe17 <> '5' AND l_lqe17 <> '2'      LET g_errno = 'axm-685'
          OTHERWISE                                   LET g_errno = SQLCA.SQLCODE USING '-------'
     END CASE
     IF NOT cl_null(g_errno) THEN
-       RETURN 
+       RETURN
     END IF
    #FUN-C30169 add START
     SELECT COUNT(*) INTO l_n FROM lpx_file
@@ -8952,7 +8965,7 @@ FUNCTION t600_rxe04_rxe05(p_no,p_cmd)
          AND lpx32 = g_ogb[l_ac].ogb04
     IF l_n = 0 OR cl_null(l_n) THEN
        LET g_errno = 'axm1132'
-       LET g_success = 'N'   
+       LET g_success = 'N'
        RETURN
     END IF
    #FUN-C30169 add END
@@ -8987,10 +9000,10 @@ FUNCTION t600_rxe04_rxe05(p_no,p_cmd)
        RETURN
     END IF
     LET l_length = LENGTH(p_no)
-    SELECT lpx01,lpx02,lpx22,lpx23,lpx24,lpx28,lpx15,lpxacti                       
-      INTO l_lpx01,l_lpx02,l_lpx22,l_lpx23,l_lpx24,l_rxe07,l_lpx15,l_lpxacti          
+    SELECT lpx01,lpx02,lpx22,lpx23,lpx24,lpx28,lpx15,lpxacti
+      INTO l_lpx01,l_lpx02,l_lpx22,l_lpx23,l_lpx24,l_rxe07,l_lpx15,l_lpxacti
       FROM lpx_file
-     WHERE lpx01 = l_lqe02 
+     WHERE lpx01 = l_lqe02
  #   CASE WHEN SQLCA.sqlcode = 100 LET g_errno = 'clm-332'    #FUN-BC0082  mark
      CASE WHEN SQLCA.sqlcode = 100 LET g_errno = 'alm1562'    #FUN-BC0082  add
 
@@ -9010,7 +9023,7 @@ FUNCTION t600_rxe04_rxe05(p_no,p_cmd)
       #IF l_slip_length <> l_lpx24 OR l_lpx23 <> p_no[1,l_lpx22] THEN                     #CHI-C80030 add
           LET g_errno = 'alm-388'
           LET g_success = 'N'
-          RETURN 
+          RETURN
        ELSE
           IF NOT cl_null(l_rxe07) THEN
              SELECT lrz02,lrz03 INTO l_lrz02,l_lrz03
@@ -9027,8 +9040,8 @@ FUNCTION t600_rxe04_rxe05(p_no,p_cmd)
           END IF
        END IF
        IF NOT cl_null(g_errno) THEN
-           RETURN 
-       END IF 
+           RETURN
+       END IF
        SELECT COUNT(*) INTO l_cnt FROM lnk_file
         WHERE lnk01 = l_lpx01
           AND lnk02 = '2'
@@ -9037,14 +9050,14 @@ FUNCTION t600_rxe04_rxe05(p_no,p_cmd)
        IF l_cnt < 1 THEN
           LET g_errno = 'alm-395'
           LET g_success = 'N'
-          RETURN 
+          RETURN
        END IF
-       IF p_cmd ='a' OR (g_rxe[l_ac7].rxe05 != g_rxe_t.rxe05 
-          OR g_rxe[l_ac7].rxe04 != g_rxe_t.rxe04) THEN  
+       IF p_cmd ='a' OR (g_rxe[l_ac7].rxe05 != g_rxe_t.rxe05
+          OR g_rxe[l_ac7].rxe04 != g_rxe_t.rxe04) THEN
           LET l_cnt = 0
           IF p_cmd = 'a' THEN
-             SELECT COUNT(*) INTO l_cnt 
-               FROM rxe_file 
+             SELECT COUNT(*) INTO l_cnt
+               FROM rxe_file
               WHERE rxe00 = '02'
                 AND rxe01 = g_oga.oga01
                 AND rxe04 <= p_no
@@ -9058,19 +9071,19 @@ FUNCTION t600_rxe04_rxe05(p_no,p_cmd)
                 AND rxe05 >= p_no
                 AND rxe03 <> g_rxe[l_ac7].rxe03
           END IF
-          IF l_cnt > 0 THEN 
+          IF l_cnt > 0 THEN
              LET g_errno = '-239'
              LET g_success = 'N'
              RETURN
-          END IF 
-       END IF 
+          END IF
+       END IF
     END IF
     IF cl_null(g_errno) OR p_cmd = 'd' THEN
        LET g_rxe[l_ac7].rxe06 = l_lpx01
        LET g_rxe[l_ac7].rxe07 = l_rxe07
        LET g_rxe[l_ac7].lpx02 = l_lpx02
        LET g_rxe[l_ac7].lrz02 = l_lrz02
-       DISPLAY BY NAME g_rxe[l_ac7].rxe06,g_rxe[l_ac7].rxe07 
+       DISPLAY BY NAME g_rxe[l_ac7].rxe06,g_rxe[l_ac7].rxe07
     END IF
     IF NOT cl_null(g_rxe[l_ac7].rxe05) AND NOT cl_null(g_rxe[l_ac7].rxe04) THEN
        CALL s_showmsg_init()
@@ -9088,7 +9101,7 @@ FUNCTION t600_rxe04_rxe05(p_no,p_cmd)
          ##CHI-C80030 add end-----
              LET l_start = g_rxe[l_ac7].rxe04[l_lpx22+1,LENGTH(g_rxe[l_ac7].rxe04)]
              LET l_end   = g_rxe[l_ac7].rxe05[l_lpx22+1,LENGTH(g_rxe[l_ac7].rxe05)]
-         #END IF   #CHI-C80030 add 
+         #END IF   #CHI-C80030 add
           IF l_end < l_start THEN
              LET g_errno = 'aim-919'
              LET g_success = 'N'
@@ -9105,7 +9118,7 @@ FUNCTION t600_rxe04_rxe05(p_no,p_cmd)
        END IF
     END IF
 END FUNCTION
-                
+
 FUNCTION  t600_rxe04_rxe05_chk(l_rxe06,l_rxe04,l_rxe05)
 DEFINE l_rxe06   LIKE rxe_file.rxe06
 DEFINE l_rxe04   LIKE rxe_file.rxe04
@@ -9117,7 +9130,7 @@ DEFINE l_lqe02_1 LIKE lqe_file.lqe02
 DEFINE l_lqe03   LIKE lqe_file.lqe03
 DEFINE l_lqe03_1 LIKE lqe_file.lqe03
 
-   LET g_success = 'Y' 
+   LET g_success = 'Y'
 
    #檢查券起訖編號是否有不同的券種,是否有面額不同的券
    SELECT lqe02 INTO l_lqe02
@@ -9147,13 +9160,13 @@ DEFINE l_lqe03_1 LIKE lqe_file.lqe03
                " WHERE lqe01 BETWEEN '",l_rxe04,"' AND '",l_rxe05,"'",
                "   AND (lqe17 <> '5' OR lqe13 <> '",g_oga.ogaplant,"')",
                "   AND (lqe17 <> '2' OR lqe09 <> '",g_oga.ogaplant,"')"
-   PREPARE sel_lqe_pre FROM g_sql 
-   DECLARE sel_lqe_cs CURSOR FOR sel_lqe_pre 
+   PREPARE sel_lqe_pre FROM g_sql
+   DECLARE sel_lqe_cs CURSOR FOR sel_lqe_pre
    FOREACH sel_lqe_cs INTO l_lqe01
       LET g_success = 'N'
       CALL s_errmsg(l_lqe01,'','','axm-685',1)
       RETURN
-   END FOREACH 
+   END FOREACH
    #檢查券起訖編號範圍內是否有不同的券種
    SELECT COUNT(DISTINCT lqe02) INTO l_cnt
      FROM lqe_file
@@ -9174,21 +9187,21 @@ DEFINE l_lqe03_1 LIKE lqe_file.lqe03
      #rxe04值 + "~" + rxe05值 + " 有多種券面額，請分開輸入！
      RETURN
    END IF
-END FUNCTION 
+END FUNCTION
 
 FUNCTION t600_check_ogb04_sal(p_ogb04)
    DEFINE p_ogb04  LIKE ogb_file.ogb04
    DEFINE l_ima154 LIKE ima_file.ima154
    DEFINE l_cnt    LIKE type_file.num5
    LET g_success = 'Y'
-   SELECT ima154 INTO l_ima154 
-     FROM ima_file 
+   SELECT ima154 INTO l_ima154
+     FROM ima_file
     WHERE ima01 = p_ogb04
-   IF l_ima154 = 'Y' THEN 
+   IF l_ima154 = 'Y' THEN
       LET g_flag_chk = 'Y'
-   ELSE 
+   ELSE
       LET g_flag_chk = 'N'
-   END IF    
+   END IF
    SELECT COUNT(*) INTO l_cnt
      FROM rxe_file
     WHERE rxe01 = g_oga.oga01
@@ -9210,17 +9223,17 @@ FUNCTION t600_check_ogb04_sal(p_ogb04)
           END IF
        END IF
    END IF
-END FUNCTION 
+END FUNCTION
 
 FUNCTION t600_check_ogb12()
    DEFINE l_ima154 LIKE ima_file.ima154
    DEFINE l_rxe08  LIKE rxe_file.rxe08
    LET g_success = 'Y'
-   SELECT ima154 INTO l_ima154 
-     FROM ima_file 
+   SELECT ima154 INTO l_ima154
+     FROM ima_file
     WHERE ima01 = g_ogb[l_ac].ogb04
    IF l_ima154 = 'Y' THEN
-      SELECT SUM(rxe08) INTO l_rxe08 
+      SELECT SUM(rxe08) INTO l_rxe08
         FROM rxe_file
        WHERE rxe00 = '02'
          AND rxe01 = g_oga.oga01
@@ -9228,16 +9241,16 @@ FUNCTION t600_check_ogb12()
        IF cl_null(l_rxe08) THEN
           LET l_rxe08 = 0
        END IF
-       IF g_ogb[l_ac].ogb12 <> l_rxe08 THEN 
+       IF g_ogb[l_ac].ogb12 <> l_rxe08 THEN
           IF NOT cl_confirm('axm-682') THEN    #是否更新正确的数量
              LET g_success = 'N'
-             CALL t600_sal() #FUN-C30169 add 
-          ELSE 
+             CALL t600_sal() #FUN-C30169 add
+          ELSE
              LET g_ogb[l_ac].ogb12 = l_rxe08
              LET g_ogb[l_ac].ogb12 = s_digqty(g_ogb[l_ac].ogb12,g_ogb[l_ac].ogb05) #FUN-BB0086 add
-          END IF  
-       END IF    
-   END IF  
+          END IF
+       END IF
+   END IF
 END FUNCTION
 
 #FUN-BC0064------add------end--------
@@ -9287,7 +9300,7 @@ FUNCTION t600_bp1(p_ud)
 IF g_azw.azw04='2' AND (g_prog="axmt610_slk" OR g_prog="axmt620_slk" OR g_prog="axmt640_slk")  THEN      #FUN-C20006--add
 #FUN-B90104--add--end--
 #FUN-C20006--add------------------------------
-ELSE              
+ELSE
    DIALOG ATTRIBUTE(UNBUFFERED)
       DISPLAY ARRAY g_ogb TO s_b1.* ATTRIBUTE(COUNT=g_rec_b1)    #No.TQC-640123
 
@@ -9326,7 +9339,7 @@ ELSE
       ON ACTION info_list                 #FUN-CB0014
          LET g_b_flag="info_list"         #FUN-CB0014
          EXIT DIALOG                      #FUN-CB0014
-         
+
       ON ACTION insert
          LET g_action_choice="insert"
          EXIT DIALOG
@@ -9344,6 +9357,8 @@ ELSE
          let g_action_choice = "add_ogaud06"
          exit DIALOG
       #darcy:2023/06/20 add e---
+      on action action_stock_post # darcy add 不要去掉
+        let g_action_choice = 'action_stock_post'
       ON ACTION first
          CALL t600_fetch('F')
          CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
@@ -9440,7 +9455,7 @@ ELSE
 #@    ON ACTION 銷售券號
       ON ACTION sal
          LET g_action_choice="sal"
-         EXIT DIALOG 
+         EXIT DIALOG
 #FUN-BC0064----add---end-----
 
 #@    ON ACTION 3.更改倉儲
@@ -9521,7 +9536,7 @@ ELSE
          LET g_action_choice="upd_ogbud08"
          EXIT DIALOG
       #darcy:2023/12/28 add e---
-         
+
 #str-----add by huanglf160922
        ON ACTION up_custom
          LET g_action_choice="up_custom"
@@ -9594,11 +9609,11 @@ ELSE
       ON ACTION void
          LET g_action_choice="void"
          EXIT DIALOG
-    
+
       #FUN-D20025 ------------sta
       ON ACTION undo_void
          LET g_action_choice="undo_void"
-         EXIT DIALOG 
+         EXIT DIALOG
       #FUN-D20025 ------------end
 
 #@    ON ACTION 查詢序號
@@ -9707,16 +9722,16 @@ ELSE
       ON ACTION chdz
          LET g_action_choice="chdz"
          EXIT DIALOG
-      #tianry add end 
-      
-      #NO.18010101    --- begin ---- 
+      #tianry add end
+
+      #NO.18010101    --- begin ----
       ON ACTION transf2scm
          LET g_action_choice="transf2scm"
          EXIT DIALOG
-      #NO.18010101 ---end --- 
+      #NO.18010101 ---end ---
    END DIALOG
 END IF
-#FUN-C20006--end------------------------------   
+#FUN-C20006--end------------------------------
 #FUN-B30170 add -end--------------------------
 #FUN-B30170 mark begin--------------------------
 #   DISPLAY ARRAY g_ogb TO s_b1.* ATTRIBUTE(COUNT=g_rec_b1,UNBUFFERED)    #No.TQC-640123
@@ -9818,7 +9833,7 @@ END IF
 #         LET g_action_choice="unit_price"
 #         EXIT DISPLAY
 #      #No.FUN-A10106--begin
-#      ON ACTION kefa  
+#      ON ACTION kefa
 #         LET g_action_choice="kefa"
 #         EXIT DISPLAY
 #      #No.FUN-A10106--end
@@ -9932,20 +9947,20 @@ END IF
 #      ON ACTION cancel_price1  #取消折价
 #         LET g_action_choice = "cancel_price1"
 #         EXIT DISPLAY
-#       
+#
 ##@    ON ACTION 修改扣率
 #      ON ACTION modify_rate
 #         LET g_action_choice="modify_rate"
 #         EXIT DISPLAY
 #
-##@    ON ACTION   付款                                                                                                   
-#      ON ACTION pay_money                                                                                                           
-#         LET g_action_choice = "pay_money"                                                                                          
+##@    ON ACTION   付款
+#      ON ACTION pay_money
+#         LET g_action_choice = "pay_money"
 #         EXIT DISPLAY
 #
-##@    ON ACTION   款別明細 
-#      ON ACTION money_detail                                                                                                        
-#         LET g_action_choice = "money_detail"                                                                                       
+##@    ON ACTION   款別明細
+#      ON ACTION money_detail
+#         LET g_action_choice = "money_detail"
 #         EXIT DISPLAY
 #
 #      ON ACTION discount_detail           #FUN-A10110 折價明細
@@ -9956,7 +9971,7 @@ END IF
 #      ON ACTION approval_status
 #         LET g_action_choice="approval_status"
 #         EXIT DISPLAY
-#   
+#
 ##@    ON ACTION S.庫存扣帳
 #      ON ACTION deduct_inventory
 #         LET g_action_choice="deduct_inventory"
@@ -10001,18 +10016,18 @@ END IF
 #         LET g_action_choice="trans_spc"
 #         EXIT DISPLAY
 #
-##FUN-A70132 --begin-- 
-##@    ON ACTION 實際交易稅別明細       
+##FUN-A70132 --begin--
+##@    ON ACTION 實際交易稅別明細
 #      ON ACTION trans_tax       #--實際交易稅別明細
 #         LET g_action_choice="trans_tax"
-#         EXIT DISPLAY      
+#         EXIT DISPLAY
 ##FUN-A70132 --end--
 #
-##FUN-A70132 --begin-- 
+##FUN-A70132 --begin--
 #      ON ACTION detail_tax      #--單身稅別明細
 #         LET g_action_choice="detail_tax"
-#         EXIT DISPLAY 
-##FUN-A70132 --end-- 
+#         EXIT DISPLAY
+##FUN-A70132 --end--
 #
 #      ON ACTION accept
 #         LET g_action_choice="detail"
@@ -10085,7 +10100,7 @@ END IF
 #         EXIT DISPLAY
 #
 #      ON ACTION qc_reject_q
-#         LET g_action_choice="qc_reject_q"          
+#         LET g_action_choice="qc_reject_q"
 #         EXIT DISPLAY
 #
 #      ON ACTION order_query_b
@@ -10119,20 +10134,20 @@ FUNCTION t600_bp2(p_ud)
       CALL cl_set_act_visible("easyflow_approval,approval_status",FALSE)
    END IF
    #FUN-B30170 add begin-------------------------
-   DIALOG ATTRIBUTE(UNBUFFERED) 
+   DIALOG ATTRIBUTE(UNBUFFERED)
       DISPLAY ARRAY g_b2 TO s_b2.* ATTRIBUTE(COUNT=g_rec_b2)    #No.TQC-640123
 
          BEFORE DISPLAY
             CALL cl_navigator_setting( g_curs_index, g_row_count )
-            
+
          BEFORE ROW
             LET l_ac = ARR_CURR()
             CALL cl_show_fld_cont()                   #No:FUN-550037 hmf
-            
+
          AFTER DISPLAY
             CONTINUE DIALOG   #因為外層是DIALOG
-      END DISPLAY 
-      
+      END DISPLAY
+
       DISPLAY ARRAY g_rvbs TO s_rvbs.* ATTRIBUTE(COUNT=g_rec_b3)
          BEFORE DISPLAY
             CALL cl_navigator_setting( g_curs_index, g_row_count )
@@ -10144,7 +10159,7 @@ FUNCTION t600_bp2(p_ud)
          AFTER DISPLAY
             CONTINUE DIALOG   #因為外層是DIALOG
       END DISPLAY
-      
+
       BEFORE DIALOG
          CALL t600_visible_menu()
 
@@ -10152,7 +10167,7 @@ FUNCTION t600_bp2(p_ud)
       AFTER DIALOG
          CONTINUE DIALOG
       #MOD-C20105 ----- add end -----
-         
+
       ON ACTION insert
          LET g_action_choice="insert"
          EXIT DIALOG
@@ -10229,7 +10244,7 @@ FUNCTION t600_bp2(p_ud)
          LET g_action_choice="output"
          EXIT DIALOG
       #No.FUN-A10106--begin
-      ON ACTION kefa  
+      ON ACTION kefa
          LET g_action_choice="kefa"
          EXIT DIALOG
       #No.FUN-A10106--end
@@ -10401,15 +10416,15 @@ FUNCTION t600_bp2(p_ud)
       ON ACTION trans_spc                      #FUN-680010
          LET g_action_choice="trans_spc"
          EXIT DIALOG
-         
+
 #FUN-A70132 --begin--
-      ON ACTION trans_tax      #--實際交易稅別明細                
+      ON ACTION trans_tax      #--實際交易稅別明細
          LET g_action_choice="trans_tax"
          EXIT DIALOG
 #FUN-A70132 --end--
 
 #FUN-A70132 --begin--
-      ON ACTION detail_tax     #--單身稅別明細                      
+      ON ACTION detail_tax     #--單身稅別明細
          LET g_action_choice="detail_tax"
          EXIT DIALOG
 #FUN-A70132 --end--
@@ -10478,7 +10493,7 @@ FUNCTION t600_bp2(p_ud)
          EXIT DIALOG
 
       ON ACTION qc_reject_q
-         LET g_action_choice="qc_reject_q"          
+         LET g_action_choice="qc_reject_q"
          EXIT DIALOG
    END DIALOG
    #FUN-B30170 add -end---------------------------
@@ -10564,7 +10579,7 @@ FUNCTION t600_bp2(p_ud)
 #         LET g_action_choice="output"
 #         EXIT DISPLAY
 #      #No.FUN-A10106--begin
-#      ON ACTION kefa  
+#      ON ACTION kefa
 #         LET g_action_choice="kefa"
 #         EXIT DISPLAY
 #      #No.FUN-A10106--end
@@ -10724,15 +10739,15 @@ FUNCTION t600_bp2(p_ud)
 #      ON ACTION trans_spc                      #FUN-680010
 #         LET g_action_choice="trans_spc"
 #         EXIT DISPLAY
-#         
+#
 ##FUN-A70132 --begin--
-#      ON ACTION trans_tax      #--實際交易稅別明細                
+#      ON ACTION trans_tax      #--實際交易稅別明細
 #         LET g_action_choice="trans_tax"
 #         EXIT DISPLAY
 ##FUN-A70132 --end--
 #
 ##FUN-A70132 --begin--
-#      ON ACTION detail_tax     #--單身稅別明細                      
+#      ON ACTION detail_tax     #--單身稅別明細
 #         LET g_action_choice="detail_tax"
 #         EXIT DISPLAY
 ##FUN-A70132 --end--
@@ -10804,7 +10819,7 @@ FUNCTION t600_bp2(p_ud)
 #         EXIT DISPLAY
 #
 #      ON ACTION qc_reject_q
-#         LET g_action_choice="qc_reject_q"          
+#         LET g_action_choice="qc_reject_q"
 #         EXIT DISPLAY
 #    END DISPLAY
 #FUN-B30170 mark --end----------------------------
@@ -11051,11 +11066,11 @@ FUNCTION t600_b_t321()
    CALL t600_ui_set()
    CALL cl_set_comp_visible("ogb40",FALSE) #FUN-B50054
 #FUN-C30289---begin
-   IF s_industry("icd") THEN 
+   IF s_industry("icd") THEN
       CALL cl_set_comp_visible("ogbiicd07",TRUE)
-   ELSE 
+   ELSE
       CALL cl_set_comp_visible("ogbiicd07",FALSE)
-   END IF 
+   END IF
 #FUN-C30289---end
    LET l_flag = "Y"
 
@@ -11084,7 +11099,7 @@ FUNCTION t600_b_t321()
       CALL t600_b1()            #No.TQC-6C0085
    END IF
 
-     CLOSE WINDOW t321b_w 
+     CLOSE WINDOW t321b_w
    IF INT_FLAG THEN
       LET INT_FLAG = 0
       RETURN
@@ -11095,7 +11110,7 @@ END FUNCTION
 ####以下為saxmt600 global移過來###
 
 FUNCTION t600_init()
-   
+
    LET g_plant2 = g_plant              #FUN-980020 add
    LET g_dbs2 = s_dbstring(g_dbs CLIPPED)   #FUN-9B0106
 
@@ -11145,7 +11160,7 @@ DEFINE cb             ui.ComboBox
    CALL cl_set_comp_visible("oga1013",FALSE)
    CALL cl_set_comp_visible("oga56,ogb52,ogb50,ogb51",FALSE) #FUN-C50097 TQC-C70206
    CALL cl_set_comp_visible("ogb53,ogb54,ogb55",FALSE) #FUN-C50097
-   
+
    CASE g_argv0
       WHEN "1" #axmt610 出貨通知單
          IF g_oaz.oaz81 = 'Y' THEN
@@ -11163,7 +11178,7 @@ DEFINE cb             ui.ComboBox
          CALL cb.removeItem('A')
          CALL cb.removeItem('B')
       WHEN "2" #axmt620 一般出貨單
-         CALL cl_set_comp_visible("oga65,oga72",TRUE)          #FUN-A60004 add oga72 
+         CALL cl_set_comp_visible("oga65,oga72",TRUE)          #FUN-A60004 add oga72
          -- call cl_set_comp_visible("oga65",false)   # darcy:2025/11/27 add
          CALL cl_set_comp_visible("oga99,oga905",FALSE)
          CALL cl_set_comp_visible("oga01a,oga01b",TRUE)
@@ -11172,9 +11187,9 @@ DEFINE cb             ui.ComboBox
          LET cb = ui.ComboBox.forName("oga00")
          CALL cb.removeItem('A')
          CALL cb.removeItem('B')
-         IF g_aza.aza26 = '2' AND g_oaz.oaz94 ='Y' THEN 
+         IF g_aza.aza26 = '2' AND g_oaz.oaz94 ='Y' THEN
             CALL cl_set_comp_visible("ogb50,ogb51",TRUE) #FUN-C50097 TQC-C70206
-         END IF         
+         END IF
       WHEN "3" #沒有
          LET cb = ui.ComboBox.forName("oga00")
          CALL cb.removeItem('A')
@@ -11226,15 +11241,15 @@ DEFINE cb             ui.ComboBox
          LET cb = ui.ComboBox.forName("oga00")
          CALL cb.removeItem('A')
          CALL cb.removeItem('B')
-         IF g_aza.aza26 = '2'  AND g_oaz.oaz94 ='Y' THEN 
+         IF g_aza.aza26 = '2'  AND g_oaz.oaz94 ='Y' THEN
             CALL cl_set_comp_visible("ogb12b,ogb915b,ogb912b",FALSE)
-            IF g_sma.sma115='N' THEN 
+            IF g_sma.sma115='N' THEN
                CALL cl_set_comp_visible("ogb52",TRUE) #FUN-C50097
                CALL cl_set_comp_visible("ogb12b",FALSE)
-            ELSE   
+            ELSE
                CALL cl_set_comp_visible("ogb53,ogb54,ogb55",TRUE) #FUN-C50097 TQC-C70206
-            END IF    
-         END IF         
+            END IF
+         END IF
       WHEN "9" #axmt629 客戶驗退單
          CALL cl_set_comp_visible("oga56",TRUE) #FUN-C50097 TQC-C70206
          CALL cl_set_comp_visible("oga65,oga72",FALSE)                 #FUN-A60004 add oga72
@@ -11365,8 +11380,8 @@ FUNCTION t600_set_perlang()
                CALL cl_set_comp_att_text("ogb53",g_msg CLIPPED)
                CALL cl_getmsg('axm-846',g_lang) RETURNING g_msg
                CALL cl_set_comp_att_text("ogb54",g_msg CLIPPED)
-            END IF            
-         END IF       #TQC-C70206      
+            END IF
+         END IF       #TQC-C70206
       END IF
    END IF
    IF g_oaz.oaz23 = 'Y' THEN
@@ -11565,8 +11580,8 @@ FUNCTION t600_g_b1()                  #由出貨通知單產生單身
       SELECT oeb70 INTO l_oeb70 FROM oeb_file
          WHERE oeb01 = l_ogb.ogb31
            AND oeb03 = l_ogb.ogb32
-      IF l_oeb70 = 'Y' THEN 
-         LET l_ogb.ogb12 = 0 
+      IF l_oeb70 = 'Y' THEN
+         LET l_ogb.ogb12 = 0
       END IF
       #-----END MOD-A70182-----
 
@@ -11579,33 +11594,33 @@ FUNCTION t600_g_b1()                  #由出貨通知單產生單身
       END IF
 #MOD-B80048 -- end --
       #FUN-C50097 ADD BEGIN-----
-      IF cl_null(l_ogb.ogb50) THEN 
+      IF cl_null(l_ogb.ogb50) THEN
          LET l_ogb.ogb50 = 0
-      END IF 
-      IF cl_null(l_ogb.ogb51) THEN 
+      END IF
+      IF cl_null(l_ogb.ogb51) THEN
          LET l_ogb.ogb51 = 0
-      END IF 
-      IF cl_null(l_ogb.ogb52) THEN 
+      END IF
+      IF cl_null(l_ogb.ogb52) THEN
          LET l_ogb.ogb52 = 0
-      END IF  
-      IF cl_null(l_ogb.ogb53) THEN 
+      END IF
+      IF cl_null(l_ogb.ogb53) THEN
         LET l_ogb.ogb53 = 0
-      END IF 
-      IF cl_null(l_ogb.ogb54) THEN 
+      END IF
+      IF cl_null(l_ogb.ogb54) THEN
         LET l_ogb.ogb54 = 0
-      END IF 
-      IF cl_null(l_ogb.ogb55) THEN 
+      END IF
+      IF cl_null(l_ogb.ogb55) THEN
         LET l_ogb.ogb55 = 0
-      END IF        
+      END IF
       #tianry add 161117  出货单记录通知单项次
 
-                                  
+
       #FUN-C50097 ADD END-------
       UPDATE x SET ogb12 = l_ogb.ogb12,
                    #ogb19 = 'N', #CHI-870023   #CHI-880006
                    ogb16 = l_ogb.ogb16,
                    ogb1014 = 'N',       #FUN-6A0007
-                   ogb37 = l_ogb.ogb37,  #FUN-AB0061 
+                   ogb37 = l_ogb.ogb37,  #FUN-AB0061
                    ogb13 = l_ogb.ogb13, #NO.FUN-960130
                    ogb14 = l_ogb.ogb14,
                    ogb14t = l_ogb.ogb14t,
@@ -11619,8 +11634,8 @@ FUNCTION t600_g_b1()                  #由出貨通知單產生單身
                    ogb52 = l_ogb.ogb52,    #FUN-C50097
                    ogb53 = l_ogb.ogb53,   #FUN-C50097
                    ogb54 = l_ogb.ogb54,   #FUN-C50097
-                   ogb55 = l_ogb.ogb55,    #FUN-C50097       
-                   ogbud06=l_ogb.ogbud06, # 记录通知单备注   ly170810     
+                   ogb55 = l_ogb.ogb55,    #FUN-C50097
+                   ogbud06=l_ogb.ogbud06, # 记录通知单备注   ly170810
                    ogbud10=l_ogb.ogb03     #记录通知单项次  tianry add
                    ,ogbud08= g_today #darcy:2023/12/28 批号
        WHERE ogb01=l_ogb.ogb01
@@ -11628,7 +11643,7 @@ FUNCTION t600_g_b1()                  #由出貨通知單產生單身
 
       LET g_ima918 = ''   #MOD-9C0055
       LET g_ima921 = ''   #MOD-9C0055
-      SELECT ima918,ima921 INTO g_ima918,g_ima921 
+      SELECT ima918,ima921 INTO g_ima918,g_ima921
         FROM ima_file
        WHERE ima01 = l_ogb.ogb04
          AND imaacti = "Y"
@@ -11636,8 +11651,8 @@ FUNCTION t600_g_b1()                  #由出貨通知單產生單身
 ##FUN-A50054 --Begin
 #&ifdef SLK
 ##     IF s_industry("slk") THEN
-#        SELECT * INTO l_ata.* 
-#          FROM ata_file 
+#        SELECT * INTO l_ata.*
+#          FROM ata_file
 #         WHERE ata00='axmt610_slk'
 #           AND ata01=g_oga.oga011
 #           AND ata03=l_ogb.ogb03
@@ -11648,20 +11663,20 @@ FUNCTION t600_g_b1()                  #由出貨通知單產生單身
 #&endif
 ##FUN-A50054 --End
 #FUN-A60035 ---MARK END
-      
+
       IF g_ima918 = "Y" OR g_ima921 = "Y" THEN
          DECLARE t600_g_rvbs CURSOR FOR SELECT * FROM rvbs_file
                                         WHERE rvbs01 = g_oga.oga011
                                           AND rvbs02 = l_ogb.ogb03
-         
+
          FOREACH t600_g_rvbs INTO l_rvbs.*
             IF STATUS THEN
                CALL cl_err('rvbs',STATUS,1)
             END IF
-         
+
             LET l_rvbs.rvbs00 = g_prog
             LET l_rvbs.rvbs01 = g_oga.oga01
-         
+
             #檢查出貨數必須 =通知單應出數-累計出貨數
             #對應到的出貨通知單上的數量
             LET l_rvbs06a = 0
@@ -11673,7 +11688,7 @@ FUNCTION t600_g_b1()                  #由出貨通知單產生單身
                AND rvbs13 = l_rvbs.rvbs13   #No:FUN-870131
                AND rvbs09 = -1   #No:FUN-860045
                AND rvbs022 = l_rvbs.rvbs022   #No:CHI-8A0005
-            
+
             IF cl_null(l_rvbs06a) THEN
                LET l_rvbs06a = 0
             END IF
@@ -11683,14 +11698,14 @@ FUNCTION t600_g_b1()                  #由出貨通知單產生單身
 
             SELECT SUM(rvbs06) INTO l_rvbs06b
               FROM ogb_file,oga_file,rvbs_file
-             WHERE ogb01 = oga01 AND oga09 IN ('2','4','6') 
+             WHERE ogb01 = oga01 AND oga09 IN ('2','4','6')
                AND oga011 = g_oga.oga011
                AND ogb03 = l_ogb.ogb03
                AND oga01 = rvbs01
                AND ogb03 = rvbs02
                AND rvbs13 = l_rvbs.rvbs13   #No:FUN-870131
                AND rvbs09 = -1   #No:FUN-860045
-               AND ogaconf != 'X' 
+               AND ogaconf != 'X'
                AND rvbs022 = l_rvbs.rvbs022   #No:CHI-8A0005
 
             IF cl_null(l_rvbs06b) THEN
@@ -11699,8 +11714,8 @@ FUNCTION t600_g_b1()                  #由出貨通知單產生單身
 
             LET l_rvbs.rvbs06 = l_rvbs06a - l_rvbs06b
 
-            LET l_rvbs.rvbsplant = g_plant 
-            LET l_rvbs.rvbslegal = g_legal  
+            LET l_rvbs.rvbsplant = g_plant
+            LET l_rvbs.rvbslegal = g_legal
 #No.TQC-B90236---add--begin-----
             IF l_rvbs.rvbs00 = 'axmt629' THEN
                LET l_rvbs.rvbs09 = -1 #FUN-C50097 ADD "-1"
@@ -11711,7 +11726,7 @@ FUNCTION t600_g_b1()                  #由出貨通知單產生單身
                CALL cl_err3("ins","rvbs_file","","",SQLCA.sqlcode,"","ins rvbs",1)  #No.FUN-670008
                LET g_success='N'
             END IF
-         
+
          END FOREACH
       END IF
       #FUN-C30300---begin
@@ -11725,11 +11740,11 @@ FUNCTION t600_g_b1()                  #由出貨通知單產生單身
    IF cl_null(l_ogb.ogb12) THEN
      LET l_ogb.ogb12 = 0
    END IF
-#FUN-AB0061 -----------add start----------------                          
-   IF cl_null(l_ogb.ogb37)  THEN           
-      LET l_ogb.ogb37= 0                        
-   END IF                                                                             
-#FUN-AB0061 -----------add end----------------  
+#FUN-AB0061 -----------add start----------------
+   IF cl_null(l_ogb.ogb37)  THEN
+      LET l_ogb.ogb37= 0
+   END IF
+#FUN-AB0061 -----------add end----------------
    IF cl_null(l_ogb.ogb13) THEN
      LET l_ogb.ogb13 = 0
    END IF
@@ -11770,7 +11785,7 @@ FUNCTION t600_g_b1()                  #由出貨通知單產生單身
       LET l_ogb.ogb1006 = 100
    END IF
 
-   #FUN-CB0087--add--str-- 
+   #FUN-CB0087--add--str--
    IF g_aza.aza115 = 'Y' AND g_argv0 MATCHES '[2456A]' THEN
       LET g_sql = " UPDATE x ",
                   "    SET ogb1001 = (SELECT ggc08 FROM ggc_file ",
@@ -11784,7 +11799,7 @@ FUNCTION t600_g_b1()                  #由出貨通知單產生單身
                   "          WHERE  ogb12 > 0 OR ogb03 >=9001 "
       PREPARE upd_x FROM g_sql
       EXECUTE upd_x
-   END IF 
+   END IF
    IF g_aza.aza115 = 'Y' AND g_argv0 MATCHES '[89]' THEN
       LET g_sql = " UPDATE x ",
                   "    SET ogb65   = (SELECT ggc08 FROM ggc_file ",
@@ -11827,22 +11842,22 @@ FUNCTION t600_g_b1()                  #由出貨通知單產生單身
       CALL cl_err3("ins","ogc_file","","",SQLCA.sqlcode,"","ins ogb",1)  #No.FUN-670008
       LET g_success='N'
    END IF
-   IF g_sma.sma115 = 'Y' THEN 
+   IF g_sma.sma115 = 'Y' THEN
       DROP TABLE x
       SELECT * FROM ogg_file WHERE ogg01 = g_oga.oga011 INTO TEMP x
-      IF STATUS THEN 
-         CALL cl_err3("ins","x","g_oga.oga011","",SQLCA.sqlcode,"","into x",1)  
-         LET g_success='N' 
+      IF STATUS THEN
+         CALL cl_err3("ins","x","g_oga.oga011","",SQLCA.sqlcode,"","into x",1)
+         LET g_success='N'
       END IF
       UPDATE x SET ogg01=g_oga.oga01
-      IF STATUS THEN 
-         CALL cl_err3("upd","x","g_oga.oga01","",SQLCA.sqlcode,"","upd x",1)  
-         LET g_success='N' 
+      IF STATUS THEN
+         CALL cl_err3("upd","x","g_oga.oga01","",SQLCA.sqlcode,"","upd x",1)
+         LET g_success='N'
       END IF
-      INSERT INTO ogg_file SELECT * FROM x 
+      INSERT INTO ogg_file SELECT * FROM x
               WHERE ogg03 IN (SELECT ogb03 FROM ogb_file WHERE ogb01=g_oga.oga01)
       IF STATUS OR SQLCA.SQLCODE THEN
-         CALL cl_err3("ins","ogg_file","","",SQLCA.sqlcode,"","ins ogg",1)  
+         CALL cl_err3("ins","ogg_file","","",SQLCA.sqlcode,"","ins ogg",1)
          LET g_success='N'
       END IF
    END IF
@@ -11895,12 +11910,12 @@ FUNCTION t600_g_b2()                  #由訂單產生單身
       #No.8876 加判斷訂單轉出貨單、訂單轉出貨通知單 show 不同訊息
       IF g_oga.oga09 MATCHES '[15]' THEN
           IF cl_confirm('axm-363') THEN         #No:MOD-570333
-           CALL t600_g_b2_p(g_oga.oga01,'ALL')   
-            
+           CALL t600_g_b2_p(g_oga.oga01,'ALL')
+
          END IF
       ELSE
          IF cl_confirm('axm-132') THEN           #MOD-4A0095
-            CALL t600_g_b2_p(g_oga.oga01,'ALL')   
+            CALL t600_g_b2_p(g_oga.oga01,'ALL')
          END IF
       END IF
       CALL t600_ins_oao('o')   #MOD-B40263
@@ -11925,14 +11940,14 @@ FUNCTION t600_g_b2()                  #由訂單產生單身
         END IF
 
    CLOSE WINDOW t600g_w
-   
+
 
    CASE WHEN g_type='1' CALL t600_g_b2_p(g_oga.oga01,'ALL')#不分保稅轉同一出貨單
         WHEN g_type='2' CALL t600_g_b2_p(g_oga.oga01,'TAX')#先轉保稅,再another
         WHEN g_type='3' CALL t600_g_b2_p(g_oga.oga01,'TAX')#僅轉保稅品出貨單
         WHEN g_type='4' CALL t600_g_b2_p(g_oga.oga01,'NOT')#僅轉非保稅品出貨單
    END CASE
-           
+
 
    IF g_type='2' THEN
       CALL t600_g_b2_another_oga()      #再轉非保稅
@@ -11961,22 +11976,22 @@ FUNCTION t600_g_b2_another_oga()
    IF cl_null(g_oga.oga163) THEN LET g_oga.oga163 = 0 END IF
    #FUN-AC0055 add ---------------------begin-----------------------
    IF cl_null(g_oga.oga57) THEN
-      LET g_oga.oga57 = '1'  
+      LET g_oga.oga57 = '1'
    END IF
-   #FUN-AC0055 add ----------------------end------------------------ 
-   LET g_oga.ogaplant = g_plant 
-   LET g_oga.ogalegal = g_legal  
+   #FUN-AC0055 add ----------------------end------------------------
+   LET g_oga.ogaplant = g_plant
+   LET g_oga.ogalegal = g_legal
 
    LET g_oga.ogaoriu = g_user      #No.FUN-980030 10/01/04
    LET g_oga.ogaorig = g_grup      #No.FUN-980030 10/01/04
-   IF cl_null(g_oga.oga909) THEN LET g_oga.oga909 = 'N' END IF  #MOD-A60163 
+   IF cl_null(g_oga.oga909) THEN LET g_oga.oga909 = 'N' END IF  #MOD-A60163
 
 #TQC-C20127 --begin--
-      IF cl_null(g_oga.ogaslk02) THEN 
-         LET g_oga.ogaslk02 = '1' 
-      END IF  
+      IF cl_null(g_oga.ogaslk02) THEN
+         LET g_oga.ogaslk02 = '1'
+      END IF
 #TQC-C20127 --end--
-  
+
    INSERT INTO oga_file VALUES(g_oga.*)
    IF STATUS THEN
       CALL cl_err3("ins","oga_file","g_oga.oga01","",SQLCA.sqlcode,"","ins 2nd oga",1)  #No.FUN-670008
@@ -11988,8 +12003,8 @@ FUNCTION t600_g_b2_another_oga()
       CALL cl_err3("ins","tc_ool_file","g_oga.oga01","",SQLCA.sqlcode,"","ins 2nd oga",1)  #No.FUN-670008
       RETURN
    END IF
-   #tianry add end 
-   CALL t600_g_b2_p(g_oga.oga01,'NOT') 
+   #tianry add end
+   CALL t600_g_b2_p(g_oga.oga01,'NOT')
 
 
    LET end_no=g_oga.oga01
@@ -12028,25 +12043,25 @@ FUNCTION t600_g_b2_p(p_oga01,p_tax)                     #由訂單產生單身
           l_flag2    LIKE type_file.num5,   #MOD-930130
           l_oee081   LIKE oee_file.oee081   #MOD-930130
 #   DEFINE l_ata RECORD LIKE ata_file.*      #No.FUN-A50054   #FUN-A60035 ---MARK
-#   DEFINE l_msg STRING   #No.FUN-870007     #FUN-AC0074 mark 
+#   DEFINE l_msg STRING   #No.FUN-870007     #FUN-AC0074 mark
    DEFINE l_ogb05    LIKE ogb_file.ogb05        #NO.FUN-960130
 #  DEFINE l_rxc      RECORD LIKE rxc_file.*     #NO.FUN-960130  #FUN-AC0074 mark
    DEFINE l_count    LIKE type_file.num5        #TQC-A40113
    DEFINE l_sie11    LIKE sie_file.sie11        #FUN-AC0074
-   DEFINE m_ogb12    LIKE ogb_file.ogb12        #FUN-AC0074 
+   DEFINE m_ogb12    LIKE ogb_file.ogb12        #FUN-AC0074
    DEFINE l_sum_ogb12  LIKE ogb_file.ogb12      #FUN-AC0074
    DEFINE l_qry1       LIKE ogb_file.ogb12      #FUN-AC0074
    DEFINE l_issue_qty1 LIKE ogb_file.ogb12      #FUN-AC0074
    DEFINE l_sie        RECORD  LIKE sie_file.*  #FUN-AC0074
-   DEFINE l_ogb12      LIKE ogb_file.ogb12      #FUN-AC0074   
-   DEFINE l_n          LIKE type_file.num5      #FUN-AC0074 
-   DEFINE l_n1         LIKE type_file.num5      #TQC-B90236       #JT mark 
+   DEFINE l_ogb12      LIKE ogb_file.ogb12      #FUN-AC0074
+   DEFINE l_n          LIKE type_file.num5      #FUN-AC0074
+   DEFINE l_n1         LIKE type_file.num5      #TQC-B90236       #JT mark
    DEFINE l_ima928     LIKE ima_file.ima928     #TQC-B90236
    DEFINE l_oea10      LIKE oea_file.oea10
 
    LET g_chr2 = '2'  #No.FUN-640074
    LET b_ogb.ogb03 = 0    #FUN-AC0074
-   LET l_n1 = 0                                 #TQC-B90236 add   #JT mark 
+   LET l_n1 = 0                                 #TQC-B90236 add   #JT mark
 
    IF g_oea.oea37 = "Y" THEN   #No:FUN-640025
       LET g_sql = "SELECT oee063,oee073,oee083,ima35,ima36,ima25,ima15,oeb_file.*",   #CHI-9B0002
@@ -12058,8 +12073,8 @@ FUNCTION t600_g_b2_p(p_oga01,p_tax)                     #由訂單產生單身
                   "   AND oee01=oeb01 AND oee02 = oeb03",       #TQC-A40113
 #                 "   AND oeb04=ima_file.ima01",                #TQC-A60132
                   "   AND oeb_file.oeb04=ima_file.ima01",      #TQC-A60132
-                  " ORDER BY oeb03"        
-                  
+                  " ORDER BY oeb03"
+
    ELSE
          LET g_sql = "SELECT 0,0,0,ima35,ima36,ima25,ima15,oeb_file.*",   #CHI-9B0002
                      "  FROM oeb_file,OUTER ima_file",
@@ -12068,19 +12083,19 @@ FUNCTION t600_g_b2_p(p_oga01,p_tax)                     #由訂單產生單身
                      "   AND oeb70='N'",
 #                    "   AND oeb04=ima_file.ima01",             #TQC-A60132
                      "   AND oeb_file.oeb04=ima_file.ima01",    #TQC-A60132
-                     " ORDER BY oeb03"                       
+                     " ORDER BY oeb03"
    END IF
-   
+
 
    PREPARE t600_g_b_pb FROM g_sql
    DECLARE t600_g_b_c2 CURSOR FOR t600_g_b_pb
    FOREACH t600_g_b_c2 INTO l_oee063,l_oee073,l_oee083,l_ima35,l_ima36,l_ima25,l_ima15,g_oeb.*   #CHI-9B0002
-      
+
       IF STATUS THEN
          EXIT FOREACH
       END IF
 
-      IF g_argv0 MATCHES '[246]' AND g_oeb.oeb1003 ='1' 
+      IF g_argv0 MATCHES '[246]' AND g_oeb.oeb1003 ='1'
          AND (g_oeb.oeb12 - g_oeb.oeb24 + g_oeb.oeb25) <= 0 THEN
          CONTINUE FOREACH
       END IF
@@ -12125,10 +12140,10 @@ FUNCTION t600_g_b2_p(p_oga01,p_tax)                     #由訂單產生單身
       IF l_ohb917 IS NULL   THEN LET l_ohb917   = 0 END IF
 
       #-----MOD-A50076---------
-      LET l_retn_qty_2 = 0 
-      LET l_ogb912_2 = 0 
-      LET l_ogb915_2 = 0 
-      LET l_ogb917_2 = 0 
+      LET l_retn_qty_2 = 0
+      LET l_ogb912_2 = 0
+      LET l_ogb915_2 = 0
+      LET l_ogb917_2 = 0
       SELECT SUM(ogb12),SUM(ogb912),SUM(ogb915),SUM(ogb917)
         INTO l_retn_qty_2,l_ogb912_2,l_ogb915_2,l_ogb917_2
         FROM ogb_file,oga_file
@@ -12151,8 +12166,8 @@ FUNCTION t600_g_b2_p(p_oga01,p_tax)                     #由訂單產生單身
          LET b_ogb.ogb915= l_oee073 - l_ogb915   + l_ohb915 + l_ogb915_2       #MOD-A50076  add l_ogb912_2
         #MOD-930130單位轉換
          SELECT oee081 INTO l_oee081 FROM oee_file
-          WHERE oee10 = g_oeb.oeb01                                                                              
-            AND oee11 = g_oeb.oeb03                                                                              
+          WHERE oee10 = g_oeb.oeb01
+            AND oee11 = g_oeb.oeb03
          CALL s_umfchk(b_ogb.ogb04,l_oee081,g_oeb.oeb916)
                RETURNING l_flag2,l_fac
          IF l_flag2 = 1 THEN
@@ -12174,7 +12189,7 @@ FUNCTION t600_g_b2_p(p_oga01,p_tax)                     #由訂單產生單身
          AND sie15 = g_oeb.oeb03
          AND (sie02 IS NOT NULL AND  sie02 <> ' ')
       IF cl_null(l_n) THEN
-         LET l_n = 0 
+         LET l_n = 0
       END IF
       IF l_n > 0 THEN
          SELECT SUM(sie11) INTO l_sie11 FROM sie_file
@@ -12183,34 +12198,34 @@ FUNCTION t600_g_b2_p(p_oga01,p_tax)                     #由訂單產生單身
             AND (sie02 IS NOT NULL AND sie02 <> ' ')
          IF l_sie11 > = b_ogb.ogb12 THEN  #備置未處理量
             LET m_ogb12 = b_ogb.ogb12
-         ELSE 
+         ELSE
             LET m_ogb12 = l_sie11
          END IF
 
-         DECLARE t600_sie_cur CURSOR FOR SELECT * FROM sie_file 
-                                           WHERE sie05 = g_oeb.oeb01 
-                                             AND sie15 = g_oeb.oeb03 
+         DECLARE t600_sie_cur CURSOR FOR SELECT * FROM sie_file
+                                           WHERE sie05 = g_oeb.oeb01
+                                             AND sie15 = g_oeb.oeb03
                                              AND (sie02 IS NOT NULL AND sie02 <> ' ')
-         LET l_sum_ogb12 = 0                      
+         LET l_sum_ogb12 = 0
          FOREACH t600_sie_cur INTO l_sie.*
-            LET l_qry1 =  l_sum_ogb12 
+            LET l_qry1 =  l_sum_ogb12
             LET l_sum_ogb12 = l_sum_ogb12 + l_sie.sie11
             IF l_sum_ogb12 < = m_ogb12 THEN
                LET b_ogb.ogb12 = l_sie.sie11
-            ELSE 
+            ELSE
                   LET b_ogb.ogb12 =  m_ogb12 - l_qry1
-            END IF      
-            
+            END IF
 
-            IF g_argv0 MATCHES '[12456]' AND g_oeb.oeb1003='1' THEN  
+
+            IF g_argv0 MATCHES '[12456]' AND g_oeb.oeb1003='1' THEN
                IF b_ogb.ogb12 <= 0 THEN CONTINUE FOREACH END IF
-            END IF 
+            END IF
             LET b_ogb.ogb01 = p_oga01
 #            SELECT MAX(ogb03) INTO b_ogb.ogb03 FROM ogb_file
 #             WHERE ogb31 = g_oeb.oeb01
 #            IF cl_null(b_ogb.ogb03) THEN
 #               LET b_ogb.ogb03 = 0
-#            END IF 
+#            END IF
 #            LET b_ogb.ogb03 = b_ogb.ogb03 + 1
             LET b_ogb.ogb31 = g_oeb.oeb01
 
@@ -12218,10 +12233,10 @@ FUNCTION t600_g_b2_p(p_oga01,p_tax)                     #由訂單產生單身
             LET b_ogb.ogb04 = g_oeb.oeb04
             LET b_ogb.ogb05 = l_sie.sie07
 
-      
+
             LET b_ogb.ogb09 = l_sie.sie02
             LET b_ogb.ogb091= l_sie.sie03
-            LET b_ogb.ogb15 = l_ima25 
+            LET b_ogb.ogb15 = l_ima25
             LET b_ogb.ogb092 = l_sie.sie04
             IF cl_null(b_ogb.ogb09) THEN
                IF g_azw.azw04='2' THEN
@@ -12235,11 +12250,11 @@ FUNCTION t600_g_b2_p(p_oga01,p_tax)                     #由訂單產生單身
                   LET b_ogb.ogb091= l_ima36   #TQC-C20232 add
                END IF
             END IF
-            IF cl_null(b_ogb.ogb091) THEN 
+            IF cl_null(b_ogb.ogb091) THEN
               #LET b_ogb.ogb091= l_ima36   #TQC-C20232 mark
                LET b_ogb.ogb091= ' '       #TQC-C20232 add
             END IF
-           
+
 #&ifdef SLK
 ##FUN-B90104--add--begin-------
 #            IF cl_null(b_ogb.ogb091) THEN
@@ -12278,46 +12293,46 @@ FUNCTION t600_g_b2_p(p_oga01,p_tax)                     #由訂單產生單身
             LET b_ogb.ogb914= g_oeb.oeb914
             LET b_ogb.ogb916= g_oeb.oeb916
             CALL t600_set_ogb917_2()
-            #TQC-D30021 add end--------------------------------- 
+            #TQC-D30021 add end---------------------------------
 
             CALL t600_move_to()
 
             IF g_success = 'N' THEN
-               CONTINUE FOREACH 
+               CONTINUE FOREACH
             END IF
         #TQC-C20232--add--begin--
         #TQC-C20232--add--end--
-       
-            LET l_count = 0 
+
+            LET l_count = 0
             SELECT COUNT(*) INTO l_count FROM ogb_file
              WHERE ogb01 = b_ogb.ogb01
-               AND ogb03 = b_ogb.ogb03 
+               AND ogb03 = b_ogb.ogb03
             IF l_count = 0 THEN
                SELECT COUNT(*) INTO l_count FROM ogb_file
-                WHERE ogb01 = b_ogb.ogb01 
+                WHERE ogb01 = b_ogb.ogb01
                   AND ogb31 = g_oeb.oeb01
                   AND ogb32 = g_oeb.oeb03
-                  AND ogb09 = b_ogb.ogb09 
+                  AND ogb09 = b_ogb.ogb09
                   AND ogb091 = b_ogb.ogb091
                   AND ogb092 = b_ogb.ogb092
-                  AND ogb05 = b_ogb.ogb05   #TQC-B50052 
+                  AND ogb05 = b_ogb.ogb05   #TQC-B50052
                IF cl_null(l_count) THEN
                   LET l_count = 0
                END IF
                IF l_count > 0 THEN
                   UPDATE ogb_file SET ogb12 = ogb12 + b_ogb.ogb12
                                      ,ogb16 = ogb16 + b_ogb.ogb16,  #TQC-B50052
-                                      ogb18 = ogb18 + b_ogb.ogb18   #TQC-B50052   
+                                      ogb18 = ogb18 + b_ogb.ogb18   #TQC-B50052
                    WHERE ogb01 = b_ogb.ogb01
                      AND ogb31 = g_oeb.oeb01
                      AND ogb32 = g_oeb.oeb03
-                     AND ogb09 = b_ogb.ogb09  
+                     AND ogb09 = b_ogb.ogb09
                      AND ogb091 = b_ogb.ogb091
                      AND ogb092 = b_ogb.ogb092
                      AND ogb05 = b_ogb.ogb05   #TQC-B50052
                      IF SQLCA.SQLERRD[3]=0 THEN
                      CALL cl_err3("upd","ogb_file","b_ogb.ogb01","",SQLCA.sqlcode,"","upd ogb",0)
-                  END IF                   
+                  END IF
                ELSE
                 #TQC-D30021 mark begin-----
                  #FUN-C30169 add START
@@ -12330,75 +12345,75 @@ FUNCTION t600_g_b2_p(p_oga01,p_tax)                     #由訂單產生單身
                  #FUN-C50097---begin
                  IF cl_null(b_ogb.ogb50) THEN
                     LET b_ogb.ogb50 = 0
-                 END IF  
+                 END IF
                  IF cl_null(b_ogb.ogb51) THEN
                     LET b_ogb.ogb51 = 0
-                 END IF  
+                 END IF
                  IF cl_null(b_ogb.ogb52) THEN
                     LET b_ogb.ogb52 = 0
-                 END IF  
+                 END IF
                  IF cl_null(b_ogb.ogb53) THEN
                     LET b_ogb.ogb53 = 0
-                 END IF  
+                 END IF
                  IF cl_null(b_ogb.ogb54) THEN
                     LET b_ogb.ogb54 = 0
-                 END IF  
+                 END IF
                  IF cl_null(b_ogb.ogb55) THEN
                     LET b_ogb.ogb55 = 0
-                 END IF 
+                 END IF
                  #FUN-C50097---end
                  IF cl_null(b_ogb.ogb31) THEN LET b_ogb.ogb32 = '' END IF      #TQC-C60131 add
                   #FUN-CB0087--add--str--
                   IF g_aza.aza115 = 'Y' AND g_argv0 MATCHES '[2456A]' THEN
-                     CALL s_reason_code(b_ogb.ogb01,b_ogb.ogb31,'',b_ogb.ogb04,b_ogb.ogb09,g_oga.oga14,g_oga.oga15) 
+                     CALL s_reason_code(b_ogb.ogb01,b_ogb.ogb31,'',b_ogb.ogb04,b_ogb.ogb09,g_oga.oga14,g_oga.oga15)
                         RETURNING b_ogb.ogb1001
-                  END IF 
+                  END IF
                   IF g_aza.aza115 = 'Y' AND g_argv0 MATCHES '[89]' AND b_ogb.ogb52<>0 THEN
-                     CALL s_reason_code(b_ogb.ogb01,b_ogb.ogb31,'',b_ogb.ogb04,b_ogb.ogb09,g_oga.oga14,g_oga.oga15) 
+                     CALL s_reason_code(b_ogb.ogb01,b_ogb.ogb31,'',b_ogb.ogb04,b_ogb.ogb09,g_oga.oga14,g_oga.oga15)
                         RETURNING b_ogb.ogb65
-                  END IF 
+                  END IF
                   #FUN-CB0087--add--end--
-                  
+
                   INSERT INTO ogb_file VALUES(b_ogb.*)
                   IF STATUS THEN
-                     CALL cl_err3("ins","ogb_file","b_ogb.ogb01","",SQLCA.sqlcode,"","ins ogb",1)  
+                     CALL cl_err3("ins","ogb_file","b_ogb.ogb01","",SQLCA.sqlcode,"","ins ogb",1)
                   END IF
                   CALL t620_ins_ogi(b_ogb.ogb03,b_ogb.ogb04,b_ogb.ogb917,b_ogb.ogb13)   #FUN-C10040 add
                  #TQC-C30113 add START
                   IF NOT cl_null(b_ogb.ogb31) AND NOT cl_null(b_ogb.ogb32)THEN
                      IF NOT cl_null(b_ogb.ogb1001) AND b_ogb.ogb1001 = g_oaz.oaz88 THEN
-                        CALL t600_ins_rxe(b_ogb.ogb01,b_ogb.ogb04,b_ogb.ogb31,b_ogb.ogb03) 
+                        CALL t600_ins_rxe(b_ogb.ogb01,b_ogb.ogb04,b_ogb.ogb31,b_ogb.ogb03)
                      END IF
-                  END IF 
+                  END IF
                  #TQC-C30113 add END
-               END IF 
+               END IF
             ELSE
                IF g_oea.oea37 = 'Y' THEN
-                  UPDATE ogb_file SET ogb12 = ogb12 + b_ogb.ogb12 
+                  UPDATE ogb_file SET ogb12 = ogb12 + b_ogb.ogb12
                     WHERE ogb01 = b_ogb.ogb01
                       AND ogb03 = b_ogb.ogb03
                   IF STATUS THEN
-                     CALL cl_err3("upd","ogb_file","b_ogb.ogb01","",SQLCA.sqlcode,"","upd ogb",0)  
+                     CALL cl_err3("upd","ogb_file","b_ogb.ogb01","",SQLCA.sqlcode,"","upd ogb",0)
                   END IF
-               END IF 
+               END IF
             END IF
          END FOREACH   #lixh1  #走備置
-      END IF           
- 
+      END IF
+
       IF (l_n > 0 AND l_sie11 < l_issue_qty1) OR l_n = 0 THEN
          IF l_n > 0 AND l_sie11 < l_issue_qty1 THEN
             LET l_ogb12 = l_issue_qty1 - l_sie11
-            LET b_ogb.ogb12 = l_ogb12      
+            LET b_ogb.ogb12 = l_ogb12
          END IF
 #FUN-AC0074 --------------------------End---------------------------------------
-#FUN-AC0074 --------------------------Begin-------------------------------------    
-#            LET b_ogb.ogb910= g_oeb.oeb910    
+#FUN-AC0074 --------------------------Begin-------------------------------------
+#            LET b_ogb.ogb910= g_oeb.oeb910
 #            LET b_ogb.ogb911= g_oeb.oeb911
 #            LET b_ogb.ogb913= g_oeb.oeb913
 #            LET b_ogb.ogb914= g_oeb.oeb914
 #            LET b_ogb.ogb916= g_oeb.oeb916
-#FUN-AC0074 --------------------------End---------------------------------------            
-            
+#FUN-AC0074 --------------------------End---------------------------------------
+
             #IF g_argv0 MATCHES '[246]' AND g_oeb.oeb1003='1' THEN   #MOD-A20068
             IF g_argv0 MATCHES '[12456]' AND g_oeb.oeb1003='1' THEN   #MOD-A20068
                IF b_ogb.ogb12 <= 0 THEN CONTINUE FOREACH END IF
@@ -12455,7 +12470,7 @@ FUNCTION t600_g_b2_p(p_oga01,p_tax)                     #由訂單產生單身
 #            LET b_ogb.ogbplant = g_oeb.oebplant
 #            LET b_ogb.ogblegal = g_oeb.oeblegal
 #            LET b_ogb.ogb45 = g_oeb.oeb45
-#            LET b_ogb.ogb46 = g_oeb.oeb46                                                                                              
+#            LET b_ogb.ogb46 = g_oeb.oeb46
 #            LET b_ogb.ogb47 = g_oeb.oeb47
 #               SELECT SUM(ogb14)
 #                 INTO b_ogb.ogb14
@@ -12507,7 +12522,7 @@ FUNCTION t600_g_b2_p(p_oga01,p_tax)                     #由訂單產生單身
 #               LET b_ogb.ogb41 = g_oeb.oeb41
 #               LET b_ogb.ogb42 = g_oeb.oeb42
 #               LET b_ogb.ogb43 = g_oeb.oeb43
-#         
+#
 #               LET b_ogb.ogb1001= g_oeb.oeb1001    #No.FUN-610064
 #               LET b_ogb.ogb1012= g_oeb.oeb1012    #No.FUN-610064
 #               LET b_ogb.ogb1002= g_oeb.oeb1002    #No.FUN-610064
@@ -12521,19 +12536,19 @@ FUNCTION t600_g_b2_p(p_oga01,p_tax)                     #由訂單產生單身
 #               LET b_ogb.ogb1010= g_oeb.oeb1010    #No.FUN-610064
 #               LET b_ogb.ogb1014 = 'N'  #FUN-6A0007
 #               LET b_ogb.ogb1013 = 0    #No.TQC-740349
-#         
+#
 #              #No.FUN-AA0057 Begin---
 #               LET b_ogb.ogb48 = g_oeb.oeb49
 #               LET b_ogb.ogb49 = g_oeb.oeb50
 #              #LET b_ogb.ogb50 = '1'
 #              #No.FUN-AA0057 End-----
-#         
+#
 #               CALL t600_b_else()
-#         
+#
 #               LET g_msg=b_ogb.ogb03,' ',b_ogb.ogb04,' ',b_ogb.ogb12
-#               
+#
 #               CALL cl_msg(g_msg)
-#         
+#
 #               #MOD-5A0174 add
 #               IF cl_null(b_ogb.ogb05_fac) THEN
 #                  LET b_ogb.ogb05_fac = 1
@@ -12541,11 +12556,11 @@ FUNCTION t600_g_b2_p(p_oga01,p_tax)                     #由訂單產生單身
 #               IF cl_null(b_ogb.ogb12) THEN
 #                  LET b_ogb.ogb12 = 0
 #               END IF
-##FUN-AB0061 -----------add start----------------                          
+##FUN-AB0061 -----------add start----------------
 #               IF cl_null(b_ogb.ogb37) THEN
 #                  LET b_ogb.ogb37 = 0
-#               END IF                                                                             
-##FUN-AB0061 -----------add end----------------        
+#               END IF
+##FUN-AB0061 -----------add end----------------
 #              IF cl_null(b_ogb.ogb13) THEN
 #                 LET b_ogb.ogb13 = 0
 #              END IF
@@ -12614,10 +12629,10 @@ FUNCTION t600_g_b2_p(p_oga01,p_tax)                     #由訂單產生單身
 #              IF g_azw.azw04 = '2' THEN
 #                 SELECT rtz07 INTO b_ogb.ogb09 FROM rtz_file WHERE rtz01 = g_oga.ogaplant
 #                 IF b_ogb.ogb09 IS NULL THEN
-#                    CONTINUE FOREACH  
+#                    CONTINUE FOREACH
 #                 ELSE
 #                   IF s_internal_item( b_ogb.ogb04,g_plant ) AND  (NOT s_joint_venture( b_ogb.ogb04,g_plant)) THEN    #FUN-AB0011
-#                     SELECT COUNT(*) INTO g_cnt FROM img_file 
+#                     SELECT COUNT(*) INTO g_cnt FROM img_file
 #                      WHERE img01 = b_ogb.ogb04 AND img02 = b_ogb.ogb09
 #                     IF g_cnt IS NULL THEN LET g_cnt = 0 END IF
 #                     IF g_cnt = 0 THEN
@@ -12632,18 +12647,18 @@ FUNCTION t600_g_b2_p(p_oga01,p_tax)                     #由訂單產生單身
 #                   END IF                                                                        #FUN-AB0011
 #                 END IF
 #              END IF
-#        
-#              LET b_ogb.ogbplant = g_plant 
-#              LET b_ogb.ogblegal = g_legal  
+#
+#              LET b_ogb.ogbplant = g_plant
+#              LET b_ogb.ogblegal = g_legal
 #              LET b_ogb.ogb47 = (b_ogb.ogb917/g_oeb.oeb917)*g_oeb.oeb47
 #              LET l_rxc.rxc00 = '02'
 #              LET l_rxc.rxc01 = b_ogb.ogb01
 #              LET l_rxc.rxc02 = b_ogb.ogb03
 #              LET l_rxc.rxcplant = b_ogb.ogbplant
 #              LET l_rxc.rxclegal = b_ogb.ogblegal
-#              DECLARE cur_rxc01 CURSOR FOR 
+#              DECLARE cur_rxc01 CURSOR FOR
 #                 SELECT rxc03,rxc04,rxc05,rxc06,rxc07,rxc08,rxc09,rxc10,rxc11,rxc15  #FUN-AB0061
-#                  FROM rxc_file WHERE rxc00 = '01' 
+#                  FROM rxc_file WHERE rxc00 = '01'
 #                   AND rxc01 = g_oeb.oeb01 AND rxc02 = g_oeb.oeb03
 #              FOREACH cur_rxc01 INTO l_rxc.rxc03,l_rxc.rxc04,l_rxc.rxc05,l_rxc.rxc06,
 #                                     l_rxc.rxc07,l_rxc.rxc08,l_rxc.rxc09,l_rxc.rxc10,
@@ -12695,18 +12710,18 @@ FUNCTION t600_g_b2_p(p_oga01,p_tax)                     #由訂單產生單身
 #
 ##FUN-B90104--add--end------
 #&endif
-            #TQC-D30021 add begin--------------------------------- 
+            #TQC-D30021 add begin---------------------------------
             CALL t600_set_ogb917_2()
-            #TQC-D30021 add end--------------------------------- 
+            #TQC-D30021 add end---------------------------------
             CALL t600_move_to()  #FUN-AC0074
-               
+
         #TQC-C20232--add--begin--
         #TQC-C20232--add--end--
 #TQC-A40113 --begin--
-              LET l_count = 0 
+              LET l_count = 0
               SELECT COUNT(*) INTO l_count FROM ogb_file
                WHERE ogb01 = b_ogb.ogb01
-                 AND ogb03 = b_ogb.ogb03 
+                 AND ogb03 = b_ogb.ogb03
               IF l_count = 0 THEN
 #TQC-A40113 --end--
 #FUN-AC0074 ---------------------------Begin----------------------------
@@ -12724,17 +12739,17 @@ FUNCTION t600_g_b2_p(p_oga01,p_tax)                     #由訂單產生單身
                  IF l_count > 0 THEN
                     UPDATE ogb_file set ogb12 = ogb12 + b_ogb.ogb12
                                        ,ogb16 = ogb16 + b_ogb.ogb16, #TQC-B50052
-                                        ogb18 = ogb18 + b_ogb.ogb18  #TQC-B50052 
+                                        ogb18 = ogb18 + b_ogb.ogb18  #TQC-B50052
                    WHERE ogb01 = b_ogb.ogb01
                      AND ogb31 = g_oeb.oeb01
                      AND ogb32 = g_oeb.oeb03
-                     AND ogb09 = b_ogb.ogb09 
+                     AND ogb09 = b_ogb.ogb09
                      AND ogb091 = b_ogb.ogb091
                      AND ogb092 = b_ogb.ogb092
-                     AND ogb05 = b_ogb.ogb05    #FUN-B50052  
+                     AND ogb05 = b_ogb.ogb05    #FUN-B50052
                     IF SQLCA.SQLERRD[3]=0 THEN
                        CALL cl_err3("upd","ogb_file","b_ogb.ogb01","",SQLCA.sqlcode,"","upd ogb",0)
-                    END IF                  
+                    END IF
                  ELSE
 #FUN-AC0074 --------------------------End------------------------------------
 #TQC-B90236---------add------begin-----------
@@ -12749,22 +12764,22 @@ FUNCTION t600_g_b2_p(p_oga01,p_tax)                     #由訂單產生單身
                        #FUN-C50097---begin
                        IF cl_null(b_ogb.ogb50) THEN
                           LET b_ogb.ogb50 = 0
-                       END IF  
+                       END IF
                        IF cl_null(b_ogb.ogb51) THEN
                           LET b_ogb.ogb51 = 0
-                       END IF  
+                       END IF
                        IF cl_null(b_ogb.ogb52) THEN
                           LET b_ogb.ogb52 = 0
-                       END IF 
+                       END IF
                        IF cl_null(b_ogb.ogb53) THEN
                           LET b_ogb.ogb53 = 0
-                       END IF  
+                       END IF
                        IF cl_null(b_ogb.ogb54) THEN
                           LET b_ogb.ogb54 = 0
-                       END IF  
+                       END IF
                        IF cl_null(b_ogb.ogb55) THEN
                           LET b_ogb.ogb55 = 0
-                       END IF                         
+                       END IF
                        #FUN-C50097---end
                        IF cl_null(b_ogb.ogb31) THEN LET b_ogb.ogb32='' END IF    #TQC-C60131 add
                        #FUN-CB0087--add--str--
@@ -12781,9 +12796,9 @@ FUNCTION t600_g_b2_p(p_oga01,p_tax)                     #由訂單產生單身
                        LET b_ogb.ogbud03 = g_oeb.oeb11
                        LET l_oea10 = ''
                        SELECT oea10 INTO l_oea10 FROM oea_file WHERE oea01 = g_oeb.oeb01
-                       LET b_ogb.ogbud02 = l_oea10   
+                       LET b_ogb.ogbud02 = l_oea10
                        #end------add by guanyao160608
-                     
+
                        INSERT INTO ogb_file VALUES(b_ogb.*)
                        IF STATUS THEN
                           CALL cl_err3("ins","ogb_file","b_ogb.ogb01","",SQLCA.sqlcode,"","ins ogb",1)  #No.FUN-670008
@@ -12799,13 +12814,13 @@ FUNCTION t600_g_b2_p(p_oga01,p_tax)                     #由訂單產生單身
                     ELSE                     #TQC-b90236   add    #JT mark
                        LET l_n1 = l_n1 + 1   #TQC-b90236   add    #JT mark
                     END IF  #TQC-b90236   add
-                 END IF      #FUN-AC0074  
+                 END IF      #FUN-AC0074
 #FUN-A60035 ---MARK BEGIN
 ##FUN-A50054 --Begin
 #&ifdef SLK
 ##     IF s_industry("slk") THEN
-#           SELECT * INTO l_ata.* 
-#             FROM ata_file 
+#           SELECT * INTO l_ata.*
+#             FROM ata_file
 #            WHERE ata00=g_ata00
 #              AND ata01=g_oeb.oeb01
 #              AND ata03=g_oeb.oeb03
@@ -12821,14 +12836,14 @@ FUNCTION t600_g_b2_p(p_oga01,p_tax)                     #由訂單產生單身
 #TQC-A40113 --begin--
          ELSE
             IF g_oea.oea37 = 'Y' THEN
-               UPDATE ogb_file SET ogb12 = ogb12 + b_ogb.ogb12 
+               UPDATE ogb_file SET ogb12 = ogb12 + b_ogb.ogb12
                 WHERE ogb01 = b_ogb.ogb01
                   AND ogb03 = b_ogb.ogb03
                IF STATUS THEN
-                  CALL cl_err3("upd","ogb_file","b_ogb.ogb01","",SQLCA.sqlcode,"","upd ogb",0)  
+                  CALL cl_err3("upd","ogb_file","b_ogb.ogb01","",SQLCA.sqlcode,"","upd ogb",0)
                END IF
-            END IF 
-         END IF  
+            END IF
+         END IF
 #TQC-A40113  -end--
       END IF
 
@@ -12836,10 +12851,10 @@ FUNCTION t600_g_b2_p(p_oga01,p_tax)                     #由訂單產生單身
 
 #JT -- mark start --
  #TQC-B90236  --add--
-    IF l_n1 > 0 THEN 
+    IF l_n1 > 0 THEN
       #CALL cl_err(l_n1,'axm-678',0)     #TQC-C30031 mark
-       CALL cl_err(l_n1,'axm-678',1)     #TQC-C30031 add 
-    END IF 
+       CALL cl_err(l_n1,'axm-678',1)     #TQC-C30031 add
+    END IF
  #TQC-B90236  ---END--
 #JT -- mark end --
 
@@ -13038,8 +13053,8 @@ FUNCTION t600_set_entry(p_cmd)
        CALL cl_set_comp_entry("oga65,oga72",TRUE)   #CHI-730002  #FUN-A60004 add oga72
       --  call cl_set_comp_visible("oga65",false)   # darcy:2025/11/27 add
     ELSE                                                         #FUN-A60004
-       CALL cl_set_comp_entry("oga65",TRUE)                      #FUN-A60004 
-    END IF                                                       #FUN-A60004     
+       CALL cl_set_comp_entry("oga65",TRUE)                      #FUN-A60004
+    END IF                                                       #FUN-A60004
 
     CALL cl_set_comp_entry("oga03,oga18,oga21,oga032",TRUE)  #No.TQC-740349     #MOD-9C0183 add oga032
 
@@ -13067,7 +13082,7 @@ FUNCTION t600_set_no_entry(p_cmd)
          l_n     LIKE type_file.num5    #No.FUN-680137 SMALLINT
   DEFINE l_ogb31 LIKE ogb_file.ogb31   #No:MOD-590356
   DEFINE l_oga09 LIKE oga_file.oga09   #FUN-D20054 add
-    
+
     IF p_cmd = 'u' AND g_chkey = 'N' AND ( NOT g_before_input_done ) THEN
        CALL cl_set_comp_entry("oga01",FALSE)
     END IF
@@ -13232,7 +13247,7 @@ FUNCTION t600_r()
    IF cl_delh(20,16) THEN
       CALL cl_msg("Delete oga,ogb,ogc,oao,oap!")
 
-      IF g_argv0 <> '8' THEN  #FUN-C50097(MOD-C60236并入)      
+      IF g_argv0 <> '8' THEN  #FUN-C50097(MOD-C60236并入)
          IF NOT cl_null(g_oga.oga011) THEN
             UPDATE oga_file SET oga011 = NULL
              WHERE oga01 = g_oga.oga011
@@ -13244,10 +13259,10 @@ FUNCTION t600_r()
          END IF
       END IF #FUN-C50097(MOD-C60236并入)
       #-----MOD-AC0089---------
-      INITIALIZE g_doc.* TO NULL          
-      LET g_doc.column1 = "oga01"         
-      LET g_doc.value1 = g_oga.oga01      
-      CALL cl_del_doc()                   
+      INITIALIZE g_doc.* TO NULL
+      LET g_doc.column1 = "oga01"
+      LET g_doc.value1 = g_oga.oga01
+      CALL cl_del_doc()
       #-----END MOD-AC0089-----
 
       DELETE FROM oga_file WHERE oga01 = g_oga.oga01
@@ -13256,9 +13271,9 @@ FUNCTION t600_r()
          ROLLBACK WORK
          RETURN FALSE
       END IF
-  
+
         #tianry add 161205
-      DELETE FROM tc_ool_file WHERE tc_ool01=g_oga.oga01 
+      DELETE FROM tc_ool_file WHERE tc_ool01=g_oga.oga01
        #tianry add ned
       DELETE FROM rxc_file WHERE rxc00 = '02' AND rxc01 = g_oga.oga01   #NO.FUN-960130
       DELETE FROM ogb_file WHERE ogb01 = g_oga.oga01
@@ -13281,10 +13296,10 @@ FUNCTION t600_r()
       DELETE FROM oao_file WHERE oao01 = g_oga.oga01
       DELETE FROM oap_file WHERE oap01 = g_oga.oga01
       DELETE FROM ogbb_file WHERE ogbb01=g_oga.oga01  #No:8324
-      IF g_azw.azw04='2' THEN                                                                                                          
-      DELETE FROM rxx_file WHERE rxx00='02' AND rxx01=g_oga.oga01                                                                   
-      DELETE FROM rxy_file WHERE rxy00='02' AND rxy01=g_oga.oga01                                                                   
-      DELETE FROM rxz_file WHERE rxz00='02' AND rxz01=g_oga.oga01                                                                   
+      IF g_azw.azw04='2' THEN
+      DELETE FROM rxx_file WHERE rxx00='02' AND rxx01=g_oga.oga01
+      DELETE FROM rxy_file WHERE rxy00='02' AND rxy01=g_oga.oga01
+      DELETE FROM rxz_file WHERE rxz00='02' AND rxz01=g_oga.oga01
       END IF
 
       #TQC-DB0073--add--str--
@@ -13331,7 +13346,7 @@ FUNCTION t600_r()
          END IF
       END IF
       LET g_msg=TIME
-      INSERT INTO azo_file(azo01,azo02,azo03,azo04,azo05,azo06,azoplant,azolegal)  #FUN-980010 add plant & legal 
+      INSERT INTO azo_file(azo01,azo02,azo03,azo04,azo05,azo06,azoplant,azolegal)  #FUN-980010 add plant & legal
                   #VALUES ('axmt600',g_user,g_today,g_msg,g_oga.oga01,'delete',g_plant,g_legal) #CHI-A90022 mark
                    VALUES (g_prog,g_user,g_today,g_msg,g_oga.oga01,'delete',g_plant,g_legal)    #CHI-A90022
       IF g_prog[1,7] <> 'axmt628' AND g_prog[1,7]<>'axmt629' THEN  #axmt628/629不處理rvbs #FUN-B40066 add [1,7]
@@ -13363,29 +13378,29 @@ END FUNCTION
 FUNCTION t600_chk_ofa_oma(p_oga01)
   DEFINE p_oga01    LIKE oga_file.oga01
   DEFINE l_cnt      LIKE type_file.num5
-  DEFINE l_omb01    LIKE omb_file.omb01 
+  DEFINE l_omb01    LIKE omb_file.omb01
 
    LET l_cnt = 0
    SELECT COUNT(*) INTO l_cnt FROM ofa_file
    WHERE ofa011=p_oga01
-     AND ofaconf <> 'X' 
-   IF l_cnt != 0 THEN 
-      RETURN FALSE 
+     AND ofaconf <> 'X'
+   IF l_cnt != 0 THEN
+      RETURN FALSE
    ELSE
       LET l_cnt = 0
       DECLARE t600_omb CURSOR FOR SELECT omb01 FROM omb_file
                                      WHERE omb31 = p_oga01
       FOREACH t600_omb INTO l_omb01
-         SELECT COUNT(*) INTO l_cnt FROM ome_file 
-          WHERE ome16 = l_omb01 
+         SELECT COUNT(*) INTO l_cnt FROM ome_file
+          WHERE ome16 = l_omb01
             AND omevoid<>'Y'
-         #IF g_cnt != 0 THEN #MOD-C10027 mark 
+         #IF g_cnt != 0 THEN #MOD-C10027 mark
          IF l_cnt != 0 THEN  #MOD-C10027 add
-            RETURN FALSE 
+            RETURN FALSE
          END IF
       END FOREACH
    END IF
-   RETURN TRUE 
+   RETURN TRUE
 END FUNCTION
 #MOD-B60010 add --end--
 
@@ -13400,7 +13415,7 @@ FUNCTION t600_set_entry_b1(p_cmd)
        END IF
     END IF
                                        #MOD-530374
-    IF p_cmd = 'u' OR (INFIELD(ogb04) AND g_ogb[l_ac].ogb31[1,4]='MISC') THEN	
+    IF p_cmd = 'u' OR (INFIELD(ogb04) AND g_ogb[l_ac].ogb31[1,4]='MISC') THEN
        CALL cl_set_comp_entry("ogb06",TRUE)
     END IF
 
@@ -13432,14 +13447,14 @@ FUNCTION t600_set_entry_b1(p_cmd)
     IF p_cmd ='s' AND g_sma.sma120 ="Y" THEN
        CALL cl_set_comp_entry("att00,att01,att02,att03,att04,att05,att06,att07,att08,att09,att10,att01_c,att02_c,att03_c,att04_c,att05_c,att06_c,att07_c,att08_c,att09_c,att10_c",TRUE)
     END IF
-    IF g_azw.azw04="2" THEN                                                                                                         
-       IF p_cmd='u' THEN                                                                                                            
-          CALL cl_set_comp_entry("ogb13",FALSE)                                                                                     
-       ELSE                                                                                                                         
-          IF p_cmd='a' THEN                                                                                                         
-             CALL cl_set_comp_entry("ogb13",TRUE)                                                                                   
-          END IF                                                                                                                    
-       END IF                                                                                                                       
+    IF g_azw.azw04="2" THEN
+       IF p_cmd='u' THEN
+          CALL cl_set_comp_entry("ogb13",FALSE)
+       ELSE
+          IF p_cmd='a' THEN
+             CALL cl_set_comp_entry("ogb13",TRUE)
+          END IF
+       END IF
     END IF
 END FUNCTION
 
@@ -13449,13 +13464,13 @@ FUNCTION t600_set_no_entry_b1(p_cmd)
     SELECT oaz102,oaz103,oaz104
       INTO g_oaz.oaz102,g_oaz.oaz103,g_oaz.oaz104
       FROM oaz_file
-       IF g_oaz.oaz102='N' THEN 
+       IF g_oaz.oaz102='N' THEN
           CALL cl_set_comp_entry("ogb09",FALSE)
        END IF
-       IF g_oaz.oaz103='N' THEN 
+       IF g_oaz.oaz103='N' THEN
           CALL cl_set_comp_entry("ogb091",FALSE)
        END IF
-       IF g_oaz.oaz104='N' THEN 
+       IF g_oaz.oaz104='N' THEN
           CALL cl_set_comp_entry("ogb092",FALSE)
        END IF
        IF g_aza.aza27 != 'Y' THEN
@@ -13463,7 +13478,7 @@ FUNCTION t600_set_no_entry_b1(p_cmd)
        END IF
     IF p_cmd = 'u' OR INFIELD(ogb31) THEN
        IF NOT cl_null(g_ogb[l_ac].ogb31) AND
-          g_ogb[l_ac].ogb31[1,4] !='MISC' THEN 		
+          g_ogb[l_ac].ogb31[1,4] !='MISC' THEN
           CALL cl_set_comp_entry("ogb04,ogb05,ogb06",FALSE)
           IF g_sma.sma115 = 'Y' THEN
              CALL cl_set_comp_entry("ogb910,ogb913",FALSE)
@@ -13497,7 +13512,7 @@ FUNCTION t600_set_no_entry_b1(p_cmd)
        END IF
     END IF
 
-    #-----CHI-880006--------- 
+    #-----CHI-880006---------
     #IF g_chr1 = 'Y' AND g_argv0 <> '8' THEN
     #   CALL cl_set_comp_entry("ogb19",FALSE)
     #END IF
@@ -13506,7 +13521,7 @@ FUNCTION t600_set_no_entry_b1(p_cmd)
     IF INFIELD(ogb03) AND g_argv0 = '8' THEN
        CALL cl_set_comp_entry("ogb31,ogb32,ogb04,ogb06",FALSE)
        CALL cl_set_comp_entry("ogb17,ogb09,ogb091,ogb092",FALSE)   #CHI-B30093  #CHI-B60054 去掉mark
-       #CALL cl_set_comp_entry("ogb09,ogb091,ogb092",FALSE)   #CHI-B30093 #CHI-B60054 mark 
+       #CALL cl_set_comp_entry("ogb09,ogb091,ogb092",FALSE)   #CHI-B30093 #CHI-B60054 mark
        #CALL cl_set_comp_entry("ogb19,ogb05,ogb908",FALSE)   #CHI-880006
        CALL cl_set_comp_entry("ogb05,ogb908",FALSE)   #CHI-880006
        IF g_sma.sma115 = 'Y' THEN
@@ -13525,7 +13540,7 @@ FUNCTION t600_set_no_entry_b1(p_cmd)
        CALL cl_set_comp_entry("ogb1001",FALSE)
     END IF
     CALL cl_set_comp_entry("ogb50,ogb51,ogb55",FALSE) #FUN-C50097 TQC-C70206
-    
+
 
 END FUNCTION
 
@@ -13548,13 +13563,13 @@ END FUNCTION
 
 #MOD-B30026 add --start--
 FUNCTION t600b_set_no_entry_ogc()
-   IF g_oaz.oaz102='N' THEN 
+   IF g_oaz.oaz102='N' THEN
       CALL cl_set_comp_entry("ogc09",FALSE)
    END IF
-   IF g_oaz.oaz103='N' THEN 
+   IF g_oaz.oaz103='N' THEN
       CALL cl_set_comp_entry("ogc091",FALSE)
    END IF
-   IF g_oaz.oaz104='N' THEN 
+   IF g_oaz.oaz104='N' THEN
       CALL cl_set_comp_entry("ogc092",FALSE)
    END IF
 END FUNCTION
@@ -13571,10 +13586,10 @@ FUNCTION t600_set_required_b1(p_cmd)
     CALL cl_set_comp_required("ogb31",TRUE)
  ELSE
  #FUN-CB0087--add--str--
- IF g_aza.aza115='Y' AND g_argv0 MATCHES '[2456A]' THEN 
-    CALL cl_set_comp_required('ogb1001',TRUE) 
- END IF 
- #FUN-CB0087--add--end-- 
+ IF g_aza.aza115='Y' AND g_argv0 MATCHES '[2456A]' THEN
+    CALL cl_set_comp_required('ogb1001',TRUE)
+ END IF
+ #FUN-CB0087--add--end--
   IF g_argv0<>'8' THEN   #MOD-6A0165 add
     IF g_oaz.oaz65='1' THEN
      CALL cl_set_comp_required("ogb31",TRUE)
@@ -13608,9 +13623,9 @@ FUNCTION t600_set_required_b1(p_cmd)
      END IF
    END IF   #No.FUN-630061
   #FUN-CB0087--add--str--
-  IF g_aza.aza115='Y' AND g_argv0 MATCHES '[89]' AND g_ogb[l_ac].ogb52<>0 THEN 
-     CALL cl_set_comp_required('ogb65',TRUE) 
-  END IF 
+  IF g_aza.aza115='Y' AND g_argv0 MATCHES '[89]' AND g_ogb[l_ac].ogb52<>0 THEN
+     CALL cl_set_comp_required('ogb65',TRUE)
+  END IF
   #FUN-CB0087--add--end--
 END FUNCTION
 
@@ -13638,7 +13653,7 @@ FUNCTION t600_set_no_required_b1(p_cmd)
 END FUNCTION
 
 #&ifdef ICD    #FUN-B50096
-#FUN-A40022--begin--add---- 
+#FUN-A40022--begin--add----
 FUNCTION t600_set_required_1(p_cmd)
 #DEFINE l_imaicd13 LIKE imaicd_file.imaicd13   #FUN-B50096
 DEFINE l_ima159   LIKE ima_file.ima159         #FUN-B50096
@@ -13668,15 +13683,15 @@ END FUNCTION
 FUNCTION t600_set_entry_ogb092()
    IF l_ac > 0 THEN
       IF g_oaz.oaz104='Y' AND g_ogb[l_ac].ogb17 = 'N' AND g_argv0 <> '8' THEN
-         CALL cl_set_comp_entry("ogb092",TRUE) 
+         CALL cl_set_comp_entry("ogb092",TRUE)
       END IF
-   END IF 
+   END IF
 END FUNCTION
 
 FUNCTION t600_set_no_entry_ogb092()
 DEFINE l_ima159   LIKE ima_file.ima159
    IF l_ac > 0  THEN
-      IF g_oaz.oaz104='Y' AND g_ogb[l_ac].ogb17= 'N' 
+      IF g_oaz.oaz104='Y' AND g_ogb[l_ac].ogb17= 'N'
          AND g_argv0 <> '8' THEN
          IF NOT cl_null(g_ogb[l_ac].ogb04) THEN
             SELECT ima159 INTO l_ima159  FROM ima_file
@@ -13693,13 +13708,13 @@ END FUNCTION
 #FUN-B50096 --------------End----------------
 
 #CHI-B90021 -----------Begin--------------
-#FUNCTION t600_chk_ogb()                                                                                                             
-#DEFINE l_n  LIKE type_file.num5                                                                                                     
-#                                                                                                                                    
-#  LET l_n = 0                                                                                                                       
-#  SELECT COUNT(*) INTO l_n FROM ogb_file                                                                                            
-#   WHERE ogb01 = g_oga.oga01                                                                                                        
-#  IF l_n = 0 AND INT_FLAG THEN RETURN 1 ELSE RETURN 0 END IF                                                                        
+#FUNCTION t600_chk_ogb()
+#DEFINE l_n  LIKE type_file.num5
+#
+#  LET l_n = 0
+#  SELECT COUNT(*) INTO l_n FROM ogb_file
+#   WHERE ogb01 = g_oga.oga01
+#  IF l_n = 0 AND INT_FLAG THEN RETURN 1 ELSE RETURN 0 END IF
 #END FUNCTION
 #CHI-B90021 -----------End---------------
 #FUN-A40022--end--add------------
@@ -13754,7 +13769,7 @@ FUNCTION t600_b1_move_to()
    LET g_ogb[l_ac].ogb1006= b_ogb.ogb1006
    LET g_ogb[l_ac].ogb11  = b_ogb.ogb11
    LET g_ogb[l_ac].ogb13  = b_ogb.ogb13
-   LET g_ogb[l_ac].ogb37  = b_ogb.ogb37    #FUN-AB0061   
+   LET g_ogb[l_ac].ogb37  = b_ogb.ogb37    #FUN-AB0061
    LET g_ogb[l_ac].ogb14  = b_ogb.ogb14
    LET g_ogb[l_ac].ogb14t = b_ogb.ogb14t
    LET g_ogb[l_ac].ogb930 = b_ogb.ogb930 #FUN-670063
@@ -13774,19 +13789,19 @@ FUNCTION t600_b1_move_to()
    LET g_ogb[l_ac].ogbud14 = b_ogb.ogbud14
    LET g_ogb[l_ac].ogbud15 = b_ogb.ogbud15
    IF g_azw.azw04='2' THEN
-   LET g_ogb[l_ac].ogb44=b_ogb.ogb44                                                                                             
-   LET g_ogb[l_ac].ogb45=b_ogb.ogb45                                                                                             
-   LET g_ogb[l_ac].ogb46=b_ogb.ogb46                                                                                             
+   LET g_ogb[l_ac].ogb44=b_ogb.ogb44
+   LET g_ogb[l_ac].ogb45=b_ogb.ogb45
+   LET g_ogb[l_ac].ogb46=b_ogb.ogb46
    LET g_ogb[l_ac].ogb47=b_ogb.ogb47
-   LET g_ogb[l_ac].ogb48=b_ogb.ogb48   #No.FUN-A90040   
-   LET g_ogb[l_ac].ogb49=b_ogb.ogb49   #No.FUN-A90040 
- # LET g_ogb[l_ac].ogb50=b_ogb.ogb50   #No.FUN-A90040 #FUN-AA0057 
+   LET g_ogb[l_ac].ogb48=b_ogb.ogb48   #No.FUN-A90040
+   LET g_ogb[l_ac].ogb49=b_ogb.ogb49   #No.FUN-A90040
+ # LET g_ogb[l_ac].ogb50=b_ogb.ogb50   #No.FUN-A90040 #FUN-AA0057
    LET g_ogb[l_ac].ogb50= b_ogb.ogb50     #ADD FUN-C50097 TQC-C70206
    LET g_ogb[l_ac].ogb51= b_ogb.ogb51     #ADD FUN-C50097
-   LET g_ogb[l_ac].ogb52= b_ogb.ogb52     #ADD FUN-C50097 
+   LET g_ogb[l_ac].ogb52= b_ogb.ogb52     #ADD FUN-C50097
    LET g_ogb[l_ac].ogb53= b_ogb.ogb53     #ADD FUN-C50097
    LET g_ogb[l_ac].ogb54= b_ogb.ogb54     #ADD FUN-C50097
-   LET g_ogb[l_ac].ogb55= b_ogb.ogb55     #ADD FUN-C50097   
+   LET g_ogb[l_ac].ogb55= b_ogb.ogb55     #ADD FUN-C50097
    END IF
 END FUNCTION
 
@@ -13824,7 +13839,7 @@ FUNCTION t600_b1_move_back()
    LET b_ogb.ogb1006= g_ogb[l_ac].ogb1006
    LET b_ogb.ogb11  = g_ogb[l_ac].ogb11
    LET b_ogb.ogb13  = g_ogb[l_ac].ogb13
-   LET b_ogb.ogb37  = g_ogb[l_ac].ogb37   #FUN-AB0061 
+   LET b_ogb.ogb37  = g_ogb[l_ac].ogb37   #FUN-AB0061
    LET b_ogb.ogb14  = g_ogb[l_ac].ogb14
    LET b_ogb.ogb14t = g_ogb[l_ac].ogb14t
 #end
@@ -13845,13 +13860,13 @@ FUNCTION t600_b1_move_back()
    LET b_ogb.ogbud14 = g_ogb[l_ac].ogbud14
    LET b_ogb.ogbud15 = g_ogb[l_ac].ogbud15
    IF g_azw.azw04='2' THEN
-      LET b_ogb.ogb44=g_ogb[l_ac].ogb44                                                                                             
-      LET b_ogb.ogb45=g_ogb[l_ac].ogb45                                                                                             
-      LET b_ogb.ogb46=g_ogb[l_ac].ogb46                                                                                             
+      LET b_ogb.ogb44=g_ogb[l_ac].ogb44
+      LET b_ogb.ogb45=g_ogb[l_ac].ogb45
+      LET b_ogb.ogb46=g_ogb[l_ac].ogb46
       LET b_ogb.ogb47=g_ogb[l_ac].ogb47
-      LET b_ogb.ogb48=g_ogb[l_ac].ogb48   #No.FUN-A90040 
-      LET b_ogb.ogb49=g_ogb[l_ac].ogb49   #No.FUN-A90040 
-  #   LET b_ogb.ogb50=g_ogb[l_ac].ogb50   #No.FUN-A90040#FUN-AA0057 
+      LET b_ogb.ogb48=g_ogb[l_ac].ogb48   #No.FUN-A90040
+      LET b_ogb.ogb49=g_ogb[l_ac].ogb49   #No.FUN-A90040
+  #   LET b_ogb.ogb50=g_ogb[l_ac].ogb50   #No.FUN-A90040#FUN-AA0057
    ELSE
       LET b_ogb.ogb44='1'
       LET b_ogb.ogb47=0
@@ -13860,10 +13875,10 @@ FUNCTION t600_b1_move_back()
    LET b_ogb.ogblegal=g_legal
    LET b_ogb.ogb50 = g_ogb[l_ac].ogb50    #FUN-C50097 #TQC-C70206
    LET b_ogb.ogb51 = g_ogb[l_ac].ogb51    #FUN-C50097
-   LET b_ogb.ogb52 = g_ogb[l_ac].ogb52    #FUN-C50097   
+   LET b_ogb.ogb52 = g_ogb[l_ac].ogb52    #FUN-C50097
    LET b_ogb.ogb53 = g_ogb[l_ac].ogb53    #FUN-C50097
    LET b_ogb.ogb54 = g_ogb[l_ac].ogb54    #FUN-C50097
-   LET b_ogb.ogb55 = g_ogb[l_ac].ogb55    #FUN-C50097 
+   LET b_ogb.ogb55 = g_ogb[l_ac].ogb55    #FUN-C50097
 END FUNCTION
 
 FUNCTION t600_b_else()
@@ -13871,7 +13886,7 @@ FUNCTION t600_b_else()
           l_ogb15   LIKE ogb_file.ogb15
    DEFINE l_azf10   LIKE azf_file.azf10     #No.FUN-6B0065
    DEFINE l_rtz04   LIKE rtz_file.rtz04     #FUN-C10040
-   DEFINE l_rtz06   LIKE rtz_file.rtz06     #FUN-C10040  
+   DEFINE l_rtz06   LIKE rtz_file.rtz06     #FUN-C10040
    DEFINE l_msg3    STRING                  #TQC-C50131
   #IF b_ogb.ogb1005 ='2' THEN                      #TQC-B10088
    IF b_ogb.ogb1005 ='2' AND b_ogb.ogb03>9000 THEN #TQC-B10088
@@ -13993,7 +14008,7 @@ FUNCTION t600_b_ogc()                   # 庫存異動明細(ogc_file)輸入
    LET l_oea00 = ''    #FUN-9C0103
    LET l_oea11 = ''    #FUN-9C0103
    LET l_oea12 = ''    #FUN-9C0103
-   LET l_oga16 = ''    #FUN-9C0103 
+   LET l_oga16 = ''    #FUN-9C0103
 
    SELECT COUNT(*) INTO i FROM ogc_file
     WHERE ogc01 = g_oga.oga01 AND ogc03 = g_ogb[l_ac].ogb03     #No.TQC-640123
@@ -14024,17 +14039,17 @@ FUNCTION t600_b_ogc()                   # 庫存異動明細(ogc_file)輸入
       IF cl_null(r_ogc.ogc16) THEN LET r_ogc.ogc16=0 END IF
      #TQC-C50251 -- add -- end
 
-      LET r_ogc.ogcplant = g_plant 
-      LET r_ogc.ogclegal = g_legal  
-      IF cl_null(r_ogc.ogc13) THEN 
+      LET r_ogc.ogcplant = g_plant
+      LET r_ogc.ogclegal = g_legal
+      IF cl_null(r_ogc.ogc13) THEN
          LET r_ogc.ogc13=0 #FUN-C50097 ADD TQC-C70206
-      END IF 
+      END IF
       INSERT INTO ogc_file VALUES (r_ogc.*)
    END IF
 
    IF i = 0 AND g_oaz.oaz71='2' THEN   #由 img_gile 預設
       DECLARE t6006_c2 CURSOR FOR
-       SELECT '','',img02,img03,img04,0,img09,0,0,'','' FROM img_file                             #FUN-8A0030 Add '',''  
+       SELECT '','',img02,img03,img04,0,img09,0,0,'','' FROM img_file                             #FUN-8A0030 Add '',''
         WHERE img01 = g_ogb[l_ac].ogb04    #CHI-840009 mark AND img04 = g_ogb[l_ac].ogb092     #No.TQC-640123
           AND img10 > 0
           AND (img18 > g_oga.oga02 OR img18 IS NULL)
@@ -14064,11 +14079,11 @@ FUNCTION t600_b_ogc()                   # 庫存異動明細(ogc_file)輸入
          IF cl_null(r_ogc.ogc16) THEN LET r_ogc.ogc16=0 END IF
         #TQC-C50251 -- add -- end
 
-         LET r_ogc.ogcplant = g_plant 
-         LET r_ogc.ogclegal = g_legal  
-         IF cl_null(r_ogc.ogc13) THEN 
+         LET r_ogc.ogcplant = g_plant
+         LET r_ogc.ogclegal = g_legal
+         IF cl_null(r_ogc.ogc13) THEN
             LET r_ogc.ogc13=0 #FUN-C50097 ADD TQC-C70206
-         END IF 
+         END IF
          INSERT INTO ogc_file VALUES (r_ogc.*)
       END FOREACH
    END IF
@@ -14083,19 +14098,19 @@ FUNCTION t600_b_ogc()                   # 庫存異動明細(ogc_file)輸入
 
 #CHI-B60054  --mark Begin #mark CHI-B30093
 #CHI-B30093 --begin--
-#   IF g_argv0 != '8' THEN 
+#   IF g_argv0 != '8' THEN
 #      CALL cl_set_comp_visible("ogc12_1",FALSE)
-#   ELSE 
+#   ELSE
 #  	  CALL cl_set_comp_visible("ogc12_1",TRUE)
-#   END IF 
+#   END IF
 #CHI-B30093 --end--
 #CHI-B60054  --mark End #mark CHI-B30093
 #FUN-C50097 ADD BEGIN TQC-C70206
    CALL cl_set_comp_visible("ogc13",FALSE)
-   IF g_oga.oga09 ='8' AND g_aza.aza26 ='2' AND g_oaz.oaz94 ='Y' THEN 
+   IF g_oga.oga09 ='8' AND g_aza.aza26 ='2' AND g_oaz.oaz94 ='Y' THEN
       CALL cl_set_comp_visible("ogc13",TRUE)
-   END IF    
-#FUN-C50097 ADD END   
+   END IF
+#FUN-C50097 ADD END
    DECLARE t6006_c CURSOR FOR
           #SELECT ogc12,ogc09,ogc091,ogc092,img10,ogc15,ogc15_fac,ogc16,ogc18   #No:FUN-870131   #CHI-9C0024 move ogc12
           # SELECT ogc09,ogc091,ogc092,ogc12,'',img10,ogc15,ogc15_fac,ogc16,ogc18   #No:FUN-870131   #CHI-9C0024 move ogc12   #CHI-B30093 add '' #CHI-B60054 mark
@@ -14118,8 +14133,8 @@ FUNCTION t600_b_ogc()                   # 庫存異動明細(ogc_file)輸入
       #No.CHI-B60054  --mark Begin
       #No.TQC-B50099 --Begin
       #SELECT ogc09,ogc091 INTO l_ogc09_1,l_ogc091_1 FROM ogc_file, OUTER img_file
-      #       WHERE ogc01 = g_oga.oga011 
-      #         AND ogc03 = g_ogb[l_ac].ogb03     
+      #       WHERE ogc01 = g_oga.oga011
+      #         AND ogc03 = g_ogb[l_ac].ogb03
       #         AND img01=g_ogb[l_ac].ogb04
       #         AND img02=ogc09
       #         AND img03=ogc091
@@ -14132,7 +14147,7 @@ FUNCTION t600_b_ogc()                   # 庫存異動明細(ogc_file)輸入
       #         AND ogc091= l_ogc091_1
       #         AND ogc092= l_ogc[i].ogc092
       #         AND ogc17 = g_ogb[l_ac].ogb04
-      #IF cl_null(l_ogc12_1) THEN LET l_ogc12_1 = 0 END IF    
+      #IF cl_null(l_ogc12_1) THEN LET l_ogc12_1 = 0 END IF
       #LET l_ogc[i].ogc12_1 = l_ogc12_1 - l_ogc[i].ogc12
       #DISPLAY BY NAME l_ogc[i].ogc12_1
       #No.TQC-B50099 --Begin
@@ -14167,7 +14182,7 @@ FUNCTION t600_b_ogc()                   # 庫存異動明細(ogc_file)輸入
          END IF
          #-----MOD-B30487---------
          LET g_ogc18 = 0
-         SELECT MAX(ogc18)+1 INTO g_ogc18 
+         SELECT MAX(ogc18)+1 INTO g_ogc18
            FROM ogc_file
           WHERE ogc01 = g_oga.oga01
             AND ogc03 = g_ogb[l_ac].ogb03
@@ -14175,7 +14190,7 @@ FUNCTION t600_b_ogc()                   # 庫存異動明細(ogc_file)輸入
             LET g_ogc18 = 1
          END IF
          #-----END MOD-B30487-----
-      
+
       BEFORE ROW
         LET i=ARR_CURR()
         CALL cl_show_fld_cont()     #FUN-550037(smin)
@@ -14184,7 +14199,7 @@ FUNCTION t600_b_ogc()                   # 庫存異動明細(ogc_file)輸入
         IF cl_null(l_ogc[i].ogc18) OR l_ogc[i].ogc18 = 0 THEN
             #-----MOD-B30487---------
             #SELECT MAX(ogc18)+1 INTO l_ogc[i].ogc18
-            #  FROM ogc_file 
+            #  FROM ogc_file
             # WHERE ogc01 = g_oga.oga01
             #   AND ogc03 = g_ogb[l_ac].ogb03
             LET l_ogc[i].ogc18 = g_ogc18
@@ -14214,21 +14229,21 @@ FUNCTION t600_b_ogc()                   # 庫存異動明細(ogc_file)輸入
             END IF
             #No.FUN-AA0048  --Begin
             #IF g_azw.azw04='2' THEN
-            #   LET l_n =0                                                                                                     
-            #   SELECT COUNT(*) INTO l_n FROM imd_file                                                                         
-            #    WHERE imd01=l_ogc[i].ogc09                                                                                          
-            #      AND imd20=g_plant                                                                                              
-            #   IF l_n=0 THEN                                                                                                  
-            #      CALL cl_err(l_ogc[i].ogc09,'art-487',0)                                                                           
-            #      NEXT FIELD ogc09                                                                                           
-            #   END IF                   
+            #   LET l_n =0
+            #   SELECT COUNT(*) INTO l_n FROM imd_file
+            #    WHERE imd01=l_ogc[i].ogc09
+            #      AND imd20=g_plant
+            #   IF l_n=0 THEN
+            #      CALL cl_err(l_ogc[i].ogc09,'art-487',0)
+            #      NEXT FIELD ogc09
+            #   END IF
             #END IF
             IF NOT s_chk_ware(l_ogc[i].ogc09) THEN
-               NEXT FIELD ogc09 
+               NEXT FIELD ogc09
             END IF
-            #No.FUN-AA0048  --End  
+            #No.FUN-AA0048  --End
          END IF
-      
+
       AFTER FIELD ogc12
          LET l_ogc[i].ogc12 = s_digqty(l_ogc[i].ogc12,g_ogb[l_ac].ogb05)  #FUN-910088--add--
          LET l_ogc[i].ogc16 = l_ogc[i].ogc12 * l_ogc[i].ogc15_fac
@@ -14237,16 +14252,16 @@ FUNCTION t600_b_ogc()                   # 庫存異動明細(ogc_file)輸入
          DISPLAY l_ogc[i].ogc16 TO s_ogc[j].ogc16
 #CHI-B60054  --mark Begin #mark CHI-B30093和TQC-B50099
          #IF g_argv0 = '8' THEN  #No.TQC-B50099
-#CHI-B30093 --begin--  
+#CHI-B30093 --begin--
 #           SELECT ogc09,ogc091 INTO l_ogc09_1,l_ogc091_1 FROM ogc_file, OUTER img_file
-#             WHERE ogc01 = g_oga.oga011 
-#               AND ogc03 = g_ogb[l_ac].ogb03     
+#             WHERE ogc01 = g_oga.oga011
+#               AND ogc03 = g_ogb[l_ac].ogb03
 #               AND img01=g_ogb[l_ac].ogb04
 #               AND img02=ogc09
 #               AND img03=ogc091
 #               AND img04=ogc092
 #               AND ogc092=l_ogc[i].ogc092
-#                            
+#
 #            SELECT ogc12 INTO l_ogc12_1 FROM ogc_file
 #             WHERE ogc01 = g_oga.oga011
 #               AND ogc03 = g_ogb[l_ac].ogb03
@@ -14254,14 +14269,14 @@ FUNCTION t600_b_ogc()                   # 庫存異動明細(ogc_file)輸入
 #               AND ogc091= l_ogc091_1
 #               AND ogc092= l_ogc[i].ogc092
 #               AND ogc17 = g_ogb[l_ac].ogb04
-#            IF cl_null(l_ogc12_1) THEN LET l_ogc12_1 = 0 END IF    
+#            IF cl_null(l_ogc12_1) THEN LET l_ogc12_1 = 0 END IF
 #            LET l_ogc[i].ogc12_1 = l_ogc12_1 - l_ogc[i].ogc12
-#            IF l_ogc[i].ogc12_1 < 0 THEN 
+#            IF l_ogc[i].ogc12_1 < 0 THEN
 #               CALL cl_err('','axm-938',0)
-#               NEXT FIELD CURRENT 
-#            ELSE 
+#               NEXT FIELD CURRENT
+#            ELSE
 #            	  DISPLAY BY NAME l_ogc[i].ogc12_1
-#            END IF 
+#            END IF
 #CHI-B30093 --end--
          #END IF  #No.TQC-B50099
 
@@ -14276,7 +14291,7 @@ FUNCTION t600_b_ogc()                   # 庫存異動明細(ogc_file)輸入
 
          IF (g_ima918 = "Y" OR g_ima921 = "Y") AND (l_ogc[i].ogc12<>0) THEN
            #IF g_argv0='2' OR g_argv0='4' OR g_argv0='6' OR ((g_argv0 ='1' OR g_argv0='5') AND g_oaz.oaz81 = 'Y') THEN   #MOD-940294 add #CHI-AC0034 mark
-            #IF g_argv0='2' OR g_argv0='4' OR g_argv0='6' OR g_argv0='8' OR g_argv0='9' OR ((g_argv0 ='1' OR g_argv0='5') AND g_oaz.oaz81 = 'Y') THEN   #MOD-940294 add  #CHI-AC0034 add '8','9'   #MOD-AC0060 
+            #IF g_argv0='2' OR g_argv0='4' OR g_argv0='6' OR g_argv0='8' OR g_argv0='9' OR ((g_argv0 ='1' OR g_argv0='5') AND g_oaz.oaz81 = 'Y') THEN   #MOD-940294 add  #CHI-AC0034 add '8','9'   #MOD-AC0060
             IF g_argv0='2' OR g_argv0='4' OR g_argv0='6' OR g_argv0='8' OR g_argv0='9' OR g_argv0='A' OR ((g_argv0 ='1' OR g_argv0='5') AND g_oaz.oaz81 = 'Y') THEN   #MOD-940294 add  #CHI-AC0034 add '8','9'   #MOD-AC0060 add 'A'
                SELECT img09 INTO l_ogc[i].ogc15
                  FROM img_file
@@ -14284,11 +14299,11 @@ FUNCTION t600_b_ogc()                   # 庫存異動明細(ogc_file)輸入
                   AND img02 = l_ogc[i].ogc09
                   AND img03 = l_ogc[i].ogc091
                   AND img04 = l_ogc[i].ogc092
-               
+
                LET l_ogc[i].ogc16 = s_digqty(l_ogc[i].ogc16,l_ogc[i].ogc15)   #FUN-910088--add--
                DISPLAY l_ogc[i].ogc15 TO s_ogc[j].ogc15
 
-               IF NOT cl_null(l_ogc[i].ogc15) THEN 
+               IF NOT cl_null(l_ogc[i].ogc15) THEN
                   CALL s_umfchk(g_ogb[l_ac].ogb04,g_ogb[l_ac].ogb05,l_ogc[i].ogc15)
                       RETURNING g_cnt,l_ogc[i].ogc15_fac
                   IF g_cnt=1 THEN
@@ -14298,7 +14313,7 @@ FUNCTION t600_b_ogc()                   # 庫存異動明細(ogc_file)輸入
                      LET l_msg3 = l_msg3 CLIPPED,"(",g_ogb[l_ac].ogb04,")"
                      CALL cl_msgany(10,20,l_msg3)
                     #TQC-C50131 -- add -- end
-                     NEXT FIELD ogc092 
+                     NEXT FIELD ogc092
                   END IF
                END IF
 
@@ -14356,25 +14371,25 @@ FUNCTION t600_b_ogc()                   # 庫存異動明細(ogc_file)輸入
              WHERE img01 = g_ogb[l_ac].ogb04 AND img02 = l_ogc[i].ogc09     #No.TQC-640123
                AND img03 = l_ogc[i].ogc091   AND img04 = l_ogc[i].ogc092
             IF STATUS THEN
-               IF g_oga.oga09 MATCHES '[2468]' THEN    #No:MOD-840533  
+               IF g_oga.oga09 MATCHES '[2468]' THEN    #No:MOD-840533
                   CALL cl_err3("sel","img_file","","",SQLCA.sqlcode,"","sel img",1)  #No.FUN-670008
                   NEXT FIELD ogc09
                END IF                 #No:MOD-840533 add
             END IF
-      
+
             DISPLAY l_ogc[i].img10 TO s_ogc[j].img10
             DISPLAY l_ogc[i].ogc15 TO s_ogc[j].ogc15
             IF NOT cl_null(l_ogc[i].ogc15) THEN            #No:MOD-840533 add
                CALL s_umfchk(g_ogb[l_ac].ogb04,g_ogb[l_ac].ogb05,l_ogc[i].ogc15)     #No.TQC-640123
                              RETURNING g_cnt,l_ogc[i].ogc15_fac
-               IF g_cnt=1 THEN 
-                  CALL cl_err('','mfg3075',1) 
+               IF g_cnt=1 THEN
+                  CALL cl_err('','mfg3075',1)
                  #TQC-C50131 -- add -- begin
                   CALL cl_getmsg('asf-176',g_lang) RETURNING l_msg3
                   LET l_msg3 = l_msg3 CLIPPED,"(",g_ogb[l_ac].ogb04,")"
                   CALL cl_msgany(10,20,l_msg3)
                  #TQC-C50131 -- add -- end
-                  NEXT FIELD ogc092 
+                  NEXT FIELD ogc092
                END IF
             END IF        #No:MOD-840533 add
             IF cl_null(l_ogc[i].ogc15_fac) THEN LET l_ogc[i].ogc15_fac=1 END IF
@@ -14383,7 +14398,7 @@ FUNCTION t600_b_ogc()                   # 庫存異動明細(ogc_file)輸入
             DISPLAY l_ogc[i].ogc16 TO s_ogc[j].ogc16
          END IF
 
-         
+
          IF l_ogc[i].ogc12 IS NOT NULL AND l_ogc[i].ogc12 <> 0 THEN
             FOR k = 1 TO l_ogc.getLength()
                IF k=i THEN CONTINUE FOR END IF
@@ -14395,7 +14410,7 @@ FUNCTION t600_b_ogc()                   # 庫存異動明細(ogc_file)輸入
                END IF
             END FOR
          END IF
-         
+
          LET l_ogc12_t = 0
          LET l_ogc16_t = 0
          LET l_ogc13_t = 0 #FUN-C50097
@@ -14422,11 +14437,11 @@ FUNCTION t600_b_ogc()                   # 庫存異動明細(ogc_file)輸入
                IF cl_confirm('axm-170') THEN
 #No.CHI-B60054  --mark Begin #mark CHI-B30093
 #CHI-B30093 --begin--
-                  LET g_ogb[l_ac].ogb12 = 0 
+                  LET g_ogb[l_ac].ogb12 = 0
                   FOR k = 1 TO l_ogc.getLength()
                     LET g_ogb[l_ac].ogb12 = g_ogb[l_ac].ogb12 + l_ogc[k].ogc12
                   END FOR
-                                      
+
                   DISPLAY BY NAME g_ogb[l_ac].ogb12
                  #CHI-D30032 add start -----
                   IF g_loc_flag = 'Y' THEN
@@ -14437,8 +14452,8 @@ FUNCTION t600_b_ogc()                   # 庫存異動明細(ogc_file)輸入
                   UPDATE ogb_file SET ogb12 = g_ogb[l_ac].ogb12
                    WHERE ogb01 = g_oga.oga01
                      AND ogb03 = g_ogb[l_ac].ogb03
-#CHI-B30093 --end--   
-#No.CHI-B60054  --mark End #mark CHI-B30093                  
+#CHI-B30093 --end--
+#No.CHI-B60054  --mark End #mark CHI-B30093
                   EXIT INPUT
                ELSE
                   NEXT FIELD ogc09
@@ -14446,8 +14461,8 @@ FUNCTION t600_b_ogc()                   # 庫存異動明細(ogc_file)輸入
             END IF #CHI-D30032 add
          END IF
 #FUN-C50097 ADD BEGIN------120727 TQC-C70206
-         IF g_oga.oga09 ='8' THEN 
-            IF l_ogc13_t != g_ogb[l_ac].ogb52 THEN   
+         IF g_oga.oga09 ='8' THEN
+            IF l_ogc13_t != g_ogb[l_ac].ogb52 THEN
                #CHI-D30032 add start -----
                 IF g_oga.ogaconf ='Y' THEN
                    CALL cl_err('','axm1182',1)
@@ -14455,21 +14470,21 @@ FUNCTION t600_b_ogc()                   # 庫存異動明細(ogc_file)輸入
                 ELSE
                #CHI-D30032 add end   -----
                   IF cl_confirm('axm-170') THEN
-                     LET g_ogb[l_ac].ogb52 = 0 
+                     LET g_ogb[l_ac].ogb52 = 0
                      FOR k = 1 TO l_ogc.getLength()
                        LET g_ogb[l_ac].ogb52 = g_ogb[l_ac].ogb52 + l_ogc[k].ogc13
-                     END FOR                                   
+                     END FOR
                      DISPLAY BY NAME g_ogb[l_ac].ogb52
                      UPDATE ogb_file SET ogb52 = g_ogb[l_ac].ogb52
                       WHERE ogb01 = g_oga.oga01
-                        AND ogb03 = g_ogb[l_ac].ogb03                 
+                        AND ogb03 = g_ogb[l_ac].ogb03
                      EXIT INPUT
                   ELSE
                      NEXT FIELD ogc13
                   END IF
                 END IF #CHI-D30032 add
             END IF
-         END IF 
+         END IF
 #FUN-C50097 ADD END--------120727
       ON ACTION modi_lot
          LET g_ima918 = ''   #MOD-9C0055
@@ -14481,7 +14496,7 @@ FUNCTION t600_b_ogc()                   # 庫存異動明細(ogc_file)輸入
 
          IF g_ima918 = "Y" OR g_ima921 = "Y" THEN
            #IF g_argv0='2' OR g_argv0='4' OR g_argv0='6' OR ((g_argv0 ='1' OR g_argv0='5') AND g_oaz.oaz81 = 'Y') THEN   #MOD-940294 add #CHI-AC0034 mark
-            #IF g_argv0='2' OR g_argv0='4' OR g_argv0='6' OR g_argv0='8' OR g_argv0='9' OR ((g_argv0 ='1' OR g_argv0='5') AND g_oaz.oaz81 = 'Y') THEN   #MOD-940294 add   #CHI-AC0034 add '8','9'   #MOD-AC0060 
+            #IF g_argv0='2' OR g_argv0='4' OR g_argv0='6' OR g_argv0='8' OR g_argv0='9' OR ((g_argv0 ='1' OR g_argv0='5') AND g_oaz.oaz81 = 'Y') THEN   #MOD-940294 add   #CHI-AC0034 add '8','9'   #MOD-AC0060
             IF g_argv0='2' OR g_argv0='4' OR g_argv0='6' OR g_argv0='8' OR g_argv0='9' OR g_argv0='A' OR ((g_argv0 ='1' OR g_argv0='5') AND g_oaz.oaz81 = 'Y') THEN   #MOD-940294 add   #CHI-AC0034 add '8','9'   #MOD-AC0060 add 'A'
                SELECT img09 INTO l_ogc[i].ogc15
                  FROM img_file
@@ -14489,11 +14504,11 @@ FUNCTION t600_b_ogc()                   # 庫存異動明細(ogc_file)輸入
                   AND img02 = l_ogc[i].ogc09
                   AND img03 = l_ogc[i].ogc091
                   AND img04 = l_ogc[i].ogc092
-               
+
                LET l_ogc[i].ogc16 = s_digqty(l_ogc[i].ogc16,l_ogc[i].ogc15)   #FUN-910088--add--
                DISPLAY l_ogc[i].ogc15 TO s_ogc[j].ogc15
 
-               IF NOT cl_null(l_ogc[i].ogc15) THEN 
+               IF NOT cl_null(l_ogc[i].ogc15) THEN
                   CALL s_umfchk(g_ogb[l_ac].ogb04,g_ogb[l_ac].ogb05,l_ogc[i].ogc15)
                       RETURNING g_cnt,l_ogc[i].ogc15_fac
                   IF g_cnt=1 THEN
@@ -14503,7 +14518,7 @@ FUNCTION t600_b_ogc()                   # 庫存異動明細(ogc_file)輸入
                      LET l_msg3 = l_msg3 CLIPPED,"(",g_ogb[l_ac].ogb04,")"
                      CALL cl_msgany(10,20,l_msg3)
                     #TQC-C50131 -- add -- end
-                     NEXT FIELD ogc092 
+                     NEXT FIELD ogc092
                   END IF
                END IF
 
@@ -14525,7 +14540,7 @@ FUNCTION t600_b_ogc()                   # 庫存異動明細(ogc_file)輸入
                   ELSE
                   #FUN-9C0103 ---end---
                      LET l_bno = g_ogb[l_ac].ogb31
-                  END IF 
+                  END IF
                ELSE
                   LET l_bno = g_ogb[l_ac].ogb41
                END IF
@@ -14548,7 +14563,7 @@ FUNCTION t600_b_ogc()                   # 庫存異動明細(ogc_file)輸入
          CASE
             WHEN INFIELD(ogc09)
                IF g_azw.azw04='2' THEN
-                  CALL q_img42(FALSE,FALSE,g_ogb[l_ac].ogb04,'','','','A','1',g_oga.ogaplant)                            
+                  CALL q_img42(FALSE,FALSE,g_ogb[l_ac].ogb04,'','','','A','1',g_oga.ogaplant)
                         RETURNING l_ogc[i].ogc09,l_ogc[i].ogc091,l_ogc[i].ogc092
                ELSE
                   #FUN-C30300---begin
@@ -14576,7 +14591,7 @@ FUNCTION t600_b_ogc()                   # 庫存異動明細(ogc_file)輸入
                  #LET g_qryparam.arg2     = 'SW'           #倉庫類別 #MOD-4A0063
                  #CALL cl_create_qry() RETURNING l_ogc[i].ogc091
                  CALL q_ime_1(FALSE,TRUE,l_ogc[i].ogc091,l_ogc[i].ogc09,"","","","","") RETURNING l_ogc[i].ogc091
-                 #No.FUN-AA0048  --End  
+                 #No.FUN-AA0048  --End
                  DISPLAY BY NAME l_ogc[i].ogc091        #No:MOD-490371
                  NEXT FIELD ogc091
          END CASE
@@ -14611,7 +14626,7 @@ FUNCTION t600_b_ogc()                   # 庫存異動明細(ogc_file)輸入
       DELETE FROM ogc_file WHERE ogc01 = g_oga.oga01 AND ogc03 = g_ogb[l_ac].ogb03    #No.TQC-640123
 
       FOR i = 1 TO l_ogc.getLength()
-         IF l_ogc[i].ogc12 IS NULL OR l_ogc[i].ogc12 = 0 THEN 
+         IF l_ogc[i].ogc12 IS NULL OR l_ogc[i].ogc12 = 0 THEN
            #IF s_lotout_del(g_prog,g_oga.oga01,g_ogb[l_ac].ogb03,l_ogc[i].ogc18,g_ogb[l_ac].ogb04,'DEL') THEN   #TQC-B90236
            #IF s_lot_del(g_prog,g_oga.oga01,g_ogb[l_ac].ogb03,l_ogc[i].ogc18,g_ogb[l_ac].ogb04,'DEL') THEN   #TQC-B90236 #MOD-C30841 mark
                CONTINUE FOR
@@ -14626,7 +14641,7 @@ FUNCTION t600_b_ogc()                   # 庫存異動明細(ogc_file)輸入
          IF cl_null(l_ogc[i].ogc15_fac) THEN LET l_ogc[i].ogc15_fac=0 END IF
          IF cl_null(l_ogc[i].ogc16) THEN LET l_ogc[i].ogc16=0 END IF
         #TQC-C50251 -- add -- end
-         IF cl_null(l_ogc[i].ogc13) THEN 
+         IF cl_null(l_ogc[i].ogc13) THEN
             LET l_ogc[i].ogc13=0 #FUN-C50097 ADD
          END IF
          INSERT INTO ogc_file(ogc01,ogc03,ogc09,ogc091,ogc092,
@@ -14691,7 +14706,7 @@ FUNCTION t600_b_ogc_1()                 # 庫存異動明細(ogc_file)輸入
 #   DEFINE l_ogc12_1    LIKE ogc_file.ogc12   #TQC-B50099  #CHI-B60054 mark
 #   DEFINE l_ogc09_1    LIKE ogc_file.ogc09   #TQC-B50099  #CHI-B60054 mark
 #   DEFINE l_ogc091_1   LIKE ogc_file.ogc09   #TQC-B50099  #CHI-B60054 mark
-   
+
    LET p_row = 2 LET p_col = 2
 
 
@@ -14701,16 +14716,16 @@ FUNCTION t600_b_ogc_1()                 # 庫存異動明細(ogc_file)輸入
    CALL cl_ui_locale("axmt6006")
 #FUN-C50097 ADD BEGIN TQC-C70206
    CALL cl_set_comp_visible("ogc13",FALSE)
-   IF g_oga.oga09 ='8' AND g_aza.aza26 ='2' AND g_oaz.oaz94 ='Y' THEN 
+   IF g_oga.oga09 ='8' AND g_aza.aza26 ='2' AND g_oaz.oaz94 ='Y' THEN
       CALL cl_set_comp_visible("ogc13",TRUE)
-   END IF    
-#FUN-C50097 ADD END    
+   END IF
+#FUN-C50097 ADD END
    #No.CHI-B60054  --mark Begin
    #No.TQC-B50099  --Begin
    #IF g_argv0 != '8' THEN
-   #   CALL cl_set_comp_visible("ogc12_1",FALSE) 
-   #ELSE 
-   #   CALL cl_set_comp_visible("ogc12_1",TRUE) 
+   #   CALL cl_set_comp_visible("ogc12_1",FALSE)
+   #ELSE
+   #   CALL cl_set_comp_visible("ogc12_1",TRUE)
    #END IF
    #No.TQC-B50099  --End
    #No.CHI-B60054  --mark End
@@ -14718,12 +14733,12 @@ FUNCTION t600_b_ogc_1()                 # 庫存異動明細(ogc_file)輸入
           #SELECT ogc12,ogc09,ogc091,ogc092,img10,ogc15,ogc15_fac,ogc16,ogc18   #No:FUN-870131   #CHI-9C0024 move ogc12
           #SELECT ogc09,ogc091,ogc092,ogc12,'',img10,ogc15,ogc15_fac,ogc16,ogc18   #No:FUN-870131   #CHI-9C0024 move ogc12 #TQC-B50099 add ogb12_1驗退量 #CHI-B60054 mark
            SELECT ogc09,ogc091,ogc092,ogc12,ogc13,img10,ogc15,ogc15_fac,ogc16,ogc18   #No.CHI-B60054  #FUN-C50097 ADD OGC13 ogc13,TQC-C70206
-             FROM ogc_file, OUTER img_file            
+             FROM ogc_file, OUTER img_file
             WHERE ogc01 = g_oga.oga01 AND ogc03 = g_ogb[l_ac].ogb03
               AND img01=g_ogb[l_ac].ogb04
               AND img02=ogc09
               AND img03=ogc091
-              AND img04=ogc092   
+              AND img04=ogc092
    CALL l_ogc.clear()
    LET i = 1
    LET l_i = 1
@@ -14732,14 +14747,14 @@ FUNCTION t600_b_ogc_1()                 # 庫存異動明細(ogc_file)輸入
       #No.CHI-B60054  --mark Begin
       #No.TQC-B50099  --Begin
       #SELECT ogc09,ogc091 INTO l_ogc09_1,l_ogc091_1 FROM ogc_file, OUTER img_file
-      #  WHERE ogc01 = g_oga.oga011 
-      #    AND ogc03 = g_ogb[l_ac].ogb03     
+      #  WHERE ogc01 = g_oga.oga011
+      #    AND ogc03 = g_ogb[l_ac].ogb03
       #    AND img01=g_ogb[l_ac].ogb04
       #    AND img02=ogc09
       #    AND img03=ogc091
       #    AND img04=ogc092
       #    AND ogc092=l_ogc[i].ogc092
-      #                 
+      #
       # SELECT ogc12 INTO l_ogc12_1 FROM ogc_file
       #  WHERE ogc01 = g_oga.oga011
       #    AND ogc03 = g_ogb[l_ac].ogb03
@@ -14747,7 +14762,7 @@ FUNCTION t600_b_ogc_1()                 # 庫存異動明細(ogc_file)輸入
       #    AND ogc091= l_ogc091_1
       #    AND ogc092= l_ogc[i].ogc092
       #    AND ogc17 = g_ogb[l_ac].ogb04
-      # IF cl_null(l_ogc12_1) THEN LET l_ogc12_1 = 0 END IF    
+      # IF cl_null(l_ogc12_1) THEN LET l_ogc12_1 = 0 END IF
       # LET l_ogc[i].ogc12_1 = l_ogc12_1 - l_ogc[i].ogc12
       # DISPLAY BY NAME l_ogc[i].ogc12_1
       #No.TQC-B50099  --End
@@ -14764,10 +14779,10 @@ FUNCTION t600_b_ogc_1()                 # 庫存異動明細(ogc_file)輸入
    DISPLAY l_ogc12_t TO ogc12t
    DISPLAY l_ogc16_t TO ogc16t
    DISPLAY g_ogb[l_ac].ogb12 TO ogb12t   #No:MOD-590206
-   
-   
-                  
-   
+
+
+
+
    CALL cl_set_act_visible("cancel", FALSE)
 
    IF g_action_choice="qry_mntn_inv_detail" THEN
@@ -14784,10 +14799,10 @@ FUNCTION t600_b_ogc_1()                 # 庫存異動明細(ogc_file)輸入
               FROM ima_file
              WHERE ima01 = g_ogb[l_ac].ogb04
                AND imaacti = "Y"
-         
+
             IF g_ima918 = "Y" OR g_ima921 = "Y" THEN
               #IF g_argv0='2' OR g_argv0='4' OR g_argv0='6' OR ((g_argv0 ='1' OR g_argv0='5') AND g_oaz.oaz81 = 'Y') THEN   #MOD-940294 add #CHI-AC0034 mark
-               #IF g_argv0='2' OR g_argv0='4' OR g_argv0='6' OR g_argv0='8' OR g_argv0='9' OR ((g_argv0 ='1' OR g_argv0='5') AND g_oaz.oaz81 = 'Y') THEN   #MOD-940294 add #CHI-AC0034 add '8','9'   #MOD-AC0060 
+               #IF g_argv0='2' OR g_argv0='4' OR g_argv0='6' OR g_argv0='8' OR g_argv0='9' OR ((g_argv0 ='1' OR g_argv0='5') AND g_oaz.oaz81 = 'Y') THEN   #MOD-940294 add #CHI-AC0034 add '8','9'   #MOD-AC0060
                IF g_argv0='2' OR g_argv0='4' OR g_argv0='6' OR g_argv0='8' OR g_argv0='9' OR g_argv0='A' OR ((g_argv0 ='1' OR g_argv0='5') AND g_oaz.oaz81 = 'Y') THEN   #MOD-940294 add #CHI-AC0034 add '8','9'   #MOD-AC0060 add 'A'
                  #CALL s_lotout(g_prog,g_oga.oga01,g_ogb[l_ac].ogb03,l_ogc[i].ogc18,    #TQC-B90236
                   CALL s_mod_lot(g_prog,g_oga.oga01,g_ogb[l_ac].ogb03,l_ogc[i].ogc18,    #TQC-B90236
@@ -14802,25 +14817,25 @@ FUNCTION t600_b_ogc_1()                 # 庫存異動明細(ogc_file)輸入
                   END IF
                END IF
             END IF
-         
+
          ON IDLE g_idle_seconds
             CALL cl_on_idle()
             CONTINUE DISPLAY
-         
-         ON ACTION about         
-            CALL cl_about()      
-         
-         ON ACTION help          
-            CALL cl_show_help()  
-         
-         ON ACTION controlg      
-            CALL cl_cmdask()     
 
-      END DISPLAY 
+         ON ACTION about
+            CALL cl_about()
+
+         ON ACTION help
+            CALL cl_show_help()
+
+         ON ACTION controlg
+            CALL cl_cmdask()
+
+      END DISPLAY
 
    END IF
 
-   CLOSE WINDOW t6006_w 
+   CLOSE WINDOW t6006_w
 
    IF INT_FLAG THEN
       LET INT_FLAG = 0
@@ -14873,8 +14888,8 @@ FUNCTION t600_mlog(p_cmd)       # Transaction Modify Log (存入 oem_file)
       IF l_oem.oem13n=0 THEN LET l_oem.oem13n=NULL END IF
    END IF
 
-   LET l_oem.oemplant = g_plant 
-   LET l_oem.oemlegal = g_legal  
+   LET l_oem.oemplant = g_plant
+   LET l_oem.oemlegal = g_legal
 
    INSERT INTO oem_file VALUES (l_oem.*)
 END FUNCTION
@@ -14885,7 +14900,7 @@ FUNCTION t600_bu()
    DEFINE l_oea261  LIKE oea_file.oea261   #No:FUN-A50103
    DEFINE l_oea262  LIKE oea_file.oea262   #No:FUN-A50103
    DEFINE l_oea263  LIKE oea_file.oea263   #No:FUN-A50103
-   DEFINE l_len     LIKE type_file.num5    #No:MOD-B70185   
+   DEFINE l_len     LIKE type_file.num5    #No:MOD-B70185
    DEFINE l_m       LIKE type_file.num5    #No:MOD-B70185
    DEFINE l_oga52   LIKE oga_file.oga52    #No:MOD-B70185
    DEFINE l_oga53   LIKE oga_file.oga53    #No:MOD-B70185
@@ -14946,19 +14961,19 @@ FUNCTION t600_bu()
             SELECT oea61,oea1008,oea261,oea262,oea263
               INTO l_oea61,l_oea1008,l_oea261,l_oea262,l_oea263
               FROM oea_file
-            #WHERE oea01 = g_ogb[l_m].ogb31  #MOD-C70208 mark 
+            #WHERE oea01 = g_ogb[l_m].ogb31  #MOD-C70208 mark
              WHERE oea01 = l_ogb31           #MOD-C70208 add
             IF g_oga.oga213 = 'Y' THEN
-              #LET l_oga52 = l_oga52 + g_ogb[l_m].ogb14 * l_oea261 / l_oea1008               #MOD-C70208 mark 
+              #LET l_oga52 = l_oga52 + g_ogb[l_m].ogb14 * l_oea261 / l_oea1008               #MOD-C70208 mark
               #LET l_oga53 = l_oga53 + g_ogb[l_m].ogb14 * (l_oea262+l_oea263) / l_oea1008    #MOD-C70208 mark
-               LET l_oga52 = l_oga52 + l_ogb14 * l_oea261 / l_oea1008                      #MOD-C70208 add              
+               LET l_oga52 = l_oga52 + l_ogb14 * l_oea261 / l_oea1008                      #MOD-C70208 add
                #No.yinhy131217  --Begin
                IF g_aza.aza26='2' AND g_ooz.ooz33 = 'N' AND g_oga.oga161 >0 THEN
                   LET g_oga.oga53 = g_oga.oga50*(l_oea261+l_oea262+l_oea263)/ l_oea1008
                ELSE
                #No.yinhy131217  --End
                    LET l_oga53 = l_oga53 + l_ogb14 * (l_oea262+l_oea263) / l_oea1008           #MOD-C70208 add
-               END IF   #yinhy131217   
+               END IF   #yinhy131217
             ELSE
               #LET l_oga52 = l_oga52 + g_ogb[l_m].ogb14 * l_oea261 / l_oea61                 #MOD-C70208 mark
               #LET l_oga53 = l_oga53 + g_ogb[l_m].ogb14 * (l_oea262+l_oea263) / l_oea61      #MOD-C70208 mark
@@ -14969,11 +14984,11 @@ FUNCTION t600_bu()
                ELSE
                #No.yinhy131217  --End
                   LET l_oga53 = l_oga53 + l_ogb14 * (l_oea262+l_oea263) / l_oea61             #MOD-C70208 add
-               END IF   #yinhy131217   
+               END IF   #yinhy131217
             END IF
-         ELSE #无订单号码 
+         ELSE #无订单号码
            #LET l_oga52 = l_oga52 + g_ogb[l_m].ogb14 * g_oga.oga161/100                 #MOD-C70208 mark
-           #LET l_oga53 = l_oga53 + g_ogb[l_m].ogb14 * (g_oga.oga162+g_oga.oga163)/100  #MOD-C70208 mark       	   
+           #LET l_oga53 = l_oga53 + g_ogb[l_m].ogb14 * (g_oga.oga162+g_oga.oga163)/100  #MOD-C70208 mark
             LET l_oga52 = l_oga52 + l_ogb14 * g_oga.oga161 / 100                    #MOD-C70208 add
             #No.yinhy131217  --Begin
             IF g_aza.aza26='2' AND g_ooz.ooz33 = 'N' AND g_oga.oga161 >0 THEN
@@ -15019,7 +15034,7 @@ FUNCTION t600_out()
 #str—add by huanglf 160713
  IF g_argv0 = '1'THEN
       CALL cl_set_act_visible("sale_goods,sale_goods2,sale_goods3,sale_goods4,sale_goods5,sale_goods6,sale_goods7",FALSE)
- END IF 
+ END IF
  IF g_argv0 = '2'THEN
       CALL cl_set_act_visible("sale_goods8",FALSE)
    END IF
@@ -15056,7 +15071,7 @@ FUNCTION t600_out()
              #LET g_msg = "axmg500", #FUn-C30085 add #mark by guanyao160811
                        " '",g_today CLIPPED,"' ''",
                        " '",g_lang CLIPPED,"' '",g_bgjob CLIPPED,"'  '' '1'",  #MOD-670031 'Y'->g_bgjob
-                       " '",l_wc CLIPPED,"' '' 'N' "    #MOD-850241                                                                                   
+                       " '",l_wc CLIPPED,"' '' 'N' "    #MOD-850241
           CALL cl_cmdrun(g_msg)
 
        ON ACTION delivery_note
@@ -15064,7 +15079,7 @@ FUNCTION t600_out()
              LET l_no = g_oga.oga011
           END IF
           ##報表的處理后續再
-          IF g_argv0 MATCHES '[2468A]' THEN  #No.7992   #FUN-750036 
+          IF g_argv0 MATCHES '[2468A]' THEN  #No.7992   #FUN-750036
              LET l_no = g_oga.oga01
           END IF
               LET l_wc='oga01="',l_no,'"'
@@ -15094,8 +15109,8 @@ FUNCTION t600_out()
                 IF g_oaz.oaz67='1' THEN
                    SELECT ofa01 INTO l_no FROM ofa_file
                     WHERE ofa011=g_oga.oga011
-                END IF 
-              END IF 
+                END IF
+              END IF
           END IF
           ##報表的處理后續再
           IF g_argv0 MATCHES '[468]' THEN  #No.7992
@@ -15113,7 +15128,7 @@ FUNCTION t600_out()
 
        #CHI-AB0029 add --start--------------------
        ON ACTION invoice_r551
-          LET l_no = NULL 
+          LET l_no = NULL
           IF g_argv0 MATCHES '[125]' THEN
               SELECT ofa01 INTO l_no FROM ofa_file
                WHERE ofa011=g_oga.oga01
@@ -15121,11 +15136,11 @@ FUNCTION t600_out()
                 IF g_oaz.oaz67='1' THEN
                    SELECT ofa01 INTO l_no FROM ofa_file
                     WHERE ofa011=g_oga.oga011
-                END IF 
-              END IF 
+                END IF
+              END IF
           END IF
           ##報表的處理后續再
-          IF g_argv0 MATCHES '[468]' THEN 
+          IF g_argv0 MATCHES '[468]' THEN
              SELECT ofa01 INTO l_no FROM ofa_file
                WHERE ofa011=g_oga.oga011
           END IF
@@ -15155,12 +15170,12 @@ FUNCTION t600_out()
                        " '",g_today CLIPPED,"' ''",
                        " '",g_lang CLIPPED,"' '",g_bgjob CLIPPED,"'  '' '1'",  #MOD-670031 'Y'->g_bgjob
                        " '",l_wc CLIPPED,"' "
-                      ," '' 'N' '1' 'Y' 'Y'"  #MOD-970252                     
+                      ," '' 'N' '1' 'Y' 'Y'"  #MOD-970252
           CALL cl_cmdrun(g_msg)
 
        #CHI-AB0029 add --start--------------------
        ON ACTION packing_list_r553
-          IF g_argv0 MATCHES '[125]' THEN 
+          IF g_argv0 MATCHES '[125]' THEN
               SELECT ofa01 INTO l_no FROM ofa_file
                WHERE ofa011=g_oga.oga01
           END IF
@@ -15181,94 +15196,94 @@ FUNCTION t600_out()
        #-------------07751hlf add-------------------------------------
        ON ACTION sale_goods
                LET l_wc='oga01="',l_no,'"'
-               LET g_msg = "cxmr001", 
+               LET g_msg = "cxmr001",
                        " '",g_today CLIPPED,"' ''",
                        " '",g_lang CLIPPED,"' '",g_bgjob CLIPPED,"'  '' '1'",
-                       " '",l_wc CLIPPED,"' '' 'N' "   
+                       " '",l_wc CLIPPED,"' '' 'N' "
                     CALL cl_cmdrun(g_msg)
-      #---------------07751 end--------------------------------------- 
+      #---------------07751 end---------------------------------------
 
       #-------------07751hlf add-------------------------------------
        ON ACTION sale_goods2
                LET l_wc='oga01="',l_no,'"'
-               LET g_msg = "cxmr002", 
+               LET g_msg = "cxmr002",
                        " '",g_today CLIPPED,"' ''",
                        " '",g_lang CLIPPED,"' '",g_bgjob CLIPPED,"'  '' '1'",
-                       " '",l_wc CLIPPED,"' '' 'N' "   
+                       " '",l_wc CLIPPED,"' '' 'N' "
                     CALL cl_cmdrun(g_msg)
       #---------------07751 end---------------------------------------
-      
+
       #-------------07751hlf add-------------------------------------
        ON ACTION sale_goods3
                LET l_wc='oga01="',l_no,'"'
-               LET g_msg = "cxmr003", 
+               LET g_msg = "cxmr003",
                        " '",g_today CLIPPED,"' ''",
                        " '",g_lang CLIPPED,"' '",g_bgjob CLIPPED,"'  '' '1'",
-                       " '",l_wc CLIPPED,"' '' 'N' "   
+                       " '",l_wc CLIPPED,"' '' 'N' "
                     CALL cl_cmdrun(g_msg)
-      #---------------07751 end--------------------------------------- 
+      #---------------07751 end---------------------------------------
 
       #-------------07751hlf add-------------------------------------
        ON ACTION sale_goods4
                LET l_wc='oga01="',l_no,'"'
-               LET g_msg = "cxmr004", 
+               LET g_msg = "cxmr004",
                        " '",g_today CLIPPED,"' ''",
                        " '",g_lang CLIPPED,"' '",g_bgjob CLIPPED,"'  '' '1'",
-                       " '",l_wc CLIPPED,"' '' 'N' "   
+                       " '",l_wc CLIPPED,"' '' 'N' "
                     CALL cl_cmdrun(g_msg)
-      #---------------07751 end--------------------------------------- 
+      #---------------07751 end---------------------------------------
 
        #-------------07751hlf add-------------------------------------
        ON ACTION sale_goods5
                LET l_wc='oga01="',l_no,'"'
-               LET g_msg = "cxmr005", 
+               LET g_msg = "cxmr005",
                        " '",g_today CLIPPED,"' ''",
                        " '",g_lang CLIPPED,"' '",g_bgjob CLIPPED,"'  '' '1'",
-                       " '",l_wc CLIPPED,"' '' 'N' "   
+                       " '",l_wc CLIPPED,"' '' 'N' "
                     CALL cl_cmdrun(g_msg)
-      #---------------07751 end--------------------------------------- 
+      #---------------07751 end---------------------------------------
 
       #-------------07751hlf add-------------------------------------
        ON ACTION sale_goods6
                LET l_wc='oga01="',l_no,'"'
-               LET g_msg = "cxmr006", 
+               LET g_msg = "cxmr006",
                        " '",g_today CLIPPED,"' ''",
                        " '",g_lang CLIPPED,"' '",g_bgjob CLIPPED,"'  '' '1'",
-                       " '",l_wc CLIPPED,"' '' 'N' "   
+                       " '",l_wc CLIPPED,"' '' 'N' "
                     CALL cl_cmdrun(g_msg)
-      #---------------07751 end--------------------------------------- 
+      #---------------07751 end---------------------------------------
        #-------------07751hlf add-------------------------------------
        ON ACTION sale_goods7
                LET l_wc='oga01="',l_no,'"'
-               LET g_msg = "cxmr007", 
+               LET g_msg = "cxmr007",
                        " '",g_today CLIPPED,"' ''",
                        " '",g_lang CLIPPED,"' '",g_bgjob CLIPPED,"'  '' '1'",
-                       " '",l_wc CLIPPED,"' '' 'N' "   
+                       " '",l_wc CLIPPED,"' '' 'N' "
                     CALL cl_cmdrun(g_msg)
-      #---------------07751 end--------------------------------------- 
+      #---------------07751 end---------------------------------------
            #-------------07751hlf add-------------------------------------
        ON ACTION sale_goods8 #出货通知单
                LET l_wc='oga01="',l_no,'"'
-               LET g_msg = "cxmr610", 
+               LET g_msg = "cxmr610",
                        " '",g_today CLIPPED,"' ''",
                        " '",g_lang CLIPPED,"' '",g_bgjob CLIPPED,"'  '' '1'",
-                       " '",l_wc CLIPPED,"' '' 'N' "   
+                       " '",l_wc CLIPPED,"' '' 'N' "
                     CALL cl_cmdrun(g_msg)
-      #---------------07751 end--------------------------------------- 
+      #---------------07751 end---------------------------------------
 
         #-------------07751hlf add-------------------------------------
        ON ACTION sale_goods9 #出货通知单
                LET l_wc='oga01="',l_no,'"'
-               LET g_msg = "cxmr011", 
+               LET g_msg = "cxmr011",
                        " '",g_today CLIPPED,"' ''",
                        " '",g_lang CLIPPED,"' '",g_bgjob CLIPPED,"'  '' '1'",
-                       " '",l_wc CLIPPED,"' '' 'N' "   
+                       " '",l_wc CLIPPED,"' '' 'N' "
                     CALL cl_cmdrun(g_msg)
       #---------------07751 end---------------------------------------
       #darcy:2023/12/28 add s---
       on action sale_haoze_MU
          LET l_wc='oga01="',l_no,'"'
-         LET g_msg = "cxmr011", 
+         LET g_msg = "cxmr011",
                      " '",g_today CLIPPED,"' ''",
                      " '",g_lang CLIPPED,"' '",g_bgjob CLIPPED,"'  '' '1'",
                      " '",l_wc CLIPPED,"' '' 'N' ",
@@ -15278,7 +15293,7 @@ FUNCTION t600_out()
       # darcy:2025/07/22 add s---
       on action sale_tianma
          LET l_wc='oga01="',l_no,'"'
-         LET g_msg = "cxmr011", 
+         LET g_msg = "cxmr011",
                      " '",g_today CLIPPED,"' ''",
                      " '",g_lang CLIPPED,"' '",g_bgjob CLIPPED,"'  '' '1'",
                      " '",l_wc CLIPPED,"' '' 'N' ",
@@ -15288,91 +15303,91 @@ FUNCTION t600_out()
        #-------------07751hlf add-------------------------------------
        ON ACTION sale_goods10 #安费诺出货通知单
                LET l_wc='oga01="',l_no,'"'
-               LET g_msg = "cxmr012", 
+               LET g_msg = "cxmr012",
                        " '",g_today CLIPPED,"' ''",
                        " '",g_lang CLIPPED,"' '",g_bgjob CLIPPED,"'  '' '1'",
-                       " '",l_wc CLIPPED,"' '' 'N' "   
+                       " '",l_wc CLIPPED,"' '' 'N' "
                     CALL cl_cmdrun(g_msg)
-      #---------------07751 end--------------------------------------- 
+      #---------------07751 end---------------------------------------
 
       #-------------07751hlf add-------------------------------------
        ON ACTION sale_goods11 #群光1出货通知单
                LET l_wc='oga01="',l_no,'"'
-               LET g_msg = "cxmr013", 
+               LET g_msg = "cxmr013",
                        " '",g_today CLIPPED,"' ''",
                        " '",g_lang CLIPPED,"' '",g_bgjob CLIPPED,"'  '' '1'",
-                       " '",l_wc CLIPPED,"' '' 'N' "   
+                       " '",l_wc CLIPPED,"' '' 'N' "
                     CALL cl_cmdrun(g_msg)
-      #---------------07751 end---------------------------------------  
+      #---------------07751 end---------------------------------------
 
     #-------------07751hlf add-------------------------------------
        ON ACTION sale_goods12 #小米出货通知单
                LET l_wc='oga01="',l_no,'"'
-               LET g_msg = "cxmr016", 
+               LET g_msg = "cxmr016",
                        " '",g_today CLIPPED,"' ''",
                        " '",g_lang CLIPPED,"' '",g_bgjob CLIPPED,"'  '' '1'",
-                       " '",l_wc CLIPPED,"' '' 'N' "   
+                       " '",l_wc CLIPPED,"' '' 'N' "
                     CALL cl_cmdrun(g_msg)
-      #---------------07751 end---------------------------------------  
+      #---------------07751 end---------------------------------------
 
         #-------------07751hlf add-------------------------------------
        ON ACTION sale_goods13 #小米出货通知单
                LET l_wc='oga01="',l_no,'"'
-               LET g_msg = "cxmr017", 
+               LET g_msg = "cxmr017",
                        " '",g_today CLIPPED,"' ''",
                        " '",g_lang CLIPPED,"' '",g_bgjob CLIPPED,"'  '' '1'",
-                       " '",l_wc CLIPPED,"' '' 'N' "   
+                       " '",l_wc CLIPPED,"' '' 'N' "
                     CALL cl_cmdrun(g_msg)
-      #---------------07751 end---------------------------------------  
+      #---------------07751 end---------------------------------------
       #-------------07751hlf add-------------------------------------
        ON ACTION sale_goods14 #标签打印
                LET l_wc='oga01="',l_no,'"'
-               LET g_msg = "cxmr019", 
+               LET g_msg = "cxmr019",
                        " '",g_today CLIPPED,"' ''",
                        " '",g_lang CLIPPED,"' '",g_bgjob CLIPPED,"'  '' '1'",
-                       " '",l_wc CLIPPED,"' '' 'N' "   
+                       " '",l_wc CLIPPED,"' '' 'N' "
                     CALL cl_cmdrun(g_msg)
       #---------------07751 end---------------------------------------
 
       #-------------07751hlf add-------------------------------------
        ON ACTION sale_goods15 #蓝微打印
-            
+
                LET l_wc='oga01="',l_no,'"'
-               LET g_msg = "cxmr022", 
+               LET g_msg = "cxmr022",
                        " '",g_today CLIPPED,"' ''",
                        " '",g_lang CLIPPED,"' '",g_bgjob CLIPPED,"'  '' '1'",
-                       " '",l_wc CLIPPED,"' '' 'N' "   
+                       " '",l_wc CLIPPED,"' '' 'N' "
                     CALL cl_cmdrun(g_msg)
       #---------------07751 end---------------------------------------
-           
-        
+
+
       #-------------07751hlf add-------------------------------------
        ON ACTION sale_goods16 #其他出库打印
         if g_oga.oga03='Z.0144' then
                LET l_wc='oga01="',l_no,'"'
-               LET g_msg = "cxmr024", 
+               LET g_msg = "cxmr024",
                        " '",g_today CLIPPED,"' ''",
                        " '",g_lang CLIPPED,"' '",g_bgjob CLIPPED,"'  '' '1'",
-                       " '",l_wc CLIPPED,"' '' 'N' "   
+                       " '",l_wc CLIPPED,"' '' 'N' "
                     CALL cl_cmdrun(g_msg)
       #---------------07751 end---------------------------------------
 
-         ELSE 
+         ELSE
           CALL cl_err('cxmr024','C001',1)
          END IF
 
    #-------------ly180402add-------------------------------------
        ON ACTION sale_goods26 #华米出货通知单
                LET l_wc='oga01="',l_no,'"'
-               LET g_msg = "cxmr026", 
+               LET g_msg = "cxmr026",
                        " '",g_today CLIPPED,"' ''",
                        " '",g_lang CLIPPED,"' '",g_bgjob CLIPPED,"'  '' '1'",
-                       " '",l_wc CLIPPED,"' '' 'N' "   
+                       " '",l_wc CLIPPED,"' '' 'N' "
                     CALL cl_cmdrun(g_msg)
-      #---------------ly180402 end---------------------------------------  
+      #---------------ly180402 end---------------------------------------
 
 
-         
+
        ON ACTION exit
           EXIT MENU
 
@@ -15393,7 +15408,7 @@ FUNCTION t600_out()
          CALL cl_cmdask()     #MOD-4C0121
 
         -- for Windows close event trapped
-        ON ACTION close   #COMMAND KEY(INTERRUPT) #FUN-9B0145  
+        ON ACTION close   #COMMAND KEY(INTERRUPT) #FUN-9B0145
              LET INT_FLAG=FALSE   #MOD-570244 mars
             LET g_action_choice = "exit"
             EXIT MENU
@@ -15407,8 +15422,8 @@ FUNCTION t600_set_entry_1()
        CALL cl_set_comp_entry("oap041,oap042,oap043,oap044,oap045",TRUE)   #MOD-910186 增加oap044/oap045
     END IF
 
-    IF cl_null(g_oga.oga16) THEN 
-       CALL cl_set_comp_entry("oga32",TRUE) 
+    IF cl_null(g_oga.oga16) THEN
+       CALL cl_set_comp_entry("oga32",TRUE)
     END IF
 
     CALL cl_set_comp_entry("oga910,oga911",TRUE)    #MOD-950276
@@ -15422,13 +15437,13 @@ FUNCTION t600_set_no_entry_1()
        END IF
     END IF
 
-    IF NOT cl_null(g_oga.oga16) THEN 
-       CALL cl_set_comp_entry("oga32",FALSE) 
+    IF NOT cl_null(g_oga.oga16) THEN
+       CALL cl_set_comp_entry("oga32",FALSE)
     END IF
 
-    IF NOT (g_argv0='2' AND g_oga.oga00 MATCHES '[37]') OR g_oga.ogapost = 'Y'  THEN 
-       CALL cl_set_comp_entry("oga910,oga911",FALSE)    
-    END IF 
+    IF NOT (g_argv0='2' AND g_oga.oga00 MATCHES '[37]') OR g_oga.ogapost = 'Y'  THEN
+       CALL cl_set_comp_entry("oga910,oga911",FALSE)
+    END IF
 
 END FUNCTION
 
@@ -15556,7 +15571,7 @@ FUNCTION t600_v()
       IF g_aza.aza63 = 'Y' THEN
          CALL s_t600_gl(l_oga01,'1')
       END IF
-     #CHI-AC0002 mod --end-- 
+     #CHI-AC0002 mod --end--
    END FOREACH
 END FUNCTION
 
@@ -15613,40 +15628,40 @@ FUNCTION t600_w()    # when g_oga.ogaconf='Y' (Turn to 'N')
    #-->已有QC單則不可取消確認
    SELECT COUNT(*) INTO l_cnt FROM qcs_file
     WHERE qcs01 = g_oga.oga01
-      AND qcs14 <> 'X'   #MOD-970260       
+      AND qcs14 <> 'X'   #MOD-970260
    IF l_cnt > 0 THEN
       CALL cl_err(' ','aqc-118',0)
       ROLLBACK WORK #CHI-A50004 add
       RETURN
    END IF
-   
+
 #No.FUN-A50071 -------start-----------
    #--> oga94 POS銷售否=Y時，不可取消審核
 #  IF g_oga.oga94 != 'Y' THEN       #TQC-A50162 mark
    IF g_oga.oga94 = 'Y' THEN        #TQC-A50162 add
       CALL cl_err('','axm-740',0)
       ROLLBACK WORK #CHI-A50004 add
-      RETURN 
-   END IF   
+      RETURN
+   END IF
 #No.FUN-A50071 --------end-----------
 #CHI-C70017---begin
-   IF g_argv0 NOT MATCHES '[15]' THEN      
-      CALL s_yp(g_oga.oga02) RETURNING l_yy,l_mm 
+   IF g_argv0 NOT MATCHES '[15]' THEN
+      CALL s_yp(g_oga.oga02) RETURNING l_yy,l_mm
       IF (l_yy > g_sma.sma51) OR (l_yy = g_sma.sma51 AND l_mm > g_sma.sma52) THEN
-         CALL cl_err('','mfg6090',0) 
+         CALL cl_err('','mfg6090',0)
          ROLLBACK WORK
          RETURN
       END IF
-   END IF 
+   END IF
 
-   IF NOT (g_argv0 = '1' OR g_argv0 = '5')  THEN   #不是出通單 
+   IF NOT (g_argv0 = '1' OR g_argv0 = '5')  THEN   #不是出通單
       IF g_oaz.oaz03 = 'Y' AND
          g_sma.sma53 IS NOT NULL AND g_oga.oga02 <= g_sma.sma53 THEN
          CALL cl_err('','mfg9999',0)
-         ROLLBACK WORK 
+         ROLLBACK WORK
          RETURN
       END IF
-   END IF 
+   END IF
 #CHI-C70017---end
 #FUN-BC0071 ----------------STA
    SELECT COUNT(*) INTO l_n  FROM ogb_file
@@ -15740,42 +15755,42 @@ FUNCTION t600_w()    # when g_oga.ogaconf='Y' (Turn to 'N')
       END IF
    END IF
    IF NOT cl_confirm('axm-109') THEN ROLLBACK WORK RETURN END IF #CHI-A50004 add ROLLBACK WORK
-##NO.TQC-D50068-------------------------------------------------------------- 
+##NO.TQC-D50068--------------------------------------------------------------
 ##取消確認後，來源如為三角出通單，即自動拋轉還原出通單
-   IF g_argv0 = '5' AND g_oax.oax07 = 'Y' THEN  
+   IF g_argv0 = '5' AND g_oax.oax07 = 'Y' THEN
        #讀取三角貿易流程代碼資料
-       IF NOT cl_null(g_oga.oga16) THEN  
-         SELECT oea904 INTO l_oea904 
+       IF NOT cl_null(g_oga.oga16) THEN
+         SELECT oea904 INTO l_oea904
            FROM oea_file
           WHERE oea01 = g_oga.oga16
-       ELSE 
+       ELSE
          DECLARE t600_g_ogb1 CURSOR FOR SELECT ogb31 FROM ogb_file
                                    WHERE ogb01 = g_oga.oga01
- 
+
          FOREACH t600_g_ogb1 INTO  l_ogb31
             display 'l_ogb31->',l_ogb31
-            SELECT oea904 INTO l_oea904 
+            SELECT oea904 INTO l_oea904
               FROM oea_file
              WHERE oea01 = l_ogb31
             display 'l_oea904->',l_oea904
               EXIT FOREACH
          END FOREACH
-        END IF 
+        END IF
          IF NOT cl_null(l_oea904) THEN
             #SELECT poz011 INTO l_poz00   #先得到流程為銷售或代採參數  #MOD-870278 mark
-             SELECT poz00 INTO l_poz00    #先得到流程為銷售或代採參數  #MOD-870278 
+             SELECT poz00 INTO l_poz00    #先得到流程為銷售或代採參數  #MOD-870278
                FROM poz_file
               WHERE poz01=l_oea904
-             IF l_poz00 = '1' THEN 
+             IF l_poz00 = '1' THEN
                  LET l_argv0 = '4'   #銷售
              ELSE
                  LET l_argv0 = '6'   #代採
-             END IF 
+             END IF
              #CHI-7B0041-begin-modify
              CALL t600_check_poz19()
              IF cl_null(g_errno) THEN
                 CALL t600_t_undo_muticarry(l_argv0)
-             END IF 
+             END IF
              #CHI-7B0041-end-modify
          END IF
    END IF
@@ -15786,7 +15801,7 @@ FUNCTION t600_w()    # when g_oga.ogaconf='Y' (Turn to 'N')
        RETURN
     END IF
 
- 
+
   #CHI-A50004 程式搬移至FUNCTION一開始 mark --start--
   #BEGIN WORK
   #
@@ -15854,27 +15869,27 @@ FUNCTION t600_w()    # when g_oga.ogaconf='Y' (Turn to 'N')
            CALL cl_err3("upd","oga_file",g_oga.oga011,"",SQLCA.SQLCODE,"","upd oga011",1)
            LET g_success='N'
         END IF
-     END IF      
+     END IF
    END IF  #FUN-C50097(MOD-C60236并入)
-   
+
    #FUN-C50136---add---str----
-#  IF g_oaz.oaz96 ='Y' THEN 
-#     CASE 
-#        WHEN g_argv0 MATCHES '[15]'  
+#  IF g_oaz.oaz96 ='Y' THEN
+#     CASE
+#        WHEN g_argv0 MATCHES '[15]'
 #           CALL s_ccc_oia07('C',g_oga.oga03) RETURNING l_oia07
-#           IF l_oia07 ='0' THEN 
+#           IF l_oia07 ='0' THEN
 #              CALL s_ccc_rback(g_oga.oga03,'C',g_oga.oga01,0,'')
-#           END IF     
-#        WHEN g_argv0 MATCHES '[24]' 
+#           END IF
+#        WHEN g_argv0 MATCHES '[24]'
 #           CALL s_ccc_oia07('D',g_oga.oga03) RETURNING l_oia07
-#           IF l_oia07 ='0' THEN 
+#           IF l_oia07 ='0' THEN
 #              CALL s_ccc_rback(g_oga.oga03,'D',g_oga.oga01,0,'')
-#           END IF     
-#        WHEN g_argv0 MATCHES '[8]' 
+#           END IF
+#        WHEN g_argv0 MATCHES '[8]'
 #           CALL s_ccc_oia07('F',g_oga.oga03) RETURNING l_oia07
-#           IF l_oia07 ='0' THEN 
+#           IF l_oia07 ='0' THEN
 #              CALL s_ccc_rback(g_oga.oga03,'F',g_oga.oga01,0,'')
-#           END IF     
+#           END IF
 #     END CASE
 #  END IF
    #FUN-C50136---add---end----
@@ -15885,7 +15900,7 @@ FUNCTION t600_w()    # when g_oga.ogaconf='Y' (Turn to 'N')
               LET g_oga.oga903 = 'N'
            END IF
            COMMIT WORK
-           LET l_time = TIME    #CHI-C80072 
+           LET l_time = TIME    #CHI-C80072
            IF g_azw.azw04='2' THEN
           #CHI-C80072--STR--
           #   LET g_oga.ogaconu=''
@@ -15919,8 +15934,8 @@ FUNCTION t600_z1()
                        oga903 = 'N',
                        ogaconu= g_user,
                        ogacond= g_today,
-                       ogacont= l_time  
-                 WHERE oga01 = g_oga.oga01  
+                       ogacont= l_time
+                 WHERE oga01 = g_oga.oga01
  #CHI-C80072--end---
    IF STATUS OR SQLCA.sqlerrd[3]=0 THEN
       CALL cl_err3("upd","oga_file",g_oga.oga01,"",SQLCA.sqlcode,"","upd oga",1)  #No.FUN-670008
@@ -15956,7 +15971,7 @@ DEFINE l_ogb04   LIKE ogb_file.ogb04,
        l_i       LIKE type_file.num5,    #No.FUN-680137 SMALLINT
        l_j       LIKE type_file.num5,   #No.FUN-680137 SMALLINT
        l_cnt     LIKE type_file.num5,    #No.MOD-8B0023
-      #p_cmd     LIKE type_file.chr1,   #CHI-8B0048 add #MOD-B30464 mark 
+      #p_cmd     LIKE type_file.chr1,   #CHI-8B0048 add #MOD-B30464 mark
        li_result LIKE type_file.num5, #FUN-730012
        l_oea99   LIKE oea_file.oea99
    DEFINE  l_idd     RECORD LIKE idd_file.*    #No.MOD-8B0023
@@ -15974,17 +15989,17 @@ DEFINE l_ogb04   LIKE ogb_file.ogb04,
    DEFINE l_ogb     RECORD LIKE ogb_file.*  #CHI-CC0028
    DEFINE lj_result LIKE type_file.chr1  #CHI-CC0028
    DEFINE l_success LIKE type_file.chr1  #CHI-CC0028
-   
+
    #FUN-C60033--add--str  #FUN-C60036 remark--str
    LET l_n1 = 0
    SELECT COUNT(*) INTO l_n1 FROM omf_file WHERE omf11=g_oga.oga01
-   
+
    IF l_n1>0 THEN
       LET g_success = 'N'
       CALL cl_err('','axm-544',1)
       RETURN
    END IF
- 
+
    #FUN-C60033--add--end #FUN-C60036 remark--end
 
     IF cl_null(g_oga.oga01) THEN RETURN END IF
@@ -15997,25 +16012,25 @@ DEFINE l_ogb04   LIKE ogb_file.ogb04,
     END IF
 
     LET l_cnt = 0
-    SELECT COUNT(*) INTO l_cnt FROM oeb_file 
-       WHERE oeb70 = 'Y' 
-         AND oeb01||oeb03 IN 
+    SELECT COUNT(*) INTO l_cnt FROM oeb_file
+       WHERE oeb70 = 'Y'
+         AND oeb01||oeb03 IN
              (SELECT ogb31||ogb32 FROM ogb_file WHERE ogb01 = g_oga.oga01)
     IF l_cnt > 0 THEN
       #CALL cl_err('','axm-150',1)  #MOD-C50090 mark
-      #CALL cl_err('','axm-976',1)  #MOD-C50090 #CHI-B60096 mark 
+      #CALL cl_err('','axm-976',1)  #MOD-C50090 #CHI-B60096 mark
        #CHI-B60096 add --start--
        CALL cl_get_feldname("oeb01",g_lang) RETURNING l_msg1
        CALL cl_get_feldname("oeb03",g_lang) RETURNING l_msg2
        LET l_msg3 = ''
        DECLARE t600_sel_oeb01_oeb03 CURSOR FOR
-          SELECT oeb01,oeb03 FROM oeb_file 
-           WHERE oeb70 = 'Y' 
-             AND oeb01||oeb03 IN 
+          SELECT oeb01,oeb03 FROM oeb_file
+           WHERE oeb70 = 'Y'
+             AND oeb01||oeb03 IN
                  (SELECT ogb31||ogb32 FROM ogb_file WHERE ogb01 = g_oga.oga01)
        FOREACH t600_sel_oeb01_oeb03 INTO l_oeb01,l_oeb03
-          LET l_oeb03_msg = l_oeb03 
-          LET l_oeb03_msg = l_oeb03_msg.trim() 
+          LET l_oeb03_msg = l_oeb03
+          LET l_oeb03_msg = l_oeb03_msg.trim()
           IF cl_null(l_msg3) THEN
              LET l_msg3 = l_oeb01 CLIPPED,"/",l_oeb03_msg CLIPPED
           ELSE
@@ -16027,22 +16042,22 @@ DEFINE l_ogb04   LIKE ogb_file.ogb04,
        #CHI-B60096 add --end--
        RETURN
     END IF
-   
+
 #No.FUN-A50071 --------start-----------
     #oga94 POS銷售否=Y時，不可過賬還原
 #   IF g_oga.oga94 !='Y' THEN   #TQC-A50162  mark
     IF g_oga.oga94 ='Y' THEN    #TQC-A50162  add
        CALL cl_err('','axm-741',0)
-       RETURN 
-    END IF 
+       RETURN
+    END IF
 #No.FUN-A50071 ---------end----------
 
 #FUN-C30257 add START
    #由換物或換券而自動產生的出貨單據, 不可進行 "扣帳還原"
    LET l_n = 0
-   SELECT COUNT(*)  INTO  l_n FROM lrj_file WHERE lrj16 = g_oga.oga01 
+   SELECT COUNT(*)  INTO  l_n FROM lrj_file WHERE lrj16 = g_oga.oga01
    IF cl_null(l_n) OR l_n = 0 THEN
-      SELECT COUNT(*)  INTO  l_n FROM lrl_file WHERE lrl14 = g_oga.oga01 
+      SELECT COUNT(*)  INTO  l_n FROM lrl_file WHERE lrl14 = g_oga.oga01
    END IF
    IF l_n > 0 THEN
       CALL cl_err('','axm_119',0)
@@ -16053,7 +16068,7 @@ DEFINE l_ogb04   LIKE ogb_file.ogb04,
    DECLARE ogb_z_c CURSOR FOR
       SELECT * FROM ogb_file WHERE ogb01 = g_oga.oga01
       CALL s_showmsg_init()
- 
+
    FOREACH ogb_z_c INTO l_ogb.*
       IF cl_null(g_oga.oga99) THEN
          CALL s_incchk(l_ogb.ogb09,l_ogb.ogb091,g_user)
@@ -16081,7 +16096,7 @@ DEFINE l_ogb04   LIKE ogb_file.ogb04,
 #FUN-C30176 add END
    #CHI-C70017---begin
    CALL s_yp(g_oga.oga02) RETURNING l_yy,l_mm
-   IF g_argv0='1' OR g_argv0='5' THEN 
+   IF g_argv0='1' OR g_argv0='5' THEN
       IF ((l_yy*12+l_mm) - (g_sma.sma51*12+g_sma.sma52) >1) THEN
          CALL cl_err('','mfg6090',0)
          RETURN
@@ -16092,13 +16107,13 @@ DEFINE l_ogb04   LIKE ogb_file.ogb04,
          RETURN
       END IF
    END IF
-   IF NOT (g_argv0 = '1' OR g_argv0 = '5')  THEN   #不是出通單 
+   IF NOT (g_argv0 = '1' OR g_argv0 = '5')  THEN   #不是出通單
       IF g_oaz.oaz03 = 'Y' AND
          g_sma.sma53 IS NOT NULL AND g_oga.oga02 <= g_sma.sma53 THEN
          CALL cl_err('','mfg9999',0)
          RETURN
       END IF
-   END IF 
+   END IF
    #CHI-C70017---end
 #FUN-BC0071 ----------------STA
    SELECT COUNT(*) INTO l_n  FROM ogb_file
@@ -16191,7 +16206,7 @@ DEFINE l_ogb04   LIKE ogb_file.ogb04,
        IF g_oga.oga905='Y' THEN CALL cl_err('','tri-013',1) RETURN END IF
     END IF
    #LET g_msg="axmp650 '",g_oga.oga01,"' ' '  '",p_cmd,"' "  CLIPPED  #CHI-8B0048 modify #MOD-B30464 mark
-    LET g_msg="axmp650 '",g_oga.oga01,"' ' '  "  CLIPPED  #MOD-B30464 
+    LET g_msg="axmp650 '",g_oga.oga01,"' ' '  "  CLIPPED  #MOD-B30464
     CALL cl_cmdrun_wait(g_msg)
 
 #-----MOD-AC0012---------
@@ -16254,17 +16269,17 @@ DEFINE l_ogb04   LIKE ogb_file.ogb04,
 #-----END MOD-AC0012-----
 
    #axmp650執行失敗
-    SELECT ogapost INTO g_oga.ogapost 
+    SELECT ogapost INTO g_oga.ogapost
       FROM oga_file WHERE oga01=g_oga.oga01
-    IF g_oga.ogapost = 'Y' THEN 
-     UPDATE oga_file 
+    IF g_oga.ogapost = 'Y' THEN
+     UPDATE oga_file
         SET oga99 =g_oga_o.oga99,
             oga905=g_oga_o.oga905
       WHERE oga01=g_oga.oga01
        IF STATUS OR SQLCA.SQLCODE THEN
-          CALL cl_err(g_oga.oga01,SQLCA.SQLCODE,0)   
+          CALL cl_err(g_oga.oga01,SQLCA.SQLCODE,0)
        END IF
-       RETURN                                                                
+       RETURN
     END IF
    #axmp650執行失敗
 
@@ -16295,7 +16310,7 @@ DEFINE l_ogb04   LIKE ogb_file.ogb04,
     END IF
    #FUN-C50136---add---str----
 #  IF g_oaz.oaz96 ='Y' THEN
-#     CASE 
+#     CASE
 #        WHEN g_argv0 MATCHES '[15]'
 #           CALL s_ccc_oia07('C',g_oga.oga03) RETURNING l_oia07
 #           IF l_oia07 ='1' THEN
@@ -16331,7 +16346,7 @@ FUNCTION t600_last()
    SELECT MAX(poy02) INTO l_last FROM poy_file
     WHERE poy01 = g_flow
       AND poy02 != 99                #MOD-830220-add
-     
+
    IF STATUS THEN
       CALL cl_err3("sel","poy_file",g_flow,"","axm-318","","",1)  #No.FUN-670008
       RETURN ''
@@ -16391,42 +16406,42 @@ END FUNCTION
 #新增加出通單拋轉/拋轉還原----
 FUNCTION t600_t_muticarry(p_argv0)
 DEFINE p_argv0  LIKE type_file.chr1    #No.FUN-680137 VARCHAR(1)
-DEFINE  l_oea904  LIKE oea_file.oea904  
-DEFINE  l_poz00   LIKE poz_file.poz00   
+DEFINE  l_oea904  LIKE oea_file.oea904
+DEFINE  l_poz00   LIKE poz_file.poz00
 DEFINE  l_ogb31   LIKE ogb_file.ogb31    #MOD-870278
 
-  IF g_argv0 <> '5' OR g_oax.oax07 <> 'Y' OR g_oga.oga909 <> 'Y' THEN  
+  IF g_argv0 <> '5' OR g_oax.oax07 <> 'Y' OR g_oga.oga909 <> 'Y' THEN
      RETURN
   END IF
    IF NOT cl_null(g_oga.oga16) THEN  #MOD-870278 add
       #讀取三角貿易流程代碼資料
-        SELECT oea904 INTO l_oea904 
+        SELECT oea904 INTO l_oea904
           FROM oea_file
          WHERE oea01 = g_oga.oga16
-       ELSE 
+       ELSE
         DECLARE t600_g_ogb2 CURSOR FOR SELECT ogb31 FROM ogb_file
                                   WHERE ogb01 = g_oga.oga01
 
         FOREACH t600_g_ogb2 INTO  l_ogb31
-           SELECT oea904 INTO l_oea904 
+           SELECT oea904 INTO l_oea904
              FROM oea_file
             WHERE oea01 = l_ogb31
              EXIT FOREACH
         END FOREACH
       END IF
         IF NOT cl_null(l_oea904) THEN
-            SELECT poz00 INTO l_poz00    #先得到流程為銷售或代採參數  #MOD-870278 
+            SELECT poz00 INTO l_poz00    #先得到流程為銷售或代採參數  #MOD-870278
               FROM poz_file
              WHERE poz01=l_oea904
-            IF l_poz00 = '1' THEN 
+            IF l_poz00 = '1' THEN
                 LET p_argv0 = '4'   #銷售
             ELSE
                 LET p_argv0 = '6'   #代採
-            END IF 
+            END IF
             CALL t600_check_poz19()
             IF NOT cl_null(g_errno) THEN
                RETURN
-            END IF 
+            END IF
         END IF
       IF g_poz.poz011='1' THEN   #正拋
          LET g_msg="axmp821 '",g_oga.oga01,"'"
@@ -16521,11 +16536,11 @@ DEFINE l_ogaconf_o LIKE oga_file.ogaconf
            END IF
        ELSE
           IF g_argv0 != 8 THEN #FUN-910115 add
-             CALL t620_x_check()              
-             IF g_check = 'N' THEN 
+             CALL t620_x_check()
+             IF g_check = 'N' THEN
                 LET g_check = 'Y'
-                RETURN 
-             END IF    	
+                RETURN
+             END IF
           #FUN-910115 ----- add start -----
           ELSE
              #axmt628 取消確認前，確認出貨單是否已經被拋轉到另一張銷退單
@@ -16656,9 +16671,9 @@ END FUNCTION
 
 FUNCTION t620_x_check()
 #-----MOD-A20069---------
-#DEFINE l_chr       LIKE type_file.chr1  
-#DEFINE l_cnt       LIKE type_file.num5 
-#DEFINE l_count     LIKE type_file.num5 
+#DEFINE l_chr       LIKE type_file.chr1
+#DEFINE l_cnt       LIKE type_file.num5
+#DEFINE l_count     LIKE type_file.num5
 #DEFINE l_oeb01     LIKE oeb_file.oeb01
 #DEFINE l_oeb03     LIKE oeb_file.oeb03
 #-----END MOD-A20069-----
@@ -16677,79 +16692,79 @@ DEFINE l_oea09     LIKE oea_file.oea09   #MOD-B80276 add
 DEFINE l_ogb12c    LIKE ogb_file.ogb12   #MOD-B80276 add
 DEFINE l_oeb25     LIKE oeb_file.oeb25   #MOD-B80276 add
 DEFINE l_ima928    LIKE ima_file.ima928  #MOD-C30867 add
-                               
+
 #-----MOD-A20069---------
-#  DECLARE check_c1 CURSOR FOR SELECT oeb01,oeb03,oeb04,oeb05 FROM oea_file,oeb_file 
+#  DECLARE check_c1 CURSOR FOR SELECT oeb01,oeb03,oeb04,oeb05 FROM oea_file,oeb_file
 #                               WHERE oeb01 = g_oga.oga16
 #                                 AND oea01 = oeb01
 #                                 AND oeaconf = 'Y'
-#                               ORDER BY oeb03 
+#                               ORDER BY oeb03
 #  LET l_sql = "SELECT ogb31,ogb32,ogb04,ogb05 FROM ogb_file",
 #              " WHERE ogb01 = '",g_oga.oga01,"'",
 #              "   AND ogb31 = '",g_oga.oga16,"'",
 #              "   AND ogb32 = ?",
 #              "  ORDER BY ogb32"
 #  PREPARE check_prepare FROM l_sql
-#  DECLARE check_c2 CURSOR FOR check_prepare 
-#                
-#  LET l_chr = 'Y'  
+#  DECLARE check_c2 CURSOR FOR check_prepare
+#
+#  LET l_chr = 'Y'
 #  FOREACH check_c1 INTO l_oeb01,l_oeb03,l_oeb04,l_oeb05
-#     IF STATUS THEN 
+#     IF STATUS THEN
 #        LET g_check = 'N'
-#        EXIT FOREACH 
-#     END IF      
+#        EXIT FOREACH
+#     END IF
 #     FOREACH check_c2 USING l_oeb03 INTO l_ogb31,l_ogb32,l_ogb04,l_ogb05
-#        IF STATUS THEN 
+#        IF STATUS THEN
 #           LET g_check = 'N'
-#           EXIT FOREACH 
-#        END IF    
-#        IF (l_oeb01 != l_ogb31) OR (l_oeb03 != l_ogb32) OR 
-#           (l_oeb04 != l_ogb04) OR (l_oeb05 != l_ogb05) THEN 
+#           EXIT FOREACH
+#        END IF
+#        IF (l_oeb01 != l_ogb31) OR (l_oeb03 != l_ogb32) OR
+#           (l_oeb04 != l_ogb04) OR (l_oeb05 != l_ogb05) THEN
 #           CALL cl_err('','axm-204',1)
 #           LET l_chr = 'N'
 #           LET g_check = 'N'
-#           EXIT FOREACH  
+#           EXIT FOREACH
 #        ELSE
-#        	 CONTINUE FOREACH    
-#        END IF  
+#        	 CONTINUE FOREACH
+#        END IF
 #     END FOREACH
 ############################
-#    IF g_check = 'Y' THEN 
-#       SELECT SUM(oeb12) INTO l_oeb12 FROM oea_file,oeb_file 
-#        WHERE oeb01 = g_oga.oga16 
+#    IF g_check = 'Y' THEN
+#       SELECT SUM(oeb12) INTO l_oeb12 FROM oea_file,oeb_file
+#        WHERE oeb01 = g_oga.oga16
 #          AND oea01 = oeb01
 #          AND oeb03 = l_oeb03
 #          AND oeaconf = 'Y'
 #       SELECT SUM(ogb12) INTO l_ogb12 FROM oga_file,ogb_file
-#        WHERE oga01 = ogb01 
+#        WHERE oga01 = ogb01
 #          AND ogaconf = 'Y'
-#          AND oga01 <> g_oga.oga01 	
-#          AND oga09 = g_argv0		
+#          AND oga01 <> g_oga.oga01
+#          AND oga09 = g_argv0
 #          AND ogb32 = l_oeb03
 #          AND ogb31 = l_oeb01
 #       SELECT SUM(ogb12) INTO l_ogb12_1 FROM oga_file,ogb_file
 #        WHERE oga01 = ogb01
-#          AND oga01 = g_oga.oga01 
-#          AND oga09 = g_argv0		
+#          AND oga01 = g_oga.oga01
+#          AND oga09 = g_argv0
 #          AND ogb32 = l_oeb03
 #          AND ogb31 = l_oeb01
-#       IF cl_null(l_oeb12) THEN LET l_oeb12 = 0 END IF 
-#       IF cl_null(l_ogb12) THEN LET l_ogb12 = 0 END IF   
-#       IF cl_null(l_ogb12_1) THEN LET l_ogb12_1 = 0 END IF                
-#       LET l_ogb12 = l_ogb12 + l_ogb12_1       
-#       IF l_oeb12 != l_ogb12 THEN 
+#       IF cl_null(l_oeb12) THEN LET l_oeb12 = 0 END IF
+#       IF cl_null(l_ogb12) THEN LET l_ogb12 = 0 END IF
+#       IF cl_null(l_ogb12_1) THEN LET l_ogb12_1 = 0 END IF
+#       LET l_ogb12 = l_ogb12 + l_ogb12_1
+#       IF l_oeb12 != l_ogb12 THEN
 #          CALL cl_err('','axm-242',1)
 #          LET g_check = 'N'
-#       END IF  
-#    END IF 
-###########################    
-#     IF l_chr = 'N' THEN CONTINUE FOREACH END IF 
-#     IF g_check = 'N' THEN 
-#        EXIT FOREACH 
-#     END IF     
-#  END FOREACH   
+#       END IF
+#    END IF
+###########################
+#     IF l_chr = 'N' THEN CONTINUE FOREACH END IF
+#     IF g_check = 'N' THEN
+#        EXIT FOREACH
+#     END IF
+#  END FOREACH
 
-   DECLARE check_c1 CURSOR FOR 
+   DECLARE check_c1 CURSOR FOR
      SELECT ogb03,ogb31,ogb32,ogb04,ogb05 FROM ogb_file WHERE ogb01=g_oga.oga01
    FOREACH check_c1 INTO l_ogb03,l_ogb31,l_ogb32,l_ogb04,l_ogb05
      LET l_oeb04=''
@@ -16761,30 +16776,30 @@ DEFINE l_ima928    LIKE ima_file.ima928  #MOD-C30867 add
      SELECT ima928 INTO l_ima928 FROM ima_file
        WHERE ima01 = l_oeb04
      IF l_ima928 = 'N' THEN
-    #MOD-C30867---add---END 
+    #MOD-C30867---add---END
         IF l_oeb04 <> l_ogb04 OR l_oeb05<> l_ogb05 THEN
            CALL cl_err(l_ogb03,'axm-204',1)
            LET g_check = 'N'
-           EXIT FOREACH 
+           EXIT FOREACH
         END IF
      END IF #MOD-C30867 add
 #    SELECT oeb12 INTO l_oeb12 FROM oea_file,oeb_file        #MOD-B80276 mark
      SELECT oea09,oeb12,oeb25 INTO l_oea09,l_oeb12,l_oeb25   #MOD-B80276
       FROM oea_file,oeb_file                                 #MOD-B80276
-      WHERE oeb01 = l_ogb31 
+      WHERE oeb01 = l_ogb31
         AND oeb03 = l_ogb32
         AND oea01 = oeb01
         AND oeaconf = 'Y'
      SELECT SUM(ogb12) INTO l_ogb12 FROM oga_file,ogb_file
-      WHERE oga01 = ogb01 
+      WHERE oga01 = ogb01
         AND ogaconf = 'Y'
-        AND oga09 = g_argv0	
+        AND oga09 = g_argv0
         AND ogb31 = l_ogb31
         AND ogb32 = l_ogb32
      SELECT SUM(ogb12) INTO l_ogb12_1 FROM oga_file,ogb_file
       WHERE oga01 = ogb01
-        AND oga01 = g_oga.oga01 
-        AND oga09 = g_argv0 
+        AND oga01 = g_oga.oga01
+        AND oga09 = g_argv0
         AND ogb03 = l_ogb03
 #MOD-B80276 -- begin --
      IF NOT cl_null(l_ogb31) AND l_ogb31[1,4] != 'MISC' THEN
@@ -16799,9 +16814,9 @@ DEFINE l_ima928    LIKE ima_file.ima928  #MOD-C30867 add
             IF cl_null(l_ogb12c) THEN LET l_ogb12c = 0 END IF
      END IF
 #MOD-B80276 -- end --
-     IF cl_null(l_oeb12) THEN LET l_oeb12 = 0 END IF 
-     IF cl_null(l_ogb12) THEN LET l_ogb12 = 0 END IF   
-     IF cl_null(l_ogb12_1) THEN LET l_ogb12_1 = 0 END IF                
+     IF cl_null(l_oeb12) THEN LET l_oeb12 = 0 END IF
+     IF cl_null(l_ogb12) THEN LET l_ogb12 = 0 END IF
+     IF cl_null(l_ogb12_1) THEN LET l_ogb12_1 = 0 END IF
      IF cl_null(l_oea09) THEN LET l_oea09 = 0 END IF       #MOD-B80276 add
      LET l_ogb12 = l_ogb12 + l_ogb12_1
 #MOD-B80276 -- begin --
@@ -16809,14 +16824,14 @@ DEFINE l_ima928    LIKE ima_file.ima928  #MOD-C30867 add
                  + l_oeb25                          #已銷退數量
                  + l_ogb12c                         #簽收驗退量
 #MOD-B80276 -- end --
-     IF l_oeb12 < l_ogb12 THEN 
+     IF l_oeb12 < l_ogb12 THEN
         CALL cl_err(l_ogb03,'axm-294',1)
         LET g_check = 'N'
         EXIT FOREACH
-     END IF  
+     END IF
    END FOREACH
 #-----END MOD-A20069-----
-END FUNCTION 
+END FUNCTION
 #MOD-990097 --end--
 
 FUNCTION t600_d()
@@ -16840,7 +16855,7 @@ FUNCTION t600_d()
                     ogb916    LIKE ogb_file.ogb916,
                     ogb917    LIKE ogb_file.ogb917,
                     ogb37_1   LIKE ogb_file.ogb37,   #FUN-B10010
-                    ogb13_1   LIKE ogb_file.ogb13,   #MOD-930322 
+                    ogb13_1   LIKE ogb_file.ogb13,   #MOD-930322
                     ogb14_1   LIKE ogb_file.ogb14,   #MOD-930322
                     ogb14t_1  LIKE ogb_file.ogb14t   #MOD-930322
                     END RECORD
@@ -16861,7 +16876,7 @@ FUNCTION t600_d()
                     ogb916    LIKE ogb_file.ogb916,
                     ogb917    LIKE ogb_file.ogb917,
                     ogb37_1   LIKE ogb_file.ogb37,   #FUN-B10010
-                    ogb13_1   LIKE ogb_file.ogb13,   #MOD-930322 
+                    ogb13_1   LIKE ogb_file.ogb13,   #MOD-930322
                     ogb14_1   LIKE ogb_file.ogb14,   #MOD-930322
                     ogb14t_1  LIKE ogb_file.ogb14t   #MOD-930322
                     END RECORD,
@@ -16883,8 +16898,8 @@ DEFINE l_rtz04 LIKE rtz_file.rtz04     #FUN-C10040
 DEFINE l_rtz06 LIKE rtz_file.rtz06     #FUN-C10040
 DEFINE l_chang        LIKE type_file.chr1    #CHI-A90012
 DEFINE l_flag         LIKE type_file.chr1    #CHI-A90012
-DEFINE l_bookno1      LIKE aza_file.aza81    #CHI-A90012       
-DEFINE l_bookno2      LIKE aza_file.aza82    #CHI-A90012      
+DEFINE l_bookno1      LIKE aza_file.aza81    #CHI-A90012
+DEFINE l_bookno2      LIKE aza_file.aza82    #CHI-A90012
 DEFINE l_npq07f       LIKE npq_file.npq07f   #CHI-A90012
 
    BEGIN WORK
@@ -16900,12 +16915,12 @@ DEFINE l_npq07f       LIKE npq_file.npq07f   #CHI-A90012
    FETCH t600_cl INTO g_oga.*          # 鎖住將被更改或取消的資料
    IF SQLCA.sqlcode THEN
        CALL cl_err(g_oga.oga01,SQLCA.sqlcode,0)     # 資料被他人LOCK
-       CLOSE t600_cl 
-       ROLLBACK WORK 
+       CLOSE t600_cl
+       ROLLBACK WORK
        RETURN
    END IF
-   
-   
+
+
    IF g_oga.oga55 matches '[Ss]' THEN       #送簽中不可更改單價
       CALL cl_err('','apm-030',0)
       CLOSE t600_cl   #MOD-920323
@@ -16922,7 +16937,7 @@ DEFINE l_npq07f       LIKE npq_file.npq07f   #CHI-A90012
 
     CALL cl_ui_locale("axmt600p")
 
-    CALL cl_set_comp_visible("ogb911,ogb914",FALSE)  
+    CALL cl_set_comp_visible("ogb911,ogb914",FALSE)
     IF g_sma.sma115 = 'Y' THEN
        CALL cl_set_comp_visible("ogb05,ogb12",FALSE)
     ELSE
@@ -16969,34 +16984,34 @@ DEFINE l_npq07f       LIKE npq_file.npq07f   #CHI-A90012
    CALL d_ogb.deleteElement(i)
    LET l_rec_b = i-1
    #出通單若已出貨並立帳,僅提供單價查詢
-   IF g_argv0='1' THEN 
+   IF g_argv0='1' THEN
       LET l_cnt = 0
       SELECT COUNT(*) INTO l_cnt FROM oga_file,ogb_file
-        WHERE oga01 = ogb01 
+        WHERE oga01 = ogb01
           AND oga01 = g_oga.oga01
           AND ogb31||ogb32 IN
               (SELECT ogb31||ogb32 FROM oga_file,ogb_file
-                WHERE oga01=ogb01 AND oga09='2' 
+                WHERE oga01=ogb01 AND oga09='2'
                   AND (oga10 IS NOT NULL
                        OR oga01 IN (SELECT oga011 FROM oga_file    #MOD-AB0152
                                      WHERE oga09='8' AND oga10 IS NOT NULL)))   #MOD-AB0152
    END IF
 
    #-----MOD-AB0152---------
-   LET l_cnt2 = 0 
+   LET l_cnt2 = 0
    SELECT COUNT(*) INTO l_cnt2 FROM oga_file
      WHERE oga011 = g_oga.oga01
        AND oga09 = '8'
-       AND oga10 IS NOT NULL 
+       AND oga10 IS NOT NULL
    #-----END MOD-AB0152-----
 
    #多角出貨(通)單僅提供單價查詢
    #IF NOT cl_null(g_oga.oga10) OR g_argv0 MATCHES '[456]' OR   #MOD-AB0152
-   #IF NOT cl_null(g_oga.oga10) OR l_cnt2 > 0 OR g_argv0 MATCHES '[456]' OR   #MOD-AB0152   #CHI-A90012 加上已拋傳票的判斷  
+   #IF NOT cl_null(g_oga.oga10) OR l_cnt2 > 0 OR g_argv0 MATCHES '[456]' OR   #MOD-AB0152   #CHI-A90012 加上已拋傳票的判斷
     IF NOT cl_null(g_oga.oga907) OR NOT cl_null(g_oga.oga10) OR l_cnt2 > 0 OR g_argv0 MATCHES '[456]' OR   #MOD-AB0152   #CHI-A90012 加上已拋傳票的判斷
    #   g_oga.ogaconf <> 'N' OR  #No.FUN-870007             #TQC-B70184 mark
       (g_oga.ogaconf = 'Y' AND g_oga.oga85 = '1')  OR     #TQC-B70184
-      (g_argv0='1' AND l_cnt > 0) THEN    
+      (g_argv0='1' AND l_cnt > 0) THEN
 
       DISPLAY ARRAY d_ogb TO s_ogb.* ATTRIBUTE(COUNT=l_rec_b,UNBUFFERED)                                #MOD-B30485 mark  #MOD-B70075 remark
 #     DISPLAY ARRAY d_ogb TO s_ogb.* ATTRIBUTE(COUNT=l_rec_b,accept = FALSE,cancel = FALSE,UNBUFFERED)  #MOD-B30485 add   #MOD-B70075 mark
@@ -17005,7 +17020,7 @@ DEFINE l_npq07f       LIKE npq_file.npq07f   #CHI-A90012
             CONTINUE DISPLAY
 #MOD-B30485----mark-----str--------------
 #MOD-B10204 --begin--
-#        ON ACTION accept 
+#        ON ACTION accept
 #           CALL cl_err('','axm-561',0)
 #           CONTINUE DISPLAY
 #MOD-B10204 --end--
@@ -17057,39 +17072,39 @@ DEFINE l_npq07f       LIKE npq_file.npq07f   #CHI-A90012
             SELECT oah08 INTO g_oah08 FROM oah_file WHERE oah01=g_oga.oga31
             IF cl_null(g_oah08) THEN
                LET g_oah08 = 'Y'
-            END IF 
+            END IF
             IF g_oah08='N' AND d_ogb[l_ac].ogb13_1=0 THEN
                CALL cl_err(d_ogb[l_ac].ogb13_1,'axm-627',0)  #FUN-C50074
                NEXT FIELD ogb13_1
             END IF
             #FUN-C40089---end
           IF g_azw.azw04='2' THEN
-            SELECT rtz05 INTO l_rtg01 FROM rtz_file 
+            SELECT rtz05 INTO l_rtg01 FROM rtz_file
              WHERE rtz01 = g_plant
             IF NOT cl_null(l_rtg01) THEN               #TQC-B20053
                SELECT rtg07,rtg08 INTO l_rtg07,l_rtg08 FROM rtg_file,rtf_file
                 WHERE rtg01=rtf01 AND rtfconf='Y'
                   AND rtg01 = l_rtg01
                   AND rtg03=d_ogb[l_ac].ogb04 AND rtg04=d_ogb[l_ac].ogb05
-              IF SQLCA.sqlcode=100 THEN  
-                 CALL cl_err('','art-273',0) 
+              IF SQLCA.sqlcode=100 THEN
+                 CALL cl_err('','art-273',0)
                  NEXT FIELD ogb13_1
               END IF
-              IF l_rtg08='Y' THEN 
+              IF l_rtg08='Y' THEN
                  SELECT rth06 INTO l_rth06 FROM rth_file
-                  WHERE rth01=d_ogb[l_ac].ogb04                                          
-                    AND rth02=d_ogb[l_ac].ogb05 
+                  WHERE rth01=d_ogb[l_ac].ogb04
+                    AND rth02=d_ogb[l_ac].ogb05
                  #  AND rthplant=g_oea.oeaplant  #TQC-AC0140 mark
                     AND rthplant=g_plant         #TQC-AC0140 add
-                IF SQLCA.sqlcode=100 THEN                                                                                    
-                   CALL cl_err('','art-273',0) 
+                IF SQLCA.sqlcode=100 THEN
+                   CALL cl_err('','art-273',0)
                    NEXT FIELD ogb13_1
-                END IF                                                                  
-                IF d_ogb[l_ac].ogb13_1<l_rth06 THEN              
-                   CALL cl_err('','art-300',0)                                                                            
-                   NEXT FIELD ogb13_1                                                            
-                END IF                                                                 
-              ELSE                                                                          
+                END IF
+                IF d_ogb[l_ac].ogb13_1<l_rth06 THEN
+                   CALL cl_err('','art-300',0)
+                   NEXT FIELD ogb13_1
+                END IF
+              ELSE
                 IF d_ogb[l_ac].ogb13_1<l_rtg07 THEN
                    CALL cl_err('','art-268',0)
                    NEXT FIELD ogb13_1
@@ -17098,7 +17113,7 @@ DEFINE l_npq07f       LIKE npq_file.npq07f   #CHI-A90012
             END IF                                     #TQC-B20053
         END IF
             # 用計價數量計算
-           IF cl_null(d_ogb[l_ac].ogb916) THEN   
+           IF cl_null(d_ogb[l_ac].ogb916) THEN
                LET d_ogb[l_ac].ogb916=d_ogb[l_ac].ogb05
                LET d_ogb[l_ac].ogb917=d_ogb[l_ac].ogb12
             END IF
@@ -17125,7 +17140,7 @@ DEFINE l_npq07f       LIKE npq_file.npq07f   #CHI-A90012
                   CALL cl_digcut(d_ogb[l_ac].ogb14_1,t_azi04) RETURNING d_ogb[l_ac].ogb14_1      #CHI-7A0036-add   #MOD-930322
                END IF
             END IF  #FUN-C10040 add
-               
+
             DISPLAY BY NAME  d_ogb[l_ac].ogb14t_1,d_ogb[l_ac].ogb14_1   #MOD-880039   #MOD-930322
 
          END IF  #No.TQC-6B0117
@@ -17146,7 +17161,7 @@ DEFINE l_npq07f       LIKE npq_file.npq07f   #CHI-A90012
              INITIALIZE l_rxc.* TO NULL
 #            LET l_rxc.rxc06 = (d_ogb_t.ogb13_1 - d_ogb[l_ac].ogb13_1)*d_ogb[l_ac].ogb12      #CHI-B70039 mark
              LET l_rxc.rxc06 = d_ogb[l_ac].ogb917 * (d_ogb_t.ogb13_1 - d_ogb[l_ac].ogb13_1)   #CHI-B70039
-             #FUN-BC0064----add---str--   
+             #FUN-BC0064----add---str--
              IF cl_null(l_rxc.rxc06) THEN
                 LET l_rxc.rxc06 = 0
              END IF
@@ -17168,8 +17183,8 @@ DEFINE l_npq07f       LIKE npq_file.npq07f   #CHI-A90012
                 LET l_rxc.rxc09 = 0
                 IF NOT cl_null(g_oga.oga87) THEN
                    LET g_cnt = 0
-                   SELECT COUNT(*) INTO g_cnt FROM lpj_file,lpk_file 
-                    WHERE lpj01=lpk01 
+                   SELECT COUNT(*) INTO g_cnt FROM lpj_file,lpk_file
+                    WHERE lpj01=lpk01
                       AND lpj03=g_oga.oga87
                    IF g_cnt > 0 THEN
                       LET l_rxc.rxc11 = 'Y'
@@ -17221,14 +17236,14 @@ DEFINE l_npq07f       LIKE npq_file.npq07f   #CHI-A90012
              AND ogb03=d_ogb[l_ac].ogb03
           END IF #No.FUN-870007
           #IF SQLCA.sqlcode OR SQLCA.sqlerrd[3] = 0 THEN #FUN-BC0064 mark
-          IF SQLCA.sqlcode THEN #FUN-BC0064 add 
+          IF SQLCA.sqlcode THEN #FUN-BC0064 add
              CALL cl_err3("upd","ogb_file",g_oga.oga01,d_ogb[l_ac].ogb03,SQLCA.sqlcode,"","",1)  #No.FUN-670008
              LET g_success = 'N' #FUN-AC0012
           END IF
          #FUN-AC0012 Begin---
          #DELETE FROM rxc_file WHERE rxc00='02' AND rxc01=g_oga.oga01 AND rxc02=d_ogb[l_ac].ogb03
          #IF SQLCA.sqlcode THEN
-         #   CALL cl_err3("del","rxc_file",g_oga.oga01,d_ogb[l_ac].ogb03,SQLCA.sqlcode,"","",1) 
+         #   CALL cl_err3("del","rxc_file",g_oga.oga01,d_ogb[l_ac].ogb03,SQLCA.sqlcode,"","",1)
          #END IF
          #FUN-AC0012 End-----
        #MOD-B10154 Begin---
@@ -17239,10 +17254,10 @@ DEFINE l_npq07f       LIKE npq_file.npq07f   #CHI-A90012
        #                   WHERE oga01 = g_oga.oga01
        #                     AND oga87 = g_oga.oga87
        #     IF SQLCA.sqlcode OR SQLCA.sqlerrd[3] = 0 THEN
-       #        CALL cl_err3("upd","oga_file",g_oga.oga01,"",SQLCA.sqlcode,"","",1) 
+       #        CALL cl_err3("upd","oga_file",g_oga.oga01,"",SQLCA.sqlcode,"","",1)
        #        LET g_success = 'N' #FUN-AC0012
-       #     END IF     
-       #     DISPLAY BY NAME g_oga.oga95 
+       #     END IF
+       #     DISPLAY BY NAME g_oga.oga95
        #  END IF
        ##FUN-A20022 END----------------------------------------------
        #MOD-B10154 End-----
@@ -17352,17 +17367,17 @@ DEFINE l_npq07f       LIKE npq_file.npq07f   #CHI-A90012
    LET g_cnt = 0
    SELECT SUM(ogb12) INTO g_cnt
      FROM ogb_file
-    WHERE ogb01 = g_oga.oga01 
-   DISPLAY g_cnt TO FORMONLY.cn3 
+    WHERE ogb01 = g_oga.oga01
+   DISPLAY g_cnt TO FORMONLY.cn3
    #TQC-C90021 add end ---
    LET g_oga.oga52 = g_oga.oga50 * g_oga.oga161/100
    #No.yinhy131217  --Begin
    IF g_aza.aza26='2' AND g_ooz.ooz33 = 'N' AND g_oga.oga161 >0 THEN
-      LET g_oga.oga53 = g_oga.oga50 
+      LET g_oga.oga53 = g_oga.oga50
    ELSE
    #No.yinhy131217  --End
       LET g_oga.oga53 = g_oga.oga50 * (g_oga.oga162+g_oga.oga163)/100
-   END IF #No.yinhy131217 
+   END IF #No.yinhy131217
    UPDATE oga_file SET oga50=g_oga.oga50,
                        oga51=g_oga.oga51,                      #TQC-BB0018 add
                        oga52=g_oga.oga52,
@@ -17377,7 +17392,7 @@ DEFINE l_npq07f       LIKE npq_file.npq07f   #CHI-A90012
    #-----CHI-A90012---------
    IF g_oga.oga09 = '2' AND g_oga.oga07 = 'Y' THEN
       SELECT SUM(ABS(npq07f)) INTO l_npq07f FROM npq_file
-       WHERE npq01 = g_oga.oga01 
+       WHERE npq01 = g_oga.oga01
          AND npqsys= 'AR' AND npq011 = 1
          AND npqtype= '0'
          AND npq00 = '1'
@@ -17387,7 +17402,7 @@ DEFINE l_npq07f       LIKE npq_file.npq07f   #CHI-A90012
          LET l_chang = 'Y'
       END IF
    END IF
-   IF g_oga.oga09 = '2' AND g_oga.oga07 = 'Y' AND l_chang = 'Y' THEN 
+   IF g_oga.oga09 = '2' AND g_oga.oga07 = 'Y' AND l_chang = 'Y' THEN
       CALL s_t600_gl(g_oga.oga01,'0')
       IF g_aza.aza63 = 'Y' THEN
          CALL s_t600_gl(g_oga.oga01,'1')
@@ -17399,10 +17414,10 @@ DEFINE l_npq07f       LIKE npq_file.npq07f   #CHI-A90012
          CALL cl_err(g_oga.oga02,'aoo-081',1)
          LET g_success='N'
       END IF
-      CALL s_chknpq(g_oga.oga01,'AR',1,'0',l_bookno1)  
+      CALL s_chknpq(g_oga.oga01,'AR',1,'0',l_bookno1)
 
       SELECT SUM(ABS(npq07f)) INTO l_npq07f FROM npq_file
-       WHERE npq01 = g_oga.oga01 
+       WHERE npq01 = g_oga.oga01
          AND npqsys= 'AR' AND npq011 = 1
          AND npqtype= '0'
          AND npq00 = '1'
@@ -17600,7 +17615,7 @@ DEFINE l_oeo       RECORD LIKE oeo_file.*,
         IF SQLCA.sqlcode THEN
            LET l_ogb.ogb930=NULL
         END IF
-        SELECT oeb44,oeb45,oeb46,oeb47 
+        SELECT oeb44,oeb45,oeb46,oeb47
           INTO l_ogb.ogb44,l_ogb.ogb45,l_ogb.ogb46,l_ogb.ogb47
           FROM oeb_file
          WHERE oeb01=l_ogb.ogb31  AND oeb03=l_ogb.ogb32
@@ -17616,11 +17631,11 @@ DEFINE l_oeo       RECORD LIKE oeo_file.*,
         IF cl_null(l_ogb.ogb12) THEN
            LET l_ogb.ogb12 = 0
         END IF
-#FUN-AB0061 -----------add start----------------                             
+#FUN-AB0061 -----------add start----------------
         IF cl_null(l_ogb.ogb37) THEN
            LET l_ogb.ogb37 = 0
-        END IF                                             
-#FUN-AB0061 -----------add end----------------          
+        END IF
+#FUN-AB0061 -----------add end----------------
         IF cl_null(l_ogb.ogb13) THEN
            LET l_ogb.ogb13 = 0
         END IF
@@ -17651,8 +17666,8 @@ DEFINE l_oeo       RECORD LIKE oeo_file.*,
         LET l_ogb.ogb1014 = 'N'  #FUN-6A0007
         LET l_ogb.ogb1005 = '1'  #MOD-840330
 
-        LET l_ogb.ogbplant = g_plant 
-        LET l_ogb.ogblegal = g_legal  
+        LET l_ogb.ogbplant = g_plant
+        LET l_ogb.ogblegal = g_legal
       # IF cl_null(l_ogb.ogb50) THEN LET l_ogb.ogb50 = '1' END IF #FUN-AA0057
 
        #FUN-C30169 add START
@@ -17661,42 +17676,42 @@ DEFINE l_oeo       RECORD LIKE oeo_file.*,
         END IF
        #FUN-C30169 add END
         #FUN-C50097 ADD BEGIN-----TQC-C70206
-        IF cl_null(l_ogb.ogb50) THEN 
+        IF cl_null(l_ogb.ogb50) THEN
            LET l_ogb.ogb50 = 0
-        END IF 
-        IF cl_null(l_ogb.ogb51) THEN 
+        END IF
+        IF cl_null(l_ogb.ogb51) THEN
            LET l_ogb.ogb51 = 0
-        END IF 
-        IF cl_null(l_ogb.ogb52) THEN 
+        END IF
+        IF cl_null(l_ogb.ogb52) THEN
            LET l_ogb.ogb52 = 0
         END IF
-        IF cl_null(l_ogb.ogb53) THEN 
+        IF cl_null(l_ogb.ogb53) THEN
           LET l_ogb.ogb53 = 0
-        END IF 
-        IF cl_null(l_ogb.ogb54) THEN 
+        END IF
+        IF cl_null(l_ogb.ogb54) THEN
           LET l_ogb.ogb54 = 0
-        END IF 
-        IF cl_null(l_ogb.ogb55) THEN 
+        END IF
+        IF cl_null(l_ogb.ogb55) THEN
           LET l_ogb.ogb55 = 0
-        END IF                                              
+        END IF
         #FUN-C50097 ADD END-------
         IF cl_null(l_ogb.ogb31) THEN LET l_ogb.ogb32 = ''  END IF     #TQC-C60131 add
         #FUN-CB0087--add--str--
         IF g_aza.aza115 = 'Y' AND g_argv0 MATCHES '[2456A]' THEN
            CALL s_reason_code(l_ogb.ogb01,l_ogb.ogb31,'',l_ogb.ogb04,l_ogb.ogb09,g_oga.oga14,g_oga.oga15) RETURNING l_ogb.ogb1001
-        END IF 
+        END IF
         IF g_aza.aza115 = 'Y' AND g_argv0 MATCHES '[89]' AND l_ogb.ogb52<>0 THEN
            CALL s_reason_code(l_ogb.ogb01,l_ogb.ogb31,'',l_ogb.ogb04,l_ogb.ogb09,g_oga.oga14,g_oga.oga15) RETURNING l_ogb.ogb65
-        END IF 
+        END IF
         #FUN-CB0087--add--end--
-        
+
         INSERT INTO ogb_file VALUES(l_ogb.*)
         CALL t620_ins_ogi(l_ogb.ogb03,l_ogb.ogb04,l_ogb.ogb917,l_ogb.ogb13)   #FUN-C10040 add
     END FOREACH
 END FUNCTION
 
-#FUNCTION t600_chk_ima262(p_ogb) #MOD-4A0232   #MOD-850309 #FUN-A20044  
-FUNCTION t600_chk_avl_stk(p_ogb) #FUN-A20044  
+#FUNCTION t600_chk_ima262(p_ogb) #MOD-4A0232   #MOD-850309 #FUN-A20044
+FUNCTION t600_chk_avl_stk(p_ogb) #FUN-A20044
   DEFINE l_oeb19   LIKE oeb_file.oeb19
 #  DEFINE l_ima262  LIKE ima_file.ima262 #FUN-A20044
   DEFINE l_avl_stk,l_avl_stk_mpsmrp,l_unavl_stk  LIKE type_file.num15_3 #FUN-A20044
@@ -17719,7 +17734,7 @@ FUNCTION t600_chk_avl_stk(p_ogb) #FUN-A20044
        END IF
 
       #IF l_oeb19 = 'N' THEN        #MOD-B50227 mark
-       IF NOT cl_null(l_oeb19) THEN #MOD-B50227 
+       IF NOT cl_null(l_oeb19) THEN #MOD-B50227
 #          SELECT ima262
  #           INTO l_ima262
   #          FROM ima_file
@@ -17728,7 +17743,7 @@ FUNCTION t600_chk_avl_stk(p_ogb) #FUN-A20044
     #          LET l_ima262 = 0
     #      END IF                            #FUN-A20044
           IF g_prog <> 'axmt628' THEN  #MOD-C20170 add
-             CALL s_getstock(p_ogb.ogb04,g_plant)RETURNING l_avl_stk_mpsmrp,l_unavl_stk,l_avl_stk #FUN-A20044  
+             CALL s_getstock(p_ogb.ogb04,g_plant)RETURNING l_avl_stk_mpsmrp,l_unavl_stk,l_avl_stk #FUN-A20044
          #MOD-C20170 add begin---------------------------
           ELSE
              LET g_sql = "SELECT SUM(img10*img21) ",
@@ -17754,12 +17769,12 @@ FUNCTION t600_chk_avl_stk(p_ogb) #FUN-A20044
           ELSE
              SELECT SUM(oeb905*oeb05_fac)
                INTO l_oeb12
-               FROM oeb_file,oea_file 
+               FROM oeb_file,oea_file
               WHERE oeb04=p_ogb.ogb04
                 AND oeb19= 'Y'
-                AND oeb70= 'N' 
+                AND oeb70= 'N'
                 AND oea01 = oeb01 AND oeaconf !='X'
-                AND oeb01 != p_ogb.ogb31 
+                AND oeb01 != p_ogb.ogb31
           END IF
           #MOD-B50227 add --end--
           IF l_oeb12 IS NULL THEN
@@ -17957,8 +17972,8 @@ FUNCTION t600_check_inventory_qty()
                            g_ogb[l_ac].ogb911,g_ogb[l_ac].ogb912)
          RETURNING l_tot
 
-    CALL s_umfchk(g_ogb[l_ac].ogb04,l_img09,g_ogb[l_ac].ogb05)   #MOD-A70059 
-         RETURNING g_cnt,l_fac   #MOD-A70059 
+    CALL s_umfchk(g_ogb[l_ac].ogb04,l_img09,g_ogb[l_ac].ogb05)   #MOD-A70059
+         RETURNING g_cnt,l_fac   #MOD-A70059
     IF cl_null(l_fac) THEN LET l_fac = 1 END IF
     IF l_img10*l_fac < l_tot THEN
        LET l_flag = '0'
@@ -18071,13 +18086,13 @@ FUNCTION t600_set_ogb917()
     #-----MOD-A70140---------
     #CALL s_umfchk(g_ogb[l_ac].ogb04,l_ima31,g_ogb[l_ac].ogb916)
     #    RETURNING g_cnt,l_factor
-    IF g_sma.sma115 = 'Y' THEN 
+    IF g_sma.sma115 = 'Y' THEN
        CALL s_umfchk(g_ogb[l_ac].ogb04,g_ogb[l_ac].ogb05,g_ogb[l_ac].ogb916)
            RETURNING g_cnt,l_factor
     ELSE
        CALL s_umfchk(g_ogb[l_ac].ogb04,l_ima31,g_ogb[l_ac].ogb916)
            RETURNING g_cnt,l_factor
-    END IF 
+    END IF
     #-----END MOD-A70140-----
     IF g_cnt = 1 THEN
        LET l_factor = 1
@@ -18245,15 +18260,15 @@ FUNCTION t600_b_ogg_1()   # 庫存異動明細(ogg_file)輸入
    END IF
 #FUN-C50097 ADD BEGIN TQC-C70206
    CALL cl_set_comp_visible("ogg13",FALSE)
-   IF g_oga.oga09 ='8' AND g_aza.aza26 ='2' AND g_oaz.oaz94 ='Y' THEN 
+   IF g_oga.oga09 ='8' AND g_aza.aza26 ='2' AND g_oaz.oaz94 ='Y' THEN
       CALL cl_set_comp_visible("ogg13",TRUE)
-   END IF    
+   END IF
 #FUN-C50097 ADD END
    DECLARE t6006_ogg_c_1 CURSOR FOR
    #SELECT ogg20,ogg12,ogg09,ogg091,ogg092,ogg10,0,ogg15,ogg15_fac,ogg16,ogg18     #FUN-8A0030 Add ''   #No:FUN-8B0021 #MOD-940275 move ogg20   #CHI-9C0024 move ogg12
     SELECT ogg20,ogg09,ogg091,ogg092,ogg12,ogg13,ogg10,0,ogg15,ogg15_fac,ogg16,ogg18     #FUN-8A0030 Add ''   #No:FUN-8B0021 #MOD-940275 move ogg20   #CHI-9C0024 move ogg12
       FROM ogg_file #FUN-C50097 ADD ogg13 ogg13,
-     WHERE ogg01 = g_oga.oga01 AND ogg03 = g_ogb[l_ac].ogb03 
+     WHERE ogg01 = g_oga.oga01 AND ogg03 = g_ogb[l_ac].ogb03
      ORDER BY ogg20    #MOD-940275 add
 
    CALL l_ogg.clear()
@@ -18311,25 +18326,25 @@ FUNCTION t600_b_ogg_1()   # 庫存異動明細(ogg_file)輸入
    DISPLAY g_ogb[l_ac].ogb915 TO ogb12t_2   #No:MOD-590206
 
    CALL cl_set_act_visible("cancel", FALSE)
-   LET i=ARR_CURR()                         #No:FUN-8A0030   
+   LET i=ARR_CURR()                         #No:FUN-8A0030
    IF g_action_choice="qry_mntn_inv_detail" THEN
       DISPLAY ARRAY l_ogg TO s_ogg.* ATTRIBUTE(COUNT=g_rec_b1,UNBUFFERED)       #No.FUN-640123
 
-      BEFORE ROW 
+      BEFORE ROW
         LET i=ARR_CURR()
       ON IDLE g_idle_seconds
          CALL cl_on_idle()
          CONTINUE DISPLAY
 
-      ON ACTION about         
-         CALL cl_about()      
+      ON ACTION about
+         CALL cl_about()
 
-      ON ACTION help          
-         CALL cl_show_help()  
+      ON ACTION help
+         CALL cl_show_help()
 
-      ON ACTION controlg      
+      ON ACTION controlg
          CALL cl_cmdask()
-         
+
       ON ACTION qry_lot
          LET g_ima918 = ''   #MOD-9C0055
          LET g_ima921 = ''   #MOD-9C0055
@@ -18338,12 +18353,12 @@ FUNCTION t600_b_ogg_1()   # 庫存異動明細(ogg_file)輸入
            FROM ima_file
           WHERE ima01 = g_ogb[l_ac].ogb04
             AND imaacti = "Y"
-         
+
          IF g_ima918 = "Y" OR g_ima921 = "Y" THEN
            #IF g_argv0='2' OR g_argv0='4' OR g_argv0='6' OR ((g_argv0 ='1' OR g_argv0='5') AND g_oaz.oaz81 = 'Y') THEN   #MOD-940294 add #CHI-AC0034 mark
             #IF g_argv0='2' OR g_argv0='4' OR g_argv0='6' OR g_argv0='8' OR g_argv0='9' OR ((g_argv0 ='1' OR g_argv0='5') AND g_oaz.oaz81 = 'Y') THEN   #MOD-940294 add #CHI-AC0034 add '8','9'   #MOD-AC0060
             IF g_argv0='2' OR g_argv0='4' OR g_argv0='6' OR g_argv0='8' OR g_argv0='9' OR g_argv0='A' OR ((g_argv0 ='1' OR g_argv0='5') AND g_oaz.oaz81 = 'Y') THEN   #MOD-940294 add #CHI-AC0034 add '8','9'   #MOD-AC0060 add 'A'
-               IF g_ima906 = '3' AND l_ogg[i].ogg20 = '2' THEN #MOD-BC0207 add 
+               IF g_ima906 = '3' AND l_ogg[i].ogg20 = '2' THEN #MOD-BC0207 add
                ELSE #MOD-BC0207 add
                  #CALL s_lotout(g_prog,g_oga.oga01,g_ogb[l_ac].ogb03,l_ogg[i].ogg18,   #No:FUN-8B0021   #TQC-B90236
                   CALL s_mod_lot(g_prog,g_oga.oga01,g_ogb[l_ac].ogb03,l_ogg[i].ogg18,   #No:FUN-8B0021   #TQC-B90236
@@ -18359,7 +18374,7 @@ FUNCTION t600_b_ogg_1()   # 庫存異動明細(ogg_file)輸入
                END IF #MOD-BC0207 add
             END IF
          END IF
-      END DISPLAY 
+      END DISPLAY
 
    END IF
    CLOSE WINDOW t6006_w
@@ -18413,11 +18428,11 @@ FUNCTION t600_b_ogg()   # 庫存異動明細(ogg_file)輸入
   DEFINE l_flag           LIKE type_file.chr1        #FUN910088--add--
   DEFINE l_ogg13_t1       LIKE ogg_file.ogg12         #FUN-C50097 ADD
   DEFINE l_ogg13_t2       LIKE ogg_file.ogg12         #FUN-C50097 ADD
-      
+
    LET l_oea00 = ''   #FUN-9C0103
    LET l_oea11 = ''   #FUN-9C0103
    LET l_oea12 = ''   #FUN-9C0103
-   LET l_oga16 = ''   #FUN-9C0103  
+   LET l_oga16 = ''   #FUN-9C0103
    IF g_ogb[l_ac].ogb17 IS NULL THEN RETURN END IF
    IF g_ogb[l_ac].ogb17 = 'N' THEN RETURN END IF
 
@@ -18450,11 +18465,11 @@ FUNCTION t600_b_ogg()   # 庫存異動明細(ogg_file)輸入
          LET l_ogg18 = l_ogg18 + 1    #No:FUN-8B0021
          LET r_ogg.ogg18 = l_ogg18    #No:FUN-8B0021
 
-         LET r_ogg.oggplant = g_plant 
-         LET r_ogg.ogglegal = g_legal 
-         IF cl_null(r_ogg.ogg13) THEN 
+         LET r_ogg.oggplant = g_plant
+         LET r_ogg.ogglegal = g_legal
+         IF cl_null(r_ogg.ogg13) THEN
             LET r_ogg.ogg13 = 0  #FUN-C50097 ADD
-         END IF    
+         END IF
 
          INSERT INTO ogg_file VALUES (r_ogg.*)
       END IF
@@ -18469,11 +18484,11 @@ FUNCTION t600_b_ogg()   # 庫存異動明細(ogg_file)輸入
             LET l_ogg18 = l_ogg18 + 1    #No:FUN-8B0021
             LET r_ogg.ogg18 = l_ogg18    #No:FUN-8B0021
 
-            LET r_ogg.oggplant = g_plant 
-            LET r_ogg.ogglegal = g_legal  
-            IF cl_null(r_ogg.ogg13) THEN 
+            LET r_ogg.oggplant = g_plant
+            LET r_ogg.ogglegal = g_legal
+            IF cl_null(r_ogg.ogg13) THEN
                LET r_ogg.ogg13 = 0  #FUN-C50097 ADD
-            END IF 
+            END IF
             INSERT INTO ogg_file VALUES (r_ogg.*)
          END IF
          IF NOT cl_null(g_ogb[l_ac].ogb913) THEN
@@ -18486,11 +18501,11 @@ FUNCTION t600_b_ogg()   # 庫存異動明細(ogg_file)輸入
             LET l_ogg18 = l_ogg18 + 1    #No:FUN-8B0021
             LET r_ogg.ogg18 = l_ogg18    #No:FUN-8B0021
 
-            LET r_ogg.oggplant = g_plant 
-            LET r_ogg.ogglegal = g_legal  
-            IF cl_null(r_ogg.ogg13) THEN 
+            LET r_ogg.oggplant = g_plant
+            LET r_ogg.ogglegal = g_legal
+            IF cl_null(r_ogg.ogg13) THEN
                LET r_ogg.ogg13 = 0  #FUN-C50097 ADD
-            END IF 
+            END IF
             INSERT INTO ogg_file VALUES (r_ogg.*)
          END IF
       END IF
@@ -18511,11 +18526,11 @@ FUNCTION t600_b_ogg()   # 庫存異動明細(ogg_file)輸入
          LET l_ogg18 = l_ogg18 + 1    #No:FUN-8B0021
          LET r_ogg.ogg18 = l_ogg18    #No:FUN-8B0021
 
-         LET r_ogg.oggplant = g_plant 
-         LET r_ogg.ogglegal = g_legal  
-         IF cl_null(r_ogg.ogg13) THEN 
+         LET r_ogg.oggplant = g_plant
+         LET r_ogg.ogglegal = g_legal
+         IF cl_null(r_ogg.ogg13) THEN
                LET r_ogg.ogg13 = 0  #FUN-C50097 ADD
-         END IF 
+         END IF
          INSERT INTO ogg_file VALUES (r_ogg.*)
          LET r_ogg.ogg10=g_ogb[l_ac].ogb913
          LET r_ogg.ogg12=g_ogb[l_ac].ogb915
@@ -18526,11 +18541,11 @@ FUNCTION t600_b_ogg()   # 庫存異動明細(ogg_file)輸入
          LET l_ogg18 = l_ogg18 + 1    #No:FUN-8B0021
          LET r_ogg.ogg18 = l_ogg18    #No:FUN-8B0021
 
-         LET r_ogg.oggplant = g_plant 
-         LET r_ogg.ogglegal = g_legal  
-         IF cl_null(r_ogg.ogg13) THEN 
+         LET r_ogg.oggplant = g_plant
+         LET r_ogg.ogglegal = g_legal
+         IF cl_null(r_ogg.ogg13) THEN
                LET r_ogg.ogg13 = 0  #FUN-C50097 ADD
-         END IF 
+         END IF
          INSERT INTO ogg_file VALUES (r_ogg.*)
       END IF
    END IF
@@ -18539,7 +18554,7 @@ FUNCTION t600_b_ogg()   # 庫存異動明細(ogg_file)輸入
       IF l_ima906 = '1' THEN
          DECLARE t6006_c2_1 CURSOR FOR
           SELECT '','',img02,img03,img04,'',0,img09,0,0 FROM img_file
-           WHERE img01 = g_ogb[l_ac].ogb04    #CHI-840009 mark AND img04 = g_ogb[l_ac].ogb092     
+           WHERE img01 = g_ogb[l_ac].ogb04    #CHI-840009 mark AND img04 = g_ogb[l_ac].ogb092
              AND img10 > 0 AND (img18 > g_oga.oga02 OR img18 IS NULL)
 
          FOREACH t6006_c2_1 INTO r_ogg.*
@@ -18556,11 +18571,11 @@ FUNCTION t600_b_ogg()   # 庫存異動明細(ogg_file)輸入
                  RETURNING g_cnt,r_ogg.ogg15_fac
             IF g_cnt=1 THEN LET r_ogg.ogg15_fac=1 END IF
 
-            LET r_ogg.oggplant = g_plant 
-            LET r_ogg.ogglegal = g_legal  
-            IF cl_null(r_ogg.ogg13) THEN 
+            LET r_ogg.oggplant = g_plant
+            LET r_ogg.ogglegal = g_legal
+            IF cl_null(r_ogg.ogg13) THEN
                LET r_ogg.ogg13 = 0  #FUN-C50097 ADD
-            END IF 
+            END IF
             INSERT INTO ogg_file VALUES (r_ogg.*)
          END FOREACH
       END IF
@@ -18580,11 +18595,11 @@ FUNCTION t600_b_ogg()   # 庫存異動明細(ogg_file)輸入
             LET l_ogg18 = l_ogg18 + 1    #No:FUN-8B0021
             LET r_ogg.ogg18 = l_ogg18    #No:FUN-8B0021
 
-            LET r_ogg.oggplant = g_plant 
-            LET r_ogg.ogglegal = g_legal  
-            IF cl_null(r_ogg.ogg13) THEN 
+            LET r_ogg.oggplant = g_plant
+            LET r_ogg.ogglegal = g_legal
+            IF cl_null(r_ogg.ogg13) THEN
                LET r_ogg.ogg13 = 0  #FUN-C50097 ADD
-            END IF 
+            END IF
             INSERT INTO ogg_file VALUES (r_ogg.*)
          END FOREACH
          DECLARE t6006_c2_2_2 CURSOR FOR
@@ -18602,11 +18617,11 @@ FUNCTION t600_b_ogg()   # 庫存異動明細(ogg_file)輸入
             LET l_ogg18 = l_ogg18 + 1    #No:FUN-8B0021
             LET r_ogg.ogg18 = l_ogg18    #No:FUN-8B0021
 
-            LET r_ogg.oggplant = g_plant 
-            LET r_ogg.ogglegal = g_legal  
-            IF cl_null(r_ogg.ogg13) THEN 
+            LET r_ogg.oggplant = g_plant
+            LET r_ogg.ogglegal = g_legal
+            IF cl_null(r_ogg.ogg13) THEN
                LET r_ogg.ogg13 = 0  #FUN-C50097 ADD
-            END IF 
+            END IF
             INSERT INTO ogg_file VALUES (r_ogg.*)
          END FOREACH
       END IF
@@ -18629,11 +18644,11 @@ FUNCTION t600_b_ogg()   # 庫存異動明細(ogg_file)輸入
             LET l_ogg18 = l_ogg18 + 1    #No:FUN-8B0021
             LET r_ogg.ogg18 = l_ogg18    #No:FUN-8B0021
 
-            LET r_ogg.oggplant = g_plant 
-            LET r_ogg.ogglegal = g_legal  
-            IF cl_null(r_ogg.ogg13) THEN 
+            LET r_ogg.oggplant = g_plant
+            LET r_ogg.ogglegal = g_legal
+            IF cl_null(r_ogg.ogg13) THEN
                LET r_ogg.ogg13 = 0  #FUN-C50097 ADD
-            END IF 
+            END IF
             INSERT INTO ogg_file VALUES (r_ogg.*)
          END FOREACH
          DECLARE t6006_c2_3_2 CURSOR FOR
@@ -18651,11 +18666,11 @@ FUNCTION t600_b_ogg()   # 庫存異動明細(ogg_file)輸入
             LET l_ogg18 = l_ogg18 + 1    #No:FUN-8B0021
             LET r_ogg.ogg18 = l_ogg18    #No:FUN-8B0021
 
-            LET r_ogg.oggplant = g_plant 
-            LET r_ogg.ogglegal = g_legal  
-            IF cl_null(r_ogg.ogg13) THEN 
+            LET r_ogg.oggplant = g_plant
+            LET r_ogg.ogglegal = g_legal
+            IF cl_null(r_ogg.ogg13) THEN
                LET r_ogg.ogg13 = 0  #FUN-C50097 ADD
-            END IF 
+            END IF
             INSERT INTO ogg_file VALUES (r_ogg.*)
          END FOREACH
       END IF
@@ -18682,15 +18697,15 @@ FUNCTION t600_b_ogg()   # 庫存異動明細(ogg_file)輸入
    END IF
 #FUN-C50097 ADD BEGIN TQC-C70206
    CALL cl_set_comp_visible("ogg13",FALSE)
-   IF g_oga.oga09 ='8' AND g_aza.aza26 ='2' AND g_oaz.oaz94 ='Y' THEN 
+   IF g_oga.oga09 ='8' AND g_aza.aza26 ='2' AND g_oaz.oaz94 ='Y' THEN
       CALL cl_set_comp_visible("ogg13",TRUE)
-   END IF    
+   END IF
 #FUN-C50097 ADD END
    DECLARE t6006_ogg_c CURSOR FOR
    #SELECT ogg20,ogg12,ogg09,ogg091,ogg092,ogg10,0,ogg15,ogg15_fac,ogg16,ogg18   #No:FUN-8B0021   #FUN-8A0030 Add '' #MOD-940275 move ogg20   #CHI-9C0024 move ogg12
     SELECT ogg20,ogg09,ogg091,ogg092,ogg12,ogg13,ogg10,0,ogg15,ogg15_fac,ogg16,ogg18   #No:FUN-8B0021   #FUN-8A0030 Add '' #MOD-940275 move ogg20   #CHI-9C0024 move ogg12
       FROM ogg_file   #FUN-C50097 ADD ogg13 ogg13,
-     WHERE ogg01 = g_oga.oga01 AND ogg03 = g_ogb[l_ac].ogb03     
+     WHERE ogg01 = g_oga.oga01 AND ogg03 = g_ogb[l_ac].ogb03
      ORDER BY ogg20      #MOD-940275 add
 
    CALL l_ogg.clear()
@@ -18757,7 +18772,7 @@ FUNCTION t600_b_ogg()   # 庫存異動明細(ogg_file)輸入
      BEFORE ROW
         LET i=ARR_CURR()
         LET l_pmd = ''
-        IF l_i < i THEN       
+        IF l_i < i THEN
            LET l_ogg[i].ogg20 = '1'
            LET l_ogg[i].ogg10 = g_ogb[l_ac].ogb910
            LET l_pmd = 'a'
@@ -18766,7 +18781,7 @@ FUNCTION t600_b_ogg()   # 庫存異動明細(ogg_file)輸入
         ELSE
            IF cl_null(l_ogg[i].ogg18) OR l_ogg[i].ogg18 = 0 THEN   #No:FUN-8B0021
               SELECT MAX(ogg18)+1 INTO l_ogg[i].ogg18   #No:FUN-8B0021
-                FROM ogg_file 
+                FROM ogg_file
                WHERE ogg01 = g_oga.oga01
                  AND ogg03 = g_ogb[l_ac].ogb03
            END IF
@@ -18780,39 +18795,39 @@ FUNCTION t600_b_ogg()   # 庫存異動明細(ogg_file)輸入
               LET l_ogg[i].ogg092= g_ogb[l_ac].ogb092
            END IF
            NEXT FIELD ogg12
-        END IF               #MOD-940275 add 
+        END IF               #MOD-940275 add
 
-     #FUN-B40081 --START--   
-     BEFORE DELETE 
+     #FUN-B40081 --START--
+     BEFORE DELETE
      #FUN-B40081 --END--
-     
+
      AFTER FIELD ogg09
            #No.FUN-AA0048  --Begin
-           #LET l_cnt =0                                                                                                            
-           #SELECT COUNT(*) INTO l_cnt FROM imd_file                                                                                
-           # WHERE imd01=l_ogg[i].ogg09                                                                                          
-           #   AND imd20=g_plant                                                                                            
-           #IF l_cnt=0 THEN                                                                                                         
-           #   CALL cl_err(l_ogg[i].ogg09,'art-487',0)                                                                           
-           #   NEXT FIELD ogg09                                                                                                      
-           #END IF                 
+           #LET l_cnt =0
+           #SELECT COUNT(*) INTO l_cnt FROM imd_file
+           # WHERE imd01=l_ogg[i].ogg09
+           #   AND imd20=g_plant
+           #IF l_cnt=0 THEN
+           #   CALL cl_err(l_ogg[i].ogg09,'art-487',0)
+           #   NEXT FIELD ogg09
+           #END IF
            IF NOT s_chk_ware(l_ogg[i].ogg09) THEN
-              NEXT FIELD ogg09 
+              NEXT FIELD ogg09
            END IF
-           #No.FUN-AA0048  --End 
+           #No.FUN-AA0048  --End
            #MOD-D40026 add begin
            IF l_ogg[i].ogg09 = g_oaz.oaz74 OR l_ogg[i].ogg09 = g_oaz.oaz75
-              OR l_ogg[i].ogg09 = g_oaz.oaz95 THEN 
+              OR l_ogg[i].ogg09 = g_oaz.oaz95 THEN
               CALL cl_err(l_ogg[i].ogg09,'axm-815',1)
               NEXT FIELD ogg09
-           END IF     
-           #MOD-D40026 add end 
+           END IF
+           #MOD-D40026 add end
 
       ON ACTION controlp
          CASE
             WHEN INFIELD(ogg09)
-            IF g_azw.azw04='2' THEN 
-               CALL q_img42(FALSE,FALSE,g_ogb[l_ac].ogb04,'','','','A','1',g_oga.ogaplant)                                     
+            IF g_azw.azw04='2' THEN
+               CALL q_img42(FALSE,FALSE,g_ogb[l_ac].ogb04,'','','','A','1',g_oga.ogaplant)
                   RETURNING l_ogg[i].ogg09,l_ogg[i].ogg091,l_ogg[i].ogg092
             ELSE
                #FUN-C30300---begin
@@ -18833,16 +18848,16 @@ FUNCTION t600_b_ogg()   # 庫存異動明細(ogg_file)輸入
                 NEXT FIELD ogg09
          END CASE
 
-     AFTER INSERT 
+     AFTER INSERT
        IF INT_FLAG THEN
           CALL cl_err('',9001,0)
           LET INT_FLAG = 0
           CANCEL INSERT
        END IF
-       LET l_i = l_i + 1 
+       LET l_i = l_i + 1
 
      AFTER FIELD ogg20
-        IF l_pmd = 'a' THEN 
+        IF l_pmd = 'a' THEN
            IF l_ogg[i].ogg20 = '2' THEN
               LET l_ogg[i].ogg10 = g_ogb[l_ac].ogb913
            ELSE
@@ -18860,7 +18875,7 @@ FUNCTION t600_b_ogg()   # 庫存異動明細(ogg_file)輸入
         END IF
 
 
-      AFTER FIELD ogg12         
+      AFTER FIELD ogg12
    #FUN-910088--add--start--
       CALL t600_ogg12_check(l_ogg[i].*,i,j) RETURNING l_flag,l_bno
       IF NOT l_flag THEN NEXT FIELD ogg092 END IF
@@ -18883,15 +18898,15 @@ FUNCTION t600_b_ogg()   # 庫存異動明細(ogg_file)輸入
 #                 AND img02 = l_ogg[i].ogg09
 #                 AND img03 = l_ogg[i].ogg091
 #                 AND img04 = l_ogg[i].ogg092
-#              
+#
 #              DISPLAY l_ogg[i].ogg15 TO s_ogg[j].ogg15
 
-#              IF NOT cl_null(l_ogg[i].ogg15) THEN 
+#              IF NOT cl_null(l_ogg[i].ogg15) THEN
 #                 CALL s_umfchk(g_ogb[l_ac].ogb04,l_ogg[i].ogg10,l_ogg[i].ogg15)   #No:FUN-8B0021
 #                     RETURNING g_cnt,l_ogg[i].ogg15_fac
 #                 IF g_cnt=1 THEN
 #                    CALL cl_err('','mfg3075',1)
-#                    NEXT FIELD ogg092 
+#                    NEXT FIELD ogg092
 #                 END IF
 #              END IF
 
@@ -18914,7 +18929,7 @@ FUNCTION t600_b_ogg()   # 庫存異動明細(ogg_file)輸入
 #                 ELSE
 #                 #FUN-9C0103 ---end---
 #                    LET l_bno = g_ogb[l_ac].ogb31
-#                 END IF 
+#                 END IF
 #              ELSE
 #                 LET l_bno = g_ogb[l_ac].ogb41
 #              END IF
@@ -18933,18 +18948,18 @@ FUNCTION t600_b_ogg()   # 庫存異動明細(ogg_file)輸入
 #        END IF
 #FUN-910088--mark--end--
 #FUN-C50097 ADD BEGIN
-     AFTER FIELD ogg13  
+     AFTER FIELD ogg13
         IF g_oga.oga09 ='8' and g_oaz.oaz94='Y' THEN
-           IF l_ogg[i].ogg20 = '1' AND l_ogg[i].ogg13 > g_ogb[l_ac].ogb53 THEN 
+           IF l_ogg[i].ogg20 = '1' AND l_ogg[i].ogg13 > g_ogb[l_ac].ogb53 THEN
               CALL cl_err('ogg13','axm-707',1)
               NEXT FIELD ogg13
-           END IF 
-           IF l_ogg[i].ogg20 = '2' AND l_ogg[i].ogg13 > g_ogb[l_ac].ogb54 THEN 
-              CALL cl_err('ogg13','axm-708',1) 
+           END IF
+           IF l_ogg[i].ogg20 = '2' AND l_ogg[i].ogg13 > g_ogb[l_ac].ogb54 THEN
+              CALL cl_err('ogg13','axm-708',1)
               NEXT FIELD ogg13
            END IF
-        END IF    
-#FUN-C50097 ADD END        
+        END IF
+#FUN-C50097 ADD END
      AFTER ROW
         IF INT_FLAG THEN                 #900423
            LET g_can_flag = 'N' #CHI-D30032 add
@@ -18952,7 +18967,7 @@ FUNCTION t600_b_ogg()   # 庫存異動明細(ogg_file)輸入
            LET INT_FLAG = 0
            EXIT INPUT
         END IF
-        IF (l_ogg[i].ogg12 IS NOT NULL AND l_ogg[i].ogg12 != 0) OR 
+        IF (l_ogg[i].ogg12 IS NOT NULL AND l_ogg[i].ogg12 != 0) OR
             (l_ogg[i].ogg13 IS NOT NULL AND l_ogg[i].ogg13 != 0) THEN #FUN-C50097 ADD ogg13 120809
            IF l_ogg[i].ogg09 IS NULL THEN LET l_ogg[i].ogg09 = ' ' END IF
            IF l_ogg[i].ogg091 IS NULL THEN LET l_ogg[i].ogg091 = ' ' END IF
@@ -18969,14 +18984,14 @@ FUNCTION t600_b_ogg()   # 庫存異動明細(ogg_file)輸入
               END IF
               CALL s_umfchk(g_ogb[l_ac].ogb04,l_ogg[i].ogg10,l_ogg[i].ogg15)
                             RETURNING g_cnt,l_ogg[i].ogg15_fac
-              IF g_cnt=1 THEN 
-                 CALL cl_err('','mfg3075',1) 
+              IF g_cnt=1 THEN
+                 CALL cl_err('','mfg3075',1)
                 #TQC-C50131 -- add -- begin
                  CALL cl_getmsg('asf-176',g_lang) RETURNING l_msg3
                  LET l_msg3 = l_msg3 CLIPPED,"(",g_ogb[l_ac].ogb04,")"
                  CALL cl_msgany(10,20,l_msg3)
                 #TQC-C50131 -- add -- end
-                 NEXT FIELD ogg092 
+                 NEXT FIELD ogg092
               END IF
               IF cl_null(l_ogg[i].ogg15_fac) THEN LET l_ogg[i].ogg15_fac=1 END IF
            END IF
@@ -19006,14 +19021,14 @@ FUNCTION t600_b_ogg()   # 庫存異動明細(ogg_file)輸入
                  END IF
                  CALL s_umfchk(g_ogb[l_ac].ogb04,l_ogg[i].ogg10,l_ogg[i].ogg15)
                                RETURNING g_cnt,l_ogg[i].ogg15_fac
-                 IF g_cnt=1 THEN 
-                    CALL cl_err('','mfg3075',1) 
+                 IF g_cnt=1 THEN
+                    CALL cl_err('','mfg3075',1)
                    #TQC-C50131 -- add -- begin
                     CALL cl_getmsg('asf-176',g_lang) RETURNING l_msg3
                     LET l_msg3 = l_msg3 CLIPPED,"(",g_ogb[l_ac].ogb04,")"
                     CALL cl_msgany(10,20,l_msg3)
                    #TQC-C50131 -- add -- end
-                    NEXT FIELD ogg092 
+                    NEXT FIELD ogg092
                  END IF
                  IF cl_null(l_ogg[i].ogg15_fac) THEN LET l_ogg[i].ogg15_fac=1 END IF
               END IF
@@ -19055,7 +19070,7 @@ FUNCTION t600_b_ogg()   # 庫存異動明細(ogg_file)輸入
            END IF
         END IF
 
-        IF (l_ogg[i].ogg12 IS NOT NULL AND l_ogg[i].ogg12 <> 0) OR  
+        IF (l_ogg[i].ogg12 IS NOT NULL AND l_ogg[i].ogg12 <> 0) OR
            (l_ogg[i].ogg13 IS NOT NULL AND l_ogg[i].ogg13 != 0) THEN #FUN-C50097 ADD ogg13 120809
            FOR k = 1 TO l_ogg.getLength()
               IF k=i THEN CONTINUE FOR END IF
@@ -19089,7 +19104,7 @@ FUNCTION t600_b_ogg()   # 庫存異動明細(ogg_file)輸入
         LET l_ogg13_t1 = 0   #FUN-C50097 ADD
         LET l_ogg13_t2 = 0   #FUN-C50097 ADD
         FOR k = 1 TO l_ogg.getLength()
-           IF (l_ogg[k].ogg12 IS NOT NULL AND l_ogg[k].ogg12 <> 0) OR 
+           IF (l_ogg[k].ogg12 IS NOT NULL AND l_ogg[k].ogg12 <> 0) OR
                (l_ogg[k].ogg13 IS NOT NULL AND l_ogg[k].ogg13 <> 0) THEN  #FUN-C50097 add ogg13 120809
               IF l_ogg[k].ogg20 = '1' THEN
                  LET l_ogg12_t1 = l_ogg12_t1 + l_ogg[k].ogg12
@@ -19119,8 +19134,8 @@ FUNCTION t600_b_ogg()   # 庫存異動明細(ogg_file)輸入
           #CHI-D30032 add end   -----
               IF cl_confirm('axm-170') THEN
                 #CHI-D30032 add start -----
-                 LET g_ogb[l_ac].ogb912 = l_ogg12_t1 
-                 LET g_ogb[l_ac].ogb915 = l_ogg12_t2 
+                 LET g_ogb[l_ac].ogb912 = l_ogg12_t1
+                 LET g_ogb[l_ac].ogb915 = l_ogg12_t2
                  DISPLAY BY NAME g_ogb[l_ac].ogb912
                  DISPLAY BY NAME g_ogb[l_ac].ogb915
                  #CHI-D30032 add start -----
@@ -19142,7 +19157,7 @@ FUNCTION t600_b_ogg()   # 庫存異動明細(ogg_file)輸入
            END IF #CHI-D30032 add
         END IF
 #FUN-C50097 ADD BEGIN---
-        IF g_oga.oga09 ='8' and g_oaz.oaz94='Y' THEN 
+        IF g_oga.oga09 ='8' and g_oaz.oaz94='Y' THEN
            IF l_ogg13_t1 != g_ogb[l_ac].ogb53 OR l_ogg13_t2 != g_ogb[l_ac].ogb54 THEN
              #CHI-D30032 add start -----
               IF g_oga.ogaconf ='Y' THEN
@@ -19152,8 +19167,8 @@ FUNCTION t600_b_ogg()   # 庫存異動明細(ogg_file)輸入
              #CHI-D30032 add end   -----
                  IF cl_confirm('axm-170') THEN
                 #CHI-D30032 add start -----
-                 LET g_ogb[l_ac].ogb912 = l_ogg13_t1 
-                 LET g_ogb[l_ac].ogb915 = l_ogg13_t2 
+                 LET g_ogb[l_ac].ogb912 = l_ogg13_t1
+                 LET g_ogb[l_ac].ogb915 = l_ogg13_t2
                  DISPLAY BY NAME g_ogb[l_ac].ogb912
                  DISPLAY BY NAME g_ogb[l_ac].ogb915
                  UPDATE ogb_file SET ogb912 = g_ogb[l_ac].ogb912, ogb915 = g_ogb[l_ac].ogb915
@@ -19166,9 +19181,9 @@ FUNCTION t600_b_ogg()   # 庫存異動明細(ogg_file)輸入
                  END IF
               END IF #CHI-D30032 add
            END IF
-        END IF 
-#FUN-C50097 ADD END ---        
-      ON ACTION modi_lot        
+        END IF
+#FUN-C50097 ADD END ---
+      ON ACTION modi_lot
          LET g_ima918 = ''   #MOD-9C0055
          LET g_ima921 = ''   #MOD-9C0055
          LET g_ima906 = ''   #MOD-BC0207 add
@@ -19181,7 +19196,7 @@ FUNCTION t600_b_ogg()   # 庫存異動明細(ogg_file)輸入
            #IF g_argv0='2' OR g_argv0='4' OR g_argv0='6' OR ((g_argv0 ='1' OR g_argv0='5') AND g_oaz.oaz81 = 'Y') THEN   #MOD-940294 add   #CHI-AC0034 mark
             #IF g_argv0='2' OR g_argv0='4' OR g_argv0='6' OR g_argv0='8' OR g_argv0='9' OR ((g_argv0 ='1' OR g_argv0='5') AND g_oaz.oaz81 = 'Y') THEN   #MOD-940294 add   #CHI-AC0034 add '8','9'   #MOD-AC0060
             IF g_argv0='2' OR g_argv0='4' OR g_argv0='6' OR g_argv0='8' OR g_argv0='9' OR g_argv0='A' OR ((g_argv0 ='1' OR g_argv0='5') AND g_oaz.oaz81 = 'Y') THEN   #MOD-940294 add   #CHI-AC0034 add '8','9'   #MOD-AC0060 add 'A'
-               IF g_ima906 = '3' AND l_ogg[i].ogg20 = '2' THEN #MOD-BC0207 add 
+               IF g_ima906 = '3' AND l_ogg[i].ogg20 = '2' THEN #MOD-BC0207 add
                ELSE #MOD-BC0207 add
                   SELECT img09 INTO l_ogg[i].ogg15
                     FROM img_file
@@ -19189,12 +19204,12 @@ FUNCTION t600_b_ogg()   # 庫存異動明細(ogg_file)輸入
                      AND img02 = l_ogg[i].ogg09
                      AND img03 = l_ogg[i].ogg091
                      AND img04 = l_ogg[i].ogg092
-                  
+
                   LET l_ogg[i].ogg16 = s_digqty(l_ogg[i].ogg16,l_ogg[i].ogg15)   #FUN-910088--add--
                   DISPLAY l_ogg[i].ogg15 TO s_ogg[j].ogg15
-   
-                  IF NOT cl_null(l_ogg[i].ogg15) THEN 
-                     CALL s_umfchk(g_ogb[l_ac].ogb04,l_ogg[i].ogg10,l_ogg[i].ogg15) 
+
+                  IF NOT cl_null(l_ogg[i].ogg15) THEN
+                     CALL s_umfchk(g_ogb[l_ac].ogb04,l_ogg[i].ogg10,l_ogg[i].ogg15)
                          RETURNING g_cnt,l_ogg[i].ogg15_fac
                      IF g_cnt=1 THEN
                         CALL cl_err('','mfg3075',1)
@@ -19203,14 +19218,14 @@ FUNCTION t600_b_ogg()   # 庫存異動明細(ogg_file)輸入
                         LET l_msg3 = l_msg3 CLIPPED,"(",g_ogb[l_ac].ogb04,")"
                         CALL cl_msgany(10,20,l_msg3)
                        #TQC-C50131 -- add -- end
-                        NEXT FIELD ogg092 
+                        NEXT FIELD ogg092
                      END IF
                   END IF
-   
+
                   IF cl_null(l_ogg[i].ogg15_fac) THEN
                      LET l_ogg[i].ogg15_fac = 1
                   END IF
-    
+
    #No.CHI-9A0022 --Begin
                   IF cl_null(g_ogb[i].ogb41) THEN
                      #FUN-9C0103 ---start---
@@ -19225,7 +19240,7 @@ FUNCTION t600_b_ogg()   # 庫存異動明細(ogg_file)輸入
                      ELSE
                      #FUN-9C0103 ---end---
                         LET l_bno = g_ogb[l_ac].ogb31
-                     END IF 
+                     END IF
                   ELSE
                      LET l_bno = g_ogb[l_ac].ogb41
                   END IF
@@ -19234,7 +19249,7 @@ FUNCTION t600_b_ogg()   # 庫存異動明細(ogg_file)輸入
                   CALL s_mod_lot(g_prog,g_oga.oga01,g_ogb[l_ac].ogb03,l_ogg[i].ogg18,     #TQC-B90236
                                 g_ogb[l_ac].ogb04,l_ogg[i].ogg09,
                                 l_ogg[i].ogg091,l_ogg[i].ogg092,
-                                l_ogg[i].ogg10,l_ogg[i].ogg15,l_ogg[i].ogg15_fac, 
+                                l_ogg[i].ogg10,l_ogg[i].ogg15,l_ogg[i].ogg15_fac,
                                 l_ogg[i].ogg12,l_bno,'MOD',-1)#CHI-9A0022 add l_bno   #TQC-B90236 add '-1'
                       RETURNING l_r,g_qty
                   IF l_r = "Y" THEN
@@ -19299,16 +19314,16 @@ FUNCTION t600_b_ogg()   # 庫存異動明細(ogg_file)輸入
            LET g_totsuccess = "N"
            LET g_success = "Y"
         END IF
-          IF (l_ogg[i].ogg12 IS NULL OR l_ogg[i].ogg12=0) 
+          IF (l_ogg[i].ogg12 IS NULL OR l_ogg[i].ogg12=0)
              AND (l_ogg[i].ogg13 IS NULL OR l_ogg[i].ogg13=0) THEN  #FUN-C50097 ADD ogg13 120809
             #IF s_lotout_del(g_prog,g_oga.oga01,g_ogb[l_ac].ogb03,l_ogg[i].ogg18,g_ogb[l_ac].ogb04,'DEL') THEN   #No:FUN-8A0050 Mark  #TQC-B90236
              IF s_lot_del(g_prog,g_oga.oga01,g_ogb[l_ac].ogb03,l_ogg[i].ogg18,g_ogb[l_ac].ogb04,'DEL') THEN   #No:FUN-8A0050 Mark  #TQC-B90236
                 CONTINUE FOR
              END IF
           END IF
-          IF cl_null(l_ogg[i].ogg13) THEN 
+          IF cl_null(l_ogg[i].ogg13) THEN
             LET l_ogg[i].ogg13=0 #FUN-C50097 ADD
-          END IF       
+          END IF
           INSERT INTO ogg_file(ogg01,ogg03,ogg09,ogg091,ogg092,ogg10,
                                ogg12,ogg15,ogg15_fac,ogg16,ogg17,ogg20,ogg18,   #No:FUN-8B0021   #No:FUN-BB0081
                                oggplant,ogglegal,ogg13)  #FUN-980010 add plant & legal FUN-C50097 OGG13 ,ogg13
@@ -19358,12 +19373,12 @@ FUNCTION t600_b_ogg()   # 庫存異動明細(ogg_file)輸入
              IF cl_null(r_ogc.ogc16) THEN LET r_ogc.ogc16=0 END IF
             #TQC-C50251 -- add -- end
              LET r_ogc.ogc18 = l_ogg[i].ogg18   #No:FUN-8B0021
-             
-             LET r_ogc.ogcplant = g_plant 
-             LET r_ogc.ogclegal = g_legal  
-             IF cl_null(r_ogc.ogc13) THEN 
+
+             LET r_ogc.ogcplant = g_plant
+             LET r_ogc.ogclegal = g_legal
+             IF cl_null(r_ogc.ogc13) THEN
                 LET r_ogc.ogc13 = 0  #FUN-C50097
-             END IF    
+             END IF
              INSERT INTO ogc_file VALUES(r_ogc.*)
              IF SQLCA.sqlcode THEN
                 CALL s_errmsg('','',"INS ogc_file",SQLCA.sqlcode,1)                   #No.FUN-710046
@@ -19377,7 +19392,7 @@ FUNCTION t600_b_ogg()   # 庫存異動明細(ogg_file)輸入
                            RETURNING g_cnt,g_factor
              IF g_cnt=1 THEN LET g_factor = 1 END IF
              LET r_ogc.ogc12=l_ogg[i].ogg12*g_factor
-             LET r_ogc.ogc13 = l_ogg[i].ogg13*g_factor   #FUN-C50097          
+             LET r_ogc.ogc13 = l_ogg[i].ogg13*g_factor   #FUN-C50097
              LET r_ogc.ogc12 = s_digqty(r_ogc.ogc12,g_ogb[l_ac].ogb05)   #FUN-910088--add--
              LET g_factor = 1
              CALL s_umfchk(g_ogb[l_ac].ogb04,l_ogg[i].ogg10,l_img09)
@@ -19400,13 +19415,13 @@ FUNCTION t600_b_ogg()   # 庫存異動明細(ogg_file)輸入
              IF cl_null(r_ogc.ogc16) THEN LET r_ogc.ogc16=0 END IF
             #TQC-C50251 -- add -- end
              LET r_ogc.ogc18 = l_ogg[i].ogg18   #No:FUN-8B0021
-             
 
-             LET r_ogc.ogcplant = g_plant 
-             LET r_ogc.ogclegal = g_legal  
-             IF cl_null(r_ogc.ogc13) THEN 
+
+             LET r_ogc.ogcplant = g_plant
+             LET r_ogc.ogclegal = g_legal
+             IF cl_null(r_ogc.ogc13) THEN
                 LET r_ogc.ogc13 = 0  #FUN-C50097
-             END IF  
+             END IF
              INSERT INTO ogc_file VALUES(r_ogc.*)
              IF SQLCA.sqlcode THEN
                 IF cl_sql_dup_value(SQLCA.SQLCODE) THEN
@@ -19454,11 +19469,11 @@ FUNCTION t600_b_ogg()   # 庫存異動明細(ogg_file)輸入
                 IF cl_null(r_ogc.ogc16) THEN LET r_ogc.ogc16=0 END IF
                #TQC-C50251 -- add -- end
                 LET r_ogc.ogc18 = l_ogg[i].ogg18   #No:FUN-8B0021
-                LET r_ogc.ogcplant = g_plant 
-                LET r_ogc.ogclegal = g_legal  
-                IF cl_null(r_ogc.ogc13) THEN 
+                LET r_ogc.ogcplant = g_plant
+                LET r_ogc.ogclegal = g_legal
+                IF cl_null(r_ogc.ogc13) THEN
                    LET r_ogc.ogc13 = 0  #FUN-C50097
-                END IF  
+                END IF
                 INSERT INTO ogc_file VALUES(r_ogc.*)
                 IF SQLCA.sqlcode THEN
                    CALL s_errmsg('','',"INS ogc:",SQLCA.sqlcode,1)         #No.FUN-710046
@@ -19497,7 +19512,7 @@ FUNCTION t600_b_ogd_1()   # 庫存異動明細(ogc_file)輸入
                          ogc15     LIKE ogc_file.ogc15,
                          ogc15_fac LIKE ogc_file.ogc15_fac,
                          ogc16     LIKE ogc_file.ogc16,
-                         ogc18     LIKE ogc_file.ogc18   #No:FUN-8A0030 
+                         ogc18     LIKE ogc_file.ogc18   #No:FUN-8A0030
                        END RECORD
    DEFINE l_n          LIKE type_file.num5    #No.FUN-680137 SMALLINT
    DEFINE l_ogc12_t    LIKE ogc_file.ogc12
@@ -19518,10 +19533,10 @@ FUNCTION t600_b_ogd_1()   # 庫存異動明細(ogc_file)輸入
    CALL cl_ui_locale("axmt600b")
 #FUN-C50097 ADD BEGIN TQC-C70206
    CALL cl_set_comp_visible("ogc13",FALSE)
-   IF g_oga.oga09 ='8' AND g_aza.aza26 ='2' AND g_oaz.oaz94 ='Y' THEN 
+   IF g_oga.oga09 ='8' AND g_aza.aza26 ='2' AND g_oaz.oaz94 ='Y' THEN
       CALL cl_set_comp_visible("ogc13",TRUE)
-   END IF    
-#FUN-C50097 ADD END   
+   END IF
+#FUN-C50097 ADD END
    IF g_oaz.oaz42 = '2' THEN
       CALL cl_getmsg('axm-041',g_lang) RETURNING g_msg
       CALL cl_set_comp_att_text("a",g_msg CLIPPED)
@@ -19551,9 +19566,9 @@ FUNCTION t600_b_ogd_1()   # 庫存異動明細(ogc_file)輸入
    LET l_i = 1
 
    FOREACH t600b_c_1 INTO l_ogc[i].*
-      IF STATUS THEN 
-         CALL cl_err('foreach ogc',STATUS,0) 
-         EXIT FOREACH 
+      IF STATUS THEN
+         CALL cl_err('foreach ogc',STATUS,0)
+         EXIT FOREACH
       END IF
 
       LET i = i + 1
@@ -19564,7 +19579,7 @@ FUNCTION t600_b_ogd_1()   # 庫存異動明細(ogc_file)輸入
 
    LET l_i=(i-1)
 
-   SELECT SUM(ogc12),SUM(ogc16) 
+   SELECT SUM(ogc12),SUM(ogc16)
      INTO l_ogc12_t,l_ogc16_t FROM ogc_file
     WHERE ogc01 = g_oga.oga01
       AND ogc03 = g_ogb[l_ac].ogb03
@@ -19578,28 +19593,28 @@ FUNCTION t600_b_ogd_1()   # 庫存異動明細(ogc_file)輸入
    DISPLAY g_ogb[l_ac].ogb12 TO ogb12t   #No:MOD-590206
 
    CALL cl_set_act_visible("cancel", FALSE)
-   
+
    LET i = ARR_CURR()               #No:FUN-8A0030
- 
+
    IF g_action_choice="qry_mntn_inv_detail" THEN
       DISPLAY ARRAY l_ogc TO s_ogc.* ATTRIBUTE(COUNT=g_rec_b1,UNBUFFERED)     #No.TQC-640123
 
-      BEFORE ROW 
+      BEFORE ROW
         LET i=ARR_CURR()
- 
+
          ON IDLE g_idle_seconds
             CALL cl_on_idle()
             CONTINUE DISPLAY
-        
-         ON ACTION about         
-            CALL cl_about()      
-        
-         ON ACTION help          
-            CALL cl_show_help()  
-        
-         ON ACTION controlg      
+
+         ON ACTION about
+            CALL cl_about()
+
+         ON ACTION help
+            CALL cl_show_help()
+
+         ON ACTION controlg
             CALL cl_cmdask()
-           
+
          ON ACTION qry_lot
             LET g_ima918 = ''   #MOD-9C0055
             LET g_ima921 = ''   #MOD-9C0055
@@ -19607,10 +19622,10 @@ FUNCTION t600_b_ogd_1()   # 庫存異動明細(ogc_file)輸入
               FROM ima_file
              WHERE ima01 = l_ogc[i].ogc17   #No:FUN-8B0021
                AND imaacti = "Y"
-         
+
             IF g_ima918 = "Y" OR g_ima921 = "Y" THEN
               #IF g_argv0='2' OR g_argv0='4' OR g_argv0='6' OR ((g_argv0 ='1' OR g_argv0='5') AND g_oaz.oaz81 = 'Y') THEN   #MOD-940294 add #CHI-AC0034 mark
-               #IF g_argv0='2' OR g_argv0='4' OR g_argv0='6' OR g_argv0='8' OR g_argv0='9' OR ((g_argv0 ='1' OR g_argv0='5') AND g_oaz.oaz81 = 'Y') THEN   #MOD-940294 add #CHI-AC0034 add '8','9'   #MOD-AC0060 
+               #IF g_argv0='2' OR g_argv0='4' OR g_argv0='6' OR g_argv0='8' OR g_argv0='9' OR ((g_argv0 ='1' OR g_argv0='5') AND g_oaz.oaz81 = 'Y') THEN   #MOD-940294 add #CHI-AC0034 add '8','9'   #MOD-AC0060
                IF g_argv0='2' OR g_argv0='4' OR g_argv0='6' OR g_argv0='8' OR g_argv0='9' OR g_argv0='A' OR ((g_argv0 ='1' OR g_argv0='5') AND g_oaz.oaz81 = 'Y') THEN   #MOD-940294 add #CHI-AC0034 add '8','9'   #MOD-AC0060 add 'A'
                  #CALL s_lotout(g_prog,g_oga.oga01,g_ogb[l_ac].ogb03,l_ogc[i].ogc18,   #TQC-B90236
                   CALL s_mod_lot(g_prog,g_oga.oga01,g_ogb[l_ac].ogb03,l_ogc[i].ogc18,   #TQC-B90236
@@ -19626,7 +19641,7 @@ FUNCTION t600_b_ogd_1()   # 庫存異動明細(ogc_file)輸入
                END IF
             END IF
 
-      END DISPLAY 
+      END DISPLAY
 
    END IF
 
@@ -19671,18 +19686,18 @@ FUNCTION t600_ogd_ogc()
       IF cl_null(r_ogc.ogc16) THEN LET r_ogc.ogc16=0 END IF
      #TQC-C50251 -- add -- end
 
-      LET r_ogc.ogcplant = g_plant 
-      LET r_ogc.ogclegal = g_legal 
-      IF cl_null(r_ogc.ogc13) THEN LET r_ogc.ogc13=0 END IF #FUN-C50097 
+      LET r_ogc.ogcplant = g_plant
+      LET r_ogc.ogclegal = g_legal
+      IF cl_null(r_ogc.ogc13) THEN LET r_ogc.ogc13=0 END IF #FUN-C50097
 
       INSERT INTO ogc_file VALUES (r_ogc.*)
    END IF
    IF i = 0 AND g_oaz.oaz71='2' THEN   #由 img_gile 預設
       DECLARE t6006_c3 CURSOR FOR
          SELECT '','',img02,img03,img04,0,img09,0,0,'','' FROM img_file                            #FUN-8A0030 Add '',''
-          WHERE img01 = g_ogb[l_ac].ogb04    #CHI-840009 mark AND img04 = g_ogb[l_ac].ogb092     
+          WHERE img01 = g_ogb[l_ac].ogb04    #CHI-840009 mark AND img04 = g_ogb[l_ac].ogb092
             AND img10 > 0 AND (img18 > g_oga.oga02 OR img18 IS NULL)
-         LET l_ogc18 = 0    #No:FUN-8A0030      
+         LET l_ogc18 = 0    #No:FUN-8A0030
       FOREACH t6006_c3 INTO r_ogc.*
          IF STATUS THEN EXIT FOREACH END IF
          LET r_ogc.ogc01 = g_oga.oga01
@@ -19702,9 +19717,9 @@ FUNCTION t600_ogd_ogc()
          IF cl_null(r_ogc.ogc16) THEN LET r_ogc.ogc16=0 END IF
         #TQC-C50251 -- add -- end
 
-         LET r_ogc.ogcplant = g_plant 
+         LET r_ogc.ogcplant = g_plant
          LET r_ogc.ogclegal = g_legal
-         IF cl_null(r_ogc.ogc13) THEN LET r_ogc.ogc13=0 END IF #FUN-C50097  
+         IF cl_null(r_ogc.ogc13) THEN LET r_ogc.ogc13=0 END IF #FUN-C50097
 
          INSERT INTO ogc_file VALUES (r_ogc.*)
       END FOREACH
@@ -19713,11 +19728,11 @@ END FUNCTION
 
 FUNCTION t600_1()
    DEFINE  l_oap   RECORD LIKE oap_file.*
-   DEFINE  l_ogb31 LIKE ogb_file.ogb31 #MOD-940231	
-   DEFINE  l_oea32 LIKE oea_file.oea32 #MOD-940231	
+   DEFINE  l_ogb31 LIKE ogb_file.ogb31 #MOD-940231
+   DEFINE  l_oea32 LIKE oea_file.oea32 #MOD-940231
    DEFINE l_n     LIKE type_file.num5   #MOD-950276
    DEFINE  l_cnt   LIKE type_file.num5 #FUN-970108
-   
+
     BEGIN WORK
 
     OPEN t600_cl USING g_oga.oga01
@@ -19736,13 +19751,13 @@ FUNCTION t600_1()
        RETURN
     END IF
 
-    IF g_oga.oga01 IS NULL THEN 
+    IF g_oga.oga01 IS NULL THEN
        CLOSE t600_cl   #MOD-970012
        ROLLBACK WORK   #MOD-970012
-       RETURN 
+       RETURN
     END IF
     LET g_oga_t.* = g_oga.* #MOD-640570 add
-    LET g_oga_o.* = g_oga.* #MOD-9C0105 
+    LET g_oga_o.* = g_oga.* #MOD-9C0105
 
     LET p_row = 2 LET p_col = 11
 
@@ -19760,7 +19775,7 @@ FUNCTION t600_1()
                    l_oap.oap044,   #FUN-720014 add
                    l_oap.oap045    #FUN-720014 add
     #tianry add 161221
-    #tianry add end 
+    #tianry add end
     LET g_buf=NULL
     SELECT oac02 INTO g_buf FROM oac_file WHERE oac01=g_oga.oga41
                             DISPLAY g_buf TO oac02 LET g_buf=NULL
@@ -19770,8 +19785,8 @@ FUNCTION t600_1()
                             DISPLAY g_buf TO oah02 LET g_buf=NULL
     SELECT oag02 INTO g_buf FROM oag_file WHERE oag01=g_oga.oga32
                             DISPLAY g_buf TO oag02 LET g_buf=NULL
-    SELECT ged02 INTO g_buf FROM ged_file WHERE ged01=g_oga.oga43      #FUN-990074                                                  
-                            DISPLAY g_buf TO oga43_desc LET g_buf=NULL #FUN-990074  
+    SELECT ged02 INTO g_buf FROM ged_file WHERE ged01=g_oga.oga43      #FUN-990074
+                            DISPLAY g_buf TO oga43_desc LET g_buf=NULL #FUN-990074
     LET g_action_choice="modify"
     IF NOT cl_chk_act_auth() THEN
        DISPLAY BY NAME g_oga.oga044,l_oap.oap041,l_oap.oap042,l_oap.oap043,
@@ -19818,7 +19833,7 @@ FUNCTION t600_1()
 
       BEFORE INPUT
          LET g_before_input_done = FALSE
-         CALL t600_set_no_required()  #FUN-970108 
+         CALL t600_set_no_required()  #FUN-970108
          CALL t600_set_required()     #FUN-970108
          LET g_before_input_done = TRUE
 
@@ -19837,7 +19852,7 @@ FUNCTION t600_1()
                END IF
             END IF
          ELSE
-            SELECT occ241,occ242,occ243,occ244,occ245    
+            SELECT occ241,occ242,occ243,occ244,occ245
               INTO l_oap.oap041,l_oap.oap042,l_oap.oap043,l_oap.oap044,l_oap.oap045 FROM occ_file
              WHERE occ01=g_oga.oga04
          END IF
@@ -19850,12 +19865,12 @@ FUNCTION t600_1()
 
       AFTER FIELD oga43
          IF NOT cl_null(g_oga.oga43) THEN
-            SELECT ged02 INTO g_buf FROM ged_file WHERE ged01 = g_oga.oga43 #FUN-990074  
+            SELECT ged02 INTO g_buf FROM ged_file WHERE ged01 = g_oga.oga43 #FUN-990074
             IF STATUS THEN
                CALL cl_err3("sel","ged_file",g_oga.oga43,"",SQLCA.sqlcode,"","",1)  #No.FUN-670008
                NEXT FIELD oga43
             END IF
-            DISPLAY g_buf TO oga43_desc #FUN-990074    
+            DISPLAY g_buf TO oga43_desc #FUN-990074
          END IF
 
       AFTER FIELD oga41
@@ -19937,7 +19952,7 @@ FUNCTION t600_1()
                           LET exT=g_oaz.oaz70
                       END IF
                       IF g_oga.oga909 = 'Y' THEN
-                         CALL t600_chk_poz00() RETURNING exT   #MOD-860069 
+                         CALL t600_chk_poz00() RETURNING exT   #MOD-860069
                       END IF
                      IF NOT cl_null(g_oga.oga021) THEN
                         LET g_exdate = g_oga.oga021    #結關日期
@@ -19968,7 +19983,7 @@ FUNCTION t600_1()
      #-MOD-A90150-add-
       AFTER FIELD oga39
          IF NOT cl_null(g_oga.oga39) THEN
-            LET l_n = 0 
+            LET l_n = 0
             LET l_n = LENGTH(g_oga.oga39)
             IF l_n != 14 THEN
                CALL cl_err(g_oga.oga39,'amd-017',0)
@@ -19978,12 +19993,12 @@ FUNCTION t600_1()
      #-MOD-A90150-add-
 
       AFTER FIELD oga910
-         IF NOT cl_null(g_oga.oga910) THEN  
+         IF NOT cl_null(g_oga.oga910) THEN
             SELECT * FROM imd_file
              WHERE imd01 = g_oga.oga910
-               AND imdacti = 'Y' 
+               AND imdacti = 'Y'
             IF STATUS <> 0 THEN
-               CALL cl_err3("sel","imd_file",g_oga.oga910,"","ams-004","","",1)  
+               CALL cl_err3("sel","imd_file",g_oga.oga910,"","ams-004","","",1)
                NEXT FIELD oga910
             END IF
 
@@ -19991,13 +20006,13 @@ FUNCTION t600_1()
             IF NOT s_chk_ware(g_oga.oga910) THEN
                NEXT FIELD oga910
             END IF
-            #No.FUN-AA0048  --End  
+            #No.FUN-AA0048  --End
 
-            LET l_n = 0 
-            SELECT COUNT(*) INTO l_n FROM ogb_file 
+            LET l_n = 0
+            SELECT COUNT(*) INTO l_n FROM ogb_file
              WHERE ogb01 = g_oga.oga01
-               AND ogb09 = g_oga.oga910 
-            IF l_n > 0 THEN 
+               AND ogb09 = g_oga.oga910
+            IF l_n > 0 THEN
                CALL cl_err('','axm-100',0)
                LET g_oga.oga910=' '
                NEXT FIELD oga910
@@ -20005,36 +20020,36 @@ FUNCTION t600_1()
          END IF
 
       AFTER FIELD oga911
-         IF cl_null(g_oga.oga911) THEN    
+         IF cl_null(g_oga.oga911) THEN
             LET g_oga.oga911 = ' '
          END IF
 
          LET l_n = 0
-         SELECT COUNT(*) INTO l_n FROM ogb_file 
+         SELECT COUNT(*) INTO l_n FROM ogb_file
           WHERE ogb01  = g_oga.oga01
             AND ogb09 = g_oga.oga910
-            AND ogb091 = g_oga.oga911 
-         IF l_n > 0 THEN 
+            AND ogb091 = g_oga.oga911
+         IF l_n > 0 THEN
             CALL cl_err('','axm-100',0)
             LET g_oga.oga911=' '
             NEXT FIELD oga910
          END IF
-      
+
       AFTER FIELD oga71
-         IF NOT cl_null(g_oga.oga71) THEN   
+         IF NOT cl_null(g_oga.oga71) THEN
             SELECT COUNT(*) INTO l_cnt FROM ama_file
              WHERE ama02 = g_oga.oga71
-              IF l_cnt = 0 THEN 
-                 CALL cl_err("","mfg9329",1) 
+              IF l_cnt = 0 THEN
+                 CALL cl_err("","mfg9329",1)
               END IF
               #IF g_aza.aza21 = 'Y' OR NOT s_chkban(g_oga.oga71) THEN #FUN-990053 mod #TQC-B40067 mark
-              IF g_aza.aza21 = 'Y' AND NOT s_chkban(g_oga.oga71) THEN #TQC-B40067 
+              IF g_aza.aza21 = 'Y' AND NOT s_chkban(g_oga.oga71) THEN #TQC-B40067
                  CALL cl_err("","mfg7015",1)
                  NEXT FIELD oga71
               END IF
-         ELSE 
+         ELSE
              IF g_aza.aza94 = 'Y' THEN
-         	      CALL cl_err('oga71 is null: ','aap-099',0) 
+         	      CALL cl_err('oga71 is null: ','aap-099',0)
          	      NEXT FIELD oga71
              END IF
          END IF
@@ -20162,11 +20177,11 @@ END FUNCTION
 
 FUNCTION t600_1a()
    DEFINE  l_oap   RECORD LIKE oap_file.*
-   DEFINE  l_ogb31 LIKE ogb_file.ogb31 #MOD-940231	
-   DEFINE  l_oea32 LIKE oea_file.oea32 #MOD-940231	
+   DEFINE  l_ogb31 LIKE ogb_file.ogb31 #MOD-940231
+   DEFINE  l_oea32 LIKE oea_file.oea32 #MOD-940231
    DEFINE l_n     LIKE type_file.num5   #MOD-950276
    DEFINE  l_cnt   LIKE type_file.num5 #FUN-970108
-   
+
     BEGIN WORK
 
     OPEN t600_cl USING g_oga.oga01
@@ -20185,13 +20200,13 @@ FUNCTION t600_1a()
        RETURN
     END IF
 
-    IF g_oga.oga01 IS NULL THEN 
+    IF g_oga.oga01 IS NULL THEN
        CLOSE t600_cl   #MOD-970012
        ROLLBACK WORK   #MOD-970012
-       RETURN 
+       RETURN
     END IF
     LET g_oga_t.* = g_oga.* #MOD-640570 add
-    LET g_oga_o.* = g_oga.* #MOD-9C0105 
+    LET g_oga_o.* = g_oga.* #MOD-9C0105
 
     LET p_row = 2 LET p_col = 11
 
@@ -20209,7 +20224,7 @@ FUNCTION t600_1a()
                    l_oap.oap044,   #FUN-720014 add
                    l_oap.oap045    #FUN-720014 add
     #tianry add 161221
-    #tianry add end 
+    #tianry add end
     LET g_buf=NULL
     SELECT oac02 INTO g_buf FROM oac_file WHERE oac01=g_oga.oga41
                             DISPLAY g_buf TO oac02 LET g_buf=NULL
@@ -20219,8 +20234,8 @@ FUNCTION t600_1a()
                             DISPLAY g_buf TO oah02 LET g_buf=NULL
     SELECT oag02 INTO g_buf FROM oag_file WHERE oag01=g_oga.oga32
                             DISPLAY g_buf TO oag02 LET g_buf=NULL
-    SELECT ged02 INTO g_buf FROM ged_file WHERE ged01=g_oga.oga43      #FUN-990074                                                  
-                            DISPLAY g_buf TO oga43_desc LET g_buf=NULL #FUN-990074  
+    SELECT ged02 INTO g_buf FROM ged_file WHERE ged01=g_oga.oga43      #FUN-990074
+                            DISPLAY g_buf TO oga43_desc LET g_buf=NULL #FUN-990074
     LET g_action_choice="query"
     IF NOT cl_chk_act_auth() THEN
        DISPLAY BY NAME g_oga.oga044,l_oap.oap041,l_oap.oap042,l_oap.oap043,
@@ -20255,7 +20270,7 @@ FUNCTION t600_1a()
      DISPLAY BY NAME g_oga.oga910,g_oga.oga911   #No:MOD-560183
 
       MESSAGE '注意：出货单已审核或已过帐不允许修改收货地址，此时只是查询显示'
-      
+
     INPUT BY NAME g_oga.oga044,l_oap.oap041,l_oap.oap042,l_oap.oap043,
                   l_oap.oap044,l_oap.oap045,   #MOD-910186 增加oap044/oap045
                   g_oga.oga41,g_oga.oga42,g_oga.oga43,g_oga.oga44,
@@ -20269,7 +20284,7 @@ FUNCTION t600_1a()
 
       BEFORE INPUT
          LET g_before_input_done = FALSE
-         CALL t600_set_no_required()  #FUN-970108 
+         CALL t600_set_no_required()  #FUN-970108
          CALL t600_set_required()     #FUN-970108
          LET g_before_input_done = TRUE
 
@@ -20288,7 +20303,7 @@ FUNCTION t600_1a()
                END IF
             END IF
          ELSE
-            SELECT occ241,occ242,occ243,occ244,occ245    
+            SELECT occ241,occ242,occ243,occ244,occ245
               INTO l_oap.oap041,l_oap.oap042,l_oap.oap043,l_oap.oap044,l_oap.oap045 FROM occ_file
              WHERE occ01=g_oga.oga04
          END IF
@@ -20301,12 +20316,12 @@ FUNCTION t600_1a()
 
       AFTER FIELD oga43
          IF NOT cl_null(g_oga.oga43) THEN
-            SELECT ged02 INTO g_buf FROM ged_file WHERE ged01 = g_oga.oga43 #FUN-990074  
+            SELECT ged02 INTO g_buf FROM ged_file WHERE ged01 = g_oga.oga43 #FUN-990074
             IF STATUS THEN
                CALL cl_err3("sel","ged_file",g_oga.oga43,"",SQLCA.sqlcode,"","",1)  #No.FUN-670008
                NEXT FIELD oga43
             END IF
-            DISPLAY g_buf TO oga43_desc #FUN-990074    
+            DISPLAY g_buf TO oga43_desc #FUN-990074
          END IF
 
       AFTER FIELD oga41
@@ -20388,7 +20403,7 @@ FUNCTION t600_1a()
                           LET exT=g_oaz.oaz70
                       END IF
                       IF g_oga.oga909 = 'Y' THEN
-                         CALL t600_chk_poz00() RETURNING exT   #MOD-860069 
+                         CALL t600_chk_poz00() RETURNING exT   #MOD-860069
                       END IF
                      IF NOT cl_null(g_oga.oga021) THEN
                         LET g_exdate = g_oga.oga021    #結關日期
@@ -20419,7 +20434,7 @@ FUNCTION t600_1a()
      #-MOD-A90150-add-
       AFTER FIELD oga39
          IF NOT cl_null(g_oga.oga39) THEN
-            LET l_n = 0 
+            LET l_n = 0
             LET l_n = LENGTH(g_oga.oga39)
             IF l_n != 14 THEN
                CALL cl_err(g_oga.oga39,'amd-017',0)
@@ -20429,12 +20444,12 @@ FUNCTION t600_1a()
      #-MOD-A90150-add-
 
       AFTER FIELD oga910
-         IF NOT cl_null(g_oga.oga910) THEN  
+         IF NOT cl_null(g_oga.oga910) THEN
             SELECT * FROM imd_file
              WHERE imd01 = g_oga.oga910
-               AND imdacti = 'Y' 
+               AND imdacti = 'Y'
             IF STATUS <> 0 THEN
-               CALL cl_err3("sel","imd_file",g_oga.oga910,"","ams-004","","",1)  
+               CALL cl_err3("sel","imd_file",g_oga.oga910,"","ams-004","","",1)
                NEXT FIELD oga910
             END IF
 
@@ -20442,13 +20457,13 @@ FUNCTION t600_1a()
             IF NOT s_chk_ware(g_oga.oga910) THEN
                NEXT FIELD oga910
             END IF
-            #No.FUN-AA0048  --End  
+            #No.FUN-AA0048  --End
 
-            LET l_n = 0 
-            SELECT COUNT(*) INTO l_n FROM ogb_file 
+            LET l_n = 0
+            SELECT COUNT(*) INTO l_n FROM ogb_file
              WHERE ogb01 = g_oga.oga01
-               AND ogb09 = g_oga.oga910 
-            IF l_n > 0 THEN 
+               AND ogb09 = g_oga.oga910
+            IF l_n > 0 THEN
                CALL cl_err('','axm-100',0)
                LET g_oga.oga910=' '
                NEXT FIELD oga910
@@ -20456,36 +20471,36 @@ FUNCTION t600_1a()
          END IF
 
       AFTER FIELD oga911
-         IF cl_null(g_oga.oga911) THEN    
+         IF cl_null(g_oga.oga911) THEN
             LET g_oga.oga911 = ' '
          END IF
 
          LET l_n = 0
-         SELECT COUNT(*) INTO l_n FROM ogb_file 
+         SELECT COUNT(*) INTO l_n FROM ogb_file
           WHERE ogb01  = g_oga.oga01
             AND ogb09 = g_oga.oga910
-            AND ogb091 = g_oga.oga911 
-         IF l_n > 0 THEN 
+            AND ogb091 = g_oga.oga911
+         IF l_n > 0 THEN
             CALL cl_err('','axm-100',0)
             LET g_oga.oga911=' '
             NEXT FIELD oga910
          END IF
-      
+
       AFTER FIELD oga71
-         IF NOT cl_null(g_oga.oga71) THEN   
+         IF NOT cl_null(g_oga.oga71) THEN
             SELECT COUNT(*) INTO l_cnt FROM ama_file
              WHERE ama02 = g_oga.oga71
-              IF l_cnt = 0 THEN 
-                 CALL cl_err("","mfg9329",1) 
+              IF l_cnt = 0 THEN
+                 CALL cl_err("","mfg9329",1)
               END IF
               #IF g_aza.aza21 = 'Y' OR NOT s_chkban(g_oga.oga71) THEN #FUN-990053 mod #TQC-B40067 mark
-              IF g_aza.aza21 = 'Y' AND NOT s_chkban(g_oga.oga71) THEN #TQC-B40067 
+              IF g_aza.aza21 = 'Y' AND NOT s_chkban(g_oga.oga71) THEN #TQC-B40067
                  CALL cl_err("","mfg7015",1)
                  NEXT FIELD oga71
               END IF
-         ELSE 
+         ELSE
              IF g_aza.aza94 = 'Y' THEN
-         	      CALL cl_err('oga71 is null: ','aap-099',0) 
+         	      CALL cl_err('oga71 is null: ','aap-099',0)
          	      NEXT FIELD oga71
              END IF
          END IF
@@ -20590,17 +20605,17 @@ FUNCTION t600_1a()
 
     DISPLAY g_msg TO addr
 
-    
+
 END FUNCTION
 
 
 FUNCTION t600_2()
     DEFINE l_date1,l_date2 LIKE type_file.dat     #No.FUN-680137 DATE
     DEFINE l_date3         LIKE type_file.dat     #No.FUN-680137 DATE        #No.FUN-680022
-    DEFINE l_cnt           LIKE type_file.num5    #MOD-960004  
+    DEFINE l_cnt           LIKE type_file.num5    #MOD-960004
     DEFINE l_flag          LIKE type_file.chr1    #CHI-A90012
-    DEFINE l_bookno1       LIKE aza_file.aza81    #CHI-A90012       
-    DEFINE l_bookno2       LIKE aza_file.aza82    #CHI-A90012      
+    DEFINE l_bookno1       LIKE aza_file.aza81    #CHI-A90012
+    DEFINE l_bookno2       LIKE aza_file.aza82    #CHI-A90012
     DEFINE l_npq07f        LIKE npq_file.npq07f   #CHI-A90012
 
     BEGIN WORK
@@ -20701,18 +20716,18 @@ FUNCTION t600_2()
          #MOD-C20123 ----- add end -----
          #-MOD-AB0233-add-
           IF g_oga.oga161 = 100 THEN
-             LET g_oga.oga07 = 'N' 
+             LET g_oga.oga07 = 'N'
              DISPLAY BY NAME g_oga.oga07
           END IF
          #-MOD-AB0233-end-
           IF g_oga.oga07 = 'N' THEN
-             SELECT COUNT(*) INTO l_cnt 
+             SELECT COUNT(*) INTO l_cnt
                FROM npp_file
               WHERE nppsys = 'AR'
                 AND npp00 = 1
                 AND npp01 = g_oga.oga01
                 AND npp011 = 1
-             IF l_cnt > 0 THEN 
+             IF l_cnt > 0 THEN
                 IF NOT cl_confirm('axm-088') THEN NEXT FIELD oga07 END IF
                 DELETE FROM npp_file
                  WHERE nppsys = 'AR'
@@ -20720,17 +20735,17 @@ FUNCTION t600_2()
                    AND npp01 = g_oga.oga01
                    AND npp011 = 1
                 IF SQLCA.sqlcode THEN
-                   CALL cl_err3("del","npp_file",g_oga.oga01,"",SQLCA.sqlcode,"","del_npp",1)  
+                   CALL cl_err3("del","npp_file",g_oga.oga01,"",SQLCA.sqlcode,"","del_npp",1)
                    NEXT FIELD oga07
                 END IF
-               
+
                 DELETE FROM npq_file
                  WHERE npqsys = 'AR'
                    AND npq00 = 1
                    AND npq01 = g_oga.oga01
                    AND npq011 = 1
                 IF SQLCA.sqlcode THEN
-                   CALL cl_err3("del","npq_file",g_oga.oga01,"",SQLCA.sqlcode,"","del_npq",1)  
+                   CALL cl_err3("del","npq_file",g_oga.oga01,"",SQLCA.sqlcode,"","del_npq",1)
                    NEXT FIELD oga07
                 END IF
 
@@ -20782,10 +20797,10 @@ FUNCTION t600_2()
           #-----CHI-A90012---------
           AFTER INPUT
              IF INT_FLAG THEN
-                SELECT * INTO g_oga.* FROM oga_file WHERE oga01 = g_oga.oga01   
+                SELECT * INTO g_oga.* FROM oga_file WHERE oga01 = g_oga.oga01
              END IF
-             LET l_cnt = 0 
-             SELECT COUNT(*) INTO l_cnt 
+             LET l_cnt = 0
+             SELECT COUNT(*) INTO l_cnt
                FROM npp_file
               WHERE nppsys = 'AR'
                 AND npp00 = 1
@@ -20796,28 +20811,28 @@ FUNCTION t600_2()
                 IF g_aza.aza63 = 'Y' THEN
                    CALL s_t600_gl(g_oga.oga01,'1')
                 END IF
-      
+
                 LET g_success = 'Y'
                 CALL s_get_bookno(YEAR(g_oga.oga02)) RETURNING l_flag,l_bookno1,l_bookno2
                 IF l_flag =  '1' THEN  #抓不到帳別
                    CALL cl_err(g_oga.oga02,'aoo-081',1)
                    LET g_success='N'
                 END IF
-                CALL s_chknpq(g_oga.oga01,'AR',1,'0',l_bookno1)  
-      
+                CALL s_chknpq(g_oga.oga01,'AR',1,'0',l_bookno1)
+
                 SELECT SUM(ABS(npq07f)) INTO l_npq07f FROM npq_file
-                 WHERE npq01 = g_oga.oga01 
+                 WHERE npq01 = g_oga.oga01
                    AND npqsys= 'AR' AND npq011 = 1
                    AND npqtype= '0'
                    AND npq00 = '1'
                    AND (npq06 = '2' AND npq07f > 0 OR npq06 = '1' AND npq07f < 0 )
                 IF cl_null(l_npq07f) THEN LET l_npq07f=0 END IF
-                
+
                 IF l_npq07f <> g_oga.oga50  THEN
                    CALL cl_err(g_oga.oga50,'axm1113',1)
                    LET g_success = 'N'
                 END IF
-      
+
                 IF g_success = 'N' THEN
                    NEXT FIELD oga07
                 END IF
@@ -20980,10 +20995,10 @@ FUNCTION t600_b_more()
 
        ON ACTION about         #MOD-4C0121
           CALL cl_about()      #MOD-4C0121
-       
+
        ON ACTION help          #MOD-4C0121
           CALL cl_show_help()  #MOD-4C0121
-       
+
        ON ACTION controlg      #MOD-4C0121
           CALL cl_cmdask()     #MOD-4C0121
 
@@ -20999,7 +21014,7 @@ FUNCTION t600_b_more()
                         ogb11 =b_ogb.ogb11,
                         ogb07 =b_ogb.ogb07
                   WHERE ogb01 =b_ogb.ogb01
-                    AND ogb03 =b_ogb.ogb03 
+                    AND ogb03 =b_ogb.ogb03
    IF STATUS OR SQLCA.sqlerrd[3]=0 THEN
       CALL cl_err3("upd","ogb_file",b_ogb.ogb03,"",SQLCA.sqlcode,"","upd ogb",1)  #No.FUN-670008
    END IF
@@ -21120,8 +21135,8 @@ FUNCTION t600_3()
 #CHI-C90022 add end   -----
    DEFINE l_n,i     LIKE type_file.num5    #No.FUN-680137 SMALLINT
    DEFINE l_rec_b   LIKE type_file.num5    #No.FUN-680137 SMALLINT
-#   DEFINE l_qty     LIKE ima_file.ima26,  #No.FUN-680137 DECIMAL(15,3)  #BugNo:4160 #FUN-A20044  
-   DEFINE l_qty     LIKE type_file.num15_3, #FUN-A20044  
+#   DEFINE l_qty     LIKE ima_file.ima26,  #No.FUN-680137 DECIMAL(15,3)  #BugNo:4160 #FUN-A20044
+   DEFINE l_qty     LIKE type_file.num15_3, #FUN-A20044
           l_allow_insert   LIKE type_file.num5,                #可新增否  #No.FUN-680137 SMALLINT
           l_allow_delete   LIKE type_file.num5                 #可刪除否  #No.FUN-680137 SMALLINT
    DEFINE l_oea99   LIKE oea_file.oea99    #CHI-9C0009
@@ -21233,60 +21248,60 @@ FUNCTION t600_3()
         #CHI-D30032 add end   -----
          BEGIN WORK                  #CHI-A10016
 
-      AFTER FIELD ogb17                                                                                                             
-         IF NOT cl_null(d_ogb[l_ac].ogb17) THEN                                                                                     
-            IF NOT s_chk_checkbox(d_ogb[l_ac].ogb17) THEN                                                                           
-               RETURN FALSE                                                                                                         
-            END IF                                                                                                                  
-            IF d_ogb[l_ac].ogb17 = 'Y' THEN                                                                                         
+      AFTER FIELD ogb17
+         IF NOT cl_null(d_ogb[l_ac].ogb17) THEN
+            IF NOT s_chk_checkbox(d_ogb[l_ac].ogb17) THEN
+               RETURN FALSE
+            END IF
+            IF d_ogb[l_ac].ogb17 = 'Y' THEN
              #-----MOD-B30487---------
              #MOD-B30486 mod --start--
-              IF cl_null(d_ogb[l_ac].ogb09) THEN LET d_ogb[l_ac].ogb09  = ' '  END IF                                               
-              IF cl_null(d_ogb[l_ac].ogb091) THEN LET d_ogb[l_ac].ogb091 = ' ' END IF                                               
-              IF cl_null(d_ogb[l_ac].ogb092) THEN LET d_ogb[l_ac].ogb092 = ' ' END IF                                               
-             #LET d_ogb[l_ac].ogb09  = ' '                                               
-             #LET d_ogb[l_ac].ogb091 = ' '                                               
-             #LET d_ogb[l_ac].ogb092 = ' '                                               
+              IF cl_null(d_ogb[l_ac].ogb09) THEN LET d_ogb[l_ac].ogb09  = ' '  END IF
+              IF cl_null(d_ogb[l_ac].ogb091) THEN LET d_ogb[l_ac].ogb091 = ' ' END IF
+              IF cl_null(d_ogb[l_ac].ogb092) THEN LET d_ogb[l_ac].ogb092 = ' ' END IF
+             #LET d_ogb[l_ac].ogb09  = ' '
+             #LET d_ogb[l_ac].ogb091 = ' '
+             #LET d_ogb[l_ac].ogb092 = ' '
              #MOD-B30486 mod --end--
              #-----END MOD-B30487-----
-                                                                                                                                    
+
               DELETE FROM rvbs_file
-               WHERE rvbs01 = g_oga.oga01                                                                                          
-                 AND rvbs02 = d_ogb[l_ac].ogb03                                                                                    
+               WHERE rvbs01 = g_oga.oga01
+                 AND rvbs02 = d_ogb[l_ac].ogb03
                  AND rvbs13 = 0
 
              #CHI-D30033 mark start -----
-             #IF g_sma.sma115 = 'Y' THEN                                                                                            
+             #IF g_sma.sma115 = 'Y' THEN
              #   #FUN-BB0081--Add--Begin
              #   IF g_oaz.oaz23 = 'Y' THEN
              #      CALL t600_b_ogg2()
              #   ELSE
              #   #FUN-BB0081--Add--End
-             #      CALL t600_b_ogg()   
-             #   END IF #FUN-BB0081 add                                                                                               
-             #ELSE                                                                                                                  
-             #   IF g_oaz.oaz23 = 'Y' THEN                                                                                          
-             #      CALL t600_b_ogd()                                                                                               
-             #   ELSE                                                                                                               
-             #      CALL t600_b_ogc()                                                                                               
-             #   END IF                                                                                                             
-             #END IF                                                                                                                
+             #      CALL t600_b_ogg()
+             #   END IF #FUN-BB0081 add
+             #ELSE
+             #   IF g_oaz.oaz23 = 'Y' THEN
+             #      CALL t600_b_ogd()
+             #   ELSE
+             #      CALL t600_b_ogc()
+             #   END IF
+             #END IF
              #CHI-D30033 mark start -----
-               #CALL cl_set_comp_entry("ogb09,ogb091,ogb092",FALSE) #MOD-D10230 mark                                                                 
-            ELSE                                                                                                                    
+               #CALL cl_set_comp_entry("ogb09,ogb091,ogb092",FALSE) #MOD-D10230 mark
+            ELSE
                #CALL cl_set_comp_entry("ogb09,ogb091,ogb092",TRUE)  #MOD-D10230 mark
-                DELETE FROM ogc_file                                                                                                
-                 WHERE ogc01 = g_oga.oga01                                                                                          
-                   AND ogc03 = d_ogb[l_ac].ogb03                                                                                    
+                DELETE FROM ogc_file
+                 WHERE ogc01 = g_oga.oga01
+                   AND ogc03 = d_ogb[l_ac].ogb03
                 DELETE FROM rvbs_file
-                 WHERE rvbs01 = g_oga.oga01                                                                                          
-                   AND rvbs02 = d_ogb[l_ac].ogb03                                                                                    
+                 WHERE rvbs01 = g_oga.oga01
+                   AND rvbs02 = d_ogb[l_ac].ogb03
                    AND rvbs13 <> 0
-                DELETE FROM ogg_file                                                                                                
-                 WHERE ogg01 = g_oga.oga01                                                                                          
+                DELETE FROM ogg_file
+                 WHERE ogg01 = g_oga.oga01
                    AND ogg03 = d_ogb[l_ac].ogb03
-            END IF                                                                                                                  
-         END IF                                                                                                                     
+            END IF
+         END IF
 
      #MOD-D10230---add---S
       ON CHANGE ogb17
@@ -21314,16 +21329,16 @@ FUNCTION t600_3()
             LET d_ogb_o.ogb09 = d_ogb[l_ac].ogb09
             #CHI-C90022 add end   -----
             #No.FUN-AA0048  --Begin
-            #IF g_azw.azw04='2' THEN                                                                                           
-            #   LET l_n =0                                                                                                
-            #   SELECT COUNT(*) INTO l_n FROM imd_file                                                                     
-            #    WHERE imd01=d_ogb[l_ac].ogb09                                                                                  
-            #      AND imd20=g_plant                                                                                       
-            #   IF l_n=0 THEN                                                                                                  
-            #      CALL cl_err(d_ogb[l_ac].ogb09,'art-487',0)                                                                        
-            #      NEXT FIELD ogb09                                                                                            
-            #   END IF                                                                                                         
-            #END IF 
+            #IF g_azw.azw04='2' THEN
+            #   LET l_n =0
+            #   SELECT COUNT(*) INTO l_n FROM imd_file
+            #    WHERE imd01=d_ogb[l_ac].ogb09
+            #      AND imd20=g_plant
+            #   IF l_n=0 THEN
+            #      CALL cl_err(d_ogb[l_ac].ogb09,'art-487',0)
+            #      NEXT FIELD ogb09
+            #   END IF
+            #END IF
             #CHI-CC0014 -------------sta
            #IF NOT cl_null(d_ogb[l_ac].ogb091) THEN
             IF g_oga.oga09 MATCHES '[124568]' AND NOT cl_null(d_ogb[l_ac].ogb09) THEN
@@ -21337,7 +21352,7 @@ FUNCTION t600_3()
             IF NOT s_chk_ware(d_ogb[l_ac].ogb09) THEN
                NEXT FIELD ogb09
             END IF
-            #No.FUN-AA0048  --End  
+            #No.FUN-AA0048  --End
          END IF
 
       AFTER FIELD ogb091
@@ -21347,19 +21362,19 @@ FUNCTION t600_3()
             IF NOT t600_chk_rvbs(d_ogb[l_ac].ogb03) THEN
                NEXT FIELD CURRENT
             END IF
-         END IF   
+         END IF
          LET d_ogb_o.ogb091 = d_ogb[l_ac].ogb091
          #CHI-C90022 add end   -----
          #------------------------------------ 檢查料號預設倉儲及單別預設倉儲
-         #CHI-CC0014--add--str--   
+         #CHI-CC0014--add--str--
          IF g_oga.oga09 MATCHES '[124568]' AND NOT cl_null(d_ogb[l_ac].ogb09) THEN
             IF NOT s_chksmz(d_ogb[l_ac].ogb04, g_oga.oga01,
                             d_ogb[l_ac].ogb09, d_ogb[l_ac].ogb091) THEN
                   NEXT FIELD ogb09
                END IF
-         END IF  
-         #CHI-CC0014--add--end--   
-         IF g_oga.oga09 MATCHES '[2]' THEN  #No.FUN-630061    #MOD-910216 mark #No:MOD-920191 mark還原  
+         END IF
+         #CHI-CC0014--add--end--
+         IF g_oga.oga09 MATCHES '[2]' THEN  #No.FUN-630061    #MOD-910216 mark #No:MOD-920191 mark還原
             #CHI-CC0014--mark--str--
             #  IF NOT s_chksmz(d_ogb[l_ac].ogb04, g_oga.oga01,
             #                  d_ogb[l_ac].ogb09, d_ogb[l_ac].ogb091) THEN
@@ -21367,7 +21382,7 @@ FUNCTION t600_3()
             #  END IF
             #CHI-CC0014--mark--end--
 #FUN-AB0011 ------------STR
-            IF s_joint_venture( d_ogb[l_ac].ogb04,g_plant) OR 
+            IF s_joint_venture( d_ogb[l_ac].ogb04,g_plant) OR
                 NOT s_internal_item( d_ogb[l_ac].ogb04,g_plant ) THEN
             ELSE
 #FUN-AB0011 ------------END
@@ -21379,9 +21394,9 @@ FUNCTION t600_3()
              #CHI-A40029 mark --start--
              # IF l_n=0 THEN
              #  IF g_oga.oga09 MATCHES '[45]' THEN
-             #     CALL t600sub_chkpoz(g_oga.*,d_ogb[l_ac].ogb31) RETURNING li_result,g_poz.*,l_oea99,g_flow  #NO.TQC-740089 
+             #     CALL t600sub_chkpoz(g_oga.*,d_ogb[l_ac].ogb31) RETURNING li_result,g_poz.*,l_oea99,g_flow  #NO.TQC-740089
              #     IF NOT li_result THEN RETURN END IF #FUN-730012
-             #     IF g_argv0 = '4' AND g_poz.poz011 = '1' THEN 
+             #     IF g_argv0 = '4' AND g_poz.poz011 = '1' THEN
              #        CALL s_add_img(d_ogb[l_ac].ogb04,d_ogb[l_ac].ogb09,
              #                       d_ogb[l_ac].ogb091,d_ogb[l_ac].ogb092,
              #                       g_oga.oga01,d_ogb[l_ac].ogb03,g_oga.oga02)
@@ -21390,10 +21405,10 @@ FUNCTION t600_3()
              #        END IF
              #     ELSE
              #        CALL cl_err('part+lot:','axm-245',0) NEXT FIELD ogb091 #TQC-7B0159
-             #     END IF 
+             #     END IF
              #  ELSE
              #  #CALL cl_err('part+lot:','axm-244',0) NEXT FIELD ogb091 #TQC-7B0159     #CHI-A10002 mark
-             #   CALL cl_err(d_ogb[l_ac].ogb04,'axm-244',0) NEXT FIELD ogb091           #CHI-A10002 add 
+             #   CALL cl_err(d_ogb[l_ac].ogb04,'axm-244',0) NEXT FIELD ogb091           #CHI-A10002 add
              #  END IF
              # END IF
              #CHI-A40029 mark --end--
@@ -21425,7 +21440,7 @@ FUNCTION t600_3()
                     END IF
                  END IF
                END IF   #MOD-890274
-            END IF                                #FUN-AB0011                      
+            END IF                                #FUN-AB0011
          END IF
 
       #CHI-C90022 add start -----
@@ -21434,7 +21449,7 @@ FUNCTION t600_3()
             IF NOT t600_chk_rvbs(d_ogb[l_ac].ogb03) THEN
                NEXT FIELD CURRENT
             END IF
-         END IF   
+         END IF
          LET d_ogb_o.ogb092 = d_ogb[l_ac].ogb092
       #CHI-C90022 add end   -----
 
@@ -21451,7 +21466,7 @@ FUNCTION t600_3()
           UPDATE ogb_file SET ogb09=d_ogb[l_ac].ogb09,
                               ogb091=d_ogb[l_ac].ogb091,
                               ogb092=d_ogb[l_ac].ogb092,      #MOD-A10010 add
-                              ogb17=d_ogb[l_ac].ogb17                 # CHI-870038 
+                              ogb17=d_ogb[l_ac].ogb17                 # CHI-870038
            WHERE ogb01=g_oga.oga01
              AND ogb03=d_ogb[l_ac].ogb03
           IF SQLCA.sqlcode THEN
@@ -21514,7 +21529,7 @@ FUNCTION t600_3()
          DECLARE t600b_chk_cl CURSOR FOR SELECT ogb01,ogb03 FROM ogb_file WHERE ogb01 = g_oga.oga01
          FOREACH t600b_chk_cl INTO l_ogb01,l_ogb03
             IF d_ogb[l_ac].ogb17 = 'Y' THEN
-               IF g_sma.sma115 = 'Y' THEN                                                                                            
+               IF g_sma.sma115 = 'Y' THEN
                   SELECT SUM(ogg12),SUM(ogg13) INTO l_ogg12_tot1 FROM ogg_file
                    WHERE ogg01 = l_ogb01 AND ogg03 = l_ogb03 AND ogg20 = 1
 
@@ -21529,7 +21544,7 @@ FUNCTION t600_3()
                   SELECT SUM(ogc12),SUM(ogc13) INTO l_ogc12_tot FROM FROM ogc_file
                    WHERE ogc01 = l_ogb01 AND ogc03 = l_ogb03
 
-                  IF l_ogc12_tot != d_ogb[l_ac].ogb12 THEN 
+                  IF l_ogc12_tot != d_ogb[l_ac].ogb12 THEN
                     CALL cl_err('','axm1182',1)
                     NEXT FIELD ogb17
                   END IF
@@ -21539,24 +21554,24 @@ FUNCTION t600_3()
      #CHI-D30033 add start -----
 
 
-      ON ACTION mntn_inv_detail                                                                                                     
-         IF d_ogb[l_ac].ogb17 = 'Y' THEN                                                                                            
-            IF g_sma.sma115 = 'Y' THEN                                                                                              
+      ON ACTION mntn_inv_detail
+         IF d_ogb[l_ac].ogb17 = 'Y' THEN
+            IF g_sma.sma115 = 'Y' THEN
                #FUN-BB0081--Add--Begin
                IF g_oaz.oaz23 = 'Y' THEN
                   CALL t600_b_ogg2()
                ELSE
                #FUN-BB0081--Add--End
-                  CALL t600_b_ogg()                                                                                                    
+                  CALL t600_b_ogg()
                END IF #FUN-BB0081 add
-            ELSE                                                                                                                    
-               IF g_oaz.oaz23 = 'Y' THEN                                                                                            
-                  CALL t600_b_ogd()                                                                                                 
-               ELSE                                                                                                                 
-                  CALL t600_b_ogc()                                                                                                 
-               END IF                                                                                                               
-            END IF                                                                                                                  
-         END IF                                                                                                                     
+            ELSE
+               IF g_oaz.oaz23 = 'Y' THEN
+                  CALL t600_b_ogd()
+               ELSE
+                  CALL t600_b_ogc()
+               END IF
+            END IF
+         END IF
 
       #CHI-C90022 add start -----
       ON ACTION modi_lot
@@ -21684,8 +21699,8 @@ FUNCTION t600_3()
                    IF g_azw.azw04='2' THEN
                       CALL q_img42(FALSE,TRUE,d_ogb[l_ac].ogb04,d_ogb[l_ac].ogb09,
                            d_ogb[l_ac].ogb091,d_ogb[l_ac].ogb092,'A','1',g_oga.ogaplant)
-                       RETURNING d_ogb[l_ac].ogb09,d_ogb[l_ac].ogb091,                                                       
-                                 d_ogb[l_ac].ogb092   
+                       RETURNING d_ogb[l_ac].ogb09,d_ogb[l_ac].ogb091,
+                                 d_ogb[l_ac].ogb092
                    ELSE
                       #FUN-C30300---begin
                       LET g_ima906 = NULL
@@ -21700,7 +21715,7 @@ FUNCTION t600_3()
                           CALL q_img4(FALSE,TRUE,d_ogb[l_ac].ogb04,d_ogb[l_ac].ogb09,d_ogb[l_ac].ogb091,d_ogb[l_ac].ogb092,'A')
                           RETURNING d_ogb[l_ac].ogb09,d_ogb[l_ac].ogb091,d_ogb[l_ac].ogb092
                       END IF   #FUN-C30300
-                   END IF  
+                   END IF
                    IF INT_FLAG THEN
                       LET INT_FLAG = 0
                    END IF
@@ -21709,11 +21724,11 @@ FUNCTION t600_3()
                    DISPLAY BY NAME d_ogb[l_ac].ogb092
                    NEXT FIELD ogb09
               WHEN INFIELD(ogb091)
-                   IF g_azw.azw04='2' THEN                                                                                        
-                      CALL q_img42(FALSE,TRUE,d_ogb[l_ac].ogb04,d_ogb[l_ac].ogb09,                                               
-                            d_ogb[l_ac].ogb091,d_ogb[l_ac].ogb092,'A','1',g_oga.ogaplant)                                          
-                      RETURNING d_ogb[l_ac].ogb09,d_ogb[l_ac].ogb091,                                                             
-                                      d_ogb[l_ac].ogb092                                                                          
+                   IF g_azw.azw04='2' THEN
+                      CALL q_img42(FALSE,TRUE,d_ogb[l_ac].ogb04,d_ogb[l_ac].ogb09,
+                            d_ogb[l_ac].ogb091,d_ogb[l_ac].ogb092,'A','1',g_oga.ogaplant)
+                      RETURNING d_ogb[l_ac].ogb09,d_ogb[l_ac].ogb091,
+                                      d_ogb[l_ac].ogb092
                    ELSE
                       #FUN-C30300---begin
                       LET g_ima906 = NULL
@@ -21728,7 +21743,7 @@ FUNCTION t600_3()
                          CALL q_img4(FALSE,TRUE,d_ogb[l_ac].ogb04,d_ogb[l_ac].ogb09,d_ogb[l_ac].ogb091,d_ogb[l_ac].ogb092,'A')
                                   RETURNING d_ogb[l_ac].ogb09,d_ogb[l_ac].ogb091,d_ogb[l_ac].ogb092
                       END IF #FUN-C30300
-                   END IF  
+                   END IF
                    IF INT_FLAG THEN
                       LET INT_FLAG = 0
                    END IF
@@ -21861,7 +21876,7 @@ FUNCTION t600_4()
        CALL cl_err('','apm-030',0)
        RETURN
     END IF
-    
+
     OPEN t600_cl USING g_oga.oga01
     IF STATUS THEN
        CALL cl_err("OPEN t600_cl:", STATUS, 1)
@@ -21980,7 +21995,7 @@ FUNCTION t600_b_ogd()   # 庫存異動明細(ogc_file)輸入
                          ogc15     LIKE ogc_file.ogc15,
                          ogc15_fac LIKE ogc_file.ogc15_fac,
                          ogc16     LIKE ogc_file.ogc16,
-                         ogc18     LIKE ogc_file.ogc18   #No:FUN-8A0030 
+                         ogc18     LIKE ogc_file.ogc18   #No:FUN-8A0030
                        END RECORD
    DEFINE l_n          LIKE type_file.num5     #No.FUN-680137 SMALLINT
    DEFINE l_ogc12_t    LIKE ogc_file.ogc12
@@ -22012,7 +22027,7 @@ FUNCTION t600_b_ogd()   # 庫存異動明細(ogc_file)輸入
    DEFINE l_rvbs13    LIKE rvbs_file.rvbs13  #MOD-C30841  add
    DEFINE l_ogc13_t   LIKE ogc_file.ogc12   #FUN-C50097
    DEFINE l_act       LIKE type_file.chr3    #CHI-BB0057 add
-   
+
    LET p_row = 2 LET p_col = 2
 
    OPEN WINDOW t600b_w AT p_row,p_col WITH FORM "axm/42f/axmt600b"
@@ -22021,10 +22036,10 @@ FUNCTION t600_b_ogd()   # 庫存異動明細(ogc_file)輸入
    CALL cl_ui_locale("axmt600b")
 #FUN-C50097 ADD BEGIN TQC-C70206
    CALL cl_set_comp_visible("ogc13",FALSE)
-   IF g_oga.oga09 ='8' AND g_aza.aza26 ='2' AND g_oaz.oaz94 ='Y' THEN 
+   IF g_oga.oga09 ='8' AND g_aza.aza26 ='2' AND g_oaz.oaz94 ='Y' THEN
       CALL cl_set_comp_visible("ogc13",TRUE)
-   END IF    
-#FUN-C50097 ADD END 
+   END IF
+#FUN-C50097 ADD END
    CALL t600b_set_no_entry_ogc() #MOD-B30026 add
 
    IF g_oaz.oaz42 = '2' THEN
@@ -22089,7 +22104,7 @@ FUNCTION t600_b_ogd()   # 庫存異動明細(ogc_file)輸入
       IF i = 0 THEN
 
          INPUT l_ocl01,l_date WITHOUT DEFAULTS FROM a,b
-         
+
             ON ACTION controlp
                CASE
                   WHEN INFIELD(a)
@@ -22100,20 +22115,20 @@ FUNCTION t600_b_ogd()   # 庫存異動明細(ogc_file)輸入
                      DISPLAY l_ocl01 TO FORMONLY.a
                      NEXT FIELD a
                END CASE
-            
+
             ON IDLE g_idle_seconds
                CALL cl_on_idle()
                CONTINUE INPUT
-         
+
             ON ACTION about         #MOD-4C0121
                CALL cl_about()      #MOD-4C0121
-         
+
             ON ACTION help          #MOD-4C0121
                CALL cl_show_help()  #MOD-4C0121
-         
+
             ON ACTION controlg      #MOD-4C0121
                CALL cl_cmdask()     #MOD-4C0121
-         
+
          END INPUT
 
       END IF   #FUN-640130 add
@@ -22137,7 +22152,7 @@ FUNCTION t600_b_ogd()   # 庫存異動明細(ogc_file)輸入
       LET l_i = 1
 
       FOREACH t600b_c5 INTO l_ogc[i].*
-         IF STATUS THEN 
+         IF STATUS THEN
             CALL cl_err('foreach ogc',STATUS,0)
             EXIT FOREACH
          END IF
@@ -22285,8 +22300,8 @@ FUNCTION t600_b_ogd()   # 庫存異動明細(ogc_file)輸入
        ogc15     LIKE ogc_file.ogc15,
        ogc15_fac LIKE ogc_file.ogc15_fac,
        ogc16     LIKE ogc_file.ogc16,
-       ogc17     LIKE ogc_file.ogc17,                 
-       ogc18     LIKE ogc_file.ogc18,      #TQC-B60155 add 
+       ogc17     LIKE ogc_file.ogc17,
+       ogc18     LIKE ogc_file.ogc18,      #TQC-B60155 add
        ogcplant  LIKE ogc_file.ogcplant,   #TQC-B60155 add
        ogclegal  LIKE ogc_file.ogclegal,   #TQC-B60155 add
        ogc13     LIKE ogc_file.ogc13)      #FUN-C50097
@@ -22301,7 +22316,7 @@ FUNCTION t600_b_ogd()   # 庫存異動明細(ogc_file)輸入
          END IF
          #-----MOD-B30487---------
          LET g_ogc18 = 0
-         SELECT MAX(ogc18)+1 INTO g_ogc18 
+         SELECT MAX(ogc18)+1 INTO g_ogc18
            FROM ogc_file
           WHERE ogc01 = g_oga.oga01
             AND ogc03 = g_ogb[l_ac].ogb03
@@ -22324,7 +22339,7 @@ FUNCTION t600_b_ogd()   # 庫存異動明細(ogc_file)輸入
         #-----MOD-A60198---------
         #IF cl_null(l_ogc[i].ogc18) OR l_ogc[i].ogc18 = 0 THEN
         #   SELECT MAX(ogc18)+1 INTO l_ogc[i].ogc18
-        #     FROM ogc_file 
+        #     FROM ogc_file
         #    WHERE ogc01 = g_oga.oga01
         #      AND ogc03 = g_ogb[l_ac].ogb03
         #END IF
@@ -22346,11 +22361,11 @@ FUNCTION t600_b_ogd()   # 庫存異動明細(ogc_file)輸入
         CALL cl_show_fld_cont()     #FUN-550037(smin)
 
      #-----MOD-A60198---------
-     BEFORE INSERT 
+     BEFORE INSERT
         IF cl_null(l_ogc[i].ogc18) OR l_ogc[i].ogc18 = 0 THEN
             #-----MOD-B30487---------
             #SELECT MAX(ogc18)+1 INTO l_ogc[i].ogc18
-            #  FROM ogc_file 
+            #  FROM ogc_file
             # WHERE ogc01 = g_oga.oga01
             #   AND ogc03 = g_ogb[l_ac].ogb03
             LET l_ogc[i].ogc18 = g_ogc18
@@ -22369,26 +22384,26 @@ FUNCTION t600_b_ogd()   # 庫存異動明細(ogc_file)輸入
        LET g_ogc18 = g_ogc18 + 1
      #-----END MOD-B30487-----
 
-      AFTER FIELD ogc09                                                                                                              
-           #No.FUN-AA0048  --End  
-           #LET l_cnt =0                                                                                                            
-           #SELECT COUNT(*) INTO l_cnt FROM imd_file                                                                                
-           # WHERE imd01=l_ogc[i].ogc09                                                                                          
-           #   AND imd20=g_plant                                                                                               
-           #IF l_cnt=0 THEN                                                                                                         
-           #   CALL cl_err(l_ogc[i].ogc09,'art-487',0)                                                                           
-           #   NEXT FIELD ogc09                                                                                                      
-           #END IF                                                                                                            
+      AFTER FIELD ogc09
+           #No.FUN-AA0048  --End
+           #LET l_cnt =0
+           #SELECT COUNT(*) INTO l_cnt FROM imd_file
+           # WHERE imd01=l_ogc[i].ogc09
+           #   AND imd20=g_plant
+           #IF l_cnt=0 THEN
+           #   CALL cl_err(l_ogc[i].ogc09,'art-487',0)
+           #   NEXT FIELD ogc09
+           #END IF
            IF NOT s_chk_ware(l_ogc[i].ogc09) THEN
-              NEXT FIELD ogc09 
+              NEXT FIELD ogc09
            END IF
-           #No.FUN-AA0048  --End  
+           #No.FUN-AA0048  --End
      AFTER FIELD ogc17
         IF NOT cl_null(l_ogc[i].ogc17) THEN
 #FUN-AA0059 ---------------------start----------------------------
             IF NOT s_chk_item_no(l_ogc[i].ogc17,"") THEN
                CALL cl_err('',g_errno,1)
-               LET l_ogc[i].ogc17= l_ogc17_t 
+               LET l_ogc[i].ogc17= l_ogc17_t
                NEXT FIELD ogc17
             END IF
 #FUN-AA0059 ---------------------end-------------------------------
@@ -22429,8 +22444,8 @@ FUNCTION t600_b_ogd()   # 庫存異動明細(ogc_file)輸入
               END IF
            END IF
         END IF
-      
-      AFTER FIELD ogc12         
+
+      AFTER FIELD ogc12
          LET l_ogc[i].ogc12 = s_digqty(l_ogc[i].ogc12,g_ogb[l_ac].ogb05)  #FUN-910088--add--
          DISPLAY BY NAME l_ogc[i].ogc12    #FUN-910088--add--
          LET g_ima918 = ''   #MOD-9C0055
@@ -22445,7 +22460,7 @@ FUNCTION t600_b_ogd()   # 庫存異動明細(ogc_file)輸入
 
          IF (g_ima918 = "Y" OR g_ima921 = "Y") AND (l_ogc[i].ogc12<>0) THEN
            #IF g_argv0='2' OR g_argv0='4' OR g_argv0='6' OR ((g_argv0 ='1' OR g_argv0='5') AND g_oaz.oaz81 = 'Y') THEN   #MOD-940294 add #CHI-AC0034 mark
-            #IF g_argv0='2' OR g_argv0='4' OR g_argv0='6' OR g_argv0='8' OR g_argv0='9' OR ((g_argv0 ='1' OR g_argv0='5') AND g_oaz.oaz81 = 'Y') THEN   #MOD-940294 add #CHI-AC0034 add '8','9'   #MOD-AC0060 
+            #IF g_argv0='2' OR g_argv0='4' OR g_argv0='6' OR g_argv0='8' OR g_argv0='9' OR ((g_argv0 ='1' OR g_argv0='5') AND g_oaz.oaz81 = 'Y') THEN   #MOD-940294 add #CHI-AC0034 add '8','9'   #MOD-AC0060
             IF g_argv0='2' OR g_argv0='4' OR g_argv0='6' OR g_argv0='8' OR g_argv0='9' OR g_argv0='A' OR ((g_argv0 ='1' OR g_argv0='5') AND g_oaz.oaz81 = 'Y') THEN   #MOD-940294 add #CHI-AC0034 add '8','9'   #MOD-AC0060 add 'A'
                SELECT img09 INTO l_ogc[i].ogc15
                  FROM img_file
@@ -22453,12 +22468,12 @@ FUNCTION t600_b_ogd()   # 庫存異動明細(ogc_file)輸入
                   AND img02 = l_ogc[i].ogc09
                   AND img03 = l_ogc[i].ogc091
                   AND img04 = l_ogc[i].ogc092
-               
+
                LET l_ogc[i].ogc16 = s_digqty(l_ogc[i].ogc16,l_ogc[i].ogc15)   #FUN-910088--add--
                DISPLAY l_ogc[i].ogc15 TO s_ogc[j].ogc15
                DISPLAY l_ogc[i].ogc16 TO s_ogc[j].ogc16                        #FUN-910088--add--
 
-               IF NOT cl_null(l_ogc[i].ogc15) THEN 
+               IF NOT cl_null(l_ogc[i].ogc15) THEN
                   CALL s_umfchk(l_ogc[i].ogc17,g_ogb[l_ac].ogb05,l_ogc[i].ogc15)   #No:FUN-8B0021
                       RETURNING g_cnt,l_ogc[i].ogc15_fac
                   IF g_cnt=1 THEN
@@ -22468,7 +22483,7 @@ FUNCTION t600_b_ogd()   # 庫存異動明細(ogc_file)輸入
                      LET l_msg3 = l_msg3 CLIPPED,"(",l_ogc[i].ogc17,")"
                      CALL cl_msgany(10,20,l_msg3)
                     #TQC-C50131 -- add -- end
-                     NEXT FIELD ogc092 
+                     NEXT FIELD ogc092
                   END IF
                END IF
 
@@ -22477,16 +22492,16 @@ FUNCTION t600_b_ogd()   # 庫存異動明細(ogc_file)輸入
                END IF
 #CHI-B60054  --mark Begin #mark CHI-B30093和TQC-B50099
 #               IF g_argv0 = '8' THEN  #No.TQC-B50099
-#CHI-B30093 --begin--  
+#CHI-B30093 --begin--
 #                  SELECT ogc09,ogc091 INTO l_ogc09_1,l_ogc091_1 FROM ogc_file, OUTER img_file
-#                    WHERE ogc01 = g_oga.oga011 
-#                      AND ogc03 = g_ogb[l_ac].ogb03     
+#                    WHERE ogc01 = g_oga.oga011
+#                      AND ogc03 = g_ogb[l_ac].ogb03
 #                      AND img01=g_ogb[l_ac].ogb04
 #                      AND img02=ogc09
 #                      AND img03=ogc091
 #                      AND img04=ogc092
 #                      AND ogc092=l_ogc[i].ogc092
-#                                   
+#
 #                   SELECT ogc12 INTO l_ogc12_1 FROM ogc_file
 #                    WHERE ogc01 = g_oga.oga011
 #                      AND ogc03 = g_ogb[l_ac].ogb03
@@ -22494,15 +22509,15 @@ FUNCTION t600_b_ogd()   # 庫存異動明細(ogc_file)輸入
 #                      AND ogc091= l_ogc091_1
 #                      AND ogc092= l_ogc[i].ogc092
 #                      AND ogc17 = g_ogb[l_ac].ogb04
-#                   IF cl_null(l_ogc12_1) THEN LET l_ogc12_1 = 0 END IF    
+#                   IF cl_null(l_ogc12_1) THEN LET l_ogc12_1 = 0 END IF
 #                   LET l_ogc[i].ogc12_1 = l_ogc12_1 - l_ogc[i].ogc12
-#                   IF l_ogc[i].ogc12_1 < 0 THEN 
+#                   IF l_ogc[i].ogc12_1 < 0 THEN
 #                      CALL cl_err('','axm-938',0)
-#                      NEXT FIELD CURRENT 
-#                   ELSE 
+#                      NEXT FIELD CURRENT
+#                   ELSE
 #                   	  DISPLAY BY NAME l_ogc[i].ogc12_1
-#                   END IF 
-#CHI-B30093 --end--  
+#                   END IF
+#CHI-B30093 --end--
 #                END IF #No.TQC-B50099
 #CHI-B60054  --mark End #mark CHI-B30093和TQC-B50099
 #No.CHI-9A0022 --Begin
@@ -22537,7 +22552,7 @@ FUNCTION t600_b_ogd()   # 庫存異動明細(ogc_file)輸入
                                 l_ogc[i].ogc17,l_ogc[i].ogc09,
                                 l_ogc[i].ogc091,l_ogc[i].ogc092,
                                 g_ogb[l_ac].ogb05,l_ogc[i].ogc15,l_ogc[i].ogc15_fac,
-                                l_ogc[i].ogc12,l_bno,l_act,-1) #CHI-BB0057 add 
+                                l_ogc[i].ogc12,l_bno,l_act,-1) #CHI-BB0057 add
                                #l_ogc[i].ogc12,l_bno,'MOD',-1)#CHI-9A0022 add l_bno    #TQC-B90236 add '-1' #CHI-BB0057 mark
                       RETURNING l_r,g_qty
                END IF                                                        #DEV-D30059
@@ -22571,14 +22586,14 @@ FUNCTION t600_b_ogd()   # 庫存異動明細(ogc_file)輸入
            DISPLAY l_ogc[i].ogc15 TO s_ogc[j].ogc15
            CALL s_umfchk(l_ogc[i].ogc17,g_ogb[l_ac].ogb05,l_ogc[i].ogc15)
                          RETURNING g_cnt,l_ogc[i].ogc15_fac
-           IF g_cnt=1 THEN 
-              CALL cl_err('','mfg3075',1) 
+           IF g_cnt=1 THEN
+              CALL cl_err('','mfg3075',1)
              #TQC-C50131 -- add -- begin
               CALL cl_getmsg('asf-176',g_lang) RETURNING l_msg3
               LET l_msg3 = l_msg3 CLIPPED,"(",l_ogc[i].ogc17,")"
               CALL cl_msgany(10,20,l_msg3)
              #TQC-C50131 -- add -- end
-              NEXT FIELD ogc092 
+              NEXT FIELD ogc092
            END IF
            IF cl_null(l_ogc[i].ogc15_fac) THEN LET l_ogc[i].ogc15_fac=1 END IF
            LET l_ogc[i].ogc16 = l_ogc[i].ogc12 * l_ogc[i].ogc15_fac
@@ -22622,7 +22637,7 @@ FUNCTION t600_b_ogd()   # 庫存異動明細(ogc_file)輸入
           #CHI-D30032 add end   -----
               IF cl_confirm('axm-170') THEN
                 #CHI-D30032 add start -----
-                 LET g_ogb[l_ac].ogb12 = l_ogc12_t 
+                 LET g_ogb[l_ac].ogb12 = l_ogc12_t
                  DISPLAY BY NAME g_ogb[l_ac].ogb12
                  IF g_loc_flag = 'Y' THEN
                     LET d_ogb[l_ac].ogb12 = g_ogb[l_ac].ogb12
@@ -22639,8 +22654,8 @@ FUNCTION t600_b_ogd()   # 庫存異動明細(ogc_file)輸入
            END IF #CHI-D30032 add
         END IF
 #FUN-C50097 ADD BEGIN------120727
-         IF g_oga.oga09 ='8' AND g_oaz.oaz94='Y' THEN 
-            IF l_ogc13_t != g_ogb[l_ac].ogb52 THEN   
+         IF g_oga.oga09 ='8' AND g_oaz.oaz94='Y' THEN
+            IF l_ogc13_t != g_ogb[l_ac].ogb52 THEN
                #CHI-D30032 add start -----
                 IF g_oga.ogaconf ='Y' THEN
                    CALL cl_err('','axm1182',1)
@@ -22648,21 +22663,21 @@ FUNCTION t600_b_ogd()   # 庫存異動明細(ogc_file)輸入
                 ELSE
                #CHI-D30032 add end   -----
                   IF cl_confirm('axm-170') THEN
-                     LET g_ogb[l_ac].ogb52 = 0 
+                     LET g_ogb[l_ac].ogb52 = 0
                      FOR k = 1 TO l_ogc.getLength()
                        LET g_ogb[l_ac].ogb52 = g_ogb[l_ac].ogb52 + l_ogc[k].ogc13
-                     END FOR                                   
+                     END FOR
                      DISPLAY BY NAME g_ogb[l_ac].ogb52
                      UPDATE ogb_file SET ogb52 = g_ogb[l_ac].ogb52
                       WHERE ogb01 = g_oga.oga01
-                        AND ogb03 = g_ogb[l_ac].ogb03                 
+                        AND ogb03 = g_ogb[l_ac].ogb03
                      EXIT INPUT
                   ELSE
                      NEXT FIELD ogc13
                   END IF
                END IF #CHI-D30032 add
             END IF
-         END IF 
+         END IF
 #FUN-C50097 ADD END--------120727
 
       ON ACTION controlp
@@ -22682,7 +22697,7 @@ FUNCTION t600_b_ogd()   # 庫存異動明細(ogc_file)輸入
                    NEXT FIELD ogc17
                 WHEN INFIELD(ogc09)
                    IF g_azw.azw04='2' THEN
-                      CALL q_img42(FALSE,FALSE,l_ogc[i].ogc17,'','','','A','1',g_oga.ogaplant)                                  
+                      CALL q_img42(FALSE,FALSE,l_ogc[i].ogc17,'','','','A','1',g_oga.ogaplant)
                       RETURNING l_ogc[i].ogc09,l_ogc[i].ogc091,l_ogc[i].ogc092
                    ELSE
                       #FUN-C30300---begin
@@ -22710,18 +22725,18 @@ FUNCTION t600_b_ogd()   # 庫存異動明細(ogc_file)輸入
                      #LET g_qryparam.arg2     = 'SW'           #倉庫類別 #MOD-4A0063
                      #CALL cl_create_qry() RETURNING l_ogc[i].ogc091
                      CALL q_ime_1(FALSE,TRUE,l_ogc[i].ogc091,l_ogc[i].ogc09,"","","","","") RETURNING l_ogc[i].ogc091
-                     #No.FUN-AA0048  --End  
+                     #No.FUN-AA0048  --End
                       DISPLAY BY NAME l_ogc[i].ogc091        #No:MOD-490371
                      NEXT FIELD ogc091
             END CASE
 
-      
+
       ON ACTION modi_lot
          LET g_ima918 = ''   #MOD-9C0055
          LET g_ima921 = ''   #MOD-9C0055
          SELECT ima918,ima921 INTO g_ima918,g_ima921
            FROM ima_file
-          WHERE ima01 = l_ogc[i].ogc17 
+          WHERE ima01 = l_ogc[i].ogc17
             AND imaacti = "Y"
 
          IF (g_ima918 = "Y" OR g_ima921 = "Y") AND (l_ogc[i].ogc12<>0) THEN
@@ -22733,12 +22748,12 @@ FUNCTION t600_b_ogd()   # 庫存異動明細(ogc_file)輸入
                   AND img02 = l_ogc[i].ogc09
                   AND img03 = l_ogc[i].ogc091
                   AND img04 = l_ogc[i].ogc092
-               
+
                LET l_ogc[i].ogc16 = s_digqty(l_ogc[i].ogc16,l_ogc[i].ogc15)   #FUN-910088--add--
                DISPLAY l_ogc[i].ogc15 TO s_ogc[j].ogc15
                DISPLAY l_ogc[i].ogc16 TO s_ogc[j].ogc16                       #FUN-910088--add--
 
-               IF NOT cl_null(l_ogc[i].ogc15) THEN 
+               IF NOT cl_null(l_ogc[i].ogc15) THEN
                   CALL s_umfchk(l_ogc[i].ogc17,g_ogb[l_ac].ogb05,l_ogc[i].ogc15)
                       RETURNING g_cnt,l_ogc[i].ogc15_fac
                   IF g_cnt=1 THEN
@@ -22748,7 +22763,7 @@ FUNCTION t600_b_ogd()   # 庫存異動明細(ogc_file)輸入
                      LET l_msg3 = l_msg3 CLIPPED,"(",l_ogc[i].ogc17,")"
                      CALL cl_msgany(10,20,l_msg3)
                     #TQC-C50131 -- add -- end
-                     NEXT FIELD ogc092 
+                     NEXT FIELD ogc092
                   END IF
                END IF
 
@@ -22771,7 +22786,7 @@ FUNCTION t600_b_ogd()   # 庫存異動明細(ogc_file)輸入
                   ELSE
                   #FUN-9C0103 ---end---
                      LET l_bno = g_ogb[l_ac].ogb31
-                  END IF 
+                  END IF
                ELSE
                   LET l_bno = g_ogb[l_ac].ogb41
                END IF
@@ -22823,7 +22838,7 @@ FUNCTION t600_b_ogd()   # 庫存異動明細(ogc_file)輸入
            #IF s_lot_del(g_prog,g_oga.oga01,g_ogb[l_ac].ogb03,l_ogc[i].ogc18,l_ogc[i].ogc17,'DEL') THEN   #No:FUN-8B0021    #TQC-B90236 #MOD-C30841 mark
                CONTINUE FOR
            #END IF #MOD-C30841 mark
-          END IF 
+          END IF
               IF cl_null(l_ogc[i].ogc09) THEN LET l_ogc[i].ogc09=' ' END IF
               IF cl_null(l_ogc[i].ogc091) THEN LET l_ogc[i].ogc091=' ' END IF
               IF cl_null(l_ogc[i].ogc092) THEN LET l_ogc[i].ogc092=' ' END IF
@@ -22833,10 +22848,10 @@ FUNCTION t600_b_ogd()   # 庫存異動明細(ogc_file)輸入
               IF cl_null(l_ogc[i].ogc15_fac) THEN LET l_ogc[i].ogc15_fac=0 END IF
               IF cl_null(l_ogc[i].ogc16) THEN LET l_ogc[i].ogc16=0 END IF
              #TQC-C50251 -- add -- end
-          IF cl_null(l_ogc[i].ogc13) THEN 
+          IF cl_null(l_ogc[i].ogc13) THEN
             LET l_ogc[i].ogc13=0 #FUN-C50097 ADD
-          END IF          
-          INSERT INTO ogc_file(ogc01,ogc03,ogc09,ogc091,ogc092, 
+          END IF
+          INSERT INTO ogc_file(ogc01,ogc03,ogc09,ogc091,ogc092,
                                 ogc12,ogc15,ogc15_fac,ogc16,ogc17,ogc18,  #No.MOD-470041   #FUN-8A0030 Add ogc18
                                ogcplant,ogclegal,ogc13)   #FUN-980010 add plant & legal  ,ogc13  ## TQC-C80177
                  VALUES(g_oga.oga01,g_ogb[l_ac].ogb03,
@@ -22952,9 +22967,9 @@ DEFINE  l_ogc18      LIKE ogc_file.ogc18    #No:FUN-8A0030
             IF cl_null(r_ogc.ogc16) THEN LET r_ogc.ogc16=0 END IF
            #TQC-C50251 -- add -- end
 
-            LET r_ogc.ogcplant = g_plant 
+            LET r_ogc.ogcplant = g_plant
             LET r_ogc.ogclegal = g_legal
-            IF cl_null(r_ogc.ogc13) THEN LET r_ogc.ogc13=0 END IF #FUN-C50097  
+            IF cl_null(r_ogc.ogc13) THEN LET r_ogc.ogc13=0 END IF #FUN-C50097
 
                INSERT INTO ogc_file VALUES (r_ogc.*)
             END IF
@@ -22983,9 +22998,9 @@ DEFINE  l_ogc18      LIKE ogc_file.ogc18    #No:FUN-8A0030
                IF cl_null(r_ogc.ogc16) THEN LET r_ogc.ogc16=0 END IF
               #TQC-C50251 -- add -- end
 
-               LET r_ogc.ogcplant = g_plant 
-               LET r_ogc.ogclegal = g_legal 
-               IF cl_null(r_ogc.ogc13) THEN LET r_ogc.ogc13=0 END IF #FUN-C50097 
+               LET r_ogc.ogcplant = g_plant
+               LET r_ogc.ogclegal = g_legal
+               IF cl_null(r_ogc.ogc13) THEN LET r_ogc.ogc13=0 END IF #FUN-C50097
 
                   INSERT INTO ogc_file VALUES (r_ogc.*)
                END IF
@@ -23021,7 +23036,7 @@ DEFINE  l_ogc18 LIKE ogc_file.ogc18   #No:FUN-8A0030
                          WHERE ocm01=p_ocm01             #FUN-640187 add
                            AND ocm02=g_ogb[l_ac].ogb04   #FUN-640187 add
                            AND ocm05=l_ocm05)            #FUN-640187 add
-      LET l_ogc18 = 0   #MOD-A80192 
+      LET l_ogc18 = 0   #MOD-A80192
       FOREACH t600b_c2 INTO l_ocm02,l_ocm04
          IF NOT cl_null(l_ocm04) AND l_ocm04 < p_date THEN
             CONTINUE FOREACH
@@ -23055,9 +23070,9 @@ DEFINE  l_ogc18 LIKE ogc_file.ogc18   #No:FUN-8A0030
             IF cl_null(r_ogc.ogc16) THEN LET r_ogc.ogc16=0 END IF
            #TQC-C50251 -- add -- end
 
-            LET r_ogc.ogcplant = g_plant 
-            LET r_ogc.ogclegal = g_legal 
-            IF cl_null(r_ogc.ogc13) THEN LET r_ogc.ogc13=0 END IF #FUN-C50097 
+            LET r_ogc.ogcplant = g_plant
+            LET r_ogc.ogclegal = g_legal
+            IF cl_null(r_ogc.ogc13) THEN LET r_ogc.ogc13=0 END IF #FUN-C50097
 
             IF p_type = '1' THEN
                INSERT INTO ogc_file VALUES (r_ogc.*)
@@ -23089,9 +23104,9 @@ DEFINE  l_ogc18 LIKE ogc_file.ogc18   #No:FUN-8A0030
                IF cl_null(r_ogc.ogc16) THEN LET r_ogc.ogc16=0 END IF
               #TQC-C50251 -- add -- end
 
-               LET r_ogc.ogcplant = g_plant 
-               LET r_ogc.ogclegal = g_legal 
-               IF cl_null(r_ogc.ogc13) THEN LET r_ogc.ogc13=0 END IF #FUN-C50097 
+               LET r_ogc.ogcplant = g_plant
+               LET r_ogc.ogclegal = g_legal
+               IF cl_null(r_ogc.ogc13) THEN LET r_ogc.ogc13=0 END IF #FUN-C50097
 
                IF p_type = '1' THEN
                   INSERT INTO ogc_file VALUES (r_ogc.*)
@@ -23151,10 +23166,10 @@ DEFINE p_ogb31 LIKE ogb_file.ogb31,
        l_retn_qty  LIKE ohb_file.ohb12,     #No.FUN-670008
        l_retn_amt  LIKE ohb_file.ohb14,     #No.FUN-670008
        #-----MOD-A50076---------
-       l_retn_qty_2 LIKE ogb_file.ogb12,  
-       l_ogb912_2 LIKE ogb_file.ogb912,     
-       l_ogb915_2 LIKE ogb_file.ogb915,     
-       l_ogb917_2 LIKE ogb_file.ogb917      
+       l_retn_qty_2 LIKE ogb_file.ogb12,
+       l_ogb912_2 LIKE ogb_file.ogb912,
+       l_ogb915_2 LIKE ogb_file.ogb915,
+       l_ogb917_2 LIKE ogb_file.ogb917
        #-----END MOD-A50076-----
 DEFINE p_ogb44 LIKE ogb_file.ogb44,         #No.FUN-870007
        p_ogb45 LIKE ogb_file.ogb45,         #No.FUN-870007
@@ -23162,7 +23177,7 @@ DEFINE p_ogb44 LIKE ogb_file.ogb44,         #No.FUN-870007
        p_ogb47 LIKE ogb_file.ogb47          #No.FUN-870007
 DEFINE l_ogb12_qty   LIKE ogb_file.ogb12    #MOD-C30508 add
 DEFINE l_ogb12a,l_ogb12b like ogb_file.ogb12
-  
+
    #MOD-C30508 ------- add ------- begin
    SELECT SUM(ogb12) INTO l_ogb12_qty FROM ogb_file
     WHERE ogb01 = g_oga.oga01
@@ -23258,10 +23273,10 @@ DEFINE l_ogb12a,l_ogb12b like ogb_file.ogb12
       IF l_ohb917 IS NULL   THEN LET l_ohb917   = 0 END IF
 
       #-----MOD-A50076---------
-      LET l_retn_qty_2 = 0 
-      LET l_ogb912_2 = 0 
-      LET l_ogb915_2 = 0 
-      LET l_ogb917_2 = 0 
+      LET l_retn_qty_2 = 0
+      LET l_ogb912_2 = 0
+      LET l_ogb915_2 = 0
+      LET l_ogb917_2 = 0
       SELECT SUM(ogb12),SUM(ogb912),SUM(ogb915),SUM(ogb917)
         INTO l_retn_qty_2,l_ogb912_2,l_ogb915_2,l_ogb917_2
         FROM ogb_file,oga_file
@@ -23308,8 +23323,8 @@ DEFINE l_ogb12a,l_ogb12b like ogb_file.ogb12
        LET g_ogb[l_ac].ogb14t = p_ogb14t -l_ogb14t+l_retn_amt    #No.FUN-670008
        LET g_ogb[l_ac].ogb12 = p_ogb12 - l_ship_qty + l_retn_qty + l_retn_qty_2 - l_ogb12_qty   #MOD-A50076 add l_retn_qty_2  #MOD-C30508 add l_ogb12_qty
        #add by lixwz210106 s---
-         
-         
+
+
       #和出货通知单可出货做比较
       #檢查出貨數必須<=通知單應出數(ogb12)-累計出貨數(ogb19)
       #對應到的出貨通知單上的數量
@@ -23333,9 +23348,9 @@ DEFINE l_ogb12a,l_ogb12b like ogb_file.ogb12
             AND ogb32 = g_ogb[l_ac].ogb32
             AND ogb04 = g_ogb[l_ac].ogb04 #no.7168
             AND ogaconf !='X'
-            
+
          IF g_ogb[l_ac].ogb12 >  l_ogb12a-l_ogb12b THEN
-            LET  g_ogb[l_ac].ogb12 = l_ogb12a-l_ogb12b 
+            LET  g_ogb[l_ac].ogb12 = l_ogb12a-l_ogb12b
          END IF
       END IF
       #add by lixwz210106 e---
@@ -23344,7 +23359,7 @@ DEFINE l_ogb12a,l_ogb12b like ogb_file.ogb12
        LET g_ogb[l_ac].ogb915= p_ogb915- l_ogb915   + l_ohb915 + l_ogb915_2       #MOD-A50076 add l_ogb915_2
 
        LET g_ogb[l_ac].ogb917= p_ogb917- l_ogb917   + l_ohb917 + l_ogb917_2       #MOD-A50076 add l_ogb917_2
-       CALL t600_set_ogb917() #lixwz210106 
+       CALL t600_set_ogb917() #lixwz210106
        LET g_ogb[l_ac].ogb13 = p_ogb13
        LET g_ogb[l_ac].ogb37 = p_ogb37     #FUN-AB0061
        LET g_ogb[l_ac].ogb19 = p_ogb19
@@ -23578,12 +23593,12 @@ DEFINE i         LIKE type_file.num5   #MOD-A10163
 
 DEFINE l_ogc     RECORD LIKE ogc_file.*  #CHI-AC0034 add
 #No.MOD-C70145  --Begin
-DEFINE l_yy   LIKE type_file.num5  
-DEFINE l_mm   LIKE type_file.num5 
+DEFINE l_yy   LIKE type_file.num5
+DEFINE l_mm   LIKE type_file.num5
 DEFINE l_flag  LIKE type_file.num5
 DEFINE l_fac   LIKE ima_file.ima31_fac
 DEFINE l_img09 LIKE img_file.img09
-#No.MOD-C70145  --End 
+#No.MOD-C70145  --End
 DEFINE l_ogg     RECORD LIKE ogg_file.*  #FUN-C50097 120801
 
    IF g_oga.oga65!='Y' THEN
@@ -23648,7 +23663,7 @@ DEFINE l_ogg     RECORD LIKE ogg_file.*  #FUN-C50097 120801
       AFTER FIELD oga02
          IF NOT cl_null(tm.oga02) THEN
             IF tm.oga02 <= g_oaz.oaz09 THEN
-               CALL cl_err('','axm-164',0) 
+               CALL cl_err('','axm-164',0)
                NEXT FIELD oga02
             END IF
             IF g_oaz.oaz03 = 'Y' AND
@@ -23662,7 +23677,7 @@ DEFINE l_ogg     RECORD LIKE ogg_file.*  #FUN-C50097 120801
                NEXT FIELD oga02
             END IF
          END IF
-      #No.MOD-C70145  --End  
+      #No.MOD-C70145  --End
       AFTER INPUT
          IF INT_FLAG THEN
             EXIT INPUT
@@ -23670,7 +23685,7 @@ DEFINE l_ogg     RECORD LIKE ogg_file.*  #FUN-C50097 120801
          #No.MOD-C70145  --Begin
          IF NOT cl_null(tm.oga02) THEN
             IF tm.oga02 <= g_oaz.oaz09 THEN
-               CALL cl_err('','axm-164',0) 
+               CALL cl_err('','axm-164',0)
                NEXT FIELD oga02
             END IF
             IF g_oaz.oaz03 = 'Y' AND
@@ -23747,20 +23762,20 @@ DEFINE l_ogg     RECORD LIKE ogg_file.*  #FUN-C50097 120801
    LET l_oga.oga65  = 'N'
   #LET l_oga.oga69 = l_oga.oga02     #No.MOD-C70145 #MOD-D10136 mark
    LET l_oga.oga69 = g_today         #MOD-D10136 add
-   LET l_tmoga01 = tm.oga01    #FUN-9B0039 
+   LET l_tmoga01 = tm.oga01    #FUN-9B0039
   #LET l_tmoga01 = l_tmoga01[1,3]   #FUN-9B0039          #MOD-AA0060 mark
-   LET l_tmoga01 = l_tmoga01[1,g_doc_len]   #FUN-9B0039  #MOD-AA0060 add 
+   LET l_tmoga01 = l_tmoga01[1,g_doc_len]   #FUN-9B0039  #MOD-AA0060 add
    SELECT oayapr INTO l_oga.ogamksg FROM oay_file
     WHERE oayslip = l_tmoga01     #FUN-910036 add 抓取單據是否做簽核，因tm.oga01會多"_"所以用substr取前三碼  #FUN-9B0039 mod
    LET l_oga.oga85=' '  #No.FUN-870007
    LET l_oga.oga94='N' #No.FUN-870007
 
-   LET l_oga.ogaplant = g_plant 
-   LET l_oga.ogalegal = g_legal  
+   LET l_oga.ogaplant = g_plant
+   LET l_oga.ogalegal = g_legal
 
    LET l_oga.ogaoriu = g_user      #No.FUN-980030 10/01/04
    LET l_oga.ogaorig = g_grup      #No.FUN-980030 10/01/04
-   IF cl_null(l_oga.oga909) THEN LET l_oga.oga909 = 'N' END IF  #MOD-A60163 
+   IF cl_null(l_oga.oga909) THEN LET l_oga.oga909 = 'N' END IF  #MOD-A60163
 
 #TQC-C20127 --begin--
       IF cl_null(g_oga.ogaslk02) THEN
@@ -23780,7 +23795,7 @@ DEFINE l_ogg     RECORD LIKE ogg_file.*  #FUN-C50097 120801
       LET g_success='N'
    END IF
 
-   #tianry add end 
+   #tianry add end
    DECLARE t600_ins_ogb_c1 CURSOR FOR
     SELECT * FROM ogb_file
      WHERE ogb01= g_oga.oga01
@@ -23831,39 +23846,39 @@ DEFINE l_ogg     RECORD LIKE ogg_file.*  #FUN-C50097 120801
       #No.MOD-C70145  mark begin
        #MOD-B40148 add --start--
 #       IF g_oaz.oaz23 = 'N' THEN     #多倉儲出貨
-#          LET l_ogb.ogb17 = 'N' 
+#          LET l_ogb.ogb17 = 'N'
 #       END IF
        #MOD-B40148 add --end--
-      #No.MOD-C70145  --mark End 
+      #No.MOD-C70145  --mark End
        LET l_ogb.ogb44='1' #No.FUN-870007
        LET l_ogb.ogb47=0   #No.FUN-870007
 
-       LET l_ogb.ogbplant = g_plant 
-       LET l_ogb.ogblegal = g_legal  
+       LET l_ogb.ogbplant = g_plant
+       LET l_ogb.ogblegal = g_legal
     #  IF cl_null(l_ogb.ogb50) THEN LET l_ogb.ogb50 = '1' END IF #FUN-AA0057
 
-      #FUN-C30169 add START 
+      #FUN-C30169 add START
        IF cl_null(l_ogb.ogb917) THEN
           LET l_ogb.ogb917 = l_ogb.ogb12
        END IF
       #FUN-C30169 add END
        #FUN-C50097 ADD BEGIN-----
-       IF cl_null(l_ogb.ogb50) THEN 
+       IF cl_null(l_ogb.ogb50) THEN
           LET l_ogb.ogb50 = 0
-       END IF 
-       IF cl_null(l_ogb.ogb51) THEN 
+       END IF
+       IF cl_null(l_ogb.ogb51) THEN
           LET l_ogb.ogb51 = 0
-       END IF 
-       IF cl_null(l_ogb.ogb52) THEN 
+       END IF
+       IF cl_null(l_ogb.ogb52) THEN
           LET l_ogb.ogb52 = 0
-       END IF                                      
-       IF cl_null(l_ogb.ogb53) THEN 
+       END IF
+       IF cl_null(l_ogb.ogb53) THEN
          LET l_ogb.ogb53 = 0
-       END IF 
-       IF cl_null(l_ogb.ogb54) THEN 
+       END IF
+       IF cl_null(l_ogb.ogb54) THEN
          LET l_ogb.ogb54 = 0
-       END IF 
-       IF cl_null(l_ogb.ogb55) THEN 
+       END IF
+       IF cl_null(l_ogb.ogb55) THEN
          LET l_ogb.ogb55 = 0
        END IF
        #FUN-C50097 ADD END-------
@@ -23877,11 +23892,11 @@ DEFINE l_ogg     RECORD LIKE ogg_file.*  #FUN-C50097 120801
        CALL t620_ins_ogi(l_ogb.ogb03,l_ogb.ogb04,l_ogb.ogb917,l_ogb.ogb13)   #FUN-C10040 add
        LET g_ima918 = ''   #MOD-9C0055
        LET g_ima921 = ''   #MOD-9C0055
-       SELECT ima918,ima921 INTO g_ima918,g_ima921 
+       SELECT ima918,ima921 INTO g_ima918,g_ima921
          FROM ima_file
         WHERE ima01 = l_ogb.ogb04
           AND imaacti = "Y"
-       
+
        IF g_ima918 = "Y" OR g_ima921 = "Y" THEN
           IF l_ogb.ogb17='N' THEN  #MOD-C70088 add
             #DECLARE t600_g_rvbs_1 CURSOR FOR SELECT * FROM rvbs_file #CHI-BB0057 mark
@@ -23892,7 +23907,7 @@ DEFINE l_ogg     RECORD LIKE ogg_file.*  #FUN-C50097 120801
                                             WHERE rvbs01 = l_oga.oga011
                                               AND rvbs02 = l_ogb.ogb03
                                             GROUP BY rvbs03,rvbs04,rvbs05,rvbs08 #CHI-BB0057 add
-             LET i = 1   #MOD-A10163 
+             LET i = 1   #MOD-A10163
             #FOREACH t600_g_rvbs_1 INTO l_rvbs.* #CHI-BB0057 mark
              FOREACH t600_g_rvbs_1 INTO l_rvbs.rvbs03,l_rvbs.rvbs04,l_rvbs.rvbs05,l_rvbs.rvbs08 #CHI-BB0057 add
                 IF STATUS THEN
@@ -23923,10 +23938,10 @@ DEFINE l_ogg     RECORD LIKE ogg_file.*  #FUN-C50097 120801
                 LET l_rvbs.rvbs01 = l_oga.oga01
                 LET l_rvbs.rvbs022 = i   #MOD-A10163
                 LEt l_rvbs.rvbs13 = 0   #MOD-A10163
-       
+
                 INSERT INTO rvbs_file VALUES(l_rvbs.*)
                 IF STATUS OR SQLCA.SQLCODE THEN
-                   CALL cl_err3("ins","rvbs_file","","",SQLCA.sqlcode,"","ins rvbs",1)  
+                   CALL cl_err3("ins","rvbs_file","","",SQLCA.sqlcode,"","ins rvbs",1)
                 END IF
                 LET i = i + 1   #MOD-A10163
              END FOREACH
@@ -23946,7 +23961,7 @@ DEFINE l_ogg     RECORD LIKE ogg_file.*  #FUN-C50097 120801
          #FOREACH t600_ins_ogc_c1 INTO l_ogc.*                   #MOD-C70078 mark
           FOREACH t600_ins_ogc_c1 INTO l_ogc.ogc17,l_ogc.ogc092  #MOD-C70078
              IF STATUS THEN
-                CALL s_errmsg('','',"t600_ins_ogc_cl foreach:",SQLCA.sqlcode,1) 
+                CALL s_errmsg('','',"t600_ins_ogc_cl foreach:",SQLCA.sqlcode,1)
                 EXIT FOREACH
              END IF
              IF g_success = "N" THEN
@@ -23967,7 +23982,7 @@ DEFINE l_ogg     RECORD LIKE ogg_file.*  #FUN-C50097 120801
                AND ogc092= l_ogc.ogc092    #No.MOD-C70145
                AND ogc17= l_ogc.ogc17      #CHI-BB0057 add
              GROUP BY ogc17,ogc092
-             
+
            #MOD-C70078---add---E---
             #No.MOD-C70145  --Begin
             LET l_fac = 1
@@ -23977,7 +23992,7 @@ DEFINE l_ogg     RECORD LIKE ogg_file.*  #FUN-C50097 120801
                AND img03 = l_ogc.ogc091
                AND img04 = l_ogc.ogc092
             IF l_ogb.ogb05 <> l_img09 THEN
-               CALL s_umfchk(l_ogb.ogb04,l_ogb.ogb05,l_img09) 
+               CALL s_umfchk(l_ogb.ogb04,l_ogb.ogb05,l_img09)
                     RETURNING l_flag,l_fac
                IF l_flag = 1 THEN
                   CALL cl_err('','mfg3075',1)
@@ -24004,14 +24019,14 @@ DEFINE l_ogg     RECORD LIKE ogg_file.*  #FUN-C50097 120801
              IF NOT s_industry('icd') THEN  #FUN-C30310
                 INSERT INTO ogc_file VALUES(l_ogc.*)
                 IF SQLCA.SQLCODE OR SQLCA.SQLERRD[3]=0 THEN
-                   CALL s_errmsg('','',"ins ogc",SQLCA.sqlcode,1)  
+                   CALL s_errmsg('','',"ins ogc",SQLCA.sqlcode,1)
                    LET g_success='N'
                 END IF
              END IF  #FUN-C30310
 
-             LET g_ima918 = ''   
-             LET g_ima921 = ''  
-             SELECT ima918,ima921 INTO g_ima918,g_ima921 
+             LET g_ima918 = ''
+             LET g_ima921 = ''
+             SELECT ima918,ima921 INTO g_ima918,g_ima921
                FROM ima_file
               WHERE ima01 = l_ogc.ogc17
                 AND imaacti = "Y"
@@ -24032,7 +24047,7 @@ DEFINE l_ogg     RECORD LIKE ogg_file.*  #FUN-C50097 120801
                                                                      AND ogc092= l_ogc.ogc092)
                                            GROUP BY rvbs03,rvbs04,rvbs05,rvbs08,rvbs021
                                            #CHI-BB0057 add end   -----
-                                                #AND rvbs13 = l_ogc.ogc18 #CHI-BB0057 mark 
+                                                #AND rvbs13 = l_ogc.ogc18 #CHI-BB0057 mark
                 LET i = 1
                #FOREACH t600_g_rvbs_4 INTO l_rvbs.* #CHI-BB0057 mark
                FOREACH t600_g_rvbs_4 INTO l_rvbs.rvbs03,l_rvbs.rvbs04,l_rvbs.rvbs05,l_rvbs.rvbs08,l_rvbs.rvbs021 #CHI-BB0057 add
@@ -24067,13 +24082,13 @@ DEFINE l_ogg     RECORD LIKE ogg_file.*  #FUN-C50097 120801
 
                    LET l_rvbs.rvbs00 = 'axmt628'
                    LET l_rvbs.rvbs01 = l_oga.oga01
-                   LET l_rvbs.rvbs022 = i 
-             
+                   LET l_rvbs.rvbs022 = i
+
                    INSERT INTO rvbs_file VALUES(l_rvbs.*)
                    IF STATUS OR SQLCA.SQLCODE THEN
-                      CALL cl_err3("ins","rvbs_file","","",SQLCA.sqlcode,"","ins rvbs",1)  
+                      CALL cl_err3("ins","rvbs_file","","",SQLCA.sqlcode,"","ins rvbs",1)
                    END IF
-                   LET i = i + 1 
+                   LET i = i + 1
                 END FOREACH
              END IF
           END FOREACH
@@ -24088,14 +24103,14 @@ DEFINE l_ogg     RECORD LIKE ogg_file.*  #FUN-C50097 120801
             #FOREACH t600_ins_ogc_c1 INTO l_ogc.*                   #MOD-C70078 mark
              FOREACH t600_ins_ogg_c1 INTO l_ogg.ogg17,l_ogg.ogg092,l_ogg.ogg20 #MOD-C70078
                 IF STATUS THEN
-                   CALL s_errmsg('','',"t600_ins_ogg_cl foreach:",SQLCA.sqlcode,1) 
+                   CALL s_errmsg('','',"t600_ins_ogg_cl foreach:",SQLCA.sqlcode,1)
                    EXIT FOREACH
                 END IF
                 IF g_success = "N" THEN
                    LET g_totsuccess = "N"
                    LET g_success = "Y"
                 END IF
-   
+
               #MOD-C70078---add---S---
                SELECT * INTO l_ogg.* FROM ogg_file
                 WHERE ogg01= g_oga.oga01
@@ -24103,14 +24118,14 @@ DEFINE l_ogg     RECORD LIKE ogg_file.*  #FUN-C50097 120801
                   AND ogg17= l_ogg.ogg17
                   AND ogg092= l_ogg.ogg092
                   AND ogg20= l_ogg.ogg20
-   
+
                SELECT SUM(ogg12) INTO l_ogg.ogg12 FROM ogg_file
                 WHERE ogg01= g_oga.oga01
                   AND ogg03= l_ogb.ogb03
                   AND ogg092= l_ogg.ogg092    #No.MOD-C70145
                   AND ogg20= l_ogg.ogg20
                 GROUP BY ogg17,ogg092
-                
+
               #MOD-C70078---add---E---
                #No.MOD-C70145  --Begin
                LET l_fac = 1
@@ -24120,7 +24135,7 @@ DEFINE l_ogg     RECORD LIKE ogg_file.*  #FUN-C50097 120801
                   AND img03 = l_ogg.ogg091
                   AND img04 = l_ogg.ogg092
                IF l_ogb.ogb05 <> l_img09 THEN
-                  CALL s_umfchk(l_ogb.ogb04,l_ogb.ogb05,l_img09) 
+                  CALL s_umfchk(l_ogb.ogb04,l_ogb.ogb05,l_img09)
                        RETURNING l_flag,l_fac
                   IF l_flag = 1 THEN
                      CALL cl_err('','mfg3075',1)
@@ -24147,18 +24162,18 @@ DEFINE l_ogg     RECORD LIKE ogg_file.*  #FUN-C50097 120801
                 IF NOT s_industry('icd') THEN  #FUN-C30310
                    INSERT INTO ogg_file VALUES(l_ogg.*)
                    IF SQLCA.SQLCODE OR SQLCA.SQLERRD[3]=0 THEN
-                      CALL s_errmsg('','',"ins ogg",SQLCA.sqlcode,1)  
+                      CALL s_errmsg('','',"ins ogg",SQLCA.sqlcode,1)
                       LET g_success='N'
                    END IF
                 END IF  #FUN-C30310
-   
-                LET g_ima918 = ''   
-                LET g_ima921 = ''  
-                SELECT ima918,ima921 INTO g_ima918,g_ima921 
+
+                LET g_ima918 = ''
+                LET g_ima921 = ''
+                SELECT ima918,ima921 INTO g_ima918,g_ima921
                   FROM ima_file
                  WHERE ima01 = l_ogg.ogg17
                    AND imaacti = "Y"
-   
+
                 IF g_ima918 = "Y" OR g_ima921 = "Y" THEN
                    DECLARE t600_g_rvbs_5 CURSOR FOR SELECT * FROM rvbs_file
                                                   WHERE rvbs01 = l_oga.oga011
@@ -24171,17 +24186,17 @@ DEFINE l_ogg     RECORD LIKE ogg_file.*  #FUN-C50097 120801
                       END IF
                       LET l_rvbs.rvbs00 = 'axmt628'
                       LET l_rvbs.rvbs01 = l_oga.oga01
-                      LET l_rvbs.rvbs022 = i 
-                
+                      LET l_rvbs.rvbs022 = i
+
                       INSERT INTO rvbs_file VALUES(l_rvbs.*)
                       IF STATUS OR SQLCA.SQLCODE THEN
-                         CALL cl_err3("ins","rvbs_file","","",SQLCA.sqlcode,"","ins rvbs",1)  
+                         CALL cl_err3("ins","rvbs_file","","",SQLCA.sqlcode,"","ins rvbs",1)
                       END IF
-                      LET i = i + 1 
+                      LET i = i + 1
                    END FOREACH
                 END IF
-             END FOREACH          
-          END IF    
+             END FOREACH
+          END IF
 #FUN-C50097雙單位ogg_file的生成 add end 120801
        END IF
        #CHI-AC0034 add --end--
@@ -24201,7 +24216,7 @@ DEFINE l_ogg     RECORD LIKE ogg_file.*  #FUN-C50097 120801
       UPDATE b SET idb16=0 WHERE idb16 IS NULL
       UPDATE b SET idb07=l_oga.oga01
       INSERT INTO idb_file SELECT * FROM b
-      
+
       DROP TABLE c
       INSERT INTO c SELECT * FROM ogc_file WHERE ogc01 = g_oga.oga01
       UPDATE c SET ogc01=l_oga.oga01,ogc09=g_oga.oga66,ogc091=g_oga.oga67
@@ -24269,16 +24284,16 @@ FUNCTION t600_qry_on_check_note()
 #   LET g_sql="axmt628_icd '' '",l_str CLIPPED,"'"   #FUN-B40066
 #&else
 #   LET g_sql="axmt628 '' '",l_str CLIPPED,"'"
-#&endif   
+#&endif
 #MOD-B60234 mark --end--
    #MOD-B60234 add --start--
-   CASE g_sma.sma124  
+   CASE g_sma.sma124
       WHEN 'std'
-         LET g_sql="axmt628 '' '",l_str CLIPPED,"'" 
+         LET g_sql="axmt628 '' '",l_str CLIPPED,"'"
       WHEN 'icd'
-         LET g_sql="axmt628_icd '' '",l_str CLIPPED,"'" 
+         LET g_sql="axmt628_icd '' '",l_str CLIPPED,"'"
       WHEN 'slk'
-         LET g_sql="axmt628_slk '' '",l_str CLIPPED,"'" 
+         LET g_sql="axmt628_slk '' '",l_str CLIPPED,"'"
    END CASE
    #MOD-B60234 add --end--
    CALL cl_cmdrun_wait(g_sql)
@@ -24306,7 +24321,7 @@ FUNCTION t600_g_b3()                  #由出貨通知單產生單身
    DEFINE l_factor   LIKE type_file.num26_10 #FUN-C50097
    DEFINE l_ogb52    LIKE ogb_file.ogb52     #FUN-C50097
    DEFINE l_cnt      LIKE type_file.num5          #FUN-C50097
-   DEFINE l_ima906   LIKE ima_file.ima906 #FUN-C50097 
+   DEFINE l_ima906   LIKE ima_file.ima906 #FUN-C50097
 #No.CHI-B60054  --mark Begin
 #CHI-B30093 --begin--
 #   DEFINE l_sql      STRING
@@ -24317,14 +24332,14 @@ FUNCTION t600_g_b3()                  #由出貨通知單產生單身
   DEFINE l_flag  LIKE type_file.num5
   DEFINE l_fac   LIKE ima_file.ima31_fac
   DEFINE l_img09 LIKE img_file.img09
-  #No.MOD-C70145  --End 
+  #No.MOD-C70145  --End
   DEFINE l_ogg     RECORD LIKE ogg_file.*,  #FUN-C50097 120801
          l_ogc     RECORD LIKE ogc_file.*,
          l_ogc12_sum      LIKE ogc_file.ogc12,
          l_ogc13_sum      LIKE ogc_file.ogc12,
          l_ogg12_sum      LIKE ogc_file.ogc12,
-         l_ogg13_sum      LIKE ogc_file.ogc12         
-         
+         l_ogg13_sum      LIKE ogc_file.ogc12
+
    LET g_chr2 = '1'  #No.FUN-640074
 
    IF NOT cl_confirm('axm-418') THEN
@@ -24361,8 +24376,8 @@ FUNCTION t600_g_b3()                  #由出貨通知單產生單身
 #CHI-B30093 --begin--
 #    LET l_sql = "SELECT * FROM ogc_file WHERE ogc01 ='",g_oga.oga011,"'"
 #    PREPARE t628_ogc092 FROM l_sql
-#    DECLARE t628_ogc092_cs CURSOR FOR t628_ogc092       
-#CHI-B30093 --end--   
+#    DECLARE t628_ogc092_cs CURSOR FOR t628_ogc092
+#CHI-B30093 --end--
 #No.CHI-B60054  --mark End
 
    #FUN-C10040--add---str----
@@ -24400,19 +24415,19 @@ FUNCTION t600_g_b3()                  #由出貨通知單產生單身
       IF cl_null(l_ogb917a) THEN LET l_ogb917a= 0 END IF
       #FUN-C50097 ADD BEGIN-----
       #大陸版走出貨多次簽收,單身產生的數量修正
-      IF g_aza.aza26 = '2'  AND g_oaz.oaz94 = 'Y' THEN 
+      IF g_aza.aza26 = '2'  AND g_oaz.oaz94 = 'Y' THEN
          #大陆版取出未扣帐的签退数量 TQC-C70206
          SELECT SUM(ogb52) INTO l_ogb52 FROM ogb_file,oga_file
           WHERE oga01 = ogb01
             AND oga09 = '8'
             AND oga011 = g_oga.oga011
             AND ogb03 = l_ogb.ogb03
-            AND ogb04 = l_ogb.ogb04 
+            AND ogb04 = l_ogb.ogb04
             AND ogaconf != 'X'
             AND ogapost = 'N'
-         IF cl_null(l_ogb52) THEN 
+         IF cl_null(l_ogb52) THEN
             LET l_ogb52 = 0
-         END IF                 
+         END IF
          SELECT SUM(ogb12),SUM(ogb912),SUM(ogb915),SUM(ogb917)
            INTO l_ogb12b,l_ogb912b,l_ogb915b,l_ogb917b
            FROM ogb_file,oga_file
@@ -24423,53 +24438,53 @@ FUNCTION t600_g_b3()                  #由出貨通知單產生單身
            #AND ogb32 = l_ogb.ogb32 #FUN-BB0167 mark
             AND ogb04 = l_ogb.ogb04 #BugNo:4541
             AND ogaconf != 'X'   #No:MOD-570312
-   
+
          IF cl_null(l_ogb12b)  THEN LET l_ogb12b = 0 END IF
          IF cl_null(l_ogb912b) THEN LET l_ogb912b= 0 END IF
          IF cl_null(l_ogb915b) THEN LET l_ogb915b= 0 END IF
          IF cl_null(l_ogb917b) THEN LET l_ogb917b= 0 END IF
          LET l_ogb.ogb12 = l_ogb12a - l_ogb12b -l_ogb52
- 
+
           #对母子双单位的签退数量生成
-         IF g_sma.sma115 = 'Y' THEN 
+         IF g_sma.sma115 = 'Y' THEN
              SELECT ima906 INTO l_ima906 FROM ima_file
               WHERE ima01=l_ogb.ogb04
-             IF l_ima906 = '2' THEN          
+             IF l_ima906 = '2' THEN
                 CALL s_umfchk(l_ogb.ogb04,l_ogb.ogb916,l_ogb.ogb910)
                    RETURNING l_cnt,l_factor
-                IF l_cnt = 1 THEN 
-                   LET l_factor = 1 
-                END IF 
-                 
+                IF l_cnt = 1 THEN
+                   LET l_factor = 1
+                END IF
+
                 LET l_ogb.ogb912 =  (l_ogb.ogb12 * l_factor) mod l_ogb.ogb914    #签退子单位数量
-                LET l_ogb.ogb915 =  (l_ogb.ogb12 * l_factor  - l_ogb.ogb912) / l_ogb.ogb914   #签退母单位数量 
+                LET l_ogb.ogb915 =  (l_ogb.ogb12 * l_factor  - l_ogb.ogb912) / l_ogb.ogb914   #签退母单位数量
              END IF
              IF l_ima906 = '3' THEN
                 IF NOT cl_null(l_ogb.ogb911) THEN
                    LET l_ogb.ogb912= l_ogb912a- l_ogb912b-l_ogb52*l_ogb.ogb911  #TQC-D30021 l_ogb.ogb912
-                ELSE 
+                ELSE
                    LET l_ogb.ogb912= l_ogb912a- l_ogb912b
-                END IF    
+                END IF
                 IF NOT cl_null(l_ogb.ogb914) THEN
                    LET l_ogb.ogb915= l_ogb915a- l_ogb915b-l_ogb52*l_ogb.ogb914
-                ELSE    
+                ELSE
                    LET l_ogb.ogb915= l_ogb915a- l_ogb915b
                 END IF
-             END IF 
-         END IF                    
+             END IF
+         END IF
          IF NOT cl_null(l_ogb.ogb916) THEN
             CALL s_umfchk(l_ogb.ogb04,l_ogb.ogb05,l_ogb.ogb916)
                  RETURNING l_cnt,l_factor
             IF l_cnt = 1 THEN
-               LET l_factor = 1               	  
+               LET l_factor = 1
             END IF
-         END IF         
+         END IF
          LET l_ogb.ogb917= l_ogb917a- l_ogb917b-l_ogb52*l_factor
-      ELSE 
-#FUN-C50097 ADD END      	    
+      ELSE
+#FUN-C50097 ADD END
          # 此出貨通知單已耗用在出貨單的量
          LET l_ogb12b = 0
-   
+
          SELECT SUM(ogb12),SUM(ogb912),SUM(ogb915),SUM(ogb917)
            INTO l_ogb12b,l_ogb912b,l_ogb915b,l_ogb917b
            FROM ogb_file,oga_file
@@ -24480,7 +24495,7 @@ FUNCTION t600_g_b3()                  #由出貨通知單產生單身
            #AND ogb32 = l_ogb.ogb32 #FUN-BB0167 mark
             AND ogb04 = l_ogb.ogb04 #BugNo:4541
             AND ogaconf != 'X'   #No:MOD-570312
-   
+
          IF cl_null(l_ogb12b)  THEN LET l_ogb12b = 0 END IF
          IF cl_null(l_ogb912b) THEN LET l_ogb912b= 0 END IF
          IF cl_null(l_ogb915b) THEN LET l_ogb915b= 0 END IF
@@ -24507,7 +24522,7 @@ FUNCTION t600_g_b3()                  #由出貨通知單產生單身
       #   RETURNING l_ogb.ogb13,l_ogb.ogb37  #FUN-AB0061
       #MOD-C10013 ----- mark end -----
      #FUN-B70087 mod
-     #IF cl_null(l_ogb.ogb13) THEN CALL s_unitprice_entry(g_oga.oga03,g_oga.oga31,g_oga.ogaplant) END IF #FUN-9C0120 
+     #IF cl_null(l_ogb.ogb13) THEN CALL s_unitprice_entry(g_oga.oga03,g_oga.oga31,g_oga.ogaplant) END IF #FUN-9C0120
       #FUN-BC0088 ----- add start -----
       IF l_ogb.ogb04[1,4] = 'MISC' THEN
          CALL s_unitprice_entry(g_oga.oga03,g_oga.oga31,g_oga.ogaplant,'M')
@@ -24545,24 +24560,24 @@ FUNCTION t600_g_b3()                  #由出貨通知單產生單身
       LET l_ogb.ogb09 = l_oga66
       LET l_ogb.ogb091= l_oga67
       #FUN-C50097 ADD BEGIN-----
-      IF cl_null(l_ogb.ogb50) THEN 
+      IF cl_null(l_ogb.ogb50) THEN
          LET l_ogb.ogb50 = 0
-      END IF 
-      IF cl_null(l_ogb.ogb51) THEN 
+      END IF
+      IF cl_null(l_ogb.ogb51) THEN
          LET l_ogb.ogb51 = 0
-      END IF 
-      IF cl_null(l_ogb.ogb52) THEN 
+      END IF
+      IF cl_null(l_ogb.ogb52) THEN
          LET l_ogb.ogb52 = 0
       END IF
-      IF cl_null(l_ogb.ogb53) THEN 
+      IF cl_null(l_ogb.ogb53) THEN
         LET l_ogb.ogb53 = 0
-      END IF 
-      IF cl_null(l_ogb.ogb54) THEN 
+      END IF
+      IF cl_null(l_ogb.ogb54) THEN
         LET l_ogb.ogb54 = 0
-      END IF 
-      IF cl_null(l_ogb.ogb55) THEN 
+      END IF
+      IF cl_null(l_ogb.ogb55) THEN
         LET l_ogb.ogb55 = 0
-      END IF                                            
+      END IF
       #FUN-C50097 ADD END-------
 
       #CHI-BB0057 add start -----
@@ -24584,7 +24599,7 @@ FUNCTION t600_g_b3()                  #由出貨通知單產生單身
       UPDATE x SET ogb12 = l_ogb.ogb12,
                    ogb16 = l_ogb.ogb16,
                    ogb1014 = 'N',       #FUN-6A0007
-                   #ogb17   = 'N',   #MOD-A10163 #CHI-AC0034 mark #FUN-C50097 客戶簽收單存在多倉儲,需要保留 
+                   #ogb17   = 'N',   #MOD-A10163 #CHI-AC0034 mark #FUN-C50097 客戶簽收單存在多倉儲,需要保留
                    ogb17   = l_ogb.ogb17,   #CHI-AC0034           #出货签收,若走成品替代,需要产生ogc_file
                    ogb14 = l_ogb.ogb14,
                    ogb14t = l_ogb.ogb14t,
@@ -24605,11 +24620,11 @@ FUNCTION t600_g_b3()                  #由出貨通知單產生單身
          AND ogb03 = l_ogb.ogb03
       LET g_ima918 = ''   #MOD-9C0055
       LET g_ima921 = ''   #MOD-9C0055
-      SELECT ima918,ima921 INTO g_ima918,g_ima921 
+      SELECT ima918,ima921 INTO g_ima918,g_ima921
         FROM ima_file
        WHERE ima01 = l_ogb.ogb04
          AND imaacti = "Y"
-      IF g_sma.sma115 !='Y' THEN     #FUN-C50097 ADD 120801  
+      IF g_sma.sma115 !='Y' THEN     #FUN-C50097 ADD 120801
          IF g_ima918 = "Y" OR g_ima921 = "Y" THEN
             #DECLARE t600_g_rvbs_2 CURSOR FOR SELECT * FROM rvbs_file #CHI-BB0057 mark
             #CHI-BB0057 add start -----
@@ -24619,13 +24634,13 @@ FUNCTION t600_g_b3()                  #由出貨通知單產生單身
                                            WHERE rvbs01 = g_oga.oga011
                                              AND rvbs02 = l_ogb.ogb03
                                         GROUP BY rvbs03,rvbs04,rvbs05,rvbs08 #CHI-BB0057 add
-            LET i = 1   #MOD-A10163 
+            LET i = 1   #MOD-A10163
             #FOREACH t600_g_rvbs_2 INTO l_rvbs.* #CHI-BB0057 mark
             FOREACH t600_g_rvbs_2 INTO l_rvbs.rvbs03,l_rvbs.rvbs04,l_rvbs.rvbs05,l_rvbs.rvbs08 #CHI-BB0057 add
                IF STATUS THEN
                   CALL cl_err('rvbs',STATUS,1)
                END IF
-      
+
               #CHI-BB0057 add start -----
                 SELECT * INTO l_rvbs.*
                   FROM rvbs_file
@@ -24658,7 +24673,7 @@ FUNCTION t600_g_b3()                  #由出貨通知單產生單身
       #No.TQC-B90236---add--end-------
                INSERT INTO rvbs_file VALUES(l_rvbs.*)
                IF STATUS OR SQLCA.SQLCODE THEN
-                  CALL cl_err3("ins","rvbs_file","","",SQLCA.sqlcode,"","ins rvbs",1)  
+                  CALL cl_err3("ins","rvbs_file","","",SQLCA.sqlcode,"","ins rvbs",1)
                   LET g_success='N'
                END IF
                LET i = i + 1   #MOD-A10163
@@ -24788,7 +24803,7 @@ FUNCTION t600_g_b3()                  #由出貨通知單產生單身
             END FOREACH
          END IF
          #CHI-BB0057 add end   -----
-      END IF #FUN-C50097 ADD 120801 
+      END IF #FUN-C50097 ADD 120801
 #签收仓需要多仓储批资料,FUN-C50097 add begin 120801
       IF l_ogb.ogb17='Y' THEN     ##多倉儲出貨
        ##No.MOD-C70145  end
@@ -24801,7 +24816,7 @@ FUNCTION t600_g_b3()                  #由出貨通知單產生單身
          #FOREACH t600_ins_ogc_c1 INTO l_ogc.*                   #MOD-C70078 mark
           FOREACH t600_ins_ogc_c2 INTO l_ogc.ogc17,l_ogc.ogc092  #MOD-C70078
              IF STATUS THEN
-                CALL s_errmsg('','',"t600_ins_ogc_c2 foreach:",SQLCA.sqlcode,1) 
+                CALL s_errmsg('','',"t600_ins_ogc_c2 foreach:",SQLCA.sqlcode,1)
                 EXIT FOREACH
              END IF
              IF g_success = "N" THEN
@@ -24821,32 +24836,32 @@ FUNCTION t600_g_b3()                  #由出貨通知單產生單身
                AND ogc03= l_ogb.ogb03
                AND ogc092= l_ogc.ogc092    #No.MOD-C70145
              GROUP BY ogc17,ogc092
-             
+
            #MOD-C70078---add---E---
            #FUN-C50097 ADD BEGIN 120806-----
            #如果存在多次簽收的單號,則減去多倉儲的累計簽收簽退量ogc_file,ogg_file
            LET l_cnt = 0
            SELECT COUNT(*) INTO l_cnt FROM ogc_file
-            WHERE ogc01 IN (SELECT oga01 FROM oga_file WHERE oga011=g_oga.oga011 
+            WHERE ogc01 IN (SELECT oga01 FROM oga_file WHERE oga011=g_oga.oga011
                             AND ogaconf !='X' AND oga01 !=g_oga.oga01 AND oga09='8')
-           IF l_cnt > 0 THEN 
+           IF l_cnt > 0 THEN
               SELECT SUM(ogc12),SUM(ogc13) INTO l_ogc12_sum,l_ogc13_sum FROM ogc_file
                WHERE ogc03= l_ogb.ogb03
                  AND ogc17= l_ogc.ogc17
                  AND ogc092= l_ogc.ogc092
-                 AND ogc01 IN (SELECT oga01 FROM oga_file WHERE oga011=g_oga.oga011 
-                               AND ogaconf !='X' AND oga01 !=g_oga.oga01 AND oga09='8') 
-              IF cl_null(l_ogc12_sum) THEN LET l_ogc12_sum=0 END IF 
+                 AND ogc01 IN (SELECT oga01 FROM oga_file WHERE oga011=g_oga.oga011
+                               AND ogaconf !='X' AND oga01 !=g_oga.oga01 AND oga09='8')
+              IF cl_null(l_ogc12_sum) THEN LET l_ogc12_sum=0 END IF
               IF cl_null(l_ogc13_sum) THEN LET l_ogc13_sum=0 END IF
               #減去累計簽收量
-              IF l_ogc12_sum > 0 THEN 
+              IF l_ogc12_sum > 0 THEN
                 LET l_ogc.ogc12 = l_ogc.ogc12 -  l_ogc12_sum
-              END IF 
+              END IF
               #減去累計簽退量
-              IF l_ogc13_sum > 0 THEN 
+              IF l_ogc13_sum > 0 THEN
                 LET l_ogc.ogc12 = l_ogc.ogc12 -  l_ogc13_sum
-              END IF                                 
-           END IF  
+              END IF
+           END IF
            #FUN-C50097 ADD END   120806-----
             #No.MOD-C70145  --Begin
             LET l_fac = 1
@@ -24856,7 +24871,7 @@ FUNCTION t600_g_b3()                  #由出貨通知單產生單身
                AND img03 = l_ogc.ogc091
                AND img04 = l_ogc.ogc092
             IF l_ogb.ogb05 <> l_img09 THEN
-               CALL s_umfchk(l_ogb.ogb04,l_ogb.ogb05,l_img09) 
+               CALL s_umfchk(l_ogb.ogb04,l_ogb.ogb05,l_img09)
                     RETURNING l_flag,l_fac
                IF l_flag = 1 THEN
                   CALL cl_err('','mfg3075',1)
@@ -24883,18 +24898,18 @@ FUNCTION t600_g_b3()                  #由出貨通知單產生單身
              IF NOT s_industry('icd') THEN  #FUN-C30310
                 INSERT INTO ogc_file VALUES(l_ogc.*)
                 IF SQLCA.SQLCODE OR SQLCA.SQLERRD[3]=0 THEN
-                   CALL s_errmsg('','',"ins ogc",SQLCA.sqlcode,1)  
+                   CALL s_errmsg('','',"ins ogc",SQLCA.sqlcode,1)
                    LET g_success='N'
                 END IF
              END IF  #FUN-C30310
 
-             LET g_ima918 = ''   
-             LET g_ima921 = ''  
-             SELECT ima918,ima921 INTO g_ima918,g_ima921 
+             LET g_ima918 = ''
+             LET g_ima921 = ''
+             SELECT ima918,ima921 INTO g_ima918,g_ima921
                FROM ima_file
               WHERE ima01 = l_ogc.ogc17
                 AND imaacti = "Y"
-             IF g_sma.sma115 != 'Y' THEN 
+             IF g_sma.sma115 != 'Y' THEN
                IF g_ima918 = "Y" OR g_ima921 = "Y" THEN
                   DECLARE t600_g_rvbs_6 CURSOR FOR SELECT * FROM rvbs_file
                                                WHERE rvbs01 = g_oga.oga011
@@ -24907,16 +24922,16 @@ FUNCTION t600_g_b3()                  #由出貨通知單產生單身
                    END IF
                    LET l_rvbs.rvbs00 = 'axmt628'
                    LET l_rvbs.rvbs01 = g_oga.oga01
-                   LET l_rvbs.rvbs022 = i 
-             
+                   LET l_rvbs.rvbs022 = i
+
                    INSERT INTO rvbs_file VALUES(l_rvbs.*)
                    IF STATUS OR SQLCA.SQLCODE THEN
-                      CALL cl_err3("ins","rvbs_file","","",SQLCA.sqlcode,"","ins rvbs",1)  
+                      CALL cl_err3("ins","rvbs_file","","",SQLCA.sqlcode,"","ins rvbs",1)
                    END IF
-                   LET i = i + 1 
+                   LET i = i + 1
                 END FOREACH
                END IF
-             END IF 
+             END IF
           END FOREACH
 #FUN-C50097雙單位ogg_file的生成 add begin 120801
           IF g_sma.sma115 = 'Y' THEN
@@ -24929,55 +24944,55 @@ FUNCTION t600_g_b3()                  #由出貨通知單產生單身
             #FOREACH t600_ins_ogc_c1 INTO l_ogc.*                   #MOD-C70078 mark
              FOREACH t600_ins_ogg_c2 INTO l_ogg.ogg17,l_ogg.ogg092,l_ogg.ogg20  #MOD-C70078
                 IF STATUS THEN
-                   CALL s_errmsg('','',"t600_ins_ogg_c2 foreach:",SQLCA.sqlcode,1) 
+                   CALL s_errmsg('','',"t600_ins_ogg_c2 foreach:",SQLCA.sqlcode,1)
                    EXIT FOREACH
                 END IF
                 IF g_success = "N" THEN
                    LET g_totsuccess = "N"
                    LET g_success = "Y"
                 END IF
-   
+
               #MOD-C70078---add---S---
                SELECT * INTO l_ogg.* FROM ogg_file
                 WHERE ogg01= g_oga.oga011
                   AND ogg03= l_ogb.ogb03
                   AND ogg17= l_ogg.ogg17
                   AND ogg092= l_ogg.ogg092
-                  AND ogg20= l_ogg.ogg20   
+                  AND ogg20= l_ogg.ogg20
                SELECT SUM(ogg12) INTO l_ogg.ogg12 FROM ogg_file
                 WHERE ogg01= g_oga.oga011
                   AND ogg03= l_ogb.ogb03
                   AND ogg092= l_ogg.ogg092    #No.MOD-C70145
-                  AND ogg20= l_ogg.ogg20   
+                  AND ogg20= l_ogg.ogg20
                 GROUP BY ogg17,ogg092
-                
+
               #MOD-C70078---add---E---
                #FUN-C50097 ADD BEGIN 120806-----
                #如果存在多次簽收的單號,則減去多倉儲的累計簽收簽退量ogc_file,ogg_file
                LET l_cnt = 0
                SELECT COUNT(*) INTO l_cnt FROM ogg_file
-                WHERE ogg01 IN (SELECT oga01 FROM oga_file WHERE oga011=g_oga.oga011 
+                WHERE ogg01 IN (SELECT oga01 FROM oga_file WHERE oga011=g_oga.oga011
                                 AND ogaconf !='X' AND oga01 !=g_oga.oga01 AND oga09='8')
-               IF l_cnt > 0 THEN 
+               IF l_cnt > 0 THEN
                   SELECT SUM(ogg12),SUM(ogg13) INTO l_ogg12_sum,l_ogg13_sum FROM ogg_file
                    WHERE ogg03= l_ogb.ogb03
                      AND ogg17= l_ogg.ogg17
                      AND ogg092= l_ogg.ogg092
-                     AND ogg20= l_ogg.ogg20   
-                     AND ogg01 IN (SELECT oga01 FROM oga_file WHERE oga011=g_oga.oga011 
-                                   AND ogaconf !='X' AND oga01 !=g_oga.oga01 AND oga09='8') 
-                  IF cl_null(l_ogg12_sum) THEN LET l_ogg12_sum=0 END IF 
+                     AND ogg20= l_ogg.ogg20
+                     AND ogg01 IN (SELECT oga01 FROM oga_file WHERE oga011=g_oga.oga011
+                                   AND ogaconf !='X' AND oga01 !=g_oga.oga01 AND oga09='8')
+                  IF cl_null(l_ogg12_sum) THEN LET l_ogg12_sum=0 END IF
                   IF cl_null(l_ogg13_sum) THEN LET l_ogg13_sum=0 END IF
                   #減去累計簽收量
-                  IF l_ogg12_sum > 0 THEN 
+                  IF l_ogg12_sum > 0 THEN
                     LET l_ogg.ogg12 = l_ogg.ogg12 -  l_ogg12_sum
-                  END IF 
+                  END IF
                   #減去累計簽退量
-                  IF l_ogg13_sum > 0 THEN 
+                  IF l_ogg13_sum > 0 THEN
                     LET l_ogg.ogg12 = l_ogg.ogg12 -  l_ogg13_sum
-                  END IF                                 
-               END IF  
-               #FUN-C50097 ADD END   120806-----              
+                  END IF
+               END IF
+               #FUN-C50097 ADD END   120806-----
                #No.MOD-C70145  --Begin
                LET l_fac = 1
                SELECT img09 INTO l_img09 FROM img_file
@@ -24986,7 +25001,7 @@ FUNCTION t600_g_b3()                  #由出貨通知單產生單身
                   AND img03 = l_ogg.ogg091
                   AND img04 = l_ogg.ogg092
                IF l_ogb.ogb05 <> l_img09 THEN
-                  CALL s_umfchk(l_ogb.ogb04,l_ogb.ogb05,l_img09) 
+                  CALL s_umfchk(l_ogb.ogb04,l_ogb.ogb05,l_img09)
                        RETURNING l_flag,l_fac
                   IF l_flag = 1 THEN
                      CALL cl_err('','mfg3075',1)
@@ -25013,18 +25028,18 @@ FUNCTION t600_g_b3()                  #由出貨通知單產生單身
                 IF NOT s_industry('icd') THEN  #FUN-C30310
                    INSERT INTO ogg_file VALUES(l_ogg.*)
                    IF SQLCA.SQLCODE OR SQLCA.SQLERRD[3]=0 THEN
-                      CALL s_errmsg('','',"ins ogg",SQLCA.sqlcode,1)  
+                      CALL s_errmsg('','',"ins ogg",SQLCA.sqlcode,1)
                       LET g_success='N'
                    END IF
                 END IF  #FUN-C30310
-   
-                LET g_ima918 = ''   
-                LET g_ima921 = ''  
-                SELECT ima918,ima921 INTO g_ima918,g_ima921 
+
+                LET g_ima918 = ''
+                LET g_ima921 = ''
+                SELECT ima918,ima921 INTO g_ima918,g_ima921
                   FROM ima_file
                  WHERE ima01 = l_ogg.ogg17
                    AND imaacti = "Y"
-   
+
                 IF g_ima918 = "Y" OR g_ima921 = "Y" THEN
                    DECLARE t600_g_rvbs_7 CURSOR FOR SELECT * FROM rvbs_file
                                                   WHERE rvbs01 = g_oga.oga011
@@ -25037,20 +25052,20 @@ FUNCTION t600_g_b3()                  #由出貨通知單產生單身
                       END IF
                       LET l_rvbs.rvbs00 = 'axmt628'
                       LET l_rvbs.rvbs01 = g_oga.oga01
-                      LET l_rvbs.rvbs022 = i 
-                
+                      LET l_rvbs.rvbs022 = i
+
                       INSERT INTO rvbs_file VALUES(l_rvbs.*)
                       IF STATUS OR SQLCA.SQLCODE THEN
-                         CALL cl_err3("ins","rvbs_file","","",SQLCA.sqlcode,"","ins rvbs",1)  
+                         CALL cl_err3("ins","rvbs_file","","",SQLCA.sqlcode,"","ins rvbs",1)
                       END IF
-                      LET i = i + 1 
+                      LET i = i + 1
                    END FOREACH
                 END IF
-             END FOREACH          
-          END IF    
+             END FOREACH
+          END IF
 #FUN-C50097雙單位ogg_file的生成 add end 120801
-      END IF       
-#签收仓需要多仓储批资料,FUN-C50097 add end 120801      
+      END IF
+#签收仓需要多仓储批资料,FUN-C50097 add end 120801
    END FOREACH
 
    IF cl_null(l_ogb.ogb05_fac) THEN
@@ -25060,11 +25075,11 @@ FUNCTION t600_g_b3()                  #由出貨通知單產生單身
    IF cl_null(l_ogb.ogb12) THEN
      LET l_ogb.ogb12 = 0
    END IF
-#FUN-AB0061 -----------add start----------------                             
+#FUN-AB0061 -----------add start----------------
    IF cl_null(l_ogb.ogb37) THEN
      LET l_ogb.ogb37 = 0
-   END IF                                             
-#FUN-AB0061 -----------add end----------------  
+   END IF
+#FUN-AB0061 -----------add end----------------
    IF cl_null(l_ogb.ogb13) THEN
      LET l_ogb.ogb13 = 0
    END IF
@@ -25103,24 +25118,24 @@ FUNCTION t600_g_b3()                  #由出貨通知單產生單身
 
 #No.CHI-B60054  --mark Begin
 #CHI-B30093 --begin--
-#   IF l_ogb.ogb17 = 'Y' THEN 
+#   IF l_ogb.ogb17 = 'Y' THEN
 #      FOREACH t628_ogc092_cs INTO l_ogc_1.*
 #         LET l_ogc_1.ogc01 = l_ogb.ogb01
 #         LET l_ogc_1.ogc09 = l_ogb.ogb09
 #         LET l_ogc_1.ogc091= l_ogb.ogb091
-#         
-#         INSERT INTO ogc_file VALUES(l_ogc_1.*) 
-#         IF SQLCA.sqlcode OR SQLCA.sqlerrd[3] = 0 THEN    
-#             CALL cl_err3("ins","ogc_file","","",SQLCA.sqlcode,"","ins ogc",1)  
-#             LET g_success = 'N'       
-#             EXIT FOREACH 
-#         END IF                    
-#      END FOREACH 
-#   END IF 
+#
+#         INSERT INTO ogc_file VALUES(l_ogc_1.*)
+#         IF SQLCA.sqlcode OR SQLCA.sqlerrd[3] = 0 THEN
+#             CALL cl_err3("ins","ogc_file","","",SQLCA.sqlcode,"","ins ogc",1)
+#             LET g_success = 'N'
+#             EXIT FOREACH
+#         END IF
+#      END FOREACH
+#   END IF
 #CHI-B30093 --end--
 #No.CHI-B60054  --mark End
 
-   #FUN-CB0087--add--str-- 
+   #FUN-CB0087--add--str--
    IF g_aza.aza115 = 'Y' AND g_argv0 MATCHES '[2456A]' THEN
       LET g_sql = " UPDATE x ",
                   "    SET ogb1001 = (SELECT ggc08 FROM ggc_file ",
@@ -25134,7 +25149,7 @@ FUNCTION t600_g_b3()                  #由出貨通知單產生單身
                   "          WHERE  ogb12 > 0 OR ogb03 >=9001 "
       PREPARE upd_x3 FROM g_sql
       EXECUTE upd_x3
-   END IF 
+   END IF
    IF g_aza.aza115 = 'Y' AND g_argv0 MATCHES '[89]' THEN
       LET g_sql = " UPDATE x ",
                   "    SET ogb65   = (SELECT ggc08 FROM ggc_file ",
@@ -25184,7 +25199,7 @@ FUNCTION t600_g_b3()                  #由出貨通知單產生單身
    #   LET g_success='N'
    #END IF
    #-----END MOD-A10163-----
-   
+
    #FUN-C30310---begin
    IF s_industry('icd') THEN
       DROP TABLE b
@@ -25199,7 +25214,7 @@ FUNCTION t600_g_b3()                  #由出貨通知單產生單身
       UPDATE b SET idb16=0 WHERE idb16 IS NULL
       UPDATE b SET idb07=g_oga.oga01
       INSERT INTO idb_file SELECT * FROM b
-      
+
       SELECT oga66,oga67 INTO l_oga66,l_oga67 FROM oga_file WHERE oga01 = g_oga.oga011
       DROP TABLE c
       INSERT INTO c SELECT * FROM ogc_file WHERE ogc01 = g_oga.oga011
@@ -25332,16 +25347,16 @@ FUNCTION t600_set_ogb()
 
    LET g_ima918 = ''   #MOD-9C0055
    LET g_ima921 = ''   #MOD-9C0055
-   SELECT ima918,ima921 INTO g_ima918,g_ima921 
+   SELECT ima918,ima921 INTO g_ima918,g_ima921
      FROM ima_file
     WHERE ima01 = l_ogb.ogb04
       AND imaacti = "Y"
-   
+
    IF g_ima918 = "Y" OR g_ima921 = "Y" THEN
       DECLARE t600_g_rvbs_3 CURSOR FOR SELECT * FROM rvbs_file
                                      WHERE rvbs01 = g_oga.oga011
                                        AND rvbs02 = l_ogb.ogb03
-      
+
       FOREACH t600_g_rvbs_3 INTO l_rvbs.*
          IF STATUS THEN
             CALL cl_err('rvbs',STATUS,1)
@@ -25356,7 +25371,7 @@ FUNCTION t600_set_ogb()
 #No.TQC-B90236---add--end-------
          INSERT INTO rvbs_file VALUES(l_rvbs.*)
          IF STATUS OR SQLCA.SQLCODE THEN
-            CALL cl_err3("ins","rvbs_file","","",SQLCA.sqlcode,"","ins rvbs",1)  
+            CALL cl_err3("ins","rvbs_file","","",SQLCA.sqlcode,"","ins rvbs",1)
          END IF
       END FOREACH
    END IF
@@ -25655,7 +25670,7 @@ DEFINE
   l_sum4                      LIKE ogb_file.ogb12,
   l_fac                       LIKE ogb_file.ogb05_fac,
   l_max                       LIKE tqw_file.tqw07
-DEFINE l_rtz04                LIKE rtz_file.rtz04    #No.FUN-870007   
+DEFINE l_rtz04                LIKE rtz_file.rtz04    #No.FUN-870007
 DEFINE l_rte05                LIKE rte_file.rte05    #No.FUN-870007
 DEFINE l_rte07                LIKE rte_file.rte07    #No.FUN-870007
 DEFINE l_rtdconf              LIKE rtd_file.rtdconf  #No.FUN-870007
@@ -25899,7 +25914,7 @@ DEFINE l_rtdconf              LIKE rtd_file.rtdconf  #No.FUN-870007
                 LET b_ogb.ogb05_fac = g_factor
                 #-----END MOD-AC0070-----
              END IF
-             
+
 
              #IF cl_null(g_ogb[l_ac].ogb09) THEN   #FUN-BC0064 mark
                 IF g_azw.azw04='2' THEN
@@ -25931,7 +25946,7 @@ DEFINE l_rtdconf              LIKE rtd_file.rtdconf  #No.FUN-870007
                       #SELECT rtz07 INTO g_ogb[l_ac].ogb09 FROM rtz_file
                       # WHERE rtz01 = g_plant
                       #FUN-C90049 mark end-----
-                      CALL s_get_coststore(g_plant, g_ogb[l_ac].ogb04) RETURNING g_ogb[l_ac].ogb09    #FUN-C90049 add 
+                      CALL s_get_coststore(g_plant, g_ogb[l_ac].ogb04) RETURNING g_ogb[l_ac].ogb09    #FUN-C90049 add
                    END IF               #FUN-C20002  add
                 ELSE
                    LET g_ogb[l_ac].ogb09=l_ima35
@@ -25973,7 +25988,7 @@ DEFINE l_rtdconf              LIKE rtd_file.rtdconf  #No.FUN-870007
              SELECT ima25 INTO g_ima25 FROM ima_file WHERE ima01=g_ogb[l_ac].ogb04
              LET g_ima31 = l_b2
              IF g_ogb_t.ogb04 IS NULL OR g_ogb_t.ogb04 <> g_ogb[l_ac].ogb04 THEN
-                IF (NOT cl_null(g_ogb[l_ac].ogb1003) AND g_aza.aza50 ='Y') OR g_azw.azw04='2' THEN   #No.FUN-670008 #FUN-9C0173 
+                IF (NOT cl_null(g_ogb[l_ac].ogb1003) AND g_aza.aza50 ='Y') OR g_azw.azw04='2' THEN   #No.FUN-670008 #FUN-9C0173
                    IF cl_null(g_ogb[l_ac].ogb31) AND cl_null(g_ogb[l_ac].ogb32) THEN                 #MOD-B60052
                   #CALL t600_price(l_ac) RETURNING l_fac       #FUN-AC0012
                      CALL t600_price(p_cmd,l_ac) RETURNING l_fac #FUN-AC0012
@@ -26517,7 +26532,7 @@ FUNCTION t600_b1_inschk()
                AND img03=g_ogb[l_ac].ogb091
                AND img04=g_ogb[l_ac].ogb092
            #IF cl_null(g_img09) THEN                       #FUN-C80107 mark
-            IF SQLCA.sqlcode=100 OR cl_null(g_img09) THEN  #FUN-C80107 add 
+            IF SQLCA.sqlcode=100 OR cl_null(g_img09) THEN  #FUN-C80107 add
                IF g_oga.oga09 MATCHES '[246]' THEN
                  #FUN-C80107 modify begin---------------------------121024
                  #CALL cl_err(g_ogb[l_ac].ogb04,'mfg6069',0)
@@ -26669,7 +26684,7 @@ FUNCTION t600_b1_inschk()
       LET g_ogb[l_ac].ogb092 = ' '
    END IF
 
-   IF g_argv0 = '8' AND g_aza.aza26 != '2'  THEN   #FUN-C50097 add !=2 
+   IF g_argv0 = '8' AND g_aza.aza26 != '2'  THEN   #FUN-C50097 add !=2
       SELECT ogb12 INTO g_ogb12_sum FROM ogb_file
        WHERE ogb01 = g_oga.oga011
          AND ogb03 = g_ogb[l_ac].ogb03
@@ -26681,21 +26696,21 @@ FUNCTION t600_b1_inschk()
       END IF
    END IF
 ##FUN-C50097 add beg-----
-   IF g_argv0 = '8' AND g_aza.aza26 = '2' THEN 
-      IF  g_oaz.oaz94 = 'Y' THEN 
+   IF g_argv0 = '8' AND g_aza.aza26 = '2' THEN
+      IF  g_oaz.oaz94 = 'Y' THEN
          IF g_ogb[l_ac].ogb52 >0 AND cl_null(g_ogb[l_ac].ogb65) THEN #TQC-C70206
             CALL cl_err(g_ogb[l_ac].ogb04,'axm-416',0)
             RETURN "ogb65"
          END IF
-         IF g_sma.sma115 ='Y' THEN 
-            IF cl_null(g_ogb[l_ac].ogb52) OR g_ogb[l_ac].ogb52 =0 THEN 
+         IF g_sma.sma115 ='Y' THEN
+            IF cl_null(g_ogb[l_ac].ogb52) OR g_ogb[l_ac].ogb52 =0 THEN
                CALL t600_set_ogb52()
-            END IF 
-            IF cl_null(g_ogb[l_ac].ogb55) OR g_ogb[l_ac].ogb55 =0 THEN 
+            END IF
+            IF cl_null(g_ogb[l_ac].ogb55) OR g_ogb[l_ac].ogb55 =0 THEN
                CALL t600_set_ogb55()
-            END IF 
-         END IF         
-      ELSE 
+            END IF
+         END IF
+      ELSE
          SELECT ogb12 INTO g_ogb12_sum FROM ogb_file
           WHERE ogb01 = g_oga.oga011
             AND ogb03 = g_ogb[l_ac].ogb03
@@ -26705,7 +26720,7 @@ FUNCTION t600_b1_inschk()
                RETURN "ogb65"
             END IF
          END IF
-      END IF    
+      END IF
    END IF
 ##FUN-C50097 add end-----
 
@@ -26718,11 +26733,11 @@ FUNCTION t600_b1_inschk()
    IF cl_null(b_ogb.ogb12) THEN
       LET b_ogb.ogb12 = 0
    END IF
-#FUN-AB0061 -----------add start----------------                             
+#FUN-AB0061 -----------add start----------------
    IF cl_null(b_ogb.ogb37) THEN
       LET b_ogb.ogb37 = 0
-   END IF                                             
-#FUN-AB0061 -----------add end----------------     
+   END IF
+#FUN-AB0061 -----------add end----------------
    IF cl_null(b_ogb.ogb13) THEN
       LET b_ogb.ogb13 = 0
    END IF
@@ -26761,7 +26776,7 @@ FUNCTION t600_b1_ins()
    DEFINE l_tqn RECORD LIKE tqn_file.*
    DEFINE l_sql        LIKE type_file.chr1000
    IF g_aza.aza50='Y' THEN
-  #    IF g_value IS NOT NULL THEN      #No.FUN-670008   #MOD-C30350 
+  #    IF g_value IS NOT NULL THEN      #No.FUN-670008   #MOD-C30350
       IF g_value IS NOT NULL AND NOT cl_null(g_ogb[l_ac].ogb1002) THEN   #MOD-C30350 add
          LET g_cnt=0
          SELECT COUNT(*) INTO g_cnt
@@ -26806,8 +26821,8 @@ FUNCTION t600_b1_ins()
 #     LET b_ogb.ogb917= g_ogb[l_ac].ogb917 * b_ogb.ogb12 / g_ogb[l_ac].ogb12
 #     CALL cl_digcut(b_ogb.ogb14,t_azi04)  RETURNING b_ogb.ogb14
 #     CALL cl_digcut(b_ogb.ogb14t,t_azi04) RETURNING b_ogb.ogb14t
-#     LET b_ogb.ogbplant = g_plant 
-#     LET b_ogb.ogblegal = g_legal  
+#     LET b_ogb.ogbplant = g_plant
+#     LET b_ogb.ogblegal = g_legal
 
 #     INSERT INTO ogb_file VALUES(b_ogb.*)
 #     IF SQLCA.sqlcode THEN
@@ -26827,9 +26842,9 @@ FUNCTION t600_b1_ins()
 ##FUN-A50054 --End
 #FUN-A60035 ---MARK END
 
-      LET b_ogb.ogbplant = g_plant 
-      LET b_ogb.ogblegal = g_legal 
-     #IF cl_null(b_ogb.ogb50) THEN LET b_ogb.ogb50 = '1' END IF #FUN-AA0057 
+      LET b_ogb.ogbplant = g_plant
+      LET b_ogb.ogblegal = g_legal
+     #IF cl_null(b_ogb.ogb50) THEN LET b_ogb.ogb50 = '1' END IF #FUN-AA0057
 
      #FUN-C30169 add START
       IF cl_null(b_ogb.ogb917) THEN
@@ -26839,22 +26854,22 @@ FUNCTION t600_b1_ins()
       #FUN-C50097---begin
       IF cl_null(b_ogb.ogb50) THEN
          LET b_ogb.ogb50 = 0
-      END IF  
+      END IF
       IF cl_null(b_ogb.ogb51) THEN
          LET b_ogb.ogb51 = 0
-      END IF  
+      END IF
       IF cl_null(b_ogb.ogb52) THEN
          LET b_ogb.ogb52 = 0
-      END IF  
+      END IF
       IF cl_null(b_ogb.ogb53) THEN
          LET b_ogb.ogb53 = 0
-      END IF  
+      END IF
       IF cl_null(b_ogb.ogb54) THEN
          LET b_ogb.ogb54 = 0
-      END IF  
+      END IF
       IF cl_null(b_ogb.ogb55) THEN
          LET b_ogb.ogb55 = 0
-      END IF 
+      END IF
       #FUN-C50097---end
       IF cl_null(b_ogb.ogb31) THEN LET b_ogb.ogb32 = ''  END IF    #TQC-C60131 add
 
@@ -26909,7 +26924,7 @@ FUNCTION t600_chk_ogb31(p_cmd)
             l_oeaconf    LIKE oea_file.oeaconf,
             l_oea08      LIKE oea_file.oea08,
             l_oea00      LIKE oea_file.oea00,
-            l_errno      LIKE type_file.chr1000            
+            l_errno      LIKE type_file.chr1000
 ##TQC-A10153 --end--
    #FUN-C10040--------add------str-------
    DEFINE l_rtz04       LIKE rtz_file.rtz04
@@ -26961,8 +26976,8 @@ FUNCTION t600_chk_ogb31(p_cmd)
    SELECT * INTO g_oea.* FROM oea_file WHERE oea01=g_ogb[l_ac].ogb31 #MOD-810258 add
    IF NOT cl_null(g_ogb[l_ac].ogb31) THEN
       #判斷單身的資料中，有任一筆訂金比率或尾款比率>0的就不能合併出貨
-     #IF (g_argv0 = '1' OR g_argv0 = '2')  THEN   #出通單/出貨單                                                                               #CHI-A20017 mark 
-      IF (g_argv0 = '1' OR g_argv0 = '2' OR g_argv0 = '4' OR g_argv0 = '5' OR g_argv0 = '6')  THEN   #出通單/出貨單/多角銷售/多角出通/多角代採 #CHI-A20017 
+     #IF (g_argv0 = '1' OR g_argv0 = '2')  THEN   #出通單/出貨單                                                                               #CHI-A20017 mark
+      IF (g_argv0 = '1' OR g_argv0 = '2' OR g_argv0 = '4' OR g_argv0 = '5' OR g_argv0 = '6')  THEN   #出通單/出貨單/多角銷售/多角出通/多角代採 #CHI-A20017
         LET l_other = 0  #用來判斷單身是否有和本筆單身資料不同訂單的資料
         FOR li_i = 1 TO g_rec_b1
           LET l_oea161=0
@@ -27000,8 +27015,8 @@ FUNCTION t600_chk_ogb31(p_cmd)
        #MOD-D40088 mark end   -----
        #MOD-D40088 add start -----
         LET g_cnt = 0
-        SELECT COUNT(*) INTO g_cnt FROM oep_file 
-         WHERE oep01 = g_ogb[l_ac].ogb31 
+        SELECT COUNT(*) INTO g_cnt FROM oep_file
+         WHERE oep01 = g_ogb[l_ac].ogb31
            AND oepconf = 'N'
         IF g_cnt > 0 THEN
        #MOD-D40088 add end   -----
@@ -27010,8 +27025,8 @@ FUNCTION t600_chk_ogb31(p_cmd)
          END IF
        #MOD-D40088 add start -----
         LET g_cnt = 0
-        SELECT COUNT(*) INTO g_cnt FROM oep_file 
-         WHERE oep01 = g_ogb[l_ac].ogb31 
+        SELECT COUNT(*) INTO g_cnt FROM oep_file
+         WHERE oep01 = g_ogb[l_ac].ogb31
            AND oepconf = 'Y' AND oep09 <> '2'
         IF g_cnt > 0 THEN
        #MOD-D40088 add end   -----
@@ -27052,7 +27067,7 @@ FUNCTION t600_chk_ogb31(p_cmd)
            #FUN-AC0097 End-----
             SELECT oea161,oea162,oea163 INTO g_oga.oga161,g_oga.oga162,g_oga.oga163
               FROM oea_file
-             WHERE oea01 = g_ogb[l_ac].ogb31 
+             WHERE oea01 = g_ogb[l_ac].ogb31
             IF cl_null(g_oga.oga161) THEN LET g_oga.oga161 = 0 END IF
             IF cl_null(g_oga.oga162) THEN LET g_oga.oga162 =100 END IF
             IF cl_null(g_oga.oga163) THEN LET g_oga.oga163 = 0 END IF
@@ -27077,7 +27092,7 @@ FUNCTION t600_chk_ogb31(p_cmd)
          CALL cl_err('oea10','cxm-221',0) RETURN FALSE
       END IF
 
-      
+
           IF g_oea.oea08 != g_oga.oga08 THEN    #國內外不符
              CALL cl_err('sel oea','axm-125',0) RETURN FALSE
           END IF
@@ -27095,13 +27110,13 @@ FUNCTION t600_chk_ogb31(p_cmd)
 #                  FROM poy_file
 #                 WHERE poy01 = l_poz.poz01
 #                   AND poy02 = '0'   #起始站
-#                SELECT azp03 INTO l_azp03 FROM azp_file WHERE azp01 = l_poy04 
+#                SELECT azp03 INTO l_azp03 FROM azp_file WHERE azp01 = l_poy04
 #
 #                LET g_plant_new = l_poy04
 #                LET p_plant_new = g_plant_new
 #
 #                LET l_azp03 = s_dbstring(l_azp03 CLIPPED)
-#                LET l_sql = " SELECT oea21,oea23,oea32 FROM ",cl_get_target_table(p_plant_new,'oea_file'), 
+#                LET l_sql = " SELECT oea21,oea23,oea32 FROM ",cl_get_target_table(p_plant_new,'oea_file'),
 #                            "  WHERE oea99 = '",l_oea99,"'"
 #                CALL cl_replace_sqldb(l_sql) RETURNING l_sql
 #                CALL cl_parse_qry_sql(l_sql,p_plant_new) RETURNING l_sql
@@ -27111,11 +27126,11 @@ FUNCTION t600_chk_ogb31(p_cmd)
 #                IF STATUS THEN
 #                   CALL cl_err('open oea21 oea23 oea32',STATUS,1)
 #                END IF
-#                FETCH oea21_cs2 INTO l_oea21,l_oea23,l_oea32 
+#                FETCH oea21_cs2 INTO l_oea21,l_oea23,l_oea32
 #                IF STATUS THEN
 #                   CALL cl_err('fetch oea21 oea23 oea32',STATUS,1)
 #                END IF
-#             END IF             
+#             END IF
 #             IF l_oea21 != g_oga.oga21 THEN    #稅別不符
 #                CALL cl_err('sel oea','axm-977',0) RETURN FALSE
 #             END IF
@@ -27131,11 +27146,11 @@ FUNCTION t600_chk_ogb31(p_cmd)
              IF g_oea.oea21 != g_oga.oga21 THEN    #稅別不符
                 CALL cl_err('sel oea','axm-142',0) RETURN FALSE
              END IF
-   
+
              IF g_oea.oea23 != g_oga.oga23 THEN    #幣別不符
                 CALL cl_err('sel oea','axm-144',0) RETURN FALSE
              END IF
-   
+
              IF g_oea.oea32 != g_oga.oga32 THEN    #收款條件不符
     #CHI-B70012 -- begin --
                 IF cl_null(g_oga.oga16) AND l_ac = 1 THEN
@@ -27240,47 +27255,47 @@ FUNCTION t600_chk_ogb31(p_cmd)
       END IF
 #No.MOD-A60112  --Begin
 ##TQC-A10153 --begin--
-#IF g_ogb[l_ac].ogb1005 ='1' AND cl_null(g_oga.oga16) THEN 
+#IF g_ogb[l_ac].ogb1005 ='1' AND cl_null(g_oga.oga16) THEN
 #   SELECT oea03,oea04,oea21,oea23,oea25,oeb70,oeb12-oeb24+oeb25,
-#          oeaconf,oea08,oea00 
+#          oeaconf,oea08,oea00
 #     INTO l_oea03,l_oea04,l_oea21,l_oea23,l_oea25,l_oeb70,l_sum,
 #          l_oeaconf,l_oea08,l_oea00
 #     FROM oea_file,oeb_file
 #    WHERE oea01 = oeb01
 #      AND oea01 = g_ogb[l_ac].ogb31
-#    # AND oeb03 = g_ogb[l_ac].ogb31   #TQC-A50152   
-#      AND oeb03 = g_ogb[l_ac].ogb32   #TQC-A50152     
-#    
-#    CASE 
-#      WHEN l_oea03 != g_oga.oga03   
+#    # AND oeb03 = g_ogb[l_ac].ogb31   #TQC-A50152
+#      AND oeb03 = g_ogb[l_ac].ogb32   #TQC-A50152
+#
+#    CASE
+#      WHEN l_oea03 != g_oga.oga03
 #           LET l_errno = 'axm-440'
 #           LET l_oea03 = NULL
 #      WHEN l_oea04 != g_oga.oga04
 #           LET l_errno = 'axm-441'
 #           LET l_oea04 = NULL
-#      WHEN l_oea23 != g_oga.oga23   
+#      WHEN l_oea23 != g_oga.oga23
 #           LET l_errno = 'axm-442'
 #           LET l_oea23 = NULL
-#      WHEN l_oea25 != g_oga.oga25   
+#      WHEN l_oea25 != g_oga.oga25
 #           LET l_errno = 'axm-443'
 #           LET l_oea25 = NULL
-#      WHEN l_oeb70 = 'Y' OR l_oeb70 IS NULL    
+#      WHEN l_oeb70 = 'Y' OR l_oeb70 IS NULL
 #           LET l_errno = 'axm-444'
 #           LET l_oeb70 = NULL
-#      WHEN l_oeaconf = 'N' OR l_oeaconf IS NULL    
+#      WHEN l_oeaconf = 'N' OR l_oeaconf IS NULL
 #           LET l_errno = 'axm-445'
-#           LET l_oeaconf = NULL 
-#      WHEN l_oea08 != g_oga.oga08   
+#           LET l_oeaconf = NULL
+#      WHEN l_oea08 != g_oga.oga08
 #           LET l_errno = 'axm-446'
-#           LET l_oea08 = NULL 
-#      WHEN l_oea00 != '0'   
+#           LET l_oea08 = NULL
+#      WHEN l_oea00 != '0'
 #           LET l_errno = 'axm-447'
-#           LET l_oea00 = NULL                                                                              
-#      WHEN l_sum <= 0 
+#           LET l_oea00 = NULL
+#      WHEN l_sum <= 0
 #           LET l_errno = 'axm-448'
-#           LET l_sum = 0      
-#    END CASE 
-#    IF NOT cl_null(l_errno) THEN RETURN FALSE END IF          
+#           LET l_sum = 0
+#    END CASE
+#    IF NOT cl_null(l_errno) THEN RETURN FALSE END IF
 #END IF
 ##TQC-A10153 -end--
 #No.MOD-A60112  --End
@@ -27326,7 +27341,7 @@ FUNCTION t600_chk_oea()
             l_oeaconf    LIKE oea_file.oeaconf,
             l_oea08      LIKE oea_file.oea08,
             l_oea00      LIKE oea_file.oea00,
-            l_errno      LIKE type_file.chr1000            
+            l_errno      LIKE type_file.chr1000
 ##TQC-A10153 --end--
 #FUN-A60035 ---MARK BEGIN
 #   #FUN-A60035 ----add begin
@@ -27355,7 +27370,7 @@ IF g_ogb[l_ac].ogb1005 ='1' AND cl_null(g_oga.oga16) THEN
 #  &endif
 #  #FUN-A60035 ---add end
 #FUN-A60035 ---MARK END
-#TQC-A10153 --begin-- 
+#TQC-A10153 --begin--
    SELECT oea03,oea04,oea21,oea23,oea25,oeb70,oeb12-oeb24+oeb25,
           oeaconf,oea08,oea00
      INTO l_oea03,l_oea04,l_oea21,l_oea23,l_oea25,l_oeb70,l_sum,
@@ -27363,43 +27378,43 @@ IF g_ogb[l_ac].ogb1005 ='1' AND cl_null(g_oga.oga16) THEN
      FROM oea_file,oeb_file
     WHERE oea01 = oeb01
       AND oea01 = g_ogb[l_ac].ogb31
-    # AND oeb03 = g_ogb[l_ac].ogb31   #TQC-A50152   
-      AND oeb03 = g_ogb[l_ac].ogb32   #TQC-A50152     
-    
-    CASE 
-      WHEN l_oea03 != g_oga.oga03   
+    # AND oeb03 = g_ogb[l_ac].ogb31   #TQC-A50152
+      AND oeb03 = g_ogb[l_ac].ogb32   #TQC-A50152
+
+    CASE
+      WHEN l_oea03 != g_oga.oga03
            LET l_errno = 'axm-440'
            LET l_oea03 = NULL
       WHEN l_oea04 != g_oga.oga04
            LET l_errno = 'axm-441'
            LET l_oea04 = NULL
-      WHEN l_oea23 != g_oga.oga23   
+      WHEN l_oea23 != g_oga.oga23
            LET l_errno = 'axm-442'
            LET l_oea23 = NULL
-      WHEN l_oea25 != g_oga.oga25   
+      WHEN l_oea25 != g_oga.oga25
            LET l_errno = 'axm-443'
            LET l_oea25 = NULL
-      WHEN l_oeb70 = 'Y' OR l_oeb70 IS NULL    
+      WHEN l_oeb70 = 'Y' OR l_oeb70 IS NULL
            LET l_errno = 'axm-444'
            LET l_oeb70 = NULL
-      WHEN l_oeaconf = 'N' OR l_oeaconf IS NULL    
+      WHEN l_oeaconf = 'N' OR l_oeaconf IS NULL
            LET l_errno = 'axm-445'
-           LET l_oeaconf = NULL 
-      WHEN l_oea08 != g_oga.oga08   
+           LET l_oeaconf = NULL
+      WHEN l_oea08 != g_oga.oga08
            LET l_errno = 'axm-446'
-           LET l_oea08 = NULL 
+           LET l_oea08 = NULL
       #No.MOD-A60112  --Begin
-#     WHEN l_oea00 != '0'   
+#     WHEN l_oea00 != '0'
 #          LET l_errno = 'axm-447'
-#          LET l_oea00 = NULL                                                                              
-      #No.MOD-A60112  --End  
-      WHEN l_sum <= 0 
+#          LET l_oea00 = NULL
+      #No.MOD-A60112  --End
+      WHEN l_sum <= 0
            LET l_errno = 'axm-448'
-           LET l_sum = 0      
-    END CASE 
-    IF NOT cl_null(l_errno) THEN 
+           LET l_sum = 0
+    END CASE
+    IF NOT cl_null(l_errno) THEN
        CALL cl_err(g_ogb[l_ac].ogb31,l_errno,1)
-       RETURN FALSE 
+       RETURN FALSE
     END IF
 #FUN-A60035 ---MARK BEGIN
 #   #FUN-A60035 ---add begin
@@ -27409,7 +27424,7 @@ IF g_ogb[l_ac].ogb1005 ='1' AND cl_null(g_oga.oga16) THEN
 #   &endif
 #   #FUN-A60035 ---add end
 #FUN-A60035 ---MARK END
-#TQC-A10153 --begin-- 
+#TQC-A10153 --begin--
 END IF
 RETURN TRUE  #No.MOD-A60134
 #TQC-A10153 -end--
@@ -27439,15 +27454,15 @@ FUNCTION t600_chk_ogb32(p_cmd)
     l_ogb917d       LIKE ogb_file.ogb917
     #-----END MOD-A50076-----
    DEFINE l_oea09   LIKE oea_file.oea09   #MOD-860202
-   DEFINE l_ogb12e  LIKE ogb_file.ogb12   #MOD-C30508 add 
+   DEFINE l_ogb12e  LIKE ogb_file.ogb12   #MOD-C30508 add
    DEFINE l_ogb917e LIKE ogb_file.ogb917      #FUN-CC0009 add
    DEFINE l_ima929  LIKE ima_file.ima929      #FUN-CC0009 add
    DEFINE l_ogb04_o LIKE ogb_file.ogb04       #FUN-CC0009 add
    DEFINE l_ima906  LIKE ima_file.ima906      #FUN-CC0009 add
    DEFINE l_cnt     LIKE type_file.num5       #FUN-CC0009 add
-   DEFINE l_factor  LIKE ima_file.ima31_fac   #FUN-CC0009 add  
-   DEFINE l_oea10   LIKE oea_file.oea10    #add  by guanyao160608  
-   
+   DEFINE l_factor  LIKE ima_file.ima31_fac   #FUN-CC0009 add
+   DEFINE l_oea10   LIKE oea_file.oea10    #add  by guanyao160608
+
    IF NOT cl_null(g_ogb[l_ac].ogb32) THEN
       IF cl_null(g_ogb[l_ac].ogb31) THEN
          RETURN "ogb31"
@@ -27457,7 +27472,7 @@ FUNCTION t600_chk_ogb32(p_cmd)
    END IF
 #MOD-C30508  -------- add ------- begin 計算當前單身中相同訂單號及項次的其他行的出貨數量
    #SELECT SUM(ogb12) INTO l_ogb12e FROM ogb_file #FUN-CC0009 mark
-   SELECT SUM(ogb12),SUM(ogb917) INTO l_ogb12e,l_ogb917e FROM ogb_file   #FUN-CC0009 add 
+   SELECT SUM(ogb12),SUM(ogb917) INTO l_ogb12e,l_ogb917e FROM ogb_file   #FUN-CC0009 add
     WHERE ogb01 = g_oga.oga01
       AND ogb31 = g_ogb[l_ac].ogb31
       AND ogb32 = g_ogb[l_ac].ogb32
@@ -27493,7 +27508,7 @@ FUNCTION t600_chk_ogb32(p_cmd)
       IF g_oeb.oeb1003='2' THEN LET g_ogb[l_ac].ogb1005='2' END IF #TQC-B10066
       #-----MOD-A50076---------
       LET l_ogb04_o = g_ogb[l_ac].ogb04   #FUN-CC0009 add
-      LET g_ogb[l_ac].ogb04 = g_oeb.oeb04  
+      LET g_ogb[l_ac].ogb04 = g_oeb.oeb04
       LET l_ogb12d = 0
       LET l_ogb912d = 0
       LET l_ogb915d = 0
@@ -27501,7 +27516,7 @@ FUNCTION t600_chk_ogb32(p_cmd)
       SELECT SUM(ogb12),SUM(ogb912),SUM(ogb915),SUM(ogb917)
         INTO l_ogb12d,l_ogb912d,l_ogb915d,l_ogb917d
         FROM ogb_file,oga_file
-       WHERE ogb01 = oga01  
+       WHERE ogb01 = oga01
          AND ogb31 = g_ogb[l_ac].ogb31
          AND ogb32 = g_ogb[l_ac].ogb32
          AND oga09 = '9'
@@ -27511,14 +27526,14 @@ FUNCTION t600_chk_ogb32(p_cmd)
       IF cl_null(l_ogb912d) THEN LET l_ogb912d = 0 END IF
       IF cl_null(l_ogb915d) THEN LET l_ogb915d = 0 END IF
       IF cl_null(l_ogb917d) THEN LET l_ogb917d = 0 END IF
-      #-----END MOD-A50076----- 
+      #-----END MOD-A50076-----
 
       IF g_argv0 MATCHES '[246]' AND g_oeb.oeb1003='1' THEN
          LET l_oea09=''
-         SELECT oea09 INTO l_oea09 FROM oea_file 
+         SELECT oea09 INTO l_oea09 FROM oea_file
            WHERE oea01=g_ogb[l_ac].ogb31
          IF ((g_oeb.oeb12*((100+l_oea09)/100))-
-             g_oeb.oeb24+g_oeb.oeb25) <= 0 THEN 
+             g_oeb.oeb24+g_oeb.oeb25) <= 0 THEN
             CALL cl_err('sel oeb','axm-148',0) RETURN "ogb32"
          END IF
       END IF
@@ -27527,10 +27542,10 @@ FUNCTION t600_chk_ogb32(p_cmd)
       END IF
 
       CALL t600_ins_oao('b')   #MOD-B40263
-     #IF p_cmd='a' OR g_ogb[l_ac].ogb31!=g_ogb_t.ogb31      #MOD-B90214 mark 
+     #IF p_cmd='a' OR g_ogb[l_ac].ogb31!=g_ogb_t.ogb31      #MOD-B90214 mark
      #             OR g_ogb[l_ac].ogb32!=g_ogb_t.ogb32 THEN #MOD-B90214 mark
-      IF p_cmd='a' OR g_ogb[l_ac].ogb31!=g_ogb_o.ogb31      #MOD-B90214 
-                   OR g_ogb[l_ac].ogb32!=g_ogb_o.ogb32 THEN #MOD-B90214 
+      IF p_cmd='a' OR g_ogb[l_ac].ogb31!=g_ogb_o.ogb31      #MOD-B90214
+                   OR g_ogb[l_ac].ogb32!=g_ogb_o.ogb32 THEN #MOD-B90214
            #-----MOD-B40263---------
            #IF p_cmd='a' THEN
            #   DROP TABLE x
@@ -27543,14 +27558,14 @@ FUNCTION t600_chk_ogb32(p_cmd)
            #   INSERT INTO oao_file SELECT * FROM x
            #END IF
            #-----END MOD-B40263-----
-         IF p_cmd='a' OR g_ogb[l_ac].ogb31!=g_ogb_t.ogb31      #MOD-B90214 add 
-                      OR g_ogb[l_ac].ogb32!=g_ogb_t.ogb32 THEN #MOD-B90214 add 
+         IF p_cmd='a' OR g_ogb[l_ac].ogb31!=g_ogb_t.ogb31      #MOD-B90214 add
+                      OR g_ogb[l_ac].ogb32!=g_ogb_t.ogb32 THEN #MOD-B90214 add
             IF g_argv0 MATCHES '[15]' THEN  #No.7992
                #FUN-CC0009 -- add start --
                SELECT ima929 INTO l_ima929 FROM ima_file
                 WHERE ima01 = l_ogb04_o
-               IF cl_null(l_ima929) THEN  
-               #FUN-CC0009 -- add end --               
+               IF cl_null(l_ima929) THEN
+               #FUN-CC0009 -- add end --
                SELECT COUNT(*) INTO g_cnt FROM ogb_file
                 WHERE ogb01=g_oga.oga01
                   AND ogb31=g_ogb[l_ac].ogb31
@@ -27567,11 +27582,11 @@ FUNCTION t600_chk_ogb32(p_cmd)
                      AND ogb32=g_ogb[l_ac].ogb32
                      AND ogb04=l_ogb04_o
                   IF g_cnt > 0 THEN
-                     LET g_ogb_o.ogb32 ='' 
+                     LET g_ogb_o.ogb32 =''
                      CALL cl_err('','axm-298',0) RETURN "ogb31"
-                  END IF 
-               END IF 
-               #FUN-CC0009 -- add end --               
+                  END IF
+               END IF
+               #FUN-CC0009 -- add end --
             END IF
          END IF #MOD-B90214 add
          #LET g_ogb[l_ac].ogb04 = g_oeb.oeb04   #MOD-A50076
@@ -27579,7 +27594,7 @@ FUNCTION t600_chk_ogb32(p_cmd)
          LET b_ogb.ogb05_fac   = g_oeb.oeb05_fac
          LET g_ogb[l_ac].ogb06 = g_oeb.oeb06
          LET b_ogb.ogb07       = g_oeb.oeb07
-        #LET g_ogb[l_ac].ogb17 = 'N' #CHI-AC0034 mark 
+        #LET g_ogb[l_ac].ogb17 = 'N' #CHI-AC0034 mark
          LET g_ogb[l_ac].ogb17 = b_ogb.ogb17 #CHI-AC0034
          LET g_ogb[l_ac].ogb19 = g_oeb.oeb906   #TQC-770040 add
          IF cl_null(g_oeb.oeb906) THEN LET g_ogb[l_ac].ogb19='N' END IF  #TQC-770040 add
@@ -27612,8 +27627,8 @@ FUNCTION t600_chk_ogb32(p_cmd)
          LET g_ogb[l_ac].ogb12 = g_oeb.oeb12-g_oeb.oeb24+
                                  g_oeb.oeb25-l_ogb12e      #MOD-C30508 add l_ogb12e
          #add by lixwz210106 s---
-         
-         
+
+
          #和出货通知单可出货做比较
          #檢查出貨數必須<=通知單應出數(ogb12)-累計出貨數(ogb19)
          #對應到的出貨通知單上的數量
@@ -27637,9 +27652,9 @@ FUNCTION t600_chk_ogb32(p_cmd)
                AND ogb32 = g_ogb[l_ac].ogb32
                AND ogb04 = g_ogb[l_ac].ogb04 #no.7168
                AND ogaconf !='X'
-             
+
             IF g_ogb[l_ac].ogb12 >  l_ogb12a-l_ogb12b THEN
-               LET  g_ogb[l_ac].ogb12 = l_ogb12a-l_ogb12b 
+               LET  g_ogb[l_ac].ogb12 = l_ogb12a-l_ogb12b
             END IF
          END IF
          #add by lixwz210106 e---
@@ -27672,7 +27687,7 @@ FUNCTION t600_chk_ogb32(p_cmd)
                END IF
 
                LET g_ogb[l_ac].ogb912 =  g_ogb[l_ac].ogb12 * l_factor
-               LET g_ogb[l_ac].ogb915 =  (g_ogb[l_ac].ogb12 * l_factor  - g_ogb[l_ac].ogb912) / g_ogb[l_ac].ogb914 
+               LET g_ogb[l_ac].ogb915 =  (g_ogb[l_ac].ogb12 * l_factor  - g_ogb[l_ac].ogb912) / g_ogb[l_ac].ogb914
             END IF
             IF l_ima906 = '3' THEN
                IF NOT cl_null(g_ogb[l_ac].ogb911) THEN
@@ -27683,7 +27698,7 @@ FUNCTION t600_chk_ogb32(p_cmd)
                END IF
             END IF
          END IF
-        #FUN-CC0009 -- add end --         
+        #FUN-CC0009 -- add end --
          #LET g_ogb[l_ac].ogb917= g_oeb.oeb917
 
          #add by lixwz210106 s---
@@ -27744,7 +27759,7 @@ FUNCTION t600_chk_ogb32(p_cmd)
             #LET g_ogb[l_ac].ogb917= l_ogb917a- l_ogb917b - l_ogb917c #FUN-CC0009 mark
             LET g_ogb[l_ac].ogb912= g_ogb[l_ac].ogb12                              #FUN-CC0009 add
             LET g_ogb[l_ac].ogb915= 0                                              #FUN-CC0009 add
-            LET g_ogb[l_ac].ogb917= l_ogb917a- l_ogb917b - l_ogb917c - l_ogb917e   #FUN-CC0009 add - l_ogb917e            
+            LET g_ogb[l_ac].ogb917= l_ogb917a- l_ogb917b - l_ogb917c - l_ogb917e   #FUN-CC0009 add - l_ogb917e
          ELSE
          #檢查出貨通知單量必須<=訂單數量(ogb12)
             LET l_ogb12a = 0
@@ -27765,7 +27780,7 @@ FUNCTION t600_chk_ogb32(p_cmd)
             SELECT ima929 INTO l_ima929 FROM ima_file
              WHERE ima01 = l_ogb04_o
             IF cl_null(l_ima929) THEN
-            #FUN-CC0009 -- add end --            
+            #FUN-CC0009 -- add end --
             SELECT SUM(ogb12),SUM(ogb912),SUM(ogb915),SUM(ogb917)
               INTO l_ogb12b,l_ogb912b,l_ogb915b,l_ogb917b
               FROM ogb_file,oga_file
@@ -27781,10 +27796,10 @@ FUNCTION t600_chk_ogb32(p_cmd)
                 WHERE ogb01 = oga01 AND oga09 IN ('1','5')  #No.7992
                   AND ogb31 = g_ogb[l_ac].ogb31
                   AND ogb32 = g_ogb[l_ac].ogb32
-                  AND ogb04 = l_ogb04_o 
+                  AND ogb04 = l_ogb04_o
                   AND ogaconf !='X'
             END IF
-            #FUN-CC0009 -- add end --               
+            #FUN-CC0009 -- add end --
             IF cl_null(l_ogb12b)  THEN LET l_ogb12b = 0 END IF
             IF cl_null(l_ogb912b) THEN LET l_ogb912b= 0 END IF
             IF cl_null(l_ogb915b) THEN LET l_ogb915b= 0 END IF
@@ -27795,7 +27810,7 @@ FUNCTION t600_chk_ogb32(p_cmd)
             #LET g_ogb[l_ac].ogb917= l_ogb917a- l_ogb917b + l_ogb917d #MOD-A50076 add l_ogb917d #FUN-CC0009 mark
             LET g_ogb[l_ac].ogb912= g_ogb[l_ac].ogb12                                                                   #FUN-CC0009 add
             LET g_ogb[l_ac].ogb915= 0                                                                                   #FUN-CC0009 add
-            LET g_ogb[l_ac].ogb917= l_ogb917a- l_ogb917b + l_ogb917d - l_ogb917e            #MOD-A50076 add l_ogb917d   #FUN-CC0009 add - l_ogb917e            
+            LET g_ogb[l_ac].ogb917= l_ogb917a- l_ogb917b + l_ogb917d - l_ogb917e            #MOD-A50076 add l_ogb917d   #FUN-CC0009 add - l_ogb917e
          END IF
          LET b_ogb.ogb13       = g_oeb.oeb13
          LET b_ogb.ogb18       = g_ogb[l_ac].ogb12
@@ -27839,62 +27854,62 @@ FUNCTION t600_chk_ogb32(p_cmd)
    #且單身為第一筆新增時, 匯率重取
    IF cl_null(g_oga.oga16) AND cl_null(g_oga.oga011)  THEN
       LET g_cnt = 0
-      SELECT COUNT(*) INTO g_cnt FROM ogb_file,oga_file 
+      SELECT COUNT(*) INTO g_cnt FROM ogb_file,oga_file
        WHERE ogb01 = g_oga.oga01
          AND oga01 = ogb01
          AND oga00 = g_oga.oga00
          AND oga09 = g_oga.oga09
      IF g_cnt = 0 THEN
         LET g_oga_o.oga24 = g_oga.oga24
-        IF g_oga.oga08='1' THEN                                                                                       
-            LET exT=g_oaz.oaz52                                                                                       
-        ELSE                                                                                                          
-            LET exT=g_oaz.oaz70                                                                                       
-        END IF                                                                                                        
-        IF g_oga.oga909 = 'Y' THEN                                                                                    
-           CALL t600_chk_poz00() RETURNING exT   #MOD-860069 
-        END IF                                                                                                        
+        IF g_oga.oga08='1' THEN
+            LET exT=g_oaz.oaz52
+        ELSE
+            LET exT=g_oaz.oaz70
+        END IF
+        IF g_oga.oga909 = 'Y' THEN
+           CALL t600_chk_poz00() RETURNING exT   #MOD-860069
+        END IF
         IF NOT cl_null(g_oga.oga021) THEN
            LET g_exdate = g_oga.oga021    #結關日期
         ELSE
            LET g_exdate = g_oga.oga02     #出貨日期
-        END IF 
+        END IF
         CALL s_curr3(g_oga.oga23,g_exdate,exT) RETURNING g_oga.oga24
         IF g_oga_o.oga24 <> g_oga.oga24 THEN
            IF NOT cl_confirm('axm-949') THEN
-              LET g_oga.oga24 = g_oga_o.oga24 
-           ELSE 
-              UPDATE oga_file SET oga24 = g_oga.oga24 WHERE oga01=g_oga.oga01 
+              LET g_oga.oga24 = g_oga_o.oga24
+           ELSE
+              UPDATE oga_file SET oga24 = g_oga.oga24 WHERE oga01=g_oga.oga01
               IF STATUS OR SQLCA.SQLCODE THEN
-                 CALL cl_err3("upd","oga_file","g_oga.oga01","",SQLCA.sqlcode,"","",1) 
+                 CALL cl_err3("upd","oga_file","g_oga.oga01","",SQLCA.sqlcode,"","",1)
                  RETURN "ogb31"
               END IF
            END IF
-        END IF 
-         DISPLAY BY NAME g_oga.oga24                                                                                   
+        END IF
+         DISPLAY BY NAME g_oga.oga24
      END IF
-   END IF 
+   END IF
    #MOD-870246-end-add
    RETURN NULL
 END FUNCTION
 
-FUNCTION t600_chk_ogb65(p_cmd)                                                                                                          
-   DEFINE p_cmd   LIKE type_file.chr1     #CHAR(1)                                                                                  
-   DEFINE l_azfacti LIKE azf_file.azfacti                                                                                           
-   DEFINE l_azf02   LIKE azf_file.azf02                                                                                             
+FUNCTION t600_chk_ogb65(p_cmd)
+   DEFINE p_cmd   LIKE type_file.chr1     #CHAR(1)
+   DEFINE l_azfacti LIKE azf_file.azfacti
+   DEFINE l_azf02   LIKE azf_file.azf02
    DEFINE l_azf09   LIKE azf_file.azf09
    #FUN-CB0087--add--str--
-   DEFINE l_flag        LIKE type_file.chr1   
-   DEFINE l_n           LIKE type_file.num5    
-   DEFINE l_where       STRING                    
-   DEFINE l_sql         STRING                    
-   #FUN-CB0087--add--end--          
-          
+   DEFINE l_flag        LIKE type_file.chr1
+   DEFINE l_n           LIKE type_file.num5
+   DEFINE l_where       STRING
+   DEFINE l_sql         STRING
+   #FUN-CB0087--add--end--
+
    #FUN-CB0087--add--str--
-   LET l_flag = FALSE 
-   LET g_errno = ' '  #TQC-D20050  
-   IF NOT cl_null(g_ogb[l_ac].ogb65) THEN 
-      IF g_aza.aza115='Y' AND g_argv0 MATCHES '[89]' THEN 
+   LET l_flag = FALSE
+   LET g_errno = ' '  #TQC-D20050
+   IF NOT cl_null(g_ogb[l_ac].ogb65) THEN
+      IF g_aza.aza115='Y' AND g_argv0 MATCHES '[89]' THEN
          CALL s_get_where(g_oga.oga01,g_ogb[l_ac].ogb31,'',g_ogb[l_ac].ogb04,g_ogb[l_ac].ogb09,g_oga.oga14,g_oga.oga15) RETURNING l_flag,l_where
       END IF
       IF g_aza.aza115='Y' AND g_argv0 MATCHES '[89]' AND l_flag THEN
@@ -27904,30 +27919,30 @@ FUNCTION t600_chk_ogb65(p_cmd)
          IF l_n < 1 THEN
             LET g_errno = 'aim-425'
          END IF
-      ELSE 
-   #FUN-CB0087--add--end--   
-         SELECT azfacti,azf02,azf09 INTO l_azfacti,l_azf02,l_azf09 FROM azf_file                                                         
-          WHERE azf01 = g_ogb[l_ac].ogb65  AND azf02 = '2'                                                                                      
-                                                                                                                                     
-         #LET g_errno = ' '  #TQC-D20050 mark                                                                                                               
-         CASE WHEN SQLCA.SQLCODE = 100 LET g_errno = 'aim-425'  #TQC-D20047 '100'->'aim-425' 
-              WHEN l_azfacti = 'N'     LET g_errno = '9028'                                                                               
-              WHEN SQLCA.SQLCODE != 0  LET g_errno = SQLCA.SQLCODE USING '-----'                                                          
-              WHEN l_azf09 !='5'       LET g_errno ='aoo-404'                                                                             
-         END CASE 
+      ELSE
+   #FUN-CB0087--add--end--
+         SELECT azfacti,azf02,azf09 INTO l_azfacti,l_azf02,l_azf09 FROM azf_file
+          WHERE azf01 = g_ogb[l_ac].ogb65  AND azf02 = '2'
+
+         #LET g_errno = ' '  #TQC-D20050 mark
+         CASE WHEN SQLCA.SQLCODE = 100 LET g_errno = 'aim-425'  #TQC-D20047 '100'->'aim-425'
+              WHEN l_azfacti = 'N'     LET g_errno = '9028'
+              WHEN SQLCA.SQLCODE != 0  LET g_errno = SQLCA.SQLCODE USING '-----'
+              WHEN l_azf09 !='5'       LET g_errno ='aoo-404'
+         END CASE
    #FUN-CB0087 add str
       END IF
-   END IF  
+   END IF
    IF NOT cl_null(g_errno) THEN CALL cl_err('',g_errno,1) RETURN FALSE END IF
-   RETURN TRUE 
-   #FUN-CB0087 add end                                                                                                                      
-END FUNCTION  
+   RETURN TRUE
+   #FUN-CB0087 add end
+END FUNCTION
 
 #FUN-CB0087--add--str--
 FUNCTION t600_chkall_azf()
-DEFINE l_flag        LIKE type_file.chr1       
-DEFINE l_where       STRING                    
-DEFINE l_sql         STRING                    
+DEFINE l_flag        LIKE type_file.chr1
+DEFINE l_where       STRING
+DEFINE l_sql         STRING
 DEFINE l_n           LIKE type_file.num5
 DEFINE l_cnt         LIKE type_file.num5
 DEFINE l_azfacti     LIKE azf_file.azfacti
@@ -27938,32 +27953,32 @@ DEFINE l_oeb1012_a   LIKE oeb_file.oeb1012   #No.TQC-7C0055
 DEFINE l_oeb1012_b   LIKE oeb_file.oeb1012   #No.TQC-7C0055
 DEFINE l_azf10_a     LIKE azf_file.azf10,
        l_azf08_a     LIKE azf_file.azf08,
-       l_azf08       LIKE azf_file.azf08,  
+       l_azf08       LIKE azf_file.azf08,
        l_oeb1001     LIKE oeb_file.oeb1001
 
 
-   IF g_ogb.getlength() = 0 OR g_argv0 NOT MATCHES '[245689A]'  THEN RETURN TRUE END IF 
-   IF g_aza.aza115='Y' THEN 
+   IF g_ogb.getlength() = 0 OR g_argv0 NOT MATCHES '[245689A]'  THEN RETURN TRUE END IF
+   IF g_aza.aza115='Y' THEN
       FOR l_cnt = 1 TO  g_ogb.getlength()
          CALL s_get_where(g_oga.oga01,g_ogb[l_cnt].ogb31,'',g_ogb[l_cnt].ogb04,g_ogb[l_cnt].ogb09,g_oga.oga14,g_oga.oga15) RETURNING l_flag,l_where
          IF l_flag THEN
-            LET l_n = 0 
-            IF g_argv0 MATCHES '[2456A]' THEN 
+            LET l_n = 0
+            IF g_argv0 MATCHES '[2456A]' THEN
                LET l_sql = " SELECT COUNT(*) FROM ggc_file WHERE ggc08='",g_ogb[l_cnt].ogb1001,"' AND ",l_where
-            ELSE 
+            ELSE
                IF g_ogb[l_cnt].ogb52=0 THEN CONTINUE FOR END IF
                LET l_sql = " SELECT COUNT(*) FROM ggc_file WHERE ggc08='",g_ogb[l_cnt].ogb65,"' AND ",l_where
-            END IF 
+            END IF
             PREPARE ggc08_pre5 FROM l_sql
             EXECUTE ggc08_pre5 INTO l_n
             IF l_n < 1 THEN
                CALL cl_err('','aim-425',1)
                LET g_oga.oga14 = g_oga_t.oga14
                LET g_oga.oga15 = g_oga_t.oga15
-               RETURN FALSE 
+               RETURN FALSE
             END IF
-         ELSE 
-            IF g_argv0 MATCHES '[2456A]' THEN 
+         ELSE
+            IF g_argv0 MATCHES '[2456A]' THEN
                LET g_cnt=0
                IF g_aza.aza50 = 'Y' THEN   #MOD-8A0100
                   SELECT COUNT(*) INTO g_cnt FROM azf_file
@@ -27974,19 +27989,19 @@ DEFINE l_azf10_a     LIKE azf_file.azf10,
                ELSE
                   SELECT COUNT(*) INTO g_cnt FROM azf_file
                    WHERE azf01 = g_ogb[l_cnt].ogb1001
-                     AND azf02 = '2'     
+                     AND azf02 = '2'
                      AND azfacti ='Y'
                      AND azf09 ='1'   #No.FUN-930104
                END IF
                LET l_azf09=''
                SELECT azf09 INTO l_azf09 FROM azf_file
                 WHERE azf01 = g_ogb[l_cnt].ogb1001
-                  AND azf02 = '2'  
+                  AND azf02 = '2'
                   AND azfacti ='Y'
-               IF l_azf09 != '1' THEN 
+               IF l_azf09 != '1' THEN
                   CALL cl_err('','aoo-400',1)
                   RETURN FALSE
-               END IF   
+               END IF
                IF g_cnt = 0 THEN
                   CALL cl_err(g_ogb[l_cnt].ogb1001,'atm-379',1)
                   RETURN FALSE
@@ -28008,7 +28023,7 @@ DEFINE l_azf10_a     LIKE azf_file.azf10,
                   ELSE
                      SELECT azf10 INTO l_oeb1012_b FROM azf_file
                       WHERE azf01 = g_ogb[l_cnt].ogb1001
-                        AND azf02 = '2' 
+                        AND azf02 = '2'
                         AND azfacti ='Y'
                   END IF
                   IF l_oeb1012_b != l_oeb1012_a THEN
@@ -28024,34 +28039,34 @@ DEFINE l_azf10_a     LIKE azf_file.azf10,
                   LET l_azf10_a=''
                   SELECT azf08,azf10 INTO l_azf08,l_azf10 FROM azf_file
                    WHERE azf01 = g_ogb[l_cnt].ogb1001
-                     AND azf02 = '2' 
+                     AND azf02 = '2'
                      AND azfacti ='Y'
                   IF NOT cl_null(l_oeb1001) THEN
                      SELECT azf08,azf10 INTO l_azf08_a,l_azf10_a FROM azf_file
                       WHERE azf01 = l_oeb1001
-                        AND azf02 = '2' 
+                        AND azf02 = '2'
                         AND azfacti ='Y'
                      IF cl_null(l_azf10) THEN LET l_azf10 = 'N' END IF
                      IF cl_null(l_azf08) THEN LET l_azf08 = 'N' END IF
                      IF cl_null(l_azf10_a) THEN LET l_azf10_a = 'N' END IF
                      IF cl_null(l_azf08_a) THEN LET l_azf08_a = 'N' END IF
-                     IF g_aza.aza50 = 'Y' THEN  
+                     IF g_aza.aza50 = 'Y' THEN
                         IF l_azf10_a <>  l_azf10  THEN
                            CALl cl_err(g_ogb[l_cnt].ogb1001,'axm-381',1)
                            RETURN FALSE
-                        END IF 
+                        END IF
                      ELSE
                         IF l_azf08_a <> l_azf08  THEN
                            CALl cl_err(g_ogb[l_cnt].ogb1001,'axm-382',1)
                            RETURN FALSE
-                        END IF 
+                        END IF
                      END IF
                   END IF
                END IF
             ELSE
                LET l_azf02=''
                LET l_azf09=''
-               LET l_azfacti=''  
+               LET l_azfacti=''
                SELECT azfacti,azf02,azf09 INTO l_azfacti,l_azf02,l_azf09 FROM azf_file
                 WHERE azf01 = g_ogb[l_cnt].ogb65  AND azf02 = '2'
                LET g_errno = ' '
@@ -28060,16 +28075,16 @@ DEFINE l_azf10_a     LIKE azf_file.azf10,
                     WHEN SQLCA.SQLCODE != 0  LET g_errno = SQLCA.SQLCODE USING '-----'
                     WHEN l_azf09 !='5'       LET g_errno ='aoo-404'
                END CASE
-               IF NOT cl_null(g_errno) THEN 
-                  CALL cl_err('',g_errno,1) 
-                  RETURN FALSE 
+               IF NOT cl_null(g_errno) THEN
+                  CALL cl_err('',g_errno,1)
+                  RETURN FALSE
                END IF
-            END IF 
-         END IF 
+            END IF
+         END IF
       END FOR
-   END IF    
-   RETURN TRUE 
-END FUNCTION 
+   END IF
+   RETURN TRUE
+END FUNCTION
 #FUN-CB0087--add--end--
 
 FUNCTION t600_chk_ogb1001(p_cmd)
@@ -28078,22 +28093,22 @@ FUNCTION t600_chk_ogb1001(p_cmd)
    DEFINE l_oeb1012_a LIKE oeb_file.oeb1012   #No.TQC-7C0055
    DEFINE l_oeb1012_b LIKE oeb_file.oeb1012   #No.TQC-7C0055
    DEFINE l_azf09     LIKE azf_file.azf09     #No.FUN-930104
-   DEFINE l_azf10_a   LIKE azf_file.azf10,   
-          l_azf08_a   LIKE azf_file.azf08,   
-          l_azf08     LIKE azf_file.azf08,   
+   DEFINE l_azf10_a   LIKE azf_file.azf10,
+          l_azf08_a   LIKE azf_file.azf08,
+          l_azf08     LIKE azf_file.azf08,
           l_oeb1001   LIKE oeb_file.oeb1001,
           #FUN-CB0087--add--str--
-          l_flag      LIKE type_file.chr1,    
-          l_n         LIKE type_file.num5,    
-          l_where     STRING,                    
-          l_sql       STRING 
-          #FUN-CB0087--add--end--          
-          
+          l_flag      LIKE type_file.chr1,
+          l_n         LIKE type_file.num5,
+          l_where     STRING,
+          l_sql       STRING
+          #FUN-CB0087--add--end--
+
 
    IF NOT cl_null(g_ogb[l_ac].ogb1001) THEN
       #FUN-CB0087--add--str--
-      LET l_flag = FALSE 
-      IF g_aza.aza115='Y' AND g_argv0 MATCHES '[2456A]' THEN 
+      LET l_flag = FALSE
+      IF g_aza.aza115='Y' AND g_argv0 MATCHES '[2456A]' THEN
          CALL s_get_where(g_oga.oga01,g_ogb[l_ac].ogb31,'',g_ogb[l_ac].ogb04,g_ogb[l_ac].ogb09,g_oga.oga14,g_oga.oga15) RETURNING l_flag,l_where
       END IF
       IF g_aza.aza115='Y' AND g_argv0 MATCHES '[2456A]' AND l_flag THEN
@@ -28102,9 +28117,9 @@ FUNCTION t600_chk_ogb1001(p_cmd)
          EXECUTE ggc08_pre1 INTO l_n
          IF l_n < 1 THEN
             CALL cl_err(g_ogb[l_ac].ogb1001,'aim-425',1)
-            RETURN FALSE 
+            RETURN FALSE
          END IF
-      ELSE 
+      ELSE
       #FUN-CB0087--add--end--
          LET g_cnt=0
          IF g_aza.aza50 = 'Y' THEN   #MOD-8A0100
@@ -28116,18 +28131,18 @@ FUNCTION t600_chk_ogb1001(p_cmd)
          ELSE
             SELECT COUNT(*) INTO g_cnt FROM azf_file
              WHERE azf01 = g_ogb[l_ac].ogb1001
-               AND azf02 = '2'     
+               AND azf02 = '2'
                AND azfacti ='Y'
                AND azf09 ='1'   #No.FUN-930104
          END IF
          SELECT azf09 INTO l_azf09 FROM azf_file
           WHERE azf01 = g_ogb[l_ac].ogb1001
-            AND azf02 = '2'  
+            AND azf02 = '2'
             AND azfacti ='Y'
-         IF l_azf09 != '1' THEN 
+         IF l_azf09 != '1' THEN
             CALL cl_err('','aoo-400',1)
             RETURN FALSE
-         END IF   
+         END IF
          IF g_cnt = 0 THEN
             CALL cl_err(g_ogb[l_ac].ogb1001,'atm-379',1)
             RETURN FALSE
@@ -28148,7 +28163,7 @@ FUNCTION t600_chk_ogb1001(p_cmd)
          ELSE
             SELECT azf10 INTO l_oeb1012_b FROM azf_file
              WHERE azf01 = g_ogb[l_ac].ogb1001
-               AND azf02 = '2' 
+               AND azf02 = '2'
                AND azfacti ='Y'
          END IF
          IF l_oeb1012_b != l_oeb1012_a THEN
@@ -28160,27 +28175,27 @@ FUNCTION t600_chk_ogb1001(p_cmd)
          #不使用流通配銷時 aza50 ='N',出入單理由碼與訂單理由碼的"是否列入銷售費用"，必須一致
          SELECT azf08,azf10 INTO l_azf08,l_azf10 FROM azf_file
           WHERE azf01 = g_ogb[l_ac].ogb1001
-            AND azf02 = '2' 
+            AND azf02 = '2'
             AND azfacti ='Y'
          IF NOT cl_null(l_oeb1001) THEN
             SELECT azf08,azf10 INTO l_azf08_a,l_azf10_a FROM azf_file
              WHERE azf01 = l_oeb1001
-               AND azf02 = '2' 
+               AND azf02 = '2'
                AND azfacti ='Y'
             IF cl_null(l_azf10) THEN LET l_azf10 = 'N' END IF
             IF cl_null(l_azf08) THEN LET l_azf08 = 'N' END IF
             IF cl_null(l_azf10_a) THEN LET l_azf10_a = 'N' END IF
             IF cl_null(l_azf08_a) THEN LET l_azf08_a = 'N' END IF
-            IF g_aza.aza50 = 'Y' THEN  
+            IF g_aza.aza50 = 'Y' THEN
                IF l_azf10_a <>  l_azf10  THEN
                   CALl cl_err(g_ogb[l_ac].ogb1001,'axm-381',1)
                   RETURN FALSE
-               END IF 
+               END IF
             ELSE
                IF l_azf08_a <> l_azf08  THEN
                   CALl cl_err(g_ogb[l_ac].ogb1001,'axm-382',1)
                   RETURN FALSE
-               END IF 
+               END IF
             END IF
          END IF
 
@@ -28196,13 +28211,13 @@ FUNCTION t600_chk_ogb1001(p_cmd)
                ELSE
                    SELECT azf10 INTO g_ogb[l_ac].ogb1012 FROM azf_file
                     WHERE azf01 = g_ogb[l_ac].ogb1001
-                      AND azf02 = '2'    
-                      AND azfacti= 'Y'  
+                      AND azf02 = '2'
+                      AND azfacti= 'Y'
                END IF
-            END IF    
+            END IF
          END IF
       END IF
-   END IF  #FUN-CB0087 add     
+   END IF  #FUN-CB0087 add
    RETURN TRUE
 END FUNCTION
 
@@ -28270,17 +28285,17 @@ FUNCTION t600_chk_ogb092()
     #           AND img03=g_ogb[l_ac].ogb091 AND img04=g_ogb[l_ac].ogb092   #FUN-560070
     #        IF SQLCA.sqlcode THEN
     #           IF g_oga.oga09 MATCHES '[46]' THEN   #MOD-9C0092
-    #              CALL t600sub_chkpoz(g_oga.*,g_ogb[l_ac].ogb31) RETURNING li_result,g_poz.*,l_oea99,g_flow  #NO.TQC-740089 
+    #              CALL t600sub_chkpoz(g_oga.*,g_ogb[l_ac].ogb31) RETURNING li_result,g_poz.*,l_oea99,g_flow  #NO.TQC-740089
     #              IF NOT li_result THEN RETURN END IF #FUN-730012
-    #              IF g_argv0 = '4' AND g_poz.poz011 = '1' THEN 
+    #              IF g_argv0 = '4' AND g_poz.poz011 = '1' THEN
     #                 CALL s_add_img(g_ogb[l_ac].ogb04,g_ogb[l_ac].ogb09,
     #                                g_ogb[l_ac].ogb091,g_ogb[l_ac].ogb092,
     #                                g_oga.oga01,g_ogb[l_ac].ogb03,g_oga.oga02)
     #                 IF g_errno='N' THEN
     #                    RETURN FALSE
     #                 END IF
-    #              END IF 
-    #           END IF                                                                                     #MOD-9C0092 
+    #              END IF
+    #           END IF                                                                                     #MOD-9C0092
     #           CALL cl_err3("sel","img_file",g_ogb[l_ac].ogb04,"",SQLCA.sqlcode,"","select img",1)        #MOD-9C0092
     #           RETURN FALSE
     #        END IF
@@ -28342,7 +28357,7 @@ FUNCTION t600_chk_ogb17(p_cmd)
         #LET g_ogb[l_ac].ogb092 = ' '
         #MOD-B30486 mod --end--
         #-----END MOD-B30487-----
- 
+
          DELETE FROM rvbs_file
           WHERE rvbs01 = g_oga.oga01
             AND rvbs02 = g_ogb[l_ac].ogb03
@@ -28387,20 +28402,20 @@ FUNCTION t600_chk_ogb09()
   DEFINE l_slip     LIKE oay_file.oayslip    #MOD-910216 add
   DEFINE l_smyware  LIKE smy_file.smyware    #MOD-910216 add
   DEFINE l_sql      STRING                   #MOD-B50094
-  
+
    #FUN-C20002--start add-----------------------------------
    DEFINE l_ima154  LIKE ima_file.ima154
    DEFINE l_rcj03   LIKE rcj_file.rcj03
    DEFINE l_rtz07   LIKE rtz_file.rtz07
    DEFINE l_rtz08   LIKE rtz_file.rtz08
-   #FUN-C20002--end add------------------------------------- 
+   #FUN-C20002--end add-------------------------------------
 
     IF NOT cl_null(g_ogb[l_ac].ogb09) THEN
        LET g_cnt=0
        #-----MOD-B50094---------
        #SELECT count(*) INTO g_cnt  FROM imd_file
        # WHERE imd01=g_ogb[l_ac].ogb09
-       #   AND imd11='Y'     
+       #   AND imd11='Y'
        #   AND imdacti='Y'
        IF g_oga.oga00 = 'B' THEN
           LET l_sql = "SELECT count(*) FROM imd_file ",
@@ -28427,7 +28442,7 @@ FUNCTION t600_chk_ogb09()
           RETURN FALSE
        END IF
 #CHI-B60085 -- begin --
-       IF g_oga.oga00 = '3' OR ( g_oga.oga00 = '1' AND g_oga.oga65 = 'Y' ) THEN   #MOD-CC0080 add OR ( g_oga.oga00 = '1' AND g_oga.oga65 = 'Y' ) 
+       IF g_oga.oga00 = '3' OR ( g_oga.oga00 = '1' AND g_oga.oga65 = 'Y' ) THEN   #MOD-CC0080 add OR ( g_oga.oga00 = '1' AND g_oga.oga65 = 'Y' )
           CALL t600sub_chk_jce(g_oga.oga01,l_ac,g_ogb[l_ac].ogb09)
           IF NOT cl_null(g_errno) THEN
              CALL cl_err(g_ogb[l_ac].ogb09,g_errno,0)
@@ -28438,17 +28453,17 @@ FUNCTION t600_chk_ogb09()
        #No.FUN-AA0048  --Begin
        #IF g_azw.azw04= '2' THEN
        #    LET g_cnt =0
-       #    SELECT COUNT(*) INTO g_cnt FROM imd_file 
-       #     WHERE imd01=g_ogb[l_ac].ogb09 
+       #    SELECT COUNT(*) INTO g_cnt FROM imd_file
+       #     WHERE imd01=g_ogb[l_ac].ogb09
        #       AND imd20=g_plant
-       #    IF g_cnt=0 THEN 
+       #    IF g_cnt=0 THEN
        #       CALL cl_err(g_ogb[l_ac].ogb09,'art-487',0)
        #       RETURN FALSE
        #    END IF
        #END IF
        #FUN-C20002--start add-----------------------------------
        IF g_azw.azw04 = '2' THEN
-          SELECT ima154 INTO l_ima154 
+          SELECT ima154 INTO l_ima154
             FROM ima_file
            WHERE ima01 = g_ogb[l_ac].ogb04
           IF l_ima154 = 'Y' AND g_ogb[l_ac].ogb04[1,4] <> 'MISC' THEN
@@ -28464,20 +28479,20 @@ FUNCTION t600_chk_ogb09()
              CALL s_get_defstore(g_plant,g_ogb[l_ac].ogb04) RETURNING l_rtz07,l_rtz08    #FUN-C90049 add
 
              IF l_rcj03 = '1' THEN
-                IF g_ogb[l_ac].ogb09 <> l_rtz07 THEN 
+                IF g_ogb[l_ac].ogb09 <> l_rtz07 THEN
                    CALL cl_err('','aim1142',0)
                    LET g_ogb[l_ac].ogb09 = g_ogb_t.ogb09
                    RETURN FALSE
-                END IF 
-             ELSE 
+                END IF
+             ELSE
                 IF g_ogb[l_ac].ogb09 <> l_rtz08 THEN
                    CALL cl_err('','aim1143',0)
                    LET g_ogb[l_ac].ogb09 = g_ogb_t.ogb09
                    RETURN FALSE
                 END IF
-             END IF 
-          END IF  
-       END IF 
+             END IF
+          END IF
+       END IF
        #FUN-C20002--end add-------------------------------------
        #CHI-CC0014 ------------sta
       #IF g_oga.oga09 MATCHES '[2468]' AND g_ogb[l_ac].ogb04[1,4] != 'MISC' THEN
@@ -28491,7 +28506,7 @@ FUNCTION t600_chk_ogb09()
        IF NOT s_chk_ware(g_ogb[l_ac].ogb09) THEN
           RETURN FALSE
        END IF
-       #No.FUN-AA0048  --End  
+       #No.FUN-AA0048  --End
        #IF g_aza.aza115='Y' AND g_argv0 MATCHES '[2456A]' AND NOT t600_chk_ogb1001('a') THEN RETURN FALSE END IF  #FUN-CB0087 #TQC-D10082
        #IF g_aza.aza115='Y' AND g_argv0 MATCHES '[89]' AND NOT t600_chk_ogb65('a') THEN RETURN FALSE END IF  #FUN-CB0087 #TQC-D10082
     END IF
@@ -28510,8 +28525,8 @@ FUNCTION t600_chk_ogb05(p_cmd)        #FUN-AC0012 Add p_cmd
          RETURN FALSE
       END IF
       IF NOT cl_null(g_ogb[l_ac].ogb04) AND g_sma.sma116 MATCHES '[01]' THEN
-         IF (g_ogb_t.ogb05 IS NULL OR g_ogb_t.ogb05 <> g_ogb[l_ac].ogb05) AND (g_aza.aza50 ='Y' OR g_azw.azw04='2') THEN 
-            IF cl_null(g_ogb[l_ac].ogb31) AND cl_null(g_ogb[l_ac].ogb32) THEN   #MOD-B60052 
+         IF (g_ogb_t.ogb05 IS NULL OR g_ogb_t.ogb05 <> g_ogb[l_ac].ogb05) AND (g_aza.aza50 ='Y' OR g_azw.azw04='2') THEN
+            IF cl_null(g_ogb[l_ac].ogb31) AND cl_null(g_ogb[l_ac].ogb32) THEN   #MOD-B60052
            #CALL t600_price(l_ac) RETURNING l_fac       #FUN-AC0012
                CALL t600_price(p_cmd,l_ac) RETURNING l_fac #FUN-AC0012
                IF l_fac THEN
@@ -28604,9 +28619,9 @@ FUNCTION t600_chk_ogb12(p_cmd)        #FUN-AC0012 Add p_cmd
                   ELSE
                      RETURN "ogb912"
                   END IF
-               END IF               
-            END IF 	
-            #FUN-C50097 ADD END-----             	            	   
+               END IF
+            END IF
+            #FUN-C50097 ADD END-----
          ELSE
          #檢查出貨數必須<=通知單應出數(ogb12)-累計出貨數(ogb19)
          #對應到的出貨通知單上的數量
@@ -28651,7 +28666,7 @@ FUNCTION t600_chk_ogb12(p_cmd)        #FUN-AC0012 Add p_cmd
 #                 AND ata00 = 'axmt410_slk'
 #                 AND ata02 = g_ogb[l_ac].ogb32
 #                 AND oeaconf = 'Y' AND oea01 = oeb01
-#              
+#
 #&else
 ##FUN-A60035 --End
 #FUN-A60035 ---MARK END
@@ -28669,10 +28684,10 @@ FUNCTION t600_chk_ogb12(p_cmd)        #FUN-AC0012 Add p_cmd
          IF g_oea.oea37 = "Y" THEN
           # SELECT oee083 INTO g_oee083 FROM oee_file           #TQC-A40113
             SELECT SUM(oee083) INTO g_oee083 FROM oee_file      #TQC-A40113
-         #   WHERE oee10 = g_ogb[l_ac].ogb31                    #TQC-A40113                                                          
-         #     AND oee11 = g_ogb[l_ac].ogb32                    #TQC-A40113                                                           
-             WHERE oee01 = g_ogb[l_ac].ogb31                    #TQC-A40113                                                          
-               AND oee02 = g_ogb[l_ac].ogb32                    #TQC-A40113                                                           
+         #   WHERE oee10 = g_ogb[l_ac].ogb31                    #TQC-A40113
+         #     AND oee11 = g_ogb[l_ac].ogb32                    #TQC-A40113
+             WHERE oee01 = g_ogb[l_ac].ogb31                    #TQC-A40113
+               AND oee02 = g_ogb[l_ac].ogb32                    #TQC-A40113
             IF cl_null(g_oee083) THEN
                LET g_oee083 = 0
             END IF
@@ -28700,7 +28715,7 @@ FUNCTION t600_chk_ogb12(p_cmd)        #FUN-AC0012 Add p_cmd
 #           AND ata01 = oga01
 #           AND ata00 = g_prog
 #           AND ogaconf != 'X'
-#           AND ata02 = 
+#           AND ata02 =
 #               (SELECT ata02 FROM ata_file
 #                 WHERE ata00 = 'axmt410_slk'
 #                   AND ata01 = g_ogb[l_ac].ogb31
@@ -28753,7 +28768,7 @@ FUNCTION t600_chk_ogb12(p_cmd)        #FUN-AC0012 Add p_cmd
             #-----MOD-A50076---------
             LET l_ogb12c = 0
             SELECT SUM(ogb12) INTO l_ogb12c FROM ogb_file,oga_file
-             WHERE ogb01 = oga01 
+             WHERE ogb01 = oga01
                AND ogb31 = g_ogb[l_ac].ogb31
                AND ogb32 = g_ogb[l_ac].ogb32
                AND oga09 = '9'
@@ -28802,21 +28817,21 @@ FUNCTION t600_chk_ogb12(p_cmd)        #FUN-AC0012 Add p_cmd
       SELECT ogb12 INTO g_ogb12_sum FROM ogb_file
        WHERE ogb01 = g_oga.oga011
          AND ogb03 = g_ogb[l_ac].ogb03
-      LET g_ogb[l_ac].ogb12b = g_ogb12_sum - g_ogb[l_ac].ogb12       
+      LET g_ogb[l_ac].ogb12b = g_ogb12_sum - g_ogb[l_ac].ogb12
       DISPLAY BY NAME g_ogb[l_ac].ogb12b
    END IF
 #FUN-C50097 add begin----
    IF g_argv0 = '8' AND g_aza.aza26 = '2' THEN
-      IF  g_oaz.oaz94 = 'Y' THEN 
-      
-      ELSE 
+      IF  g_oaz.oaz94 = 'Y' THEN
+
+      ELSE
       	 SELECT ogb12 INTO g_ogb12_sum FROM ogb_file
           WHERE ogb01 = g_oga.oga011
             AND ogb03 = g_ogb[l_ac].ogb03
-         LET g_ogb[l_ac].ogb12b = g_ogb12_sum - g_ogb[l_ac].ogb12       
-      END IF 
+         LET g_ogb[l_ac].ogb12b = g_ogb12_sum - g_ogb[l_ac].ogb12
+      END IF
       DISPLAY BY NAME g_ogb[l_ac].ogb12b
-   END IF   
+   END IF
 #FUN-C50097 add end-----
    RETURN TRUE
 END FUNCTION
@@ -28828,9 +28843,9 @@ FUNCTION t600_chk_ogb91()
    DEFINE li_result LIKE type_file.num5    #CHI-9C0009
 
    IF g_ogb[l_ac].ogb091 IS NULL THEN LET g_ogb[l_ac].ogb091 =' ' END IF
-   IF g_oaz.oaz104 = 'N' THEN 
-      IF g_ogb[l_ac].ogb092 IS NULL THEN LET g_ogb[l_ac].ogb092 =' ' END IF  
-   END IF 
+   IF g_oaz.oaz104 = 'N' THEN
+      IF g_ogb[l_ac].ogb092 IS NULL THEN LET g_ogb[l_ac].ogb092 =' ' END IF
+   END IF
   #IF g_ogb[l_ac].ogb091 IS NOT NULL THEN      #MOD-910216 add  #No:MOD-920191 mark     #MOD-970093 mark還原 #CHI-A40029 mark
    IF g_ogb[l_ac].ogb091 IS NOT NULL AND NOT cl_null(g_ogb[l_ac].ogb09) THEN      #CHI-A40029 add
    #------------------------------------ 檢查料號預設倉儲及單別預設倉儲
@@ -28842,7 +28857,7 @@ FUNCTION t600_chk_ogb91()
          END IF
       END IF
       #CHI-CC0014--add--end--
-      IF g_oga.oga09 MATCHES '[2468]' THEN  #No.FUN-630061  #MOD-910216 mark  #No:MOD-920191 mark還原  
+      IF g_oga.oga09 MATCHES '[2468]' THEN  #No.FUN-630061  #MOD-910216 mark  #No:MOD-920191 mark還原
         ##CHI-CC0014--mark--str--
         #IF NOT s_chksmz(g_ogb[l_ac].ogb04, g_oga.oga01,
         #                g_ogb[l_ac].ogb09, g_ogb[l_ac].ogb091) THEN
@@ -28851,14 +28866,14 @@ FUNCTION t600_chk_ogb91()
         ##CHI-CC0014--mark--end--
          #No.FUN-AA0048  --Begin
          #IF g_azw.azw04='2' THEN
-         #   LET l_cnt =0                                                                                                      
-         #   SELECT COUNT(*) INTO l_cnt FROM imd_file                                                                           
-         #    WHERE imd01=g_ogb[l_ac].ogb09                                                                                    
-         #      AND imd20=g_plant                                                                                   
-         #   IF l_cnt=0 THEN                                                                                                    
-         #      CALL cl_err(g_ogb[l_ac].ogb09,'art-487',0)                                                                      
-         #      RETURN "ogb09"                                                                                                   
-         #   END IF       
+         #   LET l_cnt =0
+         #   SELECT COUNT(*) INTO l_cnt FROM imd_file
+         #    WHERE imd01=g_ogb[l_ac].ogb09
+         #      AND imd20=g_plant
+         #   IF l_cnt=0 THEN
+         #      CALL cl_err(g_ogb[l_ac].ogb09,'art-487',0)
+         #      RETURN "ogb09"
+         #   END IF
          #END IF
          IF NOT s_chk_ware(g_ogb[l_ac].ogb09) THEN
             RETURN "ogb09"
@@ -28868,13 +28883,13 @@ FUNCTION t600_chk_ogb91()
             RETURN NULL
          END IF
 #FUN-AB0011 -------------------- END
-         #No.FUN-AA0048  --End  
-         IF g_oaz.oaz104 = 'N' THEN 
+         #No.FUN-AA0048  --End
+         IF g_oaz.oaz104 = 'N' THEN
             SELECT COUNT(*) INTO g_cnt FROM img_file
-             WHERE img01 = g_ogb[l_ac].ogb04  
-               AND img02 = g_ogb[l_ac].ogb09  
-               AND img03 = g_ogb[l_ac].ogb091 
-               AND img04 = g_ogb[l_ac].ogb092  
+             WHERE img01 = g_ogb[l_ac].ogb04
+               AND img02 = g_ogb[l_ac].ogb09
+               AND img03 = g_ogb[l_ac].ogb091
+               AND img04 = g_ogb[l_ac].ogb092
             IF g_cnt = 0 THEN
                #FUN-C80107 add begin---------------------------121107
                LET g_flag2 = NULL
@@ -28883,16 +28898,16 @@ FUNCTION t600_chk_ogb91()
                IF g_flag2 = 'N' OR g_flag2 IS NULL THEN
                #FUN-C80107 add end ----------------------------
                   IF g_oga.oga09 MATCHES '[46]' THEN  #MOD-9C0092
-                     CALL t600sub_chkpoz(g_oga.*,g_ogb[l_ac].ogb31) RETURNING li_result,g_poz.*,l_oea99,g_flow  #NO.TQC-740089 
+                     CALL t600sub_chkpoz(g_oga.*,g_ogb[l_ac].ogb31) RETURNING li_result,g_poz.*,l_oea99,g_flow  #NO.TQC-740089
                      IF NOT li_result THEN RETURN END IF #FUN-730012
-                     IF g_argv0 = '4' AND g_poz.poz011 = '1' THEN 
+                     IF g_argv0 = '4' AND g_poz.poz011 = '1' THEN
                         CALL s_add_img(g_ogb[l_ac].ogb04,g_ogb[l_ac].ogb09,
                                        g_ogb[l_ac].ogb091,g_ogb[l_ac].ogb092,
                                        g_oga.oga01,g_ogb[l_ac].ogb03,g_oga.oga02)
                         IF g_errno='N' THEN
                            RETURN "ogb09"
                         END IF
-                     END IF 
+                     END IF
                  #FUN-B80189 Add Begin ---
                   ELSE
                      #經營屬性為扣率代銷或者經營方式為成本代銷且代銷控制為2.非成本倉
@@ -28905,7 +28920,7 @@ FUNCTION t600_chk_ogb91()
                         END IF
                      END IF
                  #FUN-B80189 Add End -----
-                  END IF                                #MOD-9C0092 
+                  END IF                                #MOD-9C0092
                  #CALL cl_err('','axm-244',0)           #MOD-9C0092   #CHI-A10002 mark
                   CALL cl_err(g_ogb[l_ac].ogb04,'axm-244',0)          #CHI-A10002 add
                   LET g_ogb[l_ac].ogb091 = ''
@@ -28961,7 +28976,7 @@ FUNCTION t600_chk_ogb913()
          RETURN "ogb913"
       END IF
       IF NOT cl_null(g_ogb[l_ac].ogb04) THEN
-         SELECT ima31,ima906 INTO g_ima31,g_ima906 
+         SELECT ima31,ima906 INTO g_ima31,g_ima906
            FROM ima_file
           WHERE ima01=g_ogb[l_ac].ogb04
       END IF
@@ -29185,7 +29200,7 @@ FUNCTION t600_chk_ogb910()
          RETURN "ogb910"
       END IF
       IF NOT cl_null(g_ogb[l_ac].ogb04) THEN
-         SELECT ima31 INTO g_ima31 
+         SELECT ima31 INTO g_ima31
            FROM ima_file
           WHERE ima01=g_ogb[l_ac].ogb04
       END IF
@@ -29246,8 +29261,8 @@ FUNCTION t600_chk_ogb910()
       END IF
    END IF
    #-----MOD-AC0376---------
-   IF g_change='Y' THEN                                                 
-      CALL t600_set_ogb917()                                             
+   IF g_change='Y' THEN
+      CALL t600_set_ogb917()
    END IF
    #-----END MOD-AC0376-----
    CALL t600_set_required_b1('')
@@ -29346,11 +29361,11 @@ FUNCTION t600_chk_ogb912()
       IF g_ogb[l_ac].ogb912 <=0 THEN    #No:MOD-5B0113 By No.FUN-610064
          IF g_ima906 != '2' OR       #TQC-640151(3)          #MOD-740479 modify
             (g_ima906='2' AND g_ogb[l_ac].ogb912 < 0 )THEN   #MOD-740479
-           IF (g_ogb[l_ac].ogb912 < 0 ) OR 
+           IF (g_ogb[l_ac].ogb912 < 0 ) OR
               (g_ogb[l_ac].ogb912 = 0 AND  g_argv0 <> '8') THEN
               CALL cl_err('','mfg9243',0)   #No:MOD-5B0113
               RETURN "ogb912"
-           END IF 
+           END IF
          END IF                        #TQC-640151(3)
       END IF
      #MOD-BB0051 ----- mark start -----
@@ -29466,9 +29481,9 @@ FUNCTION t600_chk_ogb912()
                   ELSE
                      RETURN "ogb912"
                   END IF
-               END IF               
-            END IF 	
-            #FUN-C50097 ADD END-----   
+               END IF
+            END IF
+            #FUN-C50097 ADD END-----
          ELSE
          #檢查出貨數必須<=通知單應出數(ogb12)-累計出貨數(ogb19)
          #對應到的出貨通知單上的數量
@@ -29559,8 +29574,8 @@ FUNCTION t600_chk_ogb912()
             IF cl_null(l_ogb12a) THEN LET l_ogb12a = 0 END IF
             IF g_oea.oea37 = "Y" THEN   #No:FUN-640025
                SELECT oee083 INTO g_oee083 FROM oee_file
-                WHERE oee10 = g_ogb[l_ac].ogb31                                                                              
-                  AND oee11 = g_ogb[l_ac].ogb32                                                                              
+                WHERE oee10 = g_ogb[l_ac].ogb31
+                  AND oee11 = g_ogb[l_ac].ogb32
                IF cl_null(g_oee083) THEN
                   LET g_oee083 = 0
                END IF
@@ -29602,7 +29617,7 @@ FUNCTION t600_chk_ogb912()
             #-----MOD-A50076---------
             LET l_ogb12c = 0
             SELECT SUM(ogb12) INTO l_ogb12c FROM ogb_file,oga_file
-             WHERE ogb01 = oga01     
+             WHERE ogb01 = oga01
                AND ogb31 = g_ogb[l_ac].ogb31
                AND ogb32 = g_ogb[l_ac].ogb32
                AND oga09 = '9'
@@ -29663,8 +29678,8 @@ FUNCTION t600_chk_ogb912()
          END IF
       END IF
    END IF   #MOD-890274
-   IF g_change='Y' THEN                                                 
-      CALL t600_set_ogb917()                                             
+   IF g_change='Y' THEN
+      CALL t600_set_ogb917()
    END IF
    IF g_argv0 = '8' THEN
       SELECT ogb912 INTO g_ogb912_sum FROM ogb_file
@@ -29696,7 +29711,7 @@ FUNCTION t600_chk_ogb916(p_cmd)        #FUN-AC0012 Add p_cmd
          RETURN "ogb916"
       END IF
       IF NOT cl_null(g_ogb[l_ac].ogb04) THEN
-         SELECT ima25 INTO g_ima25 
+         SELECT ima25 INTO g_ima25
            FROM ima_file
           WHERE ima01=g_ogb[l_ac].ogb04
       END IF
@@ -29708,7 +29723,7 @@ FUNCTION t600_chk_ogb916(p_cmd)        #FUN-AC0012 Add p_cmd
          RETURN "ogb916"
       END IF
       IF NOT cl_null(g_ogb[l_ac].ogb04) THEN
-         IF (g_ogb_t.ogb916 IS NULL OR g_ogb_t.ogb916 <> g_ogb[l_ac].ogb916) AND g_aza.aza50 ='Y' THEN    #No.FUN-670008 
+         IF (g_ogb_t.ogb916 IS NULL OR g_ogb_t.ogb916 <> g_ogb[l_ac].ogb916) AND g_aza.aza50 ='Y' THEN    #No.FUN-670008
             IF g_change='Y' THEN
                CALL t600_set_ogb917()
             END IF
@@ -29771,17 +29786,17 @@ FUNCTION t600_b1_del()
 #&ifdef SLK
 ##  IF s_industry("slk") THEN
 #     DELETE FROM ogb_file
-#      WHERE ogb01 = g_oga.oga01 AND ogb03 IN 
-#     (SELECT ata03 FROM ata_file 
+#      WHERE ogb01 = g_oga.oga01 AND ogb03 IN
+#     (SELECT ata03 FROM ata_file
 #      WHERE ata00 = g_prog
 #        AND ata01 = g_oga.oga01
-#        AND ata02 = g_ogb[l_ac].ogb03) 
+#        AND ata02 = g_ogb[l_ac].ogb03)
 #     IF SQLCA.sqlcode THEN
 #        CALL cl_err3("del","ogb_file",g_oga.oga01,g_ogb_t.ogb03,SQLCA.sqlcode,"","",1)
 #     ELSE
 #        DELETE FROM ogc_file
-#         WHERE ogc01 = g_oga.oga01 AND ogc03 IN 
-#       (SELECT ata03 FROM ata_file 
+#         WHERE ogc01 = g_oga.oga01 AND ogc03 IN
+#       (SELECT ata03 FROM ata_file
 #         WHERE ata00 = g_prog
 #           AND ata01 = g_oga.oga01
 #           AND ata02 = g_ogb[l_ac].ogb03)
@@ -29834,7 +29849,7 @@ FUNCTION t600_b1_del()
           AND rxc02=g_ogb_t.ogb03
      #FUN-AC0012 End-----
    #FUN-C10040-----add-----str-----
-   DELETE FROM ogi_file 
+   DELETE FROM ogi_file
     WHERE ogi01 = g_oga.oga01
       AND ogi02 = g_ogb_t.ogb03
    IF SQLCA.sqlcode THEN
@@ -29856,7 +29871,7 @@ FUNCTION t600_b1_del()
        DELETE FROM oao_file
         WHERE oao01=g_oga.oga01
           AND oao03=g_ogb[l_ac].ogb03
-          
+
 #FUN-A60035 ---MARK BEGIN
 #&endif
 ##END IF  #FUN-A50054 add
@@ -30049,7 +30064,7 @@ FUNCTION t600_b1_updchk()
       LET g_ogb[l_ac].ogb092 = ' '
    END IF
 
-   IF g_argv0 = '8' AND g_aza.aza26 != '2' THEN #FUN-C50097 add !=2  
+   IF g_argv0 = '8' AND g_aza.aza26 != '2' THEN #FUN-C50097 add !=2
       SELECT ogb12 INTO g_ogb12_sum FROM ogb_file
        WHERE ogb01 = g_oga.oga011
          AND ogb03 = g_ogb[l_ac].ogb03
@@ -30061,13 +30076,13 @@ FUNCTION t600_b1_updchk()
       END IF
    END IF
 ##FUN-C50097 add beg-----
-   IF g_argv0 = '8' AND g_aza.aza26 = '2' THEN 
-      IF  g_oaz.oaz94 = 'Y' THEN 
+   IF g_argv0 = '8' AND g_aza.aza26 = '2' THEN
+      IF  g_oaz.oaz94 = 'Y' THEN
          IF g_ogb[l_ac].ogb52 >0 AND cl_null(g_ogb[l_ac].ogb65) THEN #TQC-C70206
             CALL cl_err(g_ogb[l_ac].ogb04,'axm-416',0)
             RETURN "ogb65"
-         END IF         
-      ELSE 
+         END IF
+      ELSE
          SELECT ogb12 INTO g_ogb12_sum FROM ogb_file
           WHERE ogb01 = g_oga.oga011
             AND ogb03 = g_ogb[l_ac].ogb03
@@ -30077,9 +30092,9 @@ FUNCTION t600_b1_updchk()
                RETURN "ogb65"
             END IF
          END IF
-      END IF    
+      END IF
    END IF
-##FUN-C50097 add end-----    
+##FUN-C50097 add end-----
    RETURN NULL
 END FUNCTION
 
@@ -30111,7 +30126,7 @@ FUNCTION t600_b1_upd()
 #  ( SELECT ata03 FROM ata_file
 #    WHERE ata00=g_prog
 #      AND ata01=g_oga.oga01)
-#  DELETE FROM ogbi_file 
+#  DELETE FROM ogbi_file
 #   WHERE ogbi01=g_oga.oga01
 #     AND ogbi03 IN
 #  ( SELECT ata03 FROM ata_file
@@ -30162,10 +30177,10 @@ FUNCTION t600_b1_upd()
             AND ogi02 = g_ogb_t.ogb03
          IF SQLCA.sqlcode THEN
              CALL cl_err3("del","ogi_file",g_oga.oga01,g_ogb_t.ogb03,SQLCA.sqlcode,"","",1)
-             RETURN FALSE 
+             RETURN FALSE
          END IF
          CALL t620_ins_ogi(b_ogb.ogb03,b_ogb.ogb04,b_ogb.ogb917,b_ogb.ogb13)
-      END IF 
+      END IF
       #FUN-C10040------add-------end -----
 #FUN-A60035 ---MARK BEGIN
 #&endif
@@ -30181,7 +30196,7 @@ FUNCTION t600_chk_oga01()
    IF NOT cl_null(g_oga.oga01) THEN
       #FUN-C80045 add sta
       LET g_t1=s_get_doc_no(g_oga.oga01)
-      LET l_cnt = 0 
+      LET l_cnt = 0
       SELECT COUNT(*) INTO l_cnt FROM rye_file WHERE rye04 = g_t1 AND ryeacti = 'Y' AND rye01 = 'axm'
       IF l_cnt > 0 THEN
          CALL cl_err(g_t1,'apc1036',0)
@@ -30279,20 +30294,20 @@ FUNCTION t600_chk_oga02()
                CALL cl_err('','mfg9999',0) RETURN FALSE
             END IF
       CALL s_yp(g_oga.oga02) RETURNING l_yy,l_mm
- 
 
-      IF g_argv0='5' THEN                              
+
+      IF g_argv0='5' THEN
          IF ((l_yy*12+l_mm) - (g_sma.sma51*12+g_sma.sma52) >1) THEN
             CALL cl_err('','mfg6090',0)
             RETURN FALSE
          END IF
       ELSE
-         IF g_argv0='1' THEN                                                                                    
-            IF ((g_sma.sma51*12+g_sma.sma52) - (l_yy*12+l_mm) >1) THEN                                                                 
-               CALL cl_err('','mfg6099',0)                                                                                             
-               RETURN FALSE                                                                                                            
-            END IF 
-         ELSE           
+         IF g_argv0='1' THEN
+            IF ((g_sma.sma51*12+g_sma.sma52) - (l_yy*12+l_mm) >1) THEN
+               CALL cl_err('','mfg6099',0)
+               RETURN FALSE
+            END IF
+         ELSE
             IF ((l_yy*12+l_mm) > (g_sma.sma51*12+g_sma.sma52)) THEN
                CALL cl_err('','mfg6090',0)
                RETURN FALSE
@@ -30318,7 +30333,7 @@ FUNCTION t600_chk_oga021()
                     LET exT=g_oaz.oaz70
                 END IF
                 IF g_oga.oga909 = 'Y' THEN
-                   CALL t600_chk_poz00() RETURNING exT   #MOD-860069 
+                   CALL t600_chk_poz00() RETURNING exT   #MOD-860069
                 END IF
                   IF NOT cl_null(g_oga.oga021) THEN
                      LET g_exdate = g_oga.oga021    #結關日期
@@ -30390,13 +30405,13 @@ FUNCTION t600_chk_oga011(p_cmd)
                   AND ogb03 NOT IN (SELECT ogb03 FROM ogb_file,oga_file
                                      WHERE oga01 = ogb01 AND oga011 = g_oga.oga011
                                        AND oga09 ='8' AND ogaconf<>'X')
-   
+
                IF l_cnt = 0 THEN
                   CALL cl_err(g_oga.oga011,'axm-425',1)
                   RETURN FALSE
                END IF
                #MOD-C50187 add end -----
-   
+
                SELECT * INTO g_oga.* FROM oga_file
                #WHERE oga01=g_oga.oga011 AND oga09 = '2' AND oga65='Y'
                 WHERE oga01=g_oga.oga011 AND (oga09 = '2' OR oga09 = '3') AND oga65='Y'  #FUN-BB0167
@@ -30446,17 +30461,17 @@ FUNCTION t600_chk_oga011(p_cmd)
                #MOD-C60067 add start -----
             END IF #TQC-C70179 add
          END IF
----------#FUN-C50097 add beg ----- 
+---------#FUN-C50097 add beg -----
          IF g_argv0 = '8' AND g_aza.aza26 = '2' THEN
             IF  g_oaz.oaz94 = 'Y' THEN #TQC-C70206
                #大陸版,此時可以做多次出貨簽收作業
-            ELSE  
+            ELSE
                SELECT COUNT(*) INTO l_cnt FROM ogb_file,oga_file
                 WHERE oga01 = ogb01 AND oga01 = g_oga.oga011
                   AND ogb03 NOT IN (SELECT ogb03 FROM ogb_file,oga_file
                                      WHERE oga01 = ogb01 AND oga011 = g_oga.oga011
                                        AND oga09 ='8' AND ogaconf<>'X')
-   
+
                IF l_cnt = 0 THEN
                   CALL cl_err(g_oga.oga011,'axm-425',1)
                   RETURN FALSE
@@ -30472,7 +30487,7 @@ FUNCTION t600_chk_oga011(p_cmd)
                LET g_oga.* = g_oga_u.*
                RETURN FALSE
             END IF
-         END IF        
+         END IF
 ---------#FUN-C50097 add end -----
          LET g_oga.oga55=''            #No.FUN-710046
          LET g_oga.oga99=''
@@ -30514,7 +30529,7 @@ FUNCTION t600_chk_oga011(p_cmd)
          END IF
 
          IF g_oga.oga909 = 'Y' THEN
-            CALL t600_chk_poz00() RETURNING exT   #MOD-860069 
+            CALL t600_chk_poz00() RETURNING exT   #MOD-860069
          END IF #No.7992
 
           IF NOT cl_null(g_oga.oga021) THEN
@@ -30523,19 +30538,19 @@ FUNCTION t600_chk_oga011(p_cmd)
              LET g_exdate = g_oga.oga02     #出貨日期
           END IF
           CALL s_curr3(g_oga.oga23,g_exdate,exT) RETURNING g_oga.oga24
-         IF g_argv0 MATCHES '[246]' THEN 
+         IF g_argv0 MATCHES '[246]' THEN
             DECLARE t600_x_ogb CURSOR FOR SELECT ogb31,ogb32 FROM ogb_file
                                   WHERE ogb01 = g_oga.oga01
             FOREACH t600_x_ogb INTO l_ogb31,l_ogb32
             LET g_cnt = 0
             SELECT COUNT(*) INTO g_cnt FROM oga_file,ogb_file
-             WHERE oga01=g_oga.oga011 
-               AND oga01=ogb01 AND oga09 IN ('1','5') 
+             WHERE oga01=g_oga.oga011
+               AND oga01=ogb01 AND oga09 IN ('1','5')
                AND ogb31=l_ogb31 AND ogb32=l_ogb32
             #本訂單號不存在出貨通知單內
-            IF g_cnt=0 AND l_ogb31[1,4] != 'MISC' THEN 
+            IF g_cnt=0 AND l_ogb31[1,4] != 'MISC' THEN
                LET g_msg=l_ogb31,'/',l_ogb32 CLIPPED
-               CALL cl_err(g_msg,'axm-224',1) 
+               CALL cl_err(g_msg,'axm-224',1)
                RETURN FALSE
             END IF
             END FOREACH
@@ -30544,9 +30559,9 @@ FUNCTION t600_chk_oga011(p_cmd)
       #帶occ67科目別
       IF cl_null(g_oga.oga13) THEN #MOD-C10047 add
          LET g_oga.oga13=NULL
-         SELECT occ67 INTO g_oga.oga13 FROM occ_file 
-          WHERE occ01=g_oga.oga03   
-      END IF #MOD-C10047 add  
+         SELECT occ67 INTO g_oga.oga13 FROM occ_file
+          WHERE occ01=g_oga.oga03
+      END IF #MOD-C10047 add
    END IF
    CALL t600_set_no_entry(p_cmd)
    RETURN TRUE
@@ -30576,12 +30591,12 @@ FUNCTION t600_chk_oga16(p_cmd)
    DEFINE l_oea99         LIKE oea_file.oea99
    DEFINE l_occ56         LIKE occ_file.occ56    #MOD-8B0262
 #FUN-A60004 ----------------------add start-------------------------
-   DEFINE l_oma11         LIKE oma_file.oma11                                   
-   DEFINE l_oma12         LIKE oma_file.oma12                                   
-   DEFINE l_oma03         LIKE oma_file.oma03                                   
-   DEFINE l_oma32         LIKE oma_file.oma32                                   
-   DEFINE l_oma02         LIKE oma_file.oma02                                   
-   DEFINE l_oma09         LIKE oma_file.oma09                                   
+   DEFINE l_oma11         LIKE oma_file.oma11
+   DEFINE l_oma12         LIKE oma_file.oma12
+   DEFINE l_oma03         LIKE oma_file.oma03
+   DEFINE l_oma32         LIKE oma_file.oma32
+   DEFINE l_oma02         LIKE oma_file.oma02
+   DEFINE l_oma09         LIKE oma_file.oma09
    DEFINE l_oea02         LIKE oea_file.oea02
 #FUN-A60004 ---------------------add end---------------------------
   ##FUN-B60011  --begin--
@@ -30662,10 +30677,10 @@ FUNCTION t600_chk_oga16(p_cmd)
          END IF
       END IF
 
-       IF cl_null(g_oea.oea10) THEN 
-                   CALL cl_err('oea10','cxm-221',0)  RETURN FALSE 
+       IF cl_null(g_oea.oea10) THEN
+                   CALL cl_err('oea10','cxm-221',0)  RETURN FALSE
         END IF
-             
+
       IF g_oea.oeaconf != 'Y' THEN      #未確認 01/08/16 mandy
          CALL cl_err('sel oea','axm-184',0) RETURN FALSE
       END IF
@@ -30678,17 +30693,17 @@ FUNCTION t600_chk_oga16(p_cmd)
       IF g_oea.oea08 != g_oga.oga08 THEN        #國內外不符
          CALL cl_err('sel oea','axm-125',0) RETURN FALSE
       END IF
-     #MOD-D40088 mark start ----- 
+     #MOD-D40088 mark start -----
      #LET l_oepconf = 'Y'
      #LET l_oep09 = '2'
      #SELECT oep09,oepconf INTO l_oep09,l_oepconf
      #  FROM oep_file
      # WHERE oep01 = g_oga.oga16
      #IF l_oepconf = 'N' THEN
-     #MOD-D40088 mark end   ----- 
+     #MOD-D40088 mark end   -----
      #MOD-D40088 add start -----
       LET g_cnt = 0
-      SELECT COUNT(*) INTO g_cnt FROM oep_file 
+      SELECT COUNT(*) INTO g_cnt FROM oep_file
        WHERE oep01 = g_oga.oga16
          AND oepconf = 'N'
       IF g_cnt > 0 THEN
@@ -30698,7 +30713,7 @@ FUNCTION t600_chk_oga16(p_cmd)
       END IF
      #MOD-D40088 add start -----
       LET g_cnt = 0
-      SELECT COUNT(*) INTO g_cnt FROM oep_file 
+      SELECT COUNT(*) INTO g_cnt FROM oep_file
        WHERE oep01 = g_oga.oga16
          AND oepconf = 'Y' AND oep09 <> '2'
       IF g_cnt > 0 THEN
@@ -30797,7 +30812,7 @@ FUNCTION t600_chk_oga16(p_cmd)
          END IF
          LET g_oga.oga03 = g_oea.oea03
          #-----MOD-AA0029---------
-         IF g_oea.oea03[1,4] = 'MISC' THEN 
+         IF g_oea.oea03[1,4] = 'MISC' THEN
             SELECT occm02 INTO g_oea.oea033 FROM occm_file
              WHERE occm01 = g_oea.oea01
          END IF
@@ -30814,7 +30829,7 @@ FUNCTION t600_chk_oga16(p_cmd)
          LET g_oga.oga162= g_oea.oea162
          LET g_oga.oga163= g_oea.oea163
          IF g_oga.oga07 = 'N' THEN
-            LET g_oga.oga20 = 'N' 
+            LET g_oga.oga20 = 'N'
          END IF
          IF g_azw.azw04='2' THEN
             LET g_oga.oga83 = g_oea.oea83
@@ -30822,19 +30837,19 @@ FUNCTION t600_chk_oga16(p_cmd)
             IF cl_null(g_oga.oga83) THEN
                LET g_oga.oga83=g_plant
             END IF
-#TQC-C40248--ADD--END----- 
+#TQC-C40248--ADD--END-----
             LET g_oga.oga84 = g_oea.oea84
             LET g_oga.oga85 = g_oea.oea85
             LET g_oga.oga86 = g_oea.oea86
             LET g_oga.oga87 = g_oea.oea87
             LET g_oga.ogaplant= g_oea.oeaplant
             LET g_oga.ogalegal= g_oea.oealegal
-            LET g_oga.oga88 = g_oea.oea88 
+            LET g_oga.oga88 = g_oea.oea88
             LET g_oga.oga89 = g_oea.oea89
             LET g_oga.oga90 = g_oea.oea90
             LET g_oga.oga91 = g_oea.oea91
             LET g_oga.oga92 = g_oea.oea92
-            LET g_oga.oga93 = g_oea.oea93  
+            LET g_oga.oga93 = g_oea.oea93
          END IF
          LET g_oga.oga21 = g_oea.oea21
          LET g_oga.oga211= g_oea.oea211
@@ -30856,12 +30871,12 @@ FUNCTION t600_chk_oga16(p_cmd)
          LET g_oga.oga13=NULL
          IF g_argv0 MATCHES '[456]' THEN #多角出貨   #No:MOD-5B0325
             SELECT poy16 INTO g_oga.oga13
-              FROM poy_file            
+              FROM poy_file
              WHERE poy01 = g_poz.poz01
-               AND poy04 = g_plant 
+               AND poy04 = g_plant
          ELSE
-            SELECT occ67 INTO g_oga.oga13 FROM occ_file 
-             WHERE occ01=g_oga.oga03     
+            SELECT occ67 INTO g_oga.oga13 FROM occ_file
+             WHERE occ01=g_oga.oga03
          END IF
          ##如果有出通單,出貨簽收否應帶出通單,沒有才帶訂單
          LET l_oga65=NULL
@@ -30874,64 +30889,64 @@ FUNCTION t600_chk_oga16(p_cmd)
          END IF
 
 #FUN-A60004 -------------------------add start----------------------------------
-         IF cl_null(g_oga.oga72) THEN                                           
-             IF g_oga.oga65 = 'Y' AND g_argv0 MATCHES '[12]' THEN               
+         IF cl_null(g_oga.oga72) THEN
+             IF g_oga.oga65 = 'Y' AND g_argv0 MATCHES '[12]' THEN
              #单据性质=一般出货单/出通单时才自动推算oga72 ELSE 给NULL
              #FUN-B60011--begin--
-                SELECT occ20,occ21,occ22 
+                SELECT occ20,occ21,occ22
                   INTO l_occ20,l_occ21,l_occ22
                   FROM occ_file WHERE occ01 = g_oga.oga04
                 IF NOT cl_null(g_oga.oga16) THEN
-                   SELECT oea31 
+                   SELECT oea31
                      INTO l_oea31
                      FROM oea_file WHERE oea01 = g_oga.oga16
                 END IF
                 IF cl_null(l_occ20) THEN  LET l_occ20 =' ' END IF
                 IF cl_null(l_occ21) THEN  LET l_occ21 =' ' END IF
                 IF cl_null(l_occ22) THEN  LET l_occ22 =' ' END IF
-                SELECT oat05 
+                SELECT oat05
                   INTO l_oat05
                   FROM oat_file WHERE oat01 = l_occ20 AND oat02 = l_occ21 AND oat03 = l_occ22 AND oat04 = l_oea31
                 IF l_oat05 = 0 THEN
-                   SELECT oat05 
+                   SELECT oat05
                      INTO l_oat05
                      FROM oat_file WHERE oat01 = l_occ20 AND oat02 = l_occ21 AND oat03 = ' ' AND oat04 = l_oea31
                    IF l_oat05 = 0 THEN
-                      SELECT oat05 
+                      SELECT oat05
                         INTO l_oat05
                         FROM oat_file WHERE oat01 = l_occ20 AND oat02 = ' ' AND oat03 = ' ' AND oat04 = l_oea31
                    END IF
                 END IF
-                LET l_oma11 = g_oga.oga02 + l_oat05 
+                LET l_oma11 = g_oga.oga02 + l_oat05
                #FUN-B60011---end---
                #FUN-B60011---begin mark---
-               #LET l_oma03 = g_oga.oga03                                       
-               #IF NOT cl_null(g_oea.oea80) THEN                                
-               #   LET l_oma32 = g_oea.oea80                                    
-               #ELSE                                                            
-               #   LET l_oma32 = g_oea.oea32                                    
-               #END IF                                                          
-               #LET l_oma02 = g_oga.oga02                                       
-               #LET l_oma09 = g_oga.oga021                                      
-               #IF NOT cl_null(g_oga.oga16) THEN                                
-               #   SELECT oea02 INTO l_oea02 FROM oea_file                      
-               #    WHERE oea01 = g_oga.oga16                                   
-               #ELSE                                                            
-               #    LET l_oea02 = g_oga.oga02                                   
-               #END IF                                                          
-               ##LET g_dbs2 = s_dbstring(g_dbs)                                  
-               #CALL s_rdatem(l_oma03,l_oma32,l_oma02,l_oma09,l_oea02,g_plant2)   
-               ##呼叫公用程式自动推算签收日                                     
+               #LET l_oma03 = g_oga.oga03
+               #IF NOT cl_null(g_oea.oea80) THEN
+               #   LET l_oma32 = g_oea.oea80
+               #ELSE
+               #   LET l_oma32 = g_oea.oea32
+               #END IF
+               #LET l_oma02 = g_oga.oga02
+               #LET l_oma09 = g_oga.oga021
+               #IF NOT cl_null(g_oga.oga16) THEN
+               #   SELECT oea02 INTO l_oea02 FROM oea_file
+               #    WHERE oea01 = g_oga.oga16
+               #ELSE
+               #    LET l_oea02 = g_oga.oga02
+               #END IF
+               ##LET g_dbs2 = s_dbstring(g_dbs)
+               #CALL s_rdatem(l_oma03,l_oma32,l_oma02,l_oma09,l_oea02,g_plant2)
+               ##呼叫公用程式自动推算签收日
                #RETURNING l_oma11,l_oma12
                #FUN-B60011---end mark---
-                LET g_oga.oga72 = l_oma11  ##预计签收日                         
-                DISPLAY BY NAME g_oga.oga72                                     
-             ELSE                                                               
-                LET g_oga.oga72 = NULL                                          
-                DISPLAY BY NAME g_oga.oga72                                     
-             END IF                                                             
-         ELSE                                                                   
-             DISPLAY BY NAME g_oga.oga72                                        
+                LET g_oga.oga72 = l_oma11  ##预计签收日
+                DISPLAY BY NAME g_oga.oga72
+             ELSE
+                LET g_oga.oga72 = NULL
+                DISPLAY BY NAME g_oga.oga72
+             END IF
+         ELSE
+             DISPLAY BY NAME g_oga.oga72
          END IF
 #FUN-A60004 ----------------------------add end--------------------------------
          IF NOT cl_null(g_oga.oga03) AND NOT cl_null(g_oga.oga04) THEN  #TQC-640123
@@ -30946,7 +30961,7 @@ FUNCTION t600_chk_oga16(p_cmd)
             LET exT=g_oaz.oaz70
          END IF
          IF g_oga.oga909 = 'Y' THEN
-            CALL t600_chk_poz00() RETURNING exT   #MOD-860069 
+            CALL t600_chk_poz00() RETURNING exT   #MOD-860069
          END IF
           IF NOT cl_null(g_oga.oga021) THEN
              LET g_exdate = g_oga.oga021    #結關日期
@@ -30983,10 +30998,10 @@ FUNCTION t600_chk_oga16(p_cmd)
          DISPLAY g_msg TO addr
          LET l_occ56 = ''
          SELECT occ56 INTO l_occ56 FROM occ_file WHERE occ01=g_oga.oga03
-         IF (l_occ56 = "Y") AND (g_argv0 MATCHES '[246]') THEN 
+         IF (l_occ56 = "Y") AND (g_argv0 MATCHES '[246]') THEN
            CALL cl_set_comp_required("oga011",TRUE)
-         ELSE                                        
-           CALL cl_set_comp_required("oga011",FALSE)  
+         ELSE
+           CALL cl_set_comp_required("oga011",FALSE)
          END IF
          IF NOT cl_null(g_oga.oga04) THEN
             IF NOT t600_chk_oga04() THEN
@@ -31028,25 +31043,25 @@ FUNCTION t600_chk_oga04()
    DEFINE l_errno      STRING
 
    IF cl_null(g_oga.oga04) THEN RETURN TRUE END IF
-   
+
    SELECT occ02,occacti,occ1004,occ06 INTO l_occ02,l_occacti,l_occ1004,l_occ06
      FROM occ_file
     WHERE occ01 = g_oga.oga04
 
    LET l_errno = ''
-   CASE WHEN SQLCA.SQLCODE = 100 LET l_errno = '100'                                                                                
-        WHEN l_occacti = 'N'     LET l_errno = '9028'                                                                               
-        WHEN SQLCA.SQLCODE != 0  LET l_errno = SQLCA.SQLCODE USING '-----'                                                          
-        WHEN l_occ1004 = '2'     LET l_errno ='atm-080'                                                                             
-        WHEN l_occ1004 = '3'     LET l_errno ='atm-079'                                                                             
-        WHEN l_occ06 <> '1' AND l_occ06 <> '2'   LET l_errno ='atm-217'                                                                             
-   END CASE 
+   CASE WHEN SQLCA.SQLCODE = 100 LET l_errno = '100'
+        WHEN l_occacti = 'N'     LET l_errno = '9028'
+        WHEN SQLCA.SQLCODE != 0  LET l_errno = SQLCA.SQLCODE USING '-----'
+        WHEN l_occ1004 = '2'     LET l_errno ='atm-080'
+        WHEN l_occ1004 = '3'     LET l_errno ='atm-079'
+        WHEN l_occ06 <> '1' AND l_occ06 <> '2'   LET l_errno ='atm-217'
+   END CASE
    IF NOT cl_null(l_errno) THEN
       CALL cl_err(g_oga.oga04,l_errno,1)
       RETURN FALSE
    END IF
-   #DISPLAY l_errno TO occ02     #TQC-980154 mark                                                                                   
-   DISPLAY l_occ02 TO occ02      #TQC-980154 add  
+   #DISPLAY l_errno TO occ02     #TQC-980154 mark
+   DISPLAY l_occ02 TO occ02      #TQC-980154 add
    IF NOT cl_null(g_oga.oga03) AND NOT cl_null(g_oga.oga04) THEN   #No.TQC-640123
       SELECT tuo04,tuo05 INTO g_oga.oga910,g_oga.oga911 FROM tuo_file
        WHERE tuo01 =g_oga.oga03     #No.TQC-640123
@@ -31113,7 +31128,7 @@ FUNCTION t600_chk_oga23(p_cmd)        #MOD-BC0069
              RETURN FALSE
           END IF
        END IF  #NO.MOD-780221 add
-   END IF              #TQC-980197 
+   END IF              #TQC-980197
 
    IF NOT cl_null(g_oga.oga23) THEN   #TQC-980197
          SELECT azi02,azi03,azi04 INTO g_buf,t_azi03,t_azi04 FROM azi_file          #No.CHI-6A0004 g_azi-->t_azi
@@ -31124,7 +31139,7 @@ FUNCTION t600_chk_oga23(p_cmd)        #MOD-BC0069
          END IF
    END IF           #TQC-980197
 
-   IF NOT cl_null(g_oga.oga16) THEN          #TQC-980197 
+   IF NOT cl_null(g_oga.oga16) THEN          #TQC-980197
       IF g_oga.oga24=0 OR cl_null(g_oga.oga24)
          OR g_oga.oga23 != g_oga_t.oga23
          OR cl_null(g_oga_t.oga23) THEN #BugNo:6449
@@ -31134,7 +31149,7 @@ FUNCTION t600_chk_oga23(p_cmd)        #MOD-BC0069
             LET exT=g_oaz.oaz70
          END IF
          IF g_oga.oga909 = 'Y' THEN
-            CALL t600_chk_poz00() RETURNING exT   #MOD-860069 
+            CALL t600_chk_poz00() RETURNING exT   #MOD-860069
          END IF
          CALL t600_oea18_get() RETURNING g_oea18_yn
          IF g_oea18_yn = 'N' THEN                   #MOD-640570 add if >
@@ -31195,14 +31210,14 @@ FUNCTION t600_chk_oga21(p_cmd)  #No:MOD-910067 add
          RETURN FALSE
       END IF
    ELSE
-      IF NOT cl_null(g_oga.oga21) THEN                                                                                              
-         SELECT COUNT(*) INTO l_cnt FROM gec_file                                                                                   
-          WHERE gec01=g_oga.oga21 AND gecacti='Y' AND gec011='2'                                                                    
-         IF l_cnt=0 THEN                                                                                                            
-            CALL cl_err("","afa-112",0)                                                                                             
-            RETURN FALSE                                                                                                            
-         END IF                                                                                                                     
-      END IF 
+      IF NOT cl_null(g_oga.oga21) THEN
+         SELECT COUNT(*) INTO l_cnt FROM gec_file
+          WHERE gec01=g_oga.oga21 AND gecacti='Y' AND gec011='2'
+         IF l_cnt=0 THEN
+            CALL cl_err("","afa-112",0)
+            RETURN FALSE
+         END IF
+      END IF
    END IF                              #No:MOD-910067 add
    IF NOT cl_null(g_oga.oga21) THEN    #No:MOD-910067 add
       SELECT gec04,gec05,gec07
@@ -31263,7 +31278,7 @@ FUNCTION t600_upd_oga50(p_chkwind)     #CHI-CB0008 add
   #FUN-C10040--------add------end-------
   DEFINE l_conu        LIKE type_file.chr1   #CHI-CB0008 add
 
-   SELECT COUNT(*) INTO l_cnt from ogb_file 
+   SELECT COUNT(*) INTO l_cnt from ogb_file
     WHERE ogb01 = g_oga.oga01
    IF l_cnt > 0 THEN
       #FUN-C10040--------add------str-------
@@ -31316,7 +31331,7 @@ FUNCTION t600_upd_oga50(p_chkwind)     #CHI-CB0008 add
                      LET l_ogb14 =l_ogb917*l_ogb13
                      LET l_ogb14t=l_ogb14*(1+g_oga.oga211/100)
                      #CALL cl_digcut(l_ogb14,g_azi04) RETURNING l_ogb14   #MOD-C30821 mark
-                     #CALL cl_digcut(l_ogb14t,g_azi04) RETURNING l_ogb14t #MOD-C30821 mark 
+                     #CALL cl_digcut(l_ogb14t,g_azi04) RETURNING l_ogb14t #MOD-C30821 mark
                      CALL cl_digcut(l_ogb14,t_azi04) RETURNING l_ogb14    #MOD-C30821 add
                      CALL cl_digcut(l_ogb14t,t_azi04) RETURNING l_ogb14t  #MOD-C30821 add
                   ELSE
@@ -31347,10 +31362,10 @@ FUNCTION t600_upd_oga50(p_chkwind)     #CHI-CB0008 add
                               WHERE oga01 = g_oga.oga01
                                 AND oga87 = g_oga.oga87
                 IF SQLCA.sqlcode OR SQLCA.sqlerrd[3] = 0 THEN
-                   CALL cl_err3("upd","oga_file",g_oga.oga01,"",SQLCA.sqlcode,"","",1) 
-                END IF     
-                DISPLAY BY NAME g_oga.oga95 
-             END IF 
+                   CALL cl_err3("upd","oga_file",g_oga.oga01,"",SQLCA.sqlcode,"","",1)
+                END IF
+                DISPLAY BY NAME g_oga.oga95
+             END IF
            #FUN-A20022 END----------------------------------------------
             SELECT SUM(ogb14) INTO g_oga.oga50 FROM ogb_file
              WHERE ogb01 = g_oga.oga01
@@ -31366,12 +31381,12 @@ FUNCTION t600_chk_oga03(p_cmd)
    DEFINE l_occ           RECORD LIKE occ_file.*
    DEFINE p_cmd           LIKE type_file.chr1
 #FUN-A60004 --------------------add start---------------------
-   DEFINE l_oma11         LIKE oma_file.oma11                                   
-   DEFINE l_oma12         LIKE oma_file.oma12                                   
-   DEFINE l_oma03         LIKE oma_file.oma03                                   
-   DEFINE l_oma32         LIKE oma_file.oma32                                   
-   DEFINE l_oma02         LIKE oma_file.oma02                                   
-   DEFINE l_oma09         LIKE oma_file.oma09                                   
+   DEFINE l_oma11         LIKE oma_file.oma11
+   DEFINE l_oma12         LIKE oma_file.oma12
+   DEFINE l_oma03         LIKE oma_file.oma03
+   DEFINE l_oma32         LIKE oma_file.oma32
+   DEFINE l_oma02         LIKE oma_file.oma02
+   DEFINE l_oma09         LIKE oma_file.oma09
    DEFINE l_oea02         LIKE oea_file.oea02
 #FUN-A60004 ------------------add end------------------------
   ##FUN-B60011  --begin--
@@ -31392,12 +31407,12 @@ FUNCTION t600_chk_oga03(p_cmd)
             CALL cl_err3("sel","occ_file",g_oga.oga03,"","anm-045","","select occ",1)  #No.FUN-670008
             RETURN FALSE   #No.FUN-610064
          ELSE
-            IF g_azw.azw04='2' THEN 
+            IF g_azw.azw04='2' THEN
                IF l_occ.occ930=g_plant THEN
                   CALL cl_err('','art-444',0)
                   RETURN FALSE
                END IF
-            END IF 
+            END IF
             IF l_occ.occ1004!='1' THEN    #No.FUN-690025
                CALL cl_err('select occ','atm-073',0)
                RETURN FALSE
@@ -31409,13 +31424,13 @@ FUNCTION t600_chk_oga03(p_cmd)
             END IF
          END IF
       ELSE
-         SELECT * INTO l_occ.* FROM occ_file 
-          WHERE occ01=g_oga.oga03    
-             AND occ1004 ='1'      
+         SELECT * INTO l_occ.* FROM occ_file
+          WHERE occ01=g_oga.oga03
+             AND occ1004 ='1'
              AND occacti='Y'
-         IF SQLCA.sqlcode=100 THEN 
-            CALL cl_err3("sel","occ_file",g_oga.oga03,"","anm-045","","select occ",1)  
-            RETURN FALSE   
+         IF SQLCA.sqlcode=100 THEN
+            CALL cl_err3("sel","occ_file",g_oga.oga03,"","anm-045","","select occ",1)
+            RETURN FALSE
          END IF
       END IF
        IF (l_occ.occ56 = "Y") AND (g_argv0 MATCHES '[246]') THEN #FUN-710037
@@ -31445,7 +31460,7 @@ FUNCTION t600_chk_oga03(p_cmd)
       LET g_oga.oga032=g_buf
       DISPLAY g_oga.oga032 TO oga032
        IF ((cl_null(g_oga.oga011) AND cl_null(g_oga.oga16) AND p_cmd = 'a') OR
-          (cl_null(g_oga.oga011) AND cl_null(g_oga.oga16) AND p_cmd = 'u')) AND   
+          (cl_null(g_oga.oga011) AND cl_null(g_oga.oga16) AND p_cmd = 'u')) AND
           (cl_null(g_oga_t.oga03) OR  g_oga_t.oga03 <> g_oga.oga03) THEN   #MOD-9C0128
          LET g_oga.oga18=l_occ.occ07 #TQC-640123
          LET g_oga.oga04=l_occ.occ09
@@ -31461,65 +31476,65 @@ FUNCTION t600_chk_oga03(p_cmd)
             LET g_oga.oga65=l_occ.occ65  #No.FUN-630061
          END IF
 #FUN-A60004 ----------------------add start--------------------------------
-         IF g_oga.oga65 = 'Y' AND g_argv0 MATCHES '[12]' THEN                   
-         #单据性质=一般出货单/出通单时才自动推算oga72 ELSE 给NULL    
+         IF g_oga.oga65 = 'Y' AND g_argv0 MATCHES '[12]' THEN
+         #单据性质=一般出货单/出通单时才自动推算oga72 ELSE 给NULL
            #FUN-B60011--begin--
-            SELECT occ20,occ21,occ22 
+            SELECT occ20,occ21,occ22
               INTO l_occ20,l_occ21,l_occ22
               FROM occ_file WHERE occ01 = g_oga.oga04
               IF NOT cl_null(g_oga.oga16) THEN
-                 SELECT oea31 
+                 SELECT oea31
                    INTO l_oea31
                    FROM oea_file WHERE oea01 = g_oga.oga16
               END IF
               IF cl_null(l_occ20) THEN  LET l_occ20 =' ' END IF
               IF cl_null(l_occ21) THEN  LET l_occ21 =' ' END IF
               IF cl_null(l_occ22) THEN  LET l_occ22 =' ' END IF
-              SELECT oat05 
+              SELECT oat05
                 INTO l_oat05
                 FROM oat_file WHERE oat01 = l_occ20 AND oat02 = l_occ21 AND oat03 = l_occ22 AND oat04 = l_oea31
                 IF l_oat05 = 0 THEN
-                   SELECT oat05 
+                   SELECT oat05
                      INTO l_oat05
                      FROM oat_file WHERE oat01 = l_occ20 AND oat02 = l_occ21 AND oat03 = ' ' AND oat04 = l_oea31
                    IF l_oat05 = 0 THEN
-                      SELECT oat05 
+                      SELECT oat05
                         INTO l_oat05
                         FROM oat_file WHERE oat01 = l_occ20 AND oat02 = ' ' AND oat03 = ' ' AND oat04 = l_oea31
                    END IF
                 END IF
                 LET l_oma11 = g_oga.oga02 + l_oat05
            #FUN-B60011---end---
-           #FUN-B60011---begin mark---            
-           #LET l_oma03 = g_oga.oga03                                           
-           #IF NOT cl_null(g_oea.oea80) THEN                                    
-           #   LET l_oma32 = g_oea.oea80                                        
-           #ELSE                                                                
-           #   LET l_oma32 = g_oea.oea32                                        
-           #END IF                                                              
-           #LET l_oma02 = g_oga.oga02                                           
-           #LET l_oma09 = g_oga.oga021                                          
-           #IF NOT cl_null(g_oga.oga16) THEN                                    
-           #   SELECT oea02 INTO l_oea02 FROM oea_file                          
-           #    WHERE oea01 = g_oga.oga16                                       
-           #ELSE                                                                
-           #    LET l_oea02 = g_oga.oga02                                       
-           #END IF                                                              
-           ##LET g_dbs2 = s_dbstring(g_dbs)                                      
-           #CALL s_rdatem(l_oma03,l_oma32,l_oma02,l_oma09,l_oea02,g_plant2)       
-           ##呼叫公用程式自动推算签收日                                         
+           #FUN-B60011---begin mark---
+           #LET l_oma03 = g_oga.oga03
+           #IF NOT cl_null(g_oea.oea80) THEN
+           #   LET l_oma32 = g_oea.oea80
+           #ELSE
+           #   LET l_oma32 = g_oea.oea32
+           #END IF
+           #LET l_oma02 = g_oga.oga02
+           #LET l_oma09 = g_oga.oga021
+           #IF NOT cl_null(g_oga.oga16) THEN
+           #   SELECT oea02 INTO l_oea02 FROM oea_file
+           #    WHERE oea01 = g_oga.oga16
+           #ELSE
+           #    LET l_oea02 = g_oga.oga02
+           #END IF
+           ##LET g_dbs2 = s_dbstring(g_dbs)
+           #CALL s_rdatem(l_oma03,l_oma32,l_oma02,l_oma09,l_oea02,g_plant2)
+           ##呼叫公用程式自动推算签收日
            #RETURNING l_oma11,l_oma12
            #FUN-B60011---end mark---
-            LET g_oga.oga72 = l_oma11  ##预计签收日                             
-            DISPLAY BY NAME g_oga.oga72                                         
-         ELSE                                                                   
-            LET g_oga.oga72 = NULL                                              
-            DISPLAY BY NAME g_oga.oga72                                         
+            LET g_oga.oga72 = l_oma11  ##预计签收日
+            DISPLAY BY NAME g_oga.oga72
+         ELSE
+            LET g_oga.oga72 = NULL
+            DISPLAY BY NAME g_oga.oga72
          END IF
-#FUN-A60004 ----------------add end---------------------------------------- 
+#FUN-A60004 ----------------add end----------------------------------------
 
          DISPLAY BY NAME g_oga.oga18    #MOD-960139
-                 
+
         #IF cl_null(g_oga.oga05) OR (p_cmd = 'u' AND g_oga_t.oga05 != g_oga.oga05) THEN  #MOD-960139 #MOD-BC0148 mark
          IF cl_null(g_oga.oga05) OR (g_oga_t.oga03 != g_oga.oga03) THEN  #MOD-BC0148
              LET g_oga.oga05=l_occ.occ08
@@ -31534,7 +31549,7 @@ FUNCTION t600_chk_oga03(p_cmd)
              LET exT=g_oaz.oaz70
          END IF
          IF g_oga.oga909 = 'Y' THEN
-            CALL t600_chk_poz00() RETURNING exT   #MOD-860069 
+            CALL t600_chk_poz00() RETURNING exT   #MOD-860069
          END IF
           IF NOT cl_null(g_oga.oga021) THEN
              LET g_exdate = g_oga.oga021    #結關日期
@@ -31579,17 +31594,17 @@ FUNCTION t600_chk_oga03(p_cmd)
       END IF
       IF g_azw.azw04='2' THEN
          SELECT occ71 INTO g_oga.oga85 FROM occ_file
-          WHERE occ01=g_oga.oga03 
+          WHERE occ01=g_oga.oga03
       END IF
-      IF cl_null(g_oga.oga16) THEN #MOD-B40171 add 
+      IF cl_null(g_oga.oga16) THEN #MOD-B40171 add
          #-----MOD-A90158---------
          IF g_oga.oga04 <> g_oga.oga03 AND g_oga.oga09 MATCHES '[45]'THEN
             IF cl_confirm('axm_116') THEN
-               SELECT occ42,occ43,occ41 
+               SELECT occ42,occ43,occ41
                  INTO g_oga.oga23,g_oga.oga25,g_oga.oga21
                  FROM occ_file WHERE occ01 = g_oga.oga04
                CALL s_curr3(g_oga.oga23,g_exdate,exT) RETURNING g_oga.oga24
-               SELECT gec04,gec05,gec07 
+               SELECT gec04,gec05,gec07
                  INTO g_oga.oga211,g_oga.oga212,g_oga.oga213
                  FROM gec_file WHERE gec01=g_oga.oga21
                                  AND gec011='2'  #銷項
@@ -31639,14 +31654,14 @@ FUNCTION t600_i_inpchk()
    IF g_argv0 = '8' AND cl_null(g_oga.oga011) THEN
       RETURN "oga011"
    END IF
-   IF g_argv0 = '8' THEN 
-      SELECT oga00 INTO l_oga00 
+   IF g_argv0 = '8' THEN
+      SELECT oga00 INTO l_oga00
         FROM oga_file
        WHERE oga01 = g_oga.oga011
       IF l_oga00 <> g_oga.oga00 THEN
-         CALL cl_err('sel oga','axm-147',0) 
+         CALL cl_err('sel oga','axm-147',0)
          RETURN "oga00"
-      END IF 
+      END IF
    END IF
    RETURN NULL
 END FUNCTION
@@ -31657,7 +31672,7 @@ DEFINE l_azp02 LIKE azp_file.azp02  #No.FUN-870007
       LET g_oga.oga00  ='1'
       LET g_oga.oga06  = g_oaz.oaz41
       LET g_oga.oga08  ='1'
-      LET g_oga.oga09 = g_argv0    #MOD-980217     
+      LET g_oga.oga09 = g_argv0    #MOD-980217
       LET g_oga.oga69  =g_today    #FUN-650009 add
       LET g_oga.oga02  =g_today
       LET g_oga.oga14  =g_user
@@ -31711,10 +31726,10 @@ DEFINE l_azp02 LIKE azp_file.azp02  #No.FUN-870007
       LET g_oga.ogadate=g_today
       LET g_oga.ogaplant = g_plant
       LET g_oga.ogalegal = g_legal
-      IF g_azw.azw04='2' THEN      
-         LET g_oga.oga94='N'    
+      IF g_azw.azw04='2' THEN
+         LET g_oga.oga94='N'
          LET g_oga.oga83 =g_plant
-         LET g_oga.oga84 =g_plant  
+         LET g_oga.oga84 =g_plant
          CALL t600_oga84('d')
          SELECT azp02 INTO l_azp02 FROM azp_file
           WHERE azp01 = g_plant
@@ -31725,8 +31740,8 @@ DEFINE l_azp02 LIKE azp_file.azp02  #No.FUN-870007
       END IF
 END FUNCTION
 
-FUNCTION t600_oga84(p_cmd)                                                                                                          
-DEFINE p_cmd LIKE type_file.chr1                                                                                                    
+FUNCTION t600_oga84(p_cmd)
+DEFINE p_cmd LIKE type_file.chr1
 DEFINE l_azp02 LIKE azp_file.azp02
 
    SELECT azp02 INTO l_azp02 FROM azp_file WHERE azp01=g_oga.oga84
@@ -31739,18 +31754,18 @@ DEFINE l_azp02 LIKE azp_file.azp02
    IF cl_null(g_errno) OR p_cmd='d' THEN
       DISPLAY l_azp02 TO FORMONLY.oga84_desc
    END IF
-END FUNCTION                                                                                                                        
-                                                                                                                                    
-FUNCTION t600_ogb04()                                                                                                          
-DEFINE l_rty06 LIKE rty_file.rty06                                                                                                  
-DEFINE l_rty05 LIKE rty_file.rty05                                                                                                  
-DEFINE l_rtt01 LIKE rtt_file.rtt01                                                                                                  
-DEFINE l_rtt11 LIKE rtt_file.rtt11                                                                                                  
-DEFINE l_rtv12 LIKE rtv_file.rtv12     
-DEFINE l_rtu08 LIKE rtu_file.rtu08                                                                                                  
-DEFINE l_rtu01 LIKE rtu_file.rtu01                                                                                                  
-DEFINE l_rtv13 LIKE rtv_file.rtv13   
-DEFINE l_occ930 LIKE occ_file.occ930                                                                                                
+END FUNCTION
+
+FUNCTION t600_ogb04()
+DEFINE l_rty06 LIKE rty_file.rty06
+DEFINE l_rty05 LIKE rty_file.rty05
+DEFINE l_rtt01 LIKE rtt_file.rtt01
+DEFINE l_rtt11 LIKE rtt_file.rtt11
+DEFINE l_rtv12 LIKE rtv_file.rtv12
+DEFINE l_rtu08 LIKE rtu_file.rtu08
+DEFINE l_rtu01 LIKE rtu_file.rtu01
+DEFINE l_rtv13 LIKE rtv_file.rtv13
+DEFINE l_occ930 LIKE occ_file.occ930
 DEFINE lc_type LIKE type_file.chr1
 DEFINE li_ret LIKE type_file.num5
 DEFINE l_rth04 LIKE rth_file.rth04
@@ -31760,10 +31775,10 @@ DEFINE l_rtg08 LIKE rtg_file.rtg08
 DEFINE l_rtg05 LIKE rtg_file.rtg05
 DEFINE l_rtz05 LIKE rtz_file.rtz05
 
-   SELECT rty06 INTO l_rty06 FROM rty_file WHERE rty01=g_plant                                                                 
-    AND rty02=g_ogb[l_ac].ogb04 AND rtyacti="Y"                                                                                     
-   IF SQLCA.sqlcode=100 THEN LET l_rty06=NULL END IF                                                                                
-   LET g_ogb[l_ac].ogb44=l_rty06                                                                            
+   SELECT rty06 INTO l_rty06 FROM rty_file WHERE rty01=g_plant
+    AND rty02=g_ogb[l_ac].ogb04 AND rtyacti="Y"
+   IF SQLCA.sqlcode=100 THEN LET l_rty06=NULL END IF
+   LET g_ogb[l_ac].ogb44=l_rty06
    IF cl_null(g_ogb[l_ac].ogb44) THEN
    #No.FUN-A70123 ..begin
    #   CALL cl_err('','art-510',1)
@@ -31771,151 +31786,151 @@ DEFINE l_rtz05 LIKE rtz_file.rtz05
        LET g_ogb[l_ac].ogb44 = '1'
    #No.FUN-A70123 ..end
    END IF
-   IF g_ogb[l_ac].ogb44='3' OR g_ogb[l_ac].ogb44='4' THEN                                                                           
-      SELECT rty05 INTO l_rty05 FROM rty_file WHERE rty01=g_plant                                                              
-       AND rty02=g_ogb[l_ac].ogb04 AND rtyacti="Y"                                                                                  
-      IF NOT cl_null(l_rty05) THEN                                                                                                  
-         SELECT rtt01,rtt11 INTO l_rtt01,l_rtt11 FROM rtt_file,rts_file,rto_file                                                    
-          WHERE rts01 = rtt01 AND rttplant = rtsplant                                                                                   
+   IF g_ogb[l_ac].ogb44='3' OR g_ogb[l_ac].ogb44='4' THEN
+      SELECT rty05 INTO l_rty05 FROM rty_file WHERE rty01=g_plant
+       AND rty02=g_ogb[l_ac].ogb04 AND rtyacti="Y"
+      IF NOT cl_null(l_rty05) THEN
+         SELECT rtt01,rtt11 INTO l_rtt01,l_rtt11 FROM rtt_file,rts_file,rto_file
+          WHERE rts01 = rtt01 AND rttplant = rtsplant
    #       AND rts02 = rtt02 AND rtt04 =g_ogb[l_ac].ogb04 AND rto01 = rts04 AND rtoplant = rts9plant #TQC-B30189 MARK
            AND rts02 = rtt02 AND rtt04 =g_ogb[l_ac].ogb04 AND rto01 = rts04 AND rtoplant = rtsplant  #TQC-B30189 ADD
-           AND rto05 = l_rty05  AND rto06 = g_ogb[l_ac].ogb44 AND rto08<=g_oga.oga02                                                
-           AND rto09>=g_oga.oga02 AND rtt15="Y"                                                                                     
-           AND rtoconf = 'Y' AND rtsconf = 'Y' AND rto03 = rts02 AND rtoplant =  g_plant                                         
-         IF NOT cl_null(l_rtt01) THEN                                                                                               
-            SELECT rtv12,rtu08,rtu01,rtv13 INTO l_rtv12,l_rtu08,l_rtu01,l_rtv13 FROM rtv_file,rtu_file,rtt_file                     
-             WHERE rtt01=rtu04 AND rtt02=rtu02 AND rttplant=rtuplant AND rtuplant=g_plant                                            
-              AND rtuconf="Y" AND rtuplant=rtvplant AND rtu01=rtv01 AND rtu02=rtv02                                                     
-              AND rtt01=l_rtt01 AND rtu05=l_rty05 AND rtu06=g_ogb[l_ac].ogb44                                                       
-              AND rtv04=g_ogb[l_ac].ogb04                                                                                           
-            IF NOT cl_null(l_rtu01) THEN       
-               LET g_ogb[l_ac].ogb45=l_rtv12                                                                                        
-            ELSE                                                                                                                    
-               LET g_ogb[l_ac].ogb45=l_rtt11                                                                                        
-            END IF                                                                                                                  
-         END IF                                                                                                                     
-      END IF                                                                                                                        
-   ELSE                                                                                                                             
-      LET g_ogb[l_ac].ogb45=NULL                                                                                                    
-   END IF                                                                                                                           
-   LET g_ogb[l_ac].ogb46=g_ogb[l_ac].ogb45                                                                                          
+           AND rto05 = l_rty05  AND rto06 = g_ogb[l_ac].ogb44 AND rto08<=g_oga.oga02
+           AND rto09>=g_oga.oga02 AND rtt15="Y"
+           AND rtoconf = 'Y' AND rtsconf = 'Y' AND rto03 = rts02 AND rtoplant =  g_plant
+         IF NOT cl_null(l_rtt01) THEN
+            SELECT rtv12,rtu08,rtu01,rtv13 INTO l_rtv12,l_rtu08,l_rtu01,l_rtv13 FROM rtv_file,rtu_file,rtt_file
+             WHERE rtt01=rtu04 AND rtt02=rtu02 AND rttplant=rtuplant AND rtuplant=g_plant
+              AND rtuconf="Y" AND rtuplant=rtvplant AND rtu01=rtv01 AND rtu02=rtv02
+              AND rtt01=l_rtt01 AND rtu05=l_rty05 AND rtu06=g_ogb[l_ac].ogb44
+              AND rtv04=g_ogb[l_ac].ogb04
+            IF NOT cl_null(l_rtu01) THEN
+               LET g_ogb[l_ac].ogb45=l_rtv12
+            ELSE
+               LET g_ogb[l_ac].ogb45=l_rtt11
+            END IF
+         END IF
+      END IF
+   ELSE
+      LET g_ogb[l_ac].ogb45=NULL
+   END IF
+   LET g_ogb[l_ac].ogb46=g_ogb[l_ac].ogb45
    CALL cl_set_comp_entry("ogb46",false)
-   RETURN 0                                                                                            
-END FUNCTION  
+   RETURN 0
+END FUNCTION
 
 FUNCTION t600_price_1(p_ac)
 DEFINE p_ac LIKE type_file.num5
-DEFINE l_flag LIKE type_file.chr1   
+DEFINE l_flag LIKE type_file.chr1
 DEFINE l_rtz04      LIKE rtz_file.rtz04  #FUN-C10040
-DEFINE l_rtz06      LIKE rtz_file.rtz06  #FUN-C10040 
+DEFINE l_rtz06      LIKE rtz_file.rtz06  #FUN-C10040
 
    #FUN-C10040--add---str----
    SELECT rtz04, rtz06 INTO l_rtz04,l_rtz06
      FROM rtz_file
     WHERE rtz01 = g_oga.ogaplant
-   #FUN-C10040--add---end----  
-   
+   #FUN-C10040--add---end----
+
    IF g_azw.azw04 = '2' THEN  #No.MOD-A60134
       CALL t600_ogb04() RETURNING l_flag
       IF l_flag='1' THEN
          RETURN 1
       END IF
    END IF                     #No.MOD-A60134
-   IF cl_null(g_ogb[p_ac].ogb916) THEN                                                                                              
-      LET g_ogb[p_ac].ogb917 = g_ogb[p_ac].ogb12                                                                                    
-   END IF 
+   IF cl_null(g_ogb[p_ac].ogb916) THEN
+      LET g_ogb[p_ac].ogb917 = g_ogb[p_ac].ogb12
+   END IF
    #FUN-C10040 ----add---begin ---
    IF g_azw.azw04 = '2' AND NOT s_industry("slk") THEN  #TQC-C20418 ADD not slk
       CALL t620_sub(g_ogb[p_ac].ogb04,l_rtz04,g_oga.oga213,g_ogb[p_ac].ogb917,g_ogb[p_ac].ogb13,t_azi04)
            RETURNING g_ogb[p_ac].ogb14,g_ogb[p_ac].ogb14t
    ELSE
-   #FUN-C10040 ----add---end -----   
+   #FUN-C10040 ----add---end -----
       IF g_oga.oga213 = 'N' THEN
 #        LET g_ogb[p_ac].ogb14 = g_ogb[p_ac].ogb12* g_ogb[p_ac].ogb13    #CHI-B70039 mark
          LET g_ogb[p_ac].ogb14 = g_ogb[p_ac].ogb917* g_ogb[p_ac].ogb13   #CHI-B70039
-         CALL cl_digcut(g_ogb[p_ac].ogb14,t_azi04)  RETURNING g_ogb[p_ac].ogb14   
+         CALL cl_digcut(g_ogb[p_ac].ogb14,t_azi04)  RETURNING g_ogb[p_ac].ogb14
          LET g_ogb[p_ac].ogb14t= g_ogb[p_ac].ogb14*(1+ g_oga.oga211/100)
-         CALL cl_digcut(g_ogb[p_ac].ogb14t,t_azi04) RETURNING g_ogb[p_ac].ogb14t     
-      ELSE              
+         CALL cl_digcut(g_ogb[p_ac].ogb14t,t_azi04) RETURNING g_ogb[p_ac].ogb14t
+      ELSE
 #        LET g_ogb[p_ac].ogb14t= g_ogb[p_ac].ogb12*g_ogb[p_ac].ogb13    #CHI-B70039 mark
          LET g_ogb[p_ac].ogb14t= g_ogb[p_ac].ogb917*g_ogb[p_ac].ogb13   #CHI-B70039
-         CALL cl_digcut(g_ogb[p_ac].ogb14t,t_azi04) RETURNING g_ogb[p_ac].ogb14t     
+         CALL cl_digcut(g_ogb[p_ac].ogb14t,t_azi04) RETURNING g_ogb[p_ac].ogb14t
          LET g_ogb[p_ac].ogb14 = g_ogb[p_ac].ogb14t/(1+ g_oga.oga211/100)
-         CALL cl_digcut(g_ogb[p_ac].ogb14,t_azi04)  RETURNING g_ogb[p_ac].ogb14   
+         CALL cl_digcut(g_ogb[p_ac].ogb14,t_azi04)  RETURNING g_ogb[p_ac].ogb14
       END IF
    END IF  #FUN-C10040
-   RETURN 0         
+   RETURN 0
 END FUNCTION
 
-FUNCTION t600_ogaconu(p_cmd)                                                                                                        
-DEFINE l_gen02 LIKE gen_file.gen02                                                                                                  
-DEFINE p_cmd LIKE type_file.chr1                                                                                                    
-   SELECT gen02 INTO l_gen02 FROM gen_file WHERE gen01=g_oga.ogaconu AND genacti="Y"                                                
-   IF SQLCA.sqlcode=100 THEN                                                                                                        
-      LET l_gen02=NULL                                                                                                              
-   END IF                                                                                                                           
-   IF p_cmd='d' THEN                                                                                                                
-      DISPLAY l_gen02 TO FORMONLY.ogaconu_desc                                                                                      
-   END IF                                                                                                                           
-END FUNCTION  
+FUNCTION t600_ogaconu(p_cmd)
+DEFINE l_gen02 LIKE gen_file.gen02
+DEFINE p_cmd LIKE type_file.chr1
+   SELECT gen02 INTO l_gen02 FROM gen_file WHERE gen01=g_oga.ogaconu AND genacti="Y"
+   IF SQLCA.sqlcode=100 THEN
+      LET l_gen02=NULL
+   END IF
+   IF p_cmd='d' THEN
+      DISPLAY l_gen02 TO FORMONLY.ogaconu_desc
+   END IF
+END FUNCTION
 
 FUNCTION pay_chk()
 DEFINE l_cnt LIKE type_file.num5
 
-   IF g_oga.oga01 IS NULL THEN RETURN END IF                                                                                        
-   SELECT * INTO g_oga.* FROM oga_file WHERE oga01 = g_oga.oga01                                                                    
-   IF g_oga.ogaconf = 'X' THEN CALL cl_err('',9024,0) RETURN END IF                                                                 
-   IF g_argv0 MATCHES '[15]' THEN                                                                                                   
-      IF g_oga.ogaconf = 'Y' THEN                                                                                                   
-         CALL cl_err('',9023,0) RETURN                                                                                              
-      END IF                                                                                                                        
-   END IF                                                                                                                           
-   IF g_argv0 MATCHES '[24689]' THEN                                                                                                
-      IF g_oga.ogaconf = 'Y' THEN                                                                                                   
-         CALL cl_err('',9023,0) RETURN                                                                                              
-      END IF                                                                                                                        
-      IF g_oga.ogapost = 'Y' THEN                                                                                                   
-         CALL cl_err('','art-281',0) RETURN                                                                                         
-      END IF                                                                                                                        
-   END IF                                                                                                                           
-                                                                                                                                    
-   IF g_argv0 MATCHES '[15]' THEN                                                                                                   
-      LET g_cnt=0                                                                                                                   
-      SELECT COUNT(*) INTO g_cnt FROM oga_file                                                                                      
-       WHERE oga011 = g_oga.oga01  
-         AND oga09 IN ('2','4','6')                                                                                                 
-         AND ogaconf != 'X'                                                                                                         
-      #此出貨通知單已經出貨! 不可再做任何處理!                                                                                      
-      IF g_cnt > 0 THEN                                                                                                             
-         CALL cl_err('oga011!='':','axm-228',1)                                                                                     
-         RETURN                                                                                                                     
-      END IF                                                                                                                        
-   END IF                                                                                                                           
-                                                                                                                                    
-   IF g_oga.oga55 matches '[Ss]' THEN                                                                                               
-       CALL cl_err('','art-277',0)                                                                                                  
-       RETURN                                                                                                                       
-   END IF                                         
-   LET l_cnt=0                                                                                                                      
-   SELECT COUNT(*) INTO l_cnt FROM ogb_file                                                                                         
-    WHERE ogb01=g_oga.oga01                                                                                                         
-      AND ogb930=g_plant_code                                                                                                       
-      AND ogb47<0                                                                                                                   
-   IF l_cnt>0 THEN                                                                                                                  
-      CALL cl_err('','art-483',0)                                                                                                   
-      LET g_success='N'                                                                                                             
-      RETURN                                                                                                                        
-   END IF            
-END FUNCTION 
+   IF g_oga.oga01 IS NULL THEN RETURN END IF
+   SELECT * INTO g_oga.* FROM oga_file WHERE oga01 = g_oga.oga01
+   IF g_oga.ogaconf = 'X' THEN CALL cl_err('',9024,0) RETURN END IF
+   IF g_argv0 MATCHES '[15]' THEN
+      IF g_oga.ogaconf = 'Y' THEN
+         CALL cl_err('',9023,0) RETURN
+      END IF
+   END IF
+   IF g_argv0 MATCHES '[24689]' THEN
+      IF g_oga.ogaconf = 'Y' THEN
+         CALL cl_err('',9023,0) RETURN
+      END IF
+      IF g_oga.ogapost = 'Y' THEN
+         CALL cl_err('','art-281',0) RETURN
+      END IF
+   END IF
+
+   IF g_argv0 MATCHES '[15]' THEN
+      LET g_cnt=0
+      SELECT COUNT(*) INTO g_cnt FROM oga_file
+       WHERE oga011 = g_oga.oga01
+         AND oga09 IN ('2','4','6')
+         AND ogaconf != 'X'
+      #此出貨通知單已經出貨! 不可再做任何處理!
+      IF g_cnt > 0 THEN
+         CALL cl_err('oga011!='':','axm-228',1)
+         RETURN
+      END IF
+   END IF
+
+   IF g_oga.oga55 matches '[Ss]' THEN
+       CALL cl_err('','art-277',0)
+       RETURN
+   END IF
+   LET l_cnt=0
+   SELECT COUNT(*) INTO l_cnt FROM ogb_file
+    WHERE ogb01=g_oga.oga01
+      AND ogb930=g_plant_code
+      AND ogb47<0
+   IF l_cnt>0 THEN
+      CALL cl_err('','art-483',0)
+      LET g_success='N'
+      RETURN
+   END IF
+END FUNCTION
 
 FUNCTION l_price()
 DEFINE l_ogb14t LIKE ogb_file.ogb14t
 DEFINE l_price LIKE ogb_file.ogb14t
 DEFINE l_ogb47 LIKE ogb_file.ogb47
-  
+
    SELECT SUM(ogb14t) INTO l_ogb14t FROM ogb_file
-    WHERE ogb01=g_oga.oga01 
-#FUN-AB0061 -----------add start----------------      
+    WHERE ogb01=g_oga.oga01
+#FUN-AB0061 -----------add start----------------
 #   SELECT SUM(ogb47) INTO l_ogb47 FROM ogb_file
 #    WHERE ogb01=g_oga.oga01
 #   IF g_oga.oga213='N' THEN
@@ -31923,11 +31938,11 @@ DEFINE l_ogb47 LIKE ogb_file.ogb47
 #      CALL cl_digcut(l_ogb47,t_azi04) RETURNING l_ogb47
 #   END  IF
 #   LET l_price=l_ogb14t-l_ogb47
-#FUN-AB0061 -----------add end---------------- 
-   LET l_price=l_ogb14t    #FUN-AB0061  
+#FUN-AB0061 -----------add end----------------
+   LET l_price=l_ogb14t    #FUN-AB0061
    CALL cl_digcut(l_price,t_azi04) RETURNING l_price
-   RETURN l_price 
-END FUNCTION                 
+   RETURN l_price
+END FUNCTION
 
 FUNCTION t600_a_inschk()
    DEFINE li_result    LIKE type_file.num5             #No.FUN-550052  #No.FUN-680137 SMALLINT
@@ -31969,19 +31984,19 @@ END FUNCTION
 FUNCTION t600_a_ins()
    DEFINE l_oap RECORD LIKE oap_file.*
 
-   LET g_oga.ogaplant = g_plant 
-   LET g_oga.ogalegal = g_legal  
+   LET g_oga.ogaplant = g_plant
+   LET g_oga.ogalegal = g_legal
    #FUN-AC0055 add ---------------------begin-----------------------
    IF cl_null(g_oga.oga57) THEN
-      LET g_oga.oga57 = '1'  
+      LET g_oga.oga57 = '1'
    END IF
    #FUN-AC0055 add ----------------------end------------------------
    LET g_oga.ogaoriu = g_user      #No.FUN-980030 10/01/04
    LET g_oga.ogaorig = g_grup      #No.FUN-980030 10/01/04
-   IF cl_null(g_oga.oga909) THEN LET g_oga.oga909 = 'N' END IF    #MOD-A60163 
+   IF cl_null(g_oga.oga909) THEN LET g_oga.oga909 = 'N' END IF    #MOD-A60163
 #   IF g_azw.azw04='2' THEN        #FUN-C20006--add                #TQC-C20127
       IF cl_null(g_oga.ogaslk02) THEN LET g_oga.ogaslk02=' ' END IF  #FUN-B90104 add
-#   END IF                         #FUN-C20006--add                #TQC-C20127 
+#   END IF                         #FUN-C20006--add                #TQC-C20127
 
    INSERT INTO oga_file VALUES (g_oga.*)
    IF STATUS OR SQLCA.SQLCODE THEN
@@ -31992,9 +32007,9 @@ FUNCTION t600_a_ins()
    INSERT INTO tc_ool_file (tc_ool01) VALUES (g_oga.oga01)
    IF STATUS THEN
       CALL cl_err3("ins","tc_ool_file","g_oga.oga01","",SQLCA.sqlcode,"","ins 2nd oga",1)  #No.FUN-670008
-      RETURN FALSE 
+      RETURN FALSE
    END IF
-   #tianry add end 
+   #tianry add end
    COMMIT WORK        #No:7829
 
    CALL cl_flow_notify(g_oga.oga01,'I')
@@ -32022,9 +32037,9 @@ FUNCTION t600_a_ins()
    #DROP TABLE x
    #
    #IF g_oga.oga09 MATCHES '[2468]' AND g_oga.oga01 != g_oga.oga011 THEN #No.FUN-630061
-   #   SELECT * FROM oao_file WHERE oao01=g_oga.oga011 INTO TEMP x   
+   #   SELECT * FROM oao_file WHERE oao01=g_oga.oga011 INTO TEMP x
    #ELSE
-   #   SELECT * FROM oao_file WHERE oao01=g_oga.oga16 INTO TEMP x   
+   #   SELECT * FROM oao_file WHERE oao01=g_oga.oga16 INTO TEMP x
    #END IF
    #
    #UPDATE x SET oao01 = g_oga.oga01
@@ -32076,11 +32091,11 @@ DEFINE l_sql3   STRING
         " '','','','', ",
         "       ogbud01,ogbud02,ogbud03,ogbud04,ogbud05,",
         "       ogbud06,ogbud07,ogbud08,ogbud09,ogbud10,",
-        "       ogbud11,ogbud12,ogbud13,ogbud14,ogbud15,", 
+        "       ogbud11,ogbud12,ogbud13,ogbud14,ogbud15,",
          "       ogb44,ogb45,ogb46,ogb47 ",               #No.FUN-870007
         "       ,'','','' ",                                 #FUN-B30187  #FUN-C30289
         " FROM ogb_file,oga_file,OUTER ima_file,",        #MOD-7C0012-modify
-        "      OUTER azf_file a,OUTER azf_file b ",       #FUN-CB0087 add    
+        "      OUTER azf_file a,OUTER azf_file b ",       #FUN-CB0087 add
         " WHERE ogb01 ='",g_oga.oga01,"'",  #單頭
         " AND ogb01 = oga01 ",                            #MOD-7C0012-add
         " AND ogb1001 = a.azf01 AND a.azf02 = '2' ",  #FUN-CB0087 add
@@ -32107,22 +32122,22 @@ DEFINE l_sql3   STRING
 
 #str----add by huanglf161104
            IF cl_null(g_ogb[g_cnt].ogb09) THEN
-              SELECT SUM(img10) INTO g_ogb[g_cnt].l_goods FROM img_file 
+              SELECT SUM(img10) INTO g_ogb[g_cnt].l_goods FROM img_file
               WHERE img01 = g_ogb[g_cnt].ogb04 GROUP BY img01 #str--add by huanglf160805
            ELSE
               SELECT SUM(img10) INTO g_ogb[g_cnt].l_goods FROM img_file
-              WHERE img01 = g_ogb[g_cnt].ogb04 AND img02 = g_ogb[g_cnt].ogb09 
-           END IF  
+              WHERE img01 = g_ogb[g_cnt].ogb04 AND img02 = g_ogb[g_cnt].ogb09
+           END IF
 #str----end by huanglf161104
 
 #str----add by huanglf170204 #已签收数量
-     
-       SELECT SUM(ogb12) - SUM(ogb52)  INTO g_ogb[g_cnt].ogbud07 FROM ogb_file,oga_file 
-       WHERE ogb01 = oga01 AND oga011 = g_oga.oga01 AND ogb03 = g_ogb[g_cnt].ogb03 
+
+       SELECT SUM(ogb12) - SUM(ogb52)  INTO g_ogb[g_cnt].ogbud07 FROM ogb_file,oga_file
+       WHERE ogb01 = oga01 AND oga011 = g_oga.oga01 AND ogb03 = g_ogb[g_cnt].ogb03
          AND ogaconf = 'Y' AND ogapost = 'Y' AND oga09 = '8'
        IF cl_null(g_ogb[g_cnt].ogbud07) THEN
            LET g_ogb[g_cnt].ogbud07 = 0
-       END IF 
+       END IF
 
 #str----end by huanglf170204
      #   SELECT SUM(img10) INTO g_ogb[g_cnt].l_goods FROM img_file WHERE img01 = g_ogb[g_cnt].ogb04 GROUP BY img01 #str--add by huanglf160805
@@ -32146,7 +32161,7 @@ DEFINE l_sql3   STRING
 #                  AND oga01=g_oga.oga011
 #            END IF
 #         END IF
-#            
+#
 ##         IF s_industry("slk") THEN
 #            SELECT ata02,ata05 INTO g_ogb[g_cnt].ogb03,g_ogb[g_cnt].ogb04
 #              FROM ata_file
@@ -32162,8 +32177,8 @@ DEFINE l_sql3   STRING
 #            IF g_cnt > 1 THEN
 #               IF NOT cl_null(g_oga.oga16) THEN
 #                  #FUN-A60035 ---mark begin
-#                  #SELECT ata02 INTO g_ogb[g_cnt].ogb32 
-#                  #  FROM ata_file 
+#                  #SELECT ata02 INTO g_ogb[g_cnt].ogb32
+#                  #  FROM ata_file
 #                  # #WHERE ata00=g_ata00       #FUN-A60035 mark
 #                  # #  AND ata01=g_oga.oga16   #FUN-A60035 mark
 #                  # WHERE ata00 = g_prog
@@ -32240,7 +32255,7 @@ DEFINE l_sql3   STRING
              FROM ima_file
             WHERE ima01 = g_ogb[g_cnt].ogb04
         END IF
-        IF g_argv0 = '8' AND g_aza.aza26 != '2' THEN #FUN-C50097 ADD !=2 
+        IF g_argv0 = '8' AND g_aza.aza26 != '2' THEN #FUN-C50097 ADD !=2
            SELECT ogb12,ogb912,ogb915
              INTO g_ogb12_sum,g_ogb912_sum,g_ogb915_sum
              FROM ogb_file
@@ -32251,10 +32266,10 @@ DEFINE l_sql3   STRING
            LET g_ogb[g_cnt].ogb912b = g_ogb912_sum - g_ogb[g_cnt].ogb912
         END IF
         #FUN-C50097 add begin------
-        IF g_argv0 = '8' AND g_aza.aza26 = '2' THEN 
-           IF  g_oaz.oaz94 = 'Y' THEN 
+        IF g_argv0 = '8' AND g_aza.aza26 = '2' THEN
+           IF  g_oaz.oaz94 = 'Y' THEN
 
-           ELSE 
+           ELSE
               SELECT ogb12,ogb912,ogb915
                 INTO g_ogb12_sum,g_ogb912_sum,g_ogb915_sum
                 FROM ogb_file
@@ -32263,8 +32278,8 @@ DEFINE l_sql3   STRING
               LET g_ogb[g_cnt].ogb12b  = g_ogb12_sum  - g_ogb[g_cnt].ogb12
               LET g_ogb[g_cnt].ogb915b = g_ogb915_sum - g_ogb[g_cnt].ogb915
               LET g_ogb[g_cnt].ogb912b = g_ogb912_sum - g_ogb[g_cnt].ogb912
-           END IF 
-        END IF        
+           END IF
+        END IF
         #FUN-C50097 add end--------
         IF g_argv0 = '2' AND g_oga.oga65='Y' THEN
            SELECT ogb01 INTO g_ogb[g_cnt].ogb01a
@@ -32297,13 +32312,13 @@ DEFINE l_sql3   STRING
                 "  WHERE rvbs00 = '",g_prog,"' AND rvbs01 = '",g_oga.oga01,"'"
     PREPARE sel_rvbs_pre FROM g_sql
     DECLARE rvbs_curs CURSOR FOR sel_rvbs_pre
-    
+
     CALL g_rvbs.clear()
-    
+
     LET g_cnt = 1
     FOREACH rvbs_curs INTO g_rvbs[g_cnt].*   #單身 ARRAY 填充
        IF STATUS THEN CALL cl_err('foreach:',STATUS,1) EXIT FOREACH END IF
-      
+
        LET g_cnt = g_cnt + 1
        IF g_cnt > g_max_rec THEN
           CALL cl_err( '', 9035, 0 )
@@ -32345,20 +32360,20 @@ FUNCTION t600_show()
               g_oga.oga032 ,g_oga.oga04  ,g_oga.oga902 ,g_oga.oga14  ,g_oga.oga15  ,
               g_oga.oga23  ,g_oga.oga24  ,g_oga.oga1014, g_oga.oga1012,g_oga.oga21  ,
               g_oga.oga211 ,g_oga.oga212 ,g_oga.oga213 ,g_oga.oga10  ,g_oga.oga18 ,g_oga.oga907  ,   #FUN-920072 add oga907
-              g_oga.oga1016,g_oga.oga25  ,g_oga.oga05  ,g_oga.oga13  ,g_oga.oga99,g_oga.oga70,   #No:FUN-740016 
+              g_oga.oga1016,g_oga.oga25  ,g_oga.oga05  ,g_oga.oga13  ,g_oga.oga99,g_oga.oga70,   #No:FUN-740016
            g_oga.oga905 ,g_oga.ogaconf, g_oga.ogaspc ,g_oga.oga30  ,g_oga.ogapost,
            g_oga.ogamksg, g_oga.oga55  ,g_oga.oga65  ,g_oga.oga903 ,g_oga.oga914 ,
            g_oga.oga1002,g_oga.oga1009,g_oga.oga1011,g_oga.oga1010,g_oga.oga1015,g_oga.oga1005, #MOD-C30501 add oga1005
            g_oga.oga1003,g_oga.ogauser, g_oga.ogagrup, g_oga.ogamodu, g_oga.ogadate,
-           g_oga.oga83  ,g_oga.oga84  ,g_oga.oga85  ,g_oga.oga86  ,                                                        
-           g_oga.oga87  ,g_oga.ogaplant ,g_oga.oga57,g_oga.oga88  ,        #FUN-AA0057 add oga57                                                
-           g_oga.oga89  ,g_oga.oga90  ,g_oga.oga91  ,g_oga.oga92  ,                                                        
+           g_oga.oga83  ,g_oga.oga84  ,g_oga.oga85  ,g_oga.oga86  ,
+           g_oga.oga87  ,g_oga.ogaplant ,g_oga.oga57,g_oga.oga88  ,        #FUN-AA0057 add oga57
+           g_oga.oga89  ,g_oga.oga90  ,g_oga.oga91  ,g_oga.oga92  ,
            g_oga.oga93  ,g_oga.oga98  ,g_oga.oga94  ,g_oga.oga95  ,g_oga.oga96  ,      #FUN-A50071 add oga98
            g_oga.oga97  ,g_oga.ogaconu,g_oga.ogacond,g_oga.ogacont,      #FUN-A30063
            g_oga.ogaud01,g_oga.ogaud02,g_oga.ogaud03,g_oga.ogaud04,
            g_oga.ogaud05,g_oga.ogaud06,g_oga.ogaud07,g_oga.ogaud08,
            g_oga.ogaud09,g_oga.ogaud10,g_oga.ogaud11,g_oga.ogaud12,
-           g_oga.ogaud13,g_oga.ogaud14,g_oga.ogaud15,g_oga.oga72                   #FUN-A60004 add oga72 
+           g_oga.ogaud13,g_oga.ogaud14,g_oga.ogaud15,g_oga.oga72                   #FUN-A60004 add oga72
 
 #FUN-C20006--add----------------------------
     ELSE
@@ -32405,7 +32420,7 @@ FUNCTION t600_show()
          CALL cl_set_comp_visible("ogb40",FALSE)
       END IF
    END IF
-  #FUN-B50054 End-----    
+  #FUN-B50054 End-----
    SELECT azi03,azi04 INTO t_azi03,t_azi04               #No.CHI-6A0004 g_azi-->t_azi
      FROM azi_file
     WHERE azi01=g_oga.oga23
@@ -32499,7 +32514,7 @@ FUNCTION t600_show()
    CALL t600_oga1016('d')
    CALL t600_oga18('d')  #No.FUN-610064
    IF g_azw.azw04='2' THEN
-      CALL t600_oga84('d')                                                                                                         
+      CALL t600_oga84('d')
       CALL t600_ogaconu('d')
       SELECT azp02 INTO l_azp02 FROM azp_file
 #       WHERE azp01 = g_plant   #TQC-C40248--MARK------
@@ -32540,7 +32555,7 @@ FUNCTION t600_chkkey()
 
    UPDATE rvbs_file SET rvbs01=g_oga.oga01 WHERE rvbs01=g_oga_t.oga01
    IF STATUS THEN
-      CALL cl_err3("upd","rvbs_file","g_oga_t.oga01","",SQLCA.sqlcode,"","upd rvbs01",1)  
+      CALL cl_err3("upd","rvbs_file","g_oga_t.oga01","",SQLCA.sqlcode,"","upd rvbs01",1)
       RETURN FALSE
    END IF
 
@@ -32721,15 +32736,15 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
     END IF
 
     #2022032401 add----begin----
-    IF g_oga.ogaud01[1,2] = 'DO' THEN 
+    IF g_oga.ogaud01[1,2] = 'DO' THEN
     	LET l_tc_zsa02 = ''
     	LET l_tc_zsa03 = ''
     	SELECT tc_zsa02,tc_zsa03 INTO l_tc_zsa02,l_tc_zsa03 FROM tc_zsa_file
-    	IF l_tc_zsa02 = 'Y' AND NOT cl_null(l_tc_zsa03) AND g_today >= l_tc_zsa03 THEN 
+    	IF l_tc_zsa02 = 'Y' AND NOT cl_null(l_tc_zsa03) AND g_today >= l_tc_zsa03 THEN
     		CALL cl_err('','cpm-066',0)
-    		RETURN 
-    	END IF 
-    END IF 
+    		RETURN
+    	END IF
+    END IF
     #2022032401 add----end----
 
     LET l_exit_sw = TRUE
@@ -32848,11 +32863,11 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
             IF cl_null(b_ogb.ogb13) THEN
                LET b_ogb.ogb13 = 0
             END IF
-#FUN-AB0061 -----------add start----------------                             
+#FUN-AB0061 -----------add start----------------
             IF cl_null(b_ogb.ogb37) OR b_ogb.ogb37=0 THEN
                LET b_ogb.ogb37 = b_ogb.ogb13
-            END IF                                             
-#FUN-AB0061 -----------add end----------------              
+            END IF
+#FUN-AB0061 -----------add end----------------
             IF cl_null(b_ogb.ogb14) THEN
                LET b_ogb.ogb14 = 0
             END IF
@@ -32881,28 +32896,28 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
             LET b_ogb.ogb04    = 'MISC'  #MOD-AC0170
             LET b_ogb.ogb12    = 1       #MOD-AC0170
             LET b_ogb.ogb917   = 1       #MOD-AC0170
-            LET b_ogb.ogbplant = g_plant 
-            LET b_ogb.ogblegal = g_legal  
+            LET b_ogb.ogbplant = g_plant
+            LET b_ogb.ogblegal = g_legal
       #     IF cl_null(b_ogb.ogb50) THEN LET b_ogb.ogb50 = '1' END IF #FUN-AA0057
             #FUN-C50097---begin
             IF cl_null(b_ogb.ogb50) THEN
                LET b_ogb.ogb50 = 0
-            END IF  
+            END IF
             IF cl_null(b_ogb.ogb51) THEN
                LET b_ogb.ogb51 = 0
-            END IF  
+            END IF
             IF cl_null(b_ogb.ogb52) THEN
                LET b_ogb.ogb52 = 0
-            END IF  
+            END IF
             IF cl_null(b_ogb.ogb53) THEN
                LET b_ogb.ogb53 = 0
-            END IF  
+            END IF
             IF cl_null(b_ogb.ogb54) THEN
                LET b_ogb.ogb54 = 0
-            END IF  
+            END IF
             IF cl_null(b_ogb.ogb55) THEN
                LET b_ogb.ogb55 = 0
-            END IF              
+            END IF
             #FUN-C50097---end
             IF cl_null(b_ogb.ogb31) THEN LET b_ogb.ogb32 ='' END IF    #TQC-C60131 add
 
@@ -32913,17 +32928,17 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                IF g_argv0 <> '1' OR (g_argv0='1' AND g_oaz.oaz81='Y') THEN  #FUN-850120 add
                LET g_ima918 = ''   #MOD-9C0055
                LET g_ima921 = ''   #MOD-9C0055
-               SELECT ima918,ima921 INTO g_ima918,g_ima921 
+               SELECT ima918,ima921 INTO g_ima918,g_ima921
                  FROM ima_file
                 WHERE ima01 = g_ogb[l_ac].ogb04
                   AND imaacti = "Y"
-               
+
                IF g_ima918 = "Y" OR g_ima921 = "Y" THEN
                  #IF NOT s_lotout_del(g_prog,g_oga.oga01,g_ogb[l_ac].ogb03,0,g_ogb[l_ac].ogb04,'DEL') THEN   #No:FUN-860045  #TQC-B90236
                   IF NOT s_lot_del(g_prog,g_oga.oga01,g_ogb[l_ac].ogb03,0,g_ogb[l_ac].ogb04,'DEL') THEN   #No:FUN-860045  #TQC-B90236
                      CALL cl_err3("del","rvbs_file",g_oga.oga01,g_ogb_t.ogb03,
                                    SQLCA.sqlcode,"","",1)
-                     ROLLBACK WORK      #CHI-A10016 
+                     ROLLBACK WORK      #CHI-A10016
                      CANCEL INSERT      #CHI-A10016
                   END IF
                END IF
@@ -33153,10 +33168,10 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                  END IF
                  IF g_argv0 MATCHES '[246]' AND g_oeb.oeb1003='1' THEN
                     LET l_oea09=''
-                    SELECT oea09 INTO l_oea09 FROM oea_file 
+                    SELECT oea09 INTO l_oea09 FROM oea_file
                       WHERE oea01=g_b2[l_ac].ogb31
                     IF ((g_oeb.oeb12*((100+l_oea09)/100))-
-                        g_oeb.oeb24+g_oeb.oeb25) <= 0 THEN 
+                        g_oeb.oeb24+g_oeb.oeb25) <= 0 THEN
                        CALL cl_err('sel oeb','axm-148',0) NEXT FIELD b2_32
                     END IF
                  END IF
@@ -33384,7 +33399,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                    CANCEL DELETE
                 END IF
                 #FUN-C10040-----add-----end----
- 
+
                 DELETE FROM ogc_file
                  WHERE ogc01 = g_oga.oga01 AND ogc03 = g_b2_t.ogb03
                 DELETE FROM rvbs_file
@@ -33422,9 +33437,9 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                CALL t600_b2_move_back()
 
 #TQC-B40204 --begin--
-              IF g_oga.oga55 MATCHES '[01RW]' THEN 
+              IF g_oga.oga55 MATCHES '[01RW]' THEN
                  LET l_oga55 = '0'
-              END IF 
+              END IF
 #TQC-B40204 --end--
 
                UPDATE ogb_file SET * = b_ogb.*
@@ -33478,7 +33493,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                ROLLBACK WORK
                EXIT INPUT
             END IF
-            LET l_ac_t = l_ac     #FUN-D30034 Add   
+            LET l_ac_t = l_ac     #FUN-D30034 Add
             CLOSE t600_bcl2
             COMMIT WORK
 
@@ -33709,9 +33724,9 @@ DEFINE l_retn_amt      LIKE ohb_file.ohb14    #No.FUN-670008
                 "  WHERE rvbs00 = '",g_prog,"' AND rvbs01 = '",g_oga.oga01,"'"
     PREPARE sel_rvbs_pre1 FROM g_sql
     DECLARE rvbs_curs1 CURSOR FOR sel_rvbs_pre1
-    
+
     CALL g_rvbs.clear()
-    
+
     LET g_cnt = 1
     FOREACH rvbs_curs1 INTO g_rvbs[g_cnt].*   #單身 ARRAY 填充
        IF STATUS THEN CALL cl_err('foreach:',STATUS,1) EXIT FOREACH END IF
@@ -33811,7 +33826,7 @@ DEFINE l_rtz06         LIKE rtz_file.rtz06  #FUN-C10040
   #IF g_azw.azw04 !='2' THEN   #FUN-9C0173  #TQC-CA0046 mark
    IF g_azw.azw04 !='2' AND g_aza.aza50 != 'N' AND g_argv0 != '8' THEN    #TQC-CA0046 add
       IF cl_null(g_ogb[p_ac].ogb1003) THEN
-   #     CALL cl_err('','atm-040',0)        #TQC-CA0046 mark      
+   #     CALL cl_err('','atm-040',0)        #TQC-CA0046 mark
          CALL cl_err('','atm-910',0)        #TQC-CA0046 add
          RETURN 0
       END IF
@@ -33819,7 +33834,7 @@ DEFINE l_rtz06         LIKE rtz_file.rtz06  #FUN-C10040
    IF g_azw.azw04 = '2' THEN  #No.MOD-A60134
       CALL t600_ogb04() RETURNING l_flag
       IF l_flag='1' THEN
-         RETURN 0  
+         RETURN 0
       END IF
    END IF                     #No.MOD-A60134
    #FUN-C10040--add---str----
@@ -33838,7 +33853,7 @@ DEFINE l_rtz06         LIKE rtz_file.rtz06  #FUN-C10040
    ELSE
       LET l_ogb05=g_ogb[p_ac].ogb05
    END IF
-   CALL s_fetch_price_new(g_oga.oga03,g_ogb[p_ac].ogb04,g_ogb[p_ac].ogb48,l_ogb05,g_oga.oga69,   #FUN-BC0071 
+   CALL s_fetch_price_new(g_oga.oga03,g_ogb[p_ac].ogb04,g_ogb[p_ac].ogb48,l_ogb05,g_oga.oga69,   #FUN-BC0071
                           '2',g_oga.ogaplant,g_oga.oga23,g_oga.oga31,g_oga.oga32,
                           g_oga.oga01,g_ogb[p_ac].ogb03,g_ogb[p_ac].ogb917,
                           g_ogb[p_ac].ogb1004,p_cmd) #FUN-AC0012
@@ -33866,15 +33881,15 @@ DEFINE l_rtz06         LIKE rtz_file.rtz06  #FUN-C10040
    ELSE
   #FUN-C10040 ----add---end -----
       IF g_oga.oga213 = 'N' THEN
-         LET g_ogb[p_ac].ogb14 =t600_amount(g_ogb[p_ac].ogb917,g_ogb[p_ac].ogb13,g_ogb[p_ac].ogb1006,t_azi03) 
-         CALL cl_digcut(g_ogb[p_ac].ogb14,t_azi04)  RETURNING g_ogb[p_ac].ogb14  
+         LET g_ogb[p_ac].ogb14 =t600_amount(g_ogb[p_ac].ogb917,g_ogb[p_ac].ogb13,g_ogb[p_ac].ogb1006,t_azi03)
+         CALL cl_digcut(g_ogb[p_ac].ogb14,t_azi04)  RETURNING g_ogb[p_ac].ogb14
          LET g_ogb[p_ac].ogb14t= g_ogb[p_ac].ogb14*(1+ g_oga.oga211/100)
          CALL cl_digcut(g_ogb[p_ac].ogb14t,t_azi04) RETURNING g_ogb[p_ac].ogb14t
       ELSE
-         LET g_ogb[p_ac].ogb14t=t600_amount(g_ogb[p_ac].ogb917,g_ogb[p_ac].ogb13,g_ogb[p_ac].ogb1006,t_azi03)  
+         LET g_ogb[p_ac].ogb14t=t600_amount(g_ogb[p_ac].ogb917,g_ogb[p_ac].ogb13,g_ogb[p_ac].ogb1006,t_azi03)
          CALL cl_digcut(g_ogb[p_ac].ogb14t,t_azi04) RETURNING g_ogb[p_ac].ogb14t
          LET g_ogb[p_ac].ogb14 = g_ogb[p_ac].ogb14t/(1+ g_oga.oga211/100)
-         CALL cl_digcut(g_ogb[p_ac].ogb14,t_azi04)  RETURNING g_ogb[p_ac].ogb14 
+         CALL cl_digcut(g_ogb[p_ac].ogb14,t_azi04)  RETURNING g_ogb[p_ac].ogb14
       END IF
    END IF  #FUN-C10040 add
    IF g_ogb[p_ac].ogb1012 = 'Y'  THEN
@@ -33968,7 +33983,7 @@ END FUNCTION
 
 #FUN-9B0132 add begin------------------------
 FUNCTION t600_oga902(p_cmd)
-DEFINE p_cmd      LIKE type_file.chr1   
+DEFINE p_cmd      LIKE type_file.chr1
 DEFINE l_oak02    LIKE oak_file.oak02
 
    LET g_errno = ''
@@ -34121,7 +34136,7 @@ FUNCTION t600_visible_menu()
    END IF
    #CHI-AC0002 add --start--
    LET g_action_choice = 'entry_sheet2'
-   CALL cl_chk_act_auth_nomsg() 
+   CALL cl_chk_act_auth_nomsg()
    IF NOT cl_chk_act_auth() THEN
       CALL cl_set_act_visible("entry_sheet2",FALSE)
    END IF
@@ -34400,14 +34415,14 @@ DEFINE l_flag      LIKE type_file.num5,    #MOD-930130
          CALL cl_on_idle()
          CONTINUE INPUT
 
-      ON ACTION about         
-         CALL cl_about()      
+      ON ACTION about
+         CALL cl_about()
 
-      ON ACTION help          
-         CALL cl_show_help()  
+      ON ACTION help
+         CALL cl_show_help()
 
-      ON ACTION controlg      
-         CALL cl_cmdask()     
+      ON ACTION controlg
+         CALL cl_cmdask()
       END INPUT
 
 
@@ -34502,8 +34517,8 @@ DEFINE l_flag      LIKE type_file.num5,    #MOD-930130
            LET b_ogb.ogb915= l_oee073 - l_ogb915   + l_ohb915
         #單位轉換
            SELECT oee081 INTO l_oee081 FROM oee_file
-            WHERE oee10 = l_oeb.oeb01                                                                              
-              AND oee11 = l_oeb.oeb03                                                                              
+            WHERE oee10 = l_oeb.oeb01
+              AND oee11 = l_oeb.oeb03
            CALL s_umfchk(b_ogb.ogb04,l_oee081,l_oeb.oeb916)
                  RETURNING l_flag,l_fac
            IF l_flag = 1 THEN
@@ -34631,8 +34646,8 @@ DEFINE l_flag      LIKE type_file.num5,    #MOD-930130
         LET b_ogb.ogbplant = l_oeb.oebplant
         LET b_ogb.ogblegal = l_oeb.oeblegal
         IF g_azw.azw04='2' THEN
-           LET b_ogb.ogb45 = l_oeb.oeb45   
-           LET b_ogb.ogb46 = l_oeb.oeb46                                                                                            
+           LET b_ogb.ogb45 = l_oeb.oeb45
+           LET b_ogb.ogb46 = l_oeb.oeb46
            LET b_ogb.ogb47 = l_oeb.oeb47
         ELSE
            LET b_ogb.ogb44='1'
@@ -34642,7 +34657,7 @@ DEFINE l_flag      LIKE type_file.num5,    #MOD-930130
         CALL t600_b_else()
 
         LET g_msg=b_ogb.ogb03,' ',b_ogb.ogb04,' ',b_ogb.ogb12
-        CALL cl_msg(g_msg)        
+        CALL cl_msg(g_msg)
 
         IF cl_null(b_ogb.ogb05_fac) THEN
            LET b_ogb.ogb05_fac = 1
@@ -34653,11 +34668,11 @@ DEFINE l_flag      LIKE type_file.num5,    #MOD-930130
         IF cl_null(b_ogb.ogb13) THEN
            LET b_ogb.ogb13 = 0
         END IF
-#FUN-AB0061 -----------add start----------------                             
+#FUN-AB0061 -----------add start----------------
         IF cl_null(b_ogb.ogb37) OR b_ogb.ogb37 = 0 THEN
            LET b_ogb.ogb37 = b_ogb.ogb13
-        END IF                                             
-#FUN-AB0061 -----------add end----------------          
+        END IF
+#FUN-AB0061 -----------add end----------------
         IF cl_null(b_ogb.ogb14) THEN
            LET b_ogb.ogb14 = 0
         END IF
@@ -34686,8 +34701,8 @@ DEFINE l_flag      LIKE type_file.num5,    #MOD-930130
            LET b_ogb.ogb1006 = 100
         END IF
 
-        LET b_ogb.ogbplant = g_plant 
-        LET b_ogb.ogblegal = g_legal  
+        LET b_ogb.ogbplant = g_plant
+        LET b_ogb.ogblegal = g_legal
     #   IF cl_null(b_ogb.ogb50) THEN LET b_ogb.ogb50 = '1' END IF #FUN-AA0057
 
        #FUN-C30169 add START
@@ -34698,35 +34713,35 @@ DEFINE l_flag      LIKE type_file.num5,    #MOD-930130
        #FUN-C50097---begin
        IF cl_null(b_ogb.ogb50) THEN
           LET b_ogb.ogb50 = 0
-       END IF  
+       END IF
        IF cl_null(b_ogb.ogb51) THEN
           LET b_ogb.ogb51 = 0
-       END IF  
+       END IF
        IF cl_null(b_ogb.ogb52) THEN
            LET b_ogb.ogb52 = 0
-       END IF  
+       END IF
        IF cl_null(b_ogb.ogb53) THEN
           LET b_ogb.ogb53 = 0
-       END IF  
+       END IF
        IF cl_null(b_ogb.ogb54) THEN
           LET b_ogb.ogb54 = 0
-       END IF  
+       END IF
        IF cl_null(b_ogb.ogb55) THEN
           LET b_ogb.ogb55 = 0
-       END IF         
+       END IF
        #FUN-C50097---end
        IF cl_null(b_ogb.ogb31) THEN LET b_ogb.ogb32 = '' END IF   #TQC-C60131 add
        #FUN-CB0087--add--str--
        IF g_aza.aza115 = 'Y' AND g_argv0 MATCHES '[2456A]' THEN
           CALL s_reason_code(b_ogb.ogb01,b_ogb.ogb31,'',b_ogb.ogb04,b_ogb.ogb09,g_oga.oga14,g_oga.oga15)
              RETURNING b_ogb.ogb1001
-       END IF 
+       END IF
        IF g_aza.aza115 = 'Y' AND g_argv0 MATCHES '[89]' AND b_ogb.ogb52<>0 THEN
           CALL s_reason_code(b_ogb.ogb01,b_ogb.ogb31,'',b_ogb.ogb04,b_ogb.ogb09,g_oga.oga14,g_oga.oga15)
              RETURNING b_ogb.ogb65
-       END IF 
+       END IF
        #FUN-CB0087--add--end--
-       
+
         INSERT INTO ogb_file VALUES(b_ogb.*)
         IF STATUS THEN
            CALL cl_err3("ins","ogb_file","b_ogb.ogb01","",SQLCA.sqlcode,"","ins ogb",1)
@@ -34841,32 +34856,32 @@ FUNCTION t600_rvbs()
   CALL s_ins_rvbs("1",b_rvbs.*)
 END FUNCTION
 
-FUNCTION t600_amount(p_qty,p_price,p_rate,p_azi03)                                                                                  
-DEFINE   p_qty       LIKE ogb_file.ogb12    #數量                                                                                   
-DEFINE   p_price     LIKE ogb_file.ogb13    #單價(未折扣)                                                                           
-DEFINE   p_rate      LIKE ogb_file.ogb1006  #折扣率                                                                                 
-DEFINE   p_azi03     LIKE azi_file.azi03    #單價位數                                                                               
-DEFINE   l_price     LIKE ogb_file.ogb13    #單價(已折扣)                                                                           
-DEFINE   l_amount    LIKE ogb_file.ogb14    #金額                                                                                   
-                                                                                                                                    
-    IF cl_null(p_rate) THEN                                                                                                         
-       LET p_rate = 100                                                                                                             
-    END IF                                                                                                                          
-    LET l_price = cl_digcut(p_price*p_rate/100,p_azi03)                                                                             
-    LET l_amount= p_qty*l_price                                                                                                     
-    IF cl_null(l_amount) THEN                                                                                                       
-       LET l_amount = 0                                                                                                             
-    END IF                                                                                                                          
-    RETURN l_amount                                                                                                                 
-END FUNCTION                                                                                                                        
+FUNCTION t600_amount(p_qty,p_price,p_rate,p_azi03)
+DEFINE   p_qty       LIKE ogb_file.ogb12    #數量
+DEFINE   p_price     LIKE ogb_file.ogb13    #單價(未折扣)
+DEFINE   p_rate      LIKE ogb_file.ogb1006  #折扣率
+DEFINE   p_azi03     LIKE azi_file.azi03    #單價位數
+DEFINE   l_price     LIKE ogb_file.ogb13    #單價(已折扣)
+DEFINE   l_amount    LIKE ogb_file.ogb14    #金額
+
+    IF cl_null(p_rate) THEN
+       LET p_rate = 100
+    END IF
+    LET l_price = cl_digcut(p_price*p_rate/100,p_azi03)
+    LET l_amount= p_qty*l_price
+    IF cl_null(l_amount) THEN
+       LET l_amount = 0
+    END IF
+    RETURN l_amount
+END FUNCTION
 
 FUNCTION t600_chk_poz00()
   DEFINE l_exT    LIKE oax_file.oax01,
          l_oea904 LIKE oea_file.oea904,
          l_poz00  LIKE poz_file.poz00
 
- IF NOT cl_null(g_oga.oga16) THEN 
-    SELECT oea904 INTO l_oea904 
+ IF NOT cl_null(g_oga.oga16) THEN
+    SELECT oea904 INTO l_oea904
       FROM oea_file
      WHERE oea01 = g_oga.oga16
  ELSE
@@ -34877,49 +34892,49 @@ FUNCTION t600_chk_poz00()
      FOREACH t600_oea904 INTO l_oea904
        EXIT FOREACH
      END FOREACH
- END IF 
- 
- 
+ END IF
+
+
        IF NOT cl_null(l_oea904) THEN
            SELECT poz011 INTO l_poz00   #先得到流程為銷售或代採參數
              FROM poz_file
             WHERE poz01=l_oea904
            IF l_poz00 = '1' THEN  #銷售
-               LET l_exT = g_oax.oax01   
+               LET l_exT = g_oax.oax01
            ELSE
                LET l_exT = g_pod.pod01   #代採
            END IF
-       ELSE 
-           IF g_oga.oga09 ='4' THEN 
-               LET l_exT = g_oax.oax01   
+       ELSE
+           IF g_oga.oga09 ='4' THEN
+               LET l_exT = g_oax.oax01
            END IF
            IF g_oga.oga09 ='6' THEN
                LET l_exT = g_pod.pod01   #代採
            END IF
            IF g_oga.oga09 ='5' THEN      #出通單
-               LET l_exT = g_oax.oax01   
+               LET l_exT = g_oax.oax01
            END IF
-       END IF 
- 
+       END IF
+
     RETURN l_exT
 END FUNCTION
 
 FUNCTION t600_m2()
 DEFINE l_cnt LIKE type_file.chr1
    IF s_shut(0) THEN RETURN END IF
-   IF g_oga.oga01 IS NULL THEN RETURN END IF                                                                         
-   IF g_oga.ogaconf = 'X' THEN CALL cl_err('',9024,0) RETURN END IF  
-   IF g_argv0 MATCHES '[15]' THEN    
+   IF g_oga.oga01 IS NULL THEN RETURN END IF
+   IF g_oga.ogaconf = 'X' THEN CALL cl_err('',9024,0) RETURN END IF
+   IF g_argv0 MATCHES '[15]' THEN
       IF g_oga.ogaconf = 'Y' THEN
-         CALL cl_err('',9023,0) RETURN 
+         CALL cl_err('',9023,0) RETURN
       END IF
    END IF
-   IF g_argv0 MATCHES '[24689]' THEN  
+   IF g_argv0 MATCHES '[24689]' THEN
       IF g_oga.ogaconf = 'Y' THEN
-         CALL cl_err('',9023,0) RETURN 
+         CALL cl_err('',9023,0) RETURN
       END IF
       IF g_oga.ogapost = 'Y' THEN
-         CALL cl_err('','mfg0175',0) RETURN 
+         CALL cl_err('','mfg0175',0) RETURN
       END IF
    END IF
 
@@ -34927,109 +34942,109 @@ DEFINE l_cnt LIKE type_file.chr1
       LET g_cnt=0
       SELECT COUNT(*) INTO g_cnt FROM oga_file
        WHERE oga011 = g_oga.oga01
-         AND oga09 IN ('2','4','6')   
+         AND oga09 IN ('2','4','6')
          AND ogaconf != 'X'
       IF g_cnt > 0 THEN
          CALL cl_err('oga011!='':','axm-228',1)
-         RETURN 
+         RETURN
       END IF
    END IF
 
    IF g_oga.oga55 matches '[Ss]' THEN
        CALL cl_err('','apm-030',0)
-       RETURN 
+       RETURN
    END IF
-   LET l_cnt=0 
+   LET l_cnt=0
    SELECT COUNT(*) INTO l_cnt FROM ogb_file
-    WHERE ogb01=g_oga.oga01  
+    WHERE ogb01=g_oga.oga01
    IF l_cnt=0 THEN CALL cl_err('',-400,0) RETURN END IF
-   LET g_rec_b3=0                                                                                    
-   CALL t600_modify_rate()  
+   LET g_rec_b3=0
+   CALL t600_modify_rate()
 END FUNCTION
 
 FUNCTION t600_modify_rate()
-DEFINE p_row,p_col      LIKE type_file.num5                                                                                         
-DEFINE i  LIKE type_file.num5                                                                                                       
-DEFINE l_ogb_b    DYNAMIC ARRAY OF RECORD                                                                                          
-                   l_no         LIKE ogb_file.ogb03,                                                                                
-                   l_p_no       LIKE ogb_file.ogb04,                                                                                
-                   l_p_desc     LIKE ogb_file.ogb06,                                                                                
-                   l_koulv      LIKE ogb_file.ogb46,                                                                                
-                   l_koulv2     LIKE ogb_file.ogb46                                                                                 
-                END RECORD 
+DEFINE p_row,p_col      LIKE type_file.num5
+DEFINE i  LIKE type_file.num5
+DEFINE l_ogb_b    DYNAMIC ARRAY OF RECORD
+                   l_no         LIKE ogb_file.ogb03,
+                   l_p_no       LIKE ogb_file.ogb04,
+                   l_p_desc     LIKE ogb_file.ogb06,
+                   l_koulv      LIKE ogb_file.ogb46,
+                   l_koulv2     LIKE ogb_file.ogb46
+                END RECORD
 DEFINE l_ogb_t2 RECORD
-                   l_no       LIKE ogb_file.ogb03,                                                                                
-                   l_p_no     LIKE ogb_file.ogb04,                                                                                
-                   l_p_desc   LIKE ogb_file.ogb06,                                                                                
-                   l_koulv    LIKE ogb_file.ogb46,                                                                                
-                   l_koulv2   LIKE ogb_file.ogb46                                                                                 
-                END RECORD                                                                                                         
-DEFINE l_exit_sw     LIKE type_file.chr1                                                                                         
-DEFINE l_cnt         LIKE type_file.num5                                                                                                    
+                   l_no       LIKE ogb_file.ogb03,
+                   l_p_no     LIKE ogb_file.ogb04,
+                   l_p_desc   LIKE ogb_file.ogb06,
+                   l_koulv    LIKE ogb_file.ogb46,
+                   l_koulv2   LIKE ogb_file.ogb46
+                END RECORD
+DEFINE l_exit_sw     LIKE type_file.chr1
+DEFINE l_cnt         LIKE type_file.num5
 DEFINE l_no_b        LIKE ogb_file.ogb03
 DEFINE l_koulv2_b    LIKE ogb_file.ogb46
 DEFINE p_cmd         LIKE type_file.chr1
 DEFINE l_ogb44       LIKE ogb_file.ogb44
 
-   WHENEVER ERROR CONTINUE     
-                               
+   WHENEVER ERROR CONTINUE
+
    OPEN WINDOW t620_b_w WITH FORM "axm/42f/axmt410_b"
-      ATTRIBUTE (STYLE = g_win_style CLIPPED)                         
-   CALL cl_ui_locale('axmt410_b')                                   
+      ATTRIBUTE (STYLE = g_win_style CLIPPED)
+   CALL cl_ui_locale('axmt410_b')
 
    DROP TABLE ogb_b_tmp
    CREATE TEMP TABLE ogb_b_tmp
    (
     l_no     dec(5),
     l_koulv2 dec(5,2)
-    );                                                                                                                           
- WHILE TRUE                       
-  LET l_exit_sw = 'y'                                                                                                              
-   INPUT ARRAY l_ogb_b WITHOUT DEFAULTS FROM s_oeb_b.*                                                                             
-          ATTRIBUTE(COUNT=g_rec_b3,UNBUFFERED,                                                                    
-                    INSERT ROW=TRUE,DELETE ROW=TRUE,APPEND ROW=TRUE)                                                                
-                                                                                                                                    
-     BEFORE INPUT                                                                                                                   
-        IF g_rec_b3 != 0 THEN                                                                                                      
-           CALL fgl_set_arr_curr(i)                                                                                                 
-        END IF                                                                                                                      
-                                                                                                                                    
-     BEFORE ROW                                                                                                                     
-        LET i=ARR_CURR()       
+    );
+ WHILE TRUE
+  LET l_exit_sw = 'y'
+   INPUT ARRAY l_ogb_b WITHOUT DEFAULTS FROM s_oeb_b.*
+          ATTRIBUTE(COUNT=g_rec_b3,UNBUFFERED,
+                    INSERT ROW=TRUE,DELETE ROW=TRUE,APPEND ROW=TRUE)
+
+     BEFORE INPUT
+        IF g_rec_b3 != 0 THEN
+           CALL fgl_set_arr_curr(i)
+        END IF
+
+     BEFORE ROW
+        LET i=ARR_CURR()
         IF g_rec_b3>=i THEN
            LET p_cmd='u'
-           LET l_ogb_t2.*=l_ogb_b[i].*                                                                                             
-           BEGIN WORK                                                                                                               
+           LET l_ogb_t2.*=l_ogb_b[i].*
+           BEGIN WORK
            CALL cl_show_fld_cont()
-        END IF                                                                                                  
-     BEFORE INSERT                      
+        END IF
+     BEFORE INSERT
         LET p_cmd='a'
-        INITIALIZE l_ogb_t2.* TO NULL                                                                                            
-        CALL cl_show_fld_cont()                                                                                                     
-                                                                                                                                    
-     AFTER FIELD l_no                                                                                                               
-        IF NOT cl_null(l_ogb_b[i].l_no) THEN                                                                                      
-           IF l_ogb_b[i].l_no<=0  THEN                                                                                             
-              NEXT FIELD l_no                                                                                                       
-           ELSE                                                                                                                     
-              LET l_cnt=0          
-             SELECT COUNT(*) INTO l_cnt FROM ogb_file                                                                              
-               WHERE ogb01=g_oga.oga01 AND ogb03=l_ogb_b[i].l_no                                                    
-              IF l_cnt=0 THEN                                                                                                       
-                 CALL cl_err('','art-267',0)                                                                                        
-                 NEXT FIELD l_no                                                                                                    
+        INITIALIZE l_ogb_t2.* TO NULL
+        CALL cl_show_fld_cont()
+
+     AFTER FIELD l_no
+        IF NOT cl_null(l_ogb_b[i].l_no) THEN
+           IF l_ogb_b[i].l_no<=0  THEN
+              NEXT FIELD l_no
+           ELSE
+              LET l_cnt=0
+             SELECT COUNT(*) INTO l_cnt FROM ogb_file
+               WHERE ogb01=g_oga.oga01 AND ogb03=l_ogb_b[i].l_no
+              IF l_cnt=0 THEN
+                 CALL cl_err('','art-267',0)
+                 NEXT FIELD l_no
               END IF
-              LET l_ogb44=''   
+              LET l_ogb44=''
               SELECT ogb44 INTO l_ogb44 FROM ogb_file
-               WHERE ogb01=g_oga.oga01 AND ogb03=l_ogb_b[i].l_no     
+               WHERE ogb01=g_oga.oga01 AND ogb03=l_ogb_b[i].l_no
 #             IF l_ogb44 !='3' OR l_ogb44 != '4' THEN  #FUN-870007-mark
               IF l_ogb44 NOT MATCHES '[34]' THEN       #FUN-870007
                  CALL cl_err('','art-439',0)
-                 NEXT FIELD l_no 
-              END IF                                                                                                 
+                 NEXT FIELD l_no
+              END IF
            END IF
            IF l_ogb_b[i].l_no !=l_ogb_t2.l_no OR l_ogb_t2.l_no IS NULL THEN
-               LET l_cnt=0              
+               LET l_cnt=0
                SELECT COUNT(*) INTO l_cnt FROM ogb_b_tmp
                 WHERE l_no=l_ogb_b[i].l_no
                IF l_cnt > 0 THEN
@@ -35037,44 +35052,44 @@ DEFINE l_ogb44       LIKE ogb_file.ogb44
                   LET l_ogb_b[i].l_no=l_ogb_t2.l_no
                   NEXT FIELD l_no
                END IF
-            END IF 
-         END IF                                                                                                  
-         SELECT ogb04,ogb06,ogb46 
-           INTO l_ogb_b[i].l_p_no,l_ogb_b[i].l_p_desc,l_ogb_b[i].l_koulv                                    
-          FROM ogb_file 
-          WHERE ogb01=g_oga.oga01 AND ogb03=l_ogb_b[i].l_no 
-         IF SQLCA.sqlcode=100 THEN 
+            END IF
+         END IF
+         SELECT ogb04,ogb06,ogb46
+           INTO l_ogb_b[i].l_p_no,l_ogb_b[i].l_p_desc,l_ogb_b[i].l_koulv
+          FROM ogb_file
+          WHERE ogb01=g_oga.oga01 AND ogb03=l_ogb_b[i].l_no
+         IF SQLCA.sqlcode=100 THEN
             LET l_ogb_b[i].l_p_no=NULL
             LET l_ogb_b[i].l_p_desc=NULL
             LET l_ogb_b[i].l_koulv=NULL
-         END IF                                                                                                                  
-   AFTER FIELD l_koulv2                                                                                                             
-      IF NOT cl_null(l_ogb_b[i].l_koulv2) THEN                                                                                     
-         IF l_ogb_b[i].l_koulv2<=0 OR 
-            l_ogb_b[i].l_koulv2>=100  THEN 
-            CALL cl_err('','atm-070',0)                                                                                          
-            NEXT FIELD l_koulv2                                                                                                     
-         END IF              
-         IF l_ogb_b[i].l_koulv2=l_ogb_b[i].l_koulv THEN                                                                            
-            CALL cl_err('','art-270',0)                                                                                             
-            NEXT FIELD l_koulv2                                                                                                     
-         END IF                                                                                                                     
-      END IF                                                                                                                        
+         END IF
+   AFTER FIELD l_koulv2
+      IF NOT cl_null(l_ogb_b[i].l_koulv2) THEN
+         IF l_ogb_b[i].l_koulv2<=0 OR
+            l_ogb_b[i].l_koulv2>=100  THEN
+            CALL cl_err('','atm-070',0)
+            NEXT FIELD l_koulv2
+         END IF
+         IF l_ogb_b[i].l_koulv2=l_ogb_b[i].l_koulv THEN
+            CALL cl_err('','art-270',0)
+            NEXT FIELD l_koulv2
+         END IF
+      END IF
     BEFORE DELETE
          IF l_ogb_t2.l_no>0 AND l_ogb_t2.l_no IS NOT NULL THEN
             IF NOT cl_delb(0,0) THEN
                CANCEL DELETE
-            END IF   
-            DELETE FROM ogb_b_tmp WHERE l_no = l_ogb_t2.l_no                                                                       
-            IF SQLCA.sqlcode OR SQLCA.sqlerrd[3]=0 THEN                                                             
-               CALL cl_err3("del","ogb_b_tmp",g_oga.oga01,"",STATUS,"","",1)                                                       
+            END IF
+            DELETE FROM ogb_b_tmp WHERE l_no = l_ogb_t2.l_no
+            IF SQLCA.sqlcode OR SQLCA.sqlerrd[3]=0 THEN
+               CALL cl_err3("del","ogb_b_tmp",g_oga.oga01,"",STATUS,"","",1)
                ROLLBACK WORK
                CANCEL DELETE
             END IF
-            LET g_rec_b3=g_rec_b3-1  
-         END IF                                                                                                                
-         COMMIT WORK                                                                                                                            
-      ON ROW CHANGE 
+            LET g_rec_b3=g_rec_b3-1
+         END IF
+         COMMIT WORK
+      ON ROW CHANGE
          IF INT_FLAG THEN
             CALL cl_err('',9001,0)
             LET INT_FLAG=0
@@ -35088,78 +35103,78 @@ DEFINE l_ogb44       LIKE ogb_file.ogb44
 
 
 
-         UPDATE ogb_b_tmp SET l_no = l_ogb_b[i].l_no,                                                                              
-                            l_koulv2= l_ogb_b[i].l_koulv2                                                                          
-          WHERE l_no = l_ogb_t2.l_no AND l_koulv2=l_ogb_t2.l_koulv2        
-         IF SQLCA.sqlcode OR SQLCA.sqlerrd[3]=0 THEN                                                                             
-            CALL cl_err3("upd","ogb_b_tmp",g_oga.oga01,"",STATUS,"","",1)                                                        
+         UPDATE ogb_b_tmp SET l_no = l_ogb_b[i].l_no,
+                            l_koulv2= l_ogb_b[i].l_koulv2
+          WHERE l_no = l_ogb_t2.l_no AND l_koulv2=l_ogb_t2.l_koulv2
+         IF SQLCA.sqlcode OR SQLCA.sqlerrd[3]=0 THEN
+            CALL cl_err3("upd","ogb_b_tmp",g_oga.oga01,"",STATUS,"","",1)
          ELSE
             MESSAGE 'UPDATE O.K'
-            COMMIT WORK  
-         END IF            
-    AFTER INSERT                                                                                                                   
-        IF INT_FLAG THEN                                                                                                            
-           CALL cl_err('',9001,0)                                                                                                   
-           LET INT_FLAG = 0                                                                                                         
-           #CKP                                                                                                                     
-           CANCEL INSERT                                                                                                            
-        END IF               
+            COMMIT WORK
+         END IF
+    AFTER INSERT
+        IF INT_FLAG THEN
+           CALL cl_err('',9001,0)
+           LET INT_FLAG = 0
+           #CKP
+           CANCEL INSERT
+        END IF
         INSERT INTO ogb_b_tmp VALUES(l_ogb_b[i].l_no,l_ogb_b[i].l_koulv2)
-        IF SQLCA.sqlcode THEN                                                                                                      
-           CALL cl_err3("ins","ogb_b_tmp",g_oga.oga01,"",STATUS,"","",1)                                                  
-           CANCEL INSERT                                                                                                         
+        IF SQLCA.sqlcode THEN
+           CALL cl_err3("ins","ogb_b_tmp",g_oga.oga01,"",STATUS,"","",1)
+           CANCEL INSERT
         ELSE
            MESSAGE 'INSERT O.K'
            COMMIT WORK
-           LET g_rec_b3=g_rec_b3+1 
-        END IF                                                                                                                   
-      
-                                                                                                                  
-      AFTER ROW                                                                                                                     
-            LET i = ARR_CURR()                                                                                                      
-            IF INT_FLAG THEN                                                                                                        
-               CALL cl_err('',9001,0)                                                                                               
+           LET g_rec_b3=g_rec_b3+1
+        END IF
+
+
+      AFTER ROW
+            LET i = ARR_CURR()
+            IF INT_FLAG THEN
+               CALL cl_err('',9001,0)
                LET INT_FLAG = 0
                IF p_cmd='u' THEN
-                  LET l_ogb_b[i].*=l_ogb_t2.* 
-               END IF                                                                                                            
-               ROLLBACK WORK                                                                                                        
-               EXIT INPUT                                                                                                           
-            END IF 
-            COMMIT WORK                                                                                                           
-                                                                                                                                    
-     ON IDLE g_idle_seconds                                                                                                         
-       CALL cl_on_idle()                                                                                                            
-       CONTINUE INPUT                                                                                                               
-                                                                                                                                    
-   END INPUT                                                                                                                        
-                                                                                                                                    
-  IF l_exit_sw='y' THEN EXIT WHILE ELSE CONTINUE WHILE END IF                                                                       
-  END WHILE                                                                                                                         
-                                                                                                                                    
-  CLOSE WINDOW t620_b_w                 
-  IF INT_FLAG THEN                                                                                                                 
-      LET INT_FLAG = 0                                                                                                              
-      RETURN                                                                                                                        
+                  LET l_ogb_b[i].*=l_ogb_t2.*
+               END IF
+               ROLLBACK WORK
+               EXIT INPUT
+            END IF
+            COMMIT WORK
+
+     ON IDLE g_idle_seconds
+       CALL cl_on_idle()
+       CONTINUE INPUT
+
+   END INPUT
+
+  IF l_exit_sw='y' THEN EXIT WHILE ELSE CONTINUE WHILE END IF
+  END WHILE
+
+  CLOSE WINDOW t620_b_w
+  IF INT_FLAG THEN
+      LET INT_FLAG = 0
+      RETURN
    END IF
-  LET g_sql="SELECT * FROM ogb_b_tmp ORDER BY l_no "                                                                               
-  PREPARE sele_prep1 FROM g_sql                                                                                                    
-  DECLARE sele_decl1 CURSOR FOR sele_prep1                                                                                         
-  FOREACH sele_decl1 INTO l_no_b,l_koulv2_b                                                                                         
-     IF SQLCA.sqlcode THEN                                                                                                          
-        CALL cl_err('foreach:',SQLCA.sqlcode,1)                                                                                     
-        EXIT FOREACH                                                                                                                
+  LET g_sql="SELECT * FROM ogb_b_tmp ORDER BY l_no "
+  PREPARE sele_prep1 FROM g_sql
+  DECLARE sele_decl1 CURSOR FOR sele_prep1
+  FOREACH sele_decl1 INTO l_no_b,l_koulv2_b
+     IF SQLCA.sqlcode THEN
+        CALL cl_err('foreach:',SQLCA.sqlcode,1)
+        EXIT FOREACH
      END IF
-     UPDATE ogb_file SET ogb46=l_koulv2_b WHERE ogb01=g_oga.oga01 AND ogb03=l_no_b  
+     UPDATE ogb_file SET ogb46=l_koulv2_b WHERE ogb01=g_oga.oga01 AND ogb03=l_no_b
      LET l_no_b=''
-     LET l_koulv2_b=''                                                  
-  END FOREACH             
-                     
+     LET l_koulv2_b=''
+  END FOREACH
+
 END FUNCTION
 FUNCTION t600_fetch_price(p_cmd)
 DEFINE p_cmd           LIKE type_file.chr1
-DEFINE l_ogb05         LIKE ogb_file.ogb05                                                                                          
-DEFINE l_occ930        LIKE occ_file.occ930                                                                                        
+DEFINE l_ogb05         LIKE ogb_file.ogb05
+DEFINE l_occ930        LIKE occ_file.occ930
 DEFINE lc_type         LIKE type_file.chr1
 DEFINE li_ret          LIKE type_file.num5  #No.FUN-870007
 DEFINE l_rtz04         LIKE rtz_file.rtz04  #FUN-C10040
@@ -35209,16 +35224,16 @@ DEFINE l_rtz06         LIKE rtz_file.rtz06  #FUN-C10040
          RETURNING li_ret,g_ogb[l_ac].ogb13
          IF NOT li_ret THEN
             LET g_ogb[l_ac].ogb13 = 0
-         ELSE 
+         ELSE
             LET g_ogb[l_ac].ogb47 = 0
          END IF
       END IF
    END IF
-#FUN-AB0061 -----------add start----------------                             
+#FUN-AB0061 -----------add start----------------
    IF cl_null(g_ogb[l_ac].ogb37) OR g_ogb[l_ac].ogb37 = 0 THEN
       LET g_ogb[l_ac].ogb37 = g_ogb[l_ac].ogb13
-   END IF                                             
-#FUN-AB0061 -----------add end----------------   
+   END IF
+#FUN-AB0061 -----------add end----------------
    #FUN-C10040 ----add---begin ---
    IF g_azw.azw04 = '2' AND NOT s_industry("slk") THEN  #TQC-C20418 ADD not slk
       CALL t620_sub(g_ogb[l_ac].ogb04,l_rtz04,g_oga.oga213,g_ogb[l_ac].ogb917,g_ogb[l_ac].ogb13,t_azi04)
@@ -35226,15 +35241,15 @@ DEFINE l_rtz06         LIKE rtz_file.rtz06  #FUN-C10040
    ELSE
    #FUN-C10040 ----add---end -----
       IF g_oga.oga213 = 'N' THEN
-         LET g_ogb[l_ac].ogb14 =t600_amount(g_ogb[l_ac].ogb917,g_ogb[l_ac].ogb13,g_ogb[l_ac].ogb1006,t_azi03) 
-         CALL cl_digcut(g_ogb[l_ac].ogb14,t_azi04)  RETURNING g_ogb[l_ac].ogb14  
+         LET g_ogb[l_ac].ogb14 =t600_amount(g_ogb[l_ac].ogb917,g_ogb[l_ac].ogb13,g_ogb[l_ac].ogb1006,t_azi03)
+         CALL cl_digcut(g_ogb[l_ac].ogb14,t_azi04)  RETURNING g_ogb[l_ac].ogb14
          LET g_ogb[l_ac].ogb14t= g_ogb[l_ac].ogb14*(1+ g_oga.oga211/100)
          CALL cl_digcut(g_ogb[l_ac].ogb14t,t_azi04) RETURNING g_ogb[l_ac].ogb14t
       ELSE
-         LET g_ogb[l_ac].ogb14t=t600_amount(g_ogb[l_ac].ogb917,g_ogb[l_ac].ogb13,g_ogb[l_ac].ogb1006,t_azi03)  
+         LET g_ogb[l_ac].ogb14t=t600_amount(g_ogb[l_ac].ogb917,g_ogb[l_ac].ogb13,g_ogb[l_ac].ogb1006,t_azi03)
          CALL cl_digcut(g_ogb[l_ac].ogb14t,t_azi04) RETURNING g_ogb[l_ac].ogb14t
          LET g_ogb[l_ac].ogb14 = g_ogb[l_ac].ogb14t/(1+ g_oga.oga211/100)
-        CALL cl_digcut(g_ogb[l_ac].ogb14,t_azi04)  RETURNING g_ogb[l_ac].ogb14 
+        CALL cl_digcut(g_ogb[l_ac].ogb14,t_azi04)  RETURNING g_ogb[l_ac].ogb14
       END IF
    END IF  #FUN-C10040 add
 END FUNCTION
@@ -35252,21 +35267,21 @@ FUNCTION t600_set_required()
 END FUNCTION
 #No.FUN-9C0073 -----------------By chenls 10/01/18
 #No.FUN-A20022 -----------------By cockroach 10/02/05
-FUNCTION t600_oga95_amount()                 
+FUNCTION t600_oga95_amount()
   DEFINE l_ogb      DYNAMIC ARRAY OF RECORD
                         ogb04     LIKE ogb_file.ogb04,
-                        ogb14t    LIKE ogb_file.ogb14t 
+                        ogb14t    LIKE ogb_file.ogb14t
                     END RECORD
-  DEFINE l_i          LIKE type_file.num5    
+  DEFINE l_i          LIKE type_file.num5
   DEFINE i            LIKE type_file.num5
-  DEFINE l_flag       LIKE type_file.chr1 
-  DEFINE l_amount     LIKE oga_file.oga95 
-  
+  DEFINE l_flag       LIKE type_file.chr1
+  DEFINE l_amount     LIKE oga_file.oga95
+
    DECLARE t600_point CURSOR FOR
-           SELECT ogb04,ogb14t 
-             FROM ogb_file 
+           SELECT ogb04,ogb14t
+             FROM ogb_file
             WHERE ogb01 = g_oga.oga01
-              AND ogb1005 = '1'    #MOD-B10154  
+              AND ogb1005 = '1'    #MOD-B10154
    CALL l_ogb.clear()
    LET i = 1
    LET l_i = 1
@@ -35276,32 +35291,32 @@ FUNCTION t600_oga95_amount()
    END FOREACH
    CALL l_ogb.deleteElement(i)
    LET l_i=(i-1)
- 
+
    CALL s_point(g_oga.oga87,l_ogb,g_oga.oga02) RETURNING l_flag,l_amount      #FUN-C30192 add g_oga.oga02
    IF NOT l_flag THEN
-     RETURN 0  
-   ELSE 
-     RETURN l_amount	
-   END IF	  
-   
+     RETURN 0
+   ELSE
+     RETURN l_amount
+   END IF
+
 END FUNCTION
 #No.FUN-A20022 ADD END-----------------------------------------
 #FUN-A70138
 
 #FUN-A80081--Add--Begin
 FUNCTION t600_g_b8()
-   DEFINE l_sql           STRING   
-   DEFINE p_cmd           LIKE type_file.chr1    
+   DEFINE l_sql           STRING
+   DEFINE p_cmd           LIKE type_file.chr1
    DEFINE l_amt,l_net     LIKE oof_file.oof07
-   DEFINE l_lock_sw       LIKE type_file.chr1     
-   DEFINE l_modify_flag   LIKE type_file.chr1   
-   DEFINE g_temp          STRING  
+   DEFINE l_lock_sw       LIKE type_file.chr1
+   DEFINE l_modify_flag   LIKE type_file.chr1
+   DEFINE g_temp          STRING
    DEFINE
-          l_allow_insert  LIKE type_file.num5,  
-          l_allow_delete  LIKE type_file.num5,   
-          l_allow_update  LIKE type_file.num5    
-   DEFINE l_rec_ape_b     LIKE type_file.num10    
-   DEFINE l_n,l_i         LIKE type_file.num10    
+          l_allow_insert  LIKE type_file.num5,
+          l_allow_delete  LIKE type_file.num5,
+          l_allow_update  LIKE type_file.num5
+   DEFINE l_rec_ape_b     LIKE type_file.num10
+   DEFINE l_n,l_i         LIKE type_file.num10
    DEFINE i               LIKE type_file.num5
    DEFINE li_result       LIKE type_file.num5
    DEFINE l_cnt           LIKE type_file.num5
@@ -35309,7 +35324,7 @@ FUNCTION t600_g_b8()
    DEFINE l_count         LIKE type_file.num5
    DEFINE l_flag          LIKE type_file.chr1
 #TQC-B20053 -------------STA
-#  DEFINE l_chk_res       LIKE type_file.num5         
+#  DEFINE l_chk_res       LIKE type_file.num5
 #  DEFINE l_b2            LIKE cob_file.cob08
 #  DEFINE l_ima35         LIKE ima_file.ima35
 #  DEFINE l_ima36         LIKE ima_file.ima36
@@ -35327,7 +35342,7 @@ FUNCTION t600_g_b8()
 
    LET l_count = 0
    LET l_flag = 'N'
-   SELECT COUNT(*) INTO l_count 
+   SELECT COUNT(*) INTO l_count
      FROM ogb_file
     WHERE ogb01 = g_oga.oga01
    IF cl_null(g_oga.oga011) AND cl_null(g_oga.oga16) THEN
@@ -35338,35 +35353,35 @@ FUNCTION t600_g_b8()
    IF l_flag = 'N' THEN
       RETURN
    END IF
-   
+
    IF NOT cl_confirm('axm-765') THEN
       RETURN
-   END IF           
-  
+   END IF
+
 #FUN-C10040------add-----str-----
    SELECT rtz04,rtz06 INTO l_rtz04,l_rtz06
      FROM rtz_file
     WHERE rtz01 = g_oga.ogaplant
 #FUN-C10040------add-----end-----
    OPEN WINDOW t600_axm_w AT 12,2 WITH FORM "axm/42f/axmt600_c"
-         ATTRIBUTE (STYLE = g_win_style CLIPPED) 
- 
+         ATTRIBUTE (STYLE = g_win_style CLIPPED)
+
     CALL cl_ui_locale("axmt600_c")
 
    CALL g_ogb1.clear()
    LET g_cnt =1
- 
+
 #   LET l_sql ="SELECT * ",
 #              "  FROM temp table"
-#   PREPARE t600_ogb_pb_bcl FROM l_sql                                                                                                       
+#   PREPARE t600_ogb_pb_bcl FROM l_sql
 #   DECLARE ogb_curs_bcl CURSOR FOR t600_ogb_pb_bcl
-   
+
 #  LET l_sql ="SELECT tmp_ogb04,'','',tmp_ogb09,tmp_ogb091,tmp_ogb092,'',tc_qty ",
 #             "  FROM temp table",
-#             " WHERE tmp_ogb04 = ? "	
-#  PREPARE t600_ogb_pb_bcl_1 FROM l_sql                                                                                                       
-#  DECLARE ogb_curs_bcl_1 CURSOR FOR t600_ogb_pb_bcl_1   
-   
+#             " WHERE tmp_ogb04 = ? "
+#  PREPARE t600_ogb_pb_bcl_1 FROM l_sql
+#  DECLARE ogb_curs_bcl_1 CURSOR FOR t600_ogb_pb_bcl_1
+
 #   LET l_sql ="SELECT * ",
 #              "  FROM oea_file,oeb_file",
 #              " WHERE oeb04 = ?",
@@ -35381,22 +35396,22 @@ FUNCTION t600_g_b8()
 #              "   AND oeaconf = 'Y'",
 #              "   AND oeb12-oeb24+oeb25 > 0",
 #              " ORDER BY oeb15"
-#   PREPARE t600_ogb_pb FROM l_sql                                                                                                       
+#   PREPARE t600_ogb_pb FROM l_sql
 #   DECLARE ogb_curs CURSOR FOR t600_ogb_pb
- 
-   DROP TABLE tmp_ogb_file    
-   
-   CREATE TEMP TABLE tmp_ogb_file( 
-    tmp_ogb04      LIKE ogb_file.ogb04,            
-    tmp_ogb09      LIKE ogb_file.ogb09,        
-    tmp_ogb091     LIKE ogb_file.ogb091, 
+
+   DROP TABLE tmp_ogb_file
+
+   CREATE TEMP TABLE tmp_ogb_file(
+    tmp_ogb04      LIKE ogb_file.ogb04,
+    tmp_ogb09      LIKE ogb_file.ogb09,
+    tmp_ogb091     LIKE ogb_file.ogb091,
     tmp_ogb092     LIKE ogb_file.ogb092,
     tc_qty        LIKE type_file.num5)
 
-   IF STATUS THEN CALL cl_err('create tmp',STATUS,0) 
+   IF STATUS THEN CALL cl_err('create tmp',STATUS,0)
       CALL cl_used(g_prog,g_time,2) RETURNING g_time
-      EXIT PROGRAM 
-   END IF 
+      EXIT PROGRAM
+   END IF
 
    CALL s_showmsg_init()
 
@@ -35405,40 +35420,40 @@ FUNCTION t600_g_b8()
    LET l_allow_delete = cl_detail_input_auth("delete")
 
    INPUT ARRAY g_ogb1 WITHOUT DEFAULTS FROM s_ogb1.*
-         ATTRIBUTE(COUNT=l_rec_ape_b,MAXCOUNT=g_max_rec,UNBUFFERED,             
+         ATTRIBUTE(COUNT=l_rec_ape_b,MAXCOUNT=g_max_rec,UNBUFFERED,
                    INSERT ROW=l_allow_insert,DELETE ROW=l_allow_delete,APPEND ROW=l_allow_insert)
- 
+
       BEFORE INSERT
          LET l_ac1 = ARR_CURR()
          LET p_cmd='a'
          INITIALIZE g_ogb1[l_ac1].* TO NULL
          LET g_ogb1_t.* = g_ogb1[l_ac1].*
          NEXT FIELD ogb04
- 
+
       AFTER INSERT
          IF INT_FLAG THEN
             CALL cl_err('',9001,0)
             LET INT_FLAG = 0
             CANCEL INSERT
          END IF
-         INSERT INTO tmp_ogb_file(tmp_ogb04,tmp_ogb09,tmp_ogb091,tmp_ogb092,tc_qty) 
+         INSERT INTO tmp_ogb_file(tmp_ogb04,tmp_ogb09,tmp_ogb091,tmp_ogb092,tc_qty)
           VALUES(g_ogb1[l_ac1].ogb04,g_ogb1[l_ac1].ogb09,g_ogb1[l_ac1].ogb091,
-                 g_ogb1[l_ac1].ogb092,g_ogb1[l_ac1].qty) 
+                 g_ogb1[l_ac1].ogb092,g_ogb1[l_ac1].qty)
          IF SQLCA.sqlcode THEN
-            CALL cl_err3("ins","tmp_ogb_file",g_ogb1[l_ac1].ogb04,g_ogb1[l_ac1].ogb09,SQLCA.sqlcode,"","ins tmp_ogb_file:",1)  
+            CALL cl_err3("ins","tmp_ogb_file",g_ogb1[l_ac1].ogb04,g_ogb1[l_ac1].ogb09,SQLCA.sqlcode,"","ins tmp_ogb_file:",1)
             LET g_success = 'N'
             CANCEL INSERT
          ELSE
             LET l_rec_ape_b = l_rec_ape_b + 1
             MESSAGE "insert ok"
             DISPLAY l_rec_ape_b TO FORMONLY.cnk
-         END IF 
- 
+         END IF
+
       BEFORE INPUT
          IF l_rec_ape_b != 0 THEN
             CALL fgl_set_arr_curr(l_ac1)
          END IF
- 
+
       BEFORE ROW
          LET p_cmd = ''
          LET l_ac1 = ARR_CURR()
@@ -35446,17 +35461,17 @@ FUNCTION t600_g_b8()
          IF l_rec_ape_b >= l_ac1 THEN
             LET p_cmd='u'
             LET g_ogb1_t.* = g_ogb1[l_ac1].*
-           #OPEN ogb_curs_bcl_1 USING g_ogb1[l_ac1].ogb04                                                                          
-           #IF STATUS THEN                                                                                                          
-           #   CALL cl_err("OPEN ogb_curs_bcl_1:", STATUS, 1)                                                                             
-           #   LET l_lock_sw = "Y"                                                                                                  
-           #ELSE                                                                                                                    
-           #   FETCH ogb_curs_bcl_1 INTO g_ogb1[l_ac1].*                                                                                    
-           #   IF SQLCA.sqlcode THEN                                                                                                
-           #      CALL cl_err(g_ogb1[l_ac1].ogb04,SQLCA.sqlcode,1)                                                                      
-           #      LET l_lock_sw = "Y"                                                                                               
+           #OPEN ogb_curs_bcl_1 USING g_ogb1[l_ac1].ogb04
+           #IF STATUS THEN
+           #   CALL cl_err("OPEN ogb_curs_bcl_1:", STATUS, 1)
+           #   LET l_lock_sw = "Y"
+           #ELSE
+           #   FETCH ogb_curs_bcl_1 INTO g_ogb1[l_ac1].*
+           #   IF SQLCA.sqlcode THEN
+           #      CALL cl_err(g_ogb1[l_ac1].ogb04,SQLCA.sqlcode,1)
+           #      LET l_lock_sw = "Y"
            #   END IF
-           #END IF        
+           #END IF
          END IF
 
 
@@ -35480,11 +35495,11 @@ FUNCTION t600_g_b8()
            	  LET g_ogb1[l_ac1].ima021 = NULL
            	  SELECT ima02,ima021 INTO g_ogb1[l_ac1].ima02,g_ogb1[l_ac1].ima021
            	    FROM ima_file
-           	   WHERE ima01 = g_ogb1[l_ac1].ogb04    
-           END IF    
-         END IF     
+           	   WHERE ima01 = g_ogb1[l_ac1].ogb04
+           END IF
+         END IF
 #TQC-B20053 ------------STA
-#        CALL t600_check_ogb04('ogb04',l_ac,p_cmd) RETURNING         
+#        CALL t600_check_ogb04('ogb04',l_ac,p_cmd) RETURNING
 #                l_chk_res,g_buf,g_buf1,l_b2,l_ima35,l_ima36
 #          IF NOT l_chk_res THEN
 #             NEXT FIELD ogb04
@@ -35493,7 +35508,7 @@ FUNCTION t600_g_b8()
 
 #FUN-BC0064------add-----str------
         IF NOT cl_null(g_ogb1[l_ac1].ogb04) THEN
-           IF p_cmd = 'a' OR (p_cmd ='u' AND g_ogb1[l_ac1].ogb04 != g_ogb_t.ogb04) THEN 
+           IF p_cmd = 'a' OR (p_cmd ='u' AND g_ogb1[l_ac1].ogb04 != g_ogb_t.ogb04) THEN
               IF g_azw.azw04 = '2' THEN
                 #MOD-C30316-----mark---str---
                 #CALL t600_check_ogb04_sal(g_ogb1[l_ac1].ogb04)      #判断当前业态是否为零售，否则不可销售券产品
@@ -35524,15 +35539,15 @@ FUNCTION t600_g_b8()
                    FROM ima_file
                  #WHERE ima01 = g_ogb[l_ac].ogb04                #TQC-C70204
                   WHERE ima01 = g_ogb[l_ac1].ogb04               #TQC-C70204
-                 IF l_ima154 = 'Y' THEN #MOD-C30576 add 
+                 IF l_ima154 = 'Y' THEN #MOD-C30576 add
                 #MOD-C30576 add END
                    CALL cl_err('','axm-681',0)
                    NEXT FIELD ogb04
                  END IF  #MOD-C30576 add
               END IF
-           END IF 
-        END IF 
-#FUN-BC0064------add-----end------ 
+           END IF
+        END IF
+#FUN-BC0064------add-----end------
         AFTER FIELD ogb09
            IF NOT t600_chk_ogb09_1() THEN
               NEXT FIELD CURRENT
@@ -35540,23 +35555,23 @@ FUNCTION t600_g_b8()
 
         AFTER FIELD ogb092
            IF NOT t600_chk_ogb092_1() THEN
-              NEXT FIELD ogb09  
+              NEXT FIELD ogb09
            END IF
        AFTER FIELD ogb091
           CASE t600_chk_ogb91_1()
              WHEN "ogb09" NEXT FIELD ogb09
              WHEN "ogb12" NEXT FIELD ogb12
-          END CASE 
-          
+          END CASE
+
        AFTER FIELD qty
           IF cl_null(g_ogb1[l_ac1].qty) THEN
              LET g_ogb1[l_ac1].qty = 0
-          END IF   
+          END IF
           IF g_ogb1[l_ac1].qty <= 0 THEN
              NEXT FIELD qty
-          END IF             
+          END IF
 
-        BEFORE DELETE                          
+        BEFORE DELETE
            IF NOT cl_null(g_ogb1[l_ac1].ogb04) THEN
               IF NOT cl_delb(0,0) THEN
                  CANCEL DELETE
@@ -35564,13 +35579,13 @@ FUNCTION t600_g_b8()
               DELETE FROM tmp_ogb_file
                WHERE tmp_ogb04 = g_ogb1[l_ac1].ogb04
               IF SQLCA.sqlcode THEN
-                 CALL cl_err3("del","tmp_ogb_file",g_ogb1[l_ac1].ogb04,'',SQLCA.sqlcode,"","",1)  
+                 CALL cl_err3("del","tmp_ogb_file",g_ogb1[l_ac1].ogb04,'',SQLCA.sqlcode,"","",1)
                  CANCEL DELETE
               END IF
               LET l_rec_ape_b = l_rec_ape_b - 1
               MESSAGE "delete ok"
            END IF
- 
+
       ON ROW CHANGE
           IF INT_FLAG THEN
              CALL cl_err('',9001,0)
@@ -35586,18 +35601,18 @@ FUNCTION t600_g_b8()
              UPDATE tmp_ogb_file SET tmp_ogb04 = g_ogb1[l_ac1].ogb04,
                                     tmp_ogb09 = g_ogb1[l_ac1].ogb09,
                                     tmp_ogb091 = g_ogb1[l_ac1].ogb091,
-                                    tmp_ogb092 = g_ogb1[l_ac1].ogb092, 
-                                    tc_qty = g_ogb1[l_ac1].qty                                 
+                                    tmp_ogb092 = g_ogb1[l_ac1].ogb092,
+                                    tc_qty = g_ogb1[l_ac1].qty
              WHERE tmp_ogb04 = g_ogb1_t.ogb04
              IF STATUS OR SQLCA.SQLCODE THEN
-                CALL cl_err3("upd","tmp_ogb_file",g_ogb1_t.ogb04,'',SQLCA.sqlcode,"","upd ape:",1)   
+                CALL cl_err3("upd","tmp_ogb_file",g_ogb1_t.ogb04,'',SQLCA.sqlcode,"","upd ape:",1)
                 LET g_success = 'N'
                 LET g_ogb1[l_ac1].* = g_ogb1_t.*
-             ELSE 
-                MESSAGE "update ok"   
-             END IF 
+             ELSE
+                MESSAGE "update ok"
+             END IF
           END IF
-         
+
       ON ACTION CONTROLP
            CASE
                  WHEN INFIELD(ogb04)
@@ -35605,16 +35620,16 @@ FUNCTION t600_g_b8()
 #                     CALL cl_init_qry_var()
 #                     LET g_qryparam.form ="q_ima20"
 #                     CALL cl_create_qry() RETURNING g_ogb1[l_ac1].ogb04
-                      CALL q_sel_ima(FALSE, "q_ima20","","","","","","","",'' ) 
-                       RETURNING g_ogb1[l_ac1].ogb04  
+                      CALL q_sel_ima(FALSE, "q_ima20","","","","","","","",'' )
+                       RETURNING g_ogb1[l_ac1].ogb04
 #FUN-AA0059---------mod------------end-----------------
                       DISPLAY BY NAME g_ogb1[l_ac1].ogb04
                 WHEN INFIELD(ogb09)
                     IF g_azw.azw04='2' THEN
                        CALL q_img42(FALSE,TRUE,g_ogb1[l_ac1].ogb04,'',
                              '','','A','1',g_oga.ogaplant)
-                        RETURNING g_ogb1[l_ac1].ogb09,g_ogb1[l_ac1].ogb091,                                                       
-                                  g_ogb1[l_ac1].ogb092   
+                        RETURNING g_ogb1[l_ac1].ogb09,g_ogb1[l_ac1].ogb091,
+                                  g_ogb1[l_ac1].ogb092
                     ELSE
                       #FUN-C30300---begin
                       LET g_ima906 = NULL
@@ -35629,22 +35644,22 @@ FUNCTION t600_g_b8()
                           CALL q_img4(FALSE,TRUE,g_ogb1[l_ac1].ogb04,'','','','A')
                                  RETURNING g_ogb1[l_ac1].ogb09,g_ogb1[l_ac1].ogb091,g_ogb1[l_ac1].ogb092
                       END IF #FUN-C30300
-                    END IF 
+                    END IF
                      IF INT_FLAG THEN
                         LET INT_FLAG = 0
                      END IF
-                     
+
                      DISPLAY BY NAME g_ogb1[l_ac1].ogb09
                      DISPLAY BY NAME g_ogb1[l_ac1].ogb091
                      DISPLAY BY NAME g_ogb1[l_ac1].ogb092
                      NEXT FIELD ogb09
 
                  WHEN INFIELD(ogb091)
-                     IF g_azw.azw04='2' THEN                                                                                        
-                        CALL q_img42(FALSE,TRUE,g_ogb1[l_ac1].ogb04,'',                                               
-                              '','','A','1',g_oga.ogaplant)                                          
-                        RETURNING g_ogb1[l_ac1].ogb09,g_ogb1[l_ac1].ogb091,                                                             
-                                        g_ogb1[l_ac1].ogb092                                                                          
+                     IF g_azw.azw04='2' THEN
+                        CALL q_img42(FALSE,TRUE,g_ogb1[l_ac1].ogb04,'',
+                              '','','A','1',g_oga.ogaplant)
+                        RETURNING g_ogb1[l_ac1].ogb09,g_ogb1[l_ac1].ogb091,
+                                        g_ogb1[l_ac1].ogb092
                      ELSE
                         #FUN-C30300---begin
                         LET g_ima906 = NULL
@@ -35658,22 +35673,22 @@ FUNCTION t600_g_b8()
                         #FUN-C30300---end
                            CALL q_img4(FALSE,TRUE,g_ogb1[l_ac1].ogb04,'','','','A')
                                  RETURNING g_ogb1[l_ac1].ogb09,g_ogb1[l_ac1].ogb091,g_ogb1[l_ac1].ogb092
-                        END IF   #FUN-C30300      
-                     END IF  
+                        END IF   #FUN-C30300
+                     END IF
                      IF INT_FLAG THEN
                         LET INT_FLAG = 0
                      END IF
                      DISPLAY BY NAME g_ogb1[l_ac1].ogb09
                      DISPLAY BY NAME g_ogb1[l_ac1].ogb091
                      DISPLAY BY NAME g_ogb1[l_ac1].ogb092
-                     NEXT FIELD ogb091     
-                     
+                     NEXT FIELD ogb091
+
                  WHEN INFIELD(ogb092)
-                     IF g_azw.azw04='2' THEN                                                                                        
-                        CALL q_img42(FALSE,TRUE,g_ogb1[l_ac1].ogb04,'',                                               
-                              '','','A','1',g_oga.ogaplant)                                          
-                        RETURNING g_ogb1[l_ac1].ogb09,g_ogb1[l_ac1].ogb091,                                                             
-                                        g_ogb1[l_ac1].ogb092                                                                          
+                     IF g_azw.azw04='2' THEN
+                        CALL q_img42(FALSE,TRUE,g_ogb1[l_ac1].ogb04,'',
+                              '','','A','1',g_oga.ogaplant)
+                        RETURNING g_ogb1[l_ac1].ogb09,g_ogb1[l_ac1].ogb091,
+                                        g_ogb1[l_ac1].ogb092
                      ELSE
                         #FUN-C30300---begin
                         LET g_ima906 = NULL
@@ -35688,7 +35703,7 @@ FUNCTION t600_g_b8()
                            CALL q_img4(FALSE,TRUE,g_ogb1[l_ac1].ogb04,'','','','A')
                                     RETURNING g_ogb1[l_ac1].ogb09,g_ogb1[l_ac1].ogb091,g_ogb1[l_ac1].ogb092
                         END IF #FUN-C30300
-                     END IF  
+                     END IF
                      IF INT_FLAG THEN
                         LET INT_FLAG = 0
                      END IF
@@ -35697,13 +35712,13 @@ FUNCTION t600_g_b8()
                      DISPLAY BY NAME g_ogb1[l_ac1].ogb092
                      NEXT FIELD ogb092
            END CASE
- 
+
       AFTER ROW
           LET l_ac1 = ARR_CURR()
           SELECT img09 INTO g_ogb1[l_ac1].img09
             FROM img_file
-           WHERE img01=g_ogb1[l_ac1].ogb04 AND img02=g_ogb1[l_ac1].ogb09 
-             AND img03=g_ogb1[l_ac1].ogb091 AND img04=g_ogb1[l_ac1].ogb092          
+           WHERE img01=g_ogb1[l_ac1].ogb04 AND img02=g_ogb1[l_ac1].ogb09
+             AND img03=g_ogb1[l_ac1].ogb091 AND img04=g_ogb1[l_ac1].ogb092
           IF INT_FLAG THEN
              CALL cl_err('',9001,0)
              LET INT_FLAG = 0
@@ -35713,48 +35728,48 @@ FUNCTION t600_g_b8()
              LET g_success = 'N'
              EXIT INPUT
           END IF
-              
- 
+
+
       ON IDLE g_idle_seconds
          CALL cl_on_idle()
          CONTINUE INPUT
- 
-      ON ACTION about         
-         CALL cl_about()      
- 
-      ON ACTION help          
-         CALL cl_show_help()  
- 
-      ON ACTION controlg      
-         CALL cl_cmdask()     
-  
-      ON ACTION controls                                                                                             
-         CALL cl_set_head_visible("","AUTO")   
- 
+
+      ON ACTION about
+         CALL cl_about()
+
+      ON ACTION help
+         CALL cl_show_help()
+
+      ON ACTION controlg
+         CALL cl_cmdask()
+
+      ON ACTION controls
+         CALL cl_set_head_visible("","AUTO")
+
    END INPUT
 
    IF INT_FLAG THEN
       LET g_success='N'
       LET INT_FLAG = 0
    END IF
-  
+
    IF cl_confirm('axm-764') THEN
-      CALL ogb_ins_1()          
+      CALL ogb_ins_1()
    END IF
-    
+
    CLOSE WINDOW t600_axm_w
 
-END FUNCTION 
+END FUNCTION
 
 FUNCTION t600_chk_ogb09_1()
-  DEFINE l_slip     LIKE oay_file.oayslip   
-  DEFINE l_smyware  LIKE smy_file.smyware   
+  DEFINE l_slip     LIKE oay_file.oayslip
+  DEFINE l_smyware  LIKE smy_file.smyware
   #FUN-C20002--start add---------------------
   DEFINE l_ima154   LIKE ima_file.ima154
   DEFINE l_rcj03    LIKE rcj_file.rcj03
   DEFINE l_rtz07    LIKE rtz_file.rtz07
   DEFINE l_rtz08    LIKE rtz_file.rtz08
-  #FUN-C20002--end add----------------------- 
+  #FUN-C20002--end add-----------------------
 
     IF NOT cl_null(g_ogb1[l_ac1].ogb09) THEN
        #FUN-C20002--start add-------------------------------------------
@@ -35802,10 +35817,10 @@ FUNCTION t600_chk_ogb09_1()
        #No.FUN-AA0048  --Begin
        #IF g_azw.azw04= '2' THEN
        #    LET g_cnt =0
-       #    SELECT COUNT(*) INTO g_cnt FROM imd_file 
-       #     WHERE imd01=g_ogb1[l_ac1].ogb09 
+       #    SELECT COUNT(*) INTO g_cnt FROM imd_file
+       #     WHERE imd01=g_ogb1[l_ac1].ogb09
        #       AND imd20=g_plant
-       #    IF g_cnt=0 THEN 
+       #    IF g_cnt=0 THEN
        #       CALL cl_err(g_ogb1[l_ac1].ogb09,'art-487',0)
        #       RETURN FALSE
        #    END IF
@@ -35813,31 +35828,31 @@ FUNCTION t600_chk_ogb09_1()
        IF NOT s_chk_ware(g_ogb1[l_ac1].ogb09) THEN
           RETURN FALSE
        END IF
-       #No.FUN-AA0048  --End  
+       #No.FUN-AA0048  --End
     END IF
    RETURN TRUE
 END FUNCTION
 
 FUNCTION t600_chk_ogb91_1()
    DEFINE l_qty LIKE ogb_file.ogb12
-   DEFINE l_cnt LIKE type_file.num5 
-   DEFINE l_oea99   LIKE oea_file.oea99    
-   DEFINE li_result LIKE type_file.num5    
+   DEFINE l_cnt LIKE type_file.num5
+   DEFINE l_oea99   LIKE oea_file.oea99
+   DEFINE li_result LIKE type_file.num5
 
    IF g_ogb1[l_ac1].ogb091 IS NULL THEN LET g_ogb1[l_ac1].ogb091 =' ' END IF
-   IF g_oaz.oaz104 = 'N' THEN 
-      IF g_ogb1[l_ac1].ogb092 IS NULL THEN LET g_ogb1[l_ac1].ogb092 =' ' END IF  
-   END IF 
-   IF g_ogb1[l_ac1].ogb091 IS NOT NULL AND NOT cl_null(g_ogb1[l_ac1].ogb09) THEN     
+   IF g_oaz.oaz104 = 'N' THEN
+      IF g_ogb1[l_ac1].ogb092 IS NULL THEN LET g_ogb1[l_ac1].ogb092 =' ' END IF
+   END IF
+   IF g_ogb1[l_ac1].ogb091 IS NOT NULL AND NOT cl_null(g_ogb1[l_ac1].ogb09) THEN
       #CHI-CC0014--add--str--
-      IF g_oga.oga09 MATCHES '[124568]' THEN   
+      IF g_oga.oga09 MATCHES '[124568]' THEN
          IF NOT s_chksmz(g_ogb1[l_ac1].ogb04, g_oga.oga01,
                          g_ogb1[l_ac1].ogb09, g_ogb1[l_ac1].ogb091) THEN
             RETURN "ogb09"
          END IF
-      END IF  
+      END IF
       #CHI-CC0014--add--end--
-      IF g_oga.oga09 MATCHES '[12468]' THEN   
+      IF g_oga.oga09 MATCHES '[12468]' THEN
         ##CHI-CC0014---mark--str--
         #IF NOT s_chksmz(g_ogb1[l_ac1].ogb04, g_oga.oga01,
         #                g_ogb1[l_ac1].ogb09, g_ogb1[l_ac1].ogb091) THEN
@@ -35846,14 +35861,14 @@ FUNCTION t600_chk_ogb91_1()
         ##CHI-CC0014---mark--end--
          #No.FUN-AA0048  --Begin
          #IF g_azw.azw04='2' THEN
-         #   LET l_cnt =0                                                                                                      
-         #   SELECT COUNT(*) INTO l_cnt FROM imd_file                                                                           
-         #    WHERE imd01=g_ogb1[l_ac1].ogb09                                                                                    
-         #      AND imd20=g_plant                                                                                   
-         #   IF l_cnt=0 THEN                                                                                                    
-         #      CALL cl_err(g_ogb1[l_ac1].ogb09,'art-487',0)                                                                      
-         #      RETURN "ogb09"                                                                                                   
-         #   END IF       
+         #   LET l_cnt =0
+         #   SELECT COUNT(*) INTO l_cnt FROM imd_file
+         #    WHERE imd01=g_ogb1[l_ac1].ogb09
+         #      AND imd20=g_plant
+         #   IF l_cnt=0 THEN
+         #      CALL cl_err(g_ogb1[l_ac1].ogb09,'art-487',0)
+         #      RETURN "ogb09"
+         #   END IF
          #END IF
          IF NOT s_chk_ware(g_ogb1[l_ac1].ogb09) THEN
             RETURN "ogb09"
@@ -35864,14 +35879,14 @@ FUNCTION t600_chk_ogb91_1()
             RETURN NULL
          END IF
 #FUN-AB0011 ---------------------END
-         #No.FUN-AA0048  --End  
-         IF g_oaz.oaz104 = 'N' THEN 
+         #No.FUN-AA0048  --End
+         IF g_oaz.oaz104 = 'N' THEN
             SELECT COUNT(*) INTO g_cnt FROM img_file
-             WHERE img01 = g_ogb1[l_ac1].ogb04  
-               AND img02 = g_ogb1[l_ac1].ogb09  
-               AND img03 = g_ogb1[l_ac1].ogb091 
-               AND img04 = g_ogb1[l_ac1].ogb092  
-            IF g_cnt = 0 THEN                                
+             WHERE img01 = g_ogb1[l_ac1].ogb04
+               AND img02 = g_ogb1[l_ac1].ogb09
+               AND img03 = g_ogb1[l_ac1].ogb091
+               AND img04 = g_ogb1[l_ac1].ogb092
+            IF g_cnt = 0 THEN
               #FUN-C80107 modify begin---------------------------121107
               #CALL cl_err(g_ogb1[l_ac1].ogb04,'axm-244',0)
               #LET g_ogb1[l_ac1].ogb091 = ''
@@ -35907,9 +35922,9 @@ FUNCTION t600_chk_ogb91_1()
 END FUNCTION
 
 FUNCTION t600_chk_ogb092_1()
-   DEFINE l_oea99   LIKE oea_file.oea99    
-   DEFINE li_result LIKE type_file.num5   
-   DEFINE l_img18   LIKE img_file.img18   
+   DEFINE l_oea99   LIKE oea_file.oea99
+   DEFINE li_result LIKE type_file.num5
+   DEFINE l_img18   LIKE img_file.img18
 #FUN-AB0011 -----------------STA
    IF s_joint_venture( g_ogb1[l_ac1].ogb04,g_plant) OR NOT s_internal_item( g_ogb1[l_ac1].ogb04,g_plant ) THEN
        RETURN TRUE
@@ -35918,9 +35933,9 @@ FUNCTION t600_chk_ogb092_1()
    IF cl_null(g_ogb1[l_ac1].ogb092) THEN LET  g_ogb1[l_ac1].ogb092=' ' END IF
    IF NOT cl_null(g_ogb1[l_ac1].ogb04) AND NOT cl_null(g_ogb1[l_ac1].ogb09)
       AND g_ogb1[l_ac1].ogb091 IS NOT NULL
-      AND g_ogb1[l_ac1].ogb092 IS NOT NULL THEN   
+      AND g_ogb1[l_ac1].ogb092 IS NOT NULL THEN
 
-      IF g_oga.oga09 MATCHES '[12468]' THEN  
+      IF g_oga.oga09 MATCHES '[12468]' THEN
          SELECT COUNT(*) INTO g_cnt FROM img_file
           WHERE img01 = g_ogb1[l_ac1].ogb04   #料號
             AND img02 = g_ogb1[l_ac1].ogb09   #倉庫
@@ -35929,10 +35944,10 @@ FUNCTION t600_chk_ogb092_1()
          IF g_cnt > 0 THEN
             SELECT img09 INTO g_ogb1[l_ac1].img09
               FROM img_file
-             WHERE img01=g_ogb1[l_ac1].ogb04 
-               AND img02=g_ogb1[l_ac1].ogb09 
-               AND img03=g_ogb1[l_ac1].ogb091 
-               AND img04=g_ogb1[l_ac1].ogb092         
+             WHERE img01=g_ogb1[l_ac1].ogb04
+               AND img02=g_ogb1[l_ac1].ogb09
+               AND img03=g_ogb1[l_ac1].ogb091
+               AND img04=g_ogb1[l_ac1].ogb092
             SELECT img18 INTO l_img18 FROM img_file
              WHERE img01 = g_ogb1[l_ac1].ogb04   #料號
                AND img02 = g_ogb1[l_ac1].ogb09   #倉庫
@@ -35984,12 +35999,12 @@ FUNCTION t600_chk_ogb092_1()
              END IF
             #FUN-C80107 modify end ----------------------------
          END IF
-      END IF  
+      END IF
    END IF
    RETURN TRUE
 END FUNCTION
 
-FUNCTION ogb_ins_1()        
+FUNCTION ogb_ins_1()
    DEFINE l_oea           RECORD LIKE oea_file.*
    DEFINE l_oeb           RECORD LIKE oeb_file.*
    DEFINE l_ogb           RECORD LIKE ogb_file.*
@@ -36024,15 +36039,15 @@ FUNCTION ogb_ins_1()
      FROM rtz_file
     WHERE rtz01 = g_oga.ogaplant
    #FUN-C10040--add---end----
-    SELECT azi03,azi04 INTO t_azi03,t_azi04 
+    SELECT azi03,azi04 INTO t_azi03,t_azi04
       FROM azi_file
      WHERE azi01=g_oga.oga23
 
    LET l_sql ="SELECT * ",
               "  FROM tmp_ogb_file"
-   PREPARE t600_ogb_pb_bcl FROM l_sql                                                                                                       
-   DECLARE ogb_curs_bcl CURSOR FOR t600_ogb_pb_bcl 
-   
+   PREPARE t600_ogb_pb_bcl FROM l_sql
+   DECLARE ogb_curs_bcl CURSOR FOR t600_ogb_pb_bcl
+
    LET l_sql ="SELECT * ",
               "  FROM oea_file,oeb_file",
               " WHERE oeb04 = ?",
@@ -36047,16 +36062,16 @@ FUNCTION ogb_ins_1()
               "   AND oeaconf = 'Y'",
               "   AND oeb12-oeb24+oeb25 > 0",
               " ORDER BY oeb15"
-   PREPARE t600_ogb_pb FROM l_sql                                                                                                       
+   PREPARE t600_ogb_pb FROM l_sql
    DECLARE ogb_curs CURSOR FOR t600_ogb_pb
-   
+
    LET l_ogb03 = 1
-   FOREACH ogb_curs_bcl INTO l_ogb04,l_ogb09,l_ogb091,l_ogb092,l_qty      
-       LET l_t9 = l_qty     #MOD-B30301 add 
-       #MOD-B30301---add------ 
+   FOREACH ogb_curs_bcl INTO l_ogb04,l_ogb09,l_ogb091,l_ogb092,l_qty
+       LET l_t9 = l_qty     #MOD-B30301 add
+       #MOD-B30301---add------
        SELECT img09 INTO l_img09_1
          FROM img_file
-        Where img01=l_ogb04 AND img02=l_ogb09 
+        Where img01=l_ogb04 AND img02=l_ogb09
          AND img03=l_ogb091 AND img04=l_ogb092
        ##MOD-B30301---add-------
        #Add No:TQC-B30124
@@ -36076,18 +36091,18 @@ FUNCTION ogb_ins_1()
              END IF
              SELECT img09 INTO l_img09
                FROM img_file
-              Where img01=l_ogb04 AND img02=l_ogb09 
+              Where img01=l_ogb04 AND img02=l_ogb09
                 AND img03=l_ogb091 AND img04=l_ogb092
              LET l_ogb.ogb15 = l_img09
              CALL s_umfchk(l_ogb.ogb04,l_ogb.ogb05,l_ogb.ogb15)
-                     RETURNING l_cnt,l_ogb.ogb15_fac                                                                                            
-             IF l_cnt = '1'  THEN                                                                                                   
-                CALL cl_err(l_ogb.ogb04,'abm-731',1)                                                                                
-                LET l_ogb.ogb15_fac=1                                                                                                        
-             END IF          
+                     RETURNING l_cnt,l_ogb.ogb15_fac
+             IF l_cnt = '1'  THEN
+                CALL cl_err(l_ogb.ogb04,'abm-731',1)
+                LET l_ogb.ogb15_fac=1
+             END IF
              IF cl_null(l_ogb.ogb15_fac) THEN
                 LET l_ogb.ogb15_fac = 1
-             END IF                   
+             END IF
              LET l_ogb.ogb06 = l_oeb.oeb06
              LET l_ogb.ogb07 = l_oeb.oeb07
              LET l_ogb.ogb08 = l_oeb.oeb08
@@ -36106,15 +36121,15 @@ FUNCTION ogb_ins_1()
              LET l_ogb.ogb12 = l_oeb.oeb12-l_oeb.oeb24+l_oeb.oeb25
              IF l_ogb.ogb12*l_ogb.ogb15_fac > l_qty THEN
                 CALL s_umfchk(l_ogb.ogb04,l_img09,l_ogb.ogb15)
-                     RETURNING l_cnt,l_abc                                                                                           
-                IF l_cnt = '1'  THEN                                                                                                   
-                   CALL cl_err(l_ogb.ogb04,'abm-731',1)                                                                                
-                   LET l_abc=1                                                                                                        
-                END IF             
+                     RETURNING l_cnt,l_abc
+                IF l_cnt = '1'  THEN
+                   CALL cl_err(l_ogb.ogb04,'abm-731',1)
+                   LET l_abc=1
+                END IF
                 LET l_ogb.ogb12 = l_qty * l_abc
                 LET l_ogb.ogb12 = s_digqty(l_ogb.ogb12,l_ogb.ogb05)   #No.FUN-BB0086
              END IF
-             LET l_ogb.ogb16 = l_ogb.ogb12*l_ogb.ogb15_fac   
+             LET l_ogb.ogb16 = l_ogb.ogb12*l_ogb.ogb15_fac
              LET l_ogb.ogb16 = s_digqty(l_ogb.ogb16,l_ogb.ogb15)   #No.FUN-BB0086
              IF cl_null(l_ogb.ogb16) THEN
                 LET l_ogb.ogb16 = 0
@@ -36122,9 +36137,9 @@ FUNCTION ogb_ins_1()
              LET l_ogb.ogb18 = l_ogb.ogb12
              IF cl_null(l_ogb.ogb18) THEN
                 LET l_ogb.ogb18 = 0
-             END IF          
+             END IF
              LET l_ogb.ogb13 = l_oeb.oeb13
-             LET l_ogb.ogb37 = l_oeb.oeb37 #FUN-AB0061 
+             LET l_ogb.ogb37 = l_oeb.oeb37 #FUN-AB0061
 #CHI-B70039 -- begin --
 #            IF g_oga.oga213 = 'N' THEN
 #               LET l_ogb.ogb14 = l_ogb.ogb12 * l_ogb.ogb13
@@ -36149,11 +36164,11 @@ FUNCTION ogb_ins_1()
              LET l_ogb.ogb915 = 0
              LET l_ogb.ogb916 = l_oeb.oeb916
              CALL s_umfchk(l_ogb.ogb04,l_ogb.ogb15,l_ogb.ogb916)
-                     RETURNING l_cnt,l_abc                                                                                           
-             IF l_cnt = '1'  THEN                                                                                                   
-                CALL cl_err(l_ogb.ogb04,'abm-731',1)                                                                                
-                LET l_abc=1                                                                                                        
-             END IF          
+                     RETURNING l_cnt,l_abc
+             IF l_cnt = '1'  THEN
+                CALL cl_err(l_ogb.ogb04,'abm-731',1)
+                LET l_abc=1
+             END IF
              LET l_ogb.ogb917 = l_ogb.ogb12 * l_abc
              LET l_ogb.ogb917 = s_digqty(l_ogb.ogb917,l_ogb.ogb916)   #No.FUN-BB0086
 #CHI-B70039 -- begin --
@@ -36215,45 +36230,45 @@ FUNCTION ogb_ins_1()
              LET l_ogb.ogb12 = l_rxe08_sum
 #FUN-BC0064---add---end---
              #FUN-C50097 ADD BEGIN-----
-             IF cl_null(l_ogb.ogb50) THEN 
+             IF cl_null(l_ogb.ogb50) THEN
                 LET l_ogb.ogb50 = 0
-             END IF 
-             IF cl_null(l_ogb.ogb51) THEN 
+             END IF
+             IF cl_null(l_ogb.ogb51) THEN
                 LET l_ogb.ogb51 = 0
-             END IF 
-             IF cl_null(l_ogb.ogb52) THEN 
+             END IF
+             IF cl_null(l_ogb.ogb52) THEN
                 LET l_ogb.ogb52 = 0
              END IF
-             IF cl_null(l_ogb.ogb53) THEN 
+             IF cl_null(l_ogb.ogb53) THEN
                LET l_ogb.ogb53 = 0
-             END IF 
-             IF cl_null(l_ogb.ogb54) THEN 
+             END IF
+             IF cl_null(l_ogb.ogb54) THEN
                LET l_ogb.ogb54 = 0
-             END IF 
-             IF cl_null(l_ogb.ogb55) THEN 
+             END IF
+             IF cl_null(l_ogb.ogb55) THEN
                LET l_ogb.ogb55 = 0
-             END IF                                                   
+             END IF
              #FUN-C50097 ADD END-------
              IF cl_null(l_ogb.ogb31) THEN LET l_ogb.ogb32='' END IF    #TQC-C60131 add
              #FUN-CB0087--add--str--
              IF g_aza.aza115 = 'Y' AND g_argv0 MATCHES '[2456A]' THEN
                 CALL s_reason_code(l_ogb.ogb01,l_ogb.ogb31,'',l_ogb.ogb04,l_ogb.ogb09,g_oga.oga14,g_oga.oga15) RETURNING l_ogb.ogb1001
-             END IF 
+             END IF
              IF g_aza.aza115 = 'Y' AND g_argv0 MATCHES '[89]' AND l_ogb.ogb52<>0 THEN
                 CALL s_reason_code(l_ogb.ogb01,l_ogb.ogb31,'',l_ogb.ogb04,l_ogb.ogb09,g_oga.oga14,g_oga.oga15) RETURNING l_ogb.ogb65
-             END IF 
+             END IF
              #FUN-CB0087--add--end--
              #str-----add by guanyao160608  #增加客户订单号，客户料号
              LET l_ogb.ogbud03 =l_oeb.oeb11
              LET l_oea10 = ''
              SELECT oea10 INTO l_oea10 FROM oea_file WHERE oea01 = l_oeb.oeb01
-             LET l_ogb.ogbud02 =l_oea10  
+             LET l_ogb.ogbud02 =l_oea10
              #end-----add by guanyao160608
 
-             
+
              INSERT INTO ogb_file VALUES(l_ogb.*)
              IF SQLCA.SQLCODE OR SQLCA.SQLERRD[3]=0 THEN
-                CALL s_errmsg('','',"ins ogb",SQLCA.sqlcode,1)  
+                CALL s_errmsg('','',"ins ogb",SQLCA.sqlcode,1)
              ELSE
 #CHI-B70016-add-str--
 #CHI-B70016-add-end--
@@ -36263,9 +36278,9 @@ FUNCTION ogb_ins_1()
              CALL t620_ins_ogi(l_ogb.ogb03,l_ogb.ogb04,l_ogb.ogb917,l_ogb.ogb13)   #FUN-C10040 add
              IF l_qty  = 0 THEN
                 EXIT FOREACH
-             END IF                       
+             END IF
           END FOREACH
-          IF l_qty > 0 THEN  
+          IF l_qty > 0 THEN
              LET l_t4 = NULL
              SELECT ze03 INTO l_msg FROM ze_file
               WHERE ze01='axm-763' AND ze02=g_lang
@@ -36278,40 +36293,40 @@ FUNCTION ogb_ins_1()
             # WHERE ze01='axm-874' AND ze02=g_lang
             #LET l_t5 = l_qty
             #LET l_t5 = l_t5.trim()
-            #LET l_t4 = l_t1,l_ogb04 CLIPPED,l_t2 CLIPPED,l_t5 CLIPPED,l_t3 
+            #LET l_t4 = l_t1,l_ogb04 CLIPPED,l_t2 CLIPPED,l_t5 CLIPPED,l_t3
              SELECT ze03 INTO l_t2 FROM ze_file
               WHERE ze01='axm-877' AND ze02=g_lang
              SELECT ze03 INTO l_t3 FROM ze_file
-              WHERE ze01='axm-878' AND ze02=g_lang    
+              WHERE ze01='axm-878' AND ze02=g_lang
              SELECT ze03 INTO l_t5 FROM ze_file
               WHERE ze01='axm-879' AND ze02=g_lang
              SELECT ze03 INTO l_t6 FROM ze_file
               WHERE ze01='axm-873' AND ze02=g_lang
-             LET l_t7 = l_t9 - l_qty 
-             LET l_t7 = l_t7.trim()   
+             LET l_t7 = l_t9 - l_qty
+             LET l_t7 = l_t7.trim()
              LET l_t4 = l_t1 CLIPPED,l_ogb04 CLIPPED,",",l_t2 CLIPPED,l_t9 ,l_img09_1 CLIPPED,",",
                         l_t3 CLIPPED,l_t7 CLIPPED,l_img09_1 CLIPPED,",",l_t5 CLIPPED,l_t7 CLIPPED,l_img09_1 CLIPPED,l_t6
-              
-             #MOD-B30301----mod------end------------ 
+
+             #MOD-B30301----mod------end------------
              UPDATE ze_file SET ze03 = l_t4
-              WHERE ze01='axm-763' AND ze02=g_lang                                            
-             LET g_showmsg=l_ogb04,"/",l_qty   
+              WHERE ze01='axm-763' AND ze02=g_lang
+             LET g_showmsg=l_ogb04,"/",l_qty
              CALL s_errmsg("oeb04,oeb12",g_showmsg,"",'axm-763',1)
              UPDATE ze_file SET ze03 = l_msg
-              WHERE ze01='axm-763' AND ze02=g_lang                 
+              WHERE ze01='axm-763' AND ze02=g_lang
           END IF
        END IF  #Add No:TQC-B30124
    END FOREACH
-   
-   CALL s_showmsg()               
+
+   CALL s_showmsg()
 END FUNCTION
 #FUN-A80081--Add--End
 #FUN-AA0089----------Add Start----------------------
-FUNCTION t600_multi_ima01()	
-DEFINE tok          base.StringTokenizer			
+FUNCTION t600_multi_ima01()
+DEFINE tok          base.StringTokenizer
 DEFINE l_ogb        RECORD LIKE ogb_file.*
-DEFINE l_misc              LIKE type_file.chr4,    
-       l_n                 LIKE type_file.num5,   
+DEFINE l_misc              LIKE type_file.chr4,
+       l_n                 LIKE type_file.num5,
        l_b2                LIKE ima_file.ima31,
        l_ima35             LIKE ima_file.ima35,
        l_ima36             LIKE ima_file.ima36,
@@ -36322,35 +36337,35 @@ DEFINE l_misc              LIKE type_file.chr4,
        l_ima908    LIKE ima_file.ima908,
        l_factor    LIKE ima_file.ima31_fac,
        l_rty05     LIKE rty_file.rty05,
-       l_rtt01     LIKE rtt_file.rtt01,                                                                                                  
+       l_rtt01     LIKE rtt_file.rtt01,
        l_rtt11     LIKE rtt_file.rtt11,
-       l_rtv12     LIKE rtv_file.rtv12, 
+       l_rtv12     LIKE rtv_file.rtv12,
        l_rtu01     LIKE rtu_file.rtu01
 DEFINE l_cnt       LIKE type_file.num5,
        i           LIKE type_file.num5  #FUN-B10010
 
    CALL s_showmsg_init()
    LET tok = base.StringTokenizer.create(g_multi_ima01,"|")
-   LET i = 1         #FUN-B10010			
-   WHILE tok.hasMoreTokens()			
+   LET i = 1         #FUN-B10010
+   WHILE tok.hasMoreTokens()
       LET l_ogb.ogb04 = tok.nextToken()
-      
+
       IF cl_null(l_ogb.ogb04) THEN
          CONTINUE WHILE
-      END IF 
-      
+      END IF
+
       IF NOT s_chk_item_no(l_ogb.ogb04,"") THEN
-         CALL s_errmsg("",l_ogb.ogb04,"INS ogb_file",g_errno,1)   
+         CALL s_errmsg("",l_ogb.ogb04,"INS ogb_file",g_errno,1)
          CONTINUE WHILE
       END IF
-      
-      SELECT oga01,oga15,oga46 INTO l_ogb.ogb01,l_oga15,l_ogb.ogb41 
+
+      SELECT oga01,oga15,oga46 INTO l_ogb.ogb01,l_oga15,l_ogb.ogb41
         FROM oga_file
        WHERE oga01 = g_oga.oga01
-       
+
       SELECT MAX(ogb03)+1 INTO l_ogb.ogb03 FROM ogb_file
        WHERE ogb01 = g_oga.oga01
-      IF cl_null(l_ogb.ogb03) THEN 
+      IF cl_null(l_ogb.ogb03) THEN
          LET l_ogb.ogb03 = 1
       END IF
 #FUN-B10010--add--begin
@@ -36371,28 +36386,28 @@ DEFINE l_cnt       LIKE type_file.num5,
                AND ima1006 = tqh02   #Mod No:TQC-B30124
                AND tqhacti ='Y'
             IF l_n=0 THEN
-               CALL s_errmsg("",l_ogb.ogb04,"INS ogb_file",'atm-018',1)   
+               CALL s_errmsg("",l_ogb.ogb04,"INS ogb_file",'atm-018',1)
                CONTINUE WHILE
             END IF
 
          END IF
       END IF
-      
-      IF l_ogb.ogb04='MISC' THEN  
+
+      IF l_ogb.ogb04='MISC' THEN
          SELECT COUNT(*) INTO l_n FROM ima_file
           WHERE ima01=l_misc
             AND ima01='MISC'
          IF l_n=0 THEN
-            CALL s_errmsg("",l_ogb.ogb04,"INS ogb_file",'aim-806',1)   
+            CALL s_errmsg("",l_ogb.ogb04,"INS ogb_file",'aim-806',1)
             CONTINUE WHILE
-         END IF  
+         END IF
       END IF
 
       SELECT ima02,ima31,ima31_fac,ima35,ima36
         INTO g_buf,l_b2,l_ogb.ogb05_fac,l_ima35,l_ima36
         FROM ima_file WHERE ima01=l_ogb.ogb04
-      IF STATUS AND l_ogb.ogb04[1,4]!='MISC' THEN  
-         CALL s_errmsg("",l_ogb.ogb04,"INS ogb_file",STATUS,1)   
+      IF STATUS AND l_ogb.ogb04[1,4]!='MISC' THEN
+         CALL s_errmsg("",l_ogb.ogb04,"INS ogb_file",STATUS,1)
          CONTINUE WHILE
       END IF
       IF cl_null(l_ogb.ogb05) THEN
@@ -36408,7 +36423,7 @@ DEFINE l_cnt       LIKE type_file.num5,
             CALL s_get_coststore(g_plant,l_ogb.ogb04) RETURNING l_ogb.ogb09    #FUN-C90049 add
          ELSE
             LET l_ogb.ogb09=l_ima35
-         END IF 
+         END IF
       END IF
       IF cl_null(l_ogb.ogb091) THEN
          LET l_ogb.ogb091=l_ima36
@@ -36421,11 +36436,11 @@ DEFINE l_cnt       LIKE type_file.num5,
       IF l_ogb.ogb06 IS NULL THEN
          LET l_ogb.ogb06 = g_buf
       END IF
-      
+
       SELECT ima31,ima906,ima907,ima908 INTO l_ima31,l_ima906,l_ima907,l_ima908
        FROM ima_file WHERE ima01 = l_ogb.ogb04
-      
-      IF g_sma.sma115 = 'Y' THEN        
+
+      IF g_sma.sma115 = 'Y' THEN
          IF l_ima906 = '1' THEN  #不使用雙單位
             LET l_ogb.ogb913 = NULL
             LET l_ogb.ogb914  = NULL
@@ -36455,7 +36470,7 @@ DEFINE l_cnt       LIKE type_file.num5,
          LET l_ogb.ogb916=l_ogb.ogb05
       END IF
       LET g_ima31 = l_b2
-      
+
       IF cl_null(l_ogb.ogb31) THEN
          SELECT COUNT(*) INTO l_n
            FROM obk_file
@@ -36472,19 +36487,19 @@ DEFINE l_cnt       LIKE type_file.num5,
       END IF
 
       SELECT obk03 INTO l_ogb.ogb11 FROM obk_file
-       WHERE obk01 = l_ogb.ogb04 AND obk02 = g_oga.oga03   
-      
+       WHERE obk01 = l_ogb.ogb04 AND obk02 = g_oga.oga03
+
       IF NOT s_chkima08(l_ogb.ogb04) THEN
          CONTINUE WHILE
       END IF
-      
+
       SELECT imc02 INTO l_ogb.ogb07 FROM imc_file
        WHERE imc01 = l_ogb.ogb04
-      
+
       SELECT img09 INTO l_ogb.ogb15 FROM img_file
        WHERE img01 = l_ogb.ogb04 AND img02 = l_ogb.ogb09
-         AND img03 = l_ogb.ogb091 AND img04 = l_ogb.ogb092 
-      
+         AND img03 = l_ogb.ogb091 AND img04 = l_ogb.ogb092
+
       IF cl_null(l_ogb.ogb15) THEN
          LET l_ogb.ogb15 = l_ogb.ogb05
       END IF
@@ -36492,53 +36507,53 @@ DEFINE l_cnt       LIKE type_file.num5,
          LET l_ogb.ogb15_fac = 1
       ELSE
       	 CALL s_umfchk(l_ogb.ogb04,l_ogb.ogb05,l_ogb.ogb15)
-                 RETURNING l_cnt,l_ogb.ogb15_fac                                                                                            
-         IF l_cnt = '1'  THEN                                                                                                   
-            CALL cl_err(l_ogb.ogb04,'abm-731',1)                                                                                
-            LET l_ogb.ogb15_fac=1                                                                                                        
-         END IF          
+                 RETURNING l_cnt,l_ogb.ogb15_fac
+         IF l_cnt = '1'  THEN
+            CALL cl_err(l_ogb.ogb04,'abm-731',1)
+            LET l_ogb.ogb15_fac=1
+         END IF
          IF cl_null(l_ogb.ogb15_fac) THEN
             LET l_ogb.ogb15_fac = 1
          END IF
       END IF
-       
+
       SELECT rty06 INTO l_ogb.ogb44 FROM rty_file
        WHERE rty01 = g_plant AND rty02 = l_ogb.ogb04
       IF STATUS='100' OR cl_null(l_ogb.ogb44) THEN
          LET l_ogb.ogb44 = 1
-      END IF 
-      
-      IF l_ogb.ogb44='3' OR l_ogb.ogb44='4' THEN                                                                           
-         SELECT rty05 INTO l_rty05 FROM rty_file WHERE rty01=g_plant                                                              
-          AND rty02=l_ogb.ogb04 AND rtyacti="Y"     
+      END IF
+
+      IF l_ogb.ogb44='3' OR l_ogb.ogb44='4' THEN
+         SELECT rty05 INTO l_rty05 FROM rty_file WHERE rty01=g_plant
+          AND rty02=l_ogb.ogb04 AND rtyacti="Y"
          IF STATUS THEN
-            CALL s_errmsg("",l_ogb.ogb04,"SEL rty05",STATUS,1)   
+            CALL s_errmsg("",l_ogb.ogb04,"SEL rty05",STATUS,1)
             CONTINUE WHILE
-         END IF                                                                             
-         IF NOT cl_null(l_rty05) THEN                                                                                                  
-            SELECT rtt01,rtt11 INTO l_rtt01,l_rtt11 FROM rtt_file,rts_file,rto_file                                                    
-             WHERE rts01 = rtt01 AND rttplant = rtsplant                                                                                   
+         END IF
+         IF NOT cl_null(l_rty05) THEN
+            SELECT rtt01,rtt11 INTO l_rtt01,l_rtt11 FROM rtt_file,rts_file,rto_file
+             WHERE rts01 = rtt01 AND rttplant = rtsplant
           #   AND rts02 = rtt02 AND rtt04 =l_ogb.ogb04 AND rto01 = rts04 AND rtoplant = rts9plant #TQC-B30189 MARK
               AND rts02 = rtt02 AND rtt04 =l_ogb.ogb04 AND rto01 = rts04 AND rtoplant = rtsplant #TQC-B30189 ADD
-              AND rto05 = l_rty05  AND rto06 = l_ogb.ogb44 AND rto08<=g_oga.oga02                                                
-              AND rto09>=g_oga.oga02 AND rtt15="Y"                                                                                     
-              AND rtoconf = 'Y' AND rtsconf = 'Y' AND rto03 = rts02 AND rtoplant =  g_plant                                         
-            IF NOT cl_null(l_rtt01) THEN                                                                                               
-               SELECT rtv12,rtu01 INTO l_rtv12,l_rtu01 FROM rtv_file,rtu_file,rtt_file                     
-                WHERE rtt01=rtu04 AND rtt02=rtu02 AND rttplant=rtuplant AND rtuplant=g_plant                                            
-                 AND rtuconf="Y" AND rtuplant=rtvplant AND rtu01=rtv01 AND rtu02=rtv02                                                     
-                 AND rtt01=l_rtt01 AND rtu05=l_rty05 AND rtu06=l_ogb.ogb44                                                       
-                 AND rtv04=l_ogb.ogb04                                                                                           
-               IF NOT cl_null(l_rtu01) THEN       
-                  LET l_ogb.ogb45=l_rtv12                                                                                        
-               ELSE                                                                                                                    
-                  LET l_ogb.ogb45=l_rtt11                                                                                        
-               END IF                                                                                                                  
-            END IF                                                                                                                     
-         END IF                                                                                                                        
-      ELSE                                                                                                                             
-         LET l_ogb.ogb45=NULL                                                                                                    
-      END IF            
+              AND rto05 = l_rty05  AND rto06 = l_ogb.ogb44 AND rto08<=g_oga.oga02
+              AND rto09>=g_oga.oga02 AND rtt15="Y"
+              AND rtoconf = 'Y' AND rtsconf = 'Y' AND rto03 = rts02 AND rtoplant =  g_plant
+            IF NOT cl_null(l_rtt01) THEN
+               SELECT rtv12,rtu01 INTO l_rtv12,l_rtu01 FROM rtv_file,rtu_file,rtt_file
+                WHERE rtt01=rtu04 AND rtt02=rtu02 AND rttplant=rtuplant AND rtuplant=g_plant
+                 AND rtuconf="Y" AND rtuplant=rtvplant AND rtu01=rtv01 AND rtu02=rtv02
+                 AND rtt01=l_rtt01 AND rtu05=l_rty05 AND rtu06=l_ogb.ogb44
+                 AND rtv04=l_ogb.ogb04
+               IF NOT cl_null(l_rtu01) THEN
+                  LET l_ogb.ogb45=l_rtv12
+               ELSE
+                  LET l_ogb.ogb45=l_rtt11
+               END IF
+            END IF
+         END IF
+      ELSE
+         LET l_ogb.ogb45=NULL
+      END IF
       CALL s_fetch_price_new(g_oga.oga03,l_ogb.ogb04,l_ogb.ogb48,l_ogb.ogb05,g_oga.oga69,     #FUN-BC0071
                        '2',g_oga.ogaplant,g_oga.oga23,g_oga.oga31,g_oga.oga32,
                        g_oga.oga01,l_ogb.ogb03,l_ogb.ogb917,l_ogb.ogb1004,'a')
@@ -36547,31 +36562,31 @@ DEFINE l_cnt       LIKE type_file.num5,
       LET l_ogb.ogb46 = l_ogb.ogb45
       LET l_ogb.ogb930=s_costcenter(l_oga15)
       LET l_ogb.ogb12   = 0
-      LET l_ogb.ogb14   = 0             
-      LET l_ogb.ogb14t  = 0             
-      LET l_ogb.ogb16   = 0             
-      LET l_ogb.ogb17   = 'N'             
-      LET l_ogb.ogb18   = 0             
-      LET l_ogb.ogb20   = NULL             
-      LET l_ogb.ogb21   = NULL             
-      LET l_ogb.ogb22   = NULL             
-      LET l_ogb.ogb32   = NULL             
-      LET l_ogb.ogb60   = 0                
-      LET l_ogb.ogb63   = 0   
-      LET l_ogb.ogb64   = 0   
+      LET l_ogb.ogb14   = 0
+      LET l_ogb.ogb14t  = 0
+      LET l_ogb.ogb16   = 0
+      LET l_ogb.ogb17   = 'N'
+      LET l_ogb.ogb18   = 0
+      LET l_ogb.ogb20   = NULL
+      LET l_ogb.ogb21   = NULL
+      LET l_ogb.ogb22   = NULL
+      LET l_ogb.ogb32   = NULL
+      LET l_ogb.ogb60   = 0
+      LET l_ogb.ogb63   = 0
+      LET l_ogb.ogb64   = 0
       LET l_ogb.ogb901  = NULL
-      LET l_ogb.ogb902  = NULL           
-      LET l_ogb.ogb903  = NULL           
-      LET l_ogb.ogb904  = NULL           
-      LET l_ogb.ogb905  = NULL           
-      LET l_ogb.ogb906  = NULL           
-      LET l_ogb.ogb907  = NULL           
-      LET l_ogb.ogb908  = NULL           
-      LET l_ogb.ogb909  = NULL           
-      LET l_ogb.ogb65   = NULL           
-      LET l_ogb.ogb1001 = NULL           
+      LET l_ogb.ogb902  = NULL
+      LET l_ogb.ogb903  = NULL
+      LET l_ogb.ogb904  = NULL
+      LET l_ogb.ogb905  = NULL
+      LET l_ogb.ogb906  = NULL
+      LET l_ogb.ogb907  = NULL
+      LET l_ogb.ogb908  = NULL
+      LET l_ogb.ogb909  = NULL
+      LET l_ogb.ogb65   = NULL
+      LET l_ogb.ogb1001 = NULL
       LET l_ogb.ogb1002 = NULL
-      LET l_ogb.ogb1005 = 1   
+      LET l_ogb.ogb1005 = 1
       LET l_ogb.ogb1007 = NULL
       LET l_ogb.ogb1008 = NULL
       LET l_ogb.ogb1009 = NULL
@@ -36579,31 +36594,31 @@ DEFINE l_cnt       LIKE type_file.num5,
       LET l_ogb.ogb1011 = NULL
       LET l_ogb.ogb1003 = NULL
       LET l_ogb.ogb1006 = 100
-      LET l_ogb.ogb1012 = 'N'  
+      LET l_ogb.ogb1012 = 'N'
       LET l_ogb.ogb1013 = 0
       LET l_ogb.ogb1014 = 'N'
-      LET l_ogb.ogb42   = NULL  
-      LET l_ogb.ogb43   = NULL  
-      LET l_ogb.ogb931  = NULL  
-      LET l_ogb.ogb932  = NULL  
-      LET l_ogb.ogbud01 = NULL  
-      LET l_ogb.ogbud02 = NULL  
-      LET l_ogb.ogbud03 = NULL  
-      LET l_ogb.ogbud04 = NULL  
-      LET l_ogb.ogbud05 = NULL  
-      LET l_ogb.ogbud06 = NULL  
-      LET l_ogb.ogbud07 = NULL  
-      LET l_ogb.ogbud08 = NULL  
-      LET l_ogb.ogbud09 = NULL  
-      LET l_ogb.ogbud10 = NULL  
-      LET l_ogb.ogbud11 = NULL  
-      LET l_ogb.ogbud12 = NULL  
-      LET l_ogb.ogbud13 = NULL  
-      LET l_ogb.ogbud14 = NULL  
-      LET l_ogb.ogbud15 = NULL  
+      LET l_ogb.ogb42   = NULL
+      LET l_ogb.ogb43   = NULL
+      LET l_ogb.ogb931  = NULL
+      LET l_ogb.ogb932  = NULL
+      LET l_ogb.ogbud01 = NULL
+      LET l_ogb.ogbud02 = NULL
+      LET l_ogb.ogbud03 = NULL
+      LET l_ogb.ogbud04 = NULL
+      LET l_ogb.ogbud05 = NULL
+      LET l_ogb.ogbud06 = NULL
+      LET l_ogb.ogbud07 = NULL
+      LET l_ogb.ogbud08 = NULL
+      LET l_ogb.ogbud09 = NULL
+      LET l_ogb.ogbud10 = NULL
+      LET l_ogb.ogbud11 = NULL
+      LET l_ogb.ogbud12 = NULL
+      LET l_ogb.ogbud13 = NULL
+      LET l_ogb.ogbud14 = NULL
+      LET l_ogb.ogbud15 = NULL
       LET l_ogb.ogbplant= g_plant
-      LET l_ogb.ogblegal= g_legal  
-      LET l_ogb.ogb47   = 0   
+      LET l_ogb.ogblegal= g_legal
+      LET l_ogb.ogb47   = 0
 #     LET l_ogb.ogb48   = NULL     #FUN-B10010
 #     LET l_ogb.ogb49   = NULL     #FUN-B10010
 #     LET l_ogb.ogb50   = '1'      #FUN-AA0057
@@ -36611,33 +36626,33 @@ DEFINE l_cnt       LIKE type_file.num5,
       IF cl_null(l_ogb.ogb917) THEN
          LET l_ogb.ogb917 = l_ogb.ogb12
       END IF
-     #FUN-C30169 add END      
+     #FUN-C30169 add END
       #FUN-C50097 ADD BEGIN-----
-      IF cl_null(l_ogb.ogb50) THEN 
+      IF cl_null(l_ogb.ogb50) THEN
          LET l_ogb.ogb50 = 0
-      END IF 
-      IF cl_null(l_ogb.ogb51) THEN 
+      END IF
+      IF cl_null(l_ogb.ogb51) THEN
          LET l_ogb.ogb51 = 0
-      END IF 
-      IF cl_null(l_ogb.ogb52) THEN 
+      END IF
+      IF cl_null(l_ogb.ogb52) THEN
          LET l_ogb.ogb52 = 0
-      END IF       
-      IF cl_null(l_ogb.ogb53) THEN 
+      END IF
+      IF cl_null(l_ogb.ogb53) THEN
         LET l_ogb.ogb53 = 0
-      END IF 
-      IF cl_null(l_ogb.ogb54) THEN 
+      END IF
+      IF cl_null(l_ogb.ogb54) THEN
         LET l_ogb.ogb54 = 0
-      END IF 
-      IF cl_null(l_ogb.ogb55) THEN 
+      END IF
+      IF cl_null(l_ogb.ogb55) THEN
         LET l_ogb.ogb55 = 0
-      END IF                                     
+      END IF
       #FUN-C50097 ADD END-------
       IF cl_null(l_ogb.ogb31) THEN LET l_ogb.ogb32 = ''    END IF   #TQC-C60131 add
 
-      
-      INSERT INTO ogb_file values (l_ogb.*)		
+
+      INSERT INTO ogb_file values (l_ogb.*)
       IF STATUS THEN
-         CALL s_errmsg("",l_ogb.ogb04,"INS ogb_file",STATUS,1)   
+         CALL s_errmsg("",l_ogb.ogb04,"INS ogb_file",STATUS,1)
          CONTINUE WHILE
 #CHI-B70016-add-str--
 #CHI-B70016-add-end--
@@ -36650,7 +36665,7 @@ DEFINE l_cnt       LIKE type_file.num5,
       LET l_ogb.ogb09 = NULL
      #TQC-C50249 -- add -- end
    END WHILE
-   CALL s_showmsg()	
+   CALL s_showmsg()
 END FUNCTION
 #FUN-AA0089----------Add End  ----------------------
 
@@ -36705,7 +36720,7 @@ DEFINE l_rtz06     LIKE rtz_file.rtz06        #FUN-C10040
    IF cl_null(l_ogb.ogb091) THEN LET l_ogb.ogb091 = ' ' END IF
    IF cl_null(l_ogb.ogb092) THEN LET l_ogb.ogb092 = ' ' END IF
    LET l_ogb.ogb12=p_qty       #实际出货数量
-   
+
    #FUN-C10040--add---str----
    SELECT rtz04, rtz06 INTO l_rtz04,l_rtz06
      FROM rtz_file
@@ -36719,7 +36734,7 @@ DEFINE l_rtz06     LIKE rtz_file.rtz06        #FUN-C10040
             AND ima1006 = tqh02
             AND tqhacti ='Y'
          IF l_cnt=0 THEN
-            CALL s_errmsg("",l_ogb.ogb04,"INS ogb_file",'atm-018',1)   
+            CALL s_errmsg("",l_ogb.ogb04,"INS ogb_file",'atm-018',1)
             RETURN
          END IF
       END IF
@@ -36749,10 +36764,10 @@ DEFINE l_rtz06     LIKE rtz_file.rtz06        #FUN-C10040
 
    SELECT ima31,ima25,ima02,ima906,ima907,ima908
      INTO l_ima31,l_ima25,l_ima02,l_ima906,l_ima907,l_ima908
-     FROM ima_file 
+     FROM ima_file
     WHERE ima01 = l_ogb.ogb04
-   IF SQLCA.sqlcode AND l_ogb.ogb04[1,4]!='MISC' THEN  
-      CALL s_errmsg("",l_ogb.ogb04,"INS ogb_file",SQLCA.sqlcode,1)   
+   IF SQLCA.sqlcode AND l_ogb.ogb04[1,4]!='MISC' THEN
+      CALL s_errmsg("",l_ogb.ogb04,"INS ogb_file",SQLCA.sqlcode,1)
       RETURN
    END IF
    IF cl_null(l_ima31) THEN LET l_ima31=l_ima25 END IF
@@ -36787,7 +36802,7 @@ DEFINE l_rtz06     LIKE rtz_file.rtz06        #FUN-C10040
    LET l_ogb.ogb16 = l_ogb.ogb12 * l_ogb.ogb15_fac
    LET l_ogb.ogb16 = s_digqty(l_ogb.ogb16,l_ogb.ogb15)   #No.FUN-BB0086
    LET l_ogb.ogb1012 ='N'          #搭赠
-   LET l_ogb.ogb1013 =0            #已开发票未税金额 
+   LET l_ogb.ogb1013 =0            #已开发票未税金额
    LET l_ogb.ogb1014 ='N'          #保税已放行否
    LET l_ogb.ogb1005 ='1'          #作业方式  1-出货,2-折扣
    LET l_ogb.ogb1006=100           #折扣率
@@ -36798,7 +36813,7 @@ DEFINE l_rtz06     LIKE rtz_file.rtz06        #FUN-C10040
    LET l_ogb.ogb65=''              #验退理由码
    LET l_ogb.ogb41 = g_oga.oga46   #专案代号
    LET l_ogb.ogb930=s_costcenter(g_oga.oga15)  #成本中心
-   LET l_ogb.ogbplant = g_plant 
+   LET l_ogb.ogbplant = g_plant
    LET l_ogb.ogblegal = g_legal
    LET l_ogb.ogb06 = l_ima02   #品名规格
 
@@ -36904,7 +36919,7 @@ DEFINE l_rtz06     LIKE rtz_file.rtz06        #FUN-C10040
    #ogb44,45,46,47
    SELECT rty06 INTO l_rty06 FROM rty_file
     WHERE rty01=g_plant
-      AND rty02=l_ogb.ogb04 AND rtyacti="Y" 
+      AND rty02=l_ogb.ogb04 AND rtyacti="Y"
    LET l_ogb.ogb44=l_rty06  #经营方式
    IF cl_null(l_ogb.ogb44) THEN
       LET l_ogb.ogb44='1'
@@ -36916,7 +36931,7 @@ DEFINE l_rtz06     LIKE rtz_file.rtz06        #FUN-C10040
          AND rty02=l_ogb.ogb04
          AND rtyacti="Y"
       IF SQLCA.sqlcode THEN
-         CALL s_errmsg("",l_ogb.ogb04,"SEL rty05",SQLCA.sqlcode,1)   
+         CALL s_errmsg("",l_ogb.ogb04,"SEL rty05",SQLCA.sqlcode,1)
          RETURN
       END IF
       IF NOT cl_null(l_rty05) THEN
@@ -36954,7 +36969,7 @@ DEFINE l_rtz06     LIKE rtz_file.rtz06        #FUN-C10040
    LET l_ogb.ogb46=l_ogb.ogb45    #新扣率
    LET l_ogb.ogb47=0              #分摊折价=全部折价字段值的和值
 
-   SELECT MAX(ogb03) INTO l_ogb03  #项次 
+   SELECT MAX(ogb03) INTO l_ogb03  #项次
      FROM ogb_file
     WHERE ogb01 = g_oga.oga01
    IF l_ogb03 is null THEN
@@ -36984,7 +36999,7 @@ DEFINE l_rtz06     LIKE rtz_file.rtz06        #FUN-C10040
       LET l_qty = 0
    END IF
    CALL cl_digcut(l_ogb.ogb13,t_azi03)  RETURNING l_ogb.ogb13
-   CALL cl_digcut(l_ogb.ogb37,t_azi03)  RETURNING l_ogb.ogb37 
+   CALL cl_digcut(l_ogb.ogb37,t_azi03)  RETURNING l_ogb.ogb37
 
    #FUN-C10040 ----add---begin ---
    IF g_azw.azw04 = '2' AND NOT s_industry("slk") THEN  #TQC-C20418 ADD not slk
@@ -36996,12 +37011,12 @@ DEFINE l_rtz06     LIKE rtz_file.rtz06        #FUN-C10040
          LET l_ogb.ogb14=t600_amount(l_qty,l_ogb.ogb13,l_ogb.ogb1006,t_azi03)
          CALL cl_digcut(l_ogb.ogb14,t_azi04)  RETURNING l_ogb.ogb14
          LET l_ogb.ogb14t=l_ogb.ogb14*(1+g_oga.oga211/100)
-         CALL cl_digcut(l_ogb.ogb14t,t_azi04) RETURNING l_ogb.ogb14t 
+         CALL cl_digcut(l_ogb.ogb14t,t_azi04) RETURNING l_ogb.ogb14t
       ELSE
          LET l_ogb.ogb14t=t600_amount(l_qty,l_ogb.ogb13,l_ogb.ogb1006,t_azi03)
-         CALL cl_digcut(l_ogb.ogb14t,t_azi04) RETURNING l_ogb.ogb14t 
+         CALL cl_digcut(l_ogb.ogb14t,t_azi04) RETURNING l_ogb.ogb14t
          LET l_ogb.ogb14=l_ogb.ogb14t/(1+g_oga.oga211/100)
-         CALL cl_digcut(l_ogb.ogb14,t_azi04)  RETURNING l_ogb.ogb14 
+         CALL cl_digcut(l_ogb.ogb14,t_azi04)  RETURNING l_ogb.ogb14
       END IF
    END IF  #FUN-C10040 add
 
@@ -37014,35 +37029,35 @@ DEFINE l_rtz06     LIKE rtz_file.rtz06        #FUN-C10040
    END IF
   #FUN-C30169 add ENDo
    #FUN-C50097 ADD BEGIN-----
-   IF cl_null(l_ogb.ogb50) THEN 
+   IF cl_null(l_ogb.ogb50) THEN
       LET l_ogb.ogb50 = 0
-   END IF 
-   IF cl_null(l_ogb.ogb51) THEN 
+   END IF
+   IF cl_null(l_ogb.ogb51) THEN
       LET l_ogb.ogb51 = 0
-   END IF 
-   IF cl_null(l_ogb.ogb52) THEN 
+   END IF
+   IF cl_null(l_ogb.ogb52) THEN
       LET l_ogb.ogb52 = 0
-   END IF 
-   IF cl_null(l_ogb.ogb53) THEN 
+   END IF
+   IF cl_null(l_ogb.ogb53) THEN
      LET l_ogb.ogb53 = 0
-   END IF 
-   IF cl_null(l_ogb.ogb54) THEN 
+   END IF
+   IF cl_null(l_ogb.ogb54) THEN
      LET l_ogb.ogb54 = 0
-   END IF 
-   IF cl_null(l_ogb.ogb55) THEN 
+   END IF
+   IF cl_null(l_ogb.ogb55) THEN
      LET l_ogb.ogb55 = 0
-   END IF                                        
+   END IF
    #FUN-C50097 ADD END-------
    IF cl_null(l_ogb.ogb31) THEN LET l_ogb.ogb32=''  END IF    #TQC-C60131 add
    #FUN-CB0087--add--str--
    IF g_aza.aza115 = 'Y' AND g_argv0 MATCHES '[2456A]' THEN
       CALL s_reason_code(l_ogb.ogb01,l_ogb.ogb31,'',l_ogb.ogb04,l_ogb.ogb09,g_oga.oga14,g_oga.oga15) RETURNING l_ogb.ogb1001
-   END IF 
+   END IF
    IF g_aza.aza115 = 'Y' AND g_argv0 MATCHES '[89]' AND l_ogb.ogb52<>0 THEN
       CALL s_reason_code(l_ogb.ogb01,l_ogb.ogb31,'',l_ogb.ogb04,l_ogb.ogb09,g_oga.oga14,g_oga.oga15) RETURNING l_ogb.ogb65
-   END IF 
+   END IF
    #FUN-CB0087--add--end--
-   
+
    INSERT INTO ogb_file VALUES(l_ogb.*)
    IF SQLCA.sqlcode OR SQLCA.sqlerrd[3]=0 THEN
       CALL s_errmsg("",l_ogb.ogb04,'ins ogb',SQLCA.sqlcode,1)
@@ -37057,7 +37072,7 @@ END FUNCTION
 FUNCTION  t600_chk_ogb1001_2(p_oga01)
 DEFINE p_oga01   LIKE oga_file.oga01
 DEFINE l_n       LIKE type_file.num5
-    
+
    SELECT COUNT(*) INTO l_n FROM ogb_file
     WHERE ogb01 = p_oga01
       AND ogb1001 = g_oaz.oaz88
@@ -37098,35 +37113,35 @@ FUNCTION t600_ins_oao(l_flag)
 
    IF l_flag = 'a' OR l_flag = 'u' THEN
       WHILE TRUE
-         LET l_cnt = 0 
+         LET l_cnt = 0
          SELECT COUNT(*) INTO l_cnt FROM oao_file
            WHERE oao01 = g_oga.oga01
              AND oao03 = 0
          IF cl_null(l_cnt) THEN LET l_cnt = 0 END IF
          IF l_cnt > 0 THEN
 #           IF NOT cl_confirm('axm_112') THEN   #MOD-B70173 mark
-            IF NOT cl_confirm('axm-623') THEN   #MOD-B70173 
+            IF NOT cl_confirm('axm-623') THEN   #MOD-B70173
                EXIT WHILE
-            END IF 
-         END IF 
-         
-         DROP TABLE x
-         
-         IF g_oga.oga09 MATCHES '[2468]' AND g_oga.oga01 != g_oga.oga011 THEN #No.FUN-630061
-            SELECT * FROM oao_file WHERE oao01=g_oga.oga011 AND oao03 = 0 INTO TEMP x   
-         ELSE
-            SELECT * FROM oao_file WHERE oao01=g_oga.oga16 AND oao03 = 0 INTO TEMP x   
+            END IF
          END IF
-         
+
+         DROP TABLE x
+
+         IF g_oga.oga09 MATCHES '[2468]' AND g_oga.oga01 != g_oga.oga011 THEN #No.FUN-630061
+            SELECT * FROM oao_file WHERE oao01=g_oga.oga011 AND oao03 = 0 INTO TEMP x
+         ELSE
+            SELECT * FROM oao_file WHERE oao01=g_oga.oga16 AND oao03 = 0 INTO TEMP x
+         END IF
+
          UPDATE x SET oao01 = g_oga.oga01
-         DELETE FROM oao_file WHERE oao01 = g_oga.oga01 AND oao03 = 0 
+         DELETE FROM oao_file WHERE oao01 = g_oga.oga01 AND oao03 = 0
          INSERT INTO oao_file SELECT * FROM x
-         
+
          CALL t600_show_oao()
          EXIT WHILE
       END WHILE
    END IF
-   IF l_flag = 'b' THEN 
+   IF l_flag = 'b' THEN
       WHILE TRUE
          LET l_cnt = 0
          SELECT COUNT(*) INTO l_cnt FROM oao_file
@@ -37152,8 +37167,8 @@ FUNCTION t600_ins_oao(l_flag)
       END WHILE
    END IF
    IF l_flag = 'o' THEN
-      DECLARE t600_ogb31_ogb32 
-        CURSOR FOR SELECT ogb03,ogb31,ogb32 FROM ogb_file  
+      DECLARE t600_ogb31_ogb32
+        CURSOR FOR SELECT ogb03,ogb31,ogb32 FROM ogb_file
                      WHERE ogb01 = g_oga.oga01
       FOREACH t600_ogb31_ogb32 INTO l_ogb03,l_ogb31,l_ogb32
          DROP TABLE x
@@ -37167,21 +37182,21 @@ FUNCTION t600_ins_oao(l_flag)
          INSERT INTO oao_file SELECT * FROM x
       END FOREACH
    END IF
-END FUNCTION 
+END FUNCTION
 #FUN-AC0074 ---------------Begin---------------------
 FUNCTION t600_move_to()
-   DEFINE l_ohb14    LIKE ohb_file.ohb14  
+   DEFINE l_ohb14    LIKE ohb_file.ohb14
    DEFINE l_ohb14t   LIKE ohb_file.ohb14t
-   DEFINE l_rxc      RECORD LIKE rxc_file.* 
+   DEFINE l_rxc      RECORD LIKE rxc_file.*
    DEFINE l_msg      STRING
-   DEFINE l_imaicd04 LIKE imaicd_file.imaicd04 
+   DEFINE l_imaicd04 LIKE imaicd_file.imaicd04
    DEFINE l_cnt      LIKE type_file.num5
    LET g_success = 'Y'
 #MOD-C30203 --------------------STA
 #  SELECT MAX(ogb03) INTO b_ogb.ogb03 FROM ogb_file
 #   WHERE ogb31 = g_oeb.oeb01
 #     AND ogb01 = g_oga.oga01
-   IF g_oeb.oeb03 > 9000 THEN 
+   IF g_oeb.oeb03 > 9000 THEN
       SELECT MAX(ogb03) INTO b_ogb.ogb03 FROM ogb_file
        WHERE ogb31 = g_oeb.oeb01
          AND ogb01 = g_oga.oga01
@@ -37197,7 +37212,7 @@ FUNCTION t600_move_to()
       LET b_ogb.ogb03 = 0
    END IF
 #MOD-C30203 --------------------STA
-   IF g_oeb.oeb03 > 9000 THEN 
+   IF g_oeb.oeb03 > 9000 THEN
       LET b_ogb.ogb03 = b_ogb.ogb03 + 9001
    ELSE
       LET b_ogb.ogb03 = b_ogb.ogb03 + 1
@@ -37208,32 +37223,32 @@ FUNCTION t600_move_to()
    LET b_ogb.ogb913= g_oeb.oeb913
    LET b_ogb.ogb914= g_oeb.oeb914
    LET b_ogb.ogb916= g_oeb.oeb916
-   LET b_ogb.ogb19 = g_oeb.oeb906 
+   LET b_ogb.ogb19 = g_oeb.oeb906
    IF cl_null(b_ogb.ogb19) THEN
       LET b_ogb.ogb19 = 'N'
-   END IF       
-   #单位换算   
+   END IF
+   #单位换算
    LET b_ogb.ogb05_fac= g_oeb.oeb05_fac
    LET b_ogb.ogb06 = g_oeb.oeb06
    LET b_ogb.ogb07 = g_oeb.oeb07
    LET b_ogb.ogb08 = g_oeb.oeb08
    LET b_ogb.ogb15_fac = g_oeb.oeb05_fac
-   LET b_ogb.ogb17 = 'N'     
+   LET b_ogb.ogb17 = 'N'
    IF b_ogb.ogb09  IS NULL THEN LET b_ogb.ogb09  = ' ' END IF
    IF b_ogb.ogb091 IS NULL THEN LET b_ogb.ogb091 = ' ' END IF
    IF b_ogb.ogb092 IS NULL THEN LET b_ogb.ogb092 = ' ' END IF
-   
+
    LET b_ogb.ogb11 = g_oeb.oeb11
    LET b_ogb.ogb18 = b_ogb.ogb12
    LET b_ogb.ogb13 = g_oeb.oeb13
-   LET b_ogb.ogb37 = g_oeb.oeb37  
-   LET b_ogb.ogb908= g_oeb.oeb908 
-   LET b_ogb.ogb930= g_oeb.oeb930 
+   LET b_ogb.ogb37 = g_oeb.oeb37
+   LET b_ogb.ogb908= g_oeb.oeb908
+   LET b_ogb.ogb930= g_oeb.oeb930
    LET b_ogb.ogb44 = g_oeb.oeb44
    LET b_ogb.ogbplant = g_oeb.oebplant
    LET b_ogb.ogblegal = g_oeb.oeblegal
    LET b_ogb.ogb45 = g_oeb.oeb45
-   LET b_ogb.ogb46 = g_oeb.oeb46                                                                                              
+   LET b_ogb.ogb46 = g_oeb.oeb46
    LET b_ogb.ogb47 = g_oeb.oeb47
       SELECT SUM(ogb14)
         INTO b_ogb.ogb14
@@ -37243,7 +37258,7 @@ FUNCTION t600_move_to()
          AND ogb1005 =g_oeb.oeb1003
          AND ogb01 =oga01
          AND ogapost ='Y'
-         AND ogaconf != 'X' 
+         AND ogaconf != 'X'
       SELECT SUM(ohb14)
         INTO l_ohb14
         FROM ohb_file,oha_file
@@ -37261,13 +37276,13 @@ FUNCTION t600_move_to()
 
       SELECT SUM(ogb14t)
         INTO b_ogb.ogb14t
-        FROM ogb_file,oga_file 
+        FROM ogb_file,oga_file
        WHERE ogb31 =g_oeb.oeb01
          AND ogb32 =g_oeb.oeb03
          AND ogb1005 =g_oeb.oeb1003
          AND ogb01 =oga01
          AND ogapost ='Y'
-         AND ogaconf != 'X' 
+         AND ogaconf != 'X'
       SELECT SUM(ohb14t)
         INTO l_ohb14t
         FROM ohb_file,oha_file
@@ -37281,24 +37296,24 @@ FUNCTION t600_move_to()
       IF cl_null(b_ogb.ogb14t) THEN
          LET b_ogb.ogb14t = 0
       END IF
-   LET b_ogb.ogb14t =g_oeb.oeb14t - b_ogb.ogb14t + l_ohb14t  
+   LET b_ogb.ogb14t =g_oeb.oeb14t - b_ogb.ogb14t + l_ohb14t
    LET b_ogb.ogb41 = g_oeb.oeb41
    LET b_ogb.ogb42 = g_oeb.oeb42
    LET b_ogb.ogb43 = g_oeb.oeb43
 
-   LET b_ogb.ogb1001= g_oeb.oeb1001    
-   LET b_ogb.ogb1012= g_oeb.oeb1012    
-   LET b_ogb.ogb1002= g_oeb.oeb1002    
-   LET b_ogb.ogb1003= g_oeb.oeb15      
-   LET b_ogb.ogb1004= g_oeb.oeb1004    
-   LET b_ogb.ogb1005= g_oeb.oeb1003    
-   LET b_ogb.ogb1006= g_oeb.oeb1006    
-   LET b_ogb.ogb1007= g_oeb.oeb1007    
-   LET b_ogb.ogb1008= g_oeb.oeb1008    
-   LET b_ogb.ogb1009= g_oeb.oeb1009    
-   LET b_ogb.ogb1010= g_oeb.oeb1010    
-   LET b_ogb.ogb1014 = 'N'  
-   LET b_ogb.ogb1013 = 0    
+   LET b_ogb.ogb1001= g_oeb.oeb1001
+   LET b_ogb.ogb1012= g_oeb.oeb1012
+   LET b_ogb.ogb1002= g_oeb.oeb1002
+   LET b_ogb.ogb1003= g_oeb.oeb15
+   LET b_ogb.ogb1004= g_oeb.oeb1004
+   LET b_ogb.ogb1005= g_oeb.oeb1003
+   LET b_ogb.ogb1006= g_oeb.oeb1006
+   LET b_ogb.ogb1007= g_oeb.oeb1007
+   LET b_ogb.ogb1008= g_oeb.oeb1008
+   LET b_ogb.ogb1009= g_oeb.oeb1009
+   LET b_ogb.ogb1010= g_oeb.oeb1010
+   LET b_ogb.ogb1014 = 'N'
+   LET b_ogb.ogb1013 = 0
 
 
    LET b_ogb.ogb48 = g_oeb.oeb49
@@ -37308,7 +37323,7 @@ FUNCTION t600_move_to()
    CALL t600_b_else()
 
    LET g_msg=b_ogb.ogb03,' ',b_ogb.ogb04,' ',b_ogb.ogb12
-   
+
    CALL cl_msg(g_msg)
 
    IF cl_null(b_ogb.ogb05_fac) THEN
@@ -37317,11 +37332,11 @@ FUNCTION t600_move_to()
    IF cl_null(b_ogb.ogb12) THEN
       LET b_ogb.ogb12 = 0
    END IF
-                      
+
    IF cl_null(b_ogb.ogb37) THEN
       LET b_ogb.ogb37 = 0
-   END IF                                                                             
-    
+   END IF
+
    IF cl_null(b_ogb.ogb13) THEN
       LET b_ogb.ogb13 = 0
    END IF
@@ -37352,18 +37367,18 @@ FUNCTION t600_move_to()
    IF cl_null(b_ogb.ogb1006) THEN
       LET b_ogb.ogb1006 = 100
    END IF
-   
+
    IF g_azw.azw04 = '2' THEN
       IF cl_null(b_ogb.ogb09) THEN  #TQC-C20232 add
         #SELECT rtz07 INTO b_ogb.ogb09 FROM rtz_file WHERE rtz01 = g_oga.ogaplant   #FUN-C90049 mark
-         CALL s_get_coststore(g_oga.ogaplant,b_ogb.ogb04) RETURNING b_ogb.ogb09              #FUN-C90049 add 
+         CALL s_get_coststore(g_oga.ogaplant,b_ogb.ogb04) RETURNING b_ogb.ogb09              #FUN-C90049 add
       END IF    #TQC-C20232 add
       IF b_ogb.ogb09 IS NULL THEN
-         LET g_success = 'N' 
+         LET g_success = 'N'
          RETURN
       ELSE
-        IF s_internal_item( b_ogb.ogb04,g_plant ) AND  (NOT s_joint_venture( b_ogb.ogb04,g_plant)) THEN    
-          SELECT COUNT(*) INTO g_cnt FROM img_file 
+        IF s_internal_item( b_ogb.ogb04,g_plant ) AND  (NOT s_joint_venture( b_ogb.ogb04,g_plant)) THEN
+          SELECT COUNT(*) INTO g_cnt FROM img_file
            WHERE img01 = b_ogb.ogb04 AND img02 = b_ogb.ogb09
           IF g_cnt IS NULL THEN LET g_cnt = 0 END IF
           IF g_cnt = 0 THEN
@@ -37374,22 +37389,22 @@ FUNCTION t600_move_to()
              END IF
              CALL s_add_img(b_ogb.ogb04,b_ogb.ogb09,' ',' ',b_ogb.ogb01,
                            b_ogb.ogb03,g_oga.oga02)
-          END IF                            
-        END IF                             
+          END IF
+        END IF
       END IF
    END IF
 
-   LET b_ogb.ogbplant = g_plant 
-   LET b_ogb.ogblegal = g_legal  
+   LET b_ogb.ogbplant = g_plant
+   LET b_ogb.ogblegal = g_legal
    LET b_ogb.ogb47 = (b_ogb.ogb917/g_oeb.oeb917)*g_oeb.oeb47
    LET l_rxc.rxc00 = '02'
    LET l_rxc.rxc01 = b_ogb.ogb01
    LET l_rxc.rxc02 = b_ogb.ogb03
    LET l_rxc.rxcplant = b_ogb.ogbplant
    LET l_rxc.rxclegal = b_ogb.ogblegal
-   DECLARE cur_rxc01_cs CURSOR FOR 
-      SELECT rxc03,rxc04,rxc05,rxc06,rxc07,rxc08,rxc09,rxc10,rxc11,rxc15 
-       FROM rxc_file WHERE rxc00 = '01' 
+   DECLARE cur_rxc01_cs CURSOR FOR
+      SELECT rxc03,rxc04,rxc05,rxc06,rxc07,rxc08,rxc09,rxc10,rxc11,rxc15
+       FROM rxc_file WHERE rxc00 = '01'
         AND rxc01 = g_oeb.oeb01 AND rxc02 = g_oeb.oeb03
    FOREACH cur_rxc01_cs INTO l_rxc.rxc03,l_rxc.rxc04,l_rxc.rxc05,l_rxc.rxc06,
                           l_rxc.rxc07,l_rxc.rxc08,l_rxc.rxc09,l_rxc.rxc10,
@@ -37399,17 +37414,17 @@ FUNCTION t600_move_to()
        IF l_rxc.rxc09 IS NULL THEN LET l_rxc.rxc09 = 0 END IF
        IF l_rxc.rxc11 IS NULL THEN LET l_rxc.rxc11 = 'N' END IF
        INSERT INTO rxc_file(rxc00,rxc01,rxc02,rxc03,rxc04,rxc05,rxc06,
-                             rxc07,rxc08,rxc09,rxc10,rxc11,rxcplant,rxclegal,rxc15)  
+                             rxc07,rxc08,rxc09,rxc10,rxc11,rxcplant,rxclegal,rxc15)
                       VALUES(l_rxc.rxc00,l_rxc.rxc01,l_rxc.rxc02,l_rxc.rxc03,
                              l_rxc.rxc04,l_rxc.rxc05,l_rxc.rxc06,l_rxc.rxc07,
                              l_rxc.rxc08,l_rxc.rxc09,l_rxc.rxc10,l_rxc.rxc11,
-                             l_rxc.rxcplant,l_rxc.rxclegal,l_rxc.rxc15)  
+                             l_rxc.rxcplant,l_rxc.rxclegal,l_rxc.rxc15)
    END FOREACH
    SELECT SUM(rxc06) INTO b_ogb.ogb47 FROM rxc_file
        WHERE rxc00 = '02' AND rxc01 = b_ogb.ogb01 AND rxc02 = b_ogb.ogb03
    IF b_ogb.ogb47 IS NULL THEN LET b_ogb.ogb47 = 0 END IF
-END FUNCTION         
-#FUN-AC0074 ---------------End-----------------------    
+END FUNCTION
+#FUN-AC0074 ---------------End-----------------------
 
 #-----END MOD-B40263-----
 
@@ -37422,7 +37437,7 @@ FUNCTION t620_sub(p_no,p_rtz04,p_oea213,p_oeb917,p_oeb13,t_azi04)
    DEFINE p_oeb917  LIKE oeb_file.oeb917   #计价数量
    DEFINE p_oeb13   LIKE oeb_file.oeb13    #单价
    DEFINE t_azi04   LIKE azi_file.azi04    #金额小数位
-   DEFINE l_rtz06   LIKE rtz_file.rtz06    
+   DEFINE l_rtz06   LIKE rtz_file.rtz06
    DEFINE l_rvy04   LIKE rvy_file.rvy04
    DEFINE l_gec04   LIKE gec_file.gec04
    DEFINE l_gec07   LIKE gec_file.gec07
@@ -37433,7 +37448,7 @@ FUNCTION t620_sub(p_no,p_rtz04,p_oea213,p_oeb917,p_oeb13,t_azi04)
    DEFINE l_cnt     LIKE type_file.num5
    DEFINE l_sum_gec04 LIKE gec_file.gec04
    DEFINE l_sql       STRING
-   DEFINE l_sum_rvy06 LIKE rvy_file.rvy06  
+   DEFINE l_sum_rvy06 LIKE rvy_file.rvy06
 
    IF NOT cl_null(p_rtz04) THEN
       LET l_sql = "SELECT rvy04,gec04,gec07,rvy06",
@@ -37458,7 +37473,7 @@ FUNCTION t620_sub(p_no,p_rtz04,p_oea213,p_oeb917,p_oeb13,t_azi04)
         #取單價含稅未稅價時,應用稅別資料維護檔內的含稅否
          IF g_azw.azw04 = '2' AND NOT s_industry("slk") THEN
             IF NOT cl_null(l_gec07) THEN
-               LET p_oea213 = l_gec07   
+               LET p_oea213 = l_gec07
             END IF
          END IF
         #TQC-C30321 add END
@@ -37516,8 +37531,8 @@ FUNCTION t620_ins_ogi(p_ogb03,p_ogb04,p_ogb917,p_ogb13)
        WHERE rtz01 = g_oga.ogaplant
       IF NOT cl_null(l_rtz04) THEN
          SELECT SUM(gec04),SUM(rvy06) INTO l_sum_gec04,l_sum_rvy06
-            FROM rte_file 
-           INNER JOIN rvy_file 
+            FROM rte_file
+           INNER JOIN rvy_file
               ON rte01 = rvy01
              AND rte02 = rvy02
            INNER JOIN gec_file
@@ -37525,10 +37540,10 @@ FUNCTION t620_ins_ogi(p_ogb03,p_ogb04,p_ogb917,p_ogb13)
              AND rvy05 = gec011
            WHERE rte01 = l_rtz04
              AND rte03 = p_ogb04
-             AND rte07 = 'Y' 
+             AND rte07 = 'Y'
          IF cl_null(l_sum_gec04) THEN
             LET l_sum_gec04 = 0
-         END IF 
+         END IF
          IF cl_null(l_sum_rvy06) THEN
             LET l_sum_rvy06 = 0
          END IF
@@ -37578,16 +37593,16 @@ FUNCTION t620_ins_ogi(p_ogb03,p_ogb04,p_ogb917,p_ogb13)
                 IF l_ogi.ogi06 = 0 THEN
                    LET l_ogi.ogi09 = l_ogi08_1 * l_ogi.ogi05/100
                 ELSE
-                   LET l_ogi.ogi09 = 0 
+                   LET l_ogi.ogi09 = 0
                 END IF
-                LET l_ogi.ogi08t = l_ogi.ogi08 + l_ogi.ogi09 + l_ogi.ogi06 * p_ogb917 
+                LET l_ogi.ogi08t = l_ogi.ogi08 + l_ogi.ogi09 + l_ogi.ogi06 * p_ogb917
                 CALL cl_digcut(l_ogi.ogi08t,t_azi04) RETURNING l_ogi.ogi08t
              ELSE
                 IF l_ogi08 = 0 THEN
                    LET l_ogi.ogi08 = p_ogb917 * p_ogb13 - l_sum_rvy06*p_ogb917
                    LET l_ogi08_1 = l_ogi.ogi08
                 ELSE
-                   LET l_ogi.ogi08 = l_ogi08 
+                   LET l_ogi.ogi08 = l_ogi08
                 END IF
                 CALL cl_digcut(l_ogi.ogi08,t_azi04) RETURNING l_ogi.ogi08
                 IF l_ogi.ogi06 = 0 THEN
@@ -37660,7 +37675,7 @@ FUNCTION t620_ins_ogi(p_ogb03,p_ogb04,p_ogb917,p_ogb13)
       END IF
    END IF
 END FUNCTION
-#FUN-C10040--------add------end----- 
+#FUN-C10040--------add------end-----
 #FUN-910088--add--start--
 FUNCTION t600_ogg12_check(p_ogg,i,j)
 DEFINE p_ogg              RECORD
@@ -37703,8 +37718,8 @@ DEFINE l_msg3     STRING      #TQC-C50131
       LET l_ogg[i].ogg12 = s_digqty(l_ogg[i].ogg12,l_ogg[i].ogg10)
       DISPLAY BY NAME l_ogg[i].ogg12
    END IF
-   LET g_ima918 = ''  
-   LET g_ima921 = ''   
+   LET g_ima918 = ''
+   LET g_ima921 = ''
    LET g_ima930 = ''   #DEV-D30059 add
    LET g_ima906 = ''   #MOD-BC0207 add
    SELECT ima918,ima921,ima906,ima930 INTO g_ima918,g_ima921,g_ima906,g_ima930 #MOD-BC0207 add ima906  #DEV-D30059 add ima930
@@ -37722,12 +37737,12 @@ DEFINE l_msg3     STRING      #TQC-C50131
             AND img02 = l_ogg[i].ogg09
             AND img03 = l_ogg[i].ogg091
             AND img04 = l_ogg[i].ogg092
-         
-         LET l_ogg[i].ogg16 = s_digqty(l_ogg[i].ogg16,l_ogg[i].ogg15)  
+
+         LET l_ogg[i].ogg16 = s_digqty(l_ogg[i].ogg16,l_ogg[i].ogg15)
          DISPLAY l_ogg[i].ogg15 TO s_ogg[j].ogg15
          DISPLAY l_ogg[i].ogg16 TO s_ogg[j].ogg16
 
-         IF NOT cl_null(l_ogg[i].ogg15) THEN 
+         IF NOT cl_null(l_ogg[i].ogg15) THEN
             CALL s_umfchk(g_ogb[l_ac].ogb04,l_ogg[i].ogg10,l_ogg[i].ogg15)
                 RETURNING g_cnt,l_ogg[i].ogg15_fac
             IF g_cnt=1 THEN
@@ -37744,7 +37759,7 @@ DEFINE l_msg3     STRING      #TQC-C50131
          IF cl_null(l_ogg[i].ogg15_fac) THEN
             LET l_ogg[i].ogg15_fac = 1
          END IF
- 
+
 
          IF cl_null(g_ogb[i].ogb41) THEN
             SELECT oea00,oea11,oea12 INTO l_oea00,l_oea11,l_oea12
@@ -37757,23 +37772,23 @@ DEFINE l_msg3     STRING      #TQC-C50131
                LET l_bno = l_oga16
             ELSE
                LET l_bno = g_ogb[l_ac].ogb31
-            END IF 
+            END IF
          ELSE
             LET l_bno = g_ogb[l_ac].ogb41
          END IF
-         IF g_ima906 = '3' AND l_ogg[i].ogg20 = '2' THEN #MOD-BC0207 add 
+         IF g_ima906 = '3' AND l_ogg[i].ogg20 = '2' THEN #MOD-BC0207 add
          ELSE #MOD-BC0207 add
             IF g_ima930 = 'N' THEN                                        #DEV-D30059
-               CALL s_mod_lot(g_prog,g_oga.oga01,g_ogb[l_ac].ogb03,l_ogg[i].ogg18,   
-                             g_ogb[l_ac].ogb04,l_ogg[i].ogg09,  
+               CALL s_mod_lot(g_prog,g_oga.oga01,g_ogb[l_ac].ogb03,l_ogg[i].ogg18,
+                             g_ogb[l_ac].ogb04,l_ogg[i].ogg09,
                              l_ogg[i].ogg091,l_ogg[i].ogg092,
-                             l_ogg[i].ogg10,l_ogg[i].ogg15,l_ogg[i].ogg15_fac,   
+                             l_ogg[i].ogg10,l_ogg[i].ogg15,l_ogg[i].ogg15_fac,
                              l_ogg[i].ogg12,l_bno,'MOD',-1)
                    RETURNING l_r,g_qty
             END IF                                                        #DEV-D30059
             IF l_r = "Y" THEN
                LET l_ogg[i].ogg12 = g_qty
-               LET l_ogg[i].ogg12 = s_digqty(l_ogg[i].ogg12,l_ogg[i].ogg10)   
+               LET l_ogg[i].ogg12 = s_digqty(l_ogg[i].ogg12,l_ogg[i].ogg10)
             END IF
          END IF #MOD-BC0207 add
       END IF
@@ -37790,13 +37805,13 @@ FUNCTION t600_ogb912_check()
          DISPLAY BY NAME g_ogb[l_ac].ogb912
       END IF
    END IF
-   
+
    CASE t600_chk_ogb912()
       WHEN "ogb912" RETURN FALSE,'ogb912'
       WHEN "ogb915" RETURN FALSE,'ogb915'
    END CASE
    RETURN TRUE,''
-END FUNCTION 
+END FUNCTION
 
 FUNCTION t600_ogb917_check()
    IF NOT cl_null(g_ogb[l_ac].ogb917) AND NOT cl_null(g_ogb[l_ac].ogb916) THEN
@@ -37805,22 +37820,22 @@ FUNCTION t600_ogb917_check()
          DISPLAY BY NAME g_ogb[l_ac].ogb917
       END IF
    END IF
-   
+
    IF NOT cl_null(g_ogb[l_ac].ogb917) THEN
       IF g_ogb[l_ac].ogb917 < 0 THEN
          CALL cl_err('','aim-391',0)  #
-         RETURN FALSE 
+         RETURN FALSE
       END IF
    ELSE
       CALL cl_err('','mfg3291',0)  #
-      RETURN FALSE 
+      RETURN FALSE
    END IF
    IF NOT cl_null(g_ogb[l_ac].ogb917) AND (g_ogb[l_ac].ogb917!=g_ogb_t.ogb917
                                           OR g_ogb_t.ogb917 IS NULL ) THEN
       CALL t600_ogb14()
    END IF
    RETURN TRUE
-END FUNCTION 
+END FUNCTION
 
 #TQC-C20344 ----------- add ---------- begin
 FUNCTION t600_pre_ins_or_upd(p_cmd)
@@ -37834,7 +37849,7 @@ DEFINE     l_n    LIKE type_file.num5   #MOD-C30473 add
        #FUN-C30169 add END
 #MOD-C30473 ----- add ----- begin
 #判斷之前是否已經有進行過預插入動作
-        SELECT COUNT(*) INTO l_n FROM ogb_file 
+        SELECT COUNT(*) INTO l_n FROM ogb_file
          WHERE ogb01 = b_ogb.ogb01
            AND ogb03 = b_ogb.ogb03
         IF l_n > 0 THEN RETURN TRUE END IF
@@ -37842,22 +37857,22 @@ DEFINE     l_n    LIKE type_file.num5   #MOD-C30473 add
        #FUN-C50097---begin
        IF cl_null(b_ogb.ogb50) THEN
           LET b_ogb.ogb50 = 0
-       END IF  
+       END IF
        IF cl_null(b_ogb.ogb51) THEN
           LET b_ogb.ogb51 = 0
-       END IF  
+       END IF
        IF cl_null(b_ogb.ogb52) THEN
            LET b_ogb.ogb52 = 0
        END IF
        IF cl_null(b_ogb.ogb53) THEN
           LET b_ogb.ogb53 = 0
-       END IF  
+       END IF
        IF cl_null(b_ogb.ogb54) THEN
           LET b_ogb.ogb54 = 0
-       END IF  
+       END IF
        IF cl_null(b_ogb.ogb55) THEN
           LET b_ogb.ogb55 = 0
-       END IF         
+       END IF
        #FUN-C50097---end
        IF cl_null(b_ogb.ogb31) THEN LET b_ogb.ogb32='' END IF   #TQC-C60131 add
 
@@ -37885,9 +37900,9 @@ END FUNCTION
 #No.FUN-BB0086--add--end--
 #TQC-C30113 add START
 FUNCTION t600_ins_rxe(p_ogb01,p_ogb04,p_ogb31,p_ogb03)
-DEFINE l_n              LIKE type_file.num10 
+DEFINE l_n              LIKE type_file.num10
 DEFINE p_ogb01          LIKE ogb_file.ogb01
-DEFINE p_ogb04          LIKE ogb_file.ogb04 
+DEFINE p_ogb04          LIKE ogb_file.ogb04
 DEFINE p_ogb31          LIKE ogb_file.ogb31
 DEFINE p_ogb32          LIKE ogb_file.ogb32
 DEFINE p_ogb03          LIKE ogb_file.ogb03
@@ -37896,19 +37911,19 @@ DEFINE l_lqw08          LIKE lqw_file.lqw08
 DEFINE l_lpx32          LIKE lpx_file.lpx32
 DEFINE l_rxe     RECORD LIKE rxe_file.*
 DEFINE l_lqw     RECORD LIKE lqw_file.*
- 
-   SELECT COUNT(*) INTO l_n 
-      FROM lqw_file 
+
+   SELECT COUNT(*) INTO l_n
+      FROM lqw_file
         WHERE lqw01 = p_ogb31
    IF l_n > 0 THEN
       LET l_sql = " SELECT DISTINCT lqw08 FROM lqw_file ",
                   "   WHERE lqw01 = '",p_ogb31,"'"
       PREPARE lqw_pre FROM l_sql
-      DECLARE lqw_cur CURSOR FOR lqw_pre       
-      FOREACH lqw_cur INTO l_lqw08 
+      DECLARE lqw_cur CURSOR FOR lqw_pre
+      FOREACH lqw_cur INTO l_lqw08
          IF cl_null(l_lqw08) THEN CONTINUE FOREACH END IF
          SELECT lpx32 INTO l_lpx32 FROM lpx_file
-            WHERE lpx01 = l_lqw08 
+            WHERE lpx01 = l_lqw08
          IF cl_null(l_lpx32) THEN CONTINUE FOREACH END IF
          IF l_lpx32 = p_ogb04 THEN
             LET l_sql  = "SELECT * FROM lqw_file" ,
@@ -37917,7 +37932,7 @@ DEFINE l_lqw     RECORD LIKE lqw_file.*
             PREPARE ins_rxe_pre FROM l_sql
             DECLARE ins_rxe_cur CURSOR FOR ins_rxe_pre
             SELECT MAX(rxe03) INTO l_rxe.rxe03 FROM rxe_file
-               WHERE rxe00 = '01' AND rxe01 = p_ogb01 
+               WHERE rxe00 = '01' AND rxe01 = p_ogb01
                  AND rxeplant = g_plant
             FOREACH ins_rxe_cur  INTO l_lqw.*
                IF cl_null(l_rxe.rxe03) OR l_rxe.rxe03 = 0 THEN
@@ -37925,9 +37940,9 @@ DEFINE l_lqw     RECORD LIKE lqw_file.*
                ELSE
                   LET l_rxe.rxe03 = l_rxe.rxe03 + 1
                END IF
-               LET l_rxe.rxe02 = p_ogb03 
+               LET l_rxe.rxe02 = p_ogb03
                LET l_rxe.rxe00 = '02'
-               LET l_rxe.rxe01 = g_oga.oga01 
+               LET l_rxe.rxe01 = g_oga.oga01
                LET l_rxe.rxe04 = l_lqw.lqw09
                LET l_rxe.rxe05 = l_lqw.lqw10
                LET l_rxe.rxe06 = l_lqw.lqw08
@@ -37962,26 +37977,26 @@ FUNCTION t600_ogb48_ogb49_chk()
    LET g_errno = ''
    IF NOT cl_null(g_ogb[l_ac].ogb31) AND NOT cl_null(g_ogb[l_ac].ogb32) THEN
       SELECT oeb49, oeb50 INTO l_oeb49,l_oeb50
-        FROM oeb_file 
+        FROM oeb_file
        WHERE oeb01 = g_ogb[l_ac].ogb31
          AND oeb03 = g_ogb[l_ac].ogb32
          AND oebplant = g_oga.oga83
       LET  g_ogb[l_ac].ogb48 = l_oeb49
-      LET  g_ogb[l_ac].ogb49 = l_oeb50 
-      CALL cl_set_comp_entry("ogb48",FALSE) 
+      LET  g_ogb[l_ac].ogb49 = l_oeb50
+      CALL cl_set_comp_entry("ogb48",FALSE)
       IF cl_null(g_ogb[l_ac].ogb48) AND cl_null(g_ogb[l_ac].ogb49) THEN
          RETURN
-      END IF 
-   ELSE 
+      END IF
+   ELSE
       CALL cl_set_comp_entry("ogb48",TRUE)
-   END IF 
+   END IF
    IF NOT cl_null(g_ogb[l_ac].ogb48) THEN
       #先匹配合同的摊位、商户资料
-      SELECT lnt04,lnt54,lnt57 INTO l_lnt04,l_lnt54,l_lnt57 
-        FROM lnt_file 
-       WHERE lnt06 = g_ogb[l_ac].ogb48 
+      SELECT lnt04,lnt54,lnt57 INTO l_lnt04,l_lnt54,l_lnt57
+        FROM lnt_file
+       WHERE lnt06 = g_ogb[l_ac].ogb48
          AND lntplant = g_oga.oga83
-         AND lnt26 = 'Y' 
+         AND lnt26 = 'Y'
          AND g_oga.oga02 BETWEEN lnt17 AND lnt18
       IF SQLCA.SQLCODE = 100 THEN
           #如果不存在与合同则去匹配预租协议里的摊位、商户资料
@@ -37994,14 +38009,14 @@ FUNCTION t600_ogb48_ogb49_chk()
           IF SQLCA.SQLCODE = 100 THEN
              LET g_errno = 'axm_609'
              RETURN
-          END IF 
+          END IF
           IF l_lih21 <> 'Y' THEN
              LET g_errno = 'axm_667'
              RETURN
           END IF
-          LET g_ogb[l_ac].ogb49 = l_lih08 
+          LET g_ogb[l_ac].ogb49 = l_lih08
           DISPLAY BY NAME g_ogb[l_ac].ogb49
-      ELSE 
+      ELSE
          IF  g_oga.oga57 != l_lnt54 THEN
             LET g_errno = 'axm_611'
             RETURN
@@ -38012,10 +38027,10 @@ FUNCTION t600_ogb48_ogb49_chk()
          END IF
          LET g_ogb[l_ac].ogb49 = l_lnt04
          DISPLAY BY NAME g_ogb[l_ac].ogb49
-      END IF 
-   END IF 
+      END IF
+   END IF
 END FUNCTION
-#TQC-C30106 add end ----- 
+#TQC-C30106 add end -----
 #FUN-BB0081 add --start--
 FUNCTION t600_set_entry_ogg(p_ocm01)
   DEFINE p_ocm01  LIKE ocm_file.ocm01
@@ -38095,7 +38110,7 @@ FUNCTION t600_b_ogg2_1()   # 庫存異動明細(ogg_file)輸入
    CALL cl_set_comp_visible("ogg13",FALSE)
    IF g_oga.oga09 ='8' AND g_aza.aza26 ='2' AND g_oaz.oaz94 ='Y' THEN #TQC-C70206
       CALL cl_set_comp_visible("ogg13",TRUE)
-   END IF    
+   END IF
 #FUN-C50097 ADD END
    IF g_sma.sma122 = '1' THEN
       CALL cl_getmsg('asm-303',g_lang) RETURNING l_msg1
@@ -38237,7 +38252,7 @@ FUNCTION t600_b_ogg2()   # 庫存異動明細(ogg_file)輸入
          ogg091           LIKE ogg_file.ogg091,
          ogg092           LIKE ogg_file.ogg092,
          ogg12            LIKE ogg_file.ogg12,
-         ogg13            LIKE ogg_file.ogg13, #FUN-C50097        
+         ogg13            LIKE ogg_file.ogg13, #FUN-C50097
          ogg10            LIKE ogg_file.ogg10,
          #img10           LIKE type_file.num10,   #MOD-BC0116 mark
          img10            LIKE img_file.img10,    #MOD-BC0116 add
@@ -38278,7 +38293,7 @@ FUNCTION t600_b_ogg2()   # 庫存異動明細(ogg_file)輸入
   DEFINE l_ocm06       LIKE ocm_file.ocm06
   DEFINE l_ogg13_t1       LIKE ogg_file.ogg12 #FUN-C50097
   DEFINE l_ogg13_t2       LIKE ogg_file.ogg12 #FUN-C50097
-    
+
    LET l_oea00 = ''
    LET l_oea11 = ''
    LET l_oea12 = ''
@@ -38294,8 +38309,8 @@ FUNCTION t600_b_ogg2()   # 庫存異動明細(ogg_file)輸入
    CALL cl_set_comp_visible("ogg13",FALSE)
    IF g_oga.oga09 ='8' AND g_aza.aza26 ='2' AND g_oaz.oaz94 ='Y' THEN #TQC-C70206
       CALL cl_set_comp_visible("ogg13",TRUE)
-   END IF    
-#FUN-C50097 ADD END    
+   END IF
+#FUN-C50097 ADD END
    IF g_sma.sma122 = '1' THEN
       CALL cl_getmsg('asm-303',g_lang) RETURNING l_msg1
       CALL cl_getmsg('asm-302',g_lang) RETURNING l_msg2
@@ -38498,7 +38513,7 @@ FUNCTION t600_b_ogg2()   # 庫存異動明細(ogg_file)輸入
        ogg091    LIKE ogg_file.ogg091,
        ogg092    LIKE ogg_file.ogg092,
        ogg10     LIKE ogg_file.ogg10,
-       ogg12     LIKE ogg_file.ogg12,  
+       ogg12     LIKE ogg_file.ogg12,
        ogg15     LIKE ogg_file.ogg15,
        ogg15_fac LIKE ogg_file.ogg15,
        ogg16     LIKE ogg_file.ogg16,
@@ -38615,11 +38630,11 @@ FUNCTION t600_b_ogg2()   # 庫存異動明細(ogg_file)輸入
            END IF
            #MOD-D40026 add begin
            IF l_ogg[i].ogg09 = g_oaz.oaz74 OR l_ogg[i].ogg09 = g_oaz.oaz75
-              OR l_ogg[i].ogg09 = g_oaz.oaz95 THEN 
+              OR l_ogg[i].ogg09 = g_oaz.oaz95 THEN
               CALL cl_err(l_ogg[i].ogg09,'axm-815',1)
               NEXT FIELD ogg09
-           END IF     
-           #MOD-D40026 add end 
+           END IF
+           #MOD-D40026 add end
      AFTER FIELD ogg17
         IF NOT cl_null(l_ogg[i].ogg17) THEN
             IF NOT s_chk_item_no(l_ogg[i].ogg17,"") THEN
@@ -38817,14 +38832,14 @@ FUNCTION t600_b_ogg2()   # 庫存異動明細(ogg_file)輸入
               END IF
               CALL s_umfchk(l_ogg[i].ogg17,l_ogg[i].ogg10,l_ogg[i].ogg15)
                             RETURNING g_cnt,l_ogg[i].ogg15_fac
-              IF g_cnt=1 THEN 
-                 CALL cl_err('','mfg3075',1) 
+              IF g_cnt=1 THEN
+                 CALL cl_err('','mfg3075',1)
                 #TQC-C50131 -- add -- begin
                  CALL cl_getmsg('asf-176',g_lang) RETURNING l_msg3
                  LET l_msg3 = l_msg3 CLIPPED,"(",l_ogg[i].ogg17,")"
                  CALL cl_msgany(10,20,l_msg3)
                 #TQC-C50131 -- add -- end
-                 NEXT FIELD ogg092 
+                 NEXT FIELD ogg092
               END IF
               IF cl_null(l_ogg[i].ogg15_fac) THEN LET l_ogg[i].ogg15_fac=1 END IF
            END IF
@@ -38854,14 +38869,14 @@ FUNCTION t600_b_ogg2()   # 庫存異動明細(ogg_file)輸入
                  END IF
                  CALL s_umfchk(l_ogg[i].ogg17,l_ogg[i].ogg10,l_ogg[i].ogg15)
                                RETURNING g_cnt,l_ogg[i].ogg15_fac
-                 IF g_cnt=1 THEN 
-                    CALL cl_err('','mfg3075',1) 
+                 IF g_cnt=1 THEN
+                    CALL cl_err('','mfg3075',1)
                    #TQC-C50131 -- add -- begin
                     CALL cl_getmsg('asf-176',g_lang) RETURNING l_msg3
                     LET l_msg3 = l_msg3 CLIPPED,"(",l_ogg[i].ogg17,")"
                     CALL cl_msgany(10,20,l_msg3)
                    #TQC-C50131 -- add -- end
-                    NEXT FIELD ogg092 
+                    NEXT FIELD ogg092
                  END IF
                  IF cl_null(l_ogg[i].ogg15_fac) THEN LET l_ogg[i].ogg15_fac=1 END IF
               END IF
@@ -38965,8 +38980,8 @@ FUNCTION t600_b_ogg2()   # 庫存異動明細(ogg_file)輸入
           #CHI-D30032 add end   -----
               IF cl_confirm('axm-170') THEN
                 #CHI-D30032 add start -----
-                 LET g_ogb[l_ac].ogb912 = l_ogg12_t1 
-                 LET g_ogb[l_ac].ogb915 = l_ogg12_t2 
+                 LET g_ogb[l_ac].ogb912 = l_ogg12_t1
+                 LET g_ogb[l_ac].ogb915 = l_ogg12_t2
                  DISPLAY BY NAME g_ogb[l_ac].ogb912
                  DISPLAY BY NAME g_ogb[l_ac].ogb915
                  IF g_loc_flag = 'Y' THEN
@@ -38986,7 +39001,7 @@ FUNCTION t600_b_ogg2()   # 庫存異動明細(ogg_file)輸入
            END IF #CHI-D30032 add
         END IF
 #FUN-C50097 ADD BEGIN---
-        IF g_oga.oga09 ='8' AND g_oaz.oaz94='Y' THEN 
+        IF g_oga.oga09 ='8' AND g_oaz.oaz94='Y' THEN
            IF l_ogg13_t1 != g_ogb[l_ac].ogb53 OR l_ogg13_t2 != g_ogb[l_ac].ogb54 THEN
              #CHI-D30032 add start -----
               IF g_oga.ogaconf ='Y' THEN
@@ -39002,7 +39017,7 @@ FUNCTION t600_b_ogg2()   # 庫存異動明細(ogg_file)輸入
                     DISPLAY BY NAME g_ogb[l_ac].ogb54
                     UPDATE ogb_file SET ogb53 = g_ogb[l_ac].ogb53,ogb54 = g_ogb[l_ac].ogb54
                      WHERE ogb01 = g_oga.oga01
-                       AND ogb03 = g_ogb[l_ac].ogb03                 
+                       AND ogb03 = g_ogb[l_ac].ogb03
                    #CHI-D30032 add end   -----
                     EXIT INPUT
                  ELSE
@@ -39010,7 +39025,7 @@ FUNCTION t600_b_ogg2()   # 庫存異動明細(ogg_file)輸入
                  END IF
               END IF #CHI-D30032 add
            END IF
-        END IF 
+        END IF
 #FUN-C50097 ADD END ---
       ON ACTION modi_lot
          LET g_ima918 = ''
@@ -39135,7 +39150,7 @@ FUNCTION t600_b_ogg2()   # 庫存異動明細(ogg_file)輸入
                 CONTINUE FOR
              END IF
           END IF
-          IF cl_null(l_ogg[i].ogg13) THEN 
+          IF cl_null(l_ogg[i].ogg13) THEN
             LET l_ogg[i].ogg13=0 #FUN-C50097 ADD
           END IF
           INSERT INTO ogg_file(ogg17,ogg01,ogg03,ogg09,ogg091,ogg092,ogg10,
@@ -39339,9 +39354,9 @@ DEFINE l_ima906         LIKE ima_file.ima906
 
          LET r_ogg.oggplant = g_plant
          LET r_ogg.ogglegal = g_legal
-         IF cl_null(r_ogg.ogg13) THEN 
+         IF cl_null(r_ogg.ogg13) THEN
                LET r_ogg.ogg13 = 0  #FUN-C50097 ADD
-         END IF 
+         END IF
          INSERT INTO ogg_file VALUES (r_ogg.*)
       END IF
 
@@ -39358,9 +39373,9 @@ DEFINE l_ima906         LIKE ima_file.ima906
 
             LET r_ogg.oggplant = g_plant
             LET r_ogg.ogglegal = g_legal
-            IF cl_null(r_ogg.ogg13) THEN 
+            IF cl_null(r_ogg.ogg13) THEN
                LET r_ogg.ogg13 = 0  #FUN-C50097 ADD
-            END IF 
+            END IF
             INSERT INTO ogg_file VALUES (r_ogg.*)
          END IF
          IF NOT cl_null(g_ogb[l_ac].ogb913) THEN
@@ -39375,9 +39390,9 @@ DEFINE l_ima906         LIKE ima_file.ima906
 
             LET r_ogg.oggplant = g_plant
             LET r_ogg.ogglegal = g_legal
-            IF cl_null(r_ogg.ogg13) THEN 
+            IF cl_null(r_ogg.ogg13) THEN
                LET r_ogg.ogg13 = 0  #FUN-C50097 ADD
-            END IF 
+            END IF
             INSERT INTO ogg_file VALUES (r_ogg.*)
          END IF
       END IF
@@ -39399,9 +39414,9 @@ DEFINE l_ima906         LIKE ima_file.ima906
 
          LET r_ogg.oggplant = g_plant
          LET r_ogg.ogglegal = g_legal
-            IF cl_null(r_ogg.ogg13) THEN 
+            IF cl_null(r_ogg.ogg13) THEN
                LET r_ogg.ogg13 = 0  #FUN-C50097 ADD
-            END IF 
+            END IF
          INSERT INTO ogg_file VALUES (r_ogg.*)
          LET r_ogg.ogg10=g_ogb[l_ac].ogb913
          LET r_ogg.ogg12=g_ogb[l_ac].ogb915
@@ -39440,9 +39455,9 @@ DEFINE l_ima906         LIKE ima_file.ima906
 
             LET r_ogg.oggplant = g_plant
             LET r_ogg.ogglegal = g_legal
-            IF cl_null(r_ogg.ogg13) THEN 
+            IF cl_null(r_ogg.ogg13) THEN
                LET r_ogg.ogg13 = 0  #FUN-C50097 ADD
-            END IF 
+            END IF
             INSERT INTO ogg_file VALUES (r_ogg.*)
          END FOREACH
       END IF
@@ -39463,9 +39478,9 @@ DEFINE l_ima906         LIKE ima_file.ima906
 
             LET r_ogg.oggplant = g_plant
             LET r_ogg.ogglegal = g_legal
-            IF cl_null(r_ogg.ogg13) THEN 
+            IF cl_null(r_ogg.ogg13) THEN
                LET r_ogg.ogg13 = 0  #FUN-C50097 ADD
-            END IF 
+            END IF
             INSERT INTO ogg_file VALUES (r_ogg.*)
          END FOREACH
          DECLARE t6006_c2_2_2_1 CURSOR FOR
@@ -39484,9 +39499,9 @@ DEFINE l_ima906         LIKE ima_file.ima906
 
             LET r_ogg.oggplant = g_plant
             LET r_ogg.ogglegal = g_legal
-            IF cl_null(r_ogg.ogg13) THEN 
+            IF cl_null(r_ogg.ogg13) THEN
                LET r_ogg.ogg13 = 0  #FUN-C50097 ADD
-            END IF 
+            END IF
             INSERT INTO ogg_file VALUES (r_ogg.*)
          END FOREACH
       END IF
@@ -39510,9 +39525,9 @@ DEFINE l_ima906         LIKE ima_file.ima906
 
             LET r_ogg.oggplant = g_plant
             LET r_ogg.ogglegal = g_legal
-            IF cl_null(r_ogg.ogg13) THEN 
+            IF cl_null(r_ogg.ogg13) THEN
                LET r_ogg.ogg13 = 0  #FUN-C50097 ADD
-            END IF 
+            END IF
             INSERT INTO ogg_file VALUES (r_ogg.*)
          END FOREACH
          DECLARE t6006_c2_3_2_1 CURSOR FOR
@@ -39531,9 +39546,9 @@ DEFINE l_ima906         LIKE ima_file.ima906
 
             LET r_ogg.oggplant = g_plant
             LET r_ogg.ogglegal = g_legal
-            IF cl_null(r_ogg.ogg13) THEN 
+            IF cl_null(r_ogg.ogg13) THEN
                LET r_ogg.ogg13 = 0  #FUN-C50097 ADD
-            END IF 
+            END IF
             INSERT INTO ogg_file VALUES (r_ogg.*)
          END FOREACH
       END IF
@@ -40124,139 +40139,139 @@ DEFINE l_ogb12  LIKE ogb_file.ogb12 #FUN-C50097
 DEFINE l_ogb50  LIKE ogb_file.ogb50 #FUN-C50097
 DEFINE l_ogb51  LIKE ogb_file.ogb51 #FUN-C50097
 DEFINE l_ogb12_sum LIKE ogb_file.ogb12 #FUN-C50097
-DEFINE l_ogb52  LIKE ogb_file.ogb52 #FUN-C50097 
+DEFINE l_ogb52  LIKE ogb_file.ogb52 #FUN-C50097
 DEFINE l_ima906 LIKE ima_file.ima906
 DEFINE l_ogb917_sum LIKE ogb_file.ogb917
 DEFINE l_ogb917 LIKE ogb_file.ogb917
 
-   IF g_aza.aza26 = '2'  AND g_oaz.oaz94 = 'Y' THEN 
+   IF g_aza.aza26 = '2'  AND g_oaz.oaz94 = 'Y' THEN
          #取出出货数量,累计签收数量,累计签退数量(过账的)
          SELECT ogb12,ogb50,ogb51 INTO l_ogb12,l_ogb50,l_ogb51 FROM ogb_file,oga_file
           WHERE oga01 = ogb01
             AND oga09 IN ('3','2')
             AND oga01 = g_oga.oga011
-            AND ogb03 = g_ogb[l_ac].ogb03  
-         IF cl_null(l_ogb12) THEN LET l_ogb12 = 0 END IF 
+            AND ogb03 = g_ogb[l_ac].ogb03
+         IF cl_null(l_ogb12) THEN LET l_ogb12 = 0 END IF
          IF cl_null(l_ogb50) THEN LET l_ogb50 = 0 END IF
          IF cl_null(l_ogb51) THEN LET l_ogb51 = 0 END IF
-         
+
          #出貨數 - 累計簽收數 - 累計簽退數 - 本次簽收數 - 本次簽退數 < 0  (过账的)
-         IF l_ogb12 - l_ogb50 - l_ogb51 - g_ogb[l_ac].ogb52 - g_ogb[l_ac].ogb12  < 0 THEN 
-            RETURN FALSE 
-         END IF                       
+         IF l_ogb12 - l_ogb50 - l_ogb51 - g_ogb[l_ac].ogb52 - g_ogb[l_ac].ogb12  < 0 THEN
+            RETURN FALSE
+         END IF
    END IF
-   RETURN TRUE 
-END FUNCTION 
+   RETURN TRUE
+END FUNCTION
 
 
 FUNCTION t600_chk_ogb53()
 DEFINE   l_ogb53    LIKE  ogb_file.ogb53,#单位1,子单位
          l_ogb54    LIKE  ogb_file.ogb54,#单位2,母单位
          l_ogb912   LIKE  ogb_file.ogb912,
-         l_ima906   LIKE  ima_file.ima906,         
+         l_ima906   LIKE  ima_file.ima906,
          l_ogb12    LIKE  ogb_file.ogb12,
          l_ogb912a   LIKE  ogb_file.ogb912,#单位1,子单位
          l_ogb915a   LIKE  ogb_file.ogb915, #单位2,母单位
-         l_ogb915   LIKE  ogb_file.ogb915                  
+         l_ogb915   LIKE  ogb_file.ogb915
    IF g_aza.aza26 = '2'  AND g_oaz.oaz94 = 'Y' AND g_sma.sma115 = 'Y' THEN
-    	SELECT ogb12 INTO l_ogb12 FROM ogb_file 
+    	SELECT ogb12 INTO l_ogb12 FROM ogb_file
        WHERE ogb01 = g_oga.oga011
-         AND ogb03 = g_ogb[l_ac].ogb03    	 
+         AND ogb03 = g_ogb[l_ac].ogb03
     	SELECT ima906 INTO l_ima906 FROM ima_file
-       WHERE ima01=g_ogb[l_ac].ogb04 
-      IF l_ima906 IS NULL OR l_ima906 = '1' THEN 
-         RETURN TRUE 
+       WHERE ima01=g_ogb[l_ac].ogb04
+      IF l_ima906 IS NULL OR l_ima906 = '1' THEN
+         RETURN TRUE
       END IF
       IF l_ima906 = '2' THEN
          SELECT ogb915 INTO l_ogb915 FROM ogb_file
           WHERE ogb01 = g_oga.oga011
             AND ogb03 = g_ogb[l_ac].ogb03
-         IF cl_null(l_ogb915) THEN 
+         IF cl_null(l_ogb915) THEN
             LET l_ogb915 = 0
-         END IF 
+         END IF
          #求出累计签退,累计签收数量(母子单位)
-         SELECT SUM(ogb53),SUM(ogb54),SUM(ogb912),SUM(ogb915) INTO l_ogb53,l_ogb54,l_ogb912a,l_ogb915a 
+         SELECT SUM(ogb53),SUM(ogb54),SUM(ogb912),SUM(ogb915) INTO l_ogb53,l_ogb54,l_ogb912a,l_ogb915a
            FROM ogb_file,oga_file
           WHERE oga01  = ogb01
             AND oga011 = g_oga.oga011
             AND oga09  = '8'
-            AND ogb03  = g_ogb[l_ac].ogb03 
+            AND ogb03  = g_ogb[l_ac].ogb03
             AND ogaconf != 'X'
             AND oga01 != g_oga.oga01 #除去当前笔数目
-         IF cl_null(l_ogb53) THEN 
+         IF cl_null(l_ogb53) THEN
             LET l_ogb53 = 0
          END IF
-         IF cl_null(l_ogb54) THEN 
+         IF cl_null(l_ogb54) THEN
             LET l_ogb54 = 0
-         END IF         
-         IF cl_null(l_ogb912a) THEN 
+         END IF
+         IF cl_null(l_ogb912a) THEN
             LET l_ogb912a = 0
-         END IF  
-         IF cl_null(l_ogb915a) THEN 
+         END IF
+         IF cl_null(l_ogb915a) THEN
             LET l_ogb915a = 0
-         END IF                  
+         END IF
          #出货单母单位数量 - 累计签退母单位数量 - 累计签收母单位数量 - 当前栏位
-         IF l_ogb915 - l_ogb54 - l_ogb915a - g_ogb[l_ac].ogb54 < 0 THEN 
-            RETURN FALSE 
-         END IF 
-         #母单位+子单位  的总数量超过出货单数量,同样报错 
-         IF l_ogb12 - (l_ogb54 + l_ogb915a + g_ogb[l_ac].ogb54 + g_ogb[l_ac].ogb915) * g_ogb[l_ac].ogb914 
-            - l_ogb53 - l_ogb912a - g_ogb[l_ac].ogb53 - g_ogb[l_ac].ogb912 < 0 THEN 
-            RETURN FALSE          
-         END IF        
+         IF l_ogb915 - l_ogb54 - l_ogb915a - g_ogb[l_ac].ogb54 < 0 THEN
+            RETURN FALSE
+         END IF
+         #母单位+子单位  的总数量超过出货单数量,同样报错
+         IF l_ogb12 - (l_ogb54 + l_ogb915a + g_ogb[l_ac].ogb54 + g_ogb[l_ac].ogb915) * g_ogb[l_ac].ogb914
+            - l_ogb53 - l_ogb912a - g_ogb[l_ac].ogb53 - g_ogb[l_ac].ogb912 < 0 THEN
+            RETURN FALSE
+         END IF
       END IF
       IF l_ima906 = '3' THEN
          SELECT ogb912,ogb915 INTO l_ogb912,l_ogb915 FROM ogb_file
           WHERE ogb01 = g_oga.oga011
             AND ogb03 = g_ogb[l_ac].ogb03
-         IF cl_null(l_ogb915) THEN 
+         IF cl_null(l_ogb915) THEN
             LET l_ogb915 = 0
-         END IF 
-         IF cl_null(l_ogb912) THEN 
+         END IF
+         IF cl_null(l_ogb912) THEN
             LET l_ogb912 = 0
-         END IF          
-         SELECT SUM(ogb53),SUM(ogb54),SUM(ogb912),SUM(ogb915) INTO l_ogb53,l_ogb54,l_ogb912a,l_ogb915a 
+         END IF
+         SELECT SUM(ogb53),SUM(ogb54),SUM(ogb912),SUM(ogb915) INTO l_ogb53,l_ogb54,l_ogb912a,l_ogb915a
            FROM ogb_file,oga_file
           WHERE oga01  = ogb01
             AND oga011 = g_oga.oga011
             AND oga09  = '8'
-            AND ogb03  = g_ogb[l_ac].ogb03 
+            AND ogb03  = g_ogb[l_ac].ogb03
             AND ogaconf != 'X'
-         IF cl_null(l_ogb53) THEN 
+         IF cl_null(l_ogb53) THEN
             LET l_ogb53 = 0
          END IF
-         IF cl_null(l_ogb54) THEN 
+         IF cl_null(l_ogb54) THEN
             LET l_ogb54 = 0
-         END IF         
-         IF cl_null(l_ogb915a) THEN 
+         END IF
+         IF cl_null(l_ogb915a) THEN
             LET l_ogb915a = 0
-         END IF         
-         IF l_ogb912 - l_ogb53 - l_ogb912a - g_ogb[l_ac].ogb53 - g_ogb[l_ac].ogb912 < 0 THEN 
-            RETURN FALSE 
-         END IF         
+         END IF
+         IF l_ogb912 - l_ogb53 - l_ogb912a - g_ogb[l_ac].ogb53 - g_ogb[l_ac].ogb912 < 0 THEN
+            RETURN FALSE
+         END IF
          #出货单参考单位数量 - 累计签退参考单位数量 - 累计签收参考单位数量
-         IF l_ogb915 - l_ogb54 - l_ogb915a - g_ogb[l_ac].ogb54 - g_ogb[l_ac].ogb915 < 0 THEN 
-            RETURN FALSE 
-         END IF                  
-      END IF        
-   END IF 
-   RETURN TRUE 
-END FUNCTION 
+         IF l_ogb915 - l_ogb54 - l_ogb915a - g_ogb[l_ac].ogb54 - g_ogb[l_ac].ogb915 < 0 THEN
+            RETURN FALSE
+         END IF
+      END IF
+   END IF
+   RETURN TRUE
+END FUNCTION
 
 FUNCTION t600_set_ogb52()
-DEFINE  l_ima906 LIKE ima_file.ima906                
+DEFINE  l_ima906 LIKE ima_file.ima906
 
    IF g_aza.aza26 = '2'  AND g_oaz.oaz94 = 'Y' AND g_sma.sma115 = 'Y' THEN
       SELECT ima906 INTO l_ima906 FROM ima_file
-       WHERE ima01=g_ogb[l_ac].ogb04 
-      IF l_ima906 = '2' THEN    
+       WHERE ima01=g_ogb[l_ac].ogb04
+      IF l_ima906 = '2' THEN
          LET g_ogb[l_ac].ogb52 = g_ogb[l_ac].ogb54 * g_ogb[l_ac].ogb914 + g_ogb[l_ac].ogb53 * g_ogb[l_ac].ogb911
-      END IF 
-      IF l_ima906 = '3' THEN 
+      END IF
+      IF l_ima906 = '3' THEN
          LET g_ogb[l_ac].ogb52 = g_ogb[l_ac].ogb53 * g_ogb[l_ac].ogb911
-      END IF           
-   END IF 
-END FUNCTION 
+      END IF
+   END IF
+END FUNCTION
 
 FUNCTION t600_set_ogb55()
 DEFINE l_factor   LIKE type_file.num26_10,
@@ -40264,50 +40279,50 @@ DEFINE l_factor   LIKE type_file.num26_10,
        l_ima906   LIKE ima_file.ima906
    IF g_aza.aza26 = '2'  AND g_oaz.oaz94 = 'Y' AND g_sma.sma115 = 'Y' THEN
       SELECT ima906 INTO l_ima906 FROM ima_file
-       WHERE ima01=g_ogb[l_ac].ogb04 
+       WHERE ima01=g_ogb[l_ac].ogb04
       #销售单位向计价单位换算
       IF NOT cl_null(g_ogb[l_ac].ogb916) THEN
          CALL s_umfchk(g_ogb[l_ac].ogb04,g_ogb[l_ac].ogb05,g_ogb[l_ac].ogb916)
               RETURNING l_cnt,l_factor
          IF l_cnt = 1 THEN
-            LET l_factor = 1               	  
-         END IF 
+            LET l_factor = 1
+         END IF
       END IF
-      IF l_ima906 = '2' THEN                 
-         LET g_ogb[l_ac].ogb52 = g_ogb[l_ac].ogb54 * g_ogb[l_ac].ogb914 + g_ogb[l_ac].ogb53 * g_ogb[l_ac].ogb911   
-      END IF 
-      IF l_ima906 = '3' THEN 
-         LET g_ogb[l_ac].ogb52 = g_ogb[l_ac].ogb53 * g_ogb[l_ac].ogb911	
-      END IF 
-      LET g_ogb[l_ac].ogb55 = g_ogb[l_ac].ogb52 * l_factor          
-   END IF   
-END FUNCTION 
+      IF l_ima906 = '2' THEN
+         LET g_ogb[l_ac].ogb52 = g_ogb[l_ac].ogb54 * g_ogb[l_ac].ogb914 + g_ogb[l_ac].ogb53 * g_ogb[l_ac].ogb911
+      END IF
+      IF l_ima906 = '3' THEN
+         LET g_ogb[l_ac].ogb52 = g_ogb[l_ac].ogb53 * g_ogb[l_ac].ogb911
+      END IF
+      LET g_ogb[l_ac].ogb55 = g_ogb[l_ac].ogb52 * l_factor
+   END IF
+END FUNCTION
 #FUN-C50097 ADD END------ TQC-C70206
 
 
 #FUN-CB0014---add---str---
 FUNCTION t600_bp3(p_ud)
    DEFINE   p_ud   LIKE type_file.chr1          #No.FUN-680137 VARCHAR(1)
- 
- 
+
+
    IF p_ud <> "G" OR g_action_choice = "detail" THEN
       RETURN
    END IF
- 
+
    LET g_action_choice = " "
- 
+
    CALL cl_set_act_visible("accept,cancel", FALSE)
    DISPLAY ARRAY g_oga_l TO s_oga_l.* ATTRIBUTE(COUNT=g_rec_b8,UNBUFFERED)
- 
+
       BEFORE DISPLAY
          CALL cl_navigator_setting( g_curs_index, g_row_count )
          CALL fgl_set_arr_curr(g_curs_index)
- 
+
       BEFORE ROW
          LET l_ac2 = ARR_CURR()
          LET g_curs_index = l_ac2
-         CALL cl_show_fld_cont() 
- 
+         CALL cl_show_fld_cont()
+
       ##########################################################################
       # Standard 4ad ACTION
       ##########################################################################
@@ -40334,9 +40349,9 @@ FUNCTION t600_bp3(p_ud)
          CALL t600_fetch('/')
          CALL cl_set_comp_visible("info", FALSE)
          CALL cl_set_comp_visible("info", TRUE)
-         CALL cl_set_comp_visible("page_in", FALSE) 
-         CALL ui.interface.refresh()                 
-         CALL cl_set_comp_visible("page_in", TRUE)    
+         CALL cl_set_comp_visible("page_in", FALSE)
+         CALL ui.interface.refresh()
+         CALL cl_set_comp_visible("page_in", TRUE)
          EXIT DISPLAY
       ON ACTION insert
          LET g_action_choice="insert"
@@ -40350,54 +40365,54 @@ FUNCTION t600_bp3(p_ud)
       ON ACTION modify
          LET g_action_choice="modify"
          EXIT DISPLAY
-         
+
       ON ACTION first
          CALL t600_fetch('F')
          CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
-         IF g_rec_b8 != 0 THEN       
+         IF g_rec_b8 != 0 THEN
             CALL fgl_set_arr_curr(g_curs_index)
          END IF
-         CONTINUE DISPLAY                   
+         CONTINUE DISPLAY
 
 
       ON ACTION previous
          CALL t600_fetch('P')
          CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
-         IF g_rec_b8 != 0 THEN       
+         IF g_rec_b8 != 0 THEN
             CALL fgl_set_arr_curr(g_curs_index)
          END IF
-         CALL t600_set_distact()  
-         CONTINUE DISPLAY                  
+         CALL t600_set_distact()
+         CONTINUE DISPLAY
 
 
       ON ACTION jump
          CALL t600_fetch('/')
          CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
-         IF g_rec_b8 != 0 THEN       
+         IF g_rec_b8 != 0 THEN
             CALL fgl_set_arr_curr(g_curs_index)
          END IF
-         CALL t600_set_distact()  
-         CONTINUE DISPLAY  
+         CALL t600_set_distact()
+         CONTINUE DISPLAY
 
 
       ON ACTION next
          CALL t600_fetch('N')
          CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
-         IF g_rec_b8 != 0 THEN       
+         IF g_rec_b8 != 0 THEN
             CALL fgl_set_arr_curr(g_curs_index)
          END IF
-         CALL t600_set_distact()  
-         CONTINUE DISPLAY  
+         CALL t600_set_distact()
+         CONTINUE DISPLAY
 
 
       ON ACTION last
          CALL t600_fetch('L')
          CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
-         IF g_rec_b8 != 0 THEN       
+         IF g_rec_b8 != 0 THEN
             CALL fgl_set_arr_curr(g_curs_index)
          END IF
-         CALL t600_set_distact()  
-         CONTINUE DISPLAY  
+         CALL t600_set_distact()
+         CONTINUE DISPLAY
 
       ON ACTION return
          LET g_b_flag ='2'
@@ -40423,18 +40438,18 @@ FUNCTION t600_bp3(p_ud)
       ON ACTION controlg
          LET g_action_choice="controlg"
          EXIT DISPLAY
-      ON ACTION controls                             
-         CALL cl_set_head_visible("","AUTO")      
+      ON ACTION controls
+         CALL cl_set_head_visible("","AUTO")
 
 
       ON ACTION unit_price
          LET g_action_choice="unit_price"
          EXIT DISPLAY
- 
+
       ON ACTION kefa
          LET g_action_choice="kefa"
          EXIT DISPLAY
- 
+
 
 #@    ON ACTION 1.文件地址
       ON ACTION address
@@ -40445,11 +40460,11 @@ FUNCTION t600_bp3(p_ud)
       ON ACTION other_data
          LET g_action_choice="other_data"
          EXIT DISPLAY
- 
+
 #@    ON ACTION 銷售券號
       ON ACTION sal
          LET g_action_choice="sal"
-         EXIT DISPLAY 
+         EXIT DISPLAY
 
 #@    ON ACTION 3.更改倉儲
       ON ACTION modify_wh_loc
@@ -40465,12 +40480,12 @@ FUNCTION t600_bp3(p_ud)
       ON ACTION entry_sheet
          LET g_action_choice="entry_sheet"
          EXIT DISPLAY
-       
+
 #@    ON ACTION 分錄底稿二
       ON ACTION entry_sheet2
          LET g_action_choice="entry_sheet2"
          EXIT DISPLAY
- 
+
 #@    ON ACTION V.產生分錄
       ON ACTION gen_entry_sheet
          LET g_action_choice="gen_entry_sheet"
@@ -40514,7 +40529,7 @@ FUNCTION t600_bp3(p_ud)
          EXIT DISPLAY
 
     #@ON ACTION easyflow送簽
-      ON ACTION easyflow_approval         
+      ON ACTION easyflow_approval
          LET g_action_choice = "easyflow_approval"
          EXIT DISPLAY
 
@@ -40613,28 +40628,28 @@ FUNCTION t600_bp3(p_ud)
          EXIT DISPLAY
 
 #@    ON ACTION 拋轉至SPC
-      ON ACTION trans_spc                     
+      ON ACTION trans_spc
          LET g_action_choice="trans_spc"
          EXIT DISPLAY
- 
+
 #@    ON ACTION 實際交易稅別明細
       ON ACTION trans_tax       #--實際交易稅別明細
          LET g_action_choice="trans_tax"
          EXIT DISPLAY
- 
+
       ON ACTION detail_tax      #--單身稅別明細
          LET g_action_choice="detail_tax"
          EXIT DISPLAY
 
       ON ACTION cancel
-         LET INT_FLAG=FALSE    
+         LET INT_FLAG=FALSE
          LET g_action_choice="exit"
          EXIT DISPLAY
 
       ON ACTION locale
          CALL cl_dynamic_locale()
-         CALL cl_show_fld_cont()                  
-         CALL t600_set_perlang() 
+         CALL cl_show_fld_cont()
+         CALL t600_set_perlang()
          CALL t600_chspic()
          EXIT DISPLAY
 
@@ -40642,11 +40657,11 @@ FUNCTION t600_bp3(p_ud)
          CALL cl_on_idle()
          CONTINUE DISPLAY
 
-      ON ACTION about         
-         CALL cl_about()      
+      ON ACTION about
+         CALL cl_about()
          EXIT DISPLAY
 
-      ON ACTION exporttoexcel       
+      ON ACTION exporttoexcel
          LET g_action_choice = 'exporttoexcel'
          EXIT DISPLAY
 
@@ -40700,15 +40715,15 @@ FUNCTION t600_bp3(p_ud)
          LET g_action_choice="chdz"
          EXIT DISPLAY
 
-      #tianry add end 
+      #tianry add end
    END DISPLAY
-   CALL cl_set_act_visible("accept,cancel", TRUE)   
-END FUNCTION  
-        
+   CALL cl_set_act_visible("accept,cancel", TRUE)
+END FUNCTION
+
 FUNCTION t600_list_fill()
   DEFINE l_oga01         LIKE oga_file.oga01
   DEFINE l_i             LIKE type_file.num10
-  DEFINE l_slip          LIKE aba_file.aba00 
+  DEFINE l_slip          LIKE aba_file.aba00
 
     CALL g_oga_l.clear()
     LET l_i = 1
@@ -40723,12 +40738,12 @@ FUNCTION t600_list_fill()
          FROM oga_file
               LEFT OUTER JOIN gen_file ON oga14 = gen01
               LEFT OUTER JOIN gem_file ON oga15 = gem01
-        WHERE oga01=l_oga01       
+        WHERE oga01=l_oga01
        LET l_i = l_i + 1
        IF l_i > g_max_rec THEN
-          IF g_action_choice ="query"  THEN  
+          IF g_action_choice ="query"  THEN
             CALL cl_err( '', 9035, 0 )
-          END IF                             
+          END IF
           EXIT FOREACH
        END IF
     END FOREACH
@@ -40746,7 +40761,7 @@ FUNCTION t600_azf03_ogb1001()
    IF NOT cl_null(g_ogb[l_ac].ogb1001) THEN
       SELECT azf03 INTO g_ogb[l_ac].azf03_1 FROM azf_file WHERE azf01=g_ogb[l_ac].ogb1001 AND azf02='2'
    END IF
-   DISPLAY BY NAME g_ogb[l_ac].azf03_1 
+   DISPLAY BY NAME g_ogb[l_ac].azf03_1
 END FUNCTION
 FUNCTION t600_azf03_ogb65()
    LET g_ogb[l_ac].azf03_2 = ''
@@ -40761,22 +40776,22 @@ END FUNCTION
 FUNCTION t600_chk_rvbs(p_ogb03)
    DEFINE p_ogb03 LIKE ogb_file.ogb03
    DEFINE l_cnt   LIKE type_file.num5
-    
+
    IF g_oga.ogaconf = 'Y' AND g_oga.ogapost <> 'Y' THEN
       SELECT COUNT(*) INTO l_cnt FROM rvbs_file
        WHERE rvbs00 = g_prog AND rvbs01 = g_oga.oga01 AND rvbs02 = p_ogb03
-           
+
       IF l_cnt > 0 THEN
          IF cl_confirm("axm1169") THEN
             DELETE FROM rvbs_file WHERE rvbs00 = g_prog AND rvbs01 = g_oga.oga01 AND rvbs02 = p_ogb03
          ELSE
-            RETURN FALSE 
+            RETURN FALSE
          END IF
-      END IF  
-   END IF  
+      END IF
+   END IF
    RETURN TRUE
 END FUNCTION
-#CHI-C90022 add end   ----- 
+#CHI-C90022 add end   -----
 
 
 #TQC-D30021 add begin-------------------
@@ -40791,7 +40806,7 @@ FUNCTION t600_set_ogb917_2() #订单备置转出货单计价数量计算
             l_qty1   LIKE img_file.img10,     #第一數量
             l_tot    LIKE img_file.img10,     #計價數量
             l_factor LIKE ima_file.ima31_fac,
-            l_cnt    LIKE type_file.num5  
+            l_cnt    LIKE type_file.num5
 
     SELECT ima25,ima31,ima906 INTO l_ima25,l_ima31,l_ima906
       FROM ima_file WHERE ima01=b_ogb.ogb04
@@ -40806,26 +40821,26 @@ FUNCTION t600_set_ogb917_2() #订单备置转出货单计价数量计算
         IF l_ima906 = '1' THEN
            LET b_ogb.ogb912 =  b_ogb.ogb12
            LET b_ogb.ogb915 =  b_ogb.ogb12
-        END IF  
-        IF l_ima906 = '2' THEN          
+        END IF
+        IF l_ima906 = '2' THEN
            CALL s_umfchk(b_ogb.ogb04,b_ogb.ogb916,b_ogb.ogb910)
               RETURNING l_cnt,l_factor
-           IF l_cnt = 1 THEN 
-              LET l_factor = 1 
-           END IF 
-            
+           IF l_cnt = 1 THEN
+              LET l_factor = 1
+           END IF
+
            LET b_ogb.ogb912 =  b_ogb.ogb12 * l_factor
-           LET b_ogb.ogb915 =  (b_ogb.ogb12 * l_factor  - b_ogb.ogb912) / b_ogb.ogb914  
+           LET b_ogb.ogb915 =  (b_ogb.ogb12 * l_factor  - b_ogb.ogb912) / b_ogb.ogb914
         END IF
         IF l_ima906 = '3' THEN
            IF NOT cl_null(b_ogb.ogb911) THEN
               LET b_ogb.ogb912= b_ogb.ogb12*b_ogb.ogb911
-           END IF    
+           END IF
            IF NOT cl_null(b_ogb.ogb914) THEN
               LET b_ogb.ogb915= b_ogb.ogb12*b_ogb.ogb914
            END IF
-        END IF 
-    END IF      
+        END IF
+    END IF
     LET l_fac2=b_ogb.ogb914
     LET l_qty2=b_ogb.ogb915
     IF g_sma.sma115 = 'Y' THEN
@@ -40856,20 +40871,20 @@ FUNCTION t600_set_ogb917_2() #订单备置转出货单计价数量计算
     END IF
     IF cl_null(l_tot) THEN LET l_tot = 0 END IF
     LET l_factor = 1
-    IF g_sma.sma115 = 'Y' THEN 
+    IF g_sma.sma115 = 'Y' THEN
        CALL s_umfchk(b_ogb.ogb04,b_ogb.ogb05,b_ogb.ogb916)
            RETURNING g_cnt,l_factor
     ELSE
        CALL s_umfchk(b_ogb.ogb04,l_ima31,b_ogb.ogb916)
            RETURNING g_cnt,l_factor
-    END IF 
+    END IF
     IF g_cnt = 1 THEN
        LET l_factor = 1
     END IF
     LET l_tot = l_tot * l_factor
 
     LET b_ogb.ogb917 = l_tot
-    LET b_ogb.ogb917 = s_digqty(b_ogb.ogb917,b_ogb.ogb916)  
+    LET b_ogb.ogb917 = s_digqty(b_ogb.ogb917,b_ogb.ogb916)
     IF b_ogb.ogb05 = b_ogb.ogb916 AND g_sma.sma115='N' THEN
       LET b_ogb.ogb917 = b_ogb.ogb12
     END IF
@@ -40924,12 +40939,12 @@ FUNCTION t600_d1()
    FETCH t600_cl INTO g_oga.*          # 鎖住將被更改或取消的資料
    IF SQLCA.sqlcode THEN
        CALL cl_err(g_oga.oga01,SQLCA.sqlcode,0)     # 資料被他人LOCK
-       CLOSE t600_cl 
-       ROLLBACK WORK 
+       CLOSE t600_cl
+       ROLLBACK WORK
        RETURN
    END IF
-   
-   
+
+
    IF g_oga.oga55 matches '[Ss]' THEN       #送簽中不可更改單價
       CALL cl_err('','apm-030',0)
       CLOSE t600_cl   #MOD-920323
@@ -40946,7 +40961,7 @@ FUNCTION t600_d1()
 
     CALL cl_ui_locale("axmt620q")
 
-    CALL cl_set_comp_visible("ogb911,ogb914",FALSE)  
+    CALL cl_set_comp_visible("ogb911,ogb914",FALSE)
     IF g_sma.sma115 = 'Y' THEN
        CALL cl_set_comp_visible("ogb05,ogb12",FALSE)
     ELSE
@@ -40974,7 +40989,7 @@ FUNCTION t600_d1()
       SELECT ogb03,ogb31,ogb32,ogb04,ogb092,ogb05,ogbud02,ogbud04
         FROM ogb_file
        WHERE ogb01=g_oga.oga01
-  
+
    CALL d_ogb1.clear()
 
    LET i=1
@@ -40983,7 +40998,7 @@ FUNCTION t600_d1()
      LET i=i+1
    END FOREACH
 
-  
+
 
    DISPLAY ARRAY d_ogb1 TO s_ogb1.* ATTRIBUTE(COUNT=l_rec_b,UNBUFFERED)                                #MOD-B30485 mark  #MOD-B70075 remark
 
@@ -41005,8 +41020,8 @@ FUNCTION t600_d1()
             EXIT DISPLAY
       END DISPLAY
       IF INT_FLAG THEN LET INT_FLAG=0 END IF    #MOD-A20021
- 
-  
+
+
 
    LET l_ac = 1
    INPUT ARRAY d_ogb1 WITHOUT DEFAULTS FROM s_ogb1.*
@@ -41017,7 +41032,7 @@ FUNCTION t600_d1()
           IF l_rec_b != 0 THEN
              CALL fgl_set_arr_curr(l_ac)
           END IF
-   
+
 
       BEFORE ROW
          LET l_ac = ARR_CURR()
@@ -41025,7 +41040,7 @@ FUNCTION t600_d1()
         CALL cl_show_fld_cont()     #FUN-550037(smin)
 
 
-     
+
       ON ROW CHANGE
           IF INT_FLAG THEN
              CALL cl_err('',9001,0)
@@ -41034,17 +41049,17 @@ FUNCTION t600_d1()
              ROLLBACK WORK
              EXIT INPUT
           END IF
-         
+
             UPDATE ogb_file SET ogbud04=d_ogb1[l_ac].ogbud04
                 WHERE ogb01=g_oga.oga01
                 AND ogb03=d_ogb1[l_ac].ogb03
                 AND ogb04=d_ogb1[l_ac].ogb04
-           
-          IF SQLCA.sqlcode THEN #FUN-BC0064 add 
+
+          IF SQLCA.sqlcode THEN #FUN-BC0064 add
              CALL cl_err3("upd","ogb_file",g_oga.oga01,d_ogb[l_ac].ogb03,SQLCA.sqlcode,"","",1)  #No.FUN-670008
              LET g_success = 'N' #FUN-AC0012
           END IF
-       IF g_success = 'Y' THEN 
+       IF g_success = 'Y' THEN
             COMMIT WORK
          ELSE
             ROLLBACK WORK
@@ -41088,7 +41103,7 @@ LET g_sql = "SELECT ogb03,ogb31,ogb32,ogb04,ogb092,ogb05,ogbud02,ogbud04
     DECLARE pd1_curs CURSOR FOR t600_pd1
     FOREACH pd1_curs INTO d_ogb1[l_ac].*
        LET l_ac = l_ac + 1
-    END FOREACH 
+    END FOREACH
 DISPLAY BY NAME d_ogb1[l_ac].*
 
    CLOSE WINDOW t620q_w
@@ -41104,17 +41119,17 @@ DEFINE l_cmd   STRING
    END IF
    IF g_prog='axmt610' THEN  #只维护出货地址  cxmq009
       LET l_cmd = "cxmq009 '",g_oga.oga01,"'  ''  '",g_prog,"'"
-      CALL cl_cmdrun_wait(l_cmd) 
+      CALL cl_cmdrun_wait(l_cmd)
       CALL t600_show()
    END IF
    IF g_prog='axmt620' THEN   #只维护出货反馈
        LET l_cmd = "cxmq009 '",g_oga.oga01,"'  ''  '",g_prog,"'"
-       CALL cl_cmdrun_wait(l_cmd) 
+       CALL cl_cmdrun_wait(l_cmd)
        CALL t600_show()
-   END IF 
+   END IF
 END FUNCTION
 
-#tianry add end 
+#tianry add end
 
 #darcy:2023/06/20 add s---
 function t600_ogaud06()
@@ -41132,7 +41147,7 @@ function t600_ogaud06()
 
    call t600_i("u")
 
-   update oga_file 
+   update oga_file
       set ogaud06 = g_oga.ogaud06,
           ogaud13 = g_oga.ogaud13
     where oga01 = g_oga.oga01
@@ -41188,12 +41203,12 @@ FUNCTION t600_upd_ogbud08()
    FETCH t600_cl INTO g_oga.*          # 鎖住將被更改或取消的資料
    IF SQLCA.sqlcode THEN
        CALL cl_err(g_oga.oga01,SQLCA.sqlcode,0)     # 資料被他人LOCK
-       CLOSE t600_cl 
-       ROLLBACK WORK 
+       CLOSE t600_cl
+       ROLLBACK WORK
        RETURN
    END IF
-   
-   
+
+
    IF g_oga.oga55 matches '[Ss]' THEN       #送簽中不可更改單價
       CALL cl_err('','apm-030',0)
       CLOSE t600_cl   #MOD-920323
@@ -41212,7 +41227,7 @@ FUNCTION t600_upd_ogbud08()
 
     call cl_set_comp_att_text("ogbud04","批号")
 
-    CALL cl_set_comp_visible("ogb911,ogb914",FALSE)  
+    CALL cl_set_comp_visible("ogb911,ogb914",FALSE)
     IF g_sma.sma115 = 'Y' THEN
        CALL cl_set_comp_visible("ogb05,ogb12",FALSE)
     ELSE
@@ -41240,7 +41255,7 @@ FUNCTION t600_upd_ogbud08()
       SELECT ogb03,ogb31,ogb32,ogb04,ogb092,ogb05,ogbud02,ogbud08
         FROM ogb_file
        WHERE ogb01=g_oga.oga01
-  
+
    CALL d_ogb1.clear()
 
    LET i=1
@@ -41249,7 +41264,7 @@ FUNCTION t600_upd_ogbud08()
      LET i=i+1
    END FOREACH
 
-  
+
 
    DISPLAY ARRAY d_ogb1 TO s_ogb1.* ATTRIBUTE(COUNT=l_rec_b,UNBUFFERED)                                #MOD-B30485 mark  #MOD-B70075 remark
 
@@ -41271,8 +41286,8 @@ FUNCTION t600_upd_ogbud08()
             EXIT DISPLAY
       END DISPLAY
       IF INT_FLAG THEN LET INT_FLAG=0 END IF    #MOD-A20021
- 
-  
+
+
 
    LET l_ac = 1
    INPUT ARRAY d_ogb1 WITHOUT DEFAULTS FROM s_ogb1.*
@@ -41283,7 +41298,7 @@ FUNCTION t600_upd_ogbud08()
           IF l_rec_b != 0 THEN
              CALL fgl_set_arr_curr(l_ac)
           END IF
-   
+
 
       BEFORE ROW
          LET l_ac = ARR_CURR()
@@ -41291,7 +41306,7 @@ FUNCTION t600_upd_ogbud08()
         CALL cl_show_fld_cont()     #FUN-550037(smin)
 
 
-     
+
       ON ROW CHANGE
           IF INT_FLAG THEN
              CALL cl_err('',9001,0)
@@ -41300,17 +41315,17 @@ FUNCTION t600_upd_ogbud08()
              ROLLBACK WORK
              EXIT INPUT
           END IF
-         
+
             UPDATE ogb_file SET ogbud08=d_ogb1[l_ac].ogbud04
                 WHERE ogb01=g_oga.oga01
                 AND ogb03=d_ogb1[l_ac].ogb03
                 AND ogb04=d_ogb1[l_ac].ogb04
-           
-          IF SQLCA.sqlcode THEN #FUN-BC0064 add 
+
+          IF SQLCA.sqlcode THEN #FUN-BC0064 add
              CALL cl_err3("upd","ogb_file",g_oga.oga01,d_ogb[l_ac].ogb03,SQLCA.sqlcode,"","",1)  #No.FUN-670008
              LET g_success = 'N' #FUN-AC0012
           END IF
-       IF g_success = 'Y' THEN 
+       IF g_success = 'Y' THEN
             COMMIT WORK
          ELSE
             ROLLBACK WORK
@@ -41354,7 +41369,7 @@ LET g_sql = "SELECT ogb03,ogb31,ogb32,ogb04,ogb092,ogb05,ogbud02,ogbud04
     DECLARE pd1_curs1 CURSOR FOR t600_pd11
     FOREACH pd1_curs1 INTO d_ogb1[l_ac].*
        LET l_ac = l_ac + 1
-    END FOREACH 
+    END FOREACH
 DISPLAY BY NAME d_ogb1[l_ac].*
 
    CLOSE WINDOW t620q_w
@@ -41370,12 +41385,12 @@ function saxmt600_chk_add(p_oga01)
    define l_sql      string
    define l_oga044   like oga_file.oga044
 
-   if cl_null(p_oga01) then 
+   if cl_null(p_oga01) then
       return
    end if
 
    if g_prog <> 'axmt610' then
-      return 
+      return
    end if
 
    # 1. 客户编号是AA且是量产资料
@@ -41384,11 +41399,11 @@ function saxmt600_chk_add(p_oga01)
     where oga01 = p_oga01 and oga03 = 'AA'
       and oga01 = ogb01 and ogaconf <> 'X'
       and ogb04 like '%R'
-   if l_cnt <= 0 then 
+   if l_cnt <= 0 then
       return
    end if
 
-   # 2. 料号首次出货 OR 更换地址 
+   # 2. 料号首次出货 OR 更换地址
    let l_sql = "select count(*)
                   from (select ogb04, oga044,count(*)
                            from oga_file, ogb_file
@@ -41415,7 +41430,7 @@ function saxmt600_chk_add(p_oga01)
 
    select oga044 into l_oga044 from oga_file
     where oga01= p_oga01
-   
+
    if l_oga044 = 27 or l_oga044 =57 or l_oga044 = 59 or l_oga044 = 63
     or l_oga044 = 64 or l_oga044 = 68 then
       call saxmt600_mail_info("AA0",p_oga01||" 首次出货地址，请附带承认书，封样")

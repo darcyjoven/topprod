@@ -883,7 +883,7 @@ FUNCTION t700(p_argv0,p_argv1,p_argv2)  #FUN-840012
              END IF
        END CASE
     END IF
-
+    call cl_set_act_visible('action_stock_post',false) #darcy add
     CALL t700_menu()
     #CALL s_padd_img_drop(l_img_table)    #FUN-C70087 #FUN-CC0095
     #CALL s_padd_imgg_drop(l_imgg_table)  #FUN-C70087 #FUN-CC0095
@@ -2147,7 +2147,7 @@ FUNCTION t700_menu()
                 # END IF   #FUN-A60035 mark
                END IF
                #DEV-D30046 --add--begin
-               if cl_action(g_prog,g_oga.oga01,0,'confirm',g_user,g_grup,false,false) then end if #darcy add
+               if cl_action(g_prog,g_oha.oha01,0,'confirm',g_user,g_grup,false,false) then end if#darcy add
                CALL saxmt700sub_refresh(g_oha.oha01) RETURNING g_oha.*
                CALL t700_show()
                #DEV-D30046 --add--end
@@ -23692,7 +23692,7 @@ FUNCTION t700_bp3(p_ud)
          EXIT DISPLAY
       # darcy add s---
       on action action_stock_post
-      on action action_confirm
+        let g_action_choice = 'action_stock_post'
       # darcy add e---
 #@    ON ACTION 過帳還原
       ON ACTION undo_post
