@@ -1983,6 +1983,7 @@ FUNCTION t720_menu()
                     if cl_chk_act_auth() then
                         if cl_action(g_prog,g_rvu.rvu01,0,'confirm','','',true,false) then end if
                     end if
+                    let g_bgjob = 'N'
                     let g_action_choice = 'confirm'
                 end if
                 # darcy add e---

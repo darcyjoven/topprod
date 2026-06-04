@@ -1537,8 +1537,9 @@ define l_res string
                     let g_action_choice = 'action_stock_post'
                     let g_bgjob = 'Y'
                     if cl_chk_act_auth() then
-                        if cl_action(g_prog,g_ina.ina01,0,'post','','',true,true) then end if
+                        if cl_action(g_prog,g_ina.ina01,0,'post','','',true,false) then end if
                     end if
+                    let g_bgjob = 'N'
                     let g_action_choice = 'stock_post'
                 end if
                 # darcy add e---

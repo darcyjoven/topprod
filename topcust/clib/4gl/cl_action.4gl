@@ -96,7 +96,6 @@ function cl_action(p_prog,p_doc,p_seq,p_type,p_user,p_grup,p_post,p_date)
         call cl_action_i()
         if int_flag then
             let int_flag = false
-            return false
         end if
     end if
 
