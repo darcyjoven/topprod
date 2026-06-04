@@ -43,7 +43,7 @@
 # Modify.........: NO:TQC-620156 06/03/14 By kim GP3.0過帳錯誤統整顯示功能新增
 # Modify.........: No:MOD-610114 06/03/24 By Pengu 單身撥入批號打完後程式會跳到NEXT FIELD imn44，
                                          #         會照成無法計算到單位二數量imn45
-# Modify.........: No:MOD-640079 06/04/09 By Carol 未過帳不可執行過帳還原,並顯示錯誤訊息 
+# Modify.........: No:MOD-640079 06/04/09 By Carol 未過帳不可執行過帳還原,並顯示錯誤訊息
 # Modify.........: No:MOD-640226 06/04/10 By kim 撥出/撥入單位 分別與庫存單位有換算率 ,但是撥出與撥入沒有換算率 ,造成數量遺失
 # Modify.........: NO.FUN-640266 06/04/26 BY yiting 更改cl_err
 # Modify.........: No:MOD-650040 06/05/09 By rainy 取消輸入時的"預設上筆"功能
@@ -51,8 +51,8 @@
 # Modify.........: No:FUN-660029 06/06/12 By kim GP3.1 增加確認碼欄位與處理
 # Modify.........: No:FUN-660078 06/06/14 By rainy aim系統中，用char定義的變數，改為用LIK
 # Modify.........: No:TQC-660100 06/06/21 By Rayven 多屬性功能改進:查詢時不顯示多屬性內容
-# Modify.........: NO:FUN-660156 06/06/23 By Tracy cl_err -> cl_err3 
-# Modify.........: NO:MOD-670009 06/07/04 By Claire 成本倉與非成本倉間不可調撥  
+# Modify.........: NO:FUN-660156 06/06/23 By Tracy cl_err -> cl_err3
+# Modify.........: NO:MOD-670009 06/07/04 By Claire 成本倉與非成本倉間不可調撥
 # Modify.........: No:TQC-670008 06/07/05 By rainy 權限修正
 # Modify.........: No:FUN-670093 06/07/20 By kim GP3.5 利潤中心
 # Modify.........: No:FUN-680010 06/08/24 by Joe SPC整合專案-自動新增 QC 單據
@@ -97,16 +97,16 @@
 # Modify.........: No:FUN-840012 08/10/08 By kim mBarcode 功能修改
 # Modify.........: No:MOD-8A0110 08/10/14 By claire 參數設定多單位,料件為單一單位,進入單身按產生鍵時,不會產生
 # Modify.........: No:MOD-8C0194 08/12/20 By Smapmin 借貨出貨單過帳所產生的調撥單,要能立即顯示正確的圖示
-# Modify.........: No:FUN-8C0084 08/12/22 By jan s_upimg相關改以 料倉儲批為參數傳入 ,不使用 ROWID 
+# Modify.........: No:FUN-8C0084 08/12/22 By jan s_upimg相關改以 料倉儲批為參數傳入 ,不使用 ROWID
 # Modify.........: No:MOD-8C0189 08/12/18 By claire 調整語法,以免於ifx區會執行錯誤
 # Modify.........: No:FUN-920207 09/03/05 By jan aimt324.4gl-->aimt324.src.4gl
-# Modify.........: No:FUN-920186 09/03/18 By lala 理由碼imn28必須為庫存調撥 
-# Modify.........: No.TQC-930155 09/03/30 By Sunyanchun Lock img_file,imgg_file時，若報錯,不要rollback ，要放g_success ='N' 
+# Modify.........: No:FUN-920186 09/03/18 By lala 理由碼imn28必須為庫存調撥
+# Modify.........: No.TQC-930155 09/03/30 By Sunyanchun Lock img_file,imgg_file時，若報錯,不要rollback ，要放g_success ='N'
 # Modify.........: No.TQC-940183 09/04/30 By Carrier rowid定義規範化
 # Modify.........: No.TQC-950134 09/05/22 By Carrier rowid定義規範化
-# Modify.........: No.FUN-960065 09/06/29 By mike 調整呼叫q_img4()的程序段， 
+# Modify.........: No.FUN-960065 09/06/29 By mike 調整呼叫q_img4()的程序段，
 # Modify.........: No:FUN-870100 09/08/03 By Cockroach 零售超市移植
-# Modify.........: No:FUN-970124 09/08/03 By mike 09/07/31 請在查詢時加上撥出儲位與撥入儲位的開窗功能，查詢的qry為q_ime             
+# Modify.........: No:FUN-970124 09/08/03 By mike 09/07/31 請在查詢時加上撥出儲位與撥入儲位的開窗功能，查詢的qry為q_ime
 # Modify.........: No:FUN-980004 09/08/25 By TSD.sar2436 GP5.2架構重整，修改 INSERT INTO 語法
 # Modify.........: No:FUN-980030 09/08/31 By Hiko 加上GP5.2的相關設定
 # Modify.........: No.CHI-960022 09/10/15 By chenmoyan 預設單位一數量時，加上判斷，單位一數量為空或為1時，才預設
@@ -125,7 +125,7 @@
 # Modify.........: No:MOD-A10059 10/01/13 By Pengu 依BOM產單身時應考慮QPA
 # Modify.........: No:MOD-A10060 10/01/13 By Pengu 自動產生單身時不應限制倉庫一定是要store倉
 # Modify.........: No.FUN-9C0072 10/01/15 By vealxu 精簡程式碼
-# Modify.........: No:CHI-A10016 10/01/18 By Dido 調整 s_lotout transcation 架構 
+# Modify.........: No:CHI-A10016 10/01/18 By Dido 調整 s_lotout transcation 架構
 # Modify.........: No.FUN-9B0098 10/02/24 by tommas delete cl_doc
 # Modify.........: No:CHI-9A0022 10/03/20 By chenmoyan給s_lotout加一個參數:歸屬單號
 # Modify.........: No.FUN-A40023 10/03/22 By dxfwo ima26x改善
@@ -143,7 +143,7 @@
 #                                                    重新調整隱藏單據單位的計算
 # Modify.........: No:MOD-AA0041 10/10/08 By sabrina 取消確認的同時時，不可以過帳
 # Modify.........: No:MOD-AA0103 10/10/18 By sabrina (1)修改MOD-AA0041的錯誤
-#                                                    (2)close t324_cl太早將cursor關掉了   
+#                                                    (2)close t324_cl太早將cursor關掉了
 # Modify.........: No:FUN-AA0007 10/10/19 By jan 若輸入的批號之idc17='Y',則控卡不能輸入
 # Modify.........: No.FUN-AA0049 10/10/28 by destiny  增加倉庫的權限控管
 # Modify.........: No.FUN-AA0059 10/10/29 By huangtao 修改料號AFTER FIELD的管控
@@ -191,7 +191,7 @@
 # Modify.........: No:FUN-C80030 12/08/10 By fengrui 添加批序號依參數sma95隱藏
 # Modify.........: No.FUN-C70087 12/07/24 By bart 整批寫入img_file
 # Modify.........: No.TQC-C90027 12/09/06 By qiull 無資料時，點擊批序號按鈕導致程序down出，數組越界問題
-# Modify.........: No.FUN-C80107 12/09/18 By suncx 增可按倉庫進行負庫存判斷 
+# Modify.........: No.FUN-C80107 12/09/18 By suncx 增可按倉庫進行負庫存判斷
 # Modify.........: No.TQC-C90089 12/09/21 By chenjing 修改t324_s()中數組出界問題
 # Modify.........: No.CHI-C90036 12/09/25 By bart 在調撥扣帳時，檢查若需要勾稽 QC數量，且 QC 合格量不一致時，詢問 User 是否要依 QC合格量視為調撥量？
 # Modify.........: No:MOD-C80134 12/09/27 By jt_chen 借貨出貨產生的調撥單應不能修改,修正MOD-AA0041沒有增加是否為借貨出貨單IF g_argv2!='A' THEN的判斷
@@ -213,10 +213,10 @@
 # Modify.........: No:CHI-D20008 13/02/06 By bart 將作廢功能分成作廢與取消作廢2個action
 # Modify.........: No:MOD-D20038 13/02/18 By bart 批號為空時會因為在倉庫儲位欄位卡住導致不能修改
 # Modify.........: No:FUN-D20060 13/02/22 By minpp 仓库设卡控
-# Modify.........: No:MOD-D20164 13/03/04 By Alberti 若單身倉儲有值,則不重新撈值  
+# Modify.........: No:MOD-D20164 13/03/04 By Alberti 若單身倉儲有值,則不重新撈值
 # Modify.........: No:FUN-BC0062 13/02/28 By lixh1 當成本計算方式ccz28選擇'6'，過帳還原時控制不可過帳還原
 # Modify.........: No:MOD-C80182 13/03/12 By Alberti 在aimt324_g畫面時,也需控卡成本倉與非成本倉間不可調撥
-# Modify.........: No:CHI-C80007 13/03/13 By Alberti 調撥時,先拿撥出倉的呆滯日期,等撥入在s_tlf再依單別決定是否更新呆滯日期 
+# Modify.........: No:CHI-C80007 13/03/13 By Alberti 調撥時,先拿撥出倉的呆滯日期,等撥入在s_tlf再依單別決定是否更新呆滯日期
 # Modify.........: No:FUN-D30024 13/03/13 By lixh1 負庫存依據imd23判斷
 # Modify.........: No.DEV-D30026 13/03/18 By Nina GP5.3 追版:DEV-CB0005、DEV-CB0021、DEV-CC0001、DEV-D10001、DEV-D10007為GP5.25 的單號
 # Modify.........: No.DEV-D30037 13/03/21 By TSD.JIE 有用smyb01="2:條碼單據"的控卡的改為用單身任一筆(MIN(項次)判斷即可)料件是否為包號管理(ima931)='Y'
@@ -231,7 +231,7 @@
 # Modify.........: No.FUN-D40103 13/05/07 By fengrui 添加庫位有效性檢查
 # Modify.........: No.TQC-D50116 13/05/27 By fengrui 修改儲位檢查報錯信息
 # Modify.........: No.TQC-D50124 13/05/28 By lixiang 修正FUN-D40103部份邏輯控管
-# Modify.........: No:TQC-D40078 13/04/28 By xujing 負庫存函数添加营运中心参数 
+# Modify.........: No:TQC-D40078 13/04/28 By xujing 負庫存函数添加营运中心参数
 # Modify.........: No:TQC-DB0075 13/11/27 By wangrr 點擊"查詢"再"退出",會報錯"-404:找不到光標或說明"
 # Modify.........: No:MOD-DC0097 13/12/13 By fengmy imn32/imn42數量為0不讓過
 # Modify.........: No:160602 16/06/02 By guanyao 修改审核，过账逻辑
@@ -525,29 +525,29 @@ DEFINE g_imn33_t            LIKE imn_file.imn33
 
 DEFINE g_argv4              STRING     #No:DEV-D30026
 
-DEFINE  
-    tm  RECORD                                                                                                                      
-          part   LIKE ima_file.ima01,                                                                                               
-          ima910 LIKE ima_file.ima910,    
-          qty    LIKE sfb_file.sfb08,                                                                                               
-          idate  LIKE type_file.dat,     
-          a      LIKE type_file.chr1     
-        END RECORD,                                                                                                                 
-    g_ima44      LIKE ima_file.ima44,                                                                                               
-    g_ccc        LIKE type_file.num5,    
-    g_pmk13      LIKE pmk_file.pmk13,    
+DEFINE
+    tm  RECORD
+          part   LIKE ima_file.ima01,
+          ima910 LIKE ima_file.ima910,
+          qty    LIKE sfb_file.sfb08,
+          idate  LIKE type_file.dat,
+          a      LIKE type_file.chr1
+        END RECORD,
+    g_ima44      LIKE ima_file.ima44,
+    g_ccc        LIKE type_file.num5,
+    g_pmk13      LIKE pmk_file.pmk13,
     l_imn04      LIKE imn_file.imn04,
     l_imn05      LIKE imn_file.imn05,
     l_imn15      LIKE imn_file.imn15,
     l_imn16      LIKE imn_file.imn16,
     l_imn28      LIKE imn_file.imn28
 
-DEFINE                                                                                                                              
-    tm1  RECORD                                                                                                                     
-         bdate   LIKE type_file.dat,                                                                                                
-         sudate  LIKE type_file.dat                                                                                                
-         END RECORD                                                                                                                 
-DEFINE g_seq     LIKE type_file.num5                                                                                                
+DEFINE
+    tm1  RECORD
+         bdate   LIKE type_file.dat,
+         sudate  LIKE type_file.dat
+         END RECORD
+DEFINE g_seq     LIKE type_file.num5
 DEFINE p_cmd     LIKE type_file.chr1
 DEFINE l_sw      LIKE type_file.chr1
 DEFINE g_laststage  LIKE type_file.chr1  #FUN-A60034 add
@@ -609,15 +609,15 @@ DEFINE   page  om.DomNode
 #FUN-D10081---add---end---
 
 #MAIN   #FUN-BC0036 mark
-FUNCTION t324(p_argv0,p_argv1,p_argv2,p_argv3)   #FUN-BC0036 
+FUNCTION t324(p_argv0,p_argv1,p_argv2,p_argv3)   #FUN-BC0036
 #FUN-BC0036 --START--
-DEFINE p_argv0 LIKE type_file.chr1   #入口程式判別 1.aimt324 2.aict324 
-DEFINE p_argv1 LIKE imm_file.imm01   
+DEFINE p_argv0 LIKE type_file.chr1   #入口程式判別 1.aimt324 2.aict324
+DEFINE p_argv1 LIKE imm_file.imm01
 #FUN-C30140--mod---str---
 #DEFINE p_argv2 LIKE type_file.chr1   #Action ID
-#DEFINE p_argv3 STRING                #借出管理flag 
- DEFINE p_argv2 STRING                #Action ID	
- DEFINE p_argv3 LIKE type_file.chr1   #借出管理flag 
+#DEFINE p_argv3 STRING                #借出管理flag
+ DEFINE p_argv2 STRING                #Action ID
+ DEFINE p_argv3 LIKE type_file.chr1   #借出管理flag
 #FUN-C30140--mod---end---
 
    WHENEVER ERROR CALL cl_err_msg_log
@@ -647,9 +647,9 @@ DEFINE p_argv1 LIKE imm_file.imm01
 #   IF (NOT cl_user()) THEN
 #      EXIT PROGRAM
 #   END IF
-# 
+#
 #   WHENEVER ERROR CALL cl_err_msg_log
-# 
+#
 #   IF (NOT cl_setup("AIM")) THEN
 #      EXIT PROGRAM
 #   END IF
@@ -659,7 +659,7 @@ DEFINE p_argv1 LIKE imm_file.imm01
    LET g_argv1=p_argv1   #FUN-BC0036
   #FUN-C30140---mod---str---
   #LET g_argv2=p_argv2   #FUN-BC0036
-  #LET g_argv3=p_argv3   #FUN-BC0036  
+  #LET g_argv3=p_argv3   #FUN-BC0036
    LET g_argv3=p_argv2   #Action ID
    LET g_argv2=p_argv3   #借出管理
   #FUN-C30140---mod---end---
@@ -671,10 +671,10 @@ DEFINE p_argv1 LIKE imm_file.imm01
    #FUN-A60034--add--str---
    IF fgl_getenv('EASYFLOW') = "1" THEN    #判斷是否為簽核模式
       LET g_argv1 = aws_efapp_wsk(1)       #取得單號
-   END IF                                 
+   END IF
    #FUN-A60034--add--end---
 
-   LET g_forupd_sql = "SELECT * FROM imm_file WHERE imm01 = ? FOR UPDATE "  #imm01   /*调拨单号  
+   LET g_forupd_sql = "SELECT * FROM imm_file WHERE imm01 = ? FOR UPDATE "  #imm01   /*调拨单号
    LET g_forupd_sql = cl_forupd_sql(g_forupd_sql)
    DECLARE t324_cl CURSOR FROM g_forupd_sql
 
@@ -686,26 +686,26 @@ DEFINE p_argv1 LIKE imm_file.imm01
 
    #CALL s_padd_img_create() RETURNING l_img_table   #FUN-C70087  #FUN-CC0095
    #CALL s_padd_imgg_create() RETURNING l_imgg_table #FUN-C70087  #FUN-CC0095
-   
+
    LET g_imm10 = '1'   #FUN-BC0036
 
-   IF g_bgjob='N' OR cl_null(g_bgjob) THEN   
+   IF g_bgjob='N' OR cl_null(g_bgjob) THEN
       OPEN WINDOW t324_w WITH FORM "aim/42f/aimt324"
-        ATTRIBUTE (STYLE = g_win_style CLIPPED) 
+        ATTRIBUTE (STYLE = g_win_style CLIPPED)
       CALL cl_ui_init()
       CALL t324_def_form()
    END IF
- 
+
 
    #FUN-A60034---add---str--
-   CALL aws_efapp_toolbar()    #建立簽核模式時的 toolbar icon 
+   CALL aws_efapp_toolbar()    #建立簽核模式時的 toolbar icon
    #FUN-A60034---add---end--
     LET g_flag1 = 'N'      #MOD-D20164
-    #初始化界面的樣式(沒有任何默認屬性組)                                                                                           
-    LET lg_smy62 = ''                                                                                                               
-    LET lg_group = ''   
+    #初始化界面的樣式(沒有任何默認屬性組)
+    LET lg_smy62 = ''
+    LET lg_group = ''
     IF g_bgjob='N' OR cl_null(g_bgjob) THEN  #2021112401 add
-    CALL t324_refresh_detail() 
+    CALL t324_refresh_detail()
     END IF  #2021112401 add
 
     IF NOT cl_null(g_argv1) THEN
@@ -724,10 +724,10 @@ DEFINE p_argv1 LIKE imm_file.imm01
           WHEN "efconfirm"
              LET g_action_choice = "efconfirm"
              CALL t324_q()
-            #CALL t324_y_chk()                   #CALL 原確認的 check 段 
-             CALL t324sub_y_chk(g_imm.imm01)     #CALL 原確認的 check 段 
+            #CALL t324_y_chk()                   #CALL 原確認的 check 段
+             CALL t324sub_y_chk(g_imm.imm01)     #CALL 原確認的 check 段
              IF g_success = 'Y' THEN
-                #CALL t324_y_upd()                               #CALL 原確認的 update 段 
+                #CALL t324_y_upd()                               #CALL 原確認的 update 段
                  #CALL t324sub_y_upd(g_imm.imm01,g_action_choice) #CALL 原確認的 update 段  #mark by guanyao160602
                  CALL t324sub_y_upd(g_imm.imm01,g_action_choice,FALSE) #add by guanyao160602
              END IF
@@ -737,7 +737,7 @@ DEFINE p_argv1 LIKE imm_file.imm01
              EXIT PROGRAM
           #FUN-A60034--add---end---
 
-          OTHERWISE 
+          OTHERWISE
              CALL t324_q()
              IF g_argv2='A' THEN
                 #CALL t324_s()   #DEV-30046 --mark
@@ -755,7 +755,7 @@ DEFINE p_argv1 LIKE imm_file.imm01
                   CALL t324_show()                                                         #FUN-A60034 add
                END IF
                IF g_success = "Y" THEN
-                  #CALL t324_s()  #DEV-D30046 --mark 
+                  #CALL t324_s()  #DEV-D30046 --mark
                   #CALL t324sub_s(g_imm.imm01,g_argv2,g_argv4)   #DEV-D30046 --add#mark  by guanyao1606062
                   CALL t324sub_s(g_imm.imm01,g_argv2,g_argv4,FALSE)   #DEV-D30046 --add  #add by guanyao160602
                END IF
@@ -772,16 +772,16 @@ DEFINE p_argv1 LIKE imm_file.imm01
 
    #FUN-A60034---add---str---
    ##傳入簽核模式時不應執行的 action 清單
-   CALL aws_efapp_flowaction("insert, modify, delete, reproduce, detail, query, locale, void, confirm, undo_confirm,easyflow_approval,post,undo_post,ebo_transfer,aic_s_icdout")  
+   CALL aws_efapp_flowaction("insert, modify, delete, reproduce, detail, query, locale, void, confirm, undo_confirm,easyflow_approval,post,undo_post,ebo_transfer,aic_s_icdout")
          RETURNING g_laststage
    #FUN-A60034---add---end---
-
+   call cl_set_act_visible('action_stock_post',false) #darcy add
    CALL t324_menu()
 
    CLOSE WINDOW t324_w                    #結束畫面
    #CALL s_padd_img_drop(l_img_table)    #FUN-C70087  #FUN-CC0095
    #CALL s_padd_imgg_drop(l_imgg_table)  #FUN-C70087  #FUN-CC0095
-   CALL cl_used(g_prog,g_time,2) RETURNING g_time 
+   CALL cl_used(g_prog,g_time,2) RETURNING g_time
 #END MAIN  #FUN-BC0036 mark
 END FUNCTION   #FUN-BC0036
 
@@ -808,7 +808,7 @@ FUNCTION t324_cs()
          BEFORE CONSTRUCT
             INITIALIZE g_imm.* TO NULL
                   CALL cl_qbe_init()
- 
+
          ON ACTION controlp
             CASE WHEN INFIELD(imm01) #查詢單据
                 CALL cl_init_qry_var()
@@ -825,31 +825,31 @@ FUNCTION t324_cs()
                   CALL cl_create_qry() RETURNING g_qryparam.multiret
                   DISPLAY g_qryparam.multiret TO imm14
                   NEXT FIELD imm14
-               #FUN-A60034 add str ----             
+               #FUN-A60034 add str ----
                 WHEN INFIELD(imm16) #申請人員
-                   CALL cl_init_qry_var() 
-                   LET g_qryparam.form = "q_gen" 
+                   CALL cl_init_qry_var()
+                   LET g_qryparam.form = "q_gen"
                    LET g_qryparam.state = "c"
-                   CALL cl_create_qry() RETURNING g_qryparam.multiret 
+                   CALL cl_create_qry() RETURNING g_qryparam.multiret
                    DISPLAY g_qryparam.multiret TO imm16
                    NEXT FIELD imm16
-               #FUN-A60034 add end ---- 
+               #FUN-A60034 add end ----
                OTHERWISE EXIT CASE
             END CASE
 
          ON IDLE g_idle_seconds
             CALL cl_on_idle()
             CONTINUE CONSTRUCT
- 
+
          ON ACTION about         #MOD-4C0121
             CALL cl_about()      #MOD-4C0121
- 
+
          ON ACTION help          #MOD-4C0121
             CALL cl_show_help()  #MOD-4C0121
- 
+
          ON ACTION controlg      #MOD-4C0121
             CALL cl_cmdask()     #MOD-4C0121
- 
+
          ON ACTION qbe_select
              CALL cl_qbe_list() RETURNING lc_qbe_sn
              CALL cl_qbe_display_condition(lc_qbe_sn)
@@ -885,7 +885,7 @@ FUNCTION t324_cs()
          BEFORE CONSTRUCT
             CALL g_imn.clear()
              CALL cl_qbe_display_condition(lc_qbe_sn)
- 
+
          ON ACTION controlp
             CASE WHEN INFIELD(imn03)
 #FUN-AA0059 --Begin--
@@ -913,37 +913,37 @@ FUNCTION t324_cs()
                     #LET g_qryparam.form     = "q_imn3"
                     #LET g_qryparam.state    = "c"
                     #CALL cl_create_qry() RETURNING g_qryparam.multiret
-                    CALL q_imd_1(TRUE,TRUE,"","","","","") RETURNING g_qryparam.multiret 
+                    CALL q_imd_1(TRUE,TRUE,"","","","","") RETURNING g_qryparam.multiret
                     #No.FUN-AA0049--end
                     DISPLAY g_qryparam.multiret TO imn04
                     NEXT FIELD imn04
-               WHEN INFIELD(imn05)                                                                                                  
-                    #No.FUN-AA0049--begin                                                                                              
-                    #CALL cl_init_qry_var()                                                                                          
-                    #LET g_qryparam.form     = "q_ime"                                                                               
-                    #LET g_qryparam.state    = "c"                                                                                   
-                    #CALL cl_create_qry() RETURNING g_qryparam.multiret    
-                    CALL q_ime_1(TRUE,TRUE,"","","",g_plant,"","","") RETURNING g_qryparam.multiret  
-                    #No.FUN-AA0049--end                                                                 
-                    DISPLAY g_qryparam.multiret TO imn05                                                                            
-                    NEXT FIELD imn05                                                                                                
-               WHEN INFIELD(imn16)                                                                                                  
-                    #No.FUN-AA0049--begin                                                                                             
-                    #CALL cl_init_qry_var()                                                                                          
-                    #LET g_qryparam.form     = "q_ime"                                                                               
-                    #LET g_qryparam.state    = "c"                                                                                   
-                    #CALL cl_create_qry() RETURNING g_qryparam.multiret    
+               WHEN INFIELD(imn05)
+                    #No.FUN-AA0049--begin
+                    #CALL cl_init_qry_var()
+                    #LET g_qryparam.form     = "q_ime"
+                    #LET g_qryparam.state    = "c"
+                    #CALL cl_create_qry() RETURNING g_qryparam.multiret
                     CALL q_ime_1(TRUE,TRUE,"","","",g_plant,"","","") RETURNING g_qryparam.multiret
-                    #No.FUN-AA0049--end                                                            
-                    DISPLAY g_qryparam.multiret TO imn16                                                                            
-                    NEXT FIELD imn16                                                                                                
+                    #No.FUN-AA0049--end
+                    DISPLAY g_qryparam.multiret TO imn05
+                    NEXT FIELD imn05
+               WHEN INFIELD(imn16)
+                    #No.FUN-AA0049--begin
+                    #CALL cl_init_qry_var()
+                    #LET g_qryparam.form     = "q_ime"
+                    #LET g_qryparam.state    = "c"
+                    #CALL cl_create_qry() RETURNING g_qryparam.multiret
+                    CALL q_ime_1(TRUE,TRUE,"","","",g_plant,"","","") RETURNING g_qryparam.multiret
+                    #No.FUN-AA0049--end
+                    DISPLAY g_qryparam.multiret TO imn16
+                    NEXT FIELD imn16
                WHEN INFIELD(imn15)
                     #No.FUN-AA0049--begin
                     #CALL cl_init_qry_var()
                     #LET g_qryparam.form     = "q_imn4"
                     #LET g_qryparam.state    = "c"
                     #CALL cl_create_qry() RETURNING g_qryparam.multiret
-                    CALL q_imd_1(TRUE,TRUE,"","","","","") RETURNING g_qryparam.multiret 
+                    CALL q_imd_1(TRUE,TRUE,"","","","","") RETURNING g_qryparam.multiret
                     #No.FUN-AA0049--end
                     DISPLAY g_qryparam.multiret TO imn15
                     NEXT FIELD imn15
@@ -994,16 +994,16 @@ FUNCTION t324_cs()
          ON IDLE g_idle_seconds
             CALL cl_on_idle()
             CONTINUE CONSTRUCT
- 
+
          ON ACTION about         #MOD-4C0121
             CALL cl_about()      #MOD-4C0121
- 
+
          ON ACTION help          #MOD-4C0121
             CALL cl_show_help()  #MOD-4C0121
- 
+
          ON ACTION controlg      #MOD-4C0121
             CALL cl_cmdask()     #MOD-4C0121
- 
+
          ON ACTION qbe_save
             CALL cl_qbe_save()
 
@@ -1023,8 +1023,8 @@ FUNCTION t324_cs()
    IF g_wc2 = " 1=1" THEN               # 若單身未輸入條件
       LET g_sql = "SELECT imm01 FROM imm_file",
                   #" WHERE imm10 = '1'",              #FUN-BC0036 mark
-                  " WHERE imm10 = '", g_imm10 ,"'",   #FUN-BC0036                  
-                  " AND immplant IN ",g_auth,      #No.FUN-870100 
+                  " WHERE imm10 = '", g_imm10 ,"'",   #FUN-BC0036
+                  " AND immplant IN ",g_auth,      #No.FUN-870100
                   " AND ", g_wc CLIPPED,
                   " ORDER BY imm01"
    ELSE                  # 若單身有輸入條件
@@ -1051,7 +1051,7 @@ FUNCTION t324_cs()
                 " AND ",g_wc CLIPPED
    ELSE
       LET g_sql="SELECT COUNT(DISTINCT imm01) FROM imm_file,imn_file ",
-                #" WHERE imm10 = '1' ",             #FUN-BC0036 mark 
+                #" WHERE imm10 = '1' ",             #FUN-BC0036 mark
                 " WHERE imm10 = '", g_imm10 ,"'",   #FUN-BC0036
                 " AND immplant=imnplant",    #No.FUN-870100
                 " AND immplant IN ",g_auth,      #No.FUN-870100
@@ -1068,21 +1068,21 @@ DEFINE l_creator    LIKE type_file.chr1      #FUN-A60034 add
 DEFINE l_flowuser   LIKE type_file.chr1      #FUN-A60034 add
 DEFINE l_x          LIKE type_file.num5      #add by guanyao160615
 DEFINE l_x2          LIKE type_file.num5
-DEFINE l_x3          LIKE type_file.num5   
+DEFINE l_x3          LIKE type_file.num5
    LET l_flowuser = "N"                         #FUN-A60034 add
 
    WHILE TRUE
       IF cl_null(g_action_flag) OR g_action_flag = "page_main" THEN      #FUN-D10081 add
          CALL t324_bp("G")
       #FUN-D10081---add---str---
-      ELSE 
+      ELSE
          CALL t324_list_fill()
          CALL t324_bp2("G")
          IF NOT cl_null(g_action_choice) AND l_ac4>0 THEN #將清單的資料回傳到主畫面
             SELECT imm_file.* INTO g_imm.*
               FROM imm_file
              WHERE imm01 = g_imm_l[l_ac4].imm01
-         END IF 
+         END IF
          IF g_action_choice!= "" THEN
             LET g_action_flag = "page_main"
             LET l_ac4 = ARR_CURR()
@@ -1138,7 +1138,7 @@ DEFINE l_x3          LIKE type_file.num5
                #CALL t324_s()   #DEV-D30046 --mark
                #DEV-D30046 --add--begin
                #CALL t324sub_s(g_imm.imm01,g_argv2,g_argv4)  #mark by guanyao160602
-               CALL t324sub_s(g_imm.imm01,g_argv2,g_argv4,FALSE)   #add by guanyao160602 
+               CALL t324sub_s(g_imm.imm01,g_argv2,g_argv4,FALSE)   #add by guanyao160602
                CALL t324sub_refresh(g_imm.imm01) RETURNING g_imm.*                      #FUN-A6
                CALL t324_show()                                                         #FUN-A6
                #DEV-D30046 --add--end
@@ -1148,6 +1148,16 @@ DEFINE l_x3          LIKE type_file.num5
                   LET g_void = 'N'
                END IF
                CALL cl_set_field_pic(g_imm.immconf,"",g_imm.imm03,"",g_void,"")
+               # darcy add s---
+               if g_imm.imm03 = 'Y' then
+                   let g_action_choice = 'action_stock_post'
+                   let g_bgjob = 'Y'
+                   if cl_chk_act_auth() then
+                       if cl_action(g_prog,g_imm.imm01,0,'post','','',true,true) then end if
+                   end if
+                   let g_action_choice = 'stock_post'
+               end if
+               # darcy add e---
             END IF
          WHEN "undo_post"
             IF cl_chk_act_auth() THEN
@@ -1156,16 +1166,16 @@ DEFINE l_x3          LIKE type_file.num5
                   CALL cl_err('','aim-206',0)
                   LET g_success = 'N'           #No.TQC-9B0120
                END IF
-               LET g_count = 0 
-               SELECT COUNT(*) INTO g_count 
+               LET g_count = 0
+               SELECT COUNT(*) INTO g_count
                  FROM oga_file
-                WHERE oga70 = g_imm.imm01  
+                WHERE oga70 = g_imm.imm01
             #str-----add by guanyao160615
                SELECT COUNT(*) INTO l_x FROM sfp_file WHERE sfp01 = g_imm.imm09
-               IF l_x > 0 THEN 
+               IF l_x > 0 THEN
                   CALL cl_err('','cim-005',0)
-                  LET g_success = 'N' 
-               END IF 
+                  LET g_success = 'N'
+               END IF
             #end-----add by guanyao160615
             #FUN-BC0062 ---------Begin--------
             #當成本計算方式ccz28選擇'6'，過帳還原時控制不可過帳還原
@@ -1173,7 +1183,7 @@ DEFINE l_x3          LIKE type_file.num5
                #IF g_ccz.ccz28  = '6' THEN                     #TQC-D40005 mark
                IF g_ccz.ccz28  = '6' AND g_success = 'Y' THEN  #TQC-D40005 add
                   CALL cl_err('','apm-936',1)
-                  LET g_success = 'N' 
+                  LET g_success = 'N'
                END IF
             #FUN-BC0062 ---------End----------
                #IF g_imm.immconf = 'Y' AND g_imm.imm03 = 'Y' THEN #FUN-660029 #TQC-7A0047 #TQC-D40005 mark
@@ -1182,13 +1192,13 @@ DEFINE l_x3          LIKE type_file.num5
                   IF g_argv2='A' OR g_count <> 0 THEN                 #CHI-870036 Add "OR g_count <> 0"
                      CALL cl_err('','aim1008',1)
                      LET g_success = 'N'           #No.TQC-9B0120
-                  ELSE  
+                  ELSE
                      IF g_imm.imm03 = 'N' THEN
                         CALL cl_err('','aim-206',0)
                         LET g_success = 'N'           #No.TQC-9B0120
                      END IF                           #No.TQC-9B0120
                      #CHI-C70017---begin
-                     IF g_success = 'Y' THEN 
+                     IF g_success = 'Y' THEN
                         #IF g_sma.sma53 IS NOT NULL AND g_imm.imm02 <= g_sma.sma53 THEN  #FUN-D40053
                         IF g_sma.sma53 IS NOT NULL AND g_imm.imm17 <= g_sma.sma53 THEN  #FUN-D40053
                            CALL cl_err('','mfg9999',0)
@@ -1202,17 +1212,17 @@ DEFINE l_x3          LIKE type_file.num5
                         ELSE
                            IF g_yy=g_sma.sma51 AND g_mm > g_sma.sma52 THEN
                               CALL cl_err(g_mm,'mfg6091',0)
-                              LET g_success = 'N' 
+                              LET g_success = 'N'
                            END IF
                         END IF
-                     END IF 
+                     END IF
                      #CHI-C70017---end
                      #IF g_bgjob='N' OR cl_null(g_bgjob) THEN                     #TQC-D40005 mark
-                     IF g_bgjob='N' OR cl_null(g_bgjob) AND g_success = 'Y' THEN  #TQC-D40005 add              
-                        IF NOT cl_confirm('asf-663') THEN                   
-                           LET g_success = 'N'                              
-                        END IF                                              
-                     END IF                                                 
+                     IF g_bgjob='N' OR cl_null(g_bgjob) AND g_success = 'Y' THEN  #TQC-D40005 add
+                        IF NOT cl_confirm('asf-663') THEN
+                           LET g_success = 'N'
+                        END IF
+                     END IF
                      IF g_success = 'Y' THEN          #No.TQC-9B0120
                        #LET g_msg="aimp378 '",g_imm.imm01,"'"       #TQC-AC0218
                         LET g_msg="aimp378 '",g_imm.imm01,"' 'Y' "  #TQC-AC0218
@@ -1226,12 +1236,12 @@ DEFINE l_x3          LIKE type_file.num5
                            LET g_void = 'N'
                         END IF
                         CALL cl_set_field_pic(g_imm.immconf,"",g_imm.imm03,"",g_void,"")
-                      END IF   #MOD-740302 
+                      END IF   #MOD-740302
                   END IF       #NO.CHI-780041  add
-               ELSE 
+               ELSE
                   CASE g_imm.immconf #FUN-660029
-                      WHEN 'N'     CALL cl_err(g_imm.imm01,'aim-206',1) 
-                      WHEN 'X'     CALL cl_err(g_imm.imm01,'9024',1) 
+                      WHEN 'N'     CALL cl_err(g_imm.imm01,'aim-206',1)
+                      WHEN 'X'     CALL cl_err(g_imm.imm01,'9024',1)
                       OTHERWISE
                   END CASE
                END IF
@@ -1247,7 +1257,7 @@ DEFINE l_x3          LIKE type_file.num5
                END IF
                CALL cl_set_field_pic(g_imm.immconf,"",g_imm.imm03,"",g_void,"") #FUN-660029
             END IF
-         #CHI-D20008---begin   
+         #CHI-D20008---begin
          WHEN "undo_void"
             IF cl_chk_act_auth() THEN
                #CALL t324_x()  #CHI-D20008
@@ -1268,8 +1278,8 @@ DEFINE l_x3          LIKE type_file.num5
               #CALL t324_y_chk()              #FUN-A60034 mark
               CALL t324sub_y_chk(g_imm.imm01)     #CALL 原確認的 check 段                 #FUN-A60034 add
                IF g_success = "Y" THEN
-                IF (l_x3 <> '96230') THEN 
-                    IF(l_x2 >= l_x3) THEN 
+                IF (l_x3 <> '96230') THEN
+                    IF(l_x2 >= l_x3) THEN
                         CALL cl_err(g_imn[l_ac].imn03,'xyb_hy1',0)
                     END IF
                 END IF
@@ -1278,6 +1288,9 @@ DEFINE l_x3          LIKE type_file.num5
                   CALL t324sub_y_upd(g_imm.imm01,g_action_choice,FALSE) #add by guanyao160602
                   CALL t324sub_refresh(g_imm.imm01) RETURNING g_imm.*                      #FUN-A60034 add
                   CALL t324_show()                   #FUN-A60034 add
+                  if g_imm.immconf = 'Y' then
+                    if cl_action(g_prog,g_imm.imm01,0,'confirm',g_user,g_grup,false,false) then end if#darcy add
+                  end if
                END IF
             END IF
 
@@ -1295,19 +1308,19 @@ DEFINE l_x3          LIKE type_file.num5
                   CALL cl_export_to_excel(page,base.TypeInfo.create(g_imn),'','')   #FUN-D10081 add
                END IF
             #FUN-D10081---add---str---
-            END IF 
+            END IF
             IF g_action_flag = "page_list" THEN
                LET page = f.FindNode("Page","page_list")
                IF cl_chk_act_auth() THEN
                   CALL cl_export_to_excel(page,base.TypeInfo.create(g_imm_l),'','')
                END IF
             END IF
-            #FUN-D10081---add---end---   
+            #FUN-D10081---add---end---
 
-         WHEN "trans_spc"         
+         WHEN "trans_spc"
             IF cl_chk_act_auth() THEN
                CALL t324_spc()
-            END IF 
+            END IF
 
          WHEN "related_document"  #相關文件
             IF cl_chk_act_auth() THEN
@@ -1317,14 +1330,14 @@ DEFINE l_x3          LIKE type_file.num5
                   CALL cl_doc()
                END IF
             END IF
- 
+
         WHEN "qry_lot"
            IF l_ac > 0 THEN                   #TQC-C90027  add
-              SELECT ima918,ima921 INTO g_ima918,g_ima921 
+              SELECT ima918,ima921 INTO g_ima918,g_ima921
                 FROM ima_file
                WHERE ima01 = g_imn[l_ac].imn03
                  AND imaacti = "Y"
-           
+
               IF g_ima918 = "Y" OR g_ima921 = "Y" THEN
                  LET g_success = 'Y'              #CHI-A10016
                  BEGIN WORK                       #CHI-A10016
@@ -1334,12 +1347,12 @@ DEFINE l_x3          LIKE type_file.num5
                                 g_imn[l_ac].imn05,g_imn[l_ac].imn06,
                                 g_imn[l_ac].imn09,g_imn[l_ac].imn09,1,
                                 g_imn[l_ac].imn10,'','QRY',-1) #FUN-9A0022 add ''   #TQC-B90236 add '-1'
-                      RETURNING l_r,g_qty 
+                      RETURNING l_r,g_qty
                  #-CHI-A10016-add-
                  IF g_success = "Y" THEN
                     COMMIT WORK
                  ELSE
-                    ROLLBACK WORK    
+                    ROLLBACK WORK
                  END IF
                  #-CHI-A10016-end-
              END IF
@@ -1347,11 +1360,11 @@ DEFINE l_x3          LIKE type_file.num5
          #FUN-A60034---add----str---
          WHEN "approval_status"               #簽核狀況
            IF cl_chk_act_auth() THEN          #DISPLAY ONLY
-              IF aws_condition2() THEN        
-                 CALL aws_efstat2()    
+              IF aws_condition2() THEN
+                 CALL aws_efstat2()
               END IF
            END IF
-         
+
          WHEN "easyflow_approval"             #EasyFlow送簽
            IF cl_chk_act_auth() THEN
              #FUN-C20025 add str---
@@ -1369,8 +1382,8 @@ DEFINE l_x3          LIKE type_file.num5
                 #CALL t324_y_upd()                               #CALL 原確認的 update 段 #FUN-A60034 mark
                  #CALL t324sub_y_upd(g_imm.imm01,g_action_choice) #CALL 原確認的 update 段 #FUN-A60034 add #mark by guanyao160602
                  CALL t324sub_y_upd(g_imm.imm01,g_action_choice,FALSE) #add by guanyao160602
-                 CALL t324sub_refresh(g_imm.imm01) RETURNING g_imm.*  
-                 CALL t324_show() 
+                 CALL t324sub_refresh(g_imm.imm01) RETURNING g_imm.*
+                 CALL t324_show()
               ELSE
                  LET g_success = "Y"
                  IF NOT aws_efapp_formapproval() THEN #執行 EF 簽核
@@ -1385,7 +1398,7 @@ DEFINE l_x3          LIKE type_file.num5
                        IF NOT cl_null(g_argv1) THEN     #自動 query 帶出資料
                              CALL t324_q()
                              #傳入簽核模式時不應執行的 action 清單
-                             CALL aws_efapp_flowaction("insert, modify, delete, reproduce, detail, query, locale, void, confirm, undo_confirm,easyflow_approval,post,undo_post,ebo_transfer,aic_s_icdout")  
+                             CALL aws_efapp_flowaction("insert, modify, delete, reproduce, detail, query, locale, void, confirm, undo_confirm,easyflow_approval,post,undo_post,ebo_transfer,aic_s_icdout")
                                    RETURNING g_laststage
                        ELSE
                            EXIT WHILE
@@ -1413,7 +1426,7 @@ DEFINE l_x3          LIKE type_file.num5
                           IF NOT cl_null(g_argv1) THEN      #自動 query 帶出資料
                                 CALL t324_q()
                                 #傳入簽核模式時不應執行的 action 清單
-                                CALL aws_efapp_flowaction("insert, modify, delete, reproduce, detail, query, locale, void, confirm, undo_confirm,easyflow_approval,post,undo_post,ebo_transfer,aic_s_icdout")  
+                                CALL aws_efapp_flowaction("insert, modify, delete, reproduce, detail, query, locale, void, confirm, undo_confirm,easyflow_approval,post,undo_post,ebo_transfer,aic_s_icdout")
                                       RETURNING g_laststage
                           ELSE
                                 EXIT WHILE
@@ -1467,7 +1480,7 @@ FUNCTION t324_g()
      ATTRIBUTE (STYLE = g_win_style CLIPPED) #No:FUN-580092 HCN
 
    CALL cl_ui_locale("aimt324g")
- 
+
    INPUT BY NAME a WITHOUT DEFAULTS
 
       AFTER FIELD a
@@ -1478,16 +1491,16 @@ FUNCTION t324_g()
       ON IDLE g_idle_seconds
          CALL cl_on_idle()
          CONTINUE INPUT
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
+
       ON ACTION controlg      #MOD-4C0121
          CALL cl_cmdask()     #MOD-4C0121
- 
+
    END INPUT
 
    IF INT_FLAG THEN
@@ -1514,7 +1527,7 @@ FUNCTION t324_g1()
    DEFINE l_img        RECORD LIKE img_file.*
    DEFINE l_imn9301    LIKE imn_file.imn9301      #FUN-670093
    DEFINE l_date       LIKE type_file.dat         #CHI-C50010 add
-   DEFINE l_img37      LIKE img_file.img37        #CHI-C80007 add 
+   DEFINE l_img37      LIKE img_file.img37        #CHI-C80007 add
 
    OPEN WINDOW t324g_w AT 5,5 WITH FORM "aim/42f/aimt324g"
      ATTRIBUTE (STYLE = g_win_style CLIPPED) #No:FUN-580092 HCN
@@ -1529,16 +1542,16 @@ FUNCTION t324_g1()
       ON IDLE g_idle_seconds
          CALL cl_on_idle()
          CONTINUE CONSTRUCT
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
+
       ON ACTION controlg      #MOD-4C0121
          CALL cl_cmdask()     #MOD-4C0121
- 
+
                  ON ACTION qbe_select
                  CALL cl_qbe_select()
                  ON ACTION qbe_save
@@ -1555,15 +1568,15 @@ FUNCTION t324_g1()
        ON IDLE g_idle_seconds
           CALL cl_on_idle()
           CONTINUE INPUT
-       
-       ON ACTION about         
-          CALL cl_about()      
-       
-       ON ACTION help          
-          CALL cl_show_help()  
-       
-       ON ACTION controlg      
-          CALL cl_cmdask()     
+
+       ON ACTION about
+          CALL cl_about()
+
+       ON ACTION help
+          CALL cl_show_help()
+
+       ON ACTION controlg
+          CALL cl_cmdask()
     END INPUT
 
    IF INT_FLAG THEN
@@ -1599,7 +1612,7 @@ FUNCTION t324_g1()
       LET b_imn.imn09 = l_img.img09
       LET b_imn.imn10 = l_img.img10
       LET b_imn.imn10 = s_digqty(b_imn.imn10,b_imn.imn09)  #FUN-D50028
-      
+
       IF t_img02 IS NULL THEN
          LET b_imn.imn15 = l_img.img02
       ELSE
@@ -1638,8 +1651,8 @@ FUNCTION t324_g1()
              AND img02 = g_imn[l_ac].imn04
              AND img03 = g_imn[l_ac].imn05
              AND img04 = g_imn[l_ac].imn06
-         #MOD-CB0122 add---S 
-          IF STATUS=100 THEN       
+         #MOD-CB0122 add---S
+          IF STATUS=100 THEN
              CALL cl_err('','mfg6101',1)
              CONTINUE FOREACH
           ELSE
@@ -1688,14 +1701,14 @@ FUNCTION t324_g2()
     DEFINE l_imgg     RECORD LIKE imgg_file.*
     DEFINE l_img09    LIKE img_file.img09
     DEFINE l_imn9301  LIKE imn_file.imn9301       #FUN-670093
-    DEFINE l_img      RECORD LIKE img_file.*    
-    DEFINE l_imgg01   LIKE imgg_file.imgg01     
-    DEFINE t_img02    LIKE imn_file.imn15        
-    DEFINE t_img03    LIKE imn_file.imn16       
-    DEFINE t_img04    LIKE imn_file.imn17     
+    DEFINE l_img      RECORD LIKE img_file.*
+    DEFINE l_imgg01   LIKE imgg_file.imgg01
+    DEFINE t_img02    LIKE imn_file.imn15
+    DEFINE t_img03    LIKE imn_file.imn16
+    DEFINE t_img04    LIKE imn_file.imn17
     DEFINE l_date     LIKE type_file.dat         #CHI-C50010 add
     DEFINE l_img37    LIKE img_file.img37        #CHI-C80007 add
-    
+
     OPEN WINDOW t324g_w AT 5,5 WITH FORM "aim/42f/aimt324g2"
           ATTRIBUTE (STYLE = g_win_style CLIPPED) #No:FUN-580092 HCN
 
@@ -1705,7 +1718,7 @@ FUNCTION t324_g2()
               BEFORE CONSTRUCT
                  CALL cl_qbe_init()
 
-       AFTER FIELD imgg01 
+       AFTER FIELD imgg01
 #FUN-AB0025 ----------------------mark------------------------------------
 #FUN-AA0059 ---------------------start----------------------------
 #         IF NOT cl_null(l_imgg01) THEN
@@ -1717,23 +1730,23 @@ FUNCTION t324_g2()
 #FUN-AA0059 ---------------------end-------------------------------
 #FUN-AB0025 --------------------mark---------------------------------------
          LET l_imgg01 = GET_FLDBUF(imgg01)
-         SELECT ima906 INTO g_ima906 FROM ima_file 
+         SELECT ima906 INTO g_ima906 FROM ima_file
           WHERE ima01=l_imgg01
 
        ON IDLE g_idle_seconds
           CALL cl_on_idle()
           CONTINUE CONSTRUCT
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
+
       ON ACTION controlg      #MOD-4C0121
          CALL cl_cmdask()     #MOD-4C0121
- 
- 
+
+
                  ON ACTION qbe_select
                  CALL cl_qbe_select()
                  ON ACTION qbe_save
@@ -1749,15 +1762,15 @@ FUNCTION t324_g2()
        ON IDLE g_idle_seconds
           CALL cl_on_idle()
           CONTINUE INPUT
-       
-       ON ACTION about         
-          CALL cl_about()      
-       
-       ON ACTION help          
-          CALL cl_show_help()  
-       
-       ON ACTION controlg      
-          CALL cl_cmdask()     
+
+       ON ACTION about
+          CALL cl_about()
+
+       ON ACTION help
+          CALL cl_show_help()
+
+       ON ACTION controlg
+          CALL cl_cmdask()
     END INPUT
     IF INT_FLAG THEN
        LET INT_FLAG=0
@@ -1765,12 +1778,12 @@ FUNCTION t324_g2()
        RETURN
     END IF
 
-    IF g_ima906 = '1' THEN  
+    IF g_ima906 = '1' THEN
        LET l_wc=cl_replace_str(l_wc, "imgg", "img")
        LET l_sql="SELECT * FROM img_file WHERE ",l_wc CLIPPED,
                  " AND img10 > 0",
                  " ORDER BY img01,img02,img03,img04"
-    ELSE 
+    ELSE
     LET l_sql="SELECT * FROM imgg_file WHERE ",l_wc CLIPPED,
               " AND imgg10 > 0",
               " ORDER BY imgg01,imgg02,imgg03,imgg04,imgg09"
@@ -1780,10 +1793,10 @@ FUNCTION t324_g2()
     INITIALIZE b_imn.* TO NULL
 
     SELECT MAX(imn02) INTO b_imn.imn02 FROM imn_file
-     WHERE imn01=g_imm.imm01 
+     WHERE imn01=g_imm.imm01
     IF cl_null(b_imn.imn02) THEN LET b_imn.imn02=0 END IF
     LET l_imn9301=s_costcenter(g_imm.imm14) #FUN-670093
-    IF g_ima906 = '1' THEN  
+    IF g_ima906 = '1' THEN
     FOREACH t324_g2_c INTO l_img.*
        IF STATUS THEN EXIT FOREACH END IF
        LET b_imn.imn01 = g_imm.imm01
@@ -1806,7 +1819,7 @@ FUNCTION t324_g2()
        LET b_imn.imn09 = l_img.img09
        LET b_imn.imn10 = l_img.img10
        LET b_imn.imn10 = s_digqty(b_imn.imn10,b_imn.imn09)  #FUN-D50028
-        
+
 #---------------------destination-------------------------
        IF t_imgg02 IS NULL
           THEN LET b_imn.imn15 = l_img.img02
@@ -1828,7 +1841,7 @@ FUNCTION t324_g2()
           IF g_imn[l_ac].imn05 IS NULL THEN LET g_imn[l_ac].imn05 =' ' END IF   #MOD-CB0122 add
           IF g_imn[l_ac].imn06 IS NULL THEN LET g_imn[l_ac].imn06 =' ' END IF   #MOD-CB0122 add
          #CHI-C50010 str add-----
-         #SELECT img18 INTO l_date FROM img_file                #CHI-C80007 mark 
+         #SELECT img18 INTO l_date FROM img_file                #CHI-C80007 mark
           SELECT img18,img37 INTO l_date,l_img37 FROM img_file  #CHI-C80007 add img37
            WHERE img01 = g_imn[l_ac].imn03
              AND img02 = g_imn[l_ac].imn04
@@ -1853,7 +1866,7 @@ FUNCTION t324_g2()
            WHERE img01=b_imn.imn03 AND img02=b_imn.imn15
              AND img03=b_imn.imn16 AND img04=b_imn.imn17
        END IF
- 
+
        SELECT img09,img21 INTO b_imn.imn20,b_imn.imn21
         FROM img_file WHERE img01=b_imn.imn03 AND img02=b_imn.imn15
                         AND img03=b_imn.imn16 AND img04=b_imn.imn17
@@ -1894,7 +1907,7 @@ FUNCTION t324_g2()
        LET g_buf ='Insert seq no:',b_imn.imn02,' status:',SQLCA.SQLCODE   #No:FUN-850020
        CALL cl_msg(g_buf)   #No:FUN-850020
     END FOREACH
-    ELSE 
+    ELSE
     FOREACH t324_g2_c INTO l_imgg.*
        IF STATUS THEN EXIT FOREACH END IF
        LET b_imn.imn01 = g_imm.imm01
@@ -1940,7 +1953,7 @@ FUNCTION t324_g2()
           IF g_imn[l_ac].imn06 IS NULL THEN LET g_imn[l_ac].imn06 =' ' END IF   #MOD-CB0122 add
          #CHI-C50010 str add-----
          #SELECT img18 INTO l_date FROM img_file                #CHI-C80007 mark
-          SELECT img18,img37 INTO l_date,l_img37 FROM img_file  #CHI-C80007 add img37 
+          SELECT img18,img37 INTO l_date,l_img37 FROM img_file  #CHI-C80007 add img37
            WHERE img01 = g_imn[l_ac].imn03
              AND img02 = g_imn[l_ac].imn04
              AND img03 = g_imn[l_ac].imn05
@@ -1964,7 +1977,7 @@ FUNCTION t324_g2()
            WHERE img01=b_imn.imn03 AND img02=b_imn.imn15
              AND img03=b_imn.imn16 AND img04=b_imn.imn17
        END IF
- 
+
        CALL s_chk_imgg(b_imn.imn03,b_imn.imn15,b_imn.imn16,b_imn.imn17,l_imgg.imgg09)
             RETURNING g_flag
        IF g_flag = 1 THEN
@@ -1997,7 +2010,7 @@ FUNCTION t324_g2()
        CALL s_umfchk(b_imn.imn03,b_imn.imn09,b_imn.imn20)
             RETURNING g_cnt,b_imn.imn21
       #end MOD-A70117 add
- 
+
        LET b_imn.imn40 = l_imgg.imgg09
        LET b_imn.imn41 = g_factor
        LET b_imn.imn42 = l_imgg.imgg10
@@ -2017,7 +2030,7 @@ FUNCTION t324_g2()
        IF cl_null(b_imn.imn29) THEN
           LET b_imn.imn29='N'
        END IF
-       
+
 
        CALL t324_b_move_to()
        LET b_imn.imnplant = g_plant #FUN-980004 add
@@ -2043,7 +2056,7 @@ FUNCTION t324_a()
    LET g_imm_o.* = g_imm.*
    #FUN-A60034--add---str--
    LET g_imm.imm15 = '0'         #開立
-   LET g_imm.immmksg = "N"               
+   LET g_imm.immmksg = "N"
 
    LET g_imm.imm16 = g_user
    CALL t324_imm16('d')
@@ -2114,13 +2127,13 @@ FUNCTION t324_a()
       END IF
 
       SELECT imm01 INTO g_imm.imm01 FROM imm_file     #No.TQC-9A0113
-       WHERE imm01 = g_imm.imm01 
+       WHERE imm01 = g_imm.imm01
       LET g_imm_t.* = g_imm.*
 
-      CALL aimt324_g()       #FUN-930064 
+      CALL aimt324_g()       #FUN-930064
 
       SELECT COUNT(*) INTO g_i FROM imn_file
-       WHERE imn01 = g_imm.imm01 
+       WHERE imn01 = g_imm.imm01
 
       IF g_i > 0 THEN
          IF g_smy.smyprint = 'Y' THEN
@@ -2131,8 +2144,8 @@ FUNCTION t324_a()
 
         #FUN-A60034---mod---str---
         #IF g_smy.smydmy4 = 'Y' THEN
-         IF g_smy.smydmy4 ='Y' AND g_smy.smyapr <> 'Y'THEN  #單據需自動確認且不需簽核 
-            LET g_action_choice = "insert"                
+         IF g_smy.smydmy4 ='Y' AND g_smy.smyapr <> 'Y'THEN  #單據需自動確認且不需簽核
+            LET g_action_choice = "insert"
         #FUN-A60034---mod---end---
            #CALL t324_y_chk()                                                           #FUN-A60034 mark
             CALL t324sub_y_chk(g_imm.imm01)     #CALL 原確認的 check 段                 #FUN-A60034 add
@@ -2157,12 +2170,12 @@ FUNCTION t324_u()
 
     IF cl_null(g_imm.imm01) THEN CALL cl_err('',-400,0) RETURN END IF
 
-    SELECT * INTO g_imm.* FROM imm_file WHERE imm01=g_imm.imm01 
+    SELECT * INTO g_imm.* FROM imm_file WHERE imm01=g_imm.imm01
 
     IF g_imm.immconf = 'Y' THEN CALL cl_err('',9023,0) RETURN END IF #FUN-660029
 
     IF g_imm.immconf = 'X' THEN CALL cl_err('',9024,0) RETURN END IF #FUN-660029
-    #FUN-A60034  add str ---              
+    #FUN-A60034  add str ---
     IF g_imm.imm15 matches '[Ss]' THEN
          CALL cl_err('','apm-030',0) #送簽中, 不可修改資料!
          RETURN
@@ -2171,14 +2184,14 @@ FUNCTION t324_u()
        CALL cl_err('','mfg3168',0) #此張單據已核准, 不允許更改或取消
        RETURN
     END IF
-    #FUN-A60034  add end ---    
+    #FUN-A60034  add end ---
 
     CALL cl_msg("")
     CALL cl_opmsg('u')
     LET g_imm_o.* = g_imm.*
     BEGIN WORK
 
-    OPEN t324_cl USING g_imm.imm01      #NO.TQC-9A0113   
+    OPEN t324_cl USING g_imm.imm01      #NO.TQC-9A0113
     IF SQLCA.sqlcode THEN
        CALL cl_err(g_imm.imm01,SQLCA.sqlcode,0)     # 資料被他人LOCK
        CLOSE t324_cl
@@ -2231,7 +2244,7 @@ END FUNCTION
 FUNCTION t324_chkkey()
 
    UPDATE imn_file SET imn01=g_imm.imm01
-    WHERE imn01=g_imm_t.imm01 
+    WHERE imn01=g_imm_t.imm01
    IF SQLCA.SQLCODE OR SQLCA.SQLERRD[3] = 0 THEN
       CALL cl_err3("upd","imn_file",g_imm_t.imm01,"",SQLCA.sqlcode,"","upd imn01",1)   #NO.FUN-640266 #No.FUN-660156
       LET g_imm.* = g_imm_t.*
@@ -2272,15 +2285,15 @@ FUNCTION t324_i(p_cmd)
        AFTER FIELD imm01
           IF NOT cl_null(g_imm.imm01) THEN
              LET g_t1 = s_get_doc_no(g_imm.imm01)
-             #得到該單別對應的屬性群組                                                                                               
-             IF ( g_sma.sma120 = 'Y' )AND( g_sma.sma907 = 'Y' ) THEN                                                                 
-                #讀取smy_file中指定作業對應的默認屬性群組                                                                            
-                SELECT smy62 INTO lg_smy62 FROM smy_file WHERE smyslip = g_t1                                                        
-                #刷新界面顯示                                                                                                        
-                CALL t324_refresh_detail()                                                                                           
-             ELSE                                                                                                                    
-                LET lg_smy62 = ''                                                                                                    
-             END IF                                                                                                                  
+             #得到該單別對應的屬性群組
+             IF ( g_sma.sma120 = 'Y' )AND( g_sma.sma907 = 'Y' ) THEN
+                #讀取smy_file中指定作業對應的默認屬性群組
+                SELECT smy62 INTO lg_smy62 FROM smy_file WHERE smyslip = g_t1
+                #刷新界面顯示
+                CALL t324_refresh_detail()
+             ELSE
+                LET lg_smy62 = ''
+             END IF
                CALL s_check_no("aim",g_imm.imm01,g_imm_t.imm01,"4","imm_file","imm01","")
                    RETURNING li_result,g_imm.imm01
                DISPLAY BY NAME g_imm.imm01
@@ -2294,13 +2307,13 @@ FUNCTION t324_i(p_cmd)
                 LET g_imm.imm15 = '0'
                 DISPLAY BY NAME g_imm.immmksg   #簽核否
                 DISPLAY BY NAME g_imm.imm15     #簽核狀況
-             END IF 
+             END IF
              #FUN-A60034 add end ---
-          ELSE                                                                                                                       
-             IF g_sma.sma120 = 'Y' AND g_sma.sma907 = 'Y' THEN                                                                       
-                LET lg_smy62 = ''                                                                                                    
-                CALL t324_refresh_detail()                                                                                           
-             END IF                                                                                                                  
+          ELSE
+             IF g_sma.sma120 = 'Y' AND g_sma.sma907 = 'Y' THEN
+                LET lg_smy62 = ''
+                CALL t324_refresh_detail()
+             END IF
           END IF
 
        AFTER FIELD imm02
@@ -2450,7 +2463,7 @@ FUNCTION t324_i(p_cmd)
        ON ACTION CONTROLF                  #欄位說明
           CALL cl_set_focus_form(ui.Interface.getRootNode()) RETURNING g_fld_name,g_frm_name #Add on 040913
           CALL cl_fldhelp(g_frm_name,g_fld_name,g_lang) #Add on 040913
- 
+
        ON ACTION CONTROLR
           CALL cl_show_req_fields()
 
@@ -2460,14 +2473,14 @@ FUNCTION t324_i(p_cmd)
        ON IDLE g_idle_seconds
           CALL cl_on_idle()
           CONTINUE INPUT
-     
+
        ON ACTION about         #MOD-4C0121
           CALL cl_about()      #MOD-4C0121
-      
+
        ON ACTION help          #MOD-4C0121
           CALL cl_show_help()  #MOD-4C0121
- 
- 
+
+
     END INPUT
 END FUNCTION
 
@@ -2492,15 +2505,15 @@ END FUNCTION
 FUNCTION t324_set_entry_b()
 
   #-----MOD-A80088---------
-  #CALL cl_set_comp_entry("imn33,imn35",TRUE) #MOD-640226   
-  CALL cl_set_comp_entry("imn33,imn35,imn30",TRUE) 
+  #CALL cl_set_comp_entry("imn33,imn35",TRUE) #MOD-640226
+  CALL cl_set_comp_entry("imn33,imn35,imn30",TRUE)
   #-----END MOD-A80088-----
 
 END FUNCTION
 
 FUNCTION t324_set_no_entry_b()
-   
-    #-----MOD-A80088--------- 
+
+    #-----MOD-A80088---------
     #IF g_ima906 = '1' THEN
     #  CALL cl_set_comp_entry("imn33,imn34,imn35",FALSE) #MOD-640226
     #END IF
@@ -2512,22 +2525,22 @@ FUNCTION t324_set_no_entry_b()
     #   CALL cl_set_comp_entry("imn33",FALSE) #MOD-640226
     #END IF
 
-    IF g_ima906 = '1' THEN 
-       CALL cl_set_comp_entry("imn33,imn35,imn30",FALSE) 
+    IF g_ima906 = '1' THEN
+       CALL cl_set_comp_entry("imn33,imn35,imn30",FALSE)
     END IF
-    IF g_ima906 = '3' THEN 
-       CALL cl_set_comp_entry("imn33,imn30",FALSE) 
+    IF g_ima906 = '3' THEN
+       CALL cl_set_comp_entry("imn33,imn30",FALSE)
     END IF
     #-----END MOD-A80088-----
     #TQC-C60014---begin
     IF g_argv0 = '2' THEN
        CALL cl_set_comp_entry("imn32,imn35",FALSE)
-    END IF 
+    END IF
     #TQC-C60014---end
 END FUNCTION
 
 FUNCTION t324_set_required()
- 
+
   #兩組雙單位資料不是一定要全部輸入,但是參考單位的時候要全輸入
   IF g_ima906 = '3' THEN
      CALL cl_set_comp_required("imn33,imn35,imn30,imn32,imn43,imn45,imn40,imn42",TRUE)
@@ -2545,13 +2558,13 @@ FUNCTION t324_set_required()
   IF NOT cl_null(g_imn[l_ac].imn40) THEN
      CALL cl_set_comp_required("imn42,imn30,imn32",TRUE)
   END IF
- 
+
 END FUNCTION
- 
+
 FUNCTION t324_set_no_required()
- 
+
   CALL cl_set_comp_required("imn33,imn34,imn35,imn30,imn31,imn32,imn43,imn44,imn45,imn40,imn41,imn42",FALSE)
- 
+
 END FUNCTION
 
 FUNCTION t324_q()
@@ -2563,11 +2576,11 @@ FUNCTION t324_q()
     CALL cl_opmsg('q')
     DISPLAY '   ' TO FORMONLY.cnt
 
-    IF g_sma.sma120 = 'Y'  THEN                                                                                                     
-       LET lg_smy62 = ''                                                                                                            
-       LET lg_group = ''                                                                                                            
-       CALL t324_refresh_detail()                                                                                                   
-    END IF                                                                                                                          
+    IF g_sma.sma120 = 'Y'  THEN
+       LET lg_smy62 = ''
+       LET lg_group = ''
+       CALL t324_refresh_detail()
+    END IF
 
     CALL t324_cs()
     IF INT_FLAG THEN
@@ -2606,16 +2619,16 @@ DEFINE l_slip   LIKE smy_file.smyslip  #No.FUN-690026 VARCHAR(10)               
                 PROMPT g_msg CLIPPED,': ' FOR g_jump
                     ON IDLE g_idle_seconds
                        CALL cl_on_idle()
- 
+
                      ON ACTION about         #MOD-4C0121
                         CALL cl_about()      #MOD-4C0121
- 
+
                      ON ACTION help          #MOD-4C0121
                         CALL cl_show_help()  #MOD-4C0121
- 
+
                      ON ACTION controlg      #MOD-4C0121
                         CALL cl_cmdask()     #MOD-4C0121
- 
+
                 END PROMPT
                 IF INT_FLAG THEN
                     LET INT_FLAG = 0
@@ -2638,10 +2651,10 @@ DEFINE l_slip   LIKE smy_file.smyslip  #No.FUN-690026 VARCHAR(10)               
           WHEN 'L' LET g_curs_index = g_row_count
           WHEN '/' LET g_curs_index = g_jump
        END CASE
- 
+
        CALL cl_navigator_setting( g_curs_index, g_row_count )
     END IF
-    SELECT * INTO g_imm.* FROM imm_file WHERE imm01 = g_imm.imm01     
+    SELECT * INTO g_imm.* FROM imm_file WHERE imm01 = g_imm.imm01
     IF SQLCA.sqlcode THEN
        CALL cl_err3("sel","imm_file",g_imm.imm01,"",SQLCA.sqlcode,"","",1)   #No.FUN-660156
        INITIALIZE g_imm.* TO NULL
@@ -2651,11 +2664,11 @@ DEFINE l_slip   LIKE smy_file.smyslip  #No.FUN-690026 VARCHAR(10)               
         LET g_data_group = g_imm.immgrup #FUN-4C0053
         LET g_data_plant = g_imm.immplant #FUN-980030
     END IF
-    #在使用Q查詢的情況下得到當前對應的屬性組smy62                                                                                    
-    IF g_sma.sma120 = 'Y' AND g_sma.sma907 = 'Y' THEN                                                                                
-       LET l_slip = g_imm.imm01[1,g_doc_len]                                                                                         
-       SELECT smy62 INTO lg_smy62 FROM smy_file                                                                                      
-          WHERE smyslip = l_slip                                                                                                     
+    #在使用Q查詢的情況下得到當前對應的屬性組smy62
+    IF g_sma.sma120 = 'Y' AND g_sma.sma907 = 'Y' THEN
+       LET l_slip = g_imm.imm01[1,g_doc_len]
+       SELECT smy62 INTO lg_smy62 FROM smy_file
+          WHERE smyslip = l_slip
     END IF
     CALL t324_show()
 END FUNCTION
@@ -2664,7 +2677,7 @@ FUNCTION t324_immplant(p_cmd)
 DEFINE  p_cmd        LIKE type_file.chr1
 DEFINE  l_immplant_desc LIKE gem_file.gem02
 
-  SELECT azp02 INTO l_immplant_desc FROM azp_file WHERE azp01 = g_plant 
+  SELECT azp02 INTO l_immplant_desc FROM azp_file WHERE azp01 = g_plant
 
   IF cl_null(g_errno) OR p_cmd = 'd' THEN
      DISPLAY l_immplant_desc TO FORMONLY.immplant_desc
@@ -2674,7 +2687,7 @@ END FUNCTION
 
 FUNCTION t324_show()
 #LET g_imm.imm17 = g_today #add by wangxt170210
-   LET g_imm_t.* = g_imm.*                #保存單頭舊值   
+   LET g_imm_t.* = g_imm.*                #保存單頭舊值
 
    DISPLAY BY NAME g_imm.immoriu,g_imm.immorig,
        g_imm.imm01,g_imm.imm02,g_imm.imm09,g_imm.imm14,
@@ -2709,7 +2722,7 @@ FUNCTION t324_show()
    CALL cl_set_field_pic(g_imm.immconf,g_chr2,g_imm.imm03,"",g_void,"") #FUN-660029 #FUN-A60034 mark
    END IF  #2021112401 add
 
-   CALL t324_imm16('d')                                 
+   CALL t324_imm16('d')
    #FUN-A60034--add---end--
 
    CALL t324_b_fill(g_wc2)
@@ -2724,19 +2737,19 @@ FUNCTION t324_r()
 
     IF s_shut(0) THEN RETURN END IF
     IF g_imm.imm01 IS NULL THEN CALL cl_err('',-400,0) RETURN END IF
-    SELECT * INTO g_imm.* FROM imm_file WHERE imm01=g_imm.imm01 
+    SELECT * INTO g_imm.* FROM imm_file WHERE imm01=g_imm.imm01
     IF g_imm.immconf = 'Y' THEN CALL cl_err('',9023,0) RETURN END IF #FUN-660029
     IF g_imm.immconf = 'X' THEN CALL cl_err('',9024,0) RETURN END IF #FUN-660029
-    #FUN-A60034  add str ---              
+    #FUN-A60034  add str ---
     IF g_imm.imm15 matches '[Ss]' THEN
          CALL cl_err('','aws-200',0) #送簽中,不可刪除資料
          RETURN
     END IF
-    #FUN-A60034  add end ---              
+    #FUN-A60034  add end ---
 
     BEGIN WORK
 
-    OPEN t324_cl USING g_imm.imm01    
+    OPEN t324_cl USING g_imm.imm01
     IF SQLCA.sqlcode THEN
        CALL cl_err(g_imm.imm01,SQLCA.sqlcode,0)
        ROLLBACK WORK
@@ -2762,17 +2775,17 @@ FUNCTION t324_r()
                        "No imm deleted","",1)   #NO.FUN-640266 #No.FUN-660156
           ROLLBACK WORK RETURN
        END IF
-       DELETE FROM imn_file WHERE imn01 = g_imm.imm01 
+       DELETE FROM imn_file WHERE imn01 = g_imm.imm01
        FOR l_i = 1 TO g_rec_b
          #IF NOT s_del_rvbs('1',g_imm.imm01,g_imn[l_i].imn02,0)  THEN        #FUN-880129   #TQC-B90236 mark
-          IF NOT s_lot_del(g_prog,g_imm.imm01,'',0,g_imn[l_i].imn03,'DEL') THEN     #TQC-B90236 add         
+          IF NOT s_lot_del(g_prog,g_imm.imm01,'',0,g_imn[l_i].imn03,'DEL') THEN     #TQC-B90236 add
              ROLLBACK WORK
-             RETURN  
+             RETURN
           END IF
          #IF NOT s_del_rvbs('2',g_imm.imm01,g_imn[l_i].imn02,0)  THEN        #FUN-880129   #TQC-B90236 mark
           IF NOT s_lot_del(g_prog,g_imm.imm01,'',0,g_imn[l_i].imn03,'DEL') THEN     #TQC-B90236 add
              ROLLBACK WORK
-             RETURN  
+             RETURN
           END IF
        END FOR
        UPDATE rmd_file SET rmd34=NULL WHERE rmd34=g_imm.imm01   #MOD-A40161 #從後面往前移
@@ -2818,7 +2831,7 @@ FUNCTION t324_r()
    #UPDATE rmd_file SET rmd34=NULL WHERE rmd34=g_imm.imm01  #FUN-570235  #MOD-A40161 mark 往前移
     COMMIT WORK
     CALL cl_flow_notify(g_imm.imm01,'D')
- 
+
 END FUNCTION
 
 FUNCTION t324_b()
@@ -2836,9 +2849,9 @@ DEFINE
 DEFINE l_warehouse  LIKE type_file.chr1      #FUN-5A0066  #No.FUN-690026 VARCHAR(1)
 DEFINE li_i         LIKE type_file.num5                                                                                                       #No.FUN-690026 SMALLINT
 DEFINE l_count      LIKE type_file.num5                                                                                                       #No.FUN-690026 SMALLINT
-DEFINE l_temp       LIKE ima_file.ima01                                                                                        
+DEFINE l_temp       LIKE ima_file.ima01
 DEFINE l_check_res  LIKE type_file.num5      #No.FUN-690026 SMALLINT
-DEFINE l_factor     LIKE imn_file.imn41      
+DEFINE l_factor     LIKE imn_file.imn41
 DEFINE l_ima906     LIKE ima_file.ima906
 DEFINE l_img09      LIKE img_file.img09
 DEFINE l_imd20      LIKE imd_file.imd20      #No.FUN-870100
@@ -2857,23 +2870,23 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
 
    #FUN-C20002--start add------------------------
    DEFINE   l_ima154     LIKE ima_file.ima154
-   DEFINE   l_rcj03      LIKE rcj_file.rcj03 
-   DEFINE   l_rtz07      LIKE rtz_file.rtz07 
-   DEFINE   l_rtz08      LIKE rtz_file.rtz08 
+   DEFINE   l_rcj03      LIKE rcj_file.rcj03
+   DEFINE   l_rtz07      LIKE rtz_file.rtz07
+   DEFINE   l_rtz08      LIKE rtz_file.rtz08
    #FUN-C20002--end add--------------------------
   DEFINE   l_where      STRING,                 #FUN-CB0087
            l_sql        STRING,                 #FUN-CB0087
            l_flag       LIKE type_file.chr1,    #FUN-CB0087
            l_store      STRING                  #FUN-CB0087
-   
+
     LET g_action_choice = ""
     IF cl_null(g_imm.imm01) THEN RETURN END IF
 
-    SELECT * INTO g_imm.* FROM imm_file WHERE imm01=g_imm.imm01 
+    SELECT * INTO g_imm.* FROM imm_file WHERE imm01=g_imm.imm01
     IF g_imm.immconf = 'Y' THEN CALL cl_err('',9023,0) RETURN END IF #FUN-660029
     IF g_imm.immconf = 'X' THEN CALL cl_err('',9024,0) RETURN END IF #FUN-660029
 
-    #FUN-A60034  add str ---              
+    #FUN-A60034  add str ---
     IF g_imm.imm15 matches '[Ss]' THEN
          CALL cl_err('','apm-030',0) #送簽中, 不可修改資料!
          RETURN
@@ -2882,19 +2895,19 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
        CALL cl_err('','mfg3168',0) #此張單據已核准, 不允許更改或取消
        RETURN
     END IF
-    #FUN-A60034  add end ---    
+    #FUN-A60034  add end ---
     #2022032401 add----begin----
-    IF g_imm.imm09[1,2] = 'WT' THEN 
+    IF g_imm.imm09[1,2] = 'WT' THEN
     	LET l_tc_zsa02 = ''
     	LET l_tc_zsa03 = ''
     	SELECT tc_zsa02,tc_zsa03 INTO l_tc_zsa02,l_tc_zsa03 FROM tc_zsa_file
-    	IF l_tc_zsa02 = 'Y' AND NOT cl_null(l_tc_zsa03) AND g_today >= l_tc_zsa03 THEN 
+    	IF l_tc_zsa02 = 'Y' AND NOT cl_null(l_tc_zsa03) AND g_today >= l_tc_zsa03 THEN
     		CALL cl_err('','cpm-066',0)
-    		RETURN 
-    	END IF 
-    END IF 
+    		RETURN
+    	END IF
+    END IF
     #2022032401 add----end----
- 
+
     CALL cl_opmsg('b')
     LET g_forupd_sql = "SELECT * FROM imn_file ",
                        " WHERE imn01= ? AND imn02= ?  AND imnplant= ?  FOR UPDATE "    #No.FUN-870100
@@ -2927,7 +2940,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
             #                        FALSE) #MOD-640226   #MOD-A80088
             BEGIN WORK
 
-            OPEN t324_cl USING g_imm.imm01  
+            OPEN t324_cl USING g_imm.imm01
             IF SQLCA.sqlcode THEN
                CALL cl_err(g_imm.imm01,SQLCA.sqlcode,0)     # 資料被他人LOCK
                CLOSE t324_cl
@@ -2961,8 +2974,8 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
 #FUN-B90035 -----------------Begin------------------
                    CALL t324_set_no_required_1()
                    CALL t324_set_required_1(p_cmd)
-                   CALL t324_set_entry_imn()        
-                   CALL t324_set_no_entry_imn()    
+                   CALL t324_set_entry_imn()
+                   CALL t324_set_no_entry_imn()
 #FUN-B90035 -----------------End--------------------
                    CALL t324_b_move_to()
                    LET g_imn[l_ac].gem02b=s_costcenter_desc(g_imn[l_ac].imn9301) #FUN-670093
@@ -2986,9 +2999,9 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
            LET g_imn[l_ac].imn21=1
           #LET g_imn[l_ac].imn29='N'   #No.FUN-5C0077    #FUN-B30053 mark
            #FUN-D50028--begin
-           LET g_imn09_t = NULL 
+           LET g_imn09_t = NULL
            LET g_imn20_t = NULL
-           LET g_imn30_t = NULL 
+           LET g_imn30_t = NULL
            LET g_imn33_t = NULL
            #FUN-D50028--end
            IF g_sma.sma115 = 'Y' THEN
@@ -3026,7 +3039,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
               END IF
               CALL t324_du_data_to_correct()
            END IF
- 
+
            #----------source--------------
            SELECT img09 INTO g_img09_s FROM img_file
             WHERE img01=g_imn[l_ac].imn03
@@ -3044,7 +3057,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
               END IF
           #MOD-C90125---E---
            END IF
- 
+
            #----------destination---------
            SELECT img09 INTO g_img09_t FROM img_file
             WHERE img01=g_imn[l_ac].imn03
@@ -3062,14 +3075,14 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
               END IF
           #MOD-C90125---E---
            END IF
- 
+
            IF g_sma.sma115 = 'Y' THEN
               IF t324_qty_issue() THEN
                  NEXT FIELD imn30
               END IF
               CALL t324_set_origin_field()
            END IF
-           IF (NOT cl_null(g_imn[l_ac].imn03)) 
+           IF (NOT cl_null(g_imn[l_ac].imn03))
               AND (NOT cl_null(g_imn[l_ac].imn15))
               THEN #MOD-4B0249(多包此IF 判斷)
               SELECT * FROM img_file
@@ -3105,7 +3118,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                                 #g_imm.imm01,g_imn[l_ac].imn02,g_imm.imm02)  #FUN-D40053
                                 g_imm.imm01,g_imn[l_ac].imn02,g_imm.imm17)  #FUN-D40053
                  IF g_errno='N' THEN
-                     NEXT FIELD imn15 
+                     NEXT FIELD imn15
                  END IF
               END IF
            END IF
@@ -3113,30 +3126,30 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
            CALL t324_b_move_back()
 
            LET g_success = "Y"   #FUN-B30187
-           
+
            INSERT INTO imn_file VALUES(b_imn.*)
-           
+
            #FUN-B30187 --START--
            IF SQLCA.sqlcode THEN
               CALL cl_err3("ins","imn_file",b_imn.imn01,"",SQLCA.sqlcode,
                            "","ins imn",0)  #No.FUN-660156
-              LET g_success = "N"      
-           END IF 
+              LET g_success = "N"
+           END IF
            #FUN-B30187 --END--
-           
-           IF g_success = "N" THEN   #FUN-B30187              
+
+           IF g_success = "N" THEN   #FUN-B30187
               CANCEL INSERT
-              SELECT ima918,ima921 INTO g_ima918,g_ima921 
+              SELECT ima918,ima921 INTO g_ima918,g_ima921
                 FROM ima_file
                WHERE ima01 = g_imn[l_ac].imn03
                  AND imaacti = "Y"
-              
+
               IF g_ima918 = "Y" OR g_ima921 = "Y" THEN
                 #IF NOT s_lotout_del(g_prog,g_imm.imm01,g_imn[l_ac].imn02,0,g_imn[l_ac].imn03,'DEL') THEN   #No:FUN-860045   #TQC-B90236 mark
                  IF NOT s_lot_del(g_prog,g_imm.imm01,g_imn[l_ac].imn02,0,g_imn[l_ac].imn03,'DEL') THEN   #No:FUN-860045   #TQC-B90236 add
                     CALL cl_err3("del","rvbs_file",g_imm.imm01,g_imn_t.imn02,
                                   SQLCA.sqlcode,"","",1)
-                    ROLLBACK WORK      #CHI-A10016 
+                    ROLLBACK WORK      #CHI-A10016
                     CANCEL INSERT      #CHI-A10016
                  END IF
                 #IF NOT s_lotin_del(g_prog,g_imm.imm01,g_imn[l_ac].imn02,0,g_imn[l_ac].imn03,'DEL') THEN   #No:FUN-860045   #TQC-B90236 mark
@@ -3171,7 +3184,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
               IF g_imn[l_ac].imn02 != g_imn_t.imn02 OR
                  g_imn_t.imn02 IS NULL THEN
                  SELECT count(*) INTO l_n FROM imn_file
-                  WHERE imn01 = g_imm.imm01 AND imn02 = g_imn[l_ac].imn02 
+                  WHERE imn01 = g_imm.imm01 AND imn02 = g_imn[l_ac].imn02
                  IF l_n > 0 THEN
                     LET g_imn[l_ac].imn02 = g_imn_t.imn02
                     CALL cl_err('',-239,0) NEXT FIELD imn02
@@ -3201,13 +3214,13 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                   END IF
             END IF
             #MOD-C10046 -----  end  -----
- 
+
         BEFORE FIELD imn03
            IF g_sma.sma60 = 'Y' THEN # 若須分段輸入
               CALL s_inp5(9,14,g_imn[l_ac].imn03)
                 RETURNING g_imn[l_ac].imn03
               DISPLAY BY NAME g_imn[l_ac].imn03
-              IF INT_FLAG THEN 
+              IF INT_FLAG THEN
                  LET INT_FLAG = 0
               END IF
            END IF
@@ -3215,7 +3228,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
            CALL t324_set_no_required()
            CALL t324_set_no_required_1()   #FUN-B90035
            CALL t324_set_entry_imn()       #FUN-B90035
-           
+
         AFTER FIELD imn03  #PART
 #FUN-AA0059 ---------------------start----------------------------
            IF NOT cl_null(g_imn[l_ac].imn03) THEN
@@ -3226,10 +3239,10 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
               END IF
            END IF
 #FUN-AA0059 ---------------------end-------------------------------
-           IF NOT s_chkima08(g_imn[l_ac].imn03) THEN                                                                                
-              NEXT FIELD CURRENT                                                                                                    
-           END IF                                                                                                                   
-           #AFTER FIELD 處理邏輯修改為使用下面的函數來進行判斷，請參考相關代碼                                                        
+           IF NOT s_chkima08(g_imn[l_ac].imn03) THEN
+              NEXT FIELD CURRENT
+           END IF
+           #AFTER FIELD 處理邏輯修改為使用下面的函數來進行判斷，請參考相關代碼
            CALL t324_check_imn03('imn03',l_ac) RETURNING l_check_res,g_imn[l_ac].ima02,g_imn[l_ac].ima021
            IF NOT l_check_res THEN NEXT FIELD imn03 END IF
            SELECT imaag INTO l_imaag FROM ima_file
@@ -3253,13 +3266,13 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
 #FUN-B90035 ------------Begin--------------
            CALL t324_set_no_required_1()
            CALL t324_set_required_1(p_cmd)
-           CALL t324_set_no_entry_imn() 
+           CALL t324_set_no_entry_imn()
 #FUN-B90035 ------------End----------------
-       
+
       BEFORE FIELD att00
             #根據子料件找到母料件及各個屬性
             SELECT imx00,imx01,imx02,imx03,imx04,imx05,
-                   imx06,imx07,imx08,imx09,imx10 
+                   imx06,imx07,imx08,imx09,imx10
             INTO g_imn[l_ac].att00, g_imn[l_ac].att01, g_imn[l_ac].att02,
                  g_imn[l_ac].att03, g_imn[l_ac].att04, g_imn[l_ac].att05,
                  g_imn[l_ac].att06, g_imn[l_ac].att07, g_imn[l_ac].att08,
@@ -3278,7 +3291,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
             LET g_imn[l_ac].att09_c = g_imn[l_ac].att09
             LET g_imn[l_ac].att10_c = g_imn[l_ac].att10
             #顯示所有屬性
-            DISPLAY BY NAME 
+            DISPLAY BY NAME
               g_imn[l_ac].att01, g_imn[l_ac].att01_c,
               g_imn[l_ac].att02, g_imn[l_ac].att02_c,
               g_imn[l_ac].att03, g_imn[l_ac].att03_c,
@@ -3289,17 +3302,17 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
               g_imn[l_ac].att08, g_imn[l_ac].att08_c,
               g_imn[l_ac].att09, g_imn[l_ac].att09_c,
               g_imn[l_ac].att10, g_imn[l_ac].att10_c
-                               
+
 
       #FUN-640013 Add,以下是為料件多屬性機制新增的20個屬性欄位的AFTER FIELD代碼
       #下面是十個輸入型屬性欄位的判斷語句
       AFTER FIELD att00
           #檢查att00里面輸入的母料件是否是符合對應屬性組的母料件
-          SELECT COUNT(ima01) INTO l_count FROM ima_file 
+          SELECT COUNT(ima01) INTO l_count FROM ima_file
             WHERE ima01 = g_imn[l_ac].att00 AND imaag = lg_smy62
           IF l_count = 0 THEN
              CALL cl_err_msg('','aim-909',lg_smy62,0)
-             NEXT FIELD att00          
+             NEXT FIELD att00
           END IF
           IF p_cmd = 'u' THEN
              CALL cl_set_comp_entry("att01,att01_c,att02,att02_c,att03,att03_c,att04,att04_c,att05,att05_c,att06,att06_c,att07,att07_c,att08,att08_c,att09,att09_c,att10,att10_c",TRUE)
@@ -3307,89 +3320,89 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
 
           #如果設置為不允許新增
              CALL t324_check_imn03('imx00',l_ac) RETURNING
-               l_check_res,g_imn[l_ac].ima02,g_imn[l_ac].ima021 
+               l_check_res,g_imn[l_ac].ima02,g_imn[l_ac].ima021
              IF NOT l_check_res THEN NEXT FIELD att00 END IF
-      
+
       AFTER FIELD att01
           CALL t324_check_att0x(g_imn[l_ac].att01,1,l_ac) RETURNING
-               l_check_res,g_imn[l_ac].ima02,g_imn[l_ac].ima021 
-          IF NOT l_check_res THEN NEXT FIELD att01 END IF              
+               l_check_res,g_imn[l_ac].ima02,g_imn[l_ac].ima021
+          IF NOT l_check_res THEN NEXT FIELD att01 END IF
       AFTER FIELD att02
           CALL t324_check_att0x(g_imn[l_ac].att02,2,l_ac) RETURNING
-               l_check_res,g_imn[l_ac].ima02,g_imn[l_ac].ima021 
+               l_check_res,g_imn[l_ac].ima02,g_imn[l_ac].ima021
           IF NOT l_check_res THEN NEXT FIELD att02 END IF
       AFTER FIELD att03
           CALL t324_check_att0x(g_imn[l_ac].att03,3,l_ac) RETURNING
-               l_check_res,g_imn[l_ac].ima02,g_imn[l_ac].ima021 
+               l_check_res,g_imn[l_ac].ima02,g_imn[l_ac].ima021
           IF NOT l_check_res THEN NEXT FIELD att03 END IF
       AFTER FIELD att04
           CALL t324_check_att0x(g_imn[l_ac].att04,4,l_ac) RETURNING
-               l_check_res,g_imn[l_ac].ima02,g_imn[l_ac].ima021 
+               l_check_res,g_imn[l_ac].ima02,g_imn[l_ac].ima021
           IF NOT l_check_res THEN NEXT FIELD att04 END IF
       AFTER FIELD att05
           CALL t324_check_att0x(g_imn[l_ac].att05,5,l_ac) RETURNING
-               l_check_res,g_imn[l_ac].ima02,g_imn[l_ac].ima021 
-          IF NOT l_check_res THEN NEXT FIELD att05 END IF          
+               l_check_res,g_imn[l_ac].ima02,g_imn[l_ac].ima021
+          IF NOT l_check_res THEN NEXT FIELD att05 END IF
       AFTER FIELD att06
           CALL t324_check_att0x(g_imn[l_ac].att06,6,l_ac) RETURNING
-               l_check_res,g_imn[l_ac].ima02,g_imn[l_ac].ima021 
+               l_check_res,g_imn[l_ac].ima02,g_imn[l_ac].ima021
           IF NOT l_check_res THEN NEXT FIELD att06 END IF
       AFTER FIELD att07
           CALL t324_check_att0x(g_imn[l_ac].att07,7,l_ac) RETURNING
-               l_check_res,g_imn[l_ac].ima02,g_imn[l_ac].ima021 
+               l_check_res,g_imn[l_ac].ima02,g_imn[l_ac].ima021
           IF NOT l_check_res THEN NEXT FIELD att07 END IF
       AFTER FIELD att08
           CALL t324_check_att0x(g_imn[l_ac].att08,8,l_ac) RETURNING
-               l_check_res,g_imn[l_ac].ima02,g_imn[l_ac].ima021 
+               l_check_res,g_imn[l_ac].ima02,g_imn[l_ac].ima021
           IF NOT l_check_res THEN NEXT FIELD att08 END IF
       AFTER FIELD att09
           CALL t324_check_att0x(g_imn[l_ac].att09,9,l_ac) RETURNING
-               l_check_res,g_imn[l_ac].ima02,g_imn[l_ac].ima021 
+               l_check_res,g_imn[l_ac].ima02,g_imn[l_ac].ima021
           IF NOT l_check_res THEN NEXT FIELD att09 END IF
       AFTER FIELD att10
           CALL t324_check_att0x(g_imn[l_ac].att10,10,l_ac) RETURNING
-               l_check_res,g_imn[l_ac].ima02,g_imn[l_ac].ima021 
+               l_check_res,g_imn[l_ac].ima02,g_imn[l_ac].ima021
           IF NOT l_check_res THEN NEXT FIELD att10 END IF
       #下面是十個輸入型屬性欄位的判斷語句
       AFTER FIELD att01_c
           CALL t324_check_att0x_c(g_imn[l_ac].att01_c,1,l_ac) RETURNING
-               l_check_res,g_imn[l_ac].ima02,g_imn[l_ac].ima021 
-          IF NOT l_check_res THEN NEXT FIELD att01_c END IF      
+               l_check_res,g_imn[l_ac].ima02,g_imn[l_ac].ima021
+          IF NOT l_check_res THEN NEXT FIELD att01_c END IF
       AFTER FIELD att02_c
           CALL t324_check_att0x_c(g_imn[l_ac].att02_c,2,l_ac) RETURNING
-               l_check_res,g_imn[l_ac].ima02,g_imn[l_ac].ima021 
+               l_check_res,g_imn[l_ac].ima02,g_imn[l_ac].ima021
           IF NOT l_check_res THEN NEXT FIELD att02_c END IF
       AFTER FIELD att03_c
           CALL t324_check_att0x_c(g_imn[l_ac].att03_c,3,l_ac) RETURNING
-               l_check_res,g_imn[l_ac].ima02,g_imn[l_ac].ima021 
+               l_check_res,g_imn[l_ac].ima02,g_imn[l_ac].ima021
           IF NOT l_check_res THEN NEXT FIELD att03_c END IF
       AFTER FIELD att04_c
           CALL t324_check_att0x_c(g_imn[l_ac].att04_c,4,l_ac) RETURNING
-               l_check_res,g_imn[l_ac].ima02,g_imn[l_ac].ima021 
+               l_check_res,g_imn[l_ac].ima02,g_imn[l_ac].ima021
           IF NOT l_check_res THEN NEXT FIELD att04_c END IF
       AFTER FIELD att05_c
           CALL t324_check_att0x_c(g_imn[l_ac].att05_c,5,l_ac) RETURNING
-               l_check_res,g_imn[l_ac].ima02,g_imn[l_ac].ima021 
+               l_check_res,g_imn[l_ac].ima02,g_imn[l_ac].ima021
           IF NOT l_check_res THEN NEXT FIELD att05_c END IF
       AFTER FIELD att06_c
           CALL t324_check_att0x_c(g_imn[l_ac].att06_c,6,l_ac) RETURNING
-               l_check_res,g_imn[l_ac].ima02,g_imn[l_ac].ima021 
+               l_check_res,g_imn[l_ac].ima02,g_imn[l_ac].ima021
           IF NOT l_check_res THEN NEXT FIELD att06_c END IF
       AFTER FIELD att07_c
           CALL t324_check_att0x_c(g_imn[l_ac].att07_c,7,l_ac) RETURNING
-               l_check_res,g_imn[l_ac].ima02,g_imn[l_ac].ima021 
+               l_check_res,g_imn[l_ac].ima02,g_imn[l_ac].ima021
           IF NOT l_check_res THEN NEXT FIELD att07_c END IF
       AFTER FIELD att08_c
           CALL t324_check_att0x_c(g_imn[l_ac].att08_c,8,l_ac) RETURNING
-               l_check_res,g_imn[l_ac].ima02,g_imn[l_ac].ima021 
+               l_check_res,g_imn[l_ac].ima02,g_imn[l_ac].ima021
           IF NOT l_check_res THEN NEXT FIELD att08_c END IF
       AFTER FIELD att09_c
           CALL t324_check_att0x_c(g_imn[l_ac].att09_c,9,l_ac) RETURNING
-               l_check_res,g_imn[l_ac].ima02,g_imn[l_ac].ima021 
+               l_check_res,g_imn[l_ac].ima02,g_imn[l_ac].ima021
           IF NOT l_check_res THEN NEXT FIELD att09_c END IF
       AFTER FIELD att10_c
           CALL t324_check_att0x_c(g_imn[l_ac].att10_c,10,l_ac) RETURNING
-               l_check_res,g_imn[l_ac].ima02,g_imn[l_ac].ima021 
+               l_check_res,g_imn[l_ac].ima02,g_imn[l_ac].ima021
           IF NOT l_check_res THEN NEXT FIELD att10_c END IF
 
        #FUN-CB0087--add--str
@@ -3485,12 +3498,12 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                  END IF
               END IF
               #FUN-C20002--end add----------------------------------
- 
+
               #No.FUN-AA0049--begin
               IF NOT s_chk_ware(g_imn[l_ac].imn04) THEN
                     NEXT FIELD imn04
-              END IF 
-              #No.FUN-AA0049--end                    
+              END IF
+              #No.FUN-AA0049--end
               IF NOT s_stkchk(g_imn[l_ac].imn04,'A') THEN
                  CALL cl_err(g_imn[l_ac].imn04,'mfg6076',0)
                     NEXT FIELD imn04
@@ -3549,12 +3562,12 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
            IF g_imn[l_ac].imn05 ='　' THEN
               LET g_imn[l_ac].imn05 =' '
            END IF
-           IF NOT cl_null(g_imn[l_ac].imn04) THEN  #FUN-D20060  
+           IF NOT cl_null(g_imn[l_ac].imn04) THEN  #FUN-D20060
               IF NOT s_chksmz(g_imn[l_ac].imn03, g_imm.imm01,
                               g_imn[l_ac].imn04, g_imn[l_ac].imn05) THEN
                  NEXT FIELD imn04
               END IF
-           END IF                                  #FUN-D20060          
+           END IF                                  #FUN-D20060
             #---->需存在倉庫/儲位檔中
             IF g_imn[l_ac].imn05 IS NOT NULL THEN
                IF sn1=1 AND g_imn[l_ac].imn05!=t_imn05
@@ -3621,7 +3634,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
 #               LET g_imn[l_ac].imn06=' '
 #            END IF
 #&ifdef ICD
-#            IF p_cmd = 'u' THEN 
+#            IF p_cmd = 'u' THEN
 #              IF g_imn_t.imn06 IS NULL THEN LET g_imn_t.imn06 = ' ' END IF
 #              IF g_imn_t.imn06 <> g_imn[l_ac].imn06 THEN
 #                 CALL t324_chk_icd()
@@ -3684,14 +3697,14 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
 #               END IF
 #            END IF
 #            LET g_imn_t.imn06=g_imn[l_ac].imn06
-#&ifdef ICD            
+#&ifdef ICD
 #            CALL t324_def_imniicd029()   #FUN-B30187
-#&endif            
+#&endif
 #FUN-B90035 -------------------End---------------------
 
         BEFORE FIELD imn33
            CALL t324_set_no_required()
- 
+
         AFTER FIELD imn33  #第二單位
            IF cl_null(g_imn[l_ac].imn03) THEN NEXT FIELD imn03 END IF
            IF g_imn[l_ac].imn04 IS NULL OR g_imn[l_ac].imn05 IS NULL OR
@@ -3867,7 +3880,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                     LET g_imn[l_ac].imn35=s_digqty(g_imn[l_ac].imn35, g_imn[l_ac].imn33)
                     DISPLAY BY NAME g_imn[l_ac].imn35
                  END IF
-              END IF 
+              END IF
               #FUN-D50028--end
               IF g_imn[l_ac].imn35 < 0 THEN
                  CALL cl_err('','aim-391',0)  #
@@ -3875,20 +3888,20 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
               END IF
               IF p_cmd = 'a' THEN
                  IF g_ima906='3' THEN
-                    LET g_tot=g_imn[l_ac].imn35*g_imn[l_ac].imn34                    
+                    LET g_tot=g_imn[l_ac].imn35*g_imn[l_ac].imn34
                     IF cl_null(g_imn[l_ac].imn32) OR g_imn[l_ac].imn32=0 THEN #CHI-960022
                        LET g_imn[l_ac].imn32=g_tot*g_imn[l_ac].imn31
                        LET g_imn[l_ac].imn32=s_digqty(g_imn[l_ac].imn32, g_imn[l_ac].imn30)  #FUN-D50028
                        DISPLAY BY NAME g_imn[l_ac].imn32
-                    END IF                                                    #CHI-960022 
+                    END IF                                                    #CHI-960022
                  END IF
               END IF
            END IF
-              SELECT ima918,ima921,ima930 INTO g_ima918,g_ima921,g_ima930 #DEV-D30059 add ima930 
+              SELECT ima918,ima921,ima930 INTO g_ima918,g_ima921,g_ima930 #DEV-D30059 add ima930
                 FROM ima_file
                WHERE ima01 = g_imn[l_ac].imn03
                  AND imaacti = "Y"
-              
+
               IF cl_null(g_ima918) THEN LET g_ima918 = 'N' END IF  #DEV-D30059 add
               IF cl_null(g_ima921) THEN LET g_ima921 = 'N' END IF  #DEV-D30059 add
               IF cl_null(g_ima930) THEN LET g_ima930 = 'N' END IF  #DEV-D30059 add
@@ -3902,25 +3915,25 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                                   g_imn[l_ac].imn05,g_imn[l_ac].imn06,
                                   g_imn[l_ac].imn09,g_imn[l_ac].imn09,1,
                                   g_imn[l_ac].imn10,'','MOD',-1) #CHI-9A0022 add ''  #TQC-B90236 add '-1'
-                        RETURNING l_r,g_qty 
+                        RETURNING l_r,g_qty
                  END IF                                                        #DEV-D30059
                  IF l_r = "Y" THEN
                     LET g_imn[l_ac].imn10 = g_qty
                     LET g_imn[l_ac].imn10=s_digqty(g_imn[l_ac].imn10, g_imn[l_ac].imn09)   #FUN-D50028
                  END IF
-              
+
                  LET g_imn[l_ac].imn22 = g_imn[l_ac].imn10 * g_imn[l_ac].imn21
                  LET g_imn[l_ac].imn22=s_digqty(g_imn[l_ac].imn22, g_imn[l_ac].imn20)   #FUN-D50028
                  DISPLAY BY NAME g_imn[l_ac].imn10,g_imn[l_ac].imn22
-              
+
                  CALL t324_ins_rvbs()   #No:FUN-860045
               END IF
            CALL t324_set_target() #MOD-640226
- 
+
            BEFORE FIELD imn30
               CALL t324_set_no_required()
-              LET g_imn30_t= g_imn[l_ac].imn30  #FUN-D50028 
-              
+              LET g_imn30_t= g_imn[l_ac].imn30  #FUN-D50028
+
         AFTER FIELD imn30  #第一單位
            IF cl_null(g_imn[l_ac].imn03) THEN NEXT FIELD imn03 END IF
            IF g_imn[l_ac].imn04 IS NULL OR g_imn[l_ac].imn05 IS NULL OR
@@ -3989,13 +4002,13 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
            END IF
            CALL t324_set_required()
            #FUN-D50028-begin
-           IF NOT cl_null(g_imn[l_ac].imn32) AND g_imn[l_ac].imn32<>0 THEN 
-              IF NOT t324_imn32_check() THEN 
-                 LET g_imn30_t = g_imn[l_ac].imn30   
-                 NEXT FIELD imn32 
-              END IF 
-           END IF                                                             
-           LET g_imn30_t = g_imn[l_ac].imn30   
+           IF NOT cl_null(g_imn[l_ac].imn32) AND g_imn[l_ac].imn32<>0 THEN
+              IF NOT t324_imn32_check() THEN
+                 LET g_imn30_t = g_imn[l_ac].imn30
+                 NEXT FIELD imn32
+              END IF
+           END IF
+           LET g_imn30_t = g_imn[l_ac].imn30
            #FUN-D50028--end---
            LET g_imn_t.imn30=g_imn[l_ac].imn30
            CALL t324_set_target() #MOD-640226
@@ -4011,16 +4024,16 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
 
         AFTER FIELD imn32  #第一數量
         #FUN-D50028--begin
-           IF NOT t324_imn32_check()  THEN NEXT FIELD imn32 END IF 
+           IF NOT t324_imn32_check()  THEN NEXT FIELD imn32 END IF
 #           IF NOT cl_null(g_imn[l_ac].imn32) THEN
 #              IF g_imn[l_ac].imn32 < 0 THEN
 #                 CALL cl_err('','aim-391',0)  #
 #                 NEXT FIELD imn32
 #              END IF
 #           END IF
-        #FUN-D50028--End 
-           CALL t324_set_target() #MOD-640226           
-          
+        #FUN-D50028--End
+           CALL t324_set_target() #MOD-640226
+
        #MOD-DC0097 begin
        AFTER FIELD imn42
           IF g_imn[l_ac].imn42 <= 0 THEN
@@ -4036,7 +4049,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                     LET g_imn[l_ac].imn10=s_digqty(g_imn[l_ac].imn10, g_imn[l_ac].imn09)
                     DISPLAY BY NAME g_imn[l_ac].imn10
                  END IF
-              END IF 
+              END IF
               #FUN-D50028--end
               IF g_imn[l_ac].imn10 <= 0 THEN
                  CALL cl_err('','mfg9105',0)
@@ -4076,13 +4089,13 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
               LET g_imn[l_ac].imn22=g_imn[l_ac].imn10*g_imn[l_ac].imn21
               LET g_imn[l_ac].imn22=s_digqty(g_imn[l_ac].imn22, g_imn[l_ac].imn20)  #FUN-D50028
               DISPLAY BY NAME g_imn[l_ac].imn22
-              SELECT ima918,ima921,ima930 INTO g_ima918,g_ima921,g_ima930 #DEV-D30059 add ima930 
+              SELECT ima918,ima921,ima930 INTO g_ima918,g_ima921,g_ima930 #DEV-D30059 add ima930
                 FROM ima_file
                WHERE ima01 = g_imn[l_ac].imn03
                  AND imaacti = "Y"
 
               IF cl_null(g_ima930) THEN LET g_ima930 = 'N' END IF  #DEV-D30059 add
-              
+
               IF (g_ima918 = "Y" OR g_ima921 = "Y") AND
                  (cl_null(g_imn_t.imn10) OR (g_imn[l_ac].imn10<>g_imn_t.imn10 )) THEN
                 #CALL s_lotout(g_prog,g_imm.imm01,g_imn[l_ac].imn02,0,     #TQC-B90236 mark
@@ -4092,17 +4105,17 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                                   g_imn[l_ac].imn05,g_imn[l_ac].imn06,
                                   g_imn[l_ac].imn09,g_imn[l_ac].imn09,1,
                                   g_imn[l_ac].imn10,'','MOD',-1)#CHI-9A0022 add ''   #TQC-B90236 add '-1'
-                        RETURNING l_r,g_qty 
+                        RETURNING l_r,g_qty
                  END IF                                                        #DEV-D30059
                  IF l_r = "Y" THEN
                     LET g_imn[l_ac].imn10 = g_qty
                     LET g_imn[l_ac].imn10=s_digqty(g_imn[l_ac].imn10, g_imn[l_ac].imn09)  #FUN-D50028
                  END IF
-              
+
                  LET g_imn[l_ac].imn22 = g_imn[l_ac].imn10 * g_imn[l_ac].imn21
                  LET g_imn[l_ac].imn22=s_digqty(g_imn[l_ac].imn22, g_imn[l_ac].imn20)  #FUN-D50028
                  DISPLAY BY NAME g_imn[l_ac].imn10,g_imn[l_ac].imn22
-              
+
                  CALL t324_ins_rvbs()   #No:FUN-860045
               END IF
            END IF
@@ -4112,7 +4125,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
 
 #------目的倉庫------------------------------------------------
         AFTER FIELD imn15  #倉庫
- 
+
             IF NOT cl_null(g_imn[l_ac].imn15) THEN
                #FUN-D20060---add---str
                IF NOT s_chksmz(g_imn[l_ac].imn03, g_imm.imm01,
@@ -4158,8 +4171,8 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                #No.FUN-AA0049--begin
                IF NOT s_chk_ware(g_imn[l_ac].imn15) THEN
                   NEXT FIELD imn15
-               END IF 
-               #No.FUN-AA0049--end              
+               END IF
+               #No.FUN-AA0049--end
                #------>check-1
                IF NOT s_imfchk1(g_imn[l_ac].imn03,g_imn[l_ac].imn15)
                   THEN CALL cl_err(g_imn[l_ac].imn15,'mfg9036',0)
@@ -4208,7 +4221,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
               END IF
            END IF
            LET g_imn_t.imn15=g_imn[l_ac].imn15  #No.FUN-540025
-	 #IF NOT s_imechk(g_imn[l_ac].imn15,g_imn[l_ac].imn16) THEN NEXT FIELD imn16 END IF  #FUN-D40103 add #TQC-D50124 mark 
+	 #IF NOT s_imechk(g_imn[l_ac].imn15,g_imn[l_ac].imn16) THEN NEXT FIELD imn16 END IF  #FUN-D40103 add #TQC-D50124 mark
            NEXT FIELD imn16
 
         AFTER FIELD imn16  #儲位
@@ -4219,7 +4232,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
            IF cl_null(g_imn[l_ac].imn16) THEN
               LET g_imn[l_ac].imn16 = ' '
            END IF
-         #IF NOT s_imechk(g_imn[l_ac].imn15,g_imn[l_ac].imn16) THEN NEXT FIELD imn16 END IF  #FUN-D40103 add #TQC-D50124 mark  
+         #IF NOT s_imechk(g_imn[l_ac].imn15,g_imn[l_ac].imn16) THEN NEXT FIELD imn16 END IF  #FUN-D40103 add #TQC-D50124 mark
             #------>chk-1
             IF NOT s_imfchk(g_imn[l_ac].imn03,g_imn[l_ac].imn15,
                             g_imn[l_ac].imn16)
@@ -4284,7 +4297,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
 
 #FUN-B90035 ---------------Begin---------------
             CASE t324_b_imn17_inschk(p_cmd)
-               WHEN "imn04" NEXT FIELD imn04 
+               WHEN "imn04" NEXT FIELD imn04
                WHEN "imn15" NEXT FIELD imn15
                #WHEN "imn17" NEXT FIELD imn17   #MOD-C30526 mark
                WHEN "imn17" NEXT FIELD imn15    #MOD-C30526
@@ -4304,7 +4317,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
 #              LET g_imn[l_ac].imn17 = ' '
 #           END IF
 #&ifdef ICD
-#           IF p_cmd = 'u' THEN 
+#           IF p_cmd = 'u' THEN
 #              IF cl_null(g_imn_t.imn17) THEN LET g_imn_t.imn17 = ' ' END IF
 #              IF g_imn_t.imn17 <> g_imn[l_ac].imn17 THEN
 #                 CALL t324_chk_icd()
@@ -4335,7 +4348,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
 #                      img04=g_imn[l_ac].imn06
 #               IF SQLCA.sqlcode THEN
 #                   CALL cl_err3("sel","img_file",g_imn[l_ac].imn03,"",
-#                                "mfg6101","","",1)  
+#                                "mfg6101","","",1)
 #                   NEXT FIELD imn04
 #               END IF
 #            END IF
@@ -4421,26 +4434,26 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
 #          IF NOT t324_set_imn43() THEN
 #             NEXT FIELD imn15
 #          END IF
-#          SELECT ima906 INTO l_ima906 FROM ima_file 
+#          SELECT ima906 INTO l_ima906 FROM ima_file
 #                  WHERE ima01 = g_imn[l_ac].imn03
 #          IF g_sma.sma115 = 'Y' AND l_ima906 != '2' THEN
-#             SELECT img09 INTO l_img09 FROM img_file 
+#             SELECT img09 INTO l_img09 FROM img_file
 #                  WHERE img01 = g_imn[l_ac].imn03
 #                    AND img02 = g_imn[l_ac].imn15
 #                    AND img03 = g_imn[l_ac].imn16
 #                    AND img04 = g_imn[l_ac].imn17
-#            
-#             IF NOT cl_null(l_img09) AND g_imn[l_ac].imn40 != l_img09 THEN 
+#
+#             IF NOT cl_null(l_img09) AND g_imn[l_ac].imn40 != l_img09 THEN
 #                CALL s_umfchk(g_imn[l_ac].imn03,g_imn[l_ac].imn40,l_img09)
 #                     RETURNING l_cnt,l_factor
-#                
+#
 #                IF l_cnt = 1 THEN LET l_factor = 1 END IF
 #                LET g_imn[l_ac].imn41 = l_factor
 #             END IF
 #          END IF
 #FUN-B90035 -------------------End--------------------
 
-        AFTER FIELD imn20            
+        AFTER FIELD imn20
             CALL s_umfchk(g_imn[l_ac].imn03,
                           g_imn[l_ac].imn09,g_imn[l_ac].imn20)
                  RETURNING g_cnt,g_imn[l_ac].imn21
@@ -4452,8 +4465,8 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
             LET g_imn[l_ac].imn22=s_digqty(g_imn[l_ac].imn22,g_imn[l_ac].imn20)  #FUN-D50028
             DISPLAY BY NAME g_imn[l_ac].imn21
             DISPLAY BY NAME g_imn[l_ac].imn22
-            
-        AFTER FIELD imn9301 
+
+        AFTER FIELD imn9301
            IF NOT s_costcenter_chk(g_imn[l_ac].imn9301) THEN
               LET g_imn[l_ac].imn9301=g_imn_t.imn9301
               LET g_imn[l_ac].gem02b=g_imn_t.gem02b
@@ -4463,7 +4476,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
               LET g_imn[l_ac].gem02b=s_costcenter_desc(g_imn[l_ac].imn9301)
               DISPLAY BY NAME g_imn[l_ac].gem02b
            END IF
-        AFTER FIELD imn9302 
+        AFTER FIELD imn9302
            IF NOT s_costcenter_chk(g_imn[l_ac].imn9302) THEN
               LET g_imn[l_ac].imn9302=g_imn_t.imn9302
               LET g_imn[l_ac].gem02c=g_imn_t.gem02c
@@ -4514,18 +4527,18 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                  CANCEL DELETE
               END IF
               DELETE FROM imn_file
-                  WHERE imn01 = g_imm.imm01 AND imn02 = g_imn_t.imn02 
+                  WHERE imn01 = g_imm.imm01 AND imn02 = g_imn_t.imn02
               IF SQLCA.sqlcode THEN
                  CALL cl_err3("del","imn_file",g_imm.imm01,g_imn_t.imn02,
                                SQLCA.sqlcode,"","",1)  #No:FUN-660156
                   ROLLBACK WORK
                   CANCEL DELETE
               END IF
-              SELECT ima918,ima921 INTO g_ima918,g_ima921 
+              SELECT ima918,ima921 INTO g_ima918,g_ima921
                 FROM ima_file
                WHERE ima01 = g_imn[l_ac].imn03
                  AND imaacti = "Y"
-              
+
               IF g_ima918 = "Y" OR g_ima921 = "Y" THEN
                 #IF NOT s_lotout_del(g_prog,g_imm.imm01,g_imn[l_ac].imn02,0,g_imn[l_ac].imn03,'DEL') THEN   #No:FUN-860045 #TQC-B90236 mark
                  IF NOT s_lot_del(g_prog,g_imm.imm01,g_imn[l_ac].imn02,0,g_imn[l_ac].imn03,'DEL') THEN   #No:FUN-860045 #TQC-B90236 add
@@ -4593,7 +4606,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                      IF g_imn[l_ac].imn06 IS NULL THEN LET g_imn[l_ac].imn06 =' ' END IF   #MOD-CB0122 add
                     #CHI-C50010 str add-----
                     #SELECT img18 INTO l_date FROM img_file                #CHI-C80007 mark
-                     SELECT img18,img37 INTO l_date,l_img37 FROM img_file  #CHI-C80007 add img37  
+                     SELECT img18,img37 INTO l_date,l_img37 FROM img_file  #CHI-C80007 add img37
                       WHERE img01 = g_imn[l_ac].imn03
                         AND img02 = g_imn[l_ac].imn04
                         AND img03 = g_imn[l_ac].imn05
@@ -4624,11 +4637,11 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                   END IF
                   CALL t324_set_origin_field()
                END IF
- 
+
                CALL t324_b_move_back()
 
                UPDATE imn_file SET * = b_imn.*
-                  WHERE imn01=g_imm.imm01 AND imn02=g_imn_t.imn02 
+                  WHERE imn01=g_imm.imm01 AND imn02=g_imn_t.imn02
                IF SQLCA.sqlcode THEN
                   CALL cl_err3("upd","imn_file",g_imm.imm01,g_imn_t.imn02,
                                 SQLCA.sqlcode,"","upd imn",1)   #NO.FUN-640266 #No:FUN-660156
@@ -4636,11 +4649,11 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                #FUN-B30187 --START--
                   LET g_success = 'N'
                END IF
-               
+
                IF g_success = 'Y' THEN
                   CALL cl_msg('UPDATE O.K')
                   COMMIT WORK
-               END IF 
+               END IF
                #FUN-B30187 --END--
             END IF
 
@@ -4652,11 +4665,11 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
               CALL cl_err('',9001,0)
               LET INT_FLAG = 0
               IF p_cmd = 'a' AND l_ac <= g_imn.getLength() THEN  #CHI-C30106---add
-                SELECT ima918,ima921 INTO g_ima918,g_ima921 
+                SELECT ima918,ima921 INTO g_ima918,g_ima921
                   FROM ima_file
                  WHERE ima01 = g_imn[l_ac].imn03
                    AND imaacti = "Y"
-               
+
                 IF g_ima918 = "Y" OR g_ima921 = "Y" THEN
                   #IF NOT s_lotout_del(g_prog,g_imm.imm01,g_imn[l_ac].imn02,0,g_imn[l_ac].imn03,'DEL') THEN   #No:FUN-860045  #TQC-B90236 mark
                    IF NOT s_lot_del(g_prog,g_imm.imm01,g_imn[l_ac].imn02,0,g_imn[l_ac].imn03,'DEL') THEN   #No:FUN-860045  #TQC-B90236 add
@@ -4716,11 +4729,11 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
        #CHI-C30106---add---E---
 
         ON ACTION regen_detail
-           IF NOT cl_confirm('aim-148') THEN                                                                                              
-              EXIT INPUT                                                                                                    
-           END IF 
+           IF NOT cl_confirm('aim-148') THEN
+              EXIT INPUT
+           END IF
            CALL t324_del()
-           CALL aimt324_g() 
+           CALL aimt324_g()
            CALL t324_b_fill(" 1=1")
            EXIT INPUT
 
@@ -4741,16 +4754,16 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
 
         ON ACTION controlp
            CASE
-               WHEN INFIELD(att00)                                                                                                     
-                  #可以新增子料件,開窗是單純的選取母料件                                                                               
+               WHEN INFIELD(att00)
+                  #可以新增子料件,開窗是單純的選取母料件
 #FUN-AA0059 --Begin--
-                #  CALL cl_init_qry_var()                                                                                               
-                #  LET g_qryparam.form ="q_ima_p"                                                                                       
-                #  LET g_qryparam.arg1 = lg_group                                                                                       
-                #  CALL cl_create_qry() RETURNING g_imn[l_ac].att00                                                                     
+                #  CALL cl_init_qry_var()
+                #  LET g_qryparam.form ="q_ima_p"
+                #  LET g_qryparam.arg1 = lg_group
+                #  CALL cl_create_qry() RETURNING g_imn[l_ac].att00
                   CALL q_sel_ima(FALSE, "q_ima_p", "", "", lg_group, "", "", "" ,"",'' )  RETURNING g_imn[l_ac].att00
 #FUN-AA0059 --End--
-                  DISPLAY BY NAME g_imn[l_ac].att00        #No:MOD-490371                                                              
+                  DISPLAY BY NAME g_imn[l_ac].att00        #No:MOD-490371
                   NEXT FIELD att00
 
                WHEN INFIELD(imn03)
@@ -4764,14 +4777,14 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                       DISPLAY BY NAME g_imn[l_ac].imn03  #No:MOD-490371
                      NEXT FIELD imn03
                 WHEN INFIELD(imn04) OR INFIELD(imn05) OR INFIELD(imn06)
-                   CALL q_img4(FALSE,TRUE,g_imn[l_ac].imn03,g_imn[l_ac].imn04, #FUN-960065   
+                   CALL q_img4(FALSE,TRUE,g_imn[l_ac].imn03,g_imn[l_ac].imn04, #FUN-960065
                                    g_imn[l_ac].imn05,g_imn[l_ac].imn06,'A')
                       RETURNING    g_imn[l_ac].imn04,
                                    g_imn[l_ac].imn05,g_imn[l_ac].imn06
                    DISPLAY g_imn[l_ac].imn04 TO imn04
                    DISPLAY g_imn[l_ac].imn05 TO imn05
-                   DISPLAY g_imn[l_ac].imn06 TO imn06                 
-                   
+                   DISPLAY g_imn[l_ac].imn06 TO imn06
+
                    IF cl_null(g_imn[l_ac].imn05) THEN LET g_imn[l_ac].imn05 = ' ' END IF
                    IF cl_null(g_imn[l_ac].imn06) THEN LET g_imn[l_ac].imn06 = ' ' END IF
                    IF INFIELD(imn04) THEN NEXT FIELD imn04 END IF
@@ -4932,11 +4945,11 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                 END CASE
 
         ON ACTION modi_lot
-           SELECT ima918,ima921 INTO g_ima918,g_ima921 
+           SELECT ima918,ima921 INTO g_ima918,g_ima921
              FROM ima_file
             WHERE ima01 = g_imn[l_ac].imn03
               AND imaacti = "Y"
-           
+
            IF g_ima918 = "Y" OR g_ima921 = "Y" THEN
             #MOD-C10046 ----- start -----
                   IF g_imn[l_ac].imn02 != g_imn02_o THEN
@@ -4960,12 +4973,12 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                             g_imn[l_ac].imn05,g_imn[l_ac].imn06,
                             g_imn[l_ac].imn09,g_imn[l_ac].imn09,1,
                             g_imn[l_ac].imn10,'','MOD',-1)#CHI-9A0022 add ''   #TQC-B90236 add '-1'
-                     RETURNING l_r,g_qty 
+                     RETURNING l_r,g_qty
               IF l_r = "Y" THEN
                  LET g_imn[l_ac].imn10 = g_qty
                  LET g_imn[l_ac].imn10 = s_digqty(g_imn[l_ac].imn10,g_imn[l_ac].imn09)     #FUN-D50028
               END IF
-              
+
               CALL t324_ins_rvbs()   #No:FUN-860045
            END IF
 
@@ -4977,34 +4990,34 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
         ON ACTION CONTROLF
          CALL cl_set_focus_form(ui.Interface.getRootNode()) RETURNING g_fld_name,g_frm_name #Add on 040913
          CALL cl_fldhelp(g_frm_name,g_fld_name,g_lang) #Add on 040913
- 
+
        ON IDLE g_idle_seconds
           CALL cl_on_idle()
           CONTINUE INPUT
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
 
-     ON ACTION controls                                                                                                             
-         CALL cl_set_head_visible("","AUTO")                                                                                        
- 
+     ON ACTION controls
+         CALL cl_set_head_visible("","AUTO")
+
     END INPUT
 
     LET g_imm.immmodu = g_user
     LET g_imm.immdate = g_today
     LET g_imm.imm15 = '0' #FUN-A60034 add
-    UPDATE imm_file 
+    UPDATE imm_file
        SET immmodu=g_imm.immmodu,
            immdate=g_imm.immdate,
            imm15=g_imm.imm15 #FUN-A60034 add
      #WHERE imm01=g_imm.imm01 AND imm10='1'      #FUN-BC0036 mark
-     WHERE imm01=g_imm.imm01 AND imm10=g_imm10   #FUN-BC0036 
+     WHERE imm01=g_imm.imm01 AND imm10=g_imm10   #FUN-BC0036
     DISPLAY BY NAME g_imm.immmodu,g_imm.immdate,g_imm.imm15 #FUN-A60034 add imm15
 
-    SELECT COUNT(*) INTO g_cnt FROM imn_file WHERE imn01=g_imm.imm01 
+    SELECT COUNT(*) INTO g_cnt FROM imn_file WHERE imn01=g_imm.imm01
 
     CLOSE t324_bcl
     COMMIT WORK
@@ -5020,16 +5033,16 @@ FUNCTION t324_delHeader()
    DEFINE l_slip             LIKE type_file.chr5  #CHI-C80041
    DEFINE l_sql              STRING               #CHI-C80041
    DEFINE l_cnt              LIKE type_file.num5  #CHI-C80041
-   
+
    IF g_rec_b = 0 THEN
       #CHI-C80041---begin
       CALL s_get_doc_no(g_imm.imm01) RETURNING l_slip
       LET l_sql = " SELECT COUNT(*) FROM imm_file ",
                   "  WHERE imm01 LIKE '",l_slip,"%' ",
                   "    AND imm01 > '",g_imm.imm01,"'"
-      PREPARE t324_pb1 FROM l_sql 
-      EXECUTE t324_pb1 INTO l_cnt      
-      
+      PREPARE t324_pb1 FROM l_sql
+      EXECUTE t324_pb1 INTO l_cnt
+
       LET l_action_choice = g_action_choice
       LET g_action_choice = 'delete'
       IF cl_chk_act_auth() AND l_cnt = 0 THEN
@@ -5038,23 +5051,23 @@ FUNCTION t324_delHeader()
       ELSE
          CALL cl_getmsg('aec-131',g_lang) RETURNING g_msg
          LET l_num = 2
-      END IF 
+      END IF
       LET g_action_choice = l_action_choice
       PROMPT g_msg CLIPPED,': ' FOR l_cho
          ON IDLE g_idle_seconds
             CALL cl_on_idle()
 
-         ON ACTION about     
+         ON ACTION about
             CALL cl_about()
 
-         ON ACTION help         
+         ON ACTION help
             CALL cl_show_help()
 
-         ON ACTION controlg   
-            CALL cl_cmdask() 
+         ON ACTION controlg
+            CALL cl_cmdask()
       END PROMPT
-      IF l_cho > l_num THEN LET l_cho = 1 END IF 
-      IF l_cho = 2 THEN 
+      IF l_cho > l_num THEN LET l_cho = 1 END IF
+      IF l_cho = 2 THEN
          #CALL t324_x() #CHI-D20008
          CALL t324_x(1) #CHI-D20008
          IF g_imm.immconf = 'X' THEN
@@ -5063,9 +5076,9 @@ FUNCTION t324_delHeader()
             LET g_void = 'N'
          END IF
          CALL cl_set_field_pic(g_imm.immconf,"",g_imm.imm03,"",g_void,"")
-      END IF 
-      
-      IF l_cho = 3 THEN     
+      END IF
+
+      IF l_cho = 3 THEN
       #CHI-C80041---end
       #IF cl_confirm("9042") THEN  #CHI-C80041
          DELETE FROM imm_file WHERE imm01 = g_imm.imm01
@@ -5099,7 +5112,7 @@ DEFINE p_cmd       LIKE type_file.chr1
    #      CALL cl_err(g_imn[l_ac].imn17,'aim-035',1)
    #      RETURN "imn06"
    #   END IF
-   #END IF  
+   #END IF
    #FUN-C30302---end
    SELECT img09,img10  INTO g_img09_s,g_img10_s FROM img_file
     WHERE img01=g_imn[l_ac].imn03 AND
@@ -5150,7 +5163,7 @@ DEFINE p_cmd       LIKE type_file.chr1
   ##-->有效日期
   #IF NOT s_actimg(g_imn[l_ac].imn03,g_imn[l_ac].imn04,
   #                g_imn[l_ac].imn05,g_imn[l_ac].imn06)
-  #THEN CALL cl_err('inactive','mfg6117',1) 
+  #THEN CALL cl_err('inactive','mfg6117',1)
   #     RETURN "imn04"
   #END IF
   #MOD-CA0009---mark---E
@@ -5182,9 +5195,9 @@ DEFINE p_cmd       LIKE type_file.chr1
 END FUNCTION
 
 FUNCTION t324_b_imn17_inschk(p_cmd)
-DEFINE l_ima159     LIKE ima_file.ima159 
+DEFINE l_ima159     LIKE ima_file.ima159
 DEFINE p_cmd        LIKE type_file.chr1
-DEFINE l_factor     LIKE imn_file.imn41 
+DEFINE l_factor     LIKE imn_file.imn41
 DEFINE l_ima906     LIKE ima_file.ima906
 DEFINE l_cnt        LIKE type_file.num5
 DEFINE l_img10      LIKE img_file.img10
@@ -5215,12 +5228,12 @@ DEFINE l_img37      LIKE img_file.img37        #CHI-C80007 add
    IF cl_null(g_imn[l_ac].imn06) THEN LET g_imn[l_ac].imn06 =' ' END IF
    LET l_ima159 = ''
    SELECT ima159 INTO l_ima159 FROM ima_file
-    WHERE ima01 = g_imn[l_ac].imn03 
+    WHERE ima01 = g_imn[l_ac].imn03
    IF l_ima159 = '1' THEN
       IF cl_null(g_imn[l_ac].imn17) THEN
          CALL cl_err(g_imn[l_ac].imn17,'aim-034',1)
-         RETURN "imn17" 
-      END IF      
+         RETURN "imn17"
+      END IF
    END IF
    #MOD-C30526---begin mark
    #IF s_industry('icd') THEN
@@ -5294,8 +5307,8 @@ DEFINE l_img37      LIKE img_file.img37        #CHI-C80007 add
         #MOD-CB0122 add---S
          IF STATUS=100 THEN
             CALL cl_err('','mfg6101',1)
-            RETURN "imn17"                       
-         ELSE 
+            RETURN "imn17"
+         ELSE
         #MOD-CB0122 add---E
             CALL s_date_record(l_date,'Y')
          END IF     #MOD-CB0122 add
@@ -5336,7 +5349,7 @@ DEFINE l_img37      LIKE img_file.img37        #CHI-C80007 add
          CALL cl_err('','mfg3075',1)
          RETURN "imn17"
       END IF
-   END IF 
+   END IF
    IF g_imn[l_ac].imn04 = g_imn[l_ac].imn15 AND
       g_imn[l_ac].imn05 = g_imn[l_ac].imn16 AND
       g_imn[l_ac].imn06 = g_imn[l_ac].imn17
@@ -5398,20 +5411,20 @@ DEFINE l_img37      LIKE img_file.img37        #CHI-C80007 add
    IF NOT t324_set_imn43() THEN
       RETURN "imn15"
    END IF
-   SELECT ima906 INTO l_ima906 FROM ima_file 
+   SELECT ima906 INTO l_ima906 FROM ima_file
            WHERE ima01 = g_imn[l_ac].imn03
    IF g_sma.sma115 = 'Y' AND l_ima906 != '2' THEN
-      SELECT img09 INTO l_img09 FROM img_file 
+      SELECT img09 INTO l_img09 FROM img_file
            WHERE img01 = g_imn[l_ac].imn03
              AND img02 = g_imn[l_ac].imn15
              AND img03 = g_imn[l_ac].imn16
              AND img04 = g_imn[l_ac].imn17
-    
+
       LET l_factor = 1   #MOD-BA0129 add
-      IF NOT cl_null(l_img09) AND g_imn[l_ac].imn40 != l_img09 THEN 
+      IF NOT cl_null(l_img09) AND g_imn[l_ac].imn40 != l_img09 THEN
          CALL s_umfchk(g_imn[l_ac].imn03,g_imn[l_ac].imn40,l_img09)
               RETURNING l_cnt,l_factor
-         
+
          IF l_cnt = 1 THEN LET l_factor = 1 END IF
          LET g_imn[l_ac].imn41 = l_factor
       END IF
@@ -5437,7 +5450,7 @@ FUNCTION t324_set_no_required_1()
 END FUNCTION
 
 FUNCTION t324_set_required_1(p_cmd)
-DEFINE  l_ima159  LIKE ima_file.ima159  
+DEFINE  l_ima159  LIKE ima_file.ima159
 DEFINE  p_cmd     LIKE type_file.chr1
    IF p_cmd='u' OR INFIELD(imn03) THEN
       IF NOT cl_null(g_imn[l_ac].imn03) THEN
@@ -5471,7 +5484,7 @@ FUNCTION t324_set_entry_imn()
    CALL cl_set_comp_entry("imn06,imn17",TRUE)
 END FUNCTION
 #FUN-B90035 ---------------------End--------------------------
- 
+
 FUNCTION t324_b_move_to()
         LET g_imn[l_ac].imn02=b_imn.imn02
         LET g_imn[l_ac].imn03=b_imn.imn03
@@ -5521,7 +5534,7 @@ FUNCTION t324_b_move_to()
         LET g_imn[l_ac].imnud14 = b_imn.imnud14
         LET g_imn[l_ac].imnud15 = b_imn.imnud15
 END FUNCTION
- 
+
 FUNCTION t324_b_move_back()
         LET b_imn.imn02=g_imn[l_ac].imn02
         LET b_imn.imn03=g_imn[l_ac].imn03
@@ -5575,7 +5588,7 @@ FUNCTION t324_b_move_back()
         LET b_imn.imnud15 = g_imn[l_ac].imnud15
 
 END FUNCTION
- 
+
 FUNCTION t324_b_askkey()
 DEFINE l_wc2           LIKE type_file.chr1000 #No.FUN-690026 VARCHAR(200)
 
@@ -5610,17 +5623,17 @@ DEFINE l_wc2           LIKE type_file.chr1000 #No.FUN-690026 VARCHAR(200)
        ON IDLE g_idle_seconds
           CALL cl_on_idle()
           CONTINUE CONSTRUCT
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
+
       ON ACTION controlg      #MOD-4C0121
          CALL cl_cmdask()     #MOD-4C0121
- 
- 
+
+
                  ON ACTION qbe_select
                  CALL cl_qbe_select()
                  ON ACTION qbe_save
@@ -5635,7 +5648,7 @@ DEFINE p_wc2           LIKE type_file.chr1000 #No.FUN-690026 VARCHAR(200)
 
     IF cl_null(p_wc2) THEN
        LET p_wc2 = " 1=1"
-    END IF  
+    END IF
     LET g_sql =
         "SELECT imn02,imn03,'','','','','','','','','','','','','','','','','','','','','',", #TQC-650101
         #"       imn29,ima02,ima021,imn28,imn04,imn05,imn06,imn09,imn9301,'',",    #No.FUN-5C0077 #FUN-670093   #FUN-CB0087 mark
@@ -5664,27 +5677,27 @@ DEFINE p_wc2           LIKE type_file.chr1000 #No.FUN-690026 VARCHAR(200)
     LET g_cnt = 1
     FOREACH imn_curs INTO g_imn[g_cnt].*   #單身 ARRAY 填充
         IF STATUS THEN CALL cl_err('foreach:',STATUS,1) EXIT FOREACH END IF
-        IF g_sma.sma120 = 'Y' AND g_sma.sma907 = 'Y' THEN                                                                           
-           #得到該料件對應的父料件和所有屬性                                                                                        
-           SELECT imx00,imx01,imx02,imx03,imx04,imx05,imx06,                                                                        
-                  imx07,imx08,imx09,imx10 INTO                                                                                      
-                  g_imn[g_cnt].att00,g_imn[g_cnt].att01,g_imn[g_cnt].att02,                                                         
-                  g_imn[g_cnt].att03,g_imn[g_cnt].att04,g_imn[g_cnt].att05,                                                         
-                  g_imn[g_cnt].att06,g_imn[g_cnt].att07,g_imn[g_cnt].att08,                                                         
-                  g_imn[g_cnt].att09,g_imn[g_cnt].att10                                                                             
-           FROM imx_file WHERE imx000 = g_imn[g_cnt].imn03                                                                          
-                                                                                                                                    
-           LET g_imn[g_cnt].att01_c = g_imn[g_cnt].att01                                                                            
-           LET g_imn[g_cnt].att02_c = g_imn[g_cnt].att02                                                                            
-           LET g_imn[g_cnt].att03_c = g_imn[g_cnt].att03                                                                            
-           LET g_imn[g_cnt].att04_c = g_imn[g_cnt].att04                                                                            
-           LET g_imn[g_cnt].att05_c = g_imn[g_cnt].att05                                                                            
-           LET g_imn[g_cnt].att06_c = g_imn[g_cnt].att06                                                                            
-           LET g_imn[g_cnt].att07_c = g_imn[g_cnt].att07                                                                            
-           LET g_imn[g_cnt].att08_c = g_imn[g_cnt].att08                                                                            
-           LET g_imn[g_cnt].att09_c = g_imn[g_cnt].att09                                                                            
-           LET g_imn[g_cnt].att10_c = g_imn[g_cnt].att10                                                                            
-                                                                                                                                    
+        IF g_sma.sma120 = 'Y' AND g_sma.sma907 = 'Y' THEN
+           #得到該料件對應的父料件和所有屬性
+           SELECT imx00,imx01,imx02,imx03,imx04,imx05,imx06,
+                  imx07,imx08,imx09,imx10 INTO
+                  g_imn[g_cnt].att00,g_imn[g_cnt].att01,g_imn[g_cnt].att02,
+                  g_imn[g_cnt].att03,g_imn[g_cnt].att04,g_imn[g_cnt].att05,
+                  g_imn[g_cnt].att06,g_imn[g_cnt].att07,g_imn[g_cnt].att08,
+                  g_imn[g_cnt].att09,g_imn[g_cnt].att10
+           FROM imx_file WHERE imx000 = g_imn[g_cnt].imn03
+
+           LET g_imn[g_cnt].att01_c = g_imn[g_cnt].att01
+           LET g_imn[g_cnt].att02_c = g_imn[g_cnt].att02
+           LET g_imn[g_cnt].att03_c = g_imn[g_cnt].att03
+           LET g_imn[g_cnt].att04_c = g_imn[g_cnt].att04
+           LET g_imn[g_cnt].att05_c = g_imn[g_cnt].att05
+           LET g_imn[g_cnt].att06_c = g_imn[g_cnt].att06
+           LET g_imn[g_cnt].att07_c = g_imn[g_cnt].att07
+           LET g_imn[g_cnt].att08_c = g_imn[g_cnt].att08
+           LET g_imn[g_cnt].att09_c = g_imn[g_cnt].att09
+           LET g_imn[g_cnt].att10_c = g_imn[g_cnt].att10
+
         END IF
         LET g_imn[g_cnt].gem02b=s_costcenter_desc(g_imn[g_cnt].imn9301) #FUN-670093
         LET g_imn[g_cnt].gem02c=s_costcenter_desc(g_imn[g_cnt].imn9302) #FUN-670093
@@ -5764,7 +5777,7 @@ FUNCTION t324_bp(p_ud)
 #            CALL fgl_set_arr_curr(1)  ######add in 040505
 #         END IF
 #         ACCEPT DISPLAY                   #No:FUN-530067 HCN TEST
-# 
+#
 #      ON ACTION previous
 #         CALL t324_fetch('P')
 #         CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
@@ -5772,7 +5785,7 @@ FUNCTION t324_bp(p_ud)
 #            CALL fgl_set_arr_curr(1)  ######add in 040505
 #         END IF
 #         ACCEPT DISPLAY                   #No:FUN-530067 HCN TEST
-# 
+#
 #      ON ACTION jump
 #         CALL t324_fetch('/')
 #         CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
@@ -5788,7 +5801,7 @@ FUNCTION t324_bp(p_ud)
 #            CALL fgl_set_arr_curr(1)  ######add in 040505
 #         END IF
 #         ACCEPT DISPLAY                   #No:FUN-530067 HCN TEST
-# 
+#
 #      ON ACTION last
 #         CALL t324_fetch('L')
 #         CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
@@ -5865,7 +5878,7 @@ FUNCTION t324_bp(p_ud)
 #         LET g_action_choice="detail"
 #         LET l_ac = ARR_CURR()
 #         EXIT DISPLAY
-# 
+#
 #      ON ACTION cancel
 #             LET INT_FLAG=FALSE         #MOD-570244 mars
 #         LET g_action_choice="exit"
@@ -5878,7 +5891,7 @@ FUNCTION t324_bp(p_ud)
 #      ON IDLE g_idle_seconds
 #         CALL cl_on_idle()
 #         CONTINUE DISPLAY
-# 
+#
 #      ON ACTION about         #MOD-4C0121
 #         CALL cl_about()      #MOD-4C0121
 #
@@ -5920,15 +5933,15 @@ FUNCTION t324_bp(p_ud)
 #         CONTINUE DISPLAY
 #
 #    #@ON ACTION 拋轉至SPC
-#      ON ACTION trans_spc                     
+#      ON ACTION trans_spc
 #         LET g_action_choice="trans_spc"
 #         EXIT DISPLAY
 #
 #      ON ACTION related_document                #No:FUN-680046  相關文件
-#         LET g_action_choice="related_document"          
-#         EXIT DISPLAY     
-#      ON ACTION controls                                                                                                             
-#         CALL cl_set_head_visible("","AUTO")                                                                                        
+#         LET g_action_choice="related_document"
+#         EXIT DISPLAY
+#      ON ACTION controls
+#         CALL cl_set_head_visible("","AUTO")
 #
 #      ON ACTION qry_lot
 #         LET g_action_choice="qry_lot"
@@ -5941,16 +5954,16 @@ FUNCTION t324_bp(p_ud)
    #FUN-B30170 add begin-------------------------
    DIALOG ATTRIBUTES(UNBUFFERED)
       DISPLAY ARRAY g_imn TO s_imn.* ATTRIBUTE(COUNT=g_rec_b)
-   
+
          BEFORE DISPLAY
             CALL cl_navigator_setting( g_curs_index, g_row_count )
-   
+
          BEFORE ROW
             LET l_ac = ARR_CURR()
-            CALL cl_show_fld_cont()                   #No:FUN-550037 hmf      
+            CALL cl_show_fld_cont()                   #No:FUN-550037 hmf
          AFTER DISPLAY
             CONTINUE DIALOG   #因為外層是DIALOG
-      END DISPLAY      
+      END DISPLAY
 
       DISPLAY ARRAY g_rvbs TO s_rvbs.* ATTRIBUTE(COUNT=g_rec_b1)
          BEFORE DISPLAY
@@ -5964,22 +5977,22 @@ FUNCTION t324_bp(p_ud)
       END DISPLAY
 
       #FUN-D10081---add---str---
-      ON ACTION page_list 
+      ON ACTION page_list
          LET g_action_flag="page_list"
          EXIT DIALOG
       #FUN-D10081---add---end---
       ON ACTION insert
          LET g_action_choice="insert"
-         EXIT DIALOG 
+         EXIT DIALOG
       ON ACTION query
          LET g_action_choice="query"
-         EXIT DIALOG 
+         EXIT DIALOG
       ON ACTION delete
          LET g_action_choice="delete"
-         EXIT DIALOG 
+         EXIT DIALOG
       ON ACTION modify
          LET g_action_choice="modify"
-         EXIT DIALOG 
+         EXIT DIALOG
       ON ACTION first
          CALL t324_fetch('F')
          CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
@@ -5987,7 +6000,7 @@ FUNCTION t324_bp(p_ud)
             CALL fgl_set_arr_curr(1)  ######add in 040505
          END IF
          ACCEPT DIALOG                    #No:FUN-530067 HCN TEST
- 
+
       ON ACTION previous
          CALL t324_fetch('P')
          CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
@@ -5995,7 +6008,7 @@ FUNCTION t324_bp(p_ud)
             CALL fgl_set_arr_curr(1)  ######add in 040505
          END IF
          ACCEPT DIALOG                    #No:FUN-530067 HCN TEST
- 
+
       ON ACTION jump
          CALL t324_fetch('/')
          CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
@@ -6011,7 +6024,7 @@ FUNCTION t324_bp(p_ud)
             CALL fgl_set_arr_curr(1)  ######add in 040505
          END IF
          ACCEPT DIALOG                    #No:FUN-530067 HCN TEST
- 
+
       ON ACTION last
          CALL t324_fetch('L')
          CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
@@ -6023,14 +6036,14 @@ FUNCTION t324_bp(p_ud)
       ON ACTION detail
          LET g_action_choice="detail"
          LET l_ac = 1
-         EXIT DIALOG 
+         EXIT DIALOG
 
       ON ACTION output
          LET g_action_choice="output"
-         EXIT DIALOG 
+         EXIT DIALOG
       ON ACTION help
          LET g_action_choice="help"
-         EXIT DIALOG 
+         EXIT DIALOG
 
       ON ACTION locale
          CALL cl_dynamic_locale()
@@ -6045,105 +6058,106 @@ FUNCTION t324_bp(p_ud)
 
       ON ACTION exit
          LET g_action_choice="exit"
-         EXIT DIALOG 
+         EXIT DIALOG
 
       ON ACTION controlg
          LET g_action_choice="controlg"
-         EXIT DIALOG 
+         EXIT DIALOG
    #@ ON ACTION 確認
       ON ACTION confirm
          LET g_action_choice="confirm"
-         EXIT DIALOG 
+         EXIT DIALOG
    #@ ON ACTION 取消確認
       ON ACTION undo_confirm
          LET g_action_choice="undo_confirm"
-         EXIT DIALOG 
+         EXIT DIALOG
    #@ ON ACTION 過帳
       ON ACTION post
          LET g_action_choice="post"
-         EXIT DIALOG 
+         EXIT DIALOG
    #@ ON ACTION 過帳還原
       ON ACTION undo_post
          LET g_action_choice="undo_post"
-         EXIT DIALOG 
+         EXIT DIALOG
    #@ ON ACTION 作廢
       ON ACTION void
          LET g_action_choice="void"
-         EXIT DIALOG 
+         EXIT DIALOG
       #CHI-D20008---begin
       ON ACTION undo_void
          LET g_action_choice="undo_void"
-         EXIT DIALOG 
-      #CHI-D20008---end   
+         EXIT DIALOG
+      #CHI-D20008---end
       ON ACTION accept
          LET g_action_choice="detail"
          LET l_ac = ARR_CURR()
-         EXIT DIALOG 
- 
+         EXIT DIALOG
+
       ON ACTION cancel
              LET INT_FLAG=FALSE         #MOD-570244 mars
          LET g_action_choice="exit"
-         EXIT DIALOG 
+         EXIT DIALOG
 
       ON ACTION exporttoexcel #FUN-4B0002
          LET g_action_choice = 'exporttoexcel'
-         EXIT DIALOG 
+         EXIT DIALOG
 
       ON IDLE g_idle_seconds
          CALL cl_on_idle()
-         CONTINUE DIALOG 
- 
+         CONTINUE DIALOG
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
 
       #FUN-A60034---add----str---
       ON ACTION approval_status #簽核狀況
          LET g_action_choice="approval_status"
-         EXIT DIALOG 
+         EXIT DIALOG
 
       ON ACTION easyflow_approval #easyflow送簽
          LET g_action_choice = "easyflow_approval"
-         EXIT DIALOG 
+         EXIT DIALOG
 
       ON ACTION agree
          LET g_action_choice = 'agree'
-         EXIT DIALOG 
+         EXIT DIALOG
 
       ON ACTION deny
          LET g_action_choice = 'deny'
-         EXIT DIALOG 
+         EXIT DIALOG
 
       ON ACTION modify_flow
          LET g_action_choice = 'modify_flow'
-         EXIT DIALOG 
+         EXIT DIALOG
 
       ON ACTION withdraw
          LET g_action_choice = 'withdraw'
-         EXIT DIALOG 
+         EXIT DIALOG
 
       ON ACTION org_withdraw
          LET g_action_choice = 'org_withdraw'
-         EXIT DIALOG 
+         EXIT DIALOG
 
       ON ACTION phrase
          LET g_action_choice = 'phrase'
-         EXIT DIALOG 
+         EXIT DIALOG
       #FUN-A60034---add----end---
 
     #@ON ACTION 拋轉至SPC
-      ON ACTION trans_spc                     
+      ON ACTION trans_spc
          LET g_action_choice="trans_spc"
-         EXIT DIALOG 
+         EXIT DIALOG
 
       ON ACTION related_document                #No:FUN-680046  相關文件
-         LET g_action_choice="related_document"          
-         EXIT DIALOG      
-      ON ACTION controls                                                                                                             
-         CALL cl_set_head_visible("","AUTO")                                                                                        
+         LET g_action_choice="related_document"
+         EXIT DIALOG
+      ON ACTION controls
+         CALL cl_set_head_visible("","AUTO")
 
       ON ACTION qry_lot
          LET g_action_choice="qry_lot"
-         EXIT DIALOG 
+         EXIT DIALOG
+      on action action_stock_post let g_action_choice = 'action_stock_post' #darcy add
 
       &include "qry_string.4gl"
    END DIALOG
@@ -6158,14 +6172,14 @@ FUNCTION t324_out()
    DEFINE l_wc,l_wc2   LIKE type_file.chr1000, #No.FUN-690026 VARCHAR(100)
           l_prog       LIKE zz_file.zz01,
           l_prtway     LIKE zz_file.zz22
- 
+
    IF g_imm.imm01 IS NULL THEN RETURN END IF
 
     LET g_msg = 'imm01="',g_imm.imm01,'" '
    LET g_msg = "aimr512 '",g_today,"' '",g_user,"' '",g_lang,"' ",    #FUN-C30085 mark #str---add byhuanglf160811
     --LET g_msg = "aimg512 '",g_today,"' '",g_user,"' '",g_lang,"' ",    #FUN-C30085 add
-                " 'Y' ' ' '1' ", 
-                " '",g_msg CLIPPED,"' '1' "  ##MOD-8C0189 add CLIPPED 
+                " 'Y' ' ' '1' ",
+                " '",g_msg CLIPPED,"' '1' "  ##MOD-8C0189 add CLIPPED
 
    CALL cl_cmdrun(g_msg)
 
@@ -6194,11 +6208,11 @@ END FUNCTION
 #   DEFINE l_t1     LIKE smy_file.smyslip #No:DEV-D30026
 #   DEFINE l_smyb01 LIKE smyb_file.smyb01 #No:DEV-D30026
 #   DEFINE l_ima906 LIKE ima_file.ima906  #MOD-CC0139 add
-#   
+#
 #   IF s_shut(0) THEN RETURN END IF
 #
 #   SELECT * INTO g_imm.* FROM imm_file
-#    WHERE imm01 = g_imm.imm01 
+#    WHERE imm01 = g_imm.imm01
 #
 #   #DEV-D30037--mark--begin
 #   ##No:DEV-D30026  Add str---------
@@ -6208,7 +6222,7 @@ END FUNCTION
 #   # IF cl_null(l_smyb01) THEN
 #   #     LET l_smyb01 = '1'
 #   # END IF
-#   ##No:DEV-D30026  Add end--------- 
+#   ##No:DEV-D30026  Add end---------
 #   #DEV-D30037--mark--end
 #
 #   #DEV-D30037--add--begin
@@ -6236,7 +6250,7 @@ END FUNCTION
 #      RETURN
 #   END IF
 #
-#            
+#
 #   IF g_sma.sma53 IS NOT NULL AND g_imm.imm02 <= g_sma.sma53 THEN
 #      CALL cl_err('','mfg9999',0)
 #      RETURN
@@ -6258,7 +6272,7 @@ END FUNCTION
 #
 #   SELECT COUNT(*) INTO l_cnt
 #     FROM imn_file
-#    WHERE imn01 = g_imm.imm01 
+#    WHERE imn01 = g_imm.imm01
 #
 #   IF l_cnt = 0 OR l_cnt IS NULL THEN
 #      CALL cl_err('','mfg-009',0)
@@ -6272,7 +6286,7 @@ END FUNCTION
 #   END IF
 #  #No:DEV-D30026  Add end--------
 #
-#   IF g_argv2!='A' THEN  #no.CHI-780041 
+#   IF g_argv2!='A' THEN  #no.CHI-780041
 #      IF g_bgjob='N' OR cl_null(g_bgjob) THEN   #No:FUN-840012
 #         IF NOT cl_confirm('mfg0176') THEN
 #            RETURN
@@ -6301,21 +6315,21 @@ END FUNCTION
 #         IF l_qcs091 < l_imn10 THEN
 #            #CHI-C90036---begin
 #            CALL cl_getmsg('aim1013',g_lang) RETURNING g_msg
-#            LET INT_FLAG = 0  
+#            LET INT_FLAG = 0
 #            PROMPT g_msg CLIPPED,': ' FOR l_sel
-#            
+#
 #               ON IDLE g_idle_seconds
 #                  CALL cl_on_idle()
-# 
-#               ON ACTION about         
-#                  CALL cl_about()      
-# 
-#               ON ACTION help          
-#                  CALL cl_show_help()  
-# 
-#               ON ACTION controlg      
-#                  CALL cl_cmdask()     
-# 
+#
+#               ON ACTION about
+#                  CALL cl_about()
+#
+#               ON ACTION help
+#                  CALL cl_show_help()
+#
+#               ON ACTION controlg
+#                  CALL cl_cmdask()
+#
 #            END PROMPT
 #            IF INT_FLAG THEN
 #               LET INT_FLAG = 0
@@ -6323,7 +6337,7 @@ END FUNCTION
 #            END IF
 #            IF l_sel <> 1 AND l_sel <> 2 THEN
 #               RETURN
-#            END IF 
+#            END IF
 #            #CALL cl_err(l_imn03,'aim1003',1)
 #            #RETURN
 #            #CHI-C90036---end
@@ -6332,11 +6346,11 @@ END FUNCTION
 #   END FOREACH
 #
 #   DECLARE t324_s1_c CURSOR FOR
-#     SELECT * FROM imn_file WHERE imn01=g_imm.imm01 
+#     SELECT * FROM imn_file WHERE imn01=g_imm.imm01
 #  #MOD-AA0041---mark---start---
-#  #IF g_bgjob='N' OR cl_null(g_bgjob) THEN                                      
-#  #   IF NOT cl_confirm('mfg0176') THEN RETURN END IF                           
-#  #END IF                                                                       
+#  #IF g_bgjob='N' OR cl_null(g_bgjob) THEN
+#  #   IF NOT cl_confirm('mfg0176') THEN RETURN END IF
+#  #END IF
 #  #MOD-AA0041---mark---end---
 #   BEGIN WORK
 #
@@ -6357,20 +6371,20 @@ END FUNCTION
 #   END IF
 #  IF g_argv2!='A' THEN   #MOD-C80134 add
 #    #MOD-AA0041---add---start---
-#     IF g_bgjob='N' OR cl_null(g_bgjob) THEN                                      
+#     IF g_bgjob='N' OR cl_null(g_bgjob) THEN
 #       #MOD-AA0103---modify---start---
 #       #IF NOT cl_confirm('mfg0176') THEN RETURN END IF
-#        IF NOT cl_confirm('mfg0176') THEN 
+#        IF NOT cl_confirm('mfg0176') THEN
 #           CLOSE t324_cl
 #           ROLLBACK WORK
-#           RETURN 
+#           RETURN
 #        END IF
 #       #MOD-AA0103---modify---end---
-#     END IF                                                                       
+#     END IF
 #    #MOD-AA0041---add---end---
 #  END IF   #MOD-C80134 add
 #  #CHI-C90036---begin
-#   IF l_sel = 1 THEN 
+#   IF l_sel = 1 THEN
 #      UPDATE imn_file
 #         SET imn10 = l_qcs091,imn22 = l_qcs091
 #       WHERE imn01 = l_qcs01
@@ -6380,8 +6394,8 @@ END FUNCTION
 #         CALL cl_err(g_imm.imm01,SQLCA.sqlcode,1)
 #         RETURN
 #      END IF
-#   END IF 
-#   IF l_sel = 2 THEN 
+#   END IF
+#   IF l_sel = 2 THEN
 #      UPDATE imn_file
 #         SET imn10 = 0,imn22 = 0
 #       WHERE imn01 = l_qcs01
@@ -6391,14 +6405,14 @@ END FUNCTION
 #         CALL cl_err(g_imm.imm01,SQLCA.sqlcode,1)
 #         RETURN
 #      END IF
-#   END IF 
-#   #CHI-C90036---end         
+#   END IF
+#   #CHI-C90036---end
 #   #FUN-C70087---begin
 #   CALL s_padd_img_init()  #FUN-CC0095
 #   CALL s_padd_imgg_init()  #FUN-CC0095
-#   
+#
 #   DECLARE t325_y1_c3 CURSOR FOR SELECT * FROM imn_file
-#     WHERE imn01 = g_imm.imm01 
+#     WHERE imn01 = g_imm.imm01
 #
 #   FOREACH t325_y1_c3 INTO b_imn.*
 #      IF STATUS THEN EXIT FOREACH END IF
@@ -6420,15 +6434,15 @@ END FUNCTION
 #       IF g_flag = 1 THEN
 #          #CALL s_padd_imgg_data(b_imn.imn03,b_imn.imn15,b_imn.imn16,b_imn.imn17,b_imn.imn40,g_imm.imm01,b_imn.imn02,l_imgg_table)  #FUN-CC0095
 #          CALL s_padd_imgg_data1(b_imn.imn03,b_imn.imn15,b_imn.imn16,b_imn.imn17,b_imn.imn40,g_imm.imm01,b_imn.imn02)  #FUN-CC0095
-#       END IF 
+#       END IF
 #       CALL s_chk_imgg(b_imn.imn03,b_imn.imn15,
 #                       b_imn.imn16,b_imn.imn17,
 #                       b_imn.imn43) RETURNING g_flag
 #       IF g_flag = 1 THEN
 #          #CALL s_padd_imgg_data(b_imn.imn03,b_imn.imn15,b_imn.imn16,b_imn.imn17,b_imn.imn43,g_imm.imm01,b_imn.imn02,l_imgg_table)  #FUN-CC0095
 #          CALL s_padd_imgg_data1(b_imn.imn03,b_imn.imn15,b_imn.imn16,b_imn.imn17,b_imn.imn43,g_imm.imm01,b_imn.imn02)  #FUN-CC0095
-#       END IF 
-#   END FOREACH 
+#       END IF
+#   END FOREACH
 #   #FUN-CC0095---begin mark
 #   #LET g_sql = " SELECT COUNT(*) ",
 #   #            " FROM ",l_img_table CLIPPED #,g_cr_db_str
@@ -6441,28 +6455,28 @@ END FUNCTION
 #   #PREPARE cnt_imgg FROM g_sql
 #   #LET l_cnt_imgg = 0
 #   #EXECUTE cnt_imgg INTO l_cnt_imgg
-#   #FUN-CC0095---end    
+#   #FUN-CC0095---end
 #   LET l_cnt_img = g_padd_img.getLength()  #FUN-CC0095
 #   LET l_cnt_imgg = g_padd_imgg.getLength()  #FUN-CC0095
-#   
+#
 #   IF g_sma.sma892[3,3] = 'Y' AND (l_cnt_img > 0 OR l_cnt_imgg > 0) THEN
-#      IF cl_confirm('mfg1401') THEN 
-#         IF l_cnt_img > 0 THEN 
+#      IF cl_confirm('mfg1401') THEN
+#         IF l_cnt_img > 0 THEN
 #            #IF NOT s_padd_img_show(l_img_table) THEN  #FUN-CC0095
 #            IF NOT s_padd_img_show1() THEN  #FUN-CC0095
 #               #CALL s_padd_img_del(l_img_table) #FUN-CC0095
 #               LET g_success = 'N'
-#               RETURN 
+#               RETURN
 #            END IF
 #         END IF
-#         IF l_cnt_imgg > 0 THEN #FUN-CC0095 
+#         IF l_cnt_imgg > 0 THEN #FUN-CC0095
 #            #IF NOT s_padd_imgg_show(l_imgg_table) THEN  #FUN-CC0095
 #            IF NOT s_padd_imgg_show1() THEN  #FUN-CC0095
 #               #CALL s_padd_imgg_del(l_imgg_table) #FUN-CC0095
 #               LET g_success = 'N'
-#               RETURN 
-#            END IF 
-#         END IF #FUN-CC0095 
+#               RETURN
+#            END IF
+#         END IF #FUN-CC0095
 #      ELSE
 #         #CALL s_padd_img_del(l_img_table) #FUN-CC0095
 #         #CALL s_padd_imgg_del(l_imgg_table) #FUN-CC0095
@@ -6473,36 +6487,36 @@ END FUNCTION
 #   #CALL s_padd_img_del(l_img_table) #FUN-CC0095
 #   #CALL s_padd_imgg_del(l_imgg_table) #FUN-CC0095
 #   #FUN-C70087---end
-#  
+#
 #   LET g_success = 'Y'
-#   
-#   CALL s_showmsg_init()   #No:FUN-6C0083 
+#
+#   CALL s_showmsg_init()   #No:FUN-6C0083
 #
 #   FOREACH t324_s1_c INTO b_imn.*
 #      IF STATUS THEN EXIT FOREACH END IF
 #
 #      LET g_cmd= 's_ read parts:',b_imn.imn03
 #      CALL cl_msg(g_cmd)
-#      
+#
 #      #-----MOD-A70068---------
 #     #撥入倉
 #      LET l_imd11 = ''
-#      SELECT imd11 INTO l_imd11 FROM imd_file 
+#      SELECT imd11 INTO l_imd11 FROM imd_file
 #       WHERE imd01 = b_imn.imn15
 #     #MOD-B10114---modify---start---
-#     #IF l_imd11 = 'N' OR l_imd11 IS NULL THEN   
+#     #IF l_imd11 = 'N' OR l_imd11 IS NULL THEN
 #     #撥出倉
 #      LET l_imd11_1 = ''
-#      SELECT imd11 INTO l_imd11_1 FROM imd_file 
+#      SELECT imd11 INTO l_imd11_1 FROM imd_file
 #       WHERE imd01 = b_imn.imn04
-#      IF l_imd11_1 = 'Y' AND (l_imd11 = 'N' OR l_imd11 IS NULL) THEN 
+#      IF l_imd11_1 = 'Y' AND (l_imd11 = 'N' OR l_imd11 IS NULL) THEN
 #     #MOD-B10114---modify---end---
-#         CALL t324_chk_avl_stk(b_imn.*)     
+#         CALL t324_chk_avl_stk(b_imn.*)
 #         IF g_success='N' THEN
 #            LET g_totsuccess="N"
-#            CONTINUE FOREACH   
-#         END IF    
-#      END IF   
+#            CONTINUE FOREACH
+#         END IF
+#      END IF
 #      #-----END MOD-A70068-----
 #
 #      #MOD-C50048 add begin-------------------
@@ -6526,14 +6540,14 @@ END FUNCTION
 #      #MOD-C50048 add end---------------------
 #
 #      IF cl_null(b_imn.imn04) THEN CONTINUE FOREACH END IF
-#      
+#
 #&ifdef ICD
-#      CALL s_icdpost(-1,b_imn.imn03,b_imn.imn04,b_imn.imn05,          
+#      CALL s_icdpost(-1,b_imn.imn03,b_imn.imn04,b_imn.imn05,
 #                         b_imn.imn06,b_imn.imn09,b_imn.imn10,
 #                         b_imn.imn01,b_imn.imn02,g_imm.imm02,'Y',
 #                         '','',b_imni.imniicd029,b_imni.imniicd028,'') #FUN-B30187  #FUN-B80119--傳入p_plant參數''---
-#           RETURNING l_flag                                            
-#      IF l_flag = 0 THEN                                               
+#           RETURNING l_flag
+#      IF l_flag = 0 THEN
 #        #str MOD-A20099 mod
 #        #LET g_success = 'N'
 #        #RETURN
@@ -6541,13 +6555,13 @@ END FUNCTION
 #         CONTINUE FOREACH
 #        #end MOD-A20099 mod
 #      END IF
-#          
-#      CALL s_icdpost(1,b_imn.imn03,b_imn.imn15,b_imn.imn16,          
+#
+#      CALL s_icdpost(1,b_imn.imn03,b_imn.imn15,b_imn.imn16,
 #                        b_imn.imn17,b_imn.imn20,b_imn.imn22,
 #                        b_imn.imn01,b_imn.imn02,g_imm.imm02,'Y',
 #                        '','',b_imni.imniicd029,b_imni.imniicd028,'') #FUN-B30187  #FUN-B80119--傳入p_plant參數''---
-#                  
-#           RETURNING l_flag                                            
+#
+#           RETURNING l_flag
 #      IF l_flag = 0 THEN
 #        #str MOD-A20099 mod
 #        #LET g_success = 'N'
@@ -6555,9 +6569,9 @@ END FUNCTION
 #         LET g_totsuccess="N"
 #         CONTINUE FOREACH
 #       #end MOD-A20099 mod
-#      END IF 
+#      END IF
 #&endif
-#      
+#
 #      SELECT *
 #        FROM img_file WHERE img01=b_imn.imn03 AND
 #                            img02=b_imn.imn15 AND
@@ -6581,7 +6595,7 @@ END FUNCTION
 #          #TQC-C90089---add---
 #          #MOD-CB0122 add---S
 #           IF STATUS=100 THEN
-#              CALL cl_err('','mfg6101',1)  
+#              CALL cl_err('','mfg6101',1)
 #              LET g_success ='N'
 #              CONTINUE FOREACH
 #           ELSE
@@ -6680,22 +6694,22 @@ END FUNCTION
 #      CALL s_updsie_sie(b_imn.imn01,b_imn.imn02,'4')
 #      #FUN-AC0074--end--add-----
 #
-#      IF g_success = 'N' THEN 
+#      IF g_success = 'N' THEN
 #         LET g_totsuccess="N"
 #         LET g_success="Y"
 #         CONTINUE FOREACH   #No:FUN-6C0083
 #      END IF
-# 
+#
 #   END FOREACH
 #
 #   IF g_totsuccess="N" THEN
 #      LET g_success="N"
 #   END IF
 #   CALL s_showmsg()   #No:FUN-6C0083
-#  
+#
 #   UPDATE imm_file SET imm03 = 'Y',
 #                       imm04 = 'Y'
-#    WHERE imm01 = g_imm.imm01 
+#    WHERE imm01 = g_imm.imm01
 #
 #   IF SQLCA.sqlcode OR SQLCA.sqlerrd[3] = 0 THEN
 #      CALL s_errmsg('imm01',g_imm.imm01,'up imm_file',SQLCA.sqlcode,1)
@@ -6711,18 +6725,18 @@ END FUNCTION
 #      CALL cl_rbmsg(4)
 #   END IF
 #
-#   SELECT imm03 INTO g_imm.imm03 FROM imm_file WHERE imm01 = g_imm.imm01 
+#   SELECT imm03 INTO g_imm.imm03 FROM imm_file WHERE imm01 = g_imm.imm01
 #
 #   DISPLAY BY NAME g_imm.imm03
 #
 #   IF g_imm.imm03 = "N" THEN
 #      DECLARE t324_s1_c2 CURSOR FOR SELECT * FROM imn_file
-#        WHERE imn01 = g_imm.imm01 
+#        WHERE imn01 = g_imm.imm01
 #
 #      LET g_imm01 = ""
 #      LET g_success = "Y"
 #
-#      CALL s_showmsg_init()   #No:FUN-6C0083 
+#      CALL s_showmsg_init()   #No:FUN-6C0083
 #
 #      BEGIN WORK
 #
@@ -6743,7 +6757,7 @@ END FUNCTION
 #                                b_imn.imn03,b_imn.imn04,b_imn.imn05,
 #                                b_imn.imn06,g_unit_arr,g_imm01)
 #                      RETURNING g_imm01
-#               IF g_success='N' THEN 
+#               IF g_success='N' THEN
 #                  LET g_totsuccess='N'
 #                  LET g_success="Y"
 #                  CONTINUE FOREACH   #No:FUN-6C0083
@@ -6770,7 +6784,7 @@ END FUNCTION
 #   ELSE
 #      LET g_void = 'N'
 #   END IF
-#   CALL cl_set_field_pic(g_imm.immconf,"",g_imm.imm03,"",g_void,"")   
+#   CALL cl_set_field_pic(g_imm.immconf,"",g_imm.imm03,"",g_void,"")
 #
 #
 #END FUNCTION
@@ -6803,7 +6817,7 @@ END FUNCTION
 #      IF NOT cl_null(p_imn.imn30) THEN
 #         CALL t324_upd_imgg('1',p_imn.imn03,p_imn.imn04,p_imn.imn05,p_imn.imn06,p_imn.imn30,p_imn.imn31,p_imn.imn32,-1,'1')
 #         IF g_success='N' THEN RETURN END IF
-#          IF NOT cl_null(p_imn.imn32) THEN                               #CHI-860005   
+#          IF NOT cl_null(p_imn.imn32) THEN                               #CHI-860005
 #            CALL t324_tlff_2('1',p_imn.*,-1)
 #            IF g_success='N' THEN RETURN END IF
 #         END IF
@@ -6897,7 +6911,7 @@ END FUNCTION
 #       CLOSE imgg_lock
 #       RETURN
 #    END IF
-#    FETCH imgg_lock INTO p_imgg01,p_imgg02,p_imgg03,p_imgg04,p_imgg09 
+#    FETCH imgg_lock INTO p_imgg01,p_imgg02,p_imgg03,p_imgg04,p_imgg09
 #    IF STATUS THEN
 #       CALL cl_err('lock imgg fail',STATUS,1)
 #       LET g_success='N'
@@ -6909,10 +6923,10 @@ END FUNCTION
 #      FROM ima_file WHERE ima01=p_imgg01
 #    IF SQLCA.sqlcode OR l_ima25 IS NULL THEN
 #       CALL cl_err3("sel","ima_file",p_imgg01,"",SQLCA.sqlcode,"",
-#                    "ima25 null",1)   #No:FUN-660156 
+#                    "ima25 null",1)   #No:FUN-660156
 #       LET g_success = 'N' RETURN
 #    END IF
-# 
+#
 #    CALL s_umfchk(p_imgg01,p_imgg09,l_ima25)
 #          RETURNING g_cnt,l_imgg21
 #    IF g_cnt = 1 AND NOT (l_ima906='3' AND p_no='2') THEN
@@ -6923,7 +6937,7 @@ END FUNCTION
 #    CALL s_upimgg(p_imgg01,p_imgg02,p_imgg03,p_imgg04,p_imgg09,p_type,p_imgg10,g_imm.imm02,  #FUN-8C0084
 #          '','','','','','','','','','',l_imgg21,'','','','','','','',p_imgg211)
 #    IF g_success='N' THEN RETURN END IF
-# 
+#
 #END FUNCTION
 #
 #FUNCTION t324_tlff_1(p_flag,p_imn,p_type)
@@ -6942,14 +6956,14 @@ END FUNCTION
 #       CALL cl_err('p_imn43 null:','asf-031',1) LET g_success = 'N' RETURN
 #    END IF
 #
-# 
+#
 #    INITIALIZE g_tlff.* TO NULL
 #    SELECT imgg10 INTO l_imgg10_s FROM imgg_file
 #     WHERE imgg01=p_imn.imn03  AND imgg02=p_imn.imn04
 #       AND imgg03=p_imn.imn05  AND imgg04=p_imn.imn06
 #       AND imgg09=p_imn.imn33
 #    IF cl_null(l_imgg10_s) THEN LET l_imgg10_s=0 END IF
-# 
+#
 #    SELECT imgg10 INTO l_imgg10_t FROM imgg_file
 #     WHERE imgg01=p_imn.imn03  AND imgg02=p_imn.imn15
 #       AND imgg03=p_imn.imn16  AND imgg04=p_imn.imn17
@@ -7056,14 +7070,14 @@ END FUNCTION
 #    IF p_imn.imn40 IS NULL THEN
 #       CALL cl_err('p_imn40 null:','asf-031',1) LET g_success = 'N' RETURN
 #    END IF
-# 
+#
 #    INITIALIZE g_tlff.* TO NULL
 #    SELECT imgg10 INTO l_imgg10_s FROM imgg_file
 #     WHERE imgg01=p_imn.imn03  AND imgg02=p_imn.imn04
 #       AND imgg03=p_imn.imn05  AND imgg04=p_imn.imn06
 #       AND imgg09=p_imn.imn30
 #    IF cl_null(l_imgg10_s) THEN LET l_imgg10_s=0 END IF
-# 
+#
 #    SELECT imgg10 INTO l_imgg10_t FROM imgg_file
 #     WHERE imgg01=p_imn.imn03  AND imgg02=p_imn.imn15
 #       AND imgg03=p_imn.imn16  AND imgg04=p_imn.imn17
@@ -7178,7 +7192,7 @@ END FUNCTION
 #    LET g_forupd_sql = cl_forupd_sql(g_forupd_sql)
 #
 #    DECLARE img_lock CURSOR FROM g_forupd_sql
-# 
+#
 #    OPEN img_lock USING p_imn.imn03,p_imn.imn04,p_imn.imn05,p_imn.imn06
 #    IF SQLCA.sqlcode THEN
 #       CALL cl_err("img_lock fail:", STATUS, 1)   #NO.TQC-93015
@@ -7212,11 +7226,11 @@ END FUNCTION
 #
 ##-->若庫存異動後其庫存量小於等於零時將該筆資料刪除
 #    CALL s_delimg(p_imn.imn03,p_imn.imn04,p_imn.imn05,p_imn.imn06) #FUN-8C0084
-# 
+#
 ##-->更新庫存主檔之庫存數量 (單位為主檔之庫存單位)
 #    CALL cl_msg("update ima_file ...")
 #
-#    LET g_forupd_sql = "SELECT ima25 FROM ima_file WHERE ima01= ?  FOR UPDATE "  
+#    LET g_forupd_sql = "SELECT ima25 FROM ima_file WHERE ima01= ?  FOR UPDATE "
 #    LET g_forupd_sql = cl_forupd_sql(g_forupd_sql)
 #    DECLARE ima_lock CURSOR FROM g_forupd_sql
 #
@@ -7249,10 +7263,10 @@ END FUNCTION
 #
 ##-->將已鎖住之資料釋放出來
 #    CLOSE img_lock
-# 
+#
 #        RETURN 0
 #END FUNCTION
-# 
+#
 #FUNCTION t324_t2(p_imn)
 #DEFINE
 #    p_imn      RECORD LIKE imn_file.*,
@@ -7445,14 +7459,14 @@ END FUNCTION
 
 #FUNCTION t324_x()  #CHI-D20008
 FUNCTION t324_x(p_type)  #CHI-D20008
-   DEFINE p_type    LIKE type_file.num5  #CHI-D20008 
-   DEFINE l_flag    LIKE type_file.chr1  #CHI-D20008 
-   
+   DEFINE p_type    LIKE type_file.num5  #CHI-D20008
+   DEFINE l_flag    LIKE type_file.chr1  #CHI-D20008
+
    IF s_shut(0) THEN RETURN END IF
-   SELECT * INTO g_imm.* FROM imm_file WHERE imm01=g_imm.imm01 
+   SELECT * INTO g_imm.* FROM imm_file WHERE imm01=g_imm.imm01
    IF g_imm.imm01 IS NULL THEN CALL cl_err('',-400,0) RETURN END IF
    IF g_imm.immconf = 'Y' THEN CALL cl_err('',9023,0) RETURN END IF #FUN-660029
-   #FUN-A60034  add str ---              
+   #FUN-A60034  add str ---
    IF g_imm.imm15 matches '[Ss]' THEN
         CALL cl_err('','apm-030',0) #送簽中, 不可修改資料!
         RETURN
@@ -7461,17 +7475,17 @@ FUNCTION t324_x(p_type)  #CHI-D20008
       CALL cl_err('','mfg3168',0) #此張單據已核准, 不允許更改或取消
       RETURN
    END IF
-   #FUN-A60034  add end ---  
-   #CHI-D20008---begin 
-   IF p_type = 1 THEN 
+   #FUN-A60034  add end ---
+   #CHI-D20008---begin
+   IF p_type = 1 THEN
       IF g_imm.immconf='X' THEN RETURN END IF
    ELSE
       IF g_imm.immconf<>'X' THEN RETURN END IF
-   END IF 
+   END IF
    #CHI-D20008---end
    BEGIN WORK
 
-   OPEN t324_cl USING g_imm.imm01   
+   OPEN t324_cl USING g_imm.imm01
    IF SQLCA.sqlcode THEN
       CALL cl_err(g_imm.imm01,SQLCA.sqlcode,0)
       CLOSE t324_cl
@@ -7503,7 +7517,7 @@ FUNCTION t324_x(p_type)  #CHI-D20008
                imm15   = g_imm.imm15,   #FUN-A60034 add
                immmodu = g_user,
                immdate = g_today
-           WHERE imm01 = g_imm.imm01 
+           WHERE imm01 = g_imm.imm01
        IF SQLCA.sqlcode OR SQLCA.SQLERRD[3]=0 THEN
             CALL cl_err3("upd","imm_file",g_imm.imm01,"",SQLCA.sqlcode,"",
                          "upd imm03",1) #FUN-660029 #No:FUN-660156
@@ -7526,7 +7540,7 @@ FUNCTION t324_chk_out()
      IF cl_null(g_imn[l_ac].imn05) THEN
         LET g_imn[l_ac].imn05 = ' '
      END IF
- 
+
      IF cl_null(g_imn[l_ac].imn06) THEN
         LET g_imn[l_ac].imn06 = ' '
      END IF
@@ -7548,7 +7562,7 @@ FUNCTION t324_chk_out()
     #   INITIALIZE g_sma894 TO NULL
     #   CALL s_inv_shrt_by_warehouse(g_sma.sma894[4,4],g_imn[l_ac].imn04) RETURNING g_sma894   #FUN-D30024
     #   IF g_sma894 = 'N' OR g_sma894 IS NULL THEN
-        INITIALIZE g_imd23 TO NULL 
+        INITIALIZE g_imd23 TO NULL
         CALL s_inv_shrt_by_warehouse(g_imn[l_ac].imn04,g_plant) RETURNING g_imd23                     #FUN-D30024 #TQC-D40078 g_plant
         IF g_imd23 =  'N' OR g_imd23 IS NULL THEN
     #FUN-D30024 --------End----------
@@ -7582,7 +7596,7 @@ FUNCTION t324_chk_out()
        #INITIALIZE g_sma894 TO NULL                                                               #FUN-C80107
        #CALL s_inv_shrt_by_warehouse(g_sma.sma894[4,4],g_imn[l_ac].imn04) RETURNING g_sma894      #FUN-C80107  #FUN-D30024
        #IF g_sma894 = 'N' THEN                                                                    #FUN-C80107
-        INITIALIZE g_imd23 TO NULL 
+        INITIALIZE g_imd23 TO NULL
         CALL s_inv_shrt_by_warehouse(g_imn[l_ac].imn04,g_plant) RETURNING g_imd23                         #FUN-D30024 #TQC-D40078 g_plant
         IF g_imd23 = 'N' OR g_imd23 IS NULL THEN
     #FUN-D30024----------End------------
@@ -7740,7 +7754,7 @@ FUNCTION t324_set_origin_field()
             l_qty2      LIKE img_file.img10,
             l_qty3      LIKE img_file.img10,
             l_qty4      LIKE img_file.img10
- 
+
    IF g_sma.sma115='N' THEN RETURN END IF
    LET l_qty1=g_imn[l_ac].imn35
    LET l_qty2=g_imn[l_ac].imn32
@@ -7766,14 +7780,14 @@ FUNCTION t324_set_origin_field()
        AND img02 = g_imn[l_ac].imn04
        AND img03 = g_imn[l_ac].imn05
        AND img04 = g_imn[l_ac].imn06
- 
+
     #destination
     SELECT img09 INTO l_img09_t FROM img_file
      WHERE img01 = g_imn[l_ac].imn03
        AND img02 = g_imn[l_ac].imn15
        AND img03 = g_imn[l_ac].imn16
        AND img04 = g_imn[l_ac].imn17
- 
+
     IF g_sma.sma115 = 'Y' THEN
        CASE g_ima906
           #-----MOD-A80088---------
@@ -7802,9 +7816,9 @@ FUNCTION t324_set_origin_field()
           #            LET g_imn[l_ac].imn44=0
           #         END IF
           WHEN '1' LET g_imn[l_ac].imn09=g_imn[l_ac].imn30
-                   LET g_imn[l_ac].imn10=g_imn[l_ac].imn32                   
+                   LET g_imn[l_ac].imn10=g_imn[l_ac].imn32
                    LET g_imn[l_ac].imn20=g_imn[l_ac].imn40
-                   LET g_imn[l_ac].imn22=g_imn[l_ac].imn42                   
+                   LET g_imn[l_ac].imn22=g_imn[l_ac].imn42
           WHEN '2' LET l_tot=l_qty1*l_fac1+l_qty2*l_fac2
                    LET g_imn[l_ac].imn09=l_img09_s
                    LET g_imn[l_ac].imn10=l_tot
@@ -7916,7 +7930,7 @@ FUNCTION t324_qty_issue()
           END IF
       END IF
     END IF
- 
+
     RETURN 0
 
 END FUNCTION
@@ -7928,7 +7942,7 @@ FUNCTION t324_du_data_to_correct()
       LET g_imn[l_ac].imn34 = NULL
       LET g_imn[l_ac].imn35 = NULL
    END IF
- 
+
    IF cl_null(g_imn[l_ac].imn30) THEN
       LET g_imn[l_ac].imn31 = NULL
       LET g_imn[l_ac].imn32 = NULL
@@ -7938,12 +7952,12 @@ FUNCTION t324_du_data_to_correct()
       LET g_imn[l_ac].imn44 = NULL
       LET g_imn[l_ac].imn45 = NULL
    END IF
- 
+
    IF cl_null(g_imn[l_ac].imn40) THEN
       LET g_imn[l_ac].imn41 = NULL
       LET g_imn[l_ac].imn42 = NULL
    END IF
- 
+
    DISPLAY BY NAME g_imn[l_ac].imn33
    DISPLAY BY NAME g_imn[l_ac].imn34
    DISPLAY BY NAME g_imn[l_ac].imn35
@@ -8020,7 +8034,7 @@ FUNCTION t324_def_form()
     IF g_aza.aza64 matches '[ Nn]' THEN
        CALL cl_set_comp_visible("immspc",FALSE)
        CALL cl_set_act_visible("trans_spc",FALSE)
-    END IF 
+    END IF
 
    CALL cl_set_act_visible("qry_lot,modi_lot",g_sma.sma95="Y")  #FUN-C80030 add
    CALL cl_set_comp_visible("Page2",g_sma.sma95="Y")            #FUN-C80030 add
@@ -8075,31 +8089,31 @@ FUNCTION t324_chk_jce(p_wip,p_wh1,p_wh2)
 END FUNCTION
 
 FUNCTION t324_set_target()
-  DEFINE l_img09      LIKE img_file.img09      
-  DEFINE l_ima906     LIKE ima_file.ima906      
-  DEFINE l_ima01      LIKE ima_file.ima01      
-  DEFINE l_factor     LIKE imn_file.imn41      
-  DEFINE l_cnt        LIKE type_file.num5   
-  LET g_imn[l_ac].imn40 = g_imn[l_ac].imn30 
-  LET g_imn[l_ac].imn41 = g_imn[l_ac].imn31 
-  LET g_imn[l_ac].imn42 = g_imn[l_ac].imn32 
-  LET g_imn[l_ac].imn43 = g_imn[l_ac].imn33 
-  LET g_imn[l_ac].imn44 = g_imn[l_ac].imn34 
+  DEFINE l_img09      LIKE img_file.img09
+  DEFINE l_ima906     LIKE ima_file.ima906
+  DEFINE l_ima01      LIKE ima_file.ima01
+  DEFINE l_factor     LIKE imn_file.imn41
+  DEFINE l_cnt        LIKE type_file.num5
+  LET g_imn[l_ac].imn40 = g_imn[l_ac].imn30
+  LET g_imn[l_ac].imn41 = g_imn[l_ac].imn31
+  LET g_imn[l_ac].imn42 = g_imn[l_ac].imn32
+  LET g_imn[l_ac].imn43 = g_imn[l_ac].imn33
+  LET g_imn[l_ac].imn44 = g_imn[l_ac].imn34
   LET g_imn[l_ac].imn45 = g_imn[l_ac].imn35
-  LET g_imn[l_ac].imn51 = 1 
+  LET g_imn[l_ac].imn51 = 1
   LET g_imn[l_ac].imn52 = 1
   SELECT ima906 INTO l_ima906 FROM ima_file WHERE ima01 = g_imn[l_ac].imn03
   IF g_sma.sma115 = 'Y' AND l_ima906 != '2' THEN
-     SELECT img09 INTO l_img09 FROM img_file 
+     SELECT img09 INTO l_img09 FROM img_file
           WHERE img01 = g_imn[l_ac].imn03
             AND img02 = g_imn[l_ac].imn15
             AND img03 = g_imn[l_ac].imn16
             AND img04 = g_imn[l_ac].imn17
-    
-     IF NOT cl_null(l_img09) AND g_imn[l_ac].imn40 != l_img09 THEN 
+
+     IF NOT cl_null(l_img09) AND g_imn[l_ac].imn40 != l_img09 THEN
         CALL s_umfchk(g_imn[l_ac].imn03,g_imn[l_ac].imn40,l_img09)
              RETURNING l_cnt,l_factor
-        
+
         IF l_cnt = 1 THEN LET l_factor = 1 END IF
         LET g_imn[l_ac].imn41 = l_factor
      END IF
@@ -8111,7 +8125,7 @@ FUNCTION t324_set_target()
                   g_imn[l_ac].imn44,
                   g_imn[l_ac].imn45,
                   g_imn[l_ac].imn51,
-                  g_imn[l_ac].imn52 
+                  g_imn[l_ac].imn52
 END FUNCTION
 
 FUNCTION t324_set_imn40()
@@ -8124,7 +8138,7 @@ FUNCTION t324_set_imn40()
                       g_imn[l_ac].imn40) RETURNING g_flag
       IF g_flag = 1 THEN
          IF g_sma.sma892[3,3] = 'Y' THEN
-            IF NOT cl_confirm('aim-995') THEN 
+            IF NOT cl_confirm('aim-995') THEN
                RETURN FALSE
             END IF
          END IF
@@ -8150,7 +8164,7 @@ FUNCTION t324_set_imn43()
                    g_imn[l_ac].imn43) RETURNING g_flag
    IF g_flag = 1 THEN
       IF g_sma.sma892[3,3] = 'Y' THEN
-         IF NOT cl_confirm('aim-995') THEN 
+         IF NOT cl_confirm('aim-995') THEN
             RETURN FALSE
          END IF
       END IF
@@ -8167,7 +8181,7 @@ FUNCTION t324_set_imn43()
 END FUNCTION
 
 FUNCTION t324_refresh_detail()
-  DEFINE l_compare          LIKE smy_file.smy62    
+  DEFINE l_compare          LIKE smy_file.smy62
   DEFINE li_col_count       LIKE type_file.num5    #No.FUN-690026 SMALLINT
   DEFINE li_i, li_j         LIKE type_file.num5    #No.FUN-690026 SMALLINT
   DEFINE lc_agb03           LIKE agb_file.agb03
@@ -8178,14 +8192,14 @@ FUNCTION t324_refresh_detail()
   DEFINE ls_sql             STRING
   DEFINE ls_show,ls_hide    STRING
   DEFINE l_gae04            LIKE gae_file.gae04
-   
+
   #判斷是否進行料件多屬性新機制管理以及是否傳入了屬性群組
   IF ( g_sma.sma120 = 'Y' )AND( g_sma.sma907 = 'Y' )AND(NOT cl_null(lg_smy62)) THEN
      #首先判斷有無單身記錄，如果單身根本沒有東東，則按照默認的lg_smy62來決定
      #顯示什么組別的信息，如果有單身，則進行下面的邏輯判斷
      IF g_imn.getLength() = 0 THEN
         LET lg_group = lg_smy62
-     ELSE   
+     ELSE
        #讀取當前單身所有的料件資料，如果它們都屬于多屬性子料件，并且擁有一致的
        #屬性群組，則以該屬性群組作為顯示單身明細屬性的依據，如果有不統一的狀況
        #則返回一個NULL，下面將不顯示任明細屬性列
@@ -8198,21 +8212,21 @@ FUNCTION t324_refresh_detail()
          END IF
          SELECT imaag INTO l_compare FROM ima_file WHERE ima01 = g_imn[li_i].att00
          #第一次是賦值
-         IF cl_null(lg_group) THEN 
+         IF cl_null(lg_group) THEN
             LET lg_group = l_compare
-         #以后是比較   
-         ELSE 
+         #以后是比較
+         ELSE
            #如果在單身料件屬于不同的屬性組則直接退出（不顯示這些東東)
            IF l_compare <> lg_group THEN
               LET lg_group = ''
               EXIT FOR
            END IF
          END IF
-         IF lg_group <> lg_smy62 THEN       
-            LET lg_group = '' 
-            EXIT FOR      
+         IF lg_group <> lg_smy62 THEN
+            LET lg_group = ''
+            EXIT FOR
          END IF
-       END FOR 
+       END FOR
      END IF
 
      #到這里時lg_group中存放的已經是應該顯示的組別了，該變量是一個全局變量
@@ -8221,10 +8235,10 @@ FUNCTION t324_refresh_detail()
 
      #走到這個分支說明是采用新機制，那么使用att00父料件編號代替imn03子料件編號來顯示
      #得到當前語言別下imn03的欄位標題
-     SELECT gae04 INTO l_gae04 FROM gae_file 
+     SELECT gae04 INTO l_gae04 FROM gae_file
        WHERE gae01 = g_prog AND gae02 = 'imn03' AND gae03 = g_lang
      CALL cl_set_comp_att_text("att00",l_gae04)
-     
+
      #為了提高效率，把需要顯示和隱藏的欄位都放到各自的變量里，然后在結尾的地方一次性顯示或隱藏
      IF NOT cl_null(lg_group) THEN
         LET ls_hide = 'imn03,ima02'
@@ -8251,12 +8265,12 @@ FUNCTION t324_refresh_detail()
              LET ls_show = ls_show || ",att" || lc_index
              LET ls_hide = ls_hide || ",att" || lc_index || "_c"
              CALL cl_set_comp_att_text("att" || lc_index,lr_agc[li_i].agc02)
-             
+
              #這里需要判別g_sma.sma908,如果是允許新增子料件則要把這些屬性設置成為REQUIRED的,否則要設成NOENTRY
              CALL cl_chg_comp_att("formonly.att" || lc_index,"NOT NULL|REQUIRED|SCROLL","1|1|1")
            WHEN '2'
              LET ls_show = ls_show || ",att" || lc_index || "_c"
-             LET ls_hide = ls_hide || ",att" || lc_index 
+             LET ls_hide = ls_hide || ",att" || lc_index
              CALL cl_set_comp_att_text("att" || lc_index || "_c",lr_agc[li_i].agc02)
              LET ls_sql = "SELECT * FROM agd_file WHERE agd01 = '",lr_agc[li_i].agc01,"'"
              DECLARE agd_curs CURSOR FROM ls_sql
@@ -8287,8 +8301,8 @@ FUNCTION t324_refresh_detail()
              #這里需要判別g_sma.sma908,如果是允許新增子料件則要把這些屬性設置成為REQUIRED的,否則要設成NOENTRY
              CALL cl_chg_comp_att("formonly.att" || lc_index,"NOT NULL|REQUIRED|SCROLL","1|1|1")
        END CASE
-     END FOR       
-    
+     END FOR
+
   ELSE
     #否則什么也不做(不顯示任何屬性列)
     LET li_i = 1
@@ -8296,7 +8310,7 @@ FUNCTION t324_refresh_detail()
     LET ls_hide = 'att00'
     LET ls_show = 'imn03'
   END IF
-  
+
   #下面開始隱藏其他明細屬性欄位(從li_i開始)
   FOR li_j = li_i TO 10
       LET lc_index = li_j USING '&&'
@@ -8307,7 +8321,7 @@ FUNCTION t324_refresh_detail()
   #這樣只用調兩次公共函數就可以解決問題了，效率應該會高一些
   CALL cl_set_comp_visible(ls_show, TRUE)
   CALL cl_set_comp_visible(ls_hide, FALSE)
- 
+
 END FUNCTION
 
 #--------------------在修改下面的代碼前請讀一下注釋先，謝了! -----------------------
@@ -8320,12 +8334,12 @@ END FUNCTION
 
 #本函數返回TRUE/FALSE,表示檢核過程是否通過，一般說來，在使用過程中應該是如下方式□
 #    AFTER FIELD XXX
-#        IF NOT t324_check_imn03(.....)  THEN NEXT FIELD XXX END IF        
+#        IF NOT t324_check_imn03(.....)  THEN NEXT FIELD XXX END IF
 FUNCTION t324_check_imn03(p_field,p_ac)
 DEFINE
   p_field                     STRING,    #當前是在哪個欄位中觸發了AFTER FIELD事件
   p_ac                        LIKE type_file.num5,    #g_imn數組中的當前記錄下標  #No.FUN-690026 SMALLINT
-                              
+
   l_ps                        LIKE sma_file.sma46,
   l_str_tok                   base.stringTokenizer,
   l_tmp, ls_sql               STRING,
@@ -8333,7 +8347,7 @@ DEFINE
   l_cnt, li_i                 LIKE type_file.num5,    #No.FUN-690026 SMALLINT
   ls_value                    STRING,
   ls_pid,ls_value_fld         LIKE ima_file.ima01,
-  ls_name, ls_spec            STRING, 
+  ls_name, ls_spec            STRING,
   lc_agb03                    LIKE agb_file.agb03,
   lc_agd03                    LIKE agd_file.agd03,
   ls_pname                    LIKE ima_file.ima02,
@@ -8355,7 +8369,7 @@ DEFINE
    DEFINE l_rtz07              LIKE rtz_file.rtz07
    DEFINE l_rtz08              LIKE rtz_file.rtz08
    #FUN-C20002--end add----------------------------
-  
+
   #如果當前欄位是新增欄位（母料件編號以及十個明細屬性欄位）的時候，如果全部輸了值則合成出一個
   #新的子料件編號并把值填入到已經隱藏起來的imn03中（如果imxXX能夠顯示，imn03一定是隱藏的）
   #下面就可以直接沿用imn03的檢核邏輯了
@@ -8364,12 +8378,12 @@ DEFINE
      ( p_field = 'imx03' )OR( p_field = 'imx04' )OR( p_field = 'imx05' )OR
      ( p_field = 'imx06' )OR( p_field = 'imx07' )OR( p_field = 'imx08' )OR
      ( p_field = 'imx09' )OR( p_field = 'imx10' ) THEN
-     
+
      #首先判斷需要的欄位是否全部完成了輸入（只有母料件編號+被顯示出來的所有明細屬性
      #全部被輸入完成了才進行后續的操作
      LET ls_pid = g_imn[p_ac].att00   # ls_pid 父料件編號
      LET ls_value = g_imn[p_ac].att00   # ls_value 子料件編號
-     IF cl_null(ls_pid) THEN 
+     IF cl_null(ls_pid) THEN
         #MOD-640107 Add ,所有要返回TRUE的分支都要加這兩句話,原來下面的會被
         #注釋掉
         CALL t324_set_no_entry_b()
@@ -8377,11 +8391,11 @@ DEFINE
         CALL t324_set_required()
         #FUN-540049  --end
 
-        RETURN TRUE,g_imn[l_ac].ima02,g_imn[l_ac].ima021 
+        RETURN TRUE,g_imn[l_ac].ima02,g_imn[l_ac].ima021
      END IF  #注意這里沒有錯，所以返回TRUE
-     
+
      #取出當前母料件包含的明細屬性的個數
-     SELECT COUNT(*) INTO l_cnt FROM agb_file WHERE agb01 = 
+     SELECT COUNT(*) INTO l_cnt FROM agb_file WHERE agb01 =
         (SELECT imaag FROM ima_file WHERE ima01 = ls_pid)
      IF l_cnt = 0 THEN
         #MOD-640107 Add ,所有要返回TRUE的分支都要加這兩句話,原來下面的會被
@@ -8390,34 +8404,34 @@ DEFINE
         #FUN-540049  --begin
         CALL t324_set_required()
         #FUN-540049  --end
-         
-         RETURN TRUE,g_imn[l_ac].ima02,g_imn[l_ac].ima021  
+
+         RETURN TRUE,g_imn[l_ac].ima02,g_imn[l_ac].ima021
      END IF
-     
+
      FOR li_i = 1 TO l_cnt
          #如果有任何一個明細屬性應該輸而沒有輸的則退出
-         IF cl_null(arr_detail[p_ac].imx[li_i]) THEN 
+         IF cl_null(arr_detail[p_ac].imx[li_i]) THEN
             #MOD-640107 Add ,所有要返回TRUE的分支都要加這兩句話,原來下面的會被
             #注釋掉
             CALL t324_set_no_entry_b()
             #FUN-540049  --begin
             CALL t324_set_required()
             #FUN-540049  --end
-            
-            RETURN TRUE,g_imn[l_ac].ima02,g_imn[l_ac].ima021 
-         END IF  
+
+            RETURN TRUE,g_imn[l_ac].ima02,g_imn[l_ac].ima021
+         END IF
      END FOR
 
      #得到系統定義的標准分隔符sma46
-     SELECT sma46 INTO l_ps FROM sma_file    
-     
+     SELECT sma46 INTO l_ps FROM sma_file
+
      #合成子料件的名稱
      SELECT ima02 INTO ls_pname FROM ima_file   # ls_name 父料件名稱
        WHERE ima01 = ls_pid
      LET ls_spec = ls_pname  # ls_spec 子料件名稱
      #方法□循環在agd_file中找有沒有對應記錄，如果有，就用該記錄的名稱來
      #替換初始名稱，如果找不到則就用原來的名稱
-     FOR li_i = 1 TO l_cnt  
+     FOR li_i = 1 TO l_cnt
          LET lc_agd03 = ""
          LET ls_value = ls_value.trim(), l_ps, arr_detail[p_ac].imx[li_i]
          SELECT agd03 INTO lc_agd03 FROM agd_file
@@ -8427,15 +8441,15 @@ DEFINE
          ELSE
             LET ls_spec = ls_spec.trim(),l_ps,lc_agd03
          END IF
-     END FOR     
-     
+     END FOR
+
      #解析ls_value生成要傳給cl_copy_bom的那個l_param_list
      LET l_str_tok = base.StringTokenizer.create(ls_value,l_ps)
      LET l_tmp = l_str_tok.nextToken()   #先把第一個部分--名稱去掉
 
      LET ls_sql = "SELECT agb03 FROM agb_file,ima_file WHERE ",
                   "ima01 = '",ls_pid CLIPPED,"' AND agb01 = imaag ",
-                  "ORDER BY agb02"  
+                  "ORDER BY agb02"
      DECLARE param_curs CURSOR FROM ls_sql
      FOREACH param_curs INTO lc_agb03
        #l_str_tok中的Tokens數量應該和param_curs中的記錄數量完全一致
@@ -8444,38 +8458,38 @@ DEFINE
        ELSE
           LET l_param_list = l_param_list,'|#',lc_agb03,'#|',l_str_tok.nextToken()
        END IF
-     END FOREACH     
+     END FOREACH
 
-     #出貨單不允許新增ima_file里面沒有的子料件，故在此檢查一下                                                                   
+     #出貨單不允許新增ima_file里面沒有的子料件，故在此檢查一下
      LET g_value =ls_value
      SELECT count(*) INTO l_n FROM ima_file
       WHERE ima01 = g_value
-     IF l_n =0 THEN                                                                                                              
-        CALL cl_err(ls_value,'atm-523',0)                                                                                        
-        RETURN FALSE,g_imn[l_ac].ima02,g_imn[l_ac].ima021                                                                                                                   
+     IF l_n =0 THEN
+        CALL cl_err(ls_value,'atm-523',0)
+        RETURN FALSE,g_imn[l_ac].ima02,g_imn[l_ac].ima021
      END IF
-     
+
      #調用cl_copy_ima將新生成的子料件插入到數據庫中
      IF cl_copy_ima(ls_pid,ls_value,ls_spec,l_param_list) = TRUE THEN
         #如果向其中成功插入記錄則同步插入屬性記錄到imx_file中去
-        LET ls_value_fld = ls_value 
+        LET ls_value_fld = ls_value
 #       #如果向imx_file中插入記錄失敗則也應將ima_file中已經建立的紀錄刪除以保証兩邊
 #       #記錄的完全同步
         IF SQLCA.sqlcode THEN
-           RETURN FALSE,g_imn[l_ac].ima02,g_imn[l_ac].ima021 
+           RETURN FALSE,g_imn[l_ac].ima02,g_imn[l_ac].ima021
         END IF
-     END IF 
+     END IF
      #把生成的子料件賦給imn03，否則下面的檢查就沒有意義了
      LET g_imn[p_ac].imn03 = ls_value
-  ELSE 
-    IF ( p_field <> 'imn03' )AND( p_field <> 'imx00' ) THEN 
-       RETURN FALSE,g_imn[l_ac].ima02,g_imn[l_ac].ima021 
+  ELSE
+    IF ( p_field <> 'imn03' )AND( p_field <> 'imx00' ) THEN
+       RETURN FALSE,g_imn[l_ac].ima02,g_imn[l_ac].ima021
     END IF
   END IF
-  
+
   #到這里已經完成了以前在cl_itemno_multi_att()中做的所有准備工作，在系統資料庫
   #中已經有了對應的子料件的名稱，下面可以按照imn03進行判斷了
-  
+
   #--------重要 !!!!!!!!!!!-------------------------
   #下面的代碼都是從原INPUT ARRAY中的AFTER FIELD imn03段拷貝來的，唯一做的修改
   #是將原來的NEXT FIELD 語句都改成了RETURN FALSE, xxx,xxx ... ，因為NEXE FIELD
@@ -8483,11 +8497,11 @@ DEFINE
   #返回的還有一些CHECK過程中要從ima_file中取得的欄位信息，其他的比如判斷邏輯和
   #錯誤提示都沒有改，如果你需要在里面添加代碼請注意上面的那個要點就可以了
   IF NOT cl_null(g_imn[l_ac].imn03) THEN
-     IF g_sma.sma120 = 'Y' THEN                                                                                          
+     IF g_sma.sma120 = 'Y' THEN
         LET l_multi = '4'
         CALL cl_itemno_multi_att("imn03",g_imn[l_ac].imn03,"","1","3") RETURNING l_multi,g_imn[l_ac].imn03,g_imn[l_ac].ima02
-        DISPLAY g_imn[l_ac].imn03 TO imn03                                                                               
-        DISPLAY g_imn[l_ac].ima02 TO ima02                                                                               
+        DISPLAY g_imn[l_ac].imn03 TO imn03
+        DISPLAY g_imn[l_ac].ima02 TO ima02
      END IF
      SELECT ima02,ima021 INTO g_imn[l_ac].ima02,g_imn[l_ac].ima021 #CHI-6A0015 remark
         FROM ima_file
@@ -8495,13 +8509,13 @@ DEFINE
      IF STATUS THEN
         CALL cl_err3("sel","ima_file",g_imn[l_ac].imn03,"",SQLCA.sqlcode,"",
                      "sel ima",1)   #NO.FUN-640266 #No:FUN-660156
-        RETURN FALSE,g_imn[l_ac].ima02,g_imn[l_ac].ima021    #No:MOD-690044 add                                                                                                               
+        RETURN FALSE,g_imn[l_ac].ima02,g_imn[l_ac].ima021    #No:MOD-690044 add
      END IF
-       
+
      IF (cl_null(g_imn_t.imn03) OR g_imn_t.imn03 <> g_imn[l_ac].imn03 ) AND g_flag1 <> 'Y' THEN   #MOD-D20164 add  g_flag1 , ()
         #FUN-C20002--start add---------------------------------------------
         IF g_azw.azw04 = '2' THEN
-           SELECT ima154 INTO l_ima154 
+           SELECT ima154 INTO l_ima154
              FROM ima_file
             WHERE ima01 = g_imn[l_ac].imn03
            IF l_ima154 = 'Y' AND g_imn[l_ac].imn03[1,4] <> 'MISC' THEN
@@ -8510,35 +8524,35 @@ DEFINE
                WHERE rcj00 = '0'
 
               #FUN-C90049 mark begin---
-              #SELECT rtz07,rtz08 INTO l_rtz07,l_rtz08 
+              #SELECT rtz07,rtz08 INTO l_rtz07,l_rtz08
               #  FROM rtz_file
               # WHERE rtz01 = g_plant
               #FUN-C90049 mark end-----
 
               CALL s_get_defstore(g_plant,g_imn[l_ac].imn03) RETURNING l_rtz07,l_rtz08
-        
+
               IF l_rcj03 = '1' THEN
                  LET g_imn[l_ac].imn04 = l_rtz07
-              ELSE 
+              ELSE
                  LET g_imn[l_ac].imn04 = l_rtz08
-              END IF 
-           END IF   
-        ELSE   
-        #FUN-C20002--end add----------------------------------------------- 
+              END IF
+           END IF
+        ELSE
+        #FUN-C20002--end add-----------------------------------------------
        LET g_imn[l_ac].imn06 = NULL
-       SELECT ima35,ima36                                 
-         INTO g_imn[l_ac].imn04,g_imn[l_ac].imn05   
+       SELECT ima35,ima36
+         INTO g_imn[l_ac].imn04,g_imn[l_ac].imn05
           FROM ima_file
          WHERE ima01=g_imn[l_ac].imn03 AND imaacti = 'Y'  #genero add
        END IF    #FUN-C20002 add
-#FUN-AB0066 --begin--  
+#FUN-AB0066 --begin--
 #         #No.FUN-AA0049--begin
 #         IF NOT s_chk_ware(g_imn[l_ac].imn04) THEN
 #            LET g_imn[l_ac].imn04=' '
 #            LET g_imn[l_ac].imn05=' '
-#         END IF 
-#         #No.FUN-AA0049--end                  
-#FUN-AB0066 --end--         
+#         END IF
+#         #No.FUN-AA0049--end
+#FUN-AB0066 --end--
      END IF
      DISPLAY BY NAME g_imn[l_ac].ima02
      DISPLAY BY NAME g_imn[l_ac].ima021
@@ -8546,7 +8560,7 @@ DEFINE
         CALL s_chk_va_setting(g_imn[l_ac].imn03)
              RETURNING g_flag,g_ima906,g_ima907
         IF g_flag=1 THEN
-           RETURN FALSE,g_imn[l_ac].ima02,g_imn[l_ac].ima021 
+           RETURN FALSE,g_imn[l_ac].ima02,g_imn[l_ac].ima021
         END IF
         IF g_ima906 = '3' THEN
              LET g_imn[l_ac].imn33=g_ima907
@@ -8561,7 +8575,7 @@ DEFINE
       RETURN TRUE,g_imn[l_ac].ima02,g_imn[l_ac].ima021
    ELSE
       IF ( p_field = 'imn03' )OR( p_field = 'imx00' ) THEN
-         CALL t324_set_no_entry_b()                                                                                                    
+         CALL t324_set_no_entry_b()
          CALL t324_set_required()
          RETURN TRUE,g_imn[l_ac].ima02,g_imn[l_ac].ima021
       ELSE
@@ -8569,7 +8583,7 @@ DEFINE
       END IF
    END IF
 END FUNCTION
-         
+
 #用于att01~att10這十個輸入型屬性欄位的AFTER FIELD事件的判斷函數
 #傳入參數:p_value 要比較的欄位內容,p_index當前欄位的索引號(從1~10表示att01~att10)
 #         p_row是當前行索引,傳入INPUT ARRAY中使用的l_ac即可
@@ -8588,20 +8602,20 @@ DEFINE
   l_imaacti       LIKE ima_file.imaacti,
   l_ima130        LIKE ima_file.ima130,   #FUN-660078
   l_ima131        LIKE ima_file.ima131,   #FUN-660078
-  l_ima25         LIKE ima_file.ima25 
-  
+  l_ima25         LIKE ima_file.ima25
+
   #這個欄位一旦進入了就不能忽略，因為要保証在輸入其他欄位之前必須要生成imn03料件編號
-  IF cl_null(p_value) THEN 
-     RETURN FALSE,g_imn[l_ac].ima02,g_imn[l_ac].ima021 
+  IF cl_null(p_value) THEN
+     RETURN FALSE,g_imn[l_ac].ima02,g_imn[l_ac].ima021
   END IF
 
   #這里使用到了一個用于存放當前屬性組包含的所有屬性信息的全局數組lr_agc
   #該數組會由t324_refresh_detail()函數在較早的時候填充
-  
+
   #判斷長度與定義的使用位數是否相等
   IF LENGTH(p_value CLIPPED) <> lr_agc[p_index].agc03 THEN
      CALL cl_err_msg("","aim-911",lr_agc[p_index].agc03,1)
-     RETURN FALSE,g_imn[l_ac].ima02,g_imn[l_ac].ima021 
+     RETURN FALSE,g_imn[l_ac].ima02,g_imn[l_ac].ima021
   END IF
   #比較大小是否在合理范圍之內
   LET li_min_num = lr_agc[p_index].agc05
@@ -8609,19 +8623,19 @@ DEFINE
   IF (lr_agc[p_index].agc05 IS NOT NULL) AND
      (p_value < li_min_num) THEN
      CALL cl_err_msg("","lib-232",lr_agc[p_index].agc05 || "|" || lr_agc[p_index].agc06,1)
-     RETURN FALSE,g_imn[l_ac].ima02,g_imn[l_ac].ima021 
+     RETURN FALSE,g_imn[l_ac].ima02,g_imn[l_ac].ima021
   END IF
   IF (lr_agc[p_index].agc06 IS NOT NULL) AND
      (p_value > li_max_num) THEN
      CALL cl_err_msg("","lib-232",lr_agc[p_index].agc05 || "|" || lr_agc[p_index].agc06,1)
-     RETURN FALSE,g_imn[l_ac].ima02,g_imn[l_ac].ima021 
+     RETURN FALSE,g_imn[l_ac].ima02,g_imn[l_ac].ima021
   END IF
   #通過了欄位檢查則可以下面的合成子料件代碼以及相應的檢核操作了
   LET arr_detail[p_row].imx[p_index] = p_value
   LET l_index = p_index USING '&&'
-  CALL t324_check_imn03('imx' || l_index ,p_row) 
-    RETURNING l_check_res,g_imn[l_ac].ima02,g_imn[l_ac].ima021 
-    RETURN l_check_res,g_imn[l_ac].ima02,g_imn[l_ac].ima021 
+  CALL t324_check_imn03('imx' || l_index ,p_row)
+    RETURNING l_check_res,g_imn[l_ac].ima02,g_imn[l_ac].ima021
+    RETURN l_check_res,g_imn[l_ac].ima02,g_imn[l_ac].ima021
 END FUNCTION
 
 #用于att01_c~att10_c這十個選擇型屬性欄位的AFTER FIELD事件的判斷函數
@@ -8644,16 +8658,16 @@ DEFINE
 
 
   #這個欄位一旦進入了就不能忽略，因為要保証在輸入其他欄位之前必須要生成imn03料件編號
-  IF cl_null(p_value) THEN 
-     RETURN FALSE,g_imn[l_ac].ima02,g_imn[l_ac].ima021 
-  END IF       
-  #下拉框選擇項相當簡單，不需要進行范圍和長度的判斷，因為肯定是符合要求的了  
+  IF cl_null(p_value) THEN
+     RETURN FALSE,g_imn[l_ac].ima02,g_imn[l_ac].ima021
+  END IF
+  #下拉框選擇項相當簡單，不需要進行范圍和長度的判斷，因為肯定是符合要求的了
   LET arr_detail[p_row].imx[p_index] = p_value
   LET l_index = p_index USING '&&'
   CALL t324_check_imn03('imx'||l_index,p_row)
-  RETURNING l_check_res,g_imn[l_ac].ima02,g_imn[l_ac].ima021 
-  RETURN l_check_res,g_imn[l_ac].ima02,g_imn[l_ac].ima021 
-END FUNCTION         
+  RETURNING l_check_res,g_imn[l_ac].ima02,g_imn[l_ac].ima021
+  RETURN l_check_res,g_imn[l_ac].ima02,g_imn[l_ac].ima021
+END FUNCTION
 
 #FUN-A60034---mark---str---
 #FUNCTION t324_y_chk()
@@ -8663,29 +8677,29 @@ END FUNCTION
 #   DEFINE l_n        LIKE type_file.num10   #No.MOD-9C0380
 #
 #   LET g_success = 'Y'
-#   IF cl_null(g_imm.imm01) THEN 
-#      CALL cl_err('',-400,0) 
+#   IF cl_null(g_imm.imm01) THEN
+#      CALL cl_err('',-400,0)
 #      LET g_success = 'N'
-#      RETURN 
+#      RETURN
 #   END IF
-#   
-#   SELECT * INTO g_imm.* FROM imm_file WHERE imm01 = g_imm.imm01 
+#
+#   SELECT * INTO g_imm.* FROM imm_file WHERE imm01 = g_imm.imm01
 #
 ##FUN-AB0066 --begin--
-#   IF NOT s_chk_ware(g_imm.imm08) THEN 
+#   IF NOT s_chk_ware(g_imm.imm08) THEN
 #      LET g_success = 'N'
-#      RETURN 
-#   END IF 
+#      RETURN
+#   END IF
 ##FUN-AB0066 --end--
-#   
+#
 #   IF g_imm.immconf='Y' THEN
-#      LET g_success = 'N'           
-#      CALL cl_err('','9023',0)      
+#      LET g_success = 'N'
+#      CALL cl_err('','9023',0)
 #      RETURN
 #   END IF
 #
 #   IF g_imm.immconf = 'X' THEN
-#      LET g_success = 'N'   
+#      LET g_success = 'N'
 #      CALL cl_err(' ','9024',0)
 #      RETURN
 #   END IF
@@ -8693,7 +8707,7 @@ END FUNCTION
 #   SELECT COUNT(*) INTO l_cnt FROM imn_file  #No.MOD-A50162
 #    WHERE imn01= g_imm.imm01                 #No.MOD-A50162
 #   IF l_cnt = 0 THEN
-#      LET g_success = 'N'   
+#      LET g_success = 'N'
 #      CALL cl_err('','mfg-009',0)
 #      RETURN
 #   END IF
@@ -8713,21 +8727,21 @@ END FUNCTION
 #   FOREACH t324_y_chk_c INTO b_imn.*
 #
 ##FUN-AB0066 --begin--
-#     IF NOT s_chk_ware(b_imn.imn04) THEN 
+#     IF NOT s_chk_ware(b_imn.imn04) THEN
 #        LET g_success = 'N'
-#        RETURN 
-#     END IF 
-#     IF NOT s_chk_ware(b_imn.imn15) THEN 
+#        RETURN
+#     END IF
+#     IF NOT s_chk_ware(b_imn.imn15) THEN
 #        LET g_success = 'N'
-#        RETURN 
-#     END IF    
+#        RETURN
+#     END IF
 ##FUN-AB0066 --end--
 #
-#      SELECT ima918,ima921 INTO g_ima918,g_ima921 
+#      SELECT ima918,ima921 INTO g_ima918,g_ima921
 #        FROM ima_file
 #       WHERE ima01 = b_imn.imn03
 #         AND imaacti = "Y"
-#      
+#
 #      IF g_ima918 = "Y" OR g_ima921 = "Y" THEN
 #         SELECT SUM(rvbs06) INTO l_rvbs06
 #           FROM rvbs_file
@@ -8736,11 +8750,11 @@ END FUNCTION
 #            AND rvbs02 = b_imn.imn02
 #            AND rvbs09 = -1
 #            AND rvbs13 = 0
-#            
+#
 #         IF cl_null(l_rvbs06) THEN
 #            LET l_rvbs06 = 0
 #         END IF
-#            
+#
 #         IF b_imn.imn10 <> l_rvbs06 THEN
 #            LET g_success = "N"
 #            CALL cl_err(b_imn.imn03,"aim-011",1)
@@ -8770,12 +8784,12 @@ END FUNCTION
 #   FETCH t324_cl INTO g_imm.*          # 鎖住將被更改或取消的資料
 #   IF SQLCA.sqlcode THEN
 #       CALL cl_err(g_imm.imm01,SQLCA.sqlcode,0)     # 資料被他人LOCK
-#       CLOSE t324_cl 
-#       ROLLBACK WORK 
+#       CLOSE t324_cl
+#       ROLLBACK WORK
 #       RETURN
 #   END IF
 #   CLOSE t324_cl
-#   UPDATE imm_file SET immconf = 'Y' WHERE imm01 = g_imm.imm01 
+#   UPDATE imm_file SET immconf = 'Y' WHERE imm01 = g_imm.imm01
 #   IF STATUS OR SQLCA.sqlerrd[3] = 0 THEN
 #      CALL cl_err3("upd","imm_file",g_imm.imm01,"",SQLCA.sqlcode,"",
 #                   "upd ummconf",1)  #No:FUN-660156
@@ -8800,14 +8814,14 @@ FUNCTION t324_z()
    DEFINE l_cnt     LIKE type_file.num5      #FUN-680010  #No.FUN-690026 SMALLINT
 
    IF cl_null(g_imm.imm01) THEN CALL cl_err('',-400,0) RETURN END IF
-   SELECT * INTO g_imm.* FROM imm_file WHERE imm01 = g_imm.imm01 
+   SELECT * INTO g_imm.* FROM imm_file WHERE imm01 = g_imm.imm01
   #IF g_imm.immconf='N' THEN RETURN END IF                           #FUN-A60034 mark
    IF g_imm.immconf='N' THEN CALL cl_err('','9025',1) RETURN END IF  #FUN-A60034 add #此筆資料尚未確認, 不可取消確認
    IF g_imm.immconf = 'X' THEN CALL cl_err(' ','9024',0) RETURN END IF
 
    #-->已有QC單則不可取消確認
    SELECT COUNT(*) INTO l_cnt FROM qcs_file
-    WHERE qcs01 = g_imm.imm01 AND qcs00='C'  
+    WHERE qcs01 = g_imm.imm01 AND qcs00='C'
       AND qcs14 <> 'X'         #MOD-AB0161 add
    IF l_cnt > 0 THEN
       CALL cl_err(' ','aqc-118',0)
@@ -8833,7 +8847,7 @@ FUNCTION t324_z()
   #IF NOT cl_confirm('axm-109') THEN RETURN END IF    #MOD-AA0041 mark
    BEGIN WORK
 
-   OPEN t324_cl USING g_imm.imm01  
+   OPEN t324_cl USING g_imm.imm01
    IF STATUS THEN
       CALL cl_err("OPEN t324_cl:", STATUS, 1)
       CLOSE t324_cl
@@ -8843,26 +8857,26 @@ FUNCTION t324_z()
    FETCH t324_cl INTO g_imm.*          # 鎖住將被更改或取消的資料
    IF SQLCA.sqlcode THEN
       CALL cl_err(g_imm.imm01,SQLCA.sqlcode,0)     # 資料被他人LOCK
-      CLOSE t324_cl 
-      ROLLBACK WORK 
+      CLOSE t324_cl
+      ROLLBACK WORK
       RETURN
    END IF
   #MOD-AA0103---modify---start---
-  #IF NOT cl_confirm('axm-109') THEN RETURN END IF    #MOD-AA0041 add 
+  #IF NOT cl_confirm('axm-109') THEN RETURN END IF    #MOD-AA0041 add
   #CLOSE t324_cl
-   IF NOT cl_confirm('axm-109') THEN 
-      CLOSE t324_cl 
-      ROLLBACK WORK 
-      RETURN 
-   END IF    
+   IF NOT cl_confirm('axm-109') THEN
+      CLOSE t324_cl
+      ROLLBACK WORK
+      RETURN
+   END IF
   #MOD-AA0103---modify---end---
    LET g_success = 'Y'
-   UPDATE imm_file 
+   UPDATE imm_file
       SET immconf = 'N',
           imm15 = '0'  #FUN-A60034 add
-    WHERE imm01 = g_imm.imm01 
-   IF SQLCA.sqlcode OR SQLCA.sqlerrd[3] = 0 THEN 
-      LET g_success = 'N' 
+    WHERE imm01 = g_imm.imm01
+   IF SQLCA.sqlcode OR SQLCA.sqlerrd[3] = 0 THEN
+      LET g_success = 'N'
    END IF
    IF g_success = 'Y' THEN
       LET g_imm.immconf='N'
@@ -8909,19 +8923,19 @@ DEFINE l_err          STRING
    LET l_qc_prog = "aqct700"               #設定QC單的程式代號
 
    #若在 QC 單已有此單號相關資料，則取消拋轉至 SPC
-   SELECT COUNT(*) INTO l_cnt FROM qcs_file WHERE qcs01 = g_imm.imm01  
+   SELECT COUNT(*) INTO l_cnt FROM qcs_file WHERE qcs01 = g_imm.imm01
    IF l_cnt > 0 THEN
       CALL cl_get_progname(l_qc_prog,g_lang) RETURNING l_gaz03
       CALL cl_err_msg(g_imm.imm01,'aqc-115', l_gaz03 CLIPPED || "|" || l_qc_prog CLIPPED,'1')
       LET g_success='N'
       RETURN
    END IF
-  
+
    #需要 QC 檢驗的筆數
-   SELECT COUNT(*) INTO l_qc_cnt FROM imn_file 
-    WHERE imn01 = g_imm.imm01 AND imn29 = 'Y'   
-   IF l_qc_cnt = 0 THEN 
-      CALL cl_err(g_imm.imm01,l_err,0) 
+   SELECT COUNT(*) INTO l_qc_cnt FROM imn_file
+    WHERE imn01 = g_imm.imm01 AND imn29 = 'Y'
+   IF l_qc_cnt = 0 THEN
+      CALL cl_err(g_imm.imm01,l_err,0)
       LET g_success='N'
       RETURN
    END IF
@@ -8934,7 +8948,7 @@ DEFINE l_err          STRING
        display l_cmd
        LET l_cmd = l_qc_prog CLIPPED," '",g_imm.imm01,"' '",l_imn02,"' '1' 'SPC' 'C'"
        CALL aws_spccli_qc(l_qc_prog,l_cmd)
-   END FOREACH 
+   END FOREACH
 
    #判斷產生的 QC 單筆數是否正確
    SELECT COUNT(*) INTO l_cnt FROM qcs_file WHERE qcs01 = g_imm.imm01
@@ -8943,17 +8957,17 @@ DEFINE l_err          STRING
       LET g_success='N'
       RETURN
    END IF
- 
+
    LET l_sql  = "SELECT *  FROM qcs_file WHERE qcs01 = '",g_imm.imm01,"'"
    PREPARE t324_qc_p FROM l_sql
    DECLARE t324_qc_c CURSOR WITH HOLD FOR t324_qc_p
    LET l_cnt = 1
    FOREACH t324_qc_c INTO l_qcs[l_cnt].*
-       LET l_cnt = l_cnt + 1 
+       LET l_cnt = l_cnt + 1
    END FOREACH
    CALL l_qcs.deleteElement(l_cnt)
 
-   # CALL aws_spccli() 
+   # CALL aws_spccli()
    #功能: 傳送此單號所有的 QC 單至 SPC 端
    # 傳入參數: (1) QC 程式代號, (2) QC 單頭資料,
    # 回傳值  : 0 傳送失敗; 1 傳送成功
@@ -8964,7 +8978,7 @@ DEFINE l_err          STRING
       CALL t324_qcs_del()
    END IF
 
-   UPDATE imm_file set immspc = g_imm.immspc WHERE imm01 = g_imm.imm01 
+   UPDATE imm_file set immspc = g_imm.immspc WHERE imm01 = g_imm.imm01
    IF STATUS OR SQLCA.sqlerrd[3] = 0 THEN
       CALL cl_err3("upd","imm_file",g_imm.imm01,"",STATUS,"","upd immspc",1)
       IF g_imm.immspc = '1' THEN
@@ -8973,14 +8987,14 @@ DEFINE l_err          STRING
       LET g_success = 'N'
    END IF
    DISPLAY BY NAME g_imm.immspc
-  
-END FUNCTION 
+
+END FUNCTION
 
 #CHI-C30002 -------- mark -------- begin
 #FUNCTION i000_delall()
 
 #  SELECT COUNT(*) INTO g_cnt FROM imn_file
-#   WHERE imn01 = g_imm.imm01 
+#   WHERE imn01 = g_imm.imm01
 
 #  IF g_cnt = 0 THEN
 #     CALL cl_getmsg('9044',g_lang) RETURNING g_msg
@@ -9021,7 +9035,7 @@ FUNCTION t324_qcs_del()
          CALL cl_err3("del","qcv_file",g_imm.imm01,"",SQLCA.sqlcode,"","DEL qcv_file err!",0)
       END IF
 
-END FUNCTION 
+END FUNCTION
 
 FUNCTION t324_ins_rvbs()
    DEFINE l_rvbs   RECORD LIKE rvbs_file.*
@@ -9031,92 +9045,92 @@ FUNCTION t324_ins_rvbs()
                            AND rvbs02 = g_imn[l_ac].imn02
                            AND rvbs13 = 0
                            AND rvbs09 = 1
-   
+
    DECLARE t324_g_rvbs CURSOR FOR SELECT * FROM rvbs_file
                                    WHERE rvbs00 = g_prog
                                      AND rvbs01 = g_imm.imm01
                                      AND rvbs02 = g_imn[l_ac].imn02
                                      AND rvbs13 = 0
                                      AND rvbs09 = -1
-             
+
    FOREACH t324_g_rvbs INTO l_rvbs.*
-      IF STATUS THEN                          
+      IF STATUS THEN
          CALL cl_err('rvbs',STATUS,1)
       END IF
-   
+
       LET l_rvbs.rvbs09 = 1
       LET l_rvbs.rvbsplant = g_plant #FUN-980004 add
       LET l_rvbs.rvbslegal = g_legal #FUN-980004 add
 
       INSERT INTO rvbs_file VALUES(l_rvbs.*)
       IF STATUS OR SQLCA.SQLCODE THEN
-         CALL cl_err3("ins","rvbs_file","","",SQLCA.sqlcode,"","ins rvbs",1) 
+         CALL cl_err3("ins","rvbs_file","","",SQLCA.sqlcode,"","ins rvbs",1)
          LET g_success='N'
       END IF
-   
+
    END FOREACH
 
 END FUNCTION
 
 FUNCTION aimt324_g()    #####依BOM或工單自動展開單身
-DEFINE  l_chr       LIKE type_file.chr1 
+DEFINE  l_chr       LIKE type_file.chr1
 DEFINE  l_cnt       LIKE type_file.num5
 DEFINE  l_azf09     LIKE azf_file.azf09  #TQC-9B0031
 
-    OPEN WINDOW aimt324_w WITH FORM "aim/42f/aimt324_g"                                                           
-             ATTRIBUTE (STYLE = g_win_style CLIPPED) 
-                                                                                                                                    
-    CALL cl_ui_locale("aimt324_g")                                                                                             
-    LET l_chr='1' 
+    OPEN WINDOW aimt324_w WITH FORM "aim/42f/aimt324_g"
+             ATTRIBUTE (STYLE = g_win_style CLIPPED)
+
+    CALL cl_ui_locale("aimt324_g")
+    LET l_chr='1'
 
     LET l_imn04 = NULL
     LET l_imn05 = NULL
     LET l_imn16 = NULL
     LET l_imn15 = NULL
     LET l_imn28 = NULL
-    INPUT l_chr,l_imn04,l_imn05,l_imn15,l_imn16,l_imn28                                                                             
-        WITHOUT DEFAULTS FROM FORMONLY.a,FORMONLY.imn04,FORMONLY.imn05,                                                             
+    INPUT l_chr,l_imn04,l_imn05,l_imn15,l_imn16,l_imn28
+        WITHOUT DEFAULTS FROM FORMONLY.a,FORMONLY.imn04,FORMONLY.imn05,
                               FORMONLY.imn15,FORMONLY.imn16,FORMONLY.imn28
-    AFTER FIELD a                                                                                                             
-       IF l_chr NOT MATCHES '[123]' THEN 
-          NEXT FIELD a                                                                                                         
-       END IF                                                                                                                  
-                                                                                                                                    
-    AFTER FIELD imn04 
-       IF NOT cl_null(l_imn04) THEN  
-          LET g_flag1 = 'Y'           #MOD-D20164   
+    AFTER FIELD a
+       IF l_chr NOT MATCHES '[123]' THEN
+          NEXT FIELD a
+       END IF
+
+    AFTER FIELD imn04
+       IF NOT cl_null(l_imn04) THEN
+          LET g_flag1 = 'Y'           #MOD-D20164
           #No.FUN-AA0049--begin
           IF NOT s_chk_ware(l_imn04) THEN
              NEXT FIELD imn04
-          END IF 
-          #No.FUN-AA0049--end                                                                                            
-          SELECT imd02 FROM imd_file                                                                                             
-           WHERE imd01=l_imn04                                                                                               
-             AND imdacti = 'Y'                                                                                                   
-          IF STATUS THEN                                                                                                         
-             CALL cl_err3("sel","imd_file",l_imn04,"",STATUS,"","sel imd",1)                                                 
-             NEXT FIELD imn04 
-          END IF             
+          END IF
+          #No.FUN-AA0049--end
+          SELECT imd02 FROM imd_file
+           WHERE imd01=l_imn04
+             AND imdacti = 'Y'
+          IF STATUS THEN
+             CALL cl_err3("sel","imd_file",l_imn04,"",STATUS,"","sel imd",1)
+             NEXT FIELD imn04
+          END IF
           #FUN-D20060---add---str
           IF NOT s_chksmz(' ', g_imm.imm01,
                           l_imn04, l_imn05) THEN
               NEXT FIELD imn04
           END IF
-          #FUN-D20060---add--end                                                                                                    
+          #FUN-D20060---add--end
 IF NOT t324_imechk(l_imn04,l_imn05) THEN NEXT FIELD imn05 END IF  #FUN-D40103 add
        END IF
-    AFTER FIELD imn05 
+    AFTER FIELD imn05
  IF cl_null(l_imn05) THEN LET l_imn05 = ' ' END IF                 #FUN-D40103 add
        IF NOT t324_imechk(l_imn04,l_imn05) THEN NEXT FIELD imn05 END IF  #FUN-D40103 add
-       IF NOT cl_null(l_imn05) THEN                                                                                          
+       IF NOT cl_null(l_imn05) THEN
 	#FUN-D40103--mark--str--
         #  SELECT COUNT(*) INTO l_cnt FROM ime_file WHERE ime01= l_imn04
         #                                             AND ime02= l_imn05
-        #                                             AND ime05='Y'                                                               
-        #  IF l_cnt=0 OR (SQLCA.sqlcode) THEN                                                                                     
-        #     CALL cl_err3("sel","ime_file",l_imn05,"","100","","sel ime",1)                                                  
-        #     NEXT FIELD imn05                                                                                                    
-        #  END IF                     
+        #                                             AND ime05='Y'
+        #  IF l_cnt=0 OR (SQLCA.sqlcode) THEN
+        #     CALL cl_err3("sel","ime_file",l_imn05,"","100","","sel ime",1)
+        #     NEXT FIELD imn05
+        #  END IF
 	#FUN-D40103--mark--end--
           ##FUN-D20060---add---str
           IF NOT cl_null(l_imn04) THEN
@@ -9125,43 +9139,43 @@ IF NOT t324_imechk(l_imn04,l_imn05) THEN NEXT FIELD imn05 END IF  #FUN-D40103 ad
                  NEXT FIELD imn04
              END IF
           END IF
-          #FUN-D20060---add--end                                                                                             
+          #FUN-D20060---add--end
 	IF NOT t324_imechk(l_imn15,l_imn16) THEN NEXT FIELD imn16 END IF  #FUN-D40103 add
 
-       END IF 
-    AFTER FIELD imn15                                                                                                               
-       IF NOT cl_null(l_imn15) THEN 
+       END IF
+    AFTER FIELD imn15
+       IF NOT cl_null(l_imn15) THEN
           #No.FUN-AA0049--begin
           IF NOT s_chk_ware(l_imn15) THEN
              NEXT FIELD imn15
-          END IF 
-          #No.FUN-AA0049--end                                                                                                                    
-          SELECT imd02 FROM imd_file                                                                                                
-           WHERE imd01=l_imn15                                                                                                      
-             AND imdacti = 'Y'                                                                                                      
-          IF STATUS THEN                                                                                                            
-             CALL cl_err3("sel","imd_file",l_imn15,"",STATUS,"","sel imd",1)                                                        
-             NEXT FIELD imn15                                                                                                       
+          END IF
+          #No.FUN-AA0049--end
+          SELECT imd02 FROM imd_file
+           WHERE imd01=l_imn15
+             AND imdacti = 'Y'
+          IF STATUS THEN
+             CALL cl_err3("sel","imd_file",l_imn15,"",STATUS,"","sel imd",1)
+             NEXT FIELD imn15
           END IF
           ##FUN-D20060---add---str
           IF NOT s_chksmz(' ', g_imm.imm01,
                           l_imn15, l_imn16) THEN
              NEXT FIELD imn15
            END IF
-          #FUN-D20060---add--end                                                                                                                    
-       END IF                                                                                                                       
-    AFTER FIELD imn16                                                                                                               
+          #FUN-D20060---add--end
+       END IF
+    AFTER FIELD imn16
 	IF cl_null(l_imn16) THEN LET l_imn16 = ' ' END IF                 #FUN-D40103 add
        IF NOT t324_imechk(l_imn15,l_imn16) THEN NEXT FIELD imn16 END IF  #FUN-D40103 add
-       IF NOT cl_null(l_imn16) THEN                                                                                                 
+       IF NOT cl_null(l_imn16) THEN
 	#FUN-D40103--mark--str--
-        #  SELECT COUNT(*) INTO l_cnt FROM ime_file WHERE ime01= l_imn15                                                             
-        #                                             AND ime02= l_imn16                                                             
-        #                                             AND ime05='Y'                                                                  
-        #  IF l_cnt=0 OR (SQLCA.sqlcode) THEN                                                                                        
-        #     CALL cl_err3("sel","ime_file",l_imn16,"","100","","sel ime",1)                                                         
-        ##     NEXT FIELD imn16                                                                                                      
-        #  END IF             
+        #  SELECT COUNT(*) INTO l_cnt FROM ime_file WHERE ime01= l_imn15
+        #                                             AND ime02= l_imn16
+        #                                             AND ime05='Y'
+        #  IF l_cnt=0 OR (SQLCA.sqlcode) THEN
+        #     CALL cl_err3("sel","ime_file",l_imn16,"","100","","sel ime",1)
+        ##     NEXT FIELD imn16
+        #  END IF
 	#FUN-D40103--mark--end--
           ##FUN-D20060---add---str
           IF NOT cl_null(l_imn15) THEN
@@ -9170,38 +9184,38 @@ IF NOT t324_imechk(l_imn04,l_imn05) THEN NEXT FIELD imn05 END IF  #FUN-D40103 ad
                  NEXT FIELD imn15
              END IF
           END IF
-          #FUN-D20060---add--end                                                                                                       
-       END IF   
+          #FUN-D20060---add--end
+       END IF
 
-    AFTER FIELD imn28                                                                                                           
-       IF NOT l_imn28 IS NULL THEN               
+    AFTER FIELD imn28
+       IF NOT l_imn28 IS NULL THEN
           SELECT azf09 INTO l_azf09 FROM azf_file
            WHERE azf01=l_imn28 AND azf02='2'
           IF l_azf09 != '6' THEN
              CALL cl_err('','aoo-405',0)
              NEXT FIELD imn28
           END IF
-          SELECT azf03 INTO g_buf FROM azf_file                                                                                 
+          SELECT azf03 INTO g_buf FROM azf_file
            WHERE azf01=l_imn28 AND azf02='2'
-          IF STATUS THEN                                                                                                        
-             CALL cl_err3("sel","azf_file",l_imn28,"",SQLCA.sqlcode,"","select azf",1)                                                                  
-             NEXT FIELD imn28                                                                                                   
-          END IF         
-          CALL cl_msg(g_buf)                                                                                                    
-       END IF  
- 
-    ON ACTION CONTROLR                                                                                                        
-       CALL cl_show_req_fields()                                                                                              
-                                                                                                                                 
-    ON ACTION CONTROLG                                                                                                        
-       CALL cl_cmdask()                                                                                                       
-                                                                                                                                    
-    AFTER INPUT                                                                                                               
-       IF INT_FLAG THEN                         # 若按了DEL鍵                                                                 
-          LET INT_FLAG = 0 
-          LET l_chr = '1'                       #MOD-C80182 add   
-          EXIT INPUT                                                                                                          
-       END IF     
+          IF STATUS THEN
+             CALL cl_err3("sel","azf_file",l_imn28,"",SQLCA.sqlcode,"","select azf",1)
+             NEXT FIELD imn28
+          END IF
+          CALL cl_msg(g_buf)
+       END IF
+
+    ON ACTION CONTROLR
+       CALL cl_show_req_fields()
+
+    ON ACTION CONTROLG
+       CALL cl_cmdask()
+
+    AFTER INPUT
+       IF INT_FLAG THEN                         # 若按了DEL鍵
+          LET INT_FLAG = 0
+          LET l_chr = '1'                       #MOD-C80182 add
+          EXIT INPUT
+       END IF
 
       #MOD-C80182 str add-----
        IF NOT cl_null(l_imn04) AND NOT cl_null(l_imn15) THEN
@@ -9211,326 +9225,326 @@ IF NOT t324_imechk(l_imn04,l_imn05) THEN NEXT FIELD imn05 END IF  #FUN-D40103 ad
              NEXT FIELD imn04
           END IF
        END IF
-      #MOD-C80182 end add-----       
-                                                                                                                                    
-       ON IDLE g_idle_seconds                                                                                                    
-          CALL cl_on_idle()                                                                                                      
-          CONTINUE INPUT                                                                                                         
-                                              
-       ON ACTION controlp                                                                                                           
-          CASE                                                                                                                      
-             WHEN INFIELD(imn04)    #撥出倉庫別 
+      #MOD-C80182 end add-----
+
+       ON IDLE g_idle_seconds
+          CALL cl_on_idle()
+          CONTINUE INPUT
+
+       ON ACTION controlp
+          CASE
+             WHEN INFIELD(imn04)    #撥出倉庫別
                 #No.FUN-AA0049--begin
-                #CALL cl_init_qry_var()  
-                #LET g_qryparam.form ="q_imd"  
-                #LET g_qryparam.default1 = l_imn04 
+                #CALL cl_init_qry_var()
+                #LET g_qryparam.form ="q_imd"
+                #LET g_qryparam.default1 = l_imn04
                 #LET g_qryparam.arg1     = 'SW'        #倉庫類別 #MOD-A20083 add W
-                #CALL cl_create_qry() RETURNING l_imn04 
+                #CALL cl_create_qry() RETURNING l_imn04
                 CALL q_imd_1(FALSE,TRUE,l_imn04,"","","","") RETURNING l_imn04
                 #No.FUN-AA0049--end
-                NEXT FIELD imn04  
+                NEXT FIELD imn04
              WHEN INFIELD(imn05)   #撥出儲位
                 #No.FUN-AA0049--begin
-                #CALL cl_init_qry_var()                                                                                              
-                #LET g_qryparam.form ="q_ime"                                                                                        
+                #CALL cl_init_qry_var()
+                #LET g_qryparam.form ="q_ime"
                 #LET g_qryparam.default1 = l_imn05
-                #LET g_qryparam.arg1     = l_imn04 #倉庫編號                                                                     
-                #LET g_qryparam.arg2     = 'SW'        #倉庫類別 #MOD-A20083 add W                                                               
-                #CALL cl_create_qry() RETURNING l_imn05                
-                CALL q_ime_1(FALSE,TRUE,l_imn05,l_imn04,"",g_plant,"","","") RETURNING l_imn05 
-                #No.FUN-AA0049--end 
-                NEXT FIELD imn05 
+                #LET g_qryparam.arg1     = l_imn04 #倉庫編號
+                #LET g_qryparam.arg2     = 'SW'        #倉庫類別 #MOD-A20083 add W
+                #CALL cl_create_qry() RETURNING l_imn05
+                CALL q_ime_1(FALSE,TRUE,l_imn05,l_imn04,"",g_plant,"","","") RETURNING l_imn05
+                #No.FUN-AA0049--end
+                NEXT FIELD imn05
              WHEN INFIELD(imn15)   #撥入倉庫別
                 #No.FUN-AA0049--begin
-                #CALL cl_init_qry_var()                                                                                              
-                #LET g_qryparam.form ="q_imd"                                                                                        
-                #LET g_qryparam.default1 = l_imn15                                                                                   
-                #LET g_qryparam.arg1     = 'SW'        #倉庫類別 #MOD-A20083 add W                                                                     
-                #CALL cl_create_qry() RETURNING l_imn15                              
+                #CALL cl_init_qry_var()
+                #LET g_qryparam.form ="q_imd"
+                #LET g_qryparam.default1 = l_imn15
+                #LET g_qryparam.arg1     = 'SW'        #倉庫類別 #MOD-A20083 add W
+                #CALL cl_create_qry() RETURNING l_imn15
                #CALL q_imd_1(FALSE,TRUE,l_imn04,"","","","") RETURNING l_imn04
                 CALL q_imd_1(FALSE,TRUE,l_imn04,"","","","") RETURNING l_imn15  #Mod No:TQC-AC0333
-                #No.FUN-AA0049--end                                                
-                NEXT FIELD imn15                                                                                                    
+                #No.FUN-AA0049--end
+                NEXT FIELD imn15
              WHEN INFIELD(imn16)   #撥出儲位
-                #No.FUN-AA0049--begin                                                                                        
-                #CALL cl_init_qry_var()                                                                                              
-                #LET g_qryparam.form ="q_ime"                                                                                        
-                #LET g_qryparam.default1 = l_imn15                                                                                   
-                #LET g_qryparam.arg1     = l_imn16 #倉庫編號                                                                         
-                #LET g_qryparam.arg2     = 'SW'        #倉庫類別 #MOD-A20083 add W                                                               
-                #CALL cl_create_qry() RETURNING l_imn16  
-                CALL q_ime_1(FALSE,TRUE,l_imn16,l_imn15,"",g_plant,"","","") RETURNING l_imn16 
-                #No.FUN-AA0049--end                                                                             
-                NEXT FIELD imn16     
-             WHEN INFIELD(imn28) #理由            
-                CALL cl_init_qry_var()                                                                                          
+                #No.FUN-AA0049--begin
+                #CALL cl_init_qry_var()
+                #LET g_qryparam.form ="q_ime"
+                #LET g_qryparam.default1 = l_imn15
+                #LET g_qryparam.arg1     = l_imn16 #倉庫編號
+                #LET g_qryparam.arg2     = 'SW'        #倉庫類別 #MOD-A20083 add W
+                #CALL cl_create_qry() RETURNING l_imn16
+                CALL q_ime_1(FALSE,TRUE,l_imn16,l_imn15,"",g_plant,"","","") RETURNING l_imn16
+                #No.FUN-AA0049--end
+                NEXT FIELD imn16
+             WHEN INFIELD(imn28) #理由
+                CALL cl_init_qry_var()
                 LET g_qryparam.form     = "q_azf01a" #TQC-9B0031
-                LET g_qryparam.default1 = l_imn28                                                                     
-                LET g_qryparam.arg1     = "6" #TQC-9B0031                
-                CALL cl_create_qry() RETURNING l_imn28                                                                
-                DISPLAY BY NAME l_imn28 
-                NEXT FIELD imn28  
-          END CASE                                                                                    
-       ON ACTION about        
-          CALL cl_about()     
-                                                                                                                                    
-       ON ACTION help         
-          CALL cl_show_help() 
-                                                                                                                                    
-                                                                                                                                    
-    END INPUT                                                                                                                 
-    IF INT_FLAG THEN                                                                                                          
-       LET INT_FLAG=0                                                                                                         
-       LET l_chr = '1'                                                                                                        
-    END IF                                                                                                                    
-    CLOSE WINDOW aimt324_w                 #結束畫面 
-    IF cl_null(l_chr) THEN                                                                                                    
-       LET l_chr = '1'                                                                                                        
-    END IF                                                                                                                    
-    LET g_rec_b = 0                                                                                                           
-    CASE                                                                                                                      
-      WHEN l_chr = '1'                                                                                                        
-           CALL g_imn.clear()                                                                                                 
-           CALL t324_b()                                                                                                      
-      WHEN l_chr = '2'                                                                                                        
-           CALL t324_wo(g_imm.imm01)                                                                                         
-           COMMIT WORK                                                                                                        
-           LET g_wc2=NULL                                                                                                     
-           CALL t324_b_fill(g_wc2)                                                                                            
-           LET g_action_choice="detail"                                                                                       
-           IF cl_chk_act_auth() THEN                                                                                          
-              CALL t324_b()                                                                                                   
-           ELSE                                                                                                               
-              RETURN                                                                                                          
-           END IF                                                                                                             
-      WHEN l_chr='3'                                                                                                          
-           CALL t324_bom(g_imm.imm01)                                                                                             
+                LET g_qryparam.default1 = l_imn28
+                LET g_qryparam.arg1     = "6" #TQC-9B0031
+                CALL cl_create_qry() RETURNING l_imn28
+                DISPLAY BY NAME l_imn28
+                NEXT FIELD imn28
+          END CASE
+       ON ACTION about
+          CALL cl_about()
+
+       ON ACTION help
+          CALL cl_show_help()
+
+
+    END INPUT
+    IF INT_FLAG THEN
+       LET INT_FLAG=0
+       LET l_chr = '1'
+    END IF
+    CLOSE WINDOW aimt324_w                 #結束畫面
+    IF cl_null(l_chr) THEN
+       LET l_chr = '1'
+    END IF
+    LET g_rec_b = 0
+    CASE
+      WHEN l_chr = '1'
+           CALL g_imn.clear()
+           CALL t324_b()
+      WHEN l_chr = '2'
+           CALL t324_wo(g_imm.imm01)
+           COMMIT WORK
            LET g_wc2=NULL
-           CALL t324_b_fill(g_wc2)                                                                                            
-           LET g_action_choice="detail"             
-           IF cl_chk_act_auth() THEN                                                                                          
-              CALL t324_b()                                                                                                   
-           ELSE                                                                                                               
-              RETURN                                                                                                          
-           END IF                                                                                                             
-      OTHERWISE EXIT CASE                                                                                                     
-      END CASE                                                                                                                  
-      LET g_imm_t.* = g_imm.*                # 保存上筆資料                                                                     
-      LET g_imm_o.* = g_imm.*                # 保存上筆資料                                                                     
+           CALL t324_b_fill(g_wc2)
+           LET g_action_choice="detail"
+           IF cl_chk_act_auth() THEN
+              CALL t324_b()
+           ELSE
+              RETURN
+           END IF
+      WHEN l_chr='3'
+           CALL t324_bom(g_imm.imm01)
+           LET g_wc2=NULL
+           CALL t324_b_fill(g_wc2)
+           LET g_action_choice="detail"
+           IF cl_chk_act_auth() THEN
+              CALL t324_b()
+           ELSE
+              RETURN
+           END IF
+      OTHERWISE EXIT CASE
+      END CASE
+      LET g_imm_t.* = g_imm.*                # 保存上筆資料
+      LET g_imm_o.* = g_imm.*                # 保存上筆資料
 END FUNCTION
 
 FUNCTION t324_bom(p_argv1)
-  DEFINE l_time  LIKE type_file.chr18  
+  DEFINE l_time  LIKE type_file.chr18
   DEFINE l_sql   LIKE type_file.chr1000
   DEFINE l_n1    LIKE type_file.num5
-  DEFINE p_argv1 LIKE imn_file.imn01 
+  DEFINE p_argv1 LIKE imn_file.imn01
 
-   WHENEVER ERROR CONTINUE                                                                                                          
-    IF p_argv1 IS NULL OR p_argv1 = ' ' THEN                                                                                        
-       CALL cl_err(p_argv1,'mfg3527',0)                                                                                             
-       RETURN                                                                                                                       
-    END IF                                                                                                                          
-    INITIALIZE tm.* TO NULL 
-    LET g_ccc=0                                                                                                                     
-    LET b_imn.imn01  = p_argv1                                                                                                      
-    LET tm.qty=0                                                                                                                    
-    LET tm.idate=g_today                                                                                                            
-    LET tm.a='N'                                                                                                                    
+   WHENEVER ERROR CONTINUE
+    IF p_argv1 IS NULL OR p_argv1 = ' ' THEN
+       CALL cl_err(p_argv1,'mfg3527',0)
+       RETURN
+    END IF
+    INITIALIZE tm.* TO NULL
+    LET g_ccc=0
+    LET b_imn.imn01  = p_argv1
+    LET tm.qty=0
+    LET tm.idate=g_today
+    LET tm.a='N'
 
-WHILE TRUE                                                                                                                          
-    #-->條件畫面輸入                                                                                                                
-    OPEN WINDOW aimt324_g1_w AT 6,30 WITH FORM "aim/42f/aimt324_g1"                                                                          
-       ATTRIBUTE (STYLE = g_win_style CLIPPED) 
-                                                                                                                                    
-    CALL cl_ui_locale("aimt324_g1")                                                                                                    
-                                                                                                                                    
-    CALL cl_set_comp_visible("ima910",g_sma.sma118='Y')   
-                                                                                                                                    
-    INPUT BY NAME tm.* WITHOUT DEFAULTS                                                                                             
-       AFTER FIELD part                                                                                                             
-          IF NOT chk_part() THEN NEXT FIELD part END IF                                                                             
-       AFTER FIELD ima910                                                                                                           
-          IF cl_null(tm.ima910) THEN                                                                                                
-             LET tm.ima910 = ' '                                                                                                    
-          ELSE                                                                                                                      
-             SELECT COUNT(*) INTO g_cnt FROM bma_file                                                                               
-              WHERE bma01=tm.part AND bma06=tm.ima910                                                                               
-             IF g_cnt = 0 THEN                                                                                                      
-                CALL cl_err('','abm-618',0)                                                                                         
-                NEXT FIELD ima910                                                                                                   
-             END IF                                                                                                                 
-          END IF                                                                                                                    
-       AFTER FIELD qty                                                                                                              
-          IF cl_null(tm.qty) OR tm.qty<=0 THEN NEXT FIELD qty END IF                                                                
-       AFTER FIELD idate                                                                                                            
-          IF cl_null(tm.idate) OR tm.idate < g_today                                                                                
-             THEN NEXT FIELD idate END IF                                                                                           
-       AFTER FIELD a                                                                                                                
-          IF cl_null(tm.a) OR tm.a NOT matches '[YN]' THEN NEXT FIELD a END IF                                                      
-       ON IDLE g_idle_seconds                                                                                                       
-          CALL cl_on_idle()                                                                                                         
-          CONTINUE INPUT                                                                                                            
-       ON ACTION controlp                                                                                                           
-          CASE                                                                                                                      
-             WHEN INFIELD(part)                                                                                                     
-                CALL cl_init_qry_var()                                                                                              
-                LET g_qryparam.form = "q_bma"                                                                                       
-                LET g_qryparam.default1 = tm.part                                                                                   
-                CALL cl_create_qry() RETURNING tm.part                                                                              
-                DISPLAY tm.part TO FORMONLY.part                                                                                    
-                NEXT FIELD part                                                                                                     
-                                                                                                                                    
-             OTHERWISE EXIT CASE                                                                                                    
-          END CASE                                                                                                                  
-                                                                                                                                    
-       ON ACTION about      
-          CALL cl_about()   
-                                                                                                                                    
-       ON ACTION help        
+WHILE TRUE
+    #-->條件畫面輸入
+    OPEN WINDOW aimt324_g1_w AT 6,30 WITH FORM "aim/42f/aimt324_g1"
+       ATTRIBUTE (STYLE = g_win_style CLIPPED)
+
+    CALL cl_ui_locale("aimt324_g1")
+
+    CALL cl_set_comp_visible("ima910",g_sma.sma118='Y')
+
+    INPUT BY NAME tm.* WITHOUT DEFAULTS
+       AFTER FIELD part
+          IF NOT chk_part() THEN NEXT FIELD part END IF
+       AFTER FIELD ima910
+          IF cl_null(tm.ima910) THEN
+             LET tm.ima910 = ' '
+          ELSE
+             SELECT COUNT(*) INTO g_cnt FROM bma_file
+              WHERE bma01=tm.part AND bma06=tm.ima910
+             IF g_cnt = 0 THEN
+                CALL cl_err('','abm-618',0)
+                NEXT FIELD ima910
+             END IF
+          END IF
+       AFTER FIELD qty
+          IF cl_null(tm.qty) OR tm.qty<=0 THEN NEXT FIELD qty END IF
+       AFTER FIELD idate
+          IF cl_null(tm.idate) OR tm.idate < g_today
+             THEN NEXT FIELD idate END IF
+       AFTER FIELD a
+          IF cl_null(tm.a) OR tm.a NOT matches '[YN]' THEN NEXT FIELD a END IF
+       ON IDLE g_idle_seconds
+          CALL cl_on_idle()
+          CONTINUE INPUT
+       ON ACTION controlp
+          CASE
+             WHEN INFIELD(part)
+                CALL cl_init_qry_var()
+                LET g_qryparam.form = "q_bma"
+                LET g_qryparam.default1 = tm.part
+                CALL cl_create_qry() RETURNING tm.part
+                DISPLAY tm.part TO FORMONLY.part
+                NEXT FIELD part
+
+             OTHERWISE EXIT CASE
+          END CASE
+
+       ON ACTION about
+          CALL cl_about()
+
+       ON ACTION help
           CALL cl_show_help()
-                                                                                                                                    
-       ON ACTION controlg   
-          CALL cl_cmdask()  
-                                                                                                                                    
-       BEFORE INPUT                                                                                                                 
-           CALL cl_qbe_init()                                                                                                       
-       ON ACTION qbe_select                                                                                                         
-          CALL cl_qbe_select()                                                                                                      
-                                                                                                                                    
-       ON ACTION qbe_save                                                                                                           
-          CALL cl_qbe_save()                                                                                                        
-                                                                                                                                    
-    END INPUT                                                                                                                       
-    IF INT_FLAG THEN LET INT_FLAG=0 CLOSE WINDOW aimt324_g1_w RETURN END IF                                                               
-    CALL aimt324_init()                                                                                                                
-    CALL aimt324_bom()                                                                                                                 
-    CLOSE WINDOW aimt324_g1_w                                                                                                             
-    EXIT WHILE                                                                                                                      
-END WHILE    
+
+       ON ACTION controlg
+          CALL cl_cmdask()
+
+       BEFORE INPUT
+           CALL cl_qbe_init()
+       ON ACTION qbe_select
+          CALL cl_qbe_select()
+
+       ON ACTION qbe_save
+          CALL cl_qbe_save()
+
+    END INPUT
+    IF INT_FLAG THEN LET INT_FLAG=0 CLOSE WINDOW aimt324_g1_w RETURN END IF
+    CALL aimt324_init()
+    CALL aimt324_bom()
+    CLOSE WINDOW aimt324_g1_w
+    EXIT WHILE
+END WHILE
 END FUNCTION
 
 FUNCTION aimt324_init()
-    LET b_imn.imn06 = ' ' 
+    LET b_imn.imn06 = ' '
     LET b_imn.imn29 = 'N'
     LET b_imn.imn51 = 1
     LET b_imn.imn52 = 1
     LET b_imn.imn9301=s_costcenter(g_imm.imm14)
-    LET b_imn.imn9302=b_imn.imn9301 
-END FUNCTION 
+    LET b_imn.imn9302=b_imn.imn9301
+END FUNCTION
 
 ###展BOM
 FUNCTION aimt324_bom()
-   DEFINE l_ima562     LIKE ima_file.ima562,                                                                                        
-          l_ima910     LIKE ima_file.ima910, 
-          l_ima55      LIKE ima_file.ima55,                                                                                         
-          l_ima86      LIKE ima_file.ima86,                                                                                         
-          l_ima86_fac  LIKE ima_file.ima86_fac                                                                                      
-                                                                                                                                    
-    SELECT ima562,ima55,ima86,ima86_fac,ima910 INTO 
+   DEFINE l_ima562     LIKE ima_file.ima562,
+          l_ima910     LIKE ima_file.ima910,
+          l_ima55      LIKE ima_file.ima55,
+          l_ima86      LIKE ima_file.ima86,
+          l_ima86_fac  LIKE ima_file.ima86_fac
+
+    SELECT ima562,ima55,ima86,ima86_fac,ima910 INTO
            l_ima562,l_ima55,l_ima86,l_ima86_fac,l_ima910
-      FROM ima_file                                                                                                               
-     WHERE ima01=tm.part AND imaacti='Y'                                                                                         
-    IF SQLCA.sqlcode THEN RETURN END IF                                                                                             
-    IF l_ima562 IS NULL THEN LET l_ima562=0 END IF                                                                                  
-    IF cl_null(l_ima910) THEN LET l_ima910=' ' END IF 
-    IF tm.ima910 != ' ' THEN                                                                                                        
-       LET l_ima910 = tm.ima910                                                                                                     
-    END IF                                                                                                                          
+      FROM ima_file
+     WHERE ima01=tm.part AND imaacti='Y'
+    IF SQLCA.sqlcode THEN RETURN END IF
+    IF l_ima562 IS NULL THEN LET l_ima562=0 END IF
+    IF cl_null(l_ima910) THEN LET l_ima910=' ' END IF
+    IF tm.ima910 != ' ' THEN
+       LET l_ima910 = tm.ima910
+    END IF
     CALL aimt324_bom2(0,tm.part,l_ima910,tm.qty,1)
-    IF g_ccc=0 THEN                                                                                                              
-       LET g_errno='asf-014'                                                                                                    
-    END IF    #有BOM但無有效者                                                                                                   
-                                                                                                                                    
-    MESSAGE ""                                                                                                                      
-    RETURN                                                                                                                          
+    IF g_ccc=0 THEN
+       LET g_errno='asf-014'
+    END IF    #有BOM但無有效者
+
+    MESSAGE ""
+    RETURN
 END FUNCTION
 
-FUNCTION aimt324_bom2(p_level,p_key,p_key2,p_total,p_QPA) 
-                                                                                                                                    
-DEFINE                                                                                                                              
-    p_level      LIKE type_file.num5,         #level code    
-    p_total      LIKE sfb_file.sfb08,      
-#    p_QPA        LIKE ima_file.ima26,     
-#    l_QPA        LIKE ima_file.ima26,    
+FUNCTION aimt324_bom2(p_level,p_key,p_key2,p_total,p_QPA)
+
+DEFINE
+    p_level      LIKE type_file.num5,         #level code
+    p_total      LIKE sfb_file.sfb08,
+#    p_QPA        LIKE ima_file.ima26,
+#    l_QPA        LIKE ima_file.ima26,
     p_QPA        LIKE type_file.num15_3,     #No.FUN-A40023
     l_QPA        LIKE type_file.num15_3,     #No.FUN-A40023
-    l_total      LIKE sfb_file.sfb08,         #原發數量     
-    l_total2     LIKE sfb_file.sfb08,         #應發數量    
-    p_key        LIKE bma_file.bma01,         #assembly part number                                                                 
-    p_key2       LIKE bma_file.bma06,       
-    l_ac,l_i,l_x LIKE type_file.num5,       
-    arrno        LIKE type_file.num5,   
-    b_seq,l_double LIKE type_file.num10, 
-    l_ima45      LIKE ima_file.ima45,                                                                                               
-    l_ima46      LIKE ima_file.ima46,                                                                                               
+    l_total      LIKE sfb_file.sfb08,         #原發數量
+    l_total2     LIKE sfb_file.sfb08,         #應發數量
+    p_key        LIKE bma_file.bma01,         #assembly part number
+    p_key2       LIKE bma_file.bma06,
+    l_ac,l_i,l_x LIKE type_file.num5,
+    arrno        LIKE type_file.num5,
+    b_seq,l_double LIKE type_file.num10,
+    l_ima45      LIKE ima_file.ima45,
+    l_ima46      LIKE ima_file.ima46,
     p_cmd        LIKE type_file.chr1,
-    sr DYNAMIC ARRAY OF RECORD  #array for storage                                                                                  
-           bmb02 LIKE bmb_file.bmb02, #項次                                                                                            
-           bmb03 LIKE bmb_file.bmb03, #料號                                                                                            
-           bmb16 LIKE bmb_file.bmb16, #取替代碼                                                                                        
+    sr DYNAMIC ARRAY OF RECORD  #array for storage
+           bmb02 LIKE bmb_file.bmb02, #項次
+           bmb03 LIKE bmb_file.bmb03, #料號
+           bmb16 LIKE bmb_file.bmb16, #取替代碼
            bmb06 LIKE bmb_file.bmb06, #QPA
-           bmb08 LIKE bmb_file.bmb08, #損耗率                                                                                          
-           bmb10 LIKE bmb_file.bmb10, #發料單位                                                                                        
-           bmb10_fac LIKE bmb_file.bmb10_fac, #換算率                                                                                  
-           ima08 LIKE ima_file.ima08, #來源碼                                                                                          
-           ima02 LIKE ima_file.ima02, #品名規格                                                                                        
-           ima05 LIKE ima_file.ima05, #版本                                                                                            
-           ima44 LIKE ima_file.ima44, #采購單位                                                                                        
-           ima25 LIKE ima_file.ima25, #庫存單位                                                                                        
-           ima44_fac LIKE ima_file.ima44_fac,  #采購單位/庫存單位 換算率                                                               
-           ima49 LIKE ima_file.ima49,  #到廠前置期                                                                                    
-           ima491 LIKE ima_file.ima491, #入庫前置期                                                                                    
+           bmb08 LIKE bmb_file.bmb08, #損耗率
+           bmb10 LIKE bmb_file.bmb10, #發料單位
+           bmb10_fac LIKE bmb_file.bmb10_fac, #換算率
+           ima08 LIKE ima_file.ima08, #來源碼
+           ima02 LIKE ima_file.ima02, #品名規格
+           ima05 LIKE ima_file.ima05, #版本
+           ima44 LIKE ima_file.ima44, #采購單位
+           ima25 LIKE ima_file.ima25, #庫存單位
+           ima44_fac LIKE ima_file.ima44_fac,  #采購單位/庫存單位 換算率
+           ima49 LIKE ima_file.ima49,  #到廠前置期
+           ima491 LIKE ima_file.ima491, #入庫前置期
            ima24  LIKE ima_file.ima24,  #TQC-9B0031
-           bma01 LIKE bma_file.bma01  #項次                                                                                            
-       END RECORD,                                                                                                                     
-    l_ima08     LIKE ima_file.ima08,        #source code                                                                            
-#    l_ima26     LIKE ima_file.ima26,       #No.FUN-A40023  #QOH                                                                                    
-    l_chr       LIKE type_file.chr1,    
-    l_ActualQPA LIKE bmb_file.bmb06,   
-    l_cnt,l_c   LIKE type_file.num5,   
-    l_cmd       LIKE type_file.chr1000,   
-    l_status    LIKE type_file.num5,      
-    l_factor    LIKE ima_file.ima31_fac   
-DEFINE  l_ima908     LIKE ima_file.ima908 
-DEFINE  l_ima44      LIKE ima_file.ima44                                                                                            
-DEFINE  l_ima906     LIKE ima_file.ima906                                                                                           
-DEFINE  l_ima907     LIKE ima_file.ima907                                                                                           
-DEFINE  l_ima910     DYNAMIC ARRAY OF LIKE ima_file.ima910      
+           bma01 LIKE bma_file.bma01  #項次
+       END RECORD,
+    l_ima08     LIKE ima_file.ima08,        #source code
+#    l_ima26     LIKE ima_file.ima26,       #No.FUN-A40023  #QOH
+    l_chr       LIKE type_file.chr1,
+    l_ActualQPA LIKE bmb_file.bmb06,
+    l_cnt,l_c   LIKE type_file.num5,
+    l_cmd       LIKE type_file.chr1000,
+    l_status    LIKE type_file.num5,
+    l_factor    LIKE ima_file.ima31_fac
+DEFINE  l_ima908     LIKE ima_file.ima908
+DEFINE  l_ima44      LIKE ima_file.ima44
+DEFINE  l_ima906     LIKE ima_file.ima906
+DEFINE  l_ima907     LIKE ima_file.ima907
+DEFINE  l_ima910     DYNAMIC ARRAY OF LIKE ima_file.ima910
 DEFINE  l_imm01      LIKE imm_file.imm01   #FUN-B30053
 DEFINE  l_smy57      LIKE smy_file.smy57   #FUN-B30053
 DEFINE  l_store      STRING                #FUN-CB0087 add
-                                                                                                                                    
-    LET p_level = p_level + 1                                                                                                       
-    LET arrno = 500                                                                                                                 
-        LET l_cmd=" SELECT 0,bmb03,bmb16,bmb06/bmb07,bmb08,bmb10,bmb10_fac,",                                                       
-                 #"     ima08,ima02,ima05,ima44,ima25,ima44_fac,ima49,ima491,ima24,bma01 ", #TQC-9B0031 add ima24  
+
+    LET p_level = p_level + 1
+    LET arrno = 500
+        LET l_cmd=" SELECT 0,bmb03,bmb16,bmb06/bmb07,bmb08,bmb10,bmb10_fac,",
+                 #"     ima08,ima02,ima05,ima44,ima25,ima44_fac,ima49,ima491,ima24,bma01 ", #TQC-9B0031 add ima24
                   "     ima08,ima02,ima05,ima44,ima25,ima44_fac,ima49,ima491,'',bma01 ", #TQC-9B0031 add ima24  #FUN-B30053 ima24-->''
                   "   FROM bmb_file ",
                   "   LEFT OUTER JOIN ima_file ON ima01=bmb03 ",
-                  "   LEFT OUTER JOIN bma_file ON bma01=bmb03 AND bma06=bmb29 ",                                                              
-                  "  WHERE bmb01='",p_key,"' AND bmb02 > ?",                                                                        
-                  "    AND bmb29='",p_key2,"'",                                                                                   
-                  "    AND (bmb04 <='",tm.idate,"' OR bmb04 IS NULL) ",                                                             
-                  "    AND (bmb05 >'",tm.idate,"' OR bmb05 IS NULL)",                                                               
-                  " ORDER BY 1" 
-        PREPARE bom_p FROM l_cmd                                                                                                    
-        DECLARE bom_cs CURSOR FOR bom_p                                                                                             
-        IF SQLCA.sqlcode THEN CALL cl_err('P1:',SQLCA.sqlcode,1) RETURN  END IF                                                     
-                                                                                                                                    
-    LET b_seq=0                                                                                                                     
-    WHILE TRUE                                                                                                                      
-        LET l_ac = 1                                                                                                                
-        FOREACH bom_cs USING b_seq INTO sr[l_ac].*                                                                                  
-            MESSAGE p_key CLIPPED,'-',sr[l_ac].bmb03 CLIPPED                                                                        
-            #若換算率有問題, 則設為1                                                                                                
-            IF sr[l_ac].bmb10_fac IS NULL OR sr[l_ac].bmb10_fac=0 THEN                                                              
-                LET sr[l_ac].bmb10_fac=1                                                                                            
-            END IF                                                                                                                  
-            IF cl_null(sr[l_ac].bmb16) THEN    #若未定義, 則給予'正常'                                                              
-                LET sr[l_ac].bmb16='0'                                                                                              
-            ELSE                                                                                                                    
-               IF sr[l_ac].bmb16='2' THEN LET sr[l_ac].bmb16='1' END IF                                                             
-            END IF                                                                                                                  
+                  "   LEFT OUTER JOIN bma_file ON bma01=bmb03 AND bma06=bmb29 ",
+                  "  WHERE bmb01='",p_key,"' AND bmb02 > ?",
+                  "    AND bmb29='",p_key2,"'",
+                  "    AND (bmb04 <='",tm.idate,"' OR bmb04 IS NULL) ",
+                  "    AND (bmb05 >'",tm.idate,"' OR bmb05 IS NULL)",
+                  " ORDER BY 1"
+        PREPARE bom_p FROM l_cmd
+        DECLARE bom_cs CURSOR FOR bom_p
+        IF SQLCA.sqlcode THEN CALL cl_err('P1:',SQLCA.sqlcode,1) RETURN  END IF
+
+    LET b_seq=0
+    WHILE TRUE
+        LET l_ac = 1
+        FOREACH bom_cs USING b_seq INTO sr[l_ac].*
+            MESSAGE p_key CLIPPED,'-',sr[l_ac].bmb03 CLIPPED
+            #若換算率有問題, 則設為1
+            IF sr[l_ac].bmb10_fac IS NULL OR sr[l_ac].bmb10_fac=0 THEN
+                LET sr[l_ac].bmb10_fac=1
+            END IF
+            IF cl_null(sr[l_ac].bmb16) THEN    #若未定義, 則給予'正常'
+                LET sr[l_ac].bmb16='0'
+            ELSE
+               IF sr[l_ac].bmb16='2' THEN LET sr[l_ac].bmb16='1' END IF
+            END IF
             #FUN-B30053-add-str--
             LET l_imm01 = s_get_doc_no(g_imm.imm01)
             SELECT smy57 INTO l_smy57
@@ -9540,144 +9554,144 @@ DEFINE  l_store      STRING                #FUN-CB0087 add
             END IF
             LET sr[l_ac].ima24 = l_smy57[2,2]
             #FUN-B30053-add-end--
-            LET l_ima910[l_ac]=''                                                                                                   
+            LET l_ima910[l_ac]=''
             SELECT ima910 INTO l_ima910[l_ac] FROM ima_file WHERE ima01=sr[l_ac].bmb03
-            IF cl_null(l_ima910[l_ac]) THEN LET l_ima910[l_ac]=' ' END IF                                                           
-            LET l_ac = l_ac + 1    #check limitation                                                                                
-            IF l_ac > arrno THEN EXIT FOREACH END IF                                                                                
-        END FOREACH                                                                                                                 
-        LET l_x=l_ac-1                                                                                                              
-                                                                                                                                    
-        #insert into allocation file                                                                                                
-        FOR l_i = 1 TO l_x                                                                                                          
-                                                                                                                                    
-            #inflate yield                                                                                                          
-            IF g_sma.sma71='N' THEN LET sr[l_i].bmb08=0 END IF                                                                      
-                                                                                                                                    
-            #Actual QPA                                                                                                             
-            LET l_ActualQPA=(sr[l_i].bmb06+sr[l_i].bmb08/100)*p_QPA                                                                 
-            LET l_QPA=sr[l_i].bmb06 * p_QPA                                                                                         
-            LET l_total=sr[l_i].bmb06*p_total*((100+sr[l_i].bmb08))/100  #量                                                        
+            IF cl_null(l_ima910[l_ac]) THEN LET l_ima910[l_ac]=' ' END IF
+            LET l_ac = l_ac + 1    #check limitation
+            IF l_ac > arrno THEN EXIT FOREACH END IF
+        END FOREACH
+        LET l_x=l_ac-1
 
-            IF sr[l_i].ima08='X' THEN       ###為 X PART 由參數決定                                                                 
-                IF sr[l_i].bma01 IS NOT NULL THEN                                                                                   
-                    CALL aimt324_bom2(p_level,sr[l_i].bmb03,l_ima910[l_i], 
-                        p_total*sr[l_i].bmb06,l_ActualQPA)                                                                          
-                END IF                                                                                                              
-            END IF                                                                                                                  
-                                                                                                                                    
-                                                                                                                                    
-            IF sr[l_i].ima08='M' OR                                                                                                 
-               sr[l_i].ima08='S' THEN     ###為 M PART 由人決定                                                                     
-               IF tm.a='Y' THEN                                                                                                     
-                  IF sr[l_i].bma01 IS NOT NULL THEN 
-                     CALL aimt324_bom2(p_level,sr[l_i].bmb03,l_ima910[l_i],   
-                          p_total*sr[l_i].bmb06,l_ActualQPA)                                                                        
-                  ELSE                                                                                                              
-                      CONTINUE FOR                                                                                                  
-                  END IF                                                                                                            
-               ELSE                                                                                                                 
-                  CONTINUE FOR                                                                                                      
-               END IF                                                                                                               
-            END IF                                                                                                                  
-            IF NOT(sr[l_i].ima08='X' OR sr[l_i].ima08='M' OR                                                                        
-                   sr[l_i].ima08='S')   THEN                                                                                            
-              LET g_ccc=g_ccc+1                                                                                                     
+        #insert into allocation file
+        FOR l_i = 1 TO l_x
+
+            #inflate yield
+            IF g_sma.sma71='N' THEN LET sr[l_i].bmb08=0 END IF
+
+            #Actual QPA
+            LET l_ActualQPA=(sr[l_i].bmb06+sr[l_i].bmb08/100)*p_QPA
+            LET l_QPA=sr[l_i].bmb06 * p_QPA
+            LET l_total=sr[l_i].bmb06*p_total*((100+sr[l_i].bmb08))/100  #量
+
+            IF sr[l_i].ima08='X' THEN       ###為 X PART 由參數決定
+                IF sr[l_i].bma01 IS NOT NULL THEN
+                    CALL aimt324_bom2(p_level,sr[l_i].bmb03,l_ima910[l_i],
+                        p_total*sr[l_i].bmb06,l_ActualQPA)
+                END IF
+            END IF
+
+
+            IF sr[l_i].ima08='M' OR
+               sr[l_i].ima08='S' THEN     ###為 M PART 由人決定
+               IF tm.a='Y' THEN
+                  IF sr[l_i].bma01 IS NOT NULL THEN
+                     CALL aimt324_bom2(p_level,sr[l_i].bmb03,l_ima910[l_i],
+                          p_total*sr[l_i].bmb06,l_ActualQPA)
+                  ELSE
+                      CONTINUE FOR
+                  END IF
+               ELSE
+                  CONTINUE FOR
+               END IF
+            END IF
+            IF NOT(sr[l_i].ima08='X' OR sr[l_i].ima08='M' OR
+                   sr[l_i].ima08='S')   THEN
+              LET g_ccc=g_ccc+1
               LET b_imn.imn03=sr[l_i].bmb03
-              LET b_imn.imn04 = l_imn04 
-              LET b_imn.imn05 = l_imn05 
+              LET b_imn.imn04 = l_imn04
+              LET b_imn.imn05 = l_imn05
               LET b_imn.imn28 = l_imn28
               LET b_imn.imn16 = l_imn16
-              LET b_imn.imn15 = l_imn15                                                                                        
+              LET b_imn.imn15 = l_imn15
               LET b_imn.imn10 = l_total          #No:MOD-A10059 add
               IF cl_null(b_imn.imn16) AND cl_null(b_imn.imn15) THEN  #若畫面倉儲為空則取料件主倉儲
-                 SELECT ima35,ima36 INTO b_imn.imn04,b_imn.imn05 
+                 SELECT ima35,ima36 INTO b_imn.imn04,b_imn.imn05
                    FROM ima_file
-                  WHERE ima01 = b_imn.imn03  
+                  WHERE ima01 = b_imn.imn03
 #FUN-AB0066 --begin--
 #                  #No.FUN-AA0049--begin
 #                  IF NOT s_chk_ware(b_imn.imn04) THEN
 #                     LET b_imn.imn04=' '
 #                     LET b_imn.imn15=' '
-#                  END IF 
-#                  #No.FUN-AA0049--end                      
-#FUN-AB0066 --end--                  
-              END IF 
-              LET b_imn.imn08=sr[l_i].ima25                                                                                        
+#                  END IF
+#                  #No.FUN-AA0049--end
+#FUN-AB0066 --end--
+              END IF
+              LET b_imn.imn08=sr[l_i].ima25
               LET b_imn.imn06 = ' '
               LET b_imn.imn09 = ''   #MOD-D10182
               SELECT img09 INTO b_imn.imn09 FROM imn_file
                WHERE img01 = b_imn.imn03
                  AND img02 = b_imn.imn04
                  AND img03 = b_imn.imn05
-                 AND img04 = b_imn.imn06 
+                 AND img04 = b_imn.imn06
               IF cl_null(b_imn.imn09) THEN
                  SELECT ima25 INTO b_imn.imn09 FROM ima_file
                   WHERE ima01 = b_imn.imn03
-              END IF 
-              LET b_imn.imn10 =s_digqty(b_imn.imn10, b_imn.imn09)  #FUN-D50028                                                                                                                      
-             ### 寫進 pml_file                                                                                                      
-               SELECT COUNT(*) INTO l_cnt FROM imn_file                                                                             
-                WHERE imn01=b_imn.imn01 AND imn03=b_imn.imn03                                                                       
-               IF l_cnt > 0 THEN   #   數量相加                                                                            
-                  SELECT ima25,ima44,ima906,ima907                                                                                  
-                    INTO g_ima25,g_ima44,g_ima906,g_ima907 
-                    FROM ima_file WHERE ima01=g_pml.pml04                                                                           
-                  IF SQLCA.sqlcode =100 THEN                                                                                        
-                     IF b_imn.imn03 MATCHES 'MISC*' THEN                                                                            
-                        SELECT ima25,ima44,ima906,ima907                                                                            
-                          INTO g_ima25,g_ima44,g_ima906,g_ima907                                                                    
-                          FROM ima_file WHERE ima01='MISC'                                                                          
-                     END IF                                                                                                         
-                  END IF                                                                                                            
-                  IF cl_null(g_ima44) THEN LET g_ima44 = g_ima25 END IF                                                             
+              END IF
+              LET b_imn.imn10 =s_digqty(b_imn.imn10, b_imn.imn09)  #FUN-D50028
+             ### 寫進 pml_file
+               SELECT COUNT(*) INTO l_cnt FROM imn_file
+                WHERE imn01=b_imn.imn01 AND imn03=b_imn.imn03
+               IF l_cnt > 0 THEN   #   數量相加
+                  SELECT ima25,ima44,ima906,ima907
+                    INTO g_ima25,g_ima44,g_ima906,g_ima907
+                    FROM ima_file WHERE ima01=g_pml.pml04
+                  IF SQLCA.sqlcode =100 THEN
+                     IF b_imn.imn03 MATCHES 'MISC*' THEN
+                        SELECT ima25,ima44,ima906,ima907
+                          INTO g_ima25,g_ima44,g_ima906,g_ima907
+                          FROM ima_file WHERE ima01='MISC'
+                     END IF
+                  END IF
+                  IF cl_null(g_ima44) THEN LET g_ima44 = g_ima25 END IF
 
-                 IF g_sma.sma115 = 'Y' AND g_ima906 MATCHES'[23]' THEN                                                                                                                                    
-                    CALL t324_du_default(p_cmd,b_imn.imn03,b_imn.imn04,                                           
-                                          b_imn.imn05,b_imn.imn06)                                                  
-                           RETURNING b_imn.imn33,b_imn.imn34,b_imn.imn35,                                     
-                                     b_imn.imn30,b_imn.imn31,b_imn.imn32 
-                 END IF 
+                 IF g_sma.sma115 = 'Y' AND g_ima906 MATCHES'[23]' THEN
+                    CALL t324_du_default(p_cmd,b_imn.imn03,b_imn.imn04,
+                                          b_imn.imn05,b_imn.imn06)
+                           RETURNING b_imn.imn33,b_imn.imn34,b_imn.imn35,
+                                     b_imn.imn30,b_imn.imn31,b_imn.imn32
+                 END IF
                   UPDATE imn_file SET imn32=imn32+b_imn.imn32,
-                                      imn35=imn35+b_imn.imn35 
-                   WHERE imn01=b_imn.imn01 AND imn03=b_imn.imn03                                                                    
-               ELSE                                                                                                                 
+                                      imn35=imn35+b_imn.imn35
+                   WHERE imn01=b_imn.imn01 AND imn03=b_imn.imn03
+               ELSE
                   SELECT MAX(imn02) INTO b_imn.imn02 FROM imn_file
                    WHERE imn01 = b_imn.imn01
                   IF cl_null(b_imn.imn02) THEN
                      LET b_imn.imn02 = 0
-                  END IF 
-                  LET b_imn.imn02=b_imn.imn02+1                                                                                     
-                  IF g_sma.sma115 = 'Y' THEN                                                                                        
-                     SELECT ima44,ima906,ima907 INTO l_ima44,l_ima906,l_ima907                                                      
-                       FROM ima_file                                                                                                
-                      WHERE ima01=b_imn.imn03  
-                     LET l_factor = 1                                                                                               
+                  END IF
+                  LET b_imn.imn02=b_imn.imn02+1
+                  IF g_sma.sma115 = 'Y' THEN
+                     SELECT ima44,ima906,ima907 INTO l_ima44,l_ima906,l_ima907
+                       FROM ima_file
+                      WHERE ima01=b_imn.imn03
+                     LET l_factor = 1
                      IF l_ima906 MATCHES'[23]' THEN
-                        CALL t324_du_default(p_cmd,b_imn.imn03,b_imn.imn04,                                           
-                                             b_imn.imn05,b_imn.imn06)                                                  
-                              RETURNING b_imn.imn33,b_imn.imn34,b_imn.imn35,                                     
-                                        b_imn.imn30,b_imn.imn31,b_imn.imn32 
-                     END IF  
-                  END IF                                                                                                            
+                        CALL t324_du_default(p_cmd,b_imn.imn03,b_imn.imn04,
+                                             b_imn.imn05,b_imn.imn06)
+                              RETURNING b_imn.imn33,b_imn.imn34,b_imn.imn35,
+                                        b_imn.imn30,b_imn.imn31,b_imn.imn32
+                     END IF
+                  END IF
                   LET b_imn.imn21 = 1
-                  LET b_imn.imn27 = 'N' 
+                  LET b_imn.imn27 = 'N'
                   LET b_imn.imn29 = sr[l_i].ima24 #TQC-9B0031
-                  IF NOT cl_null(l_imn04) THEN                                                                                                    
-                     LET b_imn.imn04 = l_imn04                                                                                                    
-                  END IF                                                                                                                          
-                  IF NOT cl_null(l_imn05) THEN                                                                                                    
-                     LET b_imn.imn05 = l_imn05                                                                                                    
-                  END IF                                                                                                                          
-                  IF NOT cl_null(l_imn15) THEN                                                                                                    
-                     LET b_imn.imn15 = l_imn15                                                                                                    
-                  END IF                                                                                                                          
-                  IF NOT cl_null(l_imn16) THEN                                                                                                    
-                     LET b_imn.imn16 = l_imn16                                                                                                    
-                  END IF                                                                                                                          
-                  IF NOT cl_null(l_imn28) THEN                                                                                                    
-                     LET b_imn.imn28 = l_imn28                                                                                                    
-                  END IF 
+                  IF NOT cl_null(l_imn04) THEN
+                     LET b_imn.imn04 = l_imn04
+                  END IF
+                  IF NOT cl_null(l_imn05) THEN
+                     LET b_imn.imn05 = l_imn05
+                  END IF
+                  IF NOT cl_null(l_imn15) THEN
+                     LET b_imn.imn15 = l_imn15
+                  END IF
+                  IF NOT cl_null(l_imn16) THEN
+                     LET b_imn.imn16 = l_imn16
+                  END IF
+                  IF NOT cl_null(l_imn28) THEN
+                     LET b_imn.imn28 = l_imn28
+                  END IF
                   LET b_imn.imn22 = b_imn.imn10
                   LET b_imn.imn20 = b_imn.imn09 #TQC-9B0031
                   LET b_imn.imn22 =s_digqty(b_imn.imn22, b_imn.imn20)  #FUN-D50028
@@ -9706,245 +9720,245 @@ DEFINE  l_store      STRING                #FUN-CB0087 add
                   END IF
                   #FUN-CB0087---add---end---
                   INSERT INTO imn_file VALUES(b_imn.*)
-                  IF SQLCA.SQLCODE THEN                                                                                             
+                  IF SQLCA.SQLCODE THEN
                      ERROR 'ALC2: Insert Failed because of ',SQLCA.SQLCODE
-                  END IF                                                                                                            
-               END IF                                                                                                               
-            END IF                                                                                                                  
+                  END IF
+               END IF
+            END IF
         END FOR
-        IF l_x < arrno OR l_ac=1 THEN 
-            EXIT WHILE                                                                                                              
-        ELSE                                                                                                                        
-            LET b_seq = sr[l_x].bmb02                                                                                               
-        END IF                                                                                                                      
-    END WHILE                                                                                                                       
-    # 避免 'X' PART 重復計算                                                                                                        
-    IF p_level >1 THEN                                                                                                              
-       RETURN                                                                                                                       
-     END IF                                                                                                                         
-                                                                                                                                    
-                                                                                                                                    
-END FUNCTION        
+        IF l_x < arrno OR l_ac=1 THEN
+            EXIT WHILE
+        ELSE
+            LET b_seq = sr[l_x].bmb02
+        END IF
+    END WHILE
+    # 避免 'X' PART 重復計算
+    IF p_level >1 THEN
+       RETURN
+     END IF
 
-FUNCTION chk_part()                                                                                                                 
-  DEFINE  l_ima08    LIKE ima_file.ima08,                                                                                           
-          l_imaacti  LIKE ima_file.imaacti,                                                                                         
-          l_cnt      LIKE type_file.num5,      #No.FUN-680136 SMALLINT                                                              
-          l_err      LIKE type_file.num5       #No.FUN-680136 SMALLINT                                                              
-                                                                                                                                    
-         LET l_err=1                                                                                                                
-        #檢查該料件是否存在                                                                                                         
-         SELECT ima08,imaacti INTO l_ima08,l_imaacti FROM ima_file                                                                  
-          WHERE ima01=tm.part                                                                                                       
-             CASE                                                                                                                   
-               WHEN l_ima08 NOT MATCHES '[MS]'  #MOD-5B0321 add                                                                     
-                     CALL cl_err(tm.part,'apm-025',2) #MOD-560115                                                                   
-                    LET l_err=0                                                                                                     
-               WHEN l_imaacti = 'N'                                                                                                 
-                    CALL cl_err(tm.part,'mfg0301',2)                                                                                
-                    LET l_err=0                                                                                                     
-               WHEN SQLCA.SQLCODE = 100                                                                                             
-                    CALL cl_err(tm.part,'mfg0002',2)                                                                                
-                    LET l_err=0                                                                                                     
+
+END FUNCTION
+
+FUNCTION chk_part()
+  DEFINE  l_ima08    LIKE ima_file.ima08,
+          l_imaacti  LIKE ima_file.imaacti,
+          l_cnt      LIKE type_file.num5,      #No.FUN-680136 SMALLINT
+          l_err      LIKE type_file.num5       #No.FUN-680136 SMALLINT
+
+         LET l_err=1
+        #檢查該料件是否存在
+         SELECT ima08,imaacti INTO l_ima08,l_imaacti FROM ima_file
+          WHERE ima01=tm.part
+             CASE
+               WHEN l_ima08 NOT MATCHES '[MS]'  #MOD-5B0321 add
+                     CALL cl_err(tm.part,'apm-025',2) #MOD-560115
+                    LET l_err=0
+               WHEN l_imaacti = 'N'
+                    CALL cl_err(tm.part,'mfg0301',2)
+                    LET l_err=0
+               WHEN SQLCA.SQLCODE = 100
+                    CALL cl_err(tm.part,'mfg0002',2)
+                    LET l_err=0
                WHEN SQLCA.SQLCODE != 0
-                    CALL cl_err(tm.part,sqlca.sqlcode,2)                                                                            
-                    LET l_err=0                                                                                                     
-            END CASE                                                                                                                
-         IF l_err THEN                                                                                                              
-            #檢查該料件是否有產品結構                                                                                               
-            SELECT COUNT(*) INTO l_cnt FROM bmb_file WHERE bmb01=tm.part                                                            
-            IF SQLCA.SQLCODE THEN                                                                                                   
-                CALL cl_err(tm.part,sqlca.sqlcode,2)                                                                                
-                LET l_err=0                                                                                                         
-            END IF                                                                                                                  
-            IF l_cnt=0 OR cl_null(l_cnt) THEN                                                                                       
-                CALL cl_err(tm.part,'mfg2602',2)                                                                                    
-                LET l_err=0                                                                                                         
-            END IF                                                                                                                  
-         END IF                                                                                                                     
-    RETURN l_err                                                                                                                    
-END FUNCTION    
+                    CALL cl_err(tm.part,sqlca.sqlcode,2)
+                    LET l_err=0
+            END CASE
+         IF l_err THEN
+            #檢查該料件是否有產品結構
+            SELECT COUNT(*) INTO l_cnt FROM bmb_file WHERE bmb01=tm.part
+            IF SQLCA.SQLCODE THEN
+                CALL cl_err(tm.part,sqlca.sqlcode,2)
+                LET l_err=0
+            END IF
+            IF l_cnt=0 OR cl_null(l_cnt) THEN
+                CALL cl_err(tm.part,'mfg2602',2)
+                LET l_err=0
+            END IF
+         END IF
+    RETURN l_err
+END FUNCTION
 
 FUNCTION t324_wo(p_argv1)
    DEFINE l_time   LIKE type_file.chr8
    DEFINE l_sql    LIKE type_file.chr1000
    DEFINE p_argv1  LIKE imm_file.imm01
 
-   WHENEVER ERROR CONTINUE 
+   WHENEVER ERROR CONTINUE
    IF p_argv1 IS NULL OR p_argv1 = ' ' THEN
       CALL cl_err(p_argv1,'mfg3527',0)
       RETURN
-   END IF 
+   END IF
    LET l_sw = 'Y'
 WHILE TRUE
    #--條件畫面輸入
-    IF l_sw != 'N' THEN                                                                                                             
-       OPEN WINDOW aimt324_wo_g          #條件畫面                                                                   
-              WITH FORM "aim/42f/aimt324_wo"                                                                                        
-          ATTRIBUTE (STYLE = g_win_style CLIPPED)                                                                                   
-       CALL cl_ui_locale("aimt324_wo")                                                                                              
-    END IF                                                                                                                          
-    CALL t324_wo_tm()                                                                                                               
-    IF INT_FLAG THEN                                                                                                                
-       CLOSE WINDOW aimt324_wo_g                                                                                                    
-       EXIT WHILE                                                                                                                   
-    END IF                                                                                                                          
-    #-->無符合條件資料                                                                                                              
-    IF l_sw = 'N' THEN                                                                                                              
-       CALL cl_err(g_imm.imm01,'mfg2601',0)                                                                                         
-        CONTINUE WHILE                                                                                                              
+    IF l_sw != 'N' THEN
+       OPEN WINDOW aimt324_wo_g          #條件畫面
+              WITH FORM "aim/42f/aimt324_wo"
+          ATTRIBUTE (STYLE = g_win_style CLIPPED)
+       CALL cl_ui_locale("aimt324_wo")
     END IF
-    CALL cl_wait()                                                                                                                  
-    CALL aimt324_wo_g()                                                                                                             
-    #-->無符合條件資料                                                                                                              
-    IF l_sw = 'N' THEN                                                                                                              
-       CALL cl_err(g_imm.imm01,'mfg2601',0)                                                                                         
-       CONTINUE WHILE                                                                                                               
-    END IF                                                                                                                          
-    ERROR ""                                                                                                                        
-    EXIT WHILE                                                                                                                      
- END WHILE                                                                                                                          
-    IF INT_FLAG THEN LET INT_FLAG = 0 RETURN END IF                                                                                 
-    CLOSE WINDOW aimt324_wo_g    
+    CALL t324_wo_tm()
+    IF INT_FLAG THEN
+       CLOSE WINDOW aimt324_wo_g
+       EXIT WHILE
+    END IF
+    #-->無符合條件資料
+    IF l_sw = 'N' THEN
+       CALL cl_err(g_imm.imm01,'mfg2601',0)
+        CONTINUE WHILE
+    END IF
+    CALL cl_wait()
+    CALL aimt324_wo_g()
+    #-->無符合條件資料
+    IF l_sw = 'N' THEN
+       CALL cl_err(g_imm.imm01,'mfg2601',0)
+       CONTINUE WHILE
+    END IF
+    ERROR ""
+    EXIT WHILE
+ END WHILE
+    IF INT_FLAG THEN LET INT_FLAG = 0 RETURN END IF
+    CLOSE WINDOW aimt324_wo_g
 END FUNCTION
 
 FUNCTION t324_wo_tm()
- DEFINE  l_cnt       LIKE type_file.num5,                                                                                           
-         l_wobdate   LIKE type_file.dat,                                                                                            
-         l_woedate   LIKE type_file.dat,                                                                                            
-         l_sql       LIKE type_file.chr1000,                                                                                        
-         l_where     LIKE type_file.chr1000,                                                                                        
+ DEFINE  l_cnt       LIKE type_file.num5,
+         l_wobdate   LIKE type_file.dat,
+         l_woedate   LIKE type_file.dat,
+         l_sql       LIKE type_file.chr1000,
+         l_where     LIKE type_file.chr1000,
          l_n         LIKE type_file.num5
-    CONSTRUCT BY NAME g_wc ON sfb01,sfb13,ima06,ima08                                                                               
-    BEFORE  CONSTRUCT                                                                                                               
-       CALL cl_qbe_init()                                                                                                           
-    ON ACTION CONTROLP                                                                                                              
-            CASE                                                                                                                    
-               WHEN INFIELD(sfb01)                                                                                                  
-                    CALL cl_init_qry_var()                                                                                          
-                    LET g_qryparam.form = "q_sfb"                                                                                   
-                    LET g_qryparam.state = 'c'                                                                                      
-                    CALL cl_create_qry() RETURNING g_qryparam.multiret                                                              
-                    DISPLAY g_qryparam.multiret TO sfb01                                                                            
-                    NEXT FIELD sfb01                                                                                                
-               OTHERWISE EXIT CASE                                                                                                  
-             END CASE                                                                                                               
-    ON IDLE g_idle_seconds                                                                                                          
-        CALL cl_on_idle()                                                                                                           
-        CONTINUE CONSTRUCT                                                                                                          
-                                                                                                                                    
-    ON ACTION about                                                                                                                 
-       CALL cl_about()                                                                                                              
-                                                                                                                                    
-    ON ACTION controlg                                                                                                              
+    CONSTRUCT BY NAME g_wc ON sfb01,sfb13,ima06,ima08
+    BEFORE  CONSTRUCT
+       CALL cl_qbe_init()
+    ON ACTION CONTROLP
+            CASE
+               WHEN INFIELD(sfb01)
+                    CALL cl_init_qry_var()
+                    LET g_qryparam.form = "q_sfb"
+                    LET g_qryparam.state = 'c'
+                    CALL cl_create_qry() RETURNING g_qryparam.multiret
+                    DISPLAY g_qryparam.multiret TO sfb01
+                    NEXT FIELD sfb01
+               OTHERWISE EXIT CASE
+             END CASE
+    ON IDLE g_idle_seconds
+        CALL cl_on_idle()
+        CONTINUE CONSTRUCT
+
+    ON ACTION about
+       CALL cl_about()
+
+    ON ACTION controlg
        CALL cl_cmdask()
 
-    ON ACTION help                                                                                                                  
-       CALL cl_show_help()                                                                                                          
-                                                                                                                                    
-    END CONSTRUCT                                                                                                                   
-    IF INT_FLAG THEN RETURN END IF                                                                                                  
-    CALL cl_wait()                                                                                                                  
-    #-->讀取工單最早開工日期/最晚開工日期                                                                                           
-    LET l_sql = "SELECT min(sfb13),max(sfb13) ",                                                                                    
-                "  FROM sfb_file,ima_file,sfa_file ",                                                                               
-                " WHERE sfb01 = sfa01 ",                                                                                            
-                "   AND sfa03 = ima01 ",                                                                                            
-                "   AND sfb87!='X' AND ", g_wc CLIPPED                                                                              
-                                                                                                                                    
-    PREPARE p324_predate  FROM l_sql                                                                                                
-    DECLARE p324_curdate CURSOR FOR p324_predate                                                                                    
-    LET l_sw = 'Y'                                                                                                                  
-    FOREACH p324_curdate INTO l_wobdate,l_woedate                                                                                   
-        IF SQLCA.sqlcode THEN                                                                                                       
-           CALL cl_err('p324_curdate',SQLCA.sqlcode,0)                                                                              
-           EXIT FOREACH                                                                                                             
-        END IF 
-        IF (l_wobdate IS NULL OR l_wobdate = ' ') AND                                                                               
-           (l_woedate IS NULL OR l_woedate = ' ')                                                                                   
-        THEN LET l_sw = 'N'                                                                                                         
-             EXIT FOREACH                                                                                                           
-        END IF                                                                                                                      
-    END FOREACH                                                                                                                     
-    IF l_sw = 'N' THEN RETURN END IF                                                                                                
-    ERROR ""                                                                                                                        
-   INITIALIZE tm1.* TO NULL                      # Default condition                                                                
-   LET tm1.sudate = l_woedate                                                                                                       
+    ON ACTION help
+       CALL cl_show_help()
+
+    END CONSTRUCT
+    IF INT_FLAG THEN RETURN END IF
+    CALL cl_wait()
+    #-->讀取工單最早開工日期/最晚開工日期
+    LET l_sql = "SELECT min(sfb13),max(sfb13) ",
+                "  FROM sfb_file,ima_file,sfa_file ",
+                " WHERE sfb01 = sfa01 ",
+                "   AND sfa03 = ima01 ",
+                "   AND sfb87!='X' AND ", g_wc CLIPPED
+
+    PREPARE p324_predate  FROM l_sql
+    DECLARE p324_curdate CURSOR FOR p324_predate
+    LET l_sw = 'Y'
+    FOREACH p324_curdate INTO l_wobdate,l_woedate
+        IF SQLCA.sqlcode THEN
+           CALL cl_err('p324_curdate',SQLCA.sqlcode,0)
+           EXIT FOREACH
+        END IF
+        IF (l_wobdate IS NULL OR l_wobdate = ' ') AND
+           (l_woedate IS NULL OR l_woedate = ' ')
+        THEN LET l_sw = 'N'
+             EXIT FOREACH
+        END IF
+    END FOREACH
+    IF l_sw = 'N' THEN RETURN END IF
+    ERROR ""
+   INITIALIZE tm1.* TO NULL                      # Default condition
+   LET tm1.sudate = l_woedate
    INPUT BY NAME tm1.sudate
-                 WITHOUT DEFAULTS HELP 1                                                                                            
-      AFTER FIELD sudate    #工單範圍中最晚開工日期前一天                                                                           
-         IF tm1.sudate IS NULL OR tm1.sudate = ' ' THEN                                                                             
-            NEXT FIELD sudate                                                                                                       
-         END IF                                                                                                                     
-                                                                                                                                    
-        ON KEY(CONTROL-G)                                                                                                           
-            CALL cl_cmdask()                                                                                                        
-                                                                                                                                    
-        ON IDLE g_idle_seconds                                                                                                      
-          CALL cl_on_idle()                                                                                                         
-          CONTINUE INPUT                                                                                                            
-                                                                                                                                    
-        AFTER INPUT                                                                                                                 
-          IF INT_FLAG THEN EXIT INPUT END IF                                                                                        
-          IF tm1.sudate IS NULL AND tm1.sudate = ' '                                                                                
-          THEN NEXT FIELD sudate                                                                                                    
-          END IF                                                                                                                    
-          IF INT_FLAG THEN EXIT INPUT END IF                                                                                        
-   END INPUT                                                                                                                        
-   IF INT_FLAG THEN RETURN END IF 
-END FUNCTION 
+                 WITHOUT DEFAULTS HELP 1
+      AFTER FIELD sudate    #工單範圍中最晚開工日期前一天
+         IF tm1.sudate IS NULL OR tm1.sudate = ' ' THEN
+            NEXT FIELD sudate
+         END IF
+
+        ON KEY(CONTROL-G)
+            CALL cl_cmdask()
+
+        ON IDLE g_idle_seconds
+          CALL cl_on_idle()
+          CONTINUE INPUT
+
+        AFTER INPUT
+          IF INT_FLAG THEN EXIT INPUT END IF
+          IF tm1.sudate IS NULL AND tm1.sudate = ' '
+          THEN NEXT FIELD sudate
+          END IF
+          IF INT_FLAG THEN EXIT INPUT END IF
+   END INPUT
+   IF INT_FLAG THEN RETURN END IF
+END FUNCTION
 
 FUNCTION aimt324_wo_g()
-  DEFINE  l_sql      LIKE type_file.chr1000,                                                                                        
-          l_sfa03    LIKE sfa_file.sfa03,                                                                                           
-          l_sfa26    LIKE sfa_file.sfa26,                                                                                           
-          l_sfb25    LIKE sfb_file.sfb25,                                                                                           
-          l_sfb98    LIKE sfb_file.sfb98,                                                                                           
-#          l_ima262   LIKE ima_file.ima262, #No.FUN-A40023                                                                                         
-          l_ima27    LIKE ima_file.ima27,                                                                                           
-          l_ima45    LIKE ima_file.ima45,                                                                                           
-          l_ima46    LIKE ima_file.ima46                                                                                            
+  DEFINE  l_sql      LIKE type_file.chr1000,
+          l_sfa03    LIKE sfa_file.sfa03,
+          l_sfa26    LIKE sfa_file.sfa26,
+          l_sfb25    LIKE sfb_file.sfb25,
+          l_sfb98    LIKE sfb_file.sfb98,
+#          l_ima262   LIKE ima_file.ima262, #No.FUN-A40023
+          l_ima27    LIKE ima_file.ima27,
+          l_ima45    LIKE ima_file.ima45,
+          l_ima46    LIKE ima_file.ima46
   DEFINE  l_sfa12    LIKE sfa_file.sfa12  #TQC-9B0031
   DEFINE  l_sfa05    LIKE sfa_file.sfa05  #TQC-9B0031
   DEFINE  l_ima24    LIKE ima_file.ima24  #TQC-9B0031
   DEFINE  l_imm01    LIKE imm_file.imm01  #FUN-B30053
   DEFINE  l_smy57    LIKE smy_file.smy57  #FUN-B30053
-                                                                                                                                    
-    #-->料件/替代碼/本次需求量                                                                                                      
-   #LET l_sql = "SELECT UNIQUE sfa03,sfa26,sfb25,sfb98,sfa12,ima24,sum(sfa05) ", #TQC-9B0031 add sfa12,sfa05,ima24                                                                          
+
+    #-->料件/替代碼/本次需求量
+   #LET l_sql = "SELECT UNIQUE sfa03,sfa26,sfb25,sfb98,sfa12,ima24,sum(sfa05) ", #TQC-9B0031 add sfa12,sfa05,ima24
     LET l_sql = "SELECT UNIQUE sfa03,sfa26,sfb25,sfb98,sfa12,'',sum(sfa05) ", #TQC-9B0031 add sfa12,sfa05,ima24  #FUN-B30053 ima24-->''
-                "  FROM sfa_file,sfb_file,ima_file",                                                                                
-                " WHERE sfa01 = sfb01 ",                                                                                            
-                "   AND sfb04 != '8' ",                                                                                             
-                "  AND sfb02 != '2'  AND sfb02 != '11' AND sfb87!='X' ",                                                            
-                "  AND sfa065 = 0 ",                                                                                                
-                "   AND sfa03 = ima01 AND ", g_wc CLIPPED,                                                                          
-               #" GROUP BY sfa03,sfa26,sfb25,sfb98,sfa12,ima24", #TQC-9B0031                                                                               
+                "  FROM sfa_file,sfb_file,ima_file",
+                " WHERE sfa01 = sfb01 ",
+                "   AND sfb04 != '8' ",
+                "  AND sfb02 != '2'  AND sfb02 != '11' AND sfb87!='X' ",
+                "  AND sfa065 = 0 ",
+                "   AND sfa03 = ima01 AND ", g_wc CLIPPED,
+               #" GROUP BY sfa03,sfa26,sfb25,sfb98,sfa12,ima24", #TQC-9B0031
                 " GROUP BY sfa03,sfa26,sfb25,sfb98,sfa12",  #FUN-B30053 del ima24
-                " ORDER BY sfa03,sfa26,sfb25,sfb98"   #TQC-9B0031                                                                                              
-    PREPARE t324_wo_prepare FROM l_sql                                                                                              
+                " ORDER BY sfa03,sfa26,sfb25,sfb98"   #TQC-9B0031
+    PREPARE t324_wo_prepare FROM l_sql
     DECLARE t324_wo_cs
-        CURSOR WITH HOLD FOR t324_wo_prepare                                                                                        
-    #-->單身預設值                                                                                                                  
+        CURSOR WITH HOLD FOR t324_wo_prepare
+    #-->單身預設值
     CALL aimt324_init()
-    SELECT max(imn02)+1 INTO g_seq FROM imn_file WHERE imn01 = g_imm.imm01                                                          
-    IF g_seq IS NULL OR g_seq = ' ' OR g_seq = 0  THEN                                                                              
-       LET g_seq = 1                                                                                                                
-    END IF                                                                                                                          
-    LET l_sw = 'N'                                                                                                                  
-    LET g_success = 'Y'                                                                                                             
-    BEGIN WORK                                                                                                                      
-    CALL s_showmsg_init()                                                                                                           
-    FOREACH t324_wo_cs INTO l_sfa03,l_sfa26,l_sfb25,l_sfb98,l_sfa12,l_ima24,l_sfa05  #TQC-9B0031                                                                         
-       IF SQLCA.sqlcode THEN                                                                                                        
-         LET g_success = 'N'                                                                                                        
-         IF g_bgerr THEN                                                                                                            
-             CALL s_errmsg("sfa03",l_sfa03,"t324_wo_cs",SQLCA.sqlcode,1)  #TQC-9B0037                                                                    
-         ELSE                                                                                                                       
+    SELECT max(imn02)+1 INTO g_seq FROM imn_file WHERE imn01 = g_imm.imm01
+    IF g_seq IS NULL OR g_seq = ' ' OR g_seq = 0  THEN
+       LET g_seq = 1
+    END IF
+    LET l_sw = 'N'
+    LET g_success = 'Y'
+    BEGIN WORK
+    CALL s_showmsg_init()
+    FOREACH t324_wo_cs INTO l_sfa03,l_sfa26,l_sfb25,l_sfb98,l_sfa12,l_ima24,l_sfa05  #TQC-9B0031
+       IF SQLCA.sqlcode THEN
+         LET g_success = 'N'
+         IF g_bgerr THEN
+             CALL s_errmsg("sfa03",l_sfa03,"t324_wo_cs",SQLCA.sqlcode,1)  #TQC-9B0037
+         ELSE
             CALL cl_err('t324_wo_cs',SQLCA.sqlcode,0)    #TQC-9B0037
-         END IF                                                                                                                     
-         EXIT FOREACH                                                                                                               
-       END IF                                                                                                                       
+         END IF
+         EXIT FOREACH
+       END IF
        #FUN-B30053-add-str--
        LET l_imm01 = s_get_doc_no(g_imm.imm01)
        SELECT smy57 INTO l_smy57
@@ -9954,29 +9968,29 @@ FUNCTION aimt324_wo_g()
        END IF
        LET l_ima24 = l_smy57[2,2]
        #FUN-B30053-add-end--
-       LET l_sw = 'Y'                                                                                                               
-       #--->產生單身檔 
-       CALL aimt324_wo_ins_imn(l_sfa03,l_sfa26,l_sfb25,l_sfb98,l_sfa12,l_ima24,l_sfa05) #TQC-9B0031                                                                     
-       IF g_success = 'N' THEN EXIT FOREACH END IF                                                                                  
-    END FOREACH                                                                                                                     
-                                                                                                                                    
-    IF g_totsuccess="N" THEN                                                                                                        
-       LET g_success="N"                                                                                                            
-    END IF                                                                                                                          
-                                                                                                                                    
-    CALL s_showmsg()                                                                                                                
-    IF g_success = 'Y' THEN                                                                                                         
-       COMMIT WORK                                                                                                                  
-    ELSE                                                                                                                            
-       ROLLBACK WORK                                                                                                                
-    END IF 
+       LET l_sw = 'Y'
+       #--->產生單身檔
+       CALL aimt324_wo_ins_imn(l_sfa03,l_sfa26,l_sfb25,l_sfb98,l_sfa12,l_ima24,l_sfa05) #TQC-9B0031
+       IF g_success = 'N' THEN EXIT FOREACH END IF
+    END FOREACH
+
+    IF g_totsuccess="N" THEN
+       LET g_success="N"
+    END IF
+
+    CALL s_showmsg()
+    IF g_success = 'Y' THEN
+       COMMIT WORK
+    ELSE
+       ROLLBACK WORK
+    END IF
 
 END FUNCTION
 
-FUNCTION aimt324_wo_ins_imn(p_sfa03,p_sfa26,p_sfb25,p_sfb98,p_sfa12,p_ima24,p_sfa05) #TQC-9B0031                                                                       
-DEFINE p_sfa03  LIKE sfa_file.sfa03                                                                                                 
-DEFINE p_sfa26  LIKE sfa_file.sfa26                                                                                                 
-DEFINE p_sfb25  LIKE sfb_file.sfb25                                                                                                 
+FUNCTION aimt324_wo_ins_imn(p_sfa03,p_sfa26,p_sfb25,p_sfb98,p_sfa12,p_ima24,p_sfa05) #TQC-9B0031
+DEFINE p_sfa03  LIKE sfa_file.sfa03
+DEFINE p_sfa26  LIKE sfa_file.sfa26
+DEFINE p_sfb25  LIKE sfb_file.sfb25
 DEFINE p_sfb98  LIKE sfb_file.sfb98
 DEFINE l_ima44  LIKE ima_file.ima44
 DEFINE l_ima906 LIKE ima_file.ima906
@@ -9989,23 +10003,23 @@ DEFINE l_store  STRING                #FUN-CB0087 add
    INITIALIZE b_imn.* TO NULL    #TQC-9B0031
    LET b_imn.imn01 = g_imm.imm01 #TQC-9B0031
    LET b_imn.imn03 = p_sfa03
-   SELECT ima35,ima36 INTO b_imn.imn04,b_imn.imn05   #撥出倉儲                                                                 
-     FROM ima_file                    
+   SELECT ima35,ima36 INTO b_imn.imn04,b_imn.imn05   #撥出倉儲
+     FROM ima_file
     WHERE ima01 = p_sfa03
-    
-#FUN-AB0066 --begin--    
+
+#FUN-AB0066 --begin--
 #   #No.FUN-AA0049--begin
 #   IF NOT s_chk_ware(g_imn[l_ac].imn04) THEN
 #      LET b_imn.imn04=' '
 #      LET b_imn.imn05=' '
-#   END IF 
-#   #No.FUN-AA0049--end       
+#   END IF
+#   #No.FUN-AA0049--end
 #FUN-AB0066 --end--
 
-   LET b_imn.imn06 = ' '   
+   LET b_imn.imn06 = ' '
    LET b_imn.imn09 = p_sfa12
    LET b_imn.imn20 = b_imn.imn09
-   LET b_imn.imn10 = p_sfa05 
+   LET b_imn.imn10 = p_sfa05
    LET b_imn.imn22 = p_sfa05
    LET b_imn.imn10 =s_digqty(b_imn.imn10, b_imn.imn09)  #FUN-D50028
    LET b_imn.imn22 =s_digqty(b_imn.imn22, b_imn.imn20)  #FUN-D50028
@@ -10014,36 +10028,36 @@ DEFINE l_store  STRING                #FUN-CB0087 add
     WHERE imn01 = b_imn.imn01
    IF cl_null(b_imn.imn02) THEN
       LET b_imn.imn02 = 0
-   END IF 
-   LET b_imn.imn02=b_imn.imn02+1                             
-   IF g_sma.sma115 = 'Y' THEN                                 
+   END IF
+   LET b_imn.imn02=b_imn.imn02+1
+   IF g_sma.sma115 = 'Y' THEN
       SELECT ima44,ima906,ima907 INTO l_ima44,l_ima906,l_ima907
-        FROM ima_file                                    
-       WHERE ima01=b_imn.imn03                            
-       IF l_ima906 MATCHES'[23]' THEN                       
+        FROM ima_file
+       WHERE ima01=b_imn.imn03
+       IF l_ima906 MATCHES'[23]' THEN
           CALL t324_du_default(p_cmd,b_imn.imn03,b_imn.imn04,
-                               b_imn.imn05,b_imn.imn06)      
-               RETURNING b_imn.imn33,b_imn.imn34,b_imn.imn35, 
-                         b_imn.imn30,b_imn.imn31,b_imn.imn32   
-       END IF                                            
-    END IF                                                
+                               b_imn.imn05,b_imn.imn06)
+               RETURNING b_imn.imn33,b_imn.imn34,b_imn.imn35,
+                         b_imn.imn30,b_imn.imn31,b_imn.imn32
+       END IF
+    END IF
     LET b_imn.imn21 = 1
-    LET b_imn.imn27 = 'N'                                                                                             
+    LET b_imn.imn27 = 'N'
     IF NOT cl_null(l_imn04) THEN
        LET b_imn.imn04 = l_imn04
-    END IF 
+    END IF
     IF NOT cl_null(l_imn05) THEN
        LET b_imn.imn05 = l_imn05
-    END IF 
+    END IF
     IF NOT cl_null(l_imn15) THEN
        LET b_imn.imn15 = l_imn15
-    END IF 
+    END IF
     IF NOT cl_null(l_imn16) THEN
        LET b_imn.imn16 = l_imn16
     END IF
     IF NOT cl_null(l_imn28) THEN
        LET b_imn.imn28 = l_imn28
-    END IF 
+    END IF
     LET b_imn.imnplant = g_plant #TQC-9B0031
     LET b_imn.imnlegal = g_legal #TQC-9B0031
     IF cl_null(b_imn.imn05) THEN LET b_imn.imn05 = ' ' END IF  #TQC-9B0031
@@ -10068,8 +10082,8 @@ DEFINE l_store  STRING                #FUN-CB0087 add
        END IF
     END IF
     #FUN-CB0087---add---end---
-    INSERT INTO imn_file VALUES(b_imn.*)                     
-    IF SQLCA.SQLCODE THEN                                     
+    INSERT INTO imn_file VALUES(b_imn.*)
+    IF SQLCA.SQLCODE THEN
        CALL cl_err('insert',SQLCA.sqlcode,0)                  #TQC-9B0037
     END IF
     LET g_seq = g_seq+1
@@ -10082,22 +10096,22 @@ END FUNCTION
 
 #-----MOD-A70068---------
 #DEV-D30046 移至saimt324_sub.4gl --mark--begin
-#FUNCTION t324_chk_avl_stk(p_imn)   
+#FUNCTION t324_chk_avl_stk(p_imn)
 #  DEFINE l_avl_stk,l_avl_stk_mpsmrp,l_unavl_stk  LIKE type_file.num15_3
 #  DEFINE l_oeb12   LIKE oeb_file.oeb12
-#  DEFINE l_qoh     LIKE oeb_file.oeb12 
-#  DEFINE p_imn     RECORD LIKE imn_file.*   
+#  DEFINE l_qoh     LIKE oeb_file.oeb12
+#  DEFINE p_imn     RECORD LIKE imn_file.*
 #  DEFINE l_ima25   LIKE ima_file.ima25
 #
-#      
-#     CALL s_getstock(p_imn.imn03,g_plant)RETURNING l_avl_stk_mpsmrp,l_unavl_stk,l_avl_stk   
+#
+#     CALL s_getstock(p_imn.imn03,g_plant)RETURNING l_avl_stk_mpsmrp,l_unavl_stk,l_avl_stk
 #     SELECT SUM(oeb905*oeb05_fac)
 #      INTO l_oeb12
-#      FROM oeb_file,oea_file   
+#      FROM oeb_file,oea_file
 #     WHERE oeb04=p_imn.imn03
 #       AND oeb19= 'Y'
-#       AND oeb70= 'N'  
-#       AND oea01 = oeb01 AND oeaconf !='X' 
+#       AND oeb70= 'N'
+#       AND oea01 = oeb01 AND oeaconf !='X'
 #    IF l_oeb12 IS NULL THEN
 #        LET l_oeb12 = 0
 #    END IF
@@ -10106,20 +10120,20 @@ END FUNCTION
 #      WHERE ima01 = b_imn.imn03
 #    CALL s_umfchk(b_imn.imn03,p_imn.imn09,l_ima25)
 #         RETURNING g_sw,g_factor
-#   #IF l_qoh < p_imn.imn10*g_factor AND g_sma.sma894[4,4]='N' THEN                      #FUN-C80107 mark 
+#   #IF l_qoh < p_imn.imn10*g_factor AND g_sma.sma894[4,4]='N' THEN                      #FUN-C80107 mark
 #   #FUN-D30024 -------Begin---------
 #   #INITIALIZE g_sma894 TO NULL                                                         #FUN-C80107
-#   #CALL s_inv_shrt_by_warehouse(g_sma.sma894[4,4],p_imn.imn04) RETURNING g_sma894      #FUN-C80107 #FUN-D30024 
+#   #CALL s_inv_shrt_by_warehouse(g_sma.sma894[4,4],p_imn.imn04) RETURNING g_sma894      #FUN-C80107 #FUN-D30024
 #   #IF l_qoh < p_imn.imn10*g_factor AND g_sma894 = 'N' THEN                             #FUN-C80107
-#    INITIALIZE g_imd23 TO NULL 
+#    INITIALIZE g_imd23 TO NULL
 #    CALL s_inv_shrt_by_warehouse(p_imn.imn04) RETURNING g_imd23                        #FUN-D30024
 #    IF l_qoh < p_imn.imn10*g_factor AND g_imd23 = 'N' THEN
 #   #FUN-D30024 -------End-----------
 #       LET g_msg = 'Line#',p_imn.imn02 USING '<<<',' ',
 #                    p_imn.imn03 CLIPPED,'-> QOH < 0 '
-#       CALL cl_err(g_msg,'mfg-075',1)   
+#       CALL cl_err(g_msg,'mfg-075',1)
 #       LET g_success='N' RETURN
-#    END IF 
+#    END IF
 #
 #END FUNCTION
 #DEV-D30046 移至saimt324_sub.4gl --mark--end
@@ -10157,7 +10171,7 @@ END FUNCTION
 
 #FUN-A60034 add str ------
 FUNCTION t324_imm16(p_cmd)  #申請人編號
- DEFINE   p_cmd      LIKE type_file.chr1,          
+ DEFINE   p_cmd      LIKE type_file.chr1,
           l_gen02    LIKE gen_file.gen02,
           l_genacti  LIKE gen_file.genacti
 
@@ -10217,12 +10231,12 @@ DEFINE l_flag       LIKE type_file.chr1,
             LET g_errno = ''
             LET l_azf03 = ''
             LET l_azf09 = ''
-            SELECT azf03,azf09 INTO l_azf03,l_azf09 FROM azf_file   
+            SELECT azf03,azf09 INTO l_azf03,l_azf09 FROM azf_file
             WHERE azf01 = g_imn[l_i].imn28 AND azf02 = '2'
 
             CASE WHEN SQLCA.SQLCODE = 100  LET g_errno = 'mfg3088'
                                            LET l_azf03 = ''
-                 WHEN l_azf09 != '6'       LET g_errno = 'aoo-405'      
+                 WHEN l_azf09 != '6'       LET g_errno = 'aoo-405'
                  OTHERWISE                 LET g_errno = SQLCA.SQLCODE USING '-------'
             END CASE
             IF NOT cl_null(g_errno) THEN
@@ -10234,7 +10248,7 @@ DEFINE l_flag       LIKE type_file.chr1,
    END IF
    RETURN TRUE
 END FUNCTION
- 
+
 FUNCTION t324_imn28_chk1()
 DEFINE  l_flag          LIKE type_file.chr1,
         l_n             LIKE type_file.num5,
@@ -10273,12 +10287,12 @@ DEFINE  l_flag          LIKE type_file.chr1,
          #IF l_n < 1 THEN
          #   CALL cl_err('','aim-425',0)
          LET g_errno = ''
-         SELECT azf03,azf09 INTO l_azf03,l_azf09 FROM azf_file   
+         SELECT azf03,azf09 INTO l_azf03,l_azf09 FROM azf_file
          WHERE azf01 = g_imn[l_ac].imn28 AND azf02 = '2'
 
          CASE WHEN SQLCA.SQLCODE = 100  LET g_errno = 'mfg3088'
                                         LET l_azf03 = ''
-              WHEN l_azf09 != '6'       LET g_errno = 'aoo-405'    
+              WHEN l_azf09 != '6'       LET g_errno = 'aoo-405'
               OTHERWISE                 LET g_errno = SQLCA.SQLCODE USING '-------'
          END CASE
          IF NOT cl_null(g_errno) THEN
@@ -10332,20 +10346,20 @@ FUNCTION t324_list_fill()
        BEFORE DISPLAY
           EXIT DISPLAY
     END DISPLAY
-    
+
 END FUNCTION
 
 FUNCTION t324_bp2(p_ud)
-   DEFINE   p_ud   LIKE type_file.chr1  
- 
+   DEFINE   p_ud   LIKE type_file.chr1
+
    IF p_ud <> "G" OR g_action_choice = "detail" THEN
       RETURN
    END IF
- 
+
    LET g_action_choice = " "
- 
+
    CALL cl_set_act_visible("accept,cancel", FALSE)
-   
+
    DISPLAY ARRAY g_imm_l TO s_imm_l.* ATTRIBUTE(COUNT=g_rec_b4,UNBUFFERED)
       BEFORE DISPLAY
           CALL fgl_set_arr_curr(g_curs_index)
@@ -10367,7 +10381,7 @@ FUNCTION t324_bp2(p_ud)
          CALL cl_set_comp_visible("page_main", FALSE)
          CALL ui.interface.refresh()
          CALL cl_set_comp_visible("page_list", TRUE)
-         CALL cl_set_comp_visible("page_main", TRUE)          
+         CALL cl_set_comp_visible("page_main", TRUE)
          EXIT DISPLAY
 
       ON ACTION ACCEPT
@@ -10375,14 +10389,14 @@ FUNCTION t324_bp2(p_ud)
          LET l_ac4 = ARR_CURR()
          LET g_jump = l_ac4
          LET g_no_ask = TRUE
-         CALL t324_fetch('/')  
+         CALL t324_fetch('/')
          CALL cl_set_comp_visible("page_list", FALSE)
          CALL cl_set_comp_visible("page_list", TRUE)
          CALL cl_set_comp_visible("page_main", FALSE)
          CALL ui.interface.refresh()
-         CALL cl_set_comp_visible("page_main", TRUE)    
+         CALL cl_set_comp_visible("page_main", TRUE)
          EXIT DISPLAY
-      
+
       ON ACTION insert
          LET g_action_choice="insert"
          EXIT DISPLAY
@@ -10391,55 +10405,55 @@ FUNCTION t324_bp2(p_ud)
          EXIT DISPLAY
       ON ACTION delete
          LET g_action_choice="delete"
-         EXIT DISPLAY 
+         EXIT DISPLAY
       ON ACTION modify
          LET g_action_choice="modify"
-         EXIT DISPLAY 
+         EXIT DISPLAY
       ON ACTION first
          CALL t324_fetch('F')
-         CALL cl_navigator_setting(g_curs_index, g_row_count)   
+         CALL cl_navigator_setting(g_curs_index, g_row_count)
          IF g_rec_b != 0 THEN
-            CALL fgl_set_arr_curr(1)  
+            CALL fgl_set_arr_curr(1)
          END IF
-         ACCEPT DISPLAY                   
- 
+         ACCEPT DISPLAY
+
       ON ACTION previous
          CALL t324_fetch('P')
-         CALL cl_navigator_setting(g_curs_index, g_row_count)  
+         CALL cl_navigator_setting(g_curs_index, g_row_count)
          IF g_rec_b != 0 THEN
-            CALL fgl_set_arr_curr(1)  
+            CALL fgl_set_arr_curr(1)
          END IF
-         ACCEPT DISPLAY                   
- 
+         ACCEPT DISPLAY
+
       ON ACTION jump
          CALL t324_fetch('/')
-         CALL cl_navigator_setting(g_curs_index, g_row_count)   
+         CALL cl_navigator_setting(g_curs_index, g_row_count)
          IF g_rec_b != 0 THEN
-            CALL fgl_set_arr_curr(1)  
+            CALL fgl_set_arr_curr(1)
          END IF
-         ACCEPT DISPLAY                   
+         ACCEPT DISPLAY
 
       ON ACTION next
          CALL t324_fetch('N')
-         CALL cl_navigator_setting(g_curs_index, g_row_count)   
+         CALL cl_navigator_setting(g_curs_index, g_row_count)
          IF g_rec_b != 0 THEN
-            CALL fgl_set_arr_curr(1) 
+            CALL fgl_set_arr_curr(1)
          END IF
-         ACCEPT DISPLAY                    
- 
+         ACCEPT DISPLAY
+
       ON ACTION last
          CALL t324_fetch('L')
-         CALL cl_navigator_setting(g_curs_index, g_row_count)   
+         CALL cl_navigator_setting(g_curs_index, g_row_count)
          IF g_rec_b != 0 THEN
-            CALL fgl_set_arr_curr(1)  
+            CALL fgl_set_arr_curr(1)
          END IF
-         ACCEPT DISPLAY                  
+         ACCEPT DISPLAY
 
       #TQC-D10084---mark---str---
       #ON ACTION detail
       #   LET g_action_choice="detail"
       #   LET l_ac = 1
-      #   EXIT DISPLAY 
+      #   EXIT DISPLAY
       #TQC-D10084---mark---end---
 
       ON ACTION output
@@ -10451,14 +10465,14 @@ FUNCTION t324_bp2(p_ud)
 
       ON ACTION locale
          CALL cl_dynamic_locale()
-         CALL cl_show_fld_cont()                  
-         CALL t324_def_form()   
-         IF g_imm.immconf = 'X' THEN 
+         CALL cl_show_fld_cont()
+         CALL t324_def_form()
+         IF g_imm.immconf = 'X' THEN
             LET g_void = 'Y'
          ELSE
             LET g_void = 'N'
          END IF
-         CALL cl_set_field_pic(g_imm.immconf,"",g_imm.imm03,"",g_void,"") 
+         CALL cl_set_field_pic(g_imm.immconf,"",g_imm.imm03,"",g_void,"")
 
       ON ACTION exit
          LET g_action_choice="exit"
@@ -10466,11 +10480,11 @@ FUNCTION t324_bp2(p_ud)
 
       ON ACTION controlg
          LET g_action_choice="controlg"
-         EXIT DISPLAY 
+         EXIT DISPLAY
    #@ ON ACTION 確認
       ON ACTION confirm
          LET g_action_choice="confirm"
-         EXIT DISPLAY 
+         EXIT DISPLAY
    #@ ON ACTION 取消確認
       ON ACTION undo_confirm
          LET g_action_choice="undo_confirm"
@@ -10482,32 +10496,32 @@ FUNCTION t324_bp2(p_ud)
    #@ ON ACTION 過帳還原
       ON ACTION undo_post
          LET g_action_choice="undo_post"
-         EXIT DISPLAY 
+         EXIT DISPLAY
    #@ ON ACTION 作廢
       ON ACTION void
          LET g_action_choice="void"
-         EXIT DISPLAY 
+         EXIT DISPLAY
       #CHI-D20008---begin
       ON ACTION undo_void
          LET g_action_choice="undo_void"
-         EXIT DISPLAY 
-      #CHI-D20008---end 
- 
+         EXIT DISPLAY
+      #CHI-D20008---end
+
       ON ACTION CANCEL
-         LET INT_FLAG=FALSE        
+         LET INT_FLAG=FALSE
          LET g_action_choice="exit"
-         EXIT DISPLAY 
+         EXIT DISPLAY
 
       ON ACTION exporttoexcel
          LET g_action_choice = 'exporttoexcel'
-         EXIT DISPLAY 
+         EXIT DISPLAY
 
       ON IDLE g_idle_seconds
          CALL cl_on_idle()
-         CONTINUE DISPLAY 
- 
-      ON ACTION about         
-         CALL cl_about()      
+         CONTINUE DISPLAY
+
+      ON ACTION about
+         CALL cl_about()
 
       ON ACTION approval_status #簽核狀況
          LET g_action_choice="approval_status"
@@ -10515,7 +10529,7 @@ FUNCTION t324_bp2(p_ud)
 
       ON ACTION easyflow_approval #easyflow送簽
          LET g_action_choice = "easyflow_approval"
-         EXIT DISPLAY 
+         EXIT DISPLAY
 
       ON ACTION agree
          LET g_action_choice = 'agree'
@@ -10523,11 +10537,11 @@ FUNCTION t324_bp2(p_ud)
 
       ON ACTION deny
          LET g_action_choice = 'deny'
-         EXIT DISPLAY 
+         EXIT DISPLAY
 
       ON ACTION modify_flow
          LET g_action_choice = 'modify_flow'
-         EXIT DISPLAY 
+         EXIT DISPLAY
 
       ON ACTION withdraw
          LET g_action_choice = 'withdraw'
@@ -10542,15 +10556,15 @@ FUNCTION t324_bp2(p_ud)
          EXIT DISPLAY
 
     #@ON ACTION 拋轉至SPC
-      ON ACTION trans_spc                     
+      ON ACTION trans_spc
          LET g_action_choice="trans_spc"
-         EXIT DISPLAY 
+         EXIT DISPLAY
 
-      ON ACTION related_document                
-         LET g_action_choice="related_document"          
-         EXIT DISPLAY    
-      ON ACTION controls                                                                                                             
-         CALL cl_set_head_visible("","AUTO")                                                                                        
+      ON ACTION related_document
+         LET g_action_choice="related_document"
+         EXIT DISPLAY
+      ON ACTION controls
+         CALL cl_set_head_visible("","AUTO")
 
       ON ACTION qry_lot
          LET g_action_choice="qry_lot"
@@ -10559,8 +10573,8 @@ FUNCTION t324_bp2(p_ud)
       &include "qry_string.4gl"
    END DISPLAY
    CALL cl_set_act_visible("accept,cancel", TRUE)
-      
-END FUNCTION 
+
+END FUNCTION
 #FUN-D10081---add---end
 
 #No:DEV-D30026--add--begin
@@ -10591,7 +10605,7 @@ FUNCTION t324_chk_smyb(p_ima01)
   SELECT ima930,ima932
     INTO l_ima930,l_ima932
     FROM ima_file
-   WHERE ima01 = p_ima01 
+   WHERE ima01 = p_ima01
   IF cl_null(l_ima930) THEN LET l_ima930 = 'N' END IF
 
   CASE
@@ -10602,7 +10616,7 @@ FUNCTION t324_chk_smyb(p_ima01)
         END IF
 
      WHEN l_smyb01 = '2'
-        IF l_ima930 = 'N' THEN                    
+        IF l_ima930 = 'N' THEN
            #當前單別只允許輸入使用條碼料件(ima930='Y')!
            LET g_errno = 'aba-095'
         END IF
@@ -10617,7 +10631,7 @@ END FUNCTION
 #   DEFINE l_ima01    LIKE ima_file.ima01
 #   DEFINE l_ima931   LIKE ima_file.ima931
 #   DEFINE l_smyb01   LIKE smyb_file.smyb01
-#   
+#
 #   LET l_smyb01 = '1'
 #   IF g_aza.aza131 = 'N' OR cl_null(g_aza.aza131) THEN
 #      RETURN l_smyb01
@@ -10630,18 +10644,18 @@ END FUNCTION
 #    WHERE imn01 = p_imm01
 #      AND imn02 = (SELECT MIN(imn02) FROM imn_file
 #                    WHERE imn01 = p_imm01)
-#   
+#
 #   LET l_ima931 = ''
 #   SELECT ima931
 #     INTO l_ima931
 #     FROM ima_file
 #    WHERE ima01 = l_ima01
 #   IF cl_null(l_ima931) THEN LET l_ima931 = 'N' END IF
-#   
+#
 #   IF l_ima931 = 'Y' THEN
 #      LET l_smyb01 = '2'
 #   END IF
-#   
+#
 #   RETURN l_smyb01
 #
 #END FUNCTION
@@ -10684,14 +10698,14 @@ END FUNCTION
 
 #FUN-D50028--begin
 FUNCTION t324_imn32_check()
-   
+
    IF NOT cl_null(g_imn[l_ac].imn30) AND NOT cl_null(g_imn[l_ac].imn32) THEN
-      IF cl_null(g_imn30_t) OR cl_null(g_imn_t.imn32) OR g_imn30_t != g_imn[l_ac].imn30 OR g_imn_t.imn32 != g_imn[l_ac].imn32 THEN 
+      IF cl_null(g_imn30_t) OR cl_null(g_imn_t.imn32) OR g_imn30_t != g_imn[l_ac].imn30 OR g_imn_t.imn32 != g_imn[l_ac].imn32 THEN
          LET g_imn[l_ac].imn32=s_digqty(g_imn[l_ac].imn32, g_imn[l_ac].imn30)
          DISPLAY BY NAME g_imn[l_ac].imn32
-      END IF 
-   END IF 
-   
+      END IF
+   END IF
+
    IF NOT cl_null(g_imn[l_ac].imn32) THEN
       #MOD-DC0097 -------
       IF g_imn[l_ac].imn32 = 0 THEN
@@ -10702,7 +10716,7 @@ FUNCTION t324_imn32_check()
       IF g_imn[l_ac].imn32 < 0 THEN
          CALL cl_err('','aim-391',0)  #
       END IF
-   END IF   
+   END IF
    RETURN TRUE
 END FUNCTION
 #FUN-D50028--end

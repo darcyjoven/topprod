@@ -224,8 +224,8 @@
 # Modify.........: No.FUN-840032 08/04/08 By Dido 屬於委外採購亦可做價格變更
 # Modify.........: No.FUN-840042 08/04/08 By Wind 自定欄位功能修改
 # Modify.........: No.CHI-830033 08/04/18 By claire 未(含)稅金額=未(含)稅單價*計價數量的方式調整為:
-#                                                   (1)單價含稅時,以含稅金額/(1+稅率)/100 = 未稅金額 
-#                                                   (1)單價未稅時,以未稅金額*(1+稅率)/100 = 含稅金額 
+#                                                   (1)單價含稅時,以含稅金額/(1+稅率)/100 = 未稅金額
+#                                                   (1)單價未稅時,以未稅金額*(1+稅率)/100 = 含稅金額
 # Modify.........: No.MOD-840218 08/04/20 By claire 重新過單
 # Modify.........: No.MOD-840347 08/04/20 By Nicola 不做批/序號不刪除tlfs_file
 # Modify.........: No.MOD-840560 08/04/22 By claire 不做中斷點時, 單據取消確認不可將多角序號清空
@@ -263,7 +263,7 @@
 # Modify.........: No.MOD-880191 08/09/03 By claire 一般倉退單需控管TRI單據性質的輸入
 # Modify.........: No.MOD-890002 08/09/03 By claire 一般倉退單開窗查詢應不可查到多角收貨單
 # Modify.........: No.MOD-890023 08/09/03 By chenyu ICD功能修改
-# Modify.........: No.MOD-890106 08/09/11 By wujie  rvu00欄位不應該可以修改 
+# Modify.........: No.MOD-890106 08/09/11 By wujie  rvu00欄位不應該可以修改
 # Modify.........: No.FUN-880129 08/09/05 By xiaofeizhu s_del_rvbs的傳入參數(出/入庫，單據編號，單據項次，專案編號)，改為(出/入庫，單據編號，單據項次，檢驗順序)
 # Modify.........: No.MOD-890276 08/09/30 By Smapmin 使用參考單位且參考數量為0時，也需寫入tlff_file
 # Modify.........: No.MOD-890277 08/09/30 By Smapmin 單身的稅別與稅率的顯示,當依照採購單抓取不到時,就得依廠商基本資料來抓取
@@ -278,13 +278,13 @@
 # Modify.........: No.MOD-8A0183 08/10/21 By sherry 錄入時，稅前金額計算的保留小數位數，保存后會將小數位數變為0，以整數方式保存
 # Modify.........: No.TQC-8A0071 08/10/29 By claire 多角倉退逆拋時,錯誤訊息調整
 # Modify.........: No.MOD-8B0027 08/11/04 By sherry 單身收貨項次開窗不對
-# Modify.........: No.MOD-8B0070 08/11/06 By claire oga14給值錯誤   
+# Modify.........: No.MOD-8B0070 08/11/06 By claire oga14給值錯誤
 # Modify.........: No.MOD-8B0174 08/11/19 By Smapmin 倉庫不為空時,才檢核與庫存單位是否可轉換
 # Modify.........: No.MOD-8C0089 08/12/09 By Smapmin 給予oga021空白值
 # Modify.........: No.MOD-8C0183 08/12/20 By Smapmin 製程委外時不異動庫存資料,故關於倉儲批的判斷皆不需要
 # Modify.........: No.CHI-8C0017 08/12/17 By xiaofeizhu 一般及委外問題處理
 # Modify.........: No.FUN-8C0084 08/12/22 By jan s_upimg相關改以 料倉儲批為參數傳入 ,不使用 ROWID
-# Modify.........: No.MOD-910091 09/01/09 By sherry 當采購單收貨入庫后，采購單結案,不能做這個收貨單的倉退單 
+# Modify.........: No.MOD-910091 09/01/09 By sherry 當采購單收貨入庫后，采購單結案,不能做這個收貨單的倉退單
 # Modify.........: No.CHI-8C0023 09/01/12 By xiaofeizhu 移除允許入庫單與收貨單別一致判斷
 # Modify.........: No.MOD-910124 09/01/12 By chenyu 委外入庫單也要像委外收貨單中的對工單發料進行判斷
 # Modify.........: No.MOD-910206 09/01/17 By Smapmin 由收貨單自動產生單身時,若異動數量<=0,則不做寫入
@@ -294,7 +294,7 @@
 # Modify.........: No.MOD-920018 09/02/02 By Smapmin imb118定義為本幣,故當sma25為'2'時,要先將原幣收貨單價轉換成本幣
 # Modify.........: No.FUN-910082 09/02/02 By ve007 wc,sql 定義為STRING
 # Modify.........: No.CHI-8B0047 09/02/09 By xiaofeizhu apmt740增加拋轉出貨單功能
-# Modify.........: No.CHI-920041 09/02/11 BY ve007 強制使用者一定要輸入倉儲批才可離開  
+# Modify.........: No.CHI-920041 09/02/11 BY ve007 強制使用者一定要輸入倉儲批才可離開
 # Modify.........: No.TQC-910033 09/02/12 by ve007 抓取作業編號時，委外要區分制程和非制程
 # Modify.........: No.FUN-910053 09/02/12 By jan sma74-->ima153
 # Modify.........: No.MOD-920249 09/02/19 By chenl   系統采用雙單位，料件為單一單位時，自動拋轉驗退單時，不應將單位一數量和單位二數量置零，應保持原值。
@@ -306,7 +306,7 @@
 # Modify.........: No.TQC-930128 09/03/19 By douzh 變量撰寫錯誤導致編譯不過
 # Modify.........: No.FUN-930145 09/03/20 By destiny rvv26增加管控
 # Modify.........: No.FUN-930108 09/03/20 By zhaijie增加s_incchk檢查使用者是否有相應倉,儲的過賬權限
-# Modify.........: No.FUN-930107 09/03/24 By lutingting審核時若為委外入庫單且入庫后自動產生移轉資料,則CALL轉報工單按鈕邏輯進行處理 
+# Modify.........: No.FUN-930107 09/03/24 By lutingting審核時若為委外入庫單且入庫后自動產生移轉資料,則CALL轉報工單按鈕邏輯進行處理
 # Modify.........: No.TQC-930155 09/04/14 By dongbg Transation處理
 # Modify.........: No.MOD-940073 09/04/14 By Smapmin 沒有收貨單的料件抓取單價時,幣別依據為供應商基本資料的慣用幣別.
 # Modify.........: No.MOD-940128 09/04/14 By Smapmin 新增img_file時因為儲位為NULL而導致出錯
@@ -321,23 +321,23 @@
 # Modify.........: No.FUN-940083 09/06/01 By Sunyanchun 新增VIM管理
 # Modify.........: No.FUN-960007 09/06/03 By chenmoyan global檔內沒有定義rowid變量
 # Modify.........: No.FUN-940083 09/06/15 By shiwuying 採購改善-VMI 新增自動取消審核功能
-# Modify.........: No.MOD-940378 09/06/17 By mike 依儲位判斷全型空白條件有誤  
+# Modify.........: No.MOD-940378 09/06/17 By mike 依儲位判斷全型空白條件有誤
 # Modify.........: No.MOD-960033 09/07/07 By Smapmin 刪除tlf_file/tlff_file時,要加入tlf13/tlff13的條件
 # Modify.........: No.MOD-970043 09/07/07 By Dido 倉退拋轉還原需檢核是否已拋轉帳款
-# Modify.........: No.TQC-950054 09/07/10 By jan updat行業別檔時，KEY值一并update 
+# Modify.........: No.TQC-950054 09/07/10 By jan updat行業別檔時，KEY值一并update
 # Modify.........: No.MOD-970081 09/07/16 By Smapmin 單身無法default項次欄位
 # Modify.........: No.FUN-970041 09/07/17 By chenmoyan 多角入庫單加產生調撥單功能
 # Modify.........: No.FUN-960130 09/07/21 By sunyanchun 增加流通零售段處理
-# Modify.........: No.MOD-970204 09/07/22 By mike 入庫單按確認時將剩余未入庫量轉為驗退單                                            
-#                                                 倉庫,儲位,批號要帶原收單單單身的倉庫,儲位,批號 
+# Modify.........: No.MOD-970204 09/07/22 By mike 入庫單按確認時將剩余未入庫量轉為驗退單
+#                                                 倉庫,儲位,批號要帶原收單單單身的倉庫,儲位,批號
 # Modify.........: No.MOD-970214 09/07/23 By sherry 在t720_set_rvv87()里面抓采購單位時，先抓采購單上的pmn07如果抓不到再抓ima44
 # Modify.........: No.MOD-970192 09/07/22 By sabrina 當sma115='Y' and l_ima906='1'時剩餘未入庫量應轉為驗退單
 # Modify.........: No.MOD-970272 09/08/04 By Dido 無論採購單是否存在皆須進入 t720_rvv39
 # Modify.........: No.FUN-980006 09/08/17 By TSD.sar2436 GP5.2架構重整，修改 INSERT INTO 語法
-# Modify.......... No.FUN-930062 09/08/20 By lutingting apmt730新增action'領料生成','領料維護',新增欄位rvu16領料單號并只在apmt730顯示 
-# Modify.........: No.CHI-980050 09/08/21 By mike 將l_rvb07 搬到 b_rvv.* 之前 ,避免 rvv 后續有新增欄位 會被丟錯值 .                 
+# Modify.......... No.FUN-930062 09/08/20 By lutingting apmt730新增action'領料生成','領料維護',新增欄位rvu16領料單號并只在apmt730顯示
+# Modify.........: No.CHI-980050 09/08/21 By mike 將l_rvb07 搬到 b_rvv.* 之前 ,避免 rvv 后續有新增欄位 會被丟錯值 .
 # Modify.........: No.TQC-980195 09/08/27 By lilingyu  1."收貨單項次"開窗查詢后無資料,而直接輸入值是可以過的
-# Modify.........: No.TQC-980291 09/08/31 By lilingyu 部分代碼丟失,參照32區補齊 
+# Modify.........: No.TQC-980291 09/08/31 By lilingyu 部分代碼丟失,參照32區補齊
 # Modify.........: No.FUN-980030 09/08/31 By Hiko 加上GP5.2的相關設定
 # Modify.........: No.MOD-990024 09/09/02 By Smapmin 修改取消確認時,更新工單狀態的邏輯
 # Modify.........: No.MOD-980252 09/09/04 By mike 還原MOD-970214修改的地方,而MOD-970214原本的問題,應該改為像MOD-960186在sapmt540.4gl
@@ -352,13 +352,13 @@
 # Modify.........: No.MOD-990023 09/10/15 By Smapmin 委外入庫確認時,針對最小發料套數的判斷,要再加上已入庫/驗退量
 # Modify.........: No.MOD-990106 09/10/15 By Smapmin t720_minp()計算最小發料數時,也要考慮sfa100的誤差率
 # Modify.........: No.TQC-9A0093 09/10/16 By lilingyu 查詢時,資料創建日未帶出值
-# Modify.........: No.TQC-9A0092 09/10/16 By lilingyu 調整畫面欄位的錄入順序 
+# Modify.........: No.TQC-9A0092 09/10/16 By lilingyu 調整畫面欄位的錄入順序
 # Modify.........: NO.TQC-9A0168 09/10/28 By liuxqa order by 修改。
 # Modify.........: No.FUN-9A0068 09/10/28 By douzh VMI测试结果反馈及相关调整
-# Modify.........: No:MOD-9B0004 09/11/03 By Dido 抓取流程代碼條件有誤 
+# Modify.........: No:MOD-9B0004 09/11/03 By Dido 抓取流程代碼條件有誤
 # Modify.........: No.FUN-9B0016 09/11/08 By Sunyanchun post no
 # Modify.........: No:MOD-9B0109 09/11/17 By Dido 產生調撥單action僅顯示多角相關程式
-# Modify.........: No:CHI-930021 09/11/17 By jan 1.when g_argv1 = '3' ==> 單頭的"收貨單號"及單身的"收貨項次"應該為非必要欄位 
+# Modify.........: No:CHI-930021 09/11/17 By jan 1.when g_argv1 = '3' ==> 單頭的"收貨單號"及單身的"收貨項次"應該為非必要欄位
 # ...............................................2.AFTER FIELD "採購性質"，檢查段應加上可輸入"WB0-2"==> for icd only
 # Modify.........: No.FUN-9B0106 09/11/19 By kevin 用s_dbstring(l_dbs CLIPPED) 判斷跨資料庫
 # Modify.........: No.TQC-9B0161 09/11/20 By douzh 收貨單為非JIT收貨時，幣別匯率不可輸入
@@ -366,7 +366,7 @@
 # MOdify.........: No:MOD-9B0155 09/11/24 By Smapmin 在抓取入庫單的rvbs_file資料時,要排除已作廢的入庫單
 # Modify.........: No:TQC-9B0214 09/11/25 By Sunyanchun  s_defprice --> s_defprice_new
 # Modify.........: No:TQC-9B0191 09/12/02 By jan 修改aict042/aict043/aict044 rvu01欄位開窗
-# Modify.........: No:MOD-9C0016 09/12/03 By mike 原有的零售管控非成本仓拿掉 
+# Modify.........: No:MOD-9C0016 09/12/03 By mike 原有的零售管控非成本仓拿掉
 # Modify.........: No:TQC-9B0191 09/12/03 By jan 修改aict042/aict043/aict044 異動單號開窗
 # Modify.........: No:FUN-9B0157 09/12/07 By bnlent 零售業退貨採購性質可以是TAP,TRI
 # Modify.........: No:TQC-9A0094 09/12/10 By lilingyu 新增時,開啟畫面欄位"付款方式 價格條件"
@@ -396,7 +396,7 @@
 # Modify.........: No.FUN-A50071 10/05/21 By lixia 程序增加POS單號字段 并增加相應管控
 # Modify.........: No:CHI-A50012 10/05/26 By Summer 寫入rvu_file時,給予rvu101/rvu102/rvu100預設值
 # Modify.........: No:CHI-A40068 10/05/26 By Summer 變更"串查button真正對應的程式
-# Modify.........: No.FUN-A50054 10/06/01 By chenmoyan 增加服饰版二维功能 
+# Modify.........: No.FUN-A50054 10/06/01 By chenmoyan 增加服饰版二维功能
 # Modify.........: No.FUN-A50001 10/06/01 By Lilan Lilan EF整合寫作規範:For MESSAGE --> cl_msg
 # Modify.........: No.TQC-A60046 10/06/22 By chenmoyan 外連的SQL有誤
 # Modify.........: No.FUN-A60076 10/06/25 By huangtao 製造功能優化-平行製程(批量修改)
@@ -413,7 +413,7 @@
 # Modify.........: No:FUN-A80026 10/08/11 By Carrier 入库单直接产生AP功能
 # Modify.........: No:FUN-A80150 10/09/08 By sabrina 單身新增"計畫批號"(rvv919)欄位
 # Modify.........: No:FUN-A20017 10/10/22 by jan 入庫單身可輸入聯產品料號
-# Modify.........: No.FUN-AA0059 10/10/22 By chenying 料號開窗控管 
+# Modify.........: No.FUN-AA0059 10/10/22 By chenying 料號開窗控管
 # Modify.........: No.FUN-A40022 10/10/25 By jan 當料件為批號控管,則批號必須輸入
 # Modify.........: No.FUN-AA0059 10/10/28 By huangtao 修改料號AFTER FIELD的管控
 # Modify.........: No.FUN-AA0049 10/10/29 by destiny  增加倉庫的權限控管
@@ -428,24 +428,24 @@
 # Modify.........: No:CHI-AB0018 10/11/24 By Summer ima25(庫存單位)應改為ima44(採購單位)
 # Modify.........: No.FUN-AB0096 10/11/25 By vealxu 因新增ogb50的not null欄位,所導致其他作業無法insert into資料的問題修正
 # Modify.........: No.TQC-AB0412 10/12/04 By lixh1  修改欄位跳轉順序,忽略p_per順序,修正單身新增修改BUG
-# Modify.........: No:TQC-AB0083 10/12/06 By Dido 發票編號有輸入時才檢核 
+# Modify.........: No:TQC-AB0083 10/12/06 By Dido 發票編號有輸入時才檢核
 # Modify.........: No:MOD-AB0254 10/12/10 By Smapmin 使用多單位且料為單一單位時,入庫量的default未扣除已產生的入庫單
 # Modify.........: No:TQC-AC0265 10/12/17 By houlia 人員欄位控管修改
 # Modofy.........: No.TQC-AC0293 10/12/20 By vealxu sfp01的開窗/檢查要排除smy73='Y'的單據
 # Modify.........: No.TQC-AC0257 10/12/22 By suncx s_defprice_new.4gl返回值新增兩個參數
 # Modify.........: No.FUN-AC0055 10/12/22 By wangxin oga57,ogb50欄位預設值修正
 # Modify.........: No:MOD-AB0205 10/12/24 By Summer 倉退單要可以打MISC料
-# Modify.........: No:MOD-AC0355 10/12/28 By chenying apmt740時gen_ap action 不可視 
+# Modify.........: No:MOD-AC0355 10/12/28 By chenying apmt740時gen_ap action 不可視
 # Modify.........: No:MOD-AC0359 10/12/28 By chenying apmt722時gen_ap action 不可視
 # Modify.........: No:MOD-AC0403 10/12/30 By zhangweib 開立折讓單設定為不需要預設打勾
 #                                                      AFTER 退貨方式 if 退貨方式='2' then rvu10='N' ELSE rvu10='Y'
 #                                                      after rvu10，if 退貨方式='2' then 不做訊息'apm-436'的判斷
-# Modify.........: No:MOD-AC0414 10/12/30 By lixh1  1.稅率不可修改，值由稅別資料帶入; 2.增加顯示gec07字段  
+# Modify.........: No:MOD-AC0414 10/12/30 By lixh1  1.稅率不可修改，值由稅別資料帶入; 2.增加顯示gec07字段
 # Modify.........: No:MOD-AC0024 11/01/06 By sabrina 未稅金額與採購單不同
-# Modify.........: No:CHI-B10026 11/01/13 By Smapmin 無權限的時候沒有顯示訊息 
+# Modify.........: No:CHI-B10026 11/01/13 By Smapmin 無權限的時候沒有顯示訊息
 # Modify.........: No:CHI-AA0026 11/01/13 By Smapmin 稅率為空時,依供應商基本資料檔對應的稅別來抓稅率
 # Modify.........: No:TQC-B10197 11/01/20 By lilingyu 調整錄入收貨單號rvu02後check的報錯訊息
-# Modify.........: No:MOD-B10167 11/01/24 By Summer 當計價數量為0時,輸入未稅/含稅單價時,要依稅率推算出含稅/未稅單價 
+# Modify.........: No:MOD-B10167 11/01/24 By Summer 當計價數量為0時,輸入未稅/含稅單價時,要依稅率推算出含稅/未稅單價
 # Modify.........: No:CHI-B10047 11/01/27 By Smapmin 修正錯誤訊息顯示方式,g_rva00沒有值
 # Modify.........: No:FUN-A60009 11/02/18 By Lilan 新增EF(EasyFlow)整合功能
 # Modify.........: No:MOD-B30033 11/03/07 By Summer 1.輸入異動數量或是計價數量時也要加上MOD-B10167同樣的邏輯
@@ -471,7 +471,7 @@
 # Modify.........: No:TQC-B60065 11/06/16 By shiwuying 增加虛擬類型rvu27
 # Modify.........: No:TQC-B60215 11/06/21 By wuxj 已審核資料才可轉報工單
 # Modify.........: No.FUN-A70095 11/06/23 By lixh1 撈取報工單(shb_file)的所有處理作業,必須過濾是已確認的單據
-# Modify.........: No.FUN-B30187 11/06/29 By jason ICD功能修改，增加母批、DATECODE欄位 
+# Modify.........: No.FUN-B30187 11/06/29 By jason ICD功能修改，增加母批、DATECODE欄位
 # Modify.........: No.FUN-B60150 11/07/06 By baogc apmt723單頭 虛擬類型rvu27隱藏1,成本代銷中若sma146=1入成本倉，sma146=2入非成本倉
 # Modify.........: No.TQC-B70073 11/07/15 By guoch rvu116選2時rvu10賦值為Y
 # Modify.........: No.MOD-B70171 11/07/18 By JoHung 委外採購取得工單的條件修改
@@ -479,7 +479,7 @@
 # Modify.........: No:MOD-B70231 11/07/25 By JoHung 倉退金額不可大於採購單金額
 # Modify.........: NO.FUN-B70074 11/07/25 By xianghui 添加行業別表的新增於刪除(sfsi_file By lixh1)
 # Modify.........: No.TQC-B80005 11/08/03 By jason s_icdpost函數傳入參數
-# Modify.........: No:MOD-B60098 11/08/10 By Summer 修正TQC-AC0265改AFTER FIELD rvu07人員欄位的控卡 
+# Modify.........: No:MOD-B60098 11/08/10 By Summer 修正TQC-AC0265改AFTER FIELD rvu07人員欄位的控卡
 # Modify.........: No.FUN-B50096 11/08/18 By lixh1 所有入庫程式應該要加入可以依料號設置"批號(倉儲批的批)是否為必要輸入欄位"的選項
 # Modify.........: No:MOD-B80272 11/09/03 By johung icd行業時，程式代號應加上_icd
 #                                                   修正r.c2不過
@@ -499,13 +499,13 @@
 # Modify.........: No.FUN-BB0044 11/11/08 By baogc 倉退單時，顯示'折讓'按鈕
 # Modify.........: No.FUN-B90104 11/11/10 By huangrh GP5.3服飾版本開發
 # Modify.........: No:FUN-B90060 11/11/14 By jason icd行業加上"開立下階工單"的action
-# Modify.........: No.FUN-BA0051 11/11/14 By jason 一批號多DATECODE功能 
+# Modify.........: No.FUN-BA0051 11/11/14 By jason 一批號多DATECODE功能
 # Modify.........: No.MOD-BB0126 11/11/23 By suncx 應該過濾調委外單據的錄入
 # Modify.........: No.FUN-BB0001 11/11/30 By pauline 新增rvv22,INSERT/UPDATE rvb22時,同時INSERT/UPDATE rvv22
 # Modify.........: No.TQC-BB0131 11/11/30 By pauline 當rvu27是空的或 = 1 時才select rvb22 INTO rvu15
-# Modify.........: No:CHI-B90036 11/12/12 By Summer 調整為確認後才能產生領料單 
-# Modify.........: NO:MOD-BA0048 11/12/12 By Summer 沒有對應採購單時,就不做apm-250的控卡 
-# Modify.........: No:MOD-BB0318 11/12/12 By Summer 增加判斷g_rva00為null的情況改抓畫面上的幣別欄位 
+# Modify.........: No:CHI-B90036 11/12/12 By Summer 調整為確認後才能產生領料單
+# Modify.........: NO:MOD-BA0048 11/12/12 By Summer 沒有對應採購單時,就不做apm-250的控卡
+# Modify.........: No:MOD-BB0318 11/12/12 By Summer 增加判斷g_rva00為null的情況改抓畫面上的幣別欄位
 # Modify.........: No.FUN-BC0104 12/01/04 By xujing QC料件判定,增加分批順序、判定結果編碼、結果說明、項次 4個欄位
 
 # Modify.........: No:FUN-C10039 12/02/02 by Hiko 整批修改資料歸屬設定
@@ -560,7 +560,7 @@
 # Modify.........: No:MOD-C40098 12/06/08 By Vampire 排除入庫時料件編號有做批序號時，仍需控卡數量
 # Modify.........: No:TQC-C60085 12/06/11 By zhuhao 對廠商進行開窗后，判斷其返回值是否為空,AFTER INPUT后 INT_FLAG的順序調整
 # Modify.........: No:TQC-C60096 12/06/12 By zhuhao 單身項次新增刪除時，同步更新批序號明細內容
-# Modify.........: No:FUN-C50097 12/06/13 By SunLM  對非空字段進行判斷ogb50,51,52       
+# Modify.........: No:FUN-C50097 12/06/13 By SunLM  對非空字段進行判斷ogb50,51,52
 # Modify.........: No:MOD-C60054 12/06/28 By Vampire 倉退單控卡不可輸入無效廠商
 # Modify.........: No:MOD-C50254 12/06/28 By Vampire 增加判斷新舊值不同才重新取價
 # Modify.........: No:FUN-C60071 12/07/04 By suncx AFTER FIELD rvv25判斷,其值需為Y/N/P
@@ -629,7 +629,7 @@
 # Modify.........: No:FUN-D20059 13/03/26 By chenjing 統一確認和取消確認時確認人員和確認日期的寫法
 # Modify.........: No.MOD-D30016 13/03/28 By Vampire (1) 統一調整計算金額後再重取位
 #                                                    (2) 將ON ROW CHANGE 重複 CALL t720sub_rvv39() t720sub_rvv38() 統一在 t720_b_move_back() 處理
-# Modify.........: No:DEV-D30045 13/04/01 By TSD.JIE 
+# Modify.........: No:DEV-D30045 13/04/01 By TSD.JIE
 #                  1.條碼產生時機點相關程式-增加"條碼查詢"
 #                  2.條碼產生時機點相關程式-增加"條碼列印"
 #                  3.條碼產生時機點相關程式-增加"條碼產生"
@@ -652,9 +652,9 @@
 # Modify.........: NO.TQC-D80008 13/08/08 By lixh1 修改多角倉退邏輯
 # Modify.........: NO.CHI-D60028 13/08/12 By SunLM 调整QC逻辑
 # Modify.........: NO.MOD-D80123 13/08/12 By SunLM apmt722项次2料号不能录入
-# Modify.........: NO.MOD-D90146 13/09/26 By SunLM 增加qbe條件查詢存儲按鈕  
-# Modify.........: No.18010101   18/01/01 BY shawn 自动过账调整  
-# Modify.........: No.18010101   18/01/01 BY shawn 仓退同步        
+# Modify.........: NO.MOD-D90146 13/09/26 By SunLM 增加qbe條件查詢存儲按鈕
+# Modify.........: No.18010101   18/01/01 BY shawn 自动过账调整
+# Modify.........: No.18010101   18/01/01 BY shawn 仓退同步
 # Modify.........: No.2021112901 21/11/29 By jc 仓退单审核时自动同步
 
 
@@ -665,7 +665,7 @@ GLOBALS "../4gl/sapmt720.global"
 GLOBALS
    DEFINE g_rowid     LIKE type_file.row_id    #chr18 FUN-A70120
 END GLOBALS       #No.FUN-960007
- 
+
 
 
 DEFINE g_ima918  LIKE ima_file.ima918  #No.FUN-810036
@@ -707,19 +707,19 @@ FUNCTION t720(p_argv1,p_argv2,p_argv3,p_argv4,p_argv5)   #No:FUN-630010  #FUN-A6
    DEFINE cb        ui.ComboBox              #FUN-B40031
 
    WHENEVER ERROR CONTINUE
- 
+
    SELECT * INTO g_qcz.* FROM qcz_file WHERE qcz00 ='0'
- 
+
    LET g_argv1=p_argv1
    LET g_argv2=p_argv2
    LET g_argv3=p_argv3
    LET g_argv4=p_argv4
    LET g_argv5=p_argv5                     #FUN-A60009 add
-   #No.18010101 --- beign ------  
-   IF cl_null(g_rvu.rvu01) THEN 
-   	LET g_rvu.rvu01 = p_argv5   
-   END IF  
-   #No.18010101 ---end ---- 
+   #No.18010101 --- beign ------
+   IF cl_null(g_rvu.rvu01) THEN
+   	LET g_rvu.rvu01 = p_argv5
+   END IF
+   #No.18010101 ---end ----
   #FUN-B40031 Begin---
    IF  g_argv1='A' THEN
       LET g_rvu00='A'
@@ -747,27 +747,27 @@ FUNCTION t720(p_argv1,p_argv2,p_argv3,p_argv4,p_argv5)   #No:FUN-630010  #FUN-A6
    END IF
   #FUN-A60009 end ---
 
- 
+
    LET g_forupd_sql = "SELECT * FROM rvu_file WHERE rvu01 = ? FOR UPDATE"
    LET g_forupd_sql = cl_forupd_sql(g_forupd_sql)
    DECLARE t720_cl CURSOR FROM g_forupd_sql
- 
+
    LET p_row = 3 LET p_col = 2
 
 #TQC-AA0132 --begin--
    SELECT rva00 INTO g_rva00 FROM rva_file
     WHERE rva01 = g_argv2
-#TQC-AA0132 --end-- 
- 
+#TQC-AA0132 --end--
+
    IF g_argv1 MATCHES '[56Z]' THEN                                  #No.FUN-940083
       LET g_rvu.rvu00='1'
       LET g_rvu.rvu08=g_argv3
       LET g_icq=''
       CALL t720_q()
       #No.18010101 --- beign ------
-      IF cl_null(g_rvu.rvu01) THEN 
-        LET g_rvu.rvu01 = p_argv5   
-      END IF  
+      IF cl_null(g_rvu.rvu01) THEN
+        LET g_rvu.rvu01 = p_argv5
+      END IF
       #No.18010101 --- end ------
       IF g_argv1 = 'Z' THEN
          CALL t720_z()
@@ -777,7 +777,7 @@ FUNCTION t720(p_argv1,p_argv2,p_argv3,p_argv4,p_argv5)   #No:FUN-630010  #FUN-A6
          CALL t720sub_y_chk(g_rvu.rvu01,g_argv1,g_argv2,g_argv3,g_chr,'Y')
          IF g_success = "Y" THEN
             #CALL t720sub_y_upd(g_rvu.rvu01,g_argv1,g_argv2,g_argv3,g_chr,FALSE,'Y')    #MOD-C80049 mark
-            CALL t720sub_y_upd(g_rvu.rvu01,g_argv1,g_argv2,g_argv3,g_chr,FALSE,'Y','Y') #MOD-C80049 add  
+            CALL t720sub_y_upd(g_rvu.rvu01,g_argv1,g_argv2,g_argv3,g_chr,FALSE,'Y','Y') #MOD-C80049 add
          END IF
         #FUN-A60009 add end -----------------------
         IF g_bgjob='N' OR cl_null(g_bgjob) THEN  #add by 18010101
@@ -791,42 +791,42 @@ FUNCTION t720(p_argv1,p_argv2,p_argv3,p_argv4,p_argv5)   #No:FUN-630010  #FUN-A6
           WHEN (g_argv1='1' AND g_argv3 !='SUB' AND g_argv3 !='TAP')
                 OR (g_argv1=' ' AND g_argv3 !='TAP')
                OPEN WINDOW t720_w WITH FORM "apm/42f/apmt720"
-                ATTRIBUTE (STYLE = g_win_style CLIPPED) 
+                ATTRIBUTE (STYLE = g_win_style CLIPPED)
           WHEN g_argv1='2' AND g_argv3 !='SUB' AND g_argv3 !='TAP'
                OPEN WINDOW t720_w WITH FORM "apm/42f/apmt721"
-                ATTRIBUTE (STYLE = g_win_style CLIPPED) 
+                ATTRIBUTE (STYLE = g_win_style CLIPPED)
           WHEN g_argv1='3' AND g_argv3 !='SUB' AND g_argv3 !='TAP'
                OPEN WINDOW t720_w WITH FORM "apm/42f/apmt722"
-                ATTRIBUTE (STYLE = g_win_style CLIPPED) 
+                ATTRIBUTE (STYLE = g_win_style CLIPPED)
           WHEN g_argv1='1' AND g_argv3='SUB'
                OPEN WINDOW t720_w WITH FORM "apm/42f/apmt730"
-                ATTRIBUTE (STYLE = g_win_style CLIPPED) 
+                ATTRIBUTE (STYLE = g_win_style CLIPPED)
           WHEN g_argv1='2' AND g_argv3='SUB'
                OPEN WINDOW t720_w WITH FORM "apm/42f/apmt731"
-                ATTRIBUTE (STYLE = g_win_style CLIPPED) 
+                ATTRIBUTE (STYLE = g_win_style CLIPPED)
           WHEN g_argv1='3' AND g_argv3='SUB'
                OPEN WINDOW t720_w WITH FORM "apm/42f/apmt732"
-                ATTRIBUTE (STYLE = g_win_style CLIPPED) 
+                ATTRIBUTE (STYLE = g_win_style CLIPPED)
           WHEN (g_argv1='1' AND g_argv3='TAP') OR (g_argv1=' ' AND g_argv3='TAP')
                OPEN WINDOW t720_w WITH FORM "apm/42f/apmt740"
-                ATTRIBUTE (STYLE = g_win_style CLIPPED) 
+                ATTRIBUTE (STYLE = g_win_style CLIPPED)
           WHEN (g_argv1='2' AND g_argv3='TAP')
                OPEN WINDOW t720_w WITH FORM "apm/42f/apmt741"
-                ATTRIBUTE (STYLE = g_win_style CLIPPED) 
+                ATTRIBUTE (STYLE = g_win_style CLIPPED)
           WHEN (g_argv1='3' AND g_argv3='TAP')
                OPEN WINDOW t720_w WITH FORM "apm/42f/apmt742"
-                ATTRIBUTE (STYLE = g_win_style CLIPPED) 
+                ATTRIBUTE (STYLE = g_win_style CLIPPED)
         END CASE
       END IF                                    #FUN-A50001 add
- 
+
       #初始化界面的樣式(沒有任何默認屬性組)
       LET lg_smy62 = ''
       LET lg_group = ''
       CALL t720_refresh_detail()
- 
-      IF g_bgjob='N' OR cl_null(g_bgjob) THEN   #FUN-A50001 add 
+
+      IF g_bgjob='N' OR cl_null(g_bgjob) THEN   #FUN-A50001 add
         CALL cl_ui_init()
-        
+
         #CHI-A40068 add --start--
         CASE
         #apmt720
@@ -835,17 +835,17 @@ FUNCTION t720(p_argv1,p_argv2,p_argv3,p_argv4,p_argv5)   #No:FUN-630010  #FUN-A6
               CASE g_sma.sma124
                  WHEN 'std'
                     CALL cl_reset_qry_btn("rvv36,rvu02","apmt540,apmt110")
-                 WHEN 'icd' 
+                 WHEN 'icd'
                     CALL cl_reset_qry_btn("rvv36,rvu02","apmt540_icd,apmt110_icd")
-                 WHEN 'slk'                                                     
-                    CALL cl_reset_qry_btn("rvv36,rvu02","apmt540_slk,apmt110_slk") 
+                 WHEN 'slk'
+                    CALL cl_reset_qry_btn("rvv36,rvu02","apmt540_slk,apmt110_slk")
               END CASE
         #apmt721
            WHEN g_argv1='2' AND g_argv3 !='SUB' AND g_argv3 !='TAP'
               CASE g_sma.sma124
                  WHEN 'std'
                     CALL cl_reset_qry_btn("rvv36,rvu02","apmt540,apmt110")
-                 WHEN 'icd' 
+                 WHEN 'icd'
                     CALL cl_reset_qry_btn("rvv36,rvu02","apmt540_icd,apmt110_icd")
                  WHEN 'slk'
                     CALL cl_reset_qry_btn("rvv36,rvu02","apmt540_slk,apmt110")
@@ -855,7 +855,7 @@ FUNCTION t720(p_argv1,p_argv2,p_argv3,p_argv4,p_argv5)   #No:FUN-630010  #FUN-A6
               CASE g_sma.sma124
                  WHEN 'std'
                     CALL cl_reset_qry_btn("rvv36,rvu02","apmt540,apmt110")
-                 WHEN 'icd' 
+                 WHEN 'icd'
                     CALL cl_reset_qry_btn("rvv36,rvu02","apmt540_icd,apmt110_icd")
                  WHEN 'slk'                                                       #huangrh ??
                     CALL cl_reset_qry_btn("rvv36,rvu02","apmt540_slk,apmt110")    #huangrh ??
@@ -868,7 +868,7 @@ FUNCTION t720(p_argv1,p_argv2,p_argv3,p_argv4,p_argv5)   #No:FUN-630010  #FUN-A6
               CASE g_sma.sma124
                  WHEN 'std'
                     CALL cl_reset_qry_btn("rvv36,rvu02","apmt540,apmt300")
-                 WHEN 'icd' 
+                 WHEN 'icd'
                     CALL cl_reset_qry_btn("rvv36,rvu02","apmt540_icd,apmt300_icd")
                  WHEN 'slk'
                     CALL cl_reset_qry_btn("rvv36,rvu02","apmt540_slk,apmt300")
@@ -879,7 +879,7 @@ FUNCTION t720(p_argv1,p_argv2,p_argv3,p_argv4,p_argv5)   #No:FUN-630010  #FUN-A6
               CASE g_sma.sma124
                  WHEN 'std'
                     CALL cl_reset_qry_btn("rvv36,rvu02","apmt540,apmt300")
-                 WHEN 'icd' 
+                 WHEN 'icd'
                     CALL cl_reset_qry_btn("rvv36,rvu02","apmt540_icd,apmt300_icd")
                  WHEN 'slk'
                     CALL cl_reset_qry_btn("rvv36,rvu02","apmt540_slk,apmt300")
@@ -928,24 +928,24 @@ FUNCTION t720(p_argv1,p_argv2,p_argv3,p_argv4,p_argv5)   #No:FUN-630010  #FUN-A6
          IF g_aza.aza115 ='Y' THEN                    #TQC-D10103
             CALL cl_set_comp_required('rvv26',TRUE)   #TQC-D10103
          END IF                                       #TQC-D10103
-    
+
 #        IF g_prog != 'apmt730' THEN        #MOD-B80272 mark
          IF g_prog[1,7] != 'apmt730' THEN   #MOD-B80272
             CALL cl_set_act_visible("gen_mat_wtdw",FALSE)
             CALL cl_set_act_visible("maint_mat_wtdw",FALSE)
             CALL cl_set_comp_visible("rvu16",FALSE)
             CALL cl_set_act_visible("mod_try",FALSE)    #tianry add 161128
-         END IF  
+         END IF
          #MOD-AC0355-----add------str----------------
          IF (g_argv1='1' AND g_argv3='TAP') OR (g_argv1=' ' AND g_argv3='TAP') THEN
             CALL cl_set_act_visible("gen_ap",FALSE)
          END IF
-         #MOD-AC0355-----add------end----------------       
-         #MOD-AC0359-----add------------str------------------   
-         IF g_argv1='3' AND g_argv3 !='SUB' AND g_argv3 !='TAP' THEN 
-            CALL cl_set_act_visible("gen_ap",FALSE) 
+         #MOD-AC0355-----add------end----------------
+         #MOD-AC0359-----add------------str------------------
+         IF g_argv1='3' AND g_argv3 !='SUB' AND g_argv3 !='TAP' THEN
+            CALL cl_set_act_visible("gen_ap",FALSE)
          END IF
-         #MOD-AC0359-----add------------end-----------------                                                                                                         
+         #MOD-AC0359-----add------------end-----------------
 
          IF g_aza.aza71 MATCHES '[Yy]' THEN
             CALL aws_gpmcli_toolbar()
@@ -957,28 +957,28 @@ FUNCTION t720(p_argv1,p_argv2,p_argv3,p_argv4,p_argv5)   #No:FUN-630010  #FUN-A6
             IF g_argv3 != 'SUB' THEN #MOD-D30010 add
                CALL cl_set_comp_required("rvu02,rvv05",FALSE) #CHI-930021
            #MOD-D30010 add start -----
-            ELSE                     
+            ELSE
                CALL cl_set_comp_required("rvu02,rvv05",TRUE)
             END IF
            #MOD-D30010 add end   -----
          END IF                                      #CHI-930021
 
-         IF g_azw.azw04 = '2' THEN            
+         IF g_azw.azw04 = '2' THEN
             CALL cl_set_comp_visible("rvu21,rvu22,rvu22_desc,rvu23,rvu23_desc,rvu24,rvucond,                                         rvuconu,rvuconu_desc,rvu900,rvuplant,rvuplant_desc,rvupos,rvucont",TRUE) #FUN-A60009 mod:拿掉,rvumksg
             CALL cl_set_comp_visible("gem02a,rvv930",FALSE)
             CALL cl_set_comp_visible("rvv10,rvv11,rvv12,rvv13",TRUE)        #MOD-9C0295 ADD
          ELSE
-            CALL cl_set_comp_visible("rvu21,rvu22,rvu22_desc,rvu23,rvu23_desc,rvu24,rvucond,                                       rvuconu,rvuconu_desc,rvu900,rvuplant,rvuplant_desc,rvupos,rvucont",FALSE) #FUN-A60009 mod:拿掉,rvumksg    
+            CALL cl_set_comp_visible("rvu21,rvu22,rvu22_desc,rvu23,rvu23_desc,rvu24,rvucond,                                       rvuconu,rvuconu_desc,rvu900,rvuplant,rvuplant_desc,rvupos,rvucont",FALSE) #FUN-A60009 mod:拿掉,rvumksg
             CALL cl_set_comp_visible("gem02a,rvv930",TRUE)
             CALL cl_set_comp_visible("rvv10,rvv11,rvv12,rvv13",FALSE)       #MOD-9C0295 ADD
-         END IF 
+         END IF
          CALL cl_set_comp_visible("rvupos",FALSE)  #No:FUN-B50042
-         CALL cl_set_comp_visible("rvu23,rvu23_desc",FALSE) #bnl                                                                                   
-         IF g_argv3 = 'TAP' THEN                                                                                                      
-            CALL cl_set_act_visible("gen_transfer_note",TRUE)                                                                                 
+         CALL cl_set_comp_visible("rvu23,rvu23_desc",FALSE) #bnl
+         IF g_argv3 = 'TAP' THEN
+            CALL cl_set_act_visible("gen_transfer_note",TRUE)
          ELSE
-            CALL cl_set_act_visible("gen_transfer_note",FALSE)                                                                                 
-         END IF                                                                                                                           
+            CALL cl_set_act_visible("gen_transfer_note",FALSE)
+         END IF
          CALL cl_set_comp_entry("rvu12",FALSE)       #MOD-AC0414
       END IF                                         #FUN-A60009 add
 #FUN-B90060 --START--
@@ -986,7 +986,7 @@ FUNCTION t720(p_argv1,p_argv2,p_argv3,p_argv4,p_argv5)   #No:FUN-630010  #FUN-A6
       #str-----add by guanyao160706
       #IF g_argv3 != 'SUB' THEN
       #   CALL cl_set_act_visible('fa_issue',FALSE)
-      #END IF 
+      #END IF
       #end-----add by guanyao160706
 
       #FUN-C80030---add---str---
@@ -1001,7 +1001,7 @@ FUNCTION t720(p_argv1,p_argv2,p_argv3,p_argv4,p_argv5)   #No:FUN-630010  #FUN-A6
       #DEV-D30045--add--end
 
       CALL t720_def_form()
- 
+
       LET g_rvu.rvu00=g_argv1
       LET g_rvu.rvu08=g_argv3
       LET g_icq=''
@@ -1016,7 +1016,7 @@ FUNCTION t720(p_argv1,p_argv2,p_argv3,p_argv4,p_argv5)   #No:FUN-630010  #FUN-A6
       END CASE
       DISPLAY g_buf TO t_1
       CALL s_prtype(g_rvu.rvu08) RETURNING l_str
- 
+
       CALL aws_efapp_toolbar()    #建立簽核模式時的 toolbar icon  #FUN-A60009 add
 
       IF NOT cl_null(g_argv5) THEN     #表由驗收單call  #MOD-C90169   有传入单号作为参数就该查询出来
@@ -1056,20 +1056,20 @@ FUNCTION t720(p_argv1,p_argv2,p_argv3,p_argv4,p_argv5)   #No:FUN-630010  #FUN-A6
      CALL aws_efapp_flowaction("insert, modify, delete, detail, query, locale, void,undo_void, confirm, undo_confirm, carry, undo_carry, carry_delivery, gen_ap, transfer_to_report, price_change, gen_transfer_note, gen_mat_wtdw, maint_mat_wtdw, recall, allowance, easyflow_approval,barcode_gen,barcode_query,barcode_output") #FUN-D20025 add undo_void #DEV-D30045 add barcode_gen,barcode_query,barcode_output
          RETURNING g_laststage
      #FUN-A60009 add end ---
- 
+
      #TQC-B90201--begin
     #IF g_prog='apmt721' OR g_prog='apmt731' OR g_prog = 'apmt732' THEN    #No.TQC-BB0118    #MOD-D30083 mark
-     IF g_prog='apmt721' OR g_prog='aict043' OR g_prog='apmt731' OR g_prog = 'apmt732' THEN  #MOD-D30083 
+     IF g_prog='apmt721' OR g_prog='aict043' OR g_prog='apmt731' OR g_prog = 'apmt732' THEN  #MOD-D30083
         CALL cl_set_act_visible("gen_ap",FALSE)
      END IF
      #TQC-B90201--end
-
+     call cl_set_act_visible('action_stock_post',false) # darcy add
       CALL t720_menu()
       CLOSE WINDOW t720_w                    #結束畫面
    END IF
- 
+
 END FUNCTION
- 
+
 FUNCTION t720_cs()
 DEFINE lc_qbe_sn LIKE gbm_file.gbm01    #No.FUN-580031  HCN
 DEFINE l_pmm04   LIKE pmm_file.pmm04    #No.MOD-4B0275
@@ -1083,7 +1083,7 @@ DEFINE l_where   STRING                 #FUN-CB0087
       LET l_argv2 = g_argv2                #紀錄g_argv2的原值(rvu_file.rvu02)
       LET g_argv2 = g_argv5                #異動g_argv2的值為KEY值
    END IF
-  #FUN-A60009 add end -------- 
+  #FUN-A60009 add end --------
 
    IF g_argv1 MATCHES '[56Z]' THEN                                      #No.FUN-940083
       IF g_argv3<>' ' THEN
@@ -1121,12 +1121,12 @@ DEFINE l_where   STRING                 #FUN-CB0087
     IF g_argv2<> ' ' OR g_icq='Y'  OR g_argv5 <> ' ' THEN   #MOD-C90169 add argv5
        IF NOT cl_null(g_argv3) THEN
           IF g_argv3= 'TAP' THEN
-             LET g_wc =" (rvu02='",g_argv2 CLIPPED,"' OR rvu01='",g_argv2 CLIPPED,"')",    #No.FUN-810046 
-                       " AND (rvu08='TAP' OR rvu08='TRI')"                                 
+             LET g_wc =" (rvu02='",g_argv2 CLIPPED,"' OR rvu01='",g_argv2 CLIPPED,"')",    #No.FUN-810046
+                       " AND (rvu08='TAP' OR rvu08='TRI')"
           ELSE
              LET g_wc =" (rvu02='",g_argv2 CLIPPED,"' OR rvu01='",g_argv5 CLIPPED,"')",    #No.FUN-810046         #MOD-C90169 argv2 -->argv5
-                       " AND rvu08='",g_argv3,"'"   
- 
+                       " AND rvu08='",g_argv3,"'"
+
           END IF
           LET g_wc2=" 1=1 "
        ELSE
@@ -1140,7 +1140,7 @@ DEFINE l_where   STRING                 #FUN-CB0087
    IF g_rvu00<>'A' THEN          #FUN-B40031
 #TQC-AB0412 -----------------------Begin--------------------------
 #       CONSTRUCT BY NAME g_wc ON              #螢幕上取單頭條件
-#                 rvu116,rvu02,rvu03,rvu01,rvu04,rvu05,rvu16,               #NO.FUN-940083-add rvu116  #FUN-930062 add rvu16 
+#                 rvu116,rvu02,rvu03,rvu01,rvu04,rvu05,rvu16,               #NO.FUN-940083-add rvu116  #FUN-930062 add rvu16
 #                 rvu08,rvu06,rvu07,rvu09,rvu20,rvu99,rvu117,rvu25,rvuconf, #NO.FUN-940083-add rvu117#NO.FUN-A50071 add rvu25
 #                 rvu10,rvu11,rvu15,rvu13,rvu14,rvupos,          #NO.FUN-940083    #NO.FUN-960130---add--pos
 #                 rvu21,rvu22,rvu23,rvu24,rvucond,rvucont,rvuconu,rvumksg,rvu900,rvuplant,  #NO.FUN-960130---add----
@@ -1151,7 +1151,7 @@ DEFINE l_where   STRING                 #FUN-CB0087
 #                 rvuud06,rvuud07,rvuud08,rvuud09,rvuud10,
 #                 rvuud11,rvuud12,rvuud13,rvuud14,rvuud15
         CONSTRUCT BY NAME g_wc ON              #螢幕上取單頭條件
-                  rvu116,rvu02,rvu03,rvu01,rvu04,rvu05,rvu16,         
+                  rvu116,rvu02,rvu03,rvu01,rvu04,rvu05,rvu16,
                   rvu08,rvu06,rvu07,rvu20,rvu09,rvu99,rvu117,rvu25,rvuconf,
                   rvucond,rvucont,rvuconu,rvu10,rvu11,rvu15,rvu13,rvu14,
                   rvu21,rvu22,rvu23,rvu24,rvumksg,rvu17,                 #FUN-A60009 add:rvu17
@@ -1161,7 +1161,7 @@ DEFINE l_where   STRING                 #FUN-CB0087
                   rvudate,rvucrat,
                   rvuud01,rvuud02,rvuud03,rvuud04,rvuud05,
                   rvuud06,rvuud07,rvuud08,rvuud09,rvuud10,
-                  rvuud11,rvuud12,rvuud13,rvuud14,rvuud15  
+                  rvuud11,rvuud12,rvuud13,rvuud14,rvuud15
 #TQC-AB0412 ----------------------End---------------------------------
                BEFORE CONSTRUCT
                   CALL cl_qbe_init()
@@ -1175,7 +1175,7 @@ DEFINE l_where   STRING                 #FUN-CB0087
                     LET g_qryparam.arg1 = g_argv1
                     IF g_argv3='ICD' THEN
                        LET g_qryparam.form = "q_rvu1_icd"
-                       LET g_qryparam.state = 'c'                          
+                       LET g_qryparam.state = 'c'
                     ELSE
                        LET g_qryparam.form = "q_rvu1"  #MOD-4A0252異動單號開窗,新增q_rvu1
                        LET g_qryparam.state = 'c'
@@ -1213,13 +1213,13 @@ DEFINE l_where   STRING                 #FUN-CB0087
                     CALL cl_create_qry() RETURNING g_qryparam.multiret
                     DISPLAY g_qryparam.multiret TO rvu04
                     NEXT FIELD rvu04
-               WHEN INFIELD(rvu16)   #領料單號                                                                                      
-                    CALL cl_init_qry_var()                                                                                          
-                    LET g_qryparam.state= "c"                                                                                       
-                    LET g_qryparam.form ="q_sfp1"                                                                                   
-                    CALL cl_create_qry() RETURNING g_qryparam.multiret                                                              
-                    DISPLAY g_qryparam.multiret TO rvu16                                                                            
-                    NEXT FIELD rvu16                                                                                                
+               WHEN INFIELD(rvu16)   #領料單號
+                    CALL cl_init_qry_var()
+                    LET g_qryparam.state= "c"
+                    LET g_qryparam.form ="q_sfp1"
+                    CALL cl_create_qry() RETURNING g_qryparam.multiret
+                    DISPLAY g_qryparam.multiret TO rvu16
+                    NEXT FIELD rvu16
                WHEN INFIELD(rvu07) #人員
                  CALL cl_init_qry_var()
                  LET g_qryparam.form = "q_gen"
@@ -1285,29 +1285,29 @@ DEFINE l_where   STRING                 #FUN-CB0087
           ON IDLE g_idle_seconds
              CALL cl_on_idle()
              CONTINUE CONSTRUCT
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
+
       ON ACTION controlg      #MOD-4C0121
          CALL cl_cmdask()     #MOD-4C0121
- 
- 
+
+
                  ON ACTION qbe_select
        CALL cl_qbe_list() RETURNING lc_qbe_sn
        CALL cl_qbe_display_condition(lc_qbe_sn)
 #MOD-D90146 add beg----
          ON ACTION qbe_save
             CALL cl_qbe_save()
-#MOD-D90146 add end----     
+#MOD-D90146 add end----
        END CONSTRUCT
    #FUN-B40031 Begin---
     ELSE
         CONSTRUCT BY NAME g_wc ON              #螢幕上取單頭條件
-                  rvu00,rvu116,rvu02,rvu03,rvu01,rvu04,rvu05,rvu16,         
+                  rvu00,rvu116,rvu02,rvu03,rvu01,rvu04,rvu05,rvu16,
                  #rvu08,rvu06,rvu07,rvu20,rvu09,rvu99,rvu117,rvu25,rvuconf,       #TQC-B60065
                   rvu08,rvu06,rvu07,rvu20,rvu09,rvu99,rvu117,rvu27,rvu25,rvuconf, #TQC-B60065
                   rvucond,rvucont,rvuconu,rvu10,rvu11,rvu15,rvu13,rvu14,
@@ -1318,7 +1318,7 @@ DEFINE l_where   STRING                 #FUN-CB0087
                   rvudate,rvucrat,
                   rvuud01,rvuud02,rvuud03,rvuud04,rvuud05,
                   rvuud06,rvuud07,rvuud08,rvuud09,rvuud10,
-                  rvuud11,rvuud12,rvuud13,rvuud14,rvuud15  
+                  rvuud11,rvuud12,rvuud13,rvuud14,rvuud15
                BEFORE CONSTRUCT
                   CALL cl_qbe_init()
         ON ACTION CONTROLP
@@ -1331,7 +1331,7 @@ DEFINE l_where   STRING                 #FUN-CB0087
                     LET g_qryparam.arg1 = g_argv1
                     IF g_argv3='ICD' THEN
                        LET g_qryparam.form = "q_rvu1_icd"
-                       LET g_qryparam.state = 'c'                          
+                       LET g_qryparam.state = 'c'
                     ELSE
                        LET g_qryparam.form = "q_rvu1"  #MOD-4A0252異動單號開窗,新增q_rvu1
                        LET g_qryparam.state = 'c'
@@ -1369,13 +1369,13 @@ DEFINE l_where   STRING                 #FUN-CB0087
                     CALL cl_create_qry() RETURNING g_qryparam.multiret
                     DISPLAY g_qryparam.multiret TO rvu04
                     NEXT FIELD rvu04
-               WHEN INFIELD(rvu16)   #領料單號                                                                                      
-                    CALL cl_init_qry_var()                                                                                          
-                    LET g_qryparam.state= "c"                                                                                       
-                    LET g_qryparam.form ="q_sfp1"                                                                                   
-                    CALL cl_create_qry() RETURNING g_qryparam.multiret                                                              
-                    DISPLAY g_qryparam.multiret TO rvu16                                                                            
-                    NEXT FIELD rvu16                                                                                                
+               WHEN INFIELD(rvu16)   #領料單號
+                    CALL cl_init_qry_var()
+                    LET g_qryparam.state= "c"
+                    LET g_qryparam.form ="q_sfp1"
+                    CALL cl_create_qry() RETURNING g_qryparam.multiret
+                    DISPLAY g_qryparam.multiret TO rvu16
+                    NEXT FIELD rvu16
                WHEN INFIELD(rvu07) #人員
                  CALL cl_init_qry_var()
                  LET g_qryparam.form = "q_gen"
@@ -1431,17 +1431,17 @@ DEFINE l_where   STRING                 #FUN-CB0087
           ON IDLE g_idle_seconds
              CALL cl_on_idle()
              CONTINUE CONSTRUCT
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
+
       ON ACTION controlg      #MOD-4C0121
          CALL cl_cmdask()     #MOD-4C0121
- 
- 
+
+
                  ON ACTION qbe_select
        CALL cl_qbe_list() RETURNING lc_qbe_sn
        CALL cl_qbe_display_condition(lc_qbe_sn)
@@ -1454,10 +1454,10 @@ DEFINE l_where   STRING                 #FUN-CB0087
     END IF
    #FUN-B40031 End-----
        IF INT_FLAG THEN RETURN END IF
- 
+
        #資料權限的檢查
        LET g_wc = g_wc CLIPPED,cl_get_extra_cond('rvuuser', 'rvugrup')
- 
+
 
         CONSTRUCT g_wc2 ON rvv02,rvv05,rvv45,rvv46,qcl02,rvv47,rvv31,rvv031, #FUN-BC0104 add rvv45,rvv46,qcl02,rvv47
                           rvv35,rvv35_fac, #MOD-530073
@@ -1496,12 +1496,12 @@ DEFINE l_where   STRING                 #FUN-CB0087
        CALL cl_qbe_display_condition(lc_qbe_sn)
         ON ACTION CONTROLP
            CASE WHEN INFIELD(rvv31)      #料號
-#FUN-AA0059---------mod------------str-----------------           
+#FUN-AA0059---------mod------------str-----------------
 #                      CALL cl_init_qry_var()
 #                      LET g_qryparam.form = "q_ima"
 #                      LET g_qryparam.state = 'c'
 #                      CALL cl_create_qry() RETURNING g_qryparam.multiret
-                      CALL q_sel_ima(TRUE, "q_ima","","","","","","","",'')  
+                      CALL q_sel_ima(TRUE, "q_ima","","","","","","","",'')
                         RETURNING  g_qryparam.multiret
 #FUN-AA0059---------mod------------end-----------------
                       DISPLAY g_qryparam.multiret TO rvv31
@@ -1540,17 +1540,17 @@ DEFINE l_where   STRING                 #FUN-CB0087
                       LET g_qryparam.state = 'c'
                       CALL cl_create_qry() RETURNING g_qryparam.multiret
                       DISPLAY g_qryparam.multiret TO rvv47
-                      NEXT FIELD rvv47 
+                      NEXT FIELD rvv47
                  #FUN-BC0104---add---end
- 
+
                  WHEN INFIELD(rvv26)   #退貨理由
                      CALL cl_init_qry_var()
-                     LET g_qryparam.form = "q_azf01a"                          #No.FUN-930145 
+                     LET g_qryparam.form = "q_azf01a"                          #No.FUN-930145
                      LET g_qryparam.state = 'c'
                      LET g_qryparam.default1 = g_rvv[1].rvv26 #FUN-740171
-                     #-----MOD-AB0051--------- 
+                     #-----MOD-AB0051---------
                      #LET g_qryparam.arg1 = '7'                                 #No.FUN-930145
-                     IF g_argv1 = '1' THEN 
+                     IF g_argv1 = '1' THEN
                         LET g_qryparam.arg1 = '7'
                      ELSE
                         LET g_qryparam.arg1 = '5'
@@ -1575,7 +1575,7 @@ DEFINE l_where   STRING                 #FUN-CB0087
                   #CALL cl_init_qry_var()
                   #LET g_qryparam.form     = "q_ime"
                   #LET g_qryparam.state    = "c"
-                  #CALL cl_create_qry() RETURNING g_qryparam.multiret                  
+                  #CALL cl_create_qry() RETURNING g_qryparam.multiret
                   CALL q_ime_1(TRUE,TRUE,"","","",g_plant,"","","") RETURNING g_qryparam.multiret
                   #No.FUN-AA0049--end
                   DISPLAY g_qryparam.multiret TO rvv33
@@ -1595,7 +1595,7 @@ DEFINE l_where   STRING                 #FUN-CB0087
                      CALL cl_create_qry() RETURNING g_qryparam.multiret
                      DISPLAY g_qryparam.multiret TO rvv83
                      NEXT FIELD rvv83
- 
+
                 WHEN INFIELD(rvv80)
                      CALL cl_init_qry_var()
                      LET g_qryparam.state = "c"
@@ -1603,7 +1603,7 @@ DEFINE l_where   STRING                 #FUN-CB0087
                      CALL cl_create_qry() RETURNING g_qryparam.multiret
                      DISPLAY g_qryparam.multiret TO rvv80
                      NEXT FIELD rvv80
- 
+
                WHEN INFIELD(pmn24) #請購單號
                     CALL cl_init_qry_var()
                     LET g_qryparam.form = "q_pml3"
@@ -1611,7 +1611,7 @@ DEFINE l_where   STRING                 #FUN-CB0087
                     CALL cl_create_qry() RETURNING g_qryparam.multiret
                     DISPLAY g_qryparam.multiret TO pmn24
                     NEXT FIELD pmn24
- 
+
                 WHEN INFIELD(rvv86)
                      CALL cl_init_qry_var()
                      LET g_qryparam.state = "c"
@@ -1652,24 +1652,24 @@ DEFINE l_where   STRING                 #FUN-CB0087
           ON IDLE g_idle_seconds
              CALL cl_on_idle()
              CONTINUE CONSTRUCT
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
+
       ON ACTION controlg      #MOD-4C0121
          CALL cl_cmdask()     #MOD-4C0121
- 
- 
+
+
       ON ACTION qbe_save
          CALL cl_qbe_save()
       END CONSTRUCT
-      
-       IF INT_FLAG THEN 
+
+       IF INT_FLAG THEN
         # LET INT_FLAG=0  #FUN-C20006
-          RETURN 
+          RETURN
        END IF
     END IF
    #FUN-B40031 Begin---
@@ -1728,10 +1728,10 @@ DEFINE l_where   STRING                 #FUN-CB0087
     ELSE
        LET g_sql=g_sql clipped," AND rvu08!='SUB' AND rvu08 != 'TAP' ",
                                " AND rvu08!='TRI'" #No.7882
-    END IF    
+    END IF
     LET g_sql=g_sql CLIPPED,' ORDER BY 1,2' #No.9475
   END IF
- 
+
     PREPARE t720_prepare FROM g_sql
     IF status THEN CALL cl_err('t720_prepare :',status,0) END IF
     DECLARE t720_cs                            #SCROLL CURSOR
@@ -1787,12 +1787,12 @@ DEFINE l_where   STRING                 #FUN-CB0087
     PREPARE t720_count FROM g_sql
     DECLARE t720_curs CURSOR FOR t720_count
 END FUNCTION
- 
+
 FUNCTION t720_menu()
    DEFINE l_partnum    STRING   #GPM料號
    DEFINE l_supplierid STRING   #GPM廠商
    DEFINE l_status     LIKE type_file.num10  #GPM傳回值
-   DEFINE g_cnt        LIKE type_file.num5   #MOD-870114 
+   DEFINE g_cnt        LIKE type_file.num5   #MOD-870114
    DEFINE l_creator    LIKE type_file.chr1   #「不准」時是否退回填表人  #FUN-A60009 add
    DEFINE l_flowuser   LIKE type_file.chr1   # 是否有指定加簽人員       #FUN-A60009 add
    DEFINE l_cmd        LIKE type_file.chr1000     #FUN-BC0104 add
@@ -1804,10 +1804,10 @@ FUNCTION t720_menu()
    DEFINE l_rvv32      LIKE rvv_file.rvv32   #CHI-CC0028
    DEFINE l_rvv33      LIKE rvv_file.rvv33   #CHI-CC0028
    DEFINE l_rvviicd07  LIKE rvvi_file.rvviicd07  #CHI-CC0028
-   DEFINE l_success    LIKE type_file.chr1   #CHI-CC0028   
+   DEFINE l_success    LIKE type_file.chr1   #CHI-CC0028
    DEFINE l_scm_msg    LIKE type_file.chr1000   #NO.18010101
    #darcy:2023/03/23 add s---
-   define l_body       string  
+   define l_body       string
    define l_rvu05       like rvu_file.rvu05,
           l_rvv31       like rvv_file.rvv31,
           l_ima02       like ima_file.ima02,
@@ -1821,15 +1821,15 @@ FUNCTION t720_menu()
              msg       STRING
                        END RECORD
    #No.18010101---end---
-   
-   LET l_flowuser = "N"                      #FUN-A60009 add 
+
+   LET l_flowuser = "N"                      #FUN-A60009 add
 
    WHILE TRUE
       LET INT_FLAG=0
       IF cl_null(g_action_flag) OR g_action_flag = "page_main" THEN   #FUN-CB0014 add
          CALL t720_bp("G")
       #FUN-CB0014---add---str---
-      ELSE                           
+      ELSE
          CALL t720_list_fill()
          CALL t720_bp3("G")
          IF NOT cl_null(g_action_choice) AND l_ac2>0 THEN #將清單的資料回傳到主畫面
@@ -1846,15 +1846,15 @@ FUNCTION t720_menu()
                CALL t720_fetch('/')
             END IF
             CALL cl_set_comp_visible("page4,info,userdefined_field", FALSE)
-            CALL cl_set_comp_visible("page_list", FALSE) 
-            CALL ui.interface.refresh()           
-            CALL cl_set_comp_visible("page4,info,userdefined_field", TRUE)      
-            CALL cl_set_comp_visible("page_list", TRUE) 
-         END IF               
-      END IF  
+            CALL cl_set_comp_visible("page_list", FALSE)
+            CALL ui.interface.refresh()
+            CALL cl_set_comp_visible("page4,info,userdefined_field", TRUE)
+            CALL cl_set_comp_visible("page_list", TRUE)
+         END IF
+      END IF
       #FUN-CB0014---add---str--
       CASE g_action_choice
- 
+
          WHEN "insert"
             IF cl_chk_act_auth() THEN
                CALL t720_a()
@@ -1901,7 +1901,7 @@ FUNCTION t720_menu()
                       CALL cl_err(g_rvu.rvu01,'apm1060',1)   #TQC-B60215 add
                    ELSE
                       CALL t720sub_ecm(g_rvu.rvu01) #FUN-A10130
-                   END IF                                    #TQC-B60215 add 
+                   END IF                                    #TQC-B60215 add
                 END IF
               END IF                                         #FUN-A60009 add
             END IF
@@ -1946,12 +1946,12 @@ FUNCTION t720_menu()
               #FUN-A60009 add str --------------------
                CALL t720sub_y_chk(g_rvu.rvu01,g_argv1,g_argv2,g_argv3,g_chr,'Y')
                #FUN-CB0087---add---str---
-               IF g_aza.aza115='Y' THEN 
+               IF g_aza.aza115='Y' THEN
                   LET l_n = 0
                   SELECT COUNT(*) INTO l_n FROM rvv_file WHERE rvv26 IS NULL AND rvv01 = g_rvu.rvu01
-                  IF l_n >0 THEN 
+                  IF l_n >0 THEN
                      CALL cl_err('','aim-888',0)
-                     LET g_success='N' 
+                     LET g_success='N'
                   END IF
                END IF
                #FUN-CB0087---add---end---
@@ -1962,13 +1962,13 @@ FUNCTION t720_menu()
               #FUN-A60009 add end ---------------------
                CALL t720_refresh() RETURNING g_rvu.*  #FUN-A10130
                CALL t720_show()   #FUN-A10130
-               #NO.18010101  --begin --- 
-               IF cl_getscmparameter() AND g_prog = 'apmt722'  THEN  
-                    CALL t720_sendBackToSCM(g_rvu.rvu01) RETURNING l_scm_msg 
-                    IF NOT cl_null(l_scm_msg) THEN 
+               #NO.18010101  --begin ---
+               IF cl_getscmparameter() AND g_prog = 'apmt722'  THEN
+                    CALL t720_sendBackToSCM(g_rvu.rvu01) RETURNING l_scm_msg
+                    IF NOT cl_null(l_scm_msg) THEN
                         CALL cl_err(l_scm_msg,'!',1)
-                    END IF 
-               END IF 
+                    END IF
+               END IF
                #---end-----
                #darcy:2023/03/23 add s---
                # 退货和仓退审核邮件通知
@@ -1976,6 +1976,16 @@ FUNCTION t720_menu()
                   call sapmt720_mail_warn()
                end if
                #darcy:2023/03/23 add e---
+               # darcy add s---
+               if g_success = 'Y' and g_rvu.rvuconf = 'Y' then
+                    let g_action_choice = 'action_stock_post'
+                    let g_bgjob = 'Y'
+                    if cl_chk_act_auth() then
+                        if cl_action(g_prog,g_rvu.rvu01,0,'confirm','','',true,false) then end if
+                    end if
+                    let g_action_choice = 'confirm'
+                end if
+                # darcy add e---
             END IF
        #@WHEN "確認還原"
          WHEN "undo_confirm"
@@ -1990,19 +2000,19 @@ FUNCTION t720_menu()
                END IF
             #FUN-BC0062 ---------End----------
                #str----add by guanyao160824
-               LET l_n =0 
-               SELECT COUNT(*) INTO l_n FROM tc_shb_file WHERE tc_shbud03 =g_rvu.rvu01 
-               IF l_n  >0 THEN 
+               LET l_n =0
+               SELECT COUNT(*) INTO l_n FROM tc_shb_file WHERE tc_shbud03 =g_rvu.rvu01
+               IF l_n  >0 THEN
                   CALL cl_err('','cpm-052',0)
                   CONTINUE WHILE
-               END IF 
+               END IF
                #end----add by guanyao160824
                #CHI-CC0028---begin
                LET l_success = 'Y'
                DECLARE t720_rvv33 CURSOR FOR
                 SELECT rvv02,rvv32,rvv33 FROM rvv_file WHERE rvv01 = g_rvu.rvu01
                CALL s_showmsg_init()
-               FOREACH t720_rvv33 INTO l_rvv02,l_rvv32,l_rvv33 
+               FOREACH t720_rvv33 INTO l_rvv02,l_rvv32,l_rvv33
                   IF STATUS THEN
                      CALL cl_err('foreach:',SQLCA.sqlcode,0)
                      CONTINUE WHILE
@@ -2012,34 +2022,34 @@ FUNCTION t720_menu()
                      SELECT rvviicd07 INTO l_rvviicd07 FROM rvvi_file
                       WHERE rvvi01 = g_rvu.rvu01 AND rvvi02 = l_rvv02
                      IF l_rvviicd07 = 'Y' THEN
-                        CONTINUE FOREACH  
-                     END IF 
-                  END IF 
+                        CONTINUE FOREACH
+                     END IF
+                  END IF
 
                   IF NOT s_chk_ware(l_rvv32) THEN
                      CONTINUE WHILE
                   END IF
 
-                  CALL s_incchk(l_rvv32,l_rvv33,g_user) 
+                  CALL s_incchk(l_rvv32,l_rvv33,g_user)
                        RETURNING lj_result
                   IF NOT lj_result THEN
-                     LET l_success = 'N'  
+                     LET l_success = 'N'
                      LET g_showmsg = l_rvv02,"/",l_rvv32,"/",l_rvv33,"/",g_user
                      CALL s_errmsg('rvv02,rvv32,rvv33,inc03',g_showmsg,'','asf-888',1)
                   END IF
                END FOREACH
-               CALL s_showmsg() 
+               CALL s_showmsg()
                IF l_success = 'N' THEN
                   CONTINUE WHILE
                END IF
-               #CHI-CC0028---end            
+               #CHI-CC0028---end
                #-----CHI-B40011---------
               #SELECT rvuconf,rvu20 INTO g_rvu.rvuconf,g_rvu.rvu20   #MOD-C10157 mark
                SELECT rvuconf,rvu20,rvu02 INTO g_rvu.rvuconf,g_rvu.rvu20,g_rvu.rvu02    #MOD-C10157 add
-                 FROM rvu_file 
+                 FROM rvu_file
                 WHERE rvu01 = g_rvu.rvu01
-               SELECT pod05 INTO g_pod.pod05 
-                 FROM pod_file 
+               SELECT pod05 INTO g_pod.pod05
+                 FROM pod_file
                 WHERE pod00 = '0'
                #MOD-C10157 add --start--
                SELECT poz18,poz19 INTO l_poz18,l_poz19
@@ -2055,9 +2065,9 @@ FUNCTION t720_menu()
                   DISPLAY BY NAME g_rvu.rvu99
                END IF
                #MOD-C10157 add --end--
-               IF g_pod.pod05 = 'Y' AND 
+               IF g_pod.pod05 = 'Y' AND
                   g_rvu.rvuconf='Y' AND g_rvu.rvu20 = 'Y' THEN
-                  IF cl_confirm('apm1056') THEN 
+                  IF cl_confirm('apm1056') THEN
                      CASE
                         WHEN g_rvu.rvu00='1' #入庫
                            IF t720sub_chkpoz011(g_rvu.rvu01) THEN
@@ -2073,10 +2083,10 @@ FUNCTION t720_menu()
                                   CALL cl_cmdrun_wait(g_msg CLIPPED)
                                END IF
                            ELSE
-                               CALL cl_err('','apm-741',0)     
+                               CALL cl_err('','apm-741',0)
                            END IF
                         WHEN g_rvu.rvu00='3' #倉退
-                           IF t720sub_chkpoz011(g_rvu.rvu01) THEN  
+                           IF t720sub_chkpoz011(g_rvu.rvu01) THEN
                               LET g_cnt=0
                               SELECT COUNT(*) INTO g_cnt FROM apb_file,apa_file
                                WHERE apa01 = apb01
@@ -2213,7 +2223,7 @@ FUNCTION t720_menu()
                     END IF
                   END IF
                END IF
-            END IF                                         #FUN-A60009 add 
+            END IF                                         #FUN-A60009 add
 
          #FUN-A60009 add str ---
          WHEN "approval_status"               #簽核狀況
@@ -2244,8 +2254,8 @@ FUNCTION t720_menu()
          #FUN-BC0104---add---end
          #str----add by guanyao160706
          #WHEN "fa_issue"
-         #   IF cl_chk_act_auth() THEN                                                                                                  
-         #      CALL t720_fa_issue()                                                                                                         
+         #   IF cl_chk_act_auth() THEN
+         #      CALL t720_fa_issue()
          #   END IF
          #end----add by guanyao160706
 
@@ -2253,10 +2263,10 @@ FUNCTION t720_menu()
             IF cl_chk_act_auth() THEN
               #CALL cl_export_to_excel(ui.Interface.getRootNode(),base.TypeInfo.create(g_rvv),'','') #FUN-CB0014 mark
               #FUN-CB0014---add---str---
-              LET w = ui.Window.getCurrent()   
-              LET f = w.getForm()       
-              IF cl_null(g_action_flag) OR g_action_flag = "page_main" THEN  
-                 LET page = f.FindNode("Page","page1") 
+              LET w = ui.Window.getCurrent()
+              LET f = w.getForm()
+              IF cl_null(g_action_flag) OR g_action_flag = "page_main" THEN
+                 LET page = f.FindNode("Page","page1")
                  CALL cl_export_to_excel(page,base.TypeInfo.create(g_rvv),'','')
               END IF
               IF g_action_flag = "page_list" THEN
@@ -2276,7 +2286,7 @@ FUNCTION t720_menu()
                 CALL cl_doc()
              END IF
           END IF
- 
+
          WHEN "carry_delivery"
            IF cl_chk_act_auth() THEN
              IF g_rvu.rvu17 matches '[Ss]' THEN             #FUN-A60009 add
@@ -2290,11 +2300,11 @@ FUNCTION t720_menu()
            IF cl_chk_act_auth() THEN
              IF g_rvu.rvu17 matches '[Ss]' THEN             #FUN-A60009 add
                 CALL cl_err('','apm-030',0)                 #FUN-A60009 add
-             ELSE                                           #FUN-A60009 add     
+             ELSE                                           #FUN-A60009 add
                 CALL t720_gen_note()
              END IF                                         #FUN-A60009 add
            END IF
- 
+
          #@WHEN GPM規範顯示
          WHEN "gpm_show"
               LET l_partnum = ''
@@ -2303,7 +2313,7 @@ FUNCTION t720_menu()
               LET l_supplierid = g_rvu.rvu04
               CALL aws_gpmcli(l_partnum,l_supplierid)
                 RETURNING l_status
- 
+
          #@WHEN GPM規範查詢
          WHEN "gpm_query"
               LET l_partnum = ''
@@ -2312,16 +2322,16 @@ FUNCTION t720_menu()
               LET l_supplierid = g_rvu.rvu04
               CALL aws_gpmcli(l_partnum,l_supplierid)
                 RETURNING l_status
- 
+
          WHEN "qry_lot"
            IF l_ac > 0 THEN                     #TQC-C70207 add
               LET g_ima918=''                   #TQC-C70207 add
               LET g_ima921=''                   #TQC-C70207 add
-              SELECT ima918,ima921 INTO g_ima918,g_ima921 
+              SELECT ima918,ima921 INTO g_ima918,g_ima921
                 FROM ima_file
                WHERE ima01 = g_rvv[l_ac].rvv31
                  AND imaacti = "Y"
-           
+
               IF g_ima918 = "Y" OR g_ima921 = "Y" THEN
                  IF g_sma.sma90 = "Y" THEN #MOD-C30074 add
                     SELECT img09 INTO g_img09 FROM img_file
@@ -2329,10 +2339,10 @@ FUNCTION t720_menu()
                       AND img03=g_rvv[l_ac].rvv33 AND img04=g_rvv[l_ac].rvv34
                     IF g_rvu.rvu116 <> '3' OR cl_null(g_rvu.rvu116) THEN   #MOD-CB0229 add
    #No.TQC-B90236--------mark---------begin-----------
-                   #CALL s_lotin(g_prog,g_rvu.rvu01,g_rvv[l_ac].rvv02,0,                            
+                   #CALL s_lotin(g_prog,g_rvu.rvu01,g_rvv[l_ac].rvv02,0,
                    #             g_rvv[l_ac].rvv31,g_rvv[l_ac].rvv35,g_img09,
                    #             g_rvv[l_ac].rvv35_fac,g_rvv[l_ac].rvv17,'','QRY')#CHI-9A0022 add ''
-                   #       RETURNING l_r,g_qty 
+                   #       RETURNING l_r,g_qty
    #No.TQC-B90236--------mark---------end-------------
                        CALL s_wo_record(g_rvv[l_ac].rvv18,'Y')   #MOD-CC0047 add
    #No.TQC-B90236--------add----------begin-----------
@@ -2349,25 +2359,25 @@ FUNCTION t720_menu()
                                          g_rvv[l_ac].rvv35_fac,g_rvv[l_ac].rvv17,'','QRY',-1) #CHI-9A0022 add ''
                                   RETURNING l_r,g_qty
                        END IF
-   #No.TQC-B90236--------add----------end-------------	
+   #No.TQC-B90236--------add----------end-------------
                     END IF   #MOD-CB0229 add
                  END IF #MOD-C30074 add
               END IF
            END IF                   #TQC-C70207 add
-         WHEN "gen_mat_wtdw"   #領料單生成                                                                                           
-           IF cl_chk_act_auth() THEN                                                                                                
+         WHEN "gen_mat_wtdw"   #領料單生成
+           IF cl_chk_act_auth() THEN
               IF g_rvu.rvu17 matches '[Ss]' THEN             #FUN-A60009 add
                  CALL cl_err('','apm-030',0)                 #FUN-A60009 add
               ELSE                                           #FUN-A60009 add
-                 CALL t720_m()                                                  
-              END IF                                         #FUN-A60009 add                                          
-           END IF                                                                                                                   
-         WHEN "maint_mat_wtdw"  #領料單維護                                                                                          
-           IF cl_chk_act_auth() THEN                                        
+                 CALL t720_m()
+              END IF                                         #FUN-A60009 add
+           END IF
+         WHEN "maint_mat_wtdw"  #領料單維護
+           IF cl_chk_act_auth() THEN
               IF g_rvu.rvu17 matches '[Ss]' THEN             #FUN-A60009 add
                  CALL cl_err('','apm-030',0)                 #FUN-A60009 add
-              ELSE                                           #FUN-A60009 add                                                        
-                 IF g_rvu.rvu16 IS NOT NULL THEN                                                                                       
+              ELSE                                           #FUN-A60009 add
+                 IF g_rvu.rvu16 IS NOT NULL THEN
 #MOD-B80272 -- begin --
                     CASE g_sma.sma124
                        WHEN 'icd'
@@ -2376,22 +2386,22 @@ FUNCTION t720_menu()
                           LET g_cmd = "asfi510_slk", " '4' " ," '",g_rvu.rvu16,"'"
                        WHEN 'std'
 #MOD-B80272 -- end
-                          LET g_cmd = "asfi510", " '4' " ," '",g_rvu.rvu16,"'"                                                               
+                          LET g_cmd = "asfi510", " '4' " ," '",g_rvu.rvu16,"'"
                     END CASE   #MOD-B80272 add
-                    CALL cl_cmdrun_wait(g_cmd CLIPPED)                                                                                 
-                 END IF                                                                                                                
-                 SELECT rvu16 INTO g_rvu.rvu16 FROM rvu_file                                                                           
-                 WHERE rvu01 = g_rvu.rvu01                                                                                             
-                 DISPLAY BY NAME g_rvu.rvu16                                                                                           
+                    CALL cl_cmdrun_wait(g_cmd CLIPPED)
+                 END IF
+                 SELECT rvu16 INTO g_rvu.rvu16 FROM rvu_file
+                 WHERE rvu01 = g_rvu.rvu01
+                 DISPLAY BY NAME g_rvu.rvu16
               END IF                                         #FUN-A60009 add
            END IF
         #tianry add 161128
         WHEN "mod_try"
            IF cl_chk_act_auth() THEN
               CALL mod_try()
-           END IF 
+           END IF
 
-        #tianry add end 
+        #tianry add end
 #FUN-A60035 ---MARK BEGIN
 ##FUN-A50054 --Begin
 #        WHEN "style_detail"
@@ -2406,14 +2416,14 @@ FUNCTION t720_menu()
 
          #No.FUN-A80026  --Begin
          WHEN "gen_ap"    #产生应付帐款
-           IF cl_chk_act_auth() THEN                                                                                                
+           IF cl_chk_act_auth() THEN
               IF g_rvu.rvu17 matches '[Ss]' THEN             #FUN-A60009 add
                  CALL cl_err('','apm-030',0)                 #FUN-A60009 add
               ELSE                                           #FUN-A60009 add
                  CALL t720_gen_ap(g_rvu.rvu01)
               END IF                                         #FUN-A60009 add
            END IF
-         #No.FUN-A80026  --End  
+         #No.FUN-A80026  --End
 
         #FUN-A60009 add str -----------------------------
         #@WHEN "准"
@@ -2530,12 +2540,12 @@ FUNCTION t720_menu()
          WHEN "transf2scm"
             IF cl_chk_act_auth() THEN
                 IF NOT cl_null(g_rvu.rvu01) AND g_rvu.rvu00 = '3' AND (g_rvu.rvu116 = '1' OR g_rvu.rvu116 = '2') THEN
-                  IF cl_getscmparameter()  THEN # 
+                  IF cl_getscmparameter()  THEN #
                     INITIALIZE l_ret TO NULL
-                     CALL t720_sendBackToSCM(g_rvu.rvu01) RETURNING l_scm_msg 
-                    IF NOT cl_null(l_scm_msg) THEN 
+                     CALL t720_sendBackToSCM(g_rvu.rvu01) RETURNING l_scm_msg
+                    IF NOT cl_null(l_scm_msg) THEN
                         CALL cl_err(l_scm_msg,'!',1)
-                    END IF 
+                    END IF
                   ELSE
                       LET l_ret.msg = "请确认是否启用SCM！"
                       CALL FGL_WINMESSAGE("Warning",l_ret.msg,"stop")
@@ -2546,14 +2556,14 @@ FUNCTION t720_menu()
       END CASE
    END WHILE
 END FUNCTION
- 
+
 FUNCTION t720_a()
  DEFINE li_result   LIKE type_file.num5     #No.FUN-550060  #No.FUN-680136 SMALLINT
  DEFINE l_azp02     LIKE azp_file.azp02     #NO.FUN-960130
  DEFINE l_rva08     LIKE rva_file.rva08     #CHI-A50012 add
  DEFINE l_rva21     LIKE rva_file.rva21     #CHI-A50012 add
  DEFINE l_rva100    LIKE rva_file.rva100    #CHI-A50012 add
- 
+
     IF s_shut(0) THEN RETURN END IF
    --  IF g_rvu00 = 'A' THEN RETURN END IF #FUN-B40031
     #MESSAGE ""                    #FUN-A50001 mark
@@ -2579,26 +2589,26 @@ FUNCTION t720_a()
 #       LET g_rvu.rvu10  = 'Y'            #No.FUN-A40054     #No.MOD-AC0403
         LET g_rvu.rvu10  = 'N'            #No.MOD-AC0403
         LET g_rvu.rvu20  = 'N'            #三角貿易拋轉否 no.4475
-        LET g_rvu.rvuconf= 'N'            
-        LET g_rvu.rvuuser= g_user         
+        LET g_rvu.rvuconf= 'N'
+        LET g_rvu.rvuuser= g_user
         LET g_rvu.rvuoriu = g_user        #FUN-980030
         LET g_rvu.rvuorig = g_grup        #FUN-980030
         LET g_data_plant = g_plant        #FUN-980030
         LET g_rvu.rvugrup= g_grup
         LET g_rvu.rvucrat = g_today
-        LET g_rvu.rvumksg = 'N'   
+        LET g_rvu.rvumksg = 'N'
         LET g_rvu.rvu17  = '0'            #FUN-A60009 add
-        LET g_rvu.rvu900 = '0'   
+        LET g_rvu.rvu900 = '0'
         LET g_rvu.rvuplant = g_plant
         LET g_rvu.rvulegal = g_legal
-        LET g_rvu.rvu21 = '1'    
-        LET g_rvu.rvupos = '1' #NO.FUN-B50042  
-        LET g_rvu.rvucont = '' 
+        LET g_rvu.rvu21 = '1'
+        LET g_rvu.rvupos = '1' #NO.FUN-B50042
+        LET g_rvu.rvucont = ''
         LET g_rvu.rvu27 = '1'  #TQC-B60065
         SELECT azp02 INTO l_azp02 FROM azp_file WHERE azp01 = g_rvu.rvuplant
-        DISPLAY l_azp02 TO FORMONLY.rvuplant_desc    
-       #LET g_rvu.rvumksg = 'Y'           #FUN-A60009 mark 
- 
+        DISPLAY l_azp02 TO FORMONLY.rvuplant_desc
+       #LET g_rvu.rvumksg = 'Y'           #FUN-A60009 mark
+
        #LET g_rvu.rvu116 = '2'            #FUN-940083--add---  #FUN-BA0013 mark
        #FUN-BA0013 add str -----
         IF g_argv1 = '3' AND g_argv3='SUB' THEN
@@ -2607,7 +2617,7 @@ FUNCTION t720_a()
            LET g_rvu.rvu116 = '2'
         END IF
        #FUN-BA0013 add end -----
-       
+
         BEGIN WORK #No:7857
         CALL t720_i("a")                        #輸入單頭
         IF INT_FLAG THEN
@@ -2615,7 +2625,7 @@ FUNCTION t720_a()
            LET INT_FLAG=0 CALL cl_err('',9001,0) ROLLBACK WORK EXIT WHILE
         END IF
         IF g_rvu.rvu01 IS NULL THEN CONTINUE WHILE END IF
- 
+
         CALL s_auto_assign_no("apm",g_rvu.rvu01,g_rvu.rvu03,g_chr,"rvu_file","rvu01","","","")
              RETURNING li_result,g_rvu.rvu01
         IF (NOT li_result) THEN
@@ -2628,10 +2638,10 @@ FUNCTION t720_a()
            LET l_rva21 =''
            SELECT rva08,rva21,rva100 INTO l_rva08,l_rva21,l_rva100 FROM rva_file
               WHERE rva01 = g_rvu.rvu02
-           IF NOT cl_null(l_rva08) OR NOT cl_null(l_rva21) OR NOT cl_null(l_rva100) THEN  
-              LET g_rvu.rvu101= l_rva08 
-              LET g_rvu.rvu102= l_rva21    
-              LET g_rvu.rvu100= l_rva100  
+           IF NOT cl_null(l_rva08) OR NOT cl_null(l_rva21) OR NOT cl_null(l_rva100) THEN
+              LET g_rvu.rvu101= l_rva08
+              LET g_rvu.rvu102= l_rva21
+              LET g_rvu.rvu100= l_rva100
            END IF
         END IF
         #CHI-A50012 add --end--
@@ -2649,18 +2659,18 @@ FUNCTION t720_a()
         LET g_rvu_t.* = g_rvu.*
         LET g_rvu01_t = g_rvu.rvu01
         CALL g_rvv.clear()
- 
+
         LET g_rec_b = 0  #MOD-690013 add
         IF g_rvu.rvu00='1' AND NOT cl_null(g_rvu.rvu02) THEN     #自動產生單身
            CALL t720_g_b()
         END IF
- 
+
         CALL t720_b()                           #輸入單身
         IF NOT cl_null(g_rvu.rvu01) AND g_smy.smyprint='Y' THEN  #是否馬上列印
            IF cl_confirm('mfg9392') THEN CALL t720_out() END IF
         END IF
-       #IF NOT cl_null(g_rvu.rvu01) AND g_smy.smydmy4='Y' THEN  #確認  #FUN-A60009 mark 
-       #   CALL t720sub_y(g_rvu.rvu01,g_argv1,g_argv2,g_argv3,g_chr,FALSE,'Y') #FUN-A10130  #FUN-A60009 mark 
+       #IF NOT cl_null(g_rvu.rvu01) AND g_smy.smydmy4='Y' THEN  #確認  #FUN-A60009 mark
+       #   CALL t720sub_y(g_rvu.rvu01,g_argv1,g_argv2,g_argv3,g_chr,FALSE,'Y') #FUN-A10130  #FUN-A60009 mark
        #FUN-A60009 add str ---------------
         IF NOT cl_null(g_rvu.rvu01) AND g_smy.smydmy4='Y' AND g_smy.smyapr<>'Y' THEN
            LET g_action_choice = "insert"
@@ -2676,7 +2686,7 @@ FUNCTION t720_a()
         EXIT WHILE
     END WHILE
 END FUNCTION
- 
+
 FUNCTION t720_u()
     IF s_shut(0) THEN RETURN END IF
     IF g_rvu.rvu01 IS NULL THEN CALL cl_err('',-400,0) RETURN END IF
@@ -2700,7 +2710,7 @@ FUNCTION t720_u()
     LET g_rvu03_t = g_rvu.rvu03
     LET g_rvu_o.* = g_rvu.*
     BEGIN WORK
- 
+
     OPEN t720_cl USING g_rvu.rvu01
     IF STATUS THEN
        CALL cl_err("OPEN t720_cl:", STATUS, 1)
@@ -2735,8 +2745,8 @@ FUNCTION t720_u()
            END IF
         END IF
         #-->如有變動必須修改否則tlf/rvv09 的資料會不正確
-        #IF g_rvu.rvu03 != g_rvu03_t THEN   #MOD-B40048 
-        IF g_rvu.rvu03 != g_rvu03_t AND g_rec_b > 0 THEN   #MOD-B40048 
+        #IF g_rvu.rvu03 != g_rvu03_t THEN   #MOD-B40048
+        IF g_rvu.rvu03 != g_rvu03_t AND g_rec_b > 0 THEN   #MOD-B40048
            UPDATE rvv_file SET rvv09=g_rvu.rvu03 WHERE rvv01=g_rvu.rvu01
            IF STATUS OR SQLCA.sqlerrd[3] = 0 THEN
               CALL cl_err3("upd","rvv_file",g_rvu.rvu01,"",SQLCA.sqlcode,"","update rvv09",1)  #No.FUN-660129
@@ -2760,15 +2770,15 @@ FUNCTION t720_u()
     COMMIT WORK
     CALL cl_flow_notify(g_rvu.rvu01,'U')
 END FUNCTION
- 
+
 FUNCTION t720_t()
   DEFINE l_rva00         LIKE rva_file.rva00
   DEFINE l_cnt           LIKE type_file.num5            #MOD-AB0037
- 
+
   IF cl_null(g_rvu.rvu01) THEN RETURN END IF
  #IF g_rvu00 = 'A' THEN RETURN END IF #FUN-B40031 #FUN-BB0044 Mark
   BEGIN WORK
- 
+
   OPEN t720_cl USING g_rvu.rvu01
   IF STATUS THEN
      CALL cl_err("OPEN t720_cl:", STATUS, 1)
@@ -2786,19 +2796,19 @@ FUNCTION t720_t()
   IF g_rvu.rvu00 = '2' THEN RETURN END IF   #TQC-6A0074 add
    IF g_rvu.rvuconf = 'N' THEN CALL cl_err('','mfg3550',0) RETURN END IF #此筆單據尚未確認 #MOD-530020
   IF g_rvu.rvuconf = 'X' THEN CALL cl_err('','9024',0) RETURN END IF
-  
+
   INPUT BY NAME g_rvu.rvu10,g_rvu.rvu11,g_rvu.rvu12,g_rvu.rvu15
                 WITHOUT DEFAULTS
      AFTER FIELD rvu10
         #No.MOD-AC0403 -BEGIN--------
-        IF g_rvu.rvu116 MATCHES "[123]" AND g_rvu.rvu10 = 'N' THEN       #TQC-B70073  add 2             
+        IF g_rvu.rvu116 MATCHES "[123]" AND g_rvu.rvu10 = 'N' THEN       #TQC-B70073  add 2
            CALL cl_err('','apm-436',0)
            NEXT FIELD rvu10
         END IF
         #No.MOD-AC0403 -END-------
         IF g_rvu.rvu11 IS NULL THEN     #No.MOD-520104
           LET g_rvu.rvu11=TODAY
-          IF g_rvu.rvu27 NOT MATCHES "[234]" THEN  #TQC-BB0131 add 
+          IF g_rvu.rvu27 NOT MATCHES "[234]" THEN  #TQC-BB0131 add
             IF NOT cl_null(g_rvu.rvu02) THEN
                SELECT rva00 INTO l_rva00 FROM rva_file WHERE rva01 = g_rvu.rvu02
                IF l_rva00 = '2' THEN
@@ -2832,7 +2842,7 @@ FUNCTION t720_t()
                             g_rvu.rvu13,g_rvu.rvu14
           END IF  #TQC-BB0131 add
         END IF
-        IF g_rvu.rvu27 NOT MATCHES "[234]" THEN  #TQC-BB0131 add 
+        IF g_rvu.rvu27 NOT MATCHES "[234]" THEN  #TQC-BB0131 add
             IF cl_null(g_rvu.rvu10) OR cl_null(g_rvu.rvu15) THEN    #No.MOD-520104
               LET g_rvu.rvu11=NULL
               LET g_rvu.rvu12=NULL
@@ -2880,8 +2890,8 @@ FUNCTION t720_t()
                  AND amd30='Y'        #已確認
               IF l_cnt = 0 THEN
                  CALL cl_err(g_rvu.rvu15,'aap-151',0)
-                 NEXT FIELD rvu15 
-              END IF   
+                 NEXT FIELD rvu15
+              END IF
            END IF
         #TQC-BB0131 add START
            IF g_rvu.rvu27 NOT MATCHES "[234]" THEN  #TQC-D30023 add NOT
@@ -2908,17 +2918,17 @@ FUNCTION t720_t()
      ON IDLE g_idle_seconds
         CALL cl_on_idle()
         CONTINUE INPUT
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
+
       ON ACTION controlg      #MOD-4C0121
          CALL cl_cmdask()     #MOD-4C0121
- 
- 
+
+
   END INPUT
   IF INT_FLAG THEN
      LET g_rvu.*=g_rvu_t.*
@@ -2948,13 +2958,13 @@ FUNCTION t720_t()
   END IF
   CLOSE t720_cl
 END FUNCTION
- 
+
 FUNCTION t720_k()
   IF cl_null(g_rvu.rvu01) THEN RETURN END IF
   IF g_rvu.rvuconf = 'N' THEN CALL cl_err('','anm-960',0) RETURN END IF
   IF g_rvu.rvuconf = 'X' THEN CALL cl_err('','9024',0) RETURN END IF
   INPUT BY NAME g_rvu.rvu09 WITHOUT DEFAULTS
- 
+
       AFTER FIELD rvu09
           IF g_rvu.rvu09<g_rvu.rvu03 THEN NEXT FIELD rvu09 END IF
       AFTER INPUT
@@ -2972,20 +2982,20 @@ FUNCTION t720_k()
      ON IDLE g_idle_seconds
         CALL cl_on_idle()
         CONTINUE INPUT
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
+
       ON ACTION controlg      #MOD-4C0121
          CALL cl_cmdask()     #MOD-4C0121
- 
- 
+
+
   END INPUT
 END FUNCTION
- 
+
 FUNCTION t720_i(p_cmd)
   DEFINE p_cmd           LIKE type_file.chr1                  #a:輸入 u:更改  #No.FUN-680136 VARCHAR(1)
   DEFINE l_rva24         LIKE type_file.chr1    #No.FUN-680136 VARCHAR(1)
@@ -3008,31 +3018,31 @@ DEFINE l_rvu08           LIKE rvu_file.rvu08    #No.FUN-980038
 DEFINE l_rva00           LIKE rva_file.rva00    #No.FUN-9A0068
 DEFINE l_smy73           LIKE smy_file.smy73    #TQC-AC0293
 DEFINE l_pmcacti         LIKE pmc_file.pmcacti  #MOD-C60054 add
-DEFINE l_cnt1            LIKE type_file.num5    #FUN-C80045 add 
+DEFINE l_cnt1            LIKE type_file.num5    #FUN-C80045 add
   DISPLAY BY NAME g_rvu.rvu21,g_rvu.rvu22,g_rvu.rvu23,g_rvu.rvucond,g_rvu.rvucont,  #FUN-960130
                   g_rvu.rvuconu,g_rvu.rvumksg,g_rvu.rvu17,                          #FUN-A60009 add:rvu17
                   g_rvu.rvu900,g_rvu.rvuplant,
                   g_rvu.rvucrat,g_rvu.rvuoriu,g_rvu.rvuorig             #TQC-A30041 ADD
-  IF g_azw.azw04 = '2' THEN                                                                                                       
-     LET l_azp02 = ''                                                                                                             
-     SELECT azp02 INTO l_azp02 FROM azp_file WHERE azp01 = g_rvu.rvuplant                                                           
+  IF g_azw.azw04 = '2' THEN
+     LET l_azp02 = ''
+     SELECT azp02 INTO l_azp02 FROM azp_file WHERE azp01 = g_rvu.rvuplant
      DISPLAY BY NAME g_rvu.rvu900,g_rvu.rvuplant,g_rvu.rvu22,g_rvu.rvu23,g_rvu.rvuconu  #FUN-960130
-     DISPLAY l_azp02 TO FORMONLY.rvuplant_desc                                                                                      
-     LET l_azp02 = ''                                                                                                             
-     SELECT azp02 INTO l_azp02 FROM azp_file WHERE azp01 = g_rvu.rvu22                                                            
-                                                                                                                                   
-     DISPLAY l_azp02 TO FORMONLY.rvu22_desc                                                                                       
-     SELECT gem02 INTO l_gem02 FROM gem_file WHERE gem01 = g_rvu.rvu23                                                            
-     DISPLAY l_gem02 TO FORMONLY.rvu23_desc                                                                                       
-     SELECT gen02 INTO l_gen02 FROM gen_file WHERE gen01 = g_rvu.rvuconu                                                          
-     DISPLAY l_gen02 TO FORMONLY.rvuconu_desc                                                                                     
-  END IF                                                                                                                          
+     DISPLAY l_azp02 TO FORMONLY.rvuplant_desc
+     LET l_azp02 = ''
+     SELECT azp02 INTO l_azp02 FROM azp_file WHERE azp01 = g_rvu.rvu22
+
+     DISPLAY l_azp02 TO FORMONLY.rvu22_desc
+     SELECT gem02 INTO l_gem02 FROM gem_file WHERE gem01 = g_rvu.rvu23
+     DISPLAY l_gem02 TO FORMONLY.rvu23_desc
+     SELECT gen02 INTO l_gen02 FROM gen_file WHERE gen01 = g_rvu.rvuconu
+     DISPLAY l_gen02 TO FORMONLY.rvuconu_desc
+  END IF
   CALL cl_set_head_visible("","YES")           #No.FUN-6B0032
 #TQC-AB0412 -----------------------------------Begin------------------------------------------
 #  INPUT BY NAME g_rvu.rvuoriu,g_rvu.rvuorig,
 #      #g_rvu.rvu00,g_rvu.rvu02,g_rvu.rvu03,g_rvu.rvu01,g_rvu.rvu04,g_rvu.rvu05,               #FUN-940083
 #      g_rvu.rvu00,g_rvu.rvu116,g_rvu.rvu02,g_rvu.rvu03,g_rvu.rvu01,g_rvu.rvu04,g_rvu.rvu05,   #FUN-940083
-#      g_rvu.rvu16,                #FUN-930062  
+#      g_rvu.rvu16,                #FUN-930062
 #      g_rvu.rvu08,g_rvu.rvu07,g_rvu.rvu06,g_rvu.rvu20,g_rvu.rvu99,
 #      g_rvu.rvu10,g_rvu.rvu11,g_rvu.rvu15,g_rvu.rvu13,g_rvu.rvu14,g_rvu.rvu12,
 #      g_rvu.rvuconf,
@@ -3042,7 +3052,7 @@ DEFINE l_cnt1            LIKE type_file.num5    #FUN-C80045 add
 #      g_rvu.rvuud01,g_rvu.rvuud02,g_rvu.rvuud03,g_rvu.rvuud04,
 #      g_rvu.rvuud05,g_rvu.rvuud06,g_rvu.rvuud07,g_rvu.rvuud08,
 #      g_rvu.rvuud09,g_rvu.rvuud10,g_rvu.rvuud11,g_rvu.rvuud12,
-#      g_rvu.rvuud13,g_rvu.rvuud14,g_rvu.rvuud15 
+#      g_rvu.rvuud13,g_rvu.rvuud14,g_rvu.rvuud15
 #      WITHOUT DEFAULTS
   INPUT BY NAME g_rvu.rvu00,
                 g_rvu.rvu116,g_rvu.rvu02,g_rvu.rvu03,g_rvu.rvu01,g_rvu.rvu04,g_rvu.rvu05,g_rvu.rvu16,
@@ -3058,7 +3068,7 @@ DEFINE l_cnt1            LIKE type_file.num5    #FUN-C80045 add
                 g_rvu.rvuud13,g_rvu.rvuud14,g_rvu.rvuud15
                 WITHOUT DEFAULTS
 #TQC-AB0412 --------------------------------End---------------------------------------------
- 
+
         BEFORE INPUT
             LET g_before_input_done = FALSE
             CALL t720_set_entry(p_cmd)
@@ -3066,7 +3076,7 @@ DEFINE l_cnt1            LIKE type_file.num5    #FUN-C80045 add
             LET g_before_input_done = TRUE
           CALL cl_set_docno_format("rvu01")
           CALL cl_set_docno_format("rvu02")
- 
+
         IF p_cmd='a' THEN  #MOD-740329
           IF NOT cl_null(g_argv1) THEN
              LET g_rvu.rvu00=g_argv1
@@ -3084,7 +3094,7 @@ DEFINE l_cnt1            LIKE type_file.num5    #FUN-C80045 add
              NEXT FIELD rvu116  #TQC-B70073
           END IF
         END IF
- 
+
         AFTER FIELD rvu00
           IF NOT cl_null(g_rvu.rvu00) THEN
               IF g_rvu.rvu00 NOT MATCHES "[123]" THEN NEXT FIELD rvu00 END IF
@@ -3098,7 +3108,7 @@ DEFINE l_cnt1            LIKE type_file.num5    #FUN-C80045 add
               END CASE
               DISPLAY g_buf TO t_1
           END IF
-        
+
         AFTER FIELD rvu116
            IF NOT cl_null(g_rvu.rvu116) THEN
               IF g_rvu.rvu116 NOT MATCHES "[123]" THEN NEXT FIELD rvu116 END IF
@@ -3107,7 +3117,7 @@ DEFINE l_cnt1            LIKE type_file.num5    #FUN-C80045 add
              #   LET g_rvu.rvu10 = 'Y'
              #ELSE
              #   LET g_rvu.rvu10 = 'N'
-             #END IF 
+             #END IF
 #             LET g_rvu.rvu10 = 'Y'                   #No.MOD-AC0403
              #TQC-B70073  --begin--mark
              #No.MOD-AC0403-BEGIN------
@@ -3146,11 +3156,11 @@ DEFINE l_cnt1            LIKE type_file.num5    #FUN-C80045 add
              #   LET g_rvu.rvu10 = 'Y'
              #ELSE
              #   LET g_rvu.rvu10 = 'N'
-             #END IF 
+             #END IF
              #No.FUN-A40054 -END-------
               DISPLAY BY NAME g_rvu.rvu10
            END IF
- 
+
         BEFORE FIELD rvu02         #驗收單號
           CALL t720_set_entry(p_cmd)
  #........如單身已有資料則不可修正驗收單號
@@ -3162,11 +3172,11 @@ DEFINE l_cnt1            LIKE type_file.num5    #FUN-C80045 add
           IF NOT cl_null(g_argv2) THEN LET g_rvu.rvu02=g_argv2 END IF
           DISPLAY BY NAME g_rvu.rvu02
           LET g_rva06=''
- 
+
         AFTER FIELD rvu02         #驗收單號
            ###### 01/11/19 Tommy 三角倉退不允許不輸入收貨單號
            IF g_azw.azw04 = '2' THEN
-              IF (g_rvu.rvu00 = '1' OR g_rvu.rvu00= '2') 
+              IF (g_rvu.rvu00 = '1' OR g_rvu.rvu00= '2')
                  AND cl_null(g_rvu.rvu02) THEN
                  NEXT FIELD rvu02
               END IF
@@ -3184,7 +3194,7 @@ DEFINE l_cnt1            LIKE type_file.num5    #FUN-C80045 add
               END IF
               LET l_gem02 = ''
               LET l_azp02 = ''
- 
+
               SELECT rva00,rva29,rva30,rva31 INTO l_rva00,g_rvu.rvu21,g_rvu.rvu22,g_rvu.rvu23  #TQC-9B0161 add rva00
                   FROM rva_file WHERE rva01 = g_rvu.rvu02
               DISPLAY BY NAME g_rvu.rvu21,g_rvu.rvu22,g_rvu.rvu23
@@ -3194,7 +3204,7 @@ DEFINE l_cnt1            LIKE type_file.num5    #FUN-C80045 add
               DISPLAY l_gem02 TO FORMONLY.rvu23_desc
               CALL cl_set_comp_entry("rvu21",FALSE)
             # CALL cl_set_comp_entry("rvu115,rvu12",FALSE)     #FUN-9A0068      #MOD-AC0414
-              CALL cl_set_comp_entry("rvu12",FALSE)            #MOD-AC0414 
+              CALL cl_set_comp_entry("rvu12",FALSE)            #MOD-AC0414
               IF g_rvu.rvu00 = '3' AND l_rva00 !='2' THEN
                  CALL cl_set_comp_entry("rvu113,rvu114",FALSE)
               ELSE
@@ -3238,7 +3248,7 @@ DEFINE l_cnt1            LIKE type_file.num5    #FUN-C80045 add
                  IF g_rvu.rvu113 = g_aza.aza17 THEN
                     LET g_rvu.rvu114 = 1
                  ELSE
-                    CALL s_curr3(g_rvu.rvu113,g_rvu.rvu03,g_sma.sma904) 
+                    CALL s_curr3(g_rvu.rvu113,g_rvu.rvu03,g_sma.sma904)
                        RETURNING g_rvu.rvu114
                  END IF
                  DISPLAY BY NAME g_rvu.rvu111,g_rvu.rvu112,
@@ -3254,7 +3264,7 @@ DEFINE l_cnt1            LIKE type_file.num5    #FUN-C80045 add
               #MOD-B30544 add begin------------------------
               CALL cl_set_comp_required('rvu111,rvu112,rvu113,rvu115',TRUE)
 
-              IF l_rva00 = '2' THEN #MOD-CA0071 add 
+              IF l_rva00 = '2' THEN #MOD-CA0071 add
                  IF NOT cl_null(g_rvu.rvu04) THEN
                     SELECT pmc17,pmc49,pmc22,pmc47
                         INTO g_rvu.rvu111,g_rvu.rvu112,g_rvu.rvu113,g_rvu.rvu115
@@ -3281,7 +3291,7 @@ DEFINE l_cnt1            LIKE type_file.num5    #FUN-C80045 add
                  END IF
               END IF #MOD-CA0071 add
               #MOD-B30544 add end--------------------------
-           END IF  
+           END IF
 #CHI-D60028 mark begin----------
 #           #TQC-D40092----add--str
 #           #如果rvb39=Y，需做QC检验
@@ -3322,7 +3332,7 @@ DEFINE l_cnt1            LIKE type_file.num5    #FUN-C80045 add
 #CHI-D60028 mark end---------------
 
            CALL t720_set_no_entry(p_cmd)
- 
+
         AFTER FIELD rvu03         #單據日期
            IF NOT cl_null(g_rvu.rvu03) THEN
                IF NOT cl_null(g_sma.sma53) AND g_rvu.rvu03 <= g_sma.sma53 THEN
@@ -3385,7 +3395,7 @@ DEFINE l_cnt1            LIKE type_file.num5    #FUN-C80045 add
                          #NO.FUN-960130----BEGIN-----
                          IF g_azw.azw04 = '2' THEN
                             #FUN-C90050 mark begin---
-                            #SELECT rye03 INTO g_rvu.rvu01 FROM rye_file 
+                            #SELECT rye03 INTO g_rvu.rvu01 FROM rye_file
                             #    WHERE rye01 = 'apm' AND rye02 = '7'
                             #IF SQLCA.SQLCODE =100 THEN
                             #   CALL cl_err('','apm-930',1)
@@ -3394,7 +3404,7 @@ DEFINE l_cnt1            LIKE type_file.num5    #FUN-C80045 add
                             #FUN-C90050 mark end-----
 
                             #FUN-C90050 add begin---
-                            CALL s_get_defslip('apm','7',g_plant,'N') RETURNING g_rvu.rvu01  
+                            CALL s_get_defslip('apm','7',g_plant,'N') RETURNING g_rvu.rvu01
                             IF cl_null(g_rvu.rvu01) THEN
                                CALL cl_err('','apm-930',1)
                                RETURN
@@ -3415,7 +3425,7 @@ DEFINE l_cnt1            LIKE type_file.num5    #FUN-C80045 add
            END IF
         BEFORE FIELD rvu01
           CALL t720_set_entry(p_cmd)
- 
+
         AFTER FIELD rvu01       #單據編號
           IF NOT cl_null(g_rvu.rvu01) AND (g_rvu.rvu01!=g_rvu_t.rvu01) OR cl_null(g_rvu_t.rvu01) THEN
                LET g_t1=g_rvu.rvu01[1,g_doc_len]
@@ -3425,7 +3435,7 @@ DEFINE l_cnt1            LIKE type_file.num5    #FUN-C80045 add
                          WHEN g_rvu.rvu00 ='3' LET g_chr='D' #倉退
                     END CASE
                  ELSE
-                    CASE WHEN g_rvu.rvu00 ='1' LET g_chr='7' #入庫 
+                    CASE WHEN g_rvu.rvu00 ='1' LET g_chr='7' #入庫
                         #WHEN g_rvu.rvu00 ='2' LET g_chr='4' #驗退
                          WHEN g_rvu.rvu00 ='2' LET g_chr='E' #驗退  #MOD-BA0177
                          WHEN g_rvu.rvu00 ='3' LET g_chr='4' #倉退
@@ -3457,23 +3467,23 @@ DEFINE l_cnt1            LIKE type_file.num5    #FUN-C80045 add
               IF l_cnt1 > 0 THEN
                  CALL cl_err(g_t1,'apc1036',0)
                   NEXT FIELD rvu01
-              END IF 
-              #FUN-C80045 add    
+              END IF
+              #FUN-C80045 add
              CALL s_check_no("apm",g_rvu.rvu01,g_rvu01_t,g_chr,"rvu_file","rvu01","")
                 RETURNING li_result,g_rvu.rvu01
              DISPLAY BY NAME g_rvu.rvu01
              IF (NOT li_result) THEN
                  NEXT FIELD rvu01
              END IF
-               IF cl_null(g_rvu01_t) THEN                                                                                           
-                  CALL s_get_doc_no(g_rvu.rvu01) RETURNING l_slip                                                                   
-                  SELECT smy72 INTO l_rvu08 FROM smy_file                                                                       
-                   WHERE smyslip = l_slip                                                                                           
+               IF cl_null(g_rvu01_t) THEN
+                  CALL s_get_doc_no(g_rvu.rvu01) RETURNING l_slip
+                  SELECT smy72 INTO l_rvu08 FROM smy_file
+                   WHERE smyslip = l_slip
                   IF NOT cl_null(l_rvu08) THEN
                      LET g_rvu.rvu08 = l_rvu08
                      DISPLAY BY NAME g_rvu.rvu08
                   END IF
-               END IF                                                                                                               
+               END IF
 #FUN-D50103 ---------- add ------------ begin --------------- #检查单据形态
            CALL s_get_doc_no(g_rvu.rvu01) RETURNING l_slip
            SELECT smy72 INTO l_rvu08 FROM smy_file WHERE smyslip = l_slip
@@ -3497,7 +3507,7 @@ DEFINE l_cnt1            LIKE type_file.num5    #FUN-C80045 add
               END CASE
            END IF
 #FUN-D50103 ---------- add ------------ end -----------------
- 
+
               IF p_cmd = 'a' AND cl_null(g_rvu.rvu01[g_no_sp,g_no_ep]) AND g_smy.smyauno = 'N'
                  THEN NEXT FIELD rvu01
               END IF
@@ -3528,10 +3538,10 @@ DEFINE l_cnt1            LIKE type_file.num5    #FUN-C80045 add
              END IF
           END IF
           CALL t720_set_no_entry(p_cmd)
- 
+
          BEFORE FIELD rvu04
            CALL t720_set_entry(p_cmd)
- 
+
          AFTER FIELD rvu04       #廠商編號
            IF NOT cl_null(g_rvu.rvu04) THEN
                IF NOT cl_null(g_rvu.rvu04) OR g_rvu.rvu04 != g_rvu_t.rvu04 THEN
@@ -3563,7 +3573,7 @@ DEFINE l_cnt1            LIKE type_file.num5    #FUN-C80045 add
                      IF g_rvu.rvu113 = g_aza.aza17 THEN
                         LET g_rvu.rvu114 = 1
                      ELSE
-                        CALL s_curr3(g_rvu.rvu113,g_rvu.rvu03,g_sma.sma904) 
+                        CALL s_curr3(g_rvu.rvu113,g_rvu.rvu03,g_sma.sma904)
                            RETURNING g_rvu.rvu114
                      END IF
                      DISPLAY BY NAME g_rvu.rvu111,g_rvu.rvu112,
@@ -3571,24 +3581,24 @@ DEFINE l_cnt1            LIKE type_file.num5    #FUN-C80045 add
                                      g_rvu.rvu114,g_rvu.rvu12
                      DISPLAY l_pma02 TO pma02
                      DISPLAY l_pnz02 TO pnz02
-                  END IF  
+                  END IF
                   DISPLAY BY NAME g_rvu.rvu05
                END IF
            END IF
            CALL t720_set_no_entry(p_cmd)
- 
-         AFTER FIELD rvu16                                                                                                          
-           IF NOT cl_null(g_rvu.rvu16) THEN                                                                                         
-              SELECT COUNT(*) INTO g_cnt FROM sfp_file                                                                              
-               WHERE sfp01 = g_rvu.rvu16                                                                                            
-                 AND sfp06 = '4'                                                                                                    
-                 AND sfpconf!='X'                                                                                                   
-              IF g_cnt = 0 THEN                                                                                                     
-                 CALL cl_err(g_rvu.rvu16,'asf-525',0)                                                                               
-                 NEXT FIELD rvu16                                                                                                   
-              END IF                                                                                                                
-           END IF                                                                                                                   
- 
+
+         AFTER FIELD rvu16
+           IF NOT cl_null(g_rvu.rvu16) THEN
+              SELECT COUNT(*) INTO g_cnt FROM sfp_file
+               WHERE sfp01 = g_rvu.rvu16
+                 AND sfp06 = '4'
+                 AND sfpconf!='X'
+              IF g_cnt = 0 THEN
+                 CALL cl_err(g_rvu.rvu16,'asf-525',0)
+                 NEXT FIELD rvu16
+              END IF
+           END IF
+
          AFTER FIELD rvu06       #部門
            IF NOT cl_null(g_rvu.rvu06) THEN
               IF g_rvu_o.rvu06 IS NULL OR (g_rvu.rvu06!=g_rvu_o.rvu06 ) THEN
@@ -3605,7 +3615,7 @@ DEFINE l_cnt1            LIKE type_file.num5    #FUN-C80045 add
               DISPLAY NULL TO FORMONLY.gem02 #MOD-640268
            END IF
            LET g_rvu_o.rvu06 = g_rvu.rvu06
- 
+
          AFTER FIELD rvu07       #人員
            IF NOT cl_null(g_rvu.rvu07) THEN
                IF g_rvu_o.rvu07 IS NULL OR (g_rvu.rvu07!=g_rvu_o.rvu07) THEN     #TQC-AC0265 #MOD-B60098 remark
@@ -3629,14 +3639,14 @@ DEFINE l_cnt1            LIKE type_file.num5    #FUN-C80045 add
                   END IF
                   DISPLAY l_gem02 TO FORMONLY.gem02
                   IF NOT t720_chkall_azf() THEN NEXT FIELD rvu07 END IF   #FUN-CB0087
-               END IF      #TQC-AC0265 #MOD-B60098 remark	
+               END IF      #TQC-AC0265 #MOD-B60098 remark
            ELSE
                DISPLAY NULL TO FORMONLY.gen02 #MOD-640268
            END IF
            LET g_rvu_o.rvu07 = g_rvu.rvu07
- 
+
        AFTER FIELD rvu08
-           IF NOT cl_null(g_rvu.rvu08) THEN 
+           IF NOT cl_null(g_rvu.rvu08) THEN
              IF NOT (g_azw.azw04='2' AND g_rvu.rvu00='3') THEN  #No.FUN-9B0157 -IF
                IF g_rvu.rvu08 != 'REG' AND g_rvu.rvu08 != 'EXP' AND
                   g_rvu.rvu08 != 'CAP' AND g_rvu.rvu08 != 'SUB' THEN
@@ -3690,7 +3700,7 @@ DEFINE l_cnt1            LIKE type_file.num5    #FUN-C80045 add
            END IF
 #MOD-AC0414 -----------------------Begin---------------------------
 #        AFTER FIELD rvu12
-#           IF cl_null(g_rvu.rvu12) OR g_rvu.rvu12 <=0 THEN  
+#           IF cl_null(g_rvu.rvu12) OR g_rvu.rvu12 <=0 THEN
 #              CALL  cl_err(g_rvu.rvu12,'mfg3291',0)
 #              NEXT FIELD rvu12
 #           END IF
@@ -3712,8 +3722,8 @@ DEFINE l_cnt1            LIKE type_file.num5    #FUN-C80045 add
                     AND amd30='Y'        #已確認
                  IF l_cnt = 0 THEN
                     CALL cl_err(g_rvu.rvu15,'aap-151',0)
-                    NEXT FIELD rvu15 
-                 END IF   
+                    NEXT FIELD rvu15
+                 END IF
               END IF
            END IF                             #TQC-AB0083
        #-MOD-AB0037-end-
@@ -3736,7 +3746,7 @@ DEFINE l_cnt1            LIKE type_file.num5    #FUN-C80045 add
            END IF
         AFTER FIELD rvu114
         #  IF cl_null(g_rvu.rvu114) OR g_rvu.rvu114 <=0 THEN          #MOD-AC0414
-           IF cl_null(g_rvu.rvu114) OR g_rvu.rvu114 <0 THEN           #MOD-AC0414 
+           IF cl_null(g_rvu.rvu114) OR g_rvu.rvu114 <0 THEN           #MOD-AC0414
               CALL cl_err('','mfg3291',0)
               NEXT FIELD rvu114
            END IF
@@ -3746,7 +3756,7 @@ DEFINE l_cnt1            LIKE type_file.num5    #FUN-C80045 add
       #      LET g_rvu.rvu00 = g_argv1
       #   ELSE
       #      LET g_rvu.rvu00 = '4'
-      #   END IF         
+      #   END IF
       #   DISPLAY BY NAME g_rvu.rvu00
       #TQC-BB0259 mark end -----------------
        AFTER FIELD rvuud01
@@ -3793,7 +3803,7 @@ DEFINE l_cnt1            LIKE type_file.num5    #FUN-C80045 add
                    DISPLAY BY NAME g_rvu.rvu07
                    NEXT FIELD rvu07
                 END IF
-          END IF 
+          END IF
           #TQC-AC0265  --end
 #MOD-AC0414 --------------------Begin------------------------
           IF NOT cl_null(g_rvu.rvu12) AND g_rvu.rvu12 >= 0 THEN
@@ -3855,8 +3865,8 @@ DEFINE l_cnt1            LIKE type_file.num5    #FUN-C80045 add
           IF cl_null(g_rvu.rvu08) AND cl_null(g_rvu.rvu02) THEN
               NEXT FIELD rvu08
           END IF
- 
- 
+
+
         ON ACTION CONTROLP
           CASE WHEN INFIELD(rvu01) #查詢單据
                  LET g_t1 = s_get_doc_no(g_rvu.rvu01)       #No.FUN-550060
@@ -3908,7 +3918,7 @@ DEFINE l_cnt1            LIKE type_file.num5    #FUN-C80045 add
                        #MOD-B60049 add --end--
                        CALL cl_create_qry() RETURNING g_rvu.rvu02
                         DISPLAY BY NAME g_rvu.rvu02              #No.MOD-490371
-                  WHEN g_rvu.rvu00='2'  
+                  WHEN g_rvu.rvu00='2'
                        CALL cl_init_qry_var()
                        IF g_argv3 <> 'TAP'  THEN             #MOD-890002
                           LET g_qryparam.form = "q_rvall"
@@ -3925,7 +3935,7 @@ DEFINE l_cnt1            LIKE type_file.num5    #FUN-C80045 add
                        END IF
                        #MOD-B60049 add --end--
                        CALL cl_create_qry() RETURNING g_rvu.rvu02
-                       DISPLAY BY NAME g_rvu.rvu02        
+                       DISPLAY BY NAME g_rvu.rvu02
                   WHEN g_rvu.rvu00='3'
                        CALL cl_init_qry_var()
                        IF g_argv3 <> 'TAP'  THEN             #MOD-890002
@@ -3963,7 +3973,7 @@ DEFINE l_cnt1            LIKE type_file.num5    #FUN-C80045 add
                     DISPLAY g_buf TO pmc03
                  END IF                              #TQC-C60085 -- add
                  NEXT FIELD rvu04
-               WHEN INFIELD(rvu111)  
+               WHEN INFIELD(rvu111)
                   CALL cl_init_qry_var()
                   LET g_qryparam.form = "q_pma"
                   LET g_qryparam.default1 = g_rvu.rvu111
@@ -3971,7 +3981,7 @@ DEFINE l_cnt1            LIKE type_file.num5    #FUN-C80045 add
                   CALL t720_rvu111()
                   DISPLAY BY NAME g_rvu.rvu111
                   NEXT FIELD rvu111
-               WHEN INFIELD(rvu112)  
+               WHEN INFIELD(rvu112)
                   CALL cl_init_qry_var()
                   LET g_qryparam.form = "q_pnz01"
                   LET g_qryparam.default1 = g_rvu.rvu112
@@ -3979,7 +3989,7 @@ DEFINE l_cnt1            LIKE type_file.num5    #FUN-C80045 add
                   CALL t720_rvu112()
                   DISPLAY BY NAME g_rvu.rvu112
                   NEXT FIELD rvu112
-               WHEN INFIELD(rvu113)  
+               WHEN INFIELD(rvu113)
                   CALL cl_init_qry_var()
                   LET g_qryparam.form = "q_azi"
                   LET g_qryparam.default1 = g_rvu.rvu113
@@ -3987,7 +3997,7 @@ DEFINE l_cnt1            LIKE type_file.num5    #FUN-C80045 add
                   CALL t720_rvu113()
                   DISPLAY BY NAME g_rvu.rvu113
                   NEXT FIELD rvu113
-               WHEN INFIELD(rvu115)  
+               WHEN INFIELD(rvu115)
                   CALL cl_init_qry_var()
                   LET g_qryparam.form = "q_gec01"
                   LET g_qryparam.default1 = g_rvu.rvu115
@@ -3995,13 +4005,13 @@ DEFINE l_cnt1            LIKE type_file.num5    #FUN-C80045 add
                   CALL t720_rvu115()
                   DISPLAY BY NAME g_rvu.rvu115
                   NEXT FIELD rvu115
-               WHEN INFIELD(rvu16)                                                                                                  
-                    CALL cl_init_qry_var()                                                                                          
-                    LET g_qryparam.form = "q_sfp1"                                                                                  
-                    LET g_qryparam.default1 = g_rvu.rvu16                                                                           
-                    CALL cl_create_qry() RETURNING g_rvu.rvu16                                                                      
-                    DISPLAY BY NAME g_rvu.rvu16                                                                                     
-                    NEXT FIELD rvu16                                                                                                
+               WHEN INFIELD(rvu16)
+                    CALL cl_init_qry_var()
+                    LET g_qryparam.form = "q_sfp1"
+                    LET g_qryparam.default1 = g_rvu.rvu16
+                    CALL cl_create_qry() RETURNING g_rvu.rvu16
+                    DISPLAY BY NAME g_rvu.rvu16
+                    NEXT FIELD rvu16
                WHEN INFIELD(rvu07) #人員
                  CALL cl_init_qry_var()
                  LET g_qryparam.form = "q_gen"
@@ -4020,32 +4030,32 @@ DEFINE l_cnt1            LIKE type_file.num5    #FUN-C80045 add
                  NEXT FIELD rvu06
                OTHERWISE EXIT CASE
             END CASE
- 
+
         ON ACTION CONTROLF                  #欄位說明
          CALL cl_set_focus_form(ui.Interface.getRootNode()) RETURNING g_fld_name,g_frm_name #Add on 040913
          CALL cl_fldhelp(g_frm_name,g_fld_name,g_lang) #Add on 040913
- 
- 
+
+
         ON ACTION CONTROLZ
            CALL cl_show_req_fields()
- 
+
         ON ACTION CONTROLG CALL cl_cmdask()
        ON IDLE g_idle_seconds
           CALL cl_on_idle()
           CONTINUE INPUT
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
- 
+
+
     END INPUT
 END FUNCTION
- 
+
 FUNCTION t720_q()
- 
+
     LET g_row_count = 0
     LET g_curs_index = 0
     CALL cl_navigator_setting( g_curs_index, g_row_count )
@@ -4055,7 +4065,7 @@ FUNCTION t720_q()
     IF NOT g_argv1 MATCHES '[56Z]' THEN                           #No.FUN-940083
        DISPLAY ' ' TO FORMONLY.cnt
     END IF
- 
+
     IF g_sma.sma120 = 'Y'  THEN
        IF cl_null(g_argv1) OR g_argv1 NOT MATCHES '[56Z]' THEN     #No.TQC-9C0155
           LET lg_smy62 = ''
@@ -4063,11 +4073,11 @@ FUNCTION t720_q()
           CALL t720_refresh_detail()
        END IF                                                     #No.TQC-9C0155
     END IF
- 
+
     CALL t720_cs()
     IF INT_FLAG THEN LET INT_FLAG = 0 INITIALIZE g_rvu.* TO NULL RETURN END IF
    #MESSAGE " SEARCHING ! "                   #FUN-A50001 mark
-    CALL cl_msg(" SEARCHING ! ")              #FUN-A50001 add 
+    CALL cl_msg(" SEARCHING ! ")              #FUN-A50001 add
     OPEN t720_cs                              #從DB產生合乎條件TEMP(0-30秒)
     IF SQLCA.sqlcode THEN
        CALL cl_err('',SQLCA.sqlcode,0)
@@ -4083,12 +4093,12 @@ FUNCTION t720_q()
    #MESSAGE ""                                #FUN-A50001 mark
     CALL cl_msg("")                           #FUN-A50001 add
 END FUNCTION
- 
+
 FUNCTION t720_fetch(p_flag)
 DEFINE
     p_flag         LIKE type_file.chr1    #處理方式  #No.FUN-680136 VARCHAR(1)
 DEFINE l_slip      LIKE smy_file.smyslip  #No.FUN-680136 VARCHAR(10) #No.TQC-650108
- 
+
     CASE p_flag
         WHEN 'N' FETCH NEXT     t720_cs INTO g_rvu.rvu01,g_rvu.rvu00
         WHEN 'P' FETCH PREVIOUS t720_cs INTO g_rvu.rvu01,g_rvu.rvu00
@@ -4101,17 +4111,17 @@ DEFINE l_slip      LIKE smy_file.smyslip  #No.FUN-680136 VARCHAR(10) #No.TQC-650
                 PROMPT g_msg CLIPPED,': ' FOR g_jump
                    ON IDLE g_idle_seconds
                       CALL cl_on_idle()
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
+
       ON ACTION controlg      #MOD-4C0121
          CALL cl_cmdask()     #MOD-4C0121
- 
- 
+
+
                 END PROMPT
                 IF INT_FLAG THEN
                    LET INT_FLAG = 0
@@ -4121,7 +4131,7 @@ DEFINE l_slip      LIKE smy_file.smyslip  #No.FUN-680136 VARCHAR(10) #No.TQC-650
             FETCH ABSOLUTE g_jump t720_cs INTO g_rvu.rvu01,g_rvu.rvu00
             LET mi_no_ask = FALSE
     END CASE
- 
+
     IF SQLCA.sqlcode THEN
        INITIALIZE g_rvu.* TO NULL  #TQC-6B0105
        CALL cl_err(g_rvu.rvu01,SQLCA.sqlcode,0) RETURN
@@ -4133,17 +4143,17 @@ DEFINE l_slip      LIKE smy_file.smyslip  #No.FUN-680136 VARCHAR(10) #No.TQC-650
           WHEN 'L' LET g_curs_index = g_row_count
           WHEN '/' LET g_curs_index = g_jump
        END CASE
- 
+
        CALL cl_navigator_setting( g_curs_index, g_row_count )
     END IF
- 
+
     #在使用Q查詢的情況下得到當前對應的屬性組smy62
     IF g_sma.sma120 = 'Y' AND g_sma.sma907 = 'Y' THEN
        LET l_slip = g_rvu.rvu01[1,g_doc_len]
        SELECT smy62 INTO lg_smy62 FROM smy_file
           WHERE smyslip = l_slip
     END IF
- 
+
     SELECT * INTO g_rvu.* FROM rvu_file WHERE rvu01 = g_rvu.rvu01
     IF SQLCA.sqlcode THEN
        CALL cl_err3("sel","rvu_file",g_rvu.rvu01,"",SQLCA.sqlcode,"","",1)  #No.FUN-660129
@@ -4155,22 +4165,22 @@ DEFINE l_slip      LIKE smy_file.smyslip  #No.FUN-680136 VARCHAR(10) #No.TQC-650
     LET g_data_plant = g_rvu.rvuplant #FUN-980030
     CALL t720_show()
 END FUNCTION
- 
+
 FUNCTION t720_show()
 DEFINE l_azp02     LIKE  azp_file.azp02   #NO.FUN-960130
 DEFINE l_gen02     LIKE  gen_file.gen02   #NO.FUN-960130
 DEFINE l_gem02     LIKE  gem_file.gem02   #NO.FUN-960130
- 
+
   LET g_rvu_t.* = g_rvu.*                #保存單頭舊值
   IF NOT g_argv1 MATCHES '[56Z]' THEN                                     #No.FUN-940083
      DISPLAY BY NAME g_rvu.rvuoriu,g_rvu.rvuorig,
       g_rvu.rvu00,g_rvu.rvu02,g_rvu.rvu03,g_rvu.rvu01,g_rvu.rvu04,g_rvu.rvu05,
-      g_rvu.rvu16,         #FUN-930062  
+      g_rvu.rvu16,         #FUN-930062
       g_rvu.rvu08,g_rvu.rvu06,g_rvu.rvu07,g_rvu.rvu20,g_rvu.rvu09,g_rvu.rvu99,
       g_rvu.rvu10,g_rvu.rvu11,g_rvu.rvu15,g_rvu.rvu13,g_rvu.rvu14,g_rvu.rvu12,
       g_rvu.rvumksg,g_rvu.rvu17,                                              #FUN-A60009 add
       g_rvu.rvuconf,g_rvu.rvuuser,g_rvu.rvugrup,g_rvu.rvumodu,g_rvu.rvudate,
-      g_rvu.rvucrat,      #TQC-9A0093 
+      g_rvu.rvucrat,      #TQC-9A0093
       g_rvu.rvuud01,g_rvu.rvuud02,g_rvu.rvuud03,g_rvu.rvuud04,
       g_rvu.rvuud05,g_rvu.rvuud06,g_rvu.rvuud07,g_rvu.rvuud08,
       g_rvu.rvuud09,g_rvu.rvuud10,g_rvu.rvuud11,g_rvu.rvuud12,
@@ -4183,27 +4193,27 @@ DEFINE l_gem02     LIKE  gem_file.gem02   #NO.FUN-960130
        DISPLAY BY NAME g_rvu.rvu25,g_rvu.rvu27
     END IF
    #TQC-B60065 End-----
- 
+
     IF g_azw.azw04 = '2' THEN
        DISPLAY BY NAME g_rvu.rvucrat
        LET l_azp02 = ''
-       SELECT azp02 INTO l_azp02 FROM azp_file WHERE azp01 = g_rvu.rvuplant       
-       DISPLAY BY NAME g_rvu.rvuplant                                    
-       DISPLAY l_azp02 TO FORMONLY.rvuplant_desc  
-       
-       LET l_azp02 = '' 
+       SELECT azp02 INTO l_azp02 FROM azp_file WHERE azp01 = g_rvu.rvuplant
+       DISPLAY BY NAME g_rvu.rvuplant
+       DISPLAY l_azp02 TO FORMONLY.rvuplant_desc
+
+       LET l_azp02 = ''
        SELECT azp02 INTO l_azp02 FROM azp_file WHERE azp01 = g_rvu.rvu22
-       DISPLAY BY NAME g_rvu.rvu22                                                   
-       DISPLAY l_azp02 TO FORMONLY.rvu22_desc 
- 
+       DISPLAY BY NAME g_rvu.rvu22
+       DISPLAY l_azp02 TO FORMONLY.rvu22_desc
+
        SELECT gem02 INTO l_gem02 FROM gem_file WHERE gem01 = g_rvu.rvu23
        DISPLAY BY NAME g_rvu.rvu23
        DISPLAY l_gem02 TO FORMONLY.rvu23_desc
- 
+
        SELECT gen02 INTO l_gen02 FROM gen_file WHERE gen01 = g_rvu.rvuconu
        DISPLAY BY NAME g_rvu.rvuconu
        DISPLAY l_gen02 TO FORMONLY.rvuconu_desc
- 
+
        DISPLAY BY NAME g_rvu.rvucond
        DISPLAY BY NAME g_rvu.rvucont
        DISPLAY BY NAME g_rvu.rvu21
@@ -4217,7 +4227,7 @@ DEFINE l_gem02     LIKE  gem_file.gem02   #NO.FUN-960130
    #CALL cl_set_field_pic(g_rvu.rvuconf,"","","",g_chr,"")
     CALL t720_pic()
    #FUN-C30140--mod---end--
- 
+
     LET g_buf=' '
     CASE
        WHEN g_rvu.rvu00='1'
@@ -4239,17 +4249,17 @@ DEFINE l_gem02     LIKE  gem_file.gem02   #NO.FUN-960130
   #-----CHI-B10047---------
   SELECT rva00 INTO g_rva00 FROM rva_file WHERE rva01 = g_rvu.rvu02
   IF cl_null(g_rvu.rvu02) THEN
-     LET g_rva00 = '2' 
-  END IF 
+     LET g_rva00 = '2'
+  END IF
   #-----END CHI-B10047-----
- 
+
   CALL t720_b_fill(g_wc2)
- 
+
     CALL cl_show_fld_cont()                   #No.FUN-550037 hmf
 END FUNCTION
- 
+
 FUNCTION t720_r()  #刪除
-    DEFINE l_chr,l_sure    LIKE type_file.chr1    #No.FUN-680136 VARCHAR(1)    
+    DEFINE l_chr,l_sure    LIKE type_file.chr1    #No.FUN-680136 VARCHAR(1)
     DEFINE l_i             LIKE type_file.num5  #no.CHI-860008
     #FUN-BC0104---add---str
     DEFINE l_rvv45         LIKE rvv_file.rvv45,
@@ -4271,20 +4281,20 @@ FUNCTION t720_r()  #刪除
    DEFINE l_shb29            LIKE shb_file.shb29
     #FUN-BC0104---add---end
    DEFINE l_sql      STRING   #add by huanglf161102
- 
+
     IF s_shut(0) THEN RETURN END IF
     IF g_rvu.rvu01 IS NULL THEN CALL cl_err('',-400,0) RETURN END IF
     SELECT * INTO g_rvu.* FROM rvu_file
      WHERE rvu01=g_rvu.rvu01
- 
+
     IF g_rvu.rvuconf = 'Y' THEN CALL cl_err('','apm-242',0) RETURN END IF
     IF g_rvu.rvuconf = 'X' THEN CALL cl_err('','9024',0) RETURN END IF
     IF NOT cl_null(g_rvu.rvu117) THEN CALL cl_err('','apm-438',0) RETURN END IF   #FUN-940083
-    IF NOT cl_null(g_rvu.rvu16) THEN                                                                                                
-      CALL cl_err('','apm-579',0)                                                                                                   
-      RETURN                                                                                                                        
-    END IF                                                                                                                          
- 
+    IF NOT cl_null(g_rvu.rvu16) THEN
+      CALL cl_err('','apm-579',0)
+      RETURN
+    END IF
+
    #FUN-A60009 add str ---
     IF g_rvu.rvu17 MATCHES '[Ss1]' THEN
        CALL cl_err("","mfg3557",0)
@@ -4293,7 +4303,7 @@ FUNCTION t720_r()  #刪除
    #FUN-A60009 add end ---
 
     BEGIN WORK
- 
+
     OPEN t720_cl USING g_rvu.rvu01
     IF STATUS THEN
        CALL cl_err("OPEN t720_cl:", STATUS, 1)
@@ -4319,9 +4329,9 @@ FUNCTION t720_r()  #刪除
        IF STATUS OR SQLCA.SQLERRD[3]=0 THEN
           CALL cl_err3("del","rvu_file",g_rvu.rvu01,"",STATUS,"","del rvu:",1) #No.FUN-660129
           ROLLBACK WORK RETURN
-       END IF       
+       END IF
        #FUN-BC0104---add---str---
-       DECLARE rvv02_cur CURSOR FOR SELECT rvv05,rvv45,rvv46,rvv47 
+       DECLARE rvv02_cur CURSOR FOR SELECT rvv05,rvv45,rvv46,rvv47
                                     FROM rvv_file
                                     WHERE rvv01 = g_rvu.rvu01
        LET l_cn = 1
@@ -4338,7 +4348,7 @@ FUNCTION t720_r()  #刪除
           CALL cl_err3("del","rvv_file",g_rvu.rvu01,"",STATUS,"","del rvv",1)  #No.FUN-660129
           ROLLBACK WORK RETURN
       #FUN-BC0104---add---str---
-       ELSE 
+       ELSE
           FOR l_c=1 TO l_cn-1
               LET l_qcl05 = ''
               SELECT qcl05 INTO l_qcl05 FROM qcl_file WHERE qcl01 = l_rvv_a[l_c].rvv46
@@ -4354,11 +4364,11 @@ FUNCTION t720_r()  #刪除
           #str---add by jixf 160802
           #SELECT DISTINCT shb28,shb29 INTO l_shb28,l_shb29 FROM shb_file WHERE shb14=g_rvu.rvu01
           SELECT DISTINCT tc_shd03,tc_shd04 INTO l_shb28,l_shb29 FROM tc_shd_file WHERE tc_shd05=g_rvu.rvu01
-          IF NOT cl_null(l_shb29) THEN              
+          IF NOT cl_null(l_shb29) THEN
              DELETE FROM rva_file WHERE rva01=l_shb29
-             DELETE FROM rvb_file WHERE rvb01=l_shb29 
+             DELETE FROM rvb_file WHERE rvb01=l_shb29
              DELETE FROM tlf_file WHERE tlf036 = l_shb29 #收货单的tlf全部删了
-             DELETE FROM tlff_file WHERE tlff036 = l_shb29 #收货单的tlff全部删了       
+             DELETE FROM tlff_file WHERE tlff036 = l_shb29 #收货单的tlff全部删了
              DELETE FROM pmm_file WHERE pmm01=l_shb28
              DELETE FROM pmn_file WHERE pmn01=l_shb28
              #UPDATE shb_file SET shbud02='N',shb28='',shb29='',shb14='' WHERE shb01=l_shb01
@@ -4374,19 +4384,19 @@ FUNCTION t720_r()  #刪除
                   EXIT FOREACH
                END IF
                UPDATE tc_shb_file SET tc_shbud10='0'  WHERE tc_shb02 = l_shb01
-          END FOREACH 
+          END FOREACH
           DELETE FROM tc_shd_file WHERE tc_shd05 = g_rvu.rvu01 #删除关系表里的数据
 #str----end by huanglf161102
-          CALL cl_err('','cpm-055',1)        
+          CALL cl_err('','cpm-055',1)
           #end---add by jixf 160802
        END IF
 
 
-       
-        
+
+
 #FUN-A60035 ---MARK BEGIN
 #      #No.FUN-A50054 -BEGIN-----
-#       IF s_industry('slk') THEN 
+#       IF s_industry('slk') THEN
 #          DELETE FROM ata_file WHERE ata00=g_prog AND ata01=g_rvu.rvu01
 #       END IF
 #      #No.FUN-A50054 -END-------
@@ -4401,12 +4411,12 @@ FUNCTION t720_r()  #刪除
            #IF NOT s_del_rvbs("2",g_rvu.rvu01,g_rvv[l_i].rvv02,0)  THEN         #FUN-880129  #TQC-B90236 mark
             IF NOT s_lot_del(g_prog,g_rvu.rvu01,'',0,g_rvv[l_i].rvv31,'DEL') THEN   #No.FUN-860045  #TQC-B90236
               ROLLBACK WORK
-              RETURN 
+              RETURN
           END IF
         END FOR
- 
+
        LET g_msg=TIME
- 
+
        INSERT INTO azo_file(azo01,azo02,azo03,azo04,azo05,azo06,azoplant,azolegal) #FUN-980006 add azoplant,azolegal
                      VALUES('apmt720',g_user,g_today,g_msg,g_rvu.rvu01,'delete',g_plant,g_legal) #FUN-980006 add g_plant,g_legal
        CLEAR FORM
@@ -4432,7 +4442,7 @@ FUNCTION t720_r()  #刪除
           COMMIT WORK
           RETURN
        END IF
-       #FUN-B50065-add-end-- 
+       #FUN-B50065-add-end--
        DISPLAY g_row_count TO FORMONLY.cnt
        OPEN t720_cs
        IF g_curs_index = g_row_count + 1 THEN
@@ -4448,7 +4458,7 @@ FUNCTION t720_r()  #刪除
     COMMIT WORK
     CALL cl_flow_notify(g_rvu.rvu01,'D')
 END FUNCTION
- 
+
 FUNCTION t720_b()
 DEFINE   li_i         LIKE type_file.num5    #No.FUN-680136 SMALLINT
 DEFINE   l_count      LIKE type_file.num5    #No.FUN-680136 SMALLINT
@@ -4536,9 +4546,9 @@ DEFINE l_rcj03       LIKE rcj_file.rcj03
 DEFINE l_rtz07       LIKE rtz_file.rtz07
 DEFINE l_rtz08       LIKE rtz_file.rtz08
 #FUN-C20002--end add---------------------------------------------
-DEFINE l_qcl05_wc    STRING     #TQC-C30048 
+DEFINE l_qcl05_wc    STRING     #TQC-C30048
 DEFINE l_qcl05_tf    LIKE type_file.num5 #TQC-C30048
-DEFINE p_wc          STRING     #TQC-C60096 
+DEFINE p_wc          STRING     #TQC-C60096
 DEFINE l_where   STRING                 #FUN-CB0087
 DEFINE l_sql     STRING                 #FUN-CB0087
 DEFINE l_pmn01      LIKE pmn_file.pmn01, #MOD-D10192 add
@@ -4552,7 +4562,7 @@ DEFINE l_yes        LIKE type_file.chr1,   #MOD-D60076 add
        l_rvv39t      LIKE rvv_file.rvv39t,
        l_rvv39_sum      LIKE rvv_file.rvv39,
        l_rvv39t_sum      LIKE rvv_file.rvv39
-DEFINE l_c1 LIKE type_file.chr20   #add by sujh20201106    
+DEFINE l_c1 LIKE type_file.chr20   #add by sujh20201106
 DEFINE l_rvv39_oth  LIKE rvv_file.rvv39    #MOD-DB0068 add
 DEFINE l_rvv39t_oth LIKE rvv_file.rvv39t   #MOD-DB0068 add
 DEFINE l_rvv39_ori  LIKE rvv_file.rvv39    #MOD-DB0068 add
@@ -4564,14 +4574,14 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
        l_tc_zsa03   LIKE type_file.chr10
 #2022032401 add----end----
 
-       
+
     LET g_action_choice = ""
     IF cl_null(g_rvu.rvu01) THEN RETURN END IF
     SELECT * INTO g_rvu.* FROM rvu_file
      WHERE rvu01=g_rvu.rvu01
     IF g_rvu.rvuconf = 'Y' THEN CALL cl_err('','apm-242',0) RETURN END IF
     IF g_rvu.rvuconf = 'X' THEN CALL cl_err('',9024,0) RETURN END IF
- 
+
    #FUN-A60009 add str ---
     IF g_rvu.rvu17 matches '[Ss]' THEN
        CALL cl_err('','apm-030',0)
@@ -4584,25 +4594,25 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
     END IF
    #FUN-A60009 add end ---
     #2022032401 add----begin----
-    IF g_rvu.rvuud01[1,3] = 'WE1' THEN 
+    IF g_rvu.rvuud01[1,3] = 'WE1' THEN
     	LET l_tc_zsa02 = ''
     	LET l_tc_zsa03 = ''
     	SELECT tc_zsa02,tc_zsa03 INTO l_tc_zsa02,l_tc_zsa03 FROM tc_zsa_file
-    	IF l_tc_zsa02 = 'Y' AND NOT cl_null(l_tc_zsa03) AND g_today >= l_tc_zsa03 THEN 
+    	IF l_tc_zsa02 = 'Y' AND NOT cl_null(l_tc_zsa03) AND g_today >= l_tc_zsa03 THEN
     		CALL cl_err('','cpm-066',0)
-    		RETURN 
-    	END IF 
-    END IF 
+    		RETURN
+    	END IF
+    END IF
     #2022032401 add----end----
 
     CALL cl_opmsg('b')
- 
+
     LET g_forupd_sql = " SELECT * FROM rvv_file  WHERE rvv01= ?  AND rvv02= ? ",
                        " FOR UPDATE "
     LET g_forupd_sql = cl_forupd_sql(g_forupd_sql)
     DECLARE t720_bcl CURSOR FROM g_forupd_sql      # LOCK CURSOR
 
- 
+
     LET l_ac_t = 0
     IF cl_null(g_rvu.rvu117) THEN
        LET l_allow_insert = cl_detail_input_auth("insert")
@@ -4622,7 +4632,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
     #FUN-D60130 -----Begin-------
        IF g_argv1 = '3' AND g_argv3 = 'SUB' AND g_rvu00 = '3' THEN  #委外倉退
           CALL cl_set_comp_entry("rvv17",TRUE)
-       ELSE 
+       ELSE
     #FUN-D60130 -----End---------
           CALL cl_set_comp_entry("rvv17",FALSE)
        END IF      #FUN-D60130
@@ -4635,7 +4645,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
     INPUT ARRAY g_rvv WITHOUT DEFAULTS FROM s_rvv.*
           ATTRIBUTE(COUNT=g_rec_b,MAXCOUNT=g_max_rec,UNBUFFERED,
                     INSERT ROW=l_allow_insert,DELETE ROW=l_allow_delete,APPEND ROW=l_allow_insert)
- 
+
         BEFORE INPUT
             IF g_rec_b != 0 THEN
                CALL fgl_set_arr_curr(l_ac)
@@ -4656,9 +4666,9 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
             LET l_ac = ARR_CURR()
             LET l_lock_sw = 'N'                   #DEFAULT
             LET l_n  = ARR_COUNT()
- 
+
             BEGIN WORK
- 
+
             OPEN t720_cl USING g_rvu.rvu01
             IF STATUS THEN
                CALL cl_err("OPEN t720_cl:", STATUS, 1)
@@ -4666,13 +4676,13 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                ROLLBACK WORK
                RETURN
             END IF
- 
+
             FETCH t720_cl INTO g_rvu.*  #鎖住將被更改或取消的資料
             IF SQLCA.sqlcode THEN
                CALL cl_err(g_rvu.rvu01,SQLCA.sqlcode,0)      #資料被他人LOCK
                CLOSE t720_cl ROLLBACK WORK RETURN
             END IF
- 
+
             IF g_rec_b >= l_ac THEN
                LET p_cmd='u'
                LET g_rvv_t.* = g_rvv[l_ac].*  #BACKUP
@@ -4686,7 +4696,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
 #             #No.FUN-A50054 --Begin
 #              IF s_industry('slk') THEN
 #                 DECLARE t720_ata1 SCROLL CURSOR FOR
-#                  SELECT ata02,ata03,ata04,ata05,ata08 FROM ata_file 
+#                  SELECT ata02,ata03,ata04,ata05,ata08 FROM ata_file
 #                   WHERE ata00=g_prog
 #                     AND ata01=g_rvu.rvu01
 #                     AND ata02=g_rvv_t.rvv02
@@ -4714,7 +4724,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
 #                         CALL t720_get_pmm43(l_ac)
 #                         CALL t720_set_rvv89()
 #                         CALL t720_b_move_to()
-#                       END IF 
+#                       END IF
 #                    END IF
 #                 END FOREACH
 #                 LET b_rvv.rvv02 = l_ata02
@@ -4729,16 +4739,16 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
 #                 LET g_rvv[l_ac].rvv31 = l_ata05
 #                 LET g_rvv[l_ac].rvv17 = l_ata08
 #                 IF cl_null(g_rvv[l_ac].pmm43) THEN
-#                    SELECT gec01,gec04 
-#                      INTO g_rvv[l_ac].pmm21,g_rvv[l_ac].pmm43 
-#                      FROM gec_file,pmc_file 
+#                    SELECT gec01,gec04
+#                      INTO g_rvv[l_ac].pmm21,g_rvv[l_ac].pmm43
+#                      FROM gec_file,pmc_file
 #                     WHERE gec01 = pmc47
-#                       AND pmc01 = g_rvu.rvu04 
+#                       AND pmc01 = g_rvu.rvu04
 #                       AND gec011='1'  #進項
 #                 END IF
 #                 CALL t720_set_rvv930(g_rvv[l_ac].rvv930) RETURNING g_rvv[l_ac].gem02a #FUN-670051
 #                 LET g_rvv_t.* = g_rvv[l_ac].*         #BACKUP
-#                 LET g_change='N' 
+#                 LET g_change='N'
 #                 CALL t720_set_entry_b(p_cmd)
 #                 CALL t720_set_no_entry_b(p_cmd)
 #                 CALL t720_set_no_required(p_cmd)
@@ -4746,7 +4756,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
 #                 LET g_before_input_done = TRUE
 #             ELSE
 #            #No.FUN-A50054 --End
-#FUN-A60035 ---MARK END 
+#FUN-A60035 ---MARK END
                OPEN t720_bcl USING g_rvu.rvu01,g_rvv_t.rvv02
                IF STATUS THEN
                    CALL cl_err("OPEN t720_bcl:", STATUS, 1)
@@ -4771,11 +4781,11 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                      CALL t720_set_rvv89()
                      CALL t720_b_move_to()
                      IF cl_null(g_rvv[l_ac].pmm43) THEN
-                        SELECT gec01,gec04 
-                          INTO g_rvv[l_ac].pmm21,g_rvv[l_ac].pmm43 
-                          FROM gec_file,pmc_file 
+                        SELECT gec01,gec04
+                          INTO g_rvv[l_ac].pmm21,g_rvv[l_ac].pmm43
+                          FROM gec_file,pmc_file
                          WHERE gec01 = pmc47
-                           AND pmc01 = g_rvu.rvu04 
+                           AND pmc01 = g_rvu.rvu04
                            AND gec011='1'  #進項
                      END IF
                      CALL t720_set_rvv930(g_rvv[l_ac].rvv930) RETURNING g_rvv[l_ac].gem02a #FUN-670051
@@ -4788,24 +4798,24 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                      LET g_before_input_done = TRUE
 #&ifdef ICD   #FUN-B50096
                      CALL t720_set_no_required_1()   #FUN-A40022
-                     CALL t720_set_required_1(p_cmd) #FUN-A40022 
+                     CALL t720_set_required_1(p_cmd) #FUN-A40022
                      CALL t720_set_entry_rvv34()     #FUN-B50096
                      CALL t720_set_no_entry_rvv34()  #FUN-B50096
                      CALL t720_set_no_entry_rvv32()  #MOD-C30902
                      #FUN-BC0104---add---str---
-                     CALL t720_set_noentry_rvv45()   
+                     CALL t720_set_noentry_rvv45()
                      IF NOT cl_null(g_rvv[l_ac].rvv46)THEN
                         CALL t720_qcl02_desc()
                         CALL cl_set_comp_entry('rvv05',FALSE)
                      END IF
                      #FUN-BC0104---add---end---
 #&endif       #FUN-B50096
-                  END IF 
-               END IF               
+                  END IF
+               END IF
 #              END IF                    #No.FUN-A50054 Add   #FUN-A60035 ---MARK
               CALL cl_show_fld_cont()     #FUN-550037(smin)
             END IF
- 
+
         BEFORE INSERT
             LET l_n = ARR_COUNT()
             LET p_cmd='a'
@@ -4835,7 +4845,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
             LET g_rvv[l_ac].rvv38=0
             LET g_rvv[l_ac].rvv38t=0        #No.FUN-610018
             LET g_rvv[l_ac].rvv25='N'       #樣品
-            LET g_rvv[l_ac].rvv89='N'       #FUN-940083 
+            LET g_rvv[l_ac].rvv89='N'       #FUN-940083
             CALL t720_set_entry_b(p_cmd)
             CALL t720_set_no_required(p_cmd)
             CALL cl_show_fld_cont()     #FUN-550037(smin)
@@ -4854,7 +4864,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                   LET g_rvv[l_ac].rvv02 = 1
                END IF
             END IF
-            CALL cl_set_comp_required('rvv45,rvv46,rvv47',FALSE)       #FUN-BC0104 add 
+            CALL cl_set_comp_required('rvv45,rvv46,rvv47',FALSE)       #FUN-BC0104 add
            #CALL cl_set_comp_entry('rvv05,rvv45,rvv46,rvv47',TRUE)     #FUN-BC0104 add   #TQC-C50130 mark
            #TQC-C50130 -- add -- begin
             CALL cl_set_comp_entry('rvv45,rvv46,rvv47',TRUE)
@@ -4863,21 +4873,21 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
             END IF
            #TQC-C50130 -- add -- end
             NEXT FIELD rvv02
- 
+
         AFTER INSERT
              IF INT_FLAG THEN
                 CALL cl_err('',9001,0)
                 LET INT_FLAG = 0
                 CANCEL INSERT
              END IF
-           	 IF g_rvv[l_ac].rvv25 = 'Y' THEN 
+           	 IF g_rvv[l_ac].rvv25 = 'Y' THEN
            	    LET g_rvv[l_ac].rvv38  = 0
-           	    LET g_rvv[l_ac].rvv38t = 0              	    
-           	    LET g_rvv[l_ac].rvv39  = 0              	    
+           	    LET g_rvv[l_ac].rvv38t = 0
+           	    LET g_rvv[l_ac].rvv39  = 0
            	    LET g_rvv[l_ac].rvv39t = 0
            	    DISPLAY BY NAME g_rvv[l_ac].rvv38,g_rvv[l_ac].rvv38t,
-           	                    g_rvv[l_ac].rvv39,g_rvv[l_ac].rvv39t              	    
-            	 END IF 
+           	                    g_rvv[l_ac].rvv39,g_rvv[l_ac].rvv39t
+            	 END IF
              IF g_sma.sma115 = 'Y' THEN
                 CALL s_chk_va_setting(g_rvv[l_ac].rvv31)
                      RETURNING g_flag,g_ima906,g_ima907
@@ -4897,7 +4907,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                 LET g_rvv[l_ac].rvv86 = g_rvv[l_ac].rvv35
                 LET g_rvv[l_ac].rvv87 = g_rvv[l_ac].rvv17
              END IF
- 
+
              IF cl_null(g_rvv[l_ac].rvv33) THEN LET g_rvv[l_ac].rvv33=' ' END IF   #No.MOD-5C0167
              IF cl_null(g_rvv[l_ac].rvv34) THEN LET g_rvv[l_ac].rvv34=' ' END IF   #No.MOD-5C0167
              CALL t720_b_move_back()
@@ -4907,7 +4917,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                 CALL cl_err('','afa-043',1)
                 CANCEL INSERT
              END IF
-             
+
              #TQC-5B0159--倉退單身可輸入數量為0
              CALL t720_qcl05_check() RETURNING l_qcl05    #FUN-BC0104
              IF (g_rvu.rvu00 != '3') AND (g_rvv[l_ac].rvv17 = 0) AND (l_qcl05 != '1' OR cl_null(l_qcl05)) THEN #FUN-BC0104 add l_qcl05
@@ -4915,7 +4925,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                 CALL cl_err('','afa-978',1)
                 CANCEL INSERT
              END IF
- 
+
               #取對img換算率
               # 當為製程委外時不寫 tlf,不 update ima,img 所以可不key 倉庫
               LET l_ec_sw = 'N'
@@ -4937,15 +4947,15 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
               END IF
 
               IF g_rvv[l_ac].rvv31[1,4]='MISC' OR g_rvu.rvu00='2' OR l_ec_sw='Y'
-                 OR (g_rvu.rvu00='3' AND g_rvv[l_ac].rvv17=0)   #MOD-A40166 
+                 OR (g_rvu.rvu00='3' AND g_rvv[l_ac].rvv17=0)   #MOD-A40166
                  THEN
- 
+
                  LET g_rvv[l_ac].rvv35_fac =1
                  LET g_rvv[l_ac].rvv81=1
                  LET g_rvv[l_ac].rvv84=1
               ELSE
                  LET l_flag=TRUE  #FUN-810038
- 
+
                  IF (NOT cl_null(g_rvv[l_ac].rvv31)) AND (l_flag) THEN #FUN-810038
                     SELECT img09 INTO g_img09 FROM img_file
                      WHERE img01=g_rvv[l_ac].rvv31 AND img02=g_rvv[l_ac].rvv32
@@ -5031,13 +5041,13 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
             IF cl_null(b_rvv.rvv02) THEN LET b_rvv.rvv02 = 1 END IF
             LET b_rvv.rvv88 = 0  #No.TQC-7B0083
            #-----MOD-AC0024---------
-            CALL cl_digcut(b_rvv.rvv39,t_azi04)  
+            CALL cl_digcut(b_rvv.rvv39,t_azi04)
                               RETURNING b_rvv.rvv39
-            CALL cl_digcut(b_rvv.rvv39t,t_azi04)   
-                              RETURNING b_rvv.rvv39t  
+            CALL cl_digcut(b_rvv.rvv39t,t_azi04)
+                              RETURNING b_rvv.rvv39t
            #-----END MOD-AC0024-----
             CALL t720sub_rvv38(g_rvv[l_ac].rvv36,b_rvv.rvv38,b_rvv.rvv38t,g_rvu.rvu04,g_rvu.rvu01)  #TQC-C30225 add
-                 RETURNING b_rvv.rvv38,b_rvv.rvv38t  
+                 RETURNING b_rvv.rvv38,b_rvv.rvv38t
             #CALL t720sub_rvv39(g_rvv[l_ac].rvv36,b_rvv.rvv39,b_rvv.rvv39t,g_rvu.rvu04,g_rvu.rvu02)    #MOD-850300 b_rvv.rvv36->g_rvv[l_ac].rvv36 #FUN-A10130 #MOD-BC0262 mark
             CALL t720sub_rvv39(g_rvv[l_ac].rvv36,b_rvv.rvv39,b_rvv.rvv39t,g_rvu.rvu04,g_rvu.rvu01)     #MOD-BC0262 add
                  RETURNING b_rvv.rvv39,b_rvv.rvv39t
@@ -5076,7 +5086,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                IF cl_null(l_rvv17_tol) THEN LET l_rvv17_tol = 0 END IF
                IF g_rvv[l_ac].rvv17 > l_rvb33 - l_rvv17_tol THEN #異動數量應扣除已產生的入庫單之數量
                   CALL cl_err(l_rvb33 - l_rvv17_tol,'apm1102',1)
-                  CANCEL INSERT 
+                  CANCEL INSERT
                END IF
             END IF
             #FUN-D20022 -- add end --
@@ -5084,15 +5094,15 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
             IF SQLCA.sqlcode THEN
                CALL cl_err3("ins","rvv_file",b_rvv.rvv01,b_rvv.rvv02,SQLCA.sqlcode,"","ins rvv",1)  #No.FUN-660129
                CANCEL INSERT
-               SELECT ima918,ima921 INTO g_ima918,g_ima921 
+               SELECT ima918,ima921 INTO g_ima918,g_ima921
                  FROM ima_file
                 WHERE ima01 = g_rvv[l_ac].rvv31
                   AND imaacti = "Y"
-               
+
                IF g_ima918 = "Y" OR g_ima921 = "Y" THEN
                   IF g_sma.sma90 = "Y" THEN #MOD-C30074 add
                   #IF NOT s_lotin_del(g_prog,g_rvu.rvu01,g_rvv[l_ac].rvv02,0,g_rvv[l_ac].rvv31,'DEL') THEN   #No.FUN-860045  #TQC-B90236 mark
-                    IF NOT s_lot_del(g_prog,g_rvu.rvu01,g_rvv[l_ac].rvv02,0,g_rvv[l_ac].rvv31,'DEL') THEN   #No.FUN-860045  #TQC-B90236 
+                    IF NOT s_lot_del(g_prog,g_rvu.rvu01,g_rvv[l_ac].rvv02,0,g_rvv[l_ac].rvv31,'DEL') THEN   #No.FUN-860045  #TQC-B90236
                        CALL cl_err3("del","rvbs_file",g_rvu.rvu01,g_rvv_t.rvv02,
                                       SQLCA.sqlcode,"","",1)
                      END IF
@@ -5107,10 +5117,10 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                CALL t720_qcl05_check() RETURNING l_qcl05
                IF l_qcl05 = '1' THEN LET l_type1 = '5' ELSE LET l_type1 = '1' END IF
                IF NOT s_iqctype_upd_qco20(g_rvu.rvu02,g_rvv[l_ac].rvv05,g_rvv[l_ac].rvv45,g_rvv[l_ac].rvv47,l_type1) THEN
-                  CANCEL INSERT 
+                  CANCEL INSERT
                END IF
-               #FUN-BC0104---add---end 
-               COMMIT WORK               
+               #FUN-BC0104---add---end
+               COMMIT WORK
             END IF
 #FUN-A60035 ---MARK BEGIN
 #         #No.FUN-A50054 -BEGIN-----
@@ -5130,11 +5140,11 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
 #                IF SQLCA.sqlcode THEN
 #                   CALL cl_err3("ins","rvv_file",b_rvv.rvv01,b_rvv.rvv02,SQLCA.sqlcode,"","ins rvv",1)  #No.FUN-660129
 #                   CANCEL INSERT
-#                   SELECT ima918,ima921 INTO g_ima918,g_ima921 
+#                   SELECT ima918,ima921 INTO g_ima918,g_ima921
 #                     FROM ima_file
 #                    WHERE ima01 = g_rvv[l_ac].rvv31
 #                      AND imaacti = "Y"
-#              
+#
 #                   IF g_ima918 = "Y" OR g_ima921 = "Y" THEN
 #                      IF NOT s_lotin_del(g_prog,g_rvu.rvu01,g_rvv[l_ac].rvv02,0,g_rvv[l_ac].rvv31,'DEL') THEN   #No.FUN-860045
 #                         CALL cl_err3("del","rvbs_file",g_rvu.rvu01,g_rvv_t.rvv02,
@@ -5150,37 +5160,37 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
 #          END IF
 #         #No.FUN-A50054 -END-------
 #FUN-A60035 ---MARK END
- 
- 
+
+
         BEFORE FIELD rvv05             #default 序號
            CALL t720_set_entry_b(p_cmd)
            CALL t720_set_no_required(p_cmd)
            #FUN-BC0104---add---str---
            IF p_cmd = 'a' THEN
-              CALL cl_set_comp_required('rvv45,rvv46,rvv47',FALSE)               
-              CALL cl_set_comp_entry('rvv05,rvv45,rvv46,rvv47',TRUE) 
+              CALL cl_set_comp_required('rvv45,rvv46,rvv47',FALSE)
+              CALL cl_set_comp_entry('rvv05,rvv45,rvv46,rvv47',TRUE)
            END IF
            #FUN-BC0104---add---end---
- 
- 
-        AFTER FIELD rvv05             #驗收項次        
+
+
+        AFTER FIELD rvv05             #驗收項次
            IF NOT cl_null(g_rvu.rvu02) AND NOT cl_null(g_rvv[l_ac].rvv05) THEN
               #MOD-D10192 add begin-----------------------
-              IF g_rvu.rvu00 = '3' AND g_rvu.rvu116 = '2' THEN 
-                 SELECT pmn01,pmn02,pmn16 INTO l_pmn01,l_pmn02,l_pmn16 FROM pmn_file WHERE pmn01 IN 
+              IF g_rvu.rvu00 = '3' AND g_rvu.rvu116 = '2' THEN
+                 SELECT pmn01,pmn02,pmn16 INTO l_pmn01,l_pmn02,l_pmn16 FROM pmn_file WHERE pmn01 IN
                     (SELECT rvb04 FROM rvb_file WHERE rvb01 = g_rvu.rvu02 AND rvb02 = g_rvv[l_ac].rvv05)
-                    AND pmn02 IN 
+                    AND pmn02 IN
                     (SELECT rvb03 FROM rvb_file WHERE rvb01 = g_rvu.rvu02 AND rvb02 = g_rvv[l_ac].rvv05)
-                 IF l_pmn16 MATCHES  '[678]' THEN 
+                 IF l_pmn16 MATCHES  '[678]' THEN
                     CALL cl_err(l_pmn01,'apm-599',0)
                     NEXT FIELD rvv05
-                 END IF       
-              END IF    
-              #MOD-D10192 add end-------------------------            
+                 END IF
+              END IF
+              #MOD-D10192 add end-------------------------
               CALL t720_rvv05(p_cmd)
               LET l_rvb07 = 0
               SELECT rvb07 INTO l_rvb07 FROM rvb_file
-               WHERE rvb01=g_rvu.rvu02 
+               WHERE rvb01=g_rvu.rvu02
                  AND rvb02=g_rvv[l_ac].rvv05
               IF l_rvb07 <> g_rvv[l_ac].rvv17  AND p_cmd <> 'a' THEN
                  LET g_change = 'Y'
@@ -5192,7 +5202,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
               #FUN-BC0104---add---end---
               IF NOT cl_null(g_errno) THEN
                 #MOD-C30590 -- add -- begin
-                 IF (g_rvv[l_ac].rvv31 = 'MISC') AND (g_errno = 'apm-259') THEN  
+                 IF (g_rvv[l_ac].rvv31 = 'MISC') AND (g_errno = 'apm-259') THEN
                  ELSE
                 #MOD-C30590 -- add -- end
                     CALL cl_err(g_rvv[l_ac].rvv05,g_errno,0)
@@ -5231,26 +5241,26 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                  #CALL t720_set_required(p_cmd)   #MOD-A40166
               END IF
               CALL t720_set_required(p_cmd)   #MOD-A40166
-           END IF 
+           END IF
 #FUN-A60035 ---MARK BEGIN
 #         #No.FUN-A50054 -BEGIN-----
 #          IF s_industry('slk') THEN
 #             IF NOT cl_null(g_rvv[l_ac].rvv05) AND NOT cl_null(g_rvv[l_ac].rvv31) THEN
 #                IF p_cmd='a' OR (p_cmd='u' AND g_rvv_t.rvv05 <> g_rvv[l_ac].rvv05) THEN
-#                   DELETE FROM ata_file 
+#                   DELETE FROM ata_file
 #                    WHERE ata01 = g_rvu.rvu01
 #                      AND ata02 = g_rvv[l_ac].rvv02
 #                      AND ata00 = g_prog
 #                   DECLARE t720_gen_rvb_ata CURSOR FOR
 #                    SELECT * FROM ata_file
 #                     WHERE ata00 = 'apmt110' #g_prog1
-#                       AND ata01 = g_rvu.rvu02 
+#                       AND ata01 = g_rvu.rvu02
 #                       AND ata02 = g_rvv[l_ac].rvv05
 #                   FOREACH t720_gen_rvb_ata  INTO l_ata.*
 #                      IF STATUS THEN EXIT FOREACH END IF
-#                      LET l_ata.ata00 = g_prog 
+#                      LET l_ata.ata00 = g_prog
 #                      LET l_ata.ata01 = g_rvu.rvu01
-#                      LET l_ata.ata02 = g_rvv[l_ac].rvv02 
+#                      LET l_ata.ata02 = g_rvv[l_ac].rvv02
 #                      SELECT MAX(ata03) INTO l_ata.ata03 FROM ata_file
 #                       WHERE ata00 = g_prog
 #                         AND ata01 = g_rvu.rvu02
@@ -5268,7 +5278,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
 #          END IF
 #         #No.FUN-A50054 -END-------
 #FUN-A60035 ---MARK END
- 
+
        #BEFORE FIELD rvv32  #genero
            #當為製程委外時不寫 tlf,不 update ima,img 所以可不key 倉庫
            LET l_ec_sw = 'N'
@@ -5310,13 +5320,13 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
            CALL t720_set_no_entry_b(p_cmd)
            CALL t720_set_no_entry_rvv34()   #FUN-B50096
            CALL t720_set_no_entry_rvv32()  #MOD-C30902
- 
+
         BEFORE FIELD rvv31
            CALL t720_set_no_required(p_cmd)
            CALL t720_set_entry_b(p_cmd)        #No.MOD-650055 add
           #TQC-C50130 -- add -- begin
            IF p_cmd = 'u' THEN
-              CALL t720_set_no_entry_b(p_cmd)    
+              CALL t720_set_no_entry_b(p_cmd)
            END IF
           #TQC-C50130 -- add -- end
 #&ifdef ICD   #FUN-B50096
@@ -5328,18 +5338,18 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
         AFTER FIELD rvv45
           IF NOT cl_null(g_rvv[l_ac].rvv45) AND p_cmd = 'a' THEN
               LET l_n = 0
-              SELECT COUNT(*) INTO l_n FROM qcs_file 
-                WHERE qcs00='1' AND qcs01=g_rvu.rvu02     
+              SELECT COUNT(*) INTO l_n FROM qcs_file
+                WHERE qcs00='1' AND qcs01=g_rvu.rvu02
                 AND qcs02=g_rvv[l_ac].rvv05
                 AND qcs05=g_rvv[l_ac].rvv45  AND qcs14='Y'
-       
+
              IF l_n = 0 THEN
                 CALL cl_err('','apm-805',0)
                 NEXT FIELD rvv45
              END IF
              IF NOT t720_rvv45_46_47_check() THEN
                 CALL cl_err(g_rvv[l_ac].rvv45,'apm-808',0)
-                NEXT FIELD rvv45 
+                NEXT FIELD rvv45
              END IF
           END IF
            CALL t720_set_comp_required(g_rvv[l_ac].rvv45,g_rvv[l_ac].rvv46,g_rvv[l_ac].rvv47)
@@ -5362,7 +5372,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                     NEXT FIELD rvv87
                  END IF
               END IF
-           END IF  
+           END IF
 
 
          AFTER FIELD rvv46
@@ -5382,7 +5392,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                      IF l_n > 0 THEN
                         CALL cl_err('','apm-626',0)
                         NEXT FIELD rvv46
-                     END IF 
+                     END IF
                   #FUN-CC0013 mark begin---
                   #ELSE
                   #   SELECT COUNT(*) INTO l_n FROM qcl_file
@@ -5391,7 +5401,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                   #   IF l_n > 0 THEN
                   #      CALL cl_err('','apm-806',0)
                   #      NEXT FIELD rvv46
-                  #   END IF 
+                  #   END IF
                   #FUN-CC0013 mark end-----
                   END IF
                END IF
@@ -5399,13 +5409,13 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
             #TQC-C30048---mark---str---
             #  LET l_n = 0
             #  SELECT COUNT(*) INTO l_n FROM qcs_file,qco_file,qcl_file
-            #                  WHERE qcs00='1' AND qcs14='Y' AND qco01=qcs01 
-            #                  AND qco02=qcs02 AND qco05 = qcs05 AND qcl01 = qco03 AND qco01=g_rvu.rvu02 
+            #                  WHERE qcs00='1' AND qcs14='Y' AND qco01=qcs01
+            #                  AND qco02=qcs02 AND qco05 = qcs05 AND qcl01 = qco03 AND qco01=g_rvu.rvu02
             #                  AND qco02=g_rvv[l_ac].rvv05 AND qco03 = g_rvv[l_ac].rvv46
-            #                  AND qco05=g_rvv[l_ac].rvv45  
-            #                  AND qcl05 = '3'             
+            #                  AND qco05=g_rvv[l_ac].rvv45
+            #                  AND qcl05 = '3'
             #  IF l_n > 0 THEN
-            #     CALL cl_err('','apm-806',0) 
+            #     CALL cl_err('','apm-806',0)
             #     NEXT FIELD rvv46
             #  END IF
             #TQC-C30048---mark---end---
@@ -5444,9 +5454,9 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
             # SELECT COUNT(*) INTO l_n FROM qcs_file,qco_file,qcl_file
             #                  WHERE qcs00='1' AND qcs14='Y' AND qco01=qcs01
             #                  AND qco02=qcs02 AND qco05=qcs05 AND qcl01 = qco03 AND qco01=g_rvu.rvu02
-            #                  AND qco02=g_rvv[l_ac].rvv05 AND qco04 = g_rvv[l_ac].rvv47 
-            #                  AND qco05=g_rvv[l_ac].rvv45 
-            #                  AND qcl05 <> '3'           
+            #                  AND qco02=g_rvv[l_ac].rvv05 AND qco04 = g_rvv[l_ac].rvv47
+            #                  AND qco05=g_rvv[l_ac].rvv45
+            #                  AND qcl05 <> '3'
             # IF l_n = 0 THEN
             #    CALL cl_err('','apm-807',0)
             #    NEXT FIELD rvv47
@@ -5490,7 +5500,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
            CALL t720_check_rvv31('rvv31',l_ac,p_cmd) RETURNING #No.MOD-660090
                  l_check_res
            IF NOT l_check_res THEN NEXT FIELD rvv31 END IF
- 
+
           CALL t720_set_no_entry_b(p_cmd)
           CALL t720_set_required(p_cmd)   #MOD-A40166
 
@@ -5554,8 +5564,8 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
             WHERE pmn01 = g_rvv[l_ac].rvv36
               AND pmn02 = g_rvv[l_ac].rvv37
               AND ima01 = pmn04
-           IF g_argv3 = 'SUB' AND NOT cl_null(g_rvv[l_ac].rvv31) 
-              AND NOT cl_null(g_rvv[l_ac].rvv37) THEN  
+           IF g_argv3 = 'SUB' AND NOT cl_null(g_rvv[l_ac].rvv31)
+              AND NOT cl_null(g_rvv[l_ac].rvv37) THEN
               IF g_rvv[l_ac].rvv31 <> l_ima01 THEN
                  IF l_ima903 = 'N' OR cl_null(l_ima903) THEN
                     #不是聯產品,不能相等
@@ -5584,7 +5594,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
 #&endif      #FUN-B50096
           #FUN-A60035 ---MARK BEGIN
           ##No.FUN-A50054 -BEGIN-----
-          #IF s_industry('slk') THEN 
+          #IF s_industry('slk') THEN
           #   SELECT ima151 INTO l_ima151
           #     FROM ima_file
           #    WHERE ima01 = g_rvv[l_ac].rvviicd03   #g_rvv[g_cnt].rvviicd03   #FUN-A60035
@@ -5597,7 +5607,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
           #END IF
           ##No.FUN-A50054 -END-------
           #FUN-A60035 ---MARK END
- 
+
         #當sma908 <> 'Y'的時候,即不准通過單身來新增子料件,這時
         #對于采用料件多屬性新機制(與單據性質綁定)的分支來說,各個明細屬性欄位都
         #變NOENTRY的, 只能通過在母料件欄位開窗來選擇子料件,并且母料件本身也不允許
@@ -5605,7 +5615,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
         #欄位的時候就auto開窗,開完窗之后直接NEXT FIELD以避免用戶亂動
         #其他分支就不需要這么麻煩了
         BEFORE FIELD att00
- 
+
               #根據子料件找到母料件及各個屬性
               SELECT imx00,imx01,imx02,imx03,imx04,imx05,
                      imx06,imx07,imx08,imx09,imx10
@@ -5638,7 +5648,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                 g_rvv[l_ac].att08, g_rvv[l_ac].att08_c,
                 g_rvv[l_ac].att09, g_rvv[l_ac].att09_c,
                 g_rvv[l_ac].att10, g_rvv[l_ac].att10_c
- 
+
         #以下是為料件多屬性機制新增的20個屬性欄位的AFTER FIELD代碼
         #下面是十個輸入型屬性欄位的判斷語句
         AFTER FIELD att00
@@ -5649,12 +5659,12 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                CALL cl_err_msg('','aim-909',lg_smy62,0)
                NEXT FIELD att00
             END IF
- 
+
             #如果設置為不允許新增
                CALL t720_check_rvv31('imx00',l_ac,p_cmd) RETURNING #No.MOD-660090
                  l_check_res
                IF NOT l_check_res THEN NEXT FIELD att00 END IF
- 
+
         AFTER FIELD att01
             CALL t720_check_att0x(g_rvv[l_ac].att01,1,l_ac,p_cmd) RETURNING #No.MOD-660090
                  l_check_res
@@ -5736,9 +5746,9 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
             CALL t720_check_att0x_c(g_rvv[l_ac].att10_c,10,l_ac,p_cmd) RETURNING #No.MOD-660090
                  l_check_res
             IF NOT l_check_res THEN NEXT FIELD att10_c END IF
- 
+
         AFTER FIELD rvv35             #單位
- 
+
            IF NOT cl_null(g_rvv[l_ac].rvv35) THEN
               CALL t720_unit(g_rvv[l_ac].rvv35)
               IF NOT cl_null(g_errno) THEN
@@ -5771,11 +5781,11 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
            END IF
            IF NOT cl_null(g_rvv[l_ac].rvv32) THEN
               #FUN-C20002--start add-----------------------------------
-             IF g_azw.azw04 = '2' THEN 
+             IF g_azw.azw04 = '2' THEN
                 SELECT ima154 INTO l_ima154
                   FROM ima_file
                  WHERE ima01 = g_rvv[l_ac].rvv31
-                
+
                 IF l_ima154 = 'Y' AND g_rvv[l_ac].rvv31[1,4] <> 'MISC' THEN
                    SELECT rcj03 INTO l_rcj03
                      FROM rcj_file
@@ -5786,7 +5796,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                    # WHERE rtz01 = g_plant
                    #FUN-C90049 mark end-----
                    CALL s_get_defstore(g_plant,g_rvv[l_ac].rvv31) RETURNING l_rtz07,l_rtz08    #FUN-C90049 add
-                   IF l_rcj03 = '1' THEN 
+                   IF l_rcj03 = '1' THEN
                       IF g_rvv[l_ac].rvv32 <> l_rtz07 THEN
                          CALL cl_err('','aim1142',0)
                          LET g_rvv[l_ac].rvv32 = g_rvv_t.rvv32
@@ -5800,13 +5810,13 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                       END IF
                    END IF
                 END IF
-             END IF 
+             END IF
               #FUN-C20002--end add-------------------------------------
               #No.FUN-AA0049--begin
                IF NOT s_chk_ware(g_rvv[l_ac].rvv32) THEN
                   NEXT FIELD rvv32
-               END IF 
-              #No.FUN-AA0049--end           
+               END IF
+              #No.FUN-AA0049--end
               #FUN-B40098 Begin---
               #IF cl_null(g_errno) AND g_azw.azw04='2' AND g_rvu.rvu21 = '3' THEN  #FUN-B60150 MARK
                IF cl_null(g_errno) AND g_azw.azw04='2' THEN #FUN-B60150 ADD
@@ -5889,11 +5899,11 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                      END IF
                   END IF
                   LET sn1=0 LET sn2=0
-                  
+
                  #NEXT FIELD rvv33        #No.CHI-920041     #TQC-C70207 mark
                END IF
            END IF
- 
+
         AFTER FIELD rvv33              #儲位
            #BugNo:5626 控管是否為全型空白
            IF g_rvv[l_ac].rvv33 = '　' OR cl_null(g_rvv[l_ac].rvv33) THEN #全型空白  #MOD-940378
@@ -5962,7 +5972,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
               END IF
            END IF
 #FUN-B50096 ------------End--------------
- 
+
         AFTER FIELD rvv34              #批號
 
         #FUN-B50096 -------------Begin------------
@@ -6073,12 +6083,12 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
 #                   NEXT FIELD rvv34
 #                END IF
 #           END IF
-#           IF g_prog = 'apmt722' AND cl_null(g_rvu.rvu02) THEN 
-#              SELECT ima918,ima921 INTO l_ima918,l_ima921 
+#           IF g_prog = 'apmt722' AND cl_null(g_rvu.rvu02) THEN
+#              SELECT ima918,ima921 INTO l_ima918,l_ima921
 #                FROM ima_file
 #               WHERE ima01 = g_rvv[l_ac].rvv31
 #                 AND imaacti = "Y"
-#          
+#
 #              IF l_ima918 = "Y" OR l_ima921 = "Y" THEN
 #                 SELECT COUNT(*) INTO l_n FROM rvbs_file
 #                  WHERE rvbs00 = g_prog
@@ -6093,7 +6103,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
 #                    CALL s_lotin(g_prog,g_rvu.rvu01,g_rvv[l_ac].rvv02,0,
 #                                 g_rvv[l_ac].rvv31,g_rvv[l_ac].rvv35,g_img09,
 #                                 g_rvv[l_ac].rvv35_fac,g_rvv[l_ac].rvv17,'','SEL')#CHI-9A0022 add ''
-#                        RETURNING l_r,g_qty 
+#                        RETURNING l_r,g_qty
 #                    IF l_r = "Y" THEN
 #                       LET g_rvv[l_ac].rvv17 = g_qty
 #                    END IF
@@ -6101,7 +6111,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
 #              END IF
 #          END IF
 #FUN-B50096 -------------------End----------------------
- 
+
         #FUN-CB0087--add---str----
         BEFORE FIELD rvv26
            IF g_aza.aza115 = 'Y' AND cl_null(g_rvv[l_ac].rvv26) THEN
@@ -6119,7 +6129,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
               SELECT azf03 INTO g_rvv[l_ac].azf03 FROM azf_file
                WHERE azf01 = g_rvv[l_ac].rvv26 AND azf02='2'
               DISPLAY BY NAME g_rvv[l_ac].azf03
-           END IF  
+           END IF
            #FUN-CB0087--add--end--
            #FUN-CB0087--mark--str--
            #IF g_rvu.rvu00 = '3' THEN
@@ -6134,23 +6144,23 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
            #       CALL cl_err3("sel","azf_file",g_rvv[l_ac].rvv26,"",STATUS,"","sel azf",1)  #No.FUN-660129
            #       NEXT FIELD rvv26
            #    END IF
-           #    SELECT azf09 INTO l_azf09 FROM azf_file 
+           #    SELECT azf09 INTO l_azf09 FROM azf_file
            #     WHERE azf01=g_rvv[l_ac].rvv26 AND azf02='2'
            #    #IF l_azf09 !='7' THEN   #MOD-AB0051
            #    IF l_azf09 !='7' AND g_argv1 = '1' THEN   #MOD-AB0051
            #       CALL cl_err('','aoo-406',1)
-           #       NEXT FIELD rvv26   
-           #    END IF  
+           #       NEXT FIELD rvv26
+           #    END IF
            #    #-----MOD-AB0051---------
-           #    IF l_azf09 !='5' AND g_argv1 <> '1' THEN   
+           #    IF l_azf09 !='5' AND g_argv1 <> '1' THEN
            #       CALL cl_err('','aoo-406',1)
-           #       NEXT FIELD rvv26   
-           #    END IF  
-           #    #-----END MOD-AB0051----- 
+           #       NEXT FIELD rvv26
+           #    END IF
+           #    #-----END MOD-AB0051-----
            #    DISPLAY BY NAME g_rvv[l_ac].azf03
            #END IF
            #FUN-CB0087--mark--end--
- 
+
         BEFORE FIELD rvv25   #00/05/21 modify
            IF NOT cl_null(g_rvv[l_ac].rvv25) AND g_rvu.rvu00 = '3' THEN   #倉退
               SELECT ima906 INTO g_ima906 FROM ima_file
@@ -6165,24 +6175,24 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                  NEXT FIELD rvv17
               END IF
            END IF
- 
+
         AFTER FIELD rvv25              #樣品否
            IF NOT cl_null(g_rvv[l_ac].rvv25) THEN
              #IF g_rvv[l_ac].rvv25 NOT MATCHES '[YN]' THEN
               IF g_rvv[l_ac].rvv25 NOT MATCHES '[YNP]' THEN   #FUN-C60071 add
                   NEXT FIELD rvv25
               ELSE
-              	 IF g_rvv[l_ac].rvv25 = 'Y' THEN 
+              	 IF g_rvv[l_ac].rvv25 = 'Y' THEN
               	    LET g_rvv[l_ac].rvv38  = 0
-              	    LET g_rvv[l_ac].rvv38t = 0              	    
-              	    LET g_rvv[l_ac].rvv39  = 0              	    
+              	    LET g_rvv[l_ac].rvv38t = 0
+              	    LET g_rvv[l_ac].rvv39  = 0
               	    LET g_rvv[l_ac].rvv39t = 0
               	    DISPLAY BY NAME g_rvv[l_ac].rvv38,g_rvv[l_ac].rvv38t,
-              	                    g_rvv[l_ac].rvv39,g_rvv[l_ac].rvv39t              	    
-              	 END IF 
+              	                    g_rvv[l_ac].rvv39,g_rvv[l_ac].rvv39t
+              	 END IF
               END IF
            END IF
- 
+
         AFTER FIELD rvv17              #異動數量
            #No.FUN-BB0086--add--begin--
            IF NOT cl_null(g_rvv[l_ac].rvv17) AND NOT cl_null(g_rvv[l_ac].rvv35) THEN
@@ -6198,7 +6208,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
         END IF
         #FUN-BC0104---add---end---
 ######################FUN-BC0104-----mark-----str#######################
-#獨立出FUNCTION t720_rvv17()  
+#獨立出FUNCTION t720_rvv17()
 #          IF g_rvv[l_ac].rvv17 < 0 THEN
 #             CALL cl_err('','afa-043',0)
 #             NEXT FIELD rvv17
@@ -6215,10 +6225,10 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
 #             g_rvv_t.rvv17 <> g_rvv[l_ac].rvv17 THEN
 #             LET l_rvb07 = 0
 #             SELECT rvb07,rvb87 INTO l_rvb07,l_rvb87 FROM rvb_file
-#              WHERE rvb01=g_rvu.rvu02 
+#              WHERE rvb01=g_rvu.rvu02
 #                AND rvb02=g_rvv[l_ac].rvv05
 #             IF l_rvb07 = g_rvv[l_ac].rvv17 THEN
-#                LET g_rvv[l_ac].rvv87 = l_rvb87 
+#                LET g_rvv[l_ac].rvv87 = l_rvb87
 #                DISPLAY BY NAME g_rvv[l_ac].rvv87
 #             END IF
 #             IF l_rvb07 <> g_rvv[l_ac].rvv17  AND p_cmd <> 'a' THEN
@@ -6229,7 +6239,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
 #          IF g_change='Y' THEN                 #MOD-820189 add
 #            CALL t720_set_rvv87()              #No.MOD-770158 add
 #            DISPLAY BY NAME g_rvv[l_ac].rvv87  #MOD-820189 add
-#          END IF                               #MOD-820189 add            
+#          END IF                               #MOD-820189 add
 #          #MOD-B30033 add --end--
 #           IF g_rvu.rvu00='1' THEN #MOD-4C0053
 #             SELECT rvb31,rvb07,rvb87 INTO g_inqty,l_rvb07,l_rvb87 FROM rvb_file,rva_file  #MOD-820189 modify 由收貨單帶計價數量
@@ -6382,7 +6392,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
 #                IF cl_null(l_okqty) THEN LET l_okqty=0 END IF
 #                IF cl_null(l_rvb30) THEN LET l_rvb30=0 END IF
 #
-#                IF g_sma.sma886[8,8] = 'N'  OR l_rvb39='N' THEN   
+#                IF g_sma.sma886[8,8] = 'N'  OR l_rvb39='N' THEN
 #                  #若勾選允收數與IQC勾稽 , 驗退量以qcs_file為主
 #                  #若不勾選允收數與IQC勾稽 , 驗退量以rvb_file為主
 #
@@ -6426,23 +6436,23 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
 #                    AND pmm01 = g_rvv[l_ac].rvv36 AND pmm18 <> 'X'
 #             END IF
 #             IF g_rva00 = '2' THEN
-#                SELECT rva113 INTO l_rva113 FROM rva_file 
+#                SELECT rva113 INTO l_rva113 FROM rva_file
 #                    WHERE rva01 = g_rvu.rvu02
 #                SELECT azi04 INTO t_azi04 FROM azi_file
 #                    WHERE azi01 = l_rva113
 #             END IF
-#              IF cl_null(t_azi04) THEN                                         
-#                 SELECT azi04 INTO t_azi04                                     
-#                   FROM pmc_file,azi_file                                      
-#                  WHERE pmc22=azi01                                            
-#                    AND pmc01 = g_rvu.rvu04                                    
-#              END IF                                                           
+#              IF cl_null(t_azi04) THEN
+#                 SELECT azi04 INTO t_azi04
+#                   FROM pmc_file,azi_file
+#                  WHERE pmc22=azi01
+#                    AND pmc01 = g_rvu.rvu04
+#              END IF
 #             IF cl_null(t_azi04) THEN LET t_azi04=0 END IF  #No.CHI-6A0004
 #             CALL cl_digcut(g_rvv[l_ac].rvv39,t_azi04)      #No.CHI-6A0004
 #                               RETURNING g_rvv[l_ac].rvv39
 #             CALL cl_digcut(g_rvv[l_ac].rvv39t,t_azi04)     #No.CHI-6A0004
 #                               RETURNING g_rvv[l_ac].rvv39t   #No.FUN-610018
-#             CALL t720sub_rvv39(g_rvv[l_ac].rvv36,g_rvv[l_ac].rvv39,g_rvv[l_ac].rvv39t,g_rvu.rvu04,g_rvu.rvu02) #FUN-A10130 
+#             CALL t720sub_rvv39(g_rvv[l_ac].rvv36,g_rvv[l_ac].rvv39,g_rvv[l_ac].rvv39t,g_rvu.rvu04,g_rvu.rvu02) #FUN-A10130
 #                  RETURNING g_rvv[l_ac].rvv39,g_rvv[l_ac].rvv39t
 #             DISPLAY BY NAME g_rvv[l_ac].rvv39
 #             DISPLAY BY NAME g_rvv[l_ac].rvv39t
@@ -6450,41 +6460,41 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
 #          ELSE
 #             IF g_rvu.rvu00 ='3' THEN
 #                LET g_rvv[l_ac].rvv39=g_rvv[l_ac].rvv38
-#                LET g_rvv[l_ac].rvv39t=g_rvv[l_ac].rvv38t  
+#                LET g_rvv[l_ac].rvv39t=g_rvv[l_ac].rvv38t
 #                LET t_azi04=''
 #                IF g_rva00 = '1' AND g_rvu.rvu00 = '3' THEN
 #                   SELECT azi04 INTO t_azi04 FROM azi_file
 #                       WHERE azi01 = g_rvu.rvu113
 #                END IF
 #                IF g_rva00 = '1' AND g_rvu.rvu00 <> '3' THEN
-#                   SELECT azi04 INTO t_azi04   
+#                   SELECT azi04 INTO t_azi04
 #                      FROM pmm_file,azi_file
 #                     WHERE pmm22=azi01
 #                       AND pmm01 = g_rvv[l_ac].rvv36 AND pmm18 <> 'X'
 #                END IF
 #                IF g_rva00 = '2' THEN
-#                   SELECT rva113 INTO l_rva113 FROM rva_file 
+#                   SELECT rva113 INTO l_rva113 FROM rva_file
 #                       WHERE rva01 = g_rvu.rvu02
 #                   SELECT azi04 INTO t_azi04 FROM azi_file
 #                       WHERE azi01 = l_rva113
 #                END IF
-#                 IF cl_null(t_azi04) THEN                                         
-#                    SELECT azi04 INTO t_azi04                                     
-#                      FROM pmc_file,azi_file                                      
-#                     WHERE pmc22=azi01                                            
-#                       AND pmc01 = g_rvu.rvu04                                    
-#                 END IF                                                           
-#                IF cl_null(t_azi04) THEN LET t_azi04=0 END IF  
-#                CALL cl_digcut(g_rvv[l_ac].rvv39,t_azi04)     
+#                 IF cl_null(t_azi04) THEN
+#                    SELECT azi04 INTO t_azi04
+#                      FROM pmc_file,azi_file
+#                     WHERE pmc22=azi01
+#                       AND pmc01 = g_rvu.rvu04
+#                 END IF
+#                IF cl_null(t_azi04) THEN LET t_azi04=0 END IF
+#                CALL cl_digcut(g_rvv[l_ac].rvv39,t_azi04)
 #                                  RETURNING g_rvv[l_ac].rvv39
-#                CALL cl_digcut(g_rvv[l_ac].rvv39t,t_azi04)   
-#                                  RETURNING g_rvv[l_ac].rvv39t  
-#                CALL t720sub_rvv39(g_rvv[l_ac].rvv36,g_rvv[l_ac].rvv39,g_rvv[l_ac].rvv39t,g_rvu.rvu04,g_rvu.rvu02)  
+#                CALL cl_digcut(g_rvv[l_ac].rvv39t,t_azi04)
+#                                  RETURNING g_rvv[l_ac].rvv39t
+#                CALL t720sub_rvv39(g_rvv[l_ac].rvv36,g_rvv[l_ac].rvv39,g_rvv[l_ac].rvv39t,g_rvu.rvu04,g_rvu.rvu02)
 #                     RETURNING g_rvv[l_ac].rvv39,g_rvv[l_ac].rvv39t
 #                DISPLAY BY NAME g_rvv[l_ac].rvv39
 #                DISPLAY BY NAME g_rvv[l_ac].rvv39t
 #             END IF
-#          #MOD-B30033 add --end--              
+#          #MOD-B30033 add --end--
 #          END IF
 #
 #             IF g_rvv[l_ac].rvv87 > 0 THEN   #MOD-AA0165 rvv17-->rvv87
@@ -6503,7 +6513,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
 #                    AND pmm01 = g_rvv[l_ac].rvv36 AND pmm18 <> 'X'
 #             END IF
 #             IF g_rva00 = '2' THEN
-#                SELECT rva113 INTO l_rva113 FROM rva_file 
+#                SELECT rva113 INTO l_rva113 FROM rva_file
 #                    WHERE rva01 = g_rvu.rvu02
 #                SELECT azi04 INTO t_azi04 FROM azi_file
 #                    WHERE azi01 = l_rva113
@@ -6519,8 +6529,8 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
 #                               RETURNING g_rvv39
 #             CALL cl_digcut(g_rvv39t,t_azi04) #No.CHI-6A0004
 #                               RETURNING g_rvv39t   #No.FUN-610018
-#             IF NOT cl_null(g_rvv[l_ac].rvv36) THEN    #No.MOD-8A0098 
-#             CALL t720sub_rvv39(g_rvv[l_ac].rvv36,g_rvv[l_ac].rvv39,g_rvv[l_ac].rvv39t,g_rvu.rvu04,g_rvu.rvu02) #FUN-A10130  
+#             IF NOT cl_null(g_rvv[l_ac].rvv36) THEN    #No.MOD-8A0098
+#             CALL t720sub_rvv39(g_rvv[l_ac].rvv36,g_rvv[l_ac].rvv39,g_rvv[l_ac].rvv39t,g_rvu.rvu04,g_rvu.rvu02) #FUN-A10130
 #                  RETURNING g_rvv[l_ac].rvv39,g_rvv[l_ac].rvv39t
 #             END IF  #No.MOD-8A0098
 #             DISPLAY BY NAME g_rvv[l_ac].rvv39
@@ -6535,13 +6545,13 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
 #         #IF g_change='Y' THEN                 #MOD-820189 add
 #         #  CALL t720_set_rvv87()              #No.MOD-770158 add
 #         #  DISPLAY BY NAME g_rvv[l_ac].rvv87  #MOD-820189 add
-#         #END IF                               #MOD-820189 add 
+#         #END IF                               #MOD-820189 add
 #         #MOD-B30033 mark --end--
-#          SELECT ima918,ima921 INTO g_ima918,g_ima921 
+#          SELECT ima918,ima921 INTO g_ima918,g_ima921
 #            FROM ima_file
 #           WHERE ima01 = g_rvv[l_ac].rvv31
 #             AND imaacti = "Y"
-#          
+#
 #          IF g_ima918 = "Y" OR g_ima921 = "Y" THEN
 #             SELECT img09 INTO g_img09 FROM img_file
 #             WHERE img01=g_rvv[l_ac].rvv31 AND img02=g_rvv[l_ac].rvv32
@@ -6579,7 +6589,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
 #                                        g_rvv[l_ac].rvv35_fac,g_rvv[l_ac].rvv17,'','SEL',-1) #CHI-9A0022 add ''
 #                                 RETURNING l_r,g_qty
 #                      END IF
-#No.TQC-B90236--------add----------end-------------	
+#No.TQC-B90236--------add----------end-------------
 #                   END IF   #MOD-CB0229 add
 #                   IF l_r = "Y" THEN
 #                      LET g_rvv[l_ac].rvv17 = g_qty
@@ -6591,7 +6601,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
 #                     FROM pmn_file
 #                    WHERE pmn01 = g_rvv[l_ac].rvv36
 #                      AND pmn02 = g_rvv[l_ac].rvv37
-#No.CHI-9A0022 --End				   
+#No.CHI-9A0022 --End
 #                   IF g_rvu.rvu116 <> '3' OR cl_null(g_rvu.rvu116) THEN   #MOD-CB0229 add
 #No.TQC-B90236--------mark---------begin-----------
 #                  #CALL s_lotin(g_prog,g_rvu.rvu01,g_rvv[l_ac].rvv02,0,
@@ -6613,7 +6623,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
 #                                     g_rvv[l_ac].rvv35_fac,g_rvv[l_ac].rvv17,l_bno,'MOD',-1) #CHI-9A0022 add l_bno
 #                              RETURNING l_r,g_qty
 #                   END IF
-#No.TQC-B90236--------add----------end-------------	
+#No.TQC-B90236--------add----------end-------------
 #                   END IF   #MOD-CB0229 add
 #                   IF l_r = "Y" THEN
 #                      LET g_rvv[l_ac].rvv17 = g_qty
@@ -6639,7 +6649,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
 #             DISPLAY BY NAME g_rvv[l_ac].rvv17
 #             NEXT FIELD rvv17
 #          END IF
-#          
+#
 #          #修改數量,若料號有展明細(imaicd08) ='Y',
 #          #則需檢查發料量與所維護之數量是否一致,如果不一致,出錯誤訊息
 #          IF g_cmd = 'u' AND NOT cl_null(g_rvv_t.rvv17) AND
@@ -6652,12 +6662,12 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
 #          END IF
 #&endif
 ######################FUN-BC0104-----mark-----end#######################
-                 
+
         BEFORE FIELD rvv83
            CALL t720_sel_ima()
            IF NOT cl_null(g_img09) THEN LET g_unit = g_img09 ELSE LET g_unit=g_ima25 END IF
            CALL t720_set_no_required(p_cmd)
- 
+
         AFTER FIELD rvv83  #第二單位
            IF cl_null(g_rvv[l_ac].rvv31) THEN NEXT FIELD rvv05 END IF
            IF cl_null(g_rvv[l_ac].rvv33) THEN LET g_rvv[l_ac].rvv33 = ' ' END IF
@@ -6708,7 +6718,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
               CALL t720_set_rvv87()              #No.MOD-770158 add
               DISPLAY BY NAME g_rvv[l_ac].rvv87  #MOD-820189 add
            END IF                                #MOD-820189 add
- 
+
         BEFORE FIELD rvv84  #第二轉換率
            IF cl_null(g_rvv[l_ac].rvv31) THEN NEXT FIELD rvv31 END IF
            IF cl_null(g_rvv[l_ac].rvv31) THEN NEXT FIELD rvv05 END IF
@@ -6720,7 +6730,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                  NEXT FIELD rvv32
               END IF
            END IF
- 
+
         AFTER FIELD rvv84  #第二轉換率
            IF g_rvv_t.rvv84 IS NULL AND g_rvv[l_ac].rvv84 IS NOT NULL OR
               g_rvv_t.rvv84 IS NOT NULL AND g_rvv[l_ac].rvv84 IS NULL OR
@@ -6732,7 +6742,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                  NEXT FIELD rvv84
               END IF
            END IF
- 
+
         BEFORE FIELD rvv85  #第二數量
            IF cl_null(g_rvv[l_ac].rvv31) THEN NEXT FIELD rvv31 END IF
            IF cl_null(g_rvv[l_ac].rvv31) THEN NEXT FIELD rvv05 END IF
@@ -6744,7 +6754,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                  NEXT FIELD rvv32
               END IF
            END IF
- 
+
         AFTER FIELD rvv85  #第二數量
            #No.FUN-BB0086--add--begin--
            IF NOT cl_null(g_rvv[l_ac].rvv85) AND NOT cl_null(g_rvv[l_ac].rvv83) THEN
@@ -6806,11 +6816,11 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
               LET g_ima921 = ''   #DEV-D30059 add
               LET g_ima930 = ''   #DEV-D30059 add
 
-              SELECT ima918,ima921,ima930 INTO g_ima918,g_ima921,g_ima930 #DEV-D30059 add ima930 
+              SELECT ima918,ima921,ima930 INTO g_ima918,g_ima921,g_ima930 #DEV-D30059 add ima930
                 FROM ima_file
                WHERE ima01 = g_rvv[l_ac].rvv31
                  AND imaacti = "Y"
-              
+
               IF cl_null(g_ima930) THEN LET g_ima930 = 'N' END IF  #DEV-D30059 add
 
               IF g_ima918 = "Y" OR g_ima921 = "Y" THEN
@@ -6827,7 +6837,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                                           g_rvu.rvu02,g_rvv[l_ac].rvv05,g_rvv[l_ac].rvv31,
                                           g_rvv[l_ac].rvv32,g_rvv[l_ac].rvv33,g_rvv[l_ac].rvv34,g_rvu.rvu02) #FUN-A10130
                     END IF
-                    IF g_rvu.rvu116 <> '3' OR cl_null(g_rvu.rvu116) THEN   #MOD-CB0229 add 
+                    IF g_rvu.rvu116 <> '3' OR cl_null(g_rvu.rvu116) THEN   #MOD-CB0229 add
    #No.TQC-B90236--------mark---------begin-----------
                       #CALL s_lotin(g_prog,g_rvu.rvu01,g_rvv[l_ac].rvv02,0,
                       #             g_rvv[l_ac].rvv31,g_rvv[l_ac].rvv35,g_img09,
@@ -6851,7 +6861,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                                      RETURNING l_r,g_qty
                           END IF
                        END IF                                                        #DEV-D30059
-   #No.TQC-B90236--------add----------end-------------	
+   #No.TQC-B90236--------add----------end-------------
                     END IF   #MOD-CB0229 add
                     IF l_r = "Y" THEN
                        LET g_rvv[l_ac].rvv17 = g_qty
@@ -6863,8 +6873,8 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                       FROM pmn_file
                      WHERE pmn01 = g_rvv[l_ac].rvv36
                        AND pmn02 = g_rvv[l_ac].rvv37
-#No.CHI-9A0022 --End					 
-                    IF g_rvu.rvu116 <> '3' OR cl_null(g_rvu.rvu116) THEN   #MOD-CB0229 add 
+#No.CHI-9A0022 --End
+                    IF g_rvu.rvu116 <> '3' OR cl_null(g_rvu.rvu116) THEN   #MOD-CB0229 add
    #No.TQC-B90236--------mark---------begin-----------
                       #CALL s_lotin(g_prog,g_rvu.rvu01,g_rvv[l_ac].rvv02,0,
                       #             g_rvv[l_ac].rvv31,g_rvv[l_ac].rvv35,g_img09,
@@ -6904,19 +6914,19 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                     CALL t720_set_origin_field()
                     IF NOT t720_rvv17(p_cmd) THEN
                        NEXT FIELD rvv85
-                    END IF                  
+                    END IF
                  END IF
               END IF
            END IF
            #FUN-BC0104---add---end---
            CALL t720_set_rvv87()                     #No.MOD-760028 add
            CALL cl_show_fld_cont()                   #No.FUN-550037 hmf
- 
+
         BEFORE FIELD rvv80
            CALL t720_sel_ima()
            IF NOT cl_null(g_img09) THEN LET g_unit = g_img09 ELSE LET g_unit=g_ima25 END IF
            CALL t720_set_no_required(p_cmd)
- 
+
         AFTER FIELD rvv80  #第一單位
            IF cl_null(g_rvv[l_ac].rvv31) THEN NEXT FIELD rvv31 END IF
            IF cl_null(g_rvv[l_ac].rvv33) THEN LET g_rvv[l_ac].rvv33 = ' ' END IF
@@ -6942,9 +6952,9 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                  END IF
               END IF
               CALL t720_set_origin_field()   #MOD-A70201
-              CALL s_du_umfchk(g_rvv[l_ac].rvv31,'','','',                      
-                               g_rvv[l_ac].rvv35,g_rvv[l_ac].rvv80,'1')         
-                   RETURNING g_errno,g_factor                                   
+              CALL s_du_umfchk(g_rvv[l_ac].rvv31,'','','',
+                               g_rvv[l_ac].rvv35,g_rvv[l_ac].rvv80,'1')
+                   RETURNING g_errno,g_factor
               IF NOT cl_null(g_errno) THEN
                  CALL cl_err(g_rvv[l_ac].rvv80,g_errno,0)
                  NEXT FIELD rvv80
@@ -6965,7 +6975,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
            END IF
            CALL t720_set_required(p_cmd)
            CALL cl_show_fld_cont()                   #No.FUN-550037 hmf
- 
+
         BEFORE FIELD rvv81  #第一轉換率
            IF cl_null(g_rvv[l_ac].rvv31) THEN NEXT FIELD rvv31 END IF
            IF cl_null(g_rvv[l_ac].rvv31) THEN NEXT FIELD rvv05 END IF
@@ -6977,7 +6987,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                  NEXT FIELD rvv32
               END IF
            END IF
- 
+
         AFTER FIELD rvv81  #第一轉換率
            IF g_rvv_t.rvv81 IS NULL AND g_rvv[l_ac].rvv81 IS NOT NULL OR
               g_rvv_t.rvv81 IS NOT NULL AND g_rvv[l_ac].rvv81 IS NULL OR
@@ -6991,7 +7001,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                  NEXT FIELD rvv81
               END IF
            END IF
- 
+
         BEFORE FIELD rvv82  #第一數量
            IF cl_null(g_rvv[l_ac].rvv31) THEN NEXT FIELD rvv31 END IF
            IF cl_null(g_rvv[l_ac].rvv31) THEN NEXT FIELD rvv05 END IF
@@ -7003,7 +7013,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                  NEXT FIELD rvv32
               END IF
            END IF
- 
+
         AFTER FIELD rvv82  #第一數量
            #No.FUN-BB0086--add--begin--
            IF NOT cl_null(g_rvv[l_ac].rvv82) AND NOT cl_null(g_rvv[l_ac].rvv80) THEN
@@ -7058,7 +7068,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                WHERE rvb01=g_rvu.rvu02 AND rvb02=g_rvv[l_ac].rvv05
                  AND rvb01 = rva01
                  AND rvaconf !='X' #作廢資料要剔除 BugNo:3816
-              IF cl_null(g_inqty) THEN LET g_inqty=0 END IF           #TQC-C20117 add 
+              IF cl_null(g_inqty) THEN LET g_inqty=0 END IF           #TQC-C20117 add
               IF g_rvv[l_ac].rvv17 > g_inqty THEN  #異動數量不可大於可入庫量
                   CALL cl_err(g_inqty,'mfg3252',1) NEXT FIELD rvv82   #MOD-580184
               END IF
@@ -7157,21 +7167,21 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                 #修改可驗退數量控管
                 #1.若走IQC   可驗退量=SUM(IQC送驗量) - SUM(IQC合格量) - 已驗退量
                 #2.若不走IQC 可驗退量=實收數量 - 已入庫量 - 已驗退量
- 
+
                  SELECT rvb07,rvb33,rvb30,rvb39 INTO g_inqty,l_okqty,
                     l_rvb30,l_rvb39  FROM rvb_file,rva_file
                  WHERE rvb01=g_rvu.rvu02 AND rvb02=g_rvv[l_ac].rvv05
                    AND rvb01=rva01
                    AND rvaconf !='X' #作廢資料要剔除 MODNO:3816
- 
+
                  IF cl_null(g_inqty) THEN LET g_inqty=0 END IF
                  IF cl_null(l_okqty) THEN LET l_okqty=0 END IF
                  IF cl_null(l_rvb30) THEN LET l_rvb30=0 END IF
- 
-                 IF g_sma.sma886[8,8] = 'N'  OR l_rvb39='N' THEN   
+
+                 IF g_sma.sma886[8,8] = 'N'  OR l_rvb39='N' THEN
                   #若勾選允收數與IQC勾稽 , 驗退量以qcs_file為主
                   #若不勾選允收數與IQC勾稽 , 驗退量以rvb_file為主
- 
+
                     #不走IQC
                      IF g_rvv[l_ac].rvv17 > (g_inqty-l_rvv17_2-l_rvv17_2_other-l_rvb30) THEN
                          CALL cl_err(g_rvv[l_ac].rvv31,'apm-730',1)
@@ -7183,10 +7193,10 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                         FROM qcs_file WHERE  qcs01 = g_rvu.rvu02
                         AND qcs02 = g_rvv[l_ac].rvv05
                         AND qcs14 = 'Y'               #確認否
- 
+
                      IF cl_null(l_qcs091) THEN LET l_qcs091 = 0 END IF
                      IF cl_null(l_qcs22)  THEN LET l_qcs22 = 0 END IF
- 
+
                      IF g_rvv[l_ac].rvv17 > (l_qcs22-l_rvv17_2-l_rvv17_2_other-l_qcs091) THEN
                          CALL cl_err(g_rvv[l_ac].rvv31,'apm-730',1)
                        NEXT FIELD rvv85
@@ -7197,7 +7207,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
            CALL t720_set_rvv87()     #No.MOD-BB0271 add
            IF g_rvv[l_ac].rvv87>0 THEN   #MOD-AA0165 rvv17-->rvv87
               CALL t720sub_rvv38(g_rvv[l_ac].rvv36,g_rvv[l_ac].rvv38,g_rvv[l_ac].rvv38t,g_rvu.rvu04,g_rvu.rvu01)  #TQC-C30225 add
-                    RETURNING g_rvv[l_ac].rvv38,g_rvv[l_ac].rvv38t 
+                    RETURNING g_rvv[l_ac].rvv38,g_rvv[l_ac].rvv38t
               LET g_rvv[l_ac].rvv39=g_rvv[l_ac].rvv87*g_rvv[l_ac].rvv38   #MOD-AA0165 rvv17-->rvv87
               LET g_rvv[l_ac].rvv39t=g_rvv[l_ac].rvv87*b_rvv.rvv38t   #No.FUN-610018   #MOD-AA0165 rvv17-->rvv87
               #No.+090 010430 add by linda 依幣別四捨五入
@@ -7214,17 +7224,17 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
              #       AND pmm01 = g_rvv[l_ac].rvv36 AND pmm18 <> 'X'
              #END IF
              #IF g_rva00 = '2' THEN
-             #   SELECT rva113 INTO l_rva113 FROM rva_file 
+             #   SELECT rva113 INTO l_rva113 FROM rva_file
              #       WHERE rva01 = g_rvu.rvu02
              #   SELECT azi04 INTO t_azi04 FROM azi_file
              #       WHERE azi01 = l_rva113
              #END IF
-             # IF cl_null(t_azi04) THEN                                                                                             
-             #    SELECT azi04 INTO t_azi04                                                                                         
-             #      FROM pmc_file,azi_file                                                                                          
-             #     WHERE pmc22=azi01                                                                                                
-             #       AND pmc01 = g_rvu.rvu04                                                                                        
-             # END IF                                                                                                               
+             # IF cl_null(t_azi04) THEN
+             #    SELECT azi04 INTO t_azi04
+             #      FROM pmc_file,azi_file
+             #     WHERE pmc22=azi01
+             #       AND pmc01 = g_rvu.rvu04
+             # END IF
              #IF cl_null(t_azi04) THEN LET t_azi04=0 END IF  #No.CHI-6A0004
              #MOD-C40047 end mark-----
               CALL t720_get_azi()                            #MOD-C40047 add
@@ -7258,7 +7268,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
           #        AND pmm01 = g_rvv[l_ac].rvv36 AND pmm18 <> 'X'
           #END IF
           #IF g_rva00 = '2' THEN
-          #   SELECT rva113 INTO l_rva113 FROM rva_file 
+          #   SELECT rva113 INTO l_rva113 FROM rva_file
           #      WHERE rva01 = g_rvu.rvu02
           #     SELECT azi04 INTO t_azi04 FROM azi_file
           #         WHERE azi01 = l_rva113
@@ -7286,17 +7296,17 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                 RETURNING g_rvv39
            CALL cl_digcut(g_rvv39t,t_azi04)  #No.CHI-6A0004
                 RETURNING g_rvv39t   #No.FUN-610018
-           #CALL t720sub_rvv39(g_rvv[l_ac].rvv36,g_rvv39,g_rvv39t,g_rvu.rvu04,g_rvu.rvu02) #FUN-A10130 #MOD-BC0262 mark 
+           #CALL t720sub_rvv39(g_rvv[l_ac].rvv36,g_rvv39,g_rvv39t,g_rvu.rvu04,g_rvu.rvu02) #FUN-A10130 #MOD-BC0262 mark
            CALL t720sub_rvv39(g_rvv[l_ac].rvv36,g_rvv39,g_rvv39t,g_rvu.rvu04,g_rvu.rvu01)  #MOD-BC0262 add
                 RETURNING g_rvv39,g_rvv39t
            CALL cl_show_fld_cont()                   #No.FUN-550037 hmf
- 
- 
+
+
         BEFORE FIELD rvv86
            CALL t720_sel_ima()
            IF NOT cl_null(g_img09) THEN LET g_unit=g_img09 ELSE LET g_unit=g_ima25 END IF
            CALL t720_set_no_required(p_cmd)
- 
+
         AFTER FIELD rvv86
           IF cl_null(g_rvv[l_ac].rvv31) THEN NEXT FIELD rvv31 END IF
           IF cl_null(g_rvv[l_ac].rvv33) THEN LET g_rvv[l_ac].rvv33 = ' ' END IF
@@ -7333,22 +7343,22 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
              END IF #MOD-C50254 add
              #No.FUN-BB0086--add--begin--
              IF NOT cl_null(g_rvv[l_ac].rvv87) AND g_rvv[l_ac].rvv87!=0 THEN
-                IF NOT t720_rvv87_check(p_cmd) THEN 
+                IF NOT t720_rvv87_check(p_cmd) THEN
                    LET g_rvv86_t = g_rvv[l_ac].rvv86
                    NEXT FIELD rvv87
-                END IF 
+                END IF
              END IF
              LET g_rvv86_t = g_rvv[l_ac].rvv86
              #No.FUN-BB0086--add--end--
           END IF
            CALL t720_set_required(p_cmd)
- 
+
         BEFORE FIELD rvv87
            CALL t720_du_data_to_correct()
            IF g_change = 'Y' THEN
               CALL t720_set_rvv87()
            END IF
- 
+
         AFTER FIELD rvv87
            IF NOT t720_rvv87_check(p_cmd) THEN NEXT FIELD rvv87 END IF   #No.FUN-BB0086
         #No.FUN-BB0086--mark--begin--
@@ -7375,12 +7385,12 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
 #                LET g_rvv[l_ac].rvv39t=g_rvv[l_ac].rvv87*g_rvv[l_ac].rvv38t   #No.FUN-610018
 #                LET b_rvv.rvv39t=g_rvv[l_ac].rvv87*b_rvv.rvv38t
 #               #-----MOD-AC0024---------
-#                CALL cl_digcut(g_rvv[l_ac].rvv39,t_azi04)  
+#                CALL cl_digcut(g_rvv[l_ac].rvv39,t_azi04)
 #                                  RETURNING g_rvv[l_ac].rvv39
-#                CALL cl_digcut(g_rvv[l_ac].rvv39t,t_azi04)   
-#                                  RETURNING g_rvv[l_ac].rvv39t  
+#                CALL cl_digcut(g_rvv[l_ac].rvv39t,t_azi04)
+#                                  RETURNING g_rvv[l_ac].rvv39t
 #               #-----END MOD-AC0024-----
-#                CALL t720sub_rvv39(g_rvv[l_ac].rvv36,g_rvv[l_ac].rvv39,g_rvv[l_ac].rvv39t,g_rvu.rvu04,g_rvu.rvu02) #FUN-A10130  
+#                CALL t720sub_rvv39(g_rvv[l_ac].rvv36,g_rvv[l_ac].rvv39,g_rvv[l_ac].rvv39t,g_rvu.rvu04,g_rvu.rvu02) #FUN-A10130
 #                     RETURNING g_rvv[l_ac].rvv39,g_rvv[l_ac].rvv39t
 #                DISPLAY BY NAME g_rvv[l_ac].rvv39
 #                DISPLAY BY NAME g_rvv[l_ac].rvv39t
@@ -7392,30 +7402,30 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
 #                #MOD-B30033 add --start--
 #                   IF g_rvu.rvu00 ='3' THEN
 #                      LET g_rvv[l_ac].rvv39=g_rvv[l_ac].rvv38
-#                      LET g_rvv[l_ac].rvv39t=g_rvv[l_ac].rvv38t 
+#                      LET g_rvv[l_ac].rvv39t=g_rvv[l_ac].rvv38t
 #                      LET b_rvv.rvv39t=b_rvv.rvv38t
-#                      CALL cl_digcut(g_rvv[l_ac].rvv39,t_azi04)  
+#                      CALL cl_digcut(g_rvv[l_ac].rvv39,t_azi04)
 #                                        RETURNING g_rvv[l_ac].rvv39
-#                      CALL cl_digcut(g_rvv[l_ac].rvv39t,t_azi04)   
-#                                        RETURNING g_rvv[l_ac].rvv39t  
-#                      CALL t720sub_rvv39(g_rvv[l_ac].rvv36,g_rvv[l_ac].rvv39,g_rvv[l_ac].rvv39t,g_rvu.rvu04,g_rvu.rvu02)  
+#                      CALL cl_digcut(g_rvv[l_ac].rvv39t,t_azi04)
+#                                        RETURNING g_rvv[l_ac].rvv39t
+#                      CALL t720sub_rvv39(g_rvv[l_ac].rvv36,g_rvv[l_ac].rvv39,g_rvv[l_ac].rvv39t,g_rvu.rvu04,g_rvu.rvu02)
 #                           RETURNING g_rvv[l_ac].rvv39,g_rvv[l_ac].rvv39t
 #                      DISPLAY BY NAME g_rvv[l_ac].rvv39
 #                      DISPLAY BY NAME g_rvv[l_ac].rvv39t
-#                   END IF 
+#                   END IF
 #                #MOD-B30033 add --end--
 #             END IF
 #             CALL t720_get_price()  #NO.FUN-940083
 #           END IF
 ############FUN-BC0104-----mark-----end#############
- 
+
         #-----CHI-B50027---------
         BEFORE FIELD rvv38,rvv38t
           IF g_rvu.rvu00 <> '1' THEN    #因為入庫單身單價原先都是不可輸入的,只能透過"價格變更作業"
              CALL cl_set_comp_entry("rvv38,rvv38t",TRUE)
-             IF NOT cl_null(g_rvv[l_ac].rvv36) THEN 
+             IF NOT cl_null(g_rvv[l_ac].rvv36) THEN
                 LET l_pmm21 = ''
-                SELECT pmm21 INTO l_pmm21 FROM pmm_file WHERE pmm01 = g_rvv[l_ac].rvv36  
+                SELECT pmm21 INTO l_pmm21 FROM pmm_file WHERE pmm01 = g_rvv[l_ac].rvv36
                 LET l_gec07 = ''
                 SELECT gec07 INTO l_gec07 FROM gec_file WHERE gec01 = l_pmm21 AND gec011 = '1'
                 IF l_gec07 = 'Y' THEN
@@ -7423,14 +7433,14 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                 ELSE
                    CALL cl_set_comp_entry("rvv38t",FALSE)
                 END IF
-             END IF 
+             END IF
           END IF
         #-----END CHI-B50027-----
- 
+
         AFTER FIELD rvv38
-           IF cl_null(g_rvv[l_ac].rvv38) THEN                                  
+           IF cl_null(g_rvv[l_ac].rvv38) THEN
               NEXT FIELD rvv38
-           END IF                                                               
+           END IF
            #MOD-CB0148 -- add start --
            IF g_rvv[l_ac].rvv38 < 0 THEN
               CALL cl_err(g_rvv[l_ac].rvv38,'mfg5034',0)
@@ -7474,21 +7484,21 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
              #       AND pmm01 = g_rvv[l_ac].rvv36 AND pmm18 <> 'X'
              #END IF
              #IF g_rva00 = '2' THEN
-             #   SELECT rva113 INTO l_rva113 FROM rva_file 
+             #   SELECT rva113 INTO l_rva113 FROM rva_file
              #       WHERE rva01 = g_rvu.rvu02
              #   SELECT azi04 INTO t_azi04 FROM azi_file
              #       WHERE azi01 = l_rva113
              #END IF
-             # IF cl_null(t_azi04) THEN                                                                                             
-             #    SELECT azi04 INTO t_azi04                                                                                         
-             #      FROM pmc_file,azi_file                                                                                          
-             #     WHERE pmc22=azi01                                                                                                
-             #       AND pmc01 = g_rvu.rvu04                                                                                        
-             # END IF                                                                                                               
+             # IF cl_null(t_azi04) THEN
+             #    SELECT azi04 INTO t_azi04
+             #      FROM pmc_file,azi_file
+             #     WHERE pmc22=azi01
+             #       AND pmc01 = g_rvu.rvu04
+             # END IF
              #IF cl_null(t_azi04) THEN LET t_azi04=0 END IF  #No.CHI-6A0004
              #MOD-C40047 end mark----
               CALL t720_get_azi()                            #MOD-C40047 add
-              #CALL t720sub_rvv39(g_rvv[l_ac].rvv36,g_rvv[l_ac].rvv39,g_rvv[l_ac].rvv39t,g_rvu.rvu04,g_rvu.rvu02) #FUN-A10130 #MOD-BC0262 mark   
+              #CALL t720sub_rvv39(g_rvv[l_ac].rvv36,g_rvv[l_ac].rvv39,g_rvv[l_ac].rvv39t,g_rvu.rvu04,g_rvu.rvu02) #FUN-A10130 #MOD-BC0262 mark
               CALL t720sub_rvv39(g_rvv[l_ac].rvv36,g_rvv[l_ac].rvv39,g_rvv[l_ac].rvv39t,g_rvu.rvu04,g_rvu.rvu01)  #MOD-BC0262 add
                    RETURNING g_rvv[l_ac].rvv39,g_rvv[l_ac].rvv39t
               CALL cl_digcut(g_rvv[l_ac].rvv39,t_azi04)  #No.CHI-6A0004
@@ -7568,8 +7578,8 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                           AND gec011='1'  #進項
                     END IF
                  END IF
-                 LET g_rvv[l_ac].rvv38t=g_rvv[l_ac].rvv38*(1+l_pmm43/100) 
-                 CALL cl_digcut(g_rvv[l_ac].rvv38t,t_azi03)    
+                 LET g_rvv[l_ac].rvv38t=g_rvv[l_ac].rvv38*(1+l_pmm43/100)
+                 CALL cl_digcut(g_rvv[l_ac].rvv38t,t_azi03)
                                    RETURNING g_rvv[l_ac].rvv38t
                  LET g_rvv[l_ac].rvv39=g_rvv[l_ac].rvv38
                  LET g_rvv[l_ac].rvv39t=g_rvv[l_ac].rvv38t
@@ -7581,33 +7591,33 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                 #       WHERE azi01 = g_rvu.rvu113
                 #END IF
                 #IF g_rva00 = '1' AND g_rvu.rvu00 <> '3' THEN
-                #   SELECT azi04 INTO t_azi04   
+                #   SELECT azi04 INTO t_azi04
                 #       FROM pmm_file,azi_file
                 #     WHERE pmm22=azi01
                 #       AND pmm01 = g_rvv[l_ac].rvv36 AND pmm18 <> 'X'
                 #END IF
                 #IF g_rva00 = '2' THEN
-                #   SELECT rva113 INTO l_rva113 FROM rva_file 
+                #   SELECT rva113 INTO l_rva113 FROM rva_file
                 #       WHERE rva01 = g_rvu.rvu02
                 #   SELECT azi04 INTO t_azi04 FROM azi_file
                 #    WHERE azi01 = l_rva113
                 #END IF
-                # IF cl_null(t_azi04) THEN                                                                                             
-                #    SELECT azi04 INTO t_azi04                                                                                         
-                #      FROM pmc_file,azi_file                                                                                          
-                #     WHERE pmc22=azi01                                                                                                
-                #       AND pmc01 = g_rvu.rvu04                                                                                        
-                # END IF                                                                                                               
-                #IF cl_null(t_azi04) THEN LET t_azi04=0 END IF  
+                # IF cl_null(t_azi04) THEN
+                #    SELECT azi04 INTO t_azi04
+                #      FROM pmc_file,azi_file
+                #     WHERE pmc22=azi01
+                #       AND pmc01 = g_rvu.rvu04
+                # END IF
+                #IF cl_null(t_azi04) THEN LET t_azi04=0 END IF
                 #MOD-C40047 end mark----
                  CALL t720_get_azi()                            #MOD-C40047 add
-                 #CALL t720sub_rvv39(g_rvv[l_ac].rvv36,g_rvv[l_ac].rvv39,g_rvv[l_ac].rvv39t,g_rvu.rvu04,g_rvu.rvu02)  #MOD-BC0262 mark 
-                 CALL t720sub_rvv39(g_rvv[l_ac].rvv36,g_rvv[l_ac].rvv39,g_rvv[l_ac].rvv39t,g_rvu.rvu04,g_rvu.rvu01)   #MOD-BC0262 add 
+                 #CALL t720sub_rvv39(g_rvv[l_ac].rvv36,g_rvv[l_ac].rvv39,g_rvv[l_ac].rvv39t,g_rvu.rvu04,g_rvu.rvu02)  #MOD-BC0262 mark
+                 CALL t720sub_rvv39(g_rvv[l_ac].rvv36,g_rvv[l_ac].rvv39,g_rvv[l_ac].rvv39t,g_rvu.rvu04,g_rvu.rvu01)   #MOD-BC0262 add
                       RETURNING g_rvv[l_ac].rvv39,g_rvv[l_ac].rvv39t
-                 CALL cl_digcut(g_rvv[l_ac].rvv39,t_azi04) 
+                 CALL cl_digcut(g_rvv[l_ac].rvv39,t_azi04)
                                    RETURNING g_rvv[l_ac].rvv39
-                 CALL cl_digcut(g_rvv[l_ac].rvv39t,t_azi04) 
-                                   RETURNING g_rvv[l_ac].rvv39t 
+                 CALL cl_digcut(g_rvv[l_ac].rvv39t,t_azi04)
+                                   RETURNING g_rvv[l_ac].rvv39t
                  IF NOT cl_null(g_rvv[l_ac].rvv36) AND NOT cl_null(g_rvv[l_ac].rvv37) THEN   #MOD-E10007  add
                       #MOD-DB0068 add start -----
                       #不使用單價*數量=金額, 改以金額回推稅率, 以避免小數位差的問題
@@ -7633,7 +7643,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                        END IF
                       #MOD-DB0068 add end   -----
                     END IF   #MOD-E10007  add
-                 DISPLAY BY NAME g_rvv[l_ac].rvv38t 
+                 DISPLAY BY NAME g_rvv[l_ac].rvv38t
                  DISPLAY BY NAME g_rvv[l_ac].rvv39
                  DISPLAY BY NAME g_rvv[l_ac].rvv39t
               END IF #MOD-B30033 add
@@ -7650,22 +7660,22 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                  IF g_rvv[l_ac].rvv39 > l_pmn88 OR g_rvv[l_ac].rvv39t > l_pmn88t THEN
                     IF NOT cl_confirm('apm-200') THEN
                        LET l_yes = 'N'
-                    ELSE 
+                    ELSE
                        LET l_yes = 'Y'
                     END IF
                     IF l_yes = 'N' THEN
                        LET g_rvv[l_ac].rvv38 =  l_pmn88
                        LET g_rvv[l_ac].rvv38t =  l_pmn88t
                        NEXT FIELD rvv38
-                    ELSE 
-                    
-                    END IF                     
+                    ELSE
+
+                    END IF
                  END IF
               END IF
-              #大于本委外收货单对应的金额,提示信息 
-              IF NOT cl_null(g_rvu.rvu02) THEN 
+              #大于本委外收货单对应的金额,提示信息
+              IF NOT cl_null(g_rvu.rvu02) THEN
                  SELECT rvv39,rvv39t INTO  l_rvv39,l_rvv39t FROM rvv_file,rvu_file
-                  WHERE rvv01 = rvu01 
+                  WHERE rvv01 = rvu01
                     AND rvu02 = g_rvu.rvu02
                     AND rvv02 = g_rvv[l_ac].rvv02
                     AND rvu00 ='1'
@@ -7678,30 +7688,30 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                     AND rvu116 ='3'
                     AND rvu08 ='SUB'
                     AND rvu01 != g_rvu.rvu01
-                 IF cl_null(l_rvv39_sum) THEN LET l_rvv39_sum = 0 END IF 
-                 IF cl_null(l_rvv39t_sum) THEN LET l_rvv39t_sum = 0 END IF  
-                 IF (l_rvv39_sum + g_rvv[l_ac].rvv38 > l_rvv39) OR (l_rvv39t_sum + g_rvv[l_ac].rvv38t > l_rvv39t) THEN 
+                 IF cl_null(l_rvv39_sum) THEN LET l_rvv39_sum = 0 END IF
+                 IF cl_null(l_rvv39t_sum) THEN LET l_rvv39t_sum = 0 END IF
+                 IF (l_rvv39_sum + g_rvv[l_ac].rvv38 > l_rvv39) OR (l_rvv39t_sum + g_rvv[l_ac].rvv38t > l_rvv39t) THEN
                     IF NOT cl_confirm('apm-179') THEN
                        LET l_yes = 'N'
-                    ELSE 
+                    ELSE
                        LET l_yes = 'Y'
                     END IF
                     IF l_yes = 'N' THEN
                        LET g_rvv[l_ac].rvv38 =  l_pmn31
                        LET g_rvv[l_ac].rvv38t =  l_pmn31t
                        NEXT FIELD rvv38
-                    ELSE 
-                    
-                    END IF                    
+                    ELSE
+
+                    END IF
                  END IF
-              END IF   
-           END IF  
+              END IF
+           END IF
            #MOD-D60076 add end----------
- 
+
          AFTER FIELD rvv38t
-           IF cl_null(g_rvv[l_ac].rvv38t) THEN                                  
-              NEXT FIELD rvv38t                                                 
-           END IF                                                               
+           IF cl_null(g_rvv[l_ac].rvv38t) THEN
+              NEXT FIELD rvv38t
+           END IF
            #MOD-CB0148 -- add start --
            IF g_rvv[l_ac].rvv38t < 0 THEN
               CALL cl_err(g_rvv[l_ac].rvv38t,'mfg5034',0)
@@ -7732,10 +7742,10 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                  END IF
               ELSE
             #TQC-D80008 --------End-------------
-                 LET g_rvv[l_ac].rvv38=g_rvv[l_ac].rvv38t/(1+l_pmm43/100)  
+                 LET g_rvv[l_ac].rvv38=g_rvv[l_ac].rvv38t/(1+l_pmm43/100)
               END IF      #TQC-D80008
-              CALL cl_digcut(g_rvv[l_ac].rvv38,t_azi03)    
-                                RETURNING g_rvv[l_ac].rvv38  
+              CALL cl_digcut(g_rvv[l_ac].rvv38,t_azi03)
+                                RETURNING g_rvv[l_ac].rvv38
               CALL t720sub_rvv38(g_rvv[l_ac].rvv36,g_rvv[l_ac].rvv38,g_rvv[l_ac].rvv38t,g_rvu.rvu04,g_rvu.rvu01)   #TQC-C30225 add
                   RETURNING g_rvv[l_ac].rvv38,g_rvv[l_ac].rvv38t
               LET g_rvv[l_ac].rvv39=g_rvv[l_ac].rvv87*g_rvv[l_ac].rvv38
@@ -7748,33 +7758,33 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
              #       WHERE azi01 = g_rvu.rvu113
              #END IF
              #IF g_rva00 = '1' AND g_rvu.rvu00 <> '3' THEN
-             #   SELECT azi04 INTO t_azi04   
+             #   SELECT azi04 INTO t_azi04
              #       FROM pmm_file,azi_file
              #     WHERE pmm22=azi01
              #       AND pmm01 = g_rvv[l_ac].rvv36 AND pmm18 <> 'X'
              #END IF
              #IF g_rva00 = '2' THEN
-             #   SELECT rva113 INTO l_rva113 FROM rva_file 
+             #   SELECT rva113 INTO l_rva113 FROM rva_file
              #       WHERE rva01 = g_rvu.rvu02
              #   SELECT azi04 INTO t_azi04 FROM azi_file
              #       WHERE azi01 = l_rva113
              #END IF
-             # IF cl_null(t_azi04) THEN                                                                                             
-             #    SELECT azi04 INTO t_azi04                                                                                         
-             #      FROM pmc_file,azi_file                                                                                          
-             #     WHERE pmc22=azi01                                                                                                
-             #       AND pmc01 = g_rvu.rvu04                                                                                        
-             # END IF                                                                                                               
-             #IF cl_null(t_azi04) THEN LET t_azi04=0 END IF  
+             # IF cl_null(t_azi04) THEN
+             #    SELECT azi04 INTO t_azi04
+             #      FROM pmc_file,azi_file
+             #     WHERE pmc22=azi01
+             #       AND pmc01 = g_rvu.rvu04
+             # END IF
+             #IF cl_null(t_azi04) THEN LET t_azi04=0 END IF
              #MOD-C40047 end mark----
               CALL t720_get_azi()                            #MOD-C40047 add
-              #CALL t720sub_rvv39(g_rvv[l_ac].rvv36,g_rvv[l_ac].rvv39,g_rvv[l_ac].rvv39t,g_rvu.rvu04,g_rvu.rvu02)  #MOD-BC0262 mark 
+              #CALL t720sub_rvv39(g_rvv[l_ac].rvv36,g_rvv[l_ac].rvv39,g_rvv[l_ac].rvv39t,g_rvu.rvu04,g_rvu.rvu02)  #MOD-BC0262 mark
               CALL t720sub_rvv39(g_rvv[l_ac].rvv36,g_rvv[l_ac].rvv39,g_rvv[l_ac].rvv39t,g_rvu.rvu04,g_rvu.rvu01)   #MOD-BC0262 add
                    RETURNING g_rvv[l_ac].rvv39,g_rvv[l_ac].rvv39t
-              CALL cl_digcut(g_rvv[l_ac].rvv39,t_azi04)  
+              CALL cl_digcut(g_rvv[l_ac].rvv39,t_azi04)
                                 RETURNING g_rvv[l_ac].rvv39
-              CALL cl_digcut(g_rvv[l_ac].rvv39t,t_azi04) 
-                                RETURNING g_rvv[l_ac].rvv39t   
+              CALL cl_digcut(g_rvv[l_ac].rvv39t,t_azi04)
+                                RETURNING g_rvv[l_ac].rvv39t
              IF NOT cl_null(g_rvv[l_ac].rvv36) AND NOT cl_null(g_rvv[l_ac].rvv37) THEN   #MOD-E10007  add
                    #MOD-DB0068 add start -----
                    #不使用單價*數量=金額, 改以金額回推稅率, 以避免小數位差的問題
@@ -7807,7 +7817,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                              AND rvv01 = rvu01 AND rvuconf !='X'
                           IF cl_null(l_rvv39)  THEN LET l_rvv39 = 0 END IF
                           IF cl_null(l_rvv39t) THEN LET l_rvv39t = 0 END IF
-                          
+
                          #本張單據,其他屬於此收貨項次的金額
                           SELECT SUM(rvv39),SUM(rvv39t) INTO l_rvv39_oth,l_rvv39t_oth FROM rvv_file,rvu_file
                            WHERE rvv04 = g_rvu.rvu02 AND rvv05 = g_rvv[l_ac].rvv05
@@ -7816,7 +7826,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                              AND rvuconf !='X'
                           IF cl_null(l_rvv39_oth)  THEN LET l_rvv39_oth = 0 END IF
                           IF cl_null(l_rvv39t_oth) THEN LET l_rvv39t_oth = 0 END IF
-                          
+
                          #入庫單金額
                           SELECT SUM(rvv39),SUM(rvv39t) INTO l_rvv39_ori,l_rvv39t_ori FROM rvv_file,rvu_file
                            WHERE rvv04 = g_rvu.rvu02 AND rvv05 = g_rvv[l_ac].rvv05
@@ -7824,7 +7834,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                              AND rvuconf !='X'
                           IF cl_null(l_rvv39_ori)  THEN LET l_rvv39_ori = 0 END IF
                           IF cl_null(l_rvv39t_ori) THEN LET l_rvv39t_ori = 0 END IF
-                         
+
                           #MOD-FC0077 add start ----------------------------------
                           LET l_gec07 = NULL
                           IF NOT cl_null(g_rvv[l_ac].rvv36) THEN
@@ -7869,7 +7879,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                     END IF
                    #MOD-DB0068 add end   -----
                  END IF   #MOD-E10007  add
-             DISPLAY BY NAME g_rvv[l_ac].rvv38  
+             DISPLAY BY NAME g_rvv[l_ac].rvv38
              DISPLAY BY NAME g_rvv[l_ac].rvv39
              DISPLAY BY NAME g_rvv[l_ac].rvv39t
            ELSE
@@ -7900,15 +7910,15 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                           AND gec011='1'  #進項
                     END IF
                  END IF
-                 LET g_rvv[l_ac].rvv38=g_rvv[l_ac].rvv38t/(1+l_pmm43/100) 
-                 CALL cl_digcut(g_rvv[l_ac].rvv38,t_azi03)    
+                 LET g_rvv[l_ac].rvv38=g_rvv[l_ac].rvv38t/(1+l_pmm43/100)
+                 CALL cl_digcut(g_rvv[l_ac].rvv38,t_azi03)
                                    RETURNING g_rvv[l_ac].rvv38
                  CALL t720sub_rvv38(g_rvv[l_ac].rvv36,g_rvv[l_ac].rvv38,g_rvv[l_ac].rvv38t,g_rvu.rvu04,g_rvu.rvu01)   #TQC-C30225 add
                       RETURNING g_rvv[l_ac].rvv38,g_rvv[l_ac].rvv38t
                  LET g_rvv[l_ac].rvv39=g_rvv[l_ac].rvv38
                  LET g_rvv[l_ac].rvv39t=g_rvv[l_ac].rvv38t
                  LET b_rvv.rvv39t=b_rvv.rvv38t
-                 CALL cl_digcut(g_rvv[l_ac].rvv38,t_azi03)   #MOD-B10167 add 
+                 CALL cl_digcut(g_rvv[l_ac].rvv38,t_azi03)   #MOD-B10167 add
                                    RETURNING g_rvv[l_ac].rvv38
                 #MOD-C40047 str mark----
                 #LET t_azi04=''
@@ -7917,32 +7927,32 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                 #    WHERE azi01 = g_rvu.rvu113
                 #END IF
                 #IF g_rva00 = '1' AND g_rvu.rvu00 <> '3' THEN
-                #   SELECT azi04 INTO t_azi04   
+                #   SELECT azi04 INTO t_azi04
                 #     FROM pmm_file,azi_file
                 #     WHERE pmm22=azi01
                 #       AND pmm01 = g_rvv[l_ac].rvv36 AND pmm18 <> 'X'
                 #END IF
                 #IF g_rva00 = '2' THEN
-                #   SELECT rva113 INTO l_rva113 FROM rva_file 
+                #   SELECT rva113 INTO l_rva113 FROM rva_file
                 #    WHERE rva01 = g_rvu.rvu02
                 #   SELECT azi04 INTO t_azi04 FROM azi_file
                 #    WHERE azi01 = l_rva113
                 #END IF
-                # IF cl_null(t_azi04) THEN                                                                                             
-                #    SELECT azi04 INTO t_azi04                                                                                         
-                #      FROM pmc_file,azi_file                                                                                          
-                #     WHERE pmc22=azi01                                                                                                
-                #       AND pmc01 = g_rvu.rvu04                                                                                        
-                # END IF                                                                                                               
-                #IF cl_null(t_azi04) THEN LET t_azi04=0 END IF 
+                # IF cl_null(t_azi04) THEN
+                #    SELECT azi04 INTO t_azi04
+                #      FROM pmc_file,azi_file
+                #     WHERE pmc22=azi01
+                #       AND pmc01 = g_rvu.rvu04
+                # END IF
+                #IF cl_null(t_azi04) THEN LET t_azi04=0 END IF
                 #MOD-C40047 end mark----
                  CALL t720_get_azi()                            #MOD-C40047 add
-                 #CALL t720sub_rvv39(g_rvv[l_ac].rvv36,g_rvv[l_ac].rvv39,g_rvv[l_ac].rvv39t,g_rvu.rvu04,g_rvu.rvu02)  #MOD-BC0262 mark 
+                 #CALL t720sub_rvv39(g_rvv[l_ac].rvv36,g_rvv[l_ac].rvv39,g_rvv[l_ac].rvv39t,g_rvu.rvu04,g_rvu.rvu02)  #MOD-BC0262 mark
                  CALL t720sub_rvv39(g_rvv[l_ac].rvv36,g_rvv[l_ac].rvv39,g_rvv[l_ac].rvv39t,g_rvu.rvu04,g_rvu.rvu01)   #MOD-BC0262 add
                       RETURNING g_rvv[l_ac].rvv39,g_rvv[l_ac].rvv39t
-                 CALL cl_digcut(g_rvv[l_ac].rvv39,t_azi04) 
+                 CALL cl_digcut(g_rvv[l_ac].rvv39,t_azi04)
                                    RETURNING g_rvv[l_ac].rvv39
-                 CALL cl_digcut(g_rvv[l_ac].rvv39t,t_azi04) 
+                 CALL cl_digcut(g_rvv[l_ac].rvv39t,t_azi04)
                                    RETURNING g_rvv[l_ac].rvv39t
                  IF NOT cl_null(g_rvv[l_ac].rvv36) AND NOT cl_null(g_rvv[l_ac].rvv37) THEN   #MOD-E10007  add
                       #MOD-DB0068 add start -----
@@ -7970,7 +7980,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                       #MOD-DB0068 add end   -----
                     END IF   #MOD-E10007  add
 
-                 DISPLAY BY NAME g_rvv[l_ac].rvv38 
+                 DISPLAY BY NAME g_rvv[l_ac].rvv38
                  DISPLAY BY NAME g_rvv[l_ac].rvv39
                  DISPLAY BY NAME g_rvv[l_ac].rvv39t
               END IF #MOD-B30033 add
@@ -7987,21 +7997,21 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                     IF NOT cl_confirm('apm-200') THEN
                        LET l_yes = 'N'
                        LET g_rvv[l_ac].rvv38 =  l_pmn31
-                       LET g_rvv[l_ac].rvv38t = l_pmn31t                       
-                    ELSE 
+                       LET g_rvv[l_ac].rvv38t = l_pmn31t
+                    ELSE
                        LET l_yes = 'Y'
                     END IF
-                    IF l_yes = 'N' THEN 
+                    IF l_yes = 'N' THEN
                        NEXT FIELD rvv38t
-                    ELSE 
-                    
-                    END IF                     
+                    ELSE
+
+                    END IF
                  END IF
               END IF
-              #大于本委外收货单对应的金额,提示信息 
-              IF NOT cl_null(g_rvu.rvu02) THEN 
+              #大于本委外收货单对应的金额,提示信息
+              IF NOT cl_null(g_rvu.rvu02) THEN
                  SELECT rvv39,rvv39t INTO  l_rvv39,l_rvv39t FROM rvv_file,rvu_file
-                  WHERE rvv01 = rvu01 
+                  WHERE rvv01 = rvu01
                     AND rvu02 = g_rvu.rvu02
                     AND rvv02 = g_rvv[l_ac].rvv02
                     AND rvu00 ='1'
@@ -8014,24 +8024,24 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                     AND rvu116 ='3'
                     AND rvu08 ='SUB'
                     AND rvu01 != g_rvu.rvu01
-                 IF cl_null(l_rvv39_sum) THEN LET l_rvv39_sum = 0 END IF 
-                 IF cl_null(l_rvv39t_sum) THEN LET l_rvv39t_sum = 0 END IF  
-                 IF (l_rvv39_sum + g_rvv[l_ac].rvv38 > l_rvv39) OR (l_rvv39t_sum + g_rvv[l_ac].rvv38t > l_rvv39t) THEN 
+                 IF cl_null(l_rvv39_sum) THEN LET l_rvv39_sum = 0 END IF
+                 IF cl_null(l_rvv39t_sum) THEN LET l_rvv39t_sum = 0 END IF
+                 IF (l_rvv39_sum + g_rvv[l_ac].rvv38 > l_rvv39) OR (l_rvv39t_sum + g_rvv[l_ac].rvv38t > l_rvv39t) THEN
                     IF NOT cl_confirm('apm-179') THEN
                        LET l_yes = 'N'
-                    ELSE 
+                    ELSE
                        LET l_yes = 'Y'
                     END IF
                     IF l_yes = 'N' THEN
                        LET g_rvv[l_ac].rvv38 =  l_pmn31
                        LET g_rvv[l_ac].rvv38t =  l_pmn31t
                        NEXT FIELD rvv38t
-                    ELSE 
-                    
-                    END IF                    
+                    ELSE
+
+                    END IF
                  END IF
-              END IF                 
-           END IF  
+              END IF
+           END IF
            #MOD-D60076 add end----------
            LET g_rvv38t_t = g_rvv[l_ac].rvv38t    #TQC-D80008  add
 
@@ -8043,7 +8053,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
            CALL t720_get_azi()
            CALL cl_digcut(g_rvv[l_ac].rvv39t,t_azi04)
                              RETURNING g_rvv[l_ac].rvv39t
- 
+
          AFTER FIELD rvv41
             IF NOT cl_null(g_rvv[l_ac].rvv41) THEN
                SELECT coc10 INTO l_coc10 FROM coc_file
@@ -8062,7 +8072,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                   NEXT FIELD rvv41
                END IF
             END IF
- 
+
         AFTER FIELD rvv930
             IF NOT cl_null(g_rvv[l_ac].rvv930) THEN
                 LET l_cnt=0
@@ -8083,7 +8093,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                 LET g_rvv[l_ac].gem02a=NULL
                 DISPLAY BY NAME g_rvv[l_ac].gem02a
             END IF
- 
+
         AFTER FIELD rvvud01
            IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
         AFTER FIELD rvvud02
@@ -8114,21 +8124,21 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
            IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
         AFTER FIELD rvvud15
            IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
- 
+
         BEFORE DELETE                            #是否取消單身
            IF g_rvv_t.rvv02 > 0 AND NOT cl_null(g_rvv_t.rvv02) THEN
               IF NOT cl_delb(0,0) THEN
                  CANCEL DELETE
               END IF
-              SELECT ima918,ima921 INTO g_ima918,g_ima921 
+              SELECT ima918,ima921 INTO g_ima918,g_ima921
                 FROM ima_file
                WHERE ima01 = g_rvv[l_ac].rvv31
                  AND imaacti = "Y"
-              
+
               IF g_ima918 = "Y" OR g_ima921 = "Y" THEN
                  IF g_sma.sma90 = "Y" THEN #MOD-C30074 add
                     #IF NOT s_lotin_del(g_prog,g_rvu.rvu01,g_rvv[l_ac].rvv02,0,g_rvv[l_ac].rvv31,'DEL') THEN   #No.FUN-860045  #TQC-B90236 mark
-                     IF NOT s_lot_del(g_prog,g_rvu.rvu01,g_rvv[l_ac].rvv02,0,g_rvv[l_ac].rvv31,'DEL') THEN   #No.FUN-860045  #TQC-B90236 
+                     IF NOT s_lot_del(g_prog,g_rvu.rvu01,g_rvv[l_ac].rvv02,0,g_rvv[l_ac].rvv31,'DEL') THEN   #No.FUN-860045  #TQC-B90236
                          CALL cl_err3("del","rvbs_file",g_rvu.rvu01,g_rvv_t.rvv02,
                                        SQLCA.sqlcode,"","",1)
                           ROLLBACK WORK
@@ -8144,14 +8154,14 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
               # genero shell add end
              #FUN-A60035 ---MARK BEGIN
              ##No.FUN-A50054 -BEGIN-----
-             #IF s_industry('slk') THEN 
+             #IF s_industry('slk') THEN
              #   DELETE FROM rvv_file
              #    WHERE rvv01 = g_rvu.rvu01
-             #      AND rvv02 IN (SELECT ata03 FROM ata_file WHERE ata02 = g_rvv_t.rvv02) 
+             #      AND rvv02 IN (SELECT ata03 FROM ata_file WHERE ata02 = g_rvv_t.rvv02)
              #   IF SQLCA.sqlcode THEN
              #      CALL cl_err3("del","rvv_file",g_rvu.rvu01,g_rvv_t.rvv02,SQLCA.sqlcode,"","",1)
              #      ROLLBACK WORK
-             #      CANCEL DELETE 
+             #      CANCEL DELETE
              #   END IF
              #ELSE
              ##No.FUN-A50054 -END-------
@@ -8178,7 +8188,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
               LET g_rec_b=g_rec_b-1
               DISPLAY g_rec_b TO FORMONLY.cn2
            END IF
- 
+
         ON ROW CHANGE
             IF INT_FLAG THEN
                CALL cl_err('',9001,0)
@@ -8198,7 +8208,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                           AND img02 = g_rvv[l_ac].rvv32
                           AND img03 = g_rvv[l_ac].rvv33
                           AND img04 = g_rvv[l_ac].rvv34
-                   
+
                    CALL s_umfchk(g_rvv[l_ac].rvv31,g_rvv[l_ac].rvv35,l_img09)
                    RETURNING l_i,g_rvv[l_ac].rvv35_fac
                    IF  l_i = 1 THEN
@@ -8209,7 +8219,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                    END IF
                    DISPLAY BY NAME g_rvv[l_ac].rvv35_fac
                END IF   #MOD-8B0174
- 
+
                 IF g_sma.sma115 = 'Y' THEN
                    CALL s_chk_va_setting(g_rvv[l_ac].rvv31)
                         RETURNING g_flag,g_ima906,g_ima907
@@ -8243,7 +8253,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                 IF cl_null(b_rvv.rvv38) THEN LET b_rvv.rvv38=0 END IF
                 IF cl_null(b_rvv.rvv38t) THEN LET b_rvv.rvv38t=g_rvv[l_ac].rvv38t END IF
                #MOD-D30016 add end  -----
- 
+
                 CALL t720_b_move_back()
                 CALL t720_b_else()
                 IF cl_null(g_rvv[l_ac].rvv33) THEN
@@ -8278,13 +8288,13 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
 #                     IF SQLCA.sqlcode THEN
 #                        CALL cl_err3("ins","rvv_file",b_rvv.rvv01,b_rvv.rvv02,SQLCA.sqlcode,"","ins rvv",1)
 #                        EXIT FOREACH
-#                        SELECT ima918,ima921 INTO g_ima918,g_ima921 
+#                        SELECT ima918,ima921 INTO g_ima918,g_ima921
 #                          FROM ima_file
 #                         WHERE ima01 = g_rvv[l_ac].rvv31
 #                           AND imaacti = "Y"
-#              
+#
 #                        IF g_ima918 = "Y" OR g_ima921 = "Y" THEN
-#                           IF NOT s_lotin_del(g_prog,g_rvu.rvu01,g_rvv[l_ac].rvv02,0,g_rvv[l_ac].rvv31,'DEL') THEN 
+#                           IF NOT s_lotin_del(g_prog,g_rvu.rvu01,g_rvv[l_ac].rvv02,0,g_rvv[l_ac].rvv31,'DEL') THEN
 #                              CALL cl_err3("del","rvbs_file",g_rvu.rvu01,g_rvv_t.rvv02,
 #                                    SQLCA.sqlcode,"","",1)
 #                           END IF
@@ -8302,13 +8312,13 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                # IF cl_null(b_rvv.rvv38) THEN LET b_rvv.rvv38=0 END IF
                # IF cl_null(b_rvv.rvv38t) THEN LET b_rvv.rvv38t=g_rvv[l_ac].rvv38t END IF
                ##-----MOD-AC0024---------
-               # CALL cl_digcut(b_rvv.rvv39,t_azi04)  
+               # CALL cl_digcut(b_rvv.rvv39,t_azi04)
                #                   RETURNING b_rvv.rvv39
-               # CALL cl_digcut(b_rvv.rvv39t,t_azi04)   
-               #                   RETURNING b_rvv.rvv39t  
+               # CALL cl_digcut(b_rvv.rvv39t,t_azi04)
+               #                   RETURNING b_rvv.rvv39t
                ##-----END MOD-AC0024-----
-               # #CALL t720sub_rvv39(b_rvv.rvv36,b_rvv.rvv39,b_rvv.rvv39t,g_rvu.rvu04,g_rvu.rvu02) #FUN-A10130 #MOD-BC0262 mark 
-               # CALL t720sub_rvv39(b_rvv.rvv36,b_rvv.rvv39,b_rvv.rvv39t,g_rvu.rvu04,g_rvu.rvu01)  #MOD-BC0262 add 
+               # #CALL t720sub_rvv39(b_rvv.rvv36,b_rvv.rvv39,b_rvv.rvv39t,g_rvu.rvu04,g_rvu.rvu02) #FUN-A10130 #MOD-BC0262 mark
+               # CALL t720sub_rvv39(b_rvv.rvv36,b_rvv.rvv39,b_rvv.rvv39t,g_rvu.rvu04,g_rvu.rvu01)  #MOD-BC0262 add
                #      RETURNING b_rvv.rvv39,b_rvv.rvv39t
                #MOD-D30016 mark end  -----
                 UPDATE rvv_file SET * = b_rvv.*
@@ -8326,12 +8336,12 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                    IF NOT s_iqctype_upd_qco20(g_rvu.rvu02,g_rvv[l_ac].rvv05,g_rvv[l_ac].rvv45,g_rvv[l_ac].rvv47,l_type1) THEN
                       RETURN
                    END IF
-                   #FUN-BC0104---add---end 
-                   COMMIT WORK                   
-                END IF 
+                   #FUN-BC0104---add---end
+                   COMMIT WORK
+                END IF
 #               END IF  #No.FUN-A50054   #FUN-A60035 ---MARK
             END IF
- 
+
         AFTER ROW
             LET l_ac = ARR_CURR()
         #   LET l_ac_t = l_ac    #TQC-D40025
@@ -8340,16 +8350,16 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                CALL cl_err('',9001,0)
                LET INT_FLAG = 0
                IF p_cmd = 'a' AND l_ac <= g_rvv.getLength() THEN #CHI-C30118 add
-                  SELECT ima918,ima921 INTO g_ima918,g_ima921 
+                  SELECT ima918,ima921 INTO g_ima918,g_ima921
                     FROM ima_file
                    WHERE ima01 = g_rvv[l_ac].rvv31
                      AND imaacti = "Y"
-                  
-                  
+
+
                   IF g_ima918 = "Y" OR g_ima921 = "Y" THEN
                      IF g_sma.sma90 = "Y" THEN #MOD-C30074 add
                        #IF NOT s_lotin_del(g_prog,g_rvu.rvu01,g_rvv[l_ac].rvv02,0,g_rvv[l_ac].rvv31,'DEL') THEN   #No.FUN-860045  #TQC-B90236 mark
-                        IF NOT s_lot_del(g_prog,g_rvu.rvu01,g_rvv[l_ac].rvv02,0,g_rvv[l_ac].rvv31,'DEL') THEN   #No.FUN-860045  #TQC-B90236 
+                        IF NOT s_lot_del(g_prog,g_rvu.rvu01,g_rvv[l_ac].rvv02,0,g_rvv[l_ac].rvv31,'DEL') THEN   #No.FUN-860045  #TQC-B90236
                             CALL cl_err3("del","rvbs_file",g_rvu.rvu01,g_rvv_t.rvv02,
                                           SQLCA.sqlcode,"","",1)
                         END IF
@@ -8358,7 +8368,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                END IF #CHI-C30118 add
                IF p_cmd = 'u' THEN
                   LET g_rvv[l_ac].* = g_rvv_t.*
-               ELSE                                  #TQC-AB0412 
+               ELSE                                  #TQC-AB0412
                   CALL g_rvv.deleteElement(l_ac)     #TQC-AB0412
           #TQC-D40025--add--str--
                   IF g_rec_b != 0 THEN
@@ -8388,7 +8398,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
             IF g_rvu.rvu116 <> '3' OR cl_null(g_rvu.rvu116) THEN   #MOD-CC0068 add
                #MOD-C30483-----add--begin---
               #IF cl_null(g_rvv[l_ac].rvv32) AND g_rvv[l_ac].rvv31 != 'MISC'      #MOD-D10224 mark
-               IF cl_null(g_rvv[l_ac].rvv32) AND g_rvv[l_ac].rvv31[1,4] <> 'MISC' #MOD-D10224 add 
+               IF cl_null(g_rvv[l_ac].rvv32) AND g_rvv[l_ac].rvv31[1,4] <> 'MISC' #MOD-D10224 add
                   AND NOT cl_null(g_rvv[l_ac].rvv31) THEN
                   CALL cl_err('','apm1073 ',0)
                   NEXT FIELD rvv32
@@ -8417,9 +8427,9 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                         AND rvbs01 = g_rvu.rvu01
                         AND rvbs02 = g_rvv[l_ac].rvv02
                  END IF
-         END FOR         
-        #CHI-C30118---add---END   
-            
+         END FOR
+        #CHI-C30118---add---END
+
         #-----MOD-BA0169---------
         #ON ACTION CONTROLO                        #沿用所有欄位
         #    IF INFIELD(rvv03) AND l_ac > 1 THEN
@@ -8429,7 +8439,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
         #       NEXT FIELD rvv05
         #    END IF
         #-----END MOD-BA0169-----
- 
+
         ON ACTION CONTROLP
            CASE
              #新增的母料件開窗
@@ -8438,41 +8448,41 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
              #需注意的是其條件限制是要開多屬性母料件且母料件的屬性組等于當前屬性組
              WHEN INFIELD(att00)
                 #可以新增子料件,開窗是單純的選取母料件
-#FUN-AA0059---------mod------------str-----------------                
+#FUN-AA0059---------mod------------str-----------------
 #                CALL cl_init_qry_var()
 #                LET g_qryparam.form ="q_ima_p"
 #                LET g_qryparam.arg1 = lg_group
 #                CALL cl_create_qry() RETURNING g_rvv[l_ac].att00
 
-                CALL q_sel_ima(FALSE, "q_ima_p","","",lg_group,"","","","",'' ) 
+                CALL q_sel_ima(FALSE, "q_ima_p","","",lg_group,"","","","",'' )
                 RETURNING  g_rvv[l_ac].att00
 #FUN-AA0059---------mod------------end-----------------
-                LET g_rvv[l_ac].rvv31 =g_rvv[l_ac].att00                        
-                LET g_rvv[l_ac].att01 =null                                     
-                LET g_rvv[l_ac].att01_c =null                                   
-                LET g_rvv[l_ac].att02 =null                                     
-                LET g_rvv[l_ac].att02_c =null                                   
-                LET g_rvv[l_ac].att03 =null                                     
-                LET g_rvv[l_ac].att03_c =null                                   
-                LET g_rvv[l_ac].att04 =null                                     
-                LET g_rvv[l_ac].att04_c =null                                   
-                LET g_rvv[l_ac].att05 =null                                     
-                LET g_rvv[l_ac].att05_c =null                                   
-                LET g_rvv[l_ac].att06 =null                                     
-                LET g_rvv[l_ac].att06_c =null                                   
-                LET g_rvv[l_ac].att07 =null                                     
-                LET g_rvv[l_ac].att07_c =null                                   
-                LET g_rvv[l_ac].att08 =null                                     
-                LET g_rvv[l_ac].att08_c =null                                   
-                LET g_rvv[l_ac].att09 =null                                     
-                LET g_rvv[l_ac].att09_c =null                                   
-                LET g_rvv[l_ac].att10 =null                                     
-                LET g_rvv[l_ac].att10_c =null                                   
+                LET g_rvv[l_ac].rvv31 =g_rvv[l_ac].att00
+                LET g_rvv[l_ac].att01 =null
+                LET g_rvv[l_ac].att01_c =null
+                LET g_rvv[l_ac].att02 =null
+                LET g_rvv[l_ac].att02_c =null
+                LET g_rvv[l_ac].att03 =null
+                LET g_rvv[l_ac].att03_c =null
+                LET g_rvv[l_ac].att04 =null
+                LET g_rvv[l_ac].att04_c =null
+                LET g_rvv[l_ac].att05 =null
+                LET g_rvv[l_ac].att05_c =null
+                LET g_rvv[l_ac].att06 =null
+                LET g_rvv[l_ac].att06_c =null
+                LET g_rvv[l_ac].att07 =null
+                LET g_rvv[l_ac].att07_c =null
+                LET g_rvv[l_ac].att08 =null
+                LET g_rvv[l_ac].att08_c =null
+                LET g_rvv[l_ac].att09 =null
+                LET g_rvv[l_ac].att09_c =null
+                LET g_rvv[l_ac].att10 =null
+                LET g_rvv[l_ac].att10_c =null
                 DISPLAY BY NAME g_rvv[l_ac].att00
- 
+
                 NEXT FIELD att00
              WHEN INFIELD(rvv31)      #料號
-                  #FUN-A20017--begin--add---  
+                  #FUN-A20017--begin--add---
                   SELECT pmn04,ima903 INTO l_ima01,l_ima903
                     FROM ima_file,pmn_file
                    WHERE pmn01 = g_rvv[l_ac].rvv36
@@ -8480,21 +8490,21 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                      AND ima01 = pmn04
                   IF g_argv3 <> 'SUB' OR l_ima903 = 'N' OR cl_null(l_ima903) THEN
                   #FUN-A20017--end--add----
-#FUN-AA0059---------mod------------str-----------------                  
+#FUN-AA0059---------mod------------str-----------------
 #                     CALL cl_init_qry_var()
                      IF g_azw.azw04 = '2' AND g_prog='apmt742' THEN
                         CALL cl_init_qry_var()        #FUN-AA0059 add
                         LET g_qryparam.form = "q_rvb05_1"
                         LET g_qryparam.where = " rva29 ='",g_rvu.rvu21,"'"     #FUN-AA0059
                         LET g_qryparam.default1 = g_rvv[l_ac].rvv31            #FUN-AA0059
-                        CALL cl_create_qry() RETURNING g_rvv[l_ac].rvv31  
+                        CALL cl_create_qry() RETURNING g_rvv[l_ac].rvv31
                      ELSE
 #                        LET g_qryparam.form = "q_ima"
-                         CALL q_sel_ima(FALSE, "q_ima","",g_rvv[l_ac].rvv31,"","","","","",'' ) 
+                         CALL q_sel_ima(FALSE, "q_ima","",g_rvv[l_ac].rvv31,"","","","","",'' )
                          RETURNING g_rvv[l_ac].rvv31
                      END IF
 #                     LET g_qryparam.default1 = g_rvv[l_ac].rvv31
-#                     CALL cl_create_qry() RETURNING g_rvv[l_ac].rvv31  
+#                     CALL cl_create_qry() RETURNING g_rvv[l_ac].rvv31
                    #FUN-A20017--begin--add---
                   ELSE
                      CALL cl_init_qry_var()
@@ -8503,7 +8513,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                      LET g_qryparam.arg1 = l_ima01
                      CALL cl_create_qry() RETURNING g_rvv[l_ac].rvv31
                   END IF
-#FUN-AA0059---------mod------------end-----------------                  
+#FUN-AA0059---------mod------------end-----------------
                   #FUN-A20017--end--add---
                   DISPLAY BY NAME g_rvv[l_ac].rvv31         #No.MOD-490371
                   NEXT FIELD rvv31
@@ -8519,21 +8529,21 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                    LET g_qryparam.default1 = g_rvv[l_ac].rvv05
                    LET g_qryparam.arg1 = g_rvu.rvu02
                    CALL cl_create_qry() RETURNING g_rvv[l_ac].rvv05
-                 ELSE 
-                   IF g_rvu.rvu00='2' THEN   
+                 ELSE
+                   IF g_rvu.rvu00='2' THEN
                       CALL cl_init_qry_var()
                       LET g_qryparam.form = "q_rvb4"
                       LET g_qryparam.default1 = g_rvv[l_ac].rvv05
                       LET g_qryparam.arg1 = g_rvu.rvu02
                       CALL cl_create_qry() RETURNING g_rvv[l_ac].rvv05
                    END IF
-                 END IF  
+                 END IF
                END IF
                 DISPLAY BY NAME g_rvv[l_ac].rvv05         #No.MOD-490371
                CALL t720_rvv05(p_cmd)
                IF NOT cl_null(g_errno) THEN
                 #MOD-C30590 -- add -- begin
-                 IF (g_rvv[l_ac].rvv31 = 'MISC') AND (g_errno = 'apm-259') THEN    
+                 IF (g_rvv[l_ac].rvv31 = 'MISC') AND (g_errno = 'apm-259') THEN
                  ELSE
                 #MOD-C30590 -- add -- end
                     CALL cl_err(g_rvv[l_ac].rvv05,g_errno,0)
@@ -8553,10 +8563,10 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                LET g_qryparam.arg2 = g_rvv[l_ac].rvv05
                LET g_qryparam.arg3 = g_rvv[l_ac].rvv45
                CALL t720_qcl05_wc() RETURNING g_qryparam.arg4,l_qcl05_tf    #TQC-C30048
-               CALL cl_create_qry() RETURNING g_rvv[l_ac].rvv46,g_rvv[l_ac].rvv47 
+               CALL cl_create_qry() RETURNING g_rvv[l_ac].rvv46,g_rvv[l_ac].rvv47
                DISPLAY BY NAME g_rvv[l_ac].rvv46,g_rvv[l_ac].rvv47
                NEXT FIELD rvv46
-               
+
              WHEN INFIELD(rvv47)
                CALL cl_init_qry_var()
                LET g_qryparam.form = "q_qco"
@@ -8586,7 +8596,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                     CALL q_idc(FALSE,TRUE,g_rvv[l_ac].rvv31,g_rvv[l_ac].rvv32,g_rvv[l_ac].rvv33,g_rvv[l_ac].rvv34)
                     RETURNING g_rvv[l_ac].rvv32,g_rvv[l_ac].rvv33,g_rvv[l_ac].rvv34
                 ELSE
-                #FUN-C30300---end 
+                #FUN-C30300---end
                    CALL q_img4(FALSE,TRUE,  ##NO.FUN-660085
                                g_rvv[l_ac].rvv31,g_rvv[l_ac].rvv32,
                                g_rvv[l_ac].rvv33,g_rvv[l_ac].rvv34,'A')
@@ -8595,7 +8605,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                DISPLAY g_rvv[l_ac].rvv32 TO rvv32
                DISPLAY g_rvv[l_ac].rvv33 TO rvv33
                DISPLAY g_rvv[l_ac].rvv34 TO rvv34
- 
+
                IF INFIELD(rvv32) THEN NEXT FIELD rvv32 END IF
                IF INFIELD(rvv33) THEN NEXT FIELD rvv33 END IF
                IF INFIELD(rvv34) THEN NEXT FIELD rvv34 END IF
@@ -8613,9 +8623,9 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                      CALL cl_init_qry_var()
                      LET g_qryparam.form = "q_azf01a"                                  #No.FUN-930145
                      LET g_qryparam.default1 = g_rvv[l_ac].rvv26
-                     #-----MOD-AB0051--------- 
+                     #-----MOD-AB0051---------
                      #LET g_qryparam.arg1 = '7'                                 #No.FUN-930145
-                     IF g_argv1 = '1' THEN 
+                     IF g_argv1 = '1' THEN
                         LET g_qryparam.arg1 = '7'
                      ELSE
                         LET g_qryparam.arg1 = '5'
@@ -8666,7 +8676,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                       CALL cl_create_qry() RETURNING g_rvv[l_ac].rvv80
                       DISPLAY BY NAME g_rvv[l_ac].rvv80
                       NEXT FIELD rvv80
- 
+
                  WHEN INFIELD(rvv83) #單位
                       CALL cl_init_qry_var()
                       LET g_qryparam.form ="q_gfe"
@@ -8674,7 +8684,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                       CALL cl_create_qry() RETURNING g_rvv[l_ac].rvv83
                       DISPLAY BY NAME g_rvv[l_ac].rvv83
                       NEXT FIELD rvv83
- 
+
                  WHEN INFIELD(rvv86) #單位
                       CALL cl_init_qry_var()
                       LET g_qryparam.form ="q_gfe"
@@ -8682,7 +8692,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                       CALL cl_create_qry() RETURNING g_rvv[l_ac].rvv86
                       DISPLAY BY NAME g_rvv[l_ac].rvv86
                       NEXT FIELD rvv86
- 
+
                  WHEN INFIELD(rvv930)
                     CALL cl_init_qry_var()
                     LET g_qryparam.form ="q_gem4"
@@ -8716,7 +8726,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
 
 #CHI-C80009---add---START
 #CHI-C80009---add-----END
- 
+
         ON ACTION qry_warehouse
            CALL cl_init_qry_var()
            LET g_qryparam.form = "q_imd"
@@ -8726,7 +8736,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
            CALL cl_create_qry() RETURNING g_rvv[l_ac].rvv32
            DISPLAY BY NAME g_rvv[l_ac].rvv32    #MOD-840666 add
            NEXT FIELD rvv32
- 
+
         ON ACTION qry_loc_warehouse
            CALL cl_init_qry_var()
            LET g_qryparam.form = "q_ime"
@@ -8737,7 +8747,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
            CALL cl_create_qry() RETURNING g_rvv[l_ac].rvv33
            DISPLAY BY NAME g_rvv[l_ac].rvv33    #MOD-840666 add
            NEXT FIELD rvv33
- 
+
        ON ACTION default_w_h
           CALL cl_init_qry_var()
           LET g_qryparam.form = "q_imf"
@@ -8749,13 +8759,13 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
           DISPLAY BY NAME g_rvv[l_ac].rvv32    #MOD-840666 add
           DISPLAY BY NAME g_rvv[l_ac].rvv33    #MOD-840666 add
           NEXT FIELD rvv32
- 
+
         ON ACTION modi_lot
-           SELECT ima918,ima921 INTO g_ima918,g_ima921 
+           SELECT ima918,ima921 INTO g_ima918,g_ima921
              FROM ima_file
             WHERE ima01 = g_rvv[l_ac].rvv31
               AND imaacti = "Y"
-           
+
            IF g_ima918 = "Y" OR g_ima921 = "Y" THEN
               SELECT img09 INTO g_img09 FROM img_file
               WHERE img01=g_rvv[l_ac].rvv31 AND img02=g_rvv[l_ac].rvv32
@@ -8770,7 +8780,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                     CALL t720sub_ins_rvbs(g_prog,g_rvu.rvu01,g_rvv[l_ac].rvv02,
                                        g_rvu.rvu02,g_rvv[l_ac].rvv05,g_rvv[l_ac].rvv31,
                                        g_rvv[l_ac].rvv32,g_rvv[l_ac].rvv33,g_rvv[l_ac].rvv34,g_rvu.rvu02) #FUN-A10130
-                 END IF						 
+                 END IF
                 #IF g_rvu.rvu116 <> '3' OR cl_null(g_rvu.rvu116) THEN   #MOD-CB0229 add #MOD-D40025 mark
    #No.TQC-B90236--------mark---------begin-----------
                    #CALL s_lotin(g_prog,g_rvu.rvu01,g_rvv[l_ac].rvv02,0,
@@ -8793,7 +8803,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                                       g_rvv[l_ac].rvv35_fac,g_rvv[l_ac].rvv17,'','SEL',-1) #CHI-9A0022 add ''
                                RETURNING l_r,g_qty
                     END IF
-   #No.TQC-B90236--------add----------end-------------	
+   #No.TQC-B90236--------add----------end-------------
                 #END IF   #MOD-CB0229 add #MOD-D40025 mark
                  IF l_r = "Y" THEN
                     LET g_rvv[l_ac].rvv17 = g_qty
@@ -8806,7 +8816,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                    FROM pmn_file
                   WHERE pmn01 = g_rvv[l_ac].rvv36
                     AND pmn02 = g_rvv[l_ac].rvv37
-#No.CHI-9A0022 --End					 
+#No.CHI-9A0022 --End
                 #IF g_rvu.rvu116 <> '3' OR cl_null(g_rvu.rvu116) THEN   #MOD-CB0229 add #MOD-D40025 mark
    #No.TQC-B90236--------mark---------begin-----------
                    #CALL s_lotin(g_prog,g_rvu.rvu01,g_rvv[l_ac].rvv02,0,
@@ -8837,40 +8847,40 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                  END IF
               END IF
            END IF
- 
+
         ON ACTION CONTROLZ
            CALL cl_show_req_fields()
- 
+
         ON ACTION CONTROLG CALL cl_cmdask()
- 
+
         ON ACTION CONTROLF
          CALL cl_set_focus_form(ui.Interface.getRootNode()) RETURNING g_fld_name,g_frm_name #Add on 040913
          CALL cl_fldhelp(g_frm_name,g_fld_name,g_lang) #Add on 040913
- 
+
          ON IDLE g_idle_seconds
             CALL cl_on_idle()
             CONTINUE INPUT
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
+
       ON ACTION controls                           #No.FUN-6B0032
          CALL cl_set_head_visible("","AUTO")       #No.FUN-6B0032
- 
+
       END INPUT
 
       LET g_rvu.rvu17 = '0'                        #修改後需重新送簽  #FUN-A60009 add
 
-      UPDATE rvu_file 
+      UPDATE rvu_file
          SET rvumodu=g_user
             ,rvudate=g_today
             ,rvu17 = g_rvu.rvu17                   #FUN-A60009 add
        WHERE rvu01=g_rvu.rvu01
       SELECT COUNT(*) INTO g_cnt FROM rvv_file WHERE rvv01=g_rvu.rvu01
- 
+
     CLOSE t720_bcl
 
     DISPLAY BY NAME g_rvu.rvu17                    #FUN-A60009 add
@@ -8892,7 +8902,7 @@ FUNCTION t720_delHeader()
    DEFINE l_shb01            LIKE shb_file.shb01
    DEFINE l_shb28            LIKE shb_file.shb28
    DEFINE l_shb29            LIKE shb_file.shb29
-   
+
    SELECT COUNT(*) INTO g_cnt FROM rvv_file WHERE  rvv01=g_rvu.rvu01
    IF g_cnt = 0 THEN
       #CHI-C80041---begin
@@ -8900,9 +8910,9 @@ FUNCTION t720_delHeader()
       LET l_sql = " SELECT COUNT(*) FROM rvu_file ",
                   "  WHERE rvu01 LIKE '",l_slip,"%' ",
                   "    AND rvu01 > '",g_rvu.rvu01,"'"
-      PREPARE t720_pb1 FROM l_sql 
-      EXECUTE t720_pb1 INTO l_cnt 
-      
+      PREPARE t720_pb1 FROM l_sql
+      EXECUTE t720_pb1 INTO l_cnt
+
       LET l_action_choice = g_action_choice
       LET g_action_choice = 'delete'
       IF cl_chk_act_auth() AND l_cnt = 0 THEN
@@ -8911,42 +8921,42 @@ FUNCTION t720_delHeader()
       ELSE
          CALL cl_getmsg('aec-131',g_lang) RETURNING g_msg
          LET l_num = 2
-      END IF 
+      END IF
       LET g_action_choice = l_action_choice
       PROMPT g_msg CLIPPED,': ' FOR l_cho
          ON IDLE g_idle_seconds
             CALL cl_on_idle()
 
-         ON ACTION about     
+         ON ACTION about
             CALL cl_about()
 
-         ON ACTION help         
+         ON ACTION help
             CALL cl_show_help()
 
-         ON ACTION controlg   
-            CALL cl_cmdask() 
+         ON ACTION controlg
+            CALL cl_cmdask()
       END PROMPT
-      IF l_cho > l_num THEN LET l_cho = 1 END IF 
-      IF l_cho = 2 THEN 
+      IF l_cho > l_num THEN LET l_cho = 1 END IF
+      IF l_cho = 2 THEN
         #CALL t720_x()    #FUN-D20025
          CALL t720_x(1)   #FUN-D20025
          CALL t720_show()
-      END IF 
-      
-      IF l_cho = 3 THEN 
+      END IF
+
+      IF l_cho = 3 THEN
          DELETE FROM rvx_file WHERE rvx01 = g_rvu.rvu01
       #CHI-C80041---end
       #IF cl_confirm("9042") THEN  #CHI-C80041
          DELETE FROM rvu_file WHERE  rvu01=g_rvu.rvu01
          #str---add by jixf 160802
           SELECT shb01,shb28,shb29 INTO l_shb01,l_shb28,l_shb29 FROM shb_file WHERE shb14=g_rvu.rvu01
-          IF NOT cl_null(l_shb01) THEN 
+          IF NOT cl_null(l_shb01) THEN
              DELETE FROM rva_file WHERE rva01=l_shb29
              DELETE FROM rvb_file WHERE rvb01=l_shb29
              DELETE FROM pmm_file WHERE pmm01=l_shb28
              DELETE FROM pmn_file WHERE pmn01=l_shb28
              UPDATE shb_file SET shbud02='N',shb28='',shb29='',shb14='' WHERE shb01=l_shb01
-          END IF 
+          END IF
           MESSAGE '自动产生的委外收货单，采购单已一并删除！'
           #end---add by jixf 160802
          INITIALIZE g_rvu.* TO NULL
@@ -8976,18 +8986,18 @@ DEFINE  l_err_var   STRING
       LET g_rvv[l_ac].rvv34 = ' '
    END IF
    IF g_rvv[l_ac].rvv34 IS NULL THEN LET g_rvv[l_ac].rvv34=' ' END IF
-   LET l_flag=TRUE 
+   LET l_flag=TRUE
    IF NOT cl_null(g_rvv[l_ac].rvv31) AND g_rvu.rvu116 <> '3' THEN  #MOD-D30122 add rvu116
       LET l_ima159 = ''
       SELECT ima159 INTO l_ima159 FROM ima_file
        WHERE ima01 = g_rvv[l_ac].rvv31
-      IF l_ima159 = '1' AND cl_null(g_rvv[l_ac].rvv34) THEN 
+      IF l_ima159 = '1' AND cl_null(g_rvv[l_ac].rvv34) THEN
          CALL cl_err(g_rvv[l_ac].rvv31,'aim-034',1)
          RETURN "rvv34"
       END IF
    END IF
     LET l_ec_sw = 'N'
-    IF g_rvu.rvu08='SUB' AND NOT cl_null(g_rvv[l_ac].rvv36) AND NOT cl_null(g_rvv[l_ac].rvv37) THEN 
+    IF g_rvu.rvu08='SUB' AND NOT cl_null(g_rvv[l_ac].rvv36) AND NOT cl_null(g_rvv[l_ac].rvv37) THEN
        SELECT pmn41,pmn43,pmn18,pmn32 INTO l_pmn41,l_pmn43,l_pmn18,l_pmn32 FROM pmn_file
           WHERE pmn01 = g_rvv[l_ac].rvv36 AND pmn02 = g_rvv[l_ac].rvv37
        IF STATUS THEN
@@ -8997,8 +9007,8 @@ DEFINE  l_err_var   STRING
           LET l_ec_sw='Y'
        END IF
     END IF
-    IF g_rvv[l_ac].rvv31[1,4] != 'MISC' AND g_rvu.rvu00!='2' AND l_flag AND l_ec_sw='N' 
-       AND NOT (g_rvu.rvu00='3' AND g_rvv[l_ac].rvv17=0) THEN 
+    IF g_rvv[l_ac].rvv31[1,4] != 'MISC' AND g_rvu.rvu00!='2' AND l_flag AND l_ec_sw='N'
+       AND NOT (g_rvu.rvu00='3' AND g_rvv[l_ac].rvv17=0) THEN
        IF g_rvv[l_ac].rvv34 IS NULL THEN LET g_rvv[l_ac].rvv34=' ' END IF
        SELECT COUNT(*) INTO l_cnt FROM rvv_file
         WHERE rvv01 = g_rvu.rvu01  #同一張單不可有同料,倉,儲,批之資料
@@ -9026,7 +9036,7 @@ DEFINE  l_err_var   STRING
           (g_rvu.rvu00='3' AND STATUS=100) THEN
           IF NOT cl_null(g_rvv[l_ac].rvv32) OR NOT cl_null(g_rvv[l_ac].rvv33) OR NOT cl_null(g_rvv[l_ac].rvv34) THEN  #MOD-D30083 add
              IF g_sma.sma892[3,3] ='Y' THEN
-                IF NOT cl_confirm('mfg1401') THEN RETURN "rvv32" END IF  
+                IF NOT cl_confirm('mfg1401') THEN RETURN "rvv32" END IF
              END IF
              CALL s_add_img(g_rvv[l_ac].rvv31,g_rvv[l_ac].rvv32,
                             g_rvv[l_ac].rvv33,g_rvv[l_ac].rvv34,
@@ -9051,11 +9061,11 @@ DEFINE  l_err_var   STRING
          END IF
     END IF
     IF g_prog = 'apmt722' OR g_prog = 'aict044' AND cl_null(g_rvu.rvu02) THEN  #MOD-D30083 add aict044
-       SELECT ima918,ima921 INTO l_ima918,l_ima921 
+       SELECT ima918,ima921 INTO l_ima918,l_ima921
          FROM ima_file
         WHERE ima01 = g_rvv[l_ac].rvv31
           AND imaacti = "Y"
-   
+
        IF l_ima918 = "Y" OR l_ima921 = "Y" THEN
           SELECT COUNT(*) INTO l_n FROM rvbs_file
            WHERE rvbs00 = g_prog
@@ -9066,7 +9076,7 @@ DEFINE  l_err_var   STRING
                                 g_rvu.rvu02,g_rvv[l_ac].rvv05,g_rvv[l_ac].rvv31,
                                 g_rvv[l_ac].rvv32,g_rvv[l_ac].rvv33,g_rvv[l_ac].rvv34,g_rvu.rvu02)
           END IF
-          IF g_sma.sma90 = 'Y' THEN  #sel	
+          IF g_sma.sma90 = 'Y' THEN  #sel
              IF g_rvu.rvu116 <> '3' OR cl_null(g_rvu.rvu116) THEN   #MOD-CB0229 add
    #No.TQC-B90236--------mark---------begin-----------
                #CALL s_lotin(g_prog,g_rvu.rvu01,g_rvv[l_ac].rvv02,0,
@@ -9089,7 +9099,7 @@ DEFINE  l_err_var   STRING
                                   g_rvv[l_ac].rvv35_fac,g_rvv[l_ac].rvv17,'','SEL',-1)
                            RETURNING l_r,g_qty
                 END IF
-   #No.TQC-B90236--------add----------end-------------	  
+   #No.TQC-B90236--------add----------end-------------
              END IF   #MOD-CB0229 add
              IF l_r = "Y" THEN
                 LET g_rvv[l_ac].rvv17 = g_qty
@@ -9106,20 +9116,20 @@ FUNCTION t720_pmm43(p_no)
 DEFINE p_no              LIKE pmm_file.pmm01
 DEFINE l_pmm43           LIKE pmm_file.pmm43
 DEFINE l_rva00           LIKE rva_file.rva00
- 
+
     LET l_pmm43 = 0
     IF NOT cl_null(g_rvu.rvu02) THEN
        SELECT rva00 INTO l_rva00 FROM rva_file WHERE rva01 = g_rvu.rvu02
        IF l_rva00 = '2' THEN
           SELECT rva116 INTO l_pmm43 FROM rva_file WHERE rva01 = g_rvu.rvu02
        ELSE
-          SELECT pmm43 INTO l_pmm43 FROM pmm_file WHERE pmm01 = p_no 
+          SELECT pmm43 INTO l_pmm43 FROM pmm_file WHERE pmm01 = p_no
        END IF
     ELSE
        SELECT pmm43 INTO l_pmm43 FROM pmm_file WHERE pmm01 = p_no
     END IF
     IF cl_null(l_pmm43) THEN LET l_pmm43 = 0 END IF
- 
+
     RETURN l_pmm43
 END FUNCTION
 FUNCTION t720_b_move_to()
@@ -9154,7 +9164,7 @@ FUNCTION t720_b_move_to()
    LET g_rvv[l_ac].rvv87     = b_rvv.rvv87
    LET g_rvv[l_ac].rvv930    = b_rvv.rvv930 #FUN-670051
    LET g_rvv[l_ac].rvv919    = b_rvv.rvv919 #FUN-A80150 add
- 
+
       LET g_rvv[l_ac].rvv38=b_rvv.rvv38
       LET g_rvv[l_ac].rvv39=b_rvv.rvv39
       LET g_rvv[l_ac].rvv38t=b_rvv.rvv38t    #No.FUN-610018
@@ -9175,16 +9185,16 @@ FUNCTION t720_b_move_to()
    LET g_rvv[l_ac].rvvud14 = b_rvv.rvvud14
    LET g_rvv[l_ac].rvvud15 = b_rvv.rvvud15
 END FUNCTION
- 
+
 FUNCTION t720_b_move_back()
 DEFINE l_pmm43   LIKE pmm_file.pmm43 #FUN-5B0144 add
 DEFINE l_rva113     LIKE rva_file.rva113    #NO.FUN-940083
- 
+
    LET b_rvv.rvv02     = g_rvv[l_ac].rvv02
    LET b_rvv.rvv05     = g_rvv[l_ac].rvv05
    #FUN-BC0104---add---str---
    LET b_rvv.rvv45     = g_rvv[l_ac].rvv45
-   LET b_rvv.rvv46     = g_rvv[l_ac].rvv46 
+   LET b_rvv.rvv46     = g_rvv[l_ac].rvv46
    LET b_rvv.rvv47     = g_rvv[l_ac].rvv47
    #FUN-BC0104---add---end---
    LET b_rvv.rvv31     = g_rvv[l_ac].rvv31
@@ -9209,7 +9219,7 @@ DEFINE l_rva113     LIKE rva_file.rva113    #NO.FUN-940083
    LET b_rvv.rvv85     = g_rvv[l_ac].rvv85
    LET b_rvv.rvv86     = g_rvv[l_ac].rvv86
    LET b_rvv.rvv87     = g_rvv[l_ac].rvv87
-   LET b_rvv.rvv89     = g_rvv[l_ac].rvv89   #FUN-940083 
+   LET b_rvv.rvv89     = g_rvv[l_ac].rvv89   #FUN-940083
    LET b_rvv.rvv930    = g_rvv[l_ac].rvv930  #FUN-670051
    LET b_rvv.rvv919    = g_rvv[l_ac].rvv919  #FUN-A80150 add
       LET b_rvv.rvv38=g_rvv[l_ac].rvv38
@@ -9222,16 +9232,16 @@ DEFINE l_rva113     LIKE rva_file.rva113    #NO.FUN-940083
       #MOD-DB0068 mark start -----
       # IF b_rvv.rvv87 > 0 THEN
       #    CALL t720sub_rvv38(b_rvv.rvv36,b_rvv.rvv38,b_rvv.rvv38t,g_rvu.rvu04,g_rvu.rvu01)  #TQC-C30225 add
-      #       RETURNING b_rvv.rvv38,b_rvv.rvv38t 
+      #       RETURNING b_rvv.rvv38,b_rvv.rvv38t
       #    LET b_rvv.rvv39=b_rvv.rvv87*b_rvv.rvv38
       #    LET b_rvv.rvv39t=b_rvv.rvv87*b_rvv.rvv38t
       # ELSE
       #    CALL t720_pmm43(b_rvv.rvv36) RETURNING l_pmm43
       #   #IF cl_null(l_pmm43) THEN
       #    IF cl_null(l_pmm43) OR l_pmm43 = 0 THEN   #MOD-BA0062 add
-      #       SELECT gec04 INTO l_pmm43 FROM gec_file,pmc_file 
+      #       SELECT gec04 INTO l_pmm43 FROM gec_file,pmc_file
       #        WHERE gec01 = pmc47
-      #          AND pmc01 = g_rvu.rvu04 
+      #          AND pmc01 = g_rvu.rvu04
       #          AND gec011='1'  #進項
       #    END IF
       #   #MOD-D30016 mark start -----
@@ -9243,7 +9253,7 @@ DEFINE l_rva113     LIKE rva_file.rva113    #NO.FUN-940083
       #    END IF
       # END IF
       #MOD-DB0068 mark end   -----
- 
+
       #No.+090 010430 add by linda 依幣別四捨五入
      #MOD-C40047 str mark----
      #LET t_azi04=''   #No.CHI-6A0004
@@ -9259,7 +9269,7 @@ DEFINE l_rva113     LIKE rva_file.rva113    #NO.FUN-940083
      #       AND pmm01 = g_rvv[l_ac].rvv36 AND pmm18 <> 'X'
      #END IF
      #IF g_rva00 = '2' THEN
-     #   SELECT rva113 INTO l_rva113 FROM rva_file 
+     #   SELECT rva113 INTO l_rva113 FROM rva_file
      #      WHERE rva01 = g_rvu.rvu02
      #   SELECT azi04 INTO t_azi04 FROM azi_file
      #      WHERE azi01 = l_rva113
@@ -9279,7 +9289,7 @@ DEFINE l_rva113     LIKE rva_file.rva113    #NO.FUN-940083
      #CALL cl_digcut(b_rvv.rvv39t,t_azi04)  #No.CHI-6A0004
      #                  RETURNING b_rvv.rvv39t   #No.FUN-610018
      #MOD-D30016 mark end   -----
-    #CALL t720sub_rvv39(b_rvv.rvv36,b_rvv.rvv39,b_rvv.rvv39t,g_rvu.rvu04,g_rvu.rvu02) #FUN-A10130 #MOD-BC0262 mark  
+    #CALL t720sub_rvv39(b_rvv.rvv36,b_rvv.rvv39,b_rvv.rvv39t,g_rvu.rvu04,g_rvu.rvu02) #FUN-A10130 #MOD-BC0262 mark
     CALL t720sub_rvv39(b_rvv.rvv36,b_rvv.rvv39,b_rvv.rvv39t,g_rvu.rvu04,g_rvu.rvu01)  #MOD-BC0262 add
          RETURNING b_rvv.rvv39,b_rvv.rvv39t
      #MOD-D30016 add start -----
@@ -9288,7 +9298,7 @@ DEFINE l_rva113     LIKE rva_file.rva113    #NO.FUN-940083
       CALL cl_digcut(b_rvv.rvv39t,t_azi04)
                         RETURNING b_rvv.rvv39t
      #MOD-D30016 add end   -----
- 
+
    LET b_rvv.rvvud01 = g_rvv[l_ac].rvvud01
    LET b_rvv.rvvud02 = g_rvv[l_ac].rvvud02
    LET b_rvv.rvvud03 = g_rvv[l_ac].rvvud03
@@ -9305,17 +9315,17 @@ DEFINE l_rva113     LIKE rva_file.rva113    #NO.FUN-940083
    LET b_rvv.rvvud14 = g_rvv[l_ac].rvvud14
    LET b_rvv.rvvud15 = g_rvv[l_ac].rvvud15
 END FUNCTION
- 
+
 FUNCTION t720_b_else()
    IF g_rvv[l_ac].rvv05 IS NULL THEN LET g_rvv[l_ac].rvv05 =' ' END IF
    IF g_rvv[l_ac].rvv02 IS NULL THEN LET g_rvv[l_ac].rvv02 =' ' END IF
 #--------數字為null則default 0 ------------
    IF cl_null(b_rvv.rvv17) THEN LET b_rvv.rvv17=0 END IF
 END FUNCTION
- 
+
 FUNCTION t720_b_askkey()
 DEFINE l_wc2    LIKE type_file.chr1000 #No.FUN-680136 VARCHAR(300)
- 
+
     CONSTRUCT l_wc2 ON rvv02, rvv05, rvv45,rvv46,qcl02,rvv47,  #FUN-BC0104 add
                        rvv31, rvv031, rvv32, rvv33,
                        rvv34, rvv35, rvv35_fac, rvv36, rvv37,
@@ -9323,7 +9333,7 @@ DEFINE l_wc2    LIKE type_file.chr1000 #No.FUN-680136 VARCHAR(300)
                        rvvud01,rvvud02,rvvud03,rvvud04,rvvud05,
                        rvvud06,rvvud07,rvvud08,rvvud09,rvvud10,
                        rvvud11,rvvud12,rvvud13,rvvud14,rvvud15
-                  FROM s_rvv[1].rvv02, s_rvv[1].rvv05, 
+                  FROM s_rvv[1].rvv02, s_rvv[1].rvv05,
                        s_rvv[1].rvv45, s_rvv[1].rvv46,s_rvv[1].qcl02,s_rvv[1].rvv47,   #FUN-BC0104 add
                        s_rvv[1].rvv31,
                        s_rvv[1].rvv031,s_rvv[1].rvv32, s_rvv[1].rvv33,
@@ -9336,33 +9346,33 @@ DEFINE l_wc2    LIKE type_file.chr1000 #No.FUN-680136 VARCHAR(300)
                        s_rvv[1].rvvud07,s_rvv[1].rvvud08,s_rvv[1].rvvud09,
                        s_rvv[1].rvvud10,s_rvv[1].rvvud11,s_rvv[1].rvvud12,
                        s_rvv[1].rvvud13,s_rvv[1].rvvud14,s_rvv[1].rvvud15
- 
+
               BEFORE CONSTRUCT
                  CALL cl_qbe_init()
        ON IDLE g_idle_seconds
           CALL cl_on_idle()
           CONTINUE CONSTRUCT
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
+
       ON ACTION controlg      #MOD-4C0121
          CALL cl_cmdask()     #MOD-4C0121
- 
+
                  ON ACTION qbe_select
              CALL cl_qbe_select()
                  ON ACTION qbe_save
        CALL cl_qbe_save()
     END CONSTRUCT
     IF INT_FLAG THEN LET INT_FLAG = 0 RETURN END IF
- 
+
     CALL t720_b_fill(l_wc2)
- 
+
 END FUNCTION
- 
+
 FUNCTION t720_b_fill(p_wc2)              #BODY FILL UP
 DEFINE p_wc2           LIKE type_file.chr1000 #No.FUN-680136 VARCHAR(200)
 #FUN-A60035 ---MARK BEGIN
@@ -9374,9 +9384,9 @@ DEFINE p_wc2           LIKE type_file.chr1000 #No.FUN-680136 VARCHAR(200)
 #  DEFINE l_go     LIKE type_file.chr1
 ##FUN-A60035 ---add end
 #FUN-A60035 ---MARK END
- 
+
     IF cl_null(p_wc2) THEN LET p_wc2=" 1=1 " END IF
- 
+
     IF g_prog = 'apmt720' OR g_prog = 'aict042' THEN  #MOD-D30083 add aict042
           LET g_sql = "SELECT rvv02,rvv05,rvv45,rvv46,qcl02,rvv47,rvv31,'','','','','','','','','','','','','','','','','','','','','',rvv031,ima021,'','','','',rvv35,rvv35_fac,", #TQC-650108 新增21個空位 #FUN-810038  #FUN-BC0104 add rvv45,rvv46,qcl02,rvv47
           " rvv10,rvv11,rvv12,rvv13,",  #NO.FUN-960130
@@ -9389,7 +9399,7 @@ DEFINE p_wc2           LIKE type_file.chr1000 #No.FUN-680136 VARCHAR(200)
           "       rvvud11,rvvud12,rvvud13,rvvud14,rvvud15,'' ecd02 ",   #tianry add 161207
 #TQC-A60046 --Begin
 #         "  FROM rvv_file, OUTER azf_file, OUTER ima_file ",
-#         "      ,OUTER(pmn_file,OUTER pmm_file) ",          #FUN-940083   
+#         "      ,OUTER(pmn_file,OUTER pmm_file) ",          #FUN-940083
 #         " WHERE rvv01 ='",g_rvu.rvu01,"'",     #單頭
 #         "   AND pmm_file.pmm01 = pmn01 AND rvv36 = pmn_file.pmn01 AND rvv37 = pmn_file.pmn02 ",  #FUN-740046
 #         "   AND rvv26=azf_file.azf01 AND azf_file.azf02='2' ",
@@ -9413,7 +9423,7 @@ DEFINE p_wc2           LIKE type_file.chr1000 #No.FUN-680136 VARCHAR(200)
           "       rvv930,'', ",  #FUN-670051
           "       rvvud01,rvvud02,rvvud03,rvvud04,rvvud05,",
           "       rvvud06,rvvud07,rvvud08,rvvud09,rvvud10,",
-          "       rvvud11,rvvud12,rvvud13,rvvud14,rvvud15,'' ecd02 ",   #tianry add 161207 
+          "       rvvud11,rvvud12,rvvud13,rvvud14,rvvud15,'' ecd02 ",   #tianry add 161207
           "  FROM rvv_file, OUTER azf_file, OUTER ima_file ,OUTER qcl_file", #FUN-BC0104 qcl_file
           " WHERE rvv01 ='",g_rvu.rvu01,"'",     #單頭
           "   AND rvv26=azf_file.azf01 AND azf_file.azf02='2' ",
@@ -9424,12 +9434,12 @@ DEFINE p_wc2           LIKE type_file.chr1000 #No.FUN-680136 VARCHAR(200)
     END IF
     PREPARE t720_pb FROM g_sql
     DECLARE rvv_curs CURSOR FOR t720_pb
- 
+
     CALL g_rvv.clear()
     LET g_cnt = 1
     FOREACH rvv_curs INTO g_rvv[g_cnt].*               #單身 ARRAY 填充
        IF STATUS THEN CALL cl_err('foreach:',STATUS,1) EXIT FOREACH END IF
- 
+
         IF cl_null(g_rvv[g_cnt].rvv80) THEN
            LET g_rvv[g_cnt].rvv81 = NULL
            LET g_rvv[g_cnt].rvv82 = NULL
@@ -9456,21 +9466,21 @@ DEFINE p_wc2           LIKE type_file.chr1000 #No.FUN-680136 VARCHAR(200)
         #FUN-B40083 --end
         CALL t720_get_pmm43(g_cnt)
         IF cl_null(g_rvv[g_cnt].pmm43) THEN
-           SELECT gec01,gec04 
-             INTO g_rvv[g_cnt].pmm21,g_rvv[g_cnt].pmm43 
-             FROM gec_file,pmc_file 
+           SELECT gec01,gec04
+             INTO g_rvv[g_cnt].pmm21,g_rvv[g_cnt].pmm43
+             FROM gec_file,pmc_file
             WHERE gec01 = pmc47
-              AND pmc01 = g_rvu.rvu04 
+              AND pmc01 = g_rvu.rvu04
               AND gec011='1'  #進項
         END IF
         CALL t720_set_rvv930(g_rvv[g_cnt].rvv930) RETURNING g_rvv[g_cnt].gem02a #FUN-670051
          #tianry add 161207
-        SELECT ecd02 INTO g_rvv[g_cnt].ecd02_1 FROM ecd_file,pmn_file WHERE pmn01=g_rvv[g_cnt].rvv36 AND 
-        pmn02 = g_rvv[g_cnt].rvv37 AND pmn78=ecd01  
+        SELECT ecd02 INTO g_rvv[g_cnt].ecd02_1 FROM ecd_file,pmn_file WHERE pmn01=g_rvv[g_cnt].rvv36 AND
+        pmn02 = g_rvv[g_cnt].rvv37 AND pmn78=ecd01
 
-        #tianry add end 161207  
+        #tianry add end 161207
 #FUN-A60035 ---MARK BEGIN
-#      #No.FUN-A50054 -BEGIN----- 
+#      #No.FUN-A50054 -BEGIN-----
 #       IF s_industry('slk') THEN
 #          #FUN-A60035 ---mark begin
 #          SELECT ata02 INTO g_rvv[g_cnt].rvv05 FROM ata_file
@@ -9520,7 +9530,7 @@ DEFINE p_wc2           LIKE type_file.chr1000 #No.FUN-680136 VARCHAR(200)
                   g_rvv[g_cnt].att06,g_rvv[g_cnt].att07,g_rvv[g_cnt].att08,
                   g_rvv[g_cnt].att09,g_rvv[g_cnt].att10
            FROM imx_file WHERE imx000 = g_rvv[g_cnt].rvv31
- 
+
            LET g_rvv[g_cnt].att01_c = g_rvv[g_cnt].att01
            LET g_rvv[g_cnt].att02_c = g_rvv[g_cnt].att02
            LET g_rvv[g_cnt].att03_c = g_rvv[g_cnt].att03
@@ -9531,7 +9541,7 @@ DEFINE p_wc2           LIKE type_file.chr1000 #No.FUN-680136 VARCHAR(200)
            LET g_rvv[g_cnt].att08_c = g_rvv[g_cnt].att08
            LET g_rvv[g_cnt].att09_c = g_rvv[g_cnt].att09
            LET g_rvv[g_cnt].att10_c = g_rvv[g_cnt].att10
- 
+
          END IF
 #        END IF  #No.FUN-A50054 Add   #FUN-A60035 ---MARK
         LET g_cnt = g_cnt + 1
@@ -9541,10 +9551,10 @@ DEFINE p_wc2           LIKE type_file.chr1000 #No.FUN-680136 VARCHAR(200)
        END IF
     END FOREACH
     CALL g_rvv.deleteElement(g_cnt)
- 
+
     LET g_rec_b=g_cnt - 1
     DISPLAY g_rec_b TO FORMONLY.cn2
- 
+
     CALL t720_refresh_detail() #No.TQC-650108
     #FUN-B30170 add begin-------------------------
     LET g_sql = " SELECT rvbs02,rvbs021,ima02,ima021,rvbs022,rvbs04,rvbs03,rvbs05,rvbs06,rvbs07,rvbs08",
@@ -9572,9 +9582,9 @@ END FUNCTION
 
 
 FUNCTION t720_get_price()
- 
+
    IF g_rvu.rvu00 != '3' OR NOT cl_null(g_rvu.rvu02) THEN RETURN END IF
-   IF cl_null(g_rvv[l_ac].rvv31) OR cl_null(g_rvv[l_ac].rvv35) 
+   IF cl_null(g_rvv[l_ac].rvv31) OR cl_null(g_rvv[l_ac].rvv35)
       OR cl_null(g_rvv[l_ac].rvv87) OR cl_null(g_rvv[l_ac].rvv86) THEN
       RETURN
    END IF
@@ -9590,12 +9600,12 @@ END FUNCTION
 
 FUNCTION t720_check_rvv32()
 DEFINE l_ime12            LIKE ime_file.ime12
- 
+
    LET g_errno = ' '
    IF cl_null(g_rvv[l_ac].rvv32) OR cl_null(g_rvv[l_ac].rvv33) THEN
       RETURN
    END IF
- 
+
    SELECT ime12 INTO l_ime12 FROM ime_file WHERE ime01 = g_rvv[l_ac].rvv32
                                              AND ime02 = g_rvv[l_ac].rvv33
    IF SQLCA.SQLCODE THEN LET g_errno = SQLCA.SQLCODE END IF
@@ -9612,9 +9622,9 @@ END FUNCTION
 
 FUNCTION t720_set_rvv89()
 DEFINE l_pmh24       LIKE pmh_file.pmh24
-    
+
    IF NOT cl_null(g_rvu.rvu02) THEN RETURN END IF
- 
+
    SELECT pmh24 INTO l_pmh24 FROM pmh_file
         WHERE pmh01 = g_rvv[l_ac].rvv31 AND pmh02 = g_rvu.rvu04
           AND pmh13 = g_rvu.rvu113 AND pmh21 = ' '
@@ -9637,9 +9647,9 @@ DEFINE p_row       LIKE type_file.num5
 DEFINE l_rva115    LIKE rva_file.rva115
 DEFINE l_rva116    LIKE rva_file.rva116
 DEFINE l_rva00     LIKE rva_file.rva00
- 
+
     IF NOT cl_null(g_rvu.rvu02) THEN
-       SELECT rva00,rva115,rva116 INTO l_rva00,l_rva115,l_rva116 
+       SELECT rva00,rva115,rva116 INTO l_rva00,l_rva115,l_rva116
           FROM rva_file WHERE rva01 = g_rvu.rvu02
        IF l_rva00 = '2' THEN
           LET g_rvv[p_row].pmm21 = l_rva115
@@ -9654,33 +9664,33 @@ DEFINE l_rva00     LIKE rva_file.rva00
        IF g_rvu.rvu00 = '3' THEN
           SELECT rvu115,rvu12 INTO g_rvv[p_row].pmm21,g_rvv[p_row].pmm43
               FROM rvu_file WHERE rvu01 = g_rvu.rvu01
-       ELSE 
+       ELSE
           SELECT pmm21,pmm43
              INTO g_rvv[p_row].pmm21,g_rvv[p_row].pmm43
             FROM pmm_file
            WHERE pmm01 = g_rvv[p_row].rvv36
        END IF
     END IF
- 
+
 END FUNCTION
 FUNCTION t720_bp(p_ud)
    DEFINE   p_ud       LIKE type_file.chr1    #No.FUN-680136 VARCHAR(1)
- 
+
    IF p_ud <> "G" OR g_action_choice = "detail" THEN
       RETURN
    END IF
- 
+
    LET g_action_choice = " "
   #FUN-A60009 mark str ---
   #MARK原因:放段程式寫在此處會造成EF簽核時出現此ACTION
-  #IF (g_argv1 = '1' AND cl_null(g_argv3)) OR (g_argv1 = '1' AND g_argv3 = 'TAP')  THEN     #CHI-8B0047 
+  #IF (g_argv1 = '1' AND cl_null(g_argv3)) OR (g_argv1 = '1' AND g_argv3 = 'TAP')  THEN     #CHI-8B0047
   #    CALL cl_set_act_visible("carry_delivery",TRUE)
   #ELSE
   #    CALL cl_set_act_visible("carry_delivery",FALSE)
   #END IF
   #FUN-A60009 mark end ---
   #FUN-6C0050--end
-   
+
    CALL cl_set_act_visible("accept,cancel", FALSE)
 #FUN-B30170 add begin-------------------------
    DIALOG ATTRIBUTES(UNBUFFERED)
@@ -9689,18 +9699,18 @@ FUNCTION t720_bp(p_ud)
 #FUN-B90104---Add---End--
 
       DISPLAY ARRAY g_rvv TO s_rvv.* ATTRIBUTE(COUNT=g_rec_b)
- 
+
          BEFORE DISPLAY
             CALL cl_navigator_setting( g_curs_index, g_row_count )
- 
+
          BEFORE ROW
             LET l_ac = ARR_CURR()
             CALL cl_show_fld_cont()
-            
+
          AFTER DISPLAY
             CONTINUE DIALOG   #因為外層是DIALOG
       END DISPLAY
-      
+
       DISPLAY ARRAY g_rvbs TO s_rvbs.* ATTRIBUTE(COUNT=g_rec_b1)
          BEFORE DISPLAY
             CALL cl_navigator_setting( g_curs_index, g_row_count )
@@ -9712,7 +9722,7 @@ FUNCTION t720_bp(p_ud)
          AFTER DISPLAY
             CONTINUE DIALOG   #因為外層是DIALOG
       END DISPLAY
-      
+
       BEFORE DIALOG
          # 2004/05/24 分別判斷是否需顯現
          LET g_action_choice="recall"
@@ -9771,12 +9781,12 @@ FUNCTION t720_bp(p_ud)
         #FUN-BB0044 Add End -----
         #FUN-CB0014---add---str---
         CALL cl_set_act_visible("page_list",FALSE)
-        IF g_prog = 'apmt720' OR g_prog = 'apmt720_icd' OR g_prog = 'aict042' OR  #MOD-D30083 add acit042 
+        IF g_prog = 'apmt720' OR g_prog = 'apmt720_icd' OR g_prog = 'aict042' OR  #MOD-D30083 add acit042
            g_prog = 'apmt721' OR g_prog = 'apmt721_icd' OR g_prog = 'aict043' OR  #MOD-D30083 add acit043
            g_prog = 'apmt722' OR g_prog = 'apmt722_icd' OR g_prog = 'aict044' OR  #MOD-D30083 add acit044
            g_prog = 'apmt740' OR g_prog = 'apmt740_icd' OR
            g_prog = 'apmt741' OR g_prog = 'apmt741_icd' OR
-           g_prog = 'apmt742' OR g_prog = 'apmt742_icd' THEN  
+           g_prog = 'apmt742' OR g_prog = 'apmt742_icd' THEN
            CALL cl_set_act_visible("page_list",TRUE)
         END IF
         #FUN-CB0014---add---end---
@@ -9784,9 +9794,9 @@ FUNCTION t720_bp(p_ud)
 
      #FUN-CB0014---add---str---
       ON ACTION page_list
-         LET g_action_flag = "page_list"  
+         LET g_action_flag = "page_list"
          EXIT DIALOG
-     #FUN-CB0014---add---end--- 
+     #FUN-CB0014---add---end---
       ON ACTION insert
          LET g_action_choice="insert"
          EXIT DIALOG
@@ -9806,7 +9816,7 @@ FUNCTION t720_bp(p_ud)
             CALL fgl_set_arr_curr(1)
          END IF
            ACCEPT DIALOG                   #No.FUN-530067 HCN TEST
- 
+
       ON ACTION previous
          CALL t720_fetch('P')
          CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
@@ -9814,7 +9824,7 @@ FUNCTION t720_bp(p_ud)
             CALL fgl_set_arr_curr(1)
          END IF
   ACCEPT DIALOG                   #No.FUN-530067 HCN TEST
- 
+
       ON ACTION jump
          CALL t720_fetch('/')
          CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
@@ -9822,8 +9832,8 @@ FUNCTION t720_bp(p_ud)
             CALL fgl_set_arr_curr(1)
          END IF
   ACCEPT DIALOG                   #No.FUN-530067 HCN TEST
- 
- 
+
+
       ON ACTION next
          CALL t720_fetch('N')
          CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
@@ -9831,8 +9841,8 @@ FUNCTION t720_bp(p_ud)
             CALL fgl_set_arr_curr(1)
          END IF
   ACCEPT DIALOG                   #No.FUN-530067 HCN TEST
- 
- 
+
+
       ON ACTION last
          CALL t720_fetch('L')
          CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
@@ -9840,7 +9850,7 @@ FUNCTION t720_bp(p_ud)
             CALL fgl_set_arr_curr(1)  ######add in 040505
          END IF
   ACCEPT DIALOG                   #No.FUN-530067 HCN TEST
- 
+
       ON ACTION detail
          LET g_action_choice="detail"
          LET l_ac = 1
@@ -9851,7 +9861,7 @@ FUNCTION t720_bp(p_ud)
       ON ACTION help
          LET g_action_choice="help"
          EXIT DIALOG
- 
+
       ON ACTION locale
          CALL cl_dynamic_locale()
          CALL cl_show_fld_cont()                   #No.FUN-550037 hmf
@@ -9870,15 +9880,15 @@ FUNCTION t720_bp(p_ud)
          CALL t720_def_form()     #FUN-610067
          LET g_action_choice="locale"       #No.TQC-790064
          EXIT DIALOG
- 
+
       ON ACTION exit
          LET g_action_choice="exit"
          EXIT DIALOG
- 
+
       ON ACTION controlg
          LET g_action_choice="controlg"
          EXIT DIALOG
-          
+
 #FUN-A60035 ---MARK BEGIN
 #   #No.FUN-A50054 -BEGIN-----
 #     ON ACTION style_detail
@@ -9899,12 +9909,13 @@ FUNCTION t720_bp(p_ud)
       ON ACTION recall
          LET g_action_choice="recall"
          EXIT DIALOG
+     on action action_stock_post let g_action_choice = 'action_stock_post' #darcy add
     #@ON ACTION 作廢
       ON ACTION void
          LET g_action_choice="void"
          EXIT DIALOG
     #FUN-D20025--add--str--
-    #@ON ACTION 取消作廢 
+    #@ON ACTION 取消作廢
       ON ACTION undo_void
          LET g_action_choice="undo_void"
          EXIT DIALOG
@@ -9929,7 +9940,7 @@ FUNCTION t720_bp(p_ud)
       ON ACTION price_change
          LET g_action_choice="price_change"
          EXIT DIALOG
- 
+
     #FUN-A60009 add str ---
     #@ON ACTION 簽核狀況
       ON ACTION approval_status
@@ -9943,7 +9954,7 @@ FUNCTION t720_bp(p_ud)
     #FUN-A60009 add end --
     #FUN-BC0104---add---str
       #QC 結果判定產生入庫單
-      ON ACTION qc_determine_storage 
+      ON ACTION qc_determine_storage
          LET g_action_choice = "qc_determine_storage"
          EXIT DIALOG
     #FUN-BC0104---add---end
@@ -9954,24 +9965,24 @@ FUNCTION t720_bp(p_ud)
       #   EXIT DIALOG
       #end----add by guanyao160517
 
- 
+
       ON ACTION accept
          LET g_action_choice="detail"
          LET l_ac = ARR_CURR()
          EXIT DIALOG
- 
+
       ON ACTION cancel
          LET INT_FLAG=FALSE     #MOD-570244 mars
          LET g_action_choice="exit"
          EXIT DIALOG
- 
+
       ON IDLE g_idle_seconds
          CALL cl_on_idle()
          CONTINUE DIALOG
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION exporttoexcel       #FUN-4B0025
          LET g_action_choice = 'exporttoexcel'
          EXIT DIALOG
@@ -10001,23 +10012,23 @@ FUNCTION t720_bp(p_ud)
          LET g_action_choice = 'phrase'
          EXIT DIALOG
      #FUN-A60009 add end ---
- 
+
       ON ACTION controls                           #No.FUN-6B0032
          CALL cl_set_head_visible("","AUTO")       #No.FUN-6B0032
 
- 
+
       ON ACTION related_document                #No.FUN-6A0162  相關文件
          LET g_action_choice="related_document"
          EXIT DIALOG
- 
+
       ON ACTION carry_delivery                #No.FUN-6C0050 轉出貨單
          LET g_action_choice="carry_delivery"
          EXIT DIALOG
- 
+
       ON ACTION gpm_show
          LET g_action_choice="gpm_show"
          EXIT DIALOG
- 
+
       ON ACTION gpm_query
          LET g_action_choice="gpm_query"
          EXIT DIALOG
@@ -10027,64 +10038,64 @@ FUNCTION t720_bp(p_ud)
       ON ACTION gen_transfer_note
          LET g_action_choice="gen_transfer_note"
          EXIT DIALOG
- 
-#@    ON ACTION 領料產生                                                                                                            
-      ON ACTION gen_mat_wtdw                                                                                                        
-         LET g_action_choice="gen_mat_wtdw"                                                                                         
-         EXIT DIALOG                                                                                                               
-#@    ON ACTION 領料維護                                                                                                            
-      ON ACTION maint_mat_wtdw                                                                                                      
-         LET g_action_choice="maint_mat_wtdw"                                                                                       
-         EXIT DIALOG                                                                                                               
+
+#@    ON ACTION 領料產生
+      ON ACTION gen_mat_wtdw
+         LET g_action_choice="gen_mat_wtdw"
+         EXIT DIALOG
+#@    ON ACTION 領料維護
+      ON ACTION maint_mat_wtdw
+         LET g_action_choice="maint_mat_wtdw"
+         EXIT DIALOG
       #tianry add 161128
       ON ACTION mod_try
          LET g_action_choice="mod_try"
-         EXIT DIALOG 
+         EXIT DIALOG
 
-      #tianry add end 
+      #tianry add end
       #No.FUN-A80026  --Begin
 #@    ON ACTION 产生应付帐款
       ON ACTION gen_ap
          LET g_action_choice="gen_ap"
-         EXIT DIALOG                                                                                                               
-      #No.FUN-A80026  --End  
+         EXIT DIALOG
+      #No.FUN-A80026  --End
 
       #DEV-D30045--add--begin
       ON ACTION barcode_gen
          LET g_action_choice="barcode_gen"
-         EXIT DIALOG                                                                                                               
+         EXIT DIALOG
 
       ON ACTION barcode_query
          LET g_action_choice="barcode_query"
-         EXIT DIALOG                                                                                                               
+         EXIT DIALOG
 
       ON ACTION barcode_output
          LET g_action_choice="barcode_output"
-         EXIT DIALOG                                                                                                               
+         EXIT DIALOG
       #DEV-D30045--add--end
 
      #No.18010101--begin--
       ON ACTION transf2scm
          LET g_action_choice="transf2scm"
-         EXIT DIALOG 
+         EXIT DIALOG
      #No.18010101---end---
- 
+
       &include "qry_string.4gl"
    END DIALOG
 #FUN-B30170 add -end--------------------------
 #FUN-B30170 mark -begin-----------------------------
 #   DISPLAY ARRAY g_rvv TO s_rvv.* ATTRIBUTE(COUNT=g_rec_b,UNBUFFERED)
-# 
+#
 #      BEFORE DISPLAY
 #         CALL cl_navigator_setting( g_curs_index, g_row_count )
 ##FUN-A60035 ---MARK BEGIN
 ##       #No.FUN-A50054 -BEGIN-----
-##        IF NOT s_industry('slk') THEN 
+##        IF NOT s_industry('slk') THEN
 ##           CALL cl_set_act_visible("style_detail",FALSE)
 ##        END IF
 ##       #No.FUN-A50054 -END-------
 ##FUN-A60035 ---MARK END
-# 
+#
 #         # 2004/05/24 分別判斷是否需顯現
 #         LET g_action_choice="recall"
 #         CALL cl_chk_act_auth_nomsg()   #No.TQC-630284 add
@@ -10113,11 +10124,11 @@ FUNCTION t720_bp(p_ud)
 #         IF g_argv1='2' THEN
 #            CALL  cl_set_act_visible("allowance,",FALSE)
 #         END IF
-# 
+#
 #      BEFORE ROW
 #         LET l_ac = ARR_CURR()
 #      CALL cl_show_fld_cont()                   #No.FUN-550037 hmf
-# 
+#
 #      ON ACTION insert
 #         LET g_action_choice="insert"
 #         EXIT DISPLAY
@@ -10137,7 +10148,7 @@ FUNCTION t720_bp(p_ud)
 #            CALL fgl_set_arr_curr(1)
 #         END IF
 #           ACCEPT DISPLAY                   #No.FUN-530067 HCN TEST
-# 
+#
 #      ON ACTION previous
 #         CALL t720_fetch('P')
 #         CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
@@ -10145,7 +10156,7 @@ FUNCTION t720_bp(p_ud)
 #            CALL fgl_set_arr_curr(1)
 #         END IF
 #  ACCEPT DISPLAY                   #No.FUN-530067 HCN TEST
-# 
+#
 #      ON ACTION jump
 #         CALL t720_fetch('/')
 #         CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
@@ -10153,8 +10164,8 @@ FUNCTION t720_bp(p_ud)
 #            CALL fgl_set_arr_curr(1)
 #         END IF
 #  ACCEPT DISPLAY                   #No.FUN-530067 HCN TEST
-# 
-# 
+#
+#
 #      ON ACTION next
 #         CALL t720_fetch('N')
 #         CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
@@ -10162,8 +10173,8 @@ FUNCTION t720_bp(p_ud)
 #            CALL fgl_set_arr_curr(1)
 #         END IF
 #  ACCEPT DISPLAY                   #No.FUN-530067 HCN TEST
-# 
-# 
+#
+#
 #      ON ACTION last
 #         CALL t720_fetch('L')
 #         CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
@@ -10171,7 +10182,7 @@ FUNCTION t720_bp(p_ud)
 #            CALL fgl_set_arr_curr(1)  ######add in 040505
 #         END IF
 #  ACCEPT DISPLAY                   #No.FUN-530067 HCN TEST
-# 
+#
 #      ON ACTION detail
 #         LET g_action_choice="detail"
 #         LET l_ac = 1
@@ -10182,7 +10193,7 @@ FUNCTION t720_bp(p_ud)
 #      ON ACTION help
 #         LET g_action_choice="help"
 #         EXIT DISPLAY
-# 
+#
 #      ON ACTION locale
 #         CALL cl_dynamic_locale()
 #         CALL cl_show_fld_cont()                   #No.FUN-550037 hmf
@@ -10198,15 +10209,15 @@ FUNCTION t720_bp(p_ud)
 #         CALL t720_def_form()     #FUN-610067
 #         LET g_action_choice="locale"       #No.TQC-790064
 #         EXIT DISPLAY
-# 
+#
 #      ON ACTION exit
 #         LET g_action_choice="exit"
 #         EXIT DISPLAY
-# 
+#
 #      ON ACTION controlg
 #         LET g_action_choice="controlg"
 #         EXIT DISPLAY
-#          
+#
 ##FUN-A60035 ---MARK BEGIN
 ##   #No.FUN-A50054 -BEGIN-----
 ##     ON ACTION style_detail
@@ -10251,7 +10262,7 @@ FUNCTION t720_bp(p_ud)
 #      ON ACTION price_change
 #         LET g_action_choice="price_change"
 #         EXIT DISPLAY
-# 
+#
 #    #FUN-A60009 add str ---
 #    #@ON ACTION 簽核狀況
 #      ON ACTION approval_status
@@ -10265,39 +10276,39 @@ FUNCTION t720_bp(p_ud)
 #    #FUN-A60009 add end --
 #
 #&ifdef ICD
-##@  ON ACTION 回貨查詢作業                                                    
+##@  ON ACTION 回貨查詢作業
 #    ON ACTION aic_qry_back
 #       LET g_action_choice = "aic_qry_back"
 #       EXIT DISPLAY
-# 
+#
 ##@  ON ACTION 單據刻號BIN查詢作業
 #    ON ACTION aic_s_icdqry
 #       LET g_action_choice = "aic_s_icdqry"
 #       EXIT DISPLAY
-# 
+#
 ##@  ON ACTION 刻號BIN維護作業
 #    ON ACTION aic_s_icdin
 #       LET g_action_choice = "aic_s_icdin"
 #       EXIT DISPLAY
 #&endif
-# 
+#
 #      ON ACTION accept
 #         LET g_action_choice="detail"
 #         LET l_ac = ARR_CURR()
 #         EXIT DISPLAY
-# 
+#
 #      ON ACTION cancel
 #         LET INT_FLAG=FALSE     #MOD-570244 mars
 #         LET g_action_choice="exit"
 #         EXIT DISPLAY
-# 
+#
 #      ON IDLE g_idle_seconds
 #         CALL cl_on_idle()
 #         CONTINUE DISPLAY
-# 
+#
 #      ON ACTION about         #MOD-4C0121
 #         CALL cl_about()      #MOD-4C0121
-# 
+#
 #      ON ACTION exporttoexcel       #FUN-4B0025
 #         LET g_action_choice = 'exporttoexcel'
 #         EXIT DISPLAY
@@ -10327,25 +10338,25 @@ FUNCTION t720_bp(p_ud)
 #         LET g_action_choice = 'phrase'
 #         EXIT DISPLAY
 #     #FUN-A60009 add end ---
-# 
+#
 #      AFTER DISPLAY
 #         CONTINUE DISPLAY
-# 
+#
 #      ON ACTION controls                           #No.FUN-6B0032
 #         CALL cl_set_head_visible("","AUTO")       #No.FUN-6B0032
-# 
+#
 #      ON ACTION related_document                #No.FUN-6A0162  相關文件
 #         LET g_action_choice="related_document"
 #         EXIT DISPLAY
-# 
+#
 #      ON ACTION carry_delivery                #No.FUN-6C0050 轉出貨單
 #         LET g_action_choice="carry_delivery"
 #         EXIT DISPLAY
-# 
+#
 #      ON ACTION gpm_show
 #         LET g_action_choice="gpm_show"
 #         EXIT DISPLAY
-# 
+#
 #      ON ACTION gpm_query
 #         LET g_action_choice="gpm_query"
 #         EXIT DISPLAY
@@ -10355,25 +10366,25 @@ FUNCTION t720_bp(p_ud)
 #      ON ACTION gen_transfer_note
 #         LET g_action_choice="gen_transfer_note"
 #         EXIT DISPLAY
-# 
-##@    ON ACTION 領料產生                                                                                                            
-#      ON ACTION gen_mat_wtdw                                                                                                        
-#         LET g_action_choice="gen_mat_wtdw"                                                                                         
-#         EXIT DISPLAY                                                                                                               
-##@    ON ACTION 領料維護                                                                                                            
-#      ON ACTION maint_mat_wtdw                                                                                                      
-#         LET g_action_choice="maint_mat_wtdw"                                                                                       
-#         EXIT DISPLAY                                                                                                               
+#
+##@    ON ACTION 領料產生
+#      ON ACTION gen_mat_wtdw
+#         LET g_action_choice="gen_mat_wtdw"
+#         EXIT DISPLAY
+##@    ON ACTION 領料維護
+#      ON ACTION maint_mat_wtdw
+#         LET g_action_choice="maint_mat_wtdw"
+#         EXIT DISPLAY
 #
 #      #No.FUN-A80026  --Begin
 ##@    ON ACTION 产生应付帐款
 #      ON ACTION gen_ap
 #         LET g_action_choice="gen_ap"
-#         EXIT DISPLAY                                                                                                               
-#      #No.FUN-A80026  --End  
-# 
+#         EXIT DISPLAY
+#      #No.FUN-A80026  --End
+#
 #      &include "qry_string.4gl"
-# 
+#
 #   END DISPLAY
 #FUN-B30170 mark --end------------------------------
    CALL cl_set_act_visible("accept,cancel", TRUE)
@@ -10381,10 +10392,10 @@ END FUNCTION
 FUNCTION t720_rvu111()
 DEFINE l_pmaacti          LIKE pma_file.pmaacti
 DEFINE l_pma02            LIKE pma_file.pma02
- 
+
    LET g_errno = ' '
    SELECT pma02,pmaacti INTO l_pma02,l_pmaacti FROM pma_file WHERE pma01 = g_rvu.rvu111
-   
+
    CASE
       WHEN SQLCA.SQLCODE = 100 LET g_errno = 100
       WHEN l_pmaacti = 'N'     LET g_errno = 9028
@@ -10394,10 +10405,10 @@ DEFINE l_pma02            LIKE pma_file.pma02
 END FUNCTION
 FUNCTION t720_rvu112()
 DEFINE l_pnz02            LIKE pnz_file.pnz02
- 
+
    LET g_errno = ' '
    SELECT pnz02 INTO l_pnz02 FROM pnz_file WHERE pnz01 = g_rvu.rvu112
-   
+
    CASE
       WHEN SQLCA.SQLCODE = 100 LET g_errno = 100
       OTHERWISE                LET g_errno = SQLCA.SQLCODE USING '-------'
@@ -10406,15 +10417,15 @@ DEFINE l_pnz02            LIKE pnz_file.pnz02
 END FUNCTION
 FUNCTION t720_rvu113()
 DEFINE l_aziacti          LIKE azi_file.aziacti
- 
+
    LET g_errno = ' '
    SELECT aziacti INTO l_aziacti FROM azi_file WHERE azi01 = g_rvu.rvu113
-   
+
    CASE
       WHEN SQLCA.SQLCODE = 100 LET g_errno = 100
       WHEN l_aziacti = 'N'     LET g_errno = 9028
       OTHERWISE                LET g_errno = SQLCA.SQLCODE USING '-------'
-                               
+
    END CASE
    IF cl_null(g_errno) THEN
       IF g_rvu.rvu113 = g_aza.aza17 THEN
@@ -10428,27 +10439,27 @@ DEFINE l_aziacti          LIKE azi_file.aziacti
 END FUNCTION
 FUNCTION t720_rvu115()
 DEFINE l_gecacti          LIKE gec_file.gecacti
-DEFINE l_gec07            LIKE gec_file.gec07        #MOD-AC0414 
+DEFINE l_gec07            LIKE gec_file.gec07        #MOD-AC0414
    LET g_errno = ' '
 #   SELECT gec04,gecacti INTO g_rvu.rvu12,l_gecacti FROM gec_file                #MOD-AC0414
    SELECT gec04,gec07,gecacti INTO g_rvu.rvu12,l_gec07,l_gecacti FROM gec_file   #MOD-AC0414
        WHERE gec01 = g_rvu.rvu115 AND gec011 = '1'
-   
+
    CASE
       WHEN SQLCA.SQLCODE = 100 LET g_errno = 100
       WHEN l_gecacti = 'N'     LET g_errno = 9028
       OTHERWISE                LET g_errno = SQLCA.SQLCODE USING '-------'
-                               DISPLAY BY NAME g_rvu.rvu12    
-                               DISPLAY l_gec07 TO gec07     #MOD-AC0414            
+                               DISPLAY BY NAME g_rvu.rvu12
+                               DISPLAY l_gec07 TO gec07     #MOD-AC0414
    END CASE
 END FUNCTION
 FUNCTION t720_rvu02()      #驗收單號
    DEFINE l_pmc03   LIKE pmc_file.pmc03     #簡稱
    DEFINE l_rvb04   LIKE rvb_file.rvb04
    define l_sfb04   like sfb_file.sfb04 #darcy:2022/12/08 add
- 
+
    LET g_errno = ' '
- 
+
    #供應廠商,採購性質,廠商簡稱
    SELECT rva05,rva10,pmc03,rva06
      INTO g_rvu.rvu04,g_rvu.rvu08,g_rvu.rvu05,g_rva06
@@ -10461,7 +10472,7 @@ FUNCTION t720_rvu02()      #驗收單號
       AND pmc_file.pmc01 = rva_file.rva05
       AND rva_file.rvaconf = 'Y'
 #TQC-A60132 --End
- 
+
    IF SQLCA.sqlcode THEN
       LET g_errno = 'apm-142'               #TQC-B10197 'mfg3070'->'apm-142'
       RETURN
@@ -10476,7 +10487,7 @@ FUNCTION t720_rvu02()      #驗收單號
          RETURN
       END IF
    END IF
- 
+
    IF g_argv3 != 'TAP' THEN  #no.4061 02/02/01
       IF g_argv1 != '3' THEN #MOD-D20003 add
          IF g_rvu.rvu08 = 'TAP' OR g_rvu.rvu08 = 'TRI' THEN  #MOD-880191 add TRI
@@ -10491,7 +10502,7 @@ FUNCTION t720_rvu02()      #驗收單號
       END IF #MOD-D20003 add
    END IF
 
-  #FUN-BA0013 mark str -----  
+  #FUN-BA0013 mark str -----
   #IF g_rvu.rvu00 = "3" AND g_rvu.rvu08 = "SUB" THEN
   #   LET g_errno="apm-032"
   #END IF
@@ -10533,24 +10544,24 @@ FUNCTION t720_rvu02()      #驗收單號
       END IF
    END IF
    #MOD-BB0126 add end-------
- 
+
    IF NOT cl_null(g_errno) THEN
       RETURN
    END IF
- 
+
    IF g_argv3 = 'TAP' THEN   #no.4061
       CALL t720_chk_poz()
    END IF
- 
+
    IF cl_null(g_errno) THEN
       DISPLAY BY NAME g_rvu.rvu04
       DISPLAY BY NAME g_rvu.rvu08
       DISPLAY BY NAME g_rvu.rvu05
       CALL s_prtype(g_rvu.rvu08) RETURNING l_str
    END IF
- 
+
 END FUNCTION
- 
+
 
 FUNCTION t720_rvv05(p_cmd)     # 驗收單項次
   DEFINE l_pmn041 LIKE pmn_file.pmn041       #品名規格
@@ -10608,21 +10619,21 @@ FUNCTION t720_rvv05(p_cmd)     # 驗收單項次
   DEFINE l_ima154      LIKE ima_file.ima154
   DEFINE l_rcj03       LIKE rcj_file.rcj03
   DEFINE l_rtz08       LIKE rtz_file.rtz08
-  #FUN-C20002--end add---------------------------------------------  
+  #FUN-C20002--end add---------------------------------------------
 
   DEFINE l_rva113        LIKE rva_file.rva113   ##No.FUN-940083
   DEFINE l_rvv17_tol     LIKE rvv_file.rvv17    #FUN-D20022 add
   DEFINE l_rva10_1       LIKE rva_file.rva10
   DEFINE l_gec05         LIKE gec_file.gec05    #MOD-DB0068 add
   DEFINE l_gec07         LIKE gec_file.gec07    #MOD-DB0068 add
-  DEFINE l_rvw06f        LIKE rvw_file.rvw06f   #MOD-DB0068 add 
+  DEFINE l_rvw06f        LIKE rvw_file.rvw06f   #MOD-DB0068 add
   DEFINE l_qcl05         LIKE qcl_file.qcl05    #darcy 2022年1月17日 add
- 
+
   LET g_errno = " "
   SELECT rva00 INTO g_rva00 FROM rva_file WHERE rva01 = g_rvu.rvu02  #No.FUN-940083
   IF g_rvu.rvu02 != g_rvu_t.rvu02 OR g_rvv[l_ac].rvv05 != g_rvv_t.rvv05 OR
      cl_null(g_rvv_t.rvv05) THEN
- 
+
        CASE
         WHEN g_rvu.rvu00='1' OR g_rvu.rvu00='3' #入庫
           SELECT rvb03,rvb04,rvb05,rvb919,rvb31,rvb34,rvb35,rvb89,rvb30,rvb10,rvb33,  #FUN-9A0068 add rvb89  #FUN-A80150 add rvb919
@@ -10630,7 +10641,7 @@ FUNCTION t720_rvv05(p_cmd)     # 驗收單項次
                  rvb36,rvb37,rvb38, #BugNo:5611
                  rvb39,rvb40,       #no.7143
                  rvb25,             #no.A050
-                 rvb80,rvb81,rvb82,rvb83,rvb84,rvb85,rvb86,rvb87,rvb10t,       
+                 rvb80,rvb81,rvb82,rvb83,rvb84,rvb85,rvb86,rvb87,rvb10t,
                  rvb930  #FUN-670051
                  ,rvbud04,rvbud13   #add by guanyao160621
             INTO g_rvv[l_ac].rvv37,g_rvv[l_ac].rvv36,
@@ -10641,30 +10652,30 @@ FUNCTION t720_rvv05(p_cmd)     # 驗收單項次
                  l_rvb39,l_rvb40,   #no.7143
                  g_rvv[l_ac].rvv41, #no.A050
                  l_rvv80,l_rvv81,l_rvv82,l_rvv83,l_rvv84,l_rvv85,
-                 l_rvv86,l_rvv87,b_rvv.rvv38t,                               
+                 l_rvv86,l_rvv87,b_rvv.rvv38t,
                  g_rvv[l_ac].rvv930  #FUN-670051
                  ,g_rvv[l_ac].rvvud02,g_rvv[l_ac].rvvud13  #add by guanyao160621
             FROM rvb_file
            WHERE rvb01=g_rvu.rvu02 AND rvb02=g_rvv[l_ac].rvv05 #驗收單號,項次
           IF SQLCA.sqlcode THEN LET g_errno='mfg3070' RETURN END IF
-          IF cl_null(g_inqty) THEN LET g_inqty=0 END IF           #TQC-C20117 add      
-          IF g_inqty <= 0 AND g_rvu.rvu00='1' THEN                                 
+          IF cl_null(g_inqty) THEN LET g_inqty=0 END IF           #TQC-C20117 add
+          IF g_inqty <= 0 AND g_rvu.rvu00='1' THEN
              LET g_errno='mfg3173' RETURN
           END IF
           IF l_rvb30 <= 0 AND g_rvu.rvu00='3' THEN
              LET g_errno='apm-260' RETURN
           END IF
-          
+
           CALL t720_get_pmm43(l_ac)
           IF cl_null(g_rvv[l_ac].pmm43) THEN
-             SELECT gec01,gec04 
-               INTO g_rvv[l_ac].pmm21,g_rvv[l_ac].pmm43 
-               FROM gec_file,pmc_file 
+             SELECT gec01,gec04
+               INTO g_rvv[l_ac].pmm21,g_rvv[l_ac].pmm43
+               FROM gec_file,pmc_file
               WHERE gec01 = pmc47
-                AND pmc01 = g_rvu.rvu04 
+                AND pmc01 = g_rvu.rvu04
                 AND gec011='1'  #進項
           END IF
-          
+
        #FUN-B40083 --begin
           IF NOT cl_null(g_rvv[l_ac].rvv36) AND NOT cl_null(g_rvv[l_ac].rvv37) THEN
              SELECT pmn123 INTO g_rvv[l_ac].pmn123 FROM pmn_file
@@ -10679,7 +10690,7 @@ FUNCTION t720_rvv05(p_cmd)     # 驗收單項次
              END IF
           END IF
        #FUN-B40083 --end
-          
+
           IF g_rvu.rvu00='1' THEN
              IF g_sma.sma886[6]='Y' AND l_rvb39='Y' AND l_rvb40 IS NULL THEN
                 LET g_errno='apm-264'
@@ -10701,26 +10712,26 @@ FUNCTION t720_rvv05(p_cmd)     # 驗收單項次
                 LET g_rvv[l_ac].rvv17 =  l_rvb33 - l_rvv17_tol
              END IF
              #FUN-D20022 -- add end --
-             SELECT SUM(rvv82),SUM(rvv85) 
-                   INTO l_rvv82_1,l_rvv85_1 
-                   FROM rvu_file,rvv_file 
-                  WHERE rvu01=rvv01 
+             SELECT SUM(rvv82),SUM(rvv85)
+                   INTO l_rvv82_1,l_rvv85_1
+                   FROM rvu_file,rvv_file
+                  WHERE rvu01=rvv01
                     AND rvuconf<>'X'
                     AND rvuacti='Y'
                     AND rvv04=g_rvu.rvu02
                     AND rvv05=g_rvv[l_ac].rvv05
                     #AND rvv82 IS NOT NULL   #MOD-AB0254
                     #AND rvv85 IS NOT NULL   #MOD-AB0254
-             
+
              IF cl_null(l_rvv82_1) THEN
                 LET l_rvv82_1=0
              END IF
              IF cl_null(l_rvv85_1) THEN
                 LET l_rvv85_1=0
              END IF
- 
-            LET l_rvv82=l_rvb331-l_rvv82_1 
-            LET l_rvv85=l_rvb332-l_rvv85_1 
+
+            LET l_rvv82=l_rvb331-l_rvv82_1
+            LET l_rvv85=l_rvb332-l_rvv85_1
           ELSE
              SELECT SUM(rvv17) INTO l_rvv17_3 FROM rvv_file,rvu_file #MOD-680094 add ruv_file
                WHERE rvv04=g_rvu.rvu02 AND rvv05=g_rvv[l_ac].rvv05
@@ -10736,12 +10747,12 @@ FUNCTION t720_rvv05(p_cmd)     # 驗收單項次
                  AND rvv01=rvu01                 #MOD-680094 add
                  AND rvuconf != 'X'              #MOD-680094 add
              IF cl_null(l_rvv17_3_other) THEN LET l_rvv17_3_other=0 END IF
-             IF g_rvu.rvu116 = '3' THEN 
-                LET g_rvv[l_ac].rvv17 = 0 
+             IF g_rvu.rvu116 = '3' THEN
+                LET g_rvv[l_ac].rvv17 = 0
                #MOD-D30109 add start -----
-                LET g_rvv[l_ac].rvv82 = 0 
-                LET g_rvv[l_ac].rvv85 = 0 
-                LET g_rvv[l_ac].rvv87 = 0 
+                LET g_rvv[l_ac].rvv82 = 0
+                LET g_rvv[l_ac].rvv85 = 0
+                LET g_rvv[l_ac].rvv87 = 0
                #MOD-D30109 add end   -----
                 CALL cl_set_comp_entry("rvv17",FALSE)
              #FUN-D60130 -----Begin------
@@ -10750,9 +10761,9 @@ FUNCTION t720_rvv05(p_cmd)     # 驗收單項次
                    LET g_rvv[l_ac].rvv17 = l_rvb30 - l_rvv17_3 - l_rvv17_3_other
                 END IF
              #FUN-D60130 -----End--------
-             ELSE       
+             ELSE
                 LET g_rvv[l_ac].rvv17 = l_rvb30-l_rvv17_3-l_rvv17_3_other
-            END IF 
+            END IF
           END IF
 
         WHEN g_rvu.rvu00='2'     #驗退
@@ -10771,7 +10782,7 @@ FUNCTION t720_rvv05(p_cmd)     # 驗收單項次
                 ,g_rvv[l_ac].rvvud02,g_rvv[l_ac].rvvud13  #add by guanyao160621
           FROM rvb_file
          WHERE rvb01=g_rvu.rvu02 AND rvb02=g_rvv[l_ac].rvv05
-         
+
          IF SQLCA.sqlcode THEN LET g_errno='mfg3070' RETURN END IF
 
          IF g_sma.sma886[6]='Y' AND l_rvb39='Y' AND l_rvb40 IS NULL THEN    #TQC-980195   #MOD-A90083 取消mark
@@ -10780,14 +10791,14 @@ FUNCTION t720_rvv05(p_cmd)     # 驗收單項次
             LET g_errno='apm-264'
             RETURN     #No.TQC-7C0020
          END IF
-         
+
           CALL t720_get_pmm43(l_ac)
          IF cl_null(g_rvv[l_ac].pmm43) THEN
-            SELECT gec01,gec04 
-              INTO g_rvv[l_ac].pmm21,g_rvv[l_ac].pmm43 
-              FROM gec_file,pmc_file 
+            SELECT gec01,gec04
+              INTO g_rvv[l_ac].pmm21,g_rvv[l_ac].pmm43
+              FROM gec_file,pmc_file
              WHERE gec01 = pmc47
-               AND pmc01 = g_rvu.rvu04 
+               AND pmc01 = g_rvu.rvu04
                AND gec011='1'  #進項
          END IF
         #FUN-B40083 --begin
@@ -10804,7 +10815,7 @@ FUNCTION t720_rvv05(p_cmd)     # 驗收單項次
             END IF
          END IF
        #FUN-B40083 --end
-         SELECT SUM(rvv17),SUM(rvv82),SUM(rvv85) 
+         SELECT SUM(rvv17),SUM(rvv82),SUM(rvv85)
           #INTO l_rvv17_2,l_rvv82_2,l_rvv85_2 FROM rvv_file          #MOD-C40018 mark
            INTO l_rvv17_2,l_rvv82_2,l_rvv85_2 FROM rvv_file,rvu_file #MOD-C40018
             WHERE rvv04=g_rvu.rvu02 AND rvv05=g_rvv[l_ac].rvv05
@@ -10813,19 +10824,19 @@ FUNCTION t720_rvv05(p_cmd)     # 驗收單項次
              AND rvv03='2'
              AND rvv01!=g_rvu.rvu01
          IF cl_null(l_rvv17_2) THEN LET l_rvv17_2=0 END IF
-         SELECT SUM(rvv82),SUM(rvv85) 
+         SELECT SUM(rvv82),SUM(rvv85)
           #INTO l_okqty_rvv82,l_okqty_rvv85 FROM rvv_file          #MOD-C40018 mark
            INTO l_okqty_rvv82,l_okqty_rvv85 FROM rvv_file,rvu_file #MOD-C40018
             WHERE rvv04=g_rvu.rvu02 AND rvv05=g_rvv[l_ac].rvv05
              AND rvu01 = rvv01   #MOD-C40018 add
              AND rvuconf <> 'X'  #MOD-C40018 add
              AND rvv03='1'
- 
+
          IF cl_null(l_okqty_rvv82) THEN LET l_okqty_rvv82=0 END IF
          IF cl_null(l_okqty_rvv85) THEN LET l_okqty_rvv85=0 END IF
          IF cl_null(l_rvv82_2) THEN LET l_rvv82_2=0 END IF
          IF cl_null(l_rvv85_2) THEN LET l_rvv85_2=0 END IF
-         SELECT SUM(rvv17),SUM(rvv82),SUM(rvv85) 
+         SELECT SUM(rvv17),SUM(rvv82),SUM(rvv85)
           #INTO l_rvv17_2_other,l_rvv82_2_other,l_rvv85_2_other FROM rvv_file          #MOD-C40018 mark
            INTO l_rvv17_2_other,l_rvv82_2_other,l_rvv85_2_other FROM rvv_file,rvu_file #MOD-C40018
             WHERE rvv04=g_rvu.rvu02 AND rvv05=g_rvv[l_ac].rvv05
@@ -10837,7 +10848,7 @@ FUNCTION t720_rvv05(p_cmd)     # 驗收單項次
          IF cl_null(l_rvv17_2_other) THEN LET l_rvv17_2_other=0 END IF
          IF cl_null(l_rvv82_2_other) THEN LET l_rvv82_2_other=0 END IF
          IF cl_null(l_rvv85_2_other) THEN LET l_rvv85_2_other=0 END IF
- 
+
          SELECT rvb33 INTO l_okqty FROM rvb_file,rva_file
             WHERE rvb01=g_rvu.rvu02 AND rvb02=g_rvv[l_ac].rvv05
                   AND rvb01=rva01
@@ -10853,16 +10864,16 @@ FUNCTION t720_rvv05(p_cmd)     # 驗收單項次
               AND rvuconf != 'X'
          IF cl_null(l_rvv17_in) THEN LET l_rvv17_in = 0 END IF
 #MOD-B90019 -- end --
- 
+
         IF l_rvb39='Y' THEN
            SELECT SUM(qcs091),SUM(qcs22),SUM(qcs32),
-                  SUM(qcs35),SUM(qcs38),SUM(qcs41) 
+                  SUM(qcs35),SUM(qcs38),SUM(qcs41)
              INTO l_qcs091,l_qcs22,l_qcs32,l_qcs35,l_qcs38,l_qcs41
               FROM qcs_file WHERE  qcs01 = g_rvu.rvu02
               AND qcs02 = g_rvv[l_ac].rvv05
               AND qcs14 = 'Y'               #確認否
              #AND qcs09 = '1'               #合格否    #No.MOD-7A0072 add
- 
+
            IF cl_null(l_qcs32) THEN LET l_qcs32 = 0 END IF
            IF cl_null(l_qcs35) THEN LET l_qcs35 = 0 END IF
            IF cl_null(l_qcs38) THEN LET l_qcs38 = 0 END IF
@@ -10880,14 +10891,14 @@ FUNCTION t720_rvv05(p_cmd)     # 驗收單項次
               LET g_rvv[l_ac].rvv17=g_inqty-l_rvv17_2-l_rvv17_2_other-l_rvv17_in          #MOD-B90019
               LET l_rvv82=l_rvv82-l_rvv82_2-l_rvv82_2_other-l_okqty_rvv82
               LET l_rvv85=l_rvv85-l_rvv85_2-l_rvv85_2_other-l_okqty_rvv85
-           END IF   
+           END IF
         ELSE
           #LET g_rvv[l_ac].rvv17=g_inqty-l_rvv17_2-l_rvv17_2_other-g_rvv[l_ac].rvv17      #MOD-B90019 mark
            LET g_rvv[l_ac].rvv17=g_inqty-l_rvv17_2-l_rvv17_2_other-l_rvv17_in             #MOD-B90019
            LET l_rvv82=l_rvv82-l_rvv82_2-l_rvv82_2_other-l_okqty_rvv82
            LET l_rvv85=l_rvv85-l_rvv85_2-l_rvv85_2_other-l_okqty_rvv85
         END IF
- 
+
         IF g_rvv[l_ac].rvv17 = 0 THEN
            LET g_errno='apm-129'
            RETURN       #No.TQC-7C0020
@@ -10898,8 +10909,8 @@ FUNCTION t720_rvv05(p_cmd)     # 驗收單項次
         IF cl_null(l_rvv85) OR l_rvv85 < 0 THEN
            LET l_rvv85 = 0
         END IF
- 
- 
+
+
       END CASE
       LET b_rvv.rvv17 = g_rvv[l_ac].rvv17    #No.+089 010430 add by linda 一行
       LET b_rvv.rvv930= g_rvv[l_ac].rvv930  #FUN-670051
@@ -10921,7 +10932,7 @@ FUNCTION t720_rvv05(p_cmd)     # 驗收單項次
          LET b_rvv.rvv81 = g_rvv[l_ac].rvv85
       END IF
       #darcy 2022年1月17日 add s---
-      CALL t720_qcl05_check() RETURNING l_qcl05      
+      CALL t720_qcl05_check() RETURNING l_qcl05
       IF g_sma.sma116 MATCHES '[02]' AND (l_qcl05 NOT MATCHES'[12]' OR cl_null(l_qcl05)) THEN  #MOD-630031 add #不使用計價單位時,計價單位/數量給原單據單位/數量 #FUN-BC0104 add
          LET g_rvv[l_ac].rvv86 = g_rvv[l_ac].rvv35
          LET g_rvv[l_ac].rvv87 = g_rvv[l_ac].rvv17
@@ -10931,27 +10942,27 @@ FUNCTION t720_rvv05(p_cmd)     # 驗收單項次
       #darcy 2022年1月17日 add e---
       LET b_rvv.rvv86 = g_rvv[l_ac].rvv86
       LET b_rvv.rvv87 = g_rvv[l_ac].rvv87
-       IF g_sma.sma120 = 'Y' AND g_sma.sma907 = 'Y' THEN                        
-          SELECT imx00,imx01,imx02,imx03,imx04,imx05,                           
-                 imx06,imx07,imx08,imx09,imx10                                  
-           INTO g_rvv[l_ac].att00, g_rvv[l_ac].att01, g_rvv[l_ac].att02,        
-                g_rvv[l_ac].att03, g_rvv[l_ac].att04, g_rvv[l_ac].att05,        
-                g_rvv[l_ac].att06, g_rvv[l_ac].att07, g_rvv[l_ac].att08,        
-                g_rvv[l_ac].att09, g_rvv[l_ac].att10                            
-           FROM imx_file                                                        
-            WHERE imx000 = g_rvv[l_ac].rvv31                                    
-          #賦值所有屬性                                                         
-          LET g_rvv[l_ac].att01_c = g_rvv[l_ac].att01                           
-          LET g_rvv[l_ac].att02_c = g_rvv[l_ac].att02                           
-          LET g_rvv[l_ac].att03_c = g_rvv[l_ac].att03                           
-          LET g_rvv[l_ac].att04_c = g_rvv[l_ac].att04                           
-          LET g_rvv[l_ac].att05_c = g_rvv[l_ac].att05                           
-          LET g_rvv[l_ac].att06_c = g_rvv[l_ac].att06                           
-          LET g_rvv[l_ac].att07_c = g_rvv[l_ac].att07                           
-          LET g_rvv[l_ac].att08_c = g_rvv[l_ac].att08                           
-          LET g_rvv[l_ac].att09_c = g_rvv[l_ac].att09                           
-          LET g_rvv[l_ac].att10_c = g_rvv[l_ac].att10                           
-       END IF                                                                   
+       IF g_sma.sma120 = 'Y' AND g_sma.sma907 = 'Y' THEN
+          SELECT imx00,imx01,imx02,imx03,imx04,imx05,
+                 imx06,imx07,imx08,imx09,imx10
+           INTO g_rvv[l_ac].att00, g_rvv[l_ac].att01, g_rvv[l_ac].att02,
+                g_rvv[l_ac].att03, g_rvv[l_ac].att04, g_rvv[l_ac].att05,
+                g_rvv[l_ac].att06, g_rvv[l_ac].att07, g_rvv[l_ac].att08,
+                g_rvv[l_ac].att09, g_rvv[l_ac].att10
+           FROM imx_file
+            WHERE imx000 = g_rvv[l_ac].rvv31
+          #賦值所有屬性
+          LET g_rvv[l_ac].att01_c = g_rvv[l_ac].att01
+          LET g_rvv[l_ac].att02_c = g_rvv[l_ac].att02
+          LET g_rvv[l_ac].att03_c = g_rvv[l_ac].att03
+          LET g_rvv[l_ac].att04_c = g_rvv[l_ac].att04
+          LET g_rvv[l_ac].att05_c = g_rvv[l_ac].att05
+          LET g_rvv[l_ac].att06_c = g_rvv[l_ac].att06
+          LET g_rvv[l_ac].att07_c = g_rvv[l_ac].att07
+          LET g_rvv[l_ac].att08_c = g_rvv[l_ac].att08
+          LET g_rvv[l_ac].att09_c = g_rvv[l_ac].att09
+          LET g_rvv[l_ac].att10_c = g_rvv[l_ac].att10
+       END IF
    END IF
      ###### 01/11/18 Tommy 考慮多單位的換算(pmn09)
     IF g_rva00 = '1' THEN
@@ -10989,7 +11000,7 @@ FUNCTION t720_rvv05(p_cmd)     # 驗收單項次
               SELECT ima154 INTO l_ima154
                   FROM ima_file
                  WHERE ima01 = g_rvv[l_ac].rvv31
-              
+
               IF l_ima154 = 'Y' AND g_rvv[l_ac].rvv31[1,4] <> 'MISC' THEN
                  SELECT rcj03 INTO l_rcj03
                    FROM rcj_file
@@ -10999,13 +11010,13 @@ FUNCTION t720_rvv05(p_cmd)     # 驗收單項次
                  #  FROM rtz_file
                  # WHERE rtz01 = g_plant
                  #FUN-C90049 mark end-----
-                 CALL s_get_defstore(g_plant,g_rvv[l_ac].rvv31) RETURNING l_rtz07,l_rtz08      #fun-c90049 add 
+                 CALL s_get_defstore(g_plant,g_rvv[l_ac].rvv31) RETURNING l_rtz07,l_rtz08      #fun-c90049 add
                  IF l_rcj03 = '1' THEN
-                    LET g_rvv[l_ac].rvv32 = l_rtz07 
+                    LET g_rvv[l_ac].rvv32 = l_rtz07
                  ELSE
-                    LET g_rvv[l_ac].rvv32 = l_rtz08 
+                    LET g_rvv[l_ac].rvv32 = l_rtz08
                  END IF
-              END IF     
+              END IF
            ELSE
               IF NOT cl_null(l_rvb36) THEN
                  LET g_rvv[l_ac].rvv32=l_rvb36
@@ -11014,9 +11025,9 @@ FUNCTION t720_rvv05(p_cmd)     # 驗收單項次
                    FROM ima_file
                   WHERE ima01 = g_rvv[l_ac].rvv31
                  LET g_rvv[l_ac].rvv32=l_ima35
-              END IF   
-           END IF    
-           #FUN-C20002--end add-------------------------------------------------    
+              END IF
+           END IF
+           #FUN-C20002--end add-------------------------------------------------
             IF NOT cl_null(l_rvb36) THEN #BugNo:5611
                 #LET g_rvv[l_ac].rvv32=l_rvb36          #FUN-C20002 mark
                 LET g_rvv[l_ac].rvv33=l_rvb37
@@ -11029,21 +11040,21 @@ FUNCTION t720_rvv05(p_cmd)     # 驗收單項次
                   FROM ima_file
                  WHERE ima01 = g_rvv[l_ac].rvv31
                 IF SQLCA.sqlcode THEN LET g_rvv[l_ac].rvv031 = ' ' END IF
-                IF cl_null(l_ima35) THEN LET l_ima35=' ' END IF #MOD-810200 
-                IF cl_null(l_ima36) THEN LET l_ima36=' ' END IF #MOD-810200 
+                IF cl_null(l_ima35) THEN LET l_ima35=' ' END IF #MOD-810200
+                IF cl_null(l_ima36) THEN LET l_ima36=' ' END IF #MOD-810200
                 #No.FUN-AA0049--begin
-                #IF NOT s_chk_ware(l_ima35) THEN  #No.FUN-AB0058 mark  
+                #IF NOT s_chk_ware(l_ima35) THEN  #No.FUN-AB0058 mark
                 #   LET l_ima35=' '               #No.FUN-AB0058 mark
                 #   LET l_ima36=' '               #No.FUN-AB0058 mark
-                #END IF                           #No.FUN-ABOo58 mark 
-                #No.FUN-AA0049--end                     
+                #END IF                           #No.FUN-ABOo58 mark
+                #No.FUN-AA0049--end
                 #LET g_rvv[l_ac].rvv32=l_ima35   #FUN-C20002 mark
                 LET g_rvv[l_ac].rvv33=l_ima36
                 LET g_rvv[l_ac].rvv34=' '
-                IF g_azw.azw04 = '2' THEN  
+                IF g_azw.azw04 = '2' THEN
                    #FUN-C90049 mark begin---
                    #SELECT rtz07 INTO l_rtz07 FROM rtz_file #MOD-9C0016 del rtz08
-                   # WHERE rtz01 = g_rvu.rvuplant  
+                   # WHERE rtz01 = g_rvu.rvuplant
                    #FUN-C90049 mark end------
                    CALL s_get_coststore(g_rvu.rvuplant,g_rvv[l_ac].rvv31) RETURNING l_rtz07     #FUN-C90049 add
                   #FUN-B40098 Begin---
@@ -11068,7 +11079,7 @@ FUNCTION t720_rvv05(p_cmd)     # 驗收單項次
               AND img02 = g_rvv[l_ac].rvv32
               AND img03 = g_rvv[l_ac].rvv33
               AND img04 = g_rvv[l_ac].rvv34
- 
+
        CALL s_umfchk(g_rvv[l_ac].rvv31,g_rvv[l_ac].rvv35,l_img09)
        RETURNING l_i,g_rvv[l_ac].rvv35_fac
        IF  l_i = 1 THEN
@@ -11086,13 +11097,13 @@ FUNCTION t720_rvv05(p_cmd)     # 驗收單項次
        END IF   #MOD-A40166
     END IF
 
-    
- 
+
+
      IF b_rvv.rvv87>=0 THEN    #No.9786   #MOD-AA0165 rvv17-->rvv87
         #FUN-5B0144 add IF ELSE
         IF b_rvv.rvv87 > 0 THEN   #MOD-AA0165 rvv17-->rvv87
            CALL t720sub_rvv38(g_rvv[l_ac].rvv36,b_rvv.rvv38,b_rvv.rvv38t,g_rvu.rvu04,g_rvu.rvu01)  #TQC-C30225 add
-                   RETURNING b_rvv.rvv38,b_rvv.rvv38t 
+                   RETURNING b_rvv.rvv38,b_rvv.rvv38t
            LET b_rvv.rvv39=b_rvv.rvv87*b_rvv.rvv38   #MOD-AA0165 rvv17-->rvv87
            LET b_rvv.rvv39t=b_rvv.rvv87*b_rvv.rvv38t  #No.FUN-540027   #MOD-AA0165 rvv17-->rvv87
         ELSE
@@ -11157,18 +11168,18 @@ FUNCTION t720_rvv05(p_cmd)     # 驗收單項次
      #            SELECT rva113 INTO l_rva113 FROM rva_file WHERE rva01 = g_rvu02
      #            SELECT azi04 INTO t_azi04 FROM azi_file WHERE azi01 = l_rva113
      #         END IF
-     #          IF cl_null(t_azi04) THEN                                                                                             
-     #             SELECT azi04 INTO t_azi04                                                                                         
-     #               FROM pmc_file,azi_file                                                                                          
-     #              WHERE pmc22=azi01                                                                                                
-     #                AND pmc01 = g_rvu.rvu04                                                                                        
-     #          END IF                                                                                                               
+     #          IF cl_null(t_azi04) THEN
+     #             SELECT azi04 INTO t_azi04
+     #               FROM pmc_file,azi_file
+     #              WHERE pmc22=azi01
+     #                AND pmc01 = g_rvu.rvu04
+     #          END IF
      #         IF cl_null(t_azi04) THEN LET t_azi04=0 END IF   #No.CHI-6A0004
      #         CALL cl_digcut(b_rvv.rvv39,t_azi04)  #No.CHI-6A0004
      #                           RETURNING b_rvv.rvv39
      #         CALL cl_digcut(b_rvv.rvv39t,t_azi04)  #No.CHI-6A0004
      #                           RETURNING b_rvv.rvv39t  #No.FUN-540027
-     #         CALL t720sub_rvv39(g_rvv[l_ac].rvv36,b_rvv.rvv39,b_rvv.rvv39t,g_rvu.rvu04,g_rvu.rvu02) #FUN-A10130 #MOD-850300 b_rvv.rvv36->g_rvv[l_ac].rvv36 
+     #         CALL t720sub_rvv39(g_rvv[l_ac].rvv36,b_rvv.rvv39,b_rvv.rvv39t,g_rvu.rvu04,g_rvu.rvu02) #FUN-A10130 #MOD-850300 b_rvv.rvv36->g_rvv[l_ac].rvv36
      #              RETURNING b_rvv.rvv39,b_rvv.rvv39t
      #END IF
      #-----END MOD-AA0165-----
@@ -11176,7 +11187,7 @@ FUNCTION t720_rvv05(p_cmd)     # 驗收單項次
        #MOD-DB0068 add start -----
        #不使用單價*數量=金額, 改以金額回推稅率, 以避免小數位差的問題
         SELECT gec05,gec07,pmm43 INTO l_gec05,l_gec07,l_pmm43 FROM gec_file,pmm_file
-         WHERE gec01 = pmm21 AND pmm01 = g_rvv[l_ac].rvv36 
+         WHERE gec01 = pmm21 AND pmm01 = g_rvv[l_ac].rvv36
         IF SQLCA.SQLCODE = 100 THEN
            LET g_errno = 'mfg3044'
            RETURN
@@ -11201,18 +11212,18 @@ FUNCTION t720_rvv05(p_cmd)     # 驗收單項次
         LET g_rvv[l_ac].rvv39=b_rvv.rvv39
         LET g_rvv[l_ac].rvv38t=b_rvv.rvv38t    #No.FUN-610018
         LET g_rvv[l_ac].rvv39t=b_rvv.rvv39t    #No.FUN-610018
- 
+
      IF g_rvu.rvu00='2' THEN
         LET b_rvv.rvv32=NULL LET g_rvv[l_ac].rvv32=NULL
         LET b_rvv.rvv33=NULL LET g_rvv[l_ac].rvv33=NULL
         LET b_rvv.rvv34=NULL LET g_rvv[l_ac].rvv34=NULL
      END IF
- 
-     SELECT ima918,ima921 INTO g_ima918,g_ima921 
+
+     SELECT ima918,ima921 INTO g_ima918,g_ima921
        FROM ima_file
       WHERE ima01 = g_rvv[l_ac].rvv31
         AND imaacti = "Y"
-     
+
      IF g_ima918 = "Y" OR g_ima921 = "Y" THEN
         IF g_sma.sma90 = "Y" THEN #MOD-C30074 add
            SELECT COUNT(*) INTO l_n FROM rvbs_file
@@ -11226,30 +11237,30 @@ FUNCTION t720_rvv05(p_cmd)     # 驗收單項次
            END IF
         END IF #MOD-C30074 add
      END IF
- 
+
      LET l_rvb42 = ''
      LET l_rvb43 = ''
      LET l_rvb44 = ''
      LET l_rvb45 = ''
- 
+
      SELECT rvb42,rvb43,rvb44,rvb45 INTO l_rvb42,l_rvb43,l_rvb44,l_rvb45
          FROM rvb_file WHERE rvb01=g_rvu.rvu02 AND rvb02=g_rvv[l_ac].rvv05
- 
+
      LET g_rvv[l_ac].rvv10 = l_rvb42
      LET g_rvv[l_ac].rvv11 = l_rvb43
      LET g_rvv[l_ac].rvv12 = l_rvb44
      LET g_rvv[l_ac].rvv13 = l_rvb45
 END FUNCTION
- 
+
 FUNCTION t720_rvu07(p_cmd)    #人員
          DEFINE p_cmd       LIKE type_file.chr1,    #No.FUN-680136 VARCHAR(1)
                 l_gen02     LIKE gen_file.gen02,
                 l_genacti   LIKE gen_file.genacti
- 
+
     LET g_errno = ' '
     SELECT gen02,genacti INTO l_gen02,l_genacti
             FROM gen_file WHERE gen01 = g_rvu.rvu07
- 
+
     CASE WHEN SQLCA.SQLCODE = 100  LET g_errno = 'mfg1312'
                                          LET l_gen02 = NULL
                WHEN l_genacti='N' LET g_errno = '9028'
@@ -11257,16 +11268,16 @@ FUNCTION t720_rvu07(p_cmd)    #人員
     END CASE
           DISPLAY l_gen02 TO FORMONLY.gen02
 END FUNCTION
- 
+
 FUNCTION t720_rvu06(p_cmd)    #部門
          DEFINE p_cmd       LIKE type_file.chr1,    #No.FUN-680136 VARCHAR(1)
                 l_gem02     LIKE gem_file.gem02,
                 l_gemacti   LIKE gem_file.gemacti
- 
+
     LET g_errno = ' '
     SELECT gem02,gemacti INTO l_gem02,l_gemacti FROM gem_file
           WHERE gem01 = g_rvu.rvu06
- 
+
     CASE WHEN SQLCA.SQLCODE = 100  LET g_errno = 'mfg3097'
                                          LET l_gem02 = NULL
                WHEN l_gemacti='N' LET g_errno = '9028'
@@ -11290,18 +11301,18 @@ FUNCTION t720_x(p_type)   #FUN-D20025
            l_rvv17         LIKE rvv_file.rvv17,
            l_rvv87         LIKE rvv_file.rvv87,
            l_qty           LIKE rvv_file.rvv17
-    #FUN-BC0104---add---end--- 
+    #FUN-BC0104---add---end---
    DEFINE l_type   LIKE type_file.chr1      #FUN-C40016
    IF s_shut(0) THEN RETURN END IF
- 
+
    IF cl_null(g_rvu.rvu01) THEN
       CALL cl_err('',-400,0)
       RETURN
    END IF
- 
+
    SELECT * INTO g_rvu.* FROM rvu_file
     WHERE rvu01=g_rvu.rvu01
- 
+
    IF g_rvu.rvuconf = 'Y' THEN
       CALL cl_err('',9023,0)
       RETURN
@@ -11317,18 +11328,18 @@ FUNCTION t720_x(p_type)   #FUN-D20025
       RETURN
    END IF
   #FUN-A60009  add end ---
-  
+
    #FUN-D20025--add--str--
-   IF p_type = 1 THEN 
+   IF p_type = 1 THEN
       IF g_rvu.rvuconf='X' THEN RETURN END IF
    ELSE
       IF g_rvu.rvuconf<>'X' THEN RETURN END IF
    END IF
    #FUN-D20025--add--end--
- 
+
    BEGIN WORK
    LET g_success='Y'
- 
+
    OPEN t720_cl USING g_rvu.rvu01
    IF STATUS THEN
       CALL cl_err("OPEN t720_cl:", STATUS, 1)
@@ -11336,7 +11347,7 @@ FUNCTION t720_x(p_type)   #FUN-D20025
       ROLLBACK WORK
       RETURN
    END IF
- 
+
    FETCH t720_cl INTO g_rvu.*          #鎖住將被更改或取消的資料
    IF SQLCA.sqlcode THEN
       CALL cl_err(g_rvu.rvu01,SQLCA.sqlcode,0)      #資料被他人LOCK
@@ -11344,7 +11355,7 @@ FUNCTION t720_x(p_type)   #FUN-D20025
       ROLLBACK WORK
       RETURN
    END IF
- 
+
   #IF cl_void(0,0,g_rvu.rvuconf) THEN  #FUN-D20025
    IF p_type = 1 THEN LET l_flag = 'N' ELSE LET l_flag = 'X' END IF  #FUN-D20025
    IF cl_void(0,0,l_flag) THEN         #FUN-D20025
@@ -11373,9 +11384,9 @@ FUNCTION t720_x(p_type)   #FUN-D20025
       END IF
       UPDATE rvu_file SET rvuconf = g_rvu.rvuconf,
                           rvu17   = g_rvu.rvu17,     #FUN-A60009 add
-                          rvupos = '1', #NO.FUN-960130 #NO.FUN-B50042                          
-                          rvumodu = g_user,  
-                          rvudate = TODAY                            
+                          rvupos = '1', #NO.FUN-960130 #NO.FUN-B50042
+                          rvumodu = g_user,
+                          rvudate = TODAY
        WHERE rvu01 = g_rvu.rvu01
       IF STATUS OR SQLCA.sqlerrd[3] = 0 THEN
          CALL cl_err3("upd","rvu_file",g_rvu.rvu01,"",STATUS,"","upd rvuconf:",1) #No.FUN-660129
@@ -11398,14 +11409,14 @@ FUNCTION t720_x(p_type)   #FUN-D20025
       #            LET l_qty=l_rvv17
       #         END IF
       #         UPDATE qco_file SET qco20 = qco20-l_qty WHERE qco01 = g_rvu.rvu02
-      #                                                   AND qco02 = l_rvv05 
+      #                                                   AND qco02 = l_rvv05
       #                                                   AND qco04 = l_rvv47
       #                                                   AND qco05 = l_rvv45
       #         IF STATUS OR SQLCA.sqlerrd[3] = 0 THEN
       #            CALL cl_err3("upd","qco_file",g_rvu.rvu01,"",STATUS,"","upd qco20:",1)
       #            LET g_success = 'N'
       #         END IF
-      #      END IF           
+      #      END IF
       #   END FOREACH
       #   UPDATE rvv_file SET rvv45 = '',rvv46 = '',rvv47 = ''
       #       WHERE rvv01 = g_rvu.rvu01
@@ -11433,36 +11444,36 @@ FUNCTION t720_x(p_type)   #FUN-D20025
       #FUN-C40016-----add-----end-----
       END IF
    END IF
- 
+
    CLOSE t720_cl
- 
+
    IF g_success='Y' THEN
       COMMIT WORK
       CALL cl_flow_notify(g_rvu.rvu01,'V')
    ELSE
       ROLLBACK WORK
    END IF
- 
+
    SELECT rvuconf,rvu17                          #FUN-A60009 add:rvu17
-     INTO g_rvu.rvuconf,g_rvu.rvu17              #FUN-A60009 add:g_rvu.rvu17 
+     INTO g_rvu.rvuconf,g_rvu.rvu17              #FUN-A60009 add:g_rvu.rvu17
      FROM rvu_file
     WHERE rvu01 = g_rvu.rvu01
    DISPLAY BY NAME g_rvu.rvuconf,g_rvu.rvu17     #FUN-A60009 add:g_rvu.rvu17
-   
- 
+
+
   #FUN-C30140--mod---str--
   #IF g_rvu.rvuconf = 'X' THEN
   #   LET g_chr = 'Y'
   #ELSE
   #   LET g_chr = 'N'
   #END IF
- 
+
   #CALL cl_set_field_pic(g_rvu.rvuconf,"","","",g_chr,"")
    CALL t720_pic()
   #FUN-C30140--mod---end--
- 
+
 END FUNCTION
- 
+
 #***************************#
 #    取  消  確  認         #
 FUNCTION t720_z()
@@ -11482,13 +11493,13 @@ FUNCTION t720_z()
    DEFINE l_pmn16  LIKE pmn_file.pmn16
    DEFINE l_ebocode VARCHAR(1)            #eB-Online回傳值  #NO.FUN-960116 add
    DEFINE l_rvu17  LIKE rvu_file.rvu17    #FUN-A60009 add
-   DEFINE l_cnt1   LIKE type_file.num5    #FUN-C70093 
+   DEFINE l_cnt1   LIKE type_file.num5    #FUN-C70093
    DEFINE l_flag2  LIKE type_file.chr1    #MOD-CC0212 add
-   DEFINE l_rvucont LIKE rvu_file.rvucont #FUN-D20059 
+   DEFINE l_rvucont LIKE rvu_file.rvucont #FUN-D20059
    DEFINE l_gen02       LIKE gen_file.gen02          #FUN-D20059 Add
    DEFINE l_x       LIKE type_file.num5  #add by guanyao160707
    DEFINE l_rvv05_1 LIKE rvv_file.rvv05  #add by guanyao160707
-   DEFINE l_scm_msg    LIKE type_file.chr1000   #NO.18010101  
+   DEFINE l_scm_msg    LIKE type_file.chr1000   #NO.18010101
    #No.18010101--begin--
    DEFINE l_ret        RECORD
              success   LIKE type_file.chr1,
@@ -11508,12 +11519,12 @@ FUNCTION t720_z()
       END IF
    END IF
 
-   #No.FUN-A50071 -----start---------    
+   #No.FUN-A50071 -----start---------
     #-->POS單號不為空時不可取消確認
     IF NOT cl_null(g_rvu.rvu25) THEN
        CALL cl_err(' ','axm-743',0)
        RETURN
-    END IF 
+    END IF
     #No.FUN-A50071 -----end---------
 
    IF cl_null(g_rvu.rvu01) THEN CALL cl_err('',-400,0) RETURN END IF
@@ -11527,10 +11538,10 @@ FUNCTION t720_z()
    END IF
    #FUN-C70093---ADD--END
 
-    IF NOT cl_null(g_rvu.rvu16) THEN                                                                                                
-      CALL cl_err('','apm-578',0)                                                                                                   
-      RETURN                                                                                                                        
-    END IF                                                                                                                          
+    IF NOT cl_null(g_rvu.rvu16) THEN
+      CALL cl_err('','apm-578',0)
+      RETURN
+    END IF
    SELECT COUNT(*) INTO g_cnt FROM rvw_file
     WHERE rvw08 =g_rvu.rvu01
    IF g_cnt > 0 THEN
@@ -11539,11 +11550,11 @@ FUNCTION t720_z()
    END IF
    SELECT * INTO g_rvu.* FROM rvu_file
     WHERE rvu01=g_rvu.rvu01
- 
+
    IF g_rvu.rvuconf = 'N' THEN CALL cl_err('','9002',0) RETURN END IF
- 
+
    IF g_rvu.rvuconf = 'X' THEN CALL cl_err('','9024',0) RETURN END IF
- 
+
   #FUN-A60009  add str ---
    LET l_rvu17 = g_rvu.rvu17
 
@@ -11554,71 +11565,71 @@ FUNCTION t720_z()
   #FUN-A60009  add end --
 
   #str-------add by guanyao160707
-   IF g_rvu.rvu08 = 'SUB' THEN 
+   IF g_rvu.rvu08 = 'SUB' THEN
       DECLARE t720_rvv01 CURSOR FOR SELECT rvv05 FROM rvv_file WHERE rvv01 = g_rvu.rvu01
       LET l_rvv05_1 = ''
       FOREACH t720_rvv01 INTO l_rvv05_1
          LET l_x = 0
          SELECT COUNT(*) INTO l_x FROM tc_sfp_file WHERE tc_sfpconf = 'Y' AND tc_sfp11 = g_rvu.rvu02 AND tc_sfp12 = l_rvv05_1
-         IF l_x >0 THEN 
+         IF l_x >0 THEN
             CALL cl_err(g_rvu.rvu02||l_rvv05_1,'cpm-039',0)
-            RETURN 
-         END IF 
-      END FOREACH 
-   END IF 
+            RETURN
+         END IF
+      END FOREACH
+   END IF
   #end-------add by guanyao160707
 
   SELECT COUNT(*) INTO l_cnt FROM oga_file
    WHERE oga914 = g_rvu.rvu01
   IF l_cnt > 0 THEN CALL cl_err('','apm-901',0) RETURN END IF
- 
+
    IF g_sma.sma53 IS NOT NULL AND g_rvu.rvu03 <= g_sma.sma53 THEN
       CALL cl_err('','mfg9999',0) RETURN
    END IF
- 
+
    IF NOT cl_null(g_rvu.rvu09) THEN
       CALL cl_err ('','apm-725',0)
       RETURN
    END IF
- 
+
    DECLARE t720_rvv37 CURSOR FOR
     SELECT rvv36,rvv37 FROM rvv_file WHERE rvv01 = g_rvu.rvu01
- 
+
    FOREACH t720_rvv37 INTO l_rvv36,l_rvv37
       IF STATUS THEN
          CALL cl_err('foreach:',SQLCA.sqlcode,0)
          RETURN
       END IF
- 
-      SELECT pmn16 INTO l_pmn16 FROM pmn_file 
+
+      SELECT pmn16 INTO l_pmn16 FROM pmn_file
        WHERE pmn01 = l_rvv36
          AND pmn02 = l_rvv37
- 
+
       IF g_rva00 = '1' THEN
-         SELECT pmn16 INTO l_pmn16 FROM pmn_file 
+         SELECT pmn16 INTO l_pmn16 FROM pmn_file
             WHERE pmn01 = l_rvv36
               AND pmn02 = l_rvv37
-         IF l_pmn16 != '2' AND g_rvu.rvu00<>'3' THEN   #MOD-910091   
+         IF l_pmn16 != '2' AND g_rvu.rvu00<>'3' THEN   #MOD-910091
             #CALL cl_err('','mfg3166',1)   #CHI-B10047
             CALL cl_err_msg("","apm1054",l_rvv36 CLIPPED|| "|" || l_rvv37 CLIPPED,0)   #CHI-B10047
             RETURN
          END IF
       END IF
    END FOREACH
- 
+
    SELECT COUNT(*) INTO l_n FROM cop_file
     WHERE cop01 = g_rvu.rvu02
    IF l_n > 0 THEN
       CALL cl_err(g_rvu.rvu02,'aco-031',0)
       RETURN
    END IF
- 
+
    CALL s_yp(g_rvu.rvu03) RETURNING g_yy,g_mm
- 
+
    IF (g_yy*12+g_mm)>(g_sma.sma51*12+g_sma.sma52) THEN #不可大於現行年月
       CALL cl_err('','mfg6091',0)
    END IF
- 
+
    #-- 若為三角貿易單據則非來源單據不可取消確認  no.4061
    IF g_rvu.rvu08 ='TAP' OR g_rvu.rvu08 = 'TRI' THEN  #TQC-820011 modify add 'TRI'
       CALL t720_chk_poz()
@@ -11626,7 +11637,7 @@ FUNCTION t720_z()
          CALL cl_err('',g_errno,1) RETURN
       END IF
    END IF
- 
+
    #----若為委外,則判斷是否為生產系統所產生之單據
    IF g_rvu.rvu08='SUB' THEN
       SELECT COUNT(*) INTO g_cnt FROM sfu_file
@@ -11677,7 +11688,7 @@ FUNCTION t720_z()
          RETURN
       END IF
    END IF
- 
+
   #判斷是否已有應付憑單存在
   LET l_cnt=0
   SELECT COUNT(*) INTO l_cnt
@@ -11700,16 +11711,16 @@ FUNCTION t720_z()
      CALL cl_err(g_rvu.rvu01,'apm-882',1)
      RETURN
   END IF
- 
+
    IF NOT cl_null(g_rvu.rvu117) THEN                  #FUN-9A0068 add
       IF NOT cl_confirm('apm-106') THEN RETURN END IF #NO.FUN-940083
    ELSE                                               #FUN-9A0068
       IF NOT cl_confirm('axm-109') THEN RETURN END IF #NO.FUN-940083 #FUN-9A0068
    END IF                                             #No.FUN-940083
- 
+
    BEGIN WORK
    LET g_success = 'Y'
- 
+
    OPEN t720_cl USING g_rvu.rvu01
    IF STATUS THEN
       CALL cl_err("OPEN t720_cl:", STATUS, 1)
@@ -11744,10 +11755,10 @@ FUNCTION t720_z()
       END IF
      #MESSAGE ""                    #FUN-A50001 mark
       CALL cl_msg("")               #FUN-A50001 add
-      #NO.18010102  --begin --- 
+      #NO.18010102  --begin ---
      { IF g_success = 'Y' THEN
-              SELECT * INTO g_rvu.* FROM rvu_file WHERE rvu01 = g_rvu.rvu01 
-              IF cl_getscmparameter() AND g_rvu.rvuconf='N' THEN  
+              SELECT * INTO g_rvu.* FROM rvu_file WHERE rvu01 = g_rvu.rvu01
+              IF cl_getscmparameter() AND g_rvu.rvuconf='N' THEN
                     CALL cjc_zmx_json_cancelWorktask(g_rvu.rvu01,'PT1') RETURNING l_ret.*
                     IF l_ret.success = 'Y' THEN
                     ELSE
@@ -11757,35 +11768,35 @@ FUNCTION t720_z()
                        END IF
                     END IF
                     CALL cl_err(l_ret.msg,'!',1)
-              END IF 
+              END IF
             #NO.18010102 ---end-----
-      END IF} 
-      #NO.18010101  --begin --- 
+      END IF}
+      #NO.18010101  --begin ---
       IF g_success = 'Y' THEN
-       SELECT * INTO g_rvu.* FROM rvu_file WHERE rvu01 = g_rvu.rvu01 
-              IF cl_getscmparameter() AND g_prog = 'apmt722' THEN  
-                    CALL t720_sendBackToSCM(g_rvu.rvu01) RETURNING l_scm_msg 
+       SELECT * INTO g_rvu.* FROM rvu_file WHERE rvu01 = g_rvu.rvu01
+              IF cl_getscmparameter() AND g_prog = 'apmt722' THEN
+                    CALL t720_sendBackToSCM(g_rvu.rvu01) RETURNING l_scm_msg
                     IF NOT cl_null(l_scm_msg) THEN
                         LET g_success = 'N'
                         CALL cl_err(l_scm_msg,'!',1)
                        # CONTINUE WHILE
-                    END IF 
-              END IF 
-      END IF 
-             #---end-----  
+                    END IF
+              END IF
+      END IF
+             #---end-----
       IF g_success = 'Y' THEN
       #FUN-D20059--str--
       #  LET g_rvu.rvucond = ''    #NO.FUN-960130
       #  LET g_rvu.rvuconu = ''    #NO.FUN-960130
       #  LET g_rvu.rvucont = ''    #NO.FUN-960130
-         LET g_rvu.rvucond = g_today     
-         LET g_rvu.rvuconu = g_user    
-         LET g_rvu.rvucont = l_rvucont    
+         LET g_rvu.rvucond = g_today
+         LET g_rvu.rvuconu = g_user
+         LET g_rvu.rvucont = l_rvucont
       #FUN-D20059--end--
          DECLARE t720_z_c CURSOR FOR
          SELECT * FROM rvv_file WHERE rvv01 = g_rvu.rvu01
          FOREACH t720_z_c INTO b_rvv.*
-            
+
             IF NOT cl_null(g_rvu.rvu02) THEN    #MOD-690021 add
 #退貨方式為價格折讓，則不做異動
                   CALL t720sub_u_rvb('z',g_rvu.*,b_rvv.*,g_argv1) #FUN-A10130
@@ -11811,31 +11822,31 @@ FUNCTION t720_z()
          #DEV-D40015--add--end
 
          IF g_success = 'Y' THEN
-            LET g_rvu.rvuconf='N' 
+            LET g_rvu.rvuconf='N'
             LET g_rvu.rvu17 = '0'       #FUN-A60009 add
             COMMIT WORK
          ELSE
-            LET g_rvu.rvuconf='Y' 
+            LET g_rvu.rvuconf='Y'
             LET g_rvu.rvu17 = l_rvu17   #FUN-A60009 add  #舊值
             ROLLBACK WORK
          END IF
       ELSE
-         LET g_rvu.rvuconf='Y' 
+         LET g_rvu.rvuconf='Y'
          LET g_rvu.rvu17 = l_rvu17      #FUN-A60009 add  #舊值
          ROLLBACK WORK
       END IF
    ELSE
-      LET g_rvu.rvuconf='Y' 
+      LET g_rvu.rvuconf='Y'
       LET g_rvu.rvu17 = l_rvu17         #FUN-A60009 add  #舊值
       ROLLBACK WORK
    END IF
    DISPLAY BY NAME g_rvu.rvuconf
    DISPLAY BY NAME g_rvu.rvu17          #FUN-A60009 add
-   DISPLAY BY NAME g_rvu.rvucond,g_rvu.rvuconu,g_rvu.rvucont    #NO.FUN-960130  
+   DISPLAY BY NAME g_rvu.rvucond,g_rvu.rvuconu,g_rvu.rvucont    #NO.FUN-960130
 #  DISPLAY '' TO FORMONLY.rvuconu_desc                          #NO.FUN-960130  #FUN-D20059
    SELECT gen02 INTO l_gen02 FROM gen_file WHERE gen01 = g_rvu.rvuconu          #FUN-D20059 Add
    DISPLAY l_gen02 TO FORMONLY.rvuconu_desc                                     #FUN-D20059
- 
+
    LET g_rvu.rvu99 = ' '             #TQC-7C0146
    LET g_rvu.rvu20 = 'N'             #TQC-7C0146
    DISPLAY BY NAME g_rvu.rvu99       #TQC-7C0146
@@ -11846,23 +11857,23 @@ FUNCTION t720_z()
   #CALL cl_set_field_pic(g_rvu.rvuconf,"","","",g_chr,"")
    CALL t720_pic()
   #FUN-C30140--mod---end--
- 
+
    IF g_rvu.rvuconf = "Y" THEN
       DECLARE t720_s1_c2 CURSOR FOR SELECT * FROM rvv_file
         WHERE rvv01 = g_rvu.rvu01
- 
+
       LET g_imm01 = ""
       LET g_success = "Y"
- 
+
       CALL s_showmsg_init()   #No.FUN-6C0083
- 
+
       BEGIN WORK
- 
+
       FOREACH t720_s1_c2 INTO b_rvv.*
          IF STATUS THEN
             EXIT FOREACH
          END IF
- 
+
          IF g_sma.sma115 = 'Y' THEN
             IF g_ima906 = '2' THEN  #子母單位
                LET g_unit_arr[1].unit= b_rvv.rvv80
@@ -11884,14 +11895,14 @@ FUNCTION t720_z()
             END IF
          END IF
       END FOREACH
- 
+
       IF g_totsuccess="N" THEN
          LET g_success="N"
       END IF
- 
+
       CALL s_showmsg()   #No.FUN-6C0083
 
- 
+
       IF g_success = "Y" AND NOT cl_null(g_imm01) THEN
          COMMIT WORK
          LET g_msg="aimt324 '",g_imm01,"'"
@@ -11899,13 +11910,13 @@ FUNCTION t720_z()
       ELSE
          ROLLBACK WORK
       END IF
-      #NO.18010101  --begin --- 
-      IF cl_getscmparameter() AND g_success = "Y" THEN  
-            CALL t720_sendBackToSCM(g_rvu.rvu01) RETURNING l_scm_msg 
-            IF NOT cl_null(l_scm_msg) THEN 
+      #NO.18010101  --begin ---
+      IF cl_getscmparameter() AND g_success = "Y" THEN
+            CALL t720_sendBackToSCM(g_rvu.rvu01) RETURNING l_scm_msg
+            IF NOT cl_null(l_scm_msg) THEN
                    CALL cl_err(l_scm_msg,'!',1)
-            END IF 
-      END IF 
+            END IF
+      END IF
       #---end-----
    END IF
 
@@ -11917,9 +11928,9 @@ FUNCTION t720_z()
    #END IF
    ##DEV-D30045--add--end
    #DEV-D40015--mark--end
- 
+
 END FUNCTION
- 
+
 FUNCTION t720_s2(p_rvu01)
   DEFINE p_rvu01  LIKE rvu_file.rvu01,
          l_pmn18  LIKE pmn_file.pmn18,
@@ -11927,9 +11938,9 @@ FUNCTION t720_s2(p_rvu01)
          l_pmn41  LIKE pmn_file.pmn41,  #W/O
          l_pmn43  LIKE pmn_file.pmn43   #製程序
   DEFINE l_str    STRING                #FUN-A50001 add
- 
+
   CALL s_showmsg_init()   #No.FUN-6C0083
- 
+
   DECLARE t720_s2_c CURSOR FOR SELECT * FROM rvv_file WHERE rvv01=p_rvu01
   FOREACH t720_s2_c INTO b_rvv.*
       IF STATUS THEN EXIT FOREACH END IF
@@ -11942,7 +11953,7 @@ FUNCTION t720_s2(p_rvu01)
          CALL ui.Interface.refresh()
       END IF                                                                             #FUN-A50001
       IF cl_null(b_rvv.rvv04) AND g_rvu.rvu00='1' THEN CONTINUE FOREACH END IF
- 
+
 ## 當為製程委外時不寫 tlf,不 update ima,img ---------
       IF g_rvu.rvu08='SUB' THEN
          SELECT pmn41,pmn43,pmn18,pmn32 INTO l_pmn41,l_pmn43,l_pmn18,l_pmn32 FROM pmn_file
@@ -11973,7 +11984,7 @@ FUNCTION t720_s2(p_rvu01)
             CALL cl_err(b_rvv.rvv05,'apm-410',1) LET g_success='N' EXIT FOREACH
          END IF
       END IF
- 
+
       CASE
         WHEN g_rvu.rvu00='1'
              CALL t720_t2()
@@ -12001,9 +12012,9 @@ FUNCTION t720_s2(p_rvu01)
   #No:DEV-D30026--add--end
 
    CALL s_showmsg()   #No.FUN-6C0083
- 
+
 END FUNCTION
- 
+
 #--------- 入庫 UPDATE (取消確認)----------------
 FUNCTION t720_t2()
   DEFINE l_pmn65  LIKE pmn_file.pmn65,
@@ -12018,13 +12029,13 @@ FUNCTION t720_t2()
          l_factor LIKE ima_file.ima31_fac,  #No.FUN-680136 DEC(16,8)
          l_cnt    LIKE type_file.num5   #MOD-990024
   DEFINE l_ima01  LIKE ima_file.ima01   #wujie 091021
-  DEFINE la_tlf  DYNAMIC ARRAY OF RECORD LIKE tlf_file.*   #NO.FUN-8C0131 
-  DEFINE l_sql   STRING                                    #NO.FUN-8C0131 
+  DEFINE la_tlf  DYNAMIC ARRAY OF RECORD LIKE tlf_file.*   #NO.FUN-8C0131
+  DEFINE l_sql   STRING                                    #NO.FUN-8C0131
   DEFINE l_i     LIKE type_file.num5                       #NO.FUN-8C0131
-  DEFINE l_pmn43 LIKE pmn_file.pmn43                       #No.FUN-A60076 
+  DEFINE l_pmn43 LIKE pmn_file.pmn43                       #No.FUN-A60076
   DEFINE l_pmn012 LIKE pmn_file.pmn012                     #No.FUN-A60076
-  DEFINE l_sfa12  LIKE sfa_file.sfa12                      #No.FUN-BB0086 
-  DEFINE l_sfa06  LIKE sfa_file.sfa06                      #No.FUN-BB0086 
+  DEFINE l_sfa12  LIKE sfa_file.sfa12                      #No.FUN-BB0086
+  DEFINE l_sfa06  LIKE sfa_file.sfa06                      #No.FUN-BB0086
   DEFINE l_sfb93         LIKE sfb_file.sfb93   #TQC-C30193
   DEFINE l_tky_cnt       LIKE type_file.num5   #TQC-C30193
   DEFINE l_qty    LIKE type_file.num10         #FUN-C30307
@@ -12044,7 +12055,7 @@ FUNCTION t720_t2()
         END IF
      END IF
   END IF
- 
+
   DECLARE t720_t2_c CURSOR FOR
    SELECT ROWID ,tlf_file.* FROM tlf_file
     WHERE tlf01=b_rvv.rvv31 AND tlf036=b_rvv.rvv01
@@ -12052,7 +12063,7 @@ FUNCTION t720_t2()
       AND (tlf13 = 'apmt150' OR tlf13 = 'asft6201' OR tlf13 = 'apmt230')   #MOD-960033
   FOREACH t720_t2_c INTO g_rowid ,g_tlf.*
       IF STATUS THEN LET g_success='N' RETURN END IF
- 
+
       MESSAGE '_s2() read tlf:',g_tlf.tlf036,' ',g_tlf.tlf037 CLIPPED
       CALL ui.Interface.refresh()
       IF g_rva00 = '1' THEN
@@ -12066,7 +12077,7 @@ FUNCTION t720_t2()
       IF g_success='N' THEN RETURN END IF
       CALL t720_u_tlf()
   END FOREACH
- 
+
   IF g_sma.sma115 = 'Y' THEN
      DECLARE t720_t2_du_c CURSOR FOR
       SELECT ROWID ,tlff_file.* FROM tlff_file
@@ -12075,7 +12086,7 @@ FUNCTION t720_t2()
          AND (tlff13 = 'apmt150' OR tlff13 = 'asft6201' OR tlff13 = 'apmt230')   #MOD-960033
      FOREACH t720_t2_du_c INTO g_rowid ,g_tlff.*
          IF STATUS THEN LET g_success='N' RETURN END IF
- 
+
          LET l_ima906 = NULL
          LET l_ima907 = NULL
          SELECT ima906,ima907 INTO l_ima906,l_ima907 FROM ima_file
@@ -12083,11 +12094,11 @@ FUNCTION t720_t2()
          IF cl_null(l_ima906) OR l_ima906 = '1' THEN CONTINUE FOREACH END IF
          MESSAGE '_s2() read tlff:',g_tlff.tlff036,' ',g_tlff.tlff037 CLIPPED
          CALL ui.Interface.refresh()
- 
+
          IF g_rva00 = '1' THEN
             SELECT pmn65 INTO l_pmn65 FROM pmn_file   #代買性質 1.一般採購 2.代買採購
                WHERE pmn01=b_rvv.rvv36 AND pmn02=b_rvv.rvv37
- 
+
             IF l_pmn65='1' THEN
                #參考單位的第一單位/單一單位的內容是不寫imgg_file的
                IF l_ima906 = '2' OR l_ima906 = '3' AND g_tlff.tlff11 = l_ima907 THEN
@@ -12117,7 +12128,7 @@ FUNCTION t720_t2()
          IF g_success='N' THEN RETURN END IF
      END FOREACH
   END IF
- 
+
       IF g_rvu.rvu08='SUB' AND NOT cl_null(b_rvv.rvv18) THEN
          INITIALIZE g_sfb.* TO NULL
          SELECT ima25,ima55 INTO g_ima25,l_ima55 FROM ima_file #FUN-A10130
@@ -12133,38 +12144,38 @@ FUNCTION t720_t2()
           WHERE sfb01=b_rvv.rvv18   #單號
 #           AND sfb02=7             #委外   #MOD-B70171 mark
         LET l_sfb04 = g_sfb.sfb04
-        IF g_sfb.sfb04 = '7' THEN 
+        IF g_sfb.sfb04 = '7' THEN
            LET l_cnt = 0
            SELECT COUNT(*) INTO l_cnt FROM rvu_file,rvv_file
-             WHERE rvu01 = rvv01 
+             WHERE rvu01 = rvv01
                AND rvuconf = 'Y'
                AND rvv01 <> b_rvv.rvv01
-               AND rvv18 = b_rvv.rvv18 
-           IF l_cnt = 0 THEN 
+               AND rvv18 = b_rvv.rvv18
+           IF l_cnt = 0 THEN
               LET l_sfb04 = '6'
            END IF
         END IF
          IF l_pmn65='1' THEN
             #TQC-C30193 --START-- TKY工單完工入庫數需加各站不良與報廢數
             IF s_industry('icd') THEN
-               SELECT sfb93 INTO l_sfb93 FROM sfb_file 
+               SELECT sfb93 INTO l_sfb93 FROM sfb_file
                 WHERE sfb01 = b_rvv.rvv36
                IF l_sfb93 = 'Y' THEN
                   CALL t720_tky_sfb09_2(b_rvv.rvv04)
                         RETURNING l_tky_cnt
-                  LET b_rvv.rvv17 = b_rvv.rvv17 + l_tky_cnt 
+                  LET b_rvv.rvv17 = b_rvv.rvv17 + l_tky_cnt
                #FUN-C30307---begin
                ELSE   #非TKY工單,完工入庫數需該項次不良與報廢數
                   LET l_qty = 0
                   SELECT (rvbiicd06 + rvbiicd07) INTO l_qty
                    FROM rvb_file,rvbi_file
-                   WHERE rvb01 = rvbi01 AND rvb02 = rvbi02  
+                   WHERE rvb01 = rvbi01 AND rvb02 = rvbi02
                    AND rvb01 = b_rvv.rvv04 AND rvb02 = b_rvv.rvv05
-                   LET b_rvv.rvv17 = b_rvv.rvv17 + l_qty  
+                   LET b_rvv.rvv17 = b_rvv.rvv17 + l_qty
                #FUN-C30307---end
-               END IF  
-            END IF 
-            #TQC-C30193    END   
+               END IF
+            END IF
+            #TQC-C30193    END
             UPDATE sfb_file SET sfb09 = sfb09 - (b_rvv.rvv17 * l_factor),
                                 sfb04 = l_sfb04
              WHERE sfb01 = b_rvv.rvv18
@@ -12183,30 +12194,30 @@ FUNCTION t720_t2()
             #FUN-A60076 ----------------end-----------------------------
 
             #No.FUN-BB0086--add--begin--
-            SELECT sfa12 INTO l_sfa12 FROM sfa_file 
+            SELECT sfa12 INTO l_sfa12 FROM sfa_file
              WHERE sfa01 = b_rvv.rvv18 AND sfa03=b_rvv.rvv31
                AND sfa012 = l_pmn012 AND sfa013 = l_pmn43
             LET l_sfa06 = s_digqty(b_rvv.rvv17 * l_factor,l_sfa12)
             #No.FUN-BB0086--add--end--
             UPDATE sfa_file SET sfa06=sfa06 - l_sfa06
              WHERE sfa01 = b_rvv.rvv18 AND sfa03=b_rvv.rvv31
-               AND sfa012 = l_pmn012 AND sfa013 = l_pmn43    #FUN-A60076  
+               AND sfa012 = l_pmn012 AND sfa013 = l_pmn43    #FUN-A60076
             IF SQLCA.sqlcode OR SQLCA.sqlerrd[3] = 0 THEN
                CALL cl_err3("upd","sfa_file",b_rvv.rvv18,"",SQLCA.sqlcode,"","Update sfb",1)  #No.FUN-660129
                LET g_success = 'N'
                RETURN
             END IF
-  ##NO.FUN-8C0131   add--begin   
-            LET l_sql =  " SELECT  * FROM tlf_file ", 
+  ##NO.FUN-8C0131   add--begin
+            LET l_sql =  " SELECT  * FROM tlf_file ",
                          "  WHERE  tlf01 = '",b_rvv.rvv31,"' AND tlf03=18 ",
                          "    AND  tlf036='",b_rvv.rvv01,"' AND tlf037=",b_rvv.rvv02," "
             DECLARE t720_u_tlf_c CURSOR FROM l_sql
-            LET l_i = 0 
+            LET l_i = 0
             CALL la_tlf.clear()
             FOREACH t720_u_tlf_c INTO g_tlf.*
                LET l_i = l_i + 1
                LET la_tlf[l_i].* = g_tlf.*
-            END FOREACH     
+            END FOREACH
 
   ##NO.FUN-8C0131   add--end
             DELETE FROM tlf_file
@@ -12220,11 +12231,11 @@ FUNCTION t720_t2()
     ##NO.FUN-8C0131   add--begin
                FOR l_i = 1 TO la_tlf.getlength()
                   LET g_tlf.* = la_tlf[l_i].*
-                  IF NOT s_untlf1('') THEN 
+                  IF NOT s_untlf1('') THEN
                      LET g_success='N' RETURN
-                  END IF 
-               END FOR       
-  ##NO.FUN-8C0131   add--end 
+                  END IF
+               END FOR
+  ##NO.FUN-8C0131   add--end
             IF g_sma.sma115 = 'Y' THEN
                LET l_ima906 = NULL
                SELECT ima906 INTO l_ima906 FROM ima_file
@@ -12243,7 +12254,7 @@ FUNCTION t720_t2()
          END IF
       END IF
       IF g_success='N' THEN RETURN END IF
- 
+
   IF b_rvv.rvv31[1,4]!='MISC' THEN
      #  ----鎖ima
      LET g_forupd_sql="SELECT ima01 FROM ima_file",    #wujie 091021
@@ -12275,10 +12286,10 @@ FUNCTION t720_t2()
      END IF
   END IF
 END FUNCTION
- 
+
 FUNCTION t720_d_sfh(b_rvv02)
     DEFINE b_rvv02 LIKE rvv_file.rvv02
- 
+
     DELETE FROM sfh_file
      WHERE sfh01=b_rvv.rvv18
        AND sfh02=g_rvu.rvu03
@@ -12288,24 +12299,24 @@ FUNCTION t720_d_sfh(b_rvv02)
        CALL cl_err3("del","sfh_file",b_rvv.rvv18,"",STATUS,"","del sfh",1)  #No.660129
        LET g_success='N'
     END IF
- 
+
 END FUNCTION
- 
+
 #No.+046 010404 by plum add因必須考慮到參數sma894,最好都一致去call s_upimg
 FUNCTION t720_u_img()  #入庫的取消確認
     DEFINE l_img10  LIKE img_file.img10
- 
+
     IF cl_null(g_tlf.tlf12) THEN LET g_tlf.tlf12=1 END IF
     LET l_img10=g_tlf.tlf10*g_tlf.tlf12
     IF cl_null(l_img10) THEN LET l_img10=0 END IF
- 
+
     IF g_tlf.tlf03 != 50 AND g_tlf.tlf02 != 50 THEN RETURN END IF
     IF g_tlf.tlf02 = 50 THEN LET g_tlf.tlf10=g_tlf.tlf10*-1 END IF
     IF b_rvv.rvv31[1,4]='MISC' THEN RETURN END IF
- 
+
     MESSAGE "update img_file ..."
     CALL ui.Interface.refresh()
- 
+
     LET g_forupd_sql =
           " SELECT img01,img02,img03,img04 FROM img_file ",
           "   WHERE img01= ? ",
@@ -12315,7 +12326,7 @@ FUNCTION t720_u_img()  #入庫的取消確認
           " FOR UPDATE "
     LET g_forupd_sql = cl_forupd_sql(g_forupd_sql)
     DECLARE img_lock_u_img CURSOR FROM g_forupd_sql
- 
+
     OPEN img_lock_u_img USING g_tlf.tlf01,g_tlf.tlf031,g_tlf.tlf032,g_tlf.tlf033
     IF STATUS THEN
        CALL cl_err("OPEN img_lock_u_img:", STATUS, 1)
@@ -12327,7 +12338,7 @@ FUNCTION t720_u_img()  #入庫的取消確認
     IF STATUS THEN
        CALL cl_err('img_lock_u_img fail',STATUS,1) LET g_success='N' RETURN
     END IF
- 
+
     CALL s_upimg(g_tlf.tlf01,g_tlf.tlf031,g_tlf.tlf032,g_tlf.tlf033,-1,l_img10,g_today,  #FUN-8C0084
                 #'','','','','','','','','','','','','','',0,0,'','')                    #FUN-810036
                  '','','','',b_rvv.rvv01,b_rvv.rvv02,'','','','','','','','',0,0,'','')  #FUN-810036
@@ -12336,27 +12347,27 @@ FUNCTION t720_u_img()  #入庫的取消確認
        LET g_success='N'
        RETURN
     END IF
- 
+
 END FUNCTION
- 
+
 FUNCTION t720_u_tlf() #------------------------------------ Update tlf_file
-  DEFINE la_tlf  DYNAMIC ARRAY OF RECORD LIKE tlf_file.*   #NO.FUN-8C0131 
-  DEFINE l_sql   STRING                                    #NO.FUN-8C0131 
-  DEFINE l_i     LIKE type_file.num5                       #NO.FUN-8C0131 
+  DEFINE la_tlf  DYNAMIC ARRAY OF RECORD LIKE tlf_file.*   #NO.FUN-8C0131
+  DEFINE l_sql   STRING                                    #NO.FUN-8C0131
+  DEFINE l_i     LIKE type_file.num5                       #NO.FUN-8C0131
     MESSAGE "d_tlf!"
     CALL ui.Interface.refresh()
-  ##NO.FUN-8C0131   add--begin   
-            LET l_sql =  " SELECT  * FROM tlf_file ", 
-                         " WHERE ROWID='",g_rowid,"' " 
+  ##NO.FUN-8C0131   add--begin
+            LET l_sql =  " SELECT  * FROM tlf_file ",
+                         " WHERE ROWID='",g_rowid,"' "
             DECLARE t720_u_tlf_c1 CURSOR FROM l_sql
-            LET l_i = 0 
+            LET l_i = 0
             CALL la_tlf.clear()
-            FOREACH t720_u_tlf_c1 INTO g_tlf.* 
+            FOREACH t720_u_tlf_c1 INTO g_tlf.*
                LET l_i = l_i + 1
                LET la_tlf[l_i].* = g_tlf.*
-            END FOREACH     
+            END FOREACH
 
-  ##NO.FUN-8C0131   add--end 
+  ##NO.FUN-8C0131   add--end
     DELETE FROM tlf_file WHERE ROWID  =  g_rowid
     IF STATUS THEN
        CALL cl_err3("del","tlf_file","","",STATUS,"","del tlf:",1)  #No.FUN-660129
@@ -12368,17 +12379,17 @@ FUNCTION t720_u_tlf() #------------------------------------ Update tlf_file
     ##NO.FUN-8C0131   add--begin
     FOR l_i = 1 TO la_tlf.getlength()
        LET g_tlf.* = la_tlf[l_i].*
-       IF NOT s_untlf1('') THEN 
+       IF NOT s_untlf1('') THEN
           LET g_success='N' RETURN
-       END IF 
-    END FOR       
-  ##NO.FUN-8C0131   add--end     
-    CALL t720_u_tlfs()  #FUN-810036 
+       END IF
+    END FOR
+  ##NO.FUN-8C0131   add--end
+    CALL t720_u_tlfs()  #FUN-810036
 END FUNCTION
- 
+
 #**********刪除退貨單頭/單身檔********************************************
 FUNCTION t720_log2()
- 
+
   DECLARE t720_log_c CURSOR FOR
           SELECT ROWID ,tlf_file.* FROM tlf_file
            WHERE tlf01=b_rvv.rvv31 AND
@@ -12395,7 +12406,7 @@ FUNCTION t720_log2()
       CALL t720_u_log()
       IF g_success='N' THEN RETURN END IF
   END FOREACH
- 
+
   DECLARE t720_log_du_c CURSOR FOR
           SELECT ROWID ,tlff_file.* FROM tlff_file
            WHERE tlff01=b_rvv.rvv31 AND
@@ -12412,25 +12423,25 @@ FUNCTION t720_log2()
       IF g_success='N' THEN RETURN END IF
   END FOREACH
 END FUNCTION
- 
+
 FUNCTION t720_u_log() #------------------------------------ Update tlf_file
-  DEFINE la_tlf  DYNAMIC ARRAY OF RECORD LIKE tlf_file.*   #NO.FUN-8C0131 
-  DEFINE l_sql   STRING                                    #NO.FUN-8C0131 
-  DEFINE l_i     LIKE type_file.num5                       #NO.FUN-8C0131 
-  
+  DEFINE la_tlf  DYNAMIC ARRAY OF RECORD LIKE tlf_file.*   #NO.FUN-8C0131
+  DEFINE l_sql   STRING                                    #NO.FUN-8C0131
+  DEFINE l_i     LIKE type_file.num5                       #NO.FUN-8C0131
+
     MESSAGE "d_tlf!"
-  ##NO.FUN-8C0131   add--begin   
-            LET l_sql =  " SELECT  * FROM tlf_file ", 
-                         " WHERE ROWID='",g_rowid,"' " 
+  ##NO.FUN-8C0131   add--begin
+            LET l_sql =  " SELECT  * FROM tlf_file ",
+                         " WHERE ROWID='",g_rowid,"' "
             DECLARE t720_u_tlf_c2 CURSOR FROM l_sql
-            LET l_i = 0 
+            LET l_i = 0
             CALL la_tlf.clear()
-            FOREACH t720_u_tlf_c2 INTO g_tlf.* 
+            FOREACH t720_u_tlf_c2 INTO g_tlf.*
                LET l_i = l_i + 1
                LET la_tlf[l_i].* = g_tlf.*
-            END FOREACH     
+            END FOREACH
 
-  ##NO.FUN-8C0131   add--end 
+  ##NO.FUN-8C0131   add--end
     DELETE FROM tlf_file WHERE ROWID  =  g_rowid
     IF STATUS THEN
        CALL cl_err3("del","tlf_file","","",SQLCA.sqlcode,"","del tlf:",1)  #No.FUN-660129
@@ -12442,14 +12453,14 @@ FUNCTION t720_u_log() #------------------------------------ Update tlf_file
     ##NO.FUN-8C0131   add--begin
     FOR l_i = 1 TO la_tlf.getlength()
        LET g_tlf.* = la_tlf[l_i].*
-       IF NOT s_untlf1('') THEN 
+       IF NOT s_untlf1('') THEN
           LET g_success='N' RETURN
-       END IF 
-    END FOR       
+       END IF
+    END FOR
   ##NO.FUN-8C0131   add--end
-    CALL t720_u_tlfs()  #FUN-810036 
+    CALL t720_u_tlfs()  #FUN-810036
 END FUNCTION
- 
+
 #*********倉退update (取消確認)**************************************
 #更新相關的檔案
 FUNCTION t720_bu2()
@@ -12474,11 +12485,11 @@ FUNCTION t720_bu2()
       l_factor        LIKE ima_file.ima31_fac, #No.FUN-680136 DEC(16,8)
       l_code          LIKE type_file.chr1    #No.FUN-680136 VARCHAR(01)
    DEFINE l_ima01     LIKE ima_file.ima01    #wujie 091021
- 
- IF b_rvv.rvv31[1,4]!='MISC' 
+
+ IF b_rvv.rvv31[1,4]!='MISC'
     AND NOT (g_rvu.rvu00='3' AND b_rvv.rvv17=0) THEN   #MOD-A40166
     MESSAGE "update img_file ..."
- 
+
     LET g_forupd_sql =
           " SELECT img01,img02,img03,img04 FROM img_file ",
           "   WHERE img01= ? ",
@@ -12488,7 +12499,7 @@ FUNCTION t720_bu2()
           " FOR UPDATE "
     LET g_forupd_sql = cl_forupd_sql(g_forupd_sql)
     DECLARE img_lock_bu2 CURSOR FROM g_forupd_sql
- 
+
     OPEN img_lock_bu2 USING b_rvv.rvv31,b_rvv.rvv32,b_rvv.rvv33,b_rvv.rvv34
     IF STATUS THEN
        CALL cl_err("OPEN img_lock_bu2:", STATUS, 1)
@@ -12501,12 +12512,12 @@ FUNCTION t720_bu2()
     IF STATUS THEN
        CALL cl_err('img_lock_bu2 fail',STATUS,1) LET g_success='N' RETURN
     END IF
- 
+
    SELECT img21,img23,img24
      INTO g_img21,g_img23,g_img24 FROM img_file
     WHERE img01=b_rvv.rvv31 AND img02=b_rvv.rvv32
       AND img03=b_rvv.rvv33 AND img04=b_rvv.rvv34
- 
+
         IF STATUS THEN
            CALL cl_err3("sel","img_file",b_rvv.rvv31,"",STATUS,"","sel img",1)  #No.FUN-660129
            LET g_success='N'
@@ -12627,11 +12638,11 @@ FUNCTION t720_bu2()
           END IF
       END IF
 
-      SELECT ima918,ima921 INTO g_ima918,g_ima921 
+      SELECT ima918,ima921 INTO g_ima918,g_ima921
         FROM ima_file
        WHERE ima01 = b_rvv.rvv31
          AND imaacti = "Y"
-      
+
       IF g_ima918 = "Y" OR g_ima921 = "Y" THEN
          IF g_sma.sma90 = "Y" THEN #MOD-C30074 add
             CALL t720sub_upd_rvbs(-1,g_rvu.rvu01,g_rvu.rvu02,b_rvv.rvv02,b_rvv.rvv05) #FUN-A10130
@@ -12696,11 +12707,11 @@ FUNCTION t720_bu2()
    END IF
    IF g_success = 'N' THEN RETURN  END IF
 END FUNCTION
- 
+
 FUNCTION t720_unit(p_unit)  #單位
     DEFINE p_unit    LIKE gfe_file.gfe01,
            l_gfeacti LIKE gfe_file.gfeacti
- 
+
     LET g_errno = ' '
     SELECT gfeacti INTO l_gfeacti
            FROM gfe_file WHERE gfe01 = p_unit
@@ -12710,33 +12721,33 @@ FUNCTION t720_unit(p_unit)  #單位
          OTHERWISE                 LET g_errno = SQLCA.SQLCODE USING '-------'
     END CASE
 END FUNCTION
- 
+
 FUNCTION t720_out()
    DEFINE l_cmd        LIKE type_file.chr1000, #No.FUN-680136 VARCHAR(200)
           l_wc,l_wc2   LIKE type_file.chr50,   #No.FUN-680136 VARCHAR(50)
           l_program    LIKE zz_file.zz01,      #No.FUN-680136 VARCHAR(10)
           l_prtway     LIKE type_file.chr1    #No.FUN-680136 VARCHAR(1)
- 
+
       CALL cl_wait()
       LET l_wc='rvu01="',g_rvu.rvu01,'"'
-      IF g_prog = 'apmt720' THEN 
-      LET g_msg = "cpmr720", 
+      IF g_prog = 'apmt720' THEN
+      LET g_msg = "cpmr720",
                        " '",g_today CLIPPED,"' ''",
                        " '",g_lang CLIPPED,"' '",g_bgjob CLIPPED,"'  '' '1'",
-                       " '",l_wc CLIPPED,"' '1' '' 'N' "  
-      END IF 
-      IF g_prog = 'apmt722' THEN 
-      LET g_msg = "cpmr720", 
+                       " '",l_wc CLIPPED,"' '1' '' 'N' "
+      END IF
+      IF g_prog = 'apmt722' THEN
+      LET g_msg = "cpmr720",
                        " '",g_today CLIPPED,"' ''",
                        " '",g_lang CLIPPED,"' '",g_bgjob CLIPPED,"'  '' '1'",
-                       " '",l_wc CLIPPED,"' '2' '' 'N' "  
-      END IF 
+                       " '",l_wc CLIPPED,"' '2' '' 'N' "
+      END IF
 
-      IF g_prog = 'apmt730' THEN 
-      LET g_msg = "cpmr730", 
+      IF g_prog = 'apmt730' THEN
+      LET g_msg = "cpmr730",
                        " '",g_today CLIPPED,"' ''",
                        " '",g_lang CLIPPED,"' '",g_bgjob CLIPPED,"'  '' '1'",
-                       " '",l_wc CLIPPED,"' '' '2' '' 'N' "  
+                       " '",l_wc CLIPPED,"' '' '2' '' 'N' "
       END IF
 
      IF g_prog = 'apmt732'   THEN
@@ -12746,13 +12757,13 @@ FUNCTION t720_out()
                        " '",l_wc CLIPPED,"' '' 'N' "
       END IF
 
- 
-      IF g_argv1 = '2'   THEN 
-      LET g_msg = "cpmr721", 
+
+      IF g_argv1 = '2'   THEN
+      LET g_msg = "cpmr721",
                        " '",g_today CLIPPED,"' ''",
                        " '",g_lang CLIPPED,"' '",g_bgjob CLIPPED,"'  '' '1'",
-                       " '",l_wc CLIPPED,"' '' 'N' "  
-      END IF 
+                       " '",l_wc CLIPPED,"' '' 'N' "
+      END IF
                     CALL cl_cmdrun(g_msg)
       #IF g_rvu.rvu00='1' THEN LET l_program='apmr630' END IF #FUN-C30085 mark
       --IF g_rvu.rvu00='1' THEN LET l_program='apmg630' END IF #FUN-C30085 add
@@ -12773,7 +12784,7 @@ FUNCTION t720_out()
       --CALL cl_cmdrun(l_cmd)
    --ERROR ' '
 END FUNCTION
- 
+
 FUNCTION t720_g_b()        #自動產生入庫單
    DEFINE l_rvb331   LIKE rvb_file.rvb331    #No.MOD-760028 add
    DEFINE l_rvb332   LIKE rvb_file.rvb332    #No.MOD-760028 add
@@ -12820,7 +12831,7 @@ FUNCTION t720_g_b()        #自動產生入庫單
    SELECT rva00 INTO g_rva00 FROM rva_file WHERE rva01 = g_rvu.rvu02
    IF g_rva00 = '1' THEN
       LET g_sql = "SELECT rvb25,rvb89,rvb39,rvb40,rvb33,rvb331,rvb332, ",  #No.MOD-760028 add rvb331,rvb332 #no.A050 add rvb25 #FUN-9A0068 add rvb89
-                  "       rvb07,", #CHI-980050   
+                  "       rvb07,", #CHI-980050
                   "       ' ',' ','1',rvb01,rvb02,' ',' ',",
                   "       rvb31,rvb34,0,' ',rvb35,",
                   "       ' ',rvb05,ima02,rvb36,rvb37,rvb38,pmn07,", #No:5611
@@ -12836,10 +12847,10 @@ FUNCTION t720_g_b()        #自動產生入庫單
                   "     AND rvb05=ima_file.ima01 "
    ELSE
       LET g_sql = "SELECT rvb25,rvb89,rvb39,rvb40,rvb33,rvb331,rvb332, ",    #FUN-9A0068
-                  "       rvb07,", #CHI-980050 
+                  "       rvb07,", #CHI-980050
                   "       ' ',' ','1',rvb01,rvb02,' ',' ',",
                   "       rvb31,rvb34,0,' ',rvb35,",
-                  "       ' ',rvb05,ima02,rvb36,rvb37,rvb38,rvb90,", 
+                  "       ' ',rvb05,ima02,rvb36,rvb37,rvb38,rvb90,",
                   "       rvb90_fac,rvb04,rvb03,rvb10,'','','','','', ",
                   "       rvb80,rvb81,rvb82,rvb83,rvb84,rvb85,rvb86,rvb87,'',rvb10t,",
                   "       rvb930,0,",
@@ -12850,11 +12861,11 @@ FUNCTION t720_g_b()        #自動產生入庫單
                   "     AND rvb05=ima_file.ima01 "
    END IF
    PREPARE t720_g_b_p1 FROM g_sql
- 
+
    DECLARE t720_g_b_c1 CURSOR WITH HOLD FOR t720_g_b_p1
- 
+
    LET l_ac = 1
- 
+
    FOREACH t720_g_b_c1 INTO l_rvb25,l_rvb89,l_rvb39,l_rvb40,l_rvb33,l_rvb331,l_rvb332,l_rvb07,b_rvv.*    #CHI-980050   #FUN-9A0068
       IF STATUS THEN
          CALL cl_err('for rvb',STATUS,1)
@@ -12906,37 +12917,37 @@ FUNCTION t720_g_b()        #自動產生入庫單
 #     END IF
 #    #No.FUN-A50054 -END-------
 #FUN-A60035 ---MARK END
- 
+
       IF b_rvv.rvv02 IS NULL THEN
          LET b_rvv.rvv02 = 1
       END IF
- 
+
       LET b_rvv.rvv01=g_rvu.rvu01
       IF g_azw.azw04 = '2' THEN
          SELECT rvb36,rvb37,rvb38,rvb42,rvb43,rvb44,rvb45     #TQC-C20117 add rvb36,rvb37,rvb38
-           INTO l_rvb36,l_rvb37,l_rvb38,                      #TQC-C20117 add 
-                l_rvb42,l_rvb43,l_rvb44,l_rvb45  
-              FROM rvb_file                                                                     
-           WHERE rvb01 = g_rvu.rvu02 AND rvb07+rvb29-rvb30>0                                                       
-                                                            
+           INTO l_rvb36,l_rvb37,l_rvb38,                      #TQC-C20117 add
+                l_rvb42,l_rvb43,l_rvb44,l_rvb45
+              FROM rvb_file
+           WHERE rvb01 = g_rvu.rvu02 AND rvb07+rvb29-rvb30>0
+
          LET b_rvv.rvv10 = l_rvb42
          LET b_rvv.rvv11 = l_rvb43
          LET b_rvv.rvv12 = l_rvb44
          LET b_rvv.rvv13 = l_rvb45
          #FUN-C90049 mark begin----
          #SELECT rtz07 INTO l_rtz07 FROM rtz_file #MOD-9C0016 del rtz08
-         # WHERE rtz01 = g_rvu.rvuplant 
+         # WHERE rtz01 = g_rvu.rvuplant
          #FUN-C90049 mark end-----
          CALL s_get_coststore(g_rvu.rvuplant,g_rvv[l_ac].rvv31) RETURNING l_rtz07    #FUN-C90049 add
        #FUN-C20002--start add-------------------------------------------
        SELECT ima154 INTO l_ima154
          FROM ima_file
-        WHERE ima01 = g_rvv[l_ac].rvv31 
+        WHERE ima01 = g_rvv[l_ac].rvv31
        IF l_ima154 = 'Y' AND g_rvv[l_ac].rvv31[1,4] <> 'MISC' THEN
           SELECT rcj03 INTO l_rcj03
             FROM rcj_file
            WHERE rcj00 = '0'
-         #FUN-C90049 mark begin--- 
+         #FUN-C90049 mark begin---
          #SELECT rtz07,rtz08 INTO l_rtz07,l_rtz08
          #  FROM rtz_file
          # WHERE rtz01 = g_plant
@@ -12946,12 +12957,12 @@ FUNCTION t720_g_b()        #自動產生入庫單
             LET b_rvv.rvv32 = l_rtz07
          ELSE
             LET b_rvv.rvv32 = l_rtz08
-         END IF 
+         END IF
       ELSE
          IF NOT cl_null(l_rvb36) THEN
             LET b_rvv.rvv32 = l_rvb36
             LET b_rvv.rvv33 = l_rvb37
-            LET b_rvv.rvv34 = l_rvb38   
+            LET b_rvv.rvv34 = l_rvb38
          ELSE
             #FUN-C90049 mark begin---
             #SELECT rtz08 INTO l_rtz07 FROM rtz_file
@@ -12959,9 +12970,9 @@ FUNCTION t720_g_b()        #自動產生入庫單
             #FUN-C90049 mark end-----
             CALL s_get_noncoststore(g_rvu.rvuplant,g_rvv[l_ac].rvv31) RETURNING l_rtz07    #FUN-C90049 add
             LET b_rvv.rvv32 = l_rtz07
-         END IF  
-      END IF  
- 
+         END IF
+      END IF
+
        #FUN-C20002--end  add--------------------------------------------
        #FUN-C20002--start mark-------------------------------------------------
        # #TQC-C20117--add--begin--
@@ -12986,14 +12997,14 @@ FUNCTION t720_g_b()        #自動產生入庫單
       END IF
       LET b_rvv.rvvplant=g_rvu.rvuplant
       LET b_rvv.rvvlegal=g_rvu.rvulegal
- 
+
       LET b_rvv.rvv09=g_rvu.rvu03
       LET b_rvv.rvv06=g_rvu.rvu04     #廠商單號
- 
+
       IF b_rvv.rvv31[1,4]='MISC' THEN
- 
+
          SELECT pmn041 INTO b_rvv.rvv031 FROM pmn_file
- 
+
           WHERE pmn01=b_rvv.rvv36 AND pmn02=b_rvv.rvv37  #No.MOD-590354
       END IF
       IF NOT cl_null(b_rvv.rvv32) THEN
@@ -13024,7 +13035,7 @@ FUNCTION t720_g_b()        #自動產生入庫單
            END IF
          ELSE
             CONTINUE FOREACH
-         END IF         
+         END IF
       END IF
       IF b_rvv.rvv17 <= 0 THEN
          CONTINUE FOREACH
@@ -13070,7 +13081,7 @@ FUNCTION t720_g_b()        #自動產生入庫單
                 AND rvv05=b_rvv.rvv05
                 AND rvv82 IS NOT NULL
                 AND rvv85 IS NOT NULL
- 
+
          IF cl_null(l_rvv82) THEN
             LET l_rvv82=0
          END IF
@@ -13100,7 +13111,7 @@ FUNCTION t720_g_b()        #自動產生入庫單
         IF cl_null(l_rvb07) THEN LET l_rvb07=0 END IF
         IF g_rvv[l_ac].rvv17= l_rvb07 THEN
            LET g_rvv[l_ac].rvv87 = l_rvv87_o
-        END IF 
+        END IF
       LET b_rvv.rvv87=g_rvv[l_ac].rvv87
       LET g_rvv[l_ac].rvv87=b_rvv.rvv87
       IF cl_null(b_rvv.rvv32) THEN #BugNo:5611
@@ -13109,7 +13120,7 @@ FUNCTION t720_g_b()        #自動產生入庫單
             FROM ima_file
            WHERE ima01 = g_rvv[l_ac].rvv31      #No.TQC-920090 add
           LET g_rvv[l_ac].rvv34 = ' '
-          IF g_azw.azw04 = '2' THEN  
+          IF g_azw.azw04 = '2' THEN
              #FUN-C90049 mark begin---
              #SELECT rtz07 INTO l_rtz07 FROM rtz_file #MOD-9C0016 del rtz08
              #    WHERE rtz01 = g_rvu.rvuplant
@@ -13132,15 +13143,15 @@ FUNCTION t720_g_b()        #自動產生入庫單
 #          IF NOT s_chk_ware(g_rvv[l_ac].rvv32) THEN
 #             LET g_rvv[l_ac].rvv32=' '
 #             LET g_rvv[l_ac].rvv33=' '
-#          END IF 
-#          #No.FUN-AA0049--end               
+#          END IF
+#          #No.FUN-AA0049--end
 #FUN-AB0066 --end--
       END IF
       #FUN-CB0087--add---str----
       IF g_aza.aza115 = 'Y' AND cl_null(g_rvv[l_ac].rvv26) THEN
          CALL s_reason_code(g_rvu.rvu01,g_rvu.rvu02,'',g_rvv[l_ac].rvv31,
                             g_rvv[l_ac].rvv32,g_rvu.rvu07,g_rvu.rvu06) RETURNING b_rvv.rvv26
-         LET g_rvv[l_ac].rvv26 = b_rvv.rvv26  
+         LET g_rvv[l_ac].rvv26 = b_rvv.rvv26
       END IF
       #FUN-CB0087--add---end----
       LET g_rvv[l_ac].rvv35=b_rvv.rvv35
@@ -13160,7 +13171,7 @@ FUNCTION t720_g_b()        #自動產生入庫單
          LET g_rvv[l_ac].pmn123 = ''
          LET g_rvv[l_ac].mse02 = ''
       END IF
-      #FUN-B40083  --end      
+      #FUN-B40083  --end
       IF b_rvv.rvv87>0 THEN   #MOD-AA0165 rvv17-->rvv87
          CALL t720sub_rvv38(g_rvv[l_ac].rvv36,b_rvv.rvv38,b_rvv.rvv38t,g_rvu.rvu04,g_rvu.rvu01)  #TQC-C30225 add
                    RETURNING b_rvv.rvv38,b_rvv.rvv38t
@@ -13181,12 +13192,12 @@ FUNCTION t720_g_b()        #自動產生入庫單
              #   SELECT rva113 INTO l_rva113 FROM rva_file WHERE rva01 = g_rvu02
              #   SELECT azi04 INTO t_azi04 FROM azi_file WHERE azi01 = l_rva113
              #END IF
-             # IF cl_null(t_azi04) THEN                                                                                             
-             #    SELECT azi04 INTO t_azi04                                                                                         
-             #      FROM pmc_file,azi_file                                                                                          
-             #     WHERE pmc22=azi01                                                                                                
-             #       AND pmc01 = g_rvu.rvu04                                                                                        
-             # END IF                                                                                                               
+             # IF cl_null(t_azi04) THEN
+             #    SELECT azi04 INTO t_azi04
+             #      FROM pmc_file,azi_file
+             #     WHERE pmc22=azi01
+             #       AND pmc01 = g_rvu.rvu04
+             # END IF
              #IF cl_null(t_azi04) THEN LET t_azi04=0 END IF   #No.CHI-6A0004
              #MOD-C40047 end mark----
               CALL t720_get_azi()                            #MOD-C40047 add
@@ -13194,7 +13205,7 @@ FUNCTION t720_g_b()        #自動產生入庫單
                                 RETURNING b_rvv.rvv39
               CALL cl_digcut(b_rvv.rvv39t,t_azi04)  #No.CHI-6A0004
                                 RETURNING b_rvv.rvv39t   #No.FUN-540027
-              #CALL t720sub_rvv39(g_rvv[l_ac].rvv36,b_rvv.rvv39,b_rvv.rvv39t,g_rvu.rvu04,g_rvu.rvu02) #FUN-A10130  #MOD-BC0262 mark 
+              #CALL t720sub_rvv39(g_rvv[l_ac].rvv36,b_rvv.rvv39,b_rvv.rvv39t,g_rvu.rvu04,g_rvu.rvu02) #FUN-A10130  #MOD-BC0262 mark
               CALL t720sub_rvv39(g_rvv[l_ac].rvv36,b_rvv.rvv39,b_rvv.rvv39t,g_rvu.rvu04,g_rvu.rvu01)  #MOD-BC0262 add
                    RETURNING b_rvv.rvv39,b_rvv.rvv39t
       END IF
@@ -13217,18 +13228,18 @@ FUNCTION t720_g_b()        #自動產生入庫單
       #           SELECT rva113 INTO l_rva113 FROM rva_file WHERE rva01 = g_rvu02
       #           SELECT azi04 INTO t_azi04 FROM azi_file WHERE azi01 = l_rva113
       #        END IF
-      #         IF cl_null(t_azi04) THEN                                                                                             
-      #            SELECT azi04 INTO t_azi04                                                                                         
-      #              FROM pmc_file,azi_file                                                                                          
-      #             WHERE pmc22=azi01                                                                                                
-      #               AND pmc01 = g_rvu.rvu04                                                                                        
-      #         END IF                                                                                                               
+      #         IF cl_null(t_azi04) THEN
+      #            SELECT azi04 INTO t_azi04
+      #              FROM pmc_file,azi_file
+      #             WHERE pmc22=azi01
+      #               AND pmc01 = g_rvu.rvu04
+      #         END IF
       #        IF cl_null(t_azi04) THEN LET t_azi04=0 END IF  #No.CHI-6A0004
       #        CALL cl_digcut(b_rvv.rvv39,t_azi04)  #No.CHI-6A0004
       #                          RETURNING b_rvv.rvv39
       #        CALL cl_digcut(b_rvv.rvv39t,t_azi04)  #No.CHI-6A0004
       #                          RETURNING b_rvv.rvv39t
-      #        CALL t720sub_rvv39(g_rvv[l_ac].rvv36,b_rvv.rvv39,b_rvv.rvv39t,g_rvu.rvu04,g_rvu.rvu02) #FUN-A10130   
+      #        CALL t720sub_rvv39(g_rvv[l_ac].rvv36,b_rvv.rvv39,b_rvv.rvv39t,g_rvu.rvu04,g_rvu.rvu02) #FUN-A10130
       #             RETURNING b_rvv.rvv39,b_rvv.rvv39t
       #END IF
       #-----END MOD-AA0165-----
@@ -13244,7 +13255,7 @@ FUNCTION t720_g_b()        #自動產生入庫單
       IF cl_null(b_rvv.rvv34) THEN LET b_rvv.rvv34=' ' END IF
       IF cl_null(b_rvv.rvv02) THEN LET b_rvv.rvv02 = 1 END IF
       LET b_rvv.rvv88 = 0  #No.TQC-7B0083
-      
+
       IF g_rvu.rvu00 = '3' AND g_rvu.rvu116 = '3' THEN
          LET b_rvv.rvv17 = 0
          LET b_rvv.rvv87 = 0
@@ -13254,14 +13265,14 @@ FUNCTION t720_g_b()        #自動產生入庫單
          LET b_rvv.rvv39t = 0
       END IF
       #TQC-C70086 add begin----------------
-      IF b_rvv.rvv25 = 'Y' THEN 
+      IF b_rvv.rvv25 = 'Y' THEN
          LET b_rvv.rvv38 = 0
          LET b_rvv.rvv38t = 0
          LET b_rvv.rvv39 = 0
          LET b_rvv.rvv39t = 0
-      END IF 
+      END IF
       #TQC-C70086 add end -----------------
-      
+
       IF b_rvv.rvv10 IS NULL THEN LET b_rvv.rvv10 = '4' END IF  #NO.FUN-9C0075 add
    #流通代銷無收貨單,將發票記錄rvb22同時新增到rvv22內
    #FUN-BB0001 add START
@@ -13275,12 +13286,12 @@ FUNCTION t720_g_b()        #自動產生入庫單
          ROLLBACK WORK
          CONTINUE FOREACH
       END IF
- 
-      SELECT ima918,ima921 INTO g_ima918,g_ima921 
+
+      SELECT ima918,ima921 INTO g_ima918,g_ima921
         FROM ima_file
        WHERE ima01 = b_rvv.rvv31
          AND imaacti = "Y"
-      
+
       IF g_ima918 = "Y" OR g_ima921 = "Y" THEN
          IF g_sma.sma90 = "Y" THEN #MOD-C30074 add
             CALL t720sub_ins_rvbs(g_prog,b_rvv.rvv01,b_rvv.rvv02,
@@ -13288,25 +13299,25 @@ FUNCTION t720_g_b()        #自動產生入庫單
                                b_rvv.rvv32,b_rvv.rvv33,b_rvv.rvv34,g_rvu.rvu02) #FUN-A10130
          END IF #MOD-C30074 add
       END IF
- 
+
       IF g_success='Y' THEN
          COMMIT WORK
       ELSE
          ROLLBACK WORK
       END IF
    END FOREACH
- 
+
    CALL t720_b_fill(' 1=1')
- 
+
 END FUNCTION
- 
+
 #-----CHI-B40011---------
 #移到sub裡
 #FUNCTION t720_chkpoz011()  #檢查是否為正拋入庫
 # DEFINE l_poz011 LIKE poz_file.poz011
 # DEFINE l_rvv36 LIKE rvv_file.rvv36
 # DEFINE l_pmm901 LIKE pmm_file.pmm901
-# 
+#
 #   DECLARE rvv36_curs CURSOR FOR
 #    SELECT rvv36 FROM rvv_file WHERE rvv01 = g_rvu.rvu01
 #   FOREACH rvv36_curs INTO l_rvv36
@@ -13334,18 +13345,18 @@ END FUNCTION
 #DEFINE l_pmc   RECORD LIKE pmc_file.*
 #DEFINE l_sql   STRING
 #DEFINE l_rvu24 LIKE rvu_file.rvu24
-# 
+#
 #    LET l_sql = "SELECT * FROM pmc_file",
 #                " WHERE pmc01 = '",g_rvu.rvuplant,"' AND pmc05='1'",
 #                "   AND pmc903 = 'Y'"
 #    PREPARE pmc_cs1 FROM l_sql
 #    EXECUTE pmc_cs1 INTO l_pmc.*
-# 
+#
 #    LET l_sql = "SELECT * FROM pov_file",
 #                " WHERE pov01 = '1' AND pov02 = '",g_rvu.rvuplant,"'"
 #    PREPARE pov_cs FROM l_sql
 #    EXECUTE pov_cs INTO l_pov1.*
-# 
+#
 #    CALL t720sub_azp(g_rvu.rvu04) RETURNING l_dbs #FUN-A10130
 #    LET l_dbs = s_dbstring(l_dbs CLIPPED)
 #  # LET l_sql = "SELECT * FROM ",l_dbs,"pov_file",                             #FUN-A50102 mark
@@ -13356,17 +13367,17 @@ END FUNCTION
 #     CALL cl_parse_qry_sql(l_sql,g_rvu.rvu04) RETURNING l_sql  #FUN-A50102
 #     PREPARE pov_pre FROM l_sql
 #     EXECUTE pov_pre INTO l_pov2.*
-#     
+#
 #   # LET l_sql = "SELECT * FROM ",l_dbs,"occ_file",                            #FUN-A50102 mark
-#     LET l_sql = "SELECT * FROM ",cl_get_target_table(g_rvu.rvu04,'occ_file'), #FUN-A50102 
+#     LET l_sql = "SELECT * FROM ",cl_get_target_table(g_rvu.rvu04,'occ_file'), #FUN-A50102
 #                " WHERE pmc01 = '",g_rvu.rvu04 CLIPPED,"'"
-#     CALL cl_replace_sqldb(l_sql) RETURNING l_sql              #FUN-A50102 
+#     CALL cl_replace_sqldb(l_sql) RETURNING l_sql              #FUN-A50102
 #     CALL cl_parse_qry_sql(l_sql,g_rvu.rvu04) RETURNING l_sql  #FUN-A50102
 #     PREPARE occ_cs FROM l_sql
 #     EXECUTE occ_cs INTO l_occ.*
-# 
+#
 #     DECLARE poz_cs CURSOR FOR SELECT poz01 FROM poz_file
-#                                WHERE poz00 = '2' 
+#                                WHERE poz00 = '2'
 #                                  AND poz011='1' AND poz12 = 'Y'
 #     FOREACH poz_cs INTO l_poz01
 #       SELECT COUNT(poy02) INTO l_cnt FROM poy_file
@@ -13529,7 +13540,7 @@ END FUNCTION
 #     END IF
 #END FUNCTION
 #-----END CHI-B40011-----
- 
+
 FUNCTION t720_chk_poz()
 DEFINE l_rvb04  LIKE rvb_file.rvb04
 DEFINE l_poz011 LIKE poz_file.poz011
@@ -13539,7 +13550,7 @@ DEFINE l_poz18  LIKE poz_file.poz18,
        l_c      LIKE type_file.num5
 DEFINE l_poy04  LIKE poy_file.poy04
 DEFINE l_poy02  LIKE poy_file.poy02
- 
+
      LET g_errno = ' '
      DECLARE rvb04_cs CURSOR FOR
       SELECT UNIQUE(rvb04) FROM rvb_file WHERE rvb01 = g_rvu.rvu02
@@ -13561,7 +13572,7 @@ DEFINE l_poy02  LIKE poy_file.poy02
         AND pmm01  = l_rvb04
         AND pmm901 = 'Y'         #三角貿易否
         AND pmm905 = 'Y'         #已拋轉
- 
+
       LET l_c = 0
      IF l_poz19 = 'Y'  AND g_plant=l_poz18 THEN    #已設立中斷點
          SELECT COUNT(*) INTO l_c   #check poz18設定的中斷營運中心是否存在單身設>
@@ -13577,14 +13588,14 @@ DEFINE l_poy02  LIKE poy_file.poy02
          END IF
      ELSE
          IF (g_rvu.rvu08='TRI' OR g_rvu.rvu08='TAP') AND NOT cl_null(g_rvu.rvu99) THEN #TQC-7C0063  #MOD-7C0052
-            LET l_c = 0  
+            LET l_c = 0
             SELECT COUNT(*) INTO l_c  FROM poy_file
              WHERE poy01 = l_poz01
                AND poy02 = '0'
                AND poy04 = g_plant
-            IF l_c = 0 THEN 
+            IF l_c = 0 THEN
                LET g_errno = 'apm-015'  #TQC-820011 add
-               RETURN             
+               RETURN
             END IF
          END IF   #FUN-830035 add
          IF g_rvu.rvu00 = '1' OR g_rvu.rvu00 = '2' THEN
@@ -13593,28 +13604,28 @@ DEFINE l_poy02  LIKE poy_file.poy02
                LET g_errno='apm-015'
             END IF
             #代採正拋,非中斷點,入庫單應不可取消確認
-            IF l_poz011='1'  AND NOT cl_null(g_rvu.rvu99)  THEN 
+            IF l_poz011='1'  AND NOT cl_null(g_rvu.rvu99)  THEN
                LET g_errno='axm-316'
                RETURN
-            END IF 
+            END IF
          END IF
      END IF   #MOD-7C0052 add
- 
+
      IF g_rvu.rvu00 = '3' THEN #若為倉退
        #IF cl_null(l_poz011) OR l_poz011 <> '1' THEN #MOD-D20003 mark
         IF cl_null(l_poz011) THEN                    #MOD-D20003 add
            LET g_errno='axm-413'  #TQC-8A0071
            #MOD-860279 add  中斷點的判斷
-           IF l_poz19 = 'Y' AND (g_plant=l_poz18) THEN 
+           IF l_poz19 = 'Y' AND (g_plant=l_poz18) THEN
               LET g_errno=' '
            END IF
            #MOD-860279 add  中斷點的判斷
         END IF
        #代採正拋,非中斷點,入庫單應不可取消確認
-       IF l_poz011='1'  AND NOT cl_null(g_rvu.rvu99)  THEN 
+       IF l_poz011='1'  AND NOT cl_null(g_rvu.rvu99)  THEN
           LET g_errno='axm-316'
           RETURN
-       END IF 
+       END IF
         SELECT * INTO g_poz.* FROM poz_file WHERE poz01 = l_poz01
         IF STATUS = 100 THEN LET g_errno = 'apm-015' END IF #no.7176
         SELECT MIN(poy02) INTO l_poy02 FROM poy_file WHERE poy01=l_poz01
@@ -13624,7 +13635,7 @@ DEFINE l_poy02  LIKE poy_file.poy02
         END IF
      END IF
 END FUNCTION
- 
+
 #genero
 FUNCTION t720_set_entry(p_cmd)
 DEFINE   p_cmd     LIKE type_file.chr1    #No.FUN-680136 VARCHAR(1)
@@ -13638,24 +13649,24 @@ DEFINE   p_cmd     LIKE type_file.chr1    #No.FUN-680136 VARCHAR(1)
    IF INFIELD(rvu01) OR (NOT g_before_input_done) THEN
       CALL cl_set_comp_entry("rvu02",TRUE)
    END IF
- 
+
    IF INFIELD(rvu02) OR (NOT g_before_input_done) THEN
       CALL cl_set_comp_entry("rvu04,rvu05,rvu08",TRUE)
    END IF
- 
+
    IF INFIELD(rvu04) OR (NOT g_before_input_done) THEN
       CALL cl_set_comp_entry("rvu05",TRUE)
    END IF
    IF g_prog='apmt742' THEN
       CALL cl_set_comp_required("rvu02",g_azw.azw04!='2')
    END IF
- 
+
 END FUNCTION
- 
+
 FUNCTION t720_set_no_entry(p_cmd)
 DEFINE   p_cmd     LIKE type_file.chr1    #No.FUN-680136 VARCHAR(1)
 DEFINE   l_n       LIKE type_file.num5    #No.FUN-680136 SMALLINT
- 
+
    IF (NOT g_before_input_done) THEN
        IF p_cmd = 'u' AND g_chkey matches'[Nn]' THEN
            CALL cl_set_comp_entry("rvu01",FALSE)
@@ -13667,7 +13678,7 @@ DEFINE   l_n       LIKE type_file.num5    #No.FUN-680136 SMALLINT
           CALL cl_set_comp_entry("rvu111,rvu112,rvu113,rvu115",FALSE)  #MOD-B30544
        END IF
    END IF
- 
+
    IF INFIELD(rvu01) OR (NOT g_before_input_done) THEN
        SELECT COUNT(*) INTO l_n FROM rvv_file
         WHERE rvv01=g_rvu.rvu01
@@ -13676,7 +13687,7 @@ DEFINE   l_n       LIKE type_file.num5    #No.FUN-680136 SMALLINT
            CALL cl_set_comp_entry("rvu02",FALSE)
        END IF
    END IF
- 
+
    IF INFIELD(rvu02) OR (NOT g_before_input_done) THEN
        IF NOT cl_null(g_rvu.rvu02) THEN
          #CALL cl_set_comp_entry("rvu04,rvu08",FALSE)
@@ -13688,25 +13699,25 @@ DEFINE   l_n       LIKE type_file.num5    #No.FUN-680136 SMALLINT
          END IF
        END IF
    END IF
- 
+
    IF INFIELD(rvu04) OR (NOT g_before_input_done) THEN
        IF g_rvu.rvu04[1,4] != 'MISC' THEN
            CALL cl_set_comp_entry("rvu05",FALSE)
        END IF
    END IF
    CALL cl_set_comp_entry("rvu00",FALSE)    #No.MOD-890106
- 
+
 END FUNCTION
- 
+
 FUNCTION t720_set_entry_b(p_cmd)
 DEFINE   p_cmd     LIKE type_file.chr1    #No.FUN-680136 VARCHAR(1)
 DEFINE   l_ima903  LIKE ima_file.ima903   #MOD-D40048 add
- 
+
    IF NOT g_before_input_done THEN
        CALL cl_set_comp_entry("rvv35,rvv25",TRUE)
        CALL cl_set_comp_entry("rvv41",TRUE)
    END IF
- 
+
    IF INFIELD(rvv05) OR p_cmd = 'u' THEN
       #MOD-D40048 add
        IF g_before_input_done THEN
@@ -13721,9 +13732,9 @@ DEFINE   l_ima903  LIKE ima_file.ima903   #MOD-D40048 add
       END IF
      #MOD-D40048 add end   -----
    END IF
- 
+
     CALL cl_set_comp_entry("rvv83,rvv85,rvv86,rvv87",TRUE)
- 
+
    IF INFIELD(rvv31)  THEN
       CALL cl_set_comp_entry("rvv031",TRUE)
    END IF
@@ -13734,18 +13745,18 @@ DEFINE   l_ima903  LIKE ima_file.ima903   #MOD-D40048 add
   #MOD-D40048 add
          CALL cl_set_comp_entry("rvv31",TRUE) #FUN-A20017
   #MOD-D40048 add start -----
-      END IF 
-   END IF 
+      END IF
+   END IF
   #MOD-D40048 add end   -----
       IF g_sma.sma120='Y' THEN
-         CALL cl_set_comp_entry("att00,att01,att01_c,att02,att02_c,att03,att03_c,                                                                                                       att04,att04_c,att05,att05_c,att06,att06_c,att07,                                                                                                       att07_c,att08,att08_c,att09,att09_c,att10,                              att10_c ",TRUE) 
+         CALL cl_set_comp_entry("att00,att01,att01_c,att02,att02_c,att03,att03_c,                                                                                                       att04,att04_c,att05,att05_c,att06,att06_c,att07,                                                                                                       att07_c,att08,att08_c,att09,att09_c,att10,                              att10_c ",TRUE)
       END IF
     IF g_prog='apmt742' THEN
        CALL cl_set_comp_required("rvv05",g_azw.azw04<>'2')
     END IF
- 
+
 END FUNCTION
- 
+
 FUNCTION t720_set_no_entry_b(p_cmd)
 DEFINE   p_cmd     LIKE type_file.chr1    #No.FUN-680136 VARCHAR(1)
 DEFINE   l_tmp     LIKE type_file.chr5    #No.FUN-680136 VARCHAR(05)  #No.FUN-550060
@@ -13755,7 +13766,7 @@ DEFINE   l_pmn41   LIKE pmn_file.pmn41    #No.TQC-940140 add
 DEFINE   l_pmn43   LIKE pmn_file.pmn43    #No.TQC-940140 add
 DEFINE   l_ima903  LIKE ima_file.ima903   #FUN-A20017
 DEFINE   l_gec07   LIKE gec_file.gec07    #MOD-C30025 add
- 
+
    IF NOT g_before_input_done THEN
        IF NOT cl_null(g_rvu.rvu02) THEN
            CALL cl_set_comp_entry("rvv35",FALSE)
@@ -13764,10 +13775,10 @@ DEFINE   l_gec07   LIKE gec_file.gec07    #MOD-C30025 add
            CALL cl_set_comp_entry("rvv86",FALSE)
        END IF
    END IF
- 
+
    #FUN-A20017--begin--add----
    #IF l_ac > 0 THEN   #MOD-A80146
-   IF l_ac > 0 AND g_before_input_done  THEN   #MOD-A80146  
+   IF l_ac > 0 AND g_before_input_done  THEN   #MOD-A80146
       IF NOT cl_null(g_rvv[l_ac].rvv05)  THEN
          SELECT ima903 INTO l_ima903
            FROM ima_file,pmn_file
@@ -13778,21 +13789,21 @@ DEFINE   l_gec07   LIKE gec_file.gec07    #MOD-C30025 add
       IF g_argv3 <> 'SUB' OR l_ima903 = 'N' OR cl_null(l_ima903) THEN
          CALL cl_set_comp_entry("rvv31",FALSE)
       END IF
-   END IF  
+   END IF
    #FUN-A20017--end---
-   
+
    IF p_cmd = 'u' THEN
       IF NOT cl_null(g_rvv[l_ac].rvv25) THEN
           CALL cl_set_comp_entry("rvv25",FALSE)
       END IF
    END IF
- 
+
    IF g_before_input_done THEN
    IF g_rvv[l_ac].rvv31[1,4] != 'MISC' AND INFIELD(rvv31) THEN
       CALL cl_set_comp_entry("rvv031",FALSE)
    END IF
    END IF
- 
+
    IF INFIELD(rvv05) OR p_cmd = 'u' THEN
       IF NOT cl_null(g_rvu.rvu02) AND NOT cl_null(g_rvv[l_ac].rvv05) THEN
 #FUN-A20017--begin-判斷非ICD行業下才需做此處理
@@ -13837,24 +13848,24 @@ DEFINE   l_gec07   LIKE gec_file.gec07    #MOD-C30025 add
     ELSE
        CALL cl_set_comp_entry("rvv05",TRUE)
     END IF
-  
+
     IF NOT cl_null(g_rvu.rvu117) THEN
        CALL cl_set_comp_entry("rvv17,rvv33,rvv33,rvv34",FALSE)
     ELSE
        CALL cl_set_comp_entry("rvv17,rvv33,rvv33,rvv34",TRUE)
     END IF
-    IF g_rvu.rvu116 = '3' THEN 
+    IF g_rvu.rvu116 = '3' THEN
     #FUN-D60130 -----Begin------
-       IF g_rvu.rvu00 = '3' AND g_argv1 = '3' AND g_argv3 = 'SUB' THEN    
+       IF g_rvu.rvu00 = '3' AND g_argv1 = '3' AND g_argv3 = 'SUB' THEN
           CALL cl_set_comp_entry("rvv17",TRUE)
           CALL cl_set_comp_entry("rvv85,rvv82,rvv87",TRUE)
        ELSE
     #FUN-D60130 -----End--------
           CALL cl_set_comp_entry("rvv17",FALSE)
           CALL cl_set_comp_entry("rvv85,rvv82,rvv87",FALSE)   #MOD-CC0055 add
-       END IF   #FUN-D60130 
-    END IF 
-    
+       END IF   #FUN-D60130
+    END IF
+
     CALL cl_set_comp_entry("rvv32,rvv33,rvv34",TRUE)
     IF g_rvu.rvu08='SUB' AND g_before_input_done THEN   #MOD-970081
        IF NOT cl_null(g_rvv[l_ac].rvv36) AND NOT cl_null(g_rvv[l_ac].rvv37) THEN
@@ -13865,22 +13876,22 @@ DEFINE   l_gec07   LIKE gec_file.gec07    #MOD-C30025 add
           END IF
        END IF
     END IF
- 
+
     #MOD-C30025 add by suncx sta 120305--------------------
    #IF g_prog='apmt722' THEN  #MOD-D20171 mark
     IF g_prog[1,7]='apmt722' OR g_prog[1,7]='aict044' OR g_prog[1,7]='apmt732' THEN  #MOD-D20171 add  #MOD-D30083 add aict044
        SELECT gec07 INTO l_gec07 FROM gec_file WHERE gec01 = g_rvu.rvu115
 #TQC-C30225 add begin
-       IF cl_null(l_gec07) THEN 
+       IF cl_null(l_gec07) THEN
             #MOD-D30089 mark start -----
-            #SELECT DISTINCT gec07 INTO l_gec07  FROM pmm_file,rvu_file,rva_file,gec_file 
+            #SELECT DISTINCT gec07 INTO l_gec07  FROM pmm_file,rvu_file,rva_file,gec_file
             # WHERE pmm01 = rva02
             #   AND rva01 = rvu02
             #   AND rvu02 = g_rvu.rvu02
             #MOD-D30089 mark start -----
             #MOD-D30089 add end   -----
              IF g_before_input_done THEN
-                SELECT DISTINCT gec07 INTO l_gec07 FROM pmm_file,rvb_file,gec_file 
+                SELECT DISTINCT gec07 INTO l_gec07 FROM pmm_file,rvb_file,gec_file
                  WHERE rvb02 = g_rvv[l_ac].rvv05
                    AND rvb01 = g_rvu.rvu02
                    AND pmm01 = rvb04
@@ -13900,12 +13911,12 @@ DEFINE   l_gec07   LIKE gec_file.gec07    #MOD-C30025 add
        CALL cl_set_comp_entry("rvv31",TRUE) #MOD-D80123
     END IF
     #MOD-C30025 add by suncx end 120305--------------------
- 
+
 END FUNCTION
- 
+
 FUNCTION t720_set_required(p_cmd)
   DEFINE p_cmd LIKE type_file.chr1    #No.FUN-680136 VARCHAR(1)
- 
+
   IF NOT g_before_input_done THEN
      IF NOT cl_null(g_rvu.rvu02) THEN
         CALL cl_set_comp_required("rvv05",TRUE)
@@ -13933,10 +13944,10 @@ FUNCTION t720_set_required(p_cmd)
     END IF
     END IF
 END FUNCTION
- 
+
 FUNCTION t720_set_no_required(p_cmd)
   DEFINE p_cmd LIKE type_file.chr1    #No.FUN-680136 VARCHAR(1)
- 
+
   IF NOT g_before_input_done THEN
      CALL cl_set_comp_required("rvv05",FALSE)
   END IF
@@ -13945,7 +13956,7 @@ FUNCTION t720_set_no_required(p_cmd)
 END FUNCTION
 
 #&ifdef ICD  #FUN-B50096
-#FUN-A40022--begin--add---- 
+#FUN-A40022--begin--add----
 FUNCTION t720_set_required_1(p_cmd)
 #DEFINE l_imaicd13 LIKE imaicd_file.imaicd13  #FUN-B50096
 DEFINE l_ima159   LIKE ima_file.ima159        #FUN-B50096
@@ -13959,13 +13970,13 @@ DEFINE p_cmd      LIKE type_file.chr1
 #        IF l_imaicd13 = 'Y' THEN
          SELECT ima159 INTO l_ima159 FROM ima_file
           WHERE ima01 = g_rvv[l_ac].rvv31
-         IF l_ima159 = '1' THEN   
+         IF l_ima159 = '1' THEN
 #FUN-B50096 --------------End-----------------
             CALL cl_set_comp_required("rvv34",TRUE)
          END IF
       END IF
    END IF
-END FUNCTION 
+END FUNCTION
 
 FUNCTION t720_set_no_required_1()
      CALL cl_set_comp_required("rvv34",FALSE)
@@ -13982,7 +13993,7 @@ DEFINE l_ima159   LIKE ima_file.ima159
          IF l_ima159 = '2' THEN
             CALL cl_set_comp_entry("rvv34",FALSE)
          ELSE
-            CALL cl_set_comp_entry("rvv34",TRUE)  
+            CALL cl_set_comp_entry("rvv34",TRUE)
          END IF
       END IF
    END IF
@@ -13994,36 +14005,36 @@ END FUNCTION
 #FUN-B50096 ---------------End------------------
 
 #CHI-B90021 ---------------Begin--------------
-#FUNCTION t720_chk_rvv()                                                                                                             
-#DEFINE l_n  LIKE type_file.num5                                                                                                     
-#                                                                                                                                    
-#  LET l_n = 0                                                                                                                       
-#  SELECT COUNT(*) INTO l_n FROM rvv_file                                                                                            
-#   WHERE rvv01 = g_rvu.rvu01                                                                                                        
-#  IF l_n = 0 AND INT_FLAG THEN RETURN 1 ELSE RETURN 0 END IF                                                                        
+#FUNCTION t720_chk_rvv()
+#DEFINE l_n  LIKE type_file.num5
+#
+#  LET l_n = 0
+#  SELECT COUNT(*) INTO l_n FROM rvv_file
+#   WHERE rvv01 = g_rvu.rvu01
+#  IF l_n = 0 AND INT_FLAG THEN RETURN 1 ELSE RETURN 0 END IF
 #END FUNCTION
 #CHI-B90021 ---------------End----------------
 #FUN-A40022--end--add---------
 #&endif    #FUN-B50096
- 
+
 #No.+046 010404 by plum add因必須考慮到參數sma894,最好都一致去call s_upimgg
 FUNCTION t720_u_imgg_du(p_no)  #入庫的取消確認
     DEFINE l_imgg10  LIKE imgg_file.imgg10
     DEFINE l_imgg21  LIKE imgg_file.imgg21
    #DEFINE l_ima25   LIKE ima_file.ima25    #FUN-A10130
     DEFINE p_no      LIKE type_file.chr1    #No.FUN-680136 VARCHAR(01)
- 
+
     IF cl_null(g_tlff.tlff12) THEN LET g_tlff.tlff12=1 END IF
     LET l_imgg10=g_tlff.tlff10
     IF cl_null(l_imgg10) THEN LET l_imgg10=0 END IF
- 
+
     IF g_tlff.tlff03 != 50 AND g_tlff.tlff02 != 50 THEN RETURN END IF
     IF g_tlff.tlff02 = 50 THEN LET g_tlff.tlff10=g_tlff.tlff10*-1 END IF
     IF b_rvv.rvv31[1,4]='MISC' THEN RETURN END IF
- 
+
     MESSAGE "update imgg_file ..."
     CALL ui.Interface.refresh()
- 
+
     LET g_forupd_sql =
           " SELECT imgg01,imgg02,imgg03,imgg04,imgg09 FROM imgg_file ",
           "   WHERE imgg01= ? ",
@@ -14034,7 +14045,7 @@ FUNCTION t720_u_imgg_du(p_no)  #入庫的取消確認
           " FOR UPDATE "
     LET g_forupd_sql = cl_forupd_sql(g_forupd_sql)
     DECLARE imgg_lock_du_imgg CURSOR FROM g_forupd_sql
- 
+
     OPEN imgg_lock_du_imgg USING g_tlff.tlff01,g_tlff.tlff031,g_tlff.tlff032,g_tlff.tlff033,g_tlff.tlff11
     IF STATUS THEN
        CALL cl_err("OPEN imgg_lock_du_imgg:", STATUS, 1)
@@ -14054,25 +14065,25 @@ FUNCTION t720_u_imgg_du(p_no)  #入庫的取消確認
        CALL cl_err('ima25 null',SQLCA.sqlcode,0)
        LET g_success = 'N' RETURN
     END IF
- 
+
     CALL s_umfchk(g_tlff.tlff01,g_tlff.tlff11,g_ima25) #FUN-A10130
           RETURNING g_cnt,l_imgg21
     IF g_cnt = 1 AND NOT (g_ima906='3' AND p_no='2') THEN
        CALL cl_err('','mfg3075',0)
        LET g_success = 'N' RETURN
     END IF
- 
+
     CALL s_upimgg(g_tlff.tlff01,g_tlff.tlff031,g_tlff.tlff032,g_tlff.tlff033,g_tlff.tlff11,-1,l_imgg10,g_today,   #FUN-8C0084
 g_tlff.tlff01,g_tlff.tlff031,g_tlff.tlff032,g_tlff.tlff033,'','','','',g_tlff.tlff11,'',l_imgg21,'','','',0,0,'','',g_tlff.tlff12)
- 
+
     IF STATUS OR g_success = 'N' THEN
        CALL cl_err('t2_upimgg(-1):','9050',0)
        LET g_success='N'
        RETURN
     END IF
- 
+
 END FUNCTION
- 
+
 FUNCTION t720_u_tlff() #------------------------------------ Update tlff_file
     MESSAGE "d_tlff!"
     CALL ui.Interface.refresh()
@@ -14085,7 +14096,7 @@ FUNCTION t720_u_tlff() #------------------------------------ Update tlff_file
        CALL cl_err('del tlff:','axm-176',1) LET g_success='N' RETURN
     END IF
 END FUNCTION
- 
+
 FUNCTION t720_u_log_du() #------------------------------------ Update tlff_file
     MESSAGE "d_tlff!"
     DELETE FROM tlff_file WHERE ROWID  =  g_rowid
@@ -14097,24 +14108,24 @@ FUNCTION t720_u_log_du() #------------------------------------ Update tlff_file
        CALL cl_err('del tlff:','axm-176',1) LET g_success='N' RETURN
     END IF
 END FUNCTION
- 
+
 #No.+046 010404 by plum add因必須考慮到參數sma894,最好都一致去call s_upimgg
 FUNCTION t720_u_imgg(p_no)  #入庫的取消確認
     DEFINE l_imgg10  LIKE imgg_file.imgg10
    #DEFINE l_ima25   LIKE ima_file.ima25  #FUN-A10130
     DEFINE l_imgg21  LIKE imgg_file.imgg21
     DEFINE p_no      LIKE type_file.chr1    #No.FUN-680136 VARCHAR(01)
- 
+
     LET l_imgg10=g_tlff.tlff10
     IF cl_null(l_imgg10) THEN LET l_imgg10=0 END IF
- 
+
     IF g_tlff.tlff03 != 50 AND g_tlff.tlff02 != 50 THEN RETURN END IF
     IF g_tlff.tlff02 = 50 THEN LET g_tlff.tlff10=g_tlff.tlff10*-1 END IF
     IF b_rvv.rvv31[1,4]='MISC' THEN RETURN END IF
- 
+
     MESSAGE "update imgg_file ..."
     CALL ui.Interface.refresh()
- 
+
     LET g_forupd_sql =
           " SELECT imgg01,imgg02,imgg03,imgg04,imgg09 FROM imgg_file ",
           "   WHERE imgg01= ? ",
@@ -14125,7 +14136,7 @@ FUNCTION t720_u_imgg(p_no)  #入庫的取消確認
           " FOR UPDATE "
     LET g_forupd_sql = cl_forupd_sql(g_forupd_sql)
     DECLARE imgg_lock_u_imgg CURSOR FROM g_forupd_sql
- 
+
     OPEN imgg_lock_u_imgg USING g_tlff.tlff01,g_tlff.tlff031,
                                 g_tlff.tlff032,g_tlff.tlff033,g_tlff.tlff11
     IF STATUS THEN
@@ -14138,7 +14149,7 @@ FUNCTION t720_u_imgg(p_no)  #入庫的取消確認
     IF STATUS THEN
        CALL cl_err('imgg_lock_u_imgg fail',STATUS,1) LET g_success='N' RETURN
     END IF
- 
+
     LET g_ima906=NULL LET g_ima907=NULL
     SELECT ima25,ima906,ima907 INTO g_ima25,g_ima906,g_ima907 #FUN-A10130
       FROM ima_file WHERE ima01=g_tlff.tlff01
@@ -14146,25 +14157,25 @@ FUNCTION t720_u_imgg(p_no)  #入庫的取消確認
        CALL cl_err('ima25 null',SQLCA.sqlcode,0)
        LET g_success = 'N' RETURN
     END IF
- 
+
     CALL s_umfchk(g_tlff.tlff01,g_tlff.tlff11,g_ima25)  #FUN-A10130
           RETURNING g_cnt,l_imgg21
     IF g_cnt = 1 AND NOT (g_ima906='3' AND p_no='2') THEN
        CALL cl_err('','mfg3075',0)
        LET g_success = 'N' RETURN
     END IF
- 
+
     CALL s_upimgg(g_tlff.tlff01,g_tlff.tlff031,g_tlff.tlff032,g_tlff.tlff033,g_tlff.tlff11,-1,l_imgg10,g_today,  #FUN-8C0084
 g_tlff.tlff01,g_tlff.tlff031,g_tlff.tlff032,g_tlff.tlff033,'','','','',g_tlff.tlff11,'',l_imgg21,'','','',0,0,'','',g_tlff.tlff12)
- 
+
     IF STATUS OR g_success = 'N' THEN
        CALL cl_err('t2_upimgg(-1):','9050',0)
        LET g_success='N'
        RETURN
     END IF
- 
+
 END FUNCTION
- 
+
 #用于default 雙單位/轉換率/數量
 FUNCTION t720_du_default(p_cmd)
  DEFINE    l_item   LIKE img_file.img01,     #料號
@@ -14187,21 +14198,21 @@ FUNCTION t720_du_default(p_cmd)
            l_qty3   LIKE img_file.img10,     #第一數量
            p_cmd    LIKE type_file.chr1,    #No.FUN-680136 VARCHAR(1)
            l_factor LIKE ima_file.ima31_fac     #No.FUN-680136 DECIMAL(16,8)
- 
+
    LET l_item = g_rvv[l_ac].rvv31
    LET l_ware = g_rvv[l_ac].rvv32
    LET l_loc  = g_rvv[l_ac].rvv33
    LET l_lot  = g_rvv[l_ac].rvv34
- 
+
    SELECT ima25,ima44,ima906,ima907 INTO g_ima25,l_ima44,l_ima906,l_ima907  #FUN-A10130
      FROM ima_file WHERE ima01 = l_item
- 
+
    SELECT img09 INTO l_img09 FROM img_file
     WHERE img01 = l_item
       AND img02 = l_ware
       AND img03 = l_loc
       AND img04 = l_lot
- 
+
    IF l_ima906 = '1' THEN  #不使用雙單位
       LET l_unit2 = NULL
       LET l_fac2  = NULL
@@ -14216,7 +14227,7 @@ FUNCTION t720_du_default(p_cmd)
    LET l_unit1 = l_ima44
    LET l_fac1  = 1
    LET l_qty1  = 0
- 
+
    IF g_sma.sma116 MATCHES '[02]' THEN    #No.FUN-610076
       LET l_unit3 = NULL
       LET l_qty3  = NULL
@@ -14224,7 +14235,7 @@ FUNCTION t720_du_default(p_cmd)
       LET l_unit3 = l_ima908
       LET l_qty3  = 0
    END IF
- 
+
    IF p_cmd = 'a' THEN
       LET g_rvv[l_ac].rvv83=l_unit2
       LET g_rvv[l_ac].rvv84=l_fac2
@@ -14234,7 +14245,7 @@ FUNCTION t720_du_default(p_cmd)
       LET g_rvv[l_ac].rvv82=l_qty1
    END IF
 END FUNCTION
- 
+
 #對原來數量/換算率/單位的賦值
 FUNCTION t720_set_origin_field()
   DEFINE    l_ima906 LIKE ima_file.ima906,
@@ -14248,7 +14259,7 @@ FUNCTION t720_set_origin_field()
             l_fac1   LIKE rvv_file.rvv81,
             l_qty1   LIKE rvv_file.rvv82,
             l_factor LIKE ima_file.ima31_fac  #No.FUN-680136 DECIMAL(16,8)
- 
+
     IF g_sma.sma115='N' THEN RETURN END IF
     SELECT ima25,ima44 INTO g_ima25,l_ima44 FROM ima_file  #FUN-A10130
      WHERE ima01=g_rvv[l_ac].rvv31
@@ -14259,7 +14270,7 @@ FUNCTION t720_set_origin_field()
        END IF
     END IF
     IF cl_null(l_ima44) THEN LET l_ima44=g_ima25 END IF  #FUN-A10130
- 
+
     SELECT img09 INTO l_img09 FROM img_file
      WHERE img01=g_rvv[l_ac].rvv31
        AND img02=g_rvv[l_ac].rvv32
@@ -14270,12 +14281,12 @@ FUNCTION t720_set_origin_field()
     LET l_qty2=g_rvv[l_ac].rvv85
     LET l_fac1=g_rvv[l_ac].rvv81
     LET l_qty1=g_rvv[l_ac].rvv82
- 
+
     IF cl_null(l_fac1) THEN LET l_fac1=1 END IF
     IF cl_null(l_qty1) THEN LET l_qty1=0 END IF
     IF cl_null(l_fac2) THEN LET l_fac2=1 END IF
     IF cl_null(l_qty2) THEN LET l_qty2=0 END IF
- 
+
     IF g_sma.sma115 = 'Y' THEN
        CASE g_ima906
           WHEN '1' LET g_rvv[l_ac].rvv35=g_rvv[l_ac].rvv80
@@ -14301,23 +14312,23 @@ FUNCTION t720_set_origin_field()
        LET g_factor = 1
     END IF
     LET b_rvv.rvv35_fac = g_factor
- 
+
 END FUNCTION
- 
- 
+
+
 #兩組雙單位資料不是一定要全部KEY,如果沒有KEY單位,則把換算率/數量清空
 FUNCTION t720_du_data_to_correct()
- 
+
    IF cl_null(g_rvv[l_ac].rvv83) THEN
       LET g_rvv[l_ac].rvv84 = NULL
       LET g_rvv[l_ac].rvv85 = NULL
    END IF
- 
+
    IF cl_null(g_rvv[l_ac].rvv80) THEN
       LET g_rvv[l_ac].rvv81 = NULL
       LET g_rvv[l_ac].rvv82 = NULL
    END IF
- 
+
    DISPLAY BY NAME g_rvv[l_ac].rvv83
    DISPLAY BY NAME g_rvv[l_ac].rvv84
    DISPLAY BY NAME g_rvv[l_ac].rvv85
@@ -14325,7 +14336,7 @@ FUNCTION t720_du_data_to_correct()
    DISPLAY BY NAME g_rvv[l_ac].rvv81
    DISPLAY BY NAME g_rvv[l_ac].rvv82
 END FUNCTION
- 
+
 FUNCTION t720_set_rvv87()
   DEFINE    l_item   LIKE img_file.img01,     #料號
            #l_ima25  LIKE ima_file.ima25,     #ima單位 #FUN-A10130
@@ -14338,7 +14349,7 @@ FUNCTION t720_set_rvv87()
             l_qty1   LIKE img_file.img10,     #第一數量
             l_tot    LIKE img_file.img10,     #計價數量
             l_factor LIKE ima_file.ima31_fac  #No.FUN-680136 DECIMAL(16,8)
-  DEFINE    l_qcl05  LIKE qcl_file.qcl05      #FUN-BC0104     
+  DEFINE    l_qcl05  LIKE qcl_file.qcl05      #FUN-BC0104
 
        #FUN-BC0104---add---str---
        CALL t720_qcl05_check() RETURNING l_qcl05
@@ -14357,7 +14368,7 @@ FUNCTION t720_set_rvv87()
           END IF
        END IF
        IF cl_null(l_ima44) THEN LET l_ima44=g_ima25 END IF #FUN-A10130
- 
+
     LET l_fac2=g_rvv[l_ac].rvv84
     LET l_qty2=g_rvv[l_ac].rvv85
     IF g_sma.sma115 = 'Y' THEN
@@ -14376,14 +14387,14 @@ FUNCTION t720_set_rvv87()
     IF cl_null(l_qty1) THEN LET l_qty1=0 END IF
     IF cl_null(l_fac2) THEN LET l_fac2=1 END IF
     IF cl_null(l_qty2) THEN LET l_qty2=0 END IF
- 
+
     SELECT img09 INTO l_img09 FROM img_file
      WHERE img01=g_rvv[l_ac].rvv31
        AND img02=g_rvv[l_ac].rvv32
        AND img03=g_rvv[l_ac].rvv33
        AND img04=g_rvv[l_ac].rvv34
     IF l_img09 IS NULL THEN LET l_img09=l_ima44 END IF
- 
+
     IF g_sma.sma115 = 'Y' THEN
        CASE l_ima906
           WHEN '1' LET l_tot=l_qty1*l_fac1
@@ -14395,10 +14406,10 @@ FUNCTION t720_set_rvv87()
     END IF
     IF cl_null(l_tot) THEN LET l_tot = 0 END IF
     LET l_factor = 1
-    IF g_sma.sma115 = 'Y' THEN                                                                                                      
-       CALL s_umfchk(g_rvv[l_ac].rvv31,g_rvv[l_ac].rvv35,g_rvv[l_ac].rvv86)                                                         
-             RETURNING g_cnt,l_factor                                                                                               
-    ELSE           
+    IF g_sma.sma115 = 'Y' THEN
+       CALL s_umfchk(g_rvv[l_ac].rvv31,g_rvv[l_ac].rvv35,g_rvv[l_ac].rvv86)
+             RETURNING g_cnt,l_factor
+    ELSE
        CALL s_umfchk(g_rvv[l_ac].rvv31,l_ima44,g_rvv[l_ac].rvv86)
              RETURNING g_cnt,l_factor
     END IF #MOD-980252
@@ -14406,22 +14417,22 @@ FUNCTION t720_set_rvv87()
        LET l_factor = 1
     END IF
     LET l_tot = l_tot * l_factor
- 
+
     LET g_rvv[l_ac].rvv87 = l_tot
     LET g_rvv[l_ac].rvv87 = s_digqty(g_rvv[l_ac].rvv87,g_rvv[l_ac].rvv86)   #No.FUN-BB0086
 END FUNCTION
- 
+
 FUNCTION t720_sel_ima()
     SELECT ima25,ima44,ima906,ima907,ima908
       INTO g_ima25,g_ima44,g_ima906,g_ima907,g_ima908
       FROM ima_file
      WHERE ima01=g_rvv[l_ac].rvv31
 END FUNCTION
- 
+
 FUNCTION t720_def_form()
- 
+
   #FUN-A60009 add str ----
-   IF (g_argv1 = '1' AND cl_null(g_argv3)) OR (g_argv1 = '1' AND g_argv3 = 'TAP') THEN 
+   IF (g_argv1 = '1' AND cl_null(g_argv3)) OR (g_argv1 = '1' AND g_argv3 = 'TAP') THEN
        CALL cl_set_act_visible("carry_delivery",TRUE)
    ELSE
        CALL cl_set_act_visible("carry_delivery",FALSE)
@@ -14429,24 +14440,24 @@ FUNCTION t720_def_form()
   #FUN-A60009 add end ----
 
    IF (g_argv1='2' AND g_argv3='TAP') THEN
-      CALL cl_set_comp_visible("rvu20,rvu99",FALSE)   
+      CALL cl_set_comp_visible("rvu20,rvu99",FALSE)
    ELSE
-      CALL cl_set_comp_visible("rvu20,rvu99",TRUE)   
+      CALL cl_set_comp_visible("rvu20,rvu99",TRUE)
    END IF
- 
+
    CALL cl_set_comp_visible("rvv84,rvv81",FALSE)
- 
+
    IF g_sma.sma115 = 'Y' THEN
       CALL cl_set_comp_visible("rvv17,rvv35,rvv35_fac",FALSE)
    ELSE
       CALL cl_set_comp_visible("rvv83,rvv84,rvv85",FALSE)
       CALL cl_set_comp_visible("rvv80,rvv81,rvv82",FALSE)
    END IF
- 
+
    IF g_sma.sma116 MATCHES '[02]' THEN    #MOD-630031 add #不使用計價單位
       CALL cl_set_comp_visible("rvv86,rvv87",FALSE)
    END IF
- 
+
    IF g_sma.sma122 ='1' THEN
       CALL cl_getmsg('asm-302',g_lang) RETURNING g_msg
       CALL cl_set_comp_att_text("rvv83",g_msg CLIPPED)
@@ -14457,7 +14468,7 @@ FUNCTION t720_def_form()
       CALL cl_getmsg('asm-307',g_lang) RETURNING g_msg
       CALL cl_set_comp_att_text("rvv82",g_msg CLIPPED)
    END IF
- 
+
    IF g_sma.sma122 ='2' THEN
       CALL cl_getmsg('asm-304',g_lang) RETURNING g_msg
       CALL cl_set_comp_att_text("rvv83",g_msg CLIPPED)
@@ -14468,13 +14479,13 @@ FUNCTION t720_def_form()
       CALL cl_getmsg('asm-329',g_lang) RETURNING g_msg
       CALL cl_set_comp_att_text("rvv82",g_msg CLIPPED)
    END IF
- 
+
    CALL cl_set_comp_visible("rvv930,gem02a",g_aaz.aaz90='Y')
- 
+
    CALL cl_set_comp_visible("rvu116",g_argv1='3')   #FUN-940083--add---
    CALL cl_set_comp_visible("Page4",g_argv1='3')   #FUN-940083--add---
 END FUNCTION
- 
+
 FUNCTION t720_refresh_detail()
   DEFINE l_compare          LIKE smy_file.smy62
   DEFINE li_col_count       LIKE type_file.num5    #No.FUN-680136 SMALLINT
@@ -14487,7 +14498,7 @@ FUNCTION t720_refresh_detail()
   DEFINE ls_sql             STRING
   DEFINE ls_show,ls_hide    STRING
   DEFINE l_gae04            LIKE gae_file.gae04
- 
+
   #判斷是否進行料件多屬性新機制管理以及是否傳入了屬性群組
   IF (g_sma.sma120 = 'Y') AND (g_sma.sma907 = 'Y') AND
       NOT cl_null(lg_smy62) THEN
@@ -14524,17 +14535,17 @@ FUNCTION t720_refresh_detail()
          END IF
        END FOR
      END IF
- 
+
      #到這里時lg_group中存放的已經是應該顯示的組別了，該變量是一個全局變量
      #在單身INPUT或開窗時都會用到，因為refresh函數被執行的時機較早，所以能保証在需要的時候有值
      SELECT COUNT(*) INTO li_col_count FROM agb_file WHERE agb01 = lg_group
- 
+
      #走到這個分支說明是采用新機制，那么使用att00父料件編號代替rvv31子料件編號來顯示
      #得到當前語言別下rvv31的欄位標題
      SELECT gae04 INTO l_gae04 FROM gae_file
        WHERE gae01 = g_prog AND gae02 = 'rvv31' AND gae03 = g_lang
      CALL cl_set_comp_att_text("att00",l_gae04)
- 
+
      #為了提高效率，把需要顯示和隱藏的欄位都放到各自的變量里，然后在結尾的地方一次性顯示或隱藏
      IF NOT cl_null(lg_group) THEN
         LET ls_hide = 'rvv31,ima02'
@@ -14543,25 +14554,25 @@ FUNCTION t720_refresh_detail()
         LET ls_hide = 'att00'
         LET ls_show = 'rvv31,ima02'
      END IF
- 
+
      #顯現該有的欄位,置換欄位格式
      CALL lr_agc.clear()  #因為這個過程可能會被執行多次，作為一個公共變量，每次執行之前必須要初始化
      FOR li_i = 1 TO li_col_count
          SELECT agb03 INTO lc_agb03 FROM agb_file
            WHERE agb01 = lg_group AND agb02 = li_i
- 
+
          LET lc_agb03 = lc_agb03 CLIPPED
          SELECT * INTO lr_agc[li_i].* FROM agc_file
            WHERE agc01 = lc_agb03
- 
+
          LET lc_index = li_i USING '&&'
- 
+
          CASE lr_agc[li_i].agc04
            WHEN '1'
              LET ls_show = ls_show || ",att" || lc_index
              LET ls_hide = ls_hide || ",att" || lc_index || "_c"
              CALL cl_set_comp_att_text("att" || lc_index,lr_agc[li_i].agc02)
- 
+
              #這里需要判別g_sma.sma908,如果是允許新增子料件則要把這些屬性設置成為REQUIRED的,否則要設成NOENTRY
                 CALL cl_chg_comp_att("formonly.att" || lc_index,"NOT NULL|REQUIRED|SCROLL","1|1|1")
            WHEN '2'
@@ -14598,7 +14609,7 @@ FUNCTION t720_refresh_detail()
                 CALL cl_chg_comp_att("formonly.att" || lc_index,"NOT NULL|REQUIRED|SCROLL","1|1|1")
        END CASE
      END FOR
- 
+
   ELSE
     #否則什么也不做(不顯示任何屬性列)
     LET li_i = 1
@@ -14606,34 +14617,34 @@ FUNCTION t720_refresh_detail()
     LET ls_hide = 'att00'
     LET ls_show = 'rvv31'
   END IF
- 
+
   #下面開始隱藏其他明細屬性欄位(從li_i開始)
   FOR li_j = li_i TO 10
       LET lc_index = li_j USING '&&'
       #注意att0x和att0x_c都要隱藏，別忘了_c的
       LET ls_hide = ls_hide || ",att" || lc_index || ",att" || lc_index || "_c"
   END FOR
- 
+
   IF g_prog = 'apmt720' OR g_prog = 'aict042' THEN  #MOD-D30083 add aict042
     LET ls_show = ls_show ,",pmm909,pmn24,pmn25"
   ELSE
     LET ls_hide = ls_hide ,",pmm909,pmn24,pmn25"
   END IF
- 
+
   #這樣只用調兩次公共函數就可以解決問題了，效率應該會高一些
   CALL cl_set_comp_visible(ls_show, TRUE)
   CALL cl_set_comp_visible(ls_hide, FALSE)
- 
+
 END FUNCTION
- 
+
 #--------------------在修改下面的代碼前請讀一下注釋先，謝了! -----------------------
- 
+
 #下面代碼是從單身INPUT ARRAY語句中的AFTER FIELD段中拷貝來的，因為在多屬性新模式下原來的oea04料件編號
 #欄位是要被隱藏起來，并由新增加的imx00（母料件編號）+各個明細屬性欄位來取代，所以原來的AFTER FIELD
 #代碼是不會被執行到，需要執行的判斷應該放新增加的几個欄位的AFTER FIELD中來進行，因為要用多次嘛，所以
 #單獨用一個FUNCTION來放，順便把oeb04的AFTER FIELD也移過來，免得將來維護的時候遺漏了
 #下標g_rvv[l_ac]都被改成g_rvv[p_ac]，請注意
- 
+
 #本函數返回TRUE/FALSE,表示檢核過程是否通過，一般說來，在使用過程中應該是如下方式□
 #    AFTER FIELD XXX
 #        IF NOT t720_check_oeb04(.....)  THEN NEXT FIELD XXX END IF
@@ -14641,7 +14652,7 @@ FUNCTION t720_check_rvv31(p_field,p_ac,p_cmd) #No.MOD-660090
 DEFINE
   p_field                     STRING,    #當前是在哪個欄位中觸發了AFTER FIELD事件
   p_ac                        LIKE type_file.num5,    #No.FUN-680136 SMALLINT  #g_rvv數組中的當前記錄下標
- 
+
   l_ps                        LIKE sma_file.sma46,
   l_str_tok                   base.stringTokenizer,
   l_tmp, ls_sql               STRING,
@@ -14665,14 +14676,14 @@ DEFINE
   p_cmd                       LIKE type_file.chr1,   #No.MOD-660090   #No.FUN-680136 VARCHAR(1)
   l_check                     LIKE type_file.chr1,   #No.FUN-680136 VARCHAR(01)
   l_pmm02                     LIKE pmm_file.pmm02,   #No.CHI-8C0017
-  l_pmn18                     LIKE pmn_file.pmn18,   #No.CHI-8C0017  
+  l_pmn18                     LIKE pmn_file.pmn18,   #No.CHI-8C0017
   l_pmn41                     LIKE pmn_file.pmn41,   #No.CHI-8C0017
   l_pmn43                     LIKE pmn_file.pmn43,   #No.CHI-8C0017
-  l_pmn012                    LIKE pmn_file.pmn012,  #FUN-A60076 add 
+  l_pmn012                    LIKE pmn_file.pmn012,  #FUN-A60076 add
   l_pmh21                     LIKE pmh_file.pmh21,   #No.CHI-8C0017
-  l_pmh22                     LIKE pmh_file.pmh22    #No.CHI-8C0017  
- 
- 
+  l_pmh22                     LIKE pmh_file.pmh22    #No.CHI-8C0017
+
+
   #如果當前欄位是新增欄位（母料件編號以及十個明細屬性欄位）的時候，如果全部輸了值則合成出一個
   #新的子料件編號并把值填入到已經隱藏起來的oeb04中（如果imxXX能夠顯示，oeb04一定是隱藏的）
   #下面就可以直接沿用oeb04的檢核邏輯了
@@ -14681,7 +14692,7 @@ DEFINE
      (p_field = 'imx03') OR (p_field = 'imx04') OR (p_field = 'imx05') OR
      (p_field = 'imx06') OR (p_field = 'imx07') OR (p_field = 'imx08') OR
      (p_field = 'imx09') OR (p_field = 'imx10')  THEN
- 
+
      #首先判斷需要的欄位是否全部完成了輸入（只有母料件編號+被顯示出來的所有明細屬性
      #全部被輸入完成了才進行后續的操作
      LET ls_pid   = g_rvv[p_ac].att00   # ls_pid 父料件編號
@@ -14691,10 +14702,10 @@ DEFINE
         CALL t720_sel_ima() #MOD-580161 add
         CALL t720_set_no_entry_b(p_cmd)        #No.MOD-650055 add
         CALL t720_set_required(p_cmd)
- 
+
         RETURN TRUE
      END IF  #注意這里沒有錯，所以返回TRUE
- 
+
      #取出當前母料件包含的明細屬性的個數
      SELECT COUNT(*) INTO l_cnt FROM agb_file WHERE agb01 =
         (SELECT imaag FROM ima_file WHERE ima01 = ls_pid)
@@ -14704,10 +14715,10 @@ DEFINE
         CALL t720_sel_ima() #MOD-580161 add
         CALL t720_set_no_entry_b(p_cmd)        #No.MOD-650055 add
         CALL t720_set_required(p_cmd)
- 
+
         RETURN TRUE
      END IF
- 
+
      FOR li_i = 1 TO l_cnt
          #如果有任何一個明細屬性應該輸而沒有輸的則退出
          IF cl_null(arr_detail[p_ac].imx[li_i]) THEN
@@ -14716,14 +14727,14 @@ DEFINE
             CALL t720_sel_ima() #MOD-580161 add
             CALL t720_set_no_entry_b(p_cmd)        #No.MOD-650055 add
             CALL t720_set_required(p_cmd)
- 
+
             RETURN TRUE
          END IF
      END FOR
- 
+
      #得到系統定義的標准分隔符sma46
      SELECT sma46 INTO l_ps FROM sma_file
- 
+
      #合成子料件的名稱
      SELECT ima02 INTO ls_pname FROM ima_file   # ls_name 父料件名稱
        WHERE ima01 = ls_pid
@@ -14741,11 +14752,11 @@ DEFINE
             LET ls_spec = ls_spec.trim(),l_ps,lc_agd03
          END IF
      END FOR
- 
+
      #解析ls_value生成要傳給cl_copy_bom的那個l_param_list
      LET l_str_tok = base.StringTokenizer.create(ls_value,l_ps)
      LET l_tmp = l_str_tok.nextToken()   #先把第一個部分--名稱去掉
- 
+
      LET ls_sql = "SELECT agb03 FROM agb_file,ima_file WHERE ",
                   "ima01 = '",ls_pid CLIPPED,"' AND agb01 = imaag ",
                   "ORDER BY agb02"
@@ -14758,7 +14769,7 @@ DEFINE
           LET l_param_list = l_param_list,'|#',lc_agb03,'#|',l_str_tok.nextToken()
        END IF
      END FOREACH
- 
+
      LET g_value=ls_value
      SELECT COUNT(*) INTO l_n FROM ima_file WHERE ima01=g_value
      IF l_n=0 THEN
@@ -14766,7 +14777,7 @@ DEFINE
         RETURN FALSE
      END IF
      #調用cl_copy_ima將新生成的子料件插入到數據庫中
- 
+
      #把生成的子料件賦給rvv31，否則下面的檢查就沒有意義了
      LET g_rvv[p_ac].rvv31 = ls_value
      LET g_rvv[p_ac].rvv031 = ls_spec     #No.MOD-8A0098
@@ -14780,17 +14791,17 @@ DEFINE
        RETURN FALSE
     END IF
   END IF
- 
+
   #到這里已經完成了以前在cl_itemno_multi_att()中做的所有准備工作，在系統資料庫
   #中已經有了對應的子料件的名稱，下面可以按照oeb04進行判斷了
- 
+
   #--------重要 !!!!!!!!!!!-------------------------
   #下面的代碼都是從原INPUT ARRAY中的AFTER FIELD oeb04段拷貝來的，唯一做的修改
   #是將原來的NEXT FIELD 語句都改成了RETURN FALSE, xxx,xxx ... ，因為NEXE FIELD
   #語句要交給調用方來做，這里只需要返回一個FALSE告訴它有錯誤就可以了，同時一起
   #返回的還有一些CHECK過程中要從ima_file中取得的欄位信息，其他的比如判斷邏輯和
   #錯誤提示都沒有改，如果你需要在里面添加代碼請注意上面的那個要點就可以了
- 
+
   IF NOT cl_null(g_rvv[l_ac].rvv31) THEN
      #新增一個判斷,如果lg_smy62不為空,表示當前采用的是料件多屬性的新機制,因此這個函數應該是被
      #attxx這樣的明細屬性欄位的AFTER FIELD來調用的,所以不再使用原來的輸入機制,否則不變
@@ -14801,7 +14812,7 @@ DEFINE
           DISPLAY g_rvv[l_ac].rvv031 TO rvv031
        END IF
      END IF
- 
+
      #-----MOD-AB0205---------
      #SELECT COUNT(*) INTO l_n FROM ima_file WHERE ima01=g_rvv[l_ac].rvv31
      #IF l_n=0 THEN
@@ -14809,7 +14820,7 @@ DEFINE
      #   RETURN FALSE
      #END IF
      #-----END MOD-AB0205-----
- 
+
      LET l_misc=g_rvv[l_ac].rvv31[1,4]
      IF g_rvv[l_ac].rvv31[1,4]='MISC' THEN  #NO:6808
         SELECT COUNT(*) INTO l_n FROM ima_file
@@ -14828,7 +14839,7 @@ DEFINE
         END IF
      #-----END MOD-AB0205-----
      END IF
- 
+
      IF g_sma.sma115 = 'Y' THEN
         IF NOT cl_null(g_rvv[l_ac].rvv31) THEN
            CALL s_chk_va_setting(g_rvv[l_ac].rvv31)
@@ -14859,13 +14870,13 @@ DEFINE
               LET g_rvv[l_ac].rvv80 = g_ima25
               DISPLAY BY NAME g_rvv[l_ac].rvv80
           END IF
- 
+
           #單位二
           IF cl_null(g_rvv[l_ac].rvv83) THEN
               LET g_rvv[l_ac].rvv83 = g_ima907
               DISPLAY BY NAME g_rvv[l_ac].rvv83
           END IF
- 
+
           #計價單位
           IF cl_null(g_rvv[l_ac].rvv86) THEN
               IF g_sma.sma116 MATCHES '[13]' THEN    #No.FUN-610076
@@ -14884,14 +14895,14 @@ DEFINE
      #FUN-5B0144 add如果收貨單空值抓最近採購單價
      IF NOT cl_null(g_rvv[l_ac].rvv31) AND g_rvv[l_ac].rvv31[1,4]!='MISC'
         AND cl_null(g_rvu.rvu02) THEN
-        SELECT pmm02 INTO l_pmm02 FROM pmm_file 
+        SELECT pmm02 INTO l_pmm02 FROM pmm_file
          WHERE pmm01 = g_rvv[p_ac].rvv36
         SELECT pmn41,pmn43,pmn18,pmn012 INTO l_pmn41,l_pmn43,l_pmn18,l_pmn012 FROM pmn_file         #FUN-A60076 add pmn012,l_pmn012
-         WHERE pmn01 = g_rvv[p_ac].rvv36 AND pmn02 = g_rvv[p_ac].rvv37          
+         WHERE pmn01 = g_rvv[p_ac].rvv36 AND pmn02 = g_rvv[p_ac].rvv37
         IF cl_null(l_pmm02) THEN LET l_pmm02 = ' ' END IF  #No.FUN-940083
         IF l_pmm02='SUB' THEN
            LET l_pmh22='2'
-           IF l_pmn43 = 0 OR cl_null(l_pmn43) THEN  
+           IF l_pmn43 = 0 OR cl_null(l_pmn43) THEN
               LET l_pmh21 =' '
            ELSE
              IF NOT cl_null(l_pmn18) THEN
@@ -14899,14 +14910,14 @@ DEFINE
                WHERE sgm01=l_pmn18
                  AND sgm02=l_pmn41
                  AND sgm03=l_pmn43
-                 AND sgm012 = l_pmn012                   #FUN-A60076 add by vealxu  
+                 AND sgm012 = l_pmn012                   #FUN-A60076 add by vealxu
              ELSE
-              SELECT ecm04 INTO l_pmh21 FROM ecm_file 
+              SELECT ecm04 INTO l_pmh21 FROM ecm_file
                WHERE ecm01=l_pmn41
                  AND ecm03=l_pmn43
-                 AND ecm012 =l_pmn012                     #FUN-A60076 add 
+                 AND ecm012 =l_pmn012                     #FUN-A60076 add
              END IF
-           END IF     #No.TQC-910033  
+           END IF     #No.TQC-910033
         ELSE
            LET l_pmh22='1'
            LET l_pmh21=' '
@@ -14914,20 +14925,20 @@ DEFINE
         SELECT pmh12,pmh19  #No.FUN-610018
           INTO g_rvv[l_ac].rvv38,g_rvv[l_ac].rvv38t
           FROM pmh_file
-         WHERE pmh01 = g_rvv[l_ac].rvv31 AND pmh05 = '0' 
-               AND pmh02 = g_rvu.rvu04 
+         WHERE pmh01 = g_rvv[l_ac].rvv31 AND pmh05 = '0'
+               AND pmh02 = g_rvu.rvu04
                AND pmh13 = (SELECT pmc22 FROM pmc_file WHERE pmc01=g_rvu.rvu04)   #MOD-940073
                AND pmh21 = l_pmh21                                                      #CHI-8C0017
                AND pmh22 = l_pmh22                                                      #CHI-8C0017
                AND pmh23 = ' '                                             #CHI-960033
-               AND pmhacti = 'Y'                                           #CHI-910021           
+               AND pmhacti = 'Y'                                           #CHI-910021
      END IF
- 
- 
+
+
      CALL t720_sel_ima() #MOD-580161 add
      CALL t720_set_no_entry_b(p_cmd)        #No.MOD-650055 add
      CALL t720_set_required(p_cmd)
- 
+
      RETURN TRUE
   ELSE
      #如果是由oeb04來觸發的,說明當前用的是舊的流程,那么oeb04為空是可以的
@@ -14935,20 +14946,20 @@ DEFINE
      IF (p_field = 'rvv31') OR (p_field = 'imx00') THEN
         #所有要返回TRUE的分支都要加這兩句話,原來下面的會被
         #注釋掉
- 
+
         CALL t720_sel_ima() #MOD-580161 add
         CALL t720_set_no_entry_b(p_cmd)        #No.MOD-650055 add
         CALL t720_set_required(p_cmd)
- 
+
         LET g_value=ls_value
-        IF NOT cl_null(g_value) THEN      #No.MOD-8A0098 
+        IF NOT cl_null(g_value) THEN      #No.MOD-8A0098
         SELECT COUNT(*) INTO l_n FROM ima_file WHERE ima01=g_value
         IF l_n=0 THEN
            CALL cl_err('g_value','ams-003',1)
            RETURN FALSE
         END IF
         END IF     #No.MOD-8A0098
- 
+
         RETURN TRUE
      ELSE
         #如果不是oeb,則是由attxx來觸發的,則非輸不可
@@ -14956,7 +14967,7 @@ DEFINE
      END IF #如果為空則不允許新增
   END IF
 END FUNCTION
- 
+
 #用于att01~att10這十個輸入型屬性欄位的AFTER FIELD事件的判斷函數
 #傳入參數:p_value 要比較的欄位內容,p_index當前欄位的索引號(從1~10表示att01~att10)
 #         p_row是當前行索引,傳入INPUT ARRAY中使用的l_ac即可
@@ -14977,15 +14988,15 @@ DEFINE
   l_ima130        LIKE type_file.chr1,    #No.FUN-680136 VARCHAR(1)
   l_ima131        LIKE ima_file.ima131  #No.FUN-680136 VARCHAR(10)
  #l_ima25         LIKE ima_file.ima25   #FUN-A10130
- 
+
   #這個欄位一旦進入了就不能忽略，因為要保証在輸入其他欄位之前必須要生成rvv31料件編號
   IF cl_null(p_value) THEN
      RETURN FALSE
   END IF
- 
+
   #這里使用到了一個用于存放當前屬性組包含的所有屬性信息的全局數組lr_agc
   #該數組會由t720_refresh_detail()函數在較早的時候填充
- 
+
   #判斷長度與定義的使用位數是否相等
   IF LENGTH(p_value CLIPPED) <> lr_agc[p_index].agc03 THEN
      CALL cl_err_msg("","aim-911",lr_agc[p_index].agc03,1)
@@ -15011,7 +15022,7 @@ DEFINE
     RETURNING l_check_res
     RETURN l_check_res
 END FUNCTION
- 
+
 #用于att01_c~att10_c這十個選擇型屬性欄位的AFTER FIELD事件的判斷函數
 #傳入參數:p_value 要比較的欄位內容,p_index當前欄位的索引號(從1~10表示att01~att10)
 #         p_row是當前行索引,傳入INPUT ARRAY中使用的l_ac即可
@@ -15030,8 +15041,8 @@ DEFINE
   l_ima130        LIKE type_file.chr1,    #No.FUN-680136 VARCHAR(1),
   l_ima131        LIKE ima_file.ima131    #No.FUN-680136 VARCHAR(10)
  #l_ima25         LIKE ima_file.ima25     #FUN-A10130
- 
- 
+
+
   #這個欄位一旦進入了就不能忽略，因為要保証在輸入其他欄位之前必須要生成oeb04料件編號
   IF cl_null(p_value) THEN
      RETURN FALSE
@@ -15043,11 +15054,11 @@ DEFINE
     RETURNING l_check_res
   RETURN l_check_res
 END FUNCTION
- 
+
 FUNCTION t720_set_rvv930(p_rvv930)
 DEFINE p_rvv930 LIKE rvv_file.rvv930
 DEFINE l_gem02  LIKE gem_file.gem02
- 
+
    SELECT gem02 INTO l_gem02 FROM gem_file
                             WHERE gem01=p_rvv930
    IF SQLCA.sqlcode THEN
@@ -15055,7 +15066,7 @@ DEFINE l_gem02  LIKE gem_file.gem02
    END IF
    RETURN l_gem02
 END FUNCTION
- 
+
 FUNCTION t720_exp_delivery()
   DEFINE l_oea01 LIKE oea_file.oea01
   DEFINE l_sql STRING
@@ -15066,8 +15077,8 @@ FUNCTION t720_exp_delivery()
          slip     LIKE oay_file.oayslip
          END RECORD
   DEFINE l_n   LIKE type_file.num5  #No.MOD-880057 #記錄可執行筆數
- 
- 
+
+
   LET begin_no = NULL    #MOD-740475
   LET end_no = NULL      #MOD-740475
   IF g_rvu.rvuconf = 'N' THEN CALL cl_err('','mfg3550',0) RETURN END IF
@@ -15077,14 +15088,14 @@ FUNCTION t720_exp_delivery()
    WHERE oga914 = g_rvu.rvu01
      AND ogaconf <> 'X'      #MOD-D30033 add
   IF l_cnt > 0 THEN CALL cl_err('','apm-901',0) RETURN END IF
- 
+
   SELECT rva00 INTO g_rva00 FROM rva_file WHERE rva01 = g_rvu.rvu02
   IF g_rva00 IS NULL THEN LET g_rva00 = ' ' END IF
   IF g_rva00 = '2' THEN
      CALL cl_err('','apm-923',1)
      RETURN
   END IF
-  #TQC-BB0108--mark--begin 
+  #TQC-BB0108--mark--begin
 # SELECT COUNT(*) INTO l_cnt FROM pmn_file,pmm_file,rvv_file   #FUN-740046 add pmm_file
 #  WHERE rvv01 = g_rvu.rvu01
 #    AND pmm01 = pmn01 AND pmm909 = '3'                        #FUN-740046
@@ -15093,33 +15104,33 @@ FUNCTION t720_exp_delivery()
 # IF l_cnt = 0 THEN RETURN END IF
   #TQC-BB0108--end
   LET p_row = 5 LET p_col = 11
- 
+
   OPEN WINDOW t720_exp_w AT p_row,p_col WITH FORM "apm/42f/apmt720g"
     ATTRIBUTE (STYLE = g_win_style CLIPPED)
- 
+
    CALL cl_ui_locale("apmt720g")
- 
+
    INPUT BY NAME tm.slip
       AFTER FIELD slip
          IF NOT cl_null(tm.slip) THEN
             LET g_cnt = 0
             CALL s_check_no("axm",tm.slip,"","50","","","")
                  RETURNING li_result,tm.slip
- 
+
             IF (NOT li_result) THEN
                CALL cl_err(tm.slip,'aap-010',0)
                NEXT FIELD slip
             END IF
          END IF
          LET g_slip = tm.slip
- 
+
       IF INT_FLAG THEN
          LET INT_FLAG = 0
          LET g_success = 'N'
          CLOSE WINDOW t720_exp_w
          RETURN
       END IF
- 
+
       ON ACTION controlp
          CASE
             WHEN INFIELD(slip)
@@ -15130,30 +15141,30 @@ FUNCTION t720_exp_delivery()
                  NEXT FIELD slip
             OTHERWISE EXIT CASE
          END CASE
- 
+
       ON IDLE g_idle_seconds
          CALL cl_on_idle()
          CONTINUE INPUT
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
+
       ON ACTION controlg      #MOD-4C0121
          CALL cl_cmdask()     #MOD-4C0121
    END INPUT
- 
+
    IF INT_FLAG THEN
       LET INT_FLAG = 0
       LET g_success = 'N'
       ROLLBACK WORK
-      #CLOSE WINDOW t400global_exp_po #MOD-B90145 mark 
+      #CLOSE WINDOW t400global_exp_po #MOD-B90145 mark
       CLOSE WINDOW t720_exp_w         #MOD-B90145 add
       RETURN
    END IF
- 
+
   LET l_sql = "SELECT DISTINCT pmn24 FROM pmn_file,pmm_file,rvv_file,rvu_file",   #FUN-740046 add pmm_file
               " WHERE rvv01 = rvu01 ",
               "   AND pmm01 = pmn01 AND pmm909 = '3'",  #FUN-740046 add
@@ -15161,31 +15172,31 @@ FUNCTION t720_exp_delivery()
               "   AND rvu01 = '", g_rvu.rvu01 CLIPPED, "'",
               "   AND pmn24 IS NOT NULL AND pmn25 IS NOT NULL ",
               " ORDER BY pmn24"
- 
+
   PREPARE t720_pmn24 FROM l_sql
   DECLARE pmn_curs CURSOR FOR t720_pmn24
   LET g_success = 'Y'
-  LET l_n = 0   #No.MOD-880057 
+  LET l_n = 0   #No.MOD-880057
   BEGIN WORK
   FOREACH pmn_curs INTO l_pmn24
     IF STATUS THEN LET g_success = 'N' EXIT FOREACH  END IF
- 
-    LET l_cnt = 0 
+
+    LET l_cnt = 0
     SELECT COUNT(*) INTO l_cnt FROM oeb_file
-     WHERE oeb01 = l_pmn24 AND oeb70 <> 'Y' 
-    IF l_cnt = 0 THEN  
-       CONTINUE FOREACH 
+     WHERE oeb01 = l_pmn24 AND oeb70 <> 'Y'
+    IF l_cnt = 0 THEN
+       CONTINUE FOREACH
     END IF
     CALL t720_exp_oga(l_pmn24)
     IF g_success = 'N' THEN
       EXIT FOREACH
     END IF
-    LET l_n = l_n + 1  #No.MOD-880057 
+    LET l_n = l_n + 1  #No.MOD-880057
   END FOREACH
   IF l_n = 0 THEN
      LET g_success = 'N'
      CALL cl_err('','apm1071',1)  #TQC-C10072
-  END IF 
+  END IF
   IF g_success = 'Y' THEN
     COMMIT WORK
     MESSAGE '已轉出貨單'
@@ -15196,10 +15207,10 @@ FUNCTION t720_exp_delivery()
   ELSE
     ROLLBACK WORK
   END IF
- 
+
   CLOSE WINDOW t720_exp_w
 END FUNCTION
- 
+
 FUNCTION t720_exp_oga(p_oea01)
   DEFINE p_oea01 LIKE oea_file.oea01
   DEFINE l_sql STRING
@@ -15209,19 +15220,19 @@ FUNCTION t720_exp_oga(p_oea01)
   DEFINE li_result    LIKE type_file.num5
   DEFINE g_dbs2       LIKE type_file.chr30
   DEFINE l_date1,l_date2,l_date3  LIKE oga_file.oga11
-  DEFINE g_plant2     LIKE type_file.chr10   #FUN-980020 
+  DEFINE g_plant2     LIKE type_file.chr10   #FUN-980020
  #MOD-D30033---add---S
   DEFINE g_oea18_yn   LIKE oea_file.oea18
   DEFINE exT          LIKE type_file.chr1
   DEFINE g_exdate     LIKE oga_file.oga021
  #MOD-D30033---add---E
- 
+
   LET g_plant2 = g_plant                     #FUN-980020
- 
+
   LET g_dbs2 = s_dbstring(g_dbs CLIPPED)   #FUN-9B0106
- 
+
   SELECT * INTO l_oea.* from oea_file WHERE oea01 = p_oea01
- 
+
   LET l_oga.oga00 = '1'       #出貨別
   CALL s_auto_assign_no("AXM",g_slip,g_today,"","oga_file","oga01","","","")
      RETURNING li_result,l_oga.oga01
@@ -15256,9 +15267,9 @@ FUNCTION t720_exp_oga(p_oea01)
   LET l_oga.oga213 = l_oea.oea213
   LET l_oga.oga23  = l_oea.oea23     #CHI-740040
  #MOD-D30033---add---S
-  CALL t720_oea18_get() RETURNING g_oea18_yn 
+  CALL t720_oea18_get() RETURNING g_oea18_yn
   SELECT oaz52,oaz70 INTO g_oaz.oaz52,g_oaz.oaz70 FROM oaz_file
-  IF g_oea18_yn = 'N' THEN    
+  IF g_oea18_yn = 'N' THEN
      IF l_oga.oga08 = '1' THEN
         LET exT = g_oaz.oaz52
      ELSE
@@ -15328,12 +15339,12 @@ FUNCTION t720_exp_oga(p_oea01)
   CALL s_rdatem(l_oga.oga03,l_oga.oga32,l_oga.oga02,l_oga.oga02,
                 l_date3,g_plant2)       #FUN-980020
      RETURNING l_oga.oga11,l_oga.oga12
- 
+
   LET l_oga.ogaoriu = g_user      #No.FUN-980030 10/01/04
   LET l_oga.ogaorig = g_grup      #No.FUN-980030 10/01/04
 
   INSERT INTO oga_file values(l_oga.*)
- 
+
   IF SQLCA.sqlcode OR SQLCA.sqlerrd[3]=0 THEN
      CALL cl_err3("ins","oga_file",l_oga.oga01,"",SQLCA.sqlcode,"","ins oga",1)
      LET g_success = 'N'
@@ -15344,7 +15355,7 @@ FUNCTION t720_exp_oga(p_oea01)
      LET end_no=l_oga.oga01
      CALL t720_exp_ogb(l_oga.oga01,p_oea01)
   END IF
- 
+
 END FUNCTION
 
 #MOD-D30033---add---S
@@ -15384,7 +15395,7 @@ FUNCTION t720_oea18_get()
 END FUNCTION
 #MOD-D30033---add---E
 
- 
+
 FUNCTION t720_exp_ogb(p_oga01,p_oea01)
   DEFINE p_oga01  LIKE oga_file.oga01
   DEFINE p_oea01  LIKE oea_file.oea01
@@ -15400,10 +15411,10 @@ FUNCTION t720_exp_ogb(p_oga01,p_oea01)
          l_ima36  LIKE ima_file.ima36
   DEFINE l_oga14  LIKE oga_file.oga14  #FUN-CB0087
   DEFINE l_oga15  LIKE oga_file.oga15  #FUN-CB0087
- 
+
   SELECT oea211,oea213 INTO l_oea211,l_oea213
     FROM oea_file WHERE oea01 = p_oea01
- 
+
   LET l_ogb03 = 0
   LET l_sql = "SELECT rvv_file.*,oeb_file.* ",
               "  FROM rvv_file,pmn_file,oeb_file ",
@@ -15411,8 +15422,8 @@ FUNCTION t720_exp_ogb(p_oga01,p_oea01)
               "   AND pmn24 = oeb01 AND pmn25 = oeb03 ",
               "   AND rvv01 ='", g_rvu.rvu01 CLIPPED, "'",
               "   AND pmn24 ='", p_oea01 CLIPPED, "'",
-              "   AND oeb70 <>'Y' "  #No.MOD-880057 
- 
+              "   AND oeb70 <>'Y' "  #No.MOD-880057
+
   PREPARE ogb_pre FROM l_sql
   DECLARE ogb_curs CURSOR FOR ogb_pre
   FOREACH ogb_curs INTO l_rvv.*,l_oeb.*
@@ -15432,11 +15443,11 @@ FUNCTION t720_exp_ogb(p_oga01,p_oea01)
        IF cl_null(l_ogb.ogb09) THEN LET l_ogb.ogb09 = l_ima35 END IF
        IF cl_null(l_ogb.ogb091) THEN LET l_ogb.ogb091 = l_ima36 END IF
     #END IF                           #No.FUN-AA0049  #No.FUN-AB0058 mark
-    LET l_ogb.ogb092 = l_oeb.oeb092    
+    LET l_ogb.ogb092 = l_oeb.oeb092
     IF l_ogb.ogb09  IS NULL THEN LET l_ogb.ogb09  = ' ' END IF
     IF l_ogb.ogb091 IS NULL THEN LET l_ogb.ogb091 = ' ' END IF
     IF l_ogb.ogb092 IS NULL THEN LET l_ogb.ogb092 = ' ' END IF
- 
+
     LET l_ogb.ogb11 = l_oeb.oeb11
     LET l_ogb.ogb12 = l_rvv.rvv17
     LET l_ogb.ogb12 = s_digqty(l_ogb.ogb12,l_ogb.ogb05)   #FUN-BB0086 add
@@ -15447,10 +15458,10 @@ FUNCTION t720_exp_ogb(p_oga01,p_oea01)
        AND img03 = l_ogb.ogb091 AND img04 = l_ogb.ogb092
     LET l_ogb.ogb15_fac = 1
     LET l_ogb.ogb16 = l_rvv.rvv17
-    LET l_ogb.ogb16 = s_digqty(l_ogb.ogb16,l_ogb.ogb15)   #No.FUN-BB0086 
+    LET l_ogb.ogb16 = s_digqty(l_ogb.ogb16,l_ogb.ogb15)   #No.FUN-BB0086
     LET l_ogb.ogb17 = 'N'
     LET l_ogb.ogb18 = l_rvv.rvv17
-    LET l_ogb.ogb18 = s_digqty(l_ogb.ogb18,l_ogb.ogb05)   #No.FUN-BB0086 
+    LET l_ogb.ogb18 = s_digqty(l_ogb.ogb18,l_ogb.ogb05)   #No.FUN-BB0086
     SELECT rvb39 INTO l_ogb.ogb19 FROM rvb_file
      WHERE rvb04 = l_rvv.rvv36 AND rvb03 = l_rvv.rvv37
     LET l_ogb.ogb31 = l_oeb.oeb01
@@ -15485,9 +15496,9 @@ FUNCTION t720_exp_ogb(p_oga01,p_oea01)
     LET l_ogb.ogb1013 = '0'
     LET l_ogb.ogb1014 = 'N'
     LET l_ogb.ogb930 = g_ogb930
-    IF cl_null(l_ogb.ogb37) OR l_ogb.ogb37=0 THEN    #FUN-AB0061           
-       LET l_ogb.ogb37=l_ogb.ogb13                   #FUN-AB0061           
-    END IF                               #FUN-AB0061   
+    IF cl_null(l_ogb.ogb37) OR l_ogb.ogb37=0 THEN    #FUN-AB0061
+       LET l_ogb.ogb37=l_ogb.ogb13                   #FUN-AB0061
+    END IF                               #FUN-AB0061
     LET l_ogb.ogb14  = l_ogb.ogb917*l_ogb.ogb13  #MOD-7C0019
     LET l_ogb.ogb14t = l_ogb.ogb14*(1+l_oea211/100)
     LET l_ogb.ogbplant = l_oeb.oebplant   #NO.FUN-960130
@@ -15502,30 +15513,30 @@ FUNCTION t720_exp_ogb(p_oga01,p_oea01)
     ##FUN-AB0096 -------------add end----------------------
     #FUN-AC0055 mark ----------------------end------------------------
     #FUN-C50097 ADD BEGIN-----
-    IF cl_null(l_ogb.ogb50) THEN 
+    IF cl_null(l_ogb.ogb50) THEN
       LET l_ogb.ogb50 = 0
-    END IF 
-    IF cl_null(l_ogb.ogb51) THEN 
+    END IF
+    IF cl_null(l_ogb.ogb51) THEN
       LET l_ogb.ogb51 = 0
-    END IF 
-    IF cl_null(l_ogb.ogb52) THEN 
+    END IF
+    IF cl_null(l_ogb.ogb52) THEN
       LET l_ogb.ogb52 = 0
-    END IF 
-    IF cl_null(l_ogb.ogb53) THEN 
+    END IF
+    IF cl_null(l_ogb.ogb53) THEN
       LET l_ogb.ogb53 = 0
-    END IF 
-    IF cl_null(l_ogb.ogb54) THEN 
+    END IF
+    IF cl_null(l_ogb.ogb54) THEN
       LET l_ogb.ogb54 = 0
-    END IF 
-    IF cl_null(l_ogb.ogb55) THEN 
+    END IF
+    IF cl_null(l_ogb.ogb55) THEN
       LET l_ogb.ogb55 = 0
-    END IF                                         
-    #FUN-C50097 ADD END-------      
+    END IF
+    #FUN-C50097 ADD END-------
     #FUN-CB0087--add--str--
-    IF g_aza.aza115='Y' THEN 
+    IF g_aza.aza115='Y' THEN
        SELECT oga14,oga15 INTO l_oga14,l_oga15 FROM oga_file WHERE oga01=l_ogb.ogb01
        CALL s_reason_code(l_ogb.ogb01,l_ogb.ogb31,'',l_ogb.ogb04,l_ogb.ogb09,l_oga14,l_oga15) RETURNING l_ogb.ogb1001
-       IF cl_null(l_ogb.ogb1001) THEN 
+       IF cl_null(l_ogb.ogb1001) THEN
           CALL cl_err(l_ogb.ogb1001,'aim-425',1)
           LET g_success = 'N'
           EXIT FOREACH
@@ -15543,7 +15554,7 @@ FUNCTION t720_exp_ogb(p_oga01,p_oea01)
     CALL t720_upd_oga(p_oga01)
   END IF
 END FUNCTION
- 
+
 FUNCTION t720_upd_oga(p_oga01)
   DEFINE p_oga01  LIKE oga_file.oga01
   DEFINE l_oga50  LIKE oga_file.oga50,
@@ -15553,25 +15564,25 @@ FUNCTION t720_upd_oga(p_oga01)
          l_oga161 LIKE oga_file.oga161,
          l_oga162 LIKE oga_file.oga162,
          l_oga163 LIKE oga_file.oga163
- 
+
    LET l_oga50 = NULL
-   LET l_oga161= NULL    #No.MOD-880057 
+   LET l_oga161= NULL    #No.MOD-880057
    LET l_oga162= NULL    #No.MOD-880057
    LET l_oga163= NULL    #No.MOD-880057
- 
+
    SELECT SUM(ogb14) INTO l_oga50 FROM ogb_file
     WHERE ogb01 = p_oga01
- 
+
    IF cl_null(l_oga50) THEN LET l_oga50 = 0 END IF
-   SELECT oga161,oga162,oga163 INTO l_oga161,l_oga162,l_oga163 
-     FROM oga_file 
-    WHERE oga01 = p_oga01 
-   IF cl_null(l_oga161) THEN LET l_oga161 = 0 END IF 
-   IF cl_null(l_oga162) THEN LET l_oga162 = 0 END IF 
-   IF cl_null(l_oga163) THEN LET l_oga163 = 0 END IF 
+   SELECT oga161,oga162,oga163 INTO l_oga161,l_oga162,l_oga163
+     FROM oga_file
+    WHERE oga01 = p_oga01
+   IF cl_null(l_oga161) THEN LET l_oga161 = 0 END IF
+   IF cl_null(l_oga162) THEN LET l_oga162 = 0 END IF
+   IF cl_null(l_oga163) THEN LET l_oga163 = 0 END IF
    LET l_oga52 = l_oga50 * l_oga161/100
    LET l_oga53 = l_oga50 * (l_oga162+l_oga163)/100
- 
+
    UPDATE oga_file SET oga50=l_oga50,
                        oga52=l_oga52,
                        oga53=l_oga53
@@ -15579,53 +15590,53 @@ FUNCTION t720_upd_oga(p_oga01)
    IF STATUS THEN
       LET g_success = 'N'
    END IF
- 
+
 END FUNCTION
 
 
 FUNCTION t720_u_tlfs() #------------------------------------ Update tlfs_file
    DEFINE l_ima918   LIKE ima_file.ima918   #No.MOD-840347
    DEFINE l_ima921   LIKE ima_file.ima921   #No.MOD-840347
- 
-   SELECT ima918,ima921 INTO l_ima918,l_ima921 
+
+   SELECT ima918,ima921 INTO l_ima918,l_ima921
      FROM ima_file
     WHERE ima01 = b_rvv.rvv31
       AND imaacti = "Y"
-   
+
    IF cl_null(l_ima918) THEN
       LET l_ima918='N'
    END IF
-                                                                                
+
    IF cl_null(l_ima921) THEN
       LET l_ima921='N'
    END IF
- 
+
    IF l_ima918 = "N" AND l_ima921 = "N" THEN
       RETURN
    END IF
- 
-   IF b_rvv.rvv17 = 0 THEN                                                      
-      RETURN                                                                    
-   END IF                                                                       
+
+   IF b_rvv.rvv17 = 0 THEN
+      RETURN
+   END IF
 
    #MOD-C40098 add start -----
    IF g_sma.sma90 = 'N' AND g_rvu.rvu00 = 2 THEN
       RETURN
    END IF
    #MOD-C40098 add end   -----
- 
+
    IF g_bgjob = 'N' THEN
       MESSAGE "d_tlfs!"
    END IF
- 
+
    CALL ui.Interface.refresh()
- 
+
    DELETE FROM tlfs_file
     WHERE tlfs01 = b_rvv.rvv31
       AND tlfs10 = g_rvu.rvu01
       AND tlfs11 = b_rvv.rvv02
       AND tlfs111 = g_rvu.rvu03
- 
+
    IF STATUS THEN
       IF g_bgerr THEN
          LET g_showmsg = b_rvv.rvv31,'/',g_rvu.rvu02
@@ -15636,8 +15647,8 @@ FUNCTION t720_u_tlfs() #------------------------------------ Update tlfs_file
       LET g_success='N'
       RETURN
    END IF
- 
-   IF SQLCA.SQLERRD[3]=0 THEN    
+
+   IF SQLCA.SQLERRD[3]=0 THEN
       IF g_bgerr THEN
          LET g_showmsg = b_rvv.rvv31,'/',g_rvu.rvu02
          CALL s_errmsg('tlfs01,tlfs111',g_showmsg,'del tlfs:','mfg0177',1)
@@ -15648,27 +15659,27 @@ FUNCTION t720_u_tlfs() #------------------------------------ Update tlfs_file
       LET g_success='N'
       RETURN
    END IF
- 
+
 END FUNCTION
- 
+
 FUNCTION t720_getprice()
 DEFINE l_pmc930 LIKE pmc_file.pmc930
 DEFINE l_gec04  LIKE gec_file.gec04
 DEFINE l_success LIKE type_file.num5
-      
+
       SELECT gec04 INTO l_gec04 FROM gec_file,pmc_file
        WHERE gec01 = pmc47 AND pmc01 = g_rvu.rvu04
       SELECT pmc930 INTO l_pmc930 FROM pmc_file
        WHERE pmc01 = g_rvu.rvu04
       IF l_success THEN
          LET g_rvv[l_ac].rvv38t = g_rvv[l_ac].rvv38*(1+l_gec04/100)
-      END IF  
+      END IF
       DISPLAY BY NAME g_rvv[l_ac].rvv38,g_rvv[l_ac].rvv38t
 END FUNCTION
- 
+
 FUNCTION t720_get_azi()
 DEFINE l_rva113          LIKE rva_file.rva113   ##No.FUN-940083
- 
+
    LET t_azi03=''
    LET t_azi04=''
   #IF g_rva00 = '1' AND g_rvu.rvu00 = '3' THEN                       #MOD-BB0318 mark
@@ -15704,7 +15715,7 @@ DEFINE l_rva113          LIKE rva_file.rva113   ##No.FUN-940083
       ELSE
         LET l_rva113 = g_rvu.rvu113
       END IF
-     #MOD-C40047 end add----- 
+     #MOD-C40047 end add-----
       SELECT azi03,azi04 INTO t_azi03,t_azi04 FROM azi_file
           WHERE azi01 = l_rva113
    END IF
@@ -15756,11 +15767,11 @@ DEFINE l_store STRING                    #FUN-CB0087--qiull--add--
 
    LET l_cnt = 0
    LET l_poy02 = ''
-   SELECT COUNT(*) INTO l_cnt FROM imm_file                                                                                         
-    WHERE imm09 = g_rvu.rvu01                                                                                                       
-   IF l_cnt > 0 THEN                                                                                                                
-      CALL cl_err(g_rvu.rvu01,'apm-076',0)                                                                                          
-      RETURN                                                                                                                        
+   SELECT COUNT(*) INTO l_cnt FROM imm_file
+    WHERE imm09 = g_rvu.rvu01
+   IF l_cnt > 0 THEN
+      CALL cl_err(g_rvu.rvu01,'apm-076',0)
+      RETURN
    END IF
    IF g_rvu.rvuconf='N' THEN
       CALL cl_err('','mfg3550',0)
@@ -15786,7 +15797,7 @@ DEFINE l_store STRING                    #FUN-CB0087--qiull--add--
       RETURN
    END IF
    LET tm.slip = ' '
-                                                                                                                                    
+
    OPEN WINDOW p201_exp WITH FORM "apm/42f/apmp201a"
          ATTRIBUTE (STYLE = g_win_style CLIPPED)
    CALL cl_ui_locale("apmp201a")
@@ -15815,16 +15826,16 @@ DEFINE l_store STRING                    #FUN-CB0087--qiull--add--
       ON IDLE g_idle_seconds
          CALL cl_on_idle()
          CONTINUE INPUT
-                                                                                                                                    
+
       ON ACTION about
          CALL cl_about()
-                                                                                                                                    
+
       ON ACTION help
          CALL cl_show_help()
-                                                                                                                                    
+
       ON ACTION controlg
          CALL cl_cmdask()
-                                                                                                                                    
+
    END INPUT
    IF INT_FLAG THEN
       LET INT_FLAG=0
@@ -15843,7 +15854,7 @@ DEFINE l_store STRING                    #FUN-CB0087--qiull--add--
       CALL cl_err('','abm-621',0)
       ROLLBACK WORK
    END IF
-                                                                                                                                    
+
    LET l_imm.imm02=g_today
    LET l_imm.imm03="N"
    LET l_imm.imm09=g_rvu.rvu01
@@ -15890,7 +15901,7 @@ DEFINE l_store STRING                    #FUN-CB0087--qiull--add--
       IF cl_null(l_imn.imn09) THEN
          LET l_imn.imn09 = ' '
       END IF
-      #LET l_imn.imn10=g_rvv[i].rvv17                    #MOD-C10136 mark 
+      #LET l_imn.imn10=g_rvv[i].rvv17                    #MOD-C10136 mark
       LET l_imn.imn10=g_rvv[i].rvv17*g_rvv[i].rvv35_fac  #MOD-C10136 add
       LET l_imn.imn10=s_digqty(l_imn.imn10,l_imn.imn09)   #No.FUN-BB0086
       SELECT ima35,ima36 INTO l_imn.imn15,l_imn.imn16
@@ -15901,8 +15912,8 @@ DEFINE l_store STRING                    #FUN-CB0087--qiull--add--
       #IF NOT s_chk_ware(l_imn.imn15) THEN
       #   LET l_imn.imn15=' '
       #   LET l_imn.imn16=' '
-      #END IF 
-      #No.FUN-AA0049--end           
+      #END IF
+      #No.FUN-AA0049--end
       #No.FUN-AB0058  mark--End
       IF cl_null(l_imn.imn15) THEN
          LET l_imn.imn15 = ' '
@@ -15981,7 +15992,7 @@ DEFINE l_store STRING                    #FUN-CB0087--qiull--add--
             CALL cl_err('','aim-425',1)
             LET g_success = 'N'
             ROLLBACK WORK
-            RETURN 
+            RETURN
          END IF
       END IF
       #FUN-CB0087---qiull---add---end---
@@ -16023,79 +16034,79 @@ DEFINE l_store STRING                    #FUN-CB0087--qiull--add--
    LET l_cmd = "aimt324 '",l_imm.imm01,"' ' ' 'A'" CLIPPED #FUN-A60034 add
    CALL cl_cmdrun_wait(l_cmd)
 END FUNCTION
- 
-FUNCTION t720_m()                                                                                                                   
-  DEFINE li_result   LIKE type_file.num5                                                                                            
-  DEFINE l_rvv    RECORD LIKE rvv_file.*,                                                                                           
-         l_sfa    RECORD LIKE sfa_file.*,                                                                                           
-         l_sfs    RECORD LIKE sfs_file.*,                                                                                           
-         l_qpa    LIKE sfa_file.sfa161,                                                                                             
-         l_qty    LIKE sfs_file.sfs05,                                                                                              
-         g_rvu16  LIKE rvu_file.rvu16,                                                                                              
-         g_t1     LIKE oay_file.oayslip,                                                                                            
-         l_flag   LIKE type_file.chr1,                                                                                              
-         l_name   LIKE type_file.chr20,                                                                                             
-         l_sfp    RECORD                                                                                                            
-               sfp01   LIKE sfp_file.sfp01,                                                                                         
-               sfp02   LIKE sfp_file.sfp02,                                                                                         
-               sfp03   LIKE sfp_file.sfp03,                                                                                         
-               sfp04   LIKE sfp_file.sfp04,                                                                                         
-               sfp05   LIKE sfp_file.sfp05,                                                                                         
-               sfp06   LIKE sfp_file.sfp06,                                                                                         
-               sfp07   LIKE sfp_file.sfp07                                                                                          
-                  END RECORD,                                                                                                       
-         l_sfb81  LIKE sfb_file.sfb81,                                                                                              
-         l_sfb82  LIKE sfb_file.sfb82,                                                                                              
-         l_bdate  LIKE type_file.dat, 
-         l_edate  LIKE type_file.dat,                                                                                               
-         l_day    LIKE type_file.num5,                                                                                              
-         l_cnt    LIKE type_file.num5                                                                                               
-  DEFINE l_sfv11 LIKE sfv_file.sfv11                                                                                                
-  DEFINE l_msg  LIKE type_file.chr1000                                                                                              
-  DEFINE l_sfb04  LIKE sfb_file.sfb04                                                                                               
-  DEFINE l_sfb02  LIKE sfb_file.sfb02                                                                                               
-  DEFINE l_sfp02  LIKE sfp_file.sfp02                                                                                               
-  DEFINE g_ima55  LIKE ima_file.ima55  
+
+FUNCTION t720_m()
+  DEFINE li_result   LIKE type_file.num5
+  DEFINE l_rvv    RECORD LIKE rvv_file.*,
+         l_sfa    RECORD LIKE sfa_file.*,
+         l_sfs    RECORD LIKE sfs_file.*,
+         l_qpa    LIKE sfa_file.sfa161,
+         l_qty    LIKE sfs_file.sfs05,
+         g_rvu16  LIKE rvu_file.rvu16,
+         g_t1     LIKE oay_file.oayslip,
+         l_flag   LIKE type_file.chr1,
+         l_name   LIKE type_file.chr20,
+         l_sfp    RECORD
+               sfp01   LIKE sfp_file.sfp01,
+               sfp02   LIKE sfp_file.sfp02,
+               sfp03   LIKE sfp_file.sfp03,
+               sfp04   LIKE sfp_file.sfp04,
+               sfp05   LIKE sfp_file.sfp05,
+               sfp06   LIKE sfp_file.sfp06,
+               sfp07   LIKE sfp_file.sfp07
+                  END RECORD,
+         l_sfb81  LIKE sfb_file.sfb81,
+         l_sfb82  LIKE sfb_file.sfb82,
+         l_bdate  LIKE type_file.dat,
+         l_edate  LIKE type_file.dat,
+         l_day    LIKE type_file.num5,
+         l_cnt    LIKE type_file.num5
+  DEFINE l_sfv11 LIKE sfv_file.sfv11
+  DEFINE l_msg  LIKE type_file.chr1000
+  DEFINE l_sfb04  LIKE sfb_file.sfb04
+  DEFINE l_sfb02  LIKE sfb_file.sfb02
+  DEFINE l_sfp02  LIKE sfp_file.sfp02
+  DEFINE g_ima55  LIKE ima_file.ima55
   DEFINE l_pmn43  LIKE pmn_file.pmn43   #FUN-A60076
   DEFINE l_pmn012 LIKE pmn_file.pmn012  #FUN-A60076
   DEFINE l_smy73  LIKE smy_file.smy73   #TQC-AC0293
-                                                                                               
-   DROP TABLE tmp                                                                                                                   
-   CREATE TEMP TABLE tmp(                                                                                                                 
-    a         LIKE oea_file.oea01,                                                                                                
-    b         LIKE type_file.chr1000,                                                                                                 
-    c         LIKE type_file.num15_3);  #FUN-A20044                                                                                                                                                                                                                              
-#    c         LIKE ima_file.ima26);  #FUN-A20044                                                                                                                                                                                                                              
-   IF g_rvu.rvu01 IS NULL THEN RETURN END IF                                                                                        
-    SELECT * INTO g_rvu.* FROM rvu_file                                                                                             
-     WHERE rvu01 = g_rvu.rvu01                                                                                                      
-    IF g_rvu.rvuconf = 'X' THEN CALL cl_err('','9024',0) RETURN END IF                                                              
+
+   DROP TABLE tmp
+   CREATE TEMP TABLE tmp(
+    a         LIKE oea_file.oea01,
+    b         LIKE type_file.chr1000,
+    c         LIKE type_file.num15_3);  #FUN-A20044
+#    c         LIKE ima_file.ima26);  #FUN-A20044
+   IF g_rvu.rvu01 IS NULL THEN RETURN END IF
+    SELECT * INTO g_rvu.* FROM rvu_file
+     WHERE rvu01 = g_rvu.rvu01
+    IF g_rvu.rvuconf = 'X' THEN CALL cl_err('','9024',0) RETURN END IF
     IF g_rvu.rvuconf = 'N' THEN CALL cl_err('','mfg3550',0) RETURN END IF #此筆單據尚未確認 #CHI-B90036 add
-    IF g_rvu.rvu16 IS NOT NULL THEN  #已產生領料單                                                                                  
-       CALL cl_err(g_rvu.rvu16,'asf-826',0)  
-       RETURN                                                                                                                       
-    END IF                                                                                                                          
-                                                                                                                                    
-#...check單身工單是否有使用消耗性料件 -> 沒有則不可產生領料單                                                                       
-    SELECT COUNT(*) INTO l_cnt FROM rvv_file,sfa_file                                                                               
-     WHERE rvv01 = g_rvu.rvu01                                                                                                      
-       AND rvv18 = sfa01 AND sfa11 = 'E'                                                                                            
-    IF l_cnt = 0 THEN CALL cl_err('sel sfa','asf-735',0) RETURN  END IF                                                             
-#............................................................                                                                       
-                                                                                                                                    
-    BEGIN WORK                                                                                                                      
-                                                                                                                                    
-    LET l_flag =' '                                                                                                                 
-    LET g_success = 'Y'                                                                                                             
-    INPUT g_rvu16 WITHOUT DEFAULTS FROM rvu16                                                                                       
-       AFTER FIELD rvu16                                                                                                            
-         IF NOT cl_null(g_rvu16) THEN                                                                                               
-            CALL s_check_no("asf",g_rvu16,"","3","rvu_file","rvu16","")                                                             
-                 RETURNING li_result,g_rvu.rvu16                                                                                    
-            DISPLAY BY NAME g_rvu.rvu16                                                                                             
-            IF (NOT li_result) THEN                                                                                                 
+    IF g_rvu.rvu16 IS NOT NULL THEN  #已產生領料單
+       CALL cl_err(g_rvu.rvu16,'asf-826',0)
+       RETURN
+    END IF
+
+#...check單身工單是否有使用消耗性料件 -> 沒有則不可產生領料單
+    SELECT COUNT(*) INTO l_cnt FROM rvv_file,sfa_file
+     WHERE rvv01 = g_rvu.rvu01
+       AND rvv18 = sfa01 AND sfa11 = 'E'
+    IF l_cnt = 0 THEN CALL cl_err('sel sfa','asf-735',0) RETURN  END IF
+#............................................................
+
+    BEGIN WORK
+
+    LET l_flag =' '
+    LET g_success = 'Y'
+    INPUT g_rvu16 WITHOUT DEFAULTS FROM rvu16
+       AFTER FIELD rvu16
+         IF NOT cl_null(g_rvu16) THEN
+            CALL s_check_no("asf",g_rvu16,"","3","rvu_file","rvu16","")
+                 RETURNING li_result,g_rvu.rvu16
+            DISPLAY BY NAME g_rvu.rvu16
+            IF (NOT li_result) THEN
                NEXT FIELD rvu16
-            END IF                                                                                                                  
+            END IF
            #TQC-AC0293 ---------------add start----------
             LET g_t1 = s_get_doc_no(g_rvu.rvu16)
             SELECT smy73 INTO l_smy73 FROM smy_file
@@ -16105,270 +16116,270 @@ FUNCTION t720_m()
                NEXT FIELD rvu16
             END IF
            #TQC-AC0293 ---------------add end-------------
-            DISPLAY BY NAME g_rvu.rvu16                                                                                             
-            LET g_rvu16=g_rvu.rvu16                                                                                                 
-          END IF                                                                                                                    
-                                                                                                                                    
-       ON ACTION controlp                                                                                                           
-          CASE WHEN INFIELD(rvu16)                                                                                                  
-            LET g_t1 = s_get_doc_no(g_rvu.rvu16)                                                                                    
+            DISPLAY BY NAME g_rvu.rvu16
+            LET g_rvu16=g_rvu.rvu16
+          END IF
+
+       ON ACTION controlp
+          CASE WHEN INFIELD(rvu16)
+            LET g_t1 = s_get_doc_no(g_rvu.rvu16)
             LET g_sql = " (smy73 <> 'Y' OR smy73 is null ) "          #TQC-AC0293
             CALL smy_qry_set_par_where(g_sql)                         #TQC-AC0293
-            CALL q_smy( FALSE, TRUE,g_t1,'ASF','3') RETURNING g_t1                                                                  
-            LET g_rvu16=g_t1                                                                                                        
-            DISPLAY BY NAME g_rvu16                                                                                                 
-            NEXT FIELD rvu16                                                                                                        
-               OTHERWISE EXIT CASE                                                                                                  
-          END CASE                                                                                                                  
-       ON IDLE g_idle_seconds                                                                                                       
-          CALL cl_on_idle()                                                                                                         
-          CONTINUE INPUT                                                                                                            
-                                                                                                                                    
-    END INPUT                                                                                                                       
-                                                                                                                                    
-    IF cl_null(g_rvu16) THEN   #未輸入任何data                                                                                      
+            CALL q_smy( FALSE, TRUE,g_t1,'ASF','3') RETURNING g_t1
+            LET g_rvu16=g_t1
+            DISPLAY BY NAME g_rvu16
+            NEXT FIELD rvu16
+               OTHERWISE EXIT CASE
+          END CASE
+       ON IDLE g_idle_seconds
+          CALL cl_on_idle()
+          CONTINUE INPUT
+
+    END INPUT
+
+    IF cl_null(g_rvu16) THEN   #未輸入任何data
        ROLLBACK WORK
-       RETURN                                                                                                                       
-    END IF                                                                                                                          
-    IF g_success = 'N' THEN                                                                                                         
-       ROLLBACK WORK                                                                                                                
-       RETURN                                                                                                                       
-    END IF                                                                                                                          
-    IF NOT cl_sure(0,0) THEN                                                                                                        
-       ROLLBACK WORK                                                                                                                
-       RETURN                                                                                                                       
-    END IF                                                                                                                          
-##                                                                                                                                  
-    #新增一筆資料                                                                                                                   
-    IF g_rvu16 IS NOT NULL THEN                                                                                                     
-      #CALL s_auto_assign_no("apm",g_rvu.rvu16,g_rvu.rvu03,"","sfp_file","sfp01","","","") #MOD-B40258 mark                                            
-       CALL s_auto_assign_no("asf",g_rvu.rvu16,g_rvu.rvu03,"","sfp_file","sfp01","","","") #MOD-B40258                                            
-         RETURNING li_result,g_rvu.rvu16                                                                                            
-       IF (NOT li_result) THEN                                                                                                      
-          ROLLBACK WORK                                                                                                             
-          RETURN                                                                                                                    
-       END IF                                                                                                                       
-    DISPLAY BY NAME g_rvu.rvu16                                                                                                     
-    LET g_rvu16=g_rvu.rvu16                                                                                                         
-      #----先檢查領料單身資料是否已經存在------------                                                                               
+       RETURN
+    END IF
+    IF g_success = 'N' THEN
+       ROLLBACK WORK
+       RETURN
+    END IF
+    IF NOT cl_sure(0,0) THEN
+       ROLLBACK WORK
+       RETURN
+    END IF
+##
+    #新增一筆資料
+    IF g_rvu16 IS NOT NULL THEN
+      #CALL s_auto_assign_no("apm",g_rvu.rvu16,g_rvu.rvu03,"","sfp_file","sfp01","","","") #MOD-B40258 mark
+       CALL s_auto_assign_no("asf",g_rvu.rvu16,g_rvu.rvu03,"","sfp_file","sfp01","","","") #MOD-B40258
+         RETURNING li_result,g_rvu.rvu16
+       IF (NOT li_result) THEN
+          ROLLBACK WORK
+          RETURN
+       END IF
+    DISPLAY BY NAME g_rvu.rvu16
+    LET g_rvu16=g_rvu.rvu16
+      #----先檢查領料單身資料是否已經存在------------
        DECLARE count_cur CURSOR FOR
-           SELECT COUNT(*) FROM sfs_file                                                                                            
-       WHERE sfs01 = g_rvu16                                                                                                        
-       OPEN count_cur                                                                                                               
-       FETCH count_cur INTO g_cnt                                                                                                   
-       IF g_cnt > 0  THEN  #已存在                                                                                                  
-          LET l_flag ='Y'                                                                                                           
-       ELSE                                                                                                                         
-          LET l_flag ='N'                                                                                                           
-       END IF                                                                                                                       
-       #-----------產生領料資料------------------------                                                                             
-                                                                                                                                    
-       DECLARE t720_rvv_cur CURSOR  WITH HOLD FOR                                                                                   
-          SELECT *  FROM  rvv_file                                                                                                  
-           WHERE rvv01 = g_rvu.rvu01                                                                                                
-       LET l_cnt = 0                                                                                                                
-       CALL cl_outnam('apmt730') RETURNING l_name                                                                                   
-       START REPORT t720_rep TO l_name                                                                                              
-                                                                                                                                    
-       LET g_success = 'Y'                                                                                                          
-       FOREACH t720_rvv_cur INTO l_rvv.*                                                                                            
-         IF STATUS THEN                                                                                                             
-            CALL cl_err('foreach s:',STATUS,0)                                                                                      
-            LET g_success = 'N'                                                                                                     
+           SELECT COUNT(*) FROM sfs_file
+       WHERE sfs01 = g_rvu16
+       OPEN count_cur
+       FETCH count_cur INTO g_cnt
+       IF g_cnt > 0  THEN  #已存在
+          LET l_flag ='Y'
+       ELSE
+          LET l_flag ='N'
+       END IF
+       #-----------產生領料資料------------------------
+
+       DECLARE t720_rvv_cur CURSOR  WITH HOLD FOR
+          SELECT *  FROM  rvv_file
+           WHERE rvv01 = g_rvu.rvu01
+       LET l_cnt = 0
+       CALL cl_outnam('apmt730') RETURNING l_name
+       START REPORT t720_rep TO l_name
+
+       LET g_success = 'Y'
+       FOREACH t720_rvv_cur INTO l_rvv.*
+         IF STATUS THEN
+            CALL cl_err('foreach s:',STATUS,0)
+            LET g_success = 'N'
             EXIT FOREACH
-         END IF                                                                                                                     
-         SELECT sfb04,sfb81,sfb02                                                                                                   
-           INTO l_sfb04,l_sfb81,l_sfb02                                                                                             
-           FROM sfb_file                                                                                                            
-          WHERE sfb01 = l_rvv.rvv18                                                                                                 
-                                                                                                                                    
-                                                                                                                                    
-         IF STATUS THEN                                                                                                             
-            CALL cl_err3("sel","sfb_file",l_rvv.rvv18,"",STATUS,"","sel sfb",1)                                                     
-            CONTINUE FOREACH                                                                                                        
-         END IF                                                                                                                     
-                                                                                                                                    
-         IF l_sfb04='1' THEN                                                                                                        
-            CALL cl_err('sfb04=1','asf-381',0) CONTINUE FOREACH                                                                     
-         END IF                                                                                                                     
-                                                                                                                                    
-         IF l_sfb04='8' THEN                                                                                                        
-            CALL cl_err('sfb04=8','asf-345',0) CONTINUE FOREACH                                                                     
-         END IF                                                                                                                     
-                                                                                                                                    
-                                                                                                                                    
+         END IF
+         SELECT sfb04,sfb81,sfb02
+           INTO l_sfb04,l_sfb81,l_sfb02
+           FROM sfb_file
+          WHERE sfb01 = l_rvv.rvv18
+
+
+         IF STATUS THEN
+            CALL cl_err3("sel","sfb_file",l_rvv.rvv18,"",STATUS,"","sel sfb",1)
+            CONTINUE FOREACH
+         END IF
+
+         IF l_sfb04='1' THEN
+            CALL cl_err('sfb04=1','asf-381',0) CONTINUE FOREACH
+         END IF
+
+         IF l_sfb04='8' THEN
+            CALL cl_err('sfb04=8','asf-345',0) CONTINUE FOREACH
+         END IF
+
+
          IF l_sfb02=13 THEN
-            CALL cl_err('sfb02=13','asf-346',0) CONTINUE FOREACH                                                                    
-         END IF                                                                                                                     
-         DECLARE t720_sfs_cur CURSOR WITH HOLD FOR                                                                                  
-         SELECT sfa_file.*,sfb82 FROM sfb_file,sfa_file                                                                             
-          WHERE sfb01 = l_rvv.rvv18   #工單單號                                                                                     
-            AND sfb01 = sfa01                                                                                                       
-            AND sfa11 = 'E'                                                                                                         
+            CALL cl_err('sfb02=13','asf-346',0) CONTINUE FOREACH
+         END IF
+         DECLARE t720_sfs_cur CURSOR WITH HOLD FOR
+         SELECT sfa_file.*,sfb82 FROM sfb_file,sfa_file
+          WHERE sfb01 = l_rvv.rvv18   #工單單號
+            AND sfb01 = sfa01
+            AND sfa11 = 'E'
             AND sfb05 = l_rvv.rvv31   #MOD-C40173 add
-            ORDER BY sfa26                                                                                                          
-                                                                                                                                    
-        FOREACH t720_sfs_cur INTO l_sfa.*,l_sfb82                                                                                   
-            INITIALIZE l_sfs.* TO NULL                                                                                              
-            INITIALIZE l_sfp.* TO NULL                                                                                              
-                                                                                                                                    
-        #-------發料單頭--------------                                                                                              
-          LET l_sfp.sfp01 = g_rvu16                                                                                                 
-#領料單月份以完工入庫日期該月的最後一天為領料日                                                                                     
-          LET l_sfp.sfp02 = g_today                                                                                                 
-          LET l_sfp.sfp03 = g_today                                                                                                 
-          IF MONTH(g_today) != MONTH(g_rvu.rvu03) THEN                                                                              
-             IF MONTH(g_rvu.rvu03) = 12 THEN                                                                                        
-                LET l_bdate = MDY(MONTH(g_rvu.rvu03),1,YEAR(g_rvu.rvu03))                                                           
-                LET l_edate = MDY(1,1,YEAR(g_rvu.rvu03)+1)  
-             ELSE                                                                                                                   
-                LET l_bdate = MDY(MONTH(g_rvu.rvu03),1,YEAR(g_rvu.rvu03))                                                           
-                LET l_edate = MDY(MONTH(g_rvu.rvu03)+1,1,YEAR(g_rvu.rvu03))                                                         
-             END IF                                                                                                                 
-             LET l_day = l_edate - l_bdate   #計算最後一天日期                                                                      
-             LET l_sfp.sfp03 = MDY(MONTH(g_rvu.rvu03),l_day,YEAR(g_rvu.rvu03))                                                      
-          END IF                                                                                                                    
-          LET l_sfp.sfp04 = 'N'                                                                                                     
-          LET l_sfp.sfp05 = 'N'                                                                                                     
-          LET l_sfp.sfp06 ='4'                                                                                                      
-          LET l_sfp.sfp07 = l_sfb82                                                                                                 
-          OUTPUT TO REPORT t720_rep(l_sfp.*,l_flag)                                                                                 
-          SELECT MAX(sfs02) INTO l_cnt FROM sfs_file                                                                                
-           WHERE sfs01 = g_rvu16                                                                                                    
-          IF l_cnt IS NULL THEN    #項次                                                                                            
-             LET l_cnt = 1                                                                                                          
-          ELSE  LET l_cnt = l_cnt + 1                                                                                               
-          END IF                                                                                                                    
-         #-------發料單身--------------                                                                                             
-          LET l_sfs.sfs01 = g_rvu16                                                                                                 
-          LET l_sfs.sfs02 = l_cnt                                                                                                   
+            ORDER BY sfa26
+
+        FOREACH t720_sfs_cur INTO l_sfa.*,l_sfb82
+            INITIALIZE l_sfs.* TO NULL
+            INITIALIZE l_sfp.* TO NULL
+
+        #-------發料單頭--------------
+          LET l_sfp.sfp01 = g_rvu16
+#領料單月份以完工入庫日期該月的最後一天為領料日
+          LET l_sfp.sfp02 = g_today
+          LET l_sfp.sfp03 = g_today
+          IF MONTH(g_today) != MONTH(g_rvu.rvu03) THEN
+             IF MONTH(g_rvu.rvu03) = 12 THEN
+                LET l_bdate = MDY(MONTH(g_rvu.rvu03),1,YEAR(g_rvu.rvu03))
+                LET l_edate = MDY(1,1,YEAR(g_rvu.rvu03)+1)
+             ELSE
+                LET l_bdate = MDY(MONTH(g_rvu.rvu03),1,YEAR(g_rvu.rvu03))
+                LET l_edate = MDY(MONTH(g_rvu.rvu03)+1,1,YEAR(g_rvu.rvu03))
+             END IF
+             LET l_day = l_edate - l_bdate   #計算最後一天日期
+             LET l_sfp.sfp03 = MDY(MONTH(g_rvu.rvu03),l_day,YEAR(g_rvu.rvu03))
+          END IF
+          LET l_sfp.sfp04 = 'N'
+          LET l_sfp.sfp05 = 'N'
+          LET l_sfp.sfp06 ='4'
+          LET l_sfp.sfp07 = l_sfb82
+          OUTPUT TO REPORT t720_rep(l_sfp.*,l_flag)
+          SELECT MAX(sfs02) INTO l_cnt FROM sfs_file
+           WHERE sfs01 = g_rvu16
+          IF l_cnt IS NULL THEN    #項次
+             LET l_cnt = 1
+          ELSE  LET l_cnt = l_cnt + 1
+          END IF
+         #-------發料單身--------------
+          LET l_sfs.sfs01 = g_rvu16
+          LET l_sfs.sfs02 = l_cnt
           LET l_sfs.sfs03 = l_sfa.sfa01
-          LET l_sfs.sfs04 = l_sfa.sfa03                                                                                             
-          #LET l_sfs.sfs05 = l_rvv.rvv09*l_sfa.sfa161 #已發料量   #MOD-A70228                                                                     
-          LET l_sfs.sfs05 = l_rvv.rvv17*l_sfa.sfa161 #已發料量   #MOD-A70228                                                                     
-          LET l_sfs.sfs06 = l_sfa.sfa12  #發料單位 
+          LET l_sfs.sfs04 = l_sfa.sfa03
+          #LET l_sfs.sfs05 = l_rvv.rvv09*l_sfa.sfa161 #已發料量   #MOD-A70228
+          LET l_sfs.sfs05 = l_rvv.rvv17*l_sfa.sfa161 #已發料量   #MOD-A70228
+          LET l_sfs.sfs06 = l_sfa.sfa12  #發料單位
           LET l_sfs.sfs05 = s_digqty(l_sfs.sfs05,l_sfs.sfs06)   #No.FUN-BB0086
-          LET l_sfs.sfs07 = l_sfa.sfa30  #倉庫                                                                                      
-          LET l_sfs.sfs08 = l_sfa.sfa31  #儲位                                                                                      
-          LET l_sfs.sfs09 = ' '          #批號                                                                                      
-          LET l_sfs.sfs10 = l_sfa.sfa08  #作業序號                                                                                  
-          LET l_sfs.sfs26 = NULL         #替代碼                                                                                    
-          LET l_sfs.sfs27 = NULL         #被替代料號                                                                                
-         #LET l_sfs.sfs28 = NULL         #替代率 #MOD-D10089 mark                                                                                   
+          LET l_sfs.sfs07 = l_sfa.sfa30  #倉庫
+          LET l_sfs.sfs08 = l_sfa.sfa31  #儲位
+          LET l_sfs.sfs09 = ' '          #批號
+          LET l_sfs.sfs10 = l_sfa.sfa08  #作業序號
+          LET l_sfs.sfs26 = NULL         #替代碼
+          LET l_sfs.sfs27 = NULL         #被替代料號
+         #LET l_sfs.sfs28 = NULL         #替代率 #MOD-D10089 mark
           LET l_sfs.sfs28 = 1            #替代率 #MOD-D10089 add
-          LET l_sfs.sfs930 = l_rvv.rvv930                                                                                           
+          LET l_sfs.sfs930 = l_rvv.rvv930
           LET l_sfs.sfsplant = g_plant
           LET l_sfs.sfslegal = g_legal
           LET l_sfs.sfs012 = l_sfa.sfa012  #FUN-A60076
           LET l_sfs.sfs013 = l_sfa.sfa013  #FUN-A60076
           LET l_sfs.sfs014 = ' '           #FUN-C70014 add
-         #IF l_sfa.sfa26 MATCHES '[SUT]' THEN      #FUN-A20037 
-          IF l_sfa.sfa26 MATCHES '[SUTZ]' THEN      #FUN-A20037 
-             LET l_sfs.sfs26 = l_sfa.sfa26                                                                                          
-             LET l_sfs.sfs27 = l_sfa.sfa27                                                                                          
-             LET l_sfs.sfs28 = l_sfa.sfa28                                                                                          
-             #FUN-A60076 --------------------------start--------------------- 
+         #IF l_sfa.sfa26 MATCHES '[SUT]' THEN      #FUN-A20037
+          IF l_sfa.sfa26 MATCHES '[SUTZ]' THEN      #FUN-A20037
+             LET l_sfs.sfs26 = l_sfa.sfa26
+             LET l_sfs.sfs27 = l_sfa.sfa27
+             LET l_sfs.sfs28 = l_sfa.sfa28
+             #FUN-A60076 --------------------------start---------------------
              SELECT pmn43,pmn012 INTO l_pmn43,l_pmn012 FROM pmn_file
-              WHERE pmn01 = l_rvv.rvv36 
+              WHERE pmn01 = l_rvv.rvv36
                 AND pmn02 = l_rvv.rvv37
-             #FUN-A60076 -------------------------end------------------------ 
-             SELECT (sfa161 * sfa28) INTO l_qpa FROM sfa_file                                                                       
-                WHERE sfa01 = l_sfa.sfa01 AND sfa03 = l_sfa.sfa27                                                                   
+             #FUN-A60076 -------------------------end------------------------
+             SELECT (sfa161 * sfa28) INTO l_qpa FROM sfa_file
+                WHERE sfa01 = l_sfa.sfa01 AND sfa03 = l_sfa.sfa27
                   AND sfa012 = l_pmn012 AND sfa013  = l_pmn43   #FUN-A60076
-             #LET l_sfs.sfs05 = l_rvv.rvv09*l_qpa   #MOD-A70228                                                                                 
-             LET l_sfs.sfs05 = l_rvv.rvv17*l_qpa   #MOD-A70228   
-             SELECT SUM(c) INTO l_qty FROM tmp WHERE a = l_sfa.sfa01                                                                
-                AND b = l_sfa.sfa27                                                                                                 
-             IF l_sfs.sfs05 < l_qty THEN                                                                                            
-                LET l_sfs.sfs05 = 0 
-             ELSE                                                                                                                   
-                LET l_sfs.sfs05 = l_sfs.sfs05 - l_qty                                                                               
-             END IF                                                                                                                 
-          ELSE                                                                                                                      
-             LET l_sfs.sfs27 = l_sfa.sfa27                                                                                          
-          END IF                                                                                                                    
+             #LET l_sfs.sfs05 = l_rvv.rvv09*l_qpa   #MOD-A70228
+             LET l_sfs.sfs05 = l_rvv.rvv17*l_qpa   #MOD-A70228
+             SELECT SUM(c) INTO l_qty FROM tmp WHERE a = l_sfa.sfa01
+                AND b = l_sfa.sfa27
+             IF l_sfs.sfs05 < l_qty THEN
+                LET l_sfs.sfs05 = 0
+             ELSE
+                LET l_sfs.sfs05 = l_sfs.sfs05 - l_qty
+             END IF
+          ELSE
+             LET l_sfs.sfs27 = l_sfa.sfa27
+          END IF
           CALL t720_chk_ima64(l_sfs.sfs04, l_sfs.sfs05) RETURNING l_sfs.sfs05
-          LET l_sfs.sfs05 = s_digqty(l_sfs.sfs05,l_sfs.sfs06)   #No.FUN-BB0086          
-        #判斷發料是否大於可發料數(sfa05-sfa06)                                                                                      
-          IF l_sfs.sfs05 > (l_sfa.sfa05 - l_sfa.sfa06) THEN                                                                         
-             LET l_sfs.sfs05 = l_sfa.sfa05 - l_sfa.sfa06                                                                            
-          END IF                                                                                                                    
-          IF cl_null(l_sfs.sfs07) AND cl_null(l_sfs.sfs08) THEN                                                                     
-             SELECT ima35,ima36 INTO  l_sfs.sfs07,l_sfs.sfs08                                                                       
-               FROM ima_file                                                                                                        
-              WHERE ima01 = l_sfs.sfs04    
+          LET l_sfs.sfs05 = s_digqty(l_sfs.sfs05,l_sfs.sfs06)   #No.FUN-BB0086
+        #判斷發料是否大於可發料數(sfa05-sfa06)
+          IF l_sfs.sfs05 > (l_sfa.sfa05 - l_sfa.sfa06) THEN
+             LET l_sfs.sfs05 = l_sfa.sfa05 - l_sfa.sfa06
+          END IF
+          IF cl_null(l_sfs.sfs07) AND cl_null(l_sfs.sfs08) THEN
+             SELECT ima35,ima36 INTO  l_sfs.sfs07,l_sfs.sfs08
+               FROM ima_file
+              WHERE ima01 = l_sfs.sfs04
               #No.FUN-AB0058 mark--begin
               #No.FUN-AA0049--begin
               #IF NOT s_chk_ware(l_sfs.sfs07) THEN
               #   LET l_sfs.sfs07=' '
               #   LET l_sfs.sfs08=' '
-              #END IF 
-              #No.FUN-AA0049--end                                                                                                            
+              #END IF
+              #No.FUN-AA0049--end
               #No.FUN-AB0058 mark--End
-          END IF                                                                                                                    
-          IF l_sfs.sfs07 IS NULL THEN LET l_sfs.sfs07 = ' ' END IF                                                                  
-          IF l_sfs.sfs08 IS NULL THEN LET l_sfs.sfs08 = ' ' END IF                                                                  
-          IF l_sfs.sfs09 IS NULL THEN LET l_sfs.sfs09 = ' ' END IF                                                                  
-          INSERT INTO tmp                                                                                                           
-            VALUES(l_sfa.sfa01,l_sfa.sfa27,l_sfs.sfs05)                                                                             
-        IF g_sma.sma115 = 'Y' THEN 
-             SELECT ima25,ima55,ima906,ima907                                                                                       
-               INTO g_ima25,g_ima55,g_ima906,g_ima907                                                                               
-               FROM ima_file                                                                                                        
-              WHERE ima01=l_sfs.sfs04                                                                                               
-             IF SQLCA.sqlcode THEN                                                                                                  
-                CALL cl_err('sel ima',SQLCA.sqlcode,1)                                                                              
-                LET g_success = 'N'                                                                                                 
-             END IF                                                                                                                 
-             IF cl_null(g_ima55) THEN LET g_ima55 = g_ima25 END IF                                                                  
-             LET l_sfs.sfs30=l_sfs.sfs06                                                                                            
-             LET g_factor = 1                                                                                                       
-             CALL s_umfchk(l_sfs.sfs04,l_sfs.sfs30,g_ima55)                                                                         
-               RETURNING g_cnt,g_factor                                                                                             
-             IF g_cnt = 1 THEN                                                                                                      
-                LET g_factor = 1                                                                                                    
-             END IF                                                                                                                 
-             LET l_sfs.sfs31=g_factor                                                                                               
-             LET l_sfs.sfs32=l_sfs.sfs05                                                                                            
-             LET l_sfs.sfs33=g_ima907                                                                                               
-             LET g_factor = 1                                                                                                       
-             CALL s_umfchk(l_sfs.sfs04,l_sfs.sfs33,g_ima55) 
-               RETURNING g_cnt,g_factor                                                                                             
-             IF g_cnt = 1 THEN                                                                                                      
-                LET g_factor = 1                                                                                                    
-             END IF                                                                                                                 
-             LET l_sfs.sfs34=g_factor                                                                                               
-             LET l_sfs.sfs35=0                                                                                                      
-             IF g_ima906 = '3' THEN                                                                                                 
-                LET g_factor = 1                                                                                                    
-                CALL s_umfchk(l_sfs.sfs04,l_sfs.sfs30,l_sfs.sfs33)                                                                  
-                  RETURNING g_cnt,g_factor                                                                                          
-                IF g_cnt = 1 THEN                                                                                                   
-                   LET g_factor = 1                                                                                                 
-                END IF                                                                                                              
-                LET l_sfs.sfs35=l_sfs.sfs32*g_factor                                                                                
+          END IF
+          IF l_sfs.sfs07 IS NULL THEN LET l_sfs.sfs07 = ' ' END IF
+          IF l_sfs.sfs08 IS NULL THEN LET l_sfs.sfs08 = ' ' END IF
+          IF l_sfs.sfs09 IS NULL THEN LET l_sfs.sfs09 = ' ' END IF
+          INSERT INTO tmp
+            VALUES(l_sfa.sfa01,l_sfa.sfa27,l_sfs.sfs05)
+        IF g_sma.sma115 = 'Y' THEN
+             SELECT ima25,ima55,ima906,ima907
+               INTO g_ima25,g_ima55,g_ima906,g_ima907
+               FROM ima_file
+              WHERE ima01=l_sfs.sfs04
+             IF SQLCA.sqlcode THEN
+                CALL cl_err('sel ima',SQLCA.sqlcode,1)
+                LET g_success = 'N'
+             END IF
+             IF cl_null(g_ima55) THEN LET g_ima55 = g_ima25 END IF
+             LET l_sfs.sfs30=l_sfs.sfs06
+             LET g_factor = 1
+             CALL s_umfchk(l_sfs.sfs04,l_sfs.sfs30,g_ima55)
+               RETURNING g_cnt,g_factor
+             IF g_cnt = 1 THEN
+                LET g_factor = 1
+             END IF
+             LET l_sfs.sfs31=g_factor
+             LET l_sfs.sfs32=l_sfs.sfs05
+             LET l_sfs.sfs33=g_ima907
+             LET g_factor = 1
+             CALL s_umfchk(l_sfs.sfs04,l_sfs.sfs33,g_ima55)
+               RETURNING g_cnt,g_factor
+             IF g_cnt = 1 THEN
+                LET g_factor = 1
+             END IF
+             LET l_sfs.sfs34=g_factor
+             LET l_sfs.sfs35=0
+             IF g_ima906 = '3' THEN
+                LET g_factor = 1
+                CALL s_umfchk(l_sfs.sfs04,l_sfs.sfs30,l_sfs.sfs33)
+                  RETURNING g_cnt,g_factor
+                IF g_cnt = 1 THEN
+                   LET g_factor = 1
+                END IF
+                LET l_sfs.sfs35=l_sfs.sfs32*g_factor
                 LET l_sfs.sfs35=s_digqty(l_sfs.sfs35,l_sfs.sfs33)   #No.FUN-BB0086
-             END IF                                                                                                                 
-             IF g_ima906='1' THEN                                                                                                   
-                LET l_sfs.sfs33=NULL                                                                                                
-                LET l_sfs.sfs34=NULL                                                                                                
-                LET l_sfs.sfs35=NULL                                                                                                
-             END IF                                                                                                                 
-          END IF  
-         OPEN t720_cl USING g_rvu.rvu01                                                                                             
-         IF STATUS THEN                                                                                                             
-            CALL cl_err("OPEN t720_cl:", STATUS, 1)                                                                                 
-            CLOSE t720_cl                                                                                                           
-            ROLLBACK WORK                                                                                                           
-            RETURN                                                                                                                  
-         END IF                                                                                                                     
-         FETCH t720_cl INTO g_rvu.*          # 鎖住將被更改或取消的資料                                                             
-         IF SQLCA.sqlcode THEN                                                                                                      
-            CALL cl_err(g_rvu.rvu01,SQLCA.sqlcode,0)     # 資料被他人LOCK                                                           
-            CLOSE t720_cl ROLLBACK WORK RETURN                                                                                      
-         END IF                                                                                                                     
-                                                                                                                                    
-         IF l_flag ='N' THEN                                                                                                        
+             END IF
+             IF g_ima906='1' THEN
+                LET l_sfs.sfs33=NULL
+                LET l_sfs.sfs34=NULL
+                LET l_sfs.sfs35=NULL
+             END IF
+          END IF
+         OPEN t720_cl USING g_rvu.rvu01
+         IF STATUS THEN
+            CALL cl_err("OPEN t720_cl:", STATUS, 1)
+            CLOSE t720_cl
+            ROLLBACK WORK
+            RETURN
+         END IF
+         FETCH t720_cl INTO g_rvu.*          # 鎖住將被更改或取消的資料
+         IF SQLCA.sqlcode THEN
+            CALL cl_err(g_rvu.rvu01,SQLCA.sqlcode,0)     # 資料被他人LOCK
+            CLOSE t720_cl ROLLBACK WORK RETURN
+         END IF
+
+         IF l_flag ='N' THEN
             #FUN-CB0087---add---str---
             IF g_aza.aza115 = 'Y' THEN
                CALL s_reason_code(l_sfs.sfs01,l_sfs.sfs03,'',l_sfs.sfs04,l_sfs.sfs07,g_user,l_sfp.sfp07) RETURNING l_sfs.sfs37
@@ -16378,108 +16389,108 @@ FUNCTION t720_m()
                END IF
             END IF
             #FUN-CB0087---add---end--
-            INSERT INTO sfs_file VALUES (l_sfs.*)                                                                                   
-            IF STATUS OR SQLCA.sqlerrd[3]=0 THEN                                                                                    
-              CALL cl_err('ins sfs',STATUS,0)                                                                                       
-              LET g_success = 'N'                                                                                                   
-            END IF                                                                                                                  
-         ELSE                                                                                                                       
-            UPDATE sfs_file SET * = l_sfs.* WHERE sfs01 = l_sfs.sfs01                                                               
-            IF STATUS OR SQLCA.sqlerrd[3]=0 THEN 
-               CALL cl_err('ins sfs',STATUS,0)                                                                                      
-               LET g_success = 'N'                                                                                                  
-            END IF                                                                                                                  
-         END IF                                                                                                                     
-       END FOREACH                                                                                                                  
-     END FOREACH                                                                                                                    
-     FINISH REPORT t720_rep                                                                                                         
-     IF g_rvu16 IS NOT NULL THEN                                                                                                    
-        LET g_rvu.rvu16 = g_rvu16                                                                                                   
-        UPDATE rvu_file SET rvu16 = g_rvu.rvu16                                                                                     
-         WHERE rvu01 = g_rvu.rvu01                                                                                                  
-        IF STATUS THEN                                                                                                              
-           CALL cl_err('upd rvu',STATUS,1)                                                                                          
-           LET g_success = 'N'                                                                                                      
-        END IF                                                                                                                      
-        DISPLAY BY NAME g_rvu.rvu16                                                                                                 
-     END IF                                                                                                                         
-    END IF                                                                                                                          
-    IF g_success = 'Y' THEN                                                                                                         
-       COMMIT WORK                                                                                                                  
-    ELSE                                                                                                                            
-       ROLLBACK WORK                                                                                                                
+            INSERT INTO sfs_file VALUES (l_sfs.*)
+            IF STATUS OR SQLCA.sqlerrd[3]=0 THEN
+              CALL cl_err('ins sfs',STATUS,0)
+              LET g_success = 'N'
+            END IF
+         ELSE
+            UPDATE sfs_file SET * = l_sfs.* WHERE sfs01 = l_sfs.sfs01
+            IF STATUS OR SQLCA.sqlerrd[3]=0 THEN
+               CALL cl_err('ins sfs',STATUS,0)
+               LET g_success = 'N'
+            END IF
+         END IF
+       END FOREACH
+     END FOREACH
+     FINISH REPORT t720_rep
+     IF g_rvu16 IS NOT NULL THEN
+        LET g_rvu.rvu16 = g_rvu16
+        UPDATE rvu_file SET rvu16 = g_rvu.rvu16
+         WHERE rvu01 = g_rvu.rvu01
+        IF STATUS THEN
+           CALL cl_err('upd rvu',STATUS,1)
+           LET g_success = 'N'
+        END IF
+        DISPLAY BY NAME g_rvu.rvu16
+     END IF
     END IF
-END FUNCTION                                                                                                                        
-                                                                                                                                    
-REPORT t720_rep(sr,p_flag)                                                                                                          
-  DEFINE p_flag  LIKE type_file.chr1,                                                                                               
-        sr  RECORD                                                                                                                  
-            sfp01 LIKE sfp_file.sfp01,                                                                                              
-            sfp02 LIKE sfp_file.sfp02,                                                                                              
-            sfp03 LIKE sfp_file.sfp03,                                                                                              
-            sfp04 LIKE sfp_file.sfp04,                                                                                              
-            sfp05 LIKE sfp_file.sfp05,                                                                                              
-            sfp06 LIKE sfp_file.sfp06,                                                                                              
-            sfp07 LIKE sfp_file.sfp07                                                                                               
-             END RECORD                                                                                                             
-                                                                                                                                    
-  ORDER BY sr.sfp01                                                                                                                 
-  FORMAT                                                                                                                            
-    AFTER GROUP OF sr.sfp01                                                                                                         
-      IF p_flag ='Y' THEN                                                                                                           
-         UPDATE sfp_file SET sfp02= sr.sfp02,                                                                                       
-                             sfp04= sr.sfp04,sfp05 = sr.sfp05,                                                                      
-                             sfp06= sr.sfp06,sfp07 = sr.sfp07,                                                                      
-                             sfpgrup=g_grup,                                                                                        
-                             sfpmodu=g_user,sfpdate=g_today 
-          WHERE sfp01 = sr.sfp01                                                                                                    
-         IF SQLCA.sqlcode THEN LET g_success='N' END IF                                                                             
-      ELSE                                                                                                                          
-         INSERT INTO sfp_file(sfp01,sfp02,sfp03,sfp04,sfp05,sfp06,sfp07,sfp09,          
-                              sfp15,sfp16,sfpmksg,                             #FUN-AB0001 add                                            
-                              sfpuser,sfpdate,sfpconf,sfpgrup,sfpplant,sfplegal,sfporiu,sfporig)                                                                      
-              VALUES(sr.sfp01,sr.sfp02,sr.sfp03,sr.sfp04,                                                                           
-                     sr.sfp05,sr.sfp06,sr.sfp07,'N', 
-                     '0',g_user,g_smy.smyapr,                                  #FUN-AB0001 add                                                                               
-                     g_user,g_today,'N',g_grup,g_plant,g_legal, g_user, g_grup)                                                                                           #No.FUN-980030 10/01/04  insert columns oriu, orig
-         IF SQLCA.sqlcode THEN LET g_success='N' END IF                                                                             
-      END IF                                                                                                                        
-                                                                                                                                    
-END REPORT                                                                                                                          
-                                                                                                                                    
-FUNCTION t720_chk_ima64(p_part, p_qty)                                                                                              
-  DEFINE p_part         LIKE ima_file.ima01                                                                                         
-  DEFINE p_qty          LIKE ima_file.ima641                                                                                        
-  DEFINE l_ima108       LIKE ima_file.ima108                                                                                        
-  DEFINE l_ima64        LIKE ima_file.ima64                                                                                         
-  DEFINE l_ima641       LIKE ima_file.ima641                                                                                        
-  DEFINE i              LIKE type_file.num10                                                                                        
-                                                                                                                                    
-  SELECT ima108,ima64,ima641 INTO l_ima108,l_ima64,l_ima641 FROM ima_file
-   WHERE ima01=p_part                                                                                                               
-  IF STATUS THEN RETURN p_qty END IF                                                                                                
-                                                                                                                                    
-  IF l_ima108='Y' THEN RETURN p_qty END IF                                                                                          
-                                                                                                                                    
-  IF l_ima641 != 0 AND p_qty<l_ima641 THEN                                                                                          
-     LET p_qty=l_ima641                                                                                                             
-  END IF                                                                                                                            
-                                                                                                                                    
-  IF l_ima64<>0 THEN                                                                                                                
-     LET i=p_qty / l_ima64 + 0.999999                                                                                               
-     LET p_qty= i * l_ima64                                                                                                         
-  END IF                                                                                                                            
-  RETURN p_qty                                                                                                                      
-END FUNCTION     
+    IF g_success = 'Y' THEN
+       COMMIT WORK
+    ELSE
+       ROLLBACK WORK
+    END IF
+END FUNCTION
 
-#FUN-A10130--begin--add----                                                                                                         
+REPORT t720_rep(sr,p_flag)
+  DEFINE p_flag  LIKE type_file.chr1,
+        sr  RECORD
+            sfp01 LIKE sfp_file.sfp01,
+            sfp02 LIKE sfp_file.sfp02,
+            sfp03 LIKE sfp_file.sfp03,
+            sfp04 LIKE sfp_file.sfp04,
+            sfp05 LIKE sfp_file.sfp05,
+            sfp06 LIKE sfp_file.sfp06,
+            sfp07 LIKE sfp_file.sfp07
+             END RECORD
+
+  ORDER BY sr.sfp01
+  FORMAT
+    AFTER GROUP OF sr.sfp01
+      IF p_flag ='Y' THEN
+         UPDATE sfp_file SET sfp02= sr.sfp02,
+                             sfp04= sr.sfp04,sfp05 = sr.sfp05,
+                             sfp06= sr.sfp06,sfp07 = sr.sfp07,
+                             sfpgrup=g_grup,
+                             sfpmodu=g_user,sfpdate=g_today
+          WHERE sfp01 = sr.sfp01
+         IF SQLCA.sqlcode THEN LET g_success='N' END IF
+      ELSE
+         INSERT INTO sfp_file(sfp01,sfp02,sfp03,sfp04,sfp05,sfp06,sfp07,sfp09,
+                              sfp15,sfp16,sfpmksg,                             #FUN-AB0001 add
+                              sfpuser,sfpdate,sfpconf,sfpgrup,sfpplant,sfplegal,sfporiu,sfporig)
+              VALUES(sr.sfp01,sr.sfp02,sr.sfp03,sr.sfp04,
+                     sr.sfp05,sr.sfp06,sr.sfp07,'N',
+                     '0',g_user,g_smy.smyapr,                                  #FUN-AB0001 add
+                     g_user,g_today,'N',g_grup,g_plant,g_legal, g_user, g_grup)                                                                                           #No.FUN-980030 10/01/04  insert columns oriu, orig
+         IF SQLCA.sqlcode THEN LET g_success='N' END IF
+      END IF
+
+END REPORT
+
+FUNCTION t720_chk_ima64(p_part, p_qty)
+  DEFINE p_part         LIKE ima_file.ima01
+  DEFINE p_qty          LIKE ima_file.ima641
+  DEFINE l_ima108       LIKE ima_file.ima108
+  DEFINE l_ima64        LIKE ima_file.ima64
+  DEFINE l_ima641       LIKE ima_file.ima641
+  DEFINE i              LIKE type_file.num10
+
+  SELECT ima108,ima64,ima641 INTO l_ima108,l_ima64,l_ima641 FROM ima_file
+   WHERE ima01=p_part
+  IF STATUS THEN RETURN p_qty END IF
+
+  IF l_ima108='Y' THEN RETURN p_qty END IF
+
+  IF l_ima641 != 0 AND p_qty<l_ima641 THEN
+     LET p_qty=l_ima641
+  END IF
+
+  IF l_ima64<>0 THEN
+     LET i=p_qty / l_ima64 + 0.999999
+     LET p_qty= i * l_ima64
+  END IF
+  RETURN p_qty
+END FUNCTION
+
+#FUN-A10130--begin--add----
 FUNCTION t720_refresh()
  DEFINE l_rvu    RECORD LIKE rvu_file.*
 
- SELECT * INTO l_rvu.* FROM rvu_file WHERE rvu01=g_rvu.rvu01 
+ SELECT * INTO l_rvu.* FROM rvu_file WHERE rvu01=g_rvu.rvu01
  RETURN l_rvu.*
 END FUNCTION
-#FUN-A10130--end--add-----        
+#FUN-A10130--end--add-----
 
 #FUN-A60009 add str ---
 FUNCTION t720_ef()
@@ -16522,10 +16533,10 @@ DEFINE l_qcz14 LIKE qcz_file.qcz14
 END FUNCTION
 
 FUNCTION t720_qcl02_desc()
-    
+
       SELECT qcl02 INTO g_rvv[l_ac].qcl02 FROM qcl_file
              WHERE qcl01 = g_rvv[l_ac].rvv46
-      DISPLAY BY NAME  g_rvv[l_ac].qcl02 
+      DISPLAY BY NAME  g_rvv[l_ac].qcl02
 
 END FUNCTION
 
@@ -16537,7 +16548,7 @@ FUNCTION t720_set_comp_required(p_rvv45,p_rvv46,p_rvv47)
    IF NOT cl_null(p_rvv45) OR NOT cl_null(p_rvv46) OR NOT cl_null(p_rvv47) THEN
       CALL cl_set_comp_required('rvv45,rvv46,rvv47',TRUE)
    END IF
- 
+
    IF cl_null(p_rvv45) AND cl_null(p_rvv46) AND cl_null(p_rvv47) THEN
       CALL cl_set_comp_required('rvv45,rvv46,rvv47',FALSE)
       LET g_rvv[l_ac].qcl02 = ''
@@ -16548,7 +16559,7 @@ FUNCTION t720_set_noentry_rvv45()
    CALL cl_set_comp_entry('rvv45,rvv46,rvv47',FALSE)
 END FUNCTION
 
-FUNCTION t720_qcl05_check() 
+FUNCTION t720_qcl05_check()
    DEFINE l_qcl05 LIKE qcl_file.qcl05
 
    IF NOT cl_null(g_rvv[l_ac].rvv46) THEN
@@ -16556,7 +16567,7 @@ FUNCTION t720_qcl05_check()
                                 WHERE qcl01 = g_rvv[l_ac].rvv46
       RETURN l_qcl05
    END IF
-RETURN '' 
+RETURN ''
 END FUNCTION
 
 FUNCTION t720_rvv46_check()
@@ -16569,30 +16580,30 @@ FUNCTION t720_rvv46_check()
 
    LET l_n  = 0
    LET l_n1 = 0
-  
-   LET l_sql= "SELECT COUNT(*) FROM rvv_file",       
-              " WHERE  rvv04 = ?", 
+
+   LET l_sql= "SELECT COUNT(*) FROM rvv_file",
+              " WHERE  rvv04 = ?",
               "   AND  rvv05 = ?"
    LET l_sql1=l_sql CLIPPED," AND rvv46 IS NOT NULL AND rvv46<>' '"
    PREPARE insert_ln FROM l_sql1
-   EXECUTE insert_ln INTO l_n USING g_rvu.rvu02,g_rvv[l_ac].rvv05 
+   EXECUTE insert_ln INTO l_n USING g_rvu.rvu02,g_rvv[l_ac].rvv05
 
    LET l_sql2=l_sql CLIPPED," AND (rvv46 IS NULL OR rvv46=' ')"
-   PREPARE insert_ln1 FROM l_sql2       
+   PREPARE insert_ln1 FROM l_sql2
    EXECUTE insert_ln1 INTO l_n1 USING g_rvu.rvu02,g_rvv[l_ac].rvv05
-   
-   IF l_n >0  THEN 
+
+   IF l_n >0  THEN
       CALL cl_set_comp_required('rvv45,rvv46,rvv47',TRUE)
    END IF
-   IF l_n1 > 0 THEN 
+   IF l_n1 > 0 THEN
       LET g_rvv[l_ac].rvv45 = ''
       LET g_rvv[l_ac].rvv46 = ''
       LET g_rvv[l_ac].rvv47 = ''
       DISPLAY BY NAME g_rvv[l_ac].rvv45,g_rvv[l_ac].rvv46,g_rvv[l_ac].rvv47
       CALL cl_set_comp_entry('rvv45,rvv46,rvv47',FALSE)
-   END IF 
-                 
-END FUNCTION 
+   END IF
+
+END FUNCTION
 
 FUNCTION t720_qco_show()
 DEFINE l_qcl05 LIKE qcl_file.qcl05,
@@ -16605,9 +16616,9 @@ DEFINE l_qcl05 LIKE qcl_file.qcl05,
        l_i     LIKE type_file.num5,
        l_ima906 LIKE ima_file.ima906,
        l_ima44 LIKE ima_file.ima44
-  
+
       SELECT qco06,qco07,qco08,qco09,qco10,qco13,qco15,qco16,qco18,qco20
-                                           INTO g_rvv[l_ac].rvv31,g_rvv[l_ac].rvv32,g_rvv[l_ac].rvv33, 
+                                           INTO g_rvv[l_ac].rvv31,g_rvv[l_ac].rvv32,g_rvv[l_ac].rvv33,
                                                 g_rvv[l_ac].rvv34,g_rvv[l_ac].rvv35,l_rvv80,l_rvv82,
                                                 l_rvv83,l_rvv85,l_qco20
                                            FROM qco_file
@@ -16618,7 +16629,7 @@ DEFINE l_qcl05 LIKE qcl_file.qcl05,
                                             AND qco03 = g_rvv[l_ac].rvv46
       DISPLAY BY NAME g_rvv[l_ac].rvv31,g_rvv[l_ac].rvv32,g_rvv[l_ac].rvv33,
                       g_rvv[l_ac].rvv34,g_rvv[l_ac].rvv35
-      IF g_sma.sma115 = 'Y' THEN 
+      IF g_sma.sma115 = 'Y' THEN
          LET g_rvv[l_ac].rvv80 = l_rvv80  #單位一賦值
          LET g_rvv[l_ac].rvv83 = l_rvv83  #單位二賦值
          CALL t720_set_origin_field()
@@ -16636,9 +16647,9 @@ DEFINE l_qcl05 LIKE qcl_file.qcl05,
                   DISPLAY BY NAME g_rvv[l_ac].rvv84
       END IF
          CALL t720_qcl05_check() RETURNING l_qcl05
-      IF l_qcl05 = '0' OR l_qcl05 = '2' THEN 
+      IF l_qcl05 = '0' OR l_qcl05 = '2' THEN
          IF g_sma.sma115 = 'N' THEN
-            CALL t720_rvv17_rvv87_check('') RETURNING g_rvv[l_ac].rvv17 
+            CALL t720_rvv17_rvv87_check('') RETURNING g_rvv[l_ac].rvv17
             DISPLAY BY NAME g_rvv[l_ac].rvv17
          ELSE
             IF l_qco20=0 THEN
@@ -16647,7 +16658,7 @@ DEFINE l_qcl05 LIKE qcl_file.qcl05,
             ELSE
                LET g_rvv[l_ac].rvv82=0
                LET g_rvv[l_ac].rvv85=0
-            END IF 
+            END IF
             CALL t720_set_origin_field()
             DISPLAY BY NAME g_rvv[l_ac].rvv82,g_rvv[l_ac].rvv85
          END IF
@@ -16686,7 +16697,7 @@ DEFINE l_sum   LIKE qco_file.qco11,
        p_cmd   LIKE type_file.chr1,
        l_qco10 LIKE qco_file.qco10,
        l_i     LIKE type_file.num5,
-       l_fac   LIKE rvv_file.rvv35_fac 
+       l_fac   LIKE rvv_file.rvv35_fac
 
    SELECT qco11-qco20,qco10 INTO l_sum,l_qco10 FROM qco_file
                                       WHERE qco01 = g_rvu.rvu02
@@ -16722,9 +16733,9 @@ DEFINE l_n     LIKE type_file.num5,
              "' AND imd01 = '",g_rvv[l_ac].rvv32 CLIPPED,
              "' AND qcl03=imd11 AND qcl04=imd12"
 
-   SELECT qcl05 INTO l_qcl05 FROM qcl_file 
+   SELECT qcl05 INTO l_qcl05 FROM qcl_file
                   WHERE qcl01 = g_rvv[l_ac].rvv46
-                    
+
    IF l_qcl05 = '0' OR l_qcl05 = '1' THEN
       LET l_sql = l_sql CLIPPED," AND imd01 NOT IN(SELECT jce02 FROM jce_file)"
    END IF
@@ -16736,7 +16747,7 @@ DEFINE l_n     LIKE type_file.num5,
    EXECUTE insert_l_n2 INTO l_n
 
    IF l_n = 0 THEN
-      RETURN FALSE 
+      RETURN FALSE
    END IF
 RETURN TRUE
 END FUNCTION
@@ -16746,16 +16757,16 @@ DEFINE l_n    LIKE type_file.num5,
        l_sql  STRING,
        l_qcl05_wc STRING,               #TQC-C30048
        l_qcl05_tf LIKE type_file.num5   #TQC-C30048
-   
-   LET l_n = 0   
+
+   LET l_n = 0
    LET l_sql=" SELECT COUNT(*) FROM qcs_file,qco_file,qcl_file",
-                 " WHERE qcs00='1' AND qcs14='Y' AND qco01=qcs01", 
+                 " WHERE qcs00='1' AND qcs14='Y' AND qco01=qcs01",
                  " AND qco02=qcs02 AND qco05=qcs05 AND qcl01 = qco03 AND qco01='",g_rvu.rvu02 CLIPPED,
                  "' AND qco02=",g_rvv[l_ac].rvv05 CLIPPED
 
     IF NOT cl_null(g_rvv[l_ac].rvv45) THEN
        LET l_sql=l_sql CLIPPED," AND qco05=",g_rvv[l_ac].rvv45 CLIPPED
-    END IF 
+    END IF
     IF NOT cl_null(g_rvv[l_ac].rvv46) THEN
       #TQC-C30048---add---str---
        LET l_qcl05_wc=''
@@ -16775,7 +16786,7 @@ DEFINE l_n    LIKE type_file.num5,
     PREPARE insert_l_n FROM l_sql
     EXECUTE insert_l_n INTO l_n
 
-    IF l_n = 0 THEN 
+    IF l_n = 0 THEN
        RETURN FALSE
     END IF
 RETURN TRUE
@@ -16832,7 +16843,7 @@ DEFINE
     l_err_var  STRING,                 #MOD-580138 串接錯誤訊息變數用
     l_qcl05 LIKE qcl_file.qcl05,
     l_sum   LIKE qco_file.qco11
-DEFINE l_rva113     LIKE rva_file.rva113     
+DEFINE l_rva113     LIKE rva_file.rva113
 DEFINE l_bno        LIKE rvbs_file.rvbs08
 DEFINE l_rvv17_in   LIKE rvv_file.rvv17
 DEFINE l_rvv17_tol LIKE rvv_file.rvv17   #FUN-D20022 add
@@ -16841,13 +16852,13 @@ DEFINE l_gec07         LIKE gec_file.gec07    #MOD-DB0068 add
 DEFINE l_rvw06f        LIKE rvw_file.rvw06f   #MOD-DB0068 add
 
 
-       CALL t720_qcl05_check() RETURNING l_qcl05 
+       CALL t720_qcl05_check() RETURNING l_qcl05
        IF l_qcl05 = '1' AND NOT cl_null(l_qcl05) THEN
           IF g_rvv[l_ac].rvv17 != 0 THEN
              CALL cl_err('','apm-818',0)
              RETURN FALSE
           END IF
-       ELSE   
+       ELSE
            IF g_rvv[l_ac].rvv17 < 0 THEN
               CALL cl_err('','afa-043',0)
               RETURN FALSE
@@ -16858,16 +16869,16 @@ DEFINE l_rvw06f        LIKE rvw_file.rvw06f   #MOD-DB0068 add
               LET g_rvv[l_ac].rvv17 = g_rvv_t.rvv17
               RETURN FALSE
            END IF
- 
+
            IF g_rvv_t.rvv17 IS NULL AND g_rvv[l_ac].rvv17 IS NOT NULL OR
               g_rvv_t.rvv17 IS NOT NULL AND g_rvv[l_ac].rvv17 IS NULL OR
               g_rvv_t.rvv17 <> g_rvv[l_ac].rvv17 THEN
               LET l_rvb07 = 0
               SELECT rvb07,rvb87 INTO l_rvb07,l_rvb87 FROM rvb_file
-               WHERE rvb01=g_rvu.rvu02 
+               WHERE rvb01=g_rvu.rvu02
                  AND rvb02=g_rvv[l_ac].rvv05
               IF l_rvb07 = g_rvv[l_ac].rvv17 THEN
-                 LET g_rvv[l_ac].rvv87 = l_rvb87 
+                 LET g_rvv[l_ac].rvv87 = l_rvb87
                  DISPLAY BY NAME g_rvv[l_ac].rvv87
               END IF
               IF l_rvb07 <> g_rvv[l_ac].rvv17  AND p_cmd <> 'a' THEN
@@ -16878,14 +16889,14 @@ DEFINE l_rvw06f        LIKE rvw_file.rvw06f   #MOD-DB0068 add
            IF g_change='Y' THEN                 #MOD-820189 add
              CALL t720_set_rvv87()              #No.MOD-770158 add
              DISPLAY BY NAME g_rvv[l_ac].rvv87  #MOD-820189 add
-           END IF                               #MOD-820189 add            
+           END IF                               #MOD-820189 add
            #MOD-B30033 add --end--
             IF g_rvu.rvu00='1' THEN #MOD-4C0053
               SELECT rvb31,rvb07,rvb87 INTO g_inqty,l_rvb07,l_rvb87 FROM rvb_file,rva_file  #MOD-820189 modify 由收貨單帶計價數量
                WHERE rvb01=g_rvu.rvu02 AND rvb02=g_rvv[l_ac].rvv05
                  AND rvb01 = rva01
                  AND rvaconf !='X' #作廢資料要剔除 BugNo:3816
-              IF cl_null(g_inqty) THEN LET g_inqty=0 END IF           #TQC-C20117 add  
+              IF cl_null(g_inqty) THEN LET g_inqty=0 END IF           #TQC-C20117 add
               IF g_rvv[l_ac].rvv17 > g_inqty THEN  #異動數量不可大於可入庫量
                   CALL cl_err(g_inqty,'mfg3252',1) RETURN FALSE  #MOD-580184
               END IF
@@ -16909,9 +16920,9 @@ DEFINE l_rvw06f        LIKE rvw_file.rvw06f   #MOD-DB0068 add
                 SELECT SUM(rvv17) INTO l_rvv17_1_other FROM rvv_file,rvu_file
                  WHERE rvv04=g_rvu.rvu02 AND rvv05=g_rvv[l_ac].rvv05
                    AND rvv03='1'
-                   AND rvv01 =g_rvu.rvu01          
+                   AND rvv01 =g_rvu.rvu01
                    AND rvv01=rvu01
-                   AND rvv02 !=g_rvv[l_ac].rvv02   
+                   AND rvv02 !=g_rvv[l_ac].rvv02
                    AND rvuconf !='X'
                IF cl_null(l_rvv17_1_other) THEN
                   LET l_rvv17_1_other=0
@@ -17002,13 +17013,13 @@ DEFINE l_rvw06f        LIKE rvw_file.rvw06f   #MOD-DB0068 add
                 #修改可驗退數量控管
                 #1.若走IQC   可驗退量=SUM(IQC送驗量) - SUM(IQC合格量) - 已驗退量
                 #2.若不走IQC 可驗退量=實收數量 - 已入庫量 - 已驗退量
- 
+
                  SELECT rvb07,rvb33,rvb30,rvb39 INTO g_inqty,l_okqty,
                     l_rvb30,l_rvb39  FROM rvb_file,rva_file
                  WHERE rvb01=g_rvu.rvu02 AND rvb02=g_rvv[l_ac].rvv05
                    AND rvb01=rva01
                    AND rvaconf !='X' #作廢資料要剔除 MODNO:3816
- 
+
 #MOD-B90019 -- begin --
                  SELECT SUM(rvv17) INTO l_rvv17_in FROM rvu_file,rvv_file
                     WHERE rvv04 = g_rvu.rvu02
@@ -17022,11 +17033,11 @@ DEFINE l_rvw06f        LIKE rvw_file.rvw06f   #MOD-DB0068 add
                  IF cl_null(g_inqty) THEN LET g_inqty=0 END IF
                  IF cl_null(l_okqty) THEN LET l_okqty=0 END IF
                  IF cl_null(l_rvb30) THEN LET l_rvb30=0 END IF
- 
-                 IF g_sma.sma886[8,8] = 'N'  OR l_rvb39='N' THEN   
+
+                 IF g_sma.sma886[8,8] = 'N'  OR l_rvb39='N' THEN
                    #若勾選允收數與IQC勾稽 , 驗退量以qcs_file為主
                    #若不勾選允收數與IQC勾稽 , 驗退量以rvb_file為主
- 
+
                     #不走IQC
                     #IF g_rvv[l_ac].rvv17 > (g_inqty-l_rvv17_2-l_rvv17_2_other-l_rvb30) THEN      #MOD-B90019 mark
                      IF g_rvv[l_ac].rvv17 > (g_inqty-l_rvv17_2-l_rvv17_2_other-l_rvv17_in) THEN   #MOD-B90019
@@ -17040,10 +17051,10 @@ DEFINE l_rvw06f        LIKE rvw_file.rvw06f   #MOD-DB0068 add
                         AND qcs02 = g_rvv[l_ac].rvv05
                         AND qcs14 = 'Y'               #確認否
                        #AND qcs09 = '1'               #合格否   #No.MOD-7A0072 mark
- 
+
                      IF cl_null(l_qcs091) THEN LET l_qcs091 = 0 END IF
                      IF cl_null(l_qcs22)  THEN LET l_qcs22 = 0 END IF
- 
+
                      IF g_rvv[l_ac].rvv17 > (l_qcs22-l_rvv17_2-l_rvv17_2_other-l_qcs091) THEN
                          CALL cl_err(g_rvv[l_ac].rvv31,'apm-730',1)
                        RETURN FALSE
@@ -17070,27 +17081,27 @@ DEFINE l_rvw06f        LIKE rvw_file.rvw06f   #MOD-DB0068 add
                      AND pmm01 = g_rvv[l_ac].rvv36 AND pmm18 <> 'X'
               END IF
               IF g_rva00 = '2' THEN
-                 SELECT rva113 INTO l_rva113 FROM rva_file 
+                 SELECT rva113 INTO l_rva113 FROM rva_file
                      WHERE rva01 = g_rvu.rvu02
                  SELECT azi04 INTO t_azi04 FROM azi_file
                      WHERE azi01 = l_rva113
               END IF
-               IF cl_null(t_azi04) THEN                                         
-                  SELECT azi04 INTO t_azi04                                     
-                    FROM pmc_file,azi_file                                      
-                   WHERE pmc22=azi01                                            
-                     AND pmc01 = g_rvu.rvu04                                    
-               END IF                                                           
+               IF cl_null(t_azi04) THEN
+                  SELECT azi04 INTO t_azi04
+                    FROM pmc_file,azi_file
+                   WHERE pmc22=azi01
+                     AND pmc01 = g_rvu.rvu04
+               END IF
               IF cl_null(t_azi04) THEN LET t_azi04=0 END IF  #No.CHI-6A0004
               CALL cl_digcut(g_rvv[l_ac].rvv39,t_azi04)      #No.CHI-6A0004
                                 RETURNING g_rvv[l_ac].rvv39
               CALL cl_digcut(g_rvv[l_ac].rvv39t,t_azi04)     #No.CHI-6A0004
                                 RETURNING g_rvv[l_ac].rvv39t   #No.FUN-610018
-              #CALL t720sub_rvv39(g_rvv[l_ac].rvv36,g_rvv[l_ac].rvv39,g_rvv[l_ac].rvv39t,g_rvu.rvu04,g_rvu.rvu02) #FUN-A10130 #MOD-BC0262 mark 
+              #CALL t720sub_rvv39(g_rvv[l_ac].rvv36,g_rvv[l_ac].rvv39,g_rvv[l_ac].rvv39t,g_rvu.rvu04,g_rvu.rvu02) #FUN-A10130 #MOD-BC0262 mark
               CALL t720sub_rvv39(g_rvv[l_ac].rvv36,g_rvv[l_ac].rvv39,g_rvv[l_ac].rvv39t,g_rvu.rvu04,g_rvu.rvu01)  #MOD-BC0262 add
                    RETURNING g_rvv[l_ac].rvv39,g_rvv[l_ac].rvv39t
-              
-              
+
+
               IF NOT cl_null(g_rvv[l_ac].rvv36) AND NOT cl_null(g_rvv[l_ac].rvv37) THEN   #MOD-E10007  add
              #MOD-DB0068 add start -----
              #不使用單價*數量=金額, 改以金額回推稅率, 以避免小數位差的問題
@@ -17123,44 +17134,44 @@ DEFINE l_rvw06f        LIKE rvw_file.rvw06f   #MOD-DB0068 add
            ELSE
               IF g_rvu.rvu00 ='3' THEN
                  LET g_rvv[l_ac].rvv39=g_rvv[l_ac].rvv38
-                 LET g_rvv[l_ac].rvv39t=g_rvv[l_ac].rvv38t  
+                 LET g_rvv[l_ac].rvv39t=g_rvv[l_ac].rvv38t
                  LET t_azi04=''
                  IF g_rva00 = '1' AND g_rvu.rvu00 = '3' THEN
                     SELECT azi04 INTO t_azi04 FROM azi_file
                         WHERE azi01 = g_rvu.rvu113
                  END IF
                  IF g_rva00 = '1' AND g_rvu.rvu00 <> '3' THEN
-                    SELECT azi04 INTO t_azi04   
+                    SELECT azi04 INTO t_azi04
                        FROM pmm_file,azi_file
                       WHERE pmm22=azi01
                         AND pmm01 = g_rvv[l_ac].rvv36 AND pmm18 <> 'X'
                  END IF
                  IF g_rva00 = '2' THEN
-                    SELECT rva113 INTO l_rva113 FROM rva_file 
+                    SELECT rva113 INTO l_rva113 FROM rva_file
                         WHERE rva01 = g_rvu.rvu02
                     SELECT azi04 INTO t_azi04 FROM azi_file
                         WHERE azi01 = l_rva113
                  END IF
-                  IF cl_null(t_azi04) THEN                                         
-                     SELECT azi04 INTO t_azi04                                     
-                       FROM pmc_file,azi_file                                      
-                      WHERE pmc22=azi01                                            
-                        AND pmc01 = g_rvu.rvu04                                    
-                  END IF                                                           
-                 IF cl_null(t_azi04) THEN LET t_azi04=0 END IF  
-                 CALL cl_digcut(g_rvv[l_ac].rvv39,t_azi04)     
+                  IF cl_null(t_azi04) THEN
+                     SELECT azi04 INTO t_azi04
+                       FROM pmc_file,azi_file
+                      WHERE pmc22=azi01
+                        AND pmc01 = g_rvu.rvu04
+                  END IF
+                 IF cl_null(t_azi04) THEN LET t_azi04=0 END IF
+                 CALL cl_digcut(g_rvv[l_ac].rvv39,t_azi04)
                                    RETURNING g_rvv[l_ac].rvv39
-                 CALL cl_digcut(g_rvv[l_ac].rvv39t,t_azi04)   
-                                   RETURNING g_rvv[l_ac].rvv39t  
-                 #CALL t720sub_rvv39(g_rvv[l_ac].rvv36,g_rvv[l_ac].rvv39,g_rvv[l_ac].rvv39t,g_rvu.rvu04,g_rvu.rvu02) #MOD-BC0262 mark 
+                 CALL cl_digcut(g_rvv[l_ac].rvv39t,t_azi04)
+                                   RETURNING g_rvv[l_ac].rvv39t
+                 #CALL t720sub_rvv39(g_rvv[l_ac].rvv36,g_rvv[l_ac].rvv39,g_rvv[l_ac].rvv39t,g_rvu.rvu04,g_rvu.rvu02) #MOD-BC0262 mark
                  CALL t720sub_rvv39(g_rvv[l_ac].rvv36,g_rvv[l_ac].rvv39,g_rvv[l_ac].rvv39t,g_rvu.rvu04,g_rvu.rvu01)  #MOD-BC0262 add
                       RETURNING g_rvv[l_ac].rvv39,g_rvv[l_ac].rvv39t
                  DISPLAY BY NAME g_rvv[l_ac].rvv39
                  DISPLAY BY NAME g_rvv[l_ac].rvv39t
               END IF
-           #MOD-B30033 add --end--              
+           #MOD-B30033 add --end--
            END IF
- 
+
               IF g_rvv[l_ac].rvv87 > 0 THEN   #MOD-AA0165 rvv17-->rvv87
                  CALL t720sub_rvv38(g_rvv[l_ac].rvv36,b_rvv.rvv38,b_rvv.rvv38t,g_rvu.rvu04,g_rvu.rvu01)  #TQC-C30225 add
                      RETURNING b_rvv.rvv38,b_rvv.rvv38t
@@ -17179,7 +17190,7 @@ DEFINE l_rvw06f        LIKE rvw_file.rvw06f   #MOD-DB0068 add
                      AND pmm01 = g_rvv[l_ac].rvv36 AND pmm18 <> 'X'
               END IF
               IF g_rva00 = '2' THEN
-                 SELECT rva113 INTO l_rva113 FROM rva_file 
+                 SELECT rva113 INTO l_rva113 FROM rva_file
                      WHERE rva01 = g_rvu.rvu02
                  SELECT azi04 INTO t_azi04 FROM azi_file
                      WHERE azi01 = l_rva113
@@ -17195,8 +17206,8 @@ DEFINE l_rvw06f        LIKE rvw_file.rvw06f   #MOD-DB0068 add
                                 RETURNING g_rvv39
               CALL cl_digcut(g_rvv39t,t_azi04) #No.CHI-6A0004
                                 RETURNING g_rvv39t   #No.FUN-610018
-              IF NOT cl_null(g_rvv[l_ac].rvv36) THEN    #No.MOD-8A0098 
-              #CALL t720sub_rvv39(g_rvv[l_ac].rvv36,g_rvv[l_ac].rvv39,g_rvv[l_ac].rvv39t,g_rvu.rvu04,g_rvu.rvu02) #FUN-A10130 #MOD-BC0262 mark 
+              IF NOT cl_null(g_rvv[l_ac].rvv36) THEN    #No.MOD-8A0098
+              #CALL t720sub_rvv39(g_rvv[l_ac].rvv36,g_rvv[l_ac].rvv39,g_rvv[l_ac].rvv39t,g_rvu.rvu04,g_rvu.rvu02) #FUN-A10130 #MOD-BC0262 mark
               CALL t720sub_rvv39(g_rvv[l_ac].rvv36,g_rvv[l_ac].rvv39,g_rvv[l_ac].rvv39t,g_rvu.rvu04,g_rvu.rvu01)  #MOD-BC0262 add
                    RETURNING g_rvv[l_ac].rvv39,g_rvv[l_ac].rvv39t
               END IF  #No.MOD-8A0098
@@ -17213,16 +17224,16 @@ DEFINE l_rvw06f        LIKE rvw_file.rvw06f   #MOD-DB0068 add
           #IF g_change='Y' THEN                 #MOD-820189 add
           #  CALL t720_set_rvv87()              #No.MOD-770158 add
           #  DISPLAY BY NAME g_rvv[l_ac].rvv87  #MOD-820189 add
-          #END IF                               #MOD-820189 add 
+          #END IF                               #MOD-820189 add
           #MOD-B30033 mark --end--
            LET g_ima918 = ''   #DEV-D30059 add
            LET g_ima921 = ''   #DEV-D30059 add
            LET g_ima930 = ''   #DEV-D30059 add
-           SELECT ima918,ima921,ima930 INTO g_ima918,g_ima921,g_ima930 #DEV-D30059 add ima930 
+           SELECT ima918,ima921,ima930 INTO g_ima918,g_ima921,g_ima930 #DEV-D30059 add ima930
              FROM ima_file
             WHERE ima01 = g_rvv[l_ac].rvv31
               AND imaacti = "Y"
-           
+
            IF cl_null(g_ima930) THEN LET g_ima930 = 'N' END IF  #DEV-D30059 add
 
            IF g_ima918 = "Y" OR g_ima921 = "Y" THEN
@@ -17285,7 +17296,7 @@ DEFINE l_rvw06f        LIKE rvw_file.rvw06f   #MOD-DB0068 add
                       #             g_rvv[l_ac].rvv35_fac,g_rvv[l_ac].rvv17,l_bno,'MOD')#CHI-9A0022 add ''
                       #       RETURNING l_r,g_qty
    #No.TQC-B90236--------mark---------end-------------
-                       CALL s_wo_record(g_rvv[l_ac].rvv18,'Y')   #MOD-CC0047 add        
+                       CALL s_wo_record(g_rvv[l_ac].rvv18,'Y')   #MOD-CC0047 add
    #No.TQC-B90236--------add----------begin-----------
                        IF g_ima930 = 'N' THEN                                        #DEV-D30059
                           IF g_rvu.rvu00='1' THEN
@@ -17321,17 +17332,17 @@ DEFINE l_rvw06f        LIKE rvw_file.rvw06f   #MOD-DB0068 add
                  END IF
               END IF
            END IF
-           IF NOT cl_null(g_rvv[l_ac].rvv17) THEN 
+           IF NOT cl_null(g_rvv[l_ac].rvv17) THEN
               IF cl_null(g_rvv_t.rvv17) OR (p_cmd='u' AND g_rvv_t.rvv17 != g_rvv[l_ac].rvv17) THEN
                  IF l_qcl05 = '0' OR l_qcl05 = '2' THEN
                     CALL t720_rvv17_rvv87_check(p_cmd) RETURNING l_sum
                     IF g_rvv[l_ac].rvv17 > l_sum THEN
                        CALL cl_err('','apm-804',0)
-                       LET g_rvv[l_ac].rvv17 = l_sum 
+                       LET g_rvv[l_ac].rvv17 = l_sum
                        DISPLAY BY NAME g_rvv[l_ac].rvv17
-                       RETURN FALSE 
+                       RETURN FALSE
                     END IF
-                 END IF 
+                 END IF
              END IF
              #FUN-D20022 -- add start --
              IF g_rvu00 = '1' THEN
@@ -17342,13 +17353,13 @@ DEFINE l_rvw06f        LIKE rvw_file.rvw06f   #MOD-DB0068 add
                 IF cl_null(l_rvv17_tol) THEN LET l_rvv17_tol = 0 END IF
                 IF g_rvv[l_ac].rvv17 > l_rvb33 - l_rvv17_tol THEN #異動數量應扣除已產生的入庫單之數量
                    CALL cl_err(l_rvb33 - l_rvv17_tol,'apm1102',1)
-                   RETURN FALSE 
+                   RETURN FALSE
                 END IF
              END IF
              #FUN-D20022 -- add end --
            END IF
       END IF
-RETURN TRUE 
+RETURN TRUE
 END FUNCTION
 
 FUNCTION t720_rvv87(p_cmd)
@@ -17384,12 +17395,12 @@ DEFINE l_qcl05 LIKE qcl_file.qcl05,
                  LET g_rvv[l_ac].rvv39t=g_rvv[l_ac].rvv87*g_rvv[l_ac].rvv38t   #No.FUN-610018
                  LET b_rvv.rvv39t=g_rvv[l_ac].rvv87*b_rvv.rvv38t
                 #-----MOD-AC0024---------
-                 CALL cl_digcut(g_rvv[l_ac].rvv39,t_azi04)  
+                 CALL cl_digcut(g_rvv[l_ac].rvv39,t_azi04)
                                    RETURNING g_rvv[l_ac].rvv39
-                 CALL cl_digcut(g_rvv[l_ac].rvv39t,t_azi04)   
-                                   RETURNING g_rvv[l_ac].rvv39t  
+                 CALL cl_digcut(g_rvv[l_ac].rvv39t,t_azi04)
+                                   RETURNING g_rvv[l_ac].rvv39t
                 #-----END MOD-AC0024-----
-                 #CALL t720sub_rvv39(g_rvv[l_ac].rvv36,g_rvv[l_ac].rvv39,g_rvv[l_ac].rvv39t,g_rvu.rvu04,g_rvu.rvu02) #FUN-A10130 #MOD-BC0262 mark 
+                 #CALL t720sub_rvv39(g_rvv[l_ac].rvv36,g_rvv[l_ac].rvv39,g_rvv[l_ac].rvv39t,g_rvu.rvu04,g_rvu.rvu02) #FUN-A10130 #MOD-BC0262 mark
                  CALL t720sub_rvv39(g_rvv[l_ac].rvv36,g_rvv[l_ac].rvv39,g_rvv[l_ac].rvv39t,g_rvu.rvu04,g_rvu.rvu01) #MOD-BC0262 add
                       RETURNING g_rvv[l_ac].rvv39,g_rvv[l_ac].rvv39t
                  DISPLAY BY NAME g_rvv[l_ac].rvv39
@@ -17402,18 +17413,18 @@ DEFINE l_qcl05 LIKE qcl_file.qcl05,
                  #MOD-B30033 add --start--
                     IF g_rvu.rvu00 ='3' THEN
                        LET g_rvv[l_ac].rvv39=g_rvv[l_ac].rvv38
-                       LET g_rvv[l_ac].rvv39t=g_rvv[l_ac].rvv38t 
+                       LET g_rvv[l_ac].rvv39t=g_rvv[l_ac].rvv38t
                        LET b_rvv.rvv39t=b_rvv.rvv38t
-                       CALL cl_digcut(g_rvv[l_ac].rvv39,t_azi04)  
+                       CALL cl_digcut(g_rvv[l_ac].rvv39,t_azi04)
                                          RETURNING g_rvv[l_ac].rvv39
-                       CALL cl_digcut(g_rvv[l_ac].rvv39t,t_azi04)   
-                                         RETURNING g_rvv[l_ac].rvv39t  
-                       #CALL t720sub_rvv39(g_rvv[l_ac].rvv36,g_rvv[l_ac].rvv39,g_rvv[l_ac].rvv39t,g_rvu.rvu04,g_rvu.rvu02) #MOD-BC0262 mark 
-                       CALL t720sub_rvv39(g_rvv[l_ac].rvv36,g_rvv[l_ac].rvv39,g_rvv[l_ac].rvv39t,g_rvu.rvu04,g_rvu.rvu01) #MOD-BC0262 add 
+                       CALL cl_digcut(g_rvv[l_ac].rvv39t,t_azi04)
+                                         RETURNING g_rvv[l_ac].rvv39t
+                       #CALL t720sub_rvv39(g_rvv[l_ac].rvv36,g_rvv[l_ac].rvv39,g_rvv[l_ac].rvv39t,g_rvu.rvu04,g_rvu.rvu02) #MOD-BC0262 mark
+                       CALL t720sub_rvv39(g_rvv[l_ac].rvv36,g_rvv[l_ac].rvv39,g_rvv[l_ac].rvv39t,g_rvu.rvu04,g_rvu.rvu01) #MOD-BC0262 add
                             RETURNING g_rvv[l_ac].rvv39,g_rvv[l_ac].rvv39t
                        DISPLAY BY NAME g_rvv[l_ac].rvv39
                        DISPLAY BY NAME g_rvv[l_ac].rvv39t
-                    END IF 
+                    END IF
                  #MOD-B30033 add --end--
               END IF
               IF g_rvv_t.rvv31 != g_rvv[l_ac].rvv31 THEN #MOD-C50254 add
@@ -17424,8 +17435,8 @@ DEFINE l_qcl05 LIKE qcl_file.qcl05,
                     IF cl_null(g_rvv_t.rvv87) OR (p_cmd='u' AND g_rvv_t.rvv87 != g_rvv[l_ac].rvv87) THEN
                        CALL t720_rvv17_rvv87_check(p_cmd) RETURNING l_sum
                        IF g_rvv[l_ac].rvv87 > l_sum THEN
-                          CALL cl_err('','apm-804',0)                       
-                          LET g_rvv[l_ac].rvv87 = l_sum 
+                          CALL cl_err('','apm-804',0)
+                          LET g_rvv[l_ac].rvv87 = l_sum
                           LET g_rvv[l_ac].rvv87 = s_digqty(g_rvv[l_ac].rvv87,g_rvv[l_ac].rvv86)   #No.FUN-BB0086
                           DISPLAY BY NAME g_rvv[l_ac].rvv87
                           RETURN FALSE
@@ -17434,14 +17445,14 @@ DEFINE l_qcl05 LIKE qcl_file.qcl05,
                  END IF
               END IF
            END IF
-        END IF   
+        END IF
 RETURN TRUE
 END FUNCTION
 
 FUNCTION t720_img09()
 DEFINE l_img09 LIKE img_file.img09
 
-   IF NOT cl_null(g_rvv[l_ac].rvv32) THEN      
+   IF NOT cl_null(g_rvv[l_ac].rvv32) THEN
                   SELECT img09 INTO l_img09 FROM img_file
                          WHERE img01 = g_rvv[l_ac].rvv31
                          AND img02 = g_rvv[l_ac].rvv32
@@ -17464,10 +17475,10 @@ FUNCTION t720_rvv87_check(p_cmd)
    END IF
 
    IF NOT t720_rvv87(p_cmd) THEN
-      RETURN FALSE 
+      RETURN FALSE
    END IF
-   RETURN TRUE 
-END FUNCTION 
+   RETURN TRUE
+END FUNCTION
 #FUN-BB0086--add--end--
 #TQC-C30048---add---str---
 FUNCTION t720_qcl05_wc()
@@ -17476,13 +17487,13 @@ DEFINE l_qcl05_wc STRING
       #FUN-CC0013 mark begin---
       #IF (g_argv1='2' AND g_argv3='ICD') OR (g_argv1='2' AND g_argv3 !='SUB' AND g_argv3 !='TAP')
       #    OR (g_argv1='2' AND g_argv3='SUB') OR (g_argv1='2' AND g_argv3='TAP') THEN
-      #    LET l_qcl05_wc = '3'    
+      #    LET l_qcl05_wc = '3'
       #    RETURN l_qcl05_wc,FALSE
       #ELSE
       #FUN-CC0013 mark end-----
        IF NOT((g_argv1='2' AND g_argv3='ICD') OR (g_argv1='2' AND g_argv3 !='SUB' AND g_argv3 !='TAP')
                OR (g_argv1='2' AND g_argv3='SUB') OR (g_argv1='2' AND g_argv3='TAP') ) THEN
-          LET l_qcl05_wc = '012' 
+          LET l_qcl05_wc = '012'
           RETURN l_qcl05_wc,TRUE
       END IF
    END IF
@@ -17504,23 +17515,23 @@ DEFINE l_sfa161    LIKE sfa_file.sfa161
     LET l_tky_cnt = 0
     DECLARE t720_tky_sfb09_2 CURSOR FOR
       SELECT * FROM rvb_file,rvbi_file
-       WHERE rvb01 = rvbi01 AND rvb02 = rvbi02  
-        AND rvb01 = l_rvv04 
+       WHERE rvb01 = rvbi01 AND rvb02 = rvbi02
+        AND rvb01 = l_rvv04
 
     FOREACH t720_tky_sfb09_2 INTO l_rvb.*,l_rvbi.*
        SELECT ecdicd01 INTO l_ecdicd01 FROM ecd_file
-        WHERE ecd01 = l_rvbi.rvbiicd03 
+        WHERE ecd01 = l_rvbi.rvbiicd03
        IF l_ecdicd01 = '2' THEN  #CP
-          SELECT sfa161 INTO l_sfa161 FROM sfa_file        
-           WHERE sfa01 = l_rvb.rvb34  
-          IF cl_null(l_sfa161) THEN LET l_sfa161 = 1 END IF           
+          SELECT sfa161 INTO l_sfa161 FROM sfa_file
+           WHERE sfa01 = l_rvb.rvb34
+          IF cl_null(l_sfa161) THEN LET l_sfa161 = 1 END IF
           LET l_rvbi.rvbiicd06 = l_rvbi.rvbiicd06 / l_sfa161
-          LET l_rvbi.rvbiicd07 = l_rvbi.rvbiicd07 / l_sfa161       
+          LET l_rvbi.rvbiicd07 = l_rvbi.rvbiicd07 / l_sfa161
        END IF
        LET l_tky_cnt = l_tky_cnt + l_rvbi.rvbiicd06 + l_rvbi.rvbiicd07
-    END FOREACH   
-    RETURN l_tky_cnt     
-END FUNCTION 
+    END FOREACH
+    RETURN l_tky_cnt
+END FUNCTION
 #TQC-C30193 --END--
 
 #FUN-C30140--add---str---
@@ -17535,7 +17546,7 @@ END FUNCTION
 #MOD-C30902 add begin
 FUNCTION t720_set_no_entry_rvv32()
 
-   IF l_ac > 0 AND g_rec_b > 0 THEN    
+   IF l_ac > 0 AND g_rec_b > 0 THEN
       IF NOT cl_null(g_rvv[l_ac].rvv31) THEN
          IF NOT cl_null(g_rvu.rvu117) OR g_rvv[l_ac].rvv89 ='Y' THEN
             CALL cl_set_comp_entry("rvv32,rvv33",FALSE)
@@ -17544,7 +17555,7 @@ FUNCTION t720_set_no_entry_rvv32()
          END IF
       END IF
    END IF
-   
+
 END FUNCTION
 #MOD-C30902 add end
 
@@ -17570,9 +17581,9 @@ FUNCTION t720_list_fill()
         WHERE rvu01=l_rvu01 AND rvu00=l_rvu00
        LET l_i = l_i + 1
        IF l_i > g_max_rec THEN
-          IF g_action_choice ="query"  THEN  
+          IF g_action_choice ="query"  THEN
             CALL cl_err( '', 9035, 0 )
-          END IF                             
+          END IF
           EXIT FOREACH
        END IF
     END FOREACH
@@ -17586,19 +17597,19 @@ END FUNCTION
 
 FUNCTION t720_bp3(p_ud)
    DEFINE   p_ud   LIKE type_file.chr1    #No.FUN-680121 VARCHAR(1)
- 
+
    IF p_ud <> "G"  THEN
       RETURN
    END IF
- 
+
    LET g_action_choice = " "
 
    CALL cl_set_act_visible("accept,cancel", FALSE)
    DISPLAY ARRAY g_rvu_l TO s_rvu_l.* ATTRIBUTE(COUNT=g_rec_b2,UNBUFFERED)
        BEFORE DISPLAY
-         CALL fgl_set_arr_curr(g_curs_index) 
+         CALL fgl_set_arr_curr(g_curs_index)
          CALL cl_navigator_setting( g_curs_index, g_row_count )
-  
+
        BEFORE ROW
          LET l_ac2 = ARR_CURR()
          LET g_curs_index = l_ac2
@@ -17612,10 +17623,10 @@ FUNCTION t720_bp3(p_ud)
              CALL t720_fetch('/')
          END IF
          CALL cl_set_comp_visible("page4,info,userdefined_field", FALSE)
-         CALL cl_set_comp_visible("page_list", FALSE) 
-         CALL ui.interface.refresh()           
-         CALL cl_set_comp_visible("page4,info,userdefined_field", TRUE)      
-         CALL cl_set_comp_visible("page_list", TRUE) 
+         CALL cl_set_comp_visible("page_list", FALSE)
+         CALL ui.interface.refresh()
+         CALL cl_set_comp_visible("page4,info,userdefined_field", TRUE)
+         CALL cl_set_comp_visible("page_list", TRUE)
          EXIT DISPLAY
 
       ON ACTION ACCEPT
@@ -17625,12 +17636,12 @@ FUNCTION t720_bp3(p_ud)
          LET mi_no_ask = TRUE
          CALL t720_fetch('/')
          CALL cl_set_comp_visible("page4,info,userdefined_field", FALSE)
-         CALL cl_set_comp_visible("page_list", FALSE) 
-         CALL ui.interface.refresh()           
-         CALL cl_set_comp_visible("page4,info,userdefined_field", TRUE)      
-         CALL cl_set_comp_visible("page_list", TRUE)    
-         EXIT DISPLAY 
-      
+         CALL cl_set_comp_visible("page_list", FALSE)
+         CALL ui.interface.refresh()
+         CALL cl_set_comp_visible("page4,info,userdefined_field", TRUE)
+         CALL cl_set_comp_visible("page_list", TRUE)
+         EXIT DISPLAY
+
       ON ACTION insert
          LET g_action_choice="insert"
          EXIT DISPLAY
@@ -17650,7 +17661,7 @@ FUNCTION t720_bp3(p_ud)
             CALL fgl_set_arr_curr(1)
          END IF
            ACCEPT DISPLAY                   #No.FUN-530067 HCN TEST
- 
+
       ON ACTION previous
          CALL t720_fetch('P')
          CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
@@ -17658,7 +17669,7 @@ FUNCTION t720_bp3(p_ud)
             CALL fgl_set_arr_curr(1)
          END IF
          ACCEPT DISPLAY                   #No.FUN-530067 HCN TEST
- 
+
       ON ACTION jump
          CALL t720_fetch('/')
          CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
@@ -17666,8 +17677,8 @@ FUNCTION t720_bp3(p_ud)
             CALL fgl_set_arr_curr(1)
          END IF
          ACCEPT DISPLAY                   #No.FUN-530067 HCN TEST
- 
- 
+
+
       ON ACTION next
          CALL t720_fetch('N')
          CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
@@ -17675,8 +17686,8 @@ FUNCTION t720_bp3(p_ud)
             CALL fgl_set_arr_curr(1)
          END IF
          ACCEPT DISPLAY                   #No.FUN-530067 HCN TEST
- 
- 
+
+
       ON ACTION last
          CALL t720_fetch('L')
          CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
@@ -17685,7 +17696,7 @@ FUNCTION t720_bp3(p_ud)
          END IF
          ACCEPT DISPLAY                   #No.FUN-530067 HCN TEST
 
-#TQC-D10084---mark---str--- 
+#TQC-D10084---mark---str---
 #     ON ACTION detail
 #        LET g_action_choice="detail"
 #        LET l_ac = 1
@@ -17697,7 +17708,7 @@ FUNCTION t720_bp3(p_ud)
       ON ACTION help
          LET g_action_choice="help"
          EXIT DISPLAY
- 
+
       ON ACTION locale
          CALL cl_dynamic_locale()
          CALL cl_show_fld_cont()                   #No.FUN-550037 hmf
@@ -17716,15 +17727,15 @@ FUNCTION t720_bp3(p_ud)
          CALL t720_def_form()     #FUN-610067
          LET g_action_choice="locale"       #No.TQC-790064
          EXIT DISPLAY
- 
+
       ON ACTION exit
          LET g_action_choice="exit"
          EXIT DISPLAY
- 
+
       ON ACTION controlg
          LET g_action_choice="controlg"
          EXIT DISPLAY
-          
+
 #FUN-A60035 ---MARK BEGIN
 #   #No.FUN-A50054 -BEGIN-----
 #     ON ACTION style_detail
@@ -17775,7 +17786,7 @@ FUNCTION t720_bp3(p_ud)
       ON ACTION price_change
          LET g_action_choice="price_change"
          EXIT DISPLAY
- 
+
     #FUN-A60009 add str ---
     #@ON ACTION 簽核狀況
       ON ACTION approval_status
@@ -17789,7 +17800,7 @@ FUNCTION t720_bp3(p_ud)
     #FUN-A60009 add end --
     #FUN-BC0104---add---str
       #QC 結果判定產生入庫單
-      ON ACTION qc_determine_storage 
+      ON ACTION qc_determine_storage
          LET g_action_choice = "qc_determine_storage"
          EXIT DISPLAY
     #FUN-BC0104---add---end
@@ -17805,14 +17816,14 @@ FUNCTION t720_bp3(p_ud)
          LET INT_FLAG=FALSE     #MOD-570244 mars
          LET g_action_choice="exit"
          EXIT DISPLAY
- 
+
       ON IDLE g_idle_seconds
          CALL cl_on_idle()
          CONTINUE DISPLAY
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION exporttoexcel       #FUN-4B0025
          LET g_action_choice = 'exporttoexcel'
          EXIT DISPLAY
@@ -17842,23 +17853,23 @@ FUNCTION t720_bp3(p_ud)
          LET g_action_choice = 'phrase'
          EXIT DISPLAY
      #FUN-A60009 add end ---
- 
+
       ON ACTION controls                           #No.FUN-6B0032
          CALL cl_set_head_visible("","AUTO")       #No.FUN-6B0032
 
- 
+
       ON ACTION related_document                #No.FUN-6A0162  相關文件
          LET g_action_choice="related_document"
          EXIT DISPLAY
- 
+
       ON ACTION carry_delivery                #No.FUN-6C0050 轉出貨單
          LET g_action_choice="carry_delivery"
          EXIT DISPLAY
- 
+
       ON ACTION gpm_show
          LET g_action_choice="gpm_show"
          EXIT DISPLAY
- 
+
       ON ACTION gpm_query
          LET g_action_choice="gpm_query"
          EXIT DISPLAY
@@ -17868,41 +17879,41 @@ FUNCTION t720_bp3(p_ud)
       ON ACTION gen_transfer_note
          LET g_action_choice="gen_transfer_note"
          EXIT DISPLAY
- 
-#@    ON ACTION 領料產生                                                                                                            
-      ON ACTION gen_mat_wtdw                                                                                                        
-         LET g_action_choice="gen_mat_wtdw"                                                                                         
-         EXIT DISPLAY                                                                                                               
-#@    ON ACTION 領料維護                                                                                                            
-      ON ACTION maint_mat_wtdw                                                                                                      
-         LET g_action_choice="maint_mat_wtdw"                                                                                       
-         EXIT DISPLAY                                                                                                               
+
+#@    ON ACTION 領料產生
+      ON ACTION gen_mat_wtdw
+         LET g_action_choice="gen_mat_wtdw"
+         EXIT DISPLAY
+#@    ON ACTION 領料維護
+      ON ACTION maint_mat_wtdw
+         LET g_action_choice="maint_mat_wtdw"
+         EXIT DISPLAY
       #tianry add 161128
-      ON ACTION mod_try 
+      ON ACTION mod_try
          LET g_action_choice="mod_try"
-         EXIT DISPLAY 
-      #tianry add end 
+         EXIT DISPLAY
+      #tianry add end
       #No.FUN-A80026  --Begin
 #@    ON ACTION 产生应付帐款
       ON ACTION gen_ap
          LET g_action_choice="gen_ap"
-         EXIT DISPLAY                                                                                                               
-      #No.FUN-A80026  --End  
+         EXIT DISPLAY
+      #No.FUN-A80026  --End
 
       #DEV-D30045--add--begin
       ON ACTION barcode_gen
          LET g_action_choice="barcode_gen"
-         EXIT DISPLAY                                                                                                               
+         EXIT DISPLAY
 
       ON ACTION barcode_query
          LET g_action_choice="barcode_query"
-         EXIT DISPLAY                                                                                                               
+         EXIT DISPLAY
 
       ON ACTION barcode_output
          LET g_action_choice="barcode_output"
-         EXIT DISPLAY                                                                                                               
+         EXIT DISPLAY
       #DEV-D30045--add--end
- 
+
       &include "qry_string.4gl"
    END DISPLAY
    CALL cl_set_act_visible("accept,cancel", TRUE)
@@ -17970,25 +17981,25 @@ DEFINE l_sql     STRING,
               WHERE azf01 = g_rvv[l_ac].rvv26 AND azf02='2'
              IF STATUS THEN
                 CALL cl_err3("sel","azf_file",g_rvv[l_ac].rvv26,"",STATUS,"","sel azf",1)  #No.FUN-660129
-                RETURN FALSE     
+                RETURN FALSE
              END IF
              SELECT azf09 INTO l_azf09 FROM azf_file
               WHERE azf01=g_rvv[l_ac].rvv26 AND azf02='2'
-             IF l_azf09 !='7' AND g_argv1 = '1' THEN 
+             IF l_azf09 !='7' AND g_argv1 = '1' THEN
                 CALL cl_err('','aoo-406',1)
-                RETURN FALSE     
+                RETURN FALSE
              END IF
              IF l_azf09 !='5' AND g_argv1 <> '1' THEN
                 CALL cl_err('','aoo-406',1)
-                RETURN FALSE     
+                RETURN FALSE
              END IF
              DISPLAY BY NAME g_rvv[l_ac].azf03
          END IF
-      END IF  
+      END IF
    ELSE                                    #TQC-D20050
       LET g_rvv[l_ac].azf03= ' '           #TQC-D20050
       DISPLAY BY NAME g_rvv[l_ac].azf03    #TQC-D20050
-   END IF    
+   END IF
    RETURN TRUE
 END FUNCTION
 
@@ -18019,21 +18030,21 @@ END FUNCTION
 #str----add by guanyao160517
 --FUNCTION t720_fa_issue()
 --DEFINE l_x     LIKE type_file.num5
---DEFINE l_cmd   STRING 
+--DEFINE l_cmd   STRING
 --
-   --IF cl_null(g_rvu.rvu01) THEN 
+   --IF cl_null(g_rvu.rvu01) THEN
       --CALL cl_err('',-400,0)
       --RETURN
-   --END IF 
+   --END IF
    --SELECT * INTO g_rvu.* FROM rvu_file WHERE rvu01 = g_rvu.rvu01
-   --IF g_argv3 != 'SUB' THEN 
-      --RETURN 
-   --END IF 
+   --IF g_argv3 != 'SUB' THEN
+      --RETURN
+   --END IF
 --
    --IF g_rvu.rvuconf <> 'Y' THEN
       --CALL cl_err('','csf-009',0)
-      --RETURN 
-   --END IF 
+      --RETURN
+   --END IF
 --
    --LET l_x = ARR_CURR()
    --LET l_cmd = ''
@@ -18042,7 +18053,7 @@ END FUNCTION
                --" '",g_rvv[l_x].rvv05 CLIPPED,"'",
                --" '0'"   #add by guanyao160523 #增加版本号
    --CALL cl_cmdrun_wait(l_cmd)
---END FUNCTION 
+--END FUNCTION
 #end----add by guanyao160517
 
 FUNCTION mod_try()   #审核状态下也可以修改
@@ -18050,7 +18061,7 @@ DEFINE   l_cnt   LIKE type_file.num5,
          l_ac    LIKE type_file.num5,
          l_allow_insert  LIKE type_file.num5,    #可新增否  #No.FUN-680136 SMALLINT
          l_allow_delete  LIKE type_file.num5
-          
+
     LET l_allow_insert='N'
     LET l_allow_delete='N'
     CALL cl_set_comp_entry("rvv02,rvv05,rvv45,rvv46,rvv47,rvv31,rvv031,rvv11,rvv12,rvv13,rvv18,rvv36,rvv37",FALSE)
@@ -18066,49 +18077,49 @@ DEFINE   l_cnt   LIKE type_file.num5,
           #  LET l_lock_sw = 'N'                   #DEFAULT
           #  LET l_n  = ARR_COUNT()
 
-        AFTER FIELD rvvud07 
+        AFTER FIELD rvvud07
        #  IF NOT cl_null(g_rvv[l_ac].rvvud07) THEN
             UPDATE rvv_file SET rvvud07=g_rvv[l_ac].rvvud07 WHERE rvv01=g_rvu.rvu01 AND rvv02=g_rvv[l_ac].rvv02
             IF STATUS  OR SQLCA.SQLERRD[3]=0 THEN
                CALL cl_err('upd rvv err',STATUS,1)
-               EXIT INPUT 
-            END IF 
-  
-        # END IF 
-    END INPUT 
-         
+               EXIT INPUT
+            END IF
+
+        # END IF
+    END INPUT
+
 
     CALL t720_show()
     CALL cl_set_comp_entry("rvv02,rvv05,rvv45,rvv46,rvv47,rvv31,rvv031,rvv11,rvv12,rvv13,rvv18,rvv36,rvv37",TRUE)
     CALL cl_set_comp_entry("rvv919,rvv25,rvv89,rvv17,rvv32,rvv33,rvv34,rvv83,rvv84,rvv85,rvv80,rvv81,rvv82",TRUE)
     CALL cl_set_comp_entry("rvv86,rvv87,rvv41,rvv930,rvvud01,rvvud02,rvvud03,rvvud04,rvvud05,rvvud06,rvvud08",TRUE)
     CALL cl_set_comp_entry("rvvud09,rvvud10,rvvud11,rvvud12,rvvud13,rvvud14,rvvud15",TRUE)
-    
+
 
 
 END FUNCTION
 
 
-#No.18010101 --- begin ----   仓退同步到SCM ------ 
+#No.18010101 --- begin ----   仓退同步到SCM ------
 FUNCTION t720_sendBackToSCM(p_doc)
-DEFINE p_doc    LIKE rvu_file.rvu01 
+DEFINE p_doc    LIKE rvu_file.rvu01
 DEFINE l_ret        RECORD
              success   LIKE type_file.chr1,
              code      LIKE type_file.chr10,
              msg       STRING
-                    END RECORD 
-DEFINE l_rvv36    LIKE rvv_file.rvv36 
-DEFINE l_rvv37    LIKE rvv_file.rvv37  
-DEFINE l_sql      STRING 
-INITIALIZE l_ret.* TO NULL 
-IF cl_null(p_doc) THEN 
+                    END RECORD
+DEFINE l_rvv36    LIKE rvv_file.rvv36
+DEFINE l_rvv37    LIKE rvv_file.rvv37
+DEFINE l_sql      STRING
+INITIALIZE l_ret.* TO NULL
+IF cl_null(p_doc) THEN
     LET l_ret.msg = p_doc CLIPPED ,"退货单号为空，请检查！"
     RETURN l_ret.msg
-END IF 
+END IF
 LET l_sql  = "select distinct rvv36,rvv37 from rvv_file,rvu_file  ",
              " where rvu01= rvv01 AND rvu00 = '3' AND rvu116 = '2' AND rvu01 = '",p_doc CLIPPED ,"'"
 DECLARE t720_sendBackToSCM_curs SCROLL CURSOR FROM l_sql
-FOREACH t720_sendBackToSCM_curs INTO l_rvv36,l_rvv37 
+FOREACH t720_sendBackToSCM_curs INTO l_rvv36,l_rvv37
          CALL cjc_zmx_json_back(l_rvv36,l_rvv37) RETURNING l_ret.*
          IF l_ret.success = 'Y' THEN
              LET l_ret.msg =  ''
@@ -18119,10 +18130,10 @@ FOREACH t720_sendBackToSCM_curs INTO l_rvv36,l_rvv37
              LET l_ret.success = 'N'
              RETURN l_ret.msg
          END IF
-END FOREACH 
+END FOREACH
 RETURN l_ret.msg
-END FUNCTION 
-#No.18010101 ---end ----- 
+END FUNCTION
+#No.18010101 ---end -----
 
 # 邮件
 function sapmt720_mail_warn()

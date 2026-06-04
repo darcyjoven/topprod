@@ -646,6 +646,7 @@ FUNCTION t370(p_argv1)
     END IF
 #FUN-C20101-----ADD------STR----
 #FUN-C20101----END-------
+    call cl_set_act_visible('action_stock_post',false) #darcy add
     CALL t370_menu()
 END FUNCTION
 
@@ -1495,6 +1496,9 @@ define l_res string
                CALL t370_refresh() RETURNING g_ina.*  #FUN-B50138
                LET g_wc2 = ''                         #MOD-C30541
                CALL t370_show()                       #FUN-B50138
+               if g_ina.inaconf = 'Y' then
+                    if cl_action(g_prog,g_ina.ina01,0,'confirm',g_user,g_grup,false,false) then end if#darcy add
+               end if
             END IF
          WHEN "undo_confirm"
             IF cl_chk_act_auth() THEN
@@ -1528,6 +1532,16 @@ define l_res string
                 END IF
                 CALL t370_refresh() RETURNING g_ina.*  #FUN-B50138
                 CALL t370_show()                       #FUN-B50138
+                # darcy add s---
+                if g_ina.inapost = 'Y' then
+                    let g_action_choice = 'action_stock_post'
+                    let g_bgjob = 'Y'
+                    if cl_chk_act_auth() then
+                        if cl_action(g_prog,g_ina.ina01,0,'post','','',true,true) then end if
+                    end if
+                    let g_action_choice = 'stock_post'
+                end if
+                # darcy add e---
               #CALL t370_pic() #FUN-720002            #FUN-B50138
              END IF
        #@WHEN "過帳還原"
@@ -5048,6 +5062,7 @@ FUNCTION t370_bp(p_ud)
       ON ACTION barcode_query
          LET g_action_choice = 'barcode_query'
          EXIT DIALOG
+      on action action_stock_post let g_action_choice = 'action_stock_post' #darcy add
 
       ON ACTION barcode_output #條碼列印
          LET g_action_choice = 'barcode_output'
@@ -13241,13 +13256,13 @@ function t370_weekamt(p_partno,p_item,p_day,p_unit,p_inb03)
    # 获取日期所属周的周日和周六两个日期
    let l_sql = "select min(azn01), max(azn01)  ",
                "  from azn_file where (azn02, azn05) in",
-               " (select azn02, azn05 from azn_file where azn01 = '",p_day,"')"
+               " (select azn02, azn05 from azn_file where azn01 = ? )"
    prepare t370_azn from l_sql
-   execute t370_azn into l_begin,l_end
+   execute t370_azn using p_day into l_begin,l_end
    if l_end == p_day  then
       -- 向后取一周
       let p_day = p_day + 1
-      execute t370_azn into l_begin,l_end
+      execute t370_azn using p_day into l_begin,l_end
    end if
 
    if l_end = p_day then
@@ -13336,7 +13351,7 @@ function aimt370_month_limit(p_part,p_date,p_docno,p_seq,p_item,p_qty,p_unit)
    if cl_null(l_curr) then let l_curr = 0 end if
 
    if l_isuue + l_curr > l_limit + l_temp then
-      call cl_err(sfmt('料号：%1 已领用金额%2 + 本次领用金额：%3 大于本月额度：%4 + 临时额度：%5',p_item,l_isuue,l_curr,l_limit,l_temp ),'!',1)
+      call cl_err(sfmt('料号：%1 已领用金额 + 本次领用金额：%2 大于本月额度：%3 + 临时额度：%4',p_item,l_isuue+l_curr,l_limit,l_temp ),'!',1)
       return false
    end if
 

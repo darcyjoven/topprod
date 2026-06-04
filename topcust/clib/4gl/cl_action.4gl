@@ -29,6 +29,7 @@ type tc_pot record
 end record
 
 define  g_tc_pos,g_tc_pos_t     tc_pos
+define  g_date          boolean
 
 -- p_prog           作业编号
 -- p_doc            单据编号
@@ -36,19 +37,21 @@ define  g_tc_pos,g_tc_pos_t     tc_pos
 -- p_type           操作类型
 -- p_user           默认用户
 -- p_grup           默认部门
-function cl_action(p_prog,p_doc,p_seq,p_type,p_user,p_grup,p_post)
+-- p_post           是否能弹窗修改
+-- p_date           是否能修改日期
+function cl_action(p_prog,p_doc,p_seq,p_type,p_user,p_grup,p_post,p_date)
     define  p_prog          like tc_pos_file.tc_pos03,
             p_doc           like tc_pos_file.tc_pos01,
             p_seq           like tc_pos_file.tc_pos02,
             p_type          varchar(20),
             p_user  like tc_pos_file.tc_pos04,
             p_grup  like tc_pos_file.tc_pos05,
-            p_post          boolean
-    define  l_time          varchar(8),
-            l_type          varchar(1)
+            p_post          boolean,
+            p_date          boolean
+    define  l_type          varchar(1)
     define  l_user,l_grup   varchar(20)
 
-    let l_time = current hour to second
+    let g_date = p_date
 
     initialize g_tc_pos.* to null
 
@@ -329,4 +332,6 @@ end function
 function cl_action_ui()
     call cl_set_combo_items('tc_pos08','0,1,2,3,4,5,6,7,8,9,a,b,c,d,e',
     '0.其它,1.建立,2.删除,3.修改,4.审核,5.取消审核,6.过账,7.过账还原,8.结案,9.取消结案,a.作废,b.取消作业,c.送签,d.抛转凭证,e.凭证还原')
+
+    call cl_set_comp_entry('tc_pos06',g_date)
 end function

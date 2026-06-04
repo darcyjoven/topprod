@@ -450,7 +450,7 @@ DEFINE  p_argv   LIKE type_file.chr1,   #No.FUN-680121 VARCHAR(1)  #No.FUN-6A009
              CALL t623_q()
        END CASE
     END IF
-
+    call cl_set_act_visible('action_stock_post',false) # darcy add
     CALL t623_menu()
     #CALL s_padd_img_drop(l_img_table)   #FUN-C70087  #FUN-CC0095
     #CALL s_padd_imgg_drop(l_imgg_table) #FUN-C70087  #FUN-CC0095
@@ -834,6 +834,7 @@ define l_str   string #darcy:2024/10/17 add
                     #add by zhangzs 201208   记录审核状态到中间表 ect_file   ----s------
                     IF g_success = "Y" THEN
                         LET l_ecu01 = g_sfu.sfu01
+                        if cl_action(g_prog,g_sfu.sfu01,0,'confirm',g_user,g_grup,false,false) then end if#darcy add
                        # SELECT SYSDATE INTO l_date FROM DUAL  #日期+时间
                         # CALL cl_ect('asft623',l_ecu01,g_user,'1',g_today,TIME) #darcy:2024/01/04 add
                     #add by zhangzs 201208   记录审核状态到中间表 ect_file   ----e------
@@ -914,6 +915,16 @@ define l_str   string #darcy:2024/10/17 add
                         call sasft623_mail_info("RK1","JL/JN/KE入库提醒")
                      end if
                      # darcy:2025/08/13 add e---
+                     # darcy add s---
+                     if g_sfu.sfupost = 'Y' then
+                        let g_action_choice = 'action_stock_post'
+                        let g_bgjob = 'Y'
+                        if cl_chk_act_auth() then
+                            if cl_action(g_prog,g_sfu.sfu01,0,'post','','',true,false) then end if
+                        end if
+                        let g_action_choice = 'stock_post'
+                     end if
+                     # darcy add e---
                 END IF
               END IF
               CALL t623_pic() #圖形顯示 #FUN-660137
@@ -4671,6 +4682,7 @@ FUNCTION t623_bp(p_ud)
       ON IDLE g_idle_seconds
          CALL cl_on_idle()
          CONTINUE DIALOG
+     on action action_stock_post let g_action_choice = 'action_stock_post' # darcy add
 
       ON ACTION exporttoexcel
          LET g_action_choice = 'exporttoexcel'
