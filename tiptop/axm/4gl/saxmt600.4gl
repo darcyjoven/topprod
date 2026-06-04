@@ -3166,6 +3166,7 @@ FUNCTION t600_menu()
                 if cl_chk_act_auth() then
                     if cl_action(g_prog,g_oga.oga01,0,'post','','',true,false) then end if
                 end if
+                let g_bgjob = 'N'
                 let g_action_choice = 'stock_post'
                end if
                # darcy add e---
