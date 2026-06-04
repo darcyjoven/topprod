@@ -5169,7 +5169,7 @@ define l_str        string
         select max(sgm03) into l_sgm03 from sgm_file
          where sgm01 = g_shb.shb16 and ta_sgm06 = 'Y'
            and sgm03 < l_sgm03
-        if g_shb.shb16 = l_sgm03 then
+        if g_shb.shb06 = l_sgm03 then
             let l_str = ""
             exit foreach
         end if
