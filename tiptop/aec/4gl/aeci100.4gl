@@ -1396,7 +1396,7 @@ FUNCTION i100_a()
         display by name g_ecu.ecuud03
         # 签核否
         # 组装成品量产料号才需要送签
-        if g_user = 'tiptop' or g_user = '30369' then
+        if g_user = 'tiptop' or g_user = '30369' or g_user = '66555' or g_user = '61506' or g_user = '51870' or g_user = '56431' then
          if g_ecu.ecu01[7,7] matches "[ABC]" and g_ecu.ecu01[10,10] not matches "[SF]" and g_ecu.ecu01 not matches "*-*" and g_ecu.ecu02 like '*0' then
                let g_ecu.ecuud04 = 'Y'
                display by name g_ecu.ecuud04
