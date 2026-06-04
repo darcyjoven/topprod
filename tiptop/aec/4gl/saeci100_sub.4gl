@@ -8,6 +8,28 @@ database ds
 
 GLOBALS "../../config/top.global"
 
+type bmb record
+    bmb01       like bmb_file.bmb01,
+    bmb02       like bmb_file.bmb02,
+    bmb03       like bmb_file.bmb03,
+    bmb04       like bmb_file.bmb04,
+    bmb05       like bmb_file.bmb05,
+    bmb09       like bmb_file.bmb09,
+    bmbud02     like bmb_file.bmbud02,
+    bma10       like bma_file.bma10,
+    bma05       like bma_file.bma05
+end record
+type ecb record
+    ecb01       like ecb_file.ecb01  ,
+    ecb02       like ecb_file.ecb02  ,
+    ecb03       like ecb_file.ecb03  ,
+    ecb06       like ecb_file.ecb06  ,
+    ecbud04     like ecb_file.ecbud04,
+    ecu10       like ecu_file.ecu10  ,
+    ecuud02     like ecu_file.ecuud02
+end record
+
+
 #  更新abmi600 中的作业编号
 function i100sub_upd_bmb09(p_ecu01,p_ecu02)
     define p_ecu01      like ecu_file.ecu01
@@ -128,7 +150,11 @@ function i100sub_upd_bmb09(p_ecu01,p_ecu02)
         end if
     end if
 
-    call saeci100_csmi134(p_ecu01) # darcy:2026/03/13 add
+    #if g_user = 'tiptop' then
+        call saeci100_get_record(p_ecu01,p_ecu02)
+    #end if
+
+    --call saeci100_csmi134(p_ecu01) # darcy:2026/03/13 add
     #darcy:2023/06/15 add e---
     # darcy:2025/12/02 add s ---
     -- if g_user <> 'tiptop' then
@@ -868,3 +894,141 @@ function saeci100_csmi134(p_ima01)
 
 end function
 # darcy.li 2026/03/09 e---
+#
+
+-- 记录当前bom和工艺资料
+function saeci100_get_record(p_ecb01,p_ecb02)
+    define p_ecb01          like ecb_file.ecb01
+    define p_ecb02          like ecb_file.ecb02
+
+    define l_sql,l_file     string
+    define l_cnt,i,j        integer
+    define noChildren       boolean
+    define l_bmb            bmb
+    define l_ecb            ecb
+    define l_str            string
+    DEFINE l_bmb_buf        base.StringBuffer
+    define l_ecb_buf        base.StringBuffer
+    define l_ch             base.Channel
+
+    LET l_bmb_buf = base.StringBuffer.create()
+    LET l_ecb_buf = base.StringBuffer.create()
+
+    let l_sql = "select bmb01, bmb02, bmb03, bmb04, bmb05, bmb09, bmbud02 , '', '', CONNECT_BY_ISLEAF
+                from bmb_file
+                start with bmb01 = ?
+                connect by prior bmb03 = bmb01 order by 1,2"
+    declare saeci100_get_record1 cursor from l_sql
+
+    let l_sql = " select ecb01,ecb02,ecb03,ecb06,ecbud04,ecu10,ecuud02
+                    from ecb_file,ecu_file
+                   where ecb01 = ecu01 and ecb02 = ecu02 and ecb01 = ? and ecb02 = ?"
+    declare saeci100_get_record2 cursor from l_sql
+
+    initialize l_bmb.* to null
+    initialize l_ecb.* to null
+
+    foreach saeci100_get_record2 using p_ecb01,p_ecb02 into l_ecb.*
+        if sqlca.sqlcode then
+            call cl_err('saeci100_get_record2',sqlca.sqlcode,1)
+            exit foreach
+        end if
+        let l_str = iif(l_ecb.ecb01  matches '*,*',sfmt('"%1",',l_ecb.ecb01),sfmt('%1,',l_ecb.ecb01))
+        let l_str =  l_str , iif(l_ecb.ecb02  matches '*,*',sfmt('"%1",',l_ecb.ecb02),sfmt('%1,',l_ecb.ecb02))
+        let l_str =  l_str , iif(l_ecb.ecb03  matches '*,*',sfmt('"%1",',l_ecb.ecb03),sfmt('%1,',l_ecb.ecb03))
+        let l_str =  l_str , iif(l_ecb.ecb06  matches '*,*',sfmt('"%1",',l_ecb.ecb06),sfmt('%1,',l_ecb.ecb06))
+        let l_str =  l_str , iif(l_ecb.ecbud04 matches '*,*',sfmt('"%1",',l_ecb.ecbud04),sfmt('%1,',l_ecb.ecbud04))
+        let l_str =  l_str , iif(l_ecb.ecu10  matches '*,*',sfmt('"%1",',l_ecb.ecu10),sfmt('%1,',l_ecb.ecu10))
+        let l_str =  l_str , iif(l_ecb.ecuud02 matches '*,*',sfmt('"%1"\n',l_ecb.ecuud02),sfmt('%1\n',l_ecb.ecuud02))
+        CALL l_ecb_buf.append(l_str)
+    end foreach
+
+    foreach saeci100_get_record1 using p_ecb01 into l_bmb.*,noChildren
+        if sqlca.sqlcode then
+            call cl_err('saeci100_get_record1',sqlca.sqlcode,1)
+            exit foreach
+        end if
+
+        select bma10,bma05 into l_bmb.bma10,l_bmb.bma05 from bma_file
+         where bma01 = p_ecb01
+
+        let l_str = iif(l_bmb.bmb01 matches '*,*',sfmt('"%1",',l_bmb.bmb01),sfmt('%1,',l_bmb.bmb01))
+        let l_str = l_str , iif(l_bmb.bmb02 matches '*,*',sfmt('"%1",',l_bmb.bmb02),sfmt('%1,',l_bmb.bmb02))
+        let l_str = l_str , iif(l_bmb.bmb03 matches '*,*',sfmt('"%1",',l_bmb.bmb03),sfmt('%1,',l_bmb.bmb03))
+        let l_str = l_str , iif(l_bmb.bmb04 matches '*,*',sfmt('"%1",',l_bmb.bmb04),sfmt('%1,',l_bmb.bmb04))
+        let l_str = l_str , iif(l_bmb.bmb05 matches '*,*',sfmt('"%1",',l_bmb.bmb05),sfmt('%1,',l_bmb.bmb05))
+        let l_str = l_str , iif(l_bmb.bmb09 matches '*,*',sfmt('"%1",',l_bmb.bmb09),sfmt('%1,',l_bmb.bmb09))
+        let l_str = l_str , iif(l_bmb.bmbud02 matches '*,*',sfmt('"%1",',l_bmb.bmbud02),sfmt('%1,',l_bmb.bmbud02))
+        let l_str = l_str , iif(l_bmb.bma10 matches '*,*',sfmt('"%1",',l_bmb.bma10),sfmt('%1,',l_bmb.bma10))
+        let l_str = l_str , iif(l_bmb.bma05 matches '*,*',sfmt('"%1"\n',l_bmb.bma05),sfmt('%1\n',l_bmb.bma05))
+        CALL l_bmb_buf.append(l_str)
+
+        if noChildren then
+            continue foreach
+        end if
+
+        foreach saeci100_get_record2 using l_bmb.bmb03,p_ecb02 into l_ecb.*
+            if sqlca.sqlcode then
+                call cl_err('saeci100_get_record2',sqlca.sqlcode,1)
+                exit foreach
+            end if
+            let l_str = iif(l_ecb.ecb01  matches '*,*',sfmt('"%1",',l_ecb.ecb01),sfmt('%1,',l_ecb.ecb01))
+            let l_str =  l_str , iif(l_ecb.ecb02  matches '*,*',sfmt('"%1",',l_ecb.ecb02),sfmt('%1,',l_ecb.ecb02))
+            let l_str =  l_str , iif(l_ecb.ecb03  matches '*,*',sfmt('"%1",',l_ecb.ecb03),sfmt('%1,',l_ecb.ecb03))
+            let l_str =  l_str , iif(l_ecb.ecb06  matches '*,*',sfmt('"%1",',l_ecb.ecb06),sfmt('%1,',l_ecb.ecb06))
+            let l_str =  l_str , iif(l_ecb.ecbud04 matches '*,*',sfmt('"%1",',l_ecb.ecbud04),sfmt('%1,',l_ecb.ecbud04))
+            let l_str =  l_str , iif(l_ecb.ecu10  matches '*,*',sfmt('"%1",',l_ecb.ecu10),sfmt('%1,',l_ecb.ecu10))
+            let l_str =  l_str , iif(l_ecb.ecuud02 matches '*,*',sfmt('"%1"\n',l_ecb.ecuud02),sfmt('%1\n',l_ecb.ecuud02))
+            CALL l_ecb_buf.append(l_str)
+        end foreach
+    end foreach
+
+    let l_file = FGL_GETENV("TEMPDIR")
+    let l_file = l_file , "/","csmi134_",sfmt("%1%2%3.log",year(today),month(today),day(today))
+
+    let l_ch = base.Channel.create()
+    call l_ch.openFile( l_file, "a" )
+
+    call l_ch.WriteLine(sfmt("--- ecb01: %1 ecb02: %2 time: %3 ---",p_ecb01,p_ecb02,current year to second))
+
+    call l_ch.WriteLine('bmb: ')
+    let l_str = l_bmb_buf.toString()
+    call l_ch.WriteLine(l_str)
+
+
+    call l_ch.WriteLine('ecb: \n')
+    let l_str = l_ecb_buf.toString()
+    call l_ch.WriteLine(l_ecb_buf.toString())
+
+    call l_ch.WriteLine('--- end ---\n\n')
+
+    call l_ch.close()
+end function
+
+# 记录bom和工艺资料的详细资料
+function saeci100_log(p_ecb01,p_ecb02,p_bmb,p_ecb)
+    define p_ecb01  like ecb_file.ecb01
+    define p_ecb02  like ecb_file.ecb02
+    define p_bmb    om.DomNode
+    define p_ecb    om.DomNode
+    --base.typeinfo.create(g_sfb_excel)
+    define l_file,l_str   string
+
+    let l_file = FGL_GETENV("TEMPDIR")
+    let l_file = l_file , "/","csmi134_",sfmt("%1%2%3.log",year(today),month(today),day(today))
+
+    # prefix
+    let l_str = sfmt("--- ecb01: %1 ecb02: %2 time: %3 ---",p_ecb01,p_ecb02,current year to second)
+    run "echo '"||l_str||"' >> "||l_file
+
+    # bmb
+    call p_bmb.toString() returning l_str
+    run "echo '"||l_str||"' >> "||l_file
+
+    # ecb
+    call p_ecb.toString() returning l_str
+    run "echo '"||l_str||"' >> "||l_file
+
+    run "echo '--- end ---\n\n' >> "||l_file
+
+end function
