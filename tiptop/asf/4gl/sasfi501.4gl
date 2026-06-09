@@ -249,7 +249,7 @@
 # Modify.........: No.MOD-810188 08/03/24 By Pengu 發料時單身選項選5庫存扣已檢量時，計算已檢量未排除發料單為做廢的資料
 # Modify.........: No.MOD-7C0166 08/03/25 By Pengu 一般退料時應要一起考慮替代料
 # Modify.........: No.FUN-830132 08/03/27 By hellen 修改CALL i501_ind_icd_chk_icdqty()的方式
-# Modify.........: No.FUN-840042 08/04/15 by TSD.zeak 自訂欄位功能修改 
+# Modify.........: No.FUN-840042 08/04/15 by TSD.zeak 自訂欄位功能修改
 # Modify.........: No.MOD-840123 08/04/19 By Pengu i501_cs中有join sfs_file 但已過帳就無sfs了
 # Modify.........: No.MOD-840094 08/04/19 By Pengu 多單位寫tlf時其數量
 # Modify.........: No.MOD-840301 08/04/21 By kim 刪除後不應該出現-400的訊息
@@ -259,15 +259,15 @@
 # Modify.........: NO.CHI-860008 08/06/11 BY yiting s_del_rvbs
 # Modify.........: No.FUN-860045 08/06/12 By Nicola 批/序號傳入值修改及開窗詢問使用者是否回寫單身數量
 # Modify.........: No.CHI-860032 08/06/24 By Nicola 批/序號修改
-# Modify.........: No.FUN-870041 08/07/08 By Nicola 重覆性生產加入特性代碼                                                          
-# Modify.........: No.FUN-860014 08/07/08 By sherry 過帳不可先判斷日期,輸完再檢查                                                   
-# Modify.........: No.FUN-870106 08/07/22 By Nicola 退料時，只可退該工單所發的批/序號資料                                           
-# Modify.........: No.FUN-870097 08/07/24 By sherry 增加可修改 特性代碼(sre051) 
+# Modify.........: No.FUN-870041 08/07/08 By Nicola 重覆性生產加入特性代碼
+# Modify.........: No.FUN-860014 08/07/08 By sherry 過帳不可先判斷日期,輸完再檢查
+# Modify.........: No.FUN-870106 08/07/22 By Nicola 退料時，只可退該工單所發的批/序號資料
+# Modify.........: No.FUN-870097 08/07/24 By sherry 增加可修改 特性代碼(sre051)
 # Modify.........: No.FUN-870117 08/08/08 by ve007 倉管員拆分法料單功能，增加發料方式按制單批號生成
 # Modify.........: No.FUN-870101 08/08/29 by jamie MES整合
 # Modify.........: No.MOD-890023 08/09/04 by chenyu ICD功能修改
 # Modify.........: No.FUN-880129 08/09/05 By xiaofeizhu s_del_rvbs的傳入參數(出/入庫，單據編號，單據項次，專案編號)，改為(出/入庫，單據編號，單據項次，檢驗順序)
-# Modify.........: No.TQC-890051 08/09/24 By sherry 當g_sfp.sfp06 MATCHES '[ABC]'  時  sfq07 才可開啟  
+# Modify.........: No.TQC-890051 08/09/24 By sherry 當g_sfp.sfp06 MATCHES '[ABC]'  時  sfq07 才可開啟
 # Modify.........: No.MOD-890268 08/09/26 By claire i501_t() 欄位定義應放大含小數位
 # Modify.........: No.MOD-890271 08/09/26 By claire 刪除時,rvbs批序號傳入參數有錯
 # Modify.........: No.FUN-840012 08/09/30 By kim 確認段移到_sub
@@ -283,7 +283,7 @@
 # Modify.........: No.TQC-8A0008 08/10/02 By jamie MES原先於確認段串出，改由庫存過帳時才串
 # Modify.........: No.MOD-8A0041 08/10/07 By claire 語法調整
 # Modify.........: No.MOD-8A0150 08/10/16 By claire 過帳還原時,會將取替代料sfs27,sfs28清空
-# Modify.........: No.MOD-8A0190 08/10/22 By sherry 如果發料量>0,應發量為0或為空則不讓過     
+# Modify.........: No.MOD-8A0190 08/10/22 By sherry 如果發料量>0,應發量為0或為空則不讓過
 # Modify.........: No.MOD-8A0163 08/10/23 By chenl  若有替代料時，成套退料的判斷應換算成主料量進行判斷。
 # Modify.........: No.MOD-8A0244 08/10/28 By chenyu 成套發料過賬還原時，要考慮超領單的情況
 # Modify.........: No.MOD-8A0258 08/10/29 By claire 排除作廢單據
@@ -310,7 +310,7 @@
 # Modify.........: No.MOD-920345 09/02/27 By Pengu 使用參考單位時重新查詢時參考數量會被重新計算
 # Modify.........: No.FUN-930106 09/03/20 By destiny sfp11增加管控
 # Modify.........: No.CHI-940010 09/04/08 By hellen 修改SELECT ima或者imaicd欄位卻未JOIN相關表的問題
-# Modify.........: No.MOD-940136 09/04/10 By Dido AFTER FIELD sfs04 若 sfs09 為 null 請給予 ' ' 
+# Modify.........: No.MOD-940136 09/04/10 By Dido AFTER FIELD sfs04 若 sfs09 為 null 請給予 ' '
 # Modify.........: No.TQC-940138 09/05/19 By sherry 未檢查作業編號是否存在于工單單身，導致無法過賬
 # Modify.........: No.MOD-940387 09/05/19 By Pengu 倉庫可用否應考慮是否為發料狀態
 # Modify.........: No.MOD-950106 09/05/19 By Pengu 再發料單做取替代時，會出現未建取替代資料的訊息
@@ -321,18 +321,18 @@
 # Modify.........: No.FUN-940039 09/05/25 By dongbg GP5.2發料改善
 #                                修改內容 1:若參數設定不控管套數,則第一單身的套數可輸入0,即為補料,
 #                                           否則不可等于0,補料時對于欠料量的計算不可直接抓工單單身字段,需推算,
-#                                           邏輯與工單單身推算邏輯一致  
+#                                           邏輯與工單單身推算邏輯一致
 # Modify.........: No.FUN-940008 09/05/27 By hongmei 發料改善
 # Modify.........: No.FUN-950021 09/05/31 By Carrier 組合拆解
-# Modify.........: No.MOD-950232 09/06/01 By mike 調整MOD-910166修改的程式段有用imd11判斷是否為可用倉的程式段，均須還原不做控管 
+# Modify.........: No.MOD-950232 09/06/01 By mike 調整MOD-910166修改的程式段有用imd11判斷是否為可用倉的程式段，均須還原不做控管
 # Modify.........: No.FUN-960007 09/06/03 By chenmoyan global檔內沒有定義rowid變量
 # Modify.........: No.TQC-960373 09/06/25 By sherry 作業編號開窗的時候需要根據工單編號過濾
 # Modify.........: No.FUN-950088 09/07/01 By hongmei add sfa36,mse02
 # Modify.........: No.MOD-930195 09/03/18 By chenyu 發料時，單身選擇取替代，料件編號開窗應該帶出在abmi600中維護好的取替代料號
 # Modify.........: No.MOD-930181 09/07/28 By sherry 如果使用工單＋作業編號發料，那麼第一次成套發料是可以的，第二次就找不到工單號，如果手工輸入又可以
 # Modify.........: No.TQC-940078 09/07/28 By sherry 修改發料數量，點確定，在檢量沒有更新
-# Modify.........: No.MOD-940404 09/07/28 By sherry 刪除時，會出現工單單頭已發套數大于0，狀態卻是2.發放的情況 
-# Modify.........: No.TQC-980097 09/08/14 By sherry 應根據作業編號發料  
+# Modify.........: No.MOD-940404 09/07/28 By sherry 刪除時，會出現工單單頭已發套數大于0，狀態卻是2.發放的情況
+# Modify.........: No.TQC-980097 09/08/14 By sherry 應根據作業編號發料
 # Modify.........: No.FUN-980008 09/08/17 By TSD.apple    GP5.2架構重整，修改 INSERT INTO 語法
 # Modify.......... No.FUN-930062 09/08/20 By lutingting單據刪除時要更新rvu16為NULL
 # Modify.........: No.FUN-980030 09/08/31 By Hiko 加上GP5.2的相關設定
@@ -347,7 +347,7 @@
 # Modify.........: No.MOD-9A0123 09/10/30 By lilingyu 錄入一筆替代資料后,確定,再次進入單身,料號欄位報錯:替代料和被替代料相同
 # Modify.........: No.TQC-9A0194 09/10/30 By kim GP5.2發料改善
 # Modify.........: No.CHI-980013 09/11/02 By jan 發料/退料/補料 時 除了消耗性料件，X:資訊參考 也不可以
-# Modify.........: No:CHI-990049 09/11/03 By Smapmin "單身全部刪除再重新產生"時,若選擇"不自動產生"也要將單身資料刪掉 
+# Modify.........: No:CHI-990049 09/11/03 By Smapmin "單身全部刪除再重新產生"時,若選擇"不自動產生"也要將單身資料刪掉
 # Modify.........: No:CHI-9B0005 09/11/05 BY liuxqa substr 修改。
 # Modify.........: No:MOD-980241 09/11/12 By sabrina 刪除套數單身時應檢查刪除工單是否存在發料單身中
 # Modify.........: No:MOD-980243 09/11/12 By sabrina 調整MOD-910167的修改
@@ -376,7 +376,7 @@
 # Modify.........: No:MOD-9C0009 09/12/12 By Pengu 判斷倉儲批若為null時則須給' '值
 # Modify.........: No:TQC-9C0174 09/12/28 By sherry 在asfi510 asfi520里面維護的批序號內容,在asfi511 asfi526等作業里面查不到
 # Modify.........: No:FUN-9C0073 10/01/04 By chenls 程序精簡
-# Modify.........: No:CHI-A10016 10/01/18 By Dido 調整 s_lotout transcation 架構 
+# Modify.........: No:CHI-A10016 10/01/18 By Dido 調整 s_lotout transcation 架構
 # Modify.........: No:FUN-9C0040 10/01/29 By jan 工單發料/領料/超領，要排除掉來源特性="S:回收料"的料件,工單退料要可以打來源特性="S:回收料"的料件
 # Modify.........: No:FUN-9B0098 10/02/24 by tommas delete cl_doc
 # Modify.........: No:MOD-A30070 10/03/12 By lilingyu 一張工單,按非作業編號(編號為空)全部發料,然后按作業編號全部退料,
@@ -387,9 +387,9 @@
 # Modify.........: No:TQC-A30108 10/03/22 By lilingyu 成套發料時(工單有2筆備料,其中一個備料已發料完畢,另一筆未發)
 # ...................................................  開窗選擇"工單單號"有資料,直接錄入單號后帶出的發料套數為0，check發現sql
 # ................................................... 未選出資料,其實應該有一筆資料
-# Modify.........: No:TQC-A30112 10/03/23 By lilingyu 錄入時,單身欄位"sfs03"開窗時,應該排除已經結案的工單 
+# Modify.........: No:TQC-A30112 10/03/23 By lilingyu 錄入時,單身欄位"sfs03"開窗時,應該排除已經結案的工單
 # Modify.........: No:FUN-A20048 10/03/25 By liuxqa 增加工单备置。
-# Modify.........: No:FUN-A20044 10/03/19 by dxfwo  於 GP5.2 Single DB架構中，因img_file 透過view 會過濾Plant Code，因此會造 
+# Modify.........: No:FUN-A20044 10/03/19 by dxfwo  於 GP5.2 Single DB架構中，因img_file 透過view 會過濾Plant Code，因此會造
 #                                                 成 ima26* 角色混亂的狀況，因此对ima26的调整
 # Modify.........: No:TQC-A30120 10/04/09 By liingyu 工單領退料維護作業,錄入時,增加默認帶出倉庫和庫位;退料量sfs05控管不可以為0
 # Modify.........: No:FUN-A40023 10/04/13 By dxfwo 過單
@@ -399,8 +399,8 @@
 # Modify.........: No.FUN-A40053 10/04/21 By liuxqa 工单备置-改善
 # Modify.........: No.FUN-A40058 10/04/27 By lilingyu sfs26替代碼增加規格替代的內容
 # Modify.........: No:MOD-A50001 10/05/03 By Sarah 在判斷庫存量是否足夠時須考慮轉換率
-# Modify.........: No:FUN-A40055 10/05/05 By destiny 单身显示及construct改dialog写法息 
-# Modify.........: No:TQC-A50033 10/05/13 By destiny 修改部门栏位无资料时报错信息 
+# Modify.........: No:FUN-A40055 10/05/05 By destiny 单身显示及construct改dialog写法息
+# Modify.........: No:TQC-A50033 10/05/13 By destiny 修改部门栏位无资料时报错信息
 # Modify.........: No:MOD-A50110 10/05/17 By Sarah 增加g_wc5,記錄g_wc3轉換成sfe_file欄位的條件
 # Modify.........: No:TQC-A50063 10/05/19 By destiny 当系统参数未勾选库存不足可以发料时，noqty,short_data就不应该预设为Y
 # Modify.........: No:TQC-A50101 10/05/21 By lilingyu 計算t_short_qty時,出現NULL值
@@ -419,19 +419,19 @@
 # Modify.........: No:MOD-A20007 10/08/03 By Pengu 產生調撥單後系統產生出沒有內容的報表資料
 # Modify.........: No:MOD-A20001 10/08/03 By Pengu 控管發料套數的地方，未排除作廢的單據
 # Modify.........: No:TQC-A70090 10/08/12 By yinhy 右邊的功能鈕呈現btn_01等形式。
-# Modify.........: No:MOD-A80031 10/08/31 By sabrina 第二單身「在檢量」，應該不能包含自己現行的單據 
+# Modify.........: No:MOD-A80031 10/08/31 By sabrina 第二單身「在檢量」，應該不能包含自己現行的單據
 # Modify.........: No.FUN-A90035 10/09/20 By vealxu sfp08的開窗和欄位檢查，加上sfd.確認碼='Y'
 # Modify.........: No:FUN-A30093 10/09/30 By jan 程式還原
-# Modify.........: No:MOD-A90193 10/10/01 By sabrina 退料時不需考慮倉庫庫存量 
+# Modify.........: No:MOD-A90193 10/10/01 By sabrina 退料時不需考慮倉庫庫存量
 # Modify.........: No:FUN-AA0007 10/10/12 By jan 若輸入的批號之idc17='Y',則控卡不可輸入
 # Modify.........: No:MOD-AA0123 10/10/21 By sabrina 成套發/退料，套數不可輸入0套
 # Modify.........: No.FUN-A40022 10/10/25 By jan 退料入庫的批號只能與發料單相同的批號,且數量不可大于該批號于發料單發出的批號
 # Modify.........: No:MOD-AA0142 10/10/25 By sabrina (1)若發退料方式選擇(2)時則需判斷該倉庫庫存量是否足夠發料，
-#                                                       當noqty='N'且庫存量不足時，則單身不產生資料 
-#                                                       當noqty='Y'且庫存量不足時，則該倉庫顯示"欠料" 
-# Modify.........: No.FUN-AA0059 10/10/29 By chenying 料號開窗控管 
+#                                                       當noqty='N'且庫存量不足時，則單身不產生資料
+#                                                       當noqty='Y'且庫存量不足時，則該倉庫顯示"欠料"
+# Modify.........: No.FUN-AA0059 10/10/29 By chenying 料號開窗控管
 # Modify.........: No.FUN-AA0059 10/10/29 By huangtao 修改料號AFTER FIELD的管控
-# Modify.........: No.TQC-AB0009 10/11/02 By destiny checkno时缺少条件 
+# Modify.........: No.TQC-AB0009 10/11/02 By destiny checkno时缺少条件
 # Modify.........: No.FUN-AB0018 10/11/03 By zhangll 仓库营运中心控管
 # Modify.........: No.MOD-AB0047 10/11/04 By lilingyu l_per長度定義過短,導致後續計算出錯
 # Modify.........: No.FUN-AB0021 10/11/05 By shiwuying s_chk_item_no时缺少条件
@@ -444,7 +444,7 @@
 # Modify.........: No.TQC-AB0223 10/12/02 By huangtao 發料前調撥作業生成的調撥單生成的imm12欄位未賦值或為清空
 # Modify.........: No:TQC-AC0125 10/12/10 By zhangll 修改slk作業錄入死循環問題
 # Modify.........: No:TQC-AC0151 10/12/14 By chenying 單身輸入倉庫時,流通業才控管倉庫是否屬於當前門店
-# Modify.........: No:TQC-AB0098 10/12/15 By destiny 当前仓库不存在当前料件且不为vmi仓时报错不准确 
+# Modify.........: No:TQC-AB0098 10/12/15 By destiny 当前仓库不存在当前料件且不为vmi仓时报错不准确
 # Modify.........: No:TQC-AC0197 10/12/16 By lixh1   增加"倉庫批修改"ACTION
 # Modify.........: No:MOD-AC0336 10/12/28 By jan 重抓製程料號
 # Modify.........: No:MOD-B10201 11/01/25 By sabrina 若發料料號有取替代，被取代料號剛好是另一個備料料號時，會出現-284錯誤訊息
@@ -453,10 +453,10 @@
 # Modify.........: No.TQC-B30021 11/03/03 By destiny q_short_qry缺少接收参数
 # Modify.........: No.FUN-A60034 11/03/08 By Mandy 因aimt324 新增EasyFlow整合功能影響INSERT INTO imm_file
 # Modify.........: No:FUN-A70104 11/03/08 By Mandy [EF簽核] aimt324影響程式簽核欄位default
-# Modify.........: No:MOD-B30148 11/03/11 By lixh1 調整為所有類型的發退料單都要可以執行"修改倉儲批" 
-# Modify.........: No:MOD-B30702 11/03/31 By destiny 退料单时发料料号如果有回收料则先抓回收料    
+# Modify.........: No:MOD-B30148 11/03/11 By lixh1 調整為所有類型的發退料單都要可以執行"修改倉儲批"
+# Modify.........: No:MOD-B30702 11/03/31 By destiny 退料单时发料料号如果有回收料则先抓回收料
 # Modify.........: No:FUN-B20079 11/04/02 By shenyang 修改製成序，製成段號，作業編號邏輯
-# Modify.........: No:FUN-B20009 11/04/07 By lixh1 增加對sfs012,sfs013的賦值   
+# Modify.........: No:FUN-B20009 11/04/07 By lixh1 增加對sfs012,sfs013的賦值
 # Modify.........: No:FUN-AC0074 11/04/12 By lixh1 移除發料單自動產生單身的開窗選項"備置發料選項"及超領時asfi501a_1開窗
 # Modify.........: No:FUN-AC0074 11/04/13 By destiny 當備料檔中既有按作業編號生產料件，也有不按作業編號生產的料件，則發料時發料套數的計算會多算一次
 # Modify.........: No:MOD-B30647 11/03/22 By sabrina 退料時，退料套數超過應退量，但按放棄後卻將輸入的數值寫入資料庫
@@ -492,7 +492,7 @@
 # Modify.........: No:MOD-BA0017 11/10/09 By johung 成套退時退料套數不可為0加上提示訊息
 # Modify.........: No:FUN-BA0050 11/10/10 By lixh1 所有入庫程式應該要加入可以依料號設置"批號(倉儲批的批)是否為必要輸入欄位"的選項
 # Modify.........: No:MOD-BA0078 11/10/12 By johung 成套退時退料套數應可以是 已發料-入庫量+誤差
-# Modify.........: No:MOD-BA0193 11/10/28 By destiny 回收料退料时应单独考虑期可入库数量     
+# Modify.........: No:MOD-BA0193 11/10/28 By destiny 回收料退料时应单独考虑期可入库数量
 # Modify.........: No:FUN-B80093 11/10/31 By pauline 增加VMI判斷
 # Modify.........: No:TQC-B90236 11/11/03 By yuhuabao 1.原執行s_lotout_del程式段Mark，改為s_lot_del，傳入參數不變
 #                                                     2.原於_r()中，使用FOR迴圈執行s_del_rvbs程式段Mark，改為s_lot_del，傳入參數同上,但第三個參數(項次)傳""
@@ -502,14 +502,14 @@
 #                                                     6.單身新增Action"配方替代"
 # Modify.........: No.MOD-BB0307 11/11/28 By ck2yuan 替代時，帶出應發量sfa05與已發量sfa06
 # Modify.........: No.FUN-BA0058 11/11/28 By jason 一批號多DATECODE功能
-# Modify.........: No.FUN-BB0084 11/12/09 By lixh1 增加數量欄位小數欄位取位(imn_file & sfs_file) 
+# Modify.........: No.FUN-BB0084 11/12/09 By lixh1 增加數量欄位小數欄位取位(imn_file & sfs_file)
 # Modify.........: No.MOD-B80013 11/12/21 By Vampire 若 sfp06='4' and sfa='E' 時則不控卡asf-462
 # Modify.........: No:MOD-B80138 11/12/21 By Vampire 退料量不應計算為在撿量，在501_chk_img()的sum(sfs05)where條件加上sfp06 IN ('1','2','3','4','A','C')
 # Modify.........: No.MOD-B80111 11/12/21 By Vampire 工單備料檔無先對料件做取替代，在發料時無法做料件取替代。
 # Modify.........: No.FUN-BC0060 11/12/29 By zhangll 修改當參數設置發料套數控管時，有按作業編號發料，發料套數異常的問題
 # Modify.........: No:MOD-C10021 12/01/04 By ck2yuan AFTER FIELD sfs10 sqltqry參數修改
 # Modify.........: No:MOD-C10081 12/01/10 By ck2yuan 修改g_c[35]計算,控卡tm.wo_w需為WIP倉
-# Modify.........: No:MOD-C10100 12/01/11 By lilingyu 因正式區sma32未增加好，暫MARK FUN-B80093，待後續還原 
+# Modify.........: No:MOD-C10100 12/01/11 By lilingyu 因正式區sma32未增加好，暫MARK FUN-B80093，待後續還原
 # Modify.........: No:TQC-C10033 12/01/11 By lilingyu 還原MOD-C10100 MARK的部分
 # Modify.........: No.CHI-BC0040 12/01/12 By ck2yuan 畫面單身新增替代率,被替代料料號拉到發料料號前面
 # Modify.........: No:MOD-B80306 12/01/30 By Vampire MOD-B20062在sql應排除作廢的單據(sfpconf!='X')
@@ -583,13 +583,13 @@
 # Modify.........: No.FUN-D20060 13/02/22 By minpp 設限倉庫控卡
 # Modify.........: No:MOD-D30037 13/03/06 By bart 1.修改單身沒輸入替代碼時，發料料號會等於被替代料號2.若輸入替代碼時，作業編號必輸，但不走製程
 # Modify.........: No:CHI-C50011 13/03/08 By Alberti 當替代碼為空時,被替代料應不可輸入,在輸入sfs04時自動預設帶出被替代料
-#                                                    一併修改 TQC-C70050 
-# Modify.........: No:MOD-C80213 13/03/08 By Alberti 判斷sfs012,sfs013是否給預設值前,應先給sfa012,sfa013再做判斷 
+#                                                    一併修改 TQC-C70050
+# Modify.........: No:MOD-C80213 13/03/08 By Alberti 判斷sfs012,sfs013是否給預設值前,應先給sfa012,sfa013再做判斷
 # Modify.........: No:FUN-D30024 13/03/12 By fengrui 負庫存依據imd23判斷
 # Modify.........: No:MOD-D30121 13/03/15 By Alberti 有輸入作業編號時，應以此作業編號之最小發料套數為已發數量
 # Modify.........: No.MOD-D30125 13/03/15 By Alberti 1.已發數量應去發料檔中看此作業變號最小發料套數 2. 除了第一站外，其餘不回寫工單單頭套數
 # Modify.........: No.DEV-D30026 13/03/19 By Nina GP5.3 追版:DEV-D10021、DEV-D30019為GP5.25 的單號
-# Modify.........: No:MOD-D30207 13/03/25 By ck2yuan 產生調撥時，會更新發料單的儲批序，但批號會清掉        
+# Modify.........: No:MOD-D30207 13/03/25 By ck2yuan 產生調撥時，會更新發料單的儲批序，但批號會清掉
 # Modify.........: No:CHI-D30038 13/03/25 By bart sfp06 MATCHES '[2479C]'隱藏刪除單身全部資料按鈕
 # Modify.........: No:TQC-D40001 13/04/01 By fengrui 滿足負庫存條件,新倉儲批寫入img_file
 # Modify.........: No.DEV-D30059 13/04/01 By Nina 批序號相關程式,當料件使用條碼時(ima930 = 'Y'),輸入資料時,
@@ -605,7 +605,7 @@
 # Modify.........: No.MOD-D60165 13/06/19 By suncx 刪除自動產生的第二單身資料後，手動錄入不走BEFORE INSERT
 # Modify.........: No.MOD-D60189 13/06/24 By yuhuabao asfi511 第二單身 發料量應該允許輸入0.
 # Modify.........: No.MOD-D60001 13/06/27 By fengmy 查询多仓库资料,增加传参
-# Modify.........: No.MOD-D60177 13/06/28 By suncx 當依據工單備料單身設置倉庫產生發料單身時，如工單未設置倉庫則排除 
+# Modify.........: No.MOD-D60177 13/06/28 By suncx 當依據工單備料單身設置倉庫產生發料單身時，如工單未設置倉庫則排除
 # Modify.........: No:FUN-D40103 13/05/08 By lixh1 增加儲位有效性檢查
 # Modify.........: No:TQC-D50124 13/05/28 By lixh1 拿掉儲位有效性檢查
 # Modify.........: No:MOD-D60027 13/06/04 By Alberti 退料量之修改
@@ -629,10 +629,10 @@
 # Modify.........: No.2022032401 22/03/24 By jc SCM抛转单据限定日期后不可修改
 
 DATABASE ds
- 
+
 GLOBALS "../../config/top.global"
 GLOBALS "../4gl/sasfi501.global"
- 
+
 DEFINE g_ima918     LIKE ima_file.ima918       #No.FUN-810036
 DEFINE g_ima921     LIKE ima_file.ima921       #No.FUN-810036
 DEFINE g_ima930     LIKE ima_file.ima930       #DEV-D30040 add
@@ -643,7 +643,7 @@ DEFINE g_sfs27      LIKE sfs_file.sfs27        #MOD-9A0123
 DEFINE g_sfs012     LIKE sfs_file.sfs012       #FUN-A50066
 DEFINE g_sfs013     LIKE sfs_file.sfs013       #FUN-A50066
 DEFINE g_ima23      LIKE ima_file.ima23        #TQC-9C0195 add
-DEFINE g_sfq02      LIKE sfq_file.sfq02        #TQC-A30108  
+DEFINE g_sfq02      LIKE sfq_file.sfq02        #TQC-A30108
 DEFINE g_wm         LIKE type_file.chr1        #TQC-AC0197
 DEFINE g_laststage  LIKE type_file.chr1        #FUN-AB0001 add
 DEFINE g_chr2       LIKE type_file.chr1        #FUN-AB0001 add
@@ -682,7 +682,7 @@ DEFINE g_sfp_l DYNAMIC ARRAY OF RECORD
                   sfp15   LIKE sfp_file.sfp15
                END RECORD
 DEFINE l_ac2    LIKE type_file.num5
-DEFINE g_rec_b2 LIKE type_file.num5  
+DEFINE g_rec_b2 LIKE type_file.num5
 DEFINE g_action_flag   STRING
 DEFINE   w    ui.Window
 DEFINE   f    ui.Form
@@ -692,7 +692,7 @@ DEFINE g_rec_b1     LIKE type_file.num5,          #單身二筆數 ##FUN-B30170
        l_ac1        LIKE type_file.num5           #目前處理的ARRAY CNT  #FUN-B30170
 DEFINE g_sfs06_t    LIKE sfs_file.sfs06           #FUN-BB0084
 DEFINE g_sfs30_t    LIKE sfs_file.sfs30           #FUN-BB0084
-DEFINE g_sfs33_t    LIKE sfs_file.sfs33           #FUN-BB0084 
+DEFINE g_sfs33_t    LIKE sfs_file.sfs33           #FUN-BB0084
 #FUN-B30170 add -end---------------------------
 #FUN-C70014 add begin--------------------
 DEFINE g_multi_sfq014 DYNAMIC ARRAY OF RECORD
@@ -703,32 +703,32 @@ DEFINE g_multi_sfq014 DYNAMIC ARRAY OF RECORD
          END RECORD
 #FUN-C70014 add end ---------------------
 #DEFINE g_sma894     LIKE type_file.chr1           #FUN-C80107 #FUN-D30024 mark
-DEFINE g_imd23      LIKE type_file.chr1           #FUN-D30024 add 
-         
+DEFINE g_imd23      LIKE type_file.chr1           #FUN-D30024 add
+
 FUNCTION i501(p_argv1, p_argv2, p_argv3, p_argv4)
    DEFINE p_argv1       LIKE type_file.chr1         #No.FUN-680121 VARCHAR(1)# 1.發料 2.退料
    DEFINE p_argv2       LIKE type_file.chr1         #No.FUN-680121 VARCHAR(1)# 1.發料 2.退料
    DEFINE p_argv3       LIKE sfp_file.sfp01         # 發料單號 #MOD-580252
    DEFINE p_argv4       STRING                      # 功能 FUN-660166
    DEFINE l_i           LIKE type_file.num5         #FUN-510029  #No.FUN-680121 SMALLINT
- 
+
     WHENEVER ERROR CONTINUE                         #忽略一切錯誤
- 
+
     CALL i501_mu_ui()
     #str----add  by guanyao160904
-    IF p_argv2 ='4' AND p_argv1 = '1' THEN 
+    IF p_argv2 ='4' AND p_argv1 = '1' THEN
        CALL cl_set_act_visible("upd_sfpud04",TRUE)
-    ELSE 
+    ELSE
        CALL cl_set_act_visible("upd_sfpud04",FALSE)
     END IF
-    #str----add  by guanyao160904 
+    #str----add  by guanyao160904
     #str-----add by huanglf161130
     CALL cl_set_act_visible("i501_sel_from_work",FALSE)
     IF g_prog = 'asfi512' THEN
        CALL cl_set_act_visible("i501_sel_from_work",TRUE)
     END IF
     #str-----end by huanglf161130
-    call cl_set_act_visible("stock_batch",false) #add darcy:2024/01/22 
+    call cl_set_act_visible("stock_batch",false) #add darcy:2024/01/22
     IF p_argv2 MATCHES '[ABC]' THEN
        CALL cl_set_comp_visible("sfp08,sfp09,sfp10,sfb05,sfa05,sfa06,sfs10",FALSE)
        CALL cl_getmsg('asr-006',g_lang) RETURNING g_msg
@@ -739,12 +739,12 @@ FUNCTION i501(p_argv1, p_argv2, p_argv3, p_argv4)
        CALL cl_set_comp_required("sfq04",TRUE)
        CALL cl_set_comp_entry("sfq05,sfq03",TRUE)
        CALL cl_set_act_visible("gen_transfer_note,qry_issue_item",FALSE)
-       CALL cl_set_comp_visible("sfs27",FALSE) #FUN-940039 add 
+       CALL cl_set_comp_visible("sfs27",FALSE) #FUN-940039 add
        CALL cl_set_comp_visible("sfq08",FALSE) #FUN-940008 add
     ELSE
        CALL cl_set_comp_visible("sfp11,azf03,sfq05",FALSE) #FUN-630084 add sfp11,azf03
-       CALL cl_set_comp_visible("sfs27",TRUE) #FUN-940039 add 
-       CALL cl_set_comp_visible("sfq08",TRUE) #FUN-940008 add 
+       CALL cl_set_comp_visible("sfs27",TRUE) #FUN-940039 add
+       CALL cl_set_comp_visible("sfq08",TRUE) #FUN-940008 add
     END IF
     #darcy:2025/02/12 add s---
     if g_prog == 'asfi512' then
@@ -754,9 +754,9 @@ FUNCTION i501(p_argv1, p_argv2, p_argv3, p_argv4)
     end if
     #darcy:2025/02/12 add e---
     call cl_set_act_visible("stock_post_admin",false) #darcy:2024/09/23 add
-    IF g_aza.aza115 ='Y' THEN                  #FUN-CB0087 add 
+    IF g_aza.aza115 ='Y' THEN                  #FUN-CB0087 add
        CALL cl_set_comp_required('sfs37',TRUE) #FUN-CB0087 add
-    END IF 
+    END IF
     IF p_argv2 MATCHES '[C]' THEN
        CALL cl_set_comp_required("sfq05",FALSE)
        CALL cl_set_act_visible("regen_detail",FALSE)
@@ -766,13 +766,13 @@ FUNCTION i501(p_argv1, p_argv2, p_argv3, p_argv4)
        CALL cl_set_act_visible("regen_detail",FALSE)
     END IF
     #CHI-D30038---end
-#FUN-B20095 -----------------Begin---------------------    
+#FUN-B20095 -----------------Begin---------------------
     IF g_sma.sma541 = 'Y'  THEN
-       CALL cl_set_comp_visible("sfq012,ecm014",TRUE)  
+       CALL cl_set_comp_visible("sfq012,ecm014",TRUE)
     ELSE
-       CALL cl_set_comp_visible("sfq012,ecm014",FALSE)   
-    END IF 
-#FUN-B20095 -----------------End-----------------------    
+       CALL cl_set_comp_visible("sfq012,ecm014",FALSE)
+    END IF
+#FUN-B20095 -----------------End-----------------------
     IF g_aaz.aaz90='Y' THEN
        CALL cl_set_comp_required("sfp07",TRUE)
        IF (NOT p_argv2 MATCHES '[ABC]') OR (cl_null(p_argv2)) THEN
@@ -781,34 +781,34 @@ FUNCTION i501(p_argv1, p_argv2, p_argv3, p_argv4)
     END IF
     CALL cl_set_comp_visible("sfs930,gem02c",g_aaz.aaz90='Y')
 
-    IF NOT cl_null(p_argv2) THEN 
-       IF NOT (g_sma.sma118 = 'Y' AND p_argv2 MATCHES '[ABC]' )THEN  
-          CALL cl_set_comp_visible('sfq07',FALSE) 
+    IF NOT cl_null(p_argv2) THEN
+       IF NOT (g_sma.sma118 = 'Y' AND p_argv2 MATCHES '[ABC]' )THEN
+          CALL cl_set_comp_visible('sfq07',FALSE)
        END IF
     ELSE
-       CALL cl_set_comp_visible('sfq07',FALSE)    
+       CALL cl_set_comp_visible('sfq07',FALSE)
     END IF
-    
+
     IF g_sma.sma129='N' THEN
        CALL cl_set_comp_visible("sfq08",TRUE)
-    ELSE 
+    ELSE
        CALL cl_set_comp_visible("sfq08",FALSE)
-    END IF 
-    	     
+    END IF
+
 #FUN-A60028 --begin--
-    IF g_sma.sma541 = 'Y' THEN 
+    IF g_sma.sma541 = 'Y' THEN
        CALL cl_set_comp_visible("sfs012,sfs013,ecu014",TRUE)
     ELSE
-       CALL cl_set_comp_visible("sfs012,sfs013,ecu014",FALSE)   
-    END IF 
+       CALL cl_set_comp_visible("sfs012,sfs013,ecu014",FALSE)
+    END IF
 #FUN-A60028 --end--
 #FUN-C70014 add begin--------------
-    IF p_argv2 <> 'D' THEN 
+    IF p_argv2 <> 'D' THEN
        CALL cl_set_comp_visible("sfs014,sfq014",FALSE)
     ELSE
        CALL cl_set_comp_visible("sfs014,sfq014",TRUE)
     END IF
-#FUN-C70014 add end----------------    
+#FUN-C70014 add end----------------
 #MOD-B30148 --------------------Begin--------------------------
 #TQC-AC0197 --------------------Begin--------------------------
 #   IF g_sma.sma129 = 'N' THEN
@@ -818,10 +818,10 @@ FUNCTION i501(p_argv1, p_argv2, p_argv3, p_argv4)
 #         CALL cl_set_act_visible("warahouse_modify",FALSE)
 #      END IF
 #   ELSE
-#      IF p_argv2  MATCHES '[38]' THEN 
+#      IF p_argv2  MATCHES '[38]' THEN
 #         CALL cl_set_act_visible("warahouse_modify",TRUE)
 #      ELSE
-#         CALL cl_set_act_visible("warahouse_modify",FALSE) 
+#         CALL cl_set_act_visible("warahouse_modify",FALSE)
 #      END IF
 #   END IF
 #TQC-AC0197 --------------------End----------------------------
@@ -839,36 +839,36 @@ FUNCTION i501(p_argv1, p_argv2, p_argv3, p_argv4)
 
     #str---mark by guanyao160822
     #str---add by jixf 160809
-    #IF g_prog='asfi511' THEN 
+    #IF g_prog='asfi511' THEN
     #   CALL cl_set_comp_visible("sfpud02",TRUE)
-    #ELSE 
+    #ELSE
     #   CALL cl_set_comp_visible("sfpud02",FALSE)
-    #END IF 
+    #END IF
     #end---add by jixf 160809
-    IF g_prog='asfi511' THEN 
+    IF g_prog='asfi511' THEN
        CALL cl_set_comp_visible("sfpud03",TRUE)
-    ELSE 
+    ELSE
        CALL cl_set_comp_visible("sfpud03",FALSE)
-    END IF 
+    END IF
     #str---mark by guanyao160822
     LET g_wc2 =' 1=1'
     LET g_wc3 =' 1=1'
     LET g_wc5 =' 1=1'      #MOD-A50110 add
- 
+
     LET g_forupd_sql = "SELECT * FROM sfp_file WHERE sfp01 = ? FOR UPDATE"           #09/10/21 xiaofeizhu Add
     LET g_forupd_sql = cl_forupd_sql(g_forupd_sql)
     DECLARE i501_cl CURSOR FROM g_forupd_sql
- 
+
     LET g_argv1 = p_argv1
     LET g_argv2 = p_argv2
     LET g_argv3 = p_argv3
     LET g_argv4 = p_argv4       #No.FUN-660166
     LET g_sfs27 = NULL          #MOD-9A0123
- 
+
     SELECT * INTO g_sma.* FROM sma_file WHERE sma00 = '0'
- 
+
     LET g_ask_post='Y'
- 
+
     #FUN-AB0001--add--str---
     IF fgl_getenv('EASYFLOW') = "1" THEN    #判斷是否為簽核模式
        LET g_argv3 = aws_efapp_wsk(1)       #取得單號
@@ -910,19 +910,20 @@ FUNCTION i501(p_argv1, p_argv2, p_argv3, p_argv4)
     CALL aws_efapp_flowaction("insert, modify, delete, detail, query, locale, void,undo_void,     #CHI-D20010 add--undo_void                               confirm, undo_confirm, stock_post, undo_post, easyflow_approval,                                sets, gen_transfer_note, reproduce, regen_detail, s_icdout, exporttoexcel, modi_lot, warahouse_modify, barcode_qty_allot")    #DEV-D30026 add barcode_qty_allot
           RETURNING g_laststage
     #FUN-AB0001---add---end---
- 
+
     IF g_ask_post='Y' THEN
+       call cl_set_act_visible('action_stock_post',false) #darcy add
        CALL i501_menu()
     END IF
- 
+
 END FUNCTION
- 
+
 FUNCTION i501_cs()
 DEFINE l_buf   LIKE type_file.chr1000 #No.FUN-680121 VARCHAR(600)
 DEFINE l_length,l_i LIKE type_file.num5    #No.FUN-680121 SMALLINT
 DEFINE lc_qbe_sn       LIKE    gbm_file.gbm01    #No.FUN-580031  HCN
-DEFINE l_buf_rpl    STRING    #FUN-B70061        
- 
+DEFINE l_buf_rpl    STRING    #FUN-B70061
+
   IF cl_null(g_argv3) THEN
     CLEAR FORM                             #清除畫面
     CALL g_sfq.clear()
@@ -933,11 +934,11 @@ DEFINE l_buf_rpl    STRING    #FUN-B70061
 #    CONSTRUCT BY NAME g_wc ON                     # 螢幕上取單頭條件
 #        sfp01,sfp02,sfp03,sfp06,sfp07,sfp08,sfp05,sfpconf, #FUN-660106
 #        sfp04,sfp09,sfp10,sfp11, #FUN-630084 add sfp11
-#        sfpuser,sfpgrup,sfpmodu,sfpdate 
+#        sfpuser,sfpgrup,sfpmodu,sfpdate
 #        ,sfpud01,sfpud02,sfpud03,sfpud04,sfpud05,
 #        sfpud06,sfpud07,sfpud08,sfpud09,sfpud10,
 #        sfpud11,sfpud12,sfpud13,sfpud14,sfpud15
-# 
+#
 #               BEFORE CONSTRUCT
 #                  CALL cl_qbe_init()
 #        ON ACTION controlp
@@ -977,46 +978,46 @@ DEFINE l_buf_rpl    STRING    #FUN-B70061
 #                       CALL cl_init_qry_var()
 #                       LET g_qryparam.form ="q_azf01a"                      #No.FUN-930106
 #                       LET g_qryparam.default1 = g_sfp.sfp11,'2'
-#                       IF g_argv1='1' THEN 
+#                       IF g_argv1='1' THEN
 #                          LET g_qryparam.arg1 = "C"
 #                       ELSE
 #                          LET g_qryparam.arg1 = "E"
-#                       END IF 
+#                       END IF
 #                       LET g_qryparam.state = "c"
 #                       CALL cl_create_qry() RETURNING g_qryparam.multiret
 #                    END IF
 #                    DISPLAY g_qryparam.multiret TO sfp11
 #                    NEXT FIELD sfp11
 #            END CASE
-# 
+#
 #       ON IDLE g_idle_seconds
 #          CALL cl_on_idle()
 #          CONTINUE CONSTRUCT
-# 
+#
 #                 ON ACTION qbe_select
 #		   CALL cl_qbe_list() RETURNING lc_qbe_sn
 #		   CALL cl_qbe_display_condition(lc_qbe_sn)
 #    END CONSTRUCT
-# 
+#
 #    IF INT_FLAG THEN RETURN END IF
-# 
+#
 #    LET g_wc = g_wc CLIPPED,cl_get_extra_cond('sfpuser', 'sfpgrup')
-# 
-# 
+#
+#
 #    IF g_argv1='1' THEN
 #       LET g_wc = g_wc clipped," AND sfp06 IN ('1','2','3','4','A','C')" #FUN-5C0114 add AC
 #    ELSE
 #       LET g_wc = g_wc clipped," AND sfp06 IN ('6','7','8','9','B')" #FUN-5C0114 add B
 #    END IF
-# 
+#
 #    IF g_argv2 <> ' ' THEN
 #       LET g_wc = g_wc clipped," AND sfp06 MATCHES '",g_argv2,"'"
 #    END IF
-# 
+#
 #    ##組合拆解的工單發料不顯示出來!
 #    LET g_wc = g_wc CLIPPED,
 #               " AND sfp01[1,",g_doc_len,"] NOT IN (SELECT smy70 FROM smy_file WHERE smy70 IS NOT NULL) "   #CHI-9B0005 mod
-# 
+#
 #    CONSTRUCT g_wc2 ON sfq02,sfq04,sfq05,sfq07,sfq08,sfq03  #FUN-870097 add sfq07 #FUN-5C0114 add sfq05 #FUN-940008 add sfq08
 #              ,sfqud01,sfqud02,sfqud03,sfqud04,sfqud05,
 #              sfqud06,sfqud07,sfqud08,sfqud09,sfqud10,
@@ -1025,7 +1026,7 @@ DEFINE l_buf_rpl    STRING    #FUN-B70061
 #              ,s_sfq[1].sfqud01,s_sfq[1].sfqud02,s_sfq[1].sfqud03,s_sfq[1].sfqud04,s_sfq[1].sfqud05,
 #              s_sfq[1].sfqud06,s_sfq[1].sfqud07,s_sfq[1].sfqud08,s_sfq[1].sfqud09,s_sfq[1].sfqud10,
 #              s_sfq[1].sfqud11,s_sfq[1].sfqud12,s_sfq[1].sfqud13,s_sfq[1].sfqud14,s_sfq[1].sfqud15
-# 
+#
 #		BEFORE CONSTRUCT
 #		   CALL cl_qbe_display_condition(lc_qbe_sn)
 #      ON ACTION controlp
@@ -1064,16 +1065,16 @@ DEFINE l_buf_rpl    STRING    #FUN-B70061
 #                      DISPLAY g_qryparam.multiret TO  sfq07
 #                      NEXT FIELD sfq07
 #            END CASE
-#         END IF         
-# 
+#         END IF
+#
 #       ON IDLE g_idle_seconds
 #          CALL cl_on_idle()
 #          CONTINUE CONSTRUCT
-# 
+#
 #    END CONSTRUCT
-# 
+#
 #    IF INT_FLAG THEN RETURN END IF
-# 
+#
 #    CONSTRUCT g_wc3 ON sfs02,sfs26,sfs03,sfs04,sfs27,sfs06,sfs10,     ##FUN-940039 add sfs27
 #                       sfs07,sfs08,sfs09,sfs05,sfs21,sfs33,sfs34,
 #                       sfs35,sfs30,sfs31,sfs32,sfs930,sfs36  #FUN-670103  #FUN-950088 add sfs36
@@ -1092,7 +1093,7 @@ DEFINE l_buf_rpl    STRING    #FUN-B70061
 #                       s_sfs[1].sfsud11,s_sfs[1].sfsud12,s_sfs[1].sfsud13,s_sfs[1].sfsud14,s_sfs[1].sfsud15
 #		BEFORE CONSTRUCT
 #		   CALL cl_qbe_display_condition(lc_qbe_sn)
-# 
+#
 #        ON ACTION controlp
 #           CASE WHEN INFIELD(sfs04)
 #                     CALL cl_init_qry_var()
@@ -1183,30 +1184,30 @@ DEFINE l_buf_rpl    STRING    #FUN-B70061
 #                  DISPLAY g_qryparam.multiret TO sfs36
 #                  NEXT FIELD sfs36
 #           END CASE
-# 
+#
 #       ON IDLE g_idle_seconds
 #          CALL cl_on_idle()
 #          CONTINUE CONSTRUCT
-# 
+#
 #                    ON ACTION qbe_save
 #		       CALL cl_qbe_save()
 #    END CONSTRUCT
 ####
     DIALOG ATTRIBUTES(UNBUFFERED)
     CONSTRUCT BY NAME g_wc ON                                 # 螢幕上取單頭條件
-       #sfp01,sfp02,sfp03,sfp06,sfp07,sfp08,sfp05,sfpconf,    #FUN-660106  #FUN-AB0001 mark 
+       #sfp01,sfp02,sfp03,sfp06,sfp07,sfp08,sfp05,sfpconf,    #FUN-660106  #FUN-AB0001 mark
         sfp01,sfp02,sfp03,sfp06,sfp07,sfp08,sfp16,sfp05,sfpconf,sfpmksg,   #FUN-AB0001 add
         sfp04,sfp09,sfp10,sfp11,sfp14,sfp15,                  #FUN-630084 add sfp11  #FUN-AB0001 add:sfp15  #CHI-CB0063 add sfp14
         sfpuser,sfpgrup,sfporiu,sfporig,sfpmodu,sfpdate       #No.TQC-BB0231
         ,sfpud01,sfpud02,sfpud03,sfpud04,sfpud05,
         sfpud06,sfpud07,sfpud08,sfpud09,sfpud10,
         sfpud11,sfpud12,sfpud13,sfpud14,sfpud15
- 
+
         BEFORE CONSTRUCT
           CALL cl_qbe_init()
     END CONSTRUCT
 
-    ##組合拆解的工單發料不顯示出來! 
+    ##組合拆解的工單發料不顯示出來!
     CONSTRUCT g_wc2 ON sfq014,sfq02,sfq012,sfq04,sfq05,sfq07,sfq08,sfq03  #FUN-870097 add sfq07 #FUN-5C0114 add sfq05 #FUN-940008 add sfq08   #FUN-B20095 add sfq012  #FUN-C70014 add sfq014
               ,sfqud01,sfqud02,sfqud03,sfqud04,sfqud05,
               sfqud06,sfqud07,sfqud08,sfqud09,sfqud10,
@@ -1215,10 +1216,10 @@ DEFINE l_buf_rpl    STRING    #FUN-B70061
               ,s_sfq[1].sfqud01,s_sfq[1].sfqud02,s_sfq[1].sfqud03,s_sfq[1].sfqud04,s_sfq[1].sfqud05,
               s_sfq[1].sfqud06,s_sfq[1].sfqud07,s_sfq[1].sfqud08,s_sfq[1].sfqud09,s_sfq[1].sfqud10,
               s_sfq[1].sfqud11,s_sfq[1].sfqud12,s_sfq[1].sfqud13,s_sfq[1].sfqud14,s_sfq[1].sfqud15
- 
+
 		BEFORE CONSTRUCT
 		   CALL cl_qbe_display_condition(lc_qbe_sn)
-		   
+
     END CONSTRUCT
     CONSTRUCT g_wc3 ON sfs02,sfs26,sfs014,sfs03,sfs27,sfs04,sfs012,sfs013,sfs06,sfs10,  ##FUN-940039 add sfs27  #FUN-A60028 add sfs012,sfs013  #CHI-BC0040 sfs27與sfs04前後交換   #FUN-C70014 add sfs014
                        sfs07,sfs08,sfs09,sfs05,sfs21,sfs33,sfs34,
@@ -1227,7 +1228,7 @@ DEFINE l_buf_rpl    STRING    #FUN-B70061
                        sfsud06,sfsud07,sfsud08,sfsud09,sfsud10,
                        sfsud11,sfsud12,sfsud13,sfsud14,sfsud15
                   FROM s_sfs[1].sfs02,s_sfs[1].sfs26,s_sfs[1].sfs014,s_sfs[1].sfs03,    #FUN-C70014 add sfs014
-                       s_sfs[1].sfs27,s_sfs[1].sfs04,s_sfs[1].sfs012,s_sfs[1].sfs013,s_sfs[1].sfs06,s_sfs[1].sfs10, #CHI-BC0040 sfs27與sfs04前後交換 
+                       s_sfs[1].sfs27,s_sfs[1].sfs04,s_sfs[1].sfs012,s_sfs[1].sfs013,s_sfs[1].sfs06,s_sfs[1].sfs10, #CHI-BC0040 sfs27與sfs04前後交換
                                                #FUN-940039 add sfs27        #FUN-A60028 add sfs012,sfs013
                        s_sfs[1].sfs07,s_sfs[1].sfs08,s_sfs[1].sfs09,
                        s_sfs[1].sfs05,s_sfs[1].sfs21,s_sfs[1].sfs33,
@@ -1240,7 +1241,7 @@ DEFINE l_buf_rpl    STRING    #FUN-B70061
 		BEFORE CONSTRUCT
 		   CALL cl_qbe_display_condition(lc_qbe_sn)
     END CONSTRUCT
-     
+
         ON ACTION controlp
           CASE WHEN INFIELD(sfp01) #查詢單据
                     CALL cl_init_qry_var()
@@ -1262,7 +1263,7 @@ DEFINE l_buf_rpl    STRING    #FUN-B70061
                     #CALL cl_create_qry() RETURNING g_qryparam.multiret
                     DISPLAY g_qryparam.multiret TO sfp07
                     NEXT FIELD sfp07
-                    #carrier 20130614  --End  
+                    #carrier 20130614  --End
                WHEN INFIELD(sfp08)   #料表批號
                     CALL cl_init_qry_var()
                     LET g_qryparam.state  = "c"
@@ -1282,17 +1283,17 @@ DEFINE l_buf_rpl    STRING    #FUN-B70061
                        CALL cl_init_qry_var()
                        LET g_qryparam.form ="q_azf01a"                      #No.FUN-930106
                        LET g_qryparam.default1 = g_sfp.sfp11,'2'
-                       IF g_argv1='1' THEN 
+                       IF g_argv1='1' THEN
                           LET g_qryparam.arg1 = "C"
                        ELSE
                           LET g_qryparam.arg1 = "E"
-                       END IF 
+                       END IF
                        LET g_qryparam.state = "c"
                        CALL cl_create_qry() RETURNING g_qryparam.multiret
                     END IF
                     DISPLAY g_qryparam.multiret TO sfp11
                     NEXT FIELD sfp11
-            END CASE        
+            END CASE
            IF NOT g_argv2 MATCHES '[ABC]' THEN #FUN-5C0114 #TQC-620157 #CHI-740016
               CASE WHEN INFIELD(sfq02)
                         CALL cl_init_qry_var()
@@ -1309,15 +1310,15 @@ DEFINE l_buf_rpl    STRING    #FUN-B70061
                    WHEN INFIELD(sfq012)
                         CALL cl_init_qry_var()
                         LET g_qryparam.state  = "c"
-                        LET g_qryparam.form = "q_sfq012" 
+                        LET g_qryparam.form = "q_sfq012"
                         CALL cl_create_qry() RETURNING g_qryparam.multiret
-                        DISPLAY g_qryparam.multiret TO sfq012 
+                        DISPLAY g_qryparam.multiret TO sfq012
                         NEXT FIELD sfq012
-          #FUN-B20095 ---------------End---------------------                          
+          #FUN-B20095 ---------------End---------------------
               END CASE
            ELSE
               CASE WHEN INFIELD(sfq02)
-#FUN-AA0059---------mod------------str----------------- 
+#FUN-AA0059---------mod------------str-----------------
 #                       CALL cl_init_qry_var()
 #                       LET g_qryparam.form = "q_ima17" #MOD-630064
 #                       LET g_qryparam.state    = "c"
@@ -1341,7 +1342,7 @@ DEFINE l_buf_rpl    STRING    #FUN-B70061
                         DISPLAY g_qryparam.multiret TO  sfq07
                         NEXT FIELD sfq07
               END CASE
-           END IF                  
+           END IF
            CASE WHEN INFIELD(sfs04)
 #FUN-AA0059---------mod------------str-----------------
 #                    CALL cl_init_qry_var()
@@ -1361,15 +1362,15 @@ DEFINE l_buf_rpl    STRING    #FUN-B70061
                      CALL cl_create_qry() RETURNING g_qryparam.multiret
                      DISPLAY g_qryparam.multiret TO sfs012
                      NEXT FIELD sfs012
-                     
+
                 WHEN INFIELD(sfs013)
                      CALL cl_init_qry_var()
                      LET g_qryparam.state  = "c"
                      LET g_qryparam.form ="q_sfs013"
                      CALL cl_create_qry() RETURNING g_qryparam.multiret
                      DISPLAY g_qryparam.multiret TO sfs013
-                     NEXT FIELD sfs013                
-#FUN-A60028 --end--                     
+                     NEXT FIELD sfs013
+#FUN-A60028 --end--
                 WHEN INFIELD(sfs27)
 #FUN-AA0059---------mod------------str-----------------
 #                    CALL cl_init_qry_var()
@@ -1401,8 +1402,8 @@ DEFINE l_buf_rpl    STRING    #FUN-B70061
                        # LET g_qryparam.where = " sfb01[1,",g_doc_len,"] NOT IN (SELECT smy69 FROM smy_file WHERE smy69  IS NOT NULL) " #FUN-B40029 #TQC-C50227
                         #CHI-C30040---begin
                         IF g_prog = 'asfi514' OR g_prog = 'asfi529' THEN
-                           LET g_qryparam.where = g_qryparam.where CLIPPED, " AND EXISTS (SELECT 1 FROM sfa_file WHERE sfa01 = sfb01 AND sfa11 = 'E') "  
-                        END IF 
+                           LET g_qryparam.where = g_qryparam.where CLIPPED, " AND EXISTS (SELECT 1 FROM sfa_file WHERE sfa01 = sfb01 AND sfa11 = 'E') "
+                        END IF
                         #CHI-C30040---end if
                         CALL cl_create_qry() RETURNING g_qryparam.multiret
                      ELSE
@@ -1498,7 +1499,7 @@ DEFINE l_buf_rpl    STRING    #FUN-B70061
                  CALL cl_create_qry() RETURNING g_qryparam.multiret
                  DISPLAY g_qryparam.multiret TO sfq014
                  NEXT FIELD sfq014
-                
+
               WHEN INFIELD(sfs014)
                  CALL cl_init_qry_var()
                  LET g_qryparam.form = "q_shm4"
@@ -1506,7 +1507,7 @@ DEFINE l_buf_rpl    STRING    #FUN-B70061
                  CALL cl_create_qry() RETURNING g_qryparam.multiret
                  DISPLAY g_qryparam.multiret TO sfs014
                  NEXT FIELD sfs014
-              #FUN-C70014 add end------------------ 
+              #FUN-C70014 add end------------------
               #str-----add by guanyao160602
               WHEN INFIELD(sfsud02)
                  CALL q_imd_1(TRUE,TRUE,"","",g_plant,"","")  #只能开当前门店的
@@ -1518,52 +1519,52 @@ DEFINE l_buf_rpl    STRING    #FUN-B70061
            ON IDLE g_idle_seconds
               CALL cl_on_idle()
               CONTINUE DIALOG
-           
+
            ON ACTION qbe_select
 		          CALL cl_qbe_list() RETURNING lc_qbe_sn
 		          CALL cl_qbe_display_condition(lc_qbe_sn)
-		           
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION controlg      #MOD-4C0121
          CALL cl_cmdask()     #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
+
       ON ACTION accept
          EXIT DIALOG
 
       ON ACTION EXIT
          LET INT_FLAG = TRUE
-         EXIT DIALOG 
-          
+         EXIT DIALOG
+
       ON ACTION cancel
          LET INT_FLAG = TRUE
-         EXIT DIALOG      		          
-    END DIALOG 
-    LET g_wc = g_wc CLIPPED,cl_get_extra_cond('sfpuser', 'sfpgrup') 
+         EXIT DIALOG
+    END DIALOG
+    LET g_wc = g_wc CLIPPED,cl_get_extra_cond('sfpuser', 'sfpgrup')
     #LET g_wc = g_wc CLIPPED,
     #       " AND sfp01[1,",g_doc_len,"] NOT IN (SELECT smy70 FROM smy_file WHERE smy70 IS NOT NULL) "   #CHI-9B0005 mod #TQC-C50227
     IF g_argv1='1' THEN
        LET g_wc = g_wc clipped," AND sfp06 IN ('1','2','3','4','A','C','D')" #FUN-5C0114 add AC  #FUN-C70014 add 'D'
     ELSE
        LET g_wc = g_wc clipped," AND sfp06 IN ('6','7','8','9','B')" #FUN-5C0114 add B
-    END IF 
+    END IF
     IF g_argv2 <> ' ' THEN
       #LET g_wc = g_wc clipped," AND sfp06 MATCHES '",g_argv2,"'" #TQC-AB0082 mark
        LET g_wc = g_wc clipped," AND sfp06 = '",g_argv2,"'" #TQC-AB0082
-    END IF    
-#No.FUN-A40055--end        
+    END IF
+#No.FUN-A40055--end
    #IF INT_FLAG THEN LET INT_FLAG=0 RETURN END IF      #TQC-D70005 mark
     IF INT_FLAG THEN RETURN END IF                     #TQC-D70005 add
- 
+
     LET l_buf = g_wc3 CLIPPED
     LET l_length = LENGTH(g_wc3)
-    #str-----mark by guanyao160819   长度不一样导致查询有问题 
+    #str-----mark by guanyao160819   长度不一样导致查询有问题
     --FOR l_i = 1 TO l_length
-      --CASE g_wc3.substring(l_i,l_i+4) #MOD-580252 
+      --CASE g_wc3.substring(l_i,l_i+4) #MOD-580252
         --WHEN 'sfs01'  LET l_buf[l_i,l_i+4] ='sfe02' #FUN-A60028  #FUN-CB0043
        # WHEN 'sfs01'  LET l_buf[l_i,l_i+4] ='sfe01' #FUN-A60028 #FUN-CB0043
         --WHEN 'sfs02'  LET l_buf[l_i,l_i+4] = 'sfe28'
@@ -1584,11 +1585,11 @@ DEFINE l_buf_rpl    STRING    #FUN-B70061
         --WHEN 'sfs34'  LET l_buf[l_i,l_i+4] = 'sfe34'
         --WHEN 'sfs35'  LET l_buf[l_i,l_i+4] = 'sfe35'   #MOD-8C0222
         --WHEN 'sfs930'  LET l_buf[l_i,l_i+4] = 'sfe930' #FUN-670103
-        --WHEN 'sfs36'   LET l_buf[l_i,l_i+4] = 'sfe36'  #FUN-950088 add   
+        --WHEN 'sfs36'   LET l_buf[l_i,l_i+4] = 'sfe36'  #FUN-950088 add
         --WHEN 'sfs37'   LET l_buf[l_i,l_i+4] = 'sfe37'  #FUN-CB0087 add  #FUN-D50017 sfe26->sfe37
-        --WHEN 'sfs27'   LET l_buf[l_i,l_i+4] = 'sfe27'  #TQC-C30268 
-        --WHEN 'sfs012'  LET l_buf[l_i,l_i+4] ='sfe012'  #TQC-C30268   
-        --WHEN 'sfs013'  LET l_buf[l_i,l_i+4] ='sfe013'  #TQC-C30268  
+        --WHEN 'sfs27'   LET l_buf[l_i,l_i+4] = 'sfe27'  #TQC-C30268
+        --WHEN 'sfs012'  LET l_buf[l_i,l_i+4] ='sfe012'  #TQC-C30268
+        --WHEN 'sfs013'  LET l_buf[l_i,l_i+4] ='sfe013'  #TQC-C30268
         #FUN-CB0043---begin
         --WHEN 'sfs014'  LET l_buf[l_i,l_i+4] ='sfe014'
         --WHEN 'sfsud01'  LET l_buf[l_i,l_i+4] = 'sfeud01'
@@ -1621,9 +1622,9 @@ DEFINE l_buf_rpl    STRING    #FUN-B70061
     LET l_buf = cl_replace_str(l_buf,'sfs08','sfe09')
     LET l_buf = cl_replace_str(l_buf,'sfs09','sfe10')
     LET l_buf = cl_replace_str(l_buf,'sfs05','sfe16')
-    LET l_buf = cl_replace_str(l_buf,'sfs21','sfe11') 
-    #tianry add end 
-    LET l_buf = cl_replace_str(l_buf,'sfs','sfe')  
+    LET l_buf = cl_replace_str(l_buf,'sfs21','sfe11')
+    #tianry add end
+    LET l_buf = cl_replace_str(l_buf,'sfs','sfe')
     #end-----mark by guanyao160819
     LET l_buf = l_buf CLIPPED
     LET g_wc5 = l_buf CLIPPED   #MOD-A50110 add
@@ -1715,9 +1716,9 @@ DEFINE l_buf_rpl    STRING    #FUN-B70061
     PREPARE i501_precount FROM g_sql
     DECLARE i501_count CURSOR FOR i501_precount
 END FUNCTION
- 
+
 FUNCTION i501_menu()
-   DEFINE l_ecu01  LIKE type_file.chr50    
+   DEFINE l_ecu01  LIKE type_file.chr50
    DEFINE l_i     LIKE type_file.num5
    DEFINE l_fac   LIKE ima_file.ima31_fac  #TQC-7B0065
    DEFINE l_creator    LIKE type_file.chr1      #FUN-AB0001 add
@@ -1745,9 +1746,9 @@ FUNCTION i501_menu()
       IF cl_null(g_action_flag) OR g_action_flag = "page_main" THEN   #FUN-CB0014 add
          CALL i501_bp("G")
       #FUN-CB0014---add---str---
-      ELSE                           
+      ELSE
          CALL i501_list_fill()
-         CALL i501_bp3("G")           
+         CALL i501_bp3("G")
          IF NOT cl_null(g_action_choice) AND l_ac2>0 THEN #將清單的資料回傳到主畫面
             SELECT sfp_file.* INTO g_sfp.*
               FROM sfp_file
@@ -1766,8 +1767,8 @@ FUNCTION i501_menu()
             CALL ui.interface.refresh()
             CALL cl_set_comp_visible("page_list", TRUE)
             CALL cl_set_comp_visible("info,userdefined_field", TRUE)
-          END IF               
-      END IF  
+          END IF
+      END IF
       #FUN-CB0014---add---str--
       CASE g_action_choice
          WHEN "insert"
@@ -1813,11 +1814,11 @@ FUNCTION i501_menu()
                   IF g_success='Y' THEN #TQC-DB0051
                   CALL i501_b()
                   END IF #TQC-DB0051
-               END IF    #FUN-AB0001  add  
+               END IF    #FUN-AB0001  add
             END IF
          WHEN "qry_short_inventory"
             CALL i501_t()
-         #No.FUN-A40055--begin                  
+         #No.FUN-A40055--begin
          #WHEN "qry_sets"
          #   IF cl_chk_act_auth() THEN
          #      CALL i501_bp2('G')
@@ -1828,27 +1829,32 @@ FUNCTION i501_menu()
        #@WHEN "確認"
        #str-----add by guanyao160904
          WHEN "upd_sfpud04"
-            IF cl_chk_act_auth() THEN 
+            IF cl_chk_act_auth() THEN
                CALL i501_upd_sfpud04()
-            END IF 
+            END IF
        #end-----add by guanyao160904
          WHEN "confirm"
-     
-#      IF g_user='37107' THEN 
-         CALL cl_err('','csf-912',0) 
-   
- #     END IF 
-             
+
+#      IF g_user='37107' THEN
+         CALL cl_err('','csf-912',0)
+
+ #     END IF
+
       IF cl_chk_act_auth() THEN
                CALL i501_y_chk()
                IF g_success = "Y" THEN
                   CALL i501_y_upd()
                   IF g_sfp.sfpconf='X' THEN  #FUN-840012
-                     LET g_chr='Y' 
-                  ELSE 
-                     LET g_chr='N' 
-                  END IF  
+                     LET g_chr='Y'
+                  ELSE
+                     LET g_chr='N'
+                  END IF
                   DISPLAY BY NAME g_sfp.sfpconf
+                  # darcy add s---
+                  if g_sfp.sfpconf = 'Y' then
+                    if cl_action(g_prog,g_sfp.sfp01,0,'confirm',g_user,g_grup,false,false) then end if
+                  end if
+                  # darcy add e---
                   CALL i501_pic() #圖形顯示
                   #FUN-AB0001---add----str--
                   CALL i501sub_refresh(g_sfp.sfp01) RETURNING g_sfp.*
@@ -1863,10 +1869,10 @@ FUNCTION i501_menu()
                LET l_cnt=0
                LET l_sfp01_doc = g_sfp.sfp01[1,g_doc_len]
                SELECT COUNT(*) INTO l_cnt FROM smy_file WHERE smy70 = l_sfp01_doc
-               IF l_cnt > 0 THEN 
+               IF l_cnt > 0 THEN
                   CALL cl_err('','asf-599',1)
-               ELSE    
-                  #TQC-C50227 add  end------            
+               ELSE
+                  #TQC-C50227 add  end------
                  #CALL i501_w() #FUN-920175
                   CALL i501sub_w(g_sfp.sfp01,g_action_choice,TRUE)   #FUN-920175
                   CALL i501sub_refresh(g_sfp.sfp01) RETURNING g_sfp.*  #FUN-920175
@@ -1893,7 +1899,7 @@ FUNCTION i501_menu()
                   IF g_success='Y' THEN
                      CALL i501sub_refresh(g_sfp.sfp01) RETURNING g_sfp.*
                      CALL i501_show()
-                     LET l_ecu01 = g_sfp.sfp01 
+                     LET l_ecu01 = g_sfp.sfp01
                      #darcy:2024/10/16 add s---
                      # 如果月底则发送邮件
                      if g_prog == 'asfi513' or g_prog == 'asfi514' or g_prog == 'asfi528' or g_prog == 'asfi526' then
@@ -1914,15 +1920,26 @@ FUNCTION i501_menu()
                      end if
                      #darcy:2024/10/16 add e---
                        #s SELECT SYSDATE INTO l_date FROM DUAL  #日期+时间
+                    # darcy add s---
+                    if g_sfp.sfp04 = 'Y' then
+                        let g_action_choice = 'action_stock_post'
+                        let g_bgjob = 'Y'
+                        if cl_chk_act_auth() then
+                            if cl_action(g_prog,g_sfp.sfp01,0,'post','','',true,false) then end if
+                        end if
+                        let g_bgjob = 'N'
+                        let g_action_choice = 'stock_post'
+                    end if
+                    # darcy add e---
                     CALL cl_ect('asfi511',l_ecu01,g_user,'3',g_today,TIME)
                     #add by zhangzs 201208   记录审核状态到中间表 ect_file   ----e------
-                    #FUN-9A0095 mark str---------------------------------------- 
+                    #FUN-9A0095 mark str----------------------------------------
                     #IF g_aza.aza90 MATCHES "[Yy]" THEN   #TQC-8B0011  ADD
                     #   # CALL aws_mescli()
                     #   # 傳入參數: (1)程式代號
                     #   #           (2)功能選項：insert(新增),update(修改),delete(刪除)
                     #   #           (3)Key
-                    #   IF g_argv2= '1' OR g_argv2='4' THEN 
+                    #   IF g_argv2= '1' OR g_argv2='4' THEN
                     #      CASE aws_mescli('asfi511','insert',g_sfp.sfp01)
                     #         WHEN 0  #無與 MES 整合
                     #              MESSAGE 'INSERT O.K'
@@ -1942,35 +1959,35 @@ FUNCTION i501_menu()
                LET l_cnt=0
                LET l_sfp01_doc = g_sfp.sfp01[1,g_doc_len]
                SELECT COUNT(*) INTO l_cnt FROM smy_file WHERE smy70 = l_sfp01_doc
-               IF l_cnt > 0 THEN 
+               IF l_cnt > 0 THEN
                   CALL cl_err('','asf-598',1)
                ELSE
-               	  LET l_cnt=0    
-               #TQC-C50227 add  end------             
+               	  LET l_cnt=0
+               #TQC-C50227 add  end------
                   #FUN-B40082 --START--
                   IF NOT cl_null(g_sfp.sfp14) THEN
-                     SELECT COUNT(*) INTO l_cnt FROM pie_file 
+                     SELECT COUNT(*) INTO l_cnt FROM pie_file
                         WHERE pie01 = g_sfp.sfp14
-                     IF l_cnt > 0 THEN                              
+                     IF l_cnt > 0 THEN
                         CALL cl_err('','aim-164' ,1)
                         LET g_action_choice = ''
                         CONTINUE WHILE
                      END IF
-                  END IF                                                        
+                  END IF
                   #FUN-B40082 --END--
                   #str-----add by guanyao160904
-                  IF NOT cl_null(g_sfp.sfpud04) THEN 
-                     SELECT COUNT(*) INTO l_cnt FROM tc_shb_file 
+                  IF NOT cl_null(g_sfp.sfpud04) THEN
+                     SELECT COUNT(*) INTO l_cnt FROM tc_shb_file
                       WHERE tc_shb02 = g_sfp.sfpud04
-                     IF l_cnt>0 THEN 
+                     IF l_cnt>0 THEN
                         CALL cl_err('','csf-078',0)
-                     END IF 
-                  END IF 
+                     END IF
+                  END IF
                   #end-----add by guanyao160904
                   CALL i501sub_z(g_argv1,g_sfp.sfp01,g_action_choice,TRUE)   #FUN-920175
                   CALL i501sub_refresh(g_sfp.sfp01) RETURNING g_sfp.*  #FUN-920175
                   CALL i501_show()  #FUN-920175 mark
-               END IF #TQC-C50227   
+               END IF #TQC-C50227
 
               #CHI-CB0063---add---S
                IF NOT cl_null(g_sfp.sfp14) THEN
@@ -2004,13 +2021,13 @@ FUNCTION i501_menu()
     #str----add by huanglf160913
          WHEN "mid_out"
           LET l_wc = 'sfp01= "',g_sfp.sfp01,'"'
-          LET g_msg = "csfr007", 
+          LET g_msg = "csfr007",
                          " '",g_today CLIPPED,"' ''",
                          " '",g_lang CLIPPED,"' '",g_bgjob CLIPPED,"'  '' '1'",
-                         " '",l_wc CLIPPED,"'  '10' '' 'N' "   
+                         " '",l_wc CLIPPED,"'  '10' '' 'N' "
                     CALL cl_cmdrun(g_msg)
-    
-    #str----end by huanglf160913             
+
+    #str----end by huanglf160913
          WHEN "gen_transfer_note"
             CALL i501_gen()
         #DEV-D30026 add str--------------
@@ -2032,7 +2049,7 @@ FUNCTION i501_menu()
                END IF
             END IF
         #DEV-D30026 add end--------------
- 
+
          WHEN "exporttoexcel"
             LET w = ui.Window.getCurrent()   #FUN-CB0014 add
             LET f = w.getForm()              #FUN-CB0014 add
@@ -2055,9 +2072,9 @@ FUNCTION i501_menu()
          WHEN "sum_sfs"
             IF cl_chk_act_auth() THEN
                CALL i501_sum_sfs()
-            END IF 
+            END IF
          #end----add by jixf 160810
-         
+
          WHEN "related_document"  #相關文件
               IF cl_chk_act_auth() THEN
                  IF g_sfp.sfp01 IS NOT NULL THEN
@@ -2084,18 +2101,18 @@ FUNCTION i501_menu()
                call amri506sub_query(g_prog,g_sfp.sfp01)
             end if
          #darcy:2023/06/15 add e---
-                           
+
         WHEN "qry_lot"
            #MOD-B60079 add
            IF cl_null(l_ac) OR l_ac=0 THEN
               CALL cl_err('','apm-140',0)
            ELSE
            #MOD-B60079 add--end
-              SELECT ima918,ima921 INTO g_ima918,g_ima921 
+              SELECT ima918,ima921 INTO g_ima918,g_ima921
                 FROM ima_file
                WHERE ima01 = g_sfs[l_ac].sfs04
                  AND imaacti = "Y"
-              
+
               IF g_ima918 = "Y" OR g_ima921 = "Y" THEN
                  LET g_success = 'Y'              #CHI-A10016
                  BEGIN WORK                       #CHI-A10016
@@ -2103,7 +2120,7 @@ FUNCTION i501_menu()
                    FROM img_file
                   WHERE img01=g_sfs[l_ac].sfs04 AND img02=g_sfs[l_ac].sfs07
                     AND img03=g_sfs[l_ac].sfs08 AND img04=g_sfs[l_ac].sfs09
-                 CALL s_umfchk(g_sfs[l_ac].sfs04,g_sfs[l_ac].sfs06,g_img09) 
+                 CALL s_umfchk(g_sfs[l_ac].sfs04,g_sfs[l_ac].sfs06,g_img09)
                       RETURNING l_i,l_fac
                  IF l_i = 1 THEN LET l_fac = 1 END IF
 #No.TQC-B90236----------------add---------begin
@@ -2119,15 +2136,15 @@ FUNCTION i501_menu()
                                 g_sfs[l_ac].sfs04,g_sfs[l_ac].sfs07,
                                 g_sfs[l_ac].sfs08,g_sfs[l_ac].sfs09,
                                 g_sfs[l_ac].sfs06,g_img09,l_fac,
-                                g_sfs[l_ac].sfs05,'','QRY',l_att)#CHI-9A0022 add '' #No.TQC-B90236 add l_att 
-                         RETURNING l_r,g_qty 
+                                g_sfs[l_ac].sfs05,'','QRY',l_att)#CHI-9A0022 add '' #No.TQC-B90236 add l_att
+                         RETURNING l_r,g_qty
  #MOD-C10100 --end--
 #TQC-C10033 --unmark
                 #-CHI-A10016-add-
                  IF g_success = "Y" THEN
                     COMMIT WORK
                  ELSE
-                    ROLLBACK WORK    
+                    ROLLBACK WORK
                  END IF
                 #-CHI-A10016-end-
               #MOD-B60079 add
@@ -2188,7 +2205,7 @@ FUNCTION i501_menu()
                        IF NOT cl_null(g_argv1) THEN     #自動 query 帶出資料
                              CALL i501_q()
                              #傳入簽核模式時不應執行的 action 清單
-                             CALL aws_efapp_flowaction("insert, modify, delete, detail, query, locale, void, undo_void,    #CHI-D20010 add--undo_void                                                        confirm, undo_confirm, stock_post, undo_post, easyflow_approval,                                                         sets, gen_transfer_note, reproduce, regen_detail, s_icdout, exporttoexcel, modi_lot, warahouse_modify, barcode_qty_allot")  #DEV-D30026 add barcode_qty_allot   
+                             CALL aws_efapp_flowaction("insert, modify, delete, detail, query, locale, void, undo_void,    #CHI-D20010 add--undo_void                                                        confirm, undo_confirm, stock_post, undo_post, easyflow_approval,                                                         sets, gen_transfer_note, reproduce, regen_detail, s_icdout, exporttoexcel, modi_lot, warahouse_modify, barcode_qty_allot")  #DEV-D30026 add barcode_qty_allot
                                   RETURNING g_laststage
                        ELSE
                            EXIT WHILE
@@ -2216,7 +2233,7 @@ FUNCTION i501_menu()
                           IF NOT cl_null(g_argv1) THEN      #自動 query 帶出資料
                                 CALL i501_q()
                                 #傳入簽核模式時不應執行的 action 清單
-                                CALL aws_efapp_flowaction("insert, modify, delete, detail, query, locale, void, undo_void,    #CHI-D20010--ADD--undo_void                                                           confirm, undo_confirm, stock_post, undo_post, easyflow_approval,                                                            sets, gen_transfer_note, reproduce, regen_detail, s_icdout, exporttoexcel, modi_lot, warahouse_modify, barcode_qty_allot")  #DEV-D30026 add barcode_qty_allot  
+                                CALL aws_efapp_flowaction("insert, modify, delete, detail, query, locale, void, undo_void,    #CHI-D20010--ADD--undo_void                                                           confirm, undo_confirm, stock_post, undo_post, easyflow_approval,                                                            sets, gen_transfer_note, reproduce, regen_detail, s_icdout, exporttoexcel, modi_lot, warahouse_modify, barcode_qty_allot")  #DEV-D30026 add barcode_qty_allot
                                      RETURNING g_laststage
                           ELSE
                                 EXIT WHILE
@@ -2259,22 +2276,22 @@ FUNCTION i501_menu()
             IF cl_chk_act_auth() THEN
                 IF NOT cl_null(g_sfp.sfp01)  AND cl_getscmparameter() AND ((g_sfp.sfpud06[1,3] <> 'MR1' AND g_sfp.sfpud06[1,3] <> 'OR1') OR g_sfp.sfpud06 IS NULL ) THEN
                     INITIALIZE l_ret TO NULL
-                    IF g_sfp.sfp06 MATCHES  '[1-4]'  THEN   
+                    IF g_sfp.sfp06 MATCHES  '[1-4]'  THEN
                          CALL cjc_zmx_json_task('DK1',g_sfp.sfp01) RETURNING l_ret.*
-                    END IF 
-                    IF g_sfp.sfp06 MATCHES  '[6-9]'  THEN   
+                    END IF
+                    IF g_sfp.sfp06 MATCHES  '[6-9]'  THEN
                          CALL cjc_zmx_json_task('OR1',g_sfp.sfp01) RETURNING l_ret.*
-                    END IF 
+                    END IF
                     IF l_ret.success = 'Y' THEN
 
                     ELSE
                        IF cl_null(l_ret.msg) THEN
-                           IF g_sfp.sfp06 MATCHES '[1-4]'  THEN 
+                           IF g_sfp.sfp06 MATCHES '[1-4]'  THEN
                               LET l_ret.msg = "工单倒扣发料(",g_sfp.sfp01 CLIPPED,")同步失败"
-                           END IF 
-                           IF g_sfp.sfp06 MATCHES '[6-9]'  THEN 
+                           END IF
+                           IF g_sfp.sfp06 MATCHES '[6-9]'  THEN
                               LET l_ret.msg = "工单退料(",g_sfp.sfp01 CLIPPED,")同步失败"
-                           END IF 
+                           END IF
                        END IF
                     END IF
                     CALL cl_err(l_ret.msg,'!',1)
@@ -2284,9 +2301,9 @@ FUNCTION i501_menu()
         #str----add by guanyao160601
         #WHEN "ins_imm"
         #   IF cl_chk_act_auth() THEN
-        #      CALL i501_ins_sel() 
-        #   END IF 
-        #end----add by guanyao160601      
+        #      CALL i501_ins_sel()
+        #   END IF
+        #end----add by guanyao160601
         #@WHEN "簽核意見"
          WHEN "phrase"
               CALL aws_efapp_phrase()
@@ -2298,10 +2315,10 @@ FUNCTION i501_menu()
             end if
          #darcy:2024/01/22 add e---
       END CASE
- 
+
  END WHILE
  CLOSE i501_cs
- 
+
 END FUNCTION
 
 #TQC-AC0197 ---------------------------Begin------------------------------------------
@@ -2322,7 +2339,7 @@ FUNCTION i501_wm_b()
       RETURN
    END IF
    IF g_sfp.sfp04 = 'Y' THEN
-      CALL cl_err(g_sfp.sfp01,'asf-313',0) 
+      CALL cl_err(g_sfp.sfp01,'asf-313',0)
       RETURN
    END IF
    SELECT sfp04,sfpconf INTO l_sfp04,l_sfpconf FROM sfp_file
@@ -2332,7 +2349,7 @@ FUNCTION i501_wm_b()
    ELSE
       CALL cl_err(g_sfp.sfp01,'asf-315',0)
       RETURN
-   END IF      
+   END IF
 #MOD-B30148 ------------------Begin------------------
 #  IF g_sfp.sfp06 = '8' OR g_sfp.sfp06 = '3' THEN
 #     CALL i501_b()
@@ -2345,7 +2362,7 @@ FUNCTION i501_wm_b()
 #      SELECT COUNT(*) INTO l_n FROM sfq_file
 #       WHERE sfq01 = g_sfp.sfp01
 #         AND sfq03 = 0
-#      IF l_n = 0 THEN 
+#      IF l_n = 0 THEN
 #         CALL cl_err(g_sfp.sfp01,'asf-315',0)
 #         RETURN
 #      END IF
@@ -2362,24 +2379,24 @@ FUNCTION i501_wm_b()
 #  ELSE
 #     CALL cl_err(g_sfp.sfp01,'asf-315',0)
 #     RETURN
-#  END IF      
+#  END IF
 #MOD-B30148 -----------------------End------------------------
 END FUNCTION
-#TQC-AC0197 ---------------------------End-------------------------------------------- 
+#TQC-AC0197 ---------------------------End--------------------------------------------
 
 
 FUNCTION i501_a()
     DEFINE li_result   LIKE type_file.num5          #No.FUN-550052  #No.FUN-680121 SMALLINT
     DEFINE l_cnt1      LIKE type_file.num5   #TQC-9B0134 add
     IF s_shut(0) THEN RETURN END IF
- 
+
     MESSAGE ""
     CLEAR FORM
     CALL g_sfq.clear()
     CALL g_sfs.clear()
     INITIALIZE g_sfp.* TO NULL
 #Mark No:TQC-AC0125
-#&ifdef SLK    
+#&ifdef SLK
 #    LET l_ecm.ecm04 = ''    #No.FUN-870117
 #&endif
 #End Mark TQC-AC0125
@@ -2401,15 +2418,15 @@ FUNCTION i501_a()
         LET g_sfp.sfpdate=g_today #NO:6908
         LET g_sfp.sfp07  =g_grup  #FUN-670103
        #FUN-AB0001--add---str--
-        LET g_sfp.sfp15 = '0'     #開立  
+        LET g_sfp.sfp15 = '0'     #開立
         LET g_sfp.sfpmksg = "N"
         LET g_sfp.sfp16 = g_user
         CALL i501_sfp16('d')
-       #FUN-AB0001--add---end-- 
+       #FUN-AB0001--add---end--
         LET g_sfp.sfpplant = g_plant #FUN-980008 add
         LET g_sfp.sfplegal = g_legal #FUN-980008 add
         let g_sfp.sfpud07 = 0 #darcy:2025/02/12 add
- 
+
         IF g_argv2<>' ' THEN LET g_sfp.sfp06 = g_argv2  END IF
         CALL i501_i("a")                #輸入單頭
         IF INT_FLAG THEN
@@ -2426,8 +2443,8 @@ FUNCTION i501_a()
          CONTINUE WHILE
       END IF
       DISPLAY BY NAME g_sfp.sfp01,g_sfp.sfp07 #FUN-670103
- 
- 
+
+
         IF cl_null(g_sfp.sfp03) THEN
            LET g_sfp.sfp03  =g_today   #No.B182 010502 add
            DISPLAY BY NAME g_sfp.sfp03
@@ -2447,20 +2464,20 @@ FUNCTION i501_a()
            ROLLBACK WORK   #No:7829
            CONTINUE WHILE
         END IF
- 
+
         COMMIT WORK
- 
+
         CALL cl_flow_notify(g_sfp.sfp01,'I')
- 
+
         LET g_sfp_t.* = g_sfp.*
         LET g_rec_d = 0
         CALL g_sfq.clear()
         CALL i501_d()                   #輸入單身-sfq
- 
+
         IF g_success = "N" THEN
            EXIT WHILE
         END IF
- 
+
         LET g_rec_b =0
         CALL g_sfs.clear()
         SELECT COUNT(*) INTO l_cnt1 FROM sfs_file
@@ -2468,17 +2485,17 @@ FUNCTION i501_a()
         IF g_sfp.sfp06 MATCHES '[136ABD]' AND l_cnt1 = 0 THEN CALL i501_g_b() END IF   #FUN-5B0037 #FUN-5C0114 add 'AB'  #FUN-C70014 add 'D'
         CALL i501_b_fill(" 1=1")
    #FUN-A20048 --begin #其他發料時，按以下處理
-        IF g_sfp.sfp06 MATCHES '[24]' AND l_cnt1 = 0 THEN 
+        IF g_sfp.sfp06 MATCHES '[24]' AND l_cnt1 = 0 THEN
            CALL i501_g_b_1()
-        ELSE 
+        ELSE
            CALL i501_b()  #輸入單身-sfs
-        END IF 
-   #FUN-A20048  --end 
+        END IF
+   #FUN-A20048  --end
         IF g_cnt>0 AND g_smy.smyprint='Y' THEN CALL i501_out() END IF
         EXIT WHILE
     END WHILE
 END FUNCTION
- 
+
 FUNCTION i501_u()
     IF s_shut(0) THEN RETURN END IF
     IF g_sfp.sfp01 IS NULL THEN CALL cl_err('',-400,0) RETURN END IF
@@ -2500,9 +2517,9 @@ FUNCTION i501_u()
     MESSAGE ""
     CALL cl_opmsg('u')
     LET g_sfp_o.* = g_sfp.*
- 
+
     BEGIN WORK
- 
+
     OPEN i501_cl USING g_sfp.sfp01                 #09/10/21 xiaofeizhu Add
     IF STATUS THEN
        CALL cl_err("OPEN i501_cl:", STATUS, 1)
@@ -2530,20 +2547,20 @@ FUNCTION i501_u()
         LET g_sfp.sfp15 = '0'                 #FUN-AB0001 add
 
         UPDATE sfp_file SET * = g_sfp.* WHERE sfp01 = g_sfp_o.sfp01      #09/10/21 xiaofeizhu Add #No.TQC-9A0130 mod
-        IF STATUS THEN 
+        IF STATUS THEN
            CALL cl_err3("upd","sfp_file",g_sfp_t.sfp01,"",STATUS,"","",1)  #No.FUN-660128
            CONTINUE WHILE END IF
         IF g_sfp.sfp01 != g_sfp_t.sfp01 THEN CALL i501_chkkey() END IF
         EXIT WHILE
     END WHILE
- 
+
     CLOSE i501_cl
     COMMIT WORK
     CALL i501_show()                          #顯示最新資料   #FUN-AB0001 add
     CALL cl_flow_notify(g_sfp.sfp01,'U')
- 
+
 END FUNCTION
- 
+
 FUNCTION i501_chkkey()
     UPDATE sfs_file SET sfs01=g_sfp.sfp01 WHERE sfs01=g_sfp_t.sfp01
     IF STATUS THEN
@@ -2556,7 +2573,7 @@ FUNCTION i501_chkkey()
        LET g_sfp.*=g_sfp_t.* CALL i501_show() ROLLBACK WORK RETURN
     END IF
 END FUNCTION
- 
+
 FUNCTION i501_i(p_cmd)
   DEFINE p_cmd           LIKE type_file.chr1                 #a:輸入 u:更改  #No.FUN-680121 VARCHAR(1)
   DEFINE l_flag          LIKE type_file.chr1                 #判斷必要欄位是否有輸入  #No.FUN-680121 VARCHAR(1)
@@ -2568,8 +2585,8 @@ FUNCTION i501_i(p_cmd)
   DEFINE l_slip          LIKE smy_file.smyslip #No.FUN-980038
   DEFINE l_sfp06         LIKE sfp_file.sfp06   #No.FUN-980038
   DEFINE l_smy72         LIKE smy_file.smy72   #No.MOD-9C0180
-  DEFINE l_count         LIKE type_file.num5   #No.FUN-A90035 
- 
+  DEFINE l_count         LIKE type_file.num5   #No.FUN-A90035
+
     CALL cl_set_head_visible("","YES")  #NO.FUN-6B0031
     INPUT BY NAME g_sfp.sfporiu,g_sfp.sfporig,
         g_sfp.sfp01,g_sfp.sfp02,g_sfp.sfp03,g_sfp.sfp06,g_sfp.sfp07,
@@ -2582,18 +2599,18 @@ FUNCTION i501_i(p_cmd)
 #End Mark No:TQC-AC0125
         g_sfp.sfp05,g_sfp.sfpconf,          #FUN-660106 add g_sfp.sfpconf
         g_sfp.sfpmksg,                      #FUN-AB0001 add
-        g_sfp.sfp04,g_sfp.sfp09, 
+        g_sfp.sfp04,g_sfp.sfp09,
         g_sfp.sfp11,                        #MOD-490204  ##FUN-630084 add sfp11
-        g_sfp.sfp15,                        #FUN-AB0001 add    
+        g_sfp.sfp15,                        #FUN-AB0001 add
         g_sfp.sfpud02,                      #add by jixf 160809
         g_sfp.sfpuser,g_sfp.sfpgrup,    #NO:6908
         g_sfp.sfpmodu,g_sfp.sfpdate                 #NO:6908
         ,g_sfp.sfpud01,g_sfp.sfpud03,g_sfp.sfpud04,
         g_sfp.sfpud05,g_sfp.sfpud06,g_sfp.sfpud07,g_sfp.sfpud08,
         g_sfp.sfpud09,g_sfp.sfpud10,g_sfp.sfpud11,g_sfp.sfpud12,
-        g_sfp.sfpud13,g_sfp.sfpud14,g_sfp.sfpud15 
+        g_sfp.sfpud13,g_sfp.sfpud14,g_sfp.sfpud15
         WITHOUT DEFAULTS
- 
+
         BEFORE INPUT
             LET g_before_input_done = FALSE
             CALL i501_set_entry(p_cmd)
@@ -2601,7 +2618,7 @@ FUNCTION i501_i(p_cmd)
             LET g_before_input_done = TRUE
             CALL cl_set_docno_format("sfp01")
             #CALL cl_set_comp_entry("sfpud02",TRUE)  #add by jixf 160809  #mark by guanyao160822
- 
+
         AFTER FIELD sfp01
             IF NOT cl_null(g_sfp.sfp01) THEN
                CASE WHEN g_argv1 = "1" LET g_chr='3'
@@ -2640,9 +2657,9 @@ FUNCTION i501_i(p_cmd)
                #FUN-CB0087--add--end--
             END IF
             IF cl_null(g_sfp_t.sfp01) THEN
-               CALL s_get_doc_no(g_sfp.sfp01) RETURNING l_slip                                                                 
-                    SELECT smy72 INTO l_sfp06 FROM smy_file                                                                     
-                     WHERE smyslip = l_slip                                                                                         
+               CALL s_get_doc_no(g_sfp.sfp01) RETURNING l_slip
+                    SELECT smy72 INTO l_sfp06 FROM smy_file
+                     WHERE smyslip = l_slip
                IF cl_null(l_sfp06) THEN
                   LET l_sfp06 = ' '
                END IF
@@ -2651,7 +2668,7 @@ FUNCTION i501_i(p_cmd)
                   NEXT FIELD sfp01
                END IF
             END IF
- 
+
         AFTER FIELD sfp02
             IF NOT cl_null(g_sfp.sfp02) THEN
               #日期的控管由扣帳日期處理
@@ -2660,7 +2677,7 @@ FUNCTION i501_i(p_cmd)
                   DISPLAY By NAME g_sfp.sfp03
                END IF
             END IF
- 
+
         AFTER FIELD sfp03
             IF NOT cl_null(g_sfp.sfp03) THEN
 	       IF g_sma.sma53 IS NOT NULL AND g_sfp.sfp03 <= g_sma.sma53 THEN
@@ -2671,7 +2688,7 @@ FUNCTION i501_i(p_cmd)
                   CALL cl_err(g_yy,'mfg6090',0) NEXT FIELD sfp03
                END IF
             END IF
- 
+
         AFTER FIELD sfp06
             IF NOT cl_null(g_sfp.sfp06) THEN
               #IF g_argv1='1' AND g_sfp.sfp06 NOT MATCHES '[1234AC]' THEN #FUN-5C0114 add AC
@@ -2681,57 +2698,57 @@ FUNCTION i501_i(p_cmd)
                IF g_argv1='2' AND g_sfp.sfp06 NOT MATCHES '[6789B]' THEN #FUN-5C0114 add B
                   NEXT FIELD sfp06
                END IF
-               
+
             END IF
- 
+
         AFTER FIELD sfp07
             IF NOT cl_null(g_sfp.sfp07) THEN
                LET g_buf=''
                SELECT gem02 INTO g_buf FROM gem_file WHERE gem01=g_sfp.sfp07
                   AND gemacti='Y'   #NO:6950
                IF STATUS THEN
-                  SELECT pmc03 INTO g_buf FROM pmc_file 
+                  SELECT pmc03 INTO g_buf FROM pmc_file
                    WHERE pmc01= g_sfp.sfp07 AND pmcacti='Y'
                  IF STATUS THEN
                  #CALL cl_err3("sel","pmc_file",g_sfp.sfp07,"",STATUS,"","select pmc",1)  #CHI-680019           #No.TQC-A50033
                   CALL cl_err(g_sfp.sfp07,'asf-683',1)  #No.TQC-A50033
-                  LET g_sfp.sfp07=g_sfp_t.sfp07         #No.TQC-A50033 
+                  LET g_sfp.sfp07=g_sfp_t.sfp07         #No.TQC-A50033
                   NEXT FIELD sfp07
                  END IF #CHI-680019
                END IF
-               #FUN-CB0087--add--str-- 
-               IF NOT i501_sfs37_chkall() THEN 
+               #FUN-CB0087--add--str--
+               IF NOT i501_sfs37_chkall() THEN
                   LET g_sfp.sfp07 = g_sfp_t.sfp07
-                  NEXT FIELD sfp07 
-               END IF  
+                  NEXT FIELD sfp07
+               END IF
                #FUN-CB0087--add--end--
                DISPLAY g_buf TO gem02  #MOD-480346
             END IF
 #Mark No:TQC-AC0125
-#&ifdef SLK        
-#                       
+#&ifdef SLK
+#
 #       AFTER FIELD ecm04
 #            IF NOT cl_null(l_ecm.ecm04) THEN
-#               SELECT count(*) INTO l_n FROM sfa_file,sfb_file 
+#               SELECT count(*) INTO l_n FROM sfa_file,sfb_file
 #                WHERE sfb01=sfa01
 #                  AND sfa08 = l_ecm.ecm04
-#                  AND sfb85 = g_sfp.sfp08                      
+#                  AND sfb85 = g_sfp.sfp08
 #               IF l_n=0 THEN
-#                  CALL cl_err(l_ecm.ecm04,'asf-402',0)  
+#                  CALL cl_err(l_ecm.ecm04,'asf-402',0)
 #                  NEXT FIELD ecm04
 #               END IF
 #            END IF
 #       #No.FUN-870117  --end--
-#&endif       
+#&endif
 #End Mark No:TQC-AC0125
         AFTER FIELD sfp08
             IF NOT cl_null(g_sfp.sfp08) THEN
               #FUN-A90035 -----------------add start----------------
-               SELECT count(*) INTO l_count FROM sfd_file WHERE sfd01 = g_sfp.sfp08 AND sfdconf = 'Y' 
+               SELECT count(*) INTO l_count FROM sfd_file WHERE sfd01 = g_sfp.sfp08 AND sfdconf = 'Y'
                IF cl_null(l_count) OR l_count = 0  THEN
                   CALL cl_err('','asf-772',0)
                   NEXT FIELD sfp08
-               END IF  
+               END IF
               #FUN-A90035 ----------------add end------------------
                SELECT sfc02 INTO g_buf FROM sfc_file WHERE sfc01=g_sfp.sfp08
                IF STATUS THEN
@@ -2750,24 +2767,24 @@ FUNCTION i501_i(p_cmd)
                   DISPLAY BY NAME g_sfp.sfp16
                   NEXT FIELD sfp16
                END IF
-               #FUN-CB0087--add--str-- 
-               IF NOT i501_sfs37_chkall() THEN 
+               #FUN-CB0087--add--str--
+               IF NOT i501_sfs37_chkall() THEN
                   LET g_sfp.sfp16 = g_sfp_t.sfp16
                   NEXT FIELD sfp16
-               END IF  
+               END IF
                #FUN-CB0087--add--end--
             END IF
             LET g_sfp_o.sfp16 = g_sfp.sfp16
         #FUN-AB0001 add end ---
- 
-        AFTER INPUT 
+
+        AFTER INPUT
            LET g_sfp.sfpuser = s_get_data_owner("sfp_file") #FUN-C10039
            LET g_sfp.sfpgrup = s_get_data_group("sfp_file") #FUN-C10039
          IF INT_FLAG THEN
-            EXIT INPUT      
+            EXIT INPUT
          END IF
           #日期的控管由扣帳日期處理
-           
+
            IF NOT cl_null(g_sfp.sfp03) THEN
               IF g_sma.sma53 IS NOT NULL AND g_sfp.sfp03 <= g_sma.sma53 THEN
                  CALL cl_err('','mfg9999',0) NEXT FIELD sfp03
@@ -2777,7 +2794,7 @@ FUNCTION i501_i(p_cmd)
                  CALL cl_err(g_yy,'mfg6090',0) NEXT FIELD sfp03
               END IF
            END IF
-           #TQC-B60034--add--add--  
+           #TQC-B60034--add--add--
            #申請人
            IF NOT cl_null(g_sfp.sfp16) THEN
                CALL i501_sfp16('a')
@@ -2805,25 +2822,25 @@ FUNCTION i501_i(p_cmd)
                     CALL cl_err3("sel","azf_file",g_sfp.sfp11,"",STATUS,"","select azf",1)  #No.FUN-660128
                     NEXT FIELD sfp11
                  END IF
-                 IF g_argv1='1' THEN                                                                                                    
-                    SELECT azf09 INTO l_azf09 FROM azf_file                                                                             
-                     WHERE azf01 = g_sfp.sfp11                                                                                          
-                       AND azf02 ='2'                                                                                                   
-                    IF l_azf09 !='C' THEN                                                                                               
-                       CALL cl_err('','aoo-411',1)                                                                                      
-                       NEXT FIELD sfp11                                                                                                 
-                    END IF                                                                                                              
-                 ELSE                                                                                                                   
-                    SELECT azf09 INTO l_azf09 FROM azf_file                                                                             
-                     WHERE azf01 = g_sfp.sfp11                                                                                          
-                       AND azf02 ='2'                                                                                                   
-                    IF l_azf09 !='E' THEN                                                                                               
-                       CALL cl_err('','aoo-413',1)                                                                                      
-                       NEXT FIELD sfp11                                                                                                 
-                    END IF                                                                                                              
-                 END IF                                                                                                                 
+                 IF g_argv1='1' THEN
+                    SELECT azf09 INTO l_azf09 FROM azf_file
+                     WHERE azf01 = g_sfp.sfp11
+                       AND azf02 ='2'
+                    IF l_azf09 !='C' THEN
+                       CALL cl_err('','aoo-411',1)
+                       NEXT FIELD sfp11
+                    END IF
+                 ELSE
+                    SELECT azf09 INTO l_azf09 FROM azf_file
+                     WHERE azf01 = g_sfp.sfp11
+                       AND azf02 ='2'
+                    IF l_azf09 !='E' THEN
+                       CALL cl_err('','aoo-413',1)
+                       NEXT FIELD sfp11
+                    END IF
+                 END IF
              END IF
-             SELECT azfacti INTO l_azfacti FROM azf_file 
+             SELECT azfacti INTO l_azfacti FROM azf_file
                  WHERE azf01 = g_sfp.sfp11
                    AND azf02 ='2'                         #No.FUN-930106
              IF l_azfacti <> 'Y' THEN
@@ -2840,16 +2857,16 @@ FUNCTION i501_i(p_cmd)
         AFTER FIELD sfpud03
            #IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
            #str----add by guanyao160822
-           IF NOT cl_null(g_sfp.sfpud03) THEN 
+           IF NOT cl_null(g_sfp.sfpud03) THEN
               LET l_n = 0
               SELECT COUNT(*) INTO l_n FROM tc_sfd_file WHERE tc_sfd01 = g_sfp.sfpud03 AND tc_sfd04 = 'Y'
-              IF cl_null(l_n) OR l_n =0 THEN 
+              IF cl_null(l_n) OR l_n =0 THEN
                  CALL cl_err('','csf-076',0)
                  NEXT FIELD sfpud03
-              END IF 
+              END IF
               SELECT tc_sfd07 INTO g_sfp.sfpud02 FROM tc_sfd_file WHERE tc_sfd01 = g_sfp.sfpud03 AND tc_sfd04 = 'Y'
               DISPLAY BY NAME g_sfp.sfpud02
-           END IF  
+           END IF
            #end----add by guanyao160822
         AFTER FIELD sfpud04
            IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
@@ -2877,7 +2894,7 @@ FUNCTION i501_i(p_cmd)
         AFTER FIELD sfpud15
            IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
         #FUN-840042     ----end----
- 
+
         ON ACTION controlp
           CASE WHEN INFIELD(sfp01) #查詢單据
                     LET g_t1=s_get_doc_no(g_sfp.sfp01)     #No.FUN-550052
@@ -2916,20 +2933,20 @@ FUNCTION i501_i(p_cmd)
                     #LET g_qryparam.form ="q_gem"
                     #LET g_qryparam.default1 = g_sfp.sfp07
                     #CALL cl_create_qry() RETURNING g_sfp.sfp07
-                    #carrier 20130614  --End  
+                    #carrier 20130614  --End
                     DISPLAY BY NAME g_sfp.sfp07
                     NEXT FIELD sfp07
 #Mark No:TQC-AC0125
-#&ifdef SLK                    
+#&ifdef SLK
 #                WHEN INFIELD(ecm04)
 #                    CALL cl_init_qry_var()
 #                    LET g_qryparam.form ="q_ecm04"
 #                    LET g_qryparam.default1 = l_ecm.ecm04
-#                    LET g_qryparam.arg1 = g_sfp.sfp08 
+#                    LET g_qryparam.arg1 = g_sfp.sfp08
 #                    CALL cl_create_qry() RETURNING l_ecm.ecm04
 #                    DISPLAY BY NAME l_ecm.ecm04
-#                    NEXT FIELD ecm04 
-#&endif                  
+#                    NEXT FIELD ecm04
+#&endif
 #End Mark No:TQC-AC0125
                WHEN INFIELD(sfp08)   #料表批號
                     CALL cl_init_qry_var()
@@ -2950,11 +2967,11 @@ FUNCTION i501_i(p_cmd)
                        CALL cl_init_qry_var()
                        LET g_qryparam.form ="q_azf01a"                #No.FUN-930106
                        LET g_qryparam.default1 = g_sfp.sfp11
-                       IF g_argv1='1' THEN   
-                          LET g_qryparam.arg1 = "C"  
-                       ELSE            
-                          LET g_qryparam.arg1 = "E"  
-                       END IF         
+                       IF g_argv1='1' THEN
+                          LET g_qryparam.arg1 = "C"
+                       ELSE
+                          LET g_qryparam.arg1 = "E"
+                       END IF
                        CALL cl_create_qry() RETURNING g_sfp.sfp11
                     END IF
                      DISPLAY BY NAME g_sfp.sfp11
@@ -2970,7 +2987,7 @@ FUNCTION i501_i(p_cmd)
                #FUN-AB0001 add end ----
 
                #str---add by jixf 160809
-               WHEN INFIELD(sfpud02) 
+               WHEN INFIELD(sfpud02)
                   CALL cl_init_qry_var()
                   LET g_qryparam.form = "cq_ta_shm05"
                   CALL cl_create_qry() RETURNING g_sfp.sfpud02
@@ -2978,7 +2995,7 @@ FUNCTION i501_i(p_cmd)
                   NEXT FIELD sfpud02
                #end---add by jixf 160809
                #str---add by jixf 160809
-               WHEN INFIELD(sfpud03) 
+               WHEN INFIELD(sfpud03)
                   CALL cl_init_qry_var()
                   LET g_qryparam.form = "cq_ta_shm05"
                   CALL cl_create_qry() RETURNING g_sfp.sfpud03
@@ -2986,51 +3003,51 @@ FUNCTION i501_i(p_cmd)
                   NEXT FIELD sfpud03
                #end---add by jixf 160809
             END CASE
- 
+
         ON ACTION CONTROLF                  #欄位說明
          CALL cl_set_focus_form(ui.Interface.getRootNode()) RETURNING g_fld_name,g_frm_name #Add on 040913
          CALL cl_fldhelp(g_frm_name,g_fld_name,g_lang) #Add on 040913
- 
- 
+
+
         ON ACTION CONTROLR
            CALL cl_show_req_fields()
- 
+
         ON ACTION CONTROLG CALL cl_cmdask()
- 
+
        ON IDLE g_idle_seconds
           CALL cl_on_idle()
           CONTINUE INPUT
- 
+
     END INPUT
 END FUNCTION
- 
+
 FUNCTION i501_set_entry(p_cmd)
  DEFINE p_cmd   LIKE type_file.chr1    #No.FUN-680121 VARCHAR(1)
- 
+
     IF p_cmd = 'a' AND ( NOT g_before_input_done ) THEN
        CALL cl_set_comp_entry("sfp01",TRUE)
     END IF
- 
+
     IF p_cmd = 'a' AND ( NOT g_before_input_done ) THEN
        CALL cl_set_comp_entry("sfp06",TRUE)
     END IF
 END FUNCTION
- 
+
 FUNCTION i501_set_no_entry(p_cmd)
   DEFINE p_cmd   LIKE type_file.chr1    #No.FUN-680121 VARCHAR(1)
- 
+
     IF p_cmd = 'u' AND g_chkey = 'N' AND ( NOT g_before_input_done ) THEN
     CALL cl_set_comp_entry("sfp01",FALSE)
     END IF
- 
+
     IF INFIELD(sfp06) OR (NOT g_before_input_done) THEN
        IF g_argv2<>' ' OR p_cmd = 'u' THEN
           CALL cl_set_comp_entry("sfp06",FALSE)
        END IF
     END IF
- 
+
 END FUNCTION
- 
+
 FUNCTION i501_q()
   DEFINE  l_sfp01     LIKE sfp_file.sfp01
 
@@ -3046,11 +3063,11 @@ FUNCTION i501_q()
     DISPLAY '' TO FORMONLY.cnt
     INITIALIZE g_sfp.* to NULL              #No:9485
     CALL i501_cs()
-    IF INT_FLAG THEN 
-       LET INT_FLAG = 0 
+    IF INT_FLAG THEN
+       LET INT_FLAG = 0
        INITIALIZE g_sfp.* TO NULL RETURN
     END IF
-    
+
    #MESSAGE " SEARCHING ! "                 #FUN-AB0001 mark
     CALL cl_msg(" SEARCHING ! ")            #FUN-AB0001 add
 
@@ -3064,20 +3081,20 @@ FUNCTION i501_q()
             LET g_row_count=g_row_count +1
         END FOREACH
         DISPLAY g_row_count TO FORMONLY.cnt  #ATTRIBUTE(MAGENTA)
- 
+
         CALL i501_fetch('F')                 # 讀出TEMP第一筆並顯示
     END IF
    #MESSAGE " SEARCHING ! "                  #FUN-AB0001 mark
     CALL cl_msg(" SEARCHING ! ")             #FUN-AB0001 add
 END FUNCTION
- 
+
 FUNCTION i501_fetch(p_flag)
 DEFINE
     p_flag          LIKE type_file.chr1,                 #處理方式  #No.FUN-680121 VARCHAR(1)
     l_abso          LIKE type_file.num10                 #絕對的筆數  #No.FUN-680121 INTEGER
- 
+
     CASE p_flag
-        WHEN 'N' FETCH NEXT     i501_cs INTO g_sfp.sfp01                 #09/10/21 xiaofeizhu Add 
+        WHEN 'N' FETCH NEXT     i501_cs INTO g_sfp.sfp01                 #09/10/21 xiaofeizhu Add
         WHEN 'P' FETCH PREVIOUS i501_cs INTO g_sfp.sfp01                 #09/10/21 xiaofeizhu Add
         WHEN 'F' FETCH FIRST    i501_cs INTO g_sfp.sfp01                 #09/10/21 xiaofeizhu Add
         WHEN 'L' FETCH LAST     i501_cs INTO g_sfp.sfp01                 #09/10/21 xiaofeizhu Add
@@ -3088,7 +3105,7 @@ DEFINE
                 PROMPT g_msg CLIPPED,': ' FOR g_jump
                    ON IDLE g_idle_seconds
                       CALL cl_on_idle()
- 
+
                 END PROMPT
                 IF INT_FLAG THEN
                     LET INT_FLAG = 0
@@ -3098,7 +3115,7 @@ DEFINE
             FETCH ABSOLUTE g_jump i501_cs INTO g_sfp.sfp01               #09/10/21 xiaofeizhu Add
             LET mi_no_ask = FALSE
     END CASE
- 
+
     IF SQLCA.sqlcode THEN
         INITIALIZE g_sfp.* TO NULL
         CALL cl_err(g_sfp.sfp01,SQLCA.sqlcode,0)
@@ -3111,7 +3128,7 @@ DEFINE
           WHEN 'L' LET g_curs_index = g_row_count
           WHEN '/' LET g_curs_index = g_jump
        END CASE
- 
+
        CALL cl_navigator_setting( g_curs_index, g_row_count )
     END IF
     SELECT * INTO g_sfp.* FROM sfp_file WHERE sfp01 = g_sfp.sfp01           #09/10/21 xiaofeizhu Add
@@ -3125,14 +3142,14 @@ DEFINE
        LET g_data_plant = g_sfp.sfpplant #FUN-980030
        CALL i501_show()
     END IF
- 
+
 END FUNCTION
- 
+
 FUNCTION i501_show()
     DEFINE l_gem02 LIKE gem_file.gem02
     DEFINE l_smydesc LIKE smy_file.smydesc  #MOD-4C0010
     DEFINE l_azf03 LIKE azf_file.azf03 #FUN-630084
- 
+
     LET g_sfp_t.* = g_sfp.*                #保存單頭舊值
     DISPLAY BY NAME g_sfp.sfporiu,g_sfp.sfporig,
         g_sfp.sfp01,g_sfp.sfp02,
@@ -3141,7 +3158,7 @@ FUNCTION i501_show()
         g_sfp.sfp16,                                       #FUN-AB0001 add:sfp16
         g_sfp.sfpconf,                                     #FUN-660106 add g_sfp.sfpconf
         g_sfp.sfpmksg,                                     #FUN-AB0001 add:sfpmksg
-        g_sfp.sfp04,                                       
+        g_sfp.sfp04,
         g_sfp.sfp09,g_sfp.sfp10,g_sfp.sfp11,               #FUN-630084 add sfp11
         g_sfp.sfp14,g_sfp.sfp15,                           #FUN-AB0001 add:sfp15  #CHI-CB0063 add sfp14
         g_sfp.sfpuser,g_sfp.sfpgrup,                       #NO:6908
@@ -3149,27 +3166,27 @@ FUNCTION i501_show()
         ,g_sfp.sfpud01,g_sfp.sfpud02,g_sfp.sfpud03,g_sfp.sfpud04,
         g_sfp.sfpud05,g_sfp.sfpud06,g_sfp.sfpud07,g_sfp.sfpud08,
         g_sfp.sfpud09,g_sfp.sfpud10,g_sfp.sfpud11,g_sfp.sfpud12,
-        g_sfp.sfpud13,g_sfp.sfpud14,g_sfp.sfpud15 
+        g_sfp.sfpud13,g_sfp.sfpud14,g_sfp.sfpud15
 
     CALL i501_sfp16('d')                      #FUN-AB0001 add
- 
+
     LET g_buf = s_get_doc_no(g_sfp.sfp01)     #No.FUN-550052
     SELECT smydesc INTO l_smydesc FROM smy_file WHERE smyslip=g_buf #MOD-4C0010
     SELECT gem02 INTO l_gem02 FROM gem_file WHERE gem01=g_sfp.sfp07
     DISPLAY l_gem02 TO FORMONLY.gem02
     DISPLAY l_smydesc TO smydesc LET g_buf = NULL #MOD-4C0010
     IF g_argv2 MATCHES '[ABC]' THEN
-       IF g_sma.sma79='Y' THEN 
+       IF g_sma.sma79='Y' THEN
           SELECT azf03 INTO l_azf03 FROM azf_file WHERE azf01=g_sfp.sfp11 AND azf02='A'
           IF SQLCA.sqlcode THEN
              LET l_azf03=NULL
           END IF
-       ELSE 
+       ELSE
           SELECT azf03 INTO l_azf03 FROM azf_file WHERE azf01=g_sfp.sfp11 AND azf02='2'
           IF SQLCA.sqlcode THEN
              LET l_azf03=NULL
           END IF
-       END IF 
+       END IF
        DISPLAY l_azf03 TO FORMONLY.azf03
     END IF
     #darcy:2023/06/15 add s---
@@ -3188,12 +3205,12 @@ FUNCTION i501_show()
     else
       call cl_set_act_visible("query_amri506,delete_amri506,insert_amri506",false)
     end if
-    
+
     #darcy:2023/06/15 add e---
     CALL i501_pic() #圖形顯示
     CALL i501_d_fill(g_wc2)
 
- 
+
    #str MOD-A50110 mod
    #CALL i501_b_fill(g_wc3)
     IF g_sfp.sfp04='N' THEN
@@ -3204,7 +3221,7 @@ FUNCTION i501_show()
    #end MOD-A50110 mod
     CALL cl_show_fld_cont()                   #No.FUN-550037 hmf
 END FUNCTION
- 
+
 FUNCTION i501_r()
   DEFINE l_chr,l_sure LIKE type_file.chr1,    #No.FUN-680121 VARCHAR(1),
          l_sfs        RECORD LIKE sfs_file.*
@@ -3212,7 +3229,7 @@ FUNCTION i501_r()
   DEFINE l_sfp01  LIKE sfp_file.sfp01,
          l_cnt    LIKE type_file.num10        #No.FUN-680121 INTEGER #FUN-5C0114
   DEFINE l_i      LIKE type_file.num5         #no.CHI-860008
- 
+
     IF s_shut(0) THEN RETURN END IF
     IF g_sfp.sfp01 IS NULL THEN CALL cl_err('',-400,0) RETURN END IF
     SELECT * INTO g_sfp.* FROM sfp_file WHERE sfp01=g_sfp.sfp01
@@ -3226,9 +3243,9 @@ FUNCTION i501_r()
     END IF
     #FUN-AB0001 add end ---
 
- 
+
     BEGIN WORK
- 
+
     OPEN i501_cl USING g_sfp.sfp01                     #09/10/21 xiaofeizhu Add
     IF STATUS THEN
        CALL cl_err("OPEN i501_cl:", STATUS, 1)
@@ -3236,7 +3253,7 @@ FUNCTION i501_r()
        ROLLBACK WORK
        RETURN
     END IF
- 
+
     FETCH i501_cl INTO g_sfp.*
     IF SQLCA.sqlcode THEN
        CALL cl_err(g_sfp.sfp01,SQLCA.sqlcode,0)
@@ -3246,7 +3263,7 @@ FUNCTION i501_r()
     END IF
 
 
- 
+
     CALL i501_show()
 
       #darcy:2023/06/15 add s---
@@ -3255,14 +3272,14 @@ FUNCTION i501_r()
          return
       end if
       #darcy:2023/06/15 add e---
- 
+
     IF cl_delh(20,16) THEN
         INITIALIZE g_doc.* TO NULL          #No.FUN-9B0098 10/02/24
         LET g_doc.column1 = "sfp01"         #No.FUN-9B0098 10/02/24
         LET g_doc.value1 = g_sfp.sfp01      #No.FUN-9B0098 10/02/24
         CALL cl_del_doc()                                            #No.FUN-9B0098 10/02/24
         MESSAGE "Delete sfp,sfs!"
-#MOD-D90093 add begin--------------------------- 
+#MOD-D90093 add begin---------------------------
         FOR l_i = 1 TO g_rec_b
            IF NOT s_lot_del(g_prog,g_sfp.sfp01,'',0,g_sfs[l_i].sfs04,'DEL')  THEN
               ROLLBACK WORK
@@ -3276,13 +3293,13 @@ FUNCTION i501_r()
            CALL cl_err3("del","sfp_file",g_sfp.sfp01,"",SQLCA.SQLCODE,"","No sfp deleted",1)  #No.FUN-660128
            ROLLBACK WORK RETURN
         END IF
- 
+
         DELETE FROM sfq_file WHERE sfq01 = g_sfp.sfp01
         IF SQLCA.sqlcode THEN
            CALL cl_err3("del","sfq_file",g_sfp.sfp01,"",STATUS,"","del sfq",1)  #No.FUN-660128
            ROLLBACK WORK RETURN
         END IF
- 
+
 # 當有耗材產生時,應將asft620之耗材單號清為NULL
         IF g_sfp.sfp06 = '4' THEN
            SELECT COUNT(*) INTO g_cnt FROM sfu_file
@@ -3296,18 +3313,18 @@ FUNCTION i501_r()
                  RETURN
               END IF
            END IF
-           # 當有耗材產生時,應將apmt730之耗材單號清為NULL                                                     
-           SELECT COUNT(*) INTO g_cnt FROM rvu_file                                                                                 
-            WHERE rvu16 = g_sfp.sfp01                                                                                               
-           IF g_cnt > 0 THEN                                                                                                        
-              UPDATE rvu_file SET rvu16 = NULL                                                                                      
-               WHERE rvu16 = g_sfp.sfp01                                                                                            
-              IF STATUS OR SQLCA.sqlerrd[3]=0 THEN                                                                                  
-                 CALL cl_err3("upd","rvu_file",g_sfp.sfp01,"",STATUS,"","upd rvu",1)                                                
-                 ROLLBACK WORK                                                                                                      
-                 RETURN                                                                                                             
-              END IF                                                                                                                
-           END IF                                                                                                                   
+           # 當有耗材產生時,應將apmt730之耗材單號清為NULL
+           SELECT COUNT(*) INTO g_cnt FROM rvu_file
+            WHERE rvu16 = g_sfp.sfp01
+           IF g_cnt > 0 THEN
+              UPDATE rvu_file SET rvu16 = NULL
+               WHERE rvu16 = g_sfp.sfp01
+              IF STATUS OR SQLCA.sqlerrd[3]=0 THEN
+                 CALL cl_err3("upd","rvu_file",g_sfp.sfp01,"",STATUS,"","upd rvu",1)
+                 ROLLBACK WORK
+                 RETURN
+              END IF
+           END IF
            SELECT COUNT(*) INTO g_cnt FROM srf_file
             WHERE srf06 = g_sfp.sfp01
            IF g_cnt > 0 THEN
@@ -3351,10 +3368,10 @@ FUNCTION i501_r()
               WHERE sfa01 = l_sfs.sfs03
                 AND sfa06 > 0
              IF g_cnt > 0 THEN CONTINUE FOREACH END IF
-             SELECT COUNT(*) INTO g_cnt FROM sfb_file                                                                               
-              WHERE sfb01 = l_sfs.sfs03                                                                                             
-                AND sfb081> 0                                                                                                       
-             IF g_cnt > 0 THEN CONTINUE FOREACH END IF                                                                              
+             SELECT COUNT(*) INTO g_cnt FROM sfb_file
+              WHERE sfb01 = l_sfs.sfs03
+                AND sfb081> 0
+             IF g_cnt > 0 THEN CONTINUE FOREACH END IF
              SELECT COUNT(*) INTO g_cnt FROM sfu_file,sfv_file
                WHERE sfv11 = l_sfs.sfs03
                  AND sfv01 = sfu01
@@ -3374,7 +3391,7 @@ FUNCTION i501_r()
            CALL cl_err3("del","sfs_file",g_sfp.sfp01,"",STATUS,"","del sfs",1)  #No.FUN-660128
            ROLLBACK WORK RETURN
         END IF
- 
+
         LET l_imm03=''
         SELECT imm03 INTO l_imm03 FROM imm_file
          WHERE imm01 = g_sfp.sfp08 AND imm09=g_sfp.sfp01
@@ -3394,7 +3411,7 @@ FUNCTION i501_r()
              END IF
            END IF
        END IF
- 
+
        #delete時
        #因挪料作業產生的發/退料單sfp10 IS NOT NULL
        #發料單=> UPDATE sfm09 = NULL
@@ -3416,10 +3433,10 @@ FUNCTION i501_r()
             END IF
         END IF
 
-#MOD-D90093 mark begin----------------------- 
+#MOD-D90093 mark begin-----------------------
 ##TQC-C10033 --unmark
 #  #MOD-C10100 --begin--
-#          FOR l_i = 1 TO g_rec_b 
+#          FOR l_i = 1 TO g_rec_b
 #  #            IF NOT s_del_rvbs("1",g_sfp.sfp01,g_sfs[l_i].sfs02,0)  THEN        #FUN-880129  #MOD-890271 modify 2->1 #No.TQC-B90236 mark
 #              IF NOT s_lot_del(g_prog,g_sfp.sfp01,'',0,g_sfs[l_i].sfs04,'DEL')  THEN #No.TQC-B90236 add
 #                 ROLLBACK WORK
@@ -3429,15 +3446,15 @@ FUNCTION i501_r()
 #  #MOD-C10100 --end--
 ##TQC-C10033 --unmark
 #MOD-D90093 mark end-------------------------
- 
+
         LET g_msg=TIME
         INSERT INTO azo_file(azo01,azo02,azo03,azo04,azo05,azo06,azoplant,azolegal)  #FUN-980008 add
            VALUES (g_prog,g_user,g_today,g_msg,g_sfp.sfp01,'delete',g_plant,g_legal) #FUN-980008 add
- 
+
         CLEAR FORM
         CALL g_sfq.clear()
         CALL g_sfs.clear()
- 
+
     	INITIALIZE g_sfp.* TO NULL
         MESSAGE ""
         LET g_row_count=0
@@ -3451,7 +3468,7 @@ FUNCTION i501_r()
            COMMIT WORK
            RETURN
         END IF
-        #FUN-B50064-add-end-- 
+        #FUN-B50064-add-end--
         DISPLAY g_row_count TO FORMONLY.cnt  #ATTRIBUTE(MAGENTA)
         OPEN i501_cs
         IF g_curs_index = g_row_count + 1 THEN
@@ -3466,22 +3483,22 @@ FUNCTION i501_r()
               CALL cl_err('','asf-079',0) #MOD-840301
            END IF
         END IF
- 
+
     END IF
- 
+
     CLOSE i501_cl
     COMMIT WORK
     CALL cl_flow_notify(g_sfp.sfp01,'D')
- 
+
 END FUNCTION
- 
+
 FUNCTION i501_d()
  DEFINE l_cnt,l_cnt_1  LIKE type_file.num5    #No.FUN-680121 SMALLINT
 #2022032401 add----begin----
 DEFINE l_tc_zsa02   LIKE type_file.chr1,
        l_tc_zsa03   LIKE type_file.chr10
 #2022032401 add----end----
- 
+
    IF  cl_null(g_sfp.sfp01) THEN RETURN END IF   #No:9485
    LET g_success = 'Y'  #No:7792,7867
   #IF g_sfp.sfp06 NOT MATCHES '[136ABC]' THEN RETURN END IF #FUN-5C0114 add ABC  #FUN-C70014 mark
@@ -3489,21 +3506,21 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
       LET g_success = 'N' #TQC-DB0051
       RETURN
    END IF
-   IF g_sfp.sfpconf = 'Y' THEN 
-      CALL cl_err('','9023',1) 
+   IF g_sfp.sfpconf = 'Y' THEN
+      CALL cl_err('','9023',1)
       LET g_success = 'N' #TQC-DB0051
-      RETURN 
+      RETURN
    END IF #FUN-660106
    IF g_sfp.sfp04 = 'Y' THEN
       LET g_success = 'N' #TQC-DB0051
-      RETURN 
+      RETURN
    END IF
-   IF g_sfp.sfpconf = 'X' THEN 
-      CALL cl_err('','9024',1) 
+   IF g_sfp.sfpconf = 'X' THEN
+      CALL cl_err('','9024',1)
       LET g_success = 'N' #TQC-DB0051
-      RETURN 
+      RETURN
    END IF #FUN-660106
- 
+
    #FUN-AB0001  add str ---
    IF g_sfp.sfp15 matches '[Ss]' THEN
       CALL cl_err('','apm-030',0) #送簽中, 不可修改資料!
@@ -3517,21 +3534,21 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
    END IF
    #FUN-AB0001  add end ---
     #2022032401 add----begin----
-    IF g_sfp.sfpud06[1,2] = 'MR' THEN 
+    IF g_sfp.sfpud06[1,2] = 'MR' THEN
     	LET l_tc_zsa02 = ''
     	LET l_tc_zsa03 = ''
     	SELECT tc_zsa02,tc_zsa03 INTO l_tc_zsa02,l_tc_zsa03 FROM tc_zsa_file
-    	IF l_tc_zsa02 = 'Y' AND NOT cl_null(l_tc_zsa03) AND g_today >= l_tc_zsa03 THEN 
+    	IF l_tc_zsa02 = 'Y' AND NOT cl_null(l_tc_zsa03) AND g_today >= l_tc_zsa03 THEN
     		CALL cl_err('','cpm-066',0)
-    		RETURN 
-    	END IF 
-    END IF 
+    		RETURN
+    	END IF
+    END IF
     #2022032401 add----end----
 
    WHILE TRUE
       CALL i501_d_i()
       CALL i501_d_fill(' 1=1')
-      
+
       LET l_cnt = 0
       LET l_cnt_1 = 0
       SELECT COUNT(*) INTO l_cnt FROM sfq_file
@@ -3599,9 +3616,9 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
 #MOD-D60042 add end-----------------------------
       EXIT WHILE
   END WHILE
- 
+
 END FUNCTION
- 
+
 FUNCTION i501_d_i()
    DEFINE i,j           LIKE type_file.num5    #No.FUN-680121 SMALLINT
    DEFINE l_cnt         LIKE type_file.num5    #No.FUN-680121 SMALLINT
@@ -3619,7 +3636,7 @@ FUNCTION i501_d_i()
           l_sfq03       LIKE sfq_file.sfq03,
           l_sfq02_t     LIKE sfq_file.sfq02,
           l_sfq03_t     LIKE sfq_file.sfq03,
-          l_sfq03_o     LIKE sfq_file.sfq03,   #No.MOD-860012 
+          l_sfq03_o     LIKE sfq_file.sfq03,   #No.MOD-860012
           l_sfq03_r     LIKE sfq_file.sfq03,
           l_allow_insert   LIKE type_file.num5,                #可新增否  #No.FUN-680121 SMALLINT
           l_allow_delete   LIKE type_file.num5                 #可刪除否  #No.FUN-680121 SMALLINT
@@ -3646,7 +3663,7 @@ FUNCTION i501_d_i()
    DEFINE l_ima153      LIKE ima_file.ima153
    DEFINE l_allowqty    LIKE sfq_file.sfq03
    #MOD-BA0078 -- end --
-  #DEFINE a_qty1        LIKE sfq_file.sfq03 #TQC-BC0130   #MOD-C80256 mark 
+  #DEFINE a_qty1        LIKE sfq_file.sfq03 #TQC-BC0130   #MOD-C80256 mark
   #DEFINE a_qty2        LIKE sfq_file.sfq03 #TQC-BC0130   #MOD-C80256 mark
    DEFINE l_row         LIKE type_file.num10 #FUN-C70014  #总行数
    DEFINE l_shm08 	    LIKE shm_file.shm08
@@ -3657,16 +3674,16 @@ FUNCTION i501_d_i()
    DEFINE l_shm08_sum   LIKE shm_file.shm08   #add by jixf 160809
    DEFINE l_sfq03_sum   LIKE sfq_file.sfq03
    DEFINE l_sfb08_1     LIKE sfb_file.sfb08   #add by guanyao160909
-   
+
    LET g_flag_sfq03=0     #CHI-6C0005 add
- 
+
    SELECT COUNT(*) INTO i FROM sfq_file WHERE sfq01=g_sfp.sfp01
    #str-----add by guanyao160822
    IF NOT cl_null(g_sfp.sfpud03) THEN
       IF i=0 THEN
-         DECLARE i501_s_sfq_d CURSOR FOR         
+         DECLARE i501_s_sfq_d CURSOR FOR
            SELECT tc_sfe02,tc_sfe04,sfb05,'','','','',0,0,tc_sfe03,0   #FUN-870097 add sfb95 #FUN-5C0114 add sfq05    #FUN-A70095 add 0
-              FROM sfb_file,tc_sfe_file 
+              FROM sfb_file,tc_sfe_file
              WHERE tc_sfe01=g_sfp.sfpud03 AND tc_sfe02=sfb01
               #AND tc_sfeud02 = 'Y'           #No.FUN-870117 #darcy 241202
          CALL g_sfq.clear()
@@ -3682,16 +3699,16 @@ FUNCTION i501_d_i()
                                   g_sfq[i].sfq03,
                                   qty1, qty2
            IF STATUS THEN
-             CALL cl_err('fore sfd:',STATUS,1)  
+             CALL cl_err('fore sfd:',STATUS,1)
               EXIT FOREACH
            END IF
            SELECT ima02,ima021 INTO g_sfq[i].ima02_a, g_sfq[i].ima021_a
              FROM ima_file WHERE ima01=g_sfq[i].sfb05
-           SELECT SUM(sfq03) INTO qty2 FROM sfq_file,sfp_file  
+           SELECT SUM(sfq03) INTO qty2 FROM sfq_file,sfp_file
             WHERE sfq01 = sfp01
               AND sfpud03 = g_sfp.sfpud03
               AND sfq02 = g_sfq[i].sfq02
-           IF cl_null(qty2) THEN LET qty2 =0 END IF 
+           IF cl_null(qty2) THEN LET qty2 =0 END IF
            IF g_sfp.sfp06 = '1' THEN LET g_sfq[i].sfq03=qty1-qty2 END IF
            IF g_sfq[i].sfq03<0 THEN LET g_sfq[i].sfq03=0 END IF
            LET i=i+1
@@ -3703,9 +3720,9 @@ FUNCTION i501_d_i()
    #end-----add by guanyao160822
    IF NOT cl_null(g_sfp.sfp08) THEN
       IF i=0 THEN
-         DECLARE i501_s_sfq_c CURSOR FOR         
+         DECLARE i501_s_sfq_c CURSOR FOR
            SELECT sfd03,'',sfb05,'','','',sfb95,0,0,sfb08,sfb081   #FUN-870097 add sfb95 #FUN-5C0114 add sfq05    #FUN-A70095 add 0
-              FROM sfd_file,sfb_file 
+              FROM sfd_file,sfb_file
              WHERE sfd01=g_sfp.sfp08 AND sfd03=sfb01
               AND sfb87 = 'Y'           #No.FUN-870117
          CALL g_sfq.clear()
@@ -3721,7 +3738,7 @@ FUNCTION i501_d_i()
                                   g_sfq[i].sfq03,
                                   qty1, qty2
            IF STATUS THEN
-             CALL cl_err('fore sfd:',STATUS,1)  
+             CALL cl_err('fore sfd:',STATUS,1)
               EXIT FOREACH
            END IF
            SELECT ima02,ima021 INTO g_sfq[i].ima02_a, g_sfq[i].ima021_a
@@ -3739,9 +3756,9 @@ FUNCTION i501_d_i()
    IF (i=0) AND (g_argv2 MATCHES '[ABC]') THEN
       CALL i501_planissue()
    END IF
- 
+
    BEGIN WORK
- 
+
    OPEN i501_cl USING g_sfp.sfp01                     #09/10/21 xiaofeizhu Add
    IF STATUS THEN
       CALL cl_err("OPEN i501_cl:", STATUS, 1)
@@ -3749,78 +3766,78 @@ FUNCTION i501_d_i()
       ROLLBACK WORK
       RETURN
    END IF
- 
+
    FETCH i501_cl INTO g_sfp.*          # 鎖住將被更改或取消的資料
    IF SQLCA.sqlcode THEN
        CALL cl_err(g_sfp.sfp01,SQLCA.sqlcode,0)     # 資料被他人LOCK
        CLOSE i501_cl ROLLBACK WORK RETURN
    END IF
- 
+
    LET g_sfp.sfpmodu=g_user              #NO:6908
    LET g_sfp.sfpdate=g_today             #NO:6908
    DISPLAY BY NAME g_sfp.sfpmodu         #NO:6908
    DISPLAY BY NAME g_sfp.sfpdate         #NO:6908
- 
- 
+
+
    LET g_success='Y'
    LET l_sfq02_t = NULL
    LET l_sfq03_t = NULL
-   LET l_sfq03_o = NULL      #No.MOD-860012 
- 
+   LET l_sfq03_o = NULL      #No.MOD-860012
+
    DISPLAY ARRAY g_sfq TO s_sfq.* ATTRIBUTE(COUNT=i,UNBUFFERED)
       BEFORE DISPLAY
          EXIT DISPLAY
          ON IDLE g_idle_seconds
                  CALL cl_on_idle()
                  CONTINUE DISPLAY
-         
-         ON ACTION about         
-            CALL cl_about()      
-         
-         ON ACTION controlg      
-            CALL cl_cmdask()     
-         
-         ON ACTION help          
-            CALL cl_show_help()  
+
+         ON ACTION about
+            CALL cl_about()
+
+         ON ACTION controlg
+            CALL cl_cmdask()
+
+         ON ACTION help
+            CALL cl_show_help()
    END DISPLAY
- 
+
    LET l_allow_insert = cl_detail_input_auth("insert")
    LET l_allow_delete = cl_detail_input_auth("delete")
    LET l_count = g_sfq.getLength()     #FUN-C70014
    INPUT ARRAY g_sfq WITHOUT DEFAULTS FROM s_sfq.*
          ATTRIBUTE(COUNT=i,MAXCOUNT=g_max_rec,UNBUFFERED,
                    INSERT ROW=l_allow_insert,DELETE ROW=l_allow_delete,APPEND ROW=l_allow_insert)
- 
+
       BEFORE INPUT
          CALL i501_set_entry_d('a')
          CALL i501_set_no_entry_d('a')
- 
+
       BEFORE ROW
          LET i = ARR_CURR()
          LET l_sfq03_t = g_sfq[i].sfq03
-         LET l_sfq03_o = g_sfq[i].sfq03   #No.MOD-860012 
+         LET l_sfq03_o = g_sfq[i].sfq03   #No.MOD-860012
          LET l_sfq02_t = g_sfq[i].sfq02   #FUN-940039 add
          LET l_sfq03_flag = 'N'           #FUN-B20095
          #FUN-C70014 add begin-----------
          LET l_sfq014_t = g_sfq[i].sfq014
-         IF i > l_count THEN 
+         IF i > l_count THEN
              LET l_cmd = 'a'
-         ELSE 
+         ELSE
              LET l_cmd = 'u'
-         END IF 
-         IF g_sfp.sfp06 = 'D' THEN 
+         END IF
+         IF g_sfp.sfp06 = 'D' THEN
             NEXT FIELD sfq014
          ELSE
          #FUN-C70014 add end-------------
             NEXT FIELD sfq02
          END IF   #FUN-C70014 add
- 
+
       BEFORE DELETE
-        LET l_cnt = 0 
-        SELECT COUNT(*) INTO l_cnt FROM sfs_file  
+        LET l_cnt = 0
+        SELECT COUNT(*) INTO l_cnt FROM sfs_file
                WHERE sfs01 = g_sfp.sfp01
                  AND sfs03 = g_sfq[i].sfq02
- 
+
        IF cl_null(l_cnt) THEN LET l_cnt = 0 END IF
        IF l_cnt > 0 THEN
           CALL cl_err (g_sfq[i].sfq02,'asf-795',1)
@@ -3839,11 +3856,11 @@ FUNCTION i501_d_i()
                LET g_sfq[i].sfq014 = l_sfq014_t
                NEXT FIELD sfq014
             END IF
-          
+
             SELECT shm012 INTO g_sfq[i].sfq02 FROM shm_file
-             WHERE shm01 = g_sfq[i].sfq014 
+             WHERE shm01 = g_sfq[i].sfq014
                AND shm28 = 'N'
-            DISPLAY BY NAME g_sfq[i].sfq02 
+            DISPLAY BY NAME g_sfq[i].sfq02
          END IF
          IF g_sfp.sfp06 = 'D' THEN #FUN-C70014 add
             IF NOT i501_chk_sfq(i,'1') THEN NEXT FIELD sfq014 END IF  #FUN-C70014 add
@@ -3861,7 +3878,7 @@ FUNCTION i501_d_i()
          END IF
 #FUN-AA0059 ---------------------end-------------------------------
          #TQC-CA0044 add begin-------------
-         IF g_sfp.sfp06 = 'D' AND NOT cl_null(g_sfq[i].sfq014) AND 
+         IF g_sfp.sfp06 = 'D' AND NOT cl_null(g_sfq[i].sfq014) AND
             NOT cl_null(g_sfq[i].sfq02) THEN
             SELECT COUNT(*) INTO l_cnt FROM shm_file
              WHERE shm01 = g_sfq[i].sfq014
@@ -3872,7 +3889,7 @@ FUNCTION i501_d_i()
                LET g_sfq[i].sfq02 = l_sfq02_t
                NEXT FIELD sfq02
             END IF
-         END IF 
+         END IF
          #TQC-CA0044 add end --------------
          IF (NOT cl_null(g_sfq[i].sfq02)) AND (NOT g_sfp.sfp06 MATCHES '[ABC]') THEN #FUN-5C0114
             CALL i501_sfb01(g_sfq[i].sfq02)
@@ -3886,7 +3903,7 @@ FUNCTION i501_d_i()
                CALL cl_err(g_sfq[i].sfq02,'asr-047',1)   #所輸入之工單型態
                NEXT FIELD sfq02
             END IF
- 
+
             SELECT COUNT(*) INTO l_cnt FROM snb_file
              WHERE snb01 = g_sfq[i].sfq02
               #AND snbconf = 'N'    #MOD-B60143 mark
@@ -3898,7 +3915,7 @@ FUNCTION i501_d_i()
             END IF
             SELECT sfb02 INTO l_sfb02 FROM sfb_file
              WHERE sfb01 = g_sfq[i].sfq02
-            IF l_sfb02 = '7' OR l_sfb02 = '8' THEN 
+            IF l_sfb02 = '7' OR l_sfb02 = '8' THEN
 
                LET l_cnt = 0
                SELECT COUNT(*) INTO l_cnt FROM pmm_file,pmn_file
@@ -3906,11 +3923,11 @@ FUNCTION i501_d_i()
                   AND pmn41 = g_sfq[i].sfq02
                   AND pmm18 = 'Y'
                   AND (pmm25 != '6' OR pmm25 != '9')
-               IF cl_null(l_cnt)  OR l_cnt = 0 THEN 
+               IF cl_null(l_cnt)  OR l_cnt = 0 THEN
                   CALL cl_err('','asf-117',0)
                   NEXT FIELD sfq02
-               END IF    
-            END IF 
+               END IF
+            END IF
             IF g_sfp.sfp06 = '3' THEN   #補料單
                SELECT COUNT(*) INTO g_cnt FROM sfp_file,sfq_file
                 WHERE sfp06 = '1'
@@ -3921,7 +3938,7 @@ FUNCTION i501_d_i()
                   CALL cl_err(g_sfq[i].sfq02,'asf-526',0)
                   NEXT FIELD sfq02
                END IF
- 
+
                SELECT COUNT(*) INTO g_cnt FROM sfb_file
                 WHERE sfb01 = g_sfq[i].sfq02
                   AND sfb04 = '8'   #已結案工單不可KEYIN
@@ -3930,7 +3947,7 @@ FUNCTION i501_d_i()
                   CALL cl_err(g_sfq[i].sfq02,'asf-686',0) #MOD-D60042 add
                   NEXT FIELD sfq02
                END IF
- 
+
                SELECT COUNT(*) INTO g_cnt FROM sfp_file,sfq_file
                 WHERE sfp06 = '3'
                   AND sfp04 = 'N'
@@ -3943,19 +3960,19 @@ FUNCTION i501_d_i()
                   CALL cl_err(g_sfq[i].sfq02,'asf-701',0) #FUN-660106
                   NEXT FIELD sfq02
                END IF
- 
+
             END IF
 
             #str---add by jixf 160810 若单头输入了投产批次号，那需要管控工单必须是当前批次号
         #    IF NOT cl_null(g_sfp.sfpud02) THEN
         #       LET l_count=0
-        #       SELECT COUNT(*) INTO l_count FROM shm_file 
+        #       SELECT COUNT(*) INTO l_count FROM shm_file
         #          WHERE shm012=g_sfq[i].sfq02 AND ta_shm05=g_sfp.sfpud02
-        #       IF l_count=0 THEN 
+        #       IF l_count=0 THEN
         #          CALL cl_err(g_sfq[i].sfq02,'csf-315',1)
         #          NEXT FIELD sfq02
-        #       END IF 
-        #    END IF 
+        #       END IF
+        #    END IF
             #end---add by jixf 160810     #mark by liuyya 161021
             SELECT sfb05,sfb04,sfb23,sfb08,sfb06,sfb81,sfb02
               INTO g_sfq[i].sfb05, l_sfb04, l_sfb23, l_sfb08,
@@ -3963,51 +3980,51 @@ FUNCTION i501_d_i()
               FROM sfb_file
              WHERE sfb01 = g_sfq[i].sfq02
                AND sfb87 ='Y'
- 
+
             IF STATUS THEN
                CALL cl_err3("sel","sfb_file",g_sfq[i].sfq02,"",STATUS,"","sel sfb",1)  #No.FUN-660128
                NEXT FIELD sfq02
             END IF
             #str----add by guanyao160909
             IF NOT cl_null(g_sfp.sfpud03) THEN
-               IF NOT cl_null(g_sfq[i].sfq04) THEN 
-                  SELECT tc_sfe03 INTO l_sfb08_1 FROM tc_sfe_file 
+               IF NOT cl_null(g_sfq[i].sfq04) THEN
+                  SELECT tc_sfe03 INTO l_sfb08_1 FROM tc_sfe_file
                    WHERE tc_sfe01 =  g_sfp.sfpud03
                      AND tc_sfe02 = g_sfq[i].sfq02
                      #AND tc_sfeud02 = 'Y'  #darcy 241202
                      AND tc_sfe04 = g_sfq[i].sfq04
-                  IF cl_null(l_sfb08_1) OR l_sfb08_1 = 0 THEN 
-                        SELECT tc_sfe03 INTO l_sfb08_1 FROM tc_sfe_file 
+                  IF cl_null(l_sfb08_1) OR l_sfb08_1 = 0 THEN
+                        SELECT tc_sfe03 INTO l_sfb08_1 FROM tc_sfe_file
                          WHERE tc_sfe01 =  g_sfp.sfpud03
                            AND tc_sfe02 = g_sfq[i].sfq02
                            #AND tc_sfeud02 = 'Y'  #darcy 241202
-                  END IF 
+                  END IF
                   LET l_sfb08 = l_sfb08_1
-               ELSE 
-                  SELECT tc_sfe03 INTO l_sfb08 FROM tc_sfe_file 
+               ELSE
+                  SELECT tc_sfe03 INTO l_sfb08 FROM tc_sfe_file
                    WHERE tc_sfe01 =  g_sfp.sfpud03
                      AND tc_sfe02 = g_sfq[i].sfq02
                      #AND tc_sfeud02 = 'Y'  #darcy 241202
-               END IF                 
-            END IF 
+               END IF
+            END IF
             #end----add by guanyao160909
- 
+
             IF l_sfb04='1' THEN
                CALL cl_err('sfb04=1','asf-381',0) NEXT FIELD sfq02
             END IF
- 
+
             IF l_sfb04='8' THEN
                CALL cl_err('sfb04=8','asf-345',0) NEXT FIELD sfq02
             END IF
- 
+
             IF l_sfb81 > g_sfp.sfp02 THEN      #-->NO:0813
                CALL cl_err(g_sfq[i].sfq02,'asf-819',0) NEXT FIELD sfq02
             END IF                             #----------
- 
+
             IF l_sfb02=13 THEN  #bugno:4863
                CALL cl_err('sfb02=13','asf-346',0) NEXT FIELD sfq02
             END IF
- 
+
             SELECT ima02,ima021 INTO g_sfq[i].ima02_a, g_sfq[i].ima021_a
               FROM ima_file
              WHERE ima01=g_sfq[i].sfb05
@@ -4025,38 +4042,38 @@ FUNCTION i501_d_i()
                    AND sfp04 = 'Y'             #No.FUN-870117
                  GROUP BY sfq04
                  ORDER BY sfq03 DESC
- 
+
                FOREACH i501_cs1 INTO l_sfq03
                  IF STATUS THEN LET l_sfq03=0 END IF
                  EXIT FOREACH
                END FOREACH
- 
+
                IF cl_null(l_sfq03) THEN LET l_sfq03 = 0 END IF   #成套發料數
- 
+
                DECLARE i501_cs0 CURSOR FOR
                 SELECT SUM(sfq03) FROM sfp_file,sfq_file
                  WHERE sfp06='6' AND sfp01=sfq01
                 #  AND sfq02=g_sfq[i].sfq02                      #TQC-A30108
-                   AND (sfq02=g_sfq02 AND g_sfq02 IS NOT NULL)   #TQC-A30108 
+                   AND (sfq02=g_sfq02 AND g_sfq02 IS NOT NULL)   #TQC-A30108
                    AND sfpconf !='X'  #FUN-660106
                  GROUP BY sfq04
                  ORDER BY sfq03 DESC
- 
+
                FOREACH i501_cs0 INTO l_sfq03_r
                  IF STATUS THEN LET l_sfq03_r=0 END IF
                  EXIT FOREACH
                END FOREACH
- 
+
                IF cl_null(l_sfq03_r) THEN LET l_sfq03_r = 0 END IF #成套退料數
                LET l_sfq03 = l_sfq03 - l_sfq03_r    #成套發料-成套退料
- 
+
                IF l_sfq03 > l_sfb08 THEN
                   CALL cl_err(g_sfq[i].sfq02,'asf-704',0)
                   NEXT FIELD sfq02
                END IF
             END IF
          END IF
- 
+
          IF (NOT cl_null(g_sfq[i].sfq02)) AND (g_sfp.sfp06 MATCHES '[ABC]') THEN
             LET l_cnt=0
             SELECT ima02,ima021 INTO g_sfq[i].ima02_a,g_sfq[i].ima021_a
@@ -4075,48 +4092,48 @@ FUNCTION i501_d_i()
          END IF
          IF g_sfp.sfp06 = 'D' THEN #FUN-C70014 add
             IF NOT i501_chk_sfq(i,'1') THEN NEXT FIELD sfq02 END IF  #FUN-C70014 add
-         END IF 
+         END IF
 
 #FUN-B20095 ---------------------Begin-------------------------
-      AFTER FIELD sfq012 
+      AFTER FIELD sfq012
          IF cl_null(g_sfq[i].sfq012) THEN
             LET g_sfq[i].sfq012 = ' '
-         ELSE 
+         ELSE
             LET l_cnt = 0
             SELECT COUNT(*) INTO l_cnt FROM sfa_file
-             WHERE sfa01 = g_sfq[i].sfq02 
+             WHERE sfa01 = g_sfq[i].sfq02
                AND sfa012 = g_sfq[i].sfq012
             IF cl_null(l_cnt) THEN LET l_cnt = 0 END IF
             IF l_cnt < 1 THEN
                LET g_sfq[i].sfq012 = ' '
                NEXT FIELD sfq012
             END IF
-            CALL s_schdat_ecm014(g_sfq[i].sfq02,g_sfq[i].sfq012)  
-               RETURNING g_sfq[i].ecm014   
-            DISPLAY BY NAME g_sfq[i].ecm014       
+            CALL s_schdat_ecm014(g_sfq[i].sfq02,g_sfq[i].sfq012)
+               RETURNING g_sfq[i].ecm014
+            DISPLAY BY NAME g_sfq[i].ecm014
 
            #IF g_sfp.sfp06 MATCHES '[1]' THEN
             IF g_sfp.sfp06 MATCHES '[1D]' THEN   #FUN-C70014 add 'D'
                #FUN-C70014 add begin-----------
                IF g_sfp.sfp06 = 'D' THEN
-                  #取得Run Card生產數量 
-                  SELECT shm08 INTO l_shm08 FROM shm_file 
-                   WHERE shm01 = g_sfq[i].sfq014 
-                  IF cl_null(l_shm08) THEN LET l_shm08 = 0 END IF    
-               END IF 
+                  #取得Run Card生產數量
+                  SELECT shm08 INTO l_shm08 FROM shm_file
+                   WHERE shm01 = g_sfq[i].sfq014
+                  IF cl_null(l_shm08) THEN LET l_shm08 = 0 END IF
+               END IF
                #FUN-C70014 add end-------------
                #IF g_sma.sma129='N' THEN  #FUN-C70014 mark
                IF g_sma.sma129='N' AND g_sfp.sfp06 <> 'D' THEN #FUN-C70014 g_sfp.sfp06 <> 'D' Run Card成套發料時統一從發料檔抓取已發套數
                   LET l_sfb08 =NULL
                   LET l_sfb081=NULL
-                  SELECT sfb08,sfb081 INTO l_sfb08,l_sfb081 
-                                      FROM sfb_file 
+                  SELECT sfb08,sfb081 INTO l_sfb08,l_sfb081
+                                      FROM sfb_file
                                      WHERE sfb01=g_sfq[i].sfq02
                   IF l_sfb08  IS NULL THEN LET l_sfb08  = 0 END IF
                   IF l_sfb081 IS NULL THEN LET l_sfb081 = 0 END IF
                   LET qty1=l_sfb081
                   LET qty2=0
-                  LET unissue_qty = l_sfb08 - l_sfb081 
+                  LET unissue_qty = l_sfb08 - l_sfb081
                ELSE
                   LET qty1 = 0
                   LET qty2 = 0
@@ -4125,12 +4142,12 @@ FUNCTION i501_d_i()
                        RETURNING qty1,qty2
                   IF qty1 IS NULL THEN LET qty1=0 END IF
                   IF qty2 IS NULL THEN LET qty2=0 END IF
-                  
+
                   LET unissue_qty = l_sfb08-(qty1-qty2)
                   IF g_sfp.sfp06 = 'D' THEN LET unissue_qty = l_shm08-(qty1-qty2) END IF #FUN-C70014 add
                END IF
                IF (g_sfq[i].sfq03 IS NULL OR
-                  (l_sfq02_t IS NULL OR l_sfq02_t != g_sfq[i].sfq02)) AND 
+                  (l_sfq02_t IS NULL OR l_sfq02_t != g_sfq[i].sfq02)) AND
                   l_sfq03_flag = 'N' THEN   #FUN-B20095 add l_sfq03_flag
                   IF g_argv1='1' THEN
                      LET g_sfq[i].sfq03 = unissue_qty
@@ -4139,50 +4156,50 @@ FUNCTION i501_d_i()
                   END IF
                END IF
                IF g_sfq[i].sfq03 = 0 THEN
-                  IF g_argv1='1' THEN 
+                  IF g_argv1='1' THEN
                      IF g_sma.sma129 = 'Y' THEN
                         LET g_sfq[i].sfq03 = unissue_qty
                      END IF
                   ELSE
-                     LET g_sfq[i].sfq03 = qty1-qty2 
+                     LET g_sfq[i].sfq03 = qty1-qty2
                   END IF
-               END IF 
+               END IF
                SELECT sfb08 INTO l_sfb08 FROM sfb_file
                 WHERE sfb01 = g_sfq[i].sfq02
                #str----add by guanyao160909
                IF NOT cl_null(g_sfp.sfpud03) THEN
-                  IF NOT cl_null(g_sfq[i].sfq04) THEN 
-                     SELECT tc_sfe03 INTO l_sfb08_1 FROM tc_sfe_file 
+                  IF NOT cl_null(g_sfq[i].sfq04) THEN
+                     SELECT tc_sfe03 INTO l_sfb08_1 FROM tc_sfe_file
                       WHERE tc_sfe01 =  g_sfp.sfpud03
                         AND tc_sfe02 = g_sfq[i].sfq02
-                        #AND tc_sfeud02 = 'Y' 
+                        #AND tc_sfeud02 = 'Y'
                         AND tc_sfe04 = g_sfq[i].sfq04
-                     IF cl_null(l_sfb08_1) OR l_sfb08_1 = 0 THEN 
-                        SELECT tc_sfe03 INTO l_sfb08_1 FROM tc_sfe_file 
+                     IF cl_null(l_sfb08_1) OR l_sfb08_1 = 0 THEN
+                        SELECT tc_sfe03 INTO l_sfb08_1 FROM tc_sfe_file
                          WHERE tc_sfe01 =  g_sfp.sfpud03
                            AND tc_sfe02 = g_sfq[i].sfq02
-                          # AND tc_sfeud02 = 'Y' 
-                     END IF 
+                          # AND tc_sfeud02 = 'Y'
+                     END IF
                      LET l_sfb08 = l_sfb08_1
-                  ELSE 
-                     SELECT tc_sfe03 INTO l_sfb08 FROM tc_sfe_file 
+                  ELSE
+                     SELECT tc_sfe03 INTO l_sfb08 FROM tc_sfe_file
                       WHERE tc_sfe01 =  g_sfp.sfpud03
                         AND tc_sfe02 = g_sfq[i].sfq02
-                        #AND tc_sfeud02 = 'Y' 
-                  END IF                 
-               END IF 
+                        #AND tc_sfeud02 = 'Y'
+                  END IF
+               END IF
                #end----add by guanyao160909
                LET l_sfq03 = 0
                LET l_sfq03_r = 0
                IF cl_null(g_sfq[i].sfq04) THEN
                   LET g_sfq[i].sfq04 = ' '
                END IF
-           #將撈取l_qty1,l_qty2的部分整理到函數 i501_sfq03_chk()處理 
+           #將撈取l_qty1,l_qty2的部分整理到函數 i501_sfq03_chk()處理
               #CALL i501_sfq03_chk(g_sfq[i].sfq02,g_sfq[i].sfq04,g_sfq[i].sfq012)  RETURNING l_qty1,l_qty2  #只要有效存在於發料當中的,用于控管
                CALL i501_sfq03_chk(g_sfq[i].sfq02,g_sfq[i].sfq04,g_sfq[i].sfq012,g_sfq[i].sfq014,'2')  RETURNING l_qty1,l_qty2  #FUN-BC0060 mod #FUN-C70014 add sfq014
                LET l_sfq03 = l_qty1 - l_qty2
               #IF g_sma.sma129='N' THEN
-               IF g_sma.sma129='N' AND g_sfp.sfp06 <> 'D' THEN   #FUN-C70014 add g_sfp.sfp06 <> 'D' 
+               IF g_sma.sma129='N' AND g_sfp.sfp06 <> 'D' THEN   #FUN-C70014 add g_sfp.sfp06 <> 'D'
                   LET l_sfb08 =NULL
                   LET l_sfb081=NULL
                   SELECT sfb08,sfb081 INTO l_sfb08,l_sfb081
@@ -4196,11 +4213,11 @@ FUNCTION i501_d_i()
                   LET l_sfq03_o =0
                END IF
                IF l_sfq03+g_sfq[i].sfq03> l_sfb08 OR   #modify by huanglf160927
-                  (g_sfp.sfp06 = 'D' AND l_sfq03+g_sfq[i].sfq03-l_sfq03_o > l_shm08) THEN  #FUN-C70014 add  
+                  (g_sfp.sfp06 = 'D' AND l_sfq03+g_sfq[i].sfq03-l_sfq03_o > l_shm08) THEN  #FUN-C70014 add
                   CALL cl_err(g_sfq[i].sfq02,'asf-704',0)
-                  NEXT FIELD sfq03       
+                  NEXT FIELD sfq03
                END IF
-               
+
             END IF
             IF g_sfp.sfp06='6' THEN
                SELECT sfb081,sfb09 INTO qty1,qty2 FROM sfb_file
@@ -4219,59 +4236,59 @@ FUNCTION i501_d_i()
             IF (g_sfp.sfp06 NOT MATCHES '[16ABCD]') THEN   #TQC-CA0035 add D
                LET g_sfq[i].sfq03=0
             END IF
- 
+
             LET g_sfq[i].sfq08=g_sfq[i].sfq03
             DISPLAY g_sfq[i].sfq08 TO sfq08
-            IF g_sfp.sfp06 ='1' THEN 
+            IF g_sfp.sfp06 ='1' THEN
                IF g_sfq[i].sfq03 <=0 THEN
                   CALL cl_err(g_sfq[i].sfq03,'asf-706',0)
-                  NEXT FIELD sfq03 
+                  NEXT FIELD sfq03
                END IF
             END IF
-         END IF   
+         END IF
          IF g_sfp.sfp06 = 'D' THEN #FUN-C70014 add
-            IF NOT i501_chk_sfq(i,'1') THEN NEXT FIELD sfq012 END IF  #FUN-C70014 add 
-         END IF 
-#FUN-B20095 ---------------------End---------------------------         
+            IF NOT i501_chk_sfq(i,'1') THEN NEXT FIELD sfq012 END IF  #FUN-C70014 add
+         END IF
+#FUN-B20095 ---------------------End---------------------------
       AFTER FIELD sfq04
- 
+
          IF cl_null(g_sfq[i].sfq04) THEN
             LET g_sfq[i].sfq04 = ' '
-         ELSE                                      
+         ELSE
             CALL i501_sfq04(g_sfq[i].sfq04) RETURNING g_errno
             IF NOT cl_null(g_errno) THEN
                CALL cl_err(g_sfq[i].sfq04,g_errno,1)
                NEXT FIELD sfq04
             END IF
             #str----add by guanyao160913
-            IF g_sfp.sfp06 = '1' THEN 
+            IF g_sfp.sfp06 = '1' THEN
                IF NOT cl_null(g_sfq[i].sfq02) THEN
                   LET l_cnt = 0
                   SELECT COUNT(*) INTO l_cnt FROM sfa_file WHERE sfa01 = g_sfq[i].sfq02 AND sfa08 = g_sfq[i].sfq04 AND sfa11<>'E'
-                  IF cl_null(l_cnt) OR l_cnt=0 THEN 
+                  IF cl_null(l_cnt) OR l_cnt=0 THEN
                      CALL cl_err(g_sfq[i].sfq04,'csf-082',1)
                      NEXT FIELD sfq04
-                  END IF 
-               END IF 
-            END IF 
+                  END IF
+               END IF
+            END IF
             #end----add by guanyao160913
          END IF
- 
+
          #IF g_sfp.sfp06 MATCHES '[1]' THEN #MOD-640419 '[16]' -> '[1]'
          IF g_sfp.sfp06 MATCHES '[1D]' THEN #FUN-C70014 add 'D'
             #FUN-C70014 add begin-----------
             IF g_sfp.sfp06 = 'D' THEN
-                #取得Run Card生產數量 
-                SELECT shm08 INTO l_shm08 FROM shm_file 
-                 WHERE shm01 = g_sfq[i].sfq014 
-                IF cl_null(l_shm08) THEN LET l_shm08 = 0 END IF    
-            END IF 
+                #取得Run Card生產數量
+                SELECT shm08 INTO l_shm08 FROM shm_file
+                 WHERE shm01 = g_sfq[i].sfq014
+                IF cl_null(l_shm08) THEN LET l_shm08 = 0 END IF
+            END IF
             #FUN-C70014 add end-------------
             IF g_sma.sma129='N' AND g_sfp.sfp06 <> 'D' THEN #FUN-C70014 add g_sfp.sfp06 <> 'D' Run Card成套發料時統一從發料檔抓取已發套數
                LET l_sfb08 =NULL
                LET l_sfb081=NULL
-               SELECT sfb08,sfb081 INTO l_sfb08,l_sfb081 
-                                   FROM sfb_file 
+               SELECT sfb08,sfb081 INTO l_sfb08,l_sfb081
+                                   FROM sfb_file
                                   WHERE sfb01=g_sfq[i].sfq02
                IF l_sfb08  IS NULL THEN LET l_sfb08  = 0 END IF
                IF l_sfb081 IS NULL THEN LET l_sfb081 = 0 END IF
@@ -4288,16 +4305,16 @@ FUNCTION i501_d_i()
                     RETURNING qty1,qty2        #FUN-A70095
          #此段功能由i501_sfq03_chk1()代替
          #FUN-A70095 ---------------Begin----------------------
-         #     IF g_sfq[i].sfq04 != ' ' THEN             #MOD-A30070               
+         #     IF g_sfq[i].sfq04 != ' ' THEN             #MOD-A30070
          #       SELECT SUM(sfq03) INTO qty1 FROM sfq_file, sfp_file
-         #        WHERE sfq02=g_sfq[i].sfq02 
+         #        WHERE sfq02=g_sfq[i].sfq02
          #       #  AND sfq04=g_sfq[i].sfq04                   #MOD-A30070
          #          AND (sfq04=g_sfq[i].sfq04 OR sfq04 = ' ')  #MOD-A30070  #FUN-AC0074 #TQC-B60349 restore
          #          AND sfq01=sfp01 AND sfp06='1' AND sfp04='Y'
          #       #  AND sfq04=g_sfq[i].sfq04   #FUN-AC0074 TQC-B60349 mark
-         #       
+         #
          #       SELECT SUM(sfq03) INTO qty2 FROM sfq_file, sfp_file
-         #        WHERE sfq02=g_sfq[i].sfq02 
+         #        WHERE sfq02=g_sfq[i].sfq02
          #       #  AND sfq04=g_sfq[i].sfq04                   #MOD-A30070
          #          AND (sfq04=g_sfq[i].sfq04 OR sfq04 = ' ')  #MOD-A30070 #FUN-AC0074  #TQC-B60349 restore
          #          AND sfq01=sfp01 AND sfp06='6' AND sfp04='Y'
@@ -4305,24 +4322,24 @@ FUNCTION i501_d_i()
          #     #MOD-A30070 --BEGIN--
          #     ELSE
          #       SELECT SUM(sfq03) INTO qty1 FROM sfq_file, sfp_file
-         #        WHERE sfq02=g_sfq[i].sfq02 
+         #        WHERE sfq02=g_sfq[i].sfq02
          #          AND sfq01=sfp01 AND sfp06='1' AND sfp04='Y'
          #        # AND sfq04=' ' #FUN-AC0074 #TQC-B60349  mark
-         #     
+         #
          #       SELECT SUM(sfq03) INTO qty2 FROM sfq_file, sfp_file
-         #        WHERE sfq02=g_sfq[i].sfq02 
-         #          AND sfq01=sfp01 AND sfp06='6' AND sfp04='Y' 
+         #        WHERE sfq02=g_sfq[i].sfq02
+         #          AND sfq01=sfp01 AND sfp06='6' AND sfp04='Y'
          #      #   AND sfq04=' ' #FUN-AC0074  #TQC-B60349 mark
-         #     END IF  
+         #     END IF
          #     #MOD-A30070 --END
          #FUN-A70095 ---------------End-----------------------
                IF qty1 IS NULL THEN LET qty1=0 END IF
                IF qty2 IS NULL THEN LET qty2=0 END IF
-               
+
                LET unissue_qty = l_sfb08-(qty1-qty2)
                IF g_sfp.sfp06 = 'D' THEN LET unissue_qty = l_shm08-(qty1-qty2) END IF #FUN-C70014 add
             END IF
- 
+
             IF (g_sfq[i].sfq03 IS NULL OR
                (l_sfq02_t IS NULL OR l_sfq02_t != g_sfq[i].sfq02)) AND
                l_sfq03_flag = 'N' THEN   #FUN-B20095 add l_sfq03_flag
@@ -4333,39 +4350,40 @@ FUNCTION i501_d_i()
                END IF
             END IF
             IF g_sfq[i].sfq03 = 0 THEN
-               IF g_argv1='1' THEN 
+               IF g_argv1='1' THEN
                   IF g_sma.sma129 = 'Y' THEN
                      LET g_sfq[i].sfq03 = unissue_qty
                   END IF
                ELSE
-                  LET g_sfq[i].sfq03 = qty1-qty2 
+                  LET g_sfq[i].sfq03 = qty1-qty2
                END IF
-            END IF   
+            END IF
             #---Add No.MOD-AB0071  将AFTER FIELD sfq03的逻辑复制过来
             SELECT sfb08 INTO l_sfb08 FROM sfb_file
              WHERE sfb01 = g_sfq[i].sfq02
             #str----add by guanyao160909
                IF NOT cl_null(g_sfp.sfpud03) THEN
-                  IF NOT cl_null(g_sfq[i].sfq04) THEN 
-                     SELECT tc_sfe03 INTO l_sfb08_1 FROM tc_sfe_file 
+                  let l_sfb08_1 = 0 #darcy add
+                  IF NOT cl_null(g_sfq[i].sfq04) THEN
+                     SELECT tc_sfe03 INTO l_sfb08_1 FROM tc_sfe_file
                       WHERE tc_sfe01 =  g_sfp.sfpud03
                         AND tc_sfe02 = g_sfq[i].sfq02
-                        #AND tc_sfeud02 = 'Y' 
-                        AND tc_sfe04 = g_sfq[i].sfq04
-                     IF cl_null(l_sfb08_1) OR l_sfb08_1 = 0 THEN 
-                        SELECT tc_sfe03 INTO l_sfb08_1 FROM tc_sfe_file 
+                        #AND tc_sfeud02 = 'Y'
+                        #AND tc_sfe04 = g_sfq[i].sfq04 # mark darcy add
+                     IF cl_null(l_sfb08_1) OR l_sfb08_1 = 0 THEN
+                        SELECT tc_sfe03 INTO l_sfb08_1 FROM tc_sfe_file
                          WHERE tc_sfe01 =  g_sfp.sfpud03
                            AND tc_sfe02 = g_sfq[i].sfq02
-                         #  AND tc_sfeud02 = 'Y' 
-                     END IF 
+                         #  AND tc_sfeud02 = 'Y'
+                     END IF
                      LET l_sfb08 = l_sfb08_1
-                  ELSE 
-                     SELECT tc_sfe03 INTO l_sfb08 FROM tc_sfe_file 
+                  ELSE
+                     SELECT tc_sfe03 INTO l_sfb08 FROM tc_sfe_file
                       WHERE tc_sfe01 =  g_sfp.sfpud03
                         AND tc_sfe02 = g_sfq[i].sfq02
-                       # AND tc_sfeud02 = 'Y' 
-                  END IF                 
-               END IF 
+                       # AND tc_sfeud02 = 'Y'
+                  END IF
+               END IF
                #end----add by guanyao160909
             LET l_sfq03 = 0
             LET l_sfq03_r = 0
@@ -4402,7 +4420,7 @@ FUNCTION i501_d_i()
 #FUN-B20095 ---------------------------End--------------------------
             LET l_sfq03 = l_qty1 - l_qty2
            #IF g_sma.sma129='N' THEN    #FUN-C70014 mark
-            IF g_sma.sma129='N' AND g_sfp.sfp06 <> 'D' THEN   #FUN-C70014 add g_sfp.sfp06 <> 'D' 
+            IF g_sma.sma129='N' AND g_sfp.sfp06 <> 'D' THEN   #FUN-C70014 add g_sfp.sfp06 <> 'D'
                LET l_sfb08 =NULL
                LET l_sfb081=NULL
                SELECT sfb08,sfb081 INTO l_sfb08,l_sfb081
@@ -4416,16 +4434,16 @@ FUNCTION i501_d_i()
                LET l_sfq03_o =0
             END IF
             IF l_sfq03+g_sfq[i].sfq03 > l_sfb08 OR     #No.MOD-860012 #modify by huanglf160927
-              (g_sfp.sfp06 = 'D' AND l_sfq03+g_sfq[i].sfq03-l_sfq03_o > l_shm08) THEN  #FUN-C70014 add  
+              (g_sfp.sfp06 = 'D' AND l_sfq03+g_sfq[i].sfq03-l_sfq03_o > l_shm08) THEN  #FUN-C70014 add
                CALL cl_err(g_sfq[i].sfq02,'asf-704',0)
                NEXT FIELD sfq03                          #No.MOD-860012
             END IF
             #End Add No.MOD-AB0071
 
          END IF
-          
+
          IF g_sfp.sfp06='6' THEN
-           #IF cl_null(g_sfq[i].sfq012) THEN LET g_sfq[i].sfq012=' ' END IF #TQC-BC0130  #MOD-C80256 mark 
+           #IF cl_null(g_sfq[i].sfq012) THEN LET g_sfq[i].sfq012=' ' END IF #TQC-BC0130  #MOD-C80256 mark
            #CALL i501_sfq03_chk(g_sfq[i].sfq02,g_sfq[i].sfq04,g_sfq[i].sfq012,g_sfq[i].sfq014,'2') RETURNING a_qty1,a_qty2 #TQC-BC0130  #FUN-C70014 add sfq014  #MOD-C80256 mark
             SELECT sfb081,sfb09 INTO qty1,qty2 FROM sfb_file
                WHERE sfb01 = g_sfq[i].sfq02
@@ -4436,14 +4454,14 @@ FUNCTION i501_d_i()
                 #LET qty2=qty2+a_qty2 #TQC-BC0130  #MOD-C80256 mark
                  #MOD-D30121---begin
                  IF NOT cl_null(g_sfq[i].sfq04) AND g_sfq[i].sfq04 <> ' ' AND g_sma.sma73 = 'Y' THEN
-                    IF cl_null(g_sfq[i].sfq012) THEN LET g_sfq[i].sfq012 = ' ' END IF 
+                    IF cl_null(g_sfq[i].sfq012) THEN LET g_sfq[i].sfq012 = ' ' END IF
                     SELECT MIN(sfa013) INTO l_sfa013
                       FROM sfa_file
                      WHERE sfa01 = g_sfq[i].sfq02
                        AND sfa08 = g_sfq[i].sfq04
                        AND sfa012 = g_sfq[i].sfq012
-                    IF cl_null(l_sfa013) THEN LET l_sfa013 = 0 END IF 
-                    LET l_cnt=0  
+                    IF cl_null(l_sfa013) THEN LET l_sfa013 = 0 END IF
+                    LET l_cnt=0
                     CALL s_minp_routing(g_sfq[i].sfq02,g_sma.sma73,0,g_sfq[i].sfq04,g_sfq[i].sfq012,l_sfa013)
                          RETURNING l_cnt,qty1
 
@@ -4452,7 +4470,7 @@ FUNCTION i501_d_i()
                      WHERE ecm01 = g_sfq[i].sfq02
                        AND ecm04 = g_sfq[i].sfq04
                        AND ecm012 = g_sfq[i].sfq012
-                 END IF  
+                 END IF
                  #MOD-D30121---end
                  LET g_sfq[i].sfq03 = qty1 - qty2
                  IF g_sfq[i].sfq03 < 0 THEN
@@ -4462,12 +4480,12 @@ FUNCTION i501_d_i()
             END IF
             DISPLAY BY NAME g_sfq[i].sfq03
          END IF
- 
+
         #IF (g_sfp.sfp06 NOT MATCHES '[16ABC]') THEN  #FUN-5C0114 add ABC #TQC-CA0035 mark
          IF (g_sfp.sfp06 NOT MATCHES '[16ABCD]') THEN   #TQC-CA0035 add D
             LET g_sfq[i].sfq03=0
          END IF
- 
+
          IF (NOT cl_null(g_sfq[i].sfq04)) AND (g_sfp.sfp06 MATCHES '[ABC]') THEN
             LET l_cnt=0
             SELECT COUNT(*) INTO l_cnt FROM eci_file WHERE eci01=g_sfq[i].sfq04
@@ -4482,17 +4500,17 @@ FUNCTION i501_d_i()
          LET g_sfq[i].sfq08=g_sfq[i].sfq03
          DISPLAY g_sfq[i].sfq08 TO sfq08
         #MOD-AA0123---add---start---
-         IF g_sfp.sfp06 ='1' THEN 
+         IF g_sfp.sfp06 ='1' THEN
             IF g_sfq[i].sfq03 <=0 THEN
                CALL cl_err(g_sfq[i].sfq03,'asf-706',0)
-               NEXT FIELD sfq03 
+               NEXT FIELD sfq03
             END IF
          END IF
         #MOD-AA0123---add---end---
          IF g_sfp.sfp06 = 'D' THEN #FUN-C70014 add
             IF NOT i501_chk_sfq(i,'1') THEN NEXT FIELD sfq04 END IF  #FUN-C70014 add
-         END IF 
- 
+         END IF
+
       AFTER FIELD sfq05
          IF (NOT g_sfq[i].sfq05 IS NULL) AND (g_sfp.sfp06 MATCHES '[ABC]') THEN
             LET l_cnt=0
@@ -4511,16 +4529,16 @@ FUNCTION i501_d_i()
                AND sre02 =  MONTH(g_sfq[i].sfq05)
                AND sre03 =  g_sfq[i].sfq04
                AND sre04 =  g_sfq[i].sfq02
-               AND sre06 =  g_sfq[i].sfq05 
+               AND sre06 =  g_sfq[i].sfq05
             IF SQLCA.sqlcode THEN
                LET g_sfq[i].sfq07 = ' '
             END IF
-            DISPLAY BY NAME g_sfq[i].sfq07      
+            DISPLAY BY NAME g_sfq[i].sfq07
          END IF
          IF g_sfp.sfp06 = 'D' THEN #FUN-C70014 add
             IF NOT i501_chk_sfq(i,'1') THEN NEXT FIELD sfq05 END IF  #FUN-C70014 add
-         END IF 
-      
+         END IF
+
       AFTER FIELD sfq07
         IF NOT cl_null(g_sfq[i].sfq07) THEN
            SELECT COUNT(*) INTO g_cnt FROM bma_file
@@ -4531,35 +4549,35 @@ FUNCTION i501_d_i()
               NEXT FIELD sfq07
            END IF
         END IF
-                       
- 
+
+
       BEFORE FIELD sfq03
-        #IF g_sfp.sfp06 MATCHES '[1]' THEN 
-         IF g_sfp.sfp06 MATCHES '[1D]' THEN   #FUN-C70014 add 'D' 
+        #IF g_sfp.sfp06 MATCHES '[1]' THEN
+         IF g_sfp.sfp06 MATCHES '[1D]' THEN   #FUN-C70014 add 'D'
             LET qty1 = 0
             LET qty2 = 0
             IF cl_null(g_sfq[i].sfq04) THEN
                LET g_sfq[i].sfq04 = ' '
             END IF
-        #FUN-A70095 --------Begin----------   
+        #FUN-A70095 --------Begin----------
             IF cl_null(g_sfq[i].sfq012) THEN
-               LET g_sfq[i].sfq012 = ' ' 
+               LET g_sfq[i].sfq012 = ' '
             END IF
         #FUN-A70095 --------End------------
             #FUN-C70014 add begin-----------
             IF g_sfp.sfp06 = 'D' THEN
-               #取得Run Card生產數量 
-               SELECT shm08 INTO l_shm08 FROM shm_file 
-                WHERE shm01 = g_sfq[i].sfq014 
-               IF cl_null(l_shm08) THEN LET l_shm08 = 0 END IF    
-            END IF 
+               #取得Run Card生產數量
+               SELECT shm08 INTO l_shm08 FROM shm_file
+                WHERE shm01 = g_sfq[i].sfq014
+               IF cl_null(l_shm08) THEN LET l_shm08 = 0 END IF
+            END IF
             #FUN-C70014 add end-------------
            #IF g_sma.sma129='N' THEN
             IF g_sma.sma129='N' AND g_sfp.sfp06 <> 'D' THEN #FUN-C70014 g_sfp.sfp06 <> 'D' Run Card成套發料時統一從發料檔抓取已發套數
                LET l_sfb08 =NULL
                LET l_sfb081=NULL
-               SELECT sfb08,sfb081 INTO l_sfb08,l_sfb081 
-                                   FROM sfb_file 
+               SELECT sfb08,sfb081 INTO l_sfb08,l_sfb081
+                                   FROM sfb_file
                                   WHERE sfb01=g_sfq[i].sfq02
                IF l_sfb08  IS NULL THEN LET l_sfb08  = 0 END IF
                IF l_sfb081 IS NULL THEN LET l_sfb081 = 0 END IF
@@ -4567,21 +4585,21 @@ FUNCTION i501_d_i()
                LET qty2=0
                LET unissue_qty = l_sfb08 - l_sfb081
             ELSE
-            #將撈取qty1,qty2的部分整理到函數 i501_sfq03_chk1()處理  
+            #將撈取qty1,qty2的部分整理到函數 i501_sfq03_chk1()處理
               #CALL i501_sfq03_chk1(g_sfq[i].sfq02,g_sfq[i].sfq04,g_sfq[i].sfq012)  #FUN-A70095  #只选过账的,用于预设值
                CALL i501_sfq03_chk(g_sfq[i].sfq02,g_sfq[i].sfq04,g_sfq[i].sfq012,g_sfq[i].sfq014,'2')  #FUN-A70095  #FUN-BC0060 mod  #FUN-C70014 add sfq014
-                    RETURNING qty1,qty2        #FUN-A70095              
+                    RETURNING qty1,qty2        #FUN-A70095
          #此段功能由i501_sfq03_chk1()代替
-         #FUN-A70095 ----------------Begin----------------------   
+         #FUN-A70095 ----------------Begin----------------------
          #    IF g_sfq[i].sfq04 != ' ' THEN  #MOD-A30070
          #     SELECT SUM(sfq03) INTO qty1 FROM sfq_file, sfp_file
-         #      WHERE sfq02=g_sfq[i].sfq02 
+         #      WHERE sfq02=g_sfq[i].sfq02
          #    #   AND sfq04=g_sfq[i].sfq04                   #MOD-A30070
          #        AND (sfq04=g_sfq[i].sfq04 OR sfq04 = ' ')  #MOD-A30070  #FUN-AC0074  #TQC-B60349 restore
          #        AND sfq01=sfp01 AND sfp06='1' AND sfp04='Y'
          #    #    AND sfq04=g_sfq[i].sfq04   #FUN-AC0074  #TQC-B60349 mark
          #     SELECT SUM(sfq03) INTO qty2 FROM sfq_file, sfp_file
-         #      WHERE sfq02=g_sfq[i].sfq02 
+         #      WHERE sfq02=g_sfq[i].sfq02
          #    #   AND sfq04=g_sfq[i].sfq04                   #MOD-A30070
          #        AND (sfq04=g_sfq[i].sfq04 OR sfq04 = ' ')  #MOD-A30070  #FUN-AC0074 #TQC-B60349 restore
          #        AND sfq01=sfp01 AND sfp06='6' AND sfp04='Y'
@@ -4597,20 +4615,20 @@ FUNCTION i501_d_i()
          #      WHERE sfq02=g_sfq[i].sfq02
          #        AND sfq01=sfp01 AND sfp06='6' AND sfp04='Y'
          #    #    AND sfq04=' ' #FUN-AC0074  #TQC-B60349 mark
-         #   END IF 
+         #   END IF
 #MOD-A30070 --END--
          #FUN-A70095 ----------------End----------------------
-               
+
                IF qty1 IS NULL THEN LET qty1=0 END IF
                IF qty2 IS NULL THEN LET qty2=0 END IF
-               
+
                LET unissue_qty = l_sfb08-(qty1-qty2)
-               IF g_sfp.sfp06 = 'D' THEN LET unissue_qty = l_shm08-(qty1-qty2) END IF  #FUN-C70014 add 
+               IF g_sfp.sfp06 = 'D' THEN LET unissue_qty = l_shm08-(qty1-qty2) END IF  #FUN-C70014 add
             END IF
             IF (g_sfq[i].sfq03 IS NULL OR
-               (l_sfq02_t IS NULL OR l_sfq02_t != g_sfq[i].sfq02)) AND 
+               (l_sfq02_t IS NULL OR l_sfq02_t != g_sfq[i].sfq02)) AND
                l_sfq03_flag = 'N' THEN    #FUN-B20095 add l_sfq03_flag
-               IF g_argv1='1' THEN  
+               IF g_argv1='1' THEN
                   LET g_sfq[i].sfq03 = unissue_qty
                ELSE
                   LET g_sfq[i].sfq03 = qty1-qty2
@@ -4620,8 +4638,8 @@ FUNCTION i501_d_i()
                IF g_argv1='1' THEN
                   IF g_sma.sma129 = 'Y' THEN
                      LET g_sfq[i].sfq03 = unissue_qty
-                  END IF   
-               ELSE  
+                  END IF
+               ELSE
                   LET g_sfq[i].sfq03 = qty1-qty2
                END IF
             END IF
@@ -4631,13 +4649,13 @@ FUNCTION i501_d_i()
             LET l_sfq03_t = g_sfq[i].sfq03
          END IF
          #MOD-BA0017 -- end --
-         IF cl_null(l_sfq03_o) THEN     
+         IF cl_null(l_sfq03_o) THEN
             LET l_sfq03_o =0
-         ELSE           #TQC-B70170 
+         ELSE           #TQC-B70170
             LET l_sfq03_o = l_sfq03_t   #TQC-B70170
          END IF
- 
- 
+
+
       AFTER FIELD sfq03
          IF NOT cl_null(g_sfq[i].sfq03) THEN
             IF g_sfp.sfp06 MATCHES '[ABC]' THEN
@@ -4659,7 +4677,7 @@ FUNCTION i501_d_i()
                   CALL cl_err(l_str,"asr-008",1)
                END IF
             END IF
- 
+
             SELECT ima56 INTO l_ima56 FROM ima_file where ima01 = g_sfq[i].sfb05
             IF l_ima56 <> 1 THEN
                #MOD-D40218---begin
@@ -4681,14 +4699,14 @@ FUNCTION i501_d_i()
                END IF
             END IF
 
-            IF  g_user<>'tiptop'  THEN 
-               IF g_user<>'20233' THEN 
+            IF  g_user<>'tiptop'  THEN
+               IF g_user<>'20233' THEN
                   IF g_sfp.sfp06 ='1' AND g_sfq[i].sfq03 > unissue_qty    THEN
                     CALL cl_err('sfq03>un_issue:','asf-351',0) NEXT FIELD sfq03
                   END IF
-               END IF 
-            END IF  
-    
+               END IF
+            END IF
+
            #str MOD-A30065 add
            #新增時不在此段自動產生單身
             IF g_action_choice="insert" THEN
@@ -4696,14 +4714,14 @@ FUNCTION i501_d_i()
             ELSE
            #end MOD-A30065 add
                IF cl_null(g_sfq[i].sfq03) THEN LET g_sfq[i].sfq03 = 0 END IF #TQC-990094
-               IF cl_null(l_sfq03_t) THEN LET l_sfq03_t = 0 END IF           #TQC-990094           
+               IF cl_null(l_sfq03_t) THEN LET l_sfq03_t = 0 END IF           #TQC-990094
               #IF g_sfp.sfp06 ='1' AND g_sfq[i].sfq03 <> l_sfq03_t THEN                #MOD-C50095 mark
-              #IF g_sfp.sfp06 MATCHES '[16]' AND g_sfq[i].sfq03 <> l_sfq03_t THEN      #MOD-C50095 add   
+              #IF g_sfp.sfp06 MATCHES '[16]' AND g_sfq[i].sfq03 <> l_sfq03_t THEN      #MOD-C50095 add
                IF g_sfp.sfp06 MATCHES '[16D]' AND g_sfq[i].sfq03 <> l_sfq03_t THEN      #MOD-C50095 add   #TQC-CA0045 add
-                  LET g_flag_sfq03 = 1 
+                  LET g_flag_sfq03 = 1
                END IF
             END IF   #MOD-A30065 add
- 
+
            #IF g_sfp.sfp06 ='6' AND g_sfq[i].sfq03 > (qty1-qty2) THEN    #MOD-BA0078 mark
             #MOD-BA0078 -- begin --
             LET l_ima153 = 0
@@ -4713,19 +4731,20 @@ FUNCTION i501_d_i()
              WHERE sfb01 = g_sfq[i].sfq02
             #str----add by guanyao160909
             IF NOT cl_null(g_sfp.sfpud03) THEN
-               IF NOT cl_null(g_sfq[i].sfq04) THEN 
-                  SELECT tc_sfe03 INTO l_sfb08 FROM tc_sfe_file 
+                let l_sfb08 = 0  #darcy add
+               IF NOT cl_null(g_sfq[i].sfq04) THEN
+                  SELECT tc_sfe03 INTO l_sfb08 FROM tc_sfe_file
                    WHERE tc_sfe01 =  g_sfp.sfpud03
                      AND tc_sfe02 = g_sfq[i].sfq02
-                     #AND tc_sfeud02 = 'Y' 
-                     AND tc_sfe04 = g_sfq[i].sfq04
-               ELSE 
-                  SELECT tc_sfe03 INTO l_sfb08 FROM tc_sfe_file 
+                     #AND tc_sfeud02 = 'Y'
+                    #  AND tc_sfe04 = g_sfq[i].sfq04 # mark darcy add
+               ELSE
+                  SELECT tc_sfe03 INTO l_sfb08 FROM tc_sfe_file
                    WHERE tc_sfe01 =  g_sfp.sfpud03
                      AND tc_sfe02 = g_sfq[i].sfq02
-                     #AND tc_sfeud02 = 'Y' 
-               END IF                 
-            END IF 
+                     #AND tc_sfeud02 = 'Y'
+               END IF
+            END IF
             #end----add by guanyao160909
             LET l_allowqty = (qty1-qty2) + l_sfb08 * (l_ima153/100)
             IF g_sfp.sfp06 ='6' AND g_sfq[i].sfq03 > l_allowqty THEN
@@ -4738,11 +4757,11 @@ FUNCTION i501_d_i()
                NEXT FIELD sfq03
               #MOD-B30647---modify---end---
             END IF
- 
+
             IF g_sfp.sfp06='3' THEN
                LET g_sfq[i].sfq03=0
             END IF
- 
+
             IF g_sfp.sfp06 = '6' THEN    #成套退料
               #IF g_sfq[i].sfq03 <= 0 THEN NEXT FIELD sfq03 END IF   #MOD-BA0017 mark
 #MOD-BA0017 -- begin --
@@ -4762,22 +4781,22 @@ FUNCTION i501_d_i()
               #END IF
               #MOD-BA0078 -- mark end --
             END IF
- 
+
            #IF g_sfp.sfp06 = '1' THEN    #成套發料
             IF g_sfp.sfp06 MATCHES '[1D]' THEN   #FUN-C70014 add 'D'  新增Run Card成套發料
                #FUN-C70014 add begin-----------
                IF g_sfp.sfp06 = 'D' THEN
-                  #取得Run Card生產數量 
-                  SELECT shm08 INTO l_shm08 FROM shm_file 
-                   WHERE shm01 = g_sfq[i].sfq014 
-                  IF cl_null(l_shm08) THEN LET l_shm08 = 0 END IF    
-               END IF 
+                  #取得Run Card生產數量
+                  SELECT shm08 INTO l_shm08 FROM shm_file
+                   WHERE shm01 = g_sfq[i].sfq014
+                  IF cl_null(l_shm08) THEN LET l_shm08 = 0 END IF
+               END IF
                #FUN-C70014 add end-------------
                SELECT sfb08 INTO l_sfb08 FROM sfb_file
                 WHERE sfb01 = g_sfq[i].sfq02
                LET l_sfq03 = 0
                LET l_sfq03_r = 0
- 
+
               #str MOD-A70046 mod
               #DECLARE i501_cs2 CURSOR FOR
               #    SELECT SUM(sfq03) FROM sfp_file,sfq_file
@@ -4787,16 +4806,16 @@ FUNCTION i501_d_i()
               #       AND sfpconf !='X'     #No:7741 #FUN-660106
               #     GROUP BY sfq04
               #     ORDER BY sfq03 DESC
-              # 
+              #
               #FOREACH i501_cs2 INTO l_sfq03
               #   IF STATUS THEN LET l_sfq03=0 END IF
               #   EXIT FOREACH
               #END FOREACH
-              # 
+              #
               #IF cl_null(l_sfq03) THEN
               #   LET l_sfq03 = 0
               #END IF
-              # 
+              #
               #DECLARE i501_cs13 CURSOR FOR
               # SELECT SUM(sfq03) FROM sfp_file,sfq_file
               #  WHERE sfp06='6' AND sfp01=sfq01
@@ -4804,21 +4823,21 @@ FUNCTION i501_d_i()
               #    AND sfpconf !='X'     #No:7741 #FUN-660106
               #  GROUP BY sfq04
               #  ORDER BY sfq03 DESC
-              # 
+              #
               #FOREACH i501_cs13 INTO l_sfq03_r
               #   IF STATUS THEN LET l_sfq03_r=0 END IF
               #   EXIT FOREACH
               #END FOREACH
-              # 
+              #
               #IF cl_null(l_sfq03_r) THEN LET l_sfq03_r = 0 END IF
               #LET l_sfq03 = l_sfq03 - l_sfq03_r          #成套發料-成套退料
-               IF cl_null(g_sfq[i].sfq04) THEN 
-                  LET g_sfq[i].sfq04 = ' ' 
-               END IF 
+               IF cl_null(g_sfq[i].sfq04) THEN
+                  LET g_sfq[i].sfq04 = ' '
+               END IF
            #FUN-B20095 --------Begin------------
                IF cl_null(g_sfq[i].sfq012) THEN
                   LET g_sfq[i].sfq012 = ' '
-               END IF 
+               END IF
            #將撈取l_qty1,l_qty2的部分整理到函數 i501_sfq03_chk()處理
               #CALL i501_sfq03_chk(g_sfq[i].sfq02,g_sfq[i].sfq04,g_sfq[i].sfq012)  RETURNING l_qty1,l_qty2    #只要有效存在於發料當中的,用于控管
                CALL i501_sfq03_chk(g_sfq[i].sfq02,g_sfq[i].sfq04,g_sfq[i].sfq012,g_sfq[i].sfq014,'2')  RETURNING l_qty1,l_qty2  #FUN-BC0060 mod  #FUN-C70014 add sfq014
@@ -4827,42 +4846,42 @@ FUNCTION i501_d_i()
     #FUN-B20095 ------------------Begin---------------------
            #   IF g_sfq[i].sfq04 != ' ' THEN
            #      SELECT SUM(sfq03) INTO l_qty1 FROM sfq_file, sfp_file
-           #       WHERE sfq02=g_sfq[i].sfq02 
+           #       WHERE sfq02=g_sfq[i].sfq02
            #         AND (sfq04=g_sfq[i].sfq04 OR sfq04 = ' ')     #FUN-AC0074 #TQC-B60349 restore
            #         AND sfq01=sfp01 AND sfp06='1' AND sfpconf !='X'
            #       #  AND sfq04=g_sfq[i].sfq04   #FUN-AC0074 TQC-B60349 mark
 
-           #      SELECT SUM(sfq03) INTO l_qty2 FROM sfq_file, sfp_file  
-           #       WHERE sfq02=g_sfq[i].sfq02 
+           #      SELECT SUM(sfq03) INTO l_qty2 FROM sfq_file, sfp_file
+           #       WHERE sfq02=g_sfq[i].sfq02
            #         AND (sfq04=g_sfq[i].sfq04 OR sfq04 = ' ')     #FUN-AC0074  #TQC-B60349 restore
            #         AND sfq01=sfp01 AND sfp06='6' AND sfpconf !='X'
            #        # AND sfq04=g_sfq[i].sfq04   #FUN-AC0074 #TQC-B60349 mark
            #   ELSE
            #      SELECT SUM(sfq03) INTO l_qty1 FROM sfq_file, sfp_file
-           #       WHERE sfq02=g_sfq[i].sfq02 
-           #         AND sfq01=sfp01 AND sfp06='1' AND sfpconf !='X'  
+           #       WHERE sfq02=g_sfq[i].sfq02
+           #         AND sfq01=sfp01 AND sfp06='1' AND sfpconf !='X'
            #    #     AND sfq04=' ' #FUN-AC0074  # TQC-B60349 mark
 
-           #      SELECT SUM(sfq03) INTO l_qty2 FROM sfq_file, sfp_file  
-           #       WHERE sfq02=g_sfq[i].sfq02 
-           #         AND sfq01=sfp01 AND sfp06='6' AND sfpconf !='X' 
+           #      SELECT SUM(sfq03) INTO l_qty2 FROM sfq_file, sfp_file
+           #       WHERE sfq02=g_sfq[i].sfq02
+           #         AND sfq01=sfp01 AND sfp06='6' AND sfpconf !='X'
            #     #    AND sfq04=' ' #FUN-AC0074    #TQC-B60349 mark
            #   END IF
            #   IF l_qty1 IS NULL THEN LET l_qty1=0 END IF
-           #   IF l_qty2 IS NULL THEN LET l_qty2=0 END IF 
-    #FUN-B20095 ------------------End------------------------        
-               LET l_sfq03 = l_qty1 - l_qty2   
+           #   IF l_qty2 IS NULL THEN LET l_qty2=0 END IF
+    #FUN-B20095 ------------------End------------------------
+               LET l_sfq03 = l_qty1 - l_qty2
               #end MOD-A70046 mod
- 
+
 #MOD-A30070 --BEGIN--
-              IF cl_null(g_sfq[i].sfq04) THEN 
-                 LET g_sfq[i].sfq04 = ' ' 
-              END IF 
+              IF cl_null(g_sfq[i].sfq04) THEN
+                 LET g_sfq[i].sfq04 = ' '
+              END IF
            #FUN-B20095 --------Begin------------
                IF cl_null(g_sfq[i].sfq012) THEN
                   LET g_sfq[i].sfq012 = ' '
                END IF
-           #將撈取l_qty1,l_qty2的部分整理到函數 i501_sfq03_chk()處理    
+           #將撈取l_qty1,l_qty2的部分整理到函數 i501_sfq03_chk()處理
               #CALL i501_sfq03_chk(g_sfq[i].sfq02,g_sfq[i].sfq04,g_sfq[i].sfq012)  RETURNING l_qty1,l_qty2  #只要有效存在於發料當中的,用于控管
                CALL i501_sfq03_chk(g_sfq[i].sfq02,g_sfq[i].sfq04,g_sfq[i].sfq012,g_sfq[i].sfq014,'2')  RETURNING l_qty1,l_qty2  #FUN-BC0060 mod  #FUN-C70014 add sfq014
            #FUN-B20095 --------End--------------
@@ -4872,13 +4891,13 @@ FUNCTION i501_d_i()
 #              IF g_sfq[i].sfq04 != ' ' THEN
 #MOD-A30070 --end--
 #                 SELECT SUM(sfq03) INTO l_qty1 FROM sfq_file, sfp_file
-#                  WHERE sfq02=g_sfq[i].sfq02 
+#                  WHERE sfq02=g_sfq[i].sfq02
 #               #    AND sfq04=g_sfq[i].sfq04                            #MOD-A30070
 #                    AND (sfq04=g_sfq[i].sfq04 OR sfq04 = ' ')           #MOD-A30070 #FUN-AC0074 #TQC-B60349 restore
 #                    AND sfq01=sfp01 AND sfp06='1' AND sfpconf !='X'     #MOD-A20001 modify
 #               #     AND sfq04=g_sfq[i].sfq04   #FUN-AC0074  #TQC-B60349 mark
 #                 SELECT SUM(sfq03) INTO l_qty2 FROM sfq_file, sfp_file
-#                  WHERE sfq02=g_sfq[i].sfq02 
+#                  WHERE sfq02=g_sfq[i].sfq02
 #               #    AND sfq04=g_sfq[i].sfq04                            #MOD-A30070
 #                    AND (sfq04=g_sfq[i].sfq04 OR sfq04 = ' ')           #MOD-A30070 #FUN-AC0074 #TQC-B60349 restore
 #                    AND sfq01=sfp01 AND sfp06='1' AND sfpconf !='X'     #MOD-A20001 modify
@@ -4886,13 +4905,13 @@ FUNCTION i501_d_i()
 #MOD-A30070 --BEGIN--
 #              ELSE
 #                 SELECT SUM(sfq03) INTO l_qty1 FROM sfq_file, sfp_file
-#                  WHERE sfq02=g_sfq[i].sfq02 
-#                    AND sfq01=sfp01 AND sfp06='1' AND sfpconf !='X'     
+#                  WHERE sfq02=g_sfq[i].sfq02
+#                    AND sfq01=sfp01 AND sfp06='1' AND sfpconf !='X'
 #                #    AND sfq04=' ' #FUN-AC0074 #TQC-B60349 mark
 
-#                 SELECT SUM(sfq03) INTO l_qty2 FROM sfq_file, sfp_file  
-#                  WHERE sfq02=g_sfq[i].sfq02 
-#                    AND sfq01=sfp01 AND sfp06='6' AND sfpconf !='X'    
+#                 SELECT SUM(sfq03) INTO l_qty2 FROM sfq_file, sfp_file
+#                  WHERE sfq02=g_sfq[i].sfq02
+#                    AND sfq01=sfp01 AND sfp06='6' AND sfpconf !='X'
 #               #     AND sfq04=' ' #FUN-AC0074 #TQC-B60349 mark
 #MOD-A30070 --END--
 #              END IF   #MOD-A70046 add
@@ -4905,8 +4924,8 @@ FUNCTION i501_d_i()
                IF g_sma.sma129='N' AND g_sfp.sfp06 <> 'D' THEN #FUN-C70014 g_sfp.sfp06 <> 'D' Run Card成套發料時統一從發料檔抓取已發套數
                   LET l_sfb08 =NULL
                   LET l_sfb081=NULL
-                  SELECT sfb08,sfb081 INTO l_sfb08,l_sfb081 
-                                      FROM sfb_file 
+                  SELECT sfb08,sfb081 INTO l_sfb08,l_sfb081
+                                      FROM sfb_file
                                      WHERE sfb01=g_sfq[i].sfq02
                   IF l_sfb08  IS NULL THEN LET l_sfb08  = 0 END IF
                   IF l_sfb081 IS NULL THEN LET l_sfb081 = 0 END IF
@@ -4914,11 +4933,11 @@ FUNCTION i501_d_i()
                END IF
                IF cl_null(l_sfq03_o) THEN LET l_sfq03_o = 0 END IF    #FUN-B20095
                IF l_sfq03+g_sfq[i].sfq03 > l_sfb08 OR      #No.MOD-860012 #modify by huanglf160927
-                  (g_sfp.sfp06 = 'D' AND l_sfq03+g_sfq[i].sfq03-l_sfq03_o > l_shm08) THEN #FUN-C70014 add 
+                  (g_sfp.sfp06 = 'D' AND l_sfq03+g_sfq[i].sfq03-l_sfq03_o > l_shm08) THEN #FUN-C70014 add
                   CALL cl_err(g_sfq[i].sfq02,'asf-704',0)
-                  NEXT FIELD sfq03                          #No.MOD-860012 
+                  NEXT FIELD sfq03                          #No.MOD-860012
                END IF
- 
+
                IF g_sma.sma129 = 'N' THEN    #發料不控管套數
                   IF g_sfq[i].sfq03 < 0 THEN
                      CALL cl_err(g_sfq[i].sfq03,'asf-387',0)
@@ -4933,30 +4952,30 @@ FUNCTION i501_d_i()
             END IF
 
             #str---add by jixf 160809
-            IF NOT cl_null(g_sfp.sfpud02) THEN 
-                SELECT SUM(shm08) INTO l_shm08_sum FROM shm_file 
+            IF NOT cl_null(g_sfp.sfpud02) THEN
+                SELECT SUM(shm08) INTO l_shm08_sum FROM shm_file
                    WHERE ta_shm05=g_sfp.sfpud02 AND shm012=g_sfq[i].sfq02
                 #str----add by guanyao160904
-                IF NOT cl_null(g_sfq[i].sfq04) THEN 
-                   SELECT SUM(sfq03) INTO l_sfq03_sum FROM sfq_file,sfp_file 
-                    WHERE sfq01=sfp01 
-                      AND sfq02=g_sfq[i].sfq02 
-                      AND sfpud02=g_sfp.sfpud02 
-                      AND sfq01<>g_sfp.sfp01 
+                IF NOT cl_null(g_sfq[i].sfq04) THEN
+                   SELECT SUM(sfq03) INTO l_sfq03_sum FROM sfq_file,sfp_file
+                    WHERE sfq01=sfp01
+                      AND sfq02=g_sfq[i].sfq02
+                      AND sfpud02=g_sfp.sfpud02
+                      AND sfq01<>g_sfp.sfp01
                       AND sfq04 = g_sfq[i].sfq04
                       AND sfpconf<>'X'
-                ELSE 
+                ELSE
                 #end----add by guanyao160904
-                   SELECT SUM(sfq03) INTO l_sfq03_sum FROM sfq_file,sfp_file 
+                   SELECT SUM(sfq03) INTO l_sfq03_sum FROM sfq_file,sfp_file
                      WHERE sfq01=sfp01 AND sfq02=g_sfq[i].sfq02 AND sfpud02=g_sfp.sfpud02 AND sfq01<>g_sfp.sfp01 AND sfpconf<>'X'
-                END IF 
+                END IF
 
-                IF l_shm08_sum-l_sfq03_sum < g_sfq[i].sfq03 THEN 
+                IF l_shm08_sum-l_sfq03_sum < g_sfq[i].sfq03 THEN
                    CALL cl_err(g_sfq[i].sfq03,'csf-324',1)
                    NEXT FIELD sfq03
                 END IF
-            END IF 
-            
+            END IF
+
             #end---add by jixf 160809
             LET g_sfq[i].sfq08 = g_sfq[i].sfq03   #FUN-940008 add
             #若sfq03有值且该值合理，则返回sfq012/sfq04/sfq03时不须重给该栏位的预设值
@@ -4992,7 +5011,7 @@ FUNCTION i501_d_i()
          IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
       AFTER FIELD sfqud15
          IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
- 
+
       AFTER INSERT
          IF INT_FLAG THEN
             CANCEL INSERT
@@ -5001,60 +5020,60 @@ FUNCTION i501_d_i()
          END IF
       AFTER ROW    #FUN-C70014 add
          LET l_count = g_sfq.getLength()    #FUN-C70014  add
- 
+
       AFTER INPUT
          LET l_sfq02_t = g_sfq[i].sfq02
          #FUN-C70014 add begin-------------------
-         IF g_sfp.sfp06 = 'D' THEN 
+         IF g_sfp.sfp06 = 'D' THEN
             LET g_success = 'Y'
             CALL s_showmsg_init()
             FOR l_n = 1 TO g_sfq.getLength()
-               IF NOT i501_chk_sfq(l_n,'2') THEN 
-                  LET g_success = 'N' 
-               END IF   
-            END FOR 
-            IF g_success = 'N' THEN 
+               IF NOT i501_chk_sfq(l_n,'2') THEN
+                  LET g_success = 'N'
+               END IF
+            END FOR
+            IF g_success = 'N' THEN
                CALL s_showmsg()
                NEXT FIELD sfq014
-            END IF 
-         END IF 
+            END IF
+         END IF
          #FUN-C70014 add end---------------------
 
          #str---add by jixf 160809
-         IF NOT cl_null(g_sfp.sfpud02) THEN 
+         IF NOT cl_null(g_sfp.sfpud02) THEN
              FOR l_n = 1 TO g_sfq.getLength()
-                SELECT SUM(shm08) INTO l_shm08_sum FROM shm_file 
+                SELECT SUM(shm08) INTO l_shm08_sum FROM shm_file
                    WHERE ta_shm05=g_sfp.sfpud02 AND shm012=g_sfq[l_n].sfq02
                 #str---add by guanyao160904
-                IF NOT cl_null(g_sfq[l_n].sfq04) THEN 
-                   SELECT SUM(sfq03) INTO l_sfq03_sum 
-                     FROM sfq_file,sfp_file 
-                    WHERE sfq01=sfp01 
-                      AND sfq02=g_sfq[l_n].sfq02 
+                IF NOT cl_null(g_sfq[l_n].sfq04) THEN
+                   SELECT SUM(sfq03) INTO l_sfq03_sum
+                     FROM sfq_file,sfp_file
+                    WHERE sfq01=sfp01
+                      AND sfq02=g_sfq[l_n].sfq02
                       AND sfq04=g_sfq[l_n].sfq04
-                      AND sfpud02=g_sfp.sfpud02 
-                      AND sfq01<>g_sfp.sfp01 
+                      AND sfpud02=g_sfp.sfpud02
+                      AND sfq01<>g_sfp.sfp01
                       AND sfpconf<>'X'
-                ELSE 
+                ELSE
                 #end---add by guanyao160904
-                   SELECT SUM(sfq03) INTO l_sfq03_sum FROM sfq_file,sfp_file 
-                    WHERE sfq01=sfp01 AND sfq02=g_sfq[l_n].sfq02 
+                   SELECT SUM(sfq03) INTO l_sfq03_sum FROM sfq_file,sfp_file
+                    WHERE sfq01=sfp01 AND sfq02=g_sfq[l_n].sfq02
                      AND sfpud02=g_sfp.sfpud02 AND sfq01<>g_sfp.sfp01 AND sfpconf<>'X'
-                END IF 
+                END IF
 
-                IF l_shm08_sum-l_sfq03_sum < g_sfq[l_n].sfq03 THEN 
+                IF l_shm08_sum-l_sfq03_sum < g_sfq[l_n].sfq03 THEN
                    CALL cl_err(g_sfq[l_n].sfq03,'csf-324',1)
                    NEXT FIELD sfq03
-                END IF 
+                END IF
              END FOR
-         END IF 
+         END IF
          #end---add by jixf 160809
          IF INT_FLAG THEN
             LET INT_FLAG=0
             ROLLBACK WORK           #MOD-B30647 取消mark
             EXIT INPUT              #No.MOD-5A0010
          END IF
- 
+
          IF (g_sfq[i].sfq02 IS NOT NULL) AND (NOT g_sfp.sfp06 MATCHES '[ABC]') THEN #FUN-5C0114
            #IF g_sfp.sfp06 = '1' THEN   #成套發料    #MOD-BA0017 mark
             IF g_sfp.sfp06 MATCHES '[16D]' THEN       #MOD-BA0017  #FUN-C70014 add 'D'
@@ -5072,19 +5091,19 @@ FUNCTION i501_d_i()
                   END IF
                END IF
             END IF
-        
+
             IF g_sfp.sfp06 MATCHES '[16D]' THEN   #FUN-C70014 add 'D'
                SELECT SUM(sfq03) INTO qty1 FROM sfq_file, sfp_file
                  WHERE sfq02=g_sfq[i].sfq02 AND sfq04=g_sfq[i].sfq04
                    AND sfq01=sfp01 AND sfp06='1' AND sfp04='Y'
- 
+
                 SELECT SUM(sfq03) INTO qty2 FROM sfq_file, sfp_file
                  WHERE sfq02=g_sfq[i].sfq02 AND sfq04=g_sfq[i].sfq04
                    AND sfq01=sfp01 AND sfp06='6' AND sfp04='Y'
- 
+
                IF qty1 IS NULL THEN LET qty1=0 END IF
                IF qty2 IS NULL THEN LET qty2=0 END IF
- 
+
                LET unissue_qty = l_sfb08-(qty1-qty2)
                IF g_sfq[i].sfq03 IS NULL THEN
                   IF g_argv1='1' THEN
@@ -5094,19 +5113,19 @@ FUNCTION i501_d_i()
                END IF
                IF g_sfq[i].sfq03 = 0 THEN
                   IF g_argv1 ='1' THEN
-                     IF g_sma.sma129 = 'Y' THEN	
+                     IF g_sma.sma129 = 'Y' THEN
                         LET g_sfq[i].sfq03 = unissue_qty
-                     END IF 
+                     END IF
                   ELSE
                      LET g_sfq[i].sfq03 = qty1-qty2
-                  END IF 
+                  END IF
                END IF
             END IF
- 
+
             IF g_sfp.sfp06 NOT MATCHES '[16D]' THEN  #FUN-C70014 add 'D'
                LET g_sfq[i].sfq03=0
             END IF
- 
+
             IF g_sfp.sfp06 = '1' THEN   #成套發料
                LET l_sfq03 = 0
                DECLARE i501_cs3 CURSOR FOR
@@ -5117,12 +5136,12 @@ FUNCTION i501_d_i()
                    AND sfpconf !='X' #FUN-660106
                  GROUP BY sfq04
                  ORDER BY sfq03 DESC
- 
+
                FOREACH i501_cs3 INTO l_sfq03
                  IF STATUS THEN LET l_sfq03=0 END IF
                  EXIT FOREACH
                END FOREACH
- 
+
                IF cl_null(l_sfq03) THEN LET l_sfq03 = 0 END IF
                IF g_sfq[i].sfq03 > l_sfb08 THEN
                   CALL cl_err(g_sfq[i].sfq02,'asf-704',0)
@@ -5132,18 +5151,18 @@ FUNCTION i501_d_i()
                   NEXT FIELD sfq02
                END IF
             END IF
- 
+
             IF g_sfp.sfp06 = '6' THEN    #成套退料
              #MOD-D30125---begin
                IF NOT cl_null(g_sfq[i].sfq04) AND g_sfq[i].sfq04 <> ' ' AND g_sma.sma73 = 'Y' THEN
-                  IF cl_null(g_sfq[i].sfq012) THEN LET g_sfq[i].sfq012 = ' ' END IF 
+                  IF cl_null(g_sfq[i].sfq012) THEN LET g_sfq[i].sfq012 = ' ' END IF
                   SELECT MIN(sfa013) INTO l_sfa013
                     FROM sfa_file
                    WHERE sfa01 = g_sfq[i].sfq02
                      AND sfa08 = g_sfq[i].sfq04
                      AND sfa012 = g_sfq[i].sfq012
-                  IF cl_null(l_sfa013) THEN LET l_sfa013 = 0 END IF 
-                  LET l_cnt=0  
+                  IF cl_null(l_sfa013) THEN LET l_sfa013 = 0 END IF
+                  LET l_cnt=0
                   CALL s_minp_routing(g_sfq[i].sfq02,g_sma.sma73,0,g_sfq[i].sfq04,g_sfq[i].sfq012,l_sfa013)
                        RETURNING l_cnt,l_qty1
 
@@ -5152,10 +5171,10 @@ FUNCTION i501_d_i()
                    WHERE ecm01 = g_sfq[i].sfq02
                      AND ecm04 = g_sfq[i].sfq04
                      AND ecm012 = l_sfq012
-                  IF cl_null(l_qty2) THEN LET l_qty2 = 0 END IF 
+                  IF cl_null(l_qty2) THEN LET l_qty2 = 0 END IF
                   LET l_qty = l_qty1 - l_qty2
-               ELSE  
-               #MOD-D30125---end  
+               ELSE
+               #MOD-D30125---end
                   SELECT sfb081-sfb09 INTO l_qty FROM sfb_file
                   WHERE sfb01 = g_sfq[i].sfq02
                END IF  #MOD-D30125
@@ -5164,10 +5183,10 @@ FUNCTION i501_d_i()
                   CALL cl_err(g_sfq[i].sfq03,'asf-705',0)
                   NEXT FIELD sfq03
                END IF
- 
+
             END IF
          END IF
- 
+
       ON ACTION controlp
          CASE WHEN INFIELD(sfq02)
                   #g_argv2   1:成套發料 2:超領   3:欠/補料   4.領料
@@ -5188,9 +5207,9 @@ FUNCTION i501_d_i()
                          #LET g_qryparam.where = " sfb01[1,",g_doc_len,"] NOT IN (SELECT smy69 FROM smy_file WHERE smy6 IS NOT NULL) "    #FUN-B40029   #MOD-B60107
                          #LET g_qryparam.where = " sfb01[1,",g_doc_len,"] NOT IN (SELECT smy69 FROM smy_file WHERE smy69 IS NOT NULL) "    #FUN-B40029   #MOD-B60107 #TQC-C50227
                          #FUN-C70014 add begin------------
-                         IF g_argv2 = 'D' AND NOT cl_null(g_sfq[i].sfq014) THEN 
+                         IF g_argv2 = 'D' AND NOT cl_null(g_sfq[i].sfq014) THEN
                             LET g_qryparam.where = g_qryparam.where," AND sfb01 IN (SELECT shm012 FROM shm_file WHERE shm01='",g_sfq[i].sfq014,"')"
-                         END IF 
+                         END IF
                          #FUN-C70014 add end -------------
                          CALL cl_create_qry() RETURNING g_sfq[i].sfq02
                          DISPLAY BY NAME g_sfq[i].sfq02   #No.MOD-490371
@@ -5200,7 +5219,7 @@ FUNCTION i501_d_i()
                        ##組合拆解的工單不顯示出來!
                        #LET li_where = li_where CLIPPED," AND substr(sfb01,1,",g_doc_len,") NOT IN (SELECT smy69 FROM smy_file WHERE smy69 IS NOT NULL) "
                        #LET li_where = li_where CLIPPED," AND sfb01[1,",g_doc_len,"] NOT IN (SELECT smy69 FROM smy_file WHERE smy69 IS NOT NULL) "   #CHI-9B0006 mod #TQC-C50227
-                       CALL q_short_qty(FALSE,TRUE,g_sfq[i].sfq02,'',li_where,'1') 
+                       CALL q_short_qty(FALSE,TRUE,g_sfq[i].sfq02,'',li_where,'1')
                            #RETURNING g_sfq[i].sfq02,l_sfa03,l_sfa08,l_sfa12,l_sfa27                     #TQC-B30021
                             RETURNING g_sfq[i].sfq02,l_sfa03,l_sfa08,l_sfa12,l_sfa27,l_sfa012,l_sfa013   #TQC-B30021
                        DISPLAY g_sfq[i].sfq02 TO sfq02
@@ -5213,8 +5232,8 @@ FUNCTION i501_d_i()
 #                     LET g_qryparam.form = "q_ima17" #MOD-630064
 #                     LET g_qryparam.default1 = g_sfq[i].sfq02
 #                     CALL cl_create_qry() RETURNING g_sfq[i].sfq02
-                      CALL q_sel_ima(FALSE, "q_ima17","",g_sfq[i].sfq02,"","","","","",'' ) 
-                        RETURNING g_sfq[i].sfq02  
+                      CALL q_sel_ima(FALSE, "q_ima17","",g_sfq[i].sfq02,"","","","","",'' )
+                        RETURNING g_sfq[i].sfq02
 #FUN-AA0059---------mod------------end-----------------
                       DISPLAY BY NAME g_sfq[i].sfq02
                       NEXT FIELD sfq02
@@ -5231,13 +5250,13 @@ FUNCTION i501_d_i()
           #FUN-B20095 ---------------Begin-------------------
              WHEN INFIELD(sfq012)
                    CALL cl_init_qry_var()
-                   LET g_qryparam.form = "q_sfq012" 
-                   LET g_qryparam.where = " sfa01 = '",g_sfq[i].sfq02,"'"  
+                   LET g_qryparam.form = "q_sfq012"
+                   LET g_qryparam.where = " sfa01 = '",g_sfq[i].sfq02,"'"
                    LET g_qryparam.default1 = g_sfq[i].sfq012
                    CALL cl_create_qry() RETURNING g_sfq[i].sfq012
-                   DISPLAY BY NAME g_sfq[i].sfq012 
-                   NEXT FIELD sfq012                      
-          #FUN-B20095 ---------------End---------------------             
+                   DISPLAY BY NAME g_sfq[i].sfq012
+                   NEXT FIELD sfq012
+          #FUN-B20095 ---------------End---------------------
              WHEN INFIELD(sfq04)
                    IF g_sfp.sfp06 MATCHES '[ABC]' THEN
                      CALL cl_init_qry_var()
@@ -5247,8 +5266,8 @@ FUNCTION i501_d_i()
                      DISPLAY BY NAME g_sfq[i].sfq04
                    ELSE
                      CALL cl_init_qry_var()
-                     LET g_qryparam.form ="q_sfa15"   
-                     LET g_qryparam.arg1= g_sfq[i].sfq02  
+                     LET g_qryparam.form ="q_sfa15"
+                     LET g_qryparam.arg1= g_sfq[i].sfq02
                      LET g_qryparam.default1 = g_sfq[i].sfq04
                      CALL cl_create_qry() RETURNING g_sfq[i].sfq04
                       DISPLAY BY NAME g_sfq[i].sfq04    #No.MOD-490371
@@ -5267,25 +5286,25 @@ FUNCTION i501_d_i()
                  IF l_cmd = 'a' THEN
                     CALL g_multi_sfq014.clear()
                     CALL q_shm4(TRUE,TRUE,NULL,g_multi_sfq014[1].*) RETURNING g_multi_sfq014
-                    IF g_multi_sfq014.getLength() > 0 AND NOT cl_null(g_multi_sfq014[1].shm01) THEN 
+                    IF g_multi_sfq014.getLength() > 0 AND NOT cl_null(g_multi_sfq014[1].shm01) THEN
                        CALL i501_multi_sfq014(i)
                        LET l_count = g_sfq.getLength()    #FUN-C70014  add
                        #FUN-C70014 add begin-----------
-                       IF i > l_count THEN 
+                       IF i > l_count THEN
                           LET l_cmd = 'a'
-                       ELSE 
+                       ELSE
                           LET l_cmd = 'u'
-                       END IF 
+                       END IF
                        #FUN-C70014 add end-------------
-                    ELSE 
+                    ELSE
                        NEXT FIELD sfq014
-                    END IF 
-                 ELSE 
+                    END IF
+                 ELSE
                     CALL cl_init_qry_var()
                     LET g_qryparam.form ="q_shm4"
-                    IF NOT cl_null(g_sfq[i].sfq02) THEN 
+                    IF NOT cl_null(g_sfq[i].sfq02) THEN
                        LET g_qryparam.where = " shm012 = '",g_sfq[i].sfq02,"'"
-                    END IF 
+                    END IF
                     LET g_qryparam.default1 = g_sfq[i].sfq014
                     LET g_qryparam.default2 = g_sfq[i].sfq02
                     LET g_qryparam.default3 = g_sfq[i].sfq04
@@ -5297,16 +5316,16 @@ FUNCTION i501_d_i()
                  END IF
             #FUN-C70014 add end --------------------
          END CASE
- 
+
       ON IDLE g_idle_seconds
          CALL cl_on_idle()
          CONTINUE INPUT
-      ON ACTION CONTROLS                                                                                                          
-         CALL cl_set_head_visible("","AUTO")                                                                                      
+      ON ACTION CONTROLS
+         CALL cl_set_head_visible("","AUTO")
       ON ACTION CONTROLG     #TQC-CA0045
          CALL cl_cmdask()    #TQC-CA0045
    END INPUT
- 
+
     LET g_sfp.sfpmodu = g_user
     LET g_sfp.sfpdate = g_today
     UPDATE sfp_file SET sfpmodu = g_sfp.sfpmodu,sfpdate = g_sfp.sfpdate
@@ -5315,11 +5334,11 @@ FUNCTION i501_d_i()
        CALL cl_err3("upd","sfp_file",g_sfp.sfp01,"",SQLCA.SQLCODE,"","upd sfp",1)  #No.FUN-660128
     END IF
     DISPLAY BY NAME g_sfp.sfpmodu,g_sfp.sfpdate
- 
+
    IF INT_FLAG THEN
       LET INT_FLAG = 0
    END IF
- 
+
    UPDATE sfp_file SET sfpmodu=g_sfp.sfpmodu,
                        sfpdate=g_sfp.sfpdate
     WHERE sfp01=g_sfp.sfp01
@@ -5331,35 +5350,35 @@ FUNCTION i501_d_i()
        DISPLAY BY NAME g_sfp.sfpdate
        ROLLBACK WORK
    END IF
- 
+
    DELETE FROM sfq_file WHERE sfq01 = g_sfp.sfp01
    IF SQLCA.sqlcode THEN
       CALL cl_err3("del","sfq_file",g_sfp.sfp01,"",SQLCA.sqlcode,"","del sfq",1)  #No.FUN-660128
       ROLLBACK WORK
       RETURN
    END IF
- 
+
    FOR i = 1 TO g_sfq.getLength()
        IF g_sfq[i].sfq02 IS NULL THEN CONTINUE FOR END IF
        IF g_sfq[i].sfq04 IS NULL THEN LET g_sfq[i].sfq04=' ' END IF
-       CALL i501_b_i_move_back(i) #FUN-730075  
-       IF g_sma.sma118 = 'N' THEN LET b_sfq.sfq07 = ' ' END IF  #No.FUN-870097      
-       IF b_sfq.sfq014 IS NULL THEN LET b_sfq.sfq014=' ' END IF  #FUN-C70014 add 
+       CALL i501_b_i_move_back(i) #FUN-730075
+       IF g_sma.sma118 = 'N' THEN LET b_sfq.sfq07 = ' ' END IF  #No.FUN-870097
+       IF b_sfq.sfq014 IS NULL THEN LET b_sfq.sfq014=' ' END IF  #FUN-C70014 add
        INSERT INTO sfq_file VALUES (b_sfq.*)
        IF STATUS THEN
           CALL cl_err3("ins","sfq_file",g_sfp.sfp01,g_sfq[i].sfq02,STATUS,"","ins sfq",1)  #No.FUN-660128
           ROLLBACK WORK RETURN
        END IF
    END FOR
- 
+
     IF g_flag_sfq03=1 THEN
        IF cl_confirm('asf-919') THEN
           CALL i501_g_b()
           CALL i501_b_fill(" 1=1")
-       END IF 
-    END IF 
+       END IF
+    END IF
    COMMIT WORK
- 
+
 END FUNCTION
 
 #FUN-BC0060 mark
@@ -5367,16 +5386,16 @@ END FUNCTION
 #FUNCTION i501_sfq03_chk(p_sfq02,p_sfq04,p_sfq012)
 #DEFINE p_sfq02       LIKE sfq_file.sfq02
 #DEFINE p_sfq04       LIKE sfq_file.sfq04
-#DEFINE p_sfq012      LIKE sfq_file.sfq012  
-#DEFINE l_qty1        LIKE sfq_file.sfq03  
-#DEFINE l_qty2        LIKE sfq_file.sfq03 
+#DEFINE p_sfq012      LIKE sfq_file.sfq012
+#DEFINE l_qty1        LIKE sfq_file.sfq03
+#DEFINE l_qty2        LIKE sfq_file.sfq03
 #DEFINE l_sql1        STRING
-#DEFINE l_sql2        STRING 
-#DEFINE l_sql         STRING 
-#   
+#DEFINE l_sql2        STRING
+#DEFINE l_sql         STRING
+#
 #   IF cl_null(p_sfq04) THEN
 #      LET p_sfq04 = ' '
-#   END IF 
+#   END IF
 #   IF cl_null(p_sfq012) THEN
 #      LET p_sfq012 = ' '
 #   END IF
@@ -5428,9 +5447,9 @@ END FUNCTION
 #DEFINE p_sfq012      LIKE sfq_file.sfq012
 #DEFINE l_qty1        LIKE sfq_file.sfq03
 #DEFINE l_qty2        LIKE sfq_file.sfq03
-#DEFINE l_sql1        STRING 
-#DEFINE l_sql2        STRING  
-#DEFINE l_sql         STRING    
+#DEFINE l_sql1        STRING
+#DEFINE l_sql2        STRING
+#DEFINE l_sql         STRING
 #
 #   IF cl_null(p_sfq04) THEN
 #      LET p_sfq04 = ' '
@@ -5498,8 +5517,8 @@ DEFINE l_sql_5                STRING #add by huanglf160927
 DEFINE l_sql1                   STRING
 DEFINE l_sql1_1,l_sql1_2        STRING
 DEFINE l_sql1_3,l_sql1_4        STRING
-DEFINE l_sql1_5                 STRING #add by huanglf160927 
-DEFINE l_sql2                   STRING  
+DEFINE l_sql1_5                 STRING #add by huanglf160927
+DEFINE l_sql2                   STRING
 DEFINE l_sql2_1,l_sql2_2        STRING
 DEFINE l_sql2_3,l_sql2_4        STRING
 DEFINE qty1_1,qty1_2  LIKE sfq_file.sfq03   #已發按作業編號的套數和已發不按作業編號的套數
@@ -5518,10 +5537,10 @@ DEFINE qty2_3,qty2_4  LIKE sfq_file.sfq03   #已退按作業編號的套數和�
                "  WHERE sfq02 = '",p_sfq02,"'",
                "    AND sfq01 = sfp01 "
    #str---add by guanyao160909
-   IF NOT cl_null(g_sfp.sfpud03) THEN 
+   IF NOT cl_null(g_sfp.sfpud03) THEN
       LET l_sql = l_sql CLIPPED,
                       "    AND sfpud03 ='",g_sfp.sfpud03,"'"
-   END IF 
+   END IF
    #end---add by guanyao160909
    CASE p_flag
        WHEN '1'              #只計算已過帳的
@@ -5536,11 +5555,11 @@ DEFINE qty2_3,qty2_4  LIKE sfq_file.sfq03   #已退按作業編號的套數和�
    END CASE
 
    #FUN-C70014 add begin------Run Card發料時，計算已發和未發套數需要根據Run Card單號查詢
-   IF g_argv2 = 'D' AND NOT cl_null(p_sfq014) THEN 
+   IF g_argv2 = 'D' AND NOT cl_null(p_sfq014) THEN
       LET l_sql = l_sql CLIPPED," AND sfq014 = '",p_sfq014,"'"
-   END IF 
+   END IF
    #FUN-C70014 add end--------
-   
+
    #工藝段與作業編號都有輸入
    IF NOT cl_null(p_sfq04) AND NOT cl_null(p_sfq012) THEN
       #按作業編號值+工藝段值
@@ -5597,7 +5616,7 @@ DEFINE qty2_3,qty2_4  LIKE sfq_file.sfq03   #已退按作業編號的套數和�
    LET qty1_4 = 0
    #按作業編號值+工藝段值
    IF NOT cl_null(l_sql_1) THEN
-     #LET l_sql1_1 = l_sql_1 CLIPPED," AND sfp06 = '1'"   
+     #LET l_sql1_1 = l_sql_1 CLIPPED," AND sfp06 = '1'"
       LET l_sql1_1 = l_sql_1 CLIPPED," AND sfp06 IN ('1','D')"   #FUN-C70014  sfp06 = '1' --> sfp06 IN ('1','D') #tianry mark
     #  LET l_sql1_1 = l_sql_1 CLIPPED," AND sfp06 IN ('1','D')  AND sfp01!='",g_sfp.sfp01,"' "  #tianry mark 161206
       PREPARE i501_sfq03_pre1_1 FROM l_sql1_1
@@ -5758,18 +5777,18 @@ DEFINE qty2_3,qty2_4  LIKE sfq_file.sfq03   #已退按作業編號的套數和�
 
 END FUNCTION
 #FUN-BC0060 add--end
- 
+
 FUNCTION i501_set_entry_d(p_cmd)
   DEFINE p_cmd   LIKE type_file.chr1    #No.FUN-680121 VARCHAR(1)
- 
+
     IF p_cmd = 'a' OR p_cmd = 'u' THEN
        CALL cl_set_comp_entry("sfq03",TRUE)
     END IF
 END FUNCTION
- 
+
 FUNCTION i501_set_no_entry_d(p_cmd)
   DEFINE p_cmd   LIKE type_file.chr1    #No.FUN-680121 VARCHAR(1)
- 
+
     IF g_sfp.sfp06 NOT MATCHES '[16ABD]' THEN #FUN-5C0114 add AB #FUN-740232 將3拿掉 #FUN-C70014 add 'D'
        CALL cl_set_comp_entry("sfq03",FALSE)
     END IF
@@ -5795,27 +5814,27 @@ END FUNCTION
 #FUN-A20048  --begin
 FUNCTION i501_g_b_1()
 
-  IF g_sfp.sfp06 MATCHES '[1]' THEN RETURN END IF 
-#FUN-AC0074 -----------------Begin------------------------  
+  IF g_sfp.sfp06 MATCHES '[1]' THEN RETURN END IF
+#FUN-AC0074 -----------------Begin------------------------
 # OPEN WINDOW i501_g_b_j WITH FORM "asf/42f/asfi501a_1"
 #         ATTRIBUTE (STYLE = g_win_style CLIPPED)
-# CALL cl_ui_locale("asfi501a_1") 
+# CALL cl_ui_locale("asfi501a_1")
 # INPUT BY NAME sel_all
 #              WITHOUT DEFAULTS
-#                               
+#
 #    AFTER FIELD sel_all
-#      IF sel_all NOT MATCHES '[12]' THEN 
+#      IF sel_all NOT MATCHES '[12]' THEN
 #          NEXT FIELD sel_all
-#      END IF                             
+#      END IF
 
 #    AFTER INPUT
 #       IF INT_FLAG THEN
-#          EXIT INPUT 
+#          EXIT INPUT
 #       END IF
 #
 #    ON IDLE g_idle_seconds
 #       CALL cl_on_idle()
-#       CONTINUE INPUT 
+#       CONTINUE INPUT
 #
 # END INPUT
 # IF INT_FLAG THEN
@@ -5826,7 +5845,7 @@ FUNCTION i501_g_b_1()
 # END IF
 # CLOSE WINDOW i501_g_b_j
 #FUN-AC0074 -----------------End---------------------
-                                 
+
     IF g_prog = 'asfi510' THEN
       IF g_sfp.sfp06 = '1' THEN LET g_prog = 'asfi511' END IF
       IF g_sfp.sfp06 = '2' THEN LET g_prog = 'asfi512' END IF
@@ -5840,26 +5859,26 @@ FUNCTION i501_g_b_1()
       IF g_sfp.sfp06 = '9' THEN LET g_prog = 'asfi529' END IF
    END IF
 #  IF sel_all = '1' THEN      #FUN-AC0074
-      CALL i501_b()           #FUN-AC0074 
+      CALL i501_b()           #FUN-AC0074
 #FUN-AC0074 ---------Begin-----------
-#  ELSE                     
-#    CALL i501_b_fill_1() 
+#  ELSE
+#    CALL i501_b_fill_1()
 #    CALL i501_q1()
 #    CALL i501_b_fill(' 1=1')
-#    call I501_b()     
+#    call I501_b()
 #  END IF
 #FUN-AC0074 ---------End-------------
-      
-END FUNCTION 
-#FUN-A20048 --end 
+
+END FUNCTION
+#FUN-A20048 --end
 
 #FUN-A20048 --begin
 #FUN-AC0074 mark(S)
 #FUNCTION i501_q1()
-# DEFINE i  LIKE type_file.num5 
-#  
+# DEFINE i  LIKE type_file.num5
+#
 #       LET g_action_choice = " "
-# 
+#
 #      INPUT ARRAY g_sib_1 WITHOUT DEFAULTS FROM s_sib_1.*  #顯示並進行選擇
 #        ATTRIBUTE(COUNT=g_rec_b1,MAXCOUNT=g_max_rec,UNBUFFERED,
 #                  INSERT ROW = FALSE,DELETE ROW = FALSE,APPEND ROW= FALSE)
@@ -5871,75 +5890,75 @@ END FUNCTION
 #             CALL fgl_set_arr_curr(l_ac1)
 #             CALL cl_show_fld_cont()
 #             LET g_sib_t.* = g_sib_1[l_ac1].*
-# 
-# 
+#
+#
 #         AFTER INPUT
 #            IF INT_FLAG THEN
-#               EXIT INPUT 
+#               EXIT INPUT
 #            END IF
 #
 #         ON CHANGE chk
-#            IF cl_null(g_sib_1[l_ac1].chk) THEN 
+#            IF cl_null(g_sib_1[l_ac1].chk) THEN
 #               LET g_sib_1[l_ac1].chk = 'Y'
 #            END IF
-# 
-#         ON ACTION ACCEPT  
+#
+#         ON ACTION ACCEPT
 #            FOR i=1 TO g_rec_b1
-#               IF g_sib_1[i].chk = 'Y' THEN 
+#               IF g_sib_1[i].chk = 'Y' THEN
 #                  CALL  i501_g_b01(g_sib_1[i].sib02,'')
-#               END IF 
-#            END FOR 
+#               END IF
+#            END FOR
 #            EXIT INPUT
-#  
-#            
+#
+#
 #         ON ACTION help
 #            CALL cl_show_help()
 #            EXIT INPUT
-# 
+#
 #         ON ACTION controlg
 #            CALL cl_cmdask()
-# 
+#
 #         ON ACTION locale
 #            CALL cl_dynamic_locale()
 #            CALL cl_show_fld_cont()
-# 
+#
 #         ON ACTION exit
 #            LET g_action_choice="exit"
 #            EXIT INPUT
-# 
+#
 #         ON IDLE g_idle_seconds
 #            CALL cl_on_idle()
 #            CONTINUE INPUT
-# 
+#
 #         ON ACTION about
 #            CALL cl_about()
-# 
-#      END INPUT 
+#
+#      END INPUT
 #  IF INT_FLAG THEN
 #     LET INT_FLAG=0
 #     CLOSE WINDOW i501_g_b_q
 #     CALL i501_b_fill(' 1=1')
 #     RETURN
-#  END IF    
+#  END IF
 #
 #  CALL i501_sort_by_partno()
 #  LET g_rec_b = g_i
-# 
+#
 #  CLOSE WINDOW i501_g_b_q
 #  DISPLAY ARRAY g_sfs TO s_sfs.*
-#    BEFORE DISPLAY 
+#    BEFORE DISPLAY
 #      EXIT DISPLAY
 #    ON IDLE g_idle_seconds
 #      CALL cl_on_idle()
 #      CONTINUE DISPLAY
 #
-#  END DISPLAY 
+#  END DISPLAY
 #  CALL cl_set_act_visible("accept,cancel", TRUE)
-#END FUNCTION  
+#END FUNCTION
 #FUN-AC0074 mark(E)
-#FUN-A20048 --end 
+#FUN-A20048 --end
 
- 
+
 FUNCTION i501_g_b()
   DEFINE l_gen02         LIKE gen_file.gen02    #No.FUN-940039 add
   DEFINE qty1,qty2	 LIKE sfq_file.sfq03    #No.FUN-680121 DEC(15,3)
@@ -5959,7 +5978,7 @@ FUNCTION i501_g_b()
                END RECORD
   DEFINE l_sfs930        LIKE sfs_file.sfs930 #FUN-670103
   DEFINE l_sre051    LIKE sre_file.sre051   #No.FUN-870041
-  DEFINE l_sfa36     LIKE sfa_file.sfa36    #FUN-950088 add 
+  DEFINE l_sfa36     LIKE sfa_file.sfa36    #FUN-950088 add
   #DEFINE l_sma894    STRING                     #No.TQC-A50063  #FUN-D30024
   #No.FUN-A70034  --Begin
   DEFINE l_bmb081    LIKE bmb_file.bmb081
@@ -5967,7 +5986,7 @@ FUNCTION i501_g_b()
   DEFINE l_total     LIKE sfa_file.sfa05     #总用量
   DEFINE l_QPA       LIKE bmb_file.bmb06     #标准QPA
   DEFINE l_ActualQPA LIKE bmb_file.bmb06     #实际QPA
-  #No.FUN-A70034  --End  
+  #No.FUN-A70034  --End
   #FUN-AC0074 (S)
   DEFINE l_mai_ware	LIKE img_file.img02                   #FUN-B80086  main改成mai
   DEFINE l_mai_loc	  LIKE img_file.img03                 #FUN-B80086  main改成mai
@@ -5988,7 +6007,7 @@ FUNCTION i501_g_b()
   LET lot_no = NULL  #MOD-4A0145
   LET gen_no = NULL  #MOD-9C0195 add
   LET gen_all = 'Y'  #FUN-A20048 add
- 
+
   IF g_sfp.sfp06 MATCHES '[ABC]' THEN  #FUN-5C0114
      OPEN WINDOW i501_g_b_w WITH FORM "asr/42f/asri210a"
           ATTRIBUTE (STYLE = g_win_style CLIPPED)
@@ -6007,31 +6026,31 @@ FUNCTION i501_g_b()
   #3)當發/退料方式選擇3:依工單指定倉庫/儲位/倉管員發退料時,
   #  指定倉庫,指定儲位,指定倉管員字段變為QBE方式
   #  對應table字段:sfa30,sfa31,ima23
- 
-  
-  CALL cl_set_comp_entry("lot_no",TRUE)  
+
+
+  CALL cl_set_comp_entry("lot_no",TRUE)
   CALL cl_set_comp_entry("noqty,short_data",FALSE)  #MOD-D10040
   #FUN-D30024--mark--str--
-  #No.TQC-A50063  
-  #LET l_sma894=g_sma.sma894               
-  #LET l_sma894=l_sma894.substring(1,1)    
-  #IF l_sma894='N' THEN 
+  #No.TQC-A50063
+  #LET l_sma894=g_sma.sma894
+  #LET l_sma894=l_sma894.substring(1,1)
+  #IF l_sma894='N' THEN
   #   LET noqty='N'
   #   LET short_data='N'
-  #END IF 
-  #No.TQC-A50063  
+  #END IF
+  #No.TQC-A50063
   #FUN-D30024--mark--end--
-  
+
   INPUT BY NAME b_part,e_part,part_type,issue_type,noqty,
            #    short_data,gen_all                   #No.FUN-A20048 add gen_all   #FUN-AC0074
-                short_data        #FUN-AC0074         
+                short_data        #FUN-AC0074
                 WITHOUT DEFAULTS
 
      AFTER FIELD b_part
         IF b_part IS NULL THEN LET b_part = '0' DISPLAY BY NAME b_part END IF
      AFTER FIELD e_part
         IF e_part IS NULL THEN LET e_part = 'Z' DISPLAY BY NAME e_part END IF
- 
+
      BEFORE FIELD issue_type
         CALL i501_set_entry_gb()
         IF g_argv1='2' THEN
@@ -6044,7 +6063,7 @@ FUNCTION i501_g_b()
         END IF
         CALL i501_set_no_entry_gb()  #MOD-D10040
       ON CHANGE issue_type   #MOD-580337
- 
+
         IF NOT cl_null(issue_type) THEN
            IF issue_type NOT MATCHES '[012345]' THEN
               NEXT FIELD issue_type
@@ -6073,23 +6092,23 @@ FUNCTION i501_g_b()
            #str--add by jixf 160808
            IF issue_type MATCHES '[45]' THEN
               LET short_data='Y'
-           END IF 
+           END IF
            #end--add by jixf 160808
            CALL i501_set_no_entry_gb()
            DISPLAY BY NAME noqty,short_data
         END IF
-   
+
      AFTER INPUT
         IF INT_FLAG THEN
-           EXIT INPUT 
+           EXIT INPUT
         END IF
- 
+
      ON IDLE g_idle_seconds
         CALL cl_on_idle()
-        CONTINUE INPUT 
- 
+        CONTINUE INPUT
+
   END INPUT
- 
+
   IF INT_FLAG THEN
      LET INT_FLAG=0
      CLOSE WINDOW i501_g_b_w
@@ -6118,22 +6137,22 @@ FUNCTION i501_g_b()
      CLOSE WINDOW i501_g_b_w
      RETURN
   END IF
- 
- 
+
+
      IF (issue_type = '2' ) OR (g_sfp.sfp06 MATCHES '[ABC]') THEN  #MOD-9C0195 add
         INPUT BY NAME ware_no,loc_no,lot_no,gen_no WITHOUT DEFAULTS
-       
+
         BEFORE INPUT
            IF issue_type = '2' THEN   #MOD-9C0195 add
               CALL cl_set_comp_entry("gen_no",FALSE)
            ELSE
               CALL cl_set_comp_entry("gen_no",TRUE)
            END IF
- 
+
         AFTER FIELD ware_no
            IF NOT cl_null(ware_no) THEN
              #SELECT imd02,imd11 INTO g_buf,l_imd11 FROM imd_file  #MOD-910166 add imd11 #MOD-950232
-              SELECT imd02 INTO g_buf FROM imd_file #MOD-950232  
+              SELECT imd02 INTO g_buf FROM imd_file #MOD-950232
                WHERE imd01=ware_no
                   AND imdacti = 'Y' #MOD-4B0169
               IF STATUS THEN
@@ -6147,8 +6166,8 @@ FUNCTION i501_g_b()
               #End Add No.FUN-AB0018
               DISPLAY g_buf TO imd02
            END IF
-        
-        AFTER FIELD gen_no 
+
+        AFTER FIELD gen_no
            IF NOT cl_null(gen_no) THEN
               SELECT gen02 INTO l_gen02 FROM gen_file
                WHERE gen01 = gen_no
@@ -6159,18 +6178,18 @@ FUNCTION i501_g_b()
               END IF
               DISPLAY l_gen02 TO gen02
            END IF
-          
- 
+
+
         AFTER INPUT
            IF INT_FLAG THEN
-              EXIT INPUT 
+              EXIT INPUT
            END IF
            IF issue_type ='2' AND cl_null(ware_no) THEN NEXT FIELD ware_no END IF
            IF ware_no IS NULL THEN LET ware_no =' ' END IF
            IF loc_no IS NULL THEN LET loc_no =' ' END IF
            IF lot_no IS NULL THEN LET lot_no =' ' END IF
            IF gen_no IS NULL THEN LET gen_no =' ' END IF   #MOD-9C0195 add
-           
+
         ON ACTION controlp
            CASE WHEN INFIELD(ware_no)
                     #Mod No.FUN-AB0018
@@ -6208,9 +6227,9 @@ FUNCTION i501_g_b()
         ON IDLE g_idle_seconds
            CALL cl_on_idle()
            CONTINUE INPUT
- 
+
      END INPUT
- 
+
       IF INT_FLAG THEN
          LET INT_FLAG=0
          CLOSE WINDOW i501_g_b_w
@@ -6218,15 +6237,15 @@ FUNCTION i501_g_b()
          RETURN
       END IF
   END IF      #FUN-940039 add
- 
- 
+
+
    LET g_wc4 = ' 1=1'
    IF (issue_type MATCHES '[1345]') AND (NOT g_sfp.sfp06 MATCHES '[ABC]') THEN  #MOD-9C0195 add
      CONSTRUCT BY NAME  g_wc4 ON ware_no,loc_no,gen_no
-     
+
      BEFORE CONSTRUCT
        CALL cl_qbe_init()
-       CALL cl_set_comp_entry("lot_no",FALSE)  
+       CALL cl_set_comp_entry("lot_no",FALSE)
 
       #MOD-CA0183---add---S
        AFTER FIELD ware_no
@@ -6236,7 +6255,7 @@ FUNCTION i501_g_b()
        AFTER FIELD gen_no
           LET gen_no = GET_FLDBUF(gen_no)
       #MOD-CA0183---add---E
-      
+
        ON ACTION controlp
           CASE WHEN INFIELD(ware_no)
                    #Mod No.FUN-AB0018
@@ -6279,9 +6298,9 @@ FUNCTION i501_g_b()
          CALL i501_b_fill(' 1=1')
          RETURN
       END IF
- 
+
    END IF
- 
+
    IF cl_null(g_wc4) THEN
       LET g_wc4 = ' 1=1'
    END IF
@@ -6295,34 +6314,34 @@ FUNCTION i501_g_b()
       CALL cl_replace_str(g_wc4,"loc_no", "sfa31") RETURNING g_wc4
       CALL cl_replace_str(g_wc4,"gen_no", "ima23") RETURNING g_wc4
    END IF
-    #FUN-A20048 add --begin 
+    #FUN-A20048 add --begin
    IF issue_type = '1' AND gen_all ='Y' THEN
       CALL cl_replace_str(g_wc4,"ware_no","ima35") RETURNING g_wc4
       CALL cl_replace_str(g_wc4,"loc_no","ima36") RETURNING g_wc4
       CALL cl_replace_str(g_wc4,"gen_no","ima23") RETURNING g_wc4
    END IF
     #FUN-A20048 add --end
- 
-  
+
+
   IF NOT cl_sure(0,0) THEN
      LET g_rec_b = 0
      CLOSE WINDOW i501_g_b_w
      RETURN
   END IF
- 
+
   INITIALIZE b_sfs.* TO NULL
   LET b_sfs.sfs02=0
   DELETE FROM sfs_file WHERE sfs01=g_sfp.sfp01
   DELETE FROM rvbs_file
    WHERE rvbs00 = g_prog
      AND rvbs01 = g_sfp.sfp01
-  
+
   IF NOT (g_sfp.sfp06 MATCHES '[ABC]') THEN  #FUN-5C0114
       DECLARE i501_g_b_c CURSOR FOR
          SELECT * FROM sfq_file WHERE sfq01=g_sfp.sfp01
       FOREACH i501_g_b_c INTO b_sfq.*
         SELECT * INTO g_sfb.* FROM sfb_file WHERE sfb01=b_sfq.sfq02
-        IF STATUS THEN 
+        IF STATUS THEN
            CALL cl_err3("sel","sfb_file",b_sfq.sfq02,"",STATUS,"","sel sfb:",1)  #No.FUN-660128
            RETURN
         END IF
@@ -6345,37 +6364,37 @@ FUNCTION i501_g_b()
         CALL i501_sfq03_chk(b_sfq.sfq02,b_sfq.sfq04,'',b_sfq.sfq014,'2')  #FUN-A70095  #FUN-BC0060 mod 只选过账的 #FUN-C70014 add sfq014
                     RETURNING qty1,qty2
        #Mod FUN-BC0060--end
- 
+
         IF qty1 IS NULL THEN LET qty1=0 END IF
         IF qty2 IS NULL THEN LET qty2=0 END IF
 
-   #FUN-A20048 --begin 
+   #FUN-A20048 --begin
      #LET l_qty = 0           #FUN-AC0074 mark
-      IF g_sfp.sfp06 = '1' THEN 
+      IF g_sfp.sfp06 = '1' THEN
         LET l_i =l_i + 1
        #FUN-AC0074 mark(S)
-       #IF NOT cl_null(g_sfq[l_i].sfq02) THEN 
-       #   SELECT SUM(sie11) INTO l_qty FROM sie_file 
-       #        WHERE sie05 = g_sfq[l_i].sfq02 
-       #END IF 
-       #IF cl_null(l_qty) THEN 
-       #  LET l_qty = 0 
-       #END IF  
+       #IF NOT cl_null(g_sfq[l_i].sfq02) THEN
+       #   SELECT SUM(sie11) INTO l_qty FROM sie_file
+       #        WHERE sie05 = g_sfq[l_i].sfq02
+       #END IF
+       #IF cl_null(l_qty) THEN
+       #  LET l_qty = 0
+       #END IF
        #FUN-AC0074 mark(E)
-      END IF       
-   #FUN-A20048 --end         
-        CASE 
+      END IF
+   #FUN-A20048 --end
+        CASE
            WHEN g_sfp.sfp06='1' OR g_sfp.sfp06='D'  #FUN-C70014 add  g_sfp.sfp06='D'
-#FUN-A20048 --begin 
+#FUN-A20048 --begin
               IF g_sma.sma129='N' AND b_sfq.sfq03 = 0 THEN #TQC-AB0178
                  CALL i501_g_b3()                          #TQC-AB0178
               ELSE                                         #TQC-AB0178
                 #FUN-AC0074 mark(S)
-                #IF gen_all ='Y' AND l_qty > 0 THEN       #依備置檔來產生發料 
-	              #   IF g_sfb.sfb08 <=(qty1-qty2 + b_sfq.sfq03) THEN    
-                #      CALL i501_g_b01(b_sfq.sfq02,b_sfq.sfq04)     #FUN-A40053 mod        
-                #   END IF  
-                #ELSE 
+                #IF gen_all ='Y' AND l_qty > 0 THEN       #依備置檔來產生發料
+	              #   IF g_sfb.sfb08 <=(qty1-qty2 + b_sfq.sfq03) THEN
+                #      CALL i501_g_b01(b_sfq.sfq02,b_sfq.sfq04)     #FUN-A40053 mod
+                #   END IF
+                #ELSE
                 #FUN-AC0074 mark(E)
                    IF g_sfb.sfb08<=(qty1-qty2+b_sfq.sfq03) THEN
                       CALL i501_g_b0()  #全數發料
@@ -6383,20 +6402,20 @@ FUNCTION i501_g_b()
                       CALL i501_g_b1()  #依套數
                    END IF
                #END IF  FUN-AC0074 mark
-              END IF #TQC-AB0178   
- #FUN-A20048 --end   	
-             WHEN g_sfp.sfp06='3' 
+              END IF #TQC-AB0178
+ #FUN-A20048 --end
+             WHEN g_sfp.sfp06='3'
                 CALL i501_g_b3()
-             WHEN g_sfp.sfp06='6' 
+             WHEN g_sfp.sfp06='6'
                 IF (qty1-qty2-b_sfq.sfq03)<=0 THEN
                    CALL i501_g_b5()  #全數退料
                 ELSE
                    CALL i501_g_b1()  #依套數
                 END IF
-             WHEN g_sfp.sfp06='7' 
+             WHEN g_sfp.sfp06='7'
                 CALL i501_g_b7()
         END CASE
- 
+
       END FOREACH
   ELSE
       LET l_sfs930=s_costcenter(g_sfp.sfp07) #FUN-670103
@@ -6406,23 +6425,23 @@ FUNCTION i501_g_b()
       FOREACH i501_g_b_c1 INTO b_sfq.sfq01,b_sfq.sfq02,b_sfq.sfq03
                               ,b_sfq.sfq04,b_sfq.sfq05,b_sfq.sfq06
                               ,b_sfq.sfq07,b_sfq.sfq08  #No.FUN-870097 add sfq07 #FUN-940008 add sfq08
-                              
+
         SELECT SUM(sfq03) INTO qty1 FROM sfq_file, sfp_file
          WHERE sfq02=b_sfq.sfq02 AND sfq04=b_sfq.sfq04
            AND sfq01=sfp01 AND sfp06='A' AND sfp04='Y'
         SELECT SUM(sfq03) INTO qty2 FROM sfq_file, sfp_file
          WHERE sfq02=b_sfq.sfq02 AND sfq04=b_sfq.sfq04
            AND sfq01=sfp01 AND sfp06='B' AND sfp04='Y'
- 
+
         IF qty1 IS NULL THEN LET qty1=0 END IF
         IF qty2 IS NULL THEN LET qty2=0 END IF
- 
+
         IF cl_null(b_sfq.sfq05) THEN
            LET l_date=g_sfp.sfp03
         ELSE
            LET l_date=b_sfq.sfq05
         END IF
- 
+
         CASE g_sfp.sfp06
            WHEN 'A'
               SELECT sre051 INTO l_sre051 FROM sre_file
@@ -6436,16 +6455,16 @@ FUNCTION i501_g_b()
               LET l_sql = "SELECT bmb03,bmb06,bmb07,bmb08,bmb16,ima108,",
                           "       bmb081,bmb082 ",
                           "  FROM bmb_file, ima_file",
-              #No.FUN-A70034  --End  
+              #No.FUN-A70034  --End
                           " WHERE ima01=bmb03 AND bmb01='",b_sfq.sfq02,"'",
                           "   AND bmb29='",l_sre051,"'",   #No.FUN-870041
                           "   AND (bmb04 <='",l_date,"' OR bmb04 IS NULL )",
                           "   AND (bmb05 > '",l_date,"' OR bmb05 IS NULL )",
                           "   AND ima70='N'"
- 
+
               PREPARE i501_g_b_c2_pre FROM l_sql
               DECLARE i501_g_b_c2 CURSOR FOR i501_g_b_c2_pre
- 
+
               #No.FUN-A70034  --Begin
               #FOREACH i501_g_b_c2 INTO l_bmb.*,g_ima108
               FOREACH i501_g_b_c2 INTO l_bmb.*,g_ima108,l_bmb081,l_bmb082
@@ -6453,20 +6472,20 @@ FUNCTION i501_g_b()
                 IF part_type = 'Y' AND (g_ima108= 'N' OR cl_null(g_ima108)) THEN
                    CONTINUE FOREACH
                 END IF
- 
+
                 IF part_type = 'N' AND (g_ima108 = 'Y' OR cl_null(g_ima108)) THEN
                    CONTINUE FOREACH
                 END IF
- 
+
                 #No.FUN-A70034  --Begin
                 #LET issue_qty1=b_sfq.sfq03*(l_bmb.bmb06/l_bmb.bmb07)*(1+l_bmb.bmb08/100)
                 CALL cralc_rate(b_sfq.sfq02,l_bmb.bmb03,b_sfq.sfq03,l_bmb081,l_bmb.bmb08,l_bmb082,
                                 l_bmb.bmb06/l_bmb.bmb07,0)
                      RETURNING l_total,l_QPA,l_ActualQPA
                 LET issue_qty1=l_total
-                #No.FUN-A70034  --End  
+                #No.FUN-A70034  --End
                 CALL i500_chk_ima64(l_bmb.bmb03, issue_qty1) RETURNING issue_qty1
- 
+
                 #發料單位
                 LET g_sfa2.sfa12=' '
                  SELECT ima55 INTO g_sfa2.sfa12 FROM ima_file
@@ -6489,9 +6508,9 @@ FUNCTION i501_g_b()
                   WHERE ima01=g_sfa2.sfa03
                 #FUN-AC0074 (E)
                 CALL i501_chk_img(l_mai_ware,l_mai_loc,l_wip_ware,l_wip_loc,lot_no,FALSE)		# 依 issue_qty1 尋找 img_file可用資料           #FUN-AC0074 #FUN-B80086  main改成mai
- 
+
               END FOREACH
- 
+
            WHEN 'B'
               LET l_sql = "SELECT bmb03,bmb06,bmb07,bmb08,bmb16,ima108 FROM bmb_file, ima_file",
                           " WHERE ima01=bmb03 AND bmb01='",b_sfq.sfq02,"'",
@@ -6499,10 +6518,10 @@ FUNCTION i501_g_b()
                           "   AND (bmb05 > '",l_date,"' OR bmb05 IS NULL )",
                           "   AND ima70='N'"
                           ,"  AND bmb29 = '",b_sfq.sfq07,"'"  #FUN-870097
-                          
+
               PREPARE i501_g_b_c3_pre FROM l_sql
               DECLARE i501_g_b_c3 CURSOR FOR i501_g_b_c3_pre
- 
+
               FOREACH i501_g_b_c3 INTO l_bmb.*,g_ima108
                 IF part_type = 'Y' AND (g_ima108= 'N' OR cl_null(g_ima108)) THEN
                    CONTINUE FOREACH
@@ -6510,16 +6529,16 @@ FUNCTION i501_g_b()
                 IF part_type = 'N' AND (g_ima108 = 'Y' OR cl_null(g_ima108)) THEN
                    CONTINUE FOREACH
                 END IF
- 
+
                 LET b_sfs.sfs01=g_sfp.sfp01
                 LET b_sfs.sfs02=b_sfs.sfs02+1
                 LET b_sfs.sfs03=b_sfq.sfq02
                 LET b_sfs.sfs04=l_bmb.bmb03
                 LET b_sfs.sfs05=qty1-qty2
- 
+
                 SELECT ima55,ima35,ima36 INTO b_sfs.sfs06,b_sfs.sfs07,b_sfs.sfs08 FROM ima_file
                  WHERE ima01 = b_sfs.sfs04
- 
+
                 IF cl_null(b_sfs.sfs06) THEN
                    SELECT ima25 INTO b_sfs.sfs06 FROM ima_file
                       WHERE ima01 = b_sfs.sfs04
@@ -6536,21 +6555,21 @@ FUNCTION i501_g_b()
                   LET b_sfs.sfs08=loc_no
                   LET b_sfs.sfs09=lot_no
                 END IF
- 
+
                 IF g_sfp.sfp06 MATCHES '[B]' THEN
                    IF g_sfa2.sfa05 <0 THEN
                       LET b_sfs.sfs05=0
                    END IF
                 END IF
- 
+
                 LET b_sfs.sfs10=' '
                 IF b_sfs.sfs07 IS NULL THEN LET b_sfs.sfs07 = ' ' END IF
                 IF b_sfs.sfs08 IS NULL THEN LET b_sfs.sfs08 = ' ' END IF
                 IF b_sfs.sfs09 IS NULL THEN LET b_sfs.sfs09 = ' ' END IF
 #FUN-A60028 --begin--
-                IF cl_null(b_sfs.sfs012) THEN LET b_sfs.sfs012 = ' ' END IF 
-                IF cl_null(b_sfs.sfs013) THEN LET b_sfs.sfs013 = 0   END IF  
-#FUN-A60028 --end--                
+                IF cl_null(b_sfs.sfs012) THEN LET b_sfs.sfs012 = ' ' END IF
+                IF cl_null(b_sfs.sfs013) THEN LET b_sfs.sfs013 = 0   END IF
+#FUN-A60028 --end--
                 IF g_sma.sma115 = 'Y' THEN
                    CALL i501_set_du_by_origin()
                 END IF
@@ -6558,60 +6577,60 @@ FUNCTION i501_g_b()
                 IF cl_null(b_sfs.sfs27) THEN
                    LET b_sfs.sfs27=b_sfs.sfs04
                 END IF
- 
+
                 IF cl_null(b_sfs.sfs27) THEN
                    LET b_sfs.sfs27 = ' '
                 END IF
 
                 LET b_sfs.sfsplant = g_plant #FUN-980008 add
                 LET b_sfs.sfslegal = g_legal #FUN-980008 add
- 
+
                 IF b_sfs.sfs014 IS NULL THEN LET b_sfs.sfs014=' ' END IF  #FUN-C70014 add
                 #FUN-CB0087--add--str--
                 IF g_aza.aza115 ='Y' THEN
                    LET b_sfs.sfs37=s_reason_code(b_sfs.sfs01,b_sfs.sfs03,'',b_sfs.sfs04,b_sfs.sfs07,g_sfp.sfp16,g_sfp.sfp07)
                 END IF
-                #FUN-CB0087--add--str-- 
+                #FUN-CB0087--add--str--
 
                 INSERT INTO sfs_file VALUES(b_sfs.*)
-                IF STATUS THEN 
+                IF STATUS THEN
                    CALL cl_err3("ins","sfs_file",b_sfs.sfs01,b_sfs.sfs02,STATUS,"","ins sfs:",1)  #No.FUN-660128
                    END IF
                 CALL i501_ins_rvbs(b_sfs.sfs02,b_sfs.sfs03,b_sfs.sfs04)   #No.FUN-870106
-                
+
               END FOREACH
- 
+
         END CASE
- 
+
       END FOREACH
   END IF
   CALL i501_sort_by_partno()
   LET g_rec_b = g_i
- 
+
   CLOSE WINDOW i501_g_b_w
- 
+
   DISPLAY ARRAY g_sfs TO s_sfs.* ATTRIBUTE(COUNT=g_rec_b,UNBUFFERED)
     BEFORE DISPLAY
        EXIT DISPLAY
      ON IDLE g_idle_seconds
         CALL cl_on_idle()
         CONTINUE DISPLAY
- 
+
   END DISPLAY
   CALL cl_set_act_visible("accept,cancel", TRUE)
- 
+
 END FUNCTION
- 
+
 FUNCTION i501_set_entry_gb()
   DEFINE p_cmd   LIKE type_file.chr1    #No.FUN-680121 VARCHAR(1)
- 
+
     CALL cl_set_comp_entry("noqty,short_data",TRUE)
- 
+
 END FUNCTION
- 
+
 FUNCTION i501_set_no_entry_gb()
   DEFINE p_cmd   LIKE type_file.chr1    #No.FUN-680121 VARCHAR(1)
- 
+
     IF INFIELD(issue_type) THEN
        CALL cl_set_comp_entry("noqty,short_data",TRUE) #MOD-580337
        CASE issue_type
@@ -6622,112 +6641,112 @@ FUNCTION i501_set_no_entry_gb()
             WHEN  '5'         CALL cl_set_comp_entry("noqty",FALSE)
             OTHERWISE EXIT CASE
        END CASE
- 
+
     END IF
- 
+
 END FUNCTION
 
 #FUN-AC0074 mark(S)
 #FUN-A20048 --begin
 #FUNCTION i501_g_b01(l_sfq02,l_sfq04) 		# 依备置發料(When sfp06=1/6)
-#  DEFINE l_sql		LIKE type_file.chr1000 #No.FUN-680121 VARCHAR(1000) 
+#  DEFINE l_sql		LIKE type_file.chr1000 #No.FUN-680121 VARCHAR(1000)
 #  DEFINE l_sfq02 LIKE sfq_file.sfq02
-#  DEFINE l_sfq04 LIKE sfq_file.sfq04 
+#  DEFINE l_sfq04 LIKE sfq_file.sfq04
 #  DEFINE l_sie    RECORD LIKE sie_file.*
 #  DEFINE l_gfe03 LIKE gfe_file.gfe03
 #  DEFINE l_qty1  LIKE sfq_file.sfq03
-#  DEFINE l_issue_qty1  LIKE sfq_file.sfq03   #FUN-A40053 add 
+#  DEFINE l_issue_qty1  LIKE sfq_file.sfq03   #FUN-A40053 add
 #
 #   IF cl_null(g_wc4) THEN
 #      LET g_wc4 = ' 1=1'
 #   END IF
-# 
-# 
+#
+#
 #   #LET l_sql = "SELECT sie_file.*,ima108 FROM sie_file,ima_file ",  #FUN-AC0074
 #    LET l_sql = "SELECT sfa_file.*,sie_file.*,ima108 FROM ima_file,sfa_file ", #FUN-AC0074
 #                "  LEFT OUTER JOIN sie_file ON sfa01=sie05 AND sfa27=sie01 AND (sie02 IS NOT NULL AND sie02 <> ' ')",
 #                " WHERE sfa01 = '",l_sfq02,"'", #FUN-AC0074
 #                " AND sfa27 = ima01", #FUN-AC0074
-#                " AND ",g_wc4 CLIPPED     
-#    
-#    
-#  IF NOT cl_null(l_sfq04) THEN 
+#                " AND ",g_wc4 CLIPPED
+#
+#
+#  IF NOT cl_null(l_sfq04) THEN
 #     LET l_sql = l_sql CLIPPED, " AND sie06 = '",l_sfq04,"'" #FUN-AC0074 sic06==>sie06
-#  END IF 
+#  END IF
 #  LET l_sql = l_sql CLIPPED, " ORDER BY sie01"
-# 
+#
 #  PREPARE i501_g_b01_pre FROM l_sql
 #  DECLARE i501_g_b01_c CURSOR FOR i501_g_b01_pre
-# 
-#  FOREACH i501_g_b01_c INTO g_sfa2.*,l_sie.*,g_ima108   #FUN-AC0074 
-#                                             
+#
+#  FOREACH i501_g_b01_c INTO g_sfa2.*,l_sie.*,g_ima108   #FUN-AC0074
+#
 #    IF part_type = 'Y' AND (g_ima108= 'N' OR cl_null(g_ima108)) THEN
 #       CONTINUE FOREACH
 #    END IF
-# 
+#
 #    IF part_type = 'N' AND (g_ima108 = 'Y' OR cl_null(g_ima108)) THEN
 #       CONTINUE FOREACH
 #    END IF
 #    #FUN-A40053 add --begin
 #    #  FUN-AC0074--mark--begin---
 #    #SELECT sfa05,sfa065,sfa06,sfa161 INTO g_sfa.sfa05,g_sfa.sfa065,g_sfa.sfa06,g_sfa.sfa161   #FUN-B50059
-#    #  FROM sfa_file 
-#    #   AND sfa03 = l_sie.sie01 
-#    #   AND sfa08 = l_sie.sie06 
-#    #   AND sfa12 = l_sie.sie07 
-#    #   AND sfa27 = l_sie.sie08 
+#    #  FROM sfa_file
+#    #   AND sfa03 = l_sie.sie01
+#    #   AND sfa08 = l_sie.sie06
+#    #   AND sfa12 = l_sie.sie07
+#    #   AND sfa27 = l_sie.sie08
 #####FUN-A60028 --begin--
 #    #   AND sfa012= l_sie.sie012
 #    #   AND sfa013= l_sie.sie013
-#####FUN-A60028 --end--    
-#    #FUN-AC0074--mark--end--   
+#####FUN-A60028 --end--
+#    #FUN-AC0074--mark--end--
 #     IF g_sfa2.sfa05 IS NULL THEN  #FUN-AC0074
 #        LET g_sfa2.sfa05 = 0       #FUN-AC0074
-#     END IF 
+#     END IF
 #     IF g_sfa2.sfa06 IS NULL THEN  #FUN-AC0074
 #        LET g_sfa2.sfa06 = 0
-#     END IF 
+#     END IF
 #     IF g_sfa2.sfa065 IS NULL THEN #FUN-AC0074
 #        LET g_sfa2.sfa065 = 0      #FUN-AC0074
-#     END IF 
+#     END IF
 #     #FUN-A60095(S)
 #     IF g_sfa2.sfa064 IS NULL THEN #FUN-AC0074
 #        LET g_sfa2.sfa064 = 0      #FUN-AC0074
 #     END IF
-#     
+#
 #     LET l_qty1 = g_sfa2.sfa05 - g_sfa2.sfa06 - g_sfa2.sfa065   #FUN-B50059 #FUN-AC0074
 #     IF NOT cl_null(l_sie.sie01) THEN  #FUN-AC0074
-#        IF l_sie.sie11 > l_qty1 THEN 
+#        IF l_sie.sie11 > l_qty1 THEN
 #           LET l_issue_qty1 = l_qty1
-#        ELSE  
+#        ELSE
 #           LET l_issue_qty1 = l_sie.sie11
-#        END IF 
-#        IF l_sie.sie11 < l_qty1 AND gen_all = 'Y' THEN 
+#        END IF
+#        IF l_sie.sie11 < l_qty1 AND gen_all = 'Y' THEN
 #           LET g_flag_sie01 = 'Y'
 #           #FUN-AC0074--mark-(s)
-#           #SELECT * INTO g_sfa2.* FROM sfa_file 
+#           #SELECT * INTO g_sfa2.* FROM sfa_file
 #           # WHERE sfa01 = l_sie.sie05
-#           #   AND sfa03 = l_sie.sie01 AND sfa08 = l_sie.sie06 
-#           #   AND sfa12 = l_sie.sie07 AND sfa27 = l_sie.sie08  
-#           #   AND sfa012= l_sie.sie012 AND sfa013= l_sie.sie013  #FUN-A60028 
+#           #   AND sfa03 = l_sie.sie01 AND sfa08 = l_sie.sie06
+#           #   AND sfa12 = l_sie.sie07 AND sfa27 = l_sie.sie08
+#           #   AND sfa012= l_sie.sie012 AND sfa013= l_sie.sie013  #FUN-A60028
 #           #FUN-AC0074--mark-(e)
 #          LET issue_qty1 = l_qty1 - l_sie.sie11
 #          CALL i500_chk_ima64(g_sfa2.sfa03, issue_qty1) RETURNING issue_qty1
-# 
+#
 #          CALL i501_chk_img()	# 依 issue_qty1 尋找 img_file可用資料
-#          IF g_flag_sie01 = 'N' THEN 
+#          IF g_flag_sie01 = 'N' THEN
 #             LET l_issue_qty1 = l_qty1
-#          END IF 
-#        END IF 
-#        
-#        CALL i500_chk_ima64(l_sie.sie05, l_issue_qty1) RETURNING l_issue_qty1          
-#        #FUN-A40053 add --end 
+#          END IF
+#        END IF
+#
+#        CALL i500_chk_ima64(l_sie.sie05, l_issue_qty1) RETURNING l_issue_qty1
+#        #FUN-A40053 add --end
 #        SELECT gfe03 INTO l_gfe03 FROM gfe_file
 #         WHERE gfe01=l_sie.sie07
 #        IF SQLCA.sqlcode OR cl_null(l_gfe03) THEN
 #           LET l_gfe03=0
 #        END IF
-#    
+#
 #        LET b_sfs.sfs01=g_sfp.sfp01
 #        LET b_sfs.sfs02=b_sfs.sfs02+1
 #        LET b_sfs.sfs03=l_sfq02
@@ -6751,14 +6770,14 @@ END FUNCTION
 #       LET b_sfs.sfs26=NULL
 #       LET b_sfs.sfs27=l_sie.sie08
 #       LET b_sfs.sfs28=NULL
-#       LET b_sfs.sfs36=''   
+#       LET b_sfs.sfs36=''
 #       IF b_sfs.sfs07 IS NULL THEN LET b_sfs.sfs07 = ' ' END IF
 #       IF b_sfs.sfs08 IS NULL THEN LET b_sfs.sfs08 = ' ' END IF
 #       IF b_sfs.sfs09 IS NULL THEN LET b_sfs.sfs09 = ' ' END IF
 #       #FUN-A60028 --begin--
-#       IF cl_null(b_sfs.sfs012) THEN LET b_sfs.sfs012 = ' ' END IF 
-#       IF cl_null(b_sfs.sfs013) THEN LET b_sfs.sfs013 = 0   END IF  
-#       #FUN-A60028 --end--      
+#       IF cl_null(b_sfs.sfs012) THEN LET b_sfs.sfs012 = ' ' END IF
+#       IF cl_null(b_sfs.sfs013) THEN LET b_sfs.sfs013 = 0   END IF
+#       #FUN-A60028 --end--
 #       IF g_sma.sma115 = 'Y' THEN
 #          CALL i501_set_du_by_origin()
 #       END IF
@@ -6771,21 +6790,21 @@ END FUNCTION
 #       END IF
 #       IF cl_null(b_sfs.sfs28) THEN
 #          SELECT sfa28 INTO b_sfs.sfs28
-    #  FROM sfa_file 
-#           WHERE sfa01 = b_sfs.sfs03 
+    #  FROM sfa_file
+#           WHERE sfa01 = b_sfs.sfs03
 #             AND sfa03 = b_sfs.sfs04
 #             AND sfa08 = b_sfs.sfs10
 #             AND sfa12 = b_sfs.sfs06
 #             AND sfa27 = b_sfs.sfs27
-#             AND sfa012= b_sfs.sfs012    #FUN-A60028 
+#             AND sfa012= b_sfs.sfs012    #FUN-A60028
 #             AND sfa013= b_sfs.sfs013    #FUN-A60028
 #       END IF
-# 
+#
 #       LET b_sfs.sfsplant = g_plant #FUN-980008 add
 #       LET b_sfs.sfslegal = g_legal #FUN-980008 add
-# 
+#
 #       INSERT INTO sfs_file VALUES(b_sfs.*)
-#       IF STATUS THEN 
+#       IF STATUS THEN
 #          CALL cl_err3("ins","sfs_file",b_sfs.sfs01,b_sfs.sfs02,STATUS,"","ins sfs:",1)  #No.FUN-660128
 #       END IF
 #       CALL i501_ins_rvbs(b_sfs.sfs02,b_sfs.sfs03,b_sfs.sfs04)   #No.FUN-870106
@@ -6793,14 +6812,14 @@ END FUNCTION
 #       CALL i500_chk_ima64(g_sfa2.sfa03, l_qty1) RETURNING issue_qty1 #FUN-AC0074
 #       CALL i501_chk_img() #FUN-AC0074
 #     END IF  #FUN-AC0074
-#    
+#
 #    LET l_issue_qty1 = 0
-# 
+#
 #  END FOREACH
 #END FUNCTION
-##FUN-A20048 ---end 
+##FUN-A20048 ---end
 #FUN-AC0074 mark(E)
- 
+
 FUNCTION i501_g_b0() 		# 全數發料 (除了消耗料件&代買料件)
   DEFINE l_sql     LIKE type_file.chr1000 #No.FUN-680121 VARCHAR(600)
   #FUN-AC0074 (S)
@@ -6810,11 +6829,11 @@ FUNCTION i501_g_b0() 		# 全數發料 (除了消耗料件&代買料件)
   DEFINE l_wip_loc	  LIKE img_file.img03
   #FUN-AC0074 (E)
   #str---add by guanyao160822
-  IF NOT cl_null(g_sfp.sfpud03) THEN 
+  IF NOT cl_null(g_sfp.sfpud03) THEN
      LET l_sql = "SELECT sfa_file.*,ima108 FROM sfa_file, ima_file,tc_sff_file",
               " WHERE sfa01='",b_sfq.sfq02,"'",
               "   AND sfa05>sfa06", #FUN-B50059
-              "   AND sfa03=ima01 AND (sfa11 NOT IN ('E','X','S') OR sfa11 IS NULL)", #CHI-980013 #FUN-9C0040 
+              "   AND sfa03=ima01 AND (sfa11 NOT IN ('E','X','S') OR sfa11 IS NULL)", #CHI-980013 #FUN-9C0040
               "   AND (sfa05-sfa065)>0" ,  #應發-委外代買量>0
               "   AND tc_sff03 = sfa01",
               "   AND tc_sff04 = sfa03",
@@ -6823,45 +6842,45 @@ FUNCTION i501_g_b0() 		# 全數發料 (除了消耗料件&代買料件)
               "   AND tc_sffud02 = 'Y'",
               "   AND tc_sff01='",g_sfp.sfpud03,"'",   #add by guanyao160908
               "   AND ",g_wc4 CLIPPED
-  ELSE 
+  ELSE
   #end---add by guanyao160822
   LET l_sql = "SELECT sfa_file.*,ima108 FROM sfa_file, ima_file",
               " WHERE sfa01='",b_sfq.sfq02,"'",
               "   AND sfa05>sfa06", #FUN-B50059
-              "   AND sfa03=ima01 AND (sfa11 NOT IN ('E','X','S') OR sfa11 IS NULL)", #CHI-980013 #FUN-9C0040 
+              "   AND sfa03=ima01 AND (sfa11 NOT IN ('E','X','S') OR sfa11 IS NULL)", #CHI-980013 #FUN-9C0040
               "   AND (sfa05-sfa065)>0" ,  #應發-委外代買量>0
-              "   AND ",g_wc4 CLIPPED      #FUN-940039 add 
-  END IF 
- 
+              "   AND ",g_wc4 CLIPPED      #FUN-940039 add
+  END IF
+
   IF NOT cl_null(b_sfq.sfq04) THEN
      LET l_sql = l_sql CLIPPED,"  AND sfa08 = '",b_sfq.sfq04,"'"
   END IF
 #FUN-B20095 -----------------Begin--------------------
   IF NOT cl_null(b_sfq.sfq012) THEN
      LET l_sql = l_sql CLIPPED,"  AND sfa012 = '",b_sfq.sfq012,"'"
-  END IF 
+  END IF
 #FUN-B20095 -----------------End----------------------
   LET l_sql = l_sql CLIPPED," ORDER BY sfa27,sfa03"
- 
+
   PREPARE i501_g_b0_pre FROM l_sql
   DECLARE i501_g_b0_c CURSOR FOR i501_g_b0_pre
- 
+
   FOREACH i501_g_b0_c INTO g_sfa2.*,g_ima108
     IF part_type = 'Y' AND (g_ima108= 'N' OR cl_null(g_ima108)) THEN
        CONTINUE FOREACH
     END IF
- 
+
     IF part_type = 'N' AND (g_ima108 = 'Y' OR cl_null(g_ima108)) THEN
        CONTINUE FOREACH
     END IF
- 
+
     LET g_sfa2.sfa05=g_sfa2.sfa05-g_sfa2.sfa065   #扣除委外代買量
- 
+
     LET issue_qty1=(g_sfa2.sfa05-g_sfa2.sfa06)  #FUN-B50059
     #FUN-AC0074(S)
     CALL i501_issue_sie()
     IF issue_qty1 <=0 THEN CONTINUE FOREACH END IF
-    #FUN-AC0074(E) 
+    #FUN-AC0074(E)
     IF cl_null(g_sfa2.sfa30) THEN LET g_sfa2.sfa30 = ' '  END IF    #MOD-B50240 add
     IF cl_null(g_sfa2.sfa31) THEN LET g_sfa2.sfa31 = ' '  END IF    #MOD-B50240 add
     #CALL i500_chk_ima64(g_sfa2.sfa03, issue_qty1) RETURNING issue_qty1  #mark by guanyao160601
@@ -6870,12 +6889,12 @@ FUNCTION i501_g_b0() 		# 全數發料 (除了消耗料件&代買料件)
        INTO l_mai_ware,l_mai_loc,l_wip_ware,l_wip_loc FROM ima_file            #FUN-B80086  main改成mai
       WHERE ima01=g_sfa2.sfa03
     #FUN-AC0074 (E)
-    CALL i501_chk_img(l_mai_ware,l_mai_loc,l_wip_ware,l_wip_loc,lot_no,FALSE)		# 依 issue_qty1 尋找 img_file可用資料           #FUN-AC0074   #FUN-B80086  main改成mai 
- 
+    CALL i501_chk_img(l_mai_ware,l_mai_loc,l_wip_ware,l_wip_loc,lot_no,FALSE)		# 依 issue_qty1 尋找 img_file可用資料           #FUN-AC0074   #FUN-B80086  main改成mai
+
   END FOREACH
- 
+
 END FUNCTION
- 
+
 FUNCTION i501_g_b1() 		# 依套數發料/退料(When sfp06=1/6)
   DEFINE l_sql		LIKE type_file.chr1000 #No.FUN-680121 VARCHAR(1000)
   DEFINE s_u_flag	LIKE type_file.chr1    #No.FUN-680121 VARCHAR(1)
@@ -6901,25 +6920,25 @@ DEFINE   l_tc_sff05     LIKE tc_sff_file.tc_sff05   #tianry add end 161122
               "   AND tc_sff27 = sfa27",
               "   AND tc_sffud02 = 'Y'",
               "   AND tc_sff01='",g_sfp.sfpud03,"'",   #add by guanyao160908
-              "   AND ",g_wc4 CLIPPED      #FUN-940039 add 
-  ELSE 
+              "   AND ",g_wc4 CLIPPED      #FUN-940039 add
+  ELSE
   #end---add by guanyao160822
   LET l_sql = "SELECT sfa_file.*,ima108,'' FROM sfa_file, ima_file",
               " WHERE sfa01='",b_sfq.sfq02,"'",
               "   AND sfa26 IN ('0','1','2','3','4','5','T','7','8','9','A')",    #bugno:7111 add '5T'  #FUN-A20037 add '7,8' #TQC-C20443 add ,'9' 'A'
               "   AND sfa03=ima01 AND (sfa11 NOT IN ('E','X') OR sfa11 IS NULL)", #CHI-980013
               "   AND (sfa05-sfa065)>=0",    #應發-委外代買量>0   #No:9390   #No.MOD-570241 modify
-              "   AND ",g_wc4 CLIPPED      #FUN-940039 add 
-  END IF 
+              "   AND ",g_wc4 CLIPPED      #FUN-940039 add
+  END IF
   IF g_sfp.sfp06 = '1' THEN   #FUN-9C0040
      LET l_sql = l_sql CLIPPED," AND sfa11 <> 'S' " #FUN-9C0040
   END IF   #FUN-9C0040
-    
- 
+
+
   IF NOT cl_null(b_sfq.sfq04) THEN
      LET l_sql = l_sql CLIPPED,"  AND sfa08 = '",b_sfq.sfq04,"'"
   END IF
-#FUN-B20095 ---------------------Begin-------------------------- 
+#FUN-B20095 ---------------------Begin--------------------------
   IF NOT cl_null(b_sfq.sfq012) THEN
      LET l_sql = l_sql CLIPPED,"  AND sfa012 = '",b_sfq.sfq012,"'"
   END IF
@@ -6927,86 +6946,86 @@ DEFINE   l_tc_sff05     LIKE tc_sff_file.tc_sff05   #tianry add end 161122
   LET l_sql = l_sql CLIPPED," ORDER BY sfa03"
   PREPARE i501_g_b1_pre FROM l_sql
   DECLARE i501_g_b1_c CURSOR FOR i501_g_b1_pre
- 
+
   FOREACH i501_g_b1_c INTO g_sfa.*,g_ima108,l_tc_sff05	#原始料件(g_sfa)  #tianry add 161122 tc_sff05
     IF part_type = 'Y' AND (g_ima108= 'N' OR cl_null(g_ima108)) THEN
        CONTINUE FOREACH
     END IF
- 
+
     IF part_type = 'N' AND (g_ima108 = 'Y' OR cl_null(g_ima108)) THEN
        CONTINUE FOREACH
     END IF
- 
+
     LET g_sfa.sfa05=g_sfa.sfa05-g_sfa.sfa065   #扣除委外代買量
- 
+
     IF STATUS THEN CALL cl_err('fore sfa',STATUS,1) RETURN END IF
- 
-    #tianry add 161122  
+
+    #tianry add 161122
     IF NOT  cl_null(g_sfp.sfpud03) THEN   #如果发料申请单号不为空  则原封不动的按照发料申请单上的数量获得
        LET issue_qty=l_tc_sff05
     ELSE
        LET issue_qty  =b_sfq.sfq03*g_sfa.sfa161		#原始料件應發/退數量
-    END IF 
-    #tianry add end 
+    END IF
+    #tianry add end
 #TQC-C30067   ---add---
 #   除了成套退料和發料外，其餘都不可自動產生
     IF g_sfp.sfp06 NOT MATCHES '[16]' AND g_sfa.sfa26 MATCHES '[9ABC]' THEN
        CONTINUE FOREACH
-    END IF 
+    END IF
 #TQC-C30067   ---end--
- 
+
     IF g_sfa.sfa26 MATCHES '[01257]' THEN   #FUN-A20037 add '7'
        #若是全數代買時則不允許做退料
-       IF g_sfa.sfa05 = 0 THEN 
+       IF g_sfa.sfa05 = 0 THEN
           CONTINUE FOREACH
        END IF
        IF g_argv1='1' AND issue_qty>(g_sfa.sfa05-g_sfa.sfa06) THEN  #FUN-B50059
           LET issue_qty=(g_sfa.sfa05-g_sfa.sfa06)   #FUN-B50059
        END IF
- 
+
        IF g_argv1='2' AND issue_qty>g_sfa.sfa06 THEN  #FUN-B50059
           LET issue_qty=g_sfa.sfa06   #FUN-B50059
        END IF
 
        IF cl_null(g_sfa2.sfa30) THEN LET g_sfa2.sfa30 = ' '  END IF    #MOD-B50240 add
        IF cl_null(g_sfa2.sfa31) THEN LET g_sfa2.sfa31 = ' '  END IF    #MOD-B50240 add
- 
+
        LET g_sfa2.* = g_sfa.*
- 
+
        LET issue_qty1=issue_qty
- 
+
        #FUN-AC0074(S)
        CALL i501_issue_sie()
        IF issue_qty1 <=0 THEN CONTINUE FOREACH END IF
        #FUN-AC0074 (E)
 
        #CALL i500_chk_ima64(g_sfa2.sfa03, issue_qty1) RETURNING issue_qty1  #mark by guanyao160601
- 
+
        #FUN-AC0074 (S)
         SELECT ima35,ima36,ima136,ima137
           INTO l_mai_ware,l_mai_loc,l_wip_ware,l_wip_loc FROM ima_file           #FUN-B80086  main改成mai
          WHERE ima01=g_sfa2.sfa03
        #FUN-AC0074 (E)
        CALL i501_chk_img(l_mai_ware,l_mai_loc,l_wip_ware,l_wip_loc,lot_no,FALSE)		# 依 issue_qty1 尋找 img_file可用資料           #FUN-AC0074 #FUN-B80086  main改成mai
- 
+
        CONTINUE FOREACH
- 
+
     END IF
- 
+
     # 當有替代狀況時, 須作以下處理:
     # add darcy:2022/10/12 add s---
     #
     # darcy:2025/08/12 mod s---
     # 增加SQA的判断
     if not cl_null(g_sfp.sfpud03)
-      and (g_user ='43474' or g_user = 'tiptop' or g_user = '39387' or g_user = '52983' or g_user = '55416' 
+      and (g_user ='43474' or g_user = 'tiptop' or g_user = '39387' or g_user = '52983' or g_user = '55416'
          or g_user = '56161' or g_user = '62754' or g_user = '52983' or g_user = '56046') then
     # darcy:2025/08/12 mod e---
       LET l_sql="SELECT * FROM sfa_file",     #tianry add 161128   g_sfa.sfa3->g_sfa.sfa27
               " LEFT JOIN tc_sff_file ON tc_sff01 = '",g_sfp.sfpud03,"' AND tc_sff27 = sfa27 ", #darcy:2022/10/12 add
               " WHERE sfa01='",g_sfa.sfa01,"' AND sfa27='",g_sfa.sfa27,"'",      #'",g_sfa.sfa03,"'",  #tianry mark
               "   AND sfa08='",g_sfa.sfa08,"' AND sfa12='",g_sfa.sfa12,"'",
-              "   AND tc_sff04 = sfa03", #darcy:2022/10/12 add 
+              "   AND tc_sff04 = sfa03", #darcy:2022/10/12 add
               "   AND sfa012= '",g_sfa.sfa012,"' AND sfa013 = ",g_sfa.sfa013   #FUN-A60028 add
     else
       LET l_sql="SELECT * FROM sfa_file",     #tianry add 161128   g_sfa.sfa3->g_sfa.sfa27
@@ -7024,7 +7043,7 @@ DEFINE   l_tc_sff05     LIKE tc_sff_file.tc_sff05   #tianry add end 161122
     IF g_sfp.sfp06='6' THEN
        LET l_sql = l_sql CLIPPED," AND sfa05 > 0 AND sfa06 > 0  "  CLIPPED   #TQC-C30067  ADD sfa06>0
     END IF
- 
+
     SELECT MAX(sfa26) INTO s_u_flag FROM sfa_file	# 到底是 S 或 U ?
                 WHERE sfa01=g_sfa.sfa01 AND sfa27=g_sfa.sfa03
                   AND sfa08=g_sfa.sfa08 AND sfa12=g_sfa.sfa12
@@ -7045,7 +7064,7 @@ DEFINE   l_tc_sff05     LIKE tc_sff_file.tc_sff05   #tianry add end 161122
         SELECT ima35,ima36,ima136,ima137
           INTO l_mai_ware,l_mai_loc,l_wip_ware,l_wip_loc FROM ima_file         #FUN-B80086  main改成mai
          WHERE ima01=g_sfa2.sfa03
-       #FUN-AC0074 (E) 
+       #FUN-AC0074 (E)
        IF cl_null(g_sfa2.sfa30) THEN LET g_sfa2.sfa30 = ' '  END IF    #MOD-B50240 add
        IF cl_null(g_sfa2.sfa31) THEN LET g_sfa2.sfa31 = ' '  END IF    #MOD-B50240 add
  # issue_qty的計算應以sfq03* sfa161來計算才不會被改變,影響後續欠料數量的計算
@@ -7075,27 +7094,27 @@ DEFINE   l_tc_sff05     LIKE tc_sff_file.tc_sff05   #tianry add end 161122
             SELECT bmd07,bmd10 INTO l_bmd07,l_bmd10 FROM bmd_file WHERE bmd01= g_sfa2.sfa27 AND bmd04=g_sfa2.sfa03
             LET issue_qty1=b_sfq.sfq03*l_bmd07/l_bmd10
             #CALL i500_chk_ima64(g_sfa2.sfa03, issue_qty1) RETURNING issue_qty1  #mark by guanyao160601
-            CALL i501_chk_img(l_mai_ware,l_mai_loc,l_wip_ware,l_wip_loc,lot_no,FALSE) 
+            CALL i501_chk_img(l_mai_ware,l_mai_loc,l_wip_ware,l_wip_loc,lot_no,FALSE)
          ELSE
-#QC-C30067  ---END---         
+#QC-C30067  ---END---
          IF issue_qty<=g_sfa2.sfa06 THEN  #FUN-B50059
             LET issue_qty1=issue_qty
             #CALL i500_chk_ima64(g_sfa2.sfa03, issue_qty1) RETURNING issue_qty1   #mark by guanyao160601
-            CALL i501_chk_img(l_mai_ware,l_mai_loc,l_wip_ware,l_wip_loc,lot_no,FALSE)		# 依 issue_qty1 尋找 img_file可用資料           #FUN-AC0074   #FUN-B80086  main改成mai 
+            CALL i501_chk_img(l_mai_ware,l_mai_loc,l_wip_ware,l_wip_loc,lot_no,FALSE)		# 依 issue_qty1 尋找 img_file可用資料           #FUN-AC0074   #FUN-B80086  main改成mai
             EXIT FOREACH
           ELSE
-            LET issue_qty1=g_sfa2.sfa06  #FUN-B50059 
+            LET issue_qty1=g_sfa2.sfa06  #FUN-B50059
             #CALL i500_chk_ima64(g_sfa2.sfa03, issue_qty1) RETURNING issue_qty1   #mark by guanyao160601
             CALL i501_chk_img(l_mai_ware,l_mai_loc,l_wip_ware,l_wip_loc,lot_no,FALSE)		# 依 issue_qty1 尋找 img_file可用資料           #FUN-AC0074   #FUN-B80086  main改成mai
- 
+
             LET issue_qty=(issue_qty-img_qty)/g_sfa2.sfa28
-         END IF  
+         END IF
          END IF  #TQC-C30067 add
        END IF
     END FOREACH
   END FOREACH
 END FUNCTION
- 
+
 #FUN-AC0074 (S)
 FUNCTION i501_issue_sie()
   DEFINE l_sie         RECORD LIKE sie_file.*
@@ -7108,7 +7127,7 @@ FUNCTION i501_issue_sie()
        IF NOT cl_null(ware_no) THEN LET l_where=l_where," AND sie02 ='",ware_no,"'" END IF
        IF NOT cl_null(loc_no) THEN LET l_where=l_where," AND sie03 ='",loc_no,"'" END IF
        IF NOT cl_null(lot_no) THEN LET l_where=l_where," AND sie04 ='",lot_no,"'" END IF
-    END IF    
+    END IF
     LET l_sql = "SELECT sie_file.* FROM ima_file, sfa_file, sie_file ",
                 " WHERE sfa01 =  '",g_sfa2.sfa01 ,"'",
                 "   AND sfa03 =  '",g_sfa2.sfa03 ,"'",
@@ -7122,20 +7141,20 @@ FUNCTION i501_issue_sie()
                 "   AND sfa012= sie012 AND sfa013=sie013 ",
                 "   AND sie11 > 0 AND (sie02 IS NOT NULL AND sie02 <> ' ')",l_where
     IF issue_type MATCHES '[1345]' THEN
-       LET l_sql = l_sql , "   AND ",g_wc4 CLIPPED 
+       LET l_sql = l_sql , "   AND ",g_wc4 CLIPPED
     END IF
     PREPARE i501_g_b0_pre1 FROM l_sql
     DECLARE i501_g_b0_c1 CURSOR FOR i501_g_b0_pre1
     FOREACH i501_g_b0_c1 INTO l_sie.*
       IF issue_qty1 <=0 THEN EXIT FOREACH END IF
        LET l_issue_qty1 = issue_qty1
-       IF l_sie.sie11 > issue_qty1 THEN 
+       IF l_sie.sie11 > issue_qty1 THEN
           LET issue_qty1 = issue_qty1
-       ELSE  
+       ELSE
           LET issue_qty1 = l_sie.sie11
-       END IF 
+       END IF
        #CALL i500_chk_ima64(g_sfa2.sfa03, issue_qty1) RETURNING issue_qty1  #mark by guanyao160601
-       CALL i501_chk_img(l_sie.sie02,l_sie.sie03,l_sie.sie02,l_sie.sie03,l_sie.sie04,TRUE)		# 依 issue_qty1 尋找 img_file可用資料           #FUN-AC0074 
+       CALL i501_chk_img(l_sie.sie02,l_sie.sie03,l_sie.sie02,l_sie.sie03,l_sie.sie04,TRUE)		# 依 issue_qty1 尋找 img_file可用資料           #FUN-AC0074
        LET issue_qty1 = l_issue_qty1 - issue_qty2
        IF issue_qty1 < 0 THEN LET issue_qty1 = 0 END IF
 
@@ -7195,7 +7214,7 @@ FUNCTION i501_chk_img(l_mai_ware,l_mai_loc,l_wip_ware,l_wip_loc,l_lot_no,l_sie_f
        LET img_qty = issue_qty1 #No.+238
        RETURN
     END IF
- 
+
      IF issue_type MATCHES '[2]' THEN      #No.MOD-570241 modify
        LET g_img.img01=g_sfa2.sfa03
        LET g_img.img02=ware_no
@@ -7211,10 +7230,10 @@ FUNCTION i501_chk_img(l_mai_ware,l_mai_loc,l_wip_ware,l_wip_loc,l_lot_no,l_sie_f
           AND pmc918 = g_img.img03   #VMI結算儲位
        IF l_n = 0 THEN
        #CHI-B90038 -- end --
-          LET l_img10 = 0  
+          LET l_img10 = 0
           LET l_img09 = ''   #MOD-CB0046
           IF g_img.img04=' ' THEN    #add by jixf 160802
-             SELECT img10,img09 INTO l_img10,l_img09 FROM img_file  
+             SELECT img10,img09 INTO l_img10,l_img09 FROM img_file
                 WHERE img01=g_img.img01 AND img02=g_img.img02
                 AND img03=g_img.img03
           ELSE                       #add by jixf 160802
@@ -7222,14 +7241,14 @@ FUNCTION i501_chk_img(l_mai_ware,l_mai_loc,l_wip_ware,l_wip_loc,l_lot_no,l_sie_f
                 WHERE img01=g_img.img01 AND img02=g_img.img02
                 AND img03=g_img.img03 AND img04=g_img.img04
           END IF                     #add by jixf 160802
-          
+
           IF cl_null(l_img10) THEN LET l_img10 = 0 END IF
-         #MOD-CB0046---S 
-          LET l_factor=0 
+         #MOD-CB0046---S
+          LET l_factor=0
           CALL s_umfchk(g_img.img01,l_img09,g_sfa2.sfa12) RETURNING l_flag,l_factor
-          IF l_flag=1 THEN 
-#             CALL cl_err(g_img.img01,'mfg2719',1) 
-#             RETURN 
+          IF l_flag=1 THEN
+#             CALL cl_err(g_img.img01,'mfg2719',1)
+#             RETURN
              LET l_factor = 1
           END IF
           LET l_img10 = l_img10*l_factor
@@ -7238,7 +7257,7 @@ FUNCTION i501_chk_img(l_mai_ware,l_mai_loc,l_wip_ware,l_wip_loc,l_lot_no,l_sie_f
              CALL i501_ins_sfs()
           ELSE
              IF noqty = 'Y' THEN
-                LET g_img.img02 = cl_getmsg('asf-012',g_lang)  
+                LET g_img.img02 = cl_getmsg('asf-012',g_lang)
                 CALL i501_ins_sfs()
              ELSE
                 RETURN
@@ -7253,7 +7272,7 @@ FUNCTION i501_chk_img(l_mai_ware,l_mai_loc,l_wip_ware,l_wip_loc,l_lot_no,l_sie_f
        LET img_qty = issue_qty1 #No.+238
        RETURN
     END IF
- 
+
      IF issue_type MATCHES '[3]' THEN
          LET g_img.img01=g_sfa2.sfa03
          LET g_img.img02=g_sfa2.sfa30
@@ -7270,18 +7289,18 @@ FUNCTION i501_chk_img(l_mai_ware,l_mai_loc,l_wip_ware,l_wip_loc,l_lot_no,l_sie_f
             AND pmc918 = g_img.img03   #VMI結算儲位
          IF l_n = 0 THEN
          #CHI-B90038 -- end --
-            LET l_img10 = 0  
+            LET l_img10 = 0
             LET l_img09 = ''   #MOD-CB0046
             SELECT img10,img09 INTO l_img10,l_img09 FROM img_file   #MOD-CB0046 add img09
              WHERE img01=g_img.img01 AND img02=g_img.img02
                AND img03=g_img.img03 AND img04=g_img.img04
-            IF cl_null(l_img10) THEN LET l_img10 = 0 END IF 
+            IF cl_null(l_img10) THEN LET l_img10 = 0 END IF
            #MOD-CB0046---S
             LET l_factor=0
             CALL s_umfchk(g_img.img01,l_img09,g_sfa2.sfa12) RETURNING l_flag,l_factor
-            IF l_flag=1 THEN 
-#               CALL cl_err(g_img.img01,'mfg2719',1) 
-#               RETURN 
+            IF l_flag=1 THEN
+#               CALL cl_err(g_img.img01,'mfg2719',1)
+#               RETURN
 LET l_factor = 1
             END IF
             LET l_img10 = l_img10*l_factor
@@ -7290,7 +7309,7 @@ LET l_factor = 1
                CALL i501_ins_sfs()
             ELSE
                IF noqty = 'Y' THEN
-                  LET g_img.img02 = cl_getmsg('asf-012',g_lang)  
+                  LET g_img.img02 = cl_getmsg('asf-012',g_lang)
                   CALL i501_ins_sfs()
                ELSE
                   RETURN
@@ -7305,24 +7324,24 @@ LET l_factor = 1
          LET img_qty = issue_qty1 #No.+238
          RETURN
      END IF
- 
- 
+
+
     IF issue_type MATCHES '[45]' AND ware_no IS NOT NULL THEN
        LET g_img.img01 = g_sfa2.sfa03
        LET g_img.img02 = ware_no
     END IF
- 
+
     IF issue_type MATCHES '[45]' AND loc_no IS NOT NULL THEN
        LET g_img.img01 = g_sfa2.sfa03
        LET g_img.img03 = loc_no
     END IF
- 
+
     IF issue_type MATCHES '[45]' AND lot_no IS NOT NULL THEN
        LET g_img.img01 = g_sfa2.sfa03
        LET g_img.img04 = lot_no
     END IF
-    
-    
+
+
     LET l_img10 = (g_sfa2.sfa05-g_sfa2.sfa06) * g_sfa2.sfa13  #No.MOD-910026 #FUN-B50059
     LET img_qty=0   #No.+238
     LET l_sql="SELECT * FROM img_file",
@@ -7376,12 +7395,12 @@ LET l_factor = 1
     END IF
     #LET l_sql=l_sql CLIPPED," ORDER BY img27"		#發料順序       #mark by jixf 160808
     #LET l_sql=l_sql CLIPPED," ORDER BY img22 DESC,img37 ASC "		#發料順序   #add by jixf 160808 按呆滞日期升序,先取W仓，再取S仓  #mark by guanyao160819
-  #  LET l_sql=l_sql CLIPPED," ORDER BY img22 DESC,img22 ASC,img15 ASC"		#發料順序  #mark by huanglf160928 #add by guanyao 160819 按呆滞日期升序,先取W仓，再取S仓  
+  #  LET l_sql=l_sql CLIPPED," ORDER BY img22 DESC,img22 ASC,img15 ASC"		#發料順序  #mark by huanglf160928 #add by guanyao 160819 按呆滞日期升序,先取W仓，再取S仓
    #  LET l_sql=l_sql CLIPPED," ORDER BY img22 DESC,img18 ASC"  #add by huanglf160928 #mark darcy:2024/01/22
    #  LET l_sql=l_sql CLIPPED," ORDER BY img22 DESC,substr(img04,1,8) ASC"  #add by huanglf160928 依据批号前8位排序 #darcy:2024/04/28 mark
    # darcy:2024/04/28 add s---
    if g_sfa2.sfa03 matches 'K.*' then
-      # 如果料号是客供料  按照 img04 排序 
+      # 如果料号是客供料  按照 img04 排序
       let l_sql=l_sql CLIPPED," ORDER BY img22 DESC,img04 ASC"
    else
       if g_sfa2.sfa03 matches '*.*' then
@@ -7390,14 +7409,14 @@ LET l_factor = 1
       else
          select ima08 into l_ima08 from ima_file where ima01 = g_sfa2.sfa03
          if l_ima08 = 'S' then
-            #如果是委外半成品，按照前八位排序 
+            #如果是委外半成品，按照前八位排序
             let l_sql=l_sql CLIPPED," ORDER BY img22 DESC,substr(img04,1,8) ASC"
          else
             # 如果料号是半成品/成品，按照 MRA-24030872-240427 (13,6)
             let l_sql=l_sql CLIPPED," ORDER BY img22 DESC,substr(img04,14,6) ASC"
          end if
       end if
-   end if 
+   end if
    # darcy:2024/04/28 add e---
     PREPARE g_b1_p3 FROM l_sql
     DECLARE g_b1_c3 CURSOR FOR g_b1_p3
@@ -7406,7 +7425,7 @@ LET l_factor = 1
        IF l_sie_flag THEN
           IF NOT cl_null(l_mai_ware) THEN LET g_img.img02 = l_mai_ware END IF        #FUN-B80086  main改成mai
           IF NOT cl_null(l_mai_loc)  THEN LET g_img.img03 = l_mai_loc  END IF        #FUN-B80086  main改成mai
-          IF NOT cl_null(l_lot_no)   THEN LET g_img.img04 = l_lot_no    END IF       
+          IF NOT cl_null(l_lot_no)   THEN LET g_img.img04 = l_lot_no    END IF
        END IF
        #FUN-AC0074(E)
        IF STATUS THEN CALL cl_err('fore img',STATUS,1) EXIT FOREACH END IF
@@ -7449,48 +7468,48 @@ LET l_factor = 1
              LET issue_qty2=issue_qty1
              CALL i501_ins_sfs()
              LET issue_qty1=issue_qty1-issue_qty2
-             LET img_qty = img_qty+issue_qty2 
+             LET img_qty = img_qty+issue_qty2
              EXIT FOREACH
       #MOD-A90193---add---end---
        END IF
     END FOREACH
- 
+
     IF short_data='Y' AND issue_qty1>0 THEN	#產生一筆 Shortage 項次以供警告
        LET issue_qty2=issue_qty1
        LET g_img.img01=g_sfa2.sfa03
- 
- 
+
+
         LET g_img.img02 = cl_getmsg('asf-012',g_lang)  #BUG-4B0145 add #FUN-560153-1  #MOD-540074
- 
+
        LET g_img.img03=' '
        LET g_img.img04=' '
        CALL i501_ins_sfs()
- 
+
     END IF
 END FUNCTION
- 
+
 FUNCTION i501_ins_sfs()	# 依 issue_qty2 Insert sfs_file
 DEFINE l_gfe03 LIKE gfe_file.gfe03 #MOD-640364
 DEFINE l_tot   LIKE sfs_file.sfs05 #No.TQC-750232    #記錄未過賬退料數量
-DEFINE l_count LIKE type_file.num5   #NO.FUN-A40053 add 
+DEFINE l_count LIKE type_file.num5   #NO.FUN-A40053 add
 DEFINE l_ima64 LIKE ima_file.ima64 #add by guanyao160601
- 
+
     SELECT gfe03 INTO l_gfe03 FROM gfe_file
        WHERE gfe01=g_sfa2.sfa12
     IF SQLCA.sqlcode OR cl_null(l_gfe03) THEN
        LET l_gfe03=0
     END IF
     #FUN-A40053 -add --begin
-    IF gen_all ='Y' AND g_flag_sie01 = 'Y' THEN  
-       SELECT COUNT(*) INTO l_count FROM sie_file WHERE sie01 = g_img.img01 
-               AND sie02 = g_img.img02 AND sie03 = g_img.img03 
-               AND sie04 = g_img.img04 AND sie05 = b_sfq.sfq02 
-       IF l_count > 0 THEN 
+    IF gen_all ='Y' AND g_flag_sie01 = 'Y' THEN
+       SELECT COUNT(*) INTO l_count FROM sie_file WHERE sie01 = g_img.img01
+               AND sie02 = g_img.img02 AND sie03 = g_img.img03
+               AND sie04 = g_img.img04 AND sie05 = b_sfq.sfq02
+       IF l_count > 0 THEN
           LET g_flag_sie01 = 'N'
-          RETURN 
-       END IF 
-     END IF 
-    #FUN-A40053 --add --end 
+          RETURN
+       END IF
+     END IF
+    #FUN-A40053 --add --end
     LET b_sfs.sfs01=g_sfp.sfp01
     LET b_sfs.sfs02=b_sfs.sfs02+1
     LET b_sfs.sfs03=b_sfq.sfq02
@@ -7503,9 +7522,9 @@ DEFINE l_ima64 LIKE ima_file.ima64 #add by guanyao160601
     #LET b_sfs.sfs07=g_img.img02      #mark by guanyao160601
     LET b_sfs.sfsud02 = g_img.img02   #add by guanyao160601
     SELECT tc_aec01 INTO b_sfs.sfs07 FROM tc_aec_file WHERE tc_aec03 = g_sfa2.sfa08
-    IF cl_null(b_sfs.sfs07) THEN 
+    IF cl_null(b_sfs.sfs07) THEN
        LET b_sfs.sfs07 = 'XBC'                     #modify huzhou 20170818
-    END IF 
+    END IF
     CALL i500_chk_ima64(b_sfs.sfs04, b_sfs.sfs05) RETURNING b_sfs.sfsud07
     #end-----add by guanyao160601
     LET b_sfs.sfs08=g_img.img03
@@ -7524,19 +7543,19 @@ DEFINE l_ima64 LIKE ima_file.ima64 #add by guanyao160601
     IF b_sfs.sfs07 IS NULL THEN LET b_sfs.sfs07 = ' ' END IF
     IF b_sfs.sfs08 IS NULL THEN LET b_sfs.sfs08 = ' ' END IF
     IF b_sfs.sfs09 IS NULL THEN LET b_sfs.sfs09 = ' ' END IF
-    
+
 #FUN-A60028 --begin--
     LET b_sfs.sfs012 = g_sfa2.sfa012
     LET b_sfs.sfs013 = g_sfa2.sfa013
-#FUN-A60028 --end--    
+#FUN-A60028 --end--
 
 #FUN-A60028 --begin--
-    IF cl_null(b_sfs.sfs012) THEN LET b_sfs.sfs012 = ' ' END IF 
-    IF cl_null(b_sfs.sfs013) THEN LET b_sfs.sfs013 = 0   END IF  
-#FUN-A60028 --end--  
+    IF cl_null(b_sfs.sfs012) THEN LET b_sfs.sfs012 = ' ' END IF
+    IF cl_null(b_sfs.sfs013) THEN LET b_sfs.sfs013 = 0   END IF
+#FUN-A60028 --end--
 
-#FUN-C70014 add begin--------------   
-    LET b_sfs.sfs014 = b_sfq.sfq014  
+#FUN-C70014 add begin--------------
+    LET b_sfs.sfs014 = b_sfq.sfq014
     IF cl_null(b_sfs.sfs014) THEN LET b_sfs.sfs014 = ' ' END IF
 #FUN-C70014 add end ---------------
     IF g_sma.sma115 = 'Y' THEN
@@ -7552,33 +7571,33 @@ DEFINE l_ima64 LIKE ima_file.ima64 #add by guanyao160601
     IF cl_null(b_sfs.sfs28) THEN
        SELECT sfa28 INTO b_sfs.sfs28
          FROM sfa_file
-        WHERE sfa01 = b_sfs.sfs03 
+        WHERE sfa01 = b_sfs.sfs03
           AND sfa03 = b_sfs.sfs04
           AND sfa08 = b_sfs.sfs10
           AND sfa12 = b_sfs.sfs06
           AND sfa27 = b_sfs.sfs27
           AND sfa012= b_sfs.sfs012   #FUN-A60028
-          AND sfa013= b_sfs.sfs013   #FUN-A60028 
+          AND sfa013= b_sfs.sfs013   #FUN-A60028
     END IF
- 
+
     LET b_sfs.sfsplant = g_plant #FUN-980008 add
     LET b_sfs.sfslegal = g_legal #FUN-980008 add
     #FUN-CB0087--add--str--
-    IF g_aza.aza115 ='Y' THEN    
-       LET b_sfs.sfs37=s_reason_code(b_sfs.sfs01,b_sfs.sfs03,'',b_sfs.sfs04,b_sfs.sfs07,g_sfp.sfp16,g_sfp.sfp07) 
+    IF g_aza.aza115 ='Y' THEN
+       LET b_sfs.sfs37=s_reason_code(b_sfs.sfs01,b_sfs.sfs03,'',b_sfs.sfs04,b_sfs.sfs07,g_sfp.sfp16,g_sfp.sfp07)
     END IF
     #FUN-CB0087--add--str--
-    
+
     CALL i501_get_img_mark(b_sfs.sfs04,b_sfs.sfs07,b_sfs.sfs08,b_sfs.sfs09) RETURNING b_sfs.sfs21 #darcy: add 20220317
     INSERT INTO sfs_file VALUES(b_sfs.*)
-    IF STATUS THEN 
+    IF STATUS THEN
        CALL cl_err3("ins","sfs_file",b_sfs.sfs01,b_sfs.sfs02,STATUS,"","ins sfs:",1)  #No.FUN-660128
     END IF
-    
+
     CALL i501_ins_rvbs(b_sfs.sfs02,b_sfs.sfs03,b_sfs.sfs04)   #No.FUN-870106
-    
+
 END FUNCTION
- 
+
 FUNCTION i501_g_b3() 		# 欠料補料
   DEFINE l_sql      LIKE type_file.chr1000 #No.FUN-680121 VARCHAR(600)
   DEFINE l_short_qty LIKE sfa_file.sfa07 #FUN-940039 add
@@ -7590,10 +7609,10 @@ FUNCTION i501_g_b3() 		# 欠料補料
   #FUN-AC0074 (E)
 
   #str---add by guanyao160822
-  IF NOT cl_null(g_sfp.sfpud03) THEN 
+  IF NOT cl_null(g_sfp.sfpud03) THEN
      LET l_sql = "SELECT sfa_file.*,ima108 FROM sfa_file, ima_file,tc_sff_file",
               " WHERE sfa01='",b_sfq.sfq02,"'",
-             #"   AND sfa03=ima01 AND (sfa11<>'E' OR sfa11 IS NULL)",                 #CHI-980013 
+             #"   AND sfa03=ima01 AND (sfa11<>'E' OR sfa11 IS NULL)",                 #CHI-980013
               "   AND sfa03=ima01 AND (sfa11 NOT IN ('E','X') OR sfa11 IS NULL)", #CHI-980013
               "   AND sfa05-sfa065>0" ,     #應發-委外代買量>0
               "   AND sfa05 - sfa06 > 0 ",  #FUN-B50059
@@ -7603,20 +7622,20 @@ FUNCTION i501_g_b3() 		# 欠料補料
               "   AND tc_sff27 = sfa27",
               "   AND tc_sffud02 = 'Y'",
               "   AND tc_sff01='",g_sfp.sfpud03,"'",   #add by guanyao160908
-           #  "   AND sfa07 > 0 "           #FUN-940039 mark   
-              "   AND ",g_wc4 CLIPPED      #FUN-940039 add 
-  ELSE 
+           #  "   AND sfa07 > 0 "           #FUN-940039 mark
+              "   AND ",g_wc4 CLIPPED      #FUN-940039 add
+  ELSE
   #end---add by guanyao160822
   LET l_sql = "SELECT sfa_file.*,ima108 FROM sfa_file, ima_file",
               " WHERE sfa01='",b_sfq.sfq02,"'",
-             #"   AND sfa03=ima01 AND (sfa11<>'E' OR sfa11 IS NULL)",                 #CHI-980013 
+             #"   AND sfa03=ima01 AND (sfa11<>'E' OR sfa11 IS NULL)",                 #CHI-980013
               "   AND sfa03=ima01 AND (sfa11 NOT IN ('E','X') OR sfa11 IS NULL)", #CHI-980013
               "   AND sfa05-sfa065>0" ,     #應發-委外代買量>0
               "   AND sfa05 - sfa06 > 0 ",  #FUN-B50059
-           #  "   AND sfa07 > 0 "           #FUN-940039 mark   
-              "   AND ",g_wc4 CLIPPED      #FUN-940039 add 
-  END IF 
- 
+           #  "   AND sfa07 > 0 "           #FUN-940039 mark
+              "   AND ",g_wc4 CLIPPED      #FUN-940039 add
+  END IF
+
   IF NOT cl_null(b_sfq.sfq04) THEN
      LET l_sql = l_sql CLIPPED,"  AND sfa08 = '",b_sfq.sfq04,"'"
   END IF
@@ -7626,10 +7645,10 @@ FUNCTION i501_g_b3() 		# 欠料補料
   END IF
 #FUN-B20095 -----------------End----------------------
   LET l_sql = l_sql CLIPPED," ORDER BY sfa27,sfa03"
- 
+
   PREPARE i501_g_b3_pre FROM l_sql
   DECLARE i501_g_b3_c CURSOR FOR i501_g_b3_pre
- 
+
   FOREACH i501_g_b3_c INTO g_sfa2.*,g_ima108
        IF part_type = 'Y' AND (g_ima108= 'N' OR cl_null(g_ima108)) THEN
           CONTINUE FOREACH
@@ -7638,23 +7657,23 @@ FUNCTION i501_g_b3() 		# 欠料補料
           CONTINUE FOREACH
        END IF
        #計算欠料量
-        IF cl_null(g_sfa2.sfa012) THEN LET g_sfa2.sfa012=' ' END IF #TQC-CB0084 add 
-        IF cl_null(g_sfa2.sfa013) THEN LET g_sfa2.sfa013= 0  END IF #TQC-CB0084 add 
+        IF cl_null(g_sfa2.sfa012) THEN LET g_sfa2.sfa012=' ' END IF #TQC-CB0084 add
+        IF cl_null(g_sfa2.sfa013) THEN LET g_sfa2.sfa013= 0  END IF #TQC-CB0084 add
         CALL s_shortqty(g_sfa2.sfa01,g_sfa2.sfa03,g_sfa2.sfa08,
                         g_sfa2.sfa12,g_sfa2.sfa27,   #TQC-A50071 sfa06->sfa12
                         g_sfa2.sfa012,g_sfa2.sfa013)   #FUN-A50066 add
              RETURNING l_short_qty
-        IF cl_null(l_short_qty) THEN LET l_short_qty = 0 END IF 
+        IF cl_null(l_short_qty) THEN LET l_short_qty = 0 END IF
         IF l_short_qty <=0 THEN CONTINUE FOREACH END IF
- 
+
        LET g_sfa2.sfa05=g_sfa2.sfa05-g_sfa2.sfa065   #扣除委外代買量  #FUN-B50059
- 
- 
+
+
        LET issue_qty1=l_short_qty     #FUN-940039 add
 
        IF cl_null(g_sfa2.sfa30) THEN LET g_sfa2.sfa30 = ' '  END IF    #MOD-B50240 add
        IF cl_null(g_sfa2.sfa31) THEN LET g_sfa2.sfa31 = ' '  END IF    #MOD-B50240 add
- 
+
        #CALL i500_chk_ima64(g_sfa2.sfa03, issue_qty1) RETURNING issue_qty1 #mark by guanyao160601
        #FUN-AC0074 mark (S)
         SELECT ima35,ima36,ima136,ima137
@@ -7662,19 +7681,19 @@ FUNCTION i501_g_b3() 		# 欠料補料
          WHERE ima01=g_sfa2.sfa03
        #FUN-AC0074 mark (E)
        CALL i501_chk_img(l_mai_ware,l_mai_loc,l_wip_ware,l_wip_loc,lot_no,FALSE)		# 依 issue_qty1 尋找 img_file可用資料           #FUN-AC0074   #FUN-B80086  main改成mai
- 
+
   END FOREACH
 END FUNCTION
- 
+
 FUNCTION i501_g_b7() 		# 超領退料
   DEFINE l_sql     LIKE type_file.chr1000 #No.FUN-680121 VARCHAR(600)
- 
+
   LET l_sql = "SELECT sfa_file.*,ima108 FROM sfa_file, ima_file",
               " WHERE sfa01='",b_sfq.sfq02,"'",
               "   AND (sfa11 NOT IN ('E','X') OR sfa11 IS NULL)", #CHI-980013
               "   AND sfa03=ima01 ",
               "   AND sfa062>0",
-              "   AND ",g_wc4 CLIPPED      #FUN-940039 add 
+              "   AND ",g_wc4 CLIPPED      #FUN-940039 add
   IF NOT cl_null(b_sfq.sfq04) THEN
      LET l_sql = l_sql CLIPPED,"  AND sfa08 = '",b_sfq.sfq04,"'"
   END IF
@@ -7684,22 +7703,22 @@ FUNCTION i501_g_b7() 		# 超領退料
   END IF
 #FUN-B20095 -----------------End----------------------
   LET l_sql = l_sql CLIPPED," ORDER BY sfa27,sfa03"
- 
+
   PREPARE i501_g_b7_pre FROM l_sql
   DECLARE i501_g_b7_c CURSOR FOR i501_g_b7_pre
- 
+
   FOREACH i501_g_b7_c INTO g_sfa2.*,g_ima108
     IF part_type = 'Y' AND (g_ima108= 'N' OR cl_null(g_ima108)) THEN
        CONTINUE FOREACH
     END IF
- 
+
     IF part_type = 'N' AND (g_ima108 = 'Y' OR cl_null(g_ima108)) THEN
        CONTINUE FOREACH
     END IF
- 
+
     IF cl_null(g_sfa2.sfa30) THEN LET g_sfa2.sfa30 = ' '  END IF    #MOD-B50240 add
     IF cl_null(g_sfa2.sfa31) THEN LET g_sfa2.sfa31 = ' '  END IF    #MOD-B50240 add
- 
+
     LET b_sfs.sfs01=g_sfp.sfp01
     LET b_sfs.sfs02=b_sfs.sfs02+1
     LET b_sfs.sfs03=b_sfq.sfq02
@@ -7707,10 +7726,10 @@ FUNCTION i501_g_b7() 		# 超領退料
     LET b_sfs.sfs05=g_sfa2.sfa062
     LET b_sfs.sfs06=g_sfa2.sfa12
     LET b_sfs.sfs27=g_sfa2.sfa27   #MOD-910167             #MOD-980243 modify NULL->g_sfa2.sfa27
- 
+
     SELECT ima35,ima36 INTO b_sfs.sfs07,b_sfs.sfs08 FROM ima_file
      WHERE ima01 = b_sfs.sfs04
- 
+
    ##Add No.FUN-AB0018  #Mark No.FUN-AB0054 此处不做判断，交予单据审核时控管
    #IF NOT cl_null(b_sfs.sfs07) THEN
    #   IF NOT s_chk_ware(b_sfs.sfs07) THEN  #检查仓库是否属于当前门店
@@ -7725,9 +7744,9 @@ FUNCTION i501_g_b7() 		# 超領退料
     LET b_sfs.sfs012 = g_sfa2.sfa012    #MOD-C80213 add
     LET b_sfs.sfs013 = g_sfa2.sfa013    #MOD-C80213 add
 #FUN-A60028 --begin--
-    IF cl_null(b_sfs.sfs012) THEN LET b_sfs.sfs012 = ' ' END IF 
-    IF cl_null(b_sfs.sfs013) THEN LET b_sfs.sfs013 = 0   END IF  
-#FUN-A60028 --end--     
+    IF cl_null(b_sfs.sfs012) THEN LET b_sfs.sfs012 = ' ' END IF
+    IF cl_null(b_sfs.sfs013) THEN LET b_sfs.sfs013 = 0   END IF
+#FUN-A60028 --end--
     IF g_sma.sma115 = 'Y' THEN
        CALL i501_set_du_by_origin()
     END IF
@@ -7743,31 +7762,31 @@ FUNCTION i501_g_b7() 		# 超領退料
     LET b_sfs.sfslegal = g_legal #FUN-980008 add
     IF b_sfs.sfs014 IS NULL THEN LET b_sfs.sfs014=' ' END IF  #FUN-C70014 add
     #FUN-CB0087--add--str--
-    IF g_aza.aza115 ='Y' THEN    
-       LET b_sfs.sfs37=s_reason_code(b_sfs.sfs01,b_sfs.sfs03,'',b_sfs.sfs04,b_sfs.sfs07,g_sfp.sfp16,g_sfp.sfp07) 
+    IF g_aza.aza115 ='Y' THEN
+       LET b_sfs.sfs37=s_reason_code(b_sfs.sfs01,b_sfs.sfs03,'',b_sfs.sfs04,b_sfs.sfs07,g_sfp.sfp16,g_sfp.sfp07)
     END IF
     #FUN-CB0087--add--str--
 
     INSERT INTO sfs_file VALUES(b_sfs.*)
- 
-    IF STATUS THEN 
+
+    IF STATUS THEN
        CALL cl_err3("ins","sfs_file",b_sfs.sfs01,b_sfs.sfs02,STATUS,"","ins sfs:",1)  #No.FUN-660128
        END IF
-    
+
     CALL i501_ins_rvbs(b_sfs.sfs02,b_sfs.sfs03,b_sfs.sfs04)   #No.FUN-870106
-    
+
   END FOREACH
 END FUNCTION
- 
+
 FUNCTION i501_g_b5() 		# 全部退料
   DEFINE l_sql      LIKE type_file.chr1000 #No.FUN-680121 VARCHAR(300)
- 
+
   LET l_sql = "SELECT sfa_file.*,ima108 FROM sfa_file, ima_file",
               " WHERE sfa01='",b_sfq.sfq02,"'",
-              "   AND (sfa11 NOT IN ('E','X') OR sfa11 IS NULL)", #CHI-980013 
+              "   AND (sfa11 NOT IN ('E','X') OR sfa11 IS NULL)", #CHI-980013
               "   AND sfa03=ima01 ",
               "   AND sfa06>0 ",           #TQC-C30067 add
-              "   AND ",g_wc4 CLIPPED      #FUN-940039 add 
+              "   AND ",g_wc4 CLIPPED      #FUN-940039 add
   IF NOT cl_null(b_sfq.sfq04) THEN
      LET l_sql = l_sql CLIPPED,"  AND sfa08 = '",b_sfq.sfq04,"'"
   END IF
@@ -7777,10 +7796,10 @@ FUNCTION i501_g_b5() 		# 全部退料
   END IF
 #FUN-B20095 -----------------End----------------------
   LET l_sql = l_sql CLIPPED," ORDER BY sfa27,sfa03"
- 
+
   PREPARE i501_g_b5_pre FROM l_sql
   DECLARE i501_g_b5_c CURSOR FOR i501_g_b5_pre
- 
+
   FOREACH i501_g_b5_c INTO g_sfa2.*,g_ima108
     IF part_type = 'Y' AND (g_ima108= 'N' OR cl_null(g_ima108)) THEN
        CONTINUE FOREACH
@@ -7798,15 +7817,15 @@ FUNCTION i501_g_b5() 		# 全部退料
     LET b_sfs.sfs04=g_sfa2.sfa03
     LET b_sfs.sfs05=g_sfa2.sfa06  #FUN-B50059
     #FUN-A60095(S)
-    IF b_sfs.sfs05 < 0 THEN LET b_sfs.sfs05 = 0 END IF    
+    IF b_sfs.sfs05 < 0 THEN LET b_sfs.sfs05 = 0 END IF
     #FUN-A60095(E)
     LET b_sfs.sfs06=g_sfa2.sfa12
     LET b_sfs.sfs27=g_sfa2.sfa27    #MOD-910167       #MOD-980243 modify NULL -> g_sfa2.sfa27
- 
+
 #TQC-C30067  ---add--begin
     IF g_sfa2.sfa26 MATCHES '[B,C]' THEN
        LET b_sfs.sfs26 = g_sfa2.sfa26
-    END IF 
+    END IF
 #TQC-C30067  ---add--end
     SELECT ima35,ima36 INTO b_sfs.sfs07,b_sfs.sfs08 FROM ima_file
      WHERE ima01 = b_sfs.sfs04
@@ -7822,13 +7841,13 @@ FUNCTION i501_g_b5() 		# 全部退料
       LET b_sfs.sfs08=loc_no
       LET b_sfs.sfs09=lot_no
     END IF
- 
+
     IF g_sfp.sfp06 MATCHES '[6789]' THEN  #NO:7075
        IF g_sfa2.sfa05 <0 THEN
           LET b_sfs.sfs05=g_sfa2.sfa05*(-1)
        END IF
     END IF
- 
+
     LET b_sfs.sfs10=g_sfa2.sfa08
     IF b_sfs.sfs07 IS NULL THEN LET b_sfs.sfs07 = ' ' END IF
     IF b_sfs.sfs08 IS NULL THEN LET b_sfs.sfs08 = ' ' END IF
@@ -7836,9 +7855,9 @@ FUNCTION i501_g_b5() 		# 全部退料
     LET b_sfs.sfs012 = g_sfa2.sfa012    #MOD-C80213 add
     LET b_sfs.sfs013 = g_sfa2.sfa013    #MOD-C80213 add
 #FUN-A60028 --begin--
-    IF cl_null(b_sfs.sfs012) THEN LET b_sfs.sfs012 = ' ' END IF 
-    IF cl_null(b_sfs.sfs013) THEN LET b_sfs.sfs013 = 0   END IF  
-#FUN-A60028 --end--     
+    IF cl_null(b_sfs.sfs012) THEN LET b_sfs.sfs012 = ' ' END IF
+    IF cl_null(b_sfs.sfs013) THEN LET b_sfs.sfs013 = 0   END IF
+#FUN-A60028 --end--
     IF g_sma.sma115 = 'Y' THEN
        CALL i501_set_du_by_origin()
     END IF
@@ -7850,7 +7869,7 @@ FUNCTION i501_g_b5() 		# 全部退料
        LET b_sfs.sfs27 = ' '
     END IF
 
- 
+
     LET b_sfs.sfsplant = g_plant #FUN-980008 add
     LET b_sfs.sfslegal = g_legal #FUN-980008 add
     IF b_sfs.sfs014 IS NULL THEN LET b_sfs.sfs014=' ' END IF #FUN-C70014 add
@@ -7858,18 +7877,18 @@ FUNCTION i501_g_b5() 		# 全部退料
     IF g_aza.aza115 ='Y' THEN
        LET b_sfs.sfs37=s_reason_code(b_sfs.sfs01,b_sfs.sfs03,'',b_sfs.sfs04,b_sfs.sfs07,g_sfp.sfp16,g_sfp.sfp07)
     END IF
-    #FUN-CB0087--add--str-- 
+    #FUN-CB0087--add--str--
 
     INSERT INTO sfs_file VALUES(b_sfs.*)
-    IF STATUS THEN 
+    IF STATUS THEN
        CALL cl_err3("ins","sfs_file",b_sfs.sfs01,b_sfs.sfs02,STATUS,"","ins sfs:",1)  #No.FUN-660128
        END IF
     CALL i501_ins_rvbs(b_sfs.sfs02,b_sfs.sfs03,b_sfs.sfs04)   #No.FUN-870106
-    
+
   END FOREACH
- 
+
 END FUNCTION
- 
+
 FUNCTION i500_chk_ima64(p_part, p_qty)
   DEFINE p_part		LIKE ima_file.ima01
   DEFINE p_qty		LIKE ima_file.ima641   #No.FUN-680121 DEC(15,3)
@@ -7877,17 +7896,17 @@ FUNCTION i500_chk_ima64(p_part, p_qty)
   DEFINE l_ima64	LIKE ima_file.ima64
   DEFINE l_ima641	LIKE ima_file.ima641
   DEFINE i		LIKE type_file.num10   #No.FUN-680121 INTEGER
- 
+
   SELECT ima108,ima64,ima641 INTO l_ima108,l_ima64,l_ima641 FROM ima_file
    WHERE ima01=p_part
   IF STATUS THEN RETURN p_qty END IF
- 
+
   IF l_ima108='Y' THEN RETURN p_qty END IF
- 
+
   IF l_ima641 != 0 AND p_qty<l_ima641 THEN
      LET p_qty=l_ima641
   END IF
- 
+
   IF l_ima64<>0 THEN
      IF g_sfp.sfp06 ='6' THEN    #CHI-C90017 add
         LET i=p_qty / l_ima64
@@ -7897,22 +7916,22 @@ FUNCTION i500_chk_ima64(p_part, p_qty)
      LET p_qty= i * l_ima64
   END IF
   RETURN p_qty
- 
+
 END FUNCTION
- 
+
 FUNCTION i501_sort_by_partno() 		#
   DEFINE l_sfs	RECORD LIKE sfs_file.*
- 
+
   SELECT COUNT(*) INTO g_i FROM sfq_file WHERE sfq01=g_sfp.sfp01
   IF g_i<=1 THEN RETURN END IF
- 
+
   UPDATE sfs_file SET sfs02=sfs02+1000 WHERE sfs01=g_sfp.sfp01
- 
+
   DECLARE i501_sort_c CURSOR FOR
     SELECT * FROM sfs_file
      WHERE sfs01=g_sfp.sfp01
      ORDER BY sfs04,sfs03
- 
+
   LET g_i=0
   FOREACH i501_sort_c INTO l_sfs.*
      LET g_i=g_i+1
@@ -7920,9 +7939,9 @@ FUNCTION i501_sort_by_partno() 		#
       WHERE sfs01=l_sfs.sfs01
         AND sfs02=l_sfs.sfs02
   END FOREACH
- 
+
 END FUNCTION
- 
+
 FUNCTION i501_b()
 DEFINE
     l_ac_t              LIKE type_file.num5,                #未取消的ARRAY CNT  #No.FUN-680121 SMALLINT
@@ -7976,7 +7995,7 @@ DEFINE
     l_sfb02             LIKE sfb_file.sfb02    #FUN-660110 add
 DEFINE l_i     LIKE type_file.num5
 DEFINE l_fac   LIKE ima_file.ima31_fac  #TQC-7B0065
- 
+
 DEFINE l_sfa29          LIKE sfa_file.sfa29
 DEFINE l_totsfs05       LIKE sfs_file.sfs05   #No.TQC-750232
 DEFINE l_sfa27_a        LIKE sfa_file.sfa27   #MOD-910167
@@ -7988,8 +8007,8 @@ DEFINE l_sfa27_tmp         LIKE sfa_file.sfa27
 DEFINE l_sfa36          LIKE sfa_file.sfa36   #FUN-950088 add
 DEFINE l_sfb05          LIKE sfb_file.sfb05   #No.MOD-930195 add
 DEFINE l_bno            LIKE rvbs_file.rvbs08 #CHI-9A0022
-DEFINE l_sie            RECORD LIKE sie_file.* #FUNA-A20048 add 
-DEFINE l_sfb06          LIKE sfb_file.sfb06   #FUN-A60028 
+DEFINE l_sie            RECORD LIKE sie_file.* #FUNA-A20048 add
+DEFINE l_sfb06          LIKE sfb_file.sfb06   #FUN-A60028
 DEFINE l_flag1          LIKE type_file.num5   #MOD-AC0336
 DEFINE b_sfa06          LIKE sfa_file.sfa06   #MOD-B20062 add
 DEFINE b_sfa05          LIKE sfa_file.sfa06   #MOD-B20062 add
@@ -8008,9 +8027,9 @@ DEFINE l_ima906         LIKE ima_file.ima906 #FUN-B20095
 DEFINE l_sum_sfs05      LIKE sfs_file.sfs05  #NO.TQC-B90236 add
 DEFINE l_base_sfa05     LIKE sfa_file.sfa05  #CHI-BC0040 add
 DEFINE l_replace        LIKE type_file.chr1  #TQC-C30028 add
-DEFINE l_c              LIKE type_file.num5  #CHI-C30106---add 
-DEFINE l_flag2          LIKE type_file.chr1  #FUN-CB0087 add       
-DEFINE l_where          STRING               #FUN-CB0087 add  
+DEFINE l_c              LIKE type_file.num5  #CHI-C30106---add
+DEFINE l_flag2          LIKE type_file.chr1  #FUN-CB0087 add
+DEFINE l_where          STRING               #FUN-CB0087 add
 DEFINE l_imd10          LIKE imd_file.imd10  #MOD-D60040 add
 DEFINE l_sfq03          LIKE sfq_file.sfq03  #2013090084 add
 DEFINE l_add1,i           LIKE type_file.num5  #add by chenkun160815
@@ -8023,15 +8042,15 @@ DEFINE l_sfs21          LIKE sfs_file.sfs21   #darcy: add 20220317
 DEFINE l_tc_zsa02   LIKE type_file.chr1,
        l_tc_zsa03   LIKE type_file.chr10
 #2022032401 add----end----
- 
+
 #NO.TQC-B90236 ------add----begin  只有成套發料(asfi511)才可顯示與執行
-    #IF g_prog = 'asfi511' THEN                          #TQC-C30067  mark 
+    #IF g_prog = 'asfi511' THEN                          #TQC-C30067  mark
      IF g_prog = 'asfi511' OR g_prog = 'asfi526' THEN    #TQC-C30067  add
         CALL cl_set_act_visible("formula_alternative",TRUE)
      ELSE
         CALL cl_set_act_visible("formula_alternative",FALSE)
-     END IF 
-   
+     END IF
+
 #NO.TQC-B90236 ------add----end
 
     #TQC-AC0197 Begin------------------------------
@@ -8052,15 +8071,15 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
     END IF                   #TQC-AC0197
 
     #2022032401 add----begin----
-    IF g_sfp.sfpud06[1,2] = 'MR' THEN 
+    IF g_sfp.sfpud06[1,2] = 'MR' THEN
     	LET l_tc_zsa02 = ''
     	LET l_tc_zsa03 = ''
     	SELECT tc_zsa02,tc_zsa03 INTO l_tc_zsa02,l_tc_zsa03 FROM tc_zsa_file
-    	IF l_tc_zsa02 = 'Y' AND NOT cl_null(l_tc_zsa03) AND g_today >= l_tc_zsa03 THEN 
+    	IF l_tc_zsa02 = 'Y' AND NOT cl_null(l_tc_zsa03) AND g_today >= l_tc_zsa03 THEN
     		CALL cl_err('','cpm-066',0)
-    		RETURN 
-    	END IF 
-    END IF 
+    		RETURN
+    	END IF
+    END IF
     #2022032401 add----end----
 
     #FUN-AB0001  add str ---
@@ -8075,30 +8094,30 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
     #FUN-AB0001  add end ---
 
     CALL cl_opmsg('b')
- 
+
     LET g_forupd_sql = "SELECT * FROM sfs_file ",
                        " WHERE sfs01= ? AND sfs02= ?  FOR UPDATE"
     LET g_forupd_sql = cl_forupd_sql(g_forupd_sql)
     DECLARE i501_bcl CURSOR FROM g_forupd_sql
- 
- 
+
+
    #TQC-AC0197 Begin-------------------------
-    IF g_wm = 'Y' THEN            
-       LET l_allow_insert = FALSE  
-       LET l_allow_delete = FALSE 
+    IF g_wm = 'Y' THEN
+       LET l_allow_insert = FALSE
+       LET l_allow_delete = FALSE
     ELSE
    #TQC-AC0197 End---------------------------
        LET l_allow_insert = cl_detail_input_auth("insert")
        LET l_allow_delete = cl_detail_input_auth("delete")
-    END IF          #TQC-AC0197        
- 
+    END IF          #TQC-AC0197
+
     IF g_rec_b=0 THEN CALL g_sfs.clear() END IF
     IF g_rec_b > 0  THEN LET l_ac = 1  END IF
- 
+
     INPUT ARRAY g_sfs WITHOUT DEFAULTS FROM s_sfs.*
           ATTRIBUTE(COUNT=g_rec_b,MAXCOUNT=g_max_rec,UNBUFFERED,
                     INSERT ROW=l_allow_insert,DELETE ROW=l_allow_delete,APPEND ROW=l_allow_insert)
- 
+
         BEFORE INPUT
            IF NOT (g_sfp.sfp06 MATCHES '[ABC]') THEN #FUN-5C0114
               CALL cl_set_docno_format("sfs03")
@@ -8111,54 +8130,54 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
               ELSE
                  CALL i501_set_entry_b('a')
                  CALL i501_set_no_entry_b('a')
-              END IF              
+              END IF
 #TQC-AC0197 ---------------------------Begin--------------------------
            ELSE
-              CALL cl_set_comp_entry("sfs02,sfs26,sfs03,sfs04,sfs27,sfs06,sfs012,sfs013,sfs10,sfs05,sfs21,sfs36 ",FALSE)    
-           END IF               
+              CALL cl_set_comp_entry("sfs02,sfs26,sfs03,sfs04,sfs27,sfs06,sfs012,sfs013,sfs10,sfs05,sfs21,sfs36 ",FALSE)
+           END IF
 #TQC-AC0197 ---------------------------End---------------------------
            IF g_wm = 'N'THEN     #TQC-AC0197
 #FUN-A60028 --begin--
-           IF g_sma.sma541 = 'Y' THEN 
+           IF g_sma.sma541 = 'Y' THEN
           #   CALL cl_set_comp_entry("sfs10",FALSE)   #FUN-B20079 mark
           #ELSE                                       #FUN-B20079 mark
               CALL cl_set_comp_entry("sfs10",TRUE)
-           END IF     #TQC-AC0197	
-#FUN-A60028 --end--            
-           END IF  
+           END IF     #TQC-AC0197
+#FUN-A60028 --end--
+           END IF
         BEFORE ROW
             LET p_cmd=''
             LET l_ac = ARR_CURR()
             LET l_lock_sw = 'N'                   #DEFAULT
             LET l_n  = ARR_COUNT()
     #str----add by chenkun160815
-    IF g_sfp.sfp04 ='Y' THEN 
-      LET l_add1 = 0 
-      LET l_add2 = 0  
-      LET l_add3 = NULL 
-      SELECT count(*) INTO l_add1 FROM sfe_file 
-      WHERE sfe02 = g_sfp.sfp01 AND sfe01 = g_sfs[l_ac].sfs03 AND sfe07 = g_sfs[l_ac].sfs04
-      DISPLAY l_add1 TO add1
-      SELECT sum(sfeud07) INTO l_add2 FROM sfe_file 
-      WHERE sfe02 = g_sfp.sfp01 AND sfe01 = g_sfs[l_ac].sfs03 AND sfe07 = g_sfs[l_ac].sfs04
-      LET l_add3 = g_sfs[l_ac].sfs04
-      DISPLAY l_add2 TO add2
-      DISPLAY l_add3 TO add3
-    ELSE  
-      LET l_add1 = 0 
-      LET l_add2 = 0  
+    IF g_sfp.sfp04 ='Y' THEN
+      LET l_add1 = 0
+      LET l_add2 = 0
       LET l_add3 = NULL
-      SELECT count(*) INTO l_add1 FROM sfs_file 
+      SELECT count(*) INTO l_add1 FROM sfe_file
+      WHERE sfe02 = g_sfp.sfp01 AND sfe01 = g_sfs[l_ac].sfs03 AND sfe07 = g_sfs[l_ac].sfs04
+      DISPLAY l_add1 TO add1
+      SELECT sum(sfeud07) INTO l_add2 FROM sfe_file
+      WHERE sfe02 = g_sfp.sfp01 AND sfe01 = g_sfs[l_ac].sfs03 AND sfe07 = g_sfs[l_ac].sfs04
+      LET l_add3 = g_sfs[l_ac].sfs04
+      DISPLAY l_add2 TO add2
+      DISPLAY l_add3 TO add3
+    ELSE
+      LET l_add1 = 0
+      LET l_add2 = 0
+      LET l_add3 = NULL
+      SELECT count(*) INTO l_add1 FROM sfs_file
       WHERE sfs01 = g_sfp.sfp01 AND sfs03 = g_sfs[l_ac].sfs03 AND sfs04 = g_sfs[l_ac].sfs04
       DISPLAY l_add1 TO add1
-      SELECT sum(sfsud07) INTO l_add2 FROM sfs_file 
+      SELECT sum(sfsud07) INTO l_add2 FROM sfs_file
       WHERE sfs01 = g_sfp.sfp01 AND sfs03 = g_sfs[l_ac].sfs03 AND sfs04 = g_sfs[l_ac].sfs04
       LET l_add3 = g_sfs[l_ac].sfs04
       DISPLAY l_add2 TO add2
       DISPLAY l_add3 TO add3
-    END IF 
+    END IF
      #end----add by chenkun160815
- 
+
 	    BEGIN WORK
             DISPLAY "begin work"
             OPEN i501_cl USING g_sfp.sfp01                     #09/10/21 xiaofeizhu Add
@@ -8168,13 +8187,13 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                ROLLBACK WORK
                RETURN
             END IF
- 
+
             FETCH i501_cl INTO g_sfp.*          # 鎖住將被更改或取消的資料
             IF SQLCA.sqlcode THEN
                CALL cl_err(g_sfp.sfp01,SQLCA.sqlcode,0)     # 資料被他人LOCK
                CLOSE i501_cl ROLLBACK WORK RETURN
             END IF
- 
+
             IF g_rec_b >= l_ac THEN
                LET p_cmd='u'
                LET g_sfs_t.* = g_sfs[l_ac].*  #BACKUP
@@ -8205,7 +8224,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                END IF
 #No.TQC-B90236-------add-----------end
 
- 
+
                OPEN i501_bcl USING g_sfp.sfp01,g_sfs_t.sfs02
                IF STATUS THEN
                   CALL cl_err("OPEN i501_bcl:", STATUS, 1)
@@ -8232,15 +8251,15 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                   IF NOT cl_null(b_sfs.sfs04) THEN
                      SELECT ima55,ima31 INTO g_ima55,g_ima31
                        FROM ima_file WHERE ima01=b_sfs.sfs04
- 
+
                      CALL s_chk_va_setting(b_sfs.sfs04)
                           RETURNING g_flag,g_ima906,g_ima907
                   END IF
-                  IF g_wm != 'Y' THEN            #TQC-AC0197 
+                  IF g_wm != 'Y' THEN            #TQC-AC0197
                      CALL i501_set_entry_b('u')
                      CALL i501_set_no_entry_b('u')
                      CALL i501_set_no_required()
-                     CALL i501_set_required()    
+                     CALL i501_set_required()
 
                   ELSE                           #TQC-AC0197
                      NEXT FIELD sfs07            #TQC-AC0197
@@ -8248,7 +8267,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                END IF
                CALL cl_show_fld_cont()     #FUN-550037(smin)
             END IF
- 
+
         BEFORE INSERT
             INITIALIZE g_sfs_t.* TO NULL
             INITIALIZE b_sfs.* TO NULL     #No.MOD-950017 add
@@ -8274,7 +8293,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
             CALL i501_set_no_entry_b(p_cmd)
             CALL cl_show_fld_cont()     #FUN-550037(smin)
             NEXT FIELD sfs02
- 
+
         AFTER INSERT
             IF INT_FLAG THEN
                CALL cl_err('',9001,0)
@@ -8287,10 +8306,10 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                IF g_flag=1 THEN
                   NEXT FIELD sfs04
                END IF
- 
+
                CALL i501_du_data_to_correct()
- 
- 
+
+
                IF cl_null(g_sfs[l_ac].sfs08) THEN LET g_sfs[l_ac].sfs08 = ' ' END IF
                IF cl_null(g_sfs[l_ac].sfs09) THEN LET g_sfs[l_ac].sfs09 = ' ' END IF
                SELECT img09 INTO g_img09 FROM img_file
@@ -8302,7 +8321,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                   CALL cl_err(g_sfs[l_ac].sfs04,'mfg6069',0)
                   NEXT FIELD sfs04
                END IF
- 
+
                CALL i501_set_origin_field()
                IF NOT (g_sfp.sfp06 MATCHES '[ABC]') THEN #FUN-5C0114
                   #計算sfs05的值,檢查入庫數量的合理性
@@ -8324,7 +8343,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                   END IF
                END IF
             END IF
- 
+
             CALL i501_b_move_back()
             CALL i501_b_else()
             IF g_sfs[l_ac].sfs04 IS NULL AND g_sfs[l_ac].sfs05 = 0 THEN
@@ -8343,18 +8362,18 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
             IF cl_null(b_sfs.sfs28) THEN
                SELECT sfa28 INTO b_sfs.sfs28
                  FROM sfa_file
-                WHERE sfa01 = b_sfs.sfs03 
+                WHERE sfa01 = b_sfs.sfs03
                   AND sfa03 = b_sfs.sfs04
                   AND sfa08 = b_sfs.sfs10
                   AND sfa12 = b_sfs.sfs06
                   AND sfa27 = b_sfs.sfs27
-                  AND sfa012= b_sfs.sfs012   #FUN-A60028 
+                  AND sfa012= b_sfs.sfs012   #FUN-A60028
                   AND sfa013= b_sfs.sfs013   #FUN-A60028
             END IF
             #FUN-A60028 --begin--
-            IF cl_null(b_sfs.sfs012) THEN LET b_sfs.sfs012 = ' ' END IF 
-            IF cl_null(b_sfs.sfs013) THEN LET b_sfs.sfs013 = 0   END IF  
-            #FUN-A60028 --end--     
+            IF cl_null(b_sfs.sfs012) THEN LET b_sfs.sfs012 = ' ' END IF
+            IF cl_null(b_sfs.sfs013) THEN LET b_sfs.sfs013 = 0   END IF
+            #FUN-A60028 --end--
             IF b_sfs.sfs014 IS NULL THEN LET b_sfs.sfs014=' ' END IF  #FUN-C70014 add
             #darcy: add 20220317 s---
             CALL i501_get_img_mark(b_sfs.sfs04,b_sfs.sfs07,b_sfs.sfs08,b_sfs.sfs09) RETURNING l_sfs21 #darcy: add 20220317
@@ -8369,14 +8388,14 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                LET g_rec_b=g_rec_b+1
                DISPLAY g_rec_b TO FORMONLY.cn2
              END IF
- 
+
         BEFORE FIELD sfs02                            #default 序號
             IF g_sfs[l_ac].sfs02 IS NULL OR g_sfs[l_ac].sfs02 = 0 THEN
                 SELECT MAX(sfs02)+1 INTO g_sfs[l_ac].sfs02
                    FROM sfs_file WHERE sfs01 = g_sfp.sfp01
                 IF g_sfs[l_ac].sfs02 IS NULL THEN LET g_sfs[l_ac].sfs02=1 END IF
             END IF
- 
+
         AFTER FIELD sfs02                        #check 序號是否重複
             IF NOT cl_null(g_sfs[l_ac].sfs02) THEN
                IF g_sfs[l_ac].sfs02 != g_sfs_t.sfs02 OR
@@ -8393,36 +8412,36 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
 
         #str----add by chenkun160815
         ON CHANGE sfs04
-           LET l_add1 = 0 
-           LET l_add2 = 0 
-           LET l_add3 = NULL 
+           LET l_add1 = 0
+           LET l_add2 = 0
+           LET l_add3 = NULL
            FOR i = 1 TO g_rec_b
-               IF  g_sfs[l_ac].sfs03 = g_sfs[i].sfs03 AND g_sfs[l_ac].sfs04 = g_sfs[i].sfs04 THEN 
+               IF  g_sfs[l_ac].sfs03 = g_sfs[i].sfs03 AND g_sfs[l_ac].sfs04 = g_sfs[i].sfs04 THEN
                  LET l_add1 = l_add1 + 1
                  LET l_add2 = l_add2 + g_sfs[i].sfsud07
-                  
-               END IF 
-           END FOR 
-           LET l_add3 = g_sfs[l_ac].sfs04 
+
+               END IF
+           END FOR
+           LET l_add3 = g_sfs[l_ac].sfs04
            DISPLAY l_add1 TO add1
            DISPLAY l_add2 TO add2
            DISPLAY l_add3 TO add3
         ON CHANGE sfsud07
-           LET l_add1 = 0 
-           LET l_add2 = 0 
+           LET l_add1 = 0
+           LET l_add2 = 0
            LET l_add3 = NULL
            FOR i = 1 TO g_rec_b
-               IF  g_sfs[l_ac].sfs03 = g_sfs[i].sfs03 AND g_sfs[l_ac].sfs04 = g_sfs[i].sfs04 THEN 
+               IF  g_sfs[l_ac].sfs03 = g_sfs[i].sfs03 AND g_sfs[l_ac].sfs04 = g_sfs[i].sfs04 THEN
                  LET l_add1 = l_add1 + 1
-                 LET l_add2 = l_add2 + g_sfs[i].sfsud07  
-                 
-               END IF 
-           END FOR 
-           LET l_add3 = g_sfs[l_ac].sfs04 
+                 LET l_add2 = l_add2 + g_sfs[i].sfsud07
+
+               END IF
+           END FOR
+           LET l_add3 = g_sfs[l_ac].sfs04
            DISPLAY l_add1 TO add1
            DISPLAY l_add2 TO add2
            DISPLAY l_add3 TO add3
-        #end----add by chenkun160815 
+        #end----add by chenkun160815
         AFTER FIELD sfs26
            IF NOT cl_null(g_sfs[l_ac].sfs26) THEN
              #IF g_sfs[l_ac].sfs26 NOT MATCHES '[SU]' THEN   #No.TQC-5C0135 mark
@@ -8431,11 +8450,11 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
               END IF
            END IF
            CALL i501_chk_entry_sfs27()  #TQC-C70050 add
-           
+
           ON CHANGE sfs26
 #NO.TQC-B90236------add----begin 不能手動選擇9BC選項
               IF p_cmd = 'a' OR
-                (p_cmd ='u' AND g_sfs_t.sfs26 != g_sfs[l_ac].sfs26) 
+                (p_cmd ='u' AND g_sfs_t.sfs26 != g_sfs[l_ac].sfs26)
                 OR (p_cmd = 'u' AND (g_sfs_t.sfs26 IS NULL)) THEN
                 IF g_sfs[l_ac].sfs26 MATCHES '[9BC]' THEN
                   LET g_sfs[l_ac].sfs26 = g_sfs_t.sfs26
@@ -8450,7 +8469,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
            #CHI-C50011 str add-----
              CALL i501_chk_entry_sfs27()
                LET g_sfs[l_ac].sfs27 = ''
-               DISPLAY BY NAME g_sfs[l_ac].sfs27 
+               DISPLAY BY NAME g_sfs[l_ac].sfs27
             #CHI-C50011 end add-----
              #NEXT FIELD sfs04 #MOD-D30037
              NEXT FIELD sfs03  #MOD-D30037
@@ -8461,7 +8480,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
            CALL i501_set_no_required_sfs09()
            CALL i501_set_entry_sfs09()
 #FUN-#A0050 ---------------End-------------------
- 
+
 #-----CHI-BC0040 str add--------
         BEFORE FIELD sfs28
           SELECT COUNT(*) INTO l_flag1 FROM sfa_file WHERE sfa01=g_sfs[l_ac].sfs03 AND sfa03=g_sfs[l_ac].sfs04
@@ -8482,21 +8501,21 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
 
         #FUN-C70014 add begin-------------
         AFTER FIELD sfs014
-           IF NOT cl_null(g_sfs[l_ac].sfs014) THEN 
+           IF NOT cl_null(g_sfs[l_ac].sfs014) THEN
               SELECT COUNT(*) INTO l_n FROM shm_file
                WHERE shm01 = g_sfs[l_ac].sfs014
                  AND shm28 = 'N'
-              IF l_n = 0 THEN 
+              IF l_n = 0 THEN
                  CALL cl_err('','asf-910',1)
                  LET g_sfs[l_ac].sfs014 = g_sfs_t.sfs014
                  NEXT FIELD sfs014
-              END IF 
-              
+              END IF
+
               SELECT shm012 INTO g_sfs[l_ac].sfs03 FROM shm_file
                WHERE shm01 = g_sfs[l_ac].sfs014
                  AND shm28 = 'N'
               DISPLAY BY NAME g_sfs[l_ac].sfs03
-           END IF 
+           END IF
         #FUN-C70014 add end --------------
 
         AFTER FIELD sfs03
@@ -8520,7 +8539,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                  NEXT FIELD sfs03
               END IF
            END IF
-           #TQC-D70055---end 
+           #TQC-D70055---end
            IF (NOT cl_null(g_sfs[l_ac].sfs03)) AND (NOT (g_sfp.sfp06 MATCHES '[ABC]')) THEN #FUN-5C0114
               CALL i501_sfb01(g_sfs[l_ac].sfs03)
               IF NOT cl_null(g_errno) THEN
@@ -8533,7 +8552,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                  CALL cl_err(g_sfs[l_ac].sfs03,'asr-047',1)   #所輸入之工單型態
                  NEXT FIELD sfs03
               END IF
- 
+
               IF g_sfp.sfp06 NOT MATCHES '[24789]' THEN
                  SELECT COUNT(*) INTO l_n FROM sfq_file
                   WHERE sfq01 = g_sfp.sfp01
@@ -8544,7 +8563,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                  END IF
               END IF
               #TQC-CA0044 add begin-------------
-              IF g_sfp.sfp06 = 'D' AND NOT cl_null(g_sfs[l_ac].sfs014) AND 
+              IF g_sfp.sfp06 = 'D' AND NOT cl_null(g_sfs[l_ac].sfs014) AND
                  NOT cl_null(g_sfs[l_ac].sfs03) THEN
                  SELECT COUNT(*) INTO l_cnt FROM shm_file
                   WHERE shm01 = g_sfs[l_ac].sfs014
@@ -8554,15 +8573,15 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                     CALL cl_err('','asf1033',1)
                     NEXT FIELD sfs03
                  END IF
-              END IF 
+              END IF
               #TQC-CA0044 add end --------------
               SELECT * INTO g_sfb.* FROM sfb_file
                WHERE sfb01=g_sfs[l_ac].sfs03 AND sfbacti='Y' AND sfb87!='X'
               IF STATUS THEN
                  CALL cl_err3("sel","sfb_file",g_sfs[l_ac].sfs03,"",STATUS,"","sel sfb",1)  #No.FUN-660128
-                 NEXT FIELD sfs03  
+                 NEXT FIELD sfs03
               END IF
- 
+
               IF g_sfb.sfb81 > g_sfp.sfp02 THEN
                  CALL cl_err(g_sfs[l_ac].sfs03,'asf-819',0) NEXT FIELD sfs03
               END IF
@@ -8591,7 +8610,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
               LET g_sfs[l_ac].sfs930=s_costcenter(g_sfb.sfb98) #FUN-670103
               LET g_sfs[l_ac].gem02c=s_costcenter_desc(g_sfs[l_ac].sfs930) #FUN-670103
            END IF
- 
+
            IF (NOT cl_null(g_sfs[l_ac].sfs03)) AND (g_sfp.sfp06 MATCHES '[ABC]') THEN #FUN-5C0114
               LET l_cnt = 0
               SELECT COUNT(*) INTO l_cnt FROM ima_file
@@ -8610,14 +8629,14 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
               END IF
               #FUN-B20079 jan (E)
            END IF
- 
+
            #判斷被替代料須存在于備料檔中
-           IF NOT cl_null(g_sfs[l_ac].sfs27) AND 
-              NOT cl_null(g_sfs[l_ac].sfs03) THEN     #FUN-B80143              
-              #NOT cl_null(g_sfs[l_ac].sfs04) AND      #FUN-B80143 mark 
+           IF NOT cl_null(g_sfs[l_ac].sfs27) AND
+              NOT cl_null(g_sfs[l_ac].sfs03) THEN     #FUN-B80143
+              #NOT cl_null(g_sfs[l_ac].sfs04) AND      #FUN-B80143 mark
               #g_sfs[l_ac].sfs012 IS NOT NULL AND      #FUN-A60028  ADD #FUN-B80143 mark
               #NOT cl_null(g_sfs[l_ac].sfs013) THEN    #FUN-A60028 ADD #FUN-B80143 mark
-              
+
              #FUN-B80143 --START mark--
              # SELECT COUNT(*) INTO l_n FROM sfa_file
              #  WHERE sfa01 = g_sfs[l_ac].sfs03
@@ -8627,14 +8646,14 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
              #    AND sfa012= g_sfs[l_ac].sfs012    #FUN-A60028 #TQC-AB0183
              #    AND sfa013= g_sfs[l_ac].sfs013    #FUN-A60028 #TQC-AB0183
              #FUN-B80143 --END mark--
-              
+
               #FUN-B80143 --START--
               IF cl_null(g_sfs[l_ac].sfs012) THEN
                  LET g_sfs[l_ac].sfs012 = ' '
               END IF
               IF cl_null(g_sfs[l_ac].sfs013) THEN
                  LET g_sfs[l_ac].sfs013 = 0
-              END IF      
+              END IF
               LET g_sql = "SELECT COUNT(*) FROM sfa_file",
                           " WHERE sfa01 ='", g_sfs[l_ac].sfs03, "'",
                           #"   AND sfa03 ='", g_sfs[l_ac].sfs27, "'",#darcy: mark 20220315
@@ -8643,24 +8662,24 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                           "   AND sfa27 ='", g_sfs[l_ac].sfs27, "'",
                           #darcy: add 20220315 e---
                           "   AND sfa012 ='", g_sfs[l_ac].sfs012, "'",
-                          "   AND sfa013 ='", g_sfs[l_ac].sfs013, "'"                          
+                          "   AND sfa013 ='", g_sfs[l_ac].sfs013, "'"
               IF g_sfp.sfp06 = '7' THEN
                  LET g_sql = g_sql, " AND sfa062 > 0 "
-              END IF              
+              END IF
               PREPARE i501_b_p1 FROM g_sql
               DECLARE i501_b_c1 CURSOR FOR i501_b_p1
               OPEN i501_b_c1
-              FETCH i501_b_c1 INTO l_n              
+              FETCH i501_b_c1 INTO l_n
               IF SQLCA.SQLCODE THEN
                  CALL cl_err("", SQLCA.SQLCODE, 0)
                  CLOSE i501_b_c1
-                 NEXT FIELD sfs03 
-              END IF 
+                 NEXT FIELD sfs03
+              END IF
               CLOSE i501_b_c1
               #FUN-B80143 --END--
-                 
+
               IF l_n <=0 THEN
-                 CALL cl_err('','asf-340',1) 
+                 CALL cl_err('','asf-340',1)
                  NEXT FIELD sfs03
 #FUN-A60028 --begin--
               ELSE
@@ -8673,115 +8692,115 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
             	  #   AND ecu02  = l_sfb06
             	  #   AND ecu012 = g_sfs[l_ac].sfs012
                    CALL s_schdat_ecm014(g_sfs[l_ac].sfs03,g_sfs[l_ac].sfs012) RETURNING g_sfs[l_ac].ecu014
-                  #FUN-B10056 ---------mod end-----------------   
-            	   DISPLAY BY NAME g_sfs[l_ac].ecu014   
-   
-#FUN-A60028 --end--                 
-              END IF 
-           END IF 
+                  #FUN-B10056 ---------mod end-----------------
+            	   DISPLAY BY NAME g_sfs[l_ac].ecu014
+
+#FUN-A60028 --end--
+              END IF
+           END IF
 {
            #str----add by huanglf161027
-           IF  NOT cl_null(g_sfs[l_ac].sfs03) THEN 
-              IF g_prog = 'asfi512' THEN 
+           IF  NOT cl_null(g_sfs[l_ac].sfs03) THEN
+              IF g_prog = 'asfi512' THEN
                    SELECT ima35 INTO g_sfs[l_ac].sfsud02 FROM ima_file WHERE ima01 = g_sfs[l_ac].sfs04
                    LET g_sfs[l_ac].sfs07 = 'XBC'
                    DISPLAY g_sfs[l_ac].sfsud02 TO sfsud02
                    DISPLAY g_sfs[l_ac].sfs07 TO sfs07
-              END IF 
-           END IF 
+              END IF
+           END IF
            }
 #str-----end by huanglf161027
 #str----add by huanglf161027
-           IF  NOT cl_null(g_sfs[l_ac].sfs03) THEN 
-              IF g_prog = 'asfi512' THEN 
+           IF  NOT cl_null(g_sfs[l_ac].sfs03) THEN
+              IF g_prog = 'asfi512' THEN
                    SELECT ima35 INTO g_sfs[l_ac].sfsud02 FROM ima_file WHERE ima01 = g_sfs[l_ac].sfs04
-              
+
                    IF g_sfs[l_ac].sfs04[1] MATCHES 'K'  THEN        # 判断料件编号是否已K开头的客供料 add by huzhou 20170808
-                       LET g_sfs[l_ac].sfs07 = 'Free XBC'              # add by huzhou 20170808                            
-                   ELSE	                                          
+                       LET g_sfs[l_ac].sfs07 = 'Free XBC'              # add by huzhou 20170808
+                   ELSE
                       LET g_sfs[l_ac].sfs07 = 'XBC'
                    END IF
                    DISPLAY g_sfs[l_ac].sfsud02 TO sfsud02
                    DISPLAY g_sfs[l_ac].sfs07 TO sfs07
-              END IF 
-           END IF 
+              END IF
+           END IF
 #str-----end by huanglf161027
 
 #FUN-A60028 --begin--
         BEFORE FIELD sfs012
-           IF cl_null(g_sfs[l_ac].sfs03) THEN 
-              NEXT FIELD sfs03 
-           END IF   
-           IF cl_null(g_sfs[l_ac].sfs04) THEN 
-              NEXT FIELD sfs04 
-           END IF                              
-        
+           IF cl_null(g_sfs[l_ac].sfs03) THEN
+              NEXT FIELD sfs03
+           END IF
+           IF cl_null(g_sfs[l_ac].sfs04) THEN
+              NEXT FIELD sfs04
+           END IF
+
         AFTER FIELD sfs012
-          #IF cl_null(g_sfs[l_ac].sfs012) THEN 
+          #IF cl_null(g_sfs[l_ac].sfs012) THEN
           #   LET g_sfs[l_ac].sfs012 = ' '
-          #END IF  
+          #END IF
           IF NOT cl_null(g_sfs[l_ac].sfs012) THEN #FUN-B20079 jan
-             LET l_cnt = 0 
+             LET l_cnt = 0
              SELECT COUNT(*) INTO l_cnt FROM sfa_file
-              WHERE sfa01 =g_sfs[l_ac].sfs03 
+              WHERE sfa01 =g_sfs[l_ac].sfs03
                 AND sfa03 =g_sfs[l_ac].sfs04
                #AND sfa08 =g_sfs[l_ac].sfs10 #FUN-B20079
                #AND sfa12 =g_sfs[l_ac].sfs06 #FUN-B20079 jan
-                AND sfa27 =g_sfs[l_ac].sfs27 
+                AND sfa27 =g_sfs[l_ac].sfs27
                 AND sfa012=g_sfs[l_ac].sfs012
-             IF l_cnt = 0 THEN 
+             IF l_cnt = 0 THEN
                 CALL cl_err('','aic-036',0)
                 NEXT FIELD sfs012
-             END IF    
+             END IF
             #SELECT sfb06 INTO l_sfb06 FROM sfb_file  #MOD-AC0336   #FUN-B20079 jan
             # WHERE sfb01 = g_sfs[l_ac].sfs03                      #FUN-B20079 jan
             #CALL s_schdat_sel_ima571(g_sfs[l_ac].sfs03) RETURNING l_flag1,l_sfb05 #MOD-AC0336 #FUN-B20079 jan
-            #FUN-B10056 ---------mod start----------  
+            #FUN-B10056 ---------mod start----------
             #SELECT ecu014 INTO g_sfs[l_ac].ecu014 FROM ecu_file
             # WHERE ecu01  = l_sfb05
             #   AND ecu02  = l_sfb06
             #   AND ecu012 = g_sfs[l_ac].sfs012
-            CALL s_schdat_ecm014(g_sfs[l_ac].sfs03,g_sfs[l_ac].sfs012) RETURNING g_sfs[l_ac].ecu014 
-            #FUN-B10056 --------mod end------------  
-             DISPLAY BY NAME g_sfs[l_ac].ecu014   
+            CALL s_schdat_ecm014(g_sfs[l_ac].sfs03,g_sfs[l_ac].sfs012) RETURNING g_sfs[l_ac].ecu014
+            #FUN-B10056 --------mod end------------
+             DISPLAY BY NAME g_sfs[l_ac].ecu014
              #FUN-B20079  jan--add--begin
              CALL i501_chk_sfs()
              IF NOT cl_null(g_errno) THEN
                  CALL cl_err('sel sfa:',g_errno,0)
                  NEXT FIELD sfs012
              END IF
-             #FUN-B20079 jan--add--end            
+             #FUN-B20079 jan--add--end
           END IF  #FUN-B20079 jan
 
         BEFORE FIELD sfs013
-          IF cl_null(g_sfs[l_ac].sfs03) THEN 
+          IF cl_null(g_sfs[l_ac].sfs03) THEN
              NEXT FIELD sfs03
-          END IF 
-           IF cl_null(g_sfs[l_ac].sfs04) THEN 
-              NEXT FIELD sfs04 
-           END IF                    
-          IF g_sfs[l_ac].sfs012 IS NULL THEN 
+          END IF
+           IF cl_null(g_sfs[l_ac].sfs04) THEN
+              NEXT FIELD sfs04
+           END IF
+          IF g_sfs[l_ac].sfs012 IS NULL THEN
              NEXT FIELD sfs012
-          END IF 
-          
+          END IF
+
         AFTER FIELD sfs013
-         IF g_sma.sma541 = 'Y' THEN 
-             IF cl_null(g_sfs[l_ac].sfs013) THEN 
+         IF g_sma.sma541 = 'Y' THEN
+             IF cl_null(g_sfs[l_ac].sfs013) THEN
                 NEXT FIELD sfs013
-             END IF  
-             LET l_cnt = 0 
+             END IF
+             LET l_cnt = 0
              SELECT COUNT(*) INTO l_cnt FROM sfa_file
-              WHERE sfa01 =g_sfs[l_ac].sfs03 
+              WHERE sfa01 =g_sfs[l_ac].sfs03
                 AND sfa03 =g_sfs[l_ac].sfs04
                #AND sfa08 =g_sfs[l_ac].sfs10  #FUN-B20079 jan
                #AND sfa12 =g_sfs[l_ac].sfs06  #FUN-B20079 jan
-                AND sfa27 =g_sfs[l_ac].sfs27 
+                AND sfa27 =g_sfs[l_ac].sfs27
                 AND sfa012=g_sfs[l_ac].sfs012
                 AND sfa013=g_sfs[l_ac].sfs013
-             IF l_cnt = 0 THEN 
+             IF l_cnt = 0 THEN
                 CALL cl_err('','aic-036',0)
                 NEXT FIELD sfs013
-             END IF       
+             END IF
              #FUN-B20079 jan--add--begin
              CALL i501_chk_sfs()
              IF NOT cl_null(g_errno) THEN
@@ -8789,9 +8808,9 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                  NEXT FIELD sfs013
              END IF
              #FUN-B20079 jan--add--edd----
-          END IF       
+          END IF
 #FUN-A60028 --end--
- 
+
         BEFORE FIELD sfs04
            CALL i501_set_entry_b('u')
            CALL i501_set_no_required()
@@ -8803,31 +8822,31 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
            #CALL cl_set_comp_entry("sfs09",FALSE)
         AFTER FIELD sfs04
            #str----add by chenkun160815
-    IF g_sfp.sfp04 ='Y' THEN 
-      LET l_add1 = 0 
-      LET l_add2 = 0  
-      LET l_add3 = NULL 
-      SELECT count(*) INTO l_add1 FROM sfe_file 
-      WHERE sfe02 = g_sfp.sfp01 AND sfe01 = g_sfs[l_ac].sfs03 AND sfe07 = g_sfs[l_ac].sfs04
-      DISPLAY l_add1 TO add1
-      SELECT sum(sfeud07) INTO l_add2 FROM sfe_file 
-      WHERE sfe02 = g_sfp.sfp01 AND sfe01 = g_sfs[l_ac].sfs03 AND sfe07 = g_sfs[l_ac].sfs04
-      LET l_add3 = g_sfs[l_ac].sfs04
-      DISPLAY l_add2 TO add2
-      DISPLAY l_add3 TO add3
-    ELSE  
-      LET l_add1 = 0 
-      LET l_add2 = 0  
+    IF g_sfp.sfp04 ='Y' THEN
+      LET l_add1 = 0
+      LET l_add2 = 0
       LET l_add3 = NULL
-      SELECT count(*) INTO l_add1 FROM sfs_file 
+      SELECT count(*) INTO l_add1 FROM sfe_file
+      WHERE sfe02 = g_sfp.sfp01 AND sfe01 = g_sfs[l_ac].sfs03 AND sfe07 = g_sfs[l_ac].sfs04
+      DISPLAY l_add1 TO add1
+      SELECT sum(sfeud07) INTO l_add2 FROM sfe_file
+      WHERE sfe02 = g_sfp.sfp01 AND sfe01 = g_sfs[l_ac].sfs03 AND sfe07 = g_sfs[l_ac].sfs04
+      LET l_add3 = g_sfs[l_ac].sfs04
+      DISPLAY l_add2 TO add2
+      DISPLAY l_add3 TO add3
+    ELSE
+      LET l_add1 = 0
+      LET l_add2 = 0
+      LET l_add3 = NULL
+      SELECT count(*) INTO l_add1 FROM sfs_file
       WHERE sfs01 = g_sfp.sfp01 AND sfs03 = g_sfs[l_ac].sfs03 AND sfs04 = g_sfs[l_ac].sfs04
       DISPLAY l_add1 TO add1
-      SELECT sum(sfsud07) INTO l_add2 FROM sfs_file 
+      SELECT sum(sfsud07) INTO l_add2 FROM sfs_file
       WHERE sfs01 = g_sfp.sfp01 AND sfs03 = g_sfs[l_ac].sfs03 AND sfs04 = g_sfs[l_ac].sfs04
       LET l_add3 = g_sfs[l_ac].sfs04
       DISPLAY l_add2 TO add2
       DISPLAY l_add3 TO add3
-    END IF 
+    END IF
      #end----add by chenkun160815
 #FUN-BA0050 -----------------Begin---------------
            CALL i501_set_required_sfs09()
@@ -8845,9 +8864,9 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                  SELECT ima35,ima36 INTO g_sfs[l_ac].sfs07,g_sfs[l_ac].sfs08
                    FROM ima_file
                   WHERE ima01 = g_sfs[l_ac].sfs04
-                 IF cl_null(g_sfs[l_ac].sfs09) THEN 
-                    LET g_sfs[l_ac].sfs09 = ' ' 
-                 END IF  
+                 IF cl_null(g_sfs[l_ac].sfs09) THEN
+                    LET g_sfs[l_ac].sfs09 = ' '
+                 END IF
                  #Add No.FUN-AB0018
                  IF NOT cl_null(g_sfs[l_ac].sfs07) THEN
                     IF NOT s_chk_ware(g_sfs[l_ac].sfs07) THEN  #检查仓库是否属于当前门店
@@ -8856,71 +8875,71 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                  END IF
                  #End Add No.FUN-AB0018
                   #str----add by guanyao160929
-                  IF g_sfp.sfp06 MATCHES '[2]' THEN 
+                  IF g_sfp.sfp06 MATCHES '[2]' THEN
                      LET g_sfs[l_ac].sfsud02 = g_sfs[l_ac].sfs07
                      LET g_sfs[l_ac].sfs07 = 'XBC'   #add by huanglf161027
                      DISPLAY BY NAME g_sfs[l_ac].sfsud02
-                  END IF 
+                  END IF
                   #end----add by guanyao160929
                   DISPLAY BY NAME g_sfs[l_ac].sfs07
                   DISPLAY BY NAME g_sfs[l_ac].sfs08
               END IF
               #GP5.15發料改善:重復性生產時,sfs27=sfs04
-              IF g_argv2 MATCHES '[ABC]' THEN 
+              IF g_argv2 MATCHES '[ABC]' THEN
                  LET g_sfs[l_ac].sfs27 = g_sfs[l_ac].sfs04
               END IF
               #MOD-D30037---begin
               SELECT COUNT(*) INTO l_cnt
-                FROM sfa_file 
+                FROM sfa_file
                WHERE sfa01=g_sfs[l_ac].sfs03
-                 AND sfa27=g_sfs[l_ac].sfs27 
+                 AND sfa27=g_sfs[l_ac].sfs27
                  AND sfa03=g_sfs[l_ac].sfs04
               IF l_cnt = 0 THEN
                  SELECT COUNT(*) INTO l_cnt
-                   FROM sfa_file 
-                  WHERE sfa01=g_sfs[l_ac].sfs03 
+                   FROM sfa_file
+                  WHERE sfa01=g_sfs[l_ac].sfs03
                     AND sfa03=g_sfs[l_ac].sfs04
                  IF l_cnt = 1 THEN
                     SELECT sfa26,sfa27 INTO l_sfa26,l_sfa27
-                      FROM sfa_file 
-                     WHERE sfa01=g_sfs[l_ac].sfs03 
+                      FROM sfa_file
+                     WHERE sfa01=g_sfs[l_ac].sfs03
                        AND sfa03=g_sfs[l_ac].sfs04
                    #MOD-D60234 mark begin--------------------------
-                   #IF l_sfa26 NOT  MATCHES '[9BCUSTZ]' THEN  
+                   #IF l_sfa26 NOT  MATCHES '[9BCUSTZ]' THEN
                    #   LET g_sfs[l_ac].sfs26 = ''
-                   #END IF 
+                   #END IF
                    #MOD-D60234 mark end----------------------------
                     IF g_sfs[l_ac].sfs26 <> l_sfa26 OR g_sfs[l_ac].sfs27 <> l_sfa27 OR cl_null(g_sfs[l_ac].sfs26) OR cl_null(g_sfs[l_ac].sfs27) THEN
                      #   IF cl_confirm("asf-450") THEN #darcy:2024/09/12 add
                           LET g_sfs[l_ac].sfs26 = l_sfa26
                           LET g_sfs[l_ac].sfs27 = l_sfa27
                      #   END IF #darcy:2024/09/12 add
-                    END IF 
+                    END IF
                    #MOD-D60234 add begin----------------------
                     IF l_sfa26 NOT  MATCHES '[9BCUSTZ]' THEN
                        LET g_sfs[l_ac].sfs26 = ''
                     END IF
                    #MOD-D60234 add end------------------------
-                 END IF 
+                 END IF
                  IF l_cnt > 1 THEN
                     CALL i501_sfs27_cho()
                     DISPLAY BY NAME g_sfs[l_ac].sfs26
                     DISPLAY BY NAME g_sfs[l_ac].sfs27
                     DISPLAY BY NAME g_sfs[l_ac].sfs04
-                 END IF 
-              END IF 
+                 END IF
+              END IF
               IF cl_null(g_sfs[l_ac].sfs26) THEN
                  LET g_sfs[l_ac].sfs27 = g_sfs[l_ac].sfs04
                  SELECT COUNT(*) INTO l_cnt
-                   FROM sfa_file 
-                  WHERE sfa01=g_sfs[l_ac].sfs03 
-                    AND sfa27=g_sfs[l_ac].sfs27 
+                   FROM sfa_file
+                  WHERE sfa01=g_sfs[l_ac].sfs03
+                    AND sfa27=g_sfs[l_ac].sfs27
                     AND sfa03=g_sfs[l_ac].sfs04
                  IF l_cnt = 0 THEN
                     CALL cl_err('sfs04=sfs27','aem-015',0)
                     NEXT FIELD sfs04
-                 END IF 
-              END IF 
+                 END IF
+              END IF
               #MOD-D30037---end
               IF g_sfs[l_ac].sfs26 MATCHES '[SUZ]' AND             #FUN-A40058 add 'Z'
                  g_sfp.sfp06 MATCHES '[12346789]' THEN             #MOD-B20062 add 6789
@@ -8931,10 +8950,10 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                 #GP5.15發料改善修改:b_sfs.sfs27 原由i501_sfs27()開出的
                 #畫面手工輸入,現此欄位當g_argv2 NOT MATCHES '[ABC]'
                 #(重復性生成模組不顯示)時,在畫面上都顯示出來,故直接
-                LET b_sfs.sfs27 = g_sfs[l_ac].sfs27 
+                LET b_sfs.sfs27 = g_sfs[l_ac].sfs27
                 LET g_sfs27 = b_sfs.sfs27   #MOD-9A0123
- 
-                #因被替代料可以手key,故此處檢查必須sfs27有值 
+
+                #因被替代料可以手key,故此處檢查必須sfs27有值
                 IF NOT cl_null(g_sfs[l_ac].sfs03) AND NOT cl_null(b_sfs.sfs27) THEN
                  IF g_sfp.sfp06 MATCHES '[ABC]' THEN #FUN-5C0114
                     LET l_sfa29=g_sfs[l_ac].sfs03
@@ -8972,14 +8991,14 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                  AND sfs08=g_sfs[l_ac].sfs08     #MOD-D60001 add
                  AND sfs09=g_sfs[l_ac].sfs09     #MOD-D60001 add
               IF g_cnt>0 THEN CALL cl_err('','aim-401',0) END IF
- 
+
               SELECT ima25 INTO l_b2
                 FROM ima_file WHERE ima01=g_sfs[l_ac].sfs04 AND imaacti='Y'
               IF STATUS THEN
                  CALL cl_err3("sel","ima_file",g_sfs[l_ac].sfs04,"",STATUS,"","sel ima",1)  #No.FUN-660128
                  NEXT FIELD sfs04
               END IF
- 
+
               IF g_sfp.sfp06 MATCHES '[ABC]' THEN
                  LET g_sfs[l_ac].sfs06=''
                  SELECT ima55 INTO g_sfs[l_ac].sfs06 FROM ima_file
@@ -9036,8 +9055,8 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                  (NOT cl_null(g_sfs[l_ac].sfs06)) THEN  #TQC-9C0048
                  IF  cl_null(g_sfs[l_ac].sfs10) THEN  LET g_sfs[l_ac].sfs10=' ' END IF   #TQC-9C0048
                  IF  cl_null(g_sfs[l_ac].sfs012) THEN  LET g_sfs[l_ac].sfs012=' ' END IF   #FUN-A60028
-                 IF  cl_null(g_sfs[l_ac].sfs013) THEN  LET g_sfs[l_ac].sfs013=0 END IF     #FUN-A60028                 
-                 IF (g_sfs[l_ac].sfs26 MATCHES '[SUZ]') AND (NOT g_sfp.sfp06 MATCHES '[ABC]') THEN  #FUN-A40058 add 'Z' 
+                 IF  cl_null(g_sfs[l_ac].sfs013) THEN  LET g_sfs[l_ac].sfs013=0 END IF     #FUN-A60028
+                 IF (g_sfs[l_ac].sfs26 MATCHES '[SUZ]') AND (NOT g_sfp.sfp06 MATCHES '[ABC]') THEN  #FUN-A40058 add 'Z'
                    #CHI-E30004-Start-Modify
                    #SELECT sfa26 INTO g_sfa26 FROM sfa_file
                    # WHERE sfa01=g_sfs[l_ac].sfs03
@@ -9057,14 +9076,14 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                      WHERE sfa01=g_sfs[l_ac].sfs03
                        AND (sfa03=g_sfs[l_ac].sfs04 OR sfa27=g_sfs[l_ac].sfs27)
                        AND sfa12=g_sfs[l_ac].sfs06
-                       AND sfa012=g_sfs[l_ac].sfs012      
-                       AND sfa013=g_sfs[l_ac].sfs013   
-                       AND sfa08=g_sfs[l_ac].sfs10   
+                       AND sfa012=g_sfs[l_ac].sfs012
+                       AND sfa013=g_sfs[l_ac].sfs013
+                       AND sfa08=g_sfs[l_ac].sfs10
                        AND sfa26 != '0'
                     IF l_cnt=0 THEN
-                      CALL cl_err('sel sfa',100,0) NEXT FIELD sfs26 
-                    END IF 
-                    #CHI-E30004-End-Modify 
+                      CALL cl_err('sel sfa',100,0) NEXT FIELD sfs26
+                    END IF
+                    #CHI-E30004-End-Modify
                     LET l_sfa29=NULL
                     LET l_sfa11=''     #FUN-9C0040
                     SELECT sfa29,sfa11 INTO l_sfa29,l_sfa11 FROM sfa_file  #TQC-9C0048 #FUN-9C0040
@@ -9075,7 +9094,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                        AND sfa08=g_sfs[l_ac].sfs10  #TQC-9C0048
                        AND sfa012= g_sfs[l_ac].sfs012   #FUN-A60028
                        AND sfa013= g_sfs[l_ac].sfs013   #FUN-A60028
-                       
+
                     #SELECT bmd07 FROM sfb_file,bmd_file   #MOD-A40144 mark
                     SELECT SUM(bmd07) FROM sfb_file,bmd_file  #MOD-A40144 mod
                      WHERE sfb01=g_sfs[l_ac].sfs03
@@ -9089,8 +9108,8 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                           NEXT FIELD sfs26
                        END IF
                     END IF
-                    #FUN-9C0040--begin--add----------------- 
-                    IF g_argv1='1' OR g_sfp.sfp06 = '9' THEN 
+                    #FUN-9C0040--begin--add-----------------
+                    IF g_argv1='1' OR g_sfp.sfp06 = '9' THEN
                        IF l_sfa11 IS NOT NULL THEN
                           IF g_sfp.sfp06='4' AND l_sfa11<>'E' THEN
                              CALL cl_err('','mfg-051',0)
@@ -9107,26 +9126,26 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                        END IF
                     END IF
                     #FUN-9C0040--end--add----------------------
-                 END IF    
+                 END IF
                  #MOD-C50150 add begin-----------------------------------
                  LET l_sfa11=''
                  SELECT sfa29,sfa11 INTO l_sfa29,l_sfa11 FROM sfa_file
                   WHERE sfa01=g_sfs[l_ac].sfs03
-                    AND sfa03=g_sfs[l_ac].sfs04  
-                    AND sfa27=g_sfs[l_ac].sfs27  
-                    AND sfa12=g_sfs[l_ac].sfs06  
-                    AND sfa08=g_sfs[l_ac].sfs10  
-                    AND sfa012= g_sfs[l_ac].sfs012  
-                    AND sfa013= g_sfs[l_ac].sfs013 
+                    AND sfa03=g_sfs[l_ac].sfs04
+                    AND sfa27=g_sfs[l_ac].sfs27
+                    AND sfa12=g_sfs[l_ac].sfs06
+                    AND sfa08=g_sfs[l_ac].sfs10
+                    AND sfa012= g_sfs[l_ac].sfs012
+                    AND sfa013= g_sfs[l_ac].sfs013
                  IF g_argv1='1' OR g_sfp.sfp06 = '9' THEN
                     IF g_sfp.sfp06='1' AND l_sfa11 = 'E' THEN
                        CALL cl_err('','asf-602',0)
                        NEXT FIELD sfs04
                     END IF
                  END IF
-                 #MOD-C50150 add end-------------------------------------       
+                 #MOD-C50150 add end-------------------------------------
               END IF  #FUN-940039 add
- 
+
            END IF
            IF g_sma.sma115 = 'Y' THEN
               IF NOT cl_null(g_sfs[l_ac].sfs04) THEN
@@ -9152,7 +9171,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                 AND sfa12=g_sfs[l_ac].sfs06
                 AND sfa08=g_sfs[l_ac].sfs10
                 AND sfa012= g_sfs[l_ac].sfs012   #FUN-A60028
-                AND sfa013= g_sfs[l_ac].sfs013   #FUN-A60028                
+                AND sfa013= g_sfs[l_ac].sfs013   #FUN-A60028
             #MOD-B30702--begin
             IF g_argv2 = '8' THEN
              SELECT UNIQUE sfa27 INTO l_sfa27_a FROM sfa_file
@@ -9160,29 +9179,29 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                 AND sfa03=g_sfs[l_ac].sfs04
                 AND sfa12=g_sfs[l_ac].sfs06
                 AND sfa08=g_sfs[l_ac].sfs10
-                AND sfa012= g_sfs[l_ac].sfs012   
-                AND sfa013= g_sfs[l_ac].sfs013                  
+                AND sfa012= g_sfs[l_ac].sfs012
+                AND sfa013= g_sfs[l_ac].sfs013
                 AND sfa11 = 'S'
-            END IF 
-            #MOD-B30702--end                 
+            END IF
+            #MOD-B30702--end
           END IF
            #當替代碼為空的時候,發料料號應該=被替代料號
            IF cl_null(g_sfs[l_ac].sfs26) THEN
-              IF NOT cl_null(g_sfs[l_ac].sfs04) AND 
-                 NOT cl_null(g_sfs[l_ac].sfs27) THEN 
-                 IF g_sfs[l_ac].sfs04 <> g_sfs[l_ac].sfs27 THEN 
-                    CALL cl_err('','asf-475',1) 
+              IF NOT cl_null(g_sfs[l_ac].sfs04) AND
+                 NOT cl_null(g_sfs[l_ac].sfs27) THEN
+                 IF g_sfs[l_ac].sfs04 <> g_sfs[l_ac].sfs27 THEN
+                    CALL cl_err('','asf-475',1)
                     NEXT FIELD sfs04
                  END IF
-              END IF 
-           END IF 
+              END IF
+           END IF
            #判斷被替代料須存在于備料檔中
-           IF NOT cl_null(g_sfs[l_ac].sfs27) AND 
-              NOT cl_null(g_sfs[l_ac].sfs03) AND 
-              NOT cl_null(g_sfs[l_ac].sfs04) THEN  
+           IF NOT cl_null(g_sfs[l_ac].sfs27) AND
+              NOT cl_null(g_sfs[l_ac].sfs03) AND
+              NOT cl_null(g_sfs[l_ac].sfs04) THEN
              #g_sfs[l_ac].sfs012 IS NOT NULL AND    #FUN-A60028 add sfs012 #FUN-B20079 jan
              #NOT cl_null(g_sfs[l_ac].sfs013) THEN  #FUN-A60028 ADD sfs013 #FUN-B20079 jan
-             
+
              #FUN-B80143 --START mark--
              # SELECT COUNT(*) INTO l_n FROM sfa_file
              #  WHERE sfa01 = g_sfs[l_ac].sfs03
@@ -9195,32 +9214,32 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
 
               #FUN-B80143 --START--
               LET g_sql = "SELECT COUNT(*) FROM sfa_file",
-                          " WHERE sfa01 ='", g_sfs[l_ac].sfs03, "'", 
+                          " WHERE sfa01 ='", g_sfs[l_ac].sfs03, "'",
                           #"   AND sfa03 ='", g_sfs[l_ac].sfs27, "'",#darcy: mark 20220315
                           #darcy: add 20220315 s---
                           "   AND sfa03 ='", g_sfs[l_ac].sfs04, "'",
                           "   AND sfa27 ='", g_sfs[l_ac].sfs27, "'"
-                          #darcy: add 20220315 e---                                               
+                          #darcy: add 20220315 e---
               IF g_sfp.sfp06 = '7' THEN
                  LET g_sql = g_sql, " AND sfa062 > 0 "
-              END IF              
+              END IF
               PREPARE i501_b_p2 FROM g_sql
               DECLARE i501_b_c2 CURSOR FOR i501_b_p2
               OPEN i501_b_c2
-              FETCH i501_b_c2 INTO l_n              
+              FETCH i501_b_c2 INTO l_n
               IF SQLCA.SQLCODE THEN
                  CALL cl_err("", SQLCA.SQLCODE, 0)
                  CLOSE i501_b_c2
-                 NEXT FIELD sfs04 
-              END IF 
+                 NEXT FIELD sfs04
+              END IF
               CLOSE i501_b_c2
               #FUN-B80143 --END--
-              
+
               IF l_n <=0 THEN
-                 CALL cl_err('','asf-340',1) 
+                 CALL cl_err('','asf-340',1)
                  NEXT FIELD sfs04
-              END IF 
-           END IF 
+              END IF
+           END IF
            #FUN-B20079 jan (S)
            CALL i501_chk_sfs()
            IF NOT cl_null(g_errno) THEN
@@ -9233,10 +9252,10 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
            IF cl_null(g_sfs[l_ac].sfs26) THEN
              LET g_sfs[l_ac].sfs27 = g_sfs[l_ac].sfs04
              DISPLAY BY NAME g_sfs[l_ac].sfs27
-           END IF 
+           END IF
 
 
-         BEFORE FIELD sfs27          
+         BEFORE FIELD sfs27
            CALL i501_chk_entry_sfs27()
         #CHI-C50011 end add------
          AFTER FIELD sfs27
@@ -9284,31 +9303,31 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
 
              #FUN-B80143 --START--
               LET g_sql = "SELECT COUNT(*) FROM sfa_file",
-                          " WHERE sfa01 ='", g_sfs[l_ac].sfs03, "'",  
+                          " WHERE sfa01 ='", g_sfs[l_ac].sfs03, "'",
                           #"   AND sfa03 ='", g_sfs[l_ac].sfs27, "'"#darcy: mark 20220315
                           #darcy: add 20220315 s---
                           "   AND sfa03 ='", g_sfs[l_ac].sfs04, "'",
                           "   AND sfa27 ='", g_sfs[l_ac].sfs27, "'"
-                          #darcy: add 20220315 e---                                                 
+                          #darcy: add 20220315 e---
               IF g_sfp.sfp06 = '7' THEN
                  LET g_sql = g_sql, " AND sfa062 > 0 "
-              END IF              
+              END IF
               PREPARE i501_b_p3 FROM g_sql
               DECLARE i501_b_c3 CURSOR FOR i501_b_p3
               OPEN i501_b_c3
-              FETCH i501_b_c3 INTO l_n              
+              FETCH i501_b_c3 INTO l_n
               IF SQLCA.SQLCODE THEN
                  CALL cl_err("", SQLCA.SQLCODE, 0)
                  CLOSE i501_b_c3
                  NEXT FIELD sfs27
-              END IF 
+              END IF
               CLOSE i501_b_c3
               #FUN-B80143 --END--
-             
+
               IF l_n <=0 THEN
-                 CALL cl_err('','asf-340',1) 
+                 CALL cl_err('','asf-340',1)
                  NEXT FIELD sfs27
-              END IF 
+              END IF
               #FUN-B20079 jan (S)
               CALL i501_chk_sfs()
               IF NOT cl_null(g_errno) THEN
@@ -9316,28 +9335,28 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                  NEXT FIELD sfs27
               END IF
               #FUN-B20079 jan (E)
-           END IF 
+           END IF
            #當替代碼為空的時候,發料料號應該=被替代料號
            IF cl_null(g_sfs[l_ac].sfs26) THEN
-              IF g_sfs[l_ac].sfs04 <> g_sfs[l_ac].sfs27 THEN 
-                 CALL cl_err('','asf-475',1) 
+              IF g_sfs[l_ac].sfs04 <> g_sfs[l_ac].sfs27 THEN
+                 CALL cl_err('','asf-475',1)
                  NEXT FIELD sfs27
               END IF
-           END IF 
+           END IF
           SELECT sfa36 INTO l_sfa36 FROM sfa_file
            WHERE sfa01=g_sfs[l_ac].sfs03
              AND sfa03=g_sfs[l_ac].sfs04
              AND sfa12=g_sfs[l_ac].sfs06
              AND sfa08=g_sfs[l_ac].sfs10
              AND sfa27=g_sfs[l_ac].sfs27  #g_sfs[l_ac].sfs27
-             AND sfa012=g_sfs[l_ac].sfs012   #FUN-A60028 
-             AND sfa013=g_sfs[l_ac].sfs013   #FUN-A60028 
+             AND sfa012=g_sfs[l_ac].sfs012   #FUN-A60028
+             AND sfa013=g_sfs[l_ac].sfs013   #FUN-A60028
           SELECT mse02 INTO g_sfs[l_ac].mse02
             FROM mse_file WHERE mse01=g_sfs[l_ac].sfs36
           LET g_sfs[l_ac].sfs36 = l_sfa36
           DISPLAY BY NAME g_sfs[l_ac].sfs08
           DISPLAY g_sfs[l_ac].mse02 TO FORMONLY.mse02
-          
+
          AFTER FIELD sfs06
             IF NOT cl_null(g_sfs[l_ac].sfs06) THEN
                SELECT gfe02 INTO g_buf FROM gfe_file
@@ -9351,7 +9370,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                    WHERE sfa01=g_sfs[l_ac].sfs03
                      AND (sfa03=g_sfs[l_ac].sfs04 OR sfa27=b_sfs.sfs27)
                      AND sfa12=g_sfs[l_ac].sfs06
-                     AND sfa012=g_sfs[l_ac].sfs012       #FUN-A60028 
+                     AND sfa012=g_sfs[l_ac].sfs012       #FUN-A60028
                      AND sfa013=g_sfs[l_ac].sfs013       #FUN-A60028
                   IF l_n=0 THEN
                      CALL cl_err('sel sfa',100,0) NEXT FIELD sfs06
@@ -9364,45 +9383,45 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                   OR g_sfs_t.sfs05!=g_sfs[l_ac].sfs05 THEN
                   LET g_sfs[l_ac].sfs05 = s_digqty(g_sfs[l_ac].sfs05,g_sfs[l_ac].sfs06)
                END IF
-            END IF 
+            END IF
         #FUN-BB0084 ----------------End--------------------
- 
+
         AFTER FIELD sfs10
-           IF cl_null(g_sfs[l_ac].sfs10) THEN 
-              LET g_sfs[l_ac].sfs10=' ' 
-           ELSE 
+           IF cl_null(g_sfs[l_ac].sfs10) THEN
+              LET g_sfs[l_ac].sfs10=' '
+           ELSE
               CALL i501_sfs10(g_sfs[l_ac].sfs10) RETURNING g_errno
               IF NOT cl_null(g_errno) THEN
                  CALL cl_err(g_sfs[l_ac].sfs10,g_errno,1)
                 NEXT FIELD sfs10
-              END IF 
+              END IF
            END IF
-           IF (g_sfs[l_ac].sfs26 MATCHES '[SUZ]') AND   #FUN-A40058 add 'Z' 
+           IF (g_sfs[l_ac].sfs26 MATCHES '[SUZ]') AND   #FUN-A40058 add 'Z'
                (NOT g_sfp.sfp06 MATCHES '[ABC]') THEN
-               IF cl_null(g_sfs[l_ac].sfs27) THEN #FUN-9B0149      
+               IF cl_null(g_sfs[l_ac].sfs27) THEN #FUN-9B0149
                   #LET l_sfa27 = g_sfs[l_ac].sfs03  #MOD-D30037
                   LET l_sfa27 = g_sfs[l_ac].sfs04  #MOD-D30037
                ELSE
                   LET l_sfa27 = g_sfs[l_ac].sfs27 #FUN-9B0149
                END IF
-               LET l_cn = 0 
+               LET l_cn = 0
                SELECT COUNT(*) INTO l_cn FROM sfa_file
                 WHERE sfa01 = g_sfs[l_ac].sfs03
                   AND sfa27 = l_sfa27
                   AND sfa08 = g_sfs[l_ac].sfs10
             ELSE
-               LET l_cn = 0 
+               LET l_cn = 0
                SELECT COUNT(*) INTO l_cn FROM sfa_file
                 WHERE sfa01 = g_sfs[l_ac].sfs03
                   AND sfa03 = g_sfs[l_ac].sfs04
                   AND sfa08 = g_sfs[l_ac].sfs10
-            END IF     
-           
+            END IF
+
             IF l_cn = 0 THEN
                CALL cl_err(g_sfs[l_ac].sfs10,'asf-905',0)
                NEXT FIELD sfs10
-            END IF      
-            
+            END IF
+
             IF  g_argv2='4' OR  g_argv2='9' THEN   #NO:6908
                 LET l_sfa11=''   #MOD-B80013 add
                 SELECT sfa11 INTO l_sfa11 FROM sfa_file
@@ -9411,8 +9430,8 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                    AND sfa12=g_sfs[l_ac].sfs06
                    AND sfa08=g_sfs[l_ac].sfs10
                    #AND sfa27=g_sfs[l_ac].sfs27  #FUN-9B0149 #MOD-B80111 mark
-                   AND sfa012=g_sfs[l_ac].sfs012    #FUN-A60028 
-                   AND sfa013=g_sfs[l_ac].sfs013    #FUN-A60028 
+                   AND sfa012=g_sfs[l_ac].sfs012    #FUN-A60028
+                   AND sfa013=g_sfs[l_ac].sfs013    #FUN-A60028
                    AND sfa03=g_sfs[l_ac].sfs27      #MOD-B80111 add
                 IF cl_null(l_sfa11) THEN LET l_sfa11='' END IF #MOD-B80013 add
                 IF l_sfa11 MATCHES '[NX]' THEN #CHI-980013
@@ -9429,7 +9448,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                  NEXT FIELD sfs10
               END IF
            END IF
- 
+
            # 領料時只能針對事後扣帳的料
            IF g_sfp.sfp06='4' THEN
               SELECT sfa11 FROM sfa_file
@@ -9438,7 +9457,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                  AND sfa12=g_sfs[l_ac].sfs06
                  AND sfa08=g_sfs[l_ac].sfs10
                  #AND sfa27=g_sfs[l_ac].sfs27  #FUN-9B0149 #MOD-B80111 mark
-                 AND sfa012=g_sfs[l_ac].sfs012   #FUN-A60028 
+                 AND sfa012=g_sfs[l_ac].sfs012   #FUN-A60028
                  AND sfa013=g_sfs[l_ac].sfs013   #FUN-A60028
                  AND sfa03=g_sfs[l_ac].sfs27      #MOD-B80111 add
               IF l_sfa11<>'E' THEN #FUN-9B0149
@@ -9446,7 +9465,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                   NEXT FIELD sfs10
                END IF
            END IF
- 
+
            IF (g_sfs[l_ac].sfs26 MATCHES '[SUZ]') AND (NOT g_sfp.sfp06 MATCHES '[ABC]') THEN #FUN-5C0114   #FUN-A40058 add 'Z'
              #CHI-E30004-Start-Modify
              #SELECT sfa26 INTO g_sfa26 FROM sfa_file
@@ -9455,8 +9474,8 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
              #   AND sfa12=g_sfs[l_ac].sfs06
              #   AND sfa08=g_sfs[l_ac].sfs10
              #   #AND sfa27=g_sfs[l_ac].sfs27    #MOD-B80111 mark
-             #   AND sfa012=g_sfs[l_ac].sfs012   #FUN-A60028 
-             #   AND sfa013=g_sfs[l_ac].sfs013   #FUN-A60028             
+             #   AND sfa012=g_sfs[l_ac].sfs012   #FUN-A60028
+             #   AND sfa013=g_sfs[l_ac].sfs013   #FUN-A60028
              #   AND sfa03=g_sfs[l_ac].sfs27      #MOD-B80111 add
              #IF STATUS THEN
              #   CALL cl_err3("sel","sfa_file",g_sfs[l_ac].sfs03,b_sfs.sfs27,STATUS,"","sel o.sfa",1)  #No.FUN-660128
@@ -9467,14 +9486,14 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                WHERE sfa01=g_sfs[l_ac].sfs03
                  AND (sfa03=g_sfs[l_ac].sfs04 OR sfa27=g_sfs[l_ac].sfs27)
                  AND sfa12=g_sfs[l_ac].sfs06
-                 AND sfa012=g_sfs[l_ac].sfs012      
-                 AND sfa013=g_sfs[l_ac].sfs013   
-                 AND sfa08=g_sfs[l_ac].sfs10   
+                 AND sfa012=g_sfs[l_ac].sfs012
+                 AND sfa013=g_sfs[l_ac].sfs013
+                 AND sfa08=g_sfs[l_ac].sfs10
               IF l_cnt=0 THEN
-                 CALL cl_err('sel sfa',100,0) NEXT FIELD sfs26 
-              END IF 
-             #CHI-E30004-End-Modify 
- 
+                 CALL cl_err('sel sfa',100,0) NEXT FIELD sfs26
+              END IF
+             #CHI-E30004-End-Modify
+
              LET l_sfa29=NULL
              SELECT sfa29 INTO l_sfa29 FROM sfa_file  #TQC-9C0048
               WHERE sfa01=g_sfs[l_ac].sfs03  #TQC-9C0048
@@ -9482,10 +9501,10 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                 AND sfa12=g_sfs[l_ac].sfs06  #TQC-9C0048
                 AND sfa08=g_sfs[l_ac].sfs10  #TQC-9C0048
                 #AND sfa27=g_sfs[l_ac].sfs27  #TQC-9C0048 #MOD-B80111 mark
-                AND sfa012=g_sfs[l_ac].sfs012   #FUN-A60028 
-                AND sfa013=g_sfs[l_ac].sfs013   #FUN-A60028 
+                AND sfa012=g_sfs[l_ac].sfs012   #FUN-A60028
+                AND sfa013=g_sfs[l_ac].sfs013   #FUN-A60028
                 AND sfa03=g_sfs[l_ac].sfs27      #MOD-B80111 add
- 
+
               #SELECT bmd07 FROM sfb_file,bmd_file    #MOD-A40144 mark
               SELECT SUM(bmd07) FROM sfb_file,bmd_file    #MOD-A40144 mod
                WHERE sfb01=g_sfs[l_ac].sfs03
@@ -9501,7 +9520,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
               END IF
            END IF
            # 有可能二次取替代所以改以下判斷方式
-           IF (g_sfp.sfp06 = '1') OR (g_sfp.sfp06 = '2') OR (g_sfp.sfp06 = '4' ) THEN #MOD-6C0050 #帶應發已發欠料的資料,超領和成套發一樣 #MOD-8C0239 modify 
+           IF (g_sfp.sfp06 = '1') OR (g_sfp.sfp06 = '2') OR (g_sfp.sfp06 = '4' ) THEN #MOD-6C0050 #帶應發已發欠料的資料,超領和成套發一樣 #MOD-8C0239 modify
               IF cl_null(g_sfs[l_ac].sfs26) THEN
                   LET l_sfa11=''   #MOD-B80013 add
                   SELECT (sfa05-sfa065),sfa06,sfa11  # 扣除代買部分        #FUN-940039 add   #FUN-B50059 #MOD-B80013 add sfa11
@@ -9512,49 +9531,49 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                      AND sfa12=g_sfs[l_ac].sfs06
                      AND sfa08=g_sfs[l_ac].sfs10
                      #AND sfa27=g_sfs[l_ac].sfs27    #FUN-940039 add #MOD-B80111 mark
-                     AND sfa012=g_sfs[l_ac].sfs012   #FUN-A60028 
-                     AND sfa013=g_sfs[l_ac].sfs013   #FUN-A60028                     
+                     AND sfa012=g_sfs[l_ac].sfs012   #FUN-A60028
+                     AND sfa013=g_sfs[l_ac].sfs013   #FUN-A60028
                      AND sfa03=g_sfs[l_ac].sfs27     #MOD-B80111 add
                      AND sfa27 = g_sfs[l_ac].sfs04    #TQC-CA0014 add
                   IF SQLCA.SQLCODE THEN
                      LET s_sfa05 = 0 LET s_sfa06 = 0
                   END IF
-                 #計算欠料量g_short_qty(原g_sfa07) 
-                  IF cl_null(g_sfs[l_ac].sfs012) THEN LET g_sfs[l_ac].sfs012=' ' END IF #TQC-CB0084 add 
-                  IF cl_null(g_sfs[l_ac].sfs013) THEN LET g_sfs[l_ac].sfs013= 0  END IF #TQC-CB0084 add 
+                 #計算欠料量g_short_qty(原g_sfa07)
+                  IF cl_null(g_sfs[l_ac].sfs012) THEN LET g_sfs[l_ac].sfs012=' ' END IF #TQC-CB0084 add
+                  IF cl_null(g_sfs[l_ac].sfs013) THEN LET g_sfs[l_ac].sfs013= 0  END IF #TQC-CB0084 add
                   CALL s_shortqty(g_sfs[l_ac].sfs03,g_sfs[l_ac].sfs04,g_sfs[l_ac].sfs10,
                                   g_sfs[l_ac].sfs06,g_sfs[l_ac].sfs27,
                                  #g_sfs012,g_sfs013)   #FUN-A50066 add     #MOD-CB0154 mark
                                   g_sfs[l_ac].sfs012,g_sfs[l_ac].sfs013)   #MOD-CB0154
                        RETURNING g_short_qty
-                  IF cl_null(g_short_qty) THEN LET g_short_qty = 0 END IF 
+                  IF cl_null(g_short_qty) THEN LET g_short_qty = 0 END IF
               ELSE
                   LET l_sfa11=''   #MOD-B80013 add
                   SELECT SUM(sfa05-sfa065),SUM(sfa06),sfa11  # 扣除代買部分                #FUN-940039 add #FUN-B50059 #MOD-B80013 add sfa11
                     INTO g_sfs[l_ac].sfa05,g_sfs[l_ac].sfa06,l_sfa11                         #FUN-940039 add #MOD-B80013 add l_sfa11
                     FROM sfa_file
                    WHERE sfa01=g_sfs[l_ac].sfs03
-                     #AND sfa03=g_sfs[l_ac].sfs04  #MOD-630129  #MOD-B80111 mark 
+                     #AND sfa03=g_sfs[l_ac].sfs04  #MOD-630129  #MOD-B80111 mark
                      AND sfa12=g_sfs[l_ac].sfs06
                      AND sfa08=g_sfs[l_ac].sfs10
                      #AND sfa27=g_sfs[l_ac].sfs27 #FUN-940039 add #MOD-B80111 mark
-                     AND sfa012=g_sfs[l_ac].sfs012   #FUN-A60028 
-                     AND sfa013=g_sfs[l_ac].sfs013   #FUN-A60028                     
+                     AND sfa012=g_sfs[l_ac].sfs012   #FUN-A60028
+                     AND sfa013=g_sfs[l_ac].sfs013   #FUN-A60028
                      AND sfa03=g_sfs[l_ac].sfs27     #MOD-B80111 add
                      AND sfa27 = g_sfs[l_ac].sfs04    #TQC-CA0014 add
                      GROUP BY sfa11                  #MOD-C70247 add
                   IF SQLCA.SQLCODE THEN
-                     LET s_sfa05 = 0 LET s_sfa06 = 0 
+                     LET s_sfa05 = 0 LET s_sfa06 = 0
                   END IF
                  #計算欠料量g_short_qty(原g_sfa07)
-                  IF cl_null(g_sfs[l_ac].sfs012) THEN LET g_sfs[l_ac].sfs012=' ' END IF #TQC-CB0084 add 
-                  IF cl_null(g_sfs[l_ac].sfs013) THEN LET g_sfs[l_ac].sfs013= 0  END IF #TQC-CB0084 add 
+                  IF cl_null(g_sfs[l_ac].sfs012) THEN LET g_sfs[l_ac].sfs012=' ' END IF #TQC-CB0084 add
+                  IF cl_null(g_sfs[l_ac].sfs013) THEN LET g_sfs[l_ac].sfs013= 0  END IF #TQC-CB0084 add
                   CALL s_shortqty(g_sfs[l_ac].sfs03,g_sfs[l_ac].sfs04,g_sfs[l_ac].sfs10,
                                   g_sfs[l_ac].sfs06,g_sfs[l_ac].sfs27,
                                  #g_sfs012,g_sfs013)   #FUN-A50066 add   #MOD-CB0154 mark
                                   g_sfs[l_ac].sfs012,g_sfs[l_ac].sfs013)   #MOD-CB0154
                        RETURNING g_short_qty
-                  IF cl_null(g_short_qty) THEN LET g_short_qty = 0 END IF 
+                  IF cl_null(g_short_qty) THEN LET g_short_qty = 0 END IF
               END IF
               DISPLAY BY NAME g_sfs[l_ac].sfa05
               DISPLAY BY NAME g_sfs[l_ac].sfa06
@@ -9568,12 +9587,12 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                WHERE sfa01=g_sfs[l_ac].sfs03
                  #AND sfa03=g_sfs[l_ac].sfs04    #MOD-B80111 mark
                 #AND sfa27=g_sfs[l_ac].sfs04     #MOD-B10201 add  #MOD-C10021 mark
-                 AND sfa27=g_sfs[l_ac].sfs27     #MOD-C10021 add 
+                 AND sfa27=g_sfs[l_ac].sfs27     #MOD-C10021 add
                  AND sfa12=g_sfs[l_ac].sfs06
                  AND sfa08=g_sfs[l_ac].sfs10
                  #AND sfa27=g_sfs[l_ac].sfs27     #FUN-940039 add #MOD-B80111 mark
-                 AND sfa012=g_sfs[l_ac].sfs012   #FUN-A60028 
-                 AND sfa013=g_sfs[l_ac].sfs013   #FUN-A60028                 
+                 AND sfa012=g_sfs[l_ac].sfs012   #FUN-A60028
+                 AND sfa013=g_sfs[l_ac].sfs013   #FUN-A60028
                 #AND sfa03=g_sfs[l_ac].sfs27     #MOD-B80111 add  #MOD-C10021 mark
                  AND sfa03=g_sfs[l_ac].sfs04     #MOD-C10021 add
               IF SQLCA.SQLCODE THEN
@@ -9582,14 +9601,14 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                  LET l_n = l_n + 1
               END IF
              #計算欠料量g_short_qty(原g_sfa07)
-              IF cl_null(g_sfs[l_ac].sfs012) THEN LET g_sfs[l_ac].sfs012=' ' END IF #TQC-CB0084 add 
-              IF cl_null(g_sfs[l_ac].sfs013) THEN LET g_sfs[l_ac].sfs013= 0  END IF #TQC-CB0084 add 
+              IF cl_null(g_sfs[l_ac].sfs012) THEN LET g_sfs[l_ac].sfs012=' ' END IF #TQC-CB0084 add
+              IF cl_null(g_sfs[l_ac].sfs013) THEN LET g_sfs[l_ac].sfs013= 0  END IF #TQC-CB0084 add
               CALL s_shortqty(g_sfs[l_ac].sfs03,g_sfs[l_ac].sfs04,g_sfs[l_ac].sfs10,
                               g_sfs[l_ac].sfs06,g_sfs[l_ac].sfs27,
                              #g_sfs012,g_sfs013)   #FUN-A50066 add    #MOD-CB0154 mark
                               g_sfs[l_ac].sfs012,g_sfs[l_ac].sfs013)  #MOD-CB0154
                    RETURNING g_short_qty
-              IF cl_null(g_short_qty) THEN LET g_short_qty = 0 END IF 
+              IF cl_null(g_short_qty) THEN LET g_short_qty = 0 END IF
               IF cl_null(s_sfa05) THEN LET s_sfa05 = 0 END IF
               IF cl_null(s_sfa06) THEN LET s_sfa06 = 0 END IF
               IF g_sfs[l_ac].sfs26 MATCHES '[SUZ]' THEN                  #FUN-A40058 add 'Z'
@@ -9602,8 +9621,8 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                     AND sfa12=g_sfs[l_ac].sfs06
                     AND sfa08=g_sfs[l_ac].sfs10
                     AND sfa27=g_sfs[l_ac].sfs27   #FUN-940039 add
-                    AND sfa012=g_sfs[l_ac].sfs012   #FUN-A60028 
-                    AND sfa013=g_sfs[l_ac].sfs013   #FUN-A60028                    
+                    AND sfa012=g_sfs[l_ac].sfs012   #FUN-A60028
+                    AND sfa013=g_sfs[l_ac].sfs013   #FUN-A60028
                     GROUP BY sfa11                  #MOD-C70247 add
                  IF SQLCA.sqlcode THEN
                     LET t_sfa05=0 LET t_sfa06=0                 #FUN-940039 add
@@ -9611,20 +9630,20 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                     LET l_n = l_n + 1
                  END IF
                  #計算欠料量t_short_qty(原t_sfa07)
-                  IF cl_null(g_sfs[l_ac].sfs012) THEN LET g_sfs[l_ac].sfs012=' ' END IF #TQC-CB0084 add 
-                  IF cl_null(g_sfs[l_ac].sfs013) THEN LET g_sfs[l_ac].sfs013= 0  END IF #TQC-CB0084 add 
+                  IF cl_null(g_sfs[l_ac].sfs012) THEN LET g_sfs[l_ac].sfs012=' ' END IF #TQC-CB0084 add
+                  IF cl_null(g_sfs[l_ac].sfs013) THEN LET g_sfs[l_ac].sfs013= 0  END IF #TQC-CB0084 add
                   CALL s_shortqty(g_sfs[l_ac].sfs03,b_sfs.sfs27,g_sfs[l_ac].sfs10,
                                   g_sfs[l_ac].sfs06,g_sfs[l_ac].sfs27,
                                  #g_sfs012,g_sfs013)   #FUN-A50066 add    #MOD-CB0154 mark
                                   g_sfs[l_ac].sfs012,g_sfs[l_ac].sfs013)  #MOD-CB0154
                        RETURNING t_short_qty
-#                 IF cl_null(t_short_qty) THEN LET t_short_qty = 0 END IF  #TQC-A50101 
+#                 IF cl_null(t_short_qty) THEN LET t_short_qty = 0 END IF  #TQC-A50101
               END IF
               IF cl_null(t_sfa05) THEN LET t_sfa05 = 0 END IF
               IF cl_null(t_sfa06) THEN LET t_sfa06 = 0 END IF
               LET g_sfs[l_ac].sfa05 = s_sfa05 + t_sfa05
               LET g_sfs[l_ac].sfa06 = s_sfa06 + t_sfa06
-              IF cl_null(t_short_qty) THEN LET t_short_qty = 0 END IF    #TQC-A50101 
+              IF cl_null(t_short_qty) THEN LET t_short_qty = 0 END IF    #TQC-A50101
               LET g_short_qty = g_short_qty + t_short_qty    #FUN-940039 add
               IF l_n = 0 THEN
                  CALL cl_err('sel sfa',SQLCA.SQLCODE,0)
@@ -9647,8 +9666,8 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                  AND sfa12=g_sfs[l_ac].sfs06
                  AND sfa08=g_sfs[l_ac].sfs10
                  AND sfa27=g_sfs[l_ac].sfs27     #FUN-940039 add #MOD-B80111 mark #MOD-D60027 remark
-                 AND sfa012=g_sfs[l_ac].sfs012   #FUN-A60028 
-                 AND sfa013=g_sfs[l_ac].sfs013   #FUN-A60028                 
+                 AND sfa012=g_sfs[l_ac].sfs012   #FUN-A60028
+                 AND sfa013=g_sfs[l_ac].sfs013   #FUN-A60028
               IF g_sfs[l_ac].sfa05<0 AND p_cmd='a' THEN
                  LET g_sfs[l_ac].sfs05=g_sfs[l_ac].sfa05*(-1)
               END IF
@@ -9659,17 +9678,17 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                  LET s_sfa05 = 0 LET s_sfa06 = 0                    #FUN-940039 add   {FUN-AC0074}
               END IF
              #計算欠料量g_short_qty(原g_sfa07)
-              IF cl_null(g_sfs[l_ac].sfs012) THEN LET g_sfs[l_ac].sfs012=' ' END IF #TQC-CB0084 add 
-              IF cl_null(g_sfs[l_ac].sfs013) THEN LET g_sfs[l_ac].sfs013= 0  END IF #TQC-CB0084 add 
+              IF cl_null(g_sfs[l_ac].sfs012) THEN LET g_sfs[l_ac].sfs012=' ' END IF #TQC-CB0084 add
+              IF cl_null(g_sfs[l_ac].sfs013) THEN LET g_sfs[l_ac].sfs013= 0  END IF #TQC-CB0084 add
               CALL s_shortqty(g_sfs[l_ac].sfs03,g_sfs[l_ac].sfs04,g_sfs[l_ac].sfs10,
                               g_sfs[l_ac].sfs06,g_sfs[l_ac].sfs27,
                              #g_sfs012,g_sfs013)   #FUN-A50066 add    #MOD-CB0154 mark
                               g_sfs[l_ac].sfs012,g_sfs[l_ac].sfs013)  #MOD-CB0154
                    RETURNING g_short_qty
-              IF cl_null(g_short_qty) THEN LET g_short_qty = 0 END IF 
+              IF cl_null(g_short_qty) THEN LET g_short_qty = 0 END IF
               CALL i501_ins_rvbs(g_sfs[l_ac].sfs02,g_sfs[l_ac].sfs03,g_sfs[l_ac].sfs04)   #No.FUN-870106
            END IF
- 
+
            IF g_sfp.sfp06='3' THEN
               LET g_sfs[l_ac].sfa05=g_short_qty  #FUN-940039 add
               LET g_sfs[l_ac].sfa06=0
@@ -9678,17 +9697,17 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
            DISPLAY BY NAME g_sfs[l_ac].sfa05
            DISPLAY BY NAME g_sfs[l_ac].sfa06
            DISPLAY BY NAME g_sfs[l_ac].short_qty       #FUN-940039 add
- 
- 
+
+
         AFTER FIELD sfs07
            IF NOT cl_null(g_sfs[l_ac].sfs07) THEN
               #FUN-D20060--add--str---
                IF NOT s_chksmz(g_sfs[l_ac].sfs04, g_sfp.sfp01,
                                g_sfs[l_ac].sfs07, g_sfs[l_ac].sfs08) THEN
-                  NEXT FIELD sfs07 
+                  NEXT FIELD sfs07
                END IF
                #FUN-D20060--add--end---
- 
+
              #SELECT imd02 INTO g_buf FROM imd_file #MOD-950232     #MOD-D60040 mark
               SELECT imd02,imd10 INTO g_buf,l_imd10 FROM imd_file #MOD-950232    #MOD-D60040 add imd10
                WHERE imd01=g_sfs[l_ac].sfs07
@@ -9707,7 +9726,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                   LET g_msg = g_sfs[l_ac].sfs04," ",g_sfs[l_ac].sfs07  #MOD-890107 add
                  IF l_n = 0 THEN
                    #CALL cl_err(g_sfs[l_ac].sfs07,'asf-724',0) NEXT FIELD sfs07   #MOD-890107 mark
-                    CALL cl_err(g_msg,'asf-724',0) NEXT FIELD sfs07               #MOD-890107      
+                    CALL cl_err(g_msg,'asf-724',0) NEXT FIELD sfs07               #MOD-890107
                  END IF
               END IF
               #Add No.FUN-AB0018
@@ -9745,7 +9764,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
 #FUN-BA0050 ----------------Begin----------------
            IF NOT cl_null(g_sfs[l_ac].sfs04) THEN
               SELECT ima159 INTO l_ima159 FROM ima_file
-               WHERE ima01 = g_sfs[l_ac].sfs04              
+               WHERE ima01 = g_sfs[l_ac].sfs04
               IF l_ima159 = '2' THEN
                  #str-----mark by guanyao160714
                  #CASE i501_b_sfs09_inschk(p_cmd)
@@ -9755,30 +9774,30 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                  #end-----mark by guanyao160714
               END IF
               let g_sfs[l_ac].img18 = i501_set_img18(g_sfs[l_ac].sfs04,g_sfs[l_ac].sfs07,g_sfs[l_ac].sfs08,g_sfs[l_ac].sfs09) #darcy:2022/08/10 add
-           END IF  
+           END IF
 #FUN-BA0050 ----------------End------------------
- 
+
  #TQC-D50124 -------Begin-------
         ##FUN-D40103 ------Begin------
         #  IF NOT s_imechk(g_sfs[l_ac].sfs07,g_sfs[l_ac].sfs08) THEN
-        #     NEXT FIELD sfs08 
+        #     NEXT FIELD sfs08
         #  END IF
       #FUN-D40103 ------End----------
 
       #TQC-D50124 -------End----------
-        
-  
+
+
     AFTER FIELD sfs09
 
       let g_sfs[l_ac].img18 = i501_set_img18(g_sfs[l_ac].sfs04,g_sfs[l_ac].sfs07,g_sfs[l_ac].sfs08,g_sfs[l_ac].sfs09) #darcy:2022/08/10 add
 
    #FUN-BA0050 -----------Begin------------
            #str----mark by guanyao160714
-           #CASE i501_b_sfs09_inschk(p_cmd) 
+           #CASE i501_b_sfs09_inschk(p_cmd)
            #   WHEN "sfs07" NEXT FIELD sfs07
            #   WHEN "sfs09" NEXT FIELD sfs09
            #END CASE
-           #end----mark by guanyao160714   
+           #end----mark by guanyao160714
    #FUN-BA0050 -----------End--------------
  #TQC-D50124 -------Begin-----
         ##FUN-D40103 ------Begin------
@@ -9793,19 +9812,19 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
 #                LET g_sfs[l_ac].sfs09 = ' '
 #            END IF
 #            IF g_sfs[l_ac].sfs09 IS NULL THEN LET g_sfs[l_ac].sfs09 =' ' END IF
-#&ifdef ICD 
+#&ifdef ICD
 #            #FUN-A40022--begin--add------
 #            IF cl_null(g_sfs[l_ac].sfs09) AND NOT cl_null(g_sfs[l_ac].sfs04)
 #            THEN
 #               LET l_imaicd13 = ''
 #               SELECT imaicd13 INTO l_imaicd13 FROM imaicd_file
-#                WHERE imaicd00= g_sfs[l_ac].sfs04 
+#                WHERE imaicd00= g_sfs[l_ac].sfs04
 #               IF l_imaicd13 = 'Y' THEN
 #                  CALL cl_err(g_sfs[l_ac].sfs04,'aim-034',1)
 #                  NEXT FIELD CURRENT
 #               END IF
 #            END IF
-#&ifdef ICD  
+#&ifdef ICD
 #            IF g_argv1='2' AND NOT cl_null(g_sfs[l_ac].sfs04) THEN
 #               LET l_cnt = 0
 #               SELECT COUNT(*) INTO l_cnt
@@ -9860,7 +9879,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
 #               AND img03=g_sfs[l_ac].sfs08 AND img04=g_sfs[l_ac].sfs09
 #           #str MOD-A50139 mod
 #           #IF g_argv1=1 AND STATUS THEN
-#           #   CALL cl_err('sel img:',STATUS,0) 
+#           #   CALL cl_err('sel img:',STATUS,0)
 #           #   NEXT FIELD sfs07 #TQC-620156 sfs09->sfs07
 #           #END IF
 #            IF g_argv1=1 AND STATUS THEN
@@ -9870,7 +9889,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
 #                  AND pmc918=g_sfs[l_ac].sfs08   #VMI結算儲位
 #               IF l_n = 0 THEN
 #                 #CALL cl_err('sel img:',STATUS,0) #TQC-AB0098
-#                  CALL cl_err('','asf-390',0)      #TQC-AB0098  
+#                  CALL cl_err('','asf-390',0)      #TQC-AB0098
 #                  NEXT FIELD sfs07
 #               END IF
 #            END IF
@@ -9900,7 +9919,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
 #                  LET l_factor = 1
 #               END IF
 #            END IF
-#  
+#
 #            SELECT SUM(sfs05) INTO g_sfs[l_ac].img10_alo FROM sfs_file,sfp_file #No:8247
 #             WHERE sfs04=g_sfs[l_ac].sfs04
 #               AND sfs07=g_sfs[l_ac].sfs07
@@ -9915,12 +9934,12 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
 #                  AND img02 = g_sfs[l_ac].sfs07   #倉庫
 #                  AND img03 = g_sfs[l_ac].sfs08   #儲位
 #                  AND img04 = g_sfs[l_ac].sfs09   #批號
-#                  AND img18 < g_sfp.sfp03         #過帳日   #MOD-870247 
+#                  AND img18 < g_sfp.sfp03         #過帳日   #MOD-870247
 #               IF g_cnt > 0 THEN    #大於有效日期
 #                  call cl_err('','aim-400',0)   #須修改
 #                  NEXT FIELD sfs07
 #               END IF
-#            IF g_sma.sma115 = 'Y' THEN     #MOD-870187 
+#            IF g_sma.sma115 = 'Y' THEN     #MOD-870187
 #               CALL i501_du_default(p_cmd)
 #            END IF
 # &ifdef ICD
@@ -9928,16 +9947,16 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
 # &endif
 #FUN-BA0050 ------------------End-------------------
 
-        AFTER FIELD sfs05   
-        ##add by liyjf190531 str # 对消耗性料件 asfi514 审核及过账时控制不可大于应发数量       
+        AFTER FIELD sfs05
+        ##add by liyjf190531 str # 对消耗性料件 asfi514 审核及过账时控制不可大于应发数量
            IF g_prog = 'asfi514' AND g_sfp.sfp06 ='4' THEN
               IF NOT cl_null(g_sfs[l_ac].sfs05) AND g_sfs[l_ac].sfs05 > g_sfs[l_ac].sfa05 THEN #发料大于应发
                  CALL cl_err('','csf-878',1)
                  NEXT FIELD CURRENT
-              END IF 
-           END IF 
-        ##add by liyjf190531 end # 对消耗性料件 asfi514 审核及过账时控制不可大于应发数量       
-                                                                                                                                    
+              END IF
+           END IF
+        ##add by liyjf190531 end # 对消耗性料件 asfi514 审核及过账时控制不可大于应发数量
+
 #FUN-BB0084 ---------------Begin--------------------
            IF NOT cl_null(g_sfs[l_ac].sfs05) AND NOT cl_null(g_sfs[l_ac].sfs06) THEN
               IF cl_null(g_sfs06_t) OR cl_null(g_sfs_t.sfs05) OR g_sfs06_t! = g_sfs[l_ac].sfs06
@@ -9945,20 +9964,20 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                  LET g_sfs[l_ac].sfs05 = s_digqty(g_sfs[l_ac].sfs05,g_sfs[l_ac].sfs06)
                  DISPLAY BY NAME g_sfs[l_ac].sfs05
               END IF
-           END IF 
+           END IF
 #FUN-BB0084 ---------------End----------------------
-           IF NOT cl_null(g_sfp.sfp06) THEN                                                                                                                                            
+           IF NOT cl_null(g_sfp.sfp06) THEN
              IF NOT cl_null(g_sfs[l_ac].sfs05) THEN
                 IF cl_null(g_sfs[l_ac].sfs04) OR cl_null(g_sfs[l_ac].sfs27) THEN
                    CALL cl_err('','asf-878',1)
                    NEXT FIELD CURRENT
                 END IF
              END IF
-             IF g_sfs[l_ac].sfs05 >0 THEN                                                                                         
-                IF (g_sfs[l_ac].sfa05 = 0 OR cl_null(g_sfs[l_ac].sfa05)) AND (g_sfs[l_ac].sfs26 NOT MATCHES '[SUZ]') THEN  #No.MOD-8B0086 mark   #FUN-A40058 add 'Z' 
-                   CALL cl_err('','asf-081',0)                                                                                        
-                   NEXT FIELD sfs10                                                                                                   
-                END IF                                                                                                                
+             IF g_sfs[l_ac].sfs05 >0 THEN
+                IF (g_sfs[l_ac].sfa05 = 0 OR cl_null(g_sfs[l_ac].sfa05)) AND (g_sfs[l_ac].sfs26 NOT MATCHES '[SUZ]') THEN  #No.MOD-8B0086 mark   #FUN-A40058 add 'Z'
+                   CALL cl_err('','asf-081',0)
+                   NEXT FIELD sfs10
+                END IF
                #MOD-B20062---add---start---
                 SELECT sfa27 INTO b_sfa27 FROM sfa_file
                  WHERE sfa01 = g_sfs[l_ac].sfs03
@@ -9970,51 +9989,51 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
 #               IF g_sfs[l_ac].sfs05 = 0 THEN
 #                  CALL cl_err('','asf-153',0)
 #                  NEXT FIELD sfs05
-#               END IF 
+#               END IF
 # ----- MOD-D60189 mark --------- end
 #TQC-A40085 --end--
-             END IF                                                                                                                
+             END IF
 #TQC-A40085
 ##TQC-A30120 --begin--
-#              IF g_sfs[l_ac].sfa05 = 0 OR cl_null(g_sfs[l_ac].sfa05) THEN  
-#                   CALL cl_err('','asf-081',0)                                                                                        
-#                   NEXT FIELD sfs05                                                                                                   
-#               END IF                                                                                                                
+#              IF g_sfs[l_ac].sfa05 = 0 OR cl_null(g_sfs[l_ac].sfa05) THEN
+#                   CALL cl_err('','asf-081',0)
+#                   NEXT FIELD sfs05
+#               END IF
 ##TQC-A30120 --end--
-#TQC-A40085 
-            #IF g_sfp.sfp06 MATCHES '[13]' THEN        #TQC-CA0035 mark                                                                                                                          
-             IF g_sfp.sfp06 MATCHES '[13D]' THEN       #TQC-CA0035 add D                                                                                                                          
-                IF g_sfs[l_ac].sfs05 <0 THEN                                                                                                                                                          
-                   CALL cl_err(g_sfs[l_ac].sfs05,"asf-037",1)                                                                                                               
-                   NEXT FIELD sfs05                                                                                                                            
-                END IF                                                                                                                                                        
-                # 同一張備料單也考慮單身有數筆同一張工單的備料量計算                                                    
-                LET l_sfs05x = 0                                                                                                                                                                                
-                SELECT SUM(sfs05) INTO l_sfs05x FROM sfs_file,sfp_file                                                                                                                  
-                 WHERE sfs03=g_sfs[l_ac].sfs03                                                                                                                                          
-                   AND sfs04=g_sfs[l_ac].sfs04                                                                                                                                                
+#TQC-A40085
+            #IF g_sfp.sfp06 MATCHES '[13]' THEN        #TQC-CA0035 mark
+             IF g_sfp.sfp06 MATCHES '[13D]' THEN       #TQC-CA0035 add D
+                IF g_sfs[l_ac].sfs05 <0 THEN
+                   CALL cl_err(g_sfs[l_ac].sfs05,"asf-037",1)
+                   NEXT FIELD sfs05
+                END IF
+                # 同一張備料單也考慮單身有數筆同一張工單的備料量計算
+                LET l_sfs05x = 0
+                SELECT SUM(sfs05) INTO l_sfs05x FROM sfs_file,sfp_file
+                 WHERE sfs03=g_sfs[l_ac].sfs03
+                   AND sfs04=g_sfs[l_ac].sfs04
                    AND sfs27=g_sfs[l_ac].sfs27   #FUN-9B0149
-                   AND sfs06=g_sfs[l_ac].sfs06                                                                                                                                         
-                   AND sfs10=g_sfs[l_ac].sfs10                                                                                                                                               
+                   AND sfs06=g_sfs[l_ac].sfs06
+                   AND sfs10=g_sfs[l_ac].sfs10
                    AND sfs012=g_sfs[l_ac].sfs012  #FUN-B20079 jan
-                   AND sfs013=g_sfs[l_ac].sfs013  #FUN-B20079 jan   
-                   AND sfs01 = g_sfp.sfp01                                                                                                                                                  
-                   AND sfs02 != g_sfs[l_ac].sfs02                                                                                                                                              
+                   AND sfs013=g_sfs[l_ac].sfs013  #FUN-B20079 jan
+                   AND sfs01 = g_sfp.sfp01
+                   AND sfs02 != g_sfs[l_ac].sfs02
                    AND sfp01=sfs01 AND sfpconf !='X'  #FUN-660106
-                                                                                                                                                                                
-                IF STATUS OR cl_null(l_sfs05x) THEN                                                                                                                          
-                   LET l_sfs05x = 0                                                                                                                             
-                END IF                                                                                                                                                          
-                
+
+                IF STATUS OR cl_null(l_sfs05x) THEN
+                   LET l_sfs05x = 0
+                END IF
+
         #TQC-CA0035 add begin------------------------------------------
-                IF g_sfp.sfp06 = 'D' THEN 
+                IF g_sfp.sfp06 = 'D' THEN
                    SELECT SUM(sfs05) INTO l_sfs05x FROM sfs_file,sfp_file
                     WHERE sfs03=g_sfs[l_ac].sfs03
                       AND sfs04=g_sfs[l_ac].sfs04
-                      AND sfs27=g_sfs[l_ac].sfs27   
+                      AND sfs27=g_sfs[l_ac].sfs27
                       AND sfs06=g_sfs[l_ac].sfs06
                       AND sfs10=g_sfs[l_ac].sfs10
-                      AND sfs012=g_sfs[l_ac].sfs012 
+                      AND sfs012=g_sfs[l_ac].sfs012
                       AND sfs013=g_sfs[l_ac].sfs013
                       AND sfs01 = g_sfp.sfp01
                       AND sfs02 != g_sfs[l_ac].sfs02
@@ -10023,13 +10042,13 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                    IF STATUS OR cl_null(l_sfs05x) THEN
                       LET l_sfs05x = 0
                    END IF
-                END IF 
+                END IF
         #TQC-CA0035 add end--------------------------------------------
-                
-                IF g_sfs[l_ac].sfs05>(g_sfs[l_ac].sfa05-g_sfs[l_ac].sfa06-l_sfs05x) AND  g_user<>'tiptop'  THEN                                                                                                                   
-                   LET l_msg=g_sfs[l_ac].sfs04 CLIPPED,' sfs05<>sfa05:'                                                                                                                                               
-                   CALL cl_err(l_msg CLIPPED ,'asf-351',0) NEXT FIELD sfs05                                                                                      
-                END IF                                                                                                                                                
+
+                IF g_sfs[l_ac].sfs05>(g_sfs[l_ac].sfa05-g_sfs[l_ac].sfa06-l_sfs05x) AND  g_user<>'tiptop'  THEN
+                   LET l_msg=g_sfs[l_ac].sfs04 CLIPPED,' sfs05<>sfa05:'
+                   CALL cl_err(l_msg CLIPPED ,'asf-351',0) NEXT FIELD sfs05
+                END IF
                 #2013090084 add begin----------------------------------
                 IF g_sfp.sfp06 = '1' THEN
                    LET l_sfa161 = 0
@@ -10039,11 +10058,11 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                       AND sfa03 = g_sfs[l_ac].sfs04
                       AND sfa08 = g_sfs[l_ac].sfs10
                       AND sfa12 = g_sfs[l_ac].sfs06
-                      AND sfa27 = g_sfs[l_ac].sfs27 
+                      AND sfa27 = g_sfs[l_ac].sfs27
                       AND sfa012= g_sfs[l_ac].sfs012
                       AND sfa013= g_sfs[l_ac].sfs013
                    #darcy:2024/12/04 s---
-                   let l_sfb08 = 0 
+                   let l_sfb08 = 0
                    select sfb08 into l_sfb08 from sfb_file
                     where sfb01 = g_sfs[l_ac].sfs03
                    #darcy:2024/12/04 e---
@@ -10055,7 +10074,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                       AND sfq04 = g_sfs[l_ac].sfs10
 
                    #str----add by guanyao160909
-                   SELECT DISTINCT gfe03 INTO l_gfe03 FROM ima_file,sfb_file,gfe_file 
+                   SELECT DISTINCT gfe03 INTO l_gfe03 FROM ima_file,sfb_file,gfe_file
                     WHERE sfb01 = g_sfs[l_ac].sfs03
                       AND ima01 = sfb05
                       AND ima55 = gfe01
@@ -10065,83 +10084,83 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                    #IF (g_sfs[l_ac].sfs05/l_sfa161) > l_sfq03 THEN   #mark by guanyao160909
                    IF l_sfq03_chk > l_sfq03 THEN  #add by guanyao160909
                       #tianry add 161110   判断发料量 套数不能超1%或者套数不能超5
-                      IF (l_sfq03_chk-l_sfq03) <= 5 OR ((l_sfq03_chk-l_sfq03)/l_sfq03 <=0.001) THEN  
+                      IF (l_sfq03_chk-l_sfq03) <= 5 OR ((l_sfq03_chk-l_sfq03)/l_sfq03 <=0.001) THEN
 
                       ELSE
                    #chg by donghy 因小数尾差，修改上下范围为0.5为合理误差范围 160815
                    #LET l_sfq03_chk = (g_sfs[l_ac].sfs05/l_sfa161) - l_sfq03
                    #IF l_sfq03_chk < 0 THEN LET l_sfq03_chk = l_sfq03_chk * -1 END IF
-                   #IF l_sfq03_chk > 0.5 THEN 
+                   #IF l_sfq03_chk > 0.5 THEN
                      #darcy:2024/12/04 add s---
                      -- 如果发料套数等于工单套数，发料数量等于应发数量，不要管这个数量
                      if g_sfs[l_ac].sfs05 != l_sfa05 or l_sfq03 != l_sfb08 then
                         CALL cl_err(g_sfs[l_ac].sfs05,'asf-958',0)
-                        NEXT FIELD sfs05 
-                     end if 
+                        NEXT FIELD sfs05
+                     end if
                      #darcy:2024/12/04 add e---
-                      END IF  
+                      END IF
                    END IF
                 END IF
                 #2013090084 add end------------------------------------
              END IF
-             
+
              #TQC-B60036--add--str--
-             IF g_sfp.sfp06 = '1' THEN 
+             IF g_sfp.sfp06 = '1' THEN
                 SELECT ima64,ima641 INTO l_ima64,l_ima641 FROM ima_file
-                 WHERE ima01 = g_sfs[l_ac].sfs04 
-                IF STATUS THEN 
-                   LET l_ima64 = 0 
-                   LET l_ima641 = 0 
+                 WHERE ima01 = g_sfs[l_ac].sfs04
+                IF STATUS THEN
+                   LET l_ima64 = 0
+                   LET l_ima641 = 0
                 END IF
                 #check最少發料數量
                 IF l_ima641 <>  0 AND g_sfs[l_ac].sfs05 < l_ima641 THEN
-                   CALL cl_err(g_sfs[l_ac].sfs05,'asf-100',0) 
-                   #NEXT FIELD sfs05 
+                   CALL cl_err(g_sfs[l_ac].sfs05,'asf-100',0)
+                   #NEXT FIELD sfs05
                 END IF
                 LET l_num_z = g_sfs[l_ac].sfs05/l_ima64
                 LET l_num_y = g_sfs[l_ac].sfs05-l_num_z*l_ima64
-  
+
                 IF l_ima64 <> 0 AND (l_num_y) <> 0 THEN
-                   CALL cl_err(g_sfs[l_ac].sfs05,'asf-101',0) 
-                   #NEXT FIELD sfs05  
+                   CALL cl_err(g_sfs[l_ac].sfs05,'asf-101',0)
+                   #NEXT FIELD sfs05
                  END IF
              END IF
              #TQC-B60036--add--end--
 
-             IF g_sfp.sfp06 = '2' THEN                                                                                                                                          
-               IF NOT cl_null(g_sfs[l_ac].sfs05) THEN                                                                                                                                          
-                  IF g_sfs[l_ac].sfs05 <0 THEN                                                                                                                                         
-                     CALL cl_err(g_sfs[l_ac].sfs05,"asf-037",1)                                                                                                                                         
-                     NEXT FIELD sfs05                                                                                                                                         
-                  END IF                                                                                                                                         
-                  LET l_sfa161 = 0 
-                  SELECT sfa161,sfa26 INTO  l_sfa161,l_sfa26                                                                                                                      
+             IF g_sfp.sfp06 = '2' THEN
+               IF NOT cl_null(g_sfs[l_ac].sfs05) THEN
+                  IF g_sfs[l_ac].sfs05 <0 THEN
+                     CALL cl_err(g_sfs[l_ac].sfs05,"asf-037",1)
+                     NEXT FIELD sfs05
+                  END IF
+                  LET l_sfa161 = 0
+                  SELECT sfa161,sfa26 INTO  l_sfa161,l_sfa26
                     FROM sfa_file
                    WHERE sfa01 = g_sfs[l_ac].sfs03
                      AND sfa03 = g_sfs[l_ac].sfs04
                      AND sfa08 = g_sfs[l_ac].sfs10
                      AND sfa12 = g_sfs[l_ac].sfs06
                      AND sfa27 = g_sfs[l_ac].sfs27  #FUN-9B0149
-                     AND sfa012= g_sfs[l_ac].sfs012   #FUN-A60028 
-                     AND sfa013= g_sfs[l_ac].sfs013   #FUN-A60028                     
+                     AND sfa012= g_sfs[l_ac].sfs012   #FUN-A60028
+                     AND sfa013= g_sfs[l_ac].sfs013   #FUN-A60028
                   IF l_sfa161 = 0 AND l_sfa26 NOT MATCHES '[USTZ]' THEN   #FUN-A20037 add 'Z'
-                     CALL cl_err('','asf-780',1)                                                                                                                                         
-                     LET g_sfs[l_ac].sfs05 = 0                                                                                                                                         
-                     NEXT FIELD sfs05                                                                                                                                         
+                     CALL cl_err('','asf-780',1)
+                     LET g_sfs[l_ac].sfs05 = 0
+                     NEXT FIELD sfs05
                   END IF
-               END IF                                                                                                                                          
-             END IF                                                                                                                                          
+               END IF
+             END IF
              IF g_sfp.sfp06 MATCHES '[1234]' THEN
                 #BUGNO:3264 sfs05發料量 * l_factor > img10庫存量 01/08/10mandy
                #IF (g_sfs[l_ac].sfs05 * l_factor) > g_sfs[l_ac].img10 THEN     #MOD-C50190 mark
-                IF (g_sfs[l_ac].sfs05 * l_factor) > g_sfs[l_ac].img10 AND NOT i501_isVMI(g_sfs[l_ac].sfs07,g_sfs[l_ac].sfs08) THEN #MOD-C50190 add i501_isVMI 
+                IF (g_sfs[l_ac].sfs05 * l_factor) > g_sfs[l_ac].img10 AND NOT i501_isVMI(g_sfs[l_ac].sfs07,g_sfs[l_ac].sfs08) THEN #MOD-C50190 add i501_isVMI
                   #IF g_sma.sma894[3,3]='N' OR g_sma.sma894[3,3] IS NULL THEN                                #FUN-C80107 mark
                   #FUN-D30024--modify--str--
                   #INITIALIZE g_sma894 TO NULL                                                               #FUN-C80107
                   #CALL s_inv_shrt_by_warehouse(g_sma.sma894[3,3],g_sfs[l_ac].sfs07) RETURNING g_sma894      #FUN-C80107
                   #IF g_sma894 = 'N' THEN                                                                    #FUN-C80107
                   INITIALIZE g_imd23 TO NULL
-                  CALL s_inv_shrt_by_warehouse(g_sfs[l_ac].sfs07,g_plant) RETURNING g_imd23  #TQC-D40078 g_plant 
+                  CALL s_inv_shrt_by_warehouse(g_sfs[l_ac].sfs07,g_plant) RETURNING g_imd23  #TQC-D40078 g_plant
                   IF g_imd23 = 'N' THEN
                   #FUN-D30024--modify--end--
                       CALL cl_err(g_sfs[l_ac].sfs05,'mfg1303',0)
@@ -10149,7 +10168,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                    END IF
                 END IF
              END IF
-             IF g_sfp.sfp06 MATCHES '[6789]' THEN   #NO:7075                                                                                                
+             IF g_sfp.sfp06 MATCHES '[6789]' THEN   #NO:7075
                 IF g_sfs[l_ac].sfs05 < 0  THEN
                    CALL cl_err('','asf-952',1)
                    NEXT FIELD sfs05
@@ -10161,39 +10180,39 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                    AND sfa08=g_sfs[l_ac].sfs10          #FUN-9C0040
                    AND sfa12=g_sfs[l_ac].sfs06          #FUN-9C0040
                    AND sfa27=g_sfs[l_ac].sfs27          #FUN-9C0040
-                   AND sfa012=g_sfs[l_ac].sfs012   #FUN-A60028 
-                   AND sfa013=g_sfs[l_ac].sfs013   #FUN-A60028                   
+                   AND sfa012=g_sfs[l_ac].sfs012   #FUN-A60028
+                   AND sfa013=g_sfs[l_ac].sfs013   #FUN-A60028
                 IF cl_null(l_sfa11) THEN LET l_sfa11='' END IF #MOD-B80013 add
-                IF (g_sfp.sfp06 = '7') AND (l_sfa11 <> 'S') THEN    #超領退料  #FUN-9C0040                                                                                              
-                   SELECT sfa062 INTO g_sfs[l_ac].sfa06                                                                                                                       
+                IF (g_sfp.sfp06 = '7') AND (l_sfa11 <> 'S') THEN    #超領退料  #FUN-9C0040
+                   SELECT sfa062 INTO g_sfs[l_ac].sfa06
                      FROM sfa_file
                     WHERE sfa01 = g_sfs[l_ac].sfs03
                       AND sfa03 = g_sfs[l_ac].sfs04
                       AND sfa08 = g_sfs[l_ac].sfs10
                       AND sfa12 = g_sfs[l_ac].sfs06
                       AND sfa27 = g_sfs[l_ac].sfs27   #FUN-9B0149
-                      AND sfa012= g_sfs[l_ac].sfs012   #FUN-A60028 
-                      AND sfa013= g_sfs[l_ac].sfs013   #FUN-A60028                      
+                      AND sfa012= g_sfs[l_ac].sfs012   #FUN-A60028
+                      AND sfa013= g_sfs[l_ac].sfs013   #FUN-A60028
                    IF g_sfs[l_ac].sfa06 = 0 THEN
                       CALL cl_err(g_sfs[l_ac].sfa06,"asf-036",1)
-                      NEXT FIELD sfs05 
+                      NEXT FIELD sfs05
                    ELSE
                       CALL i501_totsfs05(g_sfp.sfp01,g_sfp.sfp06,g_sfs[l_ac].sfs02,
                                          g_sfs[l_ac].sfs03,g_sfs[l_ac].sfs04,g_sfs[l_ac].sfs06,g_sfs[l_ac].sfs10,
                                          g_sfs[l_ac].sfs27  #FUN-9B0149
-                                          ) RETURNING l_totsfs05   #No.MOD-790175 modify                            
-                      IF g_sfs[l_ac].sfs05 > g_sfs[l_ac].sfa06-l_totsfs05 THEN                                                                                  
-                         CALL cl_getmsg('asf-034',g_lang) RETURNING l_msg                                                                                                                                                                                                            
-                         MESSAGE l_msg                                                                                                                                                                                 
-                         CALL cl_err(g_sfs[l_ac].sfs05,"abm-010",1)                                                                                                                                               
-                         NEXT FIELD sfs05                                                                                                                                      
-                      END IF                                                                                                                                                                                
-                   END IF                                                                                                                                                         
-                END IF                                                                                                                                             
-                                                                                                                                                                                 
-                IF (g_sfp.sfp06 = '6') AND (l_sfa11 <> 'S') THEN    #成套退料                                                                                                   
-                   SELECT sfb09 INTO l_sfb09 FROM sfb_file  #已發-完工                                                                                                                    
-                    WHERE sfb01 = g_sfs[l_ac].sfs03   #工單                                                                                                                                               
+                                          ) RETURNING l_totsfs05   #No.MOD-790175 modify
+                      IF g_sfs[l_ac].sfs05 > g_sfs[l_ac].sfa06-l_totsfs05 THEN
+                         CALL cl_getmsg('asf-034',g_lang) RETURNING l_msg
+                         MESSAGE l_msg
+                         CALL cl_err(g_sfs[l_ac].sfs05,"abm-010",1)
+                         NEXT FIELD sfs05
+                      END IF
+                   END IF
+                END IF
+
+                IF (g_sfp.sfp06 = '6') AND (l_sfa11 <> 'S') THEN    #成套退料
+                   SELECT sfb09 INTO l_sfb09 FROM sfb_file  #已發-完工
+                    WHERE sfb01 = g_sfs[l_ac].sfs03   #工單
                   LET l_sfa27=NULL                 #MOD-B70244 add
                   SELECT sfa06,sfa26,sfa27,sfa28   #FUN-B50059
                     INTO l_sfa06,l_sfa26,l_sfa27,l_sfa28 FROM sfa_file
@@ -10202,27 +10221,27 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                      AND sfa08 = g_sfs[l_ac].sfs10
                      AND sfa12 = g_sfs[l_ac].sfs06
                      AND sfa27 = g_sfs[l_ac].sfs27   #FUN-9B0149
-                     AND sfa012= g_sfs[l_ac].sfs012   #FUN-A60028 
-                     AND sfa013= g_sfs[l_ac].sfs013   #FUN-A60028                     
-                  IF SQLCA.sqlcode THEN 
+                     AND sfa012= g_sfs[l_ac].sfs012   #FUN-A60028
+                     AND sfa013= g_sfs[l_ac].sfs013   #FUN-A60028
+                  IF SQLCA.sqlcode THEN
                      CALL cl_err(g_sfs[l_ac].sfs03,SQLCA.sqlcode,1)
                      NEXT FIELD sfs05
-                  END IF 
+                  END IF
                   IF g_sfs[l_ac].sfs05 >l_sfa06 THEN
-                     CALL cl_err(g_sfs[l_ac].sfs05,"abm-010",1)        
+                     CALL cl_err(g_sfs[l_ac].sfs05,"abm-010",1)
                      NEXT FIELD sfs05
                   END IF
                  #SELECT SUM(sfa06*sfa28),SUM(sfa161) INTO l_sfa06,l_sfa161 FROM sfa_file  #FUN-B50059 #MOD-B70244 mark
                   SELECT SUM(sfa06/sfa28),SUM(sfa161) INTO l_sfa06,l_sfa161 FROM sfa_file  #MOD-B70244 add
-                   WHERE sfa01 = g_sfs[l_ac].sfs03                       
+                   WHERE sfa01 = g_sfs[l_ac].sfs03
                     #AND sfa03 = g_sfs[l_ac].sfs04 #FUN-9C0040 #TQC-B60136
-                     AND sfa27 = g_sfs[l_ac].sfs27 #FUN-9C0040 
+                     AND sfa27 = g_sfs[l_ac].sfs27 #FUN-9C0040
                      AND sfa08 = g_sfs[l_ac].sfs10
                     #AND sfa12 = g_sfs[l_ac].sfs06 #FUN-9C0040 #TQC-B60136
-                     AND sfa012= g_sfs[l_ac].sfs012   #FUN-A60028 
-                     AND sfa013= g_sfs[l_ac].sfs013   #FUN-A60028                     
-                  IF cl_null(l_qty) THEN LET l_qty = 0 END IF          
-                  IF cl_null(l_sfa06) THEN LET l_sfa06 = 0 END IF     
+                     AND sfa012= g_sfs[l_ac].sfs012   #FUN-A60028
+                     AND sfa013= g_sfs[l_ac].sfs013   #FUN-A60028
+                  IF cl_null(l_qty) THEN LET l_qty = 0 END IF
+                  IF cl_null(l_sfa06) THEN LET l_sfa06 = 0 END IF
                   IF cl_null(l_sfa161) THEN LET l_sfa161 = 0 END IF
                  #MOD-B20062---add---start---
                   LET l_sfs05 = 0
@@ -10239,54 +10258,54 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                   CALL i501_totsfs05(g_sfp.sfp01,g_sfp.sfp06,g_sfs[l_ac].sfs02,
                                      g_sfs[l_ac].sfs03,g_sfs[l_ac].sfs04,
                                      g_sfs[l_ac].sfs06,g_sfs[l_ac].sfs10,
-                                     g_sfs[l_ac].sfs27)  #FUN-9B0149 
+                                     g_sfs[l_ac].sfs27)  #FUN-9B0149
                        RETURNING l_totsfs05    #No.MOD-790175 modify
                  #IF g_sfs[l_ac].sfs05*l_sfa28 > l_qty - l_totsfs05*l_sfa28 THEN    #MOD-B70244 mark
                   IF g_sfs[l_ac].sfs05/l_sfa28 > l_qty - l_totsfs05 THEN            #MOD-B70244 add
-                      CALL cl_getmsg('asf-035',g_lang) RETURNING l_msg                                                                                                                                                                                                            
-                      MESSAGE l_msg                                                                                                                                                                       
-                      CALL cl_err(g_sfs[l_ac].sfs05,"abm-010",1)                                                                                                                                               
-                      NEXT FIELD sfs05                                                                                                                                      
-                   END IF                                                                                                                                                                                
-                END IF                                                                                                                                                 
+                      CALL cl_getmsg('asf-035',g_lang) RETURNING l_msg
+                      MESSAGE l_msg
+                      CALL cl_err(g_sfs[l_ac].sfs05,"abm-010",1)
+                      NEXT FIELD sfs05
+                   END IF
+                END IF
                 #可退料量 <= 已發量 + 超領量
                 IF (g_sfp.sfp06 = '9') AND (l_sfa11 <> 'S') THEN    #領料退料      #FUN-9C0040
                   #SELECT (sfa062+sfa06) INTO l_sfa062     #No.MOD-940164 add  #FUN-B50059 #MOD-C30886 mark
                    SELECT (sfa062+sfa06),sfa05 INTO l_sfa062,l_sfa05                       #MOD-C30886 add
-                     FROM sfa_file                                                                                                                                                             
-                    WHERE sfa01 = g_sfs[l_ac].sfs03                                                                                                                                             
-                      AND sfa03 = g_sfs[l_ac].sfs04                                                                                                                        
-                      AND sfa08 = g_sfs[l_ac].sfs10                                                                                                                                         
-                      AND sfa12 = g_sfs[l_ac].sfs06                                                                                                                                         
+                     FROM sfa_file
+                    WHERE sfa01 = g_sfs[l_ac].sfs03
+                      AND sfa03 = g_sfs[l_ac].sfs04
+                      AND sfa08 = g_sfs[l_ac].sfs10
+                      AND sfa12 = g_sfs[l_ac].sfs06
                       AND sfa27 = g_sfs[l_ac].sfs27   #FUN-9B0149
-                      AND sfa012= g_sfs[l_ac].sfs012   #FUN-A60028 
-                      AND sfa013= g_sfs[l_ac].sfs013   #FUN-A60028                      
+                      AND sfa012= g_sfs[l_ac].sfs012   #FUN-A60028
+                      AND sfa013= g_sfs[l_ac].sfs013   #FUN-A60028
 
                    SELECT sfb02 INTO l_sfb02 FROM sfb_file WHERE sfb01 = g_sfs[l_ac].sfs03         #MOD-C30886 add
 
-                   IF cl_null(l_sfa062) THEN LET l_sfa062=0 END IF                      #No.MOD-940164 add 
+                   IF cl_null(l_sfa062) THEN LET l_sfa062=0 END IF                      #No.MOD-940164 add
                    CALL i501_totsfs05(g_sfp.sfp01,g_sfp.sfp06,g_sfs[l_ac].sfs02,
                                       g_sfs[l_ac].sfs03,g_sfs[l_ac].sfs04,g_sfs[l_ac].sfs06,g_sfs[l_ac].sfs10,
                                       g_sfs[l_ac].sfs27  #FUN-9B0149
-                                      ) RETURNING l_totsfs05                             
+                                      ) RETURNING l_totsfs05
                    IF l_sfb02 != '5' AND l_sfa05 > 0 THEN              #MOD-C30886 add
-                      IF g_sfs[l_ac].sfs05 > l_sfa062+l_totsfs05 THEN             #No.MOD-940164 add                                                                                
-                         CALL cl_getmsg('asf-039',g_lang) RETURNING l_msg                                                                                                                                                                                                            
-                         MESSAGE l_msg                                                                                                                                                                                 
-                         CALL cl_err(g_sfs[l_ac].sfs05,"abm-010",1)                                                                                                                                               
-                         NEXT FIELD sfs05                                                                                                                                      
+                      IF g_sfs[l_ac].sfs05 > l_sfa062+l_totsfs05 THEN             #No.MOD-940164 add
+                         CALL cl_getmsg('asf-039',g_lang) RETURNING l_msg
+                         MESSAGE l_msg
+                         CALL cl_err(g_sfs[l_ac].sfs05,"abm-010",1)
+                         NEXT FIELD sfs05
                       END IF
-                   END IF                                              #MOD-C30886 add                                                                                                                                                                                
-                END IF                                                                                                                                             
+                   END IF                                              #MOD-C30886 add
+                END IF
                 IF (g_sfp.sfp06 = '8') AND (l_sfa11 <> 'S') THEN    #一般退料      #FUN-9C0040
                    SELECT sfb08,sfb09,sfb11 INTO l_sfb08,l_sfb09,l_sfb11 FROM sfb_file  #已發-完工   #No.MOD-760050 add sfb11 #MOD-940347 add sfb08,l_sfb08
-                   WHERE sfb01 = g_sfs[l_ac].sfs03   #工單  
+                   WHERE sfb01 = g_sfs[l_ac].sfs03   #工單
                    SELECT sfa05,sfa06,sfa062,sfa161,sfa26,sfa27,sfa28,sfa100     #No.TQC-6C0122 add sfa05  #MOD-8B0230 add sfa100  #FUN-B50059  #MOD-B20062 add sfa062
                    INTO l_sfa05,l_sfa06,l_sfa062,l_sfa161,l_sfa26,          #No.TQC-6C0122 add sfa05    #MOD-B20062 add l_sfa062
-                        l_sfa27,l_sfa28,l_sfa100 FROM sfa_file            #MOD-8B0230 add l_sfa100                                                                                                                                                                 
-                   WHERE sfa01 = g_sfs[l_ac].sfs03                                                                                                                                                                                  
-                     AND sfa03 = g_sfs[l_ac].sfs04                                                                                                                                              
-                     AND sfa08 = g_sfs[l_ac].sfs10                                                                                                                                            
+                        l_sfa27,l_sfa28,l_sfa100 FROM sfa_file            #MOD-8B0230 add l_sfa100
+                   WHERE sfa01 = g_sfs[l_ac].sfs03
+                     AND sfa03 = g_sfs[l_ac].sfs04
+                     AND sfa08 = g_sfs[l_ac].sfs10
                      AND sfa12 = g_sfs[l_ac].sfs06  #FUN-9B0149
                      AND sfa27 = g_sfs[l_ac].sfs27  #FUN-9B0149
                      AND sfa012= g_sfs[l_ac].sfs012   #FUN-A60028
@@ -10297,14 +10316,14 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                     WHERE sfs01=sfp01
                       AND sfs03 = g_sfs[l_ac].sfs03
                       AND sfs04 = g_sfs[l_ac].sfs04
-                      AND (sfp01 != g_sfp.sfp01 OR 
+                      AND (sfp01 != g_sfp.sfp01 OR
                            (sfp01 = g_sfp.sfp01 AND sfs02 != g_sfs[l_ac].sfs02))
                       AND sfp06 = '8'
-                      AND sfpconf != 'X'                #MOD-B80306 add  
+                      AND sfpconf != 'X'                #MOD-B80306 add
                    IF cl_null(b_sfs05) THEN LET b_sfs05 = 0 END IF
                    IF g_sfs[l_ac].sfs05 > ((l_sfa06 + l_sfa062)-b_sfs05) AND l_sfa05 > 0 THEN    #No:MOD-B70204 add sfa05 > 0
                          CALL cl_err(g_sfs[l_ac].sfs05,'asf-708',1)
-                         NEXT FIELD sfs05      
+                         NEXT FIELD sfs05
                    END IF
                    LET l_sfa05 = 0
                    LET l_sfa06 = 0
@@ -10320,141 +10339,141 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                    END FOREACH
                   #MOD-B20062---add---end---
                   #MOD-B20062---modify---start---
-                  #SELECT SUM(sfs05) INTO l_sfs05 FROM sfs_file                                                                                                                         
+                  #SELECT SUM(sfs05) INTO l_sfs05 FROM sfs_file
                   #WHERE sfs01=g_sfp.sfp01 AND sfs03=g_sfs[l_ac].sfs03
-                  #AND sfs04=g_sfs[l_ac].sfs04 AND sfs10=g_sfs[l_ac].sfs10                                                                                                                            
-                  #AND sfs02!=g_sfs[l_ac].sfs02                                                                                                                                                               
+                  #AND sfs04=g_sfs[l_ac].sfs04 AND sfs10=g_sfs[l_ac].sfs10
+                  #AND sfs02!=g_sfs[l_ac].sfs02
                    LET b_sfs05 = 0
                    LET b_sfa28 = 0
                    LET l_sfs05 = 0
                    DECLARE sfs05_curs CURSOR FOR
-                   SELECT sfs05,sfa28 FROM sfs_file,sfa_file     
+                   SELECT sfs05,sfa28 FROM sfs_file,sfa_file
                    WHERE sfs01=g_sfp.sfp01 AND sfs03=g_sfs[l_ac].sfs03
-                   AND sfa27 = b_sfa27 AND sfs10 = g_sfs[l_ac].sfs10         
-                   AND sfa01 = sfs03 AND sfa03 = sfs04                       
-                   AND sfs02!=g_sfs[l_ac].sfs02                              
+                   AND sfa27 = b_sfa27 AND sfs10 = g_sfs[l_ac].sfs10
+                   AND sfa01 = sfs03 AND sfa03 = sfs04
+                   AND sfs02!=g_sfs[l_ac].sfs02
                    FOREACH sfs05_curs INTO b_sfs05,b_sfa28
                       LET sum_sfs05 = b_sfs05/b_sfa28
                       LET l_sfs05 = l_sfs05 + sum_sfs05
                    END FOREACH
                   #MOD-B20062---modify---end---
-                                                                                                                                                                                                                    
-                   IF cl_null(l_sfs05) THEN LET l_sfs05 = 0 END IF                                                                                                                       
+
+                   IF cl_null(l_sfs05) THEN LET l_sfs05 = 0 END IF
                    IF cl_null(l_sfa05) THEN LET l_sfa05 = 0 END IF   #No.TQC-6C0122 add
-                   IF cl_null(l_qty) THEN LET l_qty = 0 END IF                                                                                                                                           
-                   IF cl_null(l_sfa06) THEN LET l_sfa06 = 0 END IF                                                                                                                                                            
-                   IF cl_null(l_sfa161) THEN LET l_sfa161 = 0 END IF                                                                                                                                 
-                   IF cl_null(l_sfa28) THEN LET l_sfa28 = 0 END IF                                                                                                                                       
+                   IF cl_null(l_qty) THEN LET l_qty = 0 END IF
+                   IF cl_null(l_sfa06) THEN LET l_sfa06 = 0 END IF
+                   IF cl_null(l_sfa161) THEN LET l_sfa161 = 0 END IF
+                   IF cl_null(l_sfa28) THEN LET l_sfa28 = 0 END IF
                    IF cl_null(l_sfb09) THEN LET l_sfb09 = 0 END IF
                    IF cl_null(l_sfb08) THEN LET l_sfb08 = 0 END IF       #MOD-940347 add
                    IF cl_null(l_sfb11) THEN LET l_sfb11 = 0 END IF
-                  
+
                   #一般退料考慮誤差率sfa100
                   IF cl_null(l_sfa100) THEN LET l_sfa100 = 0 END IF
-                  IF g_sma.sma899 = 'Y' THEN 
+                  IF g_sma.sma899 = 'Y' THEN
                      #已發/應發*生產套數*誤差率
                      IF l_sfa100 = 100 THEN
-                        LET l_qty = l_sfa06 - g_sfs[l_ac].sfs05-l_sfs05 
+                        LET l_qty = l_sfa06 - g_sfs[l_ac].sfs05-l_sfs05
                      ELSE
                        #LET l_qty = (((l_sfa06-g_sfs[l_ac].sfs05-l_sfs05)/l_sfa05) * l_sfb08 * (1+l_sfa100/100))             #MOD-B20062 mark
                         LET l_qty = (((l_sfa06-(g_sfs[l_ac].sfs05/l_sfa28)-l_sfs05)/l_sfa05) * l_sfb08 * (1+l_sfa100/100))   #MOD-B20062 add
                         #已發料(扣除退料數) - 入庫數(含FQC)
                         LET l_qty = l_qty - (l_sfb09+l_sfb11)
                      END IF       #No:MOD-970298 add
-                     IF l_qty < 0 THEN                                                                                                                                   
+                     IF l_qty < 0 THEN
                         CALL cl_err(g_sfs[l_ac].sfs04,'asf-705',1)  #No.MOD-830099 modify
-                        NEXT FIELD sfs05                                                                                                                                                     
-                     END IF                                                                                                                                                                
+                        NEXT FIELD sfs05
+                     END IF
                   ELSE
                      LET l_qty = l_sfa06 - ((l_sfb09 + l_sfb11) * l_sfa161) - l_sfs05
                   END IF  #MOD-8B0230
                   #MOD-B20062---mark---start---
                   #在退料時應只控管數量是否有超過已發量和最小套數，不應在分主副料或取替代料
-                  #IF l_sfa26 MATCHES '[3]' THEN                                                                                                                                                         
- 
+                  #IF l_sfa26 MATCHES '[3]' THEN
+
                   #   LET l_sub_qty = 0
                   #   SELECT SUM(sfa06/(sfa28*l_sfa161))   #FUN-B50059
-                  #     INTO l_sub_qty                                                                                                                                       
-                  #     FROM sfa_file WHERE sfa01 = g_sfs[l_ac].sfs03                                                                                                          
-                  #     AND sfa27 = g_sfs[l_ac].sfs04 AND sfa26 ='U'                                                                                                                   
-                  #   IF cl_null(l_sub_qty) THEN LET l_sub_qty = 0 END IF                                                                                                                                  
-                  #   LET l_qty = 0                                                                                                                                                                             
-                  #   LET l_qty = l_sfb09 - l_sub_qty                                                                                                                                  
-                  #   IF l_qty < 0 THEN                                                                                                                                   
-                  #      LET l_qty = 0                                                                                                                                                                               
-                  #   END IF                                                                                                                                                  
-                  #   LET l_qty = l_sfa06 - (l_qty * l_sfa161) - l_sfs05                                                                                                     
-                  #END IF                                                                                                                                          
-                  #IF l_sfa26 MATCHES '[Uu]' THEN                                                                                                                                                              
-                  #    SELECT sfa161 INTO l_sfa161_t FROM sfa_file                                                                                              
-                  #     WHERE sfa01 = g_sfs[l_ac].sfs03                                                                                                                                 
-                  #       AND sfa03 = l_sfa27                                                                                                                                                            
-                  #    IF cl_null(l_sfa161_t) THEN LET l_sfa161_t = 0 END IF                                                                                                                  
-                  #    LET l_qty = 0                                                                                                                                                
- 
+                  #     INTO l_sub_qty
+                  #     FROM sfa_file WHERE sfa01 = g_sfs[l_ac].sfs03
+                  #     AND sfa27 = g_sfs[l_ac].sfs04 AND sfa26 ='U'
+                  #   IF cl_null(l_sub_qty) THEN LET l_sub_qty = 0 END IF
+                  #   LET l_qty = 0
+                  #   LET l_qty = l_sfb09 - l_sub_qty
+                  #   IF l_qty < 0 THEN
+                  #      LET l_qty = 0
+                  #   END IF
+                  #   LET l_qty = l_sfa06 - (l_qty * l_sfa161) - l_sfs05
+                  #END IF
+                  #IF l_sfa26 MATCHES '[Uu]' THEN
+                  #    SELECT sfa161 INTO l_sfa161_t FROM sfa_file
+                  #     WHERE sfa01 = g_sfs[l_ac].sfs03
+                  #       AND sfa03 = l_sfa27
+                  #    IF cl_null(l_sfa161_t) THEN LET l_sfa161_t = 0 END IF
+                  #    LET l_qty = 0
+
                   #    LET l_sub_qty = 0
-                  #    SELECT SUM(sfs05/(sfa28*l_sfa161_t)) INTO l_sub_qty 
+                  #    SELECT SUM(sfs05/(sfa28*l_sfa161_t)) INTO l_sub_qty
                   #      FROM sfs_file,sfa_file
-                  #      WHERE sfs01 = g_sfp.sfp01  
-                  #        AND sfs03 = g_sfs[l_ac].sfs03                                                                                                                                               
+                  #      WHERE sfs01 = g_sfp.sfp01
+                  #        AND sfs03 = g_sfs[l_ac].sfs03
                   #        AND sfs04 != g_sfs[l_ac].sfs04
                   #        AND sfa01 = sfs03
                   #        AND sfa27 = l_sfa27
                   #        AND sfa03 = sfs04
                   #        AND (sfa26 = 'U' OR sfa26 = 'u')
-                  #    IF cl_null(l_sub_qty) THEN LET l_sub_qty = 0 END IF                                                                                                                                    
- 
+                  #    IF cl_null(l_sub_qty) THEN LET l_sub_qty = 0 END IF
+
                   #    LET l_sub_qty1 = 0
                   #    SELECT SUM(sfa06/(sfa28*l_sfa161_t)) INTO l_sub_qty1  #FUN-B50059
                   #      FROM sfa_file
-                  #      WHERE sfa01 = g_sfs[l_ac].sfs03                                                                                                                                               
+                  #      WHERE sfa01 = g_sfs[l_ac].sfs03
                   #        AND sfa03 != g_sfs[l_ac].sfs04
                   #        AND sfa27 = l_sfa27
                   #        AND (sfa26 = 'U' OR sfa26 = 'u')
-                  #    IF cl_null(l_sub_qty1) THEN LET l_sub_qty = 0 END IF                                                                                                                                    
+                  #    IF cl_null(l_sub_qty1) THEN LET l_sub_qty = 0 END IF
                   #    LET l_qty = l_sfb09 - (l_sub_qty1 - l_sub_qty)
-                  #    IF l_qty < 0 THEN                                                                                                                                   
-                  #       LET l_qty = 0                                                                                                                                                                               
-                  #    END IF                                                                                                                                                  
-                  #    LET l_qty =l_sfa06-(l_qty*l_sfa161_t*l_sfa28)-l_sfs05                                                                                                     
-                  #END IF                                                                                                                                                                        
-                  #IF l_sfa26 MATCHES '[4]' THEN         
-                  #    SELECT sfa28                                                                                                                             
-                  #      INTO l_sfa28_t                                                                                                                                                
-                  #      FROM sfa_file WHERE sfa01 = g_sfs[l_ac].sfs03                                                                                                   
-                  #      AND sfa27 = g_sfs[l_ac].sfs04 
-                  #      AND sfa26 ='S'                                                                                                        
-                  #    IF cl_null(l_sfa28_t) THEN LET l_sfa28_t = 0 END IF                                                                                                                                  
-                  #    LET l_qty = l_sfa06 - (l_sfb09 * l_sfa161) - l_sfs05                                                                                                                                
-                  #                                                                                                                                                                                             
-                  #END IF                                                                                                                                                                       
-                  #IF l_sfa26 MATCHES '[Ss]' THEN                                                                                                                                                                  
-                  #   SELECT sfa06,sfa161 INTO l_sfa06_t,l_sfa161_t                                                                                             
-                  #    FROM sfa_file                                                                                                                                                    
-                  #    WHERE sfa01 = g_sfs[l_ac].sfs03                                                                                                                                                    
-                  #      AND sfa03 = l_sfa27                                                                                                                                
-                  #                                                                                                                                                                          
-                  #   IF cl_null(l_sfa06_t) THEN LET l_sfa06_t = 0 END IF                                                                                                          
+                  #    IF l_qty < 0 THEN
+                  #       LET l_qty = 0
+                  #    END IF
+                  #    LET l_qty =l_sfa06-(l_qty*l_sfa161_t*l_sfa28)-l_sfs05
+                  #END IF
+                  #IF l_sfa26 MATCHES '[4]' THEN
+                  #    SELECT sfa28
+                  #      INTO l_sfa28_t
+                  #      FROM sfa_file WHERE sfa01 = g_sfs[l_ac].sfs03
+                  #      AND sfa27 = g_sfs[l_ac].sfs04
+                  #      AND sfa26 ='S'
+                  #    IF cl_null(l_sfa28_t) THEN LET l_sfa28_t = 0 END IF
+                  #    LET l_qty = l_sfa06 - (l_sfb09 * l_sfa161) - l_sfs05
+                  #
+                  #END IF
+                  #IF l_sfa26 MATCHES '[Ss]' THEN
+                  #   SELECT sfa06,sfa161 INTO l_sfa06_t,l_sfa161_t
+                  #    FROM sfa_file
+                  #    WHERE sfa01 = g_sfs[l_ac].sfs03
+                  #      AND sfa03 = l_sfa27
+                  #
+                  #   IF cl_null(l_sfa06_t) THEN LET l_sfa06_t = 0 END IF
                   #   IF cl_null(l_sfa161_t) THEN LET l_sfa161_t = 0 END IF
-                  #   LET l_qty = 0                                                                                                                                                                             
- 
+                  #   LET l_qty = 0
+
                   #   LET l_sub_qty = 0
-                  #   SELECT SUM(sfs05/(sfa28*l_sfa161_t)) INTO l_sub_qty 
+                  #   SELECT SUM(sfs05/(sfa28*l_sfa161_t)) INTO l_sub_qty
                   #     FROM sfs_file,sfa_file
-                  #     WHERE sfs01 = g_sfp.sfp01  
-                  #       AND sfs03 = g_sfs[l_ac].sfs03                                                                                                                                               
+                  #     WHERE sfs01 = g_sfp.sfp01
+                  #       AND sfs03 = g_sfs[l_ac].sfs03
                   #       AND sfs04 != g_sfs[l_ac].sfs04
                   #       AND sfa01 = sfs03
                   #       AND sfa27 = l_sfa27
                   #       AND sfa03 = sfs04
                   #       AND (sfa26 = 'S' OR sfa26 = 's')
-                  #   IF cl_null(l_sub_qty) THEN LET l_sub_qty = 0 END IF                                                                                                                                    
+                  #   IF cl_null(l_sub_qty) THEN LET l_sub_qty = 0 END IF
                   #   LET l_qty=l_sfb09-l_sub_qty-(l_sfa06_t/l_sfa161_t)
-                  #   IF l_qty < 0 THEN                                                                                                                                   
-                  #      LET l_qty = 0                                                                                                                                                                               
-                  #   END IF                                                                                                                                                  
-                  #   LET l_qty=l_sfa06-(l_qty*l_sfa161_t*l_sfa28)-l_sfs05                                                                                                                                 
-                  #END IF                                                                                                                                                         
+                  #   IF l_qty < 0 THEN
+                  #      LET l_qty = 0
+                  #   END IF
+                  #   LET l_qty=l_sfa06-(l_qty*l_sfa161_t*l_sfa28)-l_sfs05
+                  #END IF
                   #MOD-B20062---mark---end---
 #FUN-A20037 --begin--
                    IF l_sfa26 MATCHES '[8]' THEN
@@ -10494,16 +10513,16 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                       LET l_qty=l_sfa06-(l_qty*l_sfa161_t*l_sfa28)-l_sfs05
                    END IF
 #FUN-A20037 --end--
-                                                                                                                                                                                                                 
+
                    IF l_sfa05 < 0 THEN
-                      LET l_qty = (l_sfa05* -1) - l_sfs05                                                                                                                              
-                   END IF                                                                                                                                                    
-                                                                                                                                                                
-                  #IF g_sfs[l_ac].sfs05 > l_qty AND g_sma.sma899 ='N' THEN   #MOD-8B0230 add sma899  #MOD-B20062 mark                                                                                                                 
-                   IF (g_sfs[l_ac].sfs05/l_sfa28) > l_qty AND g_sma.sma899 ='N' THEN                 #MOD-B20062 add                                                                                                                           
+                      LET l_qty = (l_sfa05* -1) - l_sfs05
+                   END IF
+
+                  #IF g_sfs[l_ac].sfs05 > l_qty AND g_sma.sma899 ='N' THEN   #MOD-8B0230 add sma899  #MOD-B20062 mark
+                   IF (g_sfs[l_ac].sfs05/l_sfa28) > l_qty AND g_sma.sma899 ='N' THEN                 #MOD-B20062 add
                       CALL cl_err(' ','asf-705',1)
-                      NEXT FIELD sfs05                                                                                                                                                     
-                   END IF                                                                                                                                                                
+                      NEXT FIELD sfs05
+                   END IF
                 END IF
                 #FUN-9C0040(S)
                 IF l_sfa11='S' THEN
@@ -10515,20 +10534,20 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                      AND sfa08 = g_sfs[l_ac].sfs10
                      AND sfa12 = g_sfs[l_ac].sfs06
                      AND sfa27 = g_sfs[l_ac].sfs27
-                     AND sfa012= g_sfs[l_ac].sfs012   #FUN-A60028 
+                     AND sfa012= g_sfs[l_ac].sfs012   #FUN-A60028
                      AND sfa013= g_sfs[l_ac].sfs013   #FUN-A60028
-                     
-                  SELECT SUM(sfs05) INTO l_sfs05 FROM sfs_file                                                                                                                         
+
+                  SELECT SUM(sfs05) INTO l_sfs05 FROM sfs_file
                   WHERE sfs01=g_sfp.sfp01 AND sfs03=g_sfs[l_ac].sfs03
-                  AND sfs04=g_sfs[l_ac].sfs04 AND sfs10=g_sfs[l_ac].sfs10                                                                                                                            
-                  AND sfs02!=g_sfs[l_ac].sfs02                                                                                                                                                               
-                                                                                                                                                                                                                   
-                  IF cl_null(l_sfs05) THEN LET l_sfs05 = 0 END IF                                                                                                                       
+                  AND sfs04=g_sfs[l_ac].sfs04 AND sfs10=g_sfs[l_ac].sfs10
+                  AND sfs02!=g_sfs[l_ac].sfs02
+
+                  IF cl_null(l_sfs05) THEN LET l_sfs05 = 0 END IF
                   IF cl_null(l_sfa05) THEN LET l_sfa05 = 0 END IF
-                  IF cl_null(l_qty) THEN LET l_qty = 0 END IF                                                                                                                                           
-                  IF cl_null(l_sfa06) THEN LET l_sfa06 = 0 END IF                                                                                                                                                            
-                  IF cl_null(l_sfa161) THEN LET l_sfa161 = 0 END IF                                                                                                                                 
-                  IF cl_null(l_sfa28) THEN LET l_sfa28 = 0 END IF                                                                                                                                       
+                  IF cl_null(l_qty) THEN LET l_qty = 0 END IF
+                  IF cl_null(l_sfa06) THEN LET l_sfa06 = 0 END IF
+                  IF cl_null(l_sfa161) THEN LET l_sfa161 = 0 END IF
+                  IF cl_null(l_sfa28) THEN LET l_sfa28 = 0 END IF
                   IF cl_null(l_sfb09) THEN LET l_sfb09 = 0 END IF
                   IF cl_null(l_sfb08) THEN LET l_sfb08 = 0 END IF
                   IF cl_null(l_sfb11) THEN LET l_sfb11 = 0 END IF
@@ -10544,26 +10563,26 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                      LET l_qty = (l_sfa05 * (1+l_sfa100/100))-l_sfa06-g_sfs[l_ac].sfs05-l_sfs05
                   ELSE  #FUN-9C0040
                      LET l_qty = l_sfa05 - l_sfa06-g_sfs[l_ac].sfs05-l_sfs05 #FUN-9C0040
-                  END IF #FUN-9C0040 
-                  IF l_qty < 0 THEN                                                                                                                                   
+                  END IF #FUN-9C0040
+                  IF l_qty < 0 THEN
                      CALL cl_err(g_sfs[l_ac].sfs04,'asf-705',1)
-                     NEXT FIELD sfs05                                                                                                                                                     
-                  END IF                                                                                                                                                                
+                     NEXT FIELD sfs05
+                  END IF
                  #ELSE #FUN-9C0040
                  #   LET l_qty = l_sfa06 - ((l_sfb09 + l_sfb11) * l_sfa161) - l_sfs05 #FUN-9C0040
                  #END IF #FUN-9C0040
                 END IF
-                #FUN-9C0040(E)                                                                                                                                          
-              END IF                                                                           
-            END IF                                                                                                                                                                    
-            SELECT ima918,ima921,ima930 INTO g_ima918,g_ima921,g_ima930 #DEV-D30059 add ima930 
+                #FUN-9C0040(E)
+              END IF
+            END IF
+            SELECT ima918,ima921,ima930 INTO g_ima918,g_ima921,g_ima930 #DEV-D30059 add ima930
               FROM ima_file
              WHERE ima01 = g_sfs[l_ac].sfs04
                AND imaacti = "Y"
-            
+
             IF cl_null(g_ima930) THEN LET g_ima930 = 'N' END IF  #DEV-D30059 add
 
-            IF (g_ima918 = "Y" OR g_ima921 = "Y") AND 
+            IF (g_ima918 = "Y" OR g_ima921 = "Y") AND
                (cl_null(g_sfs_t.sfs05) OR (g_sfs[l_ac].sfs05<>g_sfs_t.sfs05 )) THEN
                IF cl_null(g_sfs[l_ac].sfs08) THEN
                   LET g_sfs[l_ac].sfs08 = ' '
@@ -10575,7 +10594,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                  FROM img_file
                 WHERE img01=g_sfs[l_ac].sfs04 AND img02=g_sfs[l_ac].sfs07
                   AND img03=g_sfs[l_ac].sfs08 AND img04=g_sfs[l_ac].sfs09
-               CALL s_umfchk(g_sfs[l_ac].sfs04,g_sfs[l_ac].sfs06,g_img09) 
+               CALL s_umfchk(g_sfs[l_ac].sfs04,g_sfs[l_ac].sfs06,g_img09)
                     RETURNING l_i,l_fac
                IF l_i = 1 THEN LET l_fac = 1 END IF
                IF g_sfp.sfp06 MATCHES '[6789B]' THEN
@@ -10587,7 +10606,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                                      g_sfs[l_ac].sfs08,g_sfs[l_ac].sfs09,
                                      g_sfs[l_ac].sfs06,g_img09,l_fac,
                                      g_sfs[l_ac].sfs05,'','SEL',1)  #CHI-9A0022 add '' #No.TQC-B90236 add 1
-                             RETURNING l_r,g_qty 
+                             RETURNING l_r,g_qty
                     END IF                                                        #DEV-D30059
   #MOD-C10100 --end--
 #TQC-C10033 --unmark
@@ -10610,63 +10629,63 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                                   g_sfs[l_ac].sfs08,g_sfs[l_ac].sfs09,
                                   g_sfs[l_ac].sfs06,g_img09,l_fac,
                                   g_sfs[l_ac].sfs05,l_bno,'MOD',-1)#CHI-9A0022 add l_bno #No.TQC-B90236 add -1
-                          RETURNING l_r,g_qty 
+                          RETURNING l_r,g_qty
                     END IF                                                        #DEV-D30059
   #MOD-C10100 --end--
 #TQC-C10033 --unmark
                END IF
-               
+
                IF l_r = "Y" THEN
                   LET g_sfs[l_ac].sfs05 = g_qty
                END IF
             END IF
 #FUN-A20048 --begin     #發料數量不可大於庫存-備置量
 #FUN-AC0074--begin--mark-----
-#           IF NOT cl_null(g_sfs[l_ac].sfs04) AND NOT cl_null(g_sfs[l_ac].sfs03)  THEN   
-#              IF g_sfp.sfp06 MATCHES '[1234AC]' THEN  
-#                 SELECT SUM(sie10) INTO l_qty FROM sie_file 
-#                 WHERE sie05!=g_sfs[l_ac].sfs03 AND sie01=g_sfs[l_ac].sfs04                 
-#                 IF g_sfs[l_ac].sfs05 > g_img10 - l_qty THEN 
+#           IF NOT cl_null(g_sfs[l_ac].sfs04) AND NOT cl_null(g_sfs[l_ac].sfs03)  THEN
+#              IF g_sfp.sfp06 MATCHES '[1234AC]' THEN
+#                 SELECT SUM(sie10) INTO l_qty FROM sie_file
+#                 WHERE sie05!=g_sfs[l_ac].sfs03 AND sie01=g_sfs[l_ac].sfs04
+#                 IF g_sfs[l_ac].sfs05 > g_img10 - l_qty THEN
 #                    CALL cl_err(g_sfs[l_ac].sfs05,'sia-103',1)
 #                    NEXT FIELD sfs05
-#                 END IF 
-#              END IF 
-#           END IF                
-##FUN-A20048 --end 
+#                 END IF
+#              END IF
+#           END IF
+##FUN-A20048 --end
 ##FUN-A20048 --begin
 ##检查此料是否有备置，如果有备置，须检查发料的仓储批与备料仓储批是否一致
 ##如不一致，须检查备置数量之和不可大于发料数量，并提示已备其他仓储批，是否考虑退备置。
 #          IF NOT cl_null(g_sfs[l_ac].sfs04) THEN
 #           LET l_cnt = 0
 #           LET l_qty = 0
-#           SELECT COUNT(*) INTO l_cnt FROM sie_file WHERE sie05=g_sfs[l_ac].sfs03   
-#           IF l_cnt > 0 THEN                 
-#            DECLARE sie_curs CURSOR FOR SELECT * FROM sie_file WHERE sie01=g_sfs[l_ac].sfs04 AND sie11 > 0 
+#           SELECT COUNT(*) INTO l_cnt FROM sie_file WHERE sie05=g_sfs[l_ac].sfs03
+#           IF l_cnt > 0 THEN
+#            DECLARE sie_curs CURSOR FOR SELECT * FROM sie_file WHERE sie01=g_sfs[l_ac].sfs04 AND sie11 > 0
 #                 AND sie05=g_sfs[l_ac].sfs03
 #            FOREACH sie_curs INTO l_sie.*
-#             IF l_sie.sie02 = g_sfs[l_ac].sfs07 AND l_sie.sie03 = g_sfs[l_ac].sfs08 
-#               AND l_sie.sie04 = g_sfs[l_ac].sfs09 THEN              
-#                CONTINUE FOREACH 
-#             ELSE 
+#             IF l_sie.sie02 = g_sfs[l_ac].sfs07 AND l_sie.sie03 = g_sfs[l_ac].sfs08
+#               AND l_sie.sie04 = g_sfs[l_ac].sfs09 THEN
+#                CONTINUE FOREACH
+#             ELSE
 #             	 LET l_qty = l_qty + l_sie.sie11
-#             END IF 
+#             END IF
 #            END FOREACH
-#            IF l_qty > g_sfs[l_ac].sfs05 THEN 
+#            IF l_qty > g_sfs[l_ac].sfs05 THEN
 #               CALL cl_err(l_qty,'sia-104',1)
 #               NEXT FIELD sfs05
-#            END IF 
+#            END IF
 #           END IF
-#          END IF        
+#          END IF
 #FUN-AC0074--end--mark----
-#FUN-A20048 --end  
- 
+#FUN-A20048 --end
+
         BEFORE FIELD sfs33
            IF NOT cl_null(g_sfs[l_ac].sfs04) THEN
               SELECT ima55,ima31 INTO g_ima55,g_ima31
                 FROM ima_file WHERE ima01=g_sfs[l_ac].sfs04
            END IF
            CALL i501_set_no_required()
- 
+
         AFTER FIELD sfs33  #第二單位
            IF cl_null(g_sfs[l_ac].sfs04) THEN NEXT FIELD sfs04 END IF
            IF g_sfs[l_ac].sfs07 IS NULL OR g_sfs[l_ac].sfs08 IS NULL OR
@@ -10729,7 +10748,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
            CALL i501_du_data_to_correct()
            CALL i501_set_required()
            CALL cl_show_fld_cont()
- 
+
         BEFORE FIELD sfs34  #第二轉換率
            IF cl_null(g_sfs[l_ac].sfs04) THEN NEXT FIELD sfs04 END IF
            IF g_sfs[l_ac].sfs05 IS NULL OR g_sfs[l_ac].sfs06 IS NULL OR
@@ -10750,7 +10769,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                    #CALL s_inv_shrt_by_warehouse(g_sma.sma894[3,3],g_sfs[l_ac].sfs07) RETURNING g_sma894
                    #IF g_sma894 = 'N' THEN
                     INITIALIZE g_imd23 TO NULL
-                    CALL s_inv_shrt_by_warehouse(g_sfs[l_ac].sfs07,g_plant) RETURNING g_imd23 #TQC-D40078 g_plant 
+                    CALL s_inv_shrt_by_warehouse(g_sfs[l_ac].sfs07,g_plant) RETURNING g_imd23 #TQC-D40078 g_plant
                     IF g_imd23 = 'N' THEN
                    #FUN-D30024--modify--end--
                        CALL cl_err('sel imgg:',STATUS,0)
@@ -10771,14 +10790,14 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                     END IF
               END IF
            END IF
- 
+
         AFTER FIELD sfs34  #第二轉換率
            IF NOT cl_null(g_sfs[l_ac].sfs34) THEN
               IF g_sfs[l_ac].sfs34=0 THEN
                  NEXT FIELD sfs34
               END IF
            END IF
- 
+
         BEFORE FIELD sfs35
            IF NOT cl_null(g_sfs[l_ac].sfs33) AND g_ima906 = '3' THEN
               CALL s_chk_imgg(g_sfs[l_ac].sfs04,g_sfs[l_ac].sfs07,
@@ -10794,7 +10813,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                    #CALL s_inv_shrt_by_warehouse(g_sma.sma894[3,3],g_sfs[l_ac].sfs07) RETURNING g_sma894
                    #IF g_sma894 = 'N' THEN
                     INITIALIZE g_imd23 TO NULL
-                    CALL s_inv_shrt_by_warehouse(g_sfs[l_ac].sfs07,g_plant) RETURNING g_imd23 #TQC-D40078 g_plant 
+                    CALL s_inv_shrt_by_warehouse(g_sfs[l_ac].sfs07,g_plant) RETURNING g_imd23 #TQC-D40078 g_plant
                     IF g_imd23 = 'N' THEN
                    #FUN-D30024--modify--end--
                         CALL cl_err('sel imgg:',STATUS,0)
@@ -10815,7 +10834,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                     END IF
               END IF
            END IF
- 
+
         AFTER FIELD sfs35  #第二數量
            IF NOT cl_null(g_sfs[l_ac].sfs35) THEN
               IF g_sfs[l_ac].sfs35 < 0 THEN
@@ -10823,7 +10842,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                  NEXT FIELD sfs35
               END IF
              #str MOD-A60062 add
-              IF g_sfp.sfp06 MATCHES '[13]' THEN                                                                                                                                 
+              IF g_sfp.sfp06 MATCHES '[13]' THEN
                  IF g_sfs[l_ac].sfs35 <0 THEN
                     CALL cl_err(g_sfs[l_ac].sfs35,"asf-037",1)
                     NEXT FIELD sfs35
@@ -10836,8 +10855,8 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                     AND sfs33=g_sfs[l_ac].sfs33
                     AND sfs10=g_sfs[l_ac].sfs10
                     AND sfs012=g_sfs[l_ac].sfs012  # FUN-B20079 jan
-                    AND sfs013=g_sfs[l_ac].sfs013  #FUN-B20079 jan   
-                    AND sfs27=b_sfs.sfs27     #No:MOD-A70119 add                                                                                                                                              
+                    AND sfs013=g_sfs[l_ac].sfs013  #FUN-B20079 jan
+                    AND sfs27=b_sfs.sfs27     #No:MOD-A70119 add
                     AND sfs01=g_sfp.sfp01
                     AND sfs02!= g_sfs[l_ac].sfs02
                     AND sfp01=sfs01 AND sfpconf !='X'
@@ -10860,7 +10879,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
               END IF
                #end MOD-A60062 add
               IF g_sfp.sfp06 = '2' THEN
-              END IF                                                                                                                
+              END IF
               IF p_cmd = 'a' OR  p_cmd = 'u' AND
                  g_sfs_t.sfs35 <> g_sfs[l_ac].sfs35 THEN
                  IF g_ima906='3' THEN
@@ -10889,7 +10908,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                       #CALL s_inv_shrt_by_warehouse(g_sma.sma894[3,3],g_sfs[l_ac].sfs07) RETURNING g_sma894      #FUN-C80107
                       #IF g_sma894 = 'N' THEN                                                                    #FUN-C80107
                        INITIALIZE g_imd23 TO NULL
-                       CALL s_inv_shrt_by_warehouse(g_sfs[l_ac].sfs07,g_plant) RETURNING g_imd23 #TQC-D40078 g_plant 
+                       CALL s_inv_shrt_by_warehouse(g_sfs[l_ac].sfs07,g_plant) RETURNING g_imd23 #TQC-D40078 g_plant
                        IF g_imd23 = 'N' THEN
                       #FUN-D30024--modify--end--
                           CALL cl_err(g_sfs[l_ac].sfs35,'mfg1303',0)
@@ -10899,14 +10918,14 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                  END IF
               END IF
             #此段copy from AFTER FIELD sfs05
-            SELECT ima918,ima921,ima930 INTO g_ima918,g_ima921,g_ima930 #DEV-D30059 add ima930 
+            SELECT ima918,ima921,ima930 INTO g_ima918,g_ima921,g_ima930 #DEV-D30059 add ima930
               FROM ima_file
              WHERE ima01 = g_sfs[l_ac].sfs04
                AND imaacti = "Y"
-            
+
             IF cl_null(g_ima930) THEN LET g_ima930 = 'N' END IF  #DEV-D30059 add
 
-            IF (g_ima918 = "Y" OR g_ima921 = "Y") AND 
+            IF (g_ima918 = "Y" OR g_ima921 = "Y") AND
                (cl_null(g_sfs_t.sfs35) OR (g_sfs[l_ac].sfs35<>g_sfs_t.sfs35 )) THEN
                IF cl_null(g_sfs[l_ac].sfs08) THEN
                   LET g_sfs[l_ac].sfs08 = ' '
@@ -10918,7 +10937,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                  FROM img_file
                 WHERE img01=g_sfs[l_ac].sfs04 AND img02=g_sfs[l_ac].sfs07
                   AND img03=g_sfs[l_ac].sfs08 AND img04=g_sfs[l_ac].sfs09
-               CALL s_umfchk(g_sfs[l_ac].sfs04,g_sfs[l_ac].sfs06,g_img09) 
+               CALL s_umfchk(g_sfs[l_ac].sfs04,g_sfs[l_ac].sfs06,g_img09)
                     RETURNING l_i,l_fac
                IF l_i = 1 THEN LET l_fac = 1 END IF
                IF g_sfp.sfp06 MATCHES '[6789B]' THEN
@@ -10930,7 +10949,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                                     g_sfs[l_ac].sfs08,g_sfs[l_ac].sfs09,
                                     g_sfs[l_ac].sfs06,g_img09,l_fac,
                                     g_sfs[l_ac].sfs05,'','SEL',1)#CHI-9A0022 add '' #No.TQC-B90236 add 1
-                            RETURNING l_r,g_qty 
+                            RETURNING l_r,g_qty
                    END IF                                                        #DEV-D30059
  #MOD-C10100 --end--
 #TQC-C10033 --unmark
@@ -10954,7 +10973,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                                     g_sfs[l_ac].sfs08,g_sfs[l_ac].sfs09,
                                     g_sfs[l_ac].sfs06,g_img09,l_fac,
                                     g_sfs[l_ac].sfs05,l_bno,'MOD',-1)#CHI-9A0022 add l_bno #No.TQC-B90236 add -1
-                            RETURNING l_r,g_qty 
+                            RETURNING l_r,g_qty
                    END IF                                                        #DEV-D30059
   #MOD-C10100 --end--
 #TQC-C10033 --unmark
@@ -10965,10 +10984,10 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
             END IF
            END IF
            CALL cl_show_fld_cont()
- 
+
         BEFORE FIELD sfs30
            CALL i501_set_no_required()
- 
+
         AFTER FIELD sfs30  #第一單位
            IF cl_null(g_sfs[l_ac].sfs04) THEN NEXT FIELD sfs04 END IF
            IF g_sfs[l_ac].sfs07 IS NULL OR g_sfs[l_ac].sfs08 IS NULL OR
@@ -11005,7 +11024,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                       #CALL s_inv_shrt_by_warehouse(g_sma.sma894[3,3],g_sfs[l_ac].sfs07) RETURNING g_sma894
                       #IF g_sma894 = 'N' THEN
                        INITIALIZE g_imd23 TO NULL
-                       CALL s_inv_shrt_by_warehouse(g_sfs[l_ac].sfs07,g_plant) RETURNING g_imd23 #TQC-D40078 g_plant 
+                       CALL s_inv_shrt_by_warehouse(g_sfs[l_ac].sfs07,g_plant) RETURNING g_imd23 #TQC-D40078 g_plant
                        IF g_imd23 = 'N' THEN
                       #FUN-D30024--modify--end--
                           CALL cl_err('sel imgg:',STATUS,0)
@@ -11047,14 +11066,14 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
            CALL i501_du_data_to_correct()
            CALL i501_set_required()
            CALL cl_show_fld_cont()
- 
+
         AFTER FIELD sfs31  #第一轉換率
            IF NOT cl_null(g_sfs[l_ac].sfs31) THEN
               IF g_sfs[l_ac].sfs31=0 THEN
                  NEXT FIELD sfs31
               END IF
            END IF
- 
+
         AFTER FIELD sfs32  #第一數量
            IF NOT cl_null(g_sfs[l_ac].sfs32) THEN
               IF g_sfs[l_ac].sfs32 < 0 THEN
@@ -11062,7 +11081,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                  NEXT FIELD sfs32
               END IF
              #str MOD-A60062 add
-              IF g_sfp.sfp06 MATCHES '[13]' THEN                                                                                                                                 
+              IF g_sfp.sfp06 MATCHES '[13]' THEN
                  IF g_sfs[l_ac].sfs32 <0 THEN
                     CALL cl_err(g_sfs[l_ac].sfs32,"asf-037",1)
                     NEXT FIELD sfs32
@@ -11075,17 +11094,17 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                     AND sfs30=g_sfs[l_ac].sfs30
                     AND sfs10=g_sfs[l_ac].sfs10
                     AND sfs012=g_sfs[l_ac].sfs012  #FUN-B20079 jan
-                    AND sfs013=g_sfs[l_ac].sfs013  #FUN-B20079 jan   
-                    AND sfs27=b_sfs.sfs27     #No:MOD-A70119 add                                                                                                                                              
+                    AND sfs013=g_sfs[l_ac].sfs013  #FUN-B20079 jan
+                    AND sfs27=b_sfs.sfs27     #No:MOD-A70119 add
                     AND sfs01=g_sfp.sfp01
                     AND sfs02!= g_sfs[l_ac].sfs02
                     AND sfp01=sfs01 AND sfpconf !='X'
                  IF STATUS OR cl_null(l_sfs32x) THEN LET l_sfs32x = 0 END IF
                  IF g_sfs[l_ac].sfs32>(g_sfs[l_ac].sfa05-g_sfs[l_ac].sfa06-l_sfs32x) THEN
                     LET l_msg=g_sfs[l_ac].sfs04 CLIPPED,' sfs32<>sfa05:'
-                  IF  g_user<>'TIPTOP' THEN    
+                  IF  g_user<>'TIPTOP' THEN
                     CALL cl_err(l_msg CLIPPED ,'asf-351',0) NEXT FIELD sfs32
-                  END IF 
+                  END IF
                 END IF
               END IF
              #end MOD-A60062 add
@@ -11093,14 +11112,14 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                  IF g_sfp.sfp06 MATCHES '[1234]' THEN
                     IF g_ima906 = '2' THEN
                        #IF g_sfs[l_ac].sfs32 > g_imgg10_1 THEN  #MOD-C50190 mark
-                       IF g_sfs[l_ac].sfs32 > g_imgg10_1 AND NOT i501_isVMI(g_sfs[l_ac].sfs07,g_sfs[l_ac].sfs08) THEN #MOD-C50190 add i501_isVMI 
+                       IF g_sfs[l_ac].sfs32 > g_imgg10_1 AND NOT i501_isVMI(g_sfs[l_ac].sfs07,g_sfs[l_ac].sfs08) THEN #MOD-C50190 add i501_isVMI
                          #IF g_sma.sma894[3,3]='N' OR g_sma.sma894[3,3] IS NULL THEN                                #FUN-C80107 mark
                          #FUN-D30024--modify--str--
                          #INITIALIZE g_sma894 TO NULL                                                               #FUN-C80107
                          #CALL s_inv_shrt_by_warehouse(g_sma.sma894[3,3],g_sfs[l_ac].sfs07) RETURNING g_sma894      #FUN-C80107
                          #IF g_sma894 = 'N' THEN                                                                    #FUN-C80107
                           INITIALIZE g_imd23 TO NULL
-                          CALL s_inv_shrt_by_warehouse(g_sfs[l_ac].sfs07,g_plant) RETURNING g_imd23 #TQC-D40078 g_plant 
+                          CALL s_inv_shrt_by_warehouse(g_sfs[l_ac].sfs07,g_plant) RETURNING g_imd23 #TQC-D40078 g_plant
                           IF g_imd23 = 'N' THEN
                          #FUN-D30024--modify--end--
                              CALL cl_err(g_sfs[l_ac].sfs32,'mfg1303',0)
@@ -11126,7 +11145,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                          #CALL s_inv_shrt_by_warehouse(g_sma.sma894[3,3],g_sfs[l_ac].sfs07) RETURNING g_sma894      #FUN-C80107
                          #IF g_sma894 = 'N' THEN                                                                    #FUN-C80107
                           INITIALIZE g_imd23 TO NULL
-                          CALL s_inv_shrt_by_warehouse(g_sfs[l_ac].sfs07,g_plant) RETURNING g_imd23 #TQC-D40078 g_plant 
+                          CALL s_inv_shrt_by_warehouse(g_sfs[l_ac].sfs07,g_plant) RETURNING g_imd23 #TQC-D40078 g_plant
                           IF g_imd23 = 'N' THEN
                          #FUN-D30024--modify--end--
                              CALL cl_err(g_sfs[l_ac].sfs32,'mfg1303',0)
@@ -11139,8 +11158,8 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
            END IF
            DISPLAY BY NAME g_sfs[l_ac].sfs32     #No.MOD-530747 add
            CALL cl_show_fld_cont()
-           
-        AFTER FIELD sfs930 
+
+        AFTER FIELD sfs930
            IF NOT s_costcenter_chk(g_sfs[l_ac].sfs930) THEN
               LET g_sfs[l_ac].sfs930=g_sfs_t.sfs930
               LET g_sfs[l_ac].gem02c=g_sfs_t.gem02c
@@ -11150,7 +11169,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
               LET g_sfs[l_ac].gem02c=s_costcenter_desc(g_sfs[l_ac].sfs930)
               DISPLAY BY NAME g_sfs[l_ac].gem02c
            END IF
-        
+
         AFTER FIELD sfs36
            IF NOT cl_null(g_sfs[l_ac].sfs36) THEN
               SELECT COUNT(*) INTO g_cnt FROM mse_file
@@ -11158,7 +11177,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
               IF g_cnt = 0 THEN
                  CALL cl_err(g_sfs[l_ac].sfs36,'mfg2603',0)
                  NEXT FIELD sfs36
-              ELSE 
+              ELSE
                 SELECT mse02 INTO g_sfs[l_ac].mse02
                   FROM mse_file WHERE mse01=g_sfs[l_ac].sfs36
                 DISPLAY g_sfs[l_ac].mse02 TO FORMONLY.mse02
@@ -11167,34 +11186,34 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
 
         #FUN-CB0087--add--str--
         BEFORE FIELD sfs37
-           IF g_aza.aza115 = 'Y' AND cl_null(g_sfs[l_ac].sfs37) THEN 
+           IF g_aza.aza115 = 'Y' AND cl_null(g_sfs[l_ac].sfs37) THEN
               CALL s_reason_code(g_sfp.sfp01,g_sfs[l_ac].sfs03,'',g_sfs[l_ac].sfs04,g_sfs[l_ac].sfs07,g_sfp.sfp16,g_sfp.sfp07) RETURNING g_sfs[l_ac].sfs37
               DISPLAY BY NAME g_sfs[l_ac].sfs37
            END IF
         AFTER FIELD sfs37
-          IF g_aza.aza115 = 'Y' THEN 
-             IF i501_sfs37_check() THEN 
+          IF g_aza.aza115 = 'Y' THEN
+             IF i501_sfs37_check() THEN
                 SELECT azf03 INTO g_sfs[l_ac].azf03_1 FROM azf_file WHERE azf01=g_sfs[l_ac].sfs37 AND azf02='2'
                 DISPLAY BY NAME g_sfs[l_ac].azf03_1
-             END IF 
-          END IF 
+             END IF
+          END IF
           CALL i501_azf03_desc()  #TQC-D20042 add
         #FUN-CB0087--add--end--
- 
+
         AFTER FIELD sfsud01
            IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
         AFTER FIELD sfsud02
 #str-------add by guanyao160602
            #IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
            IF NOT cl_null(g_sfs[l_ac].sfsud02) THEN
-              IF g_sfs[l_ac].sfsud02 = '101' THEN 
+              IF g_sfs[l_ac].sfsud02 = '101' THEN
                  NEXT FIELD  sfsud02
-              END IF 
+              END IF
                IF NOT s_chksmz(g_sfs[l_ac].sfs04, g_sfp.sfp01,
                                g_sfs[l_ac].sfsud02, g_sfs[l_ac].sfs08) THEN
-                  NEXT FIELD sfsud02 
+                  NEXT FIELD sfsud02
                END IF
-               
+
               SELECT imd02,imd10 INTO g_buf,l_imd10 FROM imd_file
                WHERE imd01=g_sfs[l_ac].sfsud02
                   AND imdacti = 'Y' #MOD-4B0169
@@ -11211,7 +11230,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                      AND imdacti = 'Y' #MOD-4B0169
                   LET g_msg = g_sfs[l_ac].sfs04," ",g_sfs[l_ac].sfsud02  #MOD-890107 add
                  IF l_n = 0 THEN
-                    CALL cl_err(g_msg,'asf-724',0) NEXT FIELD sfsud02               #MOD-890107      
+                    CALL cl_err(g_msg,'asf-724',0) NEXT FIELD sfsud02               #MOD-890107
                  END IF
               END IF
               #Add No.FUN-AB0018
@@ -11234,31 +11253,31 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
         AFTER FIELD sfsud07
            #IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF   #mark by chenkun160815
            #str----add by chenkun160815
-    IF g_sfp.sfp04 ='Y' THEN 
-      LET l_add1 = 0 
-      LET l_add2 = 0  
-      LET l_add3 = NULL 
-      SELECT count(*) INTO l_add1 FROM sfe_file 
-      WHERE sfe02 = g_sfp.sfp01 AND sfe01 = g_sfs[l_ac].sfs03 AND sfe07 = g_sfs[l_ac].sfs04
-      DISPLAY l_add1 TO add1
-      SELECT sum(sfeud07) INTO l_add2 FROM sfe_file 
-      WHERE sfe02 = g_sfp.sfp01 AND sfe01 = g_sfs[l_ac].sfs03 AND sfe07 = g_sfs[l_ac].sfs04
-      LET l_add3 = g_sfs[l_ac].sfs04
-      DISPLAY l_add2 TO add2
-      DISPLAY l_add3 TO add3
-    ELSE  
-      LET l_add1 = 0 
-      LET l_add2 = 0  
+    IF g_sfp.sfp04 ='Y' THEN
+      LET l_add1 = 0
+      LET l_add2 = 0
       LET l_add3 = NULL
-      SELECT count(*) INTO l_add1 FROM sfs_file 
+      SELECT count(*) INTO l_add1 FROM sfe_file
+      WHERE sfe02 = g_sfp.sfp01 AND sfe01 = g_sfs[l_ac].sfs03 AND sfe07 = g_sfs[l_ac].sfs04
+      DISPLAY l_add1 TO add1
+      SELECT sum(sfeud07) INTO l_add2 FROM sfe_file
+      WHERE sfe02 = g_sfp.sfp01 AND sfe01 = g_sfs[l_ac].sfs03 AND sfe07 = g_sfs[l_ac].sfs04
+      LET l_add3 = g_sfs[l_ac].sfs04
+      DISPLAY l_add2 TO add2
+      DISPLAY l_add3 TO add3
+    ELSE
+      LET l_add1 = 0
+      LET l_add2 = 0
+      LET l_add3 = NULL
+      SELECT count(*) INTO l_add1 FROM sfs_file
       WHERE sfs01 = g_sfp.sfp01 AND sfs03 = g_sfs[l_ac].sfs03 AND sfs04 = g_sfs[l_ac].sfs04
       DISPLAY l_add1 TO add1
-      SELECT sum(sfsud07) INTO l_add2 FROM sfs_file 
+      SELECT sum(sfsud07) INTO l_add2 FROM sfs_file
       WHERE sfs01 = g_sfp.sfp01 AND sfs03 = g_sfs[l_ac].sfs03 AND sfs04 = g_sfs[l_ac].sfs04
       LET l_add3 = g_sfs[l_ac].sfs04
       DISPLAY l_add2 TO add2
       DISPLAY l_add3 TO add3
-    END IF 
+    END IF
      #end----add by chenkun160815
         AFTER FIELD sfsud08
            IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
@@ -11276,7 +11295,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
            IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
         AFTER FIELD sfsud15
            IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
- 
+
         BEFORE DELETE                            #是否取消單身
             IF g_sfs_t.sfs02 > 0 AND g_sfs_t.sfs02 IS NOT NULL THEN
                 IF NOT cl_delb(0,0) THEN
@@ -11288,17 +11307,17 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                    CANCEL DELETE
                 END IF
 #No.TQC-B90236-------add-----------end
- 
+
                 IF l_lock_sw = "Y" THEN
                    CALL cl_err("", -263, 1)
                    CANCEL DELETE
                 END IF
- 
-                SELECT ima918,ima921 INTO g_ima918,g_ima921 
+
+                SELECT ima918,ima921 INTO g_ima918,g_ima921
                   FROM ima_file
                  WHERE ima01 = g_sfs[l_ac].sfs04
                    AND imaacti = "Y"
-                
+
 #TQC-C10033 --unmark
  #MOD-C10100 --begin--
                  IF g_ima918 = "Y" OR g_ima921 = "Y" THEN
@@ -11312,7 +11331,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                  END IF
  #MOD-C10100 --end--
 #TQC-C10033 --unmark
- 
+
                 DELETE FROM sfs_file
                  WHERE sfs01 = g_sfp.sfp01 AND sfs02 = g_sfs_t.sfs02
                 IF SQLCA.sqlcode THEN
@@ -11325,7 +11344,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                 LET g_rec_b=g_rec_b-1
                 DISPLAY g_rec_b TO FORMONLY.cn2
             END IF
- 
+
         ON ROW CHANGE
             IF INT_FLAG THEN
                CALL cl_err('',9001,0)
@@ -11346,7 +11365,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                  AND img02 = g_sfs[l_ac].sfs07   #倉庫
                  AND img03 = g_sfs[l_ac].sfs08   #儲位
                  AND img04 = g_sfs[l_ac].sfs09   #批號
-                 AND  img18 < g_sfp.sfp03        #過帳日   #MOD-870247 
+                 AND  img18 < g_sfp.sfp03        #過帳日   #MOD-870247
               IF g_cnt > 0 THEN    #大於有效日期
                  call cl_err('','aim-400',0)   #須修改
                  NEXT FIELD sfs07
@@ -11357,7 +11376,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                  IF g_flag=1 THEN
                     NEXT FIELD sfs04
                  END IF
- 
+
                  CALL i501_du_data_to_correct()
                  CALL i501_set_origin_field()
                  IF NOT (g_sfp.sfp06 MATCHES '[ABC]') THEN #FUN-5C0114
@@ -11381,7 +11400,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                  END IF
               END IF
               IF NOT i501_sfs37_check() THEN NEXT FIELD sfs37 END IF  #FUN-CB0087 add
-              
+
                CALL i501_b_move_back()
                CALL i501_b_else()
                IF NOT cl_null(l_sfa27_a) THEN
@@ -11390,7 +11409,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                      AND sfa03=g_sfs[l_ac].sfs04
                      AND sfa12=g_sfs[l_ac].sfs06
                      AND sfa08=g_sfs[l_ac].sfs10
-                     AND sfa012=g_sfs[l_ac].sfs012   #FUN-A60028 
+                     AND sfa012=g_sfs[l_ac].sfs012   #FUN-A60028
                      AND sfa013=g_sfs[l_ac].sfs013   #FUN-A60028
                    LET b_sfs.sfs27=l_sfa27_a
                END IF
@@ -11398,18 +11417,18 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
               IF cl_null(b_sfs.sfs28) THEN
                  SELECT sfa28 INTO b_sfs.sfs28
                    FROM sfa_file
-                  WHERE sfa01 = b_sfs.sfs03 
+                  WHERE sfa01 = b_sfs.sfs03
                     AND sfa03 = b_sfs.sfs04
                     AND sfa08 = b_sfs.sfs10
                     AND sfa12 = b_sfs.sfs06
                     AND sfa27 = b_sfs.sfs27
-                    AND sfa012= b_sfs.sfs012  #FUN-A60028 
-                    AND sfa013= b_sfs.sfs013  #FUN-A60028                    
+                    AND sfa012= b_sfs.sfs012  #FUN-A60028
+                    AND sfa013= b_sfs.sfs013  #FUN-A60028
               END IF
                #darcy: add 20220317 s---
-               IF g_sfs_t.sfs04 != b_sfs.sfs04 OR g_sfs_t.sfs07 != b_sfs.sfs07 
+               IF g_sfs_t.sfs04 != b_sfs.sfs04 OR g_sfs_t.sfs07 != b_sfs.sfs07
                   OR g_sfs_t.sfs08!=b_sfs.sfs08 OR g_sfs_t.sfs09 != b_sfs.sfs09 THEN
-                  CALL i501_get_img_mark(b_sfs.sfs04,b_sfs.sfs07,b_sfs.sfs08,b_sfs.sfs09) RETURNING b_sfs.sfs21 
+                  CALL i501_get_img_mark(b_sfs.sfs04,b_sfs.sfs07,b_sfs.sfs08,b_sfs.sfs09) RETURNING b_sfs.sfs21
                END IF
                #darcy: add 20220317 e---
                UPDATE sfs_file SET * = b_sfs.*
@@ -11423,30 +11442,30 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
 	          COMMIT WORK
                 display "commit work on row change"
                END IF
-               SELECT SUM(sfs05) INTO g_sfs[l_ac].img10_alo FROM sfs_file,sfp_file                                                  
-                WHERE sfs04=g_sfs[l_ac].sfs04                                                                                       
-                  AND sfs07=g_sfs[l_ac].sfs07                                                                                       
-                  AND sfs08=g_sfs[l_ac].sfs08                                                                                       
-                  AND sfs09=g_sfs[l_ac].sfs09                                                                                       
-                  AND sfp01=sfs01 AND sfpconf!='X'                                                                                  
+               SELECT SUM(sfs05) INTO g_sfs[l_ac].img10_alo FROM sfs_file,sfp_file
+                WHERE sfs04=g_sfs[l_ac].sfs04
+                  AND sfs07=g_sfs[l_ac].sfs07
+                  AND sfs08=g_sfs[l_ac].sfs08
+                  AND sfs09=g_sfs[l_ac].sfs09
+                  AND sfp01=sfs01 AND sfpconf!='X'
                   AND sfs01 != g_sfp.sfp01    #MOD-A80031 add
-               DISPLAY BY NAME g_sfs[l_ac].img10_alo                                                                                
+               DISPLAY BY NAME g_sfs[l_ac].img10_alo
             END IF
- 
+
         AFTER ROW
             LET l_ac = ARR_CURR()
-           #LET l_ac_t = l_ac      #FUN-D40030 Mark    
+           #LET l_ac_t = l_ac      #FUN-D40030 Mark
             DISPLAY "after row int_flag before"
             IF INT_FLAG THEN
                DISPLAY "after row int_flag after"
                CALL cl_err('',9001,0)
                LET INT_FLAG = 0
               IF p_cmd='a' AND l_ac <= g_sfs.getLength() THEN   #CHI-C30106 add
-               SELECT ima918,ima921 INTO g_ima918,g_ima921 
+               SELECT ima918,ima921 INTO g_ima918,g_ima921
                  FROM ima_file
                 WHERE ima01 = g_sfs[l_ac].sfs04
                   AND imaacti = "Y"
-               
+
 #TQC-C10033 --unmark
   #MOD-C10100 --begin--
                  IF g_ima918 = "Y" OR g_ima921 = "Y" THEN
@@ -11469,7 +11488,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                      LET g_action_choice = "detail"
                      LET l_ac = l_ac_t
                   END IF
-               #FUN-D40030--add--end-- 
+               #FUN-D40030--add--end--
                END IF
                CLOSE i501_bcl
                DISPLAY "after row rollback work"
@@ -11511,37 +11530,37 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                WHERE sfs01 = g_sfp.sfp01 AND sfs02 = g_sfs[l_ac].sfs02
            END IF
            #CHI-BC0040 end------------
- 
+
              #計算欠料量g_short_qty(原g_sfa07)
-              IF cl_null(g_sfs[l_ac].sfs012) THEN LET g_sfs[l_ac].sfs012=' ' END IF #TQC-CB0084 add 
-              IF cl_null(g_sfs[l_ac].sfs013) THEN LET g_sfs[l_ac].sfs013= 0  END IF #TQC-CB0084 add 
+              IF cl_null(g_sfs[l_ac].sfs012) THEN LET g_sfs[l_ac].sfs012=' ' END IF #TQC-CB0084 add
+              IF cl_null(g_sfs[l_ac].sfs013) THEN LET g_sfs[l_ac].sfs013= 0  END IF #TQC-CB0084 add
               CALL s_shortqty(g_sfs[l_ac].sfs03,g_sfs[l_ac].sfs04,g_sfs[l_ac].sfs10,
                               g_sfs[l_ac].sfs06,g_sfs[l_ac].sfs27,
                              #g_sfs012,g_sfs013)   #FUN-A50066 add    #MOD-CB0154 mark
                               g_sfs[l_ac].sfs012,g_sfs[l_ac].sfs013)  #MOD-CB0154
                    RETURNING g_short_qty
-              IF cl_null(g_short_qty) THEN LET g_short_qty = 0 END IF 
-           
+              IF cl_null(g_short_qty) THEN LET g_short_qty = 0 END IF
+
             IF g_sfp.sfp06='3' THEN
                LET g_sfs[l_ac].sfa05=g_short_qty
                LET g_sfs[l_ac].sfa06=0
             END IF
-            IF g_sfp.sfp06 MATCHES '[6789]' THEN   
+            IF g_sfp.sfp06 MATCHES '[6789]' THEN
                IF g_sfs[l_ac].sfa05<0  THEN
                   LET g_sfs[l_ac].sfa05=g_sfs[l_ac].sfa05*(-1)
                   LET g_sfs[l_ac].sfa06=g_sfs[l_ac].sfa06*(-1)
                END IF
             END IF
-            LET g_sfs[l_ac].short_qty = g_short_qty 
+            LET g_sfs[l_ac].short_qty = g_short_qty
             DISPLAY BY NAME g_sfs[l_ac].sfa05,g_sfs[l_ac].sfa06,g_sfs[l_ac].sfs28,           #CHI-BC0040 add g_sfs[l_ac].sfs28
-                            g_sfs[l_ac].short_qty     
+                            g_sfs[l_ac].short_qty
             CLOSE i501_bcl
             COMMIT WORK
                 display "commit work after row"
- 
+
            #CALL g_sfs.deleteElement(g_rec_b+1)   #FUN-D40030 Mark
             CALL g_sfs.deleteElement(g_rec_b+1)   #MOD-D60165 add
- 
+
        #CHI-C30106---add---S---
         AFTER INPUT
         LET g_cnt = 0
@@ -11559,8 +11578,8 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                 AND rvbs02=g_sfs[l_c].sfs02
              END IF
           END FOR
-       #CHI-C30106---add---E--- 
- 
+       #CHI-C30106---add---E---
+
         ON ACTION CONTROLO                        #沿用所有欄位
             IF INFIELD(sfs02) AND l_ac > 1 THEN
                 LET g_sfs[l_ac].sfs03=g_sfs[l_ac-1].sfs03
@@ -11572,7 +11591,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                 LET g_sfs[l_ac].sfs10=g_sfs[l_ac-1].sfs10
                 NEXT FIELD sfs02
             END IF
- 
+
         ON ACTION controlp
            CASE WHEN INFIELD(sfs04)
                     #g_argv2   1:成套發料 2:超領   3:欠/補料   4.領料
@@ -11582,7 +11601,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                     #          9.工單領退料維護作業
                     #---------No.MOD-780002 modify
                 #單身選擇取替代時，料號開窗出來的應該是在abmi600中維護好的料號
-                 IF NOT cl_null(g_sfs[l_ac].sfs03) AND g_sfs[l_ac].sfs26 MATCHES '[US]' THEN   
+                 IF NOT cl_null(g_sfs[l_ac].sfs03) AND g_sfs[l_ac].sfs26 MATCHES '[US]' THEN
                     SELECT sfb05 INTO l_sfb05 FROM sfb_file WHERE sfb01 = g_sfs[l_ac].sfs03
                     CALL cl_init_qry_var()
                     LET g_qryparam.form ="q_bmd1"
@@ -11599,7 +11618,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                     DISPLAY g_sfs[l_ac].sfs04 TO sfs04
                     NEXT FIELD sfs04
 #FUN-A40058 --begin--
-                 ELSE IF NOT cl_null(g_sfs[l_ac].sfs03) AND g_sfs[l_ac].sfs26 MATCHES '[Z]' THEN   
+                 ELSE IF NOT cl_null(g_sfs[l_ac].sfs03) AND g_sfs[l_ac].sfs26 MATCHES '[Z]' THEN
                     SELECT sfb05 INTO l_sfb05 FROM sfb_file WHERE sfb01 = g_sfs[l_ac].sfs03
                     CALL cl_init_qry_var()
                     LET g_qryparam.form ="q_bon09"
@@ -11611,37 +11630,37 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                  ELSE
 	             CASE WHEN g_argv2 MATCHES '[136]'
                                LET li_where = " AND sfa01 IN (SELECT sfq02 FROM sfq_file WHERE sfq01 = '",g_sfp.sfp01,"') "
-                               IF NOT cl_null(g_sfs[l_ac].sfs26) THEN 
-                               #  LET li_where = " AND sfa26 = '",g_sfs[l_ac].sfs26,"' " #FUN-A40058  
-                                  LET li_where = li_where CLIPPED," AND sfa26 = '",g_sfs[l_ac].sfs26,"' " #FUN-A40058  
+                               IF NOT cl_null(g_sfs[l_ac].sfs26) THEN
+                               #  LET li_where = " AND sfa26 = '",g_sfs[l_ac].sfs26,"' " #FUN-A40058
+                                  LET li_where = li_where CLIPPED," AND sfa26 = '",g_sfs[l_ac].sfs26,"' " #FUN-A40058
                                ELSE
-                               #  LET li_where = " AND sfa26 IN ('0','1','2','3','4','5','6','7','8') "   #FUN-A20037 add '7,8'  #FUN-A40058 
-                                  LET li_where = li_where CLIPPED," AND sfa26 IN ('0','1','2','3','4','5','6','7','8') "   #FUN-A20037 add '7,8'  #FUN-A40058 
+                               #  LET li_where = " AND sfa26 IN ('0','1','2','3','4','5','6','7','8') "   #FUN-A20037 add '7,8'  #FUN-A40058
+                                  LET li_where = li_where CLIPPED," AND sfa26 IN ('0','1','2','3','4','5','6','7','8') "   #FUN-A20037 add '7,8'  #FUN-A40058
                                END IF
                                IF g_argv2 = 3 THEN
-                                  CALL q_short_qty(FALSE,TRUE,g_sfs[l_ac].sfs03,g_sfs[l_ac].sfs04,li_where,'1') 
+                                  CALL q_short_qty(FALSE,TRUE,g_sfs[l_ac].sfs03,g_sfs[l_ac].sfs04,li_where,'1')
                                        RETURNING g_sfs[l_ac].sfs03,g_sfs[l_ac].sfs04,l_sfa08_tmp,l_sfa12_tmp,l_sfa27_tmp
                                                 ,g_sfs[l_ac].sfs012,g_sfs[l_ac].sfs013   #FUN-A60028 add
                                ELSE
-                                  CALL q_short_qty(FALSE,TRUE,g_sfs[l_ac].sfs03,g_sfs[l_ac].sfs04,li_where,'4') 
+                                  CALL q_short_qty(FALSE,TRUE,g_sfs[l_ac].sfs03,g_sfs[l_ac].sfs04,li_where,'4')
                                        RETURNING g_sfs[l_ac].sfs03,g_sfs[l_ac].sfs04,l_sfa08_tmp,l_sfa12_tmp,l_sfa27_tmp
-                                                ,g_sfs[l_ac].sfs012,g_sfs[l_ac].sfs013   #FUN-A60028 add                                       
+                                                ,g_sfs[l_ac].sfs012,g_sfs[l_ac].sfs013   #FUN-A60028 add
                                END IF
-              #FUN-A60028 --begin--     
-                               LET g_sfs[l_ac].sfs10 = l_sfa08_tmp               
-                               LET g_sfs[l_ac].sfs06 = l_sfa12_tmp                                      
-                               LET g_sfs[l_ac].sfs27 = l_sfa27_tmp                            
-                               IF cl_null(g_sfs[l_ac].sfs012) THEN 
+              #FUN-A60028 --begin--
+                               LET g_sfs[l_ac].sfs10 = l_sfa08_tmp
+                               LET g_sfs[l_ac].sfs06 = l_sfa12_tmp
+                               LET g_sfs[l_ac].sfs27 = l_sfa27_tmp
+                               IF cl_null(g_sfs[l_ac].sfs012) THEN
                                   LET g_sfs[l_ac].sfs012 = ' '
-                               END IF 
-                               IF cl_null(g_sfs[l_ac].sfs013) THEN 
+                               END IF
+                               IF cl_null(g_sfs[l_ac].sfs013) THEN
                                   LET g_sfs[l_ac].sfs013 = 0
-                               END IF 
+                               END IF
                                DISPLAY g_sfs[l_ac].sfs012 TO sfs012
                                DISPLAY g_sfs[l_ac].sfs013 TO sfs013
                                DISPLAY g_sfs[l_ac].sfs27 TO sfs27
-                               DISPLAY g_sfs[l_ac].sfs06 TO sfs06                               
-                               DISPLAY g_sfs[l_ac].sfs10 TO sfs10                                   
+                               DISPLAY g_sfs[l_ac].sfs06 TO sfs06
+                               DISPLAY g_sfs[l_ac].sfs10 TO sfs10
               #FUN-A60028 --end--
                                DISPLAY g_sfs[l_ac].sfs03 TO sfs03
                                DISPLAY g_sfs[l_ac].sfs04 TO sfs04
@@ -11652,15 +11671,15 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                                LET g_qryparam.arg1 =g_sfs[l_ac].sfs03
                                LET g_qryparam.default2 = g_sfs[l_ac].sfs27
                                LET g_qryparam.default3 = b_sfs.sfs28
-                               IF NOT cl_null(g_sfs[l_ac].sfs26) THEN 
-                                  LET g_qryparam.where = " sfa26 = '",g_sfs[l_ac].sfs26,"' " 
+                               IF NOT cl_null(g_sfs[l_ac].sfs26) THEN
+                                  LET g_qryparam.where = " sfa26 = '",g_sfs[l_ac].sfs26,"' "
                                ELSE
                                   LET g_qryparam.where = " sfa26 IN ('0','1','2','3','4','5','6','7','8','S','U','T','Z') "   #FUN-A20037 add '7,8'  #MOD-C40028 add,'S','U','T','Z'
                                END IF
                                #FUN-B80143 --START--
                                IF g_sfp.sfp06 = '7' THEN
                                   LET g_qryparam.where = g_qryparam.where CLIPPED, " AND sfa062 > 0 "
-                               END IF 
+                               END IF
                                #FUN-B80143 --END--
                                LET g_qryparam.default1 = g_sfs[l_ac].sfs04
                               #CALL cl_create_qry() RETURNING g_sfs[l_ac].sfs04,g_sfs[l_ac].sfs27,b_sfs.sfs28  #FUN-940039 add   #MOD-C40028 mark
@@ -11686,14 +11705,14 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
 #                              LET g_qryparam.form ="q_ima"
 #                              LET g_qryparam.default1 = g_sfs[l_ac].sfs04
 #                              CALL cl_create_qry() RETURNING g_sfs[l_ac].sfs04
-                               CALL q_sel_ima(FALSE, "q_ima","",g_sfs[l_ac].sfs04,"","","","","",'' ) 
-                                  RETURNING g_sfs[l_ac].sfs04  
+                               CALL q_sel_ima(FALSE, "q_ima","",g_sfs[l_ac].sfs04,"","","","","",'' )
+                                  RETURNING g_sfs[l_ac].sfs04
 #FUN-AA0059---------mod------------end-----------------
                                DISPLAY g_sfs[l_ac].sfs03 TO sfs03
                                DISPLAY g_sfs[l_ac].sfs04 TO sfs04
                                NEXT FIELD sfs04
                      END CASE
-                END IF        #No.MOD-930195 add     
+                END IF        #No.MOD-930195 add
           END IF           #FUN-A40058
                 WHEN INFIELD(sfs03)
 	             #CASE WHEN g_argv2 MATCHES '[13]'
@@ -11701,84 +11720,84 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                                LET li_where = " AND sfa01 IN (SELECT sfq02 FROM sfq_file WHERE sfq01 = '",g_sfp.sfp01,"') "
                                ##組合拆解的工單不顯示出來!
                                LET li_where = li_where CLIPPED," AND sfb01[1,",g_doc_len,"] NOT IN (SELECT smy69 FROM smy_file WHERE smy69 IS NOT NULL) "   #CHI-9B0005 mod
-                               IF NOT cl_null(g_sfs[l_ac].sfs26) THEN 
+                               IF NOT cl_null(g_sfs[l_ac].sfs26) THEN
                               #   LET li_where = " AND sfa26 = '",g_sfs[l_ac].sfs26,"' "                    #FUN-A40058 mark
-                                  LET li_where = li_where CLIPPED," AND sfa26 = '",g_sfs[l_ac].sfs26,"' "   #FUN-A40058 
+                                  LET li_where = li_where CLIPPED," AND sfa26 = '",g_sfs[l_ac].sfs26,"' "   #FUN-A40058
                                ELSE
                               #   LET li_where = " AND sfa26 IN ('0','1','2','3','4','5','6','7','8') "  #FUN-A20037 add '7,8'   #FUN-A40058
                                   LET li_where = li_where CLIPPED," AND sfa26 IN ('0','1','2','3','4','5','6','7','8') "  #FUN-A40058
                                END IF
                                #TQC-CA0045 add begin--------------------
-                               IF g_argv2 = 'D' AND NOT cl_null(g_sfs[l_ac].sfs014) THEN 
+                               IF g_argv2 = 'D' AND NOT cl_null(g_sfs[l_ac].sfs014) THEN
                                   LET li_where = li_where CLIPPED," AND sfb01 IN (SELECT shm012 FROM shm_file WHERE shm01='",g_sfs[l_ac].sfs014,"') "
-                               END IF 
+                               END IF
                                #TQC-CA0045 add end----------------------
                                IF g_argv2 = '3' THEN
-                                  CALL q_short_qty(FALSE,TRUE,g_sfs[l_ac].sfs03,g_sfs[l_ac].sfs04,li_where,'1') 
+                                  CALL q_short_qty(FALSE,TRUE,g_sfs[l_ac].sfs03,g_sfs[l_ac].sfs04,li_where,'1')
                                        RETURNING g_sfs[l_ac].sfs03,g_sfs[l_ac].sfs04,l_sfa08_tmp,l_sfa12_tmp,g_sfs[l_ac].sfs27
                                                 ,g_sfs[l_ac].sfs012,g_sfs[l_ac].sfs013   #FUN-A60028 ADD
                                ELSE
-                                  CALL q_short_qty(FALSE,TRUE,g_sfs[l_ac].sfs03,g_sfs[l_ac].sfs04,li_where,'4') 
+                                  CALL q_short_qty(FALSE,TRUE,g_sfs[l_ac].sfs03,g_sfs[l_ac].sfs04,li_where,'4')
                                        RETURNING g_sfs[l_ac].sfs03,g_sfs[l_ac].sfs04,l_sfa08_tmp,l_sfa12_tmp,g_sfs[l_ac].sfs27
-                                                ,g_sfs[l_ac].sfs012,g_sfs[l_ac].sfs013   #FUN-A60028 ADD                                       
-                               END IF   
+                                                ,g_sfs[l_ac].sfs012,g_sfs[l_ac].sfs013   #FUN-A60028 ADD
+                               END IF
                                DISPLAY g_sfs[l_ac].sfs27 TO sfs27
                                DISPLAY g_sfs[l_ac].sfs03 TO sfs03
                                DISPLAY g_sfs[l_ac].sfs04 TO sfs04
-#FUN-A60028 --begin--                               
-                               IF cl_null(g_sfs[l_ac].sfs012) THEN 
+#FUN-A60028 --begin--
+                               IF cl_null(g_sfs[l_ac].sfs012) THEN
                                   LET g_sfs[l_ac].sfs012 = ' '
-                               END IF 
-                               IF cl_null(g_sfs[l_ac].sfs013) THEN 
+                               END IF
+                               IF cl_null(g_sfs[l_ac].sfs013) THEN
                                   LET g_sfs[l_ac].sfs012 = 0
-                               END IF                                
-                               DISPLAY g_sfs[l_ac].sfs012 TO sfs012   
-                               DISPLAY g_sfs[l_ac].sfs013 TO sfs013   
+                               END IF
+                               DISPLAY g_sfs[l_ac].sfs012 TO sfs012
+                               DISPLAY g_sfs[l_ac].sfs013 TO sfs013
 #FUN-A60028 --end--
                                NEXT FIELD sfs03
 	                  WHEN g_argv2 MATCHES '[2]'
                                LET li_where = " AND sfb04 IN ('2','3','4','5','6','7') "
                                LET li_where = li_where CLIPPED," AND sfb01[1,",g_doc_len,"] NOT IN (SELECT smy69 FROM smy_file WHERE smy69 IS NOT NULL) "   #CHI-9B0005 mod
-                               IF NOT cl_null(g_sfs[l_ac].sfs26) THEN 
+                               IF NOT cl_null(g_sfs[l_ac].sfs26) THEN
                               #   LET li_where = " AND sfa26 = '",g_sfs[l_ac].sfs26,"' "                                        #TQC-A30112
                                   LET li_where = li_where CLIPPED," AND sfa26 = '",g_sfs[l_ac].sfs26,"' "                       #TQC-A30112
                                ELSE
                               #   LET li_where = " AND sfa26 IN ('0','1','2','3','4','5','6','7','8') "  #FUN-A20037 add '7,8'  #TQC-A30112
                                   LET li_where = li_where CLIPPED," AND sfa26 IN ('0','1','2','3','4','5','6','7','8') "        #TQC-A30112
                                END IF
-                               CALL q_short_qty(FALSE,TRUE,g_sfs[l_ac].sfs03,g_sfs[l_ac].sfs04,li_where,'4') 
+                               CALL q_short_qty(FALSE,TRUE,g_sfs[l_ac].sfs03,g_sfs[l_ac].sfs04,li_where,'4')
                                     RETURNING g_sfs[l_ac].sfs03,g_sfs[l_ac].sfs04,l_sfa08_tmp,l_sfa12_tmp,g_sfs[l_ac].sfs27
-                                                ,g_sfs[l_ac].sfs012,g_sfs[l_ac].sfs013   #FUN-A60028 ADD 
+                                                ,g_sfs[l_ac].sfs012,g_sfs[l_ac].sfs013   #FUN-A60028 ADD
 
                            #str-----add by huanglf161027
                                SELECT ima35 INTO g_sfs[l_ac].sfsud02 FROM ima_file WHERE ima01 = g_sfs[l_ac].sfs04
                                LET g_sfs[l_ac].sfs07 = 'XBC'
                                DISPLAY g_sfs[l_ac].sfsud02 TO sfsud02
                                DISPLAY g_sfs[l_ac].sfs07 TO sfs07
-                            #str-----end by huanglf161027                                     
+                            #str-----end by huanglf161027
                                DISPLAY g_sfs[l_ac].sfs27 TO sfs27
                                DISPLAY g_sfs[l_ac].sfs03 TO sfs03
                                DISPLAY g_sfs[l_ac].sfs04 TO sfs04
-#FUN-A60028 --begin--                               
-                               IF cl_null(g_sfs[l_ac].sfs012) THEN 
+#FUN-A60028 --begin--
+                               IF cl_null(g_sfs[l_ac].sfs012) THEN
                                   LET g_sfs[l_ac].sfs012 = ' '
-                               END IF 
-                               IF cl_null(g_sfs[l_ac].sfs013) THEN 
+                               END IF
+                               IF cl_null(g_sfs[l_ac].sfs013) THEN
                                   LET g_sfs[l_ac].sfs012 = 0
-                               END IF                                
-                               DISPLAY g_sfs[l_ac].sfs012 TO sfs012   
-                               DISPLAY g_sfs[l_ac].sfs013 TO sfs013   
+                               END IF
+                               DISPLAY g_sfs[l_ac].sfs012 TO sfs012
+                               DISPLAY g_sfs[l_ac].sfs013 TO sfs013
 #FUN-A60028 --end--
-                                   
+
                                NEXT FIELD sfs03
                           WHEN g_argv2 MATCHES '[ABC]'
-#FUN-AA0059---------mod------------str----------------- 
+#FUN-AA0059---------mod------------str-----------------
 #                              CALL cl_init_qry_var()
-#                              LET g_qryparam.form ="q_ima17" #MOD-630064 
+#                              LET g_qryparam.form ="q_ima17" #MOD-630064
 #                              LET g_qryparam.default1 = g_sfs[l_ac].sfs03
 #                              CALL cl_create_qry() RETURNING g_sfs[l_ac].sfs03
-                               CALL q_sel_ima(FALSE, "q_ima17","",g_sfs[l_ac].sfs03,"","","","","",'' ) 
-                                     RETURNING g_sfs[l_ac].sfs03  
+                               CALL q_sel_ima(FALSE, "q_ima17","",g_sfs[l_ac].sfs03,"","","","","",'' )
+                                     RETURNING g_sfs[l_ac].sfs03
 #FUN-AA0059---------mod------------end-----------------
                                DISPLAY g_sfs[l_ac].sfs03 TO sfs03
                                NEXT FIELD sfs03
@@ -11787,11 +11806,11 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                                LET li_where = li_where CLIPPED," AND sfb01[1,",g_doc_len,"] NOT IN (SELECT smy69 FROM smy_file WHERE smy69 IS NOT NULL) "   #CHI-9B0005 mod
                                #CHI-C30040---begin
                                IF g_sfp.sfp06 = '4' OR g_sfp.sfp06 = '9' THEN
-                                  LET li_where = li_where CLIPPED, " AND sfa11 = 'E' "    
-                               END IF 
+                                  LET li_where = li_where CLIPPED, " AND sfa11 = 'E' "
+                               END IF
                                #CHI-C30040---end
-                               IF NOT cl_null(g_sfs[l_ac].sfs26) THEN 
-                             #    LET li_where = " AND sfa26 = '",g_sfs[l_ac].sfs26,"' "   #FUN-A40058 
+                               IF NOT cl_null(g_sfs[l_ac].sfs26) THEN
+                             #    LET li_where = " AND sfa26 = '",g_sfs[l_ac].sfs26,"' "   #FUN-A40058
                                   LET li_where = li_where CLIPPED," AND sfa26 = '",g_sfs[l_ac].sfs26,"' "  #FUN-A40058
                                ELSE
                              #    LET li_where = " AND sfa26 IN ('0','1','2','3','4','5','6','7','8') "   #FUN-A20037 add '7,8'    #FUN-A40058 MARK
@@ -11800,30 +11819,30 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                                #FUN-B80143 --START--
                                IF g_sfp.sfp06 = '7' THEN
                                   LET li_where = li_where CLIPPED, " AND sfa062 > 0 "
-                               END IF 
+                               END IF
                                #FUN-B80143 --END--
-                               CALL q_short_qty(FALSE,TRUE,g_sfs[l_ac].sfs03,g_sfs[l_ac].sfs04,li_where,'4') 
+                               CALL q_short_qty(FALSE,TRUE,g_sfs[l_ac].sfs03,g_sfs[l_ac].sfs04,li_where,'4')
                                     RETURNING g_sfs[l_ac].sfs03,g_sfs[l_ac].sfs04,l_sfa08_tmp,l_sfa12_tmp,g_sfs[l_ac].sfs27
-                                                ,g_sfs[l_ac].sfs012,g_sfs[l_ac].sfs013   #FUN-A60028 ADD                                    
+                                                ,g_sfs[l_ac].sfs012,g_sfs[l_ac].sfs013   #FUN-A60028 ADD
 
                            #str-----add by huanglf161027
                                SELECT ima35 INTO g_sfs[l_ac].sfsud02 FROM ima_file WHERE ima01 = g_sfs[l_ac].sfs04
                                LET g_sfs[l_ac].sfs07 = 'XBC'
                                DISPLAY g_sfs[l_ac].sfsud02 TO sfsud02
                                DISPLAY g_sfs[l_ac].sfs07 TO sfs07
-                            #str-----end by huanglf161027    
+                            #str-----end by huanglf161027
                                DISPLAY g_sfs[l_ac].sfs27 TO sfs27
                                DISPLAY g_sfs[l_ac].sfs03 TO sfs03
                                DISPLAY g_sfs[l_ac].sfs04 TO sfs04
-#FUN-A60028 --begin--                               
-                               IF cl_null(g_sfs[l_ac].sfs012) THEN 
+#FUN-A60028 --begin--
+                               IF cl_null(g_sfs[l_ac].sfs012) THEN
                                   LET g_sfs[l_ac].sfs012 = ' '
-                               END IF 
-                               IF cl_null(g_sfs[l_ac].sfs013) THEN 
+                               END IF
+                               IF cl_null(g_sfs[l_ac].sfs013) THEN
                                   LET g_sfs[l_ac].sfs012 = 0
-                               END IF                                
-                               DISPLAY g_sfs[l_ac].sfs012 TO sfs012   
-                               DISPLAY g_sfs[l_ac].sfs013 TO sfs013   
+                               END IF
+                               DISPLAY g_sfs[l_ac].sfs012 TO sfs012
+                               DISPLAY g_sfs[l_ac].sfs013 TO sfs013
 #FUN-A60028 --end--
                                NEXT FIELD sfs03
                      END CASE
@@ -11837,18 +11856,18 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                      LET g_qryparam.arg2     = g_sfs[l_ac].sfs04
                      LET g_qryparam.arg3     = g_sfs[l_ac].sfs10     #l_sfa08_tmp
                      LET g_qryparam.arg4     = g_sfs[l_ac].sfs06     # l_sfa12_tmp
-                     LET g_qryparam.arg5     = g_sfs[l_ac].sfs27                                                          
+                     LET g_qryparam.arg5     = g_sfs[l_ac].sfs27
                      CALL cl_create_qry() RETURNING g_sfs[l_ac].sfs012,g_sfs[l_ac].sfs013
-                     IF cl_null(g_sfs[l_ac].sfs012) THEN 
+                     IF cl_null(g_sfs[l_ac].sfs012) THEN
                         LET g_sfs[l_ac].sfs012 = ' '
-                     END IF 
-                     IF cl_null(g_sfs[l_ac].sfs013) THEN 
+                     END IF
+                     IF cl_null(g_sfs[l_ac].sfs013) THEN
                         LET g_sfs[l_ac].sfs012 = 0
-                     END IF                            
-                     DISPLAY BY NAME g_sfs[l_ac].sfs012 
-                     DISPLAY BY NAME g_sfs[l_ac].sfs013 
-                     NEXT FIELD sfs012                    
-                
+                     END IF
+                     DISPLAY BY NAME g_sfs[l_ac].sfs012
+                     DISPLAY BY NAME g_sfs[l_ac].sfs013
+                     NEXT FIELD sfs012
+
                 WHEN INFIELD(sfs013)
                      CALL cl_init_qry_var()
                      LET g_qryparam.form ="q_sfs012_1"
@@ -11858,19 +11877,19 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                      LET g_qryparam.arg2     = g_sfs[l_ac].sfs04
                      LET g_qryparam.arg3     = g_sfs[l_ac].sfs10     #l_sfa08_tmp
                      LET g_qryparam.arg4     = g_sfs[l_ac].sfs06     # l_sfa12_tmp
-                     LET g_qryparam.arg5     = g_sfs[l_ac].sfs27                                                                
+                     LET g_qryparam.arg5     = g_sfs[l_ac].sfs27
                      CALL cl_create_qry() RETURNING g_sfs[l_ac].sfs012,g_sfs[l_ac].sfs013
-                     IF cl_null(g_sfs[l_ac].sfs012) THEN 
+                     IF cl_null(g_sfs[l_ac].sfs012) THEN
                         LET g_sfs[l_ac].sfs012 = ' '
-                     END IF 
-                     IF cl_null(g_sfs[l_ac].sfs013) THEN 
+                     END IF
+                     IF cl_null(g_sfs[l_ac].sfs013) THEN
                         LET g_sfs[l_ac].sfs012 = 0
-                     END IF                              
+                     END IF
                      DISPLAY BY NAME g_sfs[l_ac].sfs012
-                     DISPLAY BY NAME g_sfs[l_ac].sfs013 
-                     NEXT FIELD sfs013              
-#FUN-A60028 --end--                     
-                WHEN INFIELD(sfs07) OR INFIELD(sfs08) OR INFIELD(sfs09) 
+                     DISPLAY BY NAME g_sfs[l_ac].sfs013
+                     NEXT FIELD sfs013
+#FUN-A60028 --end--
+                WHEN INFIELD(sfs07) OR INFIELD(sfs08) OR INFIELD(sfs09)
                      OR INFIELD(sfsud02)  #add by guanyao160602
                    #FUN-C30300---begin
                    LET g_ima906 = NULL
@@ -11909,7 +11928,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                      CALL cl_create_qry() RETURNING g_sfs[l_ac].sfs30
                      DISPLAY BY NAME g_sfs[l_ac].sfs30
                      NEXT FIELD sfs30
- 
+
                 WHEN INFIELD(sfs33) #第二單位
                      CALL cl_init_qry_var()
                      LET g_qryparam.form ="q_gfe"
@@ -11933,63 +11952,63 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                   CALL cl_create_qry() RETURNING g_sfs[l_ac].sfs930
                   DISPLAY BY NAME g_sfs[l_ac].sfs930
                   NEXT FIELD sfs930
-               WHEN INFIELD(sfs36) 
+               WHEN INFIELD(sfs36)
                     CALL cl_init_qry_var()
                     LET g_qryparam.form = "q_mse"
                     LET g_qryparam.default1 = g_sfs[l_ac].sfs36
                     CALL cl_create_qry() RETURNING g_sfs[l_ac].sfs36
                     DISPLAY BY NAME g_sfs[l_ac].sfs36
-                    NEXT FIELD sfs36  
-               #FUN-CB0087--add--str-- 
-               WHEN INFIELD(sfs37)      
+                    NEXT FIELD sfs36
+               #FUN-CB0087--add--str--
+               WHEN INFIELD(sfs37)
                   CALL s_get_where(g_sfp.sfp01,g_sfs[l_ac].sfs03,'',g_sfs[l_ac].sfs04,g_sfs[l_ac].sfs07,g_sfp.sfp16,g_sfp.sfp07) RETURNING l_flag2,l_where
-                  IF l_flag2 AND g_aza.aza115 = 'Y' THEN 
+                  IF l_flag2 AND g_aza.aza115 = 'Y' THEN
                      CALL cl_init_qry_var()
                      LET g_qryparam.form  ="q_ggc08"
                      LET g_qryparam.where = l_where
                      LET g_qryparam.default1 = g_sfs[l_ac].sfs37
                   ELSE
                      CALL cl_init_qry_var()
-                     LET g_qryparam.form ="q_azf41"             
-                     LET g_qryparam.default1 = g_sfs[l_ac].sfs37               
+                     LET g_qryparam.form ="q_azf41"
+                     LET g_qryparam.default1 = g_sfs[l_ac].sfs37
                   END IF
-                  CALL cl_create_qry() RETURNING g_sfs[l_ac].sfs37 
-                  DISPLAY BY NAME g_sfs[l_ac].sfs37 
+                  CALL cl_create_qry() RETURNING g_sfs[l_ac].sfs37
+                  DISPLAY BY NAME g_sfs[l_ac].sfs37
                   CALL i501_azf03_desc()  #TQC-D20042 add
                   NEXT FIELD sfs37
                #FUN-CB0087--add--end--
                WHEN INFIELD(sfs27)
                  #LET li_where = " AND sfb04 IN ('2','3','4','5','6','7') AND sfa01 = '",g_sfs[l_ac].sfs03,"' AND sfa03 = '",g_sfs[l_ac].sfs04,"' "  #MOD-C40028 mark
                   LET li_where = " AND sfb04 IN ('2','3','4','5','6','7') "  #MOD-C40028 add
-                 #MOD-C40028 -- add start -- 
+                 #MOD-C40028 -- add start --
                   IF NOT cl_null(g_sfs[l_ac].sfs03) THEN
                      LET li_where = li_where CLIPPED, " AND sfa01 = '",g_sfs[l_ac].sfs03,"'"
-                  END IF                       
-                 #MOD-C40028 -- add end --  
+                  END IF
+                 #MOD-C40028 -- add end --
                   #FUN-B80143 --START--
                   IF g_sfp.sfp06 = '7' THEN
                      LET li_where = li_where CLIPPED, " AND sfa062 > 0 "
-                  END IF 
+                  END IF
                   #FUN-B80143 --END--
-                  IF NOT cl_null(g_sfs[l_ac].sfs26) THEN 
+                  IF NOT cl_null(g_sfs[l_ac].sfs26) THEN
                  #   LET li_where = " AND sfa26 = '",g_sfs[l_ac].sfs26,"' "                    #FUN-A40058 mark
-                     LET li_where = li_where CLIPPED," AND sfa26 = '",g_sfs[l_ac].sfs26,"' "   #FUN-A40058 
+                     LET li_where = li_where CLIPPED," AND sfa26 = '",g_sfs[l_ac].sfs26,"' "   #FUN-A40058
                   ELSE
                  #   LET li_where = " AND sfa26 IN ('0','1','2','3','4','5','6','7','8') "   #FUN-A20037 add '7,8'                   #FUN-A40058
-                     LET li_where = li_where CLIPPED," AND sfa26 IN ('0','1','2','3','4','5','6','7','8') "     #FUN-A40058 
+                     LET li_where = li_where CLIPPED," AND sfa26 IN ('0','1','2','3','4','5','6','7','8') "     #FUN-A40058
                   END IF
-                  CALL q_short_qty(FALSE,TRUE,g_sfs[l_ac].sfs03,g_sfs[l_ac].sfs04,li_where,'4') 
+                  CALL q_short_qty(FALSE,TRUE,g_sfs[l_ac].sfs03,g_sfs[l_ac].sfs04,li_where,'4')
                        RETURNING g_sfs[l_ac].sfs03,g_sfs[l_ac].sfs04,l_sfa08_tmp,l_sfa12_tmp,g_sfs[l_ac].sfs27
-                                ,g_sfs[l_ac].sfs012,g_sfs[l_ac].sfs013   #FUN-A60028 add                       
+                                ,g_sfs[l_ac].sfs012,g_sfs[l_ac].sfs013   #FUN-A60028 add
 #FUN-A60028 --begin--
-                  IF cl_null(g_sfs[l_ac].sfs012) THEN 
-                     LET g_sfs[l_ac].sfs012 = ' ' 
-                  END IF 
-                  IF cl_null(g_sfs[l_ac].sfs013) THEN 
+                  IF cl_null(g_sfs[l_ac].sfs012) THEN
+                     LET g_sfs[l_ac].sfs012 = ' '
+                  END IF
+                  IF cl_null(g_sfs[l_ac].sfs013) THEN
                      LET g_sfs[l_ac].sfs013 = 0
-                  END IF 
+                  END IF
                   DISPLAY BY NAME g_sfs[l_ac].sfs012,g_sfs[l_ac].sfs013
-#FUN-A60028 --end--                                
+#FUN-A60028 --end--
                   DISPLAY g_sfs[l_ac].sfs03 TO sfs03
                   DISPLAY g_sfs[l_ac].sfs04 TO sfs04
                   DISPLAY g_sfs[l_ac].sfs27 TO sfs27
@@ -12003,14 +12022,14 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                     CALL cl_create_qry() RETURNING g_qryparam.multiret
                     #CALL i501_multi_ima01()
                     CALL i501_b_fill(' 1=1')
-                 ELSE 
+                 ELSE
                     LET g_qryparam.default1 = g_sfs[l_ac].sfs014
                     CALL cl_create_qry() RETURNING g_sfs[l_ac].sfs014
                     DISPLAY BY NAME g_sfs[l_ac].sfs014
-                 END IF 
+                 END IF
 #FUN-C70014 add end -----------------------------
            END CASE
- 
+
         ON ACTION qry_warehouse
           #Mod No.FUN-AB0018
           #CALL cl_init_qry_var()
@@ -12025,7 +12044,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
           #End Mod No.FUN-AB0018
            #NEXT FIELD sfs07  #mark by guanyao160602
            NEXT FIELD sfsud02 #add by guanyao160602
- 
+
         ON ACTION qry_location
           #Mod No.FUN-AB0018
           #CALL cl_init_qry_var()
@@ -12039,14 +12058,14 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                 RETURNING g_sfs[l_ac].sfs08
           #End Mod No.FUN-AB0018
            NEXT FIELD sfs08
-           
+
 #str----add by huanglf161130
        ON ACTION i501_sel_from_work
        IF g_prog = 'asfi512' THEN
           CALL i501_sel_from_work()
           EXIT INPUT
        END IF
-#str----end by huanglf161130 
+#str----end by huanglf161130
 
         ON ACTION qry_issue_item
            CALL cl_init_qry_var()
@@ -12058,18 +12077,18 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
           #CALL cl_create_qry() RETURNING g_sfs[l_ac].sfs04,g_sfs[l_ac].sfs27,b_sfs.sfs28  #FUN-940039 add   #MOD-D70027 mark
            CALL cl_create_qry() RETURNING g_sfs[l_ac].sfs04,g_sfs[l_ac].sfs27,b_sfs.sfs28,g_sfs[l_ac].sfs26  #MOD-D70027 add
            NEXT FIELD sfs04
-        ON ACTION qry_more_WH                                                                                                       
-           CALL q_img6a(TRUE,TRUE,'','','',g_sfp.sfp01,g_sfp.sfp06,g_sfs[l_ac].sfs02,g_sfs[l_ac].sfs03,                            
+        ON ACTION qry_more_WH
+           CALL q_img6a(TRUE,TRUE,'','','',g_sfp.sfp01,g_sfp.sfp06,g_sfs[l_ac].sfs02,g_sfs[l_ac].sfs03,
                         #g_sfs[l_ac].sfs04,g_sfs[l_ac].sfs06,g_sfs[l_ac].sfs07,g_sfs[l_ac].sfs10,    #mark by guanyao160602
-                        g_sfs[l_ac].sfs04,g_sfs[l_ac].sfs06,g_sfs[l_ac].sfsud02,g_sfs[l_ac].sfs10,                        
+                        g_sfs[l_ac].sfs04,g_sfs[l_ac].sfs06,g_sfs[l_ac].sfsud02,g_sfs[l_ac].sfs10,
                         g_sfs[l_ac].sfs26,g_sfs[l_ac].sfa05,
                         g_sfs[l_ac].sfs27,g_sfs[l_ac].sfs28,g_sfs[l_ac].sfs012,g_sfs[l_ac].sfs013)            #MOD-D60001 add sfs27,sfs28
-           CALL i501_b_fill(" 1=1") 
- 
+           CALL i501_b_fill(" 1=1")
+
         ON ACTION qry_short_item
            CALL i501_t()
            NEXT FIELD sfs04
- 
+
         ON ACTION regen_detail
            CALL i501_g_b()
            CALL i501_b_fill(" 1=1")
@@ -12077,13 +12096,13 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
            COMMIT WORK
            LET g_errno='genb'
            EXIT INPUT
- 
+
         ON ACTION modi_lot
-           SELECT ima918,ima921 INTO g_ima918,g_ima921 
+           SELECT ima918,ima921 INTO g_ima918,g_ima921
              FROM ima_file
             WHERE ima01 = g_sfs[l_ac].sfs04
               AND imaacti = "Y"
-           
+
            IF g_ima918 = "Y" OR g_ima921 = "Y" THEN
                IF cl_null(g_sfs[l_ac].sfs08) THEN
                   LET g_sfs[l_ac].sfs08 = ' '
@@ -12095,7 +12114,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                 FROM img_file
                WHERE img01=g_sfs[l_ac].sfs04 AND img02=g_sfs[l_ac].sfs07
                  AND img03=g_sfs[l_ac].sfs08 AND img04=g_sfs[l_ac].sfs09
-              CALL s_umfchk(g_sfs[l_ac].sfs04,g_sfs[l_ac].sfs06,g_img09) 
+              CALL s_umfchk(g_sfs[l_ac].sfs04,g_sfs[l_ac].sfs06,g_img09)
                    RETURNING l_i,l_fac
               IF l_i = 1 THEN LET l_fac = 1 END IF
               IF g_sfp.sfp06 MATCHES '[6789B]' THEN
@@ -12106,7 +12125,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                                 g_sfs[l_ac].sfs08,g_sfs[l_ac].sfs09,
                                 g_sfs[l_ac].sfs06,g_img09,l_fac,
                                 g_sfs[l_ac].sfs05,'','SEL',1)#CHI-9A0022 add '' #No.TQC-B90236 add 1
-                        RETURNING l_r,g_qty 
+                        RETURNING l_r,g_qty
  #MOD-C10100 --end--
 #TQC-C10033 --unmark
               ELSE
@@ -12127,7 +12146,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                                g_sfs[l_ac].sfs08,g_sfs[l_ac].sfs09,
                                g_sfs[l_ac].sfs06,g_img09,l_fac,
                                g_sfs[l_ac].sfs05,l_bno,'MOD',-1)#CHI-9A0022 add l_bno #No.TQC-B90236 add -1
-                       RETURNING l_r,g_qty 
+                       RETURNING l_r,g_qty
  #MOD-C10100 --end--
 #TQC-C10033 --unmark
               END IF
@@ -12136,7 +12155,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
               END IF
            END IF
 #No.TQC-B90236--------------add----begin 配方替代
-        ON ACTION formula_alternative 
+        ON ACTION formula_alternative
            SELECT COUNT(*) INTO l_n FROM bmd_file WHERE bmd01 = g_sfs[l_ac].sfs27 AND bmd02 = '3'
            LET l_replace = 'N'  #TQC-C30028 add
            IF l_n > 0 THEN
@@ -12153,25 +12172,25 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
               EXIT INPUT            #TQC-C30028 add
  #MOD-C10100 --end--
 #TQC-C10033 --unmark
-           END IF 
+           END IF
 #No.TQC-B90236--------------add----end  配方替代
- 
+
         ON ACTION CONTROLR
            CALL cl_show_req_fields()
- 
-        ON ACTION CONTROLG 
+
+        ON ACTION CONTROLG
            CALL cl_cmdask()
- 
+
         ON ACTION CONTROLF
            CALL cl_set_focus_form(ui.Interface.getRootNode()) RETURNING g_fld_name,g_frm_name #Add on 040913
            CALL cl_fldhelp(g_frm_name,g_fld_name,g_lang) #Add on 040913
- 
+
        ON IDLE g_idle_seconds
           CALL cl_on_idle()
           CONTINUE INPUT
- 
+
     END INPUT
- 
+
     LET g_sfp.sfp15 = '0'                       #FUN-AB0001 add
     UPDATE sfp_file SET sfpmodu=g_sfp.sfpmodu,  #NO:6908
                         sfpdate=g_sfp.sfpdate
@@ -12184,10 +12203,10 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
        DISPLAY BY NAME g_sfp.sfpmodu
        DISPLAY BY NAME g_sfp.sfpdate
     END IF
-    DISPLAY BY NAME g_sfp.sfpmodu,g_sfp.sfpdate,g_sfp.sfp15    #FUN-AB0001 add 
+    DISPLAY BY NAME g_sfp.sfpmodu,g_sfp.sfpdate,g_sfp.sfp15    #FUN-AB0001 add
 
     SELECT COUNT(*) INTO g_cnt FROM sfs_file WHERE sfs01=g_sfp.sfp01
-    IF g_cnt=0 THEN 			# 未輸入單身資料, 則取消單頭資料 
+    IF g_cnt=0 THEN 			# 未輸入單身資料, 則取消單頭資料
        IF cl_confirm('9042') THEN
           DELETE FROM sfp_file WHERE sfp01 = g_sfp.sfp01
           DELETE FROM sfq_file WHERE sfq01 = g_sfp.sfp01
@@ -12202,17 +12221,17 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                    CALL cl_err3("upd","sfu_file",g_sfp.sfp01,"",STATUS,"","upd sfu",1)  #No.FUN-660128
                 END IF
              END IF
-             # 當有耗材產生時,應將apmt730之耗材單號清為NULL                                                     
-             LET l_cnt = 0                                                                                                            
-             SELECT COUNT(*) INTO l_cnt FROM rvu_file                                                                                 
-              WHERE rvu16 = g_sfp.sfp01                                                                                               
-             IF l_cnt > 0 THEN                                                                                                        
-                UPDATE rvu_file SET rvu16 = NULL                                                                                      
-                 WHERE rvu16 = g_sfp.sfp01                                                                                            
-                IF STATUS OR SQLCA.sqlerrd[3]=0 THEN                                                                                  
-                   CALL cl_err3("upd","rvu_file",g_sfp.sfp01,"",STATUS,"","upd rvu",1)                                                
-                END IF                                                                                                                
-             END IF                                                                                                                   
+             # 當有耗材產生時,應將apmt730之耗材單號清為NULL
+             LET l_cnt = 0
+             SELECT COUNT(*) INTO l_cnt FROM rvu_file
+              WHERE rvu16 = g_sfp.sfp01
+             IF l_cnt > 0 THEN
+                UPDATE rvu_file SET rvu16 = NULL
+                 WHERE rvu16 = g_sfp.sfp01
+                IF STATUS OR SQLCA.sqlerrd[3]=0 THEN
+                   CALL cl_err3("upd","rvu_file",g_sfp.sfp01,"",STATUS,"","upd rvu",1)
+                END IF
+             END IF
           END IF
           LET g_cnt=0
           CLEAR FORM
@@ -12221,26 +12240,26 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
           INITIALIZE g_sfp.* TO NULL    #TQC-C40150
        END IF
     END IF
- 
-   #IF g_cnt>0 AND g_smy.smydmy4='Y' THEN                         #FUN-AB0001 mark         
+
+   #IF g_cnt>0 AND g_smy.smydmy4='Y' THEN                         #FUN-AB0001 mark
    #FUN-AB0001 add str-------------------
     IF g_cnt>0 AND g_smy.smydmy4='Y' AND g_smy.smyapr <> 'Y'THEN  #單據需自動確認且不需簽核
        LET g_action_choice = "insert"
    #FUN-AB0001 add end-------------------
        CALL i501sub_y_chk(g_sfp.sfp01,g_action_choice)  #TQC-C60079
        IF g_success = "Y" THEN
-          CALL i501sub_y_upd(g_sfp.sfp01,g_action_choice,FALSE)   
+          CALL i501sub_y_upd(g_sfp.sfp01,g_action_choice,FALSE)
             RETURNING g_sfp.*
-          DISPLAY BY NAME g_sfp.sfpconf  
+          DISPLAY BY NAME g_sfp.sfpconf
           IF g_sfp.sfpconf='X' THEN
-             LET g_chr='Y' 
-          ELSE 
-             LET g_chr='N' 
-          END IF  
-          CALL i501_pic() #圖形顯示  
+             LET g_chr='Y'
+          ELSE
+             LET g_chr='N'
+          END IF
+          CALL i501_pic() #圖形顯示
        END IF
     END IF
- 
+
     IF g_cnt>0 THEN
        IF g_sfs.getlength()>g_cnt THEN
           WHILE g_sfs.getlength()>g_cnt
@@ -12262,18 +12281,18 @@ DEFINE l_cnt   LIKE type_file.num5
 
    LET g_errno=''
    LET l_cnt= 0
-   IF g_sma.sma541 = 'N' THEN 
+   IF g_sma.sma541 = 'N' THEN
       LET g_sfs[l_ac].sfs012=' '
       LET g_sfs[l_ac].sfs013=0
    END IF
    IF NOT cl_null(g_sfs[l_ac].sfs03) AND    #TQC-B60091
-      NOT cl_null(g_sfs[l_ac].sfs10) AND NOT cl_null(g_sfs[l_ac].sfs06) AND 
+      NOT cl_null(g_sfs[l_ac].sfs10) AND NOT cl_null(g_sfs[l_ac].sfs06) AND
       NOT cl_null(g_sfs[l_ac].sfs27) AND g_sfs[l_ac].sfs012 IS NOT NULL AND
       NOT cl_null(g_sfs[l_ac].sfs013) THEN
       SELECT COUNT(*) INTO l_cnt FROM sfa_file
        WHERE sfa01 =g_sfs[l_ac].sfs03
         #AND sfa03 =g_sfs[l_ac].sfs04  #TQC-B60091
-         AND sfa08 =g_sfs[l_ac].sfs10 
+         AND sfa08 =g_sfs[l_ac].sfs10
         # AND sfa12 =g_sfs[l_ac].sfs06
         #AND sfa27 =g_sfs[l_ac].sfs27  #TQC-B60091
          AND sfa03 =g_sfs[l_ac].sfs27  #TQC-B60091
@@ -12285,14 +12304,14 @@ DEFINE l_cnt   LIKE type_file.num5
    END IF
 END FUNCTION
 #FUN-B20079 jan (E)
- 
+
 FUNCTION i501_set_entry_b(p_cmd)
    DEFINE p_cmd   LIKE type_file.chr1    #No.FUN-680121 VARCHAR(1)
    define l_action_chice  varchar(100) #darcy:2024/01/22 add
    IF p_cmd = 'a' OR p_cmd = 'u' THEN
       CALL cl_set_comp_entry("sfs26,sfs27",TRUE)     #TQC-C70050 add sfs27
    END IF
- 
+
    CALL cl_set_comp_entry("sfs31,sfs33,sfs34,sfs35",TRUE)  #No.FUN-560016
 
    #darcy:2024/01/22 add s---
@@ -12306,35 +12325,35 @@ FUNCTION i501_set_entry_b(p_cmd)
    let g_bgjob = 'N'
    let g_action_choice = l_action_chice
    #darcy:2024/01/22 add e---
- 
+
 END FUNCTION
- 
+
 FUNCTION i501_set_no_entry_b(p_cmd)
    DEFINE p_cmd   LIKE type_file.chr1    #No.FUN-680121 VARCHAR(1)
    DEFINE l_imaicd09 LIKE imaicd_file.imaicd09  #TQC-C60020
    #DEFINE l_imaicd08 LIKE imaicd_file.imaicd08   #FUN-B70061 #FUN-BA0058 mark
    define l_action_chice  varchar(100) #darcy:2024/01/22 add
- 
+
    IF g_sma.sma107='N' THEN
       CALL cl_set_comp_entry("sfs26,sfs27",FALSE)     #TQC-C70050 add sfs27
-   ELSE 
+   ELSE
       #TQC-C70050--add--str--
-      IF g_rec_b <> 0 THEN     
+      IF g_rec_b <> 0 THEN
          IF cl_null(g_sfs[l_ac].sfs26)  THEN
             CALL cl_set_comp_entry("sfs27",FALSE)
          END IF
       END IF
       #TQC-C70050--add--end--
    END IF
- 
+
    IF g_ima906 = '1' THEN
     CALL cl_set_comp_entry("sfs33,sfs34,sfs35",FALSE)
    END IF
- 
+
    IF g_ima906 = '2' THEN
       CALL cl_set_comp_entry("sfs31,sfs34",FALSE)
    END IF
- 
+
    IF g_ima906 = '3' THEN
       CALL cl_set_comp_entry("sfs33",FALSE)
    END IF
@@ -12350,7 +12369,7 @@ FUNCTION i501_set_no_entry_b(p_cmd)
    let g_bgjob = 'N'
    let g_action_choice = l_action_chice
    #darcy:2024/01/22 add e---
- 
+
 END FUNCTION
 
 
@@ -12392,7 +12411,7 @@ FUNCTION i501_b_move_to()
    LET g_sfs[l_ac].sfsud14 = b_sfs.sfsud14
    LET g_sfs[l_ac].sfsud15 = b_sfs.sfsud15
 END FUNCTION
- 
+
 FUNCTION i501_b_move_back()
    LET b_sfs.sfs02 = g_sfs[l_ac].sfs02
    LET b_sfs.sfs03 = g_sfs[l_ac].sfs03
@@ -12434,27 +12453,27 @@ FUNCTION i501_b_move_back()
    LET b_sfs.sfsplant = g_plant #FUN-980008 add
    LET b_sfs.sfslegal = g_legal #FUN-980008 add
 END FUNCTION
- 
+
 
 FUNCTION i501_b_else()
    IF g_sfs[l_ac].sfs07 IS NULL THEN LET g_sfs[l_ac].sfs07 =' ' END IF
    IF g_sfs[l_ac].sfs08 IS NULL THEN LET g_sfs[l_ac].sfs08 =' ' END IF
    IF g_sfs[l_ac].sfs09 IS NULL THEN LET g_sfs[l_ac].sfs09 =' ' END IF
-#FUN-A60028 --begin--   
+#FUN-A60028 --begin--
    IF g_sfs[l_ac].sfs012 IS NULL THEN LET g_sfs[l_ac].sfs012 =' ' END IF
-   IF g_sfs[l_ac].sfs013 IS NULL THEN LET g_sfs[l_ac].sfs013 =0 END IF      
+   IF g_sfs[l_ac].sfs013 IS NULL THEN LET g_sfs[l_ac].sfs013 =0 END IF
    LET b_sfs.sfs012= g_sfs[l_ac].sfs012
    LET b_sfs.sfs013= g_sfs[l_ac].sfs013
-#FUN-A60028 --end--   
+#FUN-A60028 --end--
    LET b_sfs.sfs07 = g_sfs[l_ac].sfs07    #No:MOD-9C0009 add
    LET b_sfs.sfs08 = g_sfs[l_ac].sfs08    #No:MOD-9C0009 add
    LET b_sfs.sfs09 = g_sfs[l_ac].sfs09    #No:MOD-9C0009 add
 END FUNCTION
 
- 
+
 FUNCTION i501_b_askkey()
-    DEFINE l_wc2        LIKE type_file.chr1000 
- 
+    DEFINE l_wc2        LIKE type_file.chr1000
+
     CONSTRUCT l_wc2 ON sfs02,sfs26,sfs03,sfs04,sfs06,sfs10,sfs05
                   FROM s_sfs[1].sfs02, s_sfs[1].sfs26, s_sfs[1].sfs03,
                        s_sfs[1].sfs04, s_sfs[1].sfs06, s_sfs[1].sfs10,
@@ -12466,7 +12485,7 @@ FUNCTION i501_b_askkey()
        ON IDLE g_idle_seconds
           CALL cl_on_idle()
           CONTINUE CONSTRUCT
- 
+
                  ON ACTION qbe_select
          	   CALL cl_qbe_select()
 
@@ -12474,22 +12493,22 @@ FUNCTION i501_b_askkey()
 		   CALL cl_qbe_save()
     END CONSTRUCT
     IF INT_FLAG THEN LET INT_FLAG = 0 RETURN END IF
- 
+
     CALL i501_b_fill(l_wc2)
- 
+
 END FUNCTION
- 
+
 FUNCTION i501_d_fill(p_wc2)              #BODY FILL UP
  DEFINE p_wc2           LIKE type_file.chr1000 #No.FUN-680121 VARCHAR(800)
  DEFINE l_ima01 LIKE ima_file.ima01
 
- 
+
     IF g_sfp.sfp06 MATCHES '[ABC]' THEN
        LET g_sql =
            "SELECT sfq014,sfq02,sfq012,'',sfq04,'','','',sfq05,sfq07,sfq08,sfq03", #No.FUN-870097 add sfq07 #FUN-940008 add sfq08  #FUN-B20095 add sfq012,''  #FUN-C70014 add sfq014
            ",sfqud01,sfqud02,sfqud03,sfqud04,sfqud05,",
            "sfqud06,sfqud07,sfqud08,sfqud09,sfqud10,",
-           "sfqud11,sfqud12,sfqud13,sfqud14,sfqud15", 
+           "sfqud11,sfqud12,sfqud13,sfqud14,sfqud15",
            " FROM sfq_file WHERE sfq01 ='",g_sfp.sfp01,"' ",
            " ORDER BY sfq02"
     ELSE
@@ -12497,20 +12516,20 @@ FUNCTION i501_d_fill(p_wc2)              #BODY FILL UP
            "SELECT sfq014,sfq02,sfq012,'',sfq04,sfb05,'','',sfq05,sfq07,sfq08,sfq03", #No.FUN-870097 add sfq07 #FUN-5C0114 add sfq05 #FUN-940008 add sfq08  #FUN-B20095 add sfq012,'' #FUN-C70014 add sfq014
            ",sfqud01,sfqud02,sfqud03,sfqud04,sfqud05,",
            "sfqud06,sfqud07,sfqud08,sfqud09,sfqud10,",
-           "sfqud11,sfqud12,sfqud13,sfqud14,sfqud15", 
+           "sfqud11,sfqud12,sfqud13,sfqud14,sfqud15",
            " FROM sfq_file LEFT OUTER JOIN sfb_file ON sfq02 = sfb01 ",                     #09/10/21 xiaofeizhu Add
            " WHERE sfq01 ='",g_sfp.sfp01,"' ",
            " ORDER BY sfq02"                                                                #09/10/21 xiaofeizhu Add
     END IF
-    
+
     PREPARE i501_pd FROM g_sql
     DECLARE sfq_curs CURSOR FOR i501_pd
- 
+
     CALL g_sfq.clear()
- 
+
     LET g_cnt = 1
     LET g_rec_d = 0
- 
+
     FOREACH sfq_curs INTO g_sfq[g_cnt].*   #單身 ARRAY 填充
        IF STATUS THEN CALL cl_err('foreach:',STATUS,1) EXIT FOREACH END IF
        IF g_sfp.sfp06 MATCHES '[ABC]' THEN
@@ -12525,54 +12544,54 @@ FUNCTION i501_d_fill(p_wc2)              #BODY FILL UP
           RETURNING g_sfq[g_cnt].ecm014                                #FUN-B20095
        LET g_cnt = g_cnt + 1
     END FOREACH
- 
+
     IF STATUS THEN CALL cl_err('fore sfq:',STATUS,1) END IF
     CALL g_sfq.deleteElement(g_cnt)
- 
+
     LET g_rec_d = g_cnt - 1
- 
+
     DISPLAY g_rec_d TO FORMONLY.cn3
- 
+
     DISPLAY ARRAY g_sfq TO s_sfq.* ATTRIBUTE(COUNT=g_rec_d,UNBUFFERED)
        BEFORE DISPLAY
           EXIT DISPLAY
          ON IDLE g_idle_seconds
                  CALL cl_on_idle()
                  CONTINUE DISPLAY
-         
-         ON ACTION about         
-            CALL cl_about()      
-         
-         ON ACTION controlg      
-            CALL cl_cmdask()     
-         
-         ON ACTION help          
-            CALL cl_show_help()  
+
+         ON ACTION about
+            CALL cl_about()
+
+         ON ACTION controlg
+            CALL cl_cmdask()
+
+         ON ACTION help
+            CALL cl_show_help()
     END DISPLAY
- 
+
 END FUNCTION
 
 #FUN-A20048 --begin
-FUNCTION i501_b_fill_1() 
+FUNCTION i501_b_fill_1()
     DEFINE p_wc2           LIKE type_file.chr1000 #No.FUN-680121 VARCHAR(800)
     DEFINE l_factor        LIKE ima_file.ima31_fac  #TQC-7B0065
-    DEFINE l_cnt           LIKE type_file.num5  #TQC-7B0065 
-    
+    DEFINE l_cnt           LIKE type_file.num5  #TQC-7B0065
+
    	  OPEN WINDOW i501_g_b_q WITH FORM "asf/42f/asfi501a_2"
    	            ATTRIBUTE(STYLE = g_win_style CLIPPED )
-   	  CALL cl_ui_locale("asfi501a_2") 
-  
-    LET g_sql="SELECT UNIQUE 'N',sie05 FROM sie_file WHERE sie11 >0 " 
+   	  CALL cl_ui_locale("asfi501a_2")
+
+    LET g_sql="SELECT UNIQUE 'N',sie05 FROM sie_file WHERE sie11 >0 "
     PREPARE i501_pb_1 FROM g_sql
-    DECLARE sib_curs_1 CURSOR FOR i501_pb_1 
+    DECLARE sib_curs_1 CURSOR FOR i501_pb_1
     CALL g_sib_1.clear()
- 
+
     LET g_cnt = 1
- 
-    FOREACH sib_curs_1 INTO g_sib_1[g_cnt].* 
+
+    FOREACH sib_curs_1 INTO g_sib_1[g_cnt].*
         IF STATUS THEN CALL cl_err('foreach:',STATUS,1) EXIT FOREACH END IF
         LET g_cnt = g_cnt + 1
- 
+
         IF g_cnt > g_max_rec THEN
            CALL cl_err( '', 9035, 0 )
            EXIT FOREACH
@@ -12580,9 +12599,9 @@ FUNCTION i501_b_fill_1()
     END FOREACH
     IF STATUS THEN CALL cl_err('fore sib:',STATUS,1) END IF
     CALL g_sib_1.deleteElement(g_cnt)
-    
+
     LET g_rec_b1=g_cnt - 1
- 
+
     DISPLAY g_rec_b1 TO FORMONLY.cnt2
     LET g_cnt = 0
     DISPLAY ARRAY g_sib_1 TO s_sib_1.* ATTRIBUTE(COUNT=g_rec_b1)
@@ -12591,20 +12610,20 @@ FUNCTION i501_b_fill_1()
          ON IDLE g_idle_seconds
                  CALL cl_on_idle()
                  CONTINUE DISPLAY
-         
-         ON ACTION about         
-            CALL cl_about()      
-         
-         ON ACTION controlg      
-            CALL cl_cmdask()     
-         
-         ON ACTION help          
-            CALL cl_show_help()  
+
+         ON ACTION about
+            CALL cl_about()
+
+         ON ACTION controlg
+            CALL cl_cmdask()
+
+         ON ACTION help
+            CALL cl_show_help()
     END DISPLAY
- 
+
 END FUNCTION
-#FUN-A20048 --end 
- 
+#FUN-A20048 --end
+
 FUNCTION i501_b_fill(p_wc2)              #BODY FILL UP
     DEFINE p_wc2           LIKE type_file.chr1000 #No.FUN-680121 VARCHAR(800)
     DEFINE l_factor        LIKE ima_file.ima31_fac  #TQC-7B0065
@@ -12615,19 +12634,19 @@ FUNCTION i501_b_fill(p_wc2)              #BODY FILL UP
     DEFINE l_flag1         LIKE type_file.chr1   #FUN-B20095
     DEFINE i               LIKE type_file.num5   #FUN-B20095
     DEFINE l_sfa05_r       LIKE sfa_file.sfa05   #TQC-CA0035 add
-    
+
 
      IF g_sfp.sfp04='N' THEN  #FUN-660106
        LET g_sql =
         "SELECT sfs02,sfs26,sfs28,sfs014,sfs03,sfs27,sfs04,ima02,ima021,sfs012,'',sfs013,sfs06,sfs10,(sfa05-sfa065),sfa06,'',",    #FUN-940039 add sfs27,''(欠料量) #FUN-B50059 #CHI-BC0040 add sfs28 , sfs27與sfs04交換   #FUN-C70014 add sfs014
                                                                            #FUN-A60028 add sfs01,'',sfs013
         "       sfsud02,sfs07,sfs08,sfs09,img18,sfs05,sfsud07,sfs33,sfs34,sfs35,sfs30,sfs31,sfs32,", #add darcy:2022/08/10
-      #   "       sfsud02,sfs07,sfs08,sfs09,sfs05,sfsud07,sfs33,sfs34,sfs35,sfs30,sfs31,sfs32,", #darcy: mark 20220810 
+      #   "       sfsud02,sfs07,sfs08,sfs09,sfs05,sfsud07,sfs33,sfs34,sfs35,sfs30,sfs31,sfs32,", #darcy: mark 20220810
         "       sfs21,img10,0,sfs930,'',sfs36,'',sfs37,azf03 ",     #No.MOD-790113 mark sfa07   #FUN-670103 #FUN-950088 add sfs36,'' #FUN-CB0087 add sfs37,azf03
         "       ,sfsud01,sfsud03,sfsud04,sfsud05,",
         "       sfsud06,sfsud08,sfsud09,sfsud10,",
-        "       sfsud11,sfsud12,sfsud13,sfsud14,sfsud15", 
-        "       ,'','' ",   #FUN-B70061 
+        "       sfsud11,sfsud12,sfsud13,sfsud14,sfsud15",
+        "       ,'','' ",   #FUN-B70061
         ",sfa07",  #No.MOD-790113 add sfa07
         #" FROM sfs_file LEFT OUTER JOIN sfa_file ON sfs03=sfa01 AND sfs04=sfa03 AND sfs06=sfa12 AND sfs10=sfa08 AND sfs27=sfa27",   #09/10/21 xiaofeizhu Add #MOD-BB0307 Mark
         #"  AND sfs012 = sfa012 AND sfs013 = sfa013 ",  #FUN-A60028                                   #MOD-BB0307 Mark
@@ -12637,10 +12656,10 @@ FUNCTION i501_b_fill(p_wc2)              #BODY FILL UP
         " LEFT OUTER JOIN img_file ON sfs04=img01 AND sfsud02=img02 AND sfs08=img03 AND sfs09=img04 ",  #09/10/21 xiaofeizhu Add
         " LEFT OUTER JOIN ima_file ON sfs04=ima01 ",                                                  #09/10/21 xiaofeizhu Add
         " LEFT OUTER JOIN azf_file ON sfs37=azf01 AND azf02 = '2' ",                                  #FUN-CB0087 add
-        " WHERE sfs01 ='",g_sfp.sfp01,"'", 
+        " WHERE sfs01 ='",g_sfp.sfp01,"'",
 
-       "   AND ",p_wc2 CLIPPED,             
-       " ORDER BY sfs02 "   #No.MOD-920072  
+       "   AND ",p_wc2 CLIPPED,
+       " ORDER BY sfs02 "   #No.MOD-920072
     ELSE
        LET g_sql =
         "SELECT sfe28,sfe26,sfa28,sfe014,sfe01,sfe27,sfe07,ima02,ima021,sfe012,'',sfe013,sfe17,sfe14,(sfa05-sfa065),sfa06,'',",      #FUN-940039 add '',''(欠料量)  #TQC-9B0049 add sfe27  #FUN-B50059 #CHI-BC0040 add sfa28 , sfe27與sfe07交換 #FUN-C70014 add sfe014
@@ -12654,8 +12673,8 @@ FUNCTION i501_b_fill(p_wc2)              #BODY FILL UP
         "       ,sfeud01,sfeud03,sfeud04,sfeud05,", #FUN-CB0043
         "       sfeud06,sfeud08,sfeud09,sfeud10,",  #FUN-CB0043
         "       sfeud11,sfeud12,sfeud13,sfeud14,sfeud15",   #FUN-CB0043
-        "       ,'','' ",   #FUN-B70061 
-        ",''",                                   #FUN-940039 add 
+        "       ,'','' ",   #FUN-B70061
+        ",''",                                   #FUN-940039 add
         #" FROM sfe_file LEFT OUTER JOIN sfa_file ON sfe01=sfa01 AND sfe07=sfa03 AND sfe17=sfa12 AND sfe14=sfa08 AND sfe27=sfa27",   #09/10/21 xiaofeizhu Add #MOD-BB0307 Mark
         #"  AND sfe012 = sfa012 AND sfe013 = sfa013 ",  #FUN-A60028                                   #MOD-BB0307 Mark
         "  FROM sfe_file LEFT OUTER JOIN sfa_file ON sfe01=sfa01 AND sfe17=sfa12 AND sfe14=sfa08 ",   #MOD-BB0307 Add
@@ -12664,32 +12683,32 @@ FUNCTION i501_b_fill(p_wc2)              #BODY FILL UP
         " LEFT OUTER JOIN img_file ON sfe07=img01 AND sfe08=img02 AND sfe09=img03 AND sfe10=img04 ",  #09/10/21 xiaofeizhu Add
         " LEFT OUTER JOIN ima_file ON sfe07=ima01 ",                                                  #09/10/21 xiaofeizhu Add
         " LEFT OUTER JOIN azf_file ON sfe37=azf01 AND azf02 = '2' ",                                  #FUN-CB0087 add  #FUN-D50017 sfe37
-        " WHERE sfe02 ='",g_sfp.sfp01,"'",   
+        " WHERE sfe02 ='",g_sfp.sfp01,"'",
 
-       "   AND ",p_wc2 CLIPPED,  #MOD-A50110 add   
-       " ORDER BY sfe28"  #No.MOD-920072           
+       "   AND ",p_wc2 CLIPPED,  #MOD-A50110 add
+       " ORDER BY sfe28"  #No.MOD-920072
     END IF
     PREPARE i501_pb FROM g_sql
-    DECLARE sfs_curs CURSOR FOR i501_pb  
- 
+    DECLARE sfs_curs CURSOR FOR i501_pb
+
     CALL g_sfs.clear()
- 
+
     LET g_cnt = 1
- 
-    FOREACH sfs_curs INTO g_sfs[g_cnt].*, g_short_qty #單身 ARRAY 填充#FUN-940039 add 
+
+    FOREACH sfs_curs INTO g_sfs[g_cnt].*, g_short_qty #單身 ARRAY 填充#FUN-940039 add
         IF STATUS THEN CALL cl_err('foreach:',STATUS,1) EXIT FOREACH END IF
-        
+
         #計算欠料量g_short_qty(原g_sfa07)
-         IF cl_null(g_sfs[g_cnt].sfs012) THEN LET g_sfs[g_cnt].sfs012=' ' END IF #TQC-CB0084 add 
-         IF cl_null(g_sfs[g_cnt].sfs013) THEN LET g_sfs[g_cnt].sfs013= 0  END IF #TQC-CB0084 add 
+         IF cl_null(g_sfs[g_cnt].sfs012) THEN LET g_sfs[g_cnt].sfs012=' ' END IF #TQC-CB0084 add
+         IF cl_null(g_sfs[g_cnt].sfs013) THEN LET g_sfs[g_cnt].sfs013= 0  END IF #TQC-CB0084 add
          CALL s_shortqty(g_sfs[g_cnt].sfs03,g_sfs[g_cnt].sfs04,g_sfs[g_cnt].sfs10,
                          g_sfs[g_cnt].sfs06,g_sfs[g_cnt].sfs27,
-                        #g_sfs012,g_sfs013)   #FUN-A50066 add      #MOD-CB0154 mark  
+                        #g_sfs012,g_sfs013)   #FUN-A50066 add      #MOD-CB0154 mark
                          g_sfs[g_cnt].sfs012,g_sfs[g_cnt].sfs013)  #MOD-CB0154
               RETURNING g_short_qty
-         IF cl_null(g_short_qty) THEN LET g_short_qty = 0 END IF 
+         IF cl_null(g_short_qty) THEN LET g_short_qty = 0 END IF
          LET g_sfs[g_cnt].short_qty = g_short_qty
- 
+
         IF g_sfp.sfp04='N' THEN
            SELECT SUM(sfs05) INTO g_sfs[g_cnt].img10_alo FROM sfs_file,sfp_file #No:8247
             WHERE sfs04=g_sfs[g_cnt].sfs04
@@ -12716,14 +12735,14 @@ FUNCTION i501_b_fill(p_wc2)              #BODY FILL UP
             WHERE shm012 = sfa01 AND shm01 = g_sfs[g_cnt].sfs014
               AND sfa01 = g_sfs[g_cnt].sfs03
               AND sfa03 = g_sfs[g_cnt].sfs04 AND sfa08 = g_sfs[g_cnt].sfs10
-              AND sfa012 = g_sfs[g_cnt].sfs012 AND sfa013 = g_sfs[g_cnt].sfs013 
+              AND sfa012 = g_sfs[g_cnt].sfs012 AND sfa013 = g_sfs[g_cnt].sfs013
               AND sfa12 = g_sfs[g_cnt].sfs06 AND sfa27 = g_sfs[g_cnt].sfs27
            IF l_sfa05_r < g_sfs[g_cnt].sfa05 THEN
               LET g_sfs[g_cnt].sfa05 = l_sfa05_r
            END IF
         END IF
         #TQC-CA0035 add end--------------------------------------------
- 
+
         IF g_sma.sma115 = 'Y' THEN
            SELECT ima906,ima907 INTO g_ima906,g_ima907 FROM ima_file
             WHERE ima01 = g_sfs[g_cnt].sfs04
@@ -12738,24 +12757,24 @@ FUNCTION i501_b_fill(p_wc2)              #BODY FILL UP
            END IF
         END IF
         LET g_sfs[g_cnt].gem02c=s_costcenter_desc(g_sfs[g_cnt].sfs930) #FUN-670103
-       
+
         SELECT mse02 INTO g_sfs[g_cnt].mse02
           FROM mse_file WHERE mse01=g_sfs[g_cnt].sfs36
-          
+
 #FUN-B10056 ----------mod start-------
 ##FUN-A60028 --begin--
 #        SELECT sfb06 INTO l_sfb06 FROM sfb_file  #MOD-AC0336
-#         WHERE sfb01 = g_sfs[g_cnt].sfs03 
-#        CALL s_schdat_sel_ima571(g_sfs[g_cnt].sfs03) RETURNING l_flag,l_sfb05 #MOD-AC0336 
+#         WHERE sfb01 = g_sfs[g_cnt].sfs03
+#        CALL s_schdat_sel_ima571(g_sfs[g_cnt].sfs03) RETURNING l_flag,l_sfb05 #MOD-AC0336
 #    	   SELECT ecu014 INTO g_sfs[g_cnt].ecu014 FROM ecu_file
 #    	    WHERE ecu01  = l_sfb05
 #    	      AND ecu02  = l_sfb06
-#    	      AND ecu012 = g_sfs[g_cnt].sfs012 
-##FUN-A60028 --end--   
-        CALL s_schdat_ecm014(g_sfs[g_cnt].sfs03,g_sfs[g_cnt].sfs012) RETURNING g_sfs[g_cnt].ecu014       
-#FUN-B10056 ------------mod end---------     
+#    	      AND ecu012 = g_sfs[g_cnt].sfs012
+##FUN-A60028 --end--
+        CALL s_schdat_ecm014(g_sfs[g_cnt].sfs03,g_sfs[g_cnt].sfs012) RETURNING g_sfs[g_cnt].ecu014
+#FUN-B10056 ------------mod end---------
         LET g_cnt = g_cnt + 1
- 
+
         IF g_cnt > g_max_rec THEN
            CALL cl_err( '', 9035, 0 )
            EXIT FOREACH
@@ -12763,9 +12782,9 @@ FUNCTION i501_b_fill(p_wc2)              #BODY FILL UP
     END FOREACH
     IF STATUS THEN CALL cl_err('fore sfs:',STATUS,1) END IF
     CALL g_sfs.deleteElement(g_cnt)
-    
+
     LET g_rec_b=g_cnt - 1
- 
+
     DISPLAY g_rec_b TO FORMONLY.cn2
     LET g_cnt = 0
     DISPLAY ARRAY g_sfs TO s_sfs.* ATTRIBUTE(COUNT=g_rec_b)
@@ -12774,26 +12793,26 @@ FUNCTION i501_b_fill(p_wc2)              #BODY FILL UP
          ON IDLE g_idle_seconds
                  CALL cl_on_idle()
                  CONTINUE DISPLAY
-         
-         ON ACTION about         
-            CALL cl_about()      
-         
-         ON ACTION controlg      
-            CALL cl_cmdask()     
-         
-         ON ACTION help          
-            CALL cl_show_help()  
+
+         ON ACTION about
+            CALL cl_about()
+
+         ON ACTION controlg
+            CALL cl_cmdask()
+
+         ON ACTION help
+            CALL cl_show_help()
     END DISPLAY
-    
+
     #FUN-B30170 add begin-------------------------
     LET g_sql = " SELECT rvbs02,rvbs021,ima02,ima021,rvbs022,rvbs04,rvbs03,rvbs05,rvbs06,rvbs07,rvbs08",
                 "   FROM rvbs_file LEFT JOIN ima_file ON rvbs021 = ima01",
                 "  WHERE rvbs00 = '",g_prog,"' AND rvbs01 = '",g_sfp.sfp01,"'"
     PREPARE sel_rvbs_pre FROM g_sql
     DECLARE rvbs_curs CURSOR FOR sel_rvbs_pre
-    
+
     CALL g_rvbs.clear()
-    
+
     LET g_cnt = 1
     FOREACH rvbs_curs INTO g_rvbs[g_cnt].*   #單身 ARRAY 填充
        IF STATUS THEN CALL cl_err('foreach:',STATUS,1) EXIT FOREACH END IF
@@ -12803,60 +12822,60 @@ FUNCTION i501_b_fill(p_wc2)              #BODY FILL UP
           EXIT FOREACH
        END IF
     END FOREACH
-     
+
     CALL g_rvbs.deleteElement(g_cnt)
     LET g_rec_b1 = g_cnt - 1
-    #FUN-B30170 add -end--------------------------  
-  
+    #FUN-B30170 add -end--------------------------
+
 END FUNCTION
- 
+
 FUNCTION i501_bp(p_ud)
    DEFINE   p_ud   LIKE type_file.chr1    #No.FUN-680121 VARCHAR(1)
    DEFINE l_add1           LIKE type_file.num5  #add by chenkun160815
    DEFINE l_add2           LIKE sfs_file.sfsud07 #add by chenkun160815
    DEFINE l_add3           LIKE sfs_file.sfs04   #add by chenkun160815
- 
+
    IF p_ud <> "G" OR g_action_choice = "detail" THEN
       RETURN
    END IF
- 
+
    LET g_action_choice = " "
-   #No.FUN-A40055--begin 
+   #No.FUN-A40055--begin
 #   DISPLAY ARRAY g_sfq TO s_sfq.* ATTRIBUTE(COUNT=g_rec_d,UNBUFFERED)
 #     BEFORE DISPLAY
 #        EXIT DISPLAY
-# 
+#
 #      AFTER DISPLAY
 #         CONTINUE DISPLAY
-# 
+#
 #         ON IDLE g_idle_seconds
 #                 CALL cl_on_idle()
 #                 CONTINUE DISPLAY
-#         
-#         ON ACTION about         
-#            CALL cl_about()      
-#         
-#         ON ACTION controlg      
-#            CALL cl_cmdask()     
-#         
-#         ON ACTION help          
-#            CALL cl_show_help()  
-# 
+#
+#         ON ACTION about
+#            CALL cl_about()
+#
+#         ON ACTION controlg
+#            CALL cl_cmdask()
+#
+#         ON ACTION help
+#            CALL cl_show_help()
+#
 #   END DISPLAY
-# 
+#
 #   CALL cl_set_act_visible("accept,cancel", FALSE)
-# 
+#
 #   IF g_errno='genb' THEN CALL i501_b_fill(' 1=1') LET g_errno='' END IF
-# 
+#
 #   DISPLAY ARRAY g_sfs TO s_sfs.* ATTRIBUTE(COUNT=g_rec_b,UNBUFFERED)
-# 
+#
 #      BEFORE DISPLAY
 #         CALL cl_navigator_setting( g_curs_index, g_row_count )
-# 
+#
 #      BEFORE ROW
 #         LET l_ac = ARR_CURR()
 #      CALL cl_show_fld_cont()                   #No.FUN-550037 hmf
-# 
+#
 #      ON ACTION insert
 #         LET g_action_choice="insert"
 #         EXIT DISPLAY
@@ -12869,7 +12888,7 @@ FUNCTION i501_bp(p_ud)
 #      ON ACTION modify
 #         LET g_action_choice="modify"
 #         EXIT DISPLAY
-# 
+#
 #      ON ACTION first
 #         CALL i501_fetch('F')
 #         CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
@@ -12877,7 +12896,7 @@ FUNCTION i501_bp(p_ud)
 #         CALL fgl_set_arr_curr(1)  ######add in 040505
 #           END IF
 #           ACCEPT DISPLAY                   #No.FUN-530067 HCN TEST
-# 
+#
 #      ON ACTION previous
 #         CALL i501_fetch('P')
 #         CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
@@ -12885,7 +12904,7 @@ FUNCTION i501_bp(p_ud)
 #         CALL fgl_set_arr_curr(1)  ######add in 040505
 #           END IF
 #	ACCEPT DISPLAY                   #No.FUN-530067 HCN TEST
-# 
+#
 #      ON ACTION jump
 #         CALL i501_fetch('/')
 #         CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
@@ -12893,7 +12912,7 @@ FUNCTION i501_bp(p_ud)
 #         CALL fgl_set_arr_curr(1)  ######add in 040505
 #           END IF
 #	ACCEPT DISPLAY                   #No.FUN-530067 HCN TEST
-# 
+#
 #      ON ACTION next
 #         CALL i501_fetch('N')
 #         CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
@@ -12901,7 +12920,7 @@ FUNCTION i501_bp(p_ud)
 #         CALL fgl_set_arr_curr(1)  ######add in 040505
 #           END IF
 #	ACCEPT DISPLAY                   #No.FUN-530067 HCN TEST
-# 
+#
 #      ON ACTION last
 #         CALL i501_fetch('L')
 #         CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
@@ -12922,14 +12941,14 @@ FUNCTION i501_bp(p_ud)
 #      ON ACTION exit
 #         LET g_action_choice="exit"
 #         EXIT DISPLAY
-# 
+#
 #      ON ACTION locale
 #         CALL cl_dynamic_locale()
 #         CALL cl_show_fld_cont()                   #No.FUN-550037 hmf
 #         CALL i501_mu_ui()   #TQC-710032
 #         CALL i501_pic() #圖形顯示
 #         EXIT DISPLAY
-# 
+#
 #      ON ACTION controlg
 #         LET g_action_choice="controlg"
 #         EXIT DISPLAY
@@ -12973,10 +12992,10 @@ FUNCTION i501_bp(p_ud)
 #      ON ACTION aic_s_icdqry
 #         LET g_action_choice = "aic_s_icdqry"
 #         EXIT DISPLAY
-#                                                                                
+#
 #    #@ON ACTION 單據刻號BIN明細維護作業
 #      ON ACTION s_icdout
-#         LET g_action_choice = "s_icdout" 
+#         LET g_action_choice = "s_icdout"
 #         EXIT DISPLAY
 #ICD END
 #SLK
@@ -12988,86 +13007,86 @@ FUNCTION i501_bp(p_ud)
 #         LET g_action_choice="detail"
 #         LET l_ac = ARR_CURR()
 #         EXIT DISPLAY
-#         
-#      
+#
+#
 #      ON ACTION cancel
 #         LET INT_FLAG=FALSE 		#MOD-570244	mars
 #         LET g_action_choice="exit"
 #         EXIT DISPLAY
-# 
+#
 #      ON IDLE g_idle_seconds
 #         CALL cl_on_idle()
 #         CONTINUE DISPLAY
-# 
+#
 #      ON ACTION qry_lot
 #         LET g_action_choice="qry_lot"
 #         EXIT DISPLAY
-# 
+#
 #      ON ACTION exporttoexcel
 #         LET g_action_choice = 'exporttoexcel'
 #         EXIT DISPLAY
 #      ON ACTION related_document                #No.FUN-6A0166  相關文件
-#         LET g_action_choice="related_document"          
-#         EXIT DISPLAY 
+#         LET g_action_choice="related_document"
+#         EXIT DISPLAY
 #
-#        ON ACTION CONTROLS                                                                                                          
-#           CALL cl_set_head_visible("","AUTO")                                                                                      
-# 
+#        ON ACTION CONTROLS
+#           CALL cl_set_head_visible("","AUTO")
+#
 #      &include "qry_string.4gl"
-# 
+#
 #   END DISPLAY
-   
+
    CALL cl_set_act_visible("accept,cancel", FALSE)
    DIALOG ATTRIBUTES(UNBUFFERED)
    DISPLAY ARRAY g_sfq TO s_sfq.* ATTRIBUTE(COUNT=g_rec_d)
 #     BEFORE DISPLAY
 #        EXIT DISPLAY
-# 
+#
 #      AFTER DISPLAY
 #         CONTINUE DISPLAY
       #TQC-AB0172------add---------------str-------------
       BEFORE DISPLAY
          CALL cl_navigator_setting( g_curs_index, g_row_count )
-      #TQC-AB0172-----add-----------------end-------------          
+      #TQC-AB0172-----add-----------------end-------------
    END DISPLAY
-  
+
    DISPLAY ARRAY g_sfs TO s_sfs.* ATTRIBUTE(COUNT=g_rec_b)
-     
+
       BEFORE DISPLAY
          CALL cl_navigator_setting( g_curs_index, g_row_count )
- 
+
       BEFORE ROW
          LET l_ac = ARR_CURR()
       CALL cl_show_fld_cont()                   #No.FUN-550037 hmf
       #str----add by chenkun160815
-    IF g_sfp.sfp04 ='Y' THEN 
-      LET l_add1 = 0 
+    IF g_sfp.sfp04 ='Y' THEN
+      LET l_add1 = 0
       LET l_add2 = 0
-      LET l_add3 = NULL   
-      SELECT count(*) INTO l_add1 FROM sfe_file 
+      LET l_add3 = NULL
+      SELECT count(*) INTO l_add1 FROM sfe_file
       WHERE sfe02 = g_sfp.sfp01 AND sfe01 = g_sfs[l_ac].sfs03 AND sfe07 = g_sfs[l_ac].sfs04
       DISPLAY l_add1 TO add1
-      SELECT sum(sfeud07) INTO l_add2 FROM sfe_file 
+      SELECT sum(sfeud07) INTO l_add2 FROM sfe_file
       WHERE sfe02 = g_sfp.sfp01 AND sfe01 = g_sfs[l_ac].sfs03 AND sfe07 = g_sfs[l_ac].sfs04
       LET l_add3 = g_sfs[l_ac].sfs04
       DISPLAY l_add2 TO add2
       DISPLAY l_add3 TO add3
-    ELSE  
-      LET l_add1 = 0 
-      LET l_add2 = 0 
-      LET l_add3 = NULL 
-      SELECT count(*) INTO l_add1 FROM sfs_file 
+    ELSE
+      LET l_add1 = 0
+      LET l_add2 = 0
+      LET l_add3 = NULL
+      SELECT count(*) INTO l_add1 FROM sfs_file
       WHERE sfs01 = g_sfp.sfp01 AND sfs03 = g_sfs[l_ac].sfs03 AND sfs04 = g_sfs[l_ac].sfs04
       DISPLAY l_add1 TO add1
-      SELECT sum(sfsud07) INTO l_add2 FROM sfs_file 
+      SELECT sum(sfsud07) INTO l_add2 FROM sfs_file
       WHERE sfs01 = g_sfp.sfp01 AND sfs03 = g_sfs[l_ac].sfs03 AND sfs04 = g_sfs[l_ac].sfs04
       LET l_add3 = g_sfs[l_ac].sfs04
       DISPLAY l_add2 TO add2
       DISPLAY l_add3 TO add3
-    END IF 
+    END IF
      #end----add by chenkun160815
    END DISPLAY
-   
+
    #FUN-B30170 add begin-------------------------
    DISPLAY ARRAY g_rvbs TO s_rvbs.* ATTRIBUTE(COUNT=g_rec_b1)
       BEFORE DISPLAY
@@ -13081,17 +13100,17 @@ FUNCTION i501_bp(p_ud)
          CONTINUE DIALOG   #因為外層是DIALOG
    END DISPLAY
    #FUN-B30170 add -end---------------------------
-   
+
       #No.TQC-A70090  --start--
-      BEFORE DIALOG                     
+      BEFORE DIALOG
          CALL cl_show_fld_cont()
       #No.TQC-A70090  --end--
      #FUN-CB0014---add---str---
       ON ACTION page_list
-         LET g_action_flag = "page_list"  
+         LET g_action_flag = "page_list"
          EXIT DIALOG
-     #FUN-CB0014---add---end--- 
-      
+     #FUN-CB0014---add---end---
+
       ON ACTION insert
          LET g_action_choice="insert"
          EXIT DIALOG
@@ -13104,7 +13123,7 @@ FUNCTION i501_bp(p_ud)
       ON ACTION modify
          LET g_action_choice="modify"
          EXIT DIALOG
- 
+
       ON ACTION first
          CALL i501_fetch('F')
          CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
@@ -13112,7 +13131,7 @@ FUNCTION i501_bp(p_ud)
          CALL fgl_set_arr_curr(1)  ######add in 040505
            END IF
            ACCEPT DIALOG                   #No.FUN-530067 HCN TEST
- 
+
       ON ACTION previous
          CALL i501_fetch('P')
          CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
@@ -13120,7 +13139,7 @@ FUNCTION i501_bp(p_ud)
          CALL fgl_set_arr_curr(1)  ######add in 040505
            END IF
         	ACCEPT DIALOG                   #No.FUN-530067 HCN TEST
- 
+
       ON ACTION jump
          CALL i501_fetch('/')
          CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
@@ -13128,7 +13147,7 @@ FUNCTION i501_bp(p_ud)
          CALL fgl_set_arr_curr(1)  ######add in 040505
            END IF
        	ACCEPT DIALOG                   #No.FUN-530067 HCN TEST
- 
+
       ON ACTION next
          CALL i501_fetch('N')
          CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
@@ -13136,7 +13155,7 @@ FUNCTION i501_bp(p_ud)
          CALL fgl_set_arr_curr(1)  ######add in 040505
            END IF
         	ACCEPT DIALOG                   #No.FUN-530067 HCN TEST
- 
+
       ON ACTION last
          CALL i501_fetch('L')
          CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
@@ -13162,14 +13181,14 @@ FUNCTION i501_bp(p_ud)
       ON ACTION exit
          LET g_action_choice="exit"
          EXIT DIALOG
- 
+
       ON ACTION locale
          CALL cl_dynamic_locale()
          CALL cl_show_fld_cont()                   #No.FUN-550037 hmf
          CALL i501_mu_ui()   #TQC-710032
          CALL i501_pic() #圖形顯示
          EXIT DIALOG
- 
+
       ON ACTION controlg
          LET g_action_choice="controlg"
          EXIT DIALOG
@@ -13226,12 +13245,12 @@ FUNCTION i501_bp(p_ud)
 #@    ON ACTION 取消作废
       ON ACTION undo_void
          LET g_action_choice="undo_void"
-         EXIT DIALOG     
+         EXIT DIALOG
 #CHI-D20010---add--end
 #str-----add by huanglf160913
      ON ACTION mid_out
          LET g_action_choice="mid_out"
-         EXIT DIALOG    
+         EXIT DIALOG
 #str-----end by huanglf160913
 #@    ON ACTION 產生調撥單
       ON ACTION gen_transfer_note
@@ -13241,27 +13260,27 @@ FUNCTION i501_bp(p_ud)
 #@    ON ACTION 條碼欠料調整(發料條碼數量分配)
       ON ACTION barcode_qty_allot
          LET g_action_choice="barcode_qty_allot"
-         EXIT DIALOG      
+         EXIT DIALOG
      #DEV-D30026 add end------------------------
       ON ACTION accept
          LET g_action_choice="detail"
          LET l_ac = ARR_CURR()
          EXIT DIALOG
-         
-      
+
+
       ON ACTION cancel
          LET INT_FLAG=FALSE 		#MOD-570244	mars
          LET g_action_choice="exit"
          EXIT DIALOG
- 
+
       ON IDLE g_idle_seconds
          CALL cl_on_idle()
          CONTINUE DIALOG
- 
+
       ON ACTION qry_lot
          LET g_action_choice="qry_lot"
          EXIT DIALOG
- 
+
 #TQC-AC0197 ---------------------------Begin-------------------------------
       ON ACTION warahouse_modify
          LET g_action_choice="warahouse_modify"
@@ -13274,16 +13293,16 @@ FUNCTION i501_bp(p_ud)
 
       #str----add by jixf 160810 增加汇总发料按钮
       ON ACTION sum_sfs
-         LET g_action_choice='sum_sfs' 
-         EXIT DIALOG       
+         LET g_action_choice='sum_sfs'
+         EXIT DIALOG
       #end----add by jixf 160810
-         
-      ON ACTION related_document                #No.FUN-6A0166  相關文件
-         LET g_action_choice="related_document"          
-         EXIT DIALOG 
 
-      ON ACTION CONTROLS                                                                                                          
-         CALL cl_set_head_visible("","AUTO")                                                                                      
+      ON ACTION related_document                #No.FUN-6A0166  相關文件
+         LET g_action_choice="related_document"
+         EXIT DIALOG
+
+      ON ACTION CONTROLS
+         CALL cl_set_head_visible("","AUTO")
 
       #FUN-AB0001---add----str---
       ON ACTION approval_status #簽核狀況
@@ -13323,7 +13342,7 @@ FUNCTION i501_bp(p_ud)
       ON ACTION transf2scm
          LET g_action_choice="transf2scm"
          EXIT DIALOG
-      #No.18010101---end---   
+      #No.18010101---end---
 
       ON ACTION phrase
          LET g_action_choice = 'phrase'
@@ -13335,49 +13354,50 @@ FUNCTION i501_bp(p_ud)
          let g_action_choice = "stock_batch"
          exit dialog
       #darcy:2024/01/22 add e---
- 
+      on action action_stock_post let g_action_choice = 'action_stock_post' #darcy add
+
       &include "qry_string.4gl"
 
-   END DIALOG   
-   
+   END DIALOG
+
    IF g_errno='genb' THEN CALL i501_b_fill(' 1=1') LET g_errno='' END IF
    CALL cl_set_act_visible("accept,cancel", TRUE)
    #No.FUN-A40055--end
 END FUNCTION
- 
+
 
 
 FUNCTION i501_bp2(p_ud)
-   DEFINE   p_ud   LIKE type_file.chr1  
- 
+   DEFINE   p_ud   LIKE type_file.chr1
+
    IF p_ud <> "G" THEN
       RETURN
    END IF
- 
+
    CALL cl_set_act_visible("cancel", FALSE)
    DISPLAY ARRAY g_sfq TO s_sfq.* ATTRIBUTE(COUNT=g_rec_d,UNBUFFERED)
       ON IDLE g_idle_seconds
          CALL cl_on_idle()
          CONTINUE DISPLAY
- 
+
        ON ACTION about         #MOD-4C0121
           CALL cl_about()      #MOD-4C0121
 
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
+
       ON ACTION controlg      #MOD-4C0121
          CALL cl_cmdask()     #MOD-4C0121
 
-        ON ACTION CONTROLS                                                                                                          
-           CALL cl_set_head_visible("","AUTO")                                                                                      
+        ON ACTION CONTROLS
+           CALL cl_set_head_visible("","AUTO")
    END DISPLAY
    CALL cl_set_act_visible("cancel", FALSE)
- 
+
 END FUNCTION
- 
+
 FUNCTION i501_out()
-    DEFINE l_no		LIKE type_file.chr50   
+    DEFINE l_no		LIKE type_file.chr50
     DEFINE l_wc2	LIKE type_file.chr1000 #No.FUN-680121 VARCHAR(600)
     DEFINE l_prtway	LIKE type_file.chr1    #No.FUN-680121 VARCHAR(1)
     DEFINE l_prog	LIKE ima_file.ima34    #No.FUN-680121 VARCHAR(10)
@@ -13385,69 +13405,69 @@ FUNCTION i501_out()
     IF g_sfp.sfp01 IS NULL THEN RETURN END IF
 
     #str---add byhuanglf160803 #str---add by huanglf160809
-    IF g_argv2 = '1' THEN 
+    IF g_argv2 = '1' THEN
      LET l_wc = 'sfp01= "',g_sfp.sfp01,'"'
-     LET g_msg = "csfr007", 
+     LET g_msg = "csfr007",
                        " '",g_today CLIPPED,"' ''",
                        " '",g_lang CLIPPED,"' '",g_bgjob CLIPPED,"'  '' '1'",
-                       " '",l_wc CLIPPED,"'  '1' '' 'N' "   
+                       " '",l_wc CLIPPED,"'  '1' '' 'N' "
                     CALL cl_cmdrun(g_msg)
-    END IF 
+    END IF
 
-    IF g_argv2 = '2' THEN 
+    IF g_argv2 = '2' THEN
      LET l_wc = 'sfp01= "',g_sfp.sfp01,'"'
-     LET g_msg = "csfr007", 
+     LET g_msg = "csfr007",
                        " '",g_today CLIPPED,"' ''",
                        " '",g_lang CLIPPED,"' '",g_bgjob CLIPPED,"'  '' '1'",
-                       " '",l_wc CLIPPED,"'  '2' '' 'N' "   
+                       " '",l_wc CLIPPED,"'  '2' '' 'N' "
                     CALL cl_cmdrun(g_msg)
-    END IF 
+    END IF
 
-    IF g_argv2 = '3' THEN 
+    IF g_argv2 = '3' THEN
      LET l_wc = 'sfp01= "',g_sfp.sfp01,'"'
-     LET g_msg = "csfr007", 
+     LET g_msg = "csfr007",
                        " '",g_today CLIPPED,"' ''",
                        " '",g_lang CLIPPED,"' '",g_bgjob CLIPPED,"'  '' '1'",
-                       " '",l_wc CLIPPED,"'  '3' '' 'N' "   
+                       " '",l_wc CLIPPED,"'  '3' '' 'N' "
                     CALL cl_cmdrun(g_msg)
-    END IF 
+    END IF
     #end---add byhuanglf160803
     #str----add by chenkun160815
-    IF g_argv2 = '6' THEN 
+    IF g_argv2 = '6' THEN
      LET l_wc = 'sfp01= "',g_sfp.sfp01,'"'
-     LET g_msg = "csfr007", 
+     LET g_msg = "csfr007",
                        " '",g_today CLIPPED,"' ''",
                        " '",g_lang CLIPPED,"' '",g_bgjob CLIPPED,"'  '' '1'",
-                       " '",l_wc CLIPPED,"'  '6' '' 'N' "   
+                       " '",l_wc CLIPPED,"'  '6' '' 'N' "
                     CALL cl_cmdrun(g_msg)
-    END IF 
-    IF g_argv2 = '7' THEN 
+    END IF
+    IF g_argv2 = '7' THEN
      LET l_wc = 'sfp01= "',g_sfp.sfp01,'"'
-     LET g_msg = "csfr007", 
+     LET g_msg = "csfr007",
                        " '",g_today CLIPPED,"' ''",
                        " '",g_lang CLIPPED,"' '",g_bgjob CLIPPED,"'  '' '1'",
-                       " '",l_wc CLIPPED,"'  '7' '' 'N' "   
+                       " '",l_wc CLIPPED,"'  '7' '' 'N' "
                     CALL cl_cmdrun(g_msg)
-    END IF 
-    IF g_argv2 = '8' THEN 
+    END IF
+    IF g_argv2 = '8' THEN
      LET l_wc = 'sfp01= "',g_sfp.sfp01,'"'
-     LET g_msg = "csfr007", 
+     LET g_msg = "csfr007",
                        " '",g_today CLIPPED,"' ''",
                        " '",g_lang CLIPPED,"' '",g_bgjob CLIPPED,"'  '' '1'",
-                       " '",l_wc CLIPPED,"'  '8' '' 'N' "   
+                       " '",l_wc CLIPPED,"'  '8' '' 'N' "
                     CALL cl_cmdrun(g_msg)
-    END IF 
-    IF g_argv2 = '9' THEN 
+    END IF
+    IF g_argv2 = '9' THEN
      LET l_wc = 'sfp01= "',g_sfp.sfp01,'"'
-     LET g_msg = "csfr007", 
+     LET g_msg = "csfr007",
                        " '",g_today CLIPPED,"' ''",
                        " '",g_lang CLIPPED,"' '",g_bgjob CLIPPED,"'  '' '1'",
-                       " '",l_wc CLIPPED,"'  '9' '' 'N' "   
+                       " '",l_wc CLIPPED,"'  '9' '' 'N' "
                     CALL cl_cmdrun(g_msg)
-    END IF 
+    END IF
     #end---add by chenkun160819
 
-    
+
     --IF g_sfp.sfp06 MATCHES '[ABC]' THEN #FUN-630001 #TQC-650053
        --IF g_argv1='1' THEN
           --LET l_prog='asrr210'
@@ -13489,7 +13509,7 @@ FUNCTION i501_out()
  --
  --
         -- for Windows close event trapped
-       --ON ACTION close    #COMMAND KEY(INTERRUPT)  #FUN-9B0145      
+       --ON ACTION close    #COMMAND KEY(INTERRUPT)  #FUN-9B0145
              --LET INT_FLAG=FALSE 		#MOD-570244	mars
           --EXIT MENU
  --
@@ -13498,9 +13518,9 @@ FUNCTION i501_out()
  --
     --SELECT sfp05 INTO g_sfp.sfp05 FROM sfp_file WHERE sfp01=g_sfp.sfp01
     --DISPLAY BY NAME g_sfp.sfp05
- 
+
 END FUNCTION
- 
+
 FUNCTION i501_t()
    DEFINE i,j,l_i   LIKE type_file.num10       #No.FUN-680121 INTEGER
    DEFINE l_sfs     DYNAMIC ARRAY OF RECORD    #程式變數(Prinram Variables)
@@ -13517,13 +13537,13 @@ FUNCTION i501_t()
    DEFINE l_t       LIKE type_file.num10   #No.FUN-680121 INTEGER     #FUN-610042
    DEFINE l_cnt     LIKE type_file.num10   #No.MOD-980003 add
    DEFINE l_factor  LIKE sfa_file.sfa13    #No.MOD-980003 add
- 
+
    OPEN WINDOW i501_t_w AT 4,3 WITH FORM "asf/42f/asfi501c"
          ATTRIBUTE (STYLE = g_win_style CLIPPED) #No.FUN-580092 HCN
- 
+
    CALL cl_ui_locale("asfi501c")
    CALL cl_load_act_list(NULL)   #FUN-610042
- 
+
    DECLARE i501_t_c CURSOR FOR
           #SELECT sfs04,sfs07,sfs08,sfs09,img09,img10,sfs06,SUM(sfs05)   #No:MOD-980003 modify  #mark by guanyao160602
           SELECT sfs04,sfsud02,sfs08,sfs09,img09,img10,sfs06,SUM(sfs05)   #No:MOD-980003 modify  #add by guanyao160602
@@ -13541,11 +13561,11 @@ FUNCTION i501_t()
       END IF
       CALL s_umfchk(l_sfs[i].sfs04,l_sfs[i].sfs06,l_sfs[i].img09)
            RETURNING l_cnt,l_factor
-      
+
       IF l_cnt THEN
          LET l_factor = 1
       END IF
- 
+
       IF l_sfs[i].img10 >= l_sfs[i].sfs05 * l_factor THEN   #No:MOD-980003 modify
           INITIALIZE l_sfs[i].* TO NULL   #MOD-490167
          CONTINUE FOREACH
@@ -13553,7 +13573,7 @@ FUNCTION i501_t()
       LET i=i+1
    END FOREACH
    LET l_i = i - 1
- 
+
    CALL cl_set_act_visible("accept,cancel", TRUE)
    DISPLAY ARRAY l_sfs TO s_sfs.* ATTRIBUTE(COUNT=l_i)
       BEFORE DISPLAY
@@ -13562,29 +13582,29 @@ FUNCTION i501_t()
          ELSE
             CALL cl_set_act_visible("du_detail",TRUE)
          END IF
- 
+
       ON ACTION du_detail
          LET l_t = ARR_CURR()
          LET g_cmd = "aimq410 '",l_sfs[l_t].sfs04,"'"
          CALL cl_cmdrun(g_cmd CLIPPED)
          CONTINUE DISPLAY
- 
+
       ON IDLE g_idle_seconds
          CALL cl_on_idle()
          CONTINUE DISPLAY
- 
+
    END DISPLAY
    IF INT_FLAG THEN
       LET INT_FLAG = 0
    END IF
    CLOSE WINDOW i501_t_w
 END FUNCTION
- 
+
 FUNCTION i501_gen()
-   DEFINE l_cnt             LIKE type_file.num5,  
+   DEFINE l_cnt             LIKE type_file.num5,
           li_result         LIKE type_file.num5
    DEFINE l_imm03           LIKE imm_file.imm03    #過帳否
-   DEFINE l_sfs01           LIKE sfs_file.sfs01    #09/10/21 xiaofeizhu Add 
+   DEFINE l_sfs01           LIKE sfs_file.sfs01    #09/10/21 xiaofeizhu Add
    DEFINE l_sfs02           LIKE sfs_file.sfs02    #09/10/21 xiaofeizhu Add
    DEFINE l_imd10           LIKE imd_file.imd10    #MOD-C10081 add
 
@@ -13599,20 +13619,20 @@ FUNCTION i501_gen()
     END IF
     #FUN-AB0001  add end ---
     LET l_cnt=0
- 
+
     #SELECT COUNT(*) INTO l_cnt FROM sfs_file,ima_file
     # WHERE sfs01=g_sfp.sfp01 AND sfs04=ima01 AND ima108 = 'Y' AND sfs05<>0
     #IF l_cnt=0 OR l_cnt IS NULL THEN
     #   CALL cl_err('','asf-033',1) #TQC-740154
     #   RETURN
     #END IF
- 
+
     # 判斷是否有產生調撥單, 若存在則詢問
     LET l_imm03=''
     SELECT imm03 INTO l_imm03 FROM imm_file
      WHERE imm01 = g_sfp.sfp08 AND imm09=g_sfp.sfp01
        AND immconf != 'X' #FUN-660029
- 
+
     IF SQLCA.SQLCODE = 0  THEN
        IF l_imm03='Y' THEN
           CALL cl_err3("sel","imm_file",g_sfp.sfp08,g_sfp.sfp01,'mfg-052',"","",1)  #No.FUN-660128
@@ -13627,19 +13647,19 @@ FUNCTION i501_gen()
           END IF
        END IF
     END IF
- 
+
     LET tm.tr_date = TODAY
- 
+
     OPEN WINDOW i510g_w WITH FORM "asf/42f/asfi5199"
           ATTRIBUTE (STYLE = g_win_style CLIPPED) #No.FUN-580092 HCN
- 
+
     CALL cl_ui_locale("asfi5199")
- 
+
         LET tm.tr_no = NULL            #MOD-C10081 add
         DISPLAY tm.tr_no TO tr.no      #MOD-C10081 add
 
     INPUT BY NAME tm.* WITHOUT DEFAULTS
- 
+
       AFTER FIELD from_w
         #Mod No.FUN-AB0018
         #IF tm.from_w IS NULL THEN NEXT FIELD from_w END IF
@@ -13649,7 +13669,7 @@ FUNCTION i501_gen()
             NEXT FIELD from_w
          END IF
         #End Mod No.FUN-AB0018
- 
+
   #FUN-D40103 ------Begin------
          IF NOT s_imechk(tm.from_w,tm.from_loc) THEN
            #NEXT FIELD from_w     #TQC-D50126 mark
@@ -13673,15 +13693,15 @@ FUNCTION i501_gen()
          IF NOT s_imechk(tm.from_w,tm.from_loc) THEN
             LET tm.from_loc=' '
             DISPLAY tm.from_loc TO from_loc
-            NEXT FIELD from_loc 
+            NEXT FIELD from_loc
          END IF
       #FUN-D40103 ------End---------
- 
+
       AFTER FIELD from_lot
          IF tm.from_lot IS NULL THEN
             LET tm.from_lot=' '
          END IF
- 
+
       AFTER FIELD to_w
         #Mod No.FUN-AB0018
         #IF tm.to_w IS NULL THEN NEXT FIELD to_w END IF
@@ -13704,7 +13724,7 @@ FUNCTION i501_gen()
             NEXT FIELD to_loc
          END IF
       #FUN-D40103 ------End--------
- 
+
       AFTER FIELD to_loc
          IF tm.to_loc IS NULL THEN
             LET tm.to_loc=' '
@@ -13724,13 +13744,13 @@ FUNCTION i501_gen()
             DISPLAY tm.to_loc TO to_loc
             NEXT FIELD to_loc
          END IF
-      #FUN-D40103 ------End-------- 
+      #FUN-D40103 ------End--------
 
       AFTER FIELD to_lot
          IF tm.to_lot IS NULL THEN
             LET tm.to_lot=' '
          END IF
- 
+
       AFTER FIELD tr_no
          IF cl_null(tm.tr_no) THEN NEXT FIELD tr_no END IF   #TQC-C20158
          IF tm.tr_no IS NOT NULL THEN
@@ -13743,7 +13763,7 @@ FUNCTION i501_gen()
                NEXT FIELD tr_no
             END IF
          END IF
- 
+
       AFTER INPUT
          IF INT_FLAG THEN EXIT INPUT END IF
          IF tm.from_loc IS NULL THEN
@@ -13764,7 +13784,7 @@ FUNCTION i501_gen()
          IF cl_null(tm.to_w) THEN
             NEXT FIELD to_w
          END IF
- 
+
         ON ACTION controlp
           CASE WHEN INFIELD(tr_no) #查詢單据
                     LET g_t1=s_get_doc_no(tm.tr_no)     #No.FUN-550052
@@ -13819,50 +13839,50 @@ FUNCTION i501_gen()
                    #End Mod No.FUN-AB0018
                     NEXT FIELD to_loc
           END CASE
- 
+
       ON IDLE g_idle_seconds
          CALL cl_on_idle()
          CONTINUE INPUT
- 
+
    END INPUT
- 
+
    IF INT_FLAG THEN
       LET INT_FLAG = 0
       CLOSE WINDOW i510g_w
       RETURN
    END IF
- 
+
    IF NOT cl_sure(0,0) THEN
       CLOSE WINDOW i510g_w
       RETURN
    ELSE
       CALL cl_wait()
- 
-      DECLARE sfs_upd CURSOR FOR                                             
-       SELECT sfs01,sfs02 FROM sfs_file,ima_file                              #09/10/21 xiaofeizhu
-        WHERE sfs01=g_sfp.sfp01 AND sfs04=ima01 AND ima108 = 'Y'  
 
-      FOREACH sfs_upd INTO l_sfs01,l_sfs02                                    #09/10/21 xiaofeizhu Add   
-         IF STATUS <> 0 THEN EXIT FOREACH END IF 
+      DECLARE sfs_upd CURSOR FOR
+       SELECT sfs01,sfs02 FROM sfs_file,ima_file                              #09/10/21 xiaofeizhu
+        WHERE sfs01=g_sfp.sfp01 AND sfs04=ima01 AND ima108 = 'Y'
+
+      FOREACH sfs_upd INTO l_sfs01,l_sfs02                                    #09/10/21 xiaofeizhu Add
+         IF STATUS <> 0 THEN EXIT FOREACH END IF
            #UPDATE sfs_file SET sfs07=tm.to_w, sfs08=tm.to_loc, sfs09=' '           #MOD-D30207 mark
             UPDATE sfs_file SET sfs07=tm.to_w, sfs08=tm.to_loc, sfs09=tm.to_lot     #MOD-D30207 add
-             WHERE sfs01=l_sfs01 AND sfs02 = l_sfs02                          #09/10/21 xiaofeizhu Add                                             
+             WHERE sfs01=l_sfs01 AND sfs02 = l_sfs02                          #09/10/21 xiaofeizhu Add
       END FOREACH
       CALL i501_b_fill(" 1=1")  #MOD-840550 add
- 
+
       IF NOT cl_null(tm.tr_no) THEN
          CALL r501g()
       END IF
- 
+
       CLOSE WINDOW i510g_w
- 
+
       DISPLAY BY NAME g_sfp.sfp08
       ERROR ""
       RETURN
    END IF
- 
+
 END FUNCTION
- 
+
 FUNCTION r501g()
    DEFINE l_i            LIKE type_file.num5      #FUN-510029  #No.FUN-680121 SMALLINT
    DEFINE l_name    LIKE type_file.chr20,         # External(Disk) file name  #No.FUN-680121 VARCHAR(20)
@@ -13884,27 +13904,27 @@ FUNCTION r501g()
                                sfa05	LIKE sfa_file.sfa05,
                                sfs930 LIKE sfs_file.sfs930 #FUN-670103
                         END RECORD
- 
+
      SELECT zo02 INTO g_company FROM zo_file WHERE zo01 = g_rlang
 
-     LET g_prog='asfr204' 
+     LET g_prog='asfr204'
      CALL cl_outnam(g_prog) RETURNING l_name
-    
+
     #TQC-CA0045 modify begin---------------
-    #LET g_prog='asfi511' 
-     IF g_sfp.sfp06 = 'D' THEN 
+    #LET g_prog='asfi511'
+     IF g_sfp.sfp06 = 'D' THEN
         LET g_prog='asfi519'
      ELSE
         LET g_prog='asfi511'
-     END IF 
+     END IF
     #TQC-CA0045 modify end-----------------
- 
+
      SELECT zz17,zz05 INTO g_len,g_zz05 FROM zz_file WHERE zz01 = 'asfr204'
- 
+
      BEGIN WORK
      OPEN i501_cl USING g_sfp.sfp01                                #09/10/21 xiaofeizhu Add
      IF STATUS THEN
-        CALL cl_err("OPEN i501_cl:", STATUS, 1)  
+        CALL cl_err("OPEN i501_cl:", STATUS, 1)
         CLOSE i501_cl
         ROLLBACK WORK
         RETURN
@@ -13914,7 +13934,7 @@ FUNCTION r501g()
         CALL cl_err(g_sfp.sfp01,SQLCA.sqlcode,0)     # 資料被他人LOCK
         CLOSE i501_cl ROLLBACK WORK RETURN
      END IF
- 
+
      LET g_success='Y'
      START REPORT r501g_rep TO l_name
      CALL s_auto_assign_no("aim",tm.tr_no,tm.tr_date,"4","","","","","")
@@ -13923,20 +13943,20 @@ FUNCTION r501g()
         LET g_success='N'
      END IF
      DISPLAY BY NAME tm.tr_no
- 
+
      DECLARE r510g_sfa_c CURSOR FOR
       SELECT ima23,sfs04,'',ima02,ima64,ima641,sfs06,sfs05,sfs930  #FUN-670103
         FROM sfs_file,ima_file
        WHERE sfs01=g_sfp.sfp01 AND sfs04=ima01 AND ima108 = 'Y' AND sfs05 > 0
        ORDER BY ima23, sfs04
- 
+
      LET g_pno = 0
      FOREACH r510g_sfa_c INTO sr.*
        OUTPUT TO REPORT r501g_rep(sr.*)
      END FOREACH
- 
+
      UPDATE sfp_file SET sfp08=tm.tr_no WHERE sfp01=g_sfp.sfp01
- 
+
      FINISH REPORT r501g_rep
      LET l_n=0   #No.+245 010621 add
      SELECT COUNT(*) INTO l_n FROM imn_file WHERE imn01=tm.tr_no
@@ -13955,7 +13975,7 @@ FUNCTION r501g()
      END IF
        CALL cl_prt(l_name,g_prtway,g_copies,g_len)  #MOD-750044 add
 END FUNCTION
- 
+
 REPORT r501g_rep(sr)
    DEFINE l_last_sw	LIKE type_file.chr1,    #No.FUN-680121 VARCHAR(1),
           l_sfb		RECORD LIKE sfb_file.*,
@@ -13993,14 +14013,14 @@ DEFINE  l_ima906     LIKE ima_file.ima906
 DEFINE  l_ima907     LIKE ima_file.ima907
 DEFINE  l_cnt        LIKE type_file.num5    #No.FUN-680121 SMALLINT
 DEFINE  l_store      STRING                    #FUN-CB0087
- 
+
   OUTPUT TOP MARGIN g_top_margin LEFT MARGIN g_left_margin BOTTOM MARGIN g_bottom_margin PAGE LENGTH g_page_line
   ORDER EXTERNAL BY sr.ima23, sr.sfa03
   FORMAT
    PAGE HEADER
    #  LET g_x[1]="Unuual Store Transfer Not Enough Report"     #TQC-C90082
       PRINT COLUMN ((g_len-FGL_WIDTH(g_company CLIPPED))/2)+1,g_company CLIPPED
-      PRINT ''                                                 
+      PRINT ''
       PRINT COLUMN ((g_len-FGL_WIDTH(g_x[1]))/2+1),g_x[1]
       IF cl_null(g_towhom)
          THEN PRINT '';
@@ -14010,9 +14030,9 @@ DEFINE  l_store      STRING                    #FUN-CB0087
       LET pageno_total=PAGENO USING '<<<',"/pageno"
       PRINT g_head CLIPPED,pageno_total
       PRINT g_dash
-      PRINT  g_x[31],g_x[32],g_x[33],g_x[34],g_x[35]        
+      PRINT  g_x[31],g_x[32],g_x[33],g_x[34],g_x[35]
       PRINT g_dash1
- 
+
       LET g_pno = g_pno + 1
       IF NOT cl_null(tm.tr_no) AND g_pno=1 THEN
      CALL s_auto_assign_no("aim",tm.tr_no,tm.tr_date,"4","","","","","")
@@ -14035,7 +14055,7 @@ DEFINE  l_store      STRING                    #FUN-CB0087
          LET l_imm.imm14=g_sfp.sfp07 #FUN-670103
          LET l_imm.immplant = g_plant #FUN-980008 add
          LET l_imm.immlegal = g_legal #FUN-980008 add
- 
+
          INITIALIZE l_imn.* TO NULL
          LET l_imn.imn02=0
          LET l_imm.immoriu = g_user      #No.FUN-980030 10/01/04
@@ -14054,9 +14074,9 @@ DEFINE  l_store      STRING                    #FUN-CB0087
             LET g_success='N'
          END IF
       END IF
- 
+
       LET l_last_sw = 'n'
- 
+
    AFTER GROUP OF sr.sfa03
       LET to_qty = 0   LET l_unit = ' '   #No.7226
       LET l_qty=GROUP SUM(sr.sfa05)
@@ -14072,7 +14092,7 @@ DEFINE  l_store      STRING                    #FUN-CB0087
          END IF
       END IF
       IF cl_null(to_qty)  THEN LET to_qty=0 END IF
- 
+
       CALL s_umfchk(sr.sfa03,sr.sfa12,l_unit) RETURNING l_flag,l_factor
       IF l_flag THEN
          CALL cl_err('sfa12<>img09:','asf-400',1)
@@ -14080,7 +14100,7 @@ DEFINE  l_store      STRING                    #FUN-CB0087
       ELSE
          LET l_qty=l_qty*l_factor
       END IF
- 
+
       IF l_qty>to_qty THEN   #若WIP 庫存不足才發料
          LET l_qty = l_qty - to_qty
          IF sr.ima64 != 0
@@ -14092,7 +14112,7 @@ DEFINE  l_store      STRING                    #FUN-CB0087
          THEN		# 最小發料量
             LET l_qty = sr.ima641
          END IF
- 
+
          IF tm.tr_no IS NOT NULL THEN
             LET l_imn.imn01=tm.tr_no
             LET l_imn.imn02=l_imn.imn02+1
@@ -14100,7 +14120,7 @@ DEFINE  l_store      STRING                    #FUN-CB0087
             LET l_imn.imn04=tm.from_w
             LET l_imn.imn05=tm.from_loc
            #LET l_imn.imn06=' '            #MOD-D30207 mark
-            LET l_imn.imn06=tm.from_lot    #MOD-D30207 add 
+            LET l_imn.imn06=tm.from_lot    #MOD-D30207 add
             LET l_imn.imn09=l_unit
             LET l_imn.imn10=l_qty
             LET l_imn.imn10=s_digqty(l_imn.imn10,l_imn.imn09)    #FUN-BB0084
@@ -14148,7 +14168,7 @@ DEFINE  l_store      STRING                    #FUN-CB0087
                      LET l_factor = 1
                   END IF
                   LET l_imn.imn35=l_imn.imn32*l_factor
-                  LET l_imn.imn35=s_digqty(l_imn.imn35,l_imn.imn33)    #FUN-BB0084    
+                  LET l_imn.imn35=s_digqty(l_imn.imn35,l_imn.imn33)    #FUN-BB0084
                END IF
                IF l_ima906='1' THEN
                   LET l_imn.imn33=NULL
@@ -14199,7 +14219,7 @@ DEFINE  l_store      STRING                    #FUN-CB0087
             LET l_imn.imn9301=sr.sfs930 #FUN-670103
             LET l_imn.imn9302=sr.sfs930 #FUN-670103
             LET l_imn.imn29 = 'N'     #TQC-760124
- 
+
             LET l_imn.imnplant = g_plant #FUN-980008 add
             LET l_imn.imnlegal = g_legal #FUN-980008 add
             #FUN-CB0087---qiull---add---str---
@@ -14242,22 +14262,22 @@ DEFINE  l_store      STRING                    #FUN-CB0087
             IF cl_null(from_qty) THEN LET from_qty= 0 END IF   #MOD-750044 add
            #IF (l_qty-from_qty) > 0 THEN   #No:MOD-A20007 mark
               PRINT COLUMN g_c[31],sr.ima23[1,6],
-                    COLUMN g_c[32],sr.sfa03, 
+                    COLUMN g_c[32],sr.sfa03,
                     COLUMN g_c[33],sr.ima02,
                     COLUMN g_c[34],l_qty  USING '---,---,--&' ,
                    #COLUMN g_c[35],(l_qty-from_qty)  USING '---,---,--&'  #MOD-C10081 mark
-                    COLUMN g_c[35],(from_qty-l_qty)  USING '---,---,--&'  #MOD-C10081 add 
+                    COLUMN g_c[35],(from_qty-l_qty)  USING '---,---,--&'  #MOD-C10081 add
            #END IF    #No:MOD-A20007 mark
          END IF
       ELSE
          CALL cl_err(sr.sfa03,'asf-364',1)
       END IF
- 
+
    ON LAST ROW
       PRINT g_dash                #MOD-750044
       PRINT g_x[4],g_x[5] CLIPPED, COLUMN (g_len-9), g_x[7] CLIPPED
       LET l_last_sw = 'y'
- 
+
    PAGE TRAILER
       IF l_last_sw = 'n'
       THEN
@@ -14267,11 +14287,11 @@ DEFINE  l_store      STRING                    #FUN-CB0087
       ELSE
           SKIP 2 LINE
       END IF
- 
+
 END REPORT
- 
+
 FUNCTION i501_set_required()
- 
+
   IF g_ima906 = '3' THEN
      CALL cl_set_comp_required("sfs33,sfs35,sfs30,sfs32",TRUE)
   END IF
@@ -14281,16 +14301,16 @@ FUNCTION i501_set_required()
   IF NOT cl_null(g_sfs[l_ac].sfs30) THEN
      CALL cl_set_comp_required("sfs32",TRUE)
   END IF
- 
+
 END FUNCTION
- 
- 
+
+
 FUNCTION i501_set_no_required()
- 
+
   CALL cl_set_comp_required("sfs33,sfs34,sfs35,sfs30,sfs31,sfs32",FALSE)
- 
+
 END FUNCTION
- 
+
 #用于default 雙單位/轉換率/數量
 FUNCTION i501_du_default(p_cmd)
   DEFINE    l_item   LIKE img_file.img01,     #料號
@@ -14310,15 +14330,15 @@ FUNCTION i501_du_default(p_cmd)
             l_qty1   LIKE sfs_file.sfs32,     #第一數量
             p_cmd    LIKE type_file.chr1,     #No.FUN-680121 VARCHAR(1)
             l_factor LIKE ima_file.ima31_fac  #No.FUN-680121 DECIMAL(16,8)
- 
+
     LET l_item = g_sfs[l_ac].sfs04
     LET l_ware = g_sfs[l_ac].sfs07
     LET l_loc  = g_sfs[l_ac].sfs08
     LET l_lot  = g_sfs[l_ac].sfs09
- 
+
     SELECT ima63,ima906,ima907 INTO l_ima63,l_ima906,l_ima907
       FROM ima_file WHERE ima01 = l_item
- 
+
     IF l_ima906 = '1' THEN  #不使用雙單位
        LET l_unit2 = NULL
        LET l_fac2  = NULL
@@ -14333,7 +14353,7 @@ FUNCTION i501_du_default(p_cmd)
     LET l_unit1 = l_ima63
     LET l_fac1  = 1
     LET l_qty1  = 0
- 
+
     IF p_cmd = 'a' THEN
        LET g_sfs[l_ac].sfs33=l_unit2
        LET g_sfs[l_ac].sfs34=l_fac2
@@ -14349,7 +14369,7 @@ FUNCTION i501_du_default(p_cmd)
        LET b_sfs.sfs35 = g_sfs[l_ac].sfs35
     END IF
 END FUNCTION
- 
+
 #對原來數量/換算率/單位的賦值
 FUNCTION i501_set_origin_field()
   DEFINE    l_ima906 LIKE ima_file.ima906,
@@ -14362,21 +14382,21 @@ FUNCTION i501_set_origin_field()
             l_qty1   LIKE sfs_file.sfs32,
             l_factor LIKE ima_file.ima31_fac  #No.FUN-680121 DECIMAL(16,8)
    DEFINE   l_ima63  LIKE ima_file.ima63
- 
+
     SELECT ima63 INTO l_ima63
       FROM ima_file WHERE ima01=g_sfs[l_ac].sfs04
- 
+
     IF g_sma.sma115='N' THEN RETURN END IF
     LET l_fac2=g_sfs[l_ac].sfs34
     LET l_qty2=g_sfs[l_ac].sfs35
     LET l_fac1=g_sfs[l_ac].sfs31
     LET l_qty1=g_sfs[l_ac].sfs32
- 
+
     IF cl_null(l_fac1) THEN LET l_fac1=1 END IF
     IF cl_null(l_qty1) THEN LET l_qty1=0 END IF
     IF cl_null(l_fac2) THEN LET l_fac2=1 END IF
     IF cl_null(l_qty2) THEN LET l_qty2=0 END IF
- 
+
     IF g_sma.sma115 = 'Y' THEN
        CASE g_ima906
           #'1'這種情況是不應該出現的.但是由于操作的順序問題,故目前保留它
@@ -14396,9 +14416,9 @@ FUNCTION i501_set_origin_field()
     END IF
     LET b_sfs.sfs05 = g_sfs[l_ac].sfs05
     LET b_sfs.sfs06 = g_sfs[l_ac].sfs06
- 
+
 END FUNCTION
- 
+
 FUNCTION i501_set_du_by_origin()
   DEFINE l_ima55    LIKE ima_file.ima55,
          l_ima31    LIKE ima_file.ima31,
@@ -14406,18 +14426,18 @@ FUNCTION i501_set_du_by_origin()
          l_ima907   LIKE ima_file.ima907,
          l_ima908   LIKE ima_file.ima908,
          l_factor   LIKE ima_file.ima31_fac  #No.FUN-680121 DECIMAL(16,8)
- 
+
       SELECT ima55,ima906,ima907,ima908
         INTO l_ima55,l_ima906,l_ima907,l_ima908
         FROM ima_file WHERE ima01 = b_sfs.sfs04
- 
+
        LET b_sfs.sfs30 = b_sfs.sfs06
       #應該是與工單備料檔中的備料單位轉換
        CALL s_umfchk(b_sfs.sfs04,b_sfs.sfs06,g_sfa2.sfa12)
             RETURNING g_errno,l_factor
        LET b_sfs.sfs31 = l_factor
        LET b_sfs.sfs32 = b_sfs.sfs05 / l_factor
- 
+
        IF l_ima906 = '1' THEN  #不使用雙單位
           LET b_sfs.sfs33 = NULL
           LET b_sfs.sfs34 = NULL
@@ -14428,25 +14448,25 @@ FUNCTION i501_set_du_by_origin()
           CALL s_umfchk(b_sfs.sfs04,b_sfs.sfs33,g_sfa2.sfa12)
                RETURNING g_errno,l_factor
           LET b_sfs.sfs34 = l_factor
-          IF l_ima906 = '3' THEN 
+          IF l_ima906 = '3' THEN
              LET b_sfs.sfs35 = b_sfs.sfs32 / l_factor
           ELSE
              LET b_sfs.sfs35 = 0
           END IF      #No.MOD-920345 add
- 
+
        END IF
 END FUNCTION
- 
+
 #兩組雙單位資料不是一定要全部KEY,如果沒有KEY單位,則把換算率/數量清空
 FUNCTION i501_du_data_to_correct()
- 
+
    IF cl_null(g_sfs[l_ac].sfs30) THEN
       LET g_sfs[l_ac].sfs31 = NULL
       LET g_sfs[l_ac].sfs32 = NULL
       LET b_sfs.sfs31 = NULL
       LET b_sfs.sfs32 = NULL
    END IF
- 
+
    IF cl_null(g_sfs[l_ac].sfs33) THEN
       LET g_sfs[l_ac].sfs34 = NULL
       LET g_sfs[l_ac].sfs35 = NULL
@@ -14457,9 +14477,9 @@ FUNCTION i501_du_data_to_correct()
    DISPLAY BY NAME g_sfs[l_ac].sfs32
    DISPLAY BY NAME g_sfs[l_ac].sfs34
    DISPLAY BY NAME g_sfs[l_ac].sfs35
- 
+
 END FUNCTION
- 
+
 #計算庫存總量是否滿足所輸入數量
 FUNCTION i501_check_inventory_qty()
 DEFINE l_n                 LIKE type_file.num5,                #檢查重複用  #No.FUN-680121 SMALLINT
@@ -14481,7 +14501,7 @@ DEFINE l_n                 LIKE type_file.num5,                #檢查重複用 
        l_sfb11             LIKE sfb_file.sfb11,      #MOD-8B0230
        l_sfa11             LIKE sfa_file.sfa11,      #MOD-BA0193
        l_qty	           LIKE sfb_file.sfb09  #No.FUN-680121 DECIMAL(15,3)
- 
+
    IF NOT cl_null(g_sfp.sfp06) THEN
       IF g_sfp.sfp06 MATCHES '[13]' THEN
          IF g_sfs[l_ac].sfs05>(g_sfs[l_ac].sfa05-g_sfs[l_ac].sfa06) AND g_user<>'tiptop'  THEN
@@ -14492,14 +14512,14 @@ DEFINE l_n                 LIKE type_file.num5,                #檢查重複用 
       IF g_sfp.sfp06 MATCHES '[1234]' THEN
         #BUGNO:3264 sfs05發料量 * l_factor > img10庫存量 01/08/10mandy
         #IF (g_sfs[l_ac].sfs05 * l_factor) > g_sfs[l_ac].img10 THEN     #MOD-C50190 mark
-         IF (g_sfs[l_ac].sfs05 * l_factor) > g_sfs[l_ac].img10 AND NOT i501_isVMI(g_sfs[l_ac].sfs07,g_sfs[l_ac].sfs08) THEN #MOD-C50190 add i501_isVMI 
+         IF (g_sfs[l_ac].sfs05 * l_factor) > g_sfs[l_ac].img10 AND NOT i501_isVMI(g_sfs[l_ac].sfs07,g_sfs[l_ac].sfs08) THEN #MOD-C50190 add i501_isVMI
            #IF g_sma.sma894[3,3]='N' OR g_sma.sma894[3,3] IS NULL THEN                                #FUN-C80107 mark
            #FUN-D30024--modify--str--
            #INITIALIZE g_sma894 TO NULL                                                               #FUN-C80107
            #CALL s_inv_shrt_by_warehouse(g_sma.sma894[3,3],g_sfs[l_ac].sfs07) RETURNING g_sma894      #FUN-C80107
            #IF g_sma894 = 'N' THEN                                                                    #FUN-C80107
             INITIALIZE g_imd23 TO NULL
-            CALL s_inv_shrt_by_warehouse(g_sfs[l_ac].sfs07,g_plant) RETURNING g_imd23 #TQC-D40078 g_plant 
+            CALL s_inv_shrt_by_warehouse(g_sfs[l_ac].sfs07,g_plant) RETURNING g_imd23 #TQC-D40078 g_plant
             IF g_imd23 = 'N' THEN
            #FUN-D30024--modify--end--
                CALL cl_err(g_sfs[l_ac].sfs05,'mfg1303',0)
@@ -14527,7 +14547,7 @@ DEFINE l_n                 LIKE type_file.num5,                #檢查重複用 
                RETURN 1
             END IF
          END IF
- 
+
          IF g_sfp.sfp06 = '6' THEN    #成套退料
             SELECT sfb08,sfb09 INTO l_sfb08,l_sfb09 FROM sfb_file  #已發-完工      #MOD-940347 add sfb08,l_sfb08
              WHERE sfb01 = g_sfs[l_ac].sfs03   #工單
@@ -14544,25 +14564,25 @@ DEFINE l_n                 LIKE type_file.num5,                #檢查重複用 
             IF cl_null(l_sfa161) THEN LET l_sfa161 = 0 END IF
             LET l_qty = l_sfa06 - (l_sfb09 * l_sfa161)
          END IF
- 
+
          IF g_sfp.sfp06 = '8' THEN    #一般退料
             SELECT sfb09,sfb11,sfb08 INTO l_sfb09,l_sfb11,l_sfb08 FROM sfb_file  #已發-完工   #MOD-8B0230 add sfb11,sfb08
             WHERE sfb01 = g_sfs[l_ac].sfs03   #工單
- 
+
             SELECT sfa06,sfa161,sfa26,sfa27,sfa28,sfa05,sfa100,sfa11  #MOD-BA0193 add sfa11 #MOD-8B0230 add sfa100  #FUN-B50059
             INTO l_sfa06,l_sfa161,l_sfa26,l_sfa27,l_sfa28,l_sfa05,l_sfa100,l_sfa11 FROM sfa_file #MOD-BA0193 add sfa11 #MOD-8B0230 add l_sfa100
             WHERE sfa01 = g_sfs[l_ac].sfs03
               AND sfa03 = g_sfs[l_ac].sfs04
               AND sfa08 = g_sfs[l_ac].sfs10
               AND sfa27 = g_sfs[l_ac].sfs27    #FUN-A60095
-              AND sfa012= g_sfs[l_ac].sfs012   #FUN-A60028 
+              AND sfa012= g_sfs[l_ac].sfs012   #FUN-A60028
               AND sfa013= g_sfs[l_ac].sfs013   #FUN-A60028
-            
+
             SELECT SUM(sfs05) INTO l_sfs05 FROM sfs_file
             WHERE sfs01=g_sfp.sfp01 AND sfs03=g_sfs[l_ac].sfs03
             AND sfs04=g_sfs[l_ac].sfs04 AND sfs10=g_sfs[l_ac].sfs10
             AND sfs02!=g_sfs[l_ac].sfs02
- 
+
             IF cl_null(l_sfs05) THEN LET l_sfs05 = 0 END IF
             IF cl_null(l_qty) THEN LET l_qty = 0 END IF
             IF cl_null(l_sfa06) THEN LET l_sfa06 = 0 END IF
@@ -14571,31 +14591,31 @@ DEFINE l_n                 LIKE type_file.num5,                #檢查重複用 
             IF cl_null(l_sfa05) THEN LET l_sfa05 = 0 END IF  #MOD-7A0133 add
             IF cl_null(l_sfb11) THEN LET l_sfb11 = 0 END IF  #MOD-8B0230 add
             IF cl_null(l_sfb08) THEN LET l_sfb08 = 0 END IF  #MOD-940347 add
- 
+
             #一般退料考慮誤差率sfa100
             IF cl_null(l_sfa100) THEN LET l_sfa100 = 0 END IF
-            IF g_sma.sma899 = 'Y' THEN 
+            IF g_sma.sma899 = 'Y' THEN
                #已發/應發*生產套數*誤差率
                IF l_sfa100 = 100 THEN
-                  LET l_qty = l_sfa06 - g_sfs[l_ac].sfs05-l_sfs05 
+                  LET l_qty = l_sfa06 - g_sfs[l_ac].sfs05-l_sfs05
                ELSE
-                  LET l_qty = (((l_sfa06-g_sfs[l_ac].sfs05-l_sfs05)/l_sfa05) * l_sfb08 * (1+l_sfa100/100))     #MOD-940347 add 
+                  LET l_qty = (((l_sfa06-g_sfs[l_ac].sfs05-l_sfs05)/l_sfa05) * l_sfb08 * (1+l_sfa100/100))     #MOD-940347 add
                   #已發料(扣除退料數) - 入庫數(含FQC)
                   LET l_qty = l_qty - (l_sfb09+l_sfb11)
                END IF        #No:MOD-970298 add
                #MOD-BA0193 --begin
-               IF l_sfa11='S' THEN 
-                  IF l_qty> 0 THEN      
-                     CALL cl_err(g_sfs[l_ac].sfs04,'asf-615',1)  
+               IF l_sfa11='S' THEN
+                  IF l_qty> 0 THEN
+                     CALL cl_err(g_sfs[l_ac].sfs04,'asf-615',1)
                     RETURN 1
                   END IF
                ELSE
-               #MOD-BA0193--end 
-                  IF l_qty < 0 THEN                                                                                                                                   
+               #MOD-BA0193--end
+                  IF l_qty < 0 THEN
                      CALL cl_err(g_sfs[l_ac].sfs04,'asf-705',1)  #No.MOD-830099 modify
                      RETURN 1
-                  END IF    
-               END IF #MOD-BA0193                                                                                                                                                            
+                  END IF
+               END IF #MOD-BA0193
             ELSE
                LET l_qty = l_sfa06 - (l_sfb09 * l_sfa161) - l_sfs05
             END IF #MOD-8B0230 add
@@ -14621,7 +14641,7 @@ DEFINE l_n                 LIKE type_file.num5,                #檢查重複用 
                 LET l_qty = 0
                 LET l_qty = l_sfa06 -
                             (l_sfb09 * l_sfa161_t*l_sfa28) - l_sfs05
- 
+
                #--找出同一張退料單是否有其對應的被替代料也做退料動作
                 SELECT SUM(sfs05) INTO l_sfs05 FROM sfs_file
                   WHERE sfs01=g_sfp.sfp01 AND sfs03=l_sfa27
@@ -14636,7 +14656,7 @@ DEFINE l_n                 LIKE type_file.num5,                #檢查重複用 
                   AND sfa27 = g_sfs[l_ac].sfs04 AND sfa26 ='S'
                 IF cl_null(l_sfa28_t) THEN LET l_sfa28_t = 0 END IF
                 LET l_qty = l_sfa06 - (l_sfb09 * l_sfa161) - l_sfs05
- 
+
                #--找出同一張退料單是否有其對應的被替代料也做退料動作
                 SELECT SUM(sfs05) INTO l_sfs05 FROM sfs_file
                   WHERE sfs01=g_sfp.sfp01 AND sfs03=l_sfa27
@@ -14649,7 +14669,7 @@ DEFINE l_n                 LIKE type_file.num5,                #檢查重複用 
                 FROM sfa_file
                 WHERE sfa01 = g_sfs[l_ac].sfs03
                   AND sfa03 = l_sfa27
- 
+
                IF cl_null(l_sfa06_t) THEN LET l_sfa06_t = 0 END IF
                IF cl_null(l_sfa161_t) THEN LET l_sfa161_t = 0 END IF
                LET l_qty = 0
@@ -14693,18 +14713,18 @@ DEFINE l_n                 LIKE type_file.num5,                #檢查重複用 
                            (l_qty * l_sfa161_t * l_sfa28) - l_sfs05
             END IF
 #FUN-A20037 --end--
- 
+
 #l_sfa05 < 0 表示工單備料輸入負數-->要退料
             IF l_sfa05 < 0 THEN
-               LET l_qty = (l_sfa05* -1) - l_sfs05                                                                                                                              
-            END IF                                                                                                                                                    
- 
-            IF g_sfs[l_ac].sfs05 > l_qty AND g_sma.sma899 ='N' THEN   #MOD-8B0230 add sma899                                                                                                                                
+               LET l_qty = (l_sfa05* -1) - l_sfs05
+            END IF
+
+            IF g_sfs[l_ac].sfs05 > l_qty AND g_sma.sma899 ='N' THEN   #MOD-8B0230 add sma899
                CALL cl_err(' ','asf-705',1)
                RETURN 1
             END IF
         END IF
- 
+
       END IF
    END IF
    IF NOT cl_null(g_sfs[l_ac].sfs06) THEN
@@ -14725,7 +14745,7 @@ DEFINE l_n                 LIKE type_file.num5,                #檢查重複用 
    END IF
    RETURN 0
 END FUNCTION
- 
+
 FUNCTION i501_imgg10()
 DEFINE   l_imgg10_1  LIKE imgg_file.imgg10,
          l_imgg10_2  LIKE imgg_file.imgg10,
@@ -14757,7 +14777,7 @@ DEFINE   l_imgg10_1  LIKE imgg_file.imgg10,
        LET g_sfs[l_ac].img10 = l_imgg10_2 * l_factor_2
     END IF
 END FUNCTION
- 
+
 FUNCTION i501_planissue()
 DEFINE l_sre RECORD
                 sre03 LIKE sre_file.sre03,
@@ -14774,17 +14794,17 @@ DEFINE l_eci06 LIKE eci_file.eci06,
        sre03 LIKE sre_file.sre03,
        sre05 LIKE sre_file.sre05,
        sre04 LIKE sre_file.sre04
- 
+
    OPEN WINDOW i501_plan AT 2,2 WITH FORM "asf/42f/asfi501d"
          ATTRIBUTE (STYLE = g_win_style CLIPPED)
- 
+
    CALL cl_ui_locale("asfi501d")
- 
+
    LET sre06b=TODAY
    LET sre06e=TODAY
    DISPLAY sre06b,sre06e
    INPUT BY NAME sre06b,sre06e,sre03
- 
+
        AFTER FIELD sre03
           IF NOT cl_null(sre03) THEN
              CALL i100_sre03(sre03)
@@ -14803,7 +14823,7 @@ DEFINE l_eci06 LIKE eci_file.eci06,
           ELSE
              DISPLAY '' TO FORMONLY.eci06
           END IF
- 
+
        ON ACTION controlp
           CASE
              WHEN INFIELD(sre03)
@@ -14814,38 +14834,38 @@ DEFINE l_eci06 LIKE eci_file.eci06,
                 NEXT FIELD sre03
              OTHERWISE EXIT CASE
           END CASE
- 
+
       ON IDLE g_idle_seconds
          CALL cl_on_idle()
          CONTINUE INPUT
- 
+
    END INPUT
- 
+
    IF INT_FLAG THEN
       LET INT_FLAG = 0
       CLOSE WINDOW i501_plan
       RETURN
    END IF
- 
+
    LET l_wc1=''
    IF NOT sre06b IS NULL THEN
       LET sre06b=sre06b USING 'YYYY-MM-DD'
       LET l_wc1=l_wc1 CLIPPED," AND sre06>='",sre06b,"'"
    END IF
- 
+
    IF NOT sre06e IS NULL THEN
       LET sre06b=sre06e USING 'YYYY-MM-DD'
       LET l_wc1=l_wc1 CLIPPED," AND sre06<='",sre06e,"'"
    END IF
- 
+
    IF NOT cl_null(sre03) THEN
       LET l_wc1=l_wc1 CLIPPED," AND sre03='",sre03,"'"
    END IF
- 
+
    CONSTRUCT BY NAME l_wc2 ON sre05,sre04
               BEFORE CONSTRUCT
                  CALL cl_qbe_init()
- 
+
        ON ACTION controlp
          CASE
               WHEN INFIELD(sre05)
@@ -14861,43 +14881,43 @@ DEFINE l_eci06 LIKE eci_file.eci06,
 #                LET g_qryparam.form = "q_ima17"
 #                LET g_qryparam.default1 = sre04
 #                CALL cl_create_qry() RETURNING sre04
-                 CALL q_sel_ima(FALSE, "q_ima17","",sre04,"","","","","",'' ) 
-                  RETURNING sre04  
+                 CALL q_sel_ima(FALSE, "q_ima17","",sre04,"","","","","",'' )
+                  RETURNING sre04
 #FUN-AA0059---------mod------------end-----------------
                  DISPLAY sre04 TO sre04      #No.TQC-740331
                  NEXT FIELD sre04
              OTHERWISE EXIT CASE
          END CASE
- 
+
       ON IDLE g_idle_seconds
          CALL cl_on_idle()
          CONTINUE CONSTRUCT
- 
+
                  ON ACTION qbe_select
          	   CALL cl_qbe_select()
                  ON ACTION qbe_save
 		   CALL cl_qbe_save()
    END CONSTRUCT
- 
+
    IF INT_FLAG THEN
       LET INT_FLAG = 0
       CLOSE WINDOW i501_plan
       RETURN
    END IF
- 
+
    IF cl_null(l_wc2) THEN
       LET l_wc2=" 1=1"
    END IF
- 
+
    LET l_wc1=l_wc1 CLIPPED," AND ",l_wc2 CLIPPED
- 
+
    LET l_wc1="SELECT sre03,sre04,sre06,SUM(sre07),sre051 FROM sre_file WHERE 1=1",l_wc1 CLIPPED, #FUN-870097 add sre051
              " AND sre07<>0 AND sre07 IS NOT NULL",
              " GROUP BY sre03,sre04,sre06,sre051"   #FUN-870097 add sre051
- 
+
    PREPARE i501_plan_c_pre FROM l_wc1
    DECLARE i501_plan_c CURSOR FOR i501_plan_c_pre
- 
+
    LET g_success='N'
    BEGIN WORK
    FOREACH i501_plan_c INTO l_sre.*
@@ -14912,7 +14932,7 @@ DEFINE l_eci06 LIKE eci_file.eci06,
       LET l_sfq.sfq04=l_sre.sre03
       LET l_sfq.sfq05=l_sre.sre06
       IF g_sma.sma118 = 'Y' AND g_sfp.sfp06 MATCHES '[ABC]' THEN  #No.TQC-890051
-         LET l_sfq.sfq07=l_sre.sre051 
+         LET l_sfq.sfq07=l_sre.sre051
       ELSE
       	 LET l_sfq.sfq07=' '
       END IF
@@ -14923,13 +14943,13 @@ DEFINE l_eci06 LIKE eci_file.eci06,
     #FUN-B20095 -------Begin---------
       IF cl_null(l_sfq.sfq012) THEN
          LET l_sfq.sfq012 = ' '
-      END IF 
+      END IF
     #FUN-B20095 -------End-----------
- 
+
       LET l_sfq.sfqplant = g_plant #FUN-980008 add
       LET l_sfq.sfqlegal = g_legal #FUN-980008 add
 
-      IF l_sfq.sfq014 IS NULL THEN LET l_sfq.sfq014=' ' END IF #FUN-C70014 add 
+      IF l_sfq.sfq014 IS NULL THEN LET l_sfq.sfq014=' ' END IF #FUN-C70014 add
       INSERT INTO sfq_file VALUES (l_sfq.*)
       IF SQLCA.sqlcode THEN
          CALL cl_err3("ins","sfq_file",l_sfq.sfq01,l_sfq.sfq02,STATUS,"","",1)  #No.FUN-660128
@@ -14946,11 +14966,11 @@ DEFINE l_eci06 LIKE eci_file.eci06,
    CLOSE WINDOW i501_plan
    CALL i501_d_fill(' 1=1')
 END FUNCTION
- 
+
 FUNCTION i100_sre03(p_sre03) #FUN-5C0114 add
   DEFINE p_sre03     LIKE sre_file.sre03,
          l_eciacti   LIKE eci_file.eciacti
- 
+
   LET g_errno = ' '
   SELECT eciacti INTO l_eciacti
      FROM eci_file WHERE eci01 = p_sre03
@@ -14959,7 +14979,7 @@ FUNCTION i100_sre03(p_sre03) #FUN-5C0114 add
        OTHERWISE          LET g_errno = SQLCA.SQLCODE USING '-------'
   END CASE
 END FUNCTION
- 
+
 #圖形顯示
 FUNCTION i501_pic()
    IF g_sfp.sfpconf = 'X' THEN
@@ -14978,12 +14998,12 @@ FUNCTION i501_pic()
    CALL cl_set_field_pic(g_sfp.sfpconf,g_chr2,g_sfp.sfp04,"",g_void,"")
   #FUN-AB0001 add end -------
 END FUNCTION
- 
+
 
 FUNCTION i501_get_sfs930(p_sfs03)
 DEFINE p_sfs03 LIKE sfs_file.sfs03
-DEFINE l_sfb98 LIKE sfb_file.sfb98 
-   CASE 
+DEFINE l_sfb98 LIKE sfb_file.sfb98
+   CASE
       WHEN g_sfp.sfp06 MATCHES '[ABC]'  #For ASR
          RETURN s_costcenter(g_sfp.sfp07)
       OTHERWISE  #For ASF
@@ -14995,7 +15015,7 @@ DEFINE l_sfb98 LIKE sfb_file.sfb98
          RETURN s_costcenter(l_sfb98)
    END CASE
 END FUNCTION
- 
+
 FUNCTION i501_mu_ui()
     IF g_sma.sma115 ='N' THEN
        CALL cl_set_comp_visible("sfs30,sfs32,sfs33,sfs35",FALSE)
@@ -15041,20 +15061,20 @@ FUNCTION i501_mu_ui()
     CALL cl_set_act_visible("barcode_qty_allot", FALSE)
    #DEV-D40011 add end----------------------
 END FUNCTION
- 
+
 FUNCTION i501_b_i_move_back(l_i)
    DEFINE l_i LIKE type_file.num10
    LET b_sfq.sfq01  = g_sfp.sfp01
-   LET b_sfq.sfq02  = g_sfq[l_i].sfq02   
-   LET b_sfq.sfq04  = g_sfq[l_i].sfq04   
-   LET b_sfq.sfq05  = g_sfq[l_i].sfq05 
-   LET b_sfq.sfq07  = g_sfq[l_i].sfq07     #No.FUN-870097  
+   LET b_sfq.sfq02  = g_sfq[l_i].sfq02
+   LET b_sfq.sfq04  = g_sfq[l_i].sfq04
+   LET b_sfq.sfq05  = g_sfq[l_i].sfq05
+   LET b_sfq.sfq07  = g_sfq[l_i].sfq07     #No.FUN-870097
    LET b_sfq.sfq08  = g_sfq[l_i].sfq08     #No.FUN-940008 add
-   LET b_sfq.sfq03  = g_sfq[l_i].sfq03 
+   LET b_sfq.sfq03  = g_sfq[l_i].sfq03
    IF cl_null(b_sfq.sfq05) OR (b_sfq.sfq05=0) THEN
       LET b_sfq.sfq05=g_sfp.sfp02
    END IF
-#FUN-B20095 ------------Begin------------- 
+#FUN-B20095 ------------Begin-------------
    LET b_sfq.sfq012 = g_sfq[l_i].sfq012
    IF cl_null(b_sfq.sfq012) THEN
       LET b_sfq.sfq012 = ' '
@@ -15081,21 +15101,21 @@ FUNCTION i501_b_i_move_back(l_i)
    LET b_sfq.sfqud13 = g_sfq[l_i].sfqud13
    LET b_sfq.sfqud14 = g_sfq[l_i].sfqud14
    LET b_sfq.sfqud15 = g_sfq[l_i].sfqud15
- 
+
    LET b_sfq.sfqplant = g_plant #FUN-980008 add
    LET b_sfq.sfqlegal = g_legal #FUN-980008 add
 END FUNCTION
- 
+
 FUNCTION i501_sfq04(p_sfq04)
 DEFINE p_sfq04    LIKE sfq_file.sfq04
 DEFINE l_eciacti  LIKE eci_file.eciacti
 DEFINE l_ecdacti  LIKE ecd_file.ecdacti
 DEFINE l_errno    LIKE type_file.chr10
-    
+
     LET l_errno = ''
     IF g_sfp.sfp06 MATCHES '[ABC]' THEN
        SELECT eciacti INTO l_eciacti FROM eci_file
-        WHERE eci01=p_sfq04 
+        WHERE eci01=p_sfq04
     ELSE
        SELECT ecdacti INTO l_ecdacti FROM ecd_file
         WHERE ecd01 = p_sfq04
@@ -15105,32 +15125,32 @@ DEFINE l_errno    LIKE type_file.chr10
       WHEN l_eciacti     = 'N'  LET l_errno = 'ams-106'
       OTHERWISE LET l_errno = SQLCA.sqlcode USING '-----'
     END CASE
- 
+
     RETURN l_errno
- 
+
 END FUNCTION
- 
+
 FUNCTION i501_sfs10(p_sfs10)
 DEFINE p_sfs10     LIKE sfs_file.sfs10
 DEFINE l_ecdacti   LIKE ecd_file.ecdacti
 DEFINE l_errno     LIKE type_file.chr10
-      
+
     LET l_errno =''
-    SELECT ecdacti INTO l_ecdacti FROM ecd_file 
+    SELECT ecdacti INTO l_ecdacti FROM ecd_file
      WHERE ecd01 = p_sfs10
     CASE
       WHEN SQLCA.sqlcode = 100  LET l_errno = 'mfg4009'
       WHEN l_ecdacti = 'N'      LET l_errno = 'ams-106'
       OTHERWISE LET l_errno = SQLCA.sqlcode USING '-----'
     END CASE
- 
+
     RETURN l_errno
- 
-END FUNCTION 
- 
+
+END FUNCTION
+
 #此函數用于計算退料未過賬量,若有需要可直接擴展為未過賬量計算。
 FUNCTION i501_totsfs05(p_sfp01,p_sfp06,p_sfs02,p_sfs03,p_sfs04,p_sfs06,p_sfs10,p_sfs27)  #No.MOD-790175 modify#FUN-9B0149
-DEFINE   l_tot        LIKE sfs_file.sfs05    
+DEFINE   l_tot        LIKE sfs_file.sfs05
 DEFINE   p_sfp01      LIKE sfp_file.sfp01
 DEFINE   p_sfs02      LIKE sfs_file.sfs02
 DEFINE   p_sfs03      LIKE sfs_file.sfs03
@@ -15139,19 +15159,19 @@ DEFINE   p_sfs06      LIKE sfs_file.sfs06    #No.MOD-790175 add
 DEFINE   p_sfs10      LIKE sfs_file.sfs10    #No.MOD-790175 add
 DEFINE   p_sfp06      LIKE sfp_file.sfp06
 DEFINE   p_sfs27      LIKE sfs_file.sfs27   #FUN-9B0149
- 
- 
+
+
     LET l_tot = 0
-   #MOD-B70244---modify---start--- 
+   #MOD-B70244---modify---start---
    #SELECT SUM(sfs05) INTO l_tot  FROM sfs_file,sfp_file
    # WHERE sfs01  = sfp01
    #   AND sfp04 != 'Y'
    #   AND sfp06  = p_sfp06
-   #   AND ((sfs01 != p_sfp01) 
+   #   AND ((sfs01 != p_sfp01)
    #     OR (sfs01 = p_sfp01 AND sfs02 != p_sfs02))
    #   AND sfs03  = p_sfs03
    #   AND sfs04  = p_sfs04
-   #   AND sfs06  = p_sfs06   #No.MOD-790175 add 
+   #   AND sfs06  = p_sfs06   #No.MOD-790175 add
    #   AND sfs10  = p_sfs10   #No.MOD-790175 add
    #   AND sfs27  = p_sfs27   #FUN-9B0149
    #   AND sfpconf != 'X'     #MOD-8A0258 add
@@ -15187,7 +15207,7 @@ DEFINE   p_sfs27      LIKE sfs_file.sfs27   #FUN-9B0149
         WHERE sfs01  = sfp01
           AND sfp04 != 'Y'
           AND sfp06  = p_sfp06
-          AND ((sfs01 != p_sfp01)                    
+          AND ((sfs01 != p_sfp01)
            OR (sfs01 = p_sfp01 AND sfs02 != p_sfs02))
           AND sfs03  = p_sfs03
           AND sfs27  = p_sfs27
@@ -15205,13 +15225,13 @@ DEFINE   p_sfs27      LIKE sfs_file.sfs27   #FUN-9B0149
     IF cl_null(l_tot) THEN
        LET l_tot=0
     END IF
- 
+
     RETURN l_tot
-     
- 
+
+
 END FUNCTION
- 
- 
+
+
 FUNCTION i501_ins_rvbs(l_sfs02,l_sfs03,l_sfs04)
    DEFINE l_rvbs     RECORD LIKE rvbs_file.*
    DEFINE l_c        LIKE type_file.num5
@@ -15220,7 +15240,7 @@ FUNCTION i501_ins_rvbs(l_sfs02,l_sfs03,l_sfs04)
    DEFINE l_sfs02    LIKE sfs_file.sfs02
    DEFINE l_sfs03    LIKE sfs_file.sfs03
    DEFINE l_sfs04    LIKE sfs_file.sfs04
- 
+
    IF g_sfp.sfp06 NOT MATCHES '[6789B]' THEN
       RETURN
    END IF
@@ -15230,45 +15250,45 @@ FUNCTION i501_ins_rvbs(l_sfs02,l_sfs03,l_sfs04)
       IF g_sfp.sfp06 = '8' THEN LET g_prog = 'asfi528' END IF
       IF g_sfp.sfp06 = '9' THEN LET g_prog = 'asfi529' END IF
    END IF
-   SELECT ima918,ima921 INTO g_ima918,g_ima921 
+   SELECT ima918,ima921 INTO g_ima918,g_ima921
      FROM ima_file
     WHERE ima01 = l_sfs04
       AND imaacti = "Y"
-   
+
    IF g_ima918 = "Y" OR g_ima921 = "Y" THEN
       DECLARE i501_g_sfs CURSOR FOR SELECT sfe02 FROM sfe_file
                                      WHERE sfe01 = l_sfs03
                                        AND sfe07 = l_sfs04
                                        AND sfe06 IN ('1','2','3','4','A','C')
-      
+
       LET l_rvbs022 = 0
- 
+
       FOREACH i501_g_sfs INTO l_sfe02
          IF STATUS THEN
             CALL cl_err('sfs',STATUS,1)
          END IF
-      
+
          DECLARE i501_g_rvbs CURSOR FOR SELECT * FROM rvbs_file
                                         WHERE rvbs01 = l_sfe02
                                           AND rvbs021 = l_sfs04
-         
+
          FOREACH i501_g_rvbs INTO l_rvbs.*
             IF STATUS THEN
                CALL cl_err('rvbs',STATUS,1)
             END IF
-         
+
             LET l_rvbs.rvbs00 = g_prog       #程式代號
             LET l_rvbs.rvbs01 = g_sfp.sfp01
             LET l_rvbs.rvbs02 = l_sfs02
-         
+
             IF cl_null(l_rvbs.rvbs10) THEN
                LET l_rvbs.rvbs10 = 0
             END IF
-         
+
             LET l_rvbs.rvbs10 = l_rvbs.rvbs10 + l_rvbs.rvbs06
-         
+
             LET l_rvbs.rvbs06 = 0
-         
+
 #TQC-B90236----add--begin----
             IF g_sfp.sfp06 MATCHES '[6789B]' THEN
                LET l_rvbs.rvbs09 = 1
@@ -15282,14 +15302,14 @@ FUNCTION i501_ins_rvbs(l_sfs02,l_sfs03,l_sfs04)
                AND rvbs04 = l_rvbs.rvbs04
                AND rvbs08 = l_rvbs.rvbs08
               #AND rvbs09 = -1
-               AND rvbs09 = l_rvbs.rvbs09 # 
+               AND rvbs09 = l_rvbs.rvbs09 #
                AND rvbs13 = 0
-         
+
             IF STATUS OR SQLCA.SQLCODE THEN
                CALL cl_err3("upd","rvbs_file","","",SQLCA.sqlcode,"","upd rvbs",1)  #No.FUN-670008
                LET g_success='N'
             END IF
-         
+
             IF SQLCA.SQLERRD[3]=0 THEN
                LET l_rvbs022 = l_rvbs022 + 1
                LET l_rvbs.rvbs022 = l_rvbs022
@@ -15301,13 +15321,13 @@ FUNCTION i501_ins_rvbs(l_sfs02,l_sfs03,l_sfs04)
                   LET g_success='N'
                END IF
             END IF
-         
+
          END FOREACH
       END FOREACH
    END IF
- 
+
 END FUNCTION
- 
+
 FUNCTION i501_y_chk()
 DEFINE  l_sfs03   LIKE sfs_file.sfs03,
         l_sfs04   LIKE sfs_file.sfs04,
@@ -15315,26 +15335,26 @@ DEFINE  l_sfs03   LIKE sfs_file.sfs03,
         l_tc_sff05 LIKE tc_sff_file.tc_sff05,
         l_flag     LIKE type_file.chr1
 DEFINE  l_cnt      LIKE type_file. num5  #add by liyjf190531
-DEFINE l_sql      STRING #add by lixwz200911 
+DEFINE l_sql      STRING #add by lixwz200911
 DEFINE  l_cnt1    LIKE type_file.num5  #add by lixwz200911
-         
-       ##add by liyjf190531 str # 对消耗性料件 asfi514 审核及过账时控制不可大于应发数量       
+
+       ##add by liyjf190531 str # 对消耗性料件 asfi514 审核及过账时控制不可大于应发数量
            IF g_prog = 'asfi514' AND g_sfp.sfp06 ='4' THEN
               FOR l_cnt = 1 TO  g_sfs.getlength()
               IF NOT cl_null(g_sfs[l_cnt].sfs05) AND g_sfs[l_cnt].sfs05 > g_sfs[l_cnt].sfa05 THEN #发料大于应发
                  CALL cl_err('','csf-878',1)
                  LET  g_success = 'N'
                  RETURN
-              END IF 
-              END FOR 
+              END IF
+              END FOR
            END IF
-        ##add by liyjf190531 end # 对消耗性料件 asfi514 审核及过账时控制不可大于应发数量  
+        ##add by liyjf190531 end # 对消耗性料件 asfi514 审核及过账时控制不可大于应发数量
 
   #add by lixwz200911 s---
   #asft730有转出数量就不允许退料
   {IF g_prog MATCHES "asfi52*" THEN
      FOR l_cnt = 1 TO  g_sfs.getlength()
-         
+
          select count(1) INTO l_cnt1 from shb_file where shb05 =g_sfs[l_cnt].sfs03
             and shb111+shb112+shb113+shb114+shb115>0
 
@@ -15345,8 +15365,8 @@ DEFINE  l_cnt1    LIKE type_file.num5  #add by lixwz200911
          END IF
       END FOR
   END IF
-  }#add by lixwz200911 e---   
-                                            
+  }#add by lixwz200911 e---
+
   #TQC-B80091  --begin houlia
    IF NOT cl_null(g_sfp.sfp16) THEN
       CALL i501_sfp16('a')
@@ -15357,75 +15377,75 @@ DEFINE  l_cnt1    LIKE type_file.num5  #add by lixwz200911
       END IF
    END IF
    #TQC-B80091  --end  houlia
- 
+
    #FUN-AB0001  add str ---
    IF g_sfp.sfp15 matches '[Ss]' THEN
       CALL cl_err('','apm-030',0) #送簽中, 不可修改資料!
       RETURN
    END IF
    #FUN-AB0001  add end ---
-   
+
     #tianry add 161111   #检核发料量和申请数量不能超过1%
     #
 #    IF g_prog='asfi511' THEN
-#       DECLARE  sel_try_cur CUROR FOR 
+#       DECLARE  sel_try_cur CUROR FOR
 
 
- #   END IF 
+ #   END IF
 
 
   {  IF NOT cl_null(g_sfp.sfpud03) THEN
-       LET l_flag='Y' 
+       LET l_flag='Y'
        DECLARE sel_try_cur CURSOR FOR
        SELECT sfs03,sfs04,sum(sfs05) FROM sfs_file WHERE sfs01=g_sfp.sfp01 GROUP BY sfs03,sfs04
-       FOREACH sel_try_cur INTO l_sfs03,l_sfs04,l_sfs05 
+       FOREACH sel_try_cur INTO l_sfs03,l_sfs04,l_sfs05
          SELECT SUM(tc_sff05) INTO l_tc_sff05 FROM tc_sff_file WHERE tc_sff01=g_sfp.sfpud03
-         AND tc_sff03=l_sfs03 AND tc_sff04=l_sfs04 
-         IF CL_NULL(l_tc_sff05) THEN LET l_tc_sff05=0 END IF 
+         AND tc_sff03=l_sfs03 AND tc_sff04=l_sfs04
+         IF CL_NULL(l_tc_sff05) THEN LET l_tc_sff05=0 END IF
          IF (l_tc_sff05-l_sfs05)/l_tc_sff05 >0.001 OR (l_sfs05-l_tc_sff05)/l_tc_sff05>0.001   THEN
-            CALL cl_err(l_sfs04,'csf-910',1) 
-            LET l_flag='N' 
+            CALL cl_err(l_sfs04,'csf-910',1)
+            LET l_flag='N'
             LET g_success='N'
-            EXIT FOREACH 
-         END IF 
+            EXIT FOREACH
+         END IF
 
 
 
-       END FOREACH 
+       END FOREACH
        IF l_flag='N'  THEN RETURN END IF
-    END IF 
-    #tianry add end 
+    END IF
+    #tianry add end
 }
 
    CALL i501sub_y_chk(g_sfp.sfp01,g_action_choice)  #TQC-C60079
- 
+
    IF g_success='N' THEN
-      RETURN   
+      RETURN
    END IF
- 
+
 END FUNCTION
- 
-FUNCTION i501_y_upd()  
- 
-   CALL i501sub_y_upd(g_sfp.sfp01,g_action_choice,FALSE)  #FUN-840012  
+
+FUNCTION i501_y_upd()
+
+   CALL i501sub_y_upd(g_sfp.sfp01,g_action_choice,FALSE)  #FUN-840012
      RETURNING g_sfp.*
- 
+
    IF g_success='N' THEN
-      RETURN  
+      RETURN
    END IF
- 
+
 END FUNCTION
- 
+
 FUNCTION i501_sfp01(p_cmd)
    DEFINE p_cmd     LIKE type_file.chr1
    DEFINE l_slip    LIKE smy_file.smyslip
    DEFINE l_smy72   LIKE smy_file.smy72    #MOD-A30031 add
    DEFINE l_smy73   LIKE smy_file.smy73    #FUN-9B0144
- 
+
    LET g_errno = ' '
    IF cl_null(g_sfp.sfp01) THEN RETURN END IF
    LET l_slip = s_get_doc_no(g_sfp.sfp01)
- 
+
    SELECT smy72,smy73 INTO l_smy72,l_smy73 FROM smy_file  #MOD-A30031 add smy72
     WHERE smyslip = l_slip
    IF l_smy73 = 'Y' THEN
@@ -15437,18 +15457,18 @@ FUNCTION i501_sfp01(p_cmd)
       DISPLAY BY NAME g_sfp.sfp06
    END IF
   #end MOD-A30031 add
- 
+
 END FUNCTION
- 
+
 FUNCTION i501_sfb01(p_sfb01)
    DEFINE p_sfb01   LIKE sfb_file.sfb01
    DEFINE l_slip    LIKE smy_file.smyslip
    DEFINE l_cnt     LIKE type_file.num5
- 
+
    LET g_errno = ' '
    IF cl_null(p_sfb01) THEN RETURN END IF
    LET l_slip = s_get_doc_no(p_sfb01)
- 
+
    LET l_cnt = 0
    SELECT COUNT(*) INTO l_cnt FROM smy_file
     WHERE smy69 = l_slip
@@ -15458,7 +15478,7 @@ FUNCTION i501_sfb01(p_sfb01)
 
 END FUNCTION
 #FUN-A30093
-#No.FUN-9C0073    -----By chenls 10/01/04   
+#No.FUN-9C0073    -----By chenls 10/01/04
 
 
 #FUN-AB0001---add----str---
@@ -15516,11 +15536,11 @@ END FUNCTION
 
 #FUN-BA0050 ------------------Begin---------------------
 FUNCTION i501_b_sfs09_inschk(p_cmd)
-   DEFINE p_cmd           LIKE type_file.chr1                
-   DEFINE l_flag          LIKE type_file.chr1               
-   DEFINE l_n             LIKE type_file.num5  
+   DEFINE p_cmd           LIKE type_file.chr1
+   DEFINE l_flag          LIKE type_file.chr1
+   DEFINE l_n             LIKE type_file.num5
    DEFINE l_cnt           LIKE type_file.num5
-   DEFINE l_count         LIKE type_file.num5 
+   DEFINE l_count         LIKE type_file.num5
    DEFINE l_factor        LIKE img_file.img21
    DEFINE l_ima159        LIKE ima_file.ima159
    #BugNo:5626 控管是否為全型空白
@@ -15534,7 +15554,7 @@ FUNCTION i501_b_sfs09_inschk(p_cmd)
        WHERE ima01 = g_sfs[l_ac].sfs04
       IF l_ima159 = '1' THEN
          CALL cl_err(g_sfs[l_ac].sfs04,'aim-034',1)
-         RETURN "sfs09" 
+         RETURN "sfs09"
       END IF
    END IF
    SELECT img09,img10 INTO g_img09,g_sfs[l_ac].img10
@@ -15557,8 +15577,8 @@ FUNCTION i501_b_sfs09_inschk(p_cmd)
            #CALL s_inv_shrt_by_warehouse(g_sma.sma894[3,3],g_sfs[l_ac].sfs07) RETURNING g_sma894
            #IF g_sma894 = 'N' THEN
             INITIALIZE g_imd23 TO NULL
-            #CALL s_inv_shrt_by_warehouse(g_sfs[l_ac].sfs07,g_plant) RETURNING g_imd23 #TQC-D40078 g_plant 
-            CALL s_inv_shrt_by_warehouse(g_sfs[l_ac].sfsud02,g_plant) RETURNING g_imd23 #TQC-D40078 g_plant 
+            #CALL s_inv_shrt_by_warehouse(g_sfs[l_ac].sfs07,g_plant) RETURNING g_imd23 #TQC-D40078 g_plant
+            CALL s_inv_shrt_by_warehouse(g_sfs[l_ac].sfsud02,g_plant) RETURNING g_imd23 #TQC-D40078 g_plant
             IF g_imd23 = 'N' THEN
            #FUN-D30024--modify--end--
                CALL cl_err('','asf-390',0)
@@ -15646,14 +15666,14 @@ FUNCTION i501_b_sfs09_inschk(p_cmd)
          LET l_factor = 1
       END IF
    END IF
- 
+
    SELECT SUM(sfs05) INTO g_sfs[l_ac].img10_alo FROM sfs_file,sfp_file #No:8247
     WHERE sfs04=g_sfs[l_ac].sfs04
       AND sfs07=g_sfs[l_ac].sfs07
       AND sfs08=g_sfs[l_ac].sfs08
       AND sfs09=g_sfs[l_ac].sfs09
       AND sfp01=sfs01 AND sfpconf!='X'
-      AND sfs01 != g_sfp.sfp01   
+      AND sfs01 != g_sfp.sfp01
       DISPLAY BY NAME g_sfs[l_ac].img10_alo
       DISPLAY BY NAME g_sfs[l_ac].img10
       SELECT COUNT(*) INTO g_cnt FROM img_file
@@ -15661,19 +15681,19 @@ FUNCTION i501_b_sfs09_inschk(p_cmd)
          AND img02 = g_sfs[l_ac].sfs07   #倉庫
          AND img03 = g_sfs[l_ac].sfs08   #儲位
          AND img04 = g_sfs[l_ac].sfs09   #批號
-         AND img18 < g_sfp.sfp03         #過帳日  
+         AND img18 < g_sfp.sfp03         #過帳日
       IF g_cnt > 0 THEN    #大於有效日期
          call cl_err('','aim-400',0)   #須修改
           RETURN "sfs07"
       END IF
-   IF g_sma.sma115 = 'Y' THEN   
+   IF g_sma.sma115 = 'Y' THEN
       CALL i501_du_default(p_cmd)
    END IF
    RETURN NULL
 END FUNCTION
 
 FUNCTION i501_set_required_sfs09()
-DEFINE l_ima159   LIKE ima_file.ima159    
+DEFINE l_ima159   LIKE ima_file.ima159
 DEFINE p_cmd      LIKE type_file.chr1
 
    IF p_cmd='u' OR INFIELD(sfs04) THEN
@@ -15698,7 +15718,7 @@ DEFINE l_ima159   LIKE ima_file.ima159
        WHERE ima01 = g_sfs[l_ac].sfs04
       IF l_ima159 = '2' THEN
          CALL cl_set_comp_entry("sfs09",FALSE)
-      ELSE 
+      ELSE
          CALL cl_set_comp_entry("sfs09",TRUE)
       END IF
         ####ly20181109
@@ -15720,37 +15740,37 @@ DEFINE p_sfs07 LIKE sfs_file.sfs07,  #倉庫
 DEFINE l_cnt   LIKE type_file.num5,
        l_ime12 LIKE ime_file.ime12   #庫位VMI特性
 
-   IF g_sma.sma93 = 'Y' THEN 
+   IF g_sma.sma93 = 'Y' THEN
       LET l_cnt = 0
       SELECT COUNT(*) INTO l_cnt
         FROM pmc_file
        WHERE pmc917 = p_sfs07
          AND pmc918 = p_sfs08
-      
+
       SELECT ime12 INTO l_ime12
         FROM ime_file
        WHERE ime01 = p_sfs07
          AND ime02 = p_sfs08
           AND imeacti = 'Y'   #FUN-D40103
-      IF l_cnt > 0 AND l_ime12='2' THEN 
-         RETURN TRUE 
-      ELSE 
-         RETURN FALSE 
+      IF l_cnt > 0 AND l_ime12='2' THEN
+         RETURN TRUE
+      ELSE
+         RETURN FALSE
       END IF
    ELSE
-      RETURN FALSE 
-   END IF 
-END FUNCTION 
+      RETURN FALSE
+   END IF
+END FUNCTION
 #MOD-C50190 add end ------------
 #FUN-C70014 add begin--------------
 FUNCTION i501_multi_sfq014(p_n)
 DEFINE tok          base.StringTokenizer
 DEFINE l_sql        STRING
 DEFINE l_plant      LIKE azw_file.azw01
-DEFINE l_n,l_i      INTEGER 
-DEFINE p_n          INTEGER   
+DEFINE l_n,l_i      INTEGER
+DEFINE p_n          INTEGER
 DEFINE unissue_qty	LIKE sfb_file.sfb08
-DEFINE l_success    STRING 
+DEFINE l_success    STRING
 
    CALL s_showmsg_init()
    LET l_plant = g_plant
@@ -15763,71 +15783,71 @@ DEFINE l_success    STRING
       LET g_sfq[l_n].sfq04 = g_multi_sfq014[l_i].sgm04
       LET g_sfq[l_n].sfb05 = g_multi_sfq014[l_i].shm05
       SELECT ima02,ima021 INTO g_sfq[l_n].ima02_a,g_sfq[l_n].ima021_a
-        FROM ima_file 
+        FROM ima_file
        WHERE ima01 = g_sfq[l_n].sfb05
-      
+
       IF g_sfp.sfp06 MATCHES '[D]' THEN
          IF cl_null(g_sfq[l_n].sfq04) THEN
             LET g_sfq[l_n].sfq04 = ' '
-         END IF 
+         END IF
          IF cl_null(g_sfq[l_n].sfq012) THEN
-            LET g_sfq[l_n].sfq012 = ' ' 
-         END IF 
+            LET g_sfq[l_n].sfq012 = ' '
+         END IF
          #抓去發料套數自動帶出
          CALL i501_sfq03_519(g_sfq[l_n].sfq014,g_sfq[l_n].sfq02,g_sfq[l_n].sfq04)
              RETURNING unissue_qty
-         IF cl_null(unissue_qty) THEN LET unissue_qty = 0 END IF 
+         IF cl_null(unissue_qty) THEN LET unissue_qty = 0 END IF
          LET g_sfq[l_n].sfq03 = unissue_qty
-         IF cl_null(g_sfq[l_n].sfq03) OR g_sfq[l_n].sfq03<0 THEN 
+         IF cl_null(g_sfq[l_n].sfq03) OR g_sfq[l_n].sfq03<0 THEN
             LET g_sfq[l_n].sfq03 = 0
-         END IF 
+         END IF
       END IF
-      IF NOT i501_chk_sfq(l_n,'2') THEN 
+      IF NOT i501_chk_sfq(l_n,'2') THEN
          LET l_success = 'N'
-         CONTINUE FOR 
-      END IF 
+         CONTINUE FOR
+      END IF
       LET l_n = l_n + 1
-   END FOR 
+   END FOR
    CALL g_sfq.deleteElement(l_n)
    LET l_n = l_n - 1
-   IF l_success = 'N' THEN LET g_success = 'N' END IF 
+   IF l_success = 'N' THEN LET g_success = 'N' END IF
    CALL s_showmsg()
    DISPLAY ARRAY g_sfq TO s_sfq.* ATTRIBUTE(COUNT=l_n,UNBUFFERED)
       BEFORE DISPLAY
          EXIT DISPLAY
    END DISPLAY
-END FUNCTION 
+END FUNCTION
 
 #Run Card 成套發料套數計算函數
 FUNCTION i501_sfq03_519(p_sfq014,p_sfq02,p_sfq04)
 DEFINE p_sfq014     LIKE sfq_file.sfq014,  #Run Card單號
-       p_sfq02      LIKE sfq_file.sfq02,   #工單編號 
+       p_sfq02      LIKE sfq_file.sfq02,   #工單編號
        p_sfq04      LIKE sfq_file.sfq04
-DEFINE qty1,qty2	LIKE sfq_file.sfq03    
+DEFINE qty1,qty2	LIKE sfq_file.sfq03
 DEFINE unissue_qty	LIKE sfb_file.sfb08
 DEFINE l_shm08 	    LIKE shm_file.shm08
-       
+
    LET unissue_qty = 0
    LET qty1 = 0
    LET qty2 = 0
-   IF cl_null(p_sfq02) OR cl_null(p_sfq014) THEN 
+   IF cl_null(p_sfq02) OR cl_null(p_sfq014) THEN
       RETURN unissue_qty
-   END IF 
-   LET l_shm08 = NULL    
-   #取得Run Card生產數量 
-   SELECT shm08 INTO l_shm08 FROM shm_file 
+   END IF
+   LET l_shm08 = NULL
+   #取得Run Card生產數量
+   SELECT shm08 INTO l_shm08 FROM shm_file
     WHERE shm01 = p_sfq014
 
    IF l_shm08  IS NULL THEN LET l_shm08  = 0 END IF
-   #將撈取qty1,qty2的部分整理到函數 i501_sfq03_chk1()處理  
+   #將撈取qty1,qty2的部分整理到函數 i501_sfq03_chk1()處理
    CALL i501_sfq03_chk(p_sfq02,p_sfq04,'',p_sfq014,'2')  #FUN-C70014 add sfq014
-           RETURNING qty1,qty2                   
+           RETURNING qty1,qty2
    IF qty1 IS NULL THEN LET qty1=0 END IF
    IF qty2 IS NULL THEN LET qty2=0 END IF
    LET unissue_qty = l_shm08-(qty1-qty2)
 
    RETURN unissue_qty
-END FUNCTION 
+END FUNCTION
 
 #檢查runcard資料
 FUNCTION i501_chk_runcard(p_shm01,p_shm012)
@@ -15835,47 +15855,47 @@ DEFINE p_shm01   LIKE shm_file.shm01,    #Run Card編號
        p_shm012  LIKE shm_file.shm012    #工單編號
 DEFINE l_shmacti LIKE shm_file.shmacti,
        l_shm28   LIKE shm_file.shm28
-       
+
    LET g_errno=''
-   SELECT shmacti,shm28 INTO l_shmacti,l_shm28 FROM shm_file 
+   SELECT shmacti,shm28 INTO l_shmacti,l_shm28 FROM shm_file
     WHERE shm01 = p_shm01 AND shm012 = p_shm012
-   CASE 
-      WHEN sqlca.sqlcode <> 0 
+   CASE
+      WHEN sqlca.sqlcode <> 0
          LET g_errno=sqlca.sqlcode
-      OTHERWISE 
-         IF l_shmacti = 'N' THEN LET g_errno='asf-910' END IF 
-         IF l_shm28 = 'Y' THEN LET g_errno='asf-910' END IF 
-   END CASE    
-END FUNCTION 
+      OTHERWISE
+         IF l_shmacti = 'N' THEN LET g_errno='asf-910' END IF
+         IF l_shm28 = 'Y' THEN LET g_errno='asf-910' END IF
+   END CASE
+END FUNCTION
 
 #檢查輸入套數單身資料是否重複
 FUNCTION i501_chk_sfq(p_n,p_type)
 DEFINE p_n           LIKE type_file.num5
 DEFINE p_type        LIKE type_file.chr1
 DEFINE l_length,l_i  LIKE type_file.num5
-DEFINE l_err         STRING 
+DEFINE l_err         STRING
 
-   IF p_n <=0 THEN RETURN TRUE END IF 
+   IF p_n <=0 THEN RETURN TRUE END IF
    LET l_length = g_sfq.getLength()
    FOR l_i = 1 TO l_length
-      IF p_n = l_i THEN CONTINUE FOR END IF 
-      IF g_sfq[l_i].sfq02 = g_sfq[p_n].sfq02 AND 
+      IF p_n = l_i THEN CONTINUE FOR END IF
+      IF g_sfq[l_i].sfq02 = g_sfq[p_n].sfq02 AND
          g_sfq[l_i].sfq04 = g_sfq[p_n].sfq04 AND
          g_sfq[l_i].sfq012 = g_sfq[p_n].sfq012 AND
-         g_sfq[l_i].sfq014 = g_sfq[p_n].sfq014 THEN 
+         g_sfq[l_i].sfq014 = g_sfq[p_n].sfq014 THEN
          LET l_err = p_n,'/',g_sfq[l_i].sfq02,'/',g_sfq[l_i].sfq04,'/',
                      g_sfq[l_i].sfq012,'/',g_sfq[l_i].sfq014
-         IF p_type = '1' THEN 
+         IF p_type = '1' THEN
             CALL cl_err(l_err,'asf-188',1)
-         ELSE 
+         ELSE
             LET g_success = 'N'
             CALL s_errmsg('sfq02,sfq04,sfq012,sfq014',l_err,'','asf-188',1)
-         END IF 
-         RETURN FALSE 
-      END IF 
-   END FOR 
+         END IF
+         RETURN FALSE
+      END IF
+   END FOR
    RETURN TRUE
-END FUNCTION 
+END FUNCTION
 #FUN-C70014 add end ---------------
 
 #FUN-CB0014---add---str---
@@ -15901,9 +15921,9 @@ FUNCTION i501_list_fill()
        SELECT smydesc INTO g_sfp_l[l_i].smydesc FROM smy_file WHERE smyslip=g_buf
        LET l_i = l_i + 1
        IF l_i > g_max_rec THEN
-          IF g_action_choice ="query"  THEN  
+          IF g_action_choice ="query"  THEN
             CALL cl_err( '', 9035, 0 )
-          END IF                             
+          END IF
           EXIT FOREACH
        END IF
     END FOREACH
@@ -15918,19 +15938,19 @@ END FUNCTION
 
 FUNCTION i501_bp3(p_ud)
    DEFINE   p_ud   LIKE type_file.chr1    #No.FUN-680121 VARCHAR(1)
- 
+
    IF p_ud <> "G"  THEN
       RETURN
    END IF
- 
+
    LET g_action_choice = " "
 
    CALL cl_set_act_visible("accept,cancel", FALSE)
    DISPLAY ARRAY g_sfp_l TO s_sfp_l.* ATTRIBUTE(COUNT=g_rec_b2,UNBUFFERED)
        BEFORE DISPLAY
-         CALL fgl_set_arr_curr(g_curs_index) 
+         CALL fgl_set_arr_curr(g_curs_index)
          CALL cl_navigator_setting( g_curs_index, g_row_count )
-  
+
        BEFORE ROW
          LET l_ac2 = ARR_CURR()
          LET g_curs_index = l_ac2
@@ -15958,12 +15978,12 @@ FUNCTION i501_bp3(p_ud)
          CALL i501_fetch('/')
          CALL cl_set_comp_visible("info,userdefined_field", FALSE)
          CALL cl_set_comp_visible("info,userdefined_field", TRUE)
-         CALL cl_set_comp_visible("page_list", FALSE) 
-         CALL ui.interface.refresh()                 
-         CALL cl_set_comp_visible("page_list", TRUE)    
+         CALL cl_set_comp_visible("page_list", FALSE)
+         CALL ui.interface.refresh()
+         CALL cl_set_comp_visible("page_list", TRUE)
 	 LET g_action_flag = "page_list"
-         EXIT DISPLAY 
-      
+         EXIT DISPLAY
+
       ON ACTION insert
          LET g_action_choice="insert"
          EXIT DISPLAY
@@ -15976,7 +15996,7 @@ FUNCTION i501_bp3(p_ud)
       ON ACTION modify
          LET g_action_choice="modify"
          EXIT DISPLAY
- 
+
       ON ACTION first
          CALL i501_fetch('F')
          CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
@@ -15984,7 +16004,7 @@ FUNCTION i501_bp3(p_ud)
          CALL fgl_set_arr_curr(g_curs_index)  ######add in 040505
            END IF
            ACCEPT DISPLAY                   #No.FUN-530067 HCN TEST
- 
+
       ON ACTION previous
          CALL i501_fetch('P')
          CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
@@ -15992,7 +16012,7 @@ FUNCTION i501_bp3(p_ud)
          CALL fgl_set_arr_curr(g_curs_index)  ######add in 040505
            END IF
         	ACCEPT DISPLAY                   #No.FUN-530067 HCN TEST
- 
+
       ON ACTION jump
          CALL i501_fetch('/')
          CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
@@ -16000,7 +16020,7 @@ FUNCTION i501_bp3(p_ud)
          CALL fgl_set_arr_curr(g_curs_index)  ######add in 040505
            END IF
        	ACCEPT DISPLAY                   #No.FUN-530067 HCN TEST
- 
+
       ON ACTION next
          CALL i501_fetch('N')
          CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
@@ -16008,7 +16028,7 @@ FUNCTION i501_bp3(p_ud)
          CALL fgl_set_arr_curr(g_curs_index)  ######add in 040505
            END IF
         	ACCEPT DISPLAY                   #No.FUN-530067 HCN TEST
- 
+
       ON ACTION last
          CALL i501_fetch('L')
          CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
@@ -16031,14 +16051,14 @@ FUNCTION i501_bp3(p_ud)
       ON ACTION exit
          LET g_action_choice="exit"
          EXIT DISPLAY
- 
+
       ON ACTION locale
          CALL cl_dynamic_locale()
          CALL cl_show_fld_cont()                   #No.FUN-550037 hmf
          CALL i501_mu_ui()   #TQC-710032
          CALL i501_pic() #圖形顯示
          EXIT DISPLAY
- 
+
       ON ACTION controlg
          LET g_action_choice="controlg"
          EXIT DISPLAY
@@ -16090,24 +16110,24 @@ FUNCTION i501_bp3(p_ud)
          LET g_action_choice="barcode_qty_allot"
          EXIT DISPLAY
      #DEV-D30026 add end------------------------
-      
+
       ON ACTION cancel
          LET INT_FLAG=FALSE 		#MOD-570244	mars
          LET g_action_choice="exit"
          EXIT DISPLAY
-      
+
       ON ACTION page_list
 	 LET g_action_flag="page_list"
-	 EXIT DISPLAY 
- 
+	 EXIT DISPLAY
+
       ON IDLE g_idle_seconds
          CALL cl_on_idle()
          CONTINUE DISPLAY
- 
+
       ON ACTION qry_lot
          LET g_action_choice="qry_lot"
          EXIT DISPLAY
- 
+
 #TQC-AC0197 ---------------------------Begin-------------------------------
       ON ACTION warahouse_modify
          LET g_action_choice="warahouse_modify"
@@ -16118,11 +16138,11 @@ FUNCTION i501_bp3(p_ud)
          LET g_action_choice = 'exporttoexcel'
          EXIT DISPLAY
       ON ACTION related_document                #No.FUN-6A0166  相關文件
-         LET g_action_choice="related_document"          
-         EXIT DISPLAY 
+         LET g_action_choice="related_document"
+         EXIT DISPLAY
 
-      ON ACTION CONTROLS                                                                                                          
-         CALL cl_set_head_visible("","AUTO")                                                                                      
+      ON ACTION CONTROLS
+         CALL cl_set_head_visible("","AUTO")
 
       #FUN-AB0001---add----str---
       ON ACTION approval_status #簽核狀況
@@ -16162,17 +16182,17 @@ FUNCTION i501_bp3(p_ud)
       ON ACTION transf2scm
          LET g_action_choice="transf2scm"
          EXIT DISPLAY
-      #No.18010101---end---  
+      #No.18010101---end---
 
       ON ACTION phrase
          LET g_action_choice = 'phrase'
          EXIT DISPLAY
       #FUN-AB0001---add----end---
- 
+
       &include "qry_string.4gl"
 
-   END DISPLAY   
-   
+   END DISPLAY
+
    IF g_errno='genb' THEN CALL i501_b_fill(' 1=1') LET g_errno='' END IF
    CALL cl_set_act_visible("accept,cancel", TRUE)
    #No.FUN-A40055--end
@@ -16182,70 +16202,70 @@ END FUNCTION
 
 #FUN-CB0087--add--str--
 FUNCTION i501_sfs37_check()
-DEFINE l_flag        LIKE type_file.chr1       
-DEFINE l_where       STRING                    
-DEFINE l_sql         STRING                    
+DEFINE l_flag        LIKE type_file.chr1
+DEFINE l_where       STRING
+DEFINE l_sql         STRING
 DEFINE l_n           LIKE type_file.num5
 
-   LET l_flag = FALSE 
+   LET l_flag = FALSE
    IF cl_null(g_sfs[l_ac].sfs37) THEN RETURN TRUE END IF
-   IF g_aza.aza115='Y' THEN 
+   IF g_aza.aza115='Y' THEN
       CALL s_get_where(g_sfp.sfp01,g_sfs[l_ac].sfs03,'',g_sfs[l_ac].sfs04,g_sfs[l_ac].sfs07,g_sfp.sfp16,g_sfp.sfp07) RETURNING l_flag,l_where
-   END IF 
+   END IF
    IF g_aza.aza115='Y' AND l_flag THEN
       LET l_sql = " SELECT COUNT(*) FROM ggc_file WHERE ggc08='",g_sfs[l_ac].sfs37,"' AND ",l_where
       PREPARE ggc08_pre1 FROM l_sql
       EXECUTE ggc08_pre1 INTO l_n
       IF l_n < 1 THEN
          CALL cl_err(g_sfs[l_ac].sfs37,'aim-425',0) #TQC-D20042
-         RETURN FALSE 
+         RETURN FALSE
       END IF
-   ELSE 
+   ELSE
       SELECT COUNT(*) INTO l_n FROM azf_file WHERE azf01 = g_sfs[l_ac].sfs37 AND azf02='2'
       IF l_n < 1 THEN
          CALL cl_err(g_sfs[l_ac].sfs37,'aim-425',0) #TQC-D20042
          RETURN FALSE
       END IF
-   END IF  
-   RETURN TRUE 
-END FUNCTION 
+   END IF
+   RETURN TRUE
+END FUNCTION
 
 FUNCTION i501_sfs37_chkall()
-DEFINE l_flag        LIKE type_file.chr1       
-DEFINE l_where       STRING                    
-DEFINE l_sql         STRING                    
+DEFINE l_flag        LIKE type_file.chr1
+DEFINE l_where       STRING
+DEFINE l_sql         STRING
 DEFINE l_n           LIKE type_file.num5
 DEFINE l_cnt         LIKE type_file.num5
 
-   IF g_sfs.getlength() = 0  THEN RETURN TRUE END IF 
-   IF g_aza.aza115='Y' THEN 
+   IF g_sfs.getlength() = 0  THEN RETURN TRUE END IF
+   IF g_aza.aza115='Y' THEN
       FOR l_cnt = 1 TO  g_sfs.getlength()
          CALL s_get_where(g_sfp.sfp01,g_sfs[l_cnt].sfs03,'',g_sfs[l_cnt].sfs04,g_sfs[l_cnt].sfs07,g_sfp.sfp16,g_sfp.sfp07) RETURNING l_flag,l_where
          IF l_flag THEN
-            LET l_n = 0 
+            LET l_n = 0
             LET l_sql = " SELECT COUNT(*) FROM ggc_file WHERE ggc08='",g_sfs[l_cnt].sfs37,"' AND ",l_where
             PREPARE ggc08_pre2 FROM l_sql
             EXECUTE ggc08_pre2 INTO l_n
             IF l_n < 1 THEN
                CALL cl_err('','aim-425',1)
-               RETURN FALSE 
+               RETURN FALSE
             END IF
-         END IF 
+         END IF
       END FOR
-   END IF    
-   RETURN TRUE 
-END FUNCTION 
+   END IF
+   RETURN TRUE
+END FUNCTION
 #FUN-CB0087--add--end--
 #TQC-D20042---add---str---
-FUNCTION i501_azf03_desc() 
+FUNCTION i501_azf03_desc()
    LET g_sfs[l_ac].azf03_1 = ''
-   IF NOT cl_null(g_sfs[l_ac].sfs37) THEN  
+   IF NOT cl_null(g_sfs[l_ac].sfs37) THEN
       SELECT azf03 INTO g_sfs[l_ac].azf03_1 FROM azf_file WHERE azf01=g_sfs[l_ac].sfs37 AND azf02='2'
    END IF
    DISPLAY BY NAME  g_sfs[l_ac].azf03_1
 END FUNCTION
 #MOD-D30037---begin
-FUNCTION i501_sfs27_cho() 
+FUNCTION i501_sfs27_cho()
     DEFINE l_sfa  DYNAMIC ARRAY OF RECORD
                    sfa26   LIKE sfa_file.sfa26,
                    sfa27   LIKE sfa_file.sfa27,
@@ -16256,22 +16276,22 @@ FUNCTION i501_sfs27_cho()
     DEFINE l_cnt           LIKE type_file.num5
     DEFINE l_rec_b         LIKE type_file.num5
 
-               
+
     OPEN WINDOW i501_sfs27_w WITH FORM "asf/42f/asfi501f"
    	          ATTRIBUTE(STYLE = g_win_style CLIPPED )
-    CALL cl_ui_locale("asfi501f") 
-  
-    LET g_sql="SELECT sfa26,sfa27,sfa03,sfa05,sfa06 FROM sfa_file WHERE sfa01= '",g_sfs[l_ac].sfs03,"'" 
+    CALL cl_ui_locale("asfi501f")
+
+    LET g_sql="SELECT sfa26,sfa27,sfa03,sfa05,sfa06 FROM sfa_file WHERE sfa01= '",g_sfs[l_ac].sfs03,"'"
     PREPARE i501_sfs27_pb FROM g_sql
-    DECLARE sfs27_curs CURSOR FOR i501_sfs27_pb 
+    DECLARE sfs27_curs CURSOR FOR i501_sfs27_pb
     CALL l_sfa.clear()
- 
+
     LET l_cnt = 1
- 
-    FOREACH sfs27_curs INTO l_sfa[l_cnt].* 
+
+    FOREACH sfs27_curs INTO l_sfa[l_cnt].*
         IF STATUS THEN CALL cl_err('foreach:',STATUS,1) EXIT FOREACH END IF
         LET l_cnt = l_cnt + 1
- 
+
         IF l_cnt > g_max_rec THEN
            CALL cl_err( '', 9035, 0 )
            EXIT FOREACH
@@ -16279,7 +16299,7 @@ FUNCTION i501_sfs27_cho()
     END FOREACH
     IF STATUS THEN CALL cl_err('fore sfs27:',STATUS,1) END IF
     CALL l_sfa.deleteElement(l_cnt)
-    
+
     LET l_rec_b=l_cnt - 1
 
     LET l_cnt = 0
@@ -16288,87 +16308,87 @@ FUNCTION i501_sfs27_cho()
          BEFORE ROW
             LET l_cnt = ARR_CURR()
             CALL cl_show_fld_cont()
-         
+
          ON IDLE g_idle_seconds
                  CALL cl_on_idle()
                  CONTINUE DISPLAY
-         
-         ON ACTION about         
-            CALL cl_about()      
-         
-         ON ACTION controlg      
-            CALL cl_cmdask()     
-         
-         ON ACTION help          
-            CALL cl_show_help()  
-            
+
+         ON ACTION about
+            CALL cl_about()
+
+         ON ACTION controlg
+            CALL cl_cmdask()
+
+         ON ACTION help
+            CALL cl_show_help()
+
          ON ACTION ACCEPT
             LET l_cnt = ARR_CURR()
-            IF l_sfa[l_cnt].sfa26 MATCHES '[9BCUSTZ]' THEN  
+            IF l_sfa[l_cnt].sfa26 MATCHES '[9BCUSTZ]' THEN
                LET g_sfs[l_ac].sfs26 = l_sfa[l_cnt].sfa26
             ELSE
                LET g_sfs[l_ac].sfs26 = ''
-            END IF 
+            END IF
             LET g_sfs[l_ac].sfs27 = l_sfa[l_cnt].sfa27
             LET g_sfs[l_ac].sfs04 = l_sfa[l_cnt].sfa03
             EXIT DISPLAY
 
          ON ACTION EXIT
             EXIT DISPLAY
-            
+
     END DISPLAY
     CLOSE WINDOW i501_sfs27_w
- 
+
 END FUNCTION
-#MOD-D30037---end 
+#MOD-D30037---end
 #str---add by jixf 160810
 FUNCTION i501_sum_sfs()
 DEFINE l_count   LIKE type_file.num5
-DEFINE l_sql     STRING 
+DEFINE l_sql     STRING
 DEFINE l_sfs_1   DYNAMIC ARRAY OF RECORD
         sfs04    LIKE sfs_file.sfs04,
         sfs05    LIKE sfs_file.sfs05,
         sfsud07  LIKE sfs_file.sfsud07
-                 END RECORD 
+                 END RECORD
 DEFINE l_i       LIKE type_file.num5
 DEFINE l_rec_b   LIKE type_file.num5
 DEFINE l_cnt     LIKE type_file.num5
 
-   IF g_sfp.sfp04='N' THEN 
+   IF g_sfp.sfp04='N' THEN
       SELECT COUNT(*) INTO l_count FROM sfs_file WHERE sfs01=g_sfp.sfp01
       IF l_count=0 THEN
          CALL cl_err('','csf-316',1)
-         RETURN  
-      END IF 
-   END IF 
+         RETURN
+      END IF
+   END IF
 
-   IF g_sfp.sfp04='N' THEN 
+   IF g_sfp.sfp04='N' THEN
       LET l_sql=" SELECT sfs04,SUM(sfs05),SUM(sfsud07) FROM sfs_file ",
                 " WHERE sfs01='",g_sfp.sfp01,"' GROUP BY sfs04"
-   END IF 
+   END IF
 
-   IF g_sfp.sfp04='Y' THEN 
+   IF g_sfp.sfp04='Y' THEN
       LET l_sql=" SELECT sfe07,SUM(sfe16),SUM(sfeud07) FROM sfe_file ",
                 " WHERE sfe02='",g_sfp.sfp01,"' GROUP BY sfe07"
-   END IF 
+   END IF
 
    LET l_i=1
    PREPARE l_pre22 FROM l_sql
    DECLARE l_cur22 CURSOR FOR l_pre22
    FOREACH l_cur22 INTO l_sfs_1[l_i].*
-      IF STATUS THEN 
-         CALL cl_err('foreach:',STATUS,1) 
-         EXIT FOREACH 
+      IF STATUS THEN
+         CALL cl_err('foreach:',STATUS,1)
+         EXIT FOREACH
       END IF
 
       LET l_i=l_i+1
-   END FOREACH 
+   END FOREACH
    LET l_rec_b=l_i-1
    CALL l_sfs_1.deleteElement(l_i)
 
    OPEN WINDOW i50111_t_w AT 4,3 WITH FORM "csf/42f/csfi510_1"
          ATTRIBUTE (STYLE = g_win_style CLIPPED) #No.FUN-580092 HCN
- 
+
    CALL cl_ui_locale("csfi510_1")
 
    CALL cl_set_act_visible("accept,cancel", FALSE)
@@ -16377,53 +16397,53 @@ DEFINE l_cnt     LIKE type_file.num5
          BEFORE ROW
             LET l_cnt = ARR_CURR()
             CALL cl_show_fld_cont()
-         
+
          ON IDLE g_idle_seconds
             CALL cl_on_idle()
             CONTINUE DISPLAY
-         
-         ON ACTION about         
-            CALL cl_about()      
-         
-         ON ACTION controlg      
-            CALL cl_cmdask()     
-         
-         ON ACTION help          
-            CALL cl_show_help()  
+
+         ON ACTION about
+            CALL cl_about()
+
+         ON ACTION controlg
+            CALL cl_cmdask()
+
+         ON ACTION help
+            CALL cl_show_help()
 
          ON ACTION EXIT
             EXIT DISPLAY
 
-         ON ACTION CANCEL 
+         ON ACTION CANCEL
             EXIT DISPLAY
-            
+
     END DISPLAY
 
     CLOSE WINDOW i50111_t_w
-END FUNCTION 
+END FUNCTION
 
 #end---add by jixf 160810
 #str----add by guanyao160904
 FUNCTION i501_upd_sfpud04()
 
-    IF cl_null(g_sfp.sfp01) THEN 
-       RETURN 
-    END IF 
-    IF g_sfp.sfp04 != 'Y' THEN 
-       RETURN 
-    END IF 
-    IF cl_null(g_sfp.sfpud04) THEN 
+    IF cl_null(g_sfp.sfp01) THEN
+       RETURN
+    END IF
+    IF g_sfp.sfp04 != 'Y' THEN
+       RETURN
+    END IF
+    IF cl_null(g_sfp.sfpud04) THEN
        CALL cl_err('','csf-080',0)
-       RETURN 
-    END IF 
+       RETURN
+    END IF
     IF cl_confirm('csf-079') THEN
        UPDATE sfp_file SET sfpud04 = '' WHERE sfp01 = g_sfp.sfp01
-       IF STATUS THEN 
+       IF STATUS THEN
            CALL cl_err3("upd","sfp_file",g_sfp.sfp01,"",STATUS,"","",1)  #No.FUN-660128
-           RETURN 
-       END IF 
-    END IF 
-END FUNCTION 
+           RETURN
+       END IF
+    END IF
+END FUNCTION
 #end----add by guanyao160904
 
 
@@ -16476,9 +16496,9 @@ DEFINE l_sfa013      LIKE sfa_file.sfa013
 DEFINE l_short_qty   LIKE sfa_file.sfa06
 DEFINE l_sfa11       LIKE sfa_file.sfa11
 DEFINE l_n           LIKE type_file.num5
-DEFINE l_b2      		 LIKE type_file.chr50  
+DEFINE l_b2      		 LIKE type_file.chr50
 DEFINE l_b3      		 LIKE sfa_file.sfa08
-DEFINE l_b4          LIKE sfa_file.sfa012  
+DEFINE l_b4          LIKE sfa_file.sfa012
 DEFINE l_b5          LIKE sfa_file.sfa013
 DEFINE l_sql         STRING
    DROP TABLE asfi512_sel_sfa
@@ -16523,76 +16543,76 @@ DEFINE l_sql         STRING
                    CALL cl_create_qry() RETURNING g_qryparam.multiret
                    DISPLAY g_qryparam.multiret TO sfb01
                    NEXT FIELD sfb01
-              WHEN INFIELD(sfa03)                          
+              WHEN INFIELD(sfa03)
                    LET li_where = " AND sfb04 IN ('2','3','4','5','6','7') "
-                   LET li_where = li_where CLIPPED," AND sfb01[1,",g_doc_len,"] NOT IN (SELECT smy69 FROM smy_file WHERE smy69 IS NOT NULL) "  
-                   LET li_where = li_where CLIPPED," AND sfa26 IN ('0','1','2','3','4','5','6','7','8') "                     
-                   CALL q_short_qty(TRUE,TRUE,g_sfs[l_ac].sfs03,g_sfs[l_ac].sfs04,li_where,'4') 
+                   LET li_where = li_where CLIPPED," AND sfb01[1,",g_doc_len,"] NOT IN (SELECT smy69 FROM smy_file WHERE smy69 IS NOT NULL) "
+                   LET li_where = li_where CLIPPED," AND sfa26 IN ('0','1','2','3','4','5','6','7','8') "
+                   CALL q_short_qty(TRUE,TRUE,g_sfs[l_ac].sfs03,g_sfs[l_ac].sfs04,li_where,'4')
                    RETURNING g_qryparam.multiret
                    DISPLAY g_qryparam.multiret TO sfa03
                    NEXT FIELD sfa03
             END CASE
-                  
+
          ON IDLE g_idle_seconds
             CALL cl_on_idle()
-            CONTINUE CONSTRUCT 
-                  
-         ON ACTION about      
+            CONTINUE CONSTRUCT
+
+         ON ACTION about
             CALL cl_about()
-                     
-         ON ACTION help           
+
+         ON ACTION help
             CALL cl_show_help()
-                  
+
          ON ACTION controlg
-            CALL cl_cmdask()      
-                  
+            CALL cl_cmdask()
+
          ON ACTION exit
             LET INT_FLAG = 1
-            EXIT CONSTRUCT 
-               
+            EXIT CONSTRUCT
+
          ON ACTION qbe_select
             CALL cl_qbe_select()
 
    END CONSTRUCT
-                 
+
    IF INT_FLAG THEN
       LET INT_FLAG = 0 CLOSE WINDOW t110_w_p
       RETURN
-   END IF     
+   END IF
     LET li_where = " AND sfb04 IN ('2','3','4','5','6','7') "
-    LET li_where = li_where CLIPPED," AND sfb01[1,",g_doc_len,"] NOT IN (SELECT smy69 FROM smy_file WHERE smy69 IS NOT NULL) "  
-    LET li_where = li_where CLIPPED," AND sfa26 IN ('0','1','2','3','4','5','6','7','8') "   
+    LET li_where = li_where CLIPPED," AND sfb01[1,",g_doc_len,"] NOT IN (SELECT smy69 FROM smy_file WHERE smy69 IS NOT NULL) "
+    LET li_where = li_where CLIPPED," AND sfa26 IN ('0','1','2','3','4','5','6','7','8') "
     LET g_sql = "SELECT 'N',sfb01,sfa03,ima02,ima021,'','',sfa27,'','',",
-                 "           ima35,ima36,'','',''",                         	
+                 "           ima35,ima36,'','',''",
                  "  FROM sfb_file,sfa_file ",
                  "  LEFT JOIN ima_file ON sfa03 = ima01",
                  " WHERE sfa01 = sfb01 ",
                  "   AND ",l_wc CLIPPED,li_where CLIPPED,
-                 " ORDER BY sfb01 "   
-                                  
+                 " ORDER BY sfb01 "
+
    LET g_cnt = 1
-   
+
    PREPARE sel_sfa_pre FROM g_sql
    DECLARE sel_sfa_cs CURSOR FOR sel_sfa_pre
-   
+
    FOREACH sel_sfa_cs INTO i501_temp_1[g_cnt].*
       IF SQLCA.sqlcode THEN
          CALL cl_err('','',0)
          EXIT FOREACH
       END IF
-  
-   SELECT COUNT(*),MIN(sfa12),MIN(sfa08),MIN(sfa012),MIN(sfa013)  
-     INTO l_n, l_b2, l_b3,l_b4,l_b5                              
+
+   SELECT COUNT(*),MIN(sfa12),MIN(sfa08),MIN(sfa012),MIN(sfa013)
+     INTO l_n, l_b2, l_b3,l_b4,l_b5
    FROM sfa_file
    WHERE sfa01=i501_temp_1[g_cnt].sfb01
     AND (sfa03=i501_temp_1[g_cnt].sfa03 OR sfa03=i501_temp_1[g_cnt].sfa27)
    IF l_n=0 THEN
-        CALL cl_err('sel sfa',100,0) 
+        CALL cl_err('sel sfa',100,0)
    END IF
    IF cl_null(l_b2) THEN LET l_b2 = ' ' END IF
    IF cl_null(l_b3) THEN LET l_b3 = ' ' END IF
-   IF cl_null(l_b4) THEN LET l_b4 = ' ' END IF                    
-   IF cl_null(l_b5) THEN LET l_b5 = 0   END IF                     
+   IF cl_null(l_b4) THEN LET l_b4 = ' ' END IF
+   IF cl_null(l_b5) THEN LET l_b5 = 0   END IF
    IF cl_null(i501_temp_1[g_cnt].sfa12) THEN
       LET i501_temp_1[g_cnt].sfa12 = l_b2
    END IF
@@ -16601,56 +16621,56 @@ DEFINE l_sql         STRING
    END IF
    IF cl_null(i501_temp_1[g_cnt].sfa012) THEN
       LET i501_temp_1[g_cnt].sfa012 = l_b4
-   END IF 
+   END IF
    IF cl_null(i501_temp_1[g_cnt].sfa013) THEN
       LET i501_temp_1[g_cnt].sfa013 = l_b5
    END IF
-    
-       
+
+
       LET l_sfa11=''   #MOD-B80013 add
-      SELECT (sfa05-sfa065),sfa06,sfa11 
-             INTO i501_temp_1[g_cnt].sfa05,i501_temp_1[g_cnt].sfa06,l_sfa11       
+      SELECT (sfa05-sfa065),sfa06,sfa11
+             INTO i501_temp_1[g_cnt].sfa05,i501_temp_1[g_cnt].sfa06,l_sfa11
       FROM sfa_file
       WHERE sfa01=i501_temp_1[g_cnt].sfb01
         AND sfa12=i501_temp_1[g_cnt].sfa12
         AND sfa08=i501_temp_1[g_cnt].sfa08
-        AND sfa012=i501_temp_1[g_cnt].sfa012    
-        AND sfa013=i501_temp_1[g_cnt].sfa013                     
-        AND sfa03=i501_temp_1[g_cnt].sfa03   
-        AND sfa27 = i501_temp_1[g_cnt].sfa27    
+        AND sfa012=i501_temp_1[g_cnt].sfa012
+        AND sfa013=i501_temp_1[g_cnt].sfa013
+        AND sfa03=i501_temp_1[g_cnt].sfa03
+        AND sfa27 = i501_temp_1[g_cnt].sfa27
       IF SQLCA.SQLCODE THEN
          LET i501_temp_1[g_cnt].sfa05 = 0 LET i501_temp_1[g_cnt].sfa06 = 0
       END IF
-                 
-      IF cl_null(i501_temp_1[g_cnt].sfa012) THEN LET i501_temp_1[g_cnt].sfa012=' ' END IF 
-      IF cl_null(i501_temp_1[g_cnt].sfa013) THEN LET i501_temp_1[g_cnt].sfa013= 0  END IF 
+
+      IF cl_null(i501_temp_1[g_cnt].sfa012) THEN LET i501_temp_1[g_cnt].sfa012=' ' END IF
+      IF cl_null(i501_temp_1[g_cnt].sfa013) THEN LET i501_temp_1[g_cnt].sfa013= 0  END IF
           CALL s_shortqty(i501_temp_1[g_cnt].sfb01,i501_temp_1[g_cnt].sfa03,i501_temp_1[g_cnt].sfa08,
-                          i501_temp_1[g_cnt].sfa12,i501_temp_1[g_cnt].sfa27,i501_temp_1[g_cnt].sfa012,i501_temp_1[g_cnt].sfa013) 
+                          i501_temp_1[g_cnt].sfa12,i501_temp_1[g_cnt].sfa27,i501_temp_1[g_cnt].sfa012,i501_temp_1[g_cnt].sfa013)
                        RETURNING g_short_qty
-      IF cl_null(g_short_qty) THEN LET g_short_qty = 0 END IF       
-      LET i501_temp_1[g_cnt].short_qty = g_short_qty     
-     
+      IF cl_null(g_short_qty) THEN LET g_short_qty = 0 END IF
+      LET i501_temp_1[g_cnt].short_qty = g_short_qty
+
       INSERT INTO asfi512_sel_sfa VALUES (i501_temp_1[g_cnt].*)
       LET g_cnt = g_cnt + 1
-      
-      IF g_cnt > g_max_rec THEN 
+
+      IF g_cnt > g_max_rec THEN
          CALL cl_err( '', 9035, 0 )
          EXIT FOREACH
       END IF
-   
+
    END FOREACH
-   
+
    CALL i501_temp_1.deleteElement(g_cnt)
    LET g_rec_b = g_cnt - 1
    LET g_cnt = 0
-   
+
    DISPLAY ARRAY i501_temp_1 TO s_sfa.* ATTRIBUTE(COUNT=g_rec_b,UNBUFFERED)
       BEFORE DISPLAY
        EXIT DISPLAY
    END DISPLAY
-   
+
    LET l_ac = 1
-   
+
    INPUT ARRAY i501_temp_1 WITHOUT DEFAULTS FROM s_sfa.*
          ATTRIBUTE(COUNT=g_rec_b,MAXCOUNT=g_max_rec,UNBUFFERED,
                    INSERT ROW=FALSE,DELETE ROW=FALSE,
@@ -16665,10 +16685,10 @@ DEFINE l_sql         STRING
            WHERE  sfb01 = i501_temp_1[l_ac].sfb01
               AND sfa12 = i501_temp_1[l_ac].sfa12
               AND sfa08 = i501_temp_1[l_ac].sfa08
-              AND sfa012 = i501_temp_1[l_ac].sfa012    
-              AND sfa013 = i501_temp_1[l_ac].sfa013                     
-              AND sfa03 = i501_temp_1[l_ac].sfa03   
-              AND sfa27 = i501_temp_1[l_ac].sfa27 
+              AND sfa012 = i501_temp_1[l_ac].sfa012
+              AND sfa013 = i501_temp_1[l_ac].sfa013
+              AND sfa03 = i501_temp_1[l_ac].sfa03
+              AND sfa27 = i501_temp_1[l_ac].sfa27
 
        ON ACTION CONTROLG
            CALL cl_cmdask()
@@ -16698,7 +16718,7 @@ DEFINE l_sql         STRING
    SELECT COUNT(*) INTO l_sel_n FROM asfi512_sel_sfa WHERE sel = 'Y'
    IF l_sel_n > 0 THEN
       SELECT MAX(sfs02) INTO g_rec_b FROM sfs_file WHERE sfs01 = g_sfp.sfp01
-        
+
       LET l_sql = " SELECT sfb01,sfa03,ima02,ima021,sfa08,sfa12,sfa27,sfa012,",
                   " sfa013,ima35,ima36,sfa05,sfa06,short_qty",
                   " FROM asfi512_sel_sfa",
@@ -16719,7 +16739,7 @@ DEFINE l_sql         STRING
       LET g_sfs[l_ac].sfs02 = l_ac
       LET g_sfs[l_ac].sfs28 = 1
       LET g_sfs[l_ac].sfs09 = ' '
-      INSERT INTO sfs_file(sfs01,sfs02,sfs28,sfs03,sfs27,sfs04,sfs06,sfs10,sfs07,sfs08,sfs09,sfsplant,sfslegal,sfs014,sfs012,sfs013) 
+      INSERT INTO sfs_file(sfs01,sfs02,sfs28,sfs03,sfs27,sfs04,sfs06,sfs10,sfs07,sfs08,sfs09,sfsplant,sfslegal,sfs014,sfs012,sfs013)
       VALUES(g_sfp.sfp01,g_sfs[l_ac].sfs02,g_sfs[l_ac].sfs28,g_sfs[l_ac].sfs03,g_sfs[l_ac].sfs27,
              g_sfs[l_ac].sfs04,g_sfs[l_ac].sfs06,g_sfs[l_ac].sfs10,g_sfs[l_ac].sfs07,g_sfs[l_ac].sfs08,
              g_sfs[l_ac].sfs09,g_plant,g_legal,' ',l_sfa012,l_sfa013)
@@ -16727,36 +16747,36 @@ DEFINE l_sql         STRING
          CALL cl_err3("ins","sfs_file",g_sfs[l_ac].sfs03,g_sfs[l_ac].sfs04,SQLCA.sqlcode,"","",1) #No.FUN-660129
          ROLLBACK WORK
          CONTINUE FOREACH
-       END IF 
+       END IF
       LET l_ac = l_ac + 1
    END FOREACH
     CALL g_sfs.deleteElement(l_ac)
     LET l_ac=l_ac - 1
     COMMIT WORK
-    CALL i501_b_fill('1=1') 
+    CALL i501_b_fill('1=1')
   END IF
-END FUNCTION        
+END FUNCTION
 
 #str----end by huanglf161130
 
 #darcy: add 20220316 s---
 #根据仓库信息带出请购备注
 FUNCTION i501_get_img_mark(p_img01,p_img02,p_img03,p_img04)
-   DEFINE l_mark        LIKE type_file.chr1000 
+   DEFINE l_mark        LIKE type_file.chr1000
    DEFINE p_img01       LIKE img_file.img01,
           p_img02       LIKE img_file.img02,
           p_img03       LIKE img_file.img03,
           p_img04       LIKE img_file.img04
-   DEFINE l_sql   STRING  
-   LET l_sql = "SELECT  listagg(pml06, ';') WITHIN GROUP(ORDER BY pml06) FROM  rvv_file, pmn_file, pml_file 
-                 WHERE rvv36 = pmn01 AND rvv37 = pmn02 AND pml01 = pmn24 AND pml02 = pmn25 
+   DEFINE l_sql   STRING
+   LET l_sql = "SELECT  listagg(pml06, ';') WITHIN GROUP(ORDER BY pml06) FROM  rvv_file, pmn_file, pml_file
+                 WHERE rvv36 = pmn01 AND rvv37 = pmn02 AND pml01 = pmn24 AND pml02 = pmn25
                  AND rvv31 = ? AND rvv34 = ?   "
-   PREPARE i501_mark_p FROM l_sql 
+   PREPARE i501_mark_p FROM l_sql
    EXECUTE i501_mark_p USING p_img01,p_img04 INTO l_mark
    IF STATUS THEN
       RETURN ""
    END IF
-   RETURN l_mark 
+   RETURN l_mark
 
 END FUNCTION
 #darcy: add 20220316 e---
@@ -16799,7 +16819,7 @@ function i501_insert_amri506()
 
    if amri506sub_insert(g_prog,g_sfp.sfp01,false,l_list,g_today) then
    end if
-   
+
    if cl_confirm("cmr-008") then
       call amri506sub_query(g_prog,g_sfp.sfp01)
    end if
@@ -16833,7 +16853,7 @@ function sasfi501_mail_info()
    end foreach
 
    let l_receipt = l_receipt.subString(1,l_receipt.getLength()-1)
-   
+
    # 发送邮件
    call cs_mail_sendfile("月末发退料提醒",l_path,l_receipt,"","darcy.li@forewin-sz.com.cn","") returning l_ok
    if l_ok then
