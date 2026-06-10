@@ -147,6 +147,7 @@ function cl_remark(p_prog,p_doc,p_seq)
 
         if int_flag then
             let int_flag = false
+            close window cl_remark_w1
             return
         end if
         call cl_remark_chk(p_prog,p_doc,p_seq)
@@ -223,6 +224,10 @@ function cl_remark_chk(p_prog,p_doc,p_seq)
             l_name      varchar(20)
     define  l_str       string
     let g_success = 'Y'
+
+    if g_cols.getLength() == 0 then
+        call cl_remark_init(p_prog)
+    end if
 
     let l_str = ''
     call cl_remark_require('tc_rem01') returning l_require,l_name
@@ -633,7 +638,7 @@ function cl_remark_chk(p_prog,p_doc,p_seq)
 end function
 
 -- UI初始化
-function cl_remark_ui_init(p_prog)
+function cl_remark_init(p_prog)
     define p_prog   varchar(100)
     define l_cnt,i    integer
 
@@ -652,6 +657,19 @@ function cl_remark_ui_init(p_prog)
             call cl_err('cl_remark_ui_init1',sqlca.sqlcode,1)
             exit foreach
         end if
+        let i = i + 1
+    end foreach
+    call g_cols.deleteElement(i)
+
+end function
+
+--
+function cl_remark_ui_init(p_prog)
+    define p_prog   varchar(100)
+    define l_cnt,i    integer
+
+    call cl_remark_init(p_prog)
+    for i = 1 to g_cols.getLength()
         -- 说明栏位
         call cl_set_comp_att_text(g_cols[i].col,g_cols[i].name)
         -- 显示
@@ -662,10 +680,7 @@ function cl_remark_ui_init(p_prog)
         if g_cols[i].type == '下拉框' then
             call cl_set_combo_items(g_cols[i].col,g_cols[i].value,g_cols[i].desc)
         end if
-        let i = i + 1
-    end foreach
-    call g_cols.deleteElement(i)
-
+    end for
 end function
 
 -- 默认值

@@ -776,6 +776,14 @@ define l_cnt integer #darcy:2023/04/12 add
             EXIT WHILE
          WHEN "controlg"
             CALL cl_cmdask()
+        # darcy add s---
+        when 'extra_remark'
+            if not cl_null(g_ecu.ecu01) and not cl_null(g_ecu.ecu02) then
+                if g_ecu.ecu10 ='N' and g_ecu.ecuud02 = 'N' and g_ecu.ecuud05 <> 'S' then
+                    call cl_remark(g_prog,g_ecu.ecu01||g_ecu.ecu02,0)
+                end if
+            end if
+        # darcy add e---
 
         WHEN "routing_details"
             IF NOT cl_null(g_ecu.ecu01) AND NOT cl_null(g_ecu.ecu02)
@@ -4771,6 +4779,11 @@ FUNCTION i100_bp(p_ud)
          exit dialog
       #darcy:2023/07/19 add e---
       #darcy:2024/03/06 add s---
+      # darcy add e---
+      on action extra_remark
+        let g_action_choice = 'extra_remark'
+        exit dialog
+      # darcy add s---
       on action g01
          let g_action_choice = 'g01'
          exit dialog

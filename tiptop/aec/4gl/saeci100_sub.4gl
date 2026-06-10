@@ -326,6 +326,25 @@ function i100sub_y_chk(p_ecu01,p_ecu02)
         call s_errmsg("ecb06",l_ecb06,'','cec-044',1)
     end foreach
 
+    # darcy add s---
+    # 检查备注是否输入完成，如果检查失败要弹窗备注
+    if g_success = 'N' then
+        return
+    end if
+    if cl_null(g_bgjob) or g_bgjob = 'N' then
+        call cl_remark_chk(g_prog,p_ecu01||p_ecu02,0)
+        while true
+            let g_success = 'N'
+            call cl_remark(g_prog,p_ecu01||p_ecu02,0)
+            if g_success = 'Y' then
+                exit while
+            end if
+        end while
+    end if
+
+
+    # darcy add e---
+
     # HDI未维护报错
     # select count(1) into l_cnt from ima_file
     #  where ima06 in ('G01','G02') and ima01 =p_ecu01 and imaud25 is null
