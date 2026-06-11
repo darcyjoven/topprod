@@ -5142,6 +5142,7 @@ define l_ok          integer
 #darcy:2023/10/17 add e---
 define l_sgm03      like sgm_file.sgm03
 define l_str        string
+define l_cnt        integer
 
     INITIALIZE g_tsc.* TO NULL
     INITIALIZE g_tsd.* TO NULL
@@ -5161,11 +5162,13 @@ define l_str        string
     declare asft730_chk cursor for
         select sgm03 from sgm_file where sgm01 = g_shb.shb16
            and sgm301 - sgm311 - sgm313 > 0
+    let l_cnt = 0
     foreach asft730_chk into l_sgm03
         if sqlca.sqlcode then
             call cl_err('asft730_chk',sqlca.sqlcode,1)
             exit foreach
         end if
+        let l_cnt = 1
         select max(sgm03) into l_sgm03 from sgm_file
          where sgm01 = g_shb.shb16 and ta_sgm06 = 'Y'
            and sgm03 < l_sgm03
@@ -5175,6 +5178,10 @@ define l_str        string
         end if
         let l_str = l_str ,sfmt("%1",l_sgm03),","
     end foreach
+    if l_cnt == 0 then
+        call cl_err('','csf-139',1)
+        return
+    end if
 
     if not cl_null(l_str) then
         call cl_err(l_str,"csf-138",1)
