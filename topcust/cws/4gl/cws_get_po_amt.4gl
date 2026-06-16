@@ -117,7 +117,7 @@ function cws_get_po_amt_do(l_param)
       and pmm18 ='Y' and pmn24 = l_param.erp_pr and pmn04 = l_param.item
 
     if l_cnt == 0 then
-        return "还未转采购单，无法查询金额","",0,0,0
+        return "还未转采购单，无法查询金额","",0,0,0,''
     end if
 
     declare get_po_amt_1 cursor for
