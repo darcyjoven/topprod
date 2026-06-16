@@ -1,16 +1,16 @@
 # Prog. Version..: '5.30.06-13.04.02(00010)'     #
 #
 # Pattern name...: aoou702.4gl
-# Descriptions...: 單據編號未扣帳未確認檢查表 
-# Date & Author..: 98/04/07 By Andersen 
+# Descriptions...: 單據編號未扣帳未確認檢查表
+# Date & Author..: 98/04/07 By Andersen
 # Modify.........: 98/04/07 By Andersen -報表格式
 # Modify.........: MOD-470498(9790) 04/07/22 By Carol ASF系統add資料輸入員欄位
-# Modify.........: MOD-480243 04/08/10 By Nicola 起始日期不能大於截止日期    
-# Modify.........: MOD-4C0007 04/12/07 By Nicola 單據為作廢時仍印出"未確認"  
+# Modify.........: MOD-480243 04/08/10 By Nicola 起始日期不能大於截止日期
+# Modify.........: MOD-4C0007 04/12/07 By Nicola 單據為作廢時仍印出"未確認"
 # Modify.........: No.FUN-510027 05/02/14 By pengu 報表轉XML
 # Modify.........: No.MOD-530403 05/03/28 By pengu 修改g_sql
-# Modify.........: No.FUN-550058 05/05/28 By vivien 單據編號格式放大  
-# Modify.........: No.MOD-560065 05/06/14 By pengu  檢查品管系統只有FQC及PQC,少了IQC. 
+# Modify.........: No.FUN-550058 05/05/28 By vivien 單據編號格式放大
+# Modify.........: No.MOD-560065 05/06/14 By pengu  檢查品管系統只有FQC及PQC,少了IQC.
 # Modify.........: No.MOD-580242 05/09/12 By Nicola PAGE LENGTH g_line 改為g_page_line
 # Modify.........: No.TQC-5A0001 05/10/26 By Rosayu SQL.dbo.qcs01[1,3]=smyslip-->qcs01 like trim(smy_file.smyslip)||'-%'
 # Modify.........: No.FUN-610020 06/01/09 By Carrier 出貨驗收功能 -- 修改oga09的判斷
@@ -22,19 +22,19 @@
 # Modify.........: No.FUN-660134 06/06/20 By kim GP3.1 增加確認碼欄位與處理
 # Modify.........: No.MOD-660134 06/06/30 By Claire l_unconf長度在unicode區會造成'未確認'只印出'未確'
 # Modify.........: No.FUN-670030 06/08/11 By Claire APM&AXM 未發出單據要由未入庫顯示為未發出
-# Modify.........: No.FUN-680102 06/09/19 By zdyllq 類型轉換  
+# Modify.........: No.FUN-680102 06/09/19 By zdyllq 類型轉換
 # Modify.........: No.FUN-6A0081 06/11/01 By atsea l_time轉g_time
 # Modify.........: No.TQC-6B0023 06/11/15 By baogui 制表日期未顯示
 # Modify.........: No.MOD-6B0044 06/11/23 By Claire AXM中判斷oep_file時.及APMl中pna_file應該加說明為變更單
 # Modify.........: No.MOD-6A0133 06/12/12 By Carol  AXM中判斷oep_file時.應該加判斷oep09 <> '2'
 # Modify.........: No.FUN-710080 07/01/30 By Sarah 報表改寫由Crystal Report產出
-# Modify.........: No.MOD-720014 07/03/08 By Smapmin AAP中判斷ala_file時,應該加判斷作廢列印否 
+# Modify.........: No.MOD-720014 07/03/08 By Smapmin AAP中判斷ala_file時,應該加判斷作廢列印否
 # Modify.........: No.TQC-720033 07/03/08 By Smampin 作廢碼與確認碼由不同欄位記錄時,應將狀態全顯示出來
 # Modify.........: No.TQC-6C0215 07/03/30 By pengu 修改列出已作廢數據的SQL語法
 # Modify.........: No.MOD-760147 07/06/29 By Carol 修改不列出已作廢數據的SQL語法(imm_file,oha_file)
 # Modify.........: No.MOD-770002 07/07/03 By Carol 調整sfu_file,sfk_file,ksc_file SQL對確認碼的檢查
 # Modify.........: No.TQC-770120 07/07/25 By Sarah 執行後出現"prepare: 通用字元匹配無法用於非字元類型."錯誤訊息
-# Modify.........: No.MOD-770137 07/07/27 By Carol 調整MOD-770002 SQL條件 
+# Modify.........: No.MOD-770137 07/07/27 By Carol 調整MOD-770002 SQL條件
 # Modify.........: No.TQC-780031 07/08/30 By rainy 未勾選"列印已作廢單據"確印出已作廢的倉庫調撥單
 # Modify.........: No.CHI-770003 07/09/14 By kim imm04的列印處理
 # Modify.........: No.TQC-790110 07/09/26 By Smapmin 修改oma_file條件
@@ -51,32 +51,32 @@
 # Modify.........: No.FUN-930012 09/03/04 By jan 將imr_file的檢查邏輯納入"AIM"系統的檢查項目之一
 # Modify.........: No.MOD-940417 09/05/21 By Pengu 未確認供單無法被呈現
 # Modify.........: No.MOD-960036 09/06/08 By mike 因目前g_x[23]己抓不到值,故改抓p_ze的資料.
-# Modify.........: No.MOD-960268 09/06/24 By mike 將抓nnk_file的SQL加上nnkacti='Y'的條件   
+# Modify.........: No.MOD-960268 09/06/24 By mike 將抓nnk_file的SQL加上nnkacti='Y'的條件
 # Modify.........: No.MOD-970276 09/07/30 By Dido 增加過濾訂單變更已作廢資料邏輯
 # Modify.........: No.FUN-980030 09/08/31 By Hiko 加上GP5.2的相關設定
 # Modify.........: No.MOD-990071 09/09/08 By Dido 增加借貨出貨單
 # Modify.........: No:FUN-9C0071 10/01/13 By huangrh 精簡程式
 # Modify.........: No:MOD-A10115 10/01/19 By Sarah 修改MOD-920150,g_sql使用UNION會有錯,改成分兩段寫入報表
 # Modify.........: No.FUN-970092 10/02/22 By vealxu 生管系統未包含報工單據
-# Modify.........: No:MOD-A30044 10/03/14 By Dido nni_file 增加 nniacti = 'Y' 
+# Modify.........: No:MOD-A30044 10/03/14 By Dido nni_file 增加 nniacti = 'Y'
 # Modify.........: No.TQC-A60046 10/06/13 By chenmoyan PREPARE u702_p661 FROM g_sql時，g_sql中的OUTER MSV不認，改用標準LEFT OUTER JOIN的寫法
 # Modify.........: No:CHI-A80005 10/08/12 By Summer 報表增加使用者名稱與部門簡稱
-# Modify.........: No:MOD-A80237 10/08/30 By Summer sr.g03應改成ze訊息後再顯示 
-# Modify.........: No:CHI-A90031 10/10/14 By Summer 增加tm.more(其他特殊列印條件) 
+# Modify.........: No:MOD-A80237 10/08/30 By Summer sr.g03應改成ze訊息後再顯示
+# Modify.........: No:CHI-A90031 10/10/14 By Summer 增加tm.more(其他特殊列印條件)
 # Modify.........: No.TQC-AC0356 10/12/24 By zhangll 修正sql语句
 # Modify.........: No:MOD-B20110 11/02/22 By sabrina 修改sql語法
-# Modify.........: No:MOD-B20139 11/02/24 By sabrina 修改u702_p41的sql語法 
+# Modify.........: No:MOD-B20139 11/02/24 By sabrina 修改u702_p41的sql語法
 # Modify.........: No.FUN-B30211 11/04/01By yangtingting   1、離開MAIN時沒有cl_used(1)和cl_used(2)
-#                                                           2、未加離開前得cl_used(2) 
+#                                                           2、未加離開前得cl_used(2)
 # Modify.........: No:MOD-B40168 11/04/19 By Dido 預購支付與預購修改支付增加支付金額 > 0 才需檢核
-# Modify.........: No:FUN-A70095 11/06/10 By lixh1 增加對報工單據未扣帳未確認檢查 
+# Modify.........: No:FUN-A70095 11/06/10 By lixh1 增加對報工單據未扣帳未確認檢查
 # Modify.........: No:CHI-B80056 11/09/02 By johung AXM模組增加代採買出貨單
 # Modify.........: No:MOD-B90001 11/09/02 By johung 單據名稱欄位長度加大
 # Modify.........: No:TQC-B90218 11/09/28 By lixh1 生產報工單已經確認,但是卻都列印出來
 # Modify.........: No.FUN-BA0003 11/10/06 By pauline 增加alm/art模組
 # Modify.........: No:MOD-BA0063 11/10/08 By suncx 已確認的單據不需抓取
 # Modify.........: No.FUN-BB0047 11/12/30 By fengrui  調整時間函數問題
-# Modify.........: No:MOD-C40019 12/04/03 By Summer u702_c13的欄位數錯誤  
+# Modify.........: No:MOD-C40019 12/04/03 By Summer u702_c13的欄位數錯誤
 # Modify.........: No:MOD-C40073 12/04/11 By Elise 調整為UNION ALL分開抓資料,qcs00 NOT IN ('5','6')的抓smy_file,qcs00  IN ('5','6')抓oay_file
 # Modify.........: No:FUN-C50077 12/06/15 bY Bart 增加apmt900資料
 # Modify.........: NO.MOD-C70235 12/07/25 BY Vampire 請將UNION ALL兩段SQL分開,都要加上判斷已作廢單據
@@ -87,42 +87,42 @@
 # Modify.........: No:MOD-D60213 13/06/27 By fengmy 過濾與庫存異動無關的單據
 
 DATABASE ds
- 
+
 GLOBALS "../../config/top.global"
- 
-DEFINE tm RECORD 
+
+DEFINE tm RECORD
             a        LIKE type_file.chr1,     #No.FUN-680102 VARCHAR(1),          #  AIM 庫存系統
             b        LIKE type_file.chr1,     #No.FUN-680102 VARCHAR(1),          #  APM 採購系統
             c        LIKE type_file.chr1,     #No.FUN-680102 VARCHAR(1),          #  AXM 銷售系統
             d        LIKE type_file.chr1,     #No.FUN-680102 VARCHAR(1),          #  ASF 生產系統
             e        LIKE type_file.chr1,     #No.FUN-680102 VARCHAR(1),          #  AAP 應付系統
-            f        LIKE type_file.chr1,     #No.FUN-680102 VARCHAR(1),          #  ANM 票據系統 
+            f        LIKE type_file.chr1,     #No.FUN-680102 VARCHAR(1),          #  ANM 票據系統
             g        LIKE type_file.chr1,     #No.FUN-680102 VARCHAR(1),          #  AXR 應收系統
             h        LIKE type_file.chr1,     #No.FUN-680102 VARCHAR(1),          #  AQC 品管系統
-            i        LIKE type_file.chr1,     #No.FUN-870078 VARCHAR(1),     
+            i        LIKE type_file.chr1,     #No.FUN-870078 VARCHAR(1),
             j        LIKE type_file.chr1,     #No.FUN-BA0003 VARCHAR(1),          #  ART 流通零售系統
             k        LIKE type_file.chr1,     #No.FUN-BA0003 VARCHAR(1),          #  ART 流通零售系統
-            bdate    LIKE type_file.dat,      #No.FUN-680102 DATE,             
+            bdate    LIKE type_file.dat,      #No.FUN-680102 DATE,
             edate    LIKE type_file.dat,      #No.FUN-680102 DATE,
             y        LIKE type_file.chr1,     #No.FUN-680102 VARCHAR(1),          #  列印作廢否
-            x        LIKE type_file.chr1,     #MOD-D60213 
+            x        LIKE type_file.chr1,     #MOD-D60213
             z        LIKE type_file.chr1,     #No.FUN-680102 VARCHAR(1)           #  依系統跳頁否 #CHI-A90031 add ,
             more     LIKE type_file.chr1      #CHI-A90031 add                  # Input more condition(Y/N)
            END RECORD
 DEFINE p_row,p_col   LIKE type_file.num5      #No.FUN-680102 SMALLINT
-DEFINE g_cnt         LIKE type_file.num10    #No.FUN-680102 INTEGER   
+DEFINE g_cnt         LIKE type_file.num10    #No.FUN-680102 INTEGER
 DEFINE g_i           LIKE type_file.num5     #No.FUN-680102 SMALLINT   #count/index for any purpose
 DEFINE g_head1       STRING
 DEFINE l_table       STRING                   #FUN-710080 add
 DEFINE g_sql         STRING                   #FUN-710080 add
 DEFINE g_str         STRING                   #FUN-710080 add
 define g_tiptop      like type_file.chr1      #darcy:2023/05/08 add
- 
+
 MAIN
     OPTIONS
         INPUT NO WRAP
         DEFER INTERRUPT
- 
+
    #CHI-A90031 程式搬移 --start--
    LET g_pdate = ARG_VAL(1)		      # Get arguments from command line
    LET g_towhom = ARG_VAL(2)
@@ -162,7 +162,7 @@ MAIN
 #   LET g_rep_clas = ARG_VAL(23)
 #   LET g_template = ARG_VAL(24)
 #   LET g_rpt_name = ARG_VAL(25)  #No.FUN-7C0078
-   
+
    LET tm.y  = ARG_VAL(20)
    LET tm.x  = ARG_VAL(21)
    LET tm.z  = ARG_VAL(22)
@@ -181,18 +181,18 @@ MAIN
    IF (NOT cl_user()) THEN
       EXIT PROGRAM
    END IF
-  
+
    WHENEVER ERROR CALL cl_err_msg_log
-  
+
    IF (NOT cl_setup("AOO")) THEN
       EXIT PROGRAM
    END IF
 
-   #CALL cl_used(g_prog,g_time,1) RETURNING g_time      #FUN-B30211 #FUN-BB0047 mark 
+   #CALL cl_used(g_prog,g_time,1) RETURNING g_time      #FUN-B30211 #FUN-BB0047 mark
 
    ## *** 與 Crystal Reports 串聯段 - <<<< 產生Temp Table >>>> CR11 *** ##
    LET g_sql = "g01.type_file.chr3,",
-               "g02.sfb_file.sfb01,", 
+               "g02.sfb_file.sfb01,",
                "g10.gee_file.gee05,", #darcy:2023/12/04 add
 #              "g03.type_file.chr50,",   #MOD-850113 mod chr20->chr50   #MOD-B90001 mark
                "g03.smy_file.smydesc,",  #MOD-B90001
@@ -204,7 +204,7 @@ MAIN
                "zx02.zx_file.zx02,",   #CHI-A80005 add
                "g09.type_file.chr20,", #CHI-A80005 add
                "gem02.gem_file.gem02"  #CHI-A80005 add
- 
+
    LET l_table = cl_prt_temptable('aoou702',g_sql) CLIPPED   # 產生Temp Table
    IF l_table = -1 THEN EXIT PROGRAM END IF                  # Temp Table產生
    LET g_sql = "INSERT INTO ",g_cr_db_str CLIPPED,l_table CLIPPED,
@@ -214,12 +214,12 @@ MAIN
       CALL cl_err('insert_prep:',status,1) EXIT PROGRAM
    END IF
    #------------------------------ CR (1) ------------------------------#
- 
+
 #CHI-A90031 程式搬移 mark --start--
 #  LET p_row = 5 LET p_col = 32
 #  OPEN WINDOW aoou702_w AT p_row,p_col WITH FORM "aoo/42f/aoou702"
 #      ATTRIBUTE (STYLE = g_win_style CLIPPED) #No.FUN-580092 HCN
-#   
+#
 #  CALL cl_ui_init()
 #
 #  CALL cl_opmsg('z')
@@ -258,92 +258,92 @@ MAIN
     CLOSE WINDOW aoou702_w
    CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211
 END MAIN
- 
+
 FUNCTION u702_tm()
    DEFINE   s       LIKE type_file.chr50,    #No.FUN-680102 VARCHAR(35),
             l_cmd   LIKE type_file.chr1000   #No.FUN-680102 VARCHAR(1000)
- 
+
   #CHI-A90031 程式搬移 --start--
    LET p_row = 5 LET p_col = 32
    OPEN WINDOW aoou702_w AT p_row,p_col WITH FORM "aoo/42f/aoou702"
        ATTRIBUTE (STYLE = g_win_style CLIPPED) #No:FUN-580092 HCN
-    
+
    CALL cl_ui_init()
 
    CALL cl_opmsg('z')
   #CHI-A90031 程式搬移 --end--
- 
+
  # ------ DEFAULT VALUE --------------
    LET  tm.a        = 'Y'
-   LET  tm.b        = 'Y' 
-   LET  tm.c        = 'Y' 
+   LET  tm.b        = 'Y'
+   LET  tm.c        = 'Y'
    LET  tm.d        = 'Y'
-   LET  tm.e        = 'Y' 
-   LET  tm.f        = 'Y' 
-   LET  tm.g        = 'Y' 
-   LET  tm.h        = 'Y' 
+   LET  tm.e        = 'Y'
+   LET  tm.f        = 'Y'
+   LET  tm.g        = 'Y'
+   LET  tm.h        = 'Y'
    LET  tm.i        = 'Y'   #FUN-870078
    LET  tm.j        = 'Y'   #FUN-BA0003 add
-   LET  tm.k        = 'Y'   #FUN-BA0003 add  
-   LET  tm.bdate    = g_today 
-   LET  tm.edate    = g_today 
-   LET  tm.y        = 'N' 
+   LET  tm.k        = 'Y'   #FUN-BA0003 add
+   LET  tm.bdate    = g_today
+   LET  tm.edate    = g_today
+   LET  tm.y        = 'N'
    LET  tm.x        = 'Y'   #MOD-D60213
-   LET  tm.z        = 'Y' 
+   LET  tm.z        = 'Y'
    LET  tm.more     = 'N'      #CHI-A90031 add
    LET  g_pdate     = g_today  #CHI-A90031 add
    LET  g_rlang     = g_lang   #CHI-A90031 add
    LET  g_bgjob     = 'N'      #CHI-A90031 add
    LET  g_copies    = '1'      #CHI-A90031 add
- 
+
    WHILE TRUE
       INPUT BY NAME tm.a,tm.b,tm.c,tm.d,tm.e,tm.f,tm.g,tm.h,tm.i,tm.j,tm.k,     #FUN-870078       #FUN-BA0003 add tm.j,tm.k
                     tm.bdate,tm.edate,tm.y,tm.x,tm.z,tm.more #CHI-A90031 add tm.more  #MOD-D60213 tm.x
-         WITHOUT DEFAULTS 
+         WITHOUT DEFAULTS
        ON ACTION locale
            CALL cl_dynamic_locale()
           CALL cl_show_fld_cont()                   #No.FUN-550037 hmf
- 
- 
- 
-         AFTER FIELD  a  
+
+
+
+         AFTER FIELD  a
             IF tm.a NOT MATCHES "[YN]" OR tm.a IS NULL THEN
                NEXT FIELD a
             END IF
- 
-         AFTER FIELD  b 
+
+         AFTER FIELD  b
             IF tm.b NOT MATCHES "[YN]" OR tm.b IS NULL THEN
-               NEXT FIELD b 
-            END IF   
-         AFTER FIELD  c 
+               NEXT FIELD b
+            END IF
+         AFTER FIELD  c
             IF tm.c NOT MATCHES "[YN]" OR tm.c IS NULL THEN
-               NEXT FIELD c 
-            END IF   
-         AFTER FIELD  d 
+               NEXT FIELD c
+            END IF
+         AFTER FIELD  d
             IF tm.d NOT MATCHES "[YN]" OR tm.d IS NULL THEN
-               NEXT FIELD d 
-            END IF   
-         AFTER FIELD  e 
+               NEXT FIELD d
+            END IF
+         AFTER FIELD  e
             IF tm.e NOT MATCHES "[YN]" OR tm.e IS NULL THEN
-               NEXT FIELD e 
-            END IF   
-         AFTER FIELD  f 
+               NEXT FIELD e
+            END IF
+         AFTER FIELD  f
             IF tm.f NOT MATCHES "[YN]" OR tm.f IS NULL THEN
-               NEXT FIELD f 
-            END IF   
-         AFTER FIELD  g 
+               NEXT FIELD f
+            END IF
+         AFTER FIELD  g
             IF tm.g NOT MATCHES "[YN]" OR tm.g IS NULL THEN
-               NEXT FIELD g 
-            END IF   
- 
-         AFTER FIELD  h 
+               NEXT FIELD g
+            END IF
+
+         AFTER FIELD  h
             IF tm.h NOT MATCHES "[YN]" OR tm.h IS NULL THEN
-               NEXT FIELD h 
-            END IF   
- 
-         AFTER FIELD  i 
+               NEXT FIELD h
+            END IF
+
+         AFTER FIELD  i
             IF tm.i NOT MATCHES "[YN]" OR tm.i IS NULL THEN
-               NEXT FIELD i 
+               NEXT FIELD i
             END IF
 
 #FUN-BA0003 add START
@@ -361,16 +361,16 @@ FUNCTION u702_tm()
          ON CHANGE x
             IF tm.x NOT MATCHES "[YN]" OR tm.x IS NULL THEN
                NEXT FIELD x
-            ELSE 
-               LET  tm.e  = 'N' 
-               LET  tm.f  = 'N' 
-               LET  tm.g  = 'N' 
-               LET  tm.h  = 'N' 
+            ELSE
+               LET  tm.e  = 'N'
+               LET  tm.f  = 'N'
+               LET  tm.g  = 'N'
+               LET  tm.h  = 'N'
                LET  tm.k  = 'N'
                DISPLAY BY NAME tm.e,tm.f,tm.g,tm.h,tm.k
             END IF
 #MOD-D60213--end
- 
+
          AFTER FIELD bdate
             IF tm.bdate IS NULL OR tm.bdate = ' ' THEN
                NEXT FIELD bdate
@@ -382,7 +382,7 @@ FUNCTION u702_tm()
                   END IF
                END IF
             END IF
- 
+
          AFTER FIELD edate
             IF tm.edate IS NULL OR tm.edate = ' ' THEN
                NEXT FIELD edate
@@ -392,17 +392,17 @@ FUNCTION u702_tm()
                   NEXT FIELD bdate
                END IF
             END IF
- 
+
          AFTER FIELD  y
             IF tm.y NOT MATCHES "[YN]" OR tm.y IS NULL THEN
-               NEXT FIELD y 
-            END IF   
- 
-         AFTER FIELD z 
+               NEXT FIELD y
+            END IF
+
+         AFTER FIELD z
             IF tm.z NOT MATCHES "[YN]" OR tm.z IS NULL THEN
-               NEXT FIELD z 
-            END IF   
- 
+               NEXT FIELD z
+            END IF
+
          #CHI-A90031 add --start--
          AFTER FIELD more
             IF tm.more = 'Y'
@@ -415,22 +415,22 @@ FUNCTION u702_tm()
 
          ON ACTION CONTROLR
             CALL cl_show_req_fields()
- 
+
          ON ACTION CONTROLG
             CALL cl_cmdask()    # Command execution
          ON IDLE g_idle_seconds
             CALL cl_on_idle()
             CONTINUE INPUT
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
-      
+
+
       END INPUT
- 
+
       IF INT_FLAG THEN
          LET INT_FLAG = 0 RETURN
       END IF
@@ -478,10 +478,10 @@ FUNCTION u702_tm()
       CALL aoou702()
       ERROR ""
    END WHILE
- 
+
    CLOSE WINDOW aoou702_w
 END FUNCTION
- 
+
 FUNCTION aoou702()
    DEFINE l_name	LIKE type_file.chr20,    #No.FUN-680102 VARCHAR(20),		# External(Disk) file name
           g_sql 	STRING,		         #RDSQL STATEMENT  #No.FUN-580092 HCN
@@ -495,12 +495,12 @@ FUNCTION aoou702()
           l_rvaconf     LIKE rva_file.rvaconf,
           l_cnt         LIKE type_file.num5,     #No.FUN-680102 SMALLINT,
           l_msg         LIKE type_file.chr20,    #MOD-850119 add
-          sr  RECORD 
+          sr  RECORD
                      g01   LIKE type_file.chr3,     #No.FUN-680102 VARCHAR(03),                 #  系統別
                      g02   LIKE sfb_file.sfb01,     #No.FUN-680102 VARCHAR(16),                 #  單據編號  #No.FUN-550058
-                     g10   like gee_file.gee05,     #darcy:2023/12/04 add 
+                     g10   like gee_file.gee05,     #darcy:2023/12/04 add
                      g03   LIKE smy_file.smydesc,    #No.FUN-680102 VARCHAR(30),                 #  單據名稱  #No.FUN-550058  #MOD-6B0044 20->30  #No.MOD-7B0256 modify
-                     g04   LIKE type_file.dat,      #No.FUN-680102 DATE,                     #  單據日期  
+                     g04   LIKE type_file.dat,      #No.FUN-680102 DATE,                     #  單據日期
                      g05   LIKE type_file.dat,      #No.FUN-680102 DATE,                     #  輸入日期
                      g06   LIKE type_file.chr1,     #No.FUN-680102 VARCHAR(1),                  #  未確認
                      g07   LIKE type_file.chr1,     #No.FUN-680102 VARCHAR(1),                  #  未過帳
@@ -512,22 +512,22 @@ FUNCTION aoou702()
    DEFINE l_where,l_where1,l_where2 STRING  #CHI-770003
    DEFINE l_cnt2                    LIKE type_file.num5   #FUN-BA0003 add
    DEFINE g_sql2        STRING #MOD-C70235 add
- 
+
 #     CALL  cl_used(g_prog,g_time,1) RETURNING g_time #No.MOD-580088  HCN 20050818  #No.FUN-6A0081     #FUN-BA0003 mark
- 
+
      ## *** 與 Crystal Reports 串聯段 - <<<< 清除暫存資料 >>>> CR11 *** ##
      CALL cl_del_data(l_table)
- 
+
      SELECT zo02 INTO g_company FROM zo_file WHERE zo01 = g_rlang
  # ***************************************
- #     START REPORT   ! 
- # *************************************** 
- 
+ #     START REPORT   !
+ # ***************************************
+
      # *********************************
      # **    庫存系統 (系統別:AIM)    **
-     # *********************************   
-     IF  tm.a = 'Y'  THEN  
-        # ========= (1) ina_file ========== 
+     # *********************************
+     IF  tm.a = 'Y'  THEN
+        # ========= (1) ina_file ==========
         LET g_sql = "SELECT 'AIM',ina01,gee05,smydesc,ina02,ina03,inaconf,inapost,inauser ", #CHI-770003 #darcy:2023/12/04 add gee05
                        " ,zx02,inagrup,gem02 ", #CHI-A80005 add
                     " FROM ina_file LEFT OUTER JOIN smy_file ON ina01 like rtrim(ltrim(smyslip)) || '-%'",
@@ -536,14 +536,14 @@ FUNCTION aoou702()
                        " LEFT OUTER JOIN gem_file ON inagrup=gem_file.gem01 ", #CHI-A80005 add #MOD-B20110 modify
                        " WHERE ina02 BETWEEN '",tm.bdate,"' AND '",tm.edate,"'"
         #判斷已作廢單據
-        IF tm.y='Y' THEN 
+        IF tm.y='Y' THEN
            LET g_sql=g_sql CLIPPED," AND inapost!='Y' " CLIPPED  #TQC-660078
         ELSE
-           LET g_sql=g_sql CLIPPED," AND inapost='N' AND inaconf != 'X' " CLIPPED   #TQC-660078 #No.TQC-6C0215 modify   
+           LET g_sql=g_sql CLIPPED," AND inapost='N' AND inaconf != 'X' " CLIPPED   #TQC-660078 #No.TQC-6C0215 modify
         END IF
         PREPARE u702_p01 FROM g_sql
         IF SQLCA.sqlcode != 0 THEN
-            CALL cl_err('prepare:',SQLCA.sqlcode,1) 
+            CALL cl_err('prepare:',SQLCA.sqlcode,1)
             CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211
             EXIT PROGRAM
         END IF
@@ -560,17 +560,17 @@ FUNCTION aoou702()
                                         sr.g06,sr.g07,sr.g08,sr.zx02,sr.g09,sr.gem02  #CHI-A80005 add sr.zx02,sr.g09,sr.gem02
               #------------------------------ CR (3) ------------------------------#
             END FOREACH
-        # ========= (2) imm_file ========== 
+        # ========= (2) imm_file ==========
         DROP TABLE u702_aim
         LET g_sql = "SELECT 'AIM' as AA,imm01,gee05,smydesc,imm02,imm12,immconf,imm03,immuser,zx02,immgrup,gem02,imm10 ", #CHI-770003 #CHI-A80005 add ,zx02,immgrup,gem02 #darcy:2023/12/04 add gee05
-                       " FROM imm_file,smy_file,zx_file,gem_file,gee_file WHERE 1=2 INTO TEMP u702_aim" #CHI-A80005 add zx_file,gem_file 
+                       " FROM imm_file,smy_file,zx_file,gem_file,gee_file WHERE 1=2 INTO TEMP u702_aim" #CHI-A80005 add zx_file,gem_file
         PREPARE u702_aim_ins1 FROM g_sql
         EXECUTE u702_aim_ins1
         IF STATUS THEN
-           CALL cl_err('create u702_aim fail!',SQLCA.sqlcode,1)           
+           CALL cl_err('create u702_aim fail!',SQLCA.sqlcode,1)
         END IF
-        LET l_where=" WHERE imm02 BETWEEN '",tm.bdate,"' AND '",tm.edate,"'"  #No.FUN-550058 
- 
+        LET l_where=" WHERE imm02 BETWEEN '",tm.bdate,"' AND '",tm.edate,"'"  #No.FUN-550058
+
         IF tm.y='Y'  THEN
            LET l_where1=" AND imm03 != 'Y' "
            LET l_where2=" AND (imm04 !='Y' OR imm03 !='Y') "
@@ -591,9 +591,9 @@ FUNCTION aoou702()
         PREPARE u702_aim_ins2 FROM g_sql
         EXECUTE u702_aim_ins2
         IF STATUS THEN
-           CALL cl_err('INSERT INTO u702_aim(1) fail!',SQLCA.sqlcode,1)           
+           CALL cl_err('INSERT INTO u702_aim(1) fail!',SQLCA.sqlcode,1)
         END IF
-                       
+
         LET g_sql =    "INSERT INTO u702_aim ",
                        " SELECT 'AIM',imm01,gee05,smydesc,imm02,imm12,imm04,imm03,immuser,zx02,immgrup,gem02,imm10 ", #CHI-770003 #CHI-A80005 add zx02,immgrup,gem02 #darcy:2023/12/04 add
                        " FROM imm_file LEFT OUTER JOIN smy_file ON imm01 like rtrim(ltrim(smyslip)) || '-%'", #CHI-770003
@@ -601,7 +601,7 @@ FUNCTION aoou702()
                        " LEFT OUTER JOIN zx_file ON immuser=zx_file.zx01 ", #CHI-A80005 add #MOD-B20110 modify
                        " LEFT OUTER JOIN gem_file ON immgrup=gem_file.gem01 ", #CHI-A80005 add #MOD-B20110 modify
                        l_where,
-                       " AND imm10 IN ('2','3','4')",  
+                       " AND imm10 IN ('2','3','4')",
                        l_where2,
                        " AND immacti = 'Y' "         #CHI-CB0044 add
         PREPARE u702_aim_ins3 FROM g_sql
@@ -609,18 +609,18 @@ FUNCTION aoou702()
         IF STATUS THEN
            CALL cl_err('INSERT INTO u702_aim(2) fail!',SQLCA.sqlcode,1)
         END IF
-        
+
         LET g_sql="SELECT * FROM u702_aim"
         PREPARE u702_p02 FROM g_sql
         IF SQLCA.sqlcode != 0 THEN
-            CALL cl_err('prepare:',SQLCA.sqlcode,1) 
+            CALL cl_err('prepare:',SQLCA.sqlcode,1)
             CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211
             EXIT PROGRAM
         END IF
         DECLARE u702_c02 CURSOR FOR u702_p02
         FOREACH u702_c02 INTO sr.*,l_imm10
           IF SQLCA.sqlcode != 0 THEN
-             CALL cl_err('foreach:',SQLCA.sqlcode,1) 
+             CALL cl_err('foreach:',SQLCA.sqlcode,1)
              EXIT FOREACH
           END IF
           IF sr.g06='X' THEN
@@ -639,14 +639,14 @@ FUNCTION aoou702()
                        " LEFT OUTER JOIN gem_file ON imogrup=gem_file.gem01 ", #CHI-A80005 add #MOD-B20110 modify
                        " WHERE imo02 BETWEEN '",tm.bdate,"' AND '",tm.edate,"'"
         #判斷已作廢單據
-        IF tm.y='Y' THEN 
+        IF tm.y='Y' THEN
            LET g_sql=g_sql CLIPPED," AND imopost!='Y' " CLIPPED #TQC-660078
         ELSE
-           LET g_sql=g_sql CLIPPED," AND imopost='N' AND imoconf != 'X' " CLIPPED   #TQC-660078 #No.TQC-6C0215 modify   
+           LET g_sql=g_sql CLIPPED," AND imopost='N' AND imoconf != 'X' " CLIPPED   #TQC-660078 #No.TQC-6C0215 modify
         END IF
         PREPARE u702_p03 FROM g_sql
         IF SQLCA.sqlcode != 0 THEN
-            CALL cl_err('prepare:',SQLCA.sqlcode,1) 
+            CALL cl_err('prepare:',SQLCA.sqlcode,1)
             CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211
             EXIT PROGRAM
         END IF
@@ -663,7 +663,7 @@ FUNCTION aoou702()
                                         sr.g06,sr.g07,sr.g08,sr.zx02,sr.g09,sr.gem02  #CHI-A80005 add sr.zx02,sr.g09,sr.gem02
               #------------------------------ CR (3) ------------------------------#
             END FOREACH
-        # ========= (4) imr_file ========== 
+        # ========= (4) imr_file ==========
          LET g_sql = "SELECT 'AIM',imr01,gee05,smydesc,imr02,'',imrconf,imrpost,imruser,zx02,imrgrup,gem02 ",  #CHI-A80005 add zx02,imrgrup,gem02
                        " FROM imr_file LEFT OUTER JOIN smy_file ON(imr01 like rtrim(ltrim(smy_file.smyslip)) || '-%')",
                        " left join gee_file on smykind = gee02 and gee03 ='2' and gee04 = 'asmi300' and gee01 = upper(smysys)", #darcy:2023/12/04 add
@@ -671,14 +671,14 @@ FUNCTION aoou702()
                        " LEFT OUTER JOIN gem_file ON imrgrup=gem_file.gem01 ", #CHI-A80005 add #MOD-B20110 modify
                        " WHERE imr02 BETWEEN '",tm.bdate,"' AND '",tm.edate,"'"
         #判斷已作廢單據
-        IF tm.y='Y' THEN 
-           LET g_sql=g_sql CLIPPED," AND imrpost!='Y' " CLIPPED 
+        IF tm.y='Y' THEN
+           LET g_sql=g_sql CLIPPED," AND imrpost!='Y' " CLIPPED
         ELSE
-           LET g_sql=g_sql CLIPPED," AND imrpost='N' AND imrconf != 'X' " CLIPPED   
+           LET g_sql=g_sql CLIPPED," AND imrpost='N' AND imrconf != 'X' " CLIPPED
         END IF
         PREPARE u702_p26 FROM g_sql
         IF SQLCA.sqlcode != 0 THEN
-            CALL cl_err('prepare:',SQLCA.sqlcode,1) 
+            CALL cl_err('prepare:',SQLCA.sqlcode,1)
             CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211
             EXIT PROGRAM
         END IF
@@ -695,12 +695,12 @@ FUNCTION aoou702()
                                         sr.g06,sr.g07,sr.g08,sr.zx02,sr.g09,sr.gem02  #CHI-A80005 add sr.zx02,sr.g09,sr.gem02
               #------------------------------ CR (3) ------------------------------#
             END FOREACH
-     END IF 
+     END IF
      # *********************************
      # **    採購系統 (系統別:APM)    **
-     # *********************************   
-     IF  tm.b = 'Y'  THEN  
-        # ========= (1) pmk_file ========== 
+     # *********************************
+     IF  tm.b = 'Y'  THEN
+        # ========= (1) pmk_file ==========
         IF u702_inv('APM','pmk') THEN #MOD-D60213
            LET g_sql = "SELECT 'APM',pmk01,gee05,smydesc,pmk04,'',pmk18,' ',pmkuser,zx02,pmkgrup,gem02,pmk25 ", #CHI-A80005 add zx02,pmkgrup,gem02
                           " FROM pmk_file LEFT OUTER JOIN smy_file ON pmk01 like rtrim(ltrim(smyslip)) || '-%' ",
@@ -711,14 +711,14 @@ FUNCTION aoou702()
                           " AND pmk25 <> '6' ",   #No.B221 010327 by linda add
                           " AND pmkacti = 'Y' "   #CHI-CB0044 add
            #判斷已作廢單據
-           IF tm.y='Y' THEN 
+           IF tm.y='Y' THEN
               LET g_sql=g_sql CLIPPED," AND pmk18!='Y' " CLIPPED   #TQC-660078
            ELSE
               LET g_sql=g_sql CLIPPED," AND pmk18='N' " CLIPPED    #TQC-660078
            END IF
            PREPARE u702_p11 FROM g_sql
            IF SQLCA.sqlcode != 0 THEN
-               CALL cl_err('prepare:',SQLCA.sqlcode,1) 
+               CALL cl_err('prepare:',SQLCA.sqlcode,1)
                CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211
                EXIT PROGRAM
            END IF
@@ -737,7 +737,7 @@ FUNCTION aoou702()
                END FOREACH
          END IF #MOD-D60213
         # ========= (2) pmi_file ==========
-        IF u702_inv('APM','pmi') THEN #MOD-D60213 
+        IF u702_inv('APM','pmi') THEN #MOD-D60213
            LET g_sql = "SELECT 'APM',pmi01,gee05,smydesc,pmi02,'',pmiconf,' ',pmiuser,zx02,pmigrup,gem02 ",   #No.MOD-4C0007 #CHI-A80005 add zx02,pmigrup,gem02
                         " FROM pmi_file LEFT OUTER JOIN smy_file ON pmi01 like rtrim(ltrim(smyslip)) || '-%'",
                         " left join gee_file on smykind = gee02 and gee03 ='2' and gee04 = 'asmi300' and gee01 = upper(smysys)", #darcy:2023/12/04 add
@@ -746,7 +746,7 @@ FUNCTION aoou702()
                         " WHERE pmi02 BETWEEN '",tm.bdate,"' AND '",tm.edate,"'",
                         " AND pmiacti = 'Y' "   #CHI-CB0044 add
            #判斷已作廢單據
-           IF tm.y='Y' THEN 
+           IF tm.y='Y' THEN
               LET g_sql=g_sql CLIPPED," AND pmiconf!='Y' " CLIPPED   #TQC-660078
            ELSE
               LET g_sql=g_sql CLIPPED," AND pmiconf='N' " CLIPPED    #TQC-660078
@@ -754,7 +754,7 @@ FUNCTION aoou702()
            LET g_sql = g_sql  CLIPPED
            PREPARE u702_p12 FROM g_sql
            IF SQLCA.sqlcode != 0 THEN
-               CALL cl_err('prepare:',SQLCA.sqlcode,1) 
+               CALL cl_err('prepare:',SQLCA.sqlcode,1)
                CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211
                EXIT PROGRAM
            END IF
@@ -769,7 +769,7 @@ FUNCTION aoou702()
                  #------------------------------ CR (3) ------------------------------#
                END FOREACH
         END IF #MOD-D60213
-        # ========= (3) pmm_file ========== 
+        # ========= (3) pmm_file ==========
         IF u702_inv('APM','pmm') THEN #MOD-D60213
           #LET g_sql = "SELECT 'APM',pmm01,smydesc,pmm04,'',pmm18,' ',pmmuser,pmm25,zx02,pmmgrup,gem02,pmm25 ",  #No.MOD-4C0007 #CHI-A80005 add zx02,pmmgrup,gem02 #MOD-C40019 mark
            LET g_sql = "SELECT 'APM',pmm01,gee05,smydesc,pmm04,'',pmm18,' ',pmmuser,zx02,pmmgrup,gem02,pmm25 ",        #MOD-C40019
@@ -781,14 +781,14 @@ FUNCTION aoou702()
                        " AND pmm25 <> '6' ",   #No.B221 010327 by linda add
                        " AND pmmacti = 'Y' "    #CHI-CB0044 add
            #判斷已作廢單據
-           IF tm.y='Y' THEN 
+           IF tm.y='Y' THEN
               LET g_sql=g_sql CLIPPED," AND pmm18!='Y' " CLIPPED  #TQC-660078
            ELSE
               LET g_sql=g_sql CLIPPED," AND pmm18='N' " CLIPPED   #TQC-660078
            END IF
            PREPARE u702_p13 FROM g_sql
            IF SQLCA.sqlcode != 0 THEN
-               CALL cl_err('prepare:',SQLCA.sqlcode,1) 
+               CALL cl_err('prepare:',SQLCA.sqlcode,1)
                CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211
                EXIT PROGRAM
            END IF
@@ -810,7 +810,7 @@ FUNCTION aoou702()
                END FOREACH
          END IF #MOD-D60213
         # ========= (4) pna_file ==========
-        IF u702_inv('APM','pna') THEN #MOD-D60213 
+        IF u702_inv('APM','pna') THEN #MOD-D60213
            LET g_sql = "SELECT 'APM',pna01,gee05,smydesc,pna04,'',pna05,pnaconf,pnauser,zx02,pnagrup,gem02 ", #CHI-A80005 add zx02,pnagrup,gem02
                           " FROM pna_file LEFT OUTER JOIN smy_file ON pna01 like rtrim(ltrim(smyslip)) || '-%'",
                           " left join gee_file on smykind = gee02 and gee03 ='2' and gee04 = 'asmi300' and gee01 = upper(smysys)", #darcy:2023/12/04 add
@@ -819,19 +819,19 @@ FUNCTION aoou702()
                           " WHERE pna04 BETWEEN '",tm.bdate,"' AND '",tm.edate,"'",
                           " AND pnaacti = 'Y' "               #CHI-CB0044 add
            #判斷已作廢單據
-           IF tm.y='Y' THEN 
+           IF tm.y='Y' THEN
               LET g_sql=g_sql CLIPPED," AND (pna05!='Y' OR pnaconf!='Y') " CLIPPED #TQC-660078
            ELSE
-              LET g_sql=g_sql CLIPPED," AND (pna05!='X' AND pnaconf='N' ) " CLIPPED  #MOD-640506 
+              LET g_sql=g_sql CLIPPED," AND (pna05!='X' AND pnaconf='N' ) " CLIPPED  #MOD-640506
            END IF
            PREPARE u702_p14 FROM g_sql
            IF SQLCA.sqlcode != 0 THEN
-               CALL cl_err('prepare:',SQLCA.sqlcode,1) 
+               CALL cl_err('prepare:',SQLCA.sqlcode,1)
                CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211
                EXIT PROGRAM
            END IF
            DECLARE u702_c14 CURSOR FOR u702_p14
-           
+
                FOREACH u702_c14 INTO sr.*
                  IF SQLCA.sqlcode != 0 THEN
                     CALL cl_err('foreach:',SQLCA.sqlcode,1) EXIT FOREACH
@@ -847,7 +847,7 @@ FUNCTION aoou702()
                  #------------------------------ CR (3) ------------------------------#
                END FOREACH
          END IF #MOD-D60213
-        # ========= (5) rvu_file ========== 
+        # ========= (5) rvu_file ==========
         IF u702_inv('APM','rvu') THEN #MOD-D60213
            LET g_sql = "SELECT 'APM',rvu01,gee05,smydesc,rvu03,'',rvuconf,' ',rvuuser,zx02,rvugrup,gem02 ",   #No.MOD-4C0007 #CHI-A80005 add zx02,rvugrup,gem02
                        " FROM rvu_file LEFT OUTER JOIN smy_file ON rvu01 like rtrim(ltrim(smyslip)) || '-%' ",
@@ -858,14 +858,14 @@ FUNCTION aoou702()
                        " AND rvuacti = 'Y' "   #CHI-CB0044 add
            LET g_sql = g_sql  CLIPPED
            #判斷已作廢單據
-           IF tm.y='Y' THEN 
+           IF tm.y='Y' THEN
               LET g_sql=g_sql CLIPPED," AND rvuconf!='Y' " CLIPPED  #TQC-660078
            ELSE
               LET g_sql=g_sql CLIPPED," AND rvuconf='N' " CLIPPED    #TQC-660078
            END IF
            PREPARE u702_p15 FROM g_sql
            IF SQLCA.sqlcode != 0 THEN
-               CALL cl_err('prepare:',SQLCA.sqlcode,1) 
+               CALL cl_err('prepare:',SQLCA.sqlcode,1)
                CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211
                EXIT PROGRAM
            END IF
@@ -880,7 +880,7 @@ FUNCTION aoou702()
                  #------------------------------ CR (3) ------------------------------#
                END FOREACH
         END IF #MOD-D60213
-        # ========= (6) rva_file ========== 
+        # ========= (6) rva_file ==========
         IF u702_inv('APM','rva') THEN #MOD-D60213
            LET g_sql = "SELECT 'APM',rva01,gee05,smydesc,rva06,'',rvaconf,' ',rvauser,zx02,rvagrup,gem02 ", #CHI-A80005 add zx02,rvagrup,gem02
                           " FROM rva_file LEFT OUTER JOIN smy_file ON rva01 like rtrim(ltrim(smyslip)) || '-%' ",
@@ -890,14 +890,14 @@ FUNCTION aoou702()
                           " WHERE rva06 BETWEEN '",tm.bdate,"' AND '",tm.edate,"'",
                           " AND rvaacti = 'Y' "   #CHI-CB0044 add
            #判斷已作廢單據
-           IF tm.y='Y' THEN 
+           IF tm.y='Y' THEN
               LET g_sql=g_sql CLIPPED," AND rvaconf!='Y' " CLIPPED #TQC-660078
            ELSE
               LET g_sql=g_sql CLIPPED," AND rvaconf='N' " CLIPPED   #TQC-660078
            END IF
            PREPARE u702_p16 FROM g_sql
            IF SQLCA.sqlcode != 0 THEN
-               CALL cl_err('prepare:',SQLCA.sqlcode,1) 
+               CALL cl_err('prepare:',SQLCA.sqlcode,1)
                CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211
                EXIT PROGRAM
            END IF
@@ -907,7 +907,7 @@ FUNCTION aoou702()
                     CALL cl_err('foreach:',SQLCA.sqlcode,1) EXIT FOREACH
                  END IF
                  LET g_cnt=0
-                 SELECT COUNT(*) INTO g_cnt FROM rvu_file 
+                 SELECT COUNT(*) INTO g_cnt FROM rvu_file
                    WHERE rvu02 = sr.g02  AND rvuconf !='X'   #驗收單
                  IF sr.g06 = 'N' OR g_cnt = 0 THEN    #RA單未確認,有RA單沒有RC單
                     IF g_cnt=0 THEN
@@ -921,28 +921,28 @@ FUNCTION aoou702()
                END FOREACH
          END IF #MOD-D60213
 #FUN-C50077---begin
-        # ========= (7) pne_file ========== 
+        # ========= (7) pne_file ==========
         IF u702_inv('APM','pne') THEN #MOD-D60213
-           LET g_sql = "SELECT 'APM',pne01,smydesc,pne03,'',pne06,pneconf,pneuser,zx02,pnegrup,gem02 ", 
+           LET g_sql = "SELECT 'APM',pne01,smydesc,pne03,'',pne06,pneconf,pneuser,zx02,pnegrup,gem02 ",
                           " FROM pne_file LEFT OUTER JOIN smy_file ON pne01 like rtrim(ltrim(smyslip)) || '-%'",
-                          " LEFT OUTER JOIN zx_file ON pneuser=zx_file.zx01 ", 
-                          " LEFT OUTER JOIN gem_file ON pnegrup=gem_file.gem01 ", 
+                          " LEFT OUTER JOIN zx_file ON pneuser=zx_file.zx01 ",
+                          " LEFT OUTER JOIN gem_file ON pnegrup=gem_file.gem01 ",
                           " WHERE pne03 BETWEEN '",tm.bdate,"' AND '",tm.edate,"'",
                           " AND pneacti = 'Y' "    #CHI-CB0044 add
            #判斷已作廢單據
-           IF tm.y='Y' THEN 
-              LET g_sql=g_sql CLIPPED," AND (pne06!='Y' OR pneconf!='Y') " CLIPPED 
+           IF tm.y='Y' THEN
+              LET g_sql=g_sql CLIPPED," AND (pne06!='Y' OR pneconf!='Y') " CLIPPED
            ELSE
-              LET g_sql=g_sql CLIPPED," AND (pne06!='X' AND pneconf='N' ) " CLIPPED  
+              LET g_sql=g_sql CLIPPED," AND (pne06!='X' AND pneconf='N' ) " CLIPPED
            END IF
            PREPARE u702_p17 FROM g_sql
            IF SQLCA.sqlcode != 0 THEN
-               CALL cl_err('prepare:',SQLCA.sqlcode,1) 
-               CALL cl_used(g_prog,g_time,2) RETURNING g_time      
+               CALL cl_err('prepare:',SQLCA.sqlcode,1)
+               CALL cl_used(g_prog,g_time,2) RETURNING g_time
                EXIT PROGRAM
            END IF
            DECLARE u702_c17 CURSOR FOR u702_p17
-           
+
                FOREACH u702_c17 INTO sr.*
                  IF SQLCA.sqlcode != 0 THEN
                     CALL cl_err('foreach:',SQLCA.sqlcode,1) EXIT FOREACH
@@ -954,34 +954,34 @@ FUNCTION aoou702()
                  LET sr.g03=sr.g03 CLIPPED,l_msg CLIPPED
                  ## *** 與 Crystal Reports 串聯段 - <<<< 寫入暫存檔 >>>> CR11 *** ##
                  EXECUTE insert_prep USING sr.g01,sr.g02,sr.g10,sr.g03,sr.g04,sr.g05,
-                                           sr.g06,sr.g07,sr.g08,sr.zx02,sr.g09,sr.gem02 
+                                           sr.g06,sr.g07,sr.g08,sr.zx02,sr.g09,sr.gem02
                  #------------------------------ CR (3) ------------------------------#
-               END FOREACH             
+               END FOREACH
          END IF #MOD-D60213
 #FUN-C50077---end
-     END IF 
+     END IF
      # **    銷售系統 (系統別:AXM)    **
-     # *********************************   
-     IF  tm.c = 'Y'  THEN  
+     # *********************************
+     IF  tm.c = 'Y'  THEN
         # ========= (1) oea_file =========
-        IF u702_inv('AXM','oea') THEN #MOD-D60213 
+        IF u702_inv('AXM','oea') THEN #MOD-D60213
            LET g_sql = "SELECT 'AXM',oea01,gee05,oaydesc,oea02,'',oeaconf,' ',oeauser ,zx02,oeagrup,gem02", #CHI-A80005 add zx02,oeagrup,gem02
                           " FROM oea_file LEFT OUTER JOIN oay_file ON oea01 like rtrim(ltrim(oayslip)) || '-%' ",
                           " left join gee_file on gee01 ='AXM' and gee02 = oaytype and gee03='2' and gee04 ='axmi010'", #darcy:2023/12/04 add
                           " LEFT OUTER JOIN zx_file ON oeauser=zx_file.zx01 ", #CHI-A80005 add #MOD-B20110 modify
                           " LEFT OUTER JOIN gem_file ON oeagrup=gem_file.gem01 ", #CHI-A80005 add #MOD-B20110 modify
                           " WHERE oea02 BETWEEN '",tm.bdate,"' AND '",tm.edate,"'"
-          
+
            #判斷已作廢單據
-           IF tm.y='Y' THEN  
+           IF tm.y='Y' THEN
               LET g_sql=g_sql CLIPPED," AND oeaconf!='Y' " CLIPPED  #TQC-660078
            ELSE
               LET g_sql=g_sql CLIPPED," AND oeaconf='N' " CLIPPED   #TQC-660078
            END IF
-          
+
            PREPARE u702_p21 FROM g_sql
            IF SQLCA.sqlcode != 0 THEN
-               CALL cl_err('prepare:',SQLCA.sqlcode,1) 
+               CALL cl_err('prepare:',SQLCA.sqlcode,1)
                CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211
                EXIT PROGRAM
            END IF
@@ -996,8 +996,8 @@ FUNCTION aoou702()
                  #------------------------------ CR (3) ------------------------------#
                END FOREACH
         END IF #MOD-D60213
-        # ========= (2) oep_file ========== 
-        IF u702_inv('AXM','oep') THEN #MOD-D60213 
+        # ========= (2) oep_file ==========
+        IF u702_inv('AXM','oep') THEN #MOD-D60213
            LET g_sql = "SELECT 'AXM',oep01,gee05,oaydesc,oep04,'',oepconf,' ',oepuser,zx02,oepgrup,gem02,oep09", #CHI-A80005 add zx02,oepgrup,gem02
                           " FROM oep_file LEFT OUTER JOIN oay_file ON oep01 like rtrim(ltrim(oayslip)) || '-%' ",
                           " left join gee_file on gee01 ='AXM' and gee02 = oaytype and gee03='2' and gee04 ='axmi010'", #darcy:2023/12/04 add
@@ -1008,15 +1008,15 @@ FUNCTION aoou702()
                           " AND oepacti = 'Y' "                         #CHI-CB0044 add
            LET g_sql = g_sql  CLIPPED
            #判斷已作廢單據
-           IF tm.y='Y' THEN 
-              LET g_sql=g_sql CLIPPED," AND oepconf!='Y' " CLIPPED  #TQC-660078  
+           IF tm.y='Y' THEN
+              LET g_sql=g_sql CLIPPED," AND oepconf!='Y' " CLIPPED  #TQC-660078
            ELSE
               LET g_sql=g_sql CLIPPED," AND (oepconf='N' OR (oepconf='Y' AND oep09 IN ('0','1'))) " CLIPPED 					#MOD-970276
            END IF
-           
+
            PREPARE u702_p22 FROM g_sql
            IF SQLCA.sqlcode != 0 THEN
-               CALL cl_err('prepare:',SQLCA.sqlcode,1) 
+               CALL cl_err('prepare:',SQLCA.sqlcode,1)
                CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211
                EXIT PROGRAM
            END IF
@@ -1036,8 +1036,8 @@ FUNCTION aoou702()
                  #------------------------------ CR (3) ------------------------------#
                END FOREACH
          END IF #MOD-D60213
-        # ========= (3) oga_file ========== 
-        IF u702_inv('AXM','oga') THEN #MOD-D60213 
+        # ========= (3) oga_file ==========
+        IF u702_inv('AXM','oga') THEN #MOD-D60213
            LET g_sql = "SELECT 'AXM',oga01,gee05,oaydesc,oga02,'',ogaconf,ogapost,ogauser,zx02,ogagrup,gem02,oga09", #CHI-A80005 add zx02,ogagrup,gem02
                           " FROM oga_file LEFT OUTER JOIN oay_file ON oga01 like rtrim(ltrim(oayslip)) || '-%' ",
                           " left join gee_file on gee01 ='AXM' and gee02 = oaytype and gee03='2' and gee04 ='axmi010'", #darcy:2023/12/04 add
@@ -1061,7 +1061,7 @@ FUNCTION aoou702()
            END IF
            PREPARE u702_p23 FROM g_sql
            IF SQLCA.sqlcode != 0 THEN
-               CALL cl_err('prepare:',SQLCA.sqlcode,1) 
+               CALL cl_err('prepare:',SQLCA.sqlcode,1)
                CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211
                 EXIT PROGRAM
            END IF
@@ -1077,8 +1077,8 @@ FUNCTION aoou702()
                  #------------------------------ CR (3) ------------------------------#
                END FOREACH
          END IF #MOD-D60213
-        # ========= (4) ofa_file ========== 
-        IF u702_inv('AXM','ofa') THEN #MOD-D60213 
+        # ========= (4) ofa_file ==========
+        IF u702_inv('AXM','ofa') THEN #MOD-D60213
            LET g_sql = "SELECT 'AXM',ofa01,'','INVOICE   ',ofa02,'',ofaconf,' ',ofauser,zx02,ofagrup,gem02 ", #CHI-A80005 add zx02,ofagrup,gem02
                           " FROM ofa_file",
                           " LEFT OUTER JOIN zx_file ON ofauser=zx_file.zx01 ", #CHI-A80005 add #MOD-B20110 modify
@@ -1086,14 +1086,14 @@ FUNCTION aoou702()
                           " WHERE ",   #No.MOD-530403
                           " ofa02 BETWEEN '",tm.bdate,"' AND '",tm.edate,"'"
            #判斷已作廢單據
-           IF tm.y='Y' THEN 
+           IF tm.y='Y' THEN
               LET g_sql=g_sql CLIPPED," AND ofaconf!='Y' " CLIPPED  #TQC-660078
            ELSE
               LET g_sql=g_sql CLIPPED," AND ofaconf='N' " CLIPPED   #TQC-660078
            END IF
            PREPARE u702_p24 FROM g_sql
            IF SQLCA.sqlcode != 0 THEN
-               CALL cl_err('prepare:',SQLCA.sqlcode,1) 
+               CALL cl_err('prepare:',SQLCA.sqlcode,1)
                CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211
                EXIT PROGRAM
            END IF
@@ -1108,7 +1108,7 @@ FUNCTION aoou702()
                  #------------------------------ CR (3) ------------------------------#
                END FOREACH
         END IF #MOD-D60213
-        IF u702_inv('AXM','oha') THEN #MOD-D60213 
+        IF u702_inv('AXM','oha') THEN #MOD-D60213
            LET g_sql = "SELECT 'AXM',oha01,gee05,oaydesc,oha02,'',ohaconf,ohapost,ohauser,zx02,ohagrup,gem02 ", #CHI-A80005 add zx02,ohagrup,gem02
                           " FROM oha_file LEFT OUTER JOIN oay_file ON oha01 like rtrim(ltrim(oayslip)) || '-%'",
                           " left join gee_file on gee01 ='AXM' and gee02 = oaytype and gee03='2' and gee04 ='axmi010'", #darcy:2023/12/04 add
@@ -1116,18 +1116,18 @@ FUNCTION aoou702()
                           " LEFT OUTER JOIN gem_file ON ohagrup=gem_file.gem01 ", #CHI-A80005 add #MOD-B20110 modify
                           " WHERE oha02 BETWEEN '",tm.bdate,"' AND '",tm.edate,"'"
            LET g_sql = g_sql  CLIPPED
-           
+
            #判斷已作廢單據
-           IF tm.y='Y' THEN 
+           IF tm.y='Y' THEN
               LET g_sql=g_sql CLIPPED," AND (ohaconf!='Y' OR ohapost!='Y') " CLIPPED  #TQC-660078
            ELSE
               LET g_sql=g_sql CLIPPED," AND (ohaconf='N' OR ohapost='N') " CLIPPED    #No.MOD-640235 modify  #TQC-660078  #MOD-760147 modify                     #MOD-870110 mark
               LET g_sql=g_sql CLIPPED," AND (ohaconf='N' OR (ohaconf!='X' AND ohapost='N')) " CLIPPED    #No.MOD-640235 modify  #TQC-660078  #MOD-760147 modify  #MOD-870110
            END IF
-           
+
            PREPARE u702_p25 FROM g_sql
            IF SQLCA.sqlcode != 0 THEN
-               CALL cl_err('prepare:',SQLCA.sqlcode,1) 
+               CALL cl_err('prepare:',SQLCA.sqlcode,1)
                CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211
                EXIT PROGRAM
            END IF
@@ -1142,13 +1142,13 @@ FUNCTION aoou702()
                  #------------------------------ CR (3) ------------------------------#
                END FOREACH
          END IF #MOD-D60213
-     END IF 
+     END IF
      # *********************************
      # **    生產系統 (系統別:ASF)    **
-     # *********************************   
-     IF  tm.d = 'Y'  THEN  
-        # ========= (1) sfb_file ========== 
-        IF u702_inv('ASF','sfb') THEN #MOD-D60213 
+     # *********************************
+     IF  tm.d = 'Y'  THEN
+        # ========= (1) sfb_file ==========
+        IF u702_inv('ASF','sfb') THEN #MOD-D60213
            LET g_sql = "SELECT 'ASF',sfb01,gee05,smydesc,sfb81,'',sfb87,' ',sfbuser,zx02,sfbgrup,gem02 ", #CHI-A80005 add
                           " FROM sfb_file LEFT OUTER JOIN smy_file ON sfb01 like rtrim(ltrim(smyslip)) || '-%' ",
                           " left join gee_file on smykind = gee02 and gee03 ='2' and gee04 = 'asmi300' and gee01 = upper(smysys)", #darcy:2023/12/04 add
@@ -1158,14 +1158,14 @@ FUNCTION aoou702()
                           " AND sfb04 <> '8' ",    #No.B221  add 不含結案
                           " AND sfbacti = 'Y' "    #CHI-CB0044 add
            #判斷已作廢單據
-           IF tm.y='Y' THEN 
+           IF tm.y='Y' THEN
               LET g_sql=g_sql CLIPPED," AND sfb87!='Y' " CLIPPED  #TQC-660078
            ELSE
               LET g_sql=g_sql CLIPPED," AND sfb87='N' " CLIPPED   #TQC-660078
            END IF
            PREPARE u702_p31 FROM g_sql
            IF SQLCA.sqlcode != 0 THEN
-               CALL cl_err('prepare:',SQLCA.sqlcode,1) 
+               CALL cl_err('prepare:',SQLCA.sqlcode,1)
                CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211
                EXIT PROGRAM
            END IF
@@ -1180,7 +1180,7 @@ FUNCTION aoou702()
                  #------------------------------ CR (3) ------------------------------#
                END FOREACH
          END IF #MOD-D60213
-        # ========= (2) sfp_file ========== 
+        # ========= (2) sfp_file ==========
         IF u702_inv('ASF','sfp') THEN #MOD-D60213
             LET g_sql = "SELECT 'ASF',sfp01,gee05,smydesc,sfp03,'',sfpconf,sfp04,sfpuser,zx02,sfpgrup,gem02",   #No:MOD-4C0007 #CHI-770003 #CHI-A80005 add zx02,sfpgrup,gem02
                           " FROM sfp_file LEFT OUTER JOIN smy_file ON sfp01 like rtrim(ltrim(smyslip)) || '-%' ",
@@ -1189,14 +1189,14 @@ FUNCTION aoou702()
                           " LEFT OUTER JOIN gem_file ON sfpgrup=gem_file.gem01 ", #CHI-A80005 add #MOD-B20110 modify
                           " WHERE sfp03 BETWEEN '",tm.bdate,"' AND '",tm.edate,"'"
            #判斷已作廢單據
-           IF tm.y='Y' THEN 
+           IF tm.y='Y' THEN
               LET g_sql=g_sql CLIPPED," AND (sfpconf !='Y' OR sfp04 !='Y') " CLIPPED
            ELSE
-              LET g_sql=g_sql CLIPPED," AND ( sfpconf !='X' AND sfp04 = 'N')" CLIPPED  
+              LET g_sql=g_sql CLIPPED," AND ( sfpconf !='X' AND sfp04 = 'N')" CLIPPED
            END IF
            PREPARE u702_p32 FROM g_sql
            IF SQLCA.sqlcode != 0 THEN
-               CALL cl_err('prepare:',SQLCA.sqlcode,1) 
+               CALL cl_err('prepare:',SQLCA.sqlcode,1)
                CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211
                EXIT PROGRAM
            END IF
@@ -1211,7 +1211,7 @@ FUNCTION aoou702()
                                            sr.g06,sr.g07,sr.g08,sr.zx02,sr.g09,sr.gem02  #CHI-A80005 add sr.zx02,sr.g09,sr.gem02
                END FOREACH
          END IF #MOD-D60213
-        # ========= (3) sfu_file ========== 
+        # ========= (3) sfu_file ==========
         IF u702_inv('ASF','sfu') THEN #MOD-D60213
            LET g_sql = "SELECT 'ASF',sfu01,gee05,smydesc,sfu02,'',sfuconf,sfupost,sfuuser,zx02,sfugrup,gem02 ",  #MOD-770002 modify add sfuconf #CHI-A80005 add zx02,sfugrup,gem02
                           " FROM sfu_file LEFT OUTER JOIN smy_file ON sfu01 like rtrim(ltrim(smyslip)) || '-%' ",
@@ -1220,17 +1220,17 @@ FUNCTION aoou702()
                           " LEFT OUTER JOIN gem_file ON sfugrup=gem_file.gem01 ", #CHI-A80005 add #MOD-B20110 modify
                           " WHERE sfu02 BETWEEN '",tm.bdate,"' AND '",tm.edate,"'"
            #判斷已作廢單據
-           IF tm.y='Y' THEN 
+           IF tm.y='Y' THEN
               LET g_sql=g_sql CLIPPED," AND (sfuconf !='Y' OR sfupost !='Y') " CLIPPED #TQC-660078s  #MOD-770002 add sfuconf
            ELSE
               LET g_sql=g_sql CLIPPED," AND ( sfuconf !='X' AND sfupost = 'N')" CLIPPED  #MOD-770137 modify
            END IF
            PREPARE u702_p33 FROM g_sql
            IF SQLCA.sqlcode != 0 THEN
-               CALL cl_err('prepare:',SQLCA.sqlcode,1) 
-              CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211 
+               CALL cl_err('prepare:',SQLCA.sqlcode,1)
+              CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211
               EXIT PROGRAM
-           
+
            END IF
            DECLARE u702_c33 CURSOR FOR u702_p33
                FOREACH u702_c33 INTO sr.*
@@ -1245,7 +1245,7 @@ FUNCTION aoou702()
                END FOREACH
          END IF #MOD-D60213
         # ========= (4) sfk_file ==========
-        IF u702_inv('ASF','sfk') THEN #MOD-D60213 
+        IF u702_inv('ASF','sfk') THEN #MOD-D60213
            LET g_sql = "SELECT 'ASF',sfk01,gee05,smydesc,sfk02,'',sfkconf,sfkpost,sfkuser,zx02,sfkgrup,gem02 ",  #MOD-770002 modify add sfkconf #CHI-A80005 add zx02,sfkgrup,gem02
                           " FROM sfk_file LEFT OUTER JOIN smy_file ON sfk01 like rtrim(ltrim(smyslip)) || '-%' ",
                           " left join gee_file on smykind = gee02 and gee03 ='2' and gee04 = 'asmi300' and gee01 = upper(smysys)", #darcy:2023/12/04 add
@@ -1253,15 +1253,15 @@ FUNCTION aoou702()
                           " LEFT OUTER JOIN gem_file ON sfkgrup=gem_file.gem01 ", #CHI-A80005 add #MOD-B20110 modify
                           " WHERE sfk02 BETWEEN '",tm.bdate,"' AND '",tm.edate,"'"
            #判斷已作廢單據
-           IF tm.y='Y' THEN 
+           IF tm.y='Y' THEN
               LET g_sql=g_sql CLIPPED," AND ( sfkpost!='Y' OR sfkconf !='Y' ) " CLIPPED  #TQC-660078  #MOD-770002 modify
            ELSE
               LET g_sql=g_sql CLIPPED," AND ( sfkconf !='X' AND sfkpost ='N' ) " CLIPPED  #MOD-770137 modify
            END IF
-           
+
            PREPARE u702_p34 FROM g_sql
            IF SQLCA.sqlcode != 0 THEN
-               CALL cl_err('prepare:',SQLCA.sqlcode,1) 
+               CALL cl_err('prepare:',SQLCA.sqlcode,1)
                CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211
                EXIT PROGRAM
            END IF
@@ -1280,7 +1280,7 @@ FUNCTION aoou702()
 #FUN-A70095 ----------------------------Begin----------------------------
         # ========= (8) shb_file =========
         IF u702_inv('ASF','shb') THEN #MOD-D60213
-           LET g_sql = "SELECT 'ASF',shb01,smydesc,shb02,shbinp,shbconf,'',shbuser,zx02,shbgrup,gem02 ", 
+           LET g_sql = "SELECT 'ASF',shb01,smydesc,shb02,shbinp,shbconf,'',shbuser,zx02,shbgrup,gem02 ",
                           " FROM shb_file LEFT OUTER JOIN smy_file ON shb01 like rtrim(ltrim(smyslip)) || '-%' ",
                           " LEFT OUTER JOIN zx_file ON shbuser=zx_file.zx01 ",
                           " LEFT OUTER JOIN gem_file ON shbgrup=gem_file.gem01 ",
@@ -1291,13 +1291,13 @@ FUNCTION aoou702()
            #  LET g_sql=g_sql CLIPPED," AND shbconf = 'X' " CLIPPED     #TQC-B90218
               LET g_sql=g_sql CLIPPED," AND shbconf! = 'Y' " CLIPPED    #TQC-B90218
            ELSE
-           #  LET g_sql=g_sql CLIPPED," AND ( shbconf!='Y' AND shbconf ='N' ) "   #TQC-B90218 
-              LET g_sql=g_sql CLIPPED," AND shbconf ='N' " CLIPPED                #TQC-B90218 
+           #  LET g_sql=g_sql CLIPPED," AND ( shbconf!='Y' AND shbconf ='N' ) "   #TQC-B90218
+              LET g_sql=g_sql CLIPPED," AND shbconf ='N' " CLIPPED                #TQC-B90218
            END IF
            PREPARE u702_p38 FROM g_sql
            IF SQLCA.sqlcode != 0 THEN
                CALL cl_err('prepare:',SQLCA.sqlcode,1)
-               CALL cl_used(g_prog,g_time,2) RETURNING g_time 
+               CALL cl_used(g_prog,g_time,2) RETURNING g_time
                EXIT PROGRAM
            END IF
            DECLARE u702_c38 CURSOR FOR u702_p38
@@ -1310,10 +1310,10 @@ FUNCTION aoou702()
                  EXECUTE insert_prep USING sr.g01,sr.g02,sr.g10,sr.g03,sr.g04,sr.g05,
                                            sr.g06,sr.g07,sr.g08,sr.zx02,sr.g09,sr.gem02
                  #------------------------------ CR (3) ------------------------------#
-              END FOREACH 
-        END IF #MOD-D60213 
+              END FOREACH
+        END IF #MOD-D60213
 #FUN-A70095 ----------------------------End------------------------------
-        # ========= (5) ksa_file ========== 
+        # ========= (5) ksa_file ==========
         IF u702_inv('ASF','ksa') THEN #MOD-D60213
            LET g_sql = "SELECT 'ASF',ksa01,gee05,smydesc,ksa02,'',' ',ksapost,ksauser,zx02,ksagrup,gem02 ", #CHI-A80005 add zx02,ksagrup,gem02
                           " FROM ksa_file LEFT OUTER JOIN smy_file ON ksa01 like rtrim(ltrim(smyslip)) || '-%' ",
@@ -1322,14 +1322,14 @@ FUNCTION aoou702()
                           " LEFT OUTER JOIN gem_file ON ksagrup=gem_file.gem01 ", #CHI-A80005 add #MOD-B20110 modify
                           " WHERE ksa02 BETWEEN '",tm.bdate,"' AND '",tm.edate,"'"
            #判斷已作廢單據
-           IF tm.y='Y' THEN 
+           IF tm.y='Y' THEN
               LET g_sql=g_sql CLIPPED," AND ksapost!='Y' " CLIPPED #TQC-660078
            ELSE
               LET g_sql=g_sql CLIPPED," AND ksapost='N' " CLIPPED  #TQC-660078
            END IF
            PREPARE u702_p35 FROM g_sql
            IF SQLCA.sqlcode != 0 THEN
-               CALL cl_err('prepare:',SQLCA.sqlcode,1) 
+               CALL cl_err('prepare:',SQLCA.sqlcode,1)
                CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211
                EXIT PROGRAM
            END IF
@@ -1344,7 +1344,7 @@ FUNCTION aoou702()
                  #------------------------------ CR (3) ------------------------------#
                END FOREACH
          END IF #MOD-D60213
-        # ========= (6) ksc_file ========== 
+        # ========= (6) ksc_file ==========
         IF u702_inv('ASF','ksc') THEN #MOD-D60213
            LET g_sql = "SELECT 'ASF',ksc01,gee05,smydesc,ksc02,'',kscconf,kscpost,kscuser,zx02,kscgrup,gem02 ",  #MOD-770002 modify kscconf #CHI-A80005 add zx02,kscgrup,gem02
                           " FROM ksc_file LEFT OUTER JOIN smy_file ON ksc01 like rtrim(ltrim(smyslip)) || '-%' ",
@@ -1353,15 +1353,15 @@ FUNCTION aoou702()
                           " LEFT OUTER JOIN gem_file ON kscgrup=gem_file.gem01 ", #CHI-A80005 add #MOD-B20110 modify
                           " WHERE ksc02 BETWEEN '",tm.bdate,"' AND '",tm.edate,"'"
            #判斷已作廢單據
-           IF tm.y='Y' THEN 
+           IF tm.y='Y' THEN
               LET g_sql=g_sql CLIPPED," AND ( kscpost!='Y' OR kscconf !='Y' ) " CLIPPED #TQC-660078 #MOD-770002 modify
            ELSE
-              LET g_sql=g_sql CLIPPED," AND ( kscconf !='X' AND kscpost = 'N' ) " CLIPPED  #MOD-770137 modify   
+              LET g_sql=g_sql CLIPPED," AND ( kscconf !='X' AND kscpost = 'N' ) " CLIPPED  #MOD-770137 modify
            END IF
-           
+
            PREPARE u702_p36 FROM g_sql
            IF SQLCA.sqlcode != 0 THEN
-               CALL cl_err('prepare:',SQLCA.sqlcode,1) 
+               CALL cl_err('prepare:',SQLCA.sqlcode,1)
                CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211
                EXIT PROGRAM
            END IF
@@ -1378,7 +1378,7 @@ FUNCTION aoou702()
                END FOREACH
          END IF #MOD-D60213
         #No.FUN-970092 ---- start ----
-        # ========= (7) srf_file ========= 
+        # ========= (7) srf_file =========
         IF u702_inv('ASF','srf') THEN #MOD-D60213
            LET g_sql = "SELECT 'ASF',srf01,gee05,smydesc,srf02,'',srfconf,' ',srfuser,zx02,srfgrup,gem02 ", #CHI-A80005 add zx02,srfgrup,gem02
                          " FROM srf_file LEFT OUTER JOIN smy_file ON srf01 like rtrim(ltrim(smyslip)) || '-%' ",
@@ -1392,17 +1392,17 @@ FUNCTION aoou702()
            ELSE
              #LET g_sql = g_sql CLIPPED," AND srfconf != 'X' " CLIPPED
               LET g_sql = g_sql CLIPPED," AND srfconf = 'N' " CLIPPED     #MOD-BA0063 mod by suncx
-           END IF 
+           END IF
            PREPARE u702_p37 FROM g_sql
            IF SQLCA.sqlcode != 0 THEN
-              CALL cl_err('prepare:',SQLCA.sqlcode,1) 
+              CALL cl_err('prepare:',SQLCA.sqlcode,1)
               CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211
               EXIT PROGRAM
            END IF
            DECLARE u702_c37 CURSOR FOR u702_p37
               FOREACH u702_c37 INTO sr.*
                  IF SQLCA.sqlcode != 0 THEN
-                    CALL cl_err('foreach:',SQLCA.sqlcode,1) 
+                    CALL cl_err('foreach:',SQLCA.sqlcode,1)
                     CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211
                     EXIT PROGRAM
                  END IF
@@ -1410,16 +1410,16 @@ FUNCTION aoou702()
               EXECUTE insert_prep USING sr.g01,sr.g02,sr.g10,sr.g03,sr.g04,sr.g05,
                                         sr.g06,sr.g07,sr.g08,sr.zx02,sr.g09,sr.gem02  #CHI-A80005 add sr.zx02,sr.g09,sr.gem02
               #------------------------------ CR(3) -------------------------------#
-              END FOREACH 
+              END FOREACH
         #No.FUN-970092 ---- end ----
         END IF #MOD-D60213
-     END IF   
+     END IF
      # *********************************
      # **    應付系統 (系統別:AAP)    **
-     # *********************************   
-     IF  tm.f = 'Y'  THEN  
-        # ========= (1) apa_file ========== 
-        LET g_sql = "SELECT 'AAP',apa01,gee05,apydesc,apa02,'',apa41,apa42,apauser,zx02,apagrup,gem02 ",   #TQC-720033 #CHI-A80005 add zx02,apagrup,gem02
+     # *********************************
+     IF  tm.f = 'Y'  THEN
+        # ========= (1) apa_file ==========
+        LET g_sql = "SELECT 'AAP',apa01,gee05||'-'||apa13,apydesc,apa02,'',apa41,apa42,apauser,zx02,apagrup,gem02 ",   #TQC-720033 #CHI-A80005 add zx02,apagrup,gem02
                        " FROM apa_file LEFT OUTER JOIN apy_file ON apa01 like rtrim(ltrim(apyslip)) || '-%' ",
                        " left join gee_file on gee01 ='AAP' and gee02 = apykind and gee03='2' and gee04 ='aapi103' ", #darcy:2023/12/04 add
                        " LEFT OUTER JOIN zx_file ON apauser=zx_file.zx01 ", #CHI-A80005 add #MOD-B20110 modify
@@ -1427,14 +1427,14 @@ FUNCTION aoou702()
                       #" AND apa41 = 'N'",            #MOD-B20139 mark
                        " WHERE apa02 BETWEEN '",tm.bdate,"' AND '",tm.edate,"'",
                        " AND apa41 = 'N'",             #MOD-B20139 add
-                       " AND apaacti = 'Y' "           #CHI-CB0044 add  
+                       " AND apaacti = 'Y' "           #CHI-CB0044 add
         #判斷已作廢單據 No.B221
-        IF tm.y='N' THEN 
+        IF tm.y='N' THEN
            LET g_sql=g_sql CLIPPED," AND apa42='N' " CLIPPED #modi 01/08/09  #TQC-660078
         END IF
         PREPARE u702_p41 FROM g_sql
         IF SQLCA.sqlcode != 0 THEN
-            CALL cl_err('prepare:',SQLCA.sqlcode,1) 
+            CALL cl_err('prepare:',SQLCA.sqlcode,1)
             CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211
             EXIT PROGRAM
         END IF
@@ -1449,8 +1449,8 @@ FUNCTION aoou702()
                                         sr.g06,sr.g07,sr.g08,sr.zx02,sr.g09,sr.gem02  #CHI-A80005 add sr.zx02,sr.g09,sr.gem02
               #------------------------------ CR (3) ------------------------------#
             END FOREACH
-        # ========= (2) apf_file ========== 
-        LET g_sql = "SELECT 'AAP',apf01,gee05,apydesc,apf02,apfinpd,apf41,' ',apfuser,zx02,apfgrup,gem02 ", #CHI-A80005 add zx02,apfgrup,gem02
+        # ========= (2) apf_file ==========
+        LET g_sql = "SELECT 'AAP',apf01,gee05||'-'||apf06,apydesc,apf02,apfinpd,apf41,' ',apfuser,zx02,apfgrup,gem02 ", #CHI-A80005 add zx02,apfgrup,gem02
                        " FROM apf_file LEFT OUTER JOIN apy_file ON apf01 like rtrim(ltrim(apyslip)) || '-%' ",
                        " left join gee_file on gee01 ='AAP' and gee02 = apykind and gee03='2' and gee04 ='aapi103' ", #darcy:2023/12/04 add
                        " LEFT OUTER JOIN zx_file ON apfuser=zx_file.zx01 ", #CHI-A80005 add #MOD-B20110 modify
@@ -1458,15 +1458,15 @@ FUNCTION aoou702()
                        " WHERE apf02 BETWEEN '",tm.bdate,"' AND '",tm.edate,"'",
                        " AND apfacti = 'Y' "     #CHI-CB0044 add
         #判斷已作廢單據
-        IF tm.y='Y' THEN 
+        IF tm.y='Y' THEN
            LET g_sql=g_sql CLIPPED," AND apf41!='Y' " CLIPPED   #TQC-660078
         ELSE
            LET g_sql=g_sql CLIPPED," AND apf41='N' " CLIPPED    #TQC-660078
         END IF
         PREPARE u702_p42 FROM g_sql
         IF SQLCA.sqlcode != 0 THEN
-            CALL cl_err('prepare:',SQLCA.sqlcode,1) 
-            CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211 
+            CALL cl_err('prepare:',SQLCA.sqlcode,1)
+            CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211
             EXIT PROGRAM
         END IF
         DECLARE u702_c42 CURSOR FOR u702_p42
@@ -1479,23 +1479,23 @@ FUNCTION aoou702()
                                         sr.g06,sr.g07,sr.g08,sr.zx02,sr.g09,sr.gem02  #CHI-A80005 add sr.zx02,sr.g09,sr.gem02
               #------------------------------ CR (3) ------------------------------#
             END FOREACH
-        # ========= (3) ala_file ========== 
+        # ========= (3) ala_file ==========
         LET g_sql = "SELECT 'AAP',ala01,'','',ala08,alainpd,alafirm,'',alauser,zx02,alagrup,gem02 ", #CHI-A80005 add zx02,alagrup,gem02
                        " FROM ala_file",
                        " LEFT OUTER JOIN zx_file ON alauser=zx_file.zx01 ", #CHI-A80005 add #MOD-B20110 modify
                        " LEFT OUTER JOIN gem_file ON alagrup=gem_file.gem01 ", #CHI-A80005 add #MOD-B20110 modify
                        " WHERE ala08 BETWEEN '",tm.bdate,"' AND '",tm.edate,"'",
-                       " AND (alaclos IS NULL OR alaclos<> 'Y') ",   #No.B221 
+                       " AND (alaclos IS NULL OR alaclos<> 'Y') ",   #No.B221
                        " AND alaacti = 'Y' "   #CHI-CB0044 add
         #判斷已作廢單據 No.B221
-        IF tm.y='Y' THEN 
+        IF tm.y='Y' THEN
            LET g_sql=g_sql CLIPPED," AND alafirm!='Y' " CLIPPED  #TQC-660078
         ELSE
            LET g_sql=g_sql CLIPPED," AND alafirm='N' " CLIPPED   #TQC-660078
         END IF
         PREPARE u702_p43 FROM g_sql
         IF SQLCA.sqlcode != 0 THEN
-            CALL cl_err('prepare:',SQLCA.sqlcode,1) 
+            CALL cl_err('prepare:',SQLCA.sqlcode,1)
             CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211
             EXIT PROGRAM
         END IF
@@ -1511,23 +1511,23 @@ FUNCTION aoou702()
                                         sr.g06,sr.g07,sr.g08,sr.zx02,sr.g09,sr.gem02  #CHI-A80005 add sr.zx02,sr.g09,sr.gem02
               #------------------------------ CR (3) ------------------------------#
             END FOREACH
-        # ========= (3-1) ala_file ========== 
+        # ========= (3-1) ala_file ==========
         LET g_sql = "SELECT 'AAP',ala01,'','',ala08,alainpd,ala78,alafirm,alauser,zx02,alagrup,gem02 ", #TQC-720033 #CHI-A80005 add zx02,alagrup,gem02
                        " FROM ala_file",
                        " LEFT OUTER JOIN zx_file ON alauser=zx_file.zx01 ", #CHI-A80005 add #MOD-B20110 modify
                        " LEFT OUTER JOIN gem_file ON alagrup=gem_file.gem01 ", #CHI-A80005 add #MOD-B20110 modify
-                       " WHERE ala78 = 'N'", 
+                       " WHERE ala78 = 'N'",
                        " AND ala08 BETWEEN '",tm.bdate,"' AND '",tm.edate,"'",
-                       " AND (alaclos IS NULL OR alaclos<> 'Y') ",    #No.B221 
+                       " AND (alaclos IS NULL OR alaclos<> 'Y') ",    #No.B221
                        " AND ala34+ala56+ala53+ala54 > 0 ",           #MOD-B40168
                        " AND alaacti ='Y' "                           #CHI-CB0044 add
-        #判斷已作廢單據 
-        IF tm.y='N' THEN 
-           LET g_sql=g_sql CLIPPED," AND alafirm!='X' " CLIPPED  
+        #判斷已作廢單據
+        IF tm.y='N' THEN
+           LET g_sql=g_sql CLIPPED," AND alafirm!='X' " CLIPPED
         END IF
         PREPARE u702_p431 FROM g_sql
         IF SQLCA.sqlcode != 0 THEN
-            CALL cl_err('prepare:',SQLCA.sqlcode,1) 
+            CALL cl_err('prepare:',SQLCA.sqlcode,1)
             CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211
             EXIT PROGRAM
         END IF
@@ -1544,7 +1544,7 @@ FUNCTION aoou702()
                                         sr.g06,sr.g07,sr.g08,sr.zx02,sr.g09,sr.gem02  #CHI-A80005 add sr.zx02,sr.g09,sr.gem02
               #------------------------------ CR (3) ------------------------------#
             END FOREACH
-        # ========= (4) alc_file ========== 
+        # ========= (4) alc_file ==========
         LET g_sql = "SELECT 'AAP',alc01,'','',alc08,alcinpd,alcfirm,' ',alcuser,zx02,alcgrup,gem02 ", #CHI-A80005 addzx02,alcgrup,gem02
                        " FROM alc_file",
                        " LEFT OUTER JOIN zx_file ON alcuser=zx_file.zx01 ", #CHI-A80005 add #MOD-B20110 modify
@@ -1552,14 +1552,14 @@ FUNCTION aoou702()
                        " WHERE alc08 BETWEEN '",tm.bdate,"' AND '",tm.edate,"'",
                        " AND alcacti = 'Y' "        #CHI-CB0044 add
         #判斷已作廢單據 No.B221
-        IF tm.y='Y' THEN 
+        IF tm.y='Y' THEN
            LET g_sql=g_sql CLIPPED," AND alcfirm!='Y' " CLIPPED  #TQC-660078
         ELSE
            LET g_sql=g_sql CLIPPED," AND alcfirm='N' " CLIPPED   #TQC-660078
         END IF
         PREPARE u702_p44 FROM g_sql
         IF SQLCA.sqlcode != 0 THEN
-            CALL cl_err('prepare:',SQLCA.sqlcode,1) 
+            CALL cl_err('prepare:',SQLCA.sqlcode,1)
             CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211
             EXIT PROGRAM
         END IF
@@ -1575,19 +1575,19 @@ FUNCTION aoou702()
                                         sr.g06,sr.g07,sr.g08,sr.zx02,sr.g09,sr.gem02  #CHI-A80005 add sr.zx02,sr.g09,sr.gem02
               #------------------------------ CR (3) ------------------------------#
             END FOREACH
-        # ========= (4-1) alc_file ========== 
+        # ========= (4-1) alc_file ==========
         LET g_sql = "SELECT 'AAP',alc01,'','',alc08,alcinpd,alc78,' ',alcuser ,zx02,alcgrup,gem02 ", #CHI-A80005 add zx02,alcgrup,gem02
                        " FROM alc_file",
                        " LEFT OUTER JOIN zx_file ON alcuser=zx_file.zx01 ", #CHI-A80005 add #MOD-B20110 modify
                        " LEFT OUTER JOIN gem_file ON alcgrup=gem_file.gem01 ", #CHI-A80005 add #MOD-B20110 modify
-                       " WHERE alc78 = 'N'", 
+                       " WHERE alc78 = 'N'",
                        " AND alc08 BETWEEN '",tm.bdate,"' AND '",tm.edate,"'",
                        " AND alc34+alc56+alc53+alc54 > 0 ",           #MOD-B40168
                        " AND alcacti = 'Y' "   #CHI-CB0044 add
         LET g_sql = g_sql  CLIPPED
         PREPARE u702_p441 FROM g_sql
         IF SQLCA.sqlcode != 0 THEN
-            CALL cl_err('prepare:',SQLCA.sqlcode,1) 
+            CALL cl_err('prepare:',SQLCA.sqlcode,1)
             CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211
             EXIT PROGRAM
         END IF
@@ -1603,7 +1603,7 @@ FUNCTION aoou702()
                                         sr.g06,sr.g07,sr.g08,sr.zx02,sr.g09,sr.gem02  #CHI-A80005 add sr.zx02,sr.g09,sr.gem02
               #------------------------------ CR (3) ------------------------------#
             END FOREACH
-        # ========= (5) alk_file ========== 
+        # ========= (5) alk_file ==========
         LET g_sql = "SELECT 'AAP',alk01,'','',alk02,alkinpd,alkfirm,' ',alkuser,zx02,alkgrup,gem02 ", #CHI-A80005 add zx02,alkgrup,gem02
                        " FROM alk_file",
                        " LEFT OUTER JOIN zx_file ON alkuser=zx_file.zx01 ", #CHI-A80005 add #MOD-B20110 modify
@@ -1611,14 +1611,14 @@ FUNCTION aoou702()
                        " WHERE alk02 BETWEEN '",tm.bdate,"' AND '",tm.edate,"'",
                        " AND alkacti = 'Y' "    #CHI-CB0044 add
         #判斷已作廢單據 No.B221
-        IF tm.y='Y' THEN 
+        IF tm.y='Y' THEN
            LET g_sql=g_sql CLIPPED," AND alkfirm!='Y' " CLIPPED  #TQC-660078
         ELSE
            LET g_sql=g_sql CLIPPED," AND alkfirm='N' " CLIPPED   #TQC-660078
         END IF
         PREPARE u702_p45 FROM g_sql
         IF SQLCA.sqlcode != 0 THEN
-            CALL cl_err('prepare:',SQLCA.sqlcode,1) 
+            CALL cl_err('prepare:',SQLCA.sqlcode,1)
             CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211
             EXIT PROGRAM
         END IF
@@ -1634,7 +1634,7 @@ FUNCTION aoou702()
                                         sr.g06,sr.g07,sr.g08,sr.zx02,sr.g09,sr.gem02  #CHI-A80005 add sr.zx02,sr.g09,sr.gem02
               #------------------------------ CR (3) ------------------------------#
             END FOREACH
-        # ========= (6) alh_file ========== 
+        # ========= (6) alh_file ==========
         LET g_sql = "SELECT 'AAP',alh01,'','',alh021,alhinpd,alhfirm,' ',alhuser ,zx02,alhgrup,gem02", #CHI-A80005 add zx02,alhgrup,gem02
                        " FROM alh_file",
                        " LEFT OUTER JOIN zx_file ON alhuser=zx_file.zx01 ", #CHI-A80005 add #MOD-B20110 modify
@@ -1642,14 +1642,14 @@ FUNCTION aoou702()
                        " WHERE alh021 BETWEEN '",tm.bdate,"' AND '",tm.edate,"'",
                        " AND  alhacti = 'Y' "    #CHI-CB0044 add
         #判斷已作廢單據 No.B221
-        IF tm.y='Y' THEN 
+        IF tm.y='Y' THEN
            LET g_sql=g_sql CLIPPED," AND alhfirm!='Y' " CLIPPED   #TQC-660078
         ELSE
            LET g_sql=g_sql CLIPPED," AND alhfirm='N' " CLIPPED    #TQC-660078
         END IF
         PREPARE u702_p46 FROM g_sql
         IF SQLCA.sqlcode != 0 THEN
-            CALL cl_err('prepare:',SQLCA.sqlcode,1) 
+            CALL cl_err('prepare:',SQLCA.sqlcode,1)
             CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211
             EXIT PROGRAM
         END IF
@@ -1665,7 +1665,7 @@ FUNCTION aoou702()
                                         sr.g06,sr.g07,sr.g08,sr.zx02,sr.g09,sr.gem02  #CHI-A80005 add sr.zx02,sr.g09,sr.gem02
               #------------------------------ CR (3) ------------------------------#
             END FOREACH
-        # ========= (7) als_file ========== 
+        # ========= (7) als_file ==========
         LET g_sql = "SELECT 'AAP',als01,'','',als02,alsinpd,alsfirm,' ',alsuser,zx02,alsgrup,gem02 ", #CHI-A80005 add zx02,alsgrup,gem02
                        " FROM als_file",
                        " LEFT OUTER JOIN zx_file ON alsuser=zx_file.zx01 ", #CHI-A80005 add #MOD-B20110 modify
@@ -1673,14 +1673,14 @@ FUNCTION aoou702()
                        " WHERE als02 BETWEEN '",tm.bdate,"' AND '",tm.edate,"'",
                        " AND alsacti = 'Y' "    #CHI-CB0044 add
         #判斷已作廢單據 No.B221
-        IF tm.y='Y' THEN 
+        IF tm.y='Y' THEN
            LET g_sql=g_sql CLIPPED," AND alsfirm!='Y' " CLIPPED  #TQC-660078
         ELSE
            LET g_sql=g_sql CLIPPED," AND alsfirm='N' " CLIPPED   #TQC-660078
         END IF
         PREPARE u702_p47 FROM g_sql
         IF SQLCA.sqlcode != 0 THEN
-            CALL cl_err('prepare:',SQLCA.sqlcode,1) 
+            CALL cl_err('prepare:',SQLCA.sqlcode,1)
             CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211
             EXIT PROGRAM
         END IF
@@ -1728,27 +1728,27 @@ FUNCTION aoou702()
               #------------------------------ CR (3) ------------------------------#
             END FOREACH
         #--FUN-C50039 end---
-     END IF 
+     END IF
      # *********************************
      # **    票據系統 (系統別:ANM)   **
-     # *********************************   
-     IF  tm.g = 'Y'  THEN  
-        # ========= (1) nmd_file ========== 
+     # *********************************
+     IF  tm.g = 'Y'  THEN
+        # ========= (1) nmd_file ==========
          LET g_sql = "SELECT 'ANM',nmd01,gee05,nmydesc,nmd07,'',nmd30,' ',nmduser ,zx02,nmdgrup,gem02",   #No:MOD-4C0007 #CHI-A80005 add zx02,nmdgrup,gem02
                        " FROM nmd_file LEFT OUTER JOIN nmy_file ON nmd01 like rtrim(ltrim(nmyslip)) || '-%' ",
                        " left join gee_file on gee01 ='ANM' and gee02 = nmykind and gee03='2' and gee04 ='anmi100'", #darcy:2023/12/04 add
                        " LEFT OUTER JOIN zx_file ON nmduser=zx_file.zx01 ", #CHI-A80005 add #MOD-B20110 modify
                        " LEFT OUTER JOIN gem_file ON nmdgrup=gem_file.gem01 ", #CHI-A80005 add #MOD-B20110 modify
-                       " WHERE nmd07 BETWEEN '",tm.bdate,"' AND '",tm.edate,"'" 
+                       " WHERE nmd07 BETWEEN '",tm.bdate,"' AND '",tm.edate,"'"
         #判斷已作廢單據 01/08/15
-        IF tm.y='Y' THEN 
+        IF tm.y='Y' THEN
            LET g_sql=g_sql CLIPPED," AND nmd30!='Y' " CLIPPED   #TQC-660078
         ELSE
            LET g_sql=g_sql CLIPPED," AND nmd30='N' " CLIPPED    #TQC-660078
         END IF
         PREPARE u702_p51 FROM g_sql
         IF SQLCA.sqlcode != 0 THEN
-            CALL cl_err('prepare:',SQLCA.sqlcode,1) 
+            CALL cl_err('prepare:',SQLCA.sqlcode,1)
             CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211
             EXIT PROGRAM
         END IF
@@ -1762,7 +1762,7 @@ FUNCTION aoou702()
                                         sr.g06,sr.g07,sr.g08,sr.zx02,sr.g09,sr.gem02  #CHI-A80005 add sr.zx02,sr.g09,sr.gem02
               #------------------------------ CR (3) ------------------------------#
             END FOREACH
-        # ========= (2) npl_file ========== 
+        # ========= (2) npl_file ==========
        #LET g_sql = "SELECT 'ANM',npl01,nmydesc,npl02,'','N',' ',npluser ",
          LET g_sql = "SELECT 'ANM',npl01,gee05,nmydesc,npl02,'',nplconf,' ',npluser,zx02,nplgrup,gem02 ",   #No:MOD-4C0007 #CHI-A80005 add zx02,nplgrup,gem02
                        " FROM npl_file LEFT OUTER JOIN nmy_file ON npl01 like rtrim(ltrim(nmyslip)) || '-%' ",
@@ -1771,7 +1771,7 @@ FUNCTION aoou702()
                        " LEFT OUTER JOIN gem_file ON nplgrup=gem_file.gem01 ", #CHI-A80005 add #MOD-B20110 modify
                        " WHERE npl02 BETWEEN '",tm.bdate,"' AND '",tm.edate,"'"
         #判斷已作廢單據 01/08/16
-        IF tm.y='Y' THEN 
+        IF tm.y='Y' THEN
            LET g_sql=g_sql CLIPPED," AND nplconf!='Y' " CLIPPED  #TQC-660078
         ELSE
            LET g_sql=g_sql CLIPPED," AND nplconf='N' " CLIPPED   #TQC-660078
@@ -1779,7 +1779,7 @@ FUNCTION aoou702()
         LET g_sql = g_sql  CLIPPED
         PREPARE u702_p52 FROM g_sql
         IF SQLCA.sqlcode != 0 THEN
-            CALL cl_err('prepare:',SQLCA.sqlcode,1) 
+            CALL cl_err('prepare:',SQLCA.sqlcode,1)
             CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211
             EXIT PROGRAM
         END IF
@@ -1793,7 +1793,7 @@ FUNCTION aoou702()
                                         sr.g06,sr.g07,sr.g08,sr.zx02,sr.g09,sr.gem02  #CHI-A80005 add sr.zx02,sr.g09,sr.gem02
               #------------------------------ CR (3) ------------------------------#
             END FOREACH
-        # ========= (3) nmh_file ========== 
+        # ========= (3) nmh_file ==========
          LET g_sql = "SELECT 'ANM',nmh01,gee05,nmydesc,nmh04,'',nmh38,' ',nmhuser,zx02,nmhgrup,gem02 ",   #No:MOD-4C0007 #CHI-A80005 addzx02,nmhgrup,gem02
                        " FROM nmh_file LEFT OUTER JOIN nmy_file ON nmh01 like rtrim(ltrim(nmyslip)) || '-%' ",
                        " left join gee_file on gee01 ='ANM' and gee02 = nmykind and gee03='2' and gee04 ='anmi100'", #darcy:2023/12/04 add
@@ -1802,14 +1802,14 @@ FUNCTION aoou702()
                        " WHERE nmh04 BETWEEN '",tm.bdate,"' AND '",tm.edate,"'"
         LET g_sql = g_sql  CLIPPED
         #判斷已作廢單據 01/08/17
-        IF tm.y='Y' THEN 
+        IF tm.y='Y' THEN
            LET g_sql=g_sql CLIPPED," AND nmh38!='Y' " CLIPPED  #TQC-660078
         ELSE
            LET g_sql=g_sql CLIPPED," AND nmh38='N' " CLIPPED   #TQC-660078
         END IF
         PREPARE u702_p53 FROM g_sql
         IF SQLCA.sqlcode != 0 THEN
-            CALL cl_err('prepare:',SQLCA.sqlcode,1) 
+            CALL cl_err('prepare:',SQLCA.sqlcode,1)
             CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211
             EXIT PROGRAM
 
@@ -1824,7 +1824,7 @@ FUNCTION aoou702()
                                         sr.g06,sr.g07,sr.g08,sr.zx02,sr.g09,sr.gem02  #CHI-A80005 add sr.zx02,sr.g09,sr.gem02
               #------------------------------ CR (3) ------------------------------#
             END FOREACH
-        # ========= (4) npn_file ========== 
+        # ========= (4) npn_file ==========
          LET g_sql = "SELECT 'ANM',npn01,gee05,nmydesc,npn02,'',npnconf,' ',npnuser ,zx02,npngrup,gem02",   #No:MOD-4C0007 #CHI-A80005 add zx02,npngrup,gem02
                        " FROM npn_file LEFT OUTER JOIN nmy_file ON npn01 like rtrim(ltrim(nmyslip)) || '-%' ",
                        " left join gee_file on gee01 ='ANM' and gee02 = nmykind and gee03='2' and gee04 ='anmi100'", #darcy:2023/12/04 add
@@ -1832,7 +1832,7 @@ FUNCTION aoou702()
                        " LEFT OUTER JOIN gem_file ON npngrup=gem_file.gem01 ", #CHI-A80005 add #MOD-B20110 modify
                        " WHERE npn02 BETWEEN '",tm.bdate,"' AND '",tm.edate,"'"
         #判斷已作廢單據 01/08/29
-        IF tm.y='Y' THEN 
+        IF tm.y='Y' THEN
            LET g_sql=g_sql CLIPPED," AND npnconf!='Y' " CLIPPED   #TQC-660078
         ELSE
            LET g_sql=g_sql CLIPPED," AND npnconf='N' " CLIPPED    #TQC-660078
@@ -1840,7 +1840,7 @@ FUNCTION aoou702()
         LET g_sql = g_sql  CLIPPED
         PREPARE u702_p54 FROM g_sql
         IF SQLCA.sqlcode != 0 THEN
-            CALL cl_err('prepare:',SQLCA.sqlcode,1) 
+            CALL cl_err('prepare:',SQLCA.sqlcode,1)
             CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211
             EXIT PROGRAM
         END IF
@@ -1854,17 +1854,17 @@ FUNCTION aoou702()
                                         sr.g06,sr.g07,sr.g08,sr.zx02,sr.g09,sr.gem02  #CHI-A80005 add sr.zx02,sr.g09,sr.gem02
               #------------------------------ CR (3) ------------------------------#
             END FOREACH
-        # ========= (5) nmg_file ========== 
+        # ========= (5) nmg_file ==========
          LET g_sql = "SELECT 'ANM',nmg00,gee05,nmydesc,nmg01,'',nmgconf,' ',nmguser ,zx02,nmggrup,gem02",   #No:MOD-4C0007 #CHI-A80005 add zx02,nmggrup,gem02
                        " FROM nmg_file LEFT OUTER JOIN nmy_file ON nmg00 like rtrim(ltrim(nmyslip)) || '-%' ",
                        " left join gee_file on gee01 ='ANM' and gee02 = nmykind and gee03='2' and gee04 ='anmi100'", #darcy:2023/12/04 add
                        " LEFT OUTER JOIN zx_file ON nmguser=zx_file.zx01 ", #CHI-A80005 add #MOD-B20110 modify
                        " LEFT OUTER JOIN gem_file ON nmggrup=gem_file.gem01 ", #CHI-A80005 add #MOD-B20110 modify
                        " WHERE nmg01 BETWEEN '",tm.bdate,"' AND '",tm.edate,"'",
-                       " AND nmgacti = 'Y' "             #CHI-CB0044 add 
- 
+                       " AND nmgacti = 'Y' "             #CHI-CB0044 add
+
         #判斷已作廢單據 01/08/29
-        IF tm.y='Y' THEN 
+        IF tm.y='Y' THEN
            LET g_sql=g_sql CLIPPED," AND nmgconf!='Y' " CLIPPED  #TQC-660078
         ELSE
            LET g_sql=g_sql CLIPPED," AND nmgconf='N' " CLIPPED   #TQC-660078
@@ -1872,7 +1872,7 @@ FUNCTION aoou702()
         LET g_sql = g_sql  CLIPPED
         PREPARE u702_p55 FROM g_sql
         IF SQLCA.sqlcode != 0 THEN
-            CALL cl_err('prepare:',SQLCA.sqlcode,1) 
+            CALL cl_err('prepare:',SQLCA.sqlcode,1)
             CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211
             EXIT PROGRAM
         END IF
@@ -1886,7 +1886,7 @@ FUNCTION aoou702()
                                         sr.g06,sr.g07,sr.g08,sr.zx02,sr.g09,sr.gem02  #CHI-A80005 add sr.zx02,sr.g09,sr.gem02
               #------------------------------ CR (3) ------------------------------#
             END FOREACH
-        # ========= (6) nne_file ========== 
+        # ========= (6) nne_file ==========
          LET g_sql = "SELECT 'ANM',nne01,gee05,nmydesc,nne02,'',nneconf,' ',nneuser,zx02,nnegrup,gem02 ",   #No:MOD-4C0007 #CHI-A80005 add zx02,nnegrup,gem02
                        " FROM nne_file LEFT OUTER JOIN nmy_file ON nne01 like rtrim(ltrim(nmyslip)) || '-%' ",
                        " left join gee_file on gee01 ='ANM' and gee02 = nmykind and gee03='2' and gee04 ='anmi100'", #darcy:2023/12/04 add
@@ -1895,7 +1895,7 @@ FUNCTION aoou702()
                        " WHERE nne02 BETWEEN '",tm.bdate,"' AND '",tm.edate,"'",
                        " AND nneacti = 'Y' "              #CHI-CB0044 add
         #判斷已作廢單據 01/08/29
-        IF tm.y='Y' THEN 
+        IF tm.y='Y' THEN
            LET g_sql=g_sql CLIPPED," AND nneconf!='Y' " CLIPPED   #TQC-660078
         ELSE
            LET g_sql=g_sql CLIPPED," AND nneconf='N' " CLIPPED    #TQC-660078
@@ -1903,7 +1903,7 @@ FUNCTION aoou702()
         LET g_sql = g_sql  CLIPPED
         PREPARE u702_p56 FROM g_sql
         IF SQLCA.sqlcode != 0 THEN
-            CALL cl_err('prepare:',SQLCA.sqlcode,1) 
+            CALL cl_err('prepare:',SQLCA.sqlcode,1)
             CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211
             EXIT PROGRAM
         END IF
@@ -1925,7 +1925,7 @@ FUNCTION aoou702()
                        " WHERE nng02 BETWEEN '",tm.bdate,"' AND '",tm.edate,"'",
                        " AND nngacti = 'Y' "   #CHI-CB0044 add
         #判斷已作廢單據 01/08/30
-        IF tm.y='Y' THEN 
+        IF tm.y='Y' THEN
            LET g_sql=g_sql CLIPPED," AND nngconf!='Y' " CLIPPED  #TQC-660078
         ELSE
            LET g_sql=g_sql CLIPPED," AND nngconf='N' " CLIPPED    #TQC-660078
@@ -1933,7 +1933,7 @@ FUNCTION aoou702()
         LET g_sql = g_sql  CLIPPED
         PREPARE u702_p57 FROM g_sql
         IF SQLCA.sqlcode != 0 THEN
-            CALL cl_err('prepare:',SQLCA.sqlcode,1) 
+            CALL cl_err('prepare:',SQLCA.sqlcode,1)
             CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211
             EXIT PROGRAM
         END IF
@@ -1947,23 +1947,23 @@ FUNCTION aoou702()
                                         sr.g06,sr.g07,sr.g08,sr.zx02,sr.g09,sr.gem02  #CHI-A80005 add sr.zx02,sr.g09,sr.gem02
               #------------------------------ CR (3) ------------------------------#
             END FOREACH
-        # ========= (8) nni_file ========== 
+        # ========= (8) nni_file ==========
          LET g_sql = "SELECT 'ANM',nni01,gee05,nmydesc,nni02,nniinpd,nniconf,' ',nniuser,zx02,nnigrup,gem02",   #No:MOD-4C0007 #CHI-A80005 add zx02,nnigrup,gem02
                        " FROM nni_file LEFT OUTER JOIN nmy_file ON nni01 like rtrim(ltrim(nmyslip)) || '-%' ",
                        " left join gee_file on gee01 ='ANM' and gee02 = nmykind and gee03='2' and gee04 ='anmi100'", #darcy:2023/12/04 add
                        " LEFT OUTER JOIN zx_file ON nniuser=zx_file.zx01 ", #CHI-A80005 add #MOD-B20110 modify
                        " LEFT OUTER JOIN gem_file ON nnigrup=gem_file.gem01 ", #CHI-A80005 add #MOD-B20110 modify
                        " WHERE nni02 BETWEEN '",tm.bdate,"' AND '",tm.edate,"'",
-                       " AND nniacti = 'Y'"                    #MOD-A30044  
+                       " AND nniacti = 'Y'"                    #MOD-A30044
         #判斷已作廢單據
-        IF tm.y='Y' THEN 
+        IF tm.y='Y' THEN
            LET g_sql=g_sql CLIPPED," AND nniconf!='Y' " CLIPPED  #TQC-660078
         ELSE
            LET g_sql=g_sql CLIPPED," AND nniconf='N' " CLIPPED    #TQC-660078
         END IF
         PREPARE u702_p58 FROM g_sql
         IF SQLCA.sqlcode != 0 THEN
-            CALL cl_err('prepare:',SQLCA.sqlcode,1) 
+            CALL cl_err('prepare:',SQLCA.sqlcode,1)
             CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211
             EXIT PROGRAM
         END IF
@@ -1977,25 +1977,25 @@ FUNCTION aoou702()
                                         sr.g06,sr.g07,sr.g08,sr.zx02,sr.g09,sr.gem02  #CHI-A80005 add sr.zx02,sr.g09,sr.gem02
               #------------------------------ CR (3) ------------------------------#
             END FOREACH
-        # ========= (9) nnk_file ========== 
+        # ========= (9) nnk_file ==========
          LET g_sql = "SELECT 'ANM',nnk01,gee05,nmydesc,nnk02,nnkinpd,nnkconf,' ',nnkuser,zx02,nnkgrup,gem02 ",   #No:MOD-4C0007 #CHI-A80005 add zx02,nnkgrup,gem02
                        " FROM nnk_file LEFT OUTER JOIN nmy_file ON nnk01 like rtrim(ltrim(nmyslip)) || '-%' ",
                        " left join gee_file on gee01 ='ANM' and gee02 = nmykind and gee03='2' and gee04 ='anmi100'", #darcy:2023/12/04 add
-                      #" AND nnkacti = 'Y' ",  #MOD-960268   #MOD-CB0172 mark 
+                      #" AND nnkacti = 'Y' ",  #MOD-960268   #MOD-CB0172 mark
                        " LEFT OUTER JOIN zx_file ON nnkuser=zx_file.zx01 ", #CHI-A80005 add #MOD-B20110 modify
                        " LEFT OUTER JOIN gem_file ON nnkgrup=gem_file.gem01 ", #CHI-A80005 add #MOD-B20110 modify
                        " WHERE nnk02 BETWEEN '",tm.bdate,"' AND '",tm.edate,"'",   #MOD-CB0172 add ,
                        " AND nnkacti = 'Y' "                 #MOD-CB0172 add
-                       
+
         #判斷已作廢單據
-        IF tm.y='Y' THEN 
+        IF tm.y='Y' THEN
            LET g_sql=g_sql CLIPPED," AND nnkconf!='Y' " CLIPPED #TQC-660078
         ELSE
            LET g_sql=g_sql CLIPPED," AND nnkconf='N' " CLIPPED   #TQC-660078
         END IF
         PREPARE u702_p59 FROM g_sql
         IF SQLCA.sqlcode != 0 THEN
-            CALL cl_err('prepare:',SQLCA.sqlcode,1) 
+            CALL cl_err('prepare:',SQLCA.sqlcode,1)
             CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211
             EXIT PROGRAM
         END IF
@@ -2010,12 +2010,12 @@ FUNCTION aoou702()
               #------------------------------ CR (3) ------------------------------#
               #end FUN-710080 add
             END FOREACH
-     END IF 
+     END IF
      # *********************************
      # **    應收系統 (系統別:AXR)    **
-     # *********************************   
-     IF  tm.e = 'Y'  THEN  
-        # ========= (1) ola_file ========== 
+     # *********************************
+     IF  tm.e = 'Y'  THEN
+        # ========= (1) ola_file ==========
         LET g_sql = "SELECT 'AXR',ola01,gee05,ooydesc,ola02,'',olaconf,'',olauser ,zx02,olagrup,gem02",   #No:MOD-4C0007 #CHI-A80005 add zx02,olagrup,gem02
                        " FROM ola_file LEFT OUTER JOIN ooy_file ON ola01 like rtrim(ltrim(ooyslip)) || '-%' ",
                        " left join gee_file on gee01 ='AXR' and gee02 = ooytype and gee03='2' and gee04 ='axri010'", #darcy:2023/12/04 add
@@ -2025,14 +2025,14 @@ FUNCTION aoou702()
                        " WHERE (ola40 IS NULL OR ola40<>'Y') ",   #No.B221
                        " AND ola02 BETWEEN '",tm.bdate,"' AND '",tm.edate,"'"   #Add No.TQC-AC0356
         #判斷已作廢單據
-        IF tm.y='Y' THEN 
+        IF tm.y='Y' THEN
            LET g_sql=g_sql CLIPPED," AND olaconf!='Y' " CLIPPED  #TQC-660078
         ELSE
            LET g_sql=g_sql CLIPPED," AND olaconf='N' " CLIPPED    #TQC-660078
         END IF
         PREPARE u702_p61 FROM g_sql
         IF SQLCA.sqlcode != 0 THEN
-            CALL cl_err('prepare:',SQLCA.sqlcode,1) 
+            CALL cl_err('prepare:',SQLCA.sqlcode,1)
             CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211
             EXIT PROGRAM
         END IF
@@ -2046,7 +2046,7 @@ FUNCTION aoou702()
                                         sr.g06,sr.g07,sr.g08,sr.zx02,sr.g09,sr.gem02  #CHI-A80005 add sr.zx02,sr.g09,sr.gem02
               #------------------------------ CR (3) ------------------------------#
             END FOREACH
-        # ========= (2) ole_file ========== 
+        # ========= (2) ole_file ==========
         LET g_sql = "SELECT 'AXR',ole01,gee05,ooydesc,ole03,'',oleconf,ole28,oleuser ,zx02,olegrup,gem02", #CHI-A80005 add zx02,olegrup,gem02
                        " FROM ole_file LEFT OUTER JOIN ooy_file ON ole01 like rtrim(ltrim(ooyslip)) || '-%' ",
                        " left join gee_file on gee01 ='AXR' and gee02 = ooytype and gee03='2' and gee04 ='axri010'", #darcy:2023/12/04 add
@@ -2054,14 +2054,14 @@ FUNCTION aoou702()
                        " LEFT OUTER JOIN gem_file ON olegrup=gem_file.gem01 ", #CHI-A80005 add #MOD-B20110 modify
                        " WHERE ole03 BETWEEN '",tm.bdate,"' AND '",tm.edate,"'"
         #判斷已作廢單據
-        IF tm.y='Y' THEN 
-           LET g_sql=g_sql CLIPPED, " AND (oleconf !='Y' OR ole28!='Y') " 
+        IF tm.y='Y' THEN
+           LET g_sql=g_sql CLIPPED, " AND (oleconf !='Y' OR ole28!='Y') "
         ELSE
            LET g_sql=g_sql CLIPPED, " AND (oleconf = 'N' AND ole28='N') "    #No.MOD-640235 modify
         END IF
         PREPARE u702_p62 FROM g_sql
         IF SQLCA.sqlcode != 0 THEN
-            CALL cl_err('prepare:',SQLCA.sqlcode,1) 
+            CALL cl_err('prepare:',SQLCA.sqlcode,1)
             CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211
             EXIT PROGRAM
         END IF
@@ -2080,7 +2080,7 @@ FUNCTION aoou702()
                                         sr.g06,sr.g07,sr.g08,sr.zx02,sr.g09,sr.gem02  #CHI-A80005 add sr.zx02,sr.g09,sr.gem02
               #------------------------------ CR (3) ------------------------------#
             END FOREACH
-        # ========= (3) olc_file ========== 
+        # ========= (3) olc_file ==========
         LET g_sql = "SELECT 'AXR',olc01,'','INVOICE   ',olc02,'',olcconf,' ',olcuser zx02,olcgrup,gem02",   #No:MOD-4C0007 #CHI-A80005 add zx02,olcgrup,gem02
                        " FROM olc_file",
                        " LEFT OUTER JOIN zx_file ON olcuser=zx_file.zx01 ", #CHI-A80005 add #MOD-B20110 modify
@@ -2088,14 +2088,14 @@ FUNCTION aoou702()
                        " WHERE ",   #No.MOD-530403
                        " olc02 BETWEEN '",tm.bdate,"' AND '",tm.edate,"'"
         #判斷已作廢單據
-        IF tm.y='Y' THEN 
+        IF tm.y='Y' THEN
            LET g_sql=g_sql CLIPPED," AND olcconf!='Y' " CLIPPED #TQC-660078
         ELSE
-           LET g_sql=g_sql CLIPPED," AND olcconf='N' " CLIPPED   #TQC-660078 
+           LET g_sql=g_sql CLIPPED," AND olcconf='N' " CLIPPED   #TQC-660078
         END IF
         PREPARE u702_p63 FROM g_sql
         IF SQLCA.sqlcode != 0 THEN
-            CALL cl_err('prepare:',SQLCA.sqlcode,1) 
+            CALL cl_err('prepare:',SQLCA.sqlcode,1)
             CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211
             EXIT PROGRAM
         END IF
@@ -2109,7 +2109,7 @@ FUNCTION aoou702()
                                         sr.g06,sr.g07,sr.g08,sr.zx02,sr.g09,sr.gem02  #CHI-A80005 add sr.zx02,sr.g09,sr.gem02
               #------------------------------ CR (3) ------------------------------#
             END FOREACH
-        # ========= (4) oma_file ========== 
+        # ========= (4) oma_file ==========
         LET g_sql = "SELECT 'AXR',oma01,gee05,ooydesc,oma02,'',omaconf,omavoid,omauser,zx02,omagrup,gem02 ", #CHI-A80005 add zx02,omagrup,gem02
                        " FROM oma_file LEFT OUTER JOIN ooy_file ON oma01 like rtrim(ltrim(ooyslip)) || '-%' ",
                        " left join gee_file on gee01 ='AXR' and gee02 = ooytype and gee03='2' and gee04 ='axri010'", #darcy:2023/12/04 add
@@ -2117,19 +2117,19 @@ FUNCTION aoou702()
                        " LEFT OUTER JOIN gem_file ON omagrup=gem_file.gem01 ", #CHI-A80005 add #MOD-B20110 modify
                        " WHERE oma02 BETWEEN '",tm.bdate,"' AND '",tm.edate,"'"
         #判斷已作廢單據
-        IF tm.y='Y' THEN 
+        IF tm.y='Y' THEN
            LET g_sql=g_sql CLIPPED," AND omaconf='N' " CLIPPED   #TQC-790110
         ELSE
            LET g_sql=g_sql CLIPPED," AND omaconf='N' AND omavoid='N' " CLIPPED    #TQC-660078
         END IF
         PREPARE u702_p64 FROM g_sql
         IF SQLCA.sqlcode != 0 THEN
-            CALL cl_err('prepare:',SQLCA.sqlcode,1) 
+            CALL cl_err('prepare:',SQLCA.sqlcode,1)
             CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211
             EXIT PROGRAM
         END IF
         DECLARE u702_c64 CURSOR FOR u702_p64
- 
+
             FOREACH u702_c64 INTO sr.*
               IF SQLCA.sqlcode != 0 THEN
                  CALL cl_err('foreach:',SQLCA.sqlcode,1) EXIT FOREACH
@@ -2140,7 +2140,7 @@ FUNCTION aoou702()
                                         sr.g06,sr.g07,sr.g08,sr.zx02,sr.g09,sr.gem02  #CHI-A80005 add sr.zx02,sr.g09,sr.gem02
               #------------------------------ CR (3) ------------------------------#
             END FOREACH
-        # ========= (6) ooa_file ========== 
+        # ========= (6) ooa_file ==========
         LET g_sql = "SELECT 'AXR',ooa01,gee05,ooydesc,ooa02,ooa021,ooaconf,' ',ooauser,zx02,ooagrup,gem02 ",   #No:MOD-4C0007 #CHI-A80005 add zx02,ooagrup,gem02
                        " FROM ooa_file LEFT OUTER JOIN ooy_file ON ooa01 like rtrim(ltrim(ooyslip)) || '-%' ",
                        " left join gee_file on gee01 ='AXR' and gee02 = ooytype and gee03='2' and gee04 ='axri010'", #darcy:2023/12/04 add
@@ -2149,14 +2149,14 @@ FUNCTION aoou702()
                        " WHERE ooa02 BETWEEN '",tm.bdate,"' AND '",tm.edate,"'",
                        " AND ooa00='1'"   #MOD-920150 add
         #判斷已作廢單據
-        IF tm.y='Y' THEN 
+        IF tm.y='Y' THEN
            LET g_sql=g_sql CLIPPED," AND ooaconf!='Y' " CLIPPED  #TQC-660078
         ELSE
            LET g_sql=g_sql CLIPPED," AND ooaconf='N' " CLIPPED   #TQC-660078
         END IF
         PREPARE u702_p66 FROM g_sql
         IF SQLCA.sqlcode != 0 THEN
-            CALL cl_err('prepare:',SQLCA.sqlcode,1) 
+            CALL cl_err('prepare:',SQLCA.sqlcode,1)
             CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211
             EXIT PROGRAM
         END IF
@@ -2184,7 +2184,7 @@ FUNCTION aoou702()
                     " AND ooa00='2'",
                     " AND ooa01=oma01"
         #判斷已作廢單據
-        IF tm.y='Y' THEN 
+        IF tm.y='Y' THEN
            LET g_sql=g_sql CLIPPED," AND ooaconf!='Y' " CLIPPED
                                   ," AND omaconf='N' "
         ELSE
@@ -2194,7 +2194,7 @@ FUNCTION aoou702()
        #end MOD-920150 add
         PREPARE u702_p661 FROM g_sql
         IF SQLCA.sqlcode != 0 THEN
-            CALL cl_err('prepare:',SQLCA.sqlcode,1) 
+            CALL cl_err('prepare:',SQLCA.sqlcode,1)
             CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211
             EXIT PROGRAM
         END IF
@@ -2211,13 +2211,13 @@ FUNCTION aoou702()
            #end FUN-710080 add
         END FOREACH
      #end MOD-A10115 mod
-     END IF 
- 
+     END IF
+
      # *********************************
      # **    品管系統 (系統別:AQC)    **
-     # *********************************   
-     IF  tm.h = 'Y'  THEN  
-        # ========= (1) qcf_file ========== 
+     # *********************************
+     IF  tm.h = 'Y'  THEN
+        # ========= (1) qcf_file ==========
         LET g_sql = "SELECT 'AQC',qcf01,gee05,smydesc,qcf04,'',qcf14,'',qcfuser,zx02,qcfgrup,gem02 ", #CHI-A80005 add zx02,qcfgrup,gem02
                        " FROM qcf_file LEFT OUTER JOIN smy_file ON qcf01 like rtrim(ltrim(smyslip)) || '-%' ",
                        " left join gee_file on smykind = gee02 and gee03 ='2' and gee04 = 'asmi300' and gee01 = upper(smysys)", #darcy:2023/12/04 add
@@ -2226,14 +2226,14 @@ FUNCTION aoou702()
                        " WHERE qcf04 BETWEEN '",tm.bdate,"' AND '",tm.edate,"'",
                        " AND qcfacti = 'Y' "   #CHI-0CB0044 add
         #判斷已作廢單據
-        IF tm.y='Y' THEN 
+        IF tm.y='Y' THEN
            LET g_sql=g_sql CLIPPED," AND qcf14!='Y' " CLIPPED #TQC-660078
         ELSE
            LET g_sql=g_sql CLIPPED," AND qcf14='N' " CLIPPED  #TQC-660078
         END IF
         PREPARE u702_p81 FROM g_sql
         IF SQLCA.sqlcode != 0 THEN
-            CALL cl_err('prepare:',SQLCA.sqlcode,1) 
+            CALL cl_err('prepare:',SQLCA.sqlcode,1)
             CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211
             EXIT PROGRAM
         END IF
@@ -2247,7 +2247,7 @@ FUNCTION aoou702()
                                         sr.g06,sr.g07,sr.g08,sr.zx02,sr.g09,sr.gem02  #CHI-A80005 add sr.zx02,sr.g09,sr.gem02
               #------------------------------ CR (3) ------------------------------#
             END FOREACH
-        # ========= (2) qcm_file ========== 
+        # ========= (2) qcm_file ==========
         LET g_sql = "SELECT 'AQC',qcm01,gee05,smydesc,qcm04,'',qcm14,'',qcmuser ,zx02,qcmgrup,gem02", #CHI-A80005 add zx02,qcmgrup,gem02
                        " FROM qcm_file LEFT OUTER JOIN smy_file ON qcm01 like rtrim(ltrim(smyslip)) || '-%'",
                        " left join gee_file on smykind = gee02 and gee03 ='2' and gee04 = 'asmi300' and gee01 = upper(smysys)", #darcy:2023/12/04 add
@@ -2256,14 +2256,14 @@ FUNCTION aoou702()
                        " WHERE qcm04 BETWEEN '",tm.bdate,"' AND '",tm.edate,"'",
                        " AND qcmacti = 'Y' " #CHI-CB0044 add
         #判斷已作廢單據
-        IF tm.y='Y' THEN 
+        IF tm.y='Y' THEN
            LET g_sql=g_sql CLIPPED," AND qcm14!='Y' " CLIPPED  #TQC-660078
         ELSE
            LET g_sql=g_sql CLIPPED," AND qcm14='N' " CLIPPED   #TQC-660078
         END IF
         PREPARE u702_p82 FROM g_sql
         IF SQLCA.sqlcode != 0 THEN
-            CALL cl_err('prepare:',SQLCA.sqlcode,1) 
+            CALL cl_err('prepare:',SQLCA.sqlcode,1)
             CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211
             EXIT PROGRAM
         END IF
@@ -2311,7 +2311,7 @@ FUNCTION aoou702()
         LET g_sql = g_sql ," UNION ALL ", g_sql2 #MOD-C70235 add
         PREPARE u702_p83 FROM g_sql
         IF SQLCA.sqlcode != 0 THEN
-            CALL cl_err('prepare:',SQLCA.sqlcode,1) 
+            CALL cl_err('prepare:',SQLCA.sqlcode,1)
             CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211
             EXIT PROGRAM
         END IF
@@ -2324,13 +2324,13 @@ FUNCTION aoou702()
           EXECUTE insert_prep USING sr.g01,sr.g02,sr.g10,sr.g03,sr.g04,sr.g05,
                                     sr.g06,sr.g07,sr.g08,sr.zx02,sr.g09,sr.gem02  #CHI-A80005 add sr.zx02,sr.g09,sr.gem02
           #------------------------------ CR (3) ------------------------------#
-        END FOREACH        
+        END FOREACH
      END IF
      # *********************************
      # **    固資系統 (系統別:AFA)    **
-     # *********************************   
-     IF  tm.i = 'Y'  THEN  
-        # ========= (1) faq_file ========== 
+     # *********************************
+     IF  tm.i = 'Y'  THEN
+        # ========= (1) faq_file ==========
         IF u702_inv('AFA','faq') THEN #MOD-D60213
            LET g_sql = "SELECT 'AFA',faq01,gee05,fahdesc,faq02,'',faqconf,faqpost,faquser,zx02,faqgrup,gem02 ", #CHI-A80005 add zx02,faqgrup,gem02
                           " FROM faq_file LEFT OUTER JOIN fah_file ON faq01 like rtrim(ltrim(fahslip)) || '-%' ",
@@ -2339,14 +2339,14 @@ FUNCTION aoou702()
                           " LEFT OUTER JOIN gem_file ON faqgrup=gem_file.gem01 ", #CHI-A80005 add #MOD-B20110 modify
                           " WHERE faq02 BETWEEN '",tm.bdate,"' AND '",tm.edate,"'"
            #判斷已作廢單據
-           IF tm.y='Y' THEN 
-              LET g_sql=g_sql CLIPPED," AND  faqpost!='Y' " CLIPPED  
+           IF tm.y='Y' THEN
+              LET g_sql=g_sql CLIPPED," AND  faqpost!='Y' " CLIPPED
            ELSE
-              LET g_sql=g_sql CLIPPED," AND ( faqconf !='X' AND faqpost ='N' ) " CLIPPED 
+              LET g_sql=g_sql CLIPPED," AND ( faqconf !='X' AND faqpost ='N' ) " CLIPPED
            END IF
            PREPARE u702_p84 FROM g_sql
            IF SQLCA.sqlcode != 0 THEN
-               CALL cl_err('prepare:',SQLCA.sqlcode,1) 
+               CALL cl_err('prepare:',SQLCA.sqlcode,1)
                CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211
                EXIT PROGRAM
            END IF
@@ -2360,7 +2360,7 @@ FUNCTION aoou702()
                                            sr.g06,sr.g07,sr.g08,sr.zx02,sr.g09,sr.gem02  #CHI-A80005 add sr.zx02,sr.g09,sr.gem02
                END FOREACH
          END IF #MOD-D60213
-        # ========= (2) fas_file ========== 
+        # ========= (2) fas_file ==========
         IF u702_inv('AFA','fas') THEN #MOD-D60213
            LET g_sql = "SELECT 'AFA',fas01,gee05,fahdesc,fas02,'',fasconf,faspost,fasuser,zx02,fasgrup,gem02 ", #CHI-A80005 add zx02,fasgrup,gem02
                           " FROM fas_file LEFT OUTER JOIN fah_file ON fas01 like rtrim(ltrim(fahslip)) || '-%'",
@@ -2369,14 +2369,14 @@ FUNCTION aoou702()
                           " LEFT OUTER JOIN gem_file ON fasgrup=gem_file.gem01 ", #CHI-A80005 add #MOD-B20110 modify
                           " WHERE fas02 BETWEEN '",tm.bdate,"' AND '",tm.edate,"'"
            #判斷已作廢單據
-           IF tm.y='Y' THEN 
-              LET g_sql=g_sql CLIPPED," AND  faspost!='Y' " CLIPPED  
+           IF tm.y='Y' THEN
+              LET g_sql=g_sql CLIPPED," AND  faspost!='Y' " CLIPPED
            ELSE
-              LET g_sql=g_sql CLIPPED," AND ( fasconf !='X' AND faspost ='N' ) " CLIPPED 
+              LET g_sql=g_sql CLIPPED," AND ( fasconf !='X' AND faspost ='N' ) " CLIPPED
            END IF
            PREPARE u702_p85 FROM g_sql
            IF SQLCA.sqlcode != 0 THEN
-               CALL cl_err('prepare:',SQLCA.sqlcode,1) 
+               CALL cl_err('prepare:',SQLCA.sqlcode,1)
                CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211
                EXIT PROGRAM
            END IF
@@ -2390,7 +2390,7 @@ FUNCTION aoou702()
                                            sr.g06,sr.g07,sr.g08,sr.zx02,sr.g09,sr.gem02  #CHI-A80005 add sr.zx02,sr.g09,sr.gem02
                END FOREACH
          END IF #MOD-D60213
-        # ========= (3) fau_file ========== 
+        # ========= (3) fau_file ==========
         IF u702_inv('AFA','fau') THEN #MOD-D60213
            LET g_sql = "SELECT 'AFA',fau01,gee05,fahdesc,fau02,'',fauconf,faupost,fauuser,zx02,faugrup,gem02 ", #CHI-A80005 add zx02,faugrup,gem02
                           " FROM fau_file LEFT OUTER JOIN fah_file ON fau01 like rtrim(ltrim(fahslip)) || '-%'",
@@ -2399,14 +2399,14 @@ FUNCTION aoou702()
                           " LEFT OUTER JOIN gem_file ON faugrup=gem_file.gem01 ", #CHI-A80005 add #MOD-B20110 modify
                           " WHERE fau02 BETWEEN '",tm.bdate,"' AND '",tm.edate,"'"
            #判斷已作廢單據
-           IF tm.y='Y' THEN 
-              LET g_sql=g_sql CLIPPED," AND  faupost!='Y' " CLIPPED  
+           IF tm.y='Y' THEN
+              LET g_sql=g_sql CLIPPED," AND  faupost!='Y' " CLIPPED
            ELSE
-              LET g_sql=g_sql CLIPPED," AND ( fauconf !='X' AND faupost ='N' ) " CLIPPED 
+              LET g_sql=g_sql CLIPPED," AND ( fauconf !='X' AND faupost ='N' ) " CLIPPED
            END IF
            PREPARE u702_p86 FROM g_sql
            IF SQLCA.sqlcode != 0 THEN
-               CALL cl_err('prepare:',SQLCA.sqlcode,1) 
+               CALL cl_err('prepare:',SQLCA.sqlcode,1)
                CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211
                EXIT PROGRAM
            END IF
@@ -2421,7 +2421,7 @@ FUNCTION aoou702()
                END FOREACH
          END IF #MOD-D60213
         # ========= (4) faw_file ==========
-        IF u702_inv('AFA','faw') THEN #MOD-D60213 
+        IF u702_inv('AFA','faw') THEN #MOD-D60213
            LET g_sql = "SELECT 'AFA',faw01,gee05,fahdesc,faw02,'',fawconf,fawpost,fawuser ,zx02,fawgrup,gem02", #CHI-A80005 add zx02,fawgrup,gem02
                           " FROM faw_file LEFT OUTER JOIN fah_file ON faw01 like rtrim(ltrim(fahslip)) || '-%' ",
                           " left join gee_file on gee01 ='AFA' and gee02 = fahtype and gee03='2' and gee04 ='afai060'", #darcy:2023/12/04 addd
@@ -2429,14 +2429,14 @@ FUNCTION aoou702()
                           " LEFT OUTER JOIN gem_file ON fawgrup=gem_file.gem01 ", #CHI-A80005 add #MOD-B20110 modify
                           " WHERE faw02 BETWEEN '",tm.bdate,"' AND '",tm.edate,"'"
            #判斷已作廢單據
-           IF tm.y='Y' THEN 
-              LET g_sql=g_sql CLIPPED," AND  fawpost!='Y' " CLIPPED  
+           IF tm.y='Y' THEN
+              LET g_sql=g_sql CLIPPED," AND  fawpost!='Y' " CLIPPED
            ELSE
-              LET g_sql=g_sql CLIPPED," AND ( fawconf !='X' AND fawpost ='N' ) " CLIPPED 
+              LET g_sql=g_sql CLIPPED," AND ( fawconf !='X' AND fawpost ='N' ) " CLIPPED
            END IF
            PREPARE u702_p87 FROM g_sql
            IF SQLCA.sqlcode != 0 THEN
-               CALL cl_err('prepare:',SQLCA.sqlcode,1) 
+               CALL cl_err('prepare:',SQLCA.sqlcode,1)
                CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211
                EXIT PROGRAM
            END IF
@@ -2451,7 +2451,7 @@ FUNCTION aoou702()
                END FOREACH
          END IF #MOD-D60213
         # ========= (5) fay_file ==========
-        IF u702_inv('AFA','fay') THEN #MOD-D60213 
+        IF u702_inv('AFA','fay') THEN #MOD-D60213
            LET g_sql = "SELECT 'AFA',fay01,gee05,fahdesc,fay02,'',fayconf,faypost,fayuser,zx02,faygrup,gem02 ", #CHI-A80005 add zx02,faygrup,gem02
                           " FROM fay_file LEFT OUTER JOIN fah_file ON fay01 like rtrim(ltrim(fahslip)) || '-%'",
                           " left join gee_file on gee01 ='AFA' and gee02 = fahtype and gee03='2' and gee04 ='afai060'", #darcy:2023/12/04 addd
@@ -2459,14 +2459,14 @@ FUNCTION aoou702()
                           " LEFT OUTER JOIN gem_file ON faygrup=gem_file.gem01 ", #CHI-A80005 add #MOD-B20110 modify
                           " WHERE fay02 BETWEEN '",tm.bdate,"' AND '",tm.edate,"'"
            #判斷已作廢單據
-           IF tm.y='Y' THEN 
-              LET g_sql=g_sql CLIPPED," AND  faypost!='Y' " CLIPPED  
+           IF tm.y='Y' THEN
+              LET g_sql=g_sql CLIPPED," AND  faypost!='Y' " CLIPPED
            ELSE
-              LET g_sql=g_sql CLIPPED," AND ( fayconf !='X' AND faypost ='N' ) " CLIPPED 
+              LET g_sql=g_sql CLIPPED," AND ( fayconf !='X' AND faypost ='N' ) " CLIPPED
            END IF
            PREPARE u702_p88 FROM g_sql
            IF SQLCA.sqlcode != 0 THEN
-               CALL cl_err('prepare:',SQLCA.sqlcode,1) 
+               CALL cl_err('prepare:',SQLCA.sqlcode,1)
                CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211
                EXIT PROGRAM
            END IF
@@ -2485,17 +2485,17 @@ FUNCTION aoou702()
                           " FROM fba_file LEFT OUTER JOIN fah_file ON fba01 like rtrim(ltrim(fahslip)) || '-%' ",
                           " left join gee_file on gee01 ='AFA' and gee02 = fahtype and gee03='2' and gee04 ='afai060'", #darcy:2023/12/04 addd
                           " LEFT OUTER JOIN zx_file ON fbauser=zx_file.zx01 ", #CHI-A80005 add #MOD-B20110 modify
-                          " LEFT OUTER JOIN gem_file ON fbagrup=gem_file.gem01 ", #CHI-A80005 add #MOD-B20110 modify 
+                          " LEFT OUTER JOIN gem_file ON fbagrup=gem_file.gem01 ", #CHI-A80005 add #MOD-B20110 modify
                           " WHERE fba02 BETWEEN '",tm.bdate,"' AND '",tm.edate,"'"
            #判斷已作廢單據
-           IF tm.y='Y' THEN 
-              LET g_sql=g_sql CLIPPED," AND  fbapost!='Y' " CLIPPED  
+           IF tm.y='Y' THEN
+              LET g_sql=g_sql CLIPPED," AND  fbapost!='Y' " CLIPPED
            ELSE
-              LET g_sql=g_sql CLIPPED," AND ( fbaconf !='X' AND fbapost ='N' ) " CLIPPED 
+              LET g_sql=g_sql CLIPPED," AND ( fbaconf !='X' AND fbapost ='N' ) " CLIPPED
            END IF
            PREPARE u702_p89 FROM g_sql
            IF SQLCA.sqlcode != 0 THEN
-               CALL cl_err('prepare:',SQLCA.sqlcode,1) 
+               CALL cl_err('prepare:',SQLCA.sqlcode,1)
                CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211
                EXIT PROGRAM
            END IF
@@ -2509,23 +2509,23 @@ FUNCTION aoou702()
                                            sr.g06,sr.g07,sr.g08,sr.zx02,sr.g09,sr.gem02  #CHI-A80005 add sr.zx02,sr.g09,sr.gem02
                END FOREACH
          END IF #MOD-D60213
-        # ========= (7) fbc_file ========== 
+        # ========= (7) fbc_file ==========
         IF u702_inv('AFA','fbc') THEN #MOD-D60213
            LET g_sql = "SELECT 'AFA',fbc01,gee05,fahdesc,fbc02,'',fbcconf,fbcpost,fbcuser ,zx02,fbcgrup,gem02", #CHI-A80005 add zx02,fbcgrup,gem02
                           " FROM fbc_file LEFT OUTER JOIN fah_file ON fbc01 like rtrim(ltrim(fahslip)) || '-%'",
                           " left join gee_file on gee01 ='AFA' and gee02 = fahtype and gee03='2' and gee04 ='afai060'", #darcy:2023/12/04 addd
                           " LEFT OUTER JOIN zx_file ON fbcuser=zx_file.zx01 ", #CHI-A80005 add #MOD-B20110 modify
-                          " LEFT OUTER JOIN gem_file ON fbcgrup=gem_file.gem01 ", #CHI-A80005 add #MOD-B20110 modify 
+                          " LEFT OUTER JOIN gem_file ON fbcgrup=gem_file.gem01 ", #CHI-A80005 add #MOD-B20110 modify
                           " WHERE fbc02 BETWEEN '",tm.bdate,"' AND '",tm.edate,"'"
            #判斷已作廢單據
-           IF tm.y='Y' THEN 
-              LET g_sql=g_sql CLIPPED," AND  fbcpost!='Y' " CLIPPED  
+           IF tm.y='Y' THEN
+              LET g_sql=g_sql CLIPPED," AND  fbcpost!='Y' " CLIPPED
            ELSE
-              LET g_sql=g_sql CLIPPED," AND ( fbcconf !='X' AND fbcpost ='N' ) " CLIPPED 
+              LET g_sql=g_sql CLIPPED," AND ( fbcconf !='X' AND fbcpost ='N' ) " CLIPPED
            END IF
            PREPARE u702_p90 FROM g_sql
            IF SQLCA.sqlcode != 0 THEN
-               CALL cl_err('prepare:',SQLCA.sqlcode,1) 
+               CALL cl_err('prepare:',SQLCA.sqlcode,1)
                CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211
                EXIT PROGRAM
            END IF
@@ -2539,7 +2539,7 @@ FUNCTION aoou702()
                                            sr.g06,sr.g07,sr.g08,sr.zx02,sr.g09,sr.gem02  #CHI-A80005 add sr.zx02,sr.g09,sr.gem02
                END FOREACH
          END IF #MOD-D60213
-        # ========= (8) fbg_file ========== 
+        # ========= (8) fbg_file ==========
         IF u702_inv('AFA','fbg') THEN #MOD-D60213
            LET g_sql = "SELECT 'AFA',fbg01,gee05,fahdesc,fbg02,'',fbgconf,fbgpost,fbguser,zx02,fbggrup,gem02 ", #CHI-A80005 add zx02,fbggrup,gem02
                           " FROM fbg_file LEFT OUTER JOIN fah_file ON fbg01 like rtrim(ltrim(fahslip)) || '-%' ",
@@ -2548,14 +2548,14 @@ FUNCTION aoou702()
                           " LEFT OUTER JOIN gem_file ON fbggrup=gem_file.gem01 ", #CHI-A80005 add #MOD-B20110 modify
                           " WHERE fbg02 BETWEEN '",tm.bdate,"' AND '",tm.edate,"'"
            #判斷已作廢單據
-           IF tm.y='Y' THEN 
-              LET g_sql=g_sql CLIPPED," AND  fbgpost!='Y' " CLIPPED  
+           IF tm.y='Y' THEN
+              LET g_sql=g_sql CLIPPED," AND  fbgpost!='Y' " CLIPPED
            ELSE
-              LET g_sql=g_sql CLIPPED," AND ( fbgconf !='X' AND fbgpost ='N' ) " CLIPPED 
+              LET g_sql=g_sql CLIPPED," AND ( fbgconf !='X' AND fbgpost ='N' ) " CLIPPED
            END IF
            PREPARE u702_p91 FROM g_sql
            IF SQLCA.sqlcode != 0 THEN
-               CALL cl_err('prepare:',SQLCA.sqlcode,1) 
+               CALL cl_err('prepare:',SQLCA.sqlcode,1)
                CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211
                EXIT PROGRAM
            END IF
@@ -2569,23 +2569,23 @@ FUNCTION aoou702()
                                            sr.g06,sr.g07,sr.g08,sr.zx02,sr.g09,sr.gem02  #CHI-A80005 add sr.zx02,sr.g09,sr.gem02
                END FOREACH
          END IF #MOD-D60213
-        # ========= (9) fbe_file ========== 
+        # ========= (9) fbe_file ==========
         IF u702_inv('AFA','fbe') THEN #MOD-D60213
            LET g_sql = "SELECT 'AFA',fbe01,gee05,fahdesc,fbe02,'',fbeconf,fbepost,fbeuser ,zx02,fbegrup,gem02", #CHI-A80005 add zx02,fbegrup,gem02
                           " FROM fbe_file LEFT OUTER JOIN fah_file ON fbe01 like rtrim(ltrim(fahslip)) || '-%' ",
                           " left join gee_file on gee01 ='AFA' and gee02 = fahtype and gee03='2' and gee04 ='afai060'", #darcy:2023/12/04 addd
                           " LEFT OUTER JOIN zx_file ON fbeuser=zx_file.zx01 ", #CHI-A80005 add #MOD-B20110 modify
-                          " LEFT OUTER JOIN gem_file ON fbegrup=gem_file.gem01 ", #CHI-A80005 add #MOD-B20110 modify 
+                          " LEFT OUTER JOIN gem_file ON fbegrup=gem_file.gem01 ", #CHI-A80005 add #MOD-B20110 modify
                           " WHERE fbe02 BETWEEN '",tm.bdate,"' AND '",tm.edate,"'"
            #判斷已作廢單據
-           IF tm.y='Y' THEN 
-              LET g_sql=g_sql CLIPPED," AND  fbepost!='Y' " CLIPPED  
+           IF tm.y='Y' THEN
+              LET g_sql=g_sql CLIPPED," AND  fbepost!='Y' " CLIPPED
            ELSE
-              LET g_sql=g_sql CLIPPED," AND ( fbeconf !='X' AND fbepost ='N' ) " CLIPPED 
+              LET g_sql=g_sql CLIPPED," AND ( fbeconf !='X' AND fbepost ='N' ) " CLIPPED
            END IF
            PREPARE u702_p92 FROM g_sql
            IF SQLCA.sqlcode != 0 THEN
-               CALL cl_err('prepare:',SQLCA.sqlcode,1) 
+               CALL cl_err('prepare:',SQLCA.sqlcode,1)
                CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211
                EXIT PROGRAM
            END IF
@@ -2600,22 +2600,22 @@ FUNCTION aoou702()
                END FOREACH
          END IF #MOD-D60213
         # ========= (10) fbl_file ==========
-        IF u702_inv('AFA','fbl') THEN #MOD-D60213 
+        IF u702_inv('AFA','fbl') THEN #MOD-D60213
            LET g_sql = "SELECT 'AFA',fbl01,gee05,fahdesc,fbl02,'',fblconf,fblpost,fbluser ,zx02,fblgrup,gem02", #CHI-A80005 add zx02,fblgrup,gem02
                           " FROM fbl_file LEFT OUTER JOIN fah_file ON fbl01 like rtrim(ltrim(fahslip)) || '-%' ",  #CHI-A80005 add
                           " left join gee_file on gee01 ='AFA' and gee02 = fahtype and gee03='2' and gee04 ='afai060'", #darcy:2023/12/04 addd
                           " LEFT OUTER JOIN zx_file ON fbluser=zx_file.zx01 ", #CHI-A80005 add #MOD-B20110 modify
-                          " LEFT OUTER JOIN gem_file ON fblgrup=gem_file.gem01 ", #CHI-A80005 add #MOD-B20110 modify 
+                          " LEFT OUTER JOIN gem_file ON fblgrup=gem_file.gem01 ", #CHI-A80005 add #MOD-B20110 modify
                           " WHERE fbl02 BETWEEN '",tm.bdate,"' AND '",tm.edate,"'"
            #判斷已作廢單據
-           IF tm.y='Y' THEN 
-              LET g_sql=g_sql CLIPPED," AND  fblpost!='Y' " CLIPPED  
+           IF tm.y='Y' THEN
+              LET g_sql=g_sql CLIPPED," AND  fblpost!='Y' " CLIPPED
            ELSE
-              LET g_sql=g_sql CLIPPED," AND ( fblconf !='X' AND fblpost ='N' ) " CLIPPED 
+              LET g_sql=g_sql CLIPPED," AND ( fblconf !='X' AND fblpost ='N' ) " CLIPPED
            END IF
            PREPARE u702_p93 FROM g_sql
            IF SQLCA.sqlcode != 0 THEN
-               CALL cl_err('prepare:',SQLCA.sqlcode,1) 
+               CALL cl_err('prepare:',SQLCA.sqlcode,1)
                CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211
                EXIT PROGRAM
            END IF
@@ -2629,7 +2629,7 @@ FUNCTION aoou702()
                                            sr.g06,sr.g07,sr.g08,sr.zx02,sr.g09,sr.gem02  #CHI-A80005 add sr.zx02,sr.g09,sr.gem02
                END FOREACH
          END IF #MOD-D60213
-        # ========= (11) fbs_file ========== 
+        # ========= (11) fbs_file ==========
         IF u702_inv('AFA','fbs') THEN #MOD-D60213
            LET g_sql = "SELECT 'AFA',fbs01,gee05,fahdesc,fbs02,'',fbsconf,fbspost,fbsuser ,zx02,fbsgrup,gem02", #CHI-A80005 add zx02,fbsgrup,gem02
                           " FROM fbs_file LEFT OUTER JOIN fah_file ON fbs01 like rtrim(ltrim(fahslip)) || '-%' ",
@@ -2638,14 +2638,14 @@ FUNCTION aoou702()
                           " LEFT OUTER JOIN gem_file ON fbsgrup=gem_file.gem01 ", #CHI-A80005 add #MOD-B20110 modify
                           " WHERE fbs02 BETWEEN '",tm.bdate,"' AND '",tm.edate,"'"
            #判斷已作廢單據
-           IF tm.y='Y' THEN 
-              LET g_sql=g_sql CLIPPED," AND  fbspost!='Y' " CLIPPED  
+           IF tm.y='Y' THEN
+              LET g_sql=g_sql CLIPPED," AND  fbspost!='Y' " CLIPPED
            ELSE
-              LET g_sql=g_sql CLIPPED," AND ( fbsconf !='X' AND fbspost ='N' ) " CLIPPED 
+              LET g_sql=g_sql CLIPPED," AND ( fbsconf !='X' AND fbspost ='N' ) " CLIPPED
            END IF
            PREPARE u702_p94 FROM g_sql
            IF SQLCA.sqlcode != 0 THEN
-               CALL cl_err('prepare:',SQLCA.sqlcode,1) 
+               CALL cl_err('prepare:',SQLCA.sqlcode,1)
                CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211
                EXIT PROGRAM
            END IF
@@ -2660,7 +2660,7 @@ FUNCTION aoou702()
                END FOREACH
          END IF #MOD-D60213
         # ========= (12) fgh_file ==========
-        IF u702_inv('AFA','fgh') THEN #MOD-D60213 
+        IF u702_inv('AFA','fgh') THEN #MOD-D60213
            LET g_sql = "SELECT 'AFA',fgh01,gee05,fahdesc,fgh02,'',fghconf,'',fghuser ,zx02,fghgrup,gem02", #CHI-A80005 add zx02,fghgrup,gem02
                           " FROM fgh_file LEFT OUTER JOIN fah_file ON fgh01 like rtrim(ltrim(fahslip)) || '-%' ",
                           " left join gee_file on gee01 ='AFA' and gee02 = fahtype and gee03='2' and gee04 ='afai060'", #darcy:2023/12/04 addd
@@ -2669,14 +2669,14 @@ FUNCTION aoou702()
                           " WHERE fgh02 BETWEEN '",tm.bdate,"' AND '",tm.edate,"'",
                           " AND fghacti = 'Y' "    #CHI-CB0044 add
            #判斷已作廢單據
-           IF tm.y='Y' THEN 
-              LET g_sql=g_sql CLIPPED," AND fghconf!='Y' " CLIPPED 
+           IF tm.y='Y' THEN
+              LET g_sql=g_sql CLIPPED," AND fghconf!='Y' " CLIPPED
            ELSE
-              LET g_sql=g_sql CLIPPED," AND fghconf='N' " CLIPPED 
+              LET g_sql=g_sql CLIPPED," AND fghconf='N' " CLIPPED
            END IF
            PREPARE u702_p95 FROM g_sql
            IF SQLCA.sqlcode != 0 THEN
-               CALL cl_err('prepare:',SQLCA.sqlcode,1) 
+               CALL cl_err('prepare:',SQLCA.sqlcode,1)
                CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211
                EXIT PROGRAM
            END IF
@@ -2691,23 +2691,23 @@ FUNCTION aoou702()
                END FOREACH
          END IF #MOD-D60213
         # ========= (13) fec_file ==========
-        IF u702_inv('AFA','fec') THEN #MOD-D60213 
+        IF u702_inv('AFA','fec') THEN #MOD-D60213
            LET g_sql = "SELECT 'AFA',fec01,gee05,fahdesc,fec02,'',fecconf,'',fecuser ,zx02,fecgrup,gem02", #CHI-A80005 add zx02,fecgrup,gem02
                           " FROM fec_file LEFT OUTER JOIN fah_file ON fec01 like rtrim(ltrim(fahslip)) || '-%' ",
                           " left join gee_file on gee01 ='AFA' and gee02 = fahtype and gee03='2' and gee04 ='afai060'", #darcy:2023/12/04 addd
                           " LEFT OUTER JOIN zx_file ON fecuser=zx_file.zx01 ", #CHI-A80005 add #MOD-B20110 modify
-                          " LEFT OUTER JOIN gem_file ON fecgrup=gem_file.gem01 ", #CHI-A80005 add #MOD-B20110 modify 
+                          " LEFT OUTER JOIN gem_file ON fecgrup=gem_file.gem01 ", #CHI-A80005 add #MOD-B20110 modify
                           " WHERE fec02 BETWEEN '",tm.bdate,"' AND '",tm.edate,"'",
                           " AND fecacti = 'Y' "    #CHI-CB0044 add
            #判斷已作廢單據
-           IF tm.y='Y' THEN 
-              LET g_sql=g_sql CLIPPED," AND fecconf!='Y' " CLIPPED 
+           IF tm.y='Y' THEN
+              LET g_sql=g_sql CLIPPED," AND fecconf!='Y' " CLIPPED
            ELSE
-              LET g_sql=g_sql CLIPPED," AND fecconf='N' " CLIPPED 
+              LET g_sql=g_sql CLIPPED," AND fecconf='N' " CLIPPED
            END IF
            PREPARE u702_p96 FROM g_sql
            IF SQLCA.sqlcode != 0 THEN
-               CALL cl_err('prepare:',SQLCA.sqlcode,1) 
+               CALL cl_err('prepare:',SQLCA.sqlcode,1)
                CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211
                EXIT PROGRAM
            END IF
@@ -2721,7 +2721,7 @@ FUNCTION aoou702()
                                            sr.g06,sr.g07,sr.g08,sr.zx02,sr.g09,sr.gem02  #CHI-A80005 add sr.zx02,sr.g09,sr.gem02
                END FOREACH
          END IF #MOD-D60213
-        # ========= (14) fee_file ========== 
+        # ========= (14) fee_file ==========
         IF u702_inv('AFA','fee') THEN #MOD-D60213
            LET g_sql = "SELECT 'AFA',fee01,gee05,fahdesc,fee02,'',feeconf,'',feeuser ,zx02,feegrup,gem02", #CHI-A80005 add zx02,feegrup,gem02
                           " FROM fee_file LEFT OUTER JOIN fah_file ON fee01 like rtrim(ltrim(fahslip)) || '-%' ",
@@ -2731,14 +2731,14 @@ FUNCTION aoou702()
                           " WHERE fee02 BETWEEN '",tm.bdate,"' AND '",tm.edate,"'",
                           " AND feeacti = 'Y' "    #CHI-CB0044 add
            #判斷已作廢單據
-           IF tm.y='Y' THEN 
-              LET g_sql=g_sql CLIPPED," AND feeconf!='Y' " CLIPPED 
+           IF tm.y='Y' THEN
+              LET g_sql=g_sql CLIPPED," AND feeconf!='Y' " CLIPPED
            ELSE
-              LET g_sql=g_sql CLIPPED," AND feeconf='N' " CLIPPED 
+              LET g_sql=g_sql CLIPPED," AND feeconf='N' " CLIPPED
            END IF
            PREPARE u702_p97 FROM g_sql
            IF SQLCA.sqlcode != 0 THEN
-               CALL cl_err('prepare:',SQLCA.sqlcode,1) 
+               CALL cl_err('prepare:',SQLCA.sqlcode,1)
                CALL cl_used(g_prog,g_time,2) RETURNING g_time      #FUN-B30211
                EXIT PROGRAM
            END IF
@@ -2750,7 +2750,7 @@ FUNCTION aoou702()
                  ## *** 與 Crystal Reports 串聯段 - <<<< 寫入暫存檔 >>>> CR11 *** ##
                  EXECUTE insert_prep USING sr.g01,sr.g02,sr.g10,sr.g03,sr.g04,sr.g05,
                                            sr.g06,sr.g07,sr.g08,sr.zx02,sr.g09,sr.gem02  #CHI-A80005 add sr.zx02,sr.g09,sr.gem02
-               END FOREACH 
+               END FOREACH
            END IF #MOD-D60213
        END IF
 
@@ -2758,26 +2758,26 @@ FUNCTION aoou702()
      # **    流通零售系統 (系統別:ART)    **
      # *********************************
      IF  tm.j = 'Y'  THEN
-        # ========= (1) rvq_file ==========        
-        LET g_sql = "SELECT 'ART',rvq01,gee05,oaydesc,rvq03,rvqcrat,rvqconf,rvqconf,rvquser ,zx02,rvqgrup,gem02", 
+        # ========= (1) rvq_file ==========
+        LET g_sql = "SELECT 'ART',rvq01,gee05,oaydesc,rvq03,rvqcrat,rvqconf,rvqconf,rvquser ,zx02,rvqgrup,gem02",
                        " FROM rvq_file LEFT OUTER JOIN oay_file ON rvq01 like rtrim(ltrim(oayslip)) || '-%' ",
                        " left join gee_file on gee01 ='AXM' and gee02 = oaytype and gee03='2' and gee04 ='axmi010'", #darcy:2023/12/04 add
-                       " LEFT OUTER JOIN zx_file ON rvquser=zx_file.zx01 ", 
+                       " LEFT OUTER JOIN zx_file ON rvquser=zx_file.zx01 ",
                        " LEFT OUTER JOIN gem_file ON rvqgrup=gem_file.gem01 ",
                        " WHERE rvq03 BETWEEN '",tm.bdate,"' AND '",tm.edate,"'",
                        " AND rvqacti = 'Y' "    #CHI-CB0044 add
-                       
 
-        LET g_sql=g_sql CLIPPED," AND rvqconf = '0'  " CLIPPED  
+
+        LET g_sql=g_sql CLIPPED," AND rvqconf = '0'  " CLIPPED
         LET g_sql= g_sql CLIPPED," ORDER BY rvq_file.rvq03 ,rvq_file.rvq01"
 
-        PREPARE u702_part1 FROM g_sql 
+        PREPARE u702_part1 FROM g_sql
         IF SQLCA.sqlcode != 0 THEN
             CALL cl_err('prepare:',SQLCA.sqlcode,1)
-            CALL cl_used(g_prog,g_time,2) RETURNING g_time      
+            CALL cl_used(g_prog,g_time,2) RETURNING g_time
             EXIT PROGRAM
         END IF
-        DECLARE u702_cart1 CURSOR FOR u702_part1 
+        DECLARE u702_cart1 CURSOR FOR u702_part1
             FOREACH u702_cart1 INTO sr.*
               IF sr.g06 = 0 THEN
                  LET sr.g06 = 'N'
@@ -2785,13 +2785,13 @@ FUNCTION aoou702()
               IF sr.g07 = 0 OR sr.g07 = 1 OR sr.g07 = 2 THEN
                  LET sr.g07 = 'N'
               END IF
-                
+
               IF SQLCA.sqlcode != 0 THEN
                  CALL cl_err('foreach:',SQLCA.sqlcode,1) EXIT FOREACH
               END IF
               ## *** 與 Crystal Reports 串聯段 - <<<< 寫入暫存檔 >>>> CR11 *** ##
               EXECUTE insert_prep USING sr.g01,sr.g02,sr.g10,sr.g03,sr.g04,sr.g05,
-                                        sr.g06,sr.g07,sr.g08,sr.zx02,sr.g09,sr.gem02 
+                                        sr.g06,sr.g07,sr.g08,sr.zx02,sr.g09,sr.gem02
             END FOREACH
         # ========= (2) lua_file ==========
         LET g_sql = "SELECT 'ART',lua01,gee05,oaydesc,lua09,luacrat,lua15,'',luauser ,zx02,luagrup,gem02",
@@ -2806,7 +2806,7 @@ FUNCTION aoou702()
         IF tm.y='Y' THEN
            LET g_sql=g_sql CLIPPED," AND lua15!='Y' " CLIPPED
         ELSE
-           LET g_sql=g_sql CLIPPED," AND lua15 = 'N' " CLIPPED 
+           LET g_sql=g_sql CLIPPED," AND lua15 = 'N' " CLIPPED
         END IF
         LET g_sql= g_sql CLIPPED, " ORDER BY lua_file.lua09 ,lua_file.lua01"
 
@@ -2826,7 +2826,7 @@ FUNCTION aoou702()
               EXECUTE insert_prep USING sr.g01,sr.g02,sr.g10,sr.g03,sr.g04,sr.g05,
                                         sr.g06,sr.g07,sr.g08,sr.zx02,sr.g09,sr.gem02
             END FOREACH
-        # ========= (3) luc_file ==========        
+        # ========= (3) luc_file ==========
         LET g_sql = "SELECT 'ART',luc01,gee05,oaydesc,luc07,luccrat,luc14,'',lucuser ,zx02,lucgrup,gem02",
                        " FROM luc_file LEFT OUTER JOIN oay_file ON luc01 like rtrim(ltrim(oayslip)) || '-%' ",
                        " left join gee_file on gee01 ='AXM' and gee02 = oaytype and gee03='2' and gee04 ='axmi010'", #darcy:2023/12/04 add
@@ -2857,7 +2857,7 @@ FUNCTION aoou702()
            EXECUTE insert_prep USING sr.g01,sr.g02,sr.g10,sr.g03,sr.g04,sr.g05,
                                      sr.g06,sr.g07,sr.g08,sr.zx02,sr.g09,sr.gem02
         END FOREACH
-        # ========= (4) rab_file ==========        
+        # ========= (4) rab_file ==========
         LET g_sql = "SELECT 'ART',rab02,gee05,oaydesc,rabcrat,rabcrat,rabconf,'',rabuser ,zx02,rabgrup,gem02",
                        " FROM rab_file LEFT OUTER JOIN oay_file ON rab02 like rtrim(ltrim(oayslip)) || '-%' ",
                        " left join gee_file on gee01 ='AXM' and gee02 = oaytype and gee03='2' and gee04 ='axmi010'", #darcy:2023/12/04 add
@@ -2889,7 +2889,7 @@ FUNCTION aoou702()
            EXECUTE insert_prep USING sr.g01,sr.g02,sr.g10,sr.g03,sr.g04,sr.g05,
                                      sr.g06,sr.g07,sr.g08,sr.zx02,sr.g09,sr.gem02
         END FOREACH
-        # ========= (5) rae_file ==========        
+        # ========= (5) rae_file ==========
         LET g_sql = "SELECT 'ART',rae02,gee05,oaydesc,raecrat,raecrat,raeconf,'',raeuser ,zx02,raegrup,gem02",
                        " FROM rae_file LEFT OUTER JOIN oay_file ON rae02 like rtrim(ltrim(oayslip)) || '-%' ",
                        " left join gee_file on gee01 ='AXM' and gee02 = oaytype and gee03='2' and gee04 ='axmi010'", #darcy:2023/12/04 add
@@ -2897,7 +2897,7 @@ FUNCTION aoou702()
                        " LEFT OUTER JOIN gem_file ON raegrup=gem_file.gem01 ",
                        " WHERE raecrat BETWEEN '",tm.bdate,"' AND '",tm.edate,"'",
                        " AND raeacti = 'Y' "   #CHI-CB0044 add
-                       
+
         #判斷已作廢單據
         IF tm.y='Y' THEN
            LET g_sql=g_sql CLIPPED," AND raeconf!='Y' " CLIPPED
@@ -2921,14 +2921,14 @@ FUNCTION aoou702()
            EXECUTE insert_prep USING sr.g01,sr.g02,sr.g10,sr.g03,sr.g04,sr.g05,
                                      sr.g06,sr.g07,sr.g08,sr.zx02,sr.g09,sr.gem02
         END FOREACH
-        # ========= (6) rah_file ==========        
+        # ========= (6) rah_file ==========
         LET g_sql = "SELECT 'ART',rah02,gee05,oaydesc,rahcrat,rahcrat,rahconf,'',rahuser ,zx02,rahgrup,gem02",
                        " FROM rah_file LEFT OUTER JOIN oay_file ON rah02 like rtrim(ltrim(oayslip)) || '-%' ",
                        " left join gee_file on gee01 ='AXM' and gee02 = oaytype and gee03='2' and gee04 ='axmi010'", #darcy:2023/12/04 add
                        " LEFT OUTER JOIN zx_file ON rahuser=zx_file.zx01 ",
                        " LEFT OUTER JOIN gem_file ON rahgrup=gem_file.gem01 ",
                        " WHERE rahcrat BETWEEN '",tm.bdate,"' AND '",tm.edate,"'",
-                       " AND rahacti = 'Y' "    #CHI-CB0044 add 
+                       " AND rahacti = 'Y' "    #CHI-CB0044 add
 
 
         #判斷已作廢單據
@@ -2954,7 +2954,7 @@ FUNCTION aoou702()
            EXECUTE insert_prep USING sr.g01,sr.g02,sr.g10,sr.g03,sr.g04,sr.g05,
                                      sr.g06,sr.g07,sr.g08,sr.zx02,sr.g09,sr.gem02
         END FOREACH
-        # ========= (7) rcd_file ==========        
+        # ========= (7) rcd_file ==========
         LET g_sql = "SELECT 'ART',rcd01,gee05,oaydesc,rcd02,rcdcrat,rcdconf,'',rcduser ,zx02,rcdgrup,gem02",
                        " FROM rcd_file LEFT OUTER JOIN oay_file ON rcd01 like rtrim(ltrim(oayslip)) || '-%' ",
                        " left join gee_file on gee01 ='AXM' and gee02 = oaytype and gee03='2' and gee04 ='axmi010'", #darcy:2023/12/04 add
@@ -2962,7 +2962,7 @@ FUNCTION aoou702()
                        " LEFT OUTER JOIN gem_file ON rcdgrup=gem_file.gem01 ",
                        " WHERE rcd02 BETWEEN '",tm.bdate,"' AND '",tm.edate,"'",
                        " AND rcdacti = 'Y' "     #CHI-CB0044 add
-                      
+
 
         #判斷已作廢單據
         IF tm.y='Y' THEN
@@ -2987,7 +2987,7 @@ FUNCTION aoou702()
            EXECUTE insert_prep USING sr.g01,sr.g02,sr.g10,sr.g03,sr.g04,sr.g05,
                                      sr.g06,sr.g07,sr.g08,sr.zx02,sr.g09,sr.gem02
         END FOREACH
-        # ========= (8) rcf_file ==========        
+        # ========= (8) rcf_file ==========
         LET g_sql = "SELECT 'ART',rcf01,gee05,oaydesc,rcf02,rcfcrat,rcfconf,'',rcfuser ,zx02,rcfgrup,gem02",
                        " FROM rcf_file LEFT OUTER JOIN oay_file ON rcf01 like rtrim(ltrim(oayslip)) || '-%' ",
                        " left join gee_file on gee01 ='AXM' and gee02 = oaytype and gee03='2' and gee04 ='axmi010'", #darcy:2023/12/04 add
@@ -3020,7 +3020,7 @@ FUNCTION aoou702()
            EXECUTE insert_prep USING sr.g01,sr.g02,sr.g10,sr.g03,sr.g04,sr.g05,
                                      sr.g06,sr.g07,sr.g08,sr.zx02,sr.g09,sr.gem02
         END FOREACH
-        # ========= (9) rch_file ==========        
+        # ========= (9) rch_file ==========
         LET g_sql = "SELECT 'ART',rch01,gee05,oaydesc,rch02,rchcrat,rchconf,'',rchuser ,zx02,rchgrup,gem02",
                        " FROM rch_file LEFT OUTER JOIN oay_file ON rch01 like rtrim(ltrim(oayslip)) || '-%' ",
                        " left join gee_file on gee01 ='AXM' and gee02 = oaytype and gee03='2' and gee04 ='axmi010'", #darcy:2023/12/04 add
@@ -3059,7 +3059,7 @@ FUNCTION aoou702()
                        " LEFT OUTER JOIN zx_file ON rtiuser=zx_file.zx01 ",
                        " LEFT OUTER JOIN gem_file ON rtigrup=gem_file.gem01 ",
                        " WHERE rti03 BETWEEN '",tm.bdate,"' AND '",tm.edate,"'",
-                       " AND rtiacti = 'Y' "    #CHI-CB0044 add                 
+                       " AND rtiacti = 'Y' "    #CHI-CB0044 add
 
         #判斷已作廢單據
         IF tm.y='Y' THEN
@@ -3067,7 +3067,7 @@ FUNCTION aoou702()
         ELSE
            LET g_sql=g_sql CLIPPED," AND rticonf = 'N' " CLIPPED
         END IF
-        LET g_sql= g_sql CLIPPED," ORDER BY rti_file.rti03,rti_file.rti01" 
+        LET g_sql= g_sql CLIPPED," ORDER BY rti_file.rti03,rti_file.rti01"
         PREPARE u702_part10 FROM g_sql
         IF SQLCA.sqlcode != 0 THEN
             CALL cl_err('prepare:',SQLCA.sqlcode,1)
@@ -3196,7 +3196,7 @@ FUNCTION aoou702()
         ELSE
            LET g_sql=g_sql CLIPPED," AND rtuconf = 'N' " CLIPPED
         END IF
-        LET g_sql= g_sql CLIPPED," ORDER BY rtu_file.rtucrat,rtu_file.rtu01" 
+        LET g_sql= g_sql CLIPPED," ORDER BY rtu_file.rtucrat,rtu_file.rtu01"
         PREPARE u702_part14 FROM g_sql
         IF SQLCA.sqlcode != 0 THEN
             CALL cl_err('prepare:',SQLCA.sqlcode,1)
@@ -3292,7 +3292,7 @@ FUNCTION aoou702()
         ELSE
            LET g_sql=g_sql CLIPPED," AND rufconf = 'N' " CLIPPED
         END IF
-        LET g_sql= g_sql CLIPPED," ORDER BY ruf_file.ruf02,ruf_file.ruf01" 
+        LET g_sql= g_sql CLIPPED," ORDER BY ruf_file.ruf02,ruf_file.ruf01"
         PREPARE u702_part17 FROM g_sql
         IF SQLCA.sqlcode != 0 THEN
             CALL cl_err('prepare:',SQLCA.sqlcode,1)
@@ -3405,7 +3405,7 @@ FUNCTION aoou702()
            EXECUTE insert_prep USING sr.g01,sr.g02,sr.g10,sr.g03,sr.g04,sr.g05,
                                      sr.g06,sr.g07,sr.g08,sr.zx02,sr.g09,sr.gem02
         END FOREACH
-        
+
         # ========= (21) ruo_file ==========
         IF tm.x = 'Y' THEN   #MOD-D60213
            LET g_sql = "SELECT 'ART',ruo01,gee05,oaydesc,ruo07,ruocrat,ruoconf,ruo15,ruouser ,zx02,ruogrup,gem02",
@@ -3419,10 +3419,10 @@ FUNCTION aoou702()
            IF tm.y='Y' THEN
               LET g_sql=g_sql CLIPPED," AND (ruoconf = 'X' OR ruo15 <> 'Y')" CLIPPED
            ELSE
-              LET g_sql=g_sql CLIPPED," AND ruo15 <> 'Y' " CLIPPED 
+              LET g_sql=g_sql CLIPPED," AND ruo15 <> 'Y' " CLIPPED
            END IF
            LET g_sql= g_sql CLIPPED," ORDER BY ruo_file.ruo07,ruo_file.ruo01"
-           
+
            PREPARE u702_part21 FROM g_sql
            IF SQLCA.sqlcode != 0 THEN
                CALL cl_err('prepare:',SQLCA.sqlcode,1)
@@ -3431,15 +3431,15 @@ FUNCTION aoou702()
            END IF
            DECLARE u702_cart21 CURSOR FOR u702_part21
                FOREACH u702_cart21 INTO sr.*
-           
+
            #判斷當前營運中心是否為撥入營運中心
            SELECT COUNT(*) INTO l_cnt2 FROM ruo_file WHERE ruo01 = sr.g02 AND ruo05 = g_plant
            IF l_cnt2 >= 1 THEN     #當前營運中心為撥入營運中心
-              IF sr.g06 = '0' OR sr.g06 = '1' THEN 
+              IF sr.g06 = '0' OR sr.g06 = '1' THEN
                  LET sr.g06 = 'N'        #開立,撥出確認=未確認
               END IF
               IF sr.g07 <> 'Y' OR cl_null(sr.g07) THEN
-                 LET sr.g07 = 'N'        #開立,撥出確認 = 未扣帳 
+                 LET sr.g07 = 'N'        #開立,撥出確認 = 未扣帳
               END IF
            ELSE
               IF sr.g06 = '0' THEN
@@ -3449,7 +3449,7 @@ FUNCTION aoou702()
                  LET sr.g07 = 'N'
               END IF
            END IF
-              
+
            IF SQLCA.sqlcode != 0 THEN
               CALL cl_err('foreach:',SQLCA.sqlcode,1) EXIT FOREACH
            END IF
@@ -3499,14 +3499,14 @@ FUNCTION aoou702()
                        " LEFT OUTER JOIN gem_file ON rusgrup=gem_file.gem01 ",
                        " WHERE rus03 BETWEEN '",tm.bdate,"' AND '",tm.edate,"'",
                        " AND rusacti = 'Y' "         #CHI-CB0044 add
-                      
+
         #判斷已作廢單據
         IF tm.y='Y' THEN
            LET g_sql=g_sql CLIPPED," AND rusconf!='Y' " CLIPPED
         ELSE
            LET g_sql=g_sql CLIPPED," AND rusconf = 'N' " CLIPPED
         END IF
-        LET g_sql= g_sql CLIPPED, " ORDER BY rus_file.rus03,rus_file.rus01" 
+        LET g_sql= g_sql CLIPPED, " ORDER BY rus_file.rus03,rus_file.rus01"
 
         PREPARE u702_part23 FROM g_sql
         IF SQLCA.sqlcode != 0 THEN
@@ -3534,7 +3534,7 @@ FUNCTION aoou702()
                        " LEFT OUTER JOIN gem_file ON ruugrup=gem_file.gem01 ",
                        " WHERE ruu03 BETWEEN '",tm.bdate,"' AND '",tm.edate,"'",
                        " AND ruuacti = 'Y' "    #CHI-BC0044 add
-                       
+
 
         #判斷已作廢單據
         IF tm.y='Y' THEN
@@ -3730,7 +3730,7 @@ FUNCTION aoou702()
                        " LEFT OUTER JOIN zx_file ON rwvuser=zx_file.zx01 ",
                        " LEFT OUTER JOIN gem_file ON rwvgrup=gem_file.gem01 ",
                        " WHERE rwv02 BETWEEN '",tm.bdate,"' AND '",tm.edate,"'"
-                       
+
 
         #判斷已作廢單據
         IF tm.y='Y' THEN
@@ -3839,7 +3839,7 @@ FUNCTION aoou702()
         ELSE
            LET g_sql=g_sql CLIPPED," AND rxpconf = 'N' " CLIPPED
         END IF
-        LET g_sql= g_sql CLIPPED," ORDER BY rxp_file.rxp02,rxp_file.rxp01" 
+        LET g_sql= g_sql CLIPPED," ORDER BY rxp_file.rxp02,rxp_file.rxp01"
 
         PREPARE u702_part33 FROM g_sql
         IF SQLCA.sqlcode != 0 THEN
@@ -3968,7 +3968,7 @@ FUNCTION aoou702()
                        " LEFT OUTER JOIN gem_file ON ltegrup=gem_file.gem01 ",
                        " WHERE ltecrat BETWEEN '",tm.bdate,"' AND '",tm.edate,"'",
                        " AND lteacti = 'Y' "   #CHI-CB0044 add
- 
+
         #判斷已作廢單據
         IF tm.y='Y' THEN
            LET g_sql=g_sql CLIPPED," AND lte03!='Y' " CLIPPED
@@ -4001,7 +4001,7 @@ FUNCTION aoou702()
                        " LEFT OUTER JOIN gem_file ON ltagrup=gem_file.gem01 ",
                        " WHERE ltacrat BETWEEN '",tm.bdate,"' AND '",tm.edate,"'",
                        " AND ltaacti = 'Y' "   #CHI-CB0044 add
- 
+
         #判斷已作廢單據
         IF tm.y='Y' THEN
            LET g_sql=g_sql CLIPPED," AND lta03!='Y' " CLIPPED
@@ -4033,7 +4033,7 @@ FUNCTION aoou702()
                        " LEFT OUTER JOIN zx_file ON lscuser=zx_file.zx01 ",
                        " LEFT OUTER JOIN gem_file ON lscgrup=gem_file.gem01 ",
                        " WHERE lsc07 BETWEEN '",tm.bdate,"' AND '",tm.edate,"'"
-                       
+
         #判斷已作廢單據
         IF tm.y='Y' THEN
            LET g_sql=g_sql CLIPPED," AND lsc14!='Y' " CLIPPED
@@ -4272,7 +4272,7 @@ FUNCTION aoou702()
         ELSE
            LET g_sql=g_sql CLIPPED," AND lqrconf = 'N' " CLIPPED
         END IF
-        LET g_sql= g_sql CLIPPED," ORDER BY lqr_file.lqr02,lqr_file.lqr01" 
+        LET g_sql= g_sql CLIPPED," ORDER BY lqr_file.lqr02,lqr_file.lqr01"
 
         PREPARE u702_palm10 FROM g_sql
         IF SQLCA.sqlcode != 0 THEN
@@ -4297,7 +4297,7 @@ FUNCTION aoou702()
                        " LEFT OUTER JOIN zx_file ON lqnuser=zx_file.zx01 ",
                        " LEFT OUTER JOIN gem_file ON lqngrup=gem_file.gem01 ",
                        " WHERE lqn06 BETWEEN '",tm.bdate,"' AND '",tm.edate,"'"
-                       
+
 
         #判斷已作廢單據
         IF tm.y='Y' THEN
@@ -4363,8 +4363,8 @@ FUNCTION aoou702()
                        " LEFT OUTER JOIN zx_file ON lqduser=zx_file.zx01 ",
                        " LEFT OUTER JOIN gem_file ON lqdgrup=gem_file.gem01 ",
                        " WHERE lqd06 BETWEEN '",tm.bdate,"' AND '",tm.edate,"'"
-                      
- 
+
+
         #判斷已作廢單據
         IF tm.y='Y' THEN
            LET g_sql=g_sql CLIPPED," AND lqd12!='Y' " CLIPPED
@@ -4627,7 +4627,7 @@ FUNCTION aoou702()
                        " LEFT OUTER JOIN zx_file ON lnbuser=zx_file.zx01 ",
                        " LEFT OUTER JOIN gem_file ON lnbgrup=gem_file.gem01 ",
                        " WHERE lnbcrat BETWEEN '",tm.bdate,"' AND '",tm.edate,"'"
-                       
+
 
         #判斷已作廢單據
         IF tm.y='Y' THEN
@@ -4660,7 +4660,7 @@ FUNCTION aoou702()
                        " LEFT OUTER JOIN zx_file ON lnauser=zx_file.zx01 ",
                        " LEFT OUTER JOIN gem_file ON lnagrup=gem_file.gem01 ",
                        " WHERE lnacrat BETWEEN '",tm.bdate,"' AND '",tm.edate,"'"
-                       
+
         #判斷已作廢單據
         IF tm.y='Y' THEN
            LET g_sql=g_sql CLIPPED," AND lna26!='Y' " CLIPPED
@@ -4693,7 +4693,7 @@ FUNCTION aoou702()
                        " LEFT OUTER JOIN zx_file ON lmguser=zx_file.zx01 ",
                        " LEFT OUTER JOIN gem_file ON lmggrup=gem_file.gem01 ",
                        " WHERE lmgcrat BETWEEN '",tm.bdate,"' AND '",tm.edate,"'"
-                       
+
 
         #判斷已作廢單據
         IF tm.y='Y' THEN
@@ -4734,7 +4734,7 @@ FUNCTION aoou702()
          CALL cl_prt_cs3('aoou702','aoou702',g_sql,g_str)
          #------------------------------ CR (4) ------------------------------#
      end if #darcy:2023/05/08 add
- 
+
 #     CALL  cl_used(g_prog,g_time,2) RETURNING g_time #No.MOD-580088  HCN 20050818  #No.FUN-6A0081    #FUN-BA0003 mark
 END FUNCTION
 #No:FUN-9C0071--------精簡程式-----
@@ -4742,21 +4742,21 @@ END FUNCTION
 
 #MOD-D60213--begin
 FUNCTION u702_inv(p_sys,p_tab)
-   DEFINE p_sys,p_tab LIKE type_file.chr3   
-   
+   DEFINE p_sys,p_tab LIKE type_file.chr3
+
    IF tm.x = 'N' THEN
-      IF   (p_sys = 'APM' AND p_tab <> 'rvu')      
-        OR (p_sys = 'AXM' AND p_tab <> 'oga' AND p_tab <> 'oha')     
-        OR (p_sys = 'ASF' AND p_tab <> 'sfu' AND p_tab <> 'sfk' AND p_tab <> 'ksa' AND p_tab <> 'ksc')       
-        OR (p_sys = 'AFA' AND (p_tab = 'fgh' OR p_tab = 'fec' OR p_tab = 'fee'))        
+      IF   (p_sys = 'APM' AND p_tab <> 'rvu')
+        OR (p_sys = 'AXM' AND p_tab <> 'oga' AND p_tab <> 'oha')
+        OR (p_sys = 'ASF' AND p_tab <> 'sfu' AND p_tab <> 'sfk' AND p_tab <> 'ksa' AND p_tab <> 'ksc')
+        OR (p_sys = 'AFA' AND (p_tab = 'fgh' OR p_tab = 'fec' OR p_tab = 'fee'))
         OR (p_sys = 'ALM' AND p_tab <> 'ruo')  THEN
-        RETURN FALSE 
+        RETURN FALSE
       ELSE
-      	RETURN TRUE 
+      	RETURN TRUE
       END IF
    ELSE
-   	  RETURN TRUE   
-   END IF   
+   	  RETURN TRUE
+   END IF
 END FUNCTION
 #MOD-D60213--end
 
@@ -4773,8 +4773,8 @@ function u702_email_tiptop(p_table)
    prepare u702_view_crt from l_sql
    execute u702_view_crt
 
-   let l_cnt = 0 
-   select count(1) into l_cnt from pqrazz0001 
+   let l_cnt = 0
+   select count(1) into l_cnt from pqrazz0001
    if l_cnt > 0 then
       let l_cmd = "/u1/usr/tiptop/mail/fastmail -config /u1/usr/tiptop/mail/config.json -table pqrazz0001  -mail 未审核邮件提醒 -file  /u1/out/未审核邮件提醒.xlsx "
       run l_cmd
