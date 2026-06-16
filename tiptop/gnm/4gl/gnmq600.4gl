@@ -7,7 +7,7 @@
 # Modify.........: No.FUN-4C0010 04/12/06 By Nicola 單價、金額欄位改為DEC(20,6)
 # Modify.........: No.FUN-550037 05/05/13 By saki   欄位comment顯示
 # Modify.........: No.FUN-560011 05/06/07 By pengu CREATE TEMP TABLE 欄位放大
-# Modify.........: No.TQC-5B0076 05/11/09 By Claire excel匯出失效 
+# Modify.........: No.TQC-5B0076 05/11/09 By Claire excel匯出失效
 # Modify.........: FUN-5C0015 05/12/20 BY GILL (1)多Update 異動碼5~10, 關係人
 #                  (2)若該科目有設彈性異動碼(agli120),則default帶出
 #                     彈性異動碼的設定值(call s_def_npq: 抓取異動碼default值)
@@ -29,7 +29,7 @@
 # Modify.........: No:FUN-A30028 10/03/30 By wujie 增加来源单据串查
 # Modify.........: No:CHI-A30015 10/05/20 By Summer  1.單身增加顯示項次,2.勾選細項查詢時，改抓npk_file
 # Modify.........: No:MOD-A50187 10/05/28 By Elva 增加接收参数，供aglq200串查
-# Modify.........: No:MOD-AC0294 10/12/27 By Dido 變數宣告調整 
+# Modify.........: No:MOD-AC0294 10/12/27 By Dido 變數宣告調整
 # Modify.........: No.FUN-AA0087 11/01/27 By chenmoyan 異動碼類型設定改善
 # Modify.........: No:FUN-B40056 11/05/12 By lixia 刪除資料時一併刪除tic_file的資料
 # Modify.........: No:TQC-B70021 11/07/19 By wujie 抛转tic_file资料
@@ -43,13 +43,13 @@
 # Modify.........: No:FUN-D40118 13/05/21 By lujh 若科目npq03有做核算控管aag44=Y,但agli122作業沒有維護，則科目給空
 # Modify.........: No:FUN-D40107 13/05/23 By lujh 新增狀態頁簽、畫面上的按鈕增加順序為:重評價產生,重評價還原,分錄底稿產生,分錄底稿,拋轉憑證,拋轉憑證還原
 # Modify.........: No:FUN-D70002 13/08/27 By yangtt 新增時給原幣未沖金額(oox11)賦值
- 
+
 DATABASE ds
- 
+
 GLOBALS "../../config/top.global"
- 
+
 #模組變數(Module Variables)
-DEFINE 
+DEFINE
      g_oox00   LIKE oox_file.oox00,
     g_oox01   LIKE oox_file.oox01,
     g_oox02   LIKE oox_file.oox02,
@@ -71,11 +71,11 @@ DEFINE
     g_detail         LIKE type_file.chr1     #NO.FUN-680145 CHAR(01)   #CHI-A30015 add,
    #oox01            LIKE oox_file.oox01,    #CHI-A30015 add   #MOD-AC0294 mark
    #oox02            LIKE oox_file.oox02     #CHI-A30015 add   #MOD-AC0294 mark
- 
+
 DEFINE   g_chr           LIKE type_file.chr1     #NO.FUN-680145 VARCHAR(1)
-DEFINE   g_cnt           LIKE type_file.num10    #NO.FUN-680145 INTEGER   
+DEFINE   g_cnt           LIKE type_file.num10    #NO.FUN-680145 INTEGER
 DEFINE   g_msg           LIKE type_file.chr1000  #NO.FUN-680145 VARCHAR(72)
- 
+
 DEFINE   g_row_count     LIKE type_file.num10    #NO.FUN-680145 INTEGER
 DEFINE   g_curs_index    LIKE type_file.num10    #NO.FUN-680145 INTEGER
 DEFINE   g_jump          LIKE type_file.num10    #NO.FUN-680145 INTEGER
@@ -88,37 +88,37 @@ DEFINE   g_argv1         STRING   # MOD-A50187
 DEFINE   g_aag44         LIKE aag_file.aag44     #FUN-D40118 add
 #FUN-D40107--add--str--
 DEFINE   g_ooxacti       LIKE oox_file.ooxacti
-DEFINE   g_ooxuser       LIKE oox_file.ooxuser             
+DEFINE   g_ooxuser       LIKE oox_file.ooxuser
 DEFINE   g_ooxoriu       LIKE oox_file.ooxorig
 DEFINE   g_ooxorig       LIKE oox_file.ooxorig
 DEFINE   g_ooxgrup       LIKE oox_file.ooxgrup
 DEFINE   g_ooxmodu       LIKE oox_file.ooxmodu
-DEFINE   g_ooxdate       LIKE oox_file.ooxdate       
+DEFINE   g_ooxdate       LIKE oox_file.ooxdate
 DEFINE   g_ooxcrat       LIKE oox_file.ooxcrat
 #FUN-D40107--add--end--
 MAIN
 #     DEFINEl_time    LIKE type_file.chr8	     #No.FUN-6A0098
 DEFINE    p_row,p_col    LIKE type_file.num5,    #NO.FUN-680145 SMALLINT
 	  l_sl 		 LIKE type_file.num10    #NO.FUN-680145 INTEGER
- 
+
    OPTIONS                                #改變一些系統預設值
         INPUT NO WRAP
     DEFER INTERRUPT                        #擷取中斷鍵, 由程式處理
- 
+
    IF (NOT cl_user()) THEN
       EXIT PROGRAM
    END IF
-  
+
    WHENEVER ERROR CALL cl_err_msg_log
-  
+
    IF (NOT cl_setup("GNM")) THEN
       EXIT PROGRAM
    END IF
- 
+
    LET g_argv1  = ARG_VAL(1) # MOD-A50187
- 
+
     #add 030226 NO.A048
-    DROP TABLE SORT_FILE;                                                           
+    DROP TABLE SORT_FILE;
     CREATE TEMP TABLE sort_file(
      nma01 LIKE nma_file.nma01,
      nma02 LIKE type_file.chr50,      #No.MOD-920264 nma02->chr50
@@ -127,21 +127,21 @@ DEFINE    p_row,p_col    LIKE type_file.num5,    #NO.FUN-680145 SMALLINT
      oox05 LIKE oox_file.oox05,
      oox07 LIKE oox_file.oox07,
      oox10 LIKE oox_file.oox10);
-    IF STATUS THEN CALL cl_err('cre tmp',STATUS,0) EXIT PROGRAM END IF 
+    IF STATUS THEN CALL cl_err('cre tmp',STATUS,0) EXIT PROGRAM END IF
       CALL  cl_used(g_prog,g_time,1)       #計算使用時間 (進入時間) #No.MOD-580088  HCN 20050818  #No.FUN-6A0098
          RETURNING g_time    #No.FUN-6A0098
     LET p_row = 3 LET p_col =5
     OPEN WINDOW q600_w AT p_row,p_col
-         WITH FORM "gnm/42f/gnmq600" 
+         WITH FORM "gnm/42f/gnmq600"
           ATTRIBUTE (STYLE = g_win_style CLIPPED) #No.FUN-580092 HCN
-    
+
     CALL cl_ui_init()
     CALL cl_set_act_visible("entry_sheet1",g_aza.aza63='Y')                      #No.FUN-680034
     #modify 030312 NO.A048
- 
- 
+
+
 #    IF cl_chk_act_auth() THEN
-#       CALL q600_q() 
+#       CALL q600_q()
 #    END IF
     # MOD-A50187 --begin
     IF NOT cl_null(g_argv1) THEN
@@ -154,7 +154,7 @@ DEFINE    p_row,p_col    LIKE type_file.num5,    #NO.FUN-680145 SMALLINT
     CALL  cl_used(g_prog,g_time,2)       #計算使用時間 (退出使間) #No.MOD-580088  HCN 20050818  #No.FUN-6A0098
          RETURNING g_time    #No.FUN-6A0098
 END MAIN
- 
+
 #QBE 查詢資料
 FUNCTION q600_cs()
    DEFINE l_wc      STRING              #CHI-A30015 add
@@ -166,52 +166,52 @@ FUNCTION q600_cs()
    CALL cl_opmsg('q')
    LET g_detail = 'N'
    CALL cl_set_head_visible("","YES")       #No.FUN-6A0092
- 
+
    # MOD-A50187 --begin
    IF NOT cl_null(g_argv1) THEN
       LET g_detail = 'N'
       LET g_wc = g_argv1
    ELSE
-   INPUT BY NAME g_detail WITHOUT DEFAULTS  
+   INPUT BY NAME g_detail WITHOUT DEFAULTS
      ON ACTION locale
         CALL cl_dynamic_locale()
         CALL cl_show_fld_cont()   #FUN-550037(smin)
- 
- 
-      AFTER FIELD g_detail 
+
+
+      AFTER FIELD g_detail
          IF cl_null(g_detail) OR g_detail NOT MATCHES '[YN]' THEN
             NEXT FIELD g_detail
      #No.MOD-910128 mark --begin
      ##No.FUN-740028 ---Begin
-     #      CALL s_get_bookno(g_detail) RETURN g_flag,g_bookno1,g_bookno2                
-     #        IF g_flag =  '1' THEN  #抓不到帳別                                          
-     #           CALL cl_err(g_detail,'aoo-081',1)                                         
-     #           NEXT FIELD g_detail 
+     #      CALL s_get_bookno(g_detail) RETURN g_flag,g_bookno1,g_bookno2
+     #        IF g_flag =  '1' THEN  #抓不到帳別
+     #           CALL cl_err(g_detail,'aoo-081',1)
+     #           NEXT FIELD g_detail
      #        END IF
      ##No.FUN-740028 ---End
      #No.MOD-910128 mark --end
-         END IF                                                                      
- 
-       ON IDLE g_idle_seconds   #NO.MOD-860078 
+         END IF
+
+       ON IDLE g_idle_seconds   #NO.MOD-860078
          CALL cl_on_idle()
          CONTINUE INPUT
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
+
       ON ACTION controlg      #MOD-4C0121
          CALL cl_cmdask()     #MOD-4C0121
- 
-   
+
+
    END INPUT
- 
+
    IF INT_FLAG THEN
-      RETURN 
+      RETURN
    END IF
- 
+
    INITIALIZE g_oox00 TO NULL    #No.FUN-750051
    INITIALIZE g_oox01 TO NULL    #No.FUN-750051
    INITIALIZE g_oox02 TO NULL    #No.FUN-750051
@@ -219,7 +219,7 @@ FUNCTION q600_cs()
    IF g_detail = 'N' THEN   #CHI-A30015 add
       CONSTRUCT g_wc
          ON oox01,oox02,oox03,oox04,oox05,oox06,oox07,oox11,oox08,oox09,oox10  #CHI-A30015 add oox04  #No.FUN-D70002   Add oox11
-         FROM oox01,oox02,s_oox[1].oox03,s_oox[1].oox04,                 #CHI-A30015 add s_oox[1].oox04 
+         FROM oox01,oox02,s_oox[1].oox03,s_oox[1].oox04,                 #CHI-A30015 add s_oox[1].oox04
               s_oox[1].oox05,s_oox[1].oox06,s_oox[1].oox07,
               s_oox[1].oox11,   #No.FUN-D70002   Add
               s_oox[1].oox08,s_oox[1].oox09,s_oox[1].oox10
@@ -232,64 +232,64 @@ FUNCTION q600_cs()
          ON IDLE g_idle_seconds
             CALL cl_on_idle()
             CONTINUE CONSTRUCT
- 
+
          ON ACTION about         #MOD-4C0121
             CALL cl_about()      #MOD-4C0121
- 
+
          ON ACTION help          #MOD-4C0121
             CALL cl_show_help()  #MOD-4C0121
-  
+
          ON ACTION controlg      #MOD-4C0121
             CALL cl_cmdask()     #MOD-4C0121
- 
-   
+
+
 	#No.FUN-580031 --start--     HCN
          ON ACTION qbe_select
-            CALL cl_qbe_select() 
+            CALL cl_qbe_select()
          ON ACTION qbe_save
 	    CALL cl_qbe_save()
 	#No.FUN-580031 --end--       HCN
       END CONSTRUCT
       LET g_wc = g_wc CLIPPED,cl_get_extra_cond(null, null) #FUN-980030
- 
-      IF INT_FLAG THEN 
-         RETURN 
+
+      IF INT_FLAG THEN
+         RETURN
       END IF
    #CHI-A30015 add  --start--
    ELSE
-     #INPUT BY NAME oox01,oox02 #WITHOUT DEFAULTS               #MOD-AC0294 mark 
+     #INPUT BY NAME oox01,oox02 #WITHOUT DEFAULTS               #MOD-AC0294 mark
       INPUT g_oox01,g_oox02 WITHOUT DEFAULTS FROM oox01,oox02   #MOD-AC0294
          ON ACTION locale
            CALL cl_dynamic_locale()
            CALL cl_show_fld_cont()
 
-         AFTER FIELD oox01 
+         AFTER FIELD oox01
             IF cl_null(g_oox01)  THEN    #MOD-AC0294 mod oox01 -> g_oox01
                NEXT FIELD oox01
-            END IF                                                                      
+            END IF
 
-         AFTER FIELD oox02 
+         AFTER FIELD oox02
             IF cl_null(g_oox02)  THEN    #MOD-AC0294 mod oox02 -> g_oox02
                NEXT FIELD oox02
-            END IF             
-                                                         
-         ON IDLE g_idle_seconds 
+            END IF
+
+         ON IDLE g_idle_seconds
             CALL cl_on_idle()
             CONTINUE INPUT
- 
-         ON ACTION about 
-            CALL cl_about() 
- 
+
+         ON ACTION about
+            CALL cl_about()
+
          ON ACTION help
             CALL cl_show_help()
- 
+
          ON ACTION controlg
             CALL cl_cmdask()
-   
+
       END INPUT
 
       IF INT_FLAG THEN
-         RETURN 
+         RETURN
       END IF
 
       INITIALIZE g_oox00 TO NULL
@@ -297,7 +297,7 @@ FUNCTION q600_cs()
      #INITIALIZE g_oox02 TO NULL                #MOD-AC0294 mark
       CONSTRUCT g_wc
          ON oox03,oox04,oox05,oox06,oox08
-         FROM s_oox[1].oox03,s_oox[1].oox04, 
+         FROM s_oox[1].oox03,s_oox[1].oox04,
               s_oox[1].oox05,s_oox[1].oox06,s_oox[1].oox08
                  BEFORE CONSTRUCT
                     CALL cl_qbe_init()
@@ -315,7 +315,7 @@ FUNCTION q600_cs()
             CALL cl_cmdask()
 
          ON ACTION qbe_select
-            CALL cl_qbe_select() 
+            CALL cl_qbe_select()
 
          ON ACTION qbe_save
             CALL cl_qbe_save()
@@ -323,21 +323,21 @@ FUNCTION q600_cs()
       END CONSTRUCT
       LET g_wc = g_wc CLIPPED,cl_get_extra_cond(null, null)
 
-      IF INT_FLAG THEN 
-         RETURN 
+      IF INT_FLAG THEN
+         RETURN
       END IF
    END IF
    #CHI-A30015 add  --end--
    END IF
    # MOD-A50187 --end
- 
-   MESSAGE ' WAIT ' 
+
+   MESSAGE ' WAIT '
 
    IF g_detail = 'N' THEN   #CHI-A30015 add
       LET g_sql="SELECT DISTINCT oox00,oox01,oox02 ",
                 "  FROM oox_file ",
                 " WHERE ",g_wc CLIPPED,
-                "   AND oox00 = 'NM' ", 
+                "   AND oox00 = 'NM' ",
                 " ORDER BY oox00,oox01 "
    #CHI-A30015 add --start--
    ELSE
@@ -387,20 +387,20 @@ FUNCTION q600_cs()
    LET g_sql="SELECT COUNT(DISTINCT oox00) ",
              "  FROM oox_file ",
              " WHERE ",g_wc CLIPPED,
-             "   AND oox00 = 'NM' "  
+             "   AND oox00 = 'NM' "
     PREPARE q600_precount FROM g_sql
     DECLARE q600_count CURSOR FOR q600_precount
 }
 #-----END MOD-630033-----
 END FUNCTION
- 
+
 FUNCTION q600_menu()
 DEFINE l_ac     LIKE type_file.num5         #No.FUN-A30028
- 
+
    WHILE TRUE
       CALL q600_bp("G")
       CASE g_action_choice
-         WHEN "query" 
+         WHEN "query"
             IF cl_chk_act_auth() THEN
                CALL q600_q()
             END IF
@@ -408,29 +408,29 @@ DEFINE l_ac     LIKE type_file.num5         #No.FUN-A30028
             CALL cl_show_help()
          WHEN "exit"
             EXIT WHILE
-         WHEN "controlg" 
+         WHEN "controlg"
             CALL cl_cmdask()
          #FUN-D40107--add--str--
          #@WHEN "重評價產生"
          WHEN "weight_evaluation"
-            IF cl_chk_act_auth() THEN 
+            IF cl_chk_act_auth() THEN
                CALL weight_evaluation()
             END IF
          #@WHEN "重評價還原"
          WHEN "evaluation_of_reduction"
-            IF cl_chk_act_auth() THEN 
+            IF cl_chk_act_auth() THEN
                CALL evaluation_of_reduction()
             END IF
          #FUN-D40107--add--end--
-         #@WHEN "產生分錄" 
-         WHEN "gen_entry" 
+         #@WHEN "產生分錄"
+         WHEN "gen_entry"
             IF cl_chk_act_auth() THEN
                CALL q600_v()
             END IF
-         #WHEN "分錄底稿" 
-         WHEN "entry_sheet" 
+         #WHEN "分錄底稿"
+         WHEN "entry_sheet"
             #modify 030317 NO.A048
-            IF cl_chk_act_auth() AND g_detail = 'N' THEN 
+            IF cl_chk_act_auth() AND g_detail = 'N' THEN
                LET g_trno = g_oox00,g_oox01 USING '&&&&',g_oox02 USING '&&'
 #No.FUN-680034--begin
       #         CALL s_fsgl(g_oox00,13,g_trno,0,g_nmz.nmz02b,1,'N')
@@ -438,21 +438,21 @@ DEFINE l_ac     LIKE type_file.num5         #No.FUN-A30028
 #No.FUN-680034--end
        END IF
 #No.FUN-680034--begin
-          WHEN "entry_sheet1"                                                                                                         
-            IF cl_chk_act_auth() AND g_detail = 'N' THEN                                                                            
-               LET g_trno = g_oox00,g_oox01 USING '&&&&',g_oox02 USING '&&'        
-               CALL s_fsgl(g_oox00,13,g_trno,0,g_nmz.nmz02c,1,'N','1',g_ooz.ooz02p)                                                     
-            END IF                                                             
+          WHEN "entry_sheet1"
+            IF cl_chk_act_auth() AND g_detail = 'N' THEN
+               LET g_trno = g_oox00,g_oox01 USING '&&&&',g_oox02 USING '&&'
+               CALL s_fsgl(g_oox00,13,g_trno,0,g_nmz.nmz02c,1,'N','1',g_ooz.ooz02p)
+            END IF
 #No.FUN-680034--end
          #FUN-D40107--add--str--
          #@WHEN "拋轉憑證"
          WHEN "carry_voucher"
-            IF cl_chk_act_auth() THEN 
+            IF cl_chk_act_auth() THEN
                CALL carry_voucher()
             END IF
          #@WHEN "拋轉憑證還原"
          WHEN "undo_carry_voucher"
-            IF cl_chk_act_auth() THEN 
+            IF cl_chk_act_auth() THEN
                CALL undo_carry_voucher()
             END IF
          #FUN-D40107--add--end--
@@ -462,7 +462,7 @@ DEFINE l_ac     LIKE type_file.num5         #No.FUN-A30028
             END IF
 #No.FUN-A30028 --begin
          WHEN "qry_oox"
-            IF cl_chk_act_auth() THEN 
+            IF cl_chk_act_auth() THEN
                LET l_ac = ARR_CURR()
                IF NOT cl_null(l_ac) AND l_ac <> 0 THEN
                   IF g_detail ='N' THEN
@@ -477,12 +477,16 @@ DEFINE l_ac     LIKE type_file.num5         #No.FUN-A30028
                END IF
             END IF
 #No.FUN-A30028 --end
+            when "gen_tic"
+                if cl_chk_act_auth() then
+                    call q600_gen_tic()
+                end if
       END CASE
    END WHILE
 END FUNCTION
- 
+
 FUNCTION q600_q()
- 
+
     LET g_row_count = 0
     LET g_curs_index = 0
     CALL cl_navigator_setting( g_curs_index, g_row_count )
@@ -491,7 +495,7 @@ FUNCTION q600_q()
     IF INT_FLAG THEN LET INT_FLAG = 0 RETURN END IF
     OPEN q600_count
     FETCH q600_count INTO g_row_count
-    DISPLAY g_row_count TO FORMONLY.cnt  
+    DISPLAY g_row_count TO FORMONLY.cnt
     OPEN q600_cs                            # 從DB產生合乎條件TEMP(0-30秒)
     IF SQLCA.sqlcode THEN
         CALL cl_err('',SQLCA.sqlcode,0)
@@ -500,12 +504,12 @@ FUNCTION q600_q()
     END IF
     MESSAGE ''
 END FUNCTION
- 
+
 FUNCTION q600_fetch(p_flag)
 DEFINE
     p_flag          LIKE type_file.chr1,    #NO.FUN-680145 VARCHAR(1)     #處理方式
     l_abso          LIKE type_file.num10    #NO.FUN-680145 INTEGER    #絕對的筆數
- 
+
     CASE p_flag
         WHEN 'N' FETCH NEXT     q600_cs INTO g_oox00,g_oox01,g_oox02
         WHEN 'P' FETCH PREVIOUS q600_cs INTO g_oox00,g_oox01,g_oox02
@@ -518,16 +522,16 @@ DEFINE
                PROMPT g_msg CLIPPED,': ' FOR g_jump
                   ON IDLE g_idle_seconds
                      CALL cl_on_idle()
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
+
       ON ACTION controlg      #MOD-4C0121
          CALL cl_cmdask()     #MOD-4C0121
- 
+
                END PROMPT
                IF INT_FLAG THEN
                    LET INT_FLAG = 0
@@ -545,21 +549,21 @@ DEFINE
        INITIALIZE g_oox02 TO NULL  #TQC-6B0105
        RETURN
     ELSE
-       CASE p_flag 
+       CASE p_flag
           WHEN 'F' LET g_curs_index = 1
           WHEN 'P' LET g_curs_index = g_curs_index - 1
           WHEN 'N' LET g_curs_index = g_curs_index + 1
           WHEN 'L' LET g_curs_index = g_row_count
           WHEN '/' LET g_curs_index = g_jump
        END CASE
-      
+
        CALL cl_navigator_setting(g_curs_index, g_row_count)
     END IF
- 
+
     CALL q600_show()
- 
+
 END FUNCTION
- 
+
 FUNCTION q600_show()
    #FUN-D40107--add--str--
    SELECT ooxacti,ooxuser,ooxoriu,ooxorig,
@@ -579,10 +583,10 @@ FUNCTION q600_show()
       DISPLAY g_oox01,g_oox02 TO oox01,oox02   # 顯示單頭值
    END IF                  #CHI-A30015 add
    CALL q600_b_fill() #單身
- 
+
     CALL cl_show_fld_cont()                   #No.FUN-550037 hmf
 END FUNCTION
- 
+
 FUNCTION q600_b_fill()              #BODY FILL UP
    #DEFINE l_sql     LIKE type_file.chr1000  #NO.FUN-680145  VARCHAR(1000) #MOD-C10158 mark
     DEFINE l_sql     STRING                  #MOD-C10158 add
@@ -593,10 +597,10 @@ FUNCTION q600_b_fill()              #BODY FILL UP
     #LET l_sql = "SELECT oox03,oox04,oox05,oox06,oox07,oox08,oox09,oox10",  #CHI-A30015 add oox04
     #            "  FROM oox_file ",
     #            " WHERE oox00 = '",g_oox00,"'",
-    #            "   AND oox01 = ",g_oox01, 
-    #            "   AND oox02 = ",g_oox02 
+    #            "   AND oox01 = ",g_oox01,
+    #            "   AND oox02 = ",g_oox02
     ##modify 030312 NO.A048
-    #IF g_detail = 'Y' THEN 
+    #IF g_detail = 'Y' THEN
     #   LET l_sql = l_sql CLIPPED," AND oox03v = '2' "
     #ELSE
     #   LET l_sql = l_sql CLIPPED," AND oox03v = '1' "
@@ -605,11 +609,11 @@ FUNCTION q600_b_fill()              #BODY FILL UP
     #CHI-A30015 mark --end--
 
     #CHI-A30015 add  --start--
-    IF g_detail = 'N' THEN 
+    IF g_detail = 'N' THEN
        LET l_sql = "SELECT oox03,oox04,oox05,oox06,oox07,oox11,oox08,oox09,oox10",  #No.FUN-D70002   Add oox11
                    "  FROM oox_file ",
                    " WHERE oox00 = '",g_oox00,"'",
-                   "   AND oox01 = ",g_oox01, 
+                   "   AND oox01 = ",g_oox01,
                    "   AND oox02 = ",g_oox02,
                    "   AND oox03v = '1' "
        LET l_sql = l_sql CLIPPED," ORDER BY oox03,oox05 "
@@ -624,9 +628,9 @@ FUNCTION q600_b_fill()              #BODY FILL UP
     END IF
     #CHI-A30015 add --end--
     PREPARE q600_pre2 FROM l_sql
-    IF STATUS THEN CALL cl_err('q600_pre2',STATUS,1) END IF 
+    IF STATUS THEN CALL cl_err('q600_pre2',STATUS,1) END IF
     DECLARE q600_bcs CURSOR FOR q600_pre2
- 
+
     CALL g_oox.clear()
     LET g_cnt = 1
     LET g_tot = 0
@@ -640,26 +644,26 @@ FUNCTION q600_b_fill()              #BODY FILL UP
        END IF
     END FOREACH
     LET g_rec_b = g_cnt - 1
-    DISPLAY g_rec_b TO FORMONLY.cn2  
+    DISPLAY g_rec_b TO FORMONLY.cn2
     DISPLAY BY NAME g_tot
 END FUNCTION
- 
+
 FUNCTION q600_bp(p_ud)
    DEFINE   p_ud   LIKE type_file.chr1     #NO.FUN-680145 VARCHAR(1)
- 
- 
+
+
    IF p_ud <> "G" THEN
       RETURN
    END IF
- 
+
    LET g_action_choice = " "
- 
+
    CALL cl_set_act_visible("accept,cancel", FALSE)
    DISPLAY ARRAY g_oox TO s_oox.* ATTRIBUTE(COUNT=g_rec_b,UNBUFFERED)
- 
+
       BEFORE DISPLAY
          CALL cl_navigator_setting( g_curs_index, g_row_count )
- 
+
       BEFORE ROW
 #         LET l_ac = ARR_CURR()
       CALL cl_show_fld_cont()                   #No.FUN-550037 hmf
@@ -668,15 +672,15 @@ FUNCTION q600_bp(p_ud)
       ON ACTION query
          LET g_action_choice="query"
          EXIT DISPLAY
-      ON ACTION first 
+      ON ACTION first
          CALL q600_fetch('F')
          CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
            IF g_rec_b != 0 THEN
          CALL fgl_set_arr_curr(1)  ######add in 040505
            END IF
            ACCEPT DISPLAY                   #No.FUN-530067 HCN TEST
-                              
- 
+
+
       ON ACTION previous
          CALL q600_fetch('P')
          CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
@@ -684,17 +688,17 @@ FUNCTION q600_bp(p_ud)
          CALL fgl_set_arr_curr(1)  ######add in 040505
            END IF
 	ACCEPT DISPLAY                   #No.FUN-530067 HCN TEST
-                              
- 
-      ON ACTION jump 
+
+
+      ON ACTION jump
          CALL q600_fetch('/')
          CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
            IF g_rec_b != 0 THEN
          CALL fgl_set_arr_curr(1)  ######add in 040505
            END IF
 	ACCEPT DISPLAY                   #No.FUN-530067 HCN TEST
-                              
- 
+
+
       ON ACTION next
          CALL q600_fetch('N')
          CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
@@ -702,30 +706,30 @@ FUNCTION q600_bp(p_ud)
          CALL fgl_set_arr_curr(1)  ######add in 040505
            END IF
 	ACCEPT DISPLAY                   #No.FUN-530067 HCN TEST
-                              
- 
-      ON ACTION last 
+
+
+      ON ACTION last
          CALL q600_fetch('L')
          CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
            IF g_rec_b != 0 THEN
          CALL fgl_set_arr_curr(1)  ######add in 040505
            END IF
 	ACCEPT DISPLAY                   #No.FUN-530067 HCN TEST
-                              
- 
+
+
       ON ACTION help
          LET g_action_choice="help"
          EXIT DISPLAY
- 
+
       ON ACTION locale
          CALL cl_dynamic_locale()
          CALL cl_show_fld_cont()   #FUN-550037(smin)
- 
+
       ON ACTION exit
          LET g_action_choice="exit"
          EXIT DISPLAY
- 
-      ON ACTION controlg 
+
+      ON ACTION controlg
          LET g_action_choice="controlg"
          EXIT DISPLAY
       #FUN-D40107--add--str--
@@ -739,17 +743,17 @@ FUNCTION q600_bp(p_ud)
          EXIT DISPLAY
       #FUN-D40107--add--end--
       #ON ACTION 會計分錄產生
-      ON ACTION gen_entry    
-         LET g_action_choice="gen_entry"   
+      ON ACTION gen_entry
+         LET g_action_choice="gen_entry"
          EXIT DISPLAY
       #ON ACTION 分錄底稿
-      ON ACTION entry_sheet   
+      ON ACTION entry_sheet
          LET g_action_choice="entry_sheet"
          EXIT DISPLAY
-# No.FUN-680034 --start--                                                                                                           
-      ON ACTION entry_sheet1                                                                                                        
-         LET g_action_choice="entry_sheet1"                                                                                         
-         EXIT DISPLAY                                                                                                               
+# No.FUN-680034 --start--
+      ON ACTION entry_sheet1
+         LET g_action_choice="entry_sheet1"
+         EXIT DISPLAY
 # No.FUN-680034 ---end---
       #FUN-D40107--add--str--
       #@WHEN "拋轉憑證"
@@ -769,35 +773,41 @@ FUNCTION q600_bp(p_ud)
       ON ACTION qry_oox
          LET g_action_choice="qry_oox"
          EXIT DISPLAY
-#No.FUN-A30028 --end 
+#No.FUN-A30028 --end
    ON ACTION cancel
              LET INT_FLAG=FALSE 		#MOD-570244	mars
       LET g_action_choice="exit"
       EXIT DISPLAY
- 
+
       ON IDLE g_idle_seconds
          CALL cl_on_idle()
          CONTINUE DISPLAY
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
-   
+
+         # darcy add s---
+         on action gen_tic
+            LET g_action_choice="gen_tic"
+            EXIT DISPLAY
+         # darcy add e---
+
+
       ON ACTION exporttoexcel       #FUN-4B0047
          LET g_action_choice = 'exporttoexcel'
          EXIT DISPLAY  #TQC-5B0076
       ON ACTION controls                             #No.FUN-6A0092
          CALL cl_set_head_visible("","AUTO")           #No.FUN-6A0092
- 
+
       # No.FUN-530067 --start--
       AFTER DISPLAY
          CONTINUE DISPLAY
       # No.FUN-530067 ---end---
- 
+
    END DISPLAY
    CALL cl_set_act_visible("accept,cancel", TRUE)
 END FUNCTION
- 
+
 #modify 030317 NO.A048
 FUNCTION q600_v()
    DEFINE l_trno   LIKE npp_file.npp01
@@ -806,28 +816,28 @@ FUNCTION q600_v()
    DEFINE l_npp00  LIKE npp_file.npp00
    DEFINE l_npp011 LIKE npp_file.npp011
    DEFINE l_nma05  LIKE nma_file.nma05
- 
-   IF cl_null(g_oox00) OR cl_null(g_oox01) OR cl_null(g_oox02) THEN 
-      RETURN 
+
+   IF cl_null(g_oox00) OR cl_null(g_oox01) OR cl_null(g_oox02) THEN
+      RETURN
    END IF
    IF g_detail = 'Y' THEN RETURN END IF
- 
+
 #  DELETE FROM sort_file;        #No.FUN-680034
- 
-   #單號為系統別+年度+月份 
+
+   #單號為系統別+年度+月份
    LET l_trno = g_oox00,g_oox01 USING '&&&&',g_oox02 USING '&&'
- 
+
    LET l_npp00  = 13
    LET l_npp011 = 1
    #已拋轉總帳
    SELECT COUNT(*) INTO l_n FROM npp_file
-    WHERE npp01 = l_trno  AND nppglno IS NOT NULL 
+    WHERE npp01 = l_trno  AND nppglno IS NOT NULL
       AND npp00 = l_npp00 AND nppsys = g_oox00 AND npp011 = l_npp011
-   IF l_n > 0 THEN 
-      CALL cl_err('sel npp','aap-122',0) RETURN 
+   IF l_n > 0 THEN
+      CALL cl_err('sel npp','aap-122',0) RETURN
    END IF
-   SELECT COUNT(*) INTO l_n FROM npq_file 
-    WHERE npq01 = l_trno  AND npq00 = l_npp00 
+   SELECT COUNT(*) INTO l_n FROM npq_file
+    WHERE npq01 = l_trno  AND npq00 = l_npp00
       AND npqsys= g_oox00 AND npq011= l_npp011
    IF l_n > 0 THEN
       CALL cl_getmsg('axr-056',g_lang) RETURNING g_msg
@@ -838,41 +848,41 @@ FUNCTION q600_v()
             ON IDLE g_idle_seconds
                CALL cl_on_idle()
 #               CONTINUE PROMPT
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
+
       ON ACTION controlg      #MOD-4C0121
          CALL cl_cmdask()     #MOD-4C0121
- 
-         
+
+
          END PROMPT
          IF g_chr MATCHES "[12]" THEN EXIT WHILE END IF
       END WHILE
       IF g_chr = '1' THEN RETURN END IF
    END IF
- 
-   LET g_success = 'Y' 
-   BEGIN WORK                                                                   
-                                   
-#NO.FUN-680034--begin                                           
- #  CALL q600_g_gl(l_npp00,l_npp011,l_trno)      
+
+   LET g_success = 'Y'
+   BEGIN WORK
+
+#NO.FUN-680034--begin
+ #  CALL q600_g_gl(l_npp00,l_npp011,l_trno)
     CALL q600_g_gl(l_npp00,l_npp011,l_trno,'0')
      IF g_aza.aza63='Y' and g_success='Y' THEN
       CALL q600_g_gl(l_npp00,l_npp011,l_trno,'1')
-     END IF                                 
-#NO.FUN-680034--end                                           
-   IF g_success = 'Y' THEN                                                      
-      COMMIT WORK                                                               
-   ELSE                                                                         
-      ROLLBACK WORK                                                             
-   END IF                 
+     END IF
+#NO.FUN-680034--end
+   IF g_success = 'Y' THEN
+      COMMIT WORK
+   ELSE
+      ROLLBACK WORK
+   END IF
 END FUNCTION
- 
-#add 030226 NO.A048                                                             
+
+#add 030226 NO.A048
 FUNCTION q600_g_gl(l_npp00,l_npp011,l_trno,l_npptype) #NO.FUN-680034
    DEFINE l_npp00  LIKE npp_file.npp00
    DEFINE l_npp011 LIKE npp_file.npp011
@@ -889,32 +899,32 @@ FUNCTION q600_g_gl(l_npp00,l_npp011,l_trno,l_npptype) #NO.FUN-680034
    DEFINE l_nms    RECORD LIKE nms_file.*
   #DEFINE l_sql    LIKE type_file.chr1000,       #NO.FUN-680145 VARCHAR(500) #MOD-C10158 mark
    DEFINE l_sql    STRING,                       #MOD-C10158 add
-          l_sort   RECORD                                                       
-                   nma01 LIKE nma_file.nma01,                                   
-                   nma02 LIKE nma_file.nma02,                                   
-                   nma05 LIKE nma_file.nma05,                                   
-                   nma051 LIKE nma_file.nma051,                  #No.FUN-680034                               
-                   oox05 LIKE oox_file.oox05,                                   
-                   oox07 LIKE oox_file.oox07,                                   
-                   oox10 LIKE oox_file.oox10                                    
-                   END RECORD,                                                  
-         l_sr      RECORD                                                       
-                   nma05 LIKE nma_file.nma05,                                   
-                   nma051 LIKE nma_file.nma051,                  #No.FUN-680034                               
-                   oox05 LIKE oox_file.oox05,                                   
-                   oox07 LIKE oox_file.oox07,                                   
-                   npq06 LIKE npq_file.npq06,                                   
-                   npq07f LIKE npq_file.npq07f,                                 
-                   npq07 LIKE npq_file.npq07,                                   
-                   nma01 LIKE nma_file.nma01                                    
-                   END RECORD,                 
-           l_sr2   RECORD                                                       
-                   oox05 LIKE oox_file.oox05,                                   
-                   oox07 LIKE oox_file.oox07,                                   
-                   oox10 LIKE oox_file.oox10                                    
-                   END RECORD                                                   
+          l_sort   RECORD
+                   nma01 LIKE nma_file.nma01,
+                   nma02 LIKE nma_file.nma02,
+                   nma05 LIKE nma_file.nma05,
+                   nma051 LIKE nma_file.nma051,                  #No.FUN-680034
+                   oox05 LIKE oox_file.oox05,
+                   oox07 LIKE oox_file.oox07,
+                   oox10 LIKE oox_file.oox10
+                   END RECORD,
+         l_sr      RECORD
+                   nma05 LIKE nma_file.nma05,
+                   nma051 LIKE nma_file.nma051,                  #No.FUN-680034
+                   oox05 LIKE oox_file.oox05,
+                   oox07 LIKE oox_file.oox07,
+                   npq06 LIKE npq_file.npq06,
+                   npq07f LIKE npq_file.npq07f,
+                   npq07 LIKE npq_file.npq07,
+                   nma01 LIKE nma_file.nma01
+                   END RECORD,
+           l_sr2   RECORD
+                   oox05 LIKE oox_file.oox05,
+                   oox07 LIKE oox_file.oox07,
+                   oox10 LIKE oox_file.oox10
+                   END RECORD
    DEFINE l_flag   LIKE type_file.chr1    #FUN-D40118 add
- 
+
    DELETE FROM npp_file WHERE npp01 = l_trno  AND npp00 = l_npp00
                           AND nppsys= g_oox00 AND npp011= l_npp011  #異動序號
                           AND npptype=l_npptype                     #No.FUN-680034
@@ -924,8 +934,8 @@ FUNCTION q600_g_gl(l_npp00,l_npp011,l_trno,l_npptype) #NO.FUN-680034
    DELETE FROM tic_file WHERE tic04 = l_trno  #FUN-B40056
 
    DELETE FROM sort_file;        #No.FUN-680034
-                          
-#NO.FUN-680034--begin                                           
+
+#NO.FUN-680034--begin
  #  CALL s_azn01(g_oox01,g_oox02) RETURNING b_date,e_date
     IF g_aza.aza63='Y' AND g_success='Y' THEN
       IF l_npptype='0' THEN
@@ -938,9 +948,9 @@ FUNCTION q600_g_gl(l_npp00,l_npp011,l_trno,l_npptype) #NO.FUN-680034
    END IF
 #NO.FUN-680034--end
    #No.MOD-910128 add --begin
-   CALL s_get_bookno(YEAR(e_date)) RETURNING g_flag,g_bookno1,g_bookno2                
-   IF g_flag =  '1' THEN  #抓不到帳別                                          
-      CALL cl_err(YEAR(e_date),'aoo-081',1)                                         
+   CALL s_get_bookno(YEAR(e_date)) RETURNING g_flag,g_bookno1,g_bookno2
+   IF g_flag =  '1' THEN  #抓不到帳別
+      CALL cl_err(YEAR(e_date),'aoo-081',1)
       LET g_success = 'N'
    END IF
    #No.MOD-910128 add --end
@@ -952,16 +962,16 @@ FUNCTION q600_g_gl(l_npp00,l_npp011,l_trno,l_npptype) #NO.FUN-680034
       ORDER BY nms01
    IF g_nmz.nmz11 = 'N' THEN   #是否依部門區分預設會計科目
       SELECT * INTO l_nms.* FROM nms_file WHERE nms01 = ' '
-      IF STATUS THEN                                                       
+      IF STATUS THEN
 #        CALL cl_err('sel nms',STATUS,1)        #No.FUN-660146
          CALL cl_err3("sel","nms_file","","",STATUS,"","sel nms",1)   #No.FUN-660146
-         LET g_success = 'N' RETURN   
-      END IF 
+         LET g_success = 'N' RETURN
+      END IF
    ELSE
       FOREACH nmz01 INTO l_nms.*   #任一部門
-         IF STATUS THEN                                                       
+         IF STATUS THEN
             CALL cl_err('sel nms',STATUS,1) LET g_success = 'N' EXIT FOREACH
-         END IF 
+         END IF
          EXIT FOREACH
       END FOREACH
    END IF
@@ -971,16 +981,16 @@ FUNCTION q600_g_gl(l_npp00,l_npp011,l_trno,l_npptype) #NO.FUN-680034
    LET l_npp.npp011= l_npp011
    LET l_npp.npp02 = e_date
    LET l_npp.npp03 = NULL
-   LET l_npp.npptype = l_npptype          #No.FUN-680034              
+   LET l_npp.npptype = l_npptype          #No.FUN-680034
    LET l_npp.npplegal= g_legal            #FUN-980011 add
- 
+
    INSERT INTO npp_file VALUES(l_npp.*)
    IF STATUS OR SQLCA.SQLERRD[3]=0 THEN
 #     CALL cl_err('ins npp',STATUS,1)    #No.FUN-660146
       CALL cl_err3("ins","npp_file",l_npp.npp01,l_npp.npp011,STATUS,"","ins npp",1)   #No.FUN-660146
-      LET g_success = 'N' RETURN 
+      LET g_success = 'N' RETURN
    END IF
- 
+
    #有關注釋請看gapq600
   #----------------------------------MOD-C10158----------------------start
   #DECLARE q600_sortb_curs CURSOR FOR
@@ -1004,37 +1014,37 @@ FUNCTION q600_g_gl(l_npp00,l_npp011,l_trno,l_npptype) #NO.FUN-680034
   #IF STATUS THEN
   #   CALL cl_err('q600_sortb_curs',STATUS,0) LET g_success='N' RETURN
   #END IF
-  #----------------------------------MOD-C10158------------------------end 
+  #----------------------------------MOD-C10158------------------------end
 
-   FOREACH q600_sortb_curs INTO l_sort.*                                        
-     IF SQLCA.sqlcode THEN                                                      
-        CALL cl_err(l_sort.nma01,SQLCA.sqlcode,0)                               
-        LET g_success = 'N' EXIT FOREACH                                                            
-     END IF                                       
+   FOREACH q600_sortb_curs INTO l_sort.*
+     IF SQLCA.sqlcode THEN
+        CALL cl_err(l_sort.nma01,SQLCA.sqlcode,0)
+        LET g_success = 'N' EXIT FOREACH
+     END IF
      INSERT INTO sort_file VALUES(l_sort.nma01,l_sort.nma02,l_sort.nma05,   #No.FUN-680034
         l_sort.nma051,l_sort.oox05,l_sort.oox07,l_sort.oox10)
-     IF SQLCA.sqlcode THEN                                                      
+     IF SQLCA.sqlcode THEN
 #       CALL cl_err(l_sort.nma01,SQLCA.sqlcode,0)                                  #No.FUN-660146
         CALL cl_err3("ins","sort_file","","",SQLCA.sqlcode,"","",0)   #No.FUN-660146
-        LET g_success = 'N' EXIT FOREACH                                                            
-     END IF                                                                     
-   END FOREACH     
-   CASE g_nmz.nmz09                                                             
+        LET g_success = 'N' EXIT FOREACH
+     END IF
+   END FOREACH
+   CASE g_nmz.nmz09
       WHEN '1'
-        LET l_sql="SELECT nma05,nma051,oox05,oox07,'',0,SUM(oox10),nma01",        #NO.FUN-680034 
-                  "  FROM sort_file ",                                            
-                  " GROUP BY nma05,nma051,nma01,oox05,oox07 " 
-      WHEN '2'                                                                  
-        LET l_sql="SELECT nma05,nma051,oox05,oox07,'',0,SUM(oox10),''", 
-                  "  FROM sort_file ",                                         
-                  " GROUP BY nma05,nma051,oox05,oox07 "                           #NO.FUN-680034      
-   END CASE                                              
-   PREPARE q600_pre5 FROM l_sql                                                 
-   IF STATUS THEN 
-      CALL cl_err('q600_pre5',STATUS,1) LET g_success = 'N' RETURN 
+        LET l_sql="SELECT nma05,nma051,oox05,oox07,'',0,SUM(oox10),nma01",        #NO.FUN-680034
+                  "  FROM sort_file ",
+                  " GROUP BY nma05,nma051,nma01,oox05,oox07 "
+      WHEN '2'
+        LET l_sql="SELECT nma05,nma051,oox05,oox07,'',0,SUM(oox10),''",
+                  "  FROM sort_file ",
+                  " GROUP BY nma05,nma051,oox05,oox07 "                           #NO.FUN-680034
+   END CASE
+   PREPARE q600_pre5 FROM l_sql
+   IF STATUS THEN
+      CALL cl_err('q600_pre5',STATUS,1) LET g_success = 'N' RETURN
    END IF
    DECLARE q600_npq1 CURSOR FOR q600_pre5
- 
+
    LET l_npq.npqsys= g_oox00
    LET l_npq.npq00 = l_npp00
    LET l_npq.npq01 = l_trno
@@ -1054,11 +1064,11 @@ FUNCTION q600_g_gl(l_npp00,l_npp011,l_trno,l_npptype) #NO.FUN-680034
    END IF
    #TQC-C80024--add--str--
 
-   FOREACH q600_npq1 INTO l_sr.*                                                
-      IF STATUS THEN                                                            
-         CALL cl_err('q600_curs',STATUS,1) LET g_success = 'N' EXIT FOREACH                         
-      END IF            
-      LET l_npq.npq24 = l_sr.oox05                                              
+   FOREACH q600_npq1 INTO l_sr.*
+      IF STATUS THEN
+         CALL cl_err('q600_curs',STATUS,1) LET g_success = 'N' EXIT FOREACH
+      END IF
+      LET l_npq.npq24 = l_sr.oox05
       #FUN-D10065--mark--str--
       #LET l_npq.npq04 = l_sr.oox05 CLIPPED,' ',l_sr.oox07 USING '<<<<.<<<<'
       #IF g_nmz.nmz09 = '1' THEN
@@ -1070,20 +1080,20 @@ FUNCTION q600_g_gl(l_npp00,l_npp011,l_trno,l_npptype) #NO.FUN-680034
       LET l_npq.npq04=NULL #FUN-D10065
       IF cl_null(l_sr.npq07) THEN LET l_sr.npq07 = 0 END IF
       IF l_sr.npq07 > 0 THEN   #匯兌收益
-         LET l_npq.npq02 = l_npq.npq02 + 1      
+         LET l_npq.npq02 = l_npq.npq02 + 1
 #NO.FUN-680034--begin
-#        LET l_npq.npq03 = l_sr.nma05 
+#        LET l_npq.npq03 = l_sr.nma05
          IF  l_npptype='0' THEN
            LET l_npq.npq03=l_sr.nma05
          ELSE
            LET l_npq.npq03=l_sr.nma051
          END IF
 #NO.FUN-680034--end
-         LET l_npq.npq06 = '1'                                                  
-         LET l_npq.npq07 = l_sr.npq07                  
+         LET l_npq.npq06 = '1'
+         LET l_npq.npq07 = l_sr.npq07
          MESSAGE '>',l_npq.npq02,' ',l_npq.npq03
          IF cl_null(l_npq.npq03) THEN LET l_npq.npq03='-' END IF
- 
+
          #NO.FUN-5C0015 ---start
 #        CALL s_def_npq(l_npq.npq03,g_prog,l_npq.*,l_npq.npq01,'','',g_bookno1)       #No.FUN-740028  #No.TQC-760156 mark
          IF g_nmz.nmz09 = '1' THEN  #No.TQC-760156
@@ -1096,7 +1106,7 @@ FUNCTION q600_g_gl(l_npp00,l_npp011,l_trno,l_npptype) #NO.FUN-680034
                                  l_sr.oox07 USING '<<<<.<<<<'
             END IF
             #FUN-D10065--add--end
-            CALL s_def_npq31_npq34(l_npq.*,g_bookno1)                      #FUN-AA0087     
+            CALL s_def_npq31_npq34(l_npq.*,g_bookno1)                      #FUN-AA0087
                  RETURNING l_npq.npq31,l_npq.npq32,l_npq.npq33,l_npq.npq34 #FUN-AA0087
          END IF  #No.TQC-760156
          #No.FUN-5C0015 ---end
@@ -1108,7 +1118,7 @@ FUNCTION q600_g_gl(l_npp00,l_npp011,l_trno,l_npptype) #NO.FUN-680034
             END IF
          END IF
          #FUN-D10065--add--end
- 
+
          #TQC-C80024--add--str--
          SELECT aag06,aag42 INTO l_aag06,l_aag42 FROM aag_file
           WHERE aag01 = l_npq.npq03 AND aag00 = g_bookno3
@@ -1119,7 +1129,7 @@ FUNCTION q600_g_gl(l_npp00,l_npp011,l_trno,l_npptype) #NO.FUN-680034
             LET l_npq.npq07f = l_npq.npq07f * -1
          END IF
          #TQC-C80024--add--end--
-   
+
          #FUN-D40118--add--str--
          SELECT aag44 INTO g_aag44 FROM aag_file
           WHERE aag00 = g_bookno3
@@ -1138,20 +1148,20 @@ FUNCTION q600_g_gl(l_npp00,l_npp011,l_trno,l_npptype) #NO.FUN-680034
             LET g_success = 'N' EXIT FOREACH
          END IF
       ELSE                #匯兌損失
-         LET l_npq.npq07 = l_sr.npq07 * (-1)                                    
+         LET l_npq.npq07 = l_sr.npq07 * (-1)
          LET l_npq.npq02 = l_npq.npq02 + 1
 #NO.FUN-680034--begin
-#         LET l_npq.npq03 = l_sr.nma05    
+#         LET l_npq.npq03 = l_sr.nma05
          IF l_npptype='0' THEN
            LET l_npq.npq03=l_sr.nma05
          ELSE
            LET l_npq.npq03=l_sr.nma051
-         END IF                 
-#NO.FUN-680034--end                       
-         LET l_npq.npq06 = '2'                  
+         END IF
+#NO.FUN-680034--end
+         LET l_npq.npq06 = '2'
          MESSAGE '>',l_npq.npq02,' ',l_npq.npq03
          IF cl_null(l_npq.npq03) THEN LET l_npq.npq03='-' END IF
- 
+
          #NO.FUN-5C0015 ---start
 #        CALL s_def_npq(l_npq.npq03,g_prog,l_npq.*,l_npq.npq01,'','',g_bookno1)      #NO.FUN-740028  #No.TQC-760156 mark
          IF g_nmz.nmz09 = '1' THEN  #No.TQC-760156
@@ -1164,7 +1174,7 @@ FUNCTION q600_g_gl(l_npp00,l_npp011,l_trno,l_npptype) #NO.FUN-680034
                                  l_sr.oox07 USING '<<<<.<<<<'
             END IF
             #FUN-D10065--add--end
-            CALL s_def_npq31_npq34(l_npq.*,g_bookno1)                      #FUN-AA0087     
+            CALL s_def_npq31_npq34(l_npq.*,g_bookno1)                      #FUN-AA0087
                  RETURNING l_npq.npq31,l_npq.npq32,l_npq.npq33,l_npq.npq34 #FUN-AA0087
          END IF  #No.TQC-760156
          #No.FUN-5C0015 ---end
@@ -1176,7 +1186,7 @@ FUNCTION q600_g_gl(l_npp00,l_npp011,l_trno,l_npptype) #NO.FUN-680034
             END IF
          END IF
          #FUN-D10065--add--end
- 
+
          #TQC-C80024--add--str--
          SELECT aag06,aag42 INTO l_aag06,l_aag42 FROM aag_file
           WHERE aag01 = l_npq.npq03 AND aag00 = g_bookno3
@@ -1207,14 +1217,14 @@ FUNCTION q600_g_gl(l_npp00,l_npp011,l_trno,l_npptype) #NO.FUN-680034
          END IF
       END IF
    END FOREACH
-   DECLARE q600_sortc_curs CURSOR FOR                                           
-    SELECT oox05,oox07,SUM(oox10)                                               
-      FROM sort_file                                                            
-     GROUP BY oox05,oox07         #No.FUN-680034 
-   IF STATUS THEN                                                               
-      CALL cl_err('q600_oox05',STATUS,0) LET g_success='N' RETURN     
-   END IF  
- 
+   DECLARE q600_sortc_curs CURSOR FOR
+    SELECT oox05,oox07,SUM(oox10)
+      FROM sort_file
+     GROUP BY oox05,oox07         #No.FUN-680034
+   IF STATUS THEN
+      CALL cl_err('q600_oox05',STATUS,0) LET g_success='N' RETURN
+   END IF
+
    #No.TQC-760156 --start--
    LET l_npq.npq11=''
    LET l_npq.npq12=''
@@ -1228,19 +1238,19 @@ FUNCTION q600_g_gl(l_npp00,l_npp011,l_trno,l_npptype) #NO.FUN-680034
    LET l_npq.npq36=''
    LET l_npq.npq37=''
    #No.TQC-760156 --end--
- 
-   FOREACH q600_sortc_curs INTO l_sr2.*                                         
-      IF SQLCA.sqlcode THEN                                                        
-         CALL cl_err(l_sr2.oox05,SQLCA.sqlcode,0)                                  
-         LET g_success = 'N' EXIT FOREACH                                                              
-      END IF                                                                       
-      IF cl_null(l_sr2.oox10) THEN LET l_sr2.oox10 = 0 END IF                      
-      LET l_npq.npq21 = 'MISC'                                                     
-      LET l_npq.npq22 = ''                                                         
+
+   FOREACH q600_sortc_curs INTO l_sr2.*
+      IF SQLCA.sqlcode THEN
+         CALL cl_err(l_sr2.oox05,SQLCA.sqlcode,0)
+         LET g_success = 'N' EXIT FOREACH
+      END IF
+      IF cl_null(l_sr2.oox10) THEN LET l_sr2.oox10 = 0 END IF
+      LET l_npq.npq21 = 'MISC'
+      LET l_npq.npq22 = ''
       #LET l_npq.npq04 = l_sr2.oox05 CLIPPED,' ',l_sr2.oox07 USING '<<<<.<<<<' #FUN-D10065 mark
-      LET l_npq.npq23 = ''                                                         
-      LET l_npq.npq24 = l_sr2.oox05                        
-      IF l_sr2.oox10 > 0 THEN 
+      LET l_npq.npq23 = ''
+      LET l_npq.npq24 = l_sr2.oox05
+      IF l_sr2.oox10 > 0 THEN
          LET l_npq.npq02 = l_npq.npq02 + 1
          LET l_npq.npq06 = '2'
 #NO.FUN-680034--begin
@@ -1254,7 +1264,7 @@ FUNCTION q600_g_gl(l_npp00,l_npp011,l_trno,l_npptype) #NO.FUN-680034
          LET l_npq.npq07 = l_sr2.oox10
          MESSAGE '>',l_npq.npq02,' ',l_npq.npq03
          IF cl_null(l_npq.npq03) THEN LET l_npq.npq03='-' END IF
- 
+
          #NO.FUN-5C0015 ---start
 #        CALL s_def_npq(l_npq.npq03,g_prog,l_npq.*,l_npq.npq01,'','',g_bookno1)       #No.FUN-740028  #No.TQC-760156 mark
 #        RETURNING l_npq.*    #No.TQC-760156 mark
@@ -1266,7 +1276,7 @@ FUNCTION q600_g_gl(l_npp00,l_npp011,l_trno,l_npptype) #NO.FUN-680034
             LET l_npq.npq04 = l_sr2.oox05 CLIPPED,' ',l_sr2.oox07 USING '<<<<.<<<<'
          END IF
          #FUN-D10065--add--end
- 
+
          #TQC-C80024--add--str--
          SELECT aag06,aag42 INTO l_aag06,l_aag42 FROM aag_file
           WHERE aag01 = l_npq.npq03 AND aag00 = g_bookno3
@@ -1303,13 +1313,13 @@ FUNCTION q600_g_gl(l_npp00,l_npp011,l_trno,l_npptype) #NO.FUN-680034
            LET  l_npq.npq03 =l_nms.nms13
           ELSE
            LET  l_npq.npq03= l_nms.nms131
-         END IF   
+         END IF
 #NO.FUN-680034--end
          LET l_npq.npq06 = '1'
          LET l_npq.npq07 = l_sr2.oox10 * -1
          MESSAGE '>',l_npq.npq02,' ',l_npq.npq03
          IF cl_null(l_npq.npq03) THEN LET l_npq.npq03='-' END IF
- 
+
          #NO.FUN-5C0015 ---start
 #        CALL s_def_npq(l_npq.npq03,g_prog,l_npq.*,l_npq.npq01,'','',g_bookno1)         #No.FUN-740028  #No.TQC-760156 mark
 #        RETURNING l_npq.*    #No.TQC-760156 mark
@@ -1322,7 +1332,7 @@ FUNCTION q600_g_gl(l_npp00,l_npp011,l_trno,l_npptype) #NO.FUN-680034
          END IF
          #FUN-D10065--add--end
 
- 
+
          #TQC-C80024--add--str--
          SELECT aag06,aag42 INTO l_aag06,l_aag42 FROM aag_file
           WHERE aag01 = l_npq.npq03 AND aag00 = g_bookno3
@@ -1353,7 +1363,7 @@ FUNCTION q600_g_gl(l_npp00,l_npp011,l_trno,l_npptype) #NO.FUN-680034
          END IF
       END IF
    END FOREACH
-   CALL s_flows('3','',l_npq.npq01,l_npp.npp02,'N',l_npq.npqtype,TRUE)   #No.TQC-B70021  
+   CALL s_flows('3','',l_npq.npq01,l_npp.npp02,'N',l_npq.npqtype,TRUE)   #No.TQC-B70021
    MESSAGE ''
 END FUNCTION
 
@@ -1365,7 +1375,7 @@ FUNCTION weight_evaluation()
    END IF
    LET l_str="gnmp600 '",g_oox01,"' '",g_oox02,"' 'N'"
    CALL cl_cmdrun_wait(l_str)
-END FUNCTION 
+END FUNCTION
 
 FUNCTION evaluation_of_reduction()
    DEFINE l_str  STRING
@@ -1374,7 +1384,7 @@ FUNCTION evaluation_of_reduction()
    END IF
    LET l_str="gnmp601 '",g_oox01,"' '",g_oox02,"' 'N'"
    CALL cl_cmdrun_wait(l_str)
-END FUNCTION 
+END FUNCTION
 
 FUNCTION carry_voucher()
    DEFINE l_str  STRING
@@ -1383,7 +1393,7 @@ FUNCTION carry_voucher()
    END IF
    LET l_str="gxrp610 '3' '' '' '' '' '' 'N'"
    CALL cl_cmdrun_wait(l_str)
-END FUNCTION 
+END FUNCTION
 
 FUNCTION undo_carry_voucher()
    DEFINE l_str  STRING
@@ -1391,9 +1401,29 @@ FUNCTION undo_carry_voucher()
    IF s_shut(0) THEN
        RETURN
    END IF
-   LET g_trno = g_oox00,g_oox01 USING '&&&&',g_oox02 USING '&&'   
+   LET g_trno = g_oox00,g_oox01 USING '&&&&',g_oox02 USING '&&'
    SELECT nppglno INTO l_nppglno FROM npp_file WHERE npp01 = g_trno AND npp00 = 13
    LET l_str="gxrp620 '' '' '",l_nppglno,"' 'N'"
    CALL cl_cmdrun_wait(l_str)
-END FUNCTION 
+END FUNCTION
 #FUN-D40107--add--end--
+
+--
+function q600_gen_tic()
+    define l_trno  varchar(40)
+    define b_date,e_date date
+
+    LET l_trno = g_oox00,g_oox01 USING '&&&&',g_oox02 USING '&&'
+
+    CALL s_azn01(g_oox01,g_oox02)RETURNING b_date,e_date
+
+    begin work
+    let g_success = 'Y'
+
+    CALL s_flows('3','',l_trno,e_date,'N','0',TRUE)
+    if g_success = 'Y' then
+        commit work
+    else
+        rollback work
+    end if
+end function
