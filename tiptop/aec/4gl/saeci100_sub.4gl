@@ -333,12 +333,11 @@ function i100sub_y_chk(p_ecu01,p_ecu02)
     end if
     if cl_null(g_bgjob) or g_bgjob = 'N' then
         call cl_remark_chk(g_prog,p_ecu01||p_ecu02,0)
-        while true
-            let g_success = 'N'
+        if g_success = 'Y' then
+            call i100sub_chk(p_ecu01,p_ecu02)
+        end if
+        while g_success = 'N'
             call cl_remark(g_prog,p_ecu01||p_ecu02,0)
-            if g_success = 'Y' then
-                exit while
-            end if
         end while
     end if
 
@@ -1049,5 +1048,44 @@ function saeci100_log(p_ecb01,p_ecb02,p_bmb,p_ecb)
     run "echo '"||l_str||"' >> "||l_file
 
     run "echo '--- end ---\n\n' >> "||l_file
+
+end function
+
+# 汇总检查，根据料号类型做检查
+function i100sub_chk(p_ecu01,p_ecu02)
+    define p_ecu01      like ecu_file.ecu01
+    define p_ecu02      like ecu_file.ecu02
+    define l_cnt        integer
+    define sr   record
+        tc_rem31    like tc_rem_file.tc_rem31
+    end record
+
+
+    let g_success = 'Y'
+
+    if length(p_ecu01) < 10 then
+        message '料号长度小于10，不做任何检查'
+        return
+    end if
+    
+    case
+        # 组装成品
+        when p_ecu01[7,7] matches "[ABCD]" and p_ecu01 not matches "*-*"
+        # 组装辅料
+        when p_ecu01[7,7] matches "[ABCD]" and p_ecu01 matches "*-*"
+        # 光板成品
+        when p_ecu01[7,7] not matches "[ABCD]" and p_ecu01 not matches "*-*"
+            select tc_rem31 into sr.tc_rem31
+              from tc_rem_file
+             where tc_remdocno = p_ecu01||p_ecu02
+               and tc_remprog = g_prog
+               and tc_remseq = 0
+            if cl_null(sr.tc_rem31) then
+                call cl_err('周期字段未维护','!',0)
+                let g_success = 'N'
+            end if
+        # 光板辅料
+        when p_ecu01[7,7] not matches "[ABCD]" and p_ecu01 matches "*-*"
+    end case
 
 end function
