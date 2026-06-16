@@ -1382,7 +1382,7 @@ FUNCTION t370sub_s_upd(p_ina01,p_argv1,p_inTransaction)
          END IF
 
          # darcy:2026/03/02 add s---
-         if l_num > 0 and l_inb.inb15 <> '3013' and l_inb.inb15 <> '3014' then
+         if l_num > 0 and l_inb.inb04 matches 'H.*' and  l_inb.inb15 <> '3013' and l_inb.inb15 <> '3014' then
             call cs_consumable_amt(l_inb.inb04,l_inb.inb09,l_inb.inb08) returning l_curr_temp
             let l_curr = l_curr + l_curr_temp
          end if
@@ -1532,7 +1532,7 @@ FUNCTION t370sub_s1(p_ina00,p_ina01,p_ina03,p_ina07,p_ina04,p_ina06,p_argv1)
       -- end if
       # darcy:2026/02/05 add e---
       # darcy:2026/03/02 add s---
-      if l_num > 0 and l_inb.inb15 <> '3013' and l_inb.inb15 <> '3014' then
+      if l_num > 0 and l_inb.inb04 matches 'H.*' and l_inb.inb15 <> '3013' and l_inb.inb15 <> '3014' then
          call cs_consumable_amt(l_inb.inb04,l_inb.inb09,l_inb.inb08) returning l_curr_temp
          let l_curr = l_curr + l_curr_temp
       end if
