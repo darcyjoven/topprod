@@ -1,6 +1,6 @@
 # Prog. Version..: '5.30.06-13.03.12(00010)'     #
 #
-# Pattern name...: p_process.4gl 
+# Pattern name...: p_process.4gl
 # Descriptions...: 線上使用情況
 # Date & Author..: 04/04/06 by Brendan
 # Modify.........: No.FUN-5A0222 05/11/22 By saki 更改process的資訊，使用gbq_file對應ps -ef的指令
@@ -17,12 +17,12 @@
 # Modify.........: No.FUN-950082 10/05/06 By alex 增加查看AP Server
 # Modify.........: No.FUN-A80037 10/08/05 By alex 跨AP顯示完整的gbq_file內容，並予以適當標示非本機process
 # Modify.........: No.MOD-B70145 11/07/14 By Vampire 多了 COLUMN g_c[40],sr.p09 欄位。導致列印失敗。
-# Modify.........: No.TQC-B90122 11/12/29 By ka0132 增加gi_count的增量 
+# Modify.........: No.TQC-B90122 11/12/29 By ka0132 增加gi_count的增量
 
 DATABASE ds
- 
+
 GLOBALS "../../config/top.global"
- 
+
 GLOBALS
    DEFINE la_license      DYNAMIC ARRAY OF RECORD
            ip             LIKE type_file.chr50,
@@ -52,28 +52,28 @@ DEFINE ga_color     DYNAMIC ARRAY OF RECORD
                     END RECORD
 DEFINE gi_count     LIKE type_file.num10   #No.FUN-680135 INTEGER
 DEFINE gi_arr       LIKE type_file.num10   #No.FUN-680135 INTEGER
- 
+
 MAIN
-   OPTIONS 
+   OPTIONS
        INPUT NO WRAP
    DEFER INTERRUPT                                # 擷取中斷鍵, 由程式處理
- 
+
    IF (NOT cl_user()) THEN
       EXIT PROGRAM
    END IF
-  
+
    WHENEVER ERROR CALL cl_err_msg_log
-  
+
    IF (NOT cl_setup("AZZ")) THEN
       EXIT PROGRAM
    END IF
- 
-   CALL cl_used(g_prog, g_time, 1) RETURNING g_time 
- 
-   OPEN WINDOW p_process_w WITH FORM "azz/42f/p_process" 
+
+   CALL cl_used(g_prog, g_time, 1) RETURNING g_time
+
+   OPEN WINDOW p_process_w WITH FORM "azz/42f/p_process"
         ATTRIBUTE(STYLE=g_win_style CLIPPED)
    CALL cl_ui_init()
- 
+
    WHILE TRUE
       LET g_action_choice = NULL
       CALL p_generateProcessList()
@@ -82,12 +82,12 @@ MAIN
          EXIT WHILE
       END IF
    END WHILE
- 
+
    CLOSE WINDOW p_process_w                  # 結束畫面
 
-   CALL cl_used(g_prog, g_time, 2) RETURNING g_time 
+   CALL cl_used(g_prog, g_time, 2) RETURNING g_time
 END MAIN
- 
+
 FUNCTION p_generateProcessList()
    DEFINE lch_cmd     base.Channel
    DEFINE ls_cmd      STRING,
@@ -103,31 +103,31 @@ FUNCTION p_generateProcessList()
    #No.FUN-5A0222 ---end---
    DEFINE lc_zx01     LIKE zx_file.zx01   #No.FUN-A80037
    DEFINE lc_zx02     LIKE zx_file.zx02   #No.FUN-660158
- 
+
    #No.FUN-5A0222 --start-- 拿出gbq_file裡面的資料準備對照
    CALL cl_process_check()  #先將gbq_file內的資料refresh
    LET ls_sql = "SELECT * FROM gbq_file ORDER BY gbq03,gbq02,gbq01"
    PREPARE gbq_pre FROM ls_sql
    DECLARE gbq_curs CURSOR FOR gbq_pre
- 
+
    LET gi_count = 1
    FOREACH gbq_curs INTO lr_gbq[gi_count].*
       IF SQLCA.sqlcode THEN
          EXIT FOREACH
       END IF
- 
+
       LET gi_count = gi_count + 1
    END FOREACH
    CALL lr_gbq.deleteElement(gi_count)
    #No.FUN-5A0222 ---end---
- 
+
    CALL ga_process.clear()
    CALL ga_color.clear()
    LET gi_count = 1
- 
+
    CALL fgl_setenv("COLUMNS","132")
    LET ls_cmd = "ps -ef | grep fglrun | grep -v 'grep'"
- 
+
    LET lch_cmd = base.Channel.create()
    CALL lch_cmd.openPipe(ls_cmd, "r")
    WHILE lch_cmd.read(ls_result)
@@ -149,19 +149,19 @@ FUNCTION p_generateProcessList()
 #                    LET ga_process[gi_count].p05 = ls_token
 #                    LET li_minute = ls_token.subString(1, ls_token.getIndexOf(':', 1) - 1)
 #                    IF li_minute >= 5 THEN
-#                       LET ga_color[gi_count].c01 = "red" 
-#                       LET ga_color[gi_count].c02 = "red" 
-#                       LET ga_color[gi_count].c03 = "red" 
-#                       LET ga_color[gi_count].c04 = "red" 
-#                       LET ga_color[gi_count].c05 = "red" 
-#                       LET ga_color[gi_count].c06 = "red" 
+#                       LET ga_color[gi_count].c01 = "red"
+#                       LET ga_color[gi_count].c02 = "red"
+#                       LET ga_color[gi_count].c03 = "red"
+#                       LET ga_color[gi_count].c04 = "red"
+#                       LET ga_color[gi_count].c05 = "red"
+#                       LET ga_color[gi_count].c06 = "red"
 #                    ELSE
-#                       LET ga_color[gi_count].c01 = "black" 
-#                       LET ga_color[gi_count].c02 = "black" 
-#                       LET ga_color[gi_count].c03 = "black" 
-#                       LET ga_color[gi_count].c04 = "black" 
-#                       LET ga_color[gi_count].c05 = "black" 
-#                       LET ga_color[gi_count].c06 = "black" 
+#                       LET ga_color[gi_count].c01 = "black"
+#                       LET ga_color[gi_count].c02 = "black"
+#                       LET ga_color[gi_count].c03 = "black"
+#                       LET ga_color[gi_count].c04 = "black"
+#                       LET ga_color[gi_count].c05 = "black"
+#                       LET ga_color[gi_count].c06 = "black"
 #                    END IF
                 WHEN li_i >= 9    #Execution Command
                      LET ga_process[gi_count].p07 = ga_process[gi_count].p07, " ", ls_token
@@ -259,29 +259,29 @@ FUNCTION p_generateProcessList()
    DISPLAY gi_count TO FORMONLY.cnt           #FUN-A80037 End
    CALL lch_cmd.close()
 END FUNCTION
- 
+
 FUNCTION p_showProcessList()
    CALL cl_set_act_visible("accept,cancel", FALSE)
    DISPLAY ARRAY ga_process TO s_process.*
        ATTRIBUTE (COUNT = gi_count - 1, UNBUFFERED)
- 
+
        BEFORE DISPLAY
            CALL DIALOG.setCellAttributes(ga_color)
            LET gi_arr = 1
-           CALL FGL_SET_ARR_CURR(gi_arr) 
- 
+           CALL FGL_SET_ARR_CURR(gi_arr)
+
        BEFORE ROW
            LET gi_arr = ARR_CURR()
            CALL cl_show_fld_cont()
- 
+
        ON ACTION accept
            CONTINUE DISPLAY
- 
+
        ON ACTION cancel
            LET INT_FLAG = FALSE
            LET g_action_choice = "exit"
            EXIT DISPLAY
- 
+
        #No.FUN-660158 --start--
        ON ACTION output
           LET g_action_choice="output"
@@ -291,45 +291,45 @@ FUNCTION p_showProcessList()
              CALL cl_set_act_visible("accept,cancel",FALSE)  #No.FUN-740179
           END IF
        #No.FUN-660158 ---end---
- 
+
        #No.FUN-5A0222 --start--
        ON ACTION about
           CALL cl_about()
- 
+
        ON ACTION license_detail                #FUN-A80037
           CALL p_process_license_detail()
 
        ON ACTION help
           CALL cl_show_help()
- 
+
        ON ACTION controlg
           CALL cl_cmdask()
- 
+
        ON ACTION locale
           CALL cl_dynamic_locale()
           CALL cl_show_fld_cont()
        #No.FUN-5A0222 ---end---
- 
+
        ON ACTION exit
            LET g_action_choice = "exit"
            EXIT DISPLAY
- 
+
        ON ACTION refresh
-           EXIT DISPLAY 
- 
-       #No.FUN-5A0222 --start--   
+           EXIT DISPLAY
+
+       #No.FUN-5A0222 --start--
       ON ACTION kill
           CALL p_killProcess()
           EXIT DISPLAY
        #No.FUN-5A0222 ---end---
- 
+
        ON IDLE 10
            EXIT DISPLAY
- 
+
    END DISPLAY
    CALL cl_set_act_visible("accept,cancel", TRUE)
 END FUNCTION
- 
+
 
 FUNCTION p_process_license_detail()
 
@@ -365,13 +365,10 @@ END FUNCTION
 
 FUNCTION p_killProcess()
    DEFINE li_ret     LIKE type_file.num10   #No.FUN-680135 INTEGER
- 
- 
+
+
    IF g_user CLIPPED != ga_process[gi_arr].p01 THEN
-      IF g_user CLIPPED != "tiptop" 
-             
-       OR  g_user CLIPPED != "37107"
-   THEN
+      IF g_user CLIPPED != "tiptop" THEN
          CALL cl_err("You're not TIPTOP administrator.", "!", 1)
       ELSE
          RUN "killproc " || ga_process[gi_arr].p03 RETURNING li_ret
@@ -381,12 +378,12 @@ FUNCTION p_killProcess()
       RUN "kill -9 " || ga_process[gi_arr].p03 RETURNING li_ret
       SLEEP 1
    END IF
- 
+
    IF li_ret THEN
       CALL cl_err("Fail to kill this process.", "!", 1)
    END IF
 END FUNCTION
- 
+
 #No.FUN-660158 --start--
 FUNCTION process_out()
    DEFINE   sr              RECORD
@@ -404,24 +401,24 @@ FUNCTION process_out()
    DEFINE   li_i         LIKE type_file.num5,   #No.FUN-680135 SMALLINT
             l_name       LIKE type_file.chr20,  # External(Disk) file name    #No.FUN-680135 VARCHAR(20)
             l_za05       LIKE type_file.chr1000 #        #No.FUN-680135 VARCHAR(40)
-  
+
    CALL cl_wait()
    SELECT zo02 INTO g_company FROM zo_file WHERE zo01 = g_lang
- 
+
    CALL cl_outnam('p_process') RETURNING l_name
    START REPORT process_rep TO l_name
- 
+
    FOR li_i = 1 TO ga_process.getLength()
        LET sr.* = ga_process[li_i].*
        OUTPUT TO REPORT process_rep(sr.*)
    END FOR
- 
+
    FINISH REPORT process_rep
- 
+
    ERROR ""
    CALL cl_prt(l_name,' ','1',g_len)
 END FUNCTION
- 
+
 REPORT process_rep(sr)
    DEFINE   l_trailer_sw    LIKE type_file.chr1,    #No.FUN-680135 VARCHAR(1)
             sr              RECORD
@@ -436,15 +433,15 @@ REPORT process_rep(sr)
                p08          LIKE gbq_file.gbq10,    #No.FUN-680135 VARCHAR(20) #Database No.FUN-660135
                p09          LIKE gbq_file.gbq11                                #Multi-AP No.FUN-950082
                             END RECORD
- 
+
    OUTPUT
        TOP MARGIN g_top_margin
        LEFT MARGIN g_left_margin
        BOTTOM MARGIN g_bottom_margin
        PAGE LENGTH g_page_line
- 
+
     ORDER BY sr.p01
- 
+
     FORMAT
         PAGE HEADER
             PRINT COLUMN ((g_len-FGL_WIDTH(g_company CLIPPED))/2)+1,g_company CLIPPED
@@ -458,7 +455,7 @@ REPORT process_rep(sr)
                   g_x[39] CLIPPED,g_x[40] CLIPPED                                    #MOD-B70145 add ,g_x[40] CLIPPED
             PRINT g_dash1
             LET l_trailer_sw = 'y'
- 
+
         ON EVERY ROW
            PRINT COLUMN g_c[31],sr.p01,
                  COLUMN g_c[32],sr.user_name,
@@ -470,12 +467,12 @@ REPORT process_rep(sr)
                  COLUMN g_c[38],sr.p07,
                  COLUMN g_c[39],sr.p08,
                  COLUMN g_c[40],sr.p09
- 
+
         ON LAST ROW
             PRINT g_dash[1,g_len]
             PRINT g_x[4],g_x[5] CLIPPED, COLUMN (g_len-9), g_x[7] CLIPPED
             LET l_trailer_sw = 'n'
- 
+
         PAGE TRAILER
             IF l_trailer_sw = 'y' THEN
                 PRINT g_dash[1,g_len]
