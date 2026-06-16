@@ -78,8 +78,9 @@ MAIN
         attribute(style=g_win_style clipped)
    call cl_ui_init()
    
-   call p_login_license()
-   -- call p_login_history_parse()
+   -- call p_login_license()
+   call p_login_history_parse()
+   
 
    close window p_login_w
    call cl_used(g_prog, g_time, 2) returning g_time 
@@ -170,10 +171,12 @@ function p_login_license_parse()
    define   l_sql,l_cmd,l_str,l_temp    string
    define   l_channel     base.Channel
    define   l_tok,l_tok1         base.StringTokenizer
-   define   l_license     license
+   define   l_license     dynamic array of license
    define   l_hostname    varchar(1000)
    define   l_usr         varchar(100)
-   define   l_day,l_month,l_year,i  integer
+   define   l_day,l_month,l_year,l_cnt,i  integer
+   define   l_dat         date
+   define   l_pids        string
 
    let l_cmd = "/u1/usr/tiptop/license/parse.sh > /u1/usr/tiptop/output.txt"
    run l_cmd
@@ -181,20 +184,18 @@ function p_login_license_parse()
    let l_channel = base.channel.create()
    call l_channel.openfile("/u1/usr/tiptop/output.txt","r")
 
-   initialize l_license.* to null
-      -- uuid      varchar(40),
-      -- dat       date,
-      -- ip        varchar(20),
-      -- pid       varchar(10),
-      -- startdat  date,
-      -- starttim  varchar(10),
-      -- cmd       varchar(1000)
-   let l_license.uuid = cs_uuid()
-   let g_uuid = l_license.uuid
-   let l_license.dat = g_today
+   call l_license.clear()
 
-   begin work
+   let g_uuid = cs_uuid()
+   let l_dat = g_today
+   
    let g_success = 'Y'
+   begin work
+   
+   delete from login_gbq
+   insert into login_gbq select * from gbq_file
+   
+   let i = 1
    while true
       let l_str = l_channel.readline()
       if l_channel.iseof() then
@@ -203,36 +204,42 @@ function p_login_license_parse()
       -- 192.168.2.224;FLY-PC-0002-PC;yuanliaocang;25657
       message l_str
 
+      let l_license[i].uuid = g_uuid
+      let l_license[i].dat = l_dat
+
       let l_tok = base.StringTokenizer.create(l_str, ';')
-      let l_license.ip = l_tok.nextToken()
+      let l_license[i].ip = l_tok.nextToken()
       let l_hostname = l_tok.nextToken()
       let l_usr = l_tok.nextToken()
-      let l_license.pid = l_tok.nextToken()
+      let l_license[i].pid = l_tok.nextToken()
+      let l_pids = l_pids , l_license[i].pid , ","
       
-      let l_temp = p_login_cmd(sfmt("ps -p %1 -o lstart --no-headers",l_license.pid))
-      -- Mon Dec  1 15:01:38 2025
-      let l_tok1 = base.StringTokenizer.create(l_temp, ' ')
-      let l_license.starttim = l_tok1.nextToken()
-      let l_month = p_login_getmonth(l_tok1.nextToken())
-      let l_day = l_tok1.nextToken()
-      let l_license.starttim = l_tok1.nextToken()
-      let l_year = l_tok1.nextToken()
-      let l_license.startdat = mdy(l_month, l_day, l_year)      
+      -- let l_temp = p_login_cmd(sfmt("ps -p %1 -o lstart --no-headers",l_license.pid))
+      -- -- Mon Dec  1 15:01:38 2025
+      -- let l_tok1 = base.StringTokenizer.create(l_temp, ' ')
+      -- let l_license.starttim = l_tok1.nextToken()
+      -- let l_month = p_login_getmonth(l_tok1.nextToken())
+      -- let l_day = l_tok1.nextToken()
+      -- let l_license.starttim = l_tok1.nextToken()
+      -- let l_year = l_tok1.nextToken()
+      -- let l_license.startdat = mdy(l_month, l_day, l_year)      
       
-      let l_license.cmd = p_login_cmd(sfmt("ps -p %1 -o cmd --no-headers",l_license.pid))
-      insert into login_license (uuid,dat,ip,pid,startdat,starttim,cmd)
-      values (l_license.uuid,l_license.dat,l_license.ip,l_license.pid,l_license.startdat,l_license.starttim,l_license.cmd)
-      if sqlca.sqlcode then
-         let g_success = 'N'
-         call cl_err('ins license',sqlca.sqlcode,1)
-         goto _error
-      end if
+      -- let l_license.cmd = p_login_cmd(sfmt("ps -p %1 -o cmd --no-headers",l_license.pid))
 
-      select count(*) into i from login_ip where ip = l_license.ip
-      if i > 0 then
-         update login_ip set usr = l_usr,hostname = l_hostname where ip = l_license.ip
+
+      -- insert into login_license (uuid,dat,ip,pid,startdat,starttim,cmd)
+      -- values (l_license.uuid,l_license.dat,l_license.ip,l_license.pid,l_license.startdat,l_license.starttim,l_license.cmd)
+      -- if sqlca.sqlcode then
+      --    let g_success = 'N'
+      --    call cl_err('ins license',sqlca.sqlcode,1)
+      --    goto _error
+      -- end if
+
+      select count(*) into l_cnt from login_ip where ip = l_license[i].ip
+      if l_cnt > 0 then
+         update login_ip set usr = l_usr,hostname = l_hostname where ip = l_license[i].ip
       else
-         insert into login_ip (ip,usr,hostname) values(l_license.ip,l_usr,l_hostname)
+         insert into login_ip (ip,usr,hostname) values(l_license[i].ip,l_usr,l_hostname)
       end if
       if sqlca.sqlcode then
          let g_success = 'N'
@@ -241,8 +248,10 @@ function p_login_license_parse()
       end if
    end while
 
-   delete from login_gbq
-   insert into login_gbq select * from gbq_file
+   for i = 1 to l_license.getLength()
+      
+   end for
+
 
    label _error:
    if g_success = 'N' then
@@ -251,7 +260,7 @@ function p_login_license_parse()
       commit work
    end if
 
-   call p_login_license_fill_group(l_license.uuid)
+   call p_login_license_fill_group(g_uuid)
 
 end function
 function p_login_license_fill_group(p_uuid)
