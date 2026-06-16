@@ -21,13 +21,13 @@
 # Modify.........: No.FUN-980030 09/08/31 By Hiko 加上GP5.2的相關設定
 # Modify.........: No.FUN-990069 09/09/27 By baofei 修改GP5.2的相關設定
 # Modify.........: No:FUN-990001 09/09/07 By alex 將錯誤訊息標示明確
-# Modify.........: No.FUN-950082 10/05/03 By alex 新增ap server hostname設定 
+# Modify.........: No.FUN-950082 10/05/03 By alex 新增ap server hostname設定
 # Modify.........: No:FUN-AA0003 10/10/01 By Jay 整合功能加入密碼過期驗證,增加SSO log
 # Modify.........: No.FUN-AB0079 10/11/17 By Kevin 控管License
 # Modify.........: No:CHI-A70014 10/11/25 By Summer 密碼檢核的訊息應依user慣用語系呈現
 # Modify.........: No:FUN-AB0111 10/12/07 By Jay 增加在portal登入時,若已傳遞營運中心資料,則不再執行aoos901作業
 # Modify.........: No:FUN-B10003 11/01/07 By Jay 增加TIPTOP SSOKey整合
-# Modify.........: No:FUN-A80141 11/02/16 By Jay 新增AD整合帳號驗證功能 
+# Modify.........: No:FUN-A80141 11/02/16 By Jay 新增AD整合帳號驗證功能
 # Modify.........: No:FUN-B30037 11/03/14 By jrg542 增加 "fglWrt -u" 清除占用license
 # Modify.........: No:FUN-B40051 11/04/18 By Jay 利用4gl Java Interface改寫AD整合帳號驗證功能
 # Modify.........: No.FUN-B40089 11/05/03 By Jay 將SSOKey轉換'_plus_'轉換回'+'號
@@ -38,7 +38,7 @@
 # Modify.........: No:CHI-B50036 11/11/20 By Vampire 提示訊息依使用者語系顯示
 # Modify.........: No.FUN-BA0084 11/12/15 By Jay 調整GAS版本判斷式
 # Modify.........: No.FUN-BC0080 11/12/21 By Jay 新增多網域AD帳號驗證功能
-# Modify.........: No:FUN-BC0002 11/12/29 By ka0132 增加從Portal登入TIPTOP程式時,UPDATE該使用者預設營運中心 
+# Modify.........: No:FUN-BC0002 11/12/29 By ka0132 增加從Portal登入TIPTOP程式時,UPDATE該使用者預設營運中心
 # Modify.........: No:FUN-C40035 12/05/15 By Kevin 增加 retry 機制
 # Modify.........: No:MOD-C40161 12/05/18 By madey 新增zx_file lock機制
 # Modify.........: No:FUN-C50055 12/05/18 By madey 調整密碼強度M規則:不可全部輸入數字
@@ -48,7 +48,7 @@
 # Modify.........: No:TQC-B90016 12/09/12 by madey 解決營運中心異常問題，清空 PARENTDB
 
 #--FUN-B40051---start-----
-#import Java class 
+#import Java class
 IMPORT JAVA java.lang.StringBuffer
 IMPORT JAVA javax.naming.ldap.Control
 IMPORT JAVA javax.naming.ldap.InitialLdapContext
@@ -56,12 +56,12 @@ IMPORT JAVA java.util.Hashtable
 #--FUN-B40051---end-------
 
 DATABASE ds
- 
+
 GLOBALS "../../config/top.global"
 GLOBALS                              #FUN-C60025 start
 DEFINE g_sso    LIKE type_file.chr1
 END GLOBALS                          #FUN-C60025 end
- 
+
 DEFINE g_zx01	LIKE zx_file.zx01,
        g_zx10	LIKE zx_file.zx10,
        g_zz28   LIKE zz_file.zz28    #FUN-660149
@@ -76,18 +76,18 @@ DEFINE li_cnt_gay   LIKE type_file.num5     # MOD-C70295
 
 CONSTANT TIMEOUT INTEGER = 300
 CONSTANT TRYERR SMALLINT = 5          #FUN-930042
- 
+
 MAIN
     OPTIONS
        ON CLOSE APPLICATION STOP,
        INPUT NO WRAP
-    DEFER INTERRUPT 
+    DEFER INTERRUPT
     WHENEVER ERROR CONTINUE
- 
- 
+
+
     CALL cl_set_config_path()          #設定 TOPCONFIG 環境變數
     CALL cl_load_act_list("weblogin")  #載入ActionList
-    CALL cl_load_style_list("weblogin")#載入 StyleList 
+    CALL cl_load_style_list("weblogin")#載入 StyleList
 
     #  LET g_lang = '1' #mark by MOD-C70295
     #MOD-C70295 --start-- #先check有無購買英文語言別,有的話g_lang維持1,沒有的話g_lang抓gay_file第1筆
@@ -105,13 +105,13 @@ MAIN
     #MOD-C70295 --end--
 
     LET g_prog = 'weblogin'
- 
+
     CALL weblogin()
 END MAIN
- 
+
 FUNCTION weblogin()
     DEFINE l_user	STRING
-    DEFINE l_passwd	STRING 
+    DEFINE l_passwd	STRING
     DEFINE ls_pic_url   STRING
     DEFINE l_notify     STRING
     DEFINE l_ch         base.Channel
@@ -132,18 +132,18 @@ FUNCTION weblogin()
     DEFINE l_zx19       LIKE zx_file.zx19      #FUN-930042
     DEFINE l_ze03       LIKE ze_file.ze03      #FUN-B10003
     DEFINE l_ad_server  STRING                 #FUN-A80141
-    DEFINE l_num        LIKE type_file.num5    #FUN-B50017  #實際傳遞參數個數 
+    DEFINE l_num        LIKE type_file.num5    #FUN-B50017  #實際傳遞參數個數
     DEFINE l_zx         RECORD LIKE zx_file.*  #FUN-BC0002
 
     LET l_user = ARG_VAL(1)
     LET l_passwd = ARG_VAL(2)
- 
+
 #FUN-7B0126
     LET l_strSOK = ARG_VAL(3)
 #   IF cl_null(l_user) OR cl_null(l_passwd) THEN
     CLOSE WINDOW SCREEN
     CASE
-       WHEN ( NOT cl_null(l_strSOK) ) 
+       WHEN ( NOT cl_null(l_strSOK) )
           DISPLAY "weblogin time_begin:",TIME
 
           LET g_plant = ARG_VAL(4)
@@ -162,10 +162,10 @@ FUNCTION weblogin()
           #---FUN-B50017---end-----
 
           LET g_gui_type = cl_fglgui()
-          
+
           display "SSO_SERVER:",FGL_GETENV("SSO_SERVER")
           display "SSO_SOAP:",FGL_GETENV("SSO_SOAP")
-    
+
           #------------------------------------------------------------------------
           # 進行 SOK 驗證並取得執行使用者代號
           #------------------------------------------------------------------------
@@ -184,7 +184,7 @@ FUNCTION weblogin()
 
           LET g_user = g_zx01                                              #CHI-B50036 add
           SELECT zx06 INTO g_lang FROM zx_file WHERE zx01 = g_user         #CHI-B50036 add
-          
+
           display "g_zx01:",g_zx01
           IF NOT cl_null(l_err_str) THEN
              CALL web_err(l_err_str)             #TQC-880032
@@ -200,17 +200,17 @@ FUNCTION weblogin()
                 EXIT PROGRAM
              END IF
           END IF
- 
+
           IF NOT user_validate() THEN
             #DISPLAY '有SOK，但取得的帳號不合法'   #TQC-880032
              EXIT PROGRAM
           END IF
-          
+
           LET g_sso = "Y"        #FUN-C60025
           LET g_user = g_zx01
- 
+
           SELECT zx06 INTO g_lang FROM zx_file WHERE zx01 = g_user
-          
+
           #---FUN-AA0003---start------------------------------------------------
           #SELECT zx10 INTO g_zx10 FROM zx_file WHERE zx01 = g_user         #FUN-C60025
           #LET g_zx10= cl_uszx_10decod(g_zx10)                              #FUN-C60025
@@ -219,17 +219,17 @@ FUNCTION weblogin()
           END IF
           #---FUN-AA0003---end--------------------------------------------------
 
-          IF NOT cl_null(g_plant) THEN   #FUN-AB0111 
-          
+          IF NOT cl_null(g_plant) THEN   #FUN-AB0111
+
              #FUN-B40057-start-
-             IF NOT s_chkdbs(g_user,g_plant,g_lang) THEN 
+             IF NOT s_chkdbs(g_user,g_plant,g_lang) THEN
                  EXIT PROGRAM
              END IF
-             #FUN-B40057-end- 
+             #FUN-B40057-end-
 
               IF NOT cl_null(g_prog) THEN
                 #FOR l_i = 6 TO NUM_ARGS()        #FUN-B50017 mark
-                 FOR l_i = 6 TO l_num              #FUN-B50017 因應可能發生參數個數重覆傳遞狀況 
+                 FOR l_i = 6 TO l_num              #FUN-B50017 因應可能發生參數個數重覆傳遞狀況
                     LET l_arg = l_arg," '",ARG_VAL(l_i),"'"
                  END FOR
              #---FUN-AB0111---start-----
@@ -245,16 +245,16 @@ FUNCTION weblogin()
              SELECT azp03 INTO g_dbs FROM azp_file WHERE azp01 = g_plant
 
              #---FUN-B10003---start-----
-             IF cl_null(g_dbs) THEN 
-                SELECT ze03 INTO l_ze03 FROM ze_file 
-                  WHERE ze01 = "mfg9142" AND ze02 = g_lang         
-                CALL web_err(l_ze03) 
+             IF cl_null(g_dbs) THEN
+                SELECT ze03 INTO l_ze03 FROM ze_file
+                  WHERE ze01 = "mfg9142" AND ze02 = g_lang
+                CALL web_err(l_ze03)
                 EXIT PROGRAM
              END IF
              #---FUN-B10003---end-------
   #           CALL cl_ins_del_sid(2) #FUN-980030   #FUN-990069
              CALL cl_ins_del_sid(2,'') #FUN-980030   #FUN-990069
-             CLOSE DATABASE 
+             CLOSE DATABASE
              DATABASE g_dbs
     #         CALL cl_ins_del_sid(1) #FUN-980030  #FUN-990069
              CALL cl_ins_del_sid(1,g_plant) #FUN-980030  #FUN-990069
@@ -265,24 +265,24 @@ FUNCTION weblogin()
                 DATABASE ds
             #    CALL cl_ins_del_sid(1) #FUN-980030  #FUN-990069
                 CALL cl_ins_del_sid(1,'') #FUN-980030  #FUN-990069
-                CALL cl_err3("sel","azp_file",g_plant,"","100","","sel azp:",1) 
+                CALL cl_err3("sel","azp_file",g_plant,"","100","","sel azp:",1)
                 DISPLAY g_plant,":(azp_file) No record, related data or Master found !"
                 EXIT PROGRAM
              END IF
-             
+
 #No.TQC-870015 --mark start--
              #---------------------------------------------------------------------
              # 更新 zxx_file 檔案, 以供後續執行作業程式選用正確的資料庫
              #---------------------------------------------------------------------
 #            LET lc_zxx02 = fgl_getenv('FGLSERVER')
-#            INSERT INTO zxx_file (zxx01, zxx02, zxx03) 
+#            INSERT INTO zxx_file (zxx01, zxx02, zxx03)
 #                          VALUES (g_user, lc_zxx02, g_plant)
 #            IF cl_sql_dup_value(SQLCA.SQLCODE) THEN  #CHI-790021
 #               UPDATE zxx_file SET zxx03 = g_plant
 #                WHERE zxx01 = g_user AND zxx02 = lc_zxx02
 #            END IF
 #No.TQC-870015 ---mark end---
-             
+
              #---------------------------------------------------------------------
              # 更新 gbq_file 檔案, 以供後續執行作業程式選用正確的資料庫(for GP 5.0)
              #---------------------------------------------------------------------
@@ -302,13 +302,13 @@ FUNCTION weblogin()
              END IF
 
              #---FUN-BC0002-----start----------
-             LET g_forupd_sql = "SELECT * FROM zx_file WHERE zx01 = ? FOR UPDATE " 
-             DECLARE weblogin_cur CURSOR FROM g_forupd_sql 
+             LET g_forupd_sql = "SELECT * FROM zx_file WHERE zx01 = ? FOR UPDATE "
+             DECLARE weblogin_cur CURSOR FROM g_forupd_sql
 
              BEGIN WORK
-             OPEN weblogin_cur USING g_zx01 
+             OPEN weblogin_cur USING g_zx01
              IF SQLCA.sqlcode THEN
-                LET l_err_str = cl_getmsg(SQLCA.sqlcode, g_lang)  
+                LET l_err_str = cl_getmsg(SQLCA.sqlcode, g_lang)
                 ROLLBACK WORK
              ELSE
                 FETCH weblogin_cur INTO l_zx.*               # 對DB鎖定
@@ -326,11 +326,11 @@ FUNCTION weblogin()
                 END IF
              END IF
              CLOSE weblogin_cur
-             
+
              IF NOT cl_null(l_err_str) THEN
                 CALL web_err(l_err_str)
                 LET l_err_str = ""
-             END IF  
+             END IF
              #---FUN-BC0002-----end------------
 
              #--FUN-8A0096--start---
@@ -353,11 +353,11 @@ FUNCTION weblogin()
              LET l_cmd = g_prog,l_arg
              display l_cmd
              DISPLAY "weblogin time_end:",TIME
-             CALL cl_cmdrun_wait(l_cmd) 
+             CALL cl_cmdrun_wait(l_cmd)
              EXIT PROGRAM
-          END IF   
- 
-       WHEN (( NOT cl_null(l_user)) AND (NOT cl_null(l_passwd))) 
+          END IF
+
+       WHEN (( NOT cl_null(l_user)) AND (NOT cl_null(l_passwd)))
           LET g_zx01 = l_user
           LET g_zx10 = l_passwd
           IF NOT user_validate() THEN
@@ -367,38 +367,38 @@ FUNCTION weblogin()
              EXIT PROGRAM
           END IF
           LET g_user = g_zx01
-       
+
        OTHERWISE
           RUN "fglWrt -u"                #清除占用License的情況  #FUN-B30037
           OPEN WINDOW weblogin_w WITH FORM "azz/42f/weblogin"
              ATTRIBUTE(STYLE = "login")
- 
+
           CLOSE WINDOW SCREEN
- 
+
           LET ls_pic_url = FGL_GETENV("FGLASIP") || "/tiptop/pic/login.jpg"
           DISPLAY ls_pic_url TO FORMONLY.logo
- 
+
           LET g_tryerr = 0
 
           #FUN-AB0079
-          IF NOT cl_check_license() THEN 
+          IF NOT cl_check_license() THEN
             #CHI-B50036 --- modify --- start ---
              LET g_msg = NULL
              LET g_msg = cl_getmsg('azz1112',g_lang)
              CALL web_err(g_msg)
              #CALL web_err("INFO: Login Users Exceed Than TIPTOP License Allowed.\n Please Re-try Later or Cantact with System Administrators.")
             #CHI-B50036 --- modify ---  end  ---
-             EXIT PROGRAM 
-          END IF 
- 
+             EXIT PROGRAM
+          END IF
+
           INPUT g_zx01, g_zx10 WITHOUT DEFAULTS
            FROM FORMONLY.zx01, FORMONLY.zx10 ATTRIBUTE(UNBUFFERED)
- 
+
               AFTER INPUT
-                  IF INT_FLAG THEN 
-                     EXIT INPUT 
+                  IF INT_FLAG THEN
+                     EXIT INPUT
                   END IF
-                  
+
                   #-No.FUN-A80141 --begin--
                   LET l_ad_server = FGL_GETENV("AD_SERVER") CLIPPED
                   IF cl_null(l_ad_server) THEN
@@ -414,7 +414,7 @@ FUNCTION weblogin()
 
                      #檢查帳號是否不存在zx_file或為無效帳號
                      SELECT COUNT(zx01) INTO l_cnt FROM zx_file
-                       WHERE zx01 = g_zx01 AND zxacti = "Y" 
+                       WHERE zx01 = g_zx01 AND zxacti = "Y"
                      IF l_cnt = 0 THEN
                        #CHI-B50036 --- modify --- start ---
                         LET g_msg = NULL
@@ -435,9 +435,20 @@ FUNCTION weblogin()
                         NEXT FIELD zx10
                      END IF
                   END IF    #-No.FUN-A80141
- 
+                  # darcy add s---
+                  # 限制IP登录限制
+                  if g_zx01 = '52948' then
+                    call web_chk_ip() returning g_msg
+                    if not cl_null(g_msg) then
+                        LET INT_FLAG = TRUE
+                        CALL web_err(g_msg)
+                        EXIT INPUT
+                    end if
+                  end if
+                  # darcy add e---
+
               ON IDLE 30    #g_idle_seconds   #FUN-660149   TQC-880032
-                 #CALL cl_on_idle()           
+                 #CALL cl_on_idle()
                  #CONTINUE INPUT
                  LET INT_FLAG = TRUE
                 #CHI-B50036 --- modify --- start ---
@@ -447,12 +458,12 @@ FUNCTION weblogin()
                  #CALL web_err('Timeout for launching the program!')  #TQC-880032
                 #CHI-B50036 --- modify ---  end  ---
                  EXIT INPUT                   #TQC-880032
- 
+
           END INPUT
- 
+
           CLOSE WINDOW weblogin_w
           CALL ui.Interface.refresh()
-          IF INT_FLAG THEN 
+          IF INT_FLAG THEN
              IF g_tryerr >= TRYERR THEN
                #CHI-B50036 --- modify --- start ---
                 LET g_msg = NULL
@@ -466,18 +477,18 @@ FUNCTION weblogin()
                #CHI-B50036 --- modify ---  end  ---
              END IF
              LET INT_FLAG = FALSE
-             EXIT PROGRAM 
+             EXIT PROGRAM
           END IF
           LET g_user = g_zx01
     END CASE     #FUN-AA0003將下面的END CASE往上挪,以利無論何種方式進入都會往下繼續檢查密碼各機制
- 
+
           #FUN-930042 檢視是否應重設密碼
           LET l_resetpass = FALSE
           IF g_pwd_expired THEN LET l_resetpass = TRUE END IF #FUN-C70056 密碼過期要重設密碼
           LET l_zx06 = NULL            #CHI-A70014 add
           SELECT zx06,zx10,zx19 INTO l_zx06,l_zx10_old,l_zx19 FROM zx_file   #CHI-A70014 add zx06
            WHERE zx01 = g_zx01
- 
+
            IF cl_null(l_zx06) THEN LET l_zx06 = '1' END IF       #CHI-A70014 add
 
           #密碼為空值
@@ -493,7 +504,7 @@ FUNCTION weblogin()
                 LET l_resetpass = TRUE
              END IF
           END IF
- 
+
           #密碼強度不符合現行規則
           #IF NOT l_resetpass THEN    #FUN-A80141 mark
           IF NOT l_resetpass AND l_ad_server <> 'Y' THEN     #FUN-A80141增加AD驗證判斷
@@ -507,7 +518,7 @@ FUNCTION weblogin()
                 LET l_resetpass = TRUE
              END IF
           END IF
- 
+
           #zx19強制要求改密碼
           #IF NOT l_resetpass THEN    #FUN-A80141 mark
           IF NOT l_resetpass AND l_ad_server <> 'Y' THEN     #FUN-A80141增加AD驗證判斷
@@ -521,7 +532,7 @@ FUNCTION weblogin()
                 LET l_resetpass = TRUE
              END IF
           END IF
- 
+
           IF l_resetpass THEN
              CALL FGL_SETENV("WEBUSER",g_zx01 CLIPPED)
              CALL cl_cmdrun_wait('webpasswd')
@@ -536,19 +547,19 @@ FUNCTION weblogin()
                  CALL web_err(g_msg)
                 #CALL web_err("Password Not Changed!, Please Re-Login Again")
                #---------------CHI-A70014 end
-                EXIT PROGRAM 
+                EXIT PROGRAM
              END IF
           END IF
- 
+
     #END CASE     ##FUN-AA0003將END CASE往上挪
 #END FUN-7B0126
- 
+
     LET l_notify = FGL_GETPID()
     RUN "rm -f " || l_notify
     RUN "udm7 weblog " || g_user || " " || l_notify WITHOUT WAITING  #FUN-620044, FUN-690056
-    
+
     DISPLAY "weblogin time_end:",TIME
- 
+
     #Wait for menu program has been started, because of RUN ... WITHOUT WAITTING
     LET l_ch = base.Channel.create()
     LET l_cnt = 0
@@ -574,12 +585,12 @@ FUNCTION weblogin()
     CALL l_ch.close()
     --#
 END FUNCTION
- 
+
 FUNCTION user_validate()
     DEFINE l_cnt	LIKE type_file.num5    #No.FUN-680135 SMALLINT
     DEFINE l_zx		RECORD LIKE zx_file.*
     DEFINE l_gbt	RECORD LIKE gbt_file.*    #FUN-830011
- 
+
     #帳號不存在或無效帳號
     SELECT COUNT(zx01) INTO l_cnt FROM zx_file
      WHERE zx01 = g_zx01
@@ -594,10 +605,10 @@ FUNCTION user_validate()
        LET g_tryerr = g_tryerr + 1
        RETURN FALSE
     END IF
- 
+
     SELECT * INTO l_gbt.* FROM gbt_file WHERE gbt00 = "0"
     SELECT * INTO l_zx.* FROM zx_file WHERE zx01 = g_zx01
- 
+
     #帳號Try Error次數太多被lock
     IF l_gbt.gbt10 IS NOT NULL AND l_gbt.gbt10 > 0 THEN
        IF l_zx.zx20 >= l_gbt.gbt10 THEN
@@ -612,7 +623,7 @@ FUNCTION user_validate()
           RETURN FALSE
        END IF
     END IF
- 
+
     #帳號 expired
     IF NOT cl_null(l_zx.zx18) AND l_zx.zx18 < TODAY THEN
        #CHI-B50036 --- modify --- start ---
@@ -623,16 +634,16 @@ FUNCTION user_validate()
        #CHI-B50036 --- modify ---  end  ---
        RETURN FALSE
     END IF
- 
+
     RETURN TRUE
 END FUNCTION
- 
+
 FUNCTION pwd_validate()
     DEFINE l_zx		RECORD LIKE zx_file.*
     DEFINE l_gbt	RECORD LIKE gbt_file.*    #FUN-830011
     DEFINE ls_tmp       STRING
     DEFINE ls_zx_sql    STRING                    #MOD-C40161
- 
+
     SELECT * INTO l_gbt.* FROM gbt_file WHERE gbt00 = "0"
     #SELECT * INTO l_zx.* FROM zx_file WHERE zx01 = g_zx01 #MOD-C40161 mark
 
@@ -663,7 +674,7 @@ FUNCTION pwd_validate()
        RETURN FALSE
     END IF
     #MOD-C40161 --end--
- 
+
     #密碼錯誤
     IF NOT cl_webuser_validate(g_zx01,g_zx10) THEN      #FUN-910094
       #CALL cl_err('Invalid user name or password', '!', 1)
@@ -682,7 +693,7 @@ FUNCTION pwd_validate()
        CLOSE zx_u_curl         #MOD-C40161
        RETURN FALSE
     END IF
- 
+
     #密碼 expired FUN-570135  #FUN-830011
     IF cl_null(l_zx.zx17) THEN
        LET l_zx.zx17 = 0
@@ -690,7 +701,7 @@ FUNCTION pwd_validate()
     IF l_gbt.gbt01 = "2" AND l_gbt.gbt03 <> "0" THEN
        LET l_zx.zx17 = l_zx.zx17 + 1    #設定為依登入次數控管時才開始計次
     END IF
- 
+
     IF cl_null(l_zx.zx16) THEN
        UPDATE zx_file SET zx16 = TODAY, zx17 = l_zx.zx17
         WHERE zx01=g_zx01
@@ -698,11 +709,11 @@ FUNCTION pwd_validate()
        UPDATE zx_file SET zx17 = l_zx.zx17
         WHERE zx01=g_zx01
     END IF
- 
+
     #開啟密碼管制, 依週期管制
     LET g_pwd_expired = FALSE #FUN-C70056 檢查密碼是否過期
     IF g_sso = "Y" THEN       #FUN-C70056 portal登入不做控管
-    ELSE                      #FUN-C70056  
+    ELSE                      #FUN-C70056
     IF l_gbt.gbt01 = "1" AND l_gbt.gbt02 <> "0" THEN
        IF l_zx.zx16 + l_gbt.gbt02 < TODAY THEN
          LET g_pwd_expired = TRUE            #FUN-C70056
@@ -712,11 +723,11 @@ FUNCTION pwd_validate()
           CALL web_err(g_msg)
           #CALL web_err('Your password has expired! \nApply for a new password')
          #CHI-B50036 --- modify ---  end  ---
-          #COMMIT WORK             #MOD-C40161 #mark by FUN-C70056 
+          #COMMIT WORK             #MOD-C40161 #mark by FUN-C70056
           #CLOSE zx_u_curl         #MOD-C40161 #mark by FUN-C70056
           #RETURN FALSE                        #mark by FUN-C70056
        END IF
-       #IF l_zx.zx16 + l_gbt.gbt02 - l_gbt.gbt04 < TODAY THEN #mark by FUN-C70056 
+       #IF l_zx.zx16 + l_gbt.gbt02 - l_gbt.gbt04 < TODAY THEN #mark by FUN-C70056
        IF l_zx.zx16 + l_gbt.gbt02 - l_gbt.gbt04 < TODAY AND g_pwd_expired = FALSE THEN #FUN-C70056 密碼過期不進入
           #CHI-B50036 --- modify --- start ---
           LET g_msg = NULL
@@ -732,9 +743,9 @@ FUNCTION pwd_validate()
        END IF
     END IF
     END IF #FUN-C70056
- 
+
     #開啟密碼管制, 依次數管制
-   IF g_sso = "Y" THEN #FUN-C70056 portal登入不做控管 
+   IF g_sso = "Y" THEN #FUN-C70056 portal登入不做控管
    ELSE                #FUN-C70056
    IF l_gbt.gbt01 = "2" AND l_gbt.gbt03 <> "0" THEN
        IF l_gbt.gbt03 < l_zx.zx17 THEN
@@ -745,7 +756,7 @@ FUNCTION pwd_validate()
           CALL web_err(g_msg)
           #CALL web_err('Your password has expired! Apply for a new password')
          #CHI-B50036 --- modify ---  end  ---
-         # COMMIT WORK             #MOD-C40161 #mark by FUN-C70056 
+         # COMMIT WORK             #MOD-C40161 #mark by FUN-C70056
          # CLOSE zx_u_curl         #MOD-C40161 #mark by FUN-C70056
          # RETURN FALSE                        #mark by FUN-C70056
        END IF
@@ -765,7 +776,7 @@ FUNCTION pwd_validate()
        END IF
     END IF
   END IF #FUN-C70056
- 
+
     #若有開啟試誤記錄, 則成功登入後清空
     IF l_gbt.gbt10 IS NOT NULL AND l_gbt.gbt10 > 0 THEN
 #      LET l_zx.zx19 = "N"   #MOD-B90015 mark
@@ -777,10 +788,10 @@ FUNCTION pwd_validate()
 
     COMMIT WORK             #MOD-C40161
     CLOSE zx_u_curl         #MOD-C40161
- 
+
     RETURN TRUE
 END FUNCTION
- 
+
 #FUN-7B0126
 #----------------------------
 #取得 SSO 認證的 User
@@ -802,12 +813,12 @@ DEFINE l_ch       base.Channel,
 DEFINE l_i        INTEGER
 DEFINE l_file     STRING            #FUN-AA0003
 DEFINE channel    base.Channel      #FUN-AA0003
- 
+
    DISPLAY "javasso time_begin:",TIME
    LET l_cmd="sh ",FGL_GETENV("DS4GL"),"/bin/javasso/cmd.sh ",
              p_strSOK ," 2>/dev/null"
    LET lch_cmd = base.Channel.create()
-   
+
    FOR l_i = 1 TO 3                          #FUN-C40035
       CALL lch_cmd.openPipe(l_cmd, "r")
       WHILE lch_cmd.read(l_str)
@@ -827,7 +838,7 @@ DEFINE channel    base.Channel      #FUN-AA0003
         EXIT FOR
       END IF
    END FOR  #FUN-C40035 end
- 
+
    IF NOT cl_null(l_xml) THEN
       #-----------------------------------------------------------------------#
       # 產生 XML 暫存檔                                                       #
@@ -840,7 +851,7 @@ DEFINE channel    base.Channel      #FUN-AA0003
       CALL l_ch.setDelimiter("")                 #FUN-8A0113
       CALL l_ch.write(l_xml)
       CALL l_ch.close()
- 
+
       #-----------------------------------------------------------------------#
       # 讀取 XML 文件                                                         #
       #-----------------------------------------------------------------------#
@@ -870,7 +881,7 @@ DEFINE channel    base.Channel      #FUN-AA0003
          END IF
       END IF                                                          #FUN-AA0003 因將原本END IF改成ELSE,所以此處需多加END IF
    END IF
- 
+
    DISPLAY "javasso time_end:",TIME
    LET g_user = l_user                                         #CHI-B50036 add
    SELECT zx06 INTO g_lang FROM zx_file WHERE zx01 = g_user    #CHI-B50036 add
@@ -899,7 +910,7 @@ DEFINE channel    base.Channel      #FUN-AA0003
       CALL channel.write("")
       LET l_str = "SSO_SOAP:", FGL_GETENV("SSO_SOAP")
       CALL channel.write(l_str)
-      CALL channel.write("") 
+      CALL channel.write("")
       LET l_str = "Request:", l_cmd
       CALL channel.write(l_str)
       CALL channel.write("")
@@ -920,7 +931,7 @@ DEFINE channel    base.Channel      #FUN-AA0003
       DISPLAY "Can't open log file."
    END IF
    CALL channel.close()
-   
+
    #將上面讀檔錯誤直接return移來這裡
    IF l_doc IS NULL THEN
       RETURN "",""
@@ -930,61 +941,61 @@ DEFINE channel    base.Channel      #FUN-AA0003
    RETURN l_user,l_err_str
 END FUNCTION
 #END FUN-7B0126
- 
+
 FUNCTION web_err(ls_msg)
- 
+
    DEFINE ls_msg   STRING
    DEFINE lw_curr  ui.Window
- 
+
    OPEN WINDOW w_err WITH FORM "lib/42f/cl_err_msg"
         ATTRIBUTE(STYLE="show_log", TEXT="Warning")
    LET lw_curr = ui.Window.getCurrent()
    CALL lw_curr.setText("Warning")
    CALL cl_set_comp_visible("group02", FALSE)
    DISPLAY ls_msg CLIPPED TO ze03
- 
+
    MENU ""
         ON IDLE 30
            EXIT MENU
         ON ACTION ok
            EXIT MENU
    END MENU
- 
+
    CLOSE WINDOW w_err
- 
+
 END FUNCTION
- 
- 
- 
+
+
+
 FUNCTION weblogin_ver_passwd()
- 
+
    DEFINE l_gbt   RECORD LIKE gbt_file.*
    DEFINE li_cnt  LIKE type_file.num5
    DEFINE li_ord  LIKE type_file.num5
    DEFINE ls_tmp  STRING
    DEFINE li_num_cnt  LIKE type_file.num5 #FUN-C50055
- 
+
    LET ls_tmp = g_zx10 CLIPPED
    SELECT * INTO l_gbt.* FROM gbt_file WHERE gbt00="0"
- 
+
    IF l_gbt.gbt05 > 0 THEN
       IF ls_tmp.getLength() < l_gbt.gbt05 THEN RETURN FALSE END IF
    END IF
- 
+
    #FUN-850055  Weak Control
    IF l_gbt.gbt06 = "Y" OR l_gbt.gbt06 = "M" OR l_gbt.gbt06 = "S" THEN
       IF ls_tmp.getIndexOf(g_user,1) THEN RETURN FALSE END IF
    END IF
- 
+
    #FUN-850055  Middle Control
    IF l_gbt.gbt06 = "M" OR l_gbt.gbt06 = "S" THEN
       WHILE TRUE
          FOR li_cnt=1 TO ls_tmp.getLength()
-            LET li_ord = ORD(ls_tmp.subString(li_cnt,li_cnt)) 
+            LET li_ord = ORD(ls_tmp.subString(li_cnt,li_cnt))
             IF li_ord >= 48 AND li_ord <= 57 THEN
                EXIT WHILE
             END IF
-         END FOR 
+         END FOR
          RETURN FALSE
       END WHILE
 
@@ -999,26 +1010,26 @@ FUNCTION weblogin_ver_passwd()
       IF li_num_cnt = ls_tmp.getLength() THEN RETURN FALSE  END IF
       #不可全部輸入數字 #FUN-C50055 --end--
    END IF
- 
+
    #FUN-850055  Strong Control
    IF l_gbt.gbt06 = "S" THEN
       WHILE TRUE
          FOR li_cnt=1 TO ls_tmp.getLength()
-            LET li_ord = ORD(ls_tmp.subString(li_cnt,li_cnt)) 
+            LET li_ord = ORD(ls_tmp.subString(li_cnt,li_cnt))
             IF li_ord < 48 OR
-              (li_ord > 57 AND li_ord < 65) OR 
+              (li_ord > 57 AND li_ord < 65) OR
               (li_ord > 90 AND li_ord < 97) OR li_ord > 122 THEN
                EXIT WHILE
             END IF
-         END FOR 
+         END FOR
          RETURN FALSE
       END WHILE
    END IF
- 
+
    RETURN TRUE
 END FUNCTION
- 
- 
+
+
 #FUN-A80141
 #------------------------------------------------------------------
 #將使用者輸入之帳號、密碼透過java程式送到AD SERVER驗證
@@ -1078,10 +1089,10 @@ DEFINE l_desc     STRING         #FUN-BC0080
       ##        (4)登入AD SERVER使用者帳號. (5)登入AD SERVER使用者密碼
       #LET l_cmd="sh ",FGL_GETENV("DS4GL"),"/bin/javaad/cmd.sh ",
       #          l_ip, ' ', l_port, ' ', l_domain, ' ', p_zx01, ' ', p_zx10
-      
+
       #LET lch_cmd = base.Channel.create()
       #CALL lch_cmd.openPipe(l_cmd, "r")
-            
+
       #WHILE lch_cmd.read(l_str)
       #    DISPLAY l_str
       #    LET l_xml = l_xml,l_str
@@ -1099,7 +1110,7 @@ DEFINE l_desc     STRING         #FUN-BC0080
 
       #執行呼叫ldap驗證程序
       CALL cl_cmdrun_wait(l_cmd)
-      #--FUN-BC0080---end------- 
+      #--FUN-BC0080---end-------
       #--FUN-B40051---end-------
 
       #IF NOT cl_null(l_xml) THEN      #FUN-BC0080 mark 改變成下述判斷式
@@ -1117,7 +1128,7 @@ DEFINE l_desc     STRING         #FUN-BC0080
          #CALL l_ch.setDelimiter("")
          #CALL l_ch.write(l_xml)
          #CALL l_ch.close()
-         #--FUN-BC0080---end------- 
+         #--FUN-BC0080---end-------
 
          #-----------------------------------------------------------------------#
          # 讀取 XML 文件                                                         #
@@ -1136,7 +1147,7 @@ DEFINE l_desc     STRING         #FUN-BC0080
                LET l_node = l_node.getFirstChild()
                LET l_status = l_node.getattribute("@chars")
             END IF
-            
+
             #---FUN-BC0080---start-----#
             LET l_list = l_root.selectByTagName("description")
             IF l_list.getLength() > 0 THEN
@@ -1209,7 +1220,7 @@ DEFINE l_desc     STRING         #FUN-BC0080
             IF cl_null(l_err_str) THEN   #FUN-B40051
                LET l_err_str = cl_getmsg(l_ze01, l_zx06)
             END IF                       #FUN-B40051
-            
+
             IF cl_null(l_err_str) THEN
                LET l_err_str = "p_ze no error message description.\n(p_ze:", l_ze01, "; lang: ", l_zx06, "; User account: ", p_zx01, ")"
             END IF
@@ -1258,7 +1269,7 @@ DEFINE l_desc     STRING         #FUN-BC0080
       LET l_str = "l_err_str:", l_err_str
       CALL channel.write(l_str)
       CALL channel.write("#------------------------------------------------------------------------------#")
-      
+
       CALL channel.write("")
       CALL channel.close()
 
@@ -1299,12 +1310,12 @@ FUNCTION web_check_ad_login(p_zx01, p_zx10, p_ip, p_port, p_domain)
 
    LET l_err = ""
    LET l_result = ""
-   
+
    #create hashtable存AD登入資訊
    LET l_adpar = Hashtable.create()
    #AD帳號會帶網域
    LET l_user = p_zx01 CLIPPED, "@", p_domain.trim()
-   
+
    TRY
       #取得AD Server路徑,範例:DC=dsc,DC=com,DC=tw
       LET l_ad_path = web_get_ad_path(p_domain)
@@ -1315,8 +1326,8 @@ FUNCTION web_check_ad_login(p_zx01, p_zx10, p_ip, p_port, p_domain)
       CALL l_sb.append(":");
       CALL l_sb.append(p_port);
       CALL l_sb.append("/");
-      CALL l_sb.append(l_ad_path);      
-   
+      CALL l_sb.append(l_ad_path);
+
       CALL l_adpar.put("java.naming.factory.initial", "com.sun.jndi.ldap.LdapCtxFactory");
       CALL l_adpar.put("java.naming.provider.url", l_sb.toString());
       CALL l_adpar.put("java.naming.security.authentication", "simple");
@@ -1338,7 +1349,7 @@ FUNCTION web_check_ad_login(p_zx01, p_zx10, p_ip, p_port, p_domain)
       #讀取驗證錯誤代碼
       #Java exception thrown: javax.naming.AuthenticationException: [LDAP: error code 49 - 80090308: LdapErr: DSID-0C0903AA, comment: AcceptSecurityContext error, data 525, v1772.
       #以上面Java exception thrown例子來說就是會抓到525
-      IF l_err.getIndexOf("Connection refused", 1) > 0 AND 
+      IF l_err.getIndexOf("Connection refused", 1) > 0 AND
          l_err.getIndexOf(p_ip || ":" || p_port, 1) > 0 THEN
          LET l_err = "3"
       ELSE
@@ -1385,3 +1396,41 @@ FUNCTION web_get_ad_path(p_domain)
    RETURN l_domain_path
 END FUNCTION
 #--FUN-B40051---end-------
+
+-- 检查是否已经在别的IP登录了
+function web_chk_ip()
+    define lc_fglserver     like gbq_file.gbq02
+    define l_cnt            integer
+    define l_msg            string
+
+    if not cl_csmi133('weblogin','sso') then
+        return ""
+    end if
+
+    LET lc_fglserver = FGL_GETENV("FGLSERVER")||'%'
+
+    let l_cnt = 0
+
+    select count(*) into l_cnt from gbq_file
+     where gbq03 = g_zx01 and gbq02 not like lc_fglserver
+
+    if l_cnt > 0 then
+
+        declare web_ip cursor for
+            select unique gbq02 from gbq_file
+             where gbq03 = g_zx01
+
+        LET l_msg = cl_getmsg('web-006',g_lang)
+        foreach web_ip into lc_fglserver
+            if sqlca.sqlcode then
+                call cl_err('web_ip',sqlca.sqlcode,1)
+                exit foreach
+            end if
+            let l_msg = l_msg , lc_fglserver , ";"
+        end foreach
+
+        return l_msg
+    end if
+
+    return ""
+end function
