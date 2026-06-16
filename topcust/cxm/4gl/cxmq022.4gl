@@ -41,6 +41,7 @@ MAIN
     DEFER INTERRUPT
 
     LET g_arg1 = ARG_VAL(1)
+    LET g_bgjob = ARG_VAL(2)
 
     IF (NOT cl_user()) THEN
         EXIT PROGRAM

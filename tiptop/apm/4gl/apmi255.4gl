@@ -777,6 +777,15 @@ FUNCTION i255_menu()
             IF cl_chk_act_auth() THEN
                CALL i255_z()
             END IF
+         # darcy:2026/06/16 add s---
+         # 查询材料核价异动
+         when 'cpmq013'
+            if cl_chk_act_auth() then
+               if not cl_null(g_pmi.pmi01) then
+                  call cl_cmdrun_wait(sfmt("%1 \"pmi01 = '%2'\" 'Y' ",'cpmq013',g_pmi.pmi01))
+               end if
+            end if
+         # darcy:2026/06/16 add e---
          WHEN "void"
             IF cl_chk_act_auth() THEN
                #CALL i255_x() #FUN-D20025 mark
@@ -3314,7 +3323,8 @@ FUNCTION i255_bp(p_ud)
          LET g_action_choice="detail"
          LET l_ac = 1
          EXIT DISPLAY
- 
+      on action cpmq013 let g_action_choice = 'cpmq013' exit display # darcy:2026/06/16 add
+
       ON ACTION output
          LET g_action_choice="output"
          EXIT DISPLAY
