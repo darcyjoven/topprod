@@ -411,6 +411,14 @@ FUNCTION t520_menu()
                CALL t520_show()
             END IF
          #darcy:2023/03/27 add e---
+         # 查询成品核价异动 s---
+         when 'cxmq022'
+            if cl_chk_act_auth() then
+               if not cl_null(g_tc_xme.tc_xme00) then
+                  call cl_cmdrun_wait(sfmt("%1 \"tc_xme00 = '%2'\" 'Y' ",'cxmq022',g_tc_xme.tc_xme00))
+               end if
+            end if
+         # 查询成品核价异动 e---
         #str---mark by guanyao160614
         # WHEN "undo_confirm"
         #   IF cl_chk_act_auth() THEN
@@ -1817,6 +1825,7 @@ FUNCTION t520_bp(p_ud)
            END IF
            ACCEPT DISPLAY                   #No.FUN-530067 HCN TEST
 
+      on action cxmq022 let g_action_choice = 'cxmq022' exit display # darcy:2026/06/16 add
 
       ON ACTION previous
          CALL t520_fetch('P')
