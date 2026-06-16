@@ -8969,6 +8969,11 @@ FUNCTION t800_sign()
       LET g_oep.oepmksg='N'
       LET g_oep.oepsign=' '
    END IF
+   # darcy add s---
+   if t800_get_oea00(g_oep.oep01) == '0' then
+       let g_oep.oepmksg = 'N'
+   end if
+   # darcy add e---
    IF cl_null(g_oep.oepsign) THEN
       LET g_oep.oepsign=l_oepsign
    END IF
