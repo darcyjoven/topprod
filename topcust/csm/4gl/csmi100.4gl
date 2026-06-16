@@ -572,7 +572,7 @@ define l_msg        string #darcy:2024/11/29
                     if not i100_chk_tc_sma02(g_tc_sma01,g_tc_sma[l_ac].tc_sma02) then
                         next field tc_sma02
                     end if
-                    let g_tc_sma[l_ac].tc_sma02_desc = i100_get_tc_sma_desc(g_tc_sma01,g_tc_sma[l_ac].tc_sma02,g_tc_sma[g_cnt].tc_sma04)
+                    let g_tc_sma[l_ac].tc_sma02_desc = i100_get_tc_sma_desc(g_tc_sma01,g_tc_sma[l_ac].tc_sma02,g_tc_sma[l_ac].tc_sma04)
                     display by name g_tc_sma[l_ac].tc_sma02_desc
                 END IF
                 if p_cmd='a' then
@@ -588,38 +588,38 @@ define l_msg        string #darcy:2024/11/29
             call i100_get_default()
 
         on change tc_sma05,tc_sma08,tc_sma11,tc_sma14,tc_sma17
-            case
-                when infield(tc_sma05)
-                    if g_tc_sma[l_ac].tc_sma05 ='Y' then
-                        call cl_set_comp_entry('tc_sma06,tc_sma07',true)
-                    else
-                        call cl_set_comp_entry('tc_sma06,tc_sma07',false)
-                    end if
-                when infield(tc_sma08)
-                    if g_tc_sma[l_ac].tc_sma08 ='Y' then
-                        call cl_set_comp_entry('tc_sma09,tc_sma10',true)
-                    else
-                        call cl_set_comp_entry('tc_sma09,tc_sma10',false)
-                    end if
-                when infield(tc_sma11)
-                    if g_tc_sma[l_ac].tc_sma11 ='Y' then
-                        call cl_set_comp_entry('tc_sma12,tc_sma13',true)
-                    else
-                        call cl_set_comp_entry('tc_sma12,tc_sma13',false)
-                    end if
-                when infield(tc_sma13)
-                    if g_tc_sma[l_ac].tc_sma13 ='Y' then
-                        call cl_set_comp_entry('tc_sma14,tc_sma15',true)
-                    else
-                        call cl_set_comp_entry('tc_sma14,tc_sma15',false)
-                    end if
-                when infield(tc_sma17)
-                    if g_tc_sma[l_ac].tc_sma17 ='Y' then
-                        call cl_set_comp_entry('tc_sma18,tc_sma19',true)
-                    else
-                        call cl_set_comp_entry('tc_sma18,tc_sma19',false)
-                    end if
-            end case
+            --case
+            --    when infield(tc_sma05)
+            --        if g_tc_sma[l_ac].tc_sma05 ='Y' then
+            --            call cl_set_comp_entry('tc_sma06,tc_sma07',true)
+            --        else
+            --            call cl_set_comp_entry('tc_sma06,tc_sma07',false)
+            --        end if
+            --    when infield(tc_sma08)
+            --        if g_tc_sma[l_ac].tc_sma08 ='Y' then
+            --            call cl_set_comp_entry('tc_sma09,tc_sma10',true)
+            --        else
+            --            call cl_set_comp_entry('tc_sma09,tc_sma10',false)
+            --        end if
+            --    when infield(tc_sma11)
+            --        if g_tc_sma[l_ac].tc_sma11 ='Y' then
+            --            call cl_set_comp_entry('tc_sma12,tc_sma13',true)
+            --        else
+            --            call cl_set_comp_entry('tc_sma12,tc_sma13',false)
+            --        end if
+            --    when infield(tc_sma13)
+            --        if g_tc_sma[l_ac].tc_sma13 ='Y' then
+            --            call cl_set_comp_entry('tc_sma14,tc_sma15',true)
+            --        else
+            --            call cl_set_comp_entry('tc_sma14,tc_sma15',false)
+            --        end if
+            --    when infield(tc_sma17)
+            --        if g_tc_sma[l_ac].tc_sma17 ='Y' then
+            --            call cl_set_comp_entry('tc_sma18,tc_sma19',true)
+            --        else
+            --            call cl_set_comp_entry('tc_sma18,tc_sma19',false)
+            --        end if
+            --end case
 
         BEFORE DELETE                            #是否取消單身
             #darcy:2023/10/09 add s---
@@ -1294,11 +1294,6 @@ FUNCTION i100_set_entry(p_cmd)
         if p_cmd == 'a' then
             call cl_set_comp_entry("tc_sma02",true)
         end if
-    # 动态设置栏位不能修改
-    when "csmi120"
-        if p_cmd = "a" then
-            call cl_set_comp_entry("tc_sma02",true)
-        end if
     # darcy:2025/07/28 add e---
     # darcy:2025/10/15 add s---
     when 'csmi123'
@@ -1307,6 +1302,15 @@ FUNCTION i100_set_entry(p_cmd)
         end if
     # darcy:2025/10/15 add e---
     when 'csmi130' if p_cmd = 'a' then call cl_set_comp_entry("tc_sma02",true) end if # darcy:2025/12/23 add
+    # 动态设置栏位不能修改
+    when "csmi120"
+        if p_cmd = "a" then
+            call cl_set_comp_entry("tc_sma02",true)
+        end if
+    when 'csmi136'
+        if p_cmd = "a" then
+            call cl_set_comp_entry("tc_sma02",true)
+        end if
    end case
    #darcy:2024/11/29 add e---
 
@@ -1326,11 +1330,6 @@ FUNCTION i100_set_no_entry(p_cmd)
             call cl_set_comp_entry("tc_sma02",false)
         end if
     # darcy:2025/07/28 add ---
-    # 动态设置栏位不能修改
-    when "csmi120"
-        if p_cmd = "u" then
-            call cl_set_comp_entry("tc_sma02",false)
-        end if
     # darcy:2025/07/28 add e---
     # darcy:2025/10/15 add s---
     when 'csmi123'
@@ -1339,6 +1338,15 @@ FUNCTION i100_set_no_entry(p_cmd)
         end if
     # darcy:2025/10/15 add e---
     when 'csmi130' if p_cmd = 'a' then call cl_set_comp_entry("tc_sma02",false) end if # darcy:2025/12/23 add
+    # 动态设置栏位不能修改
+    when "csmi120"
+        if p_cmd = "u" then
+            call cl_set_comp_entry("tc_sma02",false)
+        end if
+    when "csmi136"
+        if p_cmd = "u" then
+            call cl_set_comp_entry("tc_sma02",false)
+        end if
    end case
    #darcy:2024/11/29 add e---
 
@@ -1353,7 +1361,8 @@ FUNCTION i100_set_dny_combo()
 
     let ps_values = "csmi100,csmi101,csmi102,csmi103,csmi104,csmi105,csmi106,csmi107,csmi108,csmi109,csmi110,csmi111,",
                     "csmi112,csmi113,csmi114,csmi115,csmi116,csmi117,csmi118,csmi119,csmi120,csmi121,csmi122,csmi123,",
-                    "csmi124,csmi125,csmi126,csmi127,csmi128,csmi129,csmi130,csmi131,csmi132,csmi133,csmi134,csmi135"
+                    "csmi124,csmi125,csmi126,csmi127,csmi128,csmi129,csmi130,csmi131,csmi132,csmi133,csmi134,csmi135,",
+                    "csmi136"
 
     LET tok = base.StringTokenizer.create(ps_values,",")
     let l_ze01 = tok.nextToken()
@@ -1410,9 +1419,6 @@ FUNCTION i100_set_dny_combo()
         when 'csmi119'
             display '月份销售预测FCST维护' to lb_msg
         # darcy:2025/07/28 s---
-        # 程序名称
-        when 'csmi120'
-            display '示例程序' to lb_msg
         # darcy:2025/07/28 e---
         # darcy:2025/09/03 add s---
         when 'csmi121'
@@ -1432,6 +1438,9 @@ FUNCTION i100_set_dny_combo()
         when 'csmi132' display '参数控制开关' to lb_msg
         when 'csmi134' display '损耗率规则维护' to lb_msg
         when 'csmi135' display '材料特性维护' to lb_msg
+        when 'csmi136' display '程序额外栏位维护' to lb_msg
+        # 程序名称
+        when 'csmi120' display '示例程序' to lb_msg
     end case
 
     call i100_set_visiable()
@@ -1484,10 +1493,6 @@ function i100_get_tc_sma_desc(p_tc_sma01,p_tc_sma02,p_tc_sma04)
             select ima02 into l_tc_sma02_desc from ima_file
              where ima01 = p_tc_sma02
         # darcy:2025/07/28 add s---
-        # 自动带出
-        when 'csmi120'
-            select ima02 into l_tc_sma02_desc from ima_file
-             where ima01 = p_tc_sma02
         # darcy:2025/07/28 add e---
         # darcy:2025/10/15 add s---
         when 'csmi123'
@@ -1529,6 +1534,11 @@ function i100_get_tc_sma_desc(p_tc_sma01,p_tc_sma02,p_tc_sma04)
             end case
         when 'csmi135'
             select gaz03 into l_tc_sma02_desc from gaz_file where gaz01 = p_tc_sma02 and gaz02='2'
+        when 'csmi136' select gaz03 into l_tc_sma02_desc from gaz_file where gaz01 = p_tc_sma02 and gaz02 = g_lang
+        # 自动带出
+        when 'csmi120'
+            select ima02 into l_tc_sma02_desc from ima_file
+             where ima01 = p_tc_sma02
         otherwise
             let l_tc_sma02_desc = null
     end case
@@ -1579,9 +1589,6 @@ function i100_chk_tc_sma02(p_tc_sma01,p_tc_sma02)
             end if
         # darcy:2025/07/28 add e---
         # darcy:2025/07/28 add s---
-        # 资料内容检查
-        when 'csmi120'
-            return true
         # darcy:2025/07/28 add e---
         # darcy:2025/09/10 add s---·
         when 'csmi122'
@@ -1594,6 +1601,9 @@ function i100_chk_tc_sma02(p_tc_sma01,p_tc_sma02)
          end if
          select count(*) into l_cnt from eca_file where eca01 = p_tc_sma02 and ecaacti = 'Y'
          return l_cnt > 0
+        # 资料内容检查
+        when 'csmi120'
+            return true
 
     end case
     return true
@@ -1777,34 +1787,7 @@ function i100_set_visiable()
             call cl_set_comp_entry("tc_sma02,tc_sma03,tc_sma06",true)
         # darcy:2025/07/28 add e---
         # darcy:2025/07/28 add s---
-        -- 字段是否允许录入
-        when 'csmi120'
-            call cl_set_comp_att_text('tc_sma02','开窗栏位')
-            call cl_set_comp_att_text('tc_sma02_desc','一个说明栏位')
-            call cl_set_comp_att_text('tc_sma03','顺序栏位')
-            call cl_set_comp_att_text('tc_sma04','下拉框')
-            call cl_set_comp_att_text('tc_sma05','勾选框')
-            call cl_set_comp_att_text('tc_sma06','输入框')
-            call cl_set_comp_att_text('tc_sma07','输入框')
-            call cl_set_comp_att_text('tc_sma08','勾选框')
-            call cl_set_comp_att_text('tc_sma09','输入框')
-            call cl_set_comp_att_text('tc_sma10','输入框')
-            call cl_set_comp_att_text('tc_sma11','单选框')
-            call cl_set_comp_att_text('tc_sma12','输入框')
-            call cl_set_comp_att_text('tc_sma13','输入框')
-            call cl_set_comp_att_text('tc_sma14','单选框')
-            call cl_set_comp_att_text('tc_sma15','输入框')
-            call cl_set_comp_att_text('tc_sma16','输入框')
-            call cl_set_comp_att_text('tc_sma17','单选框')
-            call cl_set_comp_att_text('tc_sma18','输入框')
-            call cl_set_comp_att_text('tc_sma19','输入框')
-            call cl_set_comp_att_text('tc_sma20','有效否')
-            -- 是否隐藏
-            -- call cl_set_comp_visible("tc_sma02,tc_sma02_desc,tc_sma03,tc_sma04,tc_sma05,tc_sma06,
-            --                           tc_sma07,tc_sma08,tc_sma09,tc_sma10,tc_sma11,tc_sma12,tc_sma13,
-            --                           tc_sma14,tc_sma15,tc_sma16,tc_sma17,tc_sma18,tc_sma19",false)
-            -- 是否可以录入
-            call cl_set_comp_entry("tc_sma02,tc_sma03",true)
+
         # darcy:2025/07/28 add e---
         # darcy:2025/09/03 add s---
         when 'csmi121'
@@ -1993,6 +1976,51 @@ function i100_set_visiable()
                 call cl_set_comp_entry("tc_sma02",false)
                 call cl_set_comp_entry("tc_sma03,tc_sma06,tc_sma10",true)
                 call cl_set_comp_required("tc_sma06",true)
+                -- 字段是否允许录入
+        when 'csmi136'
+            call cl_set_comp_att_text('tc_sma02','作业编号')
+            call cl_set_comp_att_text('tc_sma02_desc','名称')
+            call cl_set_comp_att_text('tc_sma03','项次')
+            call cl_set_comp_att_text('tc_sma04','栏位')
+            call cl_set_comp_att_text('tc_sma05','必须录入')
+            call cl_set_comp_att_text('tc_sma06','栏位名称')
+            call cl_set_comp_att_text('tc_sma07','开窗')
+            call cl_set_comp_att_text('tc_sma09','默认值')
+            call cl_set_comp_att_text('tc_sma18','下拉框值')
+            call cl_set_comp_att_text('tc_sma19','下拉框说明')
+            call cl_set_comp_visible("tc_sma08,tc_sma10,tc_sma11,tc_sma12,tc_sma13,
+                                      tc_sma14,tc_sma15,tc_sma16,tc_sma17",false)
+            call cl_set_comp_entry("tc_sma02,tc_sma03,tc_sma04,tc_sma05,tc_sma06,tc_sma07,
+                                    tc_sma09,tc_sma18,tc_sma19",true)
+            call csmi136_set_comp()
+
+        when 'csmi120'
+            call cl_set_comp_att_text('tc_sma02','开窗栏位')
+            call cl_set_comp_att_text('tc_sma02_desc','一个说明栏位')
+            call cl_set_comp_att_text('tc_sma03','顺序栏位')
+            call cl_set_comp_att_text('tc_sma04','下拉框')
+            call cl_set_comp_att_text('tc_sma05','勾选框')
+            call cl_set_comp_att_text('tc_sma06','输入框')
+            call cl_set_comp_att_text('tc_sma07','输入框')
+            call cl_set_comp_att_text('tc_sma08','勾选框')
+            call cl_set_comp_att_text('tc_sma09','输入框')
+            call cl_set_comp_att_text('tc_sma10','输入框')
+            call cl_set_comp_att_text('tc_sma11','单选框')
+            call cl_set_comp_att_text('tc_sma12','输入框')
+            call cl_set_comp_att_text('tc_sma13','输入框')
+            call cl_set_comp_att_text('tc_sma14','单选框')
+            call cl_set_comp_att_text('tc_sma15','输入框')
+            call cl_set_comp_att_text('tc_sma16','输入框')
+            call cl_set_comp_att_text('tc_sma17','单选框')
+            call cl_set_comp_att_text('tc_sma18','输入框')
+            call cl_set_comp_att_text('tc_sma19','输入框')
+            call cl_set_comp_att_text('tc_sma20','有效否')
+            -- 是否隐藏
+            -- call cl_set_comp_visible("tc_sma02,tc_sma02_desc,tc_sma03,tc_sma04,tc_sma05,tc_sma06,
+            --                           tc_sma07,tc_sma08,tc_sma09,tc_sma10,tc_sma11,tc_sma12,tc_sma13,
+            --                           tc_sma14,tc_sma15,tc_sma16,tc_sma17,tc_sma18,tc_sma19",false)
+            -- 是否可以录入
+            call cl_set_comp_entry("tc_sma02,tc_sma03",true)
     end case
 
 end function
@@ -2106,4 +2134,28 @@ function csmi100_csmi129_unlock()
             exit display
     end display
 
+end function
+
+function csmi136_set_comp()
+    define l_value,l_desc   string
+    define l_tc_ren01       like tc_ren_file.tc_ren01,
+           l_tc_ren02       like tc_ren_file.tc_ren02,
+           l_tc_ren03       like tc_ren_file.tc_ren03
+
+    declare csmi136_set_comp cursor for
+     select tc_ren01,tc_ren02,tc_ren03 from tc_ren_file
+      order by tc_ren01
+
+      foreach csmi136_set_comp into l_tc_ren01,l_tc_ren02,l_tc_ren03
+          if sqlca.sqlcode then
+              call cl_err('csmi136_set_comp',sqlca.sqlcode,1)
+              exit foreach
+          end if
+          let l_value = l_value , "," , l_tc_ren01
+          let l_desc = l_desc , "," , sfmt("%1.%2[%3]",l_tc_ren01,l_tc_ren02,l_tc_ren03)
+      end foreach
+      let l_value = l_value.subString(2,l_value.getLength())
+      let l_desc = l_desc.subString(2,l_desc.getLength())
+
+      call cl_set_combo_items("tc_sma04",l_value,l_desc)
 end function
