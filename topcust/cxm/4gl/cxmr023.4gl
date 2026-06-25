@@ -170,7 +170,7 @@ FUNCTION cxmr023()
    let l_sql = "insert into cxmr023_exp (uuid,cust_proj,fg_part_no,comp_part_no,cust_part_no,mat_spec,usage_qty,sub_item)
                 select '",l_uuid,"',tc_sma06,substr(bmb01,1,6) tc_sma02,bmb03,ima02,ima021,bmb06,bmb03
                 from (
-                select bmb01,bmb03,bmb06/bmb07 bmb06
+                select CONNECT_BY_ROOT(bmb01) bmb01,bmb03,bmb06/bmb07 bmb06
                 from bmb_file
                 where bmb04 <= trunc(sysdate)
                 and (bmb05 is null or bmb05 > trunc(sysdate))
@@ -239,9 +239,8 @@ FUNCTION cxmr023()
                        when substr(tlf905,1,3) = 'CR3' then '3'
                        else '1' end
                   when tlf907 < 0 then
-                  case when substr(tlf905,1,3) = 'CR5' then '5'
-                  when substr(tlf905,1,3) = 'CR4' then '4'
-                  when tlf06 <= to_date('251030','yymmdd') then '5' else '6' end
+                     case when substr(tlf905,1,3) = 'CR4' then '4'
+                     else '5' end
                end  movement_type,
                tlf06,FG_PART_NO,tlf01,ima02,ima021, abs(tlf10*tlf12) tlf10,ina07
                 from tlf_file,ina_file,(select uuid,cust_proj,FG_PART_NO,sub_item from cxmr023_exp
@@ -336,7 +335,7 @@ FUNCTION cxmr023()
                 select sfe07, sum(sfe16) sfe16
                   from sfe_file
                  where (substr(sfe02, 1, 3) = 'MRD' or substr(sfe01, 1, 3) = 'MSA')
-                 group by sfe07) on (comp_part_no = sfe07 and uuid = ?)
+                 group by sfe07) on (sub_item = sfe07 and uuid = ?)
                 when matched then update set over_issue = sfe16 "
     prepare cxmr023_merge_sfb13_p from l_sql
     execute cxmr023_merge_sfb13_p using l_uuid
@@ -548,6 +547,10 @@ FUNCTION cxmr023()
 
    if not cl_confirm2("cxm-062",sfmt("共%1个文件。",l_children.getLength())) then
       display "取消导出"
+      delete from cxmr023_exp where uuid = l_uuid
+      delete from cxmr023_ship where uuid = l_uuid
+      delete from cxmr023_stock_movement where uuid = l_uuid
+      delete from cxmr023_param where uuid = l_uuid
       return
    end if
 
@@ -559,9 +562,12 @@ FUNCTION cxmr023()
                                   [res])
       if status then
          call cl_err("Front End Call Failed.",status,1)
-         return
       end if
    end for
+   delete from cxmr023_exp where uuid = l_uuid
+   delete from cxmr023_ship where uuid = l_uuid
+   delete from cxmr023_stock_movement where uuid = l_uuid
+   delete from cxmr023_param where uuid = l_uuid
 
 
    -- for i = 1 to l_children.getLength()
