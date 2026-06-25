@@ -292,6 +292,8 @@ DEFINE
              gem02c    LIKE gem_file.gem02,  #FUN-670103
              sfvud07   LIKE sfv_file.sfvud07 #hlf-07751
              ,l_min    LIKE sfv_file.sfv09   #add by guanyao160901
+             ,sfvud02  like sfv_file.sfvud02 #darcy add
+             ,sfvud13  like sfv_file.sfvud13 #darcy add
              END RECORD,
     g_sfv_t  RECORD
              sfv03     LIKE sfv_file.sfv03,
@@ -326,6 +328,8 @@ DEFINE
              gem02c    LIKE gem_file.gem02,  #FUN-670103
              sfvud07   LIKE sfv_file.sfvud07
              ,l_min    LIKE sfv_file.sfv09   #add by guanyao160901
+             ,sfvud02  like sfv_file.sfvud02 #darcy add
+             ,sfvud13  like sfv_file.sfvud13 # darcy add
              END RECORD,
     g_wc,g_wc2,g_sql    string,  #No.FUN-580092 HCN
     g_sfu01         LIKE sfu_file.sfu01,
@@ -578,6 +582,7 @@ DEFINE  lc_qbe_sn       LIKE    gbm_file.gbm01    #No.FUN-580031  HCN
                           sfv06,sfv07,sfv09,sfv33,sfv35,sfv30,sfv32,
                           sfv41,sfv42,sfv43,sfv44,     #FUN-810045 add
                           sfv12,sfv930,sfvud07 #FUN-670103
+                          ,sfvud02 # darcy add
                      FROM s_sfv[1].sfv03, s_sfv[1].sfv17,
                           s_sfv[1].sfv20,   #FUN-550012
                           s_sfv[1].sfv11, s_sfv[1].sfv46, s_sfv[1].qcl02, s_sfv[1].sfv47, #FUN-BC0104 add
@@ -587,6 +592,7 @@ DEFINE  lc_qbe_sn       LIKE    gbm_file.gbm01    #No.FUN-580031  HCN
                           s_sfv[1].sfv32,
                           s_sfv[1].sfv41,s_sfv[1].sfv42,s_sfv[1].sfv43,s_sfv[1].sfv44,  #FUN-810045 add
                           s_sfv[1].sfv12,s_sfv[1].sfv930,s_sfv[1].sfvud07 #FUN-670103
+                          ,s_sfv[1].sfvud02 # darcy add
 
                    BEFORE CONSTRUCT
                       CALL cl_qbe_display_condition(lc_qbe_sn)
@@ -1362,6 +1368,18 @@ FUNCTION t623_set_entry_b(p_cmd)
 
    CALL cl_set_comp_entry("sfv41,sfv42,sfv43,sfv44",TRUE)  #FUN-810045
 
+   # 光板半成品必须录入周期栏位
+   if cl_null(g_sfv[l_ac].sfv04) then
+    select sgm03_par into g_sfv[l_ac].sfv04 from sgm_file where sgm01 = g_sfv[l_ac].sfv20
+   end if
+   if not cl_null(g_sfv[l_ac].sfv04) and g_sfv[l_ac].sfv04[7,7] not matches '[ABCD]' and g_sfv[l_ac].sfv04[7,7] not matches '*-*' then
+    CALL cl_set_act_visible('sfvud02',true)
+    CALL cl_set_comp_entry('sfvud02',true)
+    --CALL cl_set_comp_required('sfvud02',true)
+    else
+     --CALL cl_set_comp_entry('sfv07',true)
+   end if
+
 END FUNCTION
 
 FUNCTION t623_set_no_entry_b(p_cmd)
@@ -1380,6 +1398,18 @@ FUNCTION t623_set_no_entry_b(p_cmd)
        CALL cl_set_comp_entry("sfv41,sfv42,sfv43,sfv44",FALSE)
      END IF
    END IF
+
+   # 非 光板半成品不录入周期栏位
+   if cl_null(g_sfv[l_ac].sfv04) then
+    select sgm03_par into g_sfv[l_ac].sfv04 from sgm_file where sgm01 = g_sfv[l_ac].sfv20
+   end if
+   if cl_null(g_sfv[l_ac].sfv04) or g_sfv[l_ac].sfv04[7,7] matches '[ABCD]' or g_sfv[l_ac].sfv04[7,7] matches '*-*' then
+    CALL cl_set_comp_required('sfvud02',false)
+    CALL cl_set_comp_entry('sfvud02',false)
+    CALL cl_set_act_visible('sfvud02',false)
+   else
+    --CALL cl_set_comp_entry('sfv07',false)
+   end if
 
 END FUNCTION
 
@@ -1795,11 +1825,17 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
     END IF
     #2022032401 add----end----
       #是否使用FQC功能                               #入庫
+     CALL cl_opmsg('b')
 
-    CALL cl_opmsg('b')
+    # 202621
+    #let g_sql = "select TRUNC(TO_DATE(SUBSTR(?, 1, 4) || '-01-04', 'YYYY-MM-DD'),'IW') + (TO_NUMBER(SUBSTR(?, 5, 2)) - 1) * 7 from dual"
+    # 2126
+    let g_sql = "select TRUNC(TO_DATE(SUBSTR(?,3,2) || '-01-04', 'YY-MM-DD'),'IW') + (TO_NUMBER(SUBSTR(?,1,2)) - 1) * 7 from dual"
+
+    prepare sasft623_sfvud02 from g_sql
 
     LET g_forupd_sql = "SELECT sfv03,sfv17,sfv20,sfv11,sfv46,'',sfv47,sfv04,'','',sfv08,sfv05,sfv06,",  #FUN-550012 #FUN-BC0104 sfv46,sfv47
-                       "       sfv07,sfv09,sfv33,sfv34,sfv35,sfv30,sfv31,sfv32,sfv12,sfv930,'',sfvud07,'' ", #FUN-670103
+                       "       sfv07,sfv09,sfv33,sfv34,sfv35,sfv30,sfv31,sfv32,sfv12,sfv930,'',sfvud07,'',sfvud02 ", #FUN-670103 #darcy add sfvud02
                        "  FROM sfv_file",
                        " WHERE sfv01= ? AND sfv03= ? FOR UPDATE"
 
@@ -1967,6 +2003,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                                   sfv41,sfv42,sfv43,sfv44,   #FUN-810045 add
                                   sfv12,sfv17,sfv20,
                                   sfv30,sfv31,sfv32,sfv33,sfv34,sfv35,sfv930,sfvud07,   #FUN-550012 #FUN-670103
+                                  sfvud02,sfvud13, # darcy add
                                   sfvplant,sfvlegal) #FUN-980008 add
                            VALUES(g_sfu.sfu01,g_sfv[l_ac].sfv03,
                                   g_sfv[l_ac].sfv04,g_sfv[l_ac].sfv05,
@@ -1982,6 +2019,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                                   g_sfv[l_ac].sfv32,g_sfv[l_ac].sfv33,
                                   g_sfv[l_ac].sfv34,g_sfv[l_ac].sfv35,g_sfv[l_ac].sfv930,   #FUN-550012 #FUN-670103
                                   g_sfv[l_ac].sfvud07,
+                                  g_sfv[l_ac].sfvud02,g_sfv[l_ac].sfvud13, # darcy add
                                   g_plant,g_legal) #FUN-980008 add  #hlf-07751
           END IF #FUN-810025
             IF SQLCA.sqlcode THEN
@@ -2125,6 +2163,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
               NEXT FIELD sfv20
            END IF
            DISPLAY BY NAME g_sfv[l_ac].sfv11
+           CALL t623_set_entry_b(p_cmd)
            CALL t623_set_no_entry_b(p_cmd) #FUN-810045 end
            #檢查工單最小發料日是否小於入庫日
            #TQC-B90222  --begin
@@ -2440,6 +2479,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
            END IF
          #END IF #FUN-BC0104
          CALL t623_set_no_entry_b1(p_cmd)  #FUN-BC0104
+         --next field sfv07
 
         AFTER FIELD sfv05     #倉庫
            IF g_argv MATCHES '[12]' THEN
@@ -2764,6 +2804,32 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
 
         BEFORE FIELD sfv33
            CALL t623_set_no_required()
+
+         # darcy:2026/06/24 add s---
+         after field sfvud02
+         # TODO 这里应该同步批号
+            if not cl_null(g_sfv[l_ac].sfvud02) and g_user = 'tiptop' then
+                execute sasft623_sfvud02 using g_sfv[l_ac].sfvud02,g_sfv[l_ac].sfvud02 into g_sfv[l_ac].sfvud13
+                if sqlca.sqlcode or cl_null(g_sfv[l_ac].sfvud13) or g_sfv[l_ac].sfvud13 < mdy(1,1,2000) then
+                    call cl_err('周期必须是YYYYWW(年年周周)格式','!',1)
+                    next field sfvud02
+                end if
+                let g_sfv[l_ac].sfv07 = g_sfv[l_ac].sfv11,'-',g_sfv[l_ac].sfvud13 using 'yymmdd'
+                IF g_sfv[l_ac].sfv07 IS NULL THEN LET g_sfv[l_ac].sfv07 = ' ' END IF
+                   SELECT img09,img10 FROM img_file
+                    WHERE img01=g_sfv[l_ac].sfv04 AND img02=g_sfv[l_ac].sfv05
+                      AND img03=g_sfv[l_ac].sfv06 AND img04=g_sfv[l_ac].sfv07
+                IF STATUS = 100 THEN
+                   IF NOT cl_confirm('mfg1401') THEN NEXT FIELD sfv07 END IF
+                   update sfv_file set sfvud02 = g_sfv[l_ac].sfvud02 ,sfvud13 = g_sfv[l_ac].sfvud13
+                    where sfv01=g_sfu.sfu01 and sfv03 = g_sfv[l_ac].sfv03
+                   CALL s_add_img(g_sfv[l_ac].sfv04, g_sfv[l_ac].sfv05,
+                                  g_sfv[l_ac].sfv06, g_sfv[l_ac].sfv07,
+                                  g_sfu.sfu01,       g_sfv[l_ac].sfv03,g_today)
+                   IF g_errno='N' THEN NEXT FIELD sfv07 END IF
+                END IF
+            end if
+         # darcy:2026/06/24 add e---
 
         AFTER FIELD sfv33  #第二單位
            IF cl_null(g_sfv[l_ac].sfv04) THEN NEXT FIELD sfv04 END IF
@@ -3354,6 +3420,8 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
           SELECT oeb13 INTO g_sfv[l_ac].sfvud07 FROM oeb_file
           WHERE oeb01=(SELECT sfb22 FROM sfb_file WHERE sfb01=g_sfv[l_ac].sfv11) AND
           oeb03=(SELECT sfb221 FROM sfb_file WHERE sfb01=g_sfv[l_ac].sfv11)#hlf-07751
+
+
                IF g_success = 'Y' THEN
                UPDATE sfv_file SET sfv01=g_sfu.sfu01,
                                    sfv03=g_sfv[l_ac].sfv03,
@@ -3378,6 +3446,8 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                                    sfv35=g_sfv[l_ac].sfv35,
                                    sfv930=g_sfv[l_ac].sfv930,
                                    sfvud07=g_sfv[l_ac].sfvud07               #FUN-670103
+                                   ,sfvud02=g_sfv[l_ac].sfvud02               #darcy add
+                                   ,sfvud13=g_sfv[l_ac].sfvud13               #darcy add
                 WHERE sfv01=g_sfu.sfu01
                   AND sfv03=g_sfv_t.sfv03
                END IF
@@ -3956,7 +4026,7 @@ FUNCTION  t623_sfb01(p_ac)
      #AND sgm03=(SELECT MAX(sgm03) FROM sgm_file       #FUN-A60076  mark
      #            WHERE sgm01=g_sfv[p_ac].sfv20)       #FUN-A60076  mark
       AND sgm03 = l_ecm03            #FUN-A60076
-      AND sgm012 = l_pmn012          #FUN-A60076
+      --AND sgm012 = l_pmn012          #FUN-A60076
     DISPLAY BY NAME g_sfv[p_ac].sfv04
     DISPLAY BY NAME g_sfv[p_ac].sfv05
     DISPLAY BY NAME g_sfv[p_ac].sfv06
@@ -4418,7 +4488,7 @@ DEFINE p_wc2           LIKE type_file.chr1000 #No.FUN-680121 VARCHAR(200)
  DEFINE l_x            LIKE type_file.num5   #add by guanyao160901
     LET g_sql = "SELECT sfv03,sfv17,sfv20,sfv11,sfv46,qcl02,sfv47,sfv04,ima02,ima021,",  #FUN-BC0104 add sfv46,qcl02,sfv47
                 "sfv08,sfv05,sfv06,sfv07,sfv09,sfv33,sfv34,",
-                "sfv35,sfv30,sfv31,sfv32,sfv41,sfv42,sfv43,sfv44,sfv12,sfv930,'',sfvud07,''",  #FUN-670103  #FUN-810045
+                "sfv35,sfv30,sfv31,sfv32,sfv41,sfv42,sfv43,sfv44,sfv12,sfv930,'',sfvud07,'',sfvud02",  #FUN-670103  #FUN-810045 #darcy add sfvud02
                 " FROM sfv_file LEFT OUTER JOIN ima_file ON sfv04=ima01 ",     #NO.TQC-9A0134 mod
                 "               LEFT OUTER JOIN qcl_file ON sfv46=qcl01 ",    #FUN-BC0104
                 " WHERE sfv01 ='",g_sfu.sfu01,"' AND ",p_wc2 CLIPPED,  #單頭    #No.TQC-9A0134 mod
@@ -8529,7 +8599,7 @@ DEFINE l_sql       STRING
        SELECT sgm58 INTO l_sfv.sfv08 FROM sgm_file
         WHERE sgm01=l_sfv.sfv20
           AND sgm03 = l_ecm03
-          AND sgm012 = l_pmn012
+          --AND sgm012 = l_pmn012
 
        IF g_sma.sma896 = 'Y' AND g_smy.smy57[2,2] = 'Y' THEN
           SELECT SUM(sfv09) INTO l_sfv09 FROM sfv_file,sfu_file
