@@ -4,15 +4,15 @@
 # Descriptions...: ABMI600,AECI100整批审核，发放
 # Date & Author..:darcy:2023/04/13 add
 
- 
+
 DATABASE ds
- 
+
 GLOBALS "../../config/top.global"
- 
+
 #模組變數(Module Variables)
-DEFINE 
+DEFINE
     yy              LIKE type_file.num10,       # No.FUN-690028 INTEGER
-    g_a             LIKE type_file.chr1,        #No.MOD-740358 
+    g_a             LIKE type_file.chr1,        #No.MOD-740358
     g_change_lang   LIKE type_file.chr1,        #是否有做語言切換 No.FUN-570112  #No.FUN-690028 VARCHAR(1)
     g_wc,g_sql      string,  #No.FUN-580092 HCN
     l_flag          LIKE type_file.num5      #No.FUN-570112  #No.FUN-690028 SMALLINT
@@ -32,17 +32,17 @@ define g_bmb dynamic array of record
         bmb01       like bmb_file.bmb01,
         sts         like type_file.chr1
     end record
- 
+
 MAIN
    DEFINE l_time  	LIKE type_file.chr8    #No.FUN-690028 VARCHAR(8)
    DEFINE p_row,p_col   LIKE type_file.num5    #No.FUN-690028 SMALLINT
- 
+
    OPTIONS
         INPUT NO WRAP
    DEFER INTERRUPT
- 
+
 #->No.FUN-570112 --start--
-   INITIALIZE g_bgjob_msgfile TO NULL 
+   INITIALIZE g_bgjob_msgfile TO NULL
    let g_ecu01       = ARG_VAL(1)
    let g_ecu02       = ARG_VAL(2)
    let tm.bom        = ARG_VAL(3)
@@ -51,19 +51,19 @@ MAIN
    IF cl_null(g_bgjob) THEN
       LET g_bgjob = "N"
    END IF
- 
+
    IF (NOT cl_user()) THEN
       EXIT PROGRAM
    END IF
-  
+
    WHENEVER ERROR CALL cl_err_msg_log
-  
+
    IF (NOT cl_setup("CEC")) THEN
       EXIT PROGRAM
    END IF
- 
+
    CALL  cl_used(g_prog,g_time,1) RETURNING g_time #FUN-580184  #No.FUN-6A0055
- 
+
    WHILE TRUE
       IF g_bgjob = "N" THEN
          CALL p200()
@@ -85,8 +85,8 @@ MAIN
                ROLLBACK WORK
                call s_showmsg()
                CALL cl_end2(2) RETURNING l_flag
-            END IF 
-            
+            END IF
+
             IF l_flag THEN
                CONTINUE WHILE
             ELSE
@@ -113,20 +113,20 @@ MAIN
    CALL  cl_used(g_prog,g_time,2) RETURNING g_time #No.MOD-580088  HCN 20050818  #No.FUN-6A0055
    #IF INT_FLAG THEN LET INT_FLAG = 0 END IF  NO.FUN-570112 MARK
 END MAIN
- 
+
 FUNCTION p200()
   #DEFINE   l_flag    LIKE type_file.num5        #No.FUN-570112  #No.FUN-690028 SMALLINT
    DEFINE   lc_cmd        LIKE type_file.chr1000     # No.FUN-690028 VARCHAR(500)   #No.FUN-570112
    DEFINE   p_row,p_col   LIKE type_file.num5      #No.FUN-570112  #No.FUN-690028 SMALLINT
- 
- 
+
+
    LET g_action_choice = ""
 #->No.FUN-570112 --start--
    OPEN WINDOW p200_w AT p_row,p_col WITH FORM "cec/42f/cecp200"
       ATTRIBUTE (STYLE = g_win_style)
-   CALL cl_ui_init() 
- 
-   CLEAR FORM 
+   CALL cl_ui_init()
+
+   CLEAR FORM
    let g_bgjob = "N"
    let tm.bom = 'Y'
    let tm.bom_exp = 'Y'
@@ -157,23 +157,23 @@ FUNCTION p200()
         on action exit
             let g_action_choice="exit"
             exit dialog
-        
+
         on action qbe_select
             call cl_qbe_select()
 
         on action qbe_save
             call cl_qbe_save()
-        
+
         on idle g_idle_seconds
             call cl_on_idle()
             continue dialog
-        
+
         on action about
             call cl_about()
-        
+
         on action controlg
             call cl_cmdask()
-        
+
         on action help
             call cl_show_help()
 
@@ -190,7 +190,7 @@ FUNCTION p200()
         call p200()
     end if
 end function
- 
+
 function p200_process()
     define sr record
         ecu01       like ecu_file.ecu01,
@@ -203,14 +203,14 @@ function p200_process()
     let g_sql = "select ecu01,ecu02 from ecu_file where ",g_wc
     prepare p200_ecu_pb from g_sql
     declare p200_ecu_cl cursor for p200_ecu_pb
-     
+
     initialize sr.* to null
     foreach p200_ecu_cl into sr.*
         if sqlca.sqlcode then
             call cl_err('p200_ecu_cl',sqlca.sqlcode,1)
             let g_success = 'N'
             exit foreach
-        end if 
+        end if
         # 2. 审核,发放
         call p200_aeci100(sr.ecu01,sr.ecu02)
         if g_success = 'N' then
@@ -229,6 +229,8 @@ function p200_process()
             end if
         end if
     end foreach
+    # 按照规则更新损耗率
+    call saeci100_csmi134(sr.ecu01)
 end function
 
 function p200_bom(p_bmb01,p_ecu02)
@@ -240,7 +242,7 @@ function p200_bom(p_bmb01,p_ecu02)
         end record
     define l_sql        string
     define l_index,l_cnt      integer
-    
+
     let l_sql = "select bmb01,bmb03 from bmb_file where bmb01 = ? ",
                 " and bmb04 <= ? and (bmb05 is null or bmb05 > ? )"
     prepare p200_bom_bp from l_sql
@@ -286,9 +288,9 @@ function p200_aeci100(p_ecu01,p_ecu02)
     define l_ecu10      like ecu_file.ecu10
     define l_ecuud02    like ecu_file.ecuud02
 
-    let g_success = 'Y' 
+    let g_success = 'Y'
     select ecu10,ecuud02 into l_ecu10,l_ecuud02 from ecu_file where ecu01 = p_ecu01 and ecu02 = p_ecu02
- 
+
     # 已审核或者已发放不需要报错，跳过
 
     if l_ecuud02 = 'N' then
