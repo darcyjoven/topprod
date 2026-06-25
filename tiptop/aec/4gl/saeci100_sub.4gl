@@ -331,17 +331,21 @@ function i100sub_y_chk(p_ecu01,p_ecu02)
     if g_success = 'N' then
         return
     end if
-    if cl_null(g_bgjob) or g_bgjob = 'N' then
-        call cl_remark_chk(g_prog,p_ecu01||p_ecu02,0)
-        if g_success = 'Y' then
-            call i100sub_chk(p_ecu01,p_ecu02)
-        end if
-        while g_success = 'N'
-            call cl_remark(g_prog,p_ecu01||p_ecu02,0)
-        end while
+    call cl_remark_chk(g_prog,p_ecu01||p_ecu02,0)
+    if g_success = 'Y' then
+        call i100sub_chk(p_ecu01,p_ecu02)
     end if
-
-
+    if g_success = 'N' then
+        call cl_remark(g_prog,p_ecu01||p_ecu02,0)
+    end if
+    call cl_remark_chk(g_prog,p_ecu01||p_ecu02,0)
+    if g_success = 'Y' then
+        call i100sub_chk(p_ecu01,p_ecu02)
+    end if
+    if g_success = 'N' then
+        # call cl_err('必要栏位','!',1)
+        return
+    end if
     # darcy add e---
 
     # HDI未维护报错

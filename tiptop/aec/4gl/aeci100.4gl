@@ -781,6 +781,8 @@ define l_cnt integer #darcy:2023/04/12 add
             if not cl_null(g_ecu.ecu01) and not cl_null(g_ecu.ecu02) then
                 if g_ecu.ecu10 ='N' and g_ecu.ecuud02 = 'N' and g_ecu.ecuud05 <> 'S' then
                     call cl_remark(g_prog,g_ecu.ecu01||g_ecu.ecu02,0)
+                else
+                    call cl_remark_show(g_prog,g_ecu.ecu01||g_ecu.ecu02,0)
                 end if
             end if
         # darcy add e---
