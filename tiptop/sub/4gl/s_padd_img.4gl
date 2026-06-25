@@ -1,15 +1,15 @@
 # Prog. Version..: '5.30.06-13.03.14(00003)'     #
 #
 # Pattern name...: s_padd_img.4gl
-# Descriptions...: 
+# Descriptions...:
 # Date & Author..: No:FUN-C70087 12/08/01 By Bart
 # Modify.........: No.FUN-CC0095 12/12/18 By Bart 使用array
 # Modify.........: No.MOD-D30005 13/03/04 By bart insert img前判斷是否已存在
 # Modify.........: No:FUN-D40103 13/05/08 By lixh1 增加儲位有效性檢查
- 
-DATABASE ds       
- 
-GLOBALS "../../config/top.global"   
+
+DATABASE ds
+
+GLOBALS "../../config/top.global"
 #FUN-CC0095---begin
 GLOBALS
    DEFINE g_padd_img       DYNAMIC ARRAY OF RECORD
@@ -52,14 +52,14 @@ GLOBALS
                             END RECORD
 END GLOBALS
 #FUN-CC0095---end
-DEFINE g_sql       STRING 
-DEFINE l_table     STRING 
+DEFINE g_sql       STRING
+DEFINE l_table     STRING
 DEFINE g_rec_b     LIKE type_file.num5
 
 #FUN-CC0095---begin
 FUNCTION s_padd_img_init()
    CALL g_padd_img.clear()
-END FUNCTION 
+END FUNCTION
 
 FUNCTION s_padd_img_data1(p_img01,p_img02,p_img03,p_img04,p_img05,p_img06,p_date)
    DEFINE p_img01      LIKE img_file.img01
@@ -68,59 +68,85 @@ FUNCTION s_padd_img_data1(p_img01,p_img02,p_img03,p_img04,p_img05,p_img06,p_date
    DEFINE p_img04      LIKE img_file.img04
    DEFINE p_img05      LIKE img_file.img05
    DEFINE p_img06      LIKE img_file.img06
-   DEFINE p_date       LIKE type_file.dat  
+   DEFINE p_date       LIKE type_file.dat
    DEFINE l_img09      LIKE img_file.img09
    DEFINE l_ima71      LIKE ima_file.ima71
    DEFINE l_newno      LIKE type_file.num5
+   # darcy add s---
+   define l_sys        varchar(3)
+   define l_cnt        integer
+   # darcy add e---
 
    IF p_img01[1,4] = 'MISC' THEN
-      RETURN 
-   END IF 
-   
+      RETURN
+   END IF
+
    IF cl_null(p_img01) THEN
-      RETURN 
+      RETURN
    END IF
    IF s_joint_venture( p_img01,g_plant) OR NOT s_internal_item( p_img01,g_plant ) THEN
       RETURN
    END IF
-   IF cl_null(p_img02) THEN LET p_img02 = ' ' END IF 
-   IF cl_null(p_img03) THEN LET p_img03 = ' ' END IF 
+   IF cl_null(p_img02) THEN LET p_img02 = ' ' END IF
+   IF cl_null(p_img03) THEN LET p_img03 = ' ' END IF
    IF cl_null(p_img04) THEN LET p_img04 = ' ' END IF
-   
+
    LET l_newno = g_padd_img.getLength() + 1
-   LET g_padd_img[l_newno].img01=p_img01             
-   LET g_padd_img[l_newno].img02=p_img02             
-   LET g_padd_img[l_newno].img03=p_img03             
-   LET g_padd_img[l_newno].img04=p_img04              
-   LET g_padd_img[l_newno].img05=p_img05            
-   LET g_padd_img[l_newno].img06=p_img06 
-   LET g_padd_img[l_newno].img14=p_date 
-   LET g_padd_img[l_newno].img17=p_date 
-   LET g_padd_img[l_newno].img37=p_date 
-      
+   LET g_padd_img[l_newno].img01=p_img01
+   LET g_padd_img[l_newno].img02=p_img02
+   LET g_padd_img[l_newno].img03=p_img03
+   LET g_padd_img[l_newno].img04=p_img04
+   LET g_padd_img[l_newno].img05=p_img05
+   LET g_padd_img[l_newno].img06=p_img06
+   LET g_padd_img[l_newno].img14=p_date
+   LET g_padd_img[l_newno].img17=p_date
+   LET g_padd_img[l_newno].img37=p_date
+
    SELECT ima25,ima71 INTO l_img09,l_ima71 FROM ima_file
           WHERE ima01=p_img01
    IF SQLCA.sqlcode OR l_ima71 IS NULL THEN LET l_ima71=0 END IF
-   LET g_padd_img[l_newno].img09 = l_img09  
-   LET g_padd_img[l_newno].img13 = NULL  
+   LET g_padd_img[l_newno].img09 = l_img09
+   LET g_padd_img[l_newno].img13 = NULL
    LET g_padd_img[l_newno].img21 = 1
    IF l_ima71 =0 THEN
       LET g_padd_img[l_newno].img18=g_lastdat
-   ELSE 
-      LET g_padd_img[l_newno].img13=p_date          
-      LET g_padd_img[l_newno].img18=p_date +l_ima71
+   ELSE
+      # darcy add s---
+      # 如果是入库单，抓取周期转换后的日期
+      # 如果周期日期不为空/1899 就取周期日期，否则取p_date
+     let l_sys = p_img05
+      select count(*) into l_cnt from smy_file
+       where smyslip = l_sys and smysys = 'asf'
+         and smykind = 'A'
+      if l_cnt > 0 and g_user = 'tiptop' then
+        select sfvud13 into g_padd_img[l_newno].img13
+          from sfv_file where sfv01 = p_img05
+           and sfv03 = p_img06
+        if sqlca.sqlcode or cl_null(g_padd_img[l_newno].img13) or g_padd_img[l_newno].img13 < mdy(1,1,2000) then
+            LET g_padd_img[l_newno].img13=p_date
+            LET g_padd_img[l_newno].img18=p_date +l_ima71
+        else
+            LET g_padd_img[l_newno].img18=g_padd_img[l_newno].img13 +l_ima71
+        end if
+      else
+        LET g_padd_img[l_newno].img13=p_date
+        LET g_padd_img[l_newno].img18=p_date +l_ima71
+      end if
+      # darcy add e---
+      --LET g_padd_img[l_newno].img13=p_date            # darcy mark
+      --LET g_padd_img[l_newno].img18=p_date +l_ima71   # darcy mark
    END IF
-   SELECT ime09,ime10,ime11                  
-     INTO g_padd_img[l_newno].img26,g_padd_img[l_newno].img27,g_padd_img[l_newno].img28     
+   SELECT ime09,ime10,ime11
+     INTO g_padd_img[l_newno].img26,g_padd_img[l_newno].img27,g_padd_img[l_newno].img28
      FROM ime_file
     WHERE ime01 = p_img02 AND ime02 = p_img03
        AND imeacti = 'Y'   #FUN-D40103
-   IF SQLCA.sqlcode THEN 
-      SELECT imd08,imd14,imd15              
-        INTO g_padd_img[l_newno].img26,g_padd_img[l_newno].img27,g_padd_img[l_newno].img28   
+   IF SQLCA.sqlcode THEN
+      SELECT imd08,imd14,imd15
+        INTO g_padd_img[l_newno].img26,g_padd_img[l_newno].img27,g_padd_img[l_newno].img28
         FROM imd_file WHERE imd01=p_img02
    END IF
-END FUNCTION 
+END FUNCTION
 
 FUNCTION s_padd_img_show1()
    DEFINE l_s_img      DYNAMIC ARRAY OF RECORD
@@ -141,26 +167,26 @@ FUNCTION s_padd_img_show1()
                        END RECORD
    DEFINE l_img        RECORD LIKE img_file.*
    DEFINE l_i          LIKE type_file.num5
-   DEFINE l_success    LIKE type_file.chr1 
-   DEFINE g_cnt        LIKE type_file.num5 
+   DEFINE l_success    LIKE type_file.chr1
+   DEFINE g_cnt        LIKE type_file.num5
    DEFINE l_gfe02      LIKE gfe_file.gfe02
    DEFINE l_img09      LIKE img_file.img09
    DEFINE l_ac         LIKE type_file.num5
    DEFINE l_ima71      LIKE ima_file.ima71
    DEFINE l_rowno      LIKE type_file.num5
    DEFINE l_cnt        LIKE type_file.num5  #MOD-D30005
-   
+
    LET l_success = 'Y'
    IF g_sma.sma892[2,2]='Y' THEN
       OPEN WINDOW s_padd_img_w AT 04,02 WITH FORM "sub/42f/s_padd_img"
             ATTRIBUTE (STYLE = g_win_style CLIPPED)
-      CALL cl_ui_locale("s_padd_img") 
-      
+      CALL cl_ui_locale("s_padd_img")
+
       CALL l_s_img.clear()
       LET g_rec_b = 0
       LET l_i = 1
       LET l_rowno = g_padd_img.getLength()
-      IF l_rowno = 0 THEN RETURN END IF 
+      IF l_rowno = 0 THEN RETURN END IF
 
       FOR l_i = 1 TO l_rowno
          LET l_s_img[l_i].img01 = g_padd_img[l_i].img01
@@ -177,74 +203,74 @@ FUNCTION s_padd_img_show1()
          LET l_s_img[l_i].img27 = g_padd_img[l_i].img27
          LET l_s_img[l_i].img28 = g_padd_img[l_i].img28
          LET l_s_img[l_i].img35 = g_padd_img[l_i].img35
-      END FOR 
+      END FOR
 
       DISPLAY ARRAY l_s_img TO s_img.* ATTRIBUTE( COUNT = g_rec_b)
          BEFORE DISPLAY
             EXIT DISPLAY
       END DISPLAY
-      
+
       INPUT ARRAY l_s_img FROM s_img.*
        ATTRIBUTE(COUNT=g_rec_b,MAXCOUNT=g_max_rec,WITHOUT DEFAULTS=TRUE,UNBUFFERED,
                      INSERT ROW=FALSE,DELETE ROW=FALSE,APPEND ROW=FALSE)
-       BEFORE ROW 
+       BEFORE ROW
           LET l_ac = ARR_CURR()
           SELECT ima25,ima71 INTO l_img09,l_ima71 FROM ima_file
            WHERE ima01=l_s_img[l_ac].img01
           IF SQLCA.sqlcode OR l_ima71 IS NULL THEN LET l_ima71=0 END IF
-       
+
        AFTER FIELD img09
           IF cl_null(l_s_img[l_ac].img09) THEN NEXT FIELD img09 END IF
-          SELECT gfe02 INTO l_gfe02 FROM gfe_file 
+          SELECT gfe02 INTO l_gfe02 FROM gfe_file
            WHERE gfe01=l_s_img[l_ac].img09 AND gfeacti = 'Y'
-          IF SQLCA.sqlcode THEN 
-             CALL cl_err3("sel","gfe_file",l_s_img[l_ac].img09,"",SQLCA.sqlcode,"","",0) NEXT FIELD img09 
+          IF SQLCA.sqlcode THEN
+             CALL cl_err3("sel","gfe_file",l_s_img[l_ac].img09,"",SQLCA.sqlcode,"","",0) NEXT FIELD img09
           END IF
           IF l_s_img[l_ac].img09=l_img09 THEN
              LET l_s_img[l_ac].img21 = 1
           ELSE
              CALL s_umfchk(l_s_img[l_ac].img01,l_s_img[l_ac].img09,l_img09)
                   RETURNING g_cnt,l_s_img[l_ac].img21
-             IF g_cnt = 1 THEN 
+             IF g_cnt = 1 THEN
                 CALL cl_err('','mfg3075',0)
                 NEXT FIELD img09
              END IF
           END IF
-          DISPLAY BY NAME l_s_img[l_ac].img21  
-       AFTER FIELD img13             
+          DISPLAY BY NAME l_s_img[l_ac].img21
+       AFTER FIELD img13
           IF l_ima71 > 0 THEN
              LET l_s_img[l_ac].img18=l_s_img[l_ac].img13+l_ima71
              DISPLAY BY NAME l_s_img[l_ac].img18
-          END IF     
+          END IF
 
-       AFTER FIELD img18          
+       AFTER FIELD img18
           IF cl_null(l_s_img[l_ac].img18) THEN NEXT FIELD img18 END IF
           IF l_ima71 = 0 THEN LET l_s_img[l_ac].img18=g_lastdat END IF
           DISPLAY BY NAME l_s_img[l_ac].img18
 
-       AFTER FIELD img35           
+       AFTER FIELD img35
           IF NOT cl_null(l_s_img[l_ac].img35) THEN
              SELECT * FROM pja_file WHERE pja01=l_s_img[l_ac].img35 AND pjaacti = 'Y'
-                       AND pjaclose = 'N'   
+                       AND pjaclose = 'N'
              IF STATUS THEN
-                CALL cl_err3("sel","pja_file",l_s_img[l_ac].img35,"",STATUS,"","",0) 
+                CALL cl_err3("sel","pja_file",l_s_img[l_ac].img35,"",STATUS,"","",0)
                 NEXT FIELD img35
              END IF
           END IF
 
-       ON CHANGE img35 
+       ON CHANGE img35
           LET l_ac = ARR_CURR()
-  
+
        ON ACTION EXIT
           LET l_success = 'N'
-          EXIT INPUT 
-          
+          EXIT INPUT
+
        ON ACTION controlg
           CALL cl_cmdask()
           CONTINUE INPUT
 
        ON ACTION CANCEL
-          LET l_success = 'N' 
+          LET l_success = 'N'
           EXIT INPUT
 
        ON IDLE g_idle_seconds
@@ -277,34 +303,34 @@ FUNCTION s_padd_img_show1()
              LET l_img.img06 = g_padd_img[l_i].img06
              LET l_img.img14 = g_padd_img[l_i].img14
              LET l_img.img17 = g_padd_img[l_i].img17
-             LET l_img.img37 = g_padd_img[l_i].img37 
-             
-             SELECT ime04,ime05,ime06,ime07               
-               INTO l_img.img22,l_img.img23,l_img.img24,l_img.img25     
+             LET l_img.img37 = g_padd_img[l_i].img37
+
+             SELECT ime04,ime05,ime06,ime07
+               INTO l_img.img22,l_img.img23,l_img.img24,l_img.img25
                FROM ime_file
               WHERE ime01 = l_img.img02 AND ime02 = l_img.img03
                   AND imeacti = 'Y'       #FUN-D40103
-             IF SQLCA.sqlcode THEN 
-                SELECT imd10,imd11,imd12,imd13                
+             IF SQLCA.sqlcode THEN
+                SELECT imd10,imd11,imd12,imd13
                   INTO l_img.img22, l_img.img23, l_img.img24, l_img.img25
                   FROM imd_file WHERE imd01=l_img.img02
-                IF SQLCA.SQLCODE THEN 
+                IF SQLCA.SQLCODE THEN
                    LET l_img.img22 = 'S'  LET l_img.img23 = 'Y'
                    LET l_img.img24 = 'Y'  LET l_img.img25 = 'N'
                 END IF
              END IF
-             LET l_img.img20=1         
-             LET l_img.img30=0         
+             LET l_img.img20=1
+             LET l_img.img30=0
              LET l_img.img31=0
-             LET l_img.img32=0         
+             LET l_img.img32=0
              LET l_img.img33=0
-             LET l_img.img34=1     
-             LET l_img.img10=0 
+             LET l_img.img34=1
+             LET l_img.img10=0
              IF l_img.img02 IS NULL THEN LET l_img.img02 = ' ' END IF
              IF l_img.img03 IS NULL THEN LET l_img.img03 = ' ' END IF
              IF l_img.img04 IS NULL THEN LET l_img.img04 = ' ' END IF
-             LET l_img.imgplant = g_plant 
-             LET l_img.imglegal = g_legal 
+             LET l_img.imgplant = g_plant
+             LET l_img.imglegal = g_legal
              #MOD-D30005---begin
              SELECT COUNT(*) INTO l_cnt
                FROM img_file
@@ -312,40 +338,40 @@ FUNCTION s_padd_img_show1()
                 AND img02 = l_img.img02
                 AND img03 = l_img.img03
                 AND img04 = l_img.img04
-             IF l_cnt = 0 THEN 
+             IF l_cnt = 0 THEN
              #MOD-D30005---end
                 INSERT INTO img_file VALUES (l_img.*)
                 IF SQLCA.SQLCODE OR SQLCA.SQLERRD[3]=0 THEN
                    #CALL cl_err3("ins","img_file","","",SQLCA.SQLCODE,"","",0)
                    CALL s_errmsg('img01',l_img.img01,'inset img_file:',SQLCA.sqlcode,1)
-                   LET l_success = 'N' 
+                   LET l_success = 'N'
                 END IF
              END IF  #MOD-D30005
-          END FOR 
-          
-          EXIT INPUT 
-          
-    END INPUT 
-    IF INT_FLAG THEN 
-       LET INT_FLAG=0 
-       CLOSE WINDOW s_padd_img_w 
+          END FOR
+
+          EXIT INPUT
+
+    END INPUT
+    IF INT_FLAG THEN
+       LET INT_FLAG=0
+       CLOSE WINDOW s_padd_img_w
        RETURN FALSE
     END IF
-    
+
     CLOSE WINDOW s_padd_img_w
-   END IF 
+   END IF
    CALL s_showmsg()
    IF l_success <> 'Y' THEN
-      RETURN FALSE 
+      RETURN FALSE
    ELSE
-      RETURN TRUE 
-   END IF 
+      RETURN TRUE
+   END IF
 END FUNCTION
 #FUN-CC0095---end
 
 FUNCTION s_padd_img_create()
-DEFINE l_time       STRING 
-DEFINE l_sql        STRING 
+DEFINE l_time       STRING
+DEFINE l_sql        STRING
 DEFINE l_tok_table  base.StringTokenizer
 DEFINE l_cnt_dot    LIKE type_file.num5
 DEFINE l_cnt_comma  LIKE type_file.num5
@@ -357,7 +383,7 @@ DEFINE l_length     STRING
 DEFINE l_table_name LIKE gac_file.gac05
 DEFINE l_field_name LIKE gac_file.gac06
 DEFINE l_alias_name LIKE gac_file.gac06
-           
+
    LET g_sql = "img01.img_file.img01,",
 	           "img02.img_file.img02,",
 	           "img03.img_file.img03,",
@@ -400,13 +426,13 @@ DEFINE l_alias_name LIKE gac_file.gac06
 
        CALL cl_get_column_info('ds',l_table_name,l_field_name)
        RETURNING l_datatype,l_length
-       
+
        IF NOT cl_null(l_sql) THEN
           LET l_sql = l_sql,","
        END IF
        IF l_datatype = "smallint" OR l_datatype = "integer" OR l_datatype = "date"
-          OR l_datatype = "datetime"  
-          OR l_datatype = "blob"  OR l_datatype = "byte"   
+          OR l_datatype = "datetime"
+          OR l_datatype = "blob"  OR l_datatype = "byte"
        THEN
            LET l_sql = l_sql, l_alias_name CLIPPED," ",l_datatype
        ELSE
@@ -415,13 +441,13 @@ DEFINE l_alias_name LIKE gac_file.gac06
        END IF
    END WHILE
    LET l_sql = "(",l_sql,")"
-   
+
    LET g_sql = " CREATE TABLE ",l_table,l_sql CLIPPED
-   PREPARE create_prep FROM g_sql 
-   EXECUTE create_prep   
+   PREPARE create_prep FROM g_sql
+   EXECUTE create_prep
    IF SQLCA.SQLCODE THEN
-      CALL cl_err('Create_img_tmp_fail','',0)     
-      RETURN '' 
+      CALL cl_err('Create_img_tmp_fail','',0)
+      RETURN ''
    END IF
 
    RETURN l_table
@@ -434,17 +460,17 @@ FUNCTION s_padd_img_data(p_img01,p_img02,p_img03,p_img04,p_img05,p_img06,p_date,
    DEFINE p_img04      LIKE img_file.img04
    DEFINE p_img05      LIKE img_file.img05
    DEFINE p_img06      LIKE img_file.img06
-   DEFINE p_date       LIKE type_file.dat  
-   DEFINE p_table      STRING 
+   DEFINE p_date       LIKE type_file.dat
+   DEFINE p_table      STRING
    DEFINE l_check      LIKE type_file.chr1
    DEFINE l_img        RECORD LIKE img_file.*
    DEFINE l_img09      LIKE img_file.img09
    DEFINE l_ima71      LIKE ima_file.ima71
 
    IF p_img01[1,4] = 'MISC' THEN
-      RETURN 
-   END IF 
-   
+      RETURN
+   END IF
+
    LET g_sql="SELECT 'Y' ",
 	     "  FROM ",p_table CLIPPED,  #g_cr_db_str,
 	     " WHERE img01 = '",p_img01,"'",
@@ -466,55 +492,55 @@ FUNCTION s_padd_img_data(p_img01,p_img02,p_img03,p_img04,p_img05,p_img06,p_date,
    END IF
 
    IF cl_null(p_img01) THEN
-      RETURN 
+      RETURN
    END IF
    IF s_joint_venture( p_img01,g_plant) OR NOT s_internal_item( p_img01,g_plant ) THEN
       RETURN
    END IF
-   IF cl_null(p_img02) THEN LET p_img02 = ' ' END IF 
-   IF cl_null(p_img03) THEN LET p_img03 = ' ' END IF 
+   IF cl_null(p_img02) THEN LET p_img02 = ' ' END IF
+   IF cl_null(p_img03) THEN LET p_img03 = ' ' END IF
    IF cl_null(p_img04) THEN LET p_img04 = ' ' END IF
-   
+
    LET l_check = 'N'
    EXECUTE check_img INTO l_check
-   
+
    INITIALIZE l_img.* TO NULL
-   IF l_check <> 'Y' THEN 
-      LET l_img.img01=p_img01             
-      LET l_img.img02=p_img02             
-      LET l_img.img03=p_img03             
-      LET l_img.img04=p_img04              
-      LET l_img.img05=p_img05            
-      LET l_img.img06=p_img06 
-      LET l_img.img14 = p_date 
-      LET l_img.img17 = p_date 
-      LET l_img.img37 = p_date 
-      
+   IF l_check <> 'Y' THEN
+      LET l_img.img01=p_img01
+      LET l_img.img02=p_img02
+      LET l_img.img03=p_img03
+      LET l_img.img04=p_img04
+      LET l_img.img05=p_img05
+      LET l_img.img06=p_img06
+      LET l_img.img14 = p_date
+      LET l_img.img17 = p_date
+      LET l_img.img37 = p_date
+
       SELECT ima25,ima71 INTO l_img09,l_ima71 FROM ima_file
              WHERE ima01=l_img.img01
       IF SQLCA.sqlcode OR l_ima71 IS NULL THEN LET l_ima71=0 END IF
-      LET l_img.img09 = l_img09  
-      LET l_img.img13 = NULL  
+      LET l_img.img09 = l_img09
+      LET l_img.img13 = NULL
       LET l_img.img21 = 1
       IF l_ima71 =0 THEN
          LET l_img.img18=g_lastdat
-      ELSE LET l_img.img13=p_date          
+      ELSE LET l_img.img13=p_date
          LET l_img.img18=p_date +l_ima71
       END IF
       SELECT ime04,ime05,ime06,ime07,ime09
-            ,ime10,ime11                  
+            ,ime10,ime11
         INTO l_img.img22,l_img.img23,l_img.img24,l_img.img25,l_img.img26
-            ,l_img.img27,l_img.img28     
+            ,l_img.img27,l_img.img28
         FROM ime_file
        WHERE ime01 = p_img02 AND ime02 = p_img03
              AND imeacti = 'Y'   #FUN-D40103
-      IF SQLCA.sqlcode THEN 
+      IF SQLCA.sqlcode THEN
          SELECT imd10,imd11,imd12,imd13,imd08
-               ,imd14,imd15              
+               ,imd14,imd15
            INTO l_img.img22, l_img.img23, l_img.img24, l_img.img25,l_img.img26
-               ,l_img.img27,l_img.img28   
+               ,l_img.img27,l_img.img28
            FROM imd_file WHERE imd01=l_img.img02
-         IF SQLCA.SQLCODE THEN 
+         IF SQLCA.SQLCODE THEN
             LET l_img.img22 = 'S'  LET l_img.img23 = 'Y'
             LET l_img.img24 = 'Y'  LET l_img.img25 = 'N'
          END IF
@@ -527,8 +553,8 @@ FUNCTION s_padd_img_data(p_img01,p_img02,p_img03,p_img04,p_img05,p_img06,p_date,
 	     CALL cl_err('insert cho2_tmp fail:',SQLCA.sqlcode,1)
 	     RETURN
       END IF
-   END IF 
-END FUNCTION 
+   END IF
+END FUNCTION
 
 FUNCTION s_padd_img_show(p_table)
    DEFINE p_table      STRING
@@ -554,11 +580,11 @@ FUNCTION s_padd_img_show(p_table)
                        img14 LIKE img_file.img14,
                        img17 LIKE img_file.img17,
                        img37 LIKE img_file.img37
-                       END RECORD 
+                       END RECORD
    DEFINE l_img        RECORD LIKE img_file.*
    DEFINE l_i          LIKE type_file.num5
-   DEFINE l_success    LIKE type_file.chr1 
-   DEFINE g_cnt        LIKE type_file.num5 
+   DEFINE l_success    LIKE type_file.chr1
+   DEFINE g_cnt        LIKE type_file.num5
    DEFINE l_gfe02      LIKE gfe_file.gfe02
    DEFINE l_img09      LIKE img_file.img09
    DEFINE l_ac         LIKE type_file.num5
@@ -568,23 +594,23 @@ FUNCTION s_padd_img_show(p_table)
    IF g_sma.sma892[2,2]='Y' THEN
       OPEN WINDOW s_padd_img_w AT 04,02 WITH FORM "sub/42f/s_padd_img"
             ATTRIBUTE (STYLE = g_win_style CLIPPED)
-      CALL cl_ui_locale("s_padd_img") 
-      
+      CALL cl_ui_locale("s_padd_img")
+
       LET g_sql="SELECT img01,img02,img03,img04, ",
                 "  img09,img26,img13,img18,img21,img19,img36,img27,img28,img35",
 	            "  FROM ",p_table CLIPPED, #g_cr_db_str CLIPPED,
                 "  ORDER BY img01,img02 DESC "
-               
+
       PREPARE img_tmp_p FROM g_sql
       DECLARE img_tmp_cur CURSOR FOR img_tmp_p
 
       LET g_sql="SELECT img05,img06,img14,img17,img37 ",
 	            "  FROM ",p_table CLIPPED, #g_cr_db_str CLIPPED,
                 "  WHERE img01 = ? AND img02 = ? AND img03 = ? AND img04 = ? "
-               
+
       PREPARE img_tmp_p1 FROM g_sql
       DECLARE img_tmp_cur1 CURSOR FOR img_tmp_p1
-      
+
       CALL l_s_img.clear()
       LET g_rec_b = 0
       LET l_i = 1
@@ -604,68 +630,68 @@ FUNCTION s_padd_img_show(p_table)
          BEFORE DISPLAY
             EXIT DISPLAY
       END DISPLAY
-      
+
       INPUT ARRAY l_s_img FROM s_img.*
        ATTRIBUTE(COUNT=g_rec_b,MAXCOUNT=g_max_rec,WITHOUT DEFAULTS=TRUE,UNBUFFERED,
                      INSERT ROW=FALSE,DELETE ROW=FALSE,APPEND ROW=FALSE)
-       BEFORE ROW 
+       BEFORE ROW
           LET l_ac = ARR_CURR()
           SELECT ima25,ima71 INTO l_img09,l_ima71 FROM ima_file
            WHERE ima01=l_s_img[l_ac].img01
           IF SQLCA.sqlcode OR l_ima71 IS NULL THEN LET l_ima71=0 END IF
-       
+
        AFTER FIELD img09
           IF cl_null(l_s_img[l_ac].img09) THEN NEXT FIELD img09 END IF
-          SELECT gfe02 INTO l_gfe02 FROM gfe_file 
+          SELECT gfe02 INTO l_gfe02 FROM gfe_file
            WHERE gfe01=l_s_img[l_ac].img09 AND gfeacti = 'Y'
-          IF SQLCA.sqlcode THEN 
-             CALL cl_err3("sel","gfe_file",l_s_img[l_ac].img09,"",SQLCA.sqlcode,"","",0) NEXT FIELD img09 
+          IF SQLCA.sqlcode THEN
+             CALL cl_err3("sel","gfe_file",l_s_img[l_ac].img09,"",SQLCA.sqlcode,"","",0) NEXT FIELD img09
           END IF
           IF l_s_img[l_ac].img09=l_img09 THEN
              LET l_s_img[l_ac].img21 = 1
           ELSE
              CALL s_umfchk(l_s_img[l_ac].img01,l_s_img[l_ac].img09,l_img09)
                   RETURNING g_cnt,l_s_img[l_ac].img21
-             IF g_cnt = 1 THEN 
+             IF g_cnt = 1 THEN
                 CALL cl_err('','mfg3075',0)
                 NEXT FIELD img09
              END IF
           END IF
-          DISPLAY BY NAME l_s_img[l_ac].img21  
-       AFTER FIELD img13             
+          DISPLAY BY NAME l_s_img[l_ac].img21
+       AFTER FIELD img13
           IF l_ima71 > 0 THEN
              LET l_s_img[l_ac].img18=l_s_img[l_ac].img13+l_ima71
              DISPLAY BY NAME l_s_img[l_ac].img18
-          END IF     
+          END IF
 
-       AFTER FIELD img18          
+       AFTER FIELD img18
           IF cl_null(l_s_img[l_ac].img18) THEN NEXT FIELD img18 END IF
           IF l_ima71 = 0 THEN LET l_s_img[l_ac].img18=g_lastdat END IF
           DISPLAY BY NAME l_s_img[l_ac].img18
 
-       AFTER FIELD img35           
+       AFTER FIELD img35
           IF NOT cl_null(l_s_img[l_ac].img35) THEN
              SELECT * FROM pja_file WHERE pja01=l_s_img[l_ac].img35 AND pjaacti = 'Y'
-                       AND pjaclose = 'N'   
+                       AND pjaclose = 'N'
              IF STATUS THEN
-                CALL cl_err3("sel","pja_file",l_s_img[l_ac].img35,"",STATUS,"","",0) 
+                CALL cl_err3("sel","pja_file",l_s_img[l_ac].img35,"",STATUS,"","",0)
                 NEXT FIELD img35
              END IF
           END IF
 
-       ON CHANGE img35 
+       ON CHANGE img35
           LET l_ac = ARR_CURR()
-  
+
        ON ACTION EXIT
-          LET l_success = 'N' 
-          EXIT INPUT 
-          
+          LET l_success = 'N'
+          EXIT INPUT
+
        ON ACTION controlg
           CALL cl_cmdask()
           CONTINUE INPUT
 
        ON ACTION CANCEL
-          LET l_success = 'N' 
+          LET l_success = 'N'
           EXIT INPUT
 
        ON IDLE g_idle_seconds
@@ -694,74 +720,74 @@ FUNCTION s_padd_img_show(p_table)
              LET l_img.img28 = l_s_img[l_i].img28
              LET l_img.img35 = l_s_img[l_i].img35
 
-             FOREACH img_tmp_cur1 
+             FOREACH img_tmp_cur1
                USING l_img.img01,l_img.img02,l_img.img03,l_img.img04
                 INTO l_s_img1.*
-                
+
                 LET l_img.img05 = l_s_img1.img05
                 LET l_img.img06 = l_s_img1.img06
                 LET l_img.img14 = l_s_img1.img14
                 LET l_img.img17 = l_s_img1.img17
                 LET l_img.img37 = l_s_img1.img37
-             END FOREACH   
-             
-             SELECT ime04,ime05,ime06,ime07               
-               INTO l_img.img22,l_img.img23,l_img.img24,l_img.img25     
+             END FOREACH
+
+             SELECT ime04,ime05,ime06,ime07
+               INTO l_img.img22,l_img.img23,l_img.img24,l_img.img25
                FROM ime_file
               WHERE ime01 = l_img.img02 AND ime02 = l_img.img03
                AND imeacti = 'Y'     #FUN-D40103
-             IF SQLCA.sqlcode THEN 
-                SELECT imd10,imd11,imd12,imd13                
+             IF SQLCA.sqlcode THEN
+                SELECT imd10,imd11,imd12,imd13
                   INTO l_img.img22, l_img.img23, l_img.img24, l_img.img25
                   FROM imd_file WHERE imd01=l_img.img02
-                IF SQLCA.SQLCODE THEN 
+                IF SQLCA.SQLCODE THEN
                    LET l_img.img22 = 'S'  LET l_img.img23 = 'Y'
                    LET l_img.img24 = 'Y'  LET l_img.img25 = 'N'
                 END IF
              END IF
-             LET l_img.img20=1         
-             LET l_img.img30=0         
+             LET l_img.img20=1
+             LET l_img.img30=0
              LET l_img.img31=0
-             LET l_img.img32=0         
+             LET l_img.img32=0
              LET l_img.img33=0
-             LET l_img.img34=1     
-             LET l_img.img10=0 
+             LET l_img.img34=1
+             LET l_img.img10=0
              IF l_img.img02 IS NULL THEN LET l_img.img02 = ' ' END IF
              IF l_img.img03 IS NULL THEN LET l_img.img03 = ' ' END IF
              IF l_img.img04 IS NULL THEN LET l_img.img04 = ' ' END IF
-             LET l_img.imgplant = g_plant 
-             LET l_img.imglegal = g_legal 
-             
+             LET l_img.imgplant = g_plant
+             LET l_img.imglegal = g_legal
+
              INSERT INTO img_file VALUES (l_img.*)
              IF SQLCA.SQLCODE OR SQLCA.SQLERRD[3]=0 THEN
                 #CALL cl_err3("ins","img_file","","",SQLCA.SQLCODE,"","",0)
                 CALL s_errmsg('img01',l_img.img01,'inset img_file:',SQLCA.sqlcode,1)
-                LET l_success = 'N' 
+                LET l_success = 'N'
              END IF
-          END FOR 
-          
-          EXIT INPUT 
-          
-    END INPUT 
-    IF INT_FLAG THEN 
-       LET INT_FLAG=0 
-       CLOSE WINDOW s_padd_img_w 
+          END FOR
+
+          EXIT INPUT
+
+    END INPUT
+    IF INT_FLAG THEN
+       LET INT_FLAG=0
+       CLOSE WINDOW s_padd_img_w
        RETURN FALSE
     END IF
-    
+
     CLOSE WINDOW s_padd_img_w
-   END IF 
+   END IF
    CALL s_showmsg()
    IF l_success <> 'Y' THEN
-      RETURN FALSE 
+      RETURN FALSE
    ELSE
-      RETURN TRUE 
-   END IF 
+      RETURN TRUE
+   END IF
 END FUNCTION
 
 FUNCTION s_padd_img_drop(p_table)
    DEFINE p_table      STRING
-   
+
    LET g_sql = "DROP TABLE ",p_table CLIPPED
    PREPARE drop_table FROM g_sql
    IF STATUS THEN
@@ -772,12 +798,12 @@ FUNCTION s_padd_img_drop(p_table)
    IF SQLCA.sqlcode THEN
 	  CALL cl_err('drop img_tmp fail:',SQLCA.sqlcode,1)
 	  RETURN
-   END IF 
-END FUNCTION 
+   END IF
+END FUNCTION
 
 FUNCTION s_padd_img_del(p_table)
    DEFINE p_table      STRING
-   
+
    LET g_sql = "DELETE FROM ",p_table CLIPPED
    PREPARE del_table FROM g_sql
    IF STATUS THEN
@@ -788,6 +814,6 @@ FUNCTION s_padd_img_del(p_table)
    IF SQLCA.sqlcode THEN
 	  CALL cl_err('delete img_tmp fail:',SQLCA.sqlcode,1)
 	  RETURN
-   END IF 
-END FUNCTION 
+   END IF
+END FUNCTION
 #FUN-C70087
