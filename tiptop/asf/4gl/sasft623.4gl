@@ -2808,10 +2808,10 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
          # darcy:2026/06/24 add s---
          after field sfvud02
          # TODO 这里应该同步批号
-            if not cl_null(g_sfv[l_ac].sfvud02) and g_user = 'tiptop' then
+            if not cl_null(g_sfv[l_ac].sfvud02) then -- and g_user = 'tiptop' 
                 execute sasft623_sfvud02 using g_sfv[l_ac].sfvud02,g_sfv[l_ac].sfvud02 into g_sfv[l_ac].sfvud13
                 if sqlca.sqlcode or cl_null(g_sfv[l_ac].sfvud13) or g_sfv[l_ac].sfvud13 < mdy(1,1,2000) then
-                    call cl_err('周期必须是YYYYWW(年年周周)格式','!',1)
+                    call cl_err('周期必须是WWYY(周年年周)格式','!',1)
                     next field sfvud02
                 end if
                 let g_sfv[l_ac].sfv07 = g_sfv[l_ac].sfv11,'-',g_sfv[l_ac].sfvud13 using 'yymmdd'
