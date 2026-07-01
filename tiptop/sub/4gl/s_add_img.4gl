@@ -88,7 +88,7 @@ FUNCTION s_add_img(p_img01,p_img02,p_img03,p_img04,p_img05,p_img06,p_date)
       select count(*) into l_cnt from smy_file
        where smyslip = l_sys and smysys = 'asf'
          and smykind = 'A'
-      if l_cnt > 0 and g_user = 'tiptop' then
+      if l_cnt > 0 then -- and g_user = 'tiptop' 
         select sfvud13 into l_img.img13
           from sfv_file where sfv01 = p_img05
            and sfv03 = p_img06
