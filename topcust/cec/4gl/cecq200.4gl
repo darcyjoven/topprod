@@ -192,7 +192,7 @@ function cecq200_q()
         let int_flag = false
         return
     end if
-    call cecq200_generate()
+    call scecq200_generate(g_wc1)
     call cecq200_b_fill()
 
 end function
@@ -491,7 +491,7 @@ function cecq200_b_fill()
                         ( case when imaud10 is null then 0 when imaud10 = 0 then 0 else
                             (case sgm03_n when 0 then sgm301 - sgm313 - sgm314 - stock else sgm301 - sgm311 - sgm313 - sgm314 end ) / imaud10 end
                         ) as wip_pnl
-                        from cecq013_temp,sfb_file,eca_file,ecd_file,ima_file
+                        from scecq200_temp,sfb_file,eca_file,ecd_file,ima_file
                         where sfb01 = sgm02 and eca01 = sgm06 and ecd01 = sgm04
                           and ima01 = sfb05
                           and flag is null and ",g_wc2 clipped,
@@ -518,7 +518,7 @@ function cecq200_b_fill()
     let g_sql = "select sgm06,eca02,sfb05 sgm03_par,ima02,ima021,
                         sum(sgm301),sum(sgm311),sum(sgm313),sum(sgm314),sum(stock),
                         sum(case sgm03_n when 0 then sgm301 - sgm313 - sgm314 - stock else sgm301 - sgm311 - sgm313 - sgm314 end) as wip
-                        from cecq013_temp,sfb_file,eca_file,ecd_file,ima_file
+                        from scecq200_temp,sfb_file,eca_file,ecd_file,ima_file
                         where sfb01 = sgm02 and eca01 = sgm06 and ecd01 = sgm04
                           and ima01 = sfb05
                           and flag is null and ",g_wc2 clipped,
@@ -544,7 +544,7 @@ function cecq200_b_fill()
     let g_sql = "select sgm02,sfb05 sgm03_par,ima02,ima021,
                         sum(sgm301),sum(sgm311),sum(sgm313),sum(sgm314),sum(stock),
                         sum(case sgm03_n when 0 then sgm301 - sgm313 - sgm314 - stock else sgm301 - sgm311 - sgm313 - sgm314 end) as wip
-                        from cecq013_temp,sfb_file,eca_file,ecd_file,ima_file
+                        from scecq200_temp,sfb_file,eca_file,ecd_file,ima_file
                         where sfb01 = sgm02 and eca01 = sgm06 and ecd01 = sgm04
                           and ima01 = sfb05
                           and flag is null and ",g_wc2 clipped,
@@ -569,7 +569,7 @@ function cecq200_b_fill()
     let g_sql = "select sfb05 sgm03_par,ima02,ima021,
                         sum(sgm301),sum(sgm311),sum(sgm313),sum(sgm314),sum(stock),
                         sum(case sgm03_n when 0 then sgm301 - sgm313 - sgm314 - stock else sgm301 - sgm311 - sgm313 - sgm314 end) as wip
-                        from cecq013_temp,sfb_file,eca_file,ecd_file,ima_file
+                        from scecq200_temp,sfb_file,eca_file,ecd_file,ima_file
                         where sfb01 = sgm02 and eca01 = sgm06 and ecd01 = sgm04
                           and ima01 = sfb05
                           and flag is null and ",g_wc2 clipped,
