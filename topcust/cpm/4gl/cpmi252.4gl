@@ -4889,6 +4889,35 @@ function i255_tc_pmx04(p_cmd)
 
 end function
 
+-- 核价单状态
+function cpmi252_status()
+   define i,j,l,m,n  integer
+
+   display 0 to confirm
+   display 0 to sign
+
+   -- 总比数
+   select count(unique pmi01) into i from pmi_file,tc_pmx_file where tc_pmx01 = g_tc_pmw.tc_pmw01 and pmi01 = tc_pmx18
+    and pmiconf <> 'X'
+   if i = 0 then
+      return
+   end if
+
+   -- 已审核笔数
+   select count(unique pmi01) into j from pmi_file,tc_pmx_file where tc_pmx01 = g_tc_pmw.tc_pmw01 and pmi01 = tc_pmx18
+      and pmiconf = 'Y'
+
+   -- 未送签数量
+   select count(unique pmi01) into l from pmi_file,tc_pmx_file where tc_pmx01 = g_tc_pmw.tc_pmw01 and pmi01 = tc_pmx18
+      and pmi06 = '0' and pmiconf <> 'X'
+
+   let m = (i - l) / i * 100
+   let n =  j / i * 100
+   display m to sign
+   display n to confirm
+
+end function
+
 # 同一个厂商，同一个料号只能核价一次
 function i255_chk_pmc_ima(p_cmd)
     DEFINE p_cmd   LIKE type_file.chr1
@@ -5028,72 +5057,12 @@ function cpmi252_re_ef()
       return
    end if
 
-   declare cpmi252_re_ef cursor for
-      select unique pmi01,pmi10 from pmi_file,tc_pmx_file
-       where pmi01 = tc_pmx18 and tc_pmx01 = g_tc_pmw.tc_pmw01 and pmi06 = '0' and pmi07 = 'Y'
-
-   let i = 1
-   call sr.clear()
-   foreach cpmi252_re_ef into sr[i].*
-      if sqlca.sqlcode then
-         call cl_err("cpmi252_re_ef;",sqlca.sqlcode,1)
-         let g_success = 'N'
-         exit foreach
-      end if
-      let i = i + 1
-   end foreach
-   call sr.deleteElement(i)
-   let g_success = 'Y'
-
-   let j = 0
-   let l_prog = g_prog
-   for i = 1 to sr.getlength()
-      if sr[i].pmi10 = '1' then
-         let g_prog ='apmi255'
-      else
-         let g_prog ='apmi265'
-      end if
-      if not cws_efcli2(sr[i].pmi01) then
-         let g_success = 'N'
-         exit for
-      end if
-      let j = j + 1
-   end for
-   let g_prog = l_prog
-
-   if g_success ='Y' then
-      message sfmt("送签%1笔核价单成功！",j)
-   else
-      message "送签核价单失败！"
+   call scpmp252(g_tc_pmw.tc_pmw01,false)
+   if g_success = 'Y' then
+        message '抛转成功！'
+        call i255_show()
+    else
+        message '抛转失败！'
    end if
-
-end function
--- 核价单状态
-function cpmi252_status()
-   define i,j,l,m,n  integer
-
-   display 0 to confirm
-   display 0 to sign
-
-   -- 总比数
-   select count(unique pmi01) into i from pmi_file,tc_pmx_file where tc_pmx01 = g_tc_pmw.tc_pmw01 and pmi01 = tc_pmx18
-    and pmiconf <> 'X'
-   if i = 0 then
-      return
-   end if
-
-   -- 已审核笔数
-   select count(unique pmi01) into j from pmi_file,tc_pmx_file where tc_pmx01 = g_tc_pmw.tc_pmw01 and pmi01 = tc_pmx18
-      and pmiconf = 'Y'
-
-   -- 未送签数量
-   select count(unique pmi01) into l from pmi_file,tc_pmx_file where tc_pmx01 = g_tc_pmw.tc_pmw01 and pmi01 = tc_pmx18
-      and pmi06 = '0' and pmiconf <> 'X'
-
-   let m = (i - l) / i * 100
-   let n =  j / i * 100
-   display m to sign
-   display n to confirm
-
 end function
 # darcy:2026/01/04 add e---
