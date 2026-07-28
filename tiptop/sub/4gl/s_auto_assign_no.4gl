@@ -10,16 +10,16 @@
 # Modify.........: No.FUN-AA0046 10/10/22 By huangtao 取消用不到的模組判斷
 # Modify.........: No.MOD-AB0108 10/11/11 By lilingyu ps_plant未轉化為大寫,導致從azw_file選不出資料而報錯
 # Modify.........: No.TQC-AC0209 10/12/20 By huangrh  artt262的自動編碼錯誤
-# Modify.........: No.TQC-AC0360 10/12/25 By sabrina  ps_lip.trim()取出來不會是數字 
+# Modify.........: No.TQC-AC0360 10/12/25 By sabrina  ps_lip.trim()取出來不會是數字
 # Modify.........: No.TQC-B10012 11/01/05 By huangrh  artt210產生的單據代號重複
 # Modify.........: No.TQC-AC0124 11/01/06 By huangtao artt615 產生的編號重複
-# Modify.........: No.FUN-B20022 11/02/11 By wangxin 自動編號選擇毫秒時調整 
+# Modify.........: No.FUN-B20022 11/02/11 By wangxin 自動編號選擇毫秒時調整
 # Modify.........: No.FUN-B50026 11/05/06 By zhangll 抓流水号最大号时按符合编码原则及码长来抓取
 # Modify.........: No.TQC-B80251 11/08/31 By lilingyu 變量li_plantlen引用到範圍外,導致程式當出
 # Modify.........: No.TQC-B70154 11/07/28 By Polly 修正資料鎖住的代碼為-263
 # Modify.........: No:CHI-B90041 11/10/06 By johung 加上取單別檔資料
 # Modify.........: No:TQC-B90211 11/10/21 By Smapmin 人事table drop
-# Modify.........: No:FUN-BA0015 12/01/17 By pauline 增加aza105,aza106盤點單邊碼原則欄位 
+# Modify.........: No:FUN-BA0015 12/01/17 By pauline 增加aza105,aza106盤點單邊碼原則欄位
 # Modify.........: No:FUN-BB0036 11/11/14 By lilingyu 增加合併報表【大陸版】的自動編號單別GGL
 # Modify.........: No:MOD-C30079 12/03/08 By wujie 检查单据重复性时考虑帐别
 #                                                  有传入帐别时，取aznn的资料
@@ -34,13 +34,13 @@
 # Modify.........: No.DEV-D30026 13/03/18 By Nina GP5.3 追版:DEV-CB0009為GP5.25 的單號
 
 DATABASE ds
- 
-GLOBALS "../../config/top.global" 
 
-DEFINE   g_aac          RECORD LIKE aac_file.* 
+GLOBALS "../../config/top.global"
+
+DEFINE   g_aac          RECORD LIKE aac_file.*
 DEFINE   g_fah          RECORD LIKE fah_file.*
 DEFINE   g_forupd_sql   STRING
- 
+
 # Descriptions...: 自動編號
 # Date & Author..: 10/02/22 by saki 翻寫
 # Input Parameter: ps_sys      系統別
@@ -62,7 +62,7 @@ DEFINE   g_forupd_sql   STRING
 #                  若g_prog為"apcp200"則認為是POS上傳作業採用的自動編號方式
 #                  那自動編號原則相關參數去ryz_file表裡去，相關設置在apcs010作業中
 #                  POS上傳添加第5種編碼方式:5-按時間，即按年月日時分秒毫秒為自動編號單號
-#                  POS編號不影響系統標準自動編號生成 
+#                  POS編號不影響系統標準自動編號生成
 
 FUNCTION s_auto_assign_no(ps_sys,ps_slip,ps_date,ps_type,ps_tab,ps_fld,
                           ps_plant,ps_runcard,ps_smy)
@@ -124,16 +124,16 @@ FUNCTION s_auto_assign_no(ps_sys,ps_slip,ps_date,ps_type,ps_tab,ps_fld,
    DEFINE   ls_slip_bookno  STRING
    DEFINE   ls_opencurs_msg STRING
    DEFINE   ls_lockdata_msg STRING
-   DEFINE   ls_smy          LIKE aznn_file.aznn00   #No.MOD-C30079 
+   DEFINE   ls_smy          LIKE aznn_file.aznn00   #No.MOD-C30079
    DEFINE   l_azw09         LIKE azw_file.azw09   #MOD-D10012 add
    DEFINE   l_azp01         LIKE azp_file.azp01   #MOD-D10012 add
-    
+
    WHENEVER ERROR CALL cl_err_msg_log
 
    LET ls_max_pre = '999999999999'
    LET li_max_num = 0
    LET li_max_comp = 0
-   LET ls_smy = ps_smy   #No.MOD-C30079     
+   LET ls_smy = ps_smy   #No.MOD-C30079
    IF cl_null(ps_plant) THEN
       LET ps_plant = g_plant
       LET ps_dbs = g_dbs
@@ -143,18 +143,21 @@ FUNCTION s_auto_assign_no(ps_sys,ps_slip,ps_date,ps_type,ps_tab,ps_fld,
 
    LET ls_plantcode = ps_plant
    SELECT azw02,azw09 INTO lc_legalcode,l_azw09         #MOD-D10012 add azw09
-     FROM azw_file 
+     FROM azw_file
     WHERE azw01 = ps_plant
    IF (SQLCA.SQLCODE) THEN
       CALL cl_err_msg("", "lib-605", ps_plant, 1)
       RETURN FALSE,ps_slip
    END IF
 
+   run "echo '153 s_auto_assign_no' >> /u1/out/darcy.txt  "
+
    LET ps_sys = UPSHIFT(ps_sys) CLIPPED
    IF ps_sys = "AGL" OR ps_sys = "GGL" THEN
       IF (g_aza.aza102 IS NULL) OR (g_aza.aza103 IS NULL) THEN
          CALL cl_get_progname("aoos010",g_lang) RETURNING lc_progname
          CALL cl_err_msg("","sub-140",lc_progname CLIPPED,0)
+         run "echo '160 s_auto_assign_no' >> /u1/out/darcy.txt  "
          RETURN FALSE,ps_slip
       END IF
    ELSE
@@ -163,13 +166,16 @@ FUNCTION s_auto_assign_no(ps_sys,ps_slip,ps_date,ps_type,ps_tab,ps_fld,
          IF (g_aza.aza41 IS NULL) OR (g_aza.aza105 IS NULL) THEN
             CALL cl_get_progname("aoos010",g_lang) RETURNING lc_progname
             CALL cl_err_msg("","sub-140",lc_progname CLIPPED,0)
+            run "echo '169 s_auto_assign_no' >> /u1/out/darcy.txt  "
              RETURN FALSE,ps_slip
         END IF
-      ELSE 
+      ELSE
     #FUN-BA0015 add END
          IF (g_aza.aza41 IS NULL) OR (g_aza.aza42 IS NULL) THEN
             CALL cl_get_progname("aoos010",g_lang) RETURNING lc_progname
             CALL cl_err_msg("","sub-140",lc_progname CLIPPED,0)
+            run "echo '177 s_auto_assign_no' >> /u1/out/darcy.txt  "
+            run "echo '"||g_aza.aza41||g_aza.aza42||"' >> /u1/out/darcy.txt  "
             RETURN FALSE,ps_slip
          END IF
       END IF  #FUN-BA0015 add
@@ -185,7 +191,7 @@ FUNCTION s_auto_assign_no(ps_sys,ps_slip,ps_date,ps_type,ps_tab,ps_fld,
       LET ps_plant = l_azp01
    END IF
   #-----------------------MOD-D10012-----------------------------(E)
-
+    run "echo '190 s_auto_assign_no' >> /u1/out/darcy.txt  "
    CASE
       # 傳票模組單據編號設定, plantcode依照財務模組設定的legalcode
       WHEN ps_sys = "AGL" OR ps_sys = "GGL"
@@ -223,6 +229,7 @@ FUNCTION s_auto_assign_no(ps_sys,ps_slip,ps_date,ps_type,ps_tab,ps_fld,
            END IF   #FUN-BA0015 add
          END IF
    END CASE
+   run "echo '228 s_auto_assign_no' >> /u1/out/darcy.txt  "
    LET ls_sql = cl_replace_sqldb(ls_sql)
    PREPARE assign_aza_pre FROM ls_sql
    EXECUTE assign_aza_pre INTO lc_plantadd,li_plantlen,lc_doc_set,lc_sn_set,lc_method_type
@@ -261,12 +268,13 @@ FUNCTION s_auto_assign_no(ps_sys,ps_slip,ps_date,ps_type,ps_tab,ps_fld,
       LET g_no_sp = g_doc_len + 2
       LET g_sn_sp = g_no_sp
    END IF
- 
+
    LET li_sn_cnt = g_no_ep - g_sn_sp + 1
    LET li_no_cnt = g_no_ep - g_no_sp + 1
- 
+
    LET ps_slip = ps_slip.trimRight()
- 
+
+   run "echo '273 s_auto_assign_no' >> /u1/out/darcy.txt  "
    # Check是否要自動編號，若沒有就回到主程式/ 抓單別對應的單據性質
    LET li_auno_flag = TRUE
    LET ls_sql = "SELECT dockind,docauno FROM ",cl_get_target_table(ps_plant,"doc_file"),
@@ -277,22 +285,22 @@ FUNCTION s_auto_assign_no(ps_sys,ps_slip,ps_date,ps_type,ps_tab,ps_fld,
    PREPARE aunoset_pre FROM ls_sql
    EXECUTE aunoset_pre INTO lc_dockind,lc_docauno
    IF cl_null(lc_docauno) THEN
-      IF g_bgerr THEN                                                                                                      
-         CALL s_errmsg('','','',"mfg3045",0)                                                                      
-      ELSE                                                                                                                 
-         CALL cl_err(ps_slip,"mfg3045",0)                                                                                  
-      END IF                                                                                                               
+      IF g_bgerr THEN
+         CALL s_errmsg('','','',"mfg3045",0)
+      ELSE
+         CALL cl_err(ps_slip,"mfg3045",0)
+      END IF
       RETURN FALSE,ps_slip
    END IF
    IF lc_docauno = "N" THEN
       LET li_auno_flag = FALSE
       IF (ps_slip.getLength() <> g_no_ep) OR
          (NOT cl_chk_data_continue(ps_slip)) THEN
-         IF g_bgerr THEN                                                                                                      
-            CALL s_errmsg('','','',"sub-141",0)                                                                      
-         ELSE                                                                                                                 
-            CALL cl_err(ps_slip,"sub-141",0)                                                                                  
-         END IF                                                                                                               
+         IF g_bgerr THEN
+            CALL s_errmsg('','','',"sub-141",0)
+         ELSE
+            CALL cl_err(ps_slip,"sub-141",0)
+         END IF
          RETURN FALSE,ps_slip
       ELSE
          RETURN TRUE,ps_slip
@@ -311,7 +319,7 @@ FUNCTION s_auto_assign_no(ps_sys,ps_slip,ps_date,ps_type,ps_tab,ps_fld,
 
    # 例外的取號Table與Field (Ex. Runcard, 無法依照aooi800上所設定的例外狀況)
    CASE
-      WHEN (((ps_sys = "ASF") OR (ps_sys = "CSF") OR 
+      WHEN (((ps_sys = "ASF") OR (ps_sys = "CSF") OR
              (ps_sys = "ASR") OR (ps_sys = "CSR")) AND (ps_runcard = "Y"))
          LET ls_slip_table = "shm_file"
          LET ls_slip_field = "shm01"
@@ -330,75 +338,75 @@ FUNCTION s_auto_assign_no(ps_sys,ps_slip,ps_date,ps_type,ps_tab,ps_fld,
           LET ls_slip_bookno= "axi00"
 #FUN-BB0036 --end--
    END CASE
-
+   run "echo '337 s_auto_assign_no' >> /u1/out/darcy.txt  "
    # 如果要自動編號，但傳進的單據編號是完整的，就直接檢查編號是否重複、連續性就回傳
    IF (li_auno_flag) THEN
       IF ps_slip.getLength() = g_no_ep THEN
          CALL cl_chk_data_continue(ps_slip) RETURNING li_result
          IF NOT li_result THEN
-            IF g_bgerr THEN                                                                                                      
-               CALL s_errmsg('','','',"sub-141",0)                                                                               
-            ELSE                                                                                                                 
-               CALL cl_err(ps_slip,"sub-141",0)                                                                                  
-            END IF                                                                                                               
+            IF g_bgerr THEN
+               CALL s_errmsg('','','',"sub-141",0)
+            ELSE
+               CALL cl_err(ps_slip,"sub-141",0)
+            END IF
             RETURN li_result,ps_slip
          END IF
- 
+
          # 編號重複檢查
          LET ls_sql = "SELECT COUNT(*) FROM ",cl_get_target_table(ps_plant,ls_slip_table),
                       " WHERE ",ls_slip_field," = '",ps_slip.trim(),"'"
 #No.MOD-C30079 --begin
-         IF NOT cl_null(lc_gee08) AND NOT cl_null(ls_smy) THEN 
-         	  LET ls_sql = ls_sql,"  AND ",lc_gee08,"='",ls_smy,"'" 
-         END IF 
+         IF NOT cl_null(lc_gee08) AND NOT cl_null(ls_smy) THEN
+         	  LET ls_sql = ls_sql,"  AND ",lc_gee08,"='",ls_smy,"'"
+         END IF
 #No.MOD-C30079 --end
          LET ls_sql = cl_replace_sqldb(ls_sql)
          PREPARE repeat_chk_pre FROM ls_sql
          EXECUTE repeat_chk_pre INTO li_cnt
          IF li_cnt > 0 THEN
-            IF g_bgerr THEN                                                                                                      
-               CALL s_errmsg('','','',"sub-144",0)                                                                               
-            ELSE                                                                                                                 
-               CALL cl_err(ps_slip,"sub-144",0)                                                                                  
-            END IF                                                                                                               
+            IF g_bgerr THEN
+               CALL s_errmsg('','','',"sub-144",0)
+            ELSE
+               CALL cl_err(ps_slip,"sub-144",0)
+            END IF
             RETURN FALSE,ps_slip
          END IF
- 
+
          RETURN TRUE,ps_slip
       END IF
    END IF
- 
+
    # 自動編號前的check、預設動作
    LET lc_max_no = NULL
    LET ls_max_sn = NULL
    LET ls_doc = ps_slip.subString(1,g_doc_len)
    LET lc_doc = ls_doc
-   IF cl_null(lc_doc) THEN                                                      
-      IF g_bgerr THEN                                                           
-         CALL s_errmsg(ps_fld,ps_slip,'',"sub-141",1)                           
-      ELSE                                                                      
-         CALL cl_err(ps_slip,"sub-141",1)                                       
-      END IF                                                                    
-      RETURN FALSE,ps_slip                                                      
-   END IF                                                                       
-
+   IF cl_null(lc_doc) THEN
+      IF g_bgerr THEN
+         CALL s_errmsg(ps_fld,ps_slip,'',"sub-141",1)
+      ELSE
+         CALL cl_err(ps_slip,"sub-141",1)
+      END IF
+      RETURN FALSE,ps_slip
+   END IF
+   run "echo '338 s_auto_assign_no' >> /u1/out/darcy.txt  "
    SELECT azn02,azn04,azn05 INTO li_year,li_month,li_week
      FROM azn_file WHERE azn01 = ps_date
 #No.MOD-C30079 --begin
    IF NOT cl_null(ls_slip_bookno) THEN
       SELECT aznn02,aznn04,aznn05 INTO li_year,li_month,li_week
-        FROM aznn_file WHERE aznn01 = ps_date AND aznn00 = ls_smy 
+        FROM aznn_file WHERE aznn01 = ps_date AND aznn00 = ls_smy
    END IF
 #No.MOD-C30079 --end
-   IF STATUS THEN 
-      IF g_bgerr THEN                                                                                                      
-         CALL s_errmsg('','','',"sub-142",0)                                                                               
-      ELSE                                                                                                                 
-         CALL cl_err(ps_slip,"sub-142",0)                                                                                  
-      END IF                                                                                                               
+   IF STATUS THEN
+      IF g_bgerr THEN
+         CALL s_errmsg('','','',"sub-142",0)
+      ELSE
+         CALL cl_err(ps_slip,"sub-142",0)
+      END IF
       RETURN FALSE,ps_slip
    END IF
- 
+
    # 避免搶號，因此在 select 時便作 lock，待取得單號後再release
    CALL cl_getmsg("mfg8889",g_lang) RETURNING lc_msg
    CALL cl_msg(lc_msg)
@@ -415,7 +423,7 @@ FUNCTION s_auto_assign_no(ps_sys,ps_slip,ps_date,ps_type,ps_tab,ps_fld,
            (ps_sys = "AIM") OR (ps_sys = "CIM") OR
            (ps_sys = "APM") OR (ps_sys = "CPM") OR
            (ps_sys = "AQC") OR (ps_sys = "CQC") OR
-       #   (ps_sys = "ART") OR (ps_sys = "CRT") OR              #FUN-AA0046 mark   
+       #   (ps_sys = "ART") OR (ps_sys = "CRT") OR              #FUN-AA0046 mark
            (ps_sys = "ASF") OR (ps_sys = "CSF") OR
            (ps_sys = "ASR") OR (ps_sys = "CSR")
          LET g_forupd_sql = "SELECT smydmy5 FROM ",cl_get_target_table(ps_plant,"smy_file"),
@@ -469,7 +477,7 @@ FUNCTION s_auto_assign_no(ps_sys,ps_slip,ps_date,ps_type,ps_tab,ps_fld,
         #-------------------------TQC-CB0045-----------------mark
         #LET g_forupd_sql = "SELECT aac06 FROM ",cl_get_target_table(ps_plant,"aac_file"),
         #                   " WHERE aac01 = ? FOR UPDATE"
-        #LET ls_opencurs_msg = "open aac_file auno_lock_cl:"
+        #LET ls_curs_msg = "open aac_file auno_lock_cl:"
         #LET ls_lockdata_msg = "aac06: read aac_file:"
         #-------------------------TQC-CB0045-----------------mark
         #CHI-B90041 -- begin --
@@ -522,7 +530,7 @@ FUNCTION s_auto_assign_no(ps_sys,ps_slip,ps_date,ps_type,ps_tab,ps_fld,
          EXECUTE slipset_oay_pre1 INTO g_oay.*
          #CHI-B90041 -- end --
      #No.FUN-A70130 -BEGIN-----
-     #WHEN (ps_sys = "ALM") OR (ps_sys = "CLM") 
+     #WHEN (ps_sys = "ALM") OR (ps_sys = "CLM")
      #   LET g_forupd_sql = "SELECT lrkdmy1 FROM ",cl_get_target_table(ps_plant,"lrk_file"),
      #                      " WHERE lrkslip = ? FOR UPDATE "
      #   LET ls_opencurs_msg = "open lrk_file auno_lock_cl:"
@@ -566,6 +574,7 @@ FUNCTION s_auto_assign_no(ps_sys,ps_slip,ps_date,ps_type,ps_tab,ps_fld,
          EXECUTE slipset_ibe_pre1 INTO g_ibe.*
       #No:DEV-D30026--add--add
    END CASE
+   run "echo '574 s_auto_assign_no' >> /u1/out/darcy.txt  "
    IF NOT cl_null(g_forupd_sql) THEN
       LET g_forupd_sql = cl_replace_sqldb(g_forupd_sql)
       LET g_forupd_sql = cl_forupd_sql(g_forupd_sql)
@@ -594,7 +603,7 @@ FUNCTION s_auto_assign_no(ps_sys,ps_slip,ps_date,ps_type,ps_tab,ps_fld,
       END IF
    END IF
    END IF #FUN-C80045 add
-   LET ls_sn = s_get_serial_no(ps_sys,ps_slip,ps_plant)  
+   LET ls_sn = s_get_serial_no(ps_sys,ps_slip,ps_plant)
 
    #自動編號
    #取出自動編號方式
@@ -642,7 +651,7 @@ FUNCTION s_auto_assign_no(ps_sys,ps_slip,ps_date,ps_type,ps_tab,ps_fld,
          END FOR
          #FUN-B50026 add-end
       WHEN (lc_method = "4")   #依年月日
-        #LET ls_date = li_year USING "&&&&",li_month USING "&&",  #CHI-C90040 mark 
+        #LET ls_date = li_year USING "&&&&",li_month USING "&&",  #CHI-C90040 mark
         #              DAY(ps_date) USING "&&"                    #CHI-C90040 mark
          LET ls_date = YEAR(ps_date) USING "&&&&",MONTH(ps_date) USING "&&",DAY(ps_date) USING "&&"   #CHI-C90040
          LET ls_date = ls_date.subString(3,8)
@@ -662,7 +671,7 @@ FUNCTION s_auto_assign_no(ps_sys,ps_slip,ps_date,ps_type,ps_tab,ps_fld,
            # EXECUTE systimestamp_pre INTO ls_time
            # LET ls_time=ls_time  USING "&&&&&&&&&&&&&&"
              LET ls_time =CURRENT YEAR TO FRACTION(4)
-             LET ls_time = ls_time[1,4],ls_time[6,7],ls_time[9,10],ls_time[12,13],ls_time[15,16],ls_time[18,19],ls_time[21,22]  
+             LET ls_time = ls_time[1,4],ls_time[6,7],ls_time[9,10],ls_time[12,13],ls_time[15,16],ls_time[18,19],ls_time[21,22]
            #No.FUN-A70130 -END-------
              LET lc_buf = lc_doc CLIPPED,"-",ls_plantcode,ls_time
              RETURN TRUE,lc_buf        #FUN-A60044 ADD #當為POS上傳並且設置為第5種時直接回傳,只check單別
@@ -679,9 +688,10 @@ FUNCTION s_auto_assign_no(ps_sys,ps_slip,ps_date,ps_type,ps_tab,ps_fld,
      #CHI-C90040---add---E
 
    END CASE
+   run "echo '688 s_auto_assign_no' >> /u1/out/darcy.txt  "
    #FUN-B50026 add
     # 組單據編號，runcard的部份另外組
-    IF ps_runcard = "Y" THEN 
+    IF ps_runcard = "Y" THEN
        LET lc_buf = lc_buf CLIPPED,"-00"
     END IF
    #FUN-B50026 add--end
@@ -696,7 +706,7 @@ FUNCTION s_auto_assign_no(ps_sys,ps_slip,ps_date,ps_type,ps_tab,ps_fld,
    END IF
    CASE
      #No.FUN-A70130 -BEGIN----- 重新取單據性質
-     #WHEN (ps_sys = "ALM") OR (ps_sys = "CLM") 
+     #WHEN (ps_sys = "ALM") OR (ps_sys = "CLM")
      #   CASE
      #      WHEN lc_dockind = "39"
      #         LET ls_sql = ls_sql," AND lru00 = '1'"
@@ -775,7 +785,7 @@ FUNCTION s_auto_assign_no(ps_sys,ps_slip,ps_date,ps_type,ps_tab,ps_fld,
                LET ls_sql = ls_sql," AND ruq00 = '2' "                                         #No.TQC-AC0209
             WHEN lc_dockind = "J4"
 #               LET ls_sql = ls_sql," AND ruw00 = '1' AND ruwplant = '",ps_plant CLIPPED,"'"   #TQC-B10012
-               LET ls_sql = ls_sql," AND ruw00 = '1' "                                         #TQC-B10012  
+               LET ls_sql = ls_sql," AND ruw00 = '1' "                                         #TQC-B10012
             WHEN lc_dockind = "J5"
 #               LET ls_sql = ls_sql," AND ruw00 = '2' AND ruwplant = '",ps_plant CLIPPED,"'"   #TQC-B10012
                LET ls_sql = ls_sql," AND ruw00 = '2' "                                         #TQC-B10012
@@ -795,8 +805,8 @@ FUNCTION s_auto_assign_no(ps_sys,ps_slip,ps_date,ps_type,ps_tab,ps_fld,
 
    # 找出資料庫中最大的單據編號後，計算新的單據編號
    LET ls_max_sn = lc_max_no[g_sn_sp,g_no_ep]
-
-   # 流水號空值代表自動編號 
+   run "echo '805 s_auto_assign_no' >> /u1/out/darcy.txt  "
+   # 流水號空值代表自動編號
    IF cl_null(ps_slip.subString(g_sn_sp,g_no_ep)) THEN
       LET ls_format = ""
       CASE
@@ -852,7 +862,7 @@ FUNCTION s_auto_assign_no(ps_sys,ps_slip,ps_date,ps_type,ps_tab,ps_fld,
                LET lc_sn = ls_date,(ls_max_sn + 1) USING ls_format
             END IF
          WHEN (lc_method = "4")   #依年月日
-           #LET ls_date = li_year USING "&&&&",li_month USING "&&",   #CHI-C90040 mark 
+           #LET ls_date = li_year USING "&&&&",li_month USING "&&",   #CHI-C90040 mark
            #              DAY(ps_date) USING "&&"                     #CHI-C90040 mark
             LET ls_date = YEAR(ps_date) USING "&&&&",MONTH(ps_date) USING "&&",DAY(ps_date) USING "&&"   #CHI-C90040
             LET ls_date = ls_date.subString(3,8)
@@ -876,7 +886,7 @@ FUNCTION s_auto_assign_no(ps_sys,ps_slip,ps_date,ps_type,ps_tab,ps_fld,
               #No.FUN-A70130 -BEGIN-----
               # LET l_sql="select to_char(systimestamp,'yymmddhh24missff2') from dual"  #FUN-A60044
               # PREPARE systimestamp_pre1 FROM l_sql
-              # EXECUTE systimestamp_pre1 INTO ls_time 
+              # EXECUTE systimestamp_pre1 INTO ls_time
               ##LET lc_sn = ls_time USING "&&&&&&&&&&&&&&"
                 LET ls_time =CURRENT YEAR TO FRACTION(4)
                 LET ls_time = ls_time[1,4],ls_time[6,7],ls_time[9,10],ls_time[12,13],ls_time[15,16],ls_time[18,19],ls_time[21,22]
@@ -903,29 +913,29 @@ FUNCTION s_auto_assign_no(ps_sys,ps_slip,ps_date,ps_type,ps_tab,ps_fld,
                END IF
             END IF
         #CHI-C90040---add---E
-            
+
       END CASE
    ELSE
       # 檢查單號碼數是否符合設定值
       IF ls_sn.getLength() <> li_no_cnt THEN
-         IF g_bgerr THEN                                                                                                      
-            CALL s_errmsg('','','','sub-143',0)                                                                               
-         ELSE                                                                                                                 
+         IF g_bgerr THEN
+            CALL s_errmsg('','','','sub-143',0)
+         ELSE
             CALL cl_err(ls_sn,"sub-143",1)   # TQC-5B0162 0->1
-         END IF                                                                                                               
+         END IF
          RETURN FALSE,ps_slip
       END IF
-         
+
       CALL cl_chk_data_continue(ls_sn) RETURNING li_result
       IF NOT li_result THEN
-         IF g_bgerr THEN                                                                                                      
-            CALL s_errmsg('','','','sub-143',0)                                                                               
-         ELSE                                                                                                                 
+         IF g_bgerr THEN
+            CALL s_errmsg('','','','sub-143',0)
+         ELSE
             CALL cl_err(ls_sn,"sub-143",1)   # TQC-5B0162 0->1
-         END IF                                                                                                               
+         END IF
          RETURN li_result,ps_slip
       END IF
- 
+
       # 編號重複檢查
       LET ls_sql = "SELECT COUNT(*) FROM ",cl_get_target_table(ps_plant,ls_slip_table),
                    " WHERE ",ls_slip_field," = '",ps_slip.trim(),"'"
@@ -933,35 +943,35 @@ FUNCTION s_auto_assign_no(ps_sys,ps_slip,ps_date,ps_type,ps_tab,ps_fld,
       PREPARE repeat_final_chk_pre FROM ls_sql
       EXECUTE repeat_final_chk_pre INTO li_cnt
       IF li_cnt > 0 THEN
-         IF g_bgerr THEN                                                                                                      
-            CALL s_errmsg(ps_slip,ps_slip.trim(),'','sub-144',0)                                                                               
-         ELSE                                                                                                                 
+         IF g_bgerr THEN
+            CALL s_errmsg(ps_slip,ps_slip.trim(),'','sub-144',0)
+         ELSE
             CALL cl_err(ps_slip,"sub-144",1)
-         END IF                                                                                                               
+         END IF
          RETURN FALSE,ps_slip
       END IF
    END IF
- 
+
    # 組單據編號，runcard的部份另外組
    IF cl_null(ps_slip.subString(g_no_sp,g_no_ep)) THEN
       IF ps_runcard = "Y" THEN
          LET ls_no = lc_doc CLIPPED,"-",ls_plantcode,lc_sn CLIPPED,"-00"
          IF ls_no.getLength() <> g_no_ep + 3 THEN
-            IF g_bgerr THEN                                                                                                      
-               CALL s_errmsg('','','','sub-145',0)                                                                               
-            ELSE                                                                                                                 
+            IF g_bgerr THEN
+               CALL s_errmsg('','','','sub-145',0)
+            ELSE
                CALL cl_err(ls_no,"sub-145",0)
-            END IF                                                                                                               
+            END IF
             RETURN FALSE,ps_slip
          END IF
       ELSE
          LET ls_no = lc_doc CLIPPED,"-",ls_plantcode,lc_sn CLIPPED
          IF ls_no.getLength() <> g_no_ep THEN
-            IF g_bgerr THEN                                                                                                      
-               CALL s_errmsg('','','','sub-145',0)                                                                               
-            ELSE                                                                                                                 
+            IF g_bgerr THEN
+               CALL s_errmsg('','','','sub-145',0)
+            ELSE
                CALL cl_err(ls_no,"sub-145",0)
-            END IF                                                                                                               
+            END IF
             RETURN FALSE,ps_slip
          END IF
       END IF
@@ -969,10 +979,10 @@ FUNCTION s_auto_assign_no(ps_sys,ps_slip,ps_date,ps_type,ps_tab,ps_fld,
       # 本來就有流水號且通過檢查,則直接組合回傳
       LET ls_no = lc_doc CLIPPED,"-",ls_sn
    END IF
- 
+
    RETURN TRUE,ls_no
 END FUNCTION
- 
+
 # Descriptions...: 單據編號檢查
 # Date & Author..: 2010/02/22 by saki 翻寫
 # Input Parameter: ps_sys         系統別
@@ -985,7 +995,7 @@ END FUNCTION
 # Return Code....: li_result      結果(TRUE/FALSE)
 #                  ls_no          單據編號
 # Usage..........: CALL s_check_no("apm",g_pmw.pmw01,g_pmw_o.pmw01,"6","pmw_file","pmw01","") RETURNING li_result,g_pmw.pmw01
- 
+
 FUNCTION s_check_no(ps_sys,ps_slip,ps_slip_o,ps_type,ps_tab,ps_fld,ps_plant)
    DEFINE   ps_sys          STRING
    DEFINE   ps_slip         STRING
@@ -1027,7 +1037,7 @@ FUNCTION s_check_no(ps_sys,ps_slip,ps_slip_o,ps_type,ps_tab,ps_fld,ps_plant)
    DEFINE   ls_slip_table   STRING
    DEFINE   ls_slip_field   STRING
    DEFINE   li_i            LIKE type_file.num5
-   DEFINE   ls_temp         STRING                #TQC-AC0360 add 
+   DEFINE   ls_temp         STRING                #TQC-AC0360 add
    #FUN-B50026 add
    DEFINE   lc_sn           LIKE type_file.chr20  #單號编码检查
    DEFINE   li_date         LIKE type_file.dat    #某一年月对应的第一天
@@ -1037,20 +1047,20 @@ FUNCTION s_check_no(ps_sys,ps_slip,ps_slip_o,ps_type,ps_tab,ps_fld,ps_plant)
    DEFINE   li_num          LIKE type_file.num5   #某一年月对应有多少天
    DEFINE   li_week         LIKE azn_file.azn05   #周
    #FUN-B50026 add--end
-   DEFINE   ls_bookno       LIKE aba_file.aba00   #No.MOD-C30079 
+   DEFINE   ls_bookno       LIKE aba_file.aba00   #No.MOD-C30079
    DEFINE   l_azw09         LIKE azw_file.azw09   #MOD-D10012 add
    DEFINE   l_azp01         LIKE azp_file.azp01   #MOD-D10012 add
-   
+
    WHENEVER ERROR CALL cl_err_msg_log
    LET li_result = TRUE
 #No.MOD-C30079 --begin
    LET ps_sys = UPSHIFT(ps_sys) CLIPPED
-   LET ls_bookno = NULL 
-   IF ps_sys ='AGL' AND ps_type='*' AND NOT cl_null(ps_plant) AND ps_tab ='aba_file' THEN 
+   LET ls_bookno = NULL
+   IF ps_sys ='AGL' AND ps_type='*' AND NOT cl_null(ps_plant) AND ps_tab ='aba_file' THEN
    	  LET ls_bookno = ps_plant
-   	  LET ps_plant =NULL 
-   END IF 
-#No.MOD-C30079 --end  
+   	  LET ps_plant =NULL
+   END IF
+#No.MOD-C30079 --end
    IF cl_null(ps_slip) THEN
       RETURN FALSE,ps_slip
    END IF
@@ -1064,7 +1074,7 @@ FUNCTION s_check_no(ps_sys,ps_slip,ps_slip_o,ps_type,ps_tab,ps_fld,ps_plant)
       LET ps_dbs = g_dbs
    END IF
 
-  LET ps_plant = UPSHIFT(ps_plant)               #MOD-AB0108 
+  LET ps_plant = UPSHIFT(ps_plant)               #MOD-AB0108
 
    LET ls_plantcode = ps_plant
    SELECT azw02,azw09 INTO lc_legalcode,l_azw09         #MOD-D10012 add azw09
@@ -1089,7 +1099,7 @@ FUNCTION s_check_no(ps_sys,ps_slip,ps_slip_o,ps_type,ps_tab,ps_fld,ps_plant)
             CALL cl_err_msg("","sub-140",lc_progname CLIPPED,0)
             RETURN FALSE,ps_slip
          END IF
-      ELSE 
+      ELSE
      #FUN-BA0015 add END
          IF (g_aza.aza41 IS NULL) OR (g_aza.aza42 IS NULL) THEN
             CALL cl_get_progname("aoos010",g_lang) RETURNING lc_progname
@@ -1175,13 +1185,13 @@ FUNCTION s_check_no(ps_sys,ps_slip,ps_slip_o,ps_type,ps_tab,ps_fld,ps_plant)
       LET g_no_sp = g_doc_len + 2
       LET g_sn_sp = g_no_sp
    END IF
- 
+
    LET li_sn_cnt = g_no_ep - g_no_sp + 1
    LET li_no_cnt = g_no_ep - g_no_sp + 1
- 
+
    LET li_inx_s = ps_slip.getIndexOf("-",1)
    IF li_inx_s > 0 THEN
-      LET ls_doc = ps_slip.subString(1,g_doc_len) 
+      LET ls_doc = ps_slip.subString(1,g_doc_len)
      #TQC-AC0360---modify---start---
      #LET ls_sn = ps_slip.subString(li_inx_s + 1,ps_slip.trim())
       LET ls_temp = ps_slip.trim()
@@ -1193,37 +1203,37 @@ FUNCTION s_check_no(ps_sys,ps_slip,ps_slip_o,ps_type,ps_tab,ps_fld,ps_plant)
    END IF
 
    IF cl_null(ls_doc) THEN
-      IF g_bgerr THEN                                                                                                      
-         CALL s_errmsg('','','','sub-146',0)                                                                               
-      ELSE                                                                                                                 
+      IF g_bgerr THEN
+         CALL s_errmsg('','','','sub-146',0)
+      ELSE
          CALL cl_err(ls_doc,"sub-146",1) #MOD-590041 0->1
-      END IF                                                                                                               
+      END IF
       RETURN FALSE,ps_slip
    END IF
- 
+
    # 檢查單別碼數是否符合設定值
    LET ls_doc = ls_doc.trim()
    IF ls_doc.getLength() <> g_doc_len THEN
-      IF g_bgerr THEN                                                                                                      
-         CALL s_errmsg('','','','sub-146',0)                                                                               
-      ELSE                                                                                                                 
+      IF g_bgerr THEN
+         CALL s_errmsg('','','','sub-146',0)
+      ELSE
          CALL cl_err(ls_doc,"sub-146",1) #MOD-590041 0->1
-      END IF                                                                                                               
+      END IF
       RETURN FALSE,ps_slip
    END IF
- 
+
    # 檢查單別資料是否連續
    CALL cl_chk_data_continue(ls_doc) RETURNING li_result
    IF NOT li_result THEN
-      IF g_bgerr THEN                                                                                                      
-         CALL s_errmsg('','','','sub-146',0)                                                                               
-      ELSE                                                                                                                 
+      IF g_bgerr THEN
+         CALL s_errmsg('','','','sub-146',0)
+      ELSE
          CALL cl_err(ls_doc,"sub-146",1) #MOD-590041 0->1
-      END IF                                                                                                               
+      END IF
      #RETURN li_result,ps_slip
       RETURN FALSE,ps_slip  #FUN-B50026 mod
    END IF
- 
+
    # 單別檢查,原本的s_*slip程式
    IF ps_sys.subString(1,1) = "C" THEN
       IF ps_sys.getLength() >= "4" THEN
@@ -1313,7 +1323,7 @@ FUNCTION s_check_no(ps_sys,ps_slip,ps_slip_o,ps_type,ps_tab,ps_fld,ps_plant)
          PREPARE slipset_smy_pre FROM ls_sql
          EXECUTE slipset_smy_pre INTO g_smy.*
      #No.FUN-A70130 -BEGIN-----
-     #WHEN (ps_sys = "ALM") OR (ps_sys = "CLM")        
+     #WHEN (ps_sys = "ALM") OR (ps_sys = "CLM")
      #   LET ls_sql = "SELECT * FROM ",cl_get_target_table(ps_plant,"lrk_file"),
      #                " WHERE lrkslip = '",ls_doc,"'"
      #   LET ls_sql = cl_replace_sqldb(ls_sql)
@@ -1430,7 +1440,7 @@ FUNCTION s_check_no(ps_sys,ps_slip,ps_slip_o,ps_type,ps_tab,ps_fld,ps_plant)
       EXECUTE chkno_smu_pre INTO li_cnt
       IF li_cnt <= 0 THEN
          IF lc_gen03 IS NULL THEN   #g_user沒有部門
-            LET g_errno = "aoo-104" 
+            LET g_errno = "aoo-104"
          ELSE
             LET ls_sql = "SELECT COUNT(*) FROM ",cl_get_target_table(ps_plant,"smv_file"),
                          " WHERE smv01 = '",ls_doc,"' AND smv02 = '",lc_gen03 CLIPPED,"'",
@@ -1439,7 +1449,7 @@ FUNCTION s_check_no(ps_sys,ps_slip,ps_slip_o,ps_type,ps_tab,ps_fld,ps_plant)
             PREPARE chkno_smv_pre FROM ls_sql
             EXECUTE chkno_smv_pre INTO li_cnt
             IF li_cnt = 0 THEN
-               LET g_errno = "aoo-104" 
+               LET g_errno = "aoo-104"
             END IF
          END IF
       END IF
@@ -1452,7 +1462,7 @@ FUNCTION s_check_no(ps_sys,ps_slip,ps_slip_o,ps_type,ps_tab,ps_fld,ps_plant)
       IF li_cnt > 0 THEN
          # 需做部門控管, Check User部門是否有此單別使用權限
          IF lc_gen03 IS NULL THEN   #g_user沒有部門
-            LET g_errno = "aoo-104" 
+            LET g_errno = "aoo-104"
          ELSE
             LET ls_sql = "SELECT COUNT(*) FROM ",cl_get_target_table(ps_plant,"smv_file"),
                          " WHERE smv01 = '",ls_doc,"' AND smv02 = '",lc_gen03 CLIPPED,"'",
@@ -1461,7 +1471,7 @@ FUNCTION s_check_no(ps_sys,ps_slip,ps_slip_o,ps_type,ps_tab,ps_fld,ps_plant)
             PREPARE chkno2_smv_pre FROM ls_sql
             EXECUTE chkno2_smv_pre INTO li_cnt
             IF li_cnt = 0 THEN
-               LET g_errno = "aoo-104" 
+               LET g_errno = "aoo-104"
             END IF
          END IF
        END IF
@@ -1489,14 +1499,14 @@ FUNCTION s_check_no(ps_sys,ps_slip,ps_slip_o,ps_type,ps_tab,ps_fld,ps_plant)
       #   WHEN (ps_sys = "ALM") OR (ps_sys = "CLM")     #FUN-AA0046    mark
       #      LET g_lrk.lrkdesc = ""                     #FUN-AA0046    mark
          WHEN (ps_sys = "ABX") OR (ps_sys = "CBX")
-            LET g_bna.bna02 = "" 
+            LET g_bna.bna02 = ""
          WHEN (ps_sys = "ACO") OR (ps_sys = "CCO")
             LET g_coy.coydesc = ""
          WHEN (ps_sys = "AFA") OR (ps_sys = "CFA")
             LET g_fah.fahdesc = ""
          WHEN (ps_sys = "ANM") OR (ps_sys = "CNM")
             LET g_nmy.nmydesc = ""
-         #-----TQC-B90211--------- 
+         #-----TQC-B90211---------
          #WHEN (ps_sys = "APY") OR (ps_sys = "CPY") OR
          #     (ps_sys = "GPY") OR (ps_sys = "CGPY")
          #   LET g_cpl.cpldesc = ""
@@ -1516,21 +1526,21 @@ FUNCTION s_check_no(ps_sys,ps_slip,ps_slip_o,ps_type,ps_tab,ps_fld,ps_plant)
             LET g_ibe.ibedesc = ""
          #No:DEV-D30026--add--end
       END CASE
-      IF g_bgerr THEN                                                                                                      
-         CALL s_errmsg('','','',g_errno,0)                                                                               
-      ELSE                                                                                                                 
+      IF g_bgerr THEN
+         CALL s_errmsg('','','',g_errno,0)
+      ELSE
          CALL cl_err(ls_doc,g_errno,1)
-      END IF                                                                                                               
+      END IF
       RETURN FALSE,ps_slip
    END IF
- 
+
    #不自動編號且無單號
    IF lc_docauno = "N" AND cl_null(ls_sn) THEN
-      IF g_bgerr THEN                                                                                                      
-         CALL s_errmsg('','','','sub-147',0)                                                                               
-      ELSE                                                                                                                 
+      IF g_bgerr THEN
+         CALL s_errmsg('','','','sub-147',0)
+      ELSE
          CALL cl_err(ls_sn,"sub-147",0)
-      END IF                                                                                                               
+      END IF
       RETURN FALSE,ps_slip
    END IF
 
@@ -1547,21 +1557,21 @@ FUNCTION s_check_no(ps_sys,ps_slip,ps_slip_o,ps_type,ps_tab,ps_fld,ps_plant)
    IF lc_docauno = "N" OR (NOT cl_null(ls_sn)) THEN
       #檢查單號碼數是否符合設定值
       IF ls_sn.getLength() <> li_sn_cnt THEN
-         IF g_bgerr THEN                                                                                                      
-            CALL s_errmsg('','','','sub-143',0)                                                                               
-         ELSE                                                                                                                 
+         IF g_bgerr THEN
+            CALL s_errmsg('','','','sub-143',0)
+         ELSE
             CALL cl_err(ls_sn,"sub-143",1)
-         END IF                                                                                                               
+         END IF
          RETURN FALSE,ps_slip
       END IF
-            
+
       CALL cl_chk_data_continue(ls_sn) RETURNING li_result
       IF NOT li_result THEN
-         IF g_bgerr THEN                                                                                                      
-            CALL s_errmsg('','','','sub-143',0)                                                                               
-         ELSE                                                                                                                 
+         IF g_bgerr THEN
+            CALL s_errmsg('','','','sub-143',0)
+         ELSE
             CALL cl_err(ls_sn,"sub-143",1)  # TQC-5B0162 0->1
-         END IF                                                                                                               
+         END IF
         #RETURN li_result,ps_slip
          RETURN FALSE,ps_slip  #FUN-B50026 mod
       END IF
@@ -1572,19 +1582,19 @@ FUNCTION s_check_no(ps_sys,ps_slip,ps_slip_o,ps_type,ps_tab,ps_fld,ps_plant)
             LET ls_sql = "SELECT COUNT(*) FROM ",cl_get_target_table(ps_plant,ls_slip_table),
                          " WHERE ",ls_slip_field," = '",ps_slip.trim(),"'"
 #No.MOD-C30079 --begin
-         IF NOT cl_null(ls_bookno) THEN 
+         IF NOT cl_null(ls_bookno) THEN
          	  LET ls_sql = ls_sql,"   AND aba00 ='",ls_bookno,"'"
-         END IF 
+         END IF
 #No.MOD-C30079 --end
             LET ls_sql = cl_replace_sqldb(ls_sql)
             PREPARE chkno_sn_curs FROM ls_sql
             EXECUTE chkno_sn_curs INTO li_cnt
             IF li_cnt > 0 THEN
-               IF g_bgerr THEN                                                                                                      
-                  CALL s_errmsg('','','','sub-144',0)                                                                               
-               ELSE                                                                                                                 
+               IF g_bgerr THEN
+                  CALL s_errmsg('','','','sub-144',0)
+               ELSE
                   CALL cl_err(ps_slip,"sub-144",1)
-               END IF                                                                                                               
+               END IF
                RETURN FALSE,ps_slip
             END IF
          END IF
@@ -1596,11 +1606,11 @@ FUNCTION s_check_no(ps_sys,ps_slip,ps_slip_o,ps_type,ps_tab,ps_fld,ps_plant)
       IF lc_plantadd = 'Y' THEN
         IF li_plantlen > 0 THEN                                #TQC-B80251
          IF lc_sn[1,li_plantlen] != ls_plantcode THEN
-            IF g_bgerr THEN                                                                                                      
-               CALL s_errmsg('','','','sub-235',0)                                                                               
-            ELSE                                                                                                                 
+            IF g_bgerr THEN
+               CALL s_errmsg('','','','sub-235',0)
+            ELSE
                CALL cl_err(lc_sn,"sub-235",1)
-            END IF                                                                                                               
+            END IF
             RETURN FALSE,ps_slip
          END IF
         END IF                                                #TQC-B80251
@@ -1614,20 +1624,20 @@ FUNCTION s_check_no(ps_sys,ps_slip,ps_slip_o,ps_type,ps_tab,ps_fld,ps_plant)
            #LET li_month = lc_sn[li_plantlen+3,li_plantlen+4]
             #需数字型
             IF NOT cl_numchk(lc_sn[li_plantlen+1,li_plantlen+2],0) OR NOT cl_numchk(lc_sn[li_plantlen+3,li_plantlen+4],0) THEN
-               IF g_bgerr THEN                                                                                                      
-                  CALL s_errmsg('','','','sub-236',0)                                                                               
-               ELSE                                                                                                                 
+               IF g_bgerr THEN
+                  CALL s_errmsg('','','','sub-236',0)
+               ELSE
                   CALL cl_err(lc_sn,"sub-236",1)
-               END IF                                                                                                               
+               END IF
                RETURN FALSE,ps_slip
             END IF
             #月
             IF lc_sn[li_plantlen+3,li_plantlen+4] > 12 OR lc_sn[li_plantlen+3,li_plantlen+4] < 1 THEN
-               IF g_bgerr THEN                                                                                                      
-                  CALL s_errmsg('','','','sub-236',0)                                                                               
-               ELSE                                                                                                                 
+               IF g_bgerr THEN
+                  CALL s_errmsg('','','','sub-236',0)
+               ELSE
                   CALL cl_err(lc_sn,"sub-236",1)
-               END IF                                                                                                               
+               END IF
                RETURN FALSE,ps_slip
             END IF
          WHEN (lc_method = "3")   #依年週
@@ -1635,20 +1645,20 @@ FUNCTION s_check_no(ps_sys,ps_slip,ps_slip_o,ps_type,ps_tab,ps_fld,ps_plant)
            #LET li_week = lc_sn[li_plantlen+3,li_plantlen+4]
             #需数字型
             IF NOT cl_numchk(lc_sn[li_plantlen+1,li_plantlen+2],0) OR NOT cl_numchk(lc_sn[li_plantlen+3,li_plantlen+4],0) THEN
-               IF g_bgerr THEN                                                                                                      
-                  CALL s_errmsg('','','','sub-236',0)                                                                               
-               ELSE                                                                                                                 
+               IF g_bgerr THEN
+                  CALL s_errmsg('','','','sub-236',0)
+               ELSE
                   CALL cl_err(lc_sn,"sub-236",1)
-               END IF                                                                                                               
+               END IF
                RETURN FALSE,ps_slip
             END IF
             #周
             IF lc_sn[li_plantlen+3,li_plantlen+4] > 53 OR lc_sn[li_plantlen+3,li_plantlen+4] < 1 THEN
-               IF g_bgerr THEN                                                                                                      
-                  CALL s_errmsg('','','','sub-236',0)                                                                               
-               ELSE                                                                                                                 
+               IF g_bgerr THEN
+                  CALL s_errmsg('','','','sub-236',0)
+               ELSE
                   CALL cl_err(lc_sn,"sub-236",1)
-               END IF                                                                                                               
+               END IF
                RETURN FALSE,ps_slip
             END IF
          WHEN (lc_method = "4")   #依年月日
@@ -1660,47 +1670,47 @@ FUNCTION s_check_no(ps_sys,ps_slip,ps_slip_o,ps_type,ps_tab,ps_fld,ps_plant)
             OR NOT cl_numchk(lc_sn[li_plantlen+3,li_plantlen+4],0)
             OR NOT cl_numchk(lc_sn[li_plantlen+5,li_plantlen+6],0)
             THEN
-               IF g_bgerr THEN                                                                                                      
-                  CALL s_errmsg('','','','sub-236',0)                                                                               
-               ELSE                                                                                                                 
+               IF g_bgerr THEN
+                  CALL s_errmsg('','','','sub-236',0)
+               ELSE
                   CALL cl_err(lc_sn,"sub-236",1)
-               END IF                                                                                                               
+               END IF
                RETURN FALSE,ps_slip
             END IF
             #月
             IF li_month > 12 OR li_month < 1 THEN
-               IF g_bgerr THEN                                                                                                      
-                  CALL s_errmsg('','','','sub-236',0)                                                                               
-               ELSE                                                                                                                 
+               IF g_bgerr THEN
+                  CALL s_errmsg('','','','sub-236',0)
+               ELSE
                   CALL cl_err(lc_sn,"sub-236",1)
-               END IF                                                                                                               
+               END IF
                RETURN FALSE,ps_slip
             END IF
             #日
             LET li_date = MDY(li_month,1,li_year)
             CALL s_months(li_date) RETURNING li_num  #此月该有多少天
             IF li_day > li_num OR li_day < 1 THEN
-               IF g_bgerr THEN                                                                                                      
-                  CALL s_errmsg('','','','sub-236',0)                                                                               
-               ELSE                                                                                                                 
+               IF g_bgerr THEN
+                  CALL s_errmsg('','','','sub-236',0)
+               ELSE
                   CALL cl_err(lc_sn,"sub-236",1)
-               END IF                                                                                                               
+               END IF
                RETURN FALSE,ps_slip
             END IF
       END CASE
       #FUN-B50026 add--end
    END IF
- 
+
    # 回傳檢查結果及單號
    IF lc_docauno THEN
       LET ls_no = ps_slip
    ELSE
       LET ls_no = ls_doc,"-",ls_sn
    END IF
- 
+
    RETURN li_result,ls_no
 END FUNCTION
- 
+
 # Descriptions...: 由單據編號中取單別
 # Date & Author..: 2010/02/22 by saki 翻寫
 # Input Parameter: ps_slip        單據編號
@@ -1711,17 +1721,17 @@ FUNCTION s_get_doc_no(ps_slip)
    DEFINE   ps_slip   STRING
    DEFINE   ls_doc    STRING
    DEFINE   li_inx    LIKE type_file.num10
- 
+
    LET li_inx = ps_slip.getIndexOf("-",1)
    IF li_inx <= 0 THEN
       LET ls_doc = ps_slip
    ELSE
       LET ls_doc = ps_slip.subString(1,li_inx - 1)
    END IF
- 
+
    RETURN ls_doc
 END FUNCTION
- 
+
 # Descriptions...: 由單據編號中取單號
 # Date & Author..: 2010/02/22 by saki 翻寫
 # Input Parameter: ps_sys         系統別
@@ -1729,12 +1739,12 @@ END FUNCTION
 #                  ps_plant       Plant Code
 # Return Code....: ls_no          單號
 # Usage..........: CALL s_get_serial_no(g_pmw.pmw01,g_plant) RETURNING g_no
- 
-FUNCTION s_get_serial_no(ps_sys,ps_slip,ps_plant)  
+
+FUNCTION s_get_serial_no(ps_sys,ps_slip,ps_plant)
    DEFINE   ps_sys        LIKE smu_file.smu03
    DEFINE   ps_slip       STRING
    DEFINE   ps_plant      LIKE type_file.chr20
-   DEFINE   ps_type       LIKE doc_file.dockind    #FUN-BA0015 add 
+   DEFINE   ps_type       LIKE doc_file.dockind    #FUN-BA0015 add
    DEFINE   ps_dbs        STRING
    DEFINE   ls_plantcode  STRING
    DEFINE   lc_legalcode  LIKE azw_file.azw02
@@ -1760,10 +1770,10 @@ FUNCTION s_get_serial_no(ps_sys,ps_slip,ps_plant)
                 "   AND docacti = 'Y'"
    LET ls_sql = cl_replace_sqldb(ls_sql)
    PREPARE aunoset_pre1 FROM ls_sql
-   EXECUTE aunoset_pre1 INTO ps_type 
+   EXECUTE aunoset_pre1 INTO ps_type
   #FUN-BA0015 add END
 
-   LET ps_plant = UPSHIFT(ps_plant)               #MOD-AB0108 
+   LET ps_plant = UPSHIFT(ps_plant)               #MOD-AB0108
 
    LET ls_plantcode = ps_plant
    SELECT azw02 INTO lc_legalcode FROM azw_file WHERE azw01 = ps_plant
@@ -1848,9 +1858,9 @@ FUNCTION s_get_serial_no(ps_sys,ps_slip,ps_plant)
       LET g_no_sp = g_doc_len + 2
       LET g_sn_sp = g_no_sp
    END IF
- 
+
    LET ls_no = ps_slip.subString(g_no_sp,g_no_ep)
- 
+
    RETURN ls_no
 END FUNCTION
 
@@ -1861,7 +1871,7 @@ END FUNCTION
 # Return Code....: void
 # Usage..........: CALL s_doc_global_setting(g_sys,g_plant)
 
-FUNCTION s_doc_global_setting(ps_sys,ps_plant)  
+FUNCTION s_doc_global_setting(ps_sys,ps_plant)
    DEFINE   ps_sys        LIKE smu_file.smu03
    DEFINE   ps_plant      LIKE type_file.chr20
    DEFINE   ls_sql        STRING
