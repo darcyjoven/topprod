@@ -126,7 +126,8 @@ end function
 
 -- html 邮件
 
-function cl_record_html()
+function cl_record_html(p_print_status)
+    define  p_print_status      string
     define sr   record
         idx     integer,
         sts     varchar(20),
@@ -149,6 +150,10 @@ function cl_record_html()
     define l_default    record
         warn,info,error varchar(2000)
     end record
+
+    if not cl_null(p_print_status) then
+        let g_print_status = p_print_status
+    end if
 
     -- 图标
     let l_default.info = '<span style="display: inline-block; padding: 4px 12px; border-radius: 3px; ',
@@ -235,7 +240,6 @@ function cl_record_html()
         if sr.lvl = 0 then
             if l_parent != 0 then
                 -- TODO 上笔的的收尾
-                let l_col = l_col,'</ol>\n</div>\n'
                 let l_row = sfmt(
                             '<div style="border: 1px solid #e8e8e8; border-radius: 4px; margin-bottom: 12px; overflow: hidden;">
                                 <div style="display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; font-size: 14px; border-bottom: 1px solid #ffebee;">
@@ -254,9 +258,10 @@ function cl_record_html()
                         let l_temp = '<div style="padding: 10px 16px 14px 16px; font-size: 13px;  border-top: 1px dashed;">'
                     end if
                 end if
-                let l_row = l_row,l_temp,l_col,'</div>\n'
-                if l_row matches '*</li>*' then
-                    let l_detail = l_detail,l_row
+                if l_col matches '*</li>*' then
+                    let l_detail = l_detail,l_row,l_temp,l_col,'</ol>\n</div>\n</div>\n'
+                else
+                    let l_detail = l_detail,l_row,'</div>\n'
                 end if
             end if
             let l_parent = sr.idx
@@ -276,7 +281,6 @@ function cl_record_html()
         end case
 
     end foreach
-    let l_col = l_col,'</ol>\n</div>\n'
     let l_row = sfmt(
                 '<div style="border: 1px solid #e8e8e8; border-radius: 4px; margin-bottom: 12px; overflow: hidden;">
                     <div style="display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; font-size: 14px; border-bottom: 1px solid #ffebee;">
@@ -295,9 +299,10 @@ function cl_record_html()
             let l_temp = '<div style="padding: 10px 16px 14px 16px; font-size: 13px;  border-top: 1px dashed;">'
         end if
     end if
-    let l_row = l_row,l_temp,l_col,'</div>\n'
-    if l_row matches '*</li>*' then
-        let l_detail = l_detail,l_row
+    if l_col matches '*</li>*' then
+        let l_detail = l_detail,l_row,l_temp,l_col,'</ol>\n</div>\n</div>\n'
+    else
+        let l_detail = l_detail,l_row,'</div>\n'
     end if
 
     let l_detail = l_detail,'</div>\n'
