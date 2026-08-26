@@ -12,12 +12,14 @@ define  g_date          date            -- 日期
 define  g_version       varchar(10)     -- 版本
 define  g_start,g_end   date
 define  g_tot_success   varchar(1)
+define  g_unsign        varchar(1)
 
 -- 入口函数
-function scimp500(p_date,p_version,p_tran)
+function scimp500(p_date,p_version,p_unsign,p_tran)
     define  p_date      date,
             p_version   varchar(10),
-            p_tran      boolean
+            p_tran      boolean,
+            p_unsign    varchar(1)
     define  l_curr      varchar(10)
     define  l_str       string
     define  l_channel   base.Channel
@@ -29,6 +31,8 @@ function scimp500(p_date,p_version,p_tran)
     let g_success = 'Y'
     let g_tot_success = 'Y'
     let g_date = p_date
+    let g_unsign = p_unsign
+
     if cl_null(p_version)then
         let p_version = 'normal'
     end if
@@ -38,13 +42,13 @@ function scimp500(p_date,p_version,p_tran)
     if g_version = 'month' then
         let g_start = mdy(month(g_date),1,year(g_date))
         if month(g_date) = 12 then
-            let g_end = mdy(1,1,year(g_date)+1) -1
+            let g_end = mdy(1,1,year(g_date)+1)
         else
-            let g_end = mdy(month(g_date)+1,1,year(g_date)) -1
+            let g_end = mdy(month(g_date)+1,1,year(g_date))
         end if
     else
-        let g_start = g_date - 1
-        let g_end = g_date
+        let g_start = g_date
+        let g_end = g_date + 1
     end if
 
     call cl_record_init(sfmt("date:%1,version:%2",g_date,g_version))
@@ -124,26 +128,20 @@ end function
 private function scimp500_del()
     define  l_curr      varchar(100)
     define  l_cnt       integer
+    define  l_tc_ila59  like tc_ila_file.tc_ila59,
+            l_tc_ila60  like tc_ila_file.tc_ila60
 
     let l_curr = current hour to second
 
     select count(*) into l_cnt from tc_ila_file where tc_ila01 = g_date and tc_ila02 = g_version
     if l_cnt > 0 then
-        update tc_ila_file
-           set  tc_ila03 = l_curr,
-                tc_ila04 = '', tc_ila05 = '', tc_ila06 = '', tc_ila07 = '', tc_ila08 = '', tc_ila09 = '', tc_ila10 = '',
-                tc_ila11 = '', tc_ila12 = '', tc_ila13 = '', tc_ila14 = '', tc_ila15 = '',
-                tc_ila16 = '', tc_ila17 = '', tc_ila18 = '', tc_ila19 = '', tc_ila20 = '',
-                tc_ila21 = '', tc_ila22 = '', tc_ila23 = '', tc_ila24 = '', tc_ila25 = '',
-                tc_ila26 = '', tc_ila27 = '', tc_ila28 = '', tc_ila29 = '', tc_ila30 = '',
-                tc_ila31 = '', tc_ila32 = '', tc_ila33 = '', tc_ila34 = '', tc_ila35 = '',
-                tc_ila36 = '', tc_ila37 = '', tc_ila38 = '', tc_ila39 = '', tc_ila40 = '',
-                tc_ila41 = '', tc_ila42 = '', tc_ila43 = '', tc_ila44 = '', tc_ila45 = '',
-                tc_ila46 = '', tc_ila47 = '', tc_ila48 = '', tc_ila49 = '', tc_ila50 = '',
-                tc_ila51 = '', tc_ila52 = '', tc_ila53 = '', tc_ila54 = '', tc_ila55 = '',
-                tc_ila56 = '', tc_ila57 = '', tc_ila58 = ''
-                -- tc_ila59 = '', tc_ila60 = ''
-        where tc_ila01 = g_date and tc_ila02 = g_version
+        select tc_ila59,tc_ila60 into l_tc_ila59,l_tc_ila60 from tc_ila_file
+         where tc_ila01 = g_date and tc_ila02 = g_version
+
+        delete from tc_ila_file where tc_ila01 = g_date and tc_ila02 = g_version
+
+        insert into tc_ila_file (tc_ila01,tc_ila02,tc_ila03,tc_ila59,tc_ila60)
+        values (g_date,g_version,l_curr,l_tc_ila59,l_tc_ila60)
     else
         insert into tc_ila_file (tc_ila01,tc_ila02,tc_ila03)
         values (g_date,g_version,l_curr)
@@ -242,7 +240,7 @@ private function scimp500_asft623()
                          ( tlf06 > '",g_start,"' and tlf06 < '",g_end,"' ))
                     and tlf902 in ('P001', 'S009', 'YP003')
                     and tlf13 = 'asft6231'
-                    and substr(tlf905, 1, 3) not in ('MKT', 'MSG')"
+                    and substr(tlf62, 1, 3) not in ('MKT', 'MSG')"
     prepare scimp500_t623_p1 from l_sql
 
     -- 返工入库
@@ -259,7 +257,7 @@ private function scimp500_asft623()
                          ( tlf06 > '",g_start,"' and tlf06 < '",g_end,"' ))
                     and tlf902 in ('P001', 'S009', 'YP003')
                     and tlf13 = 'asft6231'
-                    and substr(tlf905, 1, 3) in ('MKT', 'MSG')"
+                    and substr(tlf62, 1, 3) in ('MKT', 'MSG')"
     prepare scimp500_t623_p2 from l_sql
 
     -- 返工成套领出
@@ -479,11 +477,11 @@ private function scimp500_axmt620()
                 " select '",g_date,"','",g_version,"','5','',ogb04,
                          oga02, oga01, ogb03,'',ogb09,
                          ogb091, ogb092, ogb12,'', oga24,
-                         0,'-2',oga23,ogb37
+                         0,'-2',oga23,ogb13
                     from oga_file, ogb_file
                    where oga01 = ogb01 and oga09 = '2' and ogaconf = 'Y' and ogapost = 'Y'
                      and instr(ogb04, '.') = 0
-                     and oga02 between '",g_start,"' and '",g_end,"' "
+                     and oga02 between '",g_start,"' and '",g_end -1 ,"' "
     prepare scimp500_t620_p1 from l_sql
     execute scimp500_t620_p1
     if sqlca.sqlcode then
@@ -502,11 +500,11 @@ private function scimp500_axmt620()
                 " select '",g_date,"','",g_version,"','6','',ogb04,
                          oga02, oga01, ogb03,'',ogb09,
                          ogb091, ogb092, ogb12,'', oga24,
-                         0,'-2',oga23,ogb37
+                         0,'-2',oga23,ogb13
                     from oga_file, ogb_file
                    where oga01 = ogb01 and oga09 = '2' and ogaconf = 'Y' and ogapost = 'Y'
                      and instr(ogb04, '.') > 0
-                     and oga02 between '",g_start,"' and '",g_end,"' "
+                     and oga02 between '",g_start,"' and '",g_end - 1,"' "
     prepare scimp500_t620_p2 from l_sql
     execute scimp500_t620_p2
     if sqlca.sqlcode then
@@ -533,10 +531,10 @@ private function scimp500_axmt700()
                 " select '",g_date,"','",g_version,"','7','',ohb04,
                          oha02, oha01, ohb03,'',ohb09,
                          ohb091, ohb092, ohb12,'', oha24,
-                         0,'-2',oha23,ohb37
+                         0,'-2',oha23,ohb13
                     from oha_file, ohb_file
                    where oha01 = ohb01 and ohaconf = 'Y' and ohapost = 'Y'
-                     and oha02 between '",g_start,"' and '",g_end,"'
+                     and oha02 between '",g_start,"' and '",g_end - 1,"'
                      and instr(ohb04, '.') = 0 and ohb04 <> 'MISC'
                      and oha09 in ('1', '4') "
     prepare scimp500_t700_p1 from l_sql
@@ -557,10 +555,10 @@ private function scimp500_axmt700()
                 " select '",g_date,"','",g_version,"','8','',ohb04,
                          oha02, oha01, ohb03,'',ohb09,
                          ohb091, ohb092, ohb12,'', oha24,
-                         ohb12*ohb37*oha24,'-2',oha23,ohb37
+                         ohb12*ohb13*oha24,'-2',oha23,ohb13
                     from oha_file, ohb_file
                    where oha01 = ohb01 and ohaconf = 'Y' and ohapost = 'Y'
-                     and oha02 between '",g_start,"' and '",g_end,"'
+                     and oha02 between '",g_start,"' and '",g_end - 1,"'
                      and (instr(ohb04, '.') > 0 or ohb04 = 'MISC')
                      and oha09 in ('1', '4') "
     prepare scimp500_t700_p2 from l_sql
@@ -584,7 +582,7 @@ private function scimp500_axmt700()
                          ohb14*oha24,'-2',oha23,ohb14
                     from oha_file, ohb_file
                    where oha01 = ohb01 and ohaconf = 'Y' and ohapost = 'Y'
-                     and oha02 between '",g_start,"' and '",g_end,"'
+                     and oha02 between '",g_start,"' and '",g_end -1 ,"'
                      and oha09 in ('5') "
     prepare scimp500_t700_p3 from l_sql
     execute scimp500_t700_p3
@@ -677,66 +675,7 @@ private function scimp500_sum()
     define  l_sql       string
     define  l_yy,l_mm   integer
     define  l_curr      varchar(10)
-    define  l_tc_ila05      like tc_ila_file.tc_ila05,
-            l_tc_ila06      like tc_ila_file.tc_ila06,
-            l_tc_ila07      like tc_ila_file.tc_ila07,
-            l_tc_ila08      like tc_ila_file.tc_ila08,
-            l_tc_ila09      like tc_ila_file.tc_ila09,
-            l_tc_ila10      like tc_ila_file.tc_ila10,
-            l_tc_ila11      like tc_ila_file.tc_ila11,
-            l_tc_ila12      like tc_ila_file.tc_ila12,
-            l_tc_ila13      like tc_ila_file.tc_ila13,
-            l_tc_ila14      like tc_ila_file.tc_ila14,
-            l_tc_ila15      like tc_ila_file.tc_ila15,
-            l_tc_ila16      like tc_ila_file.tc_ila16,
-            l_tc_ila17      like tc_ila_file.tc_ila17,
-            l_tc_ila18      like tc_ila_file.tc_ila18,
-            l_tc_ila19      like tc_ila_file.tc_ila19,
-            l_tc_ila20      like tc_ila_file.tc_ila20,
-            l_tc_ila21      like tc_ila_file.tc_ila21,
-            l_tc_ila22      like tc_ila_file.tc_ila22,
-            l_tc_ila23      like tc_ila_file.tc_ila23,
-            l_tc_ila24      like tc_ila_file.tc_ila24,
-            l_tc_ila25      like tc_ila_file.tc_ila25,
-            l_tc_ila26      like tc_ila_file.tc_ila26,
-            l_tc_ila27      like tc_ila_file.tc_ila27,
-            l_tc_ila28      like tc_ila_file.tc_ila28,
-            l_tc_ila29      like tc_ila_file.tc_ila29,
-            l_tc_ila30      like tc_ila_file.tc_ila30,
-            l_tc_ila31      like tc_ila_file.tc_ila31,
-            l_tc_ila32      like tc_ila_file.tc_ila32,
-            l_tc_ila33      like tc_ila_file.tc_ila33,
-            l_tc_ila34      like tc_ila_file.tc_ila34,
-            l_tc_ila35      like tc_ila_file.tc_ila35,
-            l_tc_ila36      like tc_ila_file.tc_ila36,
-            l_tc_ila37      like tc_ila_file.tc_ila37,
-            l_tc_ila38      like tc_ila_file.tc_ila38,
-            l_tc_ila39      like tc_ila_file.tc_ila39,
-            l_tc_ila40      like tc_ila_file.tc_ila40,
-            l_tc_ila41      like tc_ila_file.tc_ila41,
-            l_tc_ila42      like tc_ila_file.tc_ila42,
-            l_tc_ila43      like tc_ila_file.tc_ila43,
-            l_tc_ila44      like tc_ila_file.tc_ila44,
-            l_tc_ila45      like tc_ila_file.tc_ila45,
-            l_tc_ila46      like tc_ila_file.tc_ila46,
-            l_tc_ila47      like tc_ila_file.tc_ila47,
-            l_tc_ila48      like tc_ila_file.tc_ila48,
-            l_tc_ila49      like tc_ila_file.tc_ila49,
-            l_tc_ila50      like tc_ila_file.tc_ila50,
-            l_tc_ila51      like tc_ila_file.tc_ila51,
-            l_tc_ila52      like tc_ila_file.tc_ila52,
-            l_tc_ila53      like tc_ila_file.tc_ila53,
-            l_tc_ila54      like tc_ila_file.tc_ila54,
-            l_tc_ila55      like tc_ila_file.tc_ila55,
-            l_tc_ila56      like tc_ila_file.tc_ila56,
-            l_tc_ila57      like tc_ila_file.tc_ila57,
-            l_tc_ila58      like tc_ila_file.tc_ila58,
-            l_tc_ila16_1    like tc_ila_file.tc_ila16,
-            l_tc_ila17_1    like tc_ila_file.tc_ila17,
-            l_tc_ila18_1    like tc_ila_file.tc_ila18,
-            l_tc_ila69      like tc_ila_file.tc_ila69,
-            l_tc_ila70      like tc_ila_file.tc_ila70,
-            l_tc_ila71      like tc_ila_file.tc_ila71
+    define l_tc_ila record like tc_ila_file.*
 
     if month(g_date) = 1 then
         let l_yy = year(g_date)-1
@@ -750,321 +689,160 @@ private function scimp500_sum()
     -- 先处理单价
     call scimp500_price()
 
+    select * into l_tc_ila.* from tc_ila_file
+    where tc_ila01 = g_date and tc_ila02 = g_version
+
     -- 汇率 tc_ila05 、上月汇率 tc_ila06 仅美元
-    select tc_ild06 into l_tc_ila05 from tc_ild_file
+    select tc_ild06 into l_tc_ila.tc_ila05 from tc_ild_file
      where tc_ild01 = g_date and tc_ild02 = g_version
        and tc_ild03 = 'USD'
        and tc_ild04 = year(g_date) and tc_ild05 = month(g_date)
 
-    select tc_ild06 into l_tc_ila06 from tc_ild_file
+    select tc_ild06 into l_tc_ila.tc_ila06 from tc_ild_file
      where tc_ild01 = g_date and tc_ild02 = g_version
        and tc_ild03 = 'USD'
        and tc_ild04 = l_yy and tc_ild05 = l_mm
 
-    -- 成品入库 tc_ila07，tc_ila08，tc_ila09
-    select sum(tc_ilf17* tc_ilf13),sum(tc_ilf18* tc_ilf13),sum(tc_ilf19* tc_ilf13)
-      into l_tc_ila07,l_tc_ila08,l_tc_ila09
-      from tc_ilf_file where tc_ilf01 = g_date and tc_ilf02 = g_version
-       and tc_ilf03 in ('1')
+    select  sum(case when tc_ilf03='1' then tc_ilf17*tc_ilf13 else 0 end) pnf,
+            sum(case when tc_ilf03='1' then tc_ilf18*tc_ilf13 else 0 end) pns,
+            sum(case when tc_ilf03='1' then tc_ilf19*tc_ilf13 else 0 end) pnc,
+            sum(case when tc_ilf03='2' then tc_ilf17*tc_ilf13 else 0 end) prif,
+            sum(case when tc_ilf03='2' then tc_ilf18*tc_ilf13 else 0 end) pris,
+            sum(case when tc_ilf03='2' then tc_ilf19*tc_ilf13 else 0 end) pric,
+            sum(case when tc_ilf03='3' then tc_ilf17*tc_ilf13 when tc_ilf03='4' then -tc_ilf17*tc_ilf13 else 0 end) prof,
+            sum(case when tc_ilf03='3' then tc_ilf18*tc_ilf13 when tc_ilf03='4' then -tc_ilf18*tc_ilf13 else 0 end) pros,
+            sum(case when tc_ilf03='3' then tc_ilf19*tc_ilf13 when tc_ilf03='4' then -tc_ilf19*tc_ilf13 else 0 end) proc,
+            sum(case when tc_ilf03='5' then tc_ilf17*tc_ilf13 else 0 end) snf,
+            sum(case when tc_ilf03='5' then tc_ilf18*tc_ilf13 else 0 end) sns,
+            sum(case when tc_ilf03='5' then tc_ilf19*tc_ilf13 else 0 end) snc,
+            sum(case when tc_ilf03='7' then tc_ilf17*tc_ilf13 else 0 end) srf,
+            sum(case when tc_ilf03='7' then tc_ilf18*tc_ilf13 else 0 end) srs,
+            sum(case when tc_ilf03='7' then tc_ilf19*tc_ilf13 else 0 end) src,
+            sum(case when tc_ilf03='9' then tc_ilf16 when tc_ilf03='8' then tc_ilf16*tc_ilf13 else 0 end) sdct,
+            sum(case when tc_ilf03='6' then tc_ilf16*tc_ilf13 else 0 end) srsell
+        into l_tc_ila.tc_ila07,l_tc_ila.tc_ila08,l_tc_ila.tc_ila09,l_tc_ila.tc_ila10,l_tc_ila.tc_ila11,l_tc_ila.tc_ila12,l_tc_ila.tc_ila13,l_tc_ila.tc_ila14,l_tc_ila.tc_ila15,
+             l_tc_ila.tc_ila27,l_tc_ila.tc_ila28,l_tc_ila.tc_ila29,l_tc_ila.tc_ila30,l_tc_ila.tc_ila31,l_tc_ila.tc_ila32,l_tc_ila.tc_ila33,l_tc_ila.tc_ila34
+        from tc_ilf_file
+    where tc_ilf02 = g_version
+        and tc_ilf01 = g_date
 
-    -- 返工入库 tc_ila13，tc_ila14，tc_ila15
-    select sum(tc_ilf17* tc_ilf13),sum(tc_ilf18* tc_ilf13),sum(tc_ilf19* tc_ilf13)
-      into l_tc_ila13,l_tc_ila14,l_tc_ila15
-      from tc_ilf_file where tc_ilf01 = g_date and tc_ilf02 = g_version
-       and tc_ilf03 in ('2')
+    select sum(case when tc_ilf03='1' then tc_ilf17*tc_ilf13 else 0 end) pnf,
+            sum(case when tc_ilf03='1' then tc_ilf18*tc_ilf13 else 0 end) pns,
+            sum(case when tc_ilf03='1' then tc_ilf19*tc_ilf13 else 0 end) pnc,
+            sum(case when tc_ilf03='2' then tc_ilf17*tc_ilf13 else 0 end) prif,
+            sum(case when tc_ilf03='2' then tc_ilf18*tc_ilf13 else 0 end) pris,
+            sum(case when tc_ilf03='2' then tc_ilf19*tc_ilf13 else 0 end) pric,
+            sum(case when tc_ilf03='3' then tc_ilf17*tc_ilf13 when tc_ilf03='4' then -tc_ilf17*tc_ilf13 else 0 end) prof,
+            sum(case when tc_ilf03='3' then tc_ilf18*tc_ilf13 when tc_ilf03='4' then -tc_ilf18*tc_ilf13 else 0 end) pros,
+            sum(case when tc_ilf03='3' then tc_ilf19*tc_ilf13 when tc_ilf03='4' then -tc_ilf19*tc_ilf13 else 0 end) proc,
+            sum(case when tc_ilf03='5' then tc_ilf17*tc_ilf13 else 0 end) snf,
+            sum(case when tc_ilf03='5' then tc_ilf18*tc_ilf13 else 0 end) sns,
+            sum(case when tc_ilf03='5' then tc_ilf19*tc_ilf13 else 0 end) snc,
+            sum(case when tc_ilf03='7' then tc_ilf17*tc_ilf13 else 0 end) srf,
+            sum(case when tc_ilf03='7' then tc_ilf18*tc_ilf13 else 0 end) srs,
+            sum(case when tc_ilf03='7' then tc_ilf19*tc_ilf13 else 0 end) src,
+            sum(case when tc_ilf03='9' then tc_ilf16 when tc_ilf03='8' then tc_ilf16*tc_ilf13 else 0 end) sdct,
+            sum(case when tc_ilf03='6' then tc_ilf16*tc_ilf13 else 0 end) srsell
+        into l_tc_ila.tc_ila16,l_tc_ila.tc_ila17,l_tc_ila.tc_ila18,l_tc_ila.tc_ila19,l_tc_ila.tc_ila20,l_tc_ila.tc_ila21,l_tc_ila.tc_ila22,l_tc_ila.tc_ila23,l_tc_ila.tc_ila24,
+             l_tc_ila.tc_ila35,l_tc_ila.tc_ila36,l_tc_ila.tc_ila37,l_tc_ila.tc_ila38,l_tc_ila.tc_ila39,l_tc_ila.tc_ila40,l_tc_ila.tc_ila41,l_tc_ila.tc_ila42
+        from tc_ilf_file
+    where tc_ilf02 = g_version
+        and tc_ilf01 <= g_date
+        and year(tc_ilf01) = year(g_date)
+        and month(tc_ilf01) = month(g_date);
 
-    -- 返工领出 tc_ila16，tc_ila17，tc_ila18
-    select sum(tc_ilf17* tc_ilf13),sum(tc_ilf18* tc_ilf13),sum(tc_ilf19* tc_ilf13)
-      into l_tc_ila16,l_tc_ila17,l_tc_ila18
-      from tc_ilf_file where tc_ilf01 = g_date and tc_ilf02 = g_version
-       and tc_ilf03 in ('3')
 
-    -- 累计返工 l_tc_ila69，l_tc_ila70，l_tc_ila71
-    select sum(tc_ilf17* tc_ilf13),sum(tc_ilf18* tc_ilf13),sum(tc_ilf19* tc_ilf13)
-      into l_tc_ila69,l_tc_ila70,l_tc_ila71
-      from tc_ilf_file where tc_ilf02 = g_version
-       and tc_ilf03 in ('3')
-       and year(tc_ilf01) = year(g_date)
-       and month(tc_ilf01) = month(g_date)
-
-    select sum(tc_ilf17* tc_ilf13),sum(tc_ilf18* tc_ilf13),sum(tc_ilf19* tc_ilf13)
-        into l_tc_ila16_1,l_tc_ila17_1,l_tc_ila18_1
-        from tc_ilf_file where tc_ilf01 = g_date and tc_ilf02 = g_version
-        and tc_ilf03 in ('4')
-    let l_tc_ila16 = l_tc_ila16 - l_tc_ila16_1
-    let l_tc_ila17 = l_tc_ila17 - l_tc_ila17_1
-    let l_tc_ila18 = l_tc_ila18 - l_tc_ila18_1
-
-    -- 入库计划 tc_ila19 tc_ila24
-    select sum(tc_ilb06) into l_tc_ila19 from tc_ilb_file
-     where tc_ilb01 = g_date and tc_ilb02 = g_version
-       and tc_ilb03 = g_date and tc_ilb04 = 'inbound'
-    select sum(tc_ilb06) into l_tc_ila24 from tc_ilb_file
-     where tc_ilb01 = g_date and tc_ilb02 = g_version
-       and tc_ilb04 = 'inbound'
-
-    -- 销售计划 tc_ila37 tc_ila54
-    select sum(tc_ilb06) into l_tc_ila37 from tc_ilb_file
-     where tc_ilb01 = g_date and tc_ilb02 = g_version
-       and tc_ilb03 = g_date and tc_ilb04 = 'outbound'
-    select sum(tc_ilb06) into l_tc_ila54 from tc_ilb_file
-     where tc_ilb01 = g_date and tc_ilb02 = g_version
-       and tc_ilb04 = 'outbound'
-
-    -- 成品出货 tc_ila26，tc_ila27，tc_ila28
-    select sum(tc_ilf17* tc_ilf13),sum(tc_ilf18* tc_ilf13),sum(tc_ilf19* tc_ilf13)
-      into l_tc_ila26,l_tc_ila27,l_tc_ila28
-      from tc_ilf_file where tc_ilf01 = g_date and tc_ilf02 = g_version
-       and tc_ilf03 in ('5')
-
-    -- 销退 tc_ila29，tc_ila30，tc_ila31
-    select sum(tc_ilf17* tc_ilf13),sum(tc_ilf18* tc_ilf13),sum(tc_ilf19* tc_ilf13)
-      into l_tc_ila29,l_tc_ila30,l_tc_ila31
-      from tc_ilf_file where tc_ilf01 = g_date and tc_ilf02 = g_version
-       and tc_ilf03 in ('7')
-
-    -- 材料转卖 tc_ila43
-    select sum(tc_ilf16* tc_ilf13) into l_tc_ila43
-      from tc_ilf_file where tc_ilf01 = g_date and tc_ilf02 = g_version
-       and tc_ilf03 in ('6')
-
-    -- 折让 tc_ila35
-    select sum(tc_ilf16) into l_tc_ila35
-      from tc_ilf_file where tc_ilf01 = g_date and tc_ilf02 = g_version
-       and tc_ilf03 in ('8','9')
-
-    -- 未签收金额 tc_ila45，tc_ila46，tc_ila47
+    -- 未签收金额
     select sum(tc_ilj15*tc_ilj11),sum(tc_ilj16*tc_ilj11),sum(tc_ilj17*tc_ilj11)
-      into l_tc_ila45,l_tc_ila46,l_tc_ila47
+      into l_tc_ila.tc_ila43,l_tc_ila.tc_ila44,l_tc_ila.tc_ila45
       from tc_ilj_file
      where tc_ilj01 = l_yy and tc_ilj02 = l_mm
 
-    -- 样品未签收 tc_ila48 料号判断
+    -- 样品未签收
     select sum(tc_ilj15*tc_ilj11)+sum(tc_ilj16*tc_ilj11)+sum(tc_ilj17*tc_ilj11)
-      into l_tc_ila48
+      into l_tc_ila.tc_ila46
       from tc_ilj_file
      where tc_ilj01 = l_yy and tc_ilj02 = l_mm
        and tc_ilj03 not like '%R'
 
-    -- 成品库存 tc_ila55
-    select sum(tc_ilg08* tc_ilg07) into l_tc_ila55 from tc_ilg_file
-     where tc_ilg01 = g_date and tc_ilg02 = g_version
-       and tc_ilg04 in ('P001','S008')
+    -- 库存
+    select  sum(case when tc_ilg04 in('P001','S008') then tc_ilg08* tc_ilg07 else 0 end),
+            sum(case when tc_ilg04 = 'YP003' then tc_ilg08* tc_ilg07 else 0 end),
+            sum(case when tc_ilg04 = 'S006' then tc_ilg08* tc_ilg07 else 0 end),
+            sum(case when tc_ilg04 = 'S009' then tc_ilg08* tc_ilg07 else 0 end)
+     into l_tc_ila.tc_ila49,l_tc_ila.tc_ila50,l_tc_ila.tc_ila51,l_tc_ila.tc_ila52
+     from tc_ilg_file
+    where tc_ilg02 = 'normal'
+      and tc_ilg01 = to_date('260811', 'yymmdd') ;
 
-    -- 样品 tc_ila56
-    select sum(tc_ilg08* tc_ilg07) into l_tc_ila56 from tc_ilg_file
-     where tc_ilg01 = g_date and tc_ilg02 = g_version
-       and tc_ilg04 = 'YP003'
+    -- 入库计划 tc_ila19 tc_ila24
+    select sum(tc_ilb06) into l_tc_ila.tc_ila25 from tc_ilb_file
+     where tc_ilb01 = g_date and tc_ilb02 = g_version
+       and tc_ilb03 = g_date and tc_ilb04 = 'inbound'
 
-    -- 呆滞 tc_ila57
-    select sum(tc_ilg08* tc_ilg07) into l_tc_ila57 from tc_ilg_file
-     where tc_ilg01 = g_date and tc_ilg02 = g_version
-       and tc_ilg04 = 'S006'
+    select sum(tc_ilb06) into l_tc_ila.tc_ila26 from tc_ilb_file
+     where tc_ilb01 = g_date and tc_ilb02 = g_version
+       and tc_ilb04 = 'inbound'
 
-    -- 销退 tc_ila58
-    select sum(tc_ilg08* tc_ilg07) into l_tc_ila58 from tc_ilg_file
-     where tc_ilg01 = g_date and tc_ilg02 = g_version
-       and tc_ilg04 = 'S009'
+    -- 销售计划 tc_ila37 tc_ila54
+    select sum(tc_ilb06) into l_tc_ila.tc_ila47 from tc_ilb_file
+     where tc_ilb01 = g_date and tc_ilb02 = g_version
+       and tc_ilb03 = g_date and tc_ilb04 = 'outbound'
 
-    -- 累计成品入库 tc_ila10,tc_ila11,tc_ila12
-    select sum(tc_ilf17* tc_ilf13),sum(tc_ilf18* tc_ilf13),sum(tc_ilf19* tc_ilf13)
-      into l_tc_ila10,l_tc_ila11,l_tc_ila12
-      from tc_ilf_file where tc_ilf02 = g_version
-       and tc_ilf03 in ('1')
-       and year(tc_ilf01) = year(g_date)
-       and month(tc_ilf01) = month(g_date)
+    select sum(tc_ilb06) into l_tc_ila.tc_ila48 from tc_ilb_file
+     where tc_ilb01 = g_date and tc_ilb02 = g_version
+       and tc_ilb04 = 'outbound'
 
-    -- 累计入库 + 返工入库 - 返工领出  tc_ila21,tc_ila22,tc_ila23
-    let l_sql = "
-    select sum(tc_ilf17),sum(tc_ilf18),sum(tc_ilf19)
-      from (
-    select tc_ilf17* tc_ilf13 tc_ilf17,tc_ilf18* tc_ilf13 tc_ilf18,tc_ilf19* tc_ilf13 tc_ilf19
-      from tc_ilf_file where tc_ilf01 = '",g_date,"'
-       and tc_ilf02 = '",g_version,"'
-       and tc_ilf03 in ('1','2','4')
-       and year(tc_ilf01) = year(?)
-       and month(tc_ilf01) = month(?)
-    union all
-    select -tc_ilf17* tc_ilf13,-tc_ilf18* tc_ilf13,-tc_ilf19* tc_ilf13
-      from tc_ilf_file where tc_ilf01 = '",g_date,"'
-       and tc_ilf02 = '",g_version,"'
-       and tc_ilf03 = '3'
-       and year(tc_ilf01) = year(?)
-       and month(tc_ilf01) = month(?) )"
-    prepare scimp500_sum_p1 from l_sql
-    execute scimp500_sum_p1
-      using g_date,g_date,g_date,g_date
-       into l_tc_ila21,l_tc_ila22,l_tc_ila23
-
-    -- 累计销退 tc_ila32,tc_ila33,tc_ila34
-    select sum(tc_ilf17* tc_ilf13),sum(tc_ilf18* tc_ilf13),sum(tc_ilf19* tc_ilf13)
-      into l_tc_ila32,l_tc_ila33,l_tc_ila34
-      from tc_ilf_file where tc_ilf01 = g_date
-       and tc_ilf02 = g_version
-       and tc_ilf03 in ('7')
-       and year(tc_ilf01) = year(g_date)
-       and month(tc_ilf01) = month(g_date)
-
-    -- 累计折让 tc_ila36
-    select sum(tc_ilf16) into l_tc_ila36
-      from tc_ilf_file where tc_ilf01 = g_date
-       and tc_ilf02 = g_version
-       and tc_ilf03 in ('8','9')
-       and year(tc_ilf01) = year(g_date)
-       and month(tc_ilf01) = month(g_date)
-
-    -- 累计出货 - 销退 - 折让 tc_ila39,tc_ila40,tc_ila41,tc_ila42
-    let l_sql = "
-    select sum(tc_ilf17),sum(tc_ilf18),sum(tc_ilf19)
-       from (
-    select tc_ilf17* tc_ilf13 tc_ilf17,tc_ilf18* tc_ilf13 tc_ilf18,tc_ilf19* tc_ilf13 tc_ilf19
-      from tc_ilf_file where tc_ilf01 = '",g_date,"'
-       and tc_ilf02 = '",g_version,"'
-       and tc_ilf03 in ('5')
-       and year(tc_ilf01) = year(?)
-       and month(tc_ilf01) = month(?)
-    union all
-    select -tc_ilf17* tc_ilf13,-tc_ilf18* tc_ilf13,-tc_ilf19* tc_ilf13
-      from tc_ilf_file where tc_ilf01 = '",g_date,"'
-       and tc_ilf02 = '",g_version,"'
-       and tc_ilf03 in ('7')
-       and year(tc_ilf01) = year(?)
-       and month(tc_ilf01) = month(?) )"
-    prepare scimp500_sum_p2 from l_sql
-    execute scimp500_sum_p2
-      using g_date,g_date,g_date,g_date
-       into l_tc_ila40,l_tc_ila41,l_tc_ila42
-
-    let l_tc_ila36 = l_tc_ila40 + l_tc_ila41 + l_tc_ila42 - l_tc_ila36
-
-    -- 累计转卖 tc_ila44
-    select sum(tc_ilf16* tc_ilf13) into l_tc_ila44
-      from tc_ilf_file where tc_ilf01 = g_date
-       and tc_ilf02 = g_version
-       and tc_ilf03 in ('6')
-       and year(tc_ilf01) = year(g_date)
-       and month(tc_ilf01) = month(g_date)
-
-    -- 累计应收 出货+上月未签收 折让 转卖
-    -- tc_ila49,tc_ila50,tc_ila51,tc_ila52,tc_ila53
-    let l_tc_ila49 = l_tc_ila40 + l_tc_ila45
-    let l_tc_ila50 = l_tc_ila41 + l_tc_ila46
-    let l_tc_ila51 = l_tc_ila42 + l_tc_ila45
-    let l_tc_ila52 = l_tc_ila44
-    let l_tc_ila53 = l_tc_ila36
-
-    let l_curr = current hour to second
+    let l_tc_ila.tc_ila04 = current hour to second
 
     update tc_ila_file
-       set  tc_ila04 = l_curr,      -- 结束时间
-            tc_ila05 = l_tc_ila05,  -- 本月汇率
-            tc_ila06 = l_tc_ila06,  -- 上月汇率
-            tc_ila07 = nvl(l_tc_ila07 / 10000 , 0 ) ,  -- 成品入库 - 组装
-            tc_ila08 = nvl(l_tc_ila08 / 10000 , 0 ) ,  -- 成品入库 - 光板
-            tc_ila09 = nvl(l_tc_ila09 / 10000 , 0 ) ,  -- 成品入库 - 器件
-            tc_ila10 = nvl(l_tc_ila10 / 10000 , 0 ) ,  -- 成品入库 - 组装 - 累计
-            tc_ila11 = nvl(l_tc_ila11 / 10000 , 0 ) ,  -- 成品入库 - 光板 - 累计
-            tc_ila12 = nvl(l_tc_ila12 / 10000 , 0 ) ,  -- 成品入库 - 器件 - 累计
-            tc_ila13 = nvl(l_tc_ila13 / 10000 , 0 ) ,  -- 返工入库 - 组装
-            tc_ila14 = nvl(l_tc_ila14 / 10000 , 0 ) ,  -- 返工入库 - 光板
-            tc_ila15 = nvl(l_tc_ila15 / 10000 , 0 ) ,  -- 返工入库 - 器件
-            tc_ila16 = nvl(l_tc_ila16 / 10000 , 0 ) ,  -- 返工领出 - 组装
-            tc_ila17 = nvl(l_tc_ila17 / 10000 , 0 ) ,  -- 返工领出 - 光板
-            tc_ila18 = nvl(l_tc_ila18 / 10000 , 0 ) ,  -- 返工领出 - 器件
-            tc_ila19 = nvl(l_tc_ila19 / 10000 , 0 ) ,  -- 预测入库
-            tc_ila20 = nvl(l_tc_ila20 / 10000 , 0 ) ,  -- 实际入库
-            tc_ila21 = nvl(l_tc_ila21 / 10000 , 0 ) ,  -- 成品入库 + 返工入库 - 返工领出 - 组装 - 累计
-            tc_ila22 = nvl(l_tc_ila22 / 10000 , 0 ) ,  -- 成品入库 + 返工入库 - 返工领出 - 光板 - 累计
-            tc_ila23 = nvl(l_tc_ila23 / 10000 , 0 ) ,  -- 成品入库 + 返工入库 - 返工领出 - 器件 - 累计
-            tc_ila24 = nvl(l_tc_ila24 / 10000 , 0 ) ,  -- 预测入库 - 累计
-            tc_ila25 = nvl(l_tc_ila25 / 10000 , 0 ) ,  -- tc_ila21 + tc_ila22 + tc_ila23 - tc_ila24
-            tc_ila26 = nvl(l_tc_ila26 / 10000 , 0 ) ,  -- 成品出货 - 组装
-            tc_ila27 = nvl(l_tc_ila27 / 10000 , 0 ) ,  -- 成品出货 - 光板
-            tc_ila28 = nvl(l_tc_ila28 / 10000 , 0 ) ,  -- 成品出货 - 器件
-            tc_ila29 = nvl(l_tc_ila29 / 10000 , 0 ) ,  -- 销退 - 组装
-            tc_ila30 = nvl(l_tc_ila30 / 10000 , 0 ) ,  -- 销退 - 光板
-            tc_ila31 = nvl(l_tc_ila31 / 10000 , 0 ) ,  -- 销退 - 器件
-            tc_ila32 = nvl(l_tc_ila32 / 10000 , 0 ) ,  -- 销退 - 组装 - 累计
-            tc_ila33 = nvl(l_tc_ila33 / 10000 , 0 ) ,  -- 销退 - 光板 - 累计
-            tc_ila34 = nvl(l_tc_ila34 / 10000 , 0 ) ,  -- 销退 - 器件 - 累计
-            tc_ila35 = nvl(l_tc_ila35 / 10000 , 0 ) ,  -- 折让
-            tc_ila36 = nvl(l_tc_ila36 / 10000 , 0 ) ,  -- 折让 - 累计
-            tc_ila37 = nvl(l_tc_ila37 / 10000 , 0 ) ,  -- 销售预测
-            tc_ila38 = nvl(l_tc_ila38 / 10000 , 0 ) ,  -- 成品出货 - 销退 - 折让 - 销售预测
-            tc_ila39 = nvl(l_tc_ila39 / 10000 , 0 ) ,  -- 成品出货 - 组装 - 累计
-            tc_ila40 = nvl(l_tc_ila40 / 10000 , 0 ) ,  -- 成品出货 - 光板 - 累计
-            tc_ila41 = nvl(l_tc_ila41 / 10000 , 0 ) ,  -- 成品出货 - 器件 - 累计
-            tc_ila42 = nvl(l_tc_ila42 / 10000 , 0 ) ,  -- 折让 - 累计 tc_ila36
-            tc_ila43 = nvl(l_tc_ila43 / 10000 , 0 ) ,  -- 材料转卖
-            tc_ila44 = nvl(l_tc_ila44 / 10000 , 0 ) ,  -- 材料转卖 - 累计
-            tc_ila45 = nvl(l_tc_ila45 / 10000 , 0 ) ,  -- 未签收 - 组装
-            tc_ila46 = nvl(l_tc_ila46 / 10000 , 0 ) ,  -- 未签收 - 光板
-            tc_ila47 = nvl(l_tc_ila47 / 10000 , 0 ) ,  -- 未签收 - 器件
-            tc_ila48 = nvl(l_tc_ila48 / 10000 , 0 ) ,  -- 未签收 - 样品
-            tc_ila49 = nvl(l_tc_ila49 / 10000 , 0 ) ,  -- 成品出货 + 未签收 + - 销退 - 组装 - 累计
-            tc_ila50 = nvl(l_tc_ila50 / 10000 , 0 ) ,  -- 成品出货 + 未签收 + - 销退 - 光板 - 累计
-            tc_ila51 = nvl(l_tc_ila51 / 10000 , 0 ) ,  -- 成品出货 + 未签收 + - 销退 - 器件 - 累计
-            tc_ila52 = nvl(l_tc_ila52 / 10000 , 0 ) ,  -- 材料转卖 - 累计 tc_ila44
-            tc_ila53 = nvl(l_tc_ila53 / 10000 , 0 ) ,  -- 折让 - 累计 tc_ila36
-            tc_ila54 = nvl(l_tc_ila54 / 10000 , 0 ) ,  -- 销售预测 - 累计
-            tc_ila55 = nvl(l_tc_ila55 / 10000 , 0 ) ,  -- 成品库存
-            tc_ila56 = nvl(l_tc_ila56 / 10000 , 0 ) ,  -- 样品库存
-            tc_ila57 = nvl(l_tc_ila57 / 10000 , 0 ) ,  -- 呆滞库存
-            tc_ila58 = nvl(l_tc_ila58 / 10000 , 0 ) ,  -- 销退库存
-            tc_ila69 = nvl(l_tc_ila69 / 10000 , 0 ) ,  -- 返工领出 - 组装 - 累计
-            tc_ila70 = nvl(l_tc_ila70 / 10000 , 0 ) ,  -- 返工领出 - 光板 - 累计
-            tc_ila71 = nvl(l_tc_ila71 / 10000 , 0 )    -- 返工领出 - 器件 - 累计
+       set tc_ila01.* = l_tc_ila.*
      where tc_ila01 = g_date and tc_ila02 = g_version
 
-     select
-     tc_ila05,tc_ila06,tc_ila07,tc_ila08,tc_ila09,tc_ila10,tc_ila11,tc_ila12,tc_ila13,tc_ila14,tc_ila15,tc_ila16,tc_ila17,tc_ila18,tc_ila19,tc_ila20,tc_ila21,tc_ila22,tc_ila23,tc_ila24,tc_ila25,tc_ila26,tc_ila27,tc_ila28,tc_ila29,tc_ila30,tc_ila31,tc_ila32,tc_ila33,tc_ila34,tc_ila35,tc_ila36,tc_ila37,tc_ila38,tc_ila39,tc_ila40,tc_ila41,tc_ila42,tc_ila43,tc_ila44,tc_ila45,tc_ila46,tc_ila47,tc_ila48,tc_ila49,tc_ila50,tc_ila51,tc_ila52,tc_ila53,tc_ila54,tc_ila55,tc_ila56,tc_ila57,tc_ila58,tc_ila69,tc_ila70,tc_ila71
-     into
-     l_tc_ila05,l_tc_ila06,l_tc_ila07,l_tc_ila08,l_tc_ila09,l_tc_ila10,l_tc_ila11,l_tc_ila12,l_tc_ila13,l_tc_ila14,l_tc_ila15,l_tc_ila16,l_tc_ila17,l_tc_ila18,l_tc_ila19,l_tc_ila20,l_tc_ila21,l_tc_ila22,l_tc_ila23,l_tc_ila24,l_tc_ila25,l_tc_ila26,l_tc_ila27,l_tc_ila28,l_tc_ila29,l_tc_ila30,l_tc_ila31,l_tc_ila32,l_tc_ila33,l_tc_ila34,l_tc_ila35,l_tc_ila36,l_tc_ila37,l_tc_ila38,l_tc_ila39,l_tc_ila40,l_tc_ila41,l_tc_ila42,l_tc_ila43,l_tc_ila44,l_tc_ila45,l_tc_ila46,l_tc_ila47,l_tc_ila48,l_tc_ila49,l_tc_ila50,l_tc_ila51,l_tc_ila52,l_tc_ila53,l_tc_ila54,l_tc_ila55,l_tc_ila56,l_tc_ila57,l_tc_ila58,l_tc_ila69,l_tc_ila70,l_tc_ila71
-     from tc_ila_file where tc_ila01 = g_date and tc_ila02 = g_version
+     --call cl_record_card("结束时间：",current year to second)
 
-     call cl_record_card("结束时间：",current year to second)
+     --call cl_record_card("日期：", g_date using 'dd-mmm-yyyy')
+     --call cl_record_card("本月剩余天数：",
+     --iif(
+     --   month(g_date)==12,
+     --   mdy(1,1,year(g_date))-g_date-1,
+     --   mdy(month(g_date)+1,1,year(g_date))-g_date-1
+     --))
+     --call cl_record_card("税率：",
+     --sfmt("本月：%1 上月：%1",l_tc_ila05,l_tc_ila06))
+     --call cl_record_card("成品入库：",
+     --sfmt("%1 (smt: %2 fpc: %3 comp: %4)",l_tc_ila07+l_tc_ila08+l_tc_ila09,l_tc_ila07,l_tc_ila08,l_tc_ila09))
+     --call cl_record_card("累计成品入库：",
+     --sfmt("%1 (smt: %2 fpc: %3 comp: %4)",l_tc_ila10+l_tc_ila11+l_tc_ila12,l_tc_ila10,l_tc_ila11,l_tc_ila12))
+     --call cl_record_card("返工入库：",
+     --sfmt("%1 (smt: %2 fpc: %3 comp: %4)",l_tc_ila13+l_tc_ila14+l_tc_ila16,l_tc_ila13,l_tc_ila14,l_tc_ila15))
+     --call cl_record_card("返工领出：",
+     --sfmt("%1 (smt: %2 fpc: %3 comp: %4)",l_tc_ila16+l_tc_ila17+l_tc_ila18,l_tc_ila16,l_tc_ila17,l_tc_ila18))
+     --call cl_record_card("累计返工领出：",
+     --sfmt("%1 (smt: %2 fpc: %3 comp: %4)",l_tc_ila69+l_tc_ila70+l_tc_ila71,l_tc_ila69,l_tc_ila70,l_tc_ila71))
+     --call cl_record_card("入库预测",sfmt("预测：%1 实际：%2 差异: %3",l_tc_ila19,l_tc_ila20,l_tc_ila20-l_tc_ila19))
+     --call cl_record_card("累计入库：",
+     --sfmt("%1 (smt: %2 fpc: %3 comp: %4)",l_tc_ila21+l_tc_ila22+l_tc_ila23,l_tc_ila21,l_tc_ila22,l_tc_ila23))
+     --call cl_record_card("累计入库预测",sfmt("预测：%1 差异: %2",l_tc_ila24,l_tc_ila25))
+     --call cl_record_card("成品出货：",
+     --sfmt("%1 (smt: %2 fpc: %3 comp: %4)",l_tc_ila26+l_tc_ila27+l_tc_ila28,l_tc_ila26,l_tc_ila27,l_tc_ila28))
+     --call cl_record_card("销退：",
+     --sfmt("%1 (smt: %2 fpc: %3 comp: %4)",l_tc_ila29+l_tc_ila30+l_tc_ila31,l_tc_ila29,l_tc_ila30,l_tc_ila31))
+     --call cl_record_card("累计销退：",
+     --sfmt("%1 (smt: %2 fpc: %3 comp: %4)",l_tc_ila32+l_tc_ila33+l_tc_ila34,l_tc_ila32,l_tc_ila33,l_tc_ila34))
+     --call cl_record_card("折让",sfmt("日：%1 月：%2 ",l_tc_ila35,l_tc_ila36))
+     --call cl_record_card("日出货",sfmt("预测：%1 出货：%2 差异：%3",l_tc_ila37,l_tc_ila38,l_tc_ila38-l_tc_ila37))
 
-     call cl_record_card("日期：", g_date using 'dd-mmm-yyyy')
-     call cl_record_card("本月剩余天数：",
-     iif(
-        month(g_date)==12,
-        mdy(1,1,year(g_date))-g_date-1,
-        mdy(month(g_date)+1,1,year(g_date))-g_date-1
-     ))
-     call cl_record_card("税率：",
-     sfmt("本月：%1 上月：%1",l_tc_ila05,l_tc_ila06))
-     call cl_record_card("成品入库：",
-     sfmt("%1 (smt: %2 fpc: %3 comp: %4)",l_tc_ila07+l_tc_ila08+l_tc_ila09,l_tc_ila07,l_tc_ila08,l_tc_ila09))
-     call cl_record_card("累计成品入库：",
-     sfmt("%1 (smt: %2 fpc: %3 comp: %4)",l_tc_ila10+l_tc_ila11+l_tc_ila12,l_tc_ila10,l_tc_ila11,l_tc_ila12))
-     call cl_record_card("返工入库：",
-     sfmt("%1 (smt: %2 fpc: %3 comp: %4)",l_tc_ila13+l_tc_ila14+l_tc_ila16,l_tc_ila13,l_tc_ila14,l_tc_ila15))
-     call cl_record_card("返工领出：",
-     sfmt("%1 (smt: %2 fpc: %3 comp: %4)",l_tc_ila16+l_tc_ila17+l_tc_ila18,l_tc_ila16,l_tc_ila17,l_tc_ila18))
-     call cl_record_card("累计返工领出：",
-     sfmt("%1 (smt: %2 fpc: %3 comp: %4)",l_tc_ila69+l_tc_ila70+l_tc_ila71,l_tc_ila69,l_tc_ila70,l_tc_ila71))
-     call cl_record_card("入库预测",sfmt("预测：%1 实际：%2 差异: %3",l_tc_ila19,l_tc_ila20,l_tc_ila20-l_tc_ila19))
-     call cl_record_card("累计入库：",
-     sfmt("%1 (smt: %2 fpc: %3 comp: %4)",l_tc_ila21+l_tc_ila22+l_tc_ila23,l_tc_ila21,l_tc_ila22,l_tc_ila23))
-     call cl_record_card("累计入库预测",sfmt("预测：%1 差异: %2",l_tc_ila24,l_tc_ila25))
-     call cl_record_card("成品出货：",
-     sfmt("%1 (smt: %2 fpc: %3 comp: %4)",l_tc_ila26+l_tc_ila27+l_tc_ila28,l_tc_ila26,l_tc_ila27,l_tc_ila28))
-     call cl_record_card("销退：",
-     sfmt("%1 (smt: %2 fpc: %3 comp: %4)",l_tc_ila29+l_tc_ila30+l_tc_ila31,l_tc_ila29,l_tc_ila30,l_tc_ila31))
-     call cl_record_card("累计销退：",
-     sfmt("%1 (smt: %2 fpc: %3 comp: %4)",l_tc_ila32+l_tc_ila33+l_tc_ila34,l_tc_ila32,l_tc_ila33,l_tc_ila34))
-     call cl_record_card("折让",sfmt("日：%1 月：%2 ",l_tc_ila35,l_tc_ila36))
-     call cl_record_card("日出货",sfmt("预测：%1 出货：%2 差异：%3",l_tc_ila37,l_tc_ila38,l_tc_ila38-l_tc_ila37))
+     --call cl_record_card("累计出货：",
+     --sfmt("%1 (smt: %2 fpc: %3 comp: %4 dct: %5)",l_tc_ila39+l_tc_ila40+l_tc_ila41-l_tc_ila42,l_tc_ila39,l_tc_ila40,l_tc_ila41,-l_tc_ila42))
+     --call cl_record_card("材料转卖",sfmt("日：%1 月：%2 ",l_tc_ila43,l_tc_ila44))
+     --call cl_record_card("未签收：",
+     --sfmt("%1 (smt: %2 fpc: %3 comp: %4 ) samples: %5",l_tc_ila45+l_tc_ila46+l_tc_ila47,l_tc_ila45,l_tc_ila46,l_tc_ila47,l_tc_ila48))
+     --call cl_record_card("应收账款：",
+     --sfmt("%1 (smt: %2 fpc: %3 comp: %4 other: %5 dct: %6 )",l_tc_ila49+l_tc_ila50+l_tc_ila51+l_tc_ila52-l_tc_ila53,l_tc_ila49,l_tc_ila50,l_tc_ila51,l_tc_ila52,l_tc_ila53))
+     --call cl_record_card("累计销售",sfmt("预测：%1 差异：%2",l_tc_ila54,l_tc_ila49+l_tc_ila50+l_tc_ila51+l_tc_ila52-l_tc_ila53-l_tc_ila54))
+     --call cl_record_card("库存",sfmt("成品：%1 样品：%2 呆滞：%3 客退：%4",l_tc_ila55,l_tc_ila56,l_tc_ila57,l_tc_ila58))
 
-     call cl_record_card("累计出货：",
-     sfmt("%1 (smt: %2 fpc: %3 comp: %4 dct: %5)",l_tc_ila39+l_tc_ila40+l_tc_ila41-l_tc_ila42,l_tc_ila39,l_tc_ila40,l_tc_ila41,-l_tc_ila42))
-     call cl_record_card("材料转卖",sfmt("日：%1 月：%2 ",l_tc_ila43,l_tc_ila44))
-     call cl_record_card("未签收：",
-     sfmt("%1 (smt: %2 fpc: %3 comp: %4 ) samples: %5",l_tc_ila45+l_tc_ila46+l_tc_ila47,l_tc_ila45,l_tc_ila46,l_tc_ila47,l_tc_ila48))
-     call cl_record_card("应收账款：",
-     sfmt("%1 (smt: %2 fpc: %3 comp: %4 other: %5 dct: %6 )",l_tc_ila49+l_tc_ila50+l_tc_ila51+l_tc_ila52-l_tc_ila53,l_tc_ila49,l_tc_ila50,l_tc_ila51,l_tc_ila52,l_tc_ila53))
-     call cl_record_card("累计销售",sfmt("预测：%1 差异：%2",l_tc_ila54,l_tc_ila49+l_tc_ila50+l_tc_ila51+l_tc_ila52-l_tc_ila53-l_tc_ila54))
-     call cl_record_card("库存",sfmt("成品：%1 样品：%2 呆滞：%3 客退：%4",l_tc_ila55,l_tc_ila56,l_tc_ila57,l_tc_ila58))
 end function
 
 -- 处理单价
@@ -1239,7 +1017,18 @@ private function scimp500_price()
     end if
     call cl_record('info',sfmt('出货关联历史单价，%1~%2 笔数：%3',g_start,g_end,sqlca.sqlerrd[3]))
 
-    call cl_record('info','汇总金额')
+
+    call cl_record('info','折让、材料转卖 单价更新')
+    -- 折让、材料转卖 单价更新
+    update tc_ilf_file set tc_ilf16 = tc_ilf22 * tc_ilf15
+     where tc_ilf01 = g_date and tc_ilf02 = g_version
+       and tc_ilf03 in ('6','8','9')
+    if sqlca.sqlcode then
+        call cl_record('error',sfmt('折让、材料转卖 单价更新，写入失败:%1',sqlca.sqlcode))
+        call cl_err('update tc_ilf_file ',sqlca.sqlcode,0)
+        let g_success = 'N'
+    end if
+    call cl_record('info',sfmt('折让、材料转卖 单价更新，%1~%2 笔数：%3',g_start,g_end,sqlca.sqlerrd[3]))
 
 end function
 
@@ -1309,6 +1098,10 @@ function simp500_unsign(p_yy,p_mm)
     define  l_cnt,p_yy,p_mm     integer
     define  l_start,l_end       date
 
+    if cl_null(g_unsign) or g_unsign = 'N' then
+        return
+    end if
+
     select count(*) into l_cnt from tc_ilj_file
      where tc_ilj01 = p_yy and tc_ilj02 = p_mm
     if l_cnt > 0 then
@@ -1345,7 +1138,7 @@ function simp500_unsign(p_yy,p_mm)
                     tc_ilj11, tc_ilj12, tc_ilj13, tc_ilj19, tc_ilj23)
                 select  ",p_yy,",",p_mm,",ogb04,oga01,ogb03,
                         oga02,null,ogb09,ogb091,ogb092,
-                        ogb12,oga23,oga24,ogb37*oga24,ogb37
+                        ogb12,oga23,oga24,ogb13*oga24,ogb13
                     from oga_file, ogb_file
                 where oga01 = ogb01
                     and oga09 = '2' and ogaconf = 'Y' and ogapost = 'Y'
@@ -1397,7 +1190,7 @@ function simp500_unsign(p_yy,p_mm)
     using (
         select  tc_xmf03,tc_xmf05,tc_xmf08,tc_xmf10,tc_xmf07,tc_xme02 from (
         select  tc_xmf03,tc_xmf05,tc_xmf08,tc_xmf10,tc_xmf07,tc_xme02,
-                dense_rank() over (partition by tc_xmf03 order by tc_xmedate desc, tc_xme00) as rn
+                dense_rank() over (partition by tc_xmf03,tc_xmf05 order by tc_xmedate desc, tc_xme00) as rn
         from tc_xme_file,tc_xmf_file
         where tc_xme00 = tc_xmf00 and tc_xmeconf = 'Y'
         and exists (

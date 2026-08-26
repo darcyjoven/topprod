@@ -10,6 +10,7 @@ GLOBALS "../../../tiptop/config/top.global"
 
 define  g_date          date
 define  g_version       varchar(20)
+define  g_unsign        varchar(1)
 
 MAIN
     OPTIONS
@@ -89,6 +90,7 @@ function cimp500()
 
     let g_bgjob = 'N'
     let g_date = g_today
+    let g_unsign = 'N'
 
     call cimp500_ask()
 
@@ -104,13 +106,13 @@ function cimp500()
 end function
 
 function cimp500_ask()
-    input g_date,g_version without defaults from dat,version
+    input g_date,g_version,g_unsign without defaults from dat,version,unsign
 
         on action controlr
             call cl_show_req_fields()
 
         on action controlf
-            -- 切换语言
+            -- 切换语言$#
             call cl_set_focus_form(ui.Interface.getRootNode()) returning g_fld_name,g_frm_name
             call cl_fldhelp(g_frm_name,g_fld_name,g_lang)
 
@@ -132,7 +134,7 @@ function cimp500_ask()
 end function
 
 function cimp500_process()
-    call scimp500(g_date,g_version,true)
+    call scimp500(g_date,g_version,g_unsign,true)
 end function
 
 -- 自动背景执行
