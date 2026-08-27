@@ -87,7 +87,7 @@ function scimp500(p_date,p_version,p_unsign,p_tran)
 
     -- 预测 收集
     call cl_record_header("4. 预测数据")
-    call scimp500_forcast()
+    call scimp500_forecast()
     if g_tot_success = 'N' then
         goto _err
     end if
@@ -235,9 +235,9 @@ private function scimp500_asft623()
                          tlf06,tlf905,tlf906,tlf62,tlf902,
                          tlf903,tlf904,tlf10
                    from tlf_file
-                  where (( tlf06 = '",g_start,"' and tlf08 > '07:59:59') or
-                         ( tlf06 = '",g_end,"' and tlf08 < '08:00:00') or
-                         ( tlf06 > '",g_start,"' and tlf06 < '",g_end,"' ))
+                  where (( tlf07 = '",g_start,"' and tlf08 > '07:59:59') or
+                         ( tlf07 = '",g_end,"' and tlf08 < '08:00:00') or
+                         ( tlf07 > '",g_start,"' and tlf07 < '",g_end,"' ))
                     and tlf902 in ('P001', 'S009', 'YP003')
                     and tlf13 = 'asft6231'
                     and substr(tlf62, 1, 3) not in ('MKT', 'MSG')"
@@ -252,9 +252,9 @@ private function scimp500_asft623()
                          tlf06,tlf905,tlf906,tlf62,tlf902,
                          tlf903,tlf904,tlf10
                    from tlf_file
-                  where (( tlf06 = '",g_start,"' and tlf08 > '07:59:59') or
-                         ( tlf06 = '",g_end,"' and tlf08 < '08:00:00') or
-                         ( tlf06 > '",g_start,"' and tlf06 < '",g_end,"' ))
+                  where (( tlf07 = '",g_start,"' and tlf08 > '07:59:59') or
+                         ( tlf07 = '",g_end,"' and tlf08 < '08:00:00') or
+                         ( tlf07 > '",g_start,"' and tlf07 < '",g_end,"' ))
                     and tlf902 in ('P001', 'S009', 'YP003')
                     and tlf13 = 'asft6231'
                     and substr(tlf62, 1, 3) in ('MKT', 'MSG')"
@@ -643,7 +643,10 @@ private function scimp500_attend()
 
     insert into tc_ilc_file ( tc_ilc01,tc_ilc02,tc_ilc03,tc_ilc04,tc_ilc05 )
     select g_date,g_version,dat,'all',qty
-      from attend_file where dat between g_start and g_end
+      from attend_file
+     where year(dat) = year(g_date) 
+       and month(dat) = month(g_date)
+       and dat < = g_date
     if sqlca.sqlcode or sqlca.sqlerrd[3] == 0 then
         call cl_record('error',sfmt('出勤人数获取失败 : %1',sqlca.sqlcode))
         call cl_err('upd tc_ilc_file attend qty',sqlca.sqlcode,0)
@@ -653,13 +656,13 @@ private function scimp500_attend()
 end function
 
 -- 预测金额
-private function scimp500_forcast()
+private function scimp500_forecast()
 
     call cl_record('info','预测销售、入库')
 
     insert into tc_ilb_file ( tc_ilb01,tc_ilb02,tc_ilb03,tc_ilb04,tc_ilb05,tc_ilb06 )
     select g_date,g_version,tc_ili03,tc_ili04,tc_ili05,tc_ili06
-      from tc_ili_file where tc_ili01 = year(g_date) and tc_ili01 = month(g_date)
+      from tc_ili_file where tc_ili01 = year(g_date) and tc_ili02 = month(g_date)
 
     if sqlca.sqlcode then
         call cl_record('error',sfmt('预测入库，销售，写入失败:%1',sqlca.sqlcode))
@@ -778,20 +781,20 @@ private function scimp500_sum()
     -- 入库计划 tc_ila19 tc_ila24
     select sum(tc_ilb06) into l_tc_ila.tc_ila25 from tc_ilb_file
      where tc_ilb01 = g_date and tc_ilb02 = g_version
-       and tc_ilb03 = g_date and tc_ilb04 = 'inbound'
+       and tc_ilb03 = g_date and tc_ilb04 = 'product'
 
     select sum(tc_ilb06) into l_tc_ila.tc_ila26 from tc_ilb_file
      where tc_ilb01 = g_date and tc_ilb02 = g_version
-       and tc_ilb04 = 'inbound'
+       and tc_ilb04 = 'product'
 
     -- 销售计划 tc_ila37 tc_ila54
     select sum(tc_ilb06) into l_tc_ila.tc_ila47 from tc_ilb_file
      where tc_ilb01 = g_date and tc_ilb02 = g_version
-       and tc_ilb03 = g_date and tc_ilb04 = 'outbound'
+       and tc_ilb03 = g_date and tc_ilb04 = 'sale'
 
     select sum(tc_ilb06) into l_tc_ila.tc_ila48 from tc_ilb_file
      where tc_ilb01 = g_date and tc_ilb02 = g_version
-       and tc_ilb04 = 'outbound'
+       and tc_ilb04 = 'sale'
 
     let l_tc_ila.tc_ila04 = current hour to second
 
