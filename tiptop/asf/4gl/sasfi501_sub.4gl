@@ -4566,7 +4566,8 @@ RUN " echo '"||l_str||"' >> /u1/topprod/topcust/cws/4gl/asfi514_zhangsba_auto_po
     DEFINE l_sfs06      LIKE sfs_file.sfs06      #MOD-F60094 add
     DEFINE l_ima63      LIKE ima_file.ima63      #MOD-E70009
     DEFINE l_ima63_fac  LIKE ima_file.ima63_fac  #MOD-E70009
-    define l_action_choice  string #darcy add
+    define l_action_choice  string # darcy add
+    define l_bgjob      varchar(1)
 
     DECLARE i501_tlf_c CURSOR FOR
        SELECT tlf13,SUM(tlf10) FROM tlf_file
@@ -4872,30 +4873,34 @@ RUN " echo '"||l_str||"' >> /u1/topprod/topcust/cws/4gl/asfi514_zhangsba_auto_po
     END IF
 #FUN-B80129--end--add----
 
-    #darcy add s---
-    let g_bgjob = 'Y'
-    let l_action_choice = g_action_choice
-    let g_action_choice = "chaoling_unpost"
-    if not cl_chk_auth_chk() then
-    #darcy add e---
     --IF sfa06_t > l_sfa.sfa05 AND g_user<>'tiptop'
     --and g_user <> '31664' and  g_user <> '51678' and g_user <> '37816'   #FUN-B50059 #darcy:2024/01/26 增加宗磊磊权限
     --and g_user <> '31510' and # darcy:2025/06/16 add
-    IF sfa06_t > l_sfa.sfa05 and
     #darcy:2024/08/30 add + sfa062_t
-      ((p_argv1 = '1') OR (p_argv1='2' AND l_sfb.sfb02 NOT MATCHES '[58]')) THEN   #NO:7075 add sfb02 '8'狀態
-      LET l_str='LINE No:',l_sfs.sfs02 USING '####' ,' sel sfa05'
-      CALL cl_err(l_str,'asf-642',1) LET g_success='N' RETURN
-    END IF
-    IF sfa06_t < 0 AND   #FUN-B50059
-      ((p_argv1 = '1') OR (p_argv1='2' AND l_sfb.sfb02 NOT MATCHES '[58]')) THEN   #NO:7075
-      IF l_sfa.sfa05 >= 0 THEN   #MOD-870305 add '='
-         LET l_str='料号: ',l_sfs.sfs04,'   数量:',l_sfs.sfs05,' sfa06<0'    #mod sfs02 to sfs04
-         CALL cl_err(l_str,'asf-533',1) LET g_success='N' RETURN
-      END IF
-    END IF
-    let g_action_choice = l_action_choice # darcy add
-
+    #darcy add s---
+    let l_bgjob = g_bgjob
+    let g_bgjob = 'Y'
+    let l_action_choice = g_action_choice
+    let g_action_choice = "chaoling_unpost"
+    if cl_chk_auto_chk() then
+    #darcy add e---
+        if sfa06_t > l_sfa.sfa05 AND
+        ((p_argv1 = '1') OR (p_argv1='2' AND l_sfb.sfb02 NOT MATCHES '[58]')) THEN   #NO:7075 add sfb02 '8'狀態
+        LET l_str='LINE No:',l_sfs.sfs02 USING '####' ,' sel sfa05'
+        CALL cl_err(l_str,'asf-642',1) LET g_success='N' RETURN
+        END IF
+        IF sfa06_t < 0 AND   #FUN-B50059
+        ((p_argv1 = '1') OR (p_argv1='2' AND l_sfb.sfb02 NOT MATCHES '[58]')) THEN   #NO:7075
+        IF l_sfa.sfa05 >= 0 THEN   #MOD-870305 add '='
+            LET l_str='料号: ',l_sfs.sfs04,'   数量:',l_sfs.sfs05,' sfa06<0'    #mod sfs02 to sfs04
+            CALL cl_err(l_str,'asf-533',1) LET g_success='N' RETURN
+        END IF
+        END IF
+    end if
+    # darcy add s---
+    let g_action_choice  = l_action_choice
+    let g_bgjob =  l_bgjob
+    # darcy add e---
     #FUN-9C0040--begin--add---------------
     IF p_argv1='2' AND l_sfa.sfa11='S' THEN
        LET sfa06_t  = sfa06_t * (-1)
