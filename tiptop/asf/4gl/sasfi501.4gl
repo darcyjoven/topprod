@@ -5794,7 +5794,7 @@ FUNCTION i501_set_no_entry_d(p_cmd)
     END IF
     #darcy:2023/09/26 s---
     # asfi511 不允许修改套数
-    if g_prog == 'asfi511' and ( g_user != '24088' and g_user != '43474' and g_user != '55416') then
+    if g_prog == 'asfi511' and ( g_user != '24088' and g_user != '43474' g_user != '55416' and g_user != '55416') then
       call cl_set_comp_entry("sfq03",false)
     end if
     #darcy:2023/09/26 e---
@@ -11102,7 +11102,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                  IF STATUS OR cl_null(l_sfs32x) THEN LET l_sfs32x = 0 END IF
                  IF g_sfs[l_ac].sfs32>(g_sfs[l_ac].sfa05-g_sfs[l_ac].sfa06-l_sfs32x) THEN
                     LET l_msg=g_sfs[l_ac].sfs04 CLIPPED,' sfs32<>sfa05:'
-                  IF  g_user<>'TIPTOP' THEN
+                  IF  g_user<>'tiptop' THEN
                     CALL cl_err(l_msg CLIPPED ,'asf-351',0) NEXT FIELD sfs32
                   END IF
                 END IF
