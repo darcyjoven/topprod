@@ -14,11 +14,14 @@ define g_version    varchar(20)
 define g_only_today varchar(1)
 define g_tc_ila     record like tc_ila_file.*
 define g_day        dynamic array of daily
+define g_sql        string
 
 function scimq500(p_date,p_version,p_only_today)
     define  p_date          date,
             p_version       varchar(1000),
             p_only_today    varchar(1)
+
+    whenever error continue
 
     let g_success = 'Y'
 
@@ -110,79 +113,79 @@ function scimq500_total()
     define  i,j         integer
 
     let l_total[01].seq01 = 01 let l_total[01].col01 = '入库'          let l_total[01].col02 = null
-    let l_total[02].seq01 = 02 let l_total[02].col01 = '    光板'       let l_total[02].col02 = l_tc_ila.tc_ila08
-    let l_total[03].seq01 = 03 let l_total[03].col01 = '    组装'       let l_total[03].col02 = l_tc_ila.tc_ila07
-    let l_total[04].seq01 = 04 let l_total[04].col01 = '    器件'       let l_total[04].col02 = l_tc_ila.tc_ila09
-    let l_total[05].seq01 = 05 let l_total[05].col01 = '成品入库小计'     let l_total[05].col02 = l_tc_ila.tc_ila07+l_tc_ila.tc_ila08+l_tc_ila.tc_ila09
-    let l_total[06].seq01 = 06 let l_total[06].col01 = '    光板'       let l_total[06].col02 = l_tc_ila.tc_ila11
-    let l_total[07].seq01 = 07 let l_total[07].col01 = '    组装'       let l_total[07].col02 = l_tc_ila.tc_ila10
-    let l_total[08].seq01 = 08 let l_total[08].col01 = '    器件'       let l_total[08].col02 = l_tc_ila.tc_ila12
-    let l_total[09].seq01 = 09 let l_total[09].col01 = '返工入库小计'     let l_total[09].col02 = l_tc_ila.tc_ila10+l_tc_ila.tc_ila11+l_tc_ila.tc_ila12
-    let l_total[10].seq01 = 10 let l_total[10].col01 = '    光板'       let l_total[10].col02 = -l_tc_ila.tc_ila14
-    let l_total[11].seq01 = 11 let l_total[11].col01 = '    组装'       let l_total[11].col02 = -l_tc_ila.tc_ila13
-    let l_total[12].seq01 = 12 let l_total[12].col01 = '    器件'       let l_total[12].col02 = -l_tc_ila.tc_ila15
-    let l_total[13].seq01 = 13 let l_total[13].col01 = '返工领出小计'     let l_total[13].col02 = -(l_tc_ila.tc_ila13+l_tc_ila.tc_ila14+l_tc_ila.tc_ila15)
+    let l_total[02].seq01 = 02 let l_total[02].col01 = '    光板'       let l_total[02].col02 = g_tc_ila.tc_ila08
+    let l_total[03].seq01 = 03 let l_total[03].col01 = '    组装'       let l_total[03].col02 = g_tc_ila.tc_ila07
+    let l_total[04].seq01 = 04 let l_total[04].col01 = '    器件'       let l_total[04].col02 = g_tc_ila.tc_ila09
+    let l_total[05].seq01 = 05 let l_total[05].col01 = '成品入库小计'     let l_total[05].col02 = g_tc_ila.tc_ila07+g_tc_ila.tc_ila08+g_tc_ila.tc_ila09
+    let l_total[06].seq01 = 06 let l_total[06].col01 = '    光板'       let l_total[06].col02 = g_tc_ila.tc_ila11
+    let l_total[07].seq01 = 07 let l_total[07].col01 = '    组装'       let l_total[07].col02 = g_tc_ila.tc_ila10
+    let l_total[08].seq01 = 08 let l_total[08].col01 = '    器件'       let l_total[08].col02 = g_tc_ila.tc_ila12
+    let l_total[09].seq01 = 09 let l_total[09].col01 = '返工入库小计'     let l_total[09].col02 = g_tc_ila.tc_ila10+g_tc_ila.tc_ila11+g_tc_ila.tc_ila12
+    let l_total[10].seq01 = 10 let l_total[10].col01 = '    光板'       let l_total[10].col02 = -g_tc_ila.tc_ila14
+    let l_total[11].seq01 = 11 let l_total[11].col01 = '    组装'       let l_total[11].col02 = -g_tc_ila.tc_ila13
+    let l_total[12].seq01 = 12 let l_total[12].col01 = '    器件'       let l_total[12].col02 = -g_tc_ila.tc_ila15
+    let l_total[13].seq01 = 13 let l_total[13].col01 = '返工领出小计'     let l_total[13].col02 = -(g_tc_ila.tc_ila13+g_tc_ila.tc_ila14+g_tc_ila.tc_ila15)
     let l_total[14].seq01 = 14 let l_total[14].col01 = '入库小计'        let l_total[14].col02 = l_total[05].col02+l_total[09].col02+l_total[13].col02
-    let l_total[15].seq01 = 15 let l_total[15].col01 = '入库计划'        let l_total[15].col02 = l_tc_ila.tc_ila25
+    let l_total[15].seq01 = 15 let l_total[15].col01 = '入库计划'        let l_total[15].col02 = g_tc_ila.tc_ila25
     let l_total[16].seq01 = 16 let l_total[16].col01 = '超额/缺口'       let l_total[16].col02 = l_total[14].col02 - l_total[15].col02
     let l_total[17].seq01 = 17 let l_total[17].col01 = '（库存）'        let l_total[17].col02 = null
-    let l_total[18].seq01 = 18 let l_total[18].col01 = '（成品）'        let l_total[18].col02 = l_tc_ila.tc_ila49
-    let l_total[19].seq01 = 19 let l_total[19].col01 = '（样品）'        let l_total[19].col02 = l_tc_ila.tc_ila50
-    let l_total[20].seq01 = 20 let l_total[20].col01 = '（呆滞）'        let l_total[20].col02 = l_tc_ila.tc_ila51
-    let l_total[21].seq01 = 21 let l_total[21].col01 = '（客退）'        let l_total[21].col02 = l_tc_ila.tc_ila52
-    let l_total[22].seq01 = 22 let l_total[22].col01 = '（库存合计）'     let l_total[22].col02 = l_tc_ila.tc_ila49+l_tc_ila.tc_ila50+l_tc_ila.tc_ila51+l_tc_ila.tc_ila52
-    let l_total[23].seq01 = 23 let l_total[23].col01 = '    光板'       let l_total[23].col02 = l_tc_ila.tc_ila17
-    let l_total[24].seq01 = 24 let l_total[24].col01 = '    组装'       let l_total[24].col02 = l_tc_ila.tc_ila16
-    let l_total[25].seq01 = 25 let l_total[25].col01 = '    器件'       let l_total[25].col02 = l_tc_ila.tc_ila18
-    let l_total[26].seq01 = 26 let l_total[26].col01 = '本月成品入库合计'  let l_total[26].col02 = l_tc_ila.tc_ila16+l_tc_ila.tc_ila17+l_tc_ila.tc_ila18
-    let l_total[27].seq01 = 27 let l_total[27].col01 = '    光板'       let l_total[27].col02 = l_tc_ila.tc_ila20
-    let l_total[28].seq01 = 28 let l_total[28].col01 = '    组装'       let l_total[28].col02 = l_tc_ila.tc_ila19
-    let l_total[29].seq01 = 29 let l_total[29].col01 = '    器件'       let l_total[29].col02 = l_tc_ila.tc_ila21
-    let l_total[30].seq01 = 30 let l_total[30].col01 = '本月返工入库合计' let l_total[30].col02 = l_tc_ila.tc_ila19+l_tc_ila.tc_ila20+l_tc_ila.tc_ila21
-    let l_total[31].seq01 = 31 let l_total[31].col01 = '    光板'       let l_total[31].col02 = -l_tc_ila.tc_ila23
-    let l_total[32].seq01 = 32 let l_total[32].col01 = '    组装'       let l_total[32].col02 = -l_tc_ila.tc_ila22
-    let l_total[33].seq01 = 33 let l_total[33].col01 = '    器件'       let l_total[33].col02 = -l_tc_ila.tc_ila24
-    let l_total[34].seq01 = 34 let l_total[34].col01 = '本月返工领出合计'  let l_total[34].col02 = -(l_tc_ila.tc_ila22+l_tc_ila.tc_ila23+l_tc_ila.tc_ila24)
+    let l_total[18].seq01 = 18 let l_total[18].col01 = '（成品）'        let l_total[18].col02 = g_tc_ila.tc_ila49
+    let l_total[19].seq01 = 19 let l_total[19].col01 = '（样品）'        let l_total[19].col02 = g_tc_ila.tc_ila50
+    let l_total[20].seq01 = 20 let l_total[20].col01 = '（呆滞）'        let l_total[20].col02 = g_tc_ila.tc_ila51
+    let l_total[21].seq01 = 21 let l_total[21].col01 = '（客退）'        let l_total[21].col02 = g_tc_ila.tc_ila52
+    let l_total[22].seq01 = 22 let l_total[22].col01 = '（库存合计）'     let l_total[22].col02 = g_tc_ila.tc_ila49+g_tc_ila.tc_ila50+g_tc_ila.tc_ila51+g_tc_ila.tc_ila52
+    let l_total[23].seq01 = 23 let l_total[23].col01 = '    光板'       let l_total[23].col02 = g_tc_ila.tc_ila17
+    let l_total[24].seq01 = 24 let l_total[24].col01 = '    组装'       let l_total[24].col02 = g_tc_ila.tc_ila16
+    let l_total[25].seq01 = 25 let l_total[25].col01 = '    器件'       let l_total[25].col02 = g_tc_ila.tc_ila18
+    let l_total[26].seq01 = 26 let l_total[26].col01 = '本月成品入库合计'  let l_total[26].col02 = g_tc_ila.tc_ila16+g_tc_ila.tc_ila17+g_tc_ila.tc_ila18
+    let l_total[27].seq01 = 27 let l_total[27].col01 = '    光板'       let l_total[27].col02 = g_tc_ila.tc_ila20
+    let l_total[28].seq01 = 28 let l_total[28].col01 = '    组装'       let l_total[28].col02 = g_tc_ila.tc_ila19
+    let l_total[29].seq01 = 29 let l_total[29].col01 = '    器件'       let l_total[29].col02 = g_tc_ila.tc_ila21
+    let l_total[30].seq01 = 30 let l_total[30].col01 = '本月返工入库合计' let l_total[30].col02 = g_tc_ila.tc_ila19+g_tc_ila.tc_ila20+g_tc_ila.tc_ila21
+    let l_total[31].seq01 = 31 let l_total[31].col01 = '    光板'       let l_total[31].col02 = -g_tc_ila.tc_ila23
+    let l_total[32].seq01 = 32 let l_total[32].col01 = '    组装'       let l_total[32].col02 = -g_tc_ila.tc_ila22
+    let l_total[33].seq01 = 33 let l_total[33].col01 = '    器件'       let l_total[33].col02 = -g_tc_ila.tc_ila24
+    let l_total[34].seq01 = 34 let l_total[34].col01 = '本月返工领出合计'  let l_total[34].col02 = -(g_tc_ila.tc_ila22+g_tc_ila.tc_ila23+g_tc_ila.tc_ila24)
     let l_total[35].seq01 = 35 let l_total[35].col01 = '本月入库合计'     let l_total[35].col02 = l_total[26].col02+l_total[30].col02+l_total[34].col02
-    let l_total[36].seq01 = 36 let l_total[36].col01 = '本月入库计划'     let l_total[36].col02 = l_tc_ila.tc_ila26
+    let l_total[36].seq01 = 36 let l_total[36].col01 = '本月入库计划'     let l_total[36].col02 = g_tc_ila.tc_ila26
     let l_total[37].seq01 = 37 let l_total[37].col01 = '超额/缺口'       let l_total[37].col02 = l_total[35].col02-l_total[36].col02
 
     let l_total[01].col03 = '出库'                let l_total[01].col04 = null
-    let l_total[02].col03 = '    光板'            let l_total[02].col04 = l_tc_ila.tc_ila28
-    let l_total[03].col03 = '    组装'            let l_total[03].col04 = l_tc_ila.tc_ila27
-    let l_total[04].col03 = '    器件'            let l_total[04].col04 = l_tc_ila.tc_ila29
-    let l_total[05].col03 = '成品出货小计'          let l_total[05].col04 = l_tc_ila.tc_ila27+l_tc_ila.tc_ila28+l_tc_ila.tc_ila29
-    let l_total[06].col03 = '    光板'            let l_total[06].col04 = -l_tc_ila.tc_ila31
-    let l_total[07].col03 = '    组装'            let l_total[07].col04 = -l_tc_ila.tc_ila30
-    let l_total[08].col03 = '    器件'            let l_total[08].col04 = -l_tc_ila.tc_ila32
-    let l_total[09].col03 = '成品销退小计'         let l_total[09].col04 = -(l_tc_ila.tc_ila30+l_tc_ila.tc_ila31+l_tc_ila.tc_ila32)
-    let l_total[10].col03 = '折扣小计'             let l_total[10].col04 = -l_tc_ila.tc_ila33
+    let l_total[02].col03 = '    光板'            let l_total[02].col04 = g_tc_ila.tc_ila28
+    let l_total[03].col03 = '    组装'            let l_total[03].col04 = g_tc_ila.tc_ila27
+    let l_total[04].col03 = '    器件'            let l_total[04].col04 = g_tc_ila.tc_ila29
+    let l_total[05].col03 = '成品出货小计'          let l_total[05].col04 = g_tc_ila.tc_ila27+g_tc_ila.tc_ila28+g_tc_ila.tc_ila29
+    let l_total[06].col03 = '    光板'            let l_total[06].col04 = -g_tc_ila.tc_ila31
+    let l_total[07].col03 = '    组装'            let l_total[07].col04 = -g_tc_ila.tc_ila30
+    let l_total[08].col03 = '    器件'            let l_total[08].col04 = -g_tc_ila.tc_ila32
+    let l_total[09].col03 = '成品销退小计'         let l_total[09].col04 = -(g_tc_ila.tc_ila30+g_tc_ila.tc_ila31+g_tc_ila.tc_ila32)
+    let l_total[10].col03 = '折扣小计'             let l_total[10].col04 = -g_tc_ila.tc_ila33
     let l_total[11].col03 = '出货小计'             let l_total[11].col04 = l_total[05].col04+l_total[09].col04+l_total[10].col04
-    let l_total[12].col03 = '出货计划'             let l_total[12].col04 = l_tc_ila.tc_ila47
+    let l_total[12].col03 = '出货计划'             let l_total[12].col04 = g_tc_ila.tc_ila47
     let l_total[13].col03 = '超额/缺口'            let l_total[13].col04 = l_total[11].col04-l_total[12].col04
-    let l_total[14].col03 = '    光板'            let l_total[14].col04 = -l_tc_ila.tc_ila39
-    let l_total[15].col03 = '    组装'            let l_total[15].col04 = -l_tc_ila.tc_ila38
-    let l_total[16].col03 = '    器件'            let l_total[16].col04 = -l_tc_ila.tc_ila40
-    let l_total[17].col03 = '本月成品销退总计'      let l_total[17].col04 = -(l_tc_ila.tc_ila38+l_tc_ila.tc_ila39+l_tc_ila.tc_ila40)
-    let l_total[18].col03 = '    光板'            let l_total[18].col04 = l_tc_ila.tc_ila36-l_tc_ila.tc_ila39
-    let l_total[19].col03 = '    组装'            let l_total[19].col04 = l_tc_ila.tc_ila35-l_tc_ila.tc_ila38
-    let l_total[20].col03 = '    器件'            let l_total[20].col04 = l_tc_ila.tc_ila37-l_tc_ila.tc_ila40
-    let l_total[21].col03 = '    折扣'            let l_total[21].col04 = -l_tc_ila.tc_ila41
+    let l_total[14].col03 = '    光板'            let l_total[14].col04 = -g_tc_ila.tc_ila39
+    let l_total[15].col03 = '    组装'            let l_total[15].col04 = -g_tc_ila.tc_ila38
+    let l_total[16].col03 = '    器件'            let l_total[16].col04 = -g_tc_ila.tc_ila40
+    let l_total[17].col03 = '本月成品销退总计'      let l_total[17].col04 = -(g_tc_ila.tc_ila38+g_tc_ila.tc_ila39+g_tc_ila.tc_ila40)
+    let l_total[18].col03 = '    光板'            let l_total[18].col04 = g_tc_ila.tc_ila36-g_tc_ila.tc_ila39
+    let l_total[19].col03 = '    组装'            let l_total[19].col04 = g_tc_ila.tc_ila35-g_tc_ila.tc_ila38
+    let l_total[20].col03 = '    器件'            let l_total[20].col04 = g_tc_ila.tc_ila37-g_tc_ila.tc_ila40
+    let l_total[21].col03 = '    折扣'            let l_total[21].col04 = -g_tc_ila.tc_ila41
     let l_total[22].col03 = '本月出货总计'          let l_total[22].col04 = l_total[18].col04+l_total[19].col04+l_total[20].col04+l_total[21].col04
-    let l_total[23].col03 = '材料转卖小计'          let l_total[23].col04 = l_tc_ila.tc_ila34
-    let l_total[24].col03 = '本月材料转卖总计'       let l_total[24].col04 = l_tc_ila.tc_ila42
-    let l_total[25].col03 = '    光板'            let l_total[25].col04 = l_tc_ila.tc_ila44
-    let l_total[26].col03 = '    组装'            let l_total[26].col04 = l_tc_ila.tc_ila43
-    let l_total[27].col03 = '    器件'            let l_total[27].col04 = l_tc_ila.tc_ila45
-    let l_total[28].col03 = '上月未签收总计'         let l_total[28].col04 = l_tc_ila.tc_ila43+l_tc_ila.tc_ila44+l_tc_ila.tc_ila45
-    let l_total[29].col03 = '（样品未签收）'         let l_total[29].col04 = l_tc_ila.tc_ila46
-    let l_total[30].col03 = '    光板'            let l_total[30].col04 = l_total[18].col04 + l_tc_ila.tc_ila44
-    let l_total[31].col03 = '    组装'            let l_total[31].col04 = l_total[19].col04 + l_tc_ila.tc_ila43
-    let l_total[32].col03 = '    器件'            let l_total[32].col04 = l_total[20].col04 + l_tc_ila.tc_ila45
-    let l_total[33].col03 = '    （材料转卖）其它'   let l_total[33].col04 = l_tc_ila.tc_ila42
-    let l_total[34].col03 = '    折扣'            let l_total[34].col04 = -l_tc_ila.tc_ila41
+    let l_total[23].col03 = '材料转卖小计'          let l_total[23].col04 = g_tc_ila.tc_ila34
+    let l_total[24].col03 = '本月材料转卖总计'       let l_total[24].col04 = g_tc_ila.tc_ila42
+    let l_total[25].col03 = '    光板'            let l_total[25].col04 = g_tc_ila.tc_ila44
+    let l_total[26].col03 = '    组装'            let l_total[26].col04 = g_tc_ila.tc_ila43
+    let l_total[27].col03 = '    器件'            let l_total[27].col04 = g_tc_ila.tc_ila45
+    let l_total[28].col03 = '上月未签收总计'         let l_total[28].col04 = g_tc_ila.tc_ila43+g_tc_ila.tc_ila44+g_tc_ila.tc_ila45
+    let l_total[29].col03 = '（样品未签收）'         let l_total[29].col04 = g_tc_ila.tc_ila46
+    let l_total[30].col03 = '    光板'            let l_total[30].col04 = l_total[18].col04 + g_tc_ila.tc_ila44
+    let l_total[31].col03 = '    组装'            let l_total[31].col04 = l_total[19].col04 + g_tc_ila.tc_ila43
+    let l_total[32].col03 = '    器件'            let l_total[32].col04 = l_total[20].col04 + g_tc_ila.tc_ila45
+    let l_total[33].col03 = '    （材料转卖）其它'   let l_total[33].col04 = g_tc_ila.tc_ila42
+    let l_total[34].col03 = '    折扣'            let l_total[34].col04 = -g_tc_ila.tc_ila41
     let l_total[35].col03 = '本月收入合计'           let l_total[35].col04 = l_total[30].col04+l_total[31].col04+l_total[32].col04+l_total[33].col04+l_total[34].col04
-    let l_total[36].col03 = '本月收入计划'           let l_total[36].col04 = l_tc_ila.tc_ila48
+    let l_total[36].col03 = '本月收入计划'           let l_total[36].col04 = g_tc_ila.tc_ila48
     let l_total[37].col03 = '超额/缺口'             let l_total[37].col04 = l_total[35].col04 - l_total[36].col04
 
     for i = 1 to l_total.getLength()
@@ -198,8 +201,8 @@ end function
 
 -- 日汇总，人均
 function scimq500_day()
-    define  i,j         integer
-    define  l_yy,l_mm   integer
+    define  i,j,l_cnt       integer
+    define  l_yy,l_mm       integer
     define  l_product,l_fpc,l_smt,l_all,l_sale  varchar(20)
     define  l_sql,l_pivot        string
     define  l_chr1,l_chr2        varchar(20)
@@ -216,13 +219,13 @@ function scimq500_day()
                    PIVOT (
                      sum(%2)
                      FOR %3 IN (
-                        1 AS "1",  2 AS "2",  3 AS "3",  4 AS "4",  5 AS "5",
-                        6 AS "6",  7 AS "7",  8 AS "8",  9 AS "9", 10 AS "10",
-                       11 AS "11",12 AS "12",13 AS "13",14 AS "14",15 AS "15",
-                       16 AS "16",17 AS "17",18 AS "18",19 AS "19",20 AS "20",
-                       21 AS "21",22 AS "22",23 AS "23",24 AS "24",25 AS "25",
-                       26 AS "26",27 AS "27",28 AS "28",29 AS "29",30 AS "30",
-                       31 AS "31"
+                        1 AS day_1,  2 AS day_2,  3 AS day_3,  4 AS day_4,  5 AS day_5,
+                        6 AS day_6,  7 AS day_7,  8 AS day_8,  9 AS day_9, 10 AS day_10,
+                       11 AS day_11,12 AS day_12,13 AS day_13,14 AS day_14,15 AS day_15,
+                       16 AS day_16,17 AS day_17,18 AS day_18,19 AS day_19,20 AS day_20,
+                       21 AS day_21,22 AS day_22,23 AS day_23,24 AS day_24,25 AS day_25,
+                       26 AS day_26,27 AS day_27,28 AS day_28,29 AS day_29,30 AS day_30,
+                       31 AS day_31
                      )
                    )'
 
@@ -241,7 +244,7 @@ function scimq500_day()
                   where tc_ilb01 = ? and tc_ilb02 = ?
                     and tc_ilb04 = ? and tc_ilb05 = ?"
     prepare scimq500_day_forecasts from g_sql
-    
+
     -- 每日入库金额
     -- params : 版本、入库类型、日期、日期、量产否 (R/S)
     let l_sql = "select EXTRACT(DAY FROM tc_ilf01) AS day_no ,tc_ilf13*tc_ilf16 amt
@@ -265,8 +268,8 @@ function scimq500_day()
 
     -- 返工领出
     -- (tc_ilf03 - 3.5)*2 的意思就是 3为负数，4为正数
-    # params: 版本 日期 日期 
-    let l_sql = "select EXTRACT(DAY FROM tc_ilf01) AS day_no,sum(tc_ilf13*tc_ilf16 * (tc_ilf03 - 3.5) *2 ) amt
+    # params: 版本 日期 日期
+    let l_sql = "select EXTRACT(DAY FROM tc_ilf01) AS day_no,tc_ilf13*tc_ilf16 * (tc_ilf03 - 3.5) *2  amt
                    from tc_ilf_file
                   where  tc_ilf02 = ?
                     and tc_ilf03 in ('3','4')
@@ -341,7 +344,7 @@ function scimq500_day()
         call cl_err('scimq500_day_fns',sqlca.sqlcode,0)
         return false
     end if
-    
+
     # FPC累计差异
     let g_day[03].seq02 = 03 let g_day[03].col05 = 'FPC累计差异'
     if not scimq500_diff(03) then
@@ -465,7 +468,7 @@ function scimq500_day()
 
     # 当日人均产出（万元）
     let g_day[15].seq02 = 15 let g_day[15].col05 = '当日人均产出（万元）'
-    let l_cnt = 0 
+    let l_cnt = 0
     if not cl_null(g_day[13].col07) and not cl_null(g_day[14].col07) then let g_day[15].col07 = g_day[13].col07 / g_day[14].col07 let l_cnt = l_cnt + 1 let g_day[15].col06 = g_day[15].col06 + g_day[15].col07 end if
     if not cl_null(g_day[13].col08) and not cl_null(g_day[14].col08) then let g_day[15].col08 = g_day[13].col08 / g_day[14].col08 let l_cnt = l_cnt + 1 let g_day[15].col06 = g_day[15].col06 + g_day[15].col08 end if
     if not cl_null(g_day[13].col09) and not cl_null(g_day[14].col09) then let g_day[15].col09 = g_day[13].col09 / g_day[14].col09 let l_cnt = l_cnt + 1 let g_day[15].col06 = g_day[15].col06 + g_day[15].col09 end if
@@ -514,10 +517,11 @@ function scimq500_day()
             return false
         end if
     end for
+    return true
 end function
 
 # 处理累计差异逻辑
-function scimq500_diff(p_a)
+function scimq500_diff(p_ac)
     define  p_ac        integer
 
     if p_ac < 3 then
@@ -650,17 +654,17 @@ function scimq500_subtotal()
                         tc_ila07, tc_ila08, tc_ila09, tc_ila07 + tc_ila08 + tc_ila09 pi,
                         tc_ila10, tc_ila11, tc_ila12, tc_ila10 + tc_ila11 + tc_ila12 pri,
                         -tc_ila13, -tc_ila14, -tc_ila15, -tc_ila13 - tc_ila14 - tc_ila15 pro,
-                        tc_ila07 + tc_ila10 + tc_ila13 pis, tc_ila08 + tc_ila11 + tc_ila14 pif, tc_ila09 + tc_ila12 + tc_ila15 pic, 
+                        tc_ila07 + tc_ila10 + tc_ila13 pis, tc_ila08 + tc_ila11 + tc_ila14 pif, tc_ila09 + tc_ila12 + tc_ila15 pic,
                         tc_ila07 + tc_ila10 - tc_ila13 + tc_ila08 + tc_ila11 - tc_ila14 + tc_ila09 + tc_ila12 - tc_ila15 pia,
                         tc_ila27, tc_ila28, tc_ila29, tc_ila27 + tc_ila28 + tc_ila29 so,
                         -tc_ila30, -tc_ila31, -tc_ila32, -tc_ila30 - tc_ila31 - tc_ila32 sr,
                         tc_ila34, -tc_ila33,
-                        tc_ila27 - tc_ila30 sf, tc_ila28 - tc_ila31 ssmt, tc_ila29 - tc_ila32 sc, 
+                        tc_ila27 - tc_ila30 sf, tc_ila28 - tc_ila31 ssmt, tc_ila29 - tc_ila32 sc,
                         tc_ila27 - tc_ila30 + tc_ila28 - tc_ila31 + tc_ila29 - tc_ila32 + tc_ila34 - tc_ila33 sall,
                         tc_ila49, tc_ila50, tc_ila51, tc_ila52, tc_ila49 + tc_ila50 + tc_ila51 + tc_ila52 as stockall,
                         tc_ila25
                  from tc_ila_file
-                where to_char(tc_ila01,'yymm') = to_char(?,'yymm') 
+                where to_char(tc_ila01,'yymm') = to_char(?,'yymm')
                   and tc_ila02 = ? and tc_ila01 <= ?
                 order by tc_ila01 "
     prepare scimq500_subtotal_p from g_sql
@@ -669,9 +673,9 @@ function scimq500_subtotal()
         call cl_err('scimq500_subtotal_p',sqlca.sqlcode,0)
         return false
     end if
-    
+
     select max(seq03) into i from cimq500_subtotal
-    if cl_null(i) then 
+    if cl_null(i) then
         let i = 1
     else
         let i = i + 1
@@ -731,7 +735,7 @@ function scimq500_product()
                 left join tc_ile_file on tc_ile01 = tc_ilf01 and tc_ile02 = tc_ilf02
                     and tc_ilf20 = tc_ile03
                 where tc_ilf02 = ?
-                  and tc_ilf03 in (1, 2, 3, 4) 
+                  and tc_ilf03 in (1, 2, 3, 4)
                   and to_char(tc_ilf01,'yymm') = to_char(?,'yymm')
                   and tc_ilf01 <= ? "
     if g_only_today then
@@ -757,7 +761,7 @@ function scimq500_rework()
      from tc_ilf_file
      left join ima_file on ima01 = tc_ilf05
     where tc_ilf02 = ?
-      and tc_ilf03 in (1, 2, 3, 4) 
+      and tc_ilf03 in (1, 2, 3, 4)
       and to_char(tc_ilf01,'yymm') = to_char(?,'yymm')
       and tc_ilf01 <= ? "
     if g_only_today then
@@ -770,7 +774,7 @@ function scimq500_rework()
         return false
     end if
     return true
-    
+
 end function
 # 出货
 function scimq500_sale()
@@ -803,5 +807,132 @@ function scimq500_sale()
         call cl_err('ins scimq500_sale_p',sqlca.sqlcode,0)
         return false
     end if
+    return true
+end function
+
+
+-- 打印部分
+function scimq500_output(p_date,p_version)
+    define l_id     varchar(10)
+    define l_cnt    integer
+    define  p_date   date,
+            p_version varchar(20)
+    define l_tc_ila  record like tc_ila_file.*
+    define l_pro     report
+    define l_file,l_cmd,l_json,l_sql   string
+    define l_chn    base.Channel 
+
+    select * into l_tc_ila.* from tc_ila_file
+    where tc_ila01 = p_date and tc_ila02 = p_version
+    if sqlca.sqlcode then
+        call cl_err(sfmt('无此资料,%1-%2',p_date,p_version),"!",0)
+        return false
+    end if 
+
+    initialize l_pro.* to null
+    
+
+    let l_pro.date = p_date using 'DD-MMM-YYYY'
+    let l_pro.time = current year to second
+    # 剩余天数
+    if month(p_date) = 12 then
+        let l_pro.remaining = mdy(1,1,year(p_date)+1)-p_date
+    else
+        let l_pro.remaining = mdy(month(p_date)+1,1,year(p_date))-p_date
+    end if
+    # 汇率
+    let l_pro.curr_rate = l_tc_ila.tc_ila05
+    let l_pro.previous_rate = l_tc_ila.tc_ila06
+    # 上月
+    let l_pro.last_month = (mdy(month(p_date),1,year(p_date)) -1 ) using 'MMM'
+    # 入库
+    let l_pro.product.normal.day.smt = l_tc_ila.tc_ila07 / 10000
+    let l_pro.product.normal.day.fpc = l_tc_ila.tc_ila08 / 10000
+    let l_pro.product.normal.day.comp = l_tc_ila.tc_ila09 / 10000
+
+    let l_pro.product.rework_in.day.smt = l_tc_ila.tc_ila10 / 10000
+    let l_pro.product.rework_in.day.fpc = l_tc_ila.tc_ila11 / 10000
+    let l_pro.product.rework_in.day.comp = l_tc_ila.tc_ila12 / 10000
+
+    let l_pro.product.rework_out.day.smt = l_tc_ila.tc_ila13 / 10000
+    let l_pro.product.rework_out.day.fpc = l_tc_ila.tc_ila14 / 10000
+    let l_pro.product.rework_out.day.comp = l_tc_ila.tc_ila15 / 10000
+
+    let l_pro.product.normal.month.smt = l_tc_ila.tc_ila16 / 10000
+    let l_pro.product.normal.month.fpc = l_tc_ila.tc_ila17 / 10000
+    let l_pro.product.normal.month.comp = l_tc_ila.tc_ila18 / 10000
+
+    let l_pro.product.rework_in.month.smt = l_tc_ila.tc_ila19 / 10000
+    let l_pro.product.rework_in.month.fpc = l_tc_ila.tc_ila20 / 10000
+    let l_pro.product.rework_in.month.comp = l_tc_ila.tc_ila21 / 10000
+
+    let l_pro.product.rework_out.month.smt = l_tc_ila.tc_ila22 / 10000
+    let l_pro.product.rework_out.month.fpc = l_tc_ila.tc_ila23 / 10000
+    let l_pro.product.rework_out.month.comp = l_tc_ila.tc_ila24 / 10000
+
+    # 计划金额
+    let l_pro.forecast.sale.day = l_tc_ila.tc_ila25 / 10000
+    let l_pro.forecast.sale.month   = l_tc_ila.tc_ila26 / 10000
+    let l_pro.forecast.product.day  = l_tc_ila.tc_ila47 / 10000
+    let l_pro.forecast.product.month    = l_tc_ila.tc_ila48 / 10000
+
+    # 出货
+    let l_pro.sale.normal.day.smt = l_tc_ila.tc_ila27 / 10000
+    let l_pro.sale.normal.day.fpc = l_tc_ila.tc_ila28 / 10000
+    let l_pro.sale.normal.day.comp = l_tc_ila.tc_ila29 / 10000
+
+    let l_pro.sale.return.day.smt = l_tc_ila.tc_ila30 / 10000
+    let l_pro.sale.return.day.fpc = l_tc_ila.tc_ila31 / 10000
+    let l_pro.sale.return.day.comp = l_tc_ila.tc_ila32 / 10000
+
+    let l_pro.sale.normal.month.smt = l_tc_ila.tc_ila35 / 10000
+    let l_pro.sale.normal.month.fpc = l_tc_ila.tc_ila36 / 10000
+    let l_pro.sale.normal.month.comp = l_tc_ila.tc_ila37 / 10000
+    
+    let l_pro.sale.return.month.smt = l_tc_ila.tc_ila38 / 10000
+    let l_pro.sale.return.month.fpc = l_tc_ila.tc_ila39 / 10000
+    let l_pro.sale.return.month.comp = l_tc_ila.tc_ila40 / 10000
+
+    let l_pro.sale.discount.day = l_tc_ila.tc_ila33 / 10000
+    let l_pro.sale.discount.month = l_tc_ila.tc_ila41 / 10000
+
+    let l_pro.sale.resell.day = l_tc_ila.tc_ila34 / 10000
+    let l_pro.sale.resell.month = l_tc_ila.tc_ila42 / 10000
+
+    let l_pro.sale.unsign.smt = l_tc_ila.tc_ila43 / 10000
+    let l_pro.sale.unsign.fpc = l_tc_ila.tc_ila44 / 10000
+    let l_pro.sale.unsign.comp = l_tc_ila.tc_ila45 / 10000
+    let l_pro.sale.unsign.sample = l_tc_ila.tc_ila46 / 10000
+
+    let l_pro.stock.normal = l_tc_ila.tc_ila49 / 10000
+    let l_pro.stock.sample = l_tc_ila.tc_ila50 / 10000
+    let l_pro.stock.inaction = l_tc_ila.tc_ila51 / 10000
+    let l_pro.stock.return = l_tc_ila.tc_ila52 / 10000
+
+    call cl_json(base.typeinfo.create(l_pro)) returning l_json
+
+    let l_id = cl_short_id()
+    let l_file = "/u1/usr/tiptop/typst/projects/cimr500/data.",l_id,".json"
+
+    run "rm "||l_file
+
+    let l_chn = base.Channel.create()
+    call l_chn.openFile(l_file,"a")
+    CALL l_chn.writeLine(l_json)
+    call l_chn.close()
+
+    let l_file = "/u1/usr/tiptop/typst"
+    
+    let l_cmd = "%1/typst compile ",
+                "--root %1 ",
+                "--font-path %1/fonts ",
+                "--font-path %1/core/fonts ",
+                "%1/projects/cimr500/main.typ ",
+                "/u1/out/cimr500.%2.pdf ",
+                "--input data=\"data.%2.json\""
+    let l_cmd = sfmt(l_cmd,l_file,l_id)
+    run l_cmd
+
+    call cl_download_by_explorer(sfmt("/u1/out/cimr500.%1.pdf",l_id))
     return true
 end function

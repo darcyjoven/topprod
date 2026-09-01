@@ -473,11 +473,11 @@ private function scimp500_axmt620()
                     tc_ilf01,tc_ilf02,tc_ilf03,tc_ilf04,tc_ilf05,
                     tc_ilf06,tc_ilf07,tc_ilf08,tc_ilf09,tc_ilf10,
                     tc_ilf11,tc_ilf12,tc_ilf13,tc_ilf14,tc_ilf15,
-                    tc_ilf16,tc_ilf20,tc_ilf21,tc_ilf22 )",
+                    tc_ilf20,tc_ilf21,tc_ilf22 )",
                 " select '",g_date,"','",g_version,"','5','',ogb04,
                          oga02, oga01, ogb03,'',ogb09,
                          ogb091, ogb092, ogb12,'', oga24,
-                         0,'-2',oga23,ogb13
+                         '-2',oga23,ogb13
                     from oga_file, ogb_file
                    where oga01 = ogb01 and oga09 = '2' and ogaconf = 'Y' and ogapost = 'Y'
                      and instr(ogb04, '.') = 0
@@ -496,11 +496,11 @@ private function scimp500_axmt620()
                     tc_ilf01,tc_ilf02,tc_ilf03,tc_ilf04,tc_ilf05,
                     tc_ilf06,tc_ilf07,tc_ilf08,tc_ilf09,tc_ilf10,
                     tc_ilf11,tc_ilf12,tc_ilf13,tc_ilf14,tc_ilf15,
-                    tc_ilf16,tc_ilf20,tc_ilf21,tc_ilf22 )",
+                    tc_ilf20,tc_ilf21,tc_ilf22 )",
                 " select '",g_date,"','",g_version,"','6','',ogb04,
                          oga02, oga01, ogb03,'',ogb09,
                          ogb091, ogb092, ogb12,'', oga24,
-                         0,'-2',oga23,ogb13
+                         '-2',oga23,ogb13
                     from oga_file, ogb_file
                    where oga01 = ogb01 and oga09 = '2' and ogaconf = 'Y' and ogapost = 'Y'
                      and instr(ogb04, '.') > 0
@@ -527,11 +527,11 @@ private function scimp500_axmt700()
                     tc_ilf01,tc_ilf02,tc_ilf03,tc_ilf04,tc_ilf05,
                     tc_ilf06,tc_ilf07,tc_ilf08,tc_ilf09,tc_ilf10,
                     tc_ilf11,tc_ilf12,tc_ilf13,tc_ilf14,tc_ilf15,
-                    tc_ilf16,tc_ilf20,tc_ilf21,tc_ilf22 )",
+                    tc_ilf20,tc_ilf21,tc_ilf22 )",
                 " select '",g_date,"','",g_version,"','7','',ohb04,
                          oha02, oha01, ohb03,'',ohb09,
                          ohb091, ohb092, ohb12,'', oha24,
-                         0,'-2',oha23,ohb13
+                         '-2',oha23,ohb13
                     from oha_file, ohb_file
                    where oha01 = ohb01 and ohaconf = 'Y' and ohapost = 'Y'
                      and oha02 between '",g_start,"' and '",g_end - 1,"'
@@ -968,7 +968,7 @@ private function scimp500_price()
             tc_ilf17 = nvl(tc_ilf17 , tc_ile10 * tc_ilf15 ),
             tc_ilf18 = nvl(tc_ilf18 , tc_ile11 * tc_ilf15 ),
             tc_ilf19 = nvl(tc_ilf19 , tc_ile12 * tc_ilf15 ),
-            tc_ilf20 = nvl(tc_ilf20 , tc_ile03 )"
+            tc_ilf20 = nvl(tc_ile03 ,tc_ilf20)"
     prepare scimp500_price_p5 from l_sql
     execute scimp500_price_p5
     if sqlca.sqlcode then
