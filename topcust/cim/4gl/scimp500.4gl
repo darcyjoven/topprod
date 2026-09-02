@@ -7,6 +7,7 @@
 DATABASE ds
 
 GLOBALS "../../../tiptop/config/top.global"
+GLOBALS "../4gl/cimq500.global"
 
 define  g_date          date            -- 日期
 define  g_version       varchar(10)     -- 版本
@@ -15,11 +16,12 @@ define  g_tot_success   varchar(1)
 define  g_unsign        varchar(1)
 
 -- 入口函数
-function scimp500(p_date,p_version,p_unsign,p_tran)
+function scimp500(p_date,p_version,p_unsign,p_tran,p_send)
     define  p_date      date,
             p_version   varchar(10),
             p_tran      boolean,
-            p_unsign    varchar(1)
+            p_unsign    varchar(1),
+            p_send      boolean
     define  l_curr      varchar(10)
     define  l_str       string
     define  l_channel   base.Channel
@@ -105,21 +107,18 @@ function scimp500(p_date,p_version,p_unsign,p_tran)
 
     call cl_record_card("结束时间：",current year to second)
 
-    call cl_record_html('error,warn,info') returning l_str
-    run 'rm /u1/out/darcy.html'
-    LET l_channel = base.Channel.create()
-    CALL l_channel.openFile('/u1/out/darcy.html',"a" )
-    CALL l_channel.writeLine(l_str)
-    CALL l_channel.close()
-    call cl_download_by_explorer("darcy.html")
-
     label _err:
     if not p_tran then
         if g_tot_success then
             commit work
         else
             rollback work
+            return
         end if
+    end if
+    if p_send then
+        call cl_record_html('error,warn,info') returning l_str
+        call scimp500_mail("darcy.li@forewin-sz.com.cn",l_str)
     end if
 end function
 
@@ -297,7 +296,7 @@ private function scimp500_asft623()
         call cl_err('ins tc_ilf_file scimp500_t623_p1',sqlca.sqlcode,0)
         let g_success = 'N'
     end if
-    call cl_record('info',sfmt('成品入库，%1~%2 笔数：%3',g_start,g_end,sqlca.sqlerrd[3]))
+    call cl_record('info',sfmt('成品入库，%1 笔数：%2',g_date,sqlca.sqlerrd[3]))
 
     -- 1.2 返工入库
     call cl_record('info','返工入库')
@@ -307,7 +306,7 @@ private function scimp500_asft623()
         call cl_err('ins tc_ilf_file scimp500_t623_p2',sqlca.sqlcode,0)
         let g_success = 'N'
     end if
-    call cl_record('info',sfmt('返工入库，%1~%2 笔数：%3',g_start,g_end,sqlca.sqlerrd[3]))
+    call cl_record('info',sfmt('返工入库，%1 笔数：%2',g_date,sqlca.sqlerrd[3]))
 
     -- 1.3 返工领出
     call cl_record('info','返工领出')
@@ -317,7 +316,7 @@ private function scimp500_asft623()
         call cl_err('ins tc_ilf_file scimp500_t623_p3',sqlca.sqlcode,0)
         let g_success = 'N'
     end if
-    call cl_record('info',sfmt('返工领出，%1~%2 笔数：%3',g_start,g_end,sqlca.sqlerrd[3]))
+    call cl_record('info',sfmt('返工领出，%1 笔数：%2',g_date,sqlca.sqlerrd[3]))
 
     return
     -- 暂时不核对差异
@@ -489,7 +488,7 @@ private function scimp500_axmt620()
         call cl_err('ins tc_ilf_file scimp500_t620_p1',sqlca.sqlcode,0)
         let g_success = 'N'
     end if
-    call cl_record('info',sfmt('成品出货，%1~%2 笔数：%3',g_start,g_end,sqlca.sqlerrd[3]))
+    call cl_record('info',sfmt('成品出货，%1 笔数：%2',g_date,sqlca.sqlerrd[3]))
 
     -- 材料转卖
     let l_sql = "insert into tc_ilf_file (
@@ -512,7 +511,7 @@ private function scimp500_axmt620()
         call cl_err('ins tc_ilf_file scimp500_t620_p2',sqlca.sqlcode,0)
         let g_success = 'N'
     end if
-    call cl_record('info',sfmt('材料转卖，%1~%2 笔数：%3',g_start,g_end,sqlca.sqlerrd[3]))
+    call cl_record('info',sfmt('材料转卖，%1 笔数：%2',g_date,sqlca.sqlerrd[3]))
 
 end function
 
@@ -544,7 +543,7 @@ private function scimp500_axmt700()
         call cl_err('ins tc_ilf_file scimp500_t700_p1',sqlca.sqlcode,0)
         let g_success = 'N'
     end if
-    call cl_record('info',sfmt('成品销退，%1~%2 笔数：%3',g_start,g_end,sqlca.sqlerrd[3]))
+    call cl_record('info',sfmt('成品销退，%1 笔数：%2',g_date,sqlca.sqlerrd[3]))
 
     -- 材料销退 start end
     let l_sql = "insert into tc_ilf_file (
@@ -568,7 +567,7 @@ private function scimp500_axmt700()
         call cl_err('ins tc_ilf_file scimp500_t700_p2',sqlca.sqlcode,0)
         let g_success = 'N'
     end if
-    call cl_record('info',sfmt('材料销退，%1~%2 笔数：%3',g_start,g_end,sqlca.sqlerrd[3]))
+    call cl_record('info',sfmt('材料销退，%1 笔数：%2', g_date,sqlca.sqlerrd[3]))
 
     -- 折让 start end
     let l_sql = "insert into tc_ilf_file (
@@ -591,7 +590,7 @@ private function scimp500_axmt700()
         call cl_err('ins tc_ilf_file scimp500_t700_p3',sqlca.sqlcode,0)
         let g_success = 'N'
     end if
-    call cl_record('info',sfmt('折让金额，%1~%2 笔数：%3',g_start,g_end,sqlca.sqlerrd[3]))
+    call cl_record('info',sfmt('折让金额，%1 笔数：%2', g_date,sqlca.sqlerrd[3]))
 
 end function
 
@@ -624,7 +623,7 @@ private function scimp500_stock()
         call cl_err('ins tc_ilg_file scimp500_stock_p1',sqlca.sqlcode,0)
         let g_success = 'N'
     end if
-    call cl_record('info',sfmt('库存，%1~%2 笔数：%3',g_start,g_end,sqlca.sqlerrd[3]))
+    call cl_record('info',sfmt('库存，%1 笔数：%2', g_date,sqlca.sqlerrd[3]))
 
     -- 更新库存计算日期
     let l_curr = current hour to second
@@ -639,20 +638,23 @@ end function
 
 -- 出勤人数
 private function scimp500_attend()
+    define  l_sql   string
     call cl_record('info','出勤人数')
 
+    let l_sql = "
     insert into tc_ilc_file ( tc_ilc01,tc_ilc02,tc_ilc03,tc_ilc04,tc_ilc05 )
-    select g_date,g_version,dat,'all',qty
+    select ?,'",g_version,"',trunc(dat),'all',qty
       from attend_file
-     where year(dat) = year(g_date) 
-       and month(dat) = month(g_date)
-       and dat < = g_date
+     where to_char(dat,'yymm') = to_char(?,'yymm')  
+       and dat < = ? "
+    prepare scimp500_attend from l_sql
+    execute scimp500_attend using g_date,g_date,g_date
     if sqlca.sqlcode or sqlca.sqlerrd[3] == 0 then
         call cl_record('error',sfmt('出勤人数获取失败 : %1',sqlca.sqlcode))
         call cl_err('upd tc_ilc_file attend qty',sqlca.sqlcode,0)
         let g_success = 'N'
     end if
-    call cl_record('info',sfmt('出勤人数获取失败，%1~%2 笔数：%3',g_start,g_end,sqlca.sqlerrd[3]))
+    call cl_record('info',sfmt('出勤人数获取失败，%1 笔数：%2', g_date,sqlca.sqlerrd[3]))
 end function
 
 -- 预测金额
@@ -669,7 +671,7 @@ private function scimp500_forecast()
         call cl_err('ins tc_ilb_file ',sqlca.sqlcode,0)
         let g_success = 'N'
     end if
-    call cl_record('info',sfmt('预测入库，销售，%1~%2 笔数：%3',g_start,g_end,sqlca.sqlerrd[3]))
+    call cl_record('info',sfmt('预测入库，销售，%1 笔数：%2', g_date,sqlca.sqlerrd[3]))
 
 end function
 
@@ -866,7 +868,7 @@ private function scimp500_price()
         call cl_err('ins tc_ile_file scimp500_price_p1 ',sqlca.sqlcode,0)
         let g_success = 'N'
     end if
-    call cl_record('info',sfmt('汇率归集，%1~%2 笔数：%3',g_start,g_end,sqlca.sqlerrd[3]))
+    call cl_record('info',sfmt('汇率归集，%1 笔数：%2', g_date,sqlca.sqlerrd[3]))
 
     -- 将本期用到的所有料号（入库、出货、库存）最新单价取到单价表中
     call cl_record('info','料号单价归集')
@@ -893,7 +895,7 @@ private function scimp500_price()
         call cl_err('ins tc_ile_file scimp500_price_p2',sqlca.sqlcode,0)
         let g_success = 'N'
     end if
-    call cl_record('info',sfmt('料号单价归集，%1~%2 笔数：%3',g_start,g_end,sqlca.sqlerrd[3]))
+    call cl_record('info',sfmt('料号单价归集，%1 笔数：%2', g_date,sqlca.sqlerrd[3]))
 
 
     -- 入库 取最新单价
@@ -923,7 +925,7 @@ private function scimp500_price()
         call cl_err('merge tc_ilf_file scimp500_price_p3',sqlca.sqlcode,0)
         let g_success = 'N'
     end if
-    call cl_record('info',sfmt('入库取最新单价，%1~%2 笔数：%3',g_start,g_end,sqlca.sqlerrd[3]))
+    call cl_record('info',sfmt('入库取最新单价，%1 笔数：%2', g_date,sqlca.sqlerrd[3]))
 
     -- 库存取最新单价
     call cl_record('info','库存取最新单价')
@@ -952,7 +954,7 @@ private function scimp500_price()
         call cl_err('merge tc_ilf_file scimp500_price_p4',sqlca.sqlcode,0)
         let g_success = 'N'
     end if
-    call cl_record('info',sfmt('库存取最新单价，%1~%2 笔数：%3',g_start,g_end,sqlca.sqlerrd[3]))
+    call cl_record('info',sfmt('库存取最新单价，%1 笔数：%2', g_date,sqlca.sqlerrd[3]))
 
     -- 出货根据原币匹配单价，匹配不到的时候，到xmf_file 中匹配，并插入到价格表中
     call cl_record('info','出货关联最新单价')
@@ -976,7 +978,7 @@ private function scimp500_price()
         call cl_err('merge tc_ilf_file scimp500_price_p5',sqlca.sqlcode,0)
         let g_success = 'N'
     end if
-    call cl_record('info',sfmt('出货关联最新单价，%1~%2 笔数：%3',g_start,g_end,sqlca.sqlerrd[3]))
+    call cl_record('info',sfmt('出货关联最新单价，%1 笔数：%2', g_date,sqlca.sqlerrd[3]))
 
     -- 关联历史单价
     -- 填入历史单价
@@ -1009,7 +1011,7 @@ private function scimp500_price()
         call cl_err('merge tc_ile_file scimp500_price_p6',sqlca.sqlcode,0)
         let g_success = 'N'
     end if
-    call cl_record('info',sfmt('出货填入历史单价，%1~%2 笔数：%3',g_start,g_end,sqlca.sqlerrd[3]))
+    call cl_record('info',sfmt('出货填入历史单价，%1 笔数：%2', g_date,sqlca.sqlerrd[3]))
 
     -- 再次关联一次单价
     execute scimp500_price_p5
@@ -1018,7 +1020,7 @@ private function scimp500_price()
         call cl_err('merge tc_ilf_file scimp500_price_p5',sqlca.sqlcode,0)
         let g_success = 'N'
     end if
-    call cl_record('info',sfmt('出货关联历史单价，%1~%2 笔数：%3',g_start,g_end,sqlca.sqlerrd[3]))
+    call cl_record('info',sfmt('出货关联历史单价，%1 笔数：%2', g_date,sqlca.sqlerrd[3]))
 
 
     call cl_record('info','折让、材料转卖 单价更新')
@@ -1031,7 +1033,7 @@ private function scimp500_price()
         call cl_err('update tc_ilf_file ',sqlca.sqlcode,0)
         let g_success = 'N'
     end if
-    call cl_record('info',sfmt('折让、材料转卖 单价更新，%1~%2 笔数：%3',g_start,g_end,sqlca.sqlerrd[3]))
+    call cl_record('info',sfmt('折让、材料转卖 单价更新，%1 笔数：%2', g_date,sqlca.sqlerrd[3]))
 
 end function
 
@@ -1132,7 +1134,7 @@ function simp500_unsign(p_yy,p_mm)
         call cl_err('del tc_ilj_file ',sqlca.sqlcode,0)
         let g_success = 'N'
     end if
-    call cl_record('info',sfmt('删除上月未签收，%1~%2 笔数：%3',g_start,g_end,sqlca.sqlerrd[3]))
+    call cl_record('info',sfmt('删除上月未签收，%1~ 笔数：%2', g_date,sqlca.sqlerrd[3]))
 
     call cl_record('info','上月未签收写入')
     let l_sql = "insert into tc_ilj_file
@@ -1161,7 +1163,7 @@ function simp500_unsign(p_yy,p_mm)
         call cl_err('ins tc_ilj_file scimp500_sign_p1',sqlca.sqlcode,0)
         let g_success = 'N'
     end if
-    call cl_record('info',sfmt('上月未签收写入，%1~%2 笔数：%3',g_start,g_end,sqlca.sqlerrd[3]))
+    call cl_record('info',sfmt('上月未签收写入，%1 笔数：%2', g_date,sqlca.sqlerrd[3]))
 
     -- 汇率、单价
     call cl_record('info','上月未签收单价、汇率匹配')
@@ -1181,7 +1183,7 @@ function simp500_unsign(p_yy,p_mm)
         call cl_err('upd tc_ilj_file scimp500_sign_p2',sqlca.sqlcode,0)
         let g_success = 'N'
     end if
-    call cl_record('info',sfmt('更新最新汇率，%1~%2 笔数：%3',g_start,g_end,sqlca.sqlerrd[3]))
+    call cl_record('info',sfmt('更新最新汇率，%1 笔数：%2', g_date,sqlca.sqlerrd[3]))
 
     update tc_ilj_file set tc_ilj18 = 1
      where tc_ilj01 = p_yy and tc_ilj02 = p_mm
@@ -1215,6 +1217,35 @@ function simp500_unsign(p_yy,p_mm)
         call cl_err('upd tc_ilj_file scimp500_sign_p3',sqlca.sqlcode,0)
         let g_success = 'N'
     end if
-    call cl_record('info',sfmt('更新新单价，%1~%2 笔数：%3',g_start,g_end,sqlca.sqlerrd[3]))
+    call cl_record('info',sfmt('更新新单价，%1 笔数：%2', g_date,sqlca.sqlerrd[3]))
 
+end function
+
+
+function scimp500_mail(p_recipient,p_body)
+    define p_recipient,p_body       string
+    define l_ok varchar(1)
+    
+    call scimq500(g_date,g_version,"N")
+    call scimq500_b_fill()
+    
+    call cs_mail_send(
+        sfmt("日进出报表 %1，运行时间 %2",g_date using "yy-mm-dd",current year to second),
+        p_body,
+        p_recipient,
+        sfmt("%1;%2",
+            scimq500_output(g_date,g_version),
+            cl_expexcel10_nogui(
+                '/u1/usr/tiptop/typst/projects/cimr500/interface.xml',
+                's_total',base.typeinfo.create(g_total),
+                's_day',base.typeinfo.create(g_daily),
+                's_subtotal',base.typeinfo.create(g_subtotal),
+                's_product',base.typeinfo.create(g_product),
+                's_rework',base.typeinfo.create(g_rework),
+                's_sale',base.typeinfo.create(g_sale),
+                's_unsign',base.typeinfo.create(g_unsign),
+                '',null,'',null,'',null)
+        )) returning l_Ok
+
+    message "发送结果"||l_ok
 end function
