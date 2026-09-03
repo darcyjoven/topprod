@@ -126,7 +126,7 @@ end function
 
 -- html 邮件
 
-function cl_record_html(p_print_status)
+function cl_record_html_old(p_print_status)
     define  p_print_status      string
     define sr   record
         idx     integer,
@@ -277,7 +277,7 @@ function cl_record_html(p_print_status)
                 let l_col = l_col,sfmt('<li style="color: #795548;">警告：%1</li>\n',sr.con)
             when 'info'
                 let l_info = l_info + 1
-                let l_col = l_col,sfmt('<li>第三步：关上冰箱门</li>\n',sr.con)
+                let l_col = l_col,sfmt('<li>%1</li>\n',sr.con)
         end case
 
     end foreach
@@ -318,14 +318,14 @@ function cl_record_html(p_print_status)
     if g_print_status matches '*warn*' then
         let l_sum = l_sum ,
                     sfmt('<div style="flex: 1; min-width: 130px; padding: 14px 16px; border-radius: 4px; text-align: center; font-size: 13px; background-color: #fff8e1; border: 1px solid #ffecb3;">
-                                <span style="font-size: 28px; font-weight: 700; display: block; margin-bottom: 2px; color: #f57f17;">2</span>
+                                <span style="font-size: 28px; font-weight: 700; display: block; margin-bottom: 2px; color: #f57f17;">%1</span>
                                 <span style="color: #666666; font-size: 12px;">⚠ 警告</span>
                           </div>\n',l_warn)
     end if
     if g_print_status matches '*error*' then
         let l_sum = l_sum ,
                     sfmt('<div style="flex: 1; min-width: 130px; padding: 14px 16px; border-radius: 4px; text-align: center; font-size: 13px; background-color: #ffebee; border: 1px solid #ffcdd2;">
-                            <span style="font-size: 28px; font-weight: 700; display: block; margin-bottom: 2px; color: #c62828;">1</span>
+                            <span style="font-size: 28px; font-weight: 700; display: block; margin-bottom: 2px; color: #c62828;">%1</span>
                             <span style="color: #666666; font-size: 12px;">✕ 错误</span>
                           </div>\n',l_error)
     end if
@@ -370,5 +370,143 @@ function cl_record_html(p_print_status)
     <title>%1</title>
 </head>\n',g_title),l_html,'</html>'
 
+    return l_html
+end function
+
+
+
+function cl_record_html(p_print_status)
+    define sr   record
+        idx     integer,
+        nxt     integer,
+        sts     varchar(20),
+        lvl     integer,
+        con     varchar(2000),
+        tim     datetime year to fraction,
+        err     integer,
+        info    integer,
+        warn    integer
+    end record
+    define  p_print_status  varchar(1000)
+    define  l_tok           base.StringTokenizer
+    define  l_html,l_where,l_sql          string
+    define  l_k,l_v         varchar(1000)
+    define  l_con           varchar(2000),
+            l_tim           datetime year to fraction
+    define  i,j,k           integer
+    define  l_headrow,l_detailrow,l_header,l_detail string
+
+    if cl_null(p_print_status) then
+        let p_print_status = 'error,warn'
+    end if
+
+    -- 下面是日志内容
+    LET l_tok = base.StringTokenizer.create(p_print_status,",")
+    -- 至少要显示 error
+    let l_where = "('error'"
+    while l_tok.hasMoreTokens()
+        let l_where = l_where,",'",l_tok.nextToken(),"'"
+    end while
+    let l_where = l_where,")"
+
+    let l_sql = "select k, v
+                    from (select idx, con as k,
+                                 lag(con, 1, '') OVER (order by idx desc) v, rownum as r
+                            from record_temp
+                            where sts = 'card')
+                    where mod(r, 2) = 1 order by idx"
+    prepare cl_record_card from l_sql
+    declare cl_record_card_c cursor for cl_record_card
+
+    let l_sql = "select a.idx,a.nxt,a.con,a.tim,
+                        (select count(*)
+                           from record_temp b
+                          where b.idx between a.idx and a.nxt and b.sts ='error' ) err_cnt,
+                        (select count(*)
+                           from record_temp b
+                          where b.idx between a.idx and a.nxt and b.sts ='warn' ) warn_cnt,
+                        (select count(*)
+                           from record_temp b
+                          where b.idx between a.idx and a.nxt and b.sts ='info' ) info_cnt
+                  from (select lag(idx, 1, 999999) OVER (order by idx desc) nxt,
+                               idx, con, tim from record_temp where sts = 'header' ) a
+                 order by a.idx"
+    prepare cl_record_header from l_sql
+    declare cl_record_header_c cursor for cl_record_header
+
+    let l_sql = "select con,tim
+                   from record_temp
+                  where sts in ",l_where,"
+                    and sts not in ('card', 'header')
+                    and idx between ? and ?
+                  order by idx "
+    prepare cl_record_detail from l_sql
+    declare cl_record_detail_c cursor for cl_record_detail
+
+
+    let l_html = "<!DOCTYPE html>
+    <html lang=\"zh-CN\">
+    <head>
+      <meta charset=\"UTF-8\">
+      <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+      <title>%title%</title>
+    </head>
+    <body>
+      <style>
+        table {
+          border-collapse: collapse;
+          border: 1px solid black;
+        }
+        table th,
+        table td {
+          border: 1px solid black;
+          padding: 4px 8px;
+        }
+      </style>
+      <table>"
+
+    let l_headrow = "<tr><th colspan=\"2\">%1</th></tr>"
+    let l_detailrow = "<tr><td colspan=\"2\">%1</td></tr>"
+    let l_header = "<tr><th>%1</th><th>%2</th></tr>"
+    let l_detail = "<tr><td>%1</td><td>%2</td></tr>"
+
+    -- card
+    foreach cl_record_card_c into l_k,l_v
+        if sqlca.sqlcode then
+            call cl_err('cl_record_card_c',sqlca.sqlcode,1)
+            exit foreach
+        end if
+        let l_html = l_html,sfmt(l_header,l_k,l_v)
+    end foreach
+    -- header
+    let i = i
+    foreach cl_record_header_c into sr.idx,sr.nxt,sr.con,sr.tim,sr.err,sr.warn,sr.info
+        if sqlca.sqlcode then
+            call cl_err('cl_record_header_c',sqlca.sqlcode,1)
+            exit foreach
+        end if
+        if sr.err > 0 then
+            let sr.con = sr.con , sfmt(" 错误：%1",sr.err)
+        end if
+        if sr.warn > 0 then
+            let sr.con = sr.con , sfmt(" 警告：%1",sr.warn)
+        end if
+        if sr.err + sr.warn = 0 then
+            let sr.con = sr.con , " 运行成功"
+        end if
+        let l_html = l_html,sfmt(l_headrow,sfmt("%1. %2",i,sr.con))
+        let i = i + 1
+        -- detail
+        let j = 1
+        foreach cl_record_detail_c using sr.idx,sr.nxt into l_con,l_tim
+            if sqlca.sqlcode then
+                call cl_err('cl_record_detail_c',sqlca.sqlcode,1)
+                exit foreach
+            end if
+            let l_html = l_html,sfmt(l_detailrow,sfmt("%1. %2",j,l_con))
+            let j = j + 1
+        end foreach
+    end foreach
+    let l_html = l_html,"</table></body></html>"
     return l_html
 end function

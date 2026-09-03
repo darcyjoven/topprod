@@ -428,4 +428,38 @@ globals
             product project2
         end record
     end record
+
+    define  g_total         dynamic array of total
+    define  g_daily           dynamic array of daily
+    define  g_subtotal      dynamic array of subtotal
+    define  g_product       dynamic array of product
+    define  g_rework        dynamic array of rework
+    define  g_sale          dynamic array of sale
+    define  g_unsign        dynamic array of unsign
+
+    define  g_total_display         dynamic array of total_display
+    define  g_day_display           dynamic array of daily_display
+    define  g_subtotal_display      dynamic array of subtotal_display
+    define  g_product_display       dynamic array of product_display
+    define  g_rework_display        dynamic array of rework_display
+    define  g_sale_display          dynamic array of sale_display
+    define  g_unsign_display        dynamic array of unsign_display
+
+    define  g_sql,g_msg                                             string
+    define  g_no_ask        boolean
+    define  l_ac,g_cnt,g_rec_b,g_row_count,g_curs_index,g_jump,
+            g_rec_total,g_rec_day,g_rec_subtotal,g_rec_product,
+            g_rec_rework,g_rec_sale,g_rec_unsign      integer
+
+    define  tm  record
+        tc_ila01    like tc_ila_file.tc_ila01,
+        tc_ila02    like tc_ila_file.tc_ila02,
+        only_today  varchar(1)
+    end record
+
+    define  g_tc_ila01      like tc_ila_file.tc_ila01,
+            g_tc_ila02      like tc_ila_file.tc_ila02,
+            g_only_today    varchar(1)
+
+    define  g_sum_all,g_sum_smt,g_sum_fpc,g_sum_comp,g_sum_other,g_sum_discount     decimal(15,3)
 end globals

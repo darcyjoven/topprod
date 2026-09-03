@@ -11,11 +11,16 @@ GLOBALS "../../../tiptop/config/top.global"
 define  g_date          date
 define  g_version       varchar(20)
 define  g_unsign        varchar(1)
+define  g_send          boolean
 
 MAIN
-    OPTIONS
-        INPUT NO WRAP
+    OPTIONS                               #改變一些系統預設值
+        FORM LINE       FIRST + 2,         #畫面開始的位置
+        MESSAGE LINE    LAST,              #訊息顯示的位置
+        PROMPT LINE     LAST,              #提示訊息的位置
+        INPUT NO WRAP                      #輸入的方式: 不打轉
     DEFER INTERRUPT
+
 
     IF (NOT cl_user()) THEN
         EXIT PROGRAM
@@ -31,6 +36,7 @@ MAIN
     let g_bgjob = arg_val(1)
     let g_date = arg_val(2)
     let g_version = arg_val(3)
+    let g_send = arg_val(4) == 'Y'
 
     call cimp500_menu()
     CALL  cl_used(g_prog,g_time,2) RETURNING g_time
@@ -106,7 +112,7 @@ function cimp500()
 end function
 
 function cimp500_ask()
-    input g_date,g_version,g_unsign without defaults from dat,version,unsign
+    input g_date,g_version,g_unsign,g_send without defaults from dat,version,unsign,send
 
         on action controlr
             call cl_show_req_fields()
@@ -134,7 +140,7 @@ function cimp500_ask()
 end function
 
 function cimp500_process()
-    call scimp500(g_date,g_version,g_unsign,true)
+    call scimp500(g_date,g_version,g_unsign,true,g_send)
 end function
 
 -- 自动背景执行
