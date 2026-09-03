@@ -9,39 +9,7 @@ DATABASE ds
 GLOBALS "../../../tiptop/config/top.global"
 globals "../4gl/cimq500.global"
 
-define  g_total         dynamic array of total
-define  g_day           dynamic array of daily
-define  g_subtotal      dynamic array of subtotal
-define  g_product       dynamic array of product
-define  g_rework        dynamic array of rework
-define  g_sale          dynamic array of sale
-define  g_unsign        dynamic array of unsign
-
-define  g_total_display         dynamic array of total_display
-define  g_day_display           dynamic array of daily_display
-define  g_subtotal_display      dynamic array of subtotal_display
-define  g_product_display       dynamic array of product_display
-define  g_rework_display        dynamic array of rework_display
-define  g_sale_display          dynamic array of sale_display
-define  g_unsign_display        dynamic array of unsign_display
-
-define  g_sql,g_msg                                             string
-define  g_no_ask        boolean
-define  l_ac,g_cnt,g_rec_b,g_row_count,g_curs_index,g_jump,
-        g_rec_total,g_rec_day,g_rec_subtotal,g_rec_product,
-        g_rec_rework,g_rec_sale,g_rec_unsign      integer
-
-define  tm  record
-    tc_ila01    like tc_ila_file.tc_ila01,
-    tc_ila02    like tc_ila_file.tc_ila02,
-    only_today  varchar(1)
-end record
-
-define  g_tc_ila01      like tc_ila_file.tc_ila01,
-        g_tc_ila02      like tc_ila_file.tc_ila02,
-        g_only_today    varchar(1)
-
-define  g_sum_all,g_sum_smt,g_sum_fpc,g_sum_comp,g_sum_other,g_sum_discount     decimal(15,3)
+define  g_curr      integer
 
 main
     options
@@ -85,16 +53,17 @@ function cimq500_menu()
                 if cl_chk_act_auth() then
                     call cimq500_q()
                 end if
-            when 'exceltoexcel'
+            when 'exporttoexcel'
                 if cl_chk_act_auth() then
                     call cl_download_by_explorer(cl_expexcel10(
                         's_total',base.typeinfo.create(g_total),
-                        's_day',base.typeinfo.create(g_day),
+                        's_day',base.typeinfo.create(g_daily),
                         's_subtotal',base.typeinfo.create(g_subtotal),
                         's_product',base.typeinfo.create(g_product),
                         's_rework',base.typeinfo.create(g_rework),
                         's_sale',base.typeinfo.create(g_sale),
-                        '',null,'',null,'',null,'',null))
+                        's_unsign',base.typeinfo.create(g_unsign),
+                        '',null,'',null,'',null))
                 end if
             when 'help'
                 call cl_show_help()
@@ -149,7 +118,7 @@ end function
 function cimq500_q()
 
     call g_total.clear()
-    call g_day.clear()
+    call g_daily.clear()
     call g_subtotal.clear()
     call g_product.clear()
     call g_rework.clear()
@@ -163,6 +132,10 @@ function cimq500_q()
     call g_rework_display.clear()
     call g_sale_display.clear()
     call g_unsign_display.clear()
+
+    let g_curs_index = 0
+    let g_row_count = 0
+    CALL cl_navigator_setting(g_curs_index,g_row_count)
 
     message '查询中……'
     if cl_null(tm.tc_ila01) and cl_null(tm.tc_ila02) then
@@ -263,178 +236,21 @@ end function
 
 function cimq500_show()
     display g_tc_ila01,g_tc_ila02,g_only_today to dat,version,only_today
-    call cimq500_b_fill()
+    call scimq500_b_fill()
+   
 end function
 
-function cimq500_b_fill()
-    define  i       integer
-    define  l_yy,l_mm   integer
-    call scimq500(g_tc_ila01,g_tc_ila02,g_only_today)
-
-    -- 总览
-    let g_sql = "select seq01,col01,col02,col03,col04 from cimq500_total",
-                " order by seq01"
-    prepare cimq500_pretotal from g_sql
-    declare cimq500_total_cur cursor for cimq500_pretotal
-
-    let i = 1
-    foreach cimq500_total_cur into g_total[i].*
-        if sqlca.sqlcode then
-            call cl_err('cimq500_total_cur',sqlca.sqlcode,1)
-            exit foreach
-        end if
-        let i = i + 1
-    end foreach
-    call g_total.deleteElement(i)
-    let g_rec_total = i - 1
-
-    -- 日汇总
-    let g_sql = "select seq02,col05,col06,col07,col08,
-                        col09,col10,col11,col12,col13,
-                        col14,col15,col16,col17,col18,
-                        col19,col20,col21,col22,col23,
-                        col24,col25,col26,col27,col28,
-                        col29,col30,col31,col32,col33,
-                        col34,col35,col36,col37",
-                "  from cimq500_day order by seq02"
-    prepare cimq500_preday from g_sql
-    declare cimq500_day_cur cursor for cimq500_preday
-    let i = 1
-    foreach cimq500_day_cur into g_day[i].*
-        if sqlca.sqlcode then
-            call cl_err('cimq500_day_cur',sqlca.sqlcode,1)
-            exit foreach
-        end if
-        let i = i + 1
-    end foreach
-    call g_day.deleteElement(i)
-    let g_rec_day = i - 1
-
-    -- 分类汇总
-    let g_sql = "select seq03,dat01,col38,col39,col40,
-                        col41,col42,col43,col44,col45,
-                        col46,col47,col48,col49,col50,
-                        col51,col52,col53,col54,col55,
-                        col56,col57,col58,col59,col60,
-                        col61,col62,col63,col64,col65,
-                        col66,col67,col68,col69,col70,
-                        col71,col72,col73,col74",
-                "  from cimq500_subtotal order by seq03"
-    prepare cimq500_presubtotal from g_sql
-    declare cimq500_subtotal_cur cursor for cimq500_presubtotal
-
-    let i = 1
-    foreach cimq500_subtotal_cur into g_subtotal[i].*
-        if sqlca.sqlcode then
-            call cl_err('cimq500_subtotal_cur',sqlca.sqlcode,1)
-            exit foreach
-        end if
-        let i = i + 1
-    end foreach
-    call g_subtotal.deleteElement(i)
-    let g_rec_subtotal = i - 1
-
-    -- 入库
-    let g_sql = "select dat02,dat03,typ01,item01,ima02,
-                        ima021,doc01,doc02,seq04,loc01,
-                        bin01,lot01,qty01,doc03,seq05,
-                        cey01,price01,fpc01,smt01,comp01,
-                        rate01,price02,fpc02,smt02,comp02,
-                        amt01",
-                "  from cimq500_product order by dat02,doc01,doc02,seq04"
-    prepare cimq500_preproduct from g_sql
-    declare cimq500_product_cur cursor for cimq500_preproduct
-
-    let i = 1
-    foreach cimq500_product_cur into g_product[i].*
-        if sqlca.sqlcode then
-            call cl_err('cimq500_product_cur',sqlca.sqlcode,1)
-            exit foreach
-        end if
-        let i = i + 1
-    end foreach
-    call g_product.deleteElement(i)
-    let g_rec_product = i - 1
-
-    -- 返工领出
-    let g_sql = "select seq06,dat04,item02,ima0201,ima02102,
-                        loc02,qty02,price03,amt02,reason ",
-                "  from cimq500_rework order by seq06"
-    prepare cimq500_prerework from g_sql
-    declare cimq500_rework_cur cursor for cimq500_prerework
-
-    let i = 1
-    foreach cimq500_rework_cur into g_rework[i].*
-        if sqlca.sqlcode then
-            call cl_err('cimq500_rework_cur',sqlca.sqlcode,1)
-            exit foreach
-        end if
-        let i = i + 1
-    end foreach
-    call g_rework.deleteElement(i)
-    let g_rec_rework = i - 1
-
-    -- 出货
-    let g_sql = "select dat05,dat06,typ02,item03,ima0202,
-                        ima02102,doc04,seq07,loc03,bin03,
-                        lot03,qty03,doc05,seq08,cey02,
-                        price04,fpc03,smt03,comp03,rate02,
-                        price05,fpc04,smt04,comp04,amt03",
-                "  from cimq500_sale order by dat05,item03,doc04,seq07"
-    prepare cimq500_presale from g_sql
-    declare cimq500_sale_cur cursor for cimq500_presale
-
-    let i = 1
-    foreach cimq500_sale_cur into g_sale[i].*
-        if sqlca.sqlcode then
-            call cl_err('cimq500_sale_cur',sqlca.sqlcode,1)
-            exit foreach
-        end if
-        let i = i + 1
-    end foreach
-    call g_sale.deleteElement(i)
-    let g_rec_sale = i - 1
-
-    -- 未签收
-    let g_sql = "select yy,mm,dat,item,ima02,
-                        ima021,doc,seq,loc,bin,
-                        lot,qty,cey,price_source,rate_old,
-                        price_old,rate_new,price_new,fpc,smt,
-                        comp,amt
-                   from cimq500_unsign
-                  where yy = ? and mm = ?"
-    prepare cimq500_preunsign from g_sql
-    declare cimq500_unsign_cur cursor for cimq500_preunsign
-
-    # 上月
-    if month(g_tc_ila01) = 1 then
-        let l_yy = year(g_tc_ila01) - 1
-        let l_mm = 12
-    else
-        let l_yy = year(g_tc_ila01)
-        let l_mm = month(g_tc_ila01) - 1
-    end if
-    let i = 1
-    foreach cimq500_unsign_cur using l_yy,l_mm into g_unsign[i].*
-        if sqlca.sqlcode then
-            call cl_err('cimq500_unsign_cur',sqlca.sqlcode,1)
-            exit foreach
-        end if
-        let i = i + 1
-    end foreach
-    call g_unsign.deleteElement(i)
-    let g_rec_unsign = i - 1
-end function
-
+ 
 function cimq500_bp()
+         
     call cl_set_act_visible("accept,cancel", false)
-    dialog
+    dialog ATTRIBUTES (UNBUFFERED)
         display array g_total to s_total.* attribute(count=g_rec_total)
             before row
                 let l_ac = arr_curr()
                 call cl_show_fld_cont()
         end display
-        display array g_day to s_day.* attribute(count=g_rec_day)
+        display array g_daily to s_day.* attribute(count=g_rec_day)
             before row
                 let l_ac = arr_curr()
                 call cl_show_fld_cont()
@@ -465,6 +281,9 @@ function cimq500_bp()
                 call cl_show_fld_cont()
         end display
 
+        before dialog
+            call cl_navigator_setting(g_curs_index, g_row_count)
+
         on action query
             let g_action_choice = 'query'
             exit dialog
@@ -472,6 +291,12 @@ function cimq500_bp()
         on action exporttoexcel
             let g_action_choice = 'exporttoexcel'
             exit dialog
+        
+        on action next call cimq500_fetch("N")
+        on action previous call cimq500_fetch("P")
+        on action last call cimq500_fetch("L")
+        on action first call cimq500_fetch("F")
+        on action jump call cimq500_fetch("/")
 
         on action locale
             call cl_dynamic_locale()
@@ -500,6 +325,21 @@ function cimq500_bp()
         on action about
             call cl_about()
 
+        on action total
+            let g_curr = 1
+        on action day
+            let g_curr = 2
+        on action subtotal
+            let g_curr = 3
+        on action product
+            let g_curr = 4
+        on action rework
+            let g_curr = 5
+        on action sale
+            let g_curr = 6
+        on action unsign
+            let g_curr = 7
+
         on action help
             call cl_show_help()
 
@@ -511,7 +351,21 @@ end function
 
 -- 这里只进行浏览器下载部分，文件生成交给scimq500 处理
 function cimq500_output()
-    if scimq500_output(g_tc_ila01,g_tc_ila02) then
-        message 'OK'
-    end if
+    define l_pdf,l_excel  string
+    define l_id     varchar(20)
+
+    call scimq500_output(g_tc_ila01,g_tc_ila02) returning l_pdf
+
+    call cl_download_by_explorer(cl_expexcel10_nogui(
+                        '/u1/usr/tiptop/typst/projects/cimr500/interface.xml',
+                        's_total',base.typeinfo.create(g_total),
+                        's_day',base.typeinfo.create(g_daily),
+                        's_subtotal',base.typeinfo.create(g_subtotal),
+                        's_product',base.typeinfo.create(g_product),
+                        's_rework',base.typeinfo.create(g_rework),
+                        's_sale',base.typeinfo.create(g_sale),
+                        's_unsign',base.typeinfo.create(g_unsign),
+                        '',null,'',null,'',null))
+
+    call cl_download_by_explorer(l_pdf)
 end function

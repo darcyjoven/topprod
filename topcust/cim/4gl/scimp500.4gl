@@ -66,7 +66,7 @@ function scimp500(p_date,p_version,p_unsign,p_tran,p_send)
     end if
 
     -- 资料删除
-    call cl_record_header("1. 删除历史资料")
+    call cl_record_header("删除历史资料")
 
     call scimp500_del()
     if g_tot_success = 'N' then
@@ -74,35 +74,35 @@ function scimp500(p_date,p_version,p_unsign,p_tran,p_send)
     end if
 
     -- 异动单据收集
-    call cl_record_header("2. 异动单据收集")
+    call cl_record_header("异动单据收集")
     call scimp500_doc()
     if g_tot_success = 'N' then
         goto _err
     end if
 
     -- 库存数据
-    call cl_record_header("3. 库存数据收集")
+    call cl_record_header("库存数据收集")
     call scimp500_stock()
     if g_tot_success = 'N' then
         goto _err
     end if
 
     -- 预测 收集
-    call cl_record_header("4. 预测数据")
+    call cl_record_header("预测数据")
     call scimp500_forecast()
     if g_tot_success = 'N' then
         goto _err
     end if
 
     -- 出勤人数
-    call cl_record_header("5. 出勤人数")
+    call cl_record_header("出勤人数")
     call scimp500_attend()
     if g_tot_success = 'N' then
         goto _err
     end if
 
     -- 汇总本期资料
-    call cl_record_header("6. 取价、汇总")
+    call cl_record_header("取价、汇总")
     call scimp500_sum()
 
     call cl_record_card("结束时间：",current year to second)
@@ -117,8 +117,14 @@ function scimp500(p_date,p_version,p_unsign,p_tran,p_send)
         end if
     end if
     if p_send then
-        call cl_record_html('error,warn,info') returning l_str
-        call scimp500_mail("darcy.li@forewin-sz.com.cn",l_str)
+
+
+        let l_channel = base.Channel.create()
+        call l_channel.openFile("/u1/out/darcy.html","a")
+        CALL l_channel.writeLine(l_str)
+        call l_channel.close()
+
+        call scimp500_mail("darcy.li@forewin-sz.com.cn")
     end if
 end function
 
@@ -645,7 +651,7 @@ private function scimp500_attend()
     insert into tc_ilc_file ( tc_ilc01,tc_ilc02,tc_ilc03,tc_ilc04,tc_ilc05 )
     select ?,'",g_version,"',trunc(dat),'all',qty
       from attend_file
-     where to_char(dat,'yymm') = to_char(?,'yymm')  
+     where to_char(dat,'yymm') = to_char(?,'yymm')
        and dat < = ? "
     prepare scimp500_attend from l_sql
     execute scimp500_attend using g_date,g_date,g_date
@@ -666,7 +672,7 @@ private function scimp500_forecast()
     select g_date,g_version,tc_ili03,tc_ili04,tc_ili05,tc_ili06
       from tc_ili_file where tc_ili01 = year(g_date) and tc_ili02 = month(g_date)
 
-    if sqlca.sqlcode then
+    if sqlca.sqlcode or sqlca.sqlerrd[3] == 0 then
         call cl_record('error',sfmt('预测入库，销售，写入失败:%1',sqlca.sqlcode))
         call cl_err('ins tc_ilb_file ',sqlca.sqlcode,0)
         let g_success = 'N'
@@ -1222,30 +1228,35 @@ function simp500_unsign(p_yy,p_mm)
 end function
 
 
-function scimp500_mail(p_recipient,p_body)
-    define p_recipient,p_body       string
+function scimp500_mail(p_recipient)
+    define p_recipient,l_body       string
     define l_ok varchar(1)
-    
+    define l_attach string
+
+    call cl_record_header("运行结果查询")
+
     call scimq500(g_date,g_version,"N")
     call scimq500_b_fill()
-    
+
+    let l_attach = scimq500_output(g_date,g_version)
+    let l_attach = l_attach,";", cl_expexcel10_nogui(
+        '/u1/usr/tiptop/typst/projects/cimr500/interface.xml',
+        's_total',base.typeinfo.create(g_total),
+        's_day',base.typeinfo.create(g_daily),
+        's_subtotal',base.typeinfo.create(g_subtotal),
+        's_product',base.typeinfo.create(g_product),
+        's_rework',base.typeinfo.create(g_rework),
+        's_sale',base.typeinfo.create(g_sale),
+        's_unsign',base.typeinfo.create(g_unsign),
+        '',null,'',null,'',null)
+
+    call cl_record_html("error,warn") returning l_body
+
     call cs_mail_send(
         sfmt("日进出报表 %1，运行时间 %2",g_date using "yy-mm-dd",current year to second),
-        p_body,
+        l_body,
         p_recipient,
-        sfmt("%1;%2",
-            scimq500_output(g_date,g_version),
-            cl_expexcel10_nogui(
-                '/u1/usr/tiptop/typst/projects/cimr500/interface.xml',
-                's_total',base.typeinfo.create(g_total),
-                's_day',base.typeinfo.create(g_daily),
-                's_subtotal',base.typeinfo.create(g_subtotal),
-                's_product',base.typeinfo.create(g_product),
-                's_rework',base.typeinfo.create(g_rework),
-                's_sale',base.typeinfo.create(g_sale),
-                's_unsign',base.typeinfo.create(g_unsign),
-                '',null,'',null,'',null)
-        )) returning l_Ok
+        l_attach) returning l_Ok
 
     message "发送结果"||l_ok
 end function

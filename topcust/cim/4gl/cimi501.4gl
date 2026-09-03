@@ -145,7 +145,7 @@ function cimi501_b()
 
     input array g_tc_ili without defaults from s_tc_ili.*
         attribute(count=g_rec_b,maxcount=g_max_rec,unbuffered,
-        insert row=true,delete row=true,append row=true)
+        insert row=true,delete row=false,append row=true)
 
         before input
             if g_rec_b != 0 then
@@ -260,11 +260,15 @@ function cimi501_b()
                 end if
             end for
 
+        before delete
+            call cl_err('编辑状态不可以删除，请退出后根据条件删除','!',1)
+            cancel delete
+
         after row
             let l_ac = arr_curr()
             if int_flag then
                 -- 取消新增/更改
-                call cl_err('',-400,0)
+                --call cl_err('',-400,0)
                 let int_flag = false
                 if p_cmd = 'u' then
                     -- 还原旧数据
@@ -446,7 +450,96 @@ end function
 
 --
 function cimi501_import()
+    define l_yy,l_mm        integer
+    define l_amt            decimal(20,3)
+    define l_cnt,i          integer
+    define l_dat            date
 
+    OPEN WINDOW cimi501_2_w AT 2,2 WITH FORM "cim/42f/cimi501_2"
+            ATTRIBUTE (STYLE = g_win_style CLIPPED)
+    call cl_ui_init()
+
+    input l_yy,l_mm,l_amt without defaults from saleyy,salemm,saleamt
+
+        before input
+            let l_yy = year(g_today)
+            let l_mm = month(g_today)
+            let l_amt = 0
+            display l_yy,l_mm,l_amt to saleyy,salemm,saleamt
+
+        on action controlr
+            call cl_show_req_fields()
+
+        on action controlf
+            -- 切换语言
+            call cl_set_focus_form(ui.Interface.getRootNode()) returning g_fld_name,g_frm_name
+            call cl_fldhelp(g_frm_name,g_fld_name,g_lang)
+
+        on action controlg
+            call cl_cmdask()
+
+        on idle g_idle_seconds
+            -- 超时退出
+            call cl_on_idle()
+            continue input
+
+        on action about
+            call cl_about()
+
+        on action help
+            call cl_show_help()
+
+    end input
+
+    if int_flag then
+        let int_flag = false
+        goto _err2
+    end if
+
+    select count(*) into l_cnt from tc_ili_file where tc_ili01 = l_yy and tc_ili02 = l_mm
+       and tc_ili04='sale' and tc_ili05 = 'all'
+    if l_cnt > 0 then
+        if not cl_confirm('cim-097') then
+            goto _err2
+        end if
+    end if
+
+    begin work
+
+    delete from tc_ili_file where tc_ili01 = l_yy and tc_ili02 = l_mm
+       and tc_ili04='sale' and tc_ili05 = 'all'
+    if sqlca.sqlcode then
+        call cl_err('del tc_ili_file',sqlca.sqlcode,1)
+        rollback work
+        goto _err2
+    end if
+
+    if l_mm = 12 then
+        let l_cnt = 31
+    else
+        let l_cnt = mdy(l_mm+1,1,l_yy) - mdy(l_mm,1,l_yy)
+    end if
+
+    let l_dat = mdy(l_mm,1,l_yy) - 1
+    let l_amt = l_amt / l_cnt
+    for i = 1 to l_cnt
+        let l_dat = l_dat + 1
+        insert into tc_ili_file(tc_ili01,tc_ili02,tc_ili03,tc_ili04,tc_ili05,tc_ili06)
+        values (l_yy,l_mm,l_dat,'sale','all',l_amt)
+        if sqlca.sqlcode then
+            call cl_err('ins tc_ili_file',sqlca.sqlcode,1)
+            rollback work
+            goto _err2
+        end if
+    end for
+
+    message '完成'
+
+    commit work
+
+    label _err2:
+    close window cimi501_2_w
+    call cimi501_b_fill()
 end function
 function cimi501_delete()
     define l_wc         string
