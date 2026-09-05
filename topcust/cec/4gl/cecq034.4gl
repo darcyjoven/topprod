@@ -137,11 +137,16 @@ function cecq034_menu()
 end function
 
 function cecq034_cs()
+
+    # 查询最新的一笔记录作为默认条件
+
+    select max(tc_shi02) into tm.tc_shi02 from tc_shi_file
+    select max(tc_shi03) into tm.tc_shi03 from tc_shi_file
+     where tc_shi02 = tm.tc_shi02
+
     input by name tm.* without defaults
 
         before input
-            let tm.tc_shi02 = g_today
-            let tm.tc_shi03 = g_today
             let tm.tc_shi04 = null
             let tm.tc_shi06 = null
             display by name tm.*
@@ -188,7 +193,7 @@ function cecq034_cs()
     let g_sql = "select unique tc_shi02,tc_shi03 from tc_shi_file",
                 " where 1 =1 "
     if not cl_null(tm.tc_shi02) then
-        let g_sql = g_sql , " and tc_shi02 = ",tm.tc_shi02
+        let g_sql = g_sql , " and tc_shi02 = '",tm.tc_shi02,"'"
     end if
     if not cl_null(tm.tc_shi03) then
         let g_sql = g_sql , " and tc_shi03 = '",tm.tc_shi03 clipped,"'"
@@ -199,7 +204,7 @@ function cecq034_cs()
     if not cl_null(tm.tc_shi06) then
         let g_sql = g_sql , " and tc_shi06 = '",tm.tc_shi06 clipped,"'"
     end if
-    let g_sql = g_sql , " order by tc_shi02,tc_shi03,tc_shi04"
+    let g_sql = g_sql , " order by tc_shi02,tc_shi03"
     prepare cecq034_prepare from g_sql
     declare cecq034_curs scroll cursor with hold for cecq034_prepare
 
@@ -506,6 +511,7 @@ end function
 -- 产生新资料
 function cecq034_generate()
     define  l_sdate,l_edate,l_last_s,l_last_e       date
+    define  l_cnt       integer
 
     OPEN WINDOW cecq034_w_1 AT 2,2 WITH FORM "cec/42f/cecq034_1"
         ATTRIBUTE (STYLE = g_win_style CLIPPED)
@@ -514,10 +520,13 @@ function cecq034_generate()
     input l_sdate,l_edate,l_last_s,l_last_e without defaults from sdate,edate,last_s,last_e
 
         before input
-            let l_yy = year(g_today)
-            let l_mm = month(g_today)
-            let l_tc_shi05 = false
-            display l_yy,l_mm,l_tc_shi05 to yy,mm,replace
+            let l_last_e = g_today
+            select max(tc_shi02) into l_sdate from tc_shi_file
+            select min(tc_shi03) into l_edate from tc_shi_file
+             where tc_shi02 = l_sdate
+            let l_last_s = l_edate
+            display l_sdate,l_edate,l_last_s,l_last_e
+                 to sdate,edate,last_s,last_e
 
         on action controlr
             call cl_show_req_fields()
@@ -526,6 +535,40 @@ function cecq034_generate()
             -- 切换语言
             call cl_set_focus_form(ui.Interface.getRootNode()) returning g_fld_name,g_frm_name
             call cl_fldhelp(g_frm_name,g_fld_name,g_lang)
+
+        on change sdate
+            if not cl_null(l_sdate) then
+                select count(unique tc_shi02||tc_shi03) into l_cnt from tc_shi_file
+                 where tc_shi02 = l_sdate
+                case
+                    when l_cnt > 1
+                        call cl_set_comp_entry('edate',true)
+                        call cl_err('有多笔期初资料可以选择','!',0)
+                        select min(tc_shi03) into l_edate from tc_shi_file
+                         where tc_shi02 = l_sdate
+                        display l_edate to edate
+                    when l_cnt = 1
+                        call cl_set_comp_entry('edate',false)
+                        select unique tc_shi03 into l_edate from tc_shi_file
+                         where tc_shi02 = l_sdate
+                        display l_edate to edate
+                    otherwise
+                        call cl_set_comp_entry('edate',false)
+                        call cl_err('没有期初资料，请重新选择','!',1)
+                        next field sdate
+                end case
+                let l_last_s = l_edate
+                display l_last_s to last_s
+            end if
+        on change edate
+            if not cl_null(l_edate) then
+                select count(unique tc_shi02||tc_shi03) into l_cnt from tc_shi_file
+                 where tc_shi02 = l_sdate and tc_shi03 = l_edate
+                if l_cnt <= 0 then
+                    call cl_err(sfmt('没有期初资料，无法计算 %1-%2',l_sdate,l_edate),'!',1)
+                    next field edate
+                end if
+            end if
 
         on action controlg
             call cl_cmdask()
@@ -547,7 +590,7 @@ function cecq034_generate()
     end if
     close window cecq034_w_1
 
-    call scecq034_generate(l_yy,l_mm,l_tc_shi05)
+    call scecq034_generate(l_sdate,l_last_s,l_last_e)
 
     if g_success = 'Y' then
         message '成功!'
