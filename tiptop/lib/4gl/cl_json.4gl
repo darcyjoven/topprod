@@ -5,6 +5,7 @@
 # Date & Author..: darcy 2026/06/25
 
 -- 序列化结构体
+# base.typeinfo.create(any)
 public function cl_json(obj)
     define  obj         om.DomNode
     define  l_tag       string
@@ -75,6 +76,7 @@ private function field(p_field)
     end case
 
     call p_field.getAttribute('value') returning l_value
+    let l_value =  escape(l_value)
     case l_type
         when 'string'
             return sfmt('"%1"',l_value)
@@ -167,4 +169,20 @@ private function array(p_array)
     end try
 
     return jsonBuf.toString()
+end function
+
+
+-- 转义字符转换
+private function escape(p_str)
+    define  p_str,l_str     string
+    define  i               integer
+
+    let p_str =  cl_replace_str(p_str,'"',"\\\"")  # 双引号
+    let p_str =  cl_replace_str(p_str,"\t","\\t")  # 制表符
+    let p_str =  cl_replace_str(p_str,"\n","\\n")  # 换行
+    let p_str =  cl_replace_str(p_str,"\r","\\r")  # 回车
+    let p_str =  cl_replace_str(p_str,"\f","\\f")  # 换页
+    --let p_str =  cl_replace_str(p_str,"\\","\\\\") # 斜杠
+
+    return p_str
 end function
