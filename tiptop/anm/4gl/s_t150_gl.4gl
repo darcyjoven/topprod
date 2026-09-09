@@ -21,7 +21,7 @@
 # Modify.........: No.FUN-9A0036 10/08/04 By chenmoyan 勾選二套帳，分錄底稿二的匯率及本幣金額，應依帳別二進行換算
 # Modify.........: No.FUN-A40033 10/08/04 By chenmoyan 二套帳時如果第二套帳幣別和本幣不相同，借貸不平衡產生匯損益時要切立科目
 # Modify.........: No.FUN-A40067 10/08/04 By chenmoyan 處理二套帳中本幣金額取位
-# Modify.........: No.FUN-AA0087 11/01/29 By Mengxw 異動碼類型設定的改善 
+# Modify.........: No.FUN-AA0087 11/01/29 By Mengxw 異動碼類型設定的改善
 # Modify.........: No:FUN-B40056 11/05/11 By lixia 刪除資料時一併刪除tic_file的資料
 # Modify.........: No:TQC-B70021 11/07/19 By wujie 抛转tic_file资料
 # Modify.........: No:MOD-C80205 12/09/14 By Polly 為開立或匯率為1，不應有匯差損失
@@ -32,7 +32,7 @@
 # Modify.........: No.MOD-D80148 13/08/23 By yinhy 兌現時npq03抓取修改
 
 DATABASE ds
- 
+
 GLOBALS "../../config/top.global"
    DEFINE g_npl		RECORD LIKE npl_file.*
    DEFINE g_npm		RECORD LIKE npm_file.*
@@ -47,11 +47,11 @@ GLOBALS "../../config/top.global"
    DEFINE g_bookno1     LIKE aza_file.aza81       #No.FUN-730032
    DEFINE g_bookno2     LIKE aza_file.aza82       #No.FUN-730032
    DEFINE g_bookno3     LIKE aza_file.aza82       #No.FUN-730032
-   DEFINE g_npq25       LIKE npq_file.npq25       #No.FUN-9A0036               
+   DEFINE g_npq25       LIKE npq_file.npq25       #No.FUN-9A0036
    DEFINE   g_azi04_2   LIKE azi_file.azi04       #FUN-A40067
    DEFINE g_aag44       LIKE aag_file.aag44       #FUN-D40118 add
- 
- 
+
+
 DEFINE   g_msg          LIKE type_file.chr1000 #No.FUN-680107 VARCHAR(72)
 FUNCTION s_t150_gl(p_trno,p_npptype)           # No.FUN-680034
    DEFINE p_trno	LIKE npl_file.npl01
@@ -60,11 +60,11 @@ FUNCTION s_t150_gl(p_trno,p_npptype)           # No.FUN-680034
    DEFINE p_npptype     LIKE npp_file.npptype  # No.FUN-680034
    DEFINE p_npqtype     LIKE npq_file.npqtype  # No.FUN-680034
    WHENEVER ERROR CALL cl_err_msg_log
-  
+
    LET g_trno = p_trno
    IF g_trno IS NULL THEN RETURN END IF
-   SELECT npl_file.* INTO g_npl.* FROM npl_file WHERE npl01 = g_trno 
-   IF STATUS THEN 
+   SELECT npl_file.* INTO g_npl.* FROM npl_file WHERE npl01 = g_trno
+   IF STATUS THEN
 #     CALL cl_err('sel npl',STATUS,1) FUN-660148
 #-----No.FUN-710024-----begin
       IF g_bgerr THEN
@@ -76,10 +76,10 @@ FUNCTION s_t150_gl(p_trno,p_npptype)           # No.FUN-680034
    END IF
    IF g_npl.nplconf = 'X' THEN RETURN END IF
    #modify by danny 97/05/14 若已拋轉總帳, 不可重新產生分錄底稿
-   SELECT COUNT(*) INTO l_n FROM npp_file 
+   SELECT COUNT(*) INTO l_n FROM npp_file
     WHERE nppsys= 'NM' AND npp00=1 AND npp01 = g_trno AND npp011=g_npl.npl03
       AND nppglno != '' AND nppglno IS NOT NULL
-   IF l_n > 0 THEN 
+   IF l_n > 0 THEN
 #-----No.FUN-710024-----begin
       IF g_bgerr THEN
          LET g_showmsg=g_trno,"/",g_npl.npl03
@@ -88,50 +88,50 @@ FUNCTION s_t150_gl(p_trno,p_npptype)           # No.FUN-680034
          CALL cl_err(p_trno,'aap-122',1) RETURN
       END IF
 #-----No.FUN-710024 -----end
-      LET g_success = 'N'    # No.FUN-680034 
+      LET g_success = 'N'    # No.FUN-680034
    END IF
    SELECT * INTO g_nms.* FROM nms_file WHERE (nms01 = ' ' OR nms01 IS NULL)
-   DELETE FROM npp_file 
-       WHERE nppsys= 'NM' AND npp00=1 AND npp01 = g_trno AND npp011=g_npl.npl03 AND npptype=p_npptype  # No.FUN-680034 
-   DELETE FROM npq_file 
-       WHERE npqsys= 'NM' AND npq00=1 AND npq01 = g_trno AND npq011=g_npl.npl03 AND npqtype=p_npptype  # No.FUN-680034 
+   DELETE FROM npp_file
+       WHERE nppsys= 'NM' AND npp00=1 AND npp01 = g_trno AND npp011=g_npl.npl03 AND npptype=p_npptype  # No.FUN-680034
+   DELETE FROM npq_file
+       WHERE npqsys= 'NM' AND npq00=1 AND npq01 = g_trno AND npq011=g_npl.npl03 AND npqtype=p_npptype  # No.FUN-680034
 
    #FUN-B40056--add--str--
    DELETE FROM tic_file WHERE tic04 = g_trno
    #FUN-B40056--add--end--
 
- # No.FUN-680034 --start-- 
+ # No.FUN-680034 --start--
  #  CALL s_t150_gl_11()
     CALL s_t150_gl_11(p_npptype)
    #FUN-590109  --begin
    IF g_aza.aza26='2' AND g_nmydmy5='Y' AND g_npl.npl03 MATCHES '[67]' THEN
- 
- #     CALL s_t150_gl_resort()  #項次重排  
-       CALL s_t150_gl_resort(p_npptype) 
- # No.FUN-680034 ---end---     
+
+ #     CALL s_t150_gl_resort()  #項次重排
+       CALL s_t150_gl_resort(p_npptype)
+ # No.FUN-680034 ---end---
    END IF
    #FUN-590109  --end
    CALL s_t150_diff()           #FUN-A40033
-   CALL s_flows('3','',g_npq.npq01,g_npp.npp02,'N',g_npq.npqtype,TRUE)   #No.TQC-B70021 
+   CALL s_flows('3','',g_npq.npq01,g_npp.npp02,'N',g_npq.npqtype,TRUE)   #No.TQC-B70021
    CALL cl_getmsg('axr-055',g_lang) RETURNING g_msg
    MESSAGE g_msg CLIPPED
 END FUNCTION
- 
+
 FUNCTION s_t150_gl_11(p_npptype)      # No.FUN-680034
   DEFINE  p_npptype    LIKE npp_file.npptype   # No.FUN-680034
   DEFINE  p_npqtype    LIKE npq_file.npqtype   # No.FUN-680034
    LET g_npp.npptype = p_npptype      # No.FUN-680034
-   LET g_npq.npqtype = p_npptype      # No.FUN-680034 
+   LET g_npq.npqtype = p_npptype      # No.FUN-680034
    LET g_npp.nppsys = 'NM'
    LET g_npp.npp00 = 1
    LET g_npp.npp01 = g_npl.npl01
    LET g_npp.npp011= g_npl.npl03
    LET g_npp.npp02 = g_npl.npl02
    LET g_npp.npp03 = NULL
- 
-   #FUN-980005 add legal 
+
+   #FUN-980005 add legal
    LET g_npp.npplegal= g_legal
-   #FUN-980005 end legal 
+   #FUN-980005 end legal
    INSERT INTO npp_file VALUES(g_npp.*)
    IF STATUS THEN
 #     CALL cl_err('ins npp',STATUS,1)    #No.FUN-660148
@@ -145,13 +145,13 @@ FUNCTION s_t150_gl_11(p_npptype)      # No.FUN-680034
 #-----No.FUN-710024 -----end
       LET g_success='N' #no.5573
    END IF
- 
-   LET g_npq.npqsys = 'NM' 
+
+   LET g_npq.npqsys = 'NM'
    LET g_npq.npq00 = 1
    LET g_npq.npq01 = g_npl.npl01
    LET g_npq.npq011= g_npl.npl03
    LET g_npq.npq02 = 0
-   LET g_npq.npq24 = g_npl.npl04 
+   LET g_npq.npq24 = g_npl.npl04
    LET g_npq.npq25 = g_npl.npl05
    LET g_npq25     = g_npq.npq25        #No.FUN-9A0036
  # No.FUN-680034 --start--
@@ -159,14 +159,14 @@ FUNCTION s_t150_gl_11(p_npptype)      # No.FUN-680034
 #FUN-CB0045--add--str--
 #合併借方科目
    IF g_aza.aza26='2' AND g_npl.npl03='8' THEN
-      CALL s_t150_gl_b(p_npptype) 
+      CALL s_t150_gl_b(p_npptype)
    ELSE
 #FUN-CB0045--add--end
-    CALL s_t150_gl_a(p_npptype) 
-   END IF   #FUN-CB0045 
+    CALL s_t150_gl_a(p_npptype)
+   END IF   #FUN-CB0045
  # No.FUN-680034 ---end---
 END FUNCTION
- 
+
 FUNCTION s_t150_gl_a(p_npptype)         # No.FUN-680034    add  p_npptype
  DEFINE l_aag05    LIKE aag_file.aag05
  DEFINE p_npptype  LIKE npp_file.npptype   # No.FUN-680034
@@ -174,21 +174,21 @@ FUNCTION s_t150_gl_a(p_npptype)         # No.FUN-680034    add  p_npptype
  DEFINE l_aaa03    LIKE aaa_file.aaa03     #FUN-A40067
  DEFINE l_flag     LIKE type_file.chr1     #FUN-D40118 add
    DECLARE s_t150_gl_c3 CURSOR FOR
-        SELECT * FROM npm_file WHERE npm01=g_npl.npl01 
+        SELECT * FROM npm_file WHERE npm01=g_npl.npl01
    FOREACH s_t150_gl_c3 INTO g_npm.*
      IF STATUS THEN EXIT FOREACH END IF
-           SELECT * INTO g_nmd.* FROM nmd_file 
+           SELECT * INTO g_nmd.* FROM nmd_file
              WHERE nmd01=g_npm.npm03 AND nmd30 <> 'X'
            IF STATUS THEN
               INITIALIZE g_nmd.* TO NULL
            END IF
            LET g_npq.npq02 = g_npq.npq02 + 1
-           LET g_npq.npq21 = g_nmd.nmd08 
-           LET g_npq.npq22 = g_nmd.nmd24 
+           LET g_npq.npq21 = g_nmd.nmd08
+           LET g_npq.npq22 = g_nmd.nmd24
            #借方科目產生
            #FUN-590109  --begin
-           LET g_t1 = s_get_doc_no(g_trno)                                              
-           SELECT nmydmy5 INTO g_nmydmy5 FROM nmy_file WHERE nmyslip = g_t1 
+           LET g_t1 = s_get_doc_no(g_trno)
+           SELECT nmydmy5 INTO g_nmydmy5 FROM nmy_file WHERE nmyslip = g_t1
            IF g_aza.aza26='2' AND g_nmydmy5='Y' AND g_npl.npl03 MATCHES '[67]' THEN
               LET g_npq.npq06 = '2'
              CALL s_npq03_c_def(p_npptype)    # No.FUN-680034  add  p_npptype
@@ -198,20 +198,20 @@ FUNCTION s_t150_gl_a(p_npptype)         # No.FUN-680034    add  p_npptype
            END IF
            #FUN-590109  --end
             LET g_npq.npq07f = g_npm.npm04
-           LET g_npq.npq24 = g_npl.npl04 
+           LET g_npq.npq24 = g_npl.npl04
             #-----No.MOD-4B0026-----
-           IF g_npl.npl03="7" THEN                          
-              LET g_npq.npq07 = g_npm.npm06 
+           IF g_npl.npl03="7" THEN
+              LET g_npq.npq07 = g_npm.npm06
               LET g_npq.npq25 = g_npl.npl05
            ELSE
-              LET g_npq.npq25 = g_nmd.nmd19 
-              LET g_npq.npq07 = g_npm.npm05 
+              LET g_npq.npq25 = g_nmd.nmd19
+              LET g_npq.npq07 = g_npm.npm05
            END IF
            LET g_npq25     = g_npq.npq25        #No.FUN-9A0036
             #-----No.MOD-4B0026 END-----
-           #No.FUN-740028 --begin                                                                                                   
-           CALL s_get_bookno(YEAR(g_npp.npp02)) RETURNING g_flag,g_bookno1,g_bookno2                                                
-           IF g_flag = '1' THEN                                                                                                     
+           #No.FUN-740028 --begin
+           CALL s_get_bookno(YEAR(g_npp.npp02)) RETURNING g_flag,g_bookno1,g_bookno2
+           IF g_flag = '1' THEN
               CALL cl_err(YEAR(g_npp.npp02),'aoo-081',1)
            END IF
            #No.FUN-740028 --END
@@ -219,10 +219,10 @@ FUNCTION s_t150_gl_a(p_npptype)         # No.FUN-680034    add  p_npptype
             WHERE aag01=g_npq.npq03
               AND aag00=g_bookno1     #No.FUN-740028
            IF l_aag05 = 'Y' THEN
-              LET g_npq.npq05 = g_nmd.nmd18 
+              LET g_npq.npq05 = g_nmd.nmd18
            ELSE
               LET g_npq.npq05 = ' '
-           END IF 
+           END IF
            #LET g_npq.npq04 = g_npl.npl08 #FUN-D10065 mark
            LET g_npq.npq04 = NULL         #FUN-D10065
            MESSAGE '>',g_npq.npq02,' ',g_npq.npq03
@@ -230,10 +230,10 @@ FUNCTION s_t150_gl_a(p_npptype)         # No.FUN-680034    add  p_npptype
            #FUN-590109  --begin
            IF g_aza.aza26='2' THEN
               IF g_nmydmy5='Y' AND g_npl.npl03 MATCHES '[67]' THEN
-                 LET g_npq.npq07 = (-1)*g_npq.npq07                                  
-                 LET g_npq.npq07f= (-1)*g_npq.npq07f                                 
-              END IF  
-           END IF  
+                 LET g_npq.npq07 = (-1)*g_npq.npq07
+                 LET g_npq.npq07f= (-1)*g_npq.npq07f
+              END IF
+           END IF
            #FUN-590109  --end
            #No.FUN-730032 --begin
            CALL s_get_bookno(YEAR(g_npp.npp02)) RETURNING g_flag,g_bookno1,g_bookno2
@@ -259,10 +259,10 @@ FUNCTION s_t150_gl_a(p_npptype)         # No.FUN-680034    add  p_npptype
            #FUN-D10065--add--end
            CALL s_def_npq31_npq34(g_npq.*,g_bookno3)  RETURNING g_npq.npq31,g_npq.npq32,g_npq.npq33,g_npq.npq34 #FUN-AA0087
            # NO.FUN-5C0015 ---end---
- 
-           #FUN-980005 add legal 
+
+           #FUN-980005 add legal
            LET g_npq.npqlegal= g_legal
-           #FUN-980005 end legal 
+           #FUN-980005 end legal
 #No.FUN-9A0036 --Begin
            IF p_npptype = '1' THEN
 #FUN-A40067 --Begin
@@ -293,7 +293,7 @@ FUNCTION s_t150_gl_a(p_npptype)         # No.FUN-680034    add  p_npptype
            END IF
            #FUN-D40118--add--end--
            INSERT INTO npq_file VALUES (g_npq.*)
-           IF STATUS THEN 
+           IF STATUS THEN
 #             CALL cl_err('ins npq#9',STATUS,1)    #No.FUN-660148
 #-----No.FUN-710024-----begin
                  IF g_bgerr THEN
@@ -305,7 +305,7 @@ FUNCTION s_t150_gl_a(p_npptype)         # No.FUN-680034    add  p_npptype
 #-----No.FUN-710024 -----end
               LET g_success='N' #no.5573
            END IF
- 
+
            #貸方科目產生
             LET g_npq.npq02 = g_npq.npq02 + 1
             #FUN-590109  --begin
@@ -321,29 +321,29 @@ FUNCTION s_t150_gl_a(p_npptype)         # No.FUN-680034    add  p_npptype
              #-----No.MOD-4B0026-----
            #IF g_npl.npl03="7" THEN                           #MOD-C80205 mark
             IF g_npl.npl03 = "7"  OR g_npl.npl03 = "1" THEN   #MOD-C80205 add
-               LET g_npq.npq25 = g_nmd.nmd19 
-               LET g_npq.npq07 = g_npm.npm05 
+               LET g_npq.npq25 = g_nmd.nmd19
+               LET g_npq.npq07 = g_npm.npm05
             ELSE
-               LET g_npq.npq07 = g_npm.npm06 
+               LET g_npq.npq07 = g_npm.npm06
                LET g_npq.npq25 = g_npl.npl05
             END IF
             LET g_npq25     = g_npq.npq25        #No.FUN-9A0036
              #-----No.MOD-4B0026 END-----
             LET g_npq.npq24 = g_npl.npl04
-            #No.FUN-740028 --begin                                                                                                   
-           CALL s_get_bookno(YEAR(g_npp.npp02)) RETURNING g_flag,g_bookno1,g_bookno2                                                
-           IF g_flag = '1' THEN                                                                                                     
-              CALL cl_err(YEAR(g_npp.npp02),'aoo-081',1)                                                                            
-           END IF                                                                                                                   
-           #No.FUN-740028 --END  
+            #No.FUN-740028 --begin
+           CALL s_get_bookno(YEAR(g_npp.npp02)) RETURNING g_flag,g_bookno1,g_bookno2
+           IF g_flag = '1' THEN
+              CALL cl_err(YEAR(g_npp.npp02),'aoo-081',1)
+           END IF
+           #No.FUN-740028 --END
             SELECT aag05 INTO l_aag05 FROM aag_file   #是否做部門管理
              WHERE aag01=g_npq.npq03
-               AND aag00=g_bookno1     #No.FUN-740028   
+               AND aag00=g_bookno1     #No.FUN-740028
             IF l_aag05 = 'Y' THEN
-               LET g_npq.npq05 = g_nmd.nmd18 
+               LET g_npq.npq05 = g_nmd.nmd18
             ELSE
                LET g_npq.npq05 = ' '
-            END IF 
+            END IF
             #LET g_npq.npq04 = g_npl.npl08  #FUN-D10065 mark
             LET g_npq.npq04 = NULL          #FUN-D10065
             MESSAGE '>',g_npq.npq02,' ',g_npq.npq03
@@ -351,10 +351,10 @@ FUNCTION s_t150_gl_a(p_npptype)         # No.FUN-680034    add  p_npptype
             #FUN-590109  --begin
             IF g_aza.aza26='2' THEN
                IF g_nmydmy5='Y' AND g_npl.npl03 MATCHES '[67]' THEN
-                  LET g_npq.npq07 = (-1)*g_npq.npq07                                  
-                  LET g_npq.npq07f= (-1)*g_npq.npq07f                                 
-               END IF  
-            END IF  
+                  LET g_npq.npq07 = (-1)*g_npq.npq07
+                  LET g_npq.npq07f= (-1)*g_npq.npq07f
+               END IF
+            END IF
             #FUN-590109  --end
            # NO.FUN-5C0015 --start--
           #CALL s_def_npq(g_npq.npq03,g_prog,g_npq.*,g_npq.npq01,'','')            #FUN-690105 mark
@@ -366,13 +366,13 @@ FUNCTION s_t150_gl_a(p_npptype)         # No.FUN-680034    add  p_npptype
               LET g_npq.npq04 = g_npl.npl08
            END IF
            #FUN-D10065--add--end
-            
+
            CALL s_def_npq31_npq34(g_npq.*,g_bookno3)  RETURNING g_npq.npq31,g_npq.npq32,g_npq.npq33,g_npq.npq34 #FUN-AA0087
            # NO.FUN-5C0015 ---end---
- 
-            #FUN-980005 add legal 
+
+            #FUN-980005 add legal
             LET g_npq.npqlegal= g_legal
-            #FUN-980005 end legal 
+            #FUN-980005 end legal
 #No.FUN-9A0036 --Begin
            IF p_npptype = '1' THEN
 #FUN-A40067 --Begin
@@ -415,7 +415,7 @@ FUNCTION s_t150_gl_a(p_npptype)         # No.FUN-680034    add  p_npptype
 #-----No.FUN-710024 -----end
                LET g_success='N' #no.5573
             END IF
- 
+
            #匯差產生
            IF g_npl.npl05 = 1 OR g_npl.npl03 = 1 THEN          #MOD-C80205 add
               LET g_npq.npq07 = 0                              #MOD-C80205 add
@@ -424,7 +424,7 @@ FUNCTION s_t150_gl_a(p_npptype)         # No.FUN-680034    add  p_npptype
            END IF                                              #MOD-C80205 add
              #-----No.MOD-4B0026-----
             IF g_npl.npl03="7" THEN
-               IF g_npq.npq07 < 0 THEN  
+               IF g_npq.npq07 < 0 THEN
                   LET g_npq.npq06 = '2'
                   LET g_npq.npq03 = g_nms.nms12
                   LET g_npq.npq07 = -1 * g_npq.npq07
@@ -433,30 +433,30 @@ FUNCTION s_t150_gl_a(p_npptype)         # No.FUN-680034    add  p_npptype
                   LET g_npq.npq03 = g_nms.nms13
                END IF
             ELSE
-               IF g_npq.npq07 > 0 THEN 
+               IF g_npq.npq07 > 0 THEN
                   LET g_npq.npq06 = '2'
                   LET g_npq.npq03 = g_nms.nms12
                ELSE
                   LET g_npq.npq06 = '1'
                   LET g_npq.npq03 = g_nms.nms13
-                  LET g_npq.npq07 = -1 * g_npq.npq07  
+                  LET g_npq.npq07 = -1 * g_npq.npq07
                END IF
             END IF
              #-----No.MOD-4B0026 END-----
-            #No.FUN-740028 --begin                                                                                                   
-           CALL s_get_bookno(YEAR(g_npp.npp02)) RETURNING g_flag,g_bookno1,g_bookno2                                                
-           IF g_flag = '1' THEN                                                                                                     
-              CALL cl_err(YEAR(g_npp.npp02),'aoo-081',1)                                                                            
-           END IF                                                                                                                   
-           #No.FUN-740028 --END 
+            #No.FUN-740028 --begin
+           CALL s_get_bookno(YEAR(g_npp.npp02)) RETURNING g_flag,g_bookno1,g_bookno2
+           IF g_flag = '1' THEN
+              CALL cl_err(YEAR(g_npp.npp02),'aoo-081',1)
+           END IF
+           #No.FUN-740028 --END
             SELECT aag05 INTO l_aag05 FROM aag_file   #是否做部門管理
              WHERE aag01=g_npq.npq03
                AND aag00=g_bookno1    #No.FUN-740028
             IF l_aag05 = 'Y' THEN
-               LET g_npq.npq05 = g_nmd.nmd18 
+               LET g_npq.npq05 = g_nmd.nmd18
             ELSE
                LET g_npq.npq05 = ' '
-            END IF 
+            END IF
            LET g_npq.npq07f = 0
            #LET g_npq.npq04 = g_npl.npl08   #MOD-840051-modify #FUN-D10065 mark
            LET g_npq.npq04 = NULL    #FUN-D10065
@@ -474,13 +474,13 @@ FUNCTION s_t150_gl_a(p_npptype)         # No.FUN-680034    add  p_npptype
                  LET g_npq.npq04 = g_npl.npl08
               END IF
               #FUN-D10065--add--end
-               
+
               CALL s_def_npq31_npq34(g_npq.*,g_bookno3)  RETURNING g_npq.npq31,g_npq.npq32,g_npq.npq33,g_npq.npq34 #FUN-AA0087
               # NO.FUN-5C0015 ---end---
- 
-              #FUN-980005 add legal 
+
+              #FUN-980005 add legal
               LET g_npq.npqlegal= g_legal
-              #FUN-980005 end legal 
+              #FUN-980005 end legal
 #No.FUN-9A0036 --Begin
               IF p_npptype = '1' THEN
 #FUN-A40067 --Begin
@@ -511,7 +511,7 @@ FUNCTION s_t150_gl_a(p_npptype)         # No.FUN-680034    add  p_npptype
               END IF
               #FUN-D40118--add--end--
               INSERT INTO npq_file VALUES (g_npq.*)
-              IF STATUS THEN 
+              IF STATUS THEN
 #                CALL cl_err('ins npq#10',STATUS,1)    #No.FUN-660148
 #-----No.FUN-710024-----begin
                  IF g_bgerr THEN
@@ -526,15 +526,15 @@ FUNCTION s_t150_gl_a(p_npptype)         # No.FUN-680034    add  p_npptype
            END IF
    END FOREACH
 END FUNCTION
- 
+
 # No.FUN-680034 --start--
-#FUNCTION s_npq03_d_def()    #借方會計科目default 
- FUNCTION s_npq03_d_def(p_npptype) 
- DEFINE p_npptype  LIKE npp_file.npptype 
- DEFINE p_npqtype  LIKE npq_file.npqtype 
-# No.FUN-680034 ---end--- 
+#FUNCTION s_npq03_d_def()    #借方會計科目default
+ FUNCTION s_npq03_d_def(p_npptype)
+ DEFINE p_npptype  LIKE npp_file.npptype
+ DEFINE p_npqtype  LIKE npq_file.npqtype
+# No.FUN-680034 ---end---
  CASE
-# No.FUN-680034 --start-- 
+# No.FUN-680034 --start--
    WHEN g_npl.npl03='1'		# 開票
       IF p_npptype = '0' THEN
         IF cl_null(g_npl.npl06) THEN
@@ -549,16 +549,16 @@ END FUNCTION
            LET g_npq.npq03 = g_npl.npl061
         END IF
      END IF
-# No.FUN-680034 ---end---            	 	    
+# No.FUN-680034 ---end---
 #   WHEN g_npl.npl03 MATCHES '[689]'  #撤票、退票、兌現、作廢   #MOD-5A0286
    WHEN g_npl.npl03 MATCHES '[68]'  #撤票、退票、兌現、作廢   #MOD-5A0286
-# No.FUN-680034 --start-- 
-       IF p_npptype = '0' THEN 
-              
-        LET g_npq.npq03 = g_nmd.nmd23 
+# No.FUN-680034 --start--
+       IF p_npptype = '0' THEN
+
+        LET g_npq.npq03 = g_nmd.nmd23
        ELSE
        	LET g_npq.npq03 = g_nmd.nmd231
-       END IF	
+       END IF
         #FUN-590109  --begin
         IF g_aza.aza26='2' AND g_nmydmy5='Y' AND g_npl.npl03 = '6' THEN
          IF p_npptype = '0'  THEN
@@ -566,11 +566,11 @@ END FUNCTION
          ELSE
            LET g_npq.npq03 = g_nms.nms171
          END IF
-# No.FUN-680034 ---end---            	
+# No.FUN-680034 ---end---
         END IF
         #FUN-590109  --end
 #MOD-5A0286
-# No.FUN-680034 --start-- 
+# No.FUN-680034 --start--
   WHEN g_npl.npl03 = '9'
        IF g_nmd.nmd12 = '8' THEN
          IF p_npptype = '0'  THEN
@@ -579,24 +579,24 @@ END FUNCTION
          ELSE
           SELECT nma051 INTO g_npq.npq03 FROM nma_file
              WHERE nma01 = g_nmd.nmd03
-         END IF     	    
+         END IF
        ELSE
-         
-        IF p_npptype = '0' THEN                
+
+        IF p_npptype = '0' THEN
           LET g_npq.npq03 = g_nmd.nmd23
-        ELSE 
+        ELSE
           LET g_npq.npq03 = g_nmd.nmd231
-        END IF  	 
-# No.FUN-680034 ---end---       
+        END IF
+# No.FUN-680034 ---end---
        END IF
        IF g_aza.aza26='2' AND g_nmydmy5='Y' AND g_npl.npl03 = '6' THEN
-# No.FUN-680034 --start--  
-         IF p_npptype = '0' THEN     
+# No.FUN-680034 --start--
+         IF p_npptype = '0' THEN
           LET g_npq.npq03 = g_nms.nms17
         ELSE
           LET g_npq.npq03 = g_nms.nms171
-        END IF   	
-# No.FUN-680034 ---end---        
+        END IF
+# No.FUN-680034 ---end---
        END IF
 #END MOD-5A0286
    WHEN g_npl.npl03 = '7'       #退票
@@ -605,16 +605,16 @@ END FUNCTION
         SELECT nma05 INTO g_npq.npq03 FROM nma_file WHERE nma01 = g_nmd.nmd03
        ELSE
        	SELECT nma051 INTO g_npq.npq03 FROM nma_file WHERE nma01 = g_nmd.nmd03
-       END IF 	
+       END IF
         #FUN-590109  --begin
         IF g_aza.aza26='2' AND g_nmydmy5='Y' THEN
           IF p_npptype = '0'  THEN
             LET g_npq.npq03 = g_nms.nms16
           ELSE
             LET g_npq.npq03 = g_nms.nms161
-          END IF   	 
+          END IF
         END IF
-# No.FUN-680034 ---end---        
+# No.FUN-680034 ---end---
         #FUN-590109  --end
 # No.FUN-680034 --start--
    WHEN g_npl.npl03 ='C'	# Clear
@@ -623,13 +623,13 @@ END FUNCTION
       ELSE
       	SELECT nma051 INTO g_npq.npq03 FROM nma_file WHERE nma01=g_nmd.nmd03
       END IF
-# No.FUN-680034 ---end---      	
+# No.FUN-680034 ---end---
         IF g_npq.npq03 IS NULL THEN LET g_npq.npq03 = '-' END IF
  END CASE
 END FUNCTION
- 
+
 # No.FUN-680034 --start--
-#FUNCTION s_npq03_c_def()    #貸方會計科目default 
+#FUNCTION s_npq03_c_def()    #貸方會計科目default
  FUNCTION s_npq03_c_def(p_npptype)
   DEFINE p_npptype  LIKE npp_file.npptype
   DEFINE p_npqtype  LIKE npq_file.npqtype
@@ -641,21 +641,21 @@ END FUNCTION
         ELSE
            LET g_npq.npq03 = g_npl.npl07
         END IF
-      ELSE 
+      ELSE
       	 IF cl_null(g_npl.npl071) THEN
       	   LET g_npq.npq03 = g_nmd.nmd231
       	 ELSE
       	   LET g_npq.npq03 = g_npl.npl071
       	 END IF
-      END IF	
-         	    
+      END IF
+
    WHEN g_npl.npl03='6'  #撤票
       IF p_npptype = '0'  THEN
         IF cl_null(g_npl.npl07) THEN
            LET g_npq.npq03 = g_nms.nms17
            #FUN-590109  --begin
            IF g_aza.aza26='2' AND g_nmydmy5='Y' THEN
-              LET g_npq.npq03 = g_nmd.nmd23 
+              LET g_npq.npq03 = g_nmd.nmd23
            END IF
            #FUN-590109  --end
         ELSE
@@ -665,13 +665,13 @@ END FUNCTION
       	 IF cl_null(g_npl.npl071) THEN
            LET g_npq.npq03 = g_nms.nms171
            IF g_aza.aza26='2' AND g_nmydmy5='Y' THEN
-              LET g_npq.npq03 = g_nmd.nmd231 
+              LET g_npq.npq03 = g_nmd.nmd231
            END IF
          ELSE
            LET g_npq.npq03 = g_npl.npl071
          END IF
-       END IF	
-   WHEN g_npl.npl03='7'  #退票    
+       END IF
+   WHEN g_npl.npl03='7'  #退票
        IF p_npptype = '0'  THEN
         IF cl_null(g_npl.npl07) THEN
            LET g_npq.npq03 = g_nms.nms16
@@ -692,7 +692,7 @@ END FUNCTION
           ELSE
            LET g_npq.npq03 = g_npl.npl071
           END IF
-      END IF  
+      END IF
    WHEN g_npl.npl03='8'  #兌現
       LET g_npq.npq03 = NULL     #MOD-D80148
       IF p_npptype = '0'  THEN
@@ -716,8 +716,8 @@ END FUNCTION
          #FUN-CB0045--add--end
          IF cl_null(g_npq.npq03) THEN  #MOD-D80148
             SELECT nma051 INTO g_npq.npq03 FROM nma_file WHERE nma01=g_nmd.nmd03
-         END IF   #FUN-CB0045 
-      END IF     
+         END IF   #FUN-CB0045
+      END IF
         IF g_npq.npq03 IS NULL THEN
            LET g_npq.npq03 = '-'
         END IF
@@ -734,35 +734,35 @@ END FUNCTION
         ELSE
            LET g_npq.npq03 = g_npl.npl071
         END IF
-      END IF   
+      END IF
    WHEN g_npl.npl03 ='C'	# Clear
       IF p_npptype = '0'  THEN
         SELECT nma05 INTO g_npq.npq03 FROM nma_file WHERE nma01=g_nmd.nmd03
       ELSE
-      	SELECT nma051 INTO g_npq.npq03 FROM nma_file WHERE nma01=g_nmd.nmd03 
-      END IF	 
+      	SELECT nma051 INTO g_npq.npq03 FROM nma_file WHERE nma01=g_nmd.nmd03
+      END IF
         IF g_npq.npq03 IS NULL THEN LET g_npq.npq03 = '-' END IF
  END CASE
 END FUNCTION
 # No.FUN-680034 ---end---
- 
+
 #FUN-590109  --begin
 FUNCTION s_t150_gl_resort(p_npptype)           # No.FUN-680034  add p_npptype
-DEFINE      p_npptype   LIKE npp_file.npptype  # No.FUN-680034 
-DEFINE      p_npqtype   LIKE npq_file.npqtype  # No.FUN-680034 
+DEFINE      p_npptype   LIKE npp_file.npptype  # No.FUN-680034
+DEFINE      p_npqtype   LIKE npq_file.npqtype  # No.FUN-680034
 DEFINE      l_npq       RECORD LIKE npq_file.*
 DEFINE      l_npq02     LIKE npq_file.npq02
 DEFINE      l_aaa03     LIKE aaa_file.aaa03     #FUN-A40067
 DEFINE      l_flag      LIKE type_file.chr1    #FUN-D40118 add
- 
+
    DROP TABLE x
-   SELECT * FROM npq_file 
+   SELECT * FROM npq_file
     WHERE npqsys= 'NM' AND npq00=1 AND npq01 = g_trno AND npq011=g_npl.npl03 AND npqtype=p_npqtype     # No.FUN-680034  add  "AND npqtype=p_npqtype"
      INTO TEMP x
-   
-   DELETE FROM npq_file 
+
+   DELETE FROM npq_file
        WHERE npqsys= 'NM' AND npq00=1 AND npq01 = g_trno AND npq011=g_npl.npl03 AND npqtype=p_npqtype    # No.FUN-680034  add  "AND npqtype=p_npqtype"
-   IF SQLCA.SQLERRD[3] = 0 THEN                                                 
+   IF SQLCA.SQLERRD[3] = 0 THEN
 #     CALL cl_err('del npq_file',SQLCA.SQLCODE,1)                                  #No.FUN-660148
 #-----No.FUN-710024-----begin
       IF g_bgerr THEN
@@ -772,9 +772,9 @@ DEFINE      l_flag      LIKE type_file.chr1    #FUN-D40118 add
          CALL cl_err3("del","npq_file",g_trno,g_npl.npl03,SQLCA.sqlcode,"","del npq_file",1) #No.FUN-660148
       END IF
 #-----No.FUN-710024 -----end
-      RETURN                                                                    
+      RETURN
    END IF
-   DECLARE s_t250_gl_st CURSOR FOR 
+   DECLARE s_t250_gl_st CURSOR FOR
     SELECT * FROM x ORDER BY npq06,npq02
    LET l_npq02 = 0
    FOREACH s_t250_gl_st INTO l_npq.*
@@ -787,11 +787,11 @@ DEFINE      l_flag      LIKE type_file.chr1    #FUN-D40118 add
      # RETURNING  l_npq.*
      ## NO.FUN-5C0015 ---end---
      #end FUN-690105 mark
- 
-      #FUN-980005 add legal 
+
+      #FUN-980005 add legal
       LET l_npq.npqlegal= g_legal
-      #FUN-980005 end legal 
-              
+      #FUN-980005 end legal
+
 #No.FUN-9A0036 --Begin
       IF p_npptype = '1' THEN
 #FUN-A40067 --Begin
@@ -908,7 +908,7 @@ DEFINE l_flag           LIKE type_file.chr1    #FUN-D40118 add
          END IF
          #FUN-D40118--add--end--
          INSERT INTO npq_file VALUES(l_npq1.*)
-         IF STATUS THEN 
+         IF STATUS THEN
             IF g_bgerr THEN
                LET g_showmsg=l_npq1.npq01,"/",l_npq1.npq011,"/",l_npq1.npq03
                CALL s_errmsg('npq01,npq011,npq03',g_showmsg,'ins npq#9',STATUS,1)
@@ -918,17 +918,17 @@ DEFINE l_flag           LIKE type_file.chr1    #FUN-D40118 add
             LET g_success='N'
          END IF
       END IF
-   END IF   
+   END IF
 END FUNCTION
 #No.FUN-A40033 --End
 
 #FUN-CB0045--add--str--
 #合併借方
-FUNCTION s_t150_gl_b(p_npptype) 
+FUNCTION s_t150_gl_b(p_npptype)
    DEFINE l_aag05    LIKE aag_file.aag05
-   DEFINE p_npptype  LIKE npp_file.npptype   
-   DEFINE p_npqtype  LIKE npq_file.npqtype   
-   DEFINE l_aaa03    LIKE aaa_file.aaa03 
+   DEFINE p_npptype  LIKE npp_file.npptype
+   DEFINE p_npqtype  LIKE npq_file.npqtype
+   DEFINE l_aaa03    LIKE aaa_file.aaa03
    DEFINE l_sql      STRING
    DEFINE l_nmd23    LIKE nmd_file.nmd23,
           l_nmd08    LIKE nmd_file.nmd08,
@@ -937,53 +937,216 @@ FUNCTION s_t150_gl_b(p_npptype)
           l_nmd19    LIKE nmd_file.nmd19,
           l_npm04    LIKE npm_file.npm04,
           l_npm05    LIKE npm_file.npm05
-          
-   #借方科目產生
-   IF p_npptype = '0' THEN   
-      LET l_sql="SELECT nmd23,nmd08,nmd24,nmd18,nmd19,SUM(npm04),SUM(npm05)"
-   ELSE
-      LET l_sql="SELECT nmd231,nmd08,nmd24,nmd18,nmd19,SUM(npm04),SUM(npm05)" 
-   END IF
-   LET l_sql=l_sql,"  FROM npm_file,nmd_file ",
-             " WHERE npm03=nmd01 AND nmd30 <> 'X'",
-             "   AND npm01='",g_npl.npl01,"'"
-   IF p_npptype = '0' THEN
-      LET l_sql=l_sql," GROUP BY nmd23,nmd08,nmd24,nmd18,nmd19 "
-   ELSE
-      LET l_sql=l_sql," GROUP BY nmd231,nmd08,nmd24,nmd18,nmd19 "
-   END IF
-   PREPARE sel_pr FROM l_sql
-   DECLARE sel_cr CURSOR FOR sel_pr
-   FOREACH sel_cr INTO l_nmd23,l_nmd08,l_nmd24,l_nmd18,l_nmd19,l_npm04,l_npm05   
-      IF STATUS THEN
-         EXIT FOREACH
-      END IF
-      LET g_npq.npq02 = g_npq.npq02 + 1
-      LET g_npq.npq21 = l_nmd08 
-      LET g_npq.npq22 = l_nmd24 
+    # darcy add s---
+    define l_tc_npm09       like tc_npm_file.tc_npm09,
+           l_tc_npm04       like tc_npm_file.tc_npm04,
+           l_tc_npm05       like tc_npm_file.tc_npm05
+    define l_npm     dynamic array of record
+            npm01       like npm_file.npm01,
+            npm02       like npm_file.npm02,
+            npm03       like npm_file.npm03,
+            npm06       like npm_file.npm06,
+            npm07       like npm_file.npm07,
+            npm08       like npm_file.npm08,
+            npmud01     like npm_file.npmud01,
+            npmud02     like npm_file.npmud02,
+            npmud03     like npm_file.npmud03,
+            npmud04     like npm_file.npmud04,
+            npmud05     like npm_file.npmud05,
+            npmud06     like npm_file.npmud06,
+            npmud07     like npm_file.npmud07,
+            npmud08     like npm_file.npmud08,
+            npmud09     like npm_file.npmud09,
+            npmud10     like npm_file.npmud10,
+            npmud11     like npm_file.npmud11,
+            npmud12     like npm_file.npmud12,
+            npmud13     like npm_file.npmud13,
+            npmud14     like npm_file.npmud14,
+            npmud15     like npm_file.npmud15,
+            npmlegal    like npm_file.npmlegal,
+            nmd23       like nmd_file.nmd23,
+            nmd08       like nmd_file.nmd08,
+            nmd24       like nmd_file.nmd24,
+            nmd18       like nmd_file.nmd18,
+            nmd19       like nmd_file.nmd19,
+            npm04       like npm_file.npm04,
+            npm05       like npm_file.npm05,
+            npm09       like npm_file.npm09
+        end record
+    define l_result     dynamic array of record
+            nmd23       like nmd_file.nmd23,
+            nmd08       like nmd_file.nmd08,
+            nmd24       like nmd_file.nmd24,
+            nmd18       like nmd_file.nmd18,
+            nmd19       like nmd_file.nmd19,
+            npm04       like npm_file.npm04,
+            npm05       like npm_file.npm05,
+            npm09       like npm_file.npm09
+        end record
+    define l_result1 dynamic array of record like npm_file.*
+    define i,j          integer
+    define l_c_npm04,l_c_npm05  like npm_file.npm04
 
-      LET g_t1 = s_get_doc_no(g_trno)                                              
-      SELECT nmydmy5 INTO g_nmydmy5 FROM nmy_file WHERE nmyslip = g_t1 
+
+    let l_sql = "select tc_npm09,sum(tc_npm04),sum(tc_npm05) from tc_npm_file where tc_npm01 = '",g_npl.npl01,"'",
+                " group by tc_npm09 order by tc_npm09"
+    declare s_t150_tc_npm1 cursor from l_sql
+
+
+    IF p_npptype = '0' THEN
+       LET l_sql="SELECT npm01,npm02,npm03,npm06,npm07,npm08,npmud01,npmud02,npmud03,
+                        npmud04,npmud05,npmud06,npmud07,npmud08,npmud09,npmud10,
+                        npmud11,npmud12,npmud13,npmud14,npmud15,npmlegal,
+                        nmd23,nmd08,nmd24,nmd18,nmd19,npm04,npm05"
+    ELSE
+       LET l_sql="SELECT npm01,npm02,npm03,npm06,npm07,npm08,npmud01,npmud02,npmud03,
+                        npmud04,npmud05,npmud06,npmud07,npmud08,npmud09,npmud10,
+                        npmud11,npmud12,npmud13,npmud14,npmud15,npmlegal,
+                        nmd231,nmd08,nmd24,nmd18,nmd19,npm04,npm05"
+    END IF
+    LET l_sql=l_sql,"  FROM npm_file,nmd_file ",
+              " WHERE npm03=nmd01 AND nmd30 <> 'X'",
+              "   AND npm01='",g_npl.npl01,"'",
+              " order by npm02 "
+    PREPARE sel_pr FROM l_sql
+    DECLARE sel_cr CURSOR FOR sel_pr
+
+    call l_npm.clear()
+    let i = 1
+    FOREACH sel_cr INTO l_npm[i].*
+        IF STATUS THEN
+            EXIT FOREACH
+        END IF
+        let i = i + 1
+    end foreach
+    call l_npm.deleteElement(i)
+
+    call l_result.clear()
+    call l_result1.clear()
+    let j = 1
+    foreach s_t150_tc_npm1 into l_tc_npm09,l_tc_npm04,l_tc_npm05
+        if sqlca.sqlcode then
+            call cl_err('s_t150_tc_npm1',sqlca.sqlcode,1)
+            exit foreach
+        end if
+
+        let i = 1
+        while true
+            # 是否还有付款金额付款金额
+            if l_tc_npm04 <= 0 then
+                exit while
+            end if
+            # 还有票据金额插入一笔
+            if l_npm[i].npm04 <= 0 then
+                exit while
+            end if
+            # 金额判断
+            if l_tc_npm04 < l_npm[i].npm04 then
+                let l_c_npm04 = l_tc_npm04
+                let l_c_npm05 = l_tc_npm05
+            else
+                let l_c_npm04 = l_npm[i].npm04
+                let l_c_npm05 = l_npm[i].npm05
+            end if
+            # 扣除本次金额
+            let l_tc_npm04 = l_tc_npm04 - l_c_npm04
+            let l_npm[i].npm04 = l_npm[i].npm04 - l_c_npm04
+            let l_tc_npm05 = l_tc_npm05 - l_c_npm05
+            let l_npm[i].npm05 = l_npm[i].npm05 - l_c_npm05
+            let l_npm[i].npm06 = l_npm[i].npm05
+
+            let l_result[j].nmd23 = l_npm[i].nmd23
+            let l_result[j].nmd08 = l_npm[i].nmd08
+            let l_result[j].nmd24 = l_npm[i].nmd24
+            let l_result[j].nmd18 = l_npm[i].nmd18
+            let l_result[j].nmd19 = l_npm[i].nmd19
+            let l_result[j].npm04 = l_c_npm04
+            let l_result[j].npm05 = l_c_npm05
+            let l_result[j].npm09 = l_tc_npm09
+
+
+            let l_result1[j].npm01      = l_npm[i].npm01
+            let l_result1[j].npm02      = l_npm[i].npm02
+            let l_result1[j].npm03      = l_npm[i].npm03
+            let l_result1[j].npm04      = l_c_npm04
+            let l_result1[j].npm05      = l_c_npm05
+            let l_result1[j].npm06      = l_c_npm05
+            let l_result1[j].npm07      = l_npm[i].npm07
+            let l_result1[j].npm08      = l_npm[i].npm08
+            let l_result1[j].npmud01    = l_npm[i].npmud01
+            let l_result1[j].npmud02    = l_npm[i].npmud02
+            let l_result1[j].npmud03    = l_npm[i].npmud03
+            let l_result1[j].npmud04    = l_npm[i].npmud04
+            let l_result1[j].npmud05    = l_npm[i].npmud05
+            let l_result1[j].npmud06    = l_npm[i].npmud06
+            let l_result1[j].npmud07    = l_npm[i].npmud07
+            let l_result1[j].npmud08    = l_npm[i].npmud08
+            let l_result1[j].npmud09    = l_npm[i].npmud09
+            let l_result1[j].npmud10    = l_npm[i].npmud10
+            let l_result1[j].npmud11    = l_npm[i].npmud11
+            let l_result1[j].npmud12    = l_npm[i].npmud12
+            let l_result1[j].npmud13    = l_npm[i].npmud13
+            let l_result1[j].npmud14    = l_npm[i].npmud14
+            let l_result1[j].npmud15    = l_npm[i].npmud15
+            let l_result1[j].npmlegal   = l_npm[i].npmlegal
+            let l_result1[j].npm09      = l_tc_npm09
+
+            let j = j + 1
+            if l_npm[i].npm04 == 0 then
+                call l_npm.deleteElement(i)
+            else
+                let i = i + 1
+            end if
+        end while
+
+    end foreach
+
+    for i = 1 to l_result.getlength()
+        if cl_null(l_result[i].npm04) then
+            continue for
+        end if
+        let l_nmd23 = l_result[i].nmd23
+        let l_nmd08 = l_result[i].nmd08
+        let l_nmd24 = l_result[i].nmd24
+        let l_nmd18 = l_result[i].nmd18
+        let l_nmd19 = l_result[i].nmd19
+        let l_npm04 = l_result[i].npm04
+        let l_npm05 = l_result[i].npm05
+    # darcy add e---
+
+
+   #借方科目產生
+   # darcy remarkd s---
+   #FOREACH sel_cr INTO l_nmd23,l_nmd08,l_nmd24,l_nmd18,l_nmd19,l_npm04,l_npm05
+   #   IF STATUS THEN
+   #      EXIT FOREACH
+   #   END IF
+   # darcy remarkd e---
+      LET g_npq.npq02 = g_npq.npq02 + 1
+      LET g_npq.npq21 = l_nmd08
+      LET g_npq.npq22 = l_nmd24
+
+      LET g_t1 = s_get_doc_no(g_trno)
+      SELECT nmydmy5 INTO g_nmydmy5 FROM nmy_file WHERE nmyslip = g_t1
       LET g_npq.npq06 = '1'
 
-      LET g_npq.npq03 = l_nmd23 
+      LET g_npq.npq03 = l_nmd23
 
       LET g_npq.npq07f = l_npm04
-      LET g_npq.npq24 = g_npl.npl04 
-      LET g_npq.npq25 = l_nmd19 
+      LET g_npq.npq24 = g_npl.npl04
+      LET g_npq.npq25 = l_nmd19
       LET g_npq.npq07 = l_npm05
-      LET g_npq25     = g_npq.npq25                                                                                                      
-      CALL s_get_bookno(YEAR(g_npp.npp02)) RETURNING g_flag,g_bookno1,g_bookno2                                                
-      IF g_flag = '1' THEN                                                                                                     
+      LET g_npq25     = g_npq.npq25
+      CALL s_get_bookno(YEAR(g_npp.npp02)) RETURNING g_flag,g_bookno1,g_bookno2
+      IF g_flag = '1' THEN
          CALL cl_err(YEAR(g_npp.npp02),'aoo-081',1)
       END IF
-      SELECT aag05 INTO l_aag05 FROM aag_file 
-       WHERE aag01=g_npq.npq03 AND aag00=g_bookno1   
+
       IF l_aag05 = 'Y' THEN
-         LET g_npq.npq05 = l_nmd18  
+         LET g_npq.npq05 = l_nmd18
       ELSE
          LET g_npq.npq05 = ' '
-      END IF 
+      END IF
       #LET g_npq.npq04 = g_npl.npl08  #FUN-D10065 mark
       LET g_npq.npq04 = NULL          #FUN-D10065
       MESSAGE '>',g_npq.npq02,' ',g_npq.npq03
@@ -998,25 +1161,25 @@ FUNCTION s_t150_gl_b(p_npptype)
       ELSE
          LET g_bookno3 = g_bookno2
       END IF
-      
-      CALL s_def_npq(g_npq.npq03,g_prog,g_npq.*,g_npq.npq01,'','',g_bookno3) 
+
+      CALL s_def_npq(g_npq.npq03,g_prog,g_npq.*,g_npq.npq01,'','',g_bookno3)
          RETURNING  g_npq.*
       #FUN-D10065--add--str--
       IF cl_null(g_npq.npq04) THEN
          LET g_npq.npq04 = g_npl.npl08
       END IF
       #FUN-D10065--add--end
-      CALL s_def_npq31_npq34(g_npq.*,g_bookno3)  
-         RETURNING g_npq.npq31,g_npq.npq32,g_npq.npq33,g_npq.npq34 
-   
+      CALL s_def_npq31_npq34(g_npq.*,g_bookno3)
+         RETURNING g_npq.npq31,g_npq.npq32,g_npq.npq33,g_npq.npq34
+
       LET g_npq.npqlegal= g_legal
-   
+
       IF p_npptype = '1' THEN
          SELECT aaa03 INTO l_aaa03 FROM aaa_file
           WHERE aaa01 = g_bookno2
-         SELECT azi04 INTO t_azi04 FROM azi_file  
+         SELECT azi04 INTO t_azi04 FROM azi_file
           WHERE azi01 = l_aaa03
-   
+
          CALL s_newrate(g_bookno1,g_bookno2, g_npq.npq24,g_npq25,g_npp.npp02)
          RETURNING g_npq.npq25
          LET g_npq.npq07 = g_npq.npq07f * g_npq.npq25
@@ -1024,9 +1187,9 @@ FUNCTION s_t150_gl_b(p_npptype)
       ELSE
          LET g_npq.npq07 = cl_digcut(g_npq.npq07,g_azi04)
       END IF
-   
+
       INSERT INTO npq_file VALUES (g_npq.*)
-      IF STATUS THEN 
+      IF STATUS THEN
          IF g_bgerr THEN
             LET g_showmsg=g_npq.npq01,"/",g_npq.npq011,"/",g_npq.npq03
             CALL s_errmsg('npq01,npq011,npq03',g_showmsg,'ins npq#9',STATUS,1)
@@ -1035,76 +1198,86 @@ FUNCTION s_t150_gl_b(p_npptype)
          END IF
          LET g_success='N'
       END IF
-   END FOREACH
-   
+    # darcy mod s---
+    #END FOREACH
+    end for
+    # darcy mod e---
+
    #貸方科目逐筆產生
-   DECLARE s_t150_gl_cr1 CURSOR FOR
-        SELECT * FROM npm_file WHERE npm01=g_npl.npl01 
-   FOREACH s_t150_gl_cr1 INTO g_npm.*
-      IF STATUS THEN 
-         EXIT FOREACH
-      END IF
-      SELECT * INTO g_nmd.* FROM nmd_file 
+   # darcy mod s---
+   #DECLARE s_t150_gl_cr1 CURSOR FOR
+   #     SELECT * FROM npm_file WHERE npm01=g_npl.npl01
+   #FOREACH s_t150_gl_cr1 INTO g_npm.*
+   #   IF STATUS THEN
+   #      EXIT FOREACH
+   #   END IF
+   for i = 1 to l_result1.getlength()
+        if cl_null(l_result1[i].npm01) then
+            continue for
+        end if
+        let g_npm.* = l_result1[i].*
+   # darcy mod e---
+      SELECT * INTO g_nmd.* FROM nmd_file
         WHERE nmd01=g_npm.npm03 AND nmd30 <> 'X'
       IF STATUS THEN
          INITIALIZE g_nmd.* TO NULL
       END IF
       LET g_npq.npq02 = g_npq.npq02 + 1
-      LET g_npq.npq21 = g_nmd.nmd08 
-      LET g_npq.npq22 = g_nmd.nmd24 
-      
+      LET g_npq.npq21 = g_nmd.nmd08
+      LET g_npq.npq22 = g_nmd.nmd24
+
       LET g_npq.npq02 = g_npq.npq02 + 1
       LET g_npq.npq06 = '2'
-      CALL s_npq03_c_def(p_npptype) 
+      CALL s_npq03_c_def(p_npptype)
 
       LET g_npq.npq07f = g_npm.npm04
-      LET g_npq.npq07 = g_npm.npm06 
+      LET g_npq.npq07 = g_npm.npm06
       LET g_npq.npq25 = g_npl.npl05
-      LET g_npq25     = g_npq.npq25  
+      LET g_npq25     = g_npq.npq25
 
       LET g_npq.npq24 = g_npl.npl04
-                                                                                            
-      CALL s_get_bookno(YEAR(g_npp.npp02)) RETURNING g_flag,g_bookno1,g_bookno2                                                
-      IF g_flag = '1' THEN                                                                                                     
-         CALL cl_err(YEAR(g_npp.npp02),'aoo-081',1)                                                                            
-      END IF                                                                                                                   
+
+      CALL s_get_bookno(YEAR(g_npp.npp02)) RETURNING g_flag,g_bookno1,g_bookno2
+      IF g_flag = '1' THEN
+         CALL cl_err(YEAR(g_npp.npp02),'aoo-081',1)
+      END IF
 
       SELECT aag05 INTO l_aag05 FROM aag_file   #是否做部門管理
        WHERE aag01=g_npq.npq03
-         AND aag00=g_bookno1      
+         AND aag00=g_bookno1
       IF l_aag05 = 'Y' THEN
-         LET g_npq.npq05 = g_nmd.nmd18 
+         LET g_npq.npq05 = g_nmd.nmd18
       ELSE
          LET g_npq.npq05 = ' '
-      END IF 
+      END IF
       #LET g_npq.npq04 = g_npl.npl08  #FUN-D10065 mark
       LET g_npq.npq04 = NULL          #FUN-D10065
       MESSAGE '>',g_npq.npq02,' ',g_npq.npq03
       IF cl_null(g_npq.npq03) THEN LET g_npq.npq03='-' END IF
       IF g_aza.aza26='2' THEN
          IF g_nmydmy5='Y' AND g_npl.npl03 MATCHES '[67]' THEN
-            LET g_npq.npq07 = (-1)*g_npq.npq07                                  
-            LET g_npq.npq07f= (-1)*g_npq.npq07f                                 
-         END IF  
-      END IF  
-      
-      CALL s_def_npq(g_npq.npq03,g_prog,g_npq.*,g_npq.npq01,g_npm.npm02,'',g_bookno3)  
+            LET g_npq.npq07 = (-1)*g_npq.npq07
+            LET g_npq.npq07f= (-1)*g_npq.npq07f
+         END IF
+      END IF
+
+      CALL s_def_npq(g_npq.npq03,g_prog,g_npq.*,g_npq.npq01,g_npm.npm02,'',g_bookno3)
         RETURNING  g_npq.*
-       
+
       #FUN-D10065--add--str--
       IF cl_null(g_npq.npq04) THEN
          LET g_npq.npq04 = g_npl.npl08
       END IF
       #FUN-D10065--add--end
-      CALL s_def_npq31_npq34(g_npq.*,g_bookno3)  
-        RETURNING g_npq.npq31,g_npq.npq32,g_npq.npq33,g_npq.npq34 
+      CALL s_def_npq31_npq34(g_npq.*,g_bookno3)
+        RETURNING g_npq.npq31,g_npq.npq32,g_npq.npq33,g_npq.npq34
 
       LET g_npq.npqlegal= g_legal
 
       IF p_npptype = '1' THEN
          SELECT aaa03 INTO l_aaa03 FROM aaa_file
           WHERE aaa01 = g_bookno2
-         SELECT azi04 INTO t_azi04 FROM azi_file       
+         SELECT azi04 INTO t_azi04 FROM azi_file
           WHERE azi01 = l_aaa03
 
          CALL s_newrate(g_bookno1,g_bookno2,
@@ -1114,7 +1287,7 @@ FUNCTION s_t150_gl_b(p_npptype)
 
          LET g_npq.npq07 = cl_digcut(g_npq.npq07,t_azi04)
       ELSE
-         LET g_npq.npq07 = cl_digcut(g_npq.npq07,g_azi04) 
+         LET g_npq.npq07 = cl_digcut(g_npq.npq07,g_azi04)
       END IF
 
       INSERT INTO npq_file VALUES (g_npq.*)
@@ -1125,13 +1298,13 @@ FUNCTION s_t150_gl_b(p_npptype)
          ELSE
             CALL cl_err3("ins","npq_file",g_npq.npq00,g_npq.npq01,STATUS,"","ins npq#9",1) #No.FUN-660148
          END IF
-         LET g_success='N' 
+         LET g_success='N'
       END IF
- 
+
       #匯差產生
       LET g_npq.npq07 = g_npm.npm05  - g_npm.npm06
       IF g_npl.npl03="7" THEN
-         IF g_npq.npq07 < 0 THEN  
+         IF g_npq.npq07 < 0 THEN
             LET g_npq.npq06 = '2'
             LET g_npq.npq03 = g_nms.nms12
             LET g_npq.npq07 = -1 * g_npq.npq07
@@ -1140,28 +1313,28 @@ FUNCTION s_t150_gl_b(p_npptype)
             LET g_npq.npq03 = g_nms.nms13
          END IF
       ELSE
-         IF g_npq.npq07 > 0 THEN 
+         IF g_npq.npq07 > 0 THEN
             LET g_npq.npq06 = '2'
             LET g_npq.npq03 = g_nms.nms12
          ELSE
             LET g_npq.npq06 = '1'
             LET g_npq.npq03 = g_nms.nms13
-            LET g_npq.npq07 = -1 * g_npq.npq07  
+            LET g_npq.npq07 = -1 * g_npq.npq07
          END IF
       END IF
-                                                                                             
-      CALL s_get_bookno(YEAR(g_npp.npp02)) RETURNING g_flag,g_bookno1,g_bookno2                                                
-      IF g_flag = '1' THEN                                                                                                     
-         CALL cl_err(YEAR(g_npp.npp02),'aoo-081',1)                                                                            
-      END IF               
+
+      CALL s_get_bookno(YEAR(g_npp.npp02)) RETURNING g_flag,g_bookno1,g_bookno2
+      IF g_flag = '1' THEN
+         CALL cl_err(YEAR(g_npp.npp02),'aoo-081',1)
+      END IF
       SELECT aag05 INTO l_aag05 FROM aag_file   #是否做部門管理
        WHERE aag01=g_npq.npq03
-         AND aag00=g_bookno1   
+         AND aag00=g_bookno1
       IF l_aag05 = 'Y' THEN
-         LET g_npq.npq05 = g_nmd.nmd18 
+         LET g_npq.npq05 = g_nmd.nmd18
       ELSE
          LET g_npq.npq05 = ' '
-      END IF 
+      END IF
       LET g_npq.npq07f = 0
       #LET g_npq.npq04 = g_npl.npl08 #FUN-D10065 mark
       LET g_npq.npq04 = NULL         #FUN-D10065
@@ -1169,7 +1342,7 @@ FUNCTION s_t150_gl_b(p_npptype)
       IF cl_null(g_npq.npq03) THEN LET g_npq.npq03='-' END IF
       IF g_npq.npq07<>0 OR g_npq.npq07f<>0 THEN
          LET g_npq.npq02 = g_npq.npq02 + 1
-         CALL s_def_npq(g_npq.npq03,g_prog,g_npq.*,g_npq.npq01,g_npm.npm02,'',g_bookno3)  
+         CALL s_def_npq(g_npq.npq03,g_prog,g_npq.*,g_npq.npq01,g_npm.npm02,'',g_bookno3)
           RETURNING  g_npq.*
          #FUN-D10065--add--str--
          IF cl_null(g_npq.npq04) THEN
@@ -1177,7 +1350,7 @@ FUNCTION s_t150_gl_b(p_npptype)
          END IF
          #FUN-D10065--add--end
          CALL s_def_npq31_npq34(g_npq.*,g_bookno3)
-         RETURNING g_npq.npq31,g_npq.npq32,g_npq.npq33,g_npq.npq34 
+         RETURNING g_npq.npq31,g_npq.npq32,g_npq.npq33,g_npq.npq34
 
          LET g_npq.npqlegal= g_legal
 
@@ -1185,7 +1358,7 @@ FUNCTION s_t150_gl_b(p_npptype)
 
             SELECT aaa03 INTO l_aaa03 FROM aaa_file
              WHERE aaa01 = g_bookno2
-            SELECT azi04 INTO t_azi04 FROM azi_file 
+            SELECT azi04 INTO t_azi04 FROM azi_file
              WHERE azi01 = l_aaa03
 
             CALL s_newrate(g_bookno1,g_bookno2,
@@ -1195,22 +1368,25 @@ FUNCTION s_t150_gl_b(p_npptype)
 
             LET g_npq.npq07 = cl_digcut(g_npq.npq07,t_azi04)
          ELSE
-            LET g_npq.npq07 = cl_digcut(g_npq.npq07,g_azi04)  
+            LET g_npq.npq07 = cl_digcut(g_npq.npq07,g_azi04)
          END IF
 
          INSERT INTO npq_file VALUES (g_npq.*)
-         IF STATUS THEN 
+         IF STATUS THEN
 
             IF g_bgerr THEN
                LET g_showmsg=g_npq.npq01,"/",g_npq.npq011,"/",g_npq.npq03
                CALL s_errmsg('npq01,npq011,npq03',g_showmsg,'ins npq#10',STATUS,1)
             ELSE
-               CALL cl_err3("ins","npq_file",g_npq.npq00,g_npq.npq01,STATUS,"","ins npq#10",1) 
+               CALL cl_err3("ins","npq_file",g_npq.npq00,g_npq.npq01,STATUS,"","ins npq#10",1)
             END IF
 
-            LET g_success='N' 
+            LET g_success='N'
          END IF
       END IF
-   END FOREACH
-END FUNCTION 
+    # darcy mod s---
+    #END FOREACH
+    end for
+    # darcy mod e---
+END FUNCTION
 #FUN-CB0045--add--end
