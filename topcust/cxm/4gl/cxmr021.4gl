@@ -1,17 +1,20 @@
 # Prog. Version..:
 #
 # Pattern name...: cxmr021.4gl
-# Descriptions...: 订单达交率报表
-# Date & Author..: darcy:2025/07/03
-
+# Descriptions...: 订单分析报表
+# Date & Author..: darcy:2025/09/19 
+#HFBG-16030001
+import libsummary
 DATABASE ds
  
 GLOBALS "../../../tiptop/config/top.global"
 
-DEFINE tm  RECORD                               
-   wc      LIKE type_file.chr1000,      
-   more    LIKE type_file.chr1          
-END RECORD
+DEFINE tm  RECORD
+      begin_yy    like type_file.num5,
+      begin_mm    like type_file.num5,
+      end_yy      like type_file.num5,
+      end_mm      like type_file.num5
+   END RECORD  
  
 DEFINE   g_cnt           LIKE type_file.num10      
 DEFINE   g_i             LIKE type_file.num5       
@@ -37,37 +40,11 @@ MAIN
    END IF
    CALL cl_used(g_prog,g_time,1) RETURNING g_time  
   
-   LET g_sql="zo02.zo_file.zo02,",
-             "ogbud02.ogb_file.ogbud02"
-             
+    
+ 
+   INITIALIZE tm.* TO NULL         
 
-   LET  l_table = cl_prt_temptable('cxmr021',g_sql) CLIPPED
-   IF l_table=-1 THEN EXIT PROGRAM END IF
-   LET g_sql = "INSERT INTO ",g_cr_db_str CLIPPED,l_table CLIPPED,
-               " VALUES()"                     
-   PREPARE insert_prep FROM g_sql
-   IF STATUS THEN
-      CALL cl_err('insert_prep:',status,1) EXIT PROGRAM
-   END IF
-
-   INITIALIZE tm.* TO NULL
-   LET g_pdate = ARG_VAL(1)
-   LET g_towhom = ARG_VAL(2)
-   LET g_rlang = ARG_VAL(3)
-   LET g_bgjob = ARG_VAL(4)
-   LET g_prtway = ARG_VAL(5)
-   LET g_copies = ARG_VAL(6)
-   LET tm.wc = ARG_VAL(7)
-   LET g_rep_user = ARG_VAL(8)
-   LET g_rep_clas = ARG_VAL(9)
-   LET g_template = ARG_VAL(10)
-   LET g_rpt_name = ARG_VAL(11)
-   
-   IF cl_null(tm.wc)
-      THEN CALL cxmr021_tm(0,0)          
-      ELSE
-           CALL cxmr021()                
-   END IF
+   CALL cxmr021_tm(0,0)
    CALL cl_used(g_prog,g_time,2) RETURNING g_time 
 END MAIN
 
@@ -83,241 +60,231 @@ DEFINE p_row,p_col    LIKE type_file.num5,
        ATTRIBUTE (STYLE = g_win_style CLIPPED) 
  
     CALL cl_ui_init()
-  
-   LET tm.more = 'N'
    LET g_pdate = g_today
    LET g_rlang = g_lang
    LET g_bgjob = 'N'
    LET g_copies = '1' 
  
    CALL cl_opmsg('p')
-WHILE TRUE
-   CONSTRUCT BY NAME tm.wc ON oea02,oea03,oeb04,duration
+   WHILE TRUE
+      input by name tm.* without defaults
                               
-     
-         BEFORE CONSTRUCT
-             CALL cl_qbe_init() 
- 
-       ON ACTION locale 
-          CALL cl_show_fld_cont()                    
-         LET g_action_choice = "locale"
-         EXIT CONSTRUCT
- 
-     ON IDLE g_idle_seconds
-        CALL cl_on_idle()
-        CONTINUE CONSTRUCT
- 
-      ON ACTION controlp
-           CASE
-              WHEN INFIELD(oeb04)
-                 CALL cl_init_qry_var()
-                 LET g_qryparam.form = "cq_ima03"  #No.TQC-5B0095
-                 LET g_qryparam.state = 'c'
-                 CALL cl_create_qry() RETURNING g_qryparam.multiret
-                 DISPLAY g_qryparam.multiret TO oeb04
-                 NEXT FIELD oeb04
-                OTHERWISE
-                 EXIT CASE
-           END CASE
- 
-      ON ACTION about         #MOD-4C0121
-         CALL cl_about()      #MOD-4C0121
- 
-      ON ACTION help          #MOD-4C0121
-         CALL cl_show_help()  #MOD-4C0121
- 
-      ON ACTION controlg      #MOD-4C0121
-         CALL cl_cmdask()     #MOD-4C0121
-
-           ON ACTION exit
-           LET INT_FLAG = 1
-           EXIT CONSTRUCT
-         
-         ON ACTION qbe_select
-            CALL cl_qbe_select()
-         
-  END CONSTRUCT
-       IF g_action_choice = "locale" THEN
-          LET g_action_choice = ""
-          CALL cl_dynamic_locale()
-          CONTINUE WHILE
-       END IF
- 
-   IF INT_FLAG THEN
-      LET INT_FLAG = 0 CLOSE WINDOW cxmr021_w 
-      CALL cl_used(g_prog,g_time,2) RETURNING g_time #No.FUN-690126
-      EXIT PROGRAM
-         
-   END IF
-   IF tm.wc=" 1=1" THEN
-      CALL cl_err('','9046',0) CONTINUE WHILE
-   END IF
-  #UI
-   INPUT BY NAME tm.more  WITHOUT DEFAULTS
-         #No.FUN-580031 --start--
          BEFORE INPUT
              CALL cl_qbe_display_condition(lc_qbe_sn)
-         #No.FUN-580031 ---end---
  
-      AFTER FIELD more
-         IF tm.more = 'Y'
-            THEN CALL cl_repcon(0,0,g_pdate,g_towhom,g_rlang,
-                                g_bgjob,g_time,g_prtway,g_copies)
-                      RETURNING g_pdate,g_towhom,g_rlang,
-                                g_bgjob,g_time,g_prtway,g_copies
-         END IF
-      ON ACTION CONTROLR
-         CALL cl_show_req_fields()
-      ON ACTION CONTROLG CALL cl_cmdask()    # Command execution
-      ON IDLE g_idle_seconds
-         CALL cl_on_idle()
-         CONTINUE INPUT
- 
-      ON ACTION about         #MOD-4C0121
-         CALL cl_about()      #MOD-4C0121
- 
-      ON ACTION help          #MOD-4C0121
-         CALL cl_show_help()  #MOD-4C0121
- 
- 
-          ON ACTION exit
-          LET INT_FLAG = 1
-          EXIT INPUT
-         #No.FUN-580031 --start--
-         ON ACTION qbe_save
+         ON ACTION CONTROLR
+            CALL cl_show_req_fields()
+
+         ON ACTION CONTROLG 
+            CALL cl_cmdask()    # Command execution
+
+         ON IDLE g_idle_seconds
+            CALL cl_on_idle()
+            CONTINUE INPUT
+   
+         ON ACTION about         #MOD-4C0121
+            CALL cl_about()      #MOD-4C0121
+   
+         ON ACTION help          #MOD-4C0121
+            CALL cl_show_help()  #MOD-4C0121
+
+         ON ACTION exit
+            LET INT_FLAG = 1
+            EXIT INPUT
+
+         ON ACTION qbe_savecs_uuid
             CALL cl_qbe_save()
-         #No.FUN-580031 ---end---
- 
-   END INPUT
-   IF INT_FLAG THEN
-      LET INT_FLAG = 0 CLOSE WINDOW cxmr021_w 
-      CALL cl_used(g_prog,g_time,2) RETURNING g_time #No.FUN-690126
-      EXIT PROGRAM
-         
-   END IF
-   IF g_bgjob = 'Y' THEN
-      SELECT zz08 INTO l_cmd FROM zz_file    #get exec cmd (fglgo xxxx)
-             WHERE zz01='cxmr021'
-      IF SQLCA.sqlcode OR l_cmd IS NULL THEN
-         CALL cl_err('cxmr021','9031',1)
-      ELSE
-         LET tm.wc=cl_replace_str(tm.wc,'\\\"', "'")
-         LET l_cmd = l_cmd CLIPPED,        
-                         " '",g_pdate CLIPPED,"'",
-                         " '",g_towhom CLIPPED,"'", 
-                         " '",g_rlang CLIPPED,"'", #No.FUN-7C0078
-                         " '",g_bgjob CLIPPED,"'",
-                         " '",g_prtway CLIPPED,"'",
-                         " '",g_copies CLIPPED,"'",
-                         " '",tm.wc CLIPPED,"'" ,           #MOD-650024 mark
-                         " '",g_rep_user CLIPPED,"'",           #No.FUN-570264
-                         " '",g_rep_clas CLIPPED,"'",           #No.FUN-570264
-                         " '",g_template CLIPPED,"'",           #No.FUN-570264
-                         " '",g_rpt_name CLIPPED,"'"            #No.FUN-7C0078
-         CALL cl_cmdat('cxmr021',g_time,l_cmd)    # Execute cmd at later time
+
+      END input
+      IF g_action_choice = "locale" THEN
+         LET g_action_choice = ""
+         CALL cl_dynamic_locale()
+         CONTINUE WHILE
       END IF
-      CLOSE WINDOW cxmr021_w
-      CALL cl_used(g_prog,g_time,2) RETURNING g_time #No.FUN-690126
-      EXIT PROGRAM
-   END IF
-   CALL cl_wait()
-   CALL cxmr021()
-   ERROR ""
-END WHILE
+ 
+      IF INT_FLAG THEN
+         LET INT_FLAG = 0 CLOSE WINDOW cxmr021_w 
+         CALL cl_used(g_prog,g_time,2) RETURNING g_time #No.FUN-690126
+         EXIT PROGRAM
+      END IF 
+
+      CALL cl_wait()
+      CALL cxmr021()
+      ERROR ""
+   END WHILE
    CLOSE WINDOW cxmr021_w
 END FUNCTION
 
 
 FUNCTION cxmr021()
-   DEFINE l_name    LIKE type_file.chr20,         # External(Disk) file name        #No.FUN-680137 VARCHAR(20)
-#       l_time          LIKE type_file.chr8        #No.FUN-6A0094
-          l_sql     LIKE type_file.chr1000,       #No.FUN-680137 VARCHAR(3000)
-          l_za05    LIKE type_file.chr1000,       #No.FUN-680137 VARCHAR(40)
-          l_zo041   LIKE zo_file.zo041,   #FUN-810029 add
-          l_zo042   LIKE zo_file.zo042,
-          l_zo05    LIKE zo_file.zo05,     #FUN-810029 add
-          l_zo09    LIKE zo_file.zo09,     #FUN-810029 add
-          l_ogb03   LIKE ogb_file.ogb03,
-          sr        RECORD
-                    zo02     LIKE zo_file.zo02, 
-                    ogbud02  LIKE ogb_file.ogbud02 #客户订单单号
-                    END RECORD
-   DEFINE l_cnt     LIKE type_file.num5            
+   define l_uuid ,l_period1,l_period2    varchar(40)
+   define l_str      string
+   define l_begin,l_end date
+   define l_file   string
 
-   DEFINE l_price LIKE ogb_file.ogb13
+-- period 
 
-   DEFINE l_img_blob     LIKE type_file.blob
-   LOCATE l_img_blob IN MEMORY             
- 
+   let l_period1 = sfmt("%1%2",tm.begin_yy,tm.begin_mm using '&&' )
+   let l_period2 = sfmt("%1%2",tm.end_yy,tm.end_mm using '&&' )
 
-     CALL cl_del_data(l_table) 
- 
-     SELECT zo02 INTO g_company FROM zo_file WHERE zo01 = g_rlang
- 
-     SELECT zz05 INTO g_zz05 FROM zz_file WHERE zz01='cxmr021' 
- 
-     LET tm.wc = tm.wc CLIPPED 
-     
-   #公司全名zo02、公司地址zo041、公司電話zo05、公司傳真zo09
-   LET l_zo041 = NULL  LET l_zo05 = NULL  LET l_zo09 = NULL
+-- uuid
+   call cs_uuid() returning l_uuid
 
-   
-   # 1. 根据范围取数据,取预测工单+项次资料
-   let g_sql = " insert into cxmr021_tmp ",
-               " select oea01, oea02, oeb03, tc_oeb031, oeb05, tc_oeb12, tc_oeb16 ",
-               "   from oea_file, oeb_file, tc_oeb_file ",
-               "  where oea01 = oeb01 ",
-               "    and oeaconf = 'Y' ",
-               "    and tc_oeb01 = oeb01 ",
-               "    and tc_oeb03 = oeb03 ",
-               "    and ",tm.wc
-   prepare cxmr021_tmp_ins from g_sql
-   execute cxmr021_tmp_ins
-   # 2. 关联正式订单
-   let g_sql = ""
-   # 3. 关联出货单
-   # 4. 计算达交率
-   
- 
-   LET g_sql = "SELECT * FROM ",g_cr_db_str CLIPPED,l_table CLIPPED
-   IF g_zz05='Y' THEN
-      CALL cl_wcchp(tm.wc,'oga01,oga02')
-            RETURNING tm.wc
-   END IF
-   LET g_str = tm.wc
+-- 日期获得
 
-   CALL cl_prt_cs3('cxmr021','cxmr021',g_sql,g_str)
+   let l_str = " SELECT  TO_DATE(?, 'YYYYMM') AS first_date, ",
+               "         LAST_DAY(TO_DATE(?, 'YYYYMM')) AS last_date ",
+               " FROM DUAL "
+   prepare cxmr021_dat from l_str
+   execute cxmr021_dat using l_period1,l_period2 into l_begin,l_end
+
+-- cxmq021_sales
+   let l_str = " insert into cxmq021_sales (",
+               "     uuid,yy,mm,oea032,tc_sma03,oea01,oea02,oeatype,oeb04_1,oeb04,oeb13,layer,",
+               "     sum01,cnt01,cnt02,cnt03,cnt04,cnt05,cnt06,cnt07,cnt08,cnt09,cnt10,cnt11,cnt12, ",
+               "     cnt13,cnt14,cnt15,cnt16,cnt17,cnt18,cnt19,cnt20,cnt21,cnt22,cnt23,cnt24,cnt25,cnt26, ",
+               "     cnt27,cnt28,cnt29,cnt30,cnt31, ",
+               "     sum02,amt01,amt02,amt03,amt04,amt05,amt06,amt07,amt08,amt09,amt10,amt11,amt12, ",
+               "     amt13,amt14,amt15,amt16,amt17,amt18,amt19,amt20,amt21,amt22,amt23,amt24,amt25,amt26, ",
+               "     amt27,amt28,amt29,amt30,amt31  )",
+               "  select '",l_uuid,"',year(oea02),month(oea02),oea032,tc_sma03, ",
+               "       oea01,oea02,substr(oea01,1,3),substr(oeb04,1,6),oeb04,oeb13, ",
+               "       case when substr(oeb04,8,1) between '0' and '9' then ASCII(substr(oeb04,8,1)) - ASCII('0') ",
+               "       when substr(oeb04,8,1) between 'A' and 'Z' then ASCII(substr(oeb04,8,1)) - ASCII('A') end  layer, ",
+               "       sum(tc_oeb12), ",
+               "       sum(case day(tc_oeb16) when 1 then tc_oeb12 else 0 end  ) cnt01, ",
+               "       sum(case day(tc_oeb16) when 2 then tc_oeb12 else 0 end  ) cnt02, ",
+               "       sum(case day(tc_oeb16) when 3 then tc_oeb12 else 0 end  ) cnt03, ",
+               "       sum(case day(tc_oeb16) when	4	then tc_oeb12 else 0 end ) cnt04, ", 
+               "       sum(case day(tc_oeb16) when	5	then tc_oeb12 else 0 end ) cnt05, ", 
+               "       sum(case day(tc_oeb16) when	6	then tc_oeb12 else 0 end ) cnt06, ", 
+               "       sum(case day(tc_oeb16) when	7	then tc_oeb12 else 0 end ) cnt07, ", 
+               "       sum(case day(tc_oeb16) when	8	then tc_oeb12 else 0 end ) cnt08, ", 
+               "       sum(case day(tc_oeb16) when	9	then tc_oeb12 else 0 end ) cnt09, ", 
+               "       sum(case day(tc_oeb16) when	10	then tc_oeb12 else 0 end ) cnt10, ", 
+               "       sum(case day(tc_oeb16) when	11	then tc_oeb12 else 0 end ) cnt11, ", 
+               "       sum(case day(tc_oeb16) when	12	then tc_oeb12 else 0 end ) cnt12, ", 
+               "       sum(case day(tc_oeb16) when	13	then tc_oeb12 else 0 end ) cnt13, ", 
+               "       sum(case day(tc_oeb16) when	14	then tc_oeb12 else 0 end ) cnt14, ", 
+               "       sum(case day(tc_oeb16) when	15	then tc_oeb12 else 0 end ) cnt15, ", 
+               "       sum(case day(tc_oeb16) when	16	then tc_oeb12 else 0 end ) cnt16, ", 
+               "       sum(case day(tc_oeb16) when	17	then tc_oeb12 else 0 end ) cnt17, ", 
+               "       sum(case day(tc_oeb16) when	18	then tc_oeb12 else 0 end ) cnt18, ", 
+               "       sum(case day(tc_oeb16) when	19	then tc_oeb12 else 0 end ) cnt19, ", 
+               "       sum(case day(tc_oeb16) when	20	then tc_oeb12 else 0 end ) cnt20, ", 
+               "       sum(case day(tc_oeb16) when	21	then tc_oeb12 else 0 end ) cnt21, ", 
+               "       sum(case day(tc_oeb16) when	22	then tc_oeb12 else 0 end ) cnt22, ", 
+               "       sum(case day(tc_oeb16) when	23	then tc_oeb12 else 0 end ) cnt23, ", 
+               "       sum(case day(tc_oeb16) when	24	then tc_oeb12 else 0 end ) cnt24, ", 
+               "       sum(case day(tc_oeb16) when	25	then tc_oeb12 else 0 end ) cnt25, ", 
+               "       sum(case day(tc_oeb16) when	26	then tc_oeb12 else 0 end ) cnt26, ", 
+               "       sum(case day(tc_oeb16) when	27	then tc_oeb12 else 0 end ) cnt27, ", 
+               "       sum(case day(tc_oeb16) when	28	then tc_oeb12 else 0 end ) cnt28, ", 
+               "       sum(case day(tc_oeb16) when	29	then tc_oeb12 else 0 end ) cnt29, ", 
+               "       sum(case day(tc_oeb16) when	30	then tc_oeb12 else 0 end ) cnt30, ", 
+               "       sum(case day(tc_oeb16) when	31	then tc_oeb12 else 0 end ) cnt31, ",
+               "       sum(tc_oeb12*oeb13), ",
+               "       sum(case day(tc_oeb16) when 1 then tc_oeb12*oeb13 else 0 end  ) amt01, ",
+               "       sum(case day(tc_oeb16) when 2 then tc_oeb12*oeb13 else 0 end  ) amt02, ",
+               "       sum(case day(tc_oeb16) when 3 then tc_oeb12*oeb13 else 0 end  ) amt03, ",
+               "       sum(case day(tc_oeb16) when	4	then tc_oeb12*oeb13 else 0 end ) amt04, ", 
+               "       sum(case day(tc_oeb16) when	5	then tc_oeb12*oeb13 else 0 end ) amt05, ", 
+               "       sum(case day(tc_oeb16) when	6	then tc_oeb12*oeb13 else 0 end ) amt06, ", 
+               "       sum(case day(tc_oeb16) when	7	then tc_oeb12*oeb13 else 0 end ) amt07, ", 
+               "       sum(case day(tc_oeb16) when	8	then tc_oeb12*oeb13 else 0 end ) amt08, ", 
+               "       sum(case day(tc_oeb16) when	9	then tc_oeb12*oeb13 else 0 end ) amt09, ", 
+               "       sum(case day(tc_oeb16) when	10	then tc_oeb12*oeb13 else 0 end ) amt10, ", 
+               "       sum(case day(tc_oeb16) when	11	then tc_oeb12*oeb13 else 0 end ) amt11, ", 
+               "       sum(case day(tc_oeb16) when	12	then tc_oeb12*oeb13 else 0 end ) amt12, ", 
+               "       sum(case day(tc_oeb16) when	13	then tc_oeb12*oeb13 else 0 end ) amt13, ", 
+               "       sum(case day(tc_oeb16) when	14	then tc_oeb12*oeb13 else 0 end ) amt14, ", 
+               "       sum(case day(tc_oeb16) when	15	then tc_oeb12*oeb13 else 0 end ) amt15, ", 
+               "       sum(case day(tc_oeb16) when	16	then tc_oeb12*oeb13 else 0 end ) amt16, ", 
+               "       sum(case day(tc_oeb16) when	17	then tc_oeb12*oeb13 else 0 end ) amt17, ", 
+               "       sum(case day(tc_oeb16) when	18	then tc_oeb12*oeb13 else 0 end ) amt18, ", 
+               "       sum(case day(tc_oeb16) when	19	then tc_oeb12*oeb13 else 0 end ) amt19, ", 
+               "       sum(case day(tc_oeb16) when	20	then tc_oeb12*oeb13 else 0 end ) amt20, ", 
+               "       sum(case day(tc_oeb16) when	21	then tc_oeb12*oeb13 else 0 end ) amt21, ", 
+               "       sum(case day(tc_oeb16) when	22	then tc_oeb12*oeb13 else 0 end ) amt22, ", 
+               "       sum(case day(tc_oeb16) when	23	then tc_oeb12*oeb13 else 0 end ) amt23, ", 
+               "       sum(case day(tc_oeb16) when	24	then tc_oeb12*oeb13 else 0 end ) amt24, ", 
+               "       sum(case day(tc_oeb16) when	25	then tc_oeb12*oeb13 else 0 end ) amt25, ", 
+               "       sum(case day(tc_oeb16) when	26	then tc_oeb12*oeb13 else 0 end ) amt26, ", 
+               "       sum(case day(tc_oeb16) when	27	then tc_oeb12*oeb13 else 0 end ) amt27, ", 
+               "       sum(case day(tc_oeb16) when	28	then tc_oeb12*oeb13 else 0 end ) amt28, ", 
+               "       sum(case day(tc_oeb16) when	29	then tc_oeb12*oeb13 else 0 end ) amt29, ", 
+               "       sum(case day(tc_oeb16) when	30	then tc_oeb12*oeb13 else 0 end ) amt30, ", 
+               "       sum(case day(tc_oeb16) when	31	then tc_oeb12*oeb13 else 0 end ) amt31 ", 
+               "from cxmq021_tmpview  ",
+               "where tc_oeb16 between  ? and ?  ",
+               "group by year(oea02),month(oea02),oea032,tc_sma03, ",
+               "oea01,oea02,oeb04,oeb13 "
+   prepare cxmr021_ins_sales from l_str
+   execute cxmr021_ins_sales using l_begin,l_end
+
+-- cxmq021_fcst
+
+   let l_str = " insert into cxmq021_fcst (uuid,yy,mm,oeb04,tc_sma06) ",
+               " select '",l_uuid,"',substr(tc_sma03, 1, 4) yy, ",
+               "       substr(tc_sma03, 5, 2) mm, ",
+               "       tc_sma02, ",
+               "       sum(tc_sma06) tc_sma06 ",
+               " from tc_sma_file ",
+               " where tc_sma01 = 'csmi119' ",
+               "    and tc_sma03 between ? and ? ",
+               "    group by tc_sma03,tc_sma02 "
+   prepare cxmr021_ins_fsct from l_str
+   execute cxmr021_ins_fsct using l_period1,l_period2
+
+   let l_str = " merge into cxmq021_fcst a ",
+               " using (select uuid,yy,mm,oeb04,layer,sum(sum01) wo  ",
+               "         from cxmq021_sales ",
+               "        where uuid = ? ",
+               "        group by uuid,yy,mm,oeb04,layer)b ",
+               " on (a.uuid=b.uuid and a.yy=b.yy and a.mm=b.mm and a.oeb04 = b.oeb04 ) ",
+               " when not matched then insert (a.uuid,a.yy,a.mm,a.oeb04,a.layer,a.oeb12) ",
+               " values (b.uuid,b.yy,b.mm,b.oeb04,b.layer,b.wo ) ",
+               " when matched then update set a.layer=b.layer,a.oeb12=b.wo "
+   prepare cxmr021_fcst_1 from l_str
+   execute cxmr021_fcst_1 using l_uuid
+
+   let l_str = " merge into cxmq021_fcst a  ",
+               " using cxmq021_price b ",
+               " on (a.oeb04= b.tc_xmf03) ",
+               " when matched then update set a.oea032 = b.occ02 ,a.tc_sma03=b.tc_sma03, ",
+               " a.tc_xme05=b.total,a.tc_xme10=b.bare,a.tc_xme08=b.smt,a.tc_xme07=b.component ",
+               " where uuid =? "
+   prepare cxmr021_fcst_2 from l_str
+   execute cxmr021_fcst_2 using l_uuid
+
+-- 更新层数
+   let l_str = " update cxmq021_fcst ",
+               " set layer = (CASE  ",
+               "          WHEN ASCII(SUBSTR(oeb04, 8, 1)) BETWEEN ASCII('0') AND ASCII('9') THEN  ",
+               "          TO_NUMBER(SUBSTR(oeb04, 8, 1)) ",
+               "          WHEN ASCII(SUBSTR(oeb04, 8, 1)) BETWEEN ASCII('A') AND ASCII('Z') THEN  ",
+               "          ASCII(SUBSTR(oeb04, 8, 1)) - ASCII('A') + 10 ",
+               "          ELSE 0 ",
+               "       end ) ",
+               "       , ",
+               "       tc_sma06=nvl(tc_sma06,0), ",
+               "       oeb12 = nvl(oeb12,0), ",
+               "       tc_xme05 = nvl(tc_xme05,0), ",
+               "       tc_xme10 = nvl(tc_xme10,0), ",
+               "       tc_xme08 = nvl(tc_xme08,0), ",
+               "       tc_xme07 = nvl(tc_xme07,0) ",
+               "  where uuid = ?"
+   prepare cxmr021_fcst_3 from l_str
+   execute cxmr021_fcst_3 using l_uuid
+
+-- call cgo
+   call expSales(l_uuid) returning l_file
+-- del uuid 
+  delete from cxmq021_fsct where uuid = l_uuid
+  delete from cxmq021_sales where uuid = l_uuid
+-- export
+   call cl_download_by_explorer(l_file)
 
 END FUNCTION
-
-function cxmr021_crt_tmp()
-
-   create temp table cxmr021_tmp(
-      oea01          varchar(20),
-      oea02          date,
-      oeb03          integer,
-      tc_oeb031      integer,
-      oeb04          varchar(20),
-      tc_oeb12       decimal(15,3),
-      tc_oeb16       date,
-      deal01         decimal(15,3),
-      deal02         decimal(15,3),
-      deal03         decimal(15,3),
-      deal04         decimal(15,3),
-      deal05         decimal(15,3),
-      deal06         decimal(15,3),
-      deal07         decimal(15,3),
-      deal08         decimal(15,3),
-      deal09         decimal(15,3),
-      deal10         decimal(15,3)
-   )
-   create temp table cxmr021_out(
-      oea01          varchar(20),
-      oeb03          varchar(20),
-      oeb04          varchar(20),
-      ogb12          decimal(15,3), 
-      ogb02          date
-   )
-end function
 
 
