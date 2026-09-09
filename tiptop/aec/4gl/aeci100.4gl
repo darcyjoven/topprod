@@ -1407,7 +1407,7 @@ FUNCTION i100_a()
         # 签核否
         # 组装成品量产料号才需要送签
         if g_user = 'tiptop' or g_user = '30369' or g_user = '66555' or g_user = '61506' or g_user = '51870' or g_user = '56431' then
-         if g_ecu.ecu01[7,7] matches "[ABC]" and g_ecu.ecu01[10,10] not matches "[SF]" and g_ecu.ecu01 not matches "*-*" and g_ecu.ecu02 like '*0' then
+         if g_ecu.ecu01[7,7] matches "[ABC]" and g_ecu.ecu01[10,10] not matches "[SF]" and g_ecu.ecu01 not matches "*-*" and g_ecu.ecu02 matches '*0' then
                let g_ecu.ecuud04 = 'Y'
                display by name g_ecu.ecuud04
          end if
@@ -1994,7 +1994,8 @@ FUNCTION i100_copy()
    # darcy:2025/12/11 add s---
    # 签核状态判断
    let l_ecuud04 = 'N'
-   if g_user = 'tiptop' or g_user = '30369' then
+   --if g_user = 'tiptop' or g_user = '30369' then
+   if g_user = 'tiptop' or g_user = '30369' or g_user = '66555' or g_user = '61506' or g_user = '51870' or g_user = '56431' then
       if new_no[7,7] matches "[ABC]" and new_no[10,10] not matches "[SF]" and new_no not matches "*-*" and necu02 matches '*0' then
          call s_auto_assign_no("abm","ECU",g_today,"7","ecu_file","ecuud03","","","")
             returning li_result,l_ecuud03
