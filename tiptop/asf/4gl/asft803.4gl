@@ -4101,6 +4101,10 @@ FUNCTION t803_bp(p_ud)
          LET g_action_choice = 'phrase'
          EXIT DISPLAY
 
+      # darcy:2026/02/09 add s---
+      on action modify_
+      # darcy:2026/02/09 add e---
+
       &include "qry_string.4gl"
    END DISPLAY
    CALL cl_set_act_visible("accept,cancel", TRUE)
