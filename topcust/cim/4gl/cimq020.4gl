@@ -50,7 +50,7 @@ type ima record
 # type e---
 
 define g_tlf,g_tlf_excel dynamic array of tlf
-define g_ima,g_ima_excel dynamic array of ima 
+define g_ima,g_ima_excel dynamic array of ima
 
 define g_rec_b,g_cnt,l_ac,l_ac_t integer
 define g_wc,g_cmd string
@@ -60,21 +60,21 @@ MAIN
     options                               #改變一些系統預設值
         input no wrap
     defer interrupt
- 
+
     if (not cl_user()) then
         exit program
     end if
- 
+
     whenever error call cl_err_msg_log
- 
+
     if (not cl_setup("CIM")) then
         exit program
     end if
-    
-    call cl_used(g_prog,g_time,1) returning g_time #no.fun-b30211 
+
+    call cl_used(g_prog,g_time,1) returning g_time #no.fun-b30211
     open window cimq020_w at p_row,p_col with form "cim/42f/cimq020"
             attribute (style = g_win_style clipped) #no.fun-580092 hcn
-        
+
     call cl_ui_init()
 
     call cimq020_crt()
@@ -82,7 +82,7 @@ MAIN
     call cimq020_menu()
 
     close window cimq020_w                 #結束畫面
-    call cl_used(g_prog,g_time,2) returning g_time 
+    call cl_used(g_prog,g_time,2) returning g_time
 
 END MAIN
 
@@ -92,15 +92,15 @@ function cimq020_cs()
 
     dialog
         construct g_wc on
-            tlf01,ima06,tlf06,tlf905,tlf906,tlf902,tlf903,tlf904,tlf10,tlf11
-            from  
+            tlf01,ima06,tlf06,tlf905,tlf906,tlf902,tlf903,tlf904,tlf10,tlf11,tlf13
+            from
             s_tlf[1].tlf01,s_tlf[1].ima06,s_tlf[1].tlf06,s_tlf[1].tlf905,s_tlf[1].tlf906,
-            s_tlf[1].tlf902,s_tlf[1].tlf903,s_tlf[1].tlf904,s_tlf[1].tlf10,s_tlf[1].tlf11
-        end construct 
+            s_tlf[1].tlf902,s_tlf[1].tlf903,s_tlf[1].tlf904,s_tlf[1].tlf10,s_tlf[1].tlf11,s_tlf[1].tlf13
+        end construct
 
         on action controlp
-            # 开窗 
-        
+            # 开窗
+
         on action accept
             let g_action_choice="accept"
             exit dialog
@@ -118,17 +118,17 @@ function cimq020_cs()
 
         on action qbe_save
             call cl_qbe_save()
-        
+
         on idle g_idle_seconds
             call cl_on_idle()
             continue dialog
-        
+
         on action about
             call cl_about()
-        
+
         on action controlg
             call cl_cmdask()
-        
+
         on action help
             call cl_show_help()
     end dialog
@@ -144,12 +144,12 @@ function cimq020_menu()
         case g_action_choice
             when "help"
             call cl_show_help()
- 
+
             when "exit"
                 exit while
             when "close"
                 exit while
-    
+
             when "controlg"
                 call cl_cmdask()
 
@@ -157,16 +157,16 @@ function cimq020_menu()
                 if cl_chk_act_auth() then
                     call cimq020_q()
                 end if
-            
+
             when "exporttoexcel"
                 # 导出excel
-                if cl_chk_act_auth() then 
+                if cl_chk_act_auth() then
                     call cl_download_by_explorer(
                         cl_expexcel2(
                             "s_tlf",base.typeinfo.create(g_tlf_excel),
                             "s_ima",base.typeinfo.create(g_ima)
                         ))
-                    
+
                 end if
         end case
     end while
@@ -175,9 +175,9 @@ end function
 function cimq020_q()
 
     let g_rec_b = 0
-    
+
     clear form
-    display '' to cnt    
+    display '' to cnt
 
     message ""
 
@@ -212,9 +212,9 @@ function cimq020_b_fill()
     if l_cnt = 0 or cl_null(l_cnt) then
         let l_mm = iif(l_mm==1,12,l_mm-1)
         let l_yy = iif(l_mm=01,l_yy-1,l_yy)
-    end if 
+    end if
     #darcy:2024/06/30 add e---
-    
+
     if g_wc = " 1=1" then
         call cl_err("","9046",1)
         return
@@ -277,7 +277,7 @@ function cimq020_b_fill()
                 "on (a.tlf01 = b.ima01 and ( a.ccc23 = 0 or a.ccc23 is null))",
                 " when matched then update set a.ccc23 = b.ima53 ,a.price = '3',a.amt=b.ima53 * a.tlf10"
     prepare cimq020_upd_tmp3 from l_sql
-    execute cimq020_upd_tmp3 
+    execute cimq020_upd_tmp3
 
     # darcy:2025/08/06 add s---
     # 取客制成本单价
@@ -329,7 +329,7 @@ function cimq020_b_fill()
                 "       tlf06,tlf905,tlf906,tlf13,tlf902,",
                 "       tlf903,tlf904,tlf10,tlf11,tlf12,tlf14,azf03,",
                 "       ima25, ccc23,price,amt,tlf07,tlf08,gen01,gen02,gem01,gem02",
-                " from cimq020_tmp", 
+                " from cimq020_tmp",
                 " order by ima06,tlf01,tlf06,tlf905,tlf906"
 
     prepare cimq020_tlf_p1 from l_sql
@@ -349,8 +349,8 @@ function cimq020_b_fill()
         let g_cnt = g_cnt + 1
     end foreach
     call g_tlf_excel.deleteElement(g_cnt)
-    call g_tlf.deleteElement(g_cnt) 
-    
+    call g_tlf.deleteElement(g_cnt)
+
     # 汇总页面
     let g_cnt = 1
     let l_sum = 0
@@ -358,7 +358,7 @@ function cimq020_b_fill()
     # 原材料
     # M.
     let l_sql = " select ima06 imz01,ima06_desc imz02,sum(tlf10),sum(amt) amt_1",
-                " from cimq020_tmp", 
+                " from cimq020_tmp",
                 " where ima06 like 'M.%' ",
                 " group by ima06 ,ima06_desc  order by 1"
 
@@ -383,7 +383,7 @@ function cimq020_b_fill()
     # E.
     let l_sum = 0 let l_amt = 0 let g_cnt = g_cnt + 1
     let l_sql = " select ima06 imz01,ima06_desc imz02,sum(tlf10),sum(amt) amt_1",
-                " from cimq020_tmp", 
+                " from cimq020_tmp",
                 " where ima06 like 'E.%' ",
                 " group by ima06 ,ima06_desc  order by 1"
 
@@ -407,7 +407,7 @@ function cimq020_b_fill()
     # H.ZX    # H.JX    # H.SX    # H.HX
     let l_sum = 0 let l_amt = 0 let g_cnt = g_cnt + 1
     let l_sql = " select ima06 imz01,ima06_desc imz02,sum(tlf10),sum(amt) amt_1",
-                " from cimq020_tmp", 
+                " from cimq020_tmp",
                 " where ima06 in('H.ZX','H.JX','H.SX','H.HX') ",
                 " group by ima06, ima06_desc  order by 1"
 
@@ -431,7 +431,7 @@ function cimq020_b_fill()
     # H.HC    # H.FC    # H.BC
     let l_sum = 0 let l_amt = 0 let g_cnt = g_cnt + 1
     let l_sql = " select ima06 imz01,ima06_desc imz02,sum(tlf10),sum(amt) amt_1",
-                " from cimq020_tmp", 
+                " from cimq020_tmp",
                 " where ima06 in('H.HC','H.BC','H.FC') ",
                 " group by ima06, ima06_desc  order by 1"
 
@@ -485,7 +485,7 @@ function cimq020_bp()
             exit dialog
         on action query
             let g_action_choice="query"
-            exit dialog 
+            exit dialog
         on action exporttoexcel
             let g_action_choice = 'exporttoexcel'
             exit dialog
