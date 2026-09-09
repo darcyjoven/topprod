@@ -1,12 +1,32 @@
 # Prog. Version..: '5.30.06-13.03.12(00000)'     #
 #
-# Library name...: cl_mail
-# Descriptions...: (已刪除使用)
-# Input parameter: none
-# RETURN code....: none
-# Usage .........: call cl_mail(p_azo)
-# Date & Author..: 03/03/15 By qazzaq
-# Modify.........: No.FUN-690005 06/09/01 By hongmei 欄位類型轉換
-# Modify.........: No.FUN-830060 08/03/19 By alex 取消使用
- 
-#DATABASE ds   #FUN-830060
+# Program name...: cl_mail.4gl
+# Descriptions...: 单身汇出excle
+# Date & Author..: darcy
+
+# 邮件服务配置在 /u1/usr/mail.conf
+
+DATABASE ds
+GLOBALS "../../../tiptop/config/top.global"
+GLOBALS "../4gl/cl_mail.global"
+
+-- 发送邮件
+function cl_mail(p_mail)
+    define  p_mail      mail
+    define  l_ok        boolean
+
+    return l_ok
+end function
+
+-- 背景执行
+function cl_mail_no_wait(p_mail)
+    define  p_mail      mail
+end function
+
+-- 背景执行进度邮件 string
+private function cl_mail_process()
+end function
+
+-- 前端数据调用 string
+private function cl_mail_gui()
+end function
