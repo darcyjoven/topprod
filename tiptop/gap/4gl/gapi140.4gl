@@ -62,15 +62,15 @@
 # Modify.........: No.MOD-940412 09/04/30 By chenl   改善數量和原幣稅前單價異動后，對金額的重算。以及開窗選擇后，金額的重算。
 # Modify.........: No.FUN-940083 09/06/02 By douzh VMI新增相關流程
 # Modify.........: No.MOD-960197 09/06/17 By Carrier 單頭修改時,重新取匯率
-# Modify.........: No.MOD-980034 09/08/05 By mike FUNCTION i140_ins_rvw(),針對g_type != '1'也要能產生資料,                          
+# Modify.........: No.MOD-980034 09/08/05 By mike FUNCTION i140_ins_rvw(),針對g_type != '1'也要能產生資料,
 # Modify.........: No.FUN-980011 09/08/18 By TSD.apple    GP5.2架構重整，修改 INSERT INTO 語法
 # Modify.........: No.CHI-980038 09/08/24 By Sarah 單價含稅時,以(含稅單價*數量)/(1+稅率/100)=未稅金額
 #                                                  單價未稅時,以(未稅單價*數量)*(1+稅率/100)=含稅金額
 # Modify.........: No.FUN-980030 09/08/31 By Hiko 加上GP5.2的相關設定
-# Modify.........: No.MOD-990163 09/09/16 By mike 若為樣品時,金額部份(rvw17,rvw05,rvw05f,rvw06,rvw06f)應帶0                         
+# Modify.........: No.MOD-990163 09/09/16 By mike 若為樣品時,金額部份(rvw17,rvw05,rvw05f,rvw06,rvw06f)應帶0
 # Modify.........: No.MOD-990204 09/10/14 By Carrier 若為台灣地區功能時,不執行此作業
 # Modify.........: No.TQC-9A0091 09/10/15 By liuxqa 輸入稅種后，報錯不可通過。
-# Modify.........: No.FUN-9B0130 09/11/25 By lutingting去掉rvwplant單身增加rvw99,單身入庫單號根據rvw99過濾可以選擇同一法人下得入庫單 
+# Modify.........: No.FUN-9B0130 09/11/25 By lutingting去掉rvwplant單身增加rvw99,單身入庫單號根據rvw99過濾可以選擇同一法人下得入庫單
 # Modify.........: No.FUN-9C0001 09/12/06 By lutingting單身修改時ON ROW CHANGE得UPDATE語句加上rvw99
 # Modify.........: No.FUN-9C0041 09/12/15 By lutingting單身根據來源營運中心抓取資料時應該去實體DB抓取資料
 # Modify.........: No:MOD-9C0061 09/12/25 By sabrina 數量為0 時，rvw05f金額直接用金額去除以稅率
@@ -81,11 +81,11 @@
 # Modify.........: No.FUN-9B0098 10/02/24 by tommas delete cl_doc
 # Modify.........: No.MOD-A30163 10/03/23 by sabrina 進入i140_sel_rvb cursor時，若t_rvw11為null時，改抓單頭的rvw11
 # Modify.........: No.MOD-A40045 10/04/09 by Dido 增加暫估倉退條件
-# Modify.........: No.FUN-A50102 10/06/22 By lixia 跨庫寫法統一改為用cl_get_target_table()來實現 
+# Modify.........: No.FUN-A50102 10/06/22 By lixia 跨庫寫法統一改為用cl_get_target_table()來實現
 # Modify.........: No.FUN-A60056 10/07/09 By lutingting GP5.2財務串前段問題整批調整
-# Modify.........: No.MOD-A70133 10/07/16 By wujie  单价不分条件都应该抓取rvv的资料    
-# Modify.........: No:MOD-A80052 10/08/09 By Dido 若為運輸發票(gec05='T')時,稅額與未稅金額邏輯調整 
-# Modify.........: No:MOD-AA0093 10/10/15 By Dido 當稅率改變時,單身未稅金額有重算相對未稅單價也需重算 
+# Modify.........: No.MOD-A70133 10/07/16 By wujie  单价不分条件都应该抓取rvv的资料
+# Modify.........: No:MOD-A80052 10/08/09 By Dido 若為運輸發票(gec05='T')時,稅額與未稅金額邏輯調整
+# Modify.........: No:MOD-AA0093 10/10/15 By Dido 當稅率改變時,單身未稅金額有重算相對未稅單價也需重算
 # Modify.........: No.TQC-AC0009 10/11/01 By yinhy 新增時，更改"廠商編號"，"稅種"及"幣種"沒有跟著進行相應默認值變更
 # Modify.........: No:MOD-AC0024 11/01/06 By sabrina 未稅金額與採購單不同
 # Modify.........: No:FUN-B30211 11/04/01 By lixiang  加cl_used(g_prog,g_time,2)
@@ -104,7 +104,7 @@
 # Modify.........: No.MOD-C50188 12/05/24 By yinhy rvw99默認為當前登陸的營運中心
 # Modify.........: No.MOD-C60098 12/06/12 By Polly 調整單身action[入庫單身檔查詢]抓取rvw10和單身抓取條件一致
 # Modify.........: No.MOD-C60217 12/06/26 By wujie VMI仓的入库单不可请款
-# Modify.........: No.FUN-C80027 12/08/07 By minpp 增加原币含税，本币含税，原币未税合计，本币未税合计 
+# Modify.........: No.FUN-C80027 12/08/07 By minpp 增加原币含税，本币含税，原币未税合计，本币未税合计
 # Modify.........: No.CHI-C80054 12/09/10 By yinhy 更改原幣稅前金額后，單價也應更新
 # Modify.........: No.CHI-C80003 12/09/26 By wangwei 價格折讓類型的已衝過暫估資料不應被挑選
 # Modify.........: No.MOD-CB0246 12/11/26 By yinhy s_curr3傳參錯誤
@@ -124,9 +124,9 @@
 # Modify.........: No.160628     16/06/28 by liming增加总计数量栏位
 # Modify.........: lixwz181229   18/12/29 By lixwz 打印报表改为作业cgapr142
 DATABASE ds
- 
+
 GLOBALS "../../config/top.global"
- 
+
 DEFINE
    g_head_1      RECORD
                  rvw01      LIKE rvw_file.rvw01,         #發票號碼
@@ -146,7 +146,7 @@ DEFINE
                #FUN-C80027---ADD---STR
                  sum3       LIKE rvw_file.rvw05f,        #原币含税金额合计
                  rvw05_sum  LIKE rvw_file.rvw05,         #未稅金額
-                 rvw06_sum  LIKE rvw_file.rvw06,         #稅額 
+                 rvw06_sum  LIKE rvw_file.rvw06,         #稅額
                  sum4       LIKE rvw_file.rvw05,          #本币含税金额合计
                #FUN-C80027---ADD---END
                  rvw10_sum  LIKE rvw_file.rvw10,         #数量合计   No. 160628   add
@@ -275,34 +275,34 @@ DEFINE
        g_rvw05f             LIKE rvw_file.rvw05f,    #MOD-A80052
        g_flag               LIKE type_file.chr1,     #MOD-A80052
        g_rvv38t             LIKE rvv_file.rvv38t,    #含稅單價  #CHI-980038 add
-       g_rvv39              LIKE rvv_file.rvv39,     #MOD-9C0061 add 
+       g_rvv39              LIKE rvv_file.rvv39,     #MOD-9C0061 add
        g_rvv39t             LIKE rvv_file.rvv39t     #MOD-9C0061 add
 DEFINE p_row,p_col          LIKE type_file.num5      #NO FUN-690009 SMALLINT
 DEFINE g_forupd_sql         STRING                   #SELECT ... FOR UPDATE SQL
 DEFINE g_before_input_done  LIKE type_file.num5      #NO FUN-690009 SMALLINT
- 
+
 DEFINE g_cmd                LIKE type_file.chr1000   #NO FUN-690009 VARCHAR(100)
 DEFINE g_chr                LIKE type_file.chr1      #NO FUN-690009 VARCHAR(1)
 DEFINE g_cnt                LIKE type_file.num10     #NO FUN-690009 INTEGER
 DEFINE g_i                  LIKE type_file.num5      #NO FUN-690009 SMALLINT     #count/index for any purpose
 DEFINE g_msg                LIKE ze_file.ze03        #NO FUN-690009 VARCHAR(72)
- 
+
 DEFINE g_row_count          LIKE type_file.num10     #NO FUN-690009 INTEGER      #總比數
 DEFINE g_curs_index         LIKE type_file.num10     #NO FUN-690009 INTEGER
 DEFINE g_jump               LIKE type_file.num10     #NO FUN-690009 INTEGER      #查詢指定比數
 DEFINE mi_no_ask            LIKE type_file.num5      #NO FUN-690009 SMALLINT     #是否開啟指定窗口
-DEFINE li_dbs               LIKE azp_file.azp01      #No.FUN-9B0130 
+DEFINE li_dbs               LIKE azp_file.azp01      #No.FUN-9B0130
 DEFINE g_rvw17              LIKE rvw_file.rvw17      #No.MOD-CA0222
 #FUN-CB0080--add--str--
-DEFINE g_rvw_1         DYNAMIC ARRAY OF RECORD        
-           rvw01_1      LIKE rvw_file.rvw01,    
-           rvw02_1      LIKE rvw_file.rvw02,               
-           rvw19_1      LIKE rvw_file.rvw19,    
-           rvv06_1      LIKE rvv_file.rvv06,    
-           pmc03_1      LIKE pmc_file.pmc03,    
-           rvw03_1      LIKE rvw_file.rvw03,    
-           rvw04_1      LIKE rvw_file.rvw04,    
-           rvw11_1      LIKE rvw_file.rvw11,    
+DEFINE g_rvw_1         DYNAMIC ARRAY OF RECORD
+           rvw01_1      LIKE rvw_file.rvw01,
+           rvw02_1      LIKE rvw_file.rvw02,
+           rvw19_1      LIKE rvw_file.rvw19,
+           rvv06_1      LIKE rvv_file.rvv06,
+           pmc03_1      LIKE pmc_file.pmc03,
+           rvw03_1      LIKE rvw_file.rvw03,
+           rvw04_1      LIKE rvw_file.rvw04,
+           rvw11_1      LIKE rvw_file.rvw11,
            rvw05f_1     LIKE rvw_file.rvw05f,
            rvw06f_1     LIKE rvw_file.rvw06f,
            rvw12_1      LIKE rvw_file.rvw12
@@ -313,7 +313,7 @@ DEFINE g_bp_flag    STRING
 #FUN-CB0080--add--end
 
 MAIN
- 
+
    OPTIONS                                               #改變一些系統預設值
       INPUT NO WRAP
    DEFER INTERRUPT                                       #擷取中斷鍵, 由程式處理
@@ -321,23 +321,23 @@ MAIN
       EXIT PROGRAM
    END IF
    WHENEVER ERROR CALL cl_err_msg_log
- 
+
    IF (NOT cl_setup("GAP")) THEN
       EXIT PROGRAM
    END IF
- 
+
    IF g_aza.aza26 <> '2' THEN
       CALL cl_err('','gap-202',1)
-      EXIT PROGRAM 
+      EXIT PROGRAM
    END IF
- 
+
    LET g_forupd_sql = "SELECT rvw01,rvw07,rvw02,rvw18,rvw19,rvw03,rvw04,rvw11,rvw12 ",    #MOD-DC0088 add rvw18
                       "      ,rvwacti,rvwuser,rvwgrup,rvwmodu,rvwdate,rvworiu,rvworig ",  #FUN-D10064
                       " FROM rvw_file WHERE rvw01=? FOR UPDATE"   #MOD-640405 #No.FUN-CB0053 Add rvw19
-                      
+
    LET g_forupd_sql = cl_forupd_sql(g_forupd_sql)
    DECLARE i140_cl CURSOR FROM g_forupd_sql
- 
+
      CALL  cl_used(g_prog,g_time,1)                      #計算使用時間 (進入時間) #No.MOD-580088  HCN 20050818  #No.FUN-6A0097
          RETURNING g_time    #No.FUN-6A0097
    LET p_row = 3 LET p_col = 17
@@ -346,16 +346,16 @@ MAIN
    CALL cl_ui_init()
    LET g_type='2'
    CALL i140_menu()                                      #中文
- 
+
    CLOSE WINDOW i140_w                                   #結束畫面
      CALL  cl_used(g_prog,g_time,2)                      #計算使用時間 (退出使間) #No.MOD-580088  HCN 20050818  #No.FUN-6A0097
          RETURNING g_time    #No.FUN-6A0097
 END MAIN
- 
+
 FUNCTION i140_menu()
 DEFINE   l_rvw05f_s        LIKE rvw_file.rvw05     #No.MOD-7B0150
 DEFINE   l_rvv09           LIKE rvv_file.rvv09     #add by guanyao160830
- 
+
    WHILE TRUE
       CALL i140_bp("G")
       CASE g_action_choice
@@ -402,7 +402,7 @@ DEFINE   l_rvv09           LIKE rvv_file.rvv09     #add by guanyao160830
                END IF
                CALL i140_list_fill()  #FUN-CB0080
             END IF #No.TQC-760013
- 
+
          WHEN "Carry_Account"
            #IF NOT cl_null(g_head_1.rvw01) THEN                                 #No.FUN-CB0053 Mark
             IF NOT cl_null(g_head_1.rvw01) AND cl_null(g_head_1.rvw18) THEN #No.FUN-CB0053 Add
@@ -414,9 +414,9 @@ DEFINE   l_rvv09           LIKE rvv_file.rvv09     #add by guanyao160830
                #str------add by guanyao160830
                LET l_rvv09 = ''
                SELECT MAX(rvv09) INTO l_rvv09 FROM rvv_file,rvw_file WHERE rvw01 = g_head_1.rvw01 AND rvv01 = rvw08
-               IF l_rvv09 > g_head_1.rvw19 THEN 
+               IF l_rvv09 > g_head_1.rvw19 THEN
                   CALL cl_err('','cgap-01',1)
-               END IF 
+               END IF
                #end------add by guanyao160830
                 #str------add by kuangxj170823
                IF l_rvv09 > g_head_1.rvw02  THEN
@@ -477,7 +477,7 @@ DEFINE   l_rvv09           LIKE rvv_file.rvv09     #add by guanyao160830
         #--- ly180502
          WHEN "uptax"
            IF cl_chk_act_auth() THEN
-                UPDATE rvw_file 
+                UPDATE rvw_file
                 SET  rvw03='T013',
                      rvw04='13.000',
                      rvw05=round(rvw17*rvw10,2),
@@ -485,16 +485,16 @@ DEFINE   l_rvv09           LIKE rvv_file.rvv09     #add by guanyao160830
                      rvw06=round(rvw17*rvw10*0.13,2),
                      rvw06f=round(rvw17*rvw10*0.13,2)
                 WHERE  rvw02 >=to_date('2019-04-01','yyyy-mm-dd') and rvw03='T016' and rvw11='RMB'
-               # and rvw05>0  
-                and rvw01=g_head_1.rvw01 and rvw18 is null 
-             
+               # and rvw05>0
+                and rvw01=g_head_1.rvw01 and rvw18 is null
+
                 CALL i140_show()
- 
+
            END IF
           #---ly180502
        WHEN "uptax3"
            IF cl_chk_act_auth() THEN
-                UPDATE rvw_file 
+                UPDATE rvw_file
                 SET  rvw03='T001',
                      rvw04='1.000',
                      rvw05=round(rvw17*rvw10,2),
@@ -502,11 +502,11 @@ DEFINE   l_rvv09           LIKE rvv_file.rvv09     #add by guanyao160830
                      rvw06=round(rvw17*rvw10*0.01,2),
                      rvw06f=round(rvw17*rvw10*0.01,2)
                 WHERE  rvw02 >=to_date('2020-04-01','yyyy-mm-dd') and rvw03='T003' and rvw11='RMB'
-               # and rvw05>0  
-                and rvw01=g_head_1.rvw01 and rvw18 is null 
-             
+               # and rvw05>0
+                and rvw01=g_head_1.rvw01 and rvw18 is null
+
                 CALL i140_show()
- 
+
            END IF
       WHEN "uptax17"
            IF cl_chk_act_auth() THEN
@@ -518,7 +518,7 @@ DEFINE   l_rvv09           LIKE rvv_file.rvv09     #add by guanyao160830
                      rvw06=round(rvw17*rvw10*0.13,2),
                      rvw06f=round(rvw17*rvw10*0.13,2)
                 WHERE  rvw02 >=to_date('2017-07-01','yyyy-mm-dd') and rvw03='T017' and rvw11='RMB'
-                and rvw05>0 
+                and rvw05>0
                and rvw01=g_head_1.rvw01 and rvw18 is null
 
                 CALL i140_show()
@@ -529,12 +529,13 @@ DEFINE   l_rvv09           LIKE rvv_file.rvv09     #add by guanyao160830
             CALL cl_show_help()
          WHEN "exit"
             EXIT WHILE
-        
+
          WHEN "controlg"
             CALL cl_cmdask()
          WHEN "exporttoexcel"
+
             CALL cl_export_to_excel(ui.Interface.getRootNode(),base.TypeInfo.create(g_rvw),'','')
- 
+
          WHEN "related_document"  #相關文件
            IF cl_chk_act_auth() THEN
               IF g_head_1.rvw01 IS NOT NULL THEN
@@ -543,23 +544,23 @@ DEFINE   l_rvv09           LIKE rvv_file.rvv09     #add by guanyao160830
                 CALL cl_doc()
               END IF
           END IF
- 
-     
+
+
       END CASE
    END WHILE
 END FUNCTION
- 
+
 FUNCTION i140_cs()
 DEFINE  lc_qbe_sn       LIKE    gbm_file.gbm01   #No.FUN-580031  HCN
    DEFINE l_wc          LIKE type_file.chr1000   #NO FUN-690009 VARCHAR(300)
    DEFINE l_wc2         LIKE type_file.chr1000   #NO FUN-690009 VARCHAR(300)
    DEFINE i             LIKE type_file.num5      #NO FUN-690009 SMALLINT
- 
+
    CLEAR FORM                                              #清除畫面
    CALL g_rvw.clear()
    LET l_ac = 1
    CALL cl_set_head_visible("","YES")       #No.FUN-6A0092
- 
+
    INITIALIZE g_head_1.* TO NULL    #No.FUN-750051
    CONSTRUCT BY NAME g_wc ON                               # 螢幕上取單頭條件
                 rvw01,rvw02,rvw07,rvv06,rvw03,rvw04,rvw11,rvw12   #FUN-9B0130  #No.MOD-B50003 add rvv06
@@ -569,17 +570,17 @@ DEFINE  lc_qbe_sn       LIKE    gbm_file.gbm01   #No.FUN-580031  HCN
      BEFORE CONSTRUCT
         CALL cl_qbe_display_condition(lc_qbe_sn)
          INITIALIZE g_head_1.* TO NULL
- 
+
       ON ACTION controlp
          CASE
 #No.MOD-B50003 --begin
-            WHEN INFIELD(rvv06)                                                 
-               CALL cl_init_qry_var()                                           
-               LET g_qryparam.form ="q_pmc1"                                    
-               LET g_qryparam.state = "c"                                       
-               LET g_qryparam.state = "c"                                       
-               CALL cl_create_qry() RETURNING g_qryparam.multiret               
-               DISPLAY g_qryparam.multiret TO rvv06                             
+            WHEN INFIELD(rvv06)
+               CALL cl_init_qry_var()
+               LET g_qryparam.form ="q_pmc1"
+               LET g_qryparam.state = "c"
+               LET g_qryparam.state = "c"
+               CALL cl_create_qry() RETURNING g_qryparam.multiret
+               DISPLAY g_qryparam.multiret TO rvv06
                NEXT FIELD rvv06
 #No.MOD-B50003 --end
 	    WHEN INFIELD(rvw03)
@@ -589,7 +590,7 @@ DEFINE  lc_qbe_sn       LIKE    gbm_file.gbm01   #No.FUN-580031  HCN
 	       CALL cl_create_qry() RETURNING g_qryparam.multiret
 	       DISPLAY g_qryparam.multiret TO rvw03
 	       NEXT FIELD rvw03
-		
+
 	    WHEN INFIELD(rvw11)
 	       CALL cl_init_qry_var()
 	       LET g_qryparam.form ="q_azi"
@@ -608,16 +609,16 @@ DEFINE  lc_qbe_sn       LIKE    gbm_file.gbm01   #No.FUN-580031  HCN
                DISPLAY g_qryparam.multiret TO rvw18
                NEXT FIELD rvw18
            #No.FUN-CB0048 ---end  --- Add
-	
+
 	    OTHERWISE EXIT CASE
 	 END CASE
       ON IDLE g_idle_seconds
          CALL cl_on_idle()
          CONTINUE CONSTRUCT
- 
+
                  ON ACTION qbe_select
          	   CALL cl_qbe_select()
- 
+
    END CONSTRUCT
    LET g_wc = g_wc CLIPPED,cl_get_extra_cond(null, null) #FUN-980030
    IF INT_FLAG THEN RETURN END IF
@@ -630,7 +631,7 @@ DEFINE  lc_qbe_sn       LIKE    gbm_file.gbm01   #No.FUN-580031  HCN
       BEFORE CONSTRUCT
          CALL cl_qbe_display_condition(lc_qbe_sn)
 	 CALL g_rvw.clear()
- 
+
       ON ACTION controlp
 	 CASE
 	    WHEN INFIELD(rvw08)
@@ -647,15 +648,15 @@ DEFINE  lc_qbe_sn       LIKE    gbm_file.gbm01   #No.FUN-580031  HCN
                   CALL i140_rvw08()
                   NEXT FIELD rvw09
                END IF
- 
+
          END CASE
       ON IDLE g_idle_seconds
          CALL cl_on_idle()
-         CONTINUE CONSTRUCT  
- 
+         CONTINUE CONSTRUCT
+
                  ON ACTION qbe_save
 		   CALL cl_qbe_save()
- 
+
    END CONSTRUCT
    #str------ add by dengsy160527
    LET g_wc2=cl_replace_str(g_wc2,"ima01","rvv31")
@@ -671,7 +672,7 @@ DEFINE  lc_qbe_sn       LIKE    gbm_file.gbm01   #No.FUN-580031  HCN
                   " ORDER BY rvw02,rvw19"   #No.FUN-CB0053   Add   rvw19
    PREPARE i140_prepare FROM g_sql
    IF SQLCA.sqlcode THEN   #No.TQC-790140
-      CALL cl_err('i140_prepare',STATUS,1) 
+      CALL cl_err('i140_prepare',STATUS,1)
       CALL cl_used(g_prog,g_time,2) RETURNING g_time #No.FUN-B30211
       EXIT PROGRAM
    END IF
@@ -686,16 +687,16 @@ DEFINE  lc_qbe_sn       LIKE    gbm_file.gbm01   #No.FUN-580031  HCN
                "   AND rvv03 <> '2'",
                "   AND ",g_wc CLIPPED," AND ",g_wc2 CLIPPED,
                " GROUP BY rvw01,rvw07,rvw02,rvw19,rvw03,rvw04,rvw11,rvw12,rvv06,rvw18 ",
-               " ORDER BY rvw02,rvw19" 
+               " ORDER BY rvw02,rvw19"
    PREPARE i140_list_pr FROM g_sql
-   IF SQLCA.sqlcode THEN 
+   IF SQLCA.sqlcode THEN
       CALL cl_err('i140_list_pr',STATUS,1)
       CALL cl_used(g_prog,g_time,2) RETURNING g_time
       EXIT PROGRAM
    END IF
    DECLARE i140_list_cs CURSOR FOR i140_list_pr
    #FUN-CB0080--add--end
- 
+
       LET g_sql = "SELECT COUNT(UNIQUE rvw01)",
                   "  FROM rvw_file,rvv_file",   #No.MOD-B50003
                   " WHERE ", g_wc CLIPPED, " AND ",g_wc2 CLIPPED,
@@ -705,13 +706,13 @@ DEFINE  lc_qbe_sn       LIKE    gbm_file.gbm01   #No.FUN-580031  HCN
 #No.MOD-B50003 --end
    PREPARE i140_precount FROM g_sql
    IF SQLCA.sqlcode THEN   #No.TQC-790140
-      CALL cl_err('i140_precount',STATUS,1) 
+      CALL cl_err('i140_precount',STATUS,1)
       CALL cl_used(g_prog,g_time,2) RETURNING g_time #No.FUN-B30211
       EXIT PROGRAM
    END IF
    DECLARE i140_count CURSOR FOR i140_precount
 END FUNCTION
- 
+
 FUNCTION i140_q()
    LET g_row_count = 0
    LET g_curs_index = 0
@@ -741,7 +742,7 @@ FUNCTION i140_q()
    END IF
    MESSAGE ""
 END FUNCTION
- 
+
 FUNCTION i140_fetch(p_flag)
 DEFINE
    l_sql           LIKE type_file.chr1000,  #NO FUN-690009 VARCHAR(300)
@@ -760,13 +761,13 @@ DEFINE
                CALL cl_on_idle()
       ON ACTION about
          CALL cl_about()
- 
+
       ON ACTION help
          CALL cl_show_help()
- 
+
       ON ACTION controlg
          CALL cl_cmdask()
- 
+
             END PROMPT
             IF INT_FLAG THEN
                LET INT_FLAG = 0
@@ -776,7 +777,7 @@ DEFINE
          FETCH ABSOLUTE g_jump i140_cs INTO g_head_1.rvw01
          LET mi_no_ask = FALSE
    END CASE
- 
+
    IF SQLCA.sqlcode THEN
       CALL cl_err(g_head_1.rvw01,SQLCA.sqlcode,0)
       INITIALIZE g_head_1.* TO NULL  #TQC-6B0105
@@ -793,7 +794,7 @@ DEFINE
       DISPLAY g_curs_index TO FORMONLY.idx  #FUN-CB0080
       CALL cl_navigator_setting( g_curs_index, g_row_count )
    END IF
- 
+
       SELECT UNIQUE rvw01,rvw07,rvw02,rvw19,rvw03,rvw04,rvw11,rvw12,rvv06, #No.MOD-B50003 add rvv06   #No.FUN-CB0053   Add rvw19
       #      '',SUM(rvw05f),SUM(rvw06f),SUM(rvw05f),SUM(rvw06f)        #FUN-C80027 mark
       #      '',SUM(rvw05f),SUM(rvw06f),'',SUM(rvw05f),SUM(rvw06f),''  #FUN-C80027 add 2'' #No.FUN-CB0048   Mark
@@ -811,21 +812,21 @@ DEFINE
      FROM rvw_file
     WHERE rvw01 = g_head_1.rvw01
 
-   #FUN-C80027--ADD--STR 
+   #FUN-C80027--ADD--STR
     SELECT SUM(rvw05),SUM(rvw06)
      INTO g_head_1.rvw05_sum,g_head_1.rvw06_sum
      FROM rvw_file
     WHERE rvw01 = g_head_1.rvw01
-    LET g_head_1.sum3=g_head_1.rvw05f_sum+g_head_1.rvw06f_sum     
+    LET g_head_1.sum3=g_head_1.rvw05f_sum+g_head_1.rvw06f_sum
     LET g_head_1.sum4=g_head_1.rvw05_sum+g_head_1.rvw06_sum
-   #FUN-C80027--ADD--END 
+   #FUN-C80027--ADD--END
    #160628 liming add-str
    SELECT SUM(rvw10)
      INTO g_head_1.rvw10_sum
-     FROM rvw_file 
+     FROM rvw_file
     WHERE rvw01 = g_head_1.rvw01
    #160628 liming add-end
-   IF NOT cl_null(g_head_1.rvw11) THEN   #FUN-9B0130 
+   IF NOT cl_null(g_head_1.rvw11) THEN   #FUN-9B0130
       SELECT azi03,azi04 INTO t_azi03,t_azi04 FROM azi_file
        WHERE azi01 = g_head_1.rvw11
       IF SQLCA.sqlcode THEN
@@ -839,7 +840,7 @@ DEFINE
    LET g_head_1.rvw05f_s=cl_digcut(g_head_1.rvw05f_s,t_azi04)
    LET g_head_1.rvw06f_s=cl_digcut(g_head_1.rvw06f_s,t_azi04)
    #FUN-D10064--add--str--
-   SELECT rvwacti,rvwuser,rvwgrup,rvwmodu,rvwdate,rvworiu,rvworig   
+   SELECT rvwacti,rvwuser,rvwgrup,rvwmodu,rvwdate,rvworiu,rvworig
      INTO g_head_1.rvwacti,g_head_1.rvwuser,g_head_1.rvwgrup,
           g_head_1.rvwmodu,g_head_1.rvwdate,g_head_1.rvworiu,
           g_head_1.rvworig
@@ -855,7 +856,7 @@ DEFINE
    #darcy:2023/06/19 add e---
    CALL i140_show()
 END FUNCTION
- 
+
 #將資料顯示在畫面上
 FUNCTION i140_show()
    DEFINE  l_pmc03    LIKE pmc_file.pmc03
@@ -863,9 +864,9 @@ FUNCTION i140_show()
    DISPLAY BY NAME g_head_1.*
    CALL i140_b_fill(g_wc2)                #單身
    CALL cl_show_fld_cont()               #No.FUN-590083
-   
+
 END FUNCTION
- 
+
 FUNCTION i140_b()
 DEFINE
    l_ac_t          LIKE type_file.num5,     #NO FUN-690009 SMALLINT    #未取消的ARRAY CNT
@@ -880,7 +881,7 @@ DEFINE
 #入庫發票的入庫數量不能大于入庫異動的入庫數量
 DEFINE   l_rvv17   LIKE rvv_file.rvv17
 DEFINE   l_rvv03   LIKE rvv_file.rvv03    #No.TQC-760013
- 
+
 DEFINE tok base.StringTokenizer
 DEFINE l_str       STRING
 DEFINE l_i         LIKE type_file.num5,     #NO FUN-690009 SMALLINT
@@ -894,7 +895,7 @@ DEFINE l_rvu00     LIKE rvu_file.rvu00      #No.TQC-790140
 DEFINE l_rvw10_t   LIKE rvw_file.rvw10      #No.MOD-940412
 DEFINE l_rvw17_t   LIKE rvw_file.rvw17      #No.MOD-940412
 DEFINE l_rvu116    LIKE rvu_file.rvu116     #FUN-940083
-DEFINE l_rvv25     LIKE rvv_file.rvv25      #MOD-990163          
+DEFINE l_rvv25     LIKE rvv_file.rvv25      #MOD-990163
 DEFINE l_rvw05f    LIKE rvw_file.rvw05f     #CHI-C80054
 DEFINE l_rvw05f_t  LIKE rvw_file.rvw05f     #CHI-C80054
 DEFINE l_rvv36     LIKE rvv_file.rvv36      #MOD-C90185 add
@@ -913,8 +914,8 @@ DEFINE l_pmm02     LIKE pmm_file.pmm02      #MOD-C90185 add
       CALL cl_err('','apm-241',0)
       RETURN
    END IF
-  
- 
+
+
   #--------------------MOD-CB0281---------------(S)
    SELECT azi03,azi04 INTO t_azi03,t_azi04
      FROM azi_file
@@ -934,7 +935,7 @@ DEFINE l_pmm02     LIKE pmm_file.pmm02      #MOD-C90185 add
    LET l_ac_t = 0
    LET l_allow_insert = cl_detail_input_auth("insert")
    LET l_allow_delete = cl_detail_input_auth("delete")
- 
+
    INPUT ARRAY g_rvw WITHOUT DEFAULTS FROM s_rvw.*
          ATTRIBUTE(COUNT=g_rec_b,MAXCOUNT=g_max_rec,UNBUFFERED,
                    INSERT ROW=l_allow_insert,DELETE ROW=l_allow_delete,
@@ -943,13 +944,13 @@ DEFINE l_pmm02     LIKE pmm_file.pmm02      #MOD-C90185 add
          IF g_rec_b != 0 THEN
             CALL fgl_set_arr_curr(l_ac)
          END IF
- 
+
       BEFORE ROW
          LET p_cmd=''
          LET l_ac = ARR_CURR()
          LET l_lock_sw = 'N'                     #DEFAULT
          LET l_n  = ARR_COUNT()
- 
+
          IF g_rec_b >= l_ac THEN
             LET p_cmd='u'
             LET g_rvw_t.* = g_rvw[l_ac].*        #BACKUP
@@ -968,18 +969,18 @@ DEFINE l_pmm02     LIKE pmm_file.pmm02      #MOD-C90185 add
                  CALL s_gettrandbs()
                  LET li_dbs = g_dbs_tra
                  #add by xujw200426--begin--
-                 LET g_rvw[l_ac].sum1   = g_rvw[l_ac].rvw05f +g_rvw[l_ac].rvw06f   
-                 LET g_rvw[l_ac].sum2   = g_rvw[l_ac].rvw05  +g_rvw[l_ac].rvw06 
+                 LET g_rvw[l_ac].sum1   = g_rvw[l_ac].rvw05f +g_rvw[l_ac].rvw06f
+                 LET g_rvw[l_ac].sum2   = g_rvw[l_ac].rvw05  +g_rvw[l_ac].rvw06
                  #add by xujw200426--end--
                  #LET g_sql = "SELECT rvv09,rvv31,rvv031 FROM ",li_dbs CLIPPED,"rvv_file ",
                  LET g_sql = "SELECT rvv36,rvv09,rvv31,rvv031 FROM ",cl_get_target_table(g_rvw[l_ac].rvw99,'rvv_file'), #FUN-A50102
                              " WHERE rvv01 ='", g_rvw[l_ac].rvw08,"' ",
                              "   AND rvv02 ='", g_rvw[l_ac].rvw09,"' " #str----add by huanglf160823
-                 CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102							
-		         CALL cl_parse_qry_sql(g_sql,g_rvw[l_ac].rvw99) RETURNING g_sql #FUN-A50102	            
+                 CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102
+		         CALL cl_parse_qry_sql(g_sql,g_rvw[l_ac].rvw99) RETURNING g_sql #FUN-A50102
                  PREPARE sel_rvv09_pre FROM g_sql
                  EXECUTE sel_rvv09_pre INTO g_rvw[l_ac].rvv36,g_rvw[l_ac].rvv09,g_rvw[l_ac].ima01,g_rvw[l_ac].ima02
-                 select imaud33,imaud34 into g_rvw[l_ac].imaud33,g_rvw[l_ac].imaud34 from ima_file where ima01 = g_rvw[l_ac].ima01  #darcy:2024/09/12 add 
+                 select imaud33,imaud34 into g_rvw[l_ac].imaud33,g_rvw[l_ac].imaud34 from ima_file where ima01 = g_rvw[l_ac].ima01  #darcy:2024/09/12 add
                END IF
             IF NOT cl_null(g_rvw_t.rvw08) AND NOT cl_null(g_rvw_t.rvw09) THEN
                SELECT COUNT(*) INTO l_cnt
@@ -1014,7 +1015,7 @@ DEFINE l_pmm02     LIKE pmm_file.pmm02      #MOD-C90185 add
                END IF
             END IF
          END IF
- 
+
       AFTER INSERT
          IF INT_FLAG THEN
             CALL cl_err('',9001,0)
@@ -1059,25 +1060,25 @@ DEFINE l_pmm02     LIKE pmm_file.pmm02      #MOD-C90185 add
             LET g_rec_b=g_rec_b+1
             DISPLAY g_rec_b TO FORMONLY.cn2
          END IF
- 
+
       BEFORE INSERT
          LET l_n = ARR_COUNT()
          LET p_cmd='a'
          INITIALIZE g_rvw[l_ac].* TO NULL        #900423
          LET g_rvw[l_ac].rvw99 = g_plant         #MOD-C50188
-         let g_rvw[l_ac].ta_rvw01 = g_head_1.ta_rvw01_h  #darcy:2023/06/26 
+         let g_rvw[l_ac].ta_rvw01 = g_head_1.ta_rvw01_h  #darcy:2023/06/26
          LET g_rvw_t.* = g_rvw[l_ac].*           #新輸入資料
- 
+
       AFTER FIELD rvw99
          IF NOT cl_null(g_rvw[l_ac].rvw99) THEN
             CALL i140_rvw99()
             IF NOT cl_null(g_errno) THEN
                CALL cl_err(g_rvw[l_ac].rvw99,g_errno,1)
-               NEXT FIELD rvw99 
+               NEXT FIELD rvw99
             END IF
          ELSE
             CALL cl_err('','alm-809',0)
-            NEXT FIELD rvw99 
+            NEXT FIELD rvw99
          END IF
 
       BEFORE FIELD rvw08
@@ -1108,7 +1109,7 @@ DEFINE l_pmm02     LIKE pmm_file.pmm02      #MOD-C90185 add
             CALL i140_set_entry_b(p_cmd)
             MESSAGE " "
          END IF
- 
+
       AFTER FIELD rvw08
          IF l_cnt > 0 AND (g_rvw[l_ac].rvw08 <> g_rvw_t.rvw08
                        OR  cl_null(g_rvw[l_ac].rvw08)) THEN
@@ -1132,7 +1133,7 @@ DEFINE l_pmm02     LIKE pmm_file.pmm02      #MOD-C90185 add
                DISPLAY g_rvw[l_ac].* TO s_rvw[l_sl].*
             END IF
          END IF
- 
+
       AFTER FIELD rvw09
          IF NOT cl_null(g_rvw[l_ac].rvw09) THEN
             IF (p_cmd = 'a') OR
@@ -1142,7 +1143,7 @@ DEFINE l_pmm02     LIKE pmm_file.pmm02      #MOD-C90185 add
                   CALL cl_err(g_rvw[l_ac].rvw09,g_errno,0)
                   NEXT FIELD rvw09
                END IF
-               IF NOT cl_null(g_rvw[l_ac].rvw08) THEN                                                                               
+               IF NOT cl_null(g_rvw[l_ac].rvw08) THEN
                  #---------------------MOD-C90185-------------------(S)
                   SELECT rvv36,rvv37 INTO l_rvv36,l_rvv37
                     FROM rvv_file
@@ -1166,27 +1167,27 @@ DEFINE l_pmm02     LIKE pmm_file.pmm02      #MOD-C90185 add
                   LET g_sql = "SELECT rvv25 FROM ",cl_get_target_table(g_plant_new,'rvv_file'), #FUN-A50102
                               " WHERE rvv01='",g_rvw[l_ac].rvw08,"' ",
                               "   AND rvv02='",g_rvw[l_ac].rvw09,"' "
-                  CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102							
-		          CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102	
+                  CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102
+		          CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102
                   PREPARE sel_rvv25_pre FROM g_sql
                   EXECUTE sel_rvv25_pre INTO l_rvv25
                   IF cl_null(l_rvv25) THEN LET l_rvv25="N" END IF   #MOD-B50016 add
-                  IF l_rvv25="Y" THEN                                                                                               
-                     LET g_rvw[l_ac].rvw17=0                                                                                        
-                     LET g_rvw[l_ac].rvw05=0                                                                                        
+                  IF l_rvv25="Y" THEN
+                     LET g_rvw[l_ac].rvw17=0
+                     LET g_rvw[l_ac].rvw05=0
                      LET g_rvw[l_ac].rvw05f=0
-                     LET g_rvw[l_ac].sum1 =0      #FUN-C80027                                                                                       
-                     LET g_rvw[l_ac].rvw06=0                                                                                        
-                     LET g_rvw[l_ac].rvw06f=0                
-                     LET g_rvw[l_ac].sum2=0       #FUN-C80027                                                                       
-                     DISPLAY BY NAME g_rvw[l_ac].rvw17,g_rvw[l_ac].rvw05,g_rvw[l_ac].rvw05f,                                        
-                                     g_rvw[l_ac].rvw06,g_rvw[l_ac].rvw06f                  
-                                    ,g_rvw[l_ac].sum1,g_rvw[l_ac].sum2                   #FUN-C80027                                         
-                  END IF                                                                                                            
-               END IF                                                                                                               
+                     LET g_rvw[l_ac].sum1 =0      #FUN-C80027
+                     LET g_rvw[l_ac].rvw06=0
+                     LET g_rvw[l_ac].rvw06f=0
+                     LET g_rvw[l_ac].sum2=0       #FUN-C80027
+                     DISPLAY BY NAME g_rvw[l_ac].rvw17,g_rvw[l_ac].rvw05,g_rvw[l_ac].rvw05f,
+                                     g_rvw[l_ac].rvw06,g_rvw[l_ac].rvw06f
+                                    ,g_rvw[l_ac].sum1,g_rvw[l_ac].sum2                   #FUN-C80027
+                  END IF
+               END IF
             END IF
          END IF
- 
+
       #No.CHI-C80054  --Begin
       BEFORE FIELD rvw05f
          LET l_rvw05f_t = g_rvw[l_ac].rvw05f
@@ -1195,7 +1196,7 @@ DEFINE l_pmm02     LIKE pmm_file.pmm02      #MOD-C90185 add
       AFTER FIELD rvw05f
          IF NOT cl_null(g_rvw[l_ac].rvw05f) THEN
             #NO.CHI-C80054  --Begin
-           
+
             IF l_rvw05f_t != g_rvw[l_ac].rvw05f AND g_rvw[l_ac].rvw10 ! = 0 THEN
                IF g_rvw[l_ac].rvw05f < 0 THEN
                   LET l_rvw05f = g_rvw[l_ac].rvw05f * -1
@@ -1203,8 +1204,8 @@ DEFINE l_pmm02     LIKE pmm_file.pmm02      #MOD-C90185 add
                   LET l_rvw05f = g_rvw[l_ac].rvw05f
                END IF
                LET g_rvw[l_ac].rvw17 = l_rvw05f / g_rvw[l_ac].rvw10
-               LET g_rvw[l_ac].rvw17 = cl_digcut(g_rvw[l_ac].rvw17,t_azi03)   
-               DISPLAY BY NAME g_rvw[l_ac].rvw17 
+               LET g_rvw[l_ac].rvw17 = cl_digcut(g_rvw[l_ac].rvw17,t_azi03)
+               DISPLAY BY NAME g_rvw[l_ac].rvw17
                LET g_rvw[l_ac].rvw05f= g_rvw[l_ac].rvw10*g_rvw[l_ac].rvw17  #add by huanglf160921
             END IF
             #NO.CHI-C80054  --End
@@ -1215,9 +1216,9 @@ DEFINE l_pmm02     LIKE pmm_file.pmm02      #MOD-C90185 add
                #LET g_sql = "SELECT rvv03 FROM ",li_dbs CLIPPED,"rvv_file",
                LET g_sql = "SELECT rvv03 FROM ",cl_get_target_table(g_plant_new,'rvv_file'), #FUN-A50102
                            " WHERE rvv01 = '",g_rvw[l_ac].rvw08,"' ",
-                           "   AND rvv02 = '",g_rvw[l_ac].rvw09,"' " 
-               CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102							
-	             CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102	            
+                           "   AND rvv02 = '",g_rvw[l_ac].rvw09,"' "
+               CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102
+	             CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102
                PREPARE sel_rvv03_pre FROM g_sql
                EXECUTE sel_rvv03_pre INTO l_rvv03
                IF l_rvv03 = '3' THEN
@@ -1225,7 +1226,7 @@ DEFINE l_pmm02     LIKE pmm_file.pmm02      #MOD-C90185 add
                END IF
             END IF
             LET g_rvw[l_ac].rvw05f = cl_digcut(g_rvw[l_ac].rvw05f,t_azi04)   #No.MOD-740008
-            IF g_gec07 <> 'Y' AND g_gec05 <> 'T' THEN                        #MOD-A80052 
+            IF g_gec07 <> 'Y' AND g_gec05 <> 'T' THEN                        #MOD-A80052
                LET g_rvw[l_ac].rvw06f = g_rvw[l_ac].rvw05f*g_head_1.rvw04/100   #原幣稅額
                LET g_rvw[l_ac].rvw06f = cl_digcut(g_rvw[l_ac].rvw06f,t_azi04)   #No.MOD-740008
             END IF                                                           #MOD-A80052
@@ -1240,7 +1241,7 @@ DEFINE l_pmm02     LIKE pmm_file.pmm02      #MOD-C90185 add
             #MOD-B70073--begin
             #IF g_flag='N' OR (g_rvw_t.rvw05f <> g_rvw[l_ac].rvw05f) OR (g_rvw_t.rvw05f IS NULL)THEN
             IF g_flag='N' OR (l_rvw05f_t <> g_rvw[l_ac].rvw05f) OR (g_rvw_t.rvw05f IS NULL)THEN   #No.CHI-C80054
-             #  LET g_rvw[l_ac].rvw06f = g_rvw[l_ac].rvw05*g_head_1.rvw04/100   #原幣稅額  
+             #  LET g_rvw[l_ac].rvw06f = g_rvw[l_ac].rvw05*g_head_1.rvw04/100   #原幣稅額
                #LET g_rvw[l_ac].rvw06f = g_rvw[l_ac].rvw10*g_rvw[l_ac].rvw17*g_head_1.rvw04/100   #原幣稅額  mark by zhangsba190531
                LET g_rvw[l_ac].rvw06f = cl_digcut(g_rvw[l_ac].rvw05*g_head_1.rvw04/100,g_azi04)   #原幣稅額   #add by zhangsba190531#mark by xujw200427
                LET g_rvw[l_ac].rvw06f = cl_digcut(g_rvw[l_ac].rvw05f*g_head_1.rvw04/100,g_azi04)  #add by xujw200427
@@ -1248,11 +1249,11 @@ DEFINE l_pmm02     LIKE pmm_file.pmm02      #MOD-C90185 add
                LET g_rvw[l_ac].rvw05  = g_rvw[l_ac].rvw05f*g_head_1.rvw12  #本幣金額   #MOD-640405
                LET g_rvw[l_ac].rvw05  = cl_digcut(g_rvw[l_ac].rvw05,g_azi04)   #No.MOD-740008
                LET g_rvw[l_ac].rvw06  = g_rvw[l_ac].rvw05*g_head_1.rvw04/100   #本幣稅額    rvw04:稅率
-               LET g_rvw[l_ac].rvw06  = cl_digcut(g_rvw[l_ac].rvw06,g_azi04)              
+               LET g_rvw[l_ac].rvw06  = cl_digcut(g_rvw[l_ac].rvw06,g_azi04)
                LET g_rvw[l_ac].sum1   = g_rvw[l_ac].rvw05f +g_rvw[l_ac].rvw06f    #FUN-C80027  ADD
                LET g_rvw[l_ac].sum2   = g_rvw[l_ac].rvw05  +g_rvw[l_ac].rvw06     #FUN-C80027  ADD
-            END IF 
-            #MOD-B70073--end 
+            END IF
+            #MOD-B70073--end
             #MOD-B70073--mark--begin
             #LET g_rvw[l_ac].rvw05  = g_rvw[l_ac].rvw05f*g_head_1.rvw12  #本幣金額   #MOD-640405
             #`LET g_rvw[l_ac].rvw05  = cl_digcut(g_rvw[l_ac].rvw05,g_azi04)   #No.MOD-740008
@@ -1268,16 +1269,16 @@ DEFINE l_pmm02     LIKE pmm_file.pmm02      #MOD-C90185 add
             #LET g_sql = "SELECT rvu00,rvu116 FROM ",li_dbs CLIPPED,"rvu_file ",
             LET g_sql = "SELECT rvu00,rvu116 FROM ",cl_get_target_table(g_plant_new,'rvu_file'), #FUN-A50102
                         " WHERE rvu01 ='",g_rvw[l_ac].rvw08,"' "
-            CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102							
-		        CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102	            
-            PREPARE sel_rvu00_pre1 FROM g_sql 
+            CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102
+		        CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102
+            PREPARE sel_rvu00_pre1 FROM g_sql
             EXECUTE sel_rvu00_pre1 INTO l_rvu00,l_rvu116
             IF l_rvu00 = '3' AND g_rvw[l_ac].rvw05f = 0 AND l_rvu116 = '3' THEN   #FUN-940083--add rvu116
                CALL cl_err(g_rvw[l_ac].rvw05f,'gap-143',0)   #異動金額不可為零
                NEXT FIELD rvw05f
             END IF
          END IF
- 
+
       AFTER FIELD rvw06f
          IF NOT cl_null(g_rvw[l_ac].rvw06f) THEN
             LET g_rvw[l_ac].rvw06f = cl_digcut(g_rvw[l_ac].rvw06f,t_azi04)
@@ -1292,7 +1293,7 @@ DEFINE l_pmm02     LIKE pmm_file.pmm02      #MOD-C90185 add
             DISPLAY BY NAME g_rvw[l_ac].sum1       #FUN-C80027  ADD
             DISPLAY BY NAME g_rvw[l_ac].sum2       #FUN-C80027  ADD
          END IF
- 
+
       AFTER FIELD rvw05
          IF NOT cl_null(g_rvw[l_ac].rvw05) AND (g_rvw[l_ac].rvw05 <> g_rvw_t.rvw05 )  THEN
             IF s_abs(g_rvw[l_ac].rvw05/g_head_1.rvw12-g_rvw[l_ac].rvw05f) >= 1 THEN
@@ -1309,8 +1310,8 @@ DEFINE l_pmm02     LIKE pmm_file.pmm02      #MOD-C90185 add
             #LET g_sql = "SELECT rvu00,rvu116 FROM ",li_dbs CLIPPED,"rvu_file ",
             LET g_sql = "SELECT rvu00,rvu116 FROM ",cl_get_target_table(g_plant_new,'rvu_file'), #FUN-A50102
                         " WHERE rvu01 ='",g_rvw[l_ac].rvw08,"' "
-            CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102							
-		        CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102            
+            CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102
+		        CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102
             PREPARE sel_rvu00_pre2 FROM g_sql
             EXECUTE sel_rvu00_pre2 INTO l_rvu00,l_rvu116
             IF l_rvu00 = '3' AND g_rvw[l_ac].rvw05 = 0 AND l_rvu116 = '3' THEN    #FUN-940083--add rvu116
@@ -1318,7 +1319,7 @@ DEFINE l_pmm02     LIKE pmm_file.pmm02      #MOD-C90185 add
                NEXT FIELD rvw05
             END IF
          END IF
- 
+
       AFTER FIELD rvw06
          IF NOT cl_null(g_rvw[l_ac].rvw06) THEN
             IF s_abs(g_rvw[l_ac].rvw06/g_head_1.rvw12-g_rvw[l_ac].rvw06f) >= 1 THEN
@@ -1329,10 +1330,10 @@ DEFINE l_pmm02     LIKE pmm_file.pmm02      #MOD-C90185 add
             DISPLAY BY NAME g_rvw[l_ac].rvw06
             DISPLAY BY NAME g_rvw[l_ac].sum2       #FUN-C80027  ADD
          END IF
- 
+
       BEFORE FIELD rvw10
          LET l_rvw10_t = g_rvw[l_ac].rvw10
-#MOD-B70073--mark--begin 
+#MOD-B70073--mark--begin
 #      AFTER FIELD rvw10
 #         IF cl_null(g_rvw[l_ac].rvw10) THEN
 #            NEXT FIELD rvw10
@@ -1340,8 +1341,8 @@ DEFINE l_pmm02     LIKE pmm_file.pmm02      #MOD-C90185 add
 #            #LET g_sql = "SELECT rvu00,rvu116 FROM ",li_dbs CLIPPED,"rvu_file ",
 #            LET g_sql = "SELECT rvu00,rvu116 FROM ",cl_get_target_table(g_plant_new,'rvu_file'), #FUN-A50102
 #                        " WHERE rvu01 ='",g_rvw[l_ac].rvw08,"' "
-#            CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102							
-#		        CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102            
+#            CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102
+#		        CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102
 #            PREPARE sel_rvu00_pre3 FROM g_sql
 #            EXECUTE sel_rvu00_pre3 INTO l_rvu00,l_rvu116
 #            IF l_rvu00 = '3' AND l_rvu116 ='3' THEN                       #FUN-940083--add rvu116
@@ -1361,8 +1362,8 @@ DEFINE l_pmm02     LIKE pmm_file.pmm02      #MOD-C90185 add
 #               LET g_sql = "SELECT rvv87 FROM ",cl_get_target_table(g_plant_new,'rvv_file'), #FUN-A50102
 #                           " WHERE rvv01 = '",g_rvw[l_ac].rvw08,"' ",
 #                           "   AND rvv02 = '",g_rvw[l_ac].rvw09,"' "
-#               CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102							
-#		           CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102                        
+#               CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102
+#		           CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102
 #               PREPARE sel_rvv87_pre FROM g_sql
 #               EXECUTE sel_rvv87_pre INTO l_rvv17
 #            ELSE
@@ -1370,8 +1371,8 @@ DEFINE l_pmm02     LIKE pmm_file.pmm02      #MOD-C90185 add
 #               LET g_sql = "SELECT rvv17 FROM ",cl_get_target_table(g_plant_new,'rvv_file'), #FUN-A50102
 #                           " WHERE rvv01 = '",g_rvw[l_ac].rvw08,"' ",
 #                           "   AND rvv02 = '",g_rvw[l_ac].rvw09,"' "
-#               CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102							
-#		           CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102                        
+#               CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102
+#		           CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102
 #               PREPARE sel_rvv17_pre FROM g_sql
 #               EXECUTE sel_rvv17_pre INTO l_rvv17
 #            END IF
@@ -1393,8 +1394,8 @@ DEFINE l_pmm02     LIKE pmm_file.pmm02      #MOD-C90185 add
 #                  LET g_sql = "SELECT rvv03 FROM ",cl_get_target_table(g_plant_new,'rvv_file'), #FUN-A50102
 #                              " WHERE rvv01 = '",g_rvw[l_ac].rvw08,"' ",
 #                              "   AND rvv02 = '",g_rvw[l_ac].rvw09,"' "
-#                  CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102							
-#		          CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102                        
+#                  CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102
+#		          CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102
 #                  PREPARE sel_rvv03_pre4 FROM g_sql
 #                  EXECUTE sel_rvv03_pre4 INTO l_rvv03
 #                  IF l_rvv03 = '1' THEN
@@ -1417,8 +1418,8 @@ DEFINE l_pmm02     LIKE pmm_file.pmm02      #MOD-C90185 add
 #               LET g_sql = " SELECT gec05,gec07 FROM ",cl_get_target_table(g_plant_new,'gec_file'), #FUN-A50102      #MOD-A80052
 #                           "  WHERE gec01='",g_head_1.rvw03,"' ",
 #                           "    AND gec011 = '1'"
-#               CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102	
-#		       CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102            
+#               CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102
+#		       CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102
 #               PREPARE sel_gec07_pre1 FROM g_sql
 #              #EXECUTE sel_gec07_pre1 INTO g_gec07             #MOD-A80052 mark
 #               EXECUTE sel_gec07_pre1 INTO g_gec05,g_gec07     #MOD-A80052
@@ -1431,23 +1432,23 @@ DEFINE l_pmm02     LIKE pmm_file.pmm02      #MOD-C90185 add
 #                              " WHERE rvv01 = '",g_rvw[l_ac].rvw08,"' ",
 #                              "   AND rvv02 = '",g_rvw[l_ac].rvw09,"' ",
 #                              "   AND rvv01 = rvu01 "
-#                  CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102							
-#		          CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102            
+#                  CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102
+#		          CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102
 #                  PREPARE sel_rvv38t_pre FROM g_sql
 #                  EXECUTE sel_rvv38t_pre INTO g_rvv38t
 #                 #-MOD-A80052-add-
 #                  IF g_gec05 = 'T' THEN
-#                     LET g_rvw05f = g_rvv38t*g_rvw[l_ac].rvw10  
+#                     LET g_rvw05f = g_rvv38t*g_rvw[l_ac].rvw10
 #                     LET g_rvw05f = cl_digcut(g_rvw05f,t_azi04)
 #                     LET g_rvw[l_ac].rvw06f = g_rvw05f * (g_head_1.rvw04/100)
 #                     LET g_rvw[l_ac].rvw06f = cl_digcut(g_rvw[l_ac].rvw06f,t_azi04)
-#                     LET g_rvw[l_ac].rvw05f = g_rvw05f - g_rvw[l_ac].rvw06f 
-#                     LET g_flag = 'Y'   
+#                     LET g_rvw[l_ac].rvw05f = g_rvw05f - g_rvw[l_ac].rvw06f
+#                     LET g_flag = 'Y'
 #                  ELSE
 #                     #未稅金額=(含稅單價*數量)/(1+稅率/100)
 #                    #LET g_rvw[l_ac].rvw05f = (g_rvv38t*g_rvw[l_ac].rvw10)/(1+g_head_1.rvw04/100)   #MOD-AC0024
 #                     LET g_rvw[l_ac].rvw05f = cl_digcut((g_rvv38t*g_rvw[l_ac].rvw10),t_azi04)/(1+g_head_1.rvw04/100)   #MOD-AC0024
-#                  END IF 
+#                  END IF
 #                 #-MOD-A80052-end-
 #                  #未稅金額=(含稅單價*數量)/(1+稅率/100)
 #                 #LET g_rvw[l_ac].rvw05f = (g_rvv38t*g_rvw[l_ac].rvw10)/(1+g_head_1.rvw04/100)   #MOD-A80052 mark
@@ -1464,8 +1465,8 @@ DEFINE l_pmm02     LIKE pmm_file.pmm02      #MOD-C90185 add
 #               LET g_sql = "SELECT rvv03 FROM ",cl_get_target_table(g_plant_new,'rvv_file'),     #FUN-A50102
 #                           " WHERE rvv01 = '",g_rvw[l_ac].rvw08,"' ",
 #                           "   AND rvv02 = '",g_rvw[l_ac].rvw09,"' "
-#               CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102							
-#		       CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102            
+#               CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102
+#		       CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102
 #               PREPARE sel_rvv03_pre5 FROM g_sql
 #               EXECUTE sel_rvv03_pre5 INTO l_rvv03
 #               IF l_rvv03 = '3' THEN
@@ -1502,11 +1503,11 @@ DEFINE l_pmm02     LIKE pmm_file.pmm02      #MOD-C90185 add
          ELSE
             LET g_sql = "SELECT rvu00,rvu116 FROM ",cl_get_target_table(g_plant_new,'rvu_file'),
                         " WHERE rvu01 ='",g_rvw[l_ac].rvw08,"' "
-            CALL cl_replace_sqldb(g_sql) RETURNING g_sql                  				
-		        CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql             
+            CALL cl_replace_sqldb(g_sql) RETURNING g_sql
+		        CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql
             PREPARE sel_rvu00_pre3 FROM g_sql
             EXECUTE sel_rvu00_pre3 INTO l_rvu00,l_rvu116
-            IF l_rvu00 = '3' AND l_rvu116 ='3' THEN                     
+            IF l_rvu00 = '3' AND l_rvu116 ='3' THEN
                IF g_rvw[l_ac].rvw10 > 0 THEN
                   LET g_rvw[l_ac].rvw10 = g_rvw[l_ac].rvw10 *-1
                   NEXT FIELD rvw10
@@ -1526,19 +1527,19 @@ DEFINE l_pmm02     LIKE pmm_file.pmm02      #MOD-C90185 add
                END IF
             END IF
             IF g_sma.sma116 MATCHES '[13]' THEN
-               LET g_sql = "SELECT rvv87 FROM ",cl_get_target_table(g_plant_new,'rvv_file'), 
+               LET g_sql = "SELECT rvv87 FROM ",cl_get_target_table(g_plant_new,'rvv_file'),
                            " WHERE rvv01 = '",g_rvw[l_ac].rvw08,"' ",
                            "   AND rvv02 = '",g_rvw[l_ac].rvw09,"' "
-               CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   			
-		           CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql                       
+               CALL cl_replace_sqldb(g_sql) RETURNING g_sql
+		           CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql
                PREPARE sel_rvv87_pre FROM g_sql
                EXECUTE sel_rvv87_pre INTO l_rvv17
             ELSE
                LET g_sql = "SELECT rvv17 FROM ",cl_get_target_table(g_plant_new,'rvv_file'), #FUN-A50102
                            " WHERE rvv01 = '",g_rvw[l_ac].rvw08,"' ",
                            "   AND rvv02 = '",g_rvw[l_ac].rvw09,"' "
-               CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102							
-		           CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102                        
+               CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102
+		           CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102
                PREPARE sel_rvv17_pre FROM g_sql
                EXECUTE sel_rvv17_pre INTO l_rvv17
             END IF
@@ -1559,8 +1560,8 @@ DEFINE l_pmm02     LIKE pmm_file.pmm02      #MOD-C90185 add
                   LET g_sql = "SELECT rvv03 FROM ",cl_get_target_table(g_plant_new,'rvv_file'), #FUN-A50102
                               " WHERE rvv01 = '",g_rvw[l_ac].rvw08,"' ",
                               "   AND rvv02 = '",g_rvw[l_ac].rvw09,"' "
-                  CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102							
-		              CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102                        
+                  CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102
+		              CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102
                   PREPARE sel_rvv03_pre4 FROM g_sql
                   EXECUTE sel_rvv03_pre4 INTO l_rvv03
                   IF l_rvv03 = '1' THEN
@@ -1581,15 +1582,15 @@ DEFINE l_pmm02     LIKE pmm_file.pmm02      #MOD-C90185 add
                LET g_sql = " SELECT gec05,gec07 FROM ",cl_get_target_table(g_plant_new,'gec_file'), #FUN-A50102      #MOD-A80052
                            "  WHERE gec01='",g_head_1.rvw03,"' ",
                            "    AND gec011 = '1'"
-               CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102	
-		           CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102            
+               CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102
+		           CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102
                PREPARE sel_gec07_pre1 FROM g_sql
                EXECUTE sel_gec07_pre1 INTO g_gec05,g_gec07     #MOD-A80052
                #不含稅
                #未稅金額=未稅單價*數量
                LET g_rvw[l_ac].rvw05f = g_rvw[l_ac].rvw17*g_rvw[l_ac].rvw10                  #原幣稅前  #MOD-CA0222 mark #yinhy130308
                #LET g_rvw[l_ac].rvw05f = g_rvw17*g_rvw[l_ac].rvw10                  #No.MOD-CA0222  #yinhy130308
-            END IF   
+            END IF
             IF g_type = '3' AND g_rvw[l_ac].rvw05f > 0 THEN                 #負值顯示
                LET g_rvw[l_ac].rvw05f = g_rvw[l_ac].rvw05f * -1
             END IF
@@ -1597,24 +1598,24 @@ DEFINE l_pmm02     LIKE pmm_file.pmm02      #MOD-C90185 add
                LET g_sql = "SELECT rvv03 FROM ",cl_get_target_table(g_plant_new,'rvv_file'),     #FUN-A50102
                            " WHERE rvv01 = '",g_rvw[l_ac].rvw08,"' ",
                            "   AND rvv02 = '",g_rvw[l_ac].rvw09,"' "
-               CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102							
-		           CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102            
+               CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102
+		           CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102
                PREPARE sel_rvv03_pre5 FROM g_sql
                EXECUTE sel_rvv03_pre5 INTO l_rvv03
                IF l_rvv03 = '3' THEN
                   LET g_rvw[l_ac].rvw05f = g_rvw[l_ac].rvw05f * -1
                END IF
             END IF
-          #  LET g_rvw[l_ac].rvw05f = cl_digcut(g_rvw[l_ac].rvw05f,t_azi04)  #modify by huanglf160921                                                  
+          #  LET g_rvw[l_ac].rvw05f = cl_digcut(g_rvw[l_ac].rvw05f,t_azi04)  #modify by huanglf160921
           #  LET g_rvw[l_ac].rvw06f = g_rvw[l_ac].rvw05f * g_head_1.rvw04 / 100              #原幣稅額
           #  LET g_rvw[l_ac].rvw06f = g_rvw[l_ac].rvw17*g_rvw[l_ac].rvw10* g_head_1.rvw04 / 100   mark by zhangsba190531
              LET g_rvw[l_ac].rvw06f = g_rvw[l_ac].rvw05f * g_head_1.rvw04 / 100              #原幣稅額 add by zhangsba190531
-             LET g_rvw[l_ac].rvw06 =   g_rvw[l_ac].rvw06f*g_head_1.rvw12                    # 本、原币 逻辑一直 
-        #   LET g_rvw[l_ac].rvw06f = cl_digcut(g_rvw[l_ac].rvw06f,t_azi04)  
-            LET g_rvw[l_ac].rvw05  = g_rvw[l_ac].rvw05f*g_head_1.rvw12 #本幣金額   #MOD-640405 
+             LET g_rvw[l_ac].rvw06 =   g_rvw[l_ac].rvw06f*g_head_1.rvw12                    # 本、原币 逻辑一直
+        #   LET g_rvw[l_ac].rvw06f = cl_digcut(g_rvw[l_ac].rvw06f,t_azi04)
+            LET g_rvw[l_ac].rvw05  = g_rvw[l_ac].rvw05f*g_head_1.rvw12 #本幣金額   #MOD-640405
             LET g_rvw[l_ac].rvw05f = cl_digcut(g_rvw[l_ac].rvw05f,t_azi04)            #MOD-870285
             LET g_rvw[l_ac].rvw06f = cl_digcut(g_rvw[l_ac].rvw06f,t_azi04)  #add by huanglf160921
-            LET g_rvw[l_ac].rvw06  = cl_digcut(g_rvw[l_ac].rvw06,t_azi04)  
+            LET g_rvw[l_ac].rvw06  = cl_digcut(g_rvw[l_ac].rvw06,t_azi04)
             LET g_rvw[l_ac].sum1   = g_rvw[l_ac].rvw05f +g_rvw[l_ac].rvw06f    #FUN-C80027  ADD
             LET g_rvw[l_ac].sum2   = g_rvw[l_ac].rvw05  +g_rvw[l_ac].rvw06     #FUN-C80027  ADD
             IF g_type = '3' AND g_rvw[l_ac].rvw05 > 0 THEN                 #負值顯示
@@ -1636,24 +1637,24 @@ DEFINE l_pmm02     LIKE pmm_file.pmm02      #MOD-C90185 add
             DISPLAY BY NAME g_rvw[l_ac].sum1       #FUN-C80027  ADD
             DISPLAY BY NAME g_rvw[l_ac].sum2       #FUN-C80027  ADD
          END IF
-#MOD-B70073--end       
- 
+#MOD-B70073--end
+
       BEFORE FIELD rvw17
          LET l_rvw17_t = g_rvw[l_ac].rvw17
-#MOD-B70073--mark--begin 
+#MOD-B70073--mark--begin
 #      AFTER FIELD rvw17
 #         IF NOT cl_null(g_rvw[l_ac].rvw17) THEN
 #            IF cl_null(g_rvw[l_ac].rvw05f) OR g_rvw[l_ac].rvw05f=0 OR l_rvw17_t <> g_rvw[l_ac].rvw17 THEN    #MOD-870285 add #No.MOD-940412
 #               LET g_flag = 'N'          #MOD-A80052
 #              #LET g_sql = "SELECT gec07 FROM ",li_dbs CLIPPED,"gec_file ",
 #              #LET g_sql = "SELECT gec07 FROM ",cl_get_target_table(g_plant_new,'gec_file'), #FUN-A50102           #MOD-A80052 mark
-#               LET g_sql = "SELECT gec05,gec07 FROM ",cl_get_target_table(g_plant_new,'gec_file'), #FUN-A50102     #MOD-A80052 
+#               LET g_sql = "SELECT gec05,gec07 FROM ",cl_get_target_table(g_plant_new,'gec_file'), #FUN-A50102     #MOD-A80052
 #                           " WHERE gec01='",g_head_1.rvw03,"' ",
 #                           "   AND gec011='1' "
-#               CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102	
-#	             CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102                        
+#               CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102
+#	             CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102
 #               PREPARE sel_gec07_pre2 FROM g_sql
-#              #EXECUTE sel_gec07_pre2 INTO g_gec07                            #MOD-A80052 mark 
+#              #EXECUTE sel_gec07_pre2 INTO g_gec07                            #MOD-A80052 mark
 #               EXECUTE sel_gec07_pre2 INTO g_gec05,g_gec07                    #MOD-A80052
 #               IF g_gec07 = 'Y' THEN    #含稅
 #                  LET g_rvv38t = 0
@@ -1664,24 +1665,24 @@ DEFINE l_pmm02     LIKE pmm_file.pmm02      #MOD-C90185 add
 #                              " WHERE rvv01 = '",g_rvw[l_ac].rvw08,"' ",
 #                              "   AND rvv02 = '",g_rvw[l_ac].rvw09,"' ",
 #                              "   AND rvv01 = rvu01 "
-#                  CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102							
-#		              CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102                        
+#                  CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102
+#		              CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102
 #                  PREPARE sel_rvv38t_pre2 FROM g_sql
 #                  EXECUTE sel_rvv38t_pre2 INTO g_rvv38t,g_rvv39,g_rvv39t       #MOD-9C0061 add rvv39,rvv39t
 #                  #未稅金額=(含稅單價*數量)/(1+稅率/100)
 #                  IF g_rvw[l_ac].rvw10 <> 0 THEN
 #                    #-MOD-A80052-add-
 #                     IF g_gec05 = 'T' THEN
-#                        LET g_rvw05f = g_rvv38t*g_rvw[l_ac].rvw10  
+#                        LET g_rvw05f = g_rvv38t*g_rvw[l_ac].rvw10
 #                        LET g_rvw05f = cl_digcut(g_rvw05f,t_azi04)
 #                        LET g_rvw[l_ac].rvw06f = g_rvw05f * (g_head_1.rvw04/100)
 #                        LET g_rvw[l_ac].rvw06f = cl_digcut(g_rvw[l_ac].rvw06f,t_azi04)
-#                        LET g_rvw[l_ac].rvw05f = g_rvw05f - g_rvw[l_ac].rvw06f 
-#                        LET g_flag = 'Y'   
+#                        LET g_rvw[l_ac].rvw05f = g_rvw05f - g_rvw[l_ac].rvw06f
+#                        LET g_flag = 'Y'
 #                     ELSE
 #                       #LET g_rvw[l_ac].rvw05f = (g_rvv38t*g_rvw[l_ac].rvw10)/(1+g_head_1.rvw04/100)   #MOD-AC0024
 #                        LET g_rvw[l_ac].rvw05f = cl_digcut((g_rvv38t*g_rvw[l_ac].rvw10),t_azi04)/(1+g_head_1.rvw04/100)   #MOD-AC0024
-#                     END IF 
+#                     END IF
 #                    #-MOD-A80052-end-
 #                    #LET g_rvw[l_ac].rvw05f = (g_rvv38t*g_rvw[l_ac].rvw10)/(1+g_head_1.rvw04/100)   #MOD-A80052 mark
 #                  ELSE
@@ -1704,8 +1705,8 @@ DEFINE l_pmm02     LIKE pmm_file.pmm02      #MOD-C90185 add
 #               LET g_sql = "SELECT rvv03 FROM ",cl_get_target_table(g_plant_new,'rvv_file'), #FUN-A50102
 #                           " WHERE rvv01 = '",g_rvw[l_ac].rvw08,"' ",
 #                           "   AND rvv02 = '",g_rvw[l_ac].rvw09,"' "
-#               CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102							
-#		       CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102                        
+#               CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102
+#		       CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102
 #               PREPARE sel_rvv03_pre6 FROM g_sql
 #               EXECUTE sel_rvv03_pre6 INTO l_rvv03
 #               IF l_rvv03 = '3' THEN
@@ -1736,60 +1737,60 @@ DEFINE l_pmm02     LIKE pmm_file.pmm02      #MOD-C90185 add
 #            DISPLAY BY NAME g_rvw[l_ac].rvw05f
 #            DISPLAY BY NAME g_rvw[l_ac].rvw06f
 #         END IF
-#MOD-B70073--mark--end           
-      #MOD-B70073--add--begin     
+#MOD-B70073--mark--end
+      #MOD-B70073--add--begin
       AFTER FIELD rvw17
          IF NOT cl_null(g_rvw[l_ac].rvw17) THEN
-            IF cl_null(g_rvw[l_ac].rvw05f) OR g_rvw[l_ac].rvw05f=0 OR l_rvw17_t <> g_rvw[l_ac].rvw17 THEN   
-               LET g_flag = 'N'          
-               LET g_sql = "SELECT gec05,gec07 FROM ",cl_get_target_table(g_plant_new,'gec_file'), 
+            IF cl_null(g_rvw[l_ac].rvw05f) OR g_rvw[l_ac].rvw05f=0 OR l_rvw17_t <> g_rvw[l_ac].rvw17 THEN
+               LET g_flag = 'N'
+               LET g_sql = "SELECT gec05,gec07 FROM ",cl_get_target_table(g_plant_new,'gec_file'),
                            " WHERE gec01='",g_head_1.rvw03,"' ",
                            "   AND gec011='1' "
-               CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   	
-	             CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql                               
+               CALL cl_replace_sqldb(g_sql) RETURNING g_sql
+	             CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql
                PREPARE sel_gec07_pre2 FROM g_sql
-               EXECUTE sel_gec07_pre2 INTO g_gec05,g_gec07                    
+               EXECUTE sel_gec07_pre2 INTO g_gec05,g_gec07
                #IF g_gec07 = 'Y' THEN    #含稅
                #   IF g_gec05 = 'T' THEN
-               #      LET g_rvw05f = g_rvw[l_ac].rvw17*g_rvw[l_ac].rvw10  
+               #      LET g_rvw05f = g_rvw[l_ac].rvw17*g_rvw[l_ac].rvw10
                #      LET g_rvw05f = cl_digcut(g_rvw05f,t_azi04)
                #      LET g_rvw[l_ac].rvw06f = g_rvw05f * (g_head_1.rvw04/100)
                #      LET g_rvw[l_ac].rvw06f = cl_digcut(g_rvw[l_ac].rvw06f,t_azi04)
-               #      LET g_rvw[l_ac].rvw05f = g_rvw05f - g_rvw[l_ac].rvw06f 
-               #      LET g_flag = 'Y'   
+               #      LET g_rvw[l_ac].rvw05f = g_rvw05f - g_rvw[l_ac].rvw06f
+               #      LET g_flag = 'Y'
                #    ELSE
-               #      LET g_rvw[l_ac].rvw05f = cl_digcut((g_rvw[l_ac].rvw17*g_rvw[l_ac].rvw10),t_azi04)/(1+g_head_1.rvw04/100)  
-               #    END IF                  
+               #      LET g_rvw[l_ac].rvw05f = cl_digcut((g_rvw[l_ac].rvw17*g_rvw[l_ac].rvw10),t_azi04)/(1+g_head_1.rvw04/100)
+               #    END IF
                #ELSE                     #不含稅
                #   #未稅金額=未稅單價*數量
-               #   LET g_rvw[l_ac].rvw05f = g_rvw[l_ac].rvw17*g_rvw[l_ac].rvw10                  #原幣稅               
+               #   LET g_rvw[l_ac].rvw05f = g_rvw[l_ac].rvw17*g_rvw[l_ac].rvw10                  #原幣稅
                #END IF
                LET g_rvw[l_ac].rvw05f = g_rvw[l_ac].rvw17*g_rvw[l_ac].rvw10      #MOD-CA0222 mark   #yinhy130308
                #LET g_rvw[l_ac].rvw05f = g_rvw17*g_rvw[l_ac].rvw10                 #MOD-CA0222   #yinhy130308 mark
-            END IF      
+            END IF
             IF g_type = '3' AND g_rvw[l_ac].rvw05f > 0 THEN                 #負值顯示
                LET g_rvw[l_ac].rvw05f = g_rvw[l_ac].rvw05f * -1
             END IF
-            IF g_type = '2' AND g_rvw[l_ac].rvw05f > 0 THEN               
+            IF g_type = '2' AND g_rvw[l_ac].rvw05f > 0 THEN
                LET g_sql = "SELECT rvv03 FROM ",cl_get_target_table(g_plant_new,'rvv_file'), #FUN-A50102
                            " WHERE rvv01 = '",g_rvw[l_ac].rvw08,"' ",
                            "   AND rvv02 = '",g_rvw[l_ac].rvw09,"' "
-               CALL cl_replace_sqldb(g_sql) RETURNING g_sql                 					
-		           CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql                      
+               CALL cl_replace_sqldb(g_sql) RETURNING g_sql
+		           CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql
                PREPARE sel_rvv03_pre6 FROM g_sql
                EXECUTE sel_rvv03_pre6 INTO l_rvv03
                IF l_rvv03 = '3' THEN
                   LET g_rvw[l_ac].rvw05f = g_rvw[l_ac].rvw05f * -1
                END IF
             END IF
-            LET g_rvw[l_ac].rvw05f = cl_digcut(g_rvw[l_ac].rvw05f,t_azi04)                                                          
+            LET g_rvw[l_ac].rvw05f = cl_digcut(g_rvw[l_ac].rvw05f,t_azi04)
             LET g_rvw[l_ac].rvw05  = g_rvw[l_ac].rvw05f*g_head_1.rvw12 #本幣金額   #MOD-640405                    #MOD-870285
             IF g_type = '3' AND g_rvw[l_ac].rvw05 > 0 THEN                 #負值顯示
                LET g_rvw[l_ac].rvw05 = g_rvw[l_ac].rvw05 * -1
             END IF
             IF g_type = '2' AND g_rvw[l_ac].rvw05 > 0 THEN
                IF l_rvv03 = '3' THEN
-                  LET g_rvw[l_ac].rvw05 = g_rvw[l_ac].rvw05 * -1    
+                  LET g_rvw[l_ac].rvw05 = g_rvw[l_ac].rvw05 * -1
                END IF
             END IF
             #LET g_rvw[l_ac].rvw06f = g_rvw[l_ac].rvw05f * (g_head_1.rvw04/100)  #modify by huanglf160921
@@ -1797,13 +1798,13 @@ DEFINE l_pmm02     LIKE pmm_file.pmm02      #MOD-C90185 add
             LET g_rvw[l_ac].rvw06f = g_rvw[l_ac].rvw05f * g_head_1.rvw04 / 100              #原幣稅額 add by zhangsba190531
            # LET g_rvw[l_ac].rvw06  = g_rvw[l_ac].rvw05 * g_head_1.rvw04 / 100                #本幣稅額    rvw04:稅率
             LET g_rvw[l_ac].rvw06 = g_rvw[l_ac].rvw06f* g_head_1.rvw12                       #本币税额
-            LET g_rvw[l_ac].rvw05  = cl_digcut(g_rvw[l_ac].rvw05,g_azi04) 
+            LET g_rvw[l_ac].rvw05  = cl_digcut(g_rvw[l_ac].rvw05,g_azi04)
             LET g_rvw[l_ac].rvw06  = cl_digcut(g_rvw[l_ac].rvw06,g_azi04)
             LET g_rvw[l_ac].sum1   = g_rvw[l_ac].rvw05f +g_rvw[l_ac].rvw06f    #FUN-C80027  ADD
             LET g_rvw[l_ac].sum2   = g_rvw[l_ac].rvw05  +g_rvw[l_ac].rvw06     #FUN-C80027  ADD
-            LET g_rvw[l_ac].rvw06f  = cl_digcut(g_rvw[l_ac].rvw06f,g_azi04)  #zhouxm150817 add 
-            LET g_rvw[l_ac].sum1  = cl_digcut(g_rvw[l_ac].sum1,g_azi04)      #zhouxm150817 add 
-            LET g_rvw[l_ac].sum2  = cl_digcut(g_rvw[l_ac].sum2,g_azi04)      #zhouxm150817 add 
+            LET g_rvw[l_ac].rvw06f  = cl_digcut(g_rvw[l_ac].rvw06f,g_azi04)  #zhouxm150817 add
+            LET g_rvw[l_ac].sum1  = cl_digcut(g_rvw[l_ac].sum1,g_azi04)      #zhouxm150817 add
+            LET g_rvw[l_ac].sum2  = cl_digcut(g_rvw[l_ac].sum2,g_azi04)      #zhouxm150817 add
             DISPLAY BY NAME g_rvw[l_ac].rvw05
             DISPLAY BY NAME g_rvw[l_ac].rvw06
             DISPLAY BY NAME g_rvw[l_ac].rvw05f
@@ -1811,7 +1812,7 @@ DEFINE l_pmm02     LIKE pmm_file.pmm02      #MOD-C90185 add
             DISPLAY BY NAME g_rvw[l_ac].sum1      #FUN-C80027  ADD
             DISPLAY BY NAME g_rvw[l_ac].sum2      #FUN-C80027  ADD
          END IF
-      #MOD-B70073--end     
+      #MOD-B70073--end
       BEFORE DELETE                          #是否取消單身
          IF NOT cl_null(g_rvw_t.rvw09) AND NOT cl_null(g_rvw_t.rvw08)THEN
             SELECT COUNT(*) INTO l_cnt
@@ -1862,7 +1863,7 @@ DEFINE l_pmm02     LIKE pmm_file.pmm02      #MOD-C90185 add
                LET g_rec_b=g_rec_b-1
                DISPLAY g_rec_b TO FORMONLY.cn2
             END IF
- 
+
             SELECT COUNT(rvw01) INTO l1_n FROM rvw_file
              WHERE rvw08 = g_rvw_t.rvw08
                AND rvw09 = g_rvw_t.rvw09
@@ -1871,8 +1872,8 @@ DEFINE l_pmm02     LIKE pmm_file.pmm02      #MOD-C90185 add
                LET g_sql = "SELECT rvv04,rvv05 FROM ",cl_get_target_table(g_plant_new,'rvv_file'), #FUN-A50102
                            " WHERE rvv01 = '",g_rvw_t.rvw08,"' ",
                            "   AND rvv02 = '",g_rvw_t.rvw09,"' "
-               CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102							
-		       CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102              
+               CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102
+		       CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102
                PREPARE sel_rvv04_pre FROM g_sql
                EXECUTE sel_rvv04_pre INTO l_rvv04,l_rvv05
                IF l1_n = 1 THEN
@@ -1885,10 +1886,10 @@ DEFINE l_pmm02     LIKE pmm_file.pmm02      #MOD-C90185 add
                                  "   SET rvb22 = '",l_rvw01,"' ",
                                  " WHERE rvb01 = '",l_rvv04,"' ",
                                  "   AND rvb02 = '",l_rvv05,"' "
-                     CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102							
-		             CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102              
+                     CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102
+		             CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102
                      PREPARE upd_rvb_pre FROM g_sql
-                     EXECUTE upd_rvb_pre 
+                     EXECUTE upd_rvb_pre
                      IF SQLCA.sqlcode  THEN
                         CALL cl_err3("upd","rvb_file",l_rvv04,l_rvv05,STATUS,"","del upd rvb",1)  #No.FUN-660071
                      END IF
@@ -1900,8 +1901,8 @@ DEFINE l_pmm02     LIKE pmm_file.pmm02      #MOD-C90185 add
                                  "   SET rvb22 = NULL",
                                  " WHERE rvb01 = '",l_rvv04,"' ",
                                  "   AND rvb02 = '",l_rvv05,"' "
-                     CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102							
-		             CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102              
+                     CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102
+		             CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102
                      PREPARE upd_rvb22_pre FROM g_sql
                      EXECUTE upd_rvb22_pre
                      IF SQLCA.sqlcode THEN
@@ -1933,17 +1934,17 @@ DEFINE l_pmm02     LIKE pmm_file.pmm02      #MOD-C90185 add
             LET g_head_1.sum4=g_head_1.rvw05_sum+g_head_1.rvw06_sum
             DISPLAY BY NAME g_head_1.sum4
             #FUN-C80027---ADD--END
-             
+
             #160628 liming add-str
             SELECT SUM(rvw10)
               INTO g_head_1.rvw10_sum
               FROM rvw_file WHERE rvw01=g_head_1.rvw01
             IF cl_null(g_head_1.rvw10_sum) THEN LET g_head_1.rvw10_sum = 0 END IF
             DISPLAY BY NAME g_head_1.rvw10_sum
-            #160628 liming add-end 
-            
+            #160628 liming add-end
+
          END IF
- 
+
       ON ROW CHANGE
          IF INT_FLAG THEN
             CALL cl_err('',9001,0)
@@ -1994,8 +1995,8 @@ DEFINE l_pmm02     LIKE pmm_file.pmm02      #MOD-C90185 add
                      LET g_sql = "SELECT rvv04,rvv05 FROM ",cl_get_target_table(g_plant_new,'rvv_file'), #FUN-A50102
                                  " WHERE rvv01 = '",g_rvw_t.rvw08,"' ",
                                  "   AND rvv02 = '",g_rvw_t.rvw09,"' "
-                     CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102							
-		             CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102                          
+                     CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102
+		             CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102
                      PREPARE sel_rvv04_pre1 FROM g_sql
                      EXECUTE sel_rvv04_pre1 INTO l_rvv04,l_rvv05
                      IF l1_n = 1 THEN
@@ -2009,10 +2010,10 @@ DEFINE l_pmm02     LIKE pmm_file.pmm02      #MOD-C90185 add
                                        "   SET rvb22 = '",l_rvw01,"' ",
                                        " WHERE rvb01 = '",l_rvv04,"' ",
                                        "   AND rvb02 = '",l_rvv05,"' "
-                           CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102							
-		                   CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102                          
+                           CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102
+		                   CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102
                            PREPARE upd_rvb22_pre1 FROM g_sql
-                           EXECUTE upd_rvb22_pre1 
+                           EXECUTE upd_rvb22_pre1
                            IF SQLCA.sqlcode  THEN
                               CALL cl_err3("upd","rvb_file",l_rvv04,l_rvv05,STATUS,"","del upd rvb",1)  #No.FUN-660071
                            END IF
@@ -2024,10 +2025,10 @@ DEFINE l_pmm02     LIKE pmm_file.pmm02      #MOD-C90185 add
                                        "   SET rvb22 = NULL ",
                                        " WHERE rvb01 = '",l_rvv04,"' ",
                                        "   AND rvb02 = '",l_rvv05,"' "
-                           CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102							
-		                   CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102                          
+                           CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102
+		                   CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102
                            PREPARE upd_rvb_pre1 FROM g_sql
-                           EXECUTE upd_rvb_pre1 
+                           EXECUTE upd_rvb_pre1
                            IF SQLCA.sqlcode  THEN
                               CALL cl_err3("upd","rvb_file",l_rvv04,l_rvv05,STATUS,"","del upd rvb",1)  #No.FUN-660071
                            END IF
@@ -2056,14 +2057,14 @@ DEFINE l_pmm02     LIKE pmm_file.pmm02      #MOD-C90185 add
                END IF
             END IF
          END IF
- 
+
       AFTER ROW
          LET l_ac = ARR_CURR()
         #LET l_ac_t = l_ac      #FUN-D30032 Mark
          IF INT_FLAG THEN
             CALL cl_err('',9001,0)
             LET INT_FLAG = 0
-           #LET g_rvw[l_ac].* = g_rvw_t.*   #FUN-D30032 Mark 
+           #LET g_rvw[l_ac].* = g_rvw_t.*   #FUN-D30032 Mark
             #FUN-D30032--add--str--
             IF p_cmd = 'u' THEN
                LET g_rvw[l_ac].* = g_rvw_t.*
@@ -2106,14 +2107,14 @@ DEFINE l_pmm02     LIKE pmm_file.pmm02      #MOD-C90185 add
           DISPLAY BY NAME g_head_1.sum3
           DISPLAY BY NAME g_head_1.sum4
           #FUN-C80027---ADD--END
-          
+
           #160628 liming add-str
            SELECT SUM(rvw10)
            INTO g_head_1.rvw10_sum
            FROM rvw_file WHERE rvw01=g_head_1.rvw01
          DISPLAY BY NAME g_head_1.rvw10_sum
            #160628 liming add-end
-  
+
       AFTER INPUT
          IF g_type ='2' THEN
             SELECT SUM(rvw05f) INTO l_rvw05f_sum FROM rvw_file WHERE rvw01 =g_head_1.rvw01
@@ -2126,7 +2127,7 @@ DEFINE l_pmm02     LIKE pmm_file.pmm02      #MOD-C90185 add
          CALL cl_cmdask()
       ON ACTION controls                             #No.FUN-6A0092
          CALL cl_set_head_visible("","AUTO")           #No.FUN-6A0092
- 
+
       ON ACTION controlp
          CASE
             WHEN INFIELD(rvw99)
@@ -2134,7 +2135,7 @@ DEFINE l_pmm02     LIKE pmm_file.pmm02      #MOD-C90185 add
                LET g_qryparam.form = "q_azw"
                LET g_qryparam.where = " azw02 = '",g_legal,"' "
                CALL cl_create_qry() RETURNING g_rvw[l_ac].rvw99
-               DISPLAY g_rvw[l_ac].rvw99 TO rvw99 
+               DISPLAY g_rvw[l_ac].rvw99 TO rvw99
                NEXT FIELD rvw99
             WHEN INFIELD(rvw08)
               CALL q_rvv4(TRUE,TRUE,g_head_1.rvv06,g_rvw[l_ac].rvw08,
@@ -2180,13 +2181,13 @@ DEFINE l_pmm02     LIKE pmm_file.pmm02      #MOD-C90185 add
                     IF cl_null(l_rvv25) THEN LET l_rvv25="N" END IF
                     IF l_rvv25="Y" THEN
                        LET g_rvw[l_ac].rvw17 =0
-                       LET g_rvw[l_ac].rvw05 =0 
-                       LET g_rvw[l_ac].rvw05f=0                                                                                              
-                       LET g_rvw[l_ac].rvw06 =0 
+                       LET g_rvw[l_ac].rvw05 =0
+                       LET g_rvw[l_ac].rvw05f=0
+                       LET g_rvw[l_ac].rvw06 =0
                        LET g_rvw[l_ac].rvw06f=0
                        LET g_rvw[l_ac].sum1  =0     #FUN-C80027
                        LET g_rvw[l_ac].sum2  =0     #FUN-C80027
-                    END IF   
+                    END IF
                    #end MOD-B50016 add
                     INSERT INTO rvw_file(rvw01,rvw02,rvw03,rvw04,rvw07,rvw11,rvw12,
                                          rvwacti,rvwuser,rvwgrup,rvwmodu,rvwdate,rvworiu,rvworig, #FUN-D10064
@@ -2213,7 +2214,7 @@ DEFINE l_pmm02     LIKE pmm_file.pmm02      #MOD-C90185 add
                  LET g_head_1.rvw06f_s = g_head_1.rvw06f_sum
                  DISPLAY BY NAME g_head_1.rvw06f_s
                  DISPLAY BY NAME g_head_1.rvw05f_sum,g_head_1.rvw06f_sum
-  
+
                  #FUN-C80027---ADD--STR
                  SELECT SUM(rvw05),SUM(rvw06)
                    INTO g_head_1.rvw05_sum,g_head_1.rvw06_sum
@@ -2225,15 +2226,15 @@ DEFINE l_pmm02     LIKE pmm_file.pmm02      #MOD-C90185 add
                  LET g_head_1.sum4=g_head_1.rvw05_sum+g_head_1.rvw06_sum
                  DISPLAY BY NAME g_head_1.sum3
                  DISPLAY BY NAME g_head_1.sum4
-                #FUN-C80027---ADD--END 
-                 
+                #FUN-C80027---ADD--END
+
                #160628 liming add-str
                SELECT SUM(rvw10)
                 INTO g_head_1.rvw10_sum
                 FROM rvw_file WHERE rvw01=g_head_1.rvw01
                 DISPLAY BY NAME g_head_1.rvw10_sum
                #160628 liming add-end
-               
+
               END IF
                IF INT_FLAG THEN
                   LET INT_FLAG=0 NEXT FIELD rvw08
@@ -2242,14 +2243,14 @@ DEFINE l_pmm02     LIKE pmm_file.pmm02      #MOD-C90185 add
                   CALL i140_b()
                   EXIT INPUT
                END IF
- 
+
          END CASE
- 
+
       ON ACTION sel_rvv
          IF cl_null(g_head_1.rvw01) OR cl_null(g_head_1.rvv06) THEN RETURN END IF
          LET l_str=NULL
          CALL q_rvv4(TRUE,TRUE,g_head_1.rvv06,
-                     g_rvw[l_ac].rvw08,g_rvw[l_ac].rvw09,g_type,'1',g_head_1.rvw01,g_rvw[l_ac].rvw99)   #FUN-9B0130 
+                     g_rvw[l_ac].rvw08,g_rvw[l_ac].rvw09,g_type,'1',g_head_1.rvw01,g_rvw[l_ac].rvw99)   #FUN-9B0130
               RETURNING g_qryparam.multiret
          LET l_str=g_qryparam.multiret CLIPPED
          LET tok = base.StringTokenizer.create(l_str,"|")
@@ -2295,19 +2296,19 @@ DEFINE l_pmm02     LIKE pmm_file.pmm02      #MOD-C90185 add
               FROM rvw_file WHERE rvw01=g_head_1.rvw01
             DISPLAY BY NAME g_head_1.rvw10_sum
            #160628 liming add-end
-               
+
             CALL i140_b_fill('all')                               #單身  #No.TQC-7B0131
             EXIT INPUT
          END IF
- 
+
       ON ACTION CONTROLF                  #欄位說明
          CALL cl_set_focus_form(ui.Interface.getRootNode()) RETURNING g_fld_name,g_frm_name
          CALL cl_fldhelp(g_frm_name,g_fld_name,g_lang)
- 
+
       ON IDLE g_idle_seconds
          CALL cl_on_idle()
          CONTINUE INPUT
- 
+
    END INPUT
    CALL i140_chk_amt()
    IF NOT cl_null(g_errno) THEN
@@ -2316,14 +2317,14 @@ DEFINE l_pmm02     LIKE pmm_file.pmm02      #MOD-C90185 add
    IF g_type = '1' OR g_type = '2' THEN   #No.TQC-760013
       CALL i140_upd_rvb22('b')
    END IF
- 
+
    CALL i140_var_process('b')
- 
+
    CLOSE i140_bcl
    COMMIT WORK
    CALL i140_list_fill()  #FUN-CB0080
 END FUNCTION
- 
+
 FUNCTION i140_upd_rvb22(p_cmd)                #更新驗收單發票號碼
    DEFINE p_cmd    LIKE type_file.chr1        #NO FUN-690009 VARCHAR(01)   #b:單身新增 d:刪除
    DEFINE l_rvw    RECORD LIKE rvw_file.*,
@@ -2345,8 +2346,8 @@ FUNCTION i140_upd_rvb22(p_cmd)                #更新驗收單發票號碼
       LET g_sql = "SELECT rvv04,rvv05 FROM ",cl_get_target_table(g_plant_new,'rvv_file'), #FUN-A50102
                   " WHERE rvv01='",l_rvw.rvw08,"' ",
                   "   AND rvv02='",l_rvw.rvw09,"' "
-      CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102							
-	  CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102                          
+      CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102
+	  CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102
       PREPARE sel_rvv04_pre4 FROM g_sql
       EXECUTE sel_rvv04_pre4 INTO l_rvv04,l_rvv05
       LET g_sql = "SELECT COUNT(UNIQUE rvw01) FROM rvw_file,",
@@ -2355,8 +2356,8 @@ FUNCTION i140_upd_rvb22(p_cmd)                #更新驗收單發票號碼
                   " WHERE rvv01 = rvw08 AND rvv02 = rvw09 ",
                   "   AND rvv04 = '",l_rvv04,"' AND rvv05='",l_rvv05,"' ",
                   "   AND rvv03 = '1'"
-      CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102							
-	  CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102              
+      CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102
+	  CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102
       PREPARE sel_rvw01_pre FROM g_sql
       EXECUTE sel_rvw01_pre INTO l_cnt
       IF p_cmd = 'b' THEN
@@ -2377,8 +2378,8 @@ FUNCTION i140_upd_rvb22(p_cmd)                #更新驗收單發票號碼
                         "   AND rvv04 = '",l_rvv04,"' AND rvv05='",l_rvv05,"' ",
                         "   AND rvv03 = '1' ",
                         "   AND rvw01 != '",l_rvw.rvw01,"' "
-            CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102							
-		    CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102                          
+            CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102
+		    CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102
             PREPARE sel_rvw01_pre1 FROM g_sql
             EXECUTE sel_rvw01_pre1 INTO l_guino
          END IF
@@ -2392,8 +2393,8 @@ FUNCTION i140_upd_rvb22(p_cmd)                #更新驗收單發票號碼
                      "   SET rvb22 = '",l_guino,"' ",
                      " WHERE rvb01 = '",l_rvv04,"' ",
                      "   AND rvb02 = '",l_rvv05,"' "
-         CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102							
-		 CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102                          
+         CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102
+		 CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102
          PREPARE upd_rvb_pre2 FROM g_sql
          EXECUTE upd_rvb_pre2
          IF STATUS   THEN
@@ -2403,15 +2404,15 @@ FUNCTION i140_upd_rvb22(p_cmd)                #更新驗收單發票號碼
       END IF  #No.TQC-7B0114
    END FOREACH
 END FUNCTION
- 
+
 FUNCTION i140_rvw08()
    DEFINE l_n       LIKE type_file.num5,         #NO FUN-690009 SMALLINT
           l_rvv06   LIKE rvv_file.rvv06
    DEFINE l_rvuconf LIKE rvu_file.rvuconf        #No.TQC-920081
-#No.MOD-A20009 --begin                                                          
-   DEFINE l_year    LIKE type_file.num5                                         
-   DEFINE l_month   LIKE type_file.num5                                         
-#No.MOD-A20009 --end 
+#No.MOD-A20009 --begin
+   DEFINE l_year    LIKE type_file.num5
+   DEFINE l_month   LIKE type_file.num5
+#No.MOD-A20009 --end
    DEFINE l_rvu21   LIKE rvu_file.rvu21           #NO.TQC-BB0163
    DEFINE l_rvv31   LIKE rvv_file.rvv31  #FUN-D70021
 
@@ -2419,8 +2420,8 @@ FUNCTION i140_rvw08()
    #LET g_sql = "SELECT UNIQUE rvv06 FROM ",li_dbs CLIPPED,"rvv_file ",
    LET g_sql = "SELECT UNIQUE rvv06 FROM ",cl_get_target_table(g_plant_new,'rvv_file'), #FUN-A50102
                " WHERE rvv01 = '",g_rvw[l_ac].rvw08,"' "
-   CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102							
-   CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102                          
+   CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102
+   CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102
    PREPARE sel_rvv06_pre FROM g_sql
    EXECUTE sel_rvv06_pre INTO l_rvv06
    IF STATUS THEN
@@ -2434,8 +2435,8 @@ FUNCTION i140_rvw08()
  #LET g_sql = "SELECT rvuconf FROM ",li_dbs CLIPPED,"rvu_file ",
  LET g_sql = "SELECT rvu21,rvuconf FROM ",cl_get_target_table(g_plant_new,'rvu_file'), #FUN-A50102  #TQC-BB0163 add rvu21
              " WHERE rvu01 = '",g_rvw[l_ac].rvw08,"' "
- CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102							
- CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102              
+ CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102
+ CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102
  PREPARE sel_rvuconf_pre FROM g_sql
  EXECUTE sel_rvuconf_pre INTO l_rvu21,l_rvuconf  #TQC-BB0163 add rvu21
 
@@ -2443,17 +2444,17 @@ FUNCTION i140_rvw08()
       LET g_errno = 'anm-960'
       RETURN
    END IF
-   #No.TQC-BB0163  --Begin 
-   IF l_rvu21 = '2' OR l_rvu21 = '3' OR l_rvu21='4' THEN 
+   #No.TQC-BB0163  --Begin
+   IF l_rvu21 = '2' OR l_rvu21 = '3' OR l_rvu21='4' THEN
       LET g_errno = 'gap-006'
       RETURN
    END IF
    #No.TQC-BB0163  --End
-#No.MOD-A20009 --begin                                                          
+#No.MOD-A20009 --begin
   #FUN-A60056--mod--str--
-  #SELECT YEAR(rvu03),MONTH(rvu03) INTO l_year,l_month                          
-  #  FROM rvu_file                                                              
-  # WHERE rvu01 = g_rvw[l_ac].rvw08                                             
+  #SELECT YEAR(rvu03),MONTH(rvu03) INTO l_year,l_month
+  #  FROM rvu_file
+  # WHERE rvu01 = g_rvw[l_ac].rvw08
 
   #FUN-D70021--add--str--
   IF NOT cl_null(g_rvw[l_ac].rvw09) THEN
@@ -2469,27 +2470,27 @@ FUNCTION i140_rvw08()
    PREPARE sel_y_rvu03 FROM g_sql
    EXECUTE sel_y_rvu03 INTO l_year,l_month
   #FUN-A60056--mod--end
-   IF l_year <> YEAR(g_head_1.rvw02) OR                                         
-      l_month <> MONTH(g_head_1.rvw02) THEN                                     
-      LET l_n = 0                                                               
-      SELECT COUNT(apa01) INTO l_n FROM apb_file,apa_file                       
-       WHERE apb21 = g_rvw[l_ac].rvw08                                          
-         AND apb01 = apa01                                                      
+   IF l_year <> YEAR(g_head_1.rvw02) OR
+      l_month <> MONTH(g_head_1.rvw02) THEN
+      LET l_n = 0
+      SELECT COUNT(apa01) INTO l_n FROM apb_file,apa_file
+       WHERE apb21 = g_rvw[l_ac].rvw08
+         AND apb01 = apa01
          AND apb22 = g_rvw[l_ac].rvw09  #FUN-D70021
-        #AND apa00 ='16'             #MOD-A40045 mark    
-         AND apa00 IN ('16','26')    #MOD-A40045 
-         AND YEAR(apa02) = l_year                                               
-         AND MONTH(apa02) = l_month                                             
-      IF l_n = 0 THEN                                                           
-         LET g_errno = 'gap-145'                                                
-         RETURN                                                                 
-      END IF                                                                    
+        #AND apa00 ='16'             #MOD-A40045 mark
+         AND apa00 IN ('16','26')    #MOD-A40045
+         AND YEAR(apa02) = l_year
+         AND MONTH(apa02) = l_month
+      IF l_n = 0 THEN
+         LET g_errno = 'gap-145'
+         RETURN
+      END IF
       END IF #FUN-D70021
    END IF    #FUN-D70021
-   END IF                                                                       
-#No.MOD-A20009 --end   
+   END IF
+#No.MOD-A20009 --end
 END FUNCTION
- 
+
 #--------------MOD-C90185------------(S)
 FUNCTION i140_pmm02(p_pmm01)
    DEFINE p_pmm01  LIKE pmm_file.pmm01
@@ -2555,11 +2556,11 @@ FUNCTION i140_rvw09()
    DEFINE l_rvw10  LIKE rvw_file.rvw10   #yinhy130917
    DEFINE l_rvw05  LIKE rvw_file.rvw05   #yinhy130917
    DEFINE l_rvw05f LIKE rvw_file.rvw05f  #yinhy130917
-   
+
    LET g_errno = ''
- 
+
    LET g_rvv38t = 0   #CHI-980038 add
- 
+
    #不能重復
    SELECT COUNT(*) INTO l_cnt FROM rvw_file
     WHERE rvw08 = g_rvw[l_ac].rvw08
@@ -2569,7 +2570,7 @@ FUNCTION i140_rvw09()
       LET g_errno = 'tis-201'
       RETURN
    END IF
-   
+
    #NO.yinhy130917  --Begin
    SELECT COUNT(*) INTO l_cnt FROM rvw_file
     WHERE rvw08 = g_rvw[l_ac].rvw08
@@ -2586,9 +2587,9 @@ FUNCTION i140_rvw09()
       IF cl_null(l_rvw10) THEN LET l_rvw10 = 0 END IF
       IF cl_null(l_rvw05) THEN LET l_rvw05 = 0 END IF
       IF cl_null(l_rvw05f) THEN LET l_rvw05f = 0 END IF
-   END IF 
+   END IF
    #NO.yinhy130917  --End
-   
+
    #FUN-D70021--add--str--
    IF NOT cl_null(g_rvw[l_ac].rvw08) THEN
       SELECT rvv31 INTO l_rvv31 FROM rvv_file
@@ -2600,9 +2601,9 @@ FUNCTION i140_rvw09()
          CALL cl_replace_sqldb(g_sql) RETURNING g_sql
          CALL cl_parse_qry_sql(g_sql,g_rvw[l_ac].rvw99) RETURNING g_sql
          PREPARE sel_rvw09_rvu03 FROM g_sql
-         EXECUTE sel_rvw09_rvu03 INTO l_year,l_month 
-         IF l_year <> YEAR(g_head_1.rvw02) OR       
-            l_month <> MONTH(g_head_1.rvw02) THEN  
+         EXECUTE sel_rvw09_rvu03 INTO l_year,l_month
+         IF l_year <> YEAR(g_head_1.rvw02) OR
+            l_month <> MONTH(g_head_1.rvw02) THEN
             SELECT COUNT(apa01) INTO l_cnt FROM apb_file,apa_file
              WHERE apb21 = g_rvw[l_ac].rvw08
               AND apb01 = apa01
@@ -2622,8 +2623,8 @@ FUNCTION i140_rvw09()
    LET g_sql = "SELECT rvv03,rvv32,rvv33 FROM ",cl_get_target_table(g_plant_new,'rvv_file'), #FUN-A50102  #No.MOD-C60217 add rvv32,rvv33
                " WHERE rvv01 = '",g_rvw[l_ac].rvw08,"' ",
                "   AND rvv02 = '",g_rvw[l_ac].rvw09,"' "
-   CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102							
-   CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102              
+   CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102
+   CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102
    PREPARE sel_rvv03_pre1 FROM g_sql
    EXECUTE sel_rvv03_pre1 INTO l_rvv03,l_rvv32,l_rvv33            #No.MOD-C60217 add rvv32,rvv33
 #No.MOD-C60217 --begin
@@ -2639,8 +2640,8 @@ FUNCTION i140_rvw09()
       LET g_sql = "SELECT rvv04,rvv36 FROM ",cl_get_target_table(g_plant_new,'rvv_file'), #FUN-A50102
                   " WHERE rvv01 = '",g_rvw[l_ac].rvw08,"' ",
                   "   AND rvv02 = '",g_rvw[l_ac].rvw09,"' "
-      CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102							
-      CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102              
+      CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102
+      CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102
       PREPARE sel_rvv04_pre2 FROM g_sql
       EXECUTE sel_rvv04_pre2 INTO l_rvv04,l_rvv36
       IF g_sma.sma116 MATCHES '[13]' THEN
@@ -2663,9 +2664,9 @@ FUNCTION i140_rvw09()
                         "   AND rvb01 = rvv04 AND rvb02 = rvv05 ",
                         "   AND rvb04 = pmm01 AND gec01 = pmm21 ",
                         "   AND gec011= '1'   AND rvv01 = rvu01 ",
-                        "   AND rvuconf = 'Y' AND rvu00 = '1' " 
-            CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102							
-		    CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102              
+                        "   AND rvuconf = 'Y' AND rvu00 = '1' "
+            CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102
+		    CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102
             PREPARE sel_rvu03_pre FROM g_sql
             EXECUTE sel_rvu03_pre INTO g_rvw[l_ac].rvv09,g_rvw[l_ac].ima01,g_rvw[l_ac].ima02,
                                        g_rvw[l_ac].rvw10,l_rvu12,g_rvw[l_ac].rvw17,l_pmm20,    #CHI-CC0038 add pmm20
@@ -2692,9 +2693,9 @@ FUNCTION i140_rvw09()
                            "   AND rva01 = rvb01 AND gec01 = rva115",
                            "   AND gec011= '1' AND rvv01 = rvu01 ",
                            "   AND rvuconf = 'Y' AND rvu00 = '1' ",
-                           "   AND rvv89 <> 'Y' " 
-               CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102							
-		       CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102                          
+                           "   AND rvv89 <> 'Y' "
+               CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102
+		       CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102
                PREPARE sel_rvu03_pre1 FROM g_sql
                EXECUTE sel_rvu03_pre1 INTO g_rvw[l_ac].rvv09,g_rvw[l_ac].ima01,
                                            g_rvw[l_ac].ima02,g_rvw[l_ac].rvw10,
@@ -2715,9 +2716,9 @@ FUNCTION i140_rvw09()
                         #            cl_get_target_table(g_plant_new,'rvb_file'),",", #FUN-A50102
                         #            cl_get_target_table(g_plant_new,'gec_file'),     #FUN-A50102
                            "  FROM ",cl_get_target_table(g_plant_new,'rvu_file'),",",
-                                     cl_get_target_table(g_plant_new,'gec_file'),",",   
+                                     cl_get_target_table(g_plant_new,'gec_file'),",",
                                      cl_get_target_table(g_plant_new,'rvv_file'),
-                        "  LEFT OUTER JOIN ",cl_get_target_table(g_plant_new,'rvb_file')," ON rvb_file.rvb01=rvv_file.rvv04 AND rvb_file.rvb02=rvv_file.rvv05 ", 
+                        "  LEFT OUTER JOIN ",cl_get_target_table(g_plant_new,'rvb_file')," ON rvb_file.rvb01=rvv_file.rvv04 AND rvb_file.rvb02=rvv_file.rvv05 ",
                         "  LEFT OUTER JOIN ",cl_get_target_table(g_plant_new,'rva_file')," ON rva_file.rva01=rvv_file.rvv04 ",
                         #FUN-B50019 --end
                            " WHERE rvv01 = '",g_rvw[l_ac].rvw08,"' ",
@@ -2730,9 +2731,9 @@ FUNCTION i140_rvw09()
                          #FUN-B50019 --end
                            "   AND gec011= '1'   AND rvv01 = rvu01 ",
                            "   AND rvuconf = 'Y' AND rvu00 = '1' ",
-                           "   AND rvv89 <> 'Y'" 
-               CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102							
-		       CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102                          
+                           "   AND rvv89 <> 'Y'"
+               CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102
+		       CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102
                PREPARE sel_rvu03_pre2 FROM g_sql
                EXECUTE sel_rvu03_pre2 INTO g_rvw[l_ac].rvv09,g_rvw[l_ac].ima01,
                                            g_rvw[l_ac].ima02,g_rvw[l_ac].rvw10,
@@ -2761,8 +2762,8 @@ FUNCTION i140_rvw09()
                         "   AND gec011= '1'   AND rvv01 = rvu01 ",
                         "   AND rvuconf = 'Y' AND rvu00 = '1' ",
                         "   AND rvv89 <> 'Y'"
-            CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102							
-		    CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102                          
+            CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102
+		    CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102
             PREPARE sel_rvu03_pre3 FROM g_sql
             EXECUTE sel_rvu03_pre3 INTO g_rvw[l_ac].rvv09,g_rvw[l_ac].ima01,
                                         g_rvw[l_ac].ima02,g_rvw[l_ac].rvw10,
@@ -2786,8 +2787,8 @@ FUNCTION i140_rvw09()
                            "   AND rvv02 = '",g_rvw[l_ac].rvw09,"' ",
                            "   AND rvuconf = 'Y' AND rvu00 = '1' ",
                            "   AND rvv89 <> 'Y'"
-               CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102							
-		       CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102                          
+               CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102
+		       CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102
                PREPARE sel_rvu03_pre4 FROM g_sql
                EXECUTE sel_rvu03_pre4 INTO g_rvw[l_ac].rvv09,g_rvw[l_ac].ima01,
                                            g_rvw[l_ac].ima02,g_rvw[l_ac].rvw10,
@@ -2807,9 +2808,9 @@ FUNCTION i140_rvw09()
                         #            cl_get_target_table(g_plant_new,'rvb_file'),",", #FUN-A50102
                         #            cl_get_target_table(g_plant_new,'gec_file'),     #FUN-A50102
                            "  FROM ",cl_get_target_table(g_plant_new,'rvu_file'),",",
-                                     cl_get_target_table(g_plant_new,'gec_file'),",",   
+                                     cl_get_target_table(g_plant_new,'gec_file'),",",
                                      cl_get_target_table(g_plant_new,'rvv_file'),
-                        "  LEFT OUTER JOIN ",cl_get_target_table(g_plant_new,'rvb_file')," ON rvb_file.rvb01=rvv_file.rvv04 AND rvb_file.rvb02=rvv_file.rvv05 ", 
+                        "  LEFT OUTER JOIN ",cl_get_target_table(g_plant_new,'rvb_file')," ON rvb_file.rvb01=rvv_file.rvv04 AND rvb_file.rvb02=rvv_file.rvv05 ",
                         "  LEFT OUTER JOIN ",cl_get_target_table(g_plant_new,'rva_file')," ON rva_file.rva01=rvv_file.rvv04 ",
                         #FUN-B50019 --end
                            " WHERE rvv01 = '",g_rvw[l_ac].rvw08,"' ",
@@ -2823,13 +2824,13 @@ FUNCTION i140_rvw09()
                         "   AND gec011= '1'   AND rvv01 = rvu01 ",
                         "   AND rvuconf = 'Y' AND rvu00 = '1'   ",
                         "   AND rvv89 <> 'Y'"
-            CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102							
-		    CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102                          
+            CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102
+		    CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102
             PREPARE sel_rvu03_pre5 FROM g_sql
             EXECUTE sel_rvu03_pre5 INTO g_rvw[l_ac].rvv09,g_rvw[l_ac].ima01,
                                         g_rvw[l_ac].ima02,g_rvw[l_ac].rvw10,
                                         l_rvu12,g_rvw[l_ac].rvw17,g_rvw11,g_rvw03,
-                                        g_gec05,g_rvw12,g_rvb22,g_rvw[l_ac].rvw05f 
+                                        g_gec05,g_rvw12,g_rvb22,g_rvw[l_ac].rvw05f
             END IF
          END IF
       END IF
@@ -2858,8 +2859,8 @@ FUNCTION i140_rvw09()
                      "   AND rvv02 = '",g_rvw[l_ac].rvw09,"' ",
                      "   AND rvv01 = rvu01 AND rvuconf != 'X' "  #排除作廢入庫單
 #                    "   AND rvu00 = '3' AND rvv89 <> 'Y'"       #只抓退貨單資料     #No.MOD-A70133 mark
-         CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102							
-		 CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102                          
+         CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102
+		 CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102
          PREPARE sel_rvu03_pre6 FROM g_sql
          EXECUTE sel_rvu03_pre6 INTO g_rvw[l_ac].rvv09,g_rvw[l_ac].ima01,g_rvw[l_ac].ima02,
                                      g_rvw[l_ac].rvw10,l_rvu12,g_rvw[l_ac].rvw17,
@@ -2873,14 +2874,14 @@ FUNCTION i140_rvw09()
                      "   AND rvv02 = '",g_rvw[l_ac].rvw09,"' ",
                      "   AND rvv01 = rvu01 AND rvuconf != 'X' " #排除作廢入庫單
 #                    "   AND rvu00 = '3'   AND rvv89 <> 'Y'"    #只抓退貨單資料     #No.MOD-A70133 mark
-         CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102							
-		 CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102                           
+         CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102
+		 CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102
          PREPARE sel_rvu03_pre7 FROM g_sql
          EXECUTE sel_rvu03_pre7 INTO g_rvw[l_ac].rvv09,g_rvw[l_ac].ima01,
                                      g_rvw[l_ac].ima02,g_rvw[l_ac].rvw10,l_rvu12,
                                      g_rvw[l_ac].rvw17,g_rvw[l_ac].rvw05f,g_rvv38t,
                                      g_rvv39t                              #MOD-9C0061 add
-         
+
       END IF
       IF STATUS THEN
          LET g_errno = 'asf-700' RETURN
@@ -2893,14 +2894,14 @@ FUNCTION i140_rvw09()
 #                               cl_get_target_table(g_plant_new,'pmm_file'),
 #                      " WHERE rvw01 = '",g_head_1.rvw01,"' ",
 #                      "   AND rvv01 = rvw08 AND pmm01=rvv36 "
-#         CALL cl_replace_sqldb(g_sql) RETURNING g_sql  						
-#         CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql              
+#         CALL cl_replace_sqldb(g_sql) RETURNING g_sql
+#         CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql
 #         PREPARE sel_pmm20_pre FROM g_sql
 #         DECLARE pmm20_curs CURSOR FOR sel_pmm20_pre
 #         FOREACH pmm20_curs INTO t_pmm20
 #            IF t_pmm20 <> l_pmm20 THEN
 #               IF NOT cl_confirm('gap-009') THEN
-#             	    LET g_errno = 'gap-010' 
+#             	    LET g_errno = 'gap-010'
 #                  EXIT FOREACH
 #                  RETURN
 #               END IF
@@ -2909,14 +2910,14 @@ FUNCTION i140_rvw09()
 #            END IF
 #         END FOREACH
 #      END IF
-      #No.CHI-CC0038  --End  
+      #No.CHI-CC0038  --End
       #darcy:2024/10/08 add s---
       # LET g_rvw04=l_rvu12
       let g_rvw04 = g_head_1.rvw04
       #darcy:2024/10/08 add e---
       IF cl_null(l_rvu12) THEN LET g_rvw04 = g_head_1.rvw04 END IF
 #  END IF                          #No.MOD-A70133  mark
- 
+
    #計算未生成請款的入庫數量
    CALL i140_rvw10()
   #當異動類別(rvu00)為3.倉退時,有可能只折讓金額而不退數量,
@@ -2924,8 +2925,8 @@ FUNCTION i140_rvw09()
    #LET g_sql = "SELECT rvu00,rvu116 FROM ",li_dbs CLIPPED,"rvu_file ",
    LET g_sql = "SELECT rvu00,rvu116 FROM ",cl_get_target_table(g_plant_new,'rvu_file'), #FUN-A50102
                " WHERE rvu01 ='",g_rvw[l_ac].rvw08,"' "
-   CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102							
-   CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102                          
+   CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102
+   CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102
    PREPARE sel_rvu00_pre FROM g_sql
    EXECUTE sel_rvu00_pre INTO l_rvu00,l_rvu116
    IF l_rvu00 != '3' OR l_rvu116 != '3' THEN                  #FUN-940083--add rvu116
@@ -2935,7 +2936,7 @@ FUNCTION i140_rvw09()
    END IF   #MOD-870285 add
    #add
    SELECT ima021 INTO g_rvw[l_ac].ima021 FROM ima_file WHERE ima01=g_rvw[l_ac].ima01
-   
+
    LET g_rvw[l_ac].rvw10 = g_rvw[l_ac].rvw10 - g_rvw10
    IF l_rvu00 = '3' THEN
       LET g_rvw[l_ac].rvw10 = g_rvw[l_ac].rvw10 * -1
@@ -2956,59 +2957,59 @@ FUNCTION i140_rvw09()
     #CHI-C80003  --End
 
    END IF
-   
+
    #No.yinhy130917  --Begin
    IF g_rvw[l_ac].rvw10 = 0 AND g_rvw[l_ac].rvw05f - l_rvw05f = 0 THEN
    	  LET g_errno = 'aap-034'
       RETURN
    END IF
    #No.yinhy130917  --End
-   
+
    IF cl_null(g_rvw12) THEN                              #rvw12匯率   #MOD-640405
       CALL s_curr2(g_head_1.rvw11,g_head_1.rvw02,g_apz.apz33,g_rvw[l_ac].rvw99)     #FUN-9B0130
       RETURNING g_rvw12   #MOD-640405
    END IF
- 
+
    LET g_flag = 'N'          #MOD-A80052
    IF cl_null(g_rvw[l_ac].rvw05f) OR g_rvw[l_ac].rvw05f=0 OR (NOT cl_null(g_rvw[l_ac].rvw10)) THEN    #No.MOD-920384 add  #No.MOD-940412
      #LET g_sql = "SELECT gec07 FROM ",li_dbs CLIPPED,"gec_file ",
      #LET g_sql = "SELECT gec07 FROM ",cl_get_target_table(g_plant_new,'gec_file'), #FUN-A50102           #MOD-A80052 mark
-      LET g_sql = "SELECT gec05,gec07 FROM ",cl_get_target_table(g_plant_new,'gec_file'), #FUN-A50102     #MOD-A80052 
+      LET g_sql = "SELECT gec05,gec07 FROM ",cl_get_target_table(g_plant_new,'gec_file'), #FUN-A50102     #MOD-A80052
                   " WHERE gec01='",g_head_1.rvw03,"' ",
                   "   AND gec011='1'"
-      CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102				
-      CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102              
+      CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102
+      CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102
       PREPARE sel_gec07_pre FROM g_sql
-     #EXECUTE sel_gec07_pre INTO g_gec07                             #MOD-A80052 mark 
+     #EXECUTE sel_gec07_pre INTO g_gec07                             #MOD-A80052 mark
       EXECUTE sel_gec07_pre INTO g_gec05,g_gec07                     #MOD-A80052
       IF g_gec07 = 'Y' THEN    #含稅
          #未稅金額=(含稅單價*數量)/(1+稅率/100)
          IF g_rvw[l_ac].rvw10 <> 0 THEN
            #-MOD-A80052-add-
             IF g_gec05 = 'T' THEN
-               LET g_rvw05f = g_rvv38t*g_rvw[l_ac].rvw10  
+               LET g_rvw05f = g_rvv38t*g_rvw[l_ac].rvw10
                LET g_rvw05f = cl_digcut(g_rvw05f,t_azi04)
                LET g_rvw[l_ac].rvw06f = g_rvw05f * (g_head_1.rvw04/100)
                LET g_rvw[l_ac].rvw06f = cl_digcut(g_rvw[l_ac].rvw06f,t_azi04)
                LET g_rvw[l_ac].rvw05f = g_rvw05f - g_rvw[l_ac].rvw06f
-               LET g_flag = 'Y'   
+               LET g_flag = 'Y'
             ELSE
               #LET g_rvw[l_ac].rvw05f = (g_rvv38t*g_rvw[l_ac].rvw10)/(1+g_head_1.rvw04/100)      #MOD-AC0024
                LET g_rvw[l_ac].rvw05f = cl_digcut((g_rvv38t*g_rvw[l_ac].rvw10),t_azi04)/(1+g_head_1.rvw04/100)      #MOD-AC0024
             END IF
            #-MOD-A80052-end-
-           #LET g_rvw[l_ac].rvw05f = (g_rvv38t*g_rvw[l_ac].rvw10)/(1+g_head_1.rvw04/100)   #MOD-A80052 mark 
-            LET g_rvw[l_ac].rvw17 = g_rvv38t/(1+g_head_1.rvw04/100)             #MOD-AA0093 
-            LET g_rvw[l_ac].rvw17 = cl_digcut(g_rvw[l_ac].rvw17,t_azi03)        #MOD-AA0093 
+           #LET g_rvw[l_ac].rvw05f = (g_rvv38t*g_rvw[l_ac].rvw10)/(1+g_head_1.rvw04/100)   #MOD-A80052 mark
+            LET g_rvw[l_ac].rvw17 = g_rvv38t/(1+g_head_1.rvw04/100)             #MOD-AA0093
+            LET g_rvw[l_ac].rvw17 = cl_digcut(g_rvw[l_ac].rvw17,t_azi03)        #MOD-AA0093
 
          ELSE
-            LET g_rvw[l_ac].rvw05f = g_rvv39t/(1+g_head_1.rvw04/100)                     
+            LET g_rvw[l_ac].rvw05f = g_rvv39t/(1+g_head_1.rvw04/100)
          END IF
       ELSE                     #不含稅
          #未稅金額=未稅單價*數量
          IF g_rvw[l_ac].rvw10 <> 0 THEN
-            LET g_rvw[l_ac].rvw05f = g_rvw[l_ac].rvw17*g_rvw[l_ac].rvw10   #原幣金額      
-         END IF                                            
+            LET g_rvw[l_ac].rvw05f = g_rvw[l_ac].rvw17*g_rvw[l_ac].rvw10   #原幣金額
+         END IF
       END IF
    END IF   #MOD-870285 add
    IF g_type = '3' AND g_rvw[l_ac].rvw05f > 0 THEN                 #負值顯示
@@ -3016,7 +3017,7 @@ FUNCTION i140_rvw09()
    END IF
    IF g_type = '2' AND g_rvw[l_ac].rvw05f > 0 THEN
       IF l_rvv03 = '3' THEN
-         LET g_rvw[l_ac].rvw05f = g_rvw[l_ac].rvw05f * -1             
+         LET g_rvw[l_ac].rvw05f = g_rvw[l_ac].rvw05f * -1
          LET g_rvv39t = g_rvv39t * -1  #add by zhangsba190531
       END IF
    END IF
@@ -3026,7 +3027,7 @@ FUNCTION i140_rvw09()
       LET g_rvw[l_ac].rvw06f = cl_digcut(g_rvw[l_ac].rvw06f,t_azi04)  #No.MOD-740008
    END IF    #MOD-A80052
    LET g_rvw[l_ac].rvw05  = g_rvw[l_ac].rvw05f*g_head_1.rvw12  #本幣金額   #MOD-640405 #No.MOD-860196
-   #LET g_rvw[l_ac].rvw06  = g_rvw[l_ac].rvw05*g_rvw04/100   
+   #LET g_rvw[l_ac].rvw06  = g_rvw[l_ac].rvw05*g_rvw04/100
    LET g_rvw[l_ac].rvw06  = g_rvw[l_ac].rvw06f*g_head_1.rvw12
    LET g_rvw[l_ac].rvw05f = cl_digcut(g_rvw[l_ac].rvw05f,t_azi04)  #add by huanglf160921
    LET g_rvw[l_ac].rvw05  = cl_digcut(g_rvw[l_ac].rvw05,g_azi04)   #No.MOD-740008                 #本幣稅額    rvw04:稅率
@@ -3036,7 +3037,7 @@ FUNCTION i140_rvw09()
    #LET g_rvw[l_ac].sum2=g_rvw[l_ac].rvw05 + g_rvw[l_ac].rvw06         #FUN-C80027 #mark by liy190430
     #add by liy190430 s #应客户要求，解决金额与aapt150计算逻辑不同导致的尾差
    #LET g_rvw[l_ac].sum1=g_rvv39t             #分批立账取值错误 mark by lifang 190719
-   LET g_rvw[l_ac].sum2=g_rvw[l_ac].rvw05*(1+g_head_1.rvw04/100) 
+   LET g_rvw[l_ac].sum2=g_rvw[l_ac].rvw05*(1+g_head_1.rvw04/100)
    LET g_rvw[l_ac].sum1=cl_digcut(g_rvw[l_ac].sum1,t_azi04)
    LET g_rvw[l_ac].sum2=cl_digcut(g_rvw[l_ac].sum2,g_azi04)
    LET g_rvw[l_ac].rvw06f=g_rvw[l_ac].sum1-g_rvw[l_ac].rvw05f
@@ -3059,7 +3060,7 @@ FUNCTION i140_rvw09()
    DISPLAY BY NAME g_rvw[l_ac].sum2     #FUN-C80027
 
 END FUNCTION
- 
+
 FUNCTION i140_b_askkey()
 DEFINE
    l_wc2           LIKE type_file.chr1000,  #NO FUN-690009 VARCHAR(300)
@@ -3068,13 +3069,13 @@ DEFINE
                  FROM s_rvw[1].rvw08,s_rvw[1].rvw09,
                       s_rvw[1].rvw10,s_rvw[1].rvw05f,  #MOD-640405
                       s_rvw[1].rvw06f,s_rvw[1].sum1,s_rvw[1].rvw05,s_rvw[1].rvw06,s_rvw[1].sum2  #FUN-C80027 add--sum1,sum2
- 
+
               BEFORE CONSTRUCT
                  CALL cl_qbe_init()
       ON IDLE g_idle_seconds
          CALL cl_on_idle()
          CONTINUE CONSTRUCT
- 
+
                  ON ACTION qbe_select
          	   CALL cl_qbe_select()
                  ON ACTION qbe_save
@@ -3083,7 +3084,7 @@ DEFINE
    IF INT_FLAG THEN LET INT_FLAG = 0 RETURN END IF
    CALL i140_b_fill(l_wc2)
 END FUNCTION
- 
+
 FUNCTION i140_b_fill(p_wc2)                        #BODY FILL UP
 DEFINE
    p_wc2           LIKE type_file.chr1000  #NO FUN-690009 VARCHAR(200)
@@ -3093,7 +3094,7 @@ DEFINE l_rvu00     LIKE rvu_file.rvu00
 DEFINE l_sta       LIKE type_file.chr1    #No.TQC-7B0131   #用于判斷是否需要對單據類型進行判斷。
 DEFINE l_dbs       LIKE type_file.chr21   #FUN-9B0130
 DEFINE l_rvv36     LIKE rvv_file.rvv36
- 
+
       IF p_wc2 = 'all' THEN
          LET l_sta = 'N'
       ELSE
@@ -3117,23 +3118,23 @@ DEFINE l_rvv36     LIKE rvv_file.rvv36
    LET g_sql =
           "SELECT rvw99,'',rvw08,rvw09,rvv31,rvv031,'','','','',rvw10,rvw17,rvw05f,rvw06f,'',rvw05,rvw06,'',ta_rvw01",      #FUN-C80027
           # darcy:2024/09/06 add '',''
-          "  FROM rvw_file,",cl_get_target_table(g_plant_new,'rvv_file'),   
+          "  FROM rvw_file,",cl_get_target_table(g_plant_new,'rvv_file'),
           " WHERE rvw01 ='",g_head_1.rvw01,"'",      #單頭
           "  and rvv01=rvw08 and rvv02=rvw09 ",
           "   AND ",p_wc2 CLIPPED,                 #單身
           " ORDER BY rvw08,rvw09 "
    #end------ add by dengsy160527
    PREPARE i140_pb FROM g_sql
- 
+
    IF SQLCA.sqlcode THEN    #No.TQC-790140
-      CALL cl_err('i140_pb:',STATUS,1) 
+      CALL cl_err('i140_pb:',STATUS,1)
       CALL cl_used(g_prog,g_time,2) RETURNING g_time #No.FUN-B30211
       EXIT PROGRAM
    END IF
    DECLARE rvw_curs CURSOR FOR i140_pb
    CALL g_rvw.clear()
    LET g_cnt=1
- 
+
    LET l_n1 =0
    LET l_n2 =0
    FOREACH rvw_curs INTO g_rvw[g_cnt].*            #單身 ARRAY 填充
@@ -3148,18 +3149,18 @@ DEFINE l_rvv36     LIKE rvv_file.rvv36
       #LET g_sql = "SELECT rvu00 FROM ",l_dbs CLIPPED,"rvu_file ",
       LET g_sql = "SELECT rvu00 FROM ",cl_get_target_table(g_plant_new,'rvu_file'), #FUN-A50102
                   " WHERE rvu01 ='",g_rvw[g_cnt].rvw08,"' "
-      CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102							
-      CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102                          
+      CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102
+      CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102
       PREPARE sel_rvu00_pre7 FROM g_sql
-      EXECUTE sel_rvu00_pre7 INTO l_rvu00 
+      EXECUTE sel_rvu00_pre7 INTO l_rvu00
 
       #str------- mark by dengsy160527
       ##LET g_sql = "SELECT rvv31,rvv031 FROM ",l_dbs CLIPPED,"rvv_file ",
       #LET g_sql = "SELECT rvv31,rvv031 FROM ",cl_get_target_table(g_plant_new,'rvv_file'), #FUN-A50102
       #            " WHERE rvv01 = '",g_rvw[g_cnt].rvw08,"' ",
-      #            "   AND rvv02 = '",g_rvw[g_cnt].rvw09,"' " 
-      #CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102							
-      #CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102                              
+      #            "   AND rvv02 = '",g_rvw[g_cnt].rvw09,"' "
+      #CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102
+      #CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102
       #PREPARE sel_rvv031 FROM g_sql
       #EXECUTE sel_rvv031 INTO g_rvw[g_cnt].ima01,g_rvw[g_cnt].ima02
       #end------- mark by dengsy160527
@@ -3167,8 +3168,8 @@ DEFINE l_rvv36     LIKE rvv_file.rvv36
       #LET g_sql = "SELECT rvu03,rvu04,rvu05 FROM ",l_dbs CLIPPED,"rvu_file ",
       LET g_sql = "SELECT rvu03,rvu04,rvu05 FROM ",cl_get_target_table(g_plant_new,'rvu_file'), #FUN-A50102
                   " WHERE rvu01 = '",g_rvw[g_cnt].rvw08,"' "
-      CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102							
-      CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102                          
+      CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102
+      CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102
       PREPARE sel_rvu03 FROM g_sql
       EXECUTE sel_rvu03 INTO g_rvw[g_cnt].rvv09,g_head_1.rvv06,g_head_1.pmc03
       DISPLAY BY NAME g_head_1.rvv06
@@ -3180,7 +3181,7 @@ DEFINE l_rvv36     LIKE rvv_file.rvv36
       SELECT ima021,imaud33,imaud34 INTO g_rvw[g_cnt].ima021,g_rvw[g_cnt].imaud33,g_rvw[g_cnt].imaud34 FROM ima_file WHERE ima01 =g_rvw[g_cnt].ima01
       #darcy:2024/09/05 add imaud33,imaud34
       #str----end by huanglf160822
-    
+
        DISPLAY BY NAME g_rvw[g_cnt].rvw17
       IF l_rvu00 ='1' THEN
          LET l_n1 =l_n1+1
@@ -3213,17 +3214,17 @@ DEFINE l_rvv36     LIKE rvv_file.rvv36
    DISPLAY g_rec_b TO FORMONLY.cn2
    LET g_cnt=0
 END FUNCTION
- 
+
 FUNCTION i140_bp(p_ud)
 DEFINE
    p_ud            LIKE type_file.chr1       #NO FUN-690009 VARCHAR(1)
    IF p_ud <> "G" OR g_action_choice = "detail" THEN
       RETURN
    END IF
- 
+
    LET g_action_choice = " "
    CALL cl_set_act_visible("accept,cancel", FALSE)
- 
+
    DISPLAY ARRAY g_rvw TO s_rvw.* ATTRIBUTE(COUNT=g_rec_b,UNBUFFERED)
       BEFORE DISPLAY
          CALL cl_navigator_setting( g_curs_index, g_row_count )
@@ -3231,11 +3232,11 @@ DEFINE
          LET l_ac = ARR_CURR()
       #FUN-CB0080--add--str--
       ON ACTION item_list
-         LET g_action_choice = "" 
+         LET g_action_choice = ""
          CALL i140_b_menu()
          CALL cl_set_act_visible("accept,cancel", FALSE)
-         LET g_action_choice = "" 
-      #FUN-CB0080--add--end   
+         LET g_action_choice = ""
+      #FUN-CB0080--add--end
       ON ACTION insert
          LET g_action_choice="insert"
          EXIT DISPLAY
@@ -3265,7 +3266,7 @@ DEFINE
       #str---add by huanglf160824
        ON ACTION output
          LET g_action_choice="output"
-         EXIT DISPLAY  
+         EXIT DISPLAY
       #str---add by huanglf160824
       ON ACTION invalid
          LET g_action_choice="invalid"
@@ -3276,69 +3277,69 @@ DEFINE
          CALL i140_fetch('F')
          CALL cl_navigator_setting(g_curs_index, g_row_count)
          CALL fgl_set_arr_curr(1)
- 
+
       ON ACTION previous
          CALL i140_fetch('P')
          CALL cl_navigator_setting(g_curs_index, g_row_count)
          CALL fgl_set_arr_curr(1)
- 
+
       ON ACTION jump
          CALL i140_fetch('/')
          CALL cl_navigator_setting(g_curs_index, g_row_count)
            IF g_rec_b != 0 THEN
               CALL fgl_set_arr_curr(1)
            END IF
- 
+
       ON ACTION next
          CALL i140_fetch('N')
          CALL cl_navigator_setting(g_curs_index, g_row_count)
          CALL fgl_set_arr_curr(1)
- 
+
       ON ACTION last
          CALL i140_fetch('L')
          CALL cl_navigator_setting(g_curs_index, g_row_count)
          CALL fgl_set_arr_curr(1)
- 
+
       ON ACTION detail
          LET g_action_choice="detail"
          LET l_ac = 1
          EXIT DISPLAY
- 
+
       ON ACTION help
          LET g_action_choice="help"
          EXIT DISPLAY
- 
+
       ON ACTION locale
          CALL cl_dynamic_locale()
          CALL cl_show_fld_cont()               #No.FUN-590083
       ON ACTION exit
          LET g_action_choice="exit"
          EXIT DISPLAY
- 
+
       ON ACTION controlg
          LET g_action_choice="controlg"
          EXIT DISPLAY
       ON ACTION controls                             #No.FUN-6A0092
          CALL cl_set_head_visible("","AUTO")           #No.FUN-6A0092
- 
+
       ON ACTION accept
          LET g_action_choice="detail"
          LET l_ac = ARR_CURR()
          EXIT DISPLAY
- 
+
       ON ACTION cancel
              LET INT_FLAG=FALSE 		#MOD-570244	mars
          LET g_action_choice="exit"
          EXIT DISPLAY
- 
+
       ON IDLE g_idle_seconds
          CALL cl_on_idle()
          CONTINUE DISPLAY
- 
+
       ON ACTION exporttoexcel
          LET g_action_choice = 'exporttoexcel'
          EXIT DISPLAY
-         
+
       ON ACTION  uptax
          LET g_action_choice = 'uptax'
          EXIT DISPLAY
@@ -3351,8 +3352,8 @@ DEFINE
       ON ACTION  uptax17
          LET g_action_choice = 'uptax17'
          EXIT DISPLAY
-  
- 
+
+
       ON ACTION related_document                #No.FUN-6A0009  相關文件
          LET g_action_choice="related_document"
          EXIT DISPLAY
@@ -3361,13 +3362,13 @@ DEFINE
       DISPLAY 'i140_bp OK'
    CALL cl_set_act_visible("accept,cancel", TRUE)
 END FUNCTION
- 
+
 FUNCTION i140_chk_amt()
    DEFINE l_rvw08          LIKE rvw_file.rvw08
    DEFINE l_rvw09          LIKE rvw_file.rvw09
    DEFINE l_amt,l_amt2     LIKE rvw_file.rvw05
    DEFINE l_rvv03          LIKE rvv_file.rvv03  #No.TQC-760013
- 
+
    DECLARE i140_chk_curs CURSOR FOR
    SELECT rvw08,rvw09 ,rvw14
      FROM rvw_file
@@ -3375,7 +3376,7 @@ FUNCTION i140_chk_amt()
     ORDER BY rvw08,rvw09
    IF STATUS THEN CALL cl_err('i140_chk_curs',STATUS,0) RETURN END IF
    LET g_errno = ''
- 
+
    FOREACH i140_chk_curs INTO l_rvw08,l_rvw09,l_amt
       IF cl_null(l_amt) THEN LET l_amt = 0 END IF
       LET l_rvv03 = NULL
@@ -3383,8 +3384,8 @@ FUNCTION i140_chk_amt()
       LET g_sql = "SELECT rvv03 FROM ",cl_get_target_table(g_plant_new,'rvv_file'), #FUN-A50102
                   " WHERE rvv01 = '",l_rvw08,"' ",
                   "   AND rvv02 = '",l_rvw09,"' "
-      CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102							
-      CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102                          
+      CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102
+      CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102
       PREPARE sel_rvv03_pre2 FROM g_sql
       EXECUTE sel_rvv03_pre2 INTO l_rvv03
       IF g_type = '1' OR (g_type = '2' AND l_rvv03 = '1') THEN #No.TQC-760013
@@ -3393,8 +3394,8 @@ FUNCTION i140_chk_amt()
             LET g_sql = "SELECT SUM(rvv87*rvv38) FROM ",cl_get_target_table(g_plant_new,'rvv_file'), #FUN-A50102
                         " WHERE rvv01 = '",l_rvw08,"' ",
                         "   AND rvv02 = '",l_rvw09,"' "
-            CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102							
-		    CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102                          
+            CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102
+		    CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102
             PREPARE sel_srvv87_pre FROM g_sql
             EXECUTE sel_srvv87_pre INTO l_amt2
          ELSE
@@ -3402,8 +3403,8 @@ FUNCTION i140_chk_amt()
             LET g_sql = "SELECT SUM(rvv17*rvv38) FROM ",cl_get_target_table(g_plant_new,'rvv_file'), #FUN-A50102
                         " WHERE rvv01 = '",l_rvw08,"' ",
                         "   AND rvv02 = '",l_rvw09,"' "
-            CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102							
-		    CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102                          
+            CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102
+		    CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102
             PREPARE sel_srvv17_pre FROM g_sql
             EXECUTE sel_srvv17_pre INTO l_amt2
          END IF
@@ -3415,12 +3416,12 @@ FUNCTION i140_chk_amt()
          LET g_sql = "SELECT SUM(rvv39) FROM ",cl_get_target_table(g_plant_new,'rvv_file'), #FUN-A50102
                      " WHERE rvv01 = '",l_rvw08,"' ",
                      "   AND rvv02 = '",l_rvw09,"' "
-         CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102							
-		 CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102                          
+         CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102
+		 CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102
          PREPARE sel_rvv39_pre FROM g_sql
          EXECUTE sel_rvv39_pre INTO l_amt2
       END IF
- 
+
       IF cl_null(l_amt2) THEN LET l_amt2 = 0 END IF
          #發票金額大于收/退貨金額
          IF l_amt > l_amt2 THEN
@@ -3428,7 +3429,7 @@ FUNCTION i140_chk_amt()
          END IF
    END FOREACH
 END FUNCTION
- 
+
 FUNCTION i140_a()
 DEFINE l_str    LIKE ze_file.ze03   #NO FUN-690009 VARCHAR(17)
    IF s_shut(0) THEN RETURN END IF
@@ -3452,7 +3453,7 @@ DEFINE l_str    LIKE ze_file.ze03   #NO FUN-690009 VARCHAR(17)
       LET g_head_1.rvw05f_s  = 0         #
       LET g_head_1.rvw06f_s  = 0         #Default
       CALL i140_i("a")                 #輸入單頭
- 
+
       IF INT_FLAG THEN                 #使用者不玩了
          INITIALIZE g_head_1.* TO NULL
          LET INT_FLAG = 0
@@ -3465,7 +3466,7 @@ DEFINE l_str    LIKE ze_file.ze03   #NO FUN-690009 VARCHAR(17)
       IF cl_null(g_head_1.rvw02) OR cl_null(g_head_1.rvw11)
          OR cl_null(g_head_1.rvv06) OR cl_null(g_head_1.rvw03) THEN
          CONTINUE WHILE
-      END IF               	
+      END IF
       SELECT azi03,azi04 INTO t_azi03,t_azi04 FROM azi_file
        WHERE azi01 = g_head_1.rvw11
       CALL g_rvw.clear()
@@ -3475,7 +3476,7 @@ DEFINE l_str    LIKE ze_file.ze03   #NO FUN-690009 VARCHAR(17)
          EXIT WHILE
    END WHILE
 END FUNCTION
- 
+
 FUNCTION i140_u()
 DEFINE  l_cnt   LIKE type_file.num5     #NO FUN-690009 SMALLINT
    IF s_shut(0) THEN RETURN END IF
@@ -3494,7 +3495,7 @@ DEFINE  l_cnt   LIKE type_file.num5     #NO FUN-690009 SMALLINT
    END IF
    MESSAGE ""
    CALL cl_opmsg('u')
- 
+
    BEGIN WORK
    OPEN i140_cl USING g_head_1.rvw01
    IF SQLCA.sqlcode THEN
@@ -3522,7 +3523,7 @@ DEFINE  l_cnt   LIKE type_file.num5     #NO FUN-690009 SMALLINT
    WHILE TRUE
       LET g_rvw01_t = g_head_1.rvw01
       CALL i140_i("u")                                  #欄位更改
- 
+
       IF INT_FLAG THEN
          LET INT_FLAG = 0
          LET g_head_1.*=g_head_t.*
@@ -3530,7 +3531,7 @@ DEFINE  l_cnt   LIKE type_file.num5     #NO FUN-690009 SMALLINT
          CALL cl_err('','9001',0)
          EXIT WHILE
       END IF
- 
+
       UPDATE rvw_file SET rvw_file.rvw01 = g_head_1.rvw01,
                           rvw_file.rvw02 = g_head_1.rvw02,
                           rvw_file.rvw19 = g_head_1.rvw19,   #No.FUN-CB0053   Add
@@ -3544,28 +3545,28 @@ DEFINE  l_cnt   LIKE type_file.num5     #NO FUN-690009 SMALLINT
          CALL cl_err3("upd","rvw_file",g_rvw01_t,"",SQLCA.sqlcode,"","",1)  #No.FUN-660071
          CONTINUE WHILE
       END IF
- 
+
       IF g_type = '1' OR g_type = '2' THEN  #No.TQC-760013
          CALL i140_upd_rvb22('b')
       END IF  #No.TQC-760013
- 
+
       IF g_head_1.rvw05f_s != g_head_t.rvw05f_s OR g_head_1.rvw06f_s != g_head_t.rvw06f_s THEN
          CALL i140_var_process('u')
-      END IF	
+      END IF
       CALL i140_list_fill()  #FUN-CB0080
       EXIT WHILE
    END WHILE
    CLOSE i140_cl
    COMMIT WORK
 END FUNCTION
- 
+
 FUNCTION i140_i(p_cmd)
 DEFINE
    l_flag          LIKE type_file.chr1,     #NO FUN-690009 VARCHAR(1)    #判斷必要欄位是否有輸入
    p_cmd           LIKE type_file.chr1,     #NO FUN-690009 VARCHAR(1)    #a:輸入 u:更改
    l_n,l_cnt1         	   LIKE type_file.num10     #NO FUN-690009 INTEGER
    CALL cl_set_head_visible("","YES")       #No.FUN-6A0092
- 
+
    INPUT BY NAME g_type,g_head_1.rvw01,g_head_1.rvw02,g_head_1.rvw19,g_head_1.rvw07,   #No.FUN-CB0053   Add g_head_1.rvw19
                  g_head_1.rvv06,g_head_1.rvw03,g_head_1.rvw11,
                  g_head_1.rvw05f_s,g_head_1.rvw06f_s,g_head_1.rvw12   #MOD-640405
@@ -3576,14 +3577,14 @@ DEFINE
          CALL i140_set_entry(p_cmd)
          CALL i140_set_no_entry(p_cmd)
          LET g_before_input_done = TRUE
- 
+
       AFTER FIELD rvw01
    ##############maoyy20161222
      SELECT COUNT(*) INTO l_cnt1 FROM rvw_file
     WHERE rvw01 = g_head_1.rvw01
-                
-     # AND apk01 IN (SELECT apa01 FROM apa_file)  
-                  
+
+     # AND apk01 IN (SELECT apa01 FROM apa_file)
+
    IF l_cnt1 > 0 THEN
       CALL cl_err('','apm-myy',0)
       RETURN
@@ -3628,19 +3629,19 @@ DEFINE
                DISPLAY g_head_1.rvw12 TO rvw12
             END IF
          END IF
- 
+
       AFTER FIELD rvw07
          IF cl_null(g_head_1.rvw07) AND g_aza.aza46 = 'Y' THEN
             CALL cl_err('','gap-142',0)
             NEXT FIELD rvw07
         #-----------------------CHI-B30082-----------------(S)
        # ELSE
-       #    LET l_n = 0  
-       #    SELECT COUNT(*) INTO l_n 
+       #    LET l_n = 0
+       #    SELECT COUNT(*) INTO l_n
        #      FROM rvw_file
        #     WHERE rvw01 = g_head_1.rvw01
        #       AND rvw07 = g_head_1.rvw07
-       #    IF cl_null(l_n) THEN LET l_n = 0 END IF  
+       #    IF cl_null(l_n) THEN LET l_n = 0 END IF
        #    IF l_n > 0  THEN
        #       CALL cl_err('',-239,0)
        #       LET g_head_1.rvw01 = g_head_t.rvw01
@@ -3651,7 +3652,7 @@ DEFINE
        #    END IF
         #-----------------------CHI-B30082-----------------(E)
          END IF
- 
+
       AFTER FIELD rvw11
          IF NOT cl_null(g_head_1.rvw11) THEN
             SELECT azi04 INTO t_azi04 FROM azi_file
@@ -3671,7 +3672,7 @@ DEFINE
                DISPLAY g_head_1.rvw12 TO rvw12
             END IF
          END IF
- 
+
       AFTER FIELD rvw12
          IF g_head_1.rvw11 = g_aza.aza17 THEN
             LET g_head_1.rvw12 = 1
@@ -3684,7 +3685,7 @@ DEFINE
               WHERE rvw01 = g_head_1.rvw01
             CALL i140_show()
          END IF
- 
+
       AFTER FIELD rvv06
          IF NOT cl_null(g_head_1.rvv06) THEN
             CALL i140_rvv06()
@@ -3695,7 +3696,7 @@ DEFINE
             DISPLAY BY NAME g_head_1.rvv06
             NEXT FIELD rvv06
          END IF
- 
+
       AFTER FIELD rvw03
          IF NOT cl_null(g_head_1.rvw03) THEN
             SELECT gec04,gec05 INTO g_head_1.rvw04,g_gec05
@@ -3706,7 +3707,7 @@ DEFINE
             END IF
             DISPLAY BY NAME g_head_1.rvw04
          END IF
- 
+
       AFTER FIELD rvw05f_s
          IF g_head_1.rvw05f_s IS NULL THEN
             NEXT FIELD rvw05f_s
@@ -3714,14 +3715,14 @@ DEFINE
             LET g_head_1.rvw06f_s=g_head_1.rvw05f_s*g_head_1.rvw04/100
             IF cl_null(g_head_1.rvw06f_s) THEN LET g_head_1.rvw06f_s = 0 END IF
             LET g_head_1.rvw06f_s = cl_digcut(g_head_1.rvw06f_s,t_azi04)    #MOD-C40103 add
-            DISPLAY BY NAME g_head_1.rvw06f_s	
+            DISPLAY BY NAME g_head_1.rvw06f_s
 	 END IF
- 
+
       AFTER FIELD rvw06f_s
          IF g_head_1.rvw06f_s IS NULL THEN
             NEXT FIELD rvw06f_s
          END IF
- 
+
       AFTER INPUT  #判斷必要欄位之值是否有值,若無則反白顯示,并要求重新輸入
          LET l_flag='N'
          IF INT_FLAG THEN
@@ -3751,8 +3752,8 @@ DEFINE
                                 rvw06 = rvw06f * g_head_1.rvw12
               WHERE rvw01 = g_head_1.rvw01
          END IF
- 
- 
+
+
       ON ACTION controlp
          CASE
             WHEN INFIELD(rvw03)
@@ -3762,56 +3763,56 @@ DEFINE
                LET g_qryparam.default1 = g_head_1.rvw03
                CALL cl_create_qry() RETURNING g_head_1.rvw03
                NEXT FIELD rvw03
- 
+
             WHEN INFIELD(rvw11)               # CURRENCY
                CALL cl_init_qry_var()
                LET g_qryparam.form ="q_azi"
                LET g_qryparam.default1 = g_head_1.rvw11
                CALL cl_create_qry() RETURNING g_head_1.rvw11
                DISPLAY BY NAME g_head_1.rvw11
- 
+
             WHEN INFIELD (rvv06)
                CALL cl_init_qry_var()
                LET g_qryparam.form ="q_pmc1"
                LET g_qryparam.default1 = g_head_1.rvv06
                CALL cl_create_qry() RETURNING g_head_1.rvv06
                NEXT FIELD rvv06
- 
+
             OTHERWISE EXIT CASE
          END CASE
- 
+
       ON ACTION CONTROLF                     #欄位說明
          CALL cl_set_focus_form(ui.Interface.getRootNode()) RETURNING g_fld_name,g_frm_name
          CALL cl_fldhelp(g_frm_name,g_fld_name,g_lang)
- 
- 
+
+
       ON IDLE g_idle_seconds
          CALL cl_on_idle()
          CONTINUE INPUT
- 
+
       ON ACTION CONTROLG
          CALL cl_cmdask()
- 
+
    END INPUT
- 
+
    CALL i140_show()
- 
+
 END FUNCTION
- 
+
 FUNCTION i140_set_entry(p_cmd)
 DEFINE p_cmd         LIKE type_file.chr1     #NO FUN-690009 VARCHAR(01)
    IF p_cmd = 'a' AND ( NOT g_before_input_done ) THEN
       CALL cl_set_comp_entry("g_type,rvv06,rvw03,rvw11",TRUE)
    END IF
 END FUNCTION
- 
+
 FUNCTION i140_set_no_entry(p_cmd)
 DEFINE p_cmd   LIKE type_file.chr1      #NO FUN-690009 VARCHAR(01)
    IF p_cmd = 'u' AND g_chkey = 'N' AND ( NOT g_before_input_done ) THEN
       CALL cl_set_comp_entry("g_type,rvv06,rvw03,rvw11",FALSE)
    END IF
 END FUNCTION
- 
+
 FUNCTION i140_rvv06()
    DEFINE p_cmd     LIKE type_file.chr1     #NO FUN-690009 VARCHAR(01)
    DEFINE l_pmc03   LIKE pmc_file.pmc03
@@ -3819,7 +3820,7 @@ FUNCTION i140_rvv06()
    DEFINE l_pmc05   LIKE pmc_file.pmc05
    DEFINE l_pmcacti LIKE pmc_file.pmcacti
    DEFINE l_pmc47   LIKE pmc_file.pmc47
- 
+
    SELECT pmc03,pmc05,pmcacti,pmc22,pmc47
      INTO l_pmc03,l_pmc05,l_pmcacti,l_pmc22,l_pmc47
       FROM pmc_file WHERE pmc01 = g_head_1.rvv06
@@ -3827,7 +3828,7 @@ FUNCTION i140_rvv06()
    CASE
       WHEN l_pmcacti = 'N'            LET g_errno = '9028'
       WHEN l_pmcacti MATCHES '[PH]'   LET g_errno = '9038' #No.FUN-690024
- 
+
       WHEN l_pmc05   = '0'     LET g_errno = 'aap-032'     #No.FUN-690025
       WHEN l_pmc05   = '3'     LET g_errno = 'aap-033'     #No.FUN-690025
       WHEN SQLCA.SQLCODE != 0  LET g_errno = SQLCA.SQLCODE USING '-----'
@@ -3843,7 +3844,7 @@ FUNCTION i140_rvv06()
    CALL s_curr3(g_head_1.rvw11,g_head_1.rvw02,g_apz.apz33) RETURNING g_head_1.rvw12            #MOD-CB0246
    DISPLAY BY NAME g_head_1.pmc03,g_head_1.rvw11,g_head_1.rvw03,g_head_1.rvw04,g_head_1.rvw12  #MOD-C20225
 END FUNCTION
- 
+
 FUNCTION i140_r()
    DEFINE l_chr   LIKE type_file.chr1     #NO FUN-690009 VARCHAR(01)
    DEFINE l_cnt   LIKE type_file.num5     #NO FUN-690009 SMALLINT
@@ -3933,7 +3934,7 @@ FUNCTION i140_r()
       CLOSE i140_cl
       COMMIT WORK
 END FUNCTION
- 
+
 FUNCTION i140_ins_rvw()
 DEFINE l_rvw RECORD LIKE rvw_file.*,
        t_rvw03      LIKE rvw_file.rvw03,
@@ -3949,7 +3950,7 @@ DEFINE l_rvw RECORD LIKE rvw_file.*,
        l_rvv04      LIKE rvv_file.rvv04,    #No.FUN-940083
        l_rvv36      LIKE rvv_file.rvv36,    #No.FUN-940083
        l_rvv25      LIKE rvv_file.rvv25     #MOD-B50016 add
- 
+
    LET l_rvw.rvw01=g_head_1.rvw01
    LET l_rvw.rvw02=g_head_1.rvw02
    LET l_rvw.rvw19=g_head_1.rvw19           #No.FUN-CB0053   Add
@@ -3973,15 +3974,15 @@ DEFINE l_rvw RECORD LIKE rvw_file.*,
       LET g_sql = "SELECT rvv04,rvv36 FROM ",cl_get_target_table(g_plant_new,'rvv_file'), #FUN-A50102
                   " WHERE rvv01 = '",l_rvw.rvw08,"' ",
                   "   AND rvv02 = '",l_rvw.rvw09,"' "
-      CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102							
-      CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102                          
+      CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102
+      CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102
       PREPARE sel_rvv04_pre3 FROM g_sql
       EXECUTE sel_rvv04_pre3 INTO l_rvv04,l_rvv36
-     
+
       IF g_sma.sma116 MATCHES '[13]' THEN
          IF NOT cl_null(l_rvv36) THEN                                             #FUN-940083--add
             LET l_sql="SELECT rvv38,rvv87,rvv39,pmm22,pmm21,gec04,gec05,",   #TQC-6C0126
-                      "       rvv03,rvv25",  #No.TQC-760013 add rvv03   #MOD-B50016 add rvv25 
+                      "       rvv03,rvv25",  #No.TQC-760013 add rvv03   #MOD-B50016 add rvv25
                       #"  FROM ",li_dbs CLIPPED,"rvv_file,",li_dbs CLIPPED,"pmn_file,",      #FUN-9B0130
                       #          li_dbs CLIPPED,"pmm_file LEFT OUTER JOIN ",                 #FUN-9B0130
                       #          li_dbs CLIPPED,"gec_file ON pmm_file.pmm21=gec_file.gec01", #FUN-9B0130
@@ -4000,13 +4001,13 @@ DEFINE l_rvw RECORD LIKE rvw_file.*,
                       #"  FROM ",li_dbs CLIPPED,"rvu_file,",li_dbs CLIPPED,"rvv_file ",   #FUN-9B0130
                       "  FROM ",cl_get_target_table(g_plant_new,'rvu_file'),",", #FUN-A50102
                                 cl_get_target_table(g_plant_new,'rvv_file'),     #FUN-A50102
-                      " WHERE rvv01 = '", l_rvw.rvw08,"'",                                                                             
-                      "   AND rvv02 = '", l_rvw.rvw09,"'",                                                                             
-                      "   AND rvv01 = rvu01 "                                                                                          
+                      " WHERE rvv01 = '", l_rvw.rvw08,"'",
+                      "   AND rvv02 = '", l_rvw.rvw09,"'",
+                      "   AND rvv01 = rvu01 "
          ELSE
             IF NOT cl_null(l_rvv04) THEN
                LET l_sql="SELECT rvv38,rvv87,rvv39,rva113,rva115,gec04,gec05,",
-                         "       rvv03,rvv25",  #No.TQC-760013 add rvv03   #MOD-B50016 add rvv25 
+                         "       rvv03,rvv25",  #No.TQC-760013 add rvv03   #MOD-B50016 add rvv25
                          #"  FROM ",li_dbs CLIPPED,"rvv_file,",li_dbs CLIPPED,"rva_file,",  #FUN-9B0130
                          #          "OUTER",li_dbs CLIPPED,"gec_file ",              #FUN-9B0130
                          "  FROM ",cl_get_target_table(g_plant_new,'rvv_file'),",", #FUN-A50102
@@ -4022,12 +4023,12 @@ DEFINE l_rvw RECORD LIKE rvw_file.*,
                          #"  FROM ",li_dbs CLIPPED,"rvu_file,",li_dbs CLIPPED,"rvv_file ",  #FUN-9B0130
                          "  FROM ",cl_get_target_table(g_plant_new,'rvu_file'),",", #FUN-A50102
                                    cl_get_target_table(g_plant_new,'rvv_file'),     #FUN-A50102
-                         " WHERE rvv01 = '", l_rvw.rvw08,"'",                                                                          
-                         "   AND rvv02 = '", l_rvw.rvw09,"'",                                                                          
-                         "   AND rvv01 = rvu01 "                                                                                       
+                         " WHERE rvv01 = '", l_rvw.rvw08,"'",
+                         "   AND rvv02 = '", l_rvw.rvw09,"'",
+                         "   AND rvv01 = rvu01 "
             ELSE
                LET l_sql="SELECT rvv38,rvv87,rvv39,rvu113,rvu115,gec04,gec05,",
-                         "       rvv03,rvv25",  #No.TQC-760013 add rvv03   #MOD-B50016 add rvv25 
+                         "       rvv03,rvv25",  #No.TQC-760013 add rvv03   #MOD-B50016 add rvv25
                          #"  FROM ",li_dbs CLIPPED,"rvv_file,",li_dbs CLIPPED,"rvu_file,",   #FUN-9B0130
                          #          "OUTER ",li_dbs CLIPPED,"gec_file ",  #FUN-9B0130
                          "  FROM ",cl_get_target_table(g_plant_new,'rvv_file'),",", #FUN-A50102
@@ -4042,16 +4043,16 @@ DEFINE l_rvw RECORD LIKE rvw_file.*,
                         ," UNION SELECT rvv38,rvv87,rvv39,'','',rvu12,'',rvv03,rvv25",  #MOD-B50016 add rvv25
                          #"  FROM ",li_dbs CLIPPED,"rvu_file,",li_dbs CLIPPED,"rvv_file ",   #FUN-9B0130
                          "  FROM ",cl_get_target_table(g_plant_new,'rvu_file'),",", #FUN-A50102
-                                   cl_get_target_table(g_plant_new,'rvv_file'),     #FUN-A50102                         
-                         " WHERE rvv01 = '", l_rvw.rvw08,"'",                                                                          
-                         "   AND rvv02 = '", l_rvw.rvw09,"'",                                                                          
-                         "   AND rvv01 = rvu01 "                                                                                       
+                                   cl_get_target_table(g_plant_new,'rvv_file'),     #FUN-A50102
+                         " WHERE rvv01 = '", l_rvw.rvw08,"'",
+                         "   AND rvv02 = '", l_rvw.rvw09,"'",
+                         "   AND rvv01 = rvu01 "
             END IF
          END IF
       ELSE
          IF NOT cl_null(l_rvv36) THEN                                             #FUN-940083--add
             LET l_sql="SELECT rvv38,rvv17,rvv39,pmm22,pmm21,gec04,gec05,",   #TQC-6C0126
-                      "       rvv03,rvv25",  #No.TQC-760013 add rvv03   #MOD-B50016 add rvv25 
+                      "       rvv03,rvv25",  #No.TQC-760013 add rvv03   #MOD-B50016 add rvv25
                       #"  FROM ",li_dbs CLIPPED,"rvv_file,",li_dbs CLIPPED,"pmn_file,",
                       #          li_dbs CLIPPED,"pmm_file LEFT OUTER JOIN ",
                       #          li_dbs CLIPPED,"gec_file ON pmm_file.pmm21=gec_file.gec01 ",
@@ -4069,14 +4070,14 @@ DEFINE l_rvw RECORD LIKE rvw_file.*,
                      ," UNION SELECT rvv38,rvv17,rvv39,'','',rvu12,'',rvv03,rvv25",  #MOD-B50016 add rvv25
                       #"  FROM ",li_dbs CLIPPED,"rvu_file,",li_dbs CLIPPED,"rvv_file ",   #FUN-9B0130
                       "  FROM ",cl_get_target_table(g_plant_new,'rvu_file'),",", #FUN-A50102
-                                cl_get_target_table(g_plant_new,'rvv_file'),     #FUN-A50102                     
-                      " WHERE rvv01 = '", l_rvw.rvw08,"'",                                                                             
-                      "   AND rvv02 = '", l_rvw.rvw09,"'",                                                                             
-                      "   AND rvu01=rvv01 "                                                                                            
+                                cl_get_target_table(g_plant_new,'rvv_file'),     #FUN-A50102
+                      " WHERE rvv01 = '", l_rvw.rvw08,"'",
+                      "   AND rvv02 = '", l_rvw.rvw09,"'",
+                      "   AND rvu01=rvv01 "
          ELSE
             IF NOT cl_null(l_rvv04) THEN
                LET l_sql="SELECT rvv38,rvv17,rvv39,rva113,rva115,gec04,gec05,",
-                         "       rvv03,rvv25",  #No.TQC-760013 add rvv03   #MOD-B50016 add rvv25 
+                         "       rvv03,rvv25",  #No.TQC-760013 add rvv03   #MOD-B50016 add rvv25
                          #"  FROM ",li_dbs CLIPPED,"rvv_file,",li_dbs CLIPPED,"rva_file,",
                          #          "OUTER ",li_dbs CLIPPED,"gec_file ",
                          "  FROM ",cl_get_target_table(g_plant_new,'rvv_file'),",", #FUN-A50102
@@ -4089,13 +4090,13 @@ DEFINE l_rvw RECORD LIKE rvw_file.*,
                         ," UNION SELECT rvv38,rvv17,rvv39,'','',rvu12,'',rvv03,rvv25",  #MOD-B50016 add rvv25
                          #"  FROM ",li_dbs CLIPPED,"rvu_file,",li_dbs CLIPPED,"rvv_file ",  #FUN-9B0130
                          "  FROM ",cl_get_target_table(g_plant_new,'rvu_file'),",", #FUN-A50102
-                                   cl_get_target_table(g_plant_new,'rvv_file'),     #FUN-A50102                       
-                         " WHERE rvv01 = '", l_rvw.rvw08,"'",                                                                          
-                         "   AND rvv02 = '", l_rvw.rvw09,"'",                                                                          
-                         "   AND rvu01=rvv01 "                                                                                         
+                                   cl_get_target_table(g_plant_new,'rvv_file'),     #FUN-A50102
+                         " WHERE rvv01 = '", l_rvw.rvw08,"'",
+                         "   AND rvv02 = '", l_rvw.rvw09,"'",
+                         "   AND rvu01=rvv01 "
                ELSE
                LET l_sql="SELECT rvv38,rvv17,rvv39,rvu113,rvu115,gec04,gec05,",
-                         "       rvv03,rvv25",  #No.TQC-760013 add rvv03   #MOD-B50016 add rvv25 
+                         "       rvv03,rvv25",  #No.TQC-760013 add rvv03   #MOD-B50016 add rvv25
                          #"   FROM ",li_dbs CLIPPED,"rvv_file,",li_dbs CLIPPED,"rvu_file,",
                          #           "OUTER ",li_dbs CLIPPED,"gec_file ",
                          "   FROM ",cl_get_target_table(g_plant_new,'rvv_file'),",", #FUN-A50102
@@ -4108,18 +4109,18 @@ DEFINE l_rvw RECORD LIKE rvw_file.*,
                         ," UNION SELECT rvv38,rvv17,rvv39,'','',rvu12,'',rvv03,rvv25",  #MOD-B50016 add rvv25
                          #"  FROM ",li_dbs CLIPPED,"rvu_file,",li_dbs CLIPPED,"rvv_file ",  #FUN-9B0130
                          "  FROM ",cl_get_target_table(g_plant_new,'rvu_file'),",", #FUN-A50102
-                                   cl_get_target_table(g_plant_new,'rvv_file'),      #FUN-A50102                        
-                         " WHERE rvv01 = '", l_rvw.rvw08,"'",                                                                          
-                         "   AND rvv02 = '", l_rvw.rvw09,"'",                                                                          
-                         "   AND rvu01=rvv01 "                                                                                         
+                                   cl_get_target_table(g_plant_new,'rvv_file'),      #FUN-A50102
+                         " WHERE rvv01 = '", l_rvw.rvw08,"'",
+                         "   AND rvv02 = '", l_rvw.rvw09,"'",
+                         "   AND rvu01=rvv01 "
             END IF
          END IF
       END IF
-   CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102							
-   CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102                 
+   CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102
+   CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102
    PREPARE i140_pr FROM l_sql
    IF STATUS THEN
-      CALL cl_err('i140_pb:',STATUS,1) 
+      CALL cl_err('i140_pb:',STATUS,1)
       CALL cl_used(g_prog,g_time,2) RETURNING g_time #No.FUN-B30211
       EXIT PROGRAM
    END IF
@@ -4163,7 +4164,7 @@ DEFINE l_rvw RECORD LIKE rvw_file.*,
                   "    AND rvw08 = '",l_rvw.rvw08,"' ",
                   "    AND rvw09 = ",l_rvw.rvw09," "
       PREPARE i140_pb2 FROM l_sql
-      IF STATUS THEN CALL cl_err('prepare:',STATUS,1) 
+      IF STATUS THEN CALL cl_err('prepare:',STATUS,1)
          CALL cl_used(g_prog,g_time,2) RETURNING g_time #No.FUN-B30211
          EXIT PROGRAM
       END IF
@@ -4178,9 +4179,9 @@ DEFINE l_rvw RECORD LIKE rvw_file.*,
                   "    AND apb22 = ",l_rvw.rvw09,
                   "    AND apa08 <> 'UNAP' "
       PREPARE i140_pb3 FROM l_sql
-      IF STATUS THEN CALL cl_err('prepare:',STATUS,1) 
+      IF STATUS THEN CALL cl_err('prepare:',STATUS,1)
          CALL cl_used(g_prog,g_time,2) RETURNING g_time #No.FUN-B30211
-         EXIT PROGRAM 
+         EXIT PROGRAM
       END IF
       DECLARE rvw_curs3 CURSOR FOR i140_pb3
       OPEN rvw_curs3
@@ -4197,12 +4198,12 @@ DEFINE l_rvw RECORD LIKE rvw_file.*,
       END IF
       LET g_flag = 'N'          #MOD-A80052
      #LET g_sql = "SELECT gec07 FROM ",li_dbs CLIPPED,"gec_file ",
-     #LET g_sql = "SELECT gec07 FROM ",cl_get_target_table(g_plant_new,'gec_file'),      #FUN-A50102            #MOD-A80052 mark 
-      LET g_sql = "SELECT gec05,gec07 FROM ",cl_get_target_table(g_plant_new,'gec_file'),      #FUN-A50102      #MOD-A80052 
+     #LET g_sql = "SELECT gec07 FROM ",cl_get_target_table(g_plant_new,'gec_file'),      #FUN-A50102            #MOD-A80052 mark
+      LET g_sql = "SELECT gec05,gec07 FROM ",cl_get_target_table(g_plant_new,'gec_file'),      #FUN-A50102      #MOD-A80052
                   " WHERE gec01='",t_rvw03,"' ",
                   "   AND gec011='1' "
-      CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102				
-      CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102              
+      CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102
+      CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102
       PREPARE sel_gec07_pre3 FROM g_sql
      #EXECUTE sel_gec07_pre3 INTO g_gec07                            #MOD-A80052 mark
       EXECUTE sel_gec07_pre3 INTO g_gec05,g_gec07                    #MOD-A80052
@@ -4215,33 +4216,33 @@ DEFINE l_rvw RECORD LIKE rvw_file.*,
                      " WHERE rvv01 = '",l_rvw.rvw08,"' ",
                      "   AND rvv02 = '",l_rvw.rvw09,"' ",
                      "   AND rvv01 = rvu01 "
-         CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102							
-		 CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102              
+         CALL cl_replace_sqldb(g_sql) RETURNING g_sql                   #FUN-A50102
+		 CALL cl_parse_qry_sql(g_sql,g_plant_new) RETURNING g_sql       #FUN-A50102
          PREPARE sel_rvv38t_pre1 FROM g_sql
          EXECUTE sel_rvv38t_pre1 INTO g_rvv38t
          #未稅金額=(數量*含稅單價)/(1+稅率/100)
          IF l_rvw.rvw10 <> 0 THEN
            #-MOD-A80052-add-
             IF g_gec05 = 'T' THEN
-               LET g_rvw05f = g_rvv38t*l_rvw.rvw10  
+               LET g_rvw05f = g_rvv38t*l_rvw.rvw10
                LET l_rvw.rvw06f = g_rvw05f * (t_rvw04/100)   #modify by huanglf160921
                LET g_rvw05f = cl_digcut(g_rvw05f,t_azi04)
                LET l_rvw.rvw06f = cl_digcut(l_rvw.rvw06f,t_azi04)
-               LET l_rvw.rvw05f = g_rvw05f - l_rvw.rvw06f 
-               LET g_flag = 'Y'   
+               LET l_rvw.rvw05f = g_rvw05f - l_rvw.rvw06f
+               LET g_flag = 'Y'
             ELSE
-              #LET l_rvw.rvw05f = (l_rvw.rvw10*g_rvv38t)/(1+t_rvw04/100)     #MOD-AC0024   
-               LET l_rvw.rvw05f = cl_digcut((l_rvw.rvw10*g_rvv38t),t_azi04)/(1+t_rvw04/100)     #MOD-AC0024   
-            END IF 
+              #LET l_rvw.rvw05f = (l_rvw.rvw10*g_rvv38t)/(1+t_rvw04/100)     #MOD-AC0024
+               LET l_rvw.rvw05f = cl_digcut((l_rvw.rvw10*g_rvv38t),t_azi04)/(1+t_rvw04/100)     #MOD-AC0024
+            END IF
            #-MOD-A80052-end-
-           #LET l_rvw.rvw05f = (l_rvw.rvw10*g_rvv38t)/(1+t_rvw04/100)          #MOD-A80052 mark 
+           #LET l_rvw.rvw05f = (l_rvw.rvw10*g_rvv38t)/(1+t_rvw04/100)          #MOD-A80052 mark
          ELSE
-            LET l_rvw.rvw05f = g_rvv39t/(1+t_rvw04/100)                   
+            LET l_rvw.rvw05f = g_rvv39t/(1+t_rvw04/100)
          END IF
       ELSE                     #不含稅
          #未稅金額=數量*未稅單價
          IF l_rvw.rvw10 <> 0 THEN
-            LET l_rvw.rvw05f = l_rvw.rvw10*l_rvw.rvw17                     
+            LET l_rvw.rvw05f = l_rvw.rvw10*l_rvw.rvw17
         #ELSE                                            #MOD-BC0098 mark
         #   LET l_rvw.rvw05f = g_rvv39                   #MOD-BC0098 mark
          END IF
@@ -4252,7 +4253,7 @@ DEFINE l_rvw RECORD LIKE rvw_file.*,
          LET l_rvw.rvw06f = l_rvw.rvw05f * t_rvw04 / 100
          LET l_rvw.rvw06f = cl_digcut(l_rvw.rvw06f,t_azi04)
       END IF       #MOD-A80052
-      LET l_rvw.rvw05 = l_rvw.rvw05f * l_rvw.rvw12 
+      LET l_rvw.rvw05 = l_rvw.rvw05f * l_rvw.rvw12
       LET l_rvw.rvw06 = l_rvw.rvw05 * t_rvw04 / 100        #modfiy by huanglf160921
       LET l_rvw.rvw06 = cl_digcut(l_rvw.rvw06,g_azi04)     #modify by huanglf160921
       LET l_rvw.rvw05 = cl_digcut(l_rvw.rvw05,g_azi04)
@@ -4269,11 +4270,11 @@ DEFINE l_rvw RECORD LIKE rvw_file.*,
      #若為樣品時,金額部份(rvw17,rvw05,rvw05f,rvw06,rvw06f)應帶0
       IF l_rvv25="Y" THEN
          LET l_rvw.rvw17 =0
-         LET l_rvw.rvw05 =0 
-         LET l_rvw.rvw05f=0                                                                                              
-         LET l_rvw.rvw06 =0 
+         LET l_rvw.rvw05 =0
+         LET l_rvw.rvw05f=0
+         LET l_rvw.rvw06 =0
          LET l_rvw.rvw06f=0
-      END IF   
+      END IF
      #end MOD-B50016 add
 #----------------------No.MOD-B70210----------------------------START
       IF cl_null(g_rvw[l_ac].rvw99) THEN
@@ -4283,29 +4284,29 @@ DEFINE l_rvw RECORD LIKE rvw_file.*,
       END IF
 #----------------------No.MOD-B70210-----------------------------END
       INSERT INTO rvw_file VALUES (l_rvw.*)
- 
+
    END FOREACH
 END FUNCTION
- 
+
 FUNCTION i140_var_process(p_cmd)
 DEFINE p_cmd       LIKE type_file.chr1,    #NO FUN-690009  VARCHAR(01)  #b:單身 u:單頭修改
        tag         LIKE type_file.num5,    #NO FUN-690009  SMALLINT
        ls_msg      LIKE ze_file.ze03,      #NO FUN-690009  VARCHAR(80)
        lc_title    LIKE ze_file.ze03       #NO FUN-690009  VARCHAR(30)
- 
+
    LET tag=0
    IF g_head_1.rvw05f_sum<>g_head_1.rvw05f_s THEN
       CALL cl_getmsg('gap-141',g_lang) RETURNING ls_msg
       CALL cl_getmsg('gap-140',g_lang) RETURNING lc_title
       IF p_cmd = 'b' THEN
          MENU lc_title ATTRIBUTE (STYLE="dialog", COMMENT=ls_msg CLIPPED, IMAGE="information")
- 
+
             ON ACTION continue_type_b    #繼續輸入單身
                LET tag=1
                IF tag=1 THEN
                   CALL i140_b()
                END IF
- 
+
             ON ACTION dantou             #調整單頭
                LET tag=3
                IF tag=3 THEN
@@ -4313,30 +4314,30 @@ DEFINE p_cmd       LIKE type_file.chr1,    #NO FUN-690009  VARCHAR(01)  #b:單�
                   LET g_head_1.rvw06f_s=g_head_1.rvw06f_sum
                   DISPLAY BY NAME g_head_1.rvw05f_s,g_head_1.rvw06f_s
                END IF
- 
+
               ON IDLE g_idle_seconds
                  CALL cl_on_idle()
          END MENU
       ELSE
          MENU lc_title ATTRIBUTE (STYLE="dialog", COMMENT=ls_msg CLIPPED, IMAGE="information")
- 
+
             ON ACTION continue_type_b    #繼續輸入單身
                LET tag=1
                IF tag=1 THEN
                   CALL i140_b()
                END IF
- 
+
             ON ACTION fentan             #分攤到單身
                CALL i140_share()
- 
+
               ON IDLE g_idle_seconds
                  CALL cl_on_idle()
- 
+
          END MENU
       END IF
    END IF
 END FUNCTION
- 
+
 FUNCTION i140_share()
    DEFINE rvw       RECORD LIKE rvw_file.*
    DEFINE l_rvw05f         LIKE rvw_file.rvw05f
@@ -4352,7 +4353,7 @@ FUNCTION i140_share()
    LET l_rvw08 = ''
    LET l_rvw09 = ''
    LET l_rvw05f = 0
- 
+
   #--------------------MOD-CB0281---------------(S)
    SELECT azi03,azi04 INTO t_azi03,t_azi04
      FROM azi_file
@@ -4361,7 +4362,7 @@ FUNCTION i140_share()
 
    DECLARE i140_share_c CURSOR FOR
     SELECT * FROM rvw_file WHERE rvw01=g_head_1.rvw01
- 
+
    FOREACH i140_share_c INTO rvw.*
       LET rvw.rvw05f=rvw.rvw05f*(g_head_1.rvw05f_s/g_head_1.rvw05f_sum)
       LET rvw.rvw06f=rvw.rvw06f*(g_head_1.rvw06f_s/g_head_1.rvw06f_sum)
@@ -4373,13 +4374,13 @@ FUNCTION i140_share()
       LET rvw.rvw05 = cl_digcut(rvw.rvw05,g_azi04)
       LET rvw.rvw06 = cl_digcut(rvw.rvw06,g_azi04)
       LET rvw.rvw17 = cl_digcut(rvw.rvw17,t_azi03)
-     
+
       IF l_rvw05f < rvw.rvw05f THEN
       	 LET l_rvw05f = rvw.rvw05f
          LET l_rvw08 = rvw.rvw08
          LET l_rvw09 = rvw.rvw09
       END IF
- 
+
       UPDATE rvw_file SET rvw05=rvw.rvw05,
                           rvw06=rvw.rvw06,
                           rvw05f=rvw.rvw05f,
@@ -4389,24 +4390,24 @@ FUNCTION i140_share()
          AND rvw08=rvw.rvw08
          AND rvw09=rvw.rvw09
    END FOREACH
- 
+
    SELECT SUM(rvw05f),SUM(rvw06f) INTO g_head_1.rvw05f_sum,g_head_1.rvw06f_sum
      FROM rvw_file
     WHERE rvw01=g_head_1.rvw01
-   
+
    #FUN-C80027--ADD--STR
    SELECT SUM(rvw05),SUM(rvw06) INTO g_head_1.rvw05_sum,g_head_1.rvw06_sum
      FROM rvw_file
     WHERE rvw01=g_head_1.rvw01
    #FUN-C80027--ADD--END
- 
+
    #160628   liming add-str
   SELECT SUM(rvw10) INTO g_head_1.rvw10_sum
      FROM rvw_file
     WHERE rvw01=g_head_1.rvw01
-   DISPLAY BY NAME g_head_1.rvw10_sum 
+   DISPLAY BY NAME g_head_1.rvw10_sum
    #160628   liming add-end
-   
+
    IF g_head_1.rvw05f_sum != g_head_1.rvw05f_s OR g_head_1.rvw06f_sum != g_head_1.rvw06f_s THEN
       LET lamt = g_head_1.rvw05f_sum - g_head_1.rvw05f_s
       LET lamt1= g_head_1.rvw06f_sum - g_head_1.rvw06f_s
@@ -4445,19 +4446,19 @@ FUNCTION i140_share()
    DISPLAY BY NAME g_head_1.rvw05f_sum,g_head_1.rvw06f_sum
    DISPLAY BY NAME g_head_1.rvw05f_s,g_head_1.rvw06f_s
 END FUNCTION
- 
+
 FUNCTION i140_set_entry_b(p_cmd)
    DEFINE p_cmd  LIKE type_file.chr1     #NO FUN-690009 VARCHAR(01)
- 
+
    CALL cl_set_comp_entry("rvw09,rvw17,rvw05f,rvw06f",TRUE)
 END FUNCTION
- 
+
 FUNCTION i140_set_no_entry_b(p_cmd)
    DEFINE p_cmd  LIKE type_file.chr1     #NO FUN-690009 VARCHAR(01)
- 
+
    CALL cl_set_comp_entry("rvw09,rvw17,rvw05f,rvw06f",FALSE)
 END FUNCTION
- 
+
 #計算未生成請款的入庫數量、衝暫估數量
 FUNCTION i140_rvw10()
    DEFINE l_sql    LIKE type_file.chr1000 #NO FUN-690009 VARCHAR(300)
@@ -4476,9 +4477,9 @@ FUNCTION i140_rvw10()
                "    AND rvw08 = '",g_rvw[l_ac].rvw08,"' ",
                "    AND rvw09 = ",g_rvw[l_ac].rvw09," "
    PREPARE i140_pb1 FROM l_sql
-   IF STATUS THEN CALL cl_err('prepare:',STATUS,1) 
+   IF STATUS THEN CALL cl_err('prepare:',STATUS,1)
       CALL cl_used(g_prog,g_time,2) RETURNING g_time #No.FUN-B30211
-      EXIT PROGRAM 
+      EXIT PROGRAM
    END IF
    DECLARE rvw_curs1 CURSOR FOR i140_pb1
    OPEN rvw_curs1
@@ -4494,7 +4495,7 @@ FUNCTION i140_rvw10()
    LET g_rvw10 = g_rvw10 + l_apb09   #TQC-6C0126
 END FUNCTION
 
-FUNCTION i140_rvw99() 
+FUNCTION i140_rvw99()
    LET g_errno = ''
 
    SELECT * FROM azp_file,azw_file
@@ -4532,8 +4533,8 @@ END FUNCTION
 
 #FUN-CB0080--add--str--
 FUNCTION i140_b_menu()
-DEFINE   l_rvw05f_s        LIKE rvw_file.rvw05 
- 
+DEFINE   l_rvw05f_s        LIKE rvw_file.rvw05
+
    WHILE TRUE
       CALL i140_list_bp("G")
       IF NOT cl_null(g_action_choice) AND l_ac1>0 THEN #將清單的資料回傳到主畫面
@@ -4556,7 +4557,7 @@ DEFINE   l_rvw05f_s        LIKE rvw_file.rvw05
          CALL ui.interface.refresh()
          CALL cl_set_comp_visible("page2", TRUE)
        END IF
-       
+
       CASE g_action_choice
          WHEN "insert"
             IF cl_chk_act_auth() THEN
@@ -4605,7 +4606,7 @@ DEFINE   l_rvw05f_s        LIKE rvw_file.rvw05
                   EXIT PROGRAM
                END IF
             END IF
- 
+
          WHEN "Carry_Account"
             IF NOT cl_null(g_head_1.rvw01) AND cl_null(g_head_1.rvw18) THEN
                SELECT SUM(rvw05f) INTO l_rvw05f_s FROM rvw_file
@@ -4615,10 +4616,10 @@ DEFINE   l_rvw05f_s        LIKE rvw_file.rvw05
                END IF
                IF l_rvw05f_s >= 0 THEN
                   LET g_cmd = "aapp110 '' '' '",g_head_1.rvw19,"' '' '' '' '' '' '1' 'N' '",g_head_1.rvw01,"'"   #No.FUN-CB0053   Add
-               ELSE               
+               ELSE
                   LET g_cmd = "aapp111 '' '3' '' '' '",g_head_1.rvw19,"' '' '' '",g_user,"' '",g_clas,"' '' 'N' '",g_head_1.rvw01,"'" #No.FUN-CB0053 Add
                END IF
-               CALL cl_cmdrun(g_cmd)                                     
+               CALL cl_cmdrun(g_cmd)
             END IF
 
          WHEN "gen_da"
@@ -4627,7 +4628,7 @@ DEFINE   l_rvw05f_s        LIKE rvw_file.rvw05
                   CALL i140_gen()
                END IF
             END IF
-            
+
          WHEN "help"
             CALL cl_show_help()
          WHEN "exit"
@@ -4636,7 +4637,7 @@ DEFINE   l_rvw05f_s        LIKE rvw_file.rvw05
             CALL cl_cmdask()
          WHEN "exporttoexcel"
             CALL cl_export_to_excel(ui.Interface.getRootNode(),base.TypeInfo.create(g_rvw),'','')
- 
+
          WHEN "related_document"  #相關文件
            IF cl_chk_act_auth() THEN
               IF g_head_1.rvw01 IS NOT NULL THEN
@@ -4645,21 +4646,21 @@ DEFINE   l_rvw05f_s        LIKE rvw_file.rvw05
                 CALL cl_doc()
               END IF
           END IF
-         OTHERWISE 
+         OTHERWISE
             EXIT WHILE
       END CASE
    END WHILE
 END FUNCTION
 
 FUNCTION i140_list_bp(p_ud)
-DEFINE p_ud       LIKE type_file.chr1 
+DEFINE p_ud       LIKE type_file.chr1
    IF p_ud <> "G" OR g_action_choice = "detail" THEN
       RETURN
    END IF
- 
+
    LET g_action_choice = " "
    CALL cl_set_act_visible("accept,cancel", FALSE)
- 
+
    DISPLAY ARRAY g_rvw_1 TO s_rvw_1.* ATTRIBUTE(COUNT=g_rec_b1,UNBUFFERED)
       BEFORE DISPLAY
          CALL cl_navigator_setting( g_curs_index, g_row_count )
@@ -4715,57 +4716,57 @@ DEFINE p_ud       LIKE type_file.chr1
          IF g_rec_b1 != 0 THEN
             CALL fgl_set_arr_curr(g_curs_index)
          END IF
- 
+
       ON ACTION previous
          CALL i140_fetch('P')
          CALL cl_navigator_setting(g_curs_index, g_row_count)
          IF g_rec_b1 != 0 THEN
             CALL fgl_set_arr_curr(g_curs_index)
          END IF
- 
+
       ON ACTION jump
          CALL i140_fetch('/')
          CALL cl_navigator_setting(g_curs_index, g_row_count)
          IF g_rec_b1 != 0 THEN
             CALL fgl_set_arr_curr(g_curs_index)
-         END IF 
- 
+         END IF
+
       ON ACTION next
          CALL i140_fetch('N')
          CALL cl_navigator_setting(g_curs_index, g_row_count)
          IF g_rec_b1 != 0 THEN
             CALL fgl_set_arr_curr(g_curs_index)
          END IF
- 
+
       ON ACTION last
          CALL i140_fetch('L')
          CALL cl_navigator_setting(g_curs_index, g_row_count)
          IF g_rec_b1 != 0 THEN
             CALL fgl_set_arr_curr(g_curs_index)
          END IF
- 
+
       ON ACTION detail
          LET g_action_choice="detail"
          LET l_ac = 1
          EXIT DISPLAY
- 
+
       ON ACTION help
          LET g_action_choice="help"
          EXIT DISPLAY
- 
+
       ON ACTION locale
          CALL cl_dynamic_locale()
-         CALL cl_show_fld_cont()  
+         CALL cl_show_fld_cont()
       ON ACTION exit
          LET g_action_choice="exit"
          EXIT DISPLAY
- 
+
       ON ACTION controlg
          LET g_action_choice="controlg"
          EXIT DISPLAY
-      ON ACTION controls                    
-         CALL cl_set_head_visible("","AUTO")     
- 
+      ON ACTION controls
+         CALL cl_set_head_visible("","AUTO")
+
       ON ACTION accept
          LET l_ac1 = ARR_CURR()
          LET g_jump = l_ac1
@@ -4780,19 +4781,21 @@ DEFINE p_ud       LIKE type_file.chr1
          EXIT DISPLAY
 
       ON ACTION cancel
-             LET INT_FLAG=FALSE 		
+             LET INT_FLAG=FALSE
          LET g_action_choice="exit"
          EXIT DISPLAY
- 
+
       ON IDLE g_idle_seconds
          CALL cl_on_idle()
          CONTINUE DISPLAY
- 
+
       ON ACTION exporttoexcel
          LET g_action_choice = 'exporttoexcel'
-         EXIT DISPLAY
- 
-      ON ACTION related_document            
+         --EXIT DISPLAY
+         #call cl_export_to_excel (ui.Interface.getRootNode(),base.TypeInfo.create(g_rvw_1),'','')
+         call cl_download_by_explorer(cl_expexcel1("s_rvw_1",base.typeinfo.create(g_rvw_1)))
+
+      ON ACTION related_document
          LET g_action_choice="related_document"
          EXIT DISPLAY
    END DISPLAY
@@ -4801,7 +4804,7 @@ END FUNCTION
 FUNCTION i140_list_fill()
 DEFINE l_rvw01         LIKE rvw_file.rvw01
 DEFINE l_i             LIKE type_file.num10
- 
+
    CALL g_rvw_1.clear()
    LET l_i = 1
    FOREACH i140_list_cs INTO g_rvw_1[l_i].*
@@ -4813,12 +4816,13 @@ DEFINE l_i             LIKE type_file.num10
        WHERE pmc01=g_rvw_1[l_i].rvv06_1
       LET l_i = l_i + 1
       IF l_i > g_max_rec THEN
-         IF g_action_choice ="query"  THEN   
+         IF g_action_choice ="query"  THEN
             CALL cl_err( '', 9035, 0 )
-         END IF                              
+         END IF
          EXIT FOREACH
       END IF
    END FOREACH
+   call g_rvw_1.deleteElement(l_i)
    LET g_rec_b1 = l_i - 1
    DISPLAY ARRAY g_rvw_1 TO s_rvw_1.* ATTRIBUTE(COUNT=g_rec_b1,UNBUFFERED)
       BEFORE DISPLAY
@@ -4826,11 +4830,11 @@ DEFINE l_i             LIKE type_file.num10
    END DISPLAY
 END FUNCTION
 #FUN-CB0080--add--end
- 
+
 #FUN-D10064--add--str--
 FUNCTION i140_x()
    DEFINE l_cnt LIKE type_file.num5
-  
+
    IF s_shut(0) THEN RETURN END IF
    IF g_head_1.rvw01 IS NULL THEN
       CALL cl_err('',-400,0)
@@ -4840,7 +4844,7 @@ FUNCTION i140_x()
    WHERE apk03 = g_head_1.rvw01
      AND apk28 = g_head_1.rvw07
      AND apk01 IN (SELECT apa01 FROM apa_file)
-  
+
    IF l_cnt > 0 THEN
       CALL cl_err('','apm-241',0)
       RETURN
@@ -4900,17 +4904,16 @@ END FUNCTION
 
 #str---add by huanglf160824
 FUNCTION i140_out()
- DEFINE l_wc LIKE type_file.chr1000            
+ DEFINE l_wc LIKE type_file.chr1000
  DEFINE l_no LIKE rvw_file.rvw01 #FUN-560176
  IF g_head_1.rvw01 IS NULL THEN RETURN END IF
 
- LET l_no=g_head_1.rvw01 
- LET l_wc='rvw01="',l_no,'"'   
+ LET l_no=g_head_1.rvw01
+ LET l_wc='rvw01="',l_no,'"'
  LET g_msg = "cgapr142",  #MOD by lixwz181229 cgapr140-->cgapr142
              " '",g_today CLIPPED,"' ''",
              " '",g_lang CLIPPED,"' '",g_bgjob CLIPPED,"'  '' '1'",
-             " '",l_wc CLIPPED,"' '' 'N' "   
+             " '",l_wc CLIPPED,"' '' 'N' "
 CALL cl_cmdrun(g_msg)
 END FUNCTION
 #str---end by huanglf160824
-
