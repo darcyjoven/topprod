@@ -159,8 +159,8 @@
 # Modify.........: No:FUN-C80107 12/10/30 By suncx 新增imd23賦默認值
 # Modify.........: No.FUN-C40009 13/01/10 By Nina 只要程式有UPDATE pmh_file 的任何一個欄位時,多加pmhdate=g_today
 # Modify.........: No:FUN-CC0080 13/03/13 By Elise 異動時寫入aooq030異動作業
-# Modify.........: No:CHI-D30027 13/03/20 By Summer 統一編號排除無效單據,無效還原判斷存在有效單據不可無效還原 
-# Modify.........: No:DEV-D30035 13/03/21 By TSD.JIE 
+# Modify.........: No:CHI-D30027 13/03/20 By Summer 統一編號排除無效單據,無效還原判斷存在有效單據不可無效還原
+# Modify.........: No:DEV-D30035 13/03/21 By TSD.JIE
 #                  1.apmi600新增欄位:是否代印條碼,預設為"N"
 #                  2.aoos010當是否與M-Barcode整合(aza131='Y')時才可異動此欄位,否則預設為"N"
 # Modify.........: No:FUN-D30077 13/03/22 By Elise 資料性質為員工時不檢查統一編號欄位
@@ -568,7 +568,7 @@ FUNCTION i600_cs()
                #No.TQC-BB0263  --Begin
                #LET g_qryparam.form = "q_imd"
                LET g_qryparam.form = "q_ime2"
-               #No.TQC-BB0263  --End  
+               #No.TQC-BB0263  --End
                CALL cl_create_qry() RETURNING g_qryparam.multiret
                DISPLAY g_qryparam.multiret TO pmc916
             WHEN INFIELD(pmc917) #VMI結算倉庫
@@ -584,7 +584,7 @@ FUNCTION i600_cs()
                #No.TQC-BB0263  --Begin
                #LET g_qryparam.form = "q_imd"
                LET g_qryparam.form = "q_ime2"
-               #No.TQC-BB0263  --End  
+               #No.TQC-BB0263  --End
                CALL cl_create_qry() RETURNING g_qryparam.multiret
                DISPLAY g_qryparam.multiret TO pmc918
             WHEN INFIELD(pmc919) #VMI結算收貨單別
@@ -956,7 +956,7 @@ FUNCTION i600_menu()
             END IF
           ELSE
             CALL cl_err('','-400',1)
-          END IF 	     	
+          END IF
          END IF
 
        -- for Windows close event trapped
@@ -1074,7 +1074,7 @@ FUNCTION i600_a()
          ROLLBACK WORK
          CONTINUE WHILE
       END IF
-      #No.FUN-BB0049  --End  
+      #No.FUN-BB0049  --End
 
       CASE aws_mdmdata('pmc_file','insert',g_pmc.pmc01,base.TypeInfo.create(g_pmc),'CreateVendorData') #FUN-870166
          WHEN 0  #無與 MDM 整合
@@ -1239,14 +1239,18 @@ FUNCTION i600_i(p_cmd)
          IF g_action_choice = "reproduce" THEN
             CALL i600_set_pmc03(p_cmd)
          END IF
-      #No.FUN-BB0049  --End  
+      #No.FUN-BB0049  --End
 
       AFTER FIELD pmc03
          IF NOT cl_null(g_pmc.pmc03) THEN
             LET l_n =0
             SELECT count(*) INTO l_n FROM pmc_file
              WHERE pmc03 = g_pmc.pmc03 AND pmc01 != g_pmc.pmc01
-             IF l_n > 0 THEN CALL cl_err('','apm-035',0) END IF   #No.MOD-570066
+             IF l_n > 0 THEN
+                CALL cl_err('','apm-035',1)
+                next field pmc03
+            END IF   #No.MOD-570066
+
             IF cl_null(g_pmc.pmc081)  THEN
                LET g_pmc.pmc081=g_pmc.pmc03
                DISPLAY BY NAME g_pmc.pmc081
@@ -1768,10 +1772,10 @@ FUNCTION i600_i(p_cmd)
        #TQC-C70088 -- add -- end
 	#FUN-D40103--mark--str--
        #FUN-D40103--add--str--
-        IF NOT i600_imechk(g_pmc.pmc915,g_pmc.pmc916,'1') THEN 
+        IF NOT i600_imechk(g_pmc.pmc915,g_pmc.pmc916,'1') THEN
            LET g_pmc.pmc916 = ''
            NEXT FIELD pmc916
-        END IF 
+        END IF
        #FUN-D40103--add--end--
         IF g_pmc.pmc915 IS NOT NULL AND g_pmc.pmc916 IS NOT NULL THEN
            CALL i600_pmcchk(p_cmd,g_pmc.pmc915,g_pmc.pmc916,'1')
@@ -1788,7 +1792,7 @@ FUNCTION i600_i(p_cmd)
     #       LET l_num = 0
     #       SELECT COUNT(*) INTO l_num FROM imd_file,jce_file
     #        WHERE imd01 = g_pmc.pmc917
-    #          AND imd10='S' AND imdacti='Y' 
+    #          AND imd10='S' AND imdacti='Y'
     #          AND imd01 NOT IN (SELECT jce02 FROM jce_file)
     #       IF l_num = 0 THEN
     #          CALL cl_err(g_pmc.pmc917,'mfg4020',0)
@@ -1813,7 +1817,7 @@ FUNCTION i600_i(p_cmd)
        #    LET l_num = 0
        #    SELECT COUNT(*) INTO l_num FROM imd_file,jce_file
        #     WHERE imd01 = g_pmc.pmc917
-       #       AND imd10='S' AND imdacti='Y' 
+       #       AND imd10='S' AND imdacti='Y'
        #       AND imd01 NOT IN (SELECT jce02 FROM jce_file)
        #    IF l_num = 0 THEN
        #       CALL cl_err(g_pmc.pmc917,'mfg4020',0)
@@ -1846,7 +1850,7 @@ FUNCTION i600_i(p_cmd)
        # IF NOT cl_null(g_pmc.pmc918) AND NOT cl_null(g_pmc.pmc917) THEN
        #    LET l_num = 0
        #    SELECT COUNT(*) INTO l_num FROM ime_file
-       #     WHERE ime01 = g_pmc.pmc917 
+       #     WHERE ime01 = g_pmc.pmc917
        #       AND ime02 = g_pmc.pmc918
         #      AND ime12 = '2'
         #   IF l_num = 0 THEN
@@ -1861,7 +1865,7 @@ FUNCTION i600_i(p_cmd)
         IF NOT i600_imechk(g_pmc.pmc917,g_pmc.pmc918,'2') THEN
            LET g_pmc.pmc918 = ''
            NEXT FIELD pmc918
-        END IF 
+        END IF
        #FUN-D40103--add--end--
         IF g_pmc.pmc917 IS NOT NULL AND g_pmc.pmc918 IS NOT NULL THEN
            IF g_pmc.pmc917 = g_pmc.pmc915 AND g_pmc.pmc918 = g_pmc.pmc916 THEN
@@ -1969,13 +1973,13 @@ FUNCTION i600_i(p_cmd)
       AFTER FIELD pmcud02
       #   IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
         IF NOT cl_null(g_pmc.pmcud02) THEN
-           select count(*) into l_cnt FROM imd_file WHERE imd01=g_pmc.pmcud02 AND imd11='N' 
+           select count(*) into l_cnt FROM imd_file WHERE imd01=g_pmc.pmcud02 AND imd11='N'
           # AND imd10='W'
            IF l_cnt=0 THEN
               NEXT FIELD pmcud02
-           END IF 
+           END IF
 
-        END IF 
+        END IF
       AFTER FIELD pmcud03
          IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
       AFTER FIELD pmcud04
@@ -2205,7 +2209,7 @@ FUNCTION i600_i(p_cmd)
                IF NOT cl_null(g_pmc.pmc915) THEN
                   LET g_qryparam.where = " ime01 = '",g_pmc.pmc915,"'"
                END IF
-               #No.TQC-BB0263  --End  
+               #No.TQC-BB0263  --End
                CALL cl_create_qry() RETURNING g_pmc.pmc916
                DISPLAY BY NAME g_pmc.pmc916
                NEXT FIELD pmc916
@@ -2224,7 +2228,7 @@ FUNCTION i600_i(p_cmd)
                IF NOT cl_null(g_pmc.pmc917) THEN
                   LET g_qryparam.where = " ime01 = '",g_pmc.pmc917,"'"
                END IF
-               #No.TQC-BB0263  --End  
+               #No.TQC-BB0263  --End
                CALL cl_create_qry() RETURNING g_pmc.pmc918
                DISPLAY BY NAME g_pmc.pmc918
                NEXT FIELD pmc918
@@ -2503,7 +2507,7 @@ FUNCTION i600_set_entry(p_cmd)
      #DEV-D40009 add str--------------
       ELSE
          CALL cl_set_comp_entry("pmc61",FALSE)
-      END IF                     
+      END IF
      #DEV-D40009 add end--------------
    END IF
 
@@ -2613,7 +2617,7 @@ display "pmc30=",g_pmc.pmc30
       #   END IF
       #END IF
       ##No.FUN-A30110  --End
-      #No.FUN-BB0049  --End  
+      #No.FUN-BB0049  --End
    END IF                        #No.FUN-BB0049
 
 END FUNCTION
@@ -2785,7 +2789,7 @@ FUNCTION i600_area(p_no,p_code)  #區域代號
    DEFINE   p_no        LIKE pme_file.pme01,
             p_code      LIKE pme_file.pme02,
             l_pme02     LIKE pme_file.pme02,
-            l_pmeacti   LIKE pme_file.pmeacti		
+            l_pmeacti   LIKE pme_file.pmeacti
 
    LET g_errno = ' '
    SELECT pme02,pmeacti INTO l_pme02,l_pmeacti
@@ -3177,7 +3181,7 @@ FUNCTION i600_u()
       LET l_action = 'u'
    ELSE
       LET l_action = 'c'
-   #No.FUN-BB0049  --End  
+   #No.FUN-BB0049  --End
    END IF
 
 
@@ -3368,14 +3372,14 @@ FUNCTION i600_x()
    LET x1=NULL
    SELECT MAX(pmc01) INTO x1 FROM pmc_file
           WHERE pmc24=g_pmc.pmc24 AND pmc01<>g_pmc.pmc01
-            AND pmc30 <> '1' 
+            AND pmc30 <> '1'
             AND pmcacti<>'N'
    CASE WHEN x1 IS NOT NULL
              CALL cl_getmsg('apm-600',g_lang) RETURNING l_str
              ERROR l_str,x1,x2
-             IF g_pmc.pmc30 <> '1' THEN 
+             IF g_pmc.pmc30 <> '1' THEN
                 RETURN
-             END IF 
+             END IF
         WHEN SQLCA.SQLCODE=100
         WHEN SQLCA.SQLCODE=0
         OTHERWISE
@@ -4588,8 +4592,8 @@ FUNCTION i600_dbs_upd()
                  ' WHERE pnp01= ? ',
                  '  AND  pnp02= ? ',
                  '  AND  pnp03= ?' CLIPPED
-       CALL cl_replace_sqldb(g_sql) RETURNING g_sql              #FUN-A50102							
-	   CALL cl_parse_qry_sql(g_sql,tm.plant[i]) RETURNING g_sql #FUN-A50102	
+       CALL cl_replace_sqldb(g_sql) RETURNING g_sql              #FUN-A50102
+	   CALL cl_parse_qry_sql(g_sql,tm.plant[i]) RETURNING g_sql #FUN-A50102
        PREPARE c_pnp_p FROM g_sql
        DECLARE c_pnp CURSOR FOR c_pnp_p
 
@@ -4598,8 +4602,8 @@ FUNCTION i600_dbs_upd()
                  ' WHERE pmf01= ? ',
                  '  AND  pmf02= ? ',
                  '  AND  pmf03= ?' CLIPPED
-       CALL cl_replace_sqldb(g_sql) RETURNING g_sql              #FUN-A50102							
-	   CALL cl_parse_qry_sql(g_sql,tm.plant[i]) RETURNING g_sql #FUN-A50102	
+       CALL cl_replace_sqldb(g_sql) RETURNING g_sql              #FUN-A50102
+	   CALL cl_parse_qry_sql(g_sql,tm.plant[i]) RETURNING g_sql #FUN-A50102
        PREPARE c_pmf_p FROM g_sql
        DECLARE c_pmf CURSOR FOR c_pmf_p
 
@@ -4607,16 +4611,16 @@ FUNCTION i600_dbs_upd()
        LET g_sql='SELECT COUNT(*) FROM ',cl_get_target_table(tm.plant[i],'pmg_file'), #FUN-A50102
                  ' WHERE pmg01= ? ',
                  '  AND  pmg02= ? ' CLIPPED
-       CALL cl_replace_sqldb(g_sql) RETURNING g_sql              #FUN-A50102							
-	   CALL cl_parse_qry_sql(g_sql,tm.plant[i]) RETURNING g_sql #FUN-A50102	
+       CALL cl_replace_sqldb(g_sql) RETURNING g_sql              #FUN-A50102
+	   CALL cl_parse_qry_sql(g_sql,tm.plant[i]) RETURNING g_sql #FUN-A50102
        PREPARE c_pmg_p FROM g_sql
        DECLARE c_pmg CURSOR FOR c_pmg_p
 
        #LET g_sql='SELECT COUNT(*) FROM ',l_dbs CLIPPED,'pmc_file ',        #FUN-7C0004
        LET g_sql='SELECT COUNT(*) FROM ',cl_get_target_table(tm.plant[i],'pmc_file'), #FUN-A50102
                  ' WHERE pmc01 = ? '
-       CALL cl_replace_sqldb(g_sql) RETURNING g_sql              #FUN-A50102							
-	   CALL cl_parse_qry_sql(g_sql,tm.plant[i]) RETURNING g_sql #FUN-A50102	
+       CALL cl_replace_sqldb(g_sql) RETURNING g_sql              #FUN-A50102
+	   CALL cl_parse_qry_sql(g_sql,tm.plant[i]) RETURNING g_sql #FUN-A50102
        PREPARE c_pmc_p FROM g_sql
        DECLARE c_pmc CURSOR FOR c_pmc_p
 
@@ -4625,8 +4629,8 @@ FUNCTION i600_dbs_upd()
                  ' WHERE pmd01 = ? ',
                  '  AND pmd02 = ? ',
                  '  AND pmd06 = ? ' CLIPPED
-       CALL cl_replace_sqldb(g_sql) RETURNING g_sql              #FUN-A50102							
-	   CALL cl_parse_qry_sql(g_sql,tm.plant[i]) RETURNING g_sql #FUN-A50102	
+       CALL cl_replace_sqldb(g_sql) RETURNING g_sql              #FUN-A50102
+	   CALL cl_parse_qry_sql(g_sql,tm.plant[i]) RETURNING g_sql #FUN-A50102
        PREPARE c_pmd_p FROM g_sql
        DECLARE c_pmd CURSOR FOR c_pmd_p
 
@@ -4634,8 +4638,8 @@ FUNCTION i600_dbs_upd()
        LET g_sql='SELECT COUNT(*) FROM ',cl_get_target_table(tm.plant[i],'pov_file'), #FUN-A50102
                  ' WHERE pov01 = ? ',
                  '  AND pov02 = ? '
-       CALL cl_replace_sqldb(g_sql) RETURNING g_sql              #FUN-A50102							
-	   CALL cl_parse_qry_sql(g_sql,tm.plant[i]) RETURNING g_sql #FUN-A50102	
+       CALL cl_replace_sqldb(g_sql) RETURNING g_sql              #FUN-A50102
+	   CALL cl_parse_qry_sql(g_sql,tm.plant[i]) RETURNING g_sql #FUN-A50102
        PREPARE c_pov_p FROM g_sql
        DECLARE c_pov CURSOR FOR c_pov_p
 
@@ -4662,8 +4666,8 @@ FUNCTION i600_dbs_upd()
                        ' WHERE pnp01= ? ',
                        '  AND  pnp02= ? ',
                        '  AND  pnp03= ?' CLIPPED
-             CALL cl_replace_sqldb(g_sql) RETURNING g_sql              #FUN-A50102							
-	         CALL cl_parse_qry_sql(g_sql,tm.plant[i]) RETURNING g_sql #FUN-A50102	
+             CALL cl_replace_sqldb(g_sql) RETURNING g_sql              #FUN-A50102
+	         CALL cl_parse_qry_sql(g_sql,tm.plant[i]) RETURNING g_sql #FUN-A50102
              PREPARE u_pnp FROM g_sql
              EXECUTE u_pnp USING l_pnp.pnp01,l_pnp.pnp02,l_pnp.pnp03,
                                  l_pnp.pnpacti,l_pnp.pnpuser,l_pnp.pnpgrup,
@@ -4717,8 +4721,8 @@ FUNCTION i600_dbs_upd()
                        ' WHERE pmf01= ? ',
                        '  AND  pmf02= ? ',
                        '  AND  pmf03= ?' CLIPPED
-             CALL cl_replace_sqldb(g_sql) RETURNING g_sql              #FUN-A50102							
-	         CALL cl_parse_qry_sql(g_sql,tm.plant[i]) RETURNING g_sql #FUN-A50102	
+             CALL cl_replace_sqldb(g_sql) RETURNING g_sql              #FUN-A50102
+	         CALL cl_parse_qry_sql(g_sql,tm.plant[i]) RETURNING g_sql #FUN-A50102
              PREPARE u_pmf FROM g_sql
              EXECUTE u_pmf USING l_pmf.pmf01,l_pmf.pmf02,l_pmf.pmf03,
                                  l_pmf.pmfacti,
@@ -4738,7 +4742,7 @@ FUNCTION i600_dbs_upd()
                            "   AND pmf02='",l_pmf.pmf02,"'",
                            "   AND pmf03='",l_pmf.pmf03,"'"
  	             CALL cl_replace_sqldb(g_sql) RETURNING g_sql        #FUN-920032
-                 CALL cl_parse_qry_sql(g_sql,tm.plant[i]) RETURNING g_sql #FUN-A50102	
+                 CALL cl_parse_qry_sql(g_sql,tm.plant[i]) RETURNING g_sql #FUN-A50102
                  PREPARE i_pmf_1 FROM g_sql
                  IF l_chk_pmf = 'Y' THEN
                     EXECUTE i_pmf_1
@@ -4769,7 +4773,7 @@ FUNCTION i600_dbs_upd()
                            ' pmg03= ? ',
                        ' WHERE pmg01= ? ',
                        '  AND  pmg02= ? ' CLIPPED
-             CALL cl_replace_sqldb(g_sql) RETURNING g_sql              #FUN-A50102							
+             CALL cl_replace_sqldb(g_sql) RETURNING g_sql              #FUN-A50102
 	         CALL cl_parse_qry_sql(g_sql,tm.plant[i]) RETURNING g_sql #FUN-A50102
              PREPARE u_pmg FROM g_sql
              EXECUTE u_pmg USING l_pmg.pmg01,l_pmg.pmg02,l_pmg.pmg03,
@@ -4842,7 +4846,7 @@ FUNCTION i600_dbs_upd()
                            ' pmcuser= ?, pmcgrup= ?, pmcmodu= ?,',
                            ' pmcdate= ?, pmc281=? ',
                        'WHERE pmc01 = ? '
-             CALL cl_replace_sqldb(g_sql) RETURNING g_sql              #FUN-A50102							
+             CALL cl_replace_sqldb(g_sql) RETURNING g_sql              #FUN-A50102
 	         CALL cl_parse_qry_sql(g_sql,tm.plant[i]) RETURNING g_sql #FUN-A50102
              PREPARE u_pmc FROM g_sql
              EXECUTE u_pmc USING l_pmc.pmc01,l_pmc.pmc02,l_pmc.pmc03,
@@ -4922,7 +4926,7 @@ FUNCTION i600_dbs_upd()
                        ' WHERE pmd01= ? ',
                        '  AND  pmd02= ? ',
                        '  AND  pmd06= ? ' CLIPPED
-             CALL cl_replace_sqldb(g_sql) RETURNING g_sql              #FUN-A50102							
+             CALL cl_replace_sqldb(g_sql) RETURNING g_sql              #FUN-A50102
 	         CALL cl_parse_qry_sql(g_sql,tm.plant[i]) RETURNING g_sql #FUN-A50102
              PREPARE u_pmd FROM g_sql
              EXECUTE u_pmd USING l_pmd.pmd01,l_pmd.pmd02,l_pmd.pmd03,
@@ -4986,7 +4990,7 @@ FUNCTION i600_dbs_upd()
                            ' pov27= ? ',
                        ' WHERE pov01= ? ',
                        '  AND  pov02= ? ' CLIPPED
-             CALL cl_replace_sqldb(g_sql) RETURNING g_sql              #FUN-A50102							
+             CALL cl_replace_sqldb(g_sql) RETURNING g_sql              #FUN-A50102
 	         CALL cl_parse_qry_sql(g_sql,tm.plant[i]) RETURNING g_sql #FUN-A50102
              PREPARE u_pov FROM g_sql
              EXECUTE u_pov USING l_pov.pov01,l_pov.pov02,l_pov.pov03,
@@ -5042,7 +5046,7 @@ FUNCTION i600_confirm()
       #不在開立狀態，不能申請確認
       CALL cl_err('','atm-221',1)
       RETURN
-   END IF  
+   END IF
    IF NOT cl_confirm('aim-301') THEN RETURN END IF
    SELECT * INTO g_pmc.* FROM pmc_file WHERE pmc01 = g_pmc.pmc01
 #CHI-C30107 --------- add ---------- end
@@ -5390,7 +5394,7 @@ FUNCTION i600_untransaction() #停止交易
    LET g_msg=TIME
    INSERT INTO azo_file(azo01,azo02,azo03,azo04,azo05,azo06,azoplant,azolegal)
       VALUES ('apmi600',g_user,g_today,g_msg,g_pmc.pmc01,'untransaction',g_plant,g_legal)
-   IF SQLCA.sqlcode THEN 
+   IF SQLCA.sqlcode THEN
       CALL cl_err3("ins","azo_file","apmi600","",SQLCA.sqlcode,"","",1)
       ROLLBACK WORK
       RETURN
@@ -5615,8 +5619,8 @@ FUNCTION i600_cur_occ(l_azp01)  #FUN-A50102
   #LET l_sql = "SELECT occ02 FROM ",l_azp03 CLIPPED,"occ_file ",
   LET l_sql = "SELECT occ02 FROM ",cl_get_target_table(l_azp01,'occ_file'), #FUN-A50102
               " WHERE occ01 =?"  #l_pov.pov27
-  CALL cl_replace_sqldb(l_sql) RETURNING l_sql              #FUN-A50102							
-  CALL cl_parse_qry_sql(l_sql,l_azp01) RETURNING l_sql #FUN-A50102	
+  CALL cl_replace_sqldb(l_sql) RETURNING l_sql              #FUN-A50102
+  CALL cl_parse_qry_sql(l_sql,l_azp01) RETURNING l_sql #FUN-A50102
   PREPARE occ_pre FROM l_sql
 END FUNCTION
 
@@ -5831,8 +5835,8 @@ FUNCTION i600_i_t()
                LET l_sql = "SELECT pov02 FROM ", cl_get_target_table(l_pov.pov03,'pov_file'), #FUN-A50102
                            " WHERE pov01 = '1'",
                            "   AND pov03 = '",g_plant CLIPPED,"'"
-               CALL cl_replace_sqldb(l_sql) RETURNING l_sql              #FUN-A50102							
-		       CALL cl_parse_qry_sql(l_sql,l_pov.pov03) RETURNING l_sql #FUN-A50102	
+               CALL cl_replace_sqldb(l_sql) RETURNING l_sql              #FUN-A50102
+		       CALL cl_parse_qry_sql(l_sql,l_pov.pov03) RETURNING l_sql #FUN-A50102
                PREPARE pov_pre2 FROM  l_sql
                EXECUTE pov_pre2 INTO l_pov02
                IF NOT cl_null(l_pov02) THEN
@@ -6713,7 +6717,7 @@ FUNCTION i600_web_i()
             END IF
           END IF
          END IF
-#No.FUN-A90021  --start--           	
+#No.FUN-A90021  --start--
 #      AFTER FIELD wpa03
 #       IF g_wpa.wpa03 ='Y' THEN
 #         IF cl_null(g_wpa.wpa03) THEN
@@ -7393,7 +7397,7 @@ END FUNCTION
 
 #FUN-D40103--add--str--
 FUNCTION i600_imechk(p_ime01,p_ime02,p_ime12)
-   DEFINE l_num        LIKE  type_file.num5   
+   DEFINE l_num        LIKE  type_file.num5
    DEFINE l_imeacti    LIKE  ime_file.imeacti
    DEFINE p_ime01      LIKE  ime_file.ime01
    DEFINE p_ime02      LIKE  ime_file.ime02
@@ -7403,19 +7407,19 @@ FUNCTION i600_imechk(p_ime01,p_ime02,p_ime12)
       LET l_num = 0
       #FUN-D60124--mark--str--
       #SELECT COUNT(*) INTO l_num FROM ime_file
-      # WHERE ime01 = p_ime01 
+      # WHERE ime01 = p_ime01
       #   AND ime02 = p_ime02
-      #   AND ime12 = p_ime12 
+      #   AND ime12 = p_ime12
       #IF l_num = 0 THEN
-      #   IF p_ime12 = '1' THEN 
+      #   IF p_ime12 = '1' THEN
       #      CALL cl_err(p_ime02,'apm-083',0)
-      #   ELSE 
+      #   ELSE
       #      CALL cl_err(p_ime02,'apm-084',0)
       #   END IF
       #   RETURN FALSE
       #END IF
       #FUN-D60124--mark--end--
-      LET l_imeacti = '' 
+      LET l_imeacti = ''
       SELECT imeacti INTO l_imeacti FROM ime_file
        WHERE ime01 = p_ime01
          AND ime02 = p_ime02
@@ -7423,7 +7427,7 @@ FUNCTION i600_imechk(p_ime01,p_ime02,p_ime12)
       IF l_imeacti = 'N' THEN
          CALL cl_err_msg("","aim-507",p_ime01 || "|" || p_ime02 ,0)  #TQC-D50116
          RETURN FALSE
-      END IF 
+      END IF
    END IF
    RETURN TRUE
 END FUNCTION
@@ -7435,19 +7439,19 @@ FUNCTION i600_set_pmcud04()
    DEFINE l_pmc01      LIKE pmc_file.pmc01
    DEFINE l_occ01      LIKE occ_file.occ01
 
-   SELECT pmc01 INTO l_pmc01 FROM pmc_file 
-    WHERE pmc24 = g_pmc.pmc24 
+   SELECT pmc01 INTO l_pmc01 FROM pmc_file
+    WHERE pmc24 = g_pmc.pmc24
       AND pmc01 <> g_pmc.pmc01
-   
-   SELECT occ01 INTO l_occ01 FROM occ_file 
-    WHERE occ11 = g_pmc.pmc24 
 
-   IF NOT cl_null(l_pmc01) THEN 
+   SELECT occ01 INTO l_occ01 FROM occ_file
+    WHERE occ11 = g_pmc.pmc24
+
+   IF NOT cl_null(l_pmc01) THEN
       LET l_str="供应商:",l_pmc01
-   END IF 
-   IF NOT cl_null(l_occ01) THEN 
+   END IF
+   IF NOT cl_null(l_occ01) THEN
       LET l_str=" 客户:",l_occ01
-   END IF 
+   END IF
    DISPLAY l_str TO pmcud04
 
 END FUNCTION
