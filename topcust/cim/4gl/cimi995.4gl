@@ -23,7 +23,9 @@ DEFER INTERRUPT
     IF (NOT cl_setup("CIM")) THEN
        EXIT PROGRAM
     END IF
-    call testrecord()
+    --call testid()
+    call cimp500()
+    --call testrecord()
     --call testdatetime()
     --call txml()
     --call tescape()
@@ -39,6 +41,36 @@ DEFER INTERRUPT
 end main
 
 --
+function testid()
+    define l_id     varchar(100)
+    define l_str    varchar(10)
+    define i integer
+
+    let l_str = "1"
+    for i = 1 to 10
+        let l_id = cl_2base62(l_str)
+        let l_str = l_str , "1"
+    end for
+
+
+    let l_id = cl_short_id()
+    let l_id = cl_uuid()
+    --let l_id = cl_uid_oracel()
+    let l_id = cl_2base62(10086)
+    let l_id = cl_uuid_go()
+end function
+
+--
+function cimp500()
+    define l_dat    integer
+
+    for l_dat = 1 to 31
+        call scimp500(mdy(8,l_dat,2026),'normal','N',true,true)
+    end for
+
+end function
+
+--
 function testrecord()
     define i,j    integer
     define l_str  string
@@ -52,8 +84,6 @@ function testrecord()
     call cl_record_header("1.开立")
     call cl_record("info","1.开立没有问题，执行完成")
     call cl_record("info","1.开立没有问题，执行完成")
-    call cl_record("warn","1.开立这是一个警告")
-    call cl_record("warn","1.开立这是一个警告")
 
     call cl_record_header("2.修改")
     call cl_record("info","2.修改没有问题，执行完成")
@@ -77,7 +107,7 @@ function testrecord()
     call cl_record("warn","4.抛转这是一个警告")
 
     call cl_record_store()
-    call cl_record_html() returning l_str
+    call cl_record_html("error") returning l_str
     display l_str
 end function
 
@@ -332,145 +362,7 @@ end function
 
 
 
-function upd_bmb06()
-    call i100sub_upd_bmb09('JL6012F2LR',	'L0')
-    call i100sub_upd_bmb09('JL7016F2QR',	'Q0')
-    call i100sub_upd_bmb09('KE6005F2BR',	'B0')
-    call i100sub_upd_bmb09('JL8000F3GR'	,'G0')
-    call i100sub_upd_bmb09('JL8000F3GR'	,'G1')
-    call i100sub_upd_bmb09('JL8000F3GR'	,'G2')
-    call i100sub_upd_bmb09('JL8000F3GR'	,'G3')
-    call i100sub_upd_bmb09('JL8000F3GR'	,'G4')
-    call i100sub_upd_bmb09('JL8000F3GR'	,'G5')
-    call i100sub_upd_bmb09('JL8000F3GR'	,'G6')
-    call i100sub_upd_bmb09('JL8000F3GR'	,'G7')
-    call i100sub_upd_bmb09('JL8000F3GR'	,'G8')
-    call i100sub_upd_bmb09('JL8000F3GR'	,'G9')
-    call i100sub_upd_bmb09('JW0288F2MR'	,'M0')
-    call i100sub_upd_bmb09('JW0288F2MR'	,'M1')
-    call i100sub_upd_bmb09('JW0288F2MR'	,'M2')
-    call i100sub_upd_bmb09('JL8007F3LR'	,'L0')
-    call i100sub_upd_bmb09('JL8007F3LR'	,'L1')
-    call i100sub_upd_bmb09('JL8007F3LR'	,'L2')
-    call i100sub_upd_bmb09('JL8007F3LR'	,'L3')
-    call i100sub_upd_bmb09('JL8007F3LR'	,'L4')
-    call i100sub_upd_bmb09('JL8007F3LR'	,'L5')
-    call i100sub_upd_bmb09('JW0303R6LR'	,'L0')
-    call i100sub_upd_bmb09('JW0303R6LR'	,'L1')
-    call i100sub_upd_bmb09('JW0303R6LR'	,'L2')
-    call i100sub_upd_bmb09('JW0303R6LR'	,'L3')
-    call i100sub_upd_bmb09('JN0150F4PR'	,'P0')
-    call i100sub_upd_bmb09('JN0150F4PR'	,'P1')
-    call i100sub_upd_bmb09('JN0150F4PR'	,'P2')
-    call i100sub_upd_bmb09('JN0150F4PR'	,'P3')
-    call i100sub_upd_bmb09('JN0150F4PR'	,'P4')
-    call i100sub_upd_bmb09('JN0150F4PR'	,'P5')
-    call i100sub_upd_bmb09('JN0150F4PR'	,'P6')
-    call i100sub_upd_bmb09('JN0150F4PR'	,'P7')
-    call i100sub_upd_bmb09('JL7015F2BR'	,'B0')
-    call i100sub_upd_bmb09('JL7015F2BR'	,'B1')
-    call i100sub_upd_bmb09('JL7015F2AR'	,'A0')
-    call i100sub_upd_bmb09('JL7015F2AR'	,'A1')
-    call i100sub_upd_bmb09('JL8062F3ZR'	,'Z0')
-    call i100sub_upd_bmb09('JL8062F3ZR'	,'Z1')
-    call i100sub_upd_bmb09('JL8062F3ZR'	,'Z2')
-    call i100sub_upd_bmb09('JL8062F3ZR'	,'Z3')
-    call i100sub_upd_bmb09('JL8078F2YR'	,'Y0')
-    call i100sub_upd_bmb09('JL8078F2YR'	,'Y1')
-    call i100sub_upd_bmb09('JL8078F2YR'	,'Y2')
-    call i100sub_upd_bmb09('JL8078F2YR'	,'Y3')
-    call i100sub_upd_bmb09('JL8078F2YR'	,'Y4')
-    call i100sub_upd_bmb09('JL8078F2YR'	,'Y5')
-    call i100sub_upd_bmb09('JL8056F3QR'	,'Q0')
-    call i100sub_upd_bmb09('JL8056F3QR'	,'Q1')
-    call i100sub_upd_bmb09('JL8056F3QR'	,'Q2')
-    call i100sub_upd_bmb09('JL8056F3QR'	,'Q4')
-    call i100sub_upd_bmb09('JL8056F3QR'	,'Q5')
-    call i100sub_upd_bmb09('JL8056F3QR'	,'Q6')
-    call i100sub_upd_bmb09('JL8056F3QR'	,'Q7')
-    call i100sub_upd_bmb09('JL9009F3RR'	,'R0')
-    call i100sub_upd_bmb09('JL9009F3RR'	,'R2')
-    call i100sub_upd_bmb09('AA0644F4UR'	,'U0')
-    call i100sub_upd_bmb09('JW0319R6MR'	,'M0')
-    call i100sub_upd_bmb09('JL8110F3HR'	,'H0')
-    call i100sub_upd_bmb09('JL8110F3HR'	,'H2')
-    call i100sub_upd_bmb09('AA0645F3LR'	,'L0')
-    call i100sub_upd_bmb09('JL7016F2QR'	,'Q0')
-    call i100sub_upd_bmb09('JL8111F3FR'	,'F0')
-    call i100sub_upd_bmb09('JW0319R6KR'	,'K0')
-    call i100sub_upd_bmb09('JL8095F2QR'	,'Q0')
-    call i100sub_upd_bmb09('JL8095F2QR'	,'Q1')
-    call i100sub_upd_bmb09('JN0168F4SR'	,'S0')
-    call i100sub_upd_bmb09('JN0168F4SR'	,'S1')
-    call i100sub_upd_bmb09('JN0168F4SR'	,'S2')
-    call i100sub_upd_bmb09('JN0168F4SR'	,'S3')
-    call i100sub_upd_bmb09('BN0514F4GR'	,'G0')
-    call i100sub_upd_bmb09('CB0954R6FR'	,'F0')
-    call i100sub_upd_bmb09('AA0701F1HR'	,'H0')
-    call i100sub_upd_bmb09('AA0669F1HR'	,'H0')
-    call i100sub_upd_bmb09('JL8100R6KR'	,'K0')
-    call i100sub_upd_bmb09('JL8100R6KR'	,'K1')
-    call i100sub_upd_bmb09('JL8098F2GR'	,'G0')
-    call i100sub_upd_bmb09('JL8098F2GR'	,'G1')
-    call i100sub_upd_bmb09('JL8098F2GR'	,'G2')
-    call i100sub_upd_bmb09('QM0001F3BR'	,'B0')
-    call i100sub_upd_bmb09('JL8001F2FR'	,'F0')
-    call i100sub_upd_bmb09('JL8076F2FR'	,'F0')
-    call i100sub_upd_bmb09('JL8103F3LR'	,'L0')
-    call i100sub_upd_bmb09('CB1007R4LR'	,'L0')
-    call i100sub_upd_bmb09('JL8134F4AR'	,'A0')
-    call i100sub_upd_bmb09('JL8097F2DR'	,'D0')
-    call i100sub_upd_bmb09('BN0468F2HR'	,'H0')
-    call i100sub_upd_bmb09('BN0468F2HR'	,'H1')
-    call i100sub_upd_bmb09('JL1026F2ER'	,'E0')
-    call i100sub_upd_bmb09('CB0948R6PR'	,'P0')
-    call i100sub_upd_bmb09('CB0948R6RR'	,'R0')
-    call i100sub_upd_bmb09('JL8128F3CR'	,'C0')
-    call i100sub_upd_bmb09('JL6012F2LR'	,'L0')
-    call i100sub_upd_bmb09('JL6012F2LR'	,'L1')
-    call i100sub_upd_bmb09('JL6012F2LR'	,'L2')
-    call i100sub_upd_bmb09('JL6012F2LR'	,'L3')
-    call i100sub_upd_bmb09('JW0318F6JR'	,'J0')
-    call i100sub_upd_bmb09('CB0974R6PR'	,'P0')
-    call i100sub_upd_bmb09('QM0001F3AR'	,'A0')
-    call i100sub_upd_bmb09('AA0701F1GR'	,'G0')
-    call i100sub_upd_bmb09('BN0470F3MR'	,'M0')
-    call i100sub_upd_bmb09('JN0168F4NR'	,'N0')
-    call i100sub_upd_bmb09('JN0168F4NR'	,'N1')
-    call i100sub_upd_bmb09('AA0669F1GR'	,'G0')
-    call i100sub_upd_bmb09('AA0644F4VR'	,'V0')
-    call i100sub_upd_bmb09('QE0002F3BR'	,'B0')
-    call i100sub_upd_bmb09('QE0002F3BR'	,'B1')
-    call i100sub_upd_bmb09('JL6021F2HR'	,'H0')
-    call i100sub_upd_bmb09('JL6021F2HR'	,'H1')
-    call i100sub_upd_bmb09('AA0662F2JR'	,'J0')
-    call i100sub_upd_bmb09('JL6016F3WR'	,'W0')
-    call i100sub_upd_bmb09('JL6016F3WR'	,'W1')
-    call i100sub_upd_bmb09('JL6016F3WR'	,'W2')
-    call i100sub_upd_bmb09('AA0663F2JR'	,'J0')
-    call i100sub_upd_bmb09('KE6006F2ER'	,'E0')
-    call i100sub_upd_bmb09('KE6006F2ER'	,'E1')
-    call i100sub_upd_bmb09('KE6006F2ER'	,'E2')
-    call i100sub_upd_bmb09('KE6006F2ER'	,'E3')
-    call i100sub_upd_bmb09('JW0332R6GR'	,'G0')
-    call i100sub_upd_bmb09('BN0519F3KR'	,'K0')
-    call i100sub_upd_bmb09('QE0001F3BR'	,'B0')
-    call i100sub_upd_bmb09('QE0001F3BR'	,'B1')
-    call i100sub_upd_bmb09('JL0239F4PR'	,'P0')
-    call i100sub_upd_bmb09('JW0332R6HR'	,'H0')
-    call i100sub_upd_bmb09('JW0332R6HR'	,'H1')
-    call i100sub_upd_bmb09('JW0308R6FR'	,'F0')
-    call i100sub_upd_bmb09('JW0303R6MR'	,'M0')
-    call i100sub_upd_bmb09('KE6001F2NR'	,'N0')
-    call i100sub_upd_bmb09('KE6001F2NR'	,'N1')
-    call i100sub_upd_bmb09('KE6001F2NR'	,'N2')
-    call i100sub_upd_bmb09('JL8075F3JR'	,'J0')
-    call i100sub_upd_bmb09('JL8075F3JR'	,'J1')
-    call i100sub_upd_bmb09('JL8075F3JR'	,'J2')
-    call i100sub_upd_bmb09('JL8075F3JR'	,'J3')
-    call i100sub_upd_bmb09('JL8075F3JR'	,'J4')
 
-end function
 
 --
 function doaction()

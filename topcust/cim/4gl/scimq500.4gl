@@ -465,37 +465,37 @@ function scimq500_day()
     let g_day[15].seq02 = 15 let g_day[15].col05 = '当日人均产出（万元）'
     let l_cnt = 0
     let g_day[15].col06 = 0
-    if not cl_null(g_day[13].col07) and not cl_null(g_day[14].col07) then let g_day[15].col07 = g_day[13].col07 / g_day[14].col07 let l_cnt = l_cnt + 1 let g_day[15].col06 = g_day[15].col06 + g_day[15].col07 end if
-    if not cl_null(g_day[13].col08) and not cl_null(g_day[14].col08) then let g_day[15].col08 = g_day[13].col08 / g_day[14].col08 let l_cnt = l_cnt + 1 let g_day[15].col06 = g_day[15].col06 + g_day[15].col08 end if
-    if not cl_null(g_day[13].col09) and not cl_null(g_day[14].col09) then let g_day[15].col09 = g_day[13].col09 / g_day[14].col09 let l_cnt = l_cnt + 1 let g_day[15].col06 = g_day[15].col06 + g_day[15].col09 end if
-    if not cl_null(g_day[13].col10) and not cl_null(g_day[14].col10) then let g_day[15].col10 = g_day[13].col10 / g_day[14].col10 let l_cnt = l_cnt + 1 let g_day[15].col06 = g_day[15].col06 + g_day[15].col10 end if
-    if not cl_null(g_day[13].col11) and not cl_null(g_day[14].col11) then let g_day[15].col11 = g_day[13].col11 / g_day[14].col11 let l_cnt = l_cnt + 1 let g_day[15].col06 = g_day[15].col06 + g_day[15].col11 end if
-    if not cl_null(g_day[13].col12) and not cl_null(g_day[14].col12) then let g_day[15].col12 = g_day[13].col12 / g_day[14].col12 let l_cnt = l_cnt + 1 let g_day[15].col06 = g_day[15].col06 + g_day[15].col12 end if
-    if not cl_null(g_day[13].col13) and not cl_null(g_day[14].col13) then let g_day[15].col13 = g_day[13].col13 / g_day[14].col13 let l_cnt = l_cnt + 1 let g_day[15].col06 = g_day[15].col06 + g_day[15].col13 end if
-    if not cl_null(g_day[13].col14) and not cl_null(g_day[14].col14) then let g_day[15].col14 = g_day[13].col14 / g_day[14].col14 let l_cnt = l_cnt + 1 let g_day[15].col06 = g_day[15].col06 + g_day[15].col14 end if
-    if not cl_null(g_day[13].col15) and not cl_null(g_day[14].col15) then let g_day[15].col15 = g_day[13].col15 / g_day[14].col15 let l_cnt = l_cnt + 1 let g_day[15].col06 = g_day[15].col06 + g_day[15].col15 end if
-    if not cl_null(g_day[13].col16) and not cl_null(g_day[14].col16) then let g_day[15].col16 = g_day[13].col16 / g_day[14].col16 let l_cnt = l_cnt + 1 let g_day[15].col06 = g_day[15].col06 + g_day[15].col16 end if
-    if not cl_null(g_day[13].col17) and not cl_null(g_day[14].col17) then let g_day[15].col17 = g_day[13].col17 / g_day[14].col17 let l_cnt = l_cnt + 1 let g_day[15].col06 = g_day[15].col06 + g_day[15].col17 end if
-    if not cl_null(g_day[13].col18) and not cl_null(g_day[14].col18) then let g_day[15].col18 = g_day[13].col18 / g_day[14].col18 let l_cnt = l_cnt + 1 let g_day[15].col06 = g_day[15].col06 + g_day[15].col18 end if
-    if not cl_null(g_day[13].col19) and not cl_null(g_day[14].col19) then let g_day[15].col19 = g_day[13].col19 / g_day[14].col19 let l_cnt = l_cnt + 1 let g_day[15].col06 = g_day[15].col06 + g_day[15].col19 end if
-    if not cl_null(g_day[13].col20) and not cl_null(g_day[14].col20) then let g_day[15].col20 = g_day[13].col20 / g_day[14].col20 let l_cnt = l_cnt + 1 let g_day[15].col06 = g_day[15].col06 + g_day[15].col20 end if
-    if not cl_null(g_day[13].col21) and not cl_null(g_day[14].col21) then let g_day[15].col21 = g_day[13].col21 / g_day[14].col21 let l_cnt = l_cnt + 1 let g_day[15].col06 = g_day[15].col06 + g_day[15].col21 end if
-    if not cl_null(g_day[13].col22) and not cl_null(g_day[14].col22) then let g_day[15].col22 = g_day[13].col22 / g_day[14].col22 let l_cnt = l_cnt + 1 let g_day[15].col06 = g_day[15].col06 + g_day[15].col22 end if
-    if not cl_null(g_day[13].col23) and not cl_null(g_day[14].col23) then let g_day[15].col23 = g_day[13].col23 / g_day[14].col23 let l_cnt = l_cnt + 1 let g_day[15].col06 = g_day[15].col06 + g_day[15].col23 end if
-    if not cl_null(g_day[13].col24) and not cl_null(g_day[14].col24) then let g_day[15].col24 = g_day[13].col24 / g_day[14].col24 let l_cnt = l_cnt + 1 let g_day[15].col06 = g_day[15].col06 + g_day[15].col24 end if
-    if not cl_null(g_day[13].col25) and not cl_null(g_day[14].col25) then let g_day[15].col25 = g_day[13].col25 / g_day[14].col25 let l_cnt = l_cnt + 1 let g_day[15].col06 = g_day[15].col06 + g_day[15].col25 end if
-    if not cl_null(g_day[13].col26) and not cl_null(g_day[14].col26) then let g_day[15].col26 = g_day[13].col26 / g_day[14].col26 let l_cnt = l_cnt + 1 let g_day[15].col06 = g_day[15].col06 + g_day[15].col26 end if
-    if not cl_null(g_day[13].col27) and not cl_null(g_day[14].col27) then let g_day[15].col27 = g_day[13].col27 / g_day[14].col27 let l_cnt = l_cnt + 1 let g_day[15].col06 = g_day[15].col06 + g_day[15].col27 end if
-    if not cl_null(g_day[13].col28) and not cl_null(g_day[14].col28) then let g_day[15].col28 = g_day[13].col28 / g_day[14].col28 let l_cnt = l_cnt + 1 let g_day[15].col06 = g_day[15].col06 + g_day[15].col28 end if
-    if not cl_null(g_day[13].col29) and not cl_null(g_day[14].col29) then let g_day[15].col29 = g_day[13].col29 / g_day[14].col29 let l_cnt = l_cnt + 1 let g_day[15].col06 = g_day[15].col06 + g_day[15].col29 end if
-    if not cl_null(g_day[13].col30) and not cl_null(g_day[14].col30) then let g_day[15].col30 = g_day[13].col30 / g_day[14].col30 let l_cnt = l_cnt + 1 let g_day[15].col06 = g_day[15].col06 + g_day[15].col30 end if
-    if not cl_null(g_day[13].col31) and not cl_null(g_day[14].col31) then let g_day[15].col31 = g_day[13].col31 / g_day[14].col31 let l_cnt = l_cnt + 1 let g_day[15].col06 = g_day[15].col06 + g_day[15].col31 end if
-    if not cl_null(g_day[13].col32) and not cl_null(g_day[14].col32) then let g_day[15].col32 = g_day[13].col32 / g_day[14].col32 let l_cnt = l_cnt + 1 let g_day[15].col06 = g_day[15].col06 + g_day[15].col32 end if
-    if not cl_null(g_day[13].col33) and not cl_null(g_day[14].col33) then let g_day[15].col33 = g_day[13].col33 / g_day[14].col33 let l_cnt = l_cnt + 1 let g_day[15].col06 = g_day[15].col06 + g_day[15].col33 end if
-    if not cl_null(g_day[13].col34) and not cl_null(g_day[14].col34) then let g_day[15].col34 = g_day[13].col34 / g_day[14].col34 let l_cnt = l_cnt + 1 let g_day[15].col06 = g_day[15].col06 + g_day[15].col34 end if
-    if not cl_null(g_day[13].col35) and not cl_null(g_day[14].col35) then let g_day[15].col35 = g_day[13].col35 / g_day[14].col35 let l_cnt = l_cnt + 1 let g_day[15].col06 = g_day[15].col06 + g_day[15].col35 end if
-    if not cl_null(g_day[13].col36) and not cl_null(g_day[14].col36) then let g_day[15].col36 = g_day[13].col36 / g_day[14].col36 let l_cnt = l_cnt + 1 let g_day[15].col06 = g_day[15].col06 + g_day[15].col36 end if
-    if not cl_null(g_day[13].col37) and not cl_null(g_day[14].col37) then let g_day[15].col37 = g_day[13].col37 / g_day[14].col37 let l_cnt = l_cnt + 1 let g_day[15].col06 = g_day[15].col06 + g_day[15].col37 end if
+    if not cl_null(g_day[13].col07) and not cl_null(g_day[14].col07) and g_day[14].col07 > 0 then let g_day[15].col07 = g_day[13].col07 / g_day[14].col07 let l_cnt = l_cnt + 1 let g_day[15].col06 = g_day[15].col06 + g_day[15].col07 end if
+    if not cl_null(g_day[13].col08) and not cl_null(g_day[14].col08) and g_day[14].col08 > 0 then let g_day[15].col08 = g_day[13].col08 / g_day[14].col08 let l_cnt = l_cnt + 1 let g_day[15].col06 = g_day[15].col06 + g_day[15].col08 end if
+    if not cl_null(g_day[13].col09) and not cl_null(g_day[14].col09) and g_day[14].col09 > 0 then let g_day[15].col09 = g_day[13].col09 / g_day[14].col09 let l_cnt = l_cnt + 1 let g_day[15].col06 = g_day[15].col06 + g_day[15].col09 end if
+    if not cl_null(g_day[13].col10) and not cl_null(g_day[14].col10) and g_day[14].col10 > 0 then let g_day[15].col10 = g_day[13].col10 / g_day[14].col10 let l_cnt = l_cnt + 1 let g_day[15].col06 = g_day[15].col06 + g_day[15].col10 end if
+    if not cl_null(g_day[13].col11) and not cl_null(g_day[14].col11) and g_day[14].col11 > 0 then let g_day[15].col11 = g_day[13].col11 / g_day[14].col11 let l_cnt = l_cnt + 1 let g_day[15].col06 = g_day[15].col06 + g_day[15].col11 end if
+    if not cl_null(g_day[13].col12) and not cl_null(g_day[14].col12) and g_day[14].col12 > 0 then let g_day[15].col12 = g_day[13].col12 / g_day[14].col12 let l_cnt = l_cnt + 1 let g_day[15].col06 = g_day[15].col06 + g_day[15].col12 end if
+    if not cl_null(g_day[13].col13) and not cl_null(g_day[14].col13) and g_day[14].col13 > 0 then let g_day[15].col13 = g_day[13].col13 / g_day[14].col13 let l_cnt = l_cnt + 1 let g_day[15].col06 = g_day[15].col06 + g_day[15].col13 end if
+    if not cl_null(g_day[13].col14) and not cl_null(g_day[14].col14) and g_day[14].col14 > 0 then let g_day[15].col14 = g_day[13].col14 / g_day[14].col14 let l_cnt = l_cnt + 1 let g_day[15].col06 = g_day[15].col06 + g_day[15].col14 end if
+    if not cl_null(g_day[13].col15) and not cl_null(g_day[14].col15) and g_day[14].col15 > 0 then let g_day[15].col15 = g_day[13].col15 / g_day[14].col15 let l_cnt = l_cnt + 1 let g_day[15].col06 = g_day[15].col06 + g_day[15].col15 end if
+    if not cl_null(g_day[13].col16) and not cl_null(g_day[14].col16) and g_day[14].col16 > 0 then let g_day[15].col16 = g_day[13].col16 / g_day[14].col16 let l_cnt = l_cnt + 1 let g_day[15].col06 = g_day[15].col06 + g_day[15].col16 end if
+    if not cl_null(g_day[13].col17) and not cl_null(g_day[14].col17) and g_day[14].col17 > 0 then let g_day[15].col17 = g_day[13].col17 / g_day[14].col17 let l_cnt = l_cnt + 1 let g_day[15].col06 = g_day[15].col06 + g_day[15].col17 end if
+    if not cl_null(g_day[13].col18) and not cl_null(g_day[14].col18) and g_day[14].col18 > 0 then let g_day[15].col18 = g_day[13].col18 / g_day[14].col18 let l_cnt = l_cnt + 1 let g_day[15].col06 = g_day[15].col06 + g_day[15].col18 end if
+    if not cl_null(g_day[13].col19) and not cl_null(g_day[14].col19) and g_day[14].col19 > 0 then let g_day[15].col19 = g_day[13].col19 / g_day[14].col19 let l_cnt = l_cnt + 1 let g_day[15].col06 = g_day[15].col06 + g_day[15].col19 end if
+    if not cl_null(g_day[13].col20) and not cl_null(g_day[14].col20) and g_day[14].col20 > 0 then let g_day[15].col20 = g_day[13].col20 / g_day[14].col20 let l_cnt = l_cnt + 1 let g_day[15].col06 = g_day[15].col06 + g_day[15].col20 end if
+    if not cl_null(g_day[13].col21) and not cl_null(g_day[14].col21) and g_day[14].col21 > 0 then let g_day[15].col21 = g_day[13].col21 / g_day[14].col21 let l_cnt = l_cnt + 1 let g_day[15].col06 = g_day[15].col06 + g_day[15].col21 end if
+    if not cl_null(g_day[13].col22) and not cl_null(g_day[14].col22) and g_day[14].col22 > 0 then let g_day[15].col22 = g_day[13].col22 / g_day[14].col22 let l_cnt = l_cnt + 1 let g_day[15].col06 = g_day[15].col06 + g_day[15].col22 end if
+    if not cl_null(g_day[13].col23) and not cl_null(g_day[14].col23) and g_day[14].col23 > 0 then let g_day[15].col23 = g_day[13].col23 / g_day[14].col23 let l_cnt = l_cnt + 1 let g_day[15].col06 = g_day[15].col06 + g_day[15].col23 end if
+    if not cl_null(g_day[13].col24) and not cl_null(g_day[14].col24) and g_day[14].col24 > 0 then let g_day[15].col24 = g_day[13].col24 / g_day[14].col24 let l_cnt = l_cnt + 1 let g_day[15].col06 = g_day[15].col06 + g_day[15].col24 end if
+    if not cl_null(g_day[13].col25) and not cl_null(g_day[14].col25) and g_day[14].col25 > 0 then let g_day[15].col25 = g_day[13].col25 / g_day[14].col25 let l_cnt = l_cnt + 1 let g_day[15].col06 = g_day[15].col06 + g_day[15].col25 end if
+    if not cl_null(g_day[13].col26) and not cl_null(g_day[14].col26) and g_day[14].col26 > 0 then let g_day[15].col26 = g_day[13].col26 / g_day[14].col26 let l_cnt = l_cnt + 1 let g_day[15].col06 = g_day[15].col06 + g_day[15].col26 end if
+    if not cl_null(g_day[13].col27) and not cl_null(g_day[14].col27) and g_day[14].col27 > 0 then let g_day[15].col27 = g_day[13].col27 / g_day[14].col27 let l_cnt = l_cnt + 1 let g_day[15].col06 = g_day[15].col06 + g_day[15].col27 end if
+    if not cl_null(g_day[13].col28) and not cl_null(g_day[14].col28) and g_day[14].col28 > 0 then let g_day[15].col28 = g_day[13].col28 / g_day[14].col28 let l_cnt = l_cnt + 1 let g_day[15].col06 = g_day[15].col06 + g_day[15].col28 end if
+    if not cl_null(g_day[13].col29) and not cl_null(g_day[14].col29) and g_day[14].col29 > 0 then let g_day[15].col29 = g_day[13].col29 / g_day[14].col29 let l_cnt = l_cnt + 1 let g_day[15].col06 = g_day[15].col06 + g_day[15].col29 end if
+    if not cl_null(g_day[13].col30) and not cl_null(g_day[14].col30) and g_day[14].col30 > 0 then let g_day[15].col30 = g_day[13].col30 / g_day[14].col30 let l_cnt = l_cnt + 1 let g_day[15].col06 = g_day[15].col06 + g_day[15].col30 end if
+    if not cl_null(g_day[13].col31) and not cl_null(g_day[14].col31) and g_day[14].col31 > 0 then let g_day[15].col31 = g_day[13].col31 / g_day[14].col31 let l_cnt = l_cnt + 1 let g_day[15].col06 = g_day[15].col06 + g_day[15].col31 end if
+    if not cl_null(g_day[13].col32) and not cl_null(g_day[14].col32) and g_day[14].col32 > 0 then let g_day[15].col32 = g_day[13].col32 / g_day[14].col32 let l_cnt = l_cnt + 1 let g_day[15].col06 = g_day[15].col06 + g_day[15].col32 end if
+    if not cl_null(g_day[13].col33) and not cl_null(g_day[14].col33) and g_day[14].col33 > 0 then let g_day[15].col33 = g_day[13].col33 / g_day[14].col33 let l_cnt = l_cnt + 1 let g_day[15].col06 = g_day[15].col06 + g_day[15].col33 end if
+    if not cl_null(g_day[13].col34) and not cl_null(g_day[14].col34) and g_day[14].col34 > 0 then let g_day[15].col34 = g_day[13].col34 / g_day[14].col34 let l_cnt = l_cnt + 1 let g_day[15].col06 = g_day[15].col06 + g_day[15].col34 end if
+    if not cl_null(g_day[13].col35) and not cl_null(g_day[14].col35) and g_day[14].col35 > 0 then let g_day[15].col35 = g_day[13].col35 / g_day[14].col35 let l_cnt = l_cnt + 1 let g_day[15].col06 = g_day[15].col06 + g_day[15].col35 end if
+    if not cl_null(g_day[13].col36) and not cl_null(g_day[14].col36) and g_day[14].col36 > 0 then let g_day[15].col36 = g_day[13].col36 / g_day[14].col36 let l_cnt = l_cnt + 1 let g_day[15].col06 = g_day[15].col06 + g_day[15].col36 end if
+    if not cl_null(g_day[13].col37) and not cl_null(g_day[14].col37) and g_day[14].col37 > 0 then let g_day[15].col37 = g_day[13].col37 / g_day[14].col37 let l_cnt = l_cnt + 1 let g_day[15].col06 = g_day[15].col06 + g_day[15].col37 end if
     if not cl_null(g_day[15].col06) and l_cnt > 0 then let g_day[15].col06 = g_day[15].col06 / l_cnt end if
 
     for i = 1 to g_day.getLength()
@@ -851,7 +851,6 @@ function scimq500_output(p_date,p_version)
     define  p_date   date,
             p_version varchar(20)
     define l_tc_ila  record like tc_ila_file.*
-    define l_pro     report
     define l_file,l_cmd,l_json,l_sql   string
     define l_chn    base.Channel
     define l_day dynamic array of daily
@@ -864,86 +863,8 @@ function scimq500_output(p_date,p_version)
         return ""
     end if
 
-    initialize l_pro.* to null
-
-    let l_pro.date = p_date using 'DD-MMM-YYYY'
-    let l_pro.time = current year to second
-    # 剩余天数
-    if month(p_date) = 12 then
-        let l_pro.remaining = mdy(1,1,year(p_date)+1)-p_date
-    else
-        let l_pro.remaining = mdy(month(p_date)+1,1,year(p_date))-p_date
-    end if
-    # 汇率
-    let l_pro.curr_rate = l_tc_ila.tc_ila05
-    let l_pro.previous_rate = l_tc_ila.tc_ila06
-    # 上月
-    let l_pro.last_month = (mdy(month(p_date),1,year(p_date)) -1 ) using 'MMM'
-    # 入库
-    let l_pro.product.normal.day.smt = l_tc_ila.tc_ila07 / 10000
-    let l_pro.product.normal.day.fpc = l_tc_ila.tc_ila08 / 10000
-    let l_pro.product.normal.day.comp = l_tc_ila.tc_ila09 / 10000
-
-    let l_pro.product.rework_in.day.smt = l_tc_ila.tc_ila10 / 10000
-    let l_pro.product.rework_in.day.fpc = l_tc_ila.tc_ila11 / 10000
-    let l_pro.product.rework_in.day.comp = l_tc_ila.tc_ila12 / 10000
-
-    let l_pro.product.rework_out.day.smt = l_tc_ila.tc_ila13 / 10000
-    let l_pro.product.rework_out.day.fpc = l_tc_ila.tc_ila14 / 10000
-    let l_pro.product.rework_out.day.comp = l_tc_ila.tc_ila15 / 10000
-
-    let l_pro.product.normal.month.smt = l_tc_ila.tc_ila16 / 10000
-    let l_pro.product.normal.month.fpc = l_tc_ila.tc_ila17 / 10000
-    let l_pro.product.normal.month.comp = l_tc_ila.tc_ila18 / 10000
-
-    let l_pro.product.rework_in.month.smt = l_tc_ila.tc_ila19 / 10000
-    let l_pro.product.rework_in.month.fpc = l_tc_ila.tc_ila20 / 10000
-    let l_pro.product.rework_in.month.comp = l_tc_ila.tc_ila21 / 10000
-
-    let l_pro.product.rework_out.month.smt = l_tc_ila.tc_ila22 / 10000
-    let l_pro.product.rework_out.month.fpc = l_tc_ila.tc_ila23 / 10000
-    let l_pro.product.rework_out.month.comp = l_tc_ila.tc_ila24 / 10000
-
-    # 计划金额
-    let l_pro.forecast.sale.day = l_tc_ila.tc_ila25
-    let l_pro.forecast.sale.month   = l_tc_ila.tc_ila26
-    let l_pro.forecast.product.day  = l_tc_ila.tc_ila47
-    let l_pro.forecast.product.month    = l_tc_ila.tc_ila48
-
-    # 出货
-    let l_pro.sale.normal.day.smt = l_tc_ila.tc_ila27 / 10000
-    let l_pro.sale.normal.day.fpc = l_tc_ila.tc_ila28 / 10000
-    let l_pro.sale.normal.day.comp = l_tc_ila.tc_ila29 / 10000
-
-    let l_pro.sale.return.day.smt = l_tc_ila.tc_ila30 / 10000
-    let l_pro.sale.return.day.fpc = l_tc_ila.tc_ila31 / 10000
-    let l_pro.sale.return.day.comp = l_tc_ila.tc_ila32 / 10000
-
-    let l_pro.sale.normal.month.smt = l_tc_ila.tc_ila35 / 10000
-    let l_pro.sale.normal.month.fpc = l_tc_ila.tc_ila36 / 10000
-    let l_pro.sale.normal.month.comp = l_tc_ila.tc_ila37 / 10000
-
-    let l_pro.sale.return.month.smt = l_tc_ila.tc_ila38 / 10000
-    let l_pro.sale.return.month.fpc = l_tc_ila.tc_ila39 / 10000
-    let l_pro.sale.return.month.comp = l_tc_ila.tc_ila40 / 10000
-
-    let l_pro.sale.discount.day = l_tc_ila.tc_ila33 / 10000
-    let l_pro.sale.discount.month = l_tc_ila.tc_ila41 / 10000
-
-    let l_pro.sale.resell.day = l_tc_ila.tc_ila34 / 10000
-    let l_pro.sale.resell.month = l_tc_ila.tc_ila42 / 10000
-
-    let l_pro.sale.unsign.smt = l_tc_ila.tc_ila43 / 10000
-    let l_pro.sale.unsign.fpc = l_tc_ila.tc_ila44 / 10000
-    let l_pro.sale.unsign.comp = l_tc_ila.tc_ila45 / 10000
-    let l_pro.sale.unsign.sample = l_tc_ila.tc_ila46 / 10000
-
-    let l_pro.stock.normal = l_tc_ila.tc_ila49 / 10000
-    let l_pro.stock.sample = l_tc_ila.tc_ila50 / 10000
-    let l_pro.stock.inaction = l_tc_ila.tc_ila51 / 10000
-    let l_pro.stock.return = l_tc_ila.tc_ila52 / 10000
-
-    call cl_json(base.typeinfo.create(l_pro)) returning l_json
+    -- 总览
+    call scimq500_json(p_date,p_version) returning l_json
 
     let l_id = cl_short_id()
     let l_file = "/u1/usr/tiptop/typst/projects/cimr500/data.",l_id,".json"
@@ -1202,4 +1123,101 @@ function scimq500_err(p_field,p_data,p_msg,p_code)
     else
         CALL s_errmsg(p_field,p_data,p_msg,p_code,1)
     end if
+end function
+
+
+--
+function scimq500_json(p_date,p_version)
+    define  p_date   date,
+            p_version varchar(20)
+    define l_tc_ila  record like tc_ila_file.*
+    define l_pro     report
+
+    select * into l_tc_ila.* from tc_ila_file
+    where tc_ila01 = p_date and tc_ila02 = p_version
+    if sqlca.sqlcode then
+        call scimq500_err('','','无此笔资料',sqlca.sqlcode)
+        return ""
+    end if
+
+    initialize l_pro.* to null
+
+    let l_pro.date = p_date using 'DD-MMM-YYYY'
+    let l_pro.time = current year to second
+    # 剩余天数
+    if month(p_date) = 12 then
+        let l_pro.remaining = mdy(1,1,year(p_date)) - p_date
+    else
+        let l_pro.remaining = mdy(month(p_date),1,year(p_date)) - p_date
+    end if
+    # 汇率
+    let l_pro.curr_rate = l_tc_ila.tc_ila05
+    let l_pro.previous_rate = l_tc_ila.tc_ila06
+    # 上月
+    let l_pro.last_month = (mdy(month(p_date),1,year(p_date)) -1 ) using 'MMM'
+    # 入库
+    let l_pro.product.normal.day.smt = l_tc_ila.tc_ila07 / 10000
+    let l_pro.product.normal.day.fpc = l_tc_ila.tc_ila08 / 10000
+    let l_pro.product.normal.day.comp = l_tc_ila.tc_ila09 / 10000
+
+    let l_pro.product.rework_in.day.smt = l_tc_ila.tc_ila10 / 10000
+    let l_pro.product.rework_in.day.fpc = l_tc_ila.tc_ila11 / 10000
+    let l_pro.product.rework_in.day.comp = l_tc_ila.tc_ila12 / 10000
+
+    let l_pro.product.rework_out.day.smt = l_tc_ila.tc_ila13 / 10000
+    let l_pro.product.rework_out.day.fpc = l_tc_ila.tc_ila14 / 10000
+    let l_pro.product.rework_out.day.comp = l_tc_ila.tc_ila15 / 10000
+
+    let l_pro.product.normal.month.smt = l_tc_ila.tc_ila16 / 10000
+    let l_pro.product.normal.month.fpc = l_tc_ila.tc_ila17 / 10000
+    let l_pro.product.normal.month.comp = l_tc_ila.tc_ila18 / 10000
+
+    let l_pro.product.rework_in.month.smt = l_tc_ila.tc_ila19 / 10000
+    let l_pro.product.rework_in.month.fpc = l_tc_ila.tc_ila20 / 10000
+    let l_pro.product.rework_in.month.comp = l_tc_ila.tc_ila21 / 10000
+
+    let l_pro.product.rework_out.month.smt = l_tc_ila.tc_ila22 / 10000
+    let l_pro.product.rework_out.month.fpc = l_tc_ila.tc_ila23 / 10000
+    let l_pro.product.rework_out.month.comp = l_tc_ila.tc_ila24 / 10000
+
+    # 计划金额
+    let l_pro.forecast.product.day = l_tc_ila.tc_ila25
+    let l_pro.forecast.product.month   = l_tc_ila.tc_ila26
+    let l_pro.forecast.sale.day  = l_tc_ila.tc_ila47
+    let l_pro.forecast.sale.month  = l_tc_ila.tc_ila48
+
+    # 出货
+    let l_pro.sale.normal.day.smt = l_tc_ila.tc_ila27 / 10000
+    let l_pro.sale.normal.day.fpc = l_tc_ila.tc_ila28 / 10000
+    let l_pro.sale.normal.day.comp = l_tc_ila.tc_ila29 / 10000
+
+    let l_pro.sale.return.day.smt = l_tc_ila.tc_ila30 / 10000
+    let l_pro.sale.return.day.fpc = l_tc_ila.tc_ila31 / 10000
+    let l_pro.sale.return.day.comp = l_tc_ila.tc_ila32 / 10000
+
+    let l_pro.sale.normal.month.smt = l_tc_ila.tc_ila35 / 10000
+    let l_pro.sale.normal.month.fpc = l_tc_ila.tc_ila36 / 10000
+    let l_pro.sale.normal.month.comp = l_tc_ila.tc_ila37 / 10000
+
+    let l_pro.sale.return.month.smt = l_tc_ila.tc_ila38 / 10000
+    let l_pro.sale.return.month.fpc = l_tc_ila.tc_ila39 / 10000
+    let l_pro.sale.return.month.comp = l_tc_ila.tc_ila40 / 10000
+
+    let l_pro.sale.discount.day = l_tc_ila.tc_ila33 / 10000
+    let l_pro.sale.discount.month = l_tc_ila.tc_ila41 / 10000
+
+    let l_pro.sale.resell.day = l_tc_ila.tc_ila34 / 10000
+    let l_pro.sale.resell.month = l_tc_ila.tc_ila42 / 10000
+
+    let l_pro.sale.unsign.smt = l_tc_ila.tc_ila43 / 10000
+    let l_pro.sale.unsign.fpc = l_tc_ila.tc_ila44 / 10000
+    let l_pro.sale.unsign.comp = l_tc_ila.tc_ila45 / 10000
+    let l_pro.sale.unsign.sample = l_tc_ila.tc_ila46 / 10000
+
+    let l_pro.stock.normal = l_tc_ila.tc_ila49 / 10000
+    let l_pro.stock.sample = l_tc_ila.tc_ila50 / 10000
+    let l_pro.stock.inaction = l_tc_ila.tc_ila51 / 10000
+    let l_pro.stock.return = l_tc_ila.tc_ila52 / 10000
+
+    return cl_json(base.typeinfo.create(l_pro))
 end function

@@ -124,7 +124,7 @@ function scimp500(p_date,p_version,p_unsign,p_tran,p_send)
         CALL l_channel.writeLine(l_str)
         call l_channel.close()
 
-        call scimp500_mail("darcy.li@forewin-sz.com.cn")
+        call scimp500_mail("dong.xia@forewin-sz.com.cn")
     end if
 end function
 
@@ -168,10 +168,16 @@ private function scimp500_del()
     end if
     -- 出勤人数也不更新
     --delete from tc_ilc_file where tc_ilc01 = g_date and tc_ilc02 = g_version
+    --if sqlca.sqlcode then
+    --    --call scimp500_error(sfmt("upd tc_ilc_file tc_ilc01 : %1 ,error : %2",g_date,sqlca.sqlcode),g_date,sqlca.sqlcode),"联系管理员")
+    --    call cl_record('error',sfmt("upd tc_ilc_file tc_ilc01 : %1 ,error : %2",g_date,sqlca.sqlcode))
+    --    let g_success = 'N'
+    --    return
+    --end if
     delete from tc_ild_file where tc_ild01 = g_date and tc_ild02 = g_version
     if sqlca.sqlcode then
         --call scimp500_error(sfmt("upd tc_ilc_file tc_ilc01 : %1 ,error : %2",g_date,sqlca.sqlcode),g_date,sqlca.sqlcode),"联系管理员")
-        call cl_record('error',sfmt("upd tc_ilc_file tc_ilc01 : %1 ,error : %2",g_date,sqlca.sqlcode))
+        call cl_record('error',sfmt("upd tc_ild_file tc_ilc01 : %1 ,error : %2",g_date,sqlca.sqlcode))
         let g_success = 'N'
         return
     end if
@@ -611,7 +617,7 @@ private function scimp500_stock()
     select count(*) into l_cnt from tc_ilg_file
      where tc_ilg01 = g_date and tc_ilg02 = g_version
     if l_cnt > 0 then
-        call cl_record('info','库存资料已经存在，不再重复计算')
+        call cl_record('warn','库存资料已经存在，不再重复计算')
         return
     end if
 
@@ -645,7 +651,15 @@ end function
 -- 出勤人数
 private function scimp500_attend()
     define  l_sql   string
+    define l_cnt integer
+
     call cl_record('info','出勤人数')
+    select count(*) into l_cnt from tc_ilc_file where tc_ilc01 = g_date and tc_ilc02 = g_version
+    if l_cnt > 0 then
+        call cl_record('warn','已计算过出勤人数，不重新计算')
+        return
+    end if
+
 
     let l_sql = "
     insert into tc_ilc_file ( tc_ilc01,tc_ilc02,tc_ilc03,tc_ilc04,tc_ilc05 )
@@ -786,7 +800,7 @@ private function scimp500_sum()
     where tc_ilg02 = 'normal'
       and tc_ilg01 = to_date('260811', 'yymmdd') ;
 
-    -- 入库计划 tc_ila19 tc_ila24
+    -- 入库计划
     select sum(tc_ilb06) into l_tc_ila.tc_ila25 from tc_ilb_file
      where tc_ilb01 = g_date and tc_ilb02 = g_version
        and tc_ilb03 = g_date and tc_ilb04 = 'product'
@@ -795,7 +809,7 @@ private function scimp500_sum()
      where tc_ilb01 = g_date and tc_ilb02 = g_version
        and tc_ilb04 = 'product'
 
-    -- 销售计划 tc_ila37 tc_ila54
+    -- 销售计划
     select sum(tc_ilb06) into l_tc_ila.tc_ila47 from tc_ilb_file
      where tc_ilb01 = g_date and tc_ilb02 = g_version
        and tc_ilb03 = g_date and tc_ilb04 = 'sale'
@@ -807,52 +821,8 @@ private function scimp500_sum()
     let l_tc_ila.tc_ila04 = current hour to second
 
     update tc_ila_file
-       set tc_ila01.* = l_tc_ila.*
+       set tc_ila.* = l_tc_ila.*
      where tc_ila01 = g_date and tc_ila02 = g_version
-
-     --call cl_record_card("结束时间：",current year to second)
-
-     --call cl_record_card("日期：", g_date using 'dd-mmm-yyyy')
-     --call cl_record_card("本月剩余天数：",
-     --iif(
-     --   month(g_date)==12,
-     --   mdy(1,1,year(g_date))-g_date-1,
-     --   mdy(month(g_date)+1,1,year(g_date))-g_date-1
-     --))
-     --call cl_record_card("税率：",
-     --sfmt("本月：%1 上月：%1",l_tc_ila05,l_tc_ila06))
-     --call cl_record_card("成品入库：",
-     --sfmt("%1 (smt: %2 fpc: %3 comp: %4)",l_tc_ila07+l_tc_ila08+l_tc_ila09,l_tc_ila07,l_tc_ila08,l_tc_ila09))
-     --call cl_record_card("累计成品入库：",
-     --sfmt("%1 (smt: %2 fpc: %3 comp: %4)",l_tc_ila10+l_tc_ila11+l_tc_ila12,l_tc_ila10,l_tc_ila11,l_tc_ila12))
-     --call cl_record_card("返工入库：",
-     --sfmt("%1 (smt: %2 fpc: %3 comp: %4)",l_tc_ila13+l_tc_ila14+l_tc_ila16,l_tc_ila13,l_tc_ila14,l_tc_ila15))
-     --call cl_record_card("返工领出：",
-     --sfmt("%1 (smt: %2 fpc: %3 comp: %4)",l_tc_ila16+l_tc_ila17+l_tc_ila18,l_tc_ila16,l_tc_ila17,l_tc_ila18))
-     --call cl_record_card("累计返工领出：",
-     --sfmt("%1 (smt: %2 fpc: %3 comp: %4)",l_tc_ila69+l_tc_ila70+l_tc_ila71,l_tc_ila69,l_tc_ila70,l_tc_ila71))
-     --call cl_record_card("入库预测",sfmt("预测：%1 实际：%2 差异: %3",l_tc_ila19,l_tc_ila20,l_tc_ila20-l_tc_ila19))
-     --call cl_record_card("累计入库：",
-     --sfmt("%1 (smt: %2 fpc: %3 comp: %4)",l_tc_ila21+l_tc_ila22+l_tc_ila23,l_tc_ila21,l_tc_ila22,l_tc_ila23))
-     --call cl_record_card("累计入库预测",sfmt("预测：%1 差异: %2",l_tc_ila24,l_tc_ila25))
-     --call cl_record_card("成品出货：",
-     --sfmt("%1 (smt: %2 fpc: %3 comp: %4)",l_tc_ila26+l_tc_ila27+l_tc_ila28,l_tc_ila26,l_tc_ila27,l_tc_ila28))
-     --call cl_record_card("销退：",
-     --sfmt("%1 (smt: %2 fpc: %3 comp: %4)",l_tc_ila29+l_tc_ila30+l_tc_ila31,l_tc_ila29,l_tc_ila30,l_tc_ila31))
-     --call cl_record_card("累计销退：",
-     --sfmt("%1 (smt: %2 fpc: %3 comp: %4)",l_tc_ila32+l_tc_ila33+l_tc_ila34,l_tc_ila32,l_tc_ila33,l_tc_ila34))
-     --call cl_record_card("折让",sfmt("日：%1 月：%2 ",l_tc_ila35,l_tc_ila36))
-     --call cl_record_card("日出货",sfmt("预测：%1 出货：%2 差异：%3",l_tc_ila37,l_tc_ila38,l_tc_ila38-l_tc_ila37))
-
-     --call cl_record_card("累计出货：",
-     --sfmt("%1 (smt: %2 fpc: %3 comp: %4 dct: %5)",l_tc_ila39+l_tc_ila40+l_tc_ila41-l_tc_ila42,l_tc_ila39,l_tc_ila40,l_tc_ila41,-l_tc_ila42))
-     --call cl_record_card("材料转卖",sfmt("日：%1 月：%2 ",l_tc_ila43,l_tc_ila44))
-     --call cl_record_card("未签收：",
-     --sfmt("%1 (smt: %2 fpc: %3 comp: %4 ) samples: %5",l_tc_ila45+l_tc_ila46+l_tc_ila47,l_tc_ila45,l_tc_ila46,l_tc_ila47,l_tc_ila48))
-     --call cl_record_card("应收账款：",
-     --sfmt("%1 (smt: %2 fpc: %3 comp: %4 other: %5 dct: %6 )",l_tc_ila49+l_tc_ila50+l_tc_ila51+l_tc_ila52-l_tc_ila53,l_tc_ila49,l_tc_ila50,l_tc_ila51,l_tc_ila52,l_tc_ila53))
-     --call cl_record_card("累计销售",sfmt("预测：%1 差异：%2",l_tc_ila54,l_tc_ila49+l_tc_ila50+l_tc_ila51+l_tc_ila52-l_tc_ila53-l_tc_ila54))
-     --call cl_record_card("库存",sfmt("成品：%1 样品：%2 呆滞：%3 客退：%4",l_tc_ila55,l_tc_ila56,l_tc_ila57,l_tc_ila58))
 
 end function
 
@@ -1252,11 +1222,14 @@ function scimp500_mail(p_recipient)
 
     call cl_record_html("error,warn") returning l_body
 
-    call cs_mail_send(
-        sfmt("日进出报表 %1，运行时间 %2",g_date using "yy-mm-dd",current year to second),
-        l_body,
-        p_recipient,
-        l_attach) returning l_Ok
+    call cs_mail_sendcc(
+    sfmt("日进出报表 %1，运行时间 %2",g_date using "yy-mm-dd",current year to second),
+    l_body,
+    p_recipient,
+    "betty.lv@forewin-sz.com.cn",
+    "darcy.li@forewin-sz.com.cn",
+    l_attach
+    ) returning l_ok
 
     message "发送结果"||l_ok
 end function
