@@ -50,7 +50,7 @@
 # Modify.........: No.FUN-6A0011 06/10/04 By jamie 1.FUNCTION t250()_q 一開始應清空g_npn.*值
 #                                                  2.新增action"相關文件"
 # Modify.........: No.FUN-680064 06/10/18 By johnray 在新增函數_a()中單身函數_b()前初始化g_rec_b
-# Modify.........: No.CHI-6A0004 06/10/27 By yjkhero g_azixx(本幣取位)與t_azixx(原幣取位)變數定義問題修改 
+# Modify.........: No.CHI-6A0004 06/10/27 By yjkhero g_azixx(本幣取位)與t_azixx(原幣取位)變數定義問題修改
 # Modify.........: No.FUN-6A0082 06/11/06 By dxfwo l_time轉g_time
 # Modify.........: No.FUN-6B0030 06/11/14 By bnlent  單頭折疊功能修改
 # Modify.........: No.FUN-710024 07/01/30 By Jackho 增加批處理錯誤統整功能
@@ -74,14 +74,14 @@
 # Modify.........: No.FUN-850038 08/05/09 By TSD.Wind 自定欄位功能修改
 # Modify.........: No.FUN-8A0086 08/10/21 By zhaijie添加LET g_success = 'N'
 # Modify.........: No.MOD-8C0280 08/12/31 By Sarah 新增時需檢查輸入單號是否正確
-# Modify.........: No.FUN-860040 09/01/14 By jan 直接拋轉總帳時，(來源單號)沒有取得值 
+# Modify.........: No.FUN-860040 09/01/14 By jan 直接拋轉總帳時，(來源單號)沒有取得值
 # Modify.........: No.MOD-920326 09/02/25 By Dido 幣別條件有誤
 # Modify.........: No.MOD-930139 09/03/13 By chenl  若當月認列匯差,則本幣開票金額應為月底重評價金額.
 # Modify.........: No.MOD-940045 09/04/03 By Sarah 確認段先判斷anms101的nmz33,nmz34兩參數值不可為NULL,才可作確認
 # Modify.........: No.MOD-940192 09/04/15 By lilingyu 按"應撤/退票作廢立帳"按鈕,產生axrt300,其收款條件 應收賬日 票到期日皆無空值
 # Modify.........: No.FUN-940036 09/04/06 By jan 當其單據性質之【傳票單別】非空白者,即可有ACTION 【拋轉總帳】及【傳票拋轉還原】功能
 # Modify.........: No.FUN-980005 09/08/12 By TSD.Martin GP5.2架構重整，修改 INSERT INTO 語法
-# Modify.........: No.MOD-980093 09/08/12 By mike 銀行已關帳至８月底，但anmt150 , anmt250 卻還能做８月的兌現異動                    
+# Modify.........: No.MOD-980093 09/08/12 By mike 銀行已關帳至８月底，但anmt150 , anmt250 卻還能做８月的兌現異動
 # Modify.........: No.FUN-980030 09/08/31 By Hiko 加上GP5.2的相關設定
 # Modify.........: No.FUN-980020 09/09/02 By douzh GP5.2架構重整，修改sub相關傳參
 # Modify.........: No.FUN-980025 09/09/21 By dxfwo GP集團架構修改,sub相關參數
@@ -90,27 +90,27 @@
 # Modify.........: No.TQC-9B0162 09/11/19 By douzh GP5.2架構重整，修改sub相關傳參
 # Modify.........: No:FUN-9C0009 09/12/02 by dxfwo  GP5.2 變更檔案權限時應使用 os.Path.chrwx 指令
 # Modify.........: No.FUN-9C0073 10/01/18 By chenls 程序精簡
-# Modify.........: No:MOD-9C0372 10/02/04 By sabrina 若單頭有修改匯率資料時，應同步更新單頭、單身本幣異動金額 
+# Modify.........: No:MOD-9C0372 10/02/04 By sabrina 若單頭有修改匯率資料時，應同步更新單頭、單身本幣異動金額
 # Modify.........: No.FUN-9B0098 10/02/24 by tommas delete cl_doc
 # Modify.........: No.FUN-A20044 10/03/20 By  jiachenchao 刪除字段ima26*
 # Modify.........: No.FUN-A60056 10/07/07 By lutingting GP5.2財務串前段問題整批調整
 # Modify.........: No.FUN-A50102 10/07/19 By lixia 跨庫寫法統一改為用cl_get_target_table()來實現
 # Modify.........: No:FUN-A90063 10/09/27 By rainy INSERT INTO p630_tmp時，應給 plant/legal值
-# Modify.........: No.MOD-AB0172 10/11/17 by Dido 退票應允許託收 
+# Modify.........: No.MOD-AB0172 10/11/17 by Dido 退票應允許託收
 # Modify.........: No.TQC-AB0247 10/11/30 By lixia執行撤/退/作廢票立帳時,報錯
-# Modify.........: No.MOD-AC0019 10/12/02 by Dido 拋轉應收立帳取消 QBE 選擇,以單一單據拋轉為主 
+# Modify.........: No.MOD-AC0019 10/12/02 by Dido 拋轉應收立帳取消 QBE 選擇,以單一單據拋轉為主
 # Modify.........: No.MOD-AC0073 10/12/09 By Dido 立即確認時,確認圖示調整
-# Modify.........: No.MOD-AC0104 10/12/13 by Dido REPORT 段取消 GROUP SUM(oma58) 
+# Modify.........: No.MOD-AC0104 10/12/13 by Dido REPORT 段取消 GROUP SUM(oma58)
 # Modify.........: No:FUN-AB0034 10/12/16 By wujie   oma73/oma73f预设0
-# Modify.........: No:MOD-AC0121 10/12/16 By Dido REPORT 段增加 GROUP SUM(oma61) 
-# Modify.........: No:TQC-B10106 11/01/14 By Dido 取消 show 段檢核編號 
+# Modify.........: No:MOD-AC0121 10/12/16 By Dido REPORT 段增加 GROUP SUM(oma61)
+# Modify.........: No:TQC-B10106 11/01/14 By Dido 取消 show 段檢核編號
 # Modify.........: No:FUN-B20073 11/02/24 By lilingyu 科目查詢自動過濾-hcode
 # Modify.........: No:MOD-B30576 11/03/18 By Sarah nme12不應給值m_npo.npo03,應給值g_npn.npn01
 # Modify.........: No:MOD-B30631 11/03/22 By Dido omb06 說明需依語言別轉換
 # Modify.........: No:FUN-B30166 11/03/29 By zhangweib nme_file add nme27
 # Modify.........: No:FUN-B40003 11/04/06 By guoch  取消異動別2.託收的狀態輸入
 # Modify.........: No:FUN-B40011 11/04/22 By guoch  npn03='5'時，判斷該收票單號的轉付金額大於0時，不可取消審核
-# Modify.........: No:MOD-B50085 11/05/11 By Dido 刪除 nme_file 需增加 nme21 條件 
+# Modify.........: No:MOD-B50085 11/05/11 By Dido 刪除 nme_file 需增加 nme21 條件
 # Modify.........: No:FUN-B40056 11/05/13 By lixia 刪除資料時一併刪除tic_file的資料
 # Modify.........: No.FUN-B50090 11/05/16 By suncx 財務關帳日期加嚴控管修正
 # Modify.........: No.FUN-B50063 11/05/25 By xianghui BUG修改，刪除時提取資料報400錯誤
@@ -118,11 +118,11 @@
 # Modify.........: No:TQC-B70197 11/07/26 By guoch 将FUN-B4003取消移动别2.托收的状态还原
 # Modify.........: No:TQC-B70209 11/07/29 By guoch tic_file数据删除时逻辑错误，进行bug修复
 # Modify.........: No:CHI-B80020 11/08/11 By Polly 應撤/退/作廢票時，oma33=''
-# Modify.........: No:MOD-B80268 11/08/27 By Dido 自動產生兌現與檢核需以異動日以後的到期為主 
-# Modify.........: No.FUN-B90062 11/09/15 By wujie 产生nme_file时同时产生tic_file  
+# Modify.........: No:MOD-B80268 11/08/27 By Dido 自動產生兌現與檢核需以異動日以後的到期為主
+# Modify.........: No.FUN-B90062 11/09/15 By wujie 产生nme_file时同时产生tic_file
 # Modify.........: No.MOD-BB0017 11/11/03 By Polly 當有單身資料時,單頭幣別不可異動
 # Modify.........: No.TQC-BB0089 11/11/09 By yinhy 查詢時，資料建立者，資料建立部門無法下查詢條件
-# Modify.........: No.MOD-BB0301 11/11/29 By Dido 單別說明顯示處理 
+# Modify.........: No.MOD-BB0301 11/11/29 By Dido 單別說明顯示處理
 # Modify.........: No.TQC-BC0031 11/12/06 By yinhy 轉付時，需判斷該票據nmh41是否為'Y'，若為'Y'則不可做轉付
 # Modify.........: No.MOD-C10010 12/01/04 By Polly 將SQL有使用到MATCHES者改為IN
 # Modify.........: No.MOD-C20010 12/02/01 By yinhy nme14若為空給默認值
@@ -166,11 +166,11 @@
 # Modify.........: NO:FUN-E80012 18/11/27 By lixwz 修改付款日期之後,tic現金流量明細重複
 
 
-IMPORT os   #No.FUN-9C0009  
+IMPORT os   #No.FUN-9C0009
 DATABASE ds
- 
+
 GLOBALS "../../config/top.global"
- 
+
 DEFINE
     g_nme   RECORD LIKE nme_file.*,
     g_nmh   RECORD LIKE nmh_file.*,
@@ -269,11 +269,11 @@ DEFINE g_flag         LIKE type_file.chr1       #No.FUN-730032
 DEFINE g_bookno1      LIKE aza_file.aza81       #No.FUN-730032
 DEFINE g_bookno2      LIKE aza_file.aza82       #No.FUN-730032
 DEFINE g_bookno3      LIKE aza_file.aza82       #No.FUN-730032
- 
+
 DEFINE g_argv2          STRING                  #No.FUN-630020 add
 DEFINE g_forupd_sql     STRING                  #SELECT ... FOR UPDATE SQL
 DEFINE g_before_input_done  LIKE type_file.num5    #No.FUN-680107 SMALLINT
- 
+
 DEFINE   g_cnt          LIKE type_file.num10   #No.FUN-680107 INTEGER
 DEFINE   g_i            LIKE type_file.num5    #count/index for any purpose  #No.FUN-680107 SMALLINT
 DEFINE   g_msg          LIKE ze_file.ze03      #No.FUN-680107 VARCHAR(72)
@@ -290,8 +290,8 @@ DEFINE   g_plant2       LIKE type_file.chr10   #FUN-980020
 DEFINE   g_apa01        LIKE apa_file.apa01    #FUN-C70129
 DEFINE   g_apa          RECORD LIKE apa_file.* #FUN-C70129
 DEFINE   g_apb          RECORD LIKE apb_file.* #FUN-C70129
-DEFINE g_net            LIKE apv_file.apv04    #FUN-C70129 
- 
+DEFINE g_net            LIKE apv_file.apv04    #FUN-C70129
+
 MAIN
    DEFINE p_row,p_col   LIKE type_file.num5    #No.FUN-680107 SMALLINT
    DEFINE comb_value    STRING                 #TQC-B70197 add
@@ -299,26 +299,26 @@ MAIN
    OPTIONS
       INPUT NO WRAP
    DEFER INTERRUPT
- 
+
    IF (NOT cl_user()) THEN
       EXIT PROGRAM
    END IF
- 
+
    WHENEVER ERROR CALL cl_err_msg_log
- 
+
    IF (NOT cl_setup("ANM")) THEN
       EXIT PROGRAM
    END IF
- 
- 
+
+
    LET g_argv1 = ARG_VAL(1)
    LET g_argv2=ARG_VAL(2)          #No.FUN-630020 add
    CALL  cl_used(g_prog,g_time,1) RETURNING g_time #No.MOD-580088  HCN 20050818  #No.FUN-6A0082
- 
+
    LET g_forupd_sql = "SELECT * FROM npn_file WHERE npn01 = ? FOR UPDATE"
    LET g_forupd_sql = cl_forupd_sql(g_forupd_sql)
    DECLARE t250_cl CURSOR FROM g_forupd_sql              # LOCK CURSOR
- 
+
    LET g_wc1 = " 1=1"
    LET g_plant_gl = g_nmz.nmz02p                       #FUN-980020
    LET g_plant_new = g_nmz.nmz02p
@@ -327,12 +327,12 @@ MAIN
    LET p_row = 1 LET p_col = 2
     OPEN WINDOW t250_w AT p_row,p_col
       WITH FORM "anm/42f/anmt250"  ATTRIBUTE (STYLE = g_win_style CLIPPED) #No.FUN-580092 HCN
- 
+
     CALL cl_ui_init()
     CALL cl_set_comp_visible("npn061,npn071",g_aza.aza63 = 'Y')
   #TQC-B70197 --begin
     IF g_aza.aza26 = '2' THEN
-       LET comb_value = '3,4,5,6,7,8,9' #FUN-C70129 add 9                                                                                      
+       LET comb_value = '3,4,5,6,7,8,9' #FUN-C70129 add 9
        SELECT ze03 INTO comb_item FROM ze_file
         WHERE ze01='anm-662' AND ze02=g_lang
        CALL cl_set_combo_items('npn03',comb_value,comb_item)
@@ -343,10 +343,10 @@ MAIN
   #TQC-B70197 --end  mark
    # 先以g_argv2判斷直接執行哪種功能，
    # 執行I時，g_argv1是單號
-  
+
    LET g_plant2 = g_plant                       #FUN-980020
    LET g_dbs2 = s_dbstring(g_dbs CLIPPED)       #MOD-940192
-     
+
    IF NOT cl_null(g_argv1) THEN
       CASE g_argv2
          WHEN "query"
@@ -367,7 +367,7 @@ MAIN
    CLOSE WINDOW t250_w
      CALL  cl_used(g_prog,g_time,2) RETURNING g_time #No.MOD-580088  HCN 20050818  #No.FUN-6A0082
 END MAIN
- 
+
 FUNCTION t250_cs()
 DEFINE  lc_qbe_sn       LIKE    gbm_file.gbm01    #No.FUN-580031  HCN
    CLEAR FORM
@@ -389,7 +389,7 @@ DEFINE  lc_qbe_sn       LIKE    gbm_file.gbm01    #No.FUN-580031  HCN
                    npnud11,npnud12,npnud13,npnud14,npnud15
          BEFORE CONSTRUCT
             CALL cl_qbe_init()
- 
+
          ON ACTION CONTROLP
             CASE
                WHEN INFIELD(npn01)
@@ -408,7 +408,7 @@ DEFINE  lc_qbe_sn       LIKE    gbm_file.gbm01    #No.FUN-580031  HCN
                   NEXT FIELD npn04
                WHEN INFIELD(npn06)
                   CALL s_get_bookno1(YEAR(g_npn.npn02),g_plant_gl) RETURNING g_flag,g_bookno1,g_bookno2    #No.FUN-980020
-                  CALL q_m_aag(TRUE,TRUE,g_plant_gl,g_npn.npn06,'23',g_bookno1)     #No.FUN-980025 
+                  CALL q_m_aag(TRUE,TRUE,g_plant_gl,g_npn.npn06,'23',g_bookno1)     #No.FUN-980025
                   RETURNING g_npn.npn06
                   DISPLAY BY NAME g_npn.npn06
                   NEXT FIELD npn06
@@ -418,10 +418,10 @@ DEFINE  lc_qbe_sn       LIKE    gbm_file.gbm01    #No.FUN-580031  HCN
                   RETURNING g_npn.npn07
                   DISPLAY BY NAME g_npn.npn07
                   NEXT FIELD npn07
- 
+
                WHEN INFIELD(npn061)
                   CALL s_get_bookno1(YEAR(g_npn.npn02),g_plant_gl) RETURNING g_flag,g_bookno1,g_bookno2   #FUN-980020
-                  CALL q_m_aag(TRUE,TRUE,g_plant_gl,g_npn.npn061,'23',g_bookno2)     #No.FUN-980025 
+                  CALL q_m_aag(TRUE,TRUE,g_plant_gl,g_npn.npn061,'23',g_bookno2)     #No.FUN-980025
                   RETURNING g_npn.npn061
                   DISPLAY BY NAME g_npn.npn061
                   NEXT FIELD npn061
@@ -431,8 +431,8 @@ DEFINE  lc_qbe_sn       LIKE    gbm_file.gbm01    #No.FUN-580031  HCN
                   RETURNING g_npn.npn071
                   DISPLAY BY NAME g_npn.npn071
                   NEXT FIELD npn071
- 
- 
+
+
               WHEN INFIELD(npn13)
                   CALL cl_init_qry_var()
                   LET g_qryparam.form = "q_nma"
@@ -457,25 +457,25 @@ DEFINE  lc_qbe_sn       LIKE    gbm_file.gbm01    #No.FUN-580031  HCN
          ON IDLE g_idle_seconds
             CALL cl_on_idle()
             CONTINUE CONSTRUCT
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
+
       ON ACTION controlg      #MOD-4C0121
          CALL cl_cmdask()     #MOD-4C0121
- 
+
                 ON ACTION qbe_select
                    CALL cl_qbe_list() RETURNING lc_qbe_sn
                    CALL cl_qbe_display_condition(lc_qbe_sn)
- 
+
       END CONSTRUCT
- 
+
       IF INT_FLAG THEN RETURN END IF
       LET g_wc = g_wc CLIPPED,cl_get_extra_cond('npnuser', 'npngrup')
- 
+
       CONSTRUCT g_wc1 ON npo02,npo03,npo04,npo05,npo06
                          ,npoud01,npoud02,npoud03,npoud04,npoud05
                          ,npoud06,npoud07,npoud08,npoud09,npoud10
@@ -487,10 +487,10 @@ DEFINE  lc_qbe_sn       LIKE    gbm_file.gbm01    #No.FUN-580031  HCN
                       ,s_npo[1].npoud07,s_npo[1].npoud08,s_npo[1].npoud09
                       ,s_npo[1].npoud10,s_npo[1].npoud11,s_npo[1].npoud12
                       ,s_npo[1].npoud13,s_npo[1].npoud14,s_npo[1].npoud15
- 
+
          BEFORE CONSTRUCT
             CALL cl_qbe_display_condition(lc_qbe_sn)
- 
+
          ON ACTION CONTROLP
             CASE
                WHEN INFIELD(npo03)
@@ -504,24 +504,24 @@ DEFINE  lc_qbe_sn       LIKE    gbm_file.gbm01    #No.FUN-580031  HCN
          ON IDLE g_idle_seconds
             CALL cl_on_idle()
             CONTINUE CONSTRUCT
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
+
       ON ACTION controlg      #MOD-4C0121
          CALL cl_cmdask()     #MOD-4C0121
- 
+
           ON ACTION qbe_save
              CALL cl_qbe_save()
- 
+
       END CONSTRUCT
- 
+
       IF INT_FLAG THEN RETURN END IF
    END IF
- 
+
    IF cl_null(g_wc1) OR g_wc1=" 1=1 " THEN
       LET g_sql="SELECT npn01 FROM npn_file ", # 組合出 SQL 指令
                 " WHERE ",g_wc CLIPPED, " ORDER BY npn01"
@@ -534,7 +534,7 @@ DEFINE  lc_qbe_sn       LIKE    gbm_file.gbm01    #No.FUN-580031  HCN
    PREPARE t250_pr FROM g_sql           # RUNTIME 編譯
    DECLARE t250_cs                         # SCROLL CURSOR
        SCROLL CURSOR WITH HOLD FOR t250_pr
- 
+
    IF cl_null(g_wc1) OR g_wc1=" 1=1 " THEN    #捉出符合QBE條件的
       LET g_sql="SELECT COUNT(*) FROM npn_file ",
                 " WHERE ",g_wc CLIPPED
@@ -545,10 +545,10 @@ DEFINE  lc_qbe_sn       LIKE    gbm_file.gbm01    #No.FUN-580031  HCN
    PREPARE t250_precount FROM g_sql                           # row的個數
    DECLARE t250_count CURSOR FOR t250_precount
 END FUNCTION
- 
+
 FUNCTION t250_menu()
    DEFINE   l_cmd   LIKE type_file.chr1000 #No.FUN-680107 VARCHAR(100)
- 
+
    WHILE TRUE
       CALL t250_bp("G")
       CASE g_action_choice
@@ -564,7 +564,7 @@ FUNCTION t250_menu()
             IF cl_chk_act_auth() THEN
                CALL t250_r()
                LET g_nmy.nmydesc = NULL   #TQC-C70026   add
-               CALL t250_show()    #TQC-C70026   add 
+               CALL t250_show()    #TQC-C70026   add
                DISPLAY g_row_count TO FORMONLY.cnt   #TQC-C70026   add
             END IF
          WHEN "modify"
@@ -586,7 +586,7 @@ FUNCTION t250_menu()
                   LET l_cmd =  "gnmg250 '' '' '",g_lang,"' 'Y' '' '' "," '",g_wc CLIPPED,"' '3'" CLIPPED
                ELSE
                #FUN-D10098--add--end--
-                  LET l_cmd =  "anmg250 '' '' '",g_lang,"' 'Y' '' '' "," '",g_wc CLIPPED,"' '3'" CLIPPED #FUN-C30085 add 
+                  LET l_cmd =  "anmg250 '' '' '",g_lang,"' 'Y' '' '' "," '",g_wc CLIPPED,"' '3'" CLIPPED #FUN-C30085 add
                END IF   #FUN-D10098 add
                CALL cl_cmdrun(l_cmd CLIPPED)
             END IF
@@ -613,7 +613,7 @@ FUNCTION t250_menu()
          #WHEN "取消作廢"
          WHEN "undo_void"
             IF cl_chk_act_auth() THEN
-               CALL t250_x(2)                 
+               CALL t250_x(2)
                IF g_npn.npnconf = 'X' THEN
                   LET g_void = 'Y'
                ELSE
@@ -622,7 +622,7 @@ FUNCTION t250_menu()
                CALL cl_set_field_pic(g_npn.npnconf,"","","",g_void,"")
             END IF
          #FUN-D20035---ADD---END
-         
+
          #WHEN "確認"
          WHEN "confirm"
             IF cl_chk_act_auth() THEN
@@ -657,7 +657,7 @@ FUNCTION t250_menu()
                CALL s_showmsg_init()   #No.FUN-710024
                CALL s_fsgl('NM',2,g_npn.npn01,g_npn.npn10,g_nmz.nmz02b,
                              g_npn.npn03,g_npn.npnconf,'0',g_nmz.nmz02p)
-               CALL s_showmsg()        #No.FUN-710024   
+               CALL s_showmsg()        #No.FUN-710024
                CALL t250_npp02('0')
             END IF
          WHEN "entry_sheet1"
@@ -665,22 +665,22 @@ FUNCTION t250_menu()
              CALL s_showmsg_init()   #No.FUN-710024
              CALL s_fsgl('NM',2,g_npn.npn01,g_npn.npn10,g_nmz.nmz02c,
                           g_npn.npn03,g_npn.npnconf,'1',g_nmz.nmz02p)
-             CALL s_showmsg()        #No.FUN-710024   
+             CALL s_showmsg()        #No.FUN-710024
              CALL t250_npp02('1')
           END IF
          WHEN "carry_voucher"
             IF cl_chk_act_auth() THEN
                IF g_npn.npnconf ='Y' THEN
                   CALL t250_carry_voucher()
-               ELSE 
+               ELSE
                   CALL cl_err('','atm-402',1)
                END IF
             END IF
          WHEN "undo_carry_voucher"
             IF cl_chk_act_auth() THEN
                IF g_npn.npnconf ='Y' THEN
-                  CALL t250_undo_carry_voucher() 
-               ELSE 
+                  CALL t250_undo_carry_voucher()
+               ELSE
                   CALL cl_err('','atm-402',1)
                END IF
             END IF
@@ -694,17 +694,17 @@ FUNCTION t250_menu()
             IF cl_chk_act_auth() THEN
                CALL t250_t2()
             END IF
- 
+
         WHEN "qry_misc_ar"
-           IF cl_chk_act_auth() THEN      
+           IF cl_chk_act_auth() THEN
               IF not cl_null(g_npn.npn01) THEN
                  LET g_oma01 = null
                  SELECT oma01 INTO g_oma01 FROM oma_file WHERE oma16=g_npn.npn01
                  LET l_cmd = "axrt300 '",g_oma01,"' q"
-                 CALL cl_cmdrun(l_cmd CLIPPED) 
+                 CALL cl_cmdrun(l_cmd CLIPPED)
               END IF
            END IF
- 
+
         WHEN "exporttoexcel"     #FUN-4B0008
             IF cl_chk_act_auth() THEN
               CALL cl_export_to_excel(ui.Interface.getRootNode(),base.TypeInfo.create(g_npo),'','')
@@ -742,12 +742,12 @@ FUNCTION t250_menu()
    END WHILE
     CLOSE t250_cs
 END FUNCTION
- 
+
 FUNCTION t250_q()
     LET g_row_count = 0
     LET g_curs_index = 0
     CALL cl_navigator_setting( g_curs_index, g_row_count )
-    INITIALIZE g_npn.* TO NULL             #No.FUN-6A0011   
+    INITIALIZE g_npn.* TO NULL             #No.FUN-6A0011
    MESSAGE ""
    CALL cl_opmsg('q')
    DISPLAY '   ' TO FORMONLY.cnt
@@ -767,12 +767,12 @@ FUNCTION t250_q()
       CALL t250_fetch('F')                  # 讀出TEMP第一筆並顯示
    END IF
 END FUNCTION
- 
+
 FUNCTION t250_fetch(p_flnpn)
    DEFINE
        p_flnpn         LIKE type_file.chr1,   #No.FUN-680107 VARCHAR(1)
        l_abso          LIKE type_file.num10   #No.FUN-680107 INTEGER
- 
+
    CASE p_flnpn
       WHEN 'N' FETCH NEXT     t250_cs INTO g_npn.npn01
       WHEN 'P' FETCH PREVIOUS t250_cs INTO g_npn.npn01
@@ -785,16 +785,16 @@ FUNCTION t250_fetch(p_flnpn)
                PROMPT g_msg CLIPPED,': ' FOR g_jump
                   ON IDLE g_idle_seconds
                      CALL cl_on_idle()
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
+
       ON ACTION controlg      #MOD-4C0121
          CALL cl_cmdask()     #MOD-4C0121
- 
+
                END PROMPT
                IF INT_FLAG THEN
                    LET INT_FLAG = 0
@@ -816,7 +816,7 @@ FUNCTION t250_fetch(p_flnpn)
          WHEN 'L' LET g_curs_index = g_row_count
          WHEN '/' LET g_curs_index = g_jump
       END CASE
- 
+
       CALL cl_navigator_setting( g_curs_index, g_row_count )
    END IF
    SELECT * INTO g_npn.* FROM npn_file            # 重讀DB,因TEMP有不被更新特性
@@ -829,7 +829,7 @@ FUNCTION t250_fetch(p_flnpn)
       CALL t250_show()                      # 重新顯示
    END IF
 END FUNCTION
- 
+
 FUNCTION t250_show()
    DEFINE l_azi02,a,b LIKE azi_file.azi02    #No.FUN-680107 VARCHAR(20)
    DEFINE l_nml02     LIKE nml_file.nml02    #No.FUN-680107 VARCHAR(12)
@@ -844,29 +844,29 @@ FUNCTION t250_show()
    END IF
    #FUN-C80083--ADD--END
    DISPLAY BY NAME g_npn.npn01,g_npn.npn02,g_npn.npn03,g_npn.npn04,g_npn.npn05, g_npn.npnoriu,g_npn.npnorig,
-                   g_npn.npn06,g_npn.npn07,g_npn.npn061,g_npn.npn071,           # No.FUN-680034  add g_npn.npn061,g_npn.npn071    
+                   g_npn.npn06,g_npn.npn07,g_npn.npn061,g_npn.npn071,           # No.FUN-680034  add g_npn.npn061,g_npn.npn071
                    g_npn.npn08,g_npn.npn09,g_npn.npn10,
                    g_npn.npn11,g_npn.npn12,g_npn.npn13,g_npn.npn14,g_npn.npnconf,
                    g_npn.npnuser,g_npn.npngrup,g_npn.npnmodu,g_npn.npndate,
                    g_npn.npnud01,g_npn.npnud02,g_npn.npnud03,g_npn.npnud04,
                    g_npn.npnud05,g_npn.npnud06,g_npn.npnud07,g_npn.npnud08,
                    g_npn.npnud09,g_npn.npnud10,g_npn.npnud11,g_npn.npnud12,
-                   g_npn.npnud13,g_npn.npnud14,g_npn.npnud15 
- 
- 
+                   g_npn.npnud13,g_npn.npnud14,g_npn.npnud15
+
+
    #CALL s_check_no("anm",g_npn.npn01,"","B","","","")  #FUN-560095 #TQC-B10106 mark
    #RETURNING li_result,g_npn.npn01                                 #TQC-B10106 mark
 
    #-MOD-BB0301-add-
     LET g_t1 = s_get_doc_no(g_npn.npn01)
-    SELECT * INTO g_nmy.*   
-      FROM nmy_file         
-     WHERE nmyslip = g_t1  
+    SELECT * INTO g_nmy.*
+      FROM nmy_file
+     WHERE nmyslip = g_t1
    #-MOD-BB0301-end-
 
     DISPLAY g_nmy.nmydesc TO nmydesc
     LET g_buf = NULL
- 
+
    SELECT nma02 INTO g_buf FROM nma_file WHERE nma01=g_npn.npn13
    DISPLAY g_buf TO nma02
    LET g_buf = NULL
@@ -884,11 +884,11 @@ FUNCTION t250_show()
    CALL cl_set_field_pic(g_npn.npnconf,"","","",g_void,"")
    CALL cl_show_fld_cont()                   #No.FUN-550037
 END FUNCTION
- 
+
 FUNCTION t250_a()           #輸入
    DEFINE l_cmd       LIKE type_file.chr1000 #No.FUN-680107 VARCHAR(400)
    DEFINE li_result   LIKE type_file.num5    #No.FUN-550057  #No.FUN-680107 SMALLINT
- 
+
    IF s_anmshut(0) THEN RETURN END IF
    MESSAGE ""
    CLEAR FORM                                # 清螢墓欄位內容
@@ -930,9 +930,9 @@ FUNCTION t250_a()           #輸入
       IF cl_null(g_npn.npn05) OR g_npn.npn05<=0 THEN
          CALL s_curr3(g_npn.npn04,g_npn.npn02,'B') RETURNING g_npn.npn05
       END IF
-      
-      LET g_npn.npnlegal = g_legal 
- 
+
+      LET g_npn.npnlegal = g_legal
+
       INSERT INTO npn_file VALUES (g_npn.*)
       IF SQLCA.sqlcode THEN
          CALL cl_err3("ins","npn_file",g_npn.npn01,"",SQLCA.sqlcode,"","t250_ins_npn:",1)  #No.FUN-660148
@@ -947,7 +947,7 @@ FUNCTION t250_a()           #輸入
       CALL g_npo.clear()
       SELECT npn01 INTO g_npn.npn01 FROM npn_file WHERE npn01 = g_npn.npn01
       LET g_npn_t.* = g_npn.*
-      LET g_rec_b = 0                    #No.FUN-680064 
+      LET g_rec_b = 0                    #No.FUN-680064
       CALL t250_b()
       MESSAGE " Wait ...."
       IF INT_FLAG THEN                   #使用者不玩了
@@ -962,7 +962,7 @@ FUNCTION t250_a()           #輸入
       EXIT WHILE
    END WHILE
 END FUNCTION
- 
+
 FUNCTION t250_g_b()                       #由出貨通知單/訂單自動產生單身
    SELECT COUNT(*) INTO g_cnt FROM npo_file WHERE npo01=g_npn.npn01
    IF g_cnt = 0 THEN
@@ -970,45 +970,45 @@ FUNCTION t250_g_b()                       #由出貨通知單/訂單自動產生
       CALL t250_bu()
       CALL t250_b_fill(' 1=1')
    END IF
- 
+
 END FUNCTION
- 
+
 FUNCTION t250_g_b1()                       #由應付票據產生單身
    DEFINE l_wc    STRING   #No:9589  #No.FUN-680107 VARCHAR(1000) #MOD-BB0301 mod 1000 -> STRING
    DEFINE l_npn01 LIKE npn_file.npn01
    DEFINE l_rate  LIKE nmh_file.nmh39 #MOD-C20085
    #darcy:2024/09/04 add s---
-   define l_npo04 like npo_file.npo04 
-   define l_npo05 like npo_file.npo05 
+   define l_npo04 like npo_file.npo04
+   define l_npo05 like npo_file.npo05
    #darcy:2024/09/04 add e---
- 
+
    LET b_npo.npo01=g_npn.npn01
    LET b_npo.npo02=0
- 
- 
+
+
    OPEN WINDOW t250b_w AT 6,20 WITH FORM "anm/42f/anmt2501"
          ATTRIBUTE (STYLE = g_win_style CLIPPED) #No.FUN-580092 HCN
- 
+
     CALL cl_ui_locale("anmt2501")
- 
- 
+
+
    CONSTRUCT BY NAME l_wc ON nmh04,nmh01,nmh31,nmh05,nmh09,nmh10,nmh29,nmh21
               BEFORE CONSTRUCT
                  CALL cl_qbe_init()
       ON IDLE g_idle_seconds
          CALL cl_on_idle()
          CONTINUE CONSTRUCT
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
+
       ON ACTION controlg      #MOD-4C0121
          CALL cl_cmdask()     #MOD-4C0121
- 
- 
+
+
                  ON ACTION qbe_select
          	   CALL cl_qbe_select()
                  ON ACTION qbe_save
@@ -1020,7 +1020,7 @@ FUNCTION t250_g_b1()                       #由應付票據產生單身
       RETURN
    END IF
    CLOSE WINDOW t250b_w
- 
+
    MESSAGE "WORKING !"
    LET g_sql = "SELECT *  FROM nmh_file WHERE",
                "  nmh38='Y' AND ",
@@ -1058,7 +1058,7 @@ FUNCTION t250_g_b1()                       #由應付票據產生單身
    END IF
    IF g_npn.npn03 MATCHES '[8]' THEN
      #LET g_sql=g_sql CLIPPED," AND nmh24 IN ('2','3') "            #MOD-B80268 mark
-      LET g_sql=g_sql CLIPPED," AND nmh24 IN ('2','3','4','5') AND nmh05 <= '",g_npn.npn02,"'" #MOD-B80268  
+      LET g_sql=g_sql CLIPPED," AND nmh24 IN ('2','3','4','5') AND nmh05 <= '",g_npn.npn02,"'" #MOD-B80268
                 ," and nmh02 > nvl((select sum(npo04) from npo_file,npn_file where npo01 = npn01 and npnconf <> 'X' and npo03 = nmh01),0) "# darcy:2025/06/27 add
       # darcy:2025/06/27 mod add 4,5 票贴 和 转付 后也可以兑现
    END IF
@@ -1067,10 +1067,10 @@ FUNCTION t250_g_b1()                       #由應付票據產生單身
       LET g_sql=g_sql CLIPPED," AND nmh24 IN ('2','3','4','8') "    #MOD-AB0172
    END IF
    #FUN-C70129--add--str
-   IF g_npn.npn03 = '9' THEN 
+   IF g_npn.npn03 = '9' THEN
       LET g_sql = g_sql CLIPPED," AND nmh24 = '5' AND nmh22 = '",g_npn.npn14,"'",
                   "               AND nmh42 > 0 "
-   END IF 
+   END IF
    #FUN-C70129--add--str
    PREPARE t250_b_p FROM g_sql
    DECLARE t250_b_c CURSOR WITH HOLD FOR t250_b_p
@@ -1108,7 +1108,7 @@ FUNCTION t250_g_b1()                       #由應付票據產生單身
          #No.MOD-C20085  --Begin
          #LET b_npo.npo05 = g_nmh.nmh40
          LET l_rate = g_nmh.nmh39
-         IF cl_null(l_rate) OR l_rate = 0 THEN 
+         IF cl_null(l_rate) OR l_rate = 0 THEN
             LET l_rate = g_nmh.nmh28
          END IF
          LET b_npo.npo05 = g_nmh.nmh02 * l_rate
@@ -1123,7 +1123,7 @@ FUNCTION t250_g_b1()                       #由應付票據產生單身
       LET b_npo.npo08=g_nmh.nmh25
       LET b_npo.npo09=0          #FUN-C80083
       LET b_npo.npo10=0          #FUN-C80083
- 
+
       LET b_npo.npoud01 = ''
       LET b_npo.npoud02 = ''
       LET b_npo.npoud03 = ''
@@ -1139,14 +1139,14 @@ FUNCTION t250_g_b1()                       #由應付票據產生單身
       LET b_npo.npoud13 = ''
       LET b_npo.npoud14 = ''
       LET b_npo.npoud15 = ''
- 
-      LET b_npo.npolegal = g_legal 
- 
+
+      LET b_npo.npolegal = g_legal
+
       INSERT INTO npo_file VALUES (b_npo.*)
    END FOREACH
    MESSAGE " "
 END FUNCTION
- 
+
 FUNCTION t250_i(p_cmd)
     DEFINE p_cmd     LIKE type_file.chr1    #No.FUN-680107 VARCHAR(1)
     DEFINE l_n       LIKE type_file.num5    #No.FUN-680107 SMALLINT
@@ -1170,7 +1170,7 @@ FUNCTION t250_i(p_cmd)
     DEFINE li_sql    STRING
     #TQC-C50107--add--end
     DEFINE l_pmc03   LIKE pmc_file.pmc03    #No.FUN-C90092
- 
+
     CALL cl_set_head_visible("","YES")   #No.FUN-6B0030
     INPUT BY NAME g_npn.npn01,g_npn.npn02,g_npn.npn03,g_npn.npn04,g_npn.npn05, g_npn.npnoriu,g_npn.npnorig,
                   g_npn.npn13,g_npn.npn14,g_npn.npn06,g_npn.npn07,
@@ -1181,9 +1181,9 @@ FUNCTION t250_i(p_cmd)
                   g_npn.npnud01,g_npn.npnud02,g_npn.npnud03,g_npn.npnud04,
                   g_npn.npnud05,g_npn.npnud06,g_npn.npnud07,g_npn.npnud08,
                   g_npn.npnud09,g_npn.npnud10,g_npn.npnud11,g_npn.npnud12,
-                  g_npn.npnud13,g_npn.npnud14,g_npn.npnud15 
+                  g_npn.npnud13,g_npn.npnud14,g_npn.npnud15
         WITHOUT DEFAULTS
- 
+
       BEFORE INPUT
          LET g_before_input_done = FALSE
          CALL t250_set_entry(p_cmd)
@@ -1192,7 +1192,7 @@ FUNCTION t250_i(p_cmd)
          CALL cl_set_docno_format("npn01")  #FUN-560095
          CALL cl_set_docno_format("npn09")  #FUN-560095
          CALL cl_set_docno_format("npo03")  #FUN-560095
- 
+
         AFTER FIELD npn01
            IF (p_cmd='a' AND g_npn.npn01 IS NOT NULL) OR                      #MOD-8C0280
               (p_cmd='u' AND g_npn.npn01 != g_npn_t.npn01) THEN               #MOD-8C0280
@@ -1203,11 +1203,11 @@ FUNCTION t250_i(p_cmd)
               NEXT FIELD npn01
            END IF
            END IF
- 
+
         AFTER FIELD npn02
            IF NOT cl_null(g_npn.npn02) THEN
                SELECT nph02 INTO l_nph02 FROM nph_file WHERE nph01=g_npn.npn02
-               IF STATUS = 0 THEN 
+               IF STATUS = 0 THEN
                  CALL cl_err(l_nph02,'anm-075',0)    #No.FUN-660148
                  CALL cl_err3("sel","nph_file",g_npn.npn02,"","anm-075","","",1)  #No.FUN-660148
                  NEXT FIELD npn02
@@ -1224,25 +1224,25 @@ FUNCTION t250_i(p_cmd)
                  LET li_sql = " SELECT npo03 FROM npo_file ",
                               "  WHERE npo01 = '",g_npn.npn01,"'"
                  PREPARE t250_npo03 FROM li_sql
-                 DECLARE npo03_cur1 CURSOR FOR t250_npo03 
+                 DECLARE npo03_cur1 CURSOR FOR t250_npo03
                  FOREACH npo03_cur1 INTO l_npo03
-                    SELECT nmh05 INTO l_nmh05 FROM nmh_file 
+                    SELECT nmh05 INTO l_nmh05 FROM nmh_file
                      WHERE nmh01 = l_npo03
                     IF l_nmh05 < g_npn.npn02 THEN
                        LET l_true = 1
                     END IF
                  END FOREACH
-                 IF l_true = 1 THEN 
-                    CALL cl_err('','anm-664',1) 
+                 IF l_true = 1 THEN
+                    CALL cl_err('','anm-664',1)
                     NEXT FIELD npn02
                  END IF
               END IF
               #TQC-C50107---add--end
            END IF
- 
+
         BEFORE FIELD npn03
            CALL t250_set_entry(p_cmd)
- 
+
         AFTER FIELD npn03
            IF NOT cl_null(g_npn.npn03) THEN
               IF g_npn.npn03 NOT MATCHES "[23456789]" THEN      #NO.FUN-B40003  #TQC-B70197 add 2 #FUN-C70129 add 9
@@ -1250,14 +1250,14 @@ FUNCTION t250_i(p_cmd)
               END IF
            END IF
            #FUN-C70129--add--str
-           IF g_npn.npn03 = '9' THEN 
+           IF g_npn.npn03 = '9' THEN
               CALL cl_set_comp_required('npn14',TRUE)
            ELSE
               CALL cl_set_comp_required('npn14',FALSE)
-           END IF 
+           END IF
            #FUN-C70129--add--end
            CALL t250_set_no_entry(p_cmd)
-          
+
         #FUN-C80083--ADD--STR
         ON CHANGE npn03
            IF g_npn.npn03='4' THEN
@@ -1265,38 +1265,38 @@ FUNCTION t250_i(p_cmd)
            ELSE
               CALL cl_set_comp_visible('npo09,npo10',FALSE)
            END IF
-        #FUN-C80083--ADD--END 
+        #FUN-C80083--ADD--END
            #FUN-CA0083--add--str
-           IF g_npn.npn03 = '9' THEN 
-              IF g_nmz.nmz11 = 'N' THEN 
-                 SELECT DISTINCT nms22,nms40 INTO g_npn.npn06,g_npn.npn07 FROM nms_file 
+           IF g_npn.npn03 = '9' THEN
+              IF g_nmz.nmz11 = 'N' THEN
+                 SELECT DISTINCT nms22,nms40 INTO g_npn.npn06,g_npn.npn07 FROM nms_file
                   WHERE nms01 = ' '
-                 IF g_aza.aza63 = 'Y' THEN 
+                 IF g_aza.aza63 = 'Y' THEN
                     SELECT DISTINCT nms221,nms401 INTO g_npn.npn061,g_npn.npn071 FROM nms_file
                      WHERE nms01 = ' '
-                 END IF 
+                 END IF
               ELSE
-                 IF NOT cl_null(g_npn.npn14) THEN 
+                 IF NOT cl_null(g_npn.npn14) THEN
                     SELECT DISTINCT nms22,nms40 INTO g_npn.npn06,g_npn.npn07 FROM nms_file
                      WHERE nms01 = g_npn.npn14
                     IF g_aza.aza63 = 'Y' THEN
                        SELECT DISTINCT nms221,nms401 INTO g_npn.npn061,g_npn.npn071 FROM nms_file
                         WHERE nms01 = g_npn.npn14
-                    END IF 
-                 END IF 
-              END IF 
+                    END IF
+                 END IF
+              END IF
            ELSE
-              IF p_cmd = 'a' THEN 
-                 LET g_npn.npn06 = '' 
+              IF p_cmd = 'a' THEN
+                 LET g_npn.npn06 = ''
                  LET g_npn.npn07 = ''
-              END IF 
-           END IF 
+              END IF
+           END IF
            DISPLAY g_npn.npn06 to npn06
            DISPLAY g_npn.npn07 to npn07
-           IF g_aza.aza63 = 'Y' THEN 
+           IF g_aza.aza63 = 'Y' THEN
               DISPLAY g_npn.npn061 to npn061
               DISPLAY g_npn.npn071 to npn071
-           END IF 
+           END IF
         #FUN-CA0083--add--end
 
         AFTER FIELD npn04
@@ -1304,7 +1304,7 @@ FUNCTION t250_i(p_cmd)
               SELECT azi02 INTO g_buf FROM azi_file WHERE azi01=g_npn.npn04
               IF STATUS THEN
                  CALL cl_err3("sel","azi_file",g_npn.npn04,"",STATUS,"","select azi",1)  #No.FUN-660148
-                 NEXT FIELD npn04 
+                 NEXT FIELD npn04
               END IF
               IF g_npn_t.npn04 IS NULL OR g_npn_t.npn04 <> g_npn.npn04 THEN
                  CALL s_curr3(g_npn.npn04,g_npn.npn02,'B') RETURNING g_npn.npn05
@@ -1314,7 +1314,7 @@ FUNCTION t250_i(p_cmd)
               END IF
               DISPLAY BY NAME g_npn.npn05
            END IF
- 
+
        AFTER FIELD npn05   #匯率
            IF g_npn.npn04 =g_aza.aza17 THEN
               LET g_npn.npn05 =1
@@ -1333,8 +1333,8 @@ FUNCTION t250_i(p_cmd)
               CALL t250_bu()
            END IF
           #MOD-9C0372---add---end---
- 
- 
+
+
         AFTER FIELD npn13
           #TQC-B70197 restorem --begin
            #NO.FUN-B40003--start--
@@ -1353,7 +1353,7 @@ FUNCTION t250_i(p_cmd)
               END IF
               DISPLAY BY NAME g_npn.npn13
            END IF
- 
+
         AFTER FIELD npn14
            IF NOT cl_null(g_npn.npn14) THEN
               CALL t250_npn14()
@@ -1369,50 +1369,50 @@ FUNCTION t250_i(p_cmd)
            END IF
            #TQC-C10084  --End
            #FUN-CA0083--add--str
-           IF g_npn.npn03 = '9' THEN 
-              IF g_nmz.nmz11 = 'Y' THEN 
+           IF g_npn.npn03 = '9' THEN
+              IF g_nmz.nmz11 = 'Y' THEN
                  IF NOT cl_null(g_npn.npn14) THEN
                     SELECT DISTINCT nms22,nms40 INTO g_npn.npn06,g_npn.npn07 FROM nms_file
                      WHERE nms01 = g_npn.npn14
                     IF g_aza.aza63 = 'Y' THEN
                        SELECT DISTINCT nms221,nms401 INTO g_npn.npn061,g_npn.npn071 FROM nms_file
                         WHERE nms01 = g_npn.npn14
-                    END IF 
+                    END IF
                  END IF
-              END IF 
+              END IF
               DISPLAY g_npn.npn06 to npn06
               DISPLAY g_npn.npn07 to npn07
               IF g_aza.aza63 = 'Y' THEN
                  DISPLAY g_npn.npn061 to npn061
                  DISPLAY g_npn.npn071 to npn071
               END IF
-           END IF 
+           END IF
            #FUN-CA0083--add--end
- 
+
         AFTER FIELD npn06
            IF NOT cl_null(g_npn.npn06) THEN
               CALL t250_chkag(g_npn.npn06,'0')       #No.FUN-730032
-              IF NOT cl_null(g_errno) THEN 
+              IF NOT cl_null(g_errno) THEN
 #FUN-B20073 --begin--
-                 CALL q_m_aag(FALSE,FALSE,g_plant_gl,g_npn.npn06,'23',g_bookno1) 
+                 CALL q_m_aag(FALSE,FALSE,g_plant_gl,g_npn.npn06,'23',g_bookno1)
                     RETURNING g_npn.npn06
                  DISPLAY BY NAME g_npn.npn06
-#FUN-B20073 --end--              
-                 NEXT FIELD npn06 
+#FUN-B20073 --end--
+                 NEXT FIELD npn06
               END IF
               DISPLAY BY NAME g_npn.npn06
            END IF
- 
+
         AFTER FIELD npn07
            IF NOT cl_null(g_npn.npn07) THEN
               CALL t250_chkag(g_npn.npn07,'0')       #No.FUN-730032
-              IF NOT cl_null(g_errno) THEN 
+              IF NOT cl_null(g_errno) THEN
 #FUN-B20073 --begin--
-                 CALL q_m_aag(FALSE,FALSE,g_plant_gl,g_npn.npn07,'23',g_bookno1)   
+                 CALL q_m_aag(FALSE,FALSE,g_plant_gl,g_npn.npn07,'23',g_bookno1)
                     RETURNING g_npn.npn07
                  DISPLAY BY NAME g_npn.npn07
-#FUN-B20073 --end--              
-                NEXT FIELD npn07 
+#FUN-B20073 --end--
+                NEXT FIELD npn07
               END IF
               DISPLAY BY NAME g_npn.npn07
            END IF
@@ -1420,32 +1420,32 @@ FUNCTION t250_i(p_cmd)
         AFTER FIELD npn061
            IF NOT cl_null(g_npn.npn061) THEN
               CALL t250_chkag(g_npn.npn061,'1')       #No.FUN-730032
-              IF NOT cl_null(g_errno) THEN 
+              IF NOT cl_null(g_errno) THEN
 #FUN-B20073 --begin--
-                 CALL q_m_aag(FALSE,FALSE,g_plant_gl,g_npn.npn061,'23',g_bookno2)   
+                 CALL q_m_aag(FALSE,FALSE,g_plant_gl,g_npn.npn061,'23',g_bookno2)
                       RETURNING g_npn.npn061
                  DISPLAY BY NAME g_npn.npn061
-#FUN-B20073 --end--              
-                 NEXT FIELD npn061 
+#FUN-B20073 --end--
+                 NEXT FIELD npn061
               END IF
               DISPLAY BY NAME g_npn.npn061
            END IF
- 
+
         AFTER FIELD npn071
            IF NOT cl_null(g_npn.npn071) THEN
               CALL t250_chkag(g_npn.npn071,'1')       #No.FUN-730032
-              IF NOT cl_null(g_errno) THEN 
+              IF NOT cl_null(g_errno) THEN
 #FUN-B20073 --begin--
-                 CALL q_m_aag(FALSE,FALSE,g_plant_gl,g_npn.npn071,'23',g_bookno2)   
+                 CALL q_m_aag(FALSE,FALSE,g_plant_gl,g_npn.npn071,'23',g_bookno2)
                     RETURNING g_npn.npn071
                  DISPLAY BY NAME g_npn.npn071
-#FUN-B20073 --end--              
-                 NEXT FIELD npn071 
+#FUN-B20073 --end--
+                 NEXT FIELD npn071
               END IF
               DISPLAY BY NAME g_npn.npn071
            END IF
- 
- 
+
+
         AFTER FIELD npnud01
            IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
         AFTER FIELD npnud02
@@ -1476,7 +1476,7 @@ FUNCTION t250_i(p_cmd)
            IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
         AFTER FIELD npnud15
            IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
- 
+
         AFTER INPUT
            LET g_npn.npnuser = s_get_data_owner("npn_file") #FUN-C10039
            LET g_npn.npngrup = s_get_data_group("npn_file") #FUN-C10039
@@ -1497,7 +1497,7 @@ FUNCTION t250_i(p_cmd)
                   NEXT FIELD npn13
               END IF
               LET l_nma10=''
-              SELECT nma10 INTO l_nma10 FROM nma_file 
+              SELECT nma10 INTO l_nma10 FROM nma_file
                 WHERE nma01=g_npn.npn13
               IF l_nma10 <> g_npn.npn04 THEN
                  CALL cl_err('','anm-260',0)
@@ -1507,7 +1507,7 @@ FUNCTION t250_i(p_cmd)
            #NO.FUN-B40003--end--Mark
            #TQC-B70197  restore  --end
            LET l_flag='N'
- 
+
         ON ACTION CONTROLP
            CASE
               WHEN INFIELD(npn01)
@@ -1523,11 +1523,11 @@ FUNCTION t250_i(p_cmd)
                  DISPLAY BY NAME g_npn.npn04
                  NEXT FIELD npn04
               WHEN INFIELD(npn06)
-                  CALL s_get_bookno1(YEAR(g_npn.npn02),g_plant_gl) RETURNING g_flag,g_bookno1,g_bookno2  #FUN-980020 
+                  CALL s_get_bookno1(YEAR(g_npn.npn02),g_plant_gl) RETURNING g_flag,g_bookno1,g_bookno2  #FUN-980020
                   IF g_flag = '1' THEN
                      CALL cl_err(YEAR(g_npn.npn02),'aoo-081',1)
                   END IF
-                 CALL q_m_aag(FALSE,TRUE,g_plant_gl,g_npn.npn06,'23',g_bookno1)     #No.FUN-980025 
+                 CALL q_m_aag(FALSE,TRUE,g_plant_gl,g_npn.npn06,'23',g_bookno1)     #No.FUN-980025
                  RETURNING g_npn.npn06
                  DISPLAY BY NAME g_npn.npn06
                  NEXT FIELD npn06
@@ -1536,22 +1536,22 @@ FUNCTION t250_i(p_cmd)
                   IF g_flag = '1' THEN
                      CALL cl_err(YEAR(g_npn.npn02),'aoo-081',1)
                   END IF
-                 CALL q_m_aag(FALSE,TRUE,g_plant_gl,g_npn.npn07,'23',g_bookno1)     #No.FUN-980025 
+                 CALL q_m_aag(FALSE,TRUE,g_plant_gl,g_npn.npn07,'23',g_bookno1)     #No.FUN-980025
                  RETURNING g_npn.npn07
                  DISPLAY BY NAME g_npn.npn07
                  NEXT FIELD npn07
- 
+
               WHEN INFIELD(npn061)
                   CALL s_get_bookno1(YEAR(g_npn.npn02),g_plant_gl) RETURNING g_flag,g_bookno1,g_bookno2  #FUN-980020
                   IF g_flag = '1' THEN
                      CALL cl_err(YEAR(g_npn.npn02),'aoo-081',1)
                   END IF
-                 CALL q_m_aag(FALSE,TRUE,g_plant_gl,g_npn.npn061,'23',g_bookno2)     #No.FUN-980025 
+                 CALL q_m_aag(FALSE,TRUE,g_plant_gl,g_npn.npn061,'23',g_bookno2)     #No.FUN-980025
                  RETURNING g_npn.npn061
                  DISPLAY BY NAME g_npn.npn061
                  NEXT FIELD npn061
               WHEN INFIELD(npn071)
-                  CALL s_get_bookno1(YEAR(g_npn.npn02),g_plant_gl) RETURNING g_flag,g_bookno1,g_bookno2   #FUN-980020 
+                  CALL s_get_bookno1(YEAR(g_npn.npn02),g_plant_gl) RETURNING g_flag,g_bookno1,g_bookno2   #FUN-980020
                   IF g_flag = '1' THEN
                      CALL cl_err(YEAR(g_npn.npn02),'aoo-081',1)
                   END IF
@@ -1559,7 +1559,7 @@ FUNCTION t250_i(p_cmd)
                  RETURNING g_npn.npn071
                  DISPLAY BY NAME g_npn.npn071
                  NEXT FIELD npn071
- 
+
              WHEN INFIELD(npn13)
                  CALL cl_init_qry_var()
                  LET g_qryparam.form = "q_nma"
@@ -1586,26 +1586,26 @@ FUNCTION t250_i(p_cmd)
                    NEXT FIELD npn05
               OTHERWISE EXIT CASE
            END CASE
- 
+
         ON ACTION CONTROLR
            CALL cl_show_req_fields()
- 
+
         ON ACTION CONTROLG
             CALL cl_cmdask()
        ON IDLE g_idle_seconds
           CALL cl_on_idle()
           CONTINUE INPUT
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
- 
+
+
     END INPUT
 END FUNCTION
- 
+
 FUNCTION t250_b()
 DEFINE
     l_ac_t          LIKE type_file.num5,    #未取消的ARRAY CNT  #No.FUN-680107 SMALLINT
@@ -1629,7 +1629,7 @@ DEFINE
 		 	l_nmh42	like nmh_file.nmh42
 	define 	l_npn01 like npn_file.npn01
 	#darcy:2024/08/22 add e---
- 
+
     LET g_action_choice = ""
     SELECT * INTO g_npn.* FROM npn_file WHERE npn01 = g_npn.npn01
     IF cl_null(g_npn.npn01) THEN
@@ -1645,11 +1645,11 @@ DEFINE
     END IF
     CALL t250_g_b()
     CALL cl_opmsg('b')
- 
+
    #No.TQC-C30121   ---start---   Add
     IF g_npn.npn03 = '5' THEN
       #CALL cl_set_comp_entry("npo05,npo06",FALSE) #TQC-C40101 mark
-       CALL cl_set_comp_entry("npo06",FALSE)#TQC-C40101 add 
+       CALL cl_set_comp_entry("npo06",FALSE)#TQC-C40101 add
     ELSE
       #CALL cl_set_comp_entry("npo05,npo06",TRUE)#TQC-C40101 mark
        CALL cl_set_comp_entry("npo06",TRUE)#TQC-C40101 add
@@ -1659,19 +1659,19 @@ DEFINE
     LET g_forupd_sql = "SELECT * FROM npo_file WHERE npo01=? AND npo02=? FOR UPDATE"
     LET g_forupd_sql = cl_forupd_sql(g_forupd_sql)
     DECLARE t250_bcl CURSOR FROM g_forupd_sql      # LOCK CURSOR
- 
+
     LET l_allow_insert = cl_detail_input_auth("insert")
     LET l_allow_delete = cl_detail_input_auth("delete")
- 
+
     INPUT ARRAY g_npo WITHOUT DEFAULTS FROM s_npo.*
           ATTRIBUTE(COUNT=g_rec_b,MAXCOUNT=g_max_rec,UNBUFFERED,
                     INSERT ROW=l_allow_insert,DELETE ROW=l_allow_delete,APPEND ROW=l_allow_insert)
- 
+
         BEFORE INPUT
          IF g_rec_b!=0 THEN
            CALL fgl_set_arr_curr(l_ac)
          END IF
- 
+
         BEFORE ROW
            LET p_cmd=''
            LET l_lock_sw = 'N'                   #DEFAULT
@@ -1713,7 +1713,7 @@ DEFINE
 			call anmt250_set_entry_b(p_cmd)
 			call anmt250_no_set_entry_b(p_cmd)
 			#darcy:2024/08/22 add e---
- 
+
         BEFORE INSERT
            LET l_ac = ARR_CURR()
            LET l_n = ARR_COUNT()
@@ -1723,7 +1723,7 @@ DEFINE
            INITIALIZE g_npo_t.* TO NULL
            CALL cl_show_fld_cont()     #FUN-550037(smin)
            NEXT FIELD npo02
- 
+
         AFTER INSERT
            IF INT_FLAG THEN
               CALL cl_err('',9001,0)
@@ -1748,7 +1748,7 @@ DEFINE
                  MESSAGE 'ROLLBACK'
               END IF
            END IF
- 
+
         BEFORE FIELD npo02                            #default 序號
            IF cl_null(g_npo[l_ac].npo02) OR g_npo[l_ac].npo02 = 0 THEN
               SELECT max(npo02)+1 INTO g_npo[l_ac].npo02
@@ -1757,7 +1757,7 @@ DEFINE
                  LET g_npo[l_ac].npo02 = 1
               END IF
            END IF
- 
+
         AFTER FIELD npo02                        #check 序號是否重複
            IF cl_null(g_npo[l_ac].npo02) THEN NEXT FIELD npo02 END IF
            IF g_npo[l_ac].npo02 != g_npo_t.npo02 OR
@@ -1769,7 +1769,7 @@ DEFINE
                    CALL cl_err('',-239,0) NEXT FIELD npo02
                END IF
            END IF
- 
+
         AFTER FIELD npo03
            IF cl_null(g_npo[l_ac].npo03) THEN NEXT FIELD npo03 END IF
 			#FUN-C80083--ADD---STR
@@ -1856,7 +1856,7 @@ DEFINE
 			display by name g_npo[l_ac].npodiff
 			display by name g_npo[l_ac].npo03
 		#darcy:2024/08/22 add e---
- 
+
         AFTER FIELD npo05,npo06
            SELECT nmh03 INTO l_nmh03 FROM nmh_file WHERE nmh01=g_npo[l_ac].npo03
            IF l_nmh03 = g_aza.aza17 THEN
@@ -1885,14 +1885,14 @@ DEFINE
               DISPLAY BY NAME g_npo[l_ac].npo10
               DISPLAY BY NAME g_npo[l_ac].npo09
            END IF
-       #FUN-C80083--add--end   
+       #FUN-C80083--add--end
            CALL cl_digcut(g_npo[l_ac].npo05,g_azi04) RETURNING g_npo[l_ac].npo05
            CALL cl_digcut(g_npo[l_ac].npo06,g_azi04) RETURNING g_npo[l_ac].npo06
            LET g_npo[l_ac].npodiff=g_npo[l_ac].npo06 - g_npo[l_ac].npo05
            DISPLAY BY NAME g_npo[l_ac].npo05
            DISPLAY BY NAME g_npo[l_ac].npodiff
            DISPLAY BY NAME g_npo[l_ac].npo03
- 
+
         AFTER FIELD npoud01
            IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
         AFTER FIELD npoud02
@@ -1923,7 +1923,7 @@ DEFINE
            IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
         AFTER FIELD npoud15
            IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
- 
+
         BEFORE DELETE                            #是否取消單身
            IF g_npo_t.npo02 > 0 AND g_npo_t.npo02 IS NOT NULL THEN
               IF NOT cl_delb(0,0) THEN
@@ -1946,10 +1946,10 @@ DEFINE
               LET g_rec_b=g_rec_b-1
               DISPLAY g_rec_b TO FORMONLY.cn2
            END IF
- 
+
         AFTER DELETE
            CALL t250_bu()
- 
+
         ON ROW CHANGE
            IF INT_FLAG THEN
               CALL cl_err('',9001,0)
@@ -1981,7 +1981,7 @@ DEFINE
                  END IF
               END IF
            END IF
- 
+
         AFTER ROW
            LET l_ac = ARR_CURR()
         #  LET l_ac_t = l_ac     #FUN-D30032 mark
@@ -2006,9 +2006,9 @@ DEFINE
            LET l_ac_t = l_ac     #FUN-D30032 add
            CLOSE t250_bcl
            COMMIT WORK
- 
- 
- 
+
+
+
         ON ACTION CONTROLP
            CASE
               WHEN INFIELD(npo03)
@@ -2055,7 +2055,7 @@ DEFINE
                         LET g_qryparam.where = " nmh24 = '5' AND nmh03 ='",g_npn.npn04,"'",
                                                " AND nmh05 >='",g_npn.npn02,"'",
                                                " AND nmh42 > 0 ",
-                                               " AND nmh22 = '",g_npn.npn14,"'" 
+                                               " AND nmh22 = '",g_npn.npn14,"'"
                         CALL cl_create_qry() RETURNING g_npo[l_ac].npo03
                      #FUN-C70129--add-end
                      WHEN g_npn.npn03 = 7   #MOD-580071
@@ -2081,47 +2081,47 @@ DEFINE
                   DISPLAY BY NAME g_npo[l_ac].npo03           #No.MOD-490344
                  NEXT FIELD npo03
            END CASE
- 
+
         ON ACTION CONTROLR
            CALL cl_show_req_fields()
- 
+
         ON ACTION CONTROLG
            CALL cl_cmdask()
- 
+
         ON ACTION CONTROLF
          CALL cl_set_focus_form(ui.Interface.getRootNode()) RETURNING g_fld_name,g_frm_name #Add on 040913
          CALL cl_fldhelp(g_frm_name,g_fld_name,g_lang) #Add on 040913
- 
- 
+
+
        ON IDLE g_idle_seconds
           CALL cl_on_idle()
           CONTINUE INPUT
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
-     ON ACTION controls                                                                                                             
-         CALL cl_set_head_visible("","AUTO")                                                                                        
- 
+
+     ON ACTION controls
+         CALL cl_set_head_visible("","AUTO")
+
     END INPUT
     UPDATE npn_file SET npndate = g_today,npnmodu = g_user
      WHERE npn01 = g_npn.npn01
- 
+
     CLOSE t250_bcl
     COMMIT WORK
     CALL t250_delHeader()     #CHI-C30002 add
- 
+
 END FUNCTION
- 
+
 #CHI-C30002 -------- add -------- begin
 FUNCTION t250_delHeader()
    DEFINE l_action_choice    STRING               #CHI-C80041
    DEFINE l_cho              LIKE type_file.num5  #CHI-C80041
    DEFINE l_num              LIKE type_file.num5  #CHI-C80041
-   
+
    IF g_rec_b = 0 THEN
       #CHI-C80041---begin
       LET l_action_choice = g_action_choice
@@ -2132,23 +2132,23 @@ FUNCTION t250_delHeader()
       ELSE
          CALL cl_getmsg('aec-131',g_lang) RETURNING g_msg
          LET l_num = 2
-      END IF 
+      END IF
       LET g_action_choice = l_action_choice
       PROMPT g_msg CLIPPED,': ' FOR l_cho
          ON IDLE g_idle_seconds
             CALL cl_on_idle()
 
-         ON ACTION about     
+         ON ACTION about
             CALL cl_about()
 
-         ON ACTION help         
+         ON ACTION help
             CALL cl_show_help()
 
-         ON ACTION controlg   
-            CALL cl_cmdask() 
+         ON ACTION controlg
+            CALL cl_cmdask()
       END PROMPT
-      IF l_cho > l_num THEN LET l_cho = 1 END IF 
-      IF l_cho = 2 THEN 
+      IF l_cho > l_num THEN LET l_cho = 1 END IF
+      IF l_cho = 2 THEN
         #CALL t250_x()             #FUN-D20035
          CALL t250_x(1)            #FUN-D20035
          IF g_npn.npnconf = 'X' THEN
@@ -2157,9 +2157,9 @@ FUNCTION t250_delHeader()
             LET g_void = 'N'
          END IF
          CALL cl_set_field_pic(g_npn.npnconf,"","","",g_void,"")
-      END IF 
-      
-      IF l_cho = 3 THEN 
+      END IF
+
+      IF l_cho = 3 THEN
          DELETE FROM npp_file
           WHERE nppsys= 'NM' AND npp00=2 AND npp01 = g_npn.npn01
             AND npp011=g_npn.npn03
@@ -2184,9 +2184,9 @@ FUNCTION t250_nmh(p_nmh01)
    DEFINE l_nmh24    LIKE nmh_file.nmh24
    DEFINE l_nmhconf  LIKE nmh_file.nmh38   #No.FUN-680107 VARCHAR(1)
    DEFINE l_nmh04    LIKE nmh_file.nmh04   #MOD-580071
-   DEFINE l_nmh41    LIKE nmh_file.nmh41   #TQC-BC0031 
+   DEFINE l_nmh41    LIKE nmh_file.nmh41   #TQC-BC0031
    DEFINE l_rate     LIKE nmh_file.nmh39   #MOD-C20085i
-   DEFINE l_nmh22    LIKE nmh_file.nmh22   #FUN-C70129 
+   DEFINE l_nmh22    LIKE nmh_file.nmh22   #FUN-C70129
    DEFINE l_nmh42    LIKE nmh_file.nmh42
    LET g_errno = ' '
    #SELECT nmh31,nmh11,nmh21,nmh05,nmh09,nmh24,nmh28,nmh02,nmh32,nmh38,nmh03,nmh24,nmh04,nmh41          #MOD-580071  #TQC-BC0031  #CHI-C30113
@@ -2200,7 +2200,7 @@ FUNCTION t250_nmh(p_nmh01)
       FROM nmh_file WHERE nmh01 = p_nmh01
   #SELECT nma02 INTO g_npo[l_ac].nma02_1 FROM nma_file WHERE nma01=g_npo[l_ac].nmh21   #CHI-C30113 #MOD-C80088 mark
   #DISPLAY BY NAME g_npo[l_ac].nma02_1                                                 #CHI-C30113 #MOD-C80088 mark
-   IF g_nmz.nmz59='Y' THEN 
+   IF g_nmz.nmz59='Y' THEN
       #No.MOD-C20085  --Begin
       #SELECT nmh39,nmh40 INTO g_npo[l_ac].nmh28,g_npo[l_ac].npo05
       #  FROM nmh_file WHERE nmh01 = p_nmh01
@@ -2211,7 +2211,7 @@ FUNCTION t250_nmh(p_nmh01)
       END IF
       LET g_npo[l_ac].npo05 = g_npo[l_ac].npo04 * l_rate
       #No.MOD-C20085  --End
-   END IF 
+   END IF
    CASE
       WHEN SQLCA.SQLCODE = 100
          LET g_errno = 'anm-026'
@@ -2286,7 +2286,7 @@ FUNCTION t250_nmh(p_nmh01)
    DISPLAY BY NAME g_npo[l_ac].nma02_1
   #-----------------MOD-C80088--------------(E)
 END FUNCTION
- 
+
 FUNCTION t250_chkag(p_aag01,p_flag)
    DEFINE p_aag01      LIKE aag_file.aag01   #No.FUN-680107 VARCHAR(24)
    DEFINE l_aag02      LIKE aag_file.aag02
@@ -2295,7 +2295,7 @@ FUNCTION t250_chkag(p_aag01,p_flag)
    DEFINE l_acti       LIKE aag_file.aagacti #No.FUN-680107 VARCHAR(1)
    DEFINE p_flag       LIKE type_file.chr1       #No.FUN-730032
    LET g_errno = ' '
- 
+
    CALL s_get_bookno(YEAR(g_npn.npn02)) RETURNING g_flag,g_bookno1,g_bookno2
    IF g_flag = '1' THEN
       CALL cl_err(YEAR(g_npn.npn02),'aoo-081',1)
@@ -2318,12 +2318,12 @@ FUNCTION t250_chkag(p_aag01,p_flag)
       CALL cl_err('',g_errno,0)
    END IF
 END FUNCTION
- 
+
 FUNCTION t250_npn13()
    DEFINE l_nma02      LIKE nma_file.nma02
    DEFINE l_acti       LIKE nma_file.nmaacti #No.FUN-680107 VARCHAR(1)
    LET g_errno = ' '
- 
+
    SELECT nma02,nmaacti INTO l_nma02,l_acti
      FROM nma_file WHERE nma01 = g_npn.npn13
    CASE WHEN SQLCA.SQLCODE = 100  LET g_errno = 'anm-027'
@@ -2334,14 +2334,14 @@ FUNCTION t250_npn13()
       CALL cl_err('',g_errno,0)
    END IF
    DISPLAY l_nma02 TO nma02
- 
+
 END FUNCTION
- 
+
 FUNCTION t250_npn14()
    DEFINE l_pmc03      LIKE pmc_file.pmc03
    DEFINE l_acti       LIKE pmc_file.pmcacti #No.FUN-680107 VARCHAR(1)
    LET g_errno = ' '
- 
+
    SELECT pmc03,pmcacti INTO l_pmc03,l_acti
      FROM pmc_file WHERE pmc01 = g_npn.npn14
    #FUN-C90092--add---str
@@ -2359,9 +2359,9 @@ FUNCTION t250_npn14()
       CALL cl_err('',g_errno,0)
    END IF
    DISPLAY l_pmc03 TO pmc03
- 
+
 END FUNCTION
- 
+
 FUNCTION t250_bu()
    SELECT SUM(npo04),SUM(npo05),SUM(npo06)
      INTO g_npn.npn10,g_npn.npn11,g_npn.npn12
@@ -2387,10 +2387,10 @@ FUNCTION t250_bu()
    DISPLAY BY NAME g_npn.npn10,g_npn.npn11,g_npn.npn12
    DISPLAY g_amtdiff TO amt
 END FUNCTION
- 
+
 FUNCTION t250_baskey()
 DEFINE l_wc2   STRING #No.FUN-680107 VARCHAR(200) #MOD-BB0301 mod 1000 -> STRING
- 
+
    CONSTRUCT g_wc1 ON npo02,npo03,npo04,npo05,npo06
                       ,npoud01,npoud02,npoud03,npoud04,npoud05
                       ,npoud06,npoud07,npoud08,npoud09,npoud10
@@ -2407,17 +2407,17 @@ DEFINE l_wc2   STRING #No.FUN-680107 VARCHAR(200) #MOD-BB0301 mod 1000 -> STRING
       ON IDLE g_idle_seconds
          CALL cl_on_idle()
          CONTINUE CONSTRUCT
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
+
       ON ACTION controlg      #MOD-4C0121
          CALL cl_cmdask()     #MOD-4C0121
- 
- 
+
+
                  ON ACTION qbe_select
          	   CALL cl_qbe_select()
                  ON ACTION qbe_save
@@ -2428,25 +2428,25 @@ DEFINE l_wc2   STRING #No.FUN-680107 VARCHAR(200) #MOD-BB0301 mod 1000 -> STRING
    END IF
    CALL t250_b_fill(l_wc2)
 END FUNCTION
- 
+
 FUNCTION t250_b_fill(p_wc2)              #BODY FILL UP
 DEFINE p_wc2      STRING #No.FUN-680107 VARCHAR(300) #MOD-BB0301 mod 1000 -> STRING
 DEFINE l_nmh39    LIKE nmh_file.nmh39    #No.MOD-930139
- 
+
     LET g_sql = "SELECT npo02,npo03,nmh31,nmh11,nmh30,nmh21,'',nmh05,nmh09,nmh24,nmh28,npo04, ",   #CHI-C30113  ADD--nmh30,''
                 "       npo05,npo06,npo10,npo09,npo06-npo05, ",                                     #FUN-C80083 add npo09,npo10
                 "       npoud01,npoud02,npoud03,npoud04,npoud05,",
                 "       npoud06,npoud07,npoud08,npoud09,npoud10,",
-                "       npoud11,npoud12,npoud13,npoud14,npoud15,", 
+                "       npoud11,npoud12,npoud13,npoud14,npoud15,",
                 "       nmh39 ",  #No.MOD-930139
                 " FROM npo_file LEFT OUTER JOIN nmh_file ON  npo03 = nmh_file.nmh01 ",
                 " WHERE npo01 ='",g_npn.npn01,"'",        #單頭
                 " AND ",p_wc2 CLIPPED,
                 " ORDER BY 1"
- 
+
     PREPARE t250_pb FROM g_sql
     DECLARE npo_curs CURSOR FOR t250_pb
- 
+
     CALL g_npo.clear()
     LET g_rec_b = 0
     LET g_cnt = 1
@@ -2457,14 +2457,14 @@ DEFINE l_nmh39    LIKE nmh_file.nmh39    #No.MOD-930139
       END IF
       SELECT nma02 INTO g_npo[g_cnt].nma02_1 FROM nma_file WHERE nma01=g_npo[g_cnt].nmh21                   #CHI-C30113
       DISPLAY g_npo[g_cnt].nma02_1 TO nma02_1                                                              #CHI-C30113
-      IF g_nmz.nmz59 = 'Y' THEN 
+      IF g_nmz.nmz59 = 'Y' THEN
          IF NOT cl_null(l_nmh39) AND l_nmh39 > 0 THEN  #No.MOD-C20085
             LET g_npo[g_cnt].nmh28 = l_nmh39
          END IF  #No.MOD-C20085
 
-      END IF 
+      END IF
       LET g_cnt = g_cnt + 1
- 
+
       IF g_cnt > g_max_rec THEN
          CALL cl_err( '', 9035, 0 )
 	 EXIT FOREACH
@@ -2475,23 +2475,23 @@ DEFINE l_nmh39    LIKE nmh_file.nmh39    #No.MOD-930139
     DISPLAY g_rec_b TO FORMONLY.cn2
     LET g_cnt = 0
 END FUNCTION
- 
+
 FUNCTION t250_bp(p_ud)
    DEFINE   p_ud   LIKE type_file.chr1    #No.FUN-680107 VARCHAR(1)
- 
+
    IF p_ud <> "G" OR g_action_choice = "detail" THEN
       RETURN
    END IF
- 
+
    LET g_action_choice = " "
- 
+
    CALL cl_set_act_visible("accept,cancel", FALSE)
    DISPLAY ARRAY g_npo TO s_npo.* ATTRIBUTE(COUNT=g_rec_b,UNBUFFERED)
- 
+
       BEFORE DISPLAY
          CALL cl_navigator_setting( g_curs_index, g_row_count )
          CALL cl_set_act_visible("entry_sheet1", g_aza.aza63 = 'Y')  #MOD-9B0018 add
- 
+
       BEFORE ROW
          LET l_ac = ARR_CURR()
          CALL cl_show_fld_cont()                  #No.FUN-550037
@@ -2517,8 +2517,8 @@ FUNCTION t250_bp(p_ud)
          CALL fgl_set_arr_curr(1)  ######add in 040505
            END IF
            ACCEPT DISPLAY                   #No.FUN-530067 HCN TEST
- 
- 
+
+
       ON ACTION previous
          CALL t250_fetch('P')
          CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
@@ -2526,8 +2526,8 @@ FUNCTION t250_bp(p_ud)
          CALL fgl_set_arr_curr(1)  ######add in 040505
            END IF
 	ACCEPT DISPLAY                   #No.FUN-530067 HCN TEST
- 
- 
+
+
       ON ACTION jump
          CALL t250_fetch('/')
          CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
@@ -2535,8 +2535,8 @@ FUNCTION t250_bp(p_ud)
          CALL fgl_set_arr_curr(1)  ######add in 040505
            END IF
 	ACCEPT DISPLAY                   #No.FUN-530067 HCN TEST
- 
- 
+
+
       ON ACTION next
          CALL t250_fetch('N')
          CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
@@ -2544,8 +2544,8 @@ FUNCTION t250_bp(p_ud)
          CALL fgl_set_arr_curr(1)  ######add in 040505
            END IF
 	ACCEPT DISPLAY                   #No.FUN-530067 HCN TEST
- 
- 
+
+
       ON ACTION last
          CALL t250_fetch('L')
          CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
@@ -2553,8 +2553,8 @@ FUNCTION t250_bp(p_ud)
          CALL fgl_set_arr_curr(1)  ######add in 040505
            END IF
 	ACCEPT DISPLAY                   #No.FUN-530067 HCN TEST
- 
- 
+
+
       ON ACTION detail
          LET g_action_choice="detail"
          LET l_ac = 1
@@ -2565,7 +2565,7 @@ FUNCTION t250_bp(p_ud)
       ON ACTION help
          LET g_action_choice="help"
          EXIT DISPLAY
- 
+
       ON ACTION locale
          CALL cl_dynamic_locale()
          CALL cl_show_fld_cont()                   #No.FUN-550037
@@ -2575,11 +2575,11 @@ FUNCTION t250_bp(p_ud)
             LET g_void = 'N'
          END IF
          CALL cl_set_field_pic(g_npn.npnconf,"","","",g_void,"")
- 
+
       ON ACTION exit
          LET g_action_choice="exit"
          EXIT DISPLAY
- 
+
       ##########################################################################
       # Special 4ad ACTION
       ##########################################################################
@@ -2621,7 +2621,7 @@ FUNCTION t250_bp(p_ud)
       ON ACTION carry_voucher
          LET g_action_choice="carry_voucher"
          EXIT DISPLAY
-    
+
 #@    ON ACTION 傳票拋轉還原
       ON ACTION undo_carry_voucher
          LET g_action_choice="undo_carry_voucher"
@@ -2634,35 +2634,35 @@ FUNCTION t250_bp(p_ud)
       ON ACTION ent_note_wtdw_ret_ac_rtn
          LET g_action_choice="ent_note_wtdw_ret_ac_rtn"
          EXIT DISPLAY
- 
+
       #@ON ACTION  撤退票串查應收
       ON ACTION qry_misc_ar
          LET g_action_choice="qry_misc_ar"
          EXIT DISPLAY
- 
+
       ON ACTION accept
          LET g_action_choice="detail"
          LET l_ac = ARR_CURR()
          EXIT DISPLAY
- 
+
       ON ACTION cancel
              LET INT_FLAG=FALSE 		#MOD-570244	mars
          LET g_action_choice="exit"
          EXIT DISPLAY
- 
+
       ON IDLE g_idle_seconds
          CALL cl_on_idle()
          CONTINUE DISPLAY
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION exporttoexcel       #FUN-4B0008
          LET g_action_choice = 'exporttoexcel'
          EXIT DISPLAY
       ON ACTION related_document                #No.FUN-6A0011  相關文件
-         LET g_action_choice="related_document"          
-         EXIT DISPLAY                                    
+         LET g_action_choice="related_document"
+         EXIT DISPLAY
       #FUN-C70129--add--str
 #@    ON ACTION 應撤/退/作廢票立帳
       ON ACTION ent_note_wtdw_ret_ac1
@@ -2679,19 +2679,19 @@ FUNCTION t250_bp(p_ud)
          LET g_action_choice="qry_misc_ap"
          EXIT DISPLAY
       #FUN-C70129--add--end
- 
+
       AFTER DISPLAY
          CONTINUE DISPLAY
- 
- 
-     ON ACTION controls                                                                                                             
-         CALL cl_set_head_visible("","AUTO")                                                                                        
- 
+
+
+     ON ACTION controls
+         CALL cl_set_head_visible("","AUTO")
+
       &include "qry_string.4gl"
    END DISPLAY
    CALL cl_set_act_visible("accept,cancel", TRUE)
 END FUNCTION
- 
+
 FUNCTION t250_b_move_to()
    LET g_npo[l_ac].npo02 = b_npo.npo02
    LET g_npo[l_ac].npo03 = b_npo.npo03
@@ -2722,7 +2722,7 @@ FUNCTION t250_b_move_to()
    LET g_npo[l_ac].npoud14 = b_npo.npoud14
    LET g_npo[l_ac].npoud15 = b_npo.npoud15
 END FUNCTION
- 
+
 FUNCTION t250_b_move_back()
    LET b_npo.npo01 = g_npn.npn01
    LET b_npo.npo02 = g_npo[l_ac].npo02
@@ -2755,10 +2755,10 @@ FUNCTION t250_b_move_back()
    LET b_npo.npoud15 = g_npo[l_ac].npoud15
    SELECT nmh24,nmh25 INTO b_npo.npo07,b_npo.npo08 FROM nmh_file
     WHERE nmh01=b_npo.npo03
- 
-   LET b_npo.npolegal = g_legal 
+
+   LET b_npo.npolegal = g_legal
 END FUNCTION
- 
+
 FUNCTION t250_u()
    DEFINE l_year,l_month  LIKE type_file.num5,   #No.FUN-680107 SMALLINT
           l_flag          LIKE type_file.chr1    #No.FUN-680107 VARCHAR(1)
@@ -2852,16 +2852,16 @@ FUNCTION t250_u()
       ROLLBACK WORK
    END IF
 END FUNCTION
- 
+
 FUNCTION t250_npp02(p_npptype)                # No.FUN-680034  add  p_npptype
-  DEFINE p_npptype   LIKE npp_file.npptype    # No.FUN-680034 
+  DEFINE p_npptype   LIKE npp_file.npptype    # No.FUN-680034
   DEFINE l_tic01     LIKE tic_file.tic01   #FUN-E80012 add
-  DEFINE l_tic02     LIKE tic_file.tic02   #FUN-E80012 add  
+  DEFINE l_tic02     LIKE tic_file.tic02   #FUN-E80012 add
   IF g_npn.npn09 IS NULL OR g_npn.npn09=' ' THEN
      UPDATE npp_file SET npp02=g_npn.npn02
       WHERE npp01=g_npn.npn01 AND npp00=2 AND npp011=g_npn.npn03
         AND nppsys = 'NM' AND npptype=p_npptype     # No.FUN-680034 add  npptype=p_npptype
-     IF STATUS THEN 
+     IF STATUS THEN
         CALL cl_err3("upd","npp_file",g_npn.npn01,g_npn.npn03,STATUS,"","upd npp02:",1)  #No.FUN-660148
      END IF
   END IF
@@ -2879,11 +2879,11 @@ FUNCTION t250_npp02(p_npptype)                # No.FUN-680034  add  p_npptype
       END IF
       #FUN-E80012---add---end---
 END FUNCTION
- 
+
 FUNCTION t250_r()
     DEFINE l_year,l_month  LIKE type_file.num5,   #No.FUN-680107 SMALLINT
            l_flag          LIKE type_file.chr1    #No.FUN-680107 VARCHAR(1)
- 
+
     IF s_anmshut(0) THEN
        RETURN
     END IF
@@ -2942,7 +2942,7 @@ FUNCTION t250_r()
        #FUN-B40056--add--str--
        DELETE FROM tic_file WHERE tic04 = g_npn.npn01
        IF SQLCA.sqlcode THEN
-          CALL cl_err3("del","tic_file",g_npn.npn01,g_npn.npn03,SQLCA.sqlcode,"","(t250_r:delete tic)",1) 
+          CALL cl_err3("del","tic_file",g_npn.npn01,g_npn.npn03,SQLCA.sqlcode,"","(t250_r:delete tic)",1)
           LET g_success='N'
        END IF
        #FUN-B40056--add--end--
@@ -2957,7 +2957,7 @@ FUNCTION t250_r()
           CALL cl_err3("del","npn_file",g_npn.npn01,"",SQLCA.sqlcode,"","(t250_r:delete npn)",1)  #No.FUN-660148
           LET g_success='N'
        END IF
-       INSERT INTO azo_file(azo01,azo02,azo03,azo04,azo05,azo06,azoplant,azolegal)  #FUN-980005 add plant & legal 
+       INSERT INTO azo_file(azo01,azo02,azo03,azo04,azo05,azo06,azoplant,azolegal)  #FUN-980005 add plant & legal
                     VALUES ('anmt250',g_user,g_today,g_msg,g_npn.npn02,'Delete',g_plant,g_legal)
        INITIALIZE g_npn.* TO NULL
        CLEAR FORM                    #FUN-C80083
@@ -2974,7 +2974,7 @@ FUNCTION t250_r()
              COMMIT WORK
              RETURN
           END IF
-          #FUN-B50063-add-end-- 
+          #FUN-B50063-add-end--
           FETCH t250_count INTO g_row_count
           #FUN-B50063-add-start--
           IF STATUS OR (cl_null(g_row_count) OR  g_row_count = 0 ) THEN
@@ -3006,7 +3006,7 @@ FUNCTION t250_r()
     END IF
     CALL t250_show()
 END FUNCTION
- 
+
 FUNCTION t250_v(p_cmd)
    DEFINE l_wc      STRING #No.FUN-680107 VARCHAR(101) #MOD-BB0301 mod 1000 -> STRING
    DEFINE p_cmd     LIKE type_file.chr3    #No.FUN-680107 VARCHAR(02)
@@ -3015,20 +3015,20 @@ FUNCTION t250_v(p_cmd)
    DEFINE l_t1      LIKE nmy_file.nmyslip  #No.FUN-680107 VARCHAR(5) #No.FUN-550057
    DEFINE l_cnt     LIKE type_file.num5    #No.FUN-680107 SMALLINT
    DEFINE l_nmydmy3 LIKE nmy_file.nmydmy3  #No.FUN-680107 VARCHAR(1)
- 
+
    SELECT * INTO g_npn.* FROM npn_file WHERE npn01 = g_npn.npn01
    IF g_npn.npnconf='X' THEN
       CALL cl_err(g_npn.npn01,'9024',0)
       RETURN
    END IF
- 
+
    IF g_npn.npnconf='Y' THEN
       CALL cl_err(g_npn.npn01,'9023',0)
       RETURN
    END IF
- 
+
    BEGIN WORK
- 
+
    OPEN t250_cl USING g_npn.npn01
    IF STATUS THEN
       CALL cl_err("OPEN t250_cl:", STATUS, 1)
@@ -3044,14 +3044,14 @@ FUNCTION t250_v(p_cmd)
       RETURN
    END IF
    IF p_cmd  = '1' THEN
- 
- 
+
+
       OPEN WINDOW t250_w9 AT 4,11 WITH FORM "anm/42f/anmt2509"
             ATTRIBUTE (STYLE = g_win_style CLIPPED) #No.FUN-580092 HCN
- 
+
     CALL cl_ui_locale("anmt2509")
- 
- 
+
+
       LET only_one = '1'
       INPUT BY NAME only_one WITHOUT DEFAULTS
          AFTER FIELD only_one
@@ -3060,17 +3060,17 @@ FUNCTION t250_v(p_cmd)
          ON IDLE g_idle_seconds
             CALL cl_on_idle()
             CONTINUE INPUT
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
+
       ON ACTION controlg      #MOD-4C0121
          CALL cl_cmdask()     #MOD-4C0121
- 
- 
+
+
       END INPUT
       IF INT_FLAG THEN
          LET INT_FLAG = 0
@@ -3096,23 +3096,23 @@ FUNCTION t250_v(p_cmd)
             ON IDLE g_idle_seconds
                CALL cl_on_idle()
                CONTINUE CONSTRUCT
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
+
       ON ACTION controlg      #MOD-4C0121
          CALL cl_cmdask()     #MOD-4C0121
- 
- 
+
+
                  ON ACTION qbe_select
          	   CALL cl_qbe_select()
                  ON ACTION qbe_save
 		   CALL cl_qbe_save()
          END CONSTRUCT
- 
+
          IF INT_FLAG THEN
             LET INT_FLAG=0
             CLOSE WINDOW t250_w9
@@ -3132,19 +3132,19 @@ FUNCTION t250_v(p_cmd)
    LET g_success='Y'
    CALL s_showmsg_init()           #No.FUN-710024
    FOREACH t250_v_c INTO g_npn.*
-      IF STATUS THEN 
+      IF STATUS THEN
          LET g_success ='N'     #FUN-8A0086
          EXIT FOREACH
       END IF
       IF g_npn.npn02 <= g_nmz.nmz10 THEN   #立帳日期小於關帳日期 no.5261
-         CALL s_errmsg('','',g_npn.npn01,'aap-176',1)  
+         CALL s_errmsg('','',g_npn.npn01,'aap-176',1)
          CONTINUE FOREACH
       END IF
       LET l_t1 = s_get_doc_no(g_npn.npn01)       #No.FUN-550057
       LET l_nmydmy3 = ''
       SELECT nmydmy3 INTO l_nmydmy3 FROM nmy_file WHERE nmyslip = l_t1
-      IF SQLCA.sqlcode THEN 
-         CALL s_errmsg('nmyslip',l_t1,'sel nmy:',STATUS,0)  
+      IF SQLCA.sqlcode THEN
+         CALL s_errmsg('nmyslip',l_t1,'sel nmy:',STATUS,0)
       END IF
       IF l_nmydmy3 = 'Y' THEN   #是否拋轉傳票
          IF NOT cl_null(g_npn.npn09) THEN
@@ -3159,10 +3159,10 @@ FUNCTION t250_v(p_cmd)
             sleep 1
             CONTINUE FOREACH
          END IF
-         CALL s_t250_gl(g_npn.npn01,'0')     # No.FUN-680034  add '0' 
+         CALL s_t250_gl(g_npn.npn01,'0')     # No.FUN-680034  add '0'
      IF g_aza.aza63 = 'Y' AND g_success = 'Y'  THEN
        CALL s_t250_gl(g_npn.npn01,'1')
-     END IF 
+     END IF
       END IF
    END FOREACH
    CALL s_showmsg()          #No.FUN-710024
@@ -3174,13 +3174,13 @@ FUNCTION t250_v(p_cmd)
    LET g_npn.*=l_npn.*
    MESSAGE " "
 END FUNCTION
- 
+
 FUNCTION t250_firm1()
    DEFINE l_npn01_old LIKE npn_file.npn01
    DEFINE only_one    LIKE type_file.chr1    #No.FUN-680107 VARCHAR(1)
    DEFINE l_npp       RECORD LIKE npp_file.* #NO.FUN-670060
    DEFINE l_n         LIKE type_file.num5    #No.FUN-670060  #No.FUN-680107 SMALLINT
- 
+
    IF cl_null(g_npn.npn01) THEN RETURN END IF
 #CHI-C30107 -------------- add -------------- begin
    IF g_npn.npnconf = 'X' THEN
@@ -3198,9 +3198,9 @@ FUNCTION t250_firm1()
       CALL cl_err('','9024',0)
       RETURN
    END IF
-   IF g_npn.npnconf='Y' THEN 
+   IF g_npn.npnconf='Y' THEN
       CALL cl_err('','9023',0)
-      RETURN 
+      RETURN
    END IF
 #FUN-B50090 add begin-------------------------
 	#darcy:2024/08/22 add s---
@@ -3215,19 +3215,19 @@ FUNCTION t250_firm1()
    EXECUTE nmz10_p INTO g_nmz.nmz10
 #FUN-B50090 add -end--------------------------
    IF g_npn.npn02 <= g_nmz.nmz10 THEN #no.5261
-      CALL cl_err(g_npn.npn01,'aap-176',1) 
-      RETURN 
+      CALL cl_err(g_npn.npn01,'aap-176',1)
+      RETURN
    END IF
    #沒有單身資料,不可確認
    SELECT COUNT(*) INTO g_cnt FROM npo_file
     WHERE npo01 = g_npn.npn01
-   IF g_cnt = 0 THEN 
-      RETURN 
+   IF g_cnt = 0 THEN
+      RETURN
    END IF
    IF cl_null(g_nmz.nmz33) OR cl_null(g_nmz.nmz34) THEN
-      CALL cl_err('','anm-261',1) 
-      RETURN 
-   END IF 
+      CALL cl_err('','anm-261',1)
+      RETURN
+   END IF
 #  IF NOT cl_confirm('axm-108') THEN RETURN END IF  #CHI-C30107 mark
    CALL s_get_doc_no(g_npn.npn01) RETURNING g_t1     #No.FUN-550071
    SELECT * INTO g_nmy.* FROM nmy_file WHERE nmyslip=g_t1
@@ -3258,8 +3258,8 @@ FUNCTION t250_firm1()
    FETCH t250_cl INTO g_npn.*
    IF SQLCA.sqlcode THEN
       CALL cl_err(g_npn.npn01,SQLCA.sqlcode,0)
-      CLOSE t250_cl 
-      ROLLBACK WORK 
+      CLOSE t250_cl
+      ROLLBACK WORK
       RETURN
    END IF
    IF g_nmy.nmydmy3 = 'Y' AND g_nmy.nmyglcr = 'Y' THEN
@@ -3272,7 +3272,7 @@ FUNCTION t250_firm1()
       IF l_n = 0 THEN
          CALL t250_gen_glcr(g_npn.*,g_nmy.*)
       END IF
-      IF g_success = 'Y' THEN 
+      IF g_success = 'Y' THEN
          CALL s_chknpq(g_npn.npn01,'NM',g_npn.npn03,'0',g_bookno1)       #No.FUN-730032
       IF g_aza.aza63 = 'Y' AND g_success = 'Y'  THEN
          CALL s_chknpq(g_npn.npn01,'NM',g_npn.npn03,'1',g_bookno2)       #No.FUN-730032
@@ -3283,11 +3283,11 @@ FUNCTION t250_firm1()
       CALL t250_y1()
       CALL t250_b_fill(' 1=1')                    #MOD-C90120 add
    END IF
-   IF g_success='N' THEN 
+   IF g_success='N' THEN
       CALL s_showmsg()          #No.FUN-710024
       CLOSE t250_cl
       ROLLBACK WORK
-      RETURN 
+      RETURN
    END IF
    UPDATE npn_file SET npnconf = 'Y' WHERE npn01 = g_npn.npn01
    IF STATUS OR SQLCA.SQLERRD[3] = 0 THEN
@@ -3312,25 +3312,25 @@ FUNCTION t250_firm1()
        WHERE npn01 = g_npn.npn01
       DISPLAY BY NAME g_npn.npn09
    END IF
- 
+
    SELECT * INTO g_npn.* FROM npn_file WHERE npn01 = l_npn01_old
    DISPLAY g_npn.npnconf TO npnconf
    CALL cl_set_field_pic(g_npn.npnconf,"","","","N","")   #MOD-AC0073
 END FUNCTION
- 
+
 FUNCTION t250_y1()
 DEFINE l_nma21    LIKE nma_file.nma21
- 
+
    DECLARE t250_ics2 CURSOR  WITH HOLD FOR
         SELECT * FROM npo_file WHERE npo01 = g_npn.npn01 ORDER BY npo02
    MESSAGE g_npn.npn01
    CALL s_showmsg_init()   #No.FUN-710024
    FOREACH t250_ics2 INTO m_npo.*
-      IF g_success='N' THEN                                                                                                         
-         LET g_totsuccess='N'                                                                                                       
-         LET g_success="Y"                                                                                                          
-      END IF                                                                                                                        
- 
+      IF g_success='N' THEN
+         LET g_totsuccess='N'
+         LET g_success="Y"
+      END IF
+
       IF SQLCA.SQLCODE THEN
          CALL s_errmsg('npo01',g_npn.npn01,'foreach #2',status,1)
          LET g_success='N'               #No:8608
@@ -3356,15 +3356,15 @@ DEFINE l_nma21    LIKE nma_file.nma21
       IF g_npn.npn03 MATCHES '[235]' THEN         #NO.FUN-B40003 Delete 2 #TQC-B70197 add 2 #FUN-C80083 del--4
          IF g_nmh.nmh24 <> '1' THEN
 		 	#darcy:2024/08/22 mod s---
-            if g_npn.npn03 != '5' then  
+            if g_npn.npn03 != '5' then
                CALL s_errmsg('npo03',m_npo.npo03,m_npo.npo03,'anm-228',1)
                LET g_success='N'
-               CONTINUE FOREACH 
+               CONTINUE FOREACH
             else
                if g_nmh.nmh24 not matches '[1458]' then #darcy add 4 , 8
                   CALL s_errmsg('npo03',m_npo.npo03,m_npo.npo03,'anm-228',1)
                   LET g_success='N'
-                  CONTINUE FOREACH 
+                  CONTINUE FOREACH
                end if
             end if
             #darcy:2024/08/22 mod e---
@@ -3385,14 +3385,14 @@ DEFINE l_nma21    LIKE nma_file.nma21
          IF g_nmh.nmh24 NOT MATCHES '[1234]' THEN
             CALL s_errmsg('npo03',m_npo.npo03,m_npo.npo03,'anm-228',1)
             LET g_success='N'
-            CONTINUE FOREACH 
+            CONTINUE FOREACH
          END IF
       END IF
       IF g_npn.npn03 MATCHES '[8]' THEN
          IF g_nmh.nmh24 NOT MATCHES '[23458]' THEN #darcy:2025/05/08 add 4  darcy:2025/06/27 add 5
             CALL s_errmsg('npo03',m_npo.npo03,m_npo.npo03,'anm-228',1)
             LET g_success='N'
-            CONTINUE FOREACH 
+            CONTINUE FOREACH
          END IF
       END IF
       IF g_npn.npn03 MATCHES '[7]' THEN
@@ -3400,7 +3400,7 @@ DEFINE l_nma21    LIKE nma_file.nma21
          IF g_nmh.nmh24 NOT MATCHES '[2348]' THEN             #MOD-AB0172
             CALL s_errmsg('npo03',m_npo.npo03,m_npo.npo03,'anm-228',1)
             LET g_success='N'
-            CONTINUE FOREACH 
+            CONTINUE FOREACH
          END IF
       END IF
       #兌現or 兌現後退票
@@ -3416,12 +3416,12 @@ DEFINE l_nma21    LIKE nma_file.nma21
          CONTINUE FOREACH           #No.FUN-710024
       END IF
    END FOREACH
-    IF g_totsuccess="N" THEN                                                                                                        
-       LET g_success="N"                                                                                                            
-    END IF                                                                                                                          
- 
+    IF g_totsuccess="N" THEN
+       LET g_success="N"
+    END IF
+
 END FUNCTION
- 
+
 FUNCTION t250_firm2()
    DEFINE l_npn01_old LIKE npn_file.npn01
    DEFINE only_one    LIKE type_file.chr1   #No.FUN-680107 VARCHAR(1)
@@ -3430,7 +3430,7 @@ FUNCTION t250_firm2()
    DEFINE l_cnt       LIKE type_file.num5   #CHI-810019
    DEFINE l_npo03     LIKE npo_file.npo03   #MOD-C80263 add
    DEFINE l_nmh31     LIKE nmh_file.nmh31   #MOD-C80263 add
- 
+
    IF cl_null(g_npn.npn01) THEN RETURN END IF
    IF g_npn.npnconf='X' THEN
       CALL cl_err('','9024',0)
@@ -3467,14 +3467,14 @@ FUNCTION t250_firm2()
    LET l_npn01_old=g_npn.npn01    # backup old key value npn01
    LET g_success = 'Y'
 #FUN-B50090 add begin-------------------------
-#重新抓取關帳日期 
+#重新抓取關帳日期
    LET g_sql ="SELECT nmz10 FROM nmz_file ",
-              " WHERE nmz00 = '0'" 
+              " WHERE nmz00 = '0'"
    PREPARE nmz10_p1 FROM g_sql
    EXECUTE nmz10_p1 INTO g_nmz.nmz10
 #FUN-B50090 add -end--------------------------
    IF g_npn.npn02 <= g_nmz.nmz10 THEN #no.5261
-      CALL cl_err(g_npn.npn01,'aap-176',1) 
+      CALL cl_err(g_npn.npn01,'aap-176',1)
       RETURN
    END IF
    SELECT COUNT(*) INTO l_cnt FROM oma_file
@@ -3484,7 +3484,7 @@ FUNCTION t250_firm2()
       RETURN
    END IF
    #FUN-C70129--add--str
-   SELECT COUNT(*) INTO l_cnt FROM apa_file 
+   SELECT COUNT(*) INTO l_cnt FROM apa_file
     WHERE apa25 = g_npn.npn01
    IF l_cnt > 0 THEN
       CALL cl_err(g_npn.npn01,'axm-389',1)
@@ -3499,7 +3499,7 @@ FUNCTION t250_firm2()
          CALL cl_err(g_npn.npn01,'anm-230',1)
          LET g_success = 'N'
       ELSE
-         LET g_plant_new = g_nmz.nmz02p  
+         LET g_plant_new = g_nmz.nmz02p
          #CALL s_getdbs()    #FUN-A50102
          LET l_sql = "SELECT aba19 ",
                      #"  FROM ",g_dbs_new CLIPPED,"aba_file ",
@@ -3556,15 +3556,15 @@ FUNCTION t250_firm2()
    END IF
    CALL t250_z1()
    CALL t250_b_fill(' 1=1')                    #MOD-C90120 add
- 
+
    IF g_success='N'THEN
       SELECT * INTO g_npn.* FROM npn_file WHERE npn01 = l_npn01_old
       CALL s_showmsg()   #No.FUN-710024
-      ROLLBACK WORK 
+      ROLLBACK WORK
       CLOSE t250_cl
       RETURN
    END IF
- 
+
    UPDATE npn_file SET npnconf = 'N' WHERE npn01 = g_npn.npn01
    IF STATUS OR SQLCA.SQLERRD[3] = 0 THEN
       CALL s_errmsg('npn01',g_npn.npn01,'upd npnconf',STATUS,1)  #No.FUN-710024
@@ -3592,12 +3592,12 @@ FUNCTION t250_firm2()
    #   DISPLAY BY NAME g_npn.npn09
    #END IF
    #CHI-C90052 mark end-----
- 
+
    SELECT * INTO g_npn.* FROM npn_file WHERE npn01 = l_npn01_old
    DISPLAY g_npn.npnconf TO npnconf
 END FUNCTION
- 
- 
+
+
 FUNCTION t250_z1()
    DEFINE l_nmh24     LIKE nmh_file.nmh24    #No.FUN-680107 VARCHAR(1)
    DEFINE l_cnt       LIKE type_file.num5    #No.FUN-680107 SMALLINT
@@ -3606,8 +3606,8 @@ FUNCTION t250_z1()
    #darcy:2024/08/27 add s---
    define l_aph05f   like aph_file.aph05f
    define l_npo04    like npo_file.npo04
-   #darcy:2024/08/27 add e--- 
- 
+   #darcy:2024/08/27 add e---
+
    DECLARE t250_dcs2 CURSOR  WITH HOLD FOR
         SELECT npo_file.*, nmh24
           FROM npo_file LEFT OUTER JOIN nmh_file ON npo03 = nmh_file.nmh01
@@ -3616,11 +3616,11 @@ FUNCTION t250_z1()
    MESSAGE g_npn.npn01
    CALL s_showmsg_init()   #No.FUN-710024
    FOREACH t250_dcs2 INTO m_npo.*,l_nmh24
-      IF g_success='N' THEN                                                                                                         
-         LET g_totsuccess='N'                                                                                                       
-         LET g_success="Y"                                                                                                          
-      END IF                                                                                                                        
- 
+      IF g_success='N' THEN
+         LET g_totsuccess='N'
+         LET g_success="Y"
+      END IF
+
       IF SQLCA.SQLCODE THEN
          CALL s_errmsg('npo01',g_npn.npn01,'foreach #2',STATUS,1)
          EXIT FOREACH
@@ -3635,19 +3635,19 @@ FUNCTION t250_z1()
       IF l_cnt > 0 THEN
          CALL s_errmsg('npo03',m_npo.npo03,m_npo.npo03,'anm-653',1)
          LET g_success='N'
-         CONTINUE FOREACH 
+         CONTINUE FOREACH
       END IF
 	  #darcy:2024/08/22 add s---
 	  if not sanmt200_undo_chk(m_npo.npo03,g_npn.npn01) then
 	  	let g_success='N'
-		continue foreach 
+		continue foreach
 	  end if
 	  #darcy:2024/08/22 add e---
       IF g_npn.npn03<>l_nmh24 THEN
          CALL cl_err(m_npo.npo02,'anm-228',1)
          CALL s_errmsg('npo03',m_npo.npo03,m_npo.npo03,'anm-653',1)
          LET g_success='N'
-         CONTINUE FOREACH 
+         CONTINUE FOREACH
       END IF
       IF g_npn.npn03='8' OR g_npn.npn03 = '4'  THEN  #FUN-C80083--add-4
          IF g_aza.aza73 = 'Y' THEN
@@ -3668,14 +3668,14 @@ FUNCTION t250_z1()
          END IF
          #TQC-B70209  --begin
          IF g_nmz.nmz70 ='1' THEN
-            DELETE FROM tic_file 
+            DELETE FROM tic_file
              WHERE tic04 IN (
             SELECT nme12 FROM nme_file
              WHERE nme12 = g_npn.npn01
-               AND nme03=g_nmz.nmz33   
-               AND nme21 = m_npo.npo02)               
+               AND nme03=g_nmz.nmz33
+               AND nme21 = m_npo.npo02)
             IF SQLCA.sqlcode THEN
-               CALL s_errmsg('tic04',g_npn.npn01,'del tic',STATUS,1)  
+               CALL s_errmsg('tic04',g_npn.npn01,'del tic',STATUS,1)
                LET g_success='N'
                CONTINUE FOREACH
             END IF
@@ -3692,14 +3692,14 @@ FUNCTION t250_z1()
          #TQC-B70209  --begin  mark
          #FUN-B40056  --begin
         # IF g_nmz.nmz70 ='1' THEN #No.TQC-B70021
-        #    DELETE FROM tic_file 
+        #    DELETE FROM tic_file
         #     WHERE tic04 IN (
         #    SELECT nme12 FROM nme_file
         #     WHERE nme12 = g_npn.npn01
-        #       AND nme03=g_nmz.nmz33   
-        #       AND nme21 = m_npo.npo02)               
+        #       AND nme03=g_nmz.nmz33
+        #       AND nme21 = m_npo.npo02)
         #    IF SQLCA.sqlcode THEN
-        #       CALL s_errmsg('tic04',g_npn.npn01,'del tic',STATUS,1)  
+        #       CALL s_errmsg('tic04',g_npn.npn01,'del tic',STATUS,1)
         #       LET g_success='N'
         #       CONTINUE FOREACH
         #    END IF
@@ -3726,14 +3726,14 @@ FUNCTION t250_z1()
          END IF
          #TQC-B70209  --begin
          IF g_nmz.nmz70 ='1' THEN
-            DELETE FROM tic_file 
+            DELETE FROM tic_file
              WHERE tic04 IN (
             SELECT nme12 FROM nme_file
              WHERE nme12 = g_npn.npn01
-               AND nme03 = g_nmz.nmz34 
-               AND nme21 = m_npo.npo02)               
+               AND nme03 = g_nmz.nmz34
+               AND nme21 = m_npo.npo02)
             IF SQLCA.sqlcode THEN
-               CALL s_errmsg('tic04',g_npn.npn01,'del tic',STATUS,1)  
+               CALL s_errmsg('tic04',g_npn.npn01,'del tic',STATUS,1)
                LET g_success='N'
                CONTINUE FOREACH
             END IF
@@ -3750,14 +3750,14 @@ FUNCTION t250_z1()
          #TQC-B70209  --begin mark
          #FUN-B40056  --begin
        #  IF g_nmz.nmz70 ='1' THEN #No.TQC-B70021
-       #     DELETE FROM tic_file 
+       #     DELETE FROM tic_file
        #      WHERE tic04 IN (
        #     SELECT nme12 FROM nme_file
        #      WHERE nme12 = g_npn.npn01
-       #        AND nme03 = g_nmz.nmz34 
-       #        AND nme21 = m_npo.npo02)               
+       #        AND nme03 = g_nmz.nmz34
+       #        AND nme21 = m_npo.npo02)
        #     IF SQLCA.sqlcode THEN
-       #        CALL s_errmsg('tic04',g_npn.npn01,'del tic',STATUS,1)  
+       #        CALL s_errmsg('tic04',g_npn.npn01,'del tic',STATUS,1)
        #        LET g_success='N'
        #        CONTINUE FOREACH
        #     END IF
@@ -3778,8 +3778,9 @@ FUNCTION t250_z1()
 
          # 2. 本币金额汇总
          select sum(npo04) into l_npo04 from npo_file,npn_file
-          where npo03 = m_npo.npo03 and npo01 = npn01 
+          where npo03 = m_npo.npo03 and npo01 = npn01
             and npnconf <> 'X' and npn14 = g_npn.npn14
+            and npn01 = g_npn.npn01 # darcy add
          if cl_null(l_npo04) then let l_npo04 = 0 end if
 
          # 本笔已经被冲，不允许取消审核
@@ -3806,13 +3807,13 @@ FUNCTION t250_z1()
       END IF
 #--end-- FUN-B40011
 
-     #FUN-CA0083--mark--str 
+     #FUN-CA0083--mark--str
      ##FUN-C70129--add--str
      #IF g_npn.npn03='9'  THEN
      #   IF g_aza.aza73 = 'Y' THEN
-     #      LET g_sql="SELECT nme24 FROM nme_file", 
-     #                " WHERE nme12='",g_npn.npn01,"'",   
-     #                "   AND nme21 = '",m_npo.npo02,"'", 
+     #      LET g_sql="SELECT nme24 FROM nme_file",
+     #                " WHERE nme12='",g_npn.npn01,"'",
+     #                "   AND nme21 = '",m_npo.npo02,"'",
      #                "   AND nme03='",g_nmz.nmz32,"'"
      #      PREPARE nme24_p9 FROM g_sql
      #      DECLARE nme24_cs9 CURSOR FOR nme24_p9
@@ -3823,7 +3824,7 @@ FUNCTION t250_z1()
      #            RETURN
      #         END IF
      #      END FOREACH
-     #   END IF    
+     #   END IF
      #   IF g_nmz.nmz70 ='1' THEN
      #      DELETE FROM tic_file
      #       WHERE tic04 IN (
@@ -3837,10 +3838,10 @@ FUNCTION t250_z1()
      #         CONTINUE FOREACH
      #      END IF
      #   END IF
-     #   DELETE FROM nme_file WHERE nme12 = g_npn.npn01 AND nme03=g_nmz.nmz32   
-     #                          AND nme21 = m_npo.npo02                         
+     #   DELETE FROM nme_file WHERE nme12 = g_npn.npn01 AND nme03=g_nmz.nmz32
+     #                          AND nme21 = m_npo.npo02
      #   IF SQLCA.sqlcode THEN
-     #      CALL s_errmsg('nme12',g_npn.npn01,'del nme',STATUS,1) 
+     #      CALL s_errmsg('nme12',g_npn.npn01,'del nme',STATUS,1)
      #      LET g_success='N'
      #      CONTINUE FOREACH
      #   END IF
@@ -3856,18 +3857,18 @@ FUNCTION t250_z1()
             CONTINUE FOREACH
          END IF
       END IF
-      
+
       CALL t250_upd_nmh('-')
       IF g_success='N' THEN
-         CONTINUE FOREACH             #No.FUN-710024 
+         CONTINUE FOREACH             #No.FUN-710024
       END IF
    END FOREACH
-   IF g_totsuccess="N" THEN                                                                                                        
-      LET g_success="N"                                                                                                            
-   END IF                                                                                                                          
- 
+   IF g_totsuccess="N" THEN
+      LET g_success="N"
+   END IF
+
 END FUNCTION
- 
+
 #FUNCTION t250_x()                    #FUN-D20035
 FUNCTION t250_x(p_type)                  #FUN-D20035
    DEFINE p_type    LIKE type_file.chr1  #FUN-D20035
@@ -3959,7 +3960,7 @@ FUNCTION t250_x(p_type)                  #FUN-D20035
    SELECT npnconf INTO g_npn.npnconf FROM npn_file WHERE npn01 = g_npn.npn01
    DISPLAY BY NAME g_npn.npnconf
 END FUNCTION
- 
+
 FUNCTION t250_ins_nme()
 #FUN-B30166--add--str
   DEFINE l_year     LIKE type_file.chr4
@@ -3982,9 +3983,9 @@ FUNCTION t250_ins_nme()
    END IF
   #FUN-CA0083--mark--str
   ##FUN-C70129-add--str
-  #IF g_npn.npn03 = '9' THEN 
+  #IF g_npn.npn03 = '9' THEN
   #   LET g_nme.nme03 = g_nmz.nmz32
-  #END IF 
+  #END IF
   ##FUN-C70129--add--end
   #FUN-CA0083--mark--str
    LET g_nme.nme04 = m_npo.npo04 #darcy:2024/09/04 mod  g_nmh.nmh02-->m_npo.npo04
@@ -3992,7 +3993,7 @@ FUNCTION t250_ins_nme()
    LET g_nme.nme06 = g_npn.npn07
  IF g_aza.aza63 = 'Y' THEN
    LET g_nme.nme061 = g_npn.npn071
- END IF  
+ END IF
    LET g_nme.nme07 = g_npn.npn05
    LET g_nme.nme08 = m_npo.npo06
    #FUN-C80083--ADD--STR
@@ -4006,9 +4007,9 @@ FUNCTION t250_ins_nme()
    LET g_nme.nme13 = g_nmh.nmh30
    #No.MOD-C20010  --Begin
    #LET g_nme.nme14 = g_nmh.nmh12
-   IF NOT cl_null(g_nmh.nmh12) THEN 
+   IF NOT cl_null(g_nmh.nmh12) THEN
       LET g_nme.nme14 = g_nmh.nmh12
-   ELSE 
+   ELSE
       SELECT nmc05 INTO g_nme.nme14 FROM nmc_file WHERE nmc01 = g_nme.nme03
    END IF
    #No.MOD-C20010  --End
@@ -4025,9 +4026,9 @@ FUNCTION t250_ins_nme()
    LET g_nme.nme24 = '9'  #No.TQC-750098
    LET g_nme.nme25 = g_nmh.nmh11
    LET g_nme.nme26 = 'N'           #FUN-C80083
- 
-   LET g_nme.nmelegal = g_legal 
- 
+
+   LET g_nme.nmelegal = g_legal
+
    LET g_nme.nmeoriu = g_user      #No.FUN-980030 10/01/04
    LET g_nme.nmeorig = g_grup      #No.FUN-980030 10/01/04
    #FUN-B30166--add--str
@@ -4046,16 +4047,16 @@ FUNCTION t250_ins_nme()
    #FUN-B30166--add--end
    INSERT INTO nme_file VALUES(g_nme.*)
    IF SQLCA.sqlcode THEN
-      CALL s_errmsg('nme02',g_nme.nme02,'t250_ins_nme',SQLCA.sqlcode,1)  
+      CALL s_errmsg('nme02',g_nme.nme02,'t250_ins_nme',SQLCA.sqlcode,1)
       LET g_success = 'N'
       RETURN
    END IF
-   CALL s_flows_nme(g_nme.*,'1',g_plant)   #No.FUN-B90062  
+   CALL s_flows_nme(g_nme.*,'1',g_plant)   #No.FUN-B90062
 END FUNCTION
- 
+
 FUNCTION t250_ins_nmi()
 DEFINE l_n        LIKE type_file.num5
- 
+
    INITIALIZE g_nmi.* TO NULL
    LET g_nmi.nmi01 = g_nmh.nmh01
    LET g_nmi.nmi02 = g_npn.npn02
@@ -4073,22 +4074,22 @@ DEFINE l_n        LIKE type_file.num5
    LET g_nmi.nmi08 = g_nmh.nmh28
    LET g_nmi.nmi09 = g_npn.npn05
    let g_nmi.nmi10 = g_npn.npn01 #darcy:2024/08/22 add
- 
-   LET g_nmi.nmilegal = g_legal 
- 
+
+   LET g_nmi.nmilegal = g_legal
+
    INSERT INTO nmi_file VALUES(g_nmi.*)
    IF SQLCA.sqlcode THEN
-      LET g_showmsg=g_nmi.nmi01,"/",g_nmi.nmi03    
+      LET g_showmsg=g_nmi.nmi01,"/",g_nmi.nmi03
       CALL s_errmsg('nmi01,nmi03',g_showmsg,'t250_ins_nmi',SQLCA.sqlcode,1)
       LET g_success = 'N'
       RETURN
    END IF
 END FUNCTION
- 
+
 FUNCTION t250_upd_nmh(p_sw)
    DEFINE p_sw    LIKE type_file.chr1   #No.FUN-680107 VARCHAR(1)
    DEFINE l_nmh29 LIKE nmh_file.nmh29
- 
+
    IF p_sw='+' THEN   #確認
       CASE
          WHEN g_npn.npn03 MATCHES '[234]' AND g_aza.aza26<>'2'                #NO.FUN-B40003 Delete  2 #TQC-B70197 add 2  #FUN-C80083 add--aza26<>2
@@ -4102,9 +4103,9 @@ FUNCTION t250_upd_nmh(p_sw)
               UPDATE nmh_file SET nmh24=g_npn.npn03,nmh19=g_npn.npn03
                WHERE nmh01=m_npo.npo03
          #FUN-C80083---ADD---END
-         
+
          #No.MOD-D80121 --Begin
-         WHEN g_npn.npn03 MATCHES '[3]' AND g_aza.aza26='2' 
+         WHEN g_npn.npn03 MATCHES '[3]' AND g_aza.aza26='2'
               UPDATE nmh_file SET nmh24=g_npn.npn03,nmh25=g_npn.npn02,
                      nmh19=g_npn.npn03,nmh20=g_npn.npn02, nmh21=g_npn.npn13,
                      nmh35=NULL
@@ -4140,9 +4141,9 @@ FUNCTION t250_upd_nmh(p_sw)
                UPDATE nmh_file SET nmh24=m_npo.npo07,nmh19='2' # darcy:2025/06/27 mod '2'=> m_npo.npo07
                WHERE nmh01=m_npo.npo03
          #FUN-C80083--ADD--EnD
-    
+
          #No.MOD-D80121  --Begin
-         WHEN g_npn.npn03 MATCHES '[3]' AND g_aza.aza26='2' 
+         WHEN g_npn.npn03 MATCHES '[3]' AND g_aza.aza26='2'
               UPDATE nmh_file SET nmh24=m_npo.npo07,nmh25=m_npo.npo08,
                      nmh19=NULL,nmh20=NULL, nmh21=NULL,
                      nmh35=NULL
@@ -4166,11 +4167,11 @@ FUNCTION t250_upd_nmh(p_sw)
       END CASE
    END IF
    IF SQLCA.SQLCODE THEN
-      CALL s_errmsg('nmh01',m_npo.npo03,'upd nmh',SQLCA.SQLCODE,1) 
+      CALL s_errmsg('nmh01',m_npo.npo03,'upd nmh',SQLCA.SQLCODE,1)
       LET g_success='N'
    END IF
 END FUNCTION
- 
+
 FUNCTION t250_t()
    DEFINE l_npo     RECORD LIKE npo_file.*,
           l_ool     RECORD LIKE ool_file.*,
@@ -4186,25 +4187,25 @@ FUNCTION t250_t()
           l_name1   LIKE apk_file.apk28,    #No.FUN-680107 VARCHAR(12)
           l_cmd     LIKE type_file.chr50,   #No.FUN-680107 VARCHAR(30)
           l_omb03   LIKE omb_file.omb03,
-          l_i,g_count,nn LIKE type_file.num5,   #No.FUN-680107 SMALLINT  
+          l_i,g_count,nn LIKE type_file.num5,   #No.FUN-680107 SMALLINT
           l_a01     LIKE cre_file.cre08,    #No.FUN-680107 VARCHAR(10)
           l_a03     LIKE cre_file.cre08     #No.FUN-680107 VARCHAR(10)
- 
+
    DEFINE ar_slip   LIKE ooy_file.ooyslip   #No.FUN-680107 VARCHAR(5) #No.FUN-550057
    DEFINE ar_type   LIKE oma_file.oma13
    DEFINE li_result LIKE type_file.num5     #No.FUN-560002  #No.FUN-680107 SMALLINT
- 
+
    IF s_anmshut(0) THEN RETURN END IF
- 
- 
+
+
    OPEN WINDOW t250_t AT 6,20 WITH FORM "anm/42f/anmt2502"
     ATTRIBUTE (STYLE = g_win_style CLIPPED) #No.FUN-580092 HCN
- 
+
     CALL cl_ui_locale("anmt2502")
- 
- 
+
+
    CLEAR FORM                                    #清除畫面
-   DISPLAY g_npn.npn01 TO npn01                  #MOD-AC0019  
+   DISPLAY g_npn.npn01 TO npn01                  #MOD-AC0019
    DISPLAY g_npn.npn02 TO npn02                  #MOD-AC0019
   #-MOD-AC0019-mark-
   #CONSTRUCT BY NAME g_wc ON npn01,npn02         # 螢幕上取單頭條件
@@ -4225,24 +4226,24 @@ FUNCTION t250_t()
   #   ON IDLE g_idle_seconds
   #      CALL cl_on_idle()
   #      CONTINUE CONSTRUCT
- 
+
   #   ON ACTION about         #MOD-4C0121
   #      CALL cl_about()      #MOD-4C0121
- 
+
   #   ON ACTION help          #MOD-4C0121
   #      CALL cl_show_help()  #MOD-4C0121
- 
+
   #   ON ACTION controlg      #MOD-4C0121
   #      CALL cl_cmdask()     #MOD-4C0121
- 
- 
+
+
   #              ON ACTION qbe_select
   #      	   CALL cl_qbe_select()
   #              ON ACTION qbe_save
   #     	   CALL cl_qbe_save()
   #END CONSTRUCT
   #-MOD-AC0019-end-
- 
+
    IF INT_FLAG THEN
       LET INT_FLAG = 0
       CLOSE WINDOW t250_t
@@ -4250,10 +4251,10 @@ FUNCTION t250_t()
    END IF
    LET g_wc = " npn01 = '",g_npn.npn01,"' AND npn02 = '",g_npn.npn02,"'"  #MOD-AC0019
    #資料權限的檢查
- 
- 
+
+
    LET g_wc  = g_wc CLIPPED," AND npnconf='Y' "   # 已確認
- 
+
    INPUT BY NAME ar_slip,ar_type WITHOUT DEFAULTS
       AFTER FIELD ar_slip
          IF cl_null(ar_slip) THEN NEXT FIELD ar_slip END IF
@@ -4263,7 +4264,7 @@ FUNCTION t250_t()
          IF (NOT li_result) THEN
            NEXT FIELD ar_slip
          END IF
- 
+
       AFTER FIELD ar_type
          IF cl_null(ar_type) THEN NEXT FIELD ar_type END IF
          SELECT * INTO l_ool.* FROM ool_file WHERE ool01=ar_type
@@ -4271,7 +4272,7 @@ FUNCTION t250_t()
             CALL cl_err3("sel","ool_file",ar_type,"",STATUS,"","select ool",1)  #No.FUN-660148
             NEXT FIELD ar_type
          END IF
- 
+
       ON ACTION CONTROLP
          CASE
             WHEN INFIELD(ar_slip)
@@ -4289,17 +4290,17 @@ FUNCTION t250_t()
       ON IDLE g_idle_seconds
          CALL cl_on_idle()
          CONTINUE INPUT
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
+
       ON ACTION controlg      #MOD-4C0121
          CALL cl_cmdask()     #MOD-4C0121
- 
- 
+
+
    END INPUT
    IF INT_FLAG THEN
       LET INT_FLAG = 0
@@ -4330,7 +4331,7 @@ FUNCTION t250_t()
       LET g_sql = "SELECT * FROM npn_file,npo_file LEFT OUTER JOIN nmh_file ON npo03=nmh_file.nmh01 ",
                   " WHERE npn01=npo01  ",
                   "   AND (npn03='6' OR npn03='7') AND ", g_wc CLIPPED
- 
+
       LET g_success = 'Y'
       BEGIN WORK
       OPEN t250_cl USING g_npn.npn01
@@ -4358,11 +4359,11 @@ FUNCTION t250_t()
       LET g_cnt=0   #No.+329 010702 by plum
       CALL s_showmsg_init()    #No.FUN-710024
       FOREACH t250_t INTO g_npn.*,l_npo.*,l_nmh.*
-         IF g_success='N' THEN                                                                                                         
-            LET g_totsuccess='N'                                                                                                       
-            LET g_success="Y"                                                                                                          
-         END IF                                                                                                                        
- 
+         IF g_success='N' THEN
+            LET g_totsuccess='N'
+            LET g_success="Y"
+         END IF
+
          IF STATUS THEN
             CALL s_errmsg('','','foreach',STATUS,1)   #No.FUN-710024
             LET g_success='N'
@@ -4398,8 +4399,8 @@ FUNCTION t250_t()
          SELECT oca03 INTO g_oma.oma18 FROM occ_file,oca_file
           WHERE occ01=g_oma.oma03 AND occ03=oca01
          IF cl_null(g_oma.oma18) THEN
-           LET g_oma.oma18 = l_ool.ool13 
-          IF g_aza.aza63 = 'Y' THEN  
+           LET g_oma.oma18 = l_ool.ool13
+          IF g_aza.aza63 = 'Y' THEN
            LET g_oma.oma18 = l_ool.ool131
           END IF
          END IF
@@ -4456,7 +4457,7 @@ FUNCTION t250_t()
             LET g_success='N'
             CONTINUE FOREACH   #No.FUN-710024
          END IF
- 
+
          INITIALIZE g_omb.* TO NULL
          LET g_omb.omb00 = '14'
          LET g_omb.omb01 = g_oma.oma01
@@ -4477,7 +4478,7 @@ FUNCTION t250_t()
          LET g_omb.omb35  = 0
          LET g_omb.omb930 = g_oma.oma930 #FUN-680006
          LET g_omb.omblegal = g_legal  #TQC-AB0247
-         LET g_omb.omb03 = l_npo.npo02 #TQC-AB0247 
+         LET g_omb.omb03 = l_npo.npo02 #TQC-AB0247
          LET g_omb.omb48 = 0         #MOD-D70045
          #LET g_oma.omalegal = g_legal   #FUN-A90063 #TQC-AB0247 mrak
          INSERT INTO tmp2_file VALUES(g_omb.*,l_nmh.nmh11)
@@ -4488,10 +4489,10 @@ FUNCTION t250_t()
          END IF
          LET g_cnt=g_cnt+1
       END FOREACH
-      IF g_totsuccess="N" THEN                                                                                                        
-         LET g_success="N"                                                                                                            
-      END IF                                                                                                                          
- 
+      IF g_totsuccess="N" THEN
+         LET g_success="N"
+      END IF
+
       DECLARE tmp1_cur CURSOR FOR
           SELECT * FROM tmp1_file
             ORDER BY oma03  #No.MOD-470463
@@ -4520,12 +4521,12 @@ FUNCTION t250_t()
       LET l_omb03 = 0
       LET g_cnt = 0
       FOREACH tmp2_cur INTO l_omb.*,l_nmh11
-         IF g_success='N' THEN                                                                                                         
-            LET g_totsuccess='N'                                                                                                       
-            LET g_success="Y"                                                                                                          
-         END IF                                                                                                                        
- 
-         IF SQLCA.SQLCODE THEN 
+         IF g_success='N' THEN
+            LET g_totsuccess='N'
+            LET g_success="Y"
+         END IF
+
+         IF SQLCA.SQLCODE THEN
             CALL s_errmsg('','','foreach omb',STATUS,0)  #No.FUN-710024
             EXIT FOREACH
          END IF
@@ -4535,12 +4536,12 @@ FUNCTION t250_t()
             LET l_omb03 = 0
          END IF
          LET l_omb03 = l_omb03 + 1
- 
+
           LET l_nmh11 = l_nmh11 CLIPPED  #No.MOD-470463
          SELECT a01 INTO l_omb.omb01 FROM tmp3_file WHERE a03 =l_nmh11
          LET l_omb.omb03 = l_omb03
- 
-         LET l_omb.omblegal = g_legal 
+
+         LET l_omb.omblegal = g_legal
          LET l_omb.omb48 = 0   #FUN-D10101 add
          INSERT INTO omb_file VALUES(l_omb.*)
          IF SQLCA.SQLCODE THEN
@@ -4550,12 +4551,12 @@ FUNCTION t250_t()
          END IF
          LET l_custom_old = l_nmh11
       END FOREACH
-      IF g_totsuccess="N" THEN                                                                                                        
-         LET g_success="N"                                                                                                            
-      END IF                                                                                                                          
- 
+      IF g_totsuccess="N" THEN
+         LET g_success="N"
+      END IF
+
     END IF
- 
+
    CLOSE WINDOW t250_t                 #結束畫面
    CALL s_showmsg()   #No.FUN-710024
    IF g_success = 'Y' THEN
@@ -4577,7 +4578,7 @@ FUNCTION t250_t()
       END IF
    END IF
 END FUNCTION
- 
+
 REPORT t250_rep1(p_oma,p_slip)
  DEFINE p_oma    RECORD LIKE oma_file.*
  DEFINE l_omc    RECORD LIKE omc_file.*  #CHI-810016
@@ -4601,7 +4602,7 @@ REPORT t250_rep1(p_oma,p_slip)
 DEFINE  l_a01    LIKE type_file.chr20,   #No.FUN-680107 VARCHAR(10)
         l_a03    LIKE type_file.chr20    #No.FUN-680107 VARCHAR(10)
 DEFINE li_result LIKE type_file.num5     #No.FUN-560002  #No.FUN-680107 SMALLINT
- 
+
     ORDER EXTERNAL BY p_oma.oma03        #客戶編號  No.MOD-470463
    FORMAT
       AFTER GROUP OF p_oma.oma03
@@ -4634,14 +4635,14 @@ DEFINE li_result LIKE type_file.num5     #No.FUN-560002  #No.FUN-680107 SMALLINT
          LET p_oma.oma56x = l_oma56x
          LET p_oma.oma56t = l_oma56t
          LET p_oma.oma57 = l_oma57
-        #LET p_oma.oma58 = l_oma58               #MOD-AC0104 mark 
+        #LET p_oma.oma58 = l_oma58               #MOD-AC0104 mark
          LET p_oma.oma59 = l_oma59
          LET p_oma.oma59x = l_oma59x
          LET p_oma.oma59t = l_oma59t
-         LET p_oma.oma61 = l_oma61               #MOD-AC0121 
+         LET p_oma.oma61 = l_oma61               #MOD-AC0121
          LET p_oma.oma65 = '1'   #FUN-5A0124
          LET p_oma.oma66 = g_plant  #FUN-A60056
- 
+
         #FUN-A60056--mod--str--
         #SELECT oga27 INTO p_oma.oma67 FROM oga_file
         #  WHERE oga01 = p_oma.oma16
@@ -4657,9 +4658,9 @@ DEFINE li_result LIKE type_file.num5     #No.FUN-560002  #No.FUN-680107 SMALLINT
         IF (NOT li_result) THEN
            LET g_success='N'
         END IF
- 
-         LET p_oma.omalegal = g_legal 
- 
+
+         LET p_oma.omalegal = g_legal
+
          LET p_oma.omaoriu = g_user      #No.FUN-980030 10/01/04
          LET p_oma.omaorig = g_grup      #No.FUN-980030 10/01/04
 #No.FUN-AB0034 --begin
@@ -4673,30 +4674,30 @@ DEFINE li_result LIKE type_file.num5     #No.FUN-560002  #No.FUN-680107 SMALLINT
             LET g_success='N'
           ELSE
             INITIALIZE l_omc.* TO NULL
-            LET l_omc.omc01=p_oma.oma01                                                                                                    
-            LET l_omc.omc02=1                                                                                                              
-            LET l_omc.omc03=p_oma.oma32                                                                                                    
-            LET l_omc.omc04=p_oma.oma11                                                                                                    
-            LET l_omc.omc05=p_oma.oma12                                                                                                    
-            LET l_omc.omc06=p_oma.oma24                                                                                                    
-            LET l_omc.omc07=p_oma.oma60                                                                                                    
-            LET l_omc.omc08=p_oma.oma54t                                                                                                   
-            LET l_omc.omc09=p_oma.oma56t                                                                                                   
-            LET l_omc.omc10=p_oma.oma55                                                                                                    
-            LET l_omc.omc11=p_oma.oma57                                                                                                    
-            LET l_omc.omc12=p_oma.oma10                                                                                                    
-            LET l_omc.omc13=l_omc.omc09-l_omc.omc11                                                                                        
-            LET l_omc.omc14=p_oma.oma51f                                                                                                   
-            LET l_omc.omc15=p_oma.oma51                                                                                                    
- 
-            LET l_omc.omclegal = g_legal 
- 
-            INSERT INTO omc_file VALUES(l_omc.*)                                                                                           
+            LET l_omc.omc01=p_oma.oma01
+            LET l_omc.omc02=1
+            LET l_omc.omc03=p_oma.oma32
+            LET l_omc.omc04=p_oma.oma11
+            LET l_omc.omc05=p_oma.oma12
+            LET l_omc.omc06=p_oma.oma24
+            LET l_omc.omc07=p_oma.oma60
+            LET l_omc.omc08=p_oma.oma54t
+            LET l_omc.omc09=p_oma.oma56t
+            LET l_omc.omc10=p_oma.oma55
+            LET l_omc.omc11=p_oma.oma57
+            LET l_omc.omc12=p_oma.oma10
+            LET l_omc.omc13=l_omc.omc09-l_omc.omc11
+            LET l_omc.omc14=p_oma.oma51f
+            LET l_omc.omc15=p_oma.oma51
+
+            LET l_omc.omclegal = g_legal
+
+            INSERT INTO omc_file VALUES(l_omc.*)
             IF STATUS OR SQLCA.SQLERRD[3] = 0 THEN
-               CALL cl_err3("ins","omc_file",p_oma.oma01,"",STATUS,"","ins omc",1) 
-               LET g_success='N'                                                                                                           
-               RETURN                                                                                                                      
-            END IF                                                                                                                         
+               CALL cl_err3("ins","omc_file",p_oma.oma01,"",STATUS,"","ins omc",1)
+               LET g_success='N'
+               RETURN
+            END IF
          END IF
 
          INSERT INTO tmp3_file (a01,a03) VALUES(p_oma.oma01,p_oma.oma03)
@@ -4705,7 +4706,7 @@ DEFINE li_result LIKE type_file.num5     #No.FUN-560002  #No.FUN-680107 SMALLINT
             LET g_success='N'
          END IF
 END REPORT
- 
+
 FUNCTION t250_create_oma()
    SELECT *
      FROM oma_file
@@ -4717,7 +4718,7 @@ FUNCTION t250_create_oma()
    END IF
    DELETE FROM tmp1_file WHERE 1=1
 END FUNCTION
- 
+
 FUNCTION t250_create_omb()
    SELECT omb_file.*,'aaaaaaaaaa' cus
      FROM omb_file
@@ -4727,35 +4728,35 @@ FUNCTION t250_create_omb()
       LET g_success='N'
       CALL cl_err3("ins","tmp2_file","","",SQLCA.sqlcode,"","create tmp2_file:",1)  #No.FUN-660148
    END IF
- 
+
    DELETE FROM tmp2_file WHERE 1=1
 END FUNCTION
- 
+
 FUNCTION t250_create_oma01()
     CREATE TEMP TABLE tmp3_file(
-        a01  LIKE pmn_file.pmn01,   
-        a03  LIKE npp_file.npp06); 
+        a01  LIKE pmn_file.pmn01,
+        a03  LIKE npp_file.npp06);
 END FUNCTION
- 
+
 FUNCTION t250_t2()
    DEFINE l_oma01 LIKE oma_file.oma01
    DEFINE l_cnt   LIKE type_file.num5
    DEFINE l_oma55 LIKE oma_file.oma55
    DEFINE l_oma57 LIKE oma_file.oma57
-   
+
    SELECT COUNT(*) INTO l_cnt FROM oma_file
      WHERE oma16 = g_npn.npn01
    IF l_cnt = 0 THEN
       RETURN
    END IF
- 
+
    BEGIN WORK
    LET g_success='Y'
- 
-  
-   DECLARE oma_c CURSOR FOR 
+
+
+   DECLARE oma_c CURSOR FOR
      SELECT oma01 FROM oma_file WHERE oma16=g_npn.npn01
- 
+
    FOREACH oma_c INTO l_oma01
       SELECT oma55,oma57 INTO l_oma55,l_oma57 FROM oma_file
         WHERE oma01 = l_oma01
@@ -4766,23 +4767,23 @@ FUNCTION t250_t2()
          EXIT FOREACH
       END IF
       DELETE FROM oma_file WHERE oma01 = l_oma01
-      IF SQLCA.sqlcode OR SQLCA.SQLERRD[3] = 0 THEN 
+      IF SQLCA.sqlcode OR SQLCA.SQLERRD[3] = 0 THEN
          CALL cl_err3("del","oma_file",l_oma01,"",SQLCA.sqlcode,"","del oma_file",1)
          LET g_success='N'
          EXIT FOREACH
-      END IF 
+      END IF
       DELETE FROM omc_file WHERE omc01 = l_oma01
-      IF SQLCA.sqlcode OR SQLCA.SQLERRD[3] = 0 THEN 
+      IF SQLCA.sqlcode OR SQLCA.SQLERRD[3] = 0 THEN
          CALL cl_err3("del","omc_file",l_oma01,"",SQLCA.sqlcode,"","del omc_file",1)
          LET g_success='N'
          EXIT FOREACH
-      END IF 
+      END IF
       DELETE FROM omb_file WHERE omb01 = l_oma01
-      IF SQLCA.sqlcode OR SQLCA.SQLERRD[3] = 0 THEN 
+      IF SQLCA.sqlcode OR SQLCA.SQLERRD[3] = 0 THEN
          CALL cl_err3("del","omb_file",l_oma01,"",SQLCA.sqlcode,"","del omb_file",1)
          LET g_success='N'
          EXIT FOREACH
-      END IF 
+      END IF
    END FOREACH
    IF g_success='Y' THEN
       CALL cl_err('','lib-022',0)
@@ -4791,27 +4792,27 @@ FUNCTION t250_t2()
       ROLLBACK WORK
    END IF
 END FUNCTION
- 
+
 FUNCTION t250_set_entry(p_cmd)
   DEFINE p_cmd   LIKE type_file.chr1    #No.FUN-680107 VARCHAR(1)
- 
+
     IF p_cmd = 'a' AND ( NOT g_before_input_done ) THEN
       CALL cl_set_comp_entry("npn01,npn03",TRUE)
     END IF
     CALL cl_set_comp_entry("npn04,npn05",TRUE)     #MOD-BB0017 add
     IF INFIELD(npn03) THEN
       CALL cl_set_comp_entry("npn06,npn07,npn13,npn14",TRUE)
-     IF g_aza.aza63 = 'Y' THEN 
+     IF g_aza.aza63 = 'Y' THEN
       CALL cl_set_comp_entry("npn061,npn071",TRUE)
      END IF
     END IF
- 
+
 END FUNCTION
- 
+
 FUNCTION t250_set_no_entry(p_cmd)
   DEFINE p_cmd   LIKE type_file.chr1    #No.FUN-680107 VARCHAR(1)
   DEFINE l_cnt   LIKE type_file.num5    #MOD-BB0017 add
- 
+
     IF p_cmd = 'u' AND g_chkey = 'N' AND ( NOT g_before_input_done ) THEN
        CALL cl_set_comp_entry("npn01,npn03",FALSE)
       #------------------------MOD-BB0017------------------start
@@ -4824,7 +4825,7 @@ FUNCTION t250_set_no_entry(p_cmd)
        END IF
       #------------------------MOD-BB0017--------------------end
     END IF
- 
+
     IF INFIELD(npn03) THEN
        IF g_npn.npn03 NOT MATCHES '[234]' THEN                #NO.FUN-B40003  delete   2  #TQC-B70197 add 2
           CALL cl_set_comp_entry("npn13",FALSE)
@@ -4836,7 +4837,7 @@ FUNCTION t250_set_no_entry(p_cmd)
           CALL cl_set_comp_entry("npn06",FALSE)
         IF g_aza.aza63 = 'Y' THEN
           CALL cl_set_comp_entry("npn061",FALSE)
-        END IF 
+        END IF
        END IF
        IF g_nmy.nmydmy3 = 'N' OR g_npn.npn03 MATCHES '[34]' THEN  #NO.FUN-5A0088
           CALL cl_set_comp_entry("npn07",FALSE)
@@ -4845,9 +4846,9 @@ FUNCTION t250_set_no_entry(p_cmd)
         END IF
        END IF
     END IF
- 
+
 END FUNCTION
- 
+
 FUNCTION t250_carry_voucher()
    DEFINE l_nmygslp    LIKE nmy_file.nmygslp
    DEFINE l_nmygslp1   LIKE nmy_file.nmygslp1  #No.FUN-680034
@@ -4855,13 +4856,13 @@ FUNCTION t250_carry_voucher()
    DEFINE l_dbs        STRING
    DEFINE l_sql        STRING
    DEFINE l_n          LIKE type_file.num5     #No.FUN-680107 SMALLINT
- 
-    IF NOT cl_null(g_npn.npn09) OR g_npn.npn09 IS NOT NULL THEN 
+
+    IF NOT cl_null(g_npn.npn09) OR g_npn.npn09 IS NOT NULL THEN
        CALL cl_err(g_npn.npn09,'aap-618',1)
        RETURN
     END IF
      IF NOT cl_confirm('aap-989') THEN RETURN END IF
- 
+
      CALL s_get_doc_no(g_npn.npn01) RETURNING g_t1
      SELECT * INTO g_nmy.* FROM nmy_file WHERE nmyslip=g_t1
      IF g_nmy.nmydmy3 = 'N' THEN RETURN END IF
@@ -4897,40 +4898,40 @@ FUNCTION t250_carry_voucher()
      ELSE
         CALL cl_err('','aap-936',1) #FUN-940036
         RETURN
- 
+
         #開窗作業
         LET g_plant_new= g_nmz.nmz02p
         CALL s_getdbs()
         LET g_dbs_gl=g_dbs_new      # 得資料庫名稱
-  
-        OPEN WINDOW t250p AT 5,10 WITH FORM "axr/42f/axrt200_p" 
+
+        OPEN WINDOW t250p AT 5,10 WITH FORM "axr/42f/axrt200_p"
              ATTRIBUTE (STYLE = g_win_style CLIPPED)
         CALL cl_ui_locale("axrt200_p")
-         
+
         INPUT l_nmygslp WITHOUT DEFAULTS FROM FORMONLY.gl_no
-     
+
            AFTER FIELD gl_no
               CALL s_check_no("agl",l_nmygslp,"","1","aac_file","aac01",g_plant_gl)   #TQC-9B0162
                  RETURNING li_result,l_nmygslp
               IF (NOT li_result) THEN
                  NEXT FIELD gl_no
               END IF
-      
+
            AFTER INPUT
               IF INT_FLAG THEN
-                 EXIT INPUT 
+                 EXIT INPUT
               END IF
               IF cl_null(l_nmygslp) THEN
                  CALL cl_err('','9033',0)
-                 NEXT FIELD gl_no  
+                 NEXT FIELD gl_no
               END IF
-     
+
            ON ACTION CONTROLR
               CALL cl_show_req_fields()
-  
+
            ON ACTION CONTROLG
               CALL cl_cmdask()
-  
+
            ON ACTION CONTROLP
               IF INFIELD(gl_no) THEN
                  CALL q_m_aac(FALSE,TRUE,g_plant_gl,l_nmygslp,'1',' ',' ','AGL')  #No.FUN-980059
@@ -4938,23 +4939,23 @@ FUNCTION t250_carry_voucher()
                  DISPLAY l_nmygslp TO FORMONLY.gl_no
                  NEXT FIELD gl_no
               END IF
-     
+
            ON IDLE g_idle_seconds
               CALL cl_on_idle()
               CONTINUE INPUT
-      
+
            ON ACTION about         #MOD-4C0121
               CALL cl_about()      #MOD-4C0121
-      
+
            ON ACTION help          #MOD-4C0121
               CALL cl_show_help()  #MOD-4C0121
-      
+
            ON ACTION exit  #加離開功能genero
               LET INT_FLAG = 1
               EXIT INPUT
-  
+
         END INPUT
-        CLOSE WINDOW t250p  
+        CLOSE WINDOW t250p
      END IF
      IF cl_null(l_nmygslp) THEN
         CALL cl_err(g_npn.npn01,'axr-070',1)
@@ -4972,26 +4973,26 @@ FUNCTION t250_carry_voucher()
      SELECT npn09 INTO g_npn.npn09 FROM npn_file
       WHERE npn01 = g_npn.npn01
      DISPLAY BY NAME g_npn.npn09
-   
+
 END FUNCTION
- 
-FUNCTION t250_undo_carry_voucher() 
+
+FUNCTION t250_undo_carry_voucher()
   DEFINE l_aba19    LIKE aba_file.aba19
   DEFINE l_sql      STRING
- 
+
     IF cl_null(g_npn.npn09) OR g_npn.npn09 IS NULL THEN
        CALL cl_err(g_npn.npn09,'aap-619',1)
        RETURN
     END IF
     IF NOT cl_confirm('aap-988') THEN RETURN END IF
- 
+
     CALL s_get_doc_no(g_npn.npn01) RETURNING g_t1
     SELECT * INTO g_nmy.* FROM nmy_file WHERE nmyslip=g_t1
-    IF g_nmy.nmyglcr = 'N' AND cl_null(g_nmy.nmygslp) THEN   #FUN-940036 
+    IF g_nmy.nmyglcr = 'N' AND cl_null(g_nmy.nmygslp) THEN   #FUN-940036
        CALL cl_err('','aap-936',1)   #FUN-940036
        RETURN
     END IF
- 
+
     CALL s_get_doc_no(g_npn.npn01) RETURNING g_t1
     SELECT * INTO g_nmy.* FROM nmy_file WHERE nmyslip=g_t1
     IF g_nmy.nmydmy3 = 'N' THEN RETURN END IF
@@ -5005,7 +5006,7 @@ FUNCTION t250_undo_carry_voucher()
     CALL s_chknpq(g_npn.npn01,'NM',g_npn.npn03,'1',g_bookno2)       #No.FUN-730032
    END IF
     IF g_success='N' THEN RETURN END IF
- 
+
     LET g_plant_new = g_nmz.nmz02p
     #CALL s_getdbs()   #FUN-A50102
     LET l_sql = "SELECT aba19 ",
@@ -5030,21 +5031,21 @@ FUNCTION t250_undo_carry_voucher()
      WHERE npn01 = g_npn.npn01
     DISPLAY BY NAME g_npn.npn09
 END FUNCTION
- 
+
 FUNCTION t250_gen_glcr(p_npn,p_nmy)
    DEFINE p_npn    RECORD LIKE npn_file.*
    DEFINE p_nmy    RECORD LIKE nmy_file.*
- 
+
    IF cl_null(p_nmy.nmygslp) THEN
       CALL cl_err(p_npn.npn01,'axr-070',1)
       LET g_success = 'N'
       RETURN
-   END IF       
+   END IF
    CALL s_t250_gl(g_npn.npn01,'0')       # No.FUN-680034  add '0'
   IF g_aza.aza63 = 'Y' AND g_success = 'Y' THEN
       CALL s_t250_gl(g_npn.npn01,'1')
-  END IF 
- 
+  END IF
+
    IF g_success = 'N' THEN RETURN END IF
 END FUNCTION
 #No.FUN-9C0
@@ -5055,55 +5056,55 @@ FUNCTION t250_s()
           l_npo     RECORD LIKE npo_file.*,
           l_custom         LIKE nmh_file.nmh11,
           l_custom_old     LIKE nmh_file.nmh11,
-          l_buf1    LIKE type_file.chr1000, 
+          l_buf1    LIKE type_file.chr1000,
           l_apa     RECORD LIKE apa_file.*,
           l_apb     RECORD LIKE apb_file.*,
           l_aps     RECORD LIKE aps_file.*,
           l_nmh22   LIKE nmh_file.nmh22,
-          l_name1   LIKE apk_file.apk28,    
-          l_cmd     LIKE type_file.chr1000, 
+          l_name1   LIKE apk_file.apk28,
+          l_cmd     LIKE type_file.chr1000,
           l_depno   LIKE apa_file.apa22,
           l_apa05   LIKE apa_file.apa05,
           l_apb02   LIKE apb_file.apb02,
-        l_i,g_count LIKE type_file.num5,   
-          l_n       LIKE type_file.num5,   
-          li_result LIKE type_file.num5,    
+        l_i,g_count LIKE type_file.num5,
+          l_n       LIKE type_file.num5,
+          li_result LIKE type_file.num5,
           l_apz13   LIKE apz_file.apz13
-   DEFINE ap_slip   LIKE nmy_file.nmyslip  
+   DEFINE ap_slip   LIKE nmy_file.nmyslip
    DEFINE ap_type   LIKE apa_file.apa36
- 
+
    IF s_anmshut(0) THEN RETURN END IF
- 
-   IF g_npn.npn03 != '9' THEN 
+
+   IF g_npn.npn03 != '9' THEN
       RETURN
-   END IF  
+   END IF
    OPEN WINDOW t250_s AT 8,20 WITH FORM "anm/42f/anmt2505"
-         ATTRIBUTE (STYLE = g_win_style CLIPPED) 
- 
+         ATTRIBUTE (STYLE = g_win_style CLIPPED)
+
     CALL cl_ui_locale("anmt2505")
- 
- 
+
+
    CLEAR FORM                                    #清除畫面
    CONSTRUCT BY NAME g_wc ON npn01,npn02
               BEFORE CONSTRUCT
-                 DISPLAY g_npn.npn01 TO npn01   
-                 DISPLAY g_npn.npn02 TO npn02  
+                 DISPLAY g_npn.npn01 TO npn01
+                 DISPLAY g_npn.npn02 TO npn02
                  CALL cl_qbe_init()
- 
+
       ON IDLE g_idle_seconds
          CALL cl_on_idle()
          CONTINUE CONSTRUCT
- 
-      ON ACTION about         
-         CALL cl_about()      
- 
-      ON ACTION help         
-         CALL cl_show_help() 
- 
-      ON ACTION controlg      
-         CALL cl_cmdask()    
- 
- 
+
+      ON ACTION about
+         CALL cl_about()
+
+      ON ACTION help
+         CALL cl_show_help()
+
+      ON ACTION controlg
+         CALL cl_cmdask()
+
+
       ON ACTION qbe_select
           CALL cl_qbe_select()
       ON ACTION qbe_save
@@ -5115,9 +5116,9 @@ FUNCTION t250_s()
       CLOSE WINDOW t250_s
       RETURN
    END IF
- 
+
    INPUT BY NAME ap_slip,ap_type WITHOUT DEFAULTS
- 
+
       AFTER FIELD ap_slip
          IF NOT cl_null(ap_slip) THEN
                CALL s_check_no('AAP',ap_slip,'','12','','','')
@@ -5126,7 +5127,7 @@ FUNCTION t250_s()
                   NEXT FIELD ap_slip
                END IF
          END IF
- 
+
       AFTER FIELD ap_type
          IF NOT cl_null(ap_type) THEN
             SELECT COUNT(*) INTO l_n FROM apr_file WHERE apr01=ap_type
@@ -5134,10 +5135,10 @@ FUNCTION t250_s()
                CALL cl_err('select apr',STATUS,0) NEXT FIELD ap_type
             END IF
          END IF
- 
+
       ON ACTION CONTROLP
          CASE WHEN INFIELD(ap_slip)
-                CALL q_apy(FALSE,FALSE,ap_slip,'12','AAP') RETURNING ap_slip  
+                CALL q_apy(FALSE,FALSE,ap_slip,'12','AAP') RETURNING ap_slip
                 DISPLAY BY NAME ap_slip
                 NEXT FIELD ap_slip
               WHEN INFIELD(ap_type)
@@ -5151,15 +5152,15 @@ FUNCTION t250_s()
       ON IDLE g_idle_seconds
          CALL cl_on_idle()
          CONTINUE INPUT
- 
-      ON ACTION about        
-         CALL cl_about()      
- 
-      ON ACTION help        
-         CALL cl_show_help() 
- 
-      ON ACTION controlg    
-         CALL cl_cmdask()    
+
+      ON ACTION about
+         CALL cl_about()
+
+      ON ACTION help
+         CALL cl_show_help()
+
+      ON ACTION controlg
+         CALL cl_cmdask()
    END INPUT
    IF INT_FLAG THEN
       LET INT_FLAG = 0
@@ -5167,10 +5168,10 @@ FUNCTION t250_s()
       RETURN
    END IF
 
-   LET g_success = 'Y'   
-   BEGIN WORK  
+   LET g_success = 'Y'
+   BEGIN WORK
    LET g_count = 0
-   LET l_buf1 = g_wc 
+   LET l_buf1 = g_wc
    IF l_buf1 != ' 1=1' THEN
       LET g_sql=" SELECT COUNT(*) FROM apa_file,npn_file ",
                 " WHERE apa25=npn01 AND apa42 = 'N' AND ",l_buf1 CLIPPED
@@ -5190,21 +5191,21 @@ FUNCTION t250_s()
                   " WHERE npn01=npo01 ",
                   "   AND npn03='9' ",
                   "   AND ", g_wc CLIPPED
- 
+
       OPEN t250_cl USING g_npn.npn01
       IF STATUS THEN
          CALL cl_err("OPEN t250_cl:", STATUS, 1)
          CLOSE t250_cl
-         CLOSE WINDOW t250_s   
+         CLOSE WINDOW t250_s
          ROLLBACK WORK
          RETURN
       END IF
       FETCH t250_cl INTO g_npn.*
       IF SQLCA.sqlcode THEN
          CALL cl_err(g_npn.npn01,SQLCA.sqlcode,0)
-         CLOSE t250_cl 
-         CLOSE WINDOW t250_s  
-         ROLLBACK WORK 
+         CLOSE t250_cl
+         CLOSE WINDOW t250_s
+         ROLLBACK WORK
          RETURN
       END IF
       PREPARE t250_t_prepare_1 FROM g_sql
@@ -5217,9 +5218,9 @@ FUNCTION t250_s()
       CALL t250_create_apb()
       CALL t250_create_apa01()
 
-      CALL s_showmsg_init()   
+      CALL s_showmsg_init()
       FOREACH t250_t_1 INTO g_npn.*,l_npo.*,l_nmh.*
-         IF STATUS THEN 
+         IF STATUS THEN
             CALL s_errmsg('','','foreach',STATUS,1)
             LET g_success='N'
             EXIT FOREACH
@@ -5230,10 +5231,10 @@ FUNCTION t250_s()
             CONTINUE FOREACH
          END IF
          SELECT COUNT(*) INTO l_n FROM nmi_file
-          WHERE nmi01=l_npo.npo03 AND nmi05 != '5'        
+          WHERE nmi01=l_npo.npo03 AND nmi05 != '5'
          IF l_n = 0 THEN
             CALL s_errmsg('nmi01',l_npo.npo03,l_npo.npo03,'anm-652',1)
-             LET g_success='N'               
+             LET g_success='N'
              CONTINUE FOREACH
          END IF
          INITIALIZE g_apa.* TO NULL
@@ -5249,32 +5250,32 @@ FUNCTION t250_s()
          LET g_apa.apa05 = l_nmh.nmh22
          LET g_apa.apa06 = l_nmh.nmh22
          LET g_apa.apa07 = l_nmh.nmh23
-         LET g_apa.apa08 = ' '           
+         LET g_apa.apa08 = ' '
          LET g_apa.apa20 = 0
- 
+
          SELECT pmc17,pmc47,pmc24 INTO g_apa.apa11,g_apa.apa15,g_apa.apa18
            FROM pmc_file WHERE pmc01=g_apa.apa05
          IF STATUS THEN
             LET g_success='N' LET g_errno = 'aap-040'
          END IF
          SELECT gec04 INTO g_apa.apa16 FROM gec_file
-          WHERE gec01=g_apa.apa15 AND gec011='1'       
+          WHERE gec01=g_apa.apa15 AND gec011='1'
          CALL s_paydate('a','',g_apa.apa09,g_apa.apa02,g_apa.apa11,g_apa.apa06)
              RETURNING g_apa.apa12,g_apa.apa64,g_apa.apa24
          IF g_errno <> ' ' THEN LET g_success='N' END IF
          LET g_apa.apa13 = g_npn.npn04
          LET g_apa.apa14 = g_npn.npn05
-         LET g_apa.apa72 = g_apa.apa72   
- 
+         LET g_apa.apa72 = g_apa.apa72
+
          LET g_apa.apa17 = '1'
          LET g_apa.apa171= '21'
          LET g_apa.apa172= '1'
          LET g_apa.apa173=YEAR(g_today)
          LET g_apa.apa174=MONTH(g_today)
- 
+
          LET g_apa.apa21 = g_user
          SELECT gen03 INTO g_apa.apa22 FROM gen_file WHERE gen01=g_apa.apa21
- 
+
          LET g_apa.apa25 = l_npo.npo01
          LET g_apa.apa31f= l_npo.npo04
          LET g_apa.apa32f= 0
@@ -5285,15 +5286,15 @@ FUNCTION t250_s()
          LET g_apa.apa32 = 0
          LET g_apa.apa33 = 0
          LET g_apa.apa34 = l_npo.npo06
-         LET g_apa.apa73 = g_apa.apa34     
-         LET g_apa.apa74 = 'N'              
+         LET g_apa.apa73 = g_apa.apa34
+         LET g_apa.apa74 = 'N'
          LET g_apa.apa35 = 0
- 
+
          LET g_apa.apa36 = ap_type
- 
+
          LET g_apa.apa41 = 'Y'
          LET g_apa.apa42 = 'N'
-         LET g_apa.apa44 = g_npn.npn09   
+         LET g_apa.apa44 = g_npn.npn09
          SELECT apz13 INTO l_apz13 FROM apz_file WHERE apz00='0'
          IF l_apz13 = 'Y' THEN
             LET l_depno = g_apa.apa22
@@ -5308,7 +5309,7 @@ FUNCTION t250_s()
             LET g_apa.apa51 = l_aps.aps21
             LET g_apa.apa54 = l_aps.aps22
          END IF
-    ELSE 
+    ELSE
         SELECT * INTO l_aps.* FROM aps_file WHERE aps01=l_depno
         SELECT apt03,apt04,apt031,apt041 INTO  g_apa.apa51,g_apa.apa54,g_apa.apa511,g_apa.apa541 FROM apt_file
          WHERE apt01=g_apa.apa36 AND apt02 = l_depno
@@ -5317,10 +5318,10 @@ FUNCTION t250_s()
            LET g_apa.apa54 = l_aps.aps22
            LET g_apa.apa511 = l_aps.aps211
            LET g_apa.apa541 = l_aps.aps221
-     END IF    
+     END IF
     END IF
          SELECT gec03 INTO g_apa.apa52 FROM gec_file WHERE gec01=g_apa.apa15
- 
+
          LET g_apa.apa55 = '1'
          LET g_apa.apa56 = '0'
          LET g_apa.apa57 = 0
@@ -5339,18 +5340,18 @@ FUNCTION t250_s()
          LET g_apa.apauser = g_user
          LET g_apa.apagrup = g_grup
          LET g_apa.apadate = g_today
-         LET g_apa.apa930=s_costcenter(g_apa.apa22)  
- 
+         LET g_apa.apa930=s_costcenter(g_apa.apa22)
+
          #先存在buffer內
-         LET g_apa.apalegal = g_legal  
-         LET g_apa.apa79 = '1'         
+         LET g_apa.apalegal = g_legal
+         LET g_apa.apa79 = '1'
          INSERT INTO tmp1_file VALUES(g_apa.*)
          IF STATUS THEN
             CALL s_errmsg('','','ins tmp1_file',STATUS,1)
-            LET g_success='N' 
+            LET g_success='N'
             CONTINUE FOREACH
          END IF
- 
+
          # 單身部份 --------------------------------------------------------#
          INITIALIZE g_apb.* TO NULL
          LET g_apb.apb01 = g_apa.apa01
@@ -5370,9 +5371,9 @@ FUNCTION t250_s()
          LET g_apb.apb24 = l_npo.npo04       #原幣金額
          #LET g_apb.apb26 = l_nmd.nmd18       #部門
          LET g_apb.apb27 = '票據立帳'        #品名
-         LET g_apb.apb930=g_apa.apa930      
-         LET g_apb.apb02 = l_npo.npo02      
-         LET g_apb.apblegal = g_legal 
+         LET g_apb.apb930=g_apa.apa930
+         LET g_apb.apb02 = l_npo.npo02
+         LET g_apb.apblegal = g_legal
          INSERT INTO tmp2_file VALUES(g_apb.*,l_nmh.nmh22)
          IF STATUS THEN
             CALL s_errmsg('','','ins tmp2_file',STATUS,1)
@@ -5385,21 +5386,21 @@ FUNCTION t250_s()
        SELECT * FROM tmp1_file
         ORDER BY apa05
       IF SQLCA.sqlcode THEN CALL cl_err('tmp1_cur',STATUS,1) END IF
-      CALL cl_outnam('anmt250') RETURNING l_name1   
+      CALL cl_outnam('anmt250') RETURNING l_name1
       START REPORT t250_rep2 to l_name1
       FOREACH tmp1_cur_1 INTO l_apa.*
          IF SQLCA.sqlcode THEN
             CALL s_errmsg('','','foreach oma',SQLCA.sqlcode,1)
-            LET g_success='N'                
+            LET g_success='N'
             EXIT FOREACH
          END IF
          OUTPUT TO REPORT t250_rep2(l_apa.*,ap_slip)
       END FOREACH
       FINISH REPORT t250_rep2
-      IF os.Path.chrwx(l_name1 CLIPPED,511) THEN END IF   
+      IF os.Path.chrwx(l_name1 CLIPPED,511) THEN END IF
       DECLARE tmp2_cur_1 CURSOR FOR
         SELECT * FROM tmp2_file ORDER BY cus
-      IF SQLCA.sqlcode THEN 
+      IF SQLCA.sqlcode THEN
          CALL s_errmsg('','','tmp2_cur',STATUS,0)
       END IF
       LET l_custom = ' '
@@ -5418,41 +5419,41 @@ FUNCTION t250_s()
             LET l_apb02 = 0
          END IF
          LET l_apb02 = l_apb02 + 1
-         LET l_nmh22 = l_nmh22 CLIPPED 
+         LET l_nmh22 = l_nmh22 CLIPPED
          SELECT a01 INTO l_apb.apb01 FROM tmp3_file where a03 =l_nmh22
          LET l_apb.apb02 = l_apb02
-         LET l_apb.apb34 = 'N'      
- 
-         LET l_apb.apblegal = g_legal 
- 
+         LET l_apb.apb34 = 'N'
+
+         LET l_apb.apblegal = g_legal
+
          INSERT INTO apb_file VALUES(l_apb.*)
          IF SQLCA.sqlcode THEN
              CALL s_errmsg('apb01',l_apb.apb01,'ins apb',STATUS,1)
-             LET g_success = 'N' 
+             LET g_success = 'N'
          END IF
          LET l_custom_old = l_nmh22
       END FOREACH
- 
+
       DECLARE tmp3_cs_1 CURSOR FOR SELECT a01 FROM tmp3_file
       FOREACH tmp3_cs_1 INTO l_apa.apa01
-         SELECT SUM(apb10),SUM(apb24) INTO l_apa.apa57,l_apa.apa57f FROM apb_file  
+         SELECT SUM(apb10),SUM(apb24) INTO l_apa.apa57,l_apa.apa57f FROM apb_file
           WHERE apb01=l_apa.apa01
          UPDATE apa_file SET apa57 = l_apa.apa57,
-                             apa57f = l_apa.apa57f   
+                             apa57f = l_apa.apa57f
           WHERE apa01=l_apa.apa01
          IF SQLCA.sqlcode THEN
              CALL s_errmsg('apa01',l_apa.apa01,'upd apa',STATUS,1)
-             LET g_success = 'N' 
+             LET g_success = 'N'
          END IF
       END FOREACH
- 
+
    END IF
- 
+
     CLOSE WINDOW t250_s                 #結束畫面
- 
+
     IF g_success = 'Y' THEN
        CALL s_showmsg()          #No.FUN-710024
-       COMMIT WORK 
+       COMMIT WORK
        CALL cl_cmmsg(1)
     ELSE
       IF NOT cl_null(g_errno) THEN
@@ -5460,12 +5461,12 @@ FUNCTION t250_s()
        END IF
       IF g_count > 0 THEN
        # MESSAGE '應付帳款已存在,無法重複產生 !!'
-         CALL s_errmsg('','','','anm-651',1)   
-        CALL s_showmsg()          
+         CALL s_errmsg('','','','anm-651',1)
+        CALL s_showmsg()
         ROLLBACK WORK
       ELSE
          CALL cl_rbmsg(1)
-         CALL s_showmsg()          
+         CALL s_showmsg()
          ROLLBACK WORK
       END IF
     END IF
@@ -5473,10 +5474,10 @@ END FUNCTION
 
 REPORT t250_rep2(p_apa,p_slip)
    DEFINE p_apa       RECORD LIKE apa_file.*
-   DEFINE l_apc       RECORD LIKE apc_file.*   
-   DEFINE p_slip      LIKE oay_file.oayslip   
-   DEFINE li_result   LIKE type_file.num5      
- 
+   DEFINE l_apc       RECORD LIKE apc_file.*
+   DEFINE p_slip      LIKE oay_file.oayslip
+   DEFINE li_result   LIKE type_file.num5
+
    ORDER EXTERNAL BY p_apa.apa05  #轉付廠商
    FORMAT
       AFTER GROUP OF p_apa.apa05
@@ -5490,24 +5491,24 @@ REPORT t250_rep2(p_apa,p_slip)
         LET p_apa.apa33  = GROUP SUM(p_apa.apa33)
         LET p_apa.apa34  = GROUP SUM(p_apa.apa34)
         LET p_apa.apa35  = GROUP SUM(p_apa.apa35)
-        LET p_apa.apa79  = 0            
+        LET p_apa.apa79  = 0
         CALL t250_comp_oox(p_apa.apa01) RETURNING g_net
-        LET p_apa.apa73  = p_apa.apa34-p_apa.apa35 + g_net   
- 
+        LET p_apa.apa73  = p_apa.apa34-p_apa.apa35 + g_net
+
       CALL s_auto_assign_no("aap",p_slip,p_apa.apa02,"12","","","","","")
            RETURNING li_result,p_apa.apa01
       IF (NOT li_result) THEN
          LET g_success='N'
       END IF
- 
-       LET p_apa.apa100 = g_plant   
-       LET p_apa.apalegal = g_legal 
- 
-       LET p_apa.apaoriu = g_user     
-       LET p_apa.apaorig = g_grup     
+
+       LET p_apa.apa100 = g_plant
+       LET p_apa.apalegal = g_legal
+
+       LET p_apa.apaoriu = g_user
+       LET p_apa.apaorig = g_grup
        INSERT INTO apa_file VALUES(p_apa.*)
        IF SQLCA.sqlcode THEN
-          CALL s_errmsg('apa01',p_apa.apa01,'ins apa_file',SQLCA.sqlcode,1)    
+          CALL s_errmsg('apa01',p_apa.apa01,'ins apa_file',SQLCA.sqlcode,1)
           LET g_success='N'
        ELSE
           #寫入多帳期資料
@@ -5528,9 +5529,9 @@ REPORT t250_rep2(p_apa,p_slip)
           LET l_apc.apc14 = p_apa.apa65f
           LET l_apc.apc15 = p_apa.apa65
           LET l_apc.apc16 = p_apa.apa20
- 
-          LET l_apc.apclegal = g_legal 
- 
+
+          LET l_apc.apclegal = g_legal
+
           INSERT INTO apc_file VALUES(l_apc.*)
           IF SQLCA.sqlcode THEN
              CALL cl_err3("ins","apc_file",p_apa.apa01,"1",SQLCA.sqlcode,"","ins apc_file",1)
@@ -5541,10 +5542,10 @@ REPORT t250_rep2(p_apa,p_slip)
        INSERT INTO tmp3_file VALUES(p_apa.apa01,p_apa.apa05)
        IF SQLCA.sqlcode THEN
           LET g_success='N'
-          CALL s_errmsg('apa01',p_apa.apa01,'ins tmp3',SQLCA.sqlcode,1)    
+          CALL s_errmsg('apa01',p_apa.apa01,'ins tmp3',SQLCA.sqlcode,1)
        END IF
 END REPORT
- 
+
 FUNCTION t250_create_apa()
    SELECT *
      FROM apa_file
@@ -5556,7 +5557,7 @@ FUNCTION t250_create_apa()
    END IF
    DELETE FROM tmp1_file WHERE 1=1
 END FUNCTION
- 
+
 FUNCTION t250_create_apb()
    SELECT apb_file.*,'aaaaaaaaaa' cus
      FROM apb_file
@@ -5566,38 +5567,38 @@ FUNCTION t250_create_apb()
       LET g_success='N'
       CALL cl_err('create tmp2_file:',SQLCA.SQLCODE,0)
    END IF
- 
+
    DELETE FROM tmp2_file WHERE 1=1
 END FUNCTION
- 
+
 FUNCTION t250_create_apa01()
- 
+
     CREATE TEMP TABLE tmp3_file(
       a01 LIKE apb_file.apb01,
       a03 LIKE nmh_file.nmh22)
- 
+
 END FUNCTION
 FUNCTION t250_s2()
    DEFINE l_apa01 LIKE apa_file.apa01
    DEFINE l_cnt   LIKE type_file.num5
    DEFINE l_apa35 LIKE apa_file.apa35
    DEFINE l_apa35f LIKE apa_file.apa35f
-   
+
    LET l_cnt = 0
    SELECT COUNT(*) INTO l_cnt FROM apa_file
      WHERE apa25 = g_npn.npn01
    IF l_cnt = 0 THEN
       RETURN
    END IF
- 
-   IF cl_confirm('anm-399') THEN     
+
+   IF cl_confirm('anm-399') THEN
       BEGIN WORK
       LET g_success='Y'
-    
-     
-      DECLARE apa_c CURSOR FOR 
+
+
+      DECLARE apa_c CURSOR FOR
         SELECT apa01 FROM apa_file WHERE apa25=g_npn.npn01
-    
+
       FOREACH apa_c INTO l_apa01
          SELECT apa35,apa35f INTO l_apa35,l_apa35f FROM apa_file
            WHERE apa01 = l_apa01
@@ -5608,23 +5609,23 @@ FUNCTION t250_s2()
             EXIT FOREACH
          END IF
          DELETE FROM apa_file WHERE apa01 = l_apa01
-         IF SQLCA.sqlcode OR SQLCA.SQLERRD[3] = 0 THEN 
+         IF SQLCA.sqlcode OR SQLCA.SQLERRD[3] = 0 THEN
             CALL cl_err3("del","apa_file",l_apa01,"",SQLCA.sqlcode,"","del apa_file",1)
             LET g_success='N'
             EXIT FOREACH
-         END IF 
+         END IF
          DELETE FROM apc_file WHERE apc01 = l_apa01
-         IF SQLCA.sqlcode OR SQLCA.SQLERRD[3] = 0 THEN 
+         IF SQLCA.sqlcode OR SQLCA.SQLERRD[3] = 0 THEN
             CALL cl_err3("del","apc_file",l_apa01,"",SQLCA.sqlcode,"","del apc_file",1)
             LET g_success='N'
             EXIT FOREACH
-         END IF 
+         END IF
          DELETE FROM apb_file WHERE apb01 = l_apa01
-         IF SQLCA.sqlcode OR SQLCA.SQLERRD[3] = 0 THEN 
+         IF SQLCA.sqlcode OR SQLCA.SQLERRD[3] = 0 THEN
             CALL cl_err3("del","apb_file",l_apa01,"",SQLCA.sqlcode,"","del apb_file",1)
             LET g_success='N'
             EXIT FOREACH
-         END IF 
+         END IF
       END FOREACH
       IF g_success='Y' THEN
          CALL cl_err('','lib-022',0)
@@ -5633,13 +5634,13 @@ FUNCTION t250_s2()
          CALL cl_err('','mfg1604',0)
          ROLLBACK WORK
       END IF
-   END IF 
+   END IF
 END FUNCTION
 FUNCTION t250_comp_oox(p_apv03)
 DEFINE l_net     LIKE apv_file.apv04
 DEFINE p_apv03   LIKE apv_file.apv03
 DEFINE l_apa00   LIKE apa_file.apa00
- 
+
     LET l_net = 0
     IF g_apz.apz27 = 'Y' THEN
        SELECT SUM(oox10) INTO l_net FROM oox_file
@@ -5650,7 +5651,7 @@ DEFINE l_apa00   LIKE apa_file.apa00
     END IF
     SELECT apa00 INTO l_apa00 FROM apa_file WHERE apa01=p_apv03
     IF l_apa00 MATCHES '1*' THEN LET l_net = l_net * ( -1) END IF
- 
+
     RETURN l_net
 END FUNCTION
 #FUN-C70129--add--end

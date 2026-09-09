@@ -3252,6 +3252,14 @@ FUNCTION t150_y1()
   DEFINE l_nnh01   LIKE nnh_file.nnh01
   DEFINE l_nnf01   LIKE nnf_file.nnf01
   DEFINE l_blue    LIKE type_file.num5    #No.FUN-680107 SMALLINT #modi by kitty
+  define sr     dynamic array of record
+        npm09       like npm_file.npm09,
+        tc_npm04    like tc_npm_file.tc_npm04,
+        tc_npm05    like tc_npm_file.tc_npm05
+  end record
+  define l_cnt      integer
+  define l_tmp      like tc_npm_file.tc_npm05
+  define l_old      like tc_npm_file.tc_npm05
 
   DECLARE t150_ics2 CURSOR  WITH HOLD FOR
        SELECT * FROM npm_file WHERE npm01 = g_npl.npl01 ORDER BY npm02
@@ -3301,7 +3309,7 @@ FUNCTION t150_y1()
      END IF
      IF g_npl.npl03='8' OR (g_npl.npl03 = '7' AND m_npm.npm07 = '8') OR
         (g_npl.npl03 = '9' AND m_npm.npm07 = '8') THEN
-        CALL t150_ins_nme()
+        #CALL t150_ins_nme()
         LET l_nnh01 = ' '
         DECLARE nnh_curs CURSOR FOR
          SELECT UNIQUE nnh01
@@ -3381,6 +3389,54 @@ FUNCTION t150_y1()
         EXIT FOREACH
      END IF
   END FOREACH
+
+    declare t150_ics3 cursor for
+     select tc_npm09,sum(tc_npm04),sum(tc_npm05) from tc_npm_file where tc_npm01 = g_npl.npl01
+        group by tc_npm09 order by tc_npm09
+
+    call sr.clear()
+    let l_cnt = 1
+
+    foreach t150_ics3 into sr[l_cnt].*
+        if sqlca.sqlcode then
+            call cl_err('t150_ics3',sqlca.sqlcode,1)
+            exit foreach
+        end if
+        let l_cnt = l_cnt + 1
+    end foreach
+    call sr.deleteElement(l_cnt)
+
+    foreach t150_ics2 into m_npm.*
+        if sqlca.sqlcode then
+            call cl_err('t150_ics2',sqlca.sqlcode,1)
+            exit foreach
+        end if
+        let l_old = m_npm.npm04
+        for l_cnt = 1 to sr.getLength()
+            if sr[l_cnt].tc_npm04 <= 0 then
+                continue for
+            end if
+            if sr[l_cnt].tc_npm04 > l_old then
+                let l_tmp = l_old
+            else
+                let l_tmp = sr[l_cnt].tc_npm04
+            end if
+            let m_npm.npm04 = l_tmp
+            let m_npm.npm05 = l_tmp
+            let m_npm.npm06 = l_tmp
+            let m_npm.npm09 = sr[l_cnt].npm09
+
+            let sr[l_cnt].tc_npm04 = sr[l_cnt].tc_npm04 - l_tmp
+            let l_old = l_old - l_tmp
+
+            CALL t150_ins_nme()
+
+            if l_old <= 0 then
+                exit for
+            end if
+        end for
+    end foreach
+
 END FUNCTION
 
 FUNCTION t150_firm2()
