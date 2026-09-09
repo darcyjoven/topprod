@@ -51,7 +51,7 @@
 # Modify.........: No.TQC-630018 06/03/09 By Elva 來源為G時default單位一
 # Modify.........: No.TQC-630028 06/03/20 By 料件檢驗程度若在料件/廠商檢驗資料不存在
                                     #        應搜尋料件基本資料中品管檢驗資料設定
-# Modify.........: No.TQC-630089 06/03/21 By當資料來源為"2:自行輸入時"單身檢驗項目的AC/RE的值目前代出 0 / 0            
+# Modify.........: No.TQC-630089 06/03/21 By當資料來源為"2:自行輸入時"單身檢驗項目的AC/RE的值目前代出 0 / 0
 # Modify.........: No.TQC-630033 06/03/31 By pengu 在AFTER FIELD qct11中應先去撈qcc_file中的上限(qcc061)、
                                    #               下限(qcc062)及是否輸入明細測量值(qcc07)
 # Modify.........: No.FUN-630051 06/04/03 By Carrier 增加多單位倉庫QC申請單的來源
@@ -151,7 +151,7 @@
 # Modify.........: No.MOD-870270 08/07/29 By Smapmin OQC的送驗量default應該是收貨數量- SUM(未確認的QC送驗量) -SUM(以確認的QC合格量)
 # Modify.........: No.MOD-880118 08/08/14 By lumx  obk_file key值調整 此處需加上obk05的條件
 # Modify.........: No.MOD-880068 08/08/08 By claire aqct800同張單不同項次有不需檢驗及需檢驗料需允許檢驗料可輸入
-# Modify.........: No.MOD-880166 08/08/21 By claire 取消確認時,回寫rvb31的公式調整,應扣除原來QC合格量        
+# Modify.........: No.MOD-880166 08/08/21 By claire 取消確認時,回寫rvb31的公式調整,應扣除原來QC合格量
 # Modify.........: No.MOD-890004 08/09/01 By chenyu 取消確認時,不應該判斷是否存在申請單
 # Modify.........: No.FUN-880129 08/09/05 By xiaofeizhu s_del_rvbs的傳入參數(出/入庫，單據編號，單據項次，專案編號)，改為(出/入庫，單據編號，單據項次，檢驗順序)
 # Modify.........: No.MOD-890098 08/09/10 By claire aqct800查詢時,客戶簡稱應取自客戶主檔
@@ -182,13 +182,13 @@
 # Modify.........: No.MOD-970183 09/07/20 By Carrier 取消審核時,檢查是否已經有驗退單
 # Modify.........: No.MOD-970147 09/07/24 By Smapmin 資料來源為Z.其他時,要可以輸入料號
 # Modify.........: No.MOD-970271 09/07/30 By mike 在aqct700的廠商編號欄位,每次檢查沒有先把g_errno的欄位清空,造成若第一次key入錯誤的>
-#                                                 后續就離不開這個欄位了   
+#                                                 后續就離不開這個欄位了
 # Modify.........: No.FUN-980007 09/08/13 By TSD.zeak GP5.2架構重整，修改 INSERT INTO 語法
 # Modify.........: No.FUN-980030 09/08/31 By Hiko 加上GP5.2的相關設定
 # Modify.........: No.TQC-990050 09/09/11 By lilingyu "送驗量"不可小于0
 # Modify.........: No.CHI-960033 09/10/10 By chenmoyan 加pmh22為條件者，再加pmh23=''
 # Modify.........: No.FUN-990071 09/09/23 By chenmoyan 增加料件編號為'*'的情況
-# Modify.........: No:MOD-980226 09/10/27 By sabrina  再抓取bmj10 SQL中應判斷bmj02是否為' '而是NULL 
+# Modify.........: No:MOD-980226 09/10/27 By sabrina  再抓取bmj10 SQL中應判斷bmj02是否為' '而是NULL
 # Modify.........: No:MOD-9A0129 09/10/27 By sabrina  使用多單位且母單位數量為輸入值時，送驗量會待不出值
 # Modify.........: No:CHI-9A0052 09/11/02 By Smapmin OQC時輸入的料號需跟出通/出貨單輸入的料號相同
 # Modify.........: No:FUN-9C0071 10/01/04 By huangrh 精簡程式
@@ -206,18 +206,18 @@
 # Modify.........: No.FUN-A80063 10/08/18 By wujie   品质管理功能改善修改
 # Modify.........: No:MOD-A80165 10/08/23 By sabrina 若qcs02有值，要call t110_check_qc()
 # Modify.........: No.FUN-AA0059 10/10/27 By huangtao 修改料號的管控
-# Modify.........: No.FUN-AA0059 10/10/27 By chenying 料號開窗控管 
+# Modify.........: No.FUN-AA0059 10/10/27 By chenying 料號開窗控管
 # Modify.........: No.FUN-A30045 10/11/15 By lixh1    新增“取消特采”ACTION
 # Modify.........: No:MOD-AB0143 10/11/16 By sabrina 若單身該輸入測驗值而沒有輸入測驗值，則不可以做確認
-# Modify.........: No:MOD-AC0025 10/12/06 By sabrina 當qcs00='2'時，不與收貨單的入庫允收量做勾稽 
-# Modify.........: No:TQC-AC0166 10/12/14 By Carrier 'G'仓库检验申请时,把'急料'qsa10带入qcs16 
+# Modify.........: No:MOD-AC0025 10/12/06 By sabrina 當qcs00='2'時，不與收貨單的入庫允收量做勾稽
+# Modify.........: No:TQC-AC0166 10/12/14 By Carrier 'G'仓库检验申请时,把'急料'qsa10带入qcs16
 # Modify.........: NO.TQC-AC0294 10/12/20 By liweie sfu01開窗/檢查要排除smy73='Y'的單據
-# Modify.........: NO.MOD-AC0373 10/12/28 By lixh1  維護單據批序號 
+# Modify.........: NO.MOD-AC0373 10/12/28 By lixh1  維護單據批序號
 # Modify.........: NO.TQC-B10019 11/01/05 By zhangll 增加资料来源控管
 # Modify.........: No:MOD-B10034 11/01/05 By sabrina 若不輸入測量值，按放棄時應該要可以離開測量值畫面
 # Modify.........: No:MOD-B10110 11/01/18 By Summer oga09要加上'A'
-# Modify.........: No:MOD-B20010 11/02/08 By sabrina qct03_curs少加兩個條件 
-# Modify.........: No:MOD-B20052 11/02/16 By sabrina 修改MOD-AB0143 
+# Modify.........: No:MOD-B20010 11/02/08 By sabrina qct03_curs少加兩個條件
+# Modify.........: No:MOD-B20052 11/02/16 By sabrina 修改MOD-AB0143
 # Modify.........: No.FUN-A80128 11/03/09 By Mandy 因asft620 新增EasyFlow整合功能影響INSERT INTO sfu_file
 # Modify.........: No:FUN-B30211 11/04/01 By lixiang  加cl_used(g_prog,g_time,2)
 # Modify.........: No:FUN-B30170 11/04/11 By suncx 單身增加批序號明細頁簽
@@ -250,7 +250,7 @@
 # Modify.........: No:MOD-BC0060 12/02/16 By ck2yuan 新增輸入單號，檢驗水準要帶出來
 # Modify.........: No:TQC-C20213 12/02/16 By bart g_qcs22s數量不應包含本張單送檢量
 # Modify.........: No:TQC-C20196 12/02/17 By lixh1 aqct700當qcs00='Z'的時候才可維護QC料件
-# Modify.........: No.TQC-C20264 12/02/20 By yuhuabao 修改BUG:新增aqct110時如果單身無資料的狀態下，按下右邊的action不良原因後，會自動關閉程式 
+# Modify.........: No.TQC-C20264 12/02/20 By yuhuabao 修改BUG:新增aqct110時如果單身無資料的狀態下，按下右邊的action不良原因後，會自動關閉程式
 # Modfiy.........: No.TQC-C20504 12/02/27 By xianghui 確認時要檢查QC料件維護的數量要等於QC單的送驗量
 # Modfiy.........: No.TQC-C30082 12/03/05 By yuhuabao 如果合格狀態為1 合格時，加上開窗詢問整批修改純度
 # Modify.........: No:CHI-BC0018 12/03/07 By ck2yuan ima101、qcs17兩個欄位帶出後面說明欄位
@@ -268,7 +268,7 @@
 # Modify.........: No:CHI-C30064 12/03/15 By Sakura 程式有用到"aim-011"訊息的地方，改用料倉儲批抓庫存單位(img09)換算
 # Modify.........: No:MOD-C30811 12/03/22 By ck2yuan 若走多倉儲出貨,rvbs022重新編號
 # Modify.........: No:MOD-C30846 12/03/26 By ck2yuan 入庫量應參考入庫單,包含未確認的
-# Modify.........: No:FUN-C30117 12/04/09 By Sakura 查詢段使用dialog包起來 
+# Modify.........: No:FUN-C30117 12/04/09 By Sakura 查詢段使用dialog包起來
 # Modify.........: No:TQC-C40081 12/04/12 By xianghui 資料來源不是Z時，點QC的ACTION應給我相應的提示信息
 # Modify.........: No.CHI-C30002 12/05/24 By yuhuabao 離開單身時若單身無資料提示是否刪除單頭資料
 # Modify.........: No.FUN-C30152 12/06/08 By bart aqct700加上取消特採的功能
@@ -296,7 +296,7 @@
 # Modify.........: No:MOD-D20006 13/03/12 By jt_chen 游標由最後一筆往上移會離開單身
 # Modify.........: No:FUN-D30065 13/03/22 By lixh1 修正特采的時候update rvb_file不成功的問題
 # Modify.........: No.CHI-C80072 13/03/26 By fengrui 統一確認和取消確認時確認人員和確認日期的寫法
-# Modify.........: No:DEV-D30045 13/04/01 By TSD.JIE 
+# Modify.........: No:DEV-D30045 13/04/01 By TSD.JIE
 #                  1.條碼產生時機點相關程式-增加"條碼查詢"
 #                  2.條碼產生時機點相關程式-增加"條碼列印"
 #                  3.條碼產生時機點相關程式-增加"條碼產生"
@@ -313,9 +313,9 @@
 # Modify.........: No.18010101   by shawn    添加SCM IQC同步接口
 
 DATABASE ds
- 
+
 GLOBALS "../../config/top.global"
- 
+
 #模組變數(Module Variables)
 DEFINE g_qcs            RECORD LIKE qcs_file.*,
        g_qcs_t          RECORD LIKE qcs_file.*,
@@ -336,9 +336,9 @@ DEFINE g_qcs            RECORD LIKE qcs_file.*,
            qct06        LIKE qct_file.qct06,
            qct09        LIKE qct_file.qct09,
            qct10        LIKE qct_file.qct10,
-#No.FUN-A80063 --begin  
+#No.FUN-A80063 --begin
            qct14        LIKE qct_file.qct14,
-           qct15        LIKE qct_file.qct15,         
+           qct15        LIKE qct_file.qct15,
 #No.FUN-A80063 --end
            qct11        LIKE qct_file.qct11,
            qct07        LIKE qct_file.qct07,
@@ -369,9 +369,9 @@ DEFINE g_qcs            RECORD LIKE qcs_file.*,
           qct06         LIKE qct_file.qct06,
           qct09         LIKE qct_file.qct09,
           qct10         LIKE qct_file.qct10,
-#No.FUN-A80063 --begin  
+#No.FUN-A80063 --begin
           qct14        LIKE qct_file.qct14,
-          qct15        LIKE qct_file.qct15,         
+          qct15        LIKE qct_file.qct15,
 #No.FUN-A80063 --end
           qct11         LIKE qct_file.qct11,
           qct07         LIKE qct_file.qct07,
@@ -410,7 +410,7 @@ DEFINE m_gen02         LIKE gen_file.gen02,
        g_type           LIKE pmh_file.pmh22,   #MOD-890102
        g_ecm04          LIKE ecm_file.ecm04,   #MOD-890102
        ma_num1,ma_num2,mi_num1,mi_num2 LIKE type_file.num10        #No.FUN-680104 INTEGER
- 
+
 DEFINE tm RECORD  #FUN-630105
             slip    LIKE sfu_file.sfu01,
             l_date  LIKE type_file.dat,          #No.FUN-680104 DATE  #No.FUN-6A0160 date->l_date
@@ -418,7 +418,7 @@ DEFINE tm RECORD  #FUN-630105
             wh2     LIKE img_file.img03,
             wh3     LIKE img_file.img04
           END RECORD
- 
+
 #主程式開始
 DEFINE g_forupd_sql         STRING   #SELECT ... FOR UPDATE SQL
 DEFINE g_before_input_done  LIKE type_file.num5    #No.FUN-680104 SMALLINT
@@ -482,9 +482,9 @@ FUNCTION t110(p_argv1,p_argv2,p_argv3,p_argv4,p_argv5,p_argv6)
    DEFINE p_argv5 STRING              #FUN-680011
    DEFINE p_argv6 LIKE qcs_file.qcs00 #FUN-680011
 
-   
+
    DEFINE l_n         LIKE type_file.num5
- 
+
    WHENEVER ERROR CONTINUE                #忽略一切錯誤
    LET g_argv1 = p_argv1
    LET g_argv2 = p_argv2              #FUN-5C0114
@@ -492,31 +492,31 @@ FUNCTION t110(p_argv1,p_argv2,p_argv3,p_argv4,p_argv5,p_argv6)
    LET g_argv4 = p_argv4              #FUN-680011
    LET g_argv5 = p_argv5              #FUN-680011
    LET g_argv6 = p_argv6              #FUN-680011
- 
-   CASE g_argv1 
-      WHEN "1" LET g_prog = 'aqct110'    
-      WHEN "2" LET g_prog = 'aqct700'  
-      WHEN "3" LET g_prog = 'aqct800'  
+
+   CASE g_argv1
+      WHEN "1" LET g_prog = 'aqct110'
+      WHEN "2" LET g_prog = 'aqct700'
+      WHEN "3" LET g_prog = 'aqct800'
       WHEN "4" LET g_prog = 'asrt310'
-      OTHERWISE 
+      OTHERWISE
          CALL cl_used(g_prog,g_time,2) RETURNING g_time #No.FUN-B40028
-         EXIT PROGRAM 
-   END CASE  
+         EXIT PROGRAM
+   END CASE
 
    call saqct110_create_x() # darcy:2025/12/22 add
 
- 
+
    LET g_forupd_sql = "SELECT * FROM qcs_file WHERE qcs01 = ? AND qcs02 = ? AND qcs05 = ? FOR UPDATE"    #liuxqa 091022
    LET g_forupd_sql = cl_forupd_sql(g_forupd_sql)
    DECLARE t110_cl CURSOR FROM g_forupd_sql
- 
+
    IF g_argv1 != "1" THEN
       CALL t110_form_default()                  #No.FUN-5C0077
    END IF
    CALL t110_def_form()   #TQC-660106
    LET g_type  = '1'       #MOD-890102
    LET g_ecm04 = ' '       #MOD-890102
- 
+
    IF g_prog='aqct800' THEN
       CALL cl_set_act_visible("special_purchase",FALSE)
    END IF
@@ -526,9 +526,9 @@ FUNCTION t110(p_argv1,p_argv2,p_argv3,p_argv4,p_argv5,p_argv6)
       CALL cl_set_act_visible("cancel_special_purchase",FALSE)
    END IF
 #FUN-A30045 -------------------End---------------------------
- 
+
    IF (g_argv1<>'4') OR (cl_null(g_argv1)) THEN #TQC-650121 add OR (cl_null(g_argv1))
-      CALL cl_set_comp_visible("qcs20",FALSE) 
+      CALL cl_set_comp_visible("qcs20",FALSE)
       CALL cl_set_act_visible("tran_store,core_item",FALSE)
    ELSE
       IF (g_sma.sma104<>'Y') OR (g_sma.sma105<>'1') THEN
@@ -558,11 +558,11 @@ FUNCTION t110(p_argv1,p_argv2,p_argv3,p_argv4,p_argv5,p_argv6)
       CALL cl_set_comp_visible("qcs36,qcs37,qcs38",FALSE)  #No.FUN-610075
       CALL cl_set_comp_visible("qcs39,qcs40,qcs41",FALSE)  #No.FUN-610075
    END IF
- 
+
    IF NOT cl_null(g_argv2) THEN
-      CASE g_argv5 
+      CASE g_argv5
          WHEN "SPC"                        #SPC-前端單據自動產生QC單
-            CALL t110_a()                 
+            CALL t110_a()
             CALL cl_used(g_prog,g_time,2) RETURNING g_time #No.FUN-B30211
             EXIT PROGRAM
          WHEN "SPC_ins"                    #SPC-分批檢驗
@@ -571,19 +571,19 @@ FUNCTION t110(p_argv1,p_argv2,p_argv3,p_argv4,p_argv5,p_argv6)
             EXIT PROGRAM
          WHEN "SPC_upd"                    #SPC-更新QC資料
             CALL t110_q()
-            CALL t110_spc_upd()            
+            CALL t110_spc_upd()
             CALL cl_used(g_prog,g_time,2) RETURNING g_time #No.FUN-B30211
             EXIT PROGRAM
          OTHERWISE
             CALL t110_q()
       END CASE
    END IF
- 
+
    IF fgl_getenv('SPC') = "1" THEN
       CALL cl_err(g_prog ,'aws-093',0)
       CALL cl_used(g_prog,g_time,2) RETURNING g_time #No.FUN-B30211
-      EXIT PROGRAM 
-   END IF 
+      EXIT PROGRAM
+   END IF
 #---------------------add byhlf07751---------------------------------------------
    SELECT count(*) INTO l_n FROM ima_file WHERE ima01=qcs021 AND imaud04='N'
    IF cl_null(g_qcs.qcsud02) THEN
@@ -594,13 +594,13 @@ FUNCTION t110(p_argv1,p_argv2,p_argv3,p_argv4,p_argv5,p_argv6)
       END IF
 #--------------------add byhlf07751----------------------------------------------
    CALL t110_menu()
- 
+
    IF g_aza.aza64 matches '[ Nn]' OR g_aza.aza64 IS NULL THEN
       CALL cl_set_act_visible("trans_spc",TRUE)
       CALL cl_set_comp_visible("qcsspc",TRUE)
    END IF
 END FUNCTION
- 
+
 FUNCTION t110_menu()
    DEFINE l_qck09               LIKE qck_file.qck09    #FUN-BC0104
    DEFINE l_type                LIKE type_file.chr1    #FUN-BC0104
@@ -610,13 +610,13 @@ FUNCTION t110_menu()
              code      LIKE type_file.chr10,
              msg       STRING
                        END RECORD
-   DEFINE l_cnt       LIKE type_file.num5 
-   #No.18010101---end---            
+   DEFINE l_cnt       LIKE type_file.num5
+   #No.18010101---end---
    #darcy 221129 add s---
    define l_qcs01    like qcs_file.qcs01,
           l_qcs02    like qcs_file.qcs02,
           l_qcs05    like qcs_file.qcs05
-   #darcy 221129 add e---          
+   #darcy 221129 add e---
    WHILE TRUE
       CALL t110_bp("G")
       CASE g_action_choice
@@ -650,18 +650,18 @@ FUNCTION t110_menu()
             EXIT WHILE
          WHEN "controlg"
             CALL cl_cmdask()
-         WHEN "detail_flaw_reason"                                                                                                 
-            IF cl_chk_act_auth() THEN                                                                                              
-               IF NOT cl_null(g_qcs.qcs01) THEN                                                                                    
-                  LET g_msg="aqct111 '",g_qcs.qcs01,"' '",g_qcs.qcs02,"' '",g_qcs.qcs05,"' 1  "                                    
-                  CALL cl_cmdrun_wait(g_msg)                                                                      
-               END IF                                                                                                              
-            END IF   
-           
+         WHEN "detail_flaw_reason"
+            IF cl_chk_act_auth() THEN
+               IF NOT cl_null(g_qcs.qcs01) THEN
+                  LET g_msg="aqct111 '",g_qcs.qcs01,"' '",g_qcs.qcs02,"' '",g_qcs.qcs05,"' 1  "
+                  CALL cl_cmdrun_wait(g_msg)
+               END IF
+            END IF
+
          WHEN "qry_detail_measure"
             IF cl_chk_act_auth() THEN
                IF NOT cl_null(g_qcs.qcs01) THEN
-                     
+
                      # darcy 221128 add s---
                      let l_qcs01 = ''
                      select unique qctt01,qctt02,qctt021 into l_qcs01,l_qcs02,l_qcs05
@@ -671,8 +671,8 @@ FUNCTION t110_menu()
                               and a.qcs03 = b.qcs03 and a.qcs04=b.qcs04 and a.qcs021=b.qcs021
                      if not cl_null(l_qcs01) then
                         let g_msg = "aqcq112 '",l_qcs01,"' '",l_qcs02,"' '",l_qcs05,"' 1  "
-                     else 
-                     # darcy 221128 add e--- 
+                     else
+                     # darcy 221128 add e---
                      LET g_msg="aqcq112 '",g_qcs.qcs01,"' '",g_qcs.qcs02,"' '",g_qcs.qcs05,"' 1  "
                      DISPLAY "g_qcs.qcs01=",g_qcs.qcs01
                      DISPLAY "g_qcs.qcs02=",g_qcs.qcs02
@@ -688,23 +688,23 @@ FUNCTION t110_menu()
          WHEN "confirm"
             IF cl_chk_act_auth() THEN
                CALL t110_y_chk()          #CALL 原確認的 check 段
-             
+
               IF g_success = "Y" THEN
                   CALL t110_y_upd()       #CALL 原確認的 update 段
                END IF
- 
+
                IF g_qcs.qcs14 = 'X' THEN
                   LET g_void = 'Y'
                ELSE
                   LET g_void = 'N'
                END IF
                CALL cl_set_field_pic(g_qcs.qcs14,"","","",g_void,g_qcs.qcsacti)
-              #No.18010101-01 ---begin ----- 
+              #No.18010101-01 ---begin -----
                 IF NOT cl_null(g_qcs.qcs01) THEN
                   SELECT count(*) INTO l_cnt FROM rva_file WHERE rvaud02 LIKE '%DN%' AND rva01 = g_qcs.qcs01
-                  IF cl_null(l_cnt) THEN LET l_cnt = 0 END IF 
-                  IF l_cnt > 0 THEN 
-                      IF cl_getscmparameter()  THEN  
+                  IF cl_null(l_cnt) THEN LET l_cnt = 0 END IF
+                  IF l_cnt > 0 THEN
+                      IF cl_getscmparameter()  THEN
                         INITIALIZE l_ret TO NULL
                         CALL cjc_zmx_json_qcs(g_qcs.qcs01,g_qcs.qcs02,'Y') RETURNING l_ret.*
                         IF l_ret.success = 'Y' THEN
@@ -718,10 +718,10 @@ FUNCTION t110_menu()
                          # LET l_ret.msg = "请确认是否启用SCM！"
                          # CALL FGL_WINMESSAGE("Warning",l_ret.msg,"stop")
                       END IF
-                  ELSE 
-                      #LET l_ret.msg = "收货单：",g_qcs.qcs01 CLIPPED,"非SCM收货单，无需同步！"   
+                  ELSE
+                      #LET l_ret.msg = "收货单：",g_qcs.qcs01 CLIPPED,"非SCM收货单，无需同步！"
                       #CALL cl_err(l_ret.msg,'!',1)
-                  END IF 
+                  END IF
                 END IF
                #NO.18010101-01  ---end-----
             END IF
@@ -734,12 +734,12 @@ FUNCTION t110_menu()
                   LET g_void = 'N'
                END IF
                CALL cl_set_field_pic(g_qcs.qcs14,"","","",g_void,g_qcs.qcsacti)
-             #No.18010101-01 ---begin ----- 
+             #No.18010101-01 ---begin -----
                 IF NOT cl_null(g_qcs.qcs01) THEN
                   SELECT count(*) INTO l_cnt FROM rva_file WHERE rvaud02 LIKE '%DN%' AND rva01 = g_qcs.qcs01
-                  IF cl_null(l_cnt) THEN LET l_cnt = 0 END IF 
-                  IF l_cnt > 0 THEN 
-                      IF cl_getscmparameter()  THEN  
+                  IF cl_null(l_cnt) THEN LET l_cnt = 0 END IF
+                  IF l_cnt > 0 THEN
+                      IF cl_getscmparameter()  THEN
                         INITIALIZE l_ret TO NULL
                         CALL cjc_zmx_json_qcs(g_qcs.qcs01,g_qcs.qcs02,'Y') RETURNING l_ret.*
                         IF l_ret.success = 'Y' THEN
@@ -753,11 +753,11 @@ FUNCTION t110_menu()
                          # LET l_ret.msg = "请确认是否启用SCM！"
                          # CALL FGL_WINMESSAGE("Warning",l_ret.msg,"stop")
                       END IF
-                  ELSE 
-                      #LET l_ret.msg = "收货单：",g_qcs.qcs01 CLIPPED,"非SCM收货单，无需同步！"   
+                  ELSE
+                      #LET l_ret.msg = "收货单：",g_qcs.qcs01 CLIPPED,"非SCM收货单，无需同步！"
                       #CALL cl_err(l_ret.msg,'!',1)
-                  END IF 
-                 END IF 
+                  END IF
+                 END IF
                #NO.18010101-01  ---end-----
             END IF
          WHEN "special_purchase"
@@ -768,7 +768,7 @@ FUNCTION t110_menu()
          WHEN  "cancel_special_purchase"
             IF cl_chk_act_auth() THEN
                CALL t110_4()
-            END IF         
+            END IF
 #FUN-A30045 ------------End-----------------
 #add byhlf07751------------------------------------
       WHEN "ask_date"
@@ -783,21 +783,21 @@ FUNCTION t110_menu()
        WHERE qcs01 = g_qcs.qcs01
          AND qcs02 = g_qcs.qcs02
          AND qcs05 = g_qcs.qcs05
- 
+
       IF SQLCA.SQLCODE OR SQLCA.SQLERRD[3] = 0 THEN
          CALL cl_err3("upd","qcs_file",g_qcs.qcs01,g_qcs.qcs02,SQLCA.sqlcode,"","",1)  #No.FUN-660115
          LET g_success = 'N'
       END IF
 
-    SELECT * INTO g_qcs.* FROM qcs_file   
+    SELECT * INTO g_qcs.* FROM qcs_file
     WHERE qcs01 = g_qcs.qcs01
       AND qcs02 = g_qcs.qcs02
       AND qcs05 = g_qcs.qcs05
 
    CALL t110_show()
  #  CALL cl_set_comp_entry("qcsud13",FALSE)
-            END IF   
-    END IF 
+            END IF
+    END IF
 #add byhlf07751-------------------------------------
 #FUN-BC0104 --------------Begin-------------
          WHEN "qc_item_maintain"
@@ -815,14 +815,14 @@ FUNCTION t110_menu()
                            SELECT DISTINCT qck09 INTO l_qck09 FROM ima_file,qck_file
                             WHERE qck01=ima109
                               AND ima01=g_qcs.qcs021
-                      IF l_qck09='Y' THEN         
+                      IF l_qck09='Y' THEN
                         CASE g_argv1
                             WHEN "1"
                                 LET l_type='1'
                             WHEN "2"
                             #   LET l_type='4'   #TQC-C20196
                             #TQC-C20196 -------Begin--------
-                                IF g_qcs.qcs00 = 'Z' THEN     
+                                IF g_qcs.qcs00 = 'Z' THEN
                                    LET l_type='4'
                                 ELSE
                                    LET l_type=''
@@ -840,7 +840,7 @@ FUNCTION t110_menu()
                        #CALL t110_qc_item_show()              #MOD-C30557
                      END IF
                   END IF     #TQC-C40081
-               END IF    #FUN-CC0014 add 
+               END IF    #FUN-CC0014 add
             END IF
 #FUN-BC0104 --------------End---------------
 
@@ -869,9 +869,9 @@ FUNCTION t110_menu()
                END IF
                CALL cl_set_field_pic(g_qcs.qcs14,"","","",g_void,g_qcs.qcsacti)
             END IF
-         #CHI-D20010----add---end  
- 
- 
+         #CHI-D20010----add---end
+
+
          WHEN "tran_store"
             IF cl_chk_act_auth() THEN
                CALL t110_w()
@@ -884,12 +884,12 @@ FUNCTION t110_menu()
             IF cl_chk_act_auth() THEN
                CALL cl_export_to_excel(ui.Interface.getRootNode(),base.TypeInfo.create(g_qct),'','')
             END IF
- 
+
          WHEN "trans_spc"         #FUN-680011
             IF cl_chk_act_auth() THEN
                CALL t110_spc()
             END IF
- 
+
          WHEN "related_document"           #相關文件
           IF cl_chk_act_auth() THEN
              IF g_qcs.qcs01 IS NOT NULL THEN
@@ -900,24 +900,24 @@ FUNCTION t110_menu()
                 LET g_doc.value2 = g_qcs.qcs02
                 LET g_doc.value3 = g_qcs.qcs05
                 CALL cl_doc()
-             END IF 
+             END IF
           END IF
         WHEN "qry_lot"
-           SELECT ima918,ima921 INTO g_ima918,g_ima921 
+           SELECT ima918,ima921 INTO g_ima918,g_ima921
              FROM ima_file
             WHERE ima01 = g_qcs.qcs021
               AND imaacti = "Y"
-           
+
            IF g_ima918 = "Y" OR g_ima921 = "Y" THEN
-              #IF g_sma.sma90 = "Y" THEN  #No:MOD-860080   #CHI-A70047 
-              IF (g_sma.sma90 = "Y" AND g_argv1='1') OR g_argv1<>'1' THEN   #CHI-A70047 
+              #IF g_sma.sma90 = "Y" THEN  #No:MOD-860080   #CHI-A70047
+              IF (g_sma.sma90 = "Y" AND g_argv1='1') OR g_argv1<>'1' THEN   #CHI-A70047
                  IF g_argv1 <> "4" THEN
                     IF g_qcs.qcs00 NOT MATCHES '[EFG]' THEN
                        CALL t110_get_fac()
                       #CALL s_lotin(g_prog,g_qcs.qcs01,g_qcs.qcs02,g_qcs.qcs05,       #TQC-B90236 mark
                       #             g_qcs.qcs021,g_pmn07,g_img09,l_fac,
                       #             g_qcs.qcs091,'','QRY') #CHI-9A0022 add ''
-                       CALL s_mod_lot(g_prog,g_qcs.qcs01,g_qcs.qcs02,g_qcs.qcs05,       #TQC-B90236 add 
+                       CALL s_mod_lot(g_prog,g_qcs.qcs01,g_qcs.qcs02,g_qcs.qcs05,       #TQC-B90236 add
                                     g_qcs.qcs021,g_rvb36,g_rvb37,g_rvb38,g_pmn07,g_img09,l_fac,
                                     g_qcs.qcs091,'','QRY',1) #CHI-9A0022 add ''
                            RETURNING l_r,g_qty
@@ -943,14 +943,14 @@ FUNCTION t110_menu()
                CALL t110_barcode_out()
             END IF
         #DEV-D30045--add--end
-        #NO.18010101  ---- begin  --- 
+        #NO.18010101  ---- begin  ---
         WHEN "transf2scm"
             IF cl_chk_act_auth() THEN
                 IF NOT cl_null(g_qcs.qcs01) THEN
                   SELECT count(*) INTO l_cnt FROM rva_file WHERE rvaud02 LIKE '%DN%' AND rva01 = g_qcs.qcs01
-                  IF cl_null(l_cnt) THEN LET l_cnt = 0 END IF 
-                  IF l_cnt > 0 THEN 
-                      IF cl_getscmparameter()  THEN  
+                  IF cl_null(l_cnt) THEN LET l_cnt = 0 END IF
+                  IF l_cnt > 0 THEN
+                      IF cl_getscmparameter()  THEN
                         INITIALIZE l_ret TO NULL
                         CALL cjc_zmx_json_qcs(g_qcs.qcs01,g_qcs.qcs02,'Y') RETURNING l_ret.*
                         IF l_ret.success = 'Y' THEN
@@ -964,10 +964,10 @@ FUNCTION t110_menu()
                           LET l_ret.msg = "请确认是否启用SCM！"
                           CALL FGL_WINMESSAGE("Warning",l_ret.msg,"stop")
                       END IF
-                  ELSE 
-                      LET l_ret.msg = "收货单：",g_qcs.qcs01 CLIPPED,"非SCM收货单，无需同步！"   
+                  ELSE
+                      LET l_ret.msg = "收货单：",g_qcs.qcs01 CLIPPED,"非SCM收货单，无需同步！"
                       CALL cl_err(l_ret.msg,'!',1)
-                  END IF   
+                  END IF
                 END IF
             END IF
        #No.18010101---end--
@@ -996,15 +996,15 @@ FUNCTION t110_menu()
         #darcy:2023/05/22 add e---
       END CASE
    END WHILE
- 
+
 END FUNCTION
- 
+
 FUNCTION t110_cs()
 DEFINE  lc_qbe_sn       LIKE    gbm_file.gbm01    #No.FUN-580031  HCN
- 
+
    CLEAR FORM                             #清除畫面
    CALL g_qct.clear()
- 
+
    IF cl_null(g_argv2) THEN
       CALL cl_set_head_visible("","YES")           #No.FUN-6B0032
       INITIALIZE g_qcs.* TO NULL    #No.FUN-750051
@@ -1018,14 +1018,14 @@ DEFINE  lc_qbe_sn       LIKE    gbm_file.gbm01    #No.FUN-580031  HCN
                                 qcsud11,qcsud12,qcsud13,qcsud14,qcsud15
               BEFORE CONSTRUCT
                  CALL cl_qbe_init()
- 
+
          ON ACTION CONTROLP
             CASE
                WHEN INFIELD(qcs01) #單號
                     CALL cl_init_qry_var()
                     IF g_argv1 = '1' THEN
                        LET g_qryparam.form = "q_qcs1"
-                       LET g_qryparam.where = " qcs00 MATCHES '[12]' " 
+                       LET g_qryparam.where = " qcs00 MATCHES '[12]' "
                     ELSE
                        LET g_qryparam.form = "q_qcs1"
                        IF g_argv1 = '2' THEN
@@ -1072,28 +1072,28 @@ DEFINE  lc_qbe_sn       LIKE    gbm_file.gbm01    #No.FUN-580031  HCN
                     DISPLAY g_qryparam.multiret TO qcs13
                     NEXT FIELD qcs13
             END CASE
- 
+
       #FUN-C30117---mark---START
       #  ON IDLE g_idle_seconds
       #     CALL cl_on_idle()
       #     CONTINUE CONSTRUCT
- 
+
       #  ON ACTION about         #MOD-4C0121
       #     CALL cl_about()      #MOD-4C0121
- 
+
       #  ON ACTION help          #MOD-4C0121
       #     CALL cl_show_help()  #MOD-4C0121
- 
+
       #  ON ACTION controlg      #MOD-4C0121
       #     CALL cl_cmdask()     #MOD-4C0121
- 
+
       #         ON ACTION qbe_select
       #            CALL cl_qbe_list() RETURNING lc_qbe_sn
       #            CALL cl_qbe_display_condition(lc_qbe_sn)
       #FUN-C30117---mark---END
-                   
+
       END CONSTRUCT
-      
+
 #FUN-C30117---mark---START
 #     IF INT_FLAG THEN
 #        RETURN
@@ -1125,21 +1125,21 @@ DEFINE  lc_qbe_sn       LIKE    gbm_file.gbm01    #No.FUN-580031  HCN
                          ,s_qct[1].qctud13,s_qct[1].qctud14,s_qct[1].qctud15
                 BEFORE CONSTRUCT
                    CALL cl_qbe_display_condition(lc_qbe_sn)
- 
+
       #FUN-C30117---mark---START
       #  ON IDLE g_idle_seconds
       #     CALL cl_on_idle()
       #     CONTINUE CONSTRUCT
- 
+
       #  ON ACTION about         #MOD-4C0121
       #     CALL cl_about()      #MOD-4C0121
- 
+
       #  ON ACTION help          #MOD-4C0121
       #     CALL cl_show_help()  #MOD-4C0121
- 
+
       #  ON ACTION controlg      #MOD-4C0121
       #     CALL cl_cmdask()     #MOD-4C0121
- 
+
       #          ON ACTION qbe_save
       #		   CALL cl_qbe_save()
       #FUN-C30117---mark---END
@@ -1148,10 +1148,10 @@ DEFINE  lc_qbe_sn       LIKE    gbm_file.gbm01    #No.FUN-580031  HCN
 #FUN-C30117---add---START
          ON ACTION ACCEPT
              ACCEPT DIALOG
-  
+
          ON ACTION cancel
              LET INT_FLAG = 1
-             EXIT DIALOG         
+             EXIT DIALOG
 
          ON IDLE g_idle_seconds
             CALL cl_on_idle()
@@ -1187,7 +1187,7 @@ DEFINE  lc_qbe_sn       LIKE    gbm_file.gbm01    #No.FUN-580031  HCN
 #FUN-C30117---add---END
       LET g_wc2=" 1=1" #FUN-5C0114
    END IF
- 
+
    IF g_wc2 = " 1=1" THEN			# 若單身未輸入條件
       LET g_sql = "SELECT  qcs01,qcs02,qcs05 FROM qcs_file ",   #liuxqa 091022
                   " WHERE ", g_wc CLIPPED
@@ -1200,31 +1200,7 @@ DEFINE  lc_qbe_sn       LIKE    gbm_file.gbm01    #No.FUN-580031  HCN
                   "   AND ", g_wc CLIPPED,
                   "   AND ",g_wc2 CLIPPED
    END IF
- 
-   CASE g_argv1
-      WHEN "1"
-         LET g_sql = g_sql CLIPPED," AND qcs00 IN ('1','2') "        
-      WHEN "2"
-         LET g_sql = g_sql CLIPPED," AND qcs00 IN ('A','B','C','D','E','F','G','H','Z') "   #No.FUN-740016
-      WHEN "3"
-         LET g_sql = g_sql CLIPPED," AND qcs00 IN ('5','6') "
-      WHEN "4" #FUN-5C0114
-         LET g_sql = g_sql CLIPPED," AND qcs00 IN ('2','7') "  #FUN-5C0114
-   END CASE
-   LET g_sql = g_sql CLIPPED," ORDER BY qcs01,qcs02,qcs05 "
- 
-   PREPARE t110_prepare FROM g_sql
-   DECLARE t110_cs                         #SCROLL CURSOR
-      SCROLL CURSOR WITH HOLD FOR t110_prepare
- 
-   IF g_wc2 = " 1=1" THEN			# 取合乎條件筆數
-      LET g_sql = "SELECT COUNT(*) FROM qcs_file WHERE ",g_wc CLIPPED
-   ELSE
-      LET g_sql = "SELECT COUNT(DISTINCT qcs01) FROM qcs_file,qct_file WHERE ",
-                  "qct01=qcs01 AND qct02=qcs02 AND qct021=qcs05 AND ",
-                   g_wc CLIPPED," AND ",g_wc2 CLIPPED
-   END IF
- 
+
    CASE g_argv1
       WHEN "1"
          LET g_sql = g_sql CLIPPED," AND qcs00 IN ('1','2') "
@@ -1235,15 +1211,39 @@ DEFINE  lc_qbe_sn       LIKE    gbm_file.gbm01    #No.FUN-580031  HCN
       WHEN "4" #FUN-5C0114
          LET g_sql = g_sql CLIPPED," AND qcs00 IN ('2','7') "  #FUN-5C0114
    END CASE
- 
+   LET g_sql = g_sql CLIPPED," ORDER BY qcs01,qcs02,qcs05 "
+
+   PREPARE t110_prepare FROM g_sql
+   DECLARE t110_cs                         #SCROLL CURSOR
+      SCROLL CURSOR WITH HOLD FOR t110_prepare
+
+   IF g_wc2 = " 1=1" THEN			# 取合乎條件筆數
+      LET g_sql = "SELECT COUNT(*) FROM qcs_file WHERE ",g_wc CLIPPED
+   ELSE
+      LET g_sql = "SELECT COUNT(DISTINCT qcs01) FROM qcs_file,qct_file WHERE ",
+                  "qct01=qcs01 AND qct02=qcs02 AND qct021=qcs05 AND ",
+                   g_wc CLIPPED," AND ",g_wc2 CLIPPED
+   END IF
+
+   CASE g_argv1
+      WHEN "1"
+         LET g_sql = g_sql CLIPPED," AND qcs00 IN ('1','2') "
+      WHEN "2"
+         LET g_sql = g_sql CLIPPED," AND qcs00 IN ('A','B','C','D','E','F','G','H','Z') "   #No.FUN-740016
+      WHEN "3"
+         LET g_sql = g_sql CLIPPED," AND qcs00 IN ('5','6') "
+      WHEN "4" #FUN-5C0114
+         LET g_sql = g_sql CLIPPED," AND qcs00 IN ('2','7') "  #FUN-5C0114
+   END CASE
+
    PREPARE t110_precount FROM g_sql
    DECLARE t110_count CURSOR FOR t110_precount
- 
+
 END FUNCTION
- 
- 
+
+
 FUNCTION t110_a()
- 
+
    IF s_shut(0) THEN RETURN END IF
    MESSAGE ""
    CLEAR FORM
@@ -1256,9 +1256,9 @@ FUNCTION t110_a()
    #預設值及將數值類變數清成零
    LET g_qcs_t.* = g_qcs.*
    LET g_qcs_o.* = g_qcs.*
- 
+
    CALL cl_opmsg('a')
- 
+
    WHILE TRUE
       LET m_gen02 = ' '
       LET m_ima109 = ' '
@@ -1271,7 +1271,7 @@ FUNCTION t110_a()
       LET ma_num2 = 0
       LET mi_num1 = 0
       LET mi_num2 = 0
- 
+
       CASE g_argv1
          WHEN "1"
             LET g_qcs.qcs00 = '1'
@@ -1288,11 +1288,11 @@ FUNCTION t110_a()
             ELSE
                 LET g_qcs.qcs00 = '5'
             END IF
- 
+
          WHEN "4" #FUN-5C0114
             LET g_qcs.qcs00 = '7'   #FUN-5C0114
       END CASE
- 
+
       LET g_qcs.qcs16 = 'N'
       LET g_qcs.qcsuser = g_user
       LET g_qcs.qcsoriu = g_user #FUN-980030
@@ -1314,7 +1314,7 @@ FUNCTION t110_a()
       let g_qcs.qcsud08 = 1
       let g_qcs.qcsud10 = 1
       #darcy:2025/01/14 add e---
-    
+
       IF g_argv5 = "SPC" OR g_argv5 = "SPC_ins" THEN
          BEGIN WORK
          IF NOT t110_spc_def() THEN
@@ -1324,14 +1324,14 @@ FUNCTION t110_a()
       ELSE
          BEGIN WORK
          CALL t110_i("a")                   #輸入單頭
- 
+
          IF INT_FLAG THEN                   #使用者不玩了
             INITIALIZE g_qcs.* TO NULL
             LET INT_FLAG = 0
             CALL cl_err('',9001,0)
             EXIT WHILE
          END IF
-         
+
          IF cl_null(g_qcs.qcs01) OR cl_null(g_qcs.qcs02)
             OR cl_null(g_qcs.qcs05) THEN
             CONTINUE WHILE
@@ -1345,7 +1345,7 @@ FUNCTION t110_a()
              CONTINUE WHILE
          END IF
       END IF
- 
+
       BEGIN WORK     #No.MOD-710117 add
       LET g_success='Y'
       LET g_qcs.qcsplant = g_plant #FUN-980007
@@ -1355,7 +1355,7 @@ FUNCTION t110_a()
          CALL cl_err3("ins","qcs_file",g_qcs.qcs01,g_qcs.qcs02,SQLCA.sqlcode,"","",1)  #No.FUN-660115
          LET g_success='N'
       END IF
- 
+
       IF (g_qcs.qcs00='7') AND (g_success='Y') THEN
          UPDATE srg_file SET srg12=g_qcs.qcs01 WHERE srg01=g_qcs.qcs01
                                                  AND srg02=g_qcs.qcs02
@@ -1364,9 +1364,9 @@ FUNCTION t110_a()
             LET g_success='N'
          END IF
       END IF
- 
+
       IF g_success='Y' THEN
-         IF g_argv5 = "SPC_ins" AND fgl_getenv('SPC') = "1" THEN 
+         IF g_argv5 = "SPC_ins" AND fgl_getenv('SPC') = "1" THEN
             IF NOT t110_spc_upd_process() THEN
                 ROLLBACK WORK
                 EXIT WHILE
@@ -1393,78 +1393,78 @@ FUNCTION t110_a()
          END IF
          CONTINUE WHILE
       END IF
- 
+
       LET g_qcs01_t = g_qcs.qcs01        #保留舊值
       LET g_qcs02_t = g_qcs.qcs02        #保留舊值
       LET g_qcs05_t = g_qcs.qcs05        #保留舊值
       LET g_qcs03_t = g_qcs.qcs03        #保留舊值  FUN-5C0077
       LET g_qcs21_t = g_qcs.qcs21
       LET g_qcs_t.* = g_qcs.*
- 
+
       CALL g_qct.clear()
       LET g_rec_b = 0
- 
+
       CALL t110_g_b()
- 
+
       CALL t110_b()                      #輸入單身
- 
+
       CALL t110_ii('a')                  #No.MOD-480060
       IF INT_FLAG THEN
            LET INT_FLAG = 0
       END IF
- 
+
       EXIT WHILE
    END WHILE
- 
+
 END FUNCTION
- 
+
 FUNCTION t110_u()
- 
+
    IF s_shut(0) THEN
       RETURN
    END IF
- 
+
    IF g_qcs.qcs01 IS NULL THEN
       CALL cl_err('',-400,0)
       RETURN
    END IF
- 
+
    SELECT * INTO g_qcs.* FROM qcs_file
     WHERE qcs01 = g_qcs.qcs01
       AND qcs02 = g_qcs.qcs02
       AND qcs05 = g_qcs.qcs05
- 
+
    IF g_qcs.qcsacti = 'N' THEN    #檢查資料是否為無效
       CALL cl_err(g_qcs.qcs01,9027,0)
       RETURN
    END IF
- 
+
    IF g_qcs.qcs14 = 'X' THEN
       CALL cl_err('','9024',0)
       RETURN
    END IF
- 
+
    IF g_qcs.qcs14 = 'Y' THEN   #No.FUN-5C0077
       CALL cl_err('','9023',0)
       RETURN
    END IF
- 
+
    IF g_qcs.qcs14 = 'Y' THEN
       RETURN
    END IF
- 
+
    MESSAGE ""
    CALL cl_opmsg('u')
- 
+
    LET g_qcs01_t = g_qcs.qcs01
    LET g_qcs02_t = g_qcs.qcs02
    LET g_qcs05_t = g_qcs.qcs05
    LET g_qcs03_t = g_qcs.qcs03        #保留舊值  FUN-5C0077
    LET g_qcs21_t = g_qcs.qcs21        #2018ly0331
    LET g_qcs_o.* = g_qcs.*
- 
+
    BEGIN WORK
- 
+
    OPEN t110_cl USING g_qcs.qcs01,g_qcs.qcs02,g_qcs.qcs05   #liuxqa 091022
    IF STATUS THEN
       CALL cl_err("OPEN t110_cl:", STATUS, 1)
@@ -1472,7 +1472,7 @@ FUNCTION t110_u()
       ROLLBACK WORK
       RETURN
    END IF
- 
+
    FETCH t110_cl INTO g_qcs.*            # 鎖住將被更改或取消的資料
    IF SQLCA.sqlcode THEN
       CALL cl_err(g_qcs.qcs01,SQLCA.sqlcode,0)      # 資料被他人LOCK
@@ -1480,9 +1480,9 @@ FUNCTION t110_u()
       ROLLBACK WORK
       RETURN
    END IF
- 
+
    CALL t110_show()
- 
+
    WHILE TRUE
       LET g_qcs01_t = g_qcs.qcs01
       LET g_qcs02_t = g_qcs.qcs02
@@ -1491,9 +1491,9 @@ FUNCTION t110_u()
       LET g_qcs21_t = g_qcs.qcs21
       LET g_qcs.qcsmodu = g_user
       LET g_qcs.qcsdate = g_today
- 
+
       CALL t110_i("u")                      #欄位更改
- 
+
       IF INT_FLAG THEN
          LET INT_FLAG = 0
          LET g_qcs.* = g_qcs_t.*
@@ -1501,7 +1501,7 @@ FUNCTION t110_u()
          CALL cl_err('','9001',0)
          EXIT WHILE
       END IF
- 
+
       IF g_qcs.qcs01 != g_qcs01_t OR g_qcs.qcs02 != g_qcs02_t OR
          g_qcs.qcs05 != g_qcs05_t THEN
          UPDATE qct_file SET qct01 = g_qcs.qcs01,
@@ -1515,9 +1515,9 @@ FUNCTION t110_u()
             CONTINUE WHILE
          END IF
       END IF
- 
+
       UPDATE qcs_file SET qcs_file.* = g_qcs.*
-       WHERE qcs01 = g_qcs01_t AND qcs02 = g_qcs02_t AND qcs05 = g_qcs05_t   #liuxqa 091022 
+       WHERE qcs01 = g_qcs01_t AND qcs02 = g_qcs02_t AND qcs05 = g_qcs05_t   #liuxqa 091022
       IF SQLCA.sqlcode THEN
          CALL cl_err3("upd","qcs_file",g_qcs01_t,g_qcs02_t,SQLCA.sqlcode,"","",1)  #No.FUN-660115
          CONTINUE WHILE
@@ -1579,18 +1579,18 @@ FUNCTION t110_u()
          end if
       end if
       #darcy:2022/12/07 add e---
- 
-       CALL t110_ii('u')   
+
+       CALL t110_ii('u')
        IF INT_FLAG THEN
            LET INT_FLAG = 0
            CALL cl_err('','9001',0)
            EXIT WHILE
        END IF
- 
+
       EXIT WHILE
    END WHILE
- 
- 
+
+
    #功能: 通知 SPC 端刪除此張單據
    # 傳入參數: (1) QC 程式代號, (2) QC 單頭資料,
    #           (3)功能選項：insert(新增),update(修改),delete(刪除)
@@ -1603,12 +1603,12 @@ FUNCTION t110_u()
            RETURN
       END IF
    END IF
- 
+
    CLOSE t110_cl
    COMMIT WORK
- 
+
 END FUNCTION
- 
+
 FUNCTION t110_i(p_cmd)
    DEFINE l_flag          LIKE type_file.chr1,                #判斷必要欄位是否有輸入  #No.FUN-680104 VARCHAR(1)
           l_p             LIKE type_file.chr1,         #No.FUN-680104 VARCHAR(01)
@@ -1616,7 +1616,7 @@ FUNCTION t110_i(p_cmd)
           l_ima25         LIKE ima_file.ima25,       #No.TQC-630089 add
           l_ima907        LIKE ima_file.ima907,      #No.TQC-630089 add
           l_factor        LIKE qcs_file.qcs31,       #No.TQC-630089 add
-          m_pmc03         LIKE pmc_file.pmc03, 
+          m_pmc03         LIKE pmc_file.pmc03,
           m_ima02         LIKE ima_file.ima02,
           m_ima021        LIKE ima_file.ima021,      #No.FUN-940103
           m_ima109        LIKE ima_file.ima109,
@@ -1642,12 +1642,12 @@ FUNCTION t110_i(p_cmd)
    DEFINE l_ogc17         LIKE ogc_file.ogc17   #CHI-9A0052
    DEFINE l_flag2         LIKE type_file.chr1   #CHI-9A0052
    DEFINE l_ima44         LIKE ima_file.ima44   #FUN-BB0085
-   DEFINE l_sql           STRING      
+   DEFINE l_sql           STRING
    DEFINE l_n             LIKE type_file.num5
- 
- 
+
+
    LET l_p = 'N'
- 
+
    DISPLAY BY NAME g_qcs.qcs00,g_qcs.qcs01,g_qcs.qcs02,g_qcs.qcs05,
                    g_qcs.qcs021,g_qcs.qcs03,g_qcs.qcs04,g_qcs.qcs041,
                    g_qcs.qcs16,g_qcs.qcs21,g_qcs.qcs17,g_qcs.qcs21,g_qcs.qcs22,
@@ -1656,8 +1656,8 @@ FUNCTION t110_i(p_cmd)
                    g_qcs.qcsmodu,g_qcs.qcsdate,g_qcs.qcsacti,g_qcs.qcsoriu,g_qcs.qcsorig #TQC-C20066
                    ,g_qcs.qcsud01,g_qcs.qcsud05,g_qcs.qcsud07          #add by guanyao160731
                    ,g_qcs.qcsud08,g_qcs.qcsud10 #darcy:2025/01/14 add
- 
-   CALL cl_set_head_visible("","YES")           #No.FUN-6B0032 
+
+   CALL cl_set_head_visible("","YES")           #No.FUN-6B0032
    INPUT BY NAME g_qcs.qcs00,g_qcs.qcs01,g_qcs.qcs02,g_qcs.qcs05,g_qcs.qcs021, g_qcs.qcsoriu,g_qcs.qcsorig,
                  g_qcs.qcs03,g_qcs.qcs33,g_qcs.qcs34,g_qcs.qcs35,  #No.FUN-610075
                  g_qcs.qcs30,g_qcs.qcs31,g_qcs.qcs32,  #No.FUN-610075
@@ -1668,18 +1668,18 @@ FUNCTION t110_i(p_cmd)
                  g_qcs.qcsud01,g_qcs.qcsud02,g_qcs.qcsud03,g_qcs.qcsud04,
                  g_qcs.qcsud05,g_qcs.qcsud06,g_qcs.qcsud07,g_qcs.qcsud08,
                  g_qcs.qcsud09,g_qcs.qcsud10,g_qcs.qcsud11,g_qcs.qcsud12,
-                 g_qcs.qcsud13,g_qcs.qcsud14,g_qcs.qcsud15 
+                 g_qcs.qcsud13,g_qcs.qcsud14,g_qcs.qcsud15
       WITHOUT DEFAULTS
- 
+
       BEFORE INPUT
          LET g_before_input_done = FALSE
          CALL t110_set_entry(p_cmd)
          CALL t110_set_no_entry(p_cmd)
          LET g_before_input_done = TRUE
- 
+
       BEFORE FIELD qcs00                 #MOD-4B0140
          CALL t110_set_entry(p_cmd)      #MOD-4B0140
- 
+
       AFTER FIELD qcs00
          IF NOT cl_null(g_qcs.qcs00) THEN
             CASE g_argv1
@@ -1711,12 +1711,12 @@ FUNCTION t110_i(p_cmd)
             #End Add NO.TQC-B10019
          END IF
          CALL t110_set_no_entry(p_cmd) #MOD-4B0140
- 
+
       AFTER FIELD qcs01
          IF NOT cl_null(g_qcs.qcs01) THEN
            LET g_qcs.qcs05 = NULL
            DISPLAY BY NAME g_qcs.qcs05
- 
+
             CALL t110_qcs01() RETURNING l_err #MOD-740273
             IF NOT cl_null(l_err) THEN
                CALL cl_err(g_qcs.qcs01,l_err,0)
@@ -1732,12 +1732,12 @@ FUNCTION t110_i(p_cmd)
             END IF
            #MOD-A80165---add---end---
            #MOD-C30560---add---str---
-           IF g_argv1 = '2' AND g_qcs.qcs00 = 'B' THEN 
-              IF NOT cl_null(g_qcs.qcs02) THEN 
-                 IF NOT t110_chk_qc() THEN 
+           IF g_argv1 = '2' AND g_qcs.qcs00 = 'B' THEN
+              IF NOT cl_null(g_qcs.qcs02) THEN
+                 IF NOT t110_chk_qc() THEN
                     CALL cl_err(g_qcs.qcs01,'aqc-541',0)
                     NEXT FIELD qcs01
-                 END IF 
+                 END IF
               END IF
            END IF
            #MOD-C30560---add---end--
@@ -1756,23 +1756,23 @@ FUNCTION t110_i(p_cmd)
                DISPLAY g_qcs.qcs02 TO qcs02
                CALL t110_ref()
                CALL cl_set_comp_entry("qcs35",TRUE)
-               #No.TQC-AC0166  --Begin                                          
-               LET g_qcs.qcs16= l_qsa.qsa10                                     
-               DISPLAY BY NAME g_qcs.qcs16                                      
-               #No.TQC-AC0166  --End     
+               #No.TQC-AC0166  --Begin
+               LET g_qcs.qcs16= l_qsa.qsa10
+               DISPLAY BY NAME g_qcs.qcs16
+               #No.TQC-AC0166  --End
                LET l_qcs22 = 0
-             IF p_cmd='a' THEN   #No.TQC-760005     
-               SELECT SUM(qcs22) 
+             IF p_cmd='a' THEN   #No.TQC-760005
+               SELECT SUM(qcs22)
                  INTO l_qcs22 FROM qcs_file
-                WHERE qcs01 =g_qcs.qcs01 
-                  AND qcs14 !='X' 
+                WHERE qcs01 =g_qcs.qcs01
+                  AND qcs14 !='X'
                   AND qcs00 = 'G'
- 
+
                IF cl_null(l_qcs22) THEN LET l_qcs22 = 0 END IF
- 
+
                LET l_qsa.qsa06 = l_qsa.qsa06-l_qcs22
                IF l_qsa.qsa06 <= 0 THEN
-                   #此料已全部送驗!  
+                   #此料已全部送驗!
                    #此收貨單+項次送驗資料皆已登打,請重新輸入!
                    CALL cl_err ('','aqc-114',1)
                    NEXT FIELD qcs01
@@ -1785,12 +1785,12 @@ FUNCTION t110_i(p_cmd)
                #FUN-BB0085-add-end--
                DISPLAY g_qcs.qcs22 TO qcs22
              END IF    #No.TQC-760005
- 
+
                IF l_qsa.qsa14 = '1' THEN
                   LET g_qcs.qcs32 = l_qsa.qsa06
                   IF cl_null(l_qsa.qsa04) THEN LET l_qsa.qsa04 = ' ' END IF
                   IF cl_null(l_qsa.qsa05) THEN LET l_qsa.qsa05 = ' ' END IF
-                  SELECT img09 INTO g_qcs.qcs30 
+                  SELECT img09 INTO g_qcs.qcs30
                     FROM img_file
                    WHERE img01 = l_qsa.qsa02
                      AND img02 = l_qsa.qsa03
@@ -1816,10 +1816,10 @@ FUNCTION t110_i(p_cmd)
             END IF
             LET g_qcs_o.qcs01 = g_qcs.qcs01
          END IF
- 
+
       BEFORE FIELD qcs02
          CALL t110_set_entry(p_cmd)
- 
+
       AFTER FIELD qcs02
          IF NOT cl_null(g_qcs.qcs02) THEN
             #MOD-C30560---add---str---
@@ -1833,16 +1833,16 @@ FUNCTION t110_i(p_cmd)
             END IF
             #MOD-C30560---add---end--
             IF NOT (g_argv1 = '2' AND g_qcs.qcs00 = 'Z' ) THEN
-               CALL t110_check_qc() RETURNING l_err #MOD-740273 
+               CALL t110_check_qc() RETURNING l_err #MOD-740273
                IF NOT cl_null(l_err) THEN
                   LET g_qcs.qcs02 = g_qcs_t.qcs02    #MOD-C30156
                  #NEXT FIELD qcs01         #MOD-C30156 mark
                   NEXT FIELD qcs02         #MOD-C30156
                END IF
-            
-               IF p_cmd = 'a' OR p_cmd = 'u' AND (g_qcs.qcs01 <> g_qcs_t.qcs01 
+
+               IF p_cmd = 'a' OR p_cmd = 'u' AND (g_qcs.qcs01 <> g_qcs_t.qcs01
                               OR g_qcs.qcs02 <> g_qcs_t.qcs02) THEN
-                  CALL t110_unqc_qty() 
+                  CALL t110_unqc_qty()
                   IF NOT cl_null(g_errno) THEN
                       CALL cl_err(g_qcs.qcs01,g_errno,1)
                       NEXT FIELD qcs01
@@ -1861,7 +1861,7 @@ FUNCTION t110_i(p_cmd)
             #MOD-BC0044--end
          END IF
          CALL t110_set_no_entry(p_cmd)
- 
+
       #MOD-4B0141 ADD此段 給分批檢驗順序預設值
       BEFORE FIELD qcs05
          IF p_cmd='a' THEN   #No.TQC-760005
@@ -1877,7 +1877,7 @@ FUNCTION t110_i(p_cmd)
          ELSE
             LET g_qcs.qcs05=g_qcs05_t  #No.TQC-760005
          END IF   #No.TQC-760005
- 
+
       AFTER FIELD qcs05
          IF NOT cl_null(g_qcs.qcs05) THEN
             IF p_cmd = "a" OR                    # 若輸入或更改且改KEY
@@ -1897,17 +1897,17 @@ FUNCTION t110_i(p_cmd)
             END IF
             CALL t110_qcs05()   #No.FUN-860045
          END IF
- 
+
       BEFORE FIELD qcs021
          IF g_qcs.qcs00 NOT MATCHES '[2Z]' THEN   #No.FUN-5C0077
             CALL t110_qcs10()   #bugno:6831 add
          END IF
- 
+
       AFTER FIELD qcs021  --------------add by hlf07751---------------------------
          IF NOT cl_null(g_qcs.qcs021) THEN
-         
+
 #FUN-AA0059 ---------------------start----------------------------
-         
+
             IF NOT s_chk_item_no(g_qcs.qcs021,"") THEN
                CALL cl_err('',g_errno,1)
                LET g_qcs.qcs021= g_qcs_t.qcs021
@@ -1920,7 +1920,7 @@ FUNCTION t110_i(p_cmd)
                SELECT oaz23 INTO g_oaz.oaz23 FROM oaz_file WHERE oaz00='0'
                IF l_ogb17='Y' AND g_sma.sma115='N' AND g_oaz.oaz23='Y' THEN
                   DECLARE ogc_cur CURSOR FOR
-                    SELECT ogc17 FROM ogc_file 
+                    SELECT ogc17 FROM ogc_file
                       WHERE ogc01=g_qcs.qcs01 AND ogc03=g_qcs.qcs02
                   LET l_flag2='0'
                   FOREACH ogc_cur INTO l_ogc17
@@ -1930,8 +1930,8 @@ FUNCTION t110_i(p_cmd)
                        LET l_flag2='1'
                        EXIT FOREACH
                     END IF
-                  END FOREACH 
-                  IF l_flag2='0' THEN 
+                  END FOREACH
+                  IF l_flag2='0' THEN
                      CALL cl_err('','aqc-800',0)
                      NEXT FIELD qcs021
                   END IF
@@ -1946,7 +1946,7 @@ FUNCTION t110_i(p_cmd)
               INTO m_ima02,m_ima021,m_ima109,m_ima15,g_ima906,l_ima25,l_ima907,g_ima101   #No.FUN-620043  #No.TQC-630089 modify  FUN-A80063 add ima101  #No.FUN-940103
               FROM ima_file
              WHERE ima01 = g_qcs.qcs021
-    
+
             IF STATUS=100 THEN
                LET m_ima02 = ' '
                LET m_ima021 = ' '     #No.FUN-940103
@@ -1992,23 +1992,23 @@ FUNCTION t110_i(p_cmd)
             NEXT FIELD CURRENT
 #TQC-C10085 --end--
          END IF
- 
+
       AFTER FIELD qcs03
          CALL t110_qcs03_def()
          IF NOT cl_null(g_errno) THEN
             NEXT FIELD qcs03 #NO.MOD-930031
          END IF
- 
+
       BEFORE FIELD qcs04
          CALL t110_qcs10()   #bugno:6831 add
- 
+
       AFTER FIELD qcs16
          IF NOT cl_null(g_qcs.qcs16) THEN
             IF g_qcs.qcs16 NOT MATCHES '[YN]' THEN
                NEXT FIELD qcs16
             END IF
          END IF
- 
+
       AFTER FIELD qcs32
          #FUN-BB0085-add-str--
          IF NOT cl_null(g_qcs.qcs32) THEN
@@ -2056,12 +2056,12 @@ FUNCTION t110_i(p_cmd)
                   END IF
                   IF l_qcs22 > l_srg05 THEN
                      CALL cl_err(l_qcs22,'asr-039',1)
-                     NEXT FIELD qcs32 
+                     NEXT FIELD qcs32
                   END IF
                END IF
             END IF
          END IF
- 
+
       AFTER FIELD qcs35
          #FUN-BB0085-add-str--
          IF NOT cl_null(g_qcs.qcs35) THEN
@@ -2082,22 +2082,22 @@ FUNCTION t110_i(p_cmd)
                DISPLAY BY NAME g_qcs.qcs22
             END IF
          END IF
- 
+
       AFTER FIELD qcs22
          #FUN-BB0085-add-str--
          SELECT ima44 INTO l_ima44 FROM ima_file WHERE ima01 = g_qcs.qcs021
          IF NOT cl_null(g_qcs.qcs22) THEN
-            IF cl_null(g_qcs_t.qcs22) OR g_qcs_t.qcs22 != g_qcs.qcs22 THEN 
+            IF cl_null(g_qcs_t.qcs22) OR g_qcs_t.qcs22 != g_qcs.qcs22 THEN
                LET g_qcs.qcs22 = s_digqty(g_qcs.qcs22,l_ima44)
                DISPLAY BY NAME g_qcs.qcs22
             END IF
-         END IF 
+         END IF
          #FUN-BB0085-add-end--
          IF NOT cl_null(g_qcs.qcs22) THEN
             IF g_qcs.qcs22 < 0 THEN
                CALL cl_err('','aec-020',0)
                NEXT FIELD qcs22
-            END IF 
+            END IF
             IF g_qcs.qcs22=0 THEN
                CALL cl_err('','aqc-028',0)
                NEXT FIELD qcs22
@@ -2113,32 +2113,32 @@ FUNCTION t110_i(p_cmd)
                END IF
             END IF
             IF p_cmd='u' THEN
-               SELECT SUM(qcs22) 
+               SELECT SUM(qcs22)
                  INTO l_qcs22_u FROM qcs_file
-                WHERE qcs01 =g_qcs.qcs01 
-                  AND qcs05 !=g_qcs.qcs05 
-                  AND qcs14 !='X' 
+                WHERE qcs01 =g_qcs.qcs01
+                  AND qcs05 !=g_qcs.qcs05
+                  AND qcs14 !='X'
                   AND qcs00 = 'G'
-               
+
                IF l_qcs22_u IS NULL THEN
-                  LET l_qcs22_u=0 
+                  LET l_qcs22_u=0
                END IF
- 
+
                LET l_qsa06_u=l_qsa.qsa06-l_qcs22_u
- 
+
                IF g_qcs.qcs22>l_qsa06_u THEN
                   CALL cl_err(g_qcs.qcs22,'aqc-020',0)
                   NEXT FIELD qcs22
                END IF
-            END IF 
-            SELECT ima918,ima921 INTO g_ima918,g_ima921 
+            END IF
+            SELECT ima918,ima921 INTO g_ima918,g_ima921
               FROM ima_file
              WHERE ima01 = g_qcs.qcs021
                AND imaacti = "Y"
-            
+
             IF g_ima918 = "Y" OR g_ima921 = "Y" THEN
                #IF g_sma.sma90 = "Y" THEN   #CHI-A70047
-               IF (g_sma.sma90 = "Y" AND g_argv1='1') OR g_argv1<>'1' THEN   #CHI-A70047 
+               IF (g_sma.sma90 = "Y" AND g_argv1='1') OR g_argv1<>'1' THEN   #CHI-A70047
                   IF g_argv1 <> "4" THEN
                      IF g_qcs.qcs00 NOT MATCHES '[EFG]' THEN
                         CALL t110_get_fac()
@@ -2159,7 +2159,7 @@ FUNCTION t110_i(p_cmd)
             END IF
             LET g_qcs22 = g_qcs.qcs22       #bugno:7196
          END IF
- 
+
       AFTER FIELD qcsud01
          IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
       AFTER FIELD qcsud02
@@ -2175,25 +2175,25 @@ FUNCTION t110_i(p_cmd)
       AFTER FIELD qcsud07
          #str-----add by guanyao160731
          #IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
-         IF NOT cl_null(g_qcs.qcsud07) THEN 
-            IF g_qcs.qcsud07 < 0 THEN 
+         IF NOT cl_null(g_qcs.qcsud07) THEN
+            IF g_qcs.qcsud07 < 0 THEN
                CALL cl_err('qcsud07','cqc-002',0)
                NEXT FIELD qcsud07
-            END IF 
+            END IF
             IF NOT cl_null(g_qcs.qcs22) THEN
                IF NOT cl_null(g_qcs.qcs091) THEN
-                  IF g_qcs.qcsud07> g_qcs.qcs091 THEN 
+                  IF g_qcs.qcsud07> g_qcs.qcs091 THEN
                      CALL cl_err('qcsud07','cqc-003',0)
                      NEXT FIELD qcsud07
-                  END IF 
-               ELSE 
-                  IF g_qcs.qcsud07> g_qcs.qcs22 THEN 
+                  END IF
+               ELSE
+                  IF g_qcs.qcsud07> g_qcs.qcs22 THEN
                      CALL cl_err('qcsud07','cqc-004',0)
                      NEXT FIELD qcsud07
-                  END IF 
-               END IF 
-            END IF  
-         END IF 
+                  END IF
+               END IF
+            END IF
+         END IF
          #end-----add by guanyao160731
       AFTER FIELD qcsud08
          IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
@@ -2211,7 +2211,7 @@ FUNCTION t110_i(p_cmd)
          IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
       AFTER FIELD qcsud15
          IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
- 
+
       AFTER INPUT
          LET g_qcs.qcsuser = s_get_data_owner("qcs_file") #FUN-C10039
          LET g_qcs.qcsgrup = s_get_data_group("qcs_file") #FUN-C10039
@@ -2227,14 +2227,14 @@ FUNCTION t110_i(p_cmd)
 LET g_qcs09a=1
 LET g_qcs09b=1
 
-select qcs09 INTO g_qcs09a 
-from   
+select qcs09 INTO g_qcs09a
+from
 (
-select qcs09 
- from qcs_file 
+select qcs09
+ from qcs_file
  WHERE  qcs01<>g_qcs.qcs01 AND qcs03=g_qcs.qcs03 AND  qcs021=g_qcs.qcs021
- 
-order by  qcs04 desc,qcs041 desc 
+
+order by  qcs04 desc,qcs041 desc
 )
 where rownum=1
 
@@ -2255,9 +2255,9 @@ where rownum=1
                   " order BY   qcs04 desc,qcs041 DESC  ",
                   "  )  ",
                   "  WHERE rownum<2  )  "
-                                         
-         PREPARE qcs09_sel FROM l_sql 
-         EXECUTE qcs09_sel USING g_qcs.qcs01,g_qcs.qcs03,g_qcs.qcs021,g_qcs.qcs01,g_qcs.qcs03,g_qcs.qcs021 INTO g_qcs09b     
+
+         PREPARE qcs09_sel FROM l_sql
+         EXECUTE qcs09_sel USING g_qcs.qcs01,g_qcs.qcs03,g_qcs.qcs021,g_qcs.qcs01,g_qcs.qcs03,g_qcs.qcs021 INTO g_qcs09b
 
 
 
@@ -2265,27 +2265,27 @@ IF g_qcs09a='2' AND g_qcs09b='2'  THEN
 
 CALL cl_err('','cqc-005',1)
 
-END IF 
+END IF
 
-         
+
 ------------------------------add by hlf07751-------------------------------------------
          SELECT imaud04 INTO g_qcsud02 FROM ima_file
          WHERE  ima01=g_qcs.qcs021
          IF g_qcsud02 = 'N' OR g_qcsud02 IS NULL THEN
          IF g_qcs.qcsud02 = 'Y' THEN
           LET g_qcs.qcsud02='N'
-          DISPLAY BY NAME g_qcs.qcsud02 
+          DISPLAY BY NAME g_qcs.qcsud02
           CALL cl_err('','hlf05',1)
           END IF
          END IF
 
-    
+
 ----------------------------add by hlf07751----------------------------------------------
- 
+
       ON ACTION CONTROLP
          CASE
             WHEN INFIELD(qcs01) AND g_qcs.qcs00 != 'Z' #單號 FUN-5C0077
-            IF g_qcs.qcs00 matches '[ABCDEFGH]' THEN 
+            IF g_qcs.qcs00 matches '[ABCDEFGH]' THEN
                CALL q_qcs(FALSE,TRUE,g_qcs.qcs01,g_qcs.qcs02,g_qcs.qcs00)
                     RETURNING g_qcs.qcs01,g_qcs.qcs02
                     DISPLAY BY NAME g_qcs.qcs01,g_qcs.qcs02
@@ -2303,14 +2303,14 @@ END IF
                     #FUN-C30163 add START
                      LET g_qryparam.where = " oga09 IN ('1','5') ",
                                             "  AND ogb01||ogb03 NOT IN (SELECT qcs01||qcs02 FROM qcs_file WHERE qcs14 !='X' AND qcs14 !='Y') "
-                     CALL q_ogb6(FALSE,TRUE,g_qryparam.where,g_qcs.qcs01,g_qcs.qcs02,'Y',g_qcs.qcs00,p_cmd,g_qcs_o.qcs05) 
+                     CALL q_ogb6(FALSE,TRUE,g_qryparam.where,g_qcs.qcs01,g_qcs.qcs02,'Y',g_qcs.qcs00,p_cmd,g_qcs_o.qcs05)
                           RETURNING g_qcs.qcs01,g_qcs.qcs02
                     #FUN-C30163 add
                   WHEN g_qcs.qcs00 = '6' #CHI-6A0059
                     #LET g_qryparam.form = "q_ogb9"   #FUN-640100  #FUN-C30163  mark
                     #FUN-C30163 add START
-                     LET g_qryparam.where = " oga09 IN ('2','3','4','6','7','8','A')  " 
-                     CALL q_ogb6(FALSE,TRUE,g_qryparam.where,g_qcs.qcs01,g_qcs.qcs02,'Y',g_qcs.qcs00,p_cmd,g_qcs_o.qcs05) 
+                     LET g_qryparam.where = " oga09 IN ('2','3','4','6','7','8','A')  "
+                     CALL q_ogb6(FALSE,TRUE,g_qryparam.where,g_qcs.qcs01,g_qcs.qcs02,'Y',g_qcs.qcs00,p_cmd,g_qcs_o.qcs05)
                           RETURNING g_qcs.qcs01,g_qcs.qcs02
                     #FUN-C30163 add
                   WHEN g_qcs.qcs00 = '7'
@@ -2330,7 +2330,7 @@ END IF
                DISPLAY BY NAME g_qcs.qcs01
                IF g_qcs.qcs00 = '1' OR g_qcs.qcs00 = '5' OR g_qcs.qcs00 = '6' THEN    #CHI-6B0075
                   DISPLAY BY NAME g_qcs.qcs02
-               END IF   
+               END IF
                LET l_p='Y'
                NEXT FIELD qcs01
             END IF #No.FUN-880074
@@ -2340,8 +2340,8 @@ END IF
 #              LET g_qryparam.form = "q_ima"
 #              LET g_qryparam.default1 = g_qcs.qcs021
 #              CALL cl_create_qry() RETURNING g_qcs.qcs021
-               CALL q_sel_ima(FALSE, "q_ima","",g_qcs.qcs021,"","","","","",'' ) 
-                 RETURNING g_qcs.qcs021  
+               CALL q_sel_ima(FALSE, "q_ima","",g_qcs.qcs021,"","","","","",'' )
+                 RETURNING g_qcs.qcs021
 #FUN-AA0059---------mod------------end-----------------
                DISPLAY BY NAME g_qcs.qcs021
                NEXT FIELD qcs021
@@ -2363,7 +2363,7 @@ END IF
                DISPLAY BY NAME g_qcs.qcs13
                NEXT FIELD qcs13
          END CASE
- 
+
       ON ACTION qry_mrc_data
          CASE
             WHEN INFIELD(qcs01) #單號
@@ -2382,7 +2382,7 @@ END IF
                LET l_p = 'N'
                NEXT FIELD qcs01
          END CASE
- 
+
       ON ACTION qry_tr_data
          CASE
             WHEN INFIELD(qcs01) #單號
@@ -2402,42 +2402,42 @@ END IF
                LET l_p='N'
                NEXT FIELD qcs01
          END CASE
- 
+
       ON ACTION CONTROLF                  #欄位說明
          CALL cl_set_focus_form(ui.Interface.getRootNode()) RETURNING g_fld_name,g_frm_name #Add on 040913
          CALL cl_fldhelp(g_frm_name,g_fld_name,g_lang) #Add on 040913
- 
+
       ON ACTION CONTROLR
          CALL cl_show_req_fields()
- 
+
       ON ACTION CONTROLG
          CALL cl_cmdask()
- 
+
       ON IDLE g_idle_seconds
          CALL cl_on_idle()
          CONTINUE INPUT
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
 
       #-----CHI-A70047---------
       ON ACTION modi_lot
-         SELECT ima918,ima921 INTO g_ima918,g_ima921 
+         SELECT ima918,ima921 INTO g_ima918,g_ima921
            FROM ima_file
           WHERE ima01 = g_qcs.qcs021
             AND imaacti = "Y"
-         
+
          IF g_ima918 = "Y" OR g_ima921 = "Y" THEN
-            IF (g_sma.sma90 = "Y" AND g_argv1='1') OR g_argv1<>'1' THEN   
+            IF (g_sma.sma90 = "Y" AND g_argv1='1') OR g_argv1<>'1' THEN
                IF g_argv1 <> "4" THEN
                   IF g_qcs.qcs00 NOT MATCHES '[EFG]' THEN
                      CALL t110_get_fac()
                     #CALL s_lotin(g_prog,g_qcs.qcs01,g_qcs.qcs02,g_qcs.qcs05,             #TQC-B90236 mark
                     #             g_qcs.qcs021,g_pmn07,g_img09,l_fac,
-                    #             g_qcs.qcs091,'','SEL') 
+                    #             g_qcs.qcs091,'','SEL')
                      CALL s_mod_lot(g_prog,g_qcs.qcs01,g_qcs.qcs02,g_qcs.qcs05,             #TQC-B90236 add
                                   g_qcs.qcs021,g_rvb36,g_rvb37,g_rvb38,g_pmn07,g_img09,l_fac,
                                   g_qcs.qcs091,'','SEL',1)
@@ -2446,49 +2446,49 @@ END IF
                END IF
             END IF
          END IF
-      #-----END CHI-A70047----- 
- 
+      #-----END CHI-A70047-----
+
    END INPUT
- 
+
 END FUNCTION
- 
+
 FUNCTION t110_set_entry(p_cmd)
    DEFINE p_cmd   LIKE type_file.chr1    #No.FUN-680104 VARCHAR(1)
- 
+
      CALL cl_set_comp_entry("qcs21,qcsud01,qcsud04,qcsud05,qcsud06,qcsud14,qcsud08,qcsud10",TRUE)  #darcy:2025/01/14 add qcsud08,qcsud10
    IF p_cmd = 'a' AND ( NOT g_before_input_done ) THEN
       CALL cl_set_comp_entry("qcs00,qcs01,qcs02,qcs05,qcs021,qcs03",TRUE)
       CALL cl_set_comp_entry("qcs16,qcs21,qcs17",TRUE)
       CALL cl_set_comp_entry("qcs22,qcs32,qcs35",TRUE)  #No.FUN-610075
    END IF
- 
+
    IF INFIELD(qcs16) OR ( NOT g_before_input_done ) THEN
       CALL cl_set_comp_entry("qcs03,qcs21",TRUE)
    END IF
- 
+
    IF INFIELD(qcs02) OR ( NOT g_before_input_done ) THEN
       CALL cl_set_comp_entry("qcs03",TRUE)
    END IF
- 
+
    IF INFIELD(qcs00) OR ( NOT g_before_input_done ) THEN
       CALL cl_set_comp_entry("qcs021",TRUE)
    END IF
- 
+
    IF g_qcs.qcs09<>'1' THEN
       CALL cl_set_comp_entry("qcs22",TRUE)
    END IF
- 
+
    #darcy:2023/05/22 add s---
     if g_action_choice != 'measure_append' or cl_null(g_action_choice) then
         call cl_set_comp_entry("qct07,qct08,qctud02",true)
     end if
     #darcy:2023/05/22 add e---
 END FUNCTION
- 
+
 FUNCTION t110_set_no_entry(p_cmd)
    DEFINE p_cmd   LIKE type_file.chr1    #No.FUN-680104 VARCHAR(1)
    DEFINE l_qsa14 LIKE qsa_file.qsa14  #No.FUN-630051
- 
+
    IF p_cmd = 'u' AND ( NOT g_before_input_done ) AND g_chkey='N' THEN       #No.FUN-570109
       IF g_qcs.qcs00 MATCHES '[1ABCDEFGH]' THEN   #MOD-970147
          CALL cl_set_comp_entry("qcs00,qcs01,qcs02,qcs05,qcs021,qcs03",FALSE)
@@ -2497,39 +2497,39 @@ FUNCTION t110_set_no_entry(p_cmd)
          CALL cl_set_comp_entry("qcs00,qcs01,qcs02,qcs05",FALSE)
       END IF
    END IF
- 
+
    IF g_qcs.qcs09='1' THEN
       CALL cl_set_comp_entry("qcs22",FALSE)
    END IF
- 
+
    IF INFIELD(qcs00) OR ( NOT g_before_input_done ) THEN
       IF g_qcs.qcs00 MATCHES '[1ABCDEFGH]' THEN   #MOD-970147
         # CALL cl_set_comp_entry("qcs16,qcs21,qcs17,qcs021",FALSE) #MOD-4B0140 ADD qcs021
-          CALL cl_set_comp_entry("qcs16,qcs17,qcs021",FALSE) #ly180331 QC 
+          CALL cl_set_comp_entry("qcs16,qcs17,qcs021",FALSE) #ly180331 QC
 
       END IF
    END IF
- 
+
    IF INFIELD(qcs02) OR ( NOT g_before_input_done ) THEN
       IF g_qcs.qcs00='1' THEN
          CALL cl_set_comp_entry("qcs03",FALSE)
       END IF
    END IF
- 
+
    IF g_qcs.qcs00 = "H" THEN
       CALL cl_set_comp_entry("qcs03",FALSE)
    END IF
- 
+
    IF g_qcs.qcs00 = 'G' THEN
       CALL cl_set_comp_entry("qcs02",FALSE)
    END IF
- 
+
    IF g_sma.sma115 = "Y" THEN
       CALL cl_set_comp_entry("qcs22",FALSE)
    ELSE
       CALL cl_set_comp_entry("qcs32,qcs35",FALSE)
    END IF
- 
+
    IF g_qcs.qcs00 = '7' THEN
       CALL cl_set_comp_entry("qcs021",FALSE)
    END IF
@@ -2540,13 +2540,13 @@ FUNCTION t110_set_no_entry(p_cmd)
     end if
     #darcy:2023/05/22 add e---
 
-  
+
 END FUNCTION
- 
+
 FUNCTION t110_qcs10()  #bugno:6831 add
- DEFINE l_pmn123   LIKE pmn_file.pmn123  #CHI-910054  
- 
- #MRP轉入的請購單會有pml123資料應加入條件 
+ DEFINE l_pmn123   LIKE pmn_file.pmn123  #CHI-910054
+
+ #MRP轉入的請購單會有pml123資料應加入條件
    IF (g_argv1 = '1') AND (g_qcs.qcs00 = '1') THEN
       SELECT pmn123 INTO l_pmn123
         FROM rvb_file,pmn_file
@@ -2554,54 +2554,54 @@ FUNCTION t110_qcs10()  #bugno:6831 add
          AND rvb02 = g_qcs.qcs02
          AND rvb04 = pmn01
          AND rvb03 = pmn02
-   END IF 
- 
+   END IF
+
    DECLARE t110_qcs10_d CURSOR FOR SELECT UNIQUE bmj10 FROM bmj_file
                                     WHERE bmj01 = g_qcs.qcs021
                                       AND (bmj02 IS NULL OR  bmj02 = l_pmn123 OR bmj02 = ' ')   #CHI-910054 add  #MOD-980226 add bmj02=''
                                       AND bmj03 = g_qcs.qcs03
                                       AND (bmj10 IS NOT NULL AND bmj10 !=' ' )
- 
+
    IF SQLCA.sqlcode THEN
       CALL cl_err('declare t110_qcs10_d',SQLCA.sqlcode,1)
       RETURN
    END IF
- 
+
    #系統自動帶出(一對多時抓第一筆,至少要有一筆承認文號)
    LET g_qcs.qcs10 = ''
- 
+
    FOREACH t110_qcs10_d INTO g_qcs.qcs10
       IF SQLCA.sqlcode THEN
          CALL cl_err('foreach t110_qcs10_d',SQLCA.sqlcode,0)
          RETURN
       END IF
    END FOREACH
- 
+
    DISPLAY BY NAME g_qcs.qcs10
- 
+
 END FUNCTION
- 
+
 FUNCTION t110_q()
- 
+
    LET g_row_count = 0
    LET g_curs_index = 0
    CALL cl_navigator_setting( g_curs_index, g_row_count )
    INITIALIZE g_qcs.* TO NULL               #No.FUN-6A0160 date->l_date
    CALL cl_opmsg('q')
-   CALL cl_msg("")                          #FUN-80011 
+   CALL cl_msg("")                          #FUN-80011
    CLEAR FORM
    CALL g_qct.clear()
    DISPLAY '   ' TO FORMONLY.cnt
- 
+
    CALL t110_cs()
- 
+
    IF INT_FLAG THEN
       LET INT_FLAG = 0
       RETURN
    END IF
- 
-   CALL cl_msg(" SEARCHING ! ")             #FUN-80011 
- 
+
+   CALL cl_msg(" SEARCHING ! ")             #FUN-80011
+
    OPEN t110_cs                            # 從DB產生合乎條件TEMP(0-30秒)
    IF SQLCA.sqlcode THEN
       CALL cl_err('',SQLCA.sqlcode,0)
@@ -2612,15 +2612,15 @@ FUNCTION t110_q()
       DISPLAY g_row_count TO FORMONLY.cnt
       CALL t110_fetch('F')                  # 讀出TEMP第一筆並顯示
    END IF
- 
+
    CALL cl_msg("")                          #FUN-80011
- 
+
 END FUNCTION
- 
+
 FUNCTION t110_fetch(p_flag)
    DEFINE p_flag          LIKE type_file.chr1,                 #處理方式  #No.FUN-680104 VARCHAR(1)
           l_abso          LIKE type_file.num10                 #絕對的筆數  #No.FUN-680104 INTEGER
- 
+
    CASE p_flag
        WHEN 'N' FETCH NEXT     t110_cs INTO g_qcs.qcs01,g_qcs.qcs02,g_qcs.qcs05   #liuxqa 091022
        WHEN 'P' FETCH PREVIOUS t110_cs INTO g_qcs.qcs01,g_qcs.qcs02,g_qcs.qcs05   #liuxqa 091022
@@ -2630,21 +2630,21 @@ FUNCTION t110_fetch(p_flag)
           IF (NOT mi_no_ask) THEN
              CALL cl_getmsg('fetch',g_lang) RETURNING g_msg
              LET INT_FLAG = 0  ######add for prompt bug
- 
+
              PROMPT g_msg CLIPPED,': ' FOR g_jump
- 
+
                 ON IDLE g_idle_seconds
                    CALL cl_on_idle()
- 
+
                 ON ACTION about         #MOD-4C0121
                    CALL cl_about()      #MOD-4C0121
- 
+
                 ON ACTION help          #MOD-4C0121
                    CALL cl_show_help()  #MOD-4C0121
- 
+
                 ON ACTION controlg      #MOD-4C0121
                    CALL cl_cmdask()     #MOD-4C0121
- 
+
              END PROMPT
              IF INT_FLAG THEN
                  LET INT_FLAG = 0
@@ -2654,7 +2654,7 @@ FUNCTION t110_fetch(p_flag)
           FETCH ABSOLUTE g_jump t110_cs INTO g_qcs.qcs01,g_qcs.qcs02,g_qcs.qcs05   #liuxqa 091022
           LET mi_no_ask = FALSE
    END CASE
- 
+
    IF SQLCA.sqlcode THEN
       CALL cl_err(g_qcs.qcs01,SQLCA.sqlcode,0)
       INITIALIZE g_qcs.* TO NULL  #TQC-6B0105
@@ -2667,12 +2667,12 @@ FUNCTION t110_fetch(p_flag)
          WHEN 'L' LET g_curs_index = g_row_count
          WHEN '/' LET g_curs_index = g_jump
       END CASE
- 
+
       CALL cl_navigator_setting( g_curs_index, g_row_count )
    END IF
- 
-   SELECT * INTO g_qcs.* FROM qcs_file WHERE qcs01 = g_qcs.qcs01 AND qcs02 = g_qcs.qcs02 AND qcs05 = g_qcs.qcs05  #liuxqa 091022 
- 
+
+   SELECT * INTO g_qcs.* FROM qcs_file WHERE qcs01 = g_qcs.qcs01 AND qcs02 = g_qcs.qcs02 AND qcs05 = g_qcs.qcs05  #liuxqa 091022
+
    IF SQLCA.sqlcode THEN
       CALL cl_err3("sel","qcs_file",g_qcs.qcs01,g_qcs.qcs02,SQLCA.sqlcode,"","",1)  #No.FUN-660115
       INITIALIZE g_qcs.* TO NULL
@@ -2682,12 +2682,12 @@ FUNCTION t110_fetch(p_flag)
       LET g_data_plant = g_qcs.qcsplant #FUN-980030
       CALL t110_show()                      # 重新顯示
    END IF
- 
+
 END FUNCTION
- 
+
 FUNCTION t110_show()
   #DEFINE m_pmn041        LIKE pmn_file.pmn041,       #No.FUN-680104 VARCHAR(30)  #CHI-CB0019 mark
-   DEFINE m_ima15         LIKE type_file.chr1,        #No.FUN-680104 VARCHAR(01)  
+   DEFINE m_ima15         LIKE type_file.chr1,        #No.FUN-680104 VARCHAR(01)
           m_ima02         LIKE ima_file.ima02,
           m_ima021        LIKE ima_file.ima021,       #No.FUN-940103
           m_azf03         LIKE azf_file.azf03,        #No.FUN-680104 VARCHAR(30)
@@ -2702,16 +2702,16 @@ FUNCTION t110_show()
           l_n             LIKE type_file.num5,
           l_n1            LIKE type_file.num5,
           l_n2            LIKE type_file.num5,
-          l_rvu03         LIKE rvu_file.rvu03    
- 
+          l_rvu03         LIKE rvu_file.rvu03
+
    LET g_qcs_t.* = g_qcs.*                #保存單頭舊值
    --------------add byhlf07751----------------------------------------------------
-   select count(*) INTO l_n from qcs_file,dual 
+   select count(*) INTO l_n from qcs_file,dual
    where qcsud13=to_date('1899/12/31','YYYY/MM/DD') AND qcs01=g_qcs.qcs01 AND qcs02=g_qcs.qcs02
    IF(l_n>0) THEN
    LET  g_qcs.qcsud13=''
    DISPLAY g_qcs.qcsud13 TO FORMONLY.qcsud13
-   END IF 
+   END IF
 
    SELECT count(*) INTO l_n1 FROM ima_file WHERE ima01=qcs021 AND imaud04='N'
    IF cl_null(g_qcs.qcsud02) THEN
@@ -2724,8 +2724,8 @@ FUNCTION t110_show()
    SELECT rvu03 INTO l_rvu03 FROM rvu_file WHERE rvu02 = g_qcs.qcs01 AND rvuconf='Y'
    SELECT count(*) INTO l_n2 FROM rvu_file WHERE rvu02 = g_qcs.qcs01 AND rvuconf='Y'
    IF l_n2=0 THEN
-   LET  l_rvu03 = '' 
-   END IF  
+   LET  l_rvu03 = ''
+   END IF
    DISPLAY l_rvu03 TO FORMONLY.rvu03
   --------------add byhlf07751----------------------------------------------------------
    DISPLAY BY NAME g_qcs.qcsoriu,g_qcs.qcsorig,                              # 顯示單頭值
@@ -2739,32 +2739,32 @@ FUNCTION t110_show()
        g_qcs.qcsud01,g_qcs.qcsud02,g_qcs.qcsud03,g_qcs.qcsud04,
        g_qcs.qcsud05,g_qcs.qcsud06,g_qcs.qcsud07,g_qcs.qcsud08,
        g_qcs.qcsud09,g_qcs.qcsud10,g_qcs.qcsud11,g_qcs.qcsud12,
-       g_qcs.qcsud13,g_qcs.qcsud14,g_qcs.qcsud15 
- 
+       g_qcs.qcsud13,g_qcs.qcsud14,g_qcs.qcsud15
+
    CALL t110_get_ecm04()  #MOD-890102
- 
+
    IF g_qcs.qcs00 MATCHES '[56]' THEN
       SELECT occ02 INTO m_pmc03 FROM occ_file
        WHERE occ01 = g_qcs.qcs03
    ELSE
    SELECT pmc03 INTO m_pmc03 FROM pmc_file WHERE pmc01=g_qcs.qcs03
    END IF  #MOD-890098 add
- 
+
    IF STATUS=100 THEN LET m_pmc03=' ' END IF
- 
+
    DISPLAY m_pmc03 TO FORMONLY.pmc03
- 
+
    DISPLAY BY NAME g_qcs.qcs30,g_qcs.qcs31,g_qcs.qcs32
    DISPLAY BY NAME g_qcs.qcs33,g_qcs.qcs34,g_qcs.qcs35
- 
+
    DISPLAY BY NAME g_qcs.qcs36,g_qcs.qcs37,g_qcs.qcs38   #CHI-6A0037 add
    DISPLAY BY NAME g_qcs.qcs39,g_qcs.qcs40,g_qcs.qcs41   #CHI-6A0037 add
- 
+
    SELECT ima02,ima021,ima109,ima15,ima906,ima101   #No.FUN-620043    #No.FUN-A80063   #No.FUN-940103 add ima021
      INTO m_ima02,m_ima021,m_ima109,m_ima15,g_ima906,g_ima101   #No.FUN-620043   #No.FUN-A80063 #No.FUN-940103
      FROM ima_file
     WHERE ima01=g_qcs.qcs021
- 
+
    IF STATUS = 100 THEN
       LET m_ima02 = ' '
       LET m_ima021 = ' '     #No.FUN-940103
@@ -2772,23 +2772,23 @@ FUNCTION t110_show()
       LET m_ima15 = ' '
    END IF
    LET g_ima109 = m_ima109
- 
+
    DISPLAY m_ima02 TO FORMONLY.ima02     #CHI-CB0019 mod pmn041->ima02
    DISPLAY m_ima021 TO FORMONLY.ima021   #No.FUN-940103
    DISPLAY m_ima109 TO FORMONLY.ima109
    DISPLAY m_ima15 TO FORMONLY.ima15
    DISPLAY g_ima101 TO ima101   #No.FUN-A80063
-   
+
    SELECT azf03 INTO m_azf03 FROM azf_file
     WHERE azf01 = m_ima109
       AND azf02 = '8'
- 
+
    IF STATUS THEN
       LET m_azf03=' '
    END IF
- 
+
    DISPLAY m_azf03 TO FORMONLY.azf03
- 
+
    DECLARE pmh_cur4 CURSOR FOR SELECT pmh05 FROM pmh_file
                                 WHERE pmh01 = g_qcs.qcs021
                                   AND pmh02 = g_qcs.qcs03
@@ -2796,14 +2796,14 @@ FUNCTION t110_show()
                                   AND pmh22 = g_type                         #CHI-860042   #MOD-890102 modify '1'->g_type
                                   AND pmh23 = ' '                            #No.CHI-960033
                                  # AND pmhacti = 'Y'                         #CHI-910021   #No.CHI-A10021 mark
- 
+
    OPEN pmh_cur4
    FETCH pmh_cur4 INTO m_pmh05
- 
+
    IF STATUS=100 THEN
       LET m_pmh05 = ' '
    END IF
- 
+
    CASE m_pmh05
       WHEN '0'
          CALL cl_getmsg('aqc-010',g_lang) RETURNING m_pmh05_desc
@@ -2812,9 +2812,9 @@ FUNCTION t110_show()
       WHEN '2'
          CALL cl_getmsg('aqc-012',g_lang) RETURNING m_pmh05_desc
    END CASE
- 
+
    DISPLAY m_pmh05_desc TO FORMONLY.pmh05    #---- 核准狀態
- 
+
    CASE g_qcs.qcs09
       WHEN '1'
          CALL cl_getmsg('aqc-004',g_lang) RETURNING des1
@@ -2823,9 +2823,9 @@ FUNCTION t110_show()
       WHEN '3'
          CALL cl_getmsg('aqc-006',g_lang) RETURNING des1
    END CASE
- 
+
    DISPLAY des1 TO FORMONLY.des1
- 
+
    CASE g_qcs.qcs21
       WHEN 'N'
          CALL cl_getmsg('aqc-001',g_lang) RETURNING qcs21_desc
@@ -2834,9 +2834,9 @@ FUNCTION t110_show()
       WHEN 'R'
          CALL cl_getmsg('aqc-003',g_lang) RETURNING qcs21_desc
    END CASE
- 
+
    DISPLAY qcs21_desc TO FORMONLY.qcs21_desc
- 
+
    #----------CHI-BC0018 str add-----------------
    CASE g_ima101
       WHEN '1'
@@ -2899,56 +2899,56 @@ FUNCTION t110_show()
    END CASE
    DISPLAY qcs17_desc TO FORMONLY.qcs17_desc
    #----------CHI-BC0018 end add-----------------
- 
+
    SELECT gen02 INTO m_gen02 FROM gen_file
     WHERE gen01 = g_qcs.qcs13
- 
+
    IF SQLCA.sqlcode THEN #FUN-5C0114
       LET m_gen02='' #FUN-5C0114
    END IF
- 
+
    DISPLAY m_gen02 TO FORMONLY.gen02
- 
+
    IF g_qcs.qcs14 = 'X' THEN
       LET g_void = 'Y'
    ELSE
       LET g_void = 'N'
    END IF
- 
+
    CALL cl_set_field_pic(g_qcs.qcs14,"","","",g_void,g_qcs.qcsacti)
    CALL t110_b_fill(g_wc2)                 #單身
- 
+
    CALL cl_show_fld_cont()                   #No.FUN-550037 hmf
- 
+
 END FUNCTION
- 
- 
+
+
 #取消整筆 (所有合乎單頭的資料)
 FUNCTION t110_r()
    DEFINE l_cnt   LIKE type_file.num10  #FUN-BC0104
- 
+
    IF s_shut(0) THEN RETURN END IF
- 
+
    IF g_qcs.qcs01 IS NULL THEN
       CALL cl_err("",-400,0)
       RETURN
    END IF
- 
+
    SELECT * INTO g_qcs.* FROM qcs_file
     WHERE qcs01 = g_qcs.qcs01
       AND qcs02 = g_qcs.qcs02
       AND qcs05 = g_qcs.qcs05
- 
+
    IF g_qcs.qcsacti = 'N' THEN    #檢查資料是否為無效
       CALL cl_err(g_qcs.qcs01,9027,0)
       RETURN
    END IF
- 
+
    IF g_qcs.qcs14 = 'X' THEN
       CALL cl_err('','9024',0)
       RETURN
    END IF
- 
+
    IF g_qcs.qcs14 = 'Y' THEN  #No.FUN-5C0077
       CALL cl_err('','9023',0)
       RETURN
@@ -2961,16 +2961,16 @@ FUNCTION t110_r()
       AND qco05 = g_qcs.qcs05
    IF cl_null(l_cnt) THEN
       LET l_cnt = 0
-   END IF 
+   END IF
    IF l_cnt > 0 THEN
-      IF NOT cl_confirm('aqc-056') THEN   
+      IF NOT cl_confirm('aqc-056') THEN
          RETURN
       END IF
    END IF
 #FUN-BC0104 --------------End-------------------
- 
+
    BEGIN WORK
- 
+
    OPEN t110_cl USING g_qcs.qcs01,g_qcs.qcs02,g_qcs.qcs05   #liuxqa 091022
    IF STATUS THEN
       CALL cl_err("OPEN t110_cl:", STATUS, 1)
@@ -2978,7 +2978,7 @@ FUNCTION t110_r()
       ROLLBACK WORK
       RETURN
    END IF
- 
+
    FETCH t110_cl INTO g_qcs.*               # 鎖住將被更改或取消的資料
    IF SQLCA.sqlcode THEN
       CALL cl_err(g_qcs.qcs01,SQLCA.sqlcode,0)          #資料被他人LOCK
@@ -2986,9 +2986,9 @@ FUNCTION t110_r()
       ROLLBACK WORK
       RETURN
    END IF
- 
+
    CALL t110_show()
- 
+
    IF cl_delh(0,0) THEN                   #確認一下
        INITIALIZE g_doc.* TO NULL          #No.FUN-9B0098 10/02/24
        LET g_doc.column1 = "qcs01"         #No.FUN-9B0098 10/02/24
@@ -3002,7 +3002,7 @@ FUNCTION t110_r()
        WHERE qcs01 = g_qcs.qcs01
          AND qcs02 = g_qcs.qcs02
          AND qcs05 = g_qcs.qcs05
- 
+
 #FUN-BC0104 -------------Begin---------------
       DELETE FROM qco_file
        WHERE qco01 = g_qcs.qcs01
@@ -3014,35 +3014,35 @@ FUNCTION t110_r()
        WHERE qct01 = g_qcs.qcs01
          AND qct02 = g_qcs.qcs02
          AND qct021 = g_qcs.qcs05
- 
+
       DELETE FROM qcu_file
        WHERE qcu01 = g_qcs.qcs01
          AND qcu02 = g_qcs.qcs02
          AND qcu021 = g_qcs.qcs05
- 
+
       DELETE FROM qctt_file
        WHERE qctt01 = g_qcs.qcs01
          AND qctt02 = g_qcs.qcs02
          AND qctt021 = g_qcs.qcs05
- 
-       DELETE FROM qao_file 
+
+       DELETE FROM qao_file
         WHERE qao01 = g_qcs.qcs01
-          AND qao02 = g_qcs.qcs02         
-          AND qao021= g_qcs.qcs05       
- 
+          AND qao02 = g_qcs.qcs02
+          AND qao021= g_qcs.qcs05
+
       IF g_qcs.qcs00='7' THEN
          UPDATE srg_file SET srg12=NULL WHERE srg01=g_qcs.qcs01
                                           AND srg02=g_qcs.qcs02
       END IF
- 
-  
-      DELETE FROM qcv_file 
+
+
+      DELETE FROM qcv_file
         WHERE qcv01 = g_qcs.qcs01
           AND qcv02 = g_qcs.qcs02
           AND qcv21 = g_qcs.qcs05
 #No.TQC-B90236----------------add begin-------------------------------------------------
-#No.TQC-B90236----------------mark--------begin----------------------------------------- 
-#     IF NOT s_del_rvbs("2",g_qcs.qcs01,g_qcs.qcs02,g_qcs.qcs05)  THEN        #FUN-880129 
+#No.TQC-B90236----------------mark--------begin-----------------------------------------
+#     IF NOT s_del_rvbs("2",g_qcs.qcs01,g_qcs.qcs02,g_qcs.qcs05)  THEN        #FUN-880129
 #       ROLLBACK WORK
 #       RETURN
 #     END IF
@@ -3051,7 +3051,7 @@ FUNCTION t110_r()
          ROLLBACK WORK
          RETURN
        END IF
-#No.TQC-B90236----------------add end--------------------------------------------------- 
+#No.TQC-B90236----------------add end---------------------------------------------------
       #功能: 通知 SPC 端刪除此張單據
       # 傳入參數: (1) QC 程式代號, (2) QC 單頭資料,(
       #           (3)功能選項：insert(新增),update(修改),delete(刪除)
@@ -3063,17 +3063,17 @@ FUNCTION t110_r()
               ROLLBACK WORK
               RETURN
          END IF
- 
+
          #更改前端單據SPC拋轉碼
          CALL t110_updspc()
- 
+
       END IF
-      #END FUN-680011  
- 
+      #END FUN-680011
+
       INITIALIZE g_qcs.* TO NULL
       CLEAR FORM
       CALL g_qct.clear()
- 
+
       OPEN t110_count
       #FUN-B50064-add-start--
       IF STATUS THEN
@@ -3082,7 +3082,7 @@ FUNCTION t110_r()
          COMMIT WORK
          RETURN
       END IF
-      #FUN-B50064-add-end-- 
+      #FUN-B50064-add-end--
       FETCH t110_count INTO g_row_count
       #FUN-B50064-add-start--
       IF STATUS OR (cl_null(g_row_count) OR  g_row_count = 0 ) THEN
@@ -3093,7 +3093,7 @@ FUNCTION t110_r()
       END IF
       #FUN-B50064-add-end--
       DISPLAY g_row_count TO FORMONLY.cnt
- 
+
       OPEN t110_cs
       IF g_curs_index = g_row_count + 1 THEN
          LET g_jump = g_row_count
@@ -3103,14 +3103,14 @@ FUNCTION t110_r()
          LET mi_no_ask = TRUE
          CALL t110_fetch('/')
       END IF
- 
+
    END IF
- 
+
    CLOSE t110_cl
    COMMIT WORK
- 
+
 END FUNCTION
- 
+
 FUNCTION t110_b() #hlf
 DEFINE l_ac_t          LIKE type_file.num5,                #未取消的ARRAY CNT  #No.FUN-680104 SMALLINT
        l_n,l_cnt,l_num,l_numcr,l_numma,l_nummi LIKE type_file.num5,         #No.FUN-680104 SMALLINT #檢查重複用
@@ -3129,8 +3129,8 @@ DEFINE l_ac_t          LIKE type_file.num5,                #未取消的ARRAY CN
        l_allow_insert  LIKE type_file.num5,                #可新增否  #No.FUN-680104 SMALLINT
        l_allow_delete  LIKE type_file.num5                 #可刪除否  #No.FUN-680104 SMALLINT
 DEFINE l_length        LIKE type_file.num5                 #TQC-7C0088 add
-DEFINE l_sql           STRING       #No.FUN-910079 
-DEFINE l_ima926        LIKE ima_file.ima926                #FUN-930108 add 
+DEFINE l_sql           STRING       #No.FUN-910079
+DEFINE l_ima926        LIKE ima_file.ima926                #FUN-930108 add
 DEFINE l_qcs09         LIKE qcs_file.qcs09                 #CHI-C70004 add
 #No.FUN-A80130 --begin
 DEFINE l_avg           LIKE qctt_file.qctt04
@@ -3144,15 +3144,15 @@ DEFINE l_qcd           RECORD LIKE qcd_file.*
 DEFINE l_qcd03         LIKE qcd_file.qcd03
 DEFINE l_qcd04         LIKE qcd_file.qcd04
 DEFINE l_count         LIKE type_file.num5     #FUN-BC0104
-#No.FUN-A80130 --end 
+#No.FUN-A80130 --end
    LET g_action_choice = ""
 
    LET g_flag = 'N'   #FUN-C30149 add
- 
+
    IF s_shut(0) THEN
       RETURN
    END IF
- 
+
    IF cl_null(g_qcs.qcs01) THEN
       RETURN
    END IF
@@ -3170,71 +3170,71 @@ DEFINE l_count         LIKE type_file.num5     #FUN-BC0104
       RETURN
    END IF
 #FUN-BC0104 --------------End----------------
- 
+
    SELECT * INTO g_qcs.* FROM qcs_file
     WHERE qcs01 = g_qcs.qcs01
       AND qcs02 = g_qcs.qcs02
       AND qcs05 = g_qcs.qcs05
- 
+
    CALL t110_qcs10() #bugno:6831 add
- 
+
    UPDATE qcs_file SET * = g_qcs.*
     WHERE qcs01 = g_qcs.qcs01
       AND qcs02 = g_qcs.qcs02
       AND qcs05 = g_qcs.qcs05
- 
+
    SELECT * INTO g_qcs.* FROM qcs_file
     WHERE qcs01 = g_qcs.qcs01
       AND qcs02 = g_qcs.qcs02
       AND qcs05 = g_qcs.qcs05
- 
+
    IF g_qcs.qcsacti ='N' THEN    #檢查資料是否為無效
       CALL cl_err(g_qcs.qcs01,'aom-000',0)
       RETURN
    END IF
- 
+
    IF g_qcs.qcs14 = 'X' THEN
       CALL cl_err('','9024',0)
       RETURN
    END IF
- 
+
    IF g_qcs.qcs14 = 'Y' and g_action_choice!="measure_append" THEN   #No.FUN-5C0077
       CALL cl_err('','9023',0)
       RETURN
    END IF
- 
+
    CALL cl_opmsg('b')
- 
+
    LET g_forupd_sql =
       "SELECT qct03,qct04,'','',qct05,qct06,qct09,qct10,qct14,qct15,qct11,qct07,qct08,'', ",  #No.FUN-A80063
       "       qctud01,qctud02,qctud03,qctud04,qctud05,",
       "       qctud06,qctud07,qctud08,qctud09,qctud10,",
-      "       qctud11,qctud12,qctud13,qctud14,qctud15", 
+      "       qctud11,qctud12,qctud13,qctud14,qctud15",
       "  FROM qct_file ",
       " WHERE qct01= ? AND qct02= ? AND qct021= ? AND qct03= ?  FOR UPDATE"
- 
+
    LET g_forupd_sql = cl_forupd_sql(g_forupd_sql)
    DECLARE t110_bcl CURSOR FROM g_forupd_sql      # LOCK CURSOR
- 
+
    LET l_ac_t = 0
    LET l_allow_insert = FALSE    #MOD-480160
    LET l_allow_delete = cl_detail_input_auth("delete")
- 
+
    INPUT ARRAY g_qct WITHOUT DEFAULTS FROM s_qct.*
       ATTRIBUTE(COUNT=g_rec_b,MAXCOUNT=g_max_rec,UNBUFFERED,
                 INSERT ROW=l_allow_insert,DELETE ROW=l_allow_delete,APPEND ROW=l_allow_insert)
- 
+
       BEFORE INPUT
          IF g_rec_b != 0 THEN
             CALL fgl_set_arr_curr(l_ac)
          END IF
- 
+
       BEFORE ROW
          LET p_cmd = ''
          LET l_ac = ARR_CURR()
          LET l_lock_sw = 'N'            #DEFAULT
          LET l_n  = ARR_COUNT()
- 
+
          BEGIN WORK
          OPEN t110_cl USING g_qcs.qcs01,g_qcs.qcs02,g_qcs.qcs05   #liuxqa 091022
          IF STATUS THEN
@@ -3243,7 +3243,7 @@ DEFINE l_count         LIKE type_file.num5     #FUN-BC0104
             ROLLBACK WORK
             RETURN
          END IF
- 
+
          FETCH t110_cl INTO g_qcs.*            # 鎖住將被更改或取消的資料
          IF SQLCA.sqlcode THEN
             CALL cl_err(g_qcs.qcs01,SQLCA.sqlcode,0)      # 資料被他人LOCK
@@ -3251,7 +3251,7 @@ DEFINE l_count         LIKE type_file.num5     #FUN-BC0104
             ROLLBACK WORK
             RETURN
          END IF
- 
+
          IF g_rec_b >= l_ac THEN
             LET p_cmd='u'
             LET g_qct_t.* = g_qct[l_ac].*  #BACKUP
@@ -3279,7 +3279,7 @@ DEFINE l_count         LIKE type_file.num5     #FUN-BC0104
             END IF
             CALL cl_show_fld_cont()     #FUN-550037(smin)
          END IF
- 
+
       BEFORE INSERT
          LET l_n = ARR_COUNT()
          LET p_cmd = 'a'
@@ -3287,7 +3287,7 @@ DEFINE l_count         LIKE type_file.num5     #FUN-BC0104
          LET g_qct_t.* = g_qct[l_ac].*         #新輸入資料
          CALL cl_show_fld_cont()     #FUN-550037(smin)
          NEXT FIELD qct03
- 
+
       AFTER INSERT
          IF INT_FLAG THEN
             CALL cl_err('',9001,0)
@@ -3312,64 +3312,64 @@ DEFINE l_count         LIKE type_file.num5     #FUN-BC0104
          #                "  AND qcc01= ? AND qcc011=ecm04 ",
          #                "  AND qcc02= ?",
          #                " AND ecm012=pmn012 "               #FUN-A60076 add
-         #    IF  g_argv1 = "1" THEN 
-         #        LET l_sql = l_sql CLIPPED," AND qcc08 in ('1','9')" 
-         #    END IF     
-         #    IF  g_argv1 = "2" THEN 
+         #    IF  g_argv1 = "1" THEN
+         #        LET l_sql = l_sql CLIPPED," AND qcc08 in ('1','9')"
+         #    END IF
+         #    IF  g_argv1 = "2" THEN
          #        LET l_sql = l_sql CLIPPED," AND qcc08 in ('5','9')"
-         #    END IF      
-         #    IF  g_argv1 = "3" THEN 
+         #    END IF
+         #    IF  g_argv1 = "3" THEN
          #        LET l_sql = l_sql CLIPPED," AND qcc08 in ('4','9')"
-         #    END IF     
-         #    IF  g_argv1 = "4" THEN 
+         #    END IF
+         #    IF  g_argv1 = "4" THEN
          #        LET l_sql = l_sql CLIPPED," AND qcc08 in ('2','9')"
-         #     END IF   
-         #     PREPARE qcc_sel1 FROM l_sql  
+         #     END IF
+         #     PREPARE qcc_sel1 FROM l_sql
          #     EXECUTE qcc_sel1 USING g_qcs.qcs01,g_qcs.qcs02,g_qcs.qcs021,g_qct[l_ac].qct04
-         #       INTO  l_qcd05,l_qcd061,l_qcd062,l_qcd07                                                    
-         #   IF STATUS=100 THEN           
+         #       INTO  l_qcd05,l_qcd061,l_qcd062,l_qcd07
+         #   IF STATUS=100 THEN
          #      EXECUTE qcc_sel1 USING g_qcs.qcs01,g_qcs.qcs02,'*',g_qct[l_ac].qct04
          #        INTO  l_qcd05,l_qcd061,l_qcd062,l_qcd07
          #      IF STATUS=100 THEN
          #      LET l_sql = " SELECT qcd05,qcd061,qcd062,qcd07 ",
          #                  " FROM qcd_file ",
          #                  " WHERE qcd01=? AND qcd02=? "
-         #        IF  g_argv1 = "1" THEN 
-         #            LET l_sql = l_sql CLIPPED," AND qcd08 in ('1','9')" 
-         #        END IF          
-         #        IF  g_argv1 = "2" THEN 
-         #                 LET l_sql = l_sql CLIPPED," AND qcd08 in ('5','9')" 
-         #        END IF 
-         #        IF  g_argv1 = "3" THEN 
+         #        IF  g_argv1 = "1" THEN
+         #            LET l_sql = l_sql CLIPPED," AND qcd08 in ('1','9')"
+         #        END IF
+         #        IF  g_argv1 = "2" THEN
+         #                 LET l_sql = l_sql CLIPPED," AND qcd08 in ('5','9')"
+         #        END IF
+         #        IF  g_argv1 = "3" THEN
          #                 LET l_sql = l_sql CLIPPED," AND qcd08 in ('4','9')"
-         #        END IF 
-         #        IF  g_argv1 = "4" THEN 
+         #        END IF
+         #        IF  g_argv1 = "4" THEN
          #                 LET l_sql = l_sql CLIPPED," AND qcd08 in ('2','9')"
-         #        END IF          
-         #      PREPARE qcd_sel1 FROM l_sql  
+         #        END IF
+         #      PREPARE qcd_sel1 FROM l_sql
          #       EXECUTE qcd_sel1 USING g_qcs.qcs021,g_qct[l_ac].qct04
-         #          INTO  l_qcd05,l_qcd061,l_qcd062,l_qcd07                       
+         #          INTO  l_qcd05,l_qcd061,l_qcd062,l_qcd07
          #      IF STATUS=100 THEN
          #      LET l_sql = " SELECT qck05,qck061,qck062,qck07  ",
          #                  "   FROM qck_file,ima_file ",
          #                  "   WHERE ima01=? AND qck01=ima109 ",
          #                  "   AND qck02 = ?"
-         #                   
-         #          IF  g_argv1 = "1"  THEN 
-         #              LET l_sql = l_sql CLIPPED," AND qck08 in ('1','9')" 
-         #          END IF        
-         #          IF  g_argv1 = "2"   THEN 
-         #                 LET l_sql = l_sql CLIPPED," AND qck08 in ('5','9')" 
-         #          END IF 
-         #          IF  g_argv1 = "3"  THEN 
+         #
+         #          IF  g_argv1 = "1"  THEN
+         #              LET l_sql = l_sql CLIPPED," AND qck08 in ('1','9')"
+         #          END IF
+         #          IF  g_argv1 = "2"   THEN
+         #                 LET l_sql = l_sql CLIPPED," AND qck08 in ('5','9')"
+         #          END IF
+         #          IF  g_argv1 = "3"  THEN
          #                 LET l_sql = l_sql CLIPPED," AND qck08 in ('4','9')"
-         #          END IF 
-         #          IF  g_argv1 = "4"  THEN 
+         #          END IF
+         #          IF  g_argv1 = "4"  THEN
          #                 LET l_sql = l_sql CLIPPED," AND qck08 in ('2','9')"
-         #          END IF   
-         #       PREPARE qck_sel1 FROM l_sql  
+         #          END IF
+         #       PREPARE qck_sel1 FROM l_sql
          #       EXECUTE qck_sel1 USING g_qcs.qcs021,g_qct[l_ac].qct04
-         #          INTO  l_qcd05,l_qcd061,l_qcd062,l_qcd07                    
+         #          INTO  l_qcd05,l_qcd061,l_qcd062,l_qcd07
          #         IF STATUS=100 THEN
          #            LET l_qcd07 = 'N'
          #            LET l_qcd05 = ''
@@ -3380,7 +3380,7 @@ DEFINE l_count         LIKE type_file.num5     #FUN-BC0104
          #    END IF                     #No.FUN-990071
          #   END IF
          #No.TQC-BB0119  --End
- 
+
          INSERT INTO qct_file (qct01,qct02,qct021,qct03,qct04,qct05,  #No.MOD-470041
                                qct06,qct07,qct08,qct09,qct10,qct11,
                                qct12,qct131,qct132,
@@ -3410,7 +3410,7 @@ DEFINE l_count         LIKE type_file.num5     #FUN-BC0104
             LET g_rec_b = g_rec_b + 1
             DISPLAY g_rec_b TO FORMONLY.cn2
          END IF
- 
+
       BEFORE FIELD qct03                        #default 序號
          IF g_qct[l_ac].qct03 IS NULL OR
             g_qct[l_ac].qct03 = 0 THEN
@@ -3425,10 +3425,10 @@ DEFINE l_count         LIKE type_file.num5     #FUN-BC0104
          END IF
 
    #  AFTER FIELD qct04
-   #      SELECT ta_qck01 INTO g_qct[l_ac].ta_qck01 
+   #      SELECT ta_qck01 INTO g_qct[l_ac].ta_qck01
    #      FROM qck_file WHERE qck01=g_ima109 AND qck02=g_qct[l_ac].qct04
 
-     
+
       AFTER FIELD qct11
          IF g_qct[l_ac].qct11 IS NULL THEN
             LET g_qct[l_ac].qct11=0
@@ -3446,22 +3446,22 @@ DEFINE l_count         LIKE type_file.num5     #FUN-BC0104
          #                "  AND pmn41=ecm01 AND pmn46=ecm03 ",
          #                "  AND qcc01= ? AND qcc011=ecm04 ",
          #                "  AND qcc02= ?",
-         #                "  AND ecm012=pmn012 "                     #FUN-A60076 add     
-         #    IF  g_argv1 = "1"  THEN 
+         #                "  AND ecm012=pmn012 "                     #FUN-A60076 add
+         #    IF  g_argv1 = "1"  THEN
          #        LET l_sql = l_sql CLIPPED," AND qcc08 in ('1','9')"
-         #    END IF     
-         #    IF  g_argv1 = "2"  THEN 
-         #        LET l_sql = l_sql CLIPPED," AND qcc08 in ('5','9')" 
-         #    END IF     
-         #    IF  g_argv1 = "3"  THEN 
+         #    END IF
+         #    IF  g_argv1 = "2"  THEN
+         #        LET l_sql = l_sql CLIPPED," AND qcc08 in ('5','9')"
+         #    END IF
+         #    IF  g_argv1 = "3"  THEN
          #        LET l_sql = l_sql CLIPPED," AND qcc08 in ('4','9')"
-         #    END IF     
-         #    IF  g_argv1 = "4"  THEN 
+         #    END IF
+         #    IF  g_argv1 = "4"  THEN
          #        LET l_sql = l_sql CLIPPED," AND qcc08 in ('2','9')"
-         #    END IF 
-         #     PREPARE qcc_sel2 FROM l_sql  
+         #    END IF
+         #     PREPARE qcc_sel2 FROM l_sql
          #     EXECUTE qcc_sel2 USING g_qcs.qcs01,g_qcs.qcs02,g_qcs.qcs021,g_qct[l_ac].qct04
-         #       INTO  l_qcd05,l_qcd061,l_qcd062,l_qcd07                                          
+         #       INTO  l_qcd05,l_qcd061,l_qcd062,l_qcd07
          #   IF STATUS=100 THEN
          #      EXECUTE qcc_sel2 USING g_qcs.qcs01,g_qcs.qcs02,'*',g_qct[l_ac].qct04
          #        INTO  l_qcd05,l_qcd061,l_qcd062,l_qcd07
@@ -3469,50 +3469,50 @@ DEFINE l_count         LIKE type_file.num5     #FUN-BC0104
          #      LET l_sql = " SELECT qcd05,qcd061,qcd062,qcd07 ",
          #                  " FROM qcd_file ",
          #                  " WHERE qcd01=? AND qcd02=? "
-         #        IF  g_argv1 = "1"  THEN 
+         #        IF  g_argv1 = "1"  THEN
          #            LET l_sql = l_sql CLIPPED," AND qcd08 in ('1','9')"
-         #        END IF           
-         #        IF  g_argv1 = "2"  THEN 
-         #            LET l_sql = l_sql CLIPPED," AND qcd08 in ('5','9')" 
-         #        END IF     
-         #        IF  g_argv1 = "3"  THEN 
+         #        END IF
+         #        IF  g_argv1 = "2"  THEN
+         #            LET l_sql = l_sql CLIPPED," AND qcd08 in ('5','9')"
+         #        END IF
+         #        IF  g_argv1 = "3"  THEN
          #            LET l_sql = l_sql CLIPPED," AND qcd08 in ('4','9')"
-         #        END IF     
-         #        IF  g_argv1 = "4"  THEN 
+         #        END IF
+         #        IF  g_argv1 = "4"  THEN
          #            LET l_sql = l_sql CLIPPED," AND qcd08 in ('2','9')"
          #        END IF
-         #      PREPARE qcd_sel2 FROM l_sql  
+         #      PREPARE qcd_sel2 FROM l_sql
          #      EXECUTE qcd_sel2 USING g_qcs.qcs021,g_qct[l_ac].qct04
-         #          INTO  l_qcd05,l_qcd061,l_qcd062,l_qcd07                       
+         #          INTO  l_qcd05,l_qcd061,l_qcd062,l_qcd07
          #      IF STATUS=100 THEN
          #      LET l_sql = " SELECT qck05,qck061,qck062,qck07  ",
          #                  "   FROM qck_file,ima_file ",
          #                  "   WHERE ima01=? AND qck01=ima109 ",
          #                  "   AND qck02 = ?"
-         #                   
-         #           IF  g_argv1 = "1"   THEN 
-         #               LET l_sql = l_sql CLIPPED," AND qck08 in ('1','9')" 
-         #           END IF       
-         #           IF  g_argv1 = "2"  THEN 
+         #
+         #           IF  g_argv1 = "1"   THEN
+         #               LET l_sql = l_sql CLIPPED," AND qck08 in ('1','9')"
+         #           END IF
+         #           IF  g_argv1 = "2"  THEN
          #               LET l_sql = l_sql CLIPPED," AND qck08 in ('5','9')"
-         #           END IF      
-         #           IF  g_argv1 = "3"  THEN 
+         #           END IF
+         #           IF  g_argv1 = "3"  THEN
          #               LET l_sql = l_sql CLIPPED," AND qck08 in ('4','9')"
-         #           END IF     
-         #           IF  g_argv1 = "4"  THEN 
+         #           END IF
+         #           IF  g_argv1 = "4"  THEN
          #               LET l_sql = l_sql CLIPPED," AND qck08 in ('2','9')"
-         #           END IF    
-         #       PREPARE qck_sel2 FROM l_sql  
+         #           END IF
+         #       PREPARE qck_sel2 FROM l_sql
          #       EXECUTE qck_sel2 USING g_qcs.qcs021,g_qct[l_ac].qct04
-         #          INTO  l_qcd05,l_qcd061,l_qcd062,l_qcd07                    
+         #          INTO  l_qcd05,l_qcd061,l_qcd062,l_qcd07
          #         IF STATUS=100 THEN
          #            LET l_qcd07='N'
          #         END IF
          #      END IF
-         #     END IF                #No.FUN-990071 
+         #     END IF                #No.FUN-990071
          #   END IF
          #No.TQC-BB0119  --End
- 
+
          IF g_qct[l_ac].qct11>0 AND l_qcd07='Y'AND g_qcz.qcz01='Y' THEN
             CALL t110_more_b1(g_qct[l_ac].qct11,l_qcd05,l_qcd061,l_qcd062,
                               g_qct[l_ac].qct03,g_qct[l_ac].qct04)
@@ -3544,17 +3544,17 @@ DEFINE l_count         LIKE type_file.num5     #FUN-BC0104
             LET g_qct[l_ac].qct07 = 0
          END IF
         #MOD-CB0153---add---S
-       #str mark ly20180330  
+       #str mark ly20180330
        #IF g_qct[l_ac].qct11 > g_qcs.qcs22 THEN
        #     CALL cl_err(g_qct[l_ac].qct11,'aqc-888',1)
        #     NEXT FIELD qct11
        #  END IF
-       #END mark 
+       #END mark
         #MOD-CB0153---add---E
- 
+
       AFTER FIELD qct07
         #缺點數與檢驗量是兩個獨立不互相影響的數值
-        #故不因做下面判斷 
+        #故不因做下面判斷
          IF g_qct[l_ac].qct07>0 THEN
              CALL t110_more_b(g_qct[l_ac].qct07)           #TQC-970126
          END IF
@@ -3571,87 +3571,87 @@ DEFINE l_count         LIKE type_file.num5     #FUN-BC0104
          #            "  AND pmn41=ecm01 AND pmn46=ecm03 ",
          #            "  AND qcc01= ? AND qcc011=ecm04 ",
          #            "  AND qcc02= ?",
-         #            "  AND ecm012=pmn012 "                     #FUN-A60076 add     
-         #IF  g_argv1 = "1"  THEN 
+         #            "  AND ecm012=pmn012 "                     #FUN-A60076 add
+         #IF  g_argv1 = "1"  THEN
          #    LET l_sql = l_sql CLIPPED," AND qcc08 in ('1','9')"
-         #END IF     
-         #IF  g_argv1 = "2"  THEN 
-         #    LET l_sql = l_sql CLIPPED," AND qcc08 in ('5','9')" 
-         #END IF     
-         #IF  g_argv1 = "3"  THEN 
+         #END IF
+         #IF  g_argv1 = "2"  THEN
+         #    LET l_sql = l_sql CLIPPED," AND qcc08 in ('5','9')"
+         #END IF
+         #IF  g_argv1 = "3"  THEN
          #    LET l_sql = l_sql CLIPPED," AND qcc08 in ('4','9')"
-         #END IF     
-         #IF  g_argv1 = "4"  THEN 
+         #END IF
+         #IF  g_argv1 = "4"  THEN
          #    LET l_sql = l_sql CLIPPED," AND qcc08 in ('2','9')"
-         #END IF 
-         #PREPARE qcc_sel13 FROM l_sql  
+         #END IF
+         #PREPARE qcc_sel13 FROM l_sql
          #EXECUTE qcc_sel13 USING g_qcs.qcs01,g_qcs.qcs02,g_qcs.qcs021,g_qct[l_ac].qct04
-         #   INTO  l_qcd.*                                       
+         #   INTO  l_qcd.*
          #IF STATUS=100 THEN
          #  EXECUTE qcc_sel13 USING g_qcs.qcs01,g_qcs.qcs02,'*',g_qct[l_ac].qct04
-         #    INTO  l_qcd.* 
+         #    INTO  l_qcd.*
          #  IF STATUS=100 THEN
          #    LET l_sql = " SELECT * ",
          #                " FROM qcd_file ",
          #                " WHERE qcd01=? AND qcd02=? "
-         #    IF  g_argv1 = "1"  THEN 
+         #    IF  g_argv1 = "1"  THEN
          #        LET l_sql = l_sql CLIPPED," AND qcd08 in ('1','9')"
-         #    END IF           
-         #    IF  g_argv1 = "2"  THEN 
-         #        LET l_sql = l_sql CLIPPED," AND qcd08 in ('5','9')" 
-         #    END IF     
-         #    IF  g_argv1 = "3"  THEN 
+         #    END IF
+         #    IF  g_argv1 = "2"  THEN
+         #        LET l_sql = l_sql CLIPPED," AND qcd08 in ('5','9')"
+         #    END IF
+         #    IF  g_argv1 = "3"  THEN
          #        LET l_sql = l_sql CLIPPED," AND qcd08 in ('4','9')"
-         #    END IF     
-         #    IF  g_argv1 = "4"  THEN 
+         #    END IF
+         #    IF  g_argv1 = "4"  THEN
          #        LET l_sql = l_sql CLIPPED," AND qcd08 in ('2','9')"
          #    END IF
-         #    PREPARE qcd_sel13 FROM l_sql  
+         #    PREPARE qcd_sel13 FROM l_sql
          #    EXECUTE qcd_sel13 USING g_qcs.qcs021,g_qct[l_ac].qct04
-         #        INTO  l_qcd.*                
+         #        INTO  l_qcd.*
          #    IF STATUS=100 THEN
          #       LET l_sql = " SELECT qcc01,qcc02,qcc03,qcc04,qcc05,qcc061,qcc062, ",
          #                   "        qccacti,qccuser,qccgrup,qccmodu,qccdate ",
          #                   "   FROM qck_file,ima_file ",
          #                   "   WHERE ima01=? AND qck01=ima109 ",
          #                   "   AND qck02 = ?"
-         #               
-         #       IF  g_argv1 = "1"   THEN 
-         #           LET l_sql = l_sql CLIPPED," AND qck08 in ('1','9')" 
-         #       END IF       
-         #       IF  g_argv1 = "2"  THEN 
+         #
+         #       IF  g_argv1 = "1"   THEN
+         #           LET l_sql = l_sql CLIPPED," AND qck08 in ('1','9')"
+         #       END IF
+         #       IF  g_argv1 = "2"  THEN
          #           LET l_sql = l_sql CLIPPED," AND qck08 in ('5','9')"
-         #       END IF      
-         #       IF  g_argv1 = "3"  THEN 
+         #       END IF
+         #       IF  g_argv1 = "3"  THEN
          #           LET l_sql = l_sql CLIPPED," AND qck08 in ('4','9')"
-         #       END IF     
-         #       IF  g_argv1 = "4"  THEN 
+         #       END IF
+         #       IF  g_argv1 = "4"  THEN
          #           LET l_sql = l_sql CLIPPED," AND qck08 in ('2','9')"
-         #       END IF    
-         #       PREPARE qck_sel13 FROM l_sql  
+         #       END IF
+         #       PREPARE qck_sel13 FROM l_sql
          #       EXECUTE qck_sel13 USING g_qcs.qcs021,g_qct[l_ac].qct04
-         #       INTO  l_qcd.*                
+         #       INTO  l_qcd.*
          #       IF STATUS=100 THEN
          #          LET l_qcd07='N'
          #       END IF
-         #    END IF 
+         #    END IF
          #  END IF
-         #END IF  
+         #END IF
          #No.TQC-BB0119  --End
-         IF l_qcd.qcd05 ='4' THEN 
+         IF l_qcd.qcd05 ='4' THEN
             SELECT SUM(qctt04) INTO l_qctt04
               FROM qctt_file
              WHERE qctt01 = g_qcs.qcs01
                AND qctt02 = g_qcs.qcs02
                AND qctt021= g_qcs.qcs05
                AND qctt03 = g_qct[l_ac].qct03
-            IF cl_null(l_qctt04) THEN 
+            IF cl_null(l_qctt04) THEN
                LET l_qctt04 = 0
-            END IF  
+            END IF
             LET l_avg = l_qctt04 / g_qct[l_ac].qct11
-            
-            LET l_sum = 0 
-            DECLARE qctt_sel CURSOR FOR 
+
+            LET l_sum = 0
+            DECLARE qctt_sel CURSOR FOR
               SELECT qctt04 FROM qctt_file
                WHERE qctt01 = g_qcs.qcs01
                  AND qctt02 = g_qcs.qcs02
@@ -3659,42 +3659,42 @@ DEFINE l_count         LIKE type_file.num5     #FUN-BC0104
                  AND qctt03 = g_qct[l_ac].qct03
             FOREACH qctt_sel INTO l_qctt04
               LET l_sum = l_sum + ((l_qctt04 - l_avg)*(l_qctt04 - l_avg))
-            END FOREACH 
+            END FOREACH
             LET l_stddev = s_power(l_sum/(g_qct[l_ac].qct11 -1),2)
             LET l_k_max  = (l_qcd.qcd062 - l_avg)/l_stddev
             LET l_k_min  = (l_avg - l_qcd.qcd061)/l_stddev
             LET l_f      = l_stddev/(l_qcd.qcd062 - l_qcd.qcd061)
-            IF cl_null(l_qcd.qcd061) OR cl_null(l_qcd.qcd061) THEN 
-               IF cl_null(l_qcd.qcd061) THEN 
-                  IF l_k_max >= g_qct[l_ac].qct14 THEN 
+            IF cl_null(l_qcd.qcd061) OR cl_null(l_qcd.qcd061) THEN
+               IF cl_null(l_qcd.qcd061) THEN
+                  IF l_k_max >= g_qct[l_ac].qct14 THEN
                      LET g_qct[l_ac].qct08 ='1'
                   ELSE
                       LET g_qct[l_ac].qct08 ='2'
-                  END IF  
-               ELSE 
-                  IF l_k_min >= g_qct[l_ac].qct14 THEN 
+                  END IF
+               ELSE
+                  IF l_k_min >= g_qct[l_ac].qct14 THEN
                      LET g_qct[l_ac].qct08 ='1'
                   ELSE
                       LET g_qct[l_ac].qct08 ='2'
-                  END IF 
-               END IF 
-            ELSE 
-                IF l_k_min >= g_qct[l_ac].qct14 AND l_k_max >= g_qct[l_ac].qct14 AND l_f >= g_qct[l_ac].qct15 THEN 
+                  END IF
+               END IF
+            ELSE
+                IF l_k_min >= g_qct[l_ac].qct14 AND l_k_max >= g_qct[l_ac].qct14 AND l_f >= g_qct[l_ac].qct15 THEN
                   LET g_qct[l_ac].qct08 ='1'
-               ELSE 
+               ELSE
                     LET g_qct[l_ac].qct08 ='2'
-               END IF 
-            END IF 
-         ELSE 
-#No.FUN-A80063 --end 
+               END IF
+            END IF
+         ELSE
+#No.FUN-A80063 --end
             #在判定合格或退貨時，應先將缺點數乘上CR/MA/MI權數
              CASE g_qct[l_ac].qct05
                  WHEN "1"
                        LET l_chkqty = g_qct[l_ac].qct07*g_qcz.qcz02/g_qcz.qcz021  #No.TQC-750209 modify
                  WHEN "2"
-                       LET l_chkqty = g_qct[l_ac].qct07*g_qcz.qcz03/g_qcz.qcz031  #No.TQC-750209 modify 
-                 WHEN "3" 
-                       LET l_chkqty = g_qct[l_ac].qct07*g_qcz.qcz04/g_qcz.qcz041  #No.TQC-750209 modify 
+                       LET l_chkqty = g_qct[l_ac].qct07*g_qcz.qcz03/g_qcz.qcz031  #No.TQC-750209 modify
+                 WHEN "3"
+                       LET l_chkqty = g_qct[l_ac].qct07*g_qcz.qcz04/g_qcz.qcz041  #No.TQC-750209 modify
                  OTHERWISE
                        LET l_chkqty = g_qct[l_ac].qct07                           #No.TQC-750209 modify
              END CASE
@@ -3709,7 +3709,7 @@ DEFINE l_count         LIKE type_file.num5     #FUN-BC0104
                    LET g_qct[l_ac].qct08='1'
                 END IF
              END IF #MOD-D30018 add
-         END IF        #No.FUN-A80063 
+         END IF        #No.FUN-A80063
          CASE g_qct[l_ac].qct08
             WHEN '1'
                CALL cl_getmsg('aqc-004',g_lang)
@@ -3718,10 +3718,10 @@ DEFINE l_count         LIKE type_file.num5     #FUN-BC0104
                CALL cl_getmsg('apm-244',g_lang) #No:7706 驗退
                      RETURNING g_qct[l_ac].qct08_desc
          END CASE
-         
+
 -----------------------------------add byhlf07751-------------------------------------
         AFTER FIELD qct08
-        IF g_qct[l_ac].qct08 ='1' OR g_qct[l_ac].qct08='2' 
+        IF g_qct[l_ac].qct08 ='1' OR g_qct[l_ac].qct08='2'
         THEN
           CASE g_qct[l_ac].qct08
             WHEN '1'
@@ -3731,18 +3731,18 @@ DEFINE l_count         LIKE type_file.num5     #FUN-BC0104
                CALL cl_getmsg('apm-244',g_lang) #No:7706 驗退
                      RETURNING g_qct[l_ac].qct08_desc
          END CASE
-     
+
         ELSE
          CALL cl_err("", 'hlf02', 0)
          NEXT FIELD qct08
         END IF
-          
------------------------------------add byhlf07751-------------------------------------  
-         
+
+-----------------------------------add byhlf07751-------------------------------------
+
 
 
          #hlf07751------------------------------------------------------
- 
+
         AFTER FIELD qctud01
            IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
         AFTER FIELD qctud02
@@ -3773,18 +3773,18 @@ DEFINE l_count         LIKE type_file.num5     #FUN-BC0104
            IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
         AFTER FIELD qctud15
            IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
- 
+
       BEFORE DELETE                            #是否取消單身
          IF g_qct_t.qct03 > 0 AND g_qct_t.qct03 IS NOT NULL THEN
             IF NOT cl_delb(0,0) THEN
                CANCEL DELETE
             END IF
- 
+
             IF l_lock_sw = "Y" THEN
                CALL cl_err("", -263, 1)
                CANCEL DELETE
             END IF
- 
+
             LET g_success = 'Y'   #MOD-A40035 add
             DELETE FROM qct_file
              WHERE qct01 = g_qcs.qcs01
@@ -3836,7 +3836,7 @@ DEFINE l_count         LIKE type_file.num5     #FUN-BC0104
             END IF
            #end MOD-A40035 add
          END IF
- 
+
       ON ROW CHANGE
          IF INT_FLAG THEN
             CALL cl_err('',9001,0)
@@ -3857,7 +3857,7 @@ DEFINE l_count         LIKE type_file.num5     #FUN-BC0104
                   AND qcu021=g_qcs.qcs05
                   AND qcu03=g_qct[l_ac].qct03
             END IF
- 
+
             #No.TQC-BB0119  --Begin
             CALL t110_get_qcd07(g_qct[l_ac].qct04) RETURNING l_qcd07,l_qcd05,l_qcd061,l_qcd062
             # LET l_sql = " SELECT qcc05,qcc061,qcc062,qcc07 ",
@@ -3868,22 +3868,22 @@ DEFINE l_count         LIKE type_file.num5     #FUN-BC0104
             #             "  AND pmn41=ecm01 AND pmn46=ecm03 ",
             #             "  AND qcc01= ? AND qcc011=ecm04 ",
             #             "  AND qcc02= ?",
-            #             " AND ecm012=pmn012 "              #FUN-A60076 add    
-            # IF  g_argv1 = "1"  THEN 
+            #             " AND ecm012=pmn012 "              #FUN-A60076 add
+            # IF  g_argv1 = "1"  THEN
             #     LET l_sql = l_sql CLIPPED," AND qcc08 in ('1','9')"
-            # END IF     
-            # IF  g_argv1 = "2"  THEN 
-            #     LET l_sql = l_sql CLIPPED," AND qcc08 in ('5','9')" 
-            # END IF     
-            # IF  g_argv1 = "3"  THEN 
+            # END IF
+            # IF  g_argv1 = "2"  THEN
+            #     LET l_sql = l_sql CLIPPED," AND qcc08 in ('5','9')"
+            # END IF
+            # IF  g_argv1 = "3"  THEN
             #     LET l_sql = l_sql CLIPPED," AND qcc08 in ('4','9')"
-            # END IF     
-            # IF  g_argv1 = "4"  THEN 
+            # END IF
+            # IF  g_argv1 = "4"  THEN
             #     LET l_sql = l_sql CLIPPED," AND qcc08 in ('2','9')"
-            # END IF 
-            #  PREPARE qcc_sel3 FROM l_sql  
+            # END IF
+            #  PREPARE qcc_sel3 FROM l_sql
             #  EXECUTE qcc_sel3 USING g_qcs.qcs01,g_qcs.qcs02,g_qcs.qcs021,g_qct[l_ac].qct04
-            #    INTO  l_qcd05,l_qcd061,l_qcd062,l_qcd07                                    
+            #    INTO  l_qcd05,l_qcd061,l_qcd062,l_qcd07
             #IF STATUS=100 THEN
             #   EXECUTE qcc_sel3 USING g_qcs.qcs01,g_qcs.qcs02,'*',g_qct[l_ac].qct04
             #     INTO  l_qcd05,l_qcd061,l_qcd062,l_qcd07
@@ -3891,51 +3891,51 @@ DEFINE l_count         LIKE type_file.num5     #FUN-BC0104
             #      LET l_sql = " SELECT qcd05,qcd061,qcd062,qcd07 ",
             #                  " FROM qcd_file ",
             #                  " WHERE qcd01=? AND qcd02=? "
-            #     IF  g_argv1 = "1"  THEN 
-            #         LET l_sql = l_sql CLIPPED," AND qcd08 in ('1','9')" 
-            #     END IF          
-            #     IF  g_argv1 = "2"  THEN 
-            #         LET l_sql = l_sql CLIPPED," AND qcd08 in ('5','9')" 
-            #     END IF          
-            #     IF  g_argv1 = "3"  THEN 
+            #     IF  g_argv1 = "1"  THEN
+            #         LET l_sql = l_sql CLIPPED," AND qcd08 in ('1','9')"
+            #     END IF
+            #     IF  g_argv1 = "2"  THEN
+            #         LET l_sql = l_sql CLIPPED," AND qcd08 in ('5','9')"
+            #     END IF
+            #     IF  g_argv1 = "3"  THEN
             #         LET l_sql = l_sql CLIPPED," AND qcd08 in ('4','9')"
-            #     END IF          
-            #     IF  g_argv1 = "4"  THEN 
+            #     END IF
+            #     IF  g_argv1 = "4"  THEN
             #         LET l_sql = l_sql CLIPPED," AND qcd08 in ('2','9')"
-            #     END IF  
-            #   PREPARE qcd_sel3 FROM l_sql  
+            #     END IF
+            #   PREPARE qcd_sel3 FROM l_sql
             #    EXECUTE qcd_sel3 USING g_qcs.qcs021,g_qct[l_ac].qct04
-            #       INTO  l_qcd05,l_qcd061,l_qcd062,l_qcd07                       
+            #       INTO  l_qcd05,l_qcd061,l_qcd062,l_qcd07
             #   IF STATUS=100 THEN
             #      LET l_sql = " SELECT qck05,qck061,qck062,qck07  ",
             #                  "   FROM qck_file,ima_file ",
             #                  "   WHERE ima01=? AND qck01=ima109 ",
             #                  "   AND qck02 = ?"
-            #                
-            #        IF  g_argv1 = "1"  THEN 
-            #            LET l_sql = l_sql CLIPPED," AND qck08 in ('1','9')" 
-            #        END IF       
-            #        IF  g_argv1 = "2"  THEN 
+            #
+            #        IF  g_argv1 = "1"  THEN
+            #            LET l_sql = l_sql CLIPPED," AND qck08 in ('1','9')"
+            #        END IF
+            #        IF  g_argv1 = "2"  THEN
             #            LET l_sql = l_sql CLIPPED," AND qck08 in ('5','9')"
-            #        END IF        
-            #        IF  g_argv1 = "3" THEN  
+            #        END IF
+            #        IF  g_argv1 = "3" THEN
             #            LET l_sql = l_sql CLIPPED," AND qck08 in ('4','9')"
-            #        END IF     
-            #        IF  g_argv1 = "4" THEN  
+            #        END IF
+            #        IF  g_argv1 = "4" THEN
             #            LET l_sql = l_sql CLIPPED," AND qck08 in ('2','9')"
-            #        END IF    
-            #    PREPARE qck_sel3 FROM l_sql  
+            #        END IF
+            #    PREPARE qck_sel3 FROM l_sql
             #    EXECUTE qck_sel3 USING g_qcs.qcs021,g_qct[l_ac].qct04
-            #       INTO  l_qcd05,l_qcd061,l_qcd062,l_qcd07                    
+            #       INTO  l_qcd05,l_qcd061,l_qcd062,l_qcd07
             #      IF STATUS=100 THEN
             #         LET l_qcd07='N'
             #         LET l_qcd05 = ''
             #         LET l_qcd061 = ''
             #         LET l_qcd062 = ''
             #      END IF
-            #   END IF                #No.FUN-990071    
-            #   END IF       
-            #END IF                                   
+            #   END IF                #No.FUN-990071
+            #   END IF
+            #END IF
             UPDATE qct_file SET qct03 = g_qct[l_ac].qct03,
                                 qct04 = g_qct[l_ac].qct04,
                                 qct05 = g_qct[l_ac].qct05,
@@ -3975,11 +3975,11 @@ DEFINE l_count         LIKE type_file.num5     #FUN-BC0104
                COMMIT WORK
             END IF
          END IF
- 
+
       AFTER ROW
-      #MOD-D20006 mark start ----- 
+      #MOD-D20006 mark start -----
       #LET l_length = g_qct.getlength()
-      #IF l_ac = l_length THEN 
+      #IF l_ac = l_length THEN
       #    EXIT INPUT
       #END IF
       #MOD-D20006 mark end   -----
@@ -3997,10 +3997,10 @@ DEFINE l_count         LIKE type_file.num5     #FUN-BC0104
          END IF
          CLOSE t110_bcl
          COMMIT WORK
- 
+
       ON ACTION reason
          IF l_ac > 0 THEN                                    #TQC-C20264 add
-            IF g_qct[l_ac].qct07>0 THEN     
+            IF g_qct[l_ac].qct07>0 THEN
                CALL t110_more_b(g_qct[l_ac].qct07)           #TQC-970126
             END IF
          END IF                                              #TQC-C20264 add
@@ -4014,49 +4014,49 @@ DEFINE l_count         LIKE type_file.num5     #FUN-BC0104
          END IF
      #FUN-C30149 add END
 
- 
+
       ON ACTION CONTROLR
          CALL cl_show_req_fields()
- 
+
       ON ACTION CONTROLG
          CALL cl_cmdask()
- 
+
       ON ACTION CONTROLF
          CALL cl_set_focus_form(ui.Interface.getRootNode()) RETURNING g_fld_name,g_frm_name #Add on 040913
          CALL cl_fldhelp(g_frm_name,g_fld_name,g_lang) #Add on 040913
- 
+
       ON IDLE g_idle_seconds
          CALL cl_on_idle()
          CONTINUE INPUT
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
-      ON ACTION controls                           #No.FUN-6B0032             
+
+      ON ACTION controls                           #No.FUN-6B0032
          CALL cl_set_head_visible("","AUTO")       #No.FUN-6B0032
- 
+
    END INPUT
- 
+
    LET g_qcs.qcsmodu = g_user
    LET g_qcs.qcsdate = g_today
- 
+
    UPDATE qcs_file SET qcsmodu = g_qcs.qcsmodu,
                        qcsdate = g_qcs.qcsdate
     WHERE qcs01 = g_qcs.qcs01
       AND qcs02 = g_qcs.qcs02
       AND qcs05 = g_qcs.qcs05
- 
+
    DISPLAY BY NAME g_qcs.qcsmodu,g_qcs.qcsdate
- 
+
    CLOSE t110_bcl
    COMMIT WORK
- 
+
    #------------------------------------------------- 單身不良總合判定
    LET l_cnt=0 LET l_numcr=0 LET l_numma=0 LET l_nummi=0
- 
+
    SELECT COUNT(*) INTO l_cnt FROM qct_file
     WHERE qct01 = g_qcs.qcs01
       AND qct02 = g_qcs.qcs02
@@ -4070,7 +4070,7 @@ DEFINE l_count         LIKE type_file.num5     #FUN-BC0104
       LET g_qcs.qcs09='2'
       IF g_ima918 = "Y" OR g_ima921 = "Y" THEN
          #IF g_sma.sma90 = "Y" THEN   #CHI-A70047
-         IF (g_sma.sma90 = "Y" AND g_argv1='1') OR g_argv1<>'1' THEN   #CHI-A70047 
+         IF (g_sma.sma90 = "Y" AND g_argv1='1') OR g_argv1<>'1' THEN   #CHI-A70047
 #MOD-AC0373 ----------------------Begin------------------------------
             IF g_qcs.qcs00 = 'A' OR g_qcs.qcs00 = 'B' THEN
                UPDATE rvbs_file SET rvbs10 = 0,
@@ -4095,7 +4095,7 @@ DEFINE l_count         LIKE type_file.num5     #FUN-BC0104
       LET g_qcs.qcs09='1'
       IF g_ima918 = "Y" OR g_ima921 = "Y" THEN
          #IF g_sma.sma90 = "Y" THEN   #CHI-A70047
-         IF (g_sma.sma90 = "Y" AND g_argv1='1') OR g_argv1<>'1' THEN   #CHI-A70047 
+         IF (g_sma.sma90 = "Y" AND g_argv1='1') OR g_argv1<>'1' THEN   #CHI-A70047
             UPDATE rvbs_file SET rvbs10 = rvbs06
                WHERE rvbs00 = g_prog
                  AND rvbs01 = g_qcs.qcs01
@@ -4105,18 +4105,18 @@ DEFINE l_count         LIKE type_file.num5     #FUN-BC0104
          END IF
       END IF
    END IF
- 
+
    #當參數『QC是否卡承認文號(AVL)』='Y',『資料來源』='1'收貨單,
    #且無承認文號時,『判定結果』只能為『特採』
    #在判斷qcz13(QC作AVL控管)的地方增加判斷料件是否做AVL管理，兩者都為Y，才檢查
-   SELECT ima926 INTO l_ima926 FROM ima_file 
+   SELECT ima926 INTO l_ima926 FROM ima_file
       WHERE ima01 = g_qcs.qcs021
    IF g_qcs.qcs09 = '1' AND g_qcz.qcz13='Y' AND l_ima926 = 'Y'   #FUN-930108 add ima926='Y'
       AND g_qcs.qcs00 = '1' AND cl_null(g_qcs.qcs10) THEN
       LET g_qcs.qcs09='3'
       CALL cl_err('','aqc-051',1)
    END IF
- 
+
    #--------- CR 不良數
    SELECT SUM(qct07) INTO l_numcr FROM qct_file
     WHERE qct01=g_qcs.qcs01
@@ -4124,30 +4124,30 @@ DEFINE l_count         LIKE type_file.num5     #FUN-BC0104
       AND qct021=g_qcs.qcs05
       AND qct05='1'
    IF l_numcr IS NULL THEN LET l_numcr=0 END IF
- 
+
    SELECT SUM(qct07) INTO l_numma FROM qct_file
     WHERE qct01=g_qcs.qcs01
       AND qct02=g_qcs.qcs02
       AND qct021=g_qcs.qcs05
       AND qct05='2'
    IF l_numma IS NULL THEN LET l_numma=0 END IF
- 
+
    SELECT SUM(qct07) INTO l_nummi FROM qct_file
     WHERE qct01=g_qcs.qcs01
       AND qct02=g_qcs.qcs02
       AND qct021=g_qcs.qcs05
       AND qct05='3'
    IF l_nummi IS NULL THEN LET l_nummi=0 END IF
- 
+
    LET g_qcs.qcs091=g_qcs.qcs22
- 
+
    LET g_qcs.qcs36 = g_qcs.qcs30
    LET g_qcs.qcs37 = g_qcs.qcs31
    LET g_qcs.qcs38 = g_qcs.qcs32
    LET g_qcs.qcs39 = g_qcs.qcs33
    LET g_qcs.qcs40 = g_qcs.qcs34
    LET g_qcs.qcs41 = g_qcs.qcs35
- 
+
    CASE g_qcs.qcs09
       WHEN '1'
          CALL cl_getmsg('aqc-004',g_lang) RETURNING des1
@@ -4159,12 +4159,12 @@ DEFINE l_count         LIKE type_file.num5     #FUN-BC0104
       WHEN '3'
          CALL cl_getmsg('aqc-006',g_lang) RETURNING des1
    END CASE
- 
+
    DISPLAY des1 TO FORMONLY.des1
    DISPLAY BY NAME g_qcs.qcs091,g_qcs.qcs09,g_qcs.qcs13
    DISPLAY BY NAME g_qcs.qcs36,g_qcs.qcs37,g_qcs.qcs38   #No.FUN-610075
    DISPLAY BY NAME g_qcs.qcs39,g_qcs.qcs40,g_qcs.qcs41   #No.FUN-610075
- 
+
    UPDATE qcs_file SET qcs091 = g_qcs.qcs091,
                        qcs09 = g_qcs.qcs09,
                        qcs36 = g_qcs.qcs36,   #No.FUN-610075
@@ -4184,16 +4184,16 @@ DEFINE l_count         LIKE type_file.num5     #FUN-BC0104
        CALL t110_b()
     END IF
    #FUN-C30149 add END
- 
+
     CALL t110_delHeader()     #CHI-C30002 add
 END FUNCTION
- 
+
 #CHI-C30002 -------- add -------- begin
 FUNCTION t110_delHeader()
    DEFINE l_action_choice    STRING               #CHI-C80041
    DEFINE l_cho              LIKE type_file.num5  #CHI-C80041
    DEFINE l_num              LIKE type_file.num5  #CHI-C80041
-   
+
    IF g_rec_b = 0 THEN
       #CHI-C80041---begin
       LET l_action_choice = g_action_choice
@@ -4204,23 +4204,23 @@ FUNCTION t110_delHeader()
       ELSE
          CALL cl_getmsg('aec-131',g_lang) RETURNING g_msg
          LET l_num = 2
-      END IF 
+      END IF
       LET g_action_choice = l_action_choice
       PROMPT g_msg CLIPPED,': ' FOR l_cho
          ON IDLE g_idle_seconds
             CALL cl_on_idle()
 
-         ON ACTION about     
+         ON ACTION about
             CALL cl_about()
 
-         ON ACTION help         
+         ON ACTION help
             CALL cl_show_help()
 
-         ON ACTION controlg   
-            CALL cl_cmdask() 
+         ON ACTION controlg
+            CALL cl_cmdask()
       END PROMPT
-      IF l_cho > l_num THEN LET l_cho = 1 END IF 
-      IF l_cho = 2 THEN 
+      IF l_cho > l_num THEN LET l_cho = 1 END IF
+      IF l_cho = 2 THEN
         #CALL t110_x()            #CHI-D20010
          CALL t110_x(1)            #CHI-D20010
          IF g_qcs.qcs14 = 'X' THEN
@@ -4229,20 +4229,20 @@ FUNCTION t110_delHeader()
             LET g_void = 'N'
          END IF
          CALL cl_set_field_pic(g_qcs.qcs14,"","","",g_void,g_qcs.qcsacti)
-      END IF 
-      
-      IF l_cho = 3 THEN 
+      END IF
+
+      IF l_cho = 3 THEN
          DELETE FROM qco_file
           WHERE qco01 = g_qcs.qcs01
             AND qco02 = g_qcs.qcs02
             AND qco05 = g_qcs.qcs05
 
-         DELETE FROM qao_file 
+         DELETE FROM qao_file
           WHERE qao01 = g_qcs.qcs01
-            AND qao02 = g_qcs.qcs02         
-            AND qao021= g_qcs.qcs05   
-          
-         DELETE FROM qcv_file 
+            AND qao02 = g_qcs.qcs02
+            AND qao021= g_qcs.qcs05
+
+         DELETE FROM qcv_file
           WHERE qcv01 = g_qcs.qcs01
             AND qcv02 = g_qcs.qcs02
             AND qcv21 = g_qcs.qcs05
@@ -4259,7 +4259,7 @@ END FUNCTION
 #CHI-C30002 -------- add -------- end
 FUNCTION t110_b_askkey()
    DEFINE l_wc2   STRING
- 
+
    CONSTRUCT l_wc2 ON qct03,qct04,qct05,qct06,qct09,qct10,qct14,qct15,qct11,qct07,qct08       #No.FUN-A80063
                       ,qctud01,qctud02,qctud03,qctud04,qctud05
                       ,qctud06,qctud07,qctud08,qctud09,qctud10
@@ -4274,35 +4274,35 @@ FUNCTION t110_b_askkey()
                 ,s_qct[1].qctud13,s_qct[1].qctud14,s_qct[1].qctud15
               BEFORE CONSTRUCT
                  CALL cl_qbe_init()
- 
+
       ON IDLE g_idle_seconds
          CALL cl_on_idle()
          CONTINUE CONSTRUCT
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
+
       ON ACTION controlg      #MOD-4C0121
          CALL cl_cmdask()     #MOD-4C0121
                  ON ACTION qbe_select
                CALL cl_qbe_select()
                  ON ACTION qbe_save
          CALL cl_qbe_save()
- 
+
    END CONSTRUCT
- 
+
    IF INT_FLAG THEN
       LET INT_FLAG = 0
       RETURN
    END IF
- 
+
    CALL t110_b_fill(l_wc2)
- 
+
 END FUNCTION
- 
+
 FUNCTION t110_b_fill(p_wc2) #hlf
    DEFINE l_qct12   LIKE qct_file.qct12,
           p_wc2     LIKE type_file.chr1000 #No.FUN-680104 VARCHAR(200)
@@ -4314,10 +4314,10 @@ FUNCTION t110_b_fill(p_wc2) #hlf
           l_qcs02_2  like qcs_file.qcs02,
           l_qcs05_2  like qcs_file.qcs05
    define l_cnt  integer #darcy:2023/05/23 add
-   
+
    #darcy:2023/05/23 add s---
    let l_cnt = 0
-   select count(1) into l_cnt from qct_file where qct01 =g_qcs.qcs01 
+   select count(1) into l_cnt from qct_file where qct01 =g_qcs.qcs01
       and qct02 =g_qcs.qcs02 and qct021 =g_qcs.qcs05 and qct11!=0
    if l_cnt = 0 then
    #darcy:2023/05/23 add e---
@@ -4344,18 +4344,18 @@ FUNCTION t110_b_fill(p_wc2) #hlf
       let l_qcs05 = g_qcs.qcs05
    end if
    #darcy:2023/05/23 add e---
-   
+
    IF p_wc2 IS NULL THEN
       LET p_wc2=" 1=1 "
    END IF
 
- 
+
    LET g_sql = "SELECT qct03,qct04,'',azf03,qct05,qct06,qct09,qct10,qct14,qct15,",       #No.FUN-A80063
                "       qct11,qct07,qct08,' ',",  #qct12, ",  #FUN-840068 mod
                "       qctud01,qctud02,qctud03,qctud04,qctud05,",
                "       qctud06,qctud07,qctud08,qctud09,qctud10,",
                "       qctud11,qctud12,qctud13,qctud14,qctud15,",
-               "       qct12 ", 
+               "       qct12 ",
              # "  FROM qct_file LEFT OUTER JOIN azf_file ON qct_file.qct04 =azf_file.azf01 ",   #liuxqa 091022 #TQC-C20178
                "  FROM qct_file LEFT OUTER JOIN azf_file ON qct_file.qct04 =azf_file.azf01  AND azf02='6'", #TQC-C20178
                #darcy:2022/12/07 mod s---
@@ -4366,15 +4366,15 @@ FUNCTION t110_b_fill(p_wc2) #hlf
               #"   AND azf02='6' ",      #liuxqa 091022 #TQC-C20178
                "   AND ",p_wc2 CLIPPED,
                " ORDER BY qct03"
- 
+
    PREPARE t110_pb FROM g_sql
    DECLARE qct_curs CURSOR FOR t110_pb
- 
+
    CALL g_qct.clear()
- 
+
    LET g_rec_b = 0
    LET g_cnt = 1
- 
+
    FOREACH qct_curs INTO g_qct[g_cnt].*,l_qct12   #單身 ARRAY 填充
       LET g_rec_b = g_rec_b + 1
 
@@ -4382,34 +4382,34 @@ FUNCTION t110_b_fill(p_wc2) #hlf
          CALL cl_err('foreach:',SQLCA.sqlcode,1)
          EXIT FOREACH
       END IF
- 
+
       #-------- Ac,Re 數量賦予
       IF l_qct12 ='1' THEN    # bugno:5022 --> C=0 不執行s_newqal
- 
+
       END IF
- 
+
       CASE g_qct[g_cnt].qct08
          WHEN '1'
             CALL cl_getmsg('aqc-004',g_lang) RETURNING g_qct[g_cnt].qct08_desc
          WHEN '2'
             CALL cl_getmsg('apm-244',g_lang) RETURNING g_qct[g_cnt].qct08_desc #No:7706 驗退
       END CASE
-     
- 
+
+
       LET g_cnt = g_cnt + 1
      ---------------------------add by hlf07751--------------------------------------------
-     # SELECT  ta_qck01 INTO g_qct[g_cnt].ta_qck01 
-     # FROM qck_file 
+     # SELECT  ta_qck01 INTO g_qct[g_cnt].ta_qck01
+     # FROM qck_file
      # WHERE qck01=g_ima109 AND qck02=qct04
       --------------------------add by hlf07751---------------------------------------------
- 
+
       IF g_cnt > g_max_rec THEN
          CALL cl_err( '', 9035, 0 )
          EXIT FOREACH
       END IF
- 
+
    END FOREACH
- 
+
    CALL g_qct.deleteElement(g_cnt)
    LET g_rec_b = g_cnt-1               #告訴I.單身筆數
    DISPLAY g_rec_b TO FORMONLY.cn2
@@ -4437,32 +4437,32 @@ FUNCTION t110_b_fill(p_wc2) #hlf
    CALL g_rvbs.deleteElement(g_cnt)
    LET g_rec_b1 = g_cnt - 1
    #FUN-B30170 add -end--------------------------
- 
+
 END FUNCTION
- 
+
 FUNCTION t110_bp(p_ud)
    DEFINE p_ud   LIKE type_file.chr1    #No.FUN-680104 VARCHAR(1)
- 
+
    IF p_ud <> "G" OR g_action_choice = "detail" THEN
       RETURN
    END IF
- 
+
    LET g_action_choice = " "
- 
+
    IF g_aza.aza64 matches '[ Nn]' OR g_aza.aza64 IS NULL THEN
       CALL cl_set_act_visible("trans_spc",FALSE)
       CALL cl_set_comp_visible("qcsspc",FALSE)
    END IF
- 
+
    CALL cl_set_act_visible("accept,cancel", FALSE)
 
 #FUN-B30170 add begin-------------------------
    DIALOG ATTRIBUTE(UNBUFFERED)
       DISPLAY ARRAY g_qct TO s_qct.* ATTRIBUTE(COUNT=g_rec_b)
- 
+
          BEFORE DISPLAY
             CALL cl_navigator_setting(g_curs_index,g_row_count)
- 
+
          BEFORE ROW
             LET l_ac = ARR_CURR()
             CALL cl_show_fld_cont()                   #No.FUN-550037 hmf
@@ -4490,19 +4490,19 @@ FUNCTION t110_bp(p_ud)
       ON ACTION insert
          LET g_action_choice="insert"
          EXIT DIALOG
- 
+
       ON ACTION query
          LET g_action_choice="query"
          EXIT DIALOG
- 
+
       ON ACTION delete
          LET g_action_choice="delete"
          EXIT DIALOG
- 
+
       ON ACTION modify
          LET g_action_choice="modify"
          EXIT DIALOG
- 
+
       ON ACTION first
          CALL t110_fetch('F')
          CALL cl_navigator_setting(g_curs_index,g_row_count)   ###add in 040517
@@ -4510,7 +4510,7 @@ FUNCTION t110_bp(p_ud)
             CALL fgl_set_arr_curr(1)  ######add in 040505
          END IF
          ACCEPT DIALOG                   #No.FUN-530067 HCN TEST
- 
+
       ON ACTION previous
          CALL t110_fetch('P')
          CALL cl_navigator_setting(g_curs_index,g_row_count)   ###add in 040517
@@ -4518,7 +4518,7 @@ FUNCTION t110_bp(p_ud)
             CALL fgl_set_arr_curr(1)  ######add in 040505
          END IF
          ACCEPT DIALOG                   #No.FUN-530067 HCN TEST
- 
+
       ON ACTION jump
          CALL t110_fetch('/')
          CALL cl_navigator_setting(g_curs_index,g_row_count)   ###add in 040517
@@ -4526,7 +4526,7 @@ FUNCTION t110_bp(p_ud)
             CALL fgl_set_arr_curr(1)  ######add in 040505
          END IF
          ACCEPT DIALOG                   #No.FUN-530067 HCN TEST
- 
+
       ON ACTION next
          CALL t110_fetch('N')
          CALL cl_navigator_setting(g_curs_index,g_row_count)   ###add in 040517
@@ -4534,7 +4534,7 @@ FUNCTION t110_bp(p_ud)
             CALL fgl_set_arr_curr(1)  ######add in 040505
          END IF
          ACCEPT DIALOG                   #No.FUN-530067 HCN TEST
- 
+
       ON ACTION last
          CALL t110_fetch('L')
          CALL cl_navigator_setting(g_curs_index,g_row_count)   ###add in 040517
@@ -4542,20 +4542,20 @@ FUNCTION t110_bp(p_ud)
             CALL fgl_set_arr_curr(1)  ######add in 040505
          END IF
          ACCEPT DIALOG                   #No.FUN-530067 HCN TEST
- 
+
       ON ACTION detail
          LET g_action_choice="detail"
          LET l_ac = 1
          EXIT DIALOG
- 
+
       ON ACTION output
          LET g_action_choice="output"
          EXIT DIALOG
- 
+
       ON ACTION help
          LET g_action_choice="help"
          EXIT DIALOG
- 
+
       ON ACTION locale
          CALL cl_dynamic_locale()
          CALL cl_show_fld_cont()                   #No.FUN-550037 hmf
@@ -4569,43 +4569,43 @@ FUNCTION t110_bp(p_ud)
             CALL t110_form_default()                  #No.FUN-5C0077
          END IF
          CALL t110_def_form()   #TQC-660106
- 
+
       ON ACTION exit
          LET g_action_choice="exit"
          EXIT DIALOG
- 
+
       ##########################################################################
       # Special 4ad ACTION
       ##########################################################################
       ON ACTION controlg
          LET g_action_choice="controlg"
          EXIT DIALOG
- 
+
 #@    ON ACTION 單身不良原因
       ON ACTION detail_flaw_reason
          LET g_action_choice="detail_flaw_reason"
          EXIT DIALOG
- 
+
 #@    ON ACTION 單身測量值查詢
       ON ACTION qry_detail_measure
          LET g_action_choice="qry_detail_measure"
          EXIT DIALOG
- 
+
 #@    ON ACTION 備註
       ON ACTION memo
          LET g_action_choice="memo"
          EXIT DIALOG
- 
+
 #@    ON ACTION 確認
       ON ACTION confirm
          LET g_action_choice="confirm"
          EXIT DIALOG
- 
+
 #@    ON ACTION 取消確認
       ON ACTION undo_confirm
          LET g_action_choice="undo_confirm"
          EXIT DIALOG
- 
+
 #@    ON ACTION 特採
       ON ACTION special_purchase
          LET g_action_choice="special_purchase"
@@ -4613,7 +4613,7 @@ FUNCTION t110_bp(p_ud)
 #FUN-A30045 --------------------Begin-------------------
       ON ACTION cancel_special_purchase
          LET g_action_choice="cancel_special_purchase"
-         EXIT DIALOG                  
+         EXIT DIALOG
 #FUN-A30045 --------------------End---------------------
      ON ACTION ask_date
          LET g_action_choice="ask_date"
@@ -4621,7 +4621,7 @@ FUNCTION t110_bp(p_ud)
 #FUN-BC0104 -------------Begin-------------
       ON ACTION qc_item_maintain
          LET g_action_choice="qc_item_maintain"
-         EXIT DIALOG 
+         EXIT DIALOG
 #FUN-BC0104 -------------End---------------
 
 #@    ON ACTION 作廢
@@ -4633,51 +4633,51 @@ FUNCTION t110_bp(p_ud)
       ON ACTION undo_void
          LET g_action_choice="undo_void"
          EXIT DIALOG
-#CHI-D20010---add---end 
+#CHI-D20010---add---end
 #@    ON ACTION 轉入庫單
       ON ACTION tran_store
          LET g_action_choice="tran_store"
          EXIT DIALOG
- 
+
 #@    ON ACTION 聯產品
       ON ACTION core_item
          LET g_action_choice="core_item"
          EXIT DIALOG
- 
+
 #@    ON ACTION 拋轉至SPC
       ON ACTION trans_spc
          LET g_action_choice="trans_spc"
          EXIT DIALOG
- 
+
       ON ACTION accept
          LET g_action_choice="detail"
          LET l_ac = ARR_CURR()
          EXIT DIALOG
- 
+
       ON ACTION cancel
          LET INT_FLAG=FALSE             #MOD-570244 mars
          LET g_action_choice="exit"
          EXIT DIALOG
- 
+
       ON ACTION exporttoexcel #FUN-4B0003
          LET g_action_choice = 'exporttoexcel'
          EXIT DIALOG
- 
+
       ON IDLE g_idle_seconds
          CALL cl_on_idle()
          CONTINUE DIALOG
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION related_document                #No.FUN-6A0160 date->l_date  相關文件
-         LET g_action_choice="related_document"          
-         EXIT DIALOG 
- 
+         LET g_action_choice="related_document"
+         EXIT DIALOG
+
       ON ACTION qry_lot
          LET g_action_choice="qry_lot"
          EXIT DIALOG
- 
+
       #DEV-D30045--add--begin
       ON ACTION barcode_gen
          LET g_action_choice="barcode_gen"
@@ -4691,10 +4691,10 @@ FUNCTION t110_bp(p_ud)
          LET g_action_choice="barcode_output"
          EXIT DIALOG
       #DEV-D30045--add--end
- 
-      ON ACTION controls                           #No.FUN-6B0032             
+
+      ON ACTION controls                           #No.FUN-6B0032
          CALL cl_set_head_visible("","AUTO")       #No.FUN-6B0032
-         
+
       #No.18010101--begin--
       ON ACTION transf2scm
          LET g_action_choice="transf2scm"
@@ -4705,38 +4705,38 @@ FUNCTION t110_bp(p_ud)
          let g_action_choice = "measure_append"
          exit dialog
      #darcy:2023/05/23 add e---
-      &include "qry_string.4gl" 
+      &include "qry_string.4gl"
    END DIALOG
 #FUN-B30170 add -end--------------------------
 #FUN-B30170 mark begin--------------------------
 #   DISPLAY ARRAY g_qct TO s_qct.* ATTRIBUTE(COUNT=g_rec_b,UNBUFFERED)
-# 
+#
 #      BEFORE DISPLAY
 #         CALL cl_navigator_setting(g_curs_index,g_row_count)
-# 
+#
 #      BEFORE ROW
 #         LET l_ac = ARR_CURR()
 #         CALL cl_show_fld_cont()                   #No.FUN-550037 hmf
-# 
+#
 #      ##########################################################################
 #      # Standard 4ad ACTION
 #      ##########################################################################
 #      ON ACTION insert
 #         LET g_action_choice="insert"
 #         EXIT DISPLAY
-# 
+#
 #      ON ACTION query
 #         LET g_action_choice="query"
 #         EXIT DISPLAY
-# 
+#
 #      ON ACTION delete
 #         LET g_action_choice="delete"
 #         EXIT DISPLAY
-# 
+#
 #      ON ACTION modify
 #         LET g_action_choice="modify"
 #         EXIT DISPLAY
-# 
+#
 #      ON ACTION first
 #         CALL t110_fetch('F')
 #         CALL cl_navigator_setting(g_curs_index,g_row_count)   ###add in 040517
@@ -4744,7 +4744,7 @@ FUNCTION t110_bp(p_ud)
 #            CALL fgl_set_arr_curr(1)  ######add in 040505
 #         END IF
 #         ACCEPT DISPLAY                   #No.FUN-530067 HCN TEST
-# 
+#
 #      ON ACTION previous
 #         CALL t110_fetch('P')
 #         CALL cl_navigator_setting(g_curs_index,g_row_count)   ###add in 040517
@@ -4752,7 +4752,7 @@ FUNCTION t110_bp(p_ud)
 #            CALL fgl_set_arr_curr(1)  ######add in 040505
 #         END IF
 #         ACCEPT DISPLAY                   #No.FUN-530067 HCN TEST
-# 
+#
 #      ON ACTION jump
 #         CALL t110_fetch('/')
 #         CALL cl_navigator_setting(g_curs_index,g_row_count)   ###add in 040517
@@ -4760,7 +4760,7 @@ FUNCTION t110_bp(p_ud)
 #            CALL fgl_set_arr_curr(1)  ######add in 040505
 #         END IF
 #         ACCEPT DISPLAY                   #No.FUN-530067 HCN TEST
-# 
+#
 #      ON ACTION next
 #         CALL t110_fetch('N')
 #         CALL cl_navigator_setting(g_curs_index,g_row_count)   ###add in 040517
@@ -4768,7 +4768,7 @@ FUNCTION t110_bp(p_ud)
 #            CALL fgl_set_arr_curr(1)  ######add in 040505
 #         END IF
 #         ACCEPT DISPLAY                   #No.FUN-530067 HCN TEST
-# 
+#
 #      ON ACTION last
 #         CALL t110_fetch('L')
 #         CALL cl_navigator_setting(g_curs_index,g_row_count)   ###add in 040517
@@ -4776,20 +4776,20 @@ FUNCTION t110_bp(p_ud)
 #            CALL fgl_set_arr_curr(1)  ######add in 040505
 #         END IF
 #         ACCEPT DISPLAY                   #No.FUN-530067 HCN TEST
-# 
+#
 #      ON ACTION detail
 #         LET g_action_choice="detail"
 #         LET l_ac = 1
 #         EXIT DISPLAY
-# 
+#
 #      ON ACTION output
 #         LET g_action_choice="output"
 #         EXIT DISPLAY
-# 
+#
 #      ON ACTION help
 #         LET g_action_choice="help"
 #         EXIT DISPLAY
-# 
+#
 #      ON ACTION locale
 #         CALL cl_dynamic_locale()
 #         CALL cl_show_fld_cont()                   #No.FUN-550037 hmf
@@ -4803,43 +4803,43 @@ FUNCTION t110_bp(p_ud)
 #            CALL t110_form_default()                  #No.FUN-5C0077
 #         END IF
 #         CALL t110_def_form()   #TQC-660106
-# 
+#
 #      ON ACTION exit
 #         LET g_action_choice="exit"
 #         EXIT DISPLAY
-# 
+#
 #      ##########################################################################
 #      # Special 4ad ACTION
 #      ##########################################################################
 #      ON ACTION controlg
 #         LET g_action_choice="controlg"
 #         EXIT DISPLAY
-# 
+#
 ##@    ON ACTION 單身不良原因
 #      ON ACTION detail_flaw_reason
 #         LET g_action_choice="detail_flaw_reason"
 #         EXIT DISPLAY
-# 
+#
 ##@    ON ACTION 單身測量值查詢
 #      ON ACTION qry_detail_measure
 #         LET g_action_choice="qry_detail_measure"
 #         EXIT DISPLAY
-# 
+#
 ##@    ON ACTION 備註
 #      ON ACTION memo
 #         LET g_action_choice="memo"
 #         EXIT DISPLAY
-# 
+#
 ##@    ON ACTION 確認
 #      ON ACTION confirm
 #         LET g_action_choice="confirm"
 #         EXIT DISPLAY
-# 
+#
 ##@    ON ACTION 取消確認
 #      ON ACTION undo_confirm
 #         LET g_action_choice="undo_confirm"
 #         EXIT DISPLAY
-# 
+#
 ##@    ON ACTION 特採
 #      ON ACTION special_purchase
 #         LET g_action_choice="special_purchase"
@@ -4847,42 +4847,42 @@ FUNCTION t110_bp(p_ud)
 ##FUN-A30045 --------------------Begin------------------
 #      ON ACTION cancel_special_purchase
 #         LET g_action_choice="cancel_special_purchase"
-#         EXIT DISPLAY                  
+#         EXIT DISPLAY
 ##FUN-A30045 --------------------End--------------------
 ##@    ON ACTION 作廢
 #      ON ACTION void
 #         LET g_action_choice="void"
 #         EXIT DISPLAY
-# 
+#
 ##@    ON ACTION 轉入庫單
 #      ON ACTION tran_store
 #         LET g_action_choice="tran_store"
 #         EXIT DISPLAY
-# 
+#
 ##@    ON ACTION 聯產品
 #      ON ACTION core_item
 #         LET g_action_choice="core_item"
 #         EXIT DISPLAY
-# 
+#
 ##@    ON ACTION 拋轉至SPC
 #      ON ACTION trans_spc
 #         LET g_action_choice="trans_spc"
 #         EXIT DISPLAY
-# 
+#
 #      ON ACTION accept
 #         LET g_action_choice="detail"
 #         LET l_ac = ARR_CURR()
 #         EXIT DISPLAY
-# 
+#
 #&ifdef ICD
 #      ON ACTION WO_Memo
 #         LET g_action_choice = "WO_Memo"
-#         EXIT DISPLAY 
-#    
+#         EXIT DISPLAY
+#
 #      ON ACTION WO_Issuing
 #         LET g_action_choice = "WO_Issuing"
 #         EXIT DISPLAY
-# 
+#
 #      ON ACTION RETURN_INFO
 #         LET g_action_choice = "RETURN_INFO"
 #         EXIT DISPLAY
@@ -4891,43 +4891,43 @@ FUNCTION t110_bp(p_ud)
 #         LET INT_FLAG=FALSE             #MOD-570244 mars
 #         LET g_action_choice="exit"
 #         EXIT DISPLAY
-# 
+#
 #      ON ACTION exporttoexcel #FUN-4B0003
 #         LET g_action_choice = 'exporttoexcel'
 #         EXIT DISPLAY
-# 
+#
 #      ON IDLE g_idle_seconds
 #         CALL cl_on_idle()
 #         CONTINUE DISPLAY
-# 
+#
 #      ON ACTION about         #MOD-4C0121
 #         CALL cl_about()      #MOD-4C0121
-# 
+#
 #      ON ACTION related_document                #No.FUN-6A0160 date->l_date  相關文件
-#         LET g_action_choice="related_document"          
-#         EXIT DISPLAY 
-# 
+#         LET g_action_choice="related_document"
+#         EXIT DISPLAY
+#
 #      ON ACTION qry_lot
 #         LET g_action_choice="qry_lot"
 #         EXIT DISPLAY
-# 
+#
 #      AFTER DISPLAY
 #         CONTINUE DISPLAY
-# 
-#      ON ACTION controls                           #No.FUN-6B0032             
+#
+#      ON ACTION controls                           #No.FUN-6B0032
 #         CALL cl_set_head_visible("","AUTO")       #No.FUN-6B0032
-# 
-#      &include "qry_string.4gl" 
-# 
+#
+#      &include "qry_string.4gl"
+#
 #   END DISPLAY
 #FUN-B30170 mark -end---------------------------
- 
+
    CALL cl_set_act_visible("accept,cancel",TRUE)
- 
+
 END FUNCTION
- 
+
 FUNCTION t110_ref()
- 
+
    CASE
       WHEN g_qcs.qcs00 = '1' OR g_qcs.qcs00 = '2'
          SELECT rva05,rvb05
@@ -4947,7 +4947,7 @@ FUNCTION t110_ref()
           WHERE imn01 = g_qcs.qcs01
             AND imn02 = g_qcs.qcs02
       WHEN g_qcs.qcs00 = 'E'
-         SELECT imp03,imo03 INTO g_qcs.qcs021,g_qcs.qcs03    #CHI-6A0006 
+         SELECT imp03,imo03 INTO g_qcs.qcs021,g_qcs.qcs03    #CHI-6A0006
            FROM imp_file,imo_file
           WHERE imp01 = g_qcs.qcs01
             AND imp02 = g_qcs.qcs02
@@ -4984,25 +4984,25 @@ FUNCTION t110_ref()
             AND srg02 = g_qcs.qcs02
             AND srf01 = srg01
    END CASE
- 
+
    IF STATUS=100 THEN
       LET g_qcs.qcs03=' '
       LET g_qcs.qcs021=' '
       LET g_qcs.qcs10=' '
    END IF
 #No.FUN-A80063 --begin
-   SELECT ima101  
-     INTO g_ima101  
+   SELECT ima101
+     INTO g_ima101
      FROM ima_file
     WHERE ima01 = g_qcs.qcs021
-#No.FUN-A80063 --end 
+#No.FUN-A80063 --end
    CALL t110_get_ecm04()  #MOD-890102
    CALL t110_qcs03()
- 
+
    CALL t110_qcs10()    #select qcs10 values
- 
+
 END FUNCTION
- 
+
 FUNCTION t110_defqty(l_def,l_rate,l_level,l_type)       #No.FUN-A80063 add l_level l_type
    DEFINE l_def     LIKE type_file.num5,         #No.FUN-680104 SMALLINT  #00-12-29   1:單頭入 2.單身入
           l_rate    LIKE qcd_file.qcd04,
@@ -5024,10 +5024,10 @@ FUNCTION t110_defqty(l_def,l_rate,l_level,l_type)       #No.FUN-A80063 add l_lev
    DEFINE l_qcd03   LIKE qcd_file.qcd03
    DEFINE l_qdf02   LIKE qdf_file.qdf02
 #No.FUN-A80063 --end
- 
+
    #對送驗量做四捨五入
     LET l_qty = g_qcs22
-    LET g_qcs22 = l_qty 
+    LET g_qcs22 = l_qty
     IF g_qcs.qcs00 MATCHES '[56H]' THEN   #MOD-A20100 add H
        SELECT obk12,obk13,obk14 INTO l_pmh09,l_pmh15,l_pmh16
          FROM obk_file
@@ -5046,24 +5046,24 @@ FUNCTION t110_defqty(l_def,l_rate,l_level,l_type)       #No.FUN-A80063 add l_lev
              LET l_pmh16=''
           END IF   #MOD-A20100 add
        END IF
-    ELSE 
+    ELSE
        #LET l_ima915 = ''   #MOD-A40146   #CHI-B90064 mark
        IF g_qcs.qcs00<>'7' THEN
           #-----CHI-B90064---------
           ##-----MOD-A40146---------
-          #SELECT ima915 INTO l_ima915 FROM ima_file 
+          #SELECT ima915 INTO l_ima915 FROM ima_file
           #  WHERE ima01=g_qcs.qcs021
           #IF cl_null(l_ima915) THEN
           #   LET l_ima915 = '0'
           #END IF
-          ##-----END MOD-A40146----- 
+          ##-----END MOD-A40146-----
           #-----END CHI-B90064-----
           LET l_sql="SELECT pmh09,pmh15,pmh16 FROM pmh_file",
                     " WHERE pmh01 ='", g_qcs.qcs021 ,"'",
                     "   AND pmh02 ='", g_qcs.qcs03  ,"'",
                     "   AND pmh21 ='", g_ecm04      ,"'",      #CHI-860042   #MOD-890102 modify ' '->g_ecm04
                     "   AND pmh22 ='", g_type       ,"'",      #CHI-860042   #MOD-890102 modify '1'->g_type
-                    "   AND pmh23 = ' ' "                     #No.CHI-960033 #No.CHI-A10021 mod , 
+                    "   AND pmh23 = ' ' "                     #No.CHI-960033 #No.CHI-A10021 mod ,
                    # "   AND pmhacti = 'Y'"                    #CHI-910021   #No.CHI-A10021 mark
        ELSE
           LET l_sql="SELECT ima100,ima101,ima102 FROM ima_file",
@@ -5094,12 +5094,12 @@ FUNCTION t110_defqty(l_def,l_rate,l_level,l_type)       #No.FUN-A80063 add l_lev
           END IF
        END IF
     END IF
- 
+
    LET g_qcs.qcs17 = l_pmh16   #No.MOD-570293
    IF l_pmh09 IS NULL OR l_pmh09=' ' THEN RETURN 0 END IF
    IF l_pmh15 IS NULL OR l_pmh15=' ' THEN RETURN 0 END IF
    IF l_pmh16 IS NULL OR l_pmh16=' ' THEN RETURN 0 END IF
- 
+
    IF l_pmh15='1' THEN
       IF l_def=1 THEN
          SELECT qca03,qca04,qca05,qca06
@@ -5138,7 +5138,7 @@ FUNCTION t110_defqty(l_def,l_rate,l_level,l_type)       #No.FUN-A80063 add l_lev
          END IF
       END IF
    END IF
- 
+
    IF l_pmh15 = '2' THEN
       IF l_def = 1 THEN
          SELECT qch03,qch04,qch05,qch06
@@ -5171,14 +5171,14 @@ FUNCTION t110_defqty(l_def,l_rate,l_level,l_type)       #No.FUN-A80063 add l_lev
          END IF
       END IF
    END IF
- 
+
    IF g_qcs22 = 1 THEN
       LET l_qca04 = 1
       LET l_qca05 = 1
       LET l_qca06 = 1
    END IF
 
-#No.FUN-A80063 --begin 
+#No.FUN-A80063 --begin
 #   CASE l_pmh09
 #      WHEN 'N'
 #         RETURN l_qca04
@@ -5190,7 +5190,7 @@ FUNCTION t110_defqty(l_def,l_rate,l_level,l_type)       #No.FUN-A80063 add l_lev
 #         RETURN 0
 #   END CASE
 
-  IF l_type ='1' OR l_type ='2' THEN 
+  IF l_type ='1' OR l_type ='2' THEN
       CASE l_pmh09
          WHEN 'N'
             RETURN l_qca04
@@ -5201,41 +5201,41 @@ FUNCTION t110_defqty(l_def,l_rate,l_level,l_type)       #No.FUN-A80063 add l_lev
          OTHERWISE
             RETURN 0
       END CASE
-  END IF 
-  IF l_type ='3' OR l_type ='4' THEN 
+  END IF
+  IF l_type ='3' OR l_type ='4' THEN
       CASE l_pmh09
          WHEN 'N'
             LET l_qcd03 = l_level
          WHEN 'T'
             LET l_qcd03 = l_level+1
-            IF l_qcd03 = 8 THEN 
+            IF l_qcd03 = 8 THEN
                LET l_qcd03 ='T'
-            END IF 
+            END IF
          WHEN 'R'
             LET l_qcd03 = l_level-1
-            IF l_qcd03 = 0 THEN 
+            IF l_qcd03 = 0 THEN
                LET l_qcd03 ='R'
-            END IF 
+            END IF
          OTHERWISE
             RETURN 0
-      END CASE  
+      END CASE
       SELECT qdf02 INTO l_qdf02
         FROM qdf_file
-       WHERE (g_qcs.qcs22 BETWEEN qdf03 AND qdf04) 
+       WHERE (g_qcs.qcs22 BETWEEN qdf03 AND qdf04)
          AND qdf01 = l_qcd03
       SELECT qdg04 INTO l_qdg04
         FROM qdg_file
        WHERE qdg01 = g_ima101
          AND qdg02 = l_qcd03
          AND qdg03 = l_qdf02
-      IF SQLCA.sqlcode THEN 
+      IF SQLCA.sqlcode THEN
          LET l_qdg04 = 0
-      END IF    
+      END IF
       RETURN l_qdg04
-   END IF 
-#No.FUN-A80063 --end 
+   END IF
+#No.FUN-A80063 --end
 END FUNCTION
- 
+
 FUNCTION t110_check_pmh09()
    DEFINE l_count,m_cnt   LIKE type_file.num5,         #No.FUN-680104 SMALLINT
           l_countn        LIKE type_file.num5,         #No.FUN-680104 SMALLINT
@@ -5250,43 +5250,43 @@ FUNCTION t110_check_pmh09()
           l_qcs041        LIKE qcs_file.qcs041,        #No.FUN-680104 VARCHAR(08)
           l_qcs21         LIKE qcs_file.qcs21,
           l_pmh09         LIKE pmh_file.pmh09
-  
+
    LET l_count = 0
    LET l_countn= 0
    LET l_countt= 0
    LET l_countr= 0
- 
+
    LET g_sql = "SELECT qcs09,qcs04,qcs01,qcs041,qcs21" ,
                "  FROM qcs_file  ",
                " WHERE qcs03  = '",g_qcs.qcs03,"'",
                "   AND qcs021 = '",g_qcs.qcs021,"'",
                "   AND qcsacti = 'Y' AND qcs14='Y' ",
                " ORDER BY qcs04 DESC,qcs041 DESC "
- 
+
    PREPARE t110_c2 FROM g_sql
- 
+
    DECLARE t110_c2p SCROLL CURSOR WITH HOLD FOR t110_c2
- 
+
    FOREACH t110_c2p INTO l_qcs09,l_qcs04,l_qcs01,l_qcs041,l_qcs21
       IF SQLCA.sqlcode THEN
          EXIT FOREACH
       END IF
- 
+
       IF l_qcs09 NOT MATCHES '[123]' THEN
          CONTINUE FOREACH
       END IF
- 
+
       IF l_qcs21 NOT MATCHES '[NTR]' THEN
          CONTINUE FOREACH
       END IF
- 
+
       LET l_count = l_count + 1
       CASE l_qcs21
          WHEN 'N' LET l_countn = l_countn + 1
          WHEN 'T' LET l_countt = l_countt + 1
          WHEN 'R' LET l_countr = l_countr + 1
       END CASE
- 
+
       CASE l_qcs09
          WHEN '1'
             LET l_pass = l_pass + 1    #--- 合格
@@ -5295,9 +5295,9 @@ FUNCTION t110_check_pmh09()
          WHEN '3'
             LET l_down1 = l_down1 + 1  #--- 特採
       END CASE
- 
+
       LET l_pmh09 = g_qcs.qcs21
- 
+
       CASE g_qcs.qcs21
          WHEN 'N'      #正常檢驗
             CASE
@@ -5358,11 +5358,11 @@ FUNCTION t110_check_pmh09()
             END CASE
       END CASE
    END FOREACH
- 
+
    IF cl_null(l_pmh09) THEN
       LET l_pmh09 = 'N'
    END IF
- 
+
    IF g_qcs.qcs00 MATCHES '[56]' THEN
       UPDATE obk_file SET obk12 = l_pmh09
        WHERE obk01 = g_qcs.qcs021
@@ -5394,9 +5394,9 @@ FUNCTION t110_check_pmh09()
    END IF
    #end MOD-A30058 add
 
- 
+
 END FUNCTION
- 
+
 FUNCTION t110_y_chk()
    DEFINE l_rvbs06   LIKE rvbs_file.rvbs06
    DEFINE l_rvbs09   LIKE rvbs_file.rvbs09   #No.FUN-860045
@@ -5409,8 +5409,8 @@ FUNCTION t110_y_chk()
     DEFINE l_date1        LIKE qcs_file.qcs04
     DEFINE l_qcs04        LIKE qcs_file.qcs04
    LET g_success = 'Y'
-   
- 
+
+
 #CHI-C30107 -------------- add -------------- begin
    IF g_qcs.qcs14 = 'Y' THEN
       CALL cl_err('',9023,0)
@@ -5437,14 +5437,14 @@ FUNCTION t110_y_chk()
       LET l_cnt = 0
       SELECT COUNT(*) INTO l_cnt
         FROM ima_file
-       WHERE ima01 IN (SELECT qcs021 
-                         FROM qcs_file 
+       WHERE ima01 IN (SELECT qcs021
+                         FROM qcs_file
                         WHERE qcs01 = g_qcs.qcs01
                           AND qcs02 = g_qcs.qcs02
                           AND qcs05 = g_qcs.qcs05) #料件
          AND ima930 = 'Y'                   #條碼使用否
          AND (ima921 = 'Y' OR ima918 = 'Y') #批號管理否='Y' OR 序號管理否='Y'
-         AND (ima932 <> 'L')                #條碼產生時機點不等於L(IQC) 
+         AND (ima932 <> 'L')                #條碼產生時機點不等於L(IQC)
 
      #確認是否已有掃描紀錄
       IF l_cnt > 0 THEN
@@ -5462,25 +5462,25 @@ FUNCTION t110_y_chk()
         ROLLBACK WORK   #No.MOD-850116
         RETURN
      END IF
-   END IF  
+   END IF
 #CHI-C30107 -------------- add -------------- end
    SELECT * INTO g_qcs.* FROM qcs_file
     WHERE qcs01 = g_qcs.qcs01
       AND qcs02 = g_qcs.qcs02
       AND qcs05 = g_qcs.qcs05
- 
+
    IF g_qcs.qcs14 = 'Y' THEN
       CALL cl_err('',9023,0)
       LET g_success = 'N'
       RETURN
    END IF
- 
+
    IF g_qcs.qcs14 = 'X' THEN
       CALL cl_err('','9024',0)
       LET g_success = 'N'
       RETURN
    END IF
- 
+
    IF g_qcs.qcs22 = 0 THEN
      CALL cl_err('','aqc-027',0)
      LET g_success = 'N'
@@ -5488,7 +5488,7 @@ FUNCTION t110_y_chk()
    END IF
 
 #TQC-B60106   ---start   Add
-   SELECT COUNT(*) INTO l_n FROM gen_file 
+   SELECT COUNT(*) INTO l_n FROM gen_file
     WHERE gen01 = g_qcs.qcs13
    IF l_n < 1 THEN
       CALL cl_err('','aqc-120',0)
@@ -5496,23 +5496,23 @@ FUNCTION t110_y_chk()
       RETURN
    END IF
 #TQC-B60106   ---end     Add
- 
-   CALL t110_unqc_qty() 
+
+   CALL t110_unqc_qty()
    IF NOT cl_null(g_errno) THEN
        CALL cl_err(g_qcs.qcs01,g_errno,1)
        LET g_success = 'N'
        RETURN
    END IF
- 
+
    IF g_qcs.qcs00 MATCHES '[156ABCDH]' THEN
-      SELECT ima918,ima921 INTO g_ima918,g_ima921 
+      SELECT ima918,ima921 INTO g_ima918,g_ima921
         FROM ima_file
        WHERE ima01 = g_qcs.qcs021
          AND imaacti = "Y"
-      
+
       IF g_ima918 = "Y" OR g_ima921 = "Y" THEN
          #IF g_sma.sma90 = "Y" THEN   #CHI-A70047
-         IF (g_sma.sma90 = "Y" AND g_argv1='1') OR g_argv1<>'1' THEN   #CHI-A70047 
+         IF (g_sma.sma90 = "Y" AND g_argv1='1') OR g_argv1<>'1' THEN   #CHI-A70047
             SELECT SUM(rvbs06) INTO l_rvbs06
               FROM rvbs_file
              WHERE rvbs00 = g_prog
@@ -5520,16 +5520,16 @@ FUNCTION t110_y_chk()
                AND rvbs02 = g_qcs.qcs02
                AND rvbs13 = g_qcs.qcs05
                AND rvbs09 = 1
-            
+
             IF cl_null(l_rvbs06) THEN
                LET l_rvbs06 = 0
             END IF
-            
+
             CALL t110_get_fac()
-  
-            IF g_qcs.qcs09 != '2' THEN        #MOD-BA0194 add 
+
+            IF g_qcs.qcs09 != '2' THEN        #MOD-BA0194 add
               #CHI-C30064---Start---add
-               SELECT rvb05,rvb36,rvb37,rvb38,rvb90 
+               SELECT rvb05,rvb36,rvb37,rvb38,rvb90
                  INTO g_rvb05,g_rvb36,g_rvb37,g_rvb38,g_rvb90
                  FROM rvb_file
                 WHERE rvb01 = g_qcs.qcs01
@@ -5539,8 +5539,8 @@ FUNCTION t110_y_chk()
                WHERE img01=g_rvb05 AND img02=g_rvb36
                  AND img03=g_rvb37 AND img04=g_rvb38
                CALL s_umfchk(g_rvb05,g_rvb90,g_img09) RETURNING g_cnt,l_fac
-               IF g_cnt = '1' THEN LET l_fac = 1 END IF             
-              #CHI-C30064---End---add 
+               IF g_cnt = '1' THEN LET l_fac = 1 END IF
+              #CHI-C30064---End---add
                IF (g_qcs.qcs091 * l_fac) <> l_rvbs06 THEN   #CHI-A70047   取消mark
               #IF (g_qcs.qcs22 * l_fac) <> l_rvbs06 THEN   #CHI-A70047   mark
                   LET g_success = "N"
@@ -5551,8 +5551,8 @@ FUNCTION t110_y_chk()
          END IF
       END IF
    END IF
- 
-  IF g_qcs.qcs00 MATCHES '[A]' THEN 
+
+  IF g_qcs.qcs00 MATCHES '[A]' THEN
      SELECT COUNT(*) INTO g_cnt
        FROM ina_file,inb_file
        WHERE inb01 = g_qcs.qcs01
@@ -5560,14 +5560,14 @@ FUNCTION t110_y_chk()
          AND inb01 = ina01
          AND inapost = 'Y'
          AND ina00 MATCHES '[12]'
-      IF g_cnt > 0 THEN 
+      IF g_cnt > 0 THEN
          CALL cl_err(g_qcs.qcs01,'aqc-333',0)
          LET g_success = 'N'
          RETURN
       END IF
   END IF
- 
-  IF g_qcs.qcs00 MATCHES '[B]' THEN 
+
+  IF g_qcs.qcs00 MATCHES '[B]' THEN
      SELECT COUNT(*) INTO g_cnt
        FROM ina_file,inb_file
        WHERE inb01 = g_qcs.qcs01
@@ -5575,7 +5575,7 @@ FUNCTION t110_y_chk()
          AND inb01 = ina01
          AND inapost = 'Y'
          AND ina00 IN ('3','4')
-      IF g_cnt > 0 THEN 
+      IF g_cnt > 0 THEN
          CALL cl_err(g_qcs.qcs01,'aqc-333',0)
          LET g_success = 'N'
          RETURN
@@ -5584,15 +5584,15 @@ FUNCTION t110_y_chk()
 
 
 #-----------------add by hlf07751-----------------------------------
-   SELECT max(qcs04) INTO l_date FROM qcs_file 
+   SELECT max(qcs04) INTO l_date FROM qcs_file
    WHERE   qcs14 = 'Y' AND qcsud02 = 'Y' AND  qcs021 = g_qcs.qcs021
-   SELECT qcs04 INTO l_qcs04 FROM qcs_file 
+   SELECT qcs04 INTO l_qcs04 FROM qcs_file
     WHERE qcs01 = g_qcs.qcs01
       AND qcs02 = g_qcs.qcs02
       AND qcs05 = g_qcs.qcs05
-   SELECT imaud03 INTO l_imaud03 FROM ima_file 
+   SELECT imaud03 INTO l_imaud03 FROM ima_file
    WHERE ima01 = g_qcs.qcs021
-IF l_imaud03 IS NOT NULL AND g_qcs.qcsud02='N'  THEN 
+IF l_imaud03 IS NOT NULL AND g_qcs.qcsud02='N'  THEN
 
 IF l_date IS NULL THEN
   CALL cl_err('','hlf06',1)
@@ -5604,8 +5604,8 @@ IF l_date IS NULL THEN
    CALL cl_err('','hlf06',1)
    LET g_success = 'N'
    RETURN
-   END IF  
-END IF 
+   END IF
+END IF
 END IF
 SELECT count(*) INTO l_n FROM pmh_file
 WHERE pmh01 = g_qcs.qcs021 AND pmh02 = g_qcs.qcs03 AND ta_pmh01 = 'Y' AND ta_pmh02 = 'Y' AND ta_pmh03 = 'Y'
@@ -5613,9 +5613,9 @@ WHERE pmh01 = g_qcs.qcs021 AND pmh02 = g_qcs.qcs03 AND ta_pmh01 = 'Y' AND ta_pmh
     CALL cl_err('','hlf07',1)
     #LET g_success = 'N'
    # RETURN
-         END IF 
+         END IF
 
- 
+
 #-----------------add by hlf07751-----------------------------------
 #FUN-BC0104----add----str----
    LET l_n = 0
@@ -5623,9 +5623,9 @@ WHERE pmh01 = g_qcs.qcs021 AND pmh02 = g_qcs.qcs03 AND ta_pmh01 = 'Y' AND ta_pmh
     WHERE qco01 = g_qcs.qcs01
       AND qco02 = g_qcs.qcs02
       AND qco05 = g_qcs.qcs05
-   IF l_n > 0 THEN 
+   IF l_n > 0 THEN
       IF g_qcs.qcs09 ='1' THEN       #MOD-C30557
-         SELECT SUM(qco11*qco19) INTO l_sum 
+         SELECT SUM(qco11*qco19) INTO l_sum
            FROM qco_file,qcl_file
           WHERE qcl01 = qco03
             AND qco01 = g_qcs.qcs01
@@ -5644,13 +5644,13 @@ WHERE pmh01 = g_qcs.qcs021 AND pmh02 = g_qcs.qcs03 AND ta_pmh01 = 'Y' AND ta_pmh
        WHERE qco01 = g_qcs.qcs01
          AND qco02 = g_qcs.qcs02
          AND qco05 = g_qcs.qcs05
-      IF l_sum1 != g_qcs.qcs22 THEN 
+      IF l_sum1 != g_qcs.qcs22 THEN
          CALL cl_err(g_qcs.qcs01,'aqc-536',0)
          LET g_success ='N'
          RETURN
       END IF
       #TQC-C20504-----End-----
-   END IF 
+   END IF
 #FUN-BC0104----add----end----
 
  #DEV-D40019 mark str--------
@@ -5661,14 +5661,14 @@ WHERE pmh01 = g_qcs.qcs021 AND pmh02 = g_qcs.qcs03 AND ta_pmh01 = 'Y' AND ta_pmh
  #    LET l_cnt = 0
  #    SELECT COUNT(*) INTO l_cnt
  #      FROM ima_file
- #     WHERE ima01 IN (SELECT qct021 
- #                       FROM qct_file 
+ #     WHERE ima01 IN (SELECT qct021
+ #                       FROM qct_file
  #                      WHERE qct01 = g_qcs.qcs01
  #                        AND qct02 = g_qcs.qcs02
  #                        AND qct021 = g_qcs.qcs05) #料件
  #       AND ima930 = 'Y'                   #條碼使用否
  #       AND (ima921 = 'Y' OR ima918 = 'Y') #批號管理否='Y' OR 序號管理否='Y'
- #       AND (ima932 <> 'L')                #條碼產生時機點不等於L(IQC) 
+ #       AND (ima932 <> 'L')                #條碼產生時機點不等於L(IQC)
 
  #   #確認是否已有掃描紀錄
  #    IF l_cnt > 0 THEN
@@ -5681,7 +5681,7 @@ WHERE pmh01 = g_qcs.qcs021 AND pmh02 = g_qcs.qcs03 AND ta_pmh01 = 'Y' AND ta_pmh
  ##DEV-D40015 add end--------
  #DEV-D40019 mark end--------
 END FUNCTION
- 
+
 FUNCTION t110_y_upd()
    DEFINE l_rvb331  LIKE rvb_file.rvb331
    DEFINE l_rvb332  LIKE rvb_file.rvb332
@@ -5717,20 +5717,20 @@ FUNCTION t110_y_upd()
              code      LIKE type_file.chr10,
              msg       STRING
                        END RECORD
-   DEFINE l_rvaud04  LIKE rva_file.rvaud04  
-   DEFINE d1   varchar(20) #darcy:2023/07/11 
-   #No.18010101---end---    
-   
- 
+   DEFINE l_rvaud04  LIKE rva_file.rvaud04
+   DEFINE d1   varchar(20) #darcy:2023/07/11
+   #No.18010101---end---
+
+
    #若設定與 SPC 整合, 判斷是否已拋轉
-   IF g_aza.aza64 NOT matches '[ Nn]' AND 
+   IF g_aza.aza64 NOT matches '[ Nn]' AND
      ((g_qcs.qcsspc IS NULL ) OR g_qcs.qcsspc NOT matches '[1]'  )
    THEN
      CALL cl_err('','aqc-117',0)
      LET g_success='N'
      RETURN
    END IF
- 
+
    #No.TQC-BB0119  --Begin
    IF g_qcz.qcz01 = 'Y' THEN       #MOD-B20052 add
       ##MOD-AB0143---add---start---
@@ -5739,10 +5739,10 @@ FUNCTION t110_y_upd()
       # IF cl_null(l_cnt) THEN LET l_cnt = 0 END IF
       ##IF l_cnt > 0 AND g_qcz.qcz01 THEN             #MOD-B20052 mark
       # IF l_cnt > 0 AND g_qcz.qcz01 = 'Y' THEN       #MOD-B20052 add
-       DECLARE qct03_curs CURSOR FOR 
+       DECLARE qct03_curs CURSOR FOR
          SELECT qct03,qct04,qct11 FROM qct_file WHERE qct01 = g_qcs.qcs01
-                                                  AND qct02 = g_qcs.qcs02      #MOD-B20010 add 
-                                                  AND qct021 = g_qcs.qcs05     #MOD-B20010 add   
+                                                  AND qct02 = g_qcs.qcs02      #MOD-B20010 add
+                                                  AND qct021 = g_qcs.qcs05     #MOD-B20010 add
        FOREACH qct03_curs INTO l_qct03,l_qct04,l_qct11
            CALL t110_get_qcd07(l_qct04) RETURNING l_qcd07,l_qcd05,l_qcd061,l_qcd062
            #SELECT qcd07 INTO l_qcd07 FROM qcd_file WHERE qcd01 = g_qcs.qcs021 AND qcd02 = l_qct04
@@ -5752,7 +5752,7 @@ FUNCTION t110_y_upd()
                WHERE qctt01 = g_qcs.qcs01
                  AND qctt02 = g_qcs.qcs02
                  AND qctt021 = g_qcs.qcs05
-                 AND qctt03 = l_qct03 
+                 AND qctt03 = l_qct03
               IF cl_null(l_cnt) THEN LET l_cnt = 0 END IF
              #CHI-C70004 str add-----
               SELECT qcs09 INTO l_qcs09 FROM qcs_file
@@ -5779,13 +5779,13 @@ FUNCTION t110_y_upd()
    END IF
    #DEV-D40015 add end-------------
 
- 
+
    IF (g_argv5 <> "SPC_ins" AND g_argv5 <> "SPC_upd") OR g_argv5 IS NULL THEN
       BEGIN WORK
    END IF
 
-   call saqct110_follow(g_qcs.qcs01,g_qcs.qcs02,g_qcs.qcs05,true) # darcy:2025/12/08 add 
- 
+   call saqct110_follow(g_qcs.qcs01,g_qcs.qcs02,g_qcs.qcs05,true) # darcy:2025/12/08 add
+
    OPEN t110_cl USING g_qcs.qcs01,g_qcs.qcs02,g_qcs.qcs05    #liuxqa 091022
    IF STATUS THEN
       CALL cl_err("OPEN t110_cl:", STATUS, 1)
@@ -5794,7 +5794,7 @@ FUNCTION t110_y_upd()
       ROLLBACK WORK
       RETURN
    END IF
- 
+
    FETCH t110_cl INTO g_qcs.*            # 鎖住將被更改或取消的資料
    IF SQLCA.sqlcode THEN
       CALL cl_err(g_qcs.qcs01,SQLCA.sqlcode,0)      # 資料被他人LOCK
@@ -5803,7 +5803,7 @@ FUNCTION t110_y_upd()
       ROLLBACK WORK
       RETURN
    END IF
- 
+
 #CHI-C30107 ---------------- mark --------------- begin
 #  IF g_action_choice CLIPPED = "confirm" THEN
 #    IF NOT cl_confirm('axm-108') THEN
@@ -5820,7 +5820,7 @@ FUNCTION t110_y_upd()
     WHERE qcs01 = g_qcs.qcs01
       AND qcs02 = g_qcs.qcs02
       AND qcs05 = g_qcs.qcs05
- 
+
    IF SQLCA.sqlerrd[3] = 0 THEN
       LET g_success = 'N'
    END IF
@@ -5828,25 +5828,25 @@ FUNCTION t110_y_upd()
    IF g_qcs.qcs09 = '2' OR g_qcs.qcs09 = '3' THEN      #MOD-C30557    #FUN-CC0015 add qcs09=3
       CALL t110_qc()                                   #MOD-C30557
    END IF                                              #MOD-C30557
- 
+
    IF (g_qcs.qcs00='7') AND (g_success='Y') THEN
       CALL t110_upd_srg10("+")
    END IF
    IF g_qcz.qcz12 = 'Y' THEN
       CALL t110_check_pmh09()
    END IF
- 
+
    #------ 是否與採購勾稽(modi in 01/06/04) ------
    IF g_sma.sma886[8,8] = 'Y' AND g_qcs.qcs00 = '1' THEN
       UPDATE rvb_file SET rvb40 = g_qcs.qcs04   #No.MOD-590083
        WHERE rvb01 = g_qcs.qcs01
          AND rvb02 = g_qcs.qcs02
- 
+
       IF SQLCA.sqlcode OR SQLCA.sqlerrd[3] = 0 THEN
          CALL cl_err3("upd","rvb_file",g_qcs.qcs01,g_qcs.qcs02,STATUS,"","upd rvb40",1)  #No.FUN-660115
          LET g_success = 'N'
       END IF
- 
+
       CASE g_qcs.qcs09
          WHEN '1'
             CALL cl_getmsg('aqc-004',g_lang) RETURNING des1
@@ -5855,38 +5855,38 @@ FUNCTION t110_y_upd()
          WHEN '3'
             CALL cl_getmsg('aqc-006',g_lang) RETURNING des1
       END CASE
- 
+
       UPDATE rvb_file SET rvb41 = des1 #檢驗結果
        WHERE rvb01 = g_qcs.qcs01
          AND rvb02 = g_qcs.qcs02
- 
+
       IF SQLCA.sqlcode OR SQLCA.sqlerrd[3] = 0 THEN
          CALL cl_err3("upd","rvb_file",g_qcs.qcs01,g_qcs.qcs02,STATUS,"","upd rvb41",1)  #No.FUN-660115
          LET g_success='N'
       END IF
- 
+
       SELECT rvb33,rvb07,rvb331,rvb332 ,rvb30              #FUN-5C0022 add rvb331  ,rvb332    #MOD-640512 add rvb30
           INTO l_rvb33,l_rvb07,l_rvb331,l_rvb332,l_rvb30   #FUN-5C0022 add rvb331  ,rvb332   #MOD-640512 add rvb30
         FROM rvb_file
        WHERE rvb01 = g_qcs.qcs01
          AND rvb02 = g_qcs.qcs02
- 
+
       IF cl_null(l_rvb33) THEN
          LET l_rvb33 = 0
       END IF
- 
+
       IF cl_null(l_rvb331) THEN  #FUN-5C0022 add
          LET l_rvb331 = 0
       END IF
- 
+
       IF cl_null(l_rvb332) THEN  #FUN-5C0022 add
          LET l_rvb332 = 0
       END IF
- 
+
       IF cl_null(l_rvb07) THEN
          LET l_rvb07 = 0
       END IF
- 
+
       LET l_rvb33 = l_rvb33 + g_qcs.qcs091
       IF g_sma.sma115 = 'Y' THEN #使用雙單位
          LET l_rvb331 = l_rvb331 + g_qcs.qcs38
@@ -5895,62 +5895,62 @@ FUNCTION t110_y_upd()
          LET l_rvb331 = l_rvb331 + 0
          LET l_rvb332 = l_rvb332 + 0
       END IF
- 
+
       #FUN-BB0085-add-str---
       SELECT rvb90 INTO l_rvb90 FROM rvb_file
        WHERE rvb01 = g_qcs.qcs01
          AND rvb02 = g_qcs.qcs02
-      LET l_rvb33 = s_digqty(l_rvb33,l_rvb90)   
+      LET l_rvb33 = s_digqty(l_rvb33,l_rvb90)
       #FUN-BB0085-add-end---
-      UPDATE rvb_file SET rvb33 = l_rvb33,                      
+      UPDATE rvb_file SET rvb33 = l_rvb33,
              rvb331 = l_rvb331, #FUN-5C0022 add
              rvb332 = l_rvb332, #FUN-5C0022 add
              #rvb31 = l_rvb33 - l_rvb30   #MOD-640512  #mark by guanyao160731
              rvb31 = l_rvb33 - l_rvb30 -nvl(g_qcs.qcsud07,0)  #MOD-640512  #add by guanyao160731
        WHERE rvb01 = g_qcs.qcs01
          AND rvb02 = g_qcs.qcs02
- 
+
       IF STATUS OR SQLCA.sqlerrd[3] = 0 THEN
          CALL cl_err3("upd","rvb_file",g_qcs.qcs01,g_qcs.qcs02,STATUS,"","upd rvb33",1)  #No.FUN-660115
          LET g_success='N'
       END IF
    END IF
- 
+
    IF g_qcs.qcs00 MATCHES '[156ABCDH]' THEN
       IF g_qcs.qcs00 MATCHES '[1BC]' THEN
-         LET l_rvbs09 = 1  
+         LET l_rvbs09 = 1
       ELSE
-         LET l_rvbs09 = -1  
+         LET l_rvbs09 = -1
       END IF
-      SELECT ima918,ima921 INTO g_ima918,g_ima921 
+      SELECT ima918,ima921 INTO g_ima918,g_ima921
         FROM ima_file
        WHERE ima01 = g_qcs.qcs021
          AND imaacti = "Y"
-      
+
       IF g_ima918 = "Y" OR g_ima921 = "Y" THEN
          #IF g_sma.sma90 = "Y" THEN   #CHI-A70047
-         IF (g_sma.sma90 = "Y" AND g_argv1='1') OR g_argv1<>'1' THEN   #CHI-A70047 
-                      
+         IF (g_sma.sma90 = "Y" AND g_argv1='1') OR g_argv1<>'1' THEN   #CHI-A70047
+
             LET l_sql = "SELECT * FROM rvbs_file",
                         " WHERE rvbs01 = '",g_qcs.qcs01,"'",
                         "   AND rvbs02 = ",g_qcs.qcs02,
                         "   AND rvbs13 = 0 ",   #No.FUN-860045
                         "   AND rvbs00 != '",g_prog,"'",
                         "   AND rvbs09 = ",l_rvbs09
-            
+
             PREPARE t110_rvbssel FROM l_sql
-            
+
             DECLARE rvbs_curssel CURSOR FOR t110_rvbssel
-            
+
             FOREACH rvbs_curssel INTO l_rvbs.*
                IF STATUS THEN
                   CALL cl_err('foreach rvbs sel:',STATUS,1)
                   EXIT FOREACH
                END IF
-            
+
                SELECT SUM(rvbs10)
                  INTO l_rvbs10
-                 FROM qcs_file,rvbs_file 
+                 FROM qcs_file,rvbs_file
                 WHERE qcs01 = g_qcs.qcs01
                   AND qcs02 = g_qcs.qcs02
                   AND qcs01 = rvbs01
@@ -5961,7 +5961,7 @@ FUNCTION t110_y_upd()
                   AND rvbs00 = g_prog
                   AND rvbs13 = qcs05                        #No.MOD-950114 add
                   AND qcs14 = 'Y'
-               
+
                UPDATE rvbs_file SET rvbs10 = l_rvbs10
                 WHERE rvbs01 = g_qcs.qcs01
                   AND rvbs02 = g_qcs.qcs02
@@ -5969,13 +5969,13 @@ FUNCTION t110_y_upd()
                   AND rvbs04 = l_rvbs.rvbs04
                   AND rvbs08 = l_rvbs.rvbs08
                   AND rvbs13 = 0   #No.FUN-860045
-               
+
                IF SQLCA.sqlcode OR SQLCA.sqlerrd[3] = 0 THEN
-                  CALL cl_err3("upd","rvbs_file",g_qcs.qcs01,g_qcs.qcs01,STATUS,"","upd rvbs10",1) 
+                  CALL cl_err3("upd","rvbs_file",g_qcs.qcs01,g_qcs.qcs01,STATUS,"","upd rvbs10",1)
                   LET g_success = 'N'
                END IF
                #-----CHI-A70047---------
-               IF g_qcs.qcs00 = 'A' OR  
+               IF g_qcs.qcs00 = 'A' OR
                   g_qcs.qcs00 = 'B' THEN
                   UPDATE rvbs_file SET rvbs06 = l_rvbs10
                    WHERE rvbs01 = g_qcs.qcs01
@@ -5984,9 +5984,9 @@ FUNCTION t110_y_upd()
                      AND rvbs04 = l_rvbs.rvbs04
                      AND rvbs08 = l_rvbs.rvbs08
                      AND rvbs13 = 0   #No:FUN-860045
-                  
+
                   IF SQLCA.sqlcode OR SQLCA.sqlerrd[3] = 0 THEN
-                     CALL cl_err3("upd","rvbs_file",g_qcs.qcs01,g_qcs.qcs01,STATUS,"","upd rvbs10",1) 
+                     CALL cl_err3("upd","rvbs_file",g_qcs.qcs01,g_qcs.qcs01,STATUS,"","upd rvbs10",1)
                      LET g_success = 'N'
                   END IF
                END IF
@@ -5995,8 +5995,8 @@ FUNCTION t110_y_upd()
          END IF
       END IF
    END IF
- 
-   IF g_qcs.qcs00 = 'A' OR  
+
+   IF g_qcs.qcs00 = 'A' OR
       g_qcs.qcs00 = 'B' THEN
       SELECT SUM(qcs091),SUM(qcs38),SUM(qcs41)
         INTO l_qcs091,l_qcs38,l_qcs41
@@ -6008,24 +6008,24 @@ FUNCTION t110_y_upd()
       IF cl_null(l_qcs091) THEN LET l_qcs091=0 END IF
       IF cl_null(l_qcs38 ) THEN LET l_qcs38 =0 END IF
       IF cl_null(l_qcs41 ) THEN LET l_qcs41 =0 END IF
-      UPDATE inb_file 
+      UPDATE inb_file
          SET inb09 = l_qcs091,
              inb904= l_qcs38 ,
-             inb907= l_qcs41 
+             inb907= l_qcs41
        WHERE inb01 = g_qcs.qcs01
          AND inb03 = g_qcs.qcs02
- 
+
       IF SQLCA.sqlcode OR SQLCA.sqlerrd[3] = 0 THEN
          CALL cl_err3("upd","inb_file",g_qcs.qcs01,g_qcs.qcs02,STATUS,"","upd inb09",1)
          LET g_success = 'N'
       END IF
    END IF
- 
+
    IF g_success = 'Y' THEN
       LET g_qcs.qcs14 = 'Y'
       LET g_qcs.qcs15 = g_today
       IF (g_argv5 <> "SPC_ins" AND g_argv5 <> "SPC_upd")      #FUN-680011
-      OR g_argv5 IS NULL 
+      OR g_argv5 IS NULL
       THEN
          COMMIT WORK
       END IF
@@ -6036,12 +6036,12 @@ FUNCTION t110_y_upd()
       ROLLBACK WORK
    END IF
 
-   #No.18010101  --- 审核后自动抛转SCM--- begin --- 
+   #No.18010101  --- 审核后自动抛转SCM--- begin ---
     LET l_rvaud04 = ''
-    SELECT rvaud04 INTO l_rvaud04 FROM rva_file WHERE rva01 = g_qcs.qcs01 
-    IF NOT cl_null(l_rvaud04) THEN 
+    SELECT rvaud04 INTO l_rvaud04 FROM rva_file WHERE rva01 = g_qcs.qcs01
+    IF NOT cl_null(l_rvaud04) THEN
         IF NOT cl_null(g_qcs.qcs01) AND g_success='Y' THEN
-            IF cl_getscmparameter()  THEN  
+            IF cl_getscmparameter()  THEN
               INITIALIZE l_ret TO NULL
               CALL cjc_zmx_json_qcs(g_qcs.qcs01,g_qcs.qcs02,'Y') RETURNING l_ret.*
               IF l_ret.success = 'Y' THEN
@@ -6056,8 +6056,8 @@ FUNCTION t110_y_upd()
            #    CALL FGL_WINMESSAGE("Warning",l_ret.msg,"stop")
             END IF
         END IF
-    END IF 
-   #No.18010101---END 
+    END IF
+   #No.18010101---END
 
    #DEV-D40015 add str-------------
    #失敗自動作廢barcode
@@ -6147,7 +6147,7 @@ DEFINE l_sum_qco11     LIKE type_file.num10,
 
 END FUNCTION
 #MOD-C30557----add----end----
- 
+
 FUNCTION t110_z()
    DEFINE l_rvb331  LIKE rvb_file.rvb331
    DEFINE l_rvb332  LIKE rvb_file.rvb332
@@ -6176,21 +6176,21 @@ FUNCTION t110_z()
              code      LIKE type_file.chr10,
              msg       STRING
                        END RECORD
-   #No.18010101---end---       
+   #No.18010101---end---
    SELECT * INTO g_qcs.* FROM qcs_file
     WHERE qcs01 = g_qcs.qcs01
       AND qcs02 = g_qcs.qcs02
       AND qcs05 = g_qcs.qcs05
- 
+
    IF g_qcs.qcs14 = 'N' THEN
       RETURN
    END IF
- 
+
    IF g_qcs.qcs14 = 'X' THEN
       CALL cl_err('','9024',0)
       RETURN
    END IF
- 
+
    IF g_qcs.qcs09 = '3' THEN   #BugNo:5046
       CALL cl_err(g_qcs.qcs01,'aqc-410',0)
       RETURN
@@ -6213,15 +6213,15 @@ FUNCTION t110_z()
       RETURN
    END IF
 #TQC-C30125 --end--
-   
+
    #MOD-C30560----add----str----
-   IF g_qcs.qcs00 MATCHES '[2Z]' THEN 
-      LET l_cnt = 0 
+   IF g_qcs.qcs00 MATCHES '[2Z]' THEN
+      LET l_cnt = 0
       SELECT COUNT(*) INTO l_cnt FROM inb_file
        WHERE inb44 = g_qcs.qcs01
          AND inb45 = g_qcs.qcs02
          AND inb48 = g_qcs.qcs05
-      IF l_cnt > 0 THEN 
+      IF l_cnt > 0 THEN
          CALL cl_err(g_qcs.qcs01,'aqc-542',0)
          RETURN
       END IF
@@ -6232,9 +6232,9 @@ FUNCTION t110_z()
    IF NOT cl_confirm('axm-109') THEN
       RETURN
    END IF
- 
+
    BEGIN WORK
- 
+
    OPEN t110_cl USING g_qcs.qcs01,g_qcs.qcs02,g_qcs.qcs05  #liuxqa 091022
    IF STATUS THEN
       CALL cl_err("OPEN t110_cl:", STATUS, 1)
@@ -6242,7 +6242,7 @@ FUNCTION t110_z()
       ROLLBACK WORK
       RETURN
    END IF
- 
+
    FETCH t110_cl INTO g_qcs.*            # 鎖住將被更改或取消的資料
    IF SQLCA.sqlcode THEN
       CALL cl_err(g_qcs.qcs01,SQLCA.sqlcode,0)      # 資料被他人LOCK
@@ -6250,20 +6250,20 @@ FUNCTION t110_z()
       ROLLBACK WORK
       RETURN
    END IF
- 
+
    LET g_success = 'Y'
- 
+
    IF g_qcs.qcs00 MATCHES '[12]' THEN
      #總IQC驗退量不可小于收貨驗退量
       IF g_qcs.qcs09 = '2' THEN
          CALL t110_qc_return() RETURNING l_flag
          IF l_flag = FALSE THEN
-            ROLLBACK WORK 
+            ROLLBACK WORK
             RETURN
          END IF
       END IF
       #IF g_qcs.qcs00 = '1' THEN        #MOD-AC0025 add           #MOD-B80352 mark
-      IF g_qcs.qcs00 = '1' AND g_sma.sma886[8,8]='Y' THEN         #MOD-B80352 add 
+      IF g_qcs.qcs00 = '1' AND g_sma.sma886[8,8]='Y' THEN         #MOD-B80352 add
          SELECT rvb30,rvb33 INTO l_rvb30,l_rvb33
            FROM rvb_file
           WHERE rvb01 = g_qcs.qcs01
@@ -6280,7 +6280,7 @@ FUNCTION t110_z()
         #IF l_rvb30 > (l_rvb33 - g_qcs.qcs091) THEN   #No.MOD-890283   #MOD-C30846 mark
          IF l_rvv17 > (l_rvb33 - g_qcs.qcs091) THEN                    #MOD-C30846 add
             CALL cl_err(g_qcs.qcs01,'aqc-019',1)
-            ROLLBACK WORK 
+            ROLLBACK WORK
             RETURN
          END IF
       END IF                #MOD-AC0025 add
@@ -6294,11 +6294,11 @@ FUNCTION t110_z()
          AND ogapost = 'Y'
       IF g_cnt > 0 THEN
          CALL cl_err(g_qcs.qcs01,'aqc-119',0)
-         ROLLBACK WORK    
+         ROLLBACK WORK
          RETURN
       END IF
    END IF
-   IF g_qcs.qcs00 MATCHES '[A]' THEN 
+   IF g_qcs.qcs00 MATCHES '[A]' THEN
       SELECT COUNT(*) INTO g_cnt
         FROM ina_file,inb_file
         WHERE inb01 = g_qcs.qcs01
@@ -6306,13 +6306,13 @@ FUNCTION t110_z()
           AND inb01 = ina01
           AND inapost = 'Y'
           AND ina00 MATCHES '[12]'
-       IF g_cnt > 0 THEN 
+       IF g_cnt > 0 THEN
           CALL cl_err(g_qcs.qcs01,'aqc-072',0)
-          ROLLBACK WORK   
+          ROLLBACK WORK
           RETURN
        END IF
    END IF
-   IF g_qcs.qcs00 MATCHES '[B]' THEN 
+   IF g_qcs.qcs00 MATCHES '[B]' THEN
       SELECT COUNT(*) INTO g_cnt
         FROM ina_file,inb_file
         WHERE inb01 = g_qcs.qcs01
@@ -6320,9 +6320,9 @@ FUNCTION t110_z()
           AND inb01 = ina01
           AND inapost = 'Y'
           AND ina00 IN ('3','4')
-       IF g_cnt > 0 THEN 
+       IF g_cnt > 0 THEN
           CALL cl_err(g_qcs.qcs01,'aqc-071',0)
-          ROLLBACK WORK   
+          ROLLBACK WORK
           RETURN
        END IF
    END IF
@@ -6335,7 +6335,7 @@ FUNCTION t110_z()
          AND imm03 = 'Y'
       IF g_cnt > 0 THEN
          CALL cl_err(g_qcs.qcs01,'aqc-013',0)
-         ROLLBACK WORK    
+         ROLLBACK WORK
          RETURN
       END IF
    END IF
@@ -6348,7 +6348,7 @@ FUNCTION t110_z()
          AND imopost = 'Y'
       IF g_cnt > 0 THEN
          CALL cl_err(g_qcs.qcs01,'aqc-013',0)
-         ROLLBACK WORK    
+         ROLLBACK WORK
          RETURN
       END IF
    END IF
@@ -6361,7 +6361,7 @@ FUNCTION t110_z()
          AND imrpost = 'Y'
       IF g_cnt > 0 THEN
          CALL cl_err(g_qcs.qcs01,'aqc-013',0)
-         ROLLBACK WORK    
+         ROLLBACK WORK
          RETURN
       END IF
    END IF
@@ -6374,18 +6374,18 @@ FUNCTION t110_z()
          AND ohapost = 'Y'
       IF g_cnt > 0 THEN
          CALL cl_err(g_qcs.qcs01,'aqc-013',0)
-         ROLLBACK WORK    
+         ROLLBACK WORK
          RETURN
       END IF
    END IF
- 
+
    UPDATE qcs_file SET qcs14 = 'N',
                    #    qcs15 = ''       #CHI-C80072
                        qcs15 = g_today   #CHI-C80072
     WHERE qcs01 = g_qcs.qcs01
       AND qcs02 = g_qcs.qcs02
       AND qcs05 = g_qcs.qcs05
- 
+
    IF SQLCA.sqlcode OR SQLCA.sqlerrd[3] = 0 THEN
       LET g_success = 'N'
    END IF
@@ -6395,7 +6395,7 @@ FUNCTION t110_z()
    IF g_qcz.qcz12 = 'Y' THEN
       CALL t110_check_pmh09()
    END IF
- 
+
    #------ 是否與採購勾稽(modi in 01/06/04) ------
    IF g_sma.sma886[8,8] = 'Y' AND g_qcs.qcs00 = '1' THEN
       #bugno:5964 add check........
@@ -6405,33 +6405,33 @@ FUNCTION t110_z()
          AND qcs02 = g_qcs.qcs02
          AND qcs05 != g_qcs.qcs05
          AND qcs14 = 'Y'
- 
+
       IF cl_null(l_cnt) THEN
          LET l_cnt = 0
       END IF
- 
+
       IF l_cnt = 0 THEN
          UPDATE rvb_file SET rvb40 = NULL,
                              rvb41 = NULL
           WHERE rvb01 = g_qcs.qcs01
             AND rvb02 = g_qcs.qcs02
- 
+
          IF SQLCA.sqlcode OR SQLCA.sqlerrd[3] = 0 THEN
             CALL cl_err3("upd","rvb_file",g_qcs.qcs01,g_qcs.qcs02,STATUS,"","upd rvb40",1)  #No.FUN-660115
             LET g_success = 'N'
          END IF
       END IF
- 
+
       SELECT rvb33,rvb331,rvb332,rvb30             #FUN-5C0022 add rvb331,rvb332    #MOD-640512 add rvb30
         INTO l_rvb33,l_rvb331,l_rvb332,l_rvb30    #FUN-5C0022 add rvb331,rvb332    #MOD-640512 add rvb30
         FROM rvb_file
        WHERE rvb01 = g_qcs.qcs01
          AND rvb02 = g_qcs.qcs02
- 
+
       IF cl_null(l_rvb33) THEN
          LET l_rvb33 = 0
       END IF
- 
+
       IF g_sma.sma115 = 'Y' THEN #使用雙單位
          LET l_rvb331 = l_rvb331 - g_qcs.qcs38
          LET l_rvb332 = l_rvb332 - g_qcs.qcs41
@@ -6439,7 +6439,7 @@ FUNCTION t110_z()
          LET l_rvb331 = l_rvb331 - 0
          LET l_rvb332 = l_rvb332 - 0
       END IF
- 
+
       UPDATE rvb_file SET rvb33 = l_rvb33 - g_qcs.qcs091,
                          rvb331 = l_rvb331, #FUN-5C0022 add
                          rvb332 = l_rvb332  #FUN-5C0022 add
@@ -6451,43 +6451,43 @@ FUNCTION t110_z()
          CALL cl_err3("upd","rvb_file",g_qcs.qcs01,g_qcs.qcs02,STATUS,"","upd rvb33",1)  #No.FUN-660115
          LET g_success='N'
       END IF
- 
+
    END IF
    #-----CHI-A70047---------
    IF g_qcs.qcs00 MATCHES '[156ABCDH]' THEN
       IF g_qcs.qcs00 MATCHES '[1BC]' THEN
-         LET l_rvbs09 = 1  
+         LET l_rvbs09 = 1
       ELSE
-         LET l_rvbs09 = -1  
+         LET l_rvbs09 = -1
       END IF
-      SELECT ima918,ima921 INTO g_ima918,g_ima921 
+      SELECT ima918,ima921 INTO g_ima918,g_ima921
         FROM ima_file
        WHERE ima01 = g_qcs.qcs021
          AND imaacti = "Y"
-      
+
       IF g_ima918 = "Y" OR g_ima921 = "Y" THEN
-         IF (g_sma.sma90 = "Y" AND g_argv1='1') OR g_argv1<>'1' THEN  
-                      
+         IF (g_sma.sma90 = "Y" AND g_argv1='1') OR g_argv1<>'1' THEN
+
             LET l_sql = "SELECT * FROM rvbs_file",
                         " WHERE rvbs01 = '",g_qcs.qcs01,"'",
                         "   AND rvbs02 = ",g_qcs.qcs02,
-                        "   AND rvbs13 = 0 ", 
+                        "   AND rvbs13 = 0 ",
                         "   AND rvbs00 != '",g_prog,"'",
                         "   AND rvbs09 = ",l_rvbs09
-            
+
             PREPARE t110_rvbssel_2 FROM l_sql
-            
+
             DECLARE rvbs_curssel_2 CURSOR FOR t110_rvbssel_2
-            
+
             FOREACH rvbs_curssel_2 INTO l_rvbs.*
                IF STATUS THEN
                   CALL cl_err('foreach rvbs sel:',STATUS,1)
                   EXIT FOREACH
                END IF
-            
+
                SELECT SUM(rvbs10)
                  INTO l_rvbs10
-                 FROM qcs_file,rvbs_file 
+                 FROM qcs_file,rvbs_file
                 WHERE qcs01 = g_qcs.qcs01
                   AND qcs02 = g_qcs.qcs02
                   AND qcs01 = rvbs01
@@ -6496,26 +6496,26 @@ FUNCTION t110_z()
                   AND rvbs04 = l_rvbs.rvbs04
                   AND rvbs08 = l_rvbs.rvbs08
                   AND rvbs00 = g_prog
-                  AND rvbs13 = qcs05   
+                  AND rvbs13 = qcs05
                   AND qcs14 = 'Y'
 
                IF cl_null(l_rvbs10) THEN
-                  LET l_rvbs10 = 0 
+                  LET l_rvbs10 = 0
                END IF
-               
+
                UPDATE rvbs_file SET rvbs10 = l_rvbs10
                 WHERE rvbs01 = g_qcs.qcs01
                   AND rvbs02 = g_qcs.qcs02
                   AND rvbs03 = l_rvbs.rvbs03
                   AND rvbs04 = l_rvbs.rvbs04
                   AND rvbs08 = l_rvbs.rvbs08
-                  AND rvbs13 = 0   
-               
+                  AND rvbs13 = 0
+
                IF SQLCA.sqlcode OR SQLCA.sqlerrd[3] = 0 THEN
-                  CALL cl_err3("upd","rvbs_file",g_qcs.qcs01,g_qcs.qcs01,STATUS,"","upd rvbs10",1) 
+                  CALL cl_err3("upd","rvbs_file",g_qcs.qcs01,g_qcs.qcs01,STATUS,"","upd rvbs10",1)
                   LET g_success = 'N'
                END IF
-               IF g_qcs.qcs00 = 'A' OR  
+               IF g_qcs.qcs00 = 'A' OR
                   g_qcs.qcs00 = 'B' THEN
                   UPDATE rvbs_file SET rvbs06 = l_rvbs10
                    WHERE rvbs01 = g_qcs.qcs01
@@ -6523,10 +6523,10 @@ FUNCTION t110_z()
                      AND rvbs03 = l_rvbs.rvbs03
                      AND rvbs04 = l_rvbs.rvbs04
                      AND rvbs08 = l_rvbs.rvbs08
-                     AND rvbs13 = 0   
-                  
+                     AND rvbs13 = 0
+
                   IF SQLCA.sqlcode OR SQLCA.sqlerrd[3] = 0 THEN
-                     CALL cl_err3("upd","rvbs_file",g_qcs.qcs01,g_qcs.qcs01,STATUS,"","upd rvbs10",1) 
+                     CALL cl_err3("upd","rvbs_file",g_qcs.qcs01,g_qcs.qcs01,STATUS,"","upd rvbs10",1)
                      LET g_success = 'N'
                   END IF
                   END IF
@@ -6535,8 +6535,8 @@ FUNCTION t110_z()
       END IF
    END IF
    #-----END CHI-A70047-----
- 
-   IF g_qcs.qcs00 = 'A' OR  
+
+   IF g_qcs.qcs00 = 'A' OR
       g_qcs.qcs00 = 'B' THEN
       SELECT SUM(qcs091),SUM(qcs38),SUM(qcs41)
         INTO l_qcs091,l_qcs38,l_qcs41
@@ -6564,10 +6564,10 @@ FUNCTION t110_z()
 #            AND inb03 = g_qcs.qcs02
 #      ELSE
 #    #MOD-C30202 ----------End-----------
-      UPDATE inb_file 
+      UPDATE inb_file
          SET inb09 = l_qcs091,
              inb904= l_qcs38 ,
-             inb907= l_qcs41 
+             inb907= l_qcs41
        WHERE inb01 = g_qcs.qcs01
          AND inb03 = g_qcs.qcs02
 #  END IF       #MOD-C30202
@@ -6584,14 +6584,14 @@ FUNCTION t110_z()
       CALL t110_barcode_z(g_qcs.qcs01,g_qcs.qcs02,g_qcs.qcs05,TRUE)
    END IF
    #DEV-D40015--add--end
-   #NO.18010101   --- begin ----  
+   #NO.18010101   --- begin ----
     IF NOT cl_null(g_qcs.qcs01) AND  g_success='Y' THEN
-        IF cl_getscmparameter()  THEN  
+        IF cl_getscmparameter()  THEN
             INITIALIZE l_ret TO NULL
             CALL cjc_zmx_json_qcs(g_qcs.qcs01,g_qcs.qcs02,'N') RETURNING l_ret.*
             IF l_ret.success = 'Y' THEN
             ELSE
-               LET g_success = 'N' 
+               LET g_success = 'N'
                IF cl_null(l_ret.msg) THEN
                      LET l_ret.msg = "SCM提示:收货单：",g_qcs.qcs01 CLIPPED,"项次：",g_qcs.qcs02 CLIPPED ,"检验单取消审核同步失败"
                END IF
@@ -6599,7 +6599,7 @@ FUNCTION t110_z()
                CALL cl_err(l_ret.msg,'!',1)
          END IF
     END IF
-   #NO.18010101---end ---- 
+   #NO.18010101---end ----
    IF g_success = 'Y' THEN
       LET g_qcs.qcs14 = 'N'
       #LET g_qcs.qcs15 = ''      #CHI-C80072
@@ -6618,9 +6618,9 @@ FUNCTION t110_z()
    #END IF
    ##DEV-D30045--add--end
    #DEV-D40015--mark--end
- 
+
 END FUNCTION
- 
+
 #FUNCTION t110_x()                                    #CHI-D20010
 FUNCTION t110_x(p_type)                               #CHI-D20010
    DEFINE l_ogaconf          LIKE oga_file.ogaconf    #TQC-BC0206
@@ -6630,23 +6630,23 @@ FUNCTION t110_x(p_type)                               #CHI-D20010
 
 
    IF s_shut(0) THEN RETURN END IF
- 
+
    SELECT * INTO g_qcs.* FROM qcs_file
     WHERE qcs01 = g_qcs.qcs01
       AND qcs02 = g_qcs.qcs02  #MOD-470517
       AND qcs05 = g_qcs.qcs05
- 
+
    IF cl_null(g_qcs.qcs01) THEN
       CALL cl_err('',-400,0)
       RETURN
    END IF
- 
+
    #-->確認不可作廢
    IF g_qcs.qcs14 = 'Y' THEN
       CALL cl_err('',9023,0)
       RETURN
    END IF
- 
+
    IF g_qcs.qcsspc matches '[1]'                #判斷是否已拋轉
    THEN
      CALL cl_err('','aqc-116',0)
@@ -6683,11 +6683,11 @@ FUNCTION t110_x(p_type)                               #CHI-D20010
    END IF
    #CHI-D20010---end
 
- 
+
    BEGIN WORK
- 
+
    LET g_success = 'Y'
- 
+
    OPEN t110_cl USING g_qcs.qcs01,g_qcs.qcs02,g_qcs.qcs05   #liuxqa 091022
    IF STATUS THEN
       CALL cl_err("OPEN t110_cl:", STATUS, 1)
@@ -6695,7 +6695,7 @@ FUNCTION t110_x(p_type)                               #CHI-D20010
       ROLLBACK WORK
       RETURN
    END IF
- 
+
    FETCH t110_cl INTO g_qcs.*          #鎖住將被更改或取消的資料
    IF SQLCA.sqlcode THEN
       CALL cl_err(g_qcs.qcs01,SQLCA.sqlcode,0)      #資料被他人LOCK
@@ -6703,18 +6703,18 @@ FUNCTION t110_x(p_type)                               #CHI-D20010
       ROLLBACK WORK
       RETURN
    END IF
- 
+
    #IF cl_void(0,0,g_qcs.qcs14)   THEN                                 #CHI-D20010
    IF p_type = 1 THEN LET l_flag = 'N' ELSE LET l_flag = 'X' END IF    #CHI-D20010
    IF cl_void(0,0,l_flag) THEN                                         #CHI-D20010
       LET g_chr = g_qcs.qcs14                                          #CHI-D20010
-     #IF g_qcs.qcs14 = 'N' THEN         
+     #IF g_qcs.qcs14 = 'N' THEN
      IF p_type = 1 THEN                                                #CHI-D20010
          LET g_qcs.qcs14 = 'X'
       ELSE
          LET g_qcs.qcs14 = 'N'
       END IF
- 
+
       UPDATE qcs_file SET qcs14 = g_qcs.qcs14,
                           qcs15 = g_today,
                           qcsmodu = g_user,
@@ -6722,14 +6722,14 @@ FUNCTION t110_x(p_type)                               #CHI-D20010
        WHERE qcs01 = g_qcs.qcs01
          AND qcs02 = g_qcs.qcs02  #No:9489
          AND qcs05 = g_qcs.qcs05  #No:9489
- 
+
       IF SQLCA.SQLCODE OR SQLCA.SQLERRD[3] = 0 THEN
          CALL cl_err3("upd","qcs_file",g_qcs.qcs01,g_qcs.qcs02,SQLCA.sqlcode,"","",1)  #No.FUN-660115
          LET g_qcs.qcs14 = g_chr
          ROLLBACK WORK
          RETURN
       END IF
- 
+
       SELECT qcs14,qcs15
         INTO g_qcs.qcs14,g_qcs.qcs15
         FROM qcs_file
@@ -6738,12 +6738,12 @@ FUNCTION t110_x(p_type)                               #CHI-D20010
          AND qcs05 = g_qcs.qcs05
       DISPLAY BY NAME g_qcs.qcs14,g_qcs.qcs15
    END IF
- 
+
    CLOSE t110_cl
    COMMIT WORK
- 
+
 END FUNCTION
- 
+
 FUNCTION t110_g_b()
    DEFINE l_cnt     LIKE type_file.num5    #No.FUN-680104 SMALLINT
    DEFINE l_yn      LIKE type_file.num5    #No.FUN-680104 SMALLINT
@@ -6759,9 +6759,9 @@ FUNCTION t110_g_b()
    DEFINE l_qdf02   LIKE qdf_file.qdf02
    DEFINE l_qct14   LIKE qct_file.qct14
    DEFINE l_qct15   LIKE qct_file.qct15
-#No.FUN-A80063 --end 
+#No.FUN-A80063 --end
    LET seq = 1
- 
+
    SELECT COUNT(*) INTO l_cnt FROM qct_file
     WHERE qct01 = g_qcs.qcs01
       AND qct02 = g_qcs.qcs02
@@ -6783,7 +6783,7 @@ FUNCTION t110_g_b()
       END IF
    END IF
   #FUN-C30149 add END
- 
+
   #若user 單身點選單身資料重新產生,則不論是否存在單身資料,皆要進入重新產生資料,只新增被user刪除的資料
   #IF l_cnt = 0 THEN               #--單身重新產生   #FUN-C30149 mark
    IF l_cnt = 0 OR g_flag = 'Y' THEN               #--單身重新產生   #FUN-C30149 add
@@ -6817,17 +6817,17 @@ FUNCTION t110_g_b()
                 AND ecm012 = pmn012         #FUN-A60076 add
               GROUP BY ecm04
               IF cl_null(l_yn) OR l_yn<=0 THEN
-             SELECT sgm04,COUNT(*) INTO l_ecm04,l_yn 
+             SELECT sgm04,COUNT(*) INTO l_ecm04,l_yn
                FROM qcc_file,sgm_file,rvb_file,pmn_file
-              WHERE rvb01=g_qcs.qcs01 
+              WHERE rvb01=g_qcs.qcs01
                 AND rvb02=g_qcs.qcs02
-                AND rvb04=pmn01 
+                AND rvb04=pmn01
                 AND rvb03=pmn02
-                AND pmn41=sgm02 
+                AND pmn41=sgm02
                 AND pmn32=sgm03
-                AND sgm012 = pmn012     #FUN-A60076 add by vealxu  
-                AND qcc01=g_qcs.qcs021 
-                AND qcc011=sgm04 
+                AND sgm012 = pmn012     #FUN-A60076 add by vealxu
+                AND qcc01=g_qcs.qcs021
+                AND qcc011=sgm04
                 AND qcc08 IN ('1','9')     #No.FUN-910079
                 GROUP BY sgm04
              END IF
@@ -6835,56 +6835,56 @@ FUNCTION t110_g_b()
       ELSE
          LET l_yn = 0
       END IF
- 
+
       IF l_yn > 0 THEN
          LET l_flag = '1'          #--製程委外抓站別檢驗項目
       ELSE
          LET l_sql = " SELECT COUNT(*) FROM qcd_file ",
                      " WHERE qcd01 = ? "
-         CASE g_argv1 
-            WHEN '1' 
-                 LET l_sql = l_sql CLIPPED, " AND qcd08 in ('1','9') " 
-            WHEN '2' 
+         CASE g_argv1
+            WHEN '1'
+                 LET l_sql = l_sql CLIPPED, " AND qcd08 in ('1','9') "
+            WHEN '2'
                  LET l_sql = l_sql CLIPPED, " AND qcd08 in ('5','9') "
-            WHEN '3' 
+            WHEN '3'
                  LET l_sql = l_sql CLIPPED, " AND qcd08 in ('4','9') "
-            WHEN '4' 
-                 LET l_sql = l_sql CLIPPED, " AND qcd08 in ('2','9') " 
-         END CASE                                    
-         PREPARE qcd_sel FROM l_sql 
-         EXECUTE qcd_sel USING g_qcs.qcs021 INTO l_yn           
+            WHEN '4'
+                 LET l_sql = l_sql CLIPPED, " AND qcd08 in ('2','9') "
+         END CASE
+         PREPARE qcd_sel FROM l_sql
+         EXECUTE qcd_sel USING g_qcs.qcs021 INTO l_yn
          IF l_yn > 0 THEN          #--- 料件檢驗項目
             LET l_flag = '2'
          ELSE
             LET l_flag = '3'       #--- 材料類別檢驗項目
          END IF
       END IF
- 
+
       CASE l_flag
          WHEN '1'
-         
+
             LET l_sql = "  SELECT qcc01,qcc02,qcc03,qcc04,qcc05,qcc061,qcc062, ",
                         "  qccacti,qccuser,qccgrup,qccmodu,qccdate ",
                         "  FROM qcc_file ",
                         "  WHERE qcc01 = ? ",
                         "  AND qcc011 = ? "
-            CASE g_argv1 
-              WHEN "1" 
-                   LET l_sql = l_sql CLIPPED, "  AND qcc08 IN ('1','9') ",                
+            CASE g_argv1
+              WHEN "1"
+                   LET l_sql = l_sql CLIPPED, "  AND qcc08 IN ('1','9') ",
                                "   ORDER BY qcc02"
               WHEN "2"
-                   LET l_sql = l_sql CLIPPED, "  AND qcc08 IN ('5','9') ",                 
-                               "   ORDER BY qcc02"   
+                   LET l_sql = l_sql CLIPPED, "  AND qcc08 IN ('5','9') ",
+                               "   ORDER BY qcc02"
               WHEN "3"
-                   LET l_sql = l_sql CLIPPED, "  AND qcc08 IN ('4','9') ",                 
-                               "   ORDER BY qcc02" 
+                   LET l_sql = l_sql CLIPPED, "  AND qcc08 IN ('4','9') ",
+                               "   ORDER BY qcc02"
               WHEN "4"
-                   LET l_sql = l_sql CLIPPED, "  AND qcc08 IN ('2','9') ",                 
-                               "   ORDER BY qcc02"  
-            END CASE                                                                       
-            
-            PREPARE qcc_cur1 FROM l_sql                     
-            DECLARE qcc_cur CURSOR FOR qcc_cur1 
+                   LET l_sql = l_sql CLIPPED, "  AND qcc08 IN ('2','9') ",
+                               "   ORDER BY qcc02"
+            END CASE
+
+            PREPARE qcc_cur1 FROM l_sql
+            DECLARE qcc_cur CURSOR FOR qcc_cur1
             DECLARE qcc_cur2 SCROLL CURSOR FOR qcc_cur1
             OPEN qcc_cur2 USING g_qcs.qcs021,l_ecm04
             FETCH FIRST qcc_cur2 INTO l_qcd.*
@@ -6893,11 +6893,11 @@ FUNCTION t110_g_b()
             ELSE
                LET l_qcs021 = g_qcs.qcs021
             END IF
- 
+
             FOREACH qcc_cur USING l_qcs021,l_ecm04 INTO l_qcd.*       #No.FUN-990071
 #No.FUN-A80063 --begin
 #               IF l_qcd.qcd05='1' THEN
-# 
+#
 #                  IF g_qcs.qcs00 MATCHES '[56H]' THEN   #MOD-A20100 add H
 #                     CALL s_newaql_1(g_qcs.qcs021,g_qcs03_t,l_qcd.qcd04,g_qcs.qcs22)
 #                          RETURNING l_ac_num,l_re_num
@@ -6924,7 +6924,7 @@ FUNCTION t110_g_b()
 
 
                CASE l_qcd.qcd05
-                 WHEN '1'   #一般 
+                 WHEN '1'   #一般
                   IF g_qcs.qcs00 MATCHES '[56H]' THEN   #MOD-A20100 add H
                      CALL s_newaql_1(g_qcs.qcs021,g_qcs03_t,l_qcd.qcd04,g_qcs.qcs22)
                           RETURNING l_ac_num,l_re_num
@@ -6973,16 +6973,16 @@ FUNCTION t110_g_b()
                    WHERE qdg01 = g_ima101
                      AND qdg02 = l_qcd.qcd03
                      AND qdg03 = l_qdf02
-                  IF SQLCA.sqlcode THEN 
+                  IF SQLCA.sqlcode THEN
                      LET l_qct14 =0
                      LET l_qct15 =0
                   END IF
-               END CASE  
-#No.FUN-A80063 --end 
+               END CASE
+#No.FUN-A80063 --end
                IF l_qct11 > g_qcs.qcs22 THEN
                   LET l_qct11 = g_qcs.qcs22
                END IF
- 
+
                IF cl_null(l_qct11) THEN
                   LET l_qct11 = 0
                END IF
@@ -6998,7 +6998,7 @@ FUNCTION t110_g_b()
                   END IF
                END IF
               #FUN-C30149 add END
- 
+
                INSERT INTO qct_file (qct01,qct02,qct021,qct03,qct04,qct05,  #No.MOD-470041
                                      qct06,qct07,qct08,qct09,qct10,qct11,
                                      qct12,qct131,qct132,qct14,qct15,       #No.FUN-A80063
@@ -7011,36 +7011,38 @@ FUNCTION t110_g_b()
                LET seq = seq + 1
             END FOREACH
          WHEN '2'
-            LET l_sql = "  SELECT * FROM qcd_file",
+            LET l_sql = "  SELECT qcd01,qcd02,qcd03,qcd04,qcd05,qcd061,qcd062,qcd07,qcdacti,",
+                        "         qcduser,qcdgrup,qcdmodu,qcddate,qcd08,qcdorig,qcdoriu,qcd09,qcdud01 ",
+                        "    FROM qcd_file",
                         "  WHERE qcd01 = ? "
-            CASE g_argv1 
-              WHEN "1" 
-                   LET l_sql = l_sql CLIPPED, "  AND qcd08 IN ('1','9') ",                
+            CASE g_argv1
+              WHEN "1"
+                   LET l_sql = l_sql CLIPPED, "  AND qcd08 IN ('1','9') ",
                                "   ORDER BY qcd02"
               WHEN "2"
-                   LET l_sql = l_sql CLIPPED, "  AND qcd08 IN ('5','9') ",                 
-                               "   ORDER BY qcd02"   
+                   LET l_sql = l_sql CLIPPED, "  AND qcd08 IN ('5','9') ",
+                               "   ORDER BY qcd02"
               WHEN "3"
-                   LET l_sql = l_sql CLIPPED, "  AND qcd08 IN ('4','9') ",                 
-                               "   ORDER BY qcd02" 
+                   LET l_sql = l_sql CLIPPED, "  AND qcd08 IN ('4','9') ",
+                               "   ORDER BY qcd02"
               WHEN "4"
-                   LET l_sql = l_sql CLIPPED, "  AND qcd08 IN ('2','9') ",                 
-                               "   ORDER BY qcd02"  
-            END CASE                                                                       
-            
-            PREPARE qcd_cur1 FROM l_sql                     
-            DECLARE qcd_cur CURSOR FOR qcd_cur1 
-        
-            FOREACH qcd_cur USING g_qcs.qcs021 INTO l_qcd.* 
+                   LET l_sql = l_sql CLIPPED, "  AND qcd08 IN ('2','9') ",
+                               "   ORDER BY qcd02"
+            END CASE
+
+            PREPARE qcd_cur1 FROM l_sql
+            DECLARE qcd_cur CURSOR FOR qcd_cur1
+
+            FOREACH qcd_cur USING g_qcs.qcs021 INTO l_qcd.*
 #No.FUN-A80063--begin
 #               IF l_qcd.qcd05 = '1' THEN
-# 
+#
 #                  IF g_qcs.qcs00 MATCHES '[56H]' THEN   #MOD-A20100 add H
 #                     CALL s_newaql_1(g_qcs.qcs021,g_qcs03_t,l_qcd.qcd04,g_qcs.qcs22)
 #                          RETURNING l_ac_num,l_re_num
 #                  ELSE
-#                     CALL s_newaql(g_qcs.qcs021,g_qcs03_t,l_qcd.qcd04,g_qcs.qcs22,g_ecm04,g_type)    #MOD-890223 add g_ecm04,g_type 
-#                          RETURNING l_ac_num,l_re_num 
+#                     CALL s_newaql(g_qcs.qcs021,g_qcs03_t,l_qcd.qcd04,g_qcs.qcs22,g_ecm04,g_type)    #MOD-890223 add g_ecm04,g_type
+#                          RETURNING l_ac_num,l_re_num
 #                  END IF
 #                  CALL t110_defqty(2,l_qcd.qcd04,l_qcd.qcd03,l_qcd.qcd05) RETURNING l_qct11     #No.FUN-A80130
 #               ELSE
@@ -7061,7 +7063,7 @@ FUNCTION t110_g_b()
 
 
                CASE l_qcd.qcd05
-                 WHEN '1'   #一般 
+                 WHEN '1'   #一般
                   IF g_qcs.qcs00 MATCHES '[56H]' THEN   #MOD-A20100 add H
                      CALL s_newaql_1(g_qcs.qcs021,g_qcs03_t,l_qcd.qcd04,g_qcs.qcs22)
                           RETURNING l_ac_num,l_re_num
@@ -7093,37 +7095,37 @@ FUNCTION t110_g_b()
                  WHEN '3'   #1916 计数
                   LET l_ac_num =0
                   LET l_re_num =1
-                  CALL t110_defqty(2,l_qcd.qcd04,l_qcd.qcd03,l_qcd.qcd05) RETURNING l_qct11  
+                  CALL t110_defqty(2,l_qcd.qcd04,l_qcd.qcd03,l_qcd.qcd05) RETURNING l_qct11
                   LET l_qct14 =''
                   LET l_qct15 =''
 
                  WHEN '4'   #1916 计量
                   LET l_ac_num =''
                   LET l_re_num =''
-                  CALL t110_defqty(2,l_qcd.qcd04,l_qcd.qcd03,l_qcd.qcd05) RETURNING l_qct11  
+                  CALL t110_defqty(2,l_qcd.qcd04,l_qcd.qcd03,l_qcd.qcd05) RETURNING l_qct11
                   SELECT qdf02 INTO l_qdf02
                     FROM qdf_file
                    WHERE (g_qcs.qcs22 BETWEEN qdf03 AND qdf04)
-                     AND qdf01 = l_qcd.qcd03  
+                     AND qdf01 = l_qcd.qcd03
                   SELECT qdg05,qdg06 INTO l_qct14,l_qct15
                     FROM qdg_file
                    WHERE qdg01 = g_ima101
-                     AND qdg02 = l_qcd.qcd03  
+                     AND qdg02 = l_qcd.qcd03
                      AND qdg03 = l_qdf02
-                  IF SQLCA.sqlcode THEN 
+                  IF SQLCA.sqlcode THEN
                      LET l_qct14 =0
                      LET l_qct15 =0
                   END IF
-               END CASE  
-#No.FUN-A80063 --end 
+               END CASE
+#No.FUN-A80063 --end
                IF l_qct11 > g_qcs.qcs22 THEN
                   LET l_qct11 = g_qcs.qcs22
                END IF
- 
+
                IF cl_null(l_qct11) THEN
                   LET l_qct11 = 0
                END IF
-         
+
               #FUN-C30149 add START
                IF g_flag = 'Y' THEN
                   LET l_cnt = 0
@@ -7139,40 +7141,40 @@ FUNCTION t110_g_b()
                INSERT INTO qct_file (qct01,qct02,qct021,qct03,qct04,qct05,  #No.MOD-470041
                                      qct06,qct07,qct08,qct09,qct10,qct11,
                                      qct12,qct131,qct132,qct14,qct15,                               #No.FUN-A80063
-                                     qctplant,qctlegal)  #FUN-980007
+                                     qctplant,qctlegal,qctud02)  #FUN-980007
                               VALUES(g_qcs.qcs01,g_qcs.qcs02,g_qcs.qcs05,seq,
                                      l_qcd.qcd02,l_qcd.qcd03,l_qcd.qcd04,
                                      0,'1',l_ac_num,l_re_num,l_qct11,
                                      l_qcd.qcd05,l_qcd.qcd061,l_qcd.qcd062,l_qct14,l_qct15,         #No.FUN-A80063
-                                     g_plant,g_legal)    #FUN-980007
+                                     g_plant,g_legal,l_qcd.qcdud01)    #FUN-980007
                LET seq = seq + 1
             END FOREACH
          WHEN '3'      #--- 材料類別檢驗項目
          LET l_sql = " SELECT qck_file.* FROM qck_file,ima_file ",
                      "  WHERE qck01 = ima109 AND ima01 = ?"
-            CASE g_argv1 
-              WHEN "1" 
-                   LET l_sql = l_sql CLIPPED, "  AND qck08 IN ('1','9') ",                
+            CASE g_argv1
+              WHEN "1"
+                   LET l_sql = l_sql CLIPPED, "  AND qck08 IN ('1','9') ",
                                "   ORDER BY qck02"
               WHEN "2"
-                   LET l_sql = l_sql CLIPPED, "  AND qck08 IN ('5','9') ",                 
-                               "   ORDER BY qck02"   
+                   LET l_sql = l_sql CLIPPED, "  AND qck08 IN ('5','9') ",
+                               "   ORDER BY qck02"
               WHEN "3"
-                   LET l_sql = l_sql CLIPPED, "  AND qck08 IN ('4','9') ",                 
-                               "   ORDER BY qck02" 
+                   LET l_sql = l_sql CLIPPED, "  AND qck08 IN ('4','9') ",
+                               "   ORDER BY qck02"
               WHEN "4"
-                   LET l_sql = l_sql CLIPPED, "  AND qck08 IN ('2','9') ",                 
-                               "   ORDER BY qck02"  
-            END CASE 
-            PREPARE qck_cur1 FROM l_sql                     
-            DECLARE qck_cur CURSOR FOR qck_cur1                     
+                   LET l_sql = l_sql CLIPPED, "  AND qck08 IN ('2','9') ",
+                               "   ORDER BY qck02"
+            END CASE
+            PREPARE qck_cur1 FROM l_sql
+            DECLARE qck_cur CURSOR FOR qck_cur1
              FOREACH qck_cur USING g_qcs.qcs021 INTO l_qcd.*
 #No.FUN-A80063 --begin
 #               IF l_qcd.qcd05 = '1' THEN
-# 
+#
 #                  IF g_qcs.qcs00 MATCHES '[56H]' THEN   #MOD-A20100 add H
 #                     CALL s_newaql_1(g_qcs.qcs021,g_qcs03_t,l_qcd.qcd04,g_qcs.qcs22)
-#                          RETURNING l_ac_num,l_re_num 
+#                          RETURNING l_ac_num,l_re_num
 #                  ELSE
 #                     CALL s_newaql(g_qcs.qcs021,g_qcs03_t,l_qcd.qcd04,g_qcs.qcs22,g_ecm04,g_type)  #MOD-890223 g_ecm04,g_type
 #                          RETURNING l_ac_num,l_re_num
@@ -7192,7 +7194,7 @@ FUNCTION t110_g_b()
 #               END IF
 
                CASE l_qcd.qcd05
-                 WHEN '1'   #一般 
+                 WHEN '1'   #一般
                   IF g_qcs.qcs00 MATCHES '[56H]' THEN   #MOD-A20100 add H
                      CALL s_newaql_1(g_qcs.qcs021,g_qcs03_t,l_qcd.qcd04,g_qcs.qcs22)
                           RETURNING l_ac_num,l_re_num
@@ -7224,7 +7226,7 @@ FUNCTION t110_g_b()
                  WHEN '3'   #1916 计数
                   LET l_ac_num =0
                   LET l_re_num =1
-                 #CALL t110_defqty(2,l_qcd.qcd04,l_qcd.qcd03,l_qcd.qcd05) RETURNING l_qct11  #MOD-D40046 mark 
+                 #CALL t110_defqty(2,l_qcd.qcd04,l_qcd.qcd03,l_qcd.qcd05) RETURNING l_qct11  #MOD-D40046 mark
                   CALL t110_defqty(2,l_qcd.qcd04,g_qcs.qcs17,l_qcd.qcd05) RETURNING l_qct11  #MOD-D40046
                   LET l_qct14 =''
                   LET l_qct15 =''
@@ -7238,18 +7240,18 @@ FUNCTION t110_g_b()
                     FROM qdf_file
                    WHERE (g_qcs.qcs22 BETWEEN qdf03 AND qdf04)
                     #AND qdf01 = l_qcd.qcd03  #MOD-D40046 mark
-                     AND qdf01 = g_qcs.qcs17  #MOD-D40046 
+                     AND qdf01 = g_qcs.qcs17  #MOD-D40046
                   SELECT qdg05,qdg06 INTO l_qct14,l_qct15
                     FROM qdg_file
                    WHERE qdg01 = g_ima101
                     #AND qdg02 = l_qcd.qcd03  #MOD-D40046 mark
-                     AND qdg02 = g_qcs.qcs17  #MOD-D40046 
+                     AND qdg02 = g_qcs.qcs17  #MOD-D40046
                      AND qdg03 = l_qdf02
-                  IF SQLCA.sqlcode THEN 
+                  IF SQLCA.sqlcode THEN
                      LET l_qct14 =0
                      LET l_qct15 =0
                   END IF
-               END CASE  
+               END CASE
 #No.FUN-A80063 --end
                IF l_qct11 > g_qcs.qcs22 THEN LET l_qct11=g_qcs.qcs22 END IF
                IF cl_null(l_qct11) THEN LET l_qct11=0 END IF
@@ -7280,9 +7282,9 @@ FUNCTION t110_g_b()
       END CASE
       CALL t110_show()
    END IF
- 
+
 END FUNCTION
- 
+
 FUNCTION t110_ii(p_cmd)
    DEFINE p_cmd   LIKE type_file.chr1    #No.FUN-680104 VARCHAR(1)
    DEFINE l_chose        LIKE type_file.num5    #TQC-C30082 add
@@ -7290,28 +7292,28 @@ FUNCTION t110_ii(p_cmd)
    DEFINE l_rvbs04       LIKE rvbs_file.rvbs04  #TQC-C30082 add
    DEFINE l_rvbs021      LIKE rvbs_file.rvbs021 #TQC-C30082 add
    DEFINE l_upd_success  LIKE type_file.chr1    #TQC-C30082 add
- 
+
    DISPLAY BY NAME g_qcs.qcs091,g_qcs.qcs09,g_qcs.qcs13
- 
- 
+
+
    INPUT BY NAME g_qcs.qcs13 WITHOUT DEFAULTS
- 
+
       AFTER FIELD qcs13
          IF cl_null(g_qcs.qcs13) THEN
-            LET g_qcs.qcs13 = g_qcs_o.qcs13     #MOD-910138 
+            LET g_qcs.qcs13 = g_qcs_o.qcs13     #MOD-910138
             NEXT FIELD qcs13
          END IF
          SELECT gen02 INTO m_gen02 FROM gen_file
           WHERE gen01 = g_qcs.qcs13
          IF STATUS THEN
             CALL cl_err3("sel","gen_file",g_qcs.qcs13,"","aoo-017","","",1)  #No.FUN-660115
-            LET g_qcs.qcs13 = g_qcs_o.qcs13     #MOD-910138 
+            LET g_qcs.qcs13 = g_qcs_o.qcs13     #MOD-910138
             SELECT gen02 INTO m_gen02 FROM gen_file  WHERE gen01 = g_qcs.qcs13  #MOD-910138
             NEXT FIELD qcs13
          END IF
          DISPLAY m_gen02 TO FORMONLY.gen02
 #No.TQC-C30082---------------add begin-----------------------
-         
+
          IF g_qcs.qcs09 = '1' THEN
             SELECT COUNT(*) INTO l_chose FROM rvbs_file,inj_file
              WHERE rvbs00 = g_prog
@@ -7379,7 +7381,7 @@ FUNCTION t110_ii(p_cmd)
              END IF
           END IF
 #No.TQC-C30082---------------add end-------------------------
- 
+
       ON ACTION CONTROLP
          CASE
             WHEN INFIELD(qcs13) #員工編號
@@ -7390,32 +7392,32 @@ FUNCTION t110_ii(p_cmd)
                DISPLAY BY NAME g_qcs.qcs13
                NEXT FIELD qcs13
          END CASE
- 
+
       ON ACTION CONTROLR
          CALL cl_show_req_fields()
- 
+
       ON ACTION CONTROLG
          CALL cl_cmdask()
- 
+
       ON IDLE g_idle_seconds
          CALL cl_on_idle()
          CONTINUE INPUT
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
+
    END INPUT
- 
+
    UPDATE qcs_file SET qcs13 = g_qcs.qcs13
     WHERE qcs01 = g_qcs.qcs01
       AND qcs02 = g_qcs.qcs02
       AND qcs05 = g_qcs.qcs05
- 
+
 END FUNCTION
- 
+
  FUNCTION t110_more_b(l_qct07)   #TQC-970126
    DEFINE ls_tmp           STRING
    DEFINE l_qcu            DYNAMIC ARRAY OF RECORD
@@ -7424,7 +7426,7 @@ END FUNCTION
                               qcu05   LIKE qcu_file.qcu05,
                               qcuicd01 LIKE qcu_file.qcuicd01,   #No.FUN-830131
                               qcuicd02 LIKE qcu_file.qcuicd02,   #No.FUN-830131
-                              icd03    LIKE icd_file.icd03       #No.FUN-830131  
+                              icd03    LIKE icd_file.icd03       #No.FUN-830131
                            END RECORD
    DEFINE l_qcu05_t        LIKE qcu_file.qcu05
    DEFINE l_n,l_cnt        LIKE type_file.num5    #No.FUN-680104 SMALLINT
@@ -7432,27 +7434,27 @@ END FUNCTION
    DEFINE l_rec_b          LIKE type_file.num5,    #No.FUN-680104 SMALLINT
           l_allow_insert   LIKE type_file.num5,                #可新增否  #No.FUN-680104 SMALLINT
           l_allow_delete   LIKE type_file.num5                 #可刪除否  #No.FUN-680104 SMALLINT
-   DEFINE l_icd03          LIKE icd_file.icd03  
-   DEFINE l_qct07          LIKE qct_file.qct07           #TQC-970126 
+   DEFINE l_icd03          LIKE icd_file.icd03
+   DEFINE l_qct07          LIKE qct_file.qct07           #TQC-970126
    DEFINE l_chr            LIKE type_file.chr1           #TQC-970126
-                     
+
    OPEN WINDOW t110_mo AT 04,04 WITH FORM "aqc/42f/aqct1101"
      ATTRIBUTE (STYLE = g_win_style CLIPPED) #No.FUN-580092 HCN
- 
+
    CALL cl_ui_locale("aqct1101")
- 
+
    DECLARE t110_mo CURSOR FOR
-      SELECT qcu04,qce03,qcu05,qcuicd01,qcuicd02,icd03          #No.FUN-830131 
-       FROM qcu_file LEFT OUTER JOIN qce_file ON (qcu_file.qcu04 = qce_file.qce01) LEFT OUTER JOIN icd_file ON (qcu_file.qcuicd02 = icd_file.icd01)    #liuxqa 091022          #No.FUN-830131 
+      SELECT qcu04,qce03,qcu05,qcuicd01,qcuicd02,icd03          #No.FUN-830131
+       FROM qcu_file LEFT OUTER JOIN qce_file ON (qcu_file.qcu04 = qce_file.qce01) LEFT OUTER JOIN icd_file ON (qcu_file.qcuicd02 = icd_file.icd01)    #liuxqa 091022          #No.FUN-830131
        WHERE qcu01=g_qcs.qcs01   #liuxqa 091022
          AND qcu02=g_qcs.qcs02
          AND qcu021=g_qcs.qcs05
          AND qcu03=g_qct[l_ac].qct03
- 
+
    CALL l_qcu.clear()
    LET i = 1
    LET l_rec_b = 0
- 
+
    FOREACH t110_mo INTO l_qcu[i].*
       IF STATUS THEN
          CALL cl_err3("sel","qcu_file,","","",SQLCA.sqlcode,"","",1)  #No.FUN-660115
@@ -7460,33 +7462,33 @@ END FUNCTION
       END IF
       LET i = i + 1
    END FOREACH
- 
+
    LET l_rec_b= i - 1
    DISPLAY l_rec_b TO cn2
- 
+
    SELECT SUM(qcu05) INTO l_qcu05_t FROM qcu_file
     WHERE qcu01 = g_qcs.qcs01
       AND qcu02 = g_qcs.qcs02
       AND qcu021 = g_qcs.qcs05
       AND qcu03 = g_qct[l_ac].qct03
- 
+
    DISPLAY l_qcu05_t TO qcu05t
- 
+
    LET l_allow_insert = cl_detail_input_auth("insert")
    LET l_allow_delete = cl_detail_input_auth("delete")
- 
+
    INPUT ARRAY l_qcu WITHOUT DEFAULTS FROM s_qcu.*
          ATTRIBUTE(COUNT=l_rec_b,MAXCOUNT=g_max_rec,UNBUFFERED,
                    INSERT ROW=l_allow_insert,DELETE ROW=l_allow_delete,
                    APPEND ROW=l_allow_insert)
- 
+
       BEFORE INPUT
          CALL fgl_set_arr_curr(1)      #MOD-480543
- 
+
       BEFORE ROW
          LET i=ARR_CURR()
          CALL cl_show_fld_cont()     #FUN-550037(smin)
- 
+
       #MOD-C30571--add--str--
       AFTER FIELD qcu04
          SELECT qce03 INTO l_qcu[i].qce03 FROM qce_file
@@ -7503,14 +7505,14 @@ END FUNCTION
          END IF
          LET i = ARR_CURR()
          DISPLAY l_qcu[i].qce03 TO qce03
- 
+
       AFTER FIELD qcu05
          IF l_qcu[i].qcu05 < 0 OR l_qcu[i].qcu05 IS NULL THEN
             LET l_qcu[i].qcu05 = 0
             DISPLAY l_qcu[i].qcu05 TO qcu05
          END IF
- 
- 
+
+
       AFTER ROW
          IF INT_FLAG THEN                 #900423
             CALL cl_err('',9001,0)
@@ -7518,20 +7520,20 @@ END FUNCTION
             EXIT INPUT
          END IF
          LET l_qcu05_t = 0
-         LET l_chr = 'Y'  #TQC-970126           
+         LET l_chr = 'Y'  #TQC-970126
          FOR k = 1 TO l_qcu.getLength()
             IF l_qcu[k].qcu05 IS NOT NULL AND l_qcu[k].qcu05 <> 0 THEN
                LET l_qcu05_t = l_qcu05_t + l_qcu[k].qcu05
             END IF
-            IF l_qcu05_t > l_qct07 THEN 
+            IF l_qcu05_t > l_qct07 THEN
                LET l_chr = 'N'
-               EXIT FOR 
-            END IF  
+               EXIT FOR
+            END IF
          END FOR
-         IF l_chr = 'N' THEN 
+         IF l_chr = 'N' THEN
             CALL cl_err('','aqc-029',0)
-            NEXT FIELD qcu05 
-         END IF      
+            NEXT FIELD qcu05
+         END IF
          DISPLAY l_qcu05_t TO qcu05t
 
       ON ACTION CONTROLP
@@ -7544,36 +7546,36 @@ END FUNCTION
                DISPLAY l_qcu[i].qcu04 TO qcu04
                NEXT FIELD qcu04
          END CASE
- 
+
       ON IDLE g_idle_seconds
          CALL cl_on_idle()
          CONTINUE INPUT
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
+
       ON ACTION controlg      #MOD-4C0121
          CALL cl_cmdask()     #MOD-4C0121
- 
+
    END INPUT
- 
+
    CLOSE WINDOW t110_mo
- 
+
    IF INT_FLAG THEN
       CALL cl_err('',9001,0)
       LET INT_FLAG = 0
       RETURN
    END IF
- 
+
    DELETE FROM qcu_file
     WHERE qcu01 = g_qcs.qcs01
       AND qcu02 = g_qcs.qcs02
       AND qcu021 = g_qcs.qcs05
       AND qcu03 = g_qct[l_ac].qct03
- 
+
    FOR i = 1 TO l_qcu.getLength()
       IF l_qcu[i].qcu05 IS NULL OR l_qcu[i].qcu05=0 THEN
          CONTINUE FOR
@@ -7583,16 +7585,16 @@ END FUNCTION
                      VALUES(g_qcs.qcs01,g_qcs.qcs02,g_qcs.qcs05,
                             g_qct[l_ac].qct03,l_qcu[i].qcu04,l_qcu[i].qcu05,
                             g_plant,g_legal)    #FUN-980007
- 
+
       IF SQLCA.sqlcode THEN
          CALL cl_err3("ins","qcu_file",g_qcs.qcs01,g_qct[l_ac].qct03,SQLCA.sqlcode,"","INS-qcu",1)  #No.FUN-660115
          LET g_success = 'N'
          EXIT FOR
       END IF
    END FOR
- 
+
 END FUNCTION
- 
+
 FUNCTION t110_more_b1(p_qct11,p_qcd05,p_qcd061,p_qcd062,p_qct03,p_qct04)
    DEFINE l_qctt           DYNAMIC ARRAY OF RECORD
                               qctt04   LIKE qctt_file.qctt04
@@ -7614,12 +7616,12 @@ FUNCTION t110_more_b1(p_qct11,p_qcd05,p_qcd061,p_qcd062,p_qct03,p_qct04)
           l_allow_insert   LIKE type_file.num5,                #可新增否  #No.FUN-680104 SMALLINT
           l_allow_delete   LIKE type_file.num5                 #可刪除否  #No.FUN-680104 SMALLINT
    DEFINE l_qcs09          LIKE qcs_file.qcs09    #CHI-C70004 add
- 
+
    OPEN WINDOW t110_mo1 AT 04,04 WITH FORM "aqc/42f/aqct1102"
      ATTRIBUTE (STYLE = g_win_style CLIPPED) #No.FUN-580092 HCN
- 
+
    CALL cl_ui_locale("aqct1102")
- 
+
    DISPLAY p_qct03 TO FORMONLY.qct03
    DISPLAY p_qct04 TO FORMONLY.qct04
    SELECT azf03 INTO l_azf03 FROM azf_file
@@ -7630,19 +7632,19 @@ FUNCTION t110_more_b1(p_qct11,p_qcd05,p_qcd061,p_qcd062,p_qct03,p_qct04)
    DISPLAY p_qcd05 TO FORMONLY.qct12
    DISPLAY p_qcd061 TO FORMONLY.qct131
    DISPLAY p_qcd062 TO FORMONLY.qct132
- 
+
    CALL l_qctt.clear()
- 
+
    LET i = 1
    LET k = 1
    LET l_rec_b = 0
-   LET l_flag = 0        #MOD-B10034 add 
+   LET l_flag = 0        #MOD-B10034 add
    DECLARE t110_mo1 CURSOR FOR SELECT qctt04 FROM qctt_file
                                 WHERE qctt01 = g_qcs.qcs01
                                   AND qctt02 = g_qcs.qcs02
                                   AND qctt021 = g_qcs.qcs05
                                   AND qctt03 = g_qct[l_ac].qct03
- 
+
    FOREACH t110_mo1 INTO l_qctt[k].*
       IF STATUS THEN
          CALL cl_err3("sel","l_azf03","","",SQLCA.sqlcode,"","",1)  #No.FUN-660115
@@ -7654,26 +7656,26 @@ FUNCTION t110_more_b1(p_qct11,p_qcd05,p_qcd061,p_qcd062,p_qct03,p_qct04)
          EXIT FOREACH
       END IF
    END FOREACH
- 
+
    #填充單身最後一筆為 NULL array, 故要刪掉
    CALL l_qctt.deleteElement(k) #MOD-4B0139
    LET l_rec_b = k - 1
    DISPLAY l_rec_b TO cn2
- 
+
    LET l_allow_insert = cl_detail_input_auth("insert")
    LET l_allow_delete = cl_detail_input_auth("delete")
- 
+
    WHILE TRUE #MOD-4B0139
- 
+
       INPUT ARRAY l_qctt WITHOUT DEFAULTS FROM s_qctt.*
             ATTRIBUTE(COUNT=l_rec_b,MAXCOUNT=g_max_rec,UNBUFFERED,
                       INSERT ROW=l_allow_insert,DELETE ROW=l_allow_delete,
                       APPEND ROW=l_allow_insert)
- 
+
          BEFORE ROW
             LET i=ARR_CURR()
             CALL cl_show_fld_cont()     #FUN-550037(smin)
- 
+
             LET l_rowcount = 0
             FOR l_i = 1 TO l_qctt.getLength()
                IF l_qctt[l_i].qctt04 IS NULL THEN
@@ -7682,7 +7684,7 @@ FUNCTION t110_more_b1(p_qct11,p_qcd05,p_qcd061,p_qcd062,p_qct03,p_qct04)
                LET l_rowcount = l_rowcount + 1
             END FOR
             DISPLAY l_rowcount TO cn2
- 
+
          AFTER ROW
             IF INT_FLAG THEN
                CALL cl_err('',9001,0)
@@ -7698,22 +7700,22 @@ FUNCTION t110_more_b1(p_qct11,p_qcd05,p_qcd061,p_qcd062,p_qct03,p_qct04)
                LET l_rowcount = l_rowcount + 1
             END FOR
             DISPLAY l_rowcount TO cn2
- 
+
          AFTER INPUT
- 
+
          ON IDLE g_idle_seconds
             CALL cl_on_idle()
             CONTINUE INPUT
- 
+
          ON ACTION about         #MOD-4C0121
             CALL cl_about()      #MOD-4C0121
- 
+
          ON ACTION help          #MOD-4C0121
             CALL cl_show_help()  #MOD-4C0121
- 
+
          ON ACTION controlg      #MOD-4C0121
             CALL cl_cmdask()     #MOD-4C0121
- 
+
          LET l_rowcount = 0
          FOR l_i = 1 TO l_qctt.getLength()
             IF l_qctt[l_i].qctt04 IS NULL THEN
@@ -7722,7 +7724,7 @@ FUNCTION t110_more_b1(p_qct11,p_qcd05,p_qcd061,p_qcd062,p_qct03,p_qct04)
             LET l_rowcount = l_rowcount + 1
          END FOR
          DISPLAY l_rowcount TO cn2
- 
+
       END INPUT
       IF l_flag = 0 THEN         #MOD-B10034 add
            #CHI-C70004 str add-----
@@ -7739,28 +7741,28 @@ FUNCTION t110_more_b1(p_qct11,p_qcd05,p_qcd061,p_qcd062,p_qct03,p_qct04)
       END IF                #MOD-B10034 add
       EXIT WHILE
    END WHILE #MOD-4B0139
- 
+
    CLOSE WINDOW t110_mo1
- 
+
    IF INT_FLAG THEN
       CALL cl_err('',9001,0)
       LET INT_FLAG = 0
       RETURN
    END IF
- 
+
    DELETE FROM qctt_file
     WHERE qctt01 = g_qcs.qcs01
       AND qctt02 = g_qcs.qcs02
       AND qctt021 = g_qcs.qcs05
       AND qctt03 = g_qct[l_ac].qct03
- 
+
    LET g_qct[l_ac].qct07 = 0
- 
+
    FOR i = 1 TO l_qctt.getLength()
       IF l_qctt[i].qctt04 IS NULL THEN                        #MOD-4B0139允許輸入零
          CONTINUE FOR
       END IF
- 
+
       INSERT INTO qctt_file(qctt01,qctt02,qctt021,qctt03,qctt04,  #No.MOD-470041
                             qcttplant,qcttlegal) #FUN-980007
           VALUES(g_qcs.qcs01,g_qcs.qcs02,g_qcs.qcs05,g_qct[l_ac].qct03,
@@ -7776,20 +7778,20 @@ FUNCTION t110_more_b1(p_qct11,p_qcd05,p_qcd061,p_qcd062,p_qct03,p_qct04)
          END IF
       END IF
    END FOR
- 
+
 END FUNCTION
- 
+
 FUNCTION t110_out()
    DEFINE l_cmd        LIKE type_file.chr1000,#No:9554  #No.FUN-680104 VARCHAR(300)
           l_wc2        LIKE type_file.chr1000,#No:9554  #No.FUN-680104 VARCHAR(120)
           l_prtway     LIKE type_file.chr1    #No.FUN-680104 VARCHAR(01)
- 
+
    CALL cl_wait()
- 
+
    LET l_wc = 'qcs01="',g_qcs.qcs01,
               '" AND qcs02="',g_qcs.qcs02,
               '" AND qcs05="',g_qcs.qcs05,'"'  #No:9554
- 
+
    CASE g_argv1
       WHEN "1"
          SELECT zz21,zz22 INTO l_wc2,l_prtway
@@ -7820,16 +7822,16 @@ FUNCTION t110_out()
         LET l_cmd = 'aqcr300'   #FUN-C30085 mark
         # LET l_cmd = 'aqcg300'   #FUN-C30085 add
    END CASE
- 
+
    LET l_cmd = l_cmd CLIPPED ,
                "  '1' '' ",
                " '",g_lang CLIPPED,"' 'N' '",l_prtway,"' ",
                " '",l_wc CLIPPED,"' "
    CALL cl_cmdrun(l_cmd)
    ERROR ' '
- 
+
 END FUNCTION
- 
+
 FUNCTION t110_b_memo()
    DEFINE l_qcv            DYNAMIC ARRAY OF RECORD
           qcv04            LIKE qcv_file.qcv04
@@ -7840,97 +7842,97 @@ FUNCTION t110_b_memo()
    DEFINE ls_tmp           STRING,
           l_allow_insert   LIKE type_file.num5,                #可新增否  #No.FUN-680104 SMALLINT
           l_allow_delete   LIKE type_file.num5                 #可刪除否  #No.FUN-680104 SMALLINT
- 
+
    OPEN WINDOW t110_b_memo AT 04,04 WITH FORM "aqc/42f/aqct1103"
      ATTRIBUTE (STYLE = g_win_style CLIPPED) #No.FUN-580092 HCN
- 
+
    CALL cl_ui_locale("aqct1103")
- 
+
    DECLARE t110_b_memo CURSOR FOR SELECT qcv04 FROM qcv_file
                                    WHERE qcv01 = g_qcs.qcs01
                                      AND qcv02 = g_qcs.qcs02
                                      AND qcv021 = g_qcs.qcs05
                                      AND qcv03 = g_qct[l_ac].qct03
- 
+
    CALL l_qcv.clear()
    LET i = 1
    LET l_rec_b = 0
- 
+
    FOREACH t110_b_memo INTO l_qcv[i].*
       IF STATUS THEN
          CALL cl_err('foreach qcv',STATUS,0)
          EXIT FOREACH
       END IF
- 
+
       LET i = i + 1
- 
+
       IF i > g_max_rec THEN
          CALL cl_err( '', 9035, 0 )
          EXIT FOREACH
       END IF
    END FOREACH
- 
+
    LET l_rec_b = i-1
    DISPLAY l_rec_b TO cn2          #bug no:6494
- 
+
    LET l_allow_insert = cl_detail_input_auth("insert")
    LET l_allow_delete = cl_detail_input_auth("delete")
- 
+
    INPUT ARRAY l_qcv WITHOUT DEFAULTS FROM s_qcv.*
          ATTRIBUTE(COUNT=l_rec_b,MAXCOUNT=g_max_rec,UNBUFFERED,
                    INSERT ROW=l_allow_insert,DELETE ROW=l_allow_delete,
                    APPEND ROW=l_allow_insert)
- 
+
       BEFORE INPUT
          IF g_rec_b != 0 THEN
             CALL fgl_set_arr_curr(l_ac)
          END IF
- 
+
       BEFORE ROW
          LET i = ARR_CURR()
          CALL cl_show_fld_cont()     #FUN-550037(smin)
- 
+
       AFTER ROW
          IF INT_FLAG THEN
             CALL cl_err('',9001,0)
             LET INT_FLAG = 0
             EXIT INPUT
          END IF
- 
+
       ON IDLE g_idle_seconds
          CALL cl_on_idle()
          CONTINUE INPUT
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
+
       ON ACTION controlg      #MOD-4C0121
          CALL cl_cmdask()     #MOD-4C0121
- 
+
    END INPUT
- 
+
    CLOSE WINDOW t110_b_memo
- 
+
    IF INT_FLAG THEN
       CALL cl_err('',9001,0)
       LET INT_FLAG = 0
       RETURN
    END IF
- 
+
    DELETE FROM qcv_file
     WHERE qcv01 = g_qcs.qcs01
       AND qcv02 = g_qcs.qcs02
       AND qcv021 = g_qcs.qcs05
       AND qcv03 = g_qct[l_ac].qct03
- 
+
    FOR i = 1 TO l_qcv.getLength()
       IF cl_null(l_qcv[i].qcv04) THEN
          CONTINUE FOR
       END IF
- 
+
       INSERT INTO qcv_file(qcv01,qcv02,qcv021,qcv03,qcv04,  #No.MOD-470041
                            qcvplant,qcvlegal) #FUN-980007
            VALUES(g_qcs.qcs01,g_qcs.qcs02,g_qcs.qcs05,g_qct[l_ac].qct03,
@@ -7942,34 +7944,34 @@ FUNCTION t110_b_memo()
          EXIT FOR
       END IF
    END FOR
- 
+
 END FUNCTION
- 
+
 FUNCTION t110_m()
- 
+
    IF g_qcs.qcs01 IS NULL THEN
       RETURN
    END IF
- 
- 
+
+
    LET g_action_choice = "modify"
- 
+
    IF NOT cl_chk_act_auth() THEN
       LET g_chr = 'd'
    ELSE
       LET g_chr = 'u'
    END IF
- 
+
    DISPLAY " 1=",g_qcs.qcs01
    DISPLAY " 2=",g_qcs.qcs02
    DISPLAY " 3=",g_qcs.qcs05
    DISPLAY " 4=",0
    DISPLAY " 5=",g_chr
- 
+
    CALL s_aqc_memo(g_qcs.qcs01,g_qcs.qcs02,g_qcs.qcs05,0,g_chr)
- 
+
 END FUNCTION
- 
+
 FUNCTION t110_3()
    DEFINE l_qty1,l_qty2 LIKE qcs_file.qcs091    #No.MOD-640514 add
    DEFINE l_str      STRING                     #NO.MOD_650102 add
@@ -7980,7 +7982,7 @@ FUNCTION t110_3()
    DEFINE l_rvbs04   LIKE rvbs_file.rvbs04  #No.TQC-B90236
    DEFINE l_ima44    LIKE ima_file.ima44    #FUN-BB0085
    DEFINE l_qck09               LIKE qck_file.qck09
-   DEFINE l_type                LIKE type_file.chr1 
+   DEFINE l_type                LIKE type_file.chr1
    DEFINE l_sum      LIKE qcs_file.qcs091   #FUN-CC0015 add
    # darcy:2026/01/27 add s---
    DEFINE l_ret        RECORD
@@ -7995,16 +7997,16 @@ FUNCTION t110_3()
     WHERE qcs01 = g_qcs.qcs01
       AND qcs02 = g_qcs.qcs02
       AND qcs05 = g_qcs.qcs05
- 
+
    IF g_qcs.qcs09 = '1' THEN   #No.MOD-480059
       RETURN
    END IF
- 
+
    IF cl_null(g_qcs.qcs01) THEN
       CALL cl_err('',-400,0)
       RETURN
    END IF
- 
+
    #FUN-CC0015 mark begin---
    #IF g_qcs.qcs14 != 'Y' THEN
    #   CALL cl_err(g_qcs.qcs01,'anm-960',0)
@@ -8014,19 +8016,19 @@ FUNCTION t110_3()
    LET g_qcs.qcsud13 = ''
    LET g_cnt =0
    SELECT count(*) INTO g_cnt FROM rvu_file,rvv_file
-    WHERE rvu02=g_qcs.qcs01 AND rvu02=rvv04 AND rvv05=g_qcs.qcs02 
-          AND rvu00='2' AND  rvuconf != 'X' 
+    WHERE rvu02=g_qcs.qcs01 AND rvu02=rvv04 AND rvv05=g_qcs.qcs02
+          AND rvu00='2' AND  rvuconf != 'X'
    IF g_cnt >0 THEN
-      LET l_str= g_qcs.qcs01,g_qcs.qcs02 
+      LET l_str= g_qcs.qcs01,g_qcs.qcs02
       IF NOT cl_confirm2('aqc-430',l_str) THEN RETURN END IF
    END IF
- 
+
    LET g_qcs_t.* = g_qcs.*
- 
+
    BEGIN WORK
- 
+
    LET g_success = 'Y'
- 
+
    OPEN t110_cl USING g_qcs.qcs01,g_qcs.qcs02,g_qcs.qcs05   #liuxqa 091022
    IF SQLCA.sqlcode THEN
       CALL cl_err(g_qcs.qcs01,SQLCA.sqlcode,0)      #資料被他人LOCK
@@ -8034,7 +8036,7 @@ FUNCTION t110_3()
       ROLLBACK WORK
       RETURN
    END IF
- 
+
    FETCH t110_cl INTO g_qcs.*          #鎖住將被更改或取消的資料
    IF SQLCA.sqlcode THEN
       CALL cl_err(g_qcs.qcs01,SQLCA.sqlcode,0)      #資料被他人LOCK
@@ -8042,23 +8044,23 @@ FUNCTION t110_3()
       ROLLBACK WORK
       RETURN
    END IF
- 
+
    #show特採
-   CALL cl_getmsg('aqc-006',g_lang) RETURNING des1   
-   DISPLAY '3',des1 TO qcs09,FORMONLY.des1          
- 
+   CALL cl_getmsg('aqc-006',g_lang) RETURNING des1
+   DISPLAY '3',des1 TO qcs09,FORMONLY.des1
+
    #FUN-CC0015 mark begin---
-   #INPUT BY NAME g_qcs.qcs41,g_qcs.qcs38,g_qcs.qcs091 WITHOUT DEFAULTS 
- 
+   #INPUT BY NAME g_qcs.qcs41,g_qcs.qcs38,g_qcs.qcs091 WITHOUT DEFAULTS
+
    #   BEFORE INPUT
    #      IF g_sma.sma115 = "Y" THEN
    #         CALL cl_set_comp_entry("qcs38,qcs41",TRUE)
-   #         CALL cl_set_comp_entry("qcs091",FALSE)             
+   #         CALL cl_set_comp_entry("qcs091",FALSE)
    #      ELSE
    #         CALL cl_set_comp_entry("qcs38,qcs41",FALSE)
-   #         CALL cl_set_comp_entry("qcs091",TRUE)             
+   #         CALL cl_set_comp_entry("qcs091",TRUE)
    #      END IF
- 
+
    #   AFTER FIELD qcs38
    #      #FUN-BB0085-add-str--
    #      IF NOT cl_null(g_qcs.qcs38) THEN
@@ -8086,11 +8088,11 @@ FUNCTION t110_3()
    #         END IF
    #         DISPLAY BY NAME g_qcs.qcs091
    #      END IF
- 
+
    #   AFTER FIELD qcs41
    #      #FUN-BB0085-add-str--
-   #      IF NOT cl_null(g_qcs.qcs41) THEN 
-   #         IF g_qcs.qcs41 != g_qcs_t.qcs41 OR cl_null(g_qcs_t.qcs41) THEN 
+   #      IF NOT cl_null(g_qcs.qcs41) THEN
+   #         IF g_qcs.qcs41 != g_qcs_t.qcs41 OR cl_null(g_qcs_t.qcs41) THEN
    #            LET g_qcs.qcs41 = s_digqty(g_qcs.qcs41,g_qcs.qcs39)
    #            DISPLAY BY NAME g_qcs.qcs41
    #         END IF
@@ -8114,10 +8116,10 @@ FUNCTION t110_3()
    #         #FUN-BB0085-add-end--
    #         DISPLAY BY NAME g_qcs.qcs091
    #      END IF
- 
+
    #   AFTER FIELD qcs091
    #      #FUN-BB0085-add-str--
-   #      IF NOT cl_null(g_qcs.qcs091) THEN 
+   #      IF NOT cl_null(g_qcs.qcs091) THEN
    #         SELECT ima44 INTO l_ima44 FROM ima_file
    #          WHERE ima01 = g_qcs.qcs021
    #         LET g_qcs.qcs091 = s_digqty(g_qcs.qcs091,l_ima44)
@@ -8127,23 +8129,23 @@ FUNCTION t110_3()
    #         CALL cl_err('err qcs091','aqc-425',0)  #No.MOD-520016
    #         NEXT FIELD qcs091
    #      END IF
-   #      SELECT SUM(qcs091) INTO l_qty1 FROM qcs_file 
+   #      SELECT SUM(qcs091) INTO l_qty1 FROM qcs_file
    #         WHERE qcs01 = g_qcs.qcs01
    #           AND qcs02 = g_qcs.qcs02
    #           AND qcs05 != g_qcs.qcs05
    #           AND qcs14 = 'Y'
- 
-   #      SELECT SUM(rvv17) INTO l_qty2 FROM rvv_file,rvu_file 
+
+   #      SELECT SUM(rvv17) INTO l_qty2 FROM rvv_file,rvu_file
    #         WHERE rvu02 = g_qcs.qcs01
    #           AND rvu00 = '1'
    #           AND rvuconf != 'X'
    #           AND rvu01 = rvv01
    #           AND rvv05 = g_qcs.qcs02
- 
+
    #      IF cl_null(l_qty1) THEN LET l_qty1 = 0 END IF
    #      IF cl_null(l_qty2) THEN LET l_qty2 = 0 END IF
    #      LET l_qty1 = l_qty1 + g_qcs.qcs091
-   #      IF l_qty2 > l_qty1 THEN 
+   #      IF l_qty2 > l_qty1 THEN
    #         CALL cl_err('err qcs091','aqc-429',0)
    #         NEXT FIELD qcs091
    #      END IF
@@ -8155,14 +8157,14 @@ FUNCTION t110_3()
    #         END IF
    #         DISPLAY BY NAME g_qcs.qcs091
    #      END IF
-   #      SELECT ima918,ima921 INTO g_ima918,g_ima921 
+   #      SELECT ima918,ima921 INTO g_ima918,g_ima921
    #        FROM ima_file
    #       WHERE ima01 = g_qcs.qcs021
    #         AND imaacti = "Y"
-   #      
+   #
    #      IF g_ima918 = "Y" OR g_ima921 = "Y" THEN
-   #         #IF g_sma.sma90 = "Y" THEN   #CHI-A70047  
-   #         IF (g_sma.sma90 = "Y" AND g_argv1='1') OR g_argv1<>'1' THEN   #CHI-A70047 
+   #         #IF g_sma.sma90 = "Y" THEN   #CHI-A70047
+   #         IF (g_sma.sma90 = "Y" AND g_argv1='1') OR g_argv1<>'1' THEN   #CHI-A70047
    #            IF g_argv1 <> "4" THEN
    #               IF g_qcs.qcs00 NOT MATCHES '[EFG]' THEN
    #                  CALL t110_get_fac()
@@ -8172,7 +8174,7 @@ FUNCTION t110_3()
    #                 #             g_qcs.qcs091,'','IQC')    #No.MOD-950114 add#CHI-9A0022 add ''
    #                  CALL s_mod_lot(g_prog,g_qcs.qcs01,g_qcs.qcs02,g_qcs.qcs05,                 #TQC-B90236 add
    #                               g_qcs.qcs021,g_rvb36,g_rvb37,g_rvb38,g_pmn07,g_img09,l_fac,
-   #                               g_qcs.qcs091,'','IQC',1) 
+   #                               g_qcs.qcs091,'','IQC',1)
    #                        RETURNING l_r,g_qty
    #                  IF l_r = "Y" THEN
    #                     LET g_qcs.qcs091 = g_qty
@@ -8200,16 +8202,16 @@ FUNCTION t110_3()
    #      IF l_chose>0 THEN
    #         IF cl_confirm('aqc1006') THEN
    #            CALL cl_getmsg('aqc1007',g_lang) RETURNING g_msg     #開窗讓使用者輸入純度
-   #            LET INT_FLAG = 0  
+   #            LET INT_FLAG = 0
    #            PROMPT g_msg CLIPPED,': ' FOR l_choce
    #               ON IDLE g_idle_seconds
    #                  CALL cl_on_idle()
-   #               ON ACTION about      
-   #                  CALL cl_about()  
-   #               ON ACTION help     
-   #                  CALL cl_show_help()  
-   #               ON ACTION controlg    
-   #                  CALL cl_cmdask()  
+   #               ON ACTION about
+   #                  CALL cl_about()
+   #               ON ACTION help
+   #                  CALL cl_show_help()
+   #               ON ACTION controlg
+   #                  CALL cl_cmdask()
    #               IF INT_FLAG THEN
    #                  LET INT_FLAG = 0
    #                  RETURN
@@ -8224,7 +8226,7 @@ FUNCTION t110_3()
    #                   AND rvbs13 = g_qcs.qcs05
    #                   AND rvbs09 = 1
    #            FOREACH rvbs_curs_1 INTO l_rvbs021,l_rvbs04      #TQC-C30082 add
-   #               IF SQLCA.sqlcode THEN                         #TQC-C30082 add         
+   #               IF SQLCA.sqlcode THEN                         #TQC-C30082 add
    #                  CALL cl_err('foreach:',SQLCA.sqlcode,1)    #TQC-C30082 add
    #                  EXIT FOREACH                               #TQC-C30082 add
    #               END IF                                        #TQC-C30082 add
@@ -8250,35 +8252,35 @@ FUNCTION t110_3()
    #          END IF
    #       END IF
    #   #No.TQC-B90236---------------add end-------------------------
- 
+
    #   ON ACTION CONTROLR
    #      CALL cl_show_req_fields()
- 
+
    #   ON ACTION CONTROLG
    #      CALL cl_cmdask()
- 
+
    #   ON IDLE g_idle_seconds
    #      CALL cl_on_idle()
    #      CONTINUE INPUT
- 
+
    #   ON ACTION about         #MOD-4C0121
    #      CALL cl_about()      #MOD-4C0121
- 
+
    #   ON ACTION help          #MOD-4C0121
    #      CALL cl_show_help()  #MOD-4C0121
- 
+
    #END INPUT
    #FUN-CC0015 mark end-----
 
    #FUN-CC0015 add begin---
-   IF g_argv1 = '2' AND g_qcs.qcs00 <> 'Z' THEN  
-      CALL cl_err(l_type,'aqc-543',0)            
-   ELSE      
+   IF g_argv1 = '2' AND g_qcs.qcs00 <> 'Z' THEN
+      CALL cl_err(l_type,'aqc-543',0)
+   ELSE
          LET l_qck09='' LET l_type=''
          SELECT DISTINCT qck09 INTO l_qck09 FROM ima_file,qck_file
           WHERE qck01=ima109
             AND ima01=g_qcs.qcs021
-       IF l_qck09='Y' THEN              
+       IF l_qck09='Y' THEN
          CASE g_argv1
              WHEN "1"
                  LET l_type='1'
@@ -8291,28 +8293,28 @@ FUNCTION t110_3()
              OTHERWISE
                  LET l_type=''
          END CASE
-      ELSE                                    
+      ELSE
         #CALL cl_err(m_ima109,'aqc-537',0)   #MOD-D60068 mark
       END IF
       IF NOT cl_null(l_type) THEN
          LET g_msg = "aqci107 '",g_qcs.qcs01,"' '",g_qcs.qcs02,"' '",g_qcs.qcs05,"' '",l_type,"'"
          CALL cl_cmdrun_wait(g_msg)
       #MOD-D60068---add---START-------------------------------
-      ELSE 
+      ELSE
          let g_qcs.qcs091 = g_qcs.qcs22 #darcy:2025/12/08 add
          INPUT BY NAME g_qcs.qcs41,g_qcs.qcs38,g_qcs.qcs091,g_qcs.qcsud13 --WITHOUT DEFAULTS   #add byhlf07751
-      
-            BEFORE INPUT 
+
+            BEFORE INPUT
                display g_qcs.qcs22 to qcs091 # darcy:2025/12/08 add
                IF g_sma.sma115 = "Y" THEN
                   CALL cl_set_comp_entry("qcs38,qcs41",TRUE)
-                  CALL cl_set_comp_entry("qcs091,qcsud13",FALSE)      
-               ELSE  
+                  CALL cl_set_comp_entry("qcs091,qcsud13",FALSE)
+               ELSE
                   CALL cl_set_comp_entry("qcs38,qcs41",FALSE)
-                  CALL cl_set_comp_entry("qcs091,qcsud13",TRUE)      
+                  CALL cl_set_comp_entry("qcs091,qcsud13",TRUE)
                END IF
-      
-            AFTER FIELD qcs38 
+
+            AFTER FIELD qcs38
                #FUN-BB0085-add-str--
                IF NOT cl_null(g_qcs.qcs38) THEN
                   IF g_qcs.qcs38 != g_qcs_t.qcs38 OR cl_null(g_qcs_t.qcs38) THEN
@@ -8325,7 +8327,7 @@ FUNCTION t110_3()
                   IF g_ima906 = "2" THEN
                      LET g_qcs.qcs091 = g_qcs.qcs41 * g_qcs.qcs40 +
                                         g_qcs.qcs38 * g_qcs.qcs37
-                  ELSE  
+                  ELSE
                      LET g_qcs.qcs091 = g_qcs.qcs38 * g_qcs.qcs37
                   END IF
                   #FUN-BB0085-add-str--
@@ -8335,15 +8337,15 @@ FUNCTION t110_3()
                   #FUN-BB0085-add-end--
                   IF g_qcs.qcs091 > g_qcs.qcs22 THEN
                      CALL cl_err(g_qcs.qcs22,'aqc-037',0)
-                     NEXT FIELD qcs38 
+                     NEXT FIELD qcs38
                   END IF
                   DISPLAY BY NAME g_qcs.qcs091
                END IF
-      
-            AFTER FIELD qcs41 
+
+            AFTER FIELD qcs41
                #FUN-BB0085-add-str--
-               IF NOT cl_null(g_qcs.qcs41) THEN  
-                  IF g_qcs.qcs41 != g_qcs_t.qcs41 OR cl_null(g_qcs_t.qcs41) THEN  
+               IF NOT cl_null(g_qcs.qcs41) THEN
+                  IF g_qcs.qcs41 != g_qcs_t.qcs41 OR cl_null(g_qcs_t.qcs41) THEN
                      LET g_qcs.qcs41 = s_digqty(g_qcs.qcs41,g_qcs.qcs39)
                      DISPLAY BY NAME g_qcs.qcs41
                   END IF
@@ -8353,12 +8355,12 @@ FUNCTION t110_3()
                   IF g_ima906 = "2" THEN
                      LET g_qcs.qcs091 = g_qcs.qcs41 * g_qcs.qcs40 +
                                         g_qcs.qcs38 * g_qcs.qcs37
-                  ELSE  
+                  ELSE
                      LET g_qcs.qcs091 = g_qcs.qcs38 * g_qcs.qcs37
                   END IF
                   IF g_qcs.qcs091 > g_qcs.qcs22 THEN
                      CALL cl_err(g_qcs.qcs22,'aqc-037',0)
-                     NEXT FIELD qcs41 
+                     NEXT FIELD qcs41
                   END IF
                   #FUN-BB0085-add-str--
                   SELECT ima44 INTO l_ima44 FROM ima_file
@@ -8367,10 +8369,10 @@ FUNCTION t110_3()
                   #FUN-BB0085-add-end--
                   DISPLAY BY NAME g_qcs.qcs091
                END IF
-      
+
             AFTER FIELD qcs091
                #FUN-BB0085-add-str--
-               IF NOT cl_null(g_qcs.qcs091) THEN  
+               IF NOT cl_null(g_qcs.qcs091) THEN
                   SELECT ima44 INTO l_ima44 FROM ima_file
                    WHERE ima01 = g_qcs.qcs021
                   LET g_qcs.qcs091 = s_digqty(g_qcs.qcs091,l_ima44)
@@ -8380,42 +8382,42 @@ FUNCTION t110_3()
                   CALL cl_err('err qcs091','aqc-425',0)  #No.MOD-520016
                   NEXT FIELD qcs091
                END IF
-               SELECT SUM(qcs091) INTO l_qty1 FROM qcs_file 
+               SELECT SUM(qcs091) INTO l_qty1 FROM qcs_file
                   WHERE qcs01 = g_qcs.qcs01
                     AND qcs02 = g_qcs.qcs02
                     AND qcs05 != g_qcs.qcs05
-                    AND qcs14 = 'Y' 
-      
-               SELECT SUM(rvv17) INTO l_qty2 FROM rvv_file,rvu_file 
+                    AND qcs14 = 'Y'
+
+               SELECT SUM(rvv17) INTO l_qty2 FROM rvv_file,rvu_file
                   WHERE rvu02 = g_qcs.qcs01
-                    AND rvu00 = '1' 
+                    AND rvu00 = '1'
                     AND rvuconf != 'X'
-                    AND rvu01 = rvv01 
+                    AND rvu01 = rvv01
                     AND rvv05 = g_qcs.qcs02
-      
+
                IF cl_null(l_qty1) THEN LET l_qty1 = 0 END IF
                IF cl_null(l_qty2) THEN LET l_qty2 = 0 END IF
                LET l_qty1 = l_qty1 + g_qcs.qcs091
-               IF l_qty2 > l_qty1 THEN  
+               IF l_qty2 > l_qty1 THEN
                   CALL cl_err('err qcs091','aqc-429',0)
                   NEXT FIELD qcs091
                END IF
                IF cl_null(g_qcs.qcs091) THEN
                   IF NOT cl_null(g_qcs_o.qcs091) THEN
                      LET g_qcs.qcs091 = g_qcs_o.qcs091
-                  ELSE  
+                  ELSE
                      LET g_qcs.qcs091 = 0
                   END IF
                   DISPLAY BY NAME g_qcs.qcs091
                END IF
-               SELECT ima918,ima921 INTO g_ima918,g_ima921 
+               SELECT ima918,ima921 INTO g_ima918,g_ima921
                  FROM ima_file
                 WHERE ima01 = g_qcs.qcs021
-                  AND imaacti = "Y" 
-      
+                  AND imaacti = "Y"
+
                IF g_ima918 = "Y" OR g_ima921 = "Y" THEN
-                  #IF g_sma.sma90 = "Y" THEN   #CHI-A70047  
-                  IF (g_sma.sma90 = "Y" AND g_argv1='1') OR g_argv1<>'1' THEN   #CHI-A70047 
+                  #IF g_sma.sma90 = "Y" THEN   #CHI-A70047
+                  IF (g_sma.sma90 = "Y" AND g_argv1='1') OR g_argv1<>'1' THEN   #CHI-A70047
                      IF g_argv1 <> "4" THEN
                         IF g_qcs.qcs00 NOT MATCHES '[EFG]' THEN
                           #CALL t110_get_fac() #MOD-D60068 mark
@@ -8425,10 +8427,10 @@ FUNCTION t110_3()
                           #             g_qcs.qcs091,'','IQC')    #No.MOD-950114 add#CHI-9A0022 add ''
                            CALL s_mod_lot(g_prog,g_qcs.qcs01,g_qcs.qcs02,g_qcs.qcs05,                 #TQC-B90236 add
                                         g_qcs.qcs021,g_rvb36,g_rvb37,g_rvb38,g_pmn07,g_img09,l_fac,
-                                        g_qcs.qcs091,'','IQC',1) 
+                                        g_qcs.qcs091,'','IQC',1)
                                  RETURNING l_r,g_qty
                            IF l_r = "Y" THEN
-                              LET g_qcs.qcs091 = g_qty 
+                              LET g_qcs.qcs091 = g_qty
                               SELECT ima44 INTO l_ima44 FROM ima_file WHERE ima01 = g_qcs.qcs021    #FUN-BB0085
                               LET g_qcs.qcs091 = s_digqty(g_qcs.qcs091,l_ima44)                     #FUN-BB0085
                               DISPLAY BY NAME g_qcs.qcs091                                          #FUN-BB0085
@@ -8449,20 +8451,20 @@ FUNCTION t110_3()
                   AND inj01 = rvbs021
                   AND inj02 = rvbs04
                   AND inj03 = 'purity'
-                  AND inj06 = 'N' 
+                  AND inj06 = 'N'
                IF l_chose>0 THEN
                   IF cl_confirm('aqc1006') THEN
                      CALL cl_getmsg('aqc1007',g_lang) RETURNING g_msg     #開窗讓使用者輸入純度
-                     LET INT_FLAG = 0   
+                     LET INT_FLAG = 0
                      PROMPT g_msg CLIPPED,': ' FOR l_choce
                         ON IDLE g_idle_seconds
                            CALL cl_on_idle()
-                        ON ACTION about      
-                           CALL cl_about()  
-                        ON ACTION help     
-                           CALL cl_show_help()  
-                        ON ACTION controlg    
-                           CALL cl_cmdask()  
+                        ON ACTION about
+                           CALL cl_about()
+                        ON ACTION help
+                           CALL cl_show_help()
+                        ON ACTION controlg
+                           CALL cl_cmdask()
                         IF INT_FLAG THEN
                            LET INT_FLAG = 0
                            RETURN
@@ -8477,7 +8479,7 @@ FUNCTION t110_3()
                             AND rvbs13 = g_qcs.qcs05
                             AND rvbs09 = 1
                      FOREACH rvbs_curs_1 INTO l_rvbs021,l_rvbs04      #TQC-C30082 add
-                        IF SQLCA.sqlcode THEN                         #TQC-C30082 add      
+                        IF SQLCA.sqlcode THEN                         #TQC-C30082 add
                            CALL cl_err('foreach:',SQLCA.sqlcode,1)    #TQC-C30082 add
                            EXIT FOREACH                               #TQC-C30082 add
                         END IF                                        #TQC-C30082 add
@@ -8485,42 +8487,42 @@ FUNCTION t110_3()
                          WHERE inj01 = l_rvbs021
                            AND inj02 = l_rvbs04
                            AND inj03 = 'purity'
-                           AND inj06 = 'N' 
+                           AND inj06 = 'N'
                         IF SQLCA.sqlcode THEN
-                           LET g_success = 'N' 
+                           LET g_success = 'N'
                            EXIT FOREACH                #TQC-C30082 add
-                        ELSE  
-                           LET g_success = 'Y' 
+                        ELSE
+                           LET g_success = 'Y'
                         END IF
-            #TQC-C30082 ------ add ----- begin 
+            #TQC-C30082 ------ add ----- begin
                       END FOREACH
                       IF g_success =  'Y' THEN
                          CALL cl_err('','aqc1008',0)
-                      ELSE  
+                      ELSE
                          CALL cl_err3("upd","inj_file",g_prog,g_qcs.qcs01,'aqc1009',"","upd inj04",1)
                       END IF
             #TQC-C30082 ------ add ----- end
                    END IF
                 END IF
             #No.TQC-B90236---------------add end-------------------------
-      
+
             ON ACTION CONTROLR
                CALL cl_show_req_fields()
-      
+
             ON ACTION CONTROLG
                CALL cl_cmdask()
-      
+
             ON IDLE g_idle_seconds
                CALL cl_on_idle()
-               CONTINUE INPUT 
-      
+               CONTINUE INPUT
+
             ON ACTION about         #MOD-4C0121
                CALL cl_about()      #MOD-4C0121
-      
+
             ON ACTION help          #MOD-4C0121
                CALL cl_show_help()  #MOD-4C0121
-      
-         END INPUT 
+
+         END INPUT
 #MOD-D60068---add-----END-------------------------------
       END IF
    END IF     #TQC-C40081
@@ -8538,7 +8540,7 @@ FUNCTION t110_3()
       CALL cl_err('','9001',0)
       RETURN
    END IF
-   
+
       UPDATE qcs_file SET qcs09 = '3', #特採
                           qcs091 = g_qcs.qcs091,
                           qcsud13 = g_qcs.qcsud13,
@@ -8550,7 +8552,7 @@ FUNCTION t110_3()
        WHERE qcs01 = g_qcs.qcs01
          AND qcs02 = g_qcs.qcs02
          AND qcs05 = g_qcs.qcs05
- 
+
       IF SQLCA.SQLCODE OR SQLCA.SQLERRD[3] = 0 THEN
          CALL cl_err3("upd","qcs_file",g_qcs.qcs01,g_qcs.qcs02,SQLCA.sqlcode,"","",1)  #No.FUN-660115
          LET g_success = 'N'
@@ -8559,20 +8561,20 @@ FUNCTION t110_3()
    IF g_success = 'Y' THEN
       CALL t110_3_y()
    END IF
- 
+
    IF g_success = 'Y' THEN
       COMMIT WORK
    ELSE
       ROLLBACK WORK
    END IF
- 
+
    CLOSE t110_cl
    # darcy:2026/01/26 add s---
    IF NOT cl_null(g_qcs.qcs01) THEN
       SELECT count(*) INTO l_cnt FROM rva_file WHERE rvaud02 LIKE '%DN%' AND rva01 = g_qcs.qcs01
-      IF cl_null(l_cnt) THEN LET l_cnt = 0 END IF 
-      IF l_cnt > 0 THEN 
-            IF cl_getscmparameter()  THEN  
+      IF cl_null(l_cnt) THEN LET l_cnt = 0 END IF
+      IF l_cnt > 0 THEN
+            IF cl_getscmparameter()  THEN
             INITIALIZE l_ret TO NULL
             CALL cjc_zmx_json_qcs(g_qcs.qcs01,g_qcs.qcs02,'Y') RETURNING l_ret.*
             IF l_ret.success = 'Y' THEN
@@ -8586,20 +8588,20 @@ FUNCTION t110_3()
                # LET l_ret.msg = "请确认是否启用SCM！"
                # CALL FGL_WINMESSAGE("Warning",l_ret.msg,"stop")
             END IF
-      ELSE 
-            #LET l_ret.msg = "收货单：",g_qcs.qcs01 CLIPPED,"非SCM收货单，无需同步！"   
+      ELSE
+            #LET l_ret.msg = "收货单：",g_qcs.qcs01 CLIPPED,"非SCM收货单，无需同步！"
             #CALL cl_err(l_ret.msg,'!',1)
-      END IF 
+      END IF
    END IF
    # darcy:2026/01/26 add e---
- 
-   SELECT * INTO g_qcs.* FROM qcs_file  
+
+   SELECT * INTO g_qcs.* FROM qcs_file
     WHERE qcs01 = g_qcs.qcs01
       AND qcs02 = g_qcs.qcs02
       AND qcs05 = g_qcs.qcs05
 
    CALL t110_show()
- 
+
 END FUNCTION
 
 #FUN-A30045 ---------------------Begin------------------------------------------
@@ -8615,26 +8617,26 @@ FUNCTION t110_4()
    define l_cnt integer
    # darcy:2026/01/27 add e---
 
-   
+
    #IF g_argv1 <> '1' THEN    #FUN-C30152
-   IF g_argv1 <> '1' AND g_argv1 <> '2' THEN  #FUN-C30152  
+   IF g_argv1 <> '1' AND g_argv1 <> '2' THEN  #FUN-C30152
       RETURN
-   END IF  
+   END IF
    IF g_qcs.qcs09 <> '3' THEN
       RETURN
-   END IF  
+   END IF
    IF cl_null(g_qcs.qcs01) THEN
       CALL cl_err('',-400,0)
       RETURN
    END IF
- 
+
    #FUN-CC0015 mark begin---
    #IF g_qcs.qcs14 != 'Y' THEN
    #   CALL cl_err(g_qcs.qcs01,'anm-960',0)
    #   RETURN
    #END IF
-   #FUN-CC0015 mark end----- 
- 
+   #FUN-CC0015 mark end-----
+
    LET l_qcs091 = 0
    LET l_rvv17  = 0
    SELECT SUM(qcs091) INTO l_qcs091 FROM qcs_file
@@ -8643,8 +8645,8 @@ FUNCTION t110_4()
                    AND qcs05 <> g_qcs.qcs05
                    AND qcs14 = 'Y'
    IF SQLCA.sqlcode THEN
-      CALL cl_err(g_qcs.qcs01,SQLCA.sqlcode,0)      
-   END IF   
+      CALL cl_err(g_qcs.qcs01,SQLCA.sqlcode,0)
+   END IF
    SELECT SUM(rvv17)  INTO l_rvv17 FROM rvu_file,rvv_file
                  WHERE rvv04 = g_qcs.qcs01
                    AND rvv04 = rvu02
@@ -8652,20 +8654,20 @@ FUNCTION t110_4()
                    AND rvuconf <> 'X'
                    AND rvu01 = rvv01 #MOD-D10180 add
    IF SQLCA.sqlcode THEN
-      CALL cl_err(g_qcs.qcs01,SQLCA.sqlcode,0)      
-   END IF    
+      CALL cl_err(g_qcs.qcs01,SQLCA.sqlcode,0)
+   END IF
    IF cl_null(l_qcs091) THEN LET l_qcs091 = 0 END IF
-   IF cl_null(l_rvv17)  THEN LET l_rvv17 = 0 END IF   
+   IF cl_null(l_rvv17)  THEN LET l_rvv17 = 0 END IF
    IF l_qcs091 < l_rvv17 THEN
-      CALL cl_err(g_qcs.qcs01 ,'aqc1001',0)   
+      CALL cl_err(g_qcs.qcs01 ,'aqc1001',0)
       RETURN
    END IF
    IF NOT cl_confirm('aqc1002') THEN
       RETURN
-   END IF 
-   LET g_qcs_t.* = g_qcs.*   
+   END IF
+   LET g_qcs_t.* = g_qcs.*
    BEGIN WORK
-   LET g_success = 'Y'  
+   LET g_success = 'Y'
 
    OPEN t110_cl USING g_qcs.qcs01,g_qcs.qcs02,g_qcs.qcs05
    IF SQLCA.sqlcode THEN
@@ -8681,7 +8683,7 @@ FUNCTION t110_4()
       CLOSE t110_cl
       ROLLBACK WORK
       RETURN
-   END IF  
+   END IF
 
    UPDATE qcs_file SET qcs09 ='2',
                        qcs091 = 0,
@@ -8690,13 +8692,13 @@ FUNCTION t110_4()
                        qcs41= 0,
                        qcs15 = g_today,
                        qcsmodu = g_user,
-                       qcsdate = g_today							
+                       qcsdate = g_today
     WHERE qcs01 = g_qcs.qcs01
       AND qcs02 = g_qcs.qcs02
       AND qcs05 = g_qcs.qcs05
 
    IF SQLCA.SQLCODE OR SQLCA.SQLERRD[3] = 0 THEN
-      CALL cl_err3("upd","qcs_file",g_qcs.qcs01,g_qcs.qcs02,SQLCA.sqlcode,"","",1)  
+      CALL cl_err3("upd","qcs_file",g_qcs.qcs01,g_qcs.qcs02,SQLCA.sqlcode,"","",1)
       LET g_success = 'N'
    END IF
 
@@ -8715,9 +8717,9 @@ FUNCTION t110_4()
    # darcy:2026/01/26 add s---
    IF NOT cl_null(g_qcs.qcs01) THEN
       SELECT count(*) INTO l_cnt FROM rva_file WHERE rvaud02 LIKE '%DN%' AND rva01 = g_qcs.qcs01
-      IF cl_null(l_cnt) THEN LET l_cnt = 0 END IF 
-      IF l_cnt > 0 THEN 
-            IF cl_getscmparameter()  THEN  
+      IF cl_null(l_cnt) THEN LET l_cnt = 0 END IF
+      IF l_cnt > 0 THEN
+            IF cl_getscmparameter()  THEN
             INITIALIZE l_ret TO NULL
             CALL cjc_zmx_json_qcs(g_qcs.qcs01,g_qcs.qcs02,'Y') RETURNING l_ret.*
             IF l_ret.success = 'Y' THEN
@@ -8731,13 +8733,13 @@ FUNCTION t110_4()
                # LET l_ret.msg = "请确认是否启用SCM！"
                # CALL FGL_WINMESSAGE("Warning",l_ret.msg,"stop")
             END IF
-      ELSE 
-            #LET l_ret.msg = "收货单：",g_qcs.qcs01 CLIPPED,"非SCM收货单，无需同步！"   
+      ELSE
+            #LET l_ret.msg = "收货单：",g_qcs.qcs01 CLIPPED,"非SCM收货单，无需同步！"
             #CALL cl_err(l_ret.msg,'!',1)
-      END IF 
-   END IF 
+      END IF
+   END IF
    # darcy:2026/01/26 add e---
-   
+
    SELECT * INTO g_qcs.* FROM qcs_file
     WHERE qcs01 = g_qcs.qcs01
       AND qcs02 = g_qcs.qcs02
@@ -8750,7 +8752,7 @@ END FUNCTION
 #FUN-A30045 ---------------------End--------------------------------------------
 
 
- 
+
 #特採時也要UPDATE rvb_file的相關欄位,此段同t110_y() update rvb_file的作法
 FUNCTION t110_3_y()
    DEFINE l_rvb33   LIKE rvb_file.rvb33
@@ -8766,12 +8768,12 @@ FUNCTION t110_3_y()
    DEFINE l_qcs38   LIKE qcs_file.qcs38     #FUN-870040
    DEFINE l_qcs41   LIKE qcs_file.qcs41     #FUN-870040
    DEFINE l_rvb90   LIKE rvb_file.rvb90     #FUN-BB0085
- 
+
    SELECT * INTO g_qcs.* FROM qcs_file
     WHERE qcs01 = g_qcs.qcs01
       AND qcs02 = g_qcs.qcs02
       AND qcs05 = g_qcs.qcs05
- 
+
    #------ 是否與採購勾稽(modi in 01/06/04) ------
    IF g_sma.sma886[8,8] = 'Y' AND g_qcs.qcs00 = '1' THEN
       UPDATE rvb_file SET rvb40 = g_qcs.qcs04   #No.MOD-590083
@@ -8781,43 +8783,43 @@ FUNCTION t110_3_y()
          CALL cl_err3("upd","rvb_file",g_qcs.qcs01,g_qcs.qcs01,STATUS,"","upd rvb40",1)  #No.FUN-660115
          LET g_success='N'
       END IF
- 
+
       CASE g_qcs.qcs09
          WHEN '1' CALL cl_getmsg('aqc-004',g_lang) RETURNING des1
          WHEN '2' CALL cl_getmsg('apm-244',g_lang) RETURNING des1        #No:7706
          WHEN '3' CALL cl_getmsg('aqc-006',g_lang) RETURNING des1
       END CASE
- 
+
       UPDATE rvb_file SET rvb41 = des1 #檢驗結果
        WHERE rvb01 = g_qcs.qcs01
          AND rvb02 = g_qcs.qcs02
- 
+
       IF SQLCA.sqlcode OR SQLCA.sqlerrd[3] = 0 THEN
          CALL cl_err3("upd","rvb_file",g_qcs.qcs01,g_qcs.qcs01,STATUS,"","upd rvb41",1)  #No.FUN-660115
          LET g_success = 'N'
       END IF
- 
+
       SELECT rvb33,rvb07,rvb331,rvb332,rvb30                 #No.FUN-620043   #MOD-640512 add rvb30
         INTO l_rvb33,l_rvb07,l_rvb331,l_rvb332,l_rvb30    #No.FUN-620043    #MOD-640512 add rvb30
         FROM rvb_file
        WHERE rvb01 = g_qcs.qcs01
          AND rvb02 = g_qcs.qcs02
- 
+
       IF cl_null(l_rvb33) THEN
          LET l_rvb33 = 0
       END IF
- 
+
       IF cl_null(l_rvb07) THEN
          LET l_rvb07 = 0
       END IF
- 
-      SELECT SUM(qcs091),SUM(qcs38),SUM(qcs41) 
-        INTO l_rvb33,l_rvb331,l_rvb332 
-        FROM qcs_file 
+
+      SELECT SUM(qcs091),SUM(qcs38),SUM(qcs41)
+        INTO l_rvb33,l_rvb331,l_rvb332
+        FROM qcs_file
        WHERE qcs01 = g_qcs.qcs01
          AND qcs02 = g_qcs.qcs02
          AND qcs14 = 'Y'         #No.MOD-7C0226 add
-     
+
 #FUN-D30065 ------Begin---------
      IF cl_null(l_rvb33) THEN LET l_rvb33 = 0 END IF
      IF cl_null(l_rvb331) THEN LET l_rvb331 = 0 END IF
@@ -8825,12 +8827,12 @@ FUNCTION t110_3_y()
 #FUN-D30065 ------End-----------
 
       #FUN-BB0085-add-str--
-      SELECT rvb90 INTO l_rvb90 FROM rvb_file 
+      SELECT rvb90 INTO l_rvb90 FROM rvb_file
        WHERE rvb01 = g_qcs.qcs01
          AND rvb02 = g_qcs.qcs02
-      LET l_rvb33 = s_digqty(l_rvb33,l_rvb90)   
+      LET l_rvb33 = s_digqty(l_rvb33,l_rvb90)
       #FUN-BB0085-add-end--
-  
+
       UPDATE rvb_file SET rvb33 = l_rvb33,
                          #rvb331 = l_rvb33 ,              #No.FUN-620043
                           rvb331 = l_rvb331,              #No.FUN-610097 add
@@ -8839,47 +8841,47 @@ FUNCTION t110_3_y()
                           rvb31 = l_rvb33 - l_rvb30 -nvl(g_qcs.qcsud07,0)      #MOD-640512  #mark by guanyao160731
        WHERE rvb01 = g_qcs.qcs01
          AND rvb02 = g_qcs.qcs02
-      
+
       IF SQLCA.sqlcode OR SQLCA.sqlerrd[3] = 0 THEN
          CALL cl_err3("upd","rvb_file",g_qcs.qcs01,g_qcs.qcs01,STATUS,"","upd rvb33",1)  #No.FUN-660115
          LET g_success = 'N'
       END IF
-   END IF 
-      
+   END IF
+
    IF g_qcs.qcs00 MATCHES '[156ABCDH]' THEN
       IF g_qcs.qcs00 MATCHES '[1BC]' THEN
-         LET l_rvbs09 = 1  
+         LET l_rvbs09 = 1
       ELSE
-         LET l_rvbs09 = -1  
+         LET l_rvbs09 = -1
       END IF
-      SELECT ima918,ima921 INTO g_ima918,g_ima921 
+      SELECT ima918,ima921 INTO g_ima918,g_ima921
         FROM ima_file
        WHERE ima01 = g_qcs.qcs021
          AND imaacti = "Y"
-      
+
       IF g_ima918 = "Y" OR g_ima921 = "Y" THEN
          #IF g_sma.sma90 = "Y" THEN   #CHI-A70047
-         IF (g_sma.sma90 = "Y" AND g_argv1='1') OR g_argv1<>'1' THEN   #CHI-A70047 
-                      
+         IF (g_sma.sma90 = "Y" AND g_argv1='1') OR g_argv1<>'1' THEN   #CHI-A70047
+
             LET l_sql = "SELECT * FROM rvbs_file",
                         " WHERE rvbs01 = '",g_qcs.qcs01,"'",
                         "   AND rvbs02 = ",g_qcs.qcs02,
                         "   AND rvbs00 != '",g_prog,"'",
                         "   AND rvbs09 = ",l_rvbs09
-            
+
             PREPARE t110_rvbssel1 FROM l_sql
-            
+
             DECLARE rvbs_curssel1 CURSOR FOR t110_rvbssel1
-            
+
             FOREACH rvbs_curssel1 INTO l_rvbs.*
                IF STATUS THEN
                   CALL cl_err('foreach rvbs sel:',STATUS,1)
                   EXIT FOREACH
                END IF
-            
+
                SELECT SUM(rvbs10)
                  INTO l_rvbs10
-                 FROM qcs_file,rvbs_file 
+                 FROM qcs_file,rvbs_file
                 WHERE qcs01 = g_qcs.qcs01
                   AND qcs02 = g_qcs.qcs02
                   AND rvbs13 = qcs05        #No.MOD-950114 add
@@ -8890,7 +8892,7 @@ FUNCTION t110_3_y()
                   AND rvbs08 = l_rvbs.rvbs08
                   AND rvbs00 = g_prog
                   AND qcs14 = 'Y'
-               
+
                UPDATE rvbs_file SET rvbs10 = l_rvbs10
                 WHERE rvbs01 = g_qcs.qcs01
                   AND rvbs02 = g_qcs.qcs02
@@ -8898,13 +8900,13 @@ FUNCTION t110_3_y()
                   AND rvbs04 = l_rvbs.rvbs04
                   AND rvbs08 = l_rvbs.rvbs08
                   AND rvbs13 = 0   #No.FUN-860045
-               
+
                IF SQLCA.sqlcode OR SQLCA.sqlerrd[3] = 0 THEN
-                  CALL cl_err3("upd","rvbs_file",g_qcs.qcs01,g_qcs.qcs01,STATUS,"","upd rvbs10",1) 
+                  CALL cl_err3("upd","rvbs_file",g_qcs.qcs01,g_qcs.qcs01,STATUS,"","upd rvbs10",1)
                   LET g_success = 'N'
                END IF
                #-----CHI-A70047---------
-               IF g_qcs.qcs00 = 'A' OR  
+               IF g_qcs.qcs00 = 'A' OR
                   g_qcs.qcs00 = 'B' THEN
                   UPDATE rvbs_file SET rvbs06 = l_rvbs10
                    WHERE rvbs01 = g_qcs.qcs01
@@ -8912,10 +8914,10 @@ FUNCTION t110_3_y()
                      AND rvbs03 = l_rvbs.rvbs03
                      AND rvbs04 = l_rvbs.rvbs04
                      AND rvbs08 = l_rvbs.rvbs08
-                     AND rvbs13 = 0   
-                  
+                     AND rvbs13 = 0
+
                   IF SQLCA.sqlcode OR SQLCA.sqlerrd[3] = 0 THEN
-                     CALL cl_err3("upd","rvbs_file",g_qcs.qcs01,g_qcs.qcs01,STATUS,"","upd rvbs10",1) 
+                     CALL cl_err3("upd","rvbs_file",g_qcs.qcs01,g_qcs.qcs01,STATUS,"","upd rvbs10",1)
                      LET g_success = 'N'
                   END IF
                END IF
@@ -8924,8 +8926,8 @@ FUNCTION t110_3_y()
          END IF
       END IF
    END IF
- 
-   IF g_qcs.qcs00 = 'A' OR  
+
+   IF g_qcs.qcs00 = 'A' OR
       g_qcs.qcs00 = 'B' THEN
       SELECT COUNT(*) INTO g_cnt
         FROM ina_file,inb_file
@@ -8947,27 +8949,27 @@ FUNCTION t110_3_y()
       IF cl_null(l_qcs091) THEN LET l_qcs091=0 END IF
       IF cl_null(l_qcs38 ) THEN LET l_qcs38 =0 END IF
       IF cl_null(l_qcs41 ) THEN LET l_qcs41 =0 END IF
-      UPDATE inb_file 
+      UPDATE inb_file
          SET inb09 = l_qcs091,
              inb904= l_qcs38 ,
-             inb907= l_qcs41 
+             inb907= l_qcs41
        WHERE inb01 = g_qcs.qcs01
          AND inb03 = g_qcs.qcs02
- 
+
       IF SQLCA.sqlcode OR SQLCA.sqlerrd[3] = 0 THEN
          CALL cl_err3("upd","inb_file",g_qcs.qcs01,g_qcs.qcs02,STATUS,"","upd inb09",1)
          LET g_success = 'N'
       END IF
    END IF
- 
+
 END FUNCTION
- 
+
 #依據不同傳參Default Form 初值
 FUNCTION t110_form_default()
    DEFINE l_items       LIKE type_file.chr1000      #No.FUN-680104 VARCHAR(100)
- 
+
    LET l_items = NULL
- 
+
    IF g_argv1 = "2" THEN
       LET l_items = 'A:',cl_getmsg('aqc-999',g_lang)
       LET l_items = l_items CLIPPED,',B:',cl_getmsg('aqc-998',g_lang)
@@ -8983,7 +8985,7 @@ FUNCTION t110_form_default()
       LET l_items = cl_getmsg('aqc-989',g_lang)
       CALL cl_set_comp_att_text("qcs01",l_items CLIPPED)
    END IF
- 
+
    IF g_argv1 = "3" THEN
       LET l_items = '5:',cl_getmsg('aqc-992',g_lang)
       LET l_items = l_items CLIPPED,',6:',cl_getmsg('aqc-991',g_lang)
@@ -8994,7 +8996,7 @@ FUNCTION t110_form_default()
       CALL cl_set_comp_att_text("qcs01,qcs03",l_items CLIPPED)
       CALL cl_set_comp_visible("pmh05",FALSE)
    END IF
- 
+
    IF g_argv1 = "4" THEN
       LET l_items = '2:',cl_getmsg('asr-038',g_lang)
       LET l_items = l_items,',7:',cl_getmsg('asr-014',g_lang)
@@ -9004,8 +9006,8 @@ FUNCTION t110_form_default()
       CALL cl_set_comp_att_text("qcs01",l_items CLIPPED)
    END IF
 END FUNCTION
- 
-FUNCTION t110_def_form()   
+
+FUNCTION t110_def_form()
     IF g_sma.sma122 ='1' THEN
        CALL cl_getmsg('asm-619',g_lang) RETURNING g_msg2
        CALL cl_getmsg('asm-302',g_lang) RETURNING g_msg
@@ -9080,7 +9082,7 @@ FUNCTION t110_qcs01() #MOD-740273
           l_imm10   LIKE imm_file.imm10,
           l_immconf LIKE imm_file.immconf,        #TQC-670064
           l_cnt     LIKE type_file.num5           #TQC-740264 add
- 
+
    LET l_err = NULL
    CASE g_argv1
       WHEN "1"
@@ -9278,8 +9280,8 @@ FUNCTION t110_qcs01() #MOD-740273
                EXIT CASE
             END IF
             IF l_rvaconf = 'N' THEN
-               LET l_err = 'aap-717' 
-               EXIT CASE 
+               LET l_err = 'aap-717'
+               EXIT CASE
             END IF
          END IF
       WHEN "3"
@@ -9296,7 +9298,7 @@ FUNCTION t110_qcs01() #MOD-740273
                LET l_err = '9024'
                EXIT CASE
             END IF
-            IF l_rvaconf != 'Y' THEN        
+            IF l_rvaconf != 'Y' THEN
                LET l_err = '9029' #抓已確認
                EXIT CASE
             END IF
@@ -9359,17 +9361,17 @@ FUNCTION t110_qcs01() #MOD-740273
             END IF
          END IF
    END CASE
- 
+
    RETURN l_err
- 
+
 END FUNCTION
- 
+
 FUNCTION t110_qcs02(p_cmd)                #MOD-C30339   增加p_cmd
    DEFINE l_qcs22  LIKE qcs_file.qcs22    #MOD-870270
    DEFINE l_qcs091 LIKE qcs_file.qcs091   #MOD-870270
    DEFINE l_ima44  LIKE ima_file.ima44    #FUN-BB0085
    DEFINE p_cmd    LIKE type_file.chr1    #MOD-C30339
- 
+
    CASE
       WHEN g_qcs.qcs00 = '1' OR g_qcs.qcs00 = '2'
          SELECT rvb80,rvb81,rvb82,rvb83,rvb84,rvb85
@@ -9431,27 +9433,27 @@ FUNCTION t110_qcs02(p_cmd)                #MOD-C30339   增加p_cmd
       WHEN g_qcs.qcs00='7'
           EXIT CASE
    END CASE
- 
+
    # IF g_qcs.qcs00 NOT MATCHES '[2Z56]' THEN   #MOD-870270 #markdarcy:2022/09/02
    IF g_qcs.qcs00 NOT MATCHES '[Z56]' THEN   #MOD-870270 #add darcy:2022/09/02
       # 若判斷qcs22=0 才重計會造成先入驗退量後打收貨單時,不會重計l_rvb07s, 造成送驗量不合理也沒控卡
          CALL t110_qcs22() RETURNING l_rvb07s
          #送驗量允許有小數位
          #MOD-C30339-add-str--
-         IF p_cmd = 'a' THEN 
+         IF p_cmd = 'a' THEN
          SELECT SUM(qcs22) INTO g_qcs22s FROM qcs_file
           WHERE qcs01 = g_qcs.qcs01
             AND qcs02 = g_qcs.qcs02
             AND qcs14 != 'X'
-            AND qcs00 IN ('1','A','B','C','D','E','F','G','H') 
-         ELSE       
+            AND qcs00 IN ('1','A','B','C','D','E','F','G','H')
+         ELSE
          #MOD-C30339-add-end--
          SELECT SUM(qcs22) INTO g_qcs22s FROM qcs_file
           WHERE qcs01 = g_qcs.qcs01
             AND qcs02 = g_qcs.qcs02
             AND qcs14 != 'X'
             AND qcs00 IN ('1','A','B','C','D','E','F','G','H')   #CHI-760018   #MOD-870270
-            AND NOT qcs05 = g_qcs_o.qcs05       #TQC-C20213   
+            AND NOT qcs05 = g_qcs_o.qcs05       #TQC-C20213
          END IF             #MOD-C30339
          IF STATUS OR g_qcs22s IS NULL THEN
             LET g_qcs22s = 0
@@ -9471,7 +9473,7 @@ FUNCTION t110_qcs02(p_cmd)                #MOD-C30339   增加p_cmd
           WHERE qcs01 = g_qcs.qcs01
             AND qcs02 = g_qcs.qcs02
             AND qcs14 = 'N'
-            AND qcs00 IN ('5','6') 
+            AND qcs00 IN ('5','6')
          IF STATUS OR l_qcs22 IS NULL THEN
             LET l_qcs22 = 0
          END IF
@@ -9479,12 +9481,12 @@ FUNCTION t110_qcs02(p_cmd)                #MOD-C30339   增加p_cmd
           WHERE qcs01 = g_qcs.qcs01
             AND qcs02 = g_qcs.qcs02
             AND qcs14 = 'Y'
-            AND qcs00 IN ('5','6') 
+            AND qcs00 IN ('5','6')
          IF STATUS OR l_qcs091 IS NULL THEN
             LET l_qcs091 = 0
          END IF
          LET g_qcs22s = l_qcs22 + l_qcs091
-         LET g_qcs22=g_qcs22s 
+         LET g_qcs22=g_qcs22s
          LET g_qcs.qcs22 = l_rvb07s - g_qcs22s
          #FUN-BB0085-add-str--
          SELECT ima44 INTO l_ima44 FROM ima_file
@@ -9493,7 +9495,7 @@ FUNCTION t110_qcs02(p_cmd)                #MOD-C30339   增加p_cmd
          #FUN-BB0085-add-end--
          DISPLAY BY NAME g_qcs.qcs22
    END IF
- 
+
    IF g_sma.sma115 = "Y" AND g_qcs22s <> 0 THEN
       IF g_ima906 = "3" THEN
          LET g_qcs.qcs32 = g_qcs.qcs22
@@ -9507,14 +9509,14 @@ FUNCTION t110_qcs02(p_cmd)                #MOD-C30339   增加p_cmd
          LET g_qcs.qcs35 = (g_qcs.qcs22 - g_qcs.qcs32) / g_qcs.qcs34
       END IF
    END IF
- 
+
    LET g_qcs.qcs32 = s_digqty(g_qcs.qcs32,g_qcs.qcs30)   #FUN-BB0085
    LET g_qcs.qcs35 = s_digqty(g_qcs.qcs35,g_qcs.qcs33)   #FUN-BB0085
    DISPLAY BY NAME g_qcs.qcs30,g_qcs.qcs31,g_qcs.qcs32
    DISPLAY BY NAME g_qcs.qcs33,g_qcs.qcs34,g_qcs.qcs35
- 
+
 END FUNCTION
- 
+
 FUNCTION t110_qcs05()
    DEFINE l_rvbs        RECORD LIKE rvbs_file.*  #No.FUN-850100
    DEFINE l_qcs_rvbs06  LIKE rvbs_file.rvbs06  #No.FUN-850100
@@ -9523,8 +9525,8 @@ FUNCTION t110_qcs05()
    DEFINE l_ogb17   LIKE ogb_file.ogb17         #MOD-C30811 add
    DEFINE i         LIKE type_file.num5         #MOD-C30811 add
    DEFINE l_ima930  LIKE ima_file.ima930   #DEV-D40021 --add
- 
-   SELECT ima918,ima921 INTO g_ima918,g_ima921 
+
+   SELECT ima918,ima921 INTO g_ima918,g_ima921
      FROM ima_file
     WHERE ima01 = g_qcs.qcs021
       AND imaacti = "Y"
@@ -9533,41 +9535,41 @@ FUNCTION t110_qcs05()
    LET l_ima930 = ''
    SELECT ima930 INTO l_ima930 FROM ima_file
     WHERE ima01 = g_qcs.qcs021
-   IF cl_null(l_ima930) THEN LET l_ima930 = 'N' END IF 
-   IF l_ima930 = 'Y' THEN RETURN END IF 
+   IF cl_null(l_ima930) THEN LET l_ima930 = 'N' END IF
+   IF l_ima930 = 'Y' THEN RETURN END IF
    #DEV-D40021 --add--end
-   
+
    IF g_ima918 = "Y" OR g_ima921 = "Y" THEN
       #IF g_sma.sma90 = "Y" THEN   #CHI-A70047
-      IF (g_sma.sma90 = "Y" AND g_argv1='1') OR g_argv1<>'1' THEN   #CHI-A70047 
+      IF (g_sma.sma90 = "Y" AND g_argv1='1') OR g_argv1<>'1' THEN   #CHI-A70047
          IF g_qcs.qcs00 MATCHES '[156ABCDH]' THEN
             IF g_qcs.qcs00 MATCHES '[1BC]' THEN
-               LET l_rvbs09 = 1  
+               LET l_rvbs09 = 1
             ELSE
-               LET l_rvbs09 = -1  
+               LET l_rvbs09 = -1
             END IF
             DECLARE rvbs_qcs CURSOR FOR SELECT * FROM rvbs_file
                                          WHERE rvbs01 = g_qcs.qcs01
                                            AND rvbs02 = g_qcs.qcs02
                                           #AND rvbs13 = 0              #MOD-C30811 mark
                                            AND rvbs00 <> g_prog
-                                           AND rvbs09 = l_rvbs09 
-            
+                                           AND rvbs09 = l_rvbs09
+
             LET i = 0               #MOD-C30811 add
             FOREACH rvbs_qcs INTO l_rvbs.*
-               IF STATUS THEN 
+               IF STATUS THEN
                   CALL cl_err('foreach rvbs qcs:',STATUS,1)
                   EXIT FOREACH
                END IF
-            
+
                IF cl_null(l_rvbs.rvbs06) THEN
                   LET l_rvbs.rvbs06 = 0
                END IF
-            
+
                IF cl_null(g_qcs.qcs05) THEN
                   SELECT SUM(rvbs06)
                     INTO l_qcs_rvbs06 FROM qcs_file,rvbs_file
-                   WHERE qcs01 =g_qcs.qcs01 
+                   WHERE qcs01 =g_qcs.qcs01
                      AND qcs02 =g_qcs.qcs02
                      AND rvbs13=qcs05   #No.FUN-860045
                      AND qcs01 = rvbs01
@@ -9576,13 +9578,13 @@ FUNCTION t110_qcs05()
                      AND rvbs04 = l_rvbs.rvbs04
                      AND rvbs08 = l_rvbs.rvbs08
                      AND rvbs00 = g_prog
-                     AND qcs14 !='X' 
+                     AND qcs14 !='X'
                      AND qcs00 = '1'
                      AND rvbs09 = 1
                ELSE
                   SELECT SUM(rvbs06)
                     INTO l_qcs_rvbs06 FROM qcs_file,rvbs_file
-                   WHERE qcs01 =g_qcs.qcs01 
+                   WHERE qcs01 =g_qcs.qcs01
                      AND qcs02 =g_qcs.qcs02
                      AND rvbs13=qcs05   #No.FUN-860045
                      AND qcs01 = rvbs01
@@ -9591,23 +9593,23 @@ FUNCTION t110_qcs05()
                      AND rvbs04 = l_rvbs.rvbs04
                      AND rvbs08 = l_rvbs.rvbs08
                      AND rvbs00 = g_prog
-                     AND qcs14 !='X' 
+                     AND qcs14 !='X'
                      AND qcs00 = '1'
                      AND rvbs09 = 1
-                     AND qcs05 !=g_qcs.qcs05 
+                     AND qcs05 !=g_qcs.qcs05
                END IF
-            
-               IF cl_null(l_qcs_rvbs06) THEN 
+
+               IF cl_null(l_qcs_rvbs06) THEN
                   LET l_qcs_rvbs06 = 0
                END IF
-            
+
               #MOD-C30811 str add-----
                IF g_qcs.qcs00 = 6 THEN
                   LET l_ogb17 = 'N'
                   SELECT ogb17 INTO l_ogb17 FROM ogb_file WHERE ogb01= g_qcs.qcs01 AND ogb03 = g_qcs.qcs02
                   IF l_ogb17 = 'Y' THEN
                      LET l_rvbs.rvbs022 = i
-                     LET i = i +  1    
+                     LET i = i +  1
                   END IF
                END IF
               #MOD-C30811 end add-----
@@ -9615,23 +9617,23 @@ FUNCTION t110_qcs05()
                LET l_rvbs.rvbs00 = g_prog
                LET l_rvbs.rvbs01 = g_qcs.qcs01
                LET l_rvbs.rvbs02 = g_qcs.qcs02
-               LET l_rvbs.rvbs06 = l_rvbs.rvbs06 - l_qcs_rvbs06 
+               LET l_rvbs.rvbs06 = l_rvbs.rvbs06 - l_qcs_rvbs06
                LET l_rvbs.rvbs09 = 1
                LET l_rvbs.rvbs10 = 0
                LET l_rvbs.rvbs11 = 0
                LET l_rvbs.rvbs12 = 0
                LET l_rvbs.rvbs13 = g_qcs.qcs05
                LET l_rvbs.rvbsplant = g_plant #FUN-980007
-               LET l_rvbs.rvbslegal = g_legal #FUN-980007 
+               LET l_rvbs.rvbslegal = g_legal #FUN-980007
                INSERT INTO rvbs_file VALUES (l_rvbs.*)
-            
+
             END FOREACH
          END IF
       END IF
    END IF
- 
+
 END FUNCTION
- 
+
 #供應廠商
 FUNCTION t110_qcs03()
    DEFINE m_pmc03      LIKE pmc_file.pmc03,
@@ -9647,7 +9649,7 @@ FUNCTION t110_qcs03()
           m_ima02      LIKE ima_file.ima02,
           m_ima021     LIKE ima_file.ima021,      #No.FUN-940103
           m_azf03      LIKE azf_file.azf03        #No.FUN-680104 VARCHAR(30)
- 
+
    SELECT ima02,ima021,ima109,ima15,ima906   #No.FUN-620043   #No.FUN-940103 add ima021
      INTO m_ima02,m_ima021,m_ima109,m_ima15,g_ima906   #No.FUN-620043  #No.FUN-940103
      FROM ima_file
@@ -9658,19 +9660,19 @@ FUNCTION t110_qcs03()
       LET m_ima109= ' '
       LET m_ima15 = ' '
    END IF
- 
+
    SELECT azf03 INTO m_azf03 FROM azf_file
     WHERE azf01 = m_ima109
       AND azf02 = '8'
    IF STATUS THEN LET m_azf03=' ' END IF
- 
+
    DISPLAY g_qcs.qcs021 TO qcs021       #---- 料件編號
    DISPLAY g_qcs.qcs03 TO qcs03         #---- 廠商編號
    DISPLAY m_ima15 TO FORMONLY.ima15    #---- 保稅
    DISPLAY m_ima109 TO FORMONLY.ima109  #---- 材料類別
    DISPLAY m_azf03 TO FORMONLY.azf03    #---- 類別說明
    DISPLAY g_ima101 TO ima101           #---- 檢驗水準   MOD-BC0060 add
- 
+
    IF g_qcs.qcs00 MATCHES '[56H]' THEN   #MOD-A20100 add H
       SELECT occ02 INTO m_pmc03
         FROM occ_file
@@ -9699,9 +9701,9 @@ FUNCTION t110_qcs03()
           AND pmh22=g_type                                #CHI-860042   #MOD-890102 modify '1'->g_type
           AND pmh23 = ' '                                 #No.CHI-960033
          # AND pmhacti = 'Y'            #CHI-910021  #No.CHI-A10021 mark
- 
+
       OPEN pmh_cur1
- 
+
       FETCH pmh_cur1 INTO m_pmh05,g_qcs.qcs21,g_qcs.qcs17
      #IF STATUS=100 THEN                                                                        #MOD-B70116 mark
       IF STATUS=100 OR cl_null(m_pmh05) OR cl_null(g_qcs.qcs21) OR cl_null(g_qcs.qcs17) THEN    #MOD-B70116 add
@@ -9709,7 +9711,7 @@ FUNCTION t110_qcs03()
          SELECT pmc906,pmc907 INTO g_qcs.qcs21,g_qcs.qcs17
            FROM pmc_file
             WHERE pmc01 = g_qcs.qcs03
- 
+
            #IF STATUS=100 THEN                                                  #MOD-B70116 mark
             IF STATUS=100 OR cl_null(g_qcs.qcs21) OR cl_null(g_qcs.qcs17) THEN  #MOD-B70116 add
                SELECT ima100,ima102 INTO g_qcs.qcs21,g_qcs.qcs17
@@ -9720,7 +9722,7 @@ FUNCTION t110_qcs03()
                END IF
             END IF
       END IF
- 
+
       CASE m_pmh05
          WHEN '0' CALL cl_getmsg('aqc-010',g_lang) RETURNING m_pmh05_desc
          WHEN '1' CALL cl_getmsg('aqc-011',g_lang) RETURNING m_pmh05_desc
@@ -9728,39 +9730,39 @@ FUNCTION t110_qcs03()
       END CASE
       DISPLAY m_pmh05_desc TO FORMONLY.pmh05    # 核准狀態
    END IF
- 
+
    IF cl_null(m_pmc03) THEN LET m_pmc03 = ' ' END IF
- 
+
    IF cl_null(g_qcs.qcs21) THEN LET g_qcs.qcs21 = ' ' END IF
- 
+
    IF cl_null(g_qcs.qcs17) THEN LET g_qcs.qcs17 = ' ' END IF
- 
+
    CASE g_qcs.qcs21
       WHEN 'N' CALL cl_getmsg('aqc-001',g_lang) RETURNING qcs21_desc
       WHEN 'T' CALL cl_getmsg('aqc-002',g_lang) RETURNING qcs21_desc
       WHEN 'R' CALL cl_getmsg('aqc-003',g_lang) RETURNING qcs21_desc
    END CASE
 
-   #----------CHI-BC0018 str add-----------------                                               
+   #----------CHI-BC0018 str add-----------------
    CASE g_ima101
       WHEN '1'
          SELECT gae04 INTO ima101_desc
          FROM gae_file
          WHERE gae01='aimi103' AND gae02='ima101_1' AND gae03=g_lang
 
-      WHEN '2' 
+      WHEN '2'
          SELECT gae04 INTO ima101_desc
          FROM gae_file
          WHERE gae01='aimi103' AND gae02='ima101_2' AND gae03=g_lang
-               
-      WHEN '3'    
+
+      WHEN '3'
          SELECT gae04 INTO ima101_desc
          FROM gae_file
          WHERE gae01='aimi103' AND gae02='ima101_3' AND gae03=g_lang
-      
+
       WHEN '4'
          SELECT gae04 INTO ima101_desc
-         FROM gae_file 
+         FROM gae_file
          WHERE gae01='aimi103' AND gae02='ima101_4' AND gae03=g_lang
 
       OTHERWISE
@@ -9802,20 +9804,20 @@ FUNCTION t110_qcs03()
    END CASE
    DISPLAY qcs17_desc TO FORMONLY.qcs17_desc
    #----------CHI-BC0018 end add-----------------
- 
+
    DISPLAY m_pmc03 TO FORMONLY.pmc03    #---- 廠商名稱
    DISPLAY g_qcs.qcs17 TO qcs17
    DISPLAY g_qcs.qcs21 TO qcs21
    DISPLAY qcs21_desc TO FORMONLY.qcs21_desc
- 
+
    CASE g_qcs.qcs09
       WHEN '1' CALL cl_getmsg('aqc-004',g_lang) RETURNING des1
       WHEN '2' CALL cl_getmsg('apm-244',g_lang) RETURNING des1   #No:7706
       WHEN '3' CALL cl_getmsg('aqc-006',g_lang) RETURNING des1
    END CASE
- 
+
    DISPLAY des1 TO FORMONLY.des1
- 
+
    IF g_qcs.qcs00 MATCHES '[127]' THEN #FUN-5C0114 add 7
       SELECT rvb03,rvb04
         INTO m_rvb03,m_rvb04
@@ -9847,21 +9849,21 @@ FUNCTION t110_qcs03()
      #LET m_pmn041= m_ima02     #CHI-CB0019 mark
       LET m_qcs16 = 'N'
    END IF
- 
+
    DISPLAY m_ima02 TO FORMONLY.ima02    #---- 品名  #CHI-CB0019 mod pmn041->ima02
    DISPLAY m_ima021 TO FORMONLY.ima021  #No.FUN-940103 規格
    LET g_qcs.qcs16 = m_qcs16
    DISPLAY g_qcs.qcs16 TO qcs16
- 
+
    SELECT gen02 INTO m_gen02 FROM gen_file WHERE gen01=g_qcs.qcs13
    DISPLAY m_gen02 TO FORMONLY.gen02
- 
+
 END FUNCTION
- 
+
 FUNCTION t110_qcs22()
    DEFINE l_rvb07         LIKE rvb_file.rvb07,      #No.FUN-680104 DEC(12,0)
           l_rvb07s        LIKE rvb_file.rvb07
- 
+
    CASE
       WHEN g_qcs.qcs00 = '1'
          #收貨量允許有小數位
@@ -9918,17 +9920,17 @@ FUNCTION t110_qcs22()
           WHERE srg01 = g_qcs.qcs01
             AND srg02 = g_qcs.qcs02
    END CASE
- 
+
    IF SQLCA.sqlcode OR l_rvb07s IS NULL THEN
       LET l_rvb07s = 0
    END IF
- 
+
    LET l_rvb07 = l_rvb07s #記錄取整位數量 #No:8689
- 
+
    RETURN l_rvb07
- 
+
 END FUNCTION
- 
+
 FUNCTION t110_asr_qcs021(p_qcs01,p_qcs02)
 DEFINE p_qcs01 LIKE qcs_file.qcs01
 DEFINE p_qcs02 LIKE qcs_file.qcs02
@@ -9940,7 +9942,7 @@ DEFINE l_ima907 LIKE ima_file.ima907,
        l_srg04  LIKE srg_file.srg04,
        l_srg05  LIKE srg_file.srg05,
        l_qcs22  LIKE qcs_file.qcs22 #FUN-640036
- 
+
    IF cl_null(p_qcs01) OR cl_null(p_qcs02) THEN
       LET g_qcs.qcs021=''
       LET g_qcs.qcs30=''
@@ -9955,7 +9957,7 @@ DEFINE l_ima907 LIKE ima_file.ima907,
       SELECT srg14,srg04,srg05 INTO g_qcs.qcs021,l_srg04,l_srg05
                                      FROM srg_file WHERE srg01=p_qcs01
                                                      AND srg02=p_qcs02
- 
+
       SELECT SUM(qcs22) INTO l_qcs22 FROM qcs_file
                                      WHERE qcs01=g_qcs.qcs01
                                        AND qcs02=g_qcs.qcs02
@@ -9971,7 +9973,7 @@ DEFINE l_ima907 LIKE ima_file.ima907,
       SELECT ima02,ima021,ima906,ima907,ima109     #No.FUN-940103 add ima021
         INTO l_ima02,l_ima021,g_ima906,l_ima907,m_ima109   #No.FUN-940103
         FROM ima_file WHERE ima01=g_qcs.qcs021
- 
+
       CASE
          WHEN g_ima906="1"
                LET g_qcs.qcs30=l_srg04
@@ -10001,7 +10003,7 @@ DEFINE l_ima907 LIKE ima_file.ima907,
    DISPLAY l_ima02 TO FORMONLY.ima02     #CHI-CB0019 mod pmn041->ima02
    DISPLAY l_ima021 TO FORMONLY.ima021   #No.FUN-940103
 END FUNCTION
- 
+
 FUNCTION t110_upd_srg10(p_opt)
 DEFINE p_opt    LIKE type_file.chr1         #No.FUN-680104 VARCHAR(01)  # "+" OR "-'
 DEFINE l_qcs091 LIKE qcs_file.qcs091
@@ -10012,7 +10014,7 @@ DEFINE l_sre10  LIKE sre_file.sre10,
        l_srg03  LIKE srg_file.srg03,
        l_srg18  LIKE srg_file.srg18 #FUN-630105
 DEFINE l_msg    STRING              #FUN-680011
- 
+
    SELECT qcs091 INTO l_qcs091 FROM qcs_file WHERE qcs01=g_qcs.qcs01
                                                AND qcs02=g_qcs.qcs02
    IF cl_null(l_qcs091) THEN
@@ -10030,7 +10032,7 @@ DEFINE l_msg    STRING              #FUN-680011
    IF cl_null(l_sre10) THEN
       LET l_sre10=0
    END IF
- 
+
    CASE p_opt
       WHEN "+"
          LET l_sre10=l_sre10+l_qcs091
@@ -10039,7 +10041,7 @@ DEFINE l_msg    STRING              #FUN-680011
       OTHERWISE
          RETURN
    END CASE
- 
+
    UPDATE sre_file set sre10=l_sre10 WHERE sre03=l_srf03  #機台
                                        AND sre04=l_srg03  #料號
                                        AND sre05=l_srf04  #班別
@@ -10049,7 +10051,7 @@ DEFINE l_msg    STRING              #FUN-680011
        LET l_msg="upd sre10 (sre_file) ",l_msg CLIPPED
        CALL cl_msgany(10,20,l_msg)
    END IF
- 
+
    IF g_qcs.qcs00='7' THEN
       SELECT srg18 INTO l_srg18 FROM srg_file WHERE srg01=g_qcs.qcs01
                                                 AND srg02=g_qcs.qcs02
@@ -10072,7 +10074,7 @@ DEFINE l_msg    STRING              #FUN-680011
       END IF
    END IF
 END FUNCTION
- 
+
 FUNCTION t110_set_qcs22()
 DEFINE l_ima44  LIKE ima_file.ima44      #FUN-BB0085
 
@@ -10082,7 +10084,7 @@ DEFINE l_ima44  LIKE ima_file.ima44      #FUN-BB0085
    IF cl_null(g_qcs.qcs35) THEN LET g_qcs.qcs35 = 0 END IF
 
    IF g_sma.sma115='Y' THEN
-      CASE g_ima906 
+      CASE g_ima906
          WHEN "1"
             LET g_qcs.qcs22 = g_qcs.qcs32 * g_qcs.qcs31
          WHEN "2"
@@ -10101,9 +10103,9 @@ DEFINE l_ima44  LIKE ima_file.ima44      #FUN-BB0085
    #FUN-BB0085-add-end--
    DISPLAY BY NAME g_qcs.qcs22
 END FUNCTION
- 
+
 FUNCTION t110_w() #same as asrt300
-   SELECT * INTO g_qcs.* FROM qcs_file WHERE qcs01 = g_qcs.qcs01 AND qcs02 = g_qcs.qcs02 AND qcs05 = g_qcs.qcs05  #liuxqa 091022 
+   SELECT * INTO g_qcs.* FROM qcs_file WHERE qcs01 = g_qcs.qcs01 AND qcs02 = g_qcs.qcs02 AND qcs05 = g_qcs.qcs05  #liuxqa 091022
    IF g_qcs.qcs14 = 'X' THEN CALL cl_err(' ','9024',0) RETURN END IF
    IF g_qcs.qcs14 <>'Y' THEN CALL cl_err(' ','9029',0) RETURN END IF
    IF g_qcs.qcs00 <>'7' THEN CALL cl_err(' ','asr-043',0) RETURN END IF
@@ -10111,9 +10113,9 @@ FUNCTION t110_w() #same as asrt300
       CALL cl_err(' ','asr-042',0)
       RETURN
    END IF
- 
+
    BEGIN WORK
- 
+
    LET g_success='Y'    #MOD-710120 add
    OPEN t110_cl USING g_qcs.qcs01,g_qcs.qcs02,g_qcs.qcs05   #liuxqa 091022
    IF STATUS THEN
@@ -10122,7 +10124,7 @@ FUNCTION t110_w() #same as asrt300
       ROLLBACK WORK
       RETURN
    END IF
- 
+
    FETCH t110_cl INTO g_qcs.*            # 鎖住將被更改或取消的資料
    IF SQLCA.sqlcode THEN
       CALL cl_err(g_qcs.qcs01,SQLCA.sqlcode,0)      # 資料被他人LOCK
@@ -10130,19 +10132,19 @@ FUNCTION t110_w() #same as asrt300
       ROLLBACK WORK
       RETURN
    END IF
- 
+
    CALL t110_w1()
    CLOSE t110_cl
    IF g_success = 'Y' THEN
       COMMIT WORK
-      SELECT qcs20 INTO g_qcs.qcs20 FROM qcs_file WHERE qcs01 = g_qcs.qcs01 AND qcs02 = g_qcs.qcs02 AND qcs05 = g_qcs.qcs05 #liuxqa 091022 
+      SELECT qcs20 INTO g_qcs.qcs20 FROM qcs_file WHERE qcs01 = g_qcs.qcs01 AND qcs02 = g_qcs.qcs02 AND qcs05 = g_qcs.qcs05 #liuxqa 091022
       DISPLAY g_qcs.qcs20 TO qcs20
    ELSE
       ROLLBACK WORK
    END IF
-   
+
 END FUNCTION
- 
+
 FUNCTION t110_w1()
 DEFINE l_t1         LIKE sfv_file.sfv01,       #No.FUN-680104 VARCHAR(5)
        li_result    LIKE type_file.num5,       #No.FUN-680104 SMALLINT
@@ -10151,18 +10153,18 @@ DEFINE l_t1         LIKE sfv_file.sfv01,       #No.FUN-680104 VARCHAR(5)
        l_sfu RECORD LIKE sfu_file.*
 DEFINE l_slip       LIKE smy_file.smyslip  #TQC-AC0294
 DEFINE l_smy73      LIKE type_file.chr1    #TQC-AC0294
-          
+
    OPEN WINDOW t110_w1_w AT 2,2 WITH FORM "aqc/42f/aqct110a"
          ATTRIBUTE (STYLE = g_win_style CLIPPED)
- 
+
    CALL cl_ui_locale("aqct110a")
    LET tm.l_date=g_today                      #NO.FUN-6A0160 date->l_date
    LET tm.slip=null
- 
+
    WHILE TRUE
      INPUT BY NAME tm.slip,tm.l_date,tm.wh1,tm.wh2,tm.wh3    #NO.FUN-6A0160 date->l_date
                    WITHOUT DEFAULTS
- 
+
        AFTER FIELD slip
           IF NOT cl_null(tm.slip) THEN
              CALL s_check_no("asf",tm.slip,'',"A","sfu_file","sfu01","")
@@ -10172,17 +10174,17 @@ DEFINE l_smy73      LIKE type_file.chr1    #TQC-AC0294
              END IF
               #TQC-AC0294------start------
               LET l_slip = s_get_doc_no(tm.slip)
- 
+
               SELECT smy73 INTO l_smy73 FROM smy_file
                WHERE smyslip = l_slip
-              
+
               IF l_smy73 = 'Y' THEN
               CALL cl_err(tm.slip,'asf-876',0)
               NEXT FIELD slip
               END IF
               #TQC-AC0294-------END--------
           END IF
- 
+
        AFTER FIELD wh1
            IF tm.wh1 IS NOT NULL THEN
               SELECT imd02 INTO l_imd02 FROM imd_file WHERE imd01 = tm.wh1
@@ -10191,7 +10193,7 @@ DEFINE l_smy73      LIKE type_file.chr1    #TQC-AC0294
                  NEXT FIELD wh1
               END IF
            END IF
- 
+
        ON ACTION controlp
           CASE
              WHEN INFIELD(slip)
@@ -10214,16 +10216,16 @@ DEFINE l_smy73      LIKE type_file.chr1    #TQC-AC0294
        ON IDLE g_idle_seconds
           CALL cl_on_idle()
           CONTINUE INPUT
- 
+
        ON ACTION about         #MOD-4C0121
           CALL cl_about()      #MOD-4C0121
- 
+
        ON ACTION help          #MOD-4C0121
           CALL cl_show_help()  #MOD-4C0121
- 
+
        ON ACTION controlg      #MOD-4C0121
           CALL cl_cmdask()     #MOD-4C0121
- 
+
      END INPUT
      IF INT_FLAG THEN
         LET INT_FLAG = 0
@@ -10231,9 +10233,9 @@ DEFINE l_smy73      LIKE type_file.chr1    #TQC-AC0294
         CLOSE WINDOW t110_w1_w
         RETURN
      END IF
- 
+
      LET g_success='Y'
- 
+
      DECLARE t110_w1_cur CURSOR FOR SELECT * FROM srg_file
                                             WHERE srg01=g_qcs.qcs01
                                               AND srg02=g_qcs.qcs02
@@ -10244,22 +10246,22 @@ DEFINE l_smy73      LIKE type_file.chr1    #TQC-AC0294
         CLOSE WINDOW t110_w1_w
         RETURN
      END IF
- 
+
      IF cl_null(tm.wh2) THEN
         LET tm.wh2=' '
      END IF
      IF cl_null(tm.wh3) THEN
         LET tm.wh3=' '
      END IF
- 
+
      INITIALIZE l_sfu.* TO NULL
-     CALL s_auto_assign_no("apm",tm.slip,tm.l_date,"A","sfu_file","sfu01","","","")     #NO.FUN-6A0160 date->l_date 
+     CALL s_auto_assign_no("apm",tm.slip,tm.l_date,"A","sfu_file","sfu01","","","")     #NO.FUN-6A0160 date->l_date
         RETURNING li_result,tm.slip
      IF (NOT li_result) THEN
         LET g_success='N'
         CALL cl_err('sfp01',"sub-143",1)
      END IF
- 
+
      LET l_sfu.sfu00='3'              #重覆性生產入庫
      LET l_sfu.sfu01=tm.slip
      LET l_sfu.sfu02=tm.l_date        #NO.FUN-6A0160 date->l_date
@@ -10277,14 +10279,14 @@ DEFINE l_smy73      LIKE type_file.chr1    #TQC-AC0294
      #FUN-A80128---add---str--
      LET l_sfu.sfu15   = '0'
      LET l_sfu.sfu16   = g_user
-     LET l_sfu.sfumksg = 'N' 
+     LET l_sfu.sfumksg = 'N'
      #FUN-A80128---add---end--
      INSERT INTO sfu_file VALUES (l_sfu.*)
      IF SQLCA.sqlcode THEN
         CALL cl_err3("ins","sfu_file",l_sfu.sfu01,"",SQLCA.sqlcode,"","ins sfu",1)  #No.FUN-660115
         LET g_success='N'
      END IF
- 
+
      CALL t110_w2(l_srg.*,1,g_qcs.qcs091)
      UPDATE srg_file set srg11=tm.slip WHERE srg01=l_srg.srg01
                                          AND srg02=l_srg.srg02
@@ -10292,20 +10294,20 @@ DEFINE l_smy73      LIKE type_file.chr1    #TQC-AC0294
         CALL cl_err3("upd","srg_file",l_srg.srg01,l_srg.srg02,SQLCA.sqlcode,"","upd srg11",1)  #No.FUN-660115
         LET g_success='N'
      END IF
-     
-     UPDATE qcs_file set qcs20=tm.slip WHERE qcs01 = g_qcs.qcs01 AND qcs02 = g_qcs.qcs02 AND qcs05 = g_qcs.qcs05 #liuxqa 091022 
+
+     UPDATE qcs_file set qcs20=tm.slip WHERE qcs01 = g_qcs.qcs01 AND qcs02 = g_qcs.qcs02 AND qcs05 = g_qcs.qcs05 #liuxqa 091022
      IF SQLCA.sqlcode OR SQLCA.SQLERRD[3]=0 THEN
         CALL cl_err3("upd","qcs_file",g_qcs.qcs01,g_qcs.qcs02,SQLCA.sqlcode,"","upd qcs20",1)  #No.FUN-660115
         LET g_success='N'
      END IF
- 
+
      MESSAGE ""
      CLOSE WINDOW t110_w1_w
      EXIT WHILE
- 
-   END WHILE   
+
+   END WHILE
 END FUNCTION
- 
+
 FUNCTION t110_w2(l_srg,l_sfv03,l_sfv09)
 DEFINE l_srg        RECORD LIKE srg_file.*,
        l_sfv        RECORD LIKE sfv_file.*,
@@ -10317,7 +10319,7 @@ DEFINE l_srg        RECORD LIKE srg_file.*,
        l_flag       LIKE type_file.num5,     #No.FUN-680104 SMALLINT
        l_sfu04      LIKE sfu_file.sfu04,     #FUN-CB0087 add
        l_sfu16      LIKE sfu_file.sfu16      #FUN-CB0087 add
- 
+
    LET l_sfv.sfv01=tm.slip
    LET l_sfv.sfv03=l_sfv03
    LET l_sfv.sfv04=l_srg.srg14
@@ -10373,24 +10375,24 @@ DEFINE l_srg        RECORD LIKE srg_file.*,
       LET g_success='N'
    END IF
 END FUNCTION
- 
+
 FUNCTION t110_v()
 DEFINE l_cmd STRING,
        l_ima903 LIKE ima_file.ima903
- 
-   IF cl_null(g_qcs.qcs01) OR cl_null(g_qcs.qcs02) OR 
+
+   IF cl_null(g_qcs.qcs01) OR cl_null(g_qcs.qcs02) OR
       cl_null(g_qcs.qcs05) THEN
       RETURN
    END IF
- 
-   SELECT * INTO g_qcs.* FROM qcs_file WHERE qcs01 = g_qcs.qcs01 AND qcs02 = g_qcs.qcs02 AND qcs05 = g_qcs.qcs05 #liuxqa 091022 
+
+   SELECT * INTO g_qcs.* FROM qcs_file WHERE qcs01 = g_qcs.qcs01 AND qcs02 = g_qcs.qcs02 AND qcs05 = g_qcs.qcs05 #liuxqa 091022
    IF g_qcs.qcs14 = 'X' THEN CALL cl_err(' ','9024',0) RETURN END IF
    IF g_qcs.qcs14 <>'Y' THEN CALL cl_err(' ','9029',0) RETURN END IF
    IF g_qcs.qcs00 <>'7' THEN CALL cl_err(' ','asr-043',0) RETURN END IF
    LET l_ima903 = NULL
    SELECT ima903 INTO l_ima903 FROM ima_file
       WHERE ima01 = g_qcs.qcs021
- 
+
    IF l_ima903<>'Y' THEN
       CALL cl_err('','aqc-404',0)
       RETURN
@@ -10398,7 +10400,7 @@ DEFINE l_cmd STRING,
    LET l_cmd="asrt303 '",g_qcs.qcs01 clipped,"' '",g_qcs.qcs02,"' ",g_qcs.qcs05
    CALL cl_cmdrun_wait(l_cmd)  #FUN-660216 add
 END FUNCTION
- 
+
 #取得尚未送驗的數量
 FUNCTION t110_unqc_qty()
    DEFINE l_unqc_qty    LIKE rvb_file.rvb07
@@ -10410,299 +10412,299 @@ FUNCTION t110_unqc_qty()
           l_imq07       LIKE imq_file.imq07,
           l_qsa06       LIKE qsa_file.qsa06,
           l_ohb12       LIKE ohb_file.ohb12
- 
+
    LET g_errno = ''
    IF g_qcs.qcs00='1' THEN
-      SELECT rvb07 
-        INTO l_rvb07 
+      SELECT rvb07
+        INTO l_rvb07
         FROM rvb_file
-       WHERE rvb01=g_qcs.qcs01 
+       WHERE rvb01=g_qcs.qcs01
          AND rvb02=g_qcs.qcs02
       IF cl_null(l_rvb07) THEN LET l_rvb07 = 0 END IF
       IF cl_null(g_qcs.qcs05) THEN
-          SELECT SUM(qcs22) 
+          SELECT SUM(qcs22)
             INTO l_qcs22 FROM qcs_file
-           WHERE qcs01 =g_qcs.qcs01 
+           WHERE qcs01 =g_qcs.qcs01
              AND qcs02 =g_qcs.qcs02
-             AND qcs14 !='X' 
+             AND qcs14 !='X'
              AND qcs00 = '1'
       ELSE
-          SELECT SUM(qcs22) 
+          SELECT SUM(qcs22)
             INTO l_qcs22 FROM qcs_file
-           WHERE qcs01 =g_qcs.qcs01 
+           WHERE qcs01 =g_qcs.qcs01
              AND qcs02 =g_qcs.qcs02
-             AND qcs05 !=g_qcs.qcs05 
-             AND qcs14 !='X' 
+             AND qcs05 !=g_qcs.qcs05
+             AND qcs14 !='X'
              AND qcs00 = '1'
       END IF
       IF cl_null(l_qcs22) THEN LET l_qcs22 = 0 END IF
- 
+
       LET l_unqc_qty = l_rvb07-l_qcs22
       IF l_unqc_qty <= 0 THEN
-         #此料已全部送驗!  
+         #此料已全部送驗!
          #此收貨單+項次送驗資料皆已登打,請重新輸入!
          LET g_errno = 'aqc-114'
       END IF
    END IF
- 
+
    IF g_qcs.qcs00='A' THEN
-      SELECT inb16 #FUN-870040 
-        INTO l_inb09 
+      SELECT inb16 #FUN-870040
+        INTO l_inb09
         FROM inb_file
-       WHERE inb01=g_qcs.qcs01 
+       WHERE inb01=g_qcs.qcs01
          AND inb03=g_qcs.qcs02
       IF cl_null(l_inb09) THEN LET l_inb09 = 0 END IF
       IF cl_null(g_qcs.qcs05) THEN
-          SELECT SUM(qcs22) 
+          SELECT SUM(qcs22)
             INTO l_qcs22 FROM qcs_file
-           WHERE qcs01 =g_qcs.qcs01 
+           WHERE qcs01 =g_qcs.qcs01
              AND qcs02 =g_qcs.qcs02
-             AND qcs14 !='X' 
+             AND qcs14 !='X'
              AND qcs00 = 'A'
       ELSE
-          SELECT SUM(qcs22) 
+          SELECT SUM(qcs22)
             INTO l_qcs22 FROM qcs_file
-           WHERE qcs01 =g_qcs.qcs01 
+           WHERE qcs01 =g_qcs.qcs01
              AND qcs02 =g_qcs.qcs02
-             AND qcs05 !=g_qcs.qcs05 
-             AND qcs14 !='X' 
+             AND qcs05 !=g_qcs.qcs05
+             AND qcs14 !='X'
              AND qcs00 = 'A'
       END IF
       IF cl_null(l_qcs22) THEN LET l_qcs22 = 0 END IF
- 
+
        LET l_unqc_qty = l_inb09-l_qcs22
        IF l_unqc_qty <= 0 THEN
-           #此料已全部送驗!  
+           #此料已全部送驗!
            #此收貨單+項次送驗資料皆已登打,請重新輸入!
            LET g_errno = 'aqc-114'
        END IF
    END IF
- 
+
    IF g_qcs.qcs00='B' THEN
       SELECT inb16  #FUN-870040
-        INTO l_inb09 
+        INTO l_inb09
         FROM inb_file
-       WHERE inb01=g_qcs.qcs01 
+       WHERE inb01=g_qcs.qcs01
          AND inb03=g_qcs.qcs02
       IF cl_null(l_inb09) THEN LET l_inb09 = 0 END IF
       IF cl_null(g_qcs.qcs05) THEN
-          SELECT SUM(qcs22) 
+          SELECT SUM(qcs22)
             INTO l_qcs22 FROM qcs_file
-           WHERE qcs01 =g_qcs.qcs01 
+           WHERE qcs01 =g_qcs.qcs01
              AND qcs02 =g_qcs.qcs02
-             AND qcs14 !='X' 
+             AND qcs14 !='X'
              AND qcs00 = 'B'
       ELSE
-          SELECT SUM(qcs22) 
+          SELECT SUM(qcs22)
             INTO l_qcs22 FROM qcs_file
-           WHERE qcs01 =g_qcs.qcs01 
+           WHERE qcs01 =g_qcs.qcs01
              AND qcs02 =g_qcs.qcs02
-             AND qcs05 !=g_qcs.qcs05 
-             AND qcs14 !='X' 
+             AND qcs05 !=g_qcs.qcs05
+             AND qcs14 !='X'
              AND qcs00 = 'B'
       END IF
       IF cl_null(l_qcs22) THEN LET l_qcs22 = 0 END IF
- 
+
        LET l_unqc_qty = l_inb09-l_qcs22
        IF l_unqc_qty <= 0 THEN
-           #此料已全部送驗!  
+           #此料已全部送驗!
            #此收貨單+項次送驗資料皆已登打,請重新輸入!
            LET g_errno = 'aqc-114'
        END IF
    END IF
- 
+
    IF g_qcs.qcs00='C' THEN
-      SELECT imn10 
-        INTO l_imn10 
+      SELECT imn10
+        INTO l_imn10
         FROM imn_file
-       WHERE imn01=g_qcs.qcs01 
+       WHERE imn01=g_qcs.qcs01
          AND imn02=g_qcs.qcs02
       IF cl_null(l_imn10) THEN LET l_imn10 = 0 END IF
       IF cl_null(g_qcs.qcs05) THEN
-          SELECT SUM(qcs22) 
+          SELECT SUM(qcs22)
             INTO l_qcs22 FROM qcs_file
-           WHERE qcs01 =g_qcs.qcs01 
+           WHERE qcs01 =g_qcs.qcs01
              AND qcs02 =g_qcs.qcs02
-             AND qcs14 !='X' 
+             AND qcs14 !='X'
              AND qcs00 = 'C'
       ELSE
-          SELECT SUM(qcs22) 
+          SELECT SUM(qcs22)
             INTO l_qcs22 FROM qcs_file
-           WHERE qcs01 =g_qcs.qcs01 
+           WHERE qcs01 =g_qcs.qcs01
              AND qcs02 =g_qcs.qcs02
-             AND qcs05 !=g_qcs.qcs05 
-             AND qcs14 !='X' 
+             AND qcs05 !=g_qcs.qcs05
+             AND qcs14 !='X'
              AND qcs00 = 'C'
       END IF
       IF cl_null(l_qcs22) THEN LET l_qcs22 = 0 END IF
- 
+
        LET l_unqc_qty = l_imn10-l_qcs22
        IF l_unqc_qty <= 0 THEN
-           #此料已全部送驗!  
+           #此料已全部送驗!
            #此收貨單+項次送驗資料皆已登打,請重新輸入!
            LET g_errno = 'aqc-114'
        END IF
    END IF
- 
+
    IF g_qcs.qcs00='D' THEN
-      SELECT imn10 
-        INTO l_imn10 
+      SELECT imn10
+        INTO l_imn10
         FROM imn_file
-       WHERE imn01=g_qcs.qcs01 
+       WHERE imn01=g_qcs.qcs01
          AND imn02=g_qcs.qcs02
       IF cl_null(l_imn10) THEN LET l_imn10 = 0 END IF
       IF cl_null(g_qcs.qcs05) THEN
-          SELECT SUM(qcs22) 
+          SELECT SUM(qcs22)
             INTO l_qcs22 FROM qcs_file
-           WHERE qcs01 =g_qcs.qcs01 
+           WHERE qcs01 =g_qcs.qcs01
              AND qcs02 =g_qcs.qcs02
-             AND qcs14 !='X' 
+             AND qcs14 !='X'
              AND qcs00 = 'D'
       ELSE
-          SELECT SUM(qcs22) 
+          SELECT SUM(qcs22)
             INTO l_qcs22 FROM qcs_file
-           WHERE qcs01 =g_qcs.qcs01 
+           WHERE qcs01 =g_qcs.qcs01
              AND qcs02 =g_qcs.qcs02
-             AND qcs05 !=g_qcs.qcs05 
-             AND qcs14 !='X' 
+             AND qcs05 !=g_qcs.qcs05
+             AND qcs14 !='X'
              AND qcs00 = 'D'
       END IF
       IF cl_null(l_qcs22) THEN LET l_qcs22 = 0 END IF
- 
+
        LET l_unqc_qty = l_imn10-l_qcs22
        IF l_unqc_qty <= 0 THEN
-           #此料已全部送驗!  
+           #此料已全部送驗!
            #此收貨單+項次送驗資料皆已登打,請重新輸入!
            LET g_errno = 'aqc-114'
        END IF
    END IF
- 
+
    IF g_qcs.qcs00='E' THEN
-      SELECT imp04 
-        INTO l_imp04 
+      SELECT imp04
+        INTO l_imp04
         FROM imp_file
-       WHERE imp01=g_qcs.qcs01 
+       WHERE imp01=g_qcs.qcs01
          AND imp02=g_qcs.qcs02
       IF cl_null(l_imp04) THEN LET l_imp04 = 0 END IF
       IF cl_null(g_qcs.qcs05) THEN
-          SELECT SUM(qcs22) 
+          SELECT SUM(qcs22)
             INTO l_qcs22 FROM qcs_file
-           WHERE qcs01 =g_qcs.qcs01 
+           WHERE qcs01 =g_qcs.qcs01
              AND qcs02 =g_qcs.qcs02
-             AND qcs14 !='X' 
+             AND qcs14 !='X'
              AND qcs00 = 'E'
       ELSE
-          SELECT SUM(qcs22) 
+          SELECT SUM(qcs22)
             INTO l_qcs22 FROM qcs_file
-           WHERE qcs01 =g_qcs.qcs01 
+           WHERE qcs01 =g_qcs.qcs01
              AND qcs02 =g_qcs.qcs02
-             AND qcs05 !=g_qcs.qcs05 
-             AND qcs14 !='X' 
+             AND qcs05 !=g_qcs.qcs05
+             AND qcs14 !='X'
              AND qcs00 = 'E'
       END IF
       IF cl_null(l_qcs22) THEN LET l_qcs22 = 0 END IF
- 
+
        LET l_unqc_qty = l_imp04-l_qcs22
        IF l_unqc_qty <= 0 THEN
-           #此料已全部送驗!  
+           #此料已全部送驗!
            #此收貨單+項次送驗資料皆已登打,請重新輸入!
            LET g_errno = 'aqc-114'
        END IF
    END IF
- 
+
    IF g_qcs.qcs00='F' THEN
-      SELECT imq07 
-        INTO l_imq07 
+      SELECT imq07
+        INTO l_imq07
         FROM imq_file
-       WHERE imq01=g_qcs.qcs01 
+       WHERE imq01=g_qcs.qcs01
          AND imq02=g_qcs.qcs02
       IF cl_null(l_imq07) THEN LET l_imq07 = 0 END IF
       IF cl_null(g_qcs.qcs05) THEN
-          SELECT SUM(qcs22) 
+          SELECT SUM(qcs22)
             INTO l_qcs22 FROM qcs_file
-           WHERE qcs01 =g_qcs.qcs01 
+           WHERE qcs01 =g_qcs.qcs01
              AND qcs02 =g_qcs.qcs02
-             AND qcs14 !='X' 
+             AND qcs14 !='X'
              AND qcs00 = 'F'
       ELSE
-          SELECT SUM(qcs22) 
+          SELECT SUM(qcs22)
             INTO l_qcs22 FROM qcs_file
-           WHERE qcs01 =g_qcs.qcs01 
+           WHERE qcs01 =g_qcs.qcs01
              AND qcs02 =g_qcs.qcs02
-             AND qcs05 !=g_qcs.qcs05 
-             AND qcs14 !='X' 
+             AND qcs05 !=g_qcs.qcs05
+             AND qcs14 !='X'
              AND qcs00 = 'F'
       END IF
       IF cl_null(l_qcs22) THEN LET l_qcs22 = 0 END IF
- 
+
        LET l_unqc_qty = l_imq07-l_qcs22
        IF l_unqc_qty <= 0 THEN
-           #此料已全部送驗!  
+           #此料已全部送驗!
            #此收貨單+項次送驗資料皆已登打,請重新輸入!
            LET g_errno = 'aqc-114'
        END IF
    END IF
- 
+
    IF g_qcs.qcs00='G' THEN
-      SELECT qsa06 
-        INTO l_qsa06 
+      SELECT qsa06
+        INTO l_qsa06
         FROM qsa_file
-       WHERE qsa01=g_qcs.qcs01 
+       WHERE qsa01=g_qcs.qcs01
       IF cl_null(l_qsa06) THEN LET l_qsa06 = 0 END IF
       IF cl_null(g_qcs.qcs05) THEN
-          SELECT SUM(qcs22) 
+          SELECT SUM(qcs22)
             INTO l_qcs22 FROM qcs_file
-           WHERE qcs01 =g_qcs.qcs01 
+           WHERE qcs01 =g_qcs.qcs01
              AND qcs02 =g_qcs.qcs02
-             AND qcs14 !='X' 
+             AND qcs14 !='X'
              AND qcs00 = 'G'
       ELSE
-          SELECT SUM(qcs22) 
+          SELECT SUM(qcs22)
             INTO l_qcs22 FROM qcs_file
-           WHERE qcs01 =g_qcs.qcs01 
+           WHERE qcs01 =g_qcs.qcs01
              AND qcs02 =g_qcs.qcs02
-             AND qcs05 !=g_qcs.qcs05 
-             AND qcs14 !='X' 
+             AND qcs05 !=g_qcs.qcs05
+             AND qcs14 !='X'
              AND qcs00 = 'G'
       END IF
       IF cl_null(l_qcs22) THEN LET l_qcs22 = 0 END IF
- 
+
        LET l_unqc_qty = l_qsa06-l_qcs22
        IF l_unqc_qty <= 0 THEN
-           #此料已全部送驗!  
+           #此料已全部送驗!
            #此收貨單+項次送驗資料皆已登打,請重新輸入!
            LET g_errno = 'aqc-114'
        END IF
    END IF
- 
+
    IF g_qcs.qcs00='H' THEN
-      SELECT ohb12 
-        INTO l_ohb12 
+      SELECT ohb12
+        INTO l_ohb12
         FROM ohb_file
-       WHERE ohb01=g_qcs.qcs01 
+       WHERE ohb01=g_qcs.qcs01
          AND ohb03=g_qcs.qcs02
       IF cl_null(l_ohb12) THEN LET l_ohb12 = 0 END IF
       IF cl_null(g_qcs.qcs05) THEN
-          SELECT SUM(qcs22) 
+          SELECT SUM(qcs22)
             INTO l_qcs22 FROM qcs_file
-           WHERE qcs01 =g_qcs.qcs01 
+           WHERE qcs01 =g_qcs.qcs01
              AND qcs02 =g_qcs.qcs02
-             AND qcs14 !='X' 
+             AND qcs14 !='X'
              AND qcs00 = 'H'
       ELSE
-          SELECT SUM(qcs22) 
+          SELECT SUM(qcs22)
             INTO l_qcs22 FROM qcs_file
-           WHERE qcs01 =g_qcs.qcs01 
+           WHERE qcs01 =g_qcs.qcs01
              AND qcs02 =g_qcs.qcs02
-             AND qcs05 !=g_qcs.qcs05 
-             AND qcs14 !='X' 
+             AND qcs05 !=g_qcs.qcs05
+             AND qcs14 !='X'
              AND qcs00 = 'H'
       END IF
       IF cl_null(l_qcs22) THEN LET l_qcs22 = 0 END IF
- 
+
        LET l_unqc_qty = l_ohb12-l_qcs22
        IF l_unqc_qty <= 0 THEN
-           #此料已全部送驗!  
+           #此料已全部送驗!
            #此收貨單+項次送驗資料皆已登打,請重新輸入!
            LET g_errno = 'aqc-114'
        END IF
@@ -10713,25 +10715,25 @@ FUNCTION t110_unqc_qty()
          LET g_errno = 'aqc-037'
       END IF
    END IF
- 
+
 END FUNCTION
- 
+
 FUNCTION t110_spc()
    LET g_success = 'Y'
- 
+
    CALL t110_y_chk()          #CALL 原確認的 check 段
    IF g_success = "N" THEN
        RETURN
    END IF
- 
+
    #檢查資料是否可拋轉至 SPC
    #CALL aws_spccli_qc_chk('單號','SPC拋轉碼','確認碼','有效碼')
    CALL aws_spccli_qc_chk(g_qcs.qcs01,g_qcs.qcsspc,g_qcs.qcs14,'')
    IF g_success = 'N' THEN
        RETURN
    END IF
-   
- 
+
+
    # CALL aws_spccli()
    #功能: 傳送此單號所有的 QC 單至 SPC 端
    # 傳入參數: (1) QC 程式代號, (2) QC 單頭資料,(
@@ -10743,20 +10745,20 @@ FUNCTION t110_spc()
    ELSE
          LET g_qcs.qcsspc = '2'
    END IF
- 
+
    DISPLAY BY NAME g_qcs.qcsspc
- 
+
    #更改前端單據SPC拋轉碼
-   CALL t110_updspc()                  
- 
+   CALL t110_updspc()
+
 END FUNCTION
- 
+
 FUNCTION t110_updspc()
 DEFINE l_cnt             LIKE type_file.num10,        #No.FUN-680104 INTEGER
        l_qc_cnt          LIKE type_file.num10         #No.FUN-680104 INTEGER
 DEFINE l_spc             LIKE type_file.chr1          #No.FUN-680104 VARCHAR(01)
 DEFINE l_tabname         STRING
- 
+
    IF g_aza.aza64 matches '[ Nn]' OR g_aza.aza64 IS NULL THEN
           RETURN
    END IF
@@ -10766,22 +10768,22 @@ DEFINE l_tabname         STRING
           WHERE rvb01 = g_qcs.qcs01 AND rvb39 = 'Y' AND rvb19 = '1'
    END IF
    IF g_argv1 = '2' THEN
-     CASE 
+     CASE
        WHEN (g_qcs.qcs00 = "A") OR (g_qcs.qcs00 ="B")
          SELECT COUNT(*) INTO l_qc_cnt FROM inb_file
-           WHERE inb01 = g_qcs.qcs01 AND inb10 = 'Y' 
+           WHERE inb01 = g_qcs.qcs01 AND inb10 = 'Y'
        WHEN (g_qcs.qcs00 ="C") OR (g_qcs.qcs00 ="D")
          SELECT COUNT(*) INTO l_qc_cnt FROM imn_file
-           WHERE imn01 = g_qcs.qcs01 AND imn29 = 'Y' 
+           WHERE imn01 = g_qcs.qcs01 AND imn29 = 'Y'
        WHEN g_qcs.qcs00 ="E"
          SELECT COUNT(*) INTO l_qc_cnt FROM imp_file
-           WHERE imp01 = g_qcs.qcs01 AND imp15 = 'Y' 
+           WHERE imp01 = g_qcs.qcs01 AND imp15 = 'Y'
        WHEN g_qcs.qcs00 ="F"
          SELECT COUNT(*) INTO l_qc_cnt FROM imq_file
-           WHERE imq01 = g_qcs.qcs01 AND imq15 = 'Y' 
+           WHERE imq01 = g_qcs.qcs01 AND imq15 = 'Y'
        WHEN g_qcs.qcs00 ="G"
          SELECT COUNT(*) INTO l_qc_cnt FROM qsa_file
-          WHERE qsa01 = g_qcs.qcs01 
+          WHERE qsa01 = g_qcs.qcs01
        WHEN g_qcs.qcs00 ="H"
          SELECT COUNT(*) INTO l_qc_cnt FROM ohb_file
           WHERE ohb01 = g_qcs.qcs01 AND ohb61='Y'
@@ -10795,24 +10797,24 @@ DEFINE l_tabname         STRING
        SELECT COUNT(*) INTO l_qc_cnt FROM srg_file
          WHERE srg01 = g_qcs.qcs01 AND srg15='Y'
     END IF
- 
- 
+
+
    # QC 單已拋轉至 SPC 的筆數
-   SELECT COUNT(*) INTO l_cnt FROM qcs_file 
-      WHERE qcs01 = g_qcs.qcs01 AND qcsspc = '1' 
- 
+   SELECT COUNT(*) INTO l_cnt FROM qcs_file
+      WHERE qcs01 = g_qcs.qcs01 AND qcsspc = '1'
+
    LET l_spc = ""
    IF l_qc_cnt = l_cnt THEN
-      LET l_spc = '1'     
+      LET l_spc = '1'
    ELSE
-      CASE 
-        WHEN l_cnt = 0 
-          LET l_spc = '0'     
-        WHEN l_cnt > 0 
-          LET l_spc = '3'     
+      CASE
+        WHEN l_cnt = 0
+          LET l_spc = '0'
+        WHEN l_cnt > 0
+          LET l_spc = '3'
       END CASE
    END IF
- 
+
    #將 QC 單的 SPC 拋轉碼的狀況回饋至前端單據
    IF NOT cl_null(l_spc) THEN
       IF g_argv1 = '1' THEN
@@ -10820,7 +10822,7 @@ DEFINE l_tabname         STRING
          UPDATE rva_file set rvaspc = l_spc WHERE rva01 = g_qcs.qcs01
       END IF
       IF g_argv1 = '2' THEN
-        CASE 
+        CASE
           WHEN (g_qcs.qcs00 = "A") OR (g_qcs.qcs00 ="B")
             LET l_tabname = "ina_file"
             UPDATE ina_file set inaspc = l_spc WHERE ina01 = g_qcs.qcs01
@@ -10849,14 +10851,14 @@ DEFINE l_tabname         STRING
           LET l_tabname = "srf_file"
           UPDATE srf_file set srfspc = l_spc WHERE srf01 = g_qcs.qcs01
        END IF
-      
+
       IF SQLCA.sqlcode OR SQLCA.sqlerrd[3]=0 THEN
-         CALL cl_err3("upd",l_tabname,g_qcs.qcs01,g_qcs.qcs01,SQLCA.sqlcode,"","",1)  
+         CALL cl_err3("upd",l_tabname,g_qcs.qcs01,g_qcs.qcs01,SQLCA.sqlcode,"","",1)
          LET g_success='N'
       END IF
    END IF
 END FUNCTION
- 
+
 FUNCTION t110_check_qc() #MOD-740273
 DEFINE l_err           LIKE ze_file.ze01,             #No.FUN-5C0077
        l_rvb           RECORD LIKE rvb_file.*,
@@ -10868,8 +10870,8 @@ DEFINE l_err           LIKE ze_file.ze01,             #No.FUN-5C0077
        l_ogb           RECORD LIKE ogb_file.*,        #No.FUN-5C0077
        l_cnt           LIKE type_file.num5,                        #FUN-5C0114  #No.FUN-680104 SMALLINT
        l_ohb           RECORD LIKE ohb_file.*   #No.FUN-740016
- 
- 
+
+
        LET l_err = NULL
        IF (g_argv1 = '1') AND (g_qcs.qcs00 = '1') THEN  #OR l_p = 'Y') THEN #MOD-740273
           SELECT rvb_file.* INTO l_rvb.* #NO:7143
@@ -10878,17 +10880,17 @@ DEFINE l_err           LIKE ze_file.ze01,             #No.FUN-5C0077
              AND rvaconf = 'Y'
              AND rvb01 = g_qcs.qcs01
              AND rvb02 = g_qcs.qcs02
- 
+
           IF l_rvb.rvb19 = '2' THEN
              #委外代買料件免驗!
              LET l_err = 'aqc-110'
           END IF
- 
+
           IF l_rvb.rvb39 = 'N' THEN
              #免驗料!
              LET l_err = 'aqc-113'
           END IF
- 
+
           IF STATUS=100 THEN
              LET l_err = 'mfg3070'
           END IF
@@ -10903,12 +10905,12 @@ DEFINE l_err           LIKE ze_file.ze01,             #No.FUN-5C0077
              AND rvb01 = g_qcs.qcs01
              AND rvb02 = g_qcs.qcs02
              AND rvb39 = 'N'
-           IF l_cnt = 0 THEN 
+           IF l_cnt = 0 THEN
               LET l_err = 'aqc-130'
-           END IF   
-       END IF 
+           END IF
+       END IF
        #FUN-C30070---end
- 
+
        IF g_argv1 = '2' THEN
           CASE g_qcs.qcs00
              WHEN "A"
@@ -10916,7 +10918,7 @@ DEFINE l_err           LIKE ze_file.ze01,             #No.FUN-5C0077
                   FROM inb_file,ina_file
                  WHERE inb01 = ina01
                    AND inapost = 'N'
-                   AND (ina00 = '1' OR ina00 = '2')  
+                   AND (ina00 = '1' OR ina00 = '2')
                    AND inb01 = g_qcs.qcs01
                    AND inb03 = g_qcs.qcs02
                    AND inb16 > 0
@@ -11063,7 +11065,7 @@ DEFINE l_err           LIKE ze_file.ze01,             #No.FUN-5C0077
        IF NOT cl_null(l_err) THEN
           IF l_err = 'mfg3070' OR l_err = 'abx-004' OR l_err = 'mfg3384'
                                OR l_err = 'aim-410' OR l_err = 'aap-091'
-                               OR l_err = 'axm-897' OR l_err = 'aqc-987' 
+                               OR l_err = 'axm-897' OR l_err = 'aqc-987'
                                OR l_err = 'axm-892' THEN   #FUN-640058 add aqc-987  #MOD-C80185 add axm-892
              LET g_msg = g_qcs.qcs01 CLIPPED,'+',g_qcs.qcs02
              CALL cl_err(g_msg,l_err,0)
@@ -11086,7 +11088,7 @@ DEFINE l_err           LIKE ze_file.ze01,             #No.FUN-5C0077
        END IF
   RETURN l_err
 END FUNCTION
- 
+
 FUNCTION t110_spc_upd()
    BEGIN WORK
    IF NOT t110_spc_upd_process() THEN
@@ -11105,58 +11107,58 @@ FUNCTION t110_spc_upd()
    END IF
    COMMIT WORK
 END FUNCTION
- 
+
 FUNCTION t110_spc_upd_process()
 DEFINE l_status    LIKE type_file.num5         #No.FUN-680104 SMALLINT
 DEFINE l_qcs091    LIKE qcs_file.qcs091
 DEFINE l_qcs22     LIKE qcs_file.qcs22
- 
+
    # CALL aws_spcfld()
    #功能: 修改 QC 張資料
    # 傳入參數: (1) QC 程式代號, (2) TABLE 名稱,
    #           (3) 合格量欄位,  (4) 送驗量欄位
    # 回傳值  : (1)0 更改失敗; 1 更新成功
    #           (2) 合格量數量， (3)送驗量數量
-   CALL aws_spcfld(g_prog,'qcs_file','qcs091','qcs22') 
+   CALL aws_spcfld(g_prog,'qcs_file','qcs091','qcs22')
      RETURNING l_status,l_qcs091,l_qcs22
    IF l_status = 0 THEN
        RETURN FALSE
    END IF
- 
+
    LET g_qcs.qcs36 = g_qcs.qcs30
    LET g_qcs.qcs37 = g_qcs.qcs31
    LET g_qcs.qcs38 = l_qcs091 / g_qcs.qcs37
    LET g_qcs.qcs39 = g_qcs.qcs33
    LET g_qcs.qcs40 = g_qcs.qcs34
-   IF NOT cl_null(g_qcs.qcs41) THEN 
-      LET g_qcs.qcs41 = 0                #母單位數量(合格量) 
+   IF NOT cl_null(g_qcs.qcs41) THEN
+      LET g_qcs.qcs41 = 0                #母單位數量(合格量)
    END IF
    IF l_qcs22 <> g_qcs.qcs22 THEN
-      IF NOT cl_null(g_qcs.qcs35) THEN 
+      IF NOT cl_null(g_qcs.qcs35) THEN
          LET g_qcs.qcs35 = 0                #母單位數量
       END IF
       LET g_qcs.qcs32 = l_qcs22 / g_qcs.qcs31
    END IF
 
-   LET g_qcs.qcs32 = s_digqty(g_qcs.qcs32,g_qcs.qcs30)    #FUN-BB0085 
+   LET g_qcs.qcs32 = s_digqty(g_qcs.qcs32,g_qcs.qcs30)    #FUN-BB0085
    LET g_qcs.qcs35 = s_digqty(g_qcs.qcs35,g_qcs.qcs33)    #FUN-BB0085
    LET g_qcs.qcs38 = s_digqty(g_qcs.qcs38,g_qcs.qcs36)    #FUN-BB0085
-   UPDATE qcs_file SET qcs36 = g_qcs.qcs36,   qcs37 = g_qcs.qcs37,   
+   UPDATE qcs_file SET qcs36 = g_qcs.qcs36,   qcs37 = g_qcs.qcs37,
                        qcs38 = g_qcs.qcs38,   qcs39 = g_qcs.qcs39,
-                       qcs40 = g_qcs.qcs40,   qcs41 = g_qcs.qcs41,   
-                       qcs35 = g_qcs.qcs35,   qcs32 = g_qcs.qcs32    
+                       qcs40 = g_qcs.qcs40,   qcs41 = g_qcs.qcs41,
+                       qcs35 = g_qcs.qcs35,   qcs32 = g_qcs.qcs32
     WHERE qcs01 = g_qcs.qcs01 AND qcs02 = g_qcs.qcs02
       AND qcs05 = g_qcs.qcs05
    IF SQLCA.sqlcode OR SQLCA.sqlerrd[3]=0 THEN
       CALL cl_err3("upd","qcs_file",g_qcs.qcs01,g_qcs.qcs01,SQLCA.sqlcode,"","",1)  #No.FUN-660115
       RETURN FALSE
    END IF
-   RETURN TRUE 
+   RETURN TRUE
 END FUNCTION
- 
+
 FUNCTION t110_spc_def()
-DEFINE l_err           LIKE ze_file.ze01             
- 
+DEFINE l_err           LIKE ze_file.ze01
+
    LET g_qcs.qcs01 = g_argv2
    LET g_qcs.qcs02 = g_argv3
    LET g_qcs.qcsspc = '1'
@@ -11169,19 +11171,19 @@ DEFINE l_err           LIKE ze_file.ze01
       CALL cl_err(g_qcs.qcs01,l_err,1)
       RETURN 0
    END IF
- 
+
    CALL t110_check_qc() RETURNING l_err  #MOD-740273
    IF NOT cl_null(l_err) THEN
       CALL cl_err(g_qcs.qcs01,l_err,1)
       RETURN 0
    END IF
- 
+
    CALL t110_unqc_qty()
    IF NOT cl_null(g_errno) THEN
        CALL cl_err(g_qcs.qcs01,g_errno,1)
        RETURN 0
    END IF
-   CALL t110_ref()        
+   CALL t110_ref()
   #CALL t110_qcs02()        #MOD-C30339  mark
    CALL t110_qcs02('a')     #MOD-C30339
    CALL t110_qcs03_def()
@@ -11189,25 +11191,25 @@ DEFINE l_err           LIKE ze_file.ze01
       RETURN 0
    END IF
    LET g_qcs.qcs05 = g_argv4
- 
+
    LET g_qcs22 = g_qcs.qcs22
    display "g_qcs.qcs22:",g_qcs.qcs22
    display "g_qcs22:",g_qcs22
    display "g_qcs222:",g_qcs22s
-  
+
    RETURN 1
- 
-END FUNCTION 
- 
+
+END FUNCTION
+
 FUNCTION t110_qcs03_def()
-DEFINE    m_pmc03         LIKE pmc_file.pmc03, 
+DEFINE    m_pmc03         LIKE pmc_file.pmc03,
           m_ima02         LIKE ima_file.ima02,
           m_ima109        LIKE ima_file.ima109,
           m_ima15         LIKE ima_file.ima15,
           m_azf03         LIKE azf_file.azf03,
           m_pmh05         LIKE pmh_file.pmh05,
           m_pmh05_desc    LIKE ze_file.ze03   #No.TQC-610007
-   LET g_errno='' #MOD-970271  
+   LET g_errno='' #MOD-970271
    IF NOT cl_null(g_qcs.qcs03) THEN
        IF g_qcs.qcs00 MATCHES '[56H]' THEN   #MOD-A20100 add H
           SELECT occ02 INTO m_pmc03
@@ -11216,7 +11218,7 @@ DEFINE    m_pmc03         LIKE pmc_file.pmc03,
           IF STATUS THEN
              CALL cl_err3("sel","occ_file",g_qcs.qcs03,"","atm-333","","",1)  #No.FUN-660115
              LET g_errno = "atm-333"
-             RETURN 
+             RETURN
           END IF
           SELECT obk12,obk14 INTO g_qcs.qcs21,g_qcs.qcs17
             FROM obk_file
@@ -11235,7 +11237,7 @@ DEFINE    m_pmc03         LIKE pmc_file.pmc03,
           IF STATUS THEN
              CALL cl_err3("sel","pmc_file",g_qcs.qcs03,"","mfg3001","","",1)  #No.FUN-660115
              LET g_errno = "atm-333"
-        RETURN 
+        RETURN
           END IF
           DECLARE pmh_cur3 CURSOR FOR SELECT pmh05,pmh09,pmh16
                                         FROM pmh_file
@@ -11355,13 +11357,13 @@ DEFINE    m_pmc03         LIKE pmc_file.pmc03,
    DISPLAY g_qcs.qcs21 TO qcs21
    DISPLAY qcs21_desc TO FORMONLY.qcs21_desc
 END FUNCTION
- 
+
 FUNCTION t110_ins_rvbs()
    DEFINE l_rvbs     RECORD LIKE rvbs_file.*   #No.FUN-840157
    DEFINE l_rvbs09   LIKE rvbs_file.rvbs09   #No.FUN-860045
    DEFINE l_ima930   LIKE ima_file.ima930   #DEV-D40021 --add
 #No.TQC-B90236--------------add begin-------------------------------------------------------
-#No.TQC-B90236--------------mark----begin--------------------------------------------------- 
+#No.TQC-B90236--------------mark----begin---------------------------------------------------
 #  IF NOT s_lotin_del(g_prog,g_qcs.qcs01,g_qcs.qcs02,g_qcs.qcs05,g_qcs.qcs021,'DEL') THEN   #No.FUN-860045
 #     CALL cl_err3("del","rvbs_file",g_qcs.qcs01,g_qcs.qcs02,
 #                   SQLCA.sqlcode,"","",1)
@@ -11372,42 +11374,42 @@ FUNCTION t110_ins_rvbs()
        CALL cl_err3("del","rvbs_file",g_qcs.qcs01,g_qcs.qcs02,
                      SQLCA.sqlcode,"","",1)
        RETURN
-    END IF 
+    END IF
 #No.TQC-B90236--------------add end---------------------------------------------------------
-   SELECT ima918,ima921 INTO g_ima918,g_ima921 
+   SELECT ima918,ima921 INTO g_ima918,g_ima921
      FROM ima_file
     WHERE ima01 = g_qcs.qcs021
       AND imaacti = "Y"
-   
+
    #DEV-D40021 --add--str
    LET l_ima930 = ''
    SELECT ima930 INTO l_ima930 FROM ima_file
     WHERE ima01 = g_qcs.qcs021
-   IF cl_null(l_ima930) THEN LET l_ima930 = 'N' END IF 
-   IF l_ima930 = 'Y' THEN RETURN END IF 
+   IF cl_null(l_ima930) THEN LET l_ima930 = 'N' END IF
+   IF l_ima930 = 'Y' THEN RETURN END IF
    #DEV-D40021 --add--end
-   
+
    IF g_ima918 = "Y" OR g_ima921 = "Y" THEN
       #IF g_sma.sma90 = "Y" THEN   #CHI-A70047
-      IF (g_sma.sma90 = "Y" AND g_argv1='1') OR g_argv1<>'1' THEN   #CHI-A70047 
+      IF (g_sma.sma90 = "Y" AND g_argv1='1') OR g_argv1<>'1' THEN   #CHI-A70047
          IF g_qcs.qcs00 MATCHES '[156ABCDH]' THEN
             IF g_qcs.qcs00 MATCHES '[1BC]' THEN
-               LET l_rvbs09 = 1  
+               LET l_rvbs09 = 1
             ELSE
-               LET l_rvbs09 = -1  
+               LET l_rvbs09 = -1
             END IF
             DECLARE rvbs_curs CURSOR FOR SELECT * FROM rvbs_file
                                           WHERE rvbs01 = g_qcs.qcs01
                                             AND rvbs02 = g_qcs.qcs02
                                             AND rvbs13 = 0
-                                            AND rvbs09 = l_rvbs09 
-            
+                                            AND rvbs09 = l_rvbs09
+
             FOREACH rvbs_curs INTO l_rvbs.*
-               IF STATUS THEN 
+               IF STATUS THEN
                   CALL cl_err('foreach rvbs:',STATUS,1)
                   EXIT FOREACH
                END IF
-            
+
                INSERT INTO rvbs_file(rvbs00,rvbs01,rvbs02,rvbs021,rvbs022,
                                      rvbs03,rvbs04,rvbs05,rvbs06,rvbs07,
                                      rvbs08,rvbs09,rvbs10,rvbs11,rvbs12,rvbs13,
@@ -11417,34 +11419,34 @@ FUNCTION t110_ins_rvbs()
                                      l_rvbs.rvbs04,l_rvbs.rvbs05,l_rvbs.rvbs06,
                                      l_rvbs.rvbs07,l_rvbs.rvbs08,1,0,0,0,g_qcs.qcs05,
                                      g_plant,g_legal)     #FUN-980007
-            
+
             END FOREACH
          END IF
       END IF
    END IF
- 
+
 END FUNCTION
- 
+
 FUNCTION t110_get_fac()
- 
+
    IF (g_argv1 = '1') AND (g_qcs.qcs00 = '1') THEN
-      SELECT rvb05,rvb36,rvb37,rvb38,pmn07 
+      SELECT rvb05,rvb36,rvb37,rvb38,pmn07
         INTO g_rvb05,g_rvb36,g_rvb37,g_rvb38,g_pmn07
         FROM rvb_file,pmn_file
        WHERE rvb01 = g_qcs.qcs01
          AND rvb02 = g_qcs.qcs02
          AND rvb04 = pmn01
          AND rvb03 = pmn02
- 
+
       SELECT img09 INTO g_img09
         FROM img_file   #庫存單位
        WHERE img01=g_rvb05 AND img02=g_rvb36
          AND img03=g_rvb37 AND img04=g_rvb38
-      CALL s_umfchk(g_rvb05,g_pmn07,g_img09) 
+      CALL s_umfchk(g_rvb05,g_pmn07,g_img09)
            RETURNING l_i,l_fac
       IF l_i = 1 THEN LET l_fac = 1 END IF
    END IF
- 
+
    IF g_argv1 = '2' THEN
       #CASE g_qcs.qcs00   #CHI-A70047
       CASE    #CHI-A70047
@@ -11456,7 +11458,7 @@ FUNCTION t110_get_fac()
              WHERE inb01 = g_qcs.qcs01
                #AND inb02 = g_qcs.qcs02   #CHI-A70047
                AND inb03 = g_qcs.qcs02   #CHI-A70047
- 
+
             SELECT img09 INTO g_img09
               FROM img_file   #庫存單位
              WHERE img01=g_rvb05 AND img02=g_rvb36
@@ -11467,7 +11469,7 @@ FUNCTION t110_get_fac()
               FROM imn_file
              WHERE imn01 = g_qcs.qcs01
                AND imn02 = g_qcs.qcs02
- 
+
             LET l_fac = 1
         #WHEN "H"   #CHI-A70047
         WHEN g_qcs.qcs00='H'   #CHI-A70047
@@ -11477,16 +11479,16 @@ FUNCTION t110_get_fac()
                AND ohb03 = g_qcs.qcs02
       END CASE
    END IF
- 
+
    IF g_argv1 = '3' THEN
       SELECT ogb15,ogb15_fac INTO g_img09,l_fac
         FROM ogb_file
        WHERE ogb01 = g_qcs.qcs01
          AND ogb03 = g_qcs.qcs02
    END IF
- 
+
 END FUNCTION
- 
+
 FUNCTION t110_get_ecm04()
   DEFINE l_rvb04  LIKE rvb_file.rvb04    #MOD-890102
   DEFINE l_rvb03  LIKE rvb_file.rvb03    #MOD-890102
@@ -11494,25 +11496,25 @@ FUNCTION t110_get_ecm04()
   DEFINE l_pmn41  LIKE pmn_file.pmn41    #MOD-890102
   DEFINE l_pmn43  LIKE pmn_file.pmn43    #MOD-890102
   DEFINE l_pmn012  LIKE pmn_file.pmn012   #FUN-A60076 add
- 
+
    LET g_type  = '1'       #MOD-890102
    LET g_ecm04 = ' '       #MOD-890102
- 
+
    IF g_qcs.qcs00 <> '1' AND  g_qcs.qcs00 <> '2' THEN
        RETURN
-   END IF 
- 
-   SELECT rvb04,rvb03   
-     INTO l_rvb04,l_rvb03           #MOD-890102 
+   END IF
+
+   SELECT rvb04,rvb03
+     INTO l_rvb04,l_rvb03           #MOD-890102
      FROM rvb_file
     WHERE rvb01=g_qcs.qcs01
       AND rvb02=g_qcs.qcs02
    SELECT pmm02,pmn41,pmn43,pmn012 INTO l_pmm02,l_pmn41,l_pmn43,l_pmn012   #No.MOD-930234 add
-     FROM pmm_file,pmn_file 
+     FROM pmm_file,pmn_file
     WHERE pmm01 = l_rvb04  AND pmn02=l_rvb03
       AND pmm01 = pmn01
-   IF l_pmm02='SUB' THEN 
-      LET g_type='2' 
+   IF l_pmm02='SUB' THEN
+      LET g_type='2'
       IF l_pmn43 = 0 OR cl_null(l_pmn43) THEN
          LET g_ecm04 = " "
       ELSE
@@ -11521,15 +11523,15 @@ FUNCTION t110_get_ecm04()
             AND ecm03 = l_pmn43
             AND ecm012 =l_pmn012                    #FUN-A60076 add
       END IF
-   END IF 
+   END IF
 END FUNCTION
- 
-FUNCTION t110_qc_return() 
+
+FUNCTION t110_qc_return()
    DEFINE l_qty1        LIKE qcs_file.qcs091
    DEFINE l_qty2        LIKE qcs_file.qcs091
    DEFINE l_qty3        LIKE qcs_file.qcs091
    DEFINE l_unit        LIKE rvv_file.rvv35
- 
+
    #收貨單的總驗退量
    SELECT SUM(rvv17) INTO l_qty1 FROM rvu_file,rvv_file
     WHERE rvu01 = rvv01
@@ -11538,8 +11540,8 @@ FUNCTION t110_qc_return()
       AND rvu00 = '2'   #驗退量
       AND rvuconf <> 'X'
    IF cl_null(l_qty1) THEN LET l_qty1 = 0 END IF
- 
-   #總IQC驗退量  
+
+   #總IQC驗退量
    #特別說明:送驗量與特采量的差值,也算做驗退量
    #但是特采這個button可以多次按,原來程序的邏輯是,可以不care是否已經有驗退量了
    #所以目前此段的改法,遵循原來的邏輯,在特采前,不做控管
@@ -11549,16 +11551,16 @@ FUNCTION t110_qc_return()
       AND qcs02 = g_qcs.qcs02
      #AND (qcs09 = '2'   #不合格量          #MOD-C30428
      # OR  qcs09 = '3')  #特采量            #MOD-C30428
-      AND qcsacti = 'Y' 
- 
+      AND qcsacti = 'Y'
+
    LET l_qty3 = g_qcs.qcs22   #本次不合量
- 
+
    IF l_qty1 > l_qty2 - l_qty3 THEN
       CALL cl_err(g_qcs.qcs01,'aqc-222',1)
       RETURN FALSE
-   END IF  
+   END IF
    RETURN TRUE
- 
+
 END FUNCTION
 #No:FUN-9C0071--------精簡程式-----
 
@@ -11581,65 +11583,64 @@ FUNCTION t110_get_qcd07(p_qct04)
                "    AND pmn41=ecm01 AND pmn46=ecm03 ",
                "    AND qcc01= ?    AND qcc011=ecm04 ",
                "    AND qcc02= ?",
-               "    AND ecm012=pmn012 "   
-   IF g_argv1 = "1" THEN 
+               "    AND ecm012=pmn012 "
+   IF g_argv1 = "1" THEN
       LET g_sql = g_sql CLIPPED," AND qcc08 in ('1','9')"
-   END IF     
-   IF g_argv1 = "2" THEN 
-      LET g_sql = g_sql CLIPPED," AND qcc08 in ('5','9')" 
-   END IF     
-   IF g_argv1 = "3" THEN 
+   END IF
+   IF g_argv1 = "2" THEN
+      LET g_sql = g_sql CLIPPED," AND qcc08 in ('5','9')"
+   END IF
+   IF g_argv1 = "3" THEN
       LET g_sql = g_sql CLIPPED," AND qcc08 in ('4','9')"
-   END IF     
-   IF g_argv1 = "4" THEN 
+   END IF
+   IF g_argv1 = "4" THEN
       LET g_sql = g_sql CLIPPED," AND qcc08 in ('2','9')"
-   END IF 
-   PREPARE qcc_sel2 FROM g_sql  
+   END IF
+   PREPARE qcc_sel2 FROM g_sql
    EXECUTE qcc_sel2 USING g_qcs.qcs01,g_qcs.qcs02,g_qcs.qcs021,p_qct04
-      INTO l_qcd05,l_qcd061,l_qcd062,l_qcd07                                          
+      INTO l_qcd05,l_qcd061,l_qcd062,l_qcd07
    IF STATUS=100 THEN
       EXECUTE qcc_sel2 USING g_qcs.qcs01,g_qcs.qcs02,'*',p_qct04
          INTO l_qcd05,l_qcd061,l_qcd062,l_qcd07
       IF STATUS=100 THEN
-         LET g_sql = " SELECT qcd05,qcd061,qcd062,qcd07 ",
-                     " FROM qcd_file ",
+         LET g_sql = "  SELECT qcd05,qcd061,qcd062,qcd07 FROM qcd_file",
                      " WHERE qcd01=? AND qcd02=? "
-         IF g_argv1 = "1" THEN 
+         IF g_argv1 = "1" THEN
             LET g_sql = g_sql CLIPPED," AND qcd08 in ('1','9')"
-         END IF           
-         IF g_argv1 = "2" THEN 
-            LET g_sql = g_sql CLIPPED," AND qcd08 in ('5','9')" 
-         END IF     
-         IF g_argv1 = "3" THEN 
+         END IF
+         IF g_argv1 = "2" THEN
+            LET g_sql = g_sql CLIPPED," AND qcd08 in ('5','9')"
+         END IF
+         IF g_argv1 = "3" THEN
             LET g_sql = g_sql CLIPPED," AND qcd08 in ('4','9')"
-         END IF     
-         IF g_argv1 = "4" THEN 
+         END IF
+         IF g_argv1 = "4" THEN
             LET g_sql = g_sql CLIPPED," AND qcd08 in ('2','9')"
          END IF
-         PREPARE qcd_sel2 FROM g_sql  
+         PREPARE qcd_sel2 FROM g_sql
          EXECUTE qcd_sel2 USING g_qcs.qcs021,p_qct04
-            INTO l_qcd05,l_qcd061,l_qcd062,l_qcd07                       
+            INTO l_qcd05,l_qcd061,l_qcd062,l_qcd07
          IF STATUS=100 THEN
             LET g_sql = " SELECT qck05,qck061,qck062,qck07  ",
                         "   FROM qck_file,ima_file ",
                         "  WHERE ima01=? AND qck01=ima109 ",
                         "    AND qck02 = ?"
-                   
-            IF g_argv1 = "1" THEN 
-               LET g_sql = g_sql CLIPPED," AND qck08 in ('1','9')" 
-            END IF       
-            IF g_argv1 = "2" THEN 
+
+            IF g_argv1 = "1" THEN
+               LET g_sql = g_sql CLIPPED," AND qck08 in ('1','9')"
+            END IF
+            IF g_argv1 = "2" THEN
                LET g_sql = g_sql CLIPPED," AND qck08 in ('5','9')"
-            END IF      
-            IF g_argv1 = "3" THEN 
+            END IF
+            IF g_argv1 = "3" THEN
                LET g_sql = g_sql CLIPPED," AND qck08 in ('4','9')"
-            END IF     
-            IF g_argv1 = "4" THEN 
+            END IF
+            IF g_argv1 = "4" THEN
                LET g_sql = g_sql CLIPPED," AND qck08 in ('2','9')"
-            END IF    
-            PREPARE qck_sel2 FROM g_sql  
+            END IF
+            PREPARE qck_sel2 FROM g_sql
             EXECUTE qck_sel2 USING g_qcs.qcs021,p_qct04
-               INTO l_qcd05,l_qcd061,l_qcd062,l_qcd07                    
+               INTO l_qcd05,l_qcd061,l_qcd062,l_qcd07
             IF STATUS=100 THEN
                LET l_qcd07  = 'N'
                LET l_qcd05  = ''
@@ -11647,15 +11648,15 @@ FUNCTION t110_get_qcd07(p_qct04)
                LET l_qcd062 = ''
             END IF
          END IF
-      END IF    
+      END IF
    END IF
 
    RETURN l_qcd07,l_qcd05,l_qcd061,l_qcd062
 
-END FUNCTION 
+END FUNCTION
 #FUN-BC0104--add-str--
 FUNCTION t110_qc_item_show()
-   SELECT qcs09,qcs091,qcs38,qcs41 
+   SELECT qcs09,qcs091,qcs38,qcs41
      INTO g_qcs.qcs09,g_qcs.qcs091,g_qcs.qcs38,g_qcs.qcs41
      FROM qcs_file
     WHERE qcs01 = g_qcs.qcs01
@@ -11678,18 +11679,18 @@ END FUNCTION
 #MOD-C30560----add----str----
 FUNCTION t110_chk_qc()
 DEFINE l_inb44     LIKE inb_file.inb44
-   
-   SELECT inb44 INTO l_inb44 FROM inb_file 
-    WHERE inb01 = g_qcs.qcs01 
-      AND inb03 = g_qcs.qcs02 
-   IF NOT cl_null(l_inb44) THEN 
+
+   SELECT inb44 INTO l_inb44 FROM inb_file
+    WHERE inb01 = g_qcs.qcs01
+      AND inb03 = g_qcs.qcs02
+   IF NOT cl_null(l_inb44) THEN
       RETURN FALSE
    END IF
    RETURN TRUE
 END FUNCTION
 #MOD-C30560----add----end----
 
-#No.TQC-BB0119  --End  
+#No.TQC-BB0119  --End
 
 
 #DEV-D30045--add--begin
@@ -11822,7 +11823,7 @@ FUNCTION t110_barcode_gen(p_qcs01,p_qcs02,p_qcs05,p_ask)
       END IF
    END IF
    #DEV-D30043--add--end
-  
+
   #DEV-D40015 add str-------
    IF g_success = 'Y' THEN
       CALL t110sub_chk_ima(l_qcs.qcs01,l_qcs.qcs02,l_qcs.qcs05,'I')
@@ -11984,7 +11985,7 @@ FUNCTION t110sub_chk_ima(p_qcs01,p_qcs02,p_qcs05,p_type)
    END FOREACH
 END FUNCTION
 #DEV-D40015 add end--------
- 
+
 
 # darcy:2025/11/28 add s---
 # 验退跟随前项次
@@ -11993,7 +11994,7 @@ function saqct110_follow(p_qcs01,p_qcs02,p_qcs05,p_tran)
    define p_qcs02,l_qcs02        like qcs_file.qcs02
    define p_qcs05,l_qcs05        like qcs_file.qcs05
    define l_qcs021               like qcs_file.qcs021
-   define l_qcs14                like qcs_file.qcs14  
+   define l_qcs14                like qcs_file.qcs14
    define p_tran                 boolean
 
    select qcs021,qcs14 into l_qcs021,l_qcs14 from qcs_file
@@ -12005,7 +12006,7 @@ function saqct110_follow(p_qcs01,p_qcs02,p_qcs05,p_tran)
    # 找一笔不是验退状态记录
    select qcs01,qcs02,qcs05 into l_qcs01,l_qcs02,l_qcs05 from qcs_file
     where qcs01 = p_qcs01 and qcs02 <> p_qcs02 and qcs09 <> '1'
-      and qcs021 = l_qcs021 and rownum = 1 
+      and qcs021 = l_qcs021 and rownum = 1
    if sqlca.sqlcode or cl_null(l_qcs01) then
       return
    end if
@@ -12014,8 +12015,8 @@ function saqct110_follow(p_qcs01,p_qcs02,p_qcs05,p_tran)
       begin work
    end if
 
-   delete from  x 
-   
+   delete from  x
+
    insert into x
    select * from qct_file where qct01 = l_qcs01 and qct02 = l_qcs02 and qct021 = l_qcs05
    if sqlca.sqlcode then
@@ -12073,13 +12074,13 @@ function saqct110_return_chk(p_qcs01,p_qcs02,p_qcs05)
     and qcs02 = p_qcs02 and qcs05 = p_qcs05
 
    let l_cnt=0 let l_numcr=0 let l_numma=0 let l_nummi=0
- 
+
    select count(*) into l_cnt from qct_file
     where qct01 = p_qcs01
       and qct02 = p_qcs02
       and qct021 = p_qcs05
       and qct08 = '2'
-   
+
    select ima918,ima921 into g_ima918,g_ima921
      from ima_file
     where ima01 = l_qcs.qcs021
@@ -12111,7 +12112,7 @@ function saqct110_return_chk(p_qcs01,p_qcs02,p_qcs05)
       LET l_qcs.qcs09='1'
       IF g_ima918 = "Y" OR g_ima921 = "Y" THEN
          #IF g_sma.sma90 = "Y" THEN   #CHI-A70047
-         IF (g_sma.sma90 = "Y" AND g_argv1='1') OR g_argv1<>'1' THEN   #CHI-A70047 
+         IF (g_sma.sma90 = "Y" AND g_argv1='1') OR g_argv1<>'1' THEN   #CHI-A70047
             UPDATE rvbs_file SET rvbs10 = rvbs06
                WHERE rvbs00 = g_prog
                  AND rvbs01 = l_qcs.qcs01
@@ -12121,18 +12122,18 @@ function saqct110_return_chk(p_qcs01,p_qcs02,p_qcs05)
          END IF
       END IF
    END IF
- 
+
    #當參數『QC是否卡承認文號(AVL)』='Y',『資料來源』='1'收貨單,
    #且無承認文號時,『判定結果』只能為『特採』
    #在判斷qcz13(QC作AVL控管)的地方增加判斷料件是否做AVL管理，兩者都為Y，才檢查
-   SELECT ima926 INTO l_ima926 FROM ima_file 
+   SELECT ima926 INTO l_ima926 FROM ima_file
       WHERE ima01 = l_qcs.qcs021
    IF l_qcs.qcs09 = '1' AND g_qcz.qcz13='Y' AND l_ima926 = 'Y'   #FUN-930108 add ima926='Y'
       AND l_qcs.qcs00 = '1' AND cl_null(l_qcs.qcs10) THEN
       LET l_qcs.qcs09='3'
       CALL cl_err('','aqc-051',1)
    END IF
- 
+
    #--------- CR 不良數
    SELECT SUM(qct07) INTO l_numcr FROM qct_file
     WHERE qct01=l_qcs.qcs01
@@ -12140,30 +12141,30 @@ function saqct110_return_chk(p_qcs01,p_qcs02,p_qcs05)
       AND qct021=l_qcs.qcs05
       AND qct05='1'
    IF l_numcr IS NULL THEN LET l_numcr=0 END IF
- 
+
    SELECT SUM(qct07) INTO l_numma FROM qct_file
     WHERE qct01=l_qcs.qcs01
       AND qct02=l_qcs.qcs02
       AND qct021=l_qcs.qcs05
       AND qct05='2'
    IF l_numma IS NULL THEN LET l_numma=0 END IF
- 
+
    SELECT SUM(qct07) INTO l_nummi FROM qct_file
     WHERE qct01=l_qcs.qcs01
       AND qct02=l_qcs.qcs02
       AND qct021=l_qcs.qcs05
       AND qct05='3'
    IF l_nummi IS NULL THEN LET l_nummi=0 END IF
- 
+
    LET l_qcs.qcs091=l_qcs.qcs22
- 
+
    LET l_qcs.qcs36 = l_qcs.qcs30
    LET l_qcs.qcs37 = l_qcs.qcs31
    LET l_qcs.qcs38 = l_qcs.qcs32
    LET l_qcs.qcs39 = l_qcs.qcs33
    LET l_qcs.qcs40 = l_qcs.qcs34
    LET l_qcs.qcs41 = l_qcs.qcs35
- 
+
    CASE l_qcs.qcs09
       WHEN '1'
          CALL cl_getmsg('aqc-004',g_lang) RETURNING des1
@@ -12175,12 +12176,12 @@ function saqct110_return_chk(p_qcs01,p_qcs02,p_qcs05)
       WHEN '3'
          CALL cl_getmsg('aqc-006',g_lang) RETURNING des1
    END CASE
- 
+
    DISPLAY des1 TO FORMONLY.des1
    DISPLAY BY NAME l_qcs.qcs091,l_qcs.qcs09,l_qcs.qcs13
    DISPLAY BY NAME l_qcs.qcs36,l_qcs.qcs37,l_qcs.qcs38   #No.FUN-610075
    DISPLAY BY NAME l_qcs.qcs39,l_qcs.qcs40,l_qcs.qcs41   #No.FUN-610075
- 
+
    UPDATE qcs_file SET qcs091 = l_qcs.qcs091,
                        qcs09 = l_qcs.qcs09,
                        qcs36 = l_qcs.qcs36,   #No.FUN-610075
@@ -12198,7 +12199,7 @@ function saqct110_return_chk(p_qcs01,p_qcs02,p_qcs05)
        CALL t110_show()
        CALL t110_b()
     END IF
- 
+
     CALL t110_delHeader()
 end function
 # darcy:2025/11/28 add e---
