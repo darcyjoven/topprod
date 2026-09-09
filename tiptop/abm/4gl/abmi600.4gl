@@ -7944,7 +7944,10 @@ END FUNCTION
 FUNCTION i600_b_set_no_entry()
     IF g_sma.sma118 != 'Y' THEN
         CALL cl_set_comp_entry("bmb30",FALSE)
-    END IF
+      END IF
+
+      CALL cl_set_comp_entry("bmb07",FALSE) # darcy:2026/06/23 add 设计要求不要录入
+
 END FUNCTION
 
 
