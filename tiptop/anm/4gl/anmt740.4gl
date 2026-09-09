@@ -45,13 +45,13 @@
 # Modify.........: No.FUN-660148 06/06/21 By Hellen cl_err --> cl_err3
 # Modify.........: No.TQC-670008 06/07/05 By rainy 權限修正
 # Modify.........: No.FUN-660216 06/07/10 By Rainy CALL cl_cmdrun()中的程式如果是"p"或"t"，則改成CALL cl_cmdrun_wait()
-# Modify.........: No.FUN-670060 06/08/02 By Xufeng 新增“直接拋轉總帳”功能                                                             
+# Modify.........: No.FUN-670060 06/08/02 By Xufeng 新增“直接拋轉總帳”功能
 # Modify.........: No.TQC-680080 06/08/22 By Sarah p_flow流程訊息通知功能,加上OTHERWISE判斷漏改
 # Modify.........: No.FUN-680088 06/08/28 By day 多帳套修改
 # Modify.........: No.FUN-680107 06/09/18 By Hellen 欄位類型修改
 # Modify.........: No.MOD-680099 06/10/16 By Smapmin 有跨月的情況時,才去CHECK是否存在暫估資料
 # Modify.........: No.CHI-6A0004 06/10/26 By yjkhero g_azixx(本幣取位)與t_azixx(原幣取位)變數定義問題修改
-#                                         1744行上的l_azi04 改成 t_azi04 
+#                                         1744行上的l_azi04 改成 t_azi04
 # Modify.........: No.FUN-6A0082 06/11/06 By dxfwo l_time轉g_time
 # Modify.........: No.FUN-6A0011 06/11/12 By jamie 1.FUNCTION _q() 一開始應清空key值
 #                                                  2.新增action"相關文件"
@@ -72,7 +72,7 @@
 # Modify.........: No.MOD-7C0230 07/12/31 By Smapmin 當融資種類為要計暫估利息時,才CHECK有無利息暫估資料存在
 # Modify.........: No.MOD-830093 08/03/12 By chenl   新增功能，增加對單身止算日期的判斷，止算日不可大于還息日。
 # Modify.........: No.MOD-830232 08/03/28 By chenl   在止算日期處增加對"利差損失"的計算。
-# Modify.........: No.FUN-830151 08/04/01 By sherry  報表改由CR輸出  
+# Modify.........: No.FUN-830151 08/04/01 By sherry  報表改由CR輸出
 # Modify.........: No.FUN-850038 08/05/12 By TSD.Wind 自定欄位功能修改
 # Modify.........: No.MOD-870044 08/07/08 By Sarah t740_upd_nnm(),UPDATE nnm_file時,改抓nnj06的年月當條件
 # Modify.........: No.MOD-870249 08/07/29 By Sarah 報表列印只需印出畫面上的這一筆
@@ -96,16 +96,16 @@
 # Modify.........: No.TQC-950195 09/05/31 By Carrier "支付銀行"錯誤信息修改
 # Modify.........: No.TQC-960015 09/06/04 By xiaofeizhu 修改新增時，錄入完信貸銀行后，取消后再次錄入信貸銀行且和上次一樣的資料時，無法帶出銀行名稱的問題
 # Modify.........: No.FUN-960160 09/07/21 By chenmoyan nni07='1'時不卡nni21為必輸欄
-# Modify.........: No.MOD-980005 09/08/03 By mike FUNCTION t740_g_gl_1()段，當參數「融資暫估利息，次月回轉」設定打勾(nmz52='Y')時   
-#                                                 ,產生的科目應抓nmq10/nmq101,而不是nms60/nms601 
+# Modify.........: No.MOD-980005 09/08/03 By mike FUNCTION t740_g_gl_1()段，當參數「融資暫估利息，次月回轉」設定打勾(nmz52='Y')時
+#                                                 ,產生的科目應抓nmq10/nmq101,而不是nms60/nms601
 # Modify.........: No.MOD-980006 09/08/03 By mike FUNCTION t740_b()的AFTER FIELD nnj05段,增加檢核nnj03+nnj05是否已輸入過,若是則不可>
 # Modify.........: No.FUN-980005 09/08/12 By TSD.Martin GP5.2架構重整，修改 INSERT INTO 語法
 # Modify.........: No.FUN-980030 09/08/31 By Hiko 加上GP5.2的相關設定
 # Modify.........: No.FUN-980020 09/09/02 By douzh GP5.2架構重整，修改sub相關傳參
 # Modify.........: No.FUN-980025 09/09/23 By dxfwo GP集團架構修改,sub相關參數
 # Modify.........: No.TQC-9A0099 09/10/16 By liuxqa 查詢時，狀態頁簽不可用。
-# Modify.........: No:MOD-9A0012 09/10/19 By sabrina 回寫融資/中長貸的最後還息日時，改為回寫該筆單身的止算日 
-# Modify.........: No:MOD-9A0110 09/10/30 By mike FUNCTION t740_g_b(),nnj06算法请改回    
+# Modify.........: No:MOD-9A0012 09/10/19 By sabrina 回寫融資/中長貸的最後還息日時，改為回寫該筆單身的止算日
+# Modify.........: No:MOD-9A0110 09/10/30 By mike FUNCTION t740_g_b(),nnj06算法请改回
 # Modify.........: No:MOD-9B0059 09/11/10 By Sarah 應付利息的匯率帶錯
 # Modify.........: No:TQC-9B0069 09/11/23 By jan 增加 狀態 頁簽欄位顯示處理
 # Modify.........: No:MOD-9C0011 09/12/02 By Sarah 修正MOD-980006,第一次與第二次還息有可能是同一個月份,卡關需調整
@@ -119,25 +119,25 @@
 # Modify.........: No.MOD-A50065 10/06/03 By sabrina 原幣未依照其幣別小數位數取位，rpt裡以本幣位數取位，造成原幣金額錯誤
 # Modify.........: No:CHI-A40018 10/06/14 By Summer 確認段檢核npq03=nni10時,金額與nni14比對是否一致,否則提示錯誤訊息(aap-065)
 # Modify.........: No.FUN-A50102 10/07/12 By lixia 跨庫寫法統一改為用cl_get_target_table()來實現
-# Modify.........: No:MOD-A70196 10/07/27 By Dido 自動產生時,利息天數預設值應與 b 段相同 
+# Modify.........: No:MOD-A70196 10/07/27 By Dido 自動產生時,利息天數預設值應與 b 段相同
 # Modify.........: No.FUN-9A0036 10/07/28 By chenmoyan 勾選二套帳，分錄底稿二的匯率及本幣金額，應依帳別二進行換算
 # Modify.........: No.FUN-A40033 10/07/28 By chenmoyan 二套帳時如果第二套帳幣別和本幣不相同，借貸不平衡產生匯損益時要切立科目
 # Modify.........: No.FUN-A40067 10/07/28 By chenmoyan 處理二套帳中本幣金額取位
-# Modify.........: No.MOD-A40098 10/08/03 by sabrina 修改MOD-A30109 
+# Modify.........: No.MOD-A40098 10/08/03 by sabrina 修改MOD-A30109
 # Modify.........: No:CHI-A10014 10/10/19 By sabrina 若aza26='0'且幣別=aza17時，利息以365天計算，其餘則用360天計算
 # Modify.........: No.MOD-AC0073 10/12/09 By Dido 立即確認時,確認圖示調整
-# Modify.........: No.FUN-AA0087 11/01/29 By Mengxw 異動碼類型設定的改善 
+# Modify.........: No.FUN-AA0087 11/01/29 By Mengxw 異動碼類型設定的改善
 # Modify.........: No.MOD-B30156 11/03/12 By zhangweib 請將FUNCTION t740_show()裡CALL s_check_no()段(以下兩行)mark掉
 # Modify.........: No:MOD-B30683 11/03/28 By Dido nni07 檢核調整與 nni10/nni101 預設調整
 # Modify.........: NO.FUN-B30166 11/03/29 By zhangweib nme_file add nme27
 # Modify.........: No:FUN-B40056 11/05/12 By lixia 刪除資料時一併刪除tic_file的資料
 # Modify.........: No.FUN-B50090 11/05/16 By suncx 財務關帳日期加嚴控管修正
-# Modify.........: No:TQC-B70021 11/07/19 By wujie 抛转tic_file资料 
+# Modify.........: No:TQC-B70021 11/07/19 By wujie 抛转tic_file资料
 # Modify.........: No:MOD-B70232 11/07/25 By Sarah 報表SQL改為欄位展開的寫法(不要寫成nni_file.*,要寫nni01,nni02,...),
 #                                                  並使用別名(SELECT a.nni01....FROM nni_file a...)
 # Modify.........: No.FUN-B80067 11/08/05 By fengrui  程式撰寫規範修正
 # Modify.........: No:MOD-B80058 11/08/05 By Polly 修正單身利差是(nnj15)不會計算
-# Modify.........: No.FUN-B90062 11/09/15 By wujie 产生nme_file时同时产生tic_file  
+# Modify.........: No.FUN-B90062 11/09/15 By wujie 产生nme_file时同时产生tic_file
 # Modify.........: N0.CHI-B80051 11/10/06 By Polly 單身增加原單的借款金額 nne12/nne19 or nng20/nng22
 # Modify.........: No.MOD-BC0283 11/12/29 By Polly 調整查詢筆數抓取sql語法
 # Modify.........: No:FUN-C10039 12/02/02 by Hiko 整批修改資料歸屬設定
@@ -160,15 +160,15 @@
 # Modify.........: No:MOD-D20172 13/03/05 By Polly 調整利差計算
 # Modify.........: No:MOD-D30039 13/03/06 By Polly 增加單身輸入單據編號後自動帶出起算日和止算日
 # Modify.........: No.FUN-D10065 13/03/07 By wangrr 在調用s_def_npq前npq04=NULL
-# Modify.........: No:MOD-D30214 13/03/28 By Dido 當月無暫估時,預設值調整 
+# Modify.........: No:MOD-D30214 13/03/28 By Dido 當月無暫估時,預設值調整
 # Modify.........: No:FUN-D30032 13/04/08 By chenjing 修改單身新增時按下放棄鍵未執行AFTER INSERT的問題
 # Modify.........: No.FUN-D40118 13/05/22 By zhangweib 若科目npq03有做核算控管aag44=Y,但agli122作業沒有維護，則科目給空
 # Modify.........: No.CHI-D50031 13/05/27 By Polly 調整本金原幣/本金本幣應為當時融資餘額,而非融資原始金額
 
 DATABASE ds
- 
+
 GLOBALS "../../config/top.global"
- 
+
 DEFINE
     g_nni   RECORD LIKE nni_file.*,
     g_nni_t RECORD LIKE nni_file.*,
@@ -180,7 +180,7 @@ DEFINE
     g_npq   RECORD LIKE npq_file.*,
     g_nms   RECORD LIKE nms_file.*,
    #g_nmq   RECORD LIKE nmq_file.*,  #mark #CHI-890008 add
-    g_nmq   RECORD LIKE nmq_file.*,  #MOD-980005   
+    g_nmq   RECORD LIKE nmq_file.*,  #MOD-980005
     g_wc,g_wc2,g_sql     string,                #No.FUN-580092 HCN
     g_statu              LIKE type_file.chr1,   #No.FUN-680107 VARCHAR(01) # 是否從新賦予等級
     g_dbs_gl             LIKE type_file.chr21,  #No.FUN-680107 VARCHAR(21)
@@ -262,14 +262,14 @@ DEFINE g_zero            LIKE type_file.num20_6  #No.FUN-680107 decimal(15,3)
 DEFINE g_N               LIKE type_file.chr1     #No.FUN-680107 VARCHAR(1)
 DEFINE g_y               LIKE type_file.chr1     #No.FUN-680107 VARCHAR(1)
 #------for ora修改-------------------
- 
+
 DEFINE g_argv1           LIKE nni_file.nni01     #No.FUN-680107 VARCHAR(16) #單號 #TQC-630074
 DEFINE g_argv2           STRING                  #指定執行的功能 #TQC-630074
 DEFINE g_flag        LIKE type_file.chr1    #No.FUN-730032
 DEFINE g_bookno1     LIKE aza_file.aza81    #No.FUN-730032
 DEFINE g_bookno2     LIKE aza_file.aza82    #No.FUN-730032
 DEFINE g_bookno3     LIKE aza_file.aza82    #No.FUN-730032
- 
+
 DEFINE g_forupd_sql      STRING                  #SELECT ... FOR UPDATE SQL
 DEFINE g_before_input_done  LIKE type_file.num5    #No.FUN-680107 SMALLINT
 DEFINE   g_chr           LIKE type_file.chr1     #No.FUN-680107 VARCHAR(1)
@@ -283,52 +283,52 @@ DEFINE   g_str           STRING                  #No.FUN-670060
 DEFINE   g_wc_gl         STRING                  #No.FUN-670060
 DEFINE   g_t1            LIKE nmy_file.nmyslip   #No.FUN-670060  #No.FUN-680107 VARCHAR(5)
 DEFINE   g_npq25         LIKE npq_file.npq25     #No.FUN-9A0036
-DEFINE   g_nma05         LIKE nma_file.nma05     #MOD-B30683 
-DEFINE   g_nma051        LIKE nma_file.nma051    #MOD-B30683 
+DEFINE   g_nma05         LIKE nma_file.nma05     #MOD-B30683
+DEFINE   g_nma051        LIKE nma_file.nma051    #MOD-B30683
 DEFINE   g_nma28         LIKE nma_file.nma28     #MOD-B30683
 DEFINE   g_jump          LIKE type_file.num10    #TQC-C70054
 DEFINE   g_no_ask        LIKE type_file.num5     #TQC-C70054
- 
+
 MAIN
 DEFINE          p_row,p_col    LIKE type_file.num5     #No.FUN-680107 SMALLINT
- 
+
    OPTIONS
        INPUT NO WRAP
    DEFER INTERRUPT
- 
+
    IF (NOT cl_user()) THEN
       EXIT PROGRAM
    END IF
- 
+
    WHENEVER ERROR CALL cl_err_msg_log
- 
+
    IF (NOT cl_setup("ANM")) THEN
       EXIT PROGRAM
    END IF
- 
+
    LET g_argv1=ARG_VAL(1)           #TQC-630074
    LET g_argv2=ARG_VAL(2)           #TQC-630074
- 
+
    SELECT * INTO g_nms.* FROM nms_file WHERE (nms01 = ' ' OR nms01 IS NULL)
     SELECT * INTO g_nmz.* FROM nmz_file WHERE nmz00 = '0' # MOD-580030 重新讀取 nmz_file
-   SELECT * INTO g_nmq.* FROM nmq_file WHERE nmq00='0' #MOD-980005   
+   SELECT * INTO g_nmq.* FROM nmq_file WHERE nmq00='0' #MOD-980005
    LET g_forupd_sql = "SELECT * FROM nni_file WHERE nni01 = ? FOR UPDATE"
    LET g_forupd_sql = cl_forupd_sql(g_forupd_sql)
    DECLARE t740_cl CURSOR FROM g_forupd_sql              # LOCK CURSOR
- 
+
      CALL  cl_used(g_prog,g_time,1) RETURNING g_time #No.MOD-580088  HCN 20050818  #No.FUN-6A0082
    LET p_row = 1 LET p_col = 6
    OPEN WINDOW t740_w AT p_row,p_col
      WITH FORM "anm/42f/anmt740"  ATTRIBUTE (STYLE = g_win_style CLIPPED) #No.FUN-580092 HCN
- 
+
    CALL cl_ui_init()
- 
+
    IF g_aza.aza63 != 'Y' THEN
-      CALL cl_set_comp_visible("nni101",FALSE) 
+      CALL cl_set_comp_visible("nni101",FALSE)
    ELSE
-      CALL cl_set_comp_visible("nni101",TRUE)  
+      CALL cl_set_comp_visible("nni101",TRUE)
    END IF
- 
+
    IF NOT cl_null(g_argv1) THEN
       CASE g_argv2
          WHEN "query"
@@ -345,12 +345,12 @@ DEFINE          p_row,p_col    LIKE type_file.num5     #No.FUN-680107 SMALLINT
             CALL t740_q()
       END CASE
    END IF
- 
+
    CALL t740()
    CLOSE WINDOW t740_w
      CALL  cl_used(g_prog,g_time,2) RETURNING g_time #No.MOD-580088  HCN 20050818  #No.FUN-6A0082
 END MAIN
- 
+
 FUNCTION t740()
     LET g_plant_gl = g_nmz.nmz02p                     #FUN-980020
     LET g_plant_new=g_nmz.nmz02p
@@ -361,13 +361,13 @@ FUNCTION t740()
     INITIALIZE g_nni_o.* TO NULL
     CALL t740_menu()
 END FUNCTION
- 
+
 FUNCTION t740_cs()
 DEFINE lc_qbe_sn   LIKE gbm_file.gbm01    #No.FUN-580031  HCN
 DEFINE g_t1        LIKE nmy_file.nmyslip  #No.FUN-550057  #No.FUN-680107 VARCHAR(5)
    CLEAR FORM
    CALL g_nnj.clear()
- 
+
    IF cl_null(g_argv1) THEN
    CALL cl_set_head_visible("","YES")   #No.FUN-6B0030
    INITIALIZE g_nni.* TO NULL    #No.FUN-750051
@@ -379,7 +379,7 @@ DEFINE g_t1        LIKE nmy_file.nmyslip  #No.FUN-550057  #No.FUN-680107 VARCHAR
                 ,nniuser,nnidate,nniacti,nnigrup,nnimodu    #No.TQC-9A0099 add
          BEFORE CONSTRUCT
             CALL cl_qbe_init()
-      
+
          ON ACTION CONTROLP
             CASE
                WHEN INFIELD(nni01)
@@ -411,7 +411,7 @@ DEFINE g_t1        LIKE nmy_file.nmyslip  #No.FUN-550057  #No.FUN-680107 VARCHAR
                   DISPLAY g_qryparam.multiret TO nni06
                WHEN INFIELD(nni10) # Dept CODE
                   CALL s_get_bookno1(YEAR(g_nni.nni02),g_plant_gl) RETURNING g_flag,g_bookno1,g_bookno2     #FUN-980020
-                  CALL q_m_aag(TRUE,TRUE,g_plant_gl,g_nni.nni10,'23',g_bookno1)     #No.FUN-980025 
+                  CALL q_m_aag(TRUE,TRUE,g_plant_gl,g_nni.nni10,'23',g_bookno1)     #No.FUN-980025
                   RETURNING g_nni.nni10
                   DISPLAY BY NAME g_nni.nni10
                WHEN INFIELD(nni101) # Dept CODE
@@ -437,22 +437,22 @@ DEFINE g_t1        LIKE nmy_file.nmyslip  #No.FUN-550057  #No.FUN-680107 VARCHAR
          ON IDLE g_idle_seconds
             CALL cl_on_idle()
             CONTINUE CONSTRUCT
-      
+
          ON ACTION about         #MOD-4C0121
             CALL cl_about()      #MOD-4C0121
-      
+
          ON ACTION help          #MOD-4C0121
             CALL cl_show_help()  #MOD-4C0121
-      
+
          ON ACTION controlg      #MOD-4C0121
             CALL cl_cmdask()     #MOD-4C0121
-      
-      
+
+
            ON ACTION qbe_select
               CALL cl_qbe_list() RETURNING lc_qbe_sn
               CALL cl_qbe_display_condition(lc_qbe_sn)
       END CONSTRUCT
-      
+
       IF INT_FLAG THEN RETURN END IF
       CONSTRUCT g_wc2 ON nnj02,nnj09,nnj03,nnj05,nnj06,nnj07,nnj08
                          ,nnjud01,nnjud02,nnjud03,nnjud04,nnjud05
@@ -467,21 +467,21 @@ DEFINE g_t1        LIKE nmy_file.nmyslip  #No.FUN-550057  #No.FUN-680107 VARCHAR
                    ,s_nnj[1].nnjud13,s_nnj[1].nnjud14,s_nnj[1].nnjud15
            BEFORE CONSTRUCT
               CALL cl_qbe_display_condition(lc_qbe_sn)
-      
+
          ON IDLE g_idle_seconds
             CALL cl_on_idle()
             CONTINUE CONSTRUCT
-      
+
          ON ACTION about         #MOD-4C0121
             CALL cl_about()      #MOD-4C0121
-      
+
          ON ACTION help          #MOD-4C0121
             CALL cl_show_help()  #MOD-4C0121
-      
+
          ON ACTION controlg      #MOD-4C0121
             CALL cl_cmdask()     #MOD-4C0121
-      
-      
+
+
                ON ACTION qbe_save
                   CALL cl_qbe_save()
       END CONSTRUCT
@@ -490,10 +490,10 @@ DEFINE g_t1        LIKE nmy_file.nmyslip  #No.FUN-550057  #No.FUN-680107 VARCHAR
       LET g_wc =" nni01 = '",g_argv1,"'"    #No.TQC-630074
       LET g_wc2 = ' 1=1'
    END IF
- 
+
    #資料權限的檢查
    LET g_wc = g_wc CLIPPED,cl_get_extra_cond('nniuser', 'nnigrup')
- 
+
    IF g_wc2=' 1=1' THEN
       LET g_sql="SELECT nni01 FROM nni_file ",
                 " WHERE ",g_wc CLIPPED, " ORDER BY nni01"
@@ -521,10 +521,10 @@ DEFINE g_t1        LIKE nmy_file.nmyslip  #No.FUN-550057  #No.FUN-680107 VARCHAR
    PREPARE t740_precount FROM g_sql
    DECLARE t740_count CURSOR FOR t740_precount
 END FUNCTION
- 
+
 FUNCTION t740_menu()
    DEFINE   l_cmd   LIKE type_file.chr1000 #No.FUN-680107 VARCHAR(100)
- 
+
    WHILE TRUE
       CALL t740_bp("G")
       CASE g_action_choice
@@ -575,36 +575,36 @@ FUNCTION t740_menu()
                CALL t740_g_gl(g_nni.nni01,'1')
             END IF
          WHEN "maintain_entry_sheet"
-            CALL s_fsgl('NM',6,g_nni.nni01,0,g_nmz.nmz02b,0,g_nni.nniconf,'0',g_nmz.nmz02p)   
+            CALL s_fsgl('NM',6,g_nni.nni01,0,g_nmz.nmz02b,0,g_nni.nniconf,'0',g_nmz.nmz02p)
             CALL t740_npp02('0')
- 
+
          WHEN "maintain_entry_sheet2"
-            CALL s_fsgl('NM',6,g_nni.nni01,0,g_nmz.nmz02c,0,g_nni.nniconf,'1',g_nmz.nmz02p)   
+            CALL s_fsgl('NM',6,g_nni.nni01,0,g_nmz.nmz02c,0,g_nni.nniconf,'1',g_nmz.nmz02p)
             CALL t740_npp02('1')
          WHEN "confirm"
             IF cl_chk_act_auth() THEN
                CALL t740_firm1()
-               #CALL cl_set_field_pic(g_nni.nniconf,"","","","",g_nni.nniacti)     #MOD-A20096 "" modify nniacti  #CHI-C80041 
+               #CALL cl_set_field_pic(g_nni.nniconf,"","","","",g_nni.nniacti)     #MOD-A20096 "" modify nniacti  #CHI-C80041
                IF g_nni.nniconf='X' THEN LET g_void='Y' ELSE LET g_void='N' END IF #CHI-C80041
-               CALL cl_set_field_pic(g_nni.nniconf,"","","",g_void,g_nni.nniacti)  #CHI-C80041  
+               CALL cl_set_field_pic(g_nni.nniconf,"","","",g_void,g_nni.nniacti)  #CHI-C80041
             END IF
          WHEN "undo_confirm"
             IF cl_chk_act_auth() THEN
                CALL t740_firm2()
                #CALL cl_set_field_pic(g_nni.nniconf,"","","","",g_nni.nniacti)     #MOD-A20096 "" modify nniacti  #CHI-C80041
                IF g_nni.nniconf='X' THEN LET g_void='Y' ELSE LET g_void='N' END IF #CHI-C80041
-               CALL cl_set_field_pic(g_nni.nniconf,"","","",g_void,g_nni.nniacti)  #CHI-C80041 
+               CALL cl_set_field_pic(g_nni.nniconf,"","","",g_void,g_nni.nniacti)  #CHI-C80041
             END IF
          WHEN "exporttoexcel"     #FUN-4B0008
             IF cl_chk_act_auth() THEN
               CALL cl_export_to_excel(ui.Interface.getRootNode(),base.TypeInfo.create(g_nnj),'','')
             END IF
- 
+
          WHEN "carry_voucher"
             IF cl_chk_act_auth() THEN
              IF g_nni.nniconf = "Y" THEN
                 CALL t740_carry_voucher()
-               ELSE 
+               ELSE
                   CALL cl_err('','atm-402',1)
              END IF
             END IF
@@ -612,11 +612,11 @@ FUNCTION t740_menu()
             IF cl_chk_act_auth() THEN
              IF g_nni.nniconf = "Y" THEN
                 CALL t740_undo_carry_voucher()
-               ELSE 
+               ELSE
                   CALL cl_err('','atm-403',1)
              END IF
             END IF
- 
+
          WHEN "related_document"  #相關文件
               IF cl_chk_act_auth() THEN
                  IF g_nni.nni01 IS NOT NULL THEN
@@ -636,18 +636,18 @@ FUNCTION t740_menu()
             IF cl_chk_act_auth() THEN
                CALL t740_v()
                IF g_nni.nniconf='X' THEN LET g_void='Y' ELSE LET g_void='N' END IF
-               CALL cl_set_field_pic(g_nni.nniconf,"","","",g_void,g_nni.nniacti)   
+               CALL cl_set_field_pic(g_nni.nniconf,"","","",g_void,g_nni.nniacti)
             END IF
-         #CHI-C80041---end  
+         #CHI-C80041---end
       END CASE
    END WHILE
    CLOSE t740_cs
 END FUNCTION
- 
+
 FUNCTION t740_a()
 DEFINE g_t1        LIKE nmy_file.nmyslip    #No.FUN-550057  #No.FUN-680107 VARCHAR(5)
 DEFINE li_result   LIKE type_file.num5      #No.FUN-550057  #No.FUN-680107 SMALLINT
- 
+
    IF s_anmshut(0) THEN RETURN END IF
    MESSAGE ""
    CLEAR FORM                               # 清螢幕欄位內容
@@ -668,7 +668,7 @@ DEFINE li_result   LIKE type_file.num5      #No.FUN-550057  #No.FUN-680107 SMALL
       LET g_nni.nnidate = g_today
       LET g_nni.nniinpd = g_today
       LET g_nni.nnilegal= g_legal
- 
+
       CALL t740_i("a")                         # 各欄位輸入
       IF INT_FLAG THEN                         # 若按了DEL鍵
          LET INT_FLAG = 0
@@ -688,7 +688,7 @@ DEFINE li_result   LIKE type_file.num5      #No.FUN-550057  #No.FUN-680107 SMALL
            CONTINUE WHILE
         END IF
         DISPLAY BY NAME g_nni.nni01
- 
+
       INSERT INTO nni_file VALUES(g_nni.*)     # DISK WRITE
       IF SQLCA.sqlcode THEN
          CALL cl_err3("ins","nni_file",g_nni.nni01,"",SQLCA.sqlcode,"","",1)  #No.FUN-660148  #No.FUN-B80067---調整至回滾事務前---
@@ -711,7 +711,7 @@ DEFINE li_result   LIKE type_file.num5      #No.FUN-550057  #No.FUN-680107 SMALL
    END WHILE
    LET g_wc=' '
 END FUNCTION
- 
+
 FUNCTION t740_i(p_cmd)
 DEFINE
         l_nmd01         LIKE nmd_file.nmd01,
@@ -721,23 +721,23 @@ DEFINE
         l_dept          LIKE type_file.chr20,    #No.FUN-680107 VARCHAR(10)              #Dept
         l_n             LIKE type_file.num5      #No.FUN-680107 SMALLINT
 DEFINE  li_result       LIKE type_file.num5      #No.FUN-550057  #No.FUN-680107 SMALLINT
- 
+
    CALL cl_set_head_visible("","YES")   #No.FUN-6B0030
    DISPLAY BY NAME g_nni.nniuser,g_nni.nnimodu,g_nni.nnidate, #TQC-9B0069
                    g_nni.nnigrup,g_nni.nniacti                #TQC-9B0069
     INPUT BY NAME g_nni.nnioriu,g_nni.nniorig,
            g_nni.nni01,g_nni.nni02,g_nni.nni03,   #No.MOD-910025
            g_nni.nni04,g_nni.nni05,
-           g_nni.nni06,g_nni.nni07,g_nni.nni08,g_nni.nni10, 
+           g_nni.nni06,g_nni.nni07,g_nni.nni08,g_nni.nni10,
            g_nni.nni09,g_nni.nni22,g_nni.nniconf,g_nni.nni21,g_nni.nniglno,
            g_nni.nni11,g_nni.nni12,g_nni.nni13,
            g_nni.nni14,g_nni.nni15,g_nni.nni16,
            g_nni.nniud01,g_nni.nniud02,g_nni.nniud03,g_nni.nniud04,
            g_nni.nniud05,g_nni.nniud06,g_nni.nniud07,g_nni.nniud08,
            g_nni.nniud09,g_nni.nniud10,g_nni.nniud11,g_nni.nniud12,
-           g_nni.nniud13,g_nni.nniud14,g_nni.nniud15 
+           g_nni.nniud13,g_nni.nniud14,g_nni.nniud15
         WITHOUT DEFAULTS
- 
+
       BEFORE INPUT
          LET g_before_input_done = FALSE
          CALL t740_set_entry(p_cmd)
@@ -746,7 +746,7 @@ DEFINE  li_result       LIKE type_file.num5      #No.FUN-550057  #No.FUN-680107 
          CALL cl_set_docno_format("nni01")
          CALL cl_set_docno_format("nni21")
          CALL cl_set_docno_format("nnj03")
- 
+
         AFTER FIELD nni01
            IF NOT cl_null(g_nni.nni01) AND (g_nni.nni01!=g_nni01_t) THEN
            CALL s_check_no("anm",g_nni.nni01,g_nni_t.nni01,"6","nni_file","nni01","")
@@ -756,22 +756,22 @@ DEFINE  li_result       LIKE type_file.num5      #No.FUN-550057  #No.FUN-680107 
                NEXT FIELD nni01
              END IF
            END IF
- 
+
         AFTER FIELD nni02
            IF NOT cl_null(g_nni.nni02) THEN
-              IF g_nni.nni02 <= g_nmz.nmz10 THEN  #no.5261
-                 CALL cl_err('','aap-176',1) NEXT FIELD nni02
-              END IF
+              --IF g_nni.nni02 <= g_nmz.nmz10 THEN  #no.5261
+              --   CALL cl_err('','aap-176',1) NEXT FIELD nni02
+              --END IF
            END IF
- 
+
         AFTER FIELD nni03
            IF NOT cl_null(g_nni.nni03) THEN
               LET g_nni.nni03_y= YEAR(g_nni.nni03)
               LET g_nni.nni03_m=MONTH(g_nni.nni03)
            END IF
- 
- 
- 
+
+
+
         AFTER FIELD nni04
            IF NOT cl_null(g_nni.nni04) THEN
               SELECT COUNT(*) INTO l_n FROM azi_file WHERE azi01 = g_nni.nni04
@@ -780,7 +780,7 @@ DEFINE  li_result       LIKE type_file.num5      #No.FUN-550057  #No.FUN-680107 
                  NEXT FIELD nni04
               END IF
            END IF
- 
+
         AFTER FIELD nni05
            IF NOT cl_null(g_nni.nni05) THEN
               IF cl_null(g_nni_o.nni05) OR g_nni.nni05 != g_nni_o.nni05 THEN
@@ -794,7 +794,7 @@ DEFINE  li_result       LIKE type_file.num5      #No.FUN-550057  #No.FUN-680107 
               END IF
               LET g_nni_o.nni05 = g_nni.nni05
            END IF
- 
+
         AFTER FIELD nni06
            IF NOT cl_null(g_nni.nni06) THEN
               CALL t740_nni06('a')
@@ -806,46 +806,46 @@ DEFINE  li_result       LIKE type_file.num5      #No.FUN-550057  #No.FUN-680107 
               END IF
               LET g_nni_o.nni06 = g_nni.nni06
            END IF
- 
+
         AFTER FIELD nni07
            IF NOT cl_null(g_nni.nni07) THEN
               IF  g_nni.nni07 NOT MATCHES '[123]' THEN
                 NEXT FIELD nni07
               END IF
               #No:6703 活存不能改為支存,但支存可以改活存
-             #IF (g_nni_o.nni07='2'OR g_nni_o.nni07='3') AND         #MOD-B30683 mark  
+             #IF (g_nni_o.nni07='2'OR g_nni_o.nni07='3') AND         #MOD-B30683 mark
              #    g_nni.nni07='1' THEN                               #MOD-B30683 mark
-              IF g_nni.nni07 = '1' AND g_nni.nni07 <> g_nma28 THEN 
+              IF g_nni.nni07 = '1' AND g_nni.nni07 <> g_nma28 THEN
                  IF  g_aza.aza26!='2' THEN    #FUN-C80018
                      CALL cl_err(g_nni.nni07,'anm-149 ',0)               #MOD-B30683 mod anm-098 -> anm-149
                     NEXT FIELD nni07
                  END IF                       #FUN-C80018
-              END IF 
+              END IF
              #-MOD-B30683-add-
               IF g_nni.nni07 <> '1' THEN
                  LET g_nni.nni10 = g_nma05
                  IF g_aza.aza63 = 'Y' THEN
-                    LET g_nni.nni101 = g_nma051 
+                    LET g_nni.nni101 = g_nma051
                     DISPLAY BY NAME g_nni.nni101
                  END IF
               END IF
               DISPLAY BY NAME g_nni.nni07,g_nni.nni10
              #-MOD-B30683-add-
            END IF   #No:6703
- 
+
         BEFORE FIELD nni09                  # 自動計算出帳匯率
            IF g_nni.nni09 IS NULL OR g_nni.nni09 = 0 THEN
               CALL s_bankex(g_nni.nni06,g_nni.nni02) RETURNING g_nni.nni09
               DISPLAY BY NAME g_nni.nni09
            END IF
- 
+
         AFTER FIELD nni09
            IF NOT cl_null(g_nni.nni09) THEN
               IF g_nni.nni09 = 0 THEN
                  NEXT FIELD nni09
               END IF
            END IF
- 
+
         AFTER FIELD nni10
            IF NOT cl_null(g_nni.nni10) THEN
               CALL s_get_bookno(YEAR(g_nni.nni02)) RETURNING g_flag,g_bookno1,g_bookno2
@@ -859,14 +859,14 @@ DEFINE  li_result       LIKE type_file.num5      #No.FUN-550057  #No.FUN-680107 
                  NEXT FIELD nni10
               END IF
            END IF
- 
+
         AFTER FIELD nni22
            IF g_nni.nni07='2' AND cl_null(g_nni.nni22) THEN
               NEXT FIELD nni22
            END IF
            IF NOT cl_null(g_nni.nni22) THEN
               SELECT nmc03 FROM nmc_file WHERE nmc01=g_nni.nni22 AND nmc03='2'
-               IF STATUS THEN 
+               IF STATUS THEN
                 CALL cl_err3("sel","nmc_file",g_nni.nni22,"",STATUS,"","sel nmc:",1)  #No.FUN-660148
                 NEXT FIELD nni22
               END IF
@@ -874,13 +874,13 @@ DEFINE  li_result       LIKE type_file.num5      #No.FUN-550057  #No.FUN-680107 
               CALL cl_err('','mfg0037',0)
               NEXT FIELD nni22
            END IF
- 
+
         BEFORE FIELD nni21
            IF g_nni.nni07='2' THEN
               LET g_nni.nni21=''
               DISPLAY BY NAME g_nni.nni21
            END IF
- 
+
         AFTER FIELD nni21
            IF NOT cl_null(g_nni.nni21) AND (g_nni.nni21!=g_nni_t.nni21) THEN
             CALL s_check_no("anm",g_nni.nni21,g_nni_t.nni21,"1","","","")
@@ -890,7 +890,7 @@ DEFINE  li_result       LIKE type_file.num5      #No.FUN-550057  #No.FUN-680107 
                NEXT FIELD nni21
             END IF
            END IF
- 
+
         AFTER FIELD nniud01
            IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
         AFTER FIELD nniud02
@@ -921,7 +921,7 @@ DEFINE  li_result       LIKE type_file.num5      #No.FUN-550057  #No.FUN-680107 
            IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
         AFTER FIELD nniud15
            IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
- 
+
         AFTER INPUT  #判斷必要欄位之值是否有值,若無則反白顯示,並要求重新輸入
            LET g_nni.nniuser = s_get_data_owner("nni_file") #FUN-C10039
            LET g_nni.nnigrup = s_get_data_group("nni_file") #FUN-C10039
@@ -958,11 +958,11 @@ DEFINE  li_result       LIKE type_file.num5      #No.FUN-550057  #No.FUN-680107 
                CALL cl_err('',9033,0)
                NEXT FIELD nni01
             END IF
- 
+
         ON KEY(F1) NEXT FIELD nni01
         ON KEY(F2) NEXT FIELD nni06
- 
- 
+
+
         ON ACTION CONTROLP
            CASE
               WHEN INFIELD(nni01)
@@ -1014,35 +1014,35 @@ DEFINE  li_result       LIKE type_file.num5      #No.FUN-550057  #No.FUN-680107 
                    NEXT FIELD nni09
               OTHERWISE EXIT CASE
            END CASE
- 
+
         ON ACTION CONTROLR
            CALL cl_show_req_fields()
- 
+
         ON ACTION CONTROLG
            CALL cl_cmdask()
- 
+
         ON ACTION CONTROLF                        # 欄位說明
          CALL cl_set_focus_form(ui.Interface.getRootNode()) RETURNING g_fld_name,g_frm_name #Add on 040913
          CALL cl_fldhelp(g_frm_name,g_fld_name,g_lang) #Add on 040913
- 
+
        ON IDLE g_idle_seconds
           CALL cl_on_idle()
           CONTINUE INPUT
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
- 
+
+
     END INPUT
 END FUNCTION
- 
+
 FUNCTION t740_nni05(p_cmd)
    DEFINE p_cmd   LIKE type_file.chr1    #No.FUN-680107 VARCHAR(1)
    DEFINE l_alg   RECORD LIKE alg_file.*
- 
+
    SELECT * INTO l_alg.*
           FROM alg_file WHERE alg01 = g_nni.nni05
    LET g_errno = ' '
@@ -1051,12 +1051,12 @@ FUNCTION t740_nni05(p_cmd)
    END CASE
    DISPLAY l_alg.alg02 TO FORMONLY.alg02
 END FUNCTION
- 
+
 FUNCTION t740_nni06(p_cmd)
    DEFINE p_cmd   LIKE type_file.chr1    #No.FUN-680107 VARCHAR(1)
    DEFINE l_nma   RECORD LIKE nma_file.*
    DEFINE l_nmd02 LIKE nmd_file.nmd02
- 
+
    SELECT nmd02 INTO l_nmd02 FROM nmd_file WHERE nmd01 = g_nni.nni21
    DISPLAY l_nmd02 TO FORMONLY.nmd02
    SELECT * INTO l_nma.*
@@ -1074,27 +1074,27 @@ FUNCTION t740_nni06(p_cmd)
    IF p_cmd != 'a' THEN RETURN END IF
    LET g_nni.nni07 = l_nma.nma28
    LET g_nma28 = l_nma.nma28         #MOD-B30683
-   LET g_nma05 = l_nma.nma05         #MOD-B30683 
+   LET g_nma05 = l_nma.nma05         #MOD-B30683
    LET g_nni.nni08 = l_nma.nma10
    SELECT azi04 INTO t_azi04 FROM azi_file WHERE azi01 = g_nni.nni08
    IF g_nni.nni07='1' THEN # 貸: 應付票據
       SELECT nms15 INTO g_nni.nni10 FROM nms_file WHERE (nms01 = ' ' OR nms01 IS NULL)
       IF g_aza.aza63 = 'Y' THEN
-         SELECT nms151 INTO g_nni.nni101 FROM nms_file 
+         SELECT nms151 INTO g_nni.nni101 FROM nms_file
           WHERE (nms01 = ' ' OR nms01 IS NULL)
          DISPLAY BY NAME g_nni.nni101
       END IF
    ELSE
       LET g_nni.nni10 = l_nma.nma05      # 貸: 銀行存款
       IF g_aza.aza63 = 'Y' THEN
-         LET g_nni.nni101 = l_nma.nma051 
-         LET g_nma051 = l_nma.nma051         #MOD-B30683 
+         LET g_nni.nni101 = l_nma.nma051
+         LET g_nma051 = l_nma.nma051         #MOD-B30683
          DISPLAY BY NAME g_nni.nni101
       END IF
    END IF
    DISPLAY BY NAME g_nni.nni07,g_nni.nni08,g_nni.nni10
 END FUNCTION
- 
+
 FUNCTION t740_g_b()
    DEFINE l_nnm         RECORD LIKE nnm_file.*
    DEFINE l_nnj         RECORD LIKE nnj_file.*
@@ -1111,20 +1111,20 @@ FUNCTION t740_g_b()
           l_nng20       LIKE nng_file.nng20,
           l_nng21       LIKE nng_file.nng21
    DEFINE l_date        LIKE nne_file.nne112    #MOD-8C0251 add
-   DEFINE l_nni03_y     LIKE nni_file.nni03_y   #No.MOD-910025 
-   DEFINE l_nni03_m     LIKE nni_file.nni03_m   #No.MOD-910025 
+   DEFINE l_nni03_y     LIKE nni_file.nni03_y   #No.MOD-910025
+   DEFINE l_nni03_m     LIKE nni_file.nni03_m   #No.MOD-910025
    DEFINE l_rate        LIKE nni_file.nni09     #MOD-9B0059 add
- 
+
    IF g_nni.nni01 IS NULL THEN RETURN END IF
- 
+
    IF g_nni.nni03_m = 1 THEN
       LET l_nni03_y = g_nni.nni03_y - 1
       LET l_nni03_m = 12
    ELSE
       LET l_nni03_y = g_nni.nni03_y
       LET l_nni03_m = g_nni.nni03_m - 1
-   END IF 
- 
+   END IF
+
    SELECT azi04 INTO t_azi04 FROM azi_file WHERE azi01 = g_nni.nni04
    DECLARE t740_g_b_c1 CURSOR WITH HOLD FOR
     SELECT * FROM nnm_file
@@ -1140,12 +1140,12 @@ FUNCTION t740_g_b()
    LET l_nnj.nnj02=0
    BEGIN WORK
    LET g_success='Y'
- 
+
    OPEN t740_cl USING g_nni.nni01
    IF STATUS THEN
-      CALL cl_err("OPEN t740_cl:", STATUS, 1)  
+      CALL cl_err("OPEN t740_cl:", STATUS, 1)
       CLOSE t740_cl
-      LET g_success='N'        #FUN-8A0086 
+      LET g_success='N'        #FUN-8A0086
       ROLLBACK WORK
       RETURN
    END IF
@@ -1153,20 +1153,20 @@ FUNCTION t740_g_b()
    IF SQLCA.sqlcode THEN
       CALL cl_err(g_nni.nni01,SQLCA.sqlcode,0)
       CLOSE t740_cl
-      LET g_success='N'        #FUN-8A0086 
+      LET g_success='N'        #FUN-8A0086
       ROLLBACK WORK
       RETURN
    END IF
    CALL s_showmsg_init()    #No.FUN-710024
    FOREACH t740_g_b_c1 INTO l_nnm.*
-      IF g_success='N' THEN                                                                                                         
-         LET g_totsuccess='N'                                                                                                       
-         LET g_success="Y"                                                                                                          
-      END IF                                                                                                                        
- 
-      IF STATUS THEN 
+      IF g_success='N' THEN
+         LET g_totsuccess='N'
+         LET g_success="Y"
+      END IF
+
+      IF STATUS THEN
          CALL cl_err('g_b()foreach',STATUS,1)
-         LET g_success='N'        #FUN-8A0086 
+         LET g_success='N'        #FUN-8A0086
          EXIT FOREACH
       END IF
       LET l_nnj.nnj03=l_nnm.nnm01
@@ -1197,7 +1197,7 @@ FUNCTION t740_g_b()
       IF l_nnj.nnj04 = '2' THEN CONTINUE FOREACH END IF
       LET l_nnj.nnj05=l_nnm.nnm05
       #No:9078 止算日用單頭利息日期的年月+每張單子的日去產生
-      LET l_nnj.nnj06=MDY(g_mm,l_day,g_yy) #MOD-5B0236 #MOD-9A0110 取消MARK  
+      LET l_nnj.nnj06=MDY(g_mm,l_day,g_yy) #MOD-5B0236 #MOD-9A0110 取消MARK
      #利息計算的方式應是算頭不算尾,
      #第一個月計息應從借款日~月底,最後一個月計息應從月初~還款日前一天
      #---------------------------MOD-CA0018-----------------mark
@@ -1210,13 +1210,13 @@ FUNCTION t740_g_b()
       LET l_nnj.nnj07 = l_nnj.nnj06 - l_nnj.nnj05           #MOD-CA0018 add
       LET l_nnj.nnj08=l_nnm.nnm08
      #-MOD-A70196-add-
-      IF g_aza.aza26 = '0' AND g_nni.nni04 = g_aza.aza17 THEN 
+      IF g_aza.aza26 = '0' AND g_nni.nni04 = g_aza.aza17 THEN
          IF YEAR(g_nnj[l_ac].nnj05) MOD 4 = 0 THEN                 #MOD-C70284 add
             LET g_i = 366       # 本幣潤年一年採366天              #MOD-C70284 add
          ELSE                                                      #MOD-C70284 add
             LET g_i = 365	# 本幣一年採365天
          END IF                                                    #MOD-C70284 add
-      ELSE 
+      ELSE
          LET g_i = 360	# 外幣一年採360天
       END IF
      #-MOD-A70196-end-
@@ -1252,7 +1252,7 @@ FUNCTION t740_g_b()
          LET l_nnj.nnj14=cl_digcut(l_nnj.nnj12*g_nni.nni09,g_azi04)   #MOD-640409
       END IF
       LET l_nnj.nnj11 = l_nnm.nnm11
-      LET l_nnj.nnj13 = l_nnm.nnm12    
+      LET l_nnj.nnj13 = l_nnm.nnm12
      #--------------------MOD-D20172--------------------(S)
      #LET l_nnj.nnj15 = 0              #MOD-D20172 mark
      #LET l_nnj.nnj16 = 0              #MOD-D20172 mark
@@ -1280,7 +1280,7 @@ FUNCTION t740_g_b()
       CALL cl_digcut(l_nnj.nnj16,g_azi04) RETURNING l_nnj.nnj16    #MOD-D20172 add
 
       MESSAGE '>:',l_nnj.nnj02,' ',l_nnj.nnj03
- 
+
       LET l_nnj.nnjlegal= g_legal
       INSERT INTO nnj_file VALUES(l_nnj.*)
       IF STATUS THEN
@@ -1289,18 +1289,18 @@ FUNCTION t740_g_b()
          LET g_success='N' CONTINUE FOREACH  #No.FUN-710024
       END IF
    END FOREACH
-   IF g_totsuccess="N" THEN                                                                                                        
-      LET g_success="N"                                                                                                            
-   END IF                                                                                                                          
- 
+   IF g_totsuccess="N" THEN
+      LET g_success="N"
+   END IF
+
    IF STATUS THEN CALL cl_err('g_b()foreach',STATUS,1) END IF
    CALL s_showmsg()   #No.FUN-710024
    IF g_success='Y' THEN COMMIT WORK ELSE ROLLBACK WORK END IF
    CALL t740_b_tot()
 END FUNCTION
- 
+
 FUNCTION t740_q()
- 
+
     LET g_row_count = 0
     LET g_curs_index = 0
     CALL cl_navigator_setting( g_curs_index, g_row_count )
@@ -1328,12 +1328,12 @@ FUNCTION t740_q()
    END IF
    MESSAGE ""
 END FUNCTION
- 
+
 FUNCTION t740_fetch(p_flnni)
    DEFINE
        p_flnni   LIKE type_file.chr1,   #No.FUN-680107 VARCHAR(1)
        l_abso    LIKE type_file.num10   #No.FUN-680107 INTEGER
- 
+
    CASE p_flnni
       WHEN 'N' FETCH NEXT     t740_cs INTO g_nni.nni01
       WHEN 'P' FETCH PREVIOUS t740_cs INTO g_nni.nni01
@@ -1347,17 +1347,17 @@ FUNCTION t740_fetch(p_flnni)
          PROMPT g_msg CLIPPED,': ' FOR g_jump      #TQC-C70054  add
             ON IDLE g_idle_seconds
                CALL cl_on_idle()
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
+
       ON ACTION controlg      #MOD-4C0121
          CALL cl_cmdask()     #MOD-4C0121
- 
- 
+
+
          END PROMPT
          IF INT_FLAG THEN
             LET INT_FLAG = 0
@@ -1368,7 +1368,7 @@ FUNCTION t740_fetch(p_flnni)
          FETCH ABSOLUTE g_jump t740_cs INTO g_nni.nni01      #TQC-C70054  add
          LET g_no_ask = FALSE                                #TQC-C70054  add
    END CASE
- 
+
    IF SQLCA.sqlcode THEN
       CALL cl_err(g_nni.nni01,SQLCA.sqlcode,0)
       INITIALIZE g_nni.* TO NULL  #TQC-6B0105
@@ -1382,10 +1382,10 @@ FUNCTION t740_fetch(p_flnni)
          #WHEN '/' LET g_curs_index = l_abso         #TQC-C70054  mark
          WHEN '/' LET g_curs_index = g_jump          #TQC-C70054  add
       END CASE
- 
+
       CALL cl_navigator_setting( g_curs_index, g_row_count )
    END IF
- 
+
    SELECT * INTO g_nni.* FROM nni_file       # 重讀DB,因TEMP有不被更新特性
     WHERE nni01 = g_nni.nni01
    IF SQLCA.sqlcode THEN
@@ -1396,7 +1396,7 @@ FUNCTION t740_fetch(p_flnni)
       CALL t740_show()                     # 重新顯示
    END IF
 END FUNCTION
- 
+
 FUNCTION t740_show()
 DEFINE  g_t1        LIKE nmy_file.nmyslip    #No.FUN-550057  #No.FUN-680107 VARCHAR(5)
 DEFINE  li_result   LIKE type_file.num5      #No.FUN-560002  #No.FUN-680107 SMALLINT
@@ -1408,12 +1408,12 @@ DEFINE  li_result   LIKE type_file.num5      #No.FUN-560002  #No.FUN-680107 SMAL
           g_nni.nni09,g_nni.nni22,g_nni.nni21,g_nni.nniglno,g_nni.nniconf,
           g_nni.nni11,g_nni.nni12,g_nni.nni13,
           g_nni.nni14,g_nni.nni15,g_nni.nni16,
-          g_nni.nniuser,g_nni.nnimodu,g_nni.nnidate,  #TQC-9B0069 
+          g_nni.nniuser,g_nni.nnimodu,g_nni.nnidate,  #TQC-9B0069
           g_nni.nnigrup,g_nni.nniacti,                #TQC-9B0069
           g_nni.nniud01,g_nni.nniud02,g_nni.nniud03,g_nni.nniud04,
           g_nni.nniud05,g_nni.nniud06,g_nni.nniud07,g_nni.nniud08,
           g_nni.nniud09,g_nni.nniud10,g_nni.nniud11,g_nni.nniud12,
-          g_nni.nniud13,g_nni.nniud14,g_nni.nniud15 
+          g_nni.nniud13,g_nni.nniud14,g_nni.nniud15
    CALL t740_nni05('d')
    CALL t740_nni06('d')
    CALL t740_b_fill(' 1=1')
@@ -1421,12 +1421,12 @@ DEFINE  li_result   LIKE type_file.num5      #No.FUN-560002  #No.FUN-680107 SMAL
    SELECT * INTO g_nmy.* FROM nmy_file WHERE nmyslip = g_t1
 #  CALL s_check_no("anm",g_nni.nni01,"","6","","","")          #No.MOD-B30156  Mark
 #  RETURNING li_result,g_nni.nni01                             #No.MOD-B30156  Mark
-   #CALL cl_set_field_pic(g_nni.nniconf,"","","","",g_nni.nniacti)     #MOD-A20096 "" modify nniacti  #CHI-C80041 
+   #CALL cl_set_field_pic(g_nni.nniconf,"","","","",g_nni.nniacti)     #MOD-A20096 "" modify nniacti  #CHI-C80041
    IF g_nni.nniconf='X' THEN LET g_void='Y' ELSE LET g_void='N' END IF #CHI-C80041
    CALL cl_set_field_pic(g_nni.nniconf,"","","",g_void,g_nni.nniacti)  #CHI-C80041
    CALL cl_show_fld_cont()                   #No.FUN-550037 hmf
 END FUNCTION
- 
+
 FUNCTION t740_u()
    IF s_anmshut(0) THEN RETURN END IF
    IF g_nni.nni01 IS NULL THEN
@@ -1442,7 +1442,7 @@ FUNCTION t740_u()
    MESSAGE ""
    CALL cl_opmsg('u')
    BEGIN WORK
- 
+
    OPEN t740_cl USING g_nni.nni01
    IF STATUS THEN
       CALL cl_err("OPEN t740_cl:", STATUS, 1)
@@ -1482,7 +1482,7 @@ FUNCTION t740_u()
          UPDATE npp_file SET npp02=g_nni.nni02
           WHERE npp01=g_nni.nni01 AND npp00=6 AND npp011=0
             AND nppsys = 'NM'
-         IF STATUS THEN 
+         IF STATUS THEN
             CALL cl_err3("upd","nnp_file",g_nni.nni01,"",STATUS,"","upd nnp02:",1)  #No.FUN-660148
          END IF
       END IF
@@ -1492,21 +1492,21 @@ FUNCTION t740_u()
    COMMIT WORK
    CALL cl_flow_notify(g_nni.nni01,'U')
 END FUNCTION
- 
+
 FUNCTION t740_npp02(p_npptype)   #No.FUN-680088
 DEFINE p_npptype  LIKE npp_file.npptype  #No.FUN-680088
- 
+
    IF g_nni.nniglno IS NULL OR g_nni.nniglno=' ' THEN
       UPDATE npp_file SET npp02=g_nni.nni02
        WHERE npp01=g_nni.nni01 AND npp00=6 AND npp011=0
          AND nppsys = 'NM'
          AND npptype = p_npptype  #No.FUN-680088
-      IF STATUS THEN 
+      IF STATUS THEN
          CALL cl_err3("upd","nnp_file",g_nni.nni01,"",STATUS,"","upd nnp02:",1)  #No.FUN-660148
       END IF
    END IF
 END FUNCTION
- 
+
 #str FUN-910014 add
 FUNCTION t740_x()
 
@@ -1518,7 +1518,7 @@ FUNCTION t740_x()
       CALL cl_err("",-400,0)
       RETURN
    END IF
-  
+
   #MOD-A20096---add---start---
    IF g_nni.nniconf = 'Y' THEN
       CALL cl_err('','aim1006',0)
@@ -1548,7 +1548,7 @@ FUNCTION t740_x()
    CALL t740_show()
 
    IF cl_exp(0,0,g_nni.nniacti) THEN                   #確認一下
-      LET g_chr=g_nni.nniacti      
+      LET g_chr=g_nni.nniacti
       IF g_nni.nniacti='Y' THEN
          LET g_nni.nniacti='N'
       ELSE
@@ -1587,7 +1587,7 @@ END FUNCTION
 FUNCTION t740_r()
    DEFINE l_chr   LIKE type_file.chr1,   #No.FUN-680107 VARCHAR(1)
           l_cnt   LIKE type_file.num5    #No.FUN-680107 SMALLINT
- 
+
    IF s_anmshut(0) THEN RETURN END IF
    IF g_nni.nni01 IS NULL THEN CALL cl_err('',-400,0) RETURN END IF
    SELECT * INTO g_nni.* FROM nni_file WHERE nni01 = g_nni.nni01
@@ -1598,7 +1598,7 @@ FUNCTION t740_r()
       RETURN
    END IF
    BEGIN WORK
- 
+
    OPEN t740_cl USING g_nni.nni01
    IF STATUS THEN
       CALL cl_err("OPEN t740_cl:", STATUS, 1)
@@ -1618,25 +1618,25 @@ FUNCTION t740_r()
        LET g_doc.value1 = g_nni.nni01      #No.FUN-9B0098 10/02/24
        CALL cl_del_doc()                                           #No.FUN-9B0098 10/02/24
       DELETE FROM nni_file WHERE nni01 = g_nni.nni01
-      IF STATUS THEN 
+      IF STATUS THEN
          CALL cl_err3("del","nni_file",g_nni.nni01,"",STATUS,"","del nni:",1)  #No.FUN-660148
          ROLLBACK WORK RETURN END IF
       DELETE FROM nnj_file WHERE nnj01 = g_nni.nni01
-      IF STATUS THEN 
+      IF STATUS THEN
          CALL cl_err3("del","nnj_file",g_nni.nni01,"",STATUS,"","del nnj:",1)  #No.FUN-660148
          ROLLBACK WORK RETURN END IF
       DELETE FROM npp_file
        WHERE nppsys='NM' AND npp00=6 AND npp01=g_nni.nni01 AND npp011=0
-      IF STATUS THEN 
+      IF STATUS THEN
          CALL cl_err3("del","nnp_file",g_nni.nni01,"",STATUS,"","del nnp:",1)  #No.FUN-660148
          ROLLBACK WORK RETURN END IF
       DELETE FROM npq_file
        WHERE npqsys='NM' AND npq00=6 AND npq01=g_nni.nni01 AND npq011=0
-      IF STATUS THEN 
+      IF STATUS THEN
          CALL cl_err3("del","npq_file",g_nni.nni01,"",STATUS,"","del npq:",1)  #No.FUN-660148
          ROLLBACK WORK RETURN END IF
 
- 
+
       #FUN-B40056--add--str--
       DELETE FROM tic_file WHERE tic04 = g_nni.nni01
       IF STATUS THEN
@@ -1656,7 +1656,7 @@ FUNCTION t740_r()
          CALL t740_fetch('L')
       ELSE
          LET g_jump = g_curs_index
-         LET g_no_ask = TRUE     
+         LET g_no_ask = TRUE
          CALL t740_fetch('/')
       END IF
       #TQC-C70054--add--end--
@@ -1667,14 +1667,14 @@ FUNCTION t740_r()
    #CLEAR FORM     #TQC-C70054  mark
    #CALL g_nnj.clear()   #TQC-C70054  mark
 END FUNCTION
- 
+
 FUNCTION t740_g_np()
    DEFINE l_nmd       RECORD LIKE nmd_file.*
    DEFINE l_nmf       RECORD LIKE nmf_file.*
    DEFINE l_n         LIKE type_file.num10   #No.FUN-680107 INTEGER
    DEFINE l_msg       LIKE ze_file.ze03      #No.FUN-680107 VARCHAR(60)
    DEFINE li_result   LIKE type_file.num5    #No.FUN-560002  #No.FUN-680107 SMALLINT
- 
+
    SELECT * INTO g_nni.* FROM nni_file WHERE nni01 = g_nni.nni01
    IF g_nni.nniconf = 'N' THEN RETURN END IF
    IF g_nni.nni07 != '1' THEN RETURN END IF
@@ -1683,9 +1683,9 @@ FUNCTION t740_g_np()
       CALL cl_getmsg('aap-741',g_lang) RETURNING l_msg
       ERROR l_msg CLIPPED  RETURN
    END IF
- 
+
    BEGIN WORK
- 
+
    OPEN t740_cl USING g_nni.nni01
    IF STATUS THEN
       CALL cl_err("OPEN t740_cl:", STATUS, 1)
@@ -1700,7 +1700,7 @@ FUNCTION t740_g_np()
    END IF
    INITIALIZE l_nmd.* TO NULL
    LET g_nni_t.* = g_nni.*
- 
+
    IF cl_null(g_nni.nni21) THEN
       LET g_t1 = s_get_doc_no(g_nni.nni21)
       CALL q_nmy(FALSE,FALSE,g_t1,'1','ANM') RETURNING g_t1
@@ -1747,7 +1747,7 @@ FUNCTION t740_g_np()
    INSERT INTO nmd_file VALUES(l_nmd.*)
    IF STATUS THEN
       CALL cl_err3("ins","nmd_file",l_nmd.nmd01,"",STATUS,"","ins nmd:",1)  #No.FUN-660148
-      ROLLBACK WORK RETURN 
+      ROLLBACK WORK RETURN
    END IF
    INITIALIZE l_nmf.* TO NULL
    LET l_nmf.nmf01=l_nmd.nmd01
@@ -1763,7 +1763,7 @@ FUNCTION t740_g_np()
    INSERT INTO nmf_file VALUES(l_nmf.*)            # 注意多工廠環境
    IF STATUS THEN
       CALL cl_err3("ins","nmf_file",l_nmf.nmf01,l_nmf.nmf03,STATUS,"","ins nmf:",1)  #No.FUN-660148
-      ROLLBACK WORK RETURN 
+      ROLLBACK WORK RETURN
    END IF
    UPDATE nni_file SET nni21=l_nmd.nmd01 WHERE nni01=g_nni.nni01
    IF STATUS THEN
@@ -1776,20 +1776,20 @@ FUNCTION t740_g_np()
    LET g_msg="anmt100 '",g_nni.nni21,"'"
    CALL cl_cmdrun_wait(g_msg)  #FUN-660216 add
 END FUNCTION
- 
+
 FUNCTION t740_del_np()
    DEFINE l_nmd      RECORD LIKE nmd_file.*
    DEFINE l_nmf      RECORD LIKE nmf_file.*
    DEFINE l_n        LIKE type_file.num10   #No.FUN-680107 INTEGER
    DEFINE l_msg      LIKE ze_file.ze03      #No.FUN-680107 VARCHAR(60)
    DEFINE l_nni21    LIKE nni_file.nni21
- 
+
    SELECT * INTO g_nni.* FROM nni_file WHERE nni01 = g_nni.nni01
    IF g_nni.nniconf = 'N' THEN RETURN END IF
    IF g_nni.nni07 != '1' THEN RETURN END IF
    IF g_nni.nni21 IS NULL THEN RETURN END IF
    SELECT * INTO l_nmd.* FROM nmd_file WHERE nmd01=g_nni.nni21
-   IF STATUS THEN 
+   IF STATUS THEN
       CALL cl_err3("sel","nmd_file",g_nni.nni21,"","anm-221","","",1)  #No.FUN-660148
       RETURN  END IF
    IF l_nmd.nmd12 <> 'X' OR (l_nmd.nmd02 IS NOT NULL AND l_nmd.nmd02<>' ') THEN    #No:8041
@@ -1809,7 +1809,7 @@ FUNCTION t740_del_np()
    DELETE FROM nmf_file WHERE nmf01 = g_nni.nni21
    IF STATUS OR SQLCA.sqlerrd[3]=0 THEN
       CALL cl_err3("del","nmf_file",g_nni.nni21,"",STATUS,"","del nmf",1)  #No.FUN-660148
-      LET g_success = 'N' 
+      LET g_success = 'N'
    END IF
     LET l_nni21 = s_get_doc_no(g_nni.nni21)       #No.FUN-550057
    UPDATE nni_file SET nni21 = l_nni21
@@ -1828,7 +1828,7 @@ FUNCTION t740_del_np()
    SELECT nni21 INTO g_nni.nni21 FROM nni_file WHERE nni01=g_nni.nni01
    DISPLAY BY NAME g_nni.nni21
 END FUNCTION
- 
+
 FUNCTION t740_firm1()
    DEFINE l_n   LIKE type_file.num5     #No.FUN-680107 SMALLINT
    DEFINE l_npq03    LIKE npq_file.npq03  #CHI-A40018 add
@@ -1856,7 +1856,7 @@ FUNCTION t740_firm1()
    END IF
   #MOD-A20096---add---start---
    IF g_nni.nniacti = 'N' THEN
-      CALL cl_err('','9027',1) 
+      CALL cl_err('','9027',1)
       RETURN
    END IF
   #MOD-A20096---add---end---
@@ -1868,9 +1868,9 @@ FUNCTION t740_firm1()
    EXECUTE nmz10_p INTO g_nmz.nmz10
 #FUN-B50090 add -end--------------------------
    #-->立帳日期不可小於關帳日期
-   IF g_nni.nni02 <= g_nmz.nmz10 THEN
-      CALL cl_err(g_nni.nni01,'aap-176',1) RETURN
-   END IF
+   --IF g_nni.nni02 <= g_nmz.nmz10 THEN
+   --   CALL cl_err(g_nni.nni01,'aap-176',1) RETURN
+   --END IF
 #  IF NOT cl_confirm('axm-108') THEN RETURN END IF #CHI-C30107 mark
    CALL s_get_bookno(YEAR(g_nni.nni02)) RETURNING g_flag,g_bookno1,g_bookno2
    IF g_flag = '1' THEN
@@ -1879,7 +1879,7 @@ FUNCTION t740_firm1()
    END IF
    LET g_success='Y'
    BEGIN WORK
- 
+
    OPEN t740_cl USING g_nni.nni01
    IF STATUS THEN
       CALL cl_err("OPEN t740_cl:", STATUS, 1)
@@ -1894,29 +1894,29 @@ FUNCTION t740_firm1()
    END IF
 
    #CHI-A40018 add --start--
-   IF cl_null(g_nni.nni14) THEN 
+   IF cl_null(g_nni.nni14) THEN
       LET l_nni14 = 0
    ELSE
       LET l_nni14=g_nni.nni14
    END IF
    DECLARE t740_c2 CURSOR FOR
       SELECT npq03 FROM npq_file
-       WHERE npqsys = "NM" 
+       WHERE npqsys = "NM"
          AND npq00= 6
-         AND npq01=g_nni.nni01  
-         AND npq011= 0 
+         AND npq01=g_nni.nni01
+         AND npq011= 0
    FOREACH t740_c2 INTO l_npq03
       IF l_npq03 = g_nni.nni10 THEN
         #SELECT npq07 INTO l_npq07              #MOD-C30870 mark
          SELECT SUM(npq07) INTO l_npq07         #MOD-C30870 add
            FROM npq_file
-          WHERE npqsys = "NM" 
+          WHERE npqsys = "NM"
             AND npq00= 6
-            AND npq01=g_nni.nni01  
-            AND npq011= 0 
+            AND npq01=g_nni.nni01
+            AND npq011= 0
             AND npqtype='0'
             AND npq03=l_npq03
-      
+
          IF l_nni14 <> l_npq07 THEN
             CALL cl_err(g_nni.nni01,'aap-065',1)
             LET g_success='N'
@@ -1926,16 +1926,16 @@ FUNCTION t740_firm1()
 
      #IF g_aza.aza63 = 'Y' THEN                                   #MOD-C30870 mark
       IF g_aza.aza63 = 'Y' AND l_npq03 = g_nni.nni101  THEN       #MOD-C30870 add
-        #SELECT npq07 INTO l_npq07                                #MOD-C30870 mark 
+        #SELECT npq07 INTO l_npq07                                #MOD-C30870 mark
          SELECT SUM(npq07) INTO l_npq07                           #MOD-C30870 add
            FROM npq_file
-          WHERE npqsys = "NM" 
+          WHERE npqsys = "NM"
             AND npq00= 6
-            AND npq01=g_nni.nni01  
-            AND npq011= 0 
+            AND npq01=g_nni.nni01
+            AND npq011= 0
             AND npqtype='1'
             AND npq03=l_npq03
-   
+
          IF l_nni14 <> l_npq07 THEN
             CALL cl_err(g_nni.nni01,'aap-065',1)
             LET g_success='N'
@@ -1947,7 +1947,7 @@ FUNCTION t740_firm1()
    IF g_success='N' THEN RETURN END IF
    #CHI-A40018 add --end--
 
-   LET g_t1 = s_get_doc_no(g_nni.nni01)     #No.FUN-670060 
+   LET g_t1 = s_get_doc_no(g_nni.nni01)     #No.FUN-670060
    SELECT nmydmy3,nmyglcr INTO g_nmy.nmydmy3,g_nmy.nmyglcr FROM nmy_file WHERE nmyslip = g_t1    #No.FUN-670060
    IF g_nmy.nmydmy3 = 'Y'AND g_nmy.nmyglcr = 'N' THEN  #若單別須拋轉總帳, 檢查分錄底稿平衡正確否
       CALL s_chknpq(g_nni.nni01,'NM',0,'0',g_bookno1)        #No.FUN-730032
@@ -1959,12 +1959,12 @@ FUNCTION t740_firm1()
    IF g_nmy.nmydmy3 = 'Y' AND g_nmy.nmyglcr = 'Y' THEN
       CALL s_get_doc_no(g_nni.nni01) RETURNING g_t1
       SELECT * INTO g_nmy.* FROM nmy_file WHERE nmyslip=g_t1
-      SELECT count(*) INTO l_n FROM npq_file 
-       WHERE npqsys='NM' AND npq00=6 AND npq01=g_nni.nni01 AND npq011=0 
+      SELECT count(*) INTO l_n FROM npq_file
+       WHERE npqsys='NM' AND npq00=6 AND npq01=g_nni.nni01 AND npq011=0
        IF l_n = 0 THEN
          CALL t740_gen_glcr(g_nni.*,g_nmy.*)
        END IF
-      IF g_success = 'Y' THEN 
+      IF g_success = 'Y' THEN
          CALL s_chknpq(g_nni.nni01,'NM',0,'0',g_bookno1)        #No.FUN-730032
          IF g_aza.aza63 = 'Y' AND g_success = 'Y' THEN
             CALL s_chknpq(g_nni.nni01,'NM',0,'1',g_bookno2)       #No.FUN-730032
@@ -1989,7 +1989,7 @@ FUNCTION t740_firm1()
       LET g_nni.nniconf ='N'
    END IF
    DISPLAY BY NAME g_nni.nniconf
- 
+
    IF g_nmy.nmydmy3 = 'Y' AND g_nmy.nmyglcr = 'Y' AND g_success = 'Y' THEN
       LET g_wc_gl = 'npp01 = "',g_nni.nni01,'" AND npp011 = 0'
       LET g_str="anmp400 '",g_wc_gl CLIPPED,"' '0'  'z' '",g_nmz.nmz02p,"' '",g_nmz.nmz02b,"' '",g_nmy.nmygslp,"' '",g_nmz.nmz02c,"' '",g_nmy.nmygslp1,"' '",g_nni.nni02,"' 'Y' '1' 'Y'"   #No.FUN-680088 #FUN-860040
@@ -2000,23 +2000,23 @@ FUNCTION t740_firm1()
    END IF
    #CALL cl_set_field_pic(g_nni.nniconf,"","","","",g_nni.nniacti)  #MOD-AC0073  #CHI-C80041
    IF g_nni.nniconf='X' THEN LET g_void='Y' ELSE LET g_void='N' END IF #CHI-C80041
-   CALL cl_set_field_pic(g_nni.nniconf,"","","",g_void,g_nni.nniacti)  #CHI-C80041   
- 
+   CALL cl_set_field_pic(g_nni.nniconf,"","","",g_void,g_nni.nniacti)  #CHI-C80041
+
 END FUNCTION
- 
+
 FUNCTION t740_y1()
    DECLARE t740_y1_c CURSOR FOR
       SELECT * FROM nnj_file WHERE nnj01=g_nni.nni01
    CALL s_showmsg_init()    #No.FUN-710024
    FOREACH t740_y1_c INTO b_nnj.*
-      IF g_success='N' THEN                                                                                                         
-         LET g_totsuccess='N'                                                                                                       
-         LET g_success="Y"                                                                                                          
-      END IF                                                                                                                        
- 
+      IF g_success='N' THEN
+         LET g_totsuccess='N'
+         LET g_success="Y"
+      END IF
+
       IF STATUS THEN
-         LET g_success='N'        #FUN-8A0086 
-         EXIT FOREACH 
+         LET g_success='N'        #FUN-8A0086
+         EXIT FOREACH
       END IF
       MESSAGE b_nnj.nnj02
       IF b_nnj.nnj12 IS NULL THEN       #該筆到單尚未輸入還息資料!
@@ -2027,14 +2027,14 @@ FUNCTION t740_y1()
       CALL t740_upd_nnm()
       CALL t740_upd_nne()
    END FOREACH
-   IF g_totsuccess="N" THEN                                                                                                        
-      LET g_success="N"                                                                                                            
-   END IF                                                                                                                          
- 
+   IF g_totsuccess="N" THEN
+      LET g_success="N"
+   END IF
+
    IF g_nni.nni07='2' THEN CALL t740_ins_nme() END IF
- 
+
 END FUNCTION
- 
+
 FUNCTION t740_upd_nnm()
    IF b_nnj.nnj04='1' THEN
       UPDATE nnm_file SET nnm13 = g_nni.nni01
@@ -2051,7 +2051,7 @@ FUNCTION t740_upd_nnm()
       LET g_success='N'
    END IF
 END FUNCTION
- 
+
 FUNCTION t740_upd_nne()
    DEFINE l_nne33  LIKE nne_file.nne33,        #No:8614
           l_nng26  LIKE nng_file.nng26         #No:8614
@@ -2094,7 +2094,7 @@ FUNCTION t740_upd_nne()
         END IF
       END IF
 END FUNCTION
- 
+
 FUNCTION t740_ins_nme()
    DEFINE l_azi04 LIKE azi_file.azi04
    DEFINE l_nme   RECORD LIKE nme_file.*
@@ -2173,21 +2173,21 @@ FUNCTION t740_ins_nme()
 #FUN-B30166--add--end
 
    INSERT INTO nme_file VALUES(l_nme.*)
-   IF STATUS THEN 
+   IF STATUS THEN
       CALL s_errmsg('nme02',l_nme.nme02,'ins nme:',STATUS,1) #No.FUN-710024
       LET g_success='N' END IF
-   CALL s_flows_nme(l_nme.*,'1',g_plant)   #No.FUN-B90062    
+   CALL s_flows_nme(l_nme.*,'1',g_plant)   #No.FUN-B90062
 END FUNCTION
- 
+
 FUNCTION t740_firm2()
    DEFINE  l_aba19        LIKE aba_file.aba19   #No.FUN-670060
    DEFINE  l_dbs          STRING                #No.FUN-670060
    DEFINE  l_sql          STRING                #No.FUN-670060
-   
+
    SELECT * INTO g_nni.* FROM nni_file WHERE nni01 = g_nni.nni01
   #MOD-A20096---add---start---
    IF g_nni.nniacti = 'N' THEN
-      CALL cl_err('','9027',1) 
+      CALL cl_err('','9027',1)
       RETURN
    END IF
   #MOD-A20096---add---end---
@@ -2200,9 +2200,9 @@ FUNCTION t740_firm2()
    EXECUTE nmz10_p1 INTO g_nmz.nmz10
 #FUN-B50090 add -end--------------------------
    #-->立帳日期不可小於關帳日期
-   IF g_nni.nni02 <= g_nmz.nmz10 THEN #no.5261
-      CALL cl_err(g_nni.nni01,'aap-176',1) RETURN
-   END IF
+   --IF g_nni.nni02 <= g_nmz.nmz10 THEN #no.5261
+   --   CALL cl_err(g_nni.nni01,'aap-176',1) RETURN
+   --END IF
    IF NOT cl_confirm('axm-109') THEN RETURN END IF
    IF g_nni.nni21 IS NOT NULL THEN   #若已開票,則不可取消確認
       SELECT COUNT(*) INTO g_cnt FROM nmd_file WHERE nmd01=g_nni.nni21
@@ -2218,7 +2218,7 @@ FUNCTION t740_firm2()
       SELECT nniglno INTO g_nni.nniglno FROM nni_file
        WHERE nni01 = g_nni.nni01
       IF NOT cl_null(g_nni.nniglno) THEN
-         CALL cl_err(g_nni.nniglno,'aap-929',0) 
+         CALL cl_err(g_nni.nniglno,'aap-929',0)
          RETURN
       END IF
       DISPLAY BY NAME g_nni.nniglno
@@ -2226,9 +2226,9 @@ FUNCTION t740_firm2()
    #CHI-C90052 add end-----
 
    BEGIN WORK
- 
+
    #取消確認時，若單據別設為"系統自動拋轉總帳",則可自動拋轉還原
-   CALL s_get_doc_no(g_nni.nni01) RETURNING g_t1 
+   CALL s_get_doc_no(g_nni.nni01) RETURNING g_t1
    SELECT * INTO g_nmy.* FROM nmy_file WHERE nmyslip=g_t1
    IF NOT cl_null(g_nni.nniglno) THEN
       IF NOT (g_nmy.nmydmy3 = 'Y' AND g_nmy.nmyglcr = 'Y') THEN
@@ -2252,7 +2252,7 @@ FUNCTION t740_firm2()
          RETURN
       END IF
    END IF
-   
+
    OPEN t740_cl USING g_nni.nni01
    IF STATUS THEN
       CALL cl_err("OPEN t740_cl:", STATUS, 1)
@@ -2282,7 +2282,7 @@ FUNCTION t740_firm2()
       LET g_nni.nniconf ='Y'
    END IF
    DISPLAY BY NAME g_nni.nniconf
-  
+
    #CHI-C90052 mark begin---
    #IF g_nmy.nmydmy3 = 'Y' AND g_nmy.nmyglcr = 'Y' AND g_success = 'Y' THEN
    #   LET g_str="anmp409 '",g_nmz.nmz02p,"' '",g_nmz.nmz02b,"' '",g_nni.nniglno,"' 'Y'"
@@ -2292,30 +2292,30 @@ FUNCTION t740_firm2()
    #   DISPLAY BY NAME g_nni.nniglno
    #END IF
    #CHI-C90052 mark end-----
- 
+
 END FUNCTION
- 
+
 FUNCTION t740_y2()
    DECLARE t740_y2_c CURSOR FOR
       SELECT * FROM nnj_file WHERE nnj01=g_nni.nni01
    CALL s_showmsg_init()    #No.FUN-710024
    FOREACH t740_y2_c INTO b_nnj.*
-      IF g_success='N' THEN                                                                                                         
-         LET g_totsuccess='N'                                                                                                       
-         LET g_success="Y"                                                                                                          
-      END IF                                                                                                                        
- 
+      IF g_success='N' THEN
+         LET g_totsuccess='N'
+         LET g_success="Y"
+      END IF
+
       MESSAGE b_nnj.nnj02
       CALL t740_rec_nnm()
    END FOREACH
-   IF g_totsuccess="N" THEN                                                                                                        
-      LET g_success="N"                                                                                                            
-   END IF                                                                                                                          
- 
+   IF g_totsuccess="N" THEN
+      LET g_success="N"
+   END IF
+
    IF g_nni.nni07='2' THEN CALL t740_del_nme() END IF
- 
+
 END FUNCTION
- 
+
 FUNCTION t740_rec_nnm()
    IF b_nnj.nnj04='1' THEN
       UPDATE nnm_file SET nnm13 = NULL
@@ -2332,10 +2332,10 @@ FUNCTION t740_rec_nnm()
       LET g_success='N'
    END IF
 END FUNCTION
- 
+
 FUNCTION t740_del_nme()
  DEFINE l_nme24     LIKE nme_file.nme24  #No.FUN-730032
- 
+
    IF g_aza.aza73 = 'Y' THEN
       LET g_sql="SELECT nme24 FROM nme_file",
                 " WHERE nme17='",g_nni.nni01,"'"
@@ -2349,22 +2349,22 @@ FUNCTION t740_del_nme()
          END IF
       END FOREACH
    END IF
-   IF g_nmz.nmz70 ='1' THEN #No.TQC-B70021 
+   IF g_nmz.nmz70 ='1' THEN #No.TQC-B70021
    #FUN-B40056  --begin
-   DELETE FROM tic_file WHERE tic04 in 
+   DELETE FROM tic_file WHERE tic04 in
   (SELECT nme12 FROM nme_file
     WHERE nme17 = g_nni.nni01)
-   IF STATUS THEN 
+   IF STATUS THEN
       CALL s_errmsg('tic04',g_nni.nni01,'del tic:',STATUS,1)
       LET g_success='N' END IF
  #FUN-B40056  --end
-   END IF                 #No.TQC-B70021 
+   END IF                 #No.TQC-B70021
    DELETE FROM nme_file WHERE nme17=g_nni.nni01
-   IF STATUS THEN 
+   IF STATUS THEN
       CALL s_errmsg('nme17',g_nni.nni01,'del nme:',STATUS,1) #No.FUN-710024
       LET g_success='N' END IF
 END FUNCTION
- 
+
 FUNCTION t740_b()
 DEFINE l_nne           RECORD LIKE nne_file.*,
        l_nng           RECORD LIKE nng_file.*,
@@ -2396,13 +2396,13 @@ DEFINE l_nng20         LIKE nng_file.nng20      #MOD-D30039 add
 DEFINE l_nng21         LIKE nng_file.nng21      #MOD-D30039 add
 DEFINE l_nnl11         LIKE nnl_file.nnl11      #CHI-D50031 add
 DEFINE l_nnl13         LIKE nnl_file.nnl17      #CHI-D50031 add
- 
+
     LET g_action_choice = ""
     IF s_anmshut(0) THEN RETURN END IF
     SELECT * INTO g_nni.* FROM nni_file WHERE nni01 = g_nni.nni01
     IF g_nni.nniconf='Y' THEN CALL cl_err('','axm-101',0) RETURN END IF
     IF cl_null(g_nni.nni01) THEN RETURN END IF
- 
+
     SELECT COUNT(*) INTO l_n FROM nnj_file WHERE nnj01 = g_nni.nni01
     IF l_n = 0 THEN
        IF cl_confirm('aap-702') THEN   #MOD-5C0128
@@ -2410,13 +2410,13 @@ DEFINE l_nnl13         LIKE nnl_file.nnl17      #CHI-D50031 add
           CALL t740_b_fill('1=1')
        END IF
     END IF
- 
+
     CALL cl_opmsg('b')
- 
+
     LET g_forupd_sql =
          "SELECT nnj02,nnj09,nnj03,nnj04,'',",
-         "       nnj05,nnj06,nnj07,nnj08,'',",                #CHI-B80051 add '' 
-         "       '',nnj11,nnj13,nnj12,nnj14,nnj15,",          #CHI-B80051 add '' 
+         "       nnj05,nnj06,nnj07,nnj08,'',",                #CHI-B80051 add ''
+         "       '',nnj11,nnj13,nnj12,nnj14,nnj15,",          #CHI-B80051 add ''
          "       nnj16,nnjud01,nnjud02,nnjud03,nnjud04,",
          "       nnjud05,nnjud06,nnjud07,nnjud08,nnjud09,",
          "       nnjud10,nnjud11,nnjud12,nnjud13,nnjud14,",
@@ -2425,22 +2425,22 @@ DEFINE l_nnl13         LIKE nnl_file.nnl17      #CHI-D50031 add
          " WHERE nnj01=? AND nnj02=? FOR UPDATE"
     LET g_forupd_sql = cl_forupd_sql(g_forupd_sql)
     DECLARE t740_bcl CURSOR FROM g_forupd_sql      # LOCK CURSOR
- 
+
     LET l_allow_insert = cl_detail_input_auth("insert")
     LET l_allow_delete = cl_detail_input_auth("delete")
- 
+
     INPUT ARRAY g_nnj WITHOUT DEFAULTS FROM s_nnj.*
           ATTRIBUTE(COUNT=g_rec_b,MAXCOUNT=g_max_rec,UNBUFFERED,
                     INSERT ROW=l_allow_insert,DELETE ROW=l_allow_delete,APPEND ROW=l_allow_insert)
- 
- 
+
+
         BEFORE INPUT
           IF g_rec_b!=0 THEN
             CALL fgl_set_arr_curr(l_ac)
           END IF
           CALL t740_set_entry_b()
           CALL t740_set_no_entry_b()
- 
+
         BEFORE ROW
            LET p_cmd=''
            LET l_ac = ARR_CURR()
@@ -2504,7 +2504,7 @@ DEFINE l_nnl13         LIKE nnl_file.nnl17      #CHI-D50031 add
               LET g_nnj[l_ac].date1 = g_nnj_t.date1
               CALL cl_show_fld_cont()     #FUN-550037(smin)
            END IF
- 
+
         BEFORE INSERT
            LET l_n = ARR_COUNT()
            LET p_cmd='a'
@@ -2518,7 +2518,7 @@ DEFINE l_nnl13         LIKE nnl_file.nnl17      #CHI-D50031 add
            LET g_nnj_t.* = g_nnj[l_ac].*         #新輸入資料
            CALL cl_show_fld_cont()     #FUN-550037(smin)
            NEXT FIELD nnj02
- 
+
         AFTER INSERT
            IF INT_FLAG THEN
               CALL cl_err('',9001,0)
@@ -2534,7 +2534,7 @@ DEFINE l_nnl13         LIKE nnl_file.nnl17      #CHI-D50031 add
                                 nnjud07,nnjud08,nnjud09,
                                 nnjud10,nnjud11,nnjud12,
                                 nnjud13,nnjud14,nnjud15,
-                                nnjlegal)  #FUN-980005 add legal 
+                                nnjlegal)  #FUN-980005 add legal
             VALUES(g_nni.nni01,g_nnj[l_ac].nnj02,g_nnj[l_ac].nnj09,
                    g_nnj[l_ac].nnj03,g_nnj[l_ac].nnj04,
                    g_nnj[l_ac].nnj05,g_nnj[l_ac].nnj06,
@@ -2559,7 +2559,7 @@ DEFINE l_nnl13         LIKE nnl_file.nnl17      #CHI-D50031 add
               LET g_rec_b=g_rec_b+1
               COMMIT WORK
            END IF
- 
+
         BEFORE FIELD nnj02                        #default 序號
            IF cl_null(g_nnj[l_ac].nnj02) OR g_nnj[l_ac].nnj02 = 0 THEN
               SELECT max(nnj02)+1
@@ -2570,7 +2570,7 @@ DEFINE l_nnl13         LIKE nnl_file.nnl17      #CHI-D50031 add
                  LET g_nnj[l_ac].nnj02 = 1
               END IF
            END IF
- 
+
         AFTER FIELD nnj02                        #check 序號是否重複
            IF NOT cl_null(g_nnj[l_ac].nnj02)  THEN
               IF g_nnj[l_ac].nnj02 != g_nnj_t.nnj02 OR cl_null(g_nnj_t.nnj02) THEN
@@ -2585,19 +2585,19 @@ DEFINE l_nnl13         LIKE nnl_file.nnl17      #CHI-D50031 add
                  END IF
               END IF
            END IF
- 
+
         AFTER FIELD nnj09
            IF NOT cl_null(g_nnj[l_ac].nnj09) THEN
               IF g_nnj[l_ac].nnj09 NOT MATCHES '[12]' THEN
                  NEXT FIELD nnj09
               END IF
            END IF
- 
+
         AFTER FIELD nnj03
            IF NOT cl_null(g_nnj[l_ac].nnj03) THEN
               IF g_nnj[l_ac].nnj09 ='1' THEN
                  SELECT * INTO l_nne.* FROM nne_file
-                  WHERE nne01 = g_nnj[l_ac].nnj03 
+                  WHERE nne01 = g_nnj[l_ac].nnj03
                     AND nne25 = 0
                     AND (nne19 - nne20) > 0               #MOD-C70016 add
                     AND nneconf ='Y'   #No:8024
@@ -2611,7 +2611,7 @@ DEFINE l_nnl13         LIKE nnl_file.nnl17      #CHI-D50031 add
                     END IF
                     #TQC-C70010--add--str--
                     IF l_nne.nne19-l_nne.nne20 = 0 THEN
-                       CALL cl_err('','anm-632',1) 
+                       CALL cl_err('','anm-632',1)
                        NEXT FIELD nnj03
                     END IF
                     #TQC-C70010--add--end--
@@ -2667,7 +2667,7 @@ DEFINE l_nnl13         LIKE nnl_file.nnl17      #CHI-D50031 add
                  LET l_mm = g_nni.nni03_m - 1
               END IF
 
-              LET l_cnt = 0                               #MOD-D30214  
+              LET l_cnt = 0                               #MOD-D30214
               SELECT COUNT(*) INTO l_cnt FROM nnm_file
                 WHERE nnm09 = g_nni.nni04
                   AND nnm14 = g_nni.nni05
@@ -2681,7 +2681,7 @@ DEFINE l_nnl13         LIKE nnl_file.nnl17      #CHI-D50031 add
                  LET l_yy = g_nni.nni03_y
                  LET l_mm = g_nni.nni03_m
                 #-MOD-D30214-add-
-                 LET l_cnt = 0                             
+                 LET l_cnt = 0
                  SELECT COUNT(*) INTO l_cnt FROM nnm_file
                    WHERE nnm09 = g_nni.nni04
                      AND nnm14 = g_nni.nni05
@@ -2690,14 +2690,14 @@ DEFINE l_nnl13         LIKE nnl_file.nnl17      #CHI-D50031 add
                      AND nnm03 = l_mm
                      AND nnm13 IS NULL
                      AND nnm16 IS NULL
-                 IF cl_null(l_cnt) THEN LET l_cnt = 0 END IF 
+                 IF cl_null(l_cnt) THEN LET l_cnt = 0 END IF
                 #-MOD-D30214-end-
               END IF
 
              #止算日用單頭利息日期的年月+每張單子的日去產生    #MOD-D30214
               LET g_yy = YEAR(g_nni.nni03)       #利息日期的年 #MOD-D30214
               LET g_mm = MONTH(g_nni.nni03)      #利息日期的月 #MOD-D30214
-              IF l_cnt <> 0 THEN  #MOD-D30214 
+              IF l_cnt <> 0 THEN  #MOD-D30214
                  SELECT * INTO l_nnm.* FROM nnm_file
                   WHERE nnm09 = g_nni.nni04
                     AND nnm14 = g_nni.nni05
@@ -2706,7 +2706,7 @@ DEFINE l_nnl13         LIKE nnl_file.nnl17      #CHI-D50031 add
                     AND nnm03 = l_mm
                     AND nnm13 IS NULL
                     AND nnm16 IS NULL
-               
+
                  LET g_nnj[l_ac].nnj03 = l_nnm.nnm01
                  LET g_nnj[l_ac].nnj09 = l_nnm.nnm04
                  IF g_nnj[l_ac].nnj09 = '1' THEN
@@ -2731,7 +2731,7 @@ DEFINE l_nnl13         LIKE nnl_file.nnl17      #CHI-D50031 add
                 #第一個月計息應從借款日~月底,最後一個月計息應從月初~還款日前一天
                  LET g_nnj[l_ac].nnj07 = g_nnj[l_ac].nnj06 - g_nnj[l_ac].nnj05
                  LET g_nnj[l_ac].nnj08 = l_nnm.nnm08
-               
+
                  IF g_aza.aza26 = '0' AND g_nni.nni04 = g_aza.aza17 THEN
                     IF YEAR(g_nnj[l_ac].nnj05) MOD 4 = 0 THEN
                        LET g_i = 366                             #本幣潤年一年採366天
@@ -2778,13 +2778,13 @@ DEFINE l_nnl13         LIKE nnl_file.nnl17      #CHI-D50031 add
                  LET g_nnj[l_ac].nnj05 = MDY(g_mm,1,g_yy)
                  LET l_day = DAY(g_nni.nni03)      #利息日期的日
                  LET g_nnj[l_ac].nnj06 = MDY(g_mm,l_day,g_yy)
-                 LET g_nnj[l_ac].nnj07 = g_nnj[l_ac].nnj06 - g_nnj[l_ac].nnj05          
+                 LET g_nnj[l_ac].nnj07 = g_nnj[l_ac].nnj06 - g_nnj[l_ac].nnj05
                  IF g_aza.aza26 = '0' AND g_nni.nni04 = g_aza.aza17 THEN
-                    IF YEAR(g_nnj[l_ac].nnj05) MOD 4 = 0 THEN                 
-                       LET g_i = 366                             #本幣潤年一年採366天              
-                    ELSE                                                      
+                    IF YEAR(g_nnj[l_ac].nnj05) MOD 4 = 0 THEN
+                       LET g_i = 366                             #本幣潤年一年採366天
+                    ELSE
                        LET g_i = 365                             #本幣一年採365天
-                    END IF                                                    
+                    END IF
                  ELSE
                     LET g_i = 360                                #外幣一年採360天
                  END IF
@@ -2797,7 +2797,7 @@ DEFINE l_nnl13         LIKE nnl_file.nnl17      #CHI-D50031 add
                        LET g_nnj[l_ac].nnj12 = cl_digcut(g_nnj[l_ac].nnj12*l_rate,g_azi04)
                        LET g_nnj[l_ac].nnj14 = g_nnj[l_ac].nnj12
                     END IF
-                    LET g_nnj[l_ac].nnj14 = cl_digcut(g_nnj[l_ac].nnj12*g_nni.nni09,g_azi04)   
+                    LET g_nnj[l_ac].nnj14 = cl_digcut(g_nnj[l_ac].nnj12*g_nni.nni09,g_azi04)
                  ELSE
                     LET g_nnj[l_ac].nnj12 = l_nng.nng20*(g_nnj[l_ac].nnj08/100/g_i)*g_nnj[l_ac].nnj07
                    #當融資幣別與還息幣別不同時,應該再將算出的利息金額換算成這次還息的幣別金額
@@ -2806,11 +2806,11 @@ DEFINE l_nnl13         LIKE nnl_file.nnl17      #CHI-D50031 add
                        LET g_nnj[l_ac].nnj12 = cl_digcut(g_nnj[l_ac].nnj12*l_rate,g_azi04)
                        LET g_nnj[l_ac].nnj14 = g_nnj[l_ac].nnj12
                     END IF
-                    LET g_nnj[l_ac].nnj14=cl_digcut(g_nnj[l_ac].nnj12*g_nni.nni09,g_azi04)   
+                    LET g_nnj[l_ac].nnj14=cl_digcut(g_nnj[l_ac].nnj12*g_nni.nni09,g_azi04)
                  END IF
-                 LET g_nnj[l_ac].nnj11 = 0 
-                 LET g_nnj[l_ac].nnj13 = 0  
-              END IF     
+                 LET g_nnj[l_ac].nnj11 = 0
+                 LET g_nnj[l_ac].nnj13 = 0
+              END IF
              #-MOD-D30214-end-
 
               IF g_nni.nni04 != g_nni.nni08 THEN
@@ -2846,27 +2846,32 @@ DEFINE l_nnl13         LIKE nnl_file.nnl17      #CHI-D50031 add
               DISPLAY BY NAME g_nnj[l_ac].nnj16
              #-------------------MOD-D30039----------------------(E)
            END IF
- 
+
         AFTER FIELD nnj05
           #IF g_nnj[l_ac].nnj05 != g_nnj_t.nnj05 THEN         #MOD-A30109 add              #MOD-A40098 mark
            IF p_cmd = 'a' OR (p_cmd = 'u' AND g_nnj[l_ac].nnj05 != g_nnj_t.nnj05) THEN     #MOD-A40098 add
               IF NOT cl_null(g_nnj[l_ac].nnj05) THEN
-                 LET l_cnt=0                                                                                                           
+                 LET l_cnt=0
                 #IF g_nnj[l_ac].nnj04='1' THEN     #MOD-C90128 mark
-                 SELECT COUNT(*) INTO l_cnt FROM nnj_file                                                                           
-                  WHERE nnj03=g_nnj[l_ac].nnj03                                                                                     
-                    AND YEAR(nnj05)=YEAR(g_nnj[l_ac].nnj05)                                                                         
-                    AND MONTH(nnj05)=MONTH(g_nnj[l_ac].nnj05)                                                                       
+                 SELECT COUNT(*) INTO l_cnt FROM nnj_file
+                  WHERE nnj03=g_nnj[l_ac].nnj03
+                    AND YEAR(nnj05)=YEAR(g_nnj[l_ac].nnj05)
+                    AND MONTH(nnj05)=MONTH(g_nnj[l_ac].nnj05)
                     AND ( nnj01!=g_nni.nni01 OR                             #MOD-9B0059 add
                          (nnj01 =g_nni.nni01 AND nnj02!=g_nnj[l_ac].nnj02)) #MOD-9B0059 add
                  IF l_cnt>0 THEN
                     LET l_cnt = 0
-                    SELECT COUNT(*) INTO l_cnt FROM nnj_file
+                    # mod by darcy nnj05 nnj06 应该去掉等于号，才可以算头不算尾
+                    # add by darcy 增加报废单据排除
+
+                    SELECT COUNT(*) INTO l_cnt FROM nnj_file,nnk_file
                      WHERE nnj03=g_nnj[l_ac].nnj03
                        AND YEAR(nnj05)=YEAR(g_nnj[l_ac].nnj05)
                        AND MONTH(nnj05)=MONTH(g_nnj[l_ac].nnj05)
-                       AND (nnj05 >= g_nnj[l_ac].nnj05
-                        OR  nnj06 >= g_nnj[l_ac].nnj05)
+                       and nnk01=  nnj01
+                       and nnkconf <> 'X'
+                       AND (nnj05 > g_nnj[l_ac].nnj05
+                        OR  nnj06 > g_nnj[l_ac].nnj05)
                        AND ( nnj01!=g_nni.nni01 OR
                             (nnj01 =g_nni.nni01 AND nnj02!=g_nnj[l_ac].nnj02))
                     IF l_cnt>0 THEN
@@ -2875,16 +2880,16 @@ DEFINE l_nnl13         LIKE nnl_file.nnl17      #CHI-D50031 add
                     END IF
                  END IF
                 #---------------------------MOD-C90128--------------------mark
-                #ELSE                                                                                                                  
-                #   SELECT COUNT(*) INTO l_cnt FROM nnj_file                                                                           
-                #    WHERE nnj03=g_nnj[l_ac].nnj03                                                                                     
+                #ELSE
+                #   SELECT COUNT(*) INTO l_cnt FROM nnj_file
+                #    WHERE nnj03=g_nnj[l_ac].nnj03
                 #      AND ( nnj01!=g_nni.nni01 OR                             #MOD-9B0059 add
                 #           (nnj01 =g_nni.nni01 AND nnj02!=g_nnj[l_ac].nnj02)) #MOD-9B0059 add
                 #   IF l_cnt>0 THEN
                 #      CALL cl_err(g_nnj[l_ac].nnj03,'anm-983',0)
                 #      NEXT FIELD nnj05
                 #   END IF
-                #END IF                                                                                                                
+                #END IF
                 #---------------------------MOD-C90128--------------------mark
                 #----------------------MOD-CA0018-----------------mark
                 #IF g_nnj[l_ac].nnj09 ='1' THEN
@@ -2906,12 +2911,12 @@ DEFINE l_nnl13         LIKE nnl_file.nnl17      #CHI-D50031 add
                  CALL t740_get_default()
               END IF
            END IF                #MOD-A30109 add
- 
+
         AFTER FIELD nnj06
           #IF g_nnj[l_ac].nnj06 != g_nnj_t.nnj06 THEN         #MOD-A30109 add                  #MOD-A40098 mark
            IF p_cmd = 'a' OR (p_cmd = 'u' AND g_nnj[l_ac].nnj06 != g_nnj_t.nnj06) THEN         #MOD-A40098 add
               IF NOT cl_null(g_nnj[l_ac].nnj06) THEN
-                IF g_aza.aza26 = '2' THEN     #MOD-950048 add 
+                IF g_aza.aza26 = '2' THEN     #MOD-950048 add
                     CALL t740_chk_edate(g_nnj[l_ac].nnj09,g_nnj[l_ac].nnj03,g_nnj[l_ac].nnj06)         #No.MOD-830093
                        RETURNING l_errno
                     CASE l_errno
@@ -2921,7 +2926,7 @@ DEFINE l_nnl13         LIKE nnl_file.nnl17      #CHI-D50031 add
                       WHEN '02'
                         CALL cl_err('','anm-823',0)
                         NEXT FIELD nnj03
-                    END CASE 
+                    END CASE
                 END IF                        #MOD-950048 add
                  IF g_nnj[l_ac].nnj06 < g_nnj[l_ac].nnj05 THEN
                     CALL cl_err('',"agl-031",0)
@@ -2929,9 +2934,9 @@ DEFINE l_nnl13         LIKE nnl_file.nnl17      #CHI-D50031 add
                  END IF
                  LET l_nnn03 = ''
                  SELECT nnn03 INTO l_nnn03 FROM nnn_file,nne_file
-                   WHERE nnn01 = nne06  
+                   WHERE nnn01 = nne06
                      AND nne01 = g_nnj[l_ac].nnj03
-                 IF l_nnn03 = '1' THEN  
+                 IF l_nnn03 = '1' THEN
                     LET l_date = MDY(g_nni.nni03_m,1,g_nni.nni03_y)
                     CALL s_mothck(l_date) RETURNING l_bdate,l_edate
                     IF g_nnj[l_ac].nnj05 < l_bdate OR g_nnj[l_ac].nnj05 > l_edate OR
@@ -2947,7 +2952,7 @@ DEFINE l_nnl13         LIKE nnl_file.nnl17      #CHI-D50031 add
                        END IF
                     END IF
                  END IF   #MOD-7C0230
- 
+
                 #----------------------MOD-CA0018-----------------mark
                 #IF g_nnj[l_ac].nnj09 ='1' THEN
                 #   IF l_nne.nne112=g_nnj[l_ac].nnj06 THEN
@@ -3044,7 +3049,7 @@ DEFINE l_nnl13         LIKE nnl_file.nnl17      #CHI-D50031 add
                 #-----------------------No.MOD-B80058--------------------------------start
                  CALL t740_nnj15()
                 #IF g_nni.nni04 != g_nni.nni08 THEN
-                #   LET g_nnj[l_ac].nnj15=(g_nnj[l_ac].nnj14-g_nnj[l_ac].nnj13)  
+                #   LET g_nnj[l_ac].nnj15=(g_nnj[l_ac].nnj14-g_nnj[l_ac].nnj13)
                 #   LET g_nnj[l_ac].nnj16=0
                 #ELSE
                 #   LET g_nnj[l_ac].nnj15=(g_nnj[l_ac].nnj12-g_nnj[l_ac].nnj11)*
@@ -3090,7 +3095,7 @@ DEFINE l_nnl13         LIKE nnl_file.nnl17      #CHI-D50031 add
                 #------------------------CHI-D50031--------------------(E)
               END IF
            END IF                #MOD-A30109 add
- 
+
         AFTER FIELD nnj08
            IF NOT cl_null(g_nnj[l_ac].nnj08) THEN
               IF g_nnj[l_ac].nnj08 = 0 THEN
@@ -3168,7 +3173,7 @@ DEFINE l_nnl13         LIKE nnl_file.nnl17      #CHI-D50031 add
            END IF
            DISPLAY BY NAME g_nnj[l_ac].nnj12
            DISPLAY BY NAME g_nnj[l_ac].nnj14
- 
+
         AFTER FIELD nnj12
            SELECT azi04 INTO t_azi04 FROM azi_file WHERE azi01=g_nni.nni04
            CALL cl_digcut(g_nnj[l_ac].nnj12,t_azi04) RETURNING g_nnj[l_ac].nnj12
@@ -3178,7 +3183,7 @@ DEFINE l_nnl13         LIKE nnl_file.nnl17      #CHI-D50031 add
            DISPLAY BY NAME g_nnj[l_ac].nnj12
            DISPLAY BY NAME g_nnj[l_ac].nnj14
            DISPLAY BY NAME g_nnj[l_ac].nnj15                                     #No.MOD-B80058 add
- 
+
         AFTER FIELD nnj14
            CALL cl_digcut(g_nnj[l_ac].nnj14,g_azi04) RETURNING g_nnj[l_ac].nnj14
            SELECT COUNT(*) INTO g_cnt FROM nnm_file
@@ -3188,7 +3193,7 @@ DEFINE l_nnl13         LIKE nnl_file.nnl17      #CHI-D50031 add
            #當融資幣別與還息幣別不同時,不應有匯差,全歸入利差
            #----------------------------No.MOD-B80058-----------------------------start
            #IF g_nni.nni04 != g_nni.nni08 THEN
-           #   LET g_nnj[l_ac].nnj15=(g_nnj[l_ac].nnj14-g_nnj[l_ac].nnj13)  
+           #   LET g_nnj[l_ac].nnj15=(g_nnj[l_ac].nnj14-g_nnj[l_ac].nnj13)
            #   LET g_nnj[l_ac].nnj16=0
            #ELSE
            #   LET g_nnj[l_ac].nnj15=(g_nnj[l_ac].nnj12-g_nnj[l_ac].nnj11)*  #CHI-8A0019 mark回復
@@ -3208,7 +3213,7 @@ DEFINE l_nnl13         LIKE nnl_file.nnl17      #CHI-D50031 add
             DISPLAY BY NAME g_nnj[l_ac].nnj14
             DISPLAY BY NAME g_nnj[l_ac].nnj15
             DISPLAY BY NAME g_nnj[l_ac].nnj16
- 
+
         AFTER FIELD nnjud01
            IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
         AFTER FIELD nnjud02
@@ -3239,7 +3244,7 @@ DEFINE l_nnl13         LIKE nnl_file.nnl17      #CHI-D50031 add
            IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
         AFTER FIELD nnjud15
            IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
- 
+
         BEFORE DELETE                            #是否取消單身
            IF g_nnj_t.nnj02 > 0 AND g_nnj_t.nnj02 IS NOT NULL THEN
               IF NOT cl_delb(0,0) THEN
@@ -3261,7 +3266,7 @@ DEFINE l_nnl13         LIKE nnl_file.nnl17      #CHI-D50031 add
               COMMIT WORK
               CALL t740_b_tot()
            END IF
- 
+
         ON ROW CHANGE
            IF INT_FLAG THEN
               CALL cl_err('',9001,0)
@@ -3313,7 +3318,7 @@ DEFINE l_nnl13         LIKE nnl_file.nnl17      #CHI-D50031 add
                  COMMIT WORK
               END IF
            END IF
- 
+
         AFTER ROW
            LET l_ac = ARR_CURR()
         #  LET l_ac_t = l_ac    #FUN-D30032 mark
@@ -3339,7 +3344,7 @@ DEFINE l_nnl13         LIKE nnl_file.nnl17      #CHI-D50031 add
            CLOSE t740_bcl
            COMMIT WORK
            CALL t740_b_tot()
- 
+
         ON ACTION CONTROLP
            CASE
               WHEN INFIELD(nnj03)
@@ -3362,51 +3367,51 @@ DEFINE l_nnl13         LIKE nnl_file.nnl17      #CHI-D50031 add
               OTHERWISE
                  EXIT CASE
               END CASE
- 
+
         ON ACTION CONTROLO                        #沿用所有欄位
            IF INFIELD(nnj02) AND l_ac > 1 THEN
               LET g_nnj[l_ac].* = g_nnj[l_ac-1].*
               LET g_nnj[l_ac].nnj02 = NULL   #TQC-620018
               NEXT FIELD nnj02
            END IF
- 
+
         ON ACTION CONTROLR
            CALL cl_show_req_fields()
- 
+
         ON ACTION CONTROLG
            CALL cl_cmdask()
- 
+
         ON ACTION auto_gen_body
            CALL t740_g_b()
            CALL t740_b_fill('1=1')
            EXIT INPUT
- 
+
         ON ACTION CONTROLF
          CALL cl_set_focus_form(ui.Interface.getRootNode()) RETURNING g_fld_name,g_frm_name #Add on 040913
          CALL cl_fldhelp(g_frm_name,g_fld_name,g_lang) #Add on 040913
- 
+
        ON IDLE g_idle_seconds
           CALL cl_on_idle()
           CONTINUE INPUT
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
-     ON ACTION controls                                                                                                             
-         CALL cl_set_head_visible("","AUTO")                                                                                        
- 
+
+     ON ACTION controls
+         CALL cl_set_head_visible("","AUTO")
+
     END INPUT
     CALL t740_b_tot()
- 
+
     CLOSE t740_bcl
     COMMIT WORK
     CALL t740_delHeader()     #CHI-C30002 add
- 
+
 END FUNCTION
- 
+
 #CHI-C30002 -------- add -------- begin
 FUNCTION t740_delHeader()
    DEFINE l_action_choice    STRING               #CHI-C80041
@@ -3415,16 +3420,16 @@ FUNCTION t740_delHeader()
    DEFINE l_slip             LIKE type_file.chr5  #CHI-C80041
    DEFINE l_sql              STRING               #CHI-C80041
    DEFINE l_cnt              LIKE type_file.num5  #CHI-C80041
-   
+
    IF g_rec_b = 0 THEN
       #CHI-C80041---begin
       CALL s_get_doc_no(g_nni.nni01) RETURNING l_slip
       LET l_sql = " SELECT COUNT(*) FROM nni_file ",
                   "  WHERE nni01 LIKE '",l_slip,"%' ",
                   "    AND nni01 > '",g_nni.nni01,"'"
-      PREPARE t740_pb1 FROM l_sql 
-      EXECUTE t740_pb1 INTO l_cnt       
-      
+      PREPARE t740_pb1 FROM l_sql
+      EXECUTE t740_pb1 INTO l_cnt
+
       LET l_action_choice = g_action_choice
       LET g_action_choice = 'delete'
       IF cl_chk_act_auth() AND l_cnt = 0 THEN
@@ -3433,29 +3438,29 @@ FUNCTION t740_delHeader()
       ELSE
          CALL cl_getmsg('aec-131',g_lang) RETURNING g_msg
          LET l_num = 2
-      END IF 
+      END IF
       LET g_action_choice = l_action_choice
       PROMPT g_msg CLIPPED,': ' FOR l_cho
          ON IDLE g_idle_seconds
             CALL cl_on_idle()
 
-         ON ACTION about     
+         ON ACTION about
             CALL cl_about()
 
-         ON ACTION help         
+         ON ACTION help
             CALL cl_show_help()
 
-         ON ACTION controlg   
-            CALL cl_cmdask() 
+         ON ACTION controlg
+            CALL cl_cmdask()
       END PROMPT
-      IF l_cho > l_num THEN LET l_cho = 1 END IF 
-      IF l_cho = 2 THEN 
+      IF l_cho > l_num THEN LET l_cho = 1 END IF
+      IF l_cho = 2 THEN
          CALL t740_v()
          IF g_nni.nniconf='X' THEN LET g_void='Y' ELSE LET g_void='N' END IF
-         CALL cl_set_field_pic(g_nni.nniconf,"","","",g_void,g_nni.nniacti) 
-      END IF 
-      
-      IF l_cho = 3 THEN 
+         CALL cl_set_field_pic(g_nni.nniconf,"","","",g_void,g_nni.nniacti)
+      END IF
+
+      IF l_cho = 3 THEN
          DELETE FROM npp_file
           WHERE nppsys='NM' AND npp00=6 AND npp01=g_nni.nni01 AND npp011=0
          DELETE FROM npq_file
@@ -3496,11 +3501,11 @@ FUNCTION t740_b_tot()
                        nni16=g_nni.nni16
     WHERE nni01=g_nni.nni01
 END FUNCTION
- 
+
 FUNCTION t740_b_askkey()
 DEFINE
    l_wc2           LIKE type_file.chr1000 #No.FUN-680107 VARCHAR(200)
- 
+
    CONSTRUCT g_wc2 ON nnj02,nnj03,nnj05.nnj06,nnj07,nnj08
                       ,nnjud01,nnjud02,nnjud03,nnjud04,nnjud05
                       ,nnjud06,nnjud07,nnjud08,nnjud09,nnjud10
@@ -3512,23 +3517,23 @@ DEFINE
                 ,s_nnj[1].nnjud07,s_nnj[1].nnjud08,s_nnj[1].nnjud09
                 ,s_nnj[1].nnjud10,s_nnj[1].nnjud11,s_nnj[1].nnjud12
                 ,s_nnj[1].nnjud13,s_nnj[1].nnjud14,s_nnj[1].nnjud15
- 
+
       BEFORE CONSTRUCT
          CALL cl_qbe_init()
- 
+
       ON IDLE g_idle_seconds
          CALL cl_on_idle()
          CONTINUE CONSTRUCT
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
+
       ON ACTION controlg      #MOD-4C0121
          CALL cl_cmdask()     #MOD-4C0121
- 
+
         ON ACTION qbe_select
        	   CALL cl_qbe_select()
         ON ACTION qbe_save
@@ -3537,7 +3542,7 @@ DEFINE
    IF INT_FLAG THEN LET INT_FLAG = 0 RETURN END IF
    CALL t740_b_fill(l_wc2)
 END FUNCTION
- 
+
 FUNCTION t740_b_fill(p_wc2)                #BODY FILL UP
 DEFINE
    p_wc2           LIKE type_file.chr1000, #No.FUN-680107 VARCHAR(200)
@@ -3546,7 +3551,7 @@ DEFINE
    l_j09g          LIKE nne_file.nne19     #CHI-B80051 add
 DEFINE l_nnl11     LIKE nnl_file.nnl11     #CHI-D50031 add
 DEFINE l_nnl13     LIKE nnl_file.nnl17     #CHI-D50031 add
- 
+
    LET g_sql = "SELECT nnj02,nnj09,nnj03,nnj04,'',",
                "       nnj05,nnj06,nnj07,nnj08,'',",        #CHI-B80051 add j09t
                "       '',nnj11,nnj13,nnj12,nnj14,",        #CHI-B80051 add j09g
@@ -3560,7 +3565,7 @@ DEFINE l_nnl13     LIKE nnl_file.nnl17     #CHI-D50031 add
                " ORDER BY 1"
    PREPARE t740_pb FROM g_sql
    DECLARE nnj_curs CURSOR FOR t740_pb
- 
+
    CALL g_nnj.clear()
    LET g_rec_b = 0
    LET g_cnt = 1
@@ -3582,14 +3587,14 @@ DEFINE l_nnl13     LIKE nnl_file.nnl17     #CHI-D50031 add
      #------------------------CHI-D50031------------------(S)
       SELECT SUM(nnl11),SUM(nnl13) INTO l_nnl11,l_nnl13
         FROM nnl_file,nnk_file
-       WHERE nnl04 = g_nnj[l_ac].nnj03
+       WHERE nnl04 = g_nnj[g_cnt].nnj03
          AND nnl01 = nnk01
-         AND nnk02 <= g_nnj[l_ac].nnj06
+         AND nnk02 <= g_nnj[g_cnt].nnj06
          AND nnkconf = 'Y'
       IF cl_null(l_nnl11) THEN LET l_nnl11 = 0 END IF
       IF cl_null(l_nnl13) THEN LET l_nnl13 = 0 END IF
-      LET g_nnj[l_ac].j09t = l_j09t - l_nnl11
-      LET g_nnj[l_ac].j09g = l_j09g - l_nnl13
+      LET g_nnj[g_cnt].j09t = l_j09t - l_nnl11
+      LET g_nnj[g_cnt].j09g = l_j09g - l_nnl13
      #------------------------CHI-D50031--------------------(E)
       LET g_nnj[g_cnt].date1 = l_date
       LET g_nnj[g_cnt].j09t = l_j09t           #CHI-B80051 add
@@ -3608,32 +3613,32 @@ DEFINE l_nnl13     LIKE nnl_file.nnl17     #CHI-D50031 add
    LET g_cnt = 0
    DISPLAY g_rec_b TO FORMONLY.cn2
 END FUNCTION
- 
+
 FUNCTION t740_bp(p_ud)
    DEFINE   p_ud   LIKE type_file.chr1    #No.FUN-680107 VARCHAR(1)
- 
- 
+
+
    IF p_ud <> "G" OR g_action_choice = "detail" THEN
       RETURN
    END IF
- 
+
    LET g_action_choice = " "
- 
+
    CALL cl_set_act_visible("accept,cancel", FALSE)
    DISPLAY ARRAY g_nnj TO s_nnj.* ATTRIBUTE(COUNT=g_rec_b,UNBUFFERED)
- 
+
       BEFORE DISPLAY
          CALL cl_navigator_setting( g_curs_index, g_row_count )
          IF g_aza.aza63 != 'Y' THEN
-            CALL cl_set_act_visible("maintain_entry_sheet2",FALSE)  
+            CALL cl_set_act_visible("maintain_entry_sheet2",FALSE)
          ELSE
-            CALL cl_set_act_visible("maintain_entry_sheet2",TRUE)  
+            CALL cl_set_act_visible("maintain_entry_sheet2",TRUE)
          END IF
- 
+
       BEFORE ROW
          LET l_ac = ARR_CURR()
       CALL cl_show_fld_cont()                   #No.FUN-550037 hmf
- 
+
       ##########################################################################
       # Standard 4ad ACTION
       ##########################################################################
@@ -3656,8 +3661,8 @@ FUNCTION t740_bp(p_ud)
          CALL fgl_set_arr_curr(1)  ######add in 040505
            END IF
            ACCEPT DISPLAY                   #No.FUN-530067 HCN TEST
- 
- 
+
+
       ON ACTION previous
          CALL t740_fetch('P')
          CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
@@ -3665,8 +3670,8 @@ FUNCTION t740_bp(p_ud)
          CALL fgl_set_arr_curr(1)  ######add in 040505
            END IF
 	ACCEPT DISPLAY                   #No.FUN-530067 HCN TEST
- 
- 
+
+
       ON ACTION jump
          CALL t740_fetch('/')
          CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
@@ -3674,8 +3679,8 @@ FUNCTION t740_bp(p_ud)
          CALL fgl_set_arr_curr(1)  ######add in 040505
            END IF
 	ACCEPT DISPLAY                   #No.FUN-530067 HCN TEST
- 
- 
+
+
       ON ACTION next
          CALL t740_fetch('N')
          CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
@@ -3683,8 +3688,8 @@ FUNCTION t740_bp(p_ud)
          CALL fgl_set_arr_curr(1)  ######add in 040505
            END IF
 	ACCEPT DISPLAY                   #No.FUN-530067 HCN TEST
- 
- 
+
+
       ON ACTION last
          CALL t740_fetch('L')
          CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
@@ -3692,8 +3697,8 @@ FUNCTION t740_bp(p_ud)
          CALL fgl_set_arr_curr(1)  ######add in 040505
            END IF
 	ACCEPT DISPLAY                   #No.FUN-530067 HCN TEST
- 
- 
+
+
       ON ACTION detail
          LET g_action_choice="detail"
          LET l_ac = 1
@@ -3704,18 +3709,18 @@ FUNCTION t740_bp(p_ud)
       ON ACTION help
          LET g_action_choice="help"
          EXIT DISPLAY
- 
+
       ON ACTION locale
          CALL cl_dynamic_locale()
          CALL cl_show_fld_cont()                   #No.FUN-550037 hmf
-         #CALL cl_set_field_pic(g_nni.nniconf,"","","","",g_nni.nniacti)     #MOD-A20096 "" modify nniacti  #CHI-C80041  
+         #CALL cl_set_field_pic(g_nni.nniconf,"","","","",g_nni.nniacti)     #MOD-A20096 "" modify nniacti  #CHI-C80041
          IF g_nni.nniconf='X' THEN LET g_void='Y' ELSE LET g_void='N' END IF #CHI-C80041
-         CALL cl_set_field_pic(g_nni.nniconf,"","","",g_void,g_nni.nniacti)  #CHI-C80041  
- 
+         CALL cl_set_field_pic(g_nni.nniconf,"","","",g_void,g_nni.nniacti)  #CHI-C80041
+
       ON ACTION exit
          LET g_action_choice="exit"
          EXIT DISPLAY
- 
+
       ##########################################################################
       # Special 4ad ACTION
       ##########################################################################
@@ -3757,40 +3762,40 @@ FUNCTION t740_bp(p_ud)
       ON ACTION void
          LET g_action_choice="void"
          EXIT DISPLAY
-      #CHI-C80041---end 
+      #CHI-C80041---end
       ON ACTION accept
          LET g_action_choice="detail"
          LET l_ac = ARR_CURR()
          EXIT DISPLAY
- 
+
       ON ACTION cancel
          LET INT_FLAG=FALSE 		#MOD-570244	mars
          LET g_action_choice="exit"
          EXIT DISPLAY
- 
+
       ON IDLE g_idle_seconds
          CALL cl_on_idle()
          CONTINUE DISPLAY
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION exporttoexcel       #FUN-4B0008
          LET g_action_choice = 'exporttoexcel'
          EXIT DISPLAY
- 
+
       ON ACTION carry_voucher #傳票拋轉
          LET g_action_choice = 'carry_voucher'
          EXIT DISPLAY
       ON ACTION undo_carry_voucher #傳票拋轉還原
          LET g_action_choice = 'undo_carry_voucher'
-         EXIT DISPLAY																										
- 
+         EXIT DISPLAY
+
       ON ACTION related_document                #No.FUN-6A0011  相關文件
-         LET g_action_choice="related_document"          
+         LET g_action_choice="related_document"
          EXIT DISPLAY
      #MOD-A50160 add
-      &include "qry_string.4gl" 
+      &include "qry_string.4gl"
      #MOD-A50160 add
      #str FUN-910014 add
       ON ACTION invalid
@@ -3800,14 +3805,14 @@ FUNCTION t740_bp(p_ud)
 
       AFTER DISPLAY
          CONTINUE DISPLAY
-     ON ACTION controls                                                                                                             
-         CALL cl_set_head_visible("","AUTO")                                                                                        
- 
+     ON ACTION controls
+         CALL cl_set_head_visible("","AUTO")
+
    END DISPLAY
    CALL cl_set_act_visible("accept,cancel", TRUE)
 END FUNCTION
- 
- 
+
+
 FUNCTION t740_g_gl(p_trno,p_npptype)   #No.FUN-680088
    DEFINE p_npptype     LIKE npp_file.npptype  #No.FUN-680088
    DEFINE p_trno        LIKE npp_file.npp01    #No.FUN-680107 VARCHAR(20)
@@ -3815,9 +3820,9 @@ FUNCTION t740_g_gl(p_trno,p_npptype)   #No.FUN-680088
    DEFINE l_n           LIKE type_file.num5,   #No.FUN-680107 SMALLINT
           l_t           LIKE nmy_file.nmyslip, #No.FUN-680107 VARCHAR(05) #No.FUN-550057
           l_nmydmy3     LIKE nmy_file.nmydmy3
- 
+
    BEGIN WORK
- 
+
    LET g_success='Y'  #No.FUN-680088
    OPEN t740_cl USING g_nni.nni01
    IF STATUS THEN
@@ -3834,9 +3839,9 @@ FUNCTION t740_g_gl(p_trno,p_npptype)   #No.FUN-680088
    SELECT * INTO g_nni.* FROM nni_file WHERE nni01 = g_nni.nni01
    IF p_trno IS NULL THEN RETURN END IF
    #-->立帳日期不可小於關帳日期
-   IF g_nni.nni02 <= g_nmz.nmz10 THEN
-      CALL cl_err(g_nni.nni01,'aap-176',1) RETURN
-   END IF
+   --IF g_nni.nni02 <= g_nmz.nmz10 THEN
+   --   CALL cl_err(g_nni.nni01,'aap-176',1) RETURN
+   --END IF
    IF g_nni.nniconf='Y' THEN CALL cl_err(g_nni.nni01,'anm-232',0) RETURN END IF
    IF NOT cl_null(g_nni.nniglno) THEN
       CALL cl_err(g_nni.nni01,'aap-122',1) RETURN
@@ -3846,12 +3851,12 @@ FUNCTION t740_g_gl(p_trno,p_npptype)   #No.FUN-680088
    SELECT nmydmy3 INTO l_nmydmy3 FROM nmy_file WHERE nmyslip = l_t
    IF STATUS OR cl_null(l_nmydmy3) THEN LET l_nmydmy3 = 'N' END IF
    IF l_nmydmy3 = 'N' THEN RETURN END IF
- 
+
    IF p_npptype = '0' THEN  #No.FUN-680088
       SELECT COUNT(*) INTO l_n FROM npq_file
        WHERE npqsys='NM' AND npq00=6 AND npq01=p_trno AND npq011=0
       IF l_n > 0 THEN
-         IF NOT s_ask_entry(p_trno) THEN RETURN END IF #Genero 
+         IF NOT s_ask_entry(p_trno) THEN RETURN END IF #Genero
          #FUN-B40056--add--str--
          LET l_n = 0
          SELECT COUNT(*) INTO l_n FROM tic_file
@@ -3880,22 +3885,22 @@ FUNCTION t740_g_gl(p_trno,p_npptype)   #No.FUN-680088
       UPDATE npp_file SET npp02=g_npp.npp02
        WHERE nppsys='NM' AND npp00=6 AND npp01=p_trno AND npp011=0
          AND npptype=p_npptype    #No.FUN-680088
-      IF SQLCA.SQLCODE THEN 
+      IF SQLCA.SQLCODE THEN
          CALL cl_err3("upd","nnp_file",p_trno,"",STATUS,"","upd npp:",1)  #No.FUN-660148
          LET g_success='N' #No.FUN-680088
          RETURN END IF
    END IF
-   IF SQLCA.SQLCODE THEN 
+   IF SQLCA.SQLCODE THEN
       CALL cl_err3("ins","nnp_file",g_npp.npp00,g_npp.npp01,STATUS,"","ins npp:",1)  #No.FUN-660148
       LET g_success='N' #No.FUN-680088
       RETURN END IF
    CALL t740_g_gl_1(p_trno,p_npptype)
    CALL t740_gen_diff()    #FUN-A40033
-   CALL s_flows('3','',g_npq.npq01,g_npp.npp02,'N',g_npq.npqtype,TRUE)   #No.TQC-B70021   
+   CALL s_flows('3','',g_npq.npq01,g_npp.npp02,'N',g_npq.npqtype,TRUE)   #No.TQC-B70021
    CALL cl_getmsg('aap-055',g_lang) RETURNING g_msg
    MESSAGE g_msg CLIPPED
 END FUNCTION
- 
+
 FUNCTION t740_g_gl_1(p_trno,p_npqtype)   #No.FUN-680088
    DEFINE p_npqtype            LIKE npq_file.npqtype   #No.FUN-680088
    DEFINE p_trno               LIKE alk_file.alk01
@@ -3905,7 +3910,7 @@ FUNCTION t740_g_gl_1(p_trno,p_npqtype)   #No.FUN-680088
    DEFINE l_nnj13              LIKE nnj_file.nnj13     #MOD-9B0059 add
    DEFINE l_aaa03              LIKE aaa_file.aaa03     #FUN-A40067
    DEFINE l_azi04_2            LIKE azi_file.azi04     #FUN-A40067
-   DEFINE l_nnm09              LIKE nnm_file.nnm09     #MOD-C30686 add 
+   DEFINE l_nnm09              LIKE nnm_file.nnm09     #MOD-C30686 add
    DEFINE l_aag44       LIKE aag_file.aag44    #No.FUN-D40118   Add
    DEFINE l_flag        LIKE type_file.chr1    #No.FUN-D40118   Add
 
@@ -3948,10 +3953,10 @@ FUNCTION t740_g_gl_1(p_trno,p_npqtype)   #No.FUN-680088
       DECLARE nnm_nnj_cs CURSOR FOR nnm_nnj_p
      #FOREACH nnm_nnj_cs INTO l_nnm10,l_nnj11,l_nnj13   #MOD-C30686 mark
       FOREACH nnm_nnj_cs INTO l_nnm09,l_nnm10,l_nnj11,l_nnj13  #MOD-C30686  add
-        IF STATUS THEN 
+        IF STATUS THEN
             CALL cl_err('foreach:',STATUS,1)
-            EXIT FOREACH 
-         END IF 
+            EXIT FOREACH
+         END IF
          LET g_npq.npq02 = g_npq.npq02+1
          IF p_npqtype = '0' THEN
             LET g_npq.npq03 = g_nms.nms64
@@ -3984,7 +3989,7 @@ FUNCTION t740_g_gl_1(p_trno,p_npqtype)   #No.FUN-680088
             ELSE
                LET g_npq.npq07 = cl_digcut(g_npq.npq07,g_azi04)  #FUN-A40067
             END IF
-#No.FUN-9A0036 --End 
+#No.FUN-9A0036 --End
            #FUN-D40118 ---Add--- Start
             SELECT aag44 INTO l_aag44 FROM aag_file
              WHERE aag00 = g_bookno3
@@ -3998,8 +4003,8 @@ FUNCTION t740_g_gl_1(p_trno,p_npqtype)   #No.FUN-680088
            #FUN-D40118 ---Add--- End
             INSERT INTO npq_file VALUES (g_npq.*)
          END IF   #CHI-7A0027
-         IF STATUS THEN 
-            CALL cl_err3("ins","npq_file",g_npq.npq00,g_npq.npq01,STATUS,"","ins npq:d2",1)  #No.FUN-660148 
+         IF STATUS THEN
+            CALL cl_err3("ins","npq_file",g_npq.npq00,g_npq.npq01,STATUS,"","ins npq:d2",1)  #No.FUN-660148
             LET g_success='N' #No.FUN-680088
          END IF
       END FOREACH   #MOD-9B0059 add
@@ -4029,7 +4034,7 @@ FUNCTION t740_g_gl_1(p_trno,p_npqtype)   #No.FUN-680088
       CALL cl_digcut(g_npq.npq07,g_azi04) RETURNING g_npq.npq07   #MOD-9B0059 add
       CALL s_def_npq(g_npq.npq03,g_prog,g_npq.*,g_npq.npq01,'','',g_bookno3)       #No.FUN-730032
        RETURNING  g_npq.*
-      
+
       CALL s_def_npq31_npq34(g_npq.*,g_bookno3) RETURNING g_npq.npq31,g_npq.npq32,g_npq.npq33,g_npq.npq34  #FUN-AA0087
       LET g_npq.npq24 = g_nni.nni08   #MOD-9B0059 add
       LET g_npq.npq25 = g_nni.nni09   #MOD-9B0059 add
@@ -4046,7 +4051,7 @@ FUNCTION t740_g_gl_1(p_trno,p_npqtype)   #No.FUN-680088
       ELSE
          LET g_npq.npq07 = cl_digcut(g_npq.npq07,g_azi04)  #FUN-A40067
       END IF
-#No.FUN-9A0036 --End 
+#No.FUN-9A0036 --End
      #FUN-D40118 ---Add--- Start
       SELECT aag44 INTO l_aag44 FROM aag_file
        WHERE aag00 = g_bookno3
@@ -4059,8 +4064,8 @@ FUNCTION t740_g_gl_1(p_trno,p_npqtype)   #No.FUN-680088
       END IF
      #FUN-D40118 ---Add--- End
       INSERT INTO npq_file VALUES (g_npq.*)
-      IF STATUS THEN 
-         CALL cl_err3("ins","npq_file",g_npq.npq00,g_npq.npq01,STATUS,"","ins npq:d1",1)  #No.FUN-660148 
+      IF STATUS THEN
+         CALL cl_err3("ins","npq_file",g_npq.npq00,g_npq.npq01,STATUS,"","ins npq:d1",1)  #No.FUN-660148
          LET g_success='N' #No.FUN-680088
       END IF
       LET g_nni.nni11=g_nni.nni11+amt1
@@ -4072,9 +4077,9 @@ FUNCTION t740_g_gl_1(p_trno,p_npqtype)   #No.FUN-680088
    IF g_nni.nni15 <> 0 THEN
       LET g_npq.npq02 = g_npq.npq02+1
       IF p_npqtype = '0' THEN
-         LET g_npq.npq03 = g_nms.nms60  
+         LET g_npq.npq03 = g_nms.nms60
       ELSE
-         LET g_npq.npq03 = g_nms.nms601 
+         LET g_npq.npq03 = g_nms.nms601
       END IF
       LET g_npq.npq04 = NULL  #FUN-D10065
       LET g_npq.npq06 = '1'
@@ -4089,7 +4094,7 @@ FUNCTION t740_g_gl_1(p_trno,p_npqtype)   #No.FUN-680088
       CALL cl_digcut(g_npq.npq07,g_azi04) RETURNING g_npq.npq07   #MOD-9B0059 add
       CALL s_def_npq(g_npq.npq03,g_prog,g_npq.*,g_npq.npq01,'','',g_bookno3)       #No.FUN-730032
            RETURNING  g_npq.*
-      CALL s_def_npq31_npq34(g_npq.*,g_bookno3) RETURNING g_npq.npq31,g_npq.npq32,g_npq.npq33,g_npq.npq34     #FUN-AA0087  
+      CALL s_def_npq31_npq34(g_npq.*,g_bookno3) RETURNING g_npq.npq31,g_npq.npq32,g_npq.npq33,g_npq.npq34     #FUN-AA0087
       LET g_npq.npq24 = g_nni.nni08   #MOD-9B0059 add
       LET g_npq.npq25 = g_nni.nni09   #MOD-9B0059 add
       LET g_npq25     = g_npq.npq25   #No.FUN-9A0036
@@ -4105,7 +4110,7 @@ FUNCTION t740_g_gl_1(p_trno,p_npqtype)   #No.FUN-680088
       ELSE
          LET g_npq.npq07 = cl_digcut(g_npq.npq07,g_azi04)  #FUN-A40067
       END IF
-#No.FUN-9A0036 --End 
+#No.FUN-9A0036 --End
      #FUN-D40118 ---Add--- Start
       SELECT aag44 INTO l_aag44 FROM aag_file
        WHERE aag00 = g_bookno3
@@ -4118,8 +4123,8 @@ FUNCTION t740_g_gl_1(p_trno,p_npqtype)   #No.FUN-680088
       END IF
      #FUN-D40118 ---Add--- End
       INSERT INTO npq_file VALUES (g_npq.*)
-      IF STATUS THEN 
-         CALL cl_err3("ins","npq_file",g_npq.npq00,g_npq.npq01,STATUS,"","ins npq_c1",1)  #No.FUN-660148 
+      IF STATUS THEN
+         CALL cl_err3("ins","npq_file",g_npq.npq00,g_npq.npq01,STATUS,"","ins npq_c1",1)  #No.FUN-660148
          LET g_success='N' #No.FUN-680088
       END IF
    END IF
@@ -4148,8 +4153,8 @@ FUNCTION t740_g_gl_1(p_trno,p_npqtype)   #No.FUN-680088
       CALL cl_digcut(g_npq.npq07,g_azi04) RETURNING g_npq.npq07   #MOD-9B0059 add
       CALL s_def_npq(g_npq.npq03,g_prog,g_npq.*,g_npq.npq01,'','',g_bookno3)       #No.FUN-730032
        RETURNING  g_npq.*
-       
-      CALL s_def_npq31_npq34(g_npq.*,g_bookno3) RETURNING g_npq.npq31,g_npq.npq32,g_npq.npq33,g_npq.npq34     #FUN-AA0087  
+
+      CALL s_def_npq31_npq34(g_npq.*,g_bookno3) RETURNING g_npq.npq31,g_npq.npq32,g_npq.npq33,g_npq.npq34     #FUN-AA0087
       LET g_npq.npq24 = g_nni.nni08   #MOD-9B0059 add
       LET g_npq.npq25 = g_nni.nni09   #MOD-9B0059 add
       LET g_npq25     = g_npq.npq25   #No.FUN-9A0036
@@ -4165,7 +4170,7 @@ FUNCTION t740_g_gl_1(p_trno,p_npqtype)   #No.FUN-680088
       ELSE
          LET g_npq.npq07 = cl_digcut(g_npq.npq07,g_azi04)  #FUN-A40067
       END IF
-#No.FUN-9A0036 --End 
+#No.FUN-9A0036 --End
      #FUN-D40118 ---Add--- Start
       SELECT aag44 INTO l_aag44 FROM aag_file
        WHERE aag00 = g_bookno3
@@ -4178,8 +4183,8 @@ FUNCTION t740_g_gl_1(p_trno,p_npqtype)   #No.FUN-680088
       END IF
      #FUN-D40118 ---Add--- End
       INSERT INTO npq_file VALUES (g_npq.*)
-      IF STATUS THEN 
-         CALL cl_err3("ins","npq_file",g_npq.npq00,g_npq.npq01,STATUS,"","ins npq_c1",1)  #No.FUN-660148 
+      IF STATUS THEN
+         CALL cl_err3("ins","npq_file",g_npq.npq00,g_npq.npq01,STATUS,"","ins npq_c1",1)  #No.FUN-660148
          LET g_success='N' #No.FUN-680088
       END IF
    END IF
@@ -4198,8 +4203,8 @@ FUNCTION t740_g_gl_1(p_trno,p_npqtype)   #No.FUN-680088
    CALL cl_digcut(g_npq.npq07,g_azi04) RETURNING g_npq.npq07   #MOD-9B0059 add
    CALL s_def_npq(g_npq.npq03,g_prog,g_npq.*,g_npq.npq01,'','',g_bookno3)       #No.FUN-730032
     RETURNING  g_npq.*
-    
-   CALL s_def_npq31_npq34(g_npq.*,g_bookno3) RETURNING g_npq.npq31,g_npq.npq32,g_npq.npq33,g_npq.npq34     #FUN-AA0087  
+
+   CALL s_def_npq31_npq34(g_npq.*,g_bookno3) RETURNING g_npq.npq31,g_npq.npq32,g_npq.npq33,g_npq.npq34     #FUN-AA0087
    LET g_npq.npq24 = g_nni.nni08   #MOD-9B0059 add
    LET g_npq.npq25 = g_nni.nni09   #MOD-9B0059 add
    LET g_npq25     = g_npq.npq25   #No.FUN-9A0036
@@ -4215,7 +4220,7 @@ FUNCTION t740_g_gl_1(p_trno,p_npqtype)   #No.FUN-680088
    ELSE
       LET g_npq.npq07 = cl_digcut(g_npq.npq07,g_azi04)  #FUN-A40067
    END IF
-#No.FUN-9A0036 --End 
+#No.FUN-9A0036 --End
   #FUN-D40118 ---Add--- Start
    SELECT aag44 INTO l_aag44 FROM aag_file
     WHERE aag00 = g_bookno3
@@ -4228,23 +4233,23 @@ FUNCTION t740_g_gl_1(p_trno,p_npqtype)   #No.FUN-680088
    END IF
   #FUN-D40118 ---Add--- End
    INSERT INTO npq_file VALUES (g_npq.*)
-   IF STATUS THEN 
-      CALL cl_err3("ins","npq_file",g_npq.npq00,g_npq.npq01,STATUS,"","ins npq_c1",1)  #No.FUN-660148 
+   IF STATUS THEN
+      CALL cl_err3("ins","npq_file",g_npq.npq00,g_npq.npq01,STATUS,"","ins npq_c1",1)  #No.FUN-660148
       LET g_success='N' #No.FUN-680088
-   END IF 
+   END IF
 END FUNCTION
- 
+
 FUNCTION t740_get_default()
  DEFINE l_nnm07 LIKE nnm_file.nnm07,
         l_nnm11 LIKE nnm_file.nnm11,
         l_nnm12 LIKE nnm_file.nnm12
- 
+
    IF g_nnj[l_ac].nnj05>g_nnj[l_ac].nnj06 THEN
       LET g_nnj[l_ac].nnj11=0
       LET g_nnj[l_ac].nnj13=0
       RETURN
    END IF
- 
+
    SELECT nnm07,nnm11,nnm12 INTO l_nnm07,l_nnm11,l_nnm12 FROM nnm_file
     WHERE nnm01=g_nnj[l_ac].nnj03
       AND nnm02=YEAR(g_nnj[l_ac].nnj05)
@@ -4259,52 +4264,52 @@ FUNCTION t740_get_default()
    SELECT azi04 INTO t_azi04 FROM azi_file WHERE azi01 = g_nni.nni04
    CALL cl_digcut(g_nnj[l_ac].nnj11,t_azi04) RETURNING g_nnj[l_ac].nnj11
    CALL cl_digcut(g_nnj[l_ac].nnj13,g_azi04) RETURNING g_nnj[l_ac].nnj13
- 
+
 END FUNCTION
- 
+
 FUNCTION t740_set_entry(p_cmd)
   DEFINE p_cmd   LIKE type_file.chr1    #No.FUN-680107 VARCHAR(1)
- 
+
     IF p_cmd = 'a' AND ( NOT g_before_input_done ) THEN
       CALL cl_set_comp_entry("nni01",TRUE)
     END IF
- 
+
 END FUNCTION
- 
+
 FUNCTION t740_set_no_entry(p_cmd)
   DEFINE p_cmd   LIKE type_file.chr1    #No.FUN-680107 VARCHAR(1)
- 
+
     IF p_cmd = 'u' AND g_chkey = 'N' AND ( NOT g_before_input_done ) THEN
        CALL cl_set_comp_entry("nni01",FALSE)
     END IF
- 
+
 END FUNCTION
- 
+
 FUNCTION t740_set_entry_b()
-     
+
    CALL cl_set_comp_entry("nnj16",TRUE)
-   
+
 END FUNCTION
- 
+
 FUNCTION t740_set_no_entry_b()
- 
+
     IF g_nni.nni04 = g_nni.nni08 THEN
        CALL cl_set_comp_entry("nnj16",FALSE)
     END IF
- 
+
 END FUNCTION
- 
+
 FUNCTION t740_out()
    DEFINE l_name    LIKE type_file.chr20,   # External(Disk) file name  #No.FUN-680107 VARCHAR(20)
           l_sql     LIKE type_file.chr1000, #No.FUN-680107 VARCHAR(3000)
           l_za05    LIKE type_file.chr1000, #No.FUN-680107 VARCHAR(40)
           sr_nni    RECORD LIKE nni_file.*,
           sr_nnj    RECORD LIKE nnj_file.*
- 
+
     #LET g_wc=" nni01='",g_nni.nni01,"'"   #MOD-870249    #MOD-B70232 mark
      LET g_wc=" a.nni01='",g_nni.nni01,"'"   #MOD-870249  #MOD-B70232
      SELECT zo02 INTO g_company FROM zo_file WHERE zo01 = g_lang
-     SELECT zz05 INTO g_zz05 FROM zz_file WHERE zz01 = 'anmt840' 
+     SELECT zz05 INTO g_zz05 FROM zz_file WHERE zz01 = 'anmt840'
     #str MOD-B70232 mod
     #LET l_sql="SELECT nni_file.*,nnj_file.*,nma02,nmd02,alg02,nne03,nng03,azi07 ",   #MOD-870290 add azi07
     #          "  FROM nni_file  ",
@@ -4336,51 +4341,51 @@ FUNCTION t740_out()
                "   AND ",g_wc CLIPPED
      LET l_sql=l_sql CLIPPED," ORDER BY a.nni01,f.nnj02 "
     #str MOD-B70232 mod
- 
-     IF g_zz05 = 'Y' THEN                                                       
+
+     IF g_zz05 = 'Y' THEN
         LET g_wc=" nni01='",g_nni.nni01,"'"   #MOD-870249    #MOD-B70232 add
         CALL cl_wcchp(g_wc,'nni01,nni02,nni03,nni04,nni05,nni06,   #No.MOD-910025
                             nni07,nni08,nni09,nni22,nni21,nniglno,nniconf,nni10,
-                            nni101,nnj02,nnj09,nnj03,nnj05,nnj06,nnj07,nnj08 ')      
-             RETURNING g_str                                                    
-     ELSE                                                                       
-        LET g_str = ' '                                                         
-     END IF                                                                     
+                            nni101,nnj02,nnj09,nnj03,nnj05,nnj06,nnj07,nnj08 ')
+             RETURNING g_str
+     ELSE
+        LET g_str = ' '
+     END IF
      SELECT azi04 INTO t_azi04 FROM azi_file WHERE azi01 = g_nni.nni04   #MOD-A50065 add
-     LET g_str = g_str,";",g_azi04,";",t_azi04      #MOD-A50065 add t_azi04                                  
-     CALL cl_prt_cs1('anmt740','anmt740',l_sql,g_str)  
+     LET g_str = g_str,";",g_azi04,";",t_azi04      #MOD-A50065 add t_azi04
+     CALL cl_prt_cs1('anmt740','anmt740',l_sql,g_str)
 END FUNCTION
- 
+
 FUNCTION t740_gen_glcr(p_nni,p_nmy)
   DEFINE p_nni     RECORD LIKE nni_file.*
   DEFINE p_nmy     RECORD LIKE nmy_file.*
- 
+
     IF cl_null(p_nmy.nmygslp) THEN
        CALL cl_err(p_nni.nni01,'axr-070',1)
        LET g_success = 'N'
        RETURN
-    END IF       
+    END IF
     CALL t740_g_gl(p_nni.nni01,'0')
     IF g_aza.aza63 = 'Y' AND g_success = 'Y' THEN
        CALL t740_g_gl(p_nni.nni01,'1')
     END IF
     IF g_success = 'N' THEN RETURN END IF
- 
+
 END FUNCTION
- 
+
 FUNCTION t740_carry_voucher()
   DEFINE l_nmygslp    LIKE nmy_file.nmygslp
   DEFINE li_result    LIKE type_file.num5     #No.FUN-680107 SMALLINT
   DEFINE l_dbs        STRING
   DEFINE l_sql        STRING
   DEFINE l_n          LIKE type_file.num5    #No.FUN-680107 SMALLINT
- 
+
     IF NOT cl_null(g_nni.nniglno) OR g_nni.nniglno IS NOT NULL THEN
        CALL cl_err(g_nni.nniglno,'aap-618',1)
-       RETURN 
+       RETURN
     END IF
     IF NOT cl_confirm('aap-989') THEN RETURN END IF
- 
+
     CALL s_get_doc_no(g_nni.nni01) RETURNING g_t1
     SELECT * INTO g_nmy.* FROM nmy_file WHERE nmyslip=g_t1
     IF g_nmy.nmydmy3 = 'N' THEN RETURN END IF
@@ -4404,7 +4409,7 @@ FUNCTION t740_carry_voucher()
     ELSE
        CALL cl_err('','aap-936',1) #FUN-940036
        RETURN
- 
+
     END IF
     IF cl_null(l_nmygslp) THEN
        CALL cl_err(g_nni.nni01,'axr-070',1)
@@ -4420,27 +4425,27 @@ FUNCTION t740_carry_voucher()
     SELECT nniglno INTO g_nni.nniglno FROM nni_file
      WHERE nni01 = g_nni.nni01
     DISPLAY BY NAME g_nni.nniglno
-    
+
 END FUNCTION
- 
-FUNCTION t740_undo_carry_voucher() 
+
+FUNCTION t740_undo_carry_voucher()
   DEFINE l_aba19    LIKE aba_file.aba19
   DEFINE l_sql      LIKE type_file.chr1000 #No.FUN-680107 VARCHAR(1000)
   DEFINE l_dbs      STRING
- 
-    IF cl_null(g_nni.nniglno) OR g_nni.nniglno IS NULL THEN 
-       CALL cl_err(g_nni.nniglno,'aap-619',1) 
-       RETURN 
-    END IF 
+
+    IF cl_null(g_nni.nniglno) OR g_nni.nniglno IS NULL THEN
+       CALL cl_err(g_nni.nniglno,'aap-619',1)
+       RETURN
+    END IF
     IF NOT cl_confirm('aap-988') THEN RETURN END IF
- 
+
     CALL s_get_doc_no(g_nni.nni01) RETURNING g_t1
     SELECT * INTO g_nmy.* FROM nmy_file WHERE nmyslip=g_t1
     IF g_nmy.nmyglcr = 'N' AND cl_null(g_nmy.nmygslp) THEN   #FUN-940036
        CALL cl_err('','aap-936',1)   #FUN-940036
        RETURN
     END IF
- 
+
     #LET g_plant_new=g_nmz.nmz02p CALL s_getdbs() LET l_dbs=g_dbs_new  #FUN-A50102
     #LET l_sql = " SELECT aba19 FROM ",l_dbs,"aba_file",
     LET l_sql = " SELECT aba19 FROM ",cl_get_target_table(g_nmz.nmz02p,'aba_file'), #FUN-A50102
@@ -4462,7 +4467,7 @@ FUNCTION t740_undo_carry_voucher()
      WHERE nni01 = g_nni.nni01
     DISPLAY BY NAME g_nni.nniglno
 END FUNCTION
- 
+
 #函數功能：用于判斷止算日是否小于等于還息日。止算日不可大于還息日。
 FUNCTION t740_chk_edate(p_nnj09,p_nnj03,p_nnj06)
 DEFINE          p_nnj09     LIKE nnj_file.nnj09     #還款類型
@@ -4475,7 +4480,7 @@ DEFINE          l_errno     VARCHAR(2)                 #錯誤類型：
                                                     #'02'止息日大于還息日
 DEFINE          l_dd        LIKE nne_file.nne22     #取得止算日
 DEFINE          l_ed        LIKE nne_file.nne22     #取得還息日
-                                                   
+
     LET l_dd    = NULL
     LET l_ed    = NULL
     LET l_errno = '00'
@@ -4484,21 +4489,21 @@ DEFINE          l_ed        LIKE nne_file.nne22     #取得還息日
         LET l_sql = "SELECT nne22 FROM nne_file WHERE nne01 = '",p_nnj03 CLIPPED,"'"
       WHEN '2'   #中長期
         LET l_sql = "SELECT nng13 FROM nng_file WHERE nng01 = '",p_nnj03 CLIPPED,"'"
-    END CASE 
+    END CASE
     PREPARE t740_chk_prep FROM l_sql
     EXECUTE t740_chk_prep INTO l_ed
-    IF SQLCA.sqlcode THEN 
+    IF SQLCA.sqlcode THEN
        LET l_errno = '01'
        RETURN l_errno
-    END IF 
-    LET l_dd = DAY(p_nnj06) 
-    IF l_dd > l_ed THEN 
+    END IF
+    LET l_dd = DAY(p_nnj06)
+    IF l_dd > l_ed THEN
        LET l_errno = '02'
-       RETURN l_errno 
-    END IF 
-    
+       RETURN l_errno
+    END IF
+
     RETURN l_errno
- 
+
 END FUNCTION
 #-----------------------------No.MOD-B80058-----------------------------------------start
 FUNCTION t740_nnj15()
@@ -4600,7 +4605,7 @@ DEFINE l_sum_dr         LIKE npq_file.npq07
             LET g_success = 'N'
          END IF
       END IF
-   END IF   
+   END IF
 END FUNCTION
 #No.FUN-A40033 --End
 #CHI-C80041---begin
@@ -4608,12 +4613,12 @@ FUNCTION t740_v()
 DEFINE   l_chr              LIKE type_file.chr1
 
    IF s_shut(0) THEN RETURN END IF
-   IF cl_null(g_nni.nni01) THEN CALL cl_err('',-400,0) RETURN END IF  
- 
+   IF cl_null(g_nni.nni01) THEN CALL cl_err('',-400,0) RETURN END IF
+
    BEGIN WORK
- 
+
    LET g_success='Y'
- 
+
    OPEN t740_cl USING g_nni.nni01
    IF STATUS THEN
       CALL cl_err("OPEN t740_cl:", STATUS, 1)
@@ -4627,29 +4632,29 @@ DEFINE   l_chr              LIKE type_file.chr1
       CLOSE t740_cl ROLLBACK WORK RETURN
    END IF
    #-->確認不可作廢
-   IF g_nni.nniconf = 'Y' THEN CALL cl_err('',9023,0) RETURN END IF 
-   IF cl_void(0,0,g_nni.nniconf)   THEN 
+   IF g_nni.nniconf = 'Y' THEN CALL cl_err('',9023,0) RETURN END IF
+   IF cl_void(0,0,g_nni.nniconf)   THEN
         LET l_chr=g_nni.nniconf
-        IF g_nni.nniconf='N' THEN 
-            LET g_nni.nniconf='X' 
+        IF g_nni.nniconf='N' THEN
+            LET g_nni.nniconf='X'
         ELSE
             LET g_nni.nniconf='N'
         END IF
         UPDATE nni_file
-            SET nniconf=g_nni.nniconf,  
+            SET nniconf=g_nni.nniconf,
                 nnimodu=g_user,
                 nnidate=g_today
             WHERE nni01=g_nni.nni01
         IF SQLCA.SQLCODE OR SQLCA.SQLERRD[3]=0 THEN
-            CALL cl_err3("upd","nni_file",g_nni.nni01,"",SQLCA.sqlcode,"","",1)  
-            LET g_nni.nniconf=l_chr 
+            CALL cl_err3("upd","nni_file",g_nni.nni01,"",SQLCA.sqlcode,"","",1)
+            LET g_nni.nniconf=l_chr
         END IF
-        DISPLAY BY NAME g_nni.nniconf 
+        DISPLAY BY NAME g_nni.nniconf
    END IF
- 
+
    CLOSE t740_cl
    COMMIT WORK
    CALL cl_flow_notify(g_nni.nni01,'V')
- 
+
 END FUNCTION
 #CHI-C80041---end
