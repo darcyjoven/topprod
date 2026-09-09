@@ -43,7 +43,7 @@ function cs_record_array_json(obj,objs,fieldname)
     define fieldname string
     define obj com.fourjs.fgl.lang.FglRecord
     define objs dynamic array of com.fourjs.fgl.lang.FglRecord
-    
+
     let jsonstr = base.StringBuffer.create()
     call jsonstr.append("{")
     call jsonstr.append(cs_json_record(obj))
@@ -167,7 +167,7 @@ function cs_json_type(types)
         when types == "BOOLEAN"
             return "bool"
         otherwise
-            return "null"
+            return "string"
     end case
     return types
 end function
