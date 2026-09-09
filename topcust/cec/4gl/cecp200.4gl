@@ -231,6 +231,7 @@ function p200_process()
     end foreach
     # 按照规则更新损耗率
     call saeci100_csmi134(sr.ecu01)
+    call i100sub_upd_bmb09(sr.ecu01,sr.ecu02)
 end function
 
 function p200_bom(p_bmb01,p_ecu02)
