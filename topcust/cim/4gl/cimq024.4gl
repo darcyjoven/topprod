@@ -103,7 +103,7 @@ type supppart      record
     col9_6      decimal(20,2),
     col10_6      decimal(20,2)
 end record
-type tc_imi record 
+type tc_imi record
     tc_imi01          varchar(40),
     tc_imi02          date,
     tc_imi03          varchar(20),
@@ -142,10 +142,10 @@ define g_bg_job varchar(1)
 define flag_img         like type_file.chr1
 define flag_img02       like type_file.chr1
 define flag_materials   like type_file.chr1
-define flag_device      like type_file.chr1 
+define flag_device      like type_file.chr1
 define flag_product     like type_file.chr1
-define flag_fpcpage     like type_file.chr1 
-define flag_supppart    like type_file.chr1 
+define flag_fpcpage     like type_file.chr1
+define flag_supppart    like type_file.chr1
 # ---
 
 # ---
@@ -157,21 +157,21 @@ MAIN
     options                               #改變一些系統預設值
         input no wrap
     defer interrupt
- 
+
     if (not cl_user()) then
         exit program
     end if
- 
+
     whenever error call cl_err_msg_log
- 
+
     if (not cl_setup("CIM")) then
         exit program
     end if
-    
-    call cl_used(g_prog,g_time,1) returning g_time #no.fun-b30211 
+
+    call cl_used(g_prog,g_time,1) returning g_time #no.fun-b30211
     open window cimq024 at p_row,p_col with form "cim/42f/cimq024"
             attribute (style = g_win_style clipped) #no.fun-580092 hcn
-        
+
     call cl_ui_init()
     -- 字段名称初始化
     call cimq024_col_init()
@@ -179,7 +179,7 @@ MAIN
     call cimq024()
 
     close window cimq024                 #結束畫面
-    call  cl_used(g_prog,g_time,2) returning g_time 
+    call  cl_used(g_prog,g_time,2) returning g_time
 END MAIN
 
 # declear
@@ -191,7 +191,7 @@ function cimq024_curs()
         call cimq024_cs()
     end if
     let g_bg_job = 'N'
-    # --- 
+    # ---
 
     let g_sql = "select unique tc_imi01 from tc_imi_file ",
                 " where ",g_wc1 clipped,
@@ -226,10 +226,10 @@ function cimq024_cs()
         on action img02     let g_b_flag = "2"
         on action materials let g_b_flag = "3"
         on action device    let g_b_flag = "4"
-        on action product   let g_b_flag = "5" 
-        on action fpcpage   let g_b_flag = "6" 
-        on action supppart  let g_b_flag = "7" 
-        
+        on action product   let g_b_flag = "5"
+        on action fpcpage   let g_b_flag = "6"
+        on action supppart  let g_b_flag = "7"
+
         on action accept
             let g_action_choice="accept"
             exit dialog
@@ -247,17 +247,17 @@ function cimq024_cs()
 
         on action qbe_save
             call cl_qbe_save()
-        
+
         on idle g_idle_seconds
             call cl_on_idle()
             continue dialog
-        
+
         on action about
             call cl_about()
-        
+
         on action controlg
             call cl_cmdask()
-        
+
         on action help
             call cl_show_help()
 
@@ -268,7 +268,7 @@ function cimq024_cs()
     end if
 end function
 # main
-function cimq024() 
+function cimq024()
     call cimq024_menu()
 end function
 # 菜单
@@ -300,12 +300,12 @@ function cimq024_menu()
         case g_action_choice
             when "help"
             call cl_show_help()
- 
+
             when "exit"
                 exit while
             when "close"
                 exit while
-    
+
             when "controlg"
                 call cl_cmdask()
 
@@ -313,16 +313,16 @@ function cimq024_menu()
                 if cl_chk_act_auth() then
                     call cimq024_q()
                 end if
-            
+
             when "exporttoexcel"
                 # 导出excel
                 if cl_chk_act_auth() then
                     call cl_download_by_explorer(
                         cl_expexcel10(
                             "s_img",        base.typeinfo.create(g_img_excel),
-                            "s_img02",      base.typeinfo.create(g_img02_excel), 
+                            "s_img02",      base.typeinfo.create(g_img02_excel),
                             "s_materials",  base.typeinfo.create(g_materials_excel),
-                            "s_device",     base.typeinfo.create(g_device_excel), 
+                            "s_device",     base.typeinfo.create(g_device_excel),
                             "s_product",    base.typeinfo.create(g_product_excel),
                             "s_fpc",        base.typeinfo.create(g_fpcpage_excel),
                             "s_supppart",   base.typeinfo.create(g_supppart_excel),
@@ -397,15 +397,15 @@ function cimq024_fill(p_wc)
     # ---
     define p_wc string
     define i    integer
-    # --- 
-    -- g_tc_imi   ,g_tc_imi_t       
-    -- g_img      ,g_img_excel      
-    -- g_img02    ,g_img02_excel    
+    # ---
+    -- g_tc_imi   ,g_tc_imi_t
+    -- g_img      ,g_img_excel
+    -- g_img02    ,g_img02_excel
     -- g_materials,g_materials_excel
-    -- g_device   ,g_device_excel   
-    -- g_product  ,g_product_excel  
-    -- g_fpcpage  ,g_fpcpage_excel  
-    -- g_supppart ,g_supppart_excel 
+    -- g_device   ,g_device_excel
+    -- g_product  ,g_product_excel
+    -- g_fpcpage  ,g_fpcpage_excel
+    -- g_supppart ,g_supppart_excel
 
     #Step1. 库存资料
     let g_sql = " select img01,ima02,ima021,img02,imd02,img03,img04,img09,img10,img37,trunc(sysdate)-img37 stale ,0 stale_type,img18,ccc23,amt,remark ",
@@ -549,12 +549,12 @@ function cimq024_fill(p_wc)
         let g_cnt = g_cnt + 1
     end foreach
     call g_supppart_excel.deleteElement(g_cnt)
-    
+
 end function
 
 function cimq024_fetch(p_flag)
     define p_flag   varchar(1)
- 
+
     case p_flag
         when 'N' fetch next     cimq024_curs into g_tc_imi.tc_imi01
         when 'P' fetch previous cimq024_curs into g_tc_imi.tc_imi01
@@ -566,16 +566,16 @@ function cimq024_fetch(p_flag)
                 let int_flag = 0
 
                 prompt g_msg clipped,': ' for g_jump
-                    
+
                     on idle g_idle_seconds
                         call cl_on_idle()
- 
+
                     on action about
                         call cl_about()
- 
+
                     on action help
                         call cl_show_help()
-                
+
                     on action controlg
                         call cl_cmdask()
 
@@ -588,7 +588,7 @@ function cimq024_fetch(p_flag)
             fetch absolute g_jump cimq024_curs into g_tc_imi.tc_imi01
             let g_no_ask = false
     end case
- 
+
     if sqlca.sqlcode then
         call cl_err(g_tc_imi.tc_imi01,sqlca.sqlcode,0)
         initialize g_tc_imi.* to null
@@ -602,19 +602,19 @@ function cimq024_fetch(p_flag)
             when 'L' let g_curs_index = g_row_count
             when '/' let g_curs_index = g_jump
         end case
-    
+
         call cl_navigator_setting(g_curs_index, g_row_count)
     end if
- 
+
    select unique tc_imi01,tc_imi02,tc_imi03,tc_imi04,tc_imi05,tc_imi06
      into g_tc_imi.* from tc_imi_file where tc_imi01 = g_tc_imi.tc_imi01
- 
+
    if sqlca.sqlcode then
       call cl_err3("sel","tc_imi_file",g_tc_imi.tc_imi01,"",sqlca.sqlcode,"","",0)    #no.fun-660081
-   else       
-      call cimq024_show() 
+   else
+      call cimq024_show()
    end if
- 
+
 end function
 
 function cimq024_bp1(p_ud)
@@ -624,15 +624,17 @@ function cimq024_bp1(p_ud)
     if p_ud <> "G" then
         return
     end if
-    let g_action_choice = " " 
+    let g_action_choice = " "
 
-    call cl_set_act_visible("accept,cancel", false) 
+    call cl_set_act_visible("accept,cancel", false)
 
     display array g_img to s_img.*
 
         before display
             let l_ac = arr_curr()
             display l_ac to cnt
+            call cl_navigator_setting(g_curs_index, g_row_count)
+
         on action help
             let g_action_choice="help"
             exit display
@@ -644,7 +646,7 @@ function cimq024_bp1(p_ud)
             exit display
         on action query
             let g_action_choice="query"
-            exit display 
+            exit display
         on action exporttoexcel
             let g_action_choice = 'exporttoexcel'
             exit display
@@ -653,7 +655,7 @@ function cimq024_bp1(p_ud)
             continue display
         on action close
             let g_action_choice = 'close'
-            exit display 
+            exit display
 
         -- on action img       let g_action_choice = 'fill' let g_b_flag = '1' exit display
         on action img02     let g_action_choice = 'fill' let g_b_flag = '2' exit display
@@ -673,7 +675,7 @@ function cimq024_bp1(p_ud)
 
         # TODO: 功能按钮 s---
         # TODO: 功能按钮 e---
-        
+
         # TODO：公共按钮 s---
         on action generate let g_action_choice = 'generate' exit display
         # TODO：公共按钮 e---
@@ -697,6 +699,7 @@ function cimq024_bp2(p_ud)
         before display
             let l_ac = arr_curr()
             display l_ac to cnt
+            call cl_navigator_setting(g_curs_index, g_row_count)
 
         on action help
             let g_action_choice="help"
@@ -709,7 +712,7 @@ function cimq024_bp2(p_ud)
             exit display
         on action query
             let g_action_choice="query"
-            exit display 
+            exit display
         on action exporttoexcel
             let g_action_choice = 'exporttoexcel'
             exit display
@@ -719,7 +722,7 @@ function cimq024_bp2(p_ud)
         on action close
             let g_action_choice = 'close'
             exit display
-            
+
         on action img       let g_action_choice = 'fill' let g_b_flag = '1' exit display
         -- on action img02     let g_action_choice = 'fill' let g_b_flag = '2' exit display
         on action materials let g_action_choice = 'fill' let g_b_flag = '3' exit display
@@ -755,7 +758,7 @@ function cimq024_bp3(p_ud)
     let g_action_choice = " "
 
     call cl_set_act_visible("accept,cancel", false)
-    
+
     display array g_materials to s_materials.*
 
         before display
@@ -773,7 +776,7 @@ function cimq024_bp3(p_ud)
             exit display
         on action query
             let g_action_choice="query"
-            exit display 
+            exit display
         on action exporttoexcel
             let g_action_choice = 'exporttoexcel'
             exit display
@@ -783,7 +786,7 @@ function cimq024_bp3(p_ud)
         on action close
             let g_action_choice = 'close'
             exit display
-            
+
         on action img       let g_action_choice = 'fill' let g_b_flag = '1' exit display
         on action img02     let g_action_choice = 'fill' let g_b_flag = '2' exit display
         -- on action materials let g_action_choice = 'fill' let g_b_flag = '3' exit display
@@ -824,6 +827,7 @@ function cimq024_bp4(p_ud)
         before display
             let l_ac = arr_curr()
             display l_ac to cnt
+            call cl_navigator_setting(g_curs_index, g_row_count)
 
         on action help
             let g_action_choice="help"
@@ -836,7 +840,7 @@ function cimq024_bp4(p_ud)
             exit display
         on action query
             let g_action_choice="query"
-            exit display 
+            exit display
         on action exporttoexcel
             let g_action_choice = 'exporttoexcel'
             exit display
@@ -846,7 +850,7 @@ function cimq024_bp4(p_ud)
         on action close
             let g_action_choice = 'close'
             exit display
-            
+
         on action img       let g_action_choice = 'fill' let g_b_flag = '1' exit display
         on action img02     let g_action_choice = 'fill' let g_b_flag = '2' exit display
         on action materials let g_action_choice = 'fill' let g_b_flag = '3' exit display
@@ -888,6 +892,7 @@ function cimq024_bp5(p_ud)
         before display
             let l_ac = arr_curr()
             display l_ac to cnt
+            call cl_navigator_setting(g_curs_index, g_row_count)
 
         on action help
             let g_action_choice="help"
@@ -900,7 +905,7 @@ function cimq024_bp5(p_ud)
             exit display
         on action query
             let g_action_choice="query"
-            exit display 
+            exit display
         on action exporttoexcel
             let g_action_choice = 'exporttoexcel'
             exit display
@@ -910,7 +915,7 @@ function cimq024_bp5(p_ud)
         on action close
             let g_action_choice = 'close'
             exit display
-            
+
         on action img       let g_action_choice = 'fill' let g_b_flag = '1' exit display
         on action img02     let g_action_choice = 'fill' let g_b_flag = '2' exit display
         on action materials let g_action_choice = 'fill' let g_b_flag = '3' exit display
@@ -951,6 +956,7 @@ function cimq024_bp6(p_ud)
 
         before display
             let l_ac = arr_curr()
+            call cl_navigator_setting(g_curs_index, g_row_count)
 
         on action help
             let g_action_choice="help"
@@ -963,7 +969,7 @@ function cimq024_bp6(p_ud)
             exit display
         on action query
             let g_action_choice="query"
-            exit display 
+            exit display
         on action exporttoexcel
             let g_action_choice = 'exporttoexcel'
             exit display
@@ -973,7 +979,7 @@ function cimq024_bp6(p_ud)
         on action close
             let g_action_choice = 'close'
             exit display
-            
+
         on action img       let g_action_choice = 'fill' let g_b_flag = '1' exit display
         on action img02     let g_action_choice = 'fill' let g_b_flag = '2' exit display
         on action materials let g_action_choice = 'fill' let g_b_flag = '3' exit display
@@ -1014,6 +1020,7 @@ function cimq024_bp7(p_ud)
 
         before display
             let l_ac = arr_curr()
+            call cl_navigator_setting(g_curs_index, g_row_count)
 
         on action help
             let g_action_choice="help"
@@ -1026,7 +1033,7 @@ function cimq024_bp7(p_ud)
             exit display
         on action query
             let g_action_choice="query"
-            exit display 
+            exit display
         on action exporttoexcel
             let g_action_choice = 'exporttoexcel'
             exit display
@@ -1036,7 +1043,7 @@ function cimq024_bp7(p_ud)
         on action close
             let g_action_choice = 'close'
             exit display
-            
+
         on action img       let g_action_choice = 'fill' let g_b_flag = '1' exit display
         on action img02     let g_action_choice = 'fill' let g_b_flag = '2' exit display
         on action materials let g_action_choice = 'fill' let g_b_flag = '3' exit display
@@ -1066,7 +1073,7 @@ end function
 function cimq024_generate()
     define l_tc_imi     tc_imi
     define l_tc_imi01   varchar(40)
-    define i,j,k,l      integer 
+    define i,j,k,l      integer
 
     if not cl_confirm("cim-041") then
         return
@@ -1076,7 +1083,7 @@ function cimq024_generate()
     let l_tc_imi.tc_imi05 = iif( month(g_today) <> month(g_today + 1),"Y","N")
 
     # Step1. 确认今天是否已经存在资料，并提示会无效历史资料
-    select count(*) into i from tc_imi_file 
+    select count(*) into i from tc_imi_file
      where tc_imi02 = g_today and tc_imi06 = 'Y'
     if i > 0 then
         if not cl_confirm("cim-043")  then
@@ -1092,7 +1099,7 @@ function cimq024_generate()
     let l_tc_imi.tc_imi01 = sfmt("%1%2%3",year(g_today) using '&&&&',month(g_today) using '&&',day(g_today) using '&&')
     select max(tc_imi01) into l_tc_imi01 from tc_imi_file
      where tc_imi02 = g_today
-    
+
     if cl_null(l_tc_imi01) then
         let l_tc_imi.tc_imi01 = sfmt("%1%2%3%4",year(g_today) using '&&&&',month(g_today) using '&&',day(g_today) using '&&','001')
     else
@@ -1102,7 +1109,7 @@ function cimq024_generate()
     let l_tc_imi.tc_imi03 = current hour to second
     let l_tc_imi.tc_imi04 = g_user
     let l_tc_imi.tc_imi06 = 'Y'
- 
+
     let g_sql = "insert into tc_imi_file (tc_imi01,tc_imi02,tc_imi03,tc_imi04,tc_imi05,tc_imi06, ",
                 "       img01,ima02,ima021,img02,img03,img04,img09,img10,img37,img18,ccc23,amt,remark) ",
                 "select '",l_tc_imi.tc_imi01,"','",l_tc_imi.tc_imi02,"','",l_tc_imi.tc_imi03,"','",l_tc_imi.tc_imi04,
@@ -1162,7 +1169,7 @@ function cimq024_process(p_tc_imi01)
     define current_msg,last_week_msg,last_month_msg  varchar(100)
     define l_msg varchar(100)
 
-    
+
 
     -- 建立临时表
     call cimq024_crt_tmp()
@@ -1170,29 +1177,29 @@ function cimq024_process(p_tc_imi01)
     -- 上周和上个月的资料
     select unique tc_imi02 into l_tc_imi02 from tc_imi_file where tc_imi01 = p_tc_imi01
 
-    select unique tc_imi01,tc_imi02 into last_week,last_weekdat from tc_imi_file 
+    select unique tc_imi01,tc_imi02 into last_week,last_weekdat from tc_imi_file
      where tc_imi02 = l_tc_imi02 - 7 and tc_imi06 = 'Y'
 
-    select unique tc_imi01,tc_imi02 into last_month,last_monthdat from tc_imi_file 
+    select unique tc_imi01,tc_imi02 into last_month,last_monthdat from tc_imi_file
      where tc_imi02 = mdy(month(l_tc_imi02),1,year(l_tc_imi02)) - 1 and tc_imi06 = 'Y'
 
     let current_msg = sfmt("本次总计(%1/%2/%3)",year(l_tc_imi02) using '&&&&',month(l_tc_imi02) using '&&',day(l_tc_imi02) using '&&')
     let last_week_msg = sfmt("上周总计(%1/%2/%3)",year(last_weekdat) using '&&&&',month(last_weekdat) using '&&',day(last_weekdat) using '&&')
     let last_month_msg = sfmt("上月总计(%1/%2/%3)",year(last_monthdat) using '&&&&',month(last_monthdat) using '&&',day(last_monthdat) using '&&')
-    
+
     #Step1. 仓库汇总
     let g_sql = "select ?,img02_desc||imd02 img02,?,"
 
     for i = 1 to g_col.getlength()
         if i = 1 then let l_start = 0 else let l_start = g_col[i-1]+1 end if
-        let l_end = g_col[i] 
+        let l_end = g_col[i]
 
         let g_sql = g_sql , " sum(case when trunc(sysdate) - img37 between ",l_start," and ",l_end," then amt else 0 end) ,"
     end for
     -- 最后一笔
     let g_sql = g_sql ,  " sum(case when trunc(sysdate) - img37 > ",g_col[g_col.getlength()]," then amt else 0 end) ,"
-    -- 补上0值  
-    for i = g_col.getlength() + 2 to 9  
+    -- 补上0值
+    for i = g_col.getlength() + 2 to 9
         let g_sql = g_sql , " 0 ,"
     end for
 
@@ -1203,7 +1210,7 @@ function cimq024_process(p_tc_imi01)
                           else img02 end img02_desc, img10, img37, amt from tc_imi_file where",
                           "  (remark not like 'KG%' and remark not like 'KH%') or (trunc(sysdate) - img37 <= 60) or (remark is null) ", -- 排除KG KH
                           " ),imd_file where imd01 = img02 and tc_imi01 = ? "
-                          
+
     -- 预制SQL
     let l_presql = g_sql
     let g_sql = "insert into cimq024_tmp ",g_sql,
@@ -1226,7 +1233,7 @@ function cimq024_process(p_tc_imi01)
       from cimq024_tmp where typ = ? and seq = ? "
     prepare cimq024_sum from l_sql
 
-    let l_seq1 = 3.1 
+    let l_seq1 = 3.1
     execute cimq024_sum using l_typ,current_msg,l_seq1,l_typ,l_seq
     if sqlca.sqlcode then
         call cl_err("ins cimq024_tmp",sqlca.sqlcode,1)
@@ -1345,7 +1352,7 @@ function cimq024_process(p_tc_imi01)
             return
         end if
     end if
-    
+
     #Step4. 器件
     let l_typ = '3'
     let l_seq = 3
@@ -1414,7 +1421,7 @@ function cimq024_process(p_tc_imi01)
         call cl_err("ins cimq024_tmp",sqlca.sqlcode,1)
         return
     end if
-    
+
     if not cl_null(last_week) then
         let l_seq = 2
         execute cimq024_proc5 using l_typ,l_seq,last_week
@@ -1513,7 +1520,7 @@ function cimq024_process(p_tc_imi01)
 
     if not cl_null(last_week) then
         let l_seq = 2
-        let l_msg = sfmt("客供件(%1/%2/%3)",year(last_weekdat) using '&&&&',month(last_weekdat) using '&&',day(last_weekdat) using '&&') 
+        let l_msg = sfmt("客供件(%1/%2/%3)",year(last_weekdat) using '&&&&',month(last_weekdat) using '&&',day(last_weekdat) using '&&')
         prepare cimq024_proc8 from l_sql
         execute cimq024_proc8 using l_typ,l_msg,l_seq,last_week
         if sqlca.sqlcode then
@@ -1568,7 +1575,7 @@ end function
 function cimq024_col_init()
     define i,j              integer
     define l_value,l_desc   string
-    
+
     call cl_set_comp_visible("ccc23,amt",false)
 
     let g_action_choice = 'img'
@@ -1584,14 +1591,14 @@ function cimq024_col_init()
     declare cimq024_col cursor for
      select tc_sma06 from tc_sma_file
       where tc_sma01 = 'csmi124' order by tc_sma03
-    
+
     let i = 1
     foreach cimq024_col into g_col[i]
         if sqlca.sqlcode then
             call cl_err("cimq024_col",sqlca.sqlcode,1)
             exit foreach
         end if
-        if i >= 8 then 
+        if i >= 8 then
             exit foreach
         end if
         let i = i + 1
