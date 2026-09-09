@@ -56,14 +56,14 @@ function cpmq011()
                    from pmi_file, pmj_file, pmc_file, ima_file
                   where pmi01 = pmj01 and pmiconf = 'Y' and pmi10 = '1'
                     and pmc01 = pmi03 and ima01 = pmj03
-                    and pmj09 between to_date('250401', 'yymmdd') and to_date('250430', 'yymmdd')
+                    and pmj09 between to_date('260101', 'yymmdd') and to_date('260228', 'yymmdd')
                     and (pmj03, pmi03) in
                         (select unique pmj03, pmi03
                            from pmi_file, pmj_file
                           where pmi01 = pmj01
                             and pmiconf = 'Y'
                             and pmi10 = '1'
-                            and pmj09 < to_date('250401', 'yymmdd'))"
+                            and pmj09 < to_date('260101', 'yymmdd'))"
     prepare cpmq011_ima01_p from l_sql
     execute cpmq011_ima01_p
     if sqlca.sqlcode then
@@ -76,8 +76,9 @@ function cpmq011()
                     (select a.pmi03,b.pmj03,max(b.pmj01) keep(dense_rank LAST order by b.pmj09) pmj01 ,max(b.pmj09) pmj09
                        from pmi_file a ,pmj_file b,cpmq011_p c
                       where a.pmi01 = b.pmj01 and a.pmiconf = 'Y'
-                        and a.pmi10 = '1' and b.pmj09 < to_date('250401', 'yymmdd')
+                        and a.pmi10 = '1' and b.pmj09 < to_date('260101', 'yymmdd')
                         and b.pmj03 = c.ima01 and a.pmi03=c.pmi03
+                        and c.uuid = '",g_uuid,"'
                       group by a.pmi03,b.pmj03)b
                  where a.pmj01= b.pmj01 and a.pmj03 = b.pmj03 and a.pmj09=b.pmj09"
     prepare cpmq011_get_price from l_sql
@@ -88,11 +89,21 @@ function cpmq011()
     end if
     -- 3. 更新本月波动单价
     let l_sql = "insert into cpmq011_pd (uuid, ima01, pmi03, dat, change, price, amt)
-                 select '",g_uuid,"',b.pmj03,a.pmi03,b.pmj09,0,b.pmj07,0
+                SELECT uuid,  pmj03, pmi03, pmj09, col6, pmj07, col8 FROM (
+                    select '",g_uuid,"' uuid,b.pmj03,a.pmi03,b.pmj09,0 col6,b.pmj07,0 col8,
+                        ROW_NUMBER() OVER (
+                            PARTITION BY b.pmj03, a.pmi03, b.pmj09 
+                            ORDER BY a.pmi01 DESC
+                        ) AS rn
                   from pmi_file a, pmj_file b, cpmq011_p c
                  where a.pmi01 = b.pmj01 and a.pmiconf = 'Y' and a.pmi10 = '1'
-                   and b.pmj09 between to_date('250401', 'yymmdd') and to_date('250430', 'yymmdd')
-                   and b.pmj03 = c.ima01 and a.pmi03 = c.pmi03"
+                   and b.pmj09 between to_date('260101', 'yymmdd') and to_date('260228', 'yymmdd')
+                   and b.pmj03 = c.ima01 and a.pmi03 = c.pmi03 and c.uuid = '",g_uuid,"') WHERE rn = 1"
+                --  select '",g_uuid,"',b.pmj03,a.pmi03,b.pmj09,0,b.pmj07,0
+                --   from pmi_file a, pmj_file b, cpmq011_p c
+                --  where a.pmi01 = b.pmj01 and a.pmiconf = 'Y' and a.pmi10 = '1'
+                --    and b.pmj09 between to_date('260101', 'yymmdd') and to_date('260228', 'yymmdd')
+                --    and b.pmj03 = c.ima01 and a.pmi03 = c.pmi03 and c.uuid = '",g_uuid,"'"
     prepare cpmq011_ins_prices from l_sql
     execute cpmq011_ins_prices
     if sqlca.sqlcode then
@@ -140,7 +151,7 @@ function cpmq011_sale()
                  select unique '",g_uuid,"', oeb04, ima02, ima021
                    from oea_file, oeb_file, ima_file
                   where oea01 = oeb01 and oeaconf = 'Y'
-                    and oea02 between to_date('250401', 'yymmdd') and to_date('250430', 'yymmdd')
+                    and oea02 between to_date('260101', 'yymmdd') and to_date('260228', 'yymmdd')
                     and oea00 = '1' and oeb04 = ima01 and oeb13 <> 0
                     and oeb04 not like '%.%' "
     prepare cpmq011_ins_saleitem from l_sql
@@ -157,7 +168,7 @@ function cpmq011_sale()
                                 max(tc_xmf05) keep(dense_rank last order by tc_xmedate) tc_xmf05
                            from tc_xme_file, tc_xmf_file 
                           where tc_xme00 = tc_xmf00 and tc_xmeconf = 'Y' 
-                            and tc_xmedate < to_date('250401', 'yymmdd')
+                            and tc_xmedate < to_date('260101', 'yymmdd')
                           group by  tc_xmf03)
                   where ima01 = tc_xmf03 and uuid = '",g_uuid,"' "
     prepare cpmq011_upd_first from l_sql
@@ -168,11 +179,13 @@ function cpmq011_sale()
     end if
     -- 3. 取期间单价
     let l_sql = "insert into cpmq011_sd (uuid, ima01, dat, change, price, amt)
-                 select uuid, ima01, tc_xmedate, 0, tc_xmf05, 0
+                 select uid, ima01, tc_xmedate, col1, tc_xmf05, col2 from (
+                 select uuid, ima01, tc_xmedate, 0 col1, tc_xmf05, 0 col2,
+                        ROW_NUMBER() OVER ( PARTITION BY ima01, tc_xmedate ORDER BY tc_xme00 desc ) AS rn
                    from cpmq011_s,tc_xme_file, tc_xmf_file 
                   where tc_xme00 = tc_xmf00 and tc_xmeconf = 'Y'
-                    and tc_xmedate between to_date('250401', 'yymmdd') and to_date('250430', 'yymmdd')
-                    and tc_xmf03 = ima01 and uuid = '",g_uuid,"'"
+                    and tc_xmedate between to_date('260101', 'yymmdd') and to_date('260228', 'yymmdd')
+                    and tc_xmf03 = ima01 and uuid = '",g_uuid,"') where rn=1"
     prepare cpmq011_upd_dur from l_sql
     execute cpmq011_upd_dur
     if sqlca.sqlcode then
