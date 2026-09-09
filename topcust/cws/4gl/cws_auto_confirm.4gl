@@ -74,7 +74,7 @@ end function
 function cws_auto_asfi301(p_prog,p_docno)
     define p_prog like type_file.chr20
     define p_docno like sfb_file.sfb01
-    
+
 end function
 
 function cws_auto_cpmi252(p_prog,p_docno)
@@ -82,6 +82,10 @@ function cws_auto_cpmi252(p_prog,p_docno)
     define p_docno like oea_file.oea01
 
     call i255sub_y_upd(p_docno,"confirm",true)
+    let g_bgjob = 'Y'
+     if g_success = 'Y' then
+         call scpmp252(p_docno,true)
+     end if
 
 end function
 
@@ -90,7 +94,7 @@ function cws_auto_apmi255(p_prog,p_docno)
     define p_docno like oea_file.oea01
 
     let g_action_choice = "efconfirm"
-    if p_prog = 'apmi255' then 
+    if p_prog = 'apmi255' then
         call apmi255sub_y_upd(p_docno,"efconfirm",'1',true)
     end if
     if p_prog = 'apmi265' then
@@ -117,7 +121,7 @@ function cws_auto_aeci100(p_prog,p_docno)
 
     -- call cl_temp_log('cws_auto_confirm',false,sfmt("ecu01: %1 ecu02: %2",l_ecu01,l_ecu02) )
 
-    if cl_null(l_ecu01) or cl_null(l_ecu02) then 
+    if cl_null(l_ecu01) or cl_null(l_ecu02) then
         return
     end if
 
@@ -132,14 +136,14 @@ function cws_auto_aeci100(p_prog,p_docno)
         call aeci100sub_y_chk(l_ecu01,l_ecu02)
         -- call cl_temp_log('cws_auto_confirm',false,sfmt("%(ERRORFILE):%(ERRORLINE) y_chk:%1",g_success) )
         if g_success = 'Y' then
-            call aeci100sub_y_upd(l_ecu01,l_ecu02,false)
+            call aeci100sub_y_upd(l_ecu01,l_ecu02,true)
             -- call cl_temp_log('cws_auto_confirm',false,sfmt("%(ERRORFILE):%(ERRORLINE) y_upd:%1",g_success) )
         end if
     end if
     -- call cl_temp_log('cws_auto_confirm',false,sfmt("%(ERRORFILE):%(ERRORLINE) ecu10:%1",l_ecu10) )
     if g_success ='Y' and l_ecu10 = 'N' then
         -- call cl_temp_log('cws_auto_confirm',false,sfmt("%(ERRORFILE):%(ERRORLINE) release:%1",g_success) )
-        call aeci100sub_release(l_ecu01,l_ecu02,false)
+        call aeci100sub_release(l_ecu01,l_ecu02,true)
     end if
-    
+
 end function

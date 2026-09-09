@@ -6,8 +6,7 @@
 
 DATABASE ds
 
-GLOBALS "../../config/top.global"
-
+GLOBALS "../../../tiptop/config/top.global"
 
 --
 function scpmp252(p_pmw01,p_tran)
@@ -19,13 +18,21 @@ function scpmp252(p_pmw01,p_tran)
         begin work
     end if
 
+    --run "echo 'begin:"||current year to second||" ' > /u1/out/darcy.txt  "
+
     call scpmp252_ins_tmp(p_pmw01)
+    --run "echo 'scpmp252_ins_tmp ' >> /u1/out/darcy.txt  "
     if g_success = 'Y' then
+        select * into g_aza.* from aza_file
         call scpmp252_gen(p_pmw01)
+        --run "echo 'scpmp252_gen ' >> /u1/out/darcy.txt  "
+        --run "echo '"||g_success||"' >> /u1/out/darcy.txt  "
         if g_success = 'Y' then
             call scpmp252_confirm(p_pmw01)
         end if
     end if
+    --run "echo 'scpmp252_confirm ' >> /u1/out/darcy.txt  "
+    --run "echo '"||g_success||"' >> /u1/out/darcy.txt  "
 
     if not p_tran then
         if g_success = 'Y' then
@@ -128,9 +135,11 @@ function scpmp252_gen(p_pmw01)
     initialize l_pmi.* to null
     initialize l_pmj.* to null
 
+    --run "echo '138  scpmp252_gen' >> /u1/out/darcy.txt  "
     foreach scpmp252_gen_pmj_cl into l_pmi.*,l_pmj.*,l_tc_pmx01,l_tc_pmx02
         if sqlca.sqlcode then
             call cl_err('scpmp252_gen_pmj_cl',sqlca.sqlcode,0)
+            --run "echo '142  scpmp252_gen' >> /u1/out/darcy.txt  "
             let g_success = 'N'
             exit foreach
         end if
@@ -140,24 +149,30 @@ function scpmp252_gen(p_pmw01)
             let g_success = 'N'
             exit foreach
         end if
+        --run "echo '152  scpmp252_gen' >> /u1/out/darcy.txt  "
         #新增单别
         if l_pmj.pmj02 = 1 then
             let l_pmi01 = ""
+            --run "echo '156  scpmp252_gen' >> /u1/out/darcy.txt  "
             call s_auto_assign_no("apm",l_pmi.pmi01,l_pmi.pmi02,"5","pmi_file","pmi01","","","")
                   returning li_result,l_pmi01
+            --run "echo '159  scpmp252_gen "||l_pmi.pmi01||l_pmi.pmi02||"' >> /u1/out/darcy.txt  "
             if (not li_result) then
                call cl_err(l_pmi.pmi01,'wag-673',0)
                let g_success ='N'
                exit foreach
             end if
+            --run "echo '165  scpmp252_gen' >> /u1/out/darcy.txt  "
             let l_pmi.pmi07 = 'N'
             let l_pmi.pmi01 = l_pmi01
             insert into pmi_file values (l_pmi.*)
+            --run "echo '168  scpmp252_gen' >> /u1/out/darcy.txt  "
             if sqlca.sqlcode then
                 call cl_err(l_pmi.pmi01,sqlca.sqlcode,0)
                 let g_success = 'N'
                 exit foreach
             end if
+            --run "echo '175  scpmp252_gen' >> /u1/out/darcy.txt  "
         end if
         # 依据料号设置上次核价单价和核价日期
         let l_pmj.ta_pmj01 = null
@@ -166,24 +181,31 @@ function scpmp252_gen(p_pmw01)
         let l_pmj.ta_pmj04 = null
         let l_pmj.ta_pmj05 = null
         let l_pmj.ta_pmj06 = null
+        --run "echo '184  scpmp252_gen' >> /u1/out/darcy.txt  "
         open scpmp252_last_price using l_pmj.pmj03,l_pmj.pmj10,l_pmj.pmj12,l_pmj.pmj13,l_pmj.pmj03,l_pmj.pmj10,l_pmj.pmj12,l_pmj.pmj13
         fetch scpmp252_last_price into l_pmj.ta_pmj01,l_pmj.ta_pmj02,l_pmj.ta_pmj03,l_pmj.ta_pmj04,l_pmj.ta_pmj05,l_pmj.ta_pmj06
         close scpmp252_last_price
+        --run "echo '188  scpmp252_gen' >> /u1/out/darcy.txt  "
         let l_pmj.pmj01 = l_pmi01
         insert into pmj_file values (l_pmj.*)
+        --run "echo '191  scpmp252_gen' >> /u1/out/darcy.txt  "
         if sqlca.sqlcode then
            call cl_err(l_pmj.pmj01||"-"||l_pmj.pmj02,sqlca.sqlcode,0)
            let g_success = 'N'
            exit foreach
         end if
+        --run "echo '196  scpmp252_gen' >> /u1/out/darcy.txt  "
         update tc_pmx_file set tc_pmx18 = l_pmj.pmj01,tc_pmx19 = l_pmj.pmj02
          where tc_pmx01 = l_tc_pmx01 and tc_pmx02 = l_tc_pmx02
+         --run "echo '200  scpmp252_gen' >> /u1/out/darcy.txt  "
         if sqlca.sqlcode then
            call cl_err(l_tc_pmx01||"-"||l_tc_pmx02,sqlca.sqlcode,0)
            let g_success = 'N'
            exit foreach
         end if
+        --run "echo '206  scpmp252_gen' >> /u1/out/darcy.txt  "
     end foreach
+    --run "echo '208  scpmp252_gen' >> /u1/out/darcy.txt  "
     delete from cpmp252_tmp_file where tc_pmx01 = p_pmw01
 end function
 
@@ -198,8 +220,11 @@ function scpmp252_confirm(p_pmw01)
     prepare scpmp252_cp from l_sql
     declare scpmp252_ccur cursor for scpmp252_cp
 
+    run "echo '207 scpmp252_confirm ' >> /u1/out/darcy.txt  "
+
     foreach scpmp252_ccur using p_pmw01 into l_pmi01,l_pmi10
         if sqlca.sqlcode then
+            run "echo 'scpmp252_confirm "||sqlca.sqlcode||"' >> /u1/out/darcy.txt  "
             call cl_err('scpmp252_ccur',sqlca.sqlcode,0)
             let g_success = 'N'
             exit foreach
@@ -207,6 +232,8 @@ function scpmp252_confirm(p_pmw01)
 
         let g_action_choice = "efconfirm"
         call apmi255sub_y_upd(l_pmi01,"efconfirm",l_pmi10,true)
+        run "echo 'apmi255sub_y_upd ' >> /u1/out/darcy.txt  "
     end foreach
+    run "echo '221 scpmp252_confirm ' >> /u1/out/darcy.txt  "
 
 end function
