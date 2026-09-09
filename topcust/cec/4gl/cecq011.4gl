@@ -5,9 +5,9 @@
 # Date & Author..: 16/09/03 By lidj
 
 DATABASE ds
- 
+
 GLOBALS "../../../tiptop/config/top.global"
- 
+
 #模組變數(Module Variables)
 DEFINE
     g_tc_ima           RECORD LIKE tc_ima_file.*,
@@ -15,7 +15,7 @@ DEFINE
     g_tc_ima_o         RECORD LIKE tc_ima_file.*,
     g_tc_ima01_t       LIKE tc_ima_file.tc_ima01,
     g_tc_imb           DYNAMIC ARRAY OF RECORD    #程式變數(Program Variables)
-        sgm03               LIKE sgm_file.sgm03,          #       
+        sgm03               LIKE sgm_file.sgm03,          #
         tc_imb03            LIKE tc_imb_file.tc_imb03,    #作业编号
         ecd02               LIKE ecd_file.ecd02,          #作业说明 add by gujq 20160905
         tc_imb04            LIKE tc_imb_file.tc_imb04,    #LOT单号
@@ -38,35 +38,35 @@ DEFINE
         tc_imb03_1          LIKE tc_imb_file.tc_imb03,
         sfb05_1             LIKE sfb_file.sfb05,
         ima02_1               LIKE ima_file.ima02,          #品名
-        ima021_1              LIKE ima_file.ima021,         #规格 
-        sum_1                 LIKE img_file.img10 
+        ima021_1              LIKE ima_file.ima021,         #规格
+        sum_1                 LIKE img_file.img10
                     END RECORD,
     g_tc_imb_2           DYNAMIC ARRAY OF RECORD    #程式變數(Program Variables)
         sfb05_2             LIKE sfb_file.sfb05,
        tc_imb03_2           LIKE tc_imb_file.tc_imb03,
         ima02_2              LIKE ima_file.ima02,          #品名
         ima021d             LIKE ima_file.ima021,         #规格
-        sum_2               LIKE img_file.img10      
+        sum_2               LIKE img_file.img10
                     END RECORD,
     g_tc_imb_3       DYNAMIC ARRAY OF RECORD    #程式??(Program Variables)
         tc_imb03_3           LIKE tc_imb_file.tc_imb03,
         ima02_3              LIKE ima_file.ima02,          #品名
         ima021_3             LIKE ima_file.ima021,         #规格
-        sgm06                LIKE sgm_file.sgm06,          #工作站 
+        sgm06                LIKE sgm_file.sgm06,          #工作站
         sum_3                LIKE img_file.img10
                     END RECORD,
    #g_wc,g_wc2,g_wc3,g_wc4,g_wc5,g_sql,g_sql1,g_sql2     VARCHAR(1000)
-    g_wc,g_wc2,g_wc3,g_wc4,g_wc5,g_sql,g_sql1,g_sql2    STRING,    #TQC-630166        
+    g_wc,g_wc2,g_wc3,g_wc4,g_wc5,g_sql,g_sql1,g_sql2    STRING,    #TQC-630166
     g_rec_b1,g_rec_b2,g_rec_b3,g_rec_b4    LIKE type_file.num5,            #單身筆數        #No.FUN-680072 SMALLINT
     g_t1            LIKE type_file.chr3,                  #No.FUN-680072CHAR(3)
     l_ac            LIKE type_file.num5                 #目前處理的ARRAY CNT        #No.FUN-680072 SMALLINT
- 
+
 #主程式開始
 DEFINE   p_row,p_col         LIKE type_file.num5        #No.FUN-680072 SMALLINT
 #FUN-540036---start
-DEFINE  l_action_flag        STRING    
+DEFINE  l_action_flag        STRING
 #FUN-540036---end
-DEFINE  g_forupd_sql STRING   #SELECT ... FOR UPDATE SQL     
+DEFINE  g_forupd_sql STRING   #SELECT ... FOR UPDATE SQL
 DEFINE  g_before_input_done  LIKE type_file.num5     #No.FUN-680072 SMALLINT
 DEFINE  g_chr           LIKE type_file.chr1          #No.FUN-680072 VARCHAR(1)
 DEFINE  g_cnt           LIKE type_file.num10         #No.FUN-680072 INTEGER
@@ -79,36 +79,42 @@ DEFINE  mi_no_ask       LIKE type_file.num5          #No.FUN-680072 SMALLINT
 DEFINE  g_void          LIKE type_file.chr1          #No.FUN-680072CHAR(1)
 DEFINE g_argv1     LIKE tc_ima_file.tc_ima01     #FUN-7C0050
 DEFINE g_argv2     STRING                  #FUN-7C0050      #執行功能
- 
+
 MAIN
- 
+
 # DEFINE      l_time    LIKE type_file.chr8            #No.FUN-6A0068
- 
+
     OPTIONS
         INPUT NO WRAP
     DEFER INTERRUPT
- 
+
     IF (NOT cl_user()) THEN
        EXIT PROGRAM
     END IF
- 
+
     WHENEVER ERROR CALL cl_err_msg_log
     IF (NOT cl_setup("CEC")) THEN
        EXIT PROGRAM
     END IF
- 
+
       CALL  cl_used(g_prog,g_time,1) #No.MOD-580088  HCN 20050818  #No.FUN-6A0068
          RETURNING g_time    #No.FUN-6A0068
- 
+
    LET g_argv1=ARG_VAL(1)   #           #FUN-7C0050
    LET g_argv2=ARG_VAL(2)   #執行功能   #FUN-7C0050
- 
+
     LET p_row = 4 LET p_col = 5
     OPEN WINDOW t001_w33 AT 2,2 WITH FORM "cec/42f/cecq011"
           ATTRIBUTE (STYLE = g_win_style CLIPPED) #No.FUN-580092 HCN
- 
+
     CALL cl_ui_init()
- 
+
+    # 引导至cecq200
+    if cl_confirm('cec-064') then
+        call cl_cmdrun('cecq200')
+    end if
+    exit program
+
    #FUN-7C0050
    IF NOT cl_null(g_argv1) THEN
       CASE g_argv2
@@ -122,21 +128,21 @@ MAIN
             IF cl_chk_act_auth() THEN
                CALL t001_a()
             END IF}
-         OTHERWISE        
-            CALL t001_q() 
+         OTHERWISE
+            CALL t001_q()
       END CASE
    END IF
    #--
- 
+
     CALL t001_menu()
 
     DROP TABLE cect001_tmp #add by guanyao160930
- 
+
     CLOSE WINDOW t001_w33
     CALL  cl_used(g_prog,g_time,2) #No.MOD-580088  HCN 20050818  #No.FUN-6A0068
       RETURNING g_time    #No.FUN-6A0068
 END MAIN
- 
+
 #QBE 查詢資料
 FUNCTION t001_cs()
  DEFINE    l_type          LIKE type_file.chr2       #No.FUN-680072CHAR(2)
@@ -146,7 +152,7 @@ FUNCTION t001_cs()
    CALL g_tc_imb_2.clear()
    CALL g_tc_imb_3.clear()
    CALL cl_set_head_visible("folder01","YES")    #No.FUN-6B0029
- 
+
 #  IF g_argv1<>' ' THEN                     #FUN-7C0050
 #     LET g_wc=" tc_ima01='",g_argv1,"'"       #FUN-7C0050
 #     LET g_wc2=" 1=1"                      #FUN-7C0050
@@ -155,10 +161,10 @@ FUNCTION t001_cs()
 #  ELSE
    CONSTRUCT BY NAME g_wc ON                   #tianry add 161226
                 shm05,shm012,shm01,sgm04,sgm06
-               
- 
+
+
    ON ACTION CONTROLP
-      CASE  
+      CASE
          WHEN INFIELD(shm01)
              CALL cl_init_qry_var()
                      LET g_qryparam.state    = "c"
@@ -175,7 +181,7 @@ FUNCTION t001_cs()
                      CALL cl_create_qry() RETURNING g_qryparam.multiret
                       DISPLAY g_qryparam.multiret TO shm012   #MOD-4A0252
                      NEXT FIELD shm012
-           WHEN INFIELD(shm05) 
+           WHEN INFIELD(shm05)
                CALL q_sel_ima(TRUE, "q_ima18","","","","","","","",'')  RETURNING  g_qryparam.multiret
                DISPLAY g_qryparam.multiret TO shm05
 
@@ -190,20 +196,20 @@ FUNCTION t001_cs()
                      DISPLAY g_qryparam.multiret TO sgm06  #No:MOD-970010 modify
                      NEXT FIELD sgm06
 
-         
+
          OTHERWISE EXIT CASE
       END CASE
       ON IDLE g_idle_seconds
          CALL cl_on_idle()
          CONTINUE CONSTRUCT
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION controlg      #MOD-4C0121
          CALL cl_cmdask()     #MOD-4C0121
- 
- 
+
+
    END CONSTRUCT
 
    #tianry add 161226
@@ -214,8 +220,8 @@ FUNCTION t001_cs()
 
     BEFORE INPUT
        LET g_before_input_done = TRUE
-       LET g_tc_ima.tc_imaud03='3' 
-       DISPLAY BY NAME g_tc_ima.tc_imaud03 
+       LET g_tc_ima.tc_imaud03='3'
+       DISPLAY BY NAME g_tc_ima.tc_imaud03
 
      ON ACTION CONTROLF                  #欄位說明
         CALL cl_set_focus_form(ui.Interface.getRootNode()) RETURNING g_fld_name,g_frm_name
@@ -240,16 +246,16 @@ FUNCTION t001_cs()
 
     END INPUT
 
-   #tianry add end 
+   #tianry add end
    IF INT_FLAG THEN RETURN END IF
- 
+
 END FUNCTION
- 
+
 FUNCTION t001_menu()
 DEFINE l_cmd  LIKE type_file.chr1000        #No.FUN-820002
 #str---add by guanyao160923
-DEFINE   w    ui.Window      
-DEFINE   f    ui.Form       
+DEFINE   w    ui.Window
+DEFINE   f    ui.Form
 DEFINE   page om.DomNode
 #end---add by guanyao160923
 #darcy:2023/12/22 add s---
@@ -289,22 +295,22 @@ define list dynamic array of record
          #   IF cl_chk_act_auth() THEN
          #      CALL t001_copy()
          #   END IF
-         WHEN "confirm"               #審核 
+         WHEN "confirm"               #審核
            IF cl_chk_act_auth() THEN
                 CALL t001_y()
-           END IF 
+           END IF
          WHEN "undo_confirm"          #取消審核�
             IF cl_chk_act_auth() THEN
                CALL t001_z()
             END IF
          WHEN "sure"                  #交接确认
-            IF cl_chk_act_auth() THEN 
+            IF cl_chk_act_auth() THEN
                CALL t001_s()
-            END IF   
+            END IF
          WHEN "undo_sure"             #取消确认
-            IF cl_chk_act_auth() THEN 
+            IF cl_chk_act_auth() THEN
                CALL t001_us()
-            END IF      
+            END IF
          WHEN "modify"
             IF cl_chk_act_auth() THEN
                CALL t001_u()
@@ -314,9 +320,9 @@ define list dynamic array of record
                CALL t001_x()
             END IF  }
          WHEN "output"
-            IF cl_chk_act_auth()                                           
-               THEN CALL t001_out()                                    
-            END IF                                                         
+            IF cl_chk_act_auth()
+               THEN CALL t001_out()
+            END IF
          WHEN "help"
             CALL cl_show_help()
          WHEN "exit"
@@ -329,8 +335,8 @@ define list dynamic array of record
             IF cl_chk_act_auth() THEN
                LET w = ui.Window.getCurrent()
                LET f = w.getForm()
-               CASE l_action_flag 
-                  WHEN 'accessory' 
+               CASE l_action_flag
+                  WHEN 'accessory'
                      LET page = f.FindNode("Page","page3")
                      CALL cl_export_to_excel(page,base.TypeInfo.create(g_tc_imb),'','')
                   WHEN 'user_defined_columns'
@@ -339,10 +345,10 @@ define list dynamic array of record
                    WHEN 'spare_part'
                      LET page = f.FindNode("Page","page5")
                      CALL cl_export_to_excel(page,base.TypeInfo.create(g_tc_imb_2),'','')
-                   WHEN 'try'   #tianry add 161226  
+                   WHEN 'try'   #tianry add 161226
                      LET page = f.FindNode("Page","page6")
                      CALL cl_export_to_excel(page,base.TypeInfo.create(g_tc_imb_3),'','')
-                   OTHERWISE 
+                   OTHERWISE
                      LET page = f.FindNode("Page","page3")
                      CALL cl_export_to_excel(page,base.TypeInfo.create(g_tc_imb),'','')
                END CASE
@@ -369,20 +375,20 @@ define list dynamic array of record
                  LET g_doc.column1 = "tc_ima01"
                  LET g_doc.value1 = g_tc_ima.tc_ima01
                  CALL cl_doc()
-               END IF  
+               END IF
          END IF  }
          #No.FUN-6B0050-------add--------end----
       END CASE
    END WHILE
 END FUNCTION
- 
- 
+
+
 FUNCTION t001_q()
- 
+
    LET g_row_count = 0
    LET g_curs_index = 0
    CALL cl_navigator_setting( g_curs_index, g_row_count )
- 
+
    MESSAGE ""
    CALL cl_opmsg('q')
    CLEAR FORM
@@ -391,7 +397,7 @@ FUNCTION t001_q()
    CALL g_tc_imb_2.clear()
    CALL g_tc_imb_3.clear()  #tianry add 161226
    DISPLAY '   ' TO FORMONLY.cnt
- 
+
    CALL t001_cs()
    IF INT_FLAG THEN
       LET INT_FLAG = 0
@@ -405,28 +411,28 @@ FUNCTION t001_q()
    END IF
    MESSAGE ""
 END FUNCTION
- 
- 
+
+
 #將資料顯示在畫面上
 FUNCTION t001_show()
 DEFINE l_gen02 LIKE gen_file.gen02
 DEFINE l_eca02 LIKE eca_file.eca02
 DEFINE l_ecg02 LIKE ecg_file.ecg02
 
-   CALL temp_chuli()             
+   CALL temp_chuli()
    CALL t001_b1_fill("1=1")                 #單身
    CALL t001_b2_fill("1=1")                 #單身
    CALL t001_b3_fill("1=1")                 #單身
-   CALL t001_b4_fill("1=1")  
+   CALL t001_b4_fill("1=1")
 END FUNCTION
- 
- 
+
+
 FUNCTION t001_b1_fill(p_wc1)
 DEFINE
-   #p_wc1           VARCHAR(200) #TQC-630166     
-    p_wc1           STRING    #TQC-630166    
-    #str----add by guanyao160923 
-    DEFINE l_tc_imb06    LIKE tc_imb_file.tc_imb06  
+   #p_wc1           VARCHAR(200) #TQC-630166
+    p_wc1           STRING    #TQC-630166
+    #str----add by guanyao160923
+    DEFINE l_tc_imb06    LIKE tc_imb_file.tc_imb06
     DEFINE l_tc_imb07    LIKE tc_imb_file.tc_imb07
     DEFINE l_tc_imb08    LIKE tc_imb_file.tc_imb08
     DEFINE l_tc_imb09    LIKE tc_imb_file.tc_imb09
@@ -436,7 +442,7 @@ DEFINE
     DEFINE l_tc_imb13    LIKE tc_imb_file.tc_imb13
     DEFINE l_wx1         LIKE tc_imb_file.tc_imb13
     DEFINE l_wx2         LIKE tc_imb_file.tc_imb13
-    #end----add by guanyao160923 
+    #end----add by guanyao160923
     #add by zhangzs 210206  --s----
     DEFINE l_shb01       LIKE shb_file.shb01
     DEFINE l_tsc05       LIKE tsc_file.tsc05
@@ -444,10 +450,10 @@ DEFINE
     DEFINE l_sgm03       LIKE sgm_file.sgm03
     DEFINE l_imaud10     LIKE ima_file.imaud10
     #add by zhangzs 210206  --e----
-   
 
-    LET l_tc_imb06 = 0 LET l_tc_imb07 = 0 LET l_tc_imb08 = 0 LET l_tc_imb09 = 0 
-    LET l_tc_imb10 = 0 LET l_tc_imb11 = 0 LET l_tc_imb12 = 0 LET l_tc_imb13 = 0   
+
+    LET l_tc_imb06 = 0 LET l_tc_imb07 = 0 LET l_tc_imb08 = 0 LET l_tc_imb09 = 0
+    LET l_tc_imb10 = 0 LET l_tc_imb11 = 0 LET l_tc_imb12 = 0 LET l_tc_imb13 = 0
     #end---add by gaunyao160923
     IF cl_null(p_wc1) THEN LET p_wc1 = ' 1=1' END IF
    # LET g_sql=" SELECT sgm03,sgm04,ecd02,sgm01,sgm02,sfb05,   '','',l_sum1,l_sum2,l_sum3,l_sum6,l_sum4,l_sum5,l_sum7,l_sum10 FROM cect001_tmp  WHERE l_sum7!=0"
@@ -456,13 +462,13 @@ DEFINE
     LET g_sql=" SELECT sgm03,sgm04,ecd02,sgm01,sgm02,sfb05,   '','',l_sum1,l_sum2,l_sum3,l_sum6,l_sum4,l_sum5,wipqty,l_sum10,0 FROM cect001_tmp  WHERE wipqty!=0"
     PREPARE t001_pb1 FROM g_sql
     DECLARE tc_imb_curs1 CURSOR FOR t001_pb1
- 
+
     CALL g_tc_imb.clear()
     LET l_ac = 1
     FOREACH tc_imb_curs1 INTO g_tc_imb[l_ac].*   #單身 ARRAY 填充
        IF STATUS THEN CALL cl_err('foreach:',STATUS,1) EXIT FOREACH END IF
- #      SELECT ecd02 INTO g_tc_imb[l_ac].ecd02 FROM ecd_file WHERE ecd01 = g_tc_imb[l_ac].tc_imb03 
- #      SELECT ima02,ima021 INTO g_tc_imb[l_ac].ima02,g_tc_imb[l_ac].ima021 FROM ima_file WHERE ima01 = g_tc_imb[l_ac].sfb05 
+ #      SELECT ecd02 INTO g_tc_imb[l_ac].ecd02 FROM ecd_file WHERE ecd01 = g_tc_imb[l_ac].tc_imb03
+ #      SELECT ima02,ima021 INTO g_tc_imb[l_ac].ima02,g_tc_imb[l_ac].ima021 FROM ima_file WHERE ima01 = g_tc_imb[l_ac].sfb05
        #add by zhangzs 210206 ----s-----  判断 工艺序号 作业编号 LOT单号 在atmt260是否存在过账数据
        LET l_tsc05 = 0
        LET l_tsc05_1 = 0 #add by liy211208 #初始化
@@ -473,19 +479,19 @@ DEFINE
           SELECT tsc05 INTO l_tsc05_1 FROM tsc_file WHERE tscud02 = l_shb01 AND tscpost = 'Y'#查詢atmt260符合过账条件的数量
           IF sqlca.sqlcode = 100 THEN LET l_tsc05_1 = 0 END IF #add by liy211208
           SELECT imaud10 INTO l_imaud10 FROM  ima_file WHERE ima01 = g_tc_imb[l_ac].sfb05    #add by sx210313 排板数量
-          IF l_tsc05_1 IS NULL THEN 
+          IF l_tsc05_1 IS NULL THEN
              LET l_tsc05_1 = 0
-          END IF 
-          IF l_imaud10 IS NULL THEN 
+          END IF
+          IF l_imaud10 IS NULL THEN
              LET l_imaud10 = 1
-          END IF 
+          END IF
           #LET l_tsc05 = l_tsc05 + l_tsc05_1 #mark by liy211208
            LET l_tsc05 = l_tsc05_1 #add by liy211208
           LET g_tc_imb[l_ac].tc_imb10 = g_tc_imb[l_ac].tc_imb10 - l_tsc05
-          LET g_tc_imb[l_ac].tc_imb13 = g_tc_imb[l_ac].tc_imb10 / l_imaud10   #PNL数量 
+          LET g_tc_imb[l_ac].tc_imb13 = g_tc_imb[l_ac].tc_imb10 / l_imaud10   #PNL数量
           UPDATE cect001_tmp SET wipqty = g_tc_imb[l_ac].tc_imb10 WHERE sgm03 = g_tc_imb[l_ac].sgm03 AND sgm01 = g_tc_imb[l_ac].tc_imb04
           UPDATE cect001_tmp SET l_sum10 = g_tc_imb[l_ac].tc_imb13 WHERE sgm03 = g_tc_imb[l_ac].sgm03 AND sgm01 = g_tc_imb[l_ac].tc_imb04
-       END FOREACH     
+       END FOREACH
        #add by zhangzs 210206 ----e-----
        LET l_tc_imb06 = l_tc_imb06 +g_tc_imb[l_ac].tc_imb06
        LET l_tc_imb07 = l_tc_imb07 +g_tc_imb[l_ac].tc_imb07
@@ -498,20 +504,20 @@ DEFINE
 
      LET l_wx1=0
      LET l_wx2=0
-     
-       SELECT  sum(tc_snb09) INTO l_wx1 FROM tc_snb_file,tc_sna_file 
-       WHERE tc_sna01=tc_snb01 AND tc_snapost='Y'  
-       AND tc_snb20=g_tc_imb[l_ac].tc_imb04  AND tc_snb05=g_tc_imb[l_ac].tc_imb03 
+
+       SELECT  sum(tc_snb09) INTO l_wx1 FROM tc_snb_file,tc_sna_file
+       WHERE tc_sna01=tc_snb01 AND tc_snapost='Y'
+       AND tc_snb20=g_tc_imb[l_ac].tc_imb04  AND tc_snb05=g_tc_imb[l_ac].tc_imb03
        AND tc_snb06='维修站'
-       
-       IF cl_null(l_wx1) THEN LET l_wx1=0 END IF 
+
+       IF cl_null(l_wx1) THEN LET l_wx1=0 END IF
        SELECT  sum(tc_snb09) INTO l_wx2
-       FROM tc_snb_file,tc_sna_file 
-       WHERE tc_sna01=tc_snb01 AND tc_snapost='Y'  
+       FROM tc_snb_file,tc_sna_file
+       WHERE tc_sna01=tc_snb01 AND tc_snapost='Y'
        AND tc_snb20=g_tc_imb[l_ac].tc_imb04 AND tc_snb06=g_tc_imb[l_ac].tc_imb03
        AND tc_snb05='维修站'
-      
-      IF cl_null(l_wx2) THEN LET l_wx2=0 END IF 
+
+      IF cl_null(l_wx2) THEN LET l_wx2=0 END IF
        LET  g_tc_imb[l_ac].tc_imb14=l_wx2-l_wx1
         LET l_ac=l_ac+1
         {
@@ -521,7 +527,7 @@ DEFINE
        END IF
        }
     END FOREACH
-    
+
     LET g_tc_imb[l_ac].tc_imb03 = '汇总'
     LET g_tc_imb[l_ac].tc_imb06 = l_tc_imb06
     LET g_tc_imb[l_ac].tc_imb07 = l_tc_imb07
@@ -532,19 +538,19 @@ DEFINE
     LET g_tc_imb[l_ac].tc_imb12 = l_tc_imb12
     LET g_tc_imb[l_ac].tc_imb13 = l_tc_imb13
 END FUNCTION
- 
+
 FUNCTION t001_b2_fill(p_wc2)              #BODY FILL UP
 DEFINE
-   #p_wc2           VARCHAR(200) #TQC-630166 
-    p_wc2           STRING    #TQC-630166 
- 
+   #p_wc2           VARCHAR(200) #TQC-630166
+    p_wc2           STRING    #TQC-630166
+
     IF cl_null(p_wc2) THEN LET p_wc2 = ' 1=1' END IF
    # LET g_sql = "SELECT sgm02,sgm04,sfb05,ima02,ima021,sum(l_sum7) FROM cect001_tmp ",
     LET g_sql = "SELECT sgm02,sgm04,sfb05,ima02,ima021,sum(wipqty) FROM cect001_tmp ",
                 " GROUP BY  sgm02,sgm04,sfb05,ima02,ima021 ORDER BY 1"
     PREPARE t001_pb2 FROM g_sql
     DECLARE tc_imc_curs2 CURSOR FOR t001_pb2
- 
+
     CALL g_tc_imb_1.clear()
     LET g_cnt = 1
     FOREACH tc_imc_curs2 INTO g_tc_imb_1[g_cnt].*   #單身 ARRAY 填充
@@ -552,7 +558,7 @@ DEFINE
           CALL cl_err('foreach:',STATUS,1)
           EXIT FOREACH
        END IF
-        
+
        LET g_cnt = g_cnt + 1
        {
        IF g_cnt > g_max_rec THEN
@@ -565,19 +571,19 @@ DEFINE
     LET g_rec_b2 = g_cnt-1
     DISPLAY g_rec_b2 TO FORMONLY.cn3
 END FUNCTION
- 
+
 FUNCTION t001_b3_fill(p_wc3)
 DEFINE
    #p_wc3           VARCHAR(200) #TQC-630166
     p_wc3           STRING    #TQC-630166
- 
+
     IF cl_null(p_wc3) THEN LET p_wc3 = ' 1=1' END IF
   #  LET g_sql = "SELECT sfb05,sgm04,ima02,ima021,sum(l_sum7) FROM cect001_tmp ",
       LET g_sql = "SELECT sfb05,sgm04,ima02,ima021,sum(wipqty) FROM cect001_tmp ",
                 " GROUP BY  sfb05,sgm04,ima02,ima021 ORDER BY 1"
     PREPARE t001_pb3 FROM g_sql
     DECLARE tc_imd_curs3 CURSOR FOR t001_pb3
- 
+
     CALL g_tc_imb_2.clear()
     LET l_ac = 1
     FOREACH tc_imd_curs3 INTO g_tc_imb_2[l_ac].*   #單身 ARRAY 填充
@@ -594,7 +600,7 @@ DEFINE
     LET g_rec_b3 = l_ac-1
     DISPLAY g_rec_b3 TO FORMONLY.cn4
 END FUNCTION
- 
+
 
 FUNCTION t001_b4_fill(p_wc4)
 DEFINE
@@ -678,26 +684,26 @@ END FUNCTION
 FUNCTION t001_bp1(p_ud)
    DEFINE   p_ud   LIKE type_file.chr1          #No.FUN-680072 VARCHAR(1)
    DEFINE l_cmd  LIKE type_file.chr1000         #No.FUN-820002
- 
+
    #IF p_ud <> "G" OR g_action_choice = "detail" THEN    #FUN-D40030 mark
    IF p_ud <> "G" OR g_action_choice = "accessory" THEN  #FUN-D40030 add
       RETURN
    END IF
- 
+
    LET g_action_choice = " "
    CALL cl_set_act_visible("accept,cancel", FALSE)
    DISPLAY ARRAY g_tc_imb TO s_tc_imb.* ATTRIBUTE(COUNT=g_rec_b1)
       BEFORE DISPLAY
          CALL cl_navigator_setting( g_curs_index, g_row_count )
- 
+
       ON IDLE g_idle_seconds
          CALL cl_on_idle()
          CONTINUE DISPLAY
- 
+
      ON ACTION user_defined_columns
         LET l_action_flag = "user_defined_columns"
      EXIT DISPLAY
- 
+
      ON ACTION spare_part
         LET l_action_flag = "spare_part"
      EXIT DISPLAY
@@ -708,15 +714,15 @@ FUNCTION t001_bp1(p_ud)
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
      EXIT DISPLAY
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
      EXIT DISPLAY
- 
+
       ON ACTION controlg      #MOD-4C0121
          CALL cl_cmdask()     #MOD-4C0121
      EXIT DISPLAY
- 
+
       ON ACTION insert
          LET g_action_choice="insert"
          EXIT DISPLAY
@@ -733,7 +739,7 @@ FUNCTION t001_bp1(p_ud)
       ON ACTION output
          LET g_action_choice="output"
          EXIT DISPLAY
- 
+
       ON ACTION locale
          CALL cl_dynamic_locale()
       ON ACTION exit
@@ -742,19 +748,19 @@ FUNCTION t001_bp1(p_ud)
       ON ACTION close
          LET g_action_choice="exit"
          EXIT DISPLAY
- 
+
       #ON ACTION accept
       #   LET g_action_choice="accessory"
       #   LET l_ac = ARR_CURR()
       #   EXIT DISPLAY
- 
-#No.FUN-6B0029--begin                                             
-      ON ACTION controls                                        
-         CALL cl_set_head_visible("folder01","AUTO")                    
-#No.FUN-6B0029--end     
+
+#No.FUN-6B0029--begin
+      ON ACTION controls
+         CALL cl_set_head_visible("folder01","AUTO")
+#No.FUN-6B0029--end
       #str----add by guanyao160923
       ON ACTION exporttoexcel
-         LET g_action_choice="exporttoexcel"          
+         LET g_action_choice="exporttoexcel"
          EXIT DISPLAY
       #end----add by guanyao160923
       #darcy:2023/12/22 add s---
@@ -762,42 +768,42 @@ FUNCTION t001_bp1(p_ud)
          let g_action_choice = "fastexcel"
          exit display
       #darcy:2023/12/22 add e---
- 
+
       ON ACTION related_document                #No.FUN-6B0050  相關文件
-         LET g_action_choice="related_document"          
+         LET g_action_choice="related_document"
          EXIT DISPLAY
- 
+
       #No.FUN-7C0050 add
       &include "qry_string.4gl"
- 
+
    END DISPLAY
    CALL cl_set_act_visible("accept,cancel", TRUE)
 END FUNCTION
 # NO.FUN-540036--end
- 
+
 # NO.FUN-540036--start
 FUNCTION t001_bp2(p_ud)
    DEFINE   p_ud   LIKE type_file.chr1          #No.FUN-680072 VARCHAR(1)
- 
+
    #IF p_ud <> "G" OR g_action_choice = "detail" THEN               #FUN-D40030 mark
    IF p_ud <> "G" OR g_action_choice = "user_defined_columns" THEN  #FUN-D40030 add
       RETURN
    END IF
- 
+
    LET g_action_choice = " "
    CALL cl_set_act_visible("accept,cancel", FALSE)
    DISPLAY ARRAY g_tc_imb_1 TO s_tc_imb_1.* ATTRIBUTE(COUNT=g_rec_b2)
       BEFORE DISPLAY
          CALL cl_navigator_setting( g_curs_index, g_row_count )
- 
+
       ON IDLE g_idle_seconds
          CALL cl_on_idle()
          CONTINUE DISPLAY
- 
+
      ON ACTION accessory
         LET l_action_flag = "accessory"
      EXIT DISPLAY
- 
+
      ON ACTION spare_part
         LET l_action_flag = "spare_part"
      EXIT DISPLAY
@@ -806,13 +812,13 @@ FUNCTION t001_bp2(p_ud)
         EXIT DISPLAY
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
+
       ON ACTION controlg      #MOD-4C0121
          CALL cl_cmdask()     #MOD-4C0121
- 
+
       ON ACTION query
          LET g_action_choice="query"
          EXIT DISPLAY
@@ -825,7 +831,7 @@ FUNCTION t001_bp2(p_ud)
       ON ACTION output
          LET g_action_choice="output"
          EXIT DISPLAY
- 
+
       ON ACTION locale
          CALL cl_dynamic_locale()
       ON ACTION exit
@@ -834,7 +840,7 @@ FUNCTION t001_bp2(p_ud)
       ON ACTION close
          LET g_action_choice="exit"
          EXIT DISPLAY
- 
+
       #ON ACTION accept
       #   LET g_action_choice="user_defined_columns"
       #   LET l_ac = ARR_CURR()
@@ -842,7 +848,7 @@ FUNCTION t001_bp2(p_ud)
 
       #str----add by guanyao160923
       ON ACTION exporttoexcel
-         LET g_action_choice="exporttoexcel"          
+         LET g_action_choice="exporttoexcel"
          EXIT DISPLAY
       #end----add by guanyao160923
       #darcy:2023/12/22 add s---
@@ -850,47 +856,47 @@ FUNCTION t001_bp2(p_ud)
          let g_action_choice = "fastexcel"
          exit display
       #darcy:2023/12/22 add e---
- 
+
       ON ACTION related_document                #No.FUN-6B0050  相關文件
-         LET g_action_choice="related_document"          
+         LET g_action_choice="related_document"
          EXIT DISPLAY
-#No.FUN-6B0029--begin                                                           
-      ON ACTION controls                                                        
-         CALL cl_set_head_visible("folder01","AUTO")                            
-#No.FUN-6B0029--end 
- 
+#No.FUN-6B0029--begin
+      ON ACTION controls
+         CALL cl_set_head_visible("folder01","AUTO")
+#No.FUN-6B0029--end
+
       #No.FUN-7C0050 add
       &include "qry_string.4gl"
- 
+
    END DISPLAY
    CALL cl_set_act_visible("accept,cancel", TRUE)
 END FUNCTION
 #NO.FUN-540036-end
- 
- 
+
+
 # NO.FUN-540036--start
 FUNCTION t001_bp3(p_ud)
    DEFINE   p_ud   LIKE type_file.chr1          #No.FUN-680072 VARCHAR(1)
- 
+
    #IF p_ud <> "G" OR g_action_choice = "detail" THEN     #FUN-D40030 mark
-   IF p_ud <> "G" OR g_action_choice = "spare_part" THEN  #FUN-D40030 add 
+   IF p_ud <> "G" OR g_action_choice = "spare_part" THEN  #FUN-D40030 add
       RETURN
    END IF
- 
+
    LET g_action_choice = " "
    CALL cl_set_act_visible("accept,cancel", FALSE)
    DISPLAY ARRAY g_tc_imb_2 TO s_tc_imb_2.* ATTRIBUTE(COUNT=g_rec_b3)
       BEFORE DISPLAY
          CALL cl_navigator_setting( g_curs_index, g_row_count )
- 
+
       ON IDLE g_idle_seconds
          CALL cl_on_idle()
          CONTINUE DISPLAY
- 
+
      ON ACTION accessory
         LET l_action_flag = "accessory"
      EXIT DISPLAY
- 
+
      ON ACTION user_defined_columns
         LET l_action_flag = "user_defined_columns"
      EXIT DISPLAY
@@ -899,13 +905,13 @@ FUNCTION t001_bp3(p_ud)
         EXIT DISPLAY
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
+
       ON ACTION controlg      #MOD-4C0121
          CALL cl_cmdask()     #MOD-4C0121
- 
+
       ON ACTION query
          LET g_action_choice="query"
          EXIT DISPLAY
@@ -915,7 +921,7 @@ FUNCTION t001_bp3(p_ud)
       ON ACTION output
          LET g_action_choice="output"
          EXIT DISPLAY
- 
+
       ON ACTION locale
          CALL cl_dynamic_locale()
       ON ACTION exit
@@ -927,7 +933,7 @@ FUNCTION t001_bp3(p_ud)
 
       #str----add by guanyao160923
       ON ACTION exporttoexcel
-         LET g_action_choice="exporttoexcel"          
+         LET g_action_choice="exporttoexcel"
          EXIT DISPLAY
       #end----add by guanyao160923
       #darcy:2023/12/22 add s---
@@ -935,18 +941,18 @@ FUNCTION t001_bp3(p_ud)
          let g_action_choice = "fastexcel"
          exit display
       #darcy:2023/12/22 add e---
- 
+
       ON ACTION related_document                #No.FUN-6B0050  相關文件
-         LET g_action_choice="related_document"          
+         LET g_action_choice="related_document"
          EXIT DISPLAY
-#No.FUN-6B0029--begin                                                           
-      ON ACTION controls                                                        
-         CALL cl_set_head_visible("folder01","AUTO")                            
-#No.FUN-6B0029--end 
- 
+#No.FUN-6B0029--begin
+      ON ACTION controls
+         CALL cl_set_head_visible("folder01","AUTO")
+#No.FUN-6B0029--end
+
       #No.FUN-7C0050 add
       &include "qry_string.4gl"
- 
+
    END DISPLAY
    CALL cl_set_act_visible("accept,cancel", TRUE)
 END FUNCTION
@@ -1042,7 +1048,7 @@ END FUNCTION
 
 
 
-#tianry add end  
+#tianry add end
 
 
 
@@ -1062,16 +1068,16 @@ FUNCTION t001_out()
 #       gen02       LIKE gen_file.gen02
 #      END RECORD,
 #   l_name          LIKE type_file.chr20,          #No.FUN-680072 VARCHAR(20)
- 
+
 #   l_za05          LIKE type_file.chr1000         #No.FUN-680072 VARCHAR(40)
 DEFINE l_cmd  LIKE type_file.chr1000
-    IF cl_null(g_wc) AND NOT cl_null(g_tc_ima.tc_ima01) THEN                          
-       LET g_wc = " tc_ima01 = '",g_tc_ima.tc_ima01,"' "                                 
-    END IF                                                                      
-    IF g_wc IS NULL THEN                                                        
-       CALL cl_err('','9057',0) RETURN                                          
-    END IF                                                                      
-    LET l_cmd = 'p_query "aemt001" "',g_wc CLIPPED,'"'                          
+    IF cl_null(g_wc) AND NOT cl_null(g_tc_ima.tc_ima01) THEN
+       LET g_wc = " tc_ima01 = '",g_tc_ima.tc_ima01,"' "
+    END IF
+    IF g_wc IS NULL THEN
+       CALL cl_err('','9057',0) RETURN
+    END IF
+    LET l_cmd = 'p_query "aemt001" "',g_wc CLIPPED,'"'
     CALL cl_cmdrun(l_cmd)
 #   IF g_wc IS NULL THEN
 #      CALL cl_err('','9057',0) RETURN
@@ -1090,34 +1096,34 @@ DEFINE l_cmd  LIKE type_file.chr1000
 #   LET g_sql="SELECT tc_ima01,tc_ima02,tc_ima06,tc_ima14,tc_ima15,tc_ima16,",
 #             "       tc_ima17,tc_ima10,gen02 ",
 #             g_sql1 CLIPPED,",LEFT OUTER JOIN tc_ima_file ON tc_ima_file.tc_ima10 = gen_file.gen02",
-#             g_sql2 CLIPPED, 
+#             g_sql2 CLIPPED,
 #             " ORDER BY tc_ima01"
 #   PREPARE t001_p1 FROM g_sql                # RUNTIME 編譯
 #   DECLARE t001_co CURSOR FOR t001_p1
- 
+
 #   START REPORT t001_rep TO l_name
- 
+
 #   FOREACH t001_co INTO sr.*
 #       IF SQLCA.sqlcode THEN
-#           CALL cl_err('foreach:',SQLCA.sqlcode,1)             
+#           CALL cl_err('foreach:',SQLCA.sqlcode,1)
 #           EXIT FOREACH
 #           END IF
 #       OUTPUT TO REPORT t001_rep(sr.*)
 #   END FOREACH
- 
+
 #   FINISH REPORT t001_rep
- 
+
 #   CLOSE t001_co
 #   ERROR ""
 #   CALL cl_prt(l_name,' ','1',g_len)
 END FUNCTION
- 
- 
+
+
 {
 FUNCTION t001_ins_tmp()
-DEFINE l_sql  STRING 
-DEFINE l_sql1 STRING 
-    #tianry add  sgm06,ima02,ima021,ecd02  
+DEFINE l_sql  STRING
+DEFINE l_sql1 STRING
+    #tianry add  sgm06,ima02,ima021,ecd02
     DROP TABLE cect001_tmp
     CREATE TEMP TABLE cect001_tmp
      (sfb05      LIKE sfb_file.sfb05,
@@ -1126,7 +1132,7 @@ DEFINE l_sql1 STRING
       sgm03      LIKE sgm_file.sgm03,
       sgm03_1    LIKE sgm_file.sgm03,
       sgm04      LIKE sgm_file.sgm04,
-      sgm06      LIKE sgm_file.sgm06,          
+      sgm06      LIKE sgm_file.sgm06,
       ima02      LIKE ima_file.ima02,
       ima021     LIKE ima_file.ima021,
       ecd02      LIKE ecd_file.ecd02,
@@ -1172,18 +1178,18 @@ DEFINE l_sql1 STRING
               "   WHERE ecd01 =sgm04 AND sgm01=shm01 AND shm06=sgm11 and shm28 = 'N' ",
               "     AND ecd07 = '",g_tc_ima.tc_ima03,"'",
            #   "     AND (a.num >0 OR b.num >0)",  #add b.num by guanyao161006
-              "     AND sgm02 = sfb01", 
+              "     AND sgm02 = sfb01",
               "     AND sfb04<>'8'",
               "     AND sfb87 = 'Y'",
               "     AND sgm03_par = ima01"
 
 
-   IF g_tc_ima.tc_imaud03 = '1' THEN 
+   IF g_tc_ima.tc_imaud03 = '1' THEN
       LET l_sql = l_sql CLIPPED," AND instr(sgm03_par, '-') =0"
-   END IF 
-   IF g_tc_ima.tc_imaud03 = '2' THEN 
+   END IF
+   IF g_tc_ima.tc_imaud03 = '2' THEN
       LET l_sql = l_sql CLIPPED," AND instr(sgm03_par, '-') >0"
-   END IF 
+   END IF
    LET l_sql1 = " INSERT INTO cect001_tmp ",l_sql CLIPPED
    PREPARE t001_ins FROM l_sql1
    EXECUTE t001_ins
@@ -1203,7 +1209,7 @@ DEFINE l_sql1 STRING
                "    UPDATE ",
                "       SET o.sgm03_1 = NVL(n.sgm03_1,0) "
    PREPARE t001_pre1 FROM l_sql
-   EXECUTE t001_pre1 
+   EXECUTE t001_pre1
 
    LET l_sql = " MERGE INTO cect001_tmp o ",
                "      USING (SELECT SUM(tc_shc12) tc_shc12, tc_shc03 tc_shc03, tc_shc06 tc_shc06",
@@ -1242,7 +1248,7 @@ DEFINE l_sql1 STRING
                "           o.l_sum7 =l_sum7-NVL(n.sfv09,0)"
    PREPARE t001_pre3 FROM l_sql
    EXECUTE t001_pre3
-   
+
    LET l_sql = " MERGE INTO cect001_tmp o ",
                "      USING (SELECT sfb01,sfb05 ",
                "               FROM sfb_file",
@@ -1259,12 +1265,12 @@ DEFINE l_sql1 STRING
    #tianry add 161226
 
 
-   #tianry add  end 
+   #tianry add  end
 
 
-   DELETE FROM cect001_tmp WHERE l_sum7 <= 0 
+   DELETE FROM cect001_tmp WHERE l_sum7 <= 0
    UPDATE cect001_tmp SET l_sum10 = l_sum7/l_sum10
-END FUNCTION 
+END FUNCTION
  }
 FUNCTION temp_chuli()
 DEFINE l_sql  STRING
@@ -1278,12 +1284,12 @@ DEFINE l_sql1 STRING
       sgm03_1    LIKE sgm_file.sgm03,
       sgm03_2    LIKE sgm_file.sgm03,
       sgm04      LIKE sgm_file.sgm04,
-      sgm65      LIKE sgm_file.sgm65, 
+      sgm65      LIKE sgm_file.sgm65,
       wipqty     LIKE sgm_file.sgm301,
       sgm06      LIKE sgm_file.sgm06,
       ima02      LIKE ima_file.ima02,
       ima021     LIKE ima_file.ima021,
-      ecd02      LIKE ecd_file.ecd02, 
+      ecd02      LIKE ecd_file.ecd02,
       l_sum1     LIKE tc_shc_file.tc_shc12,
       l_sum2     LIKE tc_shc_file.tc_shc12,
       l_sum3     LIKE tc_shc_file.tc_shc12,
@@ -1334,13 +1340,13 @@ DEFINE l_sql1 STRING
               "     AND sfb04<>'8'",
               "     AND sfb87 = 'Y'",
               "     AND sgm03_par = ima01 AND ",g_wc CLIPPED
-         #     "     AND instr(sgm03_par, '-') >0  " 
+         #     "     AND instr(sgm03_par, '-') >0  "
    IF g_tc_ima.tc_imaud03 = '1' THEN
       LET l_sql = l_sql CLIPPED," AND instr(sgm03_par, '-') =0"
    END IF
    IF g_tc_ima.tc_imaud03 = '2' THEN
       LET l_sql = l_sql CLIPPED," AND instr(sgm03_par, '-') >0"
-   END IF  
+   END IF
    LET l_sql1 = " INSERT INTO cect001_tmp ",l_sql CLIPPED
    PREPARE t001_ins FROM l_sql1
    EXECUTE t001_ins
@@ -1395,7 +1401,7 @@ DEFINE l_sql1 STRING
    }
 
  # 末工序处理取消
-   
+
     LET l_sql = " MERGE INTO cect001_tmp o ",
                "      USING (  SELECT SUM(tc_shb12) tc_shc12, tc_shb03 tc_shc03, tc_shb06 tc_shc06",
                "                FROM tc_shb_file, ecd_file",
@@ -1411,8 +1417,8 @@ DEFINE l_sql1 STRING
                "           o.l_sum7 =l_sum7-NVL(n.tc_shc12,0)"
    PREPARE t001_pre2 FROM l_sql
    EXECUTE t001_pre2
-   
-  
+
+
    LET l_sql = " MERGE INTO cect001_tmp o ",
                "      USING (SELECT sfv20, sum(sfv09) sfv09,0 sgm03",
                "               FROM sfv_file, sfu_file",
@@ -1445,18 +1451,17 @@ DEFINE l_sql1 STRING
 
 
    UPDATE cect001_tmp SET wipqty=l_sum2-l_sum3-l_sum4 WHERE sgm03_2=0
-   # UPDATE cect001_tmp SET wipqty=l_sum2-l_sum4-l_sum8 WHERE sgm03_1=0 #darcy:2023/09/12 remark 
-{ 
+   # UPDATE cect001_tmp SET wipqty=l_sum2-l_sum4-l_sum8 WHERE sgm03_1=0 #darcy:2023/09/12 remark
+{
    UPDATE cect001_tmp SET l_sum11=l_sum7  WHERE  sgm03_1=0 or sgm03_2=0
    #UPDATE cect001_tmp set l_sum7=l_sum7-l_sum4
- }  
+ }
    UPDATE cect001_tmp SET l_sum10 = wipqty/l_sum10
-   DELETE FROM cect001_tmp WHERE  wipqty <= 0  
+   DELETE FROM cect001_tmp WHERE  wipqty <= 0
 
-   
+
   # DELETE FROM cect001_tmp WHERE l_sum7 <= 0
   # UPDATE cect001_tmp SET l_sum7 = l_sum7 - l_sum4  #add by huanglf170112
   # UPDATE cect001_tmp SET l_sum10 = l_sum7/l_sum10
   # DELETE FROM cect001_tmp WHERE l_sum7 <= 0
 END FUNCTION
-
