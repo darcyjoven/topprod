@@ -193,27 +193,27 @@ main
     options                               #改變一些系統預設值
         input no wrap
     defer interrupt
- 
+
     if (not cl_user()) then
         exit program
     end if
- 
+
     whenever error call cl_err_msg_log
- 
+
     if (not cl_setup("AZZ")) then
         exit program
     end if
-    
-    call cl_used(g_prog,g_time,1) returning g_time #no.fun-b30211 
+
+    call cl_used(g_prog,g_time,1) returning g_time #no.fun-b30211
     open window p_admin_wo at p_row,p_col with form "azz/42f/p_admin_wo"
             attribute (style = g_win_style clipped) #no.fun-580092 hcn
-        
+
     call cl_ui_init()
 
     call p_admin_wo()
 
     close window p_admin_wo                 #結束畫面
-    call  cl_used(g_prog,g_time,2) returning g_time 
+    call  cl_used(g_prog,g_time,2) returning g_time
 end main
 # declear
 function p_admin_wo_curs()
@@ -223,7 +223,7 @@ function p_admin_wo_curs()
 
     # ---
     # page1工单清单查询
-    
+
     # ---
 
 end function
@@ -244,19 +244,19 @@ function p_admin_wo_cs()
             # 开窗
         on action allotment
             let g_b_flag = "1"
- 
+
         on action routing
             let g_b_flag = "2"
- 
+
         on action sub_po
             let g_b_flag = "3"
- 
+
         on action issue
             let g_b_flag = "4"
- 
+
         on action fqc
             let g_b_flag = "5"
-        
+
         on action accept
             let g_action_choice="accept"
             exit dialog
@@ -274,17 +274,17 @@ function p_admin_wo_cs()
 
         on action qbe_save
             call cl_qbe_save()
-        
+
         on idle g_idle_seconds
             call cl_on_idle()
             continue dialog
-        
+
         on action about
             call cl_about()
-        
+
         on action controlg
             call cl_cmdask()
-        
+
         on action help
             call cl_show_help()
 
@@ -329,12 +329,12 @@ function p_admin_wo_menu()
         case g_action_choice
             when "help"
             call cl_show_help()
- 
+
             when "exit"
                 exit while
             when "close"
                 exit while
-    
+
             when "controlg"
                 call cl_cmdask()
 
@@ -342,7 +342,7 @@ function p_admin_wo_menu()
                 if cl_chk_act_auth() then
                     call p_admin_wo_q()
                 end if
-            
+
             when "exporttoexcel"
                 # 导出excel
                 if cl_chk_act_auth() then
@@ -356,7 +356,8 @@ function p_admin_wo_menu()
                             "s_sgm",base.typeinfo.create(g_sgm_excel),
                             "s_tc_shb",base.typeinfo.create(g_tc_shb_excel),
                             "s_tc_shb_2",base.typeinfo.create(g_tc_shb_2_excel)
-                        )) #darcy:2024/01/18 
+                        )) #darcy:2024/01/18
+                    let g_wc1 = cl_json(base.typeinfo.create(g_sgm_excel))
                 end if
             # TODO:功能按钮 s---
 
@@ -535,7 +536,7 @@ function p_admin_wo_fill_sgm(p_wc)
                 " order by  sgm03,sgm01"
     prepare p_admin_wo_fill_sgm_p from l_sql
     declare p_admin_wo_fill_sgm cursor for p_admin_wo_fill_sgm_p
- 
+
     let g_cnt = 1
     call g_sgm_excel.clear()
     call g_sgm.clear()
@@ -585,7 +586,7 @@ function p_admin_wo_fill_tc_shb()
 
     prepare p_admin_wo_fill_tc_shb_p from l_sql
     declare p_admin_wo_fill_tc_shb cursor for p_admin_wo_fill_tc_shb_p
- 
+
     let g_cnt = 1
     call g_tc_shb_excel.clear()
     call g_tc_shb.clear()
@@ -634,7 +635,7 @@ function p_admin_wo_fill_tc_shb_2()
 
     prepare p_admin_wo_fill_tc_shb_2_p from l_sql
     declare p_admin_wo_fill_tc_shb_2 cursor for p_admin_wo_fill_tc_shb_2_p
- 
+
     let g_cnt = 1
     call g_tc_shb_2_excel.clear()
     call g_tc_shb_2.clear()
@@ -705,7 +706,7 @@ function p_admin_wo_bp1(p_ud)
             exit input
         on action query
             let g_action_choice="query"
-            exit input 
+            exit input
         on action exporttoexcel
             let g_action_choice = 'exporttoexcel'
             exit input
@@ -757,7 +758,7 @@ function p_admin_wo_bp1(p_ud)
             exit input
 
         # TODO: 功能按钮 s---
-        
+
         on action updsfb12
             # 更新作废数量
             call p_admin_wo_updsfb12()
@@ -775,8 +776,11 @@ function p_admin_wo_bp1(p_ud)
             call unatmt260_all()
         on action test_mail
             call test_mail()
+
+        on action upd_loss
+            call p_admin_upd_loss()
         # TODO: 功能按钮 e---
-        
+
         # TODO：公共按钮 s---
         on action btn_sfb98
             call p_admin_wo_sfb98()
@@ -830,7 +834,7 @@ function p_admin_wo_bp2(p_ud)
             exit input
         on action query
             let g_action_choice="query"
-            exit input 
+            exit input
         on action exporttoexcel
             let g_action_choice = 'exporttoexcel'
             exit input
@@ -840,7 +844,7 @@ function p_admin_wo_bp2(p_ud)
         on action close
             let g_action_choice = 'close'
             exit input
-            
+
         on action allotment
             let g_action_choice = 'fill'
             let g_b_flag = '1'
@@ -857,7 +861,7 @@ function p_admin_wo_bp2(p_ud)
             let g_action_choice = 'fill'
             let g_b_flag = '5'
             exit input
-        
+
         on action checkall
             for l_index = 1 to g_sfa.getLength()
                 let g_sfa[l_index].checksfa = 'Y'
@@ -915,7 +919,7 @@ function p_admin_wo_bp3(p_ud)
             exit input
         on action query
             let g_action_choice="query"
-            exit input 
+            exit input
         on action exporttoexcel
             let g_action_choice = 'exporttoexcel'
             exit input
@@ -925,7 +929,7 @@ function p_admin_wo_bp3(p_ud)
         on action close
             let g_action_choice = 'close'
             exit input
-            
+
         on action allotment
             let g_action_choice = 'fill'
             let g_b_flag = '1'
@@ -946,7 +950,7 @@ function p_admin_wo_bp3(p_ud)
             let g_b_flag = '5'
             call p_admin_wo_page3_check()
             exit input
-        
+
         on action checkall
             for l_index = 1 to g_sgm.getLength()
                 let g_sgm[l_index].checksgm = 'Y'
@@ -971,7 +975,7 @@ function p_admin_wo_bp3(p_ud)
         on action unta_sgm06_lot
             call p_admin_wo_ta_sgm06('N','N')
         # --- 取消/勾选报工
-        
+
         # TODO: 功能按钮 e---
         # TODO：公共按钮 s---
         on action btn_sfb98
@@ -1013,7 +1017,7 @@ function p_admin_wo_bp4(p_ud)
             exit input
         on action query
             let g_action_choice="query"
-            exit input 
+            exit input
         on action exporttoexcel
             let g_action_choice = 'exporttoexcel'
             exit input
@@ -1023,7 +1027,7 @@ function p_admin_wo_bp4(p_ud)
         on action close
             let g_action_choice = 'close'
             exit input
-            
+
         on action allotment
             let g_action_choice = 'fill'
             let g_b_flag = '1'
@@ -1040,7 +1044,7 @@ function p_admin_wo_bp4(p_ud)
             let g_action_choice = 'fill'
             let g_b_flag = '5'
             exit input
-        
+
         on action checkall
             for l_index = 1 to g_tc_shb.getLength()
                 let g_tc_shb[l_index].checktc_shb = 'Y'
@@ -1100,7 +1104,7 @@ function p_admin_wo_bp5(p_ud)
             exit input
         on action query
             let g_action_choice="query"
-            exit input 
+            exit input
         on action exporttoexcel
             let g_action_choice = 'exporttoexcel'
             exit input
@@ -1110,7 +1114,7 @@ function p_admin_wo_bp5(p_ud)
         on action close
             let g_action_choice = 'close'
             exit input
-            
+
         on action allotment
             let g_action_choice = 'fill'
             let g_b_flag = '1'
@@ -1127,7 +1131,7 @@ function p_admin_wo_bp5(p_ud)
             let g_action_choice = 'fill'
             let g_b_flag = '4'
             exit input
-        
+
         on action checkall
             for l_index = 1 to g_tc_shb_2.getLength()
                 let g_tc_shb_2[l_index].checktc_shb_2 = 'Y'
@@ -1183,7 +1187,7 @@ function p_admin_wo_page3_check()
 
     let flag_tc_shb = 'N'
     let flag_tc_shb_2 = 'N'
-    
+
     delete from sgm_temp
     begin work
     for l_index = 1 to g_sgm.getLength()
@@ -1212,7 +1216,7 @@ function p_admin_wo_updsfb12()
 
     for l_index = 1 to g_sfb.getlength()
         if g_sfb[l_index].checksfb ='Y' then
-            let l_sfb12 = 0 
+            let l_sfb12 = 0
             select sum(sgm313) into l_sfb12 from sgm_file where sgm02 = g_sfb[l_index].sfb01
             if cl_null(l_sfb12) then let l_sfb12 = 0 end if
             if l_sfb12 != g_sfb[l_index].sfb12 then
@@ -1257,7 +1261,7 @@ function p_admin_wo_updsfbud12()
 
     begin work
     call s_showmsg_init()
-    
+
     let flag = 'N'
     for l_index = 1 to g_sfb.getlength()
         if g_sfb[l_index].checksfb ='Y' then
@@ -1309,7 +1313,7 @@ function p_admin_wo_updsfa06()
 
     begin work
     call s_showmsg_init()
-    
+
     let flag = 'N'
     for l_index = 1 to g_sfa.getlength()
         if g_sfa[l_index].checksfa ='Y' then
@@ -1332,8 +1336,8 @@ function p_admin_wo_updsfa06()
             end if
             if l_sfa06 != g_sfa[l_index].sfa06 or l_sfa062 != g_sfa[l_index].sfa062 then
                 let flag = 'Y'
-                update sfa_file set sfa06 = l_sfa06,sfa062=l_sfa062 
-                 where sfa01 = g_sfa[l_index].sfa01 and sfa03 = g_sfa[l_index].sfa03 
+                update sfa_file set sfa06 = l_sfa06,sfa062=l_sfa062
+                 where sfa01 = g_sfa[l_index].sfa01 and sfa03 = g_sfa[l_index].sfa03
                    and sfa08  = g_sfa[l_index].sfa08 and sfa27 = g_sfa[l_index].sfa27
                 if status then
                     call cl_err("upd sfa",status,1)
@@ -1638,7 +1642,7 @@ function p_admin_wo_tc_shb_del()
             end if
             if tc_shb121_flag ='Y' then
                 #更新工单报废数量
-                let l_sfb12 = 0 
+                let l_sfb12 = 0
                 let l_sfb01 = g_tc_shb[l_index].tc_shb03
                 let l_sfb01= l_sfb01[1,12]
                 select sum(sgm313) into l_sfb12 from sgm_file where sgm02 = l_sfb01
@@ -1656,7 +1660,7 @@ function p_admin_wo_tc_shb_del()
                 end if
                 let l_msg = "工单:",l_sfb01,"报废数量:",l_sfb12
                 call s_errmsg("sfb12","xx",l_msg,'czz-006',1)
-                
+
             end if
             #删除转移单号
             if not cl_null(g_tc_shb[l_index].tc_shb17) then
@@ -1670,7 +1674,7 @@ function p_admin_wo_tc_shb_del()
             let l_msg = g_tc_shb[l_index].tc_shb01,'|',g_tc_shb[l_index].tc_shb03,'|',
                         g_tc_shb[l_index].tc_shb06,'|',g_tc_shb[l_index].tc_shb12,'|',g_tc_shb[l_index].tc_shb121
             call s_errmsg("tc_shb01,tc_shb03,tc_shb06,tc_shb12,tc_shb121","",l_msg,'czz-014',1)
-            
+
         end if
     end for
     call s_showmsg()
@@ -1708,11 +1712,11 @@ function p_admin_wo_tc_shb_del_only()
                 call cl_err('del tc_shb_file',status,1)
                 rollback work
                 return
-            end if 
+            end if
             let l_msg = g_tc_shb[l_index].tc_shb01,'|',g_tc_shb[l_index].tc_shb03,'|',
                         g_tc_shb[l_index].tc_shb06,'|',g_tc_shb[l_index].tc_shb12,'|',g_tc_shb[l_index].tc_shb121
             call s_errmsg("tc_shb01,tc_shb03,tc_shb06,tc_shb12,tc_shb121","",l_msg,'czz-014',1)
-            
+
         end if
     end for
     call s_showmsg()
@@ -1759,15 +1763,15 @@ function p_admin_wo_tc_shb121_del()
             let l_msg = g_tc_shb_2[l_index].tc_shb01_2,'|',g_tc_shb_2[l_index].tc_shb03_2,'|',
                         g_tc_shb_2[l_index].tc_shb06_2,'|',g_tc_shb_2[l_index].tc_shb12_2,'|',g_tc_shb_2[l_index].tc_shb121_2
             call s_errmsg("tc_shb01,tc_shb03,tc_shb06,tc_shb12,tc_shb121","",l_msg,'czz-014',1)
-            
+
             #更新工单报废数量
-            let l_sfb12 = 0 
+            let l_sfb12 = 0
             let l_sfb01 = g_tc_shb_2[l_index].tc_shb03_2
             let l_sfb01 = l_sfb01[1,12]
             select sum(sgm313) into l_sfb12 from sgm_file where sgm02 = l_sfb01
             if cl_null(l_sfb12) then let l_sfb12 = 0 end if
 
-            # let g_sfb[l_index].sfb12 = l_sfb12 
+            # let g_sfb[l_index].sfb12 = l_sfb12
             update sfb_file set sfb12 = l_sfb12 where sfb01 = l_sfb01
             if status then
                 call cl_err("upd sfb",status,1)
@@ -1817,7 +1821,7 @@ function p_admin_wo_shbdate()
             let l_msg = g_tc_shb[l_index].tc_shb01,'|',g_tc_shb[l_index].tc_shb03,'|',
                         g_tc_shb[l_index].tc_shb06,'|',g_tc_shb[l_index].tc_shb12,'|',g_tc_shb[l_index].tc_shb121
             call s_errmsg("tc_shb01,tc_shb03,tc_shb06,tc_shb12,tc_shb121","",l_msg,'czz-014',1)
-            
+
         end if
     end for
     call s_showmsg()
@@ -1851,7 +1855,7 @@ function p_admin_wo_get_next_sgm03(p_sgm01,p_sgm03)
     define p_sgm01      like sgm_file.sgm01
     define p_sgm03      like sgm_file.sgm03
     define r_sgm03      like sgm_file.sgm03
-    
+
     let r_sgm03 = 0
     select min(sgm03) into r_sgm03 from sgm_file where sgm01 = p_sgm01 and sgm03 > p_sgm03
     if cl_null(r_sgm03) or r_sgm03 = 0 then
@@ -1875,7 +1879,7 @@ end function
 
 #     call cs_html_init(cl_get_progname(g_prog,g_lang),"这个是p_admin_wo作业导出的格式样式测试")
 #     call cs_html_main_field(ui.Interface.getRootNode(),"sfb01_q,sgm03_q,sgm01_q")
-#     call cs_html_detail_field(ui.Interface.getRootNode(),"sfb02,sfb81,sfb87,sfb01,sfb44,",base.typeinfo.create(g_sfb_excel))   
+#     call cs_html_detail_field(ui.Interface.getRootNode(),"sfb02,sfb81,sfb87,sfb01,sfb44,",base.typeinfo.create(g_sfb_excel))
 #     run "echo '"||cs_html_end()||"' >> /u1/topprod/tiptop/doc/help/2/czz/mail.html"
 # end function
 
@@ -1886,7 +1890,7 @@ function test_mail()
     call cs_html_init(cl_get_progname(g_prog,g_lang),"这个是p_admin_wo作业导出的格式样式测试")
     call cs_html_main_field(ui.Interface.getRootNode(),"sfb01_q,sgm03_q,sgm01_q")
     call cs_html_detail_field(ui.Interface.getRootNode(),"checksfb,sfb01,sfb02,sfb81,sfb87,sfb28,sfb38,sfb44,gen02sfb,sfb98,sfb05,sfb06,sfb071,ima02sfb,ima021sfb,sfbud08,sfbud09,sfb08,sfbud07,sfb081,sfb09,sfb12,sfbud12,sfb22,sfb221,sfb86,sfb89,sfb99",base.typeinfo.create(g_sfb_excel))
-    
+
     let l_path = sfmt("/u1/out/%1.html",cs_uuid())
     call cs_html_write(l_path)
     call cs_mail_sendfile("p_admin_wo",l_path,"darcy.li@forewin-sz.com.cn","","","") returning l_ok
@@ -1943,7 +1947,7 @@ function p_admin_wo_negative()
             return
         end if
         -- 单身资料插入
-        
+
         let l_sql = "select img04 from (",
                     " select img04 from img_file where img01 = ?",
                     "   and img02 = ? and img03 = ? and img10 >= ? ",
@@ -1961,7 +1965,7 @@ function p_admin_wo_negative()
 
         initialize l_imn.* to null
         let i = 1
-        foreach p_admin_wo_transfer 
+        foreach p_admin_wo_transfer
            into l_imn.imn03,l_imn.imn15,l_imn.imn16,l_imn.imn17,l_imn.imn22,l_imn.imn20
             if sqlca.sqlcode then
                 call cl_err("p_admin_wo_transfer",sqlca.sqlcode,1)
@@ -1970,7 +1974,7 @@ function p_admin_wo_negative()
             end if
 
             -- 找来源批号
-            execute p_admin_wo_stock_c 
+            execute p_admin_wo_stock_c
               using l_imn.imn03,l_imn.imn15,l_imn.imn16,l_imn.imn22,l_dat
                into l_imn.imn06
             if sqlca.sqlcode then
@@ -1985,7 +1989,7 @@ function p_admin_wo_negative()
             if sqlca.sqlcode then
                 call cl_err("ins imn_file",sqlca.sqlcode,1)
                 let g_success = 'N'
-                exit foreach 
+                exit foreach
             end if
             let i = i +1
         end foreach
@@ -2001,7 +2005,7 @@ function p_admin_wo_negative()
     select count(*) into l_cnt from imk_file
      where imk05 = l_yy and imk06 = l_mm
        and imk09 < 0 and imk09 > -1
-    if l_cnt > 0 then 
+    if l_cnt > 0 then
         call s_auto_assign_no("aim","CRA",l_dat,"2","ina_file","ina01","","","")
             returning li_result,l_ina01
         if (not li_result) then
@@ -2045,7 +2049,7 @@ function p_admin_wo_negative()
             if sqlca.sqlcode then
                 call cl_err("ins inb_file",sqlca.sqlcode,1)
                 let g_success = 'N'
-                exit foreach 
+                exit foreach
             end if
             let i = i + 1
         end foreach
@@ -2088,7 +2092,7 @@ function p_admin_wo_other()
 
     open window p_amdin_cgoi200 at 1,1 with form "cgo/42f/cgoi200"
             attribute (style = g_win_style clipped)
-    
+
     call cl_ui_init()
 
     input l_content from popup
@@ -2149,7 +2153,7 @@ function p_admin_wo_other()
         end while
         let i = i + 1
     end while
-    
+
 
     let g_success = 'Y'
     begin work
@@ -2167,7 +2171,7 @@ function p_admin_wo_other()
             exit for
         end if
 
-        update inb_file set inb15 = l_array[i].reason 
+        update inb_file set inb15 = l_array[i].reason
          where inb04 = l_array[i].item and inb01 = l_array[i].ordno
         if sqlca.sqlcode then
             call cl_err("upd inb_file",sqlca.sqlcode,1)
@@ -2204,7 +2208,7 @@ function p_admin_wo_part()
 
     open window p_amdin_cgoi200 at 1,1 with form "cgo/42f/cgoi200"
             attribute (style = g_win_style clipped)
-    
+
     call cl_ui_init()
 
     input l_content from popup
@@ -2225,7 +2229,7 @@ function p_admin_wo_part()
             when "改部门"
                 let l_part = i
             when "单据编号"
-                let l_no = i 
+                let l_no = i
         end case
         let i = i + 1
     end while
@@ -2255,7 +2259,7 @@ function p_admin_wo_part()
         end while
         let i = i + 1
     end while
-    
+
 
     let g_success = 'Y'
     begin work
@@ -2269,7 +2273,7 @@ function p_admin_wo_part()
             exit for
         end if
 
-        update ina_file set ina04 = l_array[i].part 
+        update ina_file set ina04 = l_array[i].part
          where ina01 = l_array[i].ordno
         if sqlca.sqlcode then
             call cl_err("upd inb_file",sqlca.sqlcode,1)
@@ -2291,3 +2295,35 @@ function p_admin_wo_part()
     close window p_amdin_cgoi200
 end function
 # darcy:2025/11/05 add e---
+
+
+-- 更新损耗
+function p_admin_upd_loss()
+    define  l_ecu01         like ecu_file.ecu01,
+            l_ecu02         like ecu_file.ecu02,
+            l_cnt           integer
+
+    prompt "请输入料件编号" for l_ecu01
+
+    if int_flag then
+        let int_flag = false
+        return
+    end if
+
+    select count(*) into l_cnt from bma_file where bma01 = l_ecu01 and bma10 = '2'
+    if l_cnt <= 0 then
+        call cl_err(sfmt('%1 料件不存在已发放bom',l_ecu01),'!',1)
+        return
+    end if
+
+    select max(ecu02) into l_ecu02 from ecu_file where ecu01 = l_ecu01 and ecu10 = 'Y' and ecuud02 = 'Y'
+    if sqlca.sqlcode or cl_null(l_ecu02) then
+        call cl_err(sfmt('%1 料件不存在已发放工艺资料',l_ecu01),'!',1)
+        return
+    end if
+
+    call saeci100_csmi134(l_ecu01)
+    call i100sub_upd_bmb09(l_ecu01,l_ecu02)
+
+    message "更新完成 "||l_ecu01||"-"||l_ecu02
+end function

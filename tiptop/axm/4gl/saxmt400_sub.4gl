@@ -204,6 +204,11 @@ FUNCTION t400sub_y_chk(p_flag,p_oea01)
    # darcy 260309 s---
    define l_xmf05 like xmf_file.xmf05,l_xmf07 like xmf_file.xmf07
    # darcy 260309 e---
+   # darcy add s---
+   define   l_oeb03     like oeb_file.oeb03,
+            l_oeb04     like oeb_file.oeb04,
+            l_oeb13     like oeb_file.oeb13
+   # darcy add e---
 
    WHENEVER ERROR CONTINUE                #忽略一切錯誤  #FUN-730012
 
@@ -301,6 +306,41 @@ FUNCTION t400sub_y_chk(p_flag,p_oea01)
        END IF
    END FOREACH
    #No.FUN-AA0048  --End
+
+   # darcy add s---
+   # 增加核价不一致提醒
+   if g_prog ='axmt410' then
+    let l_sql = " select oeb03,oeb04,oeb13,xmf07 from (
+    select oea01,oea31,oea23,oea02,oeb05,oea21,oeb03,oeb04 ,oeb13,xmf07,
+    dense_rank() over(partition by xmf01,xmf02,xmf03,xmf04,ta_xmf02 order by xmf05 desc ) rn
+    from (
+    select oea01,oea31,oea23,oea02,oeb05,oea21,oeb03,oeb04 ,oeb13
+    from oea_file,oeb_file where oea01=oeb01
+    )
+    left join (
+    select xmf01,xmf02,xmf03,xmf04,xmf05,ta_xmf02 ,xmf07
+    from xme_file,xmf_file
+    where xme01 = xmf01 and xme02 = xmf02 and ta_xme01 = ta_xmf02 and xme00 = '1'
+    ) on xmf01 = oea31 and xmf02 = oea23 and xmf05 <= oea02 and  xmf04 = oeb05 and ta_xmf02 = oea21 and xmf03 = oeb04
+    where  oea01 = ? )where(xmf07 is null or (rn = 1 and xmf07<>oeb13))"
+    CALL s_showmsg_init()
+    declare saxmt400_price_diff cursor from l_sql
+    foreach saxmt400_price_diff using p_oea01 into l_oeb03,l_oeb04,l_oeb13,l_xmf07
+        if sqlca.sqlcode then
+            call cl_err('saxmt400_price_diff',sqlca.sqlcode,1)
+            exit foreach
+        end if
+        let g_success = 'N'
+        call s_errmsg("oeb03,oeb04,oeb13,xmf07",sfmt("%1|%2|%3|%4",l_oeb03,l_oeb04,l_oeb13,l_xmf07),"",'cxm-066',1)
+    end foreach
+
+    if g_success = 'N' then
+        CALL s_showmsg()
+        return
+    end if
+   end if
+
+   # darcy add e---
 
    #darcy:2023/04/19 add s---
    # 更新上次下单日期
@@ -702,6 +742,7 @@ FUNCTION t400sub_y_chk(p_flag,p_oea01)
                and xmf04 = l_oeb.oeb05
                and ta_xmf02 = l_oea.oea21
                and xmf03 = l_oeb.oeb04
+               and xmf05 = l_xmf05
                and xme00 = '1'
             if l_xmf07 <> 0 then
                 call s_errmsg("oea01,oeb03,oeb04,oeb13",sfmt("%1|%2|%3|%4",l_oea.oea01,l_oeb.oeb03,l_oeb.oeb04,l_oeb.oeb13),"",'cxm-043',1)
@@ -716,6 +757,7 @@ FUNCTION t400sub_y_chk(p_flag,p_oea01)
          RETURN
       end if
       #darcy:2023/05/31 add e---
+
       #darcy:2024/02/19 add s---
       # 转接板提醒
       let l_imaud28 = ''

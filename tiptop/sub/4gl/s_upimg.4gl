@@ -31,16 +31,16 @@
 #                  p_proj    專案號碼
 #                  m_pri     發料優先順序
 #                  s_pri     銷售優先順序
-#                  p_cla     庫存等級           
-#                  p_ono     外觀代號           
+#                  p_cla     庫存等級
+#                  p_ono     外觀代號
 # Return code....: NONE
 # Modify.........: 92/06/02 By David for 報廢
 # Modify.........: 97/06/18 By Melody AIM 3.0 產品會議:check最高存量限制(imf04)
 # Modify.........: 01/04/04 by plum cl_err('',asf-375,0) -> ('',aim-406,1)
 # Modify.........: No:8652 03/11/06 call 'aim-406' 多秀單號+項次訊息
 # Modify.........: No.MOD-490056 04/09/02 Carol 應改成 IF p_stock IS NULL THEN LET p_stock= ' ' END IF
-# Modify.........: No.MOD-530003 05/03/11 By ching 加入 apmt742,axmt820 
-# Modify.........: No.MOD-530037 05/03/21 By ching 加入 asft700,asft730 
+# Modify.........: No.MOD-530003 05/03/11 By ching 加入 apmt742,axmt820
+# Modify.........: No.MOD-530037 05/03/21 By ching 加入 asft700,asft730
 # Modify.........: No.MOD-530408 05/08/11 By Rosayu 1.加入axdt203,aemt200,aemt201,aemt202,aimt326,asfp510,asfp520,asft623
 # Modify.........: No.MOD-530408 05/08/11 By Rosayu 2.SELECT img_file之後加show錯誤提示訊息
 # Modify.........: No.MOD-530408 05/08/11 By Rosayu 3.DELETE img_file之後加show錯誤提示訊息
@@ -75,7 +75,7 @@
 # Modify.........: No.MOD-840251 08/04/20 By Nicola 給預設值
 # Modify.........: No.MOD-840312 08/04/20 By Pengu INSERT INTO imgs時會出現-6372錯誤訊息
 # Modify.........: No.FUN-850100 08/05/19 By Nicola 批/序號管理第二階段
-# Modify.........: NO.FUN-860025 08/06/16 BY yiting 加上銷貨單處理 
+# Modify.........: NO.FUN-860025 08/06/16 BY yiting 加上銷貨單處理
 # Modify.........: No.CHI-870007 08/07/02 By Nicola 加入asri210,asri220
 # Modify.........: No.CHI-870027 08/07/16 By Nicola 重新過單
 # Modify.........: No.MOD-870202 08/07/16 By Nicola 補Action 英文
@@ -83,7 +83,7 @@
 # Modify.........: No.MOD-8A0045 08/10/06 By clover 程式代號少asrt320，造成asrt320過帳還原錯誤
 # Modify.........: No.FUN-8A0147 08/12/11 By douzh  批序號-盤點調整-更新imgs_file從pias_file中資料更新另寫在aimp880里
 # Modify.........: No.MOD-8C0132 08/12/15 By claire 新增img_file時,img37呆滯日期以p_date(異動日,扣帳日)為主
-# Modify.........: No.FUN-8C0084 08/12/22 By jan s_upimg相關改以 料倉儲批為參數傳入 ,不使用 rowid 
+# Modify.........: No.FUN-8C0084 08/12/22 By jan s_upimg相關改以 料倉儲批為參數傳入 ,不使用 rowid
 # Modify.........: No.MOD-910104 09/01/09 By claire 報廢單處理同發料單
 # Modify.........: No.MOD-910150 09/01/14 By Smapmin 銷退單扣帳還原時沒有update imgs_file
 # Modify.........: No.MOD-920321 09/02/25 By Smapmin 批序號不允許負庫存.
@@ -100,10 +100,10 @@
 # Modify.........: No.FUN-960130 09/11/08 By Sunyanchun -add artt256
 # Modify.........: No.FUN-9B0016 09/11/08 By Sunyanchun post no
 # Modify.........: No.FUN-9B0113 09/11/19 By alex 將$TEMPDIR調為使用FGL_GETENV
-# Modify.........: No.FUN-A10037 10/01/08 By bnlent 負庫存出貨添加art作業清單 
+# Modify.........: No.FUN-A10037 10/01/08 By bnlent 負庫存出貨添加art作業清單
 # Modify.........: No:MOD-A20117 10/03/02 By Smapmin 多單位多倉儲批時,update imgs_file的動作在各支程式做
 # Modify.........: No:FUN-A20048 10/03/31 by liuxqa 出库时，须检查有无备置资料，库存考虑变为库存-备置.
-# Modify.........: No:FUN-A80106 10/08/20 by Summer aimt306增加_icd行業 
+# Modify.........: No:FUN-A80106 10/08/20 by Summer aimt306增加_icd行業
 # Modify.........: No.FUN-A90049 10/10/11 By huangtao 增加料號參數的判斷
 # Modify.........: No.MOD-AA0086 10/10/15 By Carrier aimt325/aimt326 批序号时,WIP仓不能做批序号的内容
 # Modify.........: No.FUN-AB0011 10/11/11 By huangtao mod 參數
@@ -148,10 +148,10 @@
 # Modify.........: No:FUN-CA0084 12/11/01 By xuxz 走開票流程且為大陸版的時候axmt700扣帳
 # Modify.........: No:FUN-CB0085 12/11/23 By jingll 补過單
 # Modify.........: No:MOD-CB0199 12/11/21 By Carrier 更新img前,检查ime资料是否存在,不存在则insert ime
-# Modify.........: No:MOD-D30085 13/03/11 By ck2yuan 取代關係就被設定為失效,應考慮全部可用倉的數量，非其一個倉儲批數量為0. 
+# Modify.........: No:MOD-D30085 13/03/11 By ck2yuan 取代關係就被設定為失效,應考慮全部可用倉的數量，非其一個倉儲批數量為0.
 # Modify.........: No:FUN-D30024 13/03/12 By fengrui 負庫存依據imd23判斷
 # Modify.........: No.DEV-D30026 13/03/15 By Nina GP5.3 追版:DEV-D20002以上為GP5.25 的單號
-# Modify.........: No.TQC-D30047 13/03/19 By ck2yuan 修正MOD-D30085 
+# Modify.........: No.TQC-D30047 13/03/19 By ck2yuan 修正MOD-D30085
 # Modify.........: No:TQC-D30054 13/03/21 By lixh1 FUN-D30024所做的修改在正式區被還原,故重新過單
 # Modify.........: No:CHI-BB0057 13/03/25 By Vampire axmt628由出貨單轉入且oaz23='N'時，ogb17 預設 'N'
 # Modify.........: No:CHI-D10014 13/04/03 By bart aimp700rvbs處理
@@ -161,9 +161,9 @@
 
 IMPORT os    #FUN-9B0113
 DATABASE ds
- 
+
 GLOBALS "../../config/top.global"   #FUN-7C0053
- 
+
 #FUNCTION s_upimg(p_rowid,p_type ,p_qty2 ,p_date ,p_item ,   #FUN-8C0084
 FUNCTION s_upimg(p_img01,p_img02,p_img03,p_img04,p_type ,p_qty2 ,p_date ,p_item ,#FUN-8C0084  #TQC-D30054
                  p_stock,p_locat,p_lot  ,p_no   ,p_line ,
@@ -174,7 +174,7 @@ DEFINE
     #No.TQC-9B0015  --Begin
    #p_rowid    LIKE type_file.chr18,
     p_rx       LIKE type_file.chr18,
-    #No.TQC-9B0015  --End  
+    #No.TQC-9B0015  --End
     p_type     LIKE type_file.num5,   	#No.FUN-680147 SMALLINT
     p_qty2     LIKE img_file.img10,
     p_date     LIKE img_file.img17, #異動日期
@@ -228,24 +228,55 @@ DEFINE g_ima921   LIKE ima_file.ima921  #No.FUN-810036
 DEFINE l_n        LIKE type_file.num5   #FUN-8C0084
 DEFINE l_img RECORD LIKE img_file.*     #No.TQC-930155
 DEFINE l_sig05    LIKE sig_file.sig05   #No.FUN-A20048 add
-DEFINE l_img10    LIKE img_file.img10   #No.FUN-A20048 add 
+DEFINE l_img10    LIKE img_file.img10   #No.FUN-A20048 add
 DEFINE l_sie05    LIKE sie_file.sie05   #No.FUN-A20048 add
 #DEFINE l_issue_flag  LIKE type_file.num5  #TQC-AC0298  #是否為發退料單過帳  #FUN-AC0074
-DEFINE l_issue_flag  LIKE type_file.chr1   #FUN-AC0074             
+DEFINE l_issue_flag  LIKE type_file.chr1   #FUN-AC0074
 DEFINE g_flag        LIKE type_file.chr1   #FUN-C80107 add
+# darcy add s---
+define l_sys        varchar(3),
+       l_cnt        integer,
+       l_img13      like img_file.img13,
+       l_img18      like img_file.img18
+
+# 新增一个逻辑，当是asft623入库的时候，强制更新制造日期为周期对应日期，并推送有效日期
+if g_prog[1,7] = 'asft623' then
+    let l_sys = p_no
+    select count(*) into l_cnt from smy_file
+     where smyslip = l_sys and smysys = 'asf'
+       and smykind = 'A'
+    if l_cnt > 0 then
+        select sfvud13 into l_img13
+          from sfv_file where sfv01 = p_no
+           and sfv03 = p_line
+        if sqlca.sqlcode or cl_null(l_img13) or l_img13 < mdy(1,1,2000) then
+        else
+            select ima71 into l_ima71 from ima_file where ima01 = p_img01
+            if l_ima71 = 0 then
+                let l_img18 = g_lastdat
+            else
+                let l_img18 = l_img13 + l_ima71
+            end if
+            update img_file set img13 = l_img13,img18 = l_img18
+             where img01 = p_img01 and img02 = p_img02 and img03 = p_img03 and img04 = p_img04
+        end if
+    end if
+end if
+# darcy add e---
+
 #add by zhangzs 210113  ----s------
 IF p_ono = 'abcd' THEN
   LET g_prog[1,7]= 'abcdefg'
-END IF 
+END IF
 #add by zhangzs 210113  ----e------
-#FUN-A90049 -------------start------------------------------------   
+#FUN-A90049 -------------start------------------------------------
 #    IF s_joint_venture( p_item ,g_plant) OR NOT s_internal_item( p_item,g_plant ) THEN        #FUN-AB0011  mark
      IF s_joint_venture( p_img01 ,g_plant) OR NOT s_internal_item( p_img01,g_plant ) THEN        #FUN-AB0011
         RETURN
     END IF
 #FUN-A90049 --------------end-------------------------------------
     #No.FUN-8C0084--BEGIN--
-    IF g_prog[1,7]= 'aimp880' OR g_prog[1,7]= 'aimt307' OR 
+    IF g_prog[1,7]= 'aimp880' OR g_prog[1,7]= 'aimt307' OR
        g_prog[1,7]= 'aimt337' OR g_prog[1,7]= 'aimp401' THEN
        SELECT count(*) INTO l_n FROM img_file
         WHERE img01 = p_img01
@@ -259,14 +290,14 @@ END IF
        ELSE
          #LET p_rowid = -9999
           LET p_rx    = -9999
-       END IF      
+       END IF
     ELSE
       #LET p_rowid = -9999
        LET p_rx    = -9999
     END IF
-    #No.TQC-9B0015  --End  
+    #No.TQC-9B0015  --End
     #No.FUN-8C0084--END--
- 
+
     WHENEVER ERROR CALL cl_err_msg_log
     #單倉管理者, 在此不用麻煩了
     IF g_sma.sma12 != 'Y' THEN RETURN END IF
@@ -275,16 +306,16 @@ END IF
     IF p_type != 1 AND p_type != -1 AND p_type != 0  AND p_type != 2
        THEN RETURN
     END IF
- 
+
 #   LET l_issue_flag = FALSE  #TQC-AC0298  #FUN-AC0074
-    LET l_issue_flag = ''     #FUN-AC0074 
+    LET l_issue_flag = ''     #FUN-AC0074
     #FUN-8C0084--BEGIN--
     IF cl_null(p_img01) THEN LET p_img01 = ' ' END IF
     IF cl_null(p_img02) THEN LET p_img02 = ' ' END IF
     IF cl_null(p_img03) THEN LET p_img03 = ' ' END IF
     IF cl_null(p_img04) THEN LET p_img04 = ' ' END IF
     #FUN-8C0084--END--
- 
+
     #No.MOD-CB0199  --Begin
     #check ime01=p_img01 & ime02 = p_img02 的ime_file资料是否存在,若不存在,则生成一笔
     CALL s_upimg_ins_ime(p_img02,p_img03)
@@ -292,7 +323,7 @@ END IF
 
     #TQC-620156...............begin
     IF cl_null(p_item) THEN
-       SELECT img01 INTO p_item FROM img_file 
+       SELECT img01 INTO p_item FROM img_file
 #No.FUN-8C0084--BEGIN--
 #        WHERE img01=p_item AND img02=p_stock AND img03=p_locat AND img04=p_lot
          WHERE img01=p_img01
@@ -305,7 +336,7 @@ END IF
     #No.TQC-9B0015  --Begin
     #IF p_rowid!='-3333' THEN  #MOD-570005 add if 判斷
      IF p_rx   !='-3333' THEN  #MOD-570005 add if 判斷
-    #No.TQC-9B0015  --End  
+    #No.TQC-9B0015  --End
         SELECT img10 INTO l_img10_o FROM img_file
 #No.FUN-8C0084--BEGIN--
 #        WHERE img01=p_item AND img02=p_stock AND img03=p_locat AND img04=p_lot
@@ -313,7 +344,7 @@ END IF
            AND img02=p_img02
            AND img03=p_img03
            AND img04=p_img04
-#No.FUN-8C0084--END--  
+#No.FUN-8C0084--END--
          #MOD-530408 add
         IF SQLCA.sqlcode THEN
             LET g_success='N'
@@ -334,12 +365,12 @@ END IF
     ## 依主程式代號加上參數sma894決定是否控制庫存量不可為負
     LET l_flag = 'X' #MOD-570005 add
     LET g_flag = NULL   #FUN-C80107 add
-    CASE 
+    CASE
          #(庫存不足是否許雜項發料及報廢)
          #No.+055 010404 by plum add aimp379,aimp378
-         #WHEN g_prog='aimt301' OR g_prog='aimt302' OR g_prog='aimt303' OR 
+         #WHEN g_prog='aimt301' OR g_prog='aimt302' OR g_prog='aimt303' OR
          #    g_prog='aimt311' OR g_prog='aimt312' OR g_prog='aimt313'
-         WHEN g_prog[1,7]='aimt301' OR g_prog[1,7]='aimt302' OR g_prog[1,7]='aimt303' OR 
+         WHEN g_prog[1,7]='aimt301' OR g_prog[1,7]='aimt302' OR g_prog[1,7]='aimt303' OR
               g_prog[1,7]='aimt311' OR g_prog[1,7]='aimt312' OR g_prog[1,7]='aimt313' OR
               g_prog='aimp379' OR g_prog='atmt243' OR g_prog='atmt244'     #NO.FUN-610074
                OR g_prog='aemt200' OR g_prog='aemt201' OR g_prog='aemt202' #MOD-530408 add
@@ -349,18 +380,18 @@ END IF
                OR g_prog='almt700' #FUN-BC0061 add
                OR g_prog='wpct029' #WEB-C90001 add
                OR g_prog='wpct301' OR g_prog='wpct302' OR g_prog='wpct303' OR g_prog='wpcp379'  #FUN-C30230--add wpct301,wpct302,wpct303,wpcp379
-               OR g_prog='cxcp001' 
+               OR g_prog='cxcp001'
              #IF g_sma.sma894[1,1]='N' THEN LET l_flag = 'Y' END IF  #FUN-C80107 mark
              #CALL s_inv_shrt_by_warehouse(g_sma.sma894[1,1],p_img02) RETURNING g_flag  #FUN-C80107 add #FUN-D30024
               CALL s_inv_shrt_by_warehouse(p_img02,g_plant) RETURNING g_flag                    #FUN-D30024 add
               IF g_flag = 'N' THEN LET l_flag = 'Y' END IF   #FUN-C80107 add
               LET l_issue_flag = '4'   #FUN-AC0074
- 
+
          #(庫存不足是否允許出貨扣帳)
-         WHEN g_prog[1,7]='axmt650' OR g_prog[1,7]='axmt610' OR g_prog[1,7]='axmt620' 
-              OR g_prog='atmt242' OR g_prog='axmp650'   #No.FUN-610064 
+         WHEN g_prog[1,7]='axmt650' OR g_prog[1,7]='axmt610' OR g_prog[1,7]='axmt620'
+              OR g_prog='atmt242' OR g_prog='axmp650'   #No.FUN-610064
              #OR g_prog='axmt627' OR g_prog='axmt628'   #No.FUN-610057 #MOD-B60234 mark
-              OR g_prog='axmt627' OR g_prog[1,7]='axmt628'             #MOD-B60234 
+              OR g_prog='axmt627' OR g_prog[1,7]='axmt628'             #MOD-B60234
               OR g_prog='axmt640'   #No.FUN-740016
               OR g_prog='axmp201'   #No.FUN-960071
               OR g_prog='wmbt015'   #No.FUN-C10037
@@ -370,28 +401,28 @@ END IF
               OR g_prog='axmt670'      #FUN-C60036 add
               #No.3200 add
               OR g_prog='axmp820' OR g_prog='axmp900' OR g_prog='axmp830'
-              OR g_prog='axmp901' 
+              OR g_prog='axmp901'
 	      ###### 01/11/20 Tommy Add
-	      OR g_prog='axmp910' 
-              OR g_prog='axmp911' 
+	      OR g_prog='axmp910'
+              OR g_prog='axmp911'
 	      ###### End Tommy
               #No.3200 end
-              OR g_prog[1,7]='axmt820'  OR g_prog[1,7]='axmt821'   #MOD-530003  
+              OR g_prog[1,7]='axmt820'  OR g_prog[1,7]='axmt821'   #MOD-530003
              #IF g_sma.sma894[2,2]='N' THEN LET l_flag = 'Y' END IF  #FUN-C80107 mark
-             #CALL s_inv_shrt_by_warehouse(g_sma.sma894[2,2],p_img02) RETURNING g_flag  #FUN-C80107 add #FUN-D30024 
+             #CALL s_inv_shrt_by_warehouse(g_sma.sma894[2,2],p_img02) RETURNING g_flag  #FUN-C80107 add #FUN-D30024
               CALL s_inv_shrt_by_warehouse(p_img02,g_plant) RETURNING g_flag                    #FUN-D30024 add
               IF g_flag = 'N' THEN LET l_flag = 'Y' END IF   #FUN-C80107 add
-              LET l_issue_flag = '3'   #FUN-AC0074 
- 
+              LET l_issue_flag = '3'   #FUN-AC0074
+
          #(庫存不足是否允許工單發料退料過帳還原)
-         WHEN g_prog[1,7]='asfi511' OR g_prog[1,7]='asfi512' OR g_prog[1,7]='asfi513' OR 
-              g_prog[1,7]='asfi514' OR g_prog[1,7]='asfi526' OR g_prog[1,7]='asfi527' OR 
+         WHEN g_prog[1,7]='asfi511' OR g_prog[1,7]='asfi512' OR g_prog[1,7]='asfi513' OR
+              g_prog[1,7]='asfi514' OR g_prog[1,7]='asfi526' OR g_prog[1,7]='asfi527' OR
               g_prog[1,7]='asfi528' OR g_prog[1,7]='asfi529' OR g_prog[1,7]='asfi519' OR  #FUN-C70014  add g_prog[1,7]='asfi519'
               g_prog[1,7]='asfi510' OR g_prog[1,7]='asfi520' OR g_prog[1,7]='asri210' OR  #FUN-5C0114
               g_prog[1,7]='asri220' OR g_prog[1,7]='asri230' #FUN-5C0114
               OR g_prog[1,7]= 'abcdefg'   #add by zhangzs 210113
               OR g_prog = 'csft511'    #add by gujq 20160904
-              OR g_prog = 'csft512'    #add by sunll 170616  
+              OR g_prog = 'csft512'    #add by sunll 170616
               OR g_prog='asfp510' OR g_prog='asfp520' #MOD-530408 add
               OR g_prog='wmbt010'  #FUN-C10037 add
               OR g_prog='abat021'  #DEV-D30026 add
@@ -400,12 +431,12 @@ END IF
               CALL s_inv_shrt_by_warehouse(p_img02,g_plant) RETURNING g_flag                    #FUN-D30024 add
               IF g_flag = 'N' THEN LET l_flag = 'Y' END IF   #FUN-C80107 add
             # LET l_issue_flag = TRUE  #TQC-AC0298     #FUN-AC0074
-              LET l_issue_flag = '1'   #FUN-AC0074 
+              LET l_issue_flag = '1'   #FUN-AC0074
          #(庫存不足是否允許調撥出庫)
          #No.+055 010404 by plum add aimp379,aimp378
-         #WHEN g_prog='aimp400' OR g_prog='aimp401' OR g_prog='aimp700' OR 
+         #WHEN g_prog='aimp400' OR g_prog='aimp401' OR g_prog='aimp700' OR
          #     g_prog='aimp701' OR g_prog='aimt324' OR g_prog='aimt325'
-         WHEN g_prog='aimp400' OR g_prog='aimp401' OR g_prog='aimp700' OR 
+         WHEN g_prog='aimp400' OR g_prog='aimp401' OR g_prog='aimp700' OR
               g_prog='aimp701' OR g_prog[1,7]='aimt324' OR g_prog[1,7]='aimt325' OR
               g_prog='aimp378' OR g_prog = 'artt256'     #NO.FUN-960130---add art---#NO.FUN-9B0016
                OR g_prog[1,7]='artt262' OR g_prog[1,7]='artt263'  #No.FUN-A10037
@@ -416,8 +447,8 @@ END IF
              #CALL s_inv_shrt_by_warehouse(g_sma.sma894[4,4],p_img02) RETURNING g_flag  #FUN-C80107 add #FUN-D30024
               CALL s_inv_shrt_by_warehouse(p_img02,g_plant) RETURNING g_flag                    #FUN-D30024 add
               IF g_flag = 'N' THEN LET l_flag = 'Y' END IF   #FUN-C80107 add
-              LET l_issue_flag = '5'   #FUN-AC0074  
-              
+              LET l_issue_flag = '5'   #FUN-AC0074
+
          #(庫存不足是否允許還料出庫)
         #WHEN g_prog='aimt306' OR g_prog='aimt309' #FUN-A80106 mark
          WHEN g_prog[1,7]='aimt306' OR g_prog[1,7]='aimt309' #FUN-A80106
@@ -425,7 +456,7 @@ END IF
              #CALL s_inv_shrt_by_warehouse(g_sma.sma894[5,5],p_img02) RETURNING g_flag  #FUN-C80107 add #FUN-D30024
               CALL s_inv_shrt_by_warehouse(p_img02,g_plant) RETURNING g_flag                    #FUN-D30024 add
               IF g_flag = 'N' THEN LET l_flag = 'Y' END IF   #FUN-C80107 add
-              
+
          #(庫存不足是否允許採購退庫過帳及入庫過帳還原)
          WHEN g_prog[1,7]='apmt720' OR g_prog[1,7]='apmt721' OR g_prog[1,7]='apmt722' OR g_prog[1,7]='wpct010' OR #FUN-CA0023-ADD WPCT010 #FUN-CB0085
               g_prog[1,7]='apmt730' OR g_prog[1,7]='apmt731' OR g_prog[1,7]='apmt732' OR
@@ -439,10 +470,10 @@ END IF
                OR g_prog='asft623' OR g_prog='axdt203' #MOD-530408 add
                OR g_prog='axdt202' #MOD-570002 add
                #MOD-530003
-              OR g_prog[1,7]='apmt740'  OR g_prog[1,7]='apmt741' OR g_prog[1,7]='apmt742' 
+              OR g_prog[1,7]='apmt740'  OR g_prog[1,7]='apmt741' OR g_prog[1,7]='apmt742'
               #--
-               #MOD-530037  
-              OR g_prog[1,7]='asft700'  OR g_prog='asft730' 
+               #MOD-530037
+              OR g_prog[1,7]='asft700'  OR g_prog='asft730'
               #--
               OR g_prog[1,7]='aict042' OR g_prog[1,7]='aict043'  #CHI-830025
               OR g_prog[1,7]='aict044' #CHI-830025
@@ -453,17 +484,17 @@ END IF
              #CALL s_inv_shrt_by_warehouse(g_sma.sma894[6,6],p_img02) RETURNING g_flag  #FUN-C80107 add #FUN-D30024
               CALL s_inv_shrt_by_warehouse(p_img02,g_plant) RETURNING g_flag                    #FUN-D30024 add
               IF g_flag = 'N' THEN LET l_flag = 'Y' END IF   #FUN-C80107 add
-             
+
          #(庫存不足是否允許銷退過帳還原)
          #No.+055 010404 by plum add axmp870
          #WHEN g_prog='axmt700' OR g_prog='axmt840'
          WHEN g_prog[1,7]='axmt700' OR g_prog[1,7]='axmt840' OR g_prog='axmp750' OR
-              g_prog='axmp870' OR g_prog='atmt252'    #No.FUN-610064 
+              g_prog='axmp870' OR g_prog='atmt252'    #No.FUN-610064
              #IF g_sma.sma894[7,7]='N' THEN LET l_flag = 'Y' END IF   #FUN-C80107 mark
              #CALL s_inv_shrt_by_warehouse(g_sma.sma894[7,7],p_img02) RETURNING g_flag  #FUN-C80107 add #FUN-D30024
               CALL s_inv_shrt_by_warehouse(p_img02,g_plant) RETURNING g_flag                    #FUN-D30024 add
               IF g_flag = 'N' THEN LET l_flag = 'Y' END IF   #FUN-C80107 add
-            
+
          #(是否允許盤點過帳後庫存為負)
          WHEN g_prog='aimp880' OR g_prog='aimt307' OR g_prog='aimp920'
               OR g_prog='artt215'  #No.FUN-A10037
@@ -471,7 +502,7 @@ END IF
              #CALL s_inv_shrt_by_warehouse(g_sma.sma894[8,8],p_img02) RETURNING g_flag  #FUN-C80107 add #FUN-D30024
               CALL s_inv_shrt_by_warehouse(p_img02,g_plant) RETURNING g_flag                    #FUN-D30024 add
               IF g_flag = 'N' THEN LET l_flag = 'Y' END IF   #FUN-C80107 add
-           
+
          OTHERWISE
               LET l_flag = 'N'
     END CASE
@@ -490,16 +521,16 @@ END IF
      #MOD-530408(end)
     #################################################################
     LET l_msg='s_upimg:',p_no,'-',p_line USING '##&'  #No:8652
- 
+
     #報廢時, 只要更新原有的, 就可以了 (david)
     IF p_type = 0 THEN  #報廢
-       IF l_img10_o<p_qty2 AND p_qty2>0 AND l_flag = 'Y' THEN 
+       IF l_img10_o<p_qty2 AND p_qty2>0 AND l_flag = 'Y' THEN
           LET g_success='N'
           #-----No.FUN-6C0083-----
           IF g_bgerr THEN
              CALL s_errmsg('ima01',p_item,l_msg,'aim-406',1)
           ELSE
-             CALL cl_err(l_msg,'aim-406',1) 
+             CALL cl_err(l_msg,'aim-406',1)
           END IF
           #-----No.FUN-6C0083 END-----
           RETURN  #No:8652
@@ -507,14 +538,14 @@ END IF
  #----No.MOD-580191 select出img10 進行計算後，在update img10
          LET g_img10_old = NULL
          LET g_img10_new = NULL
-         SELECT img10 INTO g_img10_old FROM img_file 
+         SELECT img10 INTO g_img10_old FROM img_file
 #No.FUN-8C0084--END--
 #         WHERE img01=p_item AND img02=p_stock AND img03=p_locat AND img04=p_lot
           WHERE img01=p_img01
             AND img02=p_img02
             AND img03=p_img03
             AND img04=p_img04
-#No.FUN-8C0084--END--  
+#No.FUN-8C0084--END--
          IF STATUS OR g_img10_old IS NULL THEN
             LET g_success='N'
             #-----No.FUN-6C0083-----
@@ -538,15 +569,15 @@ END IF
               AND img02=p_img02
               AND img03=p_img03
               AND img04=p_img04
-           #No.FUN-8C0084--END--  
- 
+           #No.FUN-8C0084--END--
+
 #        UPDATE img_file
 #           SET img10=img10-p_qty2, #庫存數量
 #               img17=p_date        #異動日期
 #           WHERE img01=p_item AND img02=p_stock AND img03=p_locat AND img04=p_lot
 #---------end
            IF SQLCA.sqlcode   THEN
-              LET g_success='N' 
+              LET g_success='N'
               #-----No.FUN-6C0083-----
               IF g_bgerr THEN
                  CALL s_errmsg('ima01',p_item,'','aim-992',1)
@@ -557,14 +588,14 @@ END IF
               RETURN
            END IF
  #---------No.MOD-580191 比較update 後img10是否與異動後庫存量相等
-        SELECT img01,img10 INTO g_img01,g_img10_new FROM img_file 
+        SELECT img01,img10 INTO g_img01,g_img10_new FROM img_file
         #No.FUN-8C0084--BEGIN--
         #WHERE img01=p_item AND img02=p_stock AND img03=p_locat AND img04=p_lot
          WHERE img01=p_img01
            AND img02=p_img02
            AND img03=p_img03
            AND img04=p_img04
-        #No.FUN-8C0084--END--  
+        #No.FUN-8C0084--END--
        IF STATUS OR g_img10_new IS NULL THEN
            LET g_success='N'
            #-----No.FUN-6C0083-----
@@ -595,10 +626,10 @@ END IF
            RETURN
         END IF
 #-------end
- 
+
          CALL chk_img10_0(p_img01,p_img02,p_img03,p_img04,p_item,p_stock,p_locat,p_lot) #FUN-8C0084
          #-----No.FUN-810036-----
-         SELECT ima918,ima921 INTO g_ima918,g_ima921 
+         SELECT ima918,ima921 INTO g_ima918,g_ima921
            FROM ima_file
           WHERE ima01 = p_item
             AND imaacti = "Y"
@@ -619,9 +650,9 @@ END IF
          END IF #FUN-AB0055
         RETURN
     END IF
- 
+
     #出庫時, 只要更新原有的, 就可以了
-    IF p_type =-1 THEN  
+    IF p_type =-1 THEN
 #No.FUN-A20048 add--begin
 #出庫  #如果存在备置档，判断库存时，需减去备置量。
        CALL s_sig(p_img01,p_img02,p_img03,p_img04,p_no,p_line,l_issue_flag) RETURNING l_sig05  #FUN-A20048 add #TQC-AC0298
@@ -630,12 +661,12 @@ END IF
        IF l_sig05 > 0 AND l_img10 < p_qty2 AND p_qty2 > 0 AND#FUN-CA0084 add
           NOT  (g_oaz.oaz92 = 'Y' AND g_oaz.oaz93 = 'Y' AND g_aza.aza26 = '2' AND g_prog = 'axmt700') THEN#FUN-CA0084 add
           LET g_success ='N'
-          DECLARE t610_curs_s CURSOR FOR SELECT sie05 FROM sie_file WHERE sie01 = p_img01 AND sie02 = p_img02 
+          DECLARE t610_curs_s CURSOR FOR SELECT sie05 FROM sie_file WHERE sie01 = p_img01 AND sie02 = p_img02
                      AND sie03 = p_img03 AND sie04 = p_img04 AND sie11 > 0
           FOREACH t610_curs_s INTO l_sie05
-             IF STATUS THEN LET l_sie05 =' ' END IF 
+             IF STATUS THEN LET l_sie05 =' ' END IF
              EXIT FOREACH
-          END FOREACH   
+          END FOREACH
            IF g_bgerr THEN
               LET g_showmsg=p_item CLIPPED,'/',l_sie05 CLIPPED,'/',l_img10_o CLIPPED,'/',l_sig05 CLIPPED,'/',l_img10 CLIPPED
               CALL s_errmsg('ima01,sie05,img10,sig05,img10',g_showmsg,l_msg,'sie-001',1)
@@ -645,7 +676,7 @@ END IF
            #-----No.FUN-6C0083 END-----
            RETURN  #No:8652
        END IF
-#No.FUN-A20048 add --end  
+#No.FUN-A20048 add --end
       #IF l_img10_o<p_qty2 AND p_qty2>0 AND l_flag = 'Y' THEN #FUN-CA0084 mark
        IF l_img10_o<p_qty2 AND p_qty2>0 AND l_flag = 'Y' AND  #FUN-CA0084 add
           NOT  (g_oaz.oaz92 = 'Y' AND g_oaz.oaz93 = 'Y' AND g_aza.aza26 = '2' AND g_prog = 'axmt700') THEN#FUN-CA0084 add
@@ -663,14 +694,14 @@ END IF
  #----No.MOD-580191 select出img10 進行計算後，在update img10
          LET g_img10_old = NULL
          LET g_img10_new = NULL
-         SELECT img10 INTO g_img10_old FROM img_file 
+         SELECT img10 INTO g_img10_old FROM img_file
          #No.FUN-8C0084--BEGIN--
          #WHERE img01=p_item AND img02=p_stock AND img03=p_locat AND img04=p_lot
           WHERE img01=p_img01
             AND img02=p_img02
             AND img03=p_img03
             AND img04=p_img04
-        #No.FUN-8C0084--END--  
+        #No.FUN-8C0084--END--
          IF STATUS OR g_img10_old IS NULL THEN
             LET g_success='N'
             #-----No.FUN-6C0083-----
@@ -682,7 +713,7 @@ END IF
             #-----No.FUN-6C0083 END-----
             RETURN
          END IF
-         LET g_img10_old = g_img10_old - p_qty2 
+         LET g_img10_old = g_img10_old - p_qty2
          UPDATE img_file
             SET img10=g_img10_old,   #庫存數量
                 img16=p_date,
@@ -695,15 +726,15 @@ END IF
              AND img02=p_img02
              AND img03=p_img03
              AND img04=p_img04
-        #No.FUN-8C0084--END--  
- 
+        #No.FUN-8C0084--END--
+
 #        UPDATE img_file
 #           SET img10=img10-p_qty2, #庫存數量
 #               img16=p_date,
 #               img17=p_date        #異動日期
 #           WHERE img01=p_item AND img02=p_stock AND img03=p_locat AND img04=p_lot
 #--------end
- 
+
            IF SQLCA.sqlcode   THEN
               LET g_success='N'
               #-----No.FUN-6C0083-----
@@ -724,7 +755,7 @@ END IF
                  AND img02=p_img02
                  AND img03=p_img03
                  AND img04=p_img04
-              #No.FUN-8C0084--END--  
+              #No.FUN-8C0084--END--
         IF STATUS OR g_img10_new IS NULL THEN
            LET g_success='N'
            #-----No.FUN-6C0083-----
@@ -755,10 +786,10 @@ END IF
            RETURN
         END IF
 #-------end
- 
+
          CALL chk_img10_0(p_img01,p_img02,p_img03,p_img04,p_item,p_stock,p_locat,p_lot) #FUN-8C0084
          #-----No.FUN-810036-----
-         SELECT ima918,ima921 INTO g_ima918,g_ima921 
+         SELECT ima918,ima921 INTO g_ima918,g_ima921
            FROM ima_file
           WHERE ima01 = p_item
             AND imaacti = "Y"
@@ -783,15 +814,15 @@ END IF
     #No.TQC-9B0015  --Begin
    #IF p_rowid!='-3333' THEN #原明細資料存在
     IF p_rx   !='-3333' THEN #原明細資料存在
-    #No.TQC-9B0015  --End  
-       IF (l_img10_o+p_qty2)<0 AND p_qty2<0 AND l_flag = 'Y' THEN 
+    #No.TQC-9B0015  --End
+       IF (l_img10_o+p_qty2)<0 AND p_qty2<0 AND l_flag = 'Y' THEN
           #CALL cl_err('upd img','asf-375',0) LET g_success='N' RETURN
            LET g_success='N'
            #-----No.FUN-6C0083-----
            IF g_bgerr THEN
               CALL s_errmsg('ima01',p_item,l_msg,'aim-406',1)
            ELSE
-              CALL cl_err(l_msg,'aim-406',1)  
+              CALL cl_err(l_msg,'aim-406',1)
            END IF
            #-----No.FUN-6C0083 END-----
            LET g_success='N' RETURN  #No:8652
@@ -801,13 +832,13 @@ END IF
          LET g_img10_old = NULL
          LET g_img10_new = NULL
          SELECT img10 INTO g_img10_old FROM img_file
-         #No;FUN-8C0084--BEGIN-- 
+         #No;FUN-8C0084--BEGIN--
          #WHERE img01=p_item AND img02=p_stock AND img03=p_locat AND img04=p_lot
           WHERE img01=p_img01
             AND img02=p_img02
             AND img03=p_img03
             AND img04=p_img04
-          #No.FUN-8C0084--END--  
+          #No.FUN-8C0084--END--
          IF STATUS OR g_img10_old IS NULL THEN
             LET g_success='N'
             #-----No.FUN-6C0083-----
@@ -832,7 +863,7 @@ END IF
             AND img02=p_img02
             AND img03=p_img03
             AND img04=p_img04
-          #No.FUN-8C0084--END--  
+          #No.FUN-8C0084--END--
 #---mark
 #{ckp#3}    UPDATE img_file
 #              SET img10=img10+p_qty2, #庫存數量 + 盤盈虧數量
@@ -840,9 +871,9 @@ END IF
 #                  img17=p_date        #異動日期
 #              WHERE img01=p_item AND img02=p_stock AND img03=p_locat AND img04=p_lot
 #----end
- 
+
            IF SQLCA.sqlcode   THEN
-              LET g_success='N' 
+              LET g_success='N'
               #-----No.FUN-6C0083-----
               IF g_bgerr THEN
                  CALL s_errmsg('ima01',p_item,'(s_upimg:ckp#3)',SQLCA.sqlcode,1)
@@ -861,7 +892,7 @@ END IF
               AND img02=p_img02
               AND img03=p_img03
               AND img04=p_img04
-          #No.FUN-8C0084--END--  
+          #No.FUN-8C0084--END--
            IF STATUS OR g_img10_new IS NULL THEN
               LET g_success='N'
               #-----No.FUN-6C0083-----
@@ -892,18 +923,18 @@ END IF
               RETURN
            END IF
 #-------end
-       ELSE 
+       ELSE
  #----No.MOD-580191 select出img10 進行計算後，在update img10
          LET g_img10_old = NULL
          LET g_img10_new = NULL
-         SELECT img10 INTO g_img10_old FROM img_file 
+         SELECT img10 INTO g_img10_old FROM img_file
            #No.FUN-8C0084--BEGIN--
            #WHERE img01=p_item AND img02=p_stock AND img03=p_locat AND img04=p_lot
             WHERE img01=p_img01
               AND img02=p_img02
               AND img03=p_img03
               AND img04=p_img04
-          #No.FUN-8C0084--END--  
+          #No.FUN-8C0084--END--
          IF STATUS OR g_img10_old IS NULL THEN
             LET g_success='N'
             #-----No.FUN-6C0083-----
@@ -919,13 +950,13 @@ END IF
          #darcy:2022/04/21 s---
          # 库存数量为0时，同步更新呆滞日期
          UPDATE img_file
-            SET img37=p_date 
+            SET img37=p_date
            WHERE img01=p_img01
              AND img02=p_img02
              AND img03=p_img03
              AND img04=p_img04
              AND img10 = 0
-         #darcy:2022/04/21 e--- 
+         #darcy:2022/04/21 e---
          UPDATE img_file
             SET img10=g_img10_old,   #庫存數量
                 img15=p_date,
@@ -938,7 +969,7 @@ END IF
               AND img02=p_img02
               AND img03=p_img03
               AND img04=p_img04
-          #No.FUN-8C0084--END--  
+          #No.FUN-8C0084--END--
 #----mark
 #{ckp#4}    UPDATE img_file
 #              SET img10=img10+p_qty2, #庫存數量
@@ -946,9 +977,9 @@ END IF
 #                  img17=p_date        #異動日期
 #              WHERE img01=p_item AND img02=p_stock AND img03=p_locat AND img04=p_lot
 #----end
- 
+
            IF SQLCA.sqlcode   THEN
-              LET g_success='N' 
+              LET g_success='N'
               #-----No.FUN-6C0083-----
               IF g_bgerr THEN
                  CALL s_errmsg('ima01',p_item,'(s_upimg:ckp#4)',SQLCA.sqlcode,1)
@@ -967,7 +998,7 @@ END IF
               AND img02=p_img02
               AND img03=p_img03
               AND img04=p_img04
-          #No.FUN-8C0084--END--  
+          #No.FUN-8C0084--END--
            IF STATUS OR g_img10_new IS NULL THEN
               LET g_success='N'
               #-----No.FUN-6C0083-----
@@ -998,11 +1029,11 @@ END IF
               RETURN
            END IF
 #-------end
- 
+
        END IF
         CALL chk_img10_0(p_img01,p_img02,p_img03,p_img04,p_item,p_stock,p_locat,p_lot) #No.FUN-8C0084
          #-----No.FUN-810036-----
-         SELECT ima918,ima921 INTO g_ima918,g_ima921 
+         SELECT ima918,ima921 INTO g_ima918,g_ima921
            FROM ima_file
           WHERE ima01 = p_item
             AND imaacti = "Y"
@@ -1038,7 +1069,7 @@ END IF
 
     #add by huzhou 170807 针对调拨料件，不去更新img18字段
 
-   IF g_prog = "aimt324" THEN 
+   IF g_prog = "aimt324" THEN
       SELECT img18 INTO l_date  FROM img_file
        WHERE img01 = p_img01
 	 AND img02 = p_img02
@@ -1070,15 +1101,15 @@ END IF
    IF p_fac1 IS NULL THEN LET p_fac1=1 END IF
    IF p_fac2 IS NULL THEN LET p_fac2=1 END IF
    IF p_fac3 IS NULL THEN LET p_fac3=1 END IF
-   CALL s_hqty(p_item,p_stock,p_locat) RETURNING s_status,s_qty,s_unit 
+   CALL s_hqty(p_item,p_stock,p_locat) RETURNING s_status,s_qty,s_unit
    IF s_qty IS NULL THEN LET s_qty=0 END IF
 #No.TQC-930155-start-
 #{ckp#5} INSERT INTO img_file
 #              1      2       3       4     5    6
 #        VALUES(p_item,p_stock,p_locat,p_lot,p_no,p_line,
-#       7      8     9       10     11 12 13        
+#       7      8     9       10     11 12 13
 #        p_unit,p_qty,p_unit2,p_qty2, 0, 0, null, #NO:7522
-#       14     15     16     17     18                    
+#       14     15     16     17     18
 #        p_date,p_date,p_date,p_date,l_date,
 #       19     20     21     22      23      24      25
 #        p_cla,p_fac1,p_fac2,l_img22,l_img23,l_img24,l_img25,
@@ -1126,7 +1157,7 @@ END IF
         INSERT INTO img_file VALUES (l_img.*)
 #No.TQC-930155--end--
            IF SQLCA.sqlcode THEN
-              LET g_success='N' 
+              LET g_success='N'
               #-----No.FUN-6C0083-----
               IF g_bgerr THEN
                  CALL s_errmsg('ima01',p_item,'(s_upimg:ckp#5)',SQLCA.sqlcode,1)
@@ -1137,9 +1168,9 @@ END IF
               #-----No.FUN-6C0083 END-----
               RETURN
            END IF
- 
+
     #(@@)成本問題尚未解決
- 
+
     #--------- 97/06/18 AIM 3.0 產品會議 : check 最高存量限制
     SELECT SUM(img10*img21) INTO l_sum1 FROM img_file   #MOD-940312
         WHERE img01=p_item AND img02=p_stock AND img03=p_locat
@@ -1148,7 +1179,7 @@ END IF
         WHERE imf01=p_item AND imf02=p_stock AND imf03=p_locat
     IF STATUS OR l_sum2 IS NULL THEN RETURN END IF
     IF l_sum1>l_sum2 THEN
-       LET g_success='N' 
+       LET g_success='N'
        #-----No.FUN-6C0083-----
        IF g_bgerr THEN
           CALL s_errmsg('ima01',p_item,'(ckp#6)','aim-390',1)
@@ -1157,11 +1188,11 @@ END IF
        END IF
        #-----No.FUN-6C0083 END-----
        RETURN
-    END IF 
+    END IF
     #-----------------------------------
- 
+
          #-----No.FUN-810036-----
-         SELECT ima918,ima921 INTO g_ima918,g_ima921 
+         SELECT ima918,ima921 INTO g_ima918,g_ima921
            FROM ima_file
           WHERE ima01 = p_item
             AND imaacti = "Y"
@@ -1181,7 +1212,7 @@ END IF
             CALL s_upimg_upbmd(g_img10_old,p_qty2,p_img01)  #FUN-AB0055
          END IF #FUN-AB0055
 END FUNCTION
- 
+
 #FUN-AB0055(S)
 FUNCTION s_upimg_upbmd(p_img10,p_qty2,p_img01)
 DEFINE p_img10   LIKE img_file.img10
@@ -1191,8 +1222,8 @@ DEFINE l_qty     LIKE img_file.img10   #MOD-D30085 add
 
   IF g_sma.sma145 = 'Y' THEN
     #MOD-D30085 str add-----
-     SELECT SUM(img10) INTO l_qty FROM img_file,imd_file        #TQC-D30047 add imd_file 
-      WHERE img01=p_img01 AND img02=imd01 AND imd11='Y' 
+     SELECT SUM(img10) INTO l_qty FROM img_file,imd_file        #TQC-D30047 add imd_file
+      WHERE img01=p_img01 AND img02=imd01 AND imd11='Y'
     #MOD-D30085 end add-----
     #IF p_img10 = 0 AND p_qty2 > 0 THEN                  #MOD-D30085 mark
      IF p_img10 = 0 AND p_qty2 > 0 AND l_qty = 0 THEN    #MOD-D30085 add
@@ -1222,9 +1253,9 @@ END FUNCTION
    DEFINE l_img03    LIKE img_file.img03
    DEFINE l_img04    LIKE img_file.img04
  #No.FUN-8C0084--END--
- 
+
     #CHI-740011---mark---str---
-    #IF g_sma.sma882='Y' THEN  #CHI-710041 mark 
+    #IF g_sma.sma882='Y' THEN  #CHI-710041 mark
     #   IF l_rowid!='-3333' THEN #MOD-570005 add if 判斷
     #      SELECT img10 INTO l_img10 FROM img_file WHERE rowid=l_rowid
     #       #MOD-530408 add
@@ -1242,7 +1273,7 @@ END FUNCTION
     #          RETURN
     #      END IF
     #       #MOD-530408(end)
-    #      IF l_img10=0 THEN 
+    #      IF l_img10=0 THEN
     #         DELETE FROM img_file WHERE rowid=l_rowid
     #          #MOD-530408 add
     #         IF SQLCA.sqlcode THEN
@@ -1261,11 +1292,11 @@ END FUNCTION
     #          #MOD-530408(end)
     #      END IF
     #  END IF
-    #END IF  
+    #END IF
     #CHI-740011---mark---end---
- 
+
 END FUNCTION
- 
+
 #-----No.FUN-810036-----
 #FUNCTION s_upimg_imgs(p_rowid,p_type,p_no,p_line,p_unit2) #FUN-8C0084
 #FUNCTION s_upimg_imgs(p_img01,p_img02,p_img03,p_img04,p_type,p_no,p_line,p_unit2) #FUN-8C0084   #MOD-A20117
@@ -1276,17 +1307,17 @@ FUNCTION s_upimg_imgs(p_img01,p_img02,p_img03,p_img04,p_type,p_no,p_line,p_unit2
           p_unit2    LIKE img_file.img09,
           p_type2    LIKE type_file.num5,   #MOD-A20117  #'1'-->由s_upimg呼叫,'2'-->由單支程式呼叫
           #FUN-8C0084--BEGIN--
-          p_img01    LIKE img_file.img01, 
-          p_img02    LIKE img_file.img02, 
-          p_img03    LIKE img_file.img03, 
+          p_img01    LIKE img_file.img01,
+          p_img02    LIKE img_file.img02,
+          p_img03    LIKE img_file.img03,
           p_img04    LIKE img_file.img04
-          #FUN-8C0084--END-- 
+          #FUN-8C0084--END--
    DEFINE l_sql   STRING
    DEFINE l_rvbs  RECORD LIKE rvbs_file.*
    DEFINE l_imgs08   LIKE imgs_file.imgs08
    DEFINE l_rvbs09   LIKE rvbs_file.rvbs09
    DEFINE l_img01    LIKE img_file.img01
-   DEFINE l_img02    LIKE img_file.img02 
+   DEFINE l_img02    LIKE img_file.img02
    DEFINE l_img03    LIKE img_file.img03
    DEFINE l_img04    LIKE img_file.img04
    DEFINE l_img09    LIKE img_file.img09
@@ -1305,9 +1336,9 @@ DEFINE l_imgs RECORD LIKE imgs_file.*   #No.TQC-930155
    IF g_success = "N" THEN
       RETURN
    END IF
- 
+
 #No.FUN-8A0147--begin
-   IF g_prog[1,7]= 'aimp880' OR g_prog[1,7]= 'aimp920' THEN 
+   IF g_prog[1,7]= 'aimp880' OR g_prog[1,7]= 'aimp920' THEN
       RETURN
    END IF
 #No.FUN-8A0147--end
@@ -1324,8 +1355,8 @@ DEFINE l_imgs RECORD LIKE imgs_file.*   #No.TQC-930155
          RETURN
       END IF
    END IF
-   #No.MOD-AA0086  --End  
- 
+   #No.MOD-AA0086  --End
+
    SELECT img01,img02,img03,img04,img09
      INTO l_img01,l_img02,l_img03,l_img04,l_img09
      FROM img_file
@@ -1335,49 +1366,49 @@ DEFINE l_imgs RECORD LIKE imgs_file.*   #No.TQC-930155
       AND img02=p_img02
       AND img03=p_img03
       AND img04=p_img04
-    #No.FUN-8C0084--END--  
- 
-   IF l_img02 IS NULL THEN LET l_img02= ' ' END IF 
+    #No.FUN-8C0084--END--
+
+   IF l_img02 IS NULL THEN LET l_img02= ' ' END IF
    IF l_img03 IS NULL THEN LET l_img03= ' ' END IF
    IF l_img04 IS NULL THEN LET l_img04= ' ' END IF
- 
+
    #-----No.MOD-840244-----
-   SELECT ima918,ima921 INTO l_ima918,l_ima921 
+   SELECT ima918,ima921 INTO l_ima918,l_ima921
      FROM ima_file
     WHERE ima01 = l_img01
       AND imaacti = "Y"
-   
+
    #-----No.MOD-840251-----
    IF cl_null(l_ima918) THEN
       LET l_ima918='N'
    END IF
-                                                                                
+
    IF cl_null(l_ima921) THEN
       LET l_ima921='N'
    END IF
    #-----No.MOD-840251 END-----
- 
+
    IF l_ima918 = "N" AND l_ima921 = "N" THEN
       RETURN
    END IF
    #-----No.MOD-840244 END-----
- 
+
    #-----No.FUN-870131-----
    IF g_prog[1,7]='axmt610' OR g_prog[1,7]='axmt620' OR g_prog='axmp650' OR
-      g_prog='axmt820' OR g_prog[1,7]='axmt821' OR #MOD-B30020 add   
-      g_prog='wmbt015' OR  #FUN-C10037 add  
+      g_prog='axmt820' OR g_prog[1,7]='axmt821' OR #MOD-B30020 add
+      g_prog='wmbt015' OR  #FUN-C10037 add
       g_prog='axmt650' OR g_prog[1,7]='axmt628' OR g_prog[1,7]='axmt629'THEN    #MOD-A20117 #CHI-AC0034 add 628,629
       SELECT ogb17 INTO l_ogb17 FROM ogb_file
-       WHERE ogb01 = p_no 
+       WHERE ogb01 = p_no
          AND ogb03 = p_line
       IF l_ogb17 = "Y" THEN
          #-----MOD-A20117---------
-         IF NOT (g_sma.sma115 = 'Y' AND p_type2='1')THEN    
-            IF g_sma.sma115='Y' AND p_type2='2' THEN   
+         IF NOT (g_sma.sma115 = 'Y' AND p_type2='1')THEN
+            IF g_sma.sma115='Y' AND p_type2='2' THEN
                SELECT ogg18 INTO l_ogc18 FROM ogg_file
                 WHERE ogg01 = p_no
                   AND ogg03 = p_line
-                  AND ogg10 = p_unit2 
+                  AND ogg10 = p_unit2
                   AND ogg09 = l_img02
                   AND ogg091 = l_img03
                   AND ogg092 = l_img04
@@ -1394,24 +1425,24 @@ DEFINE l_imgs RECORD LIKE imgs_file.*   #No.TQC-930155
          END IF   #MOD-A20117
       END IF
    END IF
- 
+
    IF cl_null(l_ogc18) THEN
-      LET l_ogc18 = 0 
+      LET l_ogc18 = 0
    END IF
    #-----No.FUN-870131 END-----
- 
+
    LET l_rvbs09 = 0
- 
-   IF g_prog[1,7]='aimt302' OR g_prog[1,7]='aimt312' OR                         
+
+   IF g_prog[1,7]='aimt302' OR g_prog[1,7]='aimt312' OR
       g_prog[1,7]='apmt110' OR g_prog[1,7]='apmt200' OR
       g_prog[1,7]='aimt306' OR                             #FUN-C50071 add
       g_prog[1,7]='apmt720' OR g_prog[1,7]='apmt730' OR      #TQC-B90236 add
      #g_prog[1,7]='apmt720' OR g_prog[1,7]='apmt740' OR      #TQC-B90236 mark
      #g_prog[1,7]='apmt721' OR                               #TQC-B90236 mark
-     #g_prog[1,7]='apmt722' OR g_prog[1,7]='apmt730' OR      #TQC-B90236 mark                   
-     #g_prog[1,7]='apmt731' OR g_prog[1,7]='apmt732' OR      #TQC-B90236 mark                   
-      g_prog[1,7]='asft620' OR g_prog[1,7]='asft622' OR 
-      g_prog[1,7]='asft700' OR                               #No:CHI-A30032 add                      
+     #g_prog[1,7]='apmt722' OR g_prog[1,7]='apmt730' OR      #TQC-B90236 mark
+     #g_prog[1,7]='apmt731' OR g_prog[1,7]='apmt732' OR      #TQC-B90236 mark
+      g_prog[1,7]='asft620' OR g_prog[1,7]='asft622' OR
+      g_prog[1,7]='asft700' OR                               #No:CHI-A30032 add
       g_prog[1,7]='apmt740' OR                               #TQC-B90236 add
       g_prog[1,7]='axmt629' OR g_prog='axmp750' OR           #TQC-B90236 add
       g_prog='axmt700'      OR g_prog='axmt840' OR           #TQC-B90236 add
@@ -1419,59 +1450,59 @@ DEFINE l_imgs RECORD LIKE imgs_file.*   #No.TQC-930155
       g_prog[1,7]='asfi526' OR g_prog[1,7]='asfi527' OR      #TQC-B90236 add
       g_prog[1,7]='asfi528' OR g_prog[1,7]='asfi529' OR      #TQC-B90236 add
      #g_prog[1,7]='apmt742' OR    #MOD-A90100                #TQC-B90236 mark
-      g_prog[1,7]='asft623' OR g_prog[1,7]='asrt320' THEN  # MOD-8A0045                                                
-      LET l_rvbs09 = 1                                                          
-   END IF                                                                       
-                                                                                
-   IF g_prog[1,7]='aimt301' OR g_prog[1,7]='aimt311' OR                         
-      g_prog[1,7]='aimt303' OR g_prog[1,7]='aimt313' OR  #MOD-910104 add                        
+      g_prog[1,7]='asft623' OR g_prog[1,7]='asrt320' THEN  # MOD-8A0045
+      LET l_rvbs09 = 1
+   END IF
+
+   IF g_prog[1,7]='aimt301' OR g_prog[1,7]='aimt311' OR
+      g_prog[1,7]='aimt303' OR g_prog[1,7]='aimt313' OR  #MOD-910104 add
       g_prog[1,7]='aimt309' OR                           #FUN-C50071 add
-      g_prog[1,7]='axmt610' OR g_prog[1,7]='axmt620' OR                         
-     #g_prog='axmt628' OR g_prog='axmt629' OR g_prog='axmt640' OR        #MOD-B60234 mark       
+      g_prog[1,7]='axmt610' OR g_prog[1,7]='axmt620' OR
+     #g_prog='axmt628' OR g_prog='axmt629' OR g_prog='axmt640' OR        #MOD-B60234 mark
      #g_prog[1,7]='axmt628' OR g_prog[1,7]='axmt629' OR g_prog='axmt640' OR   #MOD-B60234       #TQC-B90236 mark
-      g_prog[1,7]='axmt628' OR g_prog='axmt640' OR                                              #TQC-B90236 add     
-      g_prog='axmt820' OR g_prog='axmt821' OR g_prog='axmt650' OR               
+      g_prog[1,7]='axmt628' OR g_prog='axmt640' OR                                              #TQC-B90236 add
+      g_prog='axmt820' OR g_prog='axmt821' OR g_prog='axmt650' OR
      #g_prog[1,7]='asfi510' OR g_prog[1,7]='asfi520' OR                                         #TQC-B90236 mark
       g_prog[1,7]='asfi510' OR
-      g_prog[1,7]='asfi511' OR g_prog[1,7]='asfi519' OR g_prog[1,7]='asfi512' OR                #FUN-C70014 add g_prog[1,7]='asfi519'           
+      g_prog[1,7]='asfi511' OR g_prog[1,7]='asfi519' OR g_prog[1,7]='asfi512' OR                #FUN-C70014 add g_prog[1,7]='asfi519'
       g_prog[1,7]='asfi513' OR g_prog[1,7]='asfi514' OR
      #g_prog[1,7]='asfi526' OR g_prog[1,7]='asfi527' OR   #No.MOD-870202                        #TQC-B90236 mark
      #g_prog[1,7]='asfi528' OR g_prog[1,7]='asfi529' OR   #No.MOD-870202                        #TQC-B90236 mark
       g_prog='asri210' OR g_prog='asri220' OR g_prog='asri230' OR   #No.CHI-870007
       g_prog='axmp650' OR
-     #g_prog='axmp750' OR   #MOD-910150                                                         #TQC-B90236 mark 
+     #g_prog='axmp750' OR   #MOD-910150                                                         #TQC-B90236 mark
       g_prog='wmbt015' OR   #FUN-C10037
       g_prog='wpct301' OR g_prog='wpct302' OR g_prog='wpct303' OR  #FUN-C30230--add wpct301,wpct302,wpct303
       g_prog='wmbt010' OR   #FUN-C10037
-     #g_prog='axmt700' THEN     #NO.FUN-860025          #MOD-960279 mark               
+     #g_prog='axmt700' THEN     #NO.FUN-860025          #MOD-960279 mark
      #g_prog='axmt700' OR g_prog='axmt840' THEN		#MOD-960279                             #TQC-B90236 mark
-      g_prog[1,7]='apmt721' OR g_prog[1,7]='apmt722' OR g_prog[1,7]='wpct010' OR                #TQC-B90236 add  #FUN-CA0023-ADD WPCT010 #FUN-CB0085 
+      g_prog[1,7]='apmt721' OR g_prog[1,7]='apmt722' OR g_prog[1,7]='wpct010' OR                #TQC-B90236 add  #FUN-CA0023-ADD WPCT010 #FUN-CB0085
       g_prog[1,7]='apmt731' OR g_prog[1,7]='apmt732' OR                                         #TQC-B90236 add
       g_prog[1,7]='apmt742' THEN                                                                #TQC-B90236 add
-      LET l_rvbs09 = -1     
-   END IF                                                                       
- 
-   IF l_rvbs09 = 0 THEN                                                         
+      LET l_rvbs09 = -1
+   END IF
+
+   IF l_rvbs09 = 0 THEN
       IF p_type = -1 OR p_type = 0 THEN
          LET l_rvbs09 = -1
       END IF
-                                                                                
+
       IF p_type = 1 OR p_type = 2 THEN
          LET l_rvbs09 = 1
       END IF
-                                                                                
+
       IF g_prog = "aimp379" OR g_prog = "aimp378"  OR g_prog='wpcp379' THEN    #MOD-910150 取消mark   #FUN-C30230--add g_prog='wpcp379'
       #IF g_prog = "aimp379" OR g_prog = "aimp378" OR g_prog='axmp750' THEN   #NO.FUN-860025   #MOD-910150 mark
          LET l_rvbs09 = l_rvbs09 * -1
       END IF
       #No.MOD-AA0086  --Begin
-      IF g_prog = 'aimt325 ' AND g_action_choice = 'undo_transfer_out' OR  
+      IF g_prog = 'aimt325 ' AND g_action_choice = 'undo_transfer_out' OR
          g_prog = 'aimt326 ' AND g_action_choice = 'undo_transfer_in'  THEN
          LET l_rvbs09 = l_rvbs09 * -1
       END IF
-      #No.MOD-AA0086  --End  
+      #No.MOD-AA0086  --End
    END IF
- 
+
    IF p_type = -1 OR p_type = 0 THEN
       #-----MOD-9A0172---------
       #判斷若是出貨簽收的"簽收在途倉",
@@ -1479,7 +1510,7 @@ DEFINE l_imgs RECORD LIKE imgs_file.*   #No.TQC-930155
       #所以要抓取原出貨單的rvbs_file資料,故將rvbs13的條件拿掉
       #境外倉出貨同上   #MOD-B40139
       #寄銷出貨同上     #CHI-C60022
-      LET l_cnt = 0 
+      LET l_cnt = 0
       SELECT count(*) INTO l_cnt FROM oga_file
          WHERE oga66=l_img02 AND oga67=l_img03
            AND oga65='Y' AND oga01=p_no
@@ -1506,32 +1537,32 @@ DEFINE l_imgs RECORD LIKE imgs_file.*   #No.TQC-930155
          SELECT oga65 INTO l_oga65 FROM oga_file
           WHERE oga01= l_oga011
          IF l_oga65 = 'Y' THEN
-            LET l_no = l_oga011 
+            LET l_no = l_oga011
          END IF
       END IF
       #CHI-B40060 add --end--
-     #IF g_prog='axmp650' AND l_cnt > 0 THEN #CHI-AC0034 mark   
-     #IF (g_prog='axmp650' AND l_cnt > 0) OR (g_prog='axmp650' AND l_cnt1 > 0) THEN #CHI-AC0034  #CHI-BB0057 mark 
+     #IF g_prog='axmp650' AND l_cnt > 0 THEN #CHI-AC0034 mark
+     #IF (g_prog='axmp650' AND l_cnt > 0) OR (g_prog='axmp650' AND l_cnt1 > 0) THEN #CHI-AC0034  #CHI-BB0057 mark
       IF (g_prog='axmp650' AND l_cnt > 0) OR (g_prog='axmp650' AND l_cnt1 > 0) OR (g_prog[1,7] = 'axmt628' AND l_cnt1 > 0) THEN #CHI-BB0057 add
        #MOD-C70055---mark---S---
        ##MOD-C60242---S---
-       # IF g_oaz.oaz23='Y' THEN 
+       # IF g_oaz.oaz23='Y' THEN
        #    IF g_sma.sma115='N' THEN
        #       SELECT ogc18 INTO l_ogc18 FROM ogc_file
-       #        WHERE ogc01 = p_no 
+       #        WHERE ogc01 = p_no
        #          AND ogc03 = p_line
        #          AND ogc17 = l_img01
        #          AND ogc092 = l_img04
        #    END IF
        # END IF
-       ##MOD-C60242---E--- 
+       ##MOD-C60242---E---
        #MOD-C70055---mark---E---
          LET l_sql = "SELECT * FROM rvbs_file ",
-                     "   WHERE rvbs01 = '",l_no,"'", #CHI-B40060 mod p_no->l_no 
-                     "     AND rvbs02 = ",p_line, 
+                     "   WHERE rvbs01 = '",l_no,"'", #CHI-B40060 mod p_no->l_no
+                     "     AND rvbs02 = ",p_line,
                      "     AND rvbs09 = ",l_rvbs09, #CHI-AC0034 add ,
                      "     AND rvbs021 = '",l_img01,"'"  #CHI-AC0034 add   #MOD-B40139 加上''
-        #MOD-C60242---S---                          
+        #MOD-C60242---S---
         #IF g_oaz.oaz23='Y' THEN  #MOD-C70085 mark
          IF l_ogb17 = 'Y' THEN    #MOD-C70085
             IF g_sma.sma115='N' THEN
@@ -1547,8 +1578,8 @@ DEFINE l_imgs RECORD LIKE imgs_file.*   #No.TQC-930155
                ELSE
                #CHI-BB0057 add end   -----
                   LET l_sql = l_sql,
-                          #MOD-C70055---S--- 
-                          #"     AND rvbs13 = ",l_ogc18 
+                          #MOD-C70055---S---
+                          #"     AND rvbs13 = ",l_ogc18
                            "     AND rvbs13 IN ( ",
                            "         SELECT ogc18 FROM ogc_file ",
                            "          WHERE ogc01 = '",p_no,"'",
@@ -1566,11 +1597,11 @@ DEFINE l_imgs RECORD LIKE imgs_file.*   #No.TQC-930155
          IF g_prog = "aimp700" THEN
             LET l_sql = "SELECT * FROM rvbs_file ",
                      " WHERE rvbs00 = '",g_prog,"'",
-                     "   AND rvbs01 = '",l_no,"'", 
+                     "   AND rvbs01 = '",l_no,"'",
                      "   AND rvbs02 = ",p_line,
-                     "   AND rvbs09 = ",l_rvbs09,   
-                     "   AND rvbs13 = ",l_ogc18  
-         ELSE 
+                     "   AND rvbs09 = ",l_rvbs09,
+                     "   AND rvbs13 = ",l_ogc18
+         ELSE
          #CHI-D10014---end
             LET l_sql = "SELECT * FROM rvbs_file ",
                      #  " WHERE rvbs00 = '",g_prog,"'",
@@ -1578,24 +1609,24 @@ DEFINE l_imgs RECORD LIKE imgs_file.*   #No.TQC-930155
                         "   AND rvbs02 = ",p_line,
                         "   AND rvbs09 = ",l_rvbs09,
                         "   AND rvbs13 = ",l_ogc18    #No.FUN-870131
-         END IF  #CHI-D10014 
+         END IF  #CHI-D10014
       END IF   #MOD-9A0172
-      
+
       PREPARE rvbs_pre FROM l_sql
       DECLARE rvbs_cs CURSOR FOR rvbs_pre
-      
+
       FOREACH rvbs_cs INTO l_rvbs.*
-         IF STATUS THEN 
-            IF g_bgerr THEN 
+         IF STATUS THEN
+            IF g_bgerr THEN
                CALL s_errmsg('','','foreach:',STATUS,1)
             ELSE
                CALL cl_err('foreach:',STATUS,1)
             END IF
             EXIT FOREACH
          END IF
-      
+
          LET l_imgs08 = NULL
-      
+
          SELECT imgs08 INTO l_imgs08
            FROM imgs_file
           WHERE imgs01 = l_img01
@@ -1605,7 +1636,7 @@ DEFINE l_imgs RECORD LIKE imgs_file.*   #No.TQC-930155
             AND imgs05 = l_rvbs.rvbs03
             AND imgs06 = l_rvbs.rvbs04
             AND imgs11 = l_rvbs.rvbs08
-      
+
          IF STATUS OR l_imgs08 IS NULL THEN
             LET g_success='N'
             IF g_bgerr THEN
@@ -1615,7 +1646,7 @@ DEFINE l_imgs RECORD LIKE imgs_file.*   #No.TQC-930155
             END IF
             RETURN
          END IF
-      
+
          LET l_imgs08 = l_imgs08 - l_rvbs.rvbs06
          #-----MOD-920321---------
          IF l_imgs08 < 0 THEN                               #MOD-BA0080 mark  #TQC-C50128 remark
@@ -1638,9 +1669,9 @@ DEFINE l_imgs RECORD LIKE imgs_file.*   #No.TQC-930155
             AND imgs05 = l_rvbs.rvbs03
             AND imgs06 = l_rvbs.rvbs04
             AND imgs11 = l_rvbs.rvbs08
-      
+
          IF SQLCA.sqlcode   THEN
-            LET g_success='N' 
+            LET g_success='N'
             IF g_bgerr THEN
                CALL s_errmsg('ima01',l_img01,'upd imgs','asf-375',1)
             ELSE
@@ -1650,7 +1681,7 @@ DEFINE l_imgs RECORD LIKE imgs_file.*   #No.TQC-930155
          END IF
       END FOREACH
    END IF
- 
+
    IF p_type = 1 OR p_type = 2 THEN
       #-----MOD-9A0172---------
       #判斷若是出貨簽收的"簽收在途倉",
@@ -1658,7 +1689,7 @@ DEFINE l_imgs RECORD LIKE imgs_file.*   #No.TQC-930155
       #所以要抓取原出貨單的rvbs_file資料,故將rvbs13的條件拿掉
       #境外倉出貨同上   #MOD-B40139
       #寄銷出貨同上     #CHI-C60022
-      LET l_cnt = 0 
+      LET l_cnt = 0
       SELECT count(*) INTO l_cnt FROM oga_file
          WHERE oga66=l_img02 AND oga67=l_img03
            AND oga65='Y' AND oga01=p_no
@@ -1668,11 +1699,11 @@ DEFINE l_imgs RECORD LIKE imgs_file.*   #No.TQC-930155
            AND oga00 IN ('3','7') AND oga01=p_no                    #CHI-C60022
            AND oga09='2')                           #MOD-B40139
       #CHI-AC0034 add --start--
-      LET l_cnt1 = 0 
+      LET l_cnt1 = 0
       SELECT count(*) INTO l_cnt1 FROM oga_file
          WHERE oga66=l_img02 AND oga67=l_img03
            AND oga01=p_no
-           AND oga09='8' 
+           AND oga09='8'
       #CHI-AC0034 add -end--
       #CHI-B40060 add --start--
       LET l_no = p_no
@@ -1685,37 +1716,37 @@ DEFINE l_imgs RECORD LIKE imgs_file.*   #No.TQC-930155
           WHERE oga01= l_oga011
             AND oga09 = '2'
          IF l_oga65 = 'Y' THEN
-            LET l_no = l_oga011 
+            LET l_no = l_oga011
          END IF
       END IF
       #CHI-B40060 add --end--
-     #IF g_prog='axmt620' AND l_cnt > 0 THEN   #CHI-AC0034 mark 
+     #IF g_prog='axmt620' AND l_cnt > 0 THEN   #CHI-AC0034 mark
      #IF (g_prog='axmt620' AND l_cnt > 0) OR (g_prog='axmt628' AND l_cnt1 > 0) THEN   #CHI-AC0034  #MOD-B60234 mark
      #IF (g_prog[1,7]='axmt620' AND l_cnt > 0) OR (g_prog[1,7]='axmt628' AND l_cnt1 > 0) THEN   #MOD-B60234  #FUN-C10037 mark
      #IF (g_prog[1,7]='axmt620' AND l_cnt > 0) OR (g_prog[1,7]='axmt628' AND l_cnt1 > 0) OR (g_prog[1,7]='wmbt015' AND l_cnt > 0)THEN   #MOD-B60234  #FUN-C10037 add #CHI-BB0057 mark
       IF (g_prog[1,7]='axmt620' AND l_cnt > 0) OR (g_prog[1,7]='axmt628' AND l_cnt1 > 0) OR (g_prog[1,7]='wmbt015' AND l_cnt > 0) OR (g_prog[1,7]='axmp650' AND l_cnt1 > 0) THEN   #CHI-BB0057
        #MOD-C70055---mark--s---
        ##MOD-C60242---S---
-       # IF g_oaz.oaz23='Y' THEN  
-       #    IF g_sma.sma115='N' THEN 
-       #       SELECT ogc18 INTO l_ogc18 FROM ogc_file 
+       # IF g_oaz.oaz23='Y' THEN
+       #    IF g_sma.sma115='N' THEN
+       #       SELECT ogc18 INTO l_ogc18 FROM ogc_file
        #        WHERE ogc01 = p_no
        #          AND ogc03 = p_line
        #          AND ogc17 = l_img01
        #          AND ogc092 = l_img04
        #    END IF
        # END IF
-       ##MOD-C60242---E--- 
+       ##MOD-C60242---E---
        #MOD-C70055---mark--e---
          LET l_sql = "SELECT * FROM rvbs_file ",
-                     "   WHERE rvbs01 = '",l_no,"'", #CHI-B40060 mod p_no->l_no 
-                     "     AND rvbs02 = ",p_line, 
-                     "     AND rvbs09 = ",l_rvbs09, #CHI-AC0034 add , 
+                     "   WHERE rvbs01 = '",l_no,"'", #CHI-B40060 mod p_no->l_no
+                     "     AND rvbs02 = ",p_line,
+                     "     AND rvbs09 = ",l_rvbs09, #CHI-AC0034 add ,
                      "     AND rvbs021 = '",l_img01,"'"  #CHI-AC0034 add   #MOD-B40139 加上''
         #MOD-C60242---S---
         #IF g_oaz.oaz23='Y' THEN  #MOD-C70085 mark
-         IF l_ogb17 = 'Y' THEN    #MOD-C70085 
-            IF g_sma.sma115='N' THEN 
+         IF l_ogb17 = 'Y' THEN    #MOD-C70085
+            IF g_sma.sma115='N' THEN
                #CHI-BB0057 add start -----
                IF g_prog[1,7] = 'axmp650' THEN
                   LET l_sql = l_sql,
@@ -1729,7 +1760,7 @@ DEFINE l_imgs RECORD LIKE imgs_file.*   #No.TQC-930155
                #CHI-BB0057 add end   -----
                   LET l_sql = l_sql,
                           #MOD-C70055---S---
-                          #"     AND rvbs13 = ",l_ogc18   #MOD-C70055 mark 
+                          #"     AND rvbs13 = ",l_ogc18   #MOD-C70055 mark
                            "     AND rvbs13 IN ( ",
                            "         SELECT ogc18 FROM ogc_file ",
                            "          WHERE ogc01 = '",p_no,"'",
@@ -1747,11 +1778,11 @@ DEFINE l_imgs RECORD LIKE imgs_file.*   #No.TQC-930155
          IF g_prog = "aimp700" THEN
             LET l_sql = "SELECT * FROM rvbs_file ",
                      " WHERE rvbs00 = '",g_prog,"'",
-                     "   AND rvbs01 = '",l_no,"'", 
+                     "   AND rvbs01 = '",l_no,"'",
                      "   AND rvbs02 = ",p_line,
-                     "   AND rvbs09 = ",l_rvbs09,   
-                     "   AND rvbs13 = ",l_ogc18  
-         ELSE 
+                     "   AND rvbs09 = ",l_rvbs09,
+                     "   AND rvbs13 = ",l_ogc18
+         ELSE
          #CHI-D10014---end
             LET l_sql = "SELECT * FROM rvbs_file ",
                     #   " WHERE rvbs00 = '",g_prog,"'",
@@ -1759,15 +1790,15 @@ DEFINE l_imgs RECORD LIKE imgs_file.*   #No.TQC-930155
                         "   AND rvbs02 = ",p_line,
                         "   AND rvbs09 = ",l_rvbs09,
                         "   AND rvbs13 = ",l_ogc18    #No.FUN-870131
-         END IF  #CHI-D10014 
+         END IF  #CHI-D10014
       END IF   #MOD-9A0172
-      
+
       PREPARE rvbs1_pre FROM l_sql
       DECLARE rvbs1_cs CURSOR FOR rvbs1_pre
-      
+
       FOREACH rvbs1_cs INTO l_rvbs.*
-         IF STATUS THEN 
-            IF g_bgerr THEN 
+         IF STATUS THEN
+            IF g_bgerr THEN
                CALL s_errmsg('','','foreach:',STATUS,1)
             ELSE
                CALL cl_err('foreach:',STATUS,1)
@@ -1795,9 +1826,9 @@ DEFINE l_imgs RECORD LIKE imgs_file.*   #No.TQC-930155
             END IF
          END IF
 #TQC-C20312 ----- add ----- end
-      
+
          LET l_imgs08 = NULL
-      
+
          SELECT imgs08 INTO l_imgs08
            FROM imgs_file
           WHERE imgs01 = l_img01
@@ -1807,7 +1838,7 @@ DEFINE l_imgs RECORD LIKE imgs_file.*   #No.TQC-930155
             AND imgs05 = l_rvbs.rvbs03
             AND imgs06 = l_rvbs.rvbs04
             AND imgs11 = l_rvbs.rvbs08
-      
+
          IF STATUS = 100 THEN
 #No.TQC-930155-start-
 #            INSERT INTO imgs_file VALUES(l_img01,l_img02,l_img03,l_img04,
@@ -1835,7 +1866,7 @@ DEFINE l_imgs RECORD LIKE imgs_file.*   #No.TQC-930155
             INSERT INTO imgs_file VALUES(l_imgs.*)
 #No.TQC-930155--end--
             IF SQLCA.sqlcode THEN
-               LET g_success='N' 
+               LET g_success='N'
                IF g_bgerr THEN
                   CALL s_errmsg('imgs01',l_img01,'(s_upimgs)',SQLCA.sqlcode,1)
                ELSE
@@ -1853,9 +1884,9 @@ DEFINE l_imgs RECORD LIKE imgs_file.*   #No.TQC-930155
                   CALL cl_err('imgs_file','asf-375',1)
                END IF
                RETURN
-            END IF 
+            END IF
          END IF
-      
+
          LET l_imgs08 = l_imgs08 + l_rvbs.rvbs06
          UPDATE imgs_file
             SET imgs08=l_imgs08,      #庫存數量
@@ -1867,9 +1898,9 @@ DEFINE l_imgs RECORD LIKE imgs_file.*   #No.TQC-930155
             AND imgs05 = l_rvbs.rvbs03
             AND imgs06 = l_rvbs.rvbs04
             AND imgs11 = l_rvbs.rvbs08
-      
+
          IF SQLCA.sqlcode   THEN
-            LET g_success='N' 
+            LET g_success='N'
             IF g_bgerr THEN
                CALL s_errmsg('ima01',l_img01,'upd imgs','asf-375',1)
             ELSE
@@ -1879,12 +1910,12 @@ DEFINE l_imgs RECORD LIKE imgs_file.*   #No.TQC-930155
          END IF
 #No.TQC-B90236-----------------add-----------start-------
 ##TQC-C20312 -----  mark ----- begin
-#        SELECT COUNT(*) INTO l_chose 
+#        SELECT COUNT(*) INTO l_chose
 #          FROM inj_file
 #         WHERE inj01 = l_img01
 #           AND inj02 = l_rvbs.rvbs04
 #           AND inj06 = 'N'
-#        IF l_chose>0 THEN 
+#        IF l_chose>0 THEN
 #           UPDATE inj_file SET inj06 = 'Y'
 #            WHERE inj01 = l_img01
 #              AND inj02 = l_rvbs.rvbs04
@@ -1902,7 +1933,7 @@ DEFINE l_imgs RECORD LIKE imgs_file.*   #No.TQC-930155
 #No.TQC-B90236-----------------add-----------end---------
       END FOREACH
    END IF
- 
+
 END FUNCTION
 #-----No.FUN-810036 END-----
   #No.FUN-850100
@@ -1915,8 +1946,8 @@ FUNCTION s_sig(p_img01,p_img02,p_img03,p_img04,p_no,p_line,l_issue_flag)	 #TQC-A
         p_img02 LIKE img_file.img02,
         p_img03 LIKE img_file.img03,
         p_img04 LIKE img_file.img04
-# DEFINE l_issue_flag LIKE type_file.num5  #TQC-AC0298  #FUN-AC0074     
-  DEFINE l_issue_flag LIKE type_file.chr1  #FUN-AC0074  
+# DEFINE l_issue_flag LIKE type_file.num5  #TQC-AC0298  #FUN-AC0074
+  DEFINE l_issue_flag LIKE type_file.chr1  #FUN-AC0074
   DEFINE l_sfs RECORD LIKE sfs_file.*  #TQC-AC0298
   DEFINE l_sie11 LIKE sie_file.sie11   #TQC-AC0298
   DEFINE p_no         LIKE img_file.img05  #TQC-AC0298
@@ -1926,10 +1957,10 @@ FUNCTION s_sig(p_img01,p_img02,p_img03,p_img04,p_no,p_line,l_issue_flag)	 #TQC-A
   DEFINE l_img10_other  LIKE img_file.img10 # 他倉存貨
   DEFINE l_img09_fac    LIKE img_file.img34
   DEFINE l_cnt          LIKE type_file.num5
-  DEFINE l_ima25        LIKE ima_file.ima25 
+  DEFINE l_ima25        LIKE ima_file.ima25
   DEFINE l_img09        LIKE img_file.img09
-  DEFINE l_oeb01        LIKE oeb_file.oeb01 
-  DEFINE l_oeb03        LIKE oeb_file.oeb03 
+  DEFINE l_oeb01        LIKE oeb_file.oeb01
+  DEFINE l_oeb03        LIKE oeb_file.oeb03
 #FUN-AC0074 ---------------End------------------
    #TQC-AC0298(S)
    #SELECT img10 INTO l_img10 FROM img_file WHERE img01 = p_img01 AND img02 = p_img02
@@ -1938,12 +1969,12 @@ FUNCTION s_sig(p_img01,p_img02,p_img03,p_img04,p_no,p_line,l_issue_flag)	 #TQC-A
 
    #TQC-AC0298(S)
    LET l_sie11=0
- # IF l_issue_flag THEN  #發料單要排除本張工單的未備置量   #FUN-AC0074 
+ # IF l_issue_flag THEN  #發料單要排除本張工單的未備置量   #FUN-AC0074
    IF l_issue_flag IS NOT NULL THEN #發料單要排除本張工單的未備置量   #FUN-AC0074
       CASE l_issue_flag     #FUN-AC0074
          WHEN '1'  #發料單  #FUN-AC0074
       SELECT * INTO l_sfs.* FROM sfs_file WHERE sfs01=p_no AND sfs02=p_line
-      SELECT SUM(sie11) INTO l_sie11 FROM sie_file 
+      SELECT SUM(sie11) INTO l_sie11 FROM sie_file
        WHERE sie01  = p_img01
       #  AND sie02  = p_img02                   #FUN-AC0074
          AND (sie02  = p_img02 OR sie02 = ' ')  #FUN-AC0074
@@ -1957,11 +1988,11 @@ FUNCTION s_sig(p_img01,p_img02,p_img03,p_img04,p_no,p_line,l_issue_flag)	 #TQC-A
          AND sie013 = l_sfs.sfs013
    #FUN-AC0074 -----------------Begin-------------------------
          WHEN '3'  #出貨單
-            SELECT ogb31,ogb32 INTO l_oeb01,l_oeb03 
-                               FROM ogb_file 
+            SELECT ogb31,ogb32 INTO l_oeb01,l_oeb03
+                               FROM ogb_file
                               WHERE ogb01=p_no AND ogb03=p_line
             IF NOT cl_null(l_oeb01) THEN
-               SELECT SUM(sie11) INTO l_sie11 FROM sie_file 
+               SELECT SUM(sie11) INTO l_sie11 FROM sie_file
                 WHERE sie01  = p_img01
                   AND (sie02 = p_img02 OR sie02 = ' ')
                   AND sie03  = p_img03
@@ -1970,7 +2001,7 @@ FUNCTION s_sig(p_img01,p_img02,p_img03,p_img04,p_no,p_line,l_issue_flag)	 #TQC-A
                   AND sie15  = l_oeb03
             END IF
          WHEN '4'  #雜發單
-            SELECT SUM(sie11) INTO l_sie11 FROM sie_file 
+            SELECT SUM(sie11) INTO l_sie11 FROM sie_file
              WHERE sie01  = p_img01
                AND (sie02 = p_img02 OR sie02 = ' ')
                AND sie03  = p_img03
@@ -1978,7 +2009,7 @@ FUNCTION s_sig(p_img01,p_img02,p_img03,p_img04,p_no,p_line,l_issue_flag)	 #TQC-A
                AND sie05  = p_no
                AND sie15  = p_line
          WHEN '5'  #調撥單
-            SELECT SUM(sie11) INTO l_sie11 FROM sie_file 
+            SELECT SUM(sie11) INTO l_sie11 FROM sie_file
              WHERE sie01  = p_img01
                AND (sie02 = p_img02 OR sie02 = ' ')
                AND sie03  = p_img03
@@ -1986,30 +2017,30 @@ FUNCTION s_sig(p_img01,p_img02,p_img03,p_img04,p_no,p_line,l_issue_flag)	 #TQC-A
                AND sie05  = p_no
                AND sie15  = p_line
       END CASE
-   #FUN-AC0074 ---------------------End----------------------- 
-   IF cl_null(l_sie11) THEN LET l_sie11 =0 END IF  #TQC-B10143                 
-   END IF  
+   #FUN-AC0074 ---------------------End-----------------------
+   IF cl_null(l_sie11) THEN LET l_sie11 =0 END IF  #TQC-B10143
+   END IF
    #TQC-AC0298(E)
    SELECT sig05 INTO l_sig05 FROM sig_file WHERE sig01 = p_img01 AND sig02 = p_img02
-             AND sig03 = p_img03 AND sig04 = p_img04 
+             AND sig03 = p_img03 AND sig04 = p_img04
 
    #TQC-AC0298(S)
-   #IF cl_null(l_img10) OR l_img10 = 0 THEN 
+   #IF cl_null(l_img10) OR l_img10 = 0 THEN
    #   LET l_img10 = 0
-   #END IF 
+   #END IF
    #TQC-AC0298(E)
 
-   IF cl_null(l_sig05) THEN 
+   IF cl_null(l_sig05) THEN
       LET l_sig05 = 0
    END IF
 
    #LET l_img10 = l_img10 - l_sig05
-   #FUN-AC0074 ---------------------Begin--------------------------- 
+   #FUN-AC0074 ---------------------Begin---------------------------
    #檢查是否有跨倉備置,若有的話,先由他倉吸收,如果他倉的總存貨不足以處理跨倉的備置未處理量的話,剩餘量才由本倉吸收
-   SELECT sig05 INTO l_sig05_cross 
-                FROM sig_file 
+   SELECT sig05 INTO l_sig05_cross
+                FROM sig_file
                WHERE sig01 = p_img01 AND sig02 = ' '
-                 AND sig03 = p_img03 AND sig04 = p_img04 
+                 AND sig03 = p_img03 AND sig04 = p_img04
    IF l_sig05_cross IS NULL THEN LET l_sig05_cross = 0 END IF
    IF l_sig05_cross > 0 THEN
       SELECT SUM(img10*img21) INTO l_img10_other FROM img_file     #FUN-B40082
@@ -2017,7 +2048,7 @@ FUNCTION s_sig(p_img01,p_img02,p_img03,p_img04,p_no,p_line,l_issue_flag)	 #TQC-A
                           AND img03 = p_img03 AND img04 = p_img04
       IF l_img10_other IS NULL THEN LET l_img10_other = 0 END IF
       IF l_img10_other > 0 THEN
-         SELECT img09,ima25 INTO l_img09,l_ima25 FROM img_file 
+         SELECT img09,ima25 INTO l_img09,l_ima25 FROM img_file
                  LEFT OUTER JOIN ima_file ON (ima01=img01)
                      WHERE img01 = p_img01 AND img02 = p_img02
                        AND img03 = p_img03 AND img04 = p_img04
@@ -2029,13 +2060,13 @@ FUNCTION s_sig(p_img01,p_img02,p_img03,p_img04,p_no,p_line,l_issue_flag)	 #TQC-A
       IF l_sig05_cross < 0 THEN LET l_sig05_cross = 0 END IF
    END IF
    #FUN-AC0074 ---------------------End-----------------------------
-  #LET l_sig05 = l_sig05 - l_sie11 #TQC-AC0298       #FUN-AC0074  
+  #LET l_sig05 = l_sig05 - l_sie11 #TQC-AC0298       #FUN-AC0074
    LET l_sig05 = l_sig05 + l_sig05_cross - l_sie11   #FUN-AC0074
 
    RETURN l_sig05
 
-END FUNCTION   
-#FUN-A20048 add --end 
+END FUNCTION
+#FUN-A20048 add --end
 
 
 #No.MOD-CB0199  --Begin
@@ -2067,4 +2098,3 @@ FUNCTION s_upimg_ins_ime(p_ime01,p_ime02)
 
 END FUNCTION
 #No.MOD-CB0199  --End
-

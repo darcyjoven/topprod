@@ -1372,7 +1372,7 @@ FUNCTION t623_set_entry_b(p_cmd)
    if cl_null(g_sfv[l_ac].sfv04) then
     select sgm03_par into g_sfv[l_ac].sfv04 from sgm_file where sgm01 = g_sfv[l_ac].sfv20
    end if
-   if not cl_null(g_sfv[l_ac].sfv04) and g_sfv[l_ac].sfv04[7,7] not matches '[ABCD]' and g_sfv[l_ac].sfv04[7,7] not matches '*-*' then
+   if not cl_null(g_sfv[l_ac].sfv04) and g_sfv[l_ac].sfv04[7,7] not matches '[ABCD]' and g_sfv[l_ac].sfv04 not matches '*-*' then
     CALL cl_set_act_visible('sfvud02',true)
     CALL cl_set_comp_entry('sfvud02',true)
     --CALL cl_set_comp_required('sfvud02',true)
@@ -1403,7 +1403,7 @@ FUNCTION t623_set_no_entry_b(p_cmd)
    if cl_null(g_sfv[l_ac].sfv04) then
     select sgm03_par into g_sfv[l_ac].sfv04 from sgm_file where sgm01 = g_sfv[l_ac].sfv20
    end if
-   if cl_null(g_sfv[l_ac].sfv04) or g_sfv[l_ac].sfv04[7,7] matches '[ABCD]' or g_sfv[l_ac].sfv04[7,7] matches '*-*' then
+   if cl_null(g_sfv[l_ac].sfv04) or g_sfv[l_ac].sfv04[7,7] matches '[ABCD]' or g_sfv[l_ac].sfv04 matches '*-*' then
     CALL cl_set_comp_required('sfvud02',false)
     CALL cl_set_comp_entry('sfvud02',false)
     CALL cl_set_act_visible('sfvud02',false)
@@ -2808,7 +2808,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
          # darcy:2026/06/24 add s---
          after field sfvud02
          # TODO 这里应该同步批号
-            if not cl_null(g_sfv[l_ac].sfvud02) then -- and g_user = 'tiptop' 
+            if not cl_null(g_sfv[l_ac].sfvud02) then -- and g_user = 'tiptop'
                 execute sasft623_sfvud02 using g_sfv[l_ac].sfvud02,g_sfv[l_ac].sfvud02 into g_sfv[l_ac].sfvud13
                 if sqlca.sqlcode or cl_null(g_sfv[l_ac].sfvud13) or g_sfv[l_ac].sfvud13 < mdy(1,1,2000) then
                     call cl_err('周期必须是WWYY(周年年周)格式','!',1)
