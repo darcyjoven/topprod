@@ -399,15 +399,17 @@ function i100sub_y_upd(p_ecu01,p_ecu02,p_inTransaction)
     define l_ecuud04    like ecu_file.ecuud04
     define l_ecuud03     like ecu_file.ecuud03
     # darcy:2025/10/28 add e---
+    define  l_ecu10         like ecu_file.ecu10,
+            l_ecuud02       like ecu_file.ecuud02
 
     let g_success = 'Y'
 
     # darcy:2025/10/28 add s---
     # 送签的资料，不允许直接审核
     # darcy:2025/10/28 add e---
-    select ecuud03,ecuud04 into l_ecuud03,l_ecuud04 from ecu_file
+    select ecuud03,ecuud04,ecu10,ecuud02 into l_ecuud03,l_ecuud04,l_ecu10,l_ecuud02 from ecu_file
      where ecu01 = p_ecu01 and ecu02 = p_ecu02
-    if l_ecuud04 == 'Y' and g_prog = 'aeci100' then
+    if l_ecuud04 == 'Y' and (l_ecu10 <> 'Y' or l_ecuud02 <> 'Y' ) then
         call cl_err(l_ecuud03,"cxm-052",1)
         let g_success = 'N'
         return
@@ -1071,7 +1073,7 @@ function i100sub_chk(p_ecu01,p_ecu02)
         message '料号长度小于10，不做任何检查'
         return
     end if
-    
+
     case
         # 组装成品
         when p_ecu01[7,7] matches "[ABCD]" and p_ecu01 not matches "*-*"
