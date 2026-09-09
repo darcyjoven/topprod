@@ -24,15 +24,15 @@
 # Modify.........: No.TQC-A60132 10/07/19 By chenmoyan 鎖表語句不標準
 # Modify.........: No.FUN-A80063 10/08/13 By wujie     qcd04和qcd05位置互换
 #                                                      qcd05增加item选项及控管
-# Modify.........: No.FUN-AA0059 10/10/27 By huangtao 修改料號的管控 
-# Modify.........: No.FUN-AA0059 10/10/27 By chenying 料號開窗控管 
+# Modify.........: No.FUN-AA0059 10/10/27 By huangtao 修改料號的管控
+# Modify.........: No.FUN-AA0059 10/10/27 By chenying 料號開窗控管
 # Modify.........: No.FUN-B50064 11/06/02 By xianghui BUG修改，刪除時提取資料報400錯誤
 # Modify.........: No:FUN-C80046 12/08/13 By bart 複製後停在新料號畫面
 
 DATABASE ds
- 
+
 GLOBALS "../../config/top.global"
- 
+
 DEFINE
     g_qcd01         LIKE qcd_file.qcd01,   #類別代號 (假單頭)
     g_qcdacti       LIKE qcd_file.qcdacti, #    96-06-18
@@ -52,8 +52,9 @@ DEFINE
 #No.FUN-A80063 --end
 		qcd061      LIKE qcd_file.qcd061,
 		qcd062      LIKE qcd_file.qcd062,
-		qcd07       LIKE qcd_file.qcd07
-		
+		qcd07       LIKE qcd_file.qcd07,
+		qcdud01     like qcd_file.qcdud01
+
                     END RECORD,
     g_qcd_t         RECORD                 #程式變數 (舊值)
                 qcd02       LIKE qcd_file.qcd02,
@@ -66,7 +67,8 @@ DEFINE
 #No.FUN-A80063 --end
 		qcd061      LIKE qcd_file.qcd061,
 		qcd062      LIKE qcd_file.qcd062,
-		qcd07       LIKE qcd_file.qcd07
+		qcd07       LIKE qcd_file.qcd07,
+		qcdud01     like qcd_file.qcdud01
                     END RECORD,
     g_argv1         LIKE qcd_file.qcd01,
     g_wc,g_sql      STRING,        #No.FUN-580092 HCN        #No.FUN-680104   #MOD-980187
@@ -81,30 +83,30 @@ DEFINE g_row_count     LIKE type_file.num10         #No.FUN-680104 INTEGER
 DEFINE g_curs_index    LIKE type_file.num10         #No.FUN-680104 INTEGER
 DEFINE g_jump          LIKE type_file.num10         #No.FUN-680104 INTEGER
 DEFINE g_no_ask       LIKE type_file.num5          #No.FUN-680104 SMALLINT
- 
+
 MAIN
     OPTIONS                                #改變一些系統預設值
         INPUT NO WRAP
     DEFER INTERRUPT                        #擷取中斷鍵, 由程式處理
- 
+
     LET g_argv1  = ARG_VAL(1)              #料件編號
 
    IF (NOT cl_user()) THEN
       EXIT PROGRAM
    END IF
- 
+
    WHENEVER ERROR CALL cl_err_msg_log
- 
+
    IF (NOT cl_setup("AQC")) THEN
       EXIT PROGRAM
    END IF
- 
+
     CALL  cl_used(g_prog,g_time,1) RETURNING g_time    #No.FUN-6A0085
 
     LET g_qcd01 = NULL                     #清除鍵值
     LET g_qcd01_t = NULL
     LET g_qcd01 = g_argv1
- 
+
     OPEN WINDOW i120_w WITH FORM "aqc/42f/aqci120"
         ATTRIBUTE (STYLE = g_win_style CLIPPED) #No.FUN-580092 HCN
     CALL cl_ui_init()
@@ -117,17 +119,17 @@ MAIN
     CLOSE WINDOW i120_w                 #結束畫面
     CALL cl_used(g_prog,g_time,2) RETURNING g_time    #No.FUN-6A0085
 END MAIN
- 
+
 
 
 FUNCTION i120_curs()
     CLEAR FORM                             #清除畫面
     CALL g_qcd.clear()
     IF g_argv1 IS NULL OR g_argv1 = ' ' THEN
- 
+
     CALL cl_set_head_visible("","YES")           #No.FUN-6B0032
     INITIALIZE g_qcd01 TO NULL                   #No.FUN-750051
-    CONSTRUCT g_wc ON qcd01 FROM qcd01   
+    CONSTRUCT g_wc ON qcd01 FROM qcd01
               #No.FUN-580031 --start--     HCN
               BEFORE CONSTRUCT
                  CALL cl_qbe_init()
@@ -150,17 +152,17 @@ FUNCTION i120_curs()
        ON IDLE g_idle_seconds
           CALL cl_on_idle()
           CONTINUE CONSTRUCT
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
+
       ON ACTION controlg      #MOD-4C0121
          CALL cl_cmdask()     #MOD-4C0121
- 
- 
+
+
 		#No.FUN-580031 --start--     HCN
                  ON ACTION qbe_select
          	   CALL cl_qbe_select()
@@ -182,9 +184,9 @@ FUNCTION i120_curs()
     PREPARE i120_precount FROM g_sql
     DECLARE i120_count CURSOR FOR i120_precount
 END FUNCTION
- 
+
 FUNCTION i120_menu()
- 
+
    WHILE TRUE
       CALL i120_bp("G")
       CASE g_action_choice
@@ -239,8 +241,8 @@ FUNCTION i120_menu()
       END CASE
    END WHILE
 END FUNCTION
- 
- 
+
+
 #Add  輸入
 FUNCTION i120_a()
     MESSAGE ""
@@ -268,12 +270,12 @@ FUNCTION i120_a()
         EXIT WHILE
     END WHILE
 END FUNCTION
- 
+
 #處理INPUT
 FUNCTION i120_i(p_cmd)
 DEFINE
     p_cmd           LIKE type_file.chr1       #a:輸入 u:更改 #No.FUN-680104 VARCHAR(1)
-  
+
      LET g_ss='Y'
      LET g_qcdacti = 'Y'             # 有效的資料 96-06-18
      LET g_qcduser = g_user          # 使用者
@@ -281,10 +283,10 @@ DEFINE
      LET g_qcddate = g_today         # 更改日期
 
     CALL cl_set_head_visible("","YES")           #No.FUN-6B0032
-    INPUT g_qcd01                  
+    INPUT g_qcd01
         WITHOUT DEFAULTS
         FROM qcd01
- 
+
         AFTER FIELD qcd01                  #類別代號
             IF NOT cl_null(g_qcd01) THEN
 #FUN-AA0059 ---------------------start----------------------------
@@ -317,12 +319,12 @@ DEFINE
                    NEXT FIELD qcd01
                 END IF
             END IF
- 
+
         ON ACTION CONTROLF                  #欄位說明
          CALL cl_set_focus_form(ui.Interface.getRootNode()) RETURNING g_fld_name,g_frm_name #Add on 040913
          CALL cl_fldhelp(g_frm_name,g_fld_name,g_lang) #Add on 040913
- 
- 
+
+
         ON ACTION CONTROLP
             CASE
                 WHEN INFIELD(qcd01)
@@ -333,7 +335,7 @@ DEFINE
 #                    LET g_qryparam.default1 = ''        #No.TQC-950129
 #                    LET g_qryparam.default1 = g_qcd01   #No.TQC-950129
 #                    CALL cl_create_qry() RETURNING g_qcd01
-                     CALL q_sel_ima(FALSE, "q_ima","",g_qcd01,"","","","","",'' ) 
+                     CALL q_sel_ima(FALSE, "q_ima","",g_qcd01,"","","","","",'' )
                          RETURNING   g_qcd01
 #FUN-AA0059---------mod------------end-----------------
                      DISPLAY BY NAME g_qcd01
@@ -344,19 +346,19 @@ DEFINE
          ON IDLE g_idle_seconds
                  CALL cl_on_idle()
                  CONTINUE INPUT
-         
-         ON ACTION about         
-            CALL cl_about()      
-         
-         ON ACTION controlg      
-            CALL cl_cmdask()     
-         
-         ON ACTION help          
-            CALL cl_show_help()  
+
+         ON ACTION about
+            CALL cl_about()
+
+         ON ACTION controlg
+            CALL cl_cmdask()
+
+         ON ACTION help
+            CALL cl_show_help()
          #MOD-860081------add-----end---
     END INPUT
 END FUNCTION
- 
+
 FUNCTION  i120_qcd01(p_cmd)
 DEFINE
     p_cmd           LIKE type_file.chr1,          #No.FUN-680104 VARCHAR(1)
@@ -364,7 +366,7 @@ DEFINE
     l_ima021        LIKE ima_file.ima021,
     l_ima103        LIKE ima_file.ima103,
     l_imaacti       LIKE ima_file.imaacti          #資料有效碼
- 
+
     LET g_errno = ' '
     SELECT ima02, ima021, ima103, imaacti
         INTO l_ima02, l_ima021, l_ima103, l_imaacti
@@ -375,7 +377,7 @@ DEFINE
          WHEN l_imaacti='N' LET g_errno = '9028'
     #FUN-690022------mod-------
          WHEN l_imaacti MATCHES '[PH]'       LET g_errno = '9038'
-    #FUN-690022------mod-------         
+    #FUN-690022------mod-------
          OTHERWISE          LET g_errno = SQLCA.sqlcode USING '-------'
     END CASE
     IF cl_null(g_errno) OR p_cmd = 'd' THEN
@@ -383,10 +385,10 @@ DEFINE
        DISPLAY l_ima021 TO FORMONLY.ima021
     END IF
 END FUNCTION
- 
+
 #Query 查詢
 FUNCTION i120_q()
- 
+
     LET g_row_count = 0
     LET g_curs_index = 0
     CALL cl_navigator_setting( g_curs_index, g_row_count )
@@ -410,13 +412,13 @@ FUNCTION i120_q()
         DISPLAY g_row_count TO FORMONLY.cnt
     END IF
 END FUNCTION
- 
+
 #處理資料的讀取
 FUNCTION i120_fetch(p_flag)
 DEFINE
     p_flag          LIKE type_file.chr1,      #處理方式   #No.FUN-680104 VARCHAR(1)
     l_abso          LIKE type_file.num10      #絕對的筆數 #No.FUN-680104 INTEGER
- 
+
     MESSAGE ""
     CASE p_flag
         WHEN 'N' FETCH NEXT     i120_b_curs INTO g_qcd01
@@ -431,24 +433,24 @@ DEFINE
                    ON IDLE g_idle_seconds
                       CALL cl_on_idle()
 #                      CONTINUE PROMPT
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
+
       ON ACTION controlg      #MOD-4C0121
          CALL cl_cmdask()     #MOD-4C0121
- 
- 
+
+
                 END PROMPT
                 IF INT_FLAG THEN LET INT_FLAG = 0 EXIT CASE END IF
             END IF
             FETCH ABSOLUTE g_jump i120_b_curs INTO g_qcd01
             LET g_no_ask = FALSE
     END CASE
- 
+
     IF SQLCA.sqlcode THEN                         #有麻煩
         CALL cl_err(g_qcd01,SQLCA.sqlcode,0)
         INITIALIZE g_qcd01 TO NULL
@@ -461,11 +463,11 @@ DEFINE
           WHEN 'L' LET g_curs_index = g_row_count
           WHEN '/' LET g_curs_index = g_jump
        END CASE
- 
+
        CALL cl_navigator_setting( g_curs_index, g_row_count )
     END IF
 END FUNCTION
- 
+
 #將資料顯示在畫面上
 FUNCTION i120_show()
     DISPLAY g_qcd01 TO qcd01               #單頭
@@ -473,7 +475,7 @@ FUNCTION i120_show()
     CALL i120_b_fill(g_wc)                 #單身
     CALL cl_show_fld_cont()                   #No.FUN-550037 hmf
 END FUNCTION
- 
+
 #取消整筆 (所有合乎單頭的資料)
 FUNCTION i120_r()
     IF s_shut(0) THEN RETURN END IF
@@ -504,7 +506,7 @@ FUNCTION i120_r()
                COMMIT WORK
                RETURN
             END IF
-            #FUN-B50064-add-end-- 
+            #FUN-B50064-add-end--
             FETCH i120_count INTO g_row_count
             #FUN-B50064-add-start--
             IF STATUS OR (cl_null(g_row_count) OR  g_row_count = 0 ) THEN
@@ -524,13 +526,13 @@ FUNCTION i120_r()
                LET g_no_ask = TRUE
                CALL i120_fetch('/')
             END IF
- 
+
         END IF
         LET g_msg=TIME
     END IF
     COMMIT WORK
 END FUNCTION
- 
+
 #單身
 FUNCTION i120_b()
 DEFINE
@@ -541,34 +543,34 @@ DEFINE
     l_cmd           LIKE type_file.chr1000, #可新增否    #No.FUN-680104 VARCHAR(80)
     l_allow_insert  LIKE type_file.num5,    #可新增否    #No.FUN-680104 SMALLINT
     l_allow_delete  LIKE type_file.num5     #可刪除否    #No.FUN-680104 SMALLINT
- 
+
     LET g_action_choice = ""
     IF s_shut(0) THEN RETURN END IF
     IF g_qcd01 IS NULL THEN
         RETURN
     END IF
- 
+
     CALL cl_opmsg('b')
     LET g_qcdmodu=g_user          #修改者96-06-18
     LET g_qcddate=g_today         #修改日期
- 
-    LET g_forupd_sql = " SELECT qcd02,'',qcd08,qcd03,qcd05,qcd04,qcd061,qcd062,qcd07,'' FROM qcd_file ",    #No.FUN-A80063     
+
+    LET g_forupd_sql = " SELECT qcd02,'',qcd08,qcd03,qcd05,qcd04,qcd061,qcd062,qcd07,qcdud01 FROM qcd_file ",    #No.FUN-A80063
                        "  WHERE qcd01= ? AND qcd02= ? ", #TQC-A60132
                           " FOR UPDATE "
     LET g_forupd_sql = cl_forupd_sql(g_forupd_sql)
     DECLARE i120_bcl CURSOR FROM g_forupd_sql      # LOCK CURSOR
- 
+
     LET l_ac_t = 0
- 
+
         LET l_allow_insert = cl_detail_input_auth("insert")
         LET l_allow_delete = cl_detail_input_auth("delete")
- 
+
         INPUT ARRAY g_qcd
               WITHOUT DEFAULTS
               FROM s_qcd.*
               ATTRIBUTE(COUNT=g_rec_b,MAXCOUNT=g_max_rec,UNBUFFERED,
                         INSERT ROW=l_allow_insert,DELETE ROW=l_allow_delete)
- 
+
         BEFORE INPUT
             IF g_rec_b != 0 THEN
                CALL fgl_set_arr_curr(l_ac)
@@ -599,7 +601,7 @@ DEFINE
                 CALL i120_qcd02('d')
                 CALL cl_show_fld_cont()     #FUN-550037(smin)
             END IF
- 
+
         AFTER INSERT
             IF INT_FLAG THEN
                CALL cl_err('',9001,0)
@@ -614,13 +616,13 @@ DEFINE
             END IF
             INSERT INTO qcd_file(qcd01,qcd02,qcd03,qcd04,qcd05,qcd061,qcd062,
 #                   qcd07,qcdacti,qcduser,qcdgrup,qcdmodu,qcddate,qcdoriu,qcdorig)
-                    qcd07,qcd08,qcdacti,qcduser,qcdgrup,qcdmodu,qcddate,qcdoriu,qcdorig)  #MOD-A50118 add 2      #No.FUN-910079    
+                    qcd07,qcd08,qcdacti,qcduser,qcdgrup,qcdmodu,qcddate,qcdoriu,qcdorig,qcdud01)  #MOD-A50118 add 2      #No.FUN-910079
             VALUES(g_qcd01,g_qcd[l_ac].qcd02,g_qcd[l_ac].qcd03,
                            g_qcd[l_ac].qcd04,g_qcd[l_ac].qcd05,
                            g_qcd[l_ac].qcd061,g_qcd[l_ac].qcd062,
 #                           g_qcd[l_ac].qcd07,g_qcdacti,g_qcduser,
                             g_qcd[l_ac].qcd07,g_qcd[l_ac].qcd08,g_qcdacti,g_qcduser,   #No.FUN-910079
-                           g_qcdgrup,g_qcdmodu,g_qcddate, g_user, g_grup)      #No.FUN-980030 10/01/04  insert columns oriu, orig    
+                           g_qcdgrup,g_qcdmodu,g_qcddate, g_user, g_grup,g_qcd[l_ac].qcdud01)      #No.FUN-980030 10/01/04  insert columns oriu, orig
             IF SQLCA.sqlcode THEN
 #               CALL cl_err(g_qcd[l_ac].qcd02,SQLCA.sqlcode,0)   #No.FUN-660115
                 CALL cl_err3("ins","qcd_file",g_qcd01,g_qcd[l_ac].qcd02,SQLCA.sqlcode,"","",1)  #No.FUN-660115
@@ -630,7 +632,7 @@ DEFINE
                 LET g_rec_b = g_rec_b + 1
                 COMMIT WORK
             END IF
- 
+
         BEFORE INSERT
             LET l_n = ARR_COUNT()
             LET p_cmd='a'
@@ -640,12 +642,12 @@ DEFINE
             LET g_qcd_t.* = g_qcd[l_ac].*         #新輸入資料
             CALL cl_show_fld_cont()     #FUN-550037(smin)
             NEXT FIELD qcd02
- 
+
         AFTER FIELD qcd02                        #check 序號是否重複
             IF NOT cl_null(g_qcd[l_ac].qcd02) THEN
                 IF (g_qcd[l_ac].qcd02 != g_qcd_t.qcd02 OR
                     g_qcd_t.qcd02 IS NULL) THEN
- 
+
                     SELECT count(*)
                         INTO l_n
                         FROM qcd_file
@@ -667,14 +669,14 @@ DEFINE
                     END IF
                 END IF
             END IF
- 
+
 	AFTER FIELD qcd03
 	    IF NOT cl_null(g_qcd[l_ac].qcd03) THEN
                IF g_qcd[l_ac].qcd03 NOT MATCHES'[123]' THEN
                    NEXT FIELD qcd03
                END IF
 	    END IF
- 
+
 #No.FUN-A80063 --begin
   BEFORE FIELD qcd05
       CALL cl_set_comp_entry('qcd04,qcd07',TRUE)
@@ -686,25 +688,25 @@ DEFINE
 	        END IF
 	    END IF
 #No.FUN-A80063 --begin
-      IF g_qcd[l_ac].qcd05 <> g_qcd_t.qcd05 OR g_qcd_t.qcd05 IS NULL THEN 
-         IF g_qcd[l_ac].qcd05 MATCHES '[34]' THEN 
-            LET g_qcd[l_ac].qcd04 =NULL 
+      IF g_qcd[l_ac].qcd05 <> g_qcd_t.qcd05 OR g_qcd_t.qcd05 IS NULL THEN
+         IF g_qcd[l_ac].qcd05 MATCHES '[34]' THEN
+            LET g_qcd[l_ac].qcd04 =NULL
             CALL cl_set_comp_entry('qcd04',FALSE)
-         END IF 
-         IF g_qcd[l_ac].qcd05 ='4' THEN 
+         END IF
+         IF g_qcd[l_ac].qcd05 ='4' THEN
             LET g_qcd[l_ac].qcd07 ='Y'
             CALL cl_set_comp_entry('qcd07',FALSE)
-         END IF 
-      END IF 
+         END IF
+      END IF
       LET g_qcd_t.qcd05 = g_qcd[l_ac].qcd05
 #No.FUN-A80063 --end
 
- 
+
         AFTER FIELD qcd07
 	    IF g_qcd[l_ac].qcd07 NOT MATCHES "[YN]" THEN
                NEXT FIELD qcd07
 	    END IF
- 
+
 #No.TQC-740144 ---Begin
         AFTER FIELD qcd062
             IF g_qcd[l_ac].qcd062<g_qcd[l_ac].qcd061 THEN
@@ -713,11 +715,11 @@ DEFINE
             END IF
 #No.TQC-740144 ---End
 #No.FUN-A80063 --begin
-            IF g_qcd[l_ac].qcd05 ='4' AND cl_null(g_qcd[l_ac].qcd061) AND cl_null(g_qcd[l_ac].qcd062) THEN 
+            IF g_qcd[l_ac].qcd05 ='4' AND cl_null(g_qcd[l_ac].qcd061) AND cl_null(g_qcd[l_ac].qcd062) THEN
                NEXT FIELD qcd062
-            END IF 
+            END IF
 #No.FUN-A80063 --end
- 
+
         BEFORE DELETE                            #是否取消單身
             IF g_qcd_t.qcd02 IS NOT NULL THEN
                 IF NOT cl_delb(0,0) THEN
@@ -739,7 +741,7 @@ DEFINE
                 LET g_rec_b = g_rec_b - 1
             END IF
             COMMIT WORK
- 
+
         ON ROW CHANGE
             IF INT_FLAG THEN
                CALL cl_err('',9001,0)
@@ -763,7 +765,8 @@ DEFINE
                        qcd07=g_qcd[l_ac].qcd07,
                        qcd08=g_qcd[l_ac].qcd08,              #No.FUN-910079
                        qcdmodu=g_qcdmodu,
-                       qcddate=g_qcddate
+                       qcddate=g_qcddate,
+                       qcdud01=g_qcd[l_ac].qcdud01
                  WHERE qcd01=g_qcd01
                    AND qcd02=g_qcd_t.qcd02
                 IF SQLCA.sqlcode THEN
@@ -774,7 +777,7 @@ DEFINE
                     COMMIT WORK
                 END IF
             END IF
- 
+
         AFTER ROW
             LET l_ac = ARR_CURR()
             LET l_ac_t = l_ac
@@ -790,8 +793,8 @@ DEFINE
             END IF
             CLOSE i120_bcl
             COMMIT WORK
- 
- 
+
+
         ON ACTION CONTROLP
             CASE
                 WHEN INFIELD(qcd02)     #廠商編號
@@ -804,65 +807,65 @@ DEFINE
                      NEXT FIELD qcd02
                 OTHERWISE EXIT CASE
             END CASE
- 
+
         ON ACTION CONTROLO                        #沿用所有欄位
             IF INFIELD(qcd02) AND l_ac > 1 THEN
                 LET g_qcd[l_ac].* = g_qcd[l_ac-1].*
                 DISPLAY g_qcd[l_ac].* TO s_qcd[l_ac].*
                 NEXT FIELD qcd02
             END IF
- 
+
         ON ACTION CONTROLR
            CALL cl_show_req_fields()
- 
+
         ON ACTION CONTROLG
             CALL cl_cmdask()
- 
+
         ON ACTION CONTROLF
          CALL cl_set_focus_form(ui.Interface.getRootNode()) RETURNING g_fld_name,g_frm_name #Add on 040913
          CALL cl_fldhelp(g_frm_name,g_fld_name,g_lang) #Add on 040913
- 
+
            ON IDLE g_idle_seconds
               CALL cl_on_idle()
               CONTINUE INPUT
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
-      ON ACTION controls                           #No.FUN-6B0032             
+
+      ON ACTION controls                           #No.FUN-6B0032
          CALL cl_set_head_visible("","AUTO")       #No.FUN-6B0032
- 
+
         END INPUT
- 
+
     CLOSE i120_bcl
     COMMIT WORK
 END FUNCTION
- 
+
 FUNCTION i120_qcd02(p_cmd)
     DEFINE p_cmd	LIKE type_file.chr1,          #No.FUN-680104 VARCHAR(1)
            l_azf03 LIKE azf_file.azf03
- 
+
     LET g_errno = ' '
     SELECT azf03
         INTO g_qcd[l_ac].azf03
         FROM azf_file
         WHERE azf01 = g_qcd[l_ac].qcd02
           AND azf02='6'
- 
+
     CASE WHEN STATUS=100          LET g_errno = 'aqc-041' #No.7926 #No.5185
                                   LET  g_qcd[l_ac].azf03 = NULL
          OTHERWISE                LET g_errno = SQLCA.sqlcode USING '-------'
     END CASE
 END FUNCTION
- 
+
 FUNCTION i120_b_askkey()
 DEFINE
     l_wc            LIKE type_file.chr1000       #No.FUN-680104 VARCHAR(200)
- 
-    CONSTRUCT l_wc ON qcd02,qcd03,qcd05,qcd04,qcd061,qcd062,qcd07      #No.FUN-A80063  
+
+    CONSTRUCT l_wc ON qcd02,qcd03,qcd05,qcd04,qcd061,qcd062,qcd07      #No.FUN-A80063
                  FROM s_qcd[1].qcd02,s_qcd[1].qcd03,s_qcd[1].qcd05,
                       s_qcd[1].qcd04,s_qcd[1].qcd061,s_qcd[1].qcd062,        #No.FUN-A80063
                       s_qcd[1].qcd07
@@ -873,17 +876,17 @@ DEFINE
        ON IDLE g_idle_seconds
           CALL cl_on_idle()
           CONTINUE CONSTRUCT
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
+
       ON ACTION controlg      #MOD-4C0121
          CALL cl_cmdask()     #MOD-4C0121
- 
- 
+
+
 		#No.FUN-580031 --start--     HCN
                  ON ACTION qbe_select
          	   CALL cl_qbe_select()
@@ -894,14 +897,14 @@ DEFINE
     IF INT_FLAG THEN RETURN END IF
     CALL i120_b_fill(l_wc)
 END FUNCTION
- 
+
 FUNCTION i120_b_fill(p_wc)              #BODY FILL UP
 DEFINE
     p_wc            STRING       #No.FUN-680104 VARCHAR(200)   #MOD-980187
- 
+
     LET g_sql =
 #       "SELECT qcd02,azf03,qcd03,qcd04,qcd05,qcd061,qcd062,qcd07 ",
-        "SELECT qcd02,azf03,qcd08,qcd03,qcd05,qcd04,qcd061,qcd062,qcd07 ",   #NO.FUN-910079   #No.FUN-A80063  
+        "SELECT qcd02,azf03,qcd08,qcd03,qcd05,qcd04,qcd061,qcd062,qcd07,qcdud01 ",   #NO.FUN-910079   #No.FUN-A80063
        " FROM qcd_file LEFT OUTER JOIN azf_file ON qcd_file.qcd02 = azf_file.azf01 AND azf_file.azf02='6' ",
        " WHERE qcd01 = '",g_qcd01,"'",
        "   AND ",p_wc CLIPPED ,
@@ -925,27 +928,27 @@ DEFINE
     LET g_rec_b = g_cnt - 1
     LET g_cnt = 0
 END FUNCTION
- 
- 
+
+
 FUNCTION i120_bp(p_ud)
    DEFINE   p_ud   LIKE type_file.chr1          #No.FUN-680104 VARCHAR(1)
- 
+
    IF p_ud <> "G" OR g_action_choice = "detail" THEN
       RETURN
    END IF
- 
+
    LET g_action_choice = " "
    call aqci120_act_name() #darcy:2025/01/13 add
    CALL cl_set_act_visible("accept,cancel", FALSE)
    DISPLAY ARRAY g_qcd TO s_qcd.* ATTRIBUTE(COUNT=g_rec_b,UNBUFFERED)
- 
+
       BEFORE DISPLAY
          CALL cl_navigator_setting( g_curs_index, g_row_count )
- 
+
       BEFORE ROW
          LET l_ac = ARR_CURR()
       CALL cl_show_fld_cont()                   #No.FUN-550037 hmf
- 
+
       ON ACTION insert
          LET g_action_choice="insert"
          EXIT DISPLAY
@@ -962,8 +965,8 @@ FUNCTION i120_bp(p_ud)
          CALL fgl_set_arr_curr(1)  ######add in 040505
            END IF
            ACCEPT DISPLAY                   #No.FUN-530067 HCN TEST
- 
- 
+
+
       ON ACTION previous
          CALL i120_fetch('P')
          CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
@@ -971,8 +974,8 @@ FUNCTION i120_bp(p_ud)
          CALL fgl_set_arr_curr(1)  ######add in 040505
            END IF
 	ACCEPT DISPLAY                   #No.FUN-530067 HCN TEST
- 
- 
+
+
       ON ACTION jump
          CALL i120_fetch('/')
          CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
@@ -980,8 +983,8 @@ FUNCTION i120_bp(p_ud)
          CALL fgl_set_arr_curr(1)  ######add in 040505
            END IF
 	ACCEPT DISPLAY                   #No.FUN-530067 HCN TEST
- 
- 
+
+
       ON ACTION next
          CALL i120_fetch('N')
          CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
@@ -989,8 +992,8 @@ FUNCTION i120_bp(p_ud)
          CALL fgl_set_arr_curr(1)  ######add in 040505
            END IF
 	ACCEPT DISPLAY                   #No.FUN-530067 HCN TEST
- 
- 
+
+
       ON ACTION last
          CALL i120_fetch('L')
          CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
@@ -998,8 +1001,8 @@ FUNCTION i120_bp(p_ud)
          CALL fgl_set_arr_curr(1)  ######add in 040505
            END IF
 	ACCEPT DISPLAY                   #No.FUN-530067 HCN TEST
- 
- 
+
+
       ON ACTION reproduce
          LET g_action_choice="reproduce"
          EXIT DISPLAY
@@ -1010,45 +1013,45 @@ FUNCTION i120_bp(p_ud)
       ON ACTION help
          LET g_action_choice="help"
          EXIT DISPLAY
- 
+
       ON ACTION locale
          CALL cl_dynamic_locale()
           CALL cl_show_fld_cont()                   #No.FUN-550037 hmf
          EXIT DISPLAY
- 
+
       ON ACTION exit
          LET g_action_choice="exit"
          EXIT DISPLAY
- 
+
       ON ACTION controlg
          LET g_action_choice="controlg"
          EXIT DISPLAY
- 
+
       ON ACTION accept
          LET g_action_choice="detail"
          LET l_ac = ARR_CURR()
          EXIT DISPLAY
- 
+
       ON ACTION cancel
              LET INT_FLAG=FALSE 		#MOD-570244	mars
          LET g_action_choice="exit"
          EXIT DISPLAY
- 
+
       ON ACTION exporttoexcel #FUN-4B0003
          LET g_action_choice = 'exporttoexcel'
          EXIT DISPLAY
- 
+
       ON IDLE g_idle_seconds
          CALL cl_on_idle()
          CONTINUE DISPLAY
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION related_document                #No.FUN-6A0160  相關文件
-         LET g_action_choice="related_document"          
-         EXIT DISPLAY 
- 
+         LET g_action_choice="related_document"
+         EXIT DISPLAY
+
       # No.FUN-530067 --start--
       AFTER DISPLAY
          CONTINUE DISPLAY
@@ -1059,21 +1062,21 @@ FUNCTION i120_bp(p_ud)
          let g_action_choice = "upd_aql"
          exit display
       #darcy:2025/01/13 add e---
- 
-      ON ACTION controls                           #No.FUN-6B0032             
+
+      ON ACTION controls                           #No.FUN-6B0032
          CALL cl_set_head_visible("","AUTO")       #No.FUN-6B0032
- 
+
    END DISPLAY
    CALL cl_set_act_visible("accept,cancel", TRUE)
 END FUNCTION
- 
- 
+
+
 FUNCTION i120_copy()
 DEFINE l_newno,l_oldno1  LIKE qcd_file.qcd01,
        l_n           LIKE type_file.num5,          #No.FUN-680104 SMALLINT
        l_ima02       LIKE ima_file.ima02,
        l_ima021      LIKE ima_file.ima021
- 
+
     IF s_shut(0) THEN RETURN END IF
     IF g_qcd01 IS NULL
        THEN CALL cl_err('',-400,0)
@@ -1090,7 +1093,7 @@ DEFINE l_newno,l_oldno1  LIKE qcd_file.qcd01,
     END IF
 #bugno:5994 end....................................................
     DISPLAY ' ' TO qcd01
- 
+
     CALL cl_set_head_visible("","YES")           #No.FUN-6B0032
     INPUT l_newno FROM qcd01
         AFTER FIELD qcd01
@@ -1108,7 +1111,7 @@ DEFINE l_newno,l_oldno1  LIKE qcd_file.qcd01,
                 IF l_n > 0 THEN
                     CALL cl_err('',-239,0)
                     NEXT FIELD qcd01
-	        END IF	
+	        END IF
                 SELECT ima02,ima021 INTO l_ima02,l_ima021 FROM ima_file
                  WHERE ima01 = l_newno
                    AND imaacti = 'Y'
@@ -1121,7 +1124,7 @@ DEFINE l_newno,l_oldno1  LIKE qcd_file.qcd01,
                    DISPLAY l_ima021 TO FORMONLY.ima021
                 END IF
             END IF
- 
+
         ON ACTION CONTROLP
             CASE
                 WHEN INFIELD(qcd01)
@@ -1133,36 +1136,36 @@ DEFINE l_newno,l_oldno1  LIKE qcd_file.qcd01,
 #                    LET g_qryparam.default1 = ''        #No.TQC-950129
 #                    LET g_qryparam.default1 = l_newno   #No.TQC-950129
 #                    CALL cl_create_qry() RETURNING l_newno
-                     CALL q_sel_ima(FALSE, "q_ima","",l_newno,"","","","","",'' ) 
-                       RETURNING l_newno  
+                     CALL q_sel_ima(FALSE, "q_ima","",l_newno,"","","","","",'' )
+                       RETURNING l_newno
 #FUN-AA0059---------mod------------end-----------------
 #                     CALL FGL_DIALOG_SETBUFFER( l_newno )
                      DISPLAY l_newno TO qcd01
                      NEXT FIELD qcd01
                 OTHERWISE EXIT CASE
             END CASE
- 
+
        ON IDLE g_idle_seconds
           CALL cl_on_idle()
           CONTINUE INPUT
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
+
       ON ACTION controlg      #MOD-4C0121
          CALL cl_cmdask()     #MOD-4C0121
- 
- 
+
+
     END INPUT
     IF INT_FLAG
        THEN LET INT_FLAG = 0
             DISPLAY  g_qcd01 TO qcd01
             RETURN
     END IF
- 
+
     DROP TABLE x
     SELECT * FROM qcd_file         #單身複製
         WHERE qcd01 = g_qcd01
@@ -1183,7 +1186,7 @@ DEFINE l_newno,l_oldno1  LIKE qcd_file.qcd01,
     END IF
     LET g_cnt=SQLCA.SQLERRD[3]
     MESSAGE '(',g_cnt USING '##&',') ROW of (',l_newno,') O.K'
- 
+
      LET l_oldno1= g_qcd01
      LET g_qcd01=l_newno
      CALL i120_b()
@@ -1199,7 +1202,7 @@ function aqci120_upd_aql()
 
    select qcd04 into l_qcd04 from qcd_file where qcd04  <> 0 and rownum = 1
 
-   if l_qcd04 = 0.65 then 
+   if l_qcd04 = 0.65 then
       let l_qcd04 = 0.4
    else
       let l_qcd04 = 0.65
@@ -1208,7 +1211,7 @@ function aqci120_upd_aql()
    begin work
    update qcd_file set qcd04 = l_qcd04
     where qcd04  <> 0
-   
+
    if sqlca.sqlcode then
       rollback work
       call cl_err("",sqlca.sqlcode,1)
@@ -1227,8 +1230,8 @@ function aqci120_upd_aql()
          MESSAGE "取消更新"
          return
       end if
-   end if 
-   
+   end if
+
    commit work
    MESSAGE "更新成功"
 
