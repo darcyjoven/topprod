@@ -410,7 +410,7 @@ end function
 # 如果任意一个xml大于5M，将提醒是否导出
 function cl_filesize_chk()
     
-    if g_filesize > 10 then
+    if g_filesize > 10 and (cl_null(g_bgjob) or g_bgjob = 'N')  then
         return cl_confirm("clib-05")
     end if
     return true
@@ -686,3 +686,305 @@ function cl_export_replace_date_str(p_sql)
     let l_sql = p_sql.subString(1,l_b+4),l_sql # +4是为了加上where
     return l_sql 
 end function 
+
+
+function cl_expexcel_nogui(p_file,p_page1,p_value1,p_page2,p_value2,p_page3,p_value3)
+    define  p_file  string
+    define  p_page1 varchar(1000),
+            p_page2 varchar(1000),
+            p_page3 varchar(1000)
+    define  l_page1 varchar(1000),
+            l_page2 varchar(1000),
+            l_page3 varchar(1000),
+            p_value1 om.DomNode,
+            p_value2 om.DomNode,
+            p_value3 om.DomNode
+    define l_file varchar(1000)
+
+    let g_filesize = 0
+    let l_page1 = cl_exp_data(p_value1)
+    let l_page2 = cl_exp_data(p_value2)
+    let l_page3 = cl_exp_data(p_value3)
+    if not cl_filesize_chk() then return "" end if
+
+    display "page1: "||l_page1
+    display "page2: "||l_page2
+    display "page3: "||l_page3
+
+    call exportexcel(g_prog,p_file,p_page1,l_page1,p_page2,l_page2,p_page3,l_page3) returning l_file
+
+    return l_file 
+end function
+function cl_expexcel1_nogui(p_file,p_page1,p_value1)
+    define  p_file  string
+    define  p_page1 varchar(1000)
+    define  l_page1 varchar(1000),
+            p_value1 om.DomNode
+    define l_file varchar(1000)
+
+    let g_filesize = 0
+    let l_page1 = cl_exp_data(p_value1)
+    if not cl_filesize_chk() then return "" end if
+
+    call exportexcel1(g_prog,p_file,p_page1,l_page1) returning l_file
+
+    return l_file
+end function
+function cl_expexcel2_nogui(p_file,p_page1,p_value1,p_page2,p_value2)
+    define  p_file  string
+    define  p_page1 varchar(1000),
+            p_page2 varchar(1000)
+    define  l_page1 varchar(1000),
+            l_page2 varchar(1000),
+            p_value1 om.DomNode,
+            p_value2 om.DomNode
+    define l_file varchar(1000)
+
+    let g_filesize = 0
+    let l_page1 = cl_exp_data(p_value1)
+    let l_page2 = cl_exp_data(p_value2)
+    if not cl_filesize_chk() then return "" end if
+
+    call exportexcel2(g_prog,p_file,p_page1,l_page1,p_page2,l_page2) returning l_file
+
+    return l_file
+end function
+function cl_expexcel5_nogui(p_file,p_page1,p_value1,p_page2,p_value2,p_page3,p_value3,p_page4,p_value4,p_page5,p_value5)
+    define  p_file  string
+    define  p_page1 varchar(1000),
+            p_page2 varchar(1000),
+            p_page3 varchar(1000),
+            p_page4 varchar(1000),
+            p_page5 varchar(1000)
+    define  l_page1 varchar(1000),
+            l_page2 varchar(1000),
+            l_page3 varchar(1000),
+            l_page4 varchar(1000),
+            l_page5 varchar(1000),
+            p_value1 om.DomNode,
+            p_value2 om.DomNode,
+            p_value3 om.DomNode,
+            p_value4 om.DomNode,
+            p_value5 om.DomNode
+    define l_file varchar(1000)
+    
+    let g_filesize = 0
+    let l_page1 = cl_exp_data(p_value1)
+    let l_page2 = cl_exp_data(p_value2)
+    let l_page3 = cl_exp_data(p_value3)
+    let l_page4 = cl_exp_data(p_value4)
+    let l_page5 = cl_exp_data(p_value5)
+    if not cl_filesize_chk() then return "" end if
+
+    call exportexcel5(g_prog,p_file,p_page1,l_page1,p_page2,l_page2,p_page3,l_page3,p_page4,l_page4,p_page5,l_page5) returning l_file
+
+    return l_file
+end function
+function cl_expexcel10_nogui(p_file,p_page1,p_value1,p_page2,p_value2,p_page3,p_value3,p_page4,p_value4,p_page5,p_value5,p_page6,p_value6,p_page7,p_value7,p_page8,p_value8,p_page9,p_value9,p_page10,p_value10)
+    define  p_file  string
+    define  p_page1 varchar(1000),
+            p_page2 varchar(1000),
+            p_page3 varchar(1000),
+            p_page4 varchar(1000),
+            p_page5 varchar(1000),
+            p_page6 varchar(1000),
+            p_page7 varchar(1000),
+            p_page8 varchar(1000),
+            p_page9 varchar(1000),
+            p_page10 varchar(1000)
+    define  l_page1 varchar(1000),
+            l_page2 varchar(1000),
+            l_page3 varchar(1000),
+            l_page4 varchar(1000),
+            l_page5 varchar(1000),
+            l_page6 varchar(1000),
+            l_page7 varchar(1000),
+            l_page8 varchar(1000),
+            l_page9 varchar(1000),
+            l_page10 varchar(1000),
+            p_value1 om.DomNode,
+            p_value2 om.DomNode,
+            p_value3 om.DomNode,
+            p_value4 om.DomNode,
+            p_value5 om.DomNode,
+            p_value6 om.DomNode,
+            p_value7 om.DomNode,
+            p_value8 om.DomNode,
+            p_value9 om.DomNode,
+            p_value10 om.DomNode
+    define l_file varchar(1000)
+
+    let g_filesize = 0
+    let l_page1 = cl_exp_data(p_value1)
+    let l_page2 = cl_exp_data(p_value2)
+    let l_page3 = cl_exp_data(p_value3)
+    let l_page4 = cl_exp_data(p_value4)
+    let l_page5 = cl_exp_data(p_value5)
+    let l_page6 = cl_exp_data(p_value6)
+    let l_page7 = cl_exp_data(p_value7)
+    let l_page8 = cl_exp_data(p_value8)
+    let l_page9 = cl_exp_data(p_value9)
+    let l_page10 = cl_exp_data(p_value10)
+    if not cl_filesize_chk() then return "" end if
+
+    call exportexcel10(
+            g_prog,p_file,
+            p_page1,l_page1,p_page2,l_page2,p_page3,l_page3,p_page4,l_page4,p_page5,l_page5,
+            p_page6,l_page6,p_page7,l_page7,p_page8,l_page8,p_page9,l_page9,p_page10,l_page10
+            ) returning l_file
+
+    return l_file
+end function
+function cl_expexcel32_nogui(p_file,
+    p_page1,p_value1,p_page2,p_value2,p_page3,p_value3,p_page4,p_value4,p_page5,p_value5,p_page6,p_value6,p_page7,p_value7,p_page8,p_value8,p_page9,p_value9,p_page10,p_value10,
+    p_page11,p_value11,p_page12,p_value12,p_page13,p_value13,p_page14,p_value14,p_page15,p_value15,p_page16,p_value16,p_page17,p_value17,p_page18,p_value18,p_page19,p_value19,p_page20,p_value20,
+    p_page21,p_value21,p_page22,p_value22,p_page23,p_value23,p_page24,p_value24,p_page25,p_value25,p_page26,p_value26,p_page27,p_value27,p_page28,p_value28,p_page29,p_value29,p_page30,p_value30,
+    p_page31,p_value31,p_page32,p_value32
+)
+    define  p_file  string
+    define  p_page1 varchar(1000),
+            p_page2 varchar(1000),
+            p_page3 varchar(1000),
+            p_page4 varchar(1000),
+            p_page5 varchar(1000),
+            p_page6 varchar(1000),
+            p_page7 varchar(1000),
+            p_page8 varchar(1000),
+            p_page9 varchar(1000),
+            p_page10 varchar(1000),
+            p_page11 varchar(1000),
+            p_page12 varchar(1000),
+            p_page13 varchar(1000),
+            p_page14 varchar(1000),
+            p_page15 varchar(1000),
+            p_page16 varchar(1000),
+            p_page17 varchar(1000),
+            p_page18 varchar(1000),
+            p_page19 varchar(1000),
+            p_page20 varchar(1000),
+            p_page21 varchar(1000),
+            p_page22 varchar(1000),
+            p_page23 varchar(1000),
+            p_page24 varchar(1000),
+            p_page25 varchar(1000),
+            p_page26 varchar(1000),
+            p_page27 varchar(1000),
+            p_page28 varchar(1000),
+            p_page29 varchar(1000),
+            p_page30 varchar(1000),
+            p_page31 varchar(1000),
+            p_page32 varchar(1000)
+    define  l_page1 varchar(1000),
+            l_page2 varchar(1000),
+            l_page3 varchar(1000),
+            l_page4 varchar(1000),
+            l_page5 varchar(1000),
+            l_page6 varchar(1000),
+            l_page7 varchar(1000),
+            l_page8 varchar(1000),
+            l_page9 varchar(1000),
+            l_page10 varchar(1000),
+            l_page11 varchar(1000),
+            l_page12 varchar(1000),
+            l_page13 varchar(1000),
+            l_page14 varchar(1000),
+            l_page15 varchar(1000),
+            l_page16 varchar(1000),
+            l_page17 varchar(1000),
+            l_page18 varchar(1000),
+            l_page19 varchar(1000),
+            l_page20 varchar(1000),
+            l_page21 varchar(1000),
+            l_page22 varchar(1000),
+            l_page23 varchar(1000),
+            l_page24 varchar(1000),
+            l_page25 varchar(1000),
+            l_page26 varchar(1000),
+            l_page27 varchar(1000),
+            l_page28 varchar(1000),
+            l_page29 varchar(1000),
+            l_page30 varchar(1000),
+            l_page31 varchar(1000),
+            l_page32 varchar(1000),
+            p_value1 om.DomNode,
+            p_value2 om.DomNode,
+            p_value3 om.DomNode,
+            p_value4 om.DomNode,
+            p_value5 om.DomNode,
+            p_value6 om.DomNode,
+            p_value7 om.DomNode,
+            p_value8 om.DomNode,
+            p_value9 om.DomNode,
+            p_value10 om.DomNode,
+            p_value11 om.DomNode,
+            p_value12 om.DomNode,
+            p_value13 om.DomNode,
+            p_value14 om.DomNode,
+            p_value15 om.DomNode,
+            p_value16 om.DomNode,
+            p_value17 om.DomNode,
+            p_value18 om.DomNode,
+            p_value19 om.DomNode,
+            p_value20 om.DomNode,
+            p_value21 om.DomNode,
+            p_value22 om.DomNode,
+            p_value23 om.DomNode,
+            p_value24 om.DomNode,
+            p_value25 om.DomNode,
+            p_value26 om.DomNode,
+            p_value27 om.DomNode,
+            p_value28 om.DomNode,
+            p_value29 om.DomNode,
+            p_value30 om.DomNode,
+            p_value31 om.DomNode,
+            p_value32 om.DomNode
+    define l_file varchar(1000)
+
+    let g_filesize = 0
+    let l_page1 = cl_exp_data(p_value1)
+    let l_page2 = cl_exp_data(p_value2)
+    let l_page3 = cl_exp_data(p_value3)
+    let l_page4 = cl_exp_data(p_value4)
+    let l_page5 = cl_exp_data(p_value5)
+    let l_page6 = cl_exp_data(p_value6)
+    let l_page7 = cl_exp_data(p_value7)
+    let l_page8 = cl_exp_data(p_value8)
+    let l_page9 = cl_exp_data(p_value9)
+    let l_page10 = cl_exp_data(p_value10)
+    let l_page11 = cl_exp_data(p_value11) 
+    let l_page12 = cl_exp_data(p_value12) 
+    let l_page13 = cl_exp_data(p_value13) 
+    let l_page14 = cl_exp_data(p_value14) 
+    let l_page15 = cl_exp_data(p_value15) 
+    let l_page16 = cl_exp_data(p_value16) 
+    let l_page17 = cl_exp_data(p_value17) 
+    let l_page18 = cl_exp_data(p_value18) 
+    let l_page19 = cl_exp_data(p_value19) 
+    let l_page20 = cl_exp_data(p_value20) 
+    let l_page21 = cl_exp_data(p_value21) 
+    let l_page22 = cl_exp_data(p_value22) 
+    let l_page23 = cl_exp_data(p_value23) 
+    let l_page24 = cl_exp_data(p_value24) 
+    let l_page25 = cl_exp_data(p_value25) 
+    let l_page26 = cl_exp_data(p_value26) 
+    let l_page27 = cl_exp_data(p_value27) 
+    let l_page28 = cl_exp_data(p_value28) 
+    let l_page29 = cl_exp_data(p_value29) 
+    let l_page30 = cl_exp_data(p_value30) 
+    let l_page31 = cl_exp_data(p_value31) 
+    let l_page32 = cl_exp_data(p_value32) 
+    if not cl_filesize_chk() then return "" end if
+    
+    call exportexcel32(
+            g_prog,p_file,
+            p_page1,l_page1,p_page2,l_page2,p_page3,l_page3,p_page4,l_page4,p_page5,l_page5,
+            p_page6,l_page6,p_page7,l_page7,p_page8,l_page8,p_page9,l_page9,p_page10,l_page10,
+            p_page11,l_page11,p_page12,l_page12,p_page13,l_page13,p_page14,l_page14,p_page15,l_page15,
+            p_page16,l_page16,p_page17,l_page17,p_page18,l_page18,p_page19,l_page19,p_page20,l_page20,
+            p_page21,l_page21,p_page22,l_page22,p_page23,l_page23,p_page24,l_page24,p_page25,l_page25,
+            p_page16,l_page26,p_page27,l_page27,p_page28,l_page28,p_page29,l_page29,p_page30,l_page30,
+            p_page31,l_page31,p_page32,l_page32
+            ) returning l_file
+
+    return l_file
+end function

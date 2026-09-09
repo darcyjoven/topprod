@@ -4718,7 +4718,9 @@ FUNCTION t300_t410_g_b(l_qcf)
        WHERE qcd01=l_qcf.qcf021
          AND qcd08 IN ('2','9')            
       IF l_yn > 0 THEN  #--- 料件檢驗項目
-         DECLARE qcd_cur2 CURSOR FOR SELECT * FROM qcd_file
+         DECLARE qcd_cur2 CURSOR FOR SELECT qcd01,qcd02,qcd03,qcd04,qcd05,qcd061,qcd062,qcd07,qcdacti,
+                                            qcduser,qcdgrup,qcdmodu,qcddate,qcd08,qcdorig,qcdoriu,qcd09,qcdud01 
+                                           FROM qcd_file 
                                      WHERE qcd01 = l_qcf.qcf021
                                        AND qcd08 IN ('2','9')             
                                      ORDER BY qcd02
@@ -4751,11 +4753,11 @@ FUNCTION t300_t410_g_b(l_qcf)
  
             INSERT INTO qcg_file (qcg01,qcg03,qcg04,qcg05,qcg06,qcg07, 
                                   qcg08,qcg09,qcg10,qcg11,qcg12,qcg131,qcg132,
-                                  qcgplant,qcglegal) #FUN-980008 add
+                                  qcgplant,qcglegal,qctud002) #FUN-980008 add
                  VALUES(l_qcf.qcf01,seq,l_qcd.qcd02,l_qcd.qcd03,l_qcd.qcd04,
                         0,'1',l_ac_num,l_re_num,l_qcg11,l_qcd.qcd05,
                         l_qcd.qcd061,l_qcd.qcd062,
-                        g_plant,g_legal) #FUN-980008 add
+                        g_plant,g_legal,l_qcd.qcdud01) #FUN-980008 add
             LET seq=seq+1
          END FOREACH
       ELSE            #--- 材料類別檢驗項目
