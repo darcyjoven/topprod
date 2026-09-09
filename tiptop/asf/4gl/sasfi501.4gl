@@ -808,6 +808,9 @@ FUNCTION i501(p_argv1, p_argv2, p_argv3, p_argv4)
     ELSE
        CALL cl_set_comp_visible("sfs014,sfq014",TRUE)
     END IF
+    # darcy add s---
+    call cl_set_act_visible("chaoling_unpost,modify_sfq03",false)
+    # darcy add e---
 #FUN-C70014 add end----------------
 #MOD-B30148 --------------------Begin--------------------------
 #TQC-AC0197 --------------------Begin--------------------------
@@ -1797,6 +1800,8 @@ FUNCTION i501_menu()
             IF cl_chk_act_auth() THEN
                CALL i501_out()
             END IF
+        when "modify_sfq03"
+            message 'modify_sfq03'
          WHEN "help"
             CALL cl_show_help()
          WHEN "exit"
@@ -1833,6 +1838,10 @@ FUNCTION i501_menu()
                CALL i501_upd_sfpud04()
             END IF
        #end-----add by guanyao160904
+       # darcy add s---
+       when "chaoling_unpost"
+            exit while
+       # darcy add e---
          WHEN "confirm"
 
 #      IF g_user='37107' THEN
@@ -5788,14 +5797,25 @@ END FUNCTION
 
 FUNCTION i501_set_no_entry_d(p_cmd)
   DEFINE p_cmd   LIKE type_file.chr1    #No.FUN-680121 VARCHAR(1)
+  define l_action_choice    string
+  define l_bgjob VARCHAR(1)
 
     IF g_sfp.sfp06 NOT MATCHES '[16ABD]' THEN #FUN-5C0114 add AB #FUN-740232 將3拿掉 #FUN-C70014 add 'D'
        CALL cl_set_comp_entry("sfq03",FALSE)
     END IF
     #darcy:2023/09/26 s---
     # asfi511 不允许修改套数
-    if g_prog == 'asfi511' and ( g_user != '24088' and g_user != '43474' g_user != '55416' and g_user != '55416') then
-      call cl_set_comp_entry("sfq03",false)
+    --if g_prog == 'asfi511' and ( g_user != '24088' and g_user != '43474' and g_user != '55416') then
+    if g_prog == 'asfi511' then
+        let l_action_choice = g_action_choice
+        let l_bgjob = g_bgjob
+        let g_action_choice = "modify_sfq03"
+        let g_bgjob = 'Y'
+        if not cl_chk_act_auth() then
+            call cl_set_comp_entry("sfq03",false)
+        end if
+        let g_bgjob = l_bgjob
+        let g_action_choice = l_action_choice
     end if
     #darcy:2023/09/26 e---
 END FUNCTION
@@ -11102,7 +11122,7 @@ DEFINE l_tc_zsa02   LIKE type_file.chr1,
                  IF STATUS OR cl_null(l_sfs32x) THEN LET l_sfs32x = 0 END IF
                  IF g_sfs[l_ac].sfs32>(g_sfs[l_ac].sfa05-g_sfs[l_ac].sfa06-l_sfs32x) THEN
                     LET l_msg=g_sfs[l_ac].sfs04 CLIPPED,' sfs32<>sfa05:'
-                  IF  g_user<>'tiptop' THEN
+                  IF  g_user<>'TIPTOP' THEN
                     CALL cl_err(l_msg CLIPPED ,'asf-351',0) NEXT FIELD sfs32
                   END IF
                 END IF
@@ -13155,7 +13175,14 @@ FUNCTION i501_bp(p_ud)
          CALL fgl_set_arr_curr(1)  ######add in 040505
            END IF
         	ACCEPT DIALOG                   #No.FUN-530067 HCN TEST
-
+      # darcy add s---
+      on action modify_sfq03
+        let g_action_choice = "modify_sfq03"
+        exit dialog
+      on action chaoling_unpost
+        let g_action_choice = 'chaoling_unpost'
+        exit dialog
+      # darcy add e---
       ON ACTION last
          CALL i501_fetch('L')
          CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
