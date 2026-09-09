@@ -4882,7 +4882,7 @@ RUN " echo '"||l_str||"' >> /u1/topprod/topcust/cws/4gl/asfi514_zhangsba_auto_po
     let g_bgjob = 'Y'
     let l_action_choice = g_action_choice
     let g_action_choice = "chaoling_unpost"
-    if cl_chk_auto_chk() then
+    if cl_chk_act_auth() then
     #darcy add e---
         if sfa06_t > l_sfa.sfa05 AND
         ((p_argv1 = '1') OR (p_argv1='2' AND l_sfb.sfb02 NOT MATCHES '[58]')) THEN   #NO:7075 add sfb02 '8'狀態
