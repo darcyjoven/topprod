@@ -407,6 +407,15 @@ FUNCTION p301_1()
    #    RETURN
    # END IF
 #NO.CHI-A30029 mark-------end-------
+#
+    # darcy add s---
+    # 检查是否已有凭证
+    select count(*) into l_cnt1_1 from fan_file where fan19 is not null and fan03 = g_yy and fan04 = g_mm
+    if l_cnt1_1 > 0 then
+        CALL cl_err('','cfa-002',1)
+        RETURN
+    end if
+    # darcy add e---
 
     #IF l_cnt1_1 <> 0 THEN   #No:FUN-AB0088  #No:FUN-B60140 Mark
        INITIALIZE g_fan.* TO NULL
