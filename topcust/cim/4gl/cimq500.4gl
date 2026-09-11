@@ -351,10 +351,10 @@ end function
 
 -- 这里只进行浏览器下载部分，文件生成交给scimq500 处理
 function cimq500_output()
-    define l_pdf,l_excel  string
+    define l_pdf,l_pdf1,l_excel  string
     define l_id     varchar(20)
 
-    call scimq500_output(g_tc_ila01,g_tc_ila02) returning l_pdf
+    call scimq500_output(g_tc_ila01,g_tc_ila02) returning l_pdf,l_pdf1
 
     call cl_download_by_explorer(cl_expexcel10_nogui(
                         '/u1/usr/tiptop/typst/projects/cimr500/interface.xml',
@@ -368,4 +368,5 @@ function cimq500_output()
                         '',null,'',null,'',null))
 
     call cl_download_by_explorer(l_pdf)
+    call cl_download_by_explorer(l_pdf1)
 end function
