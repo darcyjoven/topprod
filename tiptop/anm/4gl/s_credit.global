@@ -1,0 +1,158 @@
+
+database ds
+
+globals
+
+    -- 贷款的基础信息，短期和中长期通用
+    type  contract  record
+        no                  varchar(100),       # 合约单号
+        short               boolean,            # 是否短期
+        bank                varchar(20),        # 还款银行
+        start               date,               # 动用日期
+        end                 date,               # 截至日期
+        balance_start       date,               # 还款开始日期
+        balance_end         date,               # 还款结束日期
+        interest_start      date,               # 还息开始日期
+        currency            varchar(10),        # 币种
+        exchange            decimal(20,10),     # 汇率
+        interest            decimal(15,6),      # 利率
+        handing             decimal(15,6),      # 手续费率
+        original_amt        decimal(20,6),      # 原币金额
+        local_amt           decimal(20,6),      # 本币金额
+        unrestored_amt      decimal(20,6),      # 未还原币
+        is_float            varchar(1),         # 计息方式
+        interest_type       varchar(1),         # 还息方式
+        interest_day        integer,            # 还息日
+        balance_interest    varchar(1),         # 还本还息方式
+        balance_typ         varchar(1),         # 还本方式
+        last_interest       date,               # 上次还息日
+        last_balance        date,               # 上次还本日
+        dat                 date                # 最后异动日期
+    end record
+
+    --type    history     record
+    --    credit_no     varchar(20),     -- 贷款号码
+    --    credit_date   date,            -- 贷款日期
+    --    bank          varchar(20),     -- 贷款银行
+    --    total_amt     decimal(20,6),   -- 贷款总金额原币
+    --    unpat_amt     decimal(20,6),   -- 剩余未还金额原币
+    --    cutoff_date   date,            -- 截至日期
+    --    docno         varchar(20),     -- 异动单据
+    --    seq           integer,         -- 项次
+    --    start_date    date,            -- 开始
+    --    end_date      date,            -- 结束
+    --    interest_rate decimal(20,6),   -- 利率
+    --    curreny       varchar(10),     -- 币种
+    --    exchange_rate decimal(20,10),  -- 汇率
+    --    balance_ori   decimal(20,6),   -- 本金原币
+    --    balance_loc   decimal(20,6),   -- 本金本币
+    --    interest_ori  decimal(20,6),   -- 利息原币
+    --    interest_loc  decimal(20,6)    -- 利息本币
+    --end record
+
+    type    ledger  record
+        credit_no     varchar(20),     -- 贷款号码
+        credit_date   date,            -- 贷款日期
+        bank          varchar(20),     -- 贷款银行
+        credit_typ    varchar(100),    -- 类型
+        credit_remark varchar(1000),   -- 备注
+        curreny       varchar(10),     -- 币种
+        exchange_rate decimal(20,10),  -- 汇率
+        interest_rate decimal(20,6),   -- 利率
+        handing_rate  decimal(20,6),   -- 手续费率
+        amt_ori       decimal(20,6),   -- 原币
+        amt_loc       decimal(20,6),   -- 本币
+        pay_balance   decimal(20,6),   -- 已还本金
+        pay_interest  decimal(20,6),   -- 已还利息
+        hangding_amt  decimal(20,6),   -- 手续费
+        unpay_amt_ori decimal(20,6),   -- 未还本金原币
+        unpay_amt_loc decimal(20,6),   -- 未还本金本币
+        next_balance  date,            -- 下次还款日
+        next_amt_ori  decimal(20,6),   -- 下次还款原币
+        next_amt_loc  decimal(20,6)    -- 下次还款本币
+    end record
+
+    type    todo    record
+        doc     varchar(20),
+        seq     integer,
+        dat     date
+    end record
+
+    type    quota   record
+        doc         varchar(20),
+        seq         integer,
+        start,end   date,
+        bank        varchar(20),
+        rate        decimal(20,6),
+        currency    varchar(10),
+        excahnge    decimal(20,10),
+        origin      decimal(20,6),
+        local       decimal(20,6),
+        used        decimal(20,6)
+    end record
+
+    define  g_nne       record like nne_file.*
+    define  g_nng       record like nng_file.*
+    define  g_nnh       record like nnh_file.*
+    define  g_nni       record like nni_file.*
+    define  g_nnj       record like nnj_file.*
+    define  g_nnk       record like nnk_file.*
+    define  g_nnl       record like nnl_file.*
+
+    type topay record
+        chk01           varchar(1),
+        typ01           varchar(20),
+        nne04           like nne_file.nne04,
+        alg02           like alg_file.alg02,
+        nne01           like nne_file.nne01,
+        nne111          like nne_file.nne111,
+        nne112          like nne_file.nne112,
+        nne14           like nne_file.nne14,
+        nne16           like nne_file.nne16,
+        nne17           like nne_file.nne17,
+        nne12           like nne_file.nne12,
+        nne19           like nne_file.nne19,
+        nne27           like nne_file.nne27,
+        nne20           like nne_file.nne20,
+        nnh03           like nnh_file.nnh03,
+        nnh04f          like nnh_file.nnh04f,
+        nnh04           like nnh_file.nnh04
+    end record
+    type history record
+        typ01           varchar(20),
+        nng01           like nng_file.nng01,
+        nng04           like nng_file.nng04,
+        alg02_1         like alg_file.alg02,
+        nng081          like nng_file.nng081,
+        nng082          like nng_file.nng082,
+        nng09           like nng_file.nng09,
+        nng18           like nng_file.nng18,
+        nng20           like nng_file.nng20,
+        nng22           like nng_file.nng22,
+        nng21           like nng_file.nng21,
+        nng23           like nng_file.nng23,
+        typ03           varchar(1),
+        nnl01           like nnl_file.nnl01,
+        nnl02           like nnl_file.nnl02,
+        nnlud13         like nnl_file.nnlud13,
+        nnk02           like nnk_file.nnk02,
+        nnk09           like nnk_file.nnk09,
+        nnlud07         like nnl_file.nnlud07,
+        nnl12           like nnl_file.nnl12,
+        nnl14           like nnl_file.nnl14,
+        nnl15           like nnl_file.nnl15,
+        nnl17           like nnl_file.nnl17
+    end record
+
+    type    tointer     record
+        nne01       like nne_file.nne01,
+        nnj05       like nnj_file.nnj05,
+        nnj06       like nnj_file.nnj06,
+        nnj08       like nnj_file.nnj08,
+        amt         decimal(20,6)
+    end record
+
+    define  g_topay     dynamic array of topay
+    define  g_history   dynamic array of history
+    define  g_tointer   dynamic array of tointer
+end globals
