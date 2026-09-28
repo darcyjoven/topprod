@@ -497,3 +497,4 @@ FUNCTION cxcq912_bp()
 
     CALL cl_set_act_visible("accept,cancel",TRUE)
 END FUNCTION
+ok
