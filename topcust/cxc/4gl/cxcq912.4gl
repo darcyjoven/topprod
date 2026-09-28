@@ -22,6 +22,8 @@
 #   6) 自制辅材料号 / 自制辅材人工总制费
 #        辅料自身全部工序人工制费合计,回标到主件 ecb06 = 辅料 bmb09 的那一笔
 #        (一个作业编号只会对应一笔自制辅料,仅主件行回标)
+#   7) 累计(人工制费 + 自制辅材人工制费)amt_sum2
+#        与 amt_sum 同一套分组逻辑,逐笔累加 amt + sub_amt
 #
 # 金额、单位成本栏位一律 DECIMAL(26,10)(type_file.num26_10),保持 10 位小数
 #
@@ -30,7 +32,7 @@
 #   笔数栏位 : cnt
 #   明细数组 : s_cxc912.* --- ecb01, ecb02, ecb03, ecb06, ecb17, ecb08, gem01, gem02,
 #              ecb19, ecb19s, ta_cck09, ta_cck06a, ta_cck07a, ta_cck08a,
-#              amt, amt_sum, sub_bmb03, sub_amt
+#              amt, amt_sum, sub_bmb03, sub_amt, amt_sum2
 #   Action   : query, exporttoexcel, exit, cancel, locale, help, about, controlg, controlp, controlr, controlf
 
 DATABASE ds
@@ -47,15 +49,16 @@ TYPE t_cxc912 RECORD                                     # 报表明细
        gem01        LIKE gem_file.gem01,                 # 部门
        gem02        LIKE gem_file.gem02,                 # 部门名称
        ecb19        LIKE ecb_file.ecb19,                 # 标准人工生产时间
-       ecb19s       LIKE type_file.num26_10,             # 工站总人工工时汇总
-       ta_cck09     LIKE type_file.num26_10,             # 产品入库数量
+       ecb19s       LIKE ecb_file.ecb19,                 # 工站总人工工时汇总
+       ta_cck09     decimal(20,3),                       # 产品入库数量
        ta_cck06a    LIKE type_file.num26_10,             # 工站人工金额
        ta_cck07a    LIKE type_file.num26_10,             # 工站制费金额
        ta_cck08a    LIKE type_file.num26_10,             # 工站其他金额
        amt          LIKE type_file.num26_10,             # 人工制费金额
        amt_sum      LIKE type_file.num26_10,             # 累计人工制费
        sub_bmb03    LIKE bmb_file.bmb03,                 # 自制辅材料号
-       sub_amt      LIKE type_file.num26_10              # 自制辅材人工总制费
+       sub_amt      LIKE type_file.num26_10,             # 自制辅材人工总制费
+       amt_sum2     LIKE type_file.num26_10              # 累计(人工制费 + 自制辅材人工制费)
                             END RECORD
 
 TYPE t_ecb RECORD                                        # 工艺资料取数暂存
@@ -356,8 +359,10 @@ FUNCTION cxcq912_b_fill()
     END IF
 
     # ---------------- 4. 逐笔计算人工制费与累计 ----------------
-    LET l_cur_item = NULL
-    LET l_cur_ver  = NULL
+    # 用首笔初始化:与 NULL 比较的结果恒为 false,若初值给 NULL,
+    # 下面的判断永远不成立,整张表都不会归零(主件 -> 辅料 -1/-2 也照样累加)
+    LET l_cur_item = g_cxc912[1].ecb01
+    LET l_cur_ver  = g_cxc912[1].ecb02
     LET l_sum      = 0
 
     FOR i = 1 TO g_rec_b
@@ -426,6 +431,31 @@ FUNCTION cxcq912_b_fill()
                 EXIT FOR
             END IF
         END FOR
+    END FOR
+
+    # ---------------- 6. 累计(人工制费 + 自制辅材人工制费)amt_sum2 ----------------
+    #     与 amt_sum 同一套逻辑:按 ecb01 + ecb02 分组归零,逐笔累加 amt + sub_amt
+    #     必须放在 5.2 之后,此时 sub_amt 才回标完成
+    LET l_cur_item = g_cxc912[1].ecb01
+    LET l_cur_ver  = g_cxc912[1].ecb02
+    LET l_sum      = 0
+
+    FOR i = 1 TO g_rec_b
+        IF g_cxc912[i].ecb01 <> l_cur_item OR g_cxc912[i].ecb02 <> l_cur_ver THEN
+            LET l_cur_item = g_cxc912[i].ecb01
+            LET l_cur_ver  = g_cxc912[i].ecb02
+            LET l_sum      = 0
+        END IF
+
+        # amt 每笔都有值(4.3 无成本资料时填 0)
+        LET l_sum = l_sum + g_cxc912[i].amt
+
+        # sub_amt 只有主件被回标的那一笔有值,为 NULL 时按 0 计
+        # (NULL 参与运算会把累计值整个变成 NULL,不能直接相加)
+        IF NOT cl_null(g_cxc912[i].sub_amt) THEN
+            LET l_sum = l_sum + g_cxc912[i].sub_amt
+        END IF
+        LET g_cxc912[i].amt_sum2 = l_sum
     END FOR
 END FUNCTION
 
@@ -497,4 +527,3 @@ FUNCTION cxcq912_bp()
 
     CALL cl_set_act_visible("accept,cancel",TRUE)
 END FUNCTION
-ok
