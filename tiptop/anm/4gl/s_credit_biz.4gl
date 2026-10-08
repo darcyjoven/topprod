@@ -1146,7 +1146,7 @@ function s_crd_biz_pay_chk(p_doc)
             let g_success = 'N'
             return
         end if
-        if g_nnk.nnkacti != 'Y' or g_nnk.nnkconf = 'N' then
+        if g_nnk.nnkacti != 'Y' or g_nnk.nnkconf != 'N' then
             call s_errmsg('nnk01,nnkacti,nnkconf',sfmt('%1|%2|%3',p_doc,g_nnk.nnkacti,g_nnk.nnkconf),
                 '必须未审核且有效的单据才可审核','!',1)
             let g_success = 'N'
@@ -1551,7 +1551,7 @@ function s_crd_biz_to_bala(p_days,p_bank)
     if not cl_null(p_bank) then
         let l_sql = l_sql , " and nne04 = '",p_bank,"' "
     end if
-    let l_sql = l_sql," order by nne112,nne04,nne01,nne111"
+    let l_sql = l_sql," order by nne112,nnh03,nne01,nne111"
     prepare to_bala_p1 from l_sql
     declare to_bala_c1 cursor for to_bala_p1
 
@@ -1568,8 +1568,9 @@ function s_crd_biz_to_bala(p_days,p_bank)
 end function
 
 # [x] 批量产生还本单据
-# 依 to_bala 的待还本清单,每笔贷款产生一张还本单据并审核
-# 同一合约有多笔期次到期时,只取最早的一笔(已按 nne112,nnh02 排序)
+# 依 to_bala 的待还本清单,按到期日、期次顺序逐笔产生还本单据并立即审核
+# 同一合约有多笔期次到期时,只取最早的一笔
+# 每笔独立事务,失败即停并回滚该笔,已成功的保留
 function s_crd_biz_pay_bala_batch(p_days,p_bank,p_tran)
     define  p_days          integer,
             p_bank          varchar(20),
@@ -1588,16 +1589,12 @@ function s_crd_biz_pay_bala_batch(p_days,p_bank,p_tran)
         return 0
     end if
 
-    if not p_tran then
-        begin work
-    end if
-
     call l_seen.clear()
     let l_cnt = 0
     let l_first = null
     let l_last = null
     for i = 1 to g_topay.getLength()
-        # 同一合约只产生一笔(清单已按到期日排序,取最早一期)
+        # 同一合约只产生一笔(清单已按到期日、期次排序,取最早一期)
         let l_skip = false
         for j = 1 to l_seen.getLength()
             if l_seen[j] = g_topay[i].nne01 then
@@ -1612,6 +1609,11 @@ function s_crd_biz_pay_bala_batch(p_days,p_bank,p_tran)
 
         # 还本金额:清单已带出本期未还本金
         let l_amt = g_topay[i].nnh04f
+
+        # 每笔独立事务,产生后立即审核,成功才提交
+        if not p_tran then
+            begin work
+        end if
 
         let l_doc = s_crd_biz_crt_bala(
                         g_topay[i].nne01,   # 合约单号
@@ -1638,6 +1640,10 @@ function s_crd_biz_pay_bala_batch(p_days,p_bank,p_tran)
             goto _err
         end if
 
+        if not p_tran then
+            commit work
+        end if
+
         if cl_null(l_first) then
             let l_first = l_doc
         end if
@@ -1646,15 +1652,14 @@ function s_crd_biz_pay_bala_batch(p_days,p_bank,p_tran)
     end for
 
     label _err:
+    # 失败即停,仅回滚当前这笔,已成功的保留
     if not p_tran then
         if g_success = 'N' then
             rollback work
-        else
-            commit work
         end if
     end if
 
-    if g_success = 'Y' and l_cnt > 0 then
+    if l_cnt > 0 then
         message '产生还本单据 ',l_cnt,' 笔: ',l_first CLIPPED,' ~ ',l_last CLIPPED
     end if
     return l_cnt
