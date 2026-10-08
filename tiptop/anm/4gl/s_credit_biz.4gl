@@ -1146,6 +1146,7 @@ function s_crd_biz_pay_chk(p_doc)
             let g_success = 'N'
             return
         end if
+        # 必须未审核且有效的单据才可审核
         if g_nnk.nnkacti != 'Y' or g_nnk.nnkconf != 'N' then
             call s_errmsg('nnk01,nnkacti,nnkconf',sfmt('%1|%2|%3',p_doc,g_nnk.nnkacti,g_nnk.nnkconf),
                 '必须未审核且有效的单据才可审核','!',1)
