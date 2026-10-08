@@ -1,5 +1,5 @@
 # Prog. Version..: '5.30.03-12.09.18(00000)'
-# Program name...: cws_modidy_pomj.4gl
+# Program name...: cws_modify_pomj.4gl
 # Descriptions...: 结案模具请购单
 # Date & Author..: darcy:2026/10/08
 #
@@ -44,19 +44,19 @@ define g_pmk_arr dynamic array of record
 define g_pmk01  like pmk_file.pmk01 # 当前处理的请购单号
 define g_msg    string              # 错误信息 (由 helper 带回)
 
-function cws_modidy_pomj()
+function cws_modify_pomj()
 
     whenever error continue
 
     call aws_ttsrv_preprocess()    #呼叫服務前置處理程序
     if g_status.code = "0" then
-        call cws_modidy_pomj_process()
+        call cws_modify_pomj_process()
     end if
 
     call aws_ttsrv_postprocess()   #呼叫服務後置處理程序
 end function
 
-function cws_modidy_pomj_process()
+function cws_modify_pomj_process()
     define l_cnt,l_i,l_j    integer
     define l_node,l_n       om.DomNode
     define l_list           om.NodeList
@@ -92,7 +92,7 @@ function cws_modidy_pomj_process()
         #----------------------------------------------------------------------#
         # 定位请购单 (可能多笔) -> g_pmk_arr                                    #
         #----------------------------------------------------------------------#
-        call cws_modidy_pomj_find()
+        call cws_modify_pomj_find()
         if g_pmk_arr.getLength() = 0 then
             rollback work
             let g_status.code = "-1"
@@ -103,9 +103,9 @@ function cws_modidy_pomj_process()
         for l_j = 1 to g_pmk_arr.getLength()
             let g_pmk01 = g_pmk_arr[l_j].pmk01
 
-            call cws_modidy_pomj_check()     # 检查 已转采购 / 已结案
+            call cws_modify_pomj_check()     # 检查 已转采购 / 已结案
             if g_success = 'Y' then
-                call cws_modidy_pomj_close() # 结案
+                call cws_modify_pomj_close() # 结案
             end if
             if g_success = 'N' then
                 rollback work
@@ -130,7 +130,7 @@ function cws_modidy_pomj_process()
 end function
 
 # 定位请购单号 -> g_pmk_arr
-function cws_modidy_pomj_find()
+function cws_modify_pomj_find()
 
     declare cws_mpmk_erp_cur cursor for
         select pmk01 from pmk_file where pmk01 = tm.erp_pr
@@ -178,7 +178,7 @@ function cws_modidy_pomj_find()
 end function
 
 # 检查是否已结案 / 已转采购
-function cws_modidy_pomj_check()
+function cws_modify_pomj_check()
     define l_pmk25  like pmk_file.pmk25
     define l_cnt    integer
 
@@ -226,7 +226,7 @@ function cws_modidy_pomj_check()
 end function
 
 # 结案 (依标准 apmp451)
-function cws_modidy_pomj_close()
+function cws_modify_pomj_close()
 
     # 单身状况码: 依 (pml20-pml21) -> =0:6(结案) >0:8(结短) <0:7(结长)
     update pml_file set pml16 = '6'
