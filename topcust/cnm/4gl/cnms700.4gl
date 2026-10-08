@@ -80,7 +80,7 @@ function cnms700()
             when 'refresh'
             when 'pay_bala'
             when 'pay_inter'
-            when 'exporttoexxcel'
+            when 'exporttoexcel'
                 if cl_chk_act_auth() then
                      call cl_download_by_explorer(
                         cl_expexcel(
@@ -200,7 +200,7 @@ function cnms700_show()
         let g_head.last_inter = l_dat
     end if
     # 最后还本
-    select max(nnk02) into g_head.last_bala from nnk_file where nnkcoonf = 'Y'
+    select max(nnk02) into g_head.last_bala from nnk_file where nnkconf = 'Y'
 
     # 还息代办
     call s_crd_biz_to_inter(0,null,null)
@@ -221,6 +221,9 @@ function cnms700_show()
     display g_head.last_inter   to last_inter
     display g_head.to_bala      to to_bala
     display g_head.to_inter     to to_inter
+
+    display g_head.loan_bar to loan_per
+    display g_head.credit_bar to credit_per
 
     --display by name tm.*
     display tm.remainings  to remainings

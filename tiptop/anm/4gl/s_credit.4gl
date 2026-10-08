@@ -25,25 +25,26 @@ function s_credit_get_last_date(p_contract,p_doc,p_seq)
     if cl_null(p_doc) or cl_null(p_seq) then
         -- 只查询已审核的单据
         -- 上次还息日期
+        let l_interest = null
         select max(nnj06) into l_dat from nni_file,nnj_file
          where nni01 = nnj01
            and nniconf = 'Y' and nnj12 > 0
            and nnj03 = p_contract
-        if cl_null(l_dat) then
+        if not cl_null(l_dat) then
             let l_interest = l_dat
         end if
         let l_dat = null
         select max(nnk02) into l_dat from nnl_file,nnk_file
-         where nnl01 = nnk01 and nnlconf = 'Y'
+         where nnl01 = nnk01 and nnkconf = 'Y'
            and nnl15 > 0 and nnl04 = p_contract
-        if not cl_null(l_dat) and l_dat > l_interest then
-        let l_interest = l_dat
+        if not cl_null(l_dat) and (cl_null(l_interest) or l_dat > l_interest) then
+            let l_interest = l_dat
         end if
 
         -- 上次还本日期
         let l_dat = null
         select max(nnk02) into l_dat from nnl_file,nnk_file
-         where nnl01 = nnk01 and nnlconf = 'Y'
+         where nnl01 = nnk01 and nnkconf = 'Y'
            and nnl04 = p_contract
         if not cl_null(l_dat) then
             let l_balance = l_dat
@@ -52,11 +53,12 @@ function s_credit_get_last_date(p_contract,p_doc,p_seq)
         -- 查询所有单据
         -- 只查询已审核的单据
         -- 上次还息日期
+        let l_interest = null
         select max(nnj06) into l_dat from nni_file,nnj_file
          where nni01 = nnj01 and nnj12 > 0
            and nnj03 = p_contract
            and ((nnj01 = p_doc and nnj02 <> p_seq) or (nnj01 <> p_doc))
-        if cl_null(l_dat) then
+        if not cl_null(l_dat) then
             let l_interest = l_dat
         end if
         let l_dat = null
@@ -64,8 +66,8 @@ function s_credit_get_last_date(p_contract,p_doc,p_seq)
          where nnl01 = nnk01
            and nnl15 > 0 and nnl04 = p_contract
            and ((nnl01 = p_doc and nnl02 <> p_seq) or (nnl01 <> p_doc))
-        if not cl_null(l_dat) and l_dat > l_interest then
-        let l_interest = l_dat
+        if not cl_null(l_dat) and (cl_null(l_interest) or l_dat > l_interest) then
+            let l_interest = l_dat
         end if
 
         -- 上次还本日期
@@ -105,8 +107,7 @@ function s_credit_calc_interest(p_amt,p_rate,p_start,p_end)
 
     # 算头不算尾部
     let l_day = p_end - p_start
-    let l_rate = p_amt* (p_rate / l_base_day) * l_day
-    let l_amt = p_amt * l_rate
+    let l_amt = p_amt * (p_rate / 100 / l_base_day) * l_day
 
     return l_amt
 end function
@@ -132,7 +133,7 @@ function s_credit_chk_bank_del(p_bank)
      end if
     -- 检查中长期期贷款
     select count(*) into i from nng_file
-     where nng04 = p_back and nngconf <> 'X'
+     where nng04 = p_bank and nngconf <> 'X'
      if i > 0 then
          call cl_err(p_bank,'cnm-012',1)
          return false
@@ -627,7 +628,7 @@ function s_credit_upd_balance(p_doc,p_seq,p_confirm,p_tran)
         if g_success = 'N' then
             rollback work
         else
-            begin work
+            commit work
         end if
     end if
 end function
@@ -800,7 +801,7 @@ function s_credit_get_expectation(p_day)
              where nnh01 = nng01 and nnh04f > nvl(nnhud07, 0)
                and nnh03 <= trunc(sysdate) + ",p_day,")"
     prepare get_expectation_p1 from l_sql
-    declare get_expectation_c1 cursor for get_expectation_c1
+    declare get_expectation_c1 cursor for get_expectation_p1
 
     foreach get_expectation_c1 into l_docno
         if sqlca.sqlcode then
@@ -835,14 +836,14 @@ function s_credit_get_expectation(p_day)
         end if
         let l_amt = 0
         select sum(nnl15) into l_amt from nnk_file,nnl_file
-         where nnk01 = nnl01 and nnk01 = 'Y'
+         where nnk01 = nnl01 and nnkconf = 'Y'
            and nnl04 = sr.credit_no
         if not cl_null(l_amt) then
             let sr.pay_interest = sr.pay_interest + l_amt
         end if
         -- 手续费
         select sum(nvl(nnl08,0)) into sr.hangding_amt from nnk_file,nnl_file
-         where nnk01 = nnl01 and nnk01 = 'Y'
+         where nnk01 = nnl01 and nnkconf = 'Y'
            and nnl04 = sr.credit_no
         if cl_null(sr.hangding_amt) then
         let sr.hangding_amt = 0
@@ -1065,7 +1066,7 @@ function s_credit_get_last_rate(p_doc,p_seq)
 
     select nnj03,nnj05,nnj06 into l_creditno,l_start,l_end
       from nnj_file
-     where nni01 = p_doc and nnj02 = p_seq
+     where nnj01 = p_doc and nnj02 = p_seq
     if sqlca.sqlcode then
         call s_errmsg(
             'nnj01,nnj02',
@@ -1253,8 +1254,9 @@ function s_credit_get_unpay_bala(p_contract)
     end if
 
     # 已还本金
-    select sum(nnl12) into l_pay from nnj_file,nnl_file
-     where nnl01 = nnj01 and nnjconf = 'Y'
+    select sum(nnl12) into l_pay from nnl_file,nnk_file
+     where nnl01 = nnk01 and nnkconf = 'Y'
+       and nnl04 = p_contract
     if cl_null(l_pay) then let l_pay = 0 end if
 
     return l_amt - l_pay
@@ -1295,7 +1297,7 @@ function s_credit_get_last_inter_date(p_contract,p_doc,p_seq)
            and ( nnkconf = 'Y'
             or ( nnkconf = 'N' and nnk01 = p_doc and nnl02 <> p_seq ))
     end if
-    if cl_null(l_date2) and l_date2 > l_date then
+    if not cl_null(l_date2) and l_date2 > l_date then
         let l_date = l_date2
     end if
 
@@ -1330,10 +1332,15 @@ function s_credit_bala_bu(p_doc)
 
     select sum(nnl11),sum(nnl12),sum(nnl13),sum(nnl14),sum(nnl16),sum(nnlud08)
       into g_nnk.nnk11,g_nnk.nnk12,g_nnk.nnk13,g_nnk.nnk14,g_nnk.nnk16,g_nnk.nnk17
-      from nnl_fiel where nnl01 = p_doc
+      from nnl_file where nnl01 = p_doc
+
+    update nnk_file set nnk11 = g_nnk.nnk11,nnk12 = g_nnk.nnk12,
+                        nnk13 = g_nnk.nnk13,nnk14 = g_nnk.nnk14,
+                        nnk16 = g_nnk.nnk16,nnk17 = g_nnk.nnk17
+     where nnk01 = p_doc
     if sqlca.sqlcode then
         call s_errmsg(
-            'nnl01',
+            'nnk01',
             sfmt('%1',p_doc),
             '更新还本单头金额失败',
             sqlca.sqlcode,1)
