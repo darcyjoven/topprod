@@ -1022,24 +1022,28 @@ function s_credit_get_todo(p_contract,p_doc,p_seq,p_start)
         end if
     end if
 
-    -- 其它未审核还息、还本单据
+    -- 其它未审核还息、还本单据（排除当前单据本身）
     -- 计息开始 大于 本次 计息开始 已审核 all单据
     declare get_todo_c1 cursor for
     select nni01,nnj02,nnj05 from nni_file,nnj_file
      where nni01 = nnj01 and nniconf = 'N'
        and nnj03 = p_contract
+       and (nnj01 <> p_doc or nnj02 <> p_seq)
     union all
     select nnk01,nnl02,nnlud13 from nnk_file,nnl_file
      where nnk01 = nnl01 and nnkconf = 'N'
        and nnl04 = p_contract
+       and (nnk01 <> p_doc or nnl02 <> p_seq)
     union all
     select nni01,nnj02,nnj05 from nni_file,nnj_file
      where nni01 = nnj01 and nniconf = 'Y'
        and nnj05 >= p_start and nnj03 = p_contract
+       and (nnj01 <> p_doc or nnj02 <> p_seq)
     union all
     select nnk01,nnl02,nnlud13 from nnk_file,nnl_file
      where nnk01 = nnl01 and nnkconf = 'Y'
        and nnlud13 >= p_start and nnl04 = p_contract
+       and (nnk01 <> p_doc or nnl02 <> p_seq)
 
     let i = 1
     foreach get_todo_c1 into l_todo[i].*

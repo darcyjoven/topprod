@@ -1547,7 +1547,7 @@ function s_crd_biz_to_bala(p_days,p_bank)
                        and nng01 = nnh01
                        and alg01 = nng04
                        and nnh04f > nvl(nnhud07, 0) )
-                    where nne112 < trunc(sysdate) + ",p_days
+                    where nne112 <= trunc(sysdate) + ",p_days
     if not cl_null(p_bank) then
         let l_sql = l_sql , " and nne04 = '",p_bank,"' "
     end if
@@ -1565,6 +1565,99 @@ function s_crd_biz_to_bala(p_days,p_bank)
         let i = i + 1
     end foreach
     call g_topay.deleteElement(i)
+end function
+
+# [x] 批量产生还本单据
+# 依 to_bala 的待还本清单,每笔贷款产生一张还本单据并审核
+# 同一合约有多笔期次到期时,只取最早的一笔(已按 nne112,nnh02 排序)
+function s_crd_biz_pay_bala_batch(p_days,p_bank,p_tran)
+    define  p_days          integer,
+            p_bank          varchar(20),
+            p_tran          boolean
+    define  l_cnt           integer,
+            i,j             integer,
+            l_doc           varchar(20),
+            l_amt           decimal(20,6),
+            l_first,l_last  varchar(20),
+            l_skip          boolean,
+            l_seen          dynamic array of varchar(20)
+
+    call s_crd_biz_to_bala(p_days,p_bank)
+    if g_topay.getLength() <= 0 then
+        call cl_err('没有需要还本的贷款','!',1)
+        return 0
+    end if
+
+    if not p_tran then
+        begin work
+    end if
+
+    call l_seen.clear()
+    let l_cnt = 0
+    let l_first = null
+    let l_last = null
+    for i = 1 to g_topay.getLength()
+        # 同一合约只产生一笔(清单已按到期日排序,取最早一期)
+        let l_skip = false
+        for j = 1 to l_seen.getLength()
+            if l_seen[j] = g_topay[i].nne01 then
+                let l_skip = true
+                exit for
+            end if
+        end for
+        if l_skip then
+            continue for
+        end if
+        let l_seen[l_seen.getLength()+1] = g_topay[i].nne01
+
+        # 还本金额:清单已带出本期未还本金
+        let l_amt = g_topay[i].nnh04f
+
+        let l_doc = s_crd_biz_crt_bala(
+                        g_topay[i].nne01,   # 合约单号
+                        g_today,            # 付款日期
+                        g_topay[i].nne17,   # 汇率
+                        l_amt,              # 原币金额
+                        null,               # 还本单号,为空时生成单头
+                        true)
+        if cl_null(l_doc) or g_success = 'N' then
+            call s_errmsg('nne01',sfmt('%1',g_topay[i].nne01),
+                '产生还本单据失败','!',1)
+            goto _err
+        end if
+
+        call s_crd_biz_pay_chk(l_doc)
+        if g_success = 'N' then
+            call s_errmsg('nnk01',sfmt('%1',l_doc),'审核检查失败','!',1)
+            goto _err
+        end if
+
+        call s_crd_biz_pay_conf(l_doc,true)
+        if g_success = 'N' then
+            call s_errmsg('nnk01',sfmt('%1',l_doc),'审核失败','!',1)
+            goto _err
+        end if
+
+        if cl_null(l_first) then
+            let l_first = l_doc
+        end if
+        let l_last = l_doc
+        let l_cnt = l_cnt + 1
+    end for
+
+    label _err:
+    if not p_tran then
+        if g_success = 'N' then
+            rollback work
+        else
+            commit work
+        end if
+    end if
+
+    if g_success = 'Y' and l_cnt > 0 then
+        message '产生还本单据 ',l_cnt,' 笔: ',l_first CLIPPED,' ~ ',l_last CLIPPED
+    end if
+    return l_cnt
 end function
 
 # [ ] 额度使用导出

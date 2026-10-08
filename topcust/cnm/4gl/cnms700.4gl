@@ -79,12 +79,15 @@ function cnms700()
             when 're_search'
             when 'refresh'
             when 'pay_bala'
+                if cl_chk_act_auth() then
+                    call cnms700_pay_bala()
+                end if
             when 'pay_inter'
             when 'exporttoexcel'
                 if cl_chk_act_auth() then
                      call cl_download_by_explorer(
                         cl_expexcel(
-                            "s_to_pay",base.typeinfo.create(g_topay),
+                            "s_topay",base.typeinfo.create(g_topay),
                             "s_history",base.typeinfo.create(g_history),
                             '',null
                         ))
@@ -93,6 +96,22 @@ function cnms700()
                 exit while
         end case
     end while
+end function
+
+# 批量还本
+function cnms700_pay_bala()
+    define  l_cnt       integer
+
+    if not cl_confirm('axm-108') then
+        return
+    end if
+
+    call s_crd_biz_pay_bala_batch(0,null,true) returning l_cnt
+    if g_success = 'N' or l_cnt = 0 then
+        return
+    end if
+
+    call cnms700_show()
 end function
 
 # 显示
