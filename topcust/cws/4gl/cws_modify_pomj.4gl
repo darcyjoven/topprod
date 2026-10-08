@@ -131,6 +131,7 @@ end function
 
 # 定位请购单号 -> g_pmk_arr
 function cws_modify_pomj_find()
+    define l_pmk01  like pmk_file.pmk01
 
     declare cws_mpmk_erp_cur cursor for
         select pmk01 from pmk_file where pmk01 = tm.erp_pr
@@ -144,13 +145,23 @@ function cws_modify_pomj_find()
     # 优先使用 ERP 请购单号 pmk01                                          #
     #----------------------------------------------------------------------#
     if not cl_null(tm.erp_pr) then
-        foreach cws_mpmk_erp_cur into g_pmk_arr[g_pmk_arr.getLength()+1].pmk01
+        open cws_mpmk_erp_cur
+        if sqlca.sqlcode then
+            let g_msg = sfmt("请购单 %1 查询失败", tm.erp_pr)
+            return
+        end if
+        while true
+            fetch cws_mpmk_erp_cur into l_pmk01
+            if sqlca.sqlcode = 100 then
+                exit while
+            end if
             if sqlca.sqlcode then
                 let g_msg = sfmt("请购单 %1 查询失败", tm.erp_pr)
-                call g_pmk_arr.clear()
-                exit foreach
+                exit while
             end if
-        end foreach
+            let g_pmk_arr[g_pmk_arr.getLength()+1].pmk01 = l_pmk01
+        end while
+        close cws_mpmk_erp_cur
         if g_pmk_arr.getLength() = 0 and cl_null(g_msg) then
             let g_msg = sfmt("请购单 %1 不存在", tm.erp_pr)
         end if
@@ -165,13 +176,25 @@ function cws_modify_pomj_find()
     #----------------------------------------------------------------------#
     # 使用 MES 请购单号 pmkud04 定位 (可能多笔, 全部结案)                    #
     #----------------------------------------------------------------------#
-    foreach cws_mpmk_pr_cur into g_pmk_arr[g_pmk_arr.getLength()+1].pmk01
+    open cws_mpmk_pr_cur
+    if sqlca.sqlcode then
+        let g_msg = sfmt("根据 MES 请购单号 %1 查询失败", tm.pr)
+        return
+    end if
+    while true
+        fetch cws_mpmk_pr_cur into l_pmk01
+        if sqlca.sqlcode = 100 then
+            exit while
+        end if
         if sqlca.sqlcode then
             let g_msg = sfmt("根据 MES 请购单号 %1 查询失败", tm.pr)
-            call g_pmk_arr.clear()
-            exit foreach
+            exit while
         end if
-    end foreach
+        if not cl_null(l_pmk01) then
+            let g_pmk_arr[g_pmk_arr.getLength()+1].pmk01 = l_pmk01
+        end if
+    end while
+    close cws_mpmk_pr_cur
     if g_pmk_arr.getLength() = 0 and cl_null(g_msg) then
         let g_msg = sfmt("根据 MES 请购单号 %1 找不到请购单", tm.pr)
     end if
