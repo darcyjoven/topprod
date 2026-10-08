@@ -1589,6 +1589,11 @@ function s_crd_biz_pay_bala_batch(p_days,p_bank,p_tran)
         return 0
     end if
 
+    # 每笔独立事务,产生后立即审核,成功才提交
+    if not p_tran then
+        begin work
+    end if
+
     call l_seen.clear()
     let l_cnt = 0
     let l_first = null
@@ -1609,11 +1614,6 @@ function s_crd_biz_pay_bala_batch(p_days,p_bank,p_tran)
 
         # 还本金额:清单已带出本期未还本金
         let l_amt = g_topay[i].nnh04f
-
-        # 每笔独立事务,产生后立即审核,成功才提交
-        if not p_tran then
-            begin work
-        end if
 
         let l_doc = s_crd_biz_crt_bala(
                         g_topay[i].nne01,   # 合约单号

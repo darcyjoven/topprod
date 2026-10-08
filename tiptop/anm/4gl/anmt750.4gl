@@ -1506,7 +1506,9 @@ END FUNCTION
 FUNCTION t750_r()
    DEFINE l_chr   LIKE type_file.chr1,    #No.FUN-680107 VARCHAR(1)
           l_cnt   LIKE type_file.num5,    #No.FUN-680107 SMALLINT
-          l_nnk02 LIKE nnk_file.nnk02
+          l_nnk02 LIKE nnk_file.nnk02,
+          l_nnk01 LIKE nnk_file.nnk01,
+          l_docno LIKE nnk_file.nnk01
 
    IF s_anmshut(0) THEN RETURN END IF
    IF g_nnk.nnk01 IS NULL THEN CALL cl_err('',-400,0) RETURN END IF
@@ -1540,6 +1542,7 @@ FUNCTION t750_r()
    END IF
    CALL t750_show()
    IF cl_delh(15,21) THEN
+       LET l_nnk01 = g_nnk.nnk01                 # 保留被删除的单号
        INITIALIZE g_doc.* TO NULL          #No.FUN-9B0098 10/02/24
        LET g_doc.column1 = "nnk01"         #No.FUN-9B0098 10/02/24
        LET g_doc.value1 = g_nnk.nnk01      #No.FUN-9B0098 10/02/24
@@ -1571,6 +1574,7 @@ FUNCTION t750_r()
       #FUN-B40056--add--end--
 
       INITIALIZE g_nnk.* TO NULL
+      LET l_docno = l_nnk01                     # 保留被删除的单号
       OPEN t750_count
       #FUN-B50063-add-start--
       IF STATUS THEN
@@ -1583,6 +1587,8 @@ FUNCTION t750_r()
       FETCH t750_count INTO g_row_count
       #FUN-B50063-add-start--
       IF STATUS OR (cl_null(g_row_count) OR  g_row_count = 0 ) THEN
+         CLEAR FORM
+         CALL g_nnl.clear()
          CLOSE t750_cs
          CLOSE t750_count
          COMMIT WORK
@@ -1592,13 +1598,20 @@ FUNCTION t750_r()
       DISPLAY g_row_count TO FORMONLY.cnt
       OPEN t750_cs
       IF g_curs_index = g_row_count + 1 THEN
+      # 删除的是最后一笔,定位到新的最后一笔
          LET g_jump = g_row_count
          CALL t750_fetch('L')
       ELSE
-         LET g_jump = g_curs_index
+      # 删除后回到上一笔(删除位置在新结果中的前一笔)
+         LET g_jump = g_curs_index - 1
+         IF g_jump < 1 THEN LET g_jump = 1 END IF
          LET mi_no_ask = TRUE
          CALL t750_fetch('/')
       END IF
+      CALL cl_flow_notify(l_docno,'D')         # 通知被删除的单号
+      CLOSE t750_cl
+      COMMIT WORK
+      RETURN
    END IF
    CLOSE t750_cl
    CLEAR FORM
@@ -2777,7 +2790,12 @@ define l_date3         LIKE gxk_file.gxk02
                    LET l_lock_sw = "Y"
                END IF
                LET g_nnl[l_ac].exrate= g_nnl_t.exrate
-               LET g_nnl[l_ac].date1 = g_nnl_t.date1
+               # darcy mod s---
+               LET g_nnl[l_ac].date1 = g_nnl[l_ac].nnlud13
+               if cl_null(g_nnl[l_ac].date1) then
+                    LET g_nnl[l_ac].date1 = g_nnl_t.date1
+               end if
+               # darcy mod e---
                LET g_nnl[l_ac].date2 = g_nnl_t.date2
                CALL cl_show_fld_cont()     #FUN-550037(smin)
            END IF
@@ -2825,7 +2843,7 @@ define l_date3         LIKE gxk_file.gxk02
                    g_nnl[l_ac].nnlud07,g_nnl[l_ac].nnlud08,
                    g_nnl[l_ac].nnlud09,g_nnl[l_ac].nnlud10,
                    g_nnl[l_ac].nnlud11,g_nnl[l_ac].nnlud12,
-                   g_nnl[l_ac].nnlud13,g_nnl[l_ac].nnlud14,
+                   g_nnl[l_ac].date1,g_nnl[l_ac].nnlud14, # darcy mod add 起息日期
                    g_nnl[l_ac].nnlud15,g_legal)
            IF SQLCA.sqlcode THEN
               CALL cl_err3("ins","nnl_file",g_nnk.nnk01,g_nnl[l_ac].nnl02,SQLCA.sqlcode,"","",1)  #No.FUN-660148
@@ -3140,6 +3158,7 @@ define l_date3         LIKE gxk_file.gxk02
                 #LET l_rate = g_nne.nne14 / 360                       #MOD-A90009 mark
                  LET l_rate = l_rate2 / 360                           #MOD-A90009
               END IF
+              let g_nnl[l_ac].nnlud07 = l_rate2 #darcy add
               #-- 原幣利息=貸款金額*(利率/100/365)*天數 -----------
               LET g_nnl[l_ac].nnl15=g_nnl[l_ac].nnl12*l_rate*l_day/100
               SELECT azi04 INTO t_azi04 FROM azi_file WHERE azi01=g_nnk.nnk08
@@ -3378,7 +3397,7 @@ define l_date3         LIKE gxk_file.gxk02
                                   nnlud10 = g_nnl[l_ac].nnlud10,
                                   nnlud11 = g_nnl[l_ac].nnlud11,
                                   nnlud12 = g_nnl[l_ac].nnlud12,
-                                  nnlud13 = g_nnl[l_ac].nnlud13,
+                                  nnlud13 = g_nnl[l_ac].date1, #darcy mod
                                   nnlud14 = g_nnl[l_ac].nnlud14,
                                   nnlud15 = g_nnl[l_ac].nnlud15
                WHERE nnl01=g_nnk.nnk01 AND nnl02=g_nnl_t.nnl02
@@ -3672,7 +3691,13 @@ DEFINE
          END IF
          LET g_nnl[g_cnt].date2=g_nng.nng102
       END IF
+      # darcy add s---
+      if not cl_null( g_nnl[g_cnt].nnlud13  ) then
+        let g_nnl[g_cnt].date1 = g_nnl[g_cnt].nnlud13
+      end if
+      # darcy add e---
       LET g_cnt = g_cnt + 1
+
       IF g_cnt > g_max_rec THEN
          CALL cl_err( '', 9035, 0 )
 	 EXIT FOREACH
