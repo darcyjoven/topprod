@@ -189,13 +189,15 @@ function s_crd_biz_crt_contract(
             for i = 1 to p_detail.getLength()
                 let l_amt = l_amt + p_detail[i].origin
             end for
-            call s_errmsg(
-                'nng20,nnh04f',
-                sfmt('%1|%2',p_origin,l_amt),
-                '总贷款金额与明细金额不符,无法生成贷款单据',
-                '!',1)
-            let g_success = 'N'
-            goto _err
+            if l_amt <> p_origin then
+                call s_errmsg(
+                    'nng20,nnh04f',
+                    sfmt('%1|%2',p_origin,l_amt),
+                    '总贷款金额与明细金额不符,无法生成贷款单据',
+                    '!',1)
+                let g_success = 'N'
+                goto _err
+            end if
         end if
 
 
@@ -217,7 +219,7 @@ function s_crd_biz_crt_contract(
         let g_nng.nng14 = '2' # 计息方式
         let g_nng.nng15 = '1' # 还款本票
         let g_nng.nng16 = p_inter_mode # 付息方式
-        let g_nng.nng18 = p_exchange # 币种汇率
+        let g_nng.nng18 = l_currency # 币种
         let g_nng.nng19 = p_exchange # 汇率
         let g_nng.nngex2 = p_exchange # 额度汇率
         let g_nng.nng20 = cl_digcut(p_origin,g_azi04) # 原币贷款金额
@@ -752,7 +754,7 @@ function s_crd_biz_crt_bala(
     end if
 
     # 更新汇总金额
-    call s_credit_inter_bu(p_doc)
+    call s_credit_bala_bu(p_doc)
 
     label _err:
     if not p_tran then
@@ -779,13 +781,13 @@ function s_crd_gen_inter(p_end)
             l_contract      contract
 
     declare gen_inter_c1 cursor for
-    select nng01, nng20 - nng21 unpay
+    select nng01
       from nng_file
      where nngconf = 'Y'
        and (nng26 < p_end or nng25 is null)
        and nng20 > nng21
     union all
-    select nne01, nne12 - nne27
+    select nne01
       from nne_file
      where nneconf = 'Y'
        and (nne33 is null or nne33 < p_end)
@@ -827,12 +829,12 @@ function s_crd_gen_inter(p_end)
             let l_start = l_interno
         end if
         # 检查
-        call s_crd_biz_pay_chk(l_contract.no)
+        call s_crd_biz_pay_chk(l_interno)
         if g_success = 'N' then
             goto _err
         end if
         # 审核
-        call s_crd_biz_pay_conf(l_contract.no,true)
+        call s_crd_biz_pay_conf(l_interno,true)
         if g_success = 'N' then
             goto _err
         end if
@@ -934,7 +936,7 @@ function s_crd_biz_cont_chk(p_doc)
             return
         end if
         # 本币检查
-        if g_nng.nng22 <> cl_digcut(g_nng.nng22 * g_nng.nng19,g_azi04) then
+        if g_nng.nng22 <> cl_digcut(g_nng.nng20 * g_nng.nng19,g_azi04) then
             call s_errmsg('nng20,nng19,nng22',sfmt('%1|%2|%3',g_nng.nng20,g_nng.nng19,g_nng.nng22),'','aap-938',1)
             let g_success = 'N'
             return
@@ -945,10 +947,10 @@ function s_crd_biz_cont_chk(p_doc)
          where nnp01 = g_nng.nng52 and nnp03 = g_nng.nng24
 
         if cl_null(l_nnp07) then let l_nnp07 = g_aza.aza17 end if
-        if l_nnp07 = g_nne.nne16 then
+        if l_nnp07 = g_nng.nng18 then
             let bal=bal-(g_nng.nng20*g_nng.nngex2)
         else
-            let bal= bal-(g_nng.nngex2*g_nng.nng19)
+            let bal= bal-(g_nng.nng20*g_nng.nng19)
         end if
         if bal<0 then
             call s_errmsg('nnp08,nng20',sfmt('%1|%2',bal,g_nng.nng20),'已超过贷款额度','anm-287',1)
@@ -988,7 +990,7 @@ function s_crd_biz_cont_conf(p_doc,p_tran)
         if g_success = 'N' then
             goto _err
         end if
-        call s_crd_biz_pay_conf(p_doc,p_tran)
+        call s_crd_biz_pay_conf(l_doc,p_tran)
         if g_success = 'N' then
             goto _err
         end if
@@ -1164,7 +1166,7 @@ function s_crd_biz_pay_chk(p_doc)
                 call cl_err('pay_chk_c2',sqlca.sqlcode,1)
                 exit foreach
             end if
-            let l_todo = s_credit_get_todo(g_nnl.nnl03,p_doc,g_nnl.nnl02,g_nnl.nnlud13)
+            let l_todo = s_credit_get_todo(g_nnl.nnl04,p_doc,g_nnl.nnl02,g_nnl.nnlud13)
             if l_todo.getLength() > 0 then
                 for i  = 1 to l_todo.getLength()
                     call s_errmsg('doc,seq,dat',sfmt('%1|%2|%3',l_todo[i].doc,l_todo[i].seq,l_todo[i].dat),
@@ -1257,7 +1259,7 @@ function s_crd_biz_pay_conf(p_doc,p_tran)
                 call cl_err('pay_conf_c4',sqlca.sqlcode,1)
                 exit foreach
             end if
-            call s_credit_upd_interest(g_nnl.nnl01,g_nnl.nnl02,true,p_tran)
+            call s_credit_upd_balance(g_nnl.nnl01,g_nnl.nnl02,true,p_tran)
             if g_success = 'N' then
                 goto _err
             end if
@@ -1357,7 +1359,7 @@ function s_crd_biz_pay_unchk(p_doc)
                 call cl_err('pay_unchk_c2',sqlca.sqlcode,1)
                 exit foreach
             end if
-            let l_todo = s_credit_get_todo(g_nnl.nnl03,p_doc,g_nnl.nnl02,g_nnl.nnlud13)
+            let l_todo = s_credit_get_todo(g_nnl.nnl04,p_doc,g_nnl.nnl02,g_nnl.nnlud13)
             for i = 1 to l_todo.getLength()
                 call s_errmsg('doc,seq,dat',sfmt('%1|%2|%3',l_todo[i].doc,l_todo[i].seq,l_todo[i].dat),
                     '有未审核单据，或者之后日期已有审核单据，请先取消这些单据','!',1)
@@ -1407,7 +1409,7 @@ function s_crd_biz_pay_unconf(p_doc,p_tran)
                 call cl_err('pay_unconf_c2',sqlca.sqlcode,1)
                 exit foreach
             end if
-            call s_credit_upd_interest(g_nnj.nnj01,g_nnj.nnj02,true,p_tran)
+            call s_credit_upd_interest(g_nnj.nnj01,g_nnj.nnj02,false,p_tran)
             if g_success = 'N' then
                 goto _err
             end if
@@ -1448,7 +1450,7 @@ function s_crd_biz_pay_unconf(p_doc,p_tran)
                 call cl_err('pay_unconf_c4',sqlca.sqlcode,1)
                 exit foreach
             end if
-            call s_credit_upd_interest(g_nnl.nnl01,g_nnl.nnl02,true,p_tran)
+            call s_credit_upd_balance(g_nnl.nnl01,g_nnl.nnl02,false,p_tran)
             if g_success = 'N' then
                 goto _err
             end if
@@ -1547,7 +1549,7 @@ function s_crd_biz_to_bala(p_days,p_bank)
                        and nnh04f > nvl(nnhud07, 0) )
                     where nne112 < trunc(sysdate) + ",p_days
     if not cl_null(p_bank) then
-        let l_sql = l_sql , " and nne01 = '",p_bank,"' "
+        let l_sql = l_sql , " and nne04 = '",p_bank,"' "
     end if
     let l_sql = l_sql," order by nne112,nne04,nne01,nne111"
     prepare to_bala_p1 from l_sql
@@ -1633,7 +1635,7 @@ function s_crd_biz_to_inter(p_days,p_bank,p_doc)
     #        l_contract.unrestored_amt,l_contract.currency,bank,
     #        l_contract.last_interest
     let l_sql = "select  nne01,nne08,nneud13,nne111,nne22,
-                         nne12-nne17,nne16,nne04,nne33
+                         nne12-nne27,nne16,nne04,nne33
                  from nne_file
                   where nneconf = 'Y' and nne12 > nne27
                     and nne08 in ('1','3','4','5')
@@ -1740,6 +1742,12 @@ function s_crd_biz_to_inter(p_days,p_bank,p_doc)
         if l_end > g_today + p_days then
             continue foreach
         end if
+        let g_tointer[i].nne01 = l_contract.no
+        let g_tointer[i].nnj05 = l_start
+        let g_tointer[i].nnj06 = l_end
+        let g_tointer[i].nnj08 = l_contract.interest
+        let g_tointer[i].amt = l_contract.unrestored_amt
+        let i = i + 1
     end foreach
     call g_tointer.deleteElement(i)
 
