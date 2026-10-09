@@ -965,10 +965,10 @@ FUNCTION aoou702()
      IF  tm.c = 'Y'  THEN
         # ========= (1) oea_file =========
         IF u702_inv('AXM','oea') THEN #MOD-D60213
-           LET g_sql = "SELECT 'AXM',oea01,gee05,oaydesc,oea02,'',oeaconf,' ',oeauser ,zx02,oeagrup,gem02", #CHI-A80005 add zx02,oeagrup,gem02
+           LET g_sql = "SELECT 'AXM',oea01,gee05,oaydesc,oea02,'',oeaconf,' ',oeaoriu ,zx02,oeagrup,gem02", #CHI-A80005 add zx02,oeagrup,gem02
                           " FROM oea_file LEFT OUTER JOIN oay_file ON oea01 like rtrim(ltrim(oayslip)) || '-%' ",
                           " left join gee_file on gee01 ='AXM' and gee02 = oaytype and gee03='2' and gee04 ='axmi010'", #darcy:2023/12/04 add
-                          " LEFT OUTER JOIN zx_file ON oeauser=zx_file.zx01 ", #CHI-A80005 add #MOD-B20110 modify
+                          " LEFT OUTER JOIN zx_file ON oeaoriu=zx_file.zx01 ", #CHI-A80005 add #MOD-B20110 modify
                           " LEFT OUTER JOIN gem_file ON oeagrup=gem_file.gem01 ", #CHI-A80005 add #MOD-B20110 modify
                           " WHERE oea02 BETWEEN '",tm.bdate,"' AND '",tm.edate,"'"
 
