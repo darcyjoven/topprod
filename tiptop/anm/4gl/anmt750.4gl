@@ -253,7 +253,7 @@ DEFINE g_N               LIKE type_file.chr1    #No.FUN-680107 VARCHAR(1)
 DEFINE g_y               LIKE type_file.chr1    #No.FUN-680107 VARCHAR(1)
 #------for ora修改-------------------
 
-DEFINE g_argv1           LIKE nnk_file.nnk01    #No.FUN-680107 VARCHAR(16) #單號 #TQC-630074
+DEFINE g_argv1           STRING                 #查询条件(例如 nnk01 between 'A' and 'B')或單號 #TQC-630074
 DEFINE g_argv2           STRING                 #指定執行的功能 #TQC-630074
 DEFINE g_flag            LIKE type_file.chr1    #No.FUN-730032
 DEFINE g_bookno1         LIKE aza_file.aza81    #No.FUN-730032
