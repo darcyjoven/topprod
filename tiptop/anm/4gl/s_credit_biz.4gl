@@ -705,10 +705,10 @@ function s_crd_biz_crt_bala(
     # 利息计算
     let l_interest = 0
     let l_date = s_credit_get_last_inter_date(p_contract,g_nnl.nnl01,g_nnl.nnl02)
-    # 截止日检查
+    # 起息日不能晚于应还本日
     if l_date > p_date then
         call s_errmsg('nnlud13,nnk02',sfmt('%1|%2',l_date,p_date),
-            '计息截至日期不能早于最后计息日期','!',1)
+            '计息起息日不能晚于应还本日','!',1)
         let g_success = 'N'
         goto _err
     end if
@@ -725,7 +725,6 @@ function s_crd_biz_crt_bala(
             end if
             let g_nnl.nnl15 = s_credit_calc_interest(l_amt,l_contract.interest,l_date,p_date)
             let g_nnl.nnl15 = cl_digcut(g_nnl.nnl15,g_azi04)
-            let g_nnl.nnlud13 = l_date # 计息开始日
         # # 还本不还利息
         # when '2'
         #     let l_interest = 0
@@ -735,6 +734,8 @@ function s_crd_biz_crt_bala(
             let g_nnl.nnl15 = -1 * g_nnl.nnl15
             let g_nnl.nnl15 = cl_digcut(g_nnl.nnl15,g_azi04)
     end case
+    # 计息起息日(不随还本还息方式变化)
+    let g_nnl.nnlud13 = l_date
     let g_nnl.nnl16 = 0 # 汇差损失
     let g_nnl.nnl17 = cl_digcut(g_nnl.nnl15 * p_exchange,g_azi04) # 应付利息本币
     let g_nnl.nnl18 = p_exchange # 额度汇率
@@ -1618,7 +1619,7 @@ function s_crd_biz_pay_bala_batch(p_days,p_bank,p_tran)
 
         let l_doc = s_crd_biz_crt_bala(
                         g_topay[i].nne01,   # 合约单号
-                        g_today,            # 付款日期
+                        g_topay[i].nne112,  # 付款日期=应还本日(非产生日)
                         g_topay[i].nne17,   # 汇率
                         l_amt,              # 原币金额
                         null,               # 还本单号,为空时生成单头
@@ -1641,10 +1642,6 @@ function s_crd_biz_pay_bala_batch(p_days,p_bank,p_tran)
             goto _err
         end if
 
-        if not p_tran then
-            commit work
-        end if
-
         if cl_null(l_first) then
             let l_first = l_doc
         end if
@@ -1657,6 +1654,8 @@ function s_crd_biz_pay_bala_batch(p_days,p_bank,p_tran)
     if not p_tran then
         if g_success = 'N' then
             rollback work
+        else
+            commit work
         end if
     end if
 
