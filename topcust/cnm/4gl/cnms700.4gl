@@ -100,18 +100,26 @@ end function
 
 # 批量还本
 function cnms700_pay_bala()
-    define  l_cnt       integer
+    define  l_cnt       integer,
+            l_i         integer,
+            l_cmd       string
 
     if not cl_confirm('axm-108') then
         return
     end if
 
-    call s_crd_biz_pay_bala_batch(0,null,true) returning l_cnt
+    call s_crd_biz_pay_bala_batch(0,null,false) returning l_cnt
     if g_success = 'N' or l_cnt = 0 then
         return
     end if
 
     call cnms700_show()
+
+    # 逐笔打开 anmt750 浏览产生的单据
+    for l_i = 1 to g_bala_docs.getLength()
+        let l_cmd = "anmt750 '",g_bala_docs[l_i] CLIPPED,"' 'query'"
+        call cl_cmdrun(l_cmd)
+    end for
 end function
 
 # 显示

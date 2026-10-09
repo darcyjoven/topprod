@@ -1591,12 +1591,8 @@ function s_crd_biz_pay_bala_batch(p_days,p_bank,p_tran)
         return 0
     end if
 
-    # 每笔独立事务,产生后立即审核,成功才提交
-    if not p_tran then
-        begin work
-    end if
-
     call l_seen.clear()
+    call g_bala_docs.clear()
     let l_cnt = 0
     let l_first = null
     let l_last = null
@@ -1616,6 +1612,11 @@ function s_crd_biz_pay_bala_batch(p_days,p_bank,p_tran)
 
         # 还本金额:清单已带出本期未还本金
         let l_amt = g_topay[i].nnh04f
+
+        # 每笔独立事务,产生后立即审核,成功才提交
+        if not p_tran then
+            begin work
+        end if
 
         let l_doc = s_crd_biz_crt_bala(
                         g_topay[i].nne01,   # 合约单号
@@ -1642,21 +1643,22 @@ function s_crd_biz_pay_bala_batch(p_days,p_bank,p_tran)
             goto _err
         end if
 
+        if not p_tran then
+            commit work
+        end if
+
         if cl_null(l_first) then
             let l_first = l_doc
         end if
         let l_last = l_doc
         let l_cnt = l_cnt + 1
+        let g_bala_docs[l_cnt] = l_doc
     end for
 
     label _err:
-    # 失败即停,仅回滚当前这笔,已成功的保留
-    if not p_tran then
-        if g_success = 'N' then
-            rollback work
-        else
-            commit work
-        end if
+    # 失败即停,仅回滚当前这笔,已成功的已各自提交
+    if not p_tran and g_success = 'N' then
+        rollback work
     end if
 
     if l_cnt > 0 then
