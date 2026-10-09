@@ -263,7 +263,7 @@ DEFINE g_N               LIKE type_file.chr1     #No.FUN-680107 VARCHAR(1)
 DEFINE g_y               LIKE type_file.chr1     #No.FUN-680107 VARCHAR(1)
 #------for ora修改-------------------
 
-DEFINE g_argv1           LIKE nni_file.nni01     #No.FUN-680107 VARCHAR(16) #單號 #TQC-630074
+DEFINE g_argv1           STRING                  #查询条件(例如 nni01 between 'A' and 'B')或單號
 DEFINE g_argv2           STRING                  #指定執行的功能 #TQC-630074
 DEFINE g_flag        LIKE type_file.chr1    #No.FUN-730032
 DEFINE g_bookno1     LIKE aza_file.aza81    #No.FUN-730032
@@ -487,7 +487,7 @@ DEFINE g_t1        LIKE nmy_file.nmyslip  #No.FUN-550057  #No.FUN-680107 VARCHAR
       END CONSTRUCT
       IF INT_FLAG THEN RETURN END IF
    ELSE
-      LET g_wc =" nni01 = '",g_argv1,"'"    #No.TQC-630074
+      LET g_wc =" ",g_argv1 CLIPPED
       LET g_wc2 = ' 1=1'
    END IF
 

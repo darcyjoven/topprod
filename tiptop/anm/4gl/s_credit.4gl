@@ -1146,7 +1146,7 @@ function s_credit_inter_or_bala(p_doc)
 
     let l_nmyslip = p_doc
     select nmykind into l_nmykind from nmy_file
-     where nmy01 = l_nmyslip
+     where nmyslip = l_nmyslip
     if sqlca.sqlcode then
         call s_errmsg("nne01",p_doc,"无法取得该单别",sqlca.sqlcode,1)
         let g_success = 'N'
@@ -1169,7 +1169,7 @@ function s_credit_short_or_long(p_doc)
 
     let l_nmyslip = p_doc
     select nmykind into l_nmykind from nmy_file
-     where nmy01 = l_nmyslip
+     where nmyslip = l_nmyslip
     if sqlca.sqlcode then
         call s_errmsg("nne01",p_doc,"无法取得该单别",sqlca.sqlcode,1)
         let g_success = 'N'
@@ -1282,8 +1282,15 @@ function s_credit_get_last_inter_date(p_contract,p_doc,p_seq)
         return null
     end if
 
-    # 先默认为开始还款日，之后一步步增加
-    let l_date = l_contract.interest_start
+    # 起点取合约上的最后还息日 nne33/nng26
+    # 该字段由还息单审核(upd_interest)与还本单审核(upd_balance)共同回写,
+    # 不可改用 l_contract.last_interest:get_last_date 会漏掉还本不还息(nnl15=0)的单据
+    let l_date = null
+    if l_contract.short then
+        select nne33 into l_date from nne_file where nne01 = p_contract
+    else
+        select nng26 into l_date from nng_file where nng01 = p_contract
+    end if
     if cl_null(l_date) then
         let l_date = l_contract.start
     end if

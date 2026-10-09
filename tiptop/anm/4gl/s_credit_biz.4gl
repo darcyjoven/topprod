@@ -1852,3 +1852,106 @@ function s_crd_biz_to_inter(p_days,p_bank,p_doc)
     call g_tointer.deleteElement(i)
 
 end function
+
+# [x] 批量产生还息单据
+# 依 to_inter 的待还息清单,每个合约循环产生全部到期期次
+# 同一合约可能逾期多期,每期各产生一张还息单据
+# 每产生一单立即审核,审核后最后还息日推进,再取下一期
+# 全部包在同一个事务中,任一笔失败整体回滚
+function s_crd_biz_pay_inter_batch(p_days,p_bank,p_tran)
+    define  p_days          integer,
+            p_bank          varchar(20),
+            p_tran          boolean
+    define  l_cons          dynamic array of varchar(20),
+            l_cnt,i         integer,
+            l_no,l_doc      varchar(20),
+            l_end,l_prev    date,
+            l_amt,l_rate    decimal(20,6),
+            l_contract      contract
+
+    call s_crd_biz_to_inter(p_days,p_bank,null)
+    if g_tointer.getLength() <= 0 then
+        call cl_err('没有需要还息的贷款','!',1)
+        return 0
+    end if
+
+    # 先保存合约清单,后续每次调用 to_inter 都会重置 g_tointer
+    call l_cons.clear()
+    for i = 1 to g_tointer.getLength()
+        let l_cons[l_cons.getLength()+1] = g_tointer[i].nne01
+    end for
+
+    if not p_tran then
+        begin work
+    end if
+
+    call g_inter_docs.clear()
+    let l_cnt = 0
+
+    for i = 1 to l_cons.getLength()
+        let l_no = l_cons[i]
+        let l_prev = null
+        # 同一合约逐期产生,每期一单,审核后最后还息日推进
+        while true
+            call s_crd_biz_to_inter(p_days,p_bank,l_no)
+            if g_tointer.getLength() <= 0 then
+                exit while
+            end if
+            let l_end   = g_tointer[1].nnj06
+            let l_rate  = g_tointer[1].nnj08
+            let l_amt   = g_tointer[1].amt
+            # 应还息日必须比上一期更晚,否则说明期间没有推进,防止死循环
+            if not cl_null(l_prev) and l_end <= l_prev then
+                exit while
+            end if
+            let l_prev = l_end
+
+            call s_credit_get_contract(l_no) returning l_contract.*
+            if g_success = 'N' then
+                goto _err
+            end if
+
+            # 付款日期与结束计息日都用应还息日
+            let l_doc = s_crd_biz_crt_inter(
+                        l_no,             # 贷款单号
+                        l_end,            # 付款日期(应还息日)
+                        l_end,            # 结束计息日
+                        l_contract.exchange,  # 汇率 为空时抓最新汇率
+                        l_rate,           # 利率
+                        l_amt,            # 原币金额 计算利息的基础金额
+                        null,             # 还息单号,为空时生成单头
+                        true)
+            if cl_null(l_doc) or g_success = 'N' then
+                call s_errmsg('nni01',sfmt('%1',l_no),
+                    '产生还息单据失败','!',1)
+                goto _err
+            end if
+
+            call s_crd_biz_pay_chk(l_doc)
+            if g_success = 'N' then
+                call s_errmsg('nni01',sfmt('%1',l_doc),'审核检查失败','!',1)
+                goto _err
+            end if
+
+            call s_crd_biz_pay_conf(l_doc,true)
+            if g_success = 'N' then
+                call s_errmsg('nni01',sfmt('%1',l_doc),'审核失败','!',1)
+                goto _err
+            end if
+
+            let l_cnt = l_cnt + 1
+            let g_inter_docs[l_cnt] = l_doc
+        end while
+    end for
+
+    label _err:
+    if not p_tran then
+        if g_success = 'N' then
+            rollback work
+        else
+            commit work
+        end if
+    end if
+
+    return l_cnt
+end function

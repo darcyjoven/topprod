@@ -83,6 +83,9 @@ function cnms700()
                     call cnms700_pay_bala()
                 end if
             when 'pay_inter'
+                if cl_chk_act_auth() then
+                    call cnms700_pay_inter()
+                end if
             when 'exporttoexcel'
                 if cl_chk_act_auth() then
                      call cl_download_by_explorer(
@@ -116,9 +119,33 @@ function cnms700_pay_bala()
 
     # 打开 anmt750,以本次产生的单号区间为查询条件,
     # 后续可用上/下笔切换浏览
-    let l_cmd = "anmt750 'nnk01 between '",g_bala_docs[1] CLIPPED,
+    let l_cmd = "anmt750 \" nnk01 between '",g_bala_docs[1] CLIPPED,
                 "' and '",g_bala_docs[g_bala_docs.getLength()] CLIPPED,
-                "' order by nnk01' 'query'"
+                "' \" 'query'"
+    call cl_cmdrun(l_cmd)
+end function
+
+# 批量还息
+function cnms700_pay_inter()
+    define  l_cnt       integer,
+            l_cmd       string
+
+    if not cl_confirm('axm-108') then
+        return
+    end if
+
+    call s_crd_biz_pay_inter_batch(0,null,false) returning l_cnt
+    if g_success = 'N' or l_cnt = 0 then
+        return
+    end if
+
+    call cnms700_show()
+
+    # 打开 anmt740,以本次产生单号的区间为查询条件,
+    # 后续可用上/下笔切换浏览
+    let l_cmd = "anmt740 \" nni01 between '",g_inter_docs[1] CLIPPED,
+                "' and '",g_inter_docs[g_inter_docs.getLength()] CLIPPED,
+                "' \" 'query'"
     call cl_cmdrun(l_cmd)
 end function
 
