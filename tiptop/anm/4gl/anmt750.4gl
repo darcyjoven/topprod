@@ -516,7 +516,8 @@ DEFINE  lc_qbe_sn  LIKE gbm_file.gbm01    #No.FUN-580031  HCN
 
       IF INT_FLAG THEN RETURN END IF
    ELSE
-      LET g_wc =" nnk01 = '",g_argv1,"'"
+   # 由调用程序传入查询条件(例如批量产生的单号区间 nnk01 BETWEEN 'A' AND 'B')
+   LET g_wc =" ",g_argv1 CLIPPED
       LET g_wc2=" 1=1"
    END IF
 
@@ -1614,8 +1615,8 @@ FUNCTION t750_r()
       RETURN
    END IF
    CLOSE t750_cl
-   CLEAR FORM
-   CALL g_nnl.clear()
+   # CLEAR FORM
+   # CALL g_nnl.clear()
    COMMIT WORK
    CALL cl_flow_notify(g_nnk.nnk01,'D')
 END FUNCTION

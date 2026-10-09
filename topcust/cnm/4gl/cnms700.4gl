@@ -101,7 +101,6 @@ end function
 # 批量还本
 function cnms700_pay_bala()
     define  l_cnt       integer,
-            l_i         integer,
             l_cmd       string
 
     if not cl_confirm('axm-108') then
@@ -115,11 +114,12 @@ function cnms700_pay_bala()
 
     call cnms700_show()
 
-    # 逐笔打开 anmt750 浏览产生的单据
-    for l_i = 1 to g_bala_docs.getLength()
-        let l_cmd = "anmt750 '",g_bala_docs[l_i] CLIPPED,"' 'query'"
-        call cl_cmdrun(l_cmd)
-    end for
+    # 打开 anmt750,以本次产生的单号区间为查询条件,
+    # 后续可用上/下笔切换浏览
+    let l_cmd = "anmt750 'nnk01 between '",g_bala_docs[1] CLIPPED,
+                "' and '",g_bala_docs[g_bala_docs.getLength()] CLIPPED,
+                "' order by nnk01' 'query'"
+    call cl_cmdrun(l_cmd)
 end function
 
 # 显示
