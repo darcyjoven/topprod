@@ -729,10 +729,23 @@ function s_crd_biz_crt_bala(
         # when '2'
         #     let l_interest = 0
         # 还本退息
+        # 付息方式为放款还息时,放款已按贷款天数一次性扣清全程利息。
+        # 提前还本相当于这部分本金提前归还,应退还自还本日到到期日
+        # 之间尚未发生的利息(以负数表示)。
         when '3'
-            let g_nnl.nnl15 = s_credit_calc_interest(p_origin,l_contract.interest,p_date,l_contract.balance_end)
-            let g_nnl.nnl15 = -1 * g_nnl.nnl15
-            let g_nnl.nnl15 = cl_digcut(g_nnl.nnl15,g_azi04)
+            if l_contract.interest_type <> '6' then
+                call s_errmsg('nng16,nngud02',
+                    sfmt('%1|%2',l_contract.interest_type,l_contract.balance_interest),
+                    '只有付息方式为放款还息的合约才需要退息','!',1)
+                let g_success = 'N'
+                goto _err
+            end if
+            # 还本日不早于到期日时无利息可退
+            if p_date < l_contract.end then
+                let g_nnl.nnl15 = s_credit_calc_interest(p_origin,l_contract.interest,p_date,l_contract.end)
+                let g_nnl.nnl15 = -1 * g_nnl.nnl15
+                let g_nnl.nnl15 = cl_digcut(g_nnl.nnl15,g_azi04)
+            end if
     end case
     # 计息起息日(不随还本还息方式变化)
     let g_nnl.nnlud13 = l_date

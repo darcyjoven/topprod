@@ -424,7 +424,8 @@ function s_credit_upd_balance(p_doc,p_seq,p_confirm,p_tran)
                 goto _err
             end if
             -- 更新还息日
-            if l_interest_ori <> 0 then
+            -- 退息(nnl15 为负)不推进最后还息日,与长期分支一致
+            if l_interest_ori > 0 then
                 update nne_file set nne33 = l_end
                  where nne01 = l_contract.no
                 if sqlca.sqlcode then
@@ -526,7 +527,7 @@ function s_credit_upd_balance(p_doc,p_seq,p_confirm,p_tran)
                 goto _err
             end if
             -- 更新还息日
-            if l_interest_ori <> 0 then
+            if l_interest_ori > 0 then
                 # call s_credit_get_last_date() returning l_start,l_end
                 update nne_file set nne33 = l_start
                  where nne01 = l_contract.no
@@ -592,7 +593,7 @@ function s_credit_upd_balance(p_doc,p_seq,p_confirm,p_tran)
                 end if
             end foreach
             -- 更新还息日
-            if l_interest_ori <> 0 then
+            if l_interest_ori > 0 then
                 update nng_file set nng26 = l_start where nng01 = l_contract.no
                 if sqlca.sqlcode then
                     call s_errmsg(
@@ -1109,7 +1110,7 @@ function s_credit_get_last_rate(p_doc,p_seq)
           from (select nnj06, nnj08
                   from nni_file, nnj_file
                  where nni01 = nnj01
-                   and nnjconf = 'Y'
+                   and nniconf = 'Y'
                    and nnj06 <= '",l_start,"'
                    and nnj01 <> '",p_doc,"'
                 union all
@@ -1300,8 +1301,8 @@ function s_credit_get_last_inter_date(p_contract,p_doc,p_seq)
     if l_kind = 'interest' then
         select max(nnj06) into l_date2 from nni_file,nnj_file
          where nni01 = nnj01 and nnj03 = p_contract
-           and ( nnjconf = 'Y'
-            or (nnjconf = 'N' and nnj01 = p_doc and nnj02 <> p_seq ))
+           and ( nniconf = 'Y'
+            or (nniconf = 'N' and nnj01 = p_doc and nnj02 <> p_seq ))
     else
         select max(nnlud13) into l_date2 from nnk_file,nnl_file
          where nnk01 = nnl01 and nnl04 = p_contract
