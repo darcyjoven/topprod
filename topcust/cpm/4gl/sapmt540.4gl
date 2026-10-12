@@ -13110,9 +13110,23 @@ FUNCTION t540_pmn25(p_cmd)
    LET g_pmn[l_ac].pmn041= l_pml041 LET g_pmn2.pmn041= l_pml041
    LET g_pmn[l_ac].pmn07 = l_pml07  LET g_pmn2.pmn07 = l_pml07
    LET g_pmn[l_ac].pmn20 = l_pml20  LET g_pmn2.pmn20 = l_pml20
-   LET g_pmn[l_ac].pmn33 = l_pml33  LET g_pmn2.pmn33 = l_pml33
-   LET g_pmn[l_ac].pmn34 = l_pml34  LET g_pmn2.pmn34 = l_pml34
-   LET g_pmn[l_ac].pmn35 = l_pml35  LET g_pmn2.pmn35 = l_pml35   #CHI-9C0023
+   # darcy:2026/09/23 mod s---
+   if g_pmm.pmm04 > l_pml33 then
+      LET g_pmn[l_ac].pmn33 = g_pmm.pmm04 + 7  LET g_pmn2.pmn33 = g_pmm.pmm04 + 7
+   else
+      LET g_pmn[l_ac].pmn33 = l_pml33  LET g_pmn2.pmn33 = l_pml33
+   end if
+   if g_pmm.pmm04 > l_pml34 then
+      LET g_pmn[l_ac].pmn34 = g_pmm.pmm04 + 7  LET g_pmn2.pmn34 = g_pmm.pmm04 + 7
+   else
+      LET g_pmn[l_ac].pmn34 = l_pml34  LET g_pmn2.pmn34 = l_pml34
+   end if
+   if g_pmm.pmm04 > l_pml35 then
+      LET g_pmn[l_ac].pmn35 = g_pmm.pmm04 + 7  LET g_pmn2.pmn35 = g_pmm.pmm04 + 7   #CHI-9C0023
+   else
+      LET g_pmn[l_ac].pmn35 = l_pml35  LET g_pmn2.pmn35 = l_pml35   #CHI-9C0023
+   end if
+   # darcy:2026/09/23 mod e---
    LET g_pmn[l_ac].pmn38 = l_pml38  LET g_pmn2.pmn38 = l_pml38   #FUN-690047 add
    LET g_pmn[l_ac].pmn41 = l_pml41  LET g_pmn2.pmn41 = l_pml41
    LET g_pmn[l_ac].pmn42 = l_pml42  LET g_pmn2.pmn42 = l_pml42
