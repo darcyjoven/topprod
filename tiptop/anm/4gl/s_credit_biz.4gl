@@ -317,7 +317,7 @@ function s_crd_biz_crt_dis_inter(p_contract,p_tran)
         return l_doc
     end if
 
-    if p_tran then
+    if not p_tran then
         begin work
     end if
 
@@ -333,7 +333,7 @@ function s_crd_biz_crt_dis_inter(p_contract,p_tran)
     ) returning l_doc
 
     label _err:
-    if p_tran then
+    if not  p_tran then
         if g_success = 'Y' then
             commit work
         else
@@ -357,7 +357,7 @@ function s_crd_biz_crt_inter(
     define  p_contract      varchar(20),
             p_date          date,
             p_end   date,
-            p_exchange      decimal(20,10),
+        p_exchange      decimal(20,10),
             p_rate,p_origin decimal(20,6),
             p_doc           varchar(20),
             p_tran          boolean
@@ -1116,7 +1116,7 @@ function s_crd_biz_pay_chk(p_doc)
             let g_success = 'N'
             return
         end if
-        if g_nni.nniacti != 'Y' or g_nni.nniconf = 'N' then
+        if g_nni.nniacti != 'Y' or g_nni.nniconf != 'N' then
             call s_errmsg('nni01,nniacti,nniconf',sfmt('%1|%2|%3',p_doc,g_nni.nniacti,g_nni.nniconf),
                 '必须未审核且有效的单据才可审核','!',1)
             let g_success = 'N'

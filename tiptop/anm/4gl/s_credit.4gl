@@ -243,7 +243,7 @@ function s_credit_upd_interest(p_doc,p_seq,p_confirm,p_tran)
     end if
 
     ############ 更新 ############
-    if p_tran then
+    if not p_tran then
         begin work
     end if
 
@@ -323,7 +323,7 @@ function s_credit_upd_interest(p_doc,p_seq,p_confirm,p_tran)
     end if
 
     label _err:
-    if p_tran then
+    if not p_tran then
         if g_success = 'N' then
             rollback work
         else
