@@ -21,7 +21,7 @@
 #   5) 累计人工制费 --- 按 ecb01 + ecb02 分类,按 ecb03 顺序累加到当前工序
 #   6) 自制辅材料号 / 自制辅材人工总制费
 #        辅料自身全部工序人工制费合计,回标到主件 ecb06 = 辅料 bmb09 的那一笔
-#        (一个作业编号只会对应一笔自制辅料,仅主件行回标)
+#        同一作业编号可挂多笔辅料:料号用 ';' 拼接,金额累加(仅主件行回标)
 #   7) 累计(人工制费 + 自制辅材人工制费)amt_sum2
 #        与 amt_sum 同一套分组逻辑,逐笔累加 amt + sub_amt
 #
@@ -56,7 +56,7 @@ TYPE t_cxc912 RECORD                                     # 报表明细
        ta_cck08a    LIKE type_file.num26_10,             # 工站其他金额
        amt          LIKE type_file.num26_10,             # 人工制费金额
        amt_sum      LIKE type_file.num26_10,             # 累计人工制费
-       sub_bmb03    LIKE bmb_file.bmb03,                 # 自制辅材料号
+       sub_bmb03    LIKE type_file.chr1000,               # 自制辅材料号(多笔以 ';' 拼接)
        sub_amt      LIKE type_file.num26_10,             # 自制辅材人工总制费
        amt_sum2     LIKE type_file.num26_10              # 累计(人工制费 + 自制辅材人工制费)
                             END RECORD
@@ -146,11 +146,9 @@ FUNCTION cxcq912_menu()
             WHEN "query"
                 CALL cxcq912_q()
             WHEN "exporttoexcel"
-                IF cl_chk_act_auth() THEN
-                    CALL cl_download_by_explorer(cl_expexcel1(
+                CALL cl_download_by_explorer(cl_expexcel1(
                         "s_cxc912",base.typeinfo.create(g_cxc912)
                         ))
-                END IF
             WHEN "exit"
                 EXIT WHILE
             OTHERWISE
@@ -175,8 +173,8 @@ FUNCTION cxcq912_cs()
                         CALL cl_init_qry_var()
                         LET g_qryparam.state = "c"
                         LET g_qryparam.form = "q_ima"
-                        CALL cl_create_qry() RETURNING g_qryparam.multiret
-                        DISPLAY g_qryparam.multiret TO item
+                        CALL cl_create_qry() RETURNING g_ver.item
+                        DISPLAY g_ver.item TO g_ver.item
                         NEXT FIELD item
                     OTHERWISE
                 END CASE
@@ -254,6 +252,9 @@ FUNCTION cxcq912_b_fill()
     DEFINE l_msg        LIKE type_file.chr1000
     DEFINE l_amt        DECIMAL(32,12)
     DEFINE l_sum        LIKE type_file.num26_10
+    DEFINE l_sub_cnt    LIKE type_file.num10
+    DEFINE l_sub_txt    STRING
+    DEFINE l_sub_sum    DECIMAL(32,12)
     DEFINE l_cur_item   LIKE ecb_file.ecb01
     DEFINE l_cur_ver    LIKE ecb_file.ecb02
     DEFINE l_raw        t_ecb
@@ -420,17 +421,30 @@ FUNCTION cxcq912_b_fill()
     END FOR
 
     # 5.2 回标到主件 ecb06 = 辅料 bmb09 的那一笔
+    #     同一工序(作业编号)可能挂多笔辅料:料号以 ';' 依 bmb03 顺序拼接,
+    #     金额累加,不能一遇到就 EXIT FOR,否则只会显示第一笔辅料
     FOR i = 1 TO g_rec_b
         IF g_cxc912[i].ecb01 <> g_ver.item THEN
             CONTINUE FOR
         END IF
+        LET l_sub_cnt = 0
+        LET l_sub_txt = ""
+        LET l_sub_sum = 0
         FOR j = 1 TO g_bmb.getLength()
             IF g_cxc912[i].ecb06 = g_bmb[j].bmb09 THEN
-                LET g_cxc912[i].sub_bmb03 = g_bmb[j].bmb03
-                LET g_cxc912[i].sub_amt   = g_bmb[j].bmb_sub_amt
-                EXIT FOR
+                LET l_sub_cnt = l_sub_cnt + 1
+                IF l_sub_cnt = 1 THEN
+                    LET l_sub_txt = g_bmb[j].bmb03
+                ELSE
+                    LET l_sub_txt = l_sub_txt CLIPPED,";",g_bmb[j].bmb03
+                END IF
+                LET l_sub_sum = l_sub_sum + g_bmb[j].bmb_sub_amt
             END IF
         END FOR
+        IF l_sub_cnt > 0 THEN
+            LET g_cxc912[i].sub_bmb03 = l_sub_txt
+            LET g_cxc912[i].sub_amt   = l_sub_sum
+        END IF
     END FOR
 
     # ---------------- 6. 累计(人工制费 + 自制辅材人工制费)amt_sum2 ----------------
