@@ -1,0 +1,1 @@
+ALTER TABLE hrat_file modify hrat64 varchar2(60);

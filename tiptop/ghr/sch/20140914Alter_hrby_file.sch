@@ -1,0 +1,1 @@
+ALTER TABLE hrby_file MODIFY hrby13 VARCHAR2(120);

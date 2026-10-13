@@ -1,0 +1,1 @@
+alter table cfc_file add cfc17 varchar2(4);

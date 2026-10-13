@@ -1,0 +1,1 @@
+ALTER TABLE hrdpb_file MODIFY hrdpb03 NUMBER(15,3);

@@ -1,0 +1,1 @@
+ALTER TABLE bmb_file MODIFY bmbud03 VARCHAR2(512);

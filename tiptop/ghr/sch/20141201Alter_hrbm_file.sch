@@ -1,0 +1,1 @@
+ALTER TABLE hrbm_file MODIFY hrbm37 number(15,2);

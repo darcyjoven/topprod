@@ -1,0 +1,1 @@
+ALTER TABLE sfp_file MODIFY sfpud05 VARCHAR2(255);

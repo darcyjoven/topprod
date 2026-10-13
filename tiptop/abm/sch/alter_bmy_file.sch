@@ -1,0 +1,2 @@
+ALTER TABLE bmy_file ADD ta_bmy05 VARCHAR2(40);
+ALTER TABLE bmy_file ADD ta_bmy06 VARCHAR2(40);

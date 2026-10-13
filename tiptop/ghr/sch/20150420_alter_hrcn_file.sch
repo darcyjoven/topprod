@@ -1,0 +1,1 @@
+ALTER TABLE hrcn_file MODIFY hrcn08 NUMBER(15,3);

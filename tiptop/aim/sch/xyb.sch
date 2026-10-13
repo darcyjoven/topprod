@@ -1,0 +1,1 @@
+alter table ima_file modify(imaud13 number(16,8),imaud14 number(16,8));

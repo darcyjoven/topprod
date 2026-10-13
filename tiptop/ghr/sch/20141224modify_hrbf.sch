@@ -1,0 +1,1 @@
+ALTER TABLE hrbf_file MODIFY hrbf09 DATE NOT NULL;

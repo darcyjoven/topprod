@@ -1,0 +1,3 @@
+ALTER  TABLE sgm_file ADD ta_sgm04 VARCHAR2(40);
+ALTER  TABLE sgm_file ADD ta_sgm05 VARCHAR2(40);
+ALTER  TABLE sgm_file ADD ta_sgm06 VARCHAR2(1);

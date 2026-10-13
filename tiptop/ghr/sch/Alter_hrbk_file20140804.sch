@@ -1,0 +1,1 @@
+ALTER TABLE hrat_file ADD hrbk11 VARCHAR2(1);   /*单又休标记*/

@@ -1,0 +1,1 @@
+ALTER TABLE hrbm_file MODIFY hrbm04 VARCHAR2(120);

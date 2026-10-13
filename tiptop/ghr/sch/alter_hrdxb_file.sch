@@ -1,0 +1,1 @@
+ALTER TABLE hrdxb_file MODIFY hrdxb05 NUMBER(15,5);

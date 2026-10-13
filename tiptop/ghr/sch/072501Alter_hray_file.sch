@@ -1,0 +1,1 @@
+ALTER TABLE hray_file ADD hray24 NUMBER(5,2);

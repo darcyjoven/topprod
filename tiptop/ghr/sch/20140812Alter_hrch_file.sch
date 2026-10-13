@@ -1,0 +1,13 @@
+ALTER TABLE hrch_file MODIFY hrch04 number(5,3);
+ALTER TABLE hrch_file MODIFY hrch05 number(5,3);
+ALTER TABLE hrch_file MODIFY hrch06 number(5,3);
+ALTER TABLE hrch_file MODIFY hrch09 number(5,3);
+ALTER TABLE hrch_file MODIFY hrch10 number(5,3);
+ALTER TABLE hrch_file MODIFY hrch11 number(5,3);
+ALTER TABLE hrch_file MODIFY hrch12 number(5,3);
+ALTER TABLE hrch_file MODIFY hrch15 number(5,3);
+ALTER TABLE hrch_file MODIFY hrch16 number(5,3);
+ALTER TABLE hrch_file MODIFY hrch17 number(5,3);
+ALTER TABLE hrch_file MODIFY hrch20 number(5,3);
+ALTER TABLE hrch_file MODIFY hrch21 number(5,3);
+ALTER TABLE hrch_file MODIFY hrch22 number(5,3);

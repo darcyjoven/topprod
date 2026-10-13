@@ -1,0 +1,1 @@
+alter table hrbo_file modify(hrbo03 VARCHAR2(60));

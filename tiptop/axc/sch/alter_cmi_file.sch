@@ -1,0 +1,24 @@
+alter table cmi_file add cmi13       varchar2(30);           /*核算項值1                              */
+alter table cmi_file add cmi14       varchar2(30);           /*核算項1名稱                            */
+alter table cmi_file add cmi15       varchar2(30);           /*核算項值2                              */
+alter table cmi_file add cmi16       varchar2(30);           /*核算項2名稱                            */
+alter table cmi_file add cmi17       varchar2(30);           /*核算項值3                              */
+alter table cmi_file add cmi18       varchar2(30);           /*核算項3名稱                            */
+alter table cmi_file add cmi19       varchar2(30);           /*核算項值4                              */
+alter table cmi_file add cmi20       varchar2(30);           /*核算項4名稱                            */
+alter table cmi_file add cmi21       varchar2(30);           /*核算項值5                              */
+alter table cmi_file add cmi22       varchar2(30);           /*核算項5名稱                            */
+alter table cmi_file add cmi23       varchar2(30);           /*核算項值6                              */
+alter table cmi_file add cmi24       varchar2(30);           /*核算項6名稱                            */
+alter table cmi_file add cmi25       varchar2(30);           /*核算項值7                              */
+alter table cmi_file add cmi26       varchar2(30);           /*核算項7名稱                            */
+alter table cmi_file add cmi27       varchar2(30);           /*核算項值8                              */
+alter table cmi_file add cmi28       varchar2(30);           /*核算項8名稱                            */
+alter table cmi_file add cmi29       varchar2(30);           /*核算項值9                              */
+alter table cmi_file add cmi30       varchar2(30);           /*核算項9名稱                            */
+alter table cmi_file add cmi31       varchar2(30);           /*核算項值10                             */
+alter table cmi_file add cmi32       varchar2(30);           /*核算項10名稱                           */
+alter table cmi_file add cmi33       varchar2(30);           /*關系人                                 */
+alter table cmi_file add cmi34       varchar2(30);           /*關系人名稱                             */
+alter table cmi_file add cmi35       varchar2(10);           /*項目編號                               */
+~

@@ -1,0 +1,1 @@
+ALTER  TABLE imz_file MODIFY imz43 VARCHAR2(100);

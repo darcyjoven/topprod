@@ -1,0 +1,1 @@
+ALTER TABLE hrcda_file MODIFY hrcda01 number(15);
